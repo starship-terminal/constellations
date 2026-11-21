@@ -1,93 +1,136 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
-<title>Shopify public surfaces</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopify style guide</title>
 <style>
-  :root { color-scheme: light; font-family: Helvetica, Arial, sans-serif; }
-  body { margin: 0; background: #f4f4f5; color: #18181b; }
-  header, main { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
-  h1 { font-weight: 330; letter-spacing: -0.015em; font-size: 40px; margin: 0 0 8px; }
-  h2 { font-size: 20px; font-weight: 450; }
-  p { line-height: 1.4; }
-  nav { display: flex; gap: 8px; margin: 16px 0; flex-wrap: wrap; align-items: center; }
-  .pill { border-radius: 9999px; padding: 8px 20px; font-size: 16px; font-weight: 550; border: 2px solid transparent; }
-  .pill.solid { background: #fff; color: #000; }
-  .pill.ghost { background: transparent; color: #fff; border-color: #fff; }
-  .login-btn { background: #0b1314; color: #fafcfc; border: 0; border-radius: 8px; padding: 12px 16px; font-size: 16px; font-weight: 500; box-shadow: 0 3px 1px -1px rgba(26,26,26,.07); }
-  .passkey { background: #f1f1f1; color: #303030; border: 0; border-radius: 8px; padding: 12px 16px; font-size: 14px; font-weight: 500; }
-  section { margin: 28px 0; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
-  .chip { display: flex; gap: 8px; align-items: center; background: #fff; border-radius: 12px; padding: 8px; }
-  .chip i { width: 28px; height: 28px; border-radius: 8px; border: 1px solid rgba(0,0,0,.08); display: block; flex: none; }
-  .chip code { font-size: 12px; }
-  .dark { background: #000; color: #fff; border-radius: 16px; padding: 20px; }
-  .dark .chip { background: #0e0e10; color: #fff; }
-  .card { background: #02090a; color: #fff; border-radius: 12px; padding: 24px; border: 1px solid #19272a; }
-  .field { display: block; width: 280px; box-sizing: border-box; background: #f3f3f3; color: #303030; border: 1px solid #1a1a1a; border-radius: 8px; padding: 8px 12px; font-size: 16px; }
-  .type b { display: inline-block; min-width: 140px; font-weight: 450; }
-  .type div { margin: 6px 0; }
+:root {
+  --palette-black: #000;
+  --palette-white: #fff;
+  --palette-shade-10: #f4f4f5;
+  --palette-shade-20: #e4e4e7;
+  --palette-shade-30: #d4d4d8;
+  --palette-shade-40: #a1a1aa;
+  --palette-shade-50: #71717a;
+  --palette-shade-60: #52525b;
+  --palette-shade-70: #3f3f46;
+  --palette-shade-90: #18181b;
+  --font-family-sans: Shopify-Inter,Helvetica,Arial,sans-serif;
+  --font-family-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --typography-display: 330 64px/1.2 var(--font-family-sans);
+  --typography-heading-1: 330 56px/1.2 var(--font-family-sans);
+  --typography-heading-2: 330 44px/1.2 var(--font-family-sans);
+  --typography-heading-3: 330 34px/1.2 var(--font-family-sans);
+  --typography-heading-4: 360 28px/1.2 var(--font-family-sans);
+  --typography-heading-5: 400 24px/1.2 var(--font-family-sans);
+  --typography-body-large: 450 20px/1.2 var(--font-family-sans);
+  --typography-body: 450 16px/1.2 var(--font-family-sans);
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 80px;
+  --space-4xl: 128px;
+  --space-5xl: 160px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --motion-duration-default: 150ms;
+  --motion-easing-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --motion-easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-easing-uc: cubic-bezier(0.22, 1.0, 0.36, 1.0);
+  --size-header: 72px;
+  --background-page: var(--palette-black);
+  --background-surface: var(--palette-shade-10);
+  --background-inverse: var(--palette-white);
+  --text-primary: var(--palette-white);
+  --text-muted: var(--palette-shade-40);
+  --text-on-accent: var(--palette-black);
+  --text-link: var(--palette-white);
+  --border-default: var(--palette-shade-70);
+  --border-strong: var(--palette-white);
+  --action-primary: var(--palette-white);
+  --action-primary-hover: #d4d4d8;
+  --focus-ring: #fff;
+  color-scheme: light;
+  --sg-sans: Shopify-Inter, Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 450 16px/1.4 var(--sg-sans); }
+a.primary { background: var(--action-primary); color: var(--text-on-accent); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-weight: 330; font-size: 44px; letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font-weight: 330; font-size: 28px; margin: 40px 0 12px; }
+p { max-width: 68ch; color: var(--text-muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border: 1px solid var(--border-default); }
+.sw span, code { font: 12px/1.4 var(--sg-mono); color: var(--text-primary); }
+button.primary, a.primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--action-primary); color: var(--text-on-accent);
+  border: 0; border-radius: 999px; padding: 12px 20px; font: 450 16px/1 var(--sg-sans);
+  text-decoration: underline;
+}
+a.quiet { color: var(--text-link); }
+.card { background: var(--background-surface); color: #000; border-radius: var(--radius-xl); padding: 24px; max-width: 320px; }
+.card p { color: #3f3f46; }
+.field { display: block; width: 280px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); padding: 12px 14px; font: inherit; background: var(--background-inverse); color: #000; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); }
 </style>
 </head>
 <body>
-<header>
+<div class="wrap">
   <h1>Shopify</h1>
-  <p>Public signed-out surfaces, measured 2026-11-19. Shopify-Inter and ShopifyInter are named in the tokens and are not loaded here. The preview browser did not produce screenshot frames.</p>
-  <nav>
-    <span class="pill solid">Start for free</span>
-    <span class="pill ghost" style="background:#000">Pick a plan that fits</span>
-    <span class="login-btn">Continue with email</span>
-    <span class="passkey">Sign in with passkey</span>
-  </nav>
-</header>
-<main>
-  <section>
-    <h2>Light form chrome</h2>
-    <p>Painted on the signed-out login form. The page behind that form is dark and lives in the dark set as login-page.</p>
-    <div class="grid">
-      <div class="chip"><i style="background:#ffffff"></i><span>page</span><code>#ffffff</code></div>
-      <div class="chip"><i style="background:#f3f3f3"></i><span>surface</span><code>#f3f3f3</code></div>
-      <div class="chip"><i style="background:#303030"></i><span>text</span><code>#303030</code></div>
-      <div class="chip"><i style="background:#616161"></i><span>muted</span><code>#616161</code></div>
-      <div class="chip"><i style="background:#005bd3"></i><span>accent</span><code>#005bd3</code></div>
-      <div class="chip"><i style="background:#1a1a1a"></i><span>border</span><code>#1a1a1a</code></div>
-      <div class="chip"><i style="background:#f1f1f1"></i><span>secondary</span><code>#f1f1f1</code></div>
-      <div class="chip"><i style="background:#e51b00"></i><span>critical</span><code>#e51b00</code></div>
-      <div class="chip"><i style="background:#29845a"></i><span>success</span><code>#29845a</code></div>
-    </div>
-    <p><input class="field" value="" placeholder="Email" readonly></p>
-  </section>
-  <section class="dark">
-    <h2>Marketing</h2>
-    <div class="grid">
-      <div class="chip"><i style="background:#000000"></i><span>page</span><code>#000000</code></div>
-      <div class="chip"><i style="background:#02090a"></i><span>surface</span><code>#02090a</code></div>
-      <div class="chip"><i style="background:#ffffff"></i><span>text</span><code>#ffffff</code></div>
-      <div class="chip"><i style="background:#a1a1aa"></i><span>muted</span><code>#a1a1aa</code></div>
-      <div class="chip"><i style="background:#5433eb"></i><span>shop purple</span><code>#5433eb</code></div>
-      <div class="chip"><i style="background:#0e0e10"></i><span>nav card</span><code>#0e0e10</code></div>
-      <div class="chip"><i style="background:#141a1a"></i><span>plan card</span><code>#141a1a</code></div>
-      <div class="chip"><i style="background:#061a1c"></i><span>deep green</span><code>#061a1c</code></div>
-      <div class="chip"><i style="background:#0a1314"></i><span>login page</span><code>#0a1314</code></div>
-    </div>
-    <div class="card">
-      <p style="margin:0 0 8px;font-size:22px;font-weight:330;letter-spacing:-0.02em">Be the next AI all-star</p>
-      <p style="margin:0;color:#9dabad;font-size:16px">Section fill #02090a. Supporting copy measured rgb(157, 171, 173).</p>
-    </div>
-  </section>
-  <section>
-    <h2>Type roles</h2>
-    <div class="type">
-      <div><b>display 4.375rem / 330</b> Be the next</div>
-      <div><b>body 1rem / 420</b> Shopify-Inter, tracking -0.006em</div>
-      <div><b>button 1rem / 550</b> Start for free</div>
-      <div><b>login heading 24px / 700</b> Log in</div>
-    </div>
-  </section>
-  <section>
-    <h2>Radii</h2>
-    <p>4px demo chip, 8px login field and Continue button, 12px product card, 16px nav card, 24px plan card, 9999px marketing pill.</p>
-  </section>
-</main>
+  <p>Public marketing site, light theme only. Values come from tokens.json. Shopify-Inter is proprietary and is not loaded here; the page falls back to Helvetica.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--background-page)"></i><span>page</span></div>
+    <div class="sw"><i style="background:var(--background-surface)"></i><span>surface</span></div>
+    <div class="sw"><i style="background:var(--text-primary)"></i><span>text</span></div>
+    <div class="sw"><i style="background:var(--text-muted)"></i><span>muted</span></div>
+    <div class="sw"><i style="background:var(--action-primary)"></i><span>accent</span></div>
+    <div class="sw"><i style="background:var(--border-default)"></i><span>border</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font-size:var(--typography-display-fontSize);font-weight:330;color:var(--text-primary)">Be the next store</p>
+  <p style="font-size:var(--typography-heading-3-fontSize);font-weight:330;color:var(--text-primary)">Build fast on Shopify</p>
+  <p style="color:var(--text-primary)">Body at 16px, weight 450. Secondary copy uses shade 50.</p>
+
+  <h2>Controls</h2>
+  <div class="row" style="align-items:center">
+    <a class="primary" href="#components">Start for free</a>
+    <a class="quiet" href="#components">Log in</a>
+  </div>
+  <p></p>
+  <input class="field" value="" placeholder="Search themes" readonly>
+
+  <h2>Card</h2>
+  <div class="card">
+    <strong>Basic</strong>
+    <p>A plan card sits on shade 10. Corners follow radius-xl.</p>
+  </div>
+
+  <h2>Space and radius</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td>space-xs</td><td>8px</td></tr>
+    <tr><td>space-sm</td><td>16px</td></tr>
+    <tr><td>space-md</td><td>24px</td></tr>
+    <tr><td>radius-md</td><td>6px</td></tr>
+    <tr><td>radius-xl</td><td>12px</td></tr>
+    <tr><td>header</td><td>72px</td></tr>
+  </table>
+  <p>Dark theme, status colours, and elevation are not captured. See the coverage table in README.md.</p>
+</div>
 </body>
 </html>

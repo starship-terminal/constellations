@@ -1,116 +1,186 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PamPam style guide</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
-  :root {
-    --ink: #1b1917;
-    --muted: #9894a8;
-    --body: #2c2936;
-    --white: #ffffff;
-    --cream: #faf2ec;
-    --plan: #fbfcfd;
-    --off: #fefefe;
-    --black: #000000;
-    --accent: #4b72f3;
-    --accent-border: #2b3ea7;
-    --success: #00a917;
-    --success-fill: #e5ffe8;
-    --switch: #006e0b;
-    --focus: #ff9a50;
-    --border: #dde1f1;
-    --sans: Inter, "inter Fallback", sans-serif;
-    --display: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--white); color: var(--ink); font: 550 16px/24px var(--sans); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
-  h1 { font: 400 48px/1.08 var(--display); margin: 0 0 8px; }
-  h2 { font: 400 28px/1.08 var(--display); margin: 40px 0 12px; }
-  p.note { color: var(--muted); max-width: 68ch; }
+  :root {   --color-ink: #1b1917;
+  --color-lavender: #9894a8;
+  --color-ash: #8a8a8a;
+  --color-menu: #666666;
+  --color-parchment: #faf2ec;
+  --color-card: #fbfcfd;
+  --color-quiet: #fefefe;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-blue: #4b72f3;
+  --color-blueDeep: #2b3ea7;
+  --color-blueLip: #6387f4;
+  --color-planBorder: #dde1f1;
+  --color-hairline: rgba(0, 0, 0, 0.1);
+  --color-focus: #005fcc;
+  --font-sans: inter, "inter Fallback", sans-serif;
+  --font-display: nineties, "nineties Fallback";
+  --typography-display: 400 80px /1.08 var(--font-display);
+  --typography-displayMobile: 400 48px /1.08 var(--font-display);
+  --typography-heading: 400 48px /1.08 var(--font-display);
+  --typography-headingSm: 400 28px /1.08 var(--font-display);
+  --typography-nav: 550 16px /24px var(--font-sans);
+  --typography-button: 550 19px /28px var(--font-sans);
+  --typography-body: 550 16px /24px var(--font-sans);
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --radius-full: 9999px;
+  --radius-control-menu: 6px;
+  --radius-control-button: 12px;
+  --radius-control-card: 16px;
+  --radius-control-prompt: 18px;
+  --space-0: 0rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-9: 2.25rem;
+  --space-10: 2.5rem;
+  --space-11: 2.75rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-28: 7rem;
+  --space-32: 8rem;
+  --space-36: 9rem;
+  --space-40: 10rem;
+  --space-44: 11rem;
+  --space-48: 12rem;
+  --space-52: 13rem;
+  --space-56: 14rem;
+  --space-60: 15rem;
+  --space-64: 16rem;
+  --space-72: 18rem;
+  --space-80: 20rem;
+  --space-96: 24rem;
+  --size-navItem: 40px;
+  --size-menuItem: 40px;
+  --size-button: 64px;
+  --size-search: 36px;
+  --size-makeMap: 40px;
+  --size-content: 976px;
+  --size-dialog: 375px;
+  --shadow-menu: 0px 6px 20px -10px rgba(14, 18, 22, 0.2);
+  --shadow-button: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), inset 0px 2px 0px 0px #6387f4;
+  --shadow-quiet: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  --motion-fastest: 50ms;
+  --motion-faster: 100ms;
+  --motion-fast: 150ms;
+  --motion-normal: 200ms;
+  --motion-slow: 300ms;
+  --motion-slower: 400ms;
+  --motion-slowest: 500ms;
+  --motion-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-observed-fast: 150ms;
+  --motion-observed-normal: 200ms;
+  --motion-observed-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --layout-breakpointSm: 640px;
+  --layout-breakpointMd: 768px;
+  --layout-breakpointLg: 1024px;
+  --layout-breakpointXl: 1280px;
+  --background-page: var(--color-white);
+  --background-surface: var(--color-card);
+  --background-parchment: var(--color-parchment);
+  --background-quiet: var(--color-quiet);
+  --background-inverse: var(--color-black);
+  --text-primary: var(--color-ink);
+  --text-muted: var(--color-lavender);
+  --text-menu: var(--color-menu);
+  --text-disabled: var(--color-ash);
+  --text-onAccent: var(--color-white);
+  --text-link: var(--color-lavender);
+  --border-default: var(--color-hairline);
+  --border-strong: var(--color-planBorder);
+  --border-accent: var(--color-blueDeep);
+  --accent-default: var(--color-blue);
+  --accent-pressed: var(--color-blueDeep);
+  --accent-lip: var(--color-blueLip);
+  --focus-ring: var(--color-focus);
+  --font-sans: inter, "inter Fallback", sans-serif;
+  --font-display: nineties, "nineties Fallback";
+  --shadow-button: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), inset 0px 2px 0px 0px #6387f4;
+  --shadow-quiet: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  --shadow-menu: 0px 6px 20px -10px rgba(14, 18, 22, 0.2); }
+  body { margin: 0; background: var(--background-page); color: var(--text-primary); font-family: var(--font-sans); }
+  main { max-width: 976px; margin: 0 auto; padding: 40px 32px 80px; }
+  h1 { font-family: var(--font-display); font-weight: 400; font-size: 48px; line-height: 1.08; margin: 0 0 12px; }
+  h2 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.08; margin: 40px 0 12px; }
+  p { color: var(--text-muted); font-size: 16px; line-height: 24px; font-weight: 550; }
   .row { display: flex; flex-wrap: wrap; gap: 12px; }
   .swatch { width: 140px; }
-  .swatch i { display: block; height: 64px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08); }
-  .swatch span { display: block; margin-top: 6px; font-size: 13px; color: var(--muted); }
-  .specimen { margin: 8px 0; }
-  .display { font: 400 80px/86.4px var(--display); }
-  .section { font: 400 48px/51.84px var(--display); }
-  .feature { font: 400 28px/30.24px var(--display); }
-  .lede { font: 550 19px/28px var(--sans); color: var(--muted); }
-  .btn { display: inline-flex; align-items: center; justify-content: center; border: 0; cursor: default; }
-  .btn-primary { height: 40px; padding: 12px; border-radius: 8px; background: var(--black); color: var(--white); font: 550 16px/0 var(--sans); }
-  .btn-accent { height: 64px; padding: 20px 32px; border-radius: 12px; background: var(--accent); color: var(--white); border: 1px solid var(--accent-border); box-shadow: rgba(0,0,0,0.3) 0 1px 2px, #6387f4 0 2px 0 inset; font: 550 19px/28px var(--sans); }
-  .btn-secondary { height: 64px; padding: 20px 32px; border-radius: 12px; background: var(--off); color: #8a8a8a; border: 1px solid rgba(0,0,0,0.1); box-shadow: rgba(0,0,0,0.1) 0 1px 3px; font: 550 19px/28px var(--sans); }
-  .field { display: flex; align-items: center; gap: 8px; width: 406px; max-width: 100%; height: 66px; padding: 0 12px 0 20px; background: var(--white); border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; box-shadow: rgba(0,0,0,0.05) 0 1px 2px -1px, rgba(0,0,0,0.05) 0 2px 4px -2px; }
-  .field input { flex: 1; border: 0; outline: 0; font: 550 16px/24px var(--sans); color: #222; background: transparent; min-width: 0; }
-  .field input::placeholder { color: #8f8f8f; }
-  .card { width: 216px; padding: 24px; border-radius: 16px; background: var(--cream); border: 1px solid rgba(0,0,0,0.02); }
-  .card b { display: block; font-weight: 600; }
-  .card span { color: var(--muted); }
-  .plan { width: 220px; padding: 24px; border-radius: 16px; background: var(--plan); }
-  .plan.selected { border: 2px solid var(--border); }
-  .price { font: 700 32px/24px var(--sans); }
-  .badge { display: inline-block; margin-top: 8px; padding: 4px 8px; border-radius: 999px; background: var(--success-fill); color: var(--success); font: 550 14px/20px var(--sans); }
-  .menu { width: 126px; padding: 8px 0; background: var(--white); border: 1px solid rgba(0,0,0,0.05); border-radius: 6px; box-shadow: rgba(14,18,22,0.2) 0 6px 20px -10px; }
-  .menu a { display: block; padding: 8px 12px; color: #666; text-decoration: none; font-weight: 400; }
-  .switch { width: 56px; height: 36px; border-radius: 24px; background: var(--switch); padding: 8px; display: flex; justify-content: flex-end; box-shadow: rgba(0,0,0,0.18) 0 0 2px inset; }
-  .switch i { width: 20px; height: 20px; border-radius: 18px; background: white; display: block; }
-  code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
-  table { border-collapse: collapse; width: 100%; font-size: 14px; }
-  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(0,0,0,0.08); vertical-align: top; }
-  th { color: var(--muted); font-weight: 550; }
+  .chip { height: 64px; border-radius: 12px; border: 1px solid var(--border-default); }
+  .label { font-size: 12px; line-height: 16px; color: var(--text-muted); margin-top: 6px; }
+  .btn { display: inline-flex; height: 64px; padding: 20px 32px; align-items: center; justify-content: center; border-radius: 12px; font-size: 19px; font-weight: 550; line-height: 28px; }
+  .btn-primary { background: var(--accent-default); color: var(--text-onAccent); border: 1px solid var(--border-accent); box-shadow: var(--shadow-button); }
+  .btn-quiet { background: var(--background-quiet); color: var(--text-disabled); border: 1px solid var(--border-default); box-shadow: var(--shadow-quiet); }
+  .btn-ink { background: var(--background-inverse); color: var(--text-onAccent); border: 0; border-radius: 12px; height: 40px; padding: 8px 16px; font-size: 16px; }
+  .card { background: var(--background-surface); border-radius: 16px; padding: 24px; width: 220px; }
+  .card strong { display: block; font-size: 19px; font-weight: 550; margin-bottom: 8px; }
+  .menu { background: var(--background-page); border-radius: 6px; box-shadow: var(--shadow-menu); padding: 8px 0; width: 160px; }
+  .menu a { display: block; padding: 8px 12px; color: var(--text-menu); text-decoration: none; font-size: 16px; font-weight: 550; }
+  .field { height: 36px; border-radius: 18px; background: #f3f3f3; display: flex; align-items: center; padding: 0 14px; width: 280px; color: var(--text-primary); }
 </style>
 </head>
 <body>
-<div class="wrap">
+<main>
   <h1>PamPam</h1>
-  <p class="note">Light only. Values are the computed styles from pampam.city on 2026-11-19. Nineties is not loaded here. The display specimens use a serif stand-in. Inter is loaded from Google Fonts.</p>
-
+  <p>Public marketing system, one light theme. Values come from tokens.json. Nineties is proprietary, so this page falls back when that face is not installed.</p>
   <h2>Colour</h2>
-  <div class="row">
-    <div class="swatch"><i style="background:#1b1917"></i><span>ink #1b1917</span></div>
-    <div class="swatch"><i style="background:#9894a8"></i><span>muted #9894a8</span></div>
-    <div class="swatch"><i style="background:#2c2936"></i><span>body #2c2936</span></div>
-    <div class="swatch"><i style="background:#faf2ec"></i><span>cream #faf2ec</span></div>
-    <div class="swatch"><i style="background:#fbfcfd"></i><span>plan #fbfcfd</span></div>
-    <div class="swatch"><i style="background:#4b72f3"></i><span>accent #4b72f3</span></div>
-    <div class="swatch"><i style="background:#006e0b"></i><span>switch #006e0b</span></div>
-    <div class="swatch"><i style="background:#00a917"></i><span>success #00a917</span></div>
-    <div class="swatch"><i style="background:#e5ffe8"></i><span>success fill #e5ffe8</span></div>
-    <div class="swatch"><i style="background:#ff9a50"></i><span>focus #ff9a50</span></div>
-    <div class="swatch"><i style="background:#dde1f1"></i><span>border #dde1f1</span></div>
-  </div>
-
+  <div class="row" id="swatches"></div>
   <h2>Type</h2>
-  <p class="specimen display">Put your world on the map.</p>
-  <p class="note">Display is 80px / 86.4px, weight 400, family nineties. This page substitutes a serif.</p>
-  <p class="specimen section">Create interactive maps in minutes.</p>
-  <p class="specimen feature">How do I make my own custom map?</p>
-  <p class="specimen lede">PamPam is an AI map maker to make your own custom maps, travel maps and map animations.</p>
-
+  <h1 style="font-size:80px">Put your world on the map.</h1>
+  <p>Nav and body sit in Inter at weight 550. The lede is lavender, not grey.</p>
   <h2>Controls</h2>
-  <div class="row" style="align-items:center">
-    <span class="btn btn-primary">Make map</span>
-    <span class="btn btn-accent">Get Explorer</span>
-    <span class="btn btn-secondary">Try it for free</span>
-    <span class="switch"><i></i></span>
-    <span class="badge">Save 37%</span>
+  <div class="row">
+    <span class="btn btn-primary">Get Explorer</span>
+    <span class="btn btn-quiet">Try it for free</span>
+    <span class="btn btn-ink">Make map</span>
   </div>
-  <div class="field" style="margin-top:16px">
-    <input placeholder="Famous startups in London" value="">
-    <span class="btn btn-primary">Make map</span>
+  <h2>Card and menu</h2>
+  <div class="row">
+    <div class="card"><strong>Explorer</strong><p style="margin:0">$5 /per month</p></div>
+    <div class="menu"><a>Travelers</a><a>Tourism</a><a>Startup Maps</a></div>
+    <div class="field">Search map</div>
   </div>
-  <div class="row" style="margin-top:16px; align-items:flex-start">
-    <div class="card"><b>Startup Maps</b><span>Show startup ecosystems on a map.</span></div>
-    <div class="plan selected"><div>Explorer</div><div class="price">$5</div><span class="badge">Save 37%</span></div>
-    <div class="menu"><a>Travelers</a><a>Tourism</a><a>Startup Maps</a><a>Real Estate</a><a>Nonprofits</a></div>
-  </div>
-
-  <h2>Tokens</h2>
-  <p class="note">Every value is in <a href="tokens.json">tokens.json</a>. This page is a specimen, not a second source.</p>
-</div>
+</main>
+<script>
+const tokens = {"light": true};
+const roles = [
+  ['page', '--background-page'],
+  ['surface', '--background-surface'],
+  ['parchment', '--background-parchment'],
+  ['text', '--text-primary'],
+  ['muted', '--text-muted'],
+  ['accent', '--accent-default'],
+  ['border', '--border-accent'],
+];
+const host = document.getElementById('swatches');
+for (const [name, v] of roles) {
+  const d = document.createElement('div');
+  d.className = 'swatch';
+  d.innerHTML = '<div class="chip" style="background:var(' + v + ')"></div><div class="label">' + name + '</div>';
+  host.appendChild(d);
+}
+</script>
 </body>
 </html>

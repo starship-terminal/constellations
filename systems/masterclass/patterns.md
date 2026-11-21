@@ -1,31 +1,37 @@
-# MasterClass patterns
+# Patterns
 
-Public signed-out pages only. Screenshots are 256-colour PNGs.
+Public MasterClass, signed out, 2026-11-21. The site tree is [site-tree.md](site-tree.md).
 
-## Marketing shell
+## App shell and navigation
 
-A black utility bar (MasterClass, Certificates, On Call, Executive, At Work) sits over a header: red wordmark, a dark Browse pill, a search field, quiet text links (Gifts, View Plans, Log In), and one pink Get MasterClass button. Phone width drops the search and the text links and keeps Browse, the pink button and a menu icon.
+A black bar. The wordmark sits left, then Browse (a menu of categories) and a search field. Gifts, View Plans and Log In are quiet text links. Get MasterClass is the only filled pink button. A thinner row above links to Certificates, On Call, Executive and At Work. Phone width keeps the same controls. There is no hamburger.
 
-See [home-dark-default](screenshots/home-dark-default.png) and [mobile-home-dark-default](screenshots/mobile-home-dark-default.png).
+Browse opens a dark menu on the same page. View All Categories goes to `/categories`. Category buttons filter the homepage carousel and stay on `/`.
 
-## Home quiz
+## Form with a validation error
 
-The hero is a condensed white headline, a short lede, a pink rule, and a question with checkbox rows. Continue stays disabled until a row is chosen. The quiz was not submitted.
+The homepage intent list shows "Please select at least one option to continue" before a choice is made. The find-my-classes quiz uses checkboxes and Next. Those forms were not submitted. Newsletter and contact fields were not filled, so their error states are not captured.
 
-## Class landing
+## Empty, loading and error
 
-A full-bleed instructor still on the left, a dark panel on the right: title, a short synopsis, a card with instructor faces and three checks, a pink Get MasterClass button, and the starting monthly price. The trailer was not played.
+A request for a path that does not exist is captured as `notfound-dark-default`. Search with no query shows popular searches, not an empty state. Loading is the trailer dialog's "Loading video..." line. A dedicated empty library does not exist on the public site.
 
-See [class-dark-default](screenshots/class-dark-default.png).
+## Destructive confirmation
 
-## Membership picker
+Not present on the public site. Account deletion and refund requests sit behind login or the help centre article, which is an explanation, not a confirm dialog.
 
-`/checkout` is a viewed plan comparison, not a purchase. Three columns (Standard, Plus, Premium), a Selected fill on the current plan, a Best Value badge, a feature table, and a pink Continue that was not followed. Account and Payment steps were not opened.
+## Feedback after an action
 
-See [checkout-dark-default](screenshots/checkout-dark-default.png).
+The promo strip and the pink Get MasterClass button are the feedback for the offer. Closing the strip is a dismiss, not a toast. No toast was observed.
 
-## Sign-in
+## Search and filtering
 
-`/auth/login` is a dialog over the home page: Google, Facebook and Apple buttons, then email and password. The form was not submitted.
+The header field opens a menu of popular searches. Typing shows class links. Enter was not pressed. Category chips on the homepage, the gift page and the promotion page filter cards in place. The categories page is the full filter index.
 
-See [login-dark-default](screenshots/login-dark-default.png).
+## List or table
+
+Class cards are the list. A category page is a grid of the same cards. The sitemap is a link list. No data table was on the public pages.
+
+## Onboarding
+
+The homepage "What brings you to MasterClass today?" and `/find-my-classes` are the public onboarding quiz. The quiz was not completed, because the next steps ask for goals and then a signup wall.

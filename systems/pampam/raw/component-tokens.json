@@ -1,0 +1,65 @@
+{
+  "color": {
+    "ink": { "type": "color", "value": "#1b1917", "source": "Measured. Utility .c_\\#1B1917 { color:#1B1917 } in the 2026-11-21 stylesheet. Computed on h1.nineties_80 as rgb(27, 25, 23) at 1440x900." },
+    "lavender": { "type": "color", "value": "#9894a8", "source": "Measured. Utility .c_\\#9894A8 { color:#9894A8 }. Computed on the Pricing nav link as rgb(152, 148, 168)." },
+    "ash": { "type": "color", "value": "#8a8a8a", "source": "Measured. Utility class c_#8A8A8A on the quiet pricing button. Computed color rgb(138, 138, 138)." },
+    "menu": { "type": "color", "value": "#666666", "source": "Measured. Solutions menu item class c_#666. Computed color rgb(102, 102, 102)." },
+    "parchment": { "type": "color", "value": "#faf2ec", "source": "Measured. Utility .bg_\\#FAF2EC { background:#FAF2EC } in the stylesheet. Used on 80px feature tiles." },
+    "card": { "type": "color", "value": "#fbfcfd", "source": "Measured. Pricing plan card class bg_#FBFCFD. Computed background rgb(251, 252, 253)." },
+    "quiet": { "type": "color", "value": "#fefefe", "source": "Measured. Quiet button class bg_#FEFEFE. Computed background rgb(254, 254, 254)." },
+    "white": { "type": "color", "value": "#ffffff", "source": "Measured. Solutions menu panel class bg-c_white. Computed background rgb(255, 255, 255)." },
+    "black": { "type": "color", "value": "#000000", "source": "Measured. Make map control paints a black fill in the home screenshot. Panda token --colors-black is #000." },
+    "blue": { "type": "color", "value": "#4b72f3", "source": "Measured. Primary plan button class bg_#4B72F3. Computed background rgb(75, 114, 243)." },
+    "blueDeep": { "type": "color", "value": "#2b3ea7", "source": "Measured. Primary plan button border class bd_1px_solid_#2B3EA7. Computed border rgb(43, 62, 167)." },
+    "blueLip": { "type": "color", "value": "#6387f4", "source": "Measured. Primary button inset shadow token #6387F4 in class bx-sh_0px_1px_2px_0px_rgba(0,_0,_0,_0.30),_0px_2px_0px_0px_#6387F4_inset." },
+    "planBorder": { "type": "color", "value": "#dde1f1", "source": "Measured. Business plan card class bd_2px_solid_#DDE1F1. Computed border rgb(221, 225, 241)." },
+    "hairline": { "type": "color", "value": "rgba(0, 0, 0, 0.1)", "source": "Measured. Quiet button border class bd_1px_solid_rgba(0,_0,_0,_0.10). Computed border rgba(0, 0, 0, 0.1)." },
+    "focus": { "type": "color", "value": "#005fcc", "source": "Measured. Keyboard focus on the Pricing link computed outline rgb(0, 95, 204) auto 1px, offset 1px. Browser default, not a product token." }
+  },
+  "font": {
+    "sans": { "type": "fontFamily", "value": "inter, \"inter Fallback\", sans-serif", "source": "Measured. Computed font-family on the Pricing nav link. @font-face family inter, woff2, weight 100 900. Fallback is local Arial." },
+    "display": { "type": "fontFamily", "value": "nineties, \"nineties Fallback\"", "source": "Measured. Computed font-family on h1 is nineties. @font-face family nineties, woff2. Fallback is local Arial. Proprietary; not committed." }
+  },
+  "typography": {
+    "display": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontSize": "80px", "fontWeight": 400, "lineHeight": "1.08" }, "source": "Measured. h1 class nineties_80 at 1440. Computed 80px / 86.4px / weight 400. Line-height 1.08 is the .nineties_80 rule." },
+    "displayMobile": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontSize": "48px", "fontWeight": 400, "lineHeight": "1.08" }, "source": "Derived. Class mobile:nineties_44 sets font-size 48px and line-height 1.08. The class name says 44; the declared size is 48px." },
+    "heading": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontSize": "48px", "fontWeight": 400, "lineHeight": "1.08" }, "source": "Measured. .nineties_44 { font-size:48px; line-height:1.08; font-weight:400 }." },
+    "headingSm": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontSize": "28px", "fontWeight": 400, "lineHeight": "1.08" }, "source": "Measured. .nineties_28 { font-size:28px; line-height:1.08; font-weight:400 }." },
+    "nav": { "type": "typography", "value": { "fontFamily": "{font.sans}", "fontSize": "16px", "fontWeight": 550, "lineHeight": "24px" }, "source": "Measured. Nav link computed 16px / 24px / weight 550. Class font-md_16." },
+    "button": { "type": "typography", "value": { "fontFamily": "{font.sans}", "fontSize": "19px", "fontWeight": 550, "lineHeight": "28px" }, "source": "Measured. Get Explorer computed 19px / weight 550. Class font-md_20 declares 550 19px/28px." },
+    "body": { "type": "typography", "value": { "fontFamily": "{font.sans}", "fontSize": "16px", "fontWeight": 550, "lineHeight": "24px" }, "source": "Measured. Footer About link computed 16px / 24px / weight 550." }
+  },
+  "radius": {
+    "menu": { "type": "dimension", "value": "6px", "source": "Measured. Solutions menu panel computed border-radius 6px. Class bdr_6px." },
+    "button": { "type": "dimension", "value": "12px", "source": "Measured. Get Explorer computed border-radius 12px. Class bdr_12px." },
+    "card": { "type": "dimension", "value": "16px", "source": "Measured. Pricing plan card computed border-radius 16px. Class bdr_16px." },
+    "prompt": { "type": "dimension", "value": "18px", "source": "Measured. Class bdr_18px is declared and used on the home prompt shell. Exact computed radius of that shell was not read; the class value is the source." }
+  },
+  "size": {
+    "navItem": { "type": "dimension", "value": "40px", "source": "Measured. Pricing link computed height 40px, padding 8px 12px." },
+    "menuItem": { "type": "dimension", "value": "40px", "source": "Measured. Solutions menu item computed height 40px, padding 8px 12px." },
+    "button": { "type": "dimension", "value": "64px", "source": "Measured. Get Explorer computed height 64px, padding 20px 32px." },
+    "search": { "type": "dimension", "value": "36px", "source": "Measured. Explore search field bounding box height 36px at 1440." },
+    "makeMap": { "type": "dimension", "value": "40px", "source": "Measured. Make map control bounding box 123x40 at 1440." },
+    "content": { "type": "dimension", "value": "976px", "source": "Measured. Home hero wrapper class max-w_976px." },
+    "dialog": { "type": "dimension", "value": "375px", "source": "Measured. Login dialog bounding box width 375px at 1440, deviceScaleFactor 2 crop." }
+  },
+  "shadow": {
+    "menu": { "type": "shadow", "value": "0px 6px 20px -10px rgba(14, 18, 22, 0.2)", "source": "Measured. Solutions menu panel computed box-shadow rgba(14, 18, 22, 0.2) 0px 6px 20px -10px." },
+    "button": { "type": "shadow", "value": "0px 1px 2px 0px rgba(0, 0, 0, 0.3), inset 0px 2px 0px 0px #6387f4", "source": "Measured. Get Explorer computed box-shadow rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgb(99, 135, 244) 0px 2px 0px 0px inset." },
+    "quiet": { "type": "shadow", "value": "0px 1px 3px 0px rgba(0, 0, 0, 0.1)", "source": "Measured. Quiet pricing button computed box-shadow rgba(0, 0, 0, 0.1) 0px 1px 3px 0px." }
+  },
+  "motion": {
+    "fast": { "type": "duration", "value": "150ms", "source": "Measured. Panda preset --durations-fast: 150ms in the stylesheet. Not observed on a specific transition." },
+    "normal": { "type": "duration", "value": "200ms", "source": "Measured. Panda preset --durations-normal: 200ms." },
+    "easing": { "type": "cubicBezier", "value": [0.4, 0, 0.2, 1], "source": "Measured. Panda preset --easings-default: cubic-bezier(0.4, 0, 0.2, 1)." }
+  },
+  "layout": {
+    "desktop": { "type": "dimension", "value": "1440px", "source": "Measured. Capture viewport innerWidth 1440, innerHeight 900, devicePixelRatio 1." },
+    "phone": { "type": "dimension", "value": "390px", "source": "Measured. Phone capture innerWidth 390, innerHeight 844, devicePixelRatio 2." },
+    "breakpointSm": { "type": "dimension", "value": "640px", "source": "Measured. Panda preset --breakpoints-sm: 640px." },
+    "breakpointMd": { "type": "dimension", "value": "768px", "source": "Measured. Panda preset --breakpoints-md: 768px." },
+    "breakpointLg": { "type": "dimension", "value": "1024px", "source": "Measured. Panda preset --breakpoints-lg: 1024px." },
+    "breakpointXl": { "type": "dimension", "value": "1280px", "source": "Measured. Panda preset --breakpoints-xl: 1280px." }
+  }
+}

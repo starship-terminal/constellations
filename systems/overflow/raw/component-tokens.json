@@ -1,0 +1,488 @@
+{
+  "core": {
+    "color": {
+      "ink": {
+        "type": "color",
+        "value": "rgb(0, 0, 0)",
+        "source": "computed color of nav-link default on overflow.io"
+      },
+      "paper": {
+        "type": "color",
+        "value": "rgb(255, 255, 255)",
+        "source": "computed backgroundColor of product-menu default on overflow.io"
+      },
+      "hero-ink": {
+        "type": "color",
+        "value": "rgb(255, 255, 255)",
+        "source": "computed color of hero-title default on overflow.io"
+      },
+      "ink-soft": {
+        "type": "color",
+        "value": "rgb(22, 22, 55)",
+        "source": "computed color of menu-link default on overflow.io"
+      },
+      "link": {
+        "type": "color",
+        "value": "rgb(0, 133, 228)",
+        "source": "computed color of logo default on overflow.io"
+      },
+      "link-hover": {
+        "type": "color",
+        "value": "rgb(37, 154, 239)",
+        "source": "computed color of nav-link hover on overflow.io"
+      },
+      "link-pressed": {
+        "type": "color",
+        "value": "rgb(18, 75, 116)",
+        "source": "computed color of nav-link pressed on overflow.io"
+      },
+      "muted": {
+        "type": "color",
+        "value": "rgba(0, 0, 0, 0.6)",
+        "source": "computed color of blog-card default on overflow.io"
+      },
+      "grey": {
+        "type": "color",
+        "value": "rgba(240, 240, 242, 0.498)",
+        "source": "computed backgroundColor of nav-signin pressed on overflow.io"
+      },
+      "grey-2": {
+        "type": "color",
+        "value": "rgb(240, 240, 242)",
+        "source": "declared .btn-secondary background-color in public-site-homepage.min.css; the Sign In control computes transparent until :active"
+      },
+      "hairline": {
+        "type": "color",
+        "value": "rgb(218, 220, 224)",
+        "source": "computed borderTopColor of product-menu default on overflow.io"
+      },
+      "chip-border": {
+        "type": "color",
+        "value": "rgb(245, 245, 247)",
+        "source": "computed borderTopColor of blog-card default on overflow.io"
+      },
+      "swiper": {
+        "type": "color",
+        "value": "#007aff",
+        "source": "css-var --swiper-theme-color on :root; the only custom property the homepage stylesheet declares. Not painted on the captured controls."
+      },
+      "theme": {
+        "type": "color",
+        "value": "#232D41",
+        "source": "meta name=theme-color on https://overflow.io/"
+      }
+    },
+    "font": {
+      "family": {
+        "sans": {
+          "type": "fontFamily",
+          "value": "Inter, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif",
+          "source": "computed fontFamily of body, read on hero-title"
+        },
+        "mono": {
+          "type": "fontFamily",
+          "value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+          "source": "declared font-family in public-site-homepage.min.css; no code specimen was on the captured pages"
+        },
+        "icons": {
+          "type": "fontFamily",
+          "value": "icomoon",
+          "source": "declared @font-face icomoon in public-site-homepage.min.css"
+        }
+      },
+      "weight": {
+        "regular": {
+          "type": "fontWeight",
+          "value": 400,
+          "source": "computed fontWeight of nav-link default"
+        },
+        "medium": {
+          "type": "fontWeight",
+          "value": 500,
+          "source": "computed fontWeight of logo"
+        },
+        "button": {
+          "type": "fontWeight",
+          "value": 550,
+          "source": "computed fontWeight of hero-cta .btn-primary"
+        },
+        "bold": {
+          "type": "fontWeight",
+          "value": 700,
+          "source": "computed fontWeight of m-nav-item"
+        },
+        "display": {
+          "type": "fontWeight",
+          "value": 800,
+          "source": "computed fontWeight of hero-title"
+        }
+      }
+    },
+    "typography": {
+      "display": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "56px",
+          "fontWeight": "{font.weight.display}",
+          "lineHeight": "63.84px",
+          "letterSpacing": "-1.2px"
+        },
+        "source": "computed type of hero-title and pricing-h1 (.intro-section__title)"
+      },
+      "heading": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "48px",
+          "fontWeight": "{font.weight.display}",
+          "lineHeight": "55.68px",
+          "letterSpacing": "-0.8px"
+        },
+        "source": "computed type of section-h2 (.headline-block__title)"
+      },
+      "nav": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "15px",
+          "fontWeight": "{font.weight.regular}",
+          "lineHeight": "26.25px",
+          "letterSpacing": "0px"
+        },
+        "source": "computed type of nav-link default"
+      },
+      "body": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "16px",
+          "fontWeight": "{font.weight.regular}",
+          "lineHeight": "28px",
+          "letterSpacing": "0px"
+        },
+        "source": "computed type of product-menu and faq-item"
+      },
+      "button": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "16px",
+          "fontWeight": "{font.weight.button}",
+          "lineHeight": "16px",
+          "letterSpacing": "0.2px"
+        },
+        "source": "computed type of hero-cta"
+      },
+      "menu-item": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "14px",
+          "fontWeight": "{font.weight.regular}",
+          "lineHeight": "22px",
+          "letterSpacing": "0px"
+        },
+        "source": "computed type of menu-link"
+      },
+      "phone-nav": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "24px",
+          "fontWeight": "{font.weight.bold}",
+          "lineHeight": "42px",
+          "letterSpacing": "0px"
+        },
+        "source": "computed type of m-nav-item at 390x844"
+      }
+    },
+    "radius": {
+      "button": {
+        "type": "dimension",
+        "value": "8px",
+        "source": "painted borderRadius of hero-cta .btn-primary"
+      },
+      "menu-link": {
+        "type": "dimension",
+        "value": "12px",
+        "source": "painted borderRadius of menu-link"
+      },
+      "card": {
+        "type": "dimension",
+        "value": "24px",
+        "source": "painted borderRadius of plan-card"
+      },
+      "chip": {
+        "type": "dimension",
+        "value": "20px",
+        "source": "painted borderRadius of blog-card pill"
+      }
+    },
+    "space": {
+      "button-x": {
+        "type": "dimension",
+        "value": "24px",
+        "source": "computed paddingLeft of hero-cta default on overflow.io"
+      },
+      "button-y": {
+        "type": "dimension",
+        "value": "19px",
+        "source": "computed paddingTop of hero-cta default on overflow.io"
+      },
+      "nav-x": {
+        "type": "dimension",
+        "value": "16px",
+        "source": "computed paddingLeft of nav-link default on overflow.io"
+      },
+      "nav-y": {
+        "type": "dimension",
+        "value": "8px",
+        "source": "computed paddingTop of nav-link default on overflow.io"
+      },
+      "menu-x": {
+        "type": "dimension",
+        "value": "12px",
+        "source": "computed paddingLeft of menu-link default on overflow.io"
+      },
+      "menu-y": {
+        "type": "dimension",
+        "value": "14px",
+        "source": "computed paddingTop of menu-link default on overflow.io"
+      },
+      "faq-y": {
+        "type": "dimension",
+        "value": "32px",
+        "source": "computed paddingTop of faq-item default on overflow.io"
+      }
+    },
+    "size": {
+      "button-height": {
+        "type": "dimension",
+        "value": "56px",
+        "source": "computed height of hero-cta default on overflow.io"
+      },
+      "nav-button-height": {
+        "type": "dimension",
+        "value": "48px",
+        "source": "computed height of nav-cta default on overflow.io"
+      },
+      "nav-link-height": {
+        "type": "dimension",
+        "value": "42.25px",
+        "source": "computed height of nav-link default on overflow.io"
+      },
+      "menu-height": {
+        "type": "dimension",
+        "value": "393px",
+        "source": "computed height of product-menu default on overflow.io"
+      },
+      "menu-link-height": {
+        "type": "dimension",
+        "value": "98.9688px",
+        "source": "computed height of menu-link default on overflow.io"
+      },
+      "logo-height": {
+        "type": "dimension",
+        "value": "27px",
+        "source": "computed height of logo default on overflow.io"
+      },
+      "faq-opener-height": {
+        "type": "dimension",
+        "value": "88px",
+        "source": "computed height of faq-item default on overflow.io"
+      },
+      "phone-toggle": {
+        "type": "dimension",
+        "value": "22px",
+        "source": "computed width of m-menu-button default on overflow.io"
+      },
+      "phone-nav-item": {
+        "type": "dimension",
+        "value": "58px",
+        "source": "computed height of m-nav-item default on overflow.io"
+      }
+    },
+    "shadow": {
+      "card": {
+        "type": "shadow",
+        "value": [
+          {
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "16px",
+            "spread": "-8px",
+            "color": "rgba(0, 0, 0, 0.08)"
+          }
+        ],
+        "source": "computed boxShadow of plan-card"
+      }
+    },
+    "motion": {
+      "button": {
+        "type": "duration",
+        "value": "400ms",
+        "source": "declared transition transform .4s on .btn-primary"
+      },
+      "link": {
+        "type": "duration",
+        "value": "350ms",
+        "source": "computed transitionDuration of nav-link"
+      },
+      "menu": {
+        "type": "duration",
+        "value": "200ms",
+        "source": "computed transitionDuration of product-menu"
+      },
+      "lift": {
+        "type": "cubicBezier",
+        "value": [
+          0.3,
+          0.86,
+          0.36,
+          0.95
+        ],
+        "source": "declared cubic-bezier(.3,.86,.36,.95) on .navbar-nav__subnav in public-site-homepage.min.css"
+      }
+    },
+    "layout": {
+      "desktop": {
+        "type": "dimension",
+        "value": "1440px",
+        "source": "requested and measured window.innerWidth of the desktop captures"
+      },
+      "phone": {
+        "type": "dimension",
+        "value": "390px",
+        "source": "requested phone viewport width"
+      },
+      "desktop-height": {
+        "type": "dimension",
+        "value": "900px",
+        "source": "requested and measured window.innerHeight of the desktop captures"
+      },
+      "phone-height": {
+        "type": "dimension",
+        "value": "844px",
+        "source": "requested phone viewport height"
+      }
+    }
+  },
+  "light": {
+    "page": {
+      "type": "color",
+      "value": "{color.paper}",
+      "source": "alias of computed product-menu and body background"
+    },
+    "surface": {
+      "type": "color",
+      "value": "{color.paper}",
+      "source": "alias of plan-card background"
+    },
+    "text": {
+      "type": "color",
+      "value": "{color.ink}",
+      "source": "alias of nav-link color"
+    },
+    "muted": {
+      "type": "color",
+      "value": "{color.muted}",
+      "source": "alias of blog-card color"
+    },
+    "accent": {
+      "type": "color",
+      "value": "{color.link}",
+      "source": "alias of logo color, the painted blue"
+    },
+    "border": {
+      "type": "color",
+      "value": "{color.hairline}",
+      "source": "alias of product-menu borderTopColor"
+    },
+    "on-accent": {
+      "type": "color",
+      "value": "{color.hero-ink}",
+      "source": "alias of hero-cta text, white on the black button"
+    },
+    "hero-text": {
+      "type": "color",
+      "value": "{color.hero-ink}",
+      "source": "alias of hero-title color on the gradient"
+    }
+  },
+  "component": {
+    "button": {
+      "background": {
+        "type": "color",
+        "value": "rgb(0, 0, 0)",
+        "source": "computed backgroundColor of hero-cta default on overflow.io"
+      },
+      "text": {
+        "type": "color",
+        "value": "rgb(255, 255, 255)",
+        "source": "computed color of hero-cta default on overflow.io"
+      },
+      "radius": {
+        "type": "dimension",
+        "value": "{radius.button}",
+        "source": "alias"
+      },
+      "height": {
+        "type": "dimension",
+        "value": "{size.button-height}",
+        "source": "alias"
+      },
+      "padding": {
+        "type": "dimension",
+        "value": "{space.button-x}",
+        "source": "alias of hero-cta paddingLeft"
+      }
+    },
+    "nav-link": {
+      "text": {
+        "type": "color",
+        "value": "rgb(0, 0, 0)",
+        "source": "computed color of nav-link default on overflow.io"
+      },
+      "hover": {
+        "type": "color",
+        "value": "rgb(37, 154, 239)",
+        "source": "computed color of nav-link hover on overflow.io"
+      },
+      "pressed": {
+        "type": "color",
+        "value": "rgb(18, 75, 116)",
+        "source": "computed color of nav-link pressed on overflow.io"
+      }
+    },
+    "card": {
+      "background": {
+        "type": "color",
+        "value": "rgb(255, 255, 255)",
+        "source": "computed backgroundColor of plan-card default on overflow.io"
+      },
+      "radius": {
+        "type": "dimension",
+        "value": "{radius.card}",
+        "source": "alias"
+      }
+    },
+    "menu": {
+      "background": {
+        "type": "color",
+        "value": "rgb(255, 255, 255)",
+        "source": "computed backgroundColor of product-menu default on overflow.io"
+      },
+      "border": {
+        "type": "color",
+        "value": "rgb(218, 220, 224)",
+        "source": "computed borderTopColor of product-menu default on overflow.io"
+      },
+      "height": {
+        "type": "dimension",
+        "value": "{size.menu-height}",
+        "source": "alias"
+      }
+    }
+  }
+}

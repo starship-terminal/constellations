@@ -1,31 +1,32 @@
-# Components
+# VSCO components
 
-Measured on the live preview tab at 1169×731 on 2026-11-19. The preview browser did not produce screenshot frames, so there are no crops.
+Public marketing site and the login wall, measured 2026-11-21. Values are token names. Crops are the live elements.
 
-| Component | Where | What was measured |
-|---|---|---|
-| Button, gold | Home, Try VSCO for free | 35px tall, 999px radius, #ffbc3c fill, #000000 text, 600 weight, 11.4307px, 1.14307px tracking, uppercase |
-| Button, solid | Home, Explore VSCO and nav Try for free | Black fill, white text, 2px black border on the nav size, 999px radius |
-| Button, outline | Home, Explore creative tools | Transparent fill, 1px #000000 border, black text |
-| Button, nav outline | Home, Log in | 32px tall, 1px #d9d9d9 border, black text, 13px / 500 |
-| Button, pink | Home promo bar, Learn more | 30px tall, #ff0877 fill, white text, 700 weight |
-| Button, disabled | Login submit while fields were empty | 42px tall, 328px wide, #aaaaaa fill, 15px / 500, uppercase |
-| Button, oauth | Login, Google and Apple | 46px tall, 2px #dddddd border, transparent fill, 100px radius |
-| Link | Login, Forgot password? | Transparent, black, 15px / 500, no underline measured |
-| Text field | Login identity and password | Box 40px tall, 328px wide, 4px radius, 1px #d9d9d9 resting border, 0 16px padding. Input itself is 14px / 18px |
-| Field label | Login Email* | 11px / 500 / 14px, #525252 |
-| Focus | Login identity after focus() | Box border became #525252. Outline stayed none |
-| Badge | Plans, Best for business | #e9f8ff fill, #386584 text, 4px radius, 9.67216px / 600 |
-| Badge | Plans, Most popular | #edba58 fill, #000000 text, 4px radius |
-| Badge | Home, NEW | White fill, black text, 4px radius, 13.1893px / 600 |
-| Card | Plans, VSCO One | #000000 fill, white text, 8.79287px radius, 17.5857px padding, 358×649 |
-| Card | Plans, Pro | #ffffff fill, 1px rgba(0,0,0,0.1) border, same radius and padding |
-| Nav | Home and plans | White, 88px tall, 0 40px padding, no shadow |
-| Brand | Marketing nav | 44×44 link |
+| Component | States | Crop | Notes |
+|---|---|---|---|
+| accordion | default, selected | [components/crops/accordion-default.png](components/crops/accordion-default.png) | Plans FAQ row. Selected opens the answer on the same page. No dialog. |
+| badge | default | [components/crops/badge-default.png](components/crops/badge-default.png) | 4px radius. The NEW chip in the promo bar. |
+| button-banner | default, hover | [components/crops/button-banner-default.png](components/crops/button-banner-default.png) | Fill `light.accent.pink`. Hover fill `light.accent.pinkHover` and the label went grey. |
+| button-gold | default, hover, pressed | [components/crops/button-gold-default.png](components/crops/button-gold-default.png) | Fill `light.accent.gold`, text `light.text.onGold`, height `core.size.button`, radius `core.radius.pill`. Hover fill `light.accent.goldHover`. |
+| button-gold-focus-visible | default | [components/crops/button-gold-focus-visible-default.png](components/crops/button-gold-focus-visible-default.png) |  |
+| button-primary | default, hover | [components/crops/button-primary-default.png](components/crops/button-primary-default.png) | Fill `light.action.primary`, text `light.text.onAccent`, height `core.size.buttonSmall`. Hover computed style did not change. |
+| button-primary-focus-visible | default | [components/crops/button-primary-focus-visible-default.png](components/crops/button-primary-focus-visible-default.png) |  |
+| card | default | [components/crops/card-default.png](components/crops/card-default.png) | What's new card on the dark band. |
+| drawer-link | default | [components/crops/drawer-link-default.png](components/crops/drawer-link-default.png) | PRICING in the phone drawer. |
+| hero-heading | default | [components/crops/hero-heading-default.png](components/crops/hero-heading-default.png) | 100px / 500, black, two lines at 90px line height. |
+| icon-button | default, pressed | [components/crops/icon-button-default.png](components/crops/icon-button-default.png) | Phone menu control, 24px. |
+| menu-link | default, hover | [components/crops/menu-link-default.png](components/crops/menu-link-default.png) | Opens from PRODUCTS. 16px / 400. Transition 450ms. |
+| nav-menu | default, hover, pressed | [components/crops/nav-menu-default.png](components/crops/nav-menu-default.png) | 15px / 500, transparent, 8px vertical padding. Focus-visible paints a 1px auto outline. |
+| nav-menu-focus-visible | default | [components/crops/nav-menu-focus-visible-default.png](components/crops/nav-menu-focus-visible-default.png) |  |
+| plan-cta | default | [components/crops/plan-cta-default.png](components/crops/plan-cta-default.png) | SELECT VSCO ONE. Not clicked. Purchase path. |
+| tab | default, selected | [components/crops/tab-default.png](components/crops/tab-default.png) | 11px / 600, white on the dark band. Selected is a local pane, not a route. |
+| text-field | default, focus | [components/crops/text-field-default.png](components/crops/text-field-default.png) | Login email input when the password form loaded. The later visit to the same URL showed an email-only step instead. |
+| text-field-password | default | [components/crops/text-field-password-default.png](components/crops/text-field-password-default.png) |  |
 
 ## Gaps
 
-- Hover, pressed, and loading were not forced on a live control. Declared hover includes `.button.is-outline:hover` filling with `var(--black)` and `.button.is-alternate:hover` filling `#e4e4e4`.
-- Checkbox, radio, switch, select, textarea, tabs, menu, tooltip, dialog, toast, avatar, and table were not opened as product UI. Cookie-center controls were present and were not measured as product components.
-- An invalid email blur painted no error. Destructive confirmation was not present.
-- No component crops. The preview browser returned "The browser is not producing screenshot frames."
+- Text area, select, checkbox, radio, switch, tooltip, toast, table, avatar: not present on the captured public pages.
+- Dialog: the OneTrust preference center exists and was not opened. No product dialog was opened.
+- Disabled, error, and loading on marketing buttons: not present. The login CONTINUE button is disabled until an email is typed. Email was not typed.
+- Hover on the ink button did not change computed color. Gold and pink did.
+- Focus ring colour is the browser auto outline, not a custom colour.

@@ -3,358 +3,97 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>cron.com style guide</title>
-<meta name="description" content="cron.com design tokens and the public signed-out surface's components, rendered from tokens.json with the declared --gray*/--chronos var layer and the measured computed styles.">
+<title>Curater style guide</title>
 <style>
-:root {
-  --font-family-sans: ABCDiatype, -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --font-family-fallback: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-size-title: 24px;
-  --font-size-body: 16px;
-  --font-size-field: 14px;
-  --font-size-label: 12px;
-  --font-size-teaser: 20px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-3xl: 30px;
-  --font-size-4xl: 36px;
-  --font-size-5xl: 48px;
-  --color-curater-background: #f2f2f2;
-  --color-curater-cyan-light: #5cf4ff;
-  --color-curater-gray-100: #fbfbfb;
-  --color-curater-gray-200: #f9f6f6;
-  --color-curater-gray-dark: #333333;
-  --color-curater-gray-light: #afafaf;
-  --color-curater-gray-medium: #7c7c7c;
-  --color-curater-gray-muted: #d4d4d4;
-  --color-curater-green: #22c55e;
-  --color-curater-green-background: rgba(34, 197, 94, 0.15);
-  --color-curater-green-dark: rgba(0, 150, 48, 0.8);
-  --color-curater-pink: #d83acb;
-  --color-curater-pink-light: #ffeefd;
-  --color-curater-red: #e20000;
-  --color-curater-red-dark: rgba(184, 0, 0, 0.8);
-  --color-curater-red-light: rgba(226, 0, 0, 0.2);
-  --color-curater-yellow: #b26200;
-  --color-curater-yellow-light: #fff296;
-  --color-selection-aqua: #96ffe0;
-  --color-selection-blue: #86ebff;
-  --color-selection-green: #85ff6f;
-  --color-selection-lavender: #beaaff;
-  --color-selection-lightblue: #afcfff;
-  --color-selection-orange: #ff8746;
-  --color-selection-pink: #ff7cf8;
-  --color-selection-red: #ff4144;
-  --color-selection-yellow: #fffd6f;
-  --color-tailwind-amber-500: #fe9a00;
-  --color-tailwind-amber-600: #e17100;
-  --color-tailwind-amber-950: #461901;
-  --color-tailwind-black: #000000;
-  --color-tailwind-blue-200: #bedbff;
-  --color-tailwind-blue-50: #eff6ff;
-  --color-tailwind-blue-600: #155dfc;
-  --color-tailwind-blue-700: #1447e6;
-  --color-tailwind-emerald-500: #00bc7d;
-  --color-tailwind-gray-50: #f9fafb;
-  --color-tailwind-gray-600: #4a5565;
-  --color-tailwind-green-100: #dcfce7;
-  --color-tailwind-green-200: #b9f8cf;
-  --color-tailwind-green-50: #f0fdf4;
-  --color-tailwind-green-500: #00c950;
-  --color-tailwind-green-600: #00a63e;
-  --color-tailwind-green-700: #008236;
-  --color-tailwind-green-800: #016630;
-  --color-tailwind-neutral-100: #f5f5f5;
-  --color-tailwind-neutral-200: #e5e5e5;
-  --color-tailwind-neutral-400: #a1a1a1;
-  --color-tailwind-neutral-500: #737373;
-  --color-tailwind-orange-200: #ffd6a7;
-  --color-tailwind-orange-50: #fff7ed;
-  --color-tailwind-orange-500: #ff6900;
-  --color-tailwind-orange-600: #f54900;
-  --color-tailwind-orange-700: #ca3500;
-  --color-tailwind-purple-200: #e9d4ff;
-  --color-tailwind-purple-50: #faf5ff;
-  --color-tailwind-purple-600: #9810fa;
-  --color-tailwind-purple-700: #8200db;
-  --color-tailwind-purple-800: #6e11b0;
-  --color-tailwind-red-50: #fef2f2;
-  --color-tailwind-red-500: #fb2c36;
-  --color-tailwind-red-600: #e7000b;
-  --color-tailwind-white: #ffffff;
-  --color-tailwind-yellow-200: #fff085;
-  --color-tailwind-yellow-50: #fefce8;
-  --color-tailwind-yellow-500: #f0b100;
-  --color-tailwind-yellow-600: #d08700;
-  --color-tailwind-yellow-700: #a65f00;
-  --color-chart-1: #f54900;
-  --color-chart-2: #009689;
-  --color-chart-3: #104e64;
-  --color-chart-4: #ffb900;
-  --color-chart-5: #fe9a00;
-  --radius-pill: 9999px;
-  --radius-card: 24px;
-  --radius-lg: 12px;
-  --radius-md: 8px;
-  --radius-sm: 6px;
-  --radius-base: 10px;
-  --radius-xl: 16px;
-  --shadow-sm: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-  --shadow-md: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px;
-  --shadow-xl: rgba(0, 0, 0, 0.04) 0px 2px 4px -1px, rgba(0, 0, 0, 0.12) 0px 12px 32px -4px;
-  --shadow-card-lift: rgba(0, 0, 0, 0.02) 0px 14px 54px 0px;
-  --spacing-1: 4px;
-  --spacing-10: 40px;
-  --spacing-12: 48px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-5: 20px;
-  --spacing-6: 24px;
-  --spacing-8: 32px;
-  --spacing-unit: 4px;
-  --spacing-curation-detail: 56px;
-  --spacing-header-h: 56px;
-  --spacing-mobile-bar-h: 56px;
-  --spacing-sidebar-w: 80px;
-  --spacing-content-w: 480px;
-  --motion-fast: .15s cubic-bezier(.19, 1, .22, 1);
-  --motion-normal: .2s cubic-bezier(.19, 1, .22, 1);
-  --motion-slow: .3s cubic-bezier(.19, 1, .22, 1);
-  --motion-slower: .5s cubic-bezier(.19, 1, .22, 1);
-  --motion-ease-expo: cubic-bezier(.19, 1, .22, 1);
-  --motion-default-duration: 0.15s;
-  --motion-default-easing: cubic-bezier(.4,0,.2,1);
-  --layout-dropdown: 10;
-  --layout-fixed: 30;
-  --layout-modal: 60;
-  --layout-overlay: 50;
-  --layout-popover: 70;
-  --layout-sidebar: 40;
-  --layout-sticky: 20;
-  --layout-tooltip: 80;
-  --color-background-page: #ffffff;
-  --color-background-surface: #ffffff;
-  --color-background-app-field: #f2f2f2;
-  --color-background-muted-fill: #f4f4f5;
-  --color-background-accent-fill: #f4f4f5;
-  --color-background-popover: #ffffff;
-  --color-background-sidebar: #fafafa;
-  --color-background-hover-fill: var(--color-curater-background);
-  --color-text-text: #09090b;
-  --color-text-text-strong: #18181b;
-  --color-text-muted: #71717b;
-  --color-text-accent-text: #18181b;
-  --color-text-popover-text: #09090b;
-  --color-text-on-primary: #fafafa;
-  --color-text-secondary-text: var(--color-curater-gray-medium);
-  --color-text-label: var(--color-curater-gray-light);
-  --color-border-border: #eeeef1;
-  --color-border-input: #e4e4e7;
-  --color-border-ring: #d4d4d8;
-  --color-border-sidebar-border: #e4e4e7;
-  --color-action-destructive: #e7000b;
-  --component-nav-rail-height: 328px;
-  --component-nav-button: 48px;
-  --component-nav-active-fill: #f2f2f2;
-  --component-signin-height: 58px;
-  --component-signin-width: 259.45px;
-  --component-signin-fill: #ffffff;
-  --component-save-height: 28px;
-  --component-search-width: 170px;
-  --component-tab-height: 40px;
-  --component-theme-card: 271px;
-  --component-trend-card: 492.39px;
-  --component-trend-card-radius: 24px;
-  --component-sso-width: 350px;
-  --component-back-button: 36px;
-  --component-options-button: 32px;
-  --component-tastescope-height: 42px;
-  --component-profile-item: 380.27px;
-  --component-item-menu: 28px;
-  --component-m-nav-bar: 40px;
-  --component-m-nav-button: 40px;
-  --component-taste-panel: 256px;
-  --component-taste-canvas: 1360px;
-  --component-state-track-button-state-track: {'default': var(---backgroundColor----oklch-1-0-0-----color----oklch-0-141-0-005-285-823-----transform----none-), 'hover': var(---backgroundColor----rgb-242--242--242-----color----oklch-0-21-0-006-285-885-----transform----none-), 'pressed': var(---backgroundColor----rgb-242--242--242-----color----oklch-0-21-0-006-285-885-----transform----matrix-1--0--0--1--0--2--)};
-  --component-state-track-icon-state-track: {'default': var(---backgroundColor----rgba-0--0--0--0-----color----oklch-0-552-0-016-285-938-----transform----none-), 'hover': var(---backgroundColor----oklch-0-967-0-001-286-375-----color----oklch-0-141-0-005-285-823-----transform----none-), 'pressed': var(---backgroundColor----oklch-0-967-0-001-286-375-----color----oklch-0-141-0-005-285-823-----transform----none-)};
-  --component-focus-ring: 2px solid oklch(0.871 0.006 286.286) offset 2px;
-  --sg-sans: "euclidCircularALightWebS", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "euclidCircularALightWebS", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
-}
-[data-mode="dark"], .dark {
-
-}
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-text-primary, #000); background: var(--light-color-background-surface-1, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
-.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
-.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
-.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
-.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-spacing-header-h, 52px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
-.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
-.navbar .sp { flex: 1; }
-.navbar .link { color: var(--color-brand-ink, #030302); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-large, 48px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
-.btn.primary { background: var(--light-color-action-primary, #030302); color: var(--light-color-text-on-primary, #fff); height: var(--component-button-height-nav, 36px); font-size: 14px; }
-.btn.light { background: var(--light-color-background-card, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
-.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--light-color-border-border, rgba(3,3,2,.09)); }
-.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--light-color-background-page, #fcf9f7) 100%); }
-.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 18px; font-size: 13px; background: var(--light-color-background-card, #fff); border-radius: var(--radius-2xl, 16px); }
-.tile .img { height: 100px; background: var(--light-color-background-muted, rgba(3,3,2,.04)); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
-.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
-.tile .sub { opacity: .65; font-size: 12px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
-.toggle { display: inline-flex; background: var(--light-color-background-muted, rgba(3,3,2,.04)); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
-.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
-.toggle .on { background: var(--light-color-background-card, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+  :root {
+    --page: oklch(1 0 0);
+    --text: oklch(.141 .005 285.823);
+    --muted: oklch(.552 .016 285.938);
+    --border: oklch(.95 .004 286.32);
+    --sans: ABCDiatype, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--sans); }
+  main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 40px 0 12px; }
+  p { max-width: 68ch; color: var(--muted); }
+  .grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .sw { display: flex; gap: 8px; align-items: center; min-width: 220px; }
+  .sw i { width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--border); display: block; }
+  .sw b { display: block; font-size: 12px; font-weight: 500; }
+  .sw span { display: block; font-size: 11px; color: var(--muted); }
+  .pill { display: inline-flex; align-items: center; gap: 8px; height: 58px; padding: 0 24px; border: 1px solid oklch(0.95 0.004 286.32); border-radius: 9999px; background: #fff; color: oklch(0.141 0.005 285.823); font-weight: 500; }
+  .fill { display: inline-flex; align-items: center; justify-content: center; height: 52px; min-width: 240px; padding: 0 24px; border-radius: 9999px; background: oklch(.21 .006 285.885); color: oklch(.985 0 0); font-weight: 500; }
+  .menu { width: 180px; background: #fff; border: 1px solid oklch(.95 .004 286.32); border-radius: 12px; padding: 4px; }
+  .menu div { padding: 10px 12px; font-size: 14px; color: var(--muted); }
+  .note { font-size: 13px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>cron.com style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">cron.com, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #cafc00 lime brand, the #1e1e1e primary pill fills on white text, the white page with its #161616 promo bar, the 12-hue category palette, and Euclid Circular A at 600 for every heading. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from cron.com on 2026-11-12, signed out, in headless Chromium. The app behind Login and Sign up was never entered — the marketing home, /blog, /changelog and a blog post are the public surface, and nothing was submitted or signed into. Helvetica Neue is a system face — samples render in it directly.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">A 120px dark header carries the Cron wordmark, Blog / Changelog / Docs / Login links and the 46px #ff4700 Sign up pill glowing under --glow; a #161412 banner below it announces the Notion Calendar rebrand. The home hero sets at 140px Helvetica Neue 700 on #161412; the light content pages hold 40px index headings, 676px article entries and 16px body copy.</p>
-  <div class="mock">
-    <div class="navbar"><span class="wm">Cron</span><span class="link">Blog</span><span class="link">Changelog</span><span class="link">Docs</span><span class="sp"></span><span class="link">Login</span><span class="btn primary" style="height:46px;font-size:22px;border-radius:9999px">Sign up</span></div>
-    <div class="hero" style="background:var(--light-color-background-surface-1,#fff);font-family:var(--sg-sans);font-weight:600">UI kits, templates and fonts<br>made by real designers<small>4,000+ packs for Figma, Framer, Webflow and code by 570+ independent designers.</small><span class="btn primary" style="height:46px;font-size:16px;border-radius:10px">Get full access</span> <span class="btn" style="height:46px;font-size:16px;border-radius:10px;background:var(--light-color-action-secondary,#efefef);color:#000">Browse the catalog</span></div>
-  </div>
-
-  <h2 class="sh">The catalog</h2>
-  <p class="lead">/components and /catalog run a 259px library list (34px rows on a 4-7% ink fill) beside an asset grid: filters sit in 30px fields and cards carry a title, a live count and a "from $N" price under a 16:9 preview.</p>
-  <div class="mock" style="padding:20px">
-    <div class="grid">
-      <div class="tile" style="border-radius:10px"><div class="img" style="border-radius:6px"></div><b style="font-family:var(--sg-sans);font-weight:500;font-size:18px">Blank 3 Pro</b><span class="sub">UI kit — from $89</span></div>
-      <div class="tile" style="border-radius:10px"><div class="img" style="border-radius:6px"></div><b style="font-family:var(--sg-sans);font-weight:500;font-size:18px">ElementX</b><span class="sub">Design system — from $78</span></div>
-    </div>
-  </div>
-
-  <h2 class="sh">The dark furniture</h2>
-  <p class="lead">Cron splits in two: the marketing home is a dark #161412 surface with #ccc text, white links and the #ff4700 Sign up pill glowing under the declared --glow var; /blog, /changelog and the posts are a light Next.js app — white page, #1a1a1a text, the same orange on every link, and the declared 14-step --gray10..--gray900 ramp underneath.</p>
-  <div class="mock" style="padding:24px;background:var(--color-brand-ink,#030302);border-radius:var(--radius-3xl,24px)">
-    <div style="color:#fff;font:600 28px/1.2 var(--sg-sans);margin-bottom:14px">One plan opens all of them.</div>
-    <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.8)"><span>Download app</span><span>Careers</span><span>Terms</span><span>Privacy</span><span>Instagram</span><span>X</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The core set carries the brand (#cafc00 lime, #063bf5 circa), the 12-hue --category-* palette, the --catalog-tint-* chips, --status-*/--indicators-*/--viz-* and the toast skin; the light roles alias the --background-*/--text-icons-*/--stroke-* semantic layer. A real dark set ships too — resolved under data-theme=dark.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">Cron keeps one radius language: 9999px on the Sign up pill, 4px on the rebrand banner, 16px on post media (full-bleed on mobile). Type is Helvetica Neue end to end — the hero sets at 140px/90% with -3px tracking, 80px under the mobile breakpoint.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">One family: <code>Euclid Circular A</code> carries everything — 600 on every heading (68px hero, 40px prices, 38px mobile), 500 on buttons and card titles, 400 on body/nav text, 13-16px sizes throughout. Samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-* and semantic layer off the same-origin Next.js sheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <h1>Curater</h1>
+  <p>Public signed-out surface, captured 2026-11-21 from curater.org. One light theme. Values come from tokens.json.</p>
+  <h2>Roles</h2>
+  <div class="grid"><div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>page</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>surface</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>raised</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:rgba(0, 0, 0, 0.5)"></i><div><b>overlay</b><span>rgba(0, 0, 0, 0.5)</span></div></div>
+<div class="sw"><i style="background:rgba(0, 0, 0, 0.5)"></i><div><b>scrim</b><span>rgba(0, 0, 0, 0.5)</span></div></div>
+<div class="sw"><i style="background:oklch(.141 .005 285.823)"></i><div><b>text.primary</b><span>oklch(.141 .005 285.823)</span></div></div>
+<div class="sw"><i style="background:oklch(.552 .016 285.938)"></i><div><b>text.secondary</b><span>oklch(.552 .016 285.938)</span></div></div>
+<div class="sw"><i style="background:oklch(.985 0 0)"></i><div><b>text.onAccent</b><span>oklch(.985 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(.95 .004 286.32)"></i><div><b>border.default</b><span>oklch(.95 .004 286.32)</span></div></div>
+<div class="sw"><i style="background:oklch(.92 .004 286.32)"></i><div><b>border.strong</b><span>oklch(.92 .004 286.32)</span></div></div>
+<div class="sw"><i style="background:oklch(.871 .006 286.286)"></i><div><b>border.focus</b><span>oklch(.871 .006 286.286)</span></div></div>
+<div class="sw"><i style="background:oklch(.21 .006 285.885)"></i><div><b>accent.default</b><span>oklch(.21 .006 285.885)</span></div></div>
+<div class="sw"><i style="background:#22c55e"></i><div><b>status.success</b><span>#22c55e</span></div></div>
+<div class="sw"><i style="background:#b26200"></i><div><b>status.warning</b><span>#b26200</span></div></div>
+<div class="sw"><i style="background:oklch(.577 .245 27.325)"></i><div><b>status.danger</b><span>oklch(.577 .245 27.325)</span></div></div>
+<div class="sw"><i style="background:oklch(98.5% 0 0)"></i><div><b>sidebar.background</b><span>oklch(98.5% 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(14.1% .005 285.823)"></i><div><b>sidebar.foreground</b><span>oklch(14.1% .005 285.823)</span></div></div>
+<div class="sw"><i style="background:oklch(96.7% .001 286.375)"></i><div><b>sidebar.accent</b><span>oklch(96.7% .001 286.375)</span></div></div>
+<div class="sw"><i style="background:oklch(92% .004 286.32)"></i><div><b>sidebar.border</b><span>oklch(92% .004 286.32)</span></div></div>
+<div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>component.button.background</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(0.141 0.005 285.823)"></i><div><b>component.button.text</b><span>oklch(0.141 0.005 285.823)</span></div></div>
+<div class="sw"><i style="background:oklch(0.95 0.004 286.32)"></i><div><b>component.button.border</b><span>oklch(0.95 0.004 286.32)</span></div></div>
+<div class="sw"><i style="background:oklch(.21 .006 285.885)"></i><div><b>component.searchButton.background</b><span>oklch(.21 .006 285.885)</span></div></div>
+<div class="sw"><i style="background:oklch(.985 0 0)"></i><div><b>component.searchButton.text</b><span>oklch(.985 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>component.menu.background</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(0.95 0.004 286.32)"></i><div><b>component.menu.border</b><span>oklch(0.95 0.004 286.32)</span></div></div></div>
+  <h2>Brand</h2>
+  <div class="grid"><div class="sw"><i style="background:#fbfbfb"></i><div><b>gray-100</b><span>#fbfbfb</span></div></div>
+<div class="sw"><i style="background:#f9f6f6"></i><div><b>gray-200</b><span>#f9f6f6</span></div></div>
+<div class="sw"><i style="background:#333333"></i><div><b>gray-dark</b><span>#333333</span></div></div>
+<div class="sw"><i style="background:#7c7c7c"></i><div><b>gray-medium</b><span>#7c7c7c</span></div></div>
+<div class="sw"><i style="background:#afafaf"></i><div><b>gray-light</b><span>#afafaf</span></div></div>
+<div class="sw"><i style="background:#d4d4d4"></i><div><b>gray-muted</b><span>#d4d4d4</span></div></div>
+<div class="sw"><i style="background:#f2f2f2"></i><div><b>background</b><span>#f2f2f2</span></div></div>
+<div class="sw"><i style="background:#fff296"></i><div><b>yellow-light</b><span>#fff296</span></div></div>
+<div class="sw"><i style="background:#b26200"></i><div><b>yellow</b><span>#b26200</span></div></div>
+<div class="sw"><i style="background:#5cf4ff"></i><div><b>cyan-light</b><span>#5cf4ff</span></div></div>
+<div class="sw"><i style="background:#e20000"></i><div><b>red</b><span>#e20000</span></div></div>
+<div class="sw"><i style="background:oklch(from #e20000 l c h / .2)"></i><div><b>red-light</b><span>oklch(from #e20000 l c h / .2)</span></div></div>
+<div class="sw"><i style="background:oklch(from #e20000 calc(l*.8) c h / .8)"></i><div><b>red-dark</b><span>oklch(from #e20000 calc(l*.8) c h / .8)</span></div></div>
+<div class="sw"><i style="background:#d83acb"></i><div><b>pink</b><span>#d83acb</span></div></div>
+<div class="sw"><i style="background:#ffeefd"></i><div><b>pink-light</b><span>#ffeefd</span></div></div>
+<div class="sw"><i style="background:#22c55e"></i><div><b>green</b><span>#22c55e</span></div></div>
+<div class="sw"><i style="background:oklch(from #22c55e calc(l*.8) c h / .8)"></i><div><b>green-dark</b><span>oklch(from #22c55e calc(l*.8) c h / .8)</span></div></div>
+<div class="sw"><i style="background:oklch(from #22c55e l c h / .15)"></i><div><b>green-background</b><span>oklch(from #22c55e l c h / .15)</span></div></div>
+<div class="sw"><i style="background:#85FF6F"></i><div><b>selection-green</b><span>#85FF6F</span></div></div>
+<div class="sw"><i style="background:#86EBFF"></i><div><b>selection-blue</b><span>#86EBFF</span></div></div>
+<div class="sw"><i style="background:#96FFE0"></i><div><b>selection-aqua</b><span>#96FFE0</span></div></div>
+<div class="sw"><i style="background:#AFCFFF"></i><div><b>selection-lightblue</b><span>#AFCFFF</span></div></div>
+<div class="sw"><i style="background:#BEAAFF"></i><div><b>selection-lavender</b><span>#BEAAFF</span></div></div>
+<div class="sw"><i style="background:#FF4144"></i><div><b>selection-red</b><span>#FF4144</span></div></div>
+<div class="sw"><i style="background:#ff8746"></i><div><b>selection-orange</b><span>#ff8746</span></div></div>
+<div class="sw"><i style="background:#FF7CF8"></i><div><b>selection-pink</b><span>#FF7CF8</span></div></div>
+<div class="sw"><i style="background:#FFFD6F"></i><div><b>selection-yellow</b><span>#FFFD6F</span></div></div></div>
+  <h2>Controls</h2>
+  <p class="pill">Sign in or create account</p>
+  <p><span class="fill">Search</span></p>
+  <div class="menu"><div>Settings</div><div>Extension</div><div>Privacy</div><div>Terms</div><div>About</div><div>Sign in</div></div>
+  <p class="note">The pill is the signed-out Google action. The filled pill is the phone search submit. The menu is the settings menu. Hover, pressed, disabled, and dark theme were not captured as separate painted states.</p>
 </main>
-<script>
-const TOK = {"core":{"font":{"family":{"sans":{"v":"ABCDiatype, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif","t":"fontFamily","s":"computed fontFamily of every measured component (raw/components-computed.json); @font-face faces for ABCDiatype are declared in the app sheets (raw/css-vars.json)","d":"ABCDiatype — the product's own face on every surface."},"fallback":{"v":"ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"","t":"fontFamily","s":"css-var --font-sans (light); css-var --font-sans resolved (raw/css-vars.json)","d":"The Tailwind system-ui stack that backs the ABCDiatype chain."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of nav-button default (raw/components-computed.json)","d":"Measured 400 — body copy, icon glyphs."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of signin-btn default (raw/components-computed.json)","d":"Measured 500 — buttons, tabs, headings, titles."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light); css-var --font-weight-semibold resolved (raw/css-vars.json)","d":"The declared 600 weight."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light); css-var --font-weight-bold resolved (raw/css-vars.json)","d":"The declared 700 weight."}},"size":{"title":{"v":"24px","t":"fontSize","s":"css-var --text-2xl (light); css-var --text-2xl resolved (raw/css-vars.json)","d":"The 24px item/curation title. Declared --text-2xl."},"body":{"v":"16px","t":"fontSize","s":"css-var --text-base (light); css-var --text-base resolved (raw/css-vars.json)","d":"The 16px base size. Declared --text-base."},"field":{"v":"14px","t":"fontSize","s":"css-var --text-sm (light); css-var --text-sm resolved (raw/css-vars.json)","d":"The 14px field/meta size. Declared --text-sm."},"label":{"v":"12px","t":"fontSize","s":"css-var --text-xs (light); css-var --text-xs resolved (raw/css-vars.json)","d":"The 12px chip/label size. Declared --text-xs."},"teaser":{"v":"20px","t":"fontSize","s":"css-var --text-xl (light); css-var --text-xl resolved (raw/css-vars.json)","d":"The 20px TasteScope teaser. Declared --text-xl."},"lg":{"v":"18px","t":"fontSize","s":"css-var --text-lg (light); css-var --text-lg resolved (raw/css-vars.json)","d":"The 18px step."},"xl":{"v":"20px","t":"fontSize","s":"css-var --text-xl (light); css-var --text-xl resolved (raw/css-vars.json)","d":"The 20px step."},"3xl":{"v":"30px","t":"fontSize","s":"css-var --text-3xl (light); css-var --text-3xl resolved (raw/css-vars.json)","d":"The 30px step."},"4xl":{"v":"36px","t":"fontSize","s":"css-var --text-4xl (light); css-var --text-4xl resolved (raw/css-vars.json)","d":"The 36px step."},"5xl":{"v":"48px","t":"fontSize","s":"css-var --text-5xl (light); css-var --text-5xl resolved (raw/css-vars.json)","d":"The 48px step."}}},"color":{"curater":{"background":{"v":"#f2f2f2","t":"color","s":"css-var --Curater-background (light); css-var --Curater-background resolved (raw/css-vars.json)","d":"The --Curater-background product-namespace value."},"cyan-light":{"v":"#5cf4ff","t":"color","s":"css-var --Curater-cyan-light (light); css-var --Curater-cyan-light resolved (raw/css-vars.json)","d":"The --Curater-cyan-light product-namespace value."},"gray-100":{"v":"#fbfbfb","t":"color","s":"css-var --Curater-gray-100 (light); css-var --Curater-gray-100 resolved (raw/css-vars.json)","d":"The --Curater-gray-100 product-namespace value."},"gray-200":{"v":"#f9f6f6","t":"color","s":"css-var --Curater-gray-200 (light); css-var --Curater-gray-200 resolved (raw/css-vars.json)","d":"The --Curater-gray-200 product-namespace value."},"gray-dark":{"v":"#333333","t":"color","s":"css-var --Curater-gray-dark (light); css-var --Curater-gray-dark resolved (raw/css-vars.json)","d":"The --Curater-gray-dark product-namespace value."},"gray-light":{"v":"#afafaf","t":"color","s":"css-var --Curater-gray-light (light); css-var --Curater-gray-light resolved (raw/css-vars.json)","d":"The --Curater-gray-light product-namespace value."},"gray-medium":{"v":"#7c7c7c","t":"color","s":"css-var --Curater-gray-medium (light); css-var --Curater-gray-medium resolved (raw/css-vars.json)","d":"The --Curater-gray-medium product-namespace value."},"gray-muted":{"v":"#d4d4d4","t":"color","s":"css-var --Curater-gray-muted (light); css-var --Curater-gray-muted resolved (raw/css-vars.json)","d":"The --Curater-gray-muted product-namespace value."},"green":{"v":"#22c55e","t":"color","s":"css-var --Curater-green (light); css-var --Curater-green resolved (raw/css-vars.json)","d":"The --Curater-green product-namespace value."},"green-background":{"v":"rgba(34, 197, 94, 0.15)","t":"color","s":"css-var --Curater-green-background (light); css-var --Curater-green-background resolved (raw/css-vars.json)","d":"The --Curater-green-background product-namespace value."},"green-dark":{"v":"rgba(0, 150, 48, 0.8)","t":"color","s":"css-var --Curater-green-dark (light); css-var --Curater-green-dark resolved (raw/css-vars.json)","d":"The --Curater-green-dark product-namespace value."},"pink":{"v":"#d83acb","t":"color","s":"css-var --Curater-pink (light); css-var --Curater-pink resolved (raw/css-vars.json)","d":"The --Curater-pink product-namespace value."},"pink-light":{"v":"#ffeefd","t":"color","s":"css-var --Curater-pink-light (light); css-var --Curater-pink-light resolved (raw/css-vars.json)","d":"The --Curater-pink-light product-namespace value."},"red":{"v":"#e20000","t":"color","s":"css-var --Curater-red (light); css-var --Curater-red resolved (raw/css-vars.json)","d":"The --Curater-red product-namespace value."},"red-dark":{"v":"rgba(184, 0, 0, 0.8)","t":"color","s":"css-var --Curater-red-dark (light); css-var --Curater-red-dark resolved (raw/css-vars.json)","d":"The --Curater-red-dark product-namespace value."},"red-light":{"v":"rgba(226, 0, 0, 0.2)","t":"color","s":"css-var --Curater-red-light (light); css-var --Curater-red-light resolved (raw/css-vars.json)","d":"The --Curater-red-light product-namespace value."},"yellow":{"v":"#b26200","t":"color","s":"css-var --Curater-yellow (light); css-var --Curater-yellow resolved (raw/css-vars.json)","d":"The --Curater-yellow product-namespace value."},"yellow-light":{"v":"#fff296","t":"color","s":"css-var --Curater-yellow-light (light); css-var --Curater-yellow-light resolved (raw/css-vars.json)","d":"The --Curater-yellow-light product-namespace value."}},"selection":{"aqua":{"v":"#96ffe0","t":"color","s":"css-var --Curater-selection-aqua (light); css-var --Curater-selection-aqua resolved (raw/css-vars.json)","d":"Tag/curation accent --Curater-selection-aqua — the 9-hue selection palette."},"blue":{"v":"#86ebff","t":"color","s":"css-var --Curater-selection-blue (light); css-var --Curater-selection-blue resolved (raw/css-vars.json)","d":"Tag/curation accent --Curater-selection-blue — the 9-hue selection palette."},"green":{"v":"#85ff6f","t":"color","s":"css-var --Curater-selection-green (light); css-var --Curater-selection-green resolved (raw/css-vars.json)","d":"Tag/curation accent --Curater-selection-green — the 9-hue selection palette."},"lavender":{"v":"#beaaff","t":"color","s":"css-var --Curater-selection-lavender (light); css-var --Curater-selection-lavender resolved (raw/css-vars.json)","d":"Tag/curation accent --Curater-selection-lavender — the 9-hue selection palette."},"lightblue":{"v":"#afcfff","t":"color","s":"css-var --Curater-selection-lightblue (light); css-var --Curater-selection-lightblue resolved (raw/css-vars.json)","d":"Tag/curation accent --Curater-selection-lightblue — the 9-hue selection palette."},"orange":{"v":"#ff8746","t":"color","s":"css-var --Curater-selection-orange (light); css-var --Curater-selection-orange resolved (raw/css-vars.json)","d":"Tag/curation accent --Curater-selection-orange — the 9-hue selection palette."},"pink":{"v":"#ff7cf8","t":"color","s":"css-var --Curater-selection-pink (light); css-var --Curater-selection-pink resolved (raw/css-vars.json)","d":"Tag/curation accent --Curater-selection-pink — the 9-hue selection palette."},"red":{"v":"#ff4144","t":"color","s":"css-var --Curater-selection-red (light); css-var --Curater-selection-red resolved (raw/css-vars.json)","d":"Tag/curation accent --Curater-selection-red — the 9-hue selection palette."},"yellow":{"v":"#fffd6f","t":"color","s":"css-var --Curater-selection-yellow (light); css-var --Curater-selection-yellow resolved (raw/css-vars.json)","d":"Tag/curation accent --Curater-selection-yellow — the 9-hue selection palette."}},"tailwind":{"amber-500":{"v":"#fe9a00","t":"color","s":"css-var --color-amber-500 (light); css-var --color-amber-500 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-amber-500."},"amber-600":{"v":"#e17100","t":"color","s":"css-var --color-amber-600 (light); css-var --color-amber-600 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-amber-600."},"amber-950":{"v":"#461901","t":"color","s":"css-var --color-amber-950 (light); css-var --color-amber-950 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-amber-950."},"black":{"v":"#000000","t":"color","s":"css-var --color-black (light); css-var --color-black resolved (raw/css-vars.json)","d":"Tailwind palette step --color-black."},"blue-200":{"v":"#bedbff","t":"color","s":"css-var --color-blue-200 (light); css-var --color-blue-200 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-blue-200."},"blue-50":{"v":"#eff6ff","t":"color","s":"css-var --color-blue-50 (light); css-var --color-blue-50 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-blue-50."},"blue-600":{"v":"#155dfc","t":"color","s":"css-var --color-blue-600 (light); css-var --color-blue-600 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-blue-600."},"blue-700":{"v":"#1447e6","t":"color","s":"css-var --color-blue-700 (light); css-var --color-blue-700 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-blue-700."},"emerald-500":{"v":"#00bc7d","t":"color","s":"css-var --color-emerald-500 (light); css-var --color-emerald-500 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-emerald-500."},"gray-50":{"v":"#f9fafb","t":"color","s":"css-var --color-gray-50 (light); css-var --color-gray-50 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-gray-50."},"gray-600":{"v":"#4a5565","t":"color","s":"css-var --color-gray-600 (light); css-var --color-gray-600 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-gray-600."},"green-100":{"v":"#dcfce7","t":"color","s":"css-var --color-green-100 (light); css-var --color-green-100 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-green-100."},"green-200":{"v":"#b9f8cf","t":"color","s":"css-var --color-green-200 (light); css-var --color-green-200 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-green-200."},"green-50":{"v":"#f0fdf4","t":"color","s":"css-var --color-green-50 (light); css-var --color-green-50 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-green-50."},"green-500":{"v":"#00c950","t":"color","s":"css-var --color-green-500 (light); css-var --color-green-500 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-green-500."},"green-600":{"v":"#00a63e","t":"color","s":"css-var --color-green-600 (light); css-var --color-green-600 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-green-600."},"green-700":{"v":"#008236","t":"color","s":"css-var --color-green-700 (light); css-var --color-green-700 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-green-700."},"green-800":{"v":"#016630","t":"color","s":"css-var --color-green-800 (light); css-var --color-green-800 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-green-800."},"neutral-100":{"v":"#f5f5f5","t":"color","s":"css-var --color-neutral-100 (light); css-var --color-neutral-100 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-neutral-100."},"neutral-200":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-200 (light); css-var --color-neutral-200 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-neutral-200."},"neutral-400":{"v":"#a1a1a1","t":"color","s":"css-var --color-neutral-400 (light); css-var --color-neutral-400 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-neutral-400."},"neutral-500":{"v":"#737373","t":"color","s":"css-var --color-neutral-500 (light); css-var --color-neutral-500 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-neutral-500."},"orange-200":{"v":"#ffd6a7","t":"color","s":"css-var --color-orange-200 (light); css-var --color-orange-200 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-orange-200."},"orange-50":{"v":"#fff7ed","t":"color","s":"css-var --color-orange-50 (light); css-var --color-orange-50 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-orange-50."},"orange-500":{"v":"#ff6900","t":"color","s":"css-var --color-orange-500 (light); css-var --color-orange-500 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-orange-500."},"orange-600":{"v":"#f54900","t":"color","s":"css-var --color-orange-600 (light); css-var --color-orange-600 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-orange-600."},"orange-700":{"v":"#ca3500","t":"color","s":"css-var --color-orange-700 (light); css-var --color-orange-700 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-orange-700."},"purple-200":{"v":"#e9d4ff","t":"color","s":"css-var --color-purple-200 (light); css-var --color-purple-200 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-purple-200."},"purple-50":{"v":"#faf5ff","t":"color","s":"css-var --color-purple-50 (light); css-var --color-purple-50 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-purple-50."},"purple-600":{"v":"#9810fa","t":"color","s":"css-var --color-purple-600 (light); css-var --color-purple-600 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-purple-600."},"purple-700":{"v":"#8200db","t":"color","s":"css-var --color-purple-700 (light); css-var --color-purple-700 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-purple-700."},"purple-800":{"v":"#6e11b0","t":"color","s":"css-var --color-purple-800 (light); css-var --color-purple-800 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-purple-800."},"red-50":{"v":"#fef2f2","t":"color","s":"css-var --color-red-50 (light); css-var --color-red-50 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-red-50."},"red-500":{"v":"#fb2c36","t":"color","s":"css-var --color-red-500 (light); css-var --color-red-500 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-red-500."},"red-600":{"v":"#e7000b","t":"color","s":"css-var --color-red-600 (light); css-var --color-red-600 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-red-600."},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light); css-var --color-white resolved (raw/css-vars.json)","d":"Tailwind palette step --color-white."},"yellow-200":{"v":"#fff085","t":"color","s":"css-var --color-yellow-200 (light); css-var --color-yellow-200 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-yellow-200."},"yellow-50":{"v":"#fefce8","t":"color","s":"css-var --color-yellow-50 (light); css-var --color-yellow-50 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-yellow-50."},"yellow-500":{"v":"#f0b100","t":"color","s":"css-var --color-yellow-500 (light); css-var --color-yellow-500 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-yellow-500."},"yellow-600":{"v":"#d08700","t":"color","s":"css-var --color-yellow-600 (light); css-var --color-yellow-600 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-yellow-600."},"yellow-700":{"v":"#a65f00","t":"color","s":"css-var --color-yellow-700 (light); css-var --color-yellow-700 resolved (raw/css-vars.json)","d":"Tailwind palette step --color-yellow-700."}},"chart":{"1":{"v":"#f54900","t":"color","s":"css-var --chart-1 (light); css-var --chart-1 resolved (raw/css-vars.json)","d":"Chart hue --chart-1."},"2":{"v":"#009689","t":"color","s":"css-var --chart-2 (light); css-var --chart-2 resolved (raw/css-vars.json)","d":"Chart hue --chart-2."},"3":{"v":"#104e64","t":"color","s":"css-var --chart-3 (light); css-var --chart-3 resolved (raw/css-vars.json)","d":"Chart hue --chart-3."},"4":{"v":"#ffb900","t":"color","s":"css-var --chart-4 (light); css-var --chart-4 resolved (raw/css-vars.json)","d":"Chart hue --chart-4."},"5":{"v":"#fe9a00","t":"color","s":"css-var --chart-5 (light); css-var --chart-5 resolved (raw/css-vars.json)","d":"Chart hue --chart-5."}}},"radius":{"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of signin-btn default (raw/components-computed.json)","d":"The 9999px pill (CTAs, chips, nav icons, item menu)."},"card":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of trend-card default (raw/components-computed.json)","d":"The 24px trend-card radius (declared --radius-2xl is 20px; the card computes 24px)."},"lg":{"v":"12px","t":"dimension","s":"css-var --radius-lg (light); css-var --radius-lg resolved (raw/css-vars.json)","d":"The declared 12px radius."},"md":{"v":"8px","t":"dimension","s":"css-var --radius-md (light); css-var --radius-md resolved (raw/css-vars.json)","d":"The declared 8px radius."},"sm":{"v":"6px","t":"dimension","s":"css-var --radius-sm (light); css-var --radius-sm resolved (raw/css-vars.json)","d":"The declared 6px radius."},"base":{"v":"10px","t":"dimension","s":"css-var --radius (light); css-var --radius resolved (raw/css-vars.json)","d":"The declared 10px base radius."},"xl":{"v":"16px","t":"dimension","s":"css-var --radius-xl (light); css-var --radius-xl resolved (raw/css-vars.json)","d":"The declared 16px radius."}},"shadow":{"sm":{"v":"rgba(0, 0, 0, 0.05) 0px 1px 2px 0px","t":"other","s":"css-var --shadow-sm resolved (raw/css-vars.json)","d":"The 1px/2px 5% card shadow on pills."},"md":{"v":"rgba(0, 0, 0, 0.1) 0px 4px 6px -1px","t":"other","s":"css-var --shadow-md resolved (raw/css-vars.json)","d":"The 4px/6px 10% shadow."},"xl":{"v":"rgba(0, 0, 0, 0.04) 0px 2px 4px -1px, rgba(0, 0, 0, 0.12) 0px 12px 32px -4px","t":"other","s":"css-var --shadow-xl resolved (raw/css-vars.json)","d":"The paired 2px/4px + wide shadow."},"card-lift":{"v":"rgba(0, 0, 0, 0.02) 0px 14px 54px 0px","t":"other","s":"computed boxShadow of trend-card default (raw/components-computed.json)","d":"The trend card's soft lift: rgba(0,0,0,0.02) 0 14px 54px."}},"spacing":{"1":{"v":"4px","t":"dimension","s":"css-var --space-1 (light); css-var --space-1 resolved (raw/css-vars.json)","d":"The --space-1 step (4px base)."},"10":{"v":"40px","t":"dimension","s":"css-var --space-10 (light); css-var --space-10 resolved (raw/css-vars.json)","d":"The --space-10 step (4px base)."},"12":{"v":"48px","t":"dimension","s":"css-var --space-12 (light); css-var --space-12 resolved (raw/css-vars.json)","d":"The --space-12 step (4px base)."},"2":{"v":"8px","t":"dimension","s":"css-var --space-2 (light); css-var --space-2 resolved (raw/css-vars.json)","d":"The --space-2 step (4px base)."},"3":{"v":"12px","t":"dimension","s":"css-var --space-3 (light); css-var --space-3 resolved (raw/css-vars.json)","d":"The --space-3 step (4px base)."},"4":{"v":"16px","t":"dimension","s":"css-var --space-4 (light); css-var --space-4 resolved (raw/css-vars.json)","d":"The --space-4 step (4px base)."},"5":{"v":"20px","t":"dimension","s":"css-var --space-5 (light); css-var --space-5 resolved (raw/css-vars.json)","d":"The --space-5 step (4px base)."},"6":{"v":"24px","t":"dimension","s":"css-var --space-6 (light); css-var --space-6 resolved (raw/css-vars.json)","d":"The --space-6 step (4px base)."},"8":{"v":"32px","t":"dimension","s":"css-var --space-8 (light); css-var --space-8 resolved (raw/css-vars.json)","d":"The --space-8 step (4px base)."},"unit":{"v":"4px","t":"dimension","s":"css-var --spacing (light); css-var --spacing resolved (raw/css-vars.json)","d":"The 4px spacing unit."},"curation-detail":{"v":"56px","t":"dimension","s":"css-var --spacing-curation-detail (light); css-var --spacing-curation-detail resolved (raw/css-vars.json)","d":"The 56px detail-pane spacing."},"header-h":{"v":"56px","t":"dimension","s":"css-var --header-height (light); css-var --header-height resolved (raw/css-vars.json)","d":"The 56px header."},"mobile-bar-h":{"v":"56px","t":"dimension","s":"css-var --mobile-bar-height (light); css-var --mobile-bar-height resolved (raw/css-vars.json)","d":"The 56px mobile bar."},"sidebar-w":{"v":"80px","t":"dimension","s":"css-var --sidebar-width (light); css-var --sidebar-width resolved (raw/css-vars.json)","d":"The 80px sidebar."},"content-w":{"v":"480px","t":"dimension","s":"css-var --centered-content-width (light); css-var --centered-content-width resolved (raw/css-vars.json)","d":"The 480px centred column."}},"motion":{"fast":{"v":".15s cubic-bezier(.19, 1, .22, 1)","t":"other","s":"css-var --transition-fast (light); css-var --transition-fast resolved (raw/css-vars.json)","d":".15s expo-out."},"normal":{"v":".2s cubic-bezier(.19, 1, .22, 1)","t":"other","s":"css-var --transition-normal (light); css-var --transition-normal resolved (raw/css-vars.json)","d":".2s expo-out."},"slow":{"v":".3s cubic-bezier(.19, 1, .22, 1)","t":"other","s":"css-var --transition-slow (light); css-var --transition-slow resolved (raw/css-vars.json)","d":".3s expo-out."},"slower":{"v":".5s cubic-bezier(.19, 1, .22, 1)","t":"other","s":"css-var --transition-slower (light); css-var --transition-slower resolved (raw/css-vars.json)","d":".5s expo-out."},"ease-expo":{"v":"cubic-bezier(.19, 1, .22, 1)","t":"other","s":"css-var --ease-out-expo (light); css-var --ease-out-expo resolved (raw/css-vars.json)","d":"cubic-bezier(.19,1,.22,1)."},"default-duration":{"v":"0.15s","t":"other","s":"css-var --default-transition-duration (light); css-var --default-transition-duration resolved (raw/css-vars.json)","d":"The 0.15s Tailwind default."},"default-easing":{"v":"cubic-bezier(.4,0,.2,1)","t":"other","s":"css-var --default-transition-timing-function (light); css-var --default-transition-timing-function resolved (raw/css-vars.json)","d":"The default easing."}},"layout":{"dropdown":{"v":10,"t":"other","s":"css-var --z-dropdown (light); css-var --z-dropdown resolved (raw/css-vars.json)","d":"Z-index layer --z-dropdown."},"fixed":{"v":30,"t":"other","s":"css-var --z-fixed (light); css-var --z-fixed resolved (raw/css-vars.json)","d":"Z-index layer --z-fixed."},"modal":{"v":60,"t":"other","s":"css-var --z-modal (light); css-var --z-modal resolved (raw/css-vars.json)","d":"Z-index layer --z-modal."},"overlay":{"v":50,"t":"other","s":"css-var --z-overlay (light); css-var --z-overlay resolved (raw/css-vars.json)","d":"Z-index layer --z-overlay."},"popover":{"v":70,"t":"other","s":"css-var --z-popover (light); css-var --z-popover resolved (raw/css-vars.json)","d":"Z-index layer --z-popover."},"sidebar":{"v":40,"t":"other","s":"css-var --z-sidebar (light); css-var --z-sidebar resolved (raw/css-vars.json)","d":"Z-index layer --z-sidebar."},"sticky":{"v":20,"t":"other","s":"css-var --z-sticky (light); css-var --z-sticky resolved (raw/css-vars.json)","d":"Z-index layer --z-sticky."},"tooltip":{"v":80,"t":"other","s":"css-var --z-tooltip (light); css-var --z-tooltip resolved (raw/css-vars.json)","d":"Z-index layer --z-tooltip."}}},"light":{"color":{"background":{"page":{"v":"#ffffff","t":"color","s":"css-var --background (light); css-var --background resolved (raw/css-vars.json)","d":"The #ffffff app page fill."},"surface":{"v":"#ffffff","t":"color","s":"css-var --card (light); css-var --card resolved (raw/css-vars.json)","d":"The #ffffff card surface."},"app-field":{"v":"#f2f2f2","t":"color","s":"css-var --Curater-background (light); css-var --Curater-background resolved (raw/css-vars.json)","d":"The #f2f2f2 field — active/hover fills and the app backdrop."},"muted-fill":{"v":"#f4f4f5","t":"color","s":"css-var --muted (light); css-var --muted resolved (raw/css-vars.json)","d":"The #f4f4f5 muted fill."},"accent-fill":{"v":"#f4f4f5","t":"color","s":"css-var --accent (light); css-var --accent resolved (raw/css-vars.json)","d":"The #f4f4f5 accent fill."},"popover":{"v":"#ffffff","t":"color","s":"css-var --popover (light); css-var --popover resolved (raw/css-vars.json)","d":"The #ffffff popover surface."},"sidebar":{"v":"#fafafa","t":"color","s":"css-var --sidebar (light); css-var --sidebar resolved (raw/css-vars.json)","d":"The #fafafa sidebar surface."},"hover-fill":{"v":"{color.curater.background}","t":"color","s":"computed backgroundColor of signin-btn hover equals {color.curater.background} (raw/components-computed.json + raw/css-vars.json)","d":"The #f2f2f2 hover/active fill — Curater background."}},"text":{"text":{"v":"#09090b","t":"color","s":"css-var --foreground (light); css-var --foreground resolved (raw/css-vars.json)","d":"The #09090b ink."},"text-strong":{"v":"#18181b","t":"color","s":"css-var --primary (light); css-var --primary resolved (raw/css-vars.json)","d":"The #18181b primary ink."},"muted":{"v":"#71717b","t":"color","s":"css-var --muted-foreground (light); css-var --muted-foreground resolved (raw/css-vars.json)","d":"The #71717b muted text (nav icons at rest, meta)."},"accent-text":{"v":"#18181b","t":"color","s":"css-var --accent-foreground (light); css-var --accent-foreground resolved (raw/css-vars.json)","d":"The #18181b text on accent."},"popover-text":{"v":"#09090b","t":"color","s":"css-var --popover-foreground (light); css-var --popover-foreground resolved (raw/css-vars.json)","d":"The #09090b popover ink."},"on-primary":{"v":"#fafafa","t":"color","s":"css-var --primary-foreground (light); css-var --primary-foreground resolved (raw/css-vars.json)","d":"The #fafafa text on primary."},"secondary-text":{"v":"{color.curater.gray-medium}","t":"color","s":"computed color of login-btn default equals {color.curater.gray-medium} (raw/components-computed.json + raw/css-vars.json)","d":"The #7c7c7c 'Log in or sign up' label — Curater gray-medium."},"label":{"v":"{color.curater.gray-light}","t":"color","s":"computed color of curated-label default equals {color.curater.gray-light} (raw/components-computed.json + raw/css-vars.json)","d":"The #afafaf 'Curated by' micro-label — Curater gray-light."}},"border":{"border":{"v":"#eeeef1","t":"color","s":"css-var --border (light); css-var --border resolved (raw/css-vars.json)","d":"The #eeeef1 hairline."},"input":{"v":"#e4e4e7","t":"color","s":"css-var --input (light); css-var --input resolved (raw/css-vars.json)","d":"The #e4e4e7 input hairline."},"ring":{"v":"#d4d4d8","t":"color","s":"css-var --ring (light); css-var --ring resolved (raw/css-vars.json)","d":"The #d4d4d8 focus ring."},"sidebar-border":{"v":"#e4e4e7","t":"color","s":"css-var --sidebar-border (light); css-var --sidebar-border resolved (raw/css-vars.json)","d":"The #e4e4e7 sidebar hairline."}},"action":{"destructive":{"v":"#e7000b","t":"color","s":"css-var --destructive (light); css-var --destructive resolved (raw/css-vars.json)","d":"The #e7000b destructive."}}},"component":{"nav-rail-height":{"v":"328px","t":"dimension","s":"computed h of nav-rail default (raw/components-computed.json)","d":"The 328px desktop nav rail."},"nav-button":{"v":"48px","t":"dimension","s":"computed h of nav-button default (raw/components-computed.json)","d":"The 48px round nav button."},"nav-active-fill":{"v":"#f2f2f2","t":"color","s":"computed bg of nav-button-active default (raw/components-computed.json)","d":"The #f2f2f2 active nav fill."},"signin-height":{"v":"58px","t":"dimension","s":"computed h of signin-btn default (raw/components-computed.json)","d":"The 58px sign-in pill."},"signin-width":{"v":"259.45px","t":"dimension","s":"computed w of signin-btn default (raw/components-computed.json)","d":"The ~259px sign-in pill width."},"signin-fill":{"v":"#ffffff","t":"color","s":"computed bg of signin-btn default (raw/components-computed.json); computed as oklch(1 0 0), written as sRGB","d":"The white pill fill."},"save-height":{"v":"28px","t":"dimension","s":"computed h of save-btn default (raw/components-computed.json)","d":"The 28px Save chip."},"search-width":{"v":"170px","t":"dimension","s":"computed w of search-field default (raw/components-computed.json)","d":"The 170px revealed search field."},"tab-height":{"v":"40px","t":"dimension","s":"computed h of tab-button default (raw/components-computed.json)","d":"The 40px feed tab."},"theme-card":{"v":"271px","t":"dimension","s":"computed h of theme-card default (raw/components-computed.json)","d":"The 271px theme tile."},"trend-card":{"v":"492.39px","t":"dimension","s":"computed h of trend-card default (raw/components-computed.json)","d":"The ~492px trend card."},"trend-card-radius":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of trend-card default (raw/components-computed.json)","d":"The 24px trend-card radius."},"sso-width":{"v":"350px","t":"dimension","s":"computed w of sso-btn default (raw/components-computed.json)","d":"The 350px Google SSO button."},"back-button":{"v":"36px","t":"dimension","s":"computed h of back-btn default (raw/components-computed.json)","d":"The 36px back control."},"options-button":{"v":"32px","t":"dimension","s":"computed h of options-btn default (raw/components-computed.json)","d":"The 32px options control."},"tastescope-height":{"v":"42px","t":"dimension","s":"computed h of tastescope-btn default (raw/components-computed.json)","d":"The ~42px TasteScope header button."},"profile-item":{"v":"380.27px","t":"dimension","s":"computed h of profile-item default (raw/components-computed.json)","d":"The ~380px profile item tile."},"item-menu":{"v":"28px","t":"dimension","s":"computed h of item-menu default (raw/components-computed.json)","d":"The 28px item menu button."},"m-nav-bar":{"v":"40px","t":"dimension","s":"computed h of m-nav-rail default (raw/components-computed.json)","d":"The 40px mobile nav bar."},"m-nav-button":{"v":"40px","t":"dimension","s":"computed h of m-nav-button default (raw/components-computed.json)","d":"The 40px mobile nav button."},"taste-panel":{"v":"256px","t":"dimension","s":"computed w of taste-desc default (raw/components-computed.json)","d":"The 256px TasteScope teaser column."},"taste-canvas":{"v":"1360px","t":"dimension","s":"computed w of taste-canvas default (raw/components-computed.json)","d":"The 1360px BrandGlobe canvas."},"state-track":{"button-state-track":{"v":{"default":{"backgroundColor":"oklch(1 0 0)","color":"oklch(0.141 0.005 285.823)","transform":"none"},"hover":{"backgroundColor":"rgb(242, 242, 242)","color":"oklch(0.21 0.006 285.885)","transform":"none"},"pressed":{"backgroundColor":"rgb(242, 242, 242)","color":"oklch(0.21 0.006 285.885)","transform":"matrix(1, 0, 0, 1, 0, 2)"}},"t":"other","s":"computed styles of signin-btn default/hover/pressed (raw/components-computed.json)","d":"Sign-in pill: white at rest, #f2f2f2 on hover, sinks 2px (translateY) when pressed; 2px #d4d4d8 focus ring."},"icon-state-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"oklch(0.552 0.016 285.938)","transform":"none"},"hover":{"backgroundColor":"oklch(0.967 0.001 286.375)","color":"oklch(0.141 0.005 285.823)","transform":"none"},"pressed":{"backgroundColor":"oklch(0.967 0.001 286.375)","color":"oklch(0.141 0.005 285.823)","transform":"none"}},"t":"other","s":"computed styles of nav-button default/hover/pressed (raw/components-computed.json)","d":"Nav icon: transparent at rest, #f4f4f5 fill + ink on hover/pressed; the active page's icon keeps the #f2f2f2 fill."}},"focus-ring":{"v":"2px solid oklch(0.871 0.006 286.286) offset 2px","t":"other","s":"computed outline of save-btn focus-visible (raw/components-computed.json)","d":"2px solid #d4d4d8 (--ring), 2px offset — identical on every measured control."}}},"dark":{}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — creative market</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
 </body>
 </html>

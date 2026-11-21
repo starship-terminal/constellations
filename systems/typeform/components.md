@@ -1,49 +1,66 @@
-# Components
+# Typeform components
 
-Measured on the public marketing site and the signed-out login. Crops are 2x from the 1440 captures.
+Public marketing controls, measured signed out on 2026-11-21. Crops are in [components/crops/](components/crops). Values name tokens in [tokens.json](tokens.json).
+
+The product behind login (the form builder, results, contacts) was not reached. See Gaps.
 
 ## Button
 
-Primary on a light header is a 12px radius fill of `#2A222B` with `#FAF9FB` type, 40px tall in the nav (`padding: 12px 20px`) and 48px on plan cards (`padding: 8px 24px`). On the dark hero the same control flips: Sign up is `#FAF9FB` with `#2A222B` type, and Contact sales is a 1px `#FAF9FB` outline on the hero fill.
+Primary action on the dark header is a light pill. Secondary action is a dark pill.
 
-[components/crops/button-primary.png](components/crops/button-primary.png)
-[components/crops/button-secondary.png](components/crops/button-secondary.png)
-[components/crops/button-hero.png](components/crops/button-hero.png)
-[components/crops/button-plan.png](components/crops/button-plan.png)
-
-Hover, pressed, disabled and loading were not forced. The computed transition is background-colour 200ms ease and radius 300ms ease-out. Declared hover fill is `#564B58` (`--tokens--button--primary-bg-hover`).
-
-Focus on the home Sign up link, after `element.focus()`, is `rgb(229, 151, 0)` outline, 1px, offset 1px.
+| State | Crop | Values |
+|---|---|---|
+| Primary default | [button-primary-default.png](components/crops/button-primary-default.png) | Fill `light.button.secondary-bg`, text `light.text.primary`, radius `core.measured.button-radius` (12px), height 40px |
+| Primary hover | [button-primary-hover.png](components/crops/button-primary-hover.png) | Fill `light.button.secondary-hover` |
+| Primary focus | [button-primary-focus-visible.png](components/crops/button-primary-focus-visible.png) | Keyboard focus landed. Outline computed to none. |
+| Secondary default | [button-secondary-default.png](components/crops/button-secondary-default.png) | Fill `light.accent.default`, text `light.text.on-accent` |
+| Secondary hover | [button-secondary-hover.png](components/crops/button-secondary-hover.png) | Fill `light.accent.pressed` (#3e3040, measured) |
+| Secondary focus | [button-secondary-focus-visible.png](components/crops/button-secondary-focus-visible.png) | Focus landed. No painted ring. |
 
 ## Link
 
-Log in is a text button, Twklausanne 500 at computed weight 400, 16px, no fill, no radius. Colour follows the header: `#FAF9FB` on the hero, `#2A222B` on pricing.
+| State | Crop | Values |
+|---|---|---|
+| Log in default | [link-login-default.png](components/crops/link-login-default.png) | Text `light.text.invert` on the dark header, 16px Twklausanne |
+| Log in hover | [link-login-hover.png](components/crops/link-login-hover.png) | No fill change |
+| Log in focus | [link-login-focus-visible.png](components/crops/link-login-focus-visible.png) | Focus landed. No painted ring. |
 
-[components/crops/link-login.png](components/crops/link-login.png)
+## Navigation
 
-## Card
+| State | Crop | Values |
+|---|---|---|
+| Platform trigger | [nav-platform-default.png](components/crops/nav-platform-default.png) | 16px, transparent, height 88px on the dark header |
+| Platform hover | [nav-platform-hover.png](components/crops/nav-platform-hover.png) | Opens the menu. See [home-light-platform-menu.png](screenshots/home-light-platform-menu.png) |
+| Menu panel | [nav-menu-default.png](components/crops/nav-menu-default.png) | Fill `light.invert`, shadow `core.measured.menu-shadow` |
+| Menu item | [nav-menu-item-default.png](components/crops/nav-menu-item-default.png) | 16px, transparent row |
 
-Hero cards are 439 by 199, radius 12px, padding 24px, fill `#2A222B`, with an inset shadow `rgb(37, 28, 39) 10px 10px 20px -9px`. Plan cards are white, 324px wide, 1px border `#E5E1E5`, radius 12px, padding `48px 24px 24px`.
+Phone menu: [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
-[components/crops/card-hero.png](components/crops/card-hero.png)
-[components/crops/card-plan.png](components/crops/card-plan.png)
+## Billing toggle
 
-## Billing switch
+| State | Crop | Values |
+|---|---|---|
+| Yearly selected | [billing-yearly-default.png](components/crops/billing-yearly-default.png) | Fill `light.border.default` (#e5e1e5), text `light.text.primary`, 14px, radius 12px |
+| Monthly unselected | [billing-monthly-default.png](components/crops/billing-monthly-default.png) | Transparent, text `light.text.secondary` |
 
-Yearly is selected by default. The selected pill is `#E5E1E5` with `#2A222B` type, 14px, padding `5px 12px`, radius 12px, 31px tall. Monthly is transparent with `#655D67` type. The switch track itself was not a separate measured box.
+## Type
 
-## Text field
+| Role | Crop | Values |
+|---|---|---|
+| Hero | [hero-heading-default.png](components/crops/hero-heading-default.png) | Tobias, 80px measured on the homepage (`core.measured.hero-size`). Declared display is 5rem. |
 
-Login email wrap, focused: 400 by 44, radius 12px, fill `#FAFAFA`, border `1px solid #3C323E`, outline `2px solid #3C323E`, padding `0 2px 0 12px`. The input itself has no border. Signup email and password fields use the same 44px, 12px radius. The password field was empty. Neither form was submitted.
+## Dialog
 
-## Badge
+Template preview is a public dialog: [template-light-preview.png](screenshots/template-light-preview.png). It was opened and closed. It was not submitted.
 
-NEW on the hero cards is a pill (`border-radius: 16000px`) with a purple glow `rgb(182, 109, 213) 0 0 15px`. The crop of the card shows it. A separate badge crop was not cut.
+## Shared values
 
-## Logo
-
-Header mark is 43 by 24 inside a 152 by 24 link. [components/crops/logo.png](components/crops/logo.png) and [icons/mark.svg](icons/mark.svg).
+Page ground is `light.page` (#faf9fb). The header and the open menus invert to `light.invert` (#2a222b) with `light.text.invert`. The purple highlight (`light.text.highlight`, #9454ab) is used for eyebrows and NEW badges, not for the main button.
 
 ## Gaps
 
-Text area, select, checkbox, radio, switch (other than the billing pills), tabs, menu (the dropdown list stayed `display: none`), tooltip (the 32px button was on the pricing table, the panel was not opened), dialog, toast, list row, table, avatar, icon button as its own measured control. The phone menu button is in the 390 screenshot and was not opened.
+- Text field, text area, select, checkbox, radio, switch, tabs, tooltip, toast, table, avatar, badge: not present as product controls on the captured public pages, or not measured. The login email field is visible in [login-light-default.png](screenshots/login-light-default.png) and was not filled.
+- Disabled, loading, error, pressed: not held. Pressed is Not captured.
+- Focus ring colour: Not captured. Focus landed and the outline computed to none.
+- Signed-in builder, results, and settings: behind [https://admin.typeform.com/login](https://admin.typeform.com/login). Not captured.
+- OneTrust cookie dialog: present, hidden, never answered.

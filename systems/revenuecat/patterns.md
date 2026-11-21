@@ -1,59 +1,53 @@
-# Patterns
+# RevenueCat patterns
 
-Public marketing and the signed-out app shell. The signed-in dashboard was
-not opened.
+How the public pages combine the components. All captures are signed out, 2026-11-21. Desktop is 1440×900 at 1x. Phone is 390×844 at 2x (PNG width 780).
 
-## Marketing home
+## Marketing shell
 
-Header is 64px, background `#f9f9fb`, full width. Wordmark, then Why
-RevenueCat?, Solutions, Developers, Resources, Pricing. Trailing cluster is
-Log in, Contact sales, Sign up.
+A 64px white header. Wordmark at the left, four menu buttons, Pricing, then Log in, an outline Contact sales pill, and a blue Sign up pill. Menus open over the page without a recorded scrim. Footer repeats the same destinations plus legal links.
 
-Hero sits on the same `#f9f9fb`. Inner column is 1280px with 32px side
-padding and 88px top padding at 1440. H1 is objectSans 60px / 500,
-line-height 67.5px, tracking -2.4px, max width about 579px: "Build and grow
-your app business". Lede is helveticaNeue 20px / 400, `#3d3d5c`. Three stats
-(166K+, 6B+, $19B+) are objectSans 24px / 500 in `#576ddb`.
+[home-light-default](screenshots/home-light-default.png), [home-light-menu-solutions](screenshots/home-light-menu-solutions.png).
 
-Body sections alternate white. Feature articles are 384px cards, radius
-16px, on `#f8f9fb`. A closing email field is a 480 by 64 pill with the
-primary button inside the right edge.
+Phone replaces the bar with a wordmark, an Eng control, and a Menu button. The sheet pins Sign up, Contact sales and Log in to the bottom. [mobile-home-light-default](screenshots/mobile-home-light-default.png), [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png).
 
-At 390px the header stays 64px. The h1 drops to 30px / 33.75px, tracking
--1.2px. The hero button becomes full width (358px) at 44px tall. Menu opens
-a fixed white sheet.
+## Home
+
+Left headline in Object Sans 60/500, a pill email field with a blue Start for free button inside it, three stat columns, and a product illustration on the right. The email field was not filled. The illustration is a public demo of the dashboard, not the signed-in app.
+
+[home-light-default](screenshots/home-light-default.png), full page [home-light-full](screenshots/home-light-full.png).
 
 ## Pricing
 
-H1 is 64px / 500, line-height 72px, tracking -1.6px: "No plans, no gates.
-Pay for what you track." Hero background `#f9f9fb`.
+One plan card ("Start for free", then 1% after $2,500 MTR) beside an "Everything's included" panel, then an enterprise strip. In-page text tabs switch Growth Tools, All features, Testimonials and FAQs.
 
-Two plan cards, 960px, radius 16px, padding 40px. PRO is a white card with
-a `#d6dbf5` border. ENTERPRISE uses a gradient border from
-`rgba(242, 84, 91, 0.5)` to `rgb(87, 108, 219)`. There is no monthly price
-table. Copy says pay nothing up to $2,500 in monthly tracked revenue, then
-1%.
+[pricing-light-default](screenshots/pricing-light-default.png), [pricing-light-tab-faqs](screenshots/pricing-light-tab-faqs.png), phone [mobile-pricing-light-default](screenshots/mobile-pricing-light-default.png).
 
-Quote cards use a 1px gradient frame, 134deg, from `#d6dbf5` to `#ebedf5`.
+## Feature and audience pages
 
-## Signed-out login
+Same shell, a long marketing column, and a blue pill CTA that leaves for signup. Representatives: [paywalls-light-default](screenshots/paywalls-light-default.png), [for-developers-light-default](screenshots/for-developers-light-default.png), [why-revenuecat-light-default](screenshots/why-revenuecat-light-default.png).
 
-`html` has class `dark`. Body text is Inter Variable 14px / 20px, `#f2f3f5`.
-The form column is 480px inside 24px horizontal padding. H2 "Log in" is
-ObjectSans 24px / 700. One email field, then a disabled Log in button.
-Password is not on the page yet. Footer links sit at 12px in `#a2a4ab`.
+## Stories and integrations
 
-An incident banner can sit above the form. On this capture it was yellow
-`#f0d81b` with brown text `#643c00`.
+Index pages of cards. [testimonials-light-default](screenshots/testimonials-light-default.png), [integrations-light-default](screenshots/integrations-light-default.png), one story [customer-openai-light-default](screenshots/customer-openai-light-default.png), one integration [integrations-stripe-light-default](screenshots/integrations-stripe-light-default.png).
 
-## Signed-out signup
+## Sales form
 
-Same dark shell. Fields: name, email, password (with a 24px show control),
-a "How did you hear about us?" combobox, a disabled full-width Sign up, a
-Log in link, terms, and a marketing checkbox. Not submitted.
+A public page with empty fields and a discussion select. Nothing was typed or submitted. [talk-to-sales-light-default](screenshots/talk-to-sales-light-default.png), phone [mobile-talk-to-sales-light-default](screenshots/mobile-talk-to-sales-light-default.png). Contact is the same pattern: [contact-light-default](screenshots/contact-light-default.png).
 
-## What was not entered
+## Docs
 
-No password, no name, no card, no phone, no company SSO. The marketing
-email field was not submitted. Signup is not email-only, so AgentMail was
-not used.
+A separate shell: top nav, search field, SDK cards, and a theme toggle. Search opens a dialog. Dark is a docs theme only.
+
+[docs-light-default](screenshots/docs-light-default.png), [docs-light-search-open](screenshots/docs-light-search-open.png), [docs-light-dark](screenshots/docs-light-dark.png), sidebar [docs-overview-light-sidebar-open](screenshots/docs-overview-light-sidebar-open.png), phone [mobile-docs-light-default](screenshots/mobile-docs-light-default.png).
+
+## Filters
+
+Changelog chips and glossary letters filter the public index locally. [changelog-light-filter-sdk](screenshots/changelog-light-filter-sdk.png), [glossary-light-letter-p](screenshots/glossary-light-letter-p.png). Blog search did not open: the SEARCH button was not found, so that state is not captured. The newsletter field on the blog was left empty.
+
+## Walls
+
+Login and signup are the end of those branches. [login-wall-light-default](screenshots/login-wall-light-default.png), [signup-wall-light-default](screenshots/signup-wall-light-default.png). The signed-in dashboard was not captured.
+
+## Not on the public surface
+
+Empty, loading and error states, a destructive confirmation, feedback after an action, and onboarding all sit behind the login wall or never appeared. Status is a public board with a subscribe form that was not used: [status-light-default](screenshots/status-light-default.png).

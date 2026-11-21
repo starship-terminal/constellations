@@ -35,7 +35,7 @@
    "coral": {
     "value": "#ff8562",
     "type": "color",
-    "source": "measured color of social-icon / logo link",
+    "source": "measured color of social-icon / logo link / m-burger",
     "description": "#ff8562, the warm coral used for icon and link accents"
    },
    "red": {

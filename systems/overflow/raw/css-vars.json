@@ -1,0 +1,153 @@
+{
+ "readAt": "2026-11-21",
+ "source": "overflow.io public stylesheets, read through the CSSOM (and fetch when a sheet was cross-origin) on https://overflow.io/ and re-parsed in a probe document. One light theme.",
+ "sheets": [
+  {
+   "name": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "media": "",
+   "bytes": 427899
+  },
+  {
+   "name": "inline-1",
+   "media": "",
+   "bytes": 6571
+  }
+ ],
+ "counts": {
+  "rules": 1,
+  "fonts": 12,
+  "names": {
+   "app": 1,
+   "bootstrap": 0
+  }
+ },
+ "errors": [],
+ "app": [
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   },
+   "bin": "app"
+  }
+ ],
+ "bootstrap": [],
+ "fonts": [
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "icomoon",
+   "src": "url(…)",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "block"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "swiper-icons",
+   "src": "url(…)",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "400",
+   "font-style": "normal",
+   "unicode-range": "U+0-5FF"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "400",
+   "font-style": "italic",
+   "unicode-range": "U+0-5FF"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "500",
+   "font-style": "normal",
+   "unicode-range": "U+0-5FF"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "500",
+   "font-style": "italic",
+   "unicode-range": "U+0-5FF"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "600",
+   "font-style": "normal",
+   "unicode-range": "U+0-5FF"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "600",
+   "font-style": "italic",
+   "unicode-range": "U+0-5FF"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "700",
+   "font-style": "normal",
+   "unicode-range": "U+0-5FF"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "700",
+   "font-style": "italic",
+   "unicode-range": "U+0-5FF"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "800",
+   "font-style": "normal",
+   "unicode-range": "U+0-5FF"
+  },
+  {
+   "file": "https://overflow.io/dist/prod/css/public-site-homepage.min.css?v=1780121081819",
+   "font-family": "Inter",
+   "src": "url(…)",
+   "font-display": "swap",
+   "font-weight": "800",
+   "font-style": "italic",
+   "unicode-range": "U+0-5FF"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   }
+  }
+ }
+}

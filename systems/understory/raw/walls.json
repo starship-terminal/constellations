@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-20T23:25:12.788Z",
+  "walls": [
+    {
+      "url": "https://backoffice.understory.io/login",
+      "title": "Log in - Understory",
+      "hasPassword": true,
+      "hasEmail": true,
+      "google": false,
+      "apple": false,
+      "labels": [
+        "AMERICAN ENGLISH English (US)",
+        "Sign up now",
+        "Email *",
+        "Password *",
+        "Forgot password?",
+        "Log in"
+      ]
+    }
+  ]
+}

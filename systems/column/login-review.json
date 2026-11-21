@@ -1,0 +1,35 @@
+{
+  "product": "Column",
+  "domain": "column.com",
+  "reviewedAt": "2026-11-21",
+  "account": "signed-out",
+  "typedEmail": false,
+  "typedPassword": false,
+  "submittedForm": false,
+  "clickedOAuth": false,
+  "clickedPasskey": false,
+  "solvedCaptcha": false,
+  "createdAccount": false,
+  "walls": [
+    {
+      "url": "https://dashboard.column.com/login",
+      "kind": "login wall",
+      "title": "Column",
+      "observed": "First DOM read, before any typing: signed-out sign-in with an email field, Continue, a passkey button, a link to create an account, and a reCAPTCHA notice. A later screenshot pass was shown a captcha instead of the form. The captcha was not solved. Those images were deleted and are not in the package. No email typed.",
+      "screenshot": "not kept; captcha interstitial",
+      "priorProbe": "2026-11-17 PR 638: the page accepted an email and then asked for a password. No code was sent. That step was not repeated."
+    },
+    {
+      "url": "https://dashboard.column.com/register",
+      "kind": "signup wall",
+      "title": "Column",
+      "observed": "Signed-out signup with empty fields including a password field. Branch stopped. No field typed. No submit."
+    }
+  ],
+  "publicControlsThatOpenAWall": [
+    {"control": "Sign in", "from": "https://column.com/ header", "opens": "https://dashboard.column.com/login"},
+    {"control": "Sign up", "from": "https://column.com/ hero and menus", "opens": "https://dashboard.column.com/register"},
+    {"control": "Create an account", "from": "Get started menu", "opens": "https://dashboard.column.com/register"},
+    {"control": "Create one", "from": "https://dashboard.column.com/login", "opens": "https://dashboard.column.com/register", "clicked": false}
+  ]
+}

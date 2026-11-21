@@ -1,23 +1,45 @@
 # Trulia patterns
 
-Signed-out homepage only, https://www.trulia.com/, 2026-11-19. CSS viewport 1169 by 731 at device pixel ratio 2. No screenshots.
+How the public pages combine the components. Screenshots are in [screenshots/](screenshots). The control map is [site-tree.md](site-tree.md).
 
-## Marketing home
+## App shell
 
-A fixed header sits over the page: wordmark, Buy and Rent navigation, Mortgage, Saved Homes, Saved Searches, and a bordered Sign up or Log in button. Header height is 64px.
+Fixed header, 64px (`core.sizing.header`). Logo, Buy, Rent, Mortgage, Saved Homes, Saved Searches, Sign up or Log in, Main Menu. On the phone the word links collapse and the menu icon remains.
 
-The hero is a photograph with a white headline ("Discover a place you'll love to live"), a Buy / Rent / Sold tab group (Buy selected, white chip on the photo), and a 60px search combobox. The search placeholder asks for city, neighborhood, zip, county, or school. Nothing was typed.
+[home-light-default](screenshots/home-light-default.png) · [mobile-home-light-default](screenshots/mobile-home-light-default.png)
 
-Below the hero, a display heading ("Explore homes on Trulia") introduces city cards. Each card is a photo with a white title and "View Homes". Resident quotes sit on those cards. They are published marketing copy, not an account.
+Neighborhoods and the newsroom use a quieter header: Buy, Rent, Mortgages, and a More resources menu. Same wordmark, different chrome.
 
-A later band, "See how Trulia can help", repeats three primary buttons: Find a home, Find a rental, Learn more. Each is a 42px tarzana-700 pill-less rectangle with 8px radius.
+[neighborhoods-light-default](screenshots/neighborhoods-light-default.png) · [newsroom-light-default](screenshots/newsroom-light-default.png)
 
-The footer is caption-sized link columns (Popular Searches, Popular Rental Searches, Explore Trulia, For Professionals) plus a 10px legal line. Trulia is named as a trademark of Zillow, Inc.
+## Search
 
-## What was not opened
+Homepage hero: photograph, white headline, Buy/Rent/Sold tabs, one search field, red submit. The field arrives prefilled with a location from the network. Captures clear that value before the shot. Search was not submitted.
 
-Listing results, a listing detail, a neighborhood page, mortgage tools, saved homes, and the sign-in dialog. Navigating to a city page tripped PerimeterX ("Press & Hold to confirm you are a human"). The homepage reload then failed the same way. Those patterns are gaps, recorded in [components.md](components.md).
+[rent-light-default](screenshots/rent-light-default.png) shows the Rent tab selected.
 
-## Theme and width
+## Login wall
 
-The page painted light while `prefers-color-scheme: dark` matched. No theme control was in the header. Phone width (390) was not captured. The measured width is 1169, the preview tab's fill size, not a requested 1440.
+Saved Homes, Saved Searches, and Sign up or Log in open the same dialog. The branch stops there.
+
+[home-light-login](screenshots/home-light-login.png)
+
+## Menu
+
+[home-light-menu](screenshots/home-light-menu.png) is the drawer. [home-light-mortgage-flyout](screenshots/home-light-mortgage-flyout.png) is the Mortgage hover menu.
+
+## Mortgage tools
+
+[mortgages-light-default](screenshots/mortgages-light-default.png) and [mobile-mortgages-light-default](screenshots/mobile-mortgages-light-default.png). A ZIP field sits beside Get Pre-Qualified. The digits were painted out. The button was not pressed.
+
+## Neighborhood and newsroom marketing
+
+Photo cards and a search field on neighborhoods. Three text cards (News, Company Info, Media) on the newsroom.
+
+## Empty, loading, error
+
+The PerimeterX press-and-hold page is the error this capture hit. It is not a Trulia product screen and is not included. No empty listing state was opened, because listing pages were not screenshotted.
+
+## Onboarding, destructive confirmation, form errors
+
+Not present on the signed-out pages that loaded. Quiz, pre-qualification, contact, and newsletter forms were not opened.

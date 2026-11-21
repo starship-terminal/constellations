@@ -1,58 +1,136 @@
 # Components
 
-Public marketing chrome on `https://www.hq.vevo.com/`, signed out, 2026-11-19. Values are token names. Crops are in [components/crops](components/crops).
+Public pages on hq.vevo.com, captured 2026-11-21, signed out, headless Chromium. Desktop viewport measured 1440x900 at 1x. Phone viewport measured 390x844 at 2x. The site tree is [site-tree.md](site-tree.md).
+
+Crops are in [components/crops/](components/crops). Values below are the computed styles in [raw/components-computed.json](raw/components-computed.json). A colour that matches a token is named. Unread values stay Not captured.
 
 ## Button
 
-White pill, black label, 24px radius, 46px tall. The visible label is the inner span at 16px, not the anchor's 10px Arial. Hover fills `rgb(2, 2, 2)` and turns the label `rgb(253, 253, 253)` over 400ms ease.
+Submit on the advertiser form. Default is black fill, white 18/25.2 label, height 46px, radius 999px. Hover inverts to off-white fill and near-black label.
 
-| State | Crop | Tokens |
+| State | Crop | Notes |
 |---|---|---|
-| Default | [button-default.png](components/crops/button-default.png) | `light.button.fill`, `light.button.label`, `core.radius.pill`, `core.typography.button` |
-| Hover | [button-hover.png](components/crops/button-hover.png) | `light.button.fill-hover`, `light.button.label-hover`, `core.motion.duration.button` |
-| Focus-visible | not captured on the pill | skip link uses `light.focus.skip` |
-| Pressed, disabled, loading | not on the page | |
+| default | [button-default.png](components/crops/button-default.png) | `light.component.button.bg` #000000, text #ffffff |
+| hover | [button-hover.png](components/crops/button-hover.png) | fill #fdfdfd, text #020202 |
 
-## Link
+Pressed, disabled, and loading were not shown. The form was not submitted, so no success or error toast appeared.
 
-Desktop nav labels are 14px white with 10px horizontal padding. The anchor's own color is `rgb(0, 0, 238)`; the painted label is white. Phone menu items are 22px. The current item, Home, is `rgb(149, 7, 255)`.
-
-| State | Crop |
-|---|---|
-| Desktop nav | [nav-default.png](components/crops/nav-default.png) |
-| Phone menu open | [menu-open.png](components/crops/menu-open.png) |
-| Hover, focus-visible | not captured on a nav link |
-
-## Banner
-
-Cookie bar, 68px, `light.background.action`. Decline is a blue button with a white 1px border and white label. Accept is a white button with blue label. Both are 32px tall, square corners, 16px horizontal padding, 14px cookie face.
-
-| State | Crop |
-|---|---|
-| Default | [banner-default.png](components/crops/banner-default.png) |
+The About Us pill is a link styled as a control: white fill, black 16px label, radius 24px, height 46px. Crop: [text-link-default.png](components/crops/text-link-default.png). Hover inverts it: [text-link-hover.png](components/crops/text-link-hover.png).
 
 ## Icon button
 
-Phone header menu control is 27 by 18 CSS px, transparent, three white bars. Close control in the open menu is 16px, fill `rgb(255, 255, 255)`. See [icons/menu.svg](icons/menu.svg).
+The phone menu control is a 27x18 hamburger. Crop: [menu-button-default.png](components/crops/menu-button-default.png). Share controls on a press post are 19px. Crop: [share-button-default.png](components/crops/share-button-default.png). No separate icon set was extracted.
 
-## Wordmark
+## Link
 
-[icons/logo.svg](icons/logo.svg), 62 by 15 CSS px in the header, fill `#ffffff`.
+Header links are 14/21, white on the dark hero, #515151 on hover.
+
+| State | Crop |
+|---|---|
+| default | [nav-link-default.png](components/crops/nav-link-default.png) |
+| hover | [nav-link-hover.png](components/crops/nav-link-hover.png) |
+
+The phone drawer current item is purple #9507ff. Crop: [drawer-link-default.png](components/crops/drawer-link-default.png). Privacy policy body links are underlined on the black policy page. Their colour was not read as its own token.
+
+## Text field
+
+Advertiser form. Height 41px, 1px border, radius 0, horizontal padding 16px, 15px text. The fill is transparent over the slate page.
+
+| State | Crop | Border |
+|---|---|---|
+| default | [text-field-default.png](components/crops/text-field-default.png) | #ffffff |
+| focus | [text-field-focus.png](components/crops/text-field-focus.png) | #979797 |
+| blurred empty | [text-field-blurred-empty.png](components/crops/text-field-blurred-empty.png) | #a1002e, the same crimson as the stats band |
+
+A filled state was measured and the crop was deleted, because the field held sample text.
+
+## Text area
+
+Height 104px, same border treatment as the field.
+
+| State | Crop |
+|---|---|
+| default | [text-area-default.png](components/crops/text-area-default.png) |
+| focus | [text-area-focus.png](components/crops/text-area-focus.png) |
+
+## Select
+
+Country dropdown, same 41px box and 1px white border. Crop: [select-default.png](components/crops/select-default.png). Open, hover, and disabled were not captured. The menu was not opened, so no option list was measured.
+
+## Checkbox
+
+13px box on the newsletter row. Crop: [checkbox-default.png](components/crops/checkbox-default.png). Checked, hover, focus, and disabled were not captured. The box was not toggled.
+
+## Radio
+
+13px circles on the artist feedback page. Crop: [radio-default.png](components/crops/radio-default.png). Selected was not captured. No radio was clicked.
+
+## Switch
+
+Not present.
+
+## Tabs
+
+Not present. Specs uses an accordion, not tabs.
+
+## Menu
+
+Phone drawer, 390x844, black, 22px labels, current item purple. Crop: [drawer-open.png](components/crops/drawer-open.png). Screenshot: [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
+
+The press More actions control was clicked. The share row was already on the page. A separate menu panel was not measured.
+
+## Tooltip
+
+Not present on the public pages.
+
+## Dialog
+
+The homepage play control opens a Wix video lightbox on the same URL. Screenshot: [home-light-video.png](screenshots/home-light-video.png). The lightbox frame's own chrome was not measured apart from the page. Cookie consent is a banner, not captured as a dialog, because it was hidden and never clicked.
+
+## Toast
+
+Not present. No form was submitted.
 
 ## Card
 
-Stat cards are white overlays on the crimson section: 20%, 40% and 60% white. Artist stills sit beside section copy. No separate card component with its own border or shadow.
+News cards on the homepage are image tiles, about 404x319. Crop: [news-card-default.png](components/crops/news-card-default.png). Hover and selected were not captured.
 
 ## List row
 
-Contact page rows are published department names and addresses on a blue stack. No interactive row, no hover state captured.
+Not present as an app list. Press recent posts are links in a column. Not measured as their own component.
 
-## Footer
+## Table
 
-Black band, 14px links (Contact, Brand, Careers), 15.1px legal line in white, social marks at 32px. [footer-default.png](components/crops/footer-default.png).
+Not present.
+
+## Avatar
+
+Not present. Artist photos are editorial images, not avatars.
+
+## Badge
+
+Not present.
+
+## Accordion
+
+Video Preroll on the specs page. Label 14/30, white. Expanding it stays on the same URL and reveals spec links.
+
+| State | Crop |
+|---|---|
+| default | [accordion-default.png](components/crops/accordion-default.png) |
+| expanded | [accordion-expanded.png](components/crops/accordion-expanded.png) |
 
 ## Gaps
 
-Not present on the signed-out marketing site: text field, text area, select, checkbox, radio, switch, tabs, tooltip, dialog, toast, table, avatar, badge, video player chrome.
-
-Not captured: button pressed, button disabled, button loading, nav hover, nav focus-visible, menu item hover, dark theme. `prefers-color-scheme: dark` did not change the Wix colour tokens.
+| Item | Status |
+|---|---|
+| Pressed, disabled, loading | Not captured. No control showed them. |
+| Switch, tabs, tooltip, toast, table, avatar, badge | Not present on the public site. |
+| Select open menu | Not captured. The menu was not opened. |
+| Checkbox checked, radio selected | Not captured. Neither control was toggled. |
+| Focus ring | Not captured as a token. Keyboard focus on the skip link produced an empty box. The logo crop shows a blue ring from a script focus, not a measured focus token. |
+| Motion | Not captured. Transitions on the measured controls read 0s. |
+| Dark theme | Not present. No theme switch. |
+| Artist page pink, feedback page lilac | Not captured as tokens. The pages show them. The computed background of those sections was not read. |
+| Font family | Not captured. The computed family is a Wix hash. The guide uses Helvetica. |
+| Signed-in app | Not captured. `https://www.vevo.com/login` returned 503 with an empty document. `/home-old` and `/label-partners` are password walls. Neither was filled. |

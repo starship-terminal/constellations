@@ -10,9 +10,13 @@ const OUT = fileURLToPath(new URL('../../../raw/layout.json', import.meta.url));
 const PAGES = {
   home: '/', 'how-we-work': '/how-we-work/', 'case-studies': '/case-studies/',
   foundry: '/foundry/', newsletter: '/newsletter/', podcast: '/podcast/',
-  about: '/about/', faq: '/faq/'
+  about: '/about/', faq: '/faq/',
+  events: '/events/', media: '/media/', careers: '/careers/',
+  security: '/security/', perspectives: '/perspectives/',
+  whitepaper: '/resources/how-to-utilize-ai-agents-to-actually-deliver-results/',
+  essay: '/welcome-to-the-age-of-receipts/',
 };
-const WIDTHS = [1440, 1920, 1024, 390];
+const WIDTHS = [1440, 390];
 const HIDE = '.cky-consent-container, .cky-modal { display: none !important; }';
 (async () => {
   const b = await chromium.launch();
@@ -21,9 +25,18 @@ const HIDE = '.cky-consent-container, .cky-modal { display: none !important; }';
     for (const vw of WIDTHS) {
       const ctx = await b.newContext({ viewport: { width: vw, height: 900 } });
       const p = await ctx.newPage();
-      await p.goto('https://aboard.com' + path, { waitUntil: 'load', timeout: 60000 });
-      await p.addStyleTag({ content: HIDE });
-      await p.waitForTimeout(2500);
+      await p.goto('https://aboard.com' + path, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await p.waitForTimeout(1500);
+      // A Cloudflare challenge page refuses addStyleTag. Hide the consent
+      // strip in the DOM instead, and skip a page that never became the site.
+      const ready = await p.evaluate((hide) => {
+        const t = document.body?.innerText || '';
+        if (/just a moment|verify you are human|performing security verification/i.test(t) || t.trim().length < 40) return false;
+        for (const el of document.querySelectorAll(hide)) el.style.setProperty('display', 'none', 'important');
+        return true;
+      }, '.cky-consent-container, .cky-modal, #ckyPreferenceCenter').catch(() => false);
+      if (!ready) { console.log('SKIP challenge', key, vw); await ctx.close(); continue; }
+      await p.waitForTimeout(800);
       const r = await p.evaluate(() => {
         const box = el => { const b = el.getBoundingClientRect(); return { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.width), h: Math.round(b.height) }; };
         const sel = el => { const c = (el.className || '').toString().trim().split(/\s+/).slice(0, 3).join('.'); return `${el.tagName.toLowerCase()}${c ? '.' + c : ''}`; };

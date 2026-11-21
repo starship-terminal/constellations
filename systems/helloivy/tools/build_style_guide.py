@@ -3,9 +3,8 @@
 
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` (helloivy.co boots light by default); the `dark` set goes on
-`[data-mode="dark"]`, so the guide's dark-scoped swatches resolve it. Aliases like {color.ink}
-become var(--color-ink).
+`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
+theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
 
 Placeholders in the template:
   /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
@@ -83,12 +82,7 @@ def slim(node):
         if node.get("$description"):
             out["d"] = node["$description"]
         return out
-    out = {k: slim(v) for k, v in node.items() if not k.startswith("$")}
-    # Group-level extensions (the motion group's reducedMotion probe verdict)
-    # are evidence the guide renders; leaf extensions already ride as "s".
-    if "$extensions" in node:
-        out["_extensions"] = node["$extensions"]
-    return out
+    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
 
 
 # Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"

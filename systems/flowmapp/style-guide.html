@@ -4,459 +4,179 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FlowMapp style guide</title>
-<meta name="description" content="FlowMapp design tokens and the public marketing and app surfaces' components, rendered from tokens.json with the declared and measured values.">
 <style>
 :root {
-  --font-family-inter: Inter, sans-serif;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-size-display: 96px;
-  --font-size-hero: 72px;
-  --font-size-planName: 36px;
-  --font-size-button: 30px;
-  --font-size-tab: 25.6px;
-  --font-size-planCta: 24px;
-  --font-size-faq: 20px;
-  --font-size-body: 16px;
-  --font-size-eyebrow: 12px;
-  --font-size-mobileHero: 33.228px;
-  --font-lineHeight-hero: 1.0;
-  --font-lineHeight-body: 1.4;
-  --font-lineHeight-eyebrow: 1.4;
-  --apps-charts-chart-1-default: #0050ff;
-  --apps-charts-chart-1-dark: #2572ff;
-  --apps-charts-chart-2-default: #4981f6;
-  --apps-charts-chart-2-dark: #74afff;
-  --apps-charts-chart-3-default: #003af0;
-  --apps-charts-chart-3-dark: #004dff;
-  --apps-charts-chart-4-default: #0037c6;
-  --apps-charts-chart-4-dark: #5a9cff;
-  --apps-charts-chart-5-default: #0000ab;
-  --apps-charts-chart-5-dark: #0044dd;
-  --apps-colors-accent-default: #dddddd;
-  --apps-colors-accent-dark: #2e2e2e;
-  --apps-colors-accent-foreground-default: #0d0d0d;
-  --apps-colors-accent-foreground-dark: #f8f8f8;
-  --apps-colors-background-default: #f6f8fa;
-  --apps-colors-background-dark: #060606;
-  --apps-colors-border-default: #0050ff;
-  --apps-colors-border-dark: rgba(0, 80, 255, 0.1);
-  --apps-colors-card-default: #ffffff;
-  --apps-colors-card-dark: #181818;
-  --apps-colors-card-foreground-default: #060606;
-  --apps-colors-card-foreground-dark: #f8f8f8;
-  --apps-colors-destructive-default: #e8262e;
-  --apps-colors-destructive-dark: #ef2f34;
-  --apps-colors-foreground-default: #000000;
-  --apps-colors-foreground-dark: #f8f8f8;
-  --apps-colors-input-default: #0454ff;
-  --apps-colors-input-dark: rgba(255, 255, 255, 0.15);
-  --apps-colors-muted-default: #f1f1f1;
-  --apps-colors-muted-dark: #020202;
-  --apps-colors-muted-foreground-default: #777374;
-  --apps-colors-muted-foreground-dark: #8c8c8c;
-  --apps-colors-popover-default: #ebeaea;
-  --apps-colors-popover-dark: #181818;
-  --apps-colors-popover-foreground-default: #060606;
-  --apps-colors-popover-foreground-dark: #f8f8f8;
-  --apps-colors-primary-default: #0050ff;
-  --apps-colors-primary-dark: #2572ff;
-  --apps-colors-primary-foreground-default: #f5f9ff;
-  --apps-colors-primary-foreground-dark: #090d16;
-  --apps-colors-ring-default: #275fda;
-  --apps-colors-ring-dark: #5491ff;
-  --apps-colors-secondary-default: #d5efff;
-  --apps-colors-secondary-dark: #021448;
-  --apps-colors-secondary-foreground-default: #0a0d13;
-  --apps-colors-secondary-foreground-dark: #f5f9ff;
-  --apps-sidebar-sidebar-default: #f1f1f1;
-  --apps-sidebar-sidebar-accent-default: #dddddd;
-  --apps-sidebar-sidebar-accent-dark: #2e2e2e;
-  --apps-sidebar-sidebar-accent-foreground-default: #0d0d0d;
-  --apps-sidebar-sidebar-accent-foreground-dark: #f8f8f8;
-  --apps-sidebar-sidebar-border-default: #0050ff;
-  --apps-sidebar-sidebar-border-dark: rgba(255, 255, 255, 0.1);
+  --color-bg: #f6f8fa;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-dodger-blue: #0080ff;
+  --color-dodger-blue-20: rgba(0, 128, 255, 0.2);
+  --color-primary-blue: #0050ff;
+  --color-basic-blue: #0050ff;
+  --color-service-grey: #8c9baa;
+  --color-dark-grey: #5f6a75;
+  --color-light-steel-blue: #cbd8e5;
+  --color-alice-blue: #e8edf2;
+  --color-gainsboro: #e6e6e6;
+  --color-yellow-green: #99dd2c;
+  --color-pale-violet-red: #ff759b;
+  --apps-color-background: #f6f8fa;
+  --apps-color-foreground: #000000;
+  --apps-color-card: #ffffff;
+  --apps-color-card-foreground: #060606;
+  --apps-color-popover: #ebeaea;
+  --apps-color-popover-foreground: #060606;
+  --apps-color-primary: #0050ff;
+  --apps-color-primary-foreground: #f5f9ff;
+  --apps-color-secondary: #d5efff;
+  --apps-color-secondary-foreground: #0a0d13;
+  --apps-color-muted: #f1f1f1;
+  --apps-color-muted-foreground: #777374;
+  --apps-color-accent: #dddddd;
+  --apps-color-accent-foreground: #0d0d0d;
+  --apps-color-destructive: #e8262e;
+  --apps-color-border: #0050ff;
+  --apps-color-input: #0454ff;
+  --apps-color-ring: #275fda;
+  --apps-color-background-dark: #060606;
+  --apps-color-foreground-dark: #f8f8f8;
+  --apps-color-card-dark: #181818;
+  --apps-color-card-foreground-dark: #f8f8f8;
+  --apps-color-popover-dark: #181818;
+  --apps-color-popover-foreground-dark: #f8f8f8;
+  --apps-color-primary-dark: #2572ff;
+  --apps-color-primary-foreground-dark: #090d16;
+  --apps-color-secondary-dark: #021448;
+  --apps-color-secondary-foreground-dark: #f5f9ff;
+  --apps-color-muted-dark: #020202;
+  --apps-color-muted-foreground-dark: #8c8c8c;
+  --apps-color-accent-dark: #2e2e2e;
+  --apps-color-accent-foreground-dark: #f8f8f8;
+  --apps-color-destructive-dark: #ef2f34;
+  --apps-color-border-dark: rgba(0, 80, 255, 0.102);
+  --apps-color-input-dark: rgba(255, 255, 255, 0.149);
+  --apps-color-ring-dark: #5491ff;
+  --apps-chart-chart-1: #0050ff;
+  --apps-chart-chart-2: #4981f6;
+  --apps-chart-chart-3: #003af0;
+  --apps-chart-chart-4: #0037c6;
+  --apps-chart-chart-5: #0000ab;
+  --apps-chart-chart-1-dark: #2572ff;
+  --apps-chart-chart-2-dark: #74afff;
+  --apps-chart-chart-3-dark: #004dff;
+  --apps-chart-chart-4-dark: #5a9cff;
+  --apps-chart-chart-5-dark: #0044dd;
+  --apps-sidebar-sidebar: #f1f1f1;
+  --apps-sidebar-sidebar-foreground: #060606;
+  --apps-sidebar-sidebar-primary: #0050ff;
+  --apps-sidebar-sidebar-primary-foreground: #f5f9ff;
+  --apps-sidebar-sidebar-accent: #dddddd;
+  --apps-sidebar-sidebar-accent-foreground: #0d0d0d;
+  --apps-sidebar-sidebar-border: #0050ff;
+  --apps-sidebar-sidebar-ring: #275fda;
   --apps-sidebar-sidebar-dark: #0b0b0b;
-  --apps-sidebar-sidebar-foreground-default: #060606;
   --apps-sidebar-sidebar-foreground-dark: #f8f8f8;
-  --apps-sidebar-sidebar-primary-default: #0050ff;
   --apps-sidebar-sidebar-primary-dark: #2572ff;
-  --apps-sidebar-sidebar-primary-foreground-default: #f5f9ff;
   --apps-sidebar-sidebar-primary-foreground-dark: #090d16;
-  --apps-sidebar-sidebar-ring-default: #275fda;
+  --apps-sidebar-sidebar-accent-dark: #2e2e2e;
+  --apps-sidebar-sidebar-accent-foreground-dark: #f8f8f8;
+  --apps-sidebar-sidebar-border-dark: rgba(255, 255, 255, 0.102);
   --apps-sidebar-sidebar-ring-dark: #5491ff;
-  --apps-sizes-radius: 20px;
-  --apps-typography-body-font: Inter,sans-serif;
-  --apps-typography-button-font: Inter,sans-serif;
-  --apps-typography-heading-font: Inter,sans-serif;
-  --alice-blue: #e8edf2;
-  --basic-blue: #0050ff;
-  --bg: #f6f8fa;
-  --black: #000000;
-  --dark-grey: #5f6a75;
-  --dodger-blue-default: #0080ff;
-  --dodger-blue-20: rgba(0, 128, 255, 0.2);
-  --gainsboro: #e6e6e6;
-  --light-steel-blue: #cbd8e5;
-  --pale-violet-red: #ff759b;
-  --primary-blue: #0050ff;
-  --service-grey: #8c9baa;
-  --white: #ffffff;
-  --yellow-green: #99dd2c;
-  --radius-control: 8px;
-  --radius-button: 12px;
-  --radius-app-button: 12px;
-  --radius-field: 16px;
-  --radius-share-card: 16px;
-  --radius-card: 24px;
-  --radius-pill: 1600px;
-  --radius-popup: 14px;
-  --motion-control: background-color 0.3s ease;
-  --component-topbar-height: 82.06px;
-  --component-nav-link-height: 44.47px;
-  --component-nav-cta-height: 38.47px;
-  --component-nav-pop-width: 353px;
-  --component-hero-cta-height: 120.06px;
-  --component-hero-cta-width: 477.91px;
-  --component-hero-width: 1280px;
-  --component-ptab-height: 59.91px;
-  --component-plan-card-width: 305px;
-  --component-plan-card-height: 435.09px;
-  --component-plan-cta-height: 75.66px;
-  --component-faq-row-height: 69px;
-  --component-contact-field-width: 492px;
-  --component-mobile-topbar-height: 54.69px;
-  --component-mobile-cta-height: 78.17px;
-  --component-app-card-width: 440px;
-  --component-app-card-height: 640px;
-  --component-app-field-height: 56px;
-  --component-app-field-width: 374px;
-  --component-app-submit-height: 56px;
-  --component-app-share-menu-width: 141.64px;
-  --component-app-share-toolbar-btn: 36px;
-  --component-app-share-card-width: 95.07px;
-  --component-app-share-card-height: 104.35px;
-  --component-app-share-popup-width: 251.58px;
-  --component-app-userflow-card-width: 139.22px;
-  --component-app-userflow-card-height: 191.43px;
-  --text-ink: var(--black);
-  --text-muted: #222222;
-  --action-cta-ring: var(--dodger-blue-20);
-  --action-cta-fill: var(--dodger-blue-default);
-  --action-cta-ink: var(--white);
-  --action-nav-fill: var(--black);
-  --action-nav-ink: var(--white);
-  --surface-card: var(--white);
-  --surface-card-featured: var(--black);
-  --surface-field: var(--white);
-  --border-focus-ring: var(--white);
-  --background-page: var(--bg);
-  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --font-heading: Inter,sans-serif;
+  --font-body: Inter,sans-serif;
+  --font-button: Inter,sans-serif;
+  --radius-apps: 20px;
+  --radius-nav-link: 8px;
+  --radius-nav-button: 12px;
+  --radius-hero-cta: 1600px;
+  --typography-body: 400 14px/20px var(--font-body);
+  --typography-nav: 600 16px/22.4px var(--font-body);
+  --typography-hero: 700 72px/72px var(--font-heading);
+  --page: var(--color-bg);
+  --surface: var(--apps-color-card);
+  --text: var(--apps-color-foreground);
+  --muted: var(--color-service-grey);
+  --accent: var(--color-dodger-blue);
+  --border: var(--color-gainsboro);
+  --destructive: var(--apps-color-destructive);
+  --focus: var(--apps-color-ring);
+  --component-nav-height: 82.1px;
+  --component-login-height: 38.5px;
+  --component-cta-height: 38.5px;
+  --component-nav-link-radius: var(--radius-nav-link);
+  --component-button-radius: var(--radius-nav-button);
+  --component-hero-cta-fill: #0080ff;
+  --component-hero-cta-shadow: 0px 8px 10px 0px rgba(0, 128, 255, 0.34);
+  --sg-sans: Inter, sans-serif;
 }
-.app {
-  --neutral-gray-120: #e0e0e0;
-  --neutral-gray-160: #d6d6d6;
-  --neutral-gray-320: #adadad;
-  --neutral-gray-40: #f5f5f5;
-  --neutral-gray-400: rgba(0, 0, 0, 0.4);
-  --neutral-gray-80: #ebebeb;
-  --neutral-gray-gray-400: #999999;
-  --neutral-gray-opacity-120: rgba(0, 0, 0, 0.12);
-  --neutral-gray-opacity-40: rgba(0, 0, 0, 0.04);
-  --neutral-gray-opacity-60: rgba(0, 0, 0, 0.06);
-  --neutral-gray-opacity-80: rgba(0, 0, 0, 0.08);
-  --primary-basic-blue: #0050ff;
-  --primary-basic-gray-default: #1f1f1f;
-  --primary-basic-gray-40: #f5f5f5;
-  --primary-basic-gray-400: #999999;
-  --primary-basic-gray-560: #707070;
-  --primary-basic-gray-880: #1f1f1f;
-  --primary-basic-white: #ffffff;
-  --primary-red-500: #ff476f;
-  --secondary-blue-default: #6696ff;
-  --secondary-blue-20: rgba(102, 150, 255, 0.2);
-  --secondary-blue-32: rgba(102, 150, 255, 0.32);
-  --secondary-blue-56: rgba(102, 150, 255, 0.56);
-  --secondary-blue-64: rgba(102, 150, 255, 0.64);
-  --secondary-blue-8: rgba(102, 150, 255, 0.08);
-  --secondary-electric-default: #3af3ff;
-  --secondary-electric-20: rgba(58, 243, 255, 0.2);
-  --secondary-electric-32: rgba(58, 243, 255, 0.32);
-  --secondary-electric-56: rgba(58, 243, 255, 0.56);
-  --secondary-electric-64: rgba(58, 243, 255, 0.64);
-  --secondary-electric-8: rgba(58, 243, 255, 0.08);
-  --secondary-gray-default: #adadad;
-  --secondary-gray-20: rgba(173, 173, 173, 0.2);
-  --secondary-gray-32: rgba(173, 173, 173, 0.32);
-  --secondary-gray-56: rgba(173, 173, 173, 0.56);
-  --secondary-gray-64: rgba(173, 173, 173, 0.64);
-  --secondary-gray-8: rgba(173, 173, 173, 0.08);
-  --secondary-gray-80: rgba(173, 173, 173, 0.8);
-  --secondary-gray-800: #4e4e4e;
-  --secondary-green-default: #36eb8d;
-  --secondary-green-20: rgba(54, 235, 141, 0.2);
-  --secondary-green-32: rgba(54, 235, 141, 0.32);
-  --secondary-green-500: #36eb8d;
-  --secondary-green-56: rgba(54, 235, 141, 0.56);
-  --secondary-green-64: rgba(54, 235, 141, 0.64);
-  --secondary-green-8: rgba(54, 235, 141, 0.08);
-  --secondary-green-800: #165e38;
-  --secondary-orange-default: #ffa334;
-  --secondary-orange-20: rgba(255, 163, 52, 0.2);
-  --secondary-orange-32: rgba(255, 163, 52, 0.32);
-  --secondary-orange-56: rgba(255, 163, 52, 0.56);
-  --secondary-orange-64: rgba(255, 163, 52, 0.64);
-  --secondary-orange-8: rgba(255, 163, 52, 0.08);
-  --secondary-pink-default: #ff99ff;
-  --secondary-pink-20: rgba(255, 153, 255, 0.2);
-  --secondary-pink-32: rgba(255, 153, 255, 0.32);
-  --secondary-pink-56: rgba(255, 153, 255, 0.56);
-  --secondary-pink-64: rgba(255, 153, 255, 0.64);
-  --secondary-pink-8: rgba(255, 153, 255, 0.08);
-  --secondary-purple-default: #9b70ff;
-  --secondary-purple-20: rgba(155, 112, 255, 0.2);
-  --secondary-purple-32: rgba(155, 112, 255, 0.32);
-  --secondary-purple-56: rgba(155, 112, 255, 0.56);
-  --secondary-purple-64: rgba(155, 112, 255, 0.64);
-  --secondary-purple-8: rgba(155, 112, 255, 0.08);
-  --secondary-red-default: #ff7070;
-  --secondary-red-20: rgba(255, 112, 112, 0.2);
-  --secondary-red-32: rgba(255, 112, 112, 0.32);
-  --secondary-red-56: rgba(255, 112, 112, 0.56);
-  --secondary-red-64: rgba(255, 112, 112, 0.64);
-  --secondary-red-8: rgba(255, 112, 112, 0.08);
-  --secondary-yellow-default: #f5cc00;
-  --secondary-yellow-20: rgba(245, 204, 0, 0.2);
-  --secondary-yellow-32: rgba(245, 204, 0, 0.32);
-  --secondary-yellow-56: rgba(245, 204, 0, 0.56);
-  --secondary-yellow-64: rgba(245, 204, 0, 0.64);
-  --secondary-yellow-8: rgba(245, 204, 0, 0.08);
-  --transparent: rgba(0, 0, 0, 0);
-  --text-ink: var(--primary-basic-gray-default);
-  --text-muted: var(--neutral-gray-gray-400);
-  --text-link: var(--neutral-gray-gray-400);
-  --text-viewer-ink: var(--primary-basic-gray-560);
-  --surface-field-bg: var(--neutral-gray-40);
-  --surface-popup: rgba(0, 0, 0, 0.56);
-  --surface-share-card: var(--primary-basic-white);
-  --border-oauth-border: var(--neutral-gray-opacity-120);
-  --border-share-card-border: var(--primary-basic-gray-default);
-  --action-primary-fill: var(--primary-basic-blue);
-  --action-primary-fill-disabled: #9fb8f9;
-  --action-primary-ink: var(--primary-basic-white);
-  --background-page: var(--primary-basic-white);
+[data-mode="dark"] {
+  --page: #060606;
+  --surface: #181818;
+  --text: #f8f8f8;
+  --muted: #8c8c8c;
+  --accent: #2572ff;
+  --border: rgba(0, 80, 255, 0.102);
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #000); background: var(--background-page, #f6f8fa); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 700 38px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--alice-blue, #e8edf2); }
-.lead { max-width: 62ch; color: var(--text-ink, #000); opacity: .8; }
-.note { font-size: 13px; color: var(--text-ink, #000); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-ink, #000); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-/* A non-light strip's values only read on its own field. */
-.pal.app { background: var(--background-page, #fff); color: var(--text-ink, #1f1f1f); padding: 12px; border-radius: 10px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--alice-blue, #e8edf2); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-ink, #000); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--alice-blue, #e8edf2); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--text-ink, #000); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--alice-blue, #e8edf2); overflow: hidden; background: var(--white, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 82px); padding: 0 12px 0 22px; font-size: 16px; font-weight: 600; color: var(--text-ink, #000); background: var(--white, #fff); }
-.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-cta-height, 38px); padding: 0 18px; font-size: var(--font-size-body, 16px); font-weight: 600; border-radius: var(--radius-button, 12px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-nav-fill, #000); color: var(--action-nav-ink, #fff); }
-/* The big marketing pills are dodger-blue inside a translucent halo of the
-   same hue at 20% — the site's signature ring. */
-.btn.accent { background: var(--action-cta-fill, #0080ff); color: var(--action-cta-ink, #fff); border-radius: var(--radius-pill, 1600px); height: var(--component-plan-cta-height, 76px); padding: 0 34px; font-size: var(--font-size-plan-cta, 24px); font-weight: 700; box-shadow: 0 0 0 12px var(--action-cta-ring, rgba(0,128,255,.2)), rgba(0,128,255,.34) 0 8px 10px; }
-.app .btn.primary { background: var(--action-primary-fill, #0050ff); color: var(--action-primary-ink, #fff); border-radius: var(--radius-field, 16px); }
-.app .btn.disabled { background: var(--action-primary-fill-disabled, #9fb8f9); color: var(--action-primary-ink, #fff); border-radius: var(--radius-field, 16px); }
-.btn.ghost { border-color: var(--alice-blue, #e8edf2); color: var(--text-ink, #000); }
-.btn.small { height: var(--component-nav-cta-height, 38px); font-size: 14px; }
-.hero { color: var(--text-ink, #000); padding: 64px 40px; font: var(--font-weight-bold, 700) var(--font-size-hero, 72px)/var(--font-line-height-hero, 1) var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: linear-gradient(180deg, #fff, var(--background-page, #f6f8fa)); }
-.hero small { display: block; font: 500 var(--font-size-eyebrow, 12px)/1.4 var(--sg-sans); letter-spacing: .02em; color: var(--text-ink, #000); opacity: .8; margin: 0 0 18px; }
-.tag { display: inline-block; padding: 4px 14px; border-radius: var(--radius-pill, 1600px); background: var(--white, #fff); border: 1px solid var(--alice-blue, #e8edf2); font-size: var(--font-size-eyebrow, 12px); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted, #222); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--alice-blue, #e8edf2); padding: 24px; font-size: 13px; background: var(--surface-card, #fff); border-radius: var(--radius-card, 24px); }
-.tile .img { height: 140px; background: var(--bg, #f6f8fa); border: 1px solid var(--alice-blue, #e8edf2); border-radius: 16px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--service-grey, #8c9baa); }
-.tile b { display: block; font: 400 var(--font-size-plan-name, 36px)/1.1 var(--sg-serif); margin-bottom: 4px; color: var(--text-ink, #000); }
-.tile .sub { opacity: .65; font-size: 12px; color: var(--dark-grey, #5f6a75); }
-.tile.dark { background: var(--surface-card-featured, #000); color: var(--white, #fff); }
-.tile.dark b, .tile.dark .sub { color: var(--white, #fff); }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--alice-blue, #e8edf2); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--alice-blue, #e8edf2); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--text-ink, #000); opacity: .65; font-family: var(--sg-mono); }
-.field { width: var(--component-app-field-width, 374px); height: var(--component-app-field-height, 56px); border: 1px solid var(--surface-field-bg, #f5f5f5); border-radius: var(--radius-field, 16px); background: var(--surface-field-bg, #f5f5f5); color: var(--text-muted, #999); padding: 0 16px; font-size: 16px; }
-.sharecard { display: inline-block; width: var(--component-app-share-card-width, 95px); min-height: var(--component-app-share-card-height, 104px); border: 2px solid var(--border-share-card-border, #1f1f1f); border-radius: var(--radius-share-card, 16px); background: var(--surface-share-card, #fff); padding: 8px; font-size: 12px; font-weight: 600; }
-.toast { display: inline-block; border-radius: var(--radius-popup, 14px); background: var(--surface-popup, rgba(0,0,0,.56)); color: #fff; padding: 12px 18px; font-size: 14px; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text); background: var(--page); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 40px/1.1 var(--sg-sans); letter-spacing: -0.03em; margin: 0 0 8px; }
+.note { color: var(--muted); max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 28px; }
+.sw { width: 148px; }
+.dot { height: 48px; border-radius: 12px; border: 1px solid rgba(0,0,0,.08); }
+.nm { font: 600 12px/1.3 var(--sg-sans); margin-top: 6px; }
+.vl { font: 400 11px/1.3 ui-monospace, Menlo, monospace; color: var(--muted); }
+.nav { display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 16px; background: white; border-radius: 16px; }
+.sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; height: 38.5px; padding: 0 16px; border-radius: 12px; font-weight: 600; text-decoration: none; }
+.btn.ghost { border: 1px solid rgba(0,0,0,.1); color: black; }
+.btn.black { background: black; color: white; }
+.hero { margin-top: 28px; text-align: center; }
+.pill { display: inline-flex; align-items: center; justify-content: center; min-width: 280px; height: 72px; padding: 0 28px; border-radius: 999px; background: #0080ff; color: white; font-weight: 600; font-size: 22px; box-shadow: 0 8px 10px rgba(0,128,255,.34); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid #e6e6e6; }
 </style>
 </head>
 <body>
 <main>
-  <h1>FlowMapp style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">FlowMapp, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing site's flat legacy palette (<code>--bg</code>/<code>--black</code>/<code>--white</code>/<code>--dodger-blue</code>/<code>--primary-blue</code>/<code>--alice-blue</code>/<code>--service-grey</code>/<code>--dark-grey</code>/<code>--yellow-green</code>/<code>--pale-violet-red</code>) plus the Webflow <code>_apps---</code> variable layer (typography, the 20px radius, the shadcn-style colours, the chart ramp — including the declared-but-unpainted <code>-dark</code> twins), the app's own <code>--primary-*</code>/<code>--secondary-*</code>/<code>--neutral-gray-*</code> ramp, self-hosted Inter (400–700), the measured 12–96px type ramp, the 8px→24px→1600px radius ladder, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from www.flowmapp.com and app.flowmapp.com, signed out, in headless Chromium. Everything post-login is a documented boundary; the sign-in, sign-up, restore and contact forms were measured and typed into then cleared, never submitted; the published demo project at /share/projects/215285 is the product's own read-only surface. Inter is a served face and is not loaded here: samples fall back to system sans. No dark theme exists signed out — the <code>_apps---*-dark</code> declarations are Webflow-template evidence nothing switches to.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">The header pairs the wordmark with Try Demo Project, the Features flyout, Pricing/Help/Blog links, a plain Log in and the black 'Try for free' pill. The hero runs a 72px/700 masthead over the 'Over 400,000 users' trust line; the signature CTA is a dodger-blue 1600px-radius pill inside its translucent halo.</p>
-  <div class="mock" style="padding:0">
-    <div class="navbar"><span class="wm">Flowmapp</span><span style="font-weight:400;font-size:14px">Try Demo Project</span><span>Features</span><span>Use cases</span><span>Pricing</span><span class="sp"></span><span style="font-weight:400">Log in</span><span class="btn small primary">Try for free</span></div>
-    <div class="hero"><small>Over 400,000 users</small>Visual platform for<br>planning UX and<br>pitching web design<br><br><span class="btn accent">Start planning</span></div>
-  </div>
-
-  <h2 class="sh">Pricing cards</h2>
-  <p class="lead">The billing switcher is a white pill pair at 25.6px (the annual side carries the '45% off' badge); plan cards are white 24px-radius panels, and the featured Team card inverts to black — its button still paints the dodger-blue pill.</p>
-  <div class="mock" style="padding:20px">
-    <div class="grid">
-      <div class="tile"><b>Free</b><span class="sub">$0 / forever — freelancers starting out.</span></div>
-      <div class="tile"><b>Pro</b><span class="sub">$15 / $8.25 annual — standalone designers.</span></div>
-      <div class="tile dark"><b>Team</b><span class="sub">$35 / $19.25 annual — the inverted featured card.</span></div>
-      <div class="tile"><b>Agency</b><span class="sub">$99 / $54.45 annual — unlimited workspaces.</span></div>
-    </div>
-  </div>
-
-  <h2 class="sh">The app surface</h2>
-  <p class="lead">app.flowmapp.com declares its own ramp (<code>--primary-basic-blue</code> #0050ff, the <code>--neutral-gray-*</code> greys, the <code>--secondary-*</code> hue/alpha families); the signed-out auth cards and the public share viewer paint it. The sign-in submit sits disabled on #9fb8f9 until both fields validate, then paints the primary blue — both fills were measured, never submitted. The swatches in this scope carry the app set.</p>
-  <div class="mock app" style="padding:24px;max-width:460px">
-    <b style="font-size:20px;font-weight:500">Log In</b>
-    <p class="sub" style="color:var(--text-muted,#999);font-size:14px;margin:4px 0 16px">Log in to your FlowMapp workspace</p>
-    <input class="field" placeholder="Email"><br><br>
-    <input class="field" placeholder="Password"><br><br>
-    <span class="btn disabled" style="width:374px;height:56px;border-radius:var(--radius-field,16px)">Log In</span>
-  </div>
-  <div class="mock app" style="padding:24px;margin-top:12px">
-    <span class="sharecard">Press Room</span>
-    <span class="sharecard">Home</span>
-    <div style="margin-top:16px"><span class="toast">👋 Hi, Log In or Sign Up to start planning amazing websites!</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The marketing palette is a two-layer declaration: the flat legacy names the components are styled with, and the Webflow <code>_apps</code> layer (colours, the chart ramp, sidebar and typography vars — the <code>-dark</code> twins are declared but never painted). The app re-declares nothing: it ships its own <code>--primary-*</code>/<code>--secondary-*</code>/<code>--neutral-*</code> ramp. Measured roles alias the declared values they match.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Radius and motion</h2>
-  <p class="lead">Radii climb 8px (nav links, flyout rows) → 12px (header and share-viewer buttons) → 16px (auth fields, share cards) → 24px (pricing cards) → the 1600px pill that makes every CTA fully round; the Webflow layer declares the 20px <code>--_apps---sizes--radius</code>. The control transition is the measured 0.3s on nav links and buttons.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Inter carries everything: display headings at 700 (96px feature pages, 72px home mastheads), nav links and buttons at 600, the trust eyebrow and app headings at 500, body and plan rows at 400 — the marketing sizes are measured (the sheets declare no size vars), and the app loads a narrower weight band from Google Fonts. Samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused, filled and enabled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+<h1>FlowMapp</h1>
+<p class="note">Public marketing tokens read from flowmapp.com on 2026-11-21. The painted site is light. The dark slots below are declared on :root and were not bound on a captured public page. The toggle only swaps those declared slots.</p>
+<p><button type="button" id="theme">Show declared dark slots</button></p>
+<h2>Painted roles</h2>
+<div class="row" id="roles"></div>
+<h2>Nav</h2>
+<div class="nav"><b>Flowmapp</b><span>Features</span><span>Use cases</span><span>Pricing</span><span class="sp"></span><a class="btn ghost">Log in</a><a class="btn black">Try for free</a></div>
+<div class="hero"><a class="pill">Start planning</a></div>
+<h2>Token paths</h2>
+<table id="tokens"></table>
 </main>
 <script>
-const TOK = {"core":{"font":{"family":{"inter":{"v":"Inter, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json); the self-hosted Inter @font-face faces and the declared --_apps---typography--* vars in raw/css-vars.json","d":"Inter — the family every surface sets: self-hosted woff2 on the marketing site (400–700), Google-Fonts Inter 500 on the app."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of plan-row default (raw/components-computed.json)","d":"The 400 body weight on plan rows, FAQ and app fields."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of hero-eyebrow default (raw/components-computed.json)","d":"The 500 weight on the trust eyebrow and app headings."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of nav-cta default (raw/components-computed.json)","d":"The 600 weight on nav links, buttons and body lead-ins."},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"The display-heading weight: the 72px masthead and section headings are 700."}},"size":{"display":{"v":"96px","t":"dimension","s":"computed fontSize of feat-h1 default (raw/components-computed.json)","d":"The 96px feature-page display heading."},"hero":{"v":"72px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 72px hero masthead and section headings."},"planName":{"v":"36px","t":"dimension","s":"computed fontSize of plan-card default (raw/components-computed.json)","d":"The 36px plan-name heading inside pricing cards."},"button":{"v":"30px","t":"dimension","s":"computed fontSize of hero-cta default (raw/components-computed.json)","d":"The 30px hero-button size."},"tab":{"v":"25.6px","t":"dimension","s":"computed fontSize of ptab-annual default (raw/components-computed.json)","d":"The 25.6px billing-tab size."},"planCta":{"v":"24px","t":"dimension","s":"computed fontSize of plan-cta default (raw/components-computed.json)","d":"The 24px plan-CTA size."},"faq":{"v":"20px","t":"dimension","s":"computed fontSize of faq-q default (raw/components-computed.json)","d":"The 20px FAQ-question and contact-field size."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of plan-row default (raw/components-computed.json)","d":"The 16px body/nav size."},"eyebrow":{"v":"12px","t":"dimension","s":"computed fontSize of hero-eyebrow default (raw/components-computed.json)","d":"The 12px trust-eyebrow size."},"mobileHero":{"v":"33.228px","t":"dimension","s":"computed fontSize of m-hero-h1 default (raw/components-computed.json)","d":"The masthead at 390 wide."}},"lineHeight":{"hero":{"v":1.0,"t":"number","s":"computed lineHeight/fontSize of hero-h1 default (72px over 72px, raw/components-computed.json)","d":"The hero masthead leading (72/72)."},"body":{"v":1.4,"t":"number","s":"computed lineHeight/fontSize of plan-row default (22.4px over 16px, raw/components-computed.json)","d":"The body leading."},"eyebrow":{"v":1.4,"t":"number","s":"computed lineHeight/fontSize of hero-eyebrow default (16.8px over 12px, raw/components-computed.json)","d":"The trust-eyebrow leading."}}},"apps":{"charts":{"chart":{"1":{"default":{"v":"#0050ff","t":"color","s":"css-var --_apps---charts--chart-1 (light)"},"dark":{"v":"#2572ff","t":"color","s":"css-var --_apps---charts--chart-1-dark (light)"}},"2":{"default":{"v":"#4981f6","t":"color","s":"css-var --_apps---charts--chart-2 (light)"},"dark":{"v":"#74afff","t":"color","s":"css-var --_apps---charts--chart-2-dark (light)"}},"3":{"default":{"v":"#003af0","t":"color","s":"css-var --_apps---charts--chart-3 (light)"},"dark":{"v":"#004dff","t":"color","s":"css-var --_apps---charts--chart-3-dark (light)"}},"4":{"default":{"v":"#0037c6","t":"color","s":"css-var --_apps---charts--chart-4 (light)"},"dark":{"v":"#5a9cff","t":"color","s":"css-var --_apps---charts--chart-4-dark (light)"}},"5":{"default":{"v":"#0000ab","t":"color","s":"css-var --_apps---charts--chart-5 (light)"},"dark":{"v":"#0044dd","t":"color","s":"css-var --_apps---charts--chart-5-dark (light)"}}}},"colors":{"accent":{"default":{"v":"#dddddd","t":"color","s":"css-var --_apps---colors--accent (light)"},"dark":{"v":"#2e2e2e","t":"color","s":"css-var --_apps---colors--accent-dark (light)"},"foreground":{"default":{"v":"#0d0d0d","t":"color","s":"css-var --_apps---colors--accent-foreground (light)"},"dark":{"v":"#f8f8f8","t":"color","s":"css-var --_apps---colors--accent-foreground-dark (light)"}}},"background":{"default":{"v":"#f6f8fa","t":"color","s":"css-var --_apps---colors--background (light)"},"dark":{"v":"#060606","t":"color","s":"css-var --_apps---colors--background-dark (light)"}},"border":{"default":{"v":"#0050ff","t":"color","s":"css-var --_apps---colors--border (light)"},"dark":{"v":"rgba(0, 80, 255, 0.1)","t":"color","s":"css-var --_apps---colors--border-dark (light)"}},"card":{"default":{"v":"#ffffff","t":"color","s":"css-var --_apps---colors--card (light)"},"dark":{"v":"#181818","t":"color","s":"css-var --_apps---colors--card-dark (light)"},"foreground":{"default":{"v":"#060606","t":"color","s":"css-var --_apps---colors--card-foreground (light)"},"dark":{"v":"#f8f8f8","t":"color","s":"css-var --_apps---colors--card-foreground-dark (light)"}}},"destructive":{"default":{"v":"#e8262e","t":"color","s":"css-var --_apps---colors--destructive (light)"},"dark":{"v":"#ef2f34","t":"color","s":"css-var --_apps---colors--destructive-dark (light)"}},"foreground":{"default":{"v":"#000000","t":"color","s":"css-var --_apps---colors--foreground (light)"},"dark":{"v":"#f8f8f8","t":"color","s":"css-var --_apps---colors--foreground-dark (light)"}},"input":{"default":{"v":"#0454ff","t":"color","s":"css-var --_apps---colors--input (light)"},"dark":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"css-var --_apps---colors--input-dark (light)"}},"muted":{"default":{"v":"#f1f1f1","t":"color","s":"css-var --_apps---colors--muted (light)"},"dark":{"v":"#020202","t":"color","s":"css-var --_apps---colors--muted-dark (light)"},"foreground":{"default":{"v":"#777374","t":"color","s":"css-var --_apps---colors--muted-foreground (light)"},"dark":{"v":"#8c8c8c","t":"color","s":"css-var --_apps---colors--muted-foreground-dark (light)"}}},"popover":{"default":{"v":"#ebeaea","t":"color","s":"css-var --_apps---colors--popover (light)"},"dark":{"v":"#181818","t":"color","s":"css-var --_apps---colors--popover-dark (light)"},"foreground":{"default":{"v":"#060606","t":"color","s":"css-var --_apps---colors--popover-foreground (light)"},"dark":{"v":"#f8f8f8","t":"color","s":"css-var --_apps---colors--popover-foreground-dark (light)"}}},"primary":{"default":{"v":"#0050ff","t":"color","s":"css-var --_apps---colors--primary (light)"},"dark":{"v":"#2572ff","t":"color","s":"css-var --_apps---colors--primary-dark (light)"},"foreground":{"default":{"v":"#f5f9ff","t":"color","s":"css-var --_apps---colors--primary-foreground (light)"},"dark":{"v":"#090d16","t":"color","s":"css-var --_apps---colors--primary-foreground-dark (light)"}}},"ring":{"default":{"v":"#275fda","t":"color","s":"css-var --_apps---colors--ring (light)"},"dark":{"v":"#5491ff","t":"color","s":"css-var --_apps---colors--ring-dark (light)"}},"secondary":{"default":{"v":"#d5efff","t":"color","s":"css-var --_apps---colors--secondary (light)"},"dark":{"v":"#021448","t":"color","s":"css-var --_apps---colors--secondary-dark (light)"},"foreground":{"default":{"v":"#0a0d13","t":"color","s":"css-var --_apps---colors--secondary-foreground (light)"},"dark":{"v":"#f5f9ff","t":"color","s":"css-var --_apps---colors--secondary-foreground-dark (light)"}}}},"sidebar":{"sidebar":{"default":{"v":"#f1f1f1","t":"color","s":"css-var --_apps---sidebar--sidebar (light)"},"accent":{"default":{"v":"#dddddd","t":"color","s":"css-var --_apps---sidebar--sidebar-accent (light)"},"dark":{"v":"#2e2e2e","t":"color","s":"css-var --_apps---sidebar--sidebar-accent-dark (light)"},"foreground":{"default":{"v":"#0d0d0d","t":"color","s":"css-var --_apps---sidebar--sidebar-accent-foreground (light)"},"dark":{"v":"#f8f8f8","t":"color","s":"css-var --_apps---sidebar--sidebar-accent-foreground-dark (light)"}}},"border":{"default":{"v":"#0050ff","t":"color","s":"css-var --_apps---sidebar--sidebar-border (light)"},"dark":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --_apps---sidebar--sidebar-border-dark (light)"}},"dark":{"v":"#0b0b0b","t":"color","s":"css-var --_apps---sidebar--sidebar-dark (light)"},"foreground":{"default":{"v":"#060606","t":"color","s":"css-var --_apps---sidebar--sidebar-foreground (light)"},"dark":{"v":"#f8f8f8","t":"color","s":"css-var --_apps---sidebar--sidebar-foreground-dark (light)"}},"primary":{"default":{"v":"#0050ff","t":"color","s":"css-var --_apps---sidebar--sidebar-primary (light)"},"dark":{"v":"#2572ff","t":"color","s":"css-var --_apps---sidebar--sidebar-primary-dark (light)"},"foreground":{"default":{"v":"#f5f9ff","t":"color","s":"css-var --_apps---sidebar--sidebar-primary-foreground (light)"},"dark":{"v":"#090d16","t":"color","s":"css-var --_apps---sidebar--sidebar-primary-foreground-dark (light)"}}},"ring":{"default":{"v":"#275fda","t":"color","s":"css-var --_apps---sidebar--sidebar-ring (light)"},"dark":{"v":"#5491ff","t":"color","s":"css-var --_apps---sidebar--sidebar-ring-dark (light)"}}}},"sizes":{"radius":{"v":"20px","t":"dimension","s":"css-var --_apps---sizes--radius (light)"}},"typography":{"body":{"font":{"v":"Inter,sans-serif","t":"other","s":"css-var --_apps---typography--body-font (light)"}},"button":{"font":{"v":"Inter,sans-serif","t":"other","s":"css-var --_apps---typography--button-font (light)"}},"heading":{"font":{"v":"Inter,sans-serif","t":"other","s":"css-var --_apps---typography--heading-font (light)"}}}},"alice":{"blue":{"v":"#e8edf2","t":"color","s":"css-var --alice-blue (light)"}},"basic":{"blue":{"v":"#0050ff","t":"color","s":"css-var --basic-blue (light)"}},"bg":{"v":"#f6f8fa","t":"color","s":"css-var --bg (light)"},"black":{"v":"#000000","t":"color","s":"css-var --black (light)"},"dark":{"grey":{"v":"#5f6a75","t":"color","s":"css-var --dark-grey (light)"}},"dodger":{"blue":{"default":{"v":"#0080ff","t":"color","s":"css-var --dodger-blue (light)"},"20":{"v":"rgba(0, 128, 255, 0.2)","t":"color","s":"css-var --dodger-blue-20 (light)"}}},"gainsboro":{"v":"#e6e6e6","t":"color","s":"css-var --gainsboro (light)"},"light":{"steel":{"blue":{"v":"#cbd8e5","t":"color","s":"css-var --light-steel-blue (light)"}}},"pale":{"violet":{"red":{"v":"#ff759b","t":"color","s":"css-var --pale-violet-red (light)"}}},"primary":{"blue":{"v":"#0050ff","t":"color","s":"css-var --primary-blue (light)"}},"service":{"grey":{"v":"#8c9baa","t":"color","s":"css-var --service-grey (light)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --white (light)"},"yellow":{"green":{"v":"#99dd2c","t":"color","s":"css-var --yellow-green (light)"}},"radius":{"control":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-link default (raw/components-computed.json)","d":"The 8px radius on nav links and flyout rows."},"button":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The 12px radius on the header pill buttons."},"app-button":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of sh-menu default (raw/components-computed.json)","d":"The 12px radius on the share viewer's buttons."},"field":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of login-field default (raw/components-computed.json)","d":"The 16px radius on the app auth fields and submit."},"share-card":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of sh-card default (raw/components-computed.json)","d":"The 16px radius on the shared sitemap page cards."},"card":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The 24px pricing-card radius."},"pill":{"v":"1600px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The pill radius on the big CTAs — the sheets set it to 1600px, far past any rendered length."},"popup":{"v":"14px","t":"dimension","s":"computed borderTopLeftRadius of sh-popup default (raw/components-computed.json)","d":"The 14px radius on the share viewer's sign-up toast."}},"motion":{"control":{"v":"background-color 0.3s ease","t":"other","s":"computed transition of nav-link default (raw/components-computed.json)","d":"The control transition the site puts on nav links, buttons and cards."}},"component":{"topbar-height":{"v":"82.06px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The marketing header bar height."},"nav-link-height":{"v":"44.47px","t":"dimension","s":"measured h of nav-link default (raw/components-computed.json)","d":"The nav-link hit height."},"nav-cta-height":{"v":"38.47px","t":"dimension","s":"measured h of nav-cta default (raw/components-computed.json)","d":"The header pill height."},"nav-pop-width":{"v":"353px","t":"dimension","s":"measured w of nav-pop-item default (raw/components-computed.json)","d":"The Features flyout row width."},"hero-cta-height":{"v":"120.06px","t":"dimension","s":"measured h of hero-cta default (raw/components-computed.json)","d":"The hero pill height including its halo."},"hero-cta-width":{"v":"477.91px","t":"dimension","s":"measured w of hero-cta default (raw/components-computed.json)","d":"The hero pill width."},"hero-width":{"v":"1280px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The hero masthead measure."},"ptab-height":{"v":"59.91px","t":"dimension","s":"measured h of ptab-annual default (raw/components-computed.json)","d":"The billing-tab pill height."},"plan-card-width":{"v":"305px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"The pricing-card width."},"plan-card-height":{"v":"435.09px","t":"dimension","s":"measured h of plan-card default (raw/components-computed.json)","d":"The pricing-card height."},"plan-cta-height":{"v":"75.66px","t":"dimension","s":"measured h of plan-cta default (raw/components-computed.json)","d":"The plan-CTA pill height."},"faq-row-height":{"v":"69px","t":"dimension","s":"measured h of faq-q default (raw/components-computed.json)","d":"The closed FAQ row height."},"contact-field-width":{"v":"492px","t":"dimension","s":"measured w of contact-field default (raw/components-computed.json)","d":"The contact-field width."},"mobile-topbar-height":{"v":"54.69px","t":"dimension","s":"measured h of m-topbar default (raw/components-computed.json)","d":"The phone header height."},"mobile-cta-height":{"v":"78.17px","t":"dimension","s":"measured h of m-hero-cta default (raw/components-computed.json)","d":"The hero pill at 390 wide."},"app":{"card-width":{"v":"440px","t":"dimension","s":"measured w of login-card default on app.flowmapp.com (raw/components-computed.json)","d":"The auth card width."},"card-height":{"v":"640px","t":"dimension","s":"measured h of login-card default on app.flowmapp.com (raw/components-computed.json)","d":"The auth card height."},"field-height":{"v":"56px","t":"dimension","s":"measured h of login-field default on app.flowmapp.com (raw/components-computed.json)","d":"The auth field height."},"field-width":{"v":"374px","t":"dimension","s":"measured w of login-field default on app.flowmapp.com (raw/components-computed.json)","d":"The auth field width."},"submit-height":{"v":"56px","t":"dimension","s":"measured h of login-submit default on app.flowmapp.com (raw/components-computed.json)","d":"The primary submit height."},"share-menu-width":{"v":"141.64px","t":"dimension","s":"measured w of sh-menu default on app.flowmapp.com (raw/components-computed.json)","d":"The share viewer 'Demo Project' button width."},"share-toolbar-btn":{"v":"36px","t":"dimension","s":"measured h of sh-toolbar-btn default on app.flowmapp.com (raw/components-computed.json)","d":"The canvas toolbar icon-button size."},"share-card-width":{"v":"95.07px","t":"dimension","s":"measured w of sh-card default on app.flowmapp.com (raw/components-computed.json)","d":"The sitemap page-card width at the captured zoom."},"share-card-height":{"v":"104.35px","t":"dimension","s":"measured h of sh-card default on app.flowmapp.com (raw/components-computed.json)","d":"The sitemap page-card height at the captured zoom."},"share-popup-width":{"v":"251.58px","t":"dimension","s":"measured w of sh-popup default on app.flowmapp.com (raw/components-computed.json)","d":"The sign-up nudge toast width."},"userflow-card-width":{"v":"139.22px","t":"dimension","s":"measured w of uf-card default on app.flowmapp.com (raw/components-computed.json)","d":"The user-flow card width at the captured zoom."},"userflow-card-height":{"v":"191.43px","t":"dimension","s":"measured h of uf-card default on app.flowmapp.com (raw/components-computed.json)","d":"The user-flow card height at the captured zoom."}}}},"light":{"text":{"ink":{"v":"{black}","t":"color","s":"computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared black","d":"The black ink on headings and body copy (the declared --black)."},"muted":{"v":"#222222","t":"color","s":"computed color of nav-link default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The #222 nav-link ink — one step off pure black."}},"action":{"cta-ring":{"v":"{dodger.blue.20}","t":"color","s":"computed backgroundColor of hero-cta default (raw/components-computed.json); matches declared dodger.blue.20","d":"The translucent dodger-blue halo the pill buttons paint as their outer box (the declared --dodger-blue-20)."},"cta-fill":{"v":"{dodger.blue.default}","t":"color","s":"the first opaque painted layer inside hero-cta default (raw/components-computed.json paint list); matches declared dodger.blue.default","d":"The solid #0080ff fill the CTA's inner .btn__wrapper paints (the declared --dodger-blue)."},"cta-ink":{"v":"{white}","t":"color","s":"computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared white","d":"The white text on the blue pills (the declared --white)."},"nav-fill":{"v":"{black}","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json); matches declared black","d":"The near-black fill of the header 'Try for free' pill (the declared --black)."},"nav-ink":{"v":"{white}","t":"color","s":"computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared white","d":"The white text on the black header pill."}},"surface":{"card":{"v":"{white}","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json); matches declared white","d":"The white pricing-card surface (the declared --white)."},"card-featured":{"v":"{black}","t":"color","s":"computed backgroundColor of plan-card-paid default (raw/components-computed.json); matches declared black","d":"The inverted black featured-plan card (Team)."},"field":{"v":"{white}","t":"color","s":"computed backgroundColor of contact-field default (raw/components-computed.json); matches declared white","d":"The white contact-field surface."}},"border":{"focus-ring":{"v":"{white}","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json); matches declared white","d":"The keyboard focus ring on controls, where the browser paints one."}},"background":{"page":{"v":"{bg}","t":"color","s":"the body/html field behind every marketing page (screenshots/*-light-*.png); the declared --bg","d":"The #f6f8fa page field the marketing pages paint on."}}},"app":{"neutral":{"gray":{"120":{"v":"#e0e0e0","t":"color","s":"css-var --neutral-gray-120 (app)"},"160":{"v":"#d6d6d6","t":"color","s":"css-var --neutral-gray-160 (app)"},"320":{"v":"#adadad","t":"color","s":"css-var --neutral-gray-320 (app)"},"40":{"v":"#f5f5f5","t":"color","s":"css-var --neutral-gray-40 (app)"},"400":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"css-var --neutral-gray-400 (app)"},"80":{"v":"#ebebeb","t":"color","s":"css-var --neutral-gray-80 (app)"},"gray":{"400":{"v":"#999999","t":"color","s":"css-var --neutral-gray-gray-400 (app)"}},"opacity":{"120":{"v":"rgba(0, 0, 0, 0.12)","t":"color","s":"css-var --neutral-gray-opacity-120 (app)"},"40":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --neutral-gray-opacity-40 (app)"},"60":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"css-var --neutral-gray-opacity-60 (app)"},"80":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --neutral-gray-opacity-80 (app)"}}}},"primary":{"basic":{"blue":{"v":"#0050ff","t":"color","s":"css-var --primary-basic-blue (app)"},"gray":{"default":{"v":"#1f1f1f","t":"color","s":"css-var --primary-basic-gray (app)"},"40":{"v":"#f5f5f5","t":"color","s":"css-var --primary-basic-gray-40 (app)"},"400":{"v":"#999999","t":"color","s":"css-var --primary-basic-gray-400 (app)"},"560":{"v":"#707070","t":"color","s":"css-var --primary-basic-gray-560 (app)"},"880":{"v":"#1f1f1f","t":"color","s":"css-var --primary-basic-gray-880 (app)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --primary-basic-white (app)"}},"red":{"500":{"v":"#ff476f","t":"color","s":"css-var --primary-red-500 (app)"}}},"secondary":{"blue":{"default":{"v":"#6696ff","t":"color","s":"css-var --secondary-blue (app)"},"20":{"v":"rgba(102, 150, 255, 0.2)","t":"color","s":"css-var --secondary-blue-20 (app)"},"32":{"v":"rgba(102, 150, 255, 0.32)","t":"color","s":"css-var --secondary-blue-32 (app)"},"56":{"v":"rgba(102, 150, 255, 0.56)","t":"color","s":"css-var --secondary-blue-56 (app)"},"64":{"v":"rgba(102, 150, 255, 0.64)","t":"color","s":"css-var --secondary-blue-64 (app)"},"8":{"v":"rgba(102, 150, 255, 0.08)","t":"color","s":"css-var --secondary-blue-8 (app)"}},"electric":{"default":{"v":"#3af3ff","t":"color","s":"css-var --secondary-electric (app)"},"20":{"v":"rgba(58, 243, 255, 0.2)","t":"color","s":"css-var --secondary-electric-20 (app)"},"32":{"v":"rgba(58, 243, 255, 0.32)","t":"color","s":"css-var --secondary-electric-32 (app)"},"56":{"v":"rgba(58, 243, 255, 0.56)","t":"color","s":"css-var --secondary-electric-56 (app)"},"64":{"v":"rgba(58, 243, 255, 0.64)","t":"color","s":"css-var --secondary-electric-64 (app)"},"8":{"v":"rgba(58, 243, 255, 0.08)","t":"color","s":"css-var --secondary-electric-8 (app)"}},"gray":{"default":{"v":"#adadad","t":"color","s":"css-var --secondary-gray (app)"},"20":{"v":"rgba(173, 173, 173, 0.2)","t":"color","s":"css-var --secondary-gray-20 (app)"},"32":{"v":"rgba(173, 173, 173, 0.32)","t":"color","s":"css-var --secondary-gray-32 (app)"},"56":{"v":"rgba(173, 173, 173, 0.56)","t":"color","s":"css-var --secondary-gray-56 (app)"},"64":{"v":"rgba(173, 173, 173, 0.64)","t":"color","s":"css-var --secondary-gray-64 (app)"},"8":{"v":"rgba(173, 173, 173, 0.08)","t":"color","s":"css-var --secondary-gray-8 (app)"},"80":{"v":"rgba(173, 173, 173, 0.8)","t":"color","s":"css-var --secondary-gray-80 (app)"},"800":{"v":"#4e4e4e","t":"color","s":"css-var --secondary-gray-800 (app)"}},"green":{"default":{"v":"#36eb8d","t":"color","s":"css-var --secondary-green (app)"},"20":{"v":"rgba(54, 235, 141, 0.2)","t":"color","s":"css-var --secondary-green-20 (app)"},"32":{"v":"rgba(54, 235, 141, 0.32)","t":"color","s":"css-var --secondary-green-32 (app)"},"500":{"v":"#36eb8d","t":"color","s":"css-var --secondary-green-500 (app)"},"56":{"v":"rgba(54, 235, 141, 0.56)","t":"color","s":"css-var --secondary-green-56 (app)"},"64":{"v":"rgba(54, 235, 141, 0.64)","t":"color","s":"css-var --secondary-green-64 (app)"},"8":{"v":"rgba(54, 235, 141, 0.08)","t":"color","s":"css-var --secondary-green-8 (app)"},"800":{"v":"#165e38","t":"color","s":"css-var --secondary-green-800 (app)"}},"orange":{"default":{"v":"#ffa334","t":"color","s":"css-var --secondary-orange (app)"},"20":{"v":"rgba(255, 163, 52, 0.2)","t":"color","s":"css-var --secondary-orange-20 (app)"},"32":{"v":"rgba(255, 163, 52, 0.32)","t":"color","s":"css-var --secondary-orange-32 (app)"},"56":{"v":"rgba(255, 163, 52, 0.56)","t":"color","s":"css-var --secondary-orange-56 (app)"},"64":{"v":"rgba(255, 163, 52, 0.64)","t":"color","s":"css-var --secondary-orange-64 (app)"},"8":{"v":"rgba(255, 163, 52, 0.08)","t":"color","s":"css-var --secondary-orange-8 (app)"}},"pink":{"default":{"v":"#ff99ff","t":"color","s":"css-var --secondary-pink (app)"},"20":{"v":"rgba(255, 153, 255, 0.2)","t":"color","s":"css-var --secondary-pink-20 (app)"},"32":{"v":"rgba(255, 153, 255, 0.32)","t":"color","s":"css-var --secondary-pink-32 (app)"},"56":{"v":"rgba(255, 153, 255, 0.56)","t":"color","s":"css-var --secondary-pink-56 (app)"},"64":{"v":"rgba(255, 153, 255, 0.64)","t":"color","s":"css-var --secondary-pink-64 (app)"},"8":{"v":"rgba(255, 153, 255, 0.08)","t":"color","s":"css-var --secondary-pink-8 (app)"}},"purple":{"default":{"v":"#9b70ff","t":"color","s":"css-var --secondary-purple (app)"},"20":{"v":"rgba(155, 112, 255, 0.2)","t":"color","s":"css-var --secondary-purple-20 (app)"},"32":{"v":"rgba(155, 112, 255, 0.32)","t":"color","s":"css-var --secondary-purple-32 (app)"},"56":{"v":"rgba(155, 112, 255, 0.56)","t":"color","s":"css-var --secondary-purple-56 (app)"},"64":{"v":"rgba(155, 112, 255, 0.64)","t":"color","s":"css-var --secondary-purple-64 (app)"},"8":{"v":"rgba(155, 112, 255, 0.08)","t":"color","s":"css-var --secondary-purple-8 (app)"}},"red":{"default":{"v":"#ff7070","t":"color","s":"css-var --secondary-red (app)"},"20":{"v":"rgba(255, 112, 112, 0.2)","t":"color","s":"css-var --secondary-red-20 (app)"},"32":{"v":"rgba(255, 112, 112, 0.32)","t":"color","s":"css-var --secondary-red-32 (app)"},"56":{"v":"rgba(255, 112, 112, 0.56)","t":"color","s":"css-var --secondary-red-56 (app)"},"64":{"v":"rgba(255, 112, 112, 0.64)","t":"color","s":"css-var --secondary-red-64 (app)"},"8":{"v":"rgba(255, 112, 112, 0.08)","t":"color","s":"css-var --secondary-red-8 (app)"}},"yellow":{"default":{"v":"#f5cc00","t":"color","s":"css-var --secondary-yellow (app)"},"20":{"v":"rgba(245, 204, 0, 0.2)","t":"color","s":"css-var --secondary-yellow-20 (app)"},"32":{"v":"rgba(245, 204, 0, 0.32)","t":"color","s":"css-var --secondary-yellow-32 (app)"},"56":{"v":"rgba(245, 204, 0, 0.56)","t":"color","s":"css-var --secondary-yellow-56 (app)"},"64":{"v":"rgba(245, 204, 0, 0.64)","t":"color","s":"css-var --secondary-yellow-64 (app)"},"8":{"v":"rgba(245, 204, 0, 0.08)","t":"color","s":"css-var --secondary-yellow-8 (app)"}}},"transparent":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --transparent (app)"},"text":{"ink":{"v":"{primary.basic.gray.default}","t":"color","s":"computed color of login-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared primary.basic.gray.default","d":"The app's heading ink #1f1f1f (the declared --primary-basic-gray-880)."},"muted":{"v":"{neutral.gray.gray.400}","t":"color","s":"computed color of login-field default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared neutral.gray.gray.400","d":"The field placeholder/hint ink #999 (the declared --primary-basic-gray-400)."},"link":{"v":"{neutral.gray.gray.400}","t":"color","s":"computed color of login-forgot default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared neutral.gray.gray.400","d":"The 'Forgot password?' grey link ink."},"viewer-ink":{"v":"{primary.basic.gray.560}","t":"color","s":"computed color of sh-menu default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared primary.basic.gray.560","d":"The share viewer's #707070 button ink (the declared --primary-basic-gray-560)."}},"surface":{"field-bg":{"v":"{neutral.gray.40}","t":"color","s":"computed backgroundColor of login-field default (raw/components-computed.json); matches declared neutral.gray.40","d":"The #f5f5f5 auth-field fill (the declared --neutral-gray-40 / --primary-basic-gray-40)."},"popup":{"v":"rgba(0, 0, 0, 0.56)","t":"color","s":"computed backgroundColor of sh-popup default (raw/components-computed.json)","d":"The sign-up nudge's rgba(0,0,0,0.56) dark toast fill."},"share-card":{"v":"{primary.basic.white}","t":"color","s":"computed backgroundColor of sh-card default (raw/components-computed.json); matches declared primary.basic.white","d":"The white sitemap page-card fill on the shared canvas."}},"border":{"oauth-border":{"v":"{neutral.gray.opacity.120}","t":"color","s":"computed borderTopColor of login-google default (raw/components-computed.json); matches declared neutral.gray.opacity.120","d":"The OAuth button's 1px rgba(0,0,0,0.12) hairline (the declared --neutral-gray-opacity-120)."},"share-card-border":{"v":"{primary.basic.gray.default}","t":"color","s":"computed borderTopColor of sh-card default (raw/components-computed.json); matches declared primary.basic.gray.default","d":"The page card's 2px #1f1f1f outline (the declared --primary-basic-gray-880)."}},"action":{"primary-fill":{"v":"{primary.basic.blue}","t":"color","s":"computed backgroundColor of login-submit enabled (raw/components-computed.json); matches declared primary.basic.blue","d":"The enabled submit fill #0050ff (the declared --primary-basic-blue), painted once sample text sits in both fields — never submitted."},"primary-fill-disabled":{"v":"#9fb8f9","t":"color","s":"computed backgroundColor of login-submit default (raw/components-computed.json)","d":"The submit's disabled fill #9fb8f9 at rest — a desaturated blue no declared name holds."},"primary-ink":{"v":"{primary.basic.white}","t":"color","s":"computed color of login-submit enabled — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared primary.basic.white","d":"The white text on the app primary button."}},"background":{"page":{"v":"{primary.basic.white}","t":"color","s":"the body field behind the signed-out auth cards and the share viewer chrome (screenshots/login-*, share-*); the declared --primary-basic-white","d":"The white app page field."}}}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  // The marketing vocabulary is a flat namespace at the set roots (black,
-  // dodger.blue, apps.colors.*, …): collect the colour leaves wherever they
-  // live, grouped by first path segment.
-  const groups = {};
-  for (const [n, t] of flat(TOK.core, '')) {
-    if (t.t !== 'color' || n.startsWith('component')) continue;
-    (groups[n.split('.')[0]] ??= []).push([n, t]);
+const tokens = {"light": {"page": {"$type": "color", "$value": "{color.bg}", "$extensions": {"source": "alias of --bg, painted body background rgb(246, 248, 250)"}}, "surface": {"$type": "color", "$value": "{apps.color.card}", "$extensions": {"source": "alias of --_apps---colors--card; nav chrome is white on the painted page"}}, "text": {"$type": "color", "$value": "{apps.color.foreground}", "$extensions": {"source": "alias of --_apps---colors--foreground; body color black"}}, "muted": {"$type": "color", "$value": "{color.service-grey}", "$extensions": {"source": "alias of --service-grey, the painted secondary grey"}}, "accent": {"$type": "color", "$value": "{color.dodger-blue}", "$extensions": {"source": "alias of --dodger-blue. The painted hero fill is .btn__wrapper rgb(0, 128, 255). --primary-blue #0050ff is the apps primary slot and the pricing CTA family, recorded as color.primary-blue."}}, "border": {"$type": "color", "$value": "{color.gainsboro}", "$extensions": {"source": "alias of --gainsboro; Log in button border is rgba(0,0,0,0.1), recorded on the component"}}, "destructive": {"$type": "color", "$value": "{apps.color.destructive}", "$extensions": {"source": "alias of --_apps---colors--destructive; not seen as a painted control on the public home page"}}, "focus": {"$type": "color", "$value": "{apps.color.ring}", "$extensions": {"source": "alias of --_apps---colors--ring. Keyboard focus on a.btn returned outline rgb(255, 255, 255) none 0px, so this is the declared slot, not a painted focus ring."}}, "component": {"nav-height": {"$type": "dimension", "$value": "82.1px", "$extensions": {"source": "measured .nav.w-nav height, home 1440, raw/css-vars.json components.nav.rect.h"}}, "login-height": {"$type": "dimension", "$value": "38.5px", "$extensions": {"source": "measured Log in a.nav__btn height, home 1440"}}, "cta-height": {"$type": "dimension", "$value": "38.5px", "$extensions": {"source": "measured Try for free a.nav__btn height, home 1440"}}, "nav-link-radius": {"$type": "dimension", "$value": "{radius.nav-link}", "$extensions": {"source": "alias"}}, "button-radius": {"$type": "dimension", "$value": "{radius.nav-button}", "$extensions": {"source": "alias"}}, "hero-cta-fill": {"$type": "color", "$value": "#0080ff", "$extensions": {"source": "measured .btn__wrapper background rgb(0, 128, 255), home 1440. The a.btn itself is rgba(0, 128, 255, 0.2). Matches --dodger-blue."}}, "hero-cta-shadow": {"$type": "shadow", "$value": [{"color": "rgba(0, 128, 255, 0.34)", "offsetX": "0px", "offsetY": "8px", "blur": "10px", "spread": "0px"}], "$extensions": {"source": "measured .btn__wrapper box-shadow, home 1440"}}}}, "dark": {"page": {"$type": "color", "$value": "#060606", "$extensions": {"source": "css-var --_apps---colors--background-dark declared on :root; no captured public page binds this dark slot. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "surface": {"$type": "color", "$value": "#181818", "$extensions": {"source": "css-var --_apps---colors--card-dark declared, not painted on captured public pages. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "text": {"$type": "color", "$value": "#f8f8f8", "$extensions": {"source": "css-var --_apps---colors--foreground-dark declared, not painted. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "muted": {"$type": "color", "$value": "#8c8c8c", "$extensions": {"source": "css-var --_apps---colors--muted-foreground-dark declared, not painted. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "accent": {"$type": "color", "$value": "#2572ff", "$extensions": {"source": "css-var --_apps---colors--primary-dark declared, not painted. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "border": {"$type": "color", "$value": "rgba(0, 80, 255, 0.102)", "$extensions": {"source": "css-var --_apps---colors--border-dark declared, not painted. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}}};
+const roles = ["page","surface","text","muted","accent","border","destructive","focus"];
+const box = document.getElementById("roles");
+for (const role of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = '<div class="dot" style="background:var(--'+role+')"></div><div class="nm">'+role+'</div>';
+  box.appendChild(el);
+}
+const table = document.getElementById("tokens");
+function rows(node, prefix) {
+  for (const [k,v] of Object.entries(node)) {
+    if (k.startsWith("$")) continue;
+    if (v && v.$value !== undefined) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = "<td><code>"+prefix+k+"</code></td><td>"+JSON.stringify(v.$value)+"</td>";
+      table.appendChild(tr);
+    } else if (v && typeof v === "object") rows(v, prefix+k+".");
   }
-  for (const g of Object.keys(groups).sort()) {
-    h += `<div class="pal-h">${esc(g)} (marketing vocabulary — the apps.* branch is the declared Webflow layer)</div><div class="pal">`;
-    for (const [n, t] of groups[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label, scope] of [['light', 'light roles', ''], ['app', 'app vocabulary + roles', ' app']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
-    if (!roles.length) continue;
-    // A non-core set's custom properties only resolve inside its own scope.
-    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const setname of ['light', 'app']) {
-    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  }
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  // Aliases are set-relative: the palette scales live under TOK.core, surface
-  // roles under TOK.light / TOK.app. Try each root.
-  for (const root of [TOK.core, TOK.light, TOK.app, TOK]) {
-    let node = root;
-    for (const k of m[1].split('.')) node = node && node[k];
-    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
-  }
-  return v;
+}
+rows(tokens.light, "light.");
+document.getElementById("theme").onclick = () => {
+  const on = document.documentElement.getAttribute("data-mode") === "dark";
+  document.documentElement.setAttribute("data-mode", on ? "light" : "dark");
 };
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.app || {}).fs || {}, 'app.fs.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">app ${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — FlowMapp</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
 </script>
 </body>
 </html>

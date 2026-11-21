@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-10T17:20:50.779Z",
+  "screenshot": "contact-light-full.png",
+  "sanitizedSourceUrl": null,
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "reportedDevicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 1629
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "fullPage",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 1440,
+    "height": 1629
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 1440,
+      "height": 1629
+    },
+    "basis": "fullPage"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
+}

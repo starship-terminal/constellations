@@ -1,670 +1,304 @@
 {
-  "product": "Mangomint",
-  "captured": "2026-11-18",
-  "pages": [
-    "https://www.mangomint.com/",
-    "https://www.mangomint.com/pricing/",
-    "https://app.mangomint.com/login",
-    "https://booking.mangomint.com/737397"
+  "varCount": 44,
+  "uniqueNames": [
+    "--y",
+    "--angle",
+    "--modal-close-right",
+    "--modal-close-top",
+    "--modal-close-right-mobile",
+    "--modal-close-top-mobile",
+    "--gradient-color-1",
+    "--gradient-color-2",
+    "--gradient-color-3",
+    "--gradient-color-4",
+    "--gradient-start",
+    "--gradient-middle",
+    "--gradient-end",
+    "--modal-aspect",
+    "--digit-line",
+    "--digit-box",
+    "--digit-track",
+    "--pill-w",
+    "--pill-h",
+    "--logo-height",
+    "--logo-width",
+    "--offset",
+    "--row-height",
+    "--img-height",
+    "--img-width",
+    "--section-gap",
+    "--transitionDelay",
+    "--delay",
+    "--mira-flow",
+    "--width",
+    "--gutter",
+    "--logo-bottom",
+    "--row-pad",
+    "--intro-height",
+    "--peek",
+    "--swoosh-stop-1",
+    "--swoosh-stop-2",
+    "--swoosh-stop-3",
+    "--swoosh-stop-4",
+    "--transition",
+    "--delay1",
+    "--delay2",
+    "--globalDelay",
+    "--btnDelay",
+    "--textShift",
+    "--introShift",
+    "--slideUp",
+    "--scale",
+    "--bg"
   ],
-  "fontsLoaded": [
+  "vars": [
     {
-      "family": "tt-commons",
-      "weight": "100 800",
-      "style": "normal",
-      "status": "loaded"
-    },
-    {
-      "family": "tt-commons",
-      "weight": "100 800",
-      "style": "italic",
-      "status": "unloaded"
-    }
-  ],
-  "rules": [
-    {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "selector": ".ConversationPartWebChatShared_container__wU0Wj.ConversationPartWebChatShared_agentPartWithAvatar__GSloU",
-      "context": [],
-      "properties": {
-        "--add-class-for-empty-declaration": "true"
+      "sel": ".hamburgerMenu-module--burger--9ffc4 span > span",
+      "media": "",
+      "props": {
+        "--y": "6px",
+        "--angle": "45deg"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "selector": ":root",
-      "context": [],
-      "properties": {
-        "--color-primary": "#191e49",
-        "--color-navy-125": "#f1f2f6",
-        "--color-navy-400": "#697498",
-        "--color-navy-600": "#191e49",
-        "--color-gray-200": "#dfe2e8",
-        "--color-purple-100": "#f6f1fe",
-        "--color-blue": "#2e3289",
-        "--color-light-gray": "#ddd"
+      "sel": ".hamburgerMenu-module--burger--9ffc4 span > span:last-child",
+      "media": "",
+      "props": {
+        "--y": "-6px",
+        "--angle": "-45deg"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "selector": ".theme-white-label",
-      "context": [],
-      "properties": {
-        "--color-primary": "var(--company-brand-color,--color-navy-600)",
-        "--color-navy-600": "#202129",
-        "--color-navy-400": "#8c8f98",
-        "--color-navy-125": "#f1f3f5",
-        "--color-purple-100": "color-mix(in srgb,var(--color-primary) 7%,#0000)",
-        "--color-blue": "#2c879b",
-        "--color-light-gray": "#a5a8b0"
+      "sel": ".referralModal-module--modalCloseButton--4efe2",
+      "media": "",
+      "props": {
+        "--modal-close-right": "15px",
+        "--modal-close-top": "15px",
+        "--modal-close-right-mobile": "10px",
+        "--modal-close-top-mobile": "10px"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "selector": ":root",
-      "context": [],
-      "properties": {
-        "--mt-duration-fast": "150ms",
-        "--mt-duration-base": "200ms",
-        "--mt-duration-normal": "300ms",
-        "--mt-duration-slow": "500ms"
+      "sel": ".videoModal-module--modalCloseTourSelector--95965",
+      "media": "",
+      "props": {
+        "--modal-close-right": "15px",
+        "--modal-close-top": "15px",
+        "--modal-close-right-mobile": "10px",
+        "--modal-close-top-mobile": "10px"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "selector": ":root",
-      "context": [
-        "@media (prefers-reduced-motion: reduce)"
-      ],
-      "properties": {
-        "--mt-duration-fast": "0.01ms",
-        "--mt-duration-base": "0.01ms",
-        "--mt-duration-normal": "0.01ms",
-        "--mt-duration-slow": "0.01ms"
+      "sel": ".scrollClipWrapper-module--clipWrapper--de1f9",
+      "media": "",
+      "props": {
+        "--gradient-start": "#191e49",
+        "--gradient-middle": "#474f7b",
+        "--gradient-end": "#191e49"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/895.597695aa.chunk.css",
-      "selector": ".react-loading-skeleton",
-      "context": [],
-      "properties": {
-        "--base-color": "#ebebeb",
-        "--highlight-color": "#f5f5f5",
-        "--animation-duration": "1.5s",
-        "--animation-direction": "normal",
-        "--pseudo-element-display": "block"
+      "sel": ".scrollClipWrapper-module--clipWrapper--de1f9",
+      "media": "(max-width: 1099.98px)",
+      "props": {
+        "--gradient-middle": "#474f7b"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/895.597695aa.chunk.css",
-      "selector": ".react-loading-skeleton",
-      "context": [
-        "@media (prefers-reduced-motion)"
-      ],
-      "properties": {
-        "--pseudo-element-display": "none"
+      "sel": ".footer-module--footer--ac64d",
+      "media": "",
+      "props": {
+        "--section-gap": "40px"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/895.597695aa.chunk.css",
-      "selector": ".react-flow",
-      "context": [],
-      "properties": {
-        "--xy-edge-stroke-default": "#b1b1b7",
-        "--xy-edge-stroke-width-default": "1",
-        "--xy-edge-stroke-selected-default": "#555",
-        "--xy-connectionline-stroke-default": "#b1b1b7",
-        "--xy-connectionline-stroke-width-default": "1",
-        "--xy-attribution-background-color-default": "#ffffff80",
-        "--xy-minimap-background-color-default": "#fff",
-        "--xy-minimap-mask-background-color-default": "#f0f0f099",
-        "--xy-minimap-mask-stroke-color-default": "#0000",
-        "--xy-minimap-mask-stroke-width-default": "1",
-        "--xy-minimap-node-background-color-default": "#e2e2e2",
-        "--xy-minimap-node-stroke-color-default": "#0000",
-        "--xy-minimap-node-stroke-width-default": "2",
-        "--xy-background-color-default": "#0000",
-        "--xy-background-pattern-dots-color-default": "#91919a",
-        "--xy-background-pattern-lines-color-default": "#eee",
-        "--xy-background-pattern-cross-color-default": "#e2e2e2",
-        "--xy-node-color-default": "inherit",
-        "--xy-node-border-default": "1px solid #1a192b",
-        "--xy-node-background-color-default": "#fff",
-        "--xy-node-group-background-color-default": "#f0f0f040",
-        "--xy-node-boxshadow-hover-default": "0 1px 4px 1px #00000014",
-        "--xy-node-boxshadow-selected-default": "0 0 0 0.5px #1a192b",
-        "--xy-node-border-radius-default": "3px",
-        "--xy-handle-background-color-default": "#1a192b",
-        "--xy-handle-border-color-default": "#fff",
-        "--xy-selection-background-color-default": "#0059dc14",
-        "--xy-selection-border-default": "1px dotted #0059dccc",
-        "--xy-controls-button-background-color-default": "#fefefe",
-        "--xy-controls-button-background-color-hover-default": "#f4f4f4",
-        "--xy-controls-button-color-default": "inherit",
-        "--xy-controls-button-color-hover-default": "inherit",
-        "--xy-controls-button-border-color-default": "#eee",
-        "--xy-controls-box-shadow-default": "0 0 2px 1px #00000014",
-        "--xy-edge-label-background-color-default": "#fff",
-        "--xy-edge-label-color-default": "inherit",
-        "--xy-resize-background-color-default": "#3367d9"
+      "sel": ".footer-module--footer--ac64d",
+      "media": "(min-width: 576px)",
+      "props": {
+        "--section-gap": "20px"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/895.597695aa.chunk.css",
-      "selector": ".react-flow.dark",
-      "context": [],
-      "properties": {
-        "--xy-edge-stroke-default": "#3e3e3e",
-        "--xy-edge-stroke-width-default": "1",
-        "--xy-edge-stroke-selected-default": "#727272",
-        "--xy-connectionline-stroke-default": "#b1b1b7",
-        "--xy-connectionline-stroke-width-default": "1",
-        "--xy-attribution-background-color-default": "#96969640",
-        "--xy-minimap-background-color-default": "#141414",
-        "--xy-minimap-mask-background-color-default": "#3c3c3c99",
-        "--xy-minimap-mask-stroke-color-default": "#0000",
-        "--xy-minimap-mask-stroke-width-default": "1",
-        "--xy-minimap-node-background-color-default": "#2b2b2b",
-        "--xy-minimap-node-stroke-color-default": "#0000",
-        "--xy-minimap-node-stroke-width-default": "2",
-        "--xy-background-color-default": "#141414",
-        "--xy-background-pattern-dots-color-default": "#777",
-        "--xy-background-pattern-lines-color-default": "#777",
-        "--xy-background-pattern-cross-color-default": "#777",
-        "--xy-node-color-default": "#f8f8f8",
-        "--xy-node-border-default": "1px solid #3c3c3c",
-        "--xy-node-background-color-default": "#1e1e1e",
-        "--xy-node-group-background-color-default": "#f0f0f040",
-        "--xy-node-boxshadow-hover-default": "0 1px 4px 1px #ffffff14",
-        "--xy-node-boxshadow-selected-default": "0 0 0 0.5px #999",
-        "--xy-handle-background-color-default": "#bebebe",
-        "--xy-handle-border-color-default": "#1e1e1e",
-        "--xy-selection-background-color-default": "#c8c8dc14",
-        "--xy-selection-border-default": "1px dotted #c8c8dccc",
-        "--xy-controls-button-background-color-default": "#2b2b2b",
-        "--xy-controls-button-background-color-hover-default": "#3e3e3e",
-        "--xy-controls-button-color-default": "#f8f8f8",
-        "--xy-controls-button-color-hover-default": "#fff",
-        "--xy-controls-button-border-color-default": "#5b5b5b",
-        "--xy-controls-box-shadow-default": "0 0 2px 1px #00000014",
-        "--xy-edge-label-background-color-default": "#141414",
-        "--xy-edge-label-color-default": "#f8f8f8"
+      "sel": ".footer-module--footer--ac64d",
+      "media": "(min-width: 1100px)",
+      "props": {
+        "--section-gap": "40px"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".MultiSelect_whiteSearchBox__od6vo",
-      "context": [],
-      "properties": {
-        "--search-box-background": "#fff"
+      "sel": ".navbar-module--header--ca8c3 .navbar-module--navbar--55017 .navbar-module--rightnav--29a23 .navbar-",
+      "media": "(max-width: 991.98px)",
+      "props": {
+        "--y": "8px"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".useSmartyAddressAutocomplete_dropdown__jJYRl.smartyAddress__base_default",
-      "context": [],
-      "properties": {
-        "--smartyAddress__dropdownZIndex": "20000",
-        "--smartyAddress__poweredByDisplay": "none"
+      "sel": ".navbar-module--header--ca8c3 .navbar-module--navbar--55017 .navbar-module--rightnav--29a23 .navbar-",
+      "media": "(max-width: 991.98px)",
+      "props": {
+        "--y": "-8px"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".useSmartyAddressAutocomplete_dropdown__jJYRl.smartyAddress__base_default .smartyAddress__dropdownElement",
-      "context": [],
-      "properties": {
-        "--smartyAddress__textBasePrimaryColor": "#1d2141",
-        "--smartyAddress__textBaseSecondaryColor": "#1d2141",
-        "--smartyAddress__textAccentColor": "#282c8e",
-        "--smartyAddress__surfaceBasePrimaryColor": "#fff",
-        "--smartyAddress__surfaceBaseSecondaryColor": "#9ddde2",
-        "--smartyAddress__surfaceBaseTertiaryColor": "#d6dce8",
-        "--smartyAddress__largeShadow1": "0 8px 10px 0 #0000000f",
-        "--smartyAddress__largeShadow2": "0 0 0 0 #0000",
-        "--smartyAddress__spacingMedium3": "10px 14px",
-        "--smartyAddress__spacingLarge3": "30px",
-        "--smartyAddress__heightLarge1": "350px",
-        "--smartyAddress__entriesGap": "6px",
-        "--smartyAddress__chevronHeight": "6px"
+      "sel": ".desktopNavbarItems-module--navbarDesktop--7e678 .desktopNavbarItems-module--navbarItems--c758b",
+      "media": "",
+      "props": {
+        "--transitionDelay": "0s",
+        "--delay": "0s"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".ConversationPartShared_container__Sd6ns.ConversationPartShared_agentPartWithAvatar__rToBs",
-      "context": [],
-      "properties": {
-        "--add-class-for-empty-declaration": "true"
+      "sel": ".desktopNavbarItems-module--navbarDesktop--7e678 .desktopNavbarItems-module--navbarItems--c758b:has(",
+      "media": "",
+      "props": {
+        "--transitionDelay": "0.2s"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".FormSubmissionModal_formDetailsCt__K2I6u.FormSubmissionModal_clientViewer__lJBDa",
-      "context": [],
-      "properties": {
-        "--type-bump": "3px"
+      "sel": ".desktopNavbarItems-module--navbarDesktop--7e678 .desktopNavbarItems-module--navbarItems--c758b:has(",
+      "media": "",
+      "props": {
+        "--delay": "0.2s"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".FormSubmissionModal_formDetailsCt__K2I6u.FormSubmissionModal_clientViewer__lJBDa .FormSubmissionModal_extraInfo__PsXSf, .FormSubmissionModal_formDetailsCt__K2I",
-      "context": [],
-      "properties": {
-        "--type-bump": "2px"
+      "sel": "",
+      "media": "",
+      "props": {
+        "--mira-flow": "1"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".FormSubmissionModal_formDetailsCt__K2I6u.FormSubmissionModal_clientViewer__lJBDa .FormSubmissionModal_overviewCt__PComq .FormSubmissionModal_name__izQp5",
-      "context": [],
-      "properties": {
-        "--type-bump": "4px"
+      "sel": "",
+      "media": "",
+      "props": {
+        "--mira-flow": "0"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".FormSubmissionModal_formDetailsCt__K2I6u.FormSubmissionModal_clientViewer__lJBDa .FormSubmissionModal_dataLabel__Tzi6u, .FormSubmissionModal_formDetailsCt__K2I",
-      "context": [],
-      "properties": {
-        "--type-bump": "2.5px"
+      "sel": ".lpCompetitorSection-module--heroGlow--64a47",
+      "media": "",
+      "props": {
+        "--width": "max(100vw,1440px)"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".SuccessIcon_checkmark__cAvAp",
-      "context": [],
-      "properties": {
-        "--success-icon-fill-radius": "30px"
+      "sel": ".lpCompetitorSection-module--heroGlow--64a47",
+      "media": "(max-width: 767.98px)",
+      "props": {
+        "--width": "100vw"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".MessageCompose_inputAreaCt__Da\\+10 .MessageCompose_takeoverMessage__ZK0CW",
-      "context": [],
-      "properties": {
-        "--border-angle-1": "0deg",
-        "--border-angle-2": "90deg",
-        "--border-angle-3": "180deg",
-        "--border-size": "2px"
+      "sel": ".threeCompanyCards-module--company--44f45",
+      "media": "(min-width: 768px) and (max-width: 1199.98px)",
+      "props": {
+        "--peek": "calc(100cqw/2 - 50%)"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": "",
-      "context": [
-        "@keyframes MessageCompose_rotateBackground__jWlYa"
-      ],
-      "properties": {
-        "--border-angle-1": "360deg"
+      "sel": ".dMBeautifulPageHeader-module--swoosh--6667d",
+      "media": "",
+      "props": {
+        "--swoosh-stop-1": "#a0a9fc",
+        "--swoosh-stop-2": "#c098f5",
+        "--swoosh-stop-3": "#faa4cd",
+        "--swoosh-stop-4": "#ffc9a3"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": "",
-      "context": [
-        "@keyframes MessageCompose_rotateBackground2__Hv4Gj"
-      ],
-      "properties": {
-        "--border-angle-2": "-270deg"
+      "sel": ".why-mangomint-module--body--f20c4",
+      "media": "",
+      "props": {
+        "--transition": "0.3s"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": "",
-      "context": [
-        "@keyframes MessageCompose_rotateBackground3__ByAcY"
-      ],
-      "properties": {
-        "--border-angle-3": "540deg"
+      "sel": "",
+      "media": "",
+      "props": {
+        "--angle": "360deg"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": "",
-      "context": [
-        "@keyframes MessageCompose_takeoverRotate__HMHri"
-      ],
-      "properties": {
-        "--takeoverAngle": "0deg"
+      "sel": ".trialWelcomeAnimation-module--demoModeIntro--0a122",
+      "media": "",
+      "props": {
+        "--angle": "0deg",
+        "--delay1": "1.75s",
+        "--delay2": "10.5s",
+        "--globalDelay": "0.5s",
+        "--btnDelay": "calc(5.25s - var(--globalDelay))",
+        "--textShift": "40px",
+        "--introShift": "72.5px"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": "",
-      "context": [
-        "@keyframes MessageCompose_takeoverRotate__HMHri"
-      ],
-      "properties": {
-        "--takeoverAngle": "360deg"
+      "sel": ".trialWelcomeAnimation-module--complete--1e8bf div, .trialWelcomeAnimation-module--complete--1e8bf s",
+      "media": "",
+      "props": {
+        "--slideUp": "0",
+        "--scale": "1"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".SavedRepliesDialog_container__fNysW .SavedRepliesDialog_body__QXzQU",
-      "context": [],
-      "properties": {
-        "--list-width": "242px"
+      "sel": ".trialWelcomeAnimation-module--wrapper--c09ef",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#191e49,#191e49)"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".AppointmentTimelineEntry_appointmentEntryCt__BnU-w",
-      "context": [],
-      "properties": {
-        "--customization-font": "tt-commons,sans-serif",
-        "--tag-size": "14px",
-        "--tag-spacing": "normal"
+      "sel": ".trialWelcomeAnimation-module--wrapper--c09ef .trialWelcomeAnimation-module--slide--51361.trialWelco",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#a171df,#d95bbe 50%,#ff9c42)"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".SaleSummary_warningIcon__A3myE",
-      "context": [],
-      "properties": {
-        "--warning-icon-color": "#ed6d53"
+      "sel": ".trialWelcomeAnimation-module--wrapper--c09ef .trialWelcomeAnimation-module--slide--51361.trialWelco",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#191e49,#191e49)"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".SaleTimelineEntry_saleEntryCt__l0Ck2 .SaleTimelineEntry_saleSummary__0Rwo\\+",
-      "context": [],
-      "properties": {
-        "--sale-rule": "#e3e6ee",
-        "--sale-spacing": "normal"
+      "sel": ".trialWelcomeAnimation-module--wrapper--c09ef .trialWelcomeAnimation-module--slide--51361.trialWelco",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#a171df,#d95bbe 50%,#ff9c42)"
       }
     },
     {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".Timeline_timelineCtn__sp4qp",
-      "context": [],
-      "properties": {
-        "--type-bump": "2px",
-        "--type-weight": "600",
-        "--link-align": "flex-start",
-        "--link-hover": "#5bb5bd"
-      }
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".BrowserNotificationsStatus_iconDanger__4xhaA, .BrowserNotificationsStatus_iconWarning__anhyq",
-      "context": [],
-      "properties": {
-        "--warning-icon-color": "#ed6d53"
-      }
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".AgentPagePlaceholder_carouselTrack__XFw4W",
-      "context": [],
-      "properties": {
-        "--carousel-step": "0.5s"
-      }
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": "div[class*=\"active\"] .HowItWorksSection_chatBubble__rQuYJ",
-      "context": [],
-      "properties": {
-        "--p": "0%"
-      }
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".HowItWorksSection_howItWorksSection__IWSjP[class*=\"active\"] .HowItWorksSection_chatBubble__rQuYJ",
-      "context": [
-        "@media (min-width: 992px)"
-      ],
-      "properties": {
-        "--p": "0%"
-      }
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".AgentGetStarted_getStarted__GQHai",
-      "context": [],
-      "properties": {
-        "--mira-spin-duration": "40s"
-      }
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": "",
-      "context": [
-        "@keyframes AgentGetStarted_enableBtnGradientRotate__cTG8S"
-      ],
-      "properties": {
-        "--enableBtnGradientAngle": "360deg"
-      }
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".StatusBadge_statusBadge__YxTdu.StatusBadge_warning__eT1QY",
-      "context": [],
-      "properties": {
-        "--warning-icon-color": "currentColor"
-      }
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/481.e2fe10bd.chunk.css",
-      "selector": ".SaleServiceLineEditor_consolidatedCreditItem__lELTi .SaleServiceLineEditor_creditWarningIcon__OC9eC",
-      "context": [],
-      "properties": {
-        "--warning-icon-color": "#ed6d53"
-      }
-    },
-    {
-      "file": "https://booking.mangomint.com/static/css/main.e640a5ef.css",
-      "selector": ":root",
-      "context": [],
-      "properties": {
-        "--base-color": "#191e49",
-        "--accent-color": "var(--base-color)",
-        "--accent-color-light": "#f2ebff",
-        "--button-color": "#282c8e",
-        "--button-color-hover": "var(--base-color)"
-      }
-    },
-    {
-      "file": "https://booking.mangomint.com/static/css/main.e640a5ef.css",
-      "selector": ":root",
-      "context": [],
-      "properties": {
-        "--mt-duration-fast": "150ms",
-        "--mt-duration-base": "200ms",
-        "--mt-duration-normal": "300ms",
-        "--mt-duration-slow": "500ms"
-      }
-    },
-    {
-      "file": "https://booking.mangomint.com/static/css/main.e640a5ef.css",
-      "selector": ":root",
-      "context": [
-        "@media (prefers-reduced-motion: reduce)"
-      ],
-      "properties": {
-        "--mt-duration-fast": "0.01ms",
-        "--mt-duration-base": "0.01ms",
-        "--mt-duration-normal": "0.01ms",
-        "--mt-duration-slow": "0.01ms"
+      "sel": "h2.trialWelcomeAnimation-module--text--aa35a > span:first-of-type",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#a171df,#d95bbe 50%,#ff9c42)"
       }
     }
   ],
   "fonts": [
     {
-      "file": "https://use.typekit.net/bnn2pzh.css",
-      "font-family": "ivypresto-display",
-      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"opentype\")",
-      "font-display": "auto",
-      "font-style": "italic",
-      "font-weight": "400",
-      "font-stretch": "normal"
+      "family": "tt-commons-pro",
+      "weight": "100 900",
+      "style": "normal"
     },
     {
-      "file": "https://use.typekit.net/bnn2pzh.css",
-      "font-family": "ivypresto-display",
-      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"opentype\")",
-      "font-display": "auto",
-      "font-style": "normal",
-      "font-weight": "400",
-      "font-stretch": "normal"
+      "family": "tt-commons-mono",
+      "weight": "500",
+      "style": "normal"
     },
     {
-      "file": "https://use.typekit.net/bnn2pzh.css",
-      "font-family": "ivypresto-display",
-      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"opentype\")",
-      "font-display": "auto",
-      "font-style": "normal",
-      "font-weight": "600",
-      "font-stretch": "normal"
+      "family": "pp-editorial-old",
+      "weight": "400",
+      "style": "normal"
     },
     {
-      "file": "https://use.typekit.net/bnn2pzh.css",
-      "font-family": "ivypresto-display",
-      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"opentype\")",
-      "font-display": "auto",
-      "font-style": "italic",
-      "font-weight": "600",
-      "font-stretch": "normal"
-    },
-    {
-      "file": "https://use.typekit.net/bnn2pzh.css",
-      "font-family": "ivypresto-headline",
-      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"opentype\")",
-      "font-display": "auto",
-      "font-style": "italic",
-      "font-weight": "300",
-      "font-stretch": "normal"
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "font-family": "Muli",
-      "font-style": "normal",
-      "font-weight": "400",
-      "src": "url(…) format(\"woff\")"
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "font-family": "Muli",
-      "font-style": "italic",
-      "font-weight": "400",
-      "src": "url(…) format(\"woff\")"
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "font-family": "Muli",
-      "font-style": "normal",
-      "font-weight": "300",
-      "src": "url(…) format(\"woff\")"
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "font-family": "Muli",
-      "font-style": "italic",
-      "font-weight": "300",
-      "src": "url(…) format(\"woff\")"
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "font-family": "Muli",
-      "font-style": "normal",
-      "font-weight": "600",
-      "src": "url(…) format(\"woff\")"
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "font-family": "Muli",
-      "font-style": "normal",
-      "font-weight": "700",
-      "src": "url(…) format(\"woff\")"
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "font-family": "tt-commons",
-      "font-style": "normal",
-      "font-weight": "100 800",
-      "src": "url(…) format(\"woff2-variations\"), url(…) format(\"woff2\")"
-    },
-    {
-      "file": "https://app.mangomint.com/static/css/main.007eb19a.css",
-      "font-family": "tt-commons",
-      "font-style": "italic",
-      "font-weight": "100 800",
-      "src": "url(…) format(\"woff2-variations\"), url(…) format(\"woff2\")"
-    },
-    {
-      "file": "https://booking.mangomint.com/static/css/main.e640a5ef.css",
-      "font-family": "tt-commons",
-      "font-style": "normal",
-      "font-weight": "100 800",
-      "src": "url(…) format(\"woff2-variations\"), url(…) format(\"woff2\")"
-    },
-    {
-      "file": "https://booking.mangomint.com/static/css/main.e640a5ef.css",
-      "font-family": "tt-commons",
-      "font-style": "italic",
-      "font-weight": "100 800",
-      "src": "url(…) format(\"woff2-variations\"), url(…) format(\"woff2\")"
+      "family": "geist",
+      "weight": "100 900",
+      "style": "normal"
     }
   ],
-  "colourCounts": {
-    "#fff": 814,
-    "#191e49": 443,
-    "#ddd": 321,
-    "#17120e": 313,
-    "#697498": 300,
-    "#282c8e": 266,
-    "#787992": 254,
-    "#ed6d53": 248,
-    "#2e3289": 244,
-    "#1d2141": 237,
-    "#525c82": 150,
-    "#d6dce8": 147,
-    "#afb8ce": 128,
-    "#99d7dc": 122,
-    "#5bb5bd": 93,
-    "#9ddde2": 92,
-    "#e3e6ee": 92,
-    "#bdbdbd": 82,
-    "#bfc1c7": 78,
-    "#666462": 76,
-    "#f5f6f8": 75,
-    "#a5a8b0": 73,
-    "#f0f0f0": 71,
-    "#000": 63,
-    "#0275d8": 61,
-    "#474970": 61,
-    "#f1f2f6": 51,
-    "#dfe2e8": 50,
-    "#2c1b14": 46,
-    "#eceeef": 44,
-    "#d9534f": 43,
-    "#5cb85c": 43,
-    "#f0ad4e": 42,
-    "#0000000d": 40,
-    "#636c72": 39,
-    "#ccc": 36,
-    "#1e1812": 36,
-    "#f8f8f8": 35,
-    "#5bc0de": 34,
-    "#292b2c": 32,
-    "#151b48": 32,
-    "#fdf8e4": 29,
-    "#7f8cae": 28,
-    "#858381": 27,
-    "#d2e9ff": 27,
-    "#8c8f98": 26,
-    "#f6e06c": 26,
-    "#727682": 26,
-    "#1b6af7": 25,
-    "#f2eeea": 25,
-    "#464a4c": 24,
-    "#f6f1fe": 23,
-    "#fce3de": 23,
-    "#6e6a66": 23,
-    "#ced3e3": 22,
-    "#2c2620": 22,
-    "#17120e0d": 20,
-    "#00000014": 18,
-    "#e4e7e7": 16,
-    "#cacccd": 16
-  }
+  "headerBg": "rgba(0, 0, 0, 0)",
+  "headerH": 80
 }

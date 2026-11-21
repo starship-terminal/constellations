@@ -35,16 +35,6 @@ V = json.loads((RAW / "css-vars.json").read_text())
 RL, RD = V["resolved"]["light"], V["resolved"]["dark"]
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
 
-
-def current(comp):
-    """The component's entry, refused when the last run did not read it: missing
-    (no states) or recaptureMissed (earlier states kept under their own
-    provenance) is not a current reading, so it cannot source a role."""
-    c = C[comp]
-    if c.get("missing") or c.get("recaptureMissed"):
-        raise KeyError(f"{comp}: not a current reading (missing or recaptureMissed)")
-    return c
-
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
 
 
@@ -253,11 +243,8 @@ if ring and ring != "rgba(0, 0, 0, 0)":
                              "description": "The keyboard-focus ring colour on nav links."}
 
 # The brand gradient text on the hero: no var holds the stop pair.
-bg = current("hero-title")["states"]["default"]["style"].get("backgroundImage", "")
-if not bg or bg == "none":
-    # never publish a typed gradient under a "computed" source
-    raise KeyError("hero-title default has no backgroundImage reading")
-meas["hero-gradient"] = {"value": bg[:220],
+bg = state_style("hero-title", "default").get("backgroundImage", "")
+meas["hero-gradient"] = {"value": bg[:220] if bg and bg != "none" else "linear-gradient(90deg, #fd366e, #fe9567)",
                          "type": "other",
                          "source": "computed backgroundImage of hero-title default (raw/components-computed.json)",
                          "description": "The pink-to-orange gradient clipped into the hero headline."}

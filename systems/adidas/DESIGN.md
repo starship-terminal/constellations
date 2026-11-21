@@ -88,7 +88,7 @@ Good for: Sportswear storefront in strict monochrome: black on white, grey steps
 
 Captured 2026-11-10, signed out (every captured surface is public); China flagship storefront adidas.com.cn. Themes: light.
 
-A token set and component reference for adidas — for building storefront and campaign surfaces in the style of the real thing. **Boundary:** the global `adidas.com` storefront is Akamai-blocked from the capture environment (every regional domain — .com, .sg, .co.uk, .de, .com.au and more — answers HTTP 403 "Reference Error" to headless and headed Chromium, curl, and Wayback). This package therefore captures `adidas.com.cn`, adidas China's flagship storefront, a related but different front end in zh-CN with prices in ¥. Captured 2026-11-10, signed out, headless Chromium at 1440x900 and 390x844.
+A token set and component reference for adidas — for building storefront and campaign surfaces in the style of the real thing. **Boundary:** `https://www.adidas.com/` returns HTTP 403 Access Denied before any page renders (Akamai "Reference Error", confirmed again 2026-11-21). This package captures `https://www.adidas.com.cn/`, adidas China's flagship storefront, a related but different front end in zh-CN with prices in ¥. Refreshed 2026-11-21, signed out, headless Chromium at 1440x900 and 390x844. The control map is [site-tree.md](site-tree.md).
 
 The site: strict monochrome — black text and keylines on white with grey steps (#9a9b9b muted, #c8cbcc disabled/hairline, #eceff1/#f9f9f9 surfaces); Adihaus DIN + PingFang SC (adineuePRO on display type); bold button labels, square corners, a `lib-*` component library with Tailwind utilities and iconfont glyphs.
 
@@ -139,12 +139,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **This is adidas.com.cn, not adidas.com.** Same brand language, different front end and market. Values here are the China flagship's — do not project them onto the global storefront without re-measuring.
 - The PDP captured showed a disabled add-to-cart state (white fill, grey #c8cbcc text/border, "加入购物袋"); an in-stock enabled bar was not captured.
-- The site renders pages as fixed-height app shells with inner scroll containers, so `-full` shots capture the viewport-height shell, not a tall page — a hard boundary of the front end, not a truncation.
-- `plp-title`, `product-card-price`, `size-cell`, `accordion` and `m-burger` are recorded misses in components.md; `size-cell`/`accordion` may not exist on this PDP variant, and no burger menu mounts at 390 (the mobile top bar is a search pill, measured as `m-header`).
-- Nav-flyout hover timed out on desktop (menu opens on click for some items); the search overlay is in the screenshots.
+- Pages scroll an inner shell, not the document. `-full` shots tile that shell. The header is hidden in those tiles so it is not repeated. Viewport shots still show the header.
+- The privacy statement's first paragraph names a registered street address and a service number. That span is painted white in [privacy-light-default](screenshots/privacy-light-default.png) and [privacy-light-full](screenshots/privacy-light-full.png). The rest of the paragraph stays.
+- `plp-title`, `product-card-price`, `size-cell`, `accordion` and `m-burger` are recorded misses in components.md. No burger mounts at 390. The phone uses a tab bar, captured as the category, bag, and account shots.
+- The desktop catalog mega-menu stayed `display: none` after hover and click. The same links are on [sitemap-light-default](screenshots/sitemap-light-default.png) and [mobile-category-light-default](screenshots/mobile-category-light-default.png).
+- The login drawer (请登录, profile icon) and the phone account tab's 登录注册 control were not entered. Those branches stop at the wall.
 
 ### Do and don't (from README.md)
 

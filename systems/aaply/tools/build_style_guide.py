@@ -90,9 +90,7 @@ def slim(node):
     return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
 
 
-# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
-# from ending the script (the kit's escape)
-data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")}, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")}, ensure_ascii=False, separators=(",", ":"))
 
 _uid = [0]
 ICON_SRC = {}

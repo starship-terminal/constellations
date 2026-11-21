@@ -1,62 +1,27 @@
-# DJI patterns
+# Patterns
 
-How the measured components combine into screens. All values live in
-[tokens.json](tokens.json); component entries are in
-[components.md](components.md).
+Signed out, Singapore storefront, 2026-11-21.
 
-## Two header generations
+## Bar and hero
 
-The site runs two nav implementations side by side. The home page paints the
-legacy `nav.dui-navbar` — a 64px transparent-over-hero bar with the DJI mark,
-`.navbar-category` menu items (Camera Drones, Handheld, Lifestyle Tech,
-Specialized, Explore, Support, Where to Buy), search/account glyphs, the
-Singapore locale picker and the 84x32 `#0070d5` **Store** pill (radius
-1408px — fully rounded). Category, product and support pages paint the newer
-`.official-site-header` module (also 64px) with the same menu model. Mobile
-redirects to a separate `/sg/mobile` site whose `.dui-navbar-m.site-header-m`
-is a 50px row of 54px category tabs.
+The desktop bar is a white row: logo, seven labels, search, user, region, Store. Camera Drones, Handheld, Support and Where to Buy are links. Lifestyle Tech, Specialized and Explore are hover menus. The homepage hero is a full-bleed product photograph with a small eyebrow, a large white title, a line of support copy, and two outline pills (Learn More, Buy Now). A slide list sits at the lower left. [home-light-default.png](screenshots/home-light-default.png)
 
-## The hero (dark-theme section)
+## Category
 
-The home hero is a `.dark-theme` section: 800px-tall product panels over a
-photographic backdrop, white ink, and the ghost-CTA pair — Learn More and Buy
-Now, 32px tall with a 64px pill radius and a 1px white border that fills
-white@9% on hover and white@15% on press. A product switcher sits bottom-left;
-an app-download banner rides above the nav.
+Camera drones and handheld are white catalogue pages. A series strip jumps to anchors. Product tiles pair Learn More (stays on www.dji.com) with Buy Now (store, not entered). [camera-drones-light-default.png](screenshots/camera-drones-light-default.png)
 
-## Category grids (light-theme sections)
+## Support
 
-`/camera-drones` and `/handheld` are `.light-theme` listings: a 48px
-display heading (`rgba(0,0,0,0.85)` ink), then rows of
-`atom-design-v1` **hero-vertical-cards** — product art, a tagline, the model
-name and a Learn More link, on the white field. A pinned sub-nav carries the
-`Store`/`Buy Now` pill (`#0070d5` → `#2490e3` hover → `#0058b0` pressed,
-0.3s background-color transition).
+A dark strip names the section. The hero is a photograph with a white title, a search field and a blue Search button. Service cards sit below. The query was not submitted. [support-light-default.png](screenshots/support-light-default.png)
 
-## The product page
+## Where to buy
 
-`/mavic-4-pro` opens on a `.dark-theme` hero behind a 64px sticky sub-nav
-(section links + a `sub-nav-btn` Buy Now). Sections alternate: dark panels
-carry `text-ms-24` eyebrow lines (white@85%), spec rows and the atom-design
-CTA pair — the white **pill** (`#fff` → `@90%` → `@80%`, black@85% label,
-60px radius) and the **ghost** (transparent + 1px white border → `@9%` →
-`@15%`). Light sections between them carry prose in black@65%.
+A quiet white page of retailer rows. Buy Now is the blue pill. [where-to-buy-light-default.png](screenshots/where-to-buy-light-default.png)
 
-## Support, company, where to buy
+## Phone
 
-`/support` is a light-theme portal: a 640x32 rounded search field on white,
-category tiles, the standard footer. `/company` is a minimal about page;
-`/where-to-buy/online-stores` lists store-type links (`a.ga-data`) under a
-32px heading.
+`/sg/mobile` keeps the same hero and swaps the bar for a menu icon, a centered logo, search and a bag. The menu is a full-height list ending in Log in to DJI, which is the login wall. [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png)
 
-## The footer
+## Login wall
 
-A `#272727` slab on every page — 833px of sitemap columns with white@85%
-links (`--white-8`), closing the dark section stack.
-
-## Boundaries
-
-Store, Login/Register and checkout gate on the DJI account (member-service
-redirects); Buy/Store controls were measured, never followed. Mega-menu
-hover panels exist but their items were not walked. The subscribe modal's
-buttons were measured only if the dialog painted itself.
+`https://account.dji.com/login` is a white card on a landscape photograph. It offers Apple, Google, Facebook, then email and password. This capture stopped there. [login-wall-light-default.png](screenshots/login-wall-light-default.png)

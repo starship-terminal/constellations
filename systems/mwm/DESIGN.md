@@ -3,138 +3,170 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "MWM"
-description: "Dark product marketing for a mobile-app studio: ink page, white 8px primary, one orange accent, 72px tight headline, a raised prompt card, and a three-column pricing row"
-omitted:
-  - section: "typography"
-    reason: "tokens.json has no typography tokens under `core.typography`"
-  - section: "components"
-    reason: "tokens.json has no components tokens under the colour set's `component` group"
+description: "a dark product-marketing page or an app-directory index"
 colors:
   primary: "#ff5301"
   neutral: "#0c0c0c"
   surface: "#141414"
-  on-surface: "#ffffff"
+  on-surface: "#fff"
   on-surface-variant: "#9a9a9a"
-  outline: "#1a1a1a"
-  color-ink: "#0c0c0c"
-  color-ink-alt: "#0d0d0d"
-  color-page: "#0c0c0c"
-  color-surface: "#141414"
-  color-surface-2: "#181818"
-  color-surface-hover: "#1d1d1d"
-  color-panel: "#141414"
-  color-panel-2: "#181818"
-  color-hairline: "#1a1a1a"
-  color-control: "#2a2a2a"
-  color-control-active: "#3d3d3d"
-  color-text: "#ffffff"
-  color-text-muted: "#9a9a9a"
-  color-text-body: "#858585"
-  color-text-tertiary: "#616161"
-  color-orange: "#ff5301"
-  color-orange-hot: "#ff4814"
-  color-up: "#2fcb6e"
-  color-down: "#ff4d4d"
-  color-glow: "#48494c"
-  color-ai-grad-top: "#ff5732"
-  color-ai-grad-bot: "#ff362b"
-  color-button-primary: "#ffffff"
-  color-button-primary-text: "#0c0c0c"
-  color-button-secondary: "#2a2a2a"
-  color-button-secondary-text: "#ffffff"
-  color-button-ghost-text: "#ffffff"
-  color-line: "rgba(255, 255, 255, 0.1)"
-  color-line-strong: "rgba(255, 255, 255, 0.18)"
-  color-muted: "rgba(255, 255, 255, 0.6)"
-  color-soft: "rgba(255, 255, 255, 0.38)"
-  color-orange-data-muted: "rgba(255, 83, 1, 0.72)"
-  color-orange-data-border: "rgba(255, 83, 1, 0.22)"
-  color-orange-data-border-strong: "rgba(255, 83, 1, 0.32)"
-  color-button-primary-hover: "#e9edf2"
-  color-nav-hover: "rgba(255, 255, 255, 0.1)"
-  color-topbar: "rgba(13, 13, 13, 0.8)"
-  color-lede: "rgba(255, 255, 255, 0.7)"
-  color-focus: "#005fcc"
-  color-chip: "rgba(255, 255, 255, 0.05)"
-  color-prompt-border: "rgba(255, 255, 255, 0.1)"
-  color-card-border: "rgba(255, 255, 255, 0.2)"
-  console-focus-ring: "#0a84ff"
-  console-text-1: "#f2f2f2"
-  console-text-2: "#b0b0b0"
-  console-text-3: "#858585"
-  console-agent: "#b89aee"
-  console-caution: "#efbb62"
-  console-live: "#30d158"
-  console-negative: "#f07878"
-  console-line-subtle: "rgba(255, 255, 255, 0.051)"
-  create-page: "#1c1c1c"
-  create-secondary: "#272725"
-  create-input: "#272725"
-  create-surface: "#494948"
-  create-text: "#ffffff"
-  create-text-secondary: "#c6c2b9"
-  create-text-muted: "#92918e"
-  create-orange: "#ff5301"
-  create-border: "#494948"
-  create-provider: "rgba(255, 255, 255, 0.1)"
-  create-provider-hover: "rgba(255, 255, 255, 0.14)"
+  outline: "hsla(0,0%,100%,.1)"
+  page: "#0c0c0c"
+  surface-2: "#181818"
+  text: "#fff"
+  muted: "#9a9a9a"
+  accent: "#ff5301"
+  border: "hsla(0,0%,100%,.1)"
+  border-strong: "hsla(0,0%,100%,.18)"
+  up: "#2fcb6e"
+  down: "#ff4d4d"
+  component-button-primary-bg: "#fff"
+  component-button-primary-fg: "#0c0c0c"
+  component-button-secondary-bg: "rgba(255, 255, 255, 0.1)"
+  component-button-secondary-fg: "#fff"
+  component-button-pricing-bg: "#fff"
+  component-button-pricing-fg: "#000000"
+  component-button-disabled-bg: "#2a2a2a"
+  component-button-disabled-fg: "#616161"
+  component-field-bg: "#141414"
+  component-field-fg: "#fff"
+  component-field-border: "#1a1a1a"
+  component-field-focus-bg: "#1c1c1c"
+  component-field-focus-border: "#3a3a3a"
+  component-search-bg: "#0c0c0c"
+  component-card-bg: "#181818"
+  component-card-selected-bg: "#1d1d1d"
+  component-nav-fg: "#fff"
+  component-chip-bg: "rgba(255, 255, 255, 0.05)"
+typography:
+  display:
+    fontFamily: "Inter"
+    fontSize: "72px"
+    fontWeight: 600
+    lineHeight: "76px"
+    letterSpacing: "-2.88px"
+  lede:
+    fontFamily: "Inter"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "24px"
+    letterSpacing: "-0.32px"
+  nav:
+    fontFamily: "Inter"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "16px"
+    letterSpacing: "-0.26px"
+  button:
+    fontFamily: "Inter"
+    fontSize: "13px"
+    fontWeight: 600
+    lineHeight: "16px"
+    letterSpacing: "-0.26px"
+  chip:
+    fontFamily: "Inter"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: "16px"
+    letterSpacing: "-0.07px"
+  field:
+    fontFamily: "Inter"
+    fontSize: "12.25px"
+    fontWeight: 400
+    lineHeight: "18.375px"
+    letterSpacing: "0px"
 rounded:
-  button: "8px"
+  btn: "8px"
   card: "16px"
   panel: "24px"
-  frame: "20px"
-  field: "6px"
-  pill: "999px"
-  sm: "4px"
-  lg: "12px"
 spacing:
-  "4": "4px"
-  "8": "8px"
-  "12": "12px"
-  "14": "14px"
-  "16": "16px"
-  "24": "24px"
-  "32": "32px"
-  "40": "40px"
-  "72": "72px"
+  nav-pad-x: "12px"
+  primary-pad-x: "14px"
+  secondary-pad-r: "16px"
+  field-pad-x: "16px"
+  field-pad-y: "10px"
+  card-pad: "18px"
+  header-gap: "8px"
+  chip-gap: "6px"
+components:
+  button-primary:
+    backgroundColor: "{colors.component-button-primary-bg}"
+    textColor: "{colors.component-button-primary-fg}"
+    rounded: "8px"
+    height: "32px"
+  button-secondary:
+    backgroundColor: "{colors.component-button-secondary-bg}"
+    textColor: "{colors.component-button-secondary-fg}"
+    rounded: "8px"
+    height: "32px"
+  button-pricing:
+    backgroundColor: "{colors.component-button-pricing-bg}"
+    textColor: "{colors.component-button-pricing-fg}"
+    height: "44px"
+  button-disabled:
+    backgroundColor: "{colors.component-button-disabled-bg}"
+    textColor: "{colors.component-button-disabled-fg}"
+  field:
+    backgroundColor: "{colors.component-field-bg}"
+    textColor: "{colors.component-field-fg}"
+    rounded: "8px"
+  field-focus:
+    backgroundColor: "{colors.component-field-focus-bg}"
+  search:
+    backgroundColor: "{colors.component-search-bg}"
+    height: "48px"
+  card:
+    backgroundColor: "{colors.component-card-bg}"
+    rounded: "16px"
+  card-selected:
+    backgroundColor: "{colors.component-card-selected-bg}"
+  nav:
+    textColor: "{colors.component-nav-fg}"
+    height: "32px"
+  chip:
+    backgroundColor: "{colors.component-chip-bg}"
+    rounded: "8px"
+    height: "40px"
 ---
 
 # MWM
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `dark` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `dark` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 11 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Dark product marketing for a mobile-app studio: ink page, white 8px primary, one orange accent, 72px tight headline, a raised prompt card, and a three-column pricing row.
+Good for: a dark product-marketing page or an app-directory index.
 
-Captured 2026-11-19, signed out (marketing pages are public; console and create were captured at their sign-in screens and not submitted). Themes: dark.
+Captured 2026-11-21, signed out. Themes: dark.
 
-MWM (https://mwm.ai) is a mobile-app company. This package covers the public marketing site and the signed-out sign-in pages of MWM Console and MWM AI. Captured 2026-11-19, signed out, dark only, at 1440 by 900 and 390 by 844.
+A token set and component reference for MWM's public marketing site, for building a dark product-marketing page or an app-directory index in that style. It was read from https://mwm.ai/ on 2026-11-21, signed out, in headless Chromium. Desktop captures are 1440 by 900 at device pixel ratio 1. Phone captures are 390 by 844 at device pixel ratio 2. The only public theme is dark (`html.dark-mode`). No account was created, no form was submitted, and the Console and Create App login walls were not entered.
+
+The captured surface is the marketing site and its public directories: home, product pages, pricing, studio, company, articles, guides, glossary, apps, tags, rankings, authors, methodology, the ASO tool, and the legal pages. Signed-in Console and app creation are a different product and are not in this package.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `dark` theme. The front matter then lists every colour token under `dark`, named by its path with dots turned into hyphens.
 
-- **primary (#ff5301):** `dark.color.orange`
-- **neutral (#0c0c0c):** `dark.color.page`
-- **surface (#141414):** `dark.color.surface`
-- **on-surface (#ffffff):** `dark.color.text`
-- **on-surface-variant (#9a9a9a):** `dark.color.text-muted`
-- **outline (#1a1a1a):** `dark.color.hairline`
+- **primary (#ff5301):** `dark.accent`
+- **neutral (#0c0c0c):** `dark.page`
+- **surface (#141414):** `dark.surface`
+- **on-surface (#fff):** `dark.text`
+- **on-surface-variant (#9a9a9a):** `dark.muted`
+- **outline (hsla(0,0%,100%,.1)):** `dark.border`
 
 ## Typography
 
-No composite type styles in tokens.json; the README text below names the faces and sizes.
+6 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Inter.
 
 ### Fonts (from README.md)
 
-Inter is the UI face on the marketing site and on Create. Console names InterVariable, then Inter. Both are loaded from the sites. Modern Gothic and Modern Gothic Mono are named and did not load. Instrument Sans is declared as a font-face and was not the computed face on the elements that were measured. The mono fallback is the system mono stack.
+Inter is the face that loaded (weights 400 and 700) and the computed family of the measured heading, buttons, and fields. The declared UI stack is Inter, then `-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `sans-serif`. Instrument Sans 400 also loaded. It was not the computed family of the measured controls. Modern Gothic and Modern Gothic Mono are declared and were not confirmed loaded. PrimeIcons is referenced and was unloaded. These are MWM's font choices. This package does not ship the font files.
 
 ## Layout
 
-Spacing from `core.space`: `4` 4px, `8` 8px, `12` 12px, `14` 14px, `16` 16px, `24` 24px, `32` 32px, `40` 40px, `72` 72px.
+Spacing from `core.space`: `nav-pad-x` 12px, `primary-pad-x` 14px, `secondary-pad-r` 16px, `field-pad-x` 16px, `field-pad-y` 10px, `card-pad` 18px, `header-gap` 8px, `chip-gap` 6px.
 
 ## Elevation & Depth
 
@@ -142,15 +174,18 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `core.shadow.prompt` | `0px 26px 90px 0px rgba(0, 0, 0, 0.38)` |
+| `core.shadow.composer-focus` | `0 0 0 2px #ffffff2e` |
+| `core.shadow.send-ready` | `0 10px 30px #ffffff24` |
+| `core.shadow.send-hover` | `0 14px 36px #fff3` |
+| `core.shadow.selected-card` | `rgba(255, 83, 1, 0.32) 0px 0px 0px 1px inset` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `button` 8px, `card` 16px, `panel` 24px, `frame` 20px, `field` 6px, `pill` 999px, `sm` 4px, `lg` 12px.
+Corner radii from `core.radius`: `btn` 8px, `card` 16px, `panel` 24px.
 
 ## Components
 
-No component tokens map onto DESIGN.md's component properties.
+11 components from the `component` tokens of the `dark` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -164,20 +199,22 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The home headline is a typewriter. Both home shots catch it mid-cycle, so the second line is incomplete. The colour of that typed word is `rgba(255, 255, 255, 0.7)` while it is still typing.
-
-`--mwm-font-display` names Modern Gothic first. That face did not load. The computed face on the headline is Inter. The tokens use Inter.
-
-The marketing body background computes to `rgb(0, 0, 0)` from a Tailwind class. The token layer's page colour is `#0c0c0c`, and that is what `main` paints. The swatch uses the token.
-
-Create's page background computes to `rgb(28, 28, 28)`, which is `#1c1c1c`. The sign-in panel class paints `#0c0c0c`. Both are recorded.
-
-Console's email field height came back at 43px and its type at 15.696px. Those are the computed values, not a round 16px.
+- Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json) or [raw/](raw).
+- `--mwm-btn-secondary-bg` is `#2a2a2a`. The live header control "Open MWM Console" measured `rgba(255, 255, 255, 0.1)`. The token records the measured control.
+- An older `.mwm-topbar-primary` rule declares `border-radius: 999px` and `color: #050505`. The live "Build your app" control measured `8px` and `rgb(12, 12, 12)`.
+- The pricing CTA "Get MWM AI Pro" measured label `rgb(0, 0, 0)`, not `#0c0c0c`.
+- `--mwm-font-display` names Modern Gothic. `document.fonts` did not list it as loaded, and the home `h1` computed to Inter.
+- Home-scoped `--mwm-lilac`, `--mwm-gold`, and `--mwm-green` resolved empty on `html`. They are not tokens.
+- The legal screenshots show the company's published headquarters in the page text. That string is not copied into this package's text files.
+- Capture sidecars report `theme.classes` as empty even though `html` had `dark-mode` during the CSS probe. Trust the CSS probe for the theme class.
 
 ### Do and don't (from README.md)
 
-- **Use the white primary on the ink page.** The header action and the plan button are white, 8px radius, semibold. See [button-primary-default.png](components/crops/button-primary-default.png).
-- **Keep orange for the one accent.** `#ff5301` marks "MOST POPULAR" and the console panel. It is not the primary button. See [badge-default.png](components/crops/badge-default.png).
-- **Set display type tight.** The headline is 72px on 76px, weight 600, letter-spacing -2.88px. See [home-dark-default.png](screenshots/home-dark-default.png).
-- **Leave the prompt as a raised card.** Surface `#141414`, 16px radius, a 26px/90px shadow. See [prompt-default.png](components/crops/prompt-default.png).
-- **Do not invent a light theme.** These pages ship dark only.
+- **Do** build on a near-black page (`#0c0c0c`) with white type and white primary buttons. [screenshots/home-dark-default.png](screenshots/home-dark-default.png).
+- **Do** use 8 px radius on buttons, fields, and chips, 16 px on cards, and 24 px only where the panel token is declared.
+- **Do** set display type at 72 px, weight 600, line-height 76 px, tracking `-2.88px`, in Inter.
+- **Don't** invent a light theme. The public site has one theme.
+- **Don't** invent hover colours for the header buttons. They were not measured.
+- **Don't** treat orange as the primary button fill. Orange is the accent and the selected-card ring. Primary buttons are white.
+- **Don't** read colours off the screenshots. They are 256-colour PNGs.
+- **Don't** copy the logo, app icons, or photography into something that ships.

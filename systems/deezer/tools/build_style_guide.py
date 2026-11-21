@@ -1,123 +1,122 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
-
-Every colour, radius, shadow and type style on the page is a CSS custom property generated from
-tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
-theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
-
-Placeholders in the template:
-  /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
-  /*TOKENS*/null                  a compact copy of the token tree for the JS tables
-  <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
-
-Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
-"""
-import json, pathlib, re
+"""Render style-guide.html from tokens.json. Deterministic."""
+import json
+import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
 
 
-def flat(node, prefix=""):
-    for k, v in node.items():
-        if k.startswith("$"):
+def css_name(path):
+    return "--" + path.replace(".", "-")
+
+
+def walk(node, prefix=""):
+    for key, value in node.items():
+        if key.startswith("$"):
             continue
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from flat(v, prefix + k + "-")
+        path = f"{prefix}{key}" if not prefix else f"{prefix}.{key}"
+        if isinstance(value, dict) and "$value" in value:
+            yield path, value
+        elif isinstance(value, dict):
+            yield from walk(value, path)
 
 
-def cssname(path):
-    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
+def css_value(token):
+    value = token["$value"]
+    if token.get("$type") == "cubicBezier" and isinstance(value, list):
+        return "cubic-bezier(" + ", ".join(str(n) for n in value) + ")"
+    if isinstance(value, (int, float)) and token.get("$type") == "fontWeight":
+        return str(value)
+    return str(value)
 
 
-def alias(v):
-    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
+def block(theme):
+    lines = []
+    for path, token in walk(T.get(theme, {})):
+        lines.append(f"  {css_name(path)}: {css_value(token)};")
+    return "\n".join(lines)
 
 
-def css_val(name, t):
-    v, ty = t["$value"], t["$type"]
-    if ty == "cubicBezier":
-        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
-    if ty == "shadow":
-        if isinstance(v, str):
-            return alias(v)
-        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
-    if ty == "typography":
-        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
-    if ty == "gradient":
-        angle = t["$extensions"].get("angle", "180deg")
-        return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
-    return alias(v)
-
-
-# A light-only product has no dark set; every set that is missing renders as empty.
-SETS = [s for s in ("core", "light", "dark") if s in T]
-THEMES = [s for s in SETS if s != "core"]
-
-
-def block(setname):
-    """A set's custom properties; a set the product lacks renders as nothing."""
-    if setname not in T:
-        return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
-
-
-# a core name and a themed name must not land on the same custom property
-_core = {cssname(n) for n, _ in flat(T["core"])}
-for _set in THEMES:
-    _clash = _core & {cssname(n) for n, _ in flat(T[_set])}
-    if _clash:
-        raise SystemExit(f"core and {_set} share custom properties: {sorted(_clash)[:5]}")
-
-
-def slim(node):
-    if isinstance(node, dict) and "$value" in node:
-        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
-        for k in ("compact", "darkVariationAxis"):
-            if k in node["$extensions"]:
-                out[k] = node["$extensions"][k]
-        if node.get("$description"):
-            out["d"] = node["$description"]
-        return out
-    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
-
-
-# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
-# from ending the script early. JSON.parse and a JS literal read it back unchanged.
-data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
-                  ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-
-_uid = [0]
-ICON_SRC = {}
-
-
-def clean_svg(svg, size):
-    svg = re.sub(r"<\?xml[^>]*>\s*", "", svg).strip()
-    svg = re.sub(r"\s+", " ", svg).replace("> <", "><")
-    for i in sorted(set(re.findall(r'id="([^"]+)"', svg))):
-        _uid[0] += 1
-        svg = svg.replace(f'id="{i}"', f'id="i{_uid[0]}"').replace(f"url(#{i})", f"url(#i{_uid[0]})")
-    svg = re.sub(r"<svg\b", '<svg aria-hidden="true" focusable="false" class="ic"', svg, count=1)
-    if size:
-        svg = re.sub(r'\swidth="[^"]*"', "", svg, count=1)
-        svg = re.sub(r'\sheight="[^"]*"', "", svg, count=1)
-        svg = svg.replace("<svg ", f'<svg width="{size}" height="{size}" ', 1)
-    return svg
-
-
-def icon(m):
-    name, size = m.group(1), m.group(2)
-    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
-    return clean_svg(src, size)
-
-
-tpl = (HERE / "tools" / "style-guide.template.html").read_text()
-html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
-        .replace("/*TOKENS*/null", data))
-html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
+html = f"""<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deezer style guide</title>
+<style>
+:root {{
+{block("core")}
+{block("light")}
+  color-scheme: light;
+  --sg-sans: Inter, Arial, sans-serif;
+  --sg-display: "Deezer Brand", Tahoma, sans-serif;
+}}
+[data-mode="dark"] {{
+{block("dark")}
+  color-scheme: dark;
+}}
+* {{ box-sizing: border-box; }}
+body {{ margin: 0; background: var(--background-page, #fff); color: var(--text-primary, #111); font: 400 14px/20px var(--sg-sans); }}
+header {{ display: flex; gap: 16px; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-default, #ccc); }}
+header h1 {{ font: 700 18px/24px var(--sg-display); margin: 0; letter-spacing: -0.03em; }}
+button.toggle {{ margin-left: auto; border-radius: var(--radius-marketingButton); padding: 8px 14px; border: 1px solid var(--border-default, #555); background: transparent; color: inherit; }}
+main {{ max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }}
+h2 {{ font: 700 20px/24px var(--sg-display); margin: 32px 0 12px; }}
+.swatches {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }}
+.swatch {{ border-radius: 12px; overflow: hidden; border: 1px solid var(--border-default, #444); }}
+.swatch i {{ display: block; height: 56px; }}
+.swatch span {{ display: block; padding: 6px 8px; font-size: 12px; }}
+.row {{ display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }}
+.btn {{ display: inline-flex; align-items: center; height: 37px; padding: 0 20px; border-radius: 12px; font: 700 14px/1 var(--sg-sans); text-decoration: none; }}
+.btn.primary {{ background: #a238ff; color: #fff; border: 0; }}
+.btn.ghost {{ background: transparent; color: #fdfcfe; border: 1px solid #555257; }}
+.btn.player {{ height: 48px; padding: 0 24px; border-radius: 16px; background: var(--background-accent); color: var(--text-onAccent); border: 0; }}
+.field {{ height: 48px; width: 320px; border-radius: 16px; border: 0; background: var(--background-raised); color: var(--text-primary); padding: 0 16px; font: 400 15px/1 var(--sg-sans); }}
+.hero {{ font: 800 64px/58px var(--sg-display); letter-spacing: -0.02em; text-transform: uppercase; margin: 12px 0; }}
+</style>
+</head>
+<body>
+<header>
+  <h1>Deezer</h1>
+  <span>Public capture, 2026-11-21. Signed out.</span>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle theme</button>
+</header>
+<main>
+  <p>Dark tokens are Tempo semantic roles from the signed-out player. Light tokens are computed styles from the marketing homepage. The toggle swaps which set is applied to the page background and text.</p>
+  <h2>Dark roles</h2>
+  <div class="swatches" id="dark"></div>
+  <h2>Light roles</h2>
+  <div class="swatches" id="light"></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn ghost" href="#">Log in</a>
+    <a class="btn primary" href="#">Sign up</a>
+    <button class="btn player" type="button">Log in</button>
+    <input class="field" placeholder="Artists, tracks, podcasts..." readonly>
+  </div>
+  <p class="hero">Where music comes to life</p>
+</main>
+<script>
+const tokens = {json.dumps({"dark": T["dark"], "light": T["light"]})};
+function paint(id, group) {{
+  const root = document.getElementById(id);
+  for (const [role, items] of Object.entries(group)) {{
+    for (const [name, token] of Object.entries(items)) {{
+      const el = document.createElement("div");
+      el.className = "swatch";
+      el.innerHTML = "<i></i><span></span>";
+      el.querySelector("i").style.background = token.$value;
+      el.querySelector("span").textContent = role + "." + name + " " + token.$value;
+      root.appendChild(el);
+    }}
+  }}
+}}
+paint("dark", tokens.dark);
+paint("light", tokens.light);
+</script>
+</body>
+</html>
+"""
 (HERE / "style-guide.html").write_text(html)
-print("style-guide.html:", len(html.encode()), "bytes;",
-      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")
+print("wrote style-guide.html")

@@ -1,0 +1,2569 @@
+{
+ "readAt": "2026-11-21",
+ "source": "stylesheet bodies fetched during a live load of https://slack.com/intl/en-sg/ in headless Chromium, plus inline style blocks, re-parsed with CSSStyleSheet. Resolved on a probe carrying those sheets, plain and with a .dark class, at 1440 x 900. The public pages painted light; the dark pass is a probe, not a painted theme.",
+ "sheets": [
+  "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css (924920 bytes)",
+  "https://a.slack-edge.com/bv1-13-br/rollup-style-product-uis-custom.4c221f0db7ec90f6.min.css (40527 bytes)",
+  "https://a.slack-edge.com/bv1-13-br/legacy-style-libs-swiper.5fac27f383e63eb5.min.css (17543 bytes)",
+  "https://a.slack-edge.com/bv1-13-br/marketing-style-page-index-2025.0897b391f4f793e3.min.css (76870 bytes)",
+  "https://a.slack-edge.com/bv1-13-br/marketing-style-component-bento-box-sticky-toc.bec013b00d3d7582.min.css (6662 bytes)",
+  "https://a.slack-edge.com/bv1-13-br/marketing-style-page-expanded-nav-es.b2ec11f2ef46e0d1.min.css (5558 bytes)",
+  "https://a.slack-edge.com/bv1-13-br/marketing-style-onetrust-banner.a766f6366824ca39.min.css (7889 bytes)",
+  "https://www.youtube-nocookie.com/s/player/6b3d0364/www-player.css (561708 bytes)",
+  "https://www.youtube-nocookie.com/s/_/ytembeds/_/ss/k=ytembeds.base.ndKCcCpm1eI.L.W.O/am=AAAAABAAwBg/d=1/br=1/rs=AGKMywH-9iiEme_AY5QhJ2vmTzFdglosvA/m=root,base (13706 bytes)",
+  "inline-0 (125358 bytes)"
+ ],
+ "counts": {
+  "rules": 29,
+  "fonts": 26,
+  "names": {
+   "theme": 3,
+   "app": 199,
+   "vendor": 1,
+   "tailwind": 0
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": "html",
+   "context": [],
+   "properties": {
+    "--font-family-heading": "\"Salesforce-Avant-Garde\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "--font-family-body": "\"Salesforce-Sans\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "--font-family-monospace": "\"Monaco\", \"Menlo\", \"Consolas\", \"Courier New\", monospace"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": "html:lang(ja)",
+   "context": [],
+   "properties": {
+    "--font-family-heading": "\"Tazugane-Info-Heavy\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "--font-family-body": "\"NotoSansJP\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": "html:lang(ko)",
+   "context": [],
+   "properties": {
+    "--font-family-heading": "\"SeolSansHeavy\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "--font-family-body": "\"NotoSansKR\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": "html:lang(zh-TW)",
+   "context": [],
+   "properties": {
+    "--font-family-heading": "\"MXiangHeHeiTCBold\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "--font-family-body": "\"NotoSansTC\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": "html:lang(zh-CN)",
+   "context": [],
+   "properties": {
+    "--font-family-heading": "\"MXiangHeHeiSCProBold\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "--font-family-body": "\"NotoSansSC\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--article-theme-primary": "#481a54",
+    "--article-theme-secondary": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".c-arc__upper.color-white, .c-arc__lower.color-white",
+   "context": [],
+   "properties": {
+    "--bck-color": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".c-arc__upper.color-blue, .c-arc__lower.color-blue",
+   "context": [],
+   "properties": {
+    "--bck-color": "#eaf5fe"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".c-arc__upper.color-aubergine, .c-arc__lower.color-aubergine, .c-arc__upper.color-dark-aubergine, .c-arc__lower.color-dark-aubergine",
+   "context": [],
+   "properties": {
+    "--bck-color": "#481a54"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".c-arc__upper.color-purple, .c-arc__lower.color-purple",
+   "context": [],
+   "properties": {
+    "--bck-color": "#f9f0ff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".c-arc__upper.color-green, .c-arc__lower.color-green",
+   "context": [],
+   "properties": {
+    "--bck-color": "#ebf7e6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".c-arc__upper.color-pink, .c-arc__lower.color-pink",
+   "context": [],
+   "properties": {
+    "--bck-color": "#fef0f3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".c-arc__upper.color-yellow, .c-arc__lower.color-yellow",
+   "context": [],
+   "properties": {
+    "--bck-color": "#fbf3e0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".c-arc__upper.color-agentforce-gradient, .c-arc__lower.color-agentforce-gradient",
+   "context": [],
+   "properties": {
+    "--bck-color": "#d1f1ff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".c-arc__upper.color-transparentt, .c-arc__lower.color-transparentt",
+   "context": [],
+   "properties": {
+    "--bck-color": "transparent"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "selector": ".faded-overflow",
+   "context": [],
+   "properties": {
+    "--scrollbar-width": "1rem",
+    "--mask-height": "2rem",
+    "--mask-image-content": "linear-gradient(to bottom, transparent, #181818 var(--mask-height), #181818 calc(100% - var(--mask-height)), transparent)",
+    "--mask-size-content": "calc(100% - var(--scrollbar-width)) 100%",
+    "--mask-image-scrollbar": "linear-gradient(#181818, #181818)",
+    "--mask-size-scrollbar": "var(--scrollbar-width) 100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-product-uis-custom.4c221f0db7ec90f6.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--sidebar-color": "#400d40",
+    "--sidebar-highlight-color": "#1264a3",
+    "--attachment-color": "#000",
+    "--more-count": "\"+1\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/legacy-style-libs-swiper.5fac27f383e63eb5.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/legacy-style-libs-swiper.5fac27f383e63eb5.min.css",
+   "selector": ".swiper-lazy-preloader-white",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/legacy-style-libs-swiper.5fac27f383e63eb5.min.css",
+   "selector": ".swiper-lazy-preloader-black",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/legacy-style-libs-swiper.5fac27f383e63eb5.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-navigation-size": "44px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.youtube-nocookie.com/s/player/6b3d0364/www-player.css",
+   "selector": ".ytp-ad-dual-avatar",
+   "context": [],
+   "properties": {
+    "--ytp-ad-dual-avatar-main-size": "36px",
+    "--ytp-ad-dual-avatar-sub-size": "36px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.youtube-nocookie.com/s/player/6b3d0364/www-player.css",
+   "selector": ".ytp-autonav-endscreen-countdown-overlay",
+   "context": [],
+   "properties": {
+    "--w2w-start-background-color": "#000",
+    "--w2w-end-background-color": "#000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.youtube-nocookie.com/s/player/6b3d0364/www-player.css",
+   "selector": ".ytp-input-slider",
+   "context": [],
+   "properties": {
+    "--yt-slider-shape-gradient-percent": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.youtube-nocookie.com/s/player/6b3d0364/www-player.css",
+   "selector": ".ytp-unified-seek-wrapper",
+   "context": [],
+   "properties": {
+    "--progress-width": "0px",
+    "--progress-left-buffer": "0px",
+    "--progress-right-buffer": "0px",
+    "--unified-seek-scrubber-pill-height": "32px",
+    "--unified-seek-edge-padding": "8px",
+    "--seek-scrubber-width-destination": "0px",
+    "--unified-seek-morph-transition-ms": "100ms",
+    "--scrubber-container-x": "0px",
+    "--half-width": "calc(var(--seek-scrubber-width-destination)*0.5)",
+    "--half-height": "min(var(--half-width),calc(var(--unified-seek-scrubber-pill-height)/2))",
+    "--unified-seek-bounce-scale": "1.15",
+    "--unified-seek-offset-x": "0px",
+    "--unified-seek-bounce-offset-x": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.youtube-nocookie.com/s/player/6b3d0364/www-player.css",
+   "selector": ".ytp-unified-seek-active .ytp-unified-seek-wrapper",
+   "context": [],
+   "properties": {
+    "--unified-seek-offset-x": "calc(max(0px,\n        var(--half-width) + var(--unified-seek-edge-padding) - var(--scrubber-container-x) - var(\n            --progress-left-buffer\n          )) + min(0px,\n        var(--progress-width) + var(--progress-right-buffer) - var(--unified-seek-edge-padding) - var(\n            --scrubber-container-x\n          ) - var(--half-width)))",
+    "--unified-seek-bounce-offset-x": "calc(max(0px,\n        calc(var(--half-width) * var(--unified-seek-bounce-scale)) + var(--unified-seek-edge-padding) - var(--scrubber-container-x) - var(\n            --progress-left-buffer\n          )) + min(0px,\n        var(--progress-width) + var(--progress-right-buffer) - var(--unified-seek-edge-padding) - var(\n            --scrubber-container-x\n          ) - calc(var(--half-width) * var(--unified-seek-bounce-scale))))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.youtube-nocookie.com/s/_/ytembeds/_/ss/k=ytembeds.base.ndKCcCpm1eI.L.W.O/am=AAAAABAAwBg/d=1/br=1/rs=AGKMywH-9iiEme_AY5QhJ2vmTzFdglosvA/m=root,base",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--td176b92ada598f8f": "initial",
+    "--td851cd75a8793667": "initial",
+    "--tc58f4bf5a9869b3e": "initial",
+    "--t3a480c2f814ef19c": "initial",
+    "--t77e217518bcd986b": "initial",
+    "--tc5e0863356bf5767": "initial",
+    "--t7a2234c5eadde886": "initial",
+    "--td340014d093b0821": "initial",
+    "--tf8c80baf678711b8": "initial",
+    "--t2986df03ecf88759": "initial",
+    "--te0c856964146535b": "initial",
+    "--tf630d2cff7da8057": "initial",
+    "--tf69032263d26c015": "initial",
+    "--ta5930fb3c4c7209c": "initial",
+    "--t1f1729a8e756e8bf": "initial",
+    "--t53c1a9d86136aded": "initial",
+    "--t8533f30445e4a126": "initial",
+    "--tc2512a21369bd447": "initial",
+    "--t5088a11581fecd14": "initial",
+    "--t331d13276596b01e": "initial",
+    "--t42381e7a43d9caf4": "initial",
+    "--t7f4f2c6d54836ce0": "initial",
+    "--t7d8b8e5ee291aec0": "initial",
+    "--t4726c68ef6d7b08f": "initial",
+    "--tf0a0d1154827847f": "initial",
+    "--t3e41d7b17b187f69": "initial",
+    "--tff65993384bb4560": "initial",
+    "--te2867b13d771d055": "initial",
+    "--t933d7922f3158dc5": "initial",
+    "--te033683f077b72fe": "initial",
+    "--t264e2c9cb87891f9": "initial",
+    "--t206f3fa2e01af22d": "initial",
+    "--t34f46f0f2c13d328": "initial",
+    "--t854c79338d8ca8a7": "initial",
+    "--t20480717de80f555": "initial",
+    "--t2d807bb79e75606d": "initial",
+    "--t617db776af0de196": "initial",
+    "--tb628117fc164ad87": "initial",
+    "--td545df04e2c659d7": "initial",
+    "--t53991d599b1488f5": "initial",
+    "--t4d4f132f4712716a": "initial",
+    "--t93a9a9c8ff5bfbfc": "initial",
+    "--tb315d8832c2ef6ef": "initial",
+    "--te9b0b5b330fb2a7b": "initial",
+    "--t5355e7dcd3a33a2f": "initial",
+    "--tf8fd38cbdab81862": "initial",
+    "--tc54fd20dab7048eb": "initial",
+    "--t25a42c37f53e50e0": "initial",
+    "--ta889dfda9605a358": "initial",
+    "--t5978da8d584b8fe9": "initial",
+    "--t124b7dafe9bc366d": "initial",
+    "--tdbe50d27d51f5093": "initial",
+    "--ta564d8212bccb16a": "initial",
+    "--t99f774684cbb9703": "initial",
+    "--t4e6df9b2b6b97e00": "initial",
+    "--tb8b31ac562fbe9b5": "initial",
+    "--t5884672004d56120": "initial",
+    "--tef70ca245445b52b": "initial",
+    "--t4f0922e5a3d0c20f": "initial",
+    "--t64cac5de9c579f0d": "initial",
+    "--t7dfa6f84c9346edf": "initial",
+    "--tecbdf924b63b27fc": "initial",
+    "--t1405e70a39276293": "initial",
+    "--tad8443faed66c111": "initial",
+    "--te6d2b428de68554a": "initial",
+    "--tc980c5478124c8c7": "initial",
+    "--t965644ecdbe4b7b8": "initial",
+    "--tb14a10c3b43a15a3": "initial",
+    "--tb13ff8797829e79e": "initial",
+    "--te5668e6111aba0ed": "initial",
+    "--ta7d628facfe84d18": "initial",
+    "--tbe42269534655e67": "initial",
+    "--tab8059236063cadb": "initial",
+    "--t735e435a8b7ad67c": "initial",
+    "--t21af08fdbf6a1406": "initial",
+    "--tc604113d09fee05d": "initial",
+    "--t08a7c6c176cbc5c2": "initial",
+    "--t8cdc9846a76caf1f": "initial",
+    "--te1b64e6971040396": "initial",
+    "--t416e5931fc464589": "initial",
+    "--tb7d74bb3291c951d": "initial",
+    "--tf3fc855af2285f5f": "initial",
+    "--t0a1249f7c9e82b5e": "initial",
+    "--t02c0a2c868c14ce8": "initial",
+    "--td8562cdc203bc683": "initial",
+    "--t53dda9125e8d1324": "initial",
+    "--t544e31714f63d53c": "initial",
+    "--taf7bd2f2e5a02772": "initial",
+    "--t374de7a0f7f6b6a4": "initial",
+    "--tf4689f158df519fa": "initial",
+    "--t0aeda4b8dc32d2ba": "initial",
+    "--t411713ca69f5bc16": "initial",
+    "--t86c44655e6eba63b": "initial",
+    "--t231ac42975008fa5": "initial",
+    "--tbcd9ff47c896077f": "initial",
+    "--tdbbfa5571f968efd": "initial",
+    "--taa47847c79d99d2c": "initial",
+    "--tc4981a55027a55a7": "initial",
+    "--t87eabf113a15ac96": "initial",
+    "--t858b809f8044e962": "initial",
+    "--td009ac6ce5c83138": "initial",
+    "--t7f0b376d1cadd80f": "initial",
+    "--td4ea17e4c4a20281": "initial",
+    "--tbec5f42fc53db64b": "initial",
+    "--t581a941c058c725b": "initial",
+    "--t285d1cbb17921f77": "initial",
+    "--t0f59291ce5504543": "initial",
+    "--ta342ea0f35bf4c3e": "initial",
+    "--t6358887963129991": "initial",
+    "--t91591a7ba22e08d8": "initial",
+    "--tc48eb5c6edf0ed47": "initial",
+    "--tdb76da5c4d1d803c": "initial",
+    "--t57b7f229909a96c3": "initial",
+    "--t4a98c17ec97d8ef6": "initial",
+    "--t9a0b9eaee37e9b52": "initial",
+    "--t6eabc52017589ee0": "initial",
+    "--td1cb54b6818912d6": "initial",
+    "--tfaae96692cc182e4": "initial",
+    "--t518e925f61bdcb91": "initial",
+    "--tb927f5c0149004c6": "initial",
+    "--t832f22ce6618e99e": "initial",
+    "--t45b2a38314924357": "initial",
+    "--te0d9048420b3be81": "initial",
+    "--t47d3098c82ccc96f": "initial",
+    "--t6931aa1826b373b2": "initial",
+    "--ted4236536899e4b3": "initial",
+    "--ta057e2d872f2a0d4": "initial",
+    "--t2c3e55cb638348df": "initial",
+    "--t1aab759cd9ddbe39": "initial",
+    "--tf5f050c65aebead5": "initial",
+    "--tc34719cb72599bdf": "initial",
+    "--tb736fb3cc9290c08": "initial",
+    "--tdc8af6750f0dad0d": "initial",
+    "--t3410c91649e5eb8a": "initial",
+    "--t4aeaa857de8a786b": "initial",
+    "--t296c7f81dd09a9c3": "initial",
+    "--tfa3475c508f5dfef": "initial",
+    "--t9bc0b740242da017": "initial",
+    "--t441a0e44e495381a": "initial",
+    "--tbdeaf5bc17152abc": "initial",
+    "--tde41338fc2bd4ba5": "initial",
+    "--t4d7776c28db21122": "initial",
+    "--t7e34d5baa4ea6277": "initial",
+    "--tc4b26042d4cb141f": "initial",
+    "--t5208fd177a788cfa": "initial",
+    "--tffc2fd3a644f6275": "initial",
+    "--t6216186c28b3834b": "initial",
+    "--t4a6da19e16bf221a": "initial",
+    "--td9c19f4f8cecd56e": "initial",
+    "--t3f3bdb4140d3ead7": "initial",
+    "--t904a88c623ca27ab": "initial",
+    "--t2c3bbff6c15a3eb2": "initial",
+    "--t0ccd1ace000d5e93": "initial",
+    "--tc87f6a7f05e65fc4": "initial",
+    "--tc04ba3e73561953c": "initial",
+    "--ta9b56aa666d71f06": "initial",
+    "--t7c4965c11f8537c0": "initial",
+    "--t432fbdbd7f2f3f71": "initial",
+    "--t7f006a3165d45f92": "initial",
+    "--tf3fc031aaa66f63b": "initial",
+    "--taf1bdd961423c15f": "initial",
+    "--t9d7bdcaefc975d44": "initial",
+    "--t4fb0f67b251e1a42": "initial",
+    "--ta08e036410c14538": "initial",
+    "--t7f9b7e1603e20b94": "initial"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.youtube-nocookie.com/s/_/ytembeds/_/ss/k=ytembeds.base.ndKCcCpm1eI.L.W.O/am=AAAAABAAwBg/d=1/br=1/rs=AGKMywH-9iiEme_AY5QhJ2vmTzFdglosvA/m=root,base",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--t124b7dafe9bc366d": "#007a65",
+    "--ta564d8212bccb16a": "#7f0e7f",
+    "--t4e6df9b2b6b97e00": "#aa09aa",
+    "--t5884672004d56120": "#ff4e45",
+    "--te033683f077b72fe": "#575bfe",
+    "--t4d4f132f4712716a": "#007a65",
+    "--t64cac5de9c579f0d": "#bcbbd2",
+    "--taf7bd2f2e5a02772": "#3ea6ff",
+    "--t374de7a0f7f6b6a4": "#65b8ff",
+    "--tf4689f158df519fa": "#e6e6e6",
+    "--t0aeda4b8dc32d2ba": "#f1f1f1",
+    "--t411713ca69f5bc16": "#ccc",
+    "--t86c44655e6eba63b": "#f9f9f9",
+    "--t231ac42975008fa5": "#2ba640",
+    "--tbcd9ff47c896077f": "rgba(255,255,255,0.3)",
+    "--tdbbfa5571f968efd": "rgba(255,255,255,0.3)",
+    "--taa47847c79d99d2c": "rgba(255,255,255,0.15)",
+    "--tc4981a55027a55a7": "rgba(255,255,255,0.15)",
+    "--t87eabf113a15ac96": "#e6e6e6",
+    "--t858b809f8044e962": "#0f0f0f",
+    "--td009ac6ce5c83138": "rgba(255,255,255,0.2)",
+    "--t7f0b376d1cadd80f": "rgba(255,255,255,0.2)",
+    "--td4ea17e4c4a20281": "#fff",
+    "--tbec5f42fc53db64b": "rgba(255,255,255,0.2)",
+    "--t581a941c058c725b": "rgba(255,255,255,0.3)",
+    "--t285d1cbb17921f77": "#fff",
+    "--t0f59291ce5504543": "#030303",
+    "--ta342ea0f35bf4c3e": "rgba(255,255,255,0.7)",
+    "--t6358887963129991": "rgba(255,255,255,0.3)",
+    "--t91591a7ba22e08d8": "rgba(255,255,255,0.15)",
+    "--tc48eb5c6edf0ed47": "rgba(255,255,255,0.2)",
+    "--tdb76da5c4d1d803c": "rgba(255,255,255,0.15)",
+    "--t57b7f229909a96c3": "rgba(255,255,255,0.15)",
+    "--t4a98c17ec97d8ef6": "rgba(255,255,255,0.15)",
+    "--t9a0b9eaee37e9b52": "rgba(255,255,255,0.15)",
+    "--t6eabc52017589ee0": "#fff",
+    "--td1cb54b6818912d6": "#000",
+    "--te0d9048420b3be81": "rgba(255,255,255,0.2)",
+    "--t47d3098c82ccc96f": "rgba(255,255,255,0.2)",
+    "--tc34719cb72599bdf": "rgba(0,0,0,0.2)",
+    "--tb736fb3cc9290c08": "rgba(0,0,0,0.3)",
+    "--tdc8af6750f0dad0d": "#0f0f0f",
+    "--t3410c91649e5eb8a": "#333",
+    "--t4aeaa857de8a786b": "#606060",
+    "--td176b92ada598f8f": "#1d1f71",
+    "--td851cd75a8793667": "#6769fe",
+    "--tc58f4bf5a9869b3e": "#7d81fc",
+    "--t3a480c2f814ef19c": "#5c7e00",
+    "--t77e217518bcd986b": "#5c7e00",
+    "--tc5e0863356bf5767": "#fbfee6",
+    "--t7a2234c5eadde886": "#891c52",
+    "--td340014d093b0821": "#fc7aba",
+    "--tf8c80baf678711b8": "#fb99c9",
+    "--t2986df03ecf88759": "#882712",
+    "--te0c856964146535b": "#ffb39b",
+    "--tf630d2cff7da8057": "#ffd7ca",
+    "--tf69032263d26c015": "#52077a",
+    "--ta5930fb3c4c7209c": "#dd98ff",
+    "--t1f1729a8e756e8bf": "#eabfff",
+    "--t53c1a9d86136aded": "#7f0119",
+    "--t8533f30445e4a126": "#f57",
+    "--tc2512a21369bd447": "#ff8099",
+    "--t5088a11581fecd14": "#00673c",
+    "--t331d13276596b01e": "#00673c",
+    "--t42381e7a43d9caf4": "#d3ffec",
+    "--t7f4f2c6d54836ce0": "rgba(255,255,255,0.1)",
+    "--t7d8b8e5ee291aec0": "rgba(0,0,0,0.05)",
+    "--t4726c68ef6d7b08f": "rgba(0,63,13,0.6)",
+    "--tf0a0d1154827847f": "rgba(124,41,0,0.6)",
+    "--t3e41d7b17b187f69": "#0f0f0f",
+    "--tff65993384bb4560": "#202275",
+    "--te2867b13d771d055": "#2c2ea7",
+    "--t933d7922f3158dc5": "#3b3fff",
+    "--t264e2c9cb87891f9": "#8689fc",
+    "--t206f3fa2e01af22d": "#a4a6ff",
+    "--t34f46f0f2c13d328": "#c8c9f9",
+    "--t854c79338d8ca8a7": "#f57",
+    "--t20480717de80f555": "rgba(255,255,255,0.2)",
+    "--t2d807bb79e75606d": "#3ea6ff",
+    "--t617db776af0de196": "#65b8ff",
+    "--tb628117fc164ad87": "#065fd4",
+    "--td545df04e2c659d7": "#f57",
+    "--t53991d599b1488f5": "#c30027",
+    "--t93a9a9c8ff5bfbfc": "#f1f1f1",
+    "--tb315d8832c2ef6ef": "#ccc",
+    "--te9b0b5b330fb2a7b": "#f9f9f9",
+    "--t5355e7dcd3a33a2f": "rgba(15,15,15,0.85)",
+    "--tf8fd38cbdab81862": "rgba(15,15,15,0.3)",
+    "--tc54fd20dab7048eb": "rgba(15,15,15,0.6)",
+    "--t25a42c37f53e50e0": "rgba(15,15,15,0.75)",
+    "--ta889dfda9605a358": "rgba(15,15,15,0.8)",
+    "--t5978da8d584b8fe9": "rgba(15,15,15,0.7)",
+    "--tdbe50d27d51f5093": "rgba(0,122,101,0.3)",
+    "--t99f774684cbb9703": "rgba(127,14,127,0.3)",
+    "--tb8b31ac562fbe9b5": "rgba(170,9,170,0.3)",
+    "--tef70ca245445b52b": "rgba(255,78,69,0.3)",
+    "--t4f0922e5a3d0c20f": "#f5ffb7",
+    "--t7dfa6f84c9346edf": "#edecfb",
+    "--tecbdf924b63b27fc": "#fbc02d",
+    "--t1405e70a39276293": "#f1f1f1",
+    "--tad8443faed66c111": "#d9d9d9",
+    "--te6d2b428de68554a": "#171c23",
+    "--tc980c5478124c8c7": "#d5e3fc",
+    "--t965644ecdbe4b7b8": "#2b3138",
+    "--tb14a10c3b43a15a3": "#171c23",
+    "--tb13ff8797829e79e": "#2b3138",
+    "--te5668e6111aba0ed": "#42474f",
+    "--ta7d628facfe84d18": "#a0abcb",
+    "--tbe42269534655e67": "#30353b",
+    "--tab8059236063cadb": "#ecf1fb",
+    "--t735e435a8b7ad67c": "#fff",
+    "--t21af08fdbf6a1406": "#fff",
+    "--tc604113d09fee05d": "#c5cbd4",
+    "--t08a7c6c176cbc5c2": "#282828",
+    "--t8cdc9846a76caf1f": "#d9d9d9",
+    "--te1b64e6971040396": "#272727",
+    "--t416e5931fc464589": "rgba(255,255,255,0.2)",
+    "--tb7d74bb3291c951d": "rgba(0,0,0,0.1)",
+    "--tf3fc855af2285f5f": "rgba(255,255,255,0.2)",
+    "--t0a1249f7c9e82b5e": "rgba(0,0,0,0.1)",
+    "--t02c0a2c868c14ce8": "#e5e5e5",
+    "--td8562cdc203bc683": "#3f3f3f",
+    "--t53dda9125e8d1324": "rgba(255,255,255,0.15)",
+    "--t544e31714f63d53c": "rgba(255,255,255,0.3)",
+    "--tfaae96692cc182e4": "#dd98ff",
+    "--t518e925f61bdcb91": "#212121",
+    "--tb927f5c0149004c6": "#f03",
+    "--t832f22ce6618e99e": "#e6e6e6",
+    "--t45b2a38314924357": "#0f0f0f",
+    "--t6931aa1826b373b2": "rgba(255,255,255,0.3)",
+    "--ted4236536899e4b3": "rgba(255,255,255,0.15)",
+    "--ta057e2d872f2a0d4": "rgba(0,0,0,0.05)",
+    "--t2c3e55cb638348df": "rgba(0,0,0,0.1)",
+    "--t1aab759cd9ddbe39": "rgba(255,255,255,0.05)",
+    "--tf5f050c65aebead5": "rgba(255,255,255,0.1)",
+    "--t296c7f81dd09a9c3": "#fff",
+    "--tfa3475c508f5dfef": "#263850",
+    "--t9bc0b740242da017": "#515561",
+    "--t441a0e44e495381a": "#def1ff",
+    "--tbdeaf5bc17152abc": "#181818",
+    "--tde41338fc2bd4ba5": "#fff",
+    "--t4d7776c28db21122": "#a4ffa4",
+    "--t7e34d5baa4ea6277": "#717171",
+    "--tc4b26042d4cb141f": "#909090",
+    "--t5208fd177a788cfa": "#ffbfbd",
+    "--tffc2fd3a644f6275": "#f1f1f1",
+    "--t6216186c28b3834b": "#0f0f0f",
+    "--t4a6da19e16bf221a": "#aaa",
+    "--td9c19f4f8cecd56e": "#606060",
+    "--t3f3bdb4140d3ead7": "#ffcd97",
+    "--t904a88c623ca27ab": "#2ba640",
+    "--t2c3bbff6c15a3eb2": "#107516",
+    "--t0ccd1ace000d5e93": "rgba(0,0,0,0.8)",
+    "--tc87f6a7f05e65fc4": "rgba(255,255,255,0.1)",
+    "--tc04ba3e73561953c": "rgba(0,0,0,0.1)",
+    "--ta9b56aa666d71f06": "rgba(242,242,245,0.15)",
+    "--t7c4965c11f8537c0": "rgba(255,255,255,0.1)",
+    "--t432fbdbd7f2f3f71": "rgba(0,0,0,0.05)",
+    "--t7f006a3165d45f92": "rgba(248,248,250,0.1)",
+    "--tf3fc031aaa66f63b": "rgba(242,242,245,0.25)",
+    "--taf1bdd961423c15f": "rgba(255,255,255,0.05)",
+    "--t9d7bdcaefc975d44": "rgba(255,255,255,0.2)",
+    "--t4fb0f67b251e1a42": "#fff",
+    "--ta08e036410c14538": "#000",
+    "--t7f9b7e1603e20b94": "#fff"
+   },
+   "bin": "app"
+  }
+ ],
+ "vendor": [
+  {
+   "file": "inline-0",
+   "selector": "#onetrust-pc-sdk.otPcCenter",
+   "context": [],
+   "properties": {
+    "--ot-footer-space": "160px"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Avant-Garde",
+   "weight": "700",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "100",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "400",
+   "style": "italic"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "100",
+   "style": "italic"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "200",
+   "style": "italic"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "200",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "700",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "700",
+   "style": "italic"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "600",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "Salesforce-Sans",
+   "weight": "300",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "MXiangHeHeiSCProBold",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "MXiangHeHeiTCBold",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "SeolSansHeavy",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansJP",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansJP",
+   "weight": "700",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansJP",
+   "weight": "900",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansKR",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansKR",
+   "weight": "700",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansKR",
+   "weight": "900",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansSC",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansSC",
+   "weight": "700",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansSC",
+   "weight": "900",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansTC",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansTC",
+   "weight": "700",
+   "style": "normal"
+  },
+  {
+   "file": "https://a.slack-edge.com/bv1-13-br/rollup-style-spacesuit.ddd16f4d77cbb3e8.min.css",
+   "family": "NotoSansTC",
+   "weight": "900",
+   "style": "normal"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--article-theme-primary": {
+    "raw": "#481a54",
+    "kind": "color",
+    "value": "rgb(72, 26, 84)"
+   },
+   "--article-theme-secondary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--attachment-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--font-family-body": {
+    "raw": "\"Salesforce-Sans\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "kind": "other"
+   },
+   "--font-family-heading": {
+    "raw": "\"Salesforce-Avant-Garde\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "kind": "other"
+   },
+   "--font-family-monospace": {
+    "raw": "\"Monaco\", \"Menlo\", \"Consolas\", \"Courier New\", monospace",
+    "kind": "other"
+   },
+   "--more-count": {
+    "raw": "\"+1\"",
+    "kind": "other"
+   },
+   "--sidebar-color": {
+    "raw": "#400d40",
+    "kind": "color",
+    "value": "rgb(64, 13, 64)"
+   },
+   "--sidebar-highlight-color": {
+    "raw": "#1264a3",
+    "kind": "color",
+    "value": "rgb(18, 100, 163)"
+   },
+   "--swiper-navigation-size": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "rgb(0, 122, 255)"
+   },
+   "--t02c0a2c868c14ce8": {
+    "raw": "#e5e5e5",
+    "kind": "color",
+    "value": "rgb(229, 229, 229)"
+   },
+   "--t08a7c6c176cbc5c2": {
+    "raw": "#282828",
+    "kind": "color",
+    "value": "rgb(40, 40, 40)"
+   },
+   "--t0a1249f7c9e82b5e": {
+    "raw": "rgba(0,0,0,0.1)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--t0aeda4b8dc32d2ba": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "rgb(241, 241, 241)"
+   },
+   "--t0ccd1ace000d5e93": {
+    "raw": "rgba(0,0,0,0.8)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.8)"
+   },
+   "--t0f59291ce5504543": {
+    "raw": "#030303",
+    "kind": "color",
+    "value": "rgb(3, 3, 3)"
+   },
+   "--t124b7dafe9bc366d": {
+    "raw": "#007a65",
+    "kind": "color",
+    "value": "rgb(0, 122, 101)"
+   },
+   "--t1405e70a39276293": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "rgb(241, 241, 241)"
+   },
+   "--t1aab759cd9ddbe39": {
+    "raw": "rgba(255,255,255,0.05)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.05)"
+   },
+   "--t1f1729a8e756e8bf": {
+    "raw": "#eabfff",
+    "kind": "color",
+    "value": "rgb(234, 191, 255)"
+   },
+   "--t20480717de80f555": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--t206f3fa2e01af22d": {
+    "raw": "#a4a6ff",
+    "kind": "color",
+    "value": "rgb(164, 166, 255)"
+   },
+   "--t21af08fdbf6a1406": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t231ac42975008fa5": {
+    "raw": "#2ba640",
+    "kind": "color",
+    "value": "rgb(43, 166, 64)"
+   },
+   "--t25a42c37f53e50e0": {
+    "raw": "rgba(15,15,15,0.75)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.75)"
+   },
+   "--t264e2c9cb87891f9": {
+    "raw": "#8689fc",
+    "kind": "color",
+    "value": "rgb(134, 137, 252)"
+   },
+   "--t285d1cbb17921f77": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t296c7f81dd09a9c3": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t2986df03ecf88759": {
+    "raw": "#882712",
+    "kind": "color",
+    "value": "rgb(136, 39, 18)"
+   },
+   "--t2c3bbff6c15a3eb2": {
+    "raw": "#107516",
+    "kind": "color",
+    "value": "rgb(16, 117, 22)"
+   },
+   "--t2c3e55cb638348df": {
+    "raw": "rgba(0,0,0,0.1)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--t2d807bb79e75606d": {
+    "raw": "#3ea6ff",
+    "kind": "color",
+    "value": "rgb(62, 166, 255)"
+   },
+   "--t331d13276596b01e": {
+    "raw": "#00673c",
+    "kind": "color",
+    "value": "rgb(0, 103, 60)"
+   },
+   "--t3410c91649e5eb8a": {
+    "raw": "#333",
+    "kind": "color",
+    "value": "rgb(51, 51, 51)"
+   },
+   "--t34f46f0f2c13d328": {
+    "raw": "#c8c9f9",
+    "kind": "color",
+    "value": "rgb(200, 201, 249)"
+   },
+   "--t374de7a0f7f6b6a4": {
+    "raw": "#65b8ff",
+    "kind": "color",
+    "value": "rgb(101, 184, 255)"
+   },
+   "--t3a480c2f814ef19c": {
+    "raw": "#5c7e00",
+    "kind": "color",
+    "value": "rgb(92, 126, 0)"
+   },
+   "--t3e41d7b17b187f69": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--t3f3bdb4140d3ead7": {
+    "raw": "#ffcd97",
+    "kind": "color",
+    "value": "rgb(255, 205, 151)"
+   },
+   "--t411713ca69f5bc16": {
+    "raw": "#ccc",
+    "kind": "color",
+    "value": "rgb(204, 204, 204)"
+   },
+   "--t416e5931fc464589": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--t42381e7a43d9caf4": {
+    "raw": "#d3ffec",
+    "kind": "color",
+    "value": "rgb(211, 255, 236)"
+   },
+   "--t432fbdbd7f2f3f71": {
+    "raw": "rgba(0,0,0,0.05)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.05)"
+   },
+   "--t441a0e44e495381a": {
+    "raw": "#def1ff",
+    "kind": "color",
+    "value": "rgb(222, 241, 255)"
+   },
+   "--t45b2a38314924357": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--t4726c68ef6d7b08f": {
+    "raw": "rgba(0,63,13,0.6)",
+    "kind": "color",
+    "value": "rgba(0, 63, 13, 0.6)"
+   },
+   "--t47d3098c82ccc96f": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--t4a6da19e16bf221a": {
+    "raw": "#aaa",
+    "kind": "color",
+    "value": "rgb(170, 170, 170)"
+   },
+   "--t4a98c17ec97d8ef6": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t4aeaa857de8a786b": {
+    "raw": "#606060",
+    "kind": "color",
+    "value": "rgb(96, 96, 96)"
+   },
+   "--t4d4f132f4712716a": {
+    "raw": "#007a65",
+    "kind": "color",
+    "value": "rgb(0, 122, 101)"
+   },
+   "--t4d7776c28db21122": {
+    "raw": "#a4ffa4",
+    "kind": "color",
+    "value": "rgb(164, 255, 164)"
+   },
+   "--t4e6df9b2b6b97e00": {
+    "raw": "#aa09aa",
+    "kind": "color",
+    "value": "rgb(170, 9, 170)"
+   },
+   "--t4f0922e5a3d0c20f": {
+    "raw": "#f5ffb7",
+    "kind": "color",
+    "value": "rgb(245, 255, 183)"
+   },
+   "--t4fb0f67b251e1a42": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t5088a11581fecd14": {
+    "raw": "#00673c",
+    "kind": "color",
+    "value": "rgb(0, 103, 60)"
+   },
+   "--t518e925f61bdcb91": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "rgb(33, 33, 33)"
+   },
+   "--t5208fd177a788cfa": {
+    "raw": "#ffbfbd",
+    "kind": "color",
+    "value": "rgb(255, 191, 189)"
+   },
+   "--t5355e7dcd3a33a2f": {
+    "raw": "rgba(15,15,15,0.85)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.85)"
+   },
+   "--t53991d599b1488f5": {
+    "raw": "#c30027",
+    "kind": "color",
+    "value": "rgb(195, 0, 39)"
+   },
+   "--t53c1a9d86136aded": {
+    "raw": "#7f0119",
+    "kind": "color",
+    "value": "rgb(127, 1, 25)"
+   },
+   "--t53dda9125e8d1324": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t544e31714f63d53c": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--t57b7f229909a96c3": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t581a941c058c725b": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--t5884672004d56120": {
+    "raw": "#ff4e45",
+    "kind": "color",
+    "value": "rgb(255, 78, 69)"
+   },
+   "--t5978da8d584b8fe9": {
+    "raw": "rgba(15,15,15,0.7)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.7)"
+   },
+   "--t617db776af0de196": {
+    "raw": "#65b8ff",
+    "kind": "color",
+    "value": "rgb(101, 184, 255)"
+   },
+   "--t6216186c28b3834b": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--t6358887963129991": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--t64cac5de9c579f0d": {
+    "raw": "#bcbbd2",
+    "kind": "color",
+    "value": "rgb(188, 187, 210)"
+   },
+   "--t6931aa1826b373b2": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--t6eabc52017589ee0": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t735e435a8b7ad67c": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t77e217518bcd986b": {
+    "raw": "#5c7e00",
+    "kind": "color",
+    "value": "rgb(92, 126, 0)"
+   },
+   "--t7a2234c5eadde886": {
+    "raw": "#891c52",
+    "kind": "color",
+    "value": "rgb(137, 28, 82)"
+   },
+   "--t7c4965c11f8537c0": {
+    "raw": "rgba(255,255,255,0.1)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.1)"
+   },
+   "--t7d8b8e5ee291aec0": {
+    "raw": "rgba(0,0,0,0.05)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.05)"
+   },
+   "--t7dfa6f84c9346edf": {
+    "raw": "#edecfb",
+    "kind": "color",
+    "value": "rgb(237, 236, 251)"
+   },
+   "--t7e34d5baa4ea6277": {
+    "raw": "#717171",
+    "kind": "color",
+    "value": "rgb(113, 113, 113)"
+   },
+   "--t7f006a3165d45f92": {
+    "raw": "rgba(248,248,250,0.1)",
+    "kind": "color",
+    "value": "rgba(248, 248, 250, 0.1)"
+   },
+   "--t7f0b376d1cadd80f": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--t7f4f2c6d54836ce0": {
+    "raw": "rgba(255,255,255,0.1)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.1)"
+   },
+   "--t7f9b7e1603e20b94": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t832f22ce6618e99e": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "rgb(230, 230, 230)"
+   },
+   "--t8533f30445e4a126": {
+    "raw": "#f57",
+    "kind": "color",
+    "value": "rgb(255, 85, 119)"
+   },
+   "--t854c79338d8ca8a7": {
+    "raw": "#f57",
+    "kind": "color",
+    "value": "rgb(255, 85, 119)"
+   },
+   "--t858b809f8044e962": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--t86c44655e6eba63b": {
+    "raw": "#f9f9f9",
+    "kind": "color",
+    "value": "rgb(249, 249, 249)"
+   },
+   "--t87eabf113a15ac96": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "rgb(230, 230, 230)"
+   },
+   "--t8cdc9846a76caf1f": {
+    "raw": "#d9d9d9",
+    "kind": "color",
+    "value": "rgb(217, 217, 217)"
+   },
+   "--t904a88c623ca27ab": {
+    "raw": "#2ba640",
+    "kind": "color",
+    "value": "rgb(43, 166, 64)"
+   },
+   "--t91591a7ba22e08d8": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t933d7922f3158dc5": {
+    "raw": "#3b3fff",
+    "kind": "color",
+    "value": "rgb(59, 63, 255)"
+   },
+   "--t93a9a9c8ff5bfbfc": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "rgb(241, 241, 241)"
+   },
+   "--t965644ecdbe4b7b8": {
+    "raw": "#2b3138",
+    "kind": "color",
+    "value": "rgb(43, 49, 56)"
+   },
+   "--t99f774684cbb9703": {
+    "raw": "rgba(127,14,127,0.3)",
+    "kind": "color",
+    "value": "rgba(127, 14, 127, 0.3)"
+   },
+   "--t9a0b9eaee37e9b52": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t9bc0b740242da017": {
+    "raw": "#515561",
+    "kind": "color",
+    "value": "rgb(81, 85, 97)"
+   },
+   "--t9d7bdcaefc975d44": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--ta057e2d872f2a0d4": {
+    "raw": "rgba(0,0,0,0.05)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.05)"
+   },
+   "--ta08e036410c14538": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--ta342ea0f35bf4c3e": {
+    "raw": "rgba(255,255,255,0.7)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.7)"
+   },
+   "--ta564d8212bccb16a": {
+    "raw": "#7f0e7f",
+    "kind": "color",
+    "value": "rgb(127, 14, 127)"
+   },
+   "--ta5930fb3c4c7209c": {
+    "raw": "#dd98ff",
+    "kind": "color",
+    "value": "rgb(221, 152, 255)"
+   },
+   "--ta7d628facfe84d18": {
+    "raw": "#a0abcb",
+    "kind": "color",
+    "value": "rgb(160, 171, 203)"
+   },
+   "--ta889dfda9605a358": {
+    "raw": "rgba(15,15,15,0.8)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.8)"
+   },
+   "--ta9b56aa666d71f06": {
+    "raw": "rgba(242,242,245,0.15)",
+    "kind": "color",
+    "value": "rgba(242, 242, 245, 0.15)"
+   },
+   "--taa47847c79d99d2c": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--tab8059236063cadb": {
+    "raw": "#ecf1fb",
+    "kind": "color",
+    "value": "rgb(236, 241, 251)"
+   },
+   "--tad8443faed66c111": {
+    "raw": "#d9d9d9",
+    "kind": "color",
+    "value": "rgb(217, 217, 217)"
+   },
+   "--taf1bdd961423c15f": {
+    "raw": "rgba(255,255,255,0.05)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.05)"
+   },
+   "--taf7bd2f2e5a02772": {
+    "raw": "#3ea6ff",
+    "kind": "color",
+    "value": "rgb(62, 166, 255)"
+   },
+   "--tb13ff8797829e79e": {
+    "raw": "#2b3138",
+    "kind": "color",
+    "value": "rgb(43, 49, 56)"
+   },
+   "--tb14a10c3b43a15a3": {
+    "raw": "#171c23",
+    "kind": "color",
+    "value": "rgb(23, 28, 35)"
+   },
+   "--tb315d8832c2ef6ef": {
+    "raw": "#ccc",
+    "kind": "color",
+    "value": "rgb(204, 204, 204)"
+   },
+   "--tb628117fc164ad87": {
+    "raw": "#065fd4",
+    "kind": "color",
+    "value": "rgb(6, 95, 212)"
+   },
+   "--tb736fb3cc9290c08": {
+    "raw": "rgba(0,0,0,0.3)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.3)"
+   },
+   "--tb7d74bb3291c951d": {
+    "raw": "rgba(0,0,0,0.1)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--tb8b31ac562fbe9b5": {
+    "raw": "rgba(170,9,170,0.3)",
+    "kind": "color",
+    "value": "rgba(170, 9, 170, 0.3)"
+   },
+   "--tb927f5c0149004c6": {
+    "raw": "#f03",
+    "kind": "color",
+    "value": "rgb(255, 0, 51)"
+   },
+   "--tbcd9ff47c896077f": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--tbdeaf5bc17152abc": {
+    "raw": "#181818",
+    "kind": "color",
+    "value": "rgb(24, 24, 24)"
+   },
+   "--tbe42269534655e67": {
+    "raw": "#30353b",
+    "kind": "color",
+    "value": "rgb(48, 53, 59)"
+   },
+   "--tbec5f42fc53db64b": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--tc04ba3e73561953c": {
+    "raw": "rgba(0,0,0,0.1)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--tc2512a21369bd447": {
+    "raw": "#ff8099",
+    "kind": "color",
+    "value": "rgb(255, 128, 153)"
+   },
+   "--tc34719cb72599bdf": {
+    "raw": "rgba(0,0,0,0.2)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.2)"
+   },
+   "--tc48eb5c6edf0ed47": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--tc4981a55027a55a7": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--tc4b26042d4cb141f": {
+    "raw": "#909090",
+    "kind": "color",
+    "value": "rgb(144, 144, 144)"
+   },
+   "--tc54fd20dab7048eb": {
+    "raw": "rgba(15,15,15,0.6)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.6)"
+   },
+   "--tc58f4bf5a9869b3e": {
+    "raw": "#7d81fc",
+    "kind": "color",
+    "value": "rgb(125, 129, 252)"
+   },
+   "--tc5e0863356bf5767": {
+    "raw": "#fbfee6",
+    "kind": "color",
+    "value": "rgb(251, 254, 230)"
+   },
+   "--tc604113d09fee05d": {
+    "raw": "#c5cbd4",
+    "kind": "color",
+    "value": "rgb(197, 203, 212)"
+   },
+   "--tc87f6a7f05e65fc4": {
+    "raw": "rgba(255,255,255,0.1)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.1)"
+   },
+   "--tc980c5478124c8c7": {
+    "raw": "#d5e3fc",
+    "kind": "color",
+    "value": "rgb(213, 227, 252)"
+   },
+   "--td009ac6ce5c83138": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--td176b92ada598f8f": {
+    "raw": "#1d1f71",
+    "kind": "color",
+    "value": "rgb(29, 31, 113)"
+   },
+   "--td1cb54b6818912d6": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--td340014d093b0821": {
+    "raw": "#fc7aba",
+    "kind": "color",
+    "value": "rgb(252, 122, 186)"
+   },
+   "--td4ea17e4c4a20281": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--td545df04e2c659d7": {
+    "raw": "#f57",
+    "kind": "color",
+    "value": "rgb(255, 85, 119)"
+   },
+   "--td851cd75a8793667": {
+    "raw": "#6769fe",
+    "kind": "color",
+    "value": "rgb(103, 105, 254)"
+   },
+   "--td8562cdc203bc683": {
+    "raw": "#3f3f3f",
+    "kind": "color",
+    "value": "rgb(63, 63, 63)"
+   },
+   "--td9c19f4f8cecd56e": {
+    "raw": "#606060",
+    "kind": "color",
+    "value": "rgb(96, 96, 96)"
+   },
+   "--tdb76da5c4d1d803c": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--tdbbfa5571f968efd": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--tdbe50d27d51f5093": {
+    "raw": "rgba(0,122,101,0.3)",
+    "kind": "color",
+    "value": "rgba(0, 122, 101, 0.3)"
+   },
+   "--tdc8af6750f0dad0d": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--tde41338fc2bd4ba5": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--te033683f077b72fe": {
+    "raw": "#575bfe",
+    "kind": "color",
+    "value": "rgb(87, 91, 254)"
+   },
+   "--te0c856964146535b": {
+    "raw": "#ffb39b",
+    "kind": "color",
+    "value": "rgb(255, 179, 155)"
+   },
+   "--te0d9048420b3be81": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--te1b64e6971040396": {
+    "raw": "#272727",
+    "kind": "color",
+    "value": "rgb(39, 39, 39)"
+   },
+   "--te2867b13d771d055": {
+    "raw": "#2c2ea7",
+    "kind": "color",
+    "value": "rgb(44, 46, 167)"
+   },
+   "--te5668e6111aba0ed": {
+    "raw": "#42474f",
+    "kind": "color",
+    "value": "rgb(66, 71, 79)"
+   },
+   "--te6d2b428de68554a": {
+    "raw": "#171c23",
+    "kind": "color",
+    "value": "rgb(23, 28, 35)"
+   },
+   "--te9b0b5b330fb2a7b": {
+    "raw": "#f9f9f9",
+    "kind": "color",
+    "value": "rgb(249, 249, 249)"
+   },
+   "--tecbdf924b63b27fc": {
+    "raw": "#fbc02d",
+    "kind": "color",
+    "value": "rgb(251, 192, 45)"
+   },
+   "--ted4236536899e4b3": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--tef70ca245445b52b": {
+    "raw": "rgba(255,78,69,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 78, 69, 0.3)"
+   },
+   "--tf0a0d1154827847f": {
+    "raw": "rgba(124,41,0,0.6)",
+    "kind": "color",
+    "value": "rgba(124, 41, 0, 0.6)"
+   },
+   "--tf3fc031aaa66f63b": {
+    "raw": "rgba(242,242,245,0.25)",
+    "kind": "color",
+    "value": "rgba(242, 242, 245, 0.25)"
+   },
+   "--tf3fc855af2285f5f": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--tf4689f158df519fa": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "rgb(230, 230, 230)"
+   },
+   "--tf5f050c65aebead5": {
+    "raw": "rgba(255,255,255,0.1)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.1)"
+   },
+   "--tf630d2cff7da8057": {
+    "raw": "#ffd7ca",
+    "kind": "color",
+    "value": "rgb(255, 215, 202)"
+   },
+   "--tf69032263d26c015": {
+    "raw": "#52077a",
+    "kind": "color",
+    "value": "rgb(82, 7, 122)"
+   },
+   "--tf8c80baf678711b8": {
+    "raw": "#fb99c9",
+    "kind": "color",
+    "value": "rgb(251, 153, 201)"
+   },
+   "--tf8fd38cbdab81862": {
+    "raw": "rgba(15,15,15,0.3)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.3)"
+   },
+   "--tfa3475c508f5dfef": {
+    "raw": "#263850",
+    "kind": "color",
+    "value": "rgb(38, 56, 80)"
+   },
+   "--tfaae96692cc182e4": {
+    "raw": "#dd98ff",
+    "kind": "color",
+    "value": "rgb(221, 152, 255)"
+   },
+   "--tff65993384bb4560": {
+    "raw": "#202275",
+    "kind": "color",
+    "value": "rgb(32, 34, 117)"
+   },
+   "--tffc2fd3a644f6275": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "rgb(241, 241, 241)"
+   }
+  },
+  "dark": {
+   "--article-theme-primary": {
+    "raw": "#481a54",
+    "kind": "color",
+    "value": "rgb(72, 26, 84)"
+   },
+   "--article-theme-secondary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--attachment-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--font-family-body": {
+    "raw": "\"Salesforce-Sans\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "kind": "other"
+   },
+   "--font-family-heading": {
+    "raw": "\"Salesforce-Avant-Garde\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "kind": "other"
+   },
+   "--font-family-monospace": {
+    "raw": "\"Monaco\", \"Menlo\", \"Consolas\", \"Courier New\", monospace",
+    "kind": "other"
+   },
+   "--more-count": {
+    "raw": "\"+1\"",
+    "kind": "other"
+   },
+   "--sidebar-color": {
+    "raw": "#400d40",
+    "kind": "color",
+    "value": "rgb(64, 13, 64)"
+   },
+   "--sidebar-highlight-color": {
+    "raw": "#1264a3",
+    "kind": "color",
+    "value": "rgb(18, 100, 163)"
+   },
+   "--swiper-navigation-size": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "rgb(0, 122, 255)"
+   },
+   "--t02c0a2c868c14ce8": {
+    "raw": "#e5e5e5",
+    "kind": "color",
+    "value": "rgb(229, 229, 229)"
+   },
+   "--t08a7c6c176cbc5c2": {
+    "raw": "#282828",
+    "kind": "color",
+    "value": "rgb(40, 40, 40)"
+   },
+   "--t0a1249f7c9e82b5e": {
+    "raw": "rgba(0,0,0,0.1)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--t0aeda4b8dc32d2ba": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "rgb(241, 241, 241)"
+   },
+   "--t0ccd1ace000d5e93": {
+    "raw": "rgba(0,0,0,0.8)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.8)"
+   },
+   "--t0f59291ce5504543": {
+    "raw": "#030303",
+    "kind": "color",
+    "value": "rgb(3, 3, 3)"
+   },
+   "--t124b7dafe9bc366d": {
+    "raw": "#007a65",
+    "kind": "color",
+    "value": "rgb(0, 122, 101)"
+   },
+   "--t1405e70a39276293": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "rgb(241, 241, 241)"
+   },
+   "--t1aab759cd9ddbe39": {
+    "raw": "rgba(255,255,255,0.05)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.05)"
+   },
+   "--t1f1729a8e756e8bf": {
+    "raw": "#eabfff",
+    "kind": "color",
+    "value": "rgb(234, 191, 255)"
+   },
+   "--t20480717de80f555": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--t206f3fa2e01af22d": {
+    "raw": "#a4a6ff",
+    "kind": "color",
+    "value": "rgb(164, 166, 255)"
+   },
+   "--t21af08fdbf6a1406": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t231ac42975008fa5": {
+    "raw": "#2ba640",
+    "kind": "color",
+    "value": "rgb(43, 166, 64)"
+   },
+   "--t25a42c37f53e50e0": {
+    "raw": "rgba(15,15,15,0.75)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.75)"
+   },
+   "--t264e2c9cb87891f9": {
+    "raw": "#8689fc",
+    "kind": "color",
+    "value": "rgb(134, 137, 252)"
+   },
+   "--t285d1cbb17921f77": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t296c7f81dd09a9c3": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t2986df03ecf88759": {
+    "raw": "#882712",
+    "kind": "color",
+    "value": "rgb(136, 39, 18)"
+   },
+   "--t2c3bbff6c15a3eb2": {
+    "raw": "#107516",
+    "kind": "color",
+    "value": "rgb(16, 117, 22)"
+   },
+   "--t2c3e55cb638348df": {
+    "raw": "rgba(0,0,0,0.1)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--t2d807bb79e75606d": {
+    "raw": "#3ea6ff",
+    "kind": "color",
+    "value": "rgb(62, 166, 255)"
+   },
+   "--t331d13276596b01e": {
+    "raw": "#00673c",
+    "kind": "color",
+    "value": "rgb(0, 103, 60)"
+   },
+   "--t3410c91649e5eb8a": {
+    "raw": "#333",
+    "kind": "color",
+    "value": "rgb(51, 51, 51)"
+   },
+   "--t34f46f0f2c13d328": {
+    "raw": "#c8c9f9",
+    "kind": "color",
+    "value": "rgb(200, 201, 249)"
+   },
+   "--t374de7a0f7f6b6a4": {
+    "raw": "#65b8ff",
+    "kind": "color",
+    "value": "rgb(101, 184, 255)"
+   },
+   "--t3a480c2f814ef19c": {
+    "raw": "#5c7e00",
+    "kind": "color",
+    "value": "rgb(92, 126, 0)"
+   },
+   "--t3e41d7b17b187f69": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--t3f3bdb4140d3ead7": {
+    "raw": "#ffcd97",
+    "kind": "color",
+    "value": "rgb(255, 205, 151)"
+   },
+   "--t411713ca69f5bc16": {
+    "raw": "#ccc",
+    "kind": "color",
+    "value": "rgb(204, 204, 204)"
+   },
+   "--t416e5931fc464589": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--t42381e7a43d9caf4": {
+    "raw": "#d3ffec",
+    "kind": "color",
+    "value": "rgb(211, 255, 236)"
+   },
+   "--t432fbdbd7f2f3f71": {
+    "raw": "rgba(0,0,0,0.05)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.05)"
+   },
+   "--t441a0e44e495381a": {
+    "raw": "#def1ff",
+    "kind": "color",
+    "value": "rgb(222, 241, 255)"
+   },
+   "--t45b2a38314924357": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--t4726c68ef6d7b08f": {
+    "raw": "rgba(0,63,13,0.6)",
+    "kind": "color",
+    "value": "rgba(0, 63, 13, 0.6)"
+   },
+   "--t47d3098c82ccc96f": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--t4a6da19e16bf221a": {
+    "raw": "#aaa",
+    "kind": "color",
+    "value": "rgb(170, 170, 170)"
+   },
+   "--t4a98c17ec97d8ef6": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t4aeaa857de8a786b": {
+    "raw": "#606060",
+    "kind": "color",
+    "value": "rgb(96, 96, 96)"
+   },
+   "--t4d4f132f4712716a": {
+    "raw": "#007a65",
+    "kind": "color",
+    "value": "rgb(0, 122, 101)"
+   },
+   "--t4d7776c28db21122": {
+    "raw": "#a4ffa4",
+    "kind": "color",
+    "value": "rgb(164, 255, 164)"
+   },
+   "--t4e6df9b2b6b97e00": {
+    "raw": "#aa09aa",
+    "kind": "color",
+    "value": "rgb(170, 9, 170)"
+   },
+   "--t4f0922e5a3d0c20f": {
+    "raw": "#f5ffb7",
+    "kind": "color",
+    "value": "rgb(245, 255, 183)"
+   },
+   "--t4fb0f67b251e1a42": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t5088a11581fecd14": {
+    "raw": "#00673c",
+    "kind": "color",
+    "value": "rgb(0, 103, 60)"
+   },
+   "--t518e925f61bdcb91": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "rgb(33, 33, 33)"
+   },
+   "--t5208fd177a788cfa": {
+    "raw": "#ffbfbd",
+    "kind": "color",
+    "value": "rgb(255, 191, 189)"
+   },
+   "--t5355e7dcd3a33a2f": {
+    "raw": "rgba(15,15,15,0.85)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.85)"
+   },
+   "--t53991d599b1488f5": {
+    "raw": "#c30027",
+    "kind": "color",
+    "value": "rgb(195, 0, 39)"
+   },
+   "--t53c1a9d86136aded": {
+    "raw": "#7f0119",
+    "kind": "color",
+    "value": "rgb(127, 1, 25)"
+   },
+   "--t53dda9125e8d1324": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t544e31714f63d53c": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--t57b7f229909a96c3": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t581a941c058c725b": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--t5884672004d56120": {
+    "raw": "#ff4e45",
+    "kind": "color",
+    "value": "rgb(255, 78, 69)"
+   },
+   "--t5978da8d584b8fe9": {
+    "raw": "rgba(15,15,15,0.7)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.7)"
+   },
+   "--t617db776af0de196": {
+    "raw": "#65b8ff",
+    "kind": "color",
+    "value": "rgb(101, 184, 255)"
+   },
+   "--t6216186c28b3834b": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--t6358887963129991": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--t64cac5de9c579f0d": {
+    "raw": "#bcbbd2",
+    "kind": "color",
+    "value": "rgb(188, 187, 210)"
+   },
+   "--t6931aa1826b373b2": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--t6eabc52017589ee0": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t735e435a8b7ad67c": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t77e217518bcd986b": {
+    "raw": "#5c7e00",
+    "kind": "color",
+    "value": "rgb(92, 126, 0)"
+   },
+   "--t7a2234c5eadde886": {
+    "raw": "#891c52",
+    "kind": "color",
+    "value": "rgb(137, 28, 82)"
+   },
+   "--t7c4965c11f8537c0": {
+    "raw": "rgba(255,255,255,0.1)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.1)"
+   },
+   "--t7d8b8e5ee291aec0": {
+    "raw": "rgba(0,0,0,0.05)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.05)"
+   },
+   "--t7dfa6f84c9346edf": {
+    "raw": "#edecfb",
+    "kind": "color",
+    "value": "rgb(237, 236, 251)"
+   },
+   "--t7e34d5baa4ea6277": {
+    "raw": "#717171",
+    "kind": "color",
+    "value": "rgb(113, 113, 113)"
+   },
+   "--t7f006a3165d45f92": {
+    "raw": "rgba(248,248,250,0.1)",
+    "kind": "color",
+    "value": "rgba(248, 248, 250, 0.1)"
+   },
+   "--t7f0b376d1cadd80f": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--t7f4f2c6d54836ce0": {
+    "raw": "rgba(255,255,255,0.1)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.1)"
+   },
+   "--t7f9b7e1603e20b94": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--t832f22ce6618e99e": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "rgb(230, 230, 230)"
+   },
+   "--t8533f30445e4a126": {
+    "raw": "#f57",
+    "kind": "color",
+    "value": "rgb(255, 85, 119)"
+   },
+   "--t854c79338d8ca8a7": {
+    "raw": "#f57",
+    "kind": "color",
+    "value": "rgb(255, 85, 119)"
+   },
+   "--t858b809f8044e962": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--t86c44655e6eba63b": {
+    "raw": "#f9f9f9",
+    "kind": "color",
+    "value": "rgb(249, 249, 249)"
+   },
+   "--t87eabf113a15ac96": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "rgb(230, 230, 230)"
+   },
+   "--t8cdc9846a76caf1f": {
+    "raw": "#d9d9d9",
+    "kind": "color",
+    "value": "rgb(217, 217, 217)"
+   },
+   "--t904a88c623ca27ab": {
+    "raw": "#2ba640",
+    "kind": "color",
+    "value": "rgb(43, 166, 64)"
+   },
+   "--t91591a7ba22e08d8": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t933d7922f3158dc5": {
+    "raw": "#3b3fff",
+    "kind": "color",
+    "value": "rgb(59, 63, 255)"
+   },
+   "--t93a9a9c8ff5bfbfc": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "rgb(241, 241, 241)"
+   },
+   "--t965644ecdbe4b7b8": {
+    "raw": "#2b3138",
+    "kind": "color",
+    "value": "rgb(43, 49, 56)"
+   },
+   "--t99f774684cbb9703": {
+    "raw": "rgba(127,14,127,0.3)",
+    "kind": "color",
+    "value": "rgba(127, 14, 127, 0.3)"
+   },
+   "--t9a0b9eaee37e9b52": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--t9bc0b740242da017": {
+    "raw": "#515561",
+    "kind": "color",
+    "value": "rgb(81, 85, 97)"
+   },
+   "--t9d7bdcaefc975d44": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--ta057e2d872f2a0d4": {
+    "raw": "rgba(0,0,0,0.05)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.05)"
+   },
+   "--ta08e036410c14538": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--ta342ea0f35bf4c3e": {
+    "raw": "rgba(255,255,255,0.7)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.7)"
+   },
+   "--ta564d8212bccb16a": {
+    "raw": "#7f0e7f",
+    "kind": "color",
+    "value": "rgb(127, 14, 127)"
+   },
+   "--ta5930fb3c4c7209c": {
+    "raw": "#dd98ff",
+    "kind": "color",
+    "value": "rgb(221, 152, 255)"
+   },
+   "--ta7d628facfe84d18": {
+    "raw": "#a0abcb",
+    "kind": "color",
+    "value": "rgb(160, 171, 203)"
+   },
+   "--ta889dfda9605a358": {
+    "raw": "rgba(15,15,15,0.8)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.8)"
+   },
+   "--ta9b56aa666d71f06": {
+    "raw": "rgba(242,242,245,0.15)",
+    "kind": "color",
+    "value": "rgba(242, 242, 245, 0.15)"
+   },
+   "--taa47847c79d99d2c": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--tab8059236063cadb": {
+    "raw": "#ecf1fb",
+    "kind": "color",
+    "value": "rgb(236, 241, 251)"
+   },
+   "--tad8443faed66c111": {
+    "raw": "#d9d9d9",
+    "kind": "color",
+    "value": "rgb(217, 217, 217)"
+   },
+   "--taf1bdd961423c15f": {
+    "raw": "rgba(255,255,255,0.05)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.05)"
+   },
+   "--taf7bd2f2e5a02772": {
+    "raw": "#3ea6ff",
+    "kind": "color",
+    "value": "rgb(62, 166, 255)"
+   },
+   "--tb13ff8797829e79e": {
+    "raw": "#2b3138",
+    "kind": "color",
+    "value": "rgb(43, 49, 56)"
+   },
+   "--tb14a10c3b43a15a3": {
+    "raw": "#171c23",
+    "kind": "color",
+    "value": "rgb(23, 28, 35)"
+   },
+   "--tb315d8832c2ef6ef": {
+    "raw": "#ccc",
+    "kind": "color",
+    "value": "rgb(204, 204, 204)"
+   },
+   "--tb628117fc164ad87": {
+    "raw": "#065fd4",
+    "kind": "color",
+    "value": "rgb(6, 95, 212)"
+   },
+   "--tb736fb3cc9290c08": {
+    "raw": "rgba(0,0,0,0.3)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.3)"
+   },
+   "--tb7d74bb3291c951d": {
+    "raw": "rgba(0,0,0,0.1)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--tb8b31ac562fbe9b5": {
+    "raw": "rgba(170,9,170,0.3)",
+    "kind": "color",
+    "value": "rgba(170, 9, 170, 0.3)"
+   },
+   "--tb927f5c0149004c6": {
+    "raw": "#f03",
+    "kind": "color",
+    "value": "rgb(255, 0, 51)"
+   },
+   "--tbcd9ff47c896077f": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--tbdeaf5bc17152abc": {
+    "raw": "#181818",
+    "kind": "color",
+    "value": "rgb(24, 24, 24)"
+   },
+   "--tbe42269534655e67": {
+    "raw": "#30353b",
+    "kind": "color",
+    "value": "rgb(48, 53, 59)"
+   },
+   "--tbec5f42fc53db64b": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--tc04ba3e73561953c": {
+    "raw": "rgba(0,0,0,0.1)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--tc2512a21369bd447": {
+    "raw": "#ff8099",
+    "kind": "color",
+    "value": "rgb(255, 128, 153)"
+   },
+   "--tc34719cb72599bdf": {
+    "raw": "rgba(0,0,0,0.2)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.2)"
+   },
+   "--tc48eb5c6edf0ed47": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--tc4981a55027a55a7": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--tc4b26042d4cb141f": {
+    "raw": "#909090",
+    "kind": "color",
+    "value": "rgb(144, 144, 144)"
+   },
+   "--tc54fd20dab7048eb": {
+    "raw": "rgba(15,15,15,0.6)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.6)"
+   },
+   "--tc58f4bf5a9869b3e": {
+    "raw": "#7d81fc",
+    "kind": "color",
+    "value": "rgb(125, 129, 252)"
+   },
+   "--tc5e0863356bf5767": {
+    "raw": "#fbfee6",
+    "kind": "color",
+    "value": "rgb(251, 254, 230)"
+   },
+   "--tc604113d09fee05d": {
+    "raw": "#c5cbd4",
+    "kind": "color",
+    "value": "rgb(197, 203, 212)"
+   },
+   "--tc87f6a7f05e65fc4": {
+    "raw": "rgba(255,255,255,0.1)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.1)"
+   },
+   "--tc980c5478124c8c7": {
+    "raw": "#d5e3fc",
+    "kind": "color",
+    "value": "rgb(213, 227, 252)"
+   },
+   "--td009ac6ce5c83138": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--td176b92ada598f8f": {
+    "raw": "#1d1f71",
+    "kind": "color",
+    "value": "rgb(29, 31, 113)"
+   },
+   "--td1cb54b6818912d6": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--td340014d093b0821": {
+    "raw": "#fc7aba",
+    "kind": "color",
+    "value": "rgb(252, 122, 186)"
+   },
+   "--td4ea17e4c4a20281": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--td545df04e2c659d7": {
+    "raw": "#f57",
+    "kind": "color",
+    "value": "rgb(255, 85, 119)"
+   },
+   "--td851cd75a8793667": {
+    "raw": "#6769fe",
+    "kind": "color",
+    "value": "rgb(103, 105, 254)"
+   },
+   "--td8562cdc203bc683": {
+    "raw": "#3f3f3f",
+    "kind": "color",
+    "value": "rgb(63, 63, 63)"
+   },
+   "--td9c19f4f8cecd56e": {
+    "raw": "#606060",
+    "kind": "color",
+    "value": "rgb(96, 96, 96)"
+   },
+   "--tdb76da5c4d1d803c": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--tdbbfa5571f968efd": {
+    "raw": "rgba(255,255,255,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--tdbe50d27d51f5093": {
+    "raw": "rgba(0,122,101,0.3)",
+    "kind": "color",
+    "value": "rgba(0, 122, 101, 0.3)"
+   },
+   "--tdc8af6750f0dad0d": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "rgb(15, 15, 15)"
+   },
+   "--tde41338fc2bd4ba5": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--te033683f077b72fe": {
+    "raw": "#575bfe",
+    "kind": "color",
+    "value": "rgb(87, 91, 254)"
+   },
+   "--te0c856964146535b": {
+    "raw": "#ffb39b",
+    "kind": "color",
+    "value": "rgb(255, 179, 155)"
+   },
+   "--te0d9048420b3be81": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--te1b64e6971040396": {
+    "raw": "#272727",
+    "kind": "color",
+    "value": "rgb(39, 39, 39)"
+   },
+   "--te2867b13d771d055": {
+    "raw": "#2c2ea7",
+    "kind": "color",
+    "value": "rgb(44, 46, 167)"
+   },
+   "--te5668e6111aba0ed": {
+    "raw": "#42474f",
+    "kind": "color",
+    "value": "rgb(66, 71, 79)"
+   },
+   "--te6d2b428de68554a": {
+    "raw": "#171c23",
+    "kind": "color",
+    "value": "rgb(23, 28, 35)"
+   },
+   "--te9b0b5b330fb2a7b": {
+    "raw": "#f9f9f9",
+    "kind": "color",
+    "value": "rgb(249, 249, 249)"
+   },
+   "--tecbdf924b63b27fc": {
+    "raw": "#fbc02d",
+    "kind": "color",
+    "value": "rgb(251, 192, 45)"
+   },
+   "--ted4236536899e4b3": {
+    "raw": "rgba(255,255,255,0.15)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.15)"
+   },
+   "--tef70ca245445b52b": {
+    "raw": "rgba(255,78,69,0.3)",
+    "kind": "color",
+    "value": "rgba(255, 78, 69, 0.3)"
+   },
+   "--tf0a0d1154827847f": {
+    "raw": "rgba(124,41,0,0.6)",
+    "kind": "color",
+    "value": "rgba(124, 41, 0, 0.6)"
+   },
+   "--tf3fc031aaa66f63b": {
+    "raw": "rgba(242,242,245,0.25)",
+    "kind": "color",
+    "value": "rgba(242, 242, 245, 0.25)"
+   },
+   "--tf3fc855af2285f5f": {
+    "raw": "rgba(255,255,255,0.2)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--tf4689f158df519fa": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "rgb(230, 230, 230)"
+   },
+   "--tf5f050c65aebead5": {
+    "raw": "rgba(255,255,255,0.1)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.1)"
+   },
+   "--tf630d2cff7da8057": {
+    "raw": "#ffd7ca",
+    "kind": "color",
+    "value": "rgb(255, 215, 202)"
+   },
+   "--tf69032263d26c015": {
+    "raw": "#52077a",
+    "kind": "color",
+    "value": "rgb(82, 7, 122)"
+   },
+   "--tf8c80baf678711b8": {
+    "raw": "#fb99c9",
+    "kind": "color",
+    "value": "rgb(251, 153, 201)"
+   },
+   "--tf8fd38cbdab81862": {
+    "raw": "rgba(15,15,15,0.3)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.3)"
+   },
+   "--tfa3475c508f5dfef": {
+    "raw": "#263850",
+    "kind": "color",
+    "value": "rgb(38, 56, 80)"
+   },
+   "--tfaae96692cc182e4": {
+    "raw": "#dd98ff",
+    "kind": "color",
+    "value": "rgb(221, 152, 255)"
+   },
+   "--tff65993384bb4560": {
+    "raw": "#202275",
+    "kind": "color",
+    "value": "rgb(32, 34, 117)"
+   },
+   "--tffc2fd3a644f6275": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "rgb(241, 241, 241)"
+   }
+  }
+ }
+}

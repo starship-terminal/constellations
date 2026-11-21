@@ -10,15 +10,10 @@
 // (go.aaply.app) returns "Not found" to this client for every auth/demo route — probed as an
 // opportunistic boundary, recorded as blocked when it stays unreachable.
 import fs from 'fs';
-import os from 'node:os';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { M, closePromo, killGeo, clearChallenge, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-// Full-colour shots go to a scratch dir outside the repo (the kit's default), never into
-// systems/<slug>/raw/: quantize.py reads them from there and writes screenshots/.
-const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(fileURLToPath(new URL('../../..', import.meta.url))), 'raw-shots');
+const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -41,16 +36,8 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
-    // drop this shot's earlier tiles (and sidecars) first: a shorter or capped page would
-    // otherwise leave old partN files that quantize.py stitches into the new shot
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    // An infinite or growing page reports a scrollHeight without end: tile at most 8 chunks
-    // and log the boundary (the kit's cap), never one tile per chunk for ever.
-    const MAXH = 8 * chunk;
-    const hCap = Math.min(H, MAXH);
-    if (H > MAXH) console.log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
@@ -87,10 +74,6 @@ const desktop = {
     await step('toggle', async () => { if (await clickToggle(p, 'Yearly')) await S.view('yearly'); });
     await S.full();
   } },
-  reviews: { path: '/reviews', run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
   'our-story': { path: '/our-story', run: async (p, S) => {
     await S.view('default');
     await S.full();
@@ -103,15 +86,55 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
+  // Sitemap-only public pages. No nav, footer, or phone-menu control points
+  // here (see site-tree.md). /workflow is the same walkthrough as /features.
+  'early-program': { path: '/early-program', run: async (p, S) => {
+    await S.view('default');
+    await S.full();
+  } },
+  manual: { path: '/manual', run: async (p, S) => {
+    await S.view('default');
+    await S.full();
+  } },
+};
+
+// Reviews carousel dots (aria-label "N of 6") select a slide in place.
+// Shot on its own so a refresh does not rewrite the existing default/full pair.
+const reviewsSlide = {
+  'reviews-slide': { path: '/reviews', run: async (p, S) => {
+    const dot = p.locator('button[aria-label="2 of 6"]').first();
+    if (!(await dot.count())) return;
+    await dot.click({ timeout: 5000 }).catch(() => dot.evaluate((el) => el.click()));
+    await wait(p, 900);
+    await S.view('slide-2');
+  } },
 };
 
 const mobile = {
   home: { path: '/', run: async (p, S) => {
     await S.view('default');
     await S.full();
+    // Burger opens an in-page overlay (href="#open-nav"). Close it after the shot.
+    await step('menu', async () => {
+      const burger = p.locator('a[href="#open-nav"]').first();
+      if (!(await burger.count())) return;
+      await burger.evaluate((el) => el.click());
+      await wait(p, 900);
+      await S.view('menu-open');
+      const close = p.locator('a[href="#close-nav"]').first();
+      if (await close.count()) await close.evaluate((el) => el.click());
+      await wait(p, 400);
+    });
   } },
   pricing: { path: '/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
   features: { path: '/features', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  value: { path: '/value', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  reviews: { path: '/reviews', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'our-story': { path: '/our-story', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  team: { path: '/team', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'figma-plugin': { path: '/figma_plugin', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'early-program': { path: '/early-program', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  manual: { path: '/manual', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 // Auth and demo live on the app host go.aaply.app, which returns a bare
@@ -124,14 +147,18 @@ const opportunistic = {
 
 const b = await chromium.launch();
 let total = 0;
-const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
-for (const { k, mob } of runs) {
+const runs = [
+  ...Object.keys(desktop).map((k) => ({ k, mob: false, table: desktop })),
+  ...Object.keys(reviewsSlide).map((k) => ({ k, mob: false, table: reviewsSlide })),
+  ...Object.keys(mobile).map((k) => ({ k, mob: true, table: mobile })),
+];
+for (const { k, mob, table } of runs) {
   const name = (mob ? 'mobile-' : '') + k;
-  if (pageArg.length && !pageArg.includes(name)) continue;
-  const spec = (mob ? mobile : desktop)[k];
+  if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
+  const spec = table[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
-  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
@@ -158,7 +185,7 @@ for (const { k, mob } of runs) {
 }
 {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
-  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   const p = await ctx.newPage();
   for (const [name, spec] of Object.entries(opportunistic)) {
     if (pageArg.length && !pageArg.includes(name)) continue;

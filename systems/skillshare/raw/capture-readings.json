@@ -1,0 +1,1198 @@
+{
+  "capturedAt": "2026-11-21",
+  "note": "Page viewport fields rebuilt from screenshot sidecars after a later mobile-login run overwrote the first readings file. Component readings are from the last home/login measure pass.",
+  "pages": {
+    "about-light-default": {
+      "capturedAt": "2026-11-20T22:45:59.603Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2053,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "about-light-full": {
+      "capturedAt": "2026-11-20T22:46:00.670Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2152,
+      "png": {
+        "width": 1440,
+        "height": 2152
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "about-light-video": {
+      "capturedAt": "2026-11-20T22:46:02.456Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2152,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "affiliates-light-default": {
+      "capturedAt": "2026-11-20T22:46:17.960Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2409,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "affiliates-light-full": {
+      "capturedAt": "2026-11-20T22:46:19.223Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2508,
+      "png": {
+        "width": 1440,
+        "height": 2508
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "blog-light-default": {
+      "capturedAt": "2026-11-20T22:46:13.063Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2600,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "blog-light-full": {
+      "capturedAt": "2026-11-20T22:46:14.279Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2699,
+      "png": {
+        "width": 1440,
+        "height": 2699
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "browse-light-default": {
+      "capturedAt": "2026-11-20T22:45:13.985Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2606,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "browse-light-full": {
+      "capturedAt": "2026-11-20T22:45:15.219Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2705,
+      "png": {
+        "width": 1440,
+        "height": 2705
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "careers-light-default": {
+      "capturedAt": "2026-11-20T22:49:48.711Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 981,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "careers-light-full": {
+      "capturedAt": "2026-11-20T22:47:12.856Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 981,
+      "png": {
+        "width": 1440,
+        "height": 981
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "gift-light-default": {
+      "capturedAt": "2026-11-20T22:46:30.165Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 4995,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "gift-light-full": {
+      "capturedAt": "2026-11-20T22:46:32.092Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 5094,
+      "png": {
+        "width": 1440,
+        "height": 5094
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "help-light-default": {
+      "capturedAt": "2026-11-20T22:46:43.868Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2210,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "help-light-full": {
+      "capturedAt": "2026-11-20T22:46:45.127Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2210,
+      "png": {
+        "width": 1440,
+        "height": 2210
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "home-light-default": {
+      "capturedAt": "2026-11-20T22:45:03.097Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 8397,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "home-light-full": {
+      "capturedAt": "2026-11-20T22:45:05.848Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 8496,
+      "png": {
+        "width": 1440,
+        "height": 8496
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "home-light-menu": {
+      "capturedAt": "2026-11-20T22:45:07.408Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 8496,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "home-light-search-focus": {
+      "capturedAt": "2026-11-20T22:45:08.390Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 8496,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "home-light-search-typed": {
+      "capturedAt": "2026-11-20T22:45:09.456Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 8496,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "illustration-light-default": {
+      "capturedAt": "2026-11-20T22:45:20.096Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2965,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "illustration-light-full": {
+      "capturedAt": "2026-11-20T22:45:21.509Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 3064,
+      "png": {
+        "width": 1440,
+        "height": 3064
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "login-light-default": {
+      "capturedAt": "2026-11-20T22:47:07.904Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 1148,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-about-light-default": {
+      "capturedAt": "2026-11-20T22:47:47.076Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 2765,
+      "png": {
+        "width": 780,
+        "height": 1688
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-about-light-full": {
+      "capturedAt": "2026-11-20T22:47:48.343Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 2981,
+      "png": {
+        "width": 780,
+        "height": 5962
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-blog-light-default": {
+      "capturedAt": "2026-11-20T22:47:59.578Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 6241,
+      "png": {
+        "width": 780,
+        "height": 1688
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-blog-light-full": {
+      "capturedAt": "2026-11-20T22:48:01.709Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 6457,
+      "png": {
+        "width": 780,
+        "height": 12914
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-browse-light-default": {
+      "capturedAt": "2026-11-20T22:47:39.605Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 5514,
+      "png": {
+        "width": 780,
+        "height": 1688
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-browse-light-full": {
+      "capturedAt": "2026-11-20T22:47:41.595Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 5730,
+      "png": {
+        "width": 780,
+        "height": 11460
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-home-light-default": {
+      "capturedAt": "2026-11-20T22:47:31.114Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 10050,
+      "png": {
+        "width": 780,
+        "height": 1688
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-home-light-full.part0": {
+      "capturedAt": "2026-11-20T22:47:33.820Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 10266,
+      "png": {
+        "width": 780,
+        "height": 14000
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-home-light-full.part1": {
+      "capturedAt": "2026-11-20T22:47:34.293Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 10266,
+      "png": {
+        "width": 780,
+        "height": 6532
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-home-light-menu": {
+      "capturedAt": "2026-11-20T22:47:35.433Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 10266,
+      "png": {
+        "width": 780,
+        "height": 1688
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-login-light-default": {
+      "capturedAt": "2026-11-20T22:49:33.685Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 1,
+      "scrollH": 1179,
+      "png": {
+        "width": 390,
+        "height": 844
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-search-light-default": {
+      "capturedAt": "2026-11-20T22:48:05.833Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 4671,
+      "png": {
+        "width": 780,
+        "height": 1688
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-search-light-full": {
+      "capturedAt": "2026-11-20T22:48:07.605Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 4887,
+      "png": {
+        "width": 780,
+        "height": 9774
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-teach-light-default": {
+      "capturedAt": "2026-11-20T22:47:53.002Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 8151,
+      "png": {
+        "width": 780,
+        "height": 1688
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-teach-light-full.part0": {
+      "capturedAt": "2026-11-20T22:47:55.705Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 8367,
+      "png": {
+        "width": 780,
+        "height": 14000
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "mobile-teach-light-full.part1": {
+      "capturedAt": "2026-11-20T22:47:56.057Z",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollH": 8368,
+      "png": {
+        "width": 780,
+        "height": 2734
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "paths-light-default": {
+      "capturedAt": "2026-11-20T22:45:31.275Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 8650,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "paths-light-full": {
+      "capturedAt": "2026-11-20T22:45:33.970Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 8749,
+      "png": {
+        "width": 1440,
+        "height": 8749
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "press-light-default": {
+      "capturedAt": "2026-11-20T22:46:06.467Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 9172,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "press-light-full": {
+      "capturedAt": "2026-11-20T22:46:09.231Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 9271,
+      "png": {
+        "width": 1440,
+        "height": 9271
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "privacy-light-default": {
+      "capturedAt": "2026-11-20T22:46:55.483Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 28211,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "privacy-light-full.part0": {
+      "capturedAt": "2026-11-20T22:46:58.183Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 28211,
+      "png": {
+        "width": 1440,
+        "height": 14000
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "privacy-light-full.part1": {
+      "capturedAt": "2026-11-20T22:46:58.622Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 28211,
+      "png": {
+        "width": 1440,
+        "height": 14000
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "privacy-light-full.part2": {
+      "capturedAt": "2026-11-20T22:46:59.023Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 28211,
+      "png": {
+        "width": 1440,
+        "height": 211
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "projects-light-default": {
+      "capturedAt": "2026-11-20T22:45:39.101Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 3229,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "projects-light-full": {
+      "capturedAt": "2026-11-20T22:45:40.541Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 5667,
+      "png": {
+        "width": 1440,
+        "height": 5667
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "search-light-default": {
+      "capturedAt": "2026-11-20T22:47:02.778Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2852,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "search-light-full": {
+      "capturedAt": "2026-11-20T22:47:04.183Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2951,
+      "png": {
+        "width": 1440,
+        "height": 2951
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "sessions-light-default": {
+      "capturedAt": "2026-11-20T22:45:54.617Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2429,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "sessions-light-full": {
+      "capturedAt": "2026-11-20T22:45:55.814Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 2528,
+      "png": {
+        "width": 1440,
+        "height": 2528
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "shop-light-default": {
+      "capturedAt": "2026-11-20T22:45:45.288Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 3070,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "shop-light-full": {
+      "capturedAt": "2026-11-20T22:45:46.723Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 3169,
+      "png": {
+        "width": 1440,
+        "height": 3169
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "teach-light-default": {
+      "capturedAt": "2026-11-20T22:46:23.329Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 5213,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "teach-light-full": {
+      "capturedAt": "2026-11-20T22:46:25.311Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 5312,
+      "png": {
+        "width": 1440,
+        "height": 5312
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "teams-light-default": {
+      "capturedAt": "2026-11-20T22:46:37.544Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 6685,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "teams-light-full": {
+      "capturedAt": "2026-11-20T22:46:39.848Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 7824,
+      "png": {
+        "width": 1440,
+        "height": 7824
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "terms-light-default": {
+      "capturedAt": "2026-11-20T22:46:48.678Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 26348,
+      "png": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "terms-light-full.part0": {
+      "capturedAt": "2026-11-20T22:46:51.379Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 26348,
+      "png": {
+        "width": 1440,
+        "height": 14000
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    },
+    "terms-light-full.part1": {
+      "capturedAt": "2026-11-20T22:46:51.831Z",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "scrollH": 26348,
+      "png": {
+        "width": 1440,
+        "height": 12348
+      },
+      "dimensionCheck": "pass",
+      "colorScheme": "normal"
+    }
+  },
+  "components": {
+    "logo": {
+      "page": "home",
+      "tag": "A",
+      "text": "Home",
+      "rect": {
+        "x": 20,
+        "y": 13,
+        "w": 104,
+        "h": 55
+      },
+      "style": {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "none",
+        "borderRadius": "0px",
+        "fontFamily": "\"GT Walsheim Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "15px",
+        "fontWeight": "700",
+        "lineHeight": "15px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "boxShadow": "none",
+        "outline": "rgb(86, 32, 193) none 0px",
+        "outlineOffset": "0px",
+        "height": "55px",
+        "width": "104px",
+        "textDecorationLine": "underline",
+        "opacity": "1"
+      }
+    },
+    "nav-browse": {
+      "page": "home",
+      "tag": "A",
+      "text": "Browse",
+      "rect": {
+        "x": 148,
+        "y": 33,
+        "w": 92,
+        "h": 15
+      },
+      "style": {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "none",
+        "borderRadius": "0px",
+        "fontFamily": "\"GT Walsheim Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "15px",
+        "fontWeight": "700",
+        "lineHeight": "15px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "10px",
+        "paddingBottom": "0px",
+        "paddingLeft": "10px",
+        "boxShadow": "none",
+        "outline": "rgb(86, 32, 193) none 0px",
+        "outlineOffset": "0px",
+        "height": "15px",
+        "width": "91.9531px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    },
+    "nav-signin": {
+      "page": "home",
+      "tag": "A",
+      "text": "Sign In",
+      "rect": {
+        "x": 1214,
+        "y": 33,
+        "w": 69,
+        "h": 15
+      },
+      "style": {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "none",
+        "borderRadius": "0px",
+        "fontFamily": "\"GT Walsheim Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "15px",
+        "fontWeight": "700",
+        "lineHeight": "15px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "10px",
+        "paddingBottom": "0px",
+        "paddingLeft": "10px",
+        "boxShadow": "none",
+        "outline": "rgb(86, 32, 193) none 0px",
+        "outlineOffset": "0px",
+        "height": "15px",
+        "width": "68.5938px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    },
+    "btn-signup": {
+      "page": "home",
+      "tag": "BUTTON",
+      "text": "Sign Up",
+      "rect": {
+        "x": 1304,
+        "y": 20,
+        "w": 107,
+        "h": 40
+      },
+      "style": {
+        "color": "rgb(11, 18, 21)",
+        "backgroundColor": "rgb(85, 218, 155)",
+        "borderTopColor": "rgb(85, 218, 155)",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderRadius": "4px",
+        "fontFamily": "\"GT Walsheim Pro\", Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "700",
+        "lineHeight": "39px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "20px",
+        "paddingBottom": "0px",
+        "paddingLeft": "20px",
+        "boxShadow": "none",
+        "outline": "rgb(86, 32, 193) none 0px",
+        "outlineOffset": "0px",
+        "height": "40px",
+        "width": "107.297px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    },
+    "search": {
+      "page": "home",
+      "tag": "INPUT",
+      "text": "Search box",
+      "rect": {
+        "x": 268,
+        "y": 20,
+        "w": 500,
+        "h": 40
+      },
+      "style": {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(220, 222, 225)",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderRadius": "4px",
+        "fontFamily": "\"GT Walsheim Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "38px",
+        "paddingBottom": "0px",
+        "paddingLeft": "38px",
+        "boxShadow": "none",
+        "outline": "rgb(86, 32, 193) none 0px",
+        "outlineOffset": "0px",
+        "height": "40px",
+        "width": "500px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    },
+    "hero-title": {
+      "page": "home",
+      "tag": "H1",
+      "text": "Creative Classes Taught by the Best Creative Pros",
+      "rect": {
+        "x": 224,
+        "y": 184,
+        "w": 664,
+        "h": 116
+      },
+      "style": {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "none",
+        "borderRadius": "0px",
+        "fontFamily": "\"GT Walsheim Pro\", sans-serif",
+        "fontSize": "46px",
+        "fontWeight": "700",
+        "lineHeight": "57.96px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "boxShadow": "none",
+        "outline": "rgb(86, 32, 193) none 0px",
+        "outlineOffset": "0px",
+        "height": "115.906px",
+        "width": "664px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    },
+    "btn-google": {
+      "page": "home",
+      "tag": "BUTTON",
+      "text": "Continue with Google",
+      "rect": {
+        "x": 928,
+        "y": 168,
+        "w": 320,
+        "h": 40
+      },
+      "style": {
+        "color": "rgb(11, 18, 21)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(57, 70, 73)",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderRadius": "4px",
+        "fontFamily": "\"GT Walsheim Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "paddingTop": "5px",
+        "paddingRight": "15px",
+        "paddingBottom": "5px",
+        "paddingLeft": "15px",
+        "boxShadow": "none",
+        "outline": "rgb(11, 18, 21) none 0px",
+        "outlineOffset": "0px",
+        "height": "40px",
+        "width": "320px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    },
+    "btn-email": {
+      "page": "home",
+      "tag": "BUTTON",
+      "text": "Continue with email",
+      "rect": {
+        "x": 928,
+        "y": 328,
+        "w": 320,
+        "h": 40
+      },
+      "style": {
+        "color": "rgb(86, 32, 193)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(86, 32, 193)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "none",
+        "borderRadius": "4px",
+        "fontFamily": "\"GT Walsheim Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "lineHeight": "22.08px",
+        "letterSpacing": "normal",
+        "paddingTop": "6px",
+        "paddingRight": "8px",
+        "paddingBottom": "6px",
+        "paddingLeft": "8px",
+        "boxShadow": "none",
+        "outline": "rgb(86, 32, 193) none 0px",
+        "outlineOffset": "0px",
+        "height": "40px",
+        "width": "320px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    },
+    "link-terms": {
+      "page": "home",
+      "tag": "A",
+      "text": "Terms of Service",
+      "rect": {
+        "x": 1128,
+        "y": 323,
+        "w": 86,
+        "h": 15
+      },
+      "style": {
+        "color": "rgb(11, 18, 21)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(11, 18, 21)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "none",
+        "borderRadius": "0px",
+        "fontFamily": "\"GT Walsheim Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "11px",
+        "fontWeight": "700",
+        "lineHeight": "15.4px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "boxShadow": "none",
+        "outline": "rgb(86, 32, 193) none 0px",
+        "outlineOffset": "0px",
+        "height": "15.3906px",
+        "width": "86.25px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    },
+    "btn-signup-hover": {
+      "tag": "BUTTON",
+      "text": "Sign Up",
+      "rect": {
+        "x": 1304,
+        "y": 20,
+        "w": 107,
+        "h": 40
+      },
+      "style": {
+        "color": "rgb(11, 18, 21)",
+        "backgroundColor": "rgb(80, 207, 147)",
+        "borderTopColor": "rgb(80, 207, 147)",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderRadius": "4px",
+        "fontFamily": "\"GT Walsheim Pro\", Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "700",
+        "lineHeight": "39px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "20px",
+        "paddingBottom": "0px",
+        "paddingLeft": "20px",
+        "boxShadow": "none",
+        "outline": "rgb(86, 32, 193) none 0px",
+        "outlineOffset": "0px",
+        "height": "40px",
+        "width": "107.297px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    },
+    "field-email": {
+      "page": "login",
+      "tag": "INPUT",
+      "text": "Email address",
+      "rect": {
+        "x": 555,
+        "y": 449,
+        "w": 330,
+        "h": 40
+      },
+      "style": {
+        "color": "rgb(11, 18, 21)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(220, 222, 225)",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderRadius": "4px",
+        "fontFamily": "\"GT Walsheim Pro\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "10px",
+        "paddingBottom": "0px",
+        "paddingLeft": "10px",
+        "boxShadow": "none",
+        "outline": "rgb(11, 18, 21) none 0px",
+        "outlineOffset": "0px",
+        "height": "40px",
+        "width": "330px",
+        "textDecorationLine": "none",
+        "opacity": "1"
+      }
+    }
+  }
+}

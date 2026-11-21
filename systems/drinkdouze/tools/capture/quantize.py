@@ -6,13 +6,11 @@ Playwright screenshots are already sRGB, so there is no profile conversion, only
 taller than one GPU texture is captured by public.mjs as name.part0.png, name.part1.png, ...; those are
 stitched top to bottom into name.png first (the stitched full-colour copy stays in RAW_DIR). The
 full-colour originals are kept in RAW_DIR only; screenshots/ gets the 256-colour versions that are
-committed, each beside its .png.capture.json record (public.mjs writes one per shot; a stitched
-image's record merges its tiles' records). Flat UI colours are exact, gradients and photographs band
-a little, so read exact colours from raw/css-vars.json and raw/components-computed.json. Adapted
-from the Coursera kit.
+committed. Flat UI colours are exact, gradients and photographs band a little, so read exact colours
+from raw/css-vars.json and raw/components-computed.json. Adapted from the Coursera kit.
 """
 from PIL import Image
-import json, pathlib, re, shutil, sys
+import pathlib, re, sys
 
 REF = pathlib.Path(__file__).resolve().parent.parent.parent
 RAW = pathlib.Path(sys.argv[1])
@@ -41,24 +39,4 @@ for f in sorted(RAW.glob('*.png')):
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
     n += 1
-    # Keep the shot's capture record next to the published PNG; a stitched
-    # image's record merges the records its tiles carried.
-    tiles = parts.get(f.stem)
-    if tiles:
-        recs = []
-        for _, tf in sorted(tiles):
-            side = RAW / (tf.name + '.capture.json')
-            if side.exists():
-                recs.append(json.loads(side.read_text()))
-        if recs:
-            rec = dict(recs[0])
-            rec['screenshot'] = f.name
-            rec['tiles'] = recs
-            if 'png' in rec:
-                rec['png'] = dict(rec['png'], height=sum((r.get('png') or {}).get('height', 0) for r in recs))
-            (OUT / (f.name + '.capture.json')).write_text(json.dumps(rec, indent=2) + '\n')
-    else:
-        side = RAW / (f.name + '.capture.json')
-        if side.exists():
-            shutil.copy2(side, OUT / side.name)
 print(n, 'screenshots ->', OUT)

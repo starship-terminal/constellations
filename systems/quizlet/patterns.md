@@ -1,25 +1,23 @@
-# Patterns
+# Quizlet patterns
 
-Signed-out pages measured on 19 November 2026. No screenshots were saved. The preview browser did not produce screenshot frames.
+Signed-in night shell, captured 2026-11-21. The live theme class is `theme-night`. Settings Theme was set to Auto. Light mode was offered in the account menu and was not switched.
 
-## Marketing home
+## Home
 
-`https://quizlet.com/` after Reject All on the Ketch cookie banner.
+Your Sets at `/latest` has a left sidebar: Home, Your library, Study groups, Notifications, Flashcards, Podcasts, Study Guides, Games, Practice Tests, Expert Solutions, and New folder. The header has Search, Record lecture, Create, a trial pill, the avatar, and Ask Quizlet. The desktop shot of that page with both menus open was deleted because it showed the account email. The phone home and phone nav shots remain. An ad iframe and a promo banner were hidden or dismissed before the shots. The banner Close was the promo's own control. Consent was not clicked.
 
-A twilight-700 promo bar (48px) sits above a white sticky nav (64px). The page background is gray-200. The hero heading is 44px / 56px / 700. The lede is 20px / 28px. A primary pill ("Sign up for free", 48px) sits under the lede. Four feature tiles use a 24px radius. Later sections alternate white (48px block padding) and a teacher band at rgb(219, 223, 255). The footer starts with 64px padding and uses 16px / 700 section labels.
+## Library
 
-## Login
+[library-night-empty](screenshots/library-night-empty.png) is the flashcard-sets tab of Your library. The tab is empty and offers Create a flashcard set. Other library tabs (Activities, Classes, Folders, Podcasts, Practice tests, Study guides, Expert solutions) were listed and not opened.
 
-`https://quizlet.com/login`. Split layout. The left column heading is the same 44px display style, color gray-800. The form column is 489px wide inside 32px of horizontal padding. Social buttons are tertiary pills at 56px. Email and password fields are 56px, radius 8px. The submit button is a primary xlarge pill. "Log in with magic link" opens a white dialog, radius 16px, with one email field and a medium primary button. Nothing was typed or submitted.
+## Settings
 
-## Signup
+Settings is one scrolling page, not a tab set. [settings-night-profile](screenshots/settings-night-profile.png) shows Subscription, Personal information, and Appearance. The email text node was replaced with a placeholder in the page before the shot, then the shot was quantized. [settings-night-notifications](screenshots/settings-night-notifications.png) shows email toggles and the reminder time. The timezone city was painted out. Account and privacy was opened. It shows Create password, Link Facebook, privacy switches, and Delete account. None of those controls were used. The screenshot was deleted because the timezone city was still visible at the top of the frame.
 
-Reached from "New to Quizlet? Create an account", which navigated to `https://quizlet.com/sign-up`. Tabs read Sign up and Log in at 24px / 700. The form asks for birthday month, day and year, email, password, and a terms checkbox. Birthday selects are gray pills, height 48px. The form was not submitted.
+## Create
 
-## About
+[create-set-night-empty](screenshots/create-set-night-empty.png) is `/create-set` after a Quizlet Plus modal was closed. The form shows a Public chip, an empty title, Import, a locked Add diagram, and empty term cards. Nothing was typed. Create and Create and practice were not clicked.
 
-`https://quizlet.com/mission`, opened from the homepage footer. Same nav and type. Article cards are white, 24px radius, with a 0 2px 4px shadow. A primary xlarge pill reads "Read our impact report".
+## Phone
 
-## Not captured
-
-Phone width, night theme on screen, a validation error, an empty signed-in study set, search suggestions, and any paid or checkout flow.
+The preview preset `iphone-14-pro-max` measured `innerWidth` 430 and `innerHeight` 932 at device pixel ratio 2. A freeform 390 by 844 request did not change that CSS viewport. [home-night-phone](screenshots/home-night-phone.png), [nav-night-phone](screenshots/nav-night-phone.png), and [settings-night-phone](screenshots/settings-night-phone.png) are that width. The hamburger repeats the desktop sidebar. The email on the phone settings shot was replaced in the page before capture.

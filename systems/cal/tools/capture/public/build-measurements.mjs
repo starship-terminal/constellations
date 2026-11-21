@@ -48,7 +48,8 @@ const L = [];
 const W = (s = '') => L.push(s);
 W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
-W(`Computed styles read from cal.com on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's three public hosts — the marketing pages on cal.com, the auth cards on app.cal.com and the public booking page on i.cal.com/peer (including its supported ?theme=dark&embed=true dark mode) — and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+// PRODUCT (adapt): describe this product's capture.
+W(`Computed styles read from www.gauth.com on ${J._meta.read} by \`tools/capture/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
@@ -72,10 +73,6 @@ for (const g of groups) {
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
-      if (!v.style || !v.rect) { // a note entry (e.g. pdp_url) carries no computed style
-        (rows.Note ||= {})[st] = v.text || v.via || '';
-        continue;
-      }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }
     W(`| Property | ${states.join(' | ')} |`);
@@ -100,7 +97,8 @@ if (J._meta.backdrop) {
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('cal.com serves its Next.js CSS bundles same-origin, so this list holds the transitions the readable sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.');
+// PRODUCT (adapt): describe this product's capture.
+W('Gauth\'s own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd\'s CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth\'s own rules.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

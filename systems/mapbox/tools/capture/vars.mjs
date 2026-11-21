@@ -1,38 +1,31 @@
-// Reads every custom property mapbox.com's stylesheets declare and writes
-// raw/css-vars.json.
-//
-//   PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/vars.mjs
-//
-// www.mapbox.com is a Webflow site. Its design tokens are custom properties
-// on :root with Webflow's long names (--_colors---blue--blue50, and so on).
-// Same-origin sheets are read through the CSSOM. Cross-origin sheets are
-// recorded as unreadable and not guessed.
-//
-// Bins:
-//   token    the site's own palette and type scales (--_colors---, --_text-styles---,
-//            --_heading-styles---, --_dimensions---, --_color-mode---)
-//   app      other custom names the site declares
-//   webflow  Webflow internals and OneTrust leftovers
+// Read Mapbox custom properties from the live public homepage.
+// PLAYWRIGHT=... node tools/capture/vars.mjs
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BASE, launch, closePromo } from './public/lib.mjs';
+import { BASE, launch, hideConsent } from './public/lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
+const RAW = path.join(REF, 'raw');
+fs.mkdirSync(RAW, { recursive: true });
 
-const { browser, context } = await launch({ width: 1440, height: 900 });
+const { browser, context } = await launch();
 const page = await context.newPage();
-await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 });
+const bodies = new Map();
+page.on('response', async (r) => {
+  const rt = r.request().resourceType();
+  if (rt !== 'stylesheet' && !/\.css(\?|$)/.test(r.url())) return;
+  try { bodies.set(r.url().split('?')[0], await r.text()); } catch { /* gone */ }
+});
+await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 60000 });
 await page.waitForTimeout(4000);
-await closePromo(page);
-const sheets = await page.evaluate(() => [...document.styleSheets].map((s, i) => {
-  // Sheet names drop the query and fragment, as the kit does (a ?v= or a signed query is not a name).
-  const name = s.href ? s.href.split(/[?#]/)[0] : null;
-  try { return { name: name || 'inline-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
-  catch { return { name: name || 'sheet-' + i, media: '', css: '', unreadable: true }; }
-}));
-await page.close();
+await hideConsent(page);
+const inline = await page.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => {
+  try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; }
+}).filter(Boolean));
+const sheets = [...bodies.entries()].concat(inline);
+console.log('sheets', sheets.length, 'bytes', sheets.reduce((n, s) => n + s[1].length, 0));
 
 const probe = await browser.newPage();
 const result = await probe.evaluate((sheets) => {
@@ -51,102 +44,112 @@ const result = await probe.evaluate((sheets) => {
       if (r.cssRules && !r.style) {
         const head = r.type === CSSRule.MEDIA_RULE ? '@media ' + r.media.mediaText
           : r.type === CSSRule.SUPPORTS_RULE ? '@supports ' + r.conditionText
-          : (r.cssText || '').split('{')[0].trim().slice(0, 120);
+          : (r.cssText || '').split('{')[0].trim().slice(0, 160);
         walk(r.cssRules, [...ctx, head], file);
         continue;
       }
       if (!r.style) continue;
       const props = {};
-      let n = 0;
       for (let i = 0; i < r.style.length; i++) {
         const k = r.style[i];
-        if (k && k.startsWith('--')) { props[k] = noUrl(r.style.getPropertyValue(k).trim()); n++; }
+        if (k && k.startsWith('--')) props[k] = noUrl(r.style.getPropertyValue(k).trim());
       }
-      if (n) rules.push({ file, selector: r.selectorText, context: ctx, properties: props });
-      if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, r.selectorText], file);
+      if (Object.keys(props).length) rules.push({ file, context: ctx, selector: (r.selectorText || '').slice(0, 240), properties: props });
     }
   };
-  for (const s of sheets) {
-    if (!s.css) { if (s.unreadable) errors.push({ file: s.name, error: 'cross-origin to the CSSOM' }); continue; }
-    const ss = new CSSStyleSheet();
-    try { ss.replaceSync(s.css); } catch (e) { errors.push({ file: s.name, error: String(e).slice(0, 180) }); continue; }
-    walk(ss.cssRules, [], s.name);
+  for (const [file, css] of sheets) {
+    try {
+      const sheet = new CSSStyleSheet();
+      sheet.replaceSync(css);
+      walk(sheet.cssRules, [], file);
+    } catch (e) { errors.push(file + ': ' + String(e).slice(0, 160)); }
   }
   return { rules, fonts, errors };
 }, sheets);
 
-const probe2 = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-await probe2.setContent('<!doctype html><html><head>'
-  + sheets.filter((s) => s.css).map((s) => '<style' + (s.media ? ' media="' + s.media.replace(/"/g, '') + '"' : '') + '>' + s.css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
-  + '</head><body><div id="probe-root"></div></body></html>', { waitUntil: 'load' });
-const want = [...new Set(result.rules.flatMap((r) => Object.keys(r.properties)))]
-  .filter((n) => !n.includes('<deleted') && !n.includes('|')).sort();
-const resolved = await probe2.evaluate((names) => {
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
-  const rootProbe = document.getElementById('probe-root');
-  const box = document.createElement('div');
-  box.style.cssText = 'position:absolute;left:0;top:0;visibility:hidden';
-  const probeEl = document.createElement('div');
-  box.appendChild(probeEl);
-  document.body.appendChild(box);
-  const norm = (c) => {
-    const m = c.match(/^rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)$/);
-    if (!m) return { unparsed: c };
-    const rgb = [m[1], m[2], m[3]].map((v) => Math.round(+v));
-    const a = m[4] === undefined ? 1 : Math.round(+m[4] * 1000) / 1000;
-    return a === 1 ? '#' + rgb.map((v) => v.toString(16).padStart(2, '0')).join('') : `rgba(${rgb.join(', ')}, ${a})`;
-  };
-  const out = {};
-  for (const name of names) {
-    const raw = noUrl(getComputedStyle(rootProbe).getPropertyValue(name).trim());
-    if (!raw) continue;
-    const r = { raw: raw.length > 240 ? raw.slice(0, 240) + '…' : raw };
-    probeEl.removeAttribute('style');
-    if (/^-?\d*\.?\d+$/.test(raw)) { r.kind = 'number'; r.value = +raw; }
-    else if (CSS.supports('color', raw) && !/^(inherit|initial|unset|revert)/.test(raw)) {
-      probeEl.style.color = raw;
-      const painted = getComputedStyle(probeEl).color;
-      const n = norm(painted);
-      if (n.unparsed) { r.kind = 'other'; r.note = 'colour not converted: ' + painted; }
-      else { r.kind = 'color'; r.value = n; }
-    } else if (!raw.includes('%') && CSS.supports('width', raw) && /px|rem|em/.test(raw)) {
-      probeEl.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(probeEl).width;
-    } else r.kind = 'other';
-    out[name] = r;
+// Resolve every custom property on a probe element that has the live computed style.
+const resolved = await page.evaluate(() => {
+  const root = getComputedStyle(document.documentElement);
+  const names = new Set();
+  for (const sheet of document.styleSheets) {
+    let rules;
+    try { rules = sheet.cssRules; } catch { continue; }
+    const walk = (list) => {
+      for (const r of list) {
+        if (r.cssRules && !r.style) walk(r.cssRules);
+        if (!r.style) continue;
+        for (let i = 0; i < r.style.length; i++) {
+          const k = r.style[i];
+          if (k && k.startsWith('--')) names.add(k);
+        }
+      }
+    };
+    if (rules) walk(rules);
   }
-  box.remove();
-  return out;
-}, want);
-await browser.close();
+  const out = {};
+  for (const n of names) {
+    const v = root.getPropertyValue(n).trim();
+    if (v) out[n] = v.slice(0, 400);
+  }
+  const body = getComputedStyle(document.body);
+  const h1 = document.querySelector('h1');
+  const a = document.querySelector('a');
+  const sample = (el) => el ? {
+    color: getComputedStyle(el).color,
+    background: getComputedStyle(el).backgroundColor,
+    fontFamily: getComputedStyle(el).fontFamily,
+    fontSize: getComputedStyle(el).fontSize,
+    fontWeight: getComputedStyle(el).fontWeight,
+    lineHeight: getComputedStyle(el).lineHeight,
+    letterSpacing: getComputedStyle(el).letterSpacing,
+  } : null;
+  return {
+    count: Object.keys(out).length,
+    vars: out,
+    body: sample(document.body),
+    h1: sample(h1),
+    link: sample(a),
+    pageBg: body.backgroundColor,
+  };
+});
 
-const TOKEN = /^--_(colors|text-styles|heading-styles|dimensions|color-mode|border)/;
-const binOf = (r) => {
+const theme = [];
+const app = [];
+const utility = [];
+const vendor = [];
+for (const r of result.rules) {
+  const sel = r.selector || '';
   const names = Object.keys(r.properties);
-  if (names.some((n) => TOKEN.test(n))) return 'token';
-  if (names.every((n) => /^--(w-|wf-|ot-|hsf-)/.test(n))) return 'webflow';
-  return 'app';
-};
-const ok = result.rules.filter((r) => !Object.keys(r.properties).every((n) => n.includes('<deleted')));
-for (const r of ok) r.bin = binOf(r);
-const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties).filter((n) => !n.includes('<'))))].sort();
+  if (names.some((n) => n.startsWith('--tw-') || n.startsWith('--_tw'))) continue;
+  if (/onetrust|ot-|cookie/i.test(sel) || names.some((n) => /onetrust|^--ot-/.test(n))) { vendor.push(r); continue; }
+  if (sel === ':root' || sel === 'html' || sel === 'body' || sel.startsWith(':root') || sel.includes('w-mod')) theme.push(r);
+  else if (sel.startsWith('[') || sel.includes('--')) utility.push(r);
+  else app.push(r);
+}
+
 const out = {
-  readAt: new Date().toLocaleDateString('en-CA'),
-  source: "www.mapbox.com Webflow stylesheets, read through the CSSOM on the live home page and re-parsed in a probe document. Cross-origin sheets that the CSSOM could not read are listed under errors and were not guessed.",
-  sheets: sheets.map(({ name, media, css, unreadable }) => ({ name, media, bytes: (css || '').length, unreadable: !!unreadable })),
-  counts: {
-    rules: ok.length,
-    fonts: result.fonts.length,
-    names: { token: names('token').length, app: names('app').length, webflow: names('webflow').length },
-  },
-  errors: result.errors,
-  token: ok.filter((r) => r.bin === 'token').map((r) => ({ ...r, properties: Object.fromEntries(Object.entries(r.properties).filter(([k]) => !k.includes('<'))) })),
-  app: ok.filter((r) => r.bin === 'app'),
-  webflow: ok.filter((r) => r.bin === 'webflow'),
-  fonts: result.fonts,
+  capturedAt: new Date().toISOString(),
+  source: 'https://www.mapbox.com/',
+  theme: 'light',
+  note: 'Mapbox marketing paints one light theme. No dark class or data-theme switch was found.',
+  sheetCount: sheets.length,
+  ruleCount: result.rules.length,
+  fontCount: result.fonts.length,
+  errors: result.errors.slice(0, 20),
+  theme,
+  app,
+  utility,
+  vendor,
+  fonts: result.fonts.map((f) => ({
+    file: f.file,
+    family: f['font-family'],
+    weight: f['font-weight'],
+    style: f['font-style'],
+    display: f['font-display'],
+    src: f.src ? 'url(…)' : undefined,
+  })),
   resolved: { light: resolved },
 };
-fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
-fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
-console.log(`resolved: ${Object.keys(resolved).length} names`);
-console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; token ${out.counts.names.token}, app ${out.counts.names.app}`);
-console.log('errors', result.errors.length);
+fs.writeFileSync(path.join(RAW, 'css-vars.json'), JSON.stringify(out, null, 2));
+console.log('rules', result.rules.length, 'resolved', resolved.count, 'fonts', result.fonts.length, 'errors', result.errors.length);
+await browser.close();

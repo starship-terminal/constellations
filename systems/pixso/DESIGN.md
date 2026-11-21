@@ -3,195 +3,90 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Pixso"
-description: "Design-tool marketing and a signed-out login card: Figtree marketing type, black 8px buttons, a separate blue login submit, frosted 54px nav"
+description: "A white marketing site with a near-black primary button, a blue brand, and Figtree labels."
 omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#336fff"
   neutral: "#ffffff"
-  surface: "#ffffff"
+  surface: "#f7f7f9"
   on-surface: "#000000"
-  on-surface-variant: "#8b8c8f"
-  outline: "rgba(0, 0, 0, 0.1)"
+  on-surface-variant: "#647084"
+  outline: "#edf0f4"
   background-page: "#ffffff"
-  background-nav: "rgba(255, 255, 255, 0.8)"
-  background-surface: "#ffffff"
-  background-input: "#ffffff"
-  background-input-token: "#f7f7f9"
-  background-overlay: "#f7f7f9"
-  background-base: "#edeef0"
-  background-hover: "rgba(18, 17, 42, 0.05)"
-  background-press: "rgba(18, 17, 42, 0.07)"
-  background-selected: "#e5efff"
-  background-button: "rgba(0, 0, 0, 0.84)"
-  background-button-solid: "#222222"
-  background-product-button: "#20222c"
+  background-surface: "#f7f7f9"
+  background-button: "#202125"
   background-brand: "#336fff"
-  background-brand-hover: "#4381ff"
-  background-brand-press: "#1f61ff"
-  background-brand-disable: "#aecfff"
-  background-danger: "#f43529"
-  background-danger-hover: "#ff5340"
-  background-success: "#3fae00"
-  background-warning: "#f97316"
-  background-info: "#2e9cfe"
-  background-toast: "rgba(15, 16, 18, 0.96)"
-  background-mask: "rgba(6, 8, 10, 0.57)"
-  background-legacy-brand: "#565dff"
-  background-marketing-action: "#006dff"
   text-primary: "#000000"
   text-ink: "#1e2330"
-  text-product: "#191c29"
-  text-secondary: "#647084"
-  text-lead: "#576173"
-  text-muted: "#8b8c8f"
-  text-quaternary: "#b7b9bd"
-  text-footer: "#667085"
-  text-footer-ink: "#202124"
-  text-on-brand: "#ffffff"
-  text-on-dark: "#ffffff"
-  text-brand: "#1f61ff"
-  text-brand-hover: "#4381ff"
-  text-brand-press: "#0148dc"
-  text-link: "#345cda"
-  text-eyebrow: "#5068a5"
-  text-nav-link: "#3d3d3d"
-  text-login-primary: "#19191a"
-  text-login-secondary: "#555557"
-  text-danger: "#d92400"
-  text-success: "#299a0c"
-  text-warning: "#e35d00"
-  text-info: "#018be5"
-  text-icon: "#414142"
-  text-icon-muted: "#a2a4a8"
-  border-nav: "#edf0f4"
-  border-card: "#e3e9f6"
-  border-product: "#d3dae8"
-  border-input: "rgba(0, 0, 0, 0.1)"
-  border-input-token: "rgba(6, 6, 31, 0.09)"
+  text-muted: "#647084"
+  text-onButton: "#ffffff"
+  text-link: "#336fff"
+  border-default: "#edf0f4"
+  border-rule: "rgba(16, 24, 40, 0.12)"
+  border-field: "rgba(0, 0, 0, 0.1)"
   border-focus: "#1f61ff"
-  border-focus-token: "#336fff"
-  border-error: "#f43529"
-  border-button: "rgba(2, 9, 16, 0.13)"
-  border-hairline: "rgba(18, 17, 42, 0.07)"
-  border-footer: "rgba(16, 24, 40, 0.12)"
-  border-black: "#000000"
+  status-success: "#28a745"
+  status-warning: "#ffc107"
+  status-danger: "#dc3545"
+  status-info: "#17a2b8"
 typography:
   display:
     fontFamily: "Figtree"
     fontSize: "60px"
     fontWeight: 700
     lineHeight: "66px"
-    letterSpacing: "0px"
   heading:
     fontFamily: "Figtree"
-    fontSize: "48px"
-    fontWeight: 700
-    lineHeight: "52.8px"
-    letterSpacing: "0px"
-  title:
-    fontFamily: "Figtree"
-    fontSize: "28px"
+    fontSize: "40px"
     fontWeight: 600
-    lineHeight: "33.6px"
-    letterSpacing: "0px"
-  product-hero:
-    fontFamily: "Figtree"
-    fontSize: "43px"
-    fontWeight: 700
-    lineHeight: "48.59px"
-    letterSpacing: "0px"
-  product-section:
-    fontFamily: "Figtree"
-    fontSize: "33px"
-    fontWeight: 650
-    lineHeight: "40.26px"
-    letterSpacing: "0px"
-  lead:
-    fontFamily: "Figtree"
-    fontSize: "18px"
-    fontWeight: 400
-    lineHeight: "32.4px"
-    letterSpacing: "0px"
+    lineHeight: "46px"
   body:
     fontFamily: "Figtree"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
-    letterSpacing: "0px"
-  nav:
+  label:
     fontFamily: "Figtree"
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "20px"
-    letterSpacing: "0px"
-  eyebrow:
+  caption:
     fontFamily: "Figtree"
-    fontSize: "12px"
-    fontWeight: 650
-    letterSpacing: "0.84px"
-  label:
-    fontFamily: "Figtree"
-    fontSize: "12px"
-    fontWeight: 500
-    lineHeight: "18px"
-    letterSpacing: "0.48px"
-  login-title:
-    fontFamily: "Outfit"
-    fontSize: "28px"
-    fontWeight: 600
-    lineHeight: "35px"
-    letterSpacing: "0px"
-  login-body:
-    fontFamily: "Outfit"
     fontSize: "14px"
     fontWeight: 400
-    lineHeight: "22px"
-  button:
-    fontFamily: "Figtree"
-    fontSize: "14px"
-    fontWeight: 600
-    lineHeight: "16.1px"
-    letterSpacing: "0px"
+    lineHeight: "20px"
 rounded:
-  control: "8px"
-  product-button: "9px"
-  nav-card: "9px"
-  nav-brand: "10px"
-  panel: "12px"
-  brand-panel: "13px"
-  input-shell: "16px"
+  nav: "6px"
+  button: "7px"
+  loginItem: "8px"
+  field: "6px"
+  loginField: "8px"
 spacing:
-  "2": "2px"
-  "8": "8px"
-  "10": "10px"
-  "12": "12px"
-  "14": "14px"
-  "16": "16px"
-  "18": "18px"
-  "20": "20px"
-  "22": "22px"
-  "24": "24px"
-  "32": "32px"
-  "54": "54px"
-  "58": "58px"
-  "80": "80px"
+  headerX: "32px"
+  navY: "10px"
+  navX: "11px"
+  buttonY: "6px"
+  buttonX: "15px"
+  fieldX: "16px"
 ---
 
 # Pixso
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 7 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Design-tool marketing and a signed-out login card: Figtree marketing type, black 8px buttons, a separate blue login submit, frosted 54px nav.
+Good for: A white marketing site with a near-black primary button, a blue brand, and Figtree labels..
 
-Captured 2026-11-19, signed out (public marketing and the login form; no account created). Themes: light.
+Captured 2026-11-21, signed out, public site. Themes: light.
 
-Pixso is a collaborative UI and UX design tool. This package records the public marketing site and the signed-out login and signup form, measured on 19 November 2026 from a signed-out browser. No account was created. The viewport that produced the readings was 1169 by 731 CSS pixels at device pixel ratio 2. The host reported `prefers-color-scheme: dark`, and every page still painted a light surface. No dark theme control was on these pages.
+Pixso is a collaborative UI and UX design tool. This package is the public site at https://pixso.net/, captured 2026-11-21, signed out, in headless Chromium. Desktop is 1440×900. Phone is 390×844. One light theme. The signed-in editor was not opened.
+
+The site paints black text on white, a near-black button for Get started, and a blue brand (`#336fff`) declared as `--v2--color-bg-brand-normal` and `--pxn-blue`. Figtree is the painted family. Header and footer tokens use `--pxn-*` and `--pxf-*`.
 
 ## Colors
 
@@ -199,40 +94,30 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 - **primary (#336fff):** `light.background.brand`
 - **neutral (#ffffff):** `light.background.page`
-- **surface (#ffffff):** `light.background.surface`
+- **surface (#f7f7f9):** `light.background.surface`
 - **on-surface (#000000):** `light.text.primary`
-- **on-surface-variant (#8b8c8f):** `light.text.muted`
-- **outline (rgba(0, 0, 0, 0.1)):** `light.border.input`
+- **on-surface-variant (#647084):** `light.text.muted`
+- **outline (#edf0f4):** `light.border.default`
 
 ## Typography
 
-13 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Figtree, Outfit.
+5 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Figtree.
 
 ### Fonts (from README.md)
 
-Figtree is the marketing family (weights 400, 500, 600 and 700 loaded). Outfit is the login card family. Inter is the login page body fallback. The declared marketing mono stack is SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New. No mono text was on screen. The font files are not in this package.
+Figtree, weights 400, 500, 600 and 700, from `@font-face` rules on the home page. The guide falls back to Arial and Helvetica. Poppins is declared in `--font-family-sans-serif` and is not the painted body. Licence of Figtree was not read from the font file. Not captured.
 
 ## Layout
 
-Spacing from `core.spacing`: `2` 2px, `8` 8px, `10` 10px, `12` 12px, `14` 14px, `16` 16px, `18` 18px, `20` 20px, `22` 22px, `24` 24px, `32` 32px, `54` 54px, `58` 58px, `80` 80px.
+Spacing from `core.space`: `headerX` 32px, `navY` 10px, `navX` 11px, `buttonY` 6px, `buttonX` 15px, `fieldX` 16px.
 
 ## Elevation & Depth
 
-Shadows, resolved to CSS:
-
-| Token | box-shadow |
-|---|---|
-| `light.shadow.button-inset` | `rgba(255, 255, 255, 0.3) 0px 0.8px 0px 0px inset` |
-| `light.shadow.button-inset-strong` | `rgba(255, 255, 255, 0.3) 0px 1.5px 0px 0px inset` |
-| `light.shadow.control` | `rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.4) 0px 0px 1px 0px` |
-| `light.shadow.login-card` | `rgba(31, 19, 135, 0.04) 0px 8px 16px 0px, rgba(17, 30, 58, 0.2) 0px 0px 2px 0px` |
-| `light.shadow.down-1` | `0px 5px 12px rgba(0, 0, 0, 0.09), 0px 3px 6px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.16)` |
-| `light.shadow.down-2` | `0px 9px 28px rgba(49, 50, 51, 0.05), 0px 6px 16px rgba(49, 50, 51, 0.08), 0px 3px 6px rgba(49, 50, 51, 0.12)` |
-| `light.shadow.small` | `0px 0px 1px 0px rgba(25, 25, 26, 0.08), 0px 2px 8px 0px rgba(25, 25, 26, 0.12)` |
+No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
 
 ## Shapes
 
-Corner radii from `core.radius`: `control` 8px, `product-button` 9px, `nav-card` 9px, `nav-brand` 10px, `panel` 12px, `brand-panel` 13px, `input-shell` 16px.
+Corner radii from `core.radius`: `nav` 6px, `button` 7px, `loginItem` 8px, `field` 6px, `loginField` 8px.
 
 ## Components
 
@@ -250,22 +135,18 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The viewport was 1169 CSS pixels wide, not 1440, and there is no 390-wide reading. Do not treat a token as a desktop or phone layout measurement.
-
-`preview_snapshot` produced no frames, so this package has no screenshots and no crops. The catalog cover is [icon.png](icon.png), the site favicon, because the catalog requires a cover file. The coverage table says so. Do not infer a layout from the token names.
-
-Marketing black and login blue are both primary actions, on different surfaces. `a.px-common-btn` is `rgba(0, 0, 0, 0.84)`. The login `.btn--next` is `rgb(51, 111, 255)`, which matches `--v2--color-bg-brand-normal` (`#336fff`). The older `--color--brand` (`#565dff`) and marketing `--action` (`#006dff`) were declared and were not the computed button fills.
-
-The focused email field used a 2px `rgb(31, 97, 255)` border. The token `--v2--color-border-input-focus` resolves to `#336fff`. Both are recorded. The focus colour on the field is the computed one.
-
-Font weight 650 appears on the product page (`.up-eyebrow`, `h2`, `.up-button`). That is the computed value. It is not a standard CSS weight name.
-
-No reduced-motion pass was run. The login stylesheets that the CSSOM could read declared no `prefers-reduced-motion` rules. That is not proof the product ignores the setting.
+- Status colours (`--success`, `--warning`, `--danger`, `--info`) are declared on `:root` and were not seen painted on a public success, warning, or error control.
+- `--font-family-sans-serif` is Poppins. The painted UI is Figtree. Use `core.font.family.sans`.
+- The login email field's first paint in a fresh document was already focused (2px blue border). The resting 1px border was read after blur.
+- Get started hover is a screenshot only. The hover fill was not read.
+- Pressed, disabled, loading, and error states were not read.
+- Screenshots are 256-colour PNGs after quantize. Read colours from tokens.json.
+- Community file pages and plugin details are public demos of other people's published files. They are not the signed-in editor.
 
 ### Do and don't (from README.md)
 
-1. **Use the black marketing button on the marketing site.** The home hero `a.px-common-btn` is 14px Figtree at weight 600, padding 10px 20px, radius 8px, fill `rgba(0, 0, 0, 0.84)`, white text, and an inset white hairline. The product page uses a different primary: `rgb(32, 34, 44)`, radius 9px, height 50px.
-2. **Use blue only where the login card uses blue.** Submit is `#336fff` with white text, radius 8px, height 40px. Links such as "Sign up for free" are `#1f61ff` with no fill.
-3. **Keep the login card on a white surface with the measured shadow.** The card is 474px wide, radius 12px, padding 50px 58px, shadow `rgba(31, 19, 135, 0.04) 0px 8px 16px 0px, rgba(17, 30, 58, 0.2) 0px 0px 2px 0px`.
-4. **Do not invent a dark theme.** These pages did not show one. Host dark preference did not flip them.
-5. **Do not ship a screen from this package as if it were the signed-in editor.** The editor, files, and component library were not opened.
+- **Paint the page white and the text black.** Body background is `#ffffff` and body colour is `#000000`. [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- **Use the near-black button for the primary action.** Get started is `#202125` with white text, radius 7px, height 34px. [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- **Keep the blue brand for links and focus.** `#336fff` is the declared brand. Login focus is `rgb(31, 97, 255)` at 2px. [screenshots/login-light-default.png](screenshots/login-light-default.png).
+- **Set labels in Figtree.** Header links are Figtree 14/500. [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- **Stop at the login wall.** Log in and Get started open `/user/login/`. Do not treat that page as the editor. [screenshots/login-light-default.png](screenshots/login-light-default.png).

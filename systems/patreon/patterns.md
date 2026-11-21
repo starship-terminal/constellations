@@ -1,35 +1,36 @@
-# Patterns
+# Patreon patterns
 
-Signed-out public pages, measured 2026-11-19. Screenshots were not saved: the preview browser did not produce frames, and headless Playwright hit a Cloudflare challenge.
+How the public pages combine. Values are tokens from [tokens.json](tokens.json). Component sizes are in [components.md](components.md). The control map is [site-tree.md](site-tree.md).
 
-## Marketing header
+## Marketing hero
 
-On `/`, `/pricing` and `/product/paid-membership` the header is transparent over a pale backdrop of `rgba(255, 255, 255, 0.6)`. At 1440 it holds Creators, Features, Pricing, Resources, Updates, the wordmark, Find a Creator, Log in and Get Started. Nav buttons are 47px tall, radius 30px, white text. Log in is a white outline pill. Get Started is a white fill with black text.
+The pricing and homepage hero is a full-bleed photograph with a white PATREON wordmark, a large white headline, and a header of text links plus pills. Creators, Features, Pricing, and Resources are text. Updates is an outlined pill. Find a Creator is a search pill. Log in is an outlined pill. Get Started is a white pill, about 114×47, radius 30px, Oracle 13.5px weight 350. The page ground behind the photo is photography, not `light.page`. See [pricing-light-default](screenshots/pricing-light-default.png) and [marketing-light-full](screenshots/marketing-light-full.png).
 
-At 390 the same header is 115px tall and shows Open menu, the wordmark, Log in and Get Started. The pills grow to radius 40px and 16px type.
+## Explore
 
-## Hero
+A narrow left rail (logo, search, chats, notifications, create, more) sits on `light.page` (#f9f9f9). The main column is a white card. Search is a long pill with placeholder "Search creators or topics". Topic chips are pills; selected All is black with white text. Creator cards are photo tiles with a name and a category line. Topic tiles below are coloured photography cards, about 243×84, radius 12px. See [explore-light-default](screenshots/explore-light-default.png).
 
-The home h1 computed to 187.5px, weight 250, line-height 183.75px, letter-spacing -11.25px, white, at a 7.5px root. The heading's text nodes were empty in the DOM because the words are split across animated spans. Section bands behind the page computed to `rgb(148, 187, 255)`, `rgb(149, 173, 203)` and `rgb(113, 160, 255)`.
+## Creator membership
 
-At 390 the h1 computed to 64px, line-height 62.72px, letter-spacing -3.84px. `--font-size-h1` at that width was `6.4rem` with a 10px root.
+The creator header keeps the app rail and adds the creator avatar, name, tabs, a search icon, Join for free, and Log in. Tabs are text with an underline on the current tab. Join for free is a filled pill, 116×40, radius 9999px, fill rgb(175, 2, 16), recorded as `light.accent`. Tier cards use the same fill at radius 8px for Join. The annual switch was visible and not toggled. See [creator-membership-light-default](screenshots/creator-membership-light-default.png).
 
-## Pricing
+## Help Center
 
-`/pricing` title: "Patreon Pricing Plans — Patreon". H1 "Start Your Patreon for Free" uses the same 187.5px / 250 / -11.25px display style, white. A later h2 "Patreon pricing" is 30px, weight 400, line-height 45px, black. The "10%" figure is 72px, weight 250, letter-spacing -2.88px. The in-page Get started is a black pill, 47px, radius 30px, white text.
+`support.patreon.com` is a separate Zendesk page, not the app rail. Its search was focused. The word "payout" was typed and not submitted. Log in on that host goes to the Patreon login wall and was not followed. See [help-light-search-focused](screenshots/help-light-search-focused.png).
 
-## Product page
+## Phone sheet
 
-`/product/paid-membership` uses the same header and the same display h1 ("Fans get more You get paid", white, 187.5px, weight 250). Section fills match the home bands.
+At 390 the marketing header collapses to the wordmark and Open menu. The sheet is a black panel: Creators, Features, Pricing, Resources, an outlined Updates pill, a full-width white Get Started pill, and store badges. Store badges were not clicked. See [mobile-marketing-light-nav-sheet](screenshots/mobile-marketing-light-nav-sheet.png).
 
-## Login wall
+The logged-out app's phone navigation sheet was mapped in [site-tree.md](site-tree.md) and is not in this screenshot set. Later loads of `/` served marketing.
 
-`/login` is a different app. Title: "Log in or sign up | Patreon". Page background `rgb(2, 2, 2)`, text white, font ABC Oracle Plus Variable, root font-size 16px. The card is a 400px column: h1 26px / 500, two SSO buttons, an Email field, Continue, and "Need help signing in?". This is the signup wall. It was measured and not submitted.
+## Coverage
 
-## Footer
-
-At 390 the site footer is black, padding 48px 34px, white links. Column links are 24px / 300. Social links are 18px / 350. The footer also prints a postal address. That address is not copied here.
-
-## Gaps
-
-App shell after login, forms with validation, empty, loading and error states, destructive confirmation, search results, tables and onboarding sit behind the signup wall or were not rendered. No dark marketing theme was switched on.
+| Pattern | Screens | Missing |
+|---|---|---|
+| Marketing hero | [pricing-light-default](screenshots/pricing-light-default.png), [marketing-light-full](screenshots/marketing-light-full.png) | Creators hover menu screenshot |
+| Explore | [explore-light-default](screenshots/explore-light-default.png), [explore-light-search-typed](screenshots/explore-light-search-typed.png) | Confirmed topic filter |
+| Creator membership | [creator-membership-light-default](screenshots/creator-membership-light-default.png) | Checkout after Join |
+| Help Center | [help-light-default](screenshots/help-light-default.png), [help-light-search-focused](screenshots/help-light-search-focused.png) | Submitted search, contact form |
+| Phone marketing sheet | [mobile-marketing-light-nav-sheet](screenshots/mobile-marketing-light-nav-sheet.png) | App phone sheet, dark appearance |
+| Walls | [site-tree.md](site-tree.md) | Login and signup screenshots, by design |

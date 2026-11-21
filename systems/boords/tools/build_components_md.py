@@ -315,30 +315,6 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-def _alpha(c):
-    """The alpha of a computed colour (rgba(), color(srgb ... / a) or transparent); 1 when opaque."""
-    c = (c or "").strip()
-    if c == "transparent":
-        return 0.0
-    m = re.search(r"rgba\([^)]*?,\s*([\d.]+)\s*\)|color\([^)]*/\s*([\d.]+)\s*\)", c)
-    return float(m.group(1) or m.group(2)) if m else 1.0
-
-
-def _painting_layers(v):
-    """The box-shadow layers that paint something: a visible colour and some offset, blur or
-    spread. A zero-size layer (Tailwind's ring placeholders) paints nothing, whatever its colour."""
-    out = set()
-    for layer in re.split(r",(?![^(]*\))", v or ""):
-        layer = layer.strip()
-        if not layer or layer == "none":
-            continue
-        cm = re.search(r"rgba?\([^)]*\)|color\([^)]*\)|#[0-9a-fA-F]{3,8}|transparent", layer)
-        lengths = [float(x) for x in re.findall(r"(-?[\d.]+)px", layer)]
-        if (cm and _alpha(cm.group(0)) > 0) and any(x != 0 for x in lengths):
-            out.add(layer)
-    return out
-
-
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
@@ -346,14 +322,12 @@ for k, c in C.items():
         continue
     s = st["style"]
     base = next((v["style"] for v in c["states"].values() if "style" in v), s)
-    # a transparent outline (a focus-visible reset that keeps a 2px slot) is not a ring
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and _alpha(s["outlineColor"]) > 0
+    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     # A ring painted on a child layer instead of the wrapper: offer buttons
     # draw 1px dotted outlines on their inner anchor while the wrapper's own
     # outline stays none. Those states must count as ringed too.
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline") and _alpha(re.sub(r"^[\d.]+px \w+ | offset .*$", "", n["outline"])) > 0), None)
-    # a ring drawn as a shadow: a layer that paints at focus and did not at rest
-    shadow = bool(_painting_layers(s["boxShadow"]) - _painting_layers(base["boxShadow"]))
+    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
+    shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
         for d in ("Top", "Right", "Bottom", "Left")

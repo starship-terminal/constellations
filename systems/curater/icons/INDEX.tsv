@@ -1,0 +1,11 @@
+role	file	note
+logo	not extracted	shown in screenshots only; docs/RIGHTS.md
+nav-home	not extracted	icon button, 48px desktop / 40px phone
+nav-feed	not extracted	icon button
+nav-taste	not extracted	icon button
+nav-notifications	not extracted	opens the sign-in dialog
+nav-profile	not extracted	opens the sign-in dialog
+nav-create	not extracted	opens the sign-in dialog
+nav-settings	not extracted	opens the settings menu
+nav-search	not extracted	phone and feed search
+nav-menu	not extracted	phone sheet

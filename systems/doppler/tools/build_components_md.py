@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
-"""Build components.md for the Doppler design reference.
+"""Build components.md for the ChatGPT design reference.
 
-Reads raw/components-computed.json (every component and state, measured),
-tokens.json, screenshots/ and writes components.md next to them. Every value
-is a cell of the measurement file, condensed: colours are hex followed by the
-palette token whose value matches, the font family is named once per value,
-and a state row shows only what differs from the first state. Adapted from
-the Calendly kit's builder, which read the JSON directly.
+Reads raw/components-computed.json (every component and state, measured in both themes),
+raw/layout.json, tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to
+them. Every value is a cell of the measurement file, condensed: colours are hex followed by the token
+in the matching theme's set whose value is the same, the font family is named once per value, and a
+state row shows only what differs from the first state. Dark states come first (the pages were
+captured dark); the light reading of the same state follows as `light`, `light-hover` and so on.
+Adapted from the Manus kit's builder.
 
 Deterministic: re-running it on the same inputs reproduces components.md byte for byte.
 Run from anywhere: python3 tools/build_components_md.py
 """
-import json, os, re
+import collections, json, os, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
+META = J["_meta"]
+LAYOUT = json.load(open("raw/layout.json"))
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens
@@ -33,30 +36,112 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
-BY_COLOR = {}
-for n, t in flat(T["core"]):
-    if t["$type"] == "color":
-        BY_COLOR.setdefault(t["$value"], n)
+THEMES = [t for t in ("dark", "light") if t in T]  # a light-only product has no dark set
+BY_COLOR = {"dark": {}, "light": {}}
+
+
+def resolved(theme, v, depth=0):
+    while isinstance(v, str) and v.startswith("{") and depth < 12:
+        node = T[theme]
+        for k in v[1:-1].split("."):
+            node = node.get(k) if isinstance(node, dict) else None
+        if node is None:
+            node = T["core"]
+            for k in v[1:-1].split("."):
+                node = node.get(k) if isinstance(node, dict) else None
+        v, depth = (node or {}).get("$value"), depth + 1
+    return v
+
+
+for theme in THEMES:
+    for n, t in flat(T[theme]):
+        if t["$type"] == "color" and not n.startswith("chatTheme.") or n.startswith("chatTheme.blue."):
+            v = resolved(theme, t["$value"])
+            if not isinstance(v, str) or v.startswith("{"):
+                continue
+            # computed styles round alpha to two places (#ffffff0a reads back as rgba(255, 255, 255, 0.04))
+            key = re.sub(r"(\d+\.\d+)\)", lambda m: f"{round(float(m.group(1)), 2):g})", v)
+            BY_COLOR[theme].setdefault(key, []).append(n)
+
+# Which token a colour is named after depends on what it paints: a fill prefers the interactive and
+# surface names, a border the border names, text the text names. The captured accent is blue.
+PREFER = {
+    "bg": ["interactive.bg-secondary-hover", "interactive.bg-secondary-selected", "surface.surface-hover", "bg.", "surface.", "component.", "interactive.bg-", "theme.", "accent.", "chatTheme.blue.", "border.", "text.", "icon."],
+    "border": ["border.", "interactive.border-", "interactive.focus-ring", "surface.", "bg.", "text."],
+    "text": ["text.", "icon.", "interactive.label-", "theme.", "accent.", "chatTheme.blue.", "surface.", "bg."],
+    "icon": ["icon.", "text.", "interactive.icon-", "theme.", "accent."],
+}
+
+
+def pick(names, role):
+    order = PREFER.get(role, PREFER["bg"])
+    def rank(n):
+        for i, pre in enumerate(order):
+            if n == pre or (pre.endswith((".", "-")) and n.startswith(pre)):
+                return (i, len(n), n)
+        return (len(order), len(n), n)
+    return sorted(names, key=rank)[0]
+
+THEME = [THEMES[0]]  # the theme the colour() helper looks tokens up in; set per state
 
 
 def norm(r, g, b, a=None):
     if a is None or float(a) == 1:
         return "#%02x%02x%02x" % (int(r), int(g), int(b))
-    return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
+    return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), round(float(a), 2))
 
 
-def colour(c, tokens=True):
-    """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)'."""
+def _gam(x):
+    return 12.92 * x if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055
+
+
+def _clamp255(v):
+    return round(min(1, max(0, v)) * 255)
+
+
+def oklab_rgb(L, a, b):
+    l, m, s = ((L + 0.3963377774 * a + 0.2158037573 * b) ** 3, (L - 0.1055613458 * a - 0.0638541728 * b) ** 3, (L - 0.0894841775 * a - 1.291485548 * b) ** 3)
+    return [_clamp255(_gam(v)) for v in (4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s)]
+
+
+def lab_rgb(L, a, b):
+    fy = (L + 16) / 116
+    fx, fz = fy + a / 500, fy - b / 200
+    e, k = 216 / 24389, 24389 / 27
+    finv = lambda t: t ** 3 if t ** 3 > e else (116 * t - 16) / k
+    X, Y, Z = finv(fx) * 0.3457 / 0.3585, (fy ** 3 if L > k * e else L / k), finv(fz) * (1 - 0.3457 - 0.3585) / 0.3585
+    x = 0.955473421488075 * X - 0.02309845494876471 * Y + 0.06325924320057072 * Z
+    y = -0.0283697093338637 * X + 1.0099953980813041 * Y + 0.021041441191917323 * Z
+    z = 0.012314014864481998 * X - 0.020507649298898964 * Y + 1.330365926242124 * Z
+    return [_clamp255(_gam(v)) for v in (3.2409699419 * x - 1.5373831776 * y - 0.4986107603 * z, -0.9692436363 * x + 1.8759675015 * y + 0.0415550574 * z, 0.0556300797 * x - 0.2039769589 * y + 1.0569715142 * z)]
+
+
+def unlab(c):
+    """Tailwind 4 writes opacity modifiers as color-mix, which Chromium computes as lab() or oklab();
+    both go back to rgb() here so they read like every other colour."""
+    def f(m):
+        L = float(m.group(2).rstrip("%")) * (0.01 if m.group(2).endswith("%") else 1)
+        r, g, b = (oklab_rgb if m.group(1) else lab_rgb)(L, float(m.group(3)), float(m.group(4)))
+        return f"rgba({r}, {g}, {b}, {m.group(5)})" if m.group(5) else f"rgb({r}, {g}, {b})"
+    return re.sub(r"(ok)?lab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: / ([\d.]+))?\)", f, c)
+
+
+def full(r):
+    """rounded-full is calc(infinity * 1px), which computes to 33554400px."""
+    return re.sub(r"[\d.e+]+px", lambda m: "full" if float(m.group(0)[:-2]) >= 10000 else m.group(0), r)
+
+
+def colour(c, tokens=True, role="bg"):
+    """rgb()/rgba()/color(srgb)/lab()/oklab() -> '#hex `token`' or 'rgba(...)'."""
     def label(v):
-        if v == "rgba(0, 0, 0, 0)":
+        if re.fullmatch(r"rgba\(\d+, \d+, \d+, 0\)", v):
             return "transparent"
-        tok = BY_COLOR.get(v) if tokens else None
-        return f"{v} `{tok}`" if tok else v
+        names = BY_COLOR[THEME[0]].get(v) if tokens else None
+        return f"{v} `{pick(names, role)}`" if names else v
 
+    c = unlab(c)
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
-    c = re.sub(r"rgb\((\d+)\s+(\d+)\s+(\d+)\s*/\s*var\([^)]*\)\)", lambda m: label(norm(*m.group(1, 2, 3))), c)
-    c = re.sub(r"rgb\((\d+)\s+(\d+)\s+(\d+)\)", lambda m: label(norm(*m.group(1, 2, 3))), c)
     return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
 
 
@@ -69,12 +154,12 @@ def sides(t, r, b, l):
 
 
 def fam(f):
-    return f.split(",")[0].replace('"', "").replace("__", "").split("_")[0] or f.split(",")[0].replace('"', "")
+    first = f.split(",")[0].replace('"', "").strip()
+    return {"-apple-system-body": "System", "-apple-system": "System", "ui-sans-serif": "System", "ui-monospace": "Mono", "OpenAI Sans": "OpenAI Sans"}.get(first, first)
 
 
 def num(x):
-    x = str(x)
-    return re.sub(r"(\d+\.\d\d)\d+", r"\1", x)
+    return re.sub(r"(\d+\.\d\d)\d+", r"\1", str(x))
 
 
 def font(fz, lh, fw, f):
@@ -92,12 +177,12 @@ def props(v):
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'])}")
+            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], role='border')}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
         o["border"] = bds[0] if len(set(bds)) == 1 else "; ".join(f"{'TRBL'[i]}: {b}" for i, b in enumerate(bds) if b != "none")
-    rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
+    rad = full(sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"]))
     if rad != "0px":
         o["radius"] = rad
     o["background"] = colour(s["backgroundColor"])
@@ -110,13 +195,15 @@ def props(v):
         layers = [x for x in layers if not x.startswith("transparent")]
         if layers:
             o["shadow"] = ", ".join(layers)
+    if s.get("backdropFilter", "none") != "none":
+        o["backdrop"] = s["backdropFilter"]
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], role='border')}, offset {s['outlineOffset']}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
-    else:
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
+    elif v.get("text"):
+        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], role='text')}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -128,7 +215,7 @@ def props(v):
                 continue
             parts.append(f"{p} {d} {tf[i % len(tf)] if tf else ''}".strip())
         if parts:
-            o["transition"] = ", ".join(parts)
+            o["transition"] = ", ".join(parts) if len(parts) < 4 else f"{parts[0].split(' ')[0]} and {len(parts) - 1} more {' '.join(parts[0].split(' ')[1:])}"
     if s["transform"] not in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
         m = re.fullmatch(r"matrix\(([\d.]+), 0, 0, ([\d.]+), (-?[\d.]+), (-?[\d.]+)\)", s["transform"])
         if m and m.group(1) == m.group(2) and m.group(3) == m.group(4) == "0":
@@ -139,74 +226,46 @@ def props(v):
             o["transform"] = s["transform"]
     if s["opacity"] != "1":
         o["opacity"] = s["opacity"]
-    if v.get("icon") and v["icon"]["w"] > 0 and v["icon"]["w"] < 120:
-        o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
+    ic = v.get("icon")
+    if ic and ic.get("w", 0) > 0 and ic["w"] < 120:
+        o["icon"] = f"{num(ic['w'])} x {num(ic['h'])}, {colour(ic.get('color') or ic.get('stroke') or ic.get('fill'), role='icon')}"
     if v.get("placeholder"):
-        o["placeholder"] = colour(v["placeholder"]["color"])
-    # Painted layers that carry a state but not the root box: the element's own
-    # ::before/::after always, and descendant paint only when the root paints
-    # nothing (the case "Child layers" reports). A chip fill that lives on an
-    # inner span shows up here.
-    bits = []
-    for pe in ("::before", "::after"):
-        if v.get(pe):
-            p = v[pe]
-            bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
-    if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
-        for p in v.get("paint", [])[:6]:
-            bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("bgImage") and "image", p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
-    if bits:
-        o["layers"] = "; ".join(bits)[:400]
+        o["placeholder"] = colour(v["placeholder"]["color"], role="text")
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
-
-
-def focus_not_captured(v):
-    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
-    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
-    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
-    of every table and tally and listed as "focus could not be captured"."""
-    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
-
-
-def measured(v):
-    return "style" in v and not focus_not_captured(v)
-
-
-def visible(colour_value):
-    """False for a fully transparent colour: a `2px solid transparent` outline draws nothing."""
-    return not re.search(r"rgba\(\d+, \d+, \d+, 0\)|transparent|/ 0\)", colour_value)
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
-    # A state whose capture failed (e.g. via: "focus failed" — the element would
-    # not hold a real keyboard focus) is not a captured state: it is reported
-    # separately so a failed attempt can never read as a measured absence of a
-    # focus ring.
-    states = [s for s in c["states"] if measured(c["states"][s])]
-    if not states:
-        return [], states
-    base = props(c["states"][states[0]])
-    rows = [(states[0], base)]
-    same = []
-    for st in states[1:]:
-        p = props(c["states"][st])
-        diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
-        for k in ORDER:
-            if k in base and k not in p:
-                diff[k] = "none"
-        if not diff:
-            same.append(st)
+    """Dark states first, then light. Each theme has its own base row (the first state of that
+    theme), later rows of the same theme list only what changed."""
+    rows = []
+    for theme in ("dark", "light"):
+        states = [s for s, v in c["states"].items() if "style" in v and v.get("theme") == theme]
+        if not states:
             continue
-        if rows[-1][0] != states[0] and rows[-1][1] == diff:
-            rows[-1] = (rows[-1][0] + ", " + st, diff)
-        else:
-            rows.append((st, diff))
-    if same:
-        rows[0] = (f"{states[0]} (same: {', '.join(same)})", base)
-    return rows, states
+        THEME[0] = theme
+        base = props(c["states"][states[0]])
+        trows = [(states[0], base)]
+        same = []
+        for st in states[1:]:
+            p = props(c["states"][st])
+            diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
+            for k in ORDER:
+                if k in base and k not in p:
+                    diff[k] = "none"
+            if not diff:
+                same.append(st)
+                continue
+            if trows[-1][0] != states[0] and trows[-1][1] == diff:
+                trows[-1] = (trows[-1][0] + ", " + st, diff)
+            else:
+                trows.append((st, diff))
+        if same:
+            trows[0] = (f"{states[0]} (same: {', '.join(same)})", base)
+        rows += trows
+    return rows
 
 
 def fmt(d):
@@ -214,23 +273,22 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if measured(s)), None)
+    st = next((s for s in c["states"].values() if "style" in s and s.get("theme") == "dark"), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
     if s["backgroundColor"] != "rgba(0, 0, 0, 0)" or s["boxShadow"] != "none" or s["borderTopWidth"] != "0px" or s["backgroundImage"] != "none":
         return None
+    THEME[0] = "dark"
     out = []
     for p in st["paint"][:3]:
-        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], re.sub(r"\.0+(?=x|px|$)", "", p["size"])]
+        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
         if p.get("bg"):
             bits.append("background " + colour(p["bg"]))
-        if p.get("bgImage"):
-            bits.append("image " + colour(p["bgImage"])[:90])
         if p.get("border"):
-            bits.append("border " + colour(p["border"].split(" | ")[0][2:]))
+            bits.append("border " + colour(p["border"].split(" | ")[0][2:], role="border"))
         if p.get("radius"):
-            bits.append("radius " + p["radius"])
+            bits.append("radius " + full(p["radius"]))
         if p.get("shadow"):
             bits.append("shadow " + colour(p["shadow"]))
         out.append(" ".join(bits))
@@ -239,44 +297,36 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
-PAGE_NAME = {"home": "home", "platform": "platform secrets-manager", "pricing": "pricing",
-             "demo": "demo request", "integrations": "integrations", "customers": "customers",
-             "blog": "blog", "agents": "agents", "mobile": "home"}
-
 GROUP_INTRO = {
-    "Shell and navigation": "The floating marketing header on the warm-black field: the 72px bar inset 14px from the edge, the Platform mega-menu trigger and panel, plain links, the bordered Get-Demo and Sign-In actions and the fluorescent-green Start-for-Free pill.",
-    "Home hero": "The 48px Doppler Repro hero with its lilac-to-carmine gradient line, the silver lede and the bordered Start-for-Free button.",
-    "Home": "Sections of the home page: light-purple section headings and the 4%-veil interactive cards.",
-    "Pricing": "The pricing surface: the seats slider and $100,000 spend field, the three plan cards with their bordered CTAs, the MOST POPULAR badge and the FAQ accordion.",
-    "Demo request": "The 'See Doppler in action' panel: a real form, focused and sample-filled then deleted, never submitted — plus the green-check benefit list.",
-    "Integrations": "The integrations directory: search field, category filter chips and the tile grid.",
-    "Customers": "The customers page: industry filter chips and case-study cards.",
-    "Blog": "The blog index: category chips (selected ALL at rest), post cards, Read-More links and round pagination.",
-    "Agents": "The 'Run AI coding agents with Doppler' landing: the Pick-Your-Tool scroll link, interactive cards and the only real code element on the surface — the orange inline span.text-code chip.",
-    "Footer": "The marketing footer: a warm-black sheet with 20px top corners, link columns, the bordered 'Doppler' wordmark tile and the Cookie Preferences button.",
-    "Mobile (390 wide)": "The same dark surface at phone width: the 72px header, the fixed full-height menu sheet and the stacked hero.",
+    "Sidebar": "The 260px sidebar every page shares (`#stage-slideover-sidebar`): a 52px header with the wordmark, search and close, the nav rows (New chat, Images, Library, Scheduled, Plugins, Codex, More), then three collapsible sections, Pinned, Projects and Chats, and the account row with its Upgrade pill pinned at the bottom. Every row is a `.__menu-item`, 36 tall with radius 10, whose fills come from inline `--menu-item-*` variables. Closing it leaves the 52px tiny rail.",
+    "Top bar": "The 52px page header: on the home and a project, the Chat / Work segmented toggle in the middle and Upgrade and the temporary-chat button at the end; in a thread, Upgrade, Share and the conversation options.",
+    "Home": "The new-chat page: one heading centred over the composer, then three suggestion rows.",
+    "Composer": "The composer shared by the home, a thread, a project and Images: a 768 wide pill (radius 28) with the + button, the ProseMirror field, the Think chip, dictation and the voice button, which becomes send once there is text. On a phone it takes two rows.",
+    "Thread": "A conversation: the user bubble in the accent colour, the \"Worked for\" disclosure, the assistant's markdown (paragraphs, headings, strong, tables, citation pills), widgets, and the actions under a turn.",
+    "Menus": "The popovers: the composer's + menu, the chat row menu, the user menu, the accent listbox and the phone's model menu. All are `.popover` on #353535 in dark (white in light), radius 20 (16 for the listbox), with 36 tall `.__menu-item` rows.",
+    "Search": "The search dialog the sidebar's search button opens: an input row and recent chats.",
+    "Settings": "The settings dialog: a close button, a search field and a left nav of tabs, then the General pane of rows with select buttons and a toggle.",
+    "Library": "The file library: a title with filter, grid and list buttons, search and the New button, pill tabs, then a list of files with a type tile or thumbnail and the last activity.",
+    "Images": "The Images page: a title, the composer, Trending and Templates tabs, and tall template cards.",
+    "Plugins": "The plugin gallery: a title and subtitle, search and an add button, then sections of two-column plugin rows.",
+    "Project": "A project page: the icon and title, Share and details, the composer, Chats and Sources tabs, and the project's chats with a preview line and date.",
+    "Mobile": "The same app at 390 wide: the header with the menu button and model switcher, the two-row composer, the drawer and the user bubble.",
 }
 
-SHOTS = [
-    ("home", "Home", "/"),
-    ("platform", "Platform: secrets manager", "/platform/secrets-manager"),
-    ("pricing", "Pricing", "/pricing"),
-    ("demo", "Demo request", "/demo"),
-    ("agents", "Doppler for Agents", "/agents"),
-    ("integrations", "Integrations", "/integrations"),
-    ("customers", "Customers", "/customers"),
-    ("blog", "Blog", "/blog"),
-    ("about", "About", "/about"),
+PAGE_DESC = [
+    ("home", "Home. The heading, composer and suggestion rows. Captured at rest, with the + menu, a chat row's menu, the user menu and the search dialog open, with a line typed in the composer, and with the sidebar collapsed.", "/"),
+    ("thread", "A thread. Captured at the table answer, at the user turn with the \"Worked for\" disclosure and the map widget, and at the bottom.", "/c/<id>"),
+    ("library", "Library, list view, Suggested tab.", "/library"),
+    ("images", "Images, Trending tab.", "/images"),
+    ("plugins", "Plugins.", "/plugins"),
+    ("project", "A project page (Research), Chats tab.", "/g/<project>/project"),
+    ("settings", "Settings dialog, General pane, at rest and with the accent colour listbox open.", "/#settings"),
 ]
-MOBILE = [
-    ("mobile-home", "Home, phone", "/"),
-    ("mobile-pricing", "Pricing, phone", "/pricing"),
+MOBILE_DESC = [
+    ("mobile-home", "Home at 390, and the drawer.", "/"),
+    ("mobile-thread", "The thread at 390, and the model menu.", "/c/<id>"),
 ]
 
-# Entries whose committed reading is not the component the name says (README: What to distrust).
-WRONG = {
-    "hero-cta": "The reading is an outlined \"Start for Free\" link (transparent fill, 1px warm-white border), not the green hero CTA: the selector took the last match.",
-}
 
 L = []
 
@@ -291,35 +341,37 @@ shots = sorted(p.name for p in Path("screenshots").glob("*.png"))
 def links(prefix):
     out = []
     for f in shots:
-        m = re.fullmatch(re.escape(prefix) + r"-(?:light|dark)-(.+)\.png", f)
+        m = re.fullmatch(re.escape(prefix) + r"-(dark|light)-(.+)\.png", f)
         if m:
-            out.append(f"[{m.group(1)}](screenshots/{f})")
+            out.append(f"[{m.group(2)} ({m.group(1)})](screenshots/{f})")
+        elif re.fullmatch(re.escape(prefix) + r"-(dark|light)\.png", f):
+            out.append(f"[default ({f.split('-')[-1][:-4]})](screenshots/{f})")
     return ", ".join(out)
 
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
-icons = []
+icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n") if not r.startswith("#")][1:]
 
-W("# Doppler components")
+W("# ChatGPT components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from doppler.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. doppler.com is a Next.js/Tailwind marketing site painting one dark theme (warm-black #1c1624, Doppler Repro / Doppler Repro Mono / Inter). Nothing was signed into, booked, bought or submitted; the demo form's fields were focused and sample-filled then deleted; the dashboard at dashboard.doppler.com was never reached and the cookie-preferences banner was hidden, never answered.")
+W(f"The discovery list of every page and state captured, then one entry per component with crops of the real product, the shared values, the icon index and the Gaps. Captured from chatgpt.com on {META['read']}, signed in to the owner's account (Free plan, dark theme, blue accent), as static copies of each page state rendered in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the rendered copy in both themes. Nothing was sent, created or deleted in the account; the only changes were opening menus and closing them, typing a line into the composer and deleting it, and collapsing the sidebar and reopening it.")
 W()
-W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [patterns.md](patterns.md).")
+W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `DopplerRepro 15/15 700, #f1f0ec`, and is read from the first text node inside the component. (The served face names are mangled Next.js locals — `__DopplerRepro_a18e76` — shown here without the `__` prefix and hash.)")
-W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
-W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
+W("- A colour is its value followed by the token in [tokens.json](tokens.json) whose value in that theme is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `System 14/20 400, #ffffff`, and is read from the first text node inside the component. System is the `-apple-system-body` stack.")
+W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
+W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-dark-{state}.png`: every captured surface paints the same dark theme. Desktop shots are 1440 x 900; `-full` shots are whole pages; mobile shots are `mobile-{page}-dark-{state}.png`, 780 wide (390 at 2x). The mobile full pages exceeded the capture bound and were stitched from chunks.")
+W("Screenshots are named `{page}-{theme}-{state}.png`. Desktop shots are 1440 x 900 at 2x; `-full` shots are whole pages at 2x, kept for the home, Library and Plugins; mobile shots are `mobile-{page}-{theme}-{state}.png`, 390 x 844 at 2x. Every state exists in both themes.")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
-for p, desc, url in SHOTS + MOBILE:
+for p, desc, url in PAGE_DESC + MOBILE_DESC:
     W(f"| {desc} | `{url}` | {links(p)} |")
 W()
 W("### Overlays and transient states")
@@ -327,216 +379,160 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Platform mega-menu", "every marketing page", "the nav trigger's own hover", "[home-dark-menu](screenshots/home-dark-menu.png), [nav-dropdown](#nav-dropdown), [menu-link](#menu-link)"),
-    ("Mobile menu sheet", "home, phone width", "the hamburger button's own toggle", "[mobile-home-dark-menu](screenshots/mobile-home-dark-menu.png), [m-menu-open](#mobile-menu-open)"),
-    ("Cookie-preferences banner", "every page", "hidden, never answered (no consent button was ever clicked, no consent POST sent)", "hidden before every shot and reading"),
-    ("Pricing FAQ accordion", "/pricing", "a row is open by default; no row was toggled for the open state", "[faq-open](#faq-accordion-open)"),
-    ("Demo form", "/demo", "fields were focused and sample-filled then deleted — the Choose-a-Time submit was never pressed", "[demo-field](#text-field), [demo-submit](#submit-button)"),
-    ("The product (dashboard)", "dashboard.doppler.com", "the secrets workspace lives behind sign-in; Start for Free / Sign In point off-site and were never followed", "boundary; see Gaps"),
+    ("Composer + menu", "home", "the composer's + button", "[home-dark-plus-menu](screenshots/home-dark-plus-menu.png), [plus-menu](#plus-menu)"),
+    ("Composer with text", "home", "a line typed, then deleted", "[home-dark-composer-typed](screenshots/home-dark-composer-typed.png), [send-button](#send-button)"),
+    ("Chat row menu", "home", "the options button on a hovered history row", "[home-dark-chat-menu](screenshots/home-dark-chat-menu.png), [chat-menu](#chat-menu)"),
+    ("User menu", "home", "the account row", "[home-dark-user-menu](screenshots/home-dark-user-menu.png), [user-menu](#user-menu)"),
+    ("Search dialog", "home", "the sidebar's search button", "[home-dark-search](screenshots/home-dark-search.png), [search-dialog](#search-dialog)"),
+    ("Collapsed sidebar", "home", "the close-sidebar button, then reopened", "[home-dark-sidebar-collapsed](screenshots/home-dark-sidebar-collapsed.png), [sidebar-rail](#sidebar-rail)"),
+    ("Settings dialog", "home", "Settings in the user menu; closed with Escape", "[settings-dark-general](screenshots/settings-dark-general.png), [settings-dialog](#settings-dialog)"),
+    ("Accent colour listbox", "settings", "the Accent color select; closed with Escape, nothing chosen", "[settings-dark-accent-menu](screenshots/settings-dark-accent-menu.png), [accent-menu](#accent-menu)"),
+    ("Phone drawer", "home at 390", "the menu button", "[mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png), [m-drawer](#m-drawer)"),
+    ("Phone model menu", "thread at 390", "the model switcher", "[mobile-thread-dark-model-menu](screenshots/mobile-thread-dark-model-menu.png), [model-menu](#model-menu)"),
 ]
-for r in OVER:
-    W("| " + " | ".join(r) + " |")
+for row in OVER:
+    W("| " + " | ".join(row) + " |")
 W()
 
-# ------------------------------------------------ shared values
+
+# --------------------------------------------------------------------------- shared values
+
 W("## Shared values")
 W()
-W("Values that apply across entries, from the measurement files.")
+W("Values that apply across entries, tallied from the measurement file.")
 W()
-foc, unfocused = [], []
-for k, c in C.items():
-    st = c["states"].get("focus-visible")
-    if st and focus_not_captured(st):
-        unfocused.append(f"`{k}`")
-    if not st or not measured(st):
-        continue
-    s = st["style"]
-    base = next((v["style"] for v in c["states"].values() if measured(v)), s)
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and visible(s["outlineColor"])
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline") and visible(n["outline"])), None)
-    shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
-    border = any(
-        s[f"border{d}{p}"] != base[f"border{d}{p}"]
-        for d in ("Top", "Right", "Bottom", "Left")
-        for p in ("Color", "Width", "Style")
-    )
-    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
-parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
-if with_shadow:
-    parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
-if with_border:
-    parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
-if without:
-    parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
-if unfocused:
-    parts.append(f"Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}.")
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
-W()
-W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.")
-W()
-W("**Motion.** Transitions measured on the components, by duration.")
-W()
-W("| Duration | Easing | Property | Where |")
-W("|---|---|---|---|")
-mot = {}
-for k, c in C.items():
-    for st in c["states"].values():
-        if not measured(st):
+radii = collections.Counter()
+trans = collections.Counter()
+hover_dark = collections.Counter()
+hover_light = collections.Counter()
+focus = {"dark": collections.Counter(), "light": collections.Counter()}
+focus_n = {"dark": 0, "light": 0}
+for cid, c in C.items():
+    for sname, s in c["states"].items():
+        if "style" not in s:
             continue
-        s = st["style"]
-        if s["transitionDuration"] in ("0s", ""):
+        st = s["style"]
+        r = full(st["borderTopLeftRadius"])
+        if r != "0px" and s["rect"]["w"] > 4:
+            radii[r] += 1
+        if st["transitionDuration"] not in ("0s", ""):
+            # the first duration and the first timing function; a cubic-bezier() carries commas of its own
+            tf = re.findall(r"cubic-bezier\([^)]*\)|steps\([^)]*\)|[a-z-]+", st["transitionTimingFunction"])
+            trans[f"{st['transitionDuration'].split(',')[0].strip()} {tf[0] if tf else st['transitionTimingFunction']}"] += 1
+        if sname.endswith("focus-visible"):
+            th = s["theme"]
+            focus_n[th] += 1
+            if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0:
+                THEME[0] = th
+                focus[th][f"{st['outlineWidth']} {st['outlineStyle']} {colour(st['outlineColor'], role='border')} offset {st['outlineOffset']}"] += 1
+            else:
+                focus[th]["no ring on the element"] += 1
+for cid, c in C.items():
+    for th, base, hov, ctr in (("dark", "default", "hover", hover_dark), ("light", "light", "light-hover", hover_light)):
+        a, b = c["states"].get(base), c["states"].get(hov)
+        if not a or not b or "style" not in a or "style" not in b:
             continue
-        props_ = [x.strip() for x in s["transitionProperty"].split(",")]
-        durs = [x.strip() for x in s["transitionDuration"].split(",")]
-        tfs = re.findall(r"cubic-bezier\([^)]*\)|[a-z-]+", s["transitionTimingFunction"])
-        for i, p in enumerate(props_):
-            d = durs[i % len(durs)]
-            if d == "0s":
-                continue
-            key = (d, tfs[i % len(tfs)] if tfs else "")
-            ent = mot.setdefault(key, (set(), set()))
-            ent[0].add(p)
-            ent[1].add(k)
-        break
+        THEME[0] = th
+        if a["style"]["backgroundColor"] != b["style"]["backgroundColor"]:
+            ctr[f"{colour(a['style']['backgroundColor'])} to {colour(b['style']['backgroundColor'])}"] += 1
+        elif a["style"]["color"] != b["style"]["color"]:
+            ctr[f"text {colour(a['style']['color'], role='text')} to {colour(b['style']['color'], role='text')}"] += 1
+        elif a["style"]["opacity"] != b["style"]["opacity"]:
+            ctr[f"opacity {a['style']['opacity']} to {b['style']['opacity']}"] += 1
+        else:
+            ctr["no change on the element"] += 1
 
 
-def dur_ms(d):
-    return float(d[:-1]) * 1000 if d.endswith("s") and not d.endswith("ms") else float(d[:-2])
+def top(ctr, n):
+    return ", ".join(f"{k} ({v})" for k, v in ctr.most_common(n))
 
 
-for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
-    W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
+W(f"**Radius.** {top(radii, 10)}. Rows and settings tabs are 10, controls (icon buttons, Share, the header Upgrade, select buttons) 8, menu items 12, popovers 20, dialogs and the accent listbox 16, the composer 28 (26 on a phone), the user bubble 22. Pills, round buttons, the mode toggle, tabs, search fields and the toggle track are fully round (`rounded-full`, read as `full`).")
 W()
-W("**Card shapes.** Default-state values; the entries hold the states.")
+W(f"**Hover.** ChatGPT hovers with a translucent fill. Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. The row fill is `interactive.bg-secondary-hover` (white at 10% in dark, black at 5% in light) and the current page or chat rests on `interactive.bg-secondary-selected`, the same value, so a current row does not change on hover. Icon buttons in the sidebar use `surface.surface-hover` (white at 15%, black at 7%). Menu items show no hover here: Radix highlights them with `data-highlighted`, which its script sets, so only the captured highlighted row is filled.")
 W()
-W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
-W("|---|---|---|---|---|---|---|")
-# The card-like components compared in one table — all .interactive-card tiles
-# plus the demo form panel.
-for k in ["feature-card", "plan-card", "post-card", "integration-card", "case-card", "agents-card", "platform-card", "demo-card"]:
-    c = C.get(k)
-    if not c or c.get("missing"):
-        continue
-    st = next((s for s in c["states"].values() if measured(s)), None)
-    if st is None:
-        continue
-    p = props(st)
-    W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
+W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 6)}. In light: {top(focus['light'], 6)}. With scripts gone the `keyboard-focused:` rings ChatGPT draws do not switch on, so most focused states show the browser's own outline (`auto`, the platform blue), and a few controls show their own ring: the settings toggle a 2px gap and a 4px ring in `interactive.border-focus`, the project tabs a 3px ring in the text colour, the settings tabs a 1px outline offset 2.")
+W()
+W(f"**Motion.** {top(trans, 6)}. Nearly every transition is Tailwind's `transition-colors` at 150 ms on cubic-bezier(0.4, 0, 0.2, 1) (`duration.default`, `easing.default`); larger moves (the sidebar, popovers, page transitions) use the spring curves listed under the core set's notTokenised, at 667 ms and up. The code block's full-screen view cross-fades at 220 ms ease-out.")
+W()
+W("**Layout grid.** The sidebar is 260 wide (the rail 52), the page header 52 tall, and the composer and thread share one 768 wide centred column (x 466 at 1440 with the sidebar open). Images, Plugins and the project page sit in an 800 wide `max-w-app-content` box with 16 padding; the Library uses a wider 1092 column. On a phone the sidebar is a 260 wide drawer over the page and the column is 358 wide at x 16. The numbers per page are in [raw/pages.md](raw/pages.md).")
+W()
+W("**Accent.** The account's accent (blue) paints only the user bubble (`chatTheme.blue.user-msg-bg`, #173e76 dark, #e8f3fe light), the voice and send button (`chatTheme.blue.submit-btn-bg`), the Work segment, the header Upgrade, the toggle and selection. Everything else is grey, which is why the eight accents in [tokens.json](tokens.json) differ only in the `chatTheme` group.")
 W()
 
-# ------------------------------------------------ entries
+
+# --------------------------------------------------------------------------- components
+
 W("## Components")
-groups = [g for g in GROUP_INTRO if any(c.get("group") == g for c in C.values())]
-for c in C.values():
-    if c.get("group") not in groups:
-        groups.append(c.get("group") or "Other")
-for g in groups:
-    W()
+W()
+groups = collections.OrderedDict()
+for cid, c in C.items():
+    groups.setdefault(c["group"], []).append(cid)
+for g, ids in groups.items():
     W(f"### {g}")
     W()
-    W(GROUP_INTRO.get(g, ""))
-    for k, c in C.items():
-        if c.get("group") != g:
-            continue
+    if g in GROUP_INTRO:
+        W(GROUP_INTRO[g])
         W()
+    for cid in ids:
+        c = C[cid]
         W(f"#### {c['title']}")
-        desc = (c.get("desc") or "").strip()
-        if desc and not desc.endswith((".", ")", '"')):
-            desc += "."
-        where = PAGE_NAME.get(c["page"], c["page"])
-        W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
-        if k in WRONG:
-            W()
-            W(f"**Known wrong; recapture needed.** {WRONG[k]}")
         W()
-        if c.get("missing"):
-            W("Not on the page when it was captured.")
-            continue
-        failed = [s for s, v in c["states"].items() if focus_not_captured(v)]
-        rows, states = state_rows(c)
-        if len(states) == 1 and rows:
-            W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
+        W(f"<a id=\"{cid}\"></a>`{cid}`, on {', '.join(c.get('pages') or [c['page']])}. {c.get('desc', '')}".rstrip())
+        W()
+        crops = []
+        # The usual states first, then every other state that has a crop, so no captured image is left out.
+        order = ("default", "hover", "light", "light-hover", "active", "selected", "checked", "open", "typed", "focus-visible")
+        for sname in [n for n in order if n in c["states"]] + sorted(n for n in c["states"] if n not in order):
+            s = c["states"].get(sname)
+            if s and s.get("crop") and Path(s["crop"]).exists():
+                crops.append(f'<img src="{s["crop"]}" alt="{c["title"]}, {sname}" height="{min(120, max(24, round(s["rect"]["h"])))}"> ')
+        if crops:
+            W("".join(crops))
             W()
-        elif rows:
-            W("| State | Values (later rows list only what changes from the first row) |")
+        rows = state_rows(c)
+        if rows:
+            W("| State | Values |")
             W("|---|---|")
-            for lab, d in rows:
-                W(f"| {lab} | {fmt(d)} |")
-            W()
-        if failed:
-            W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.")
+            for name, d in rows:
+                W(f"| {name} | {fmt(d)} |")
             W()
         cl = child_layers(c)
         if cl:
-            W(f"Child layers that carry the look: {cl}.")
+            W(f"Child layers: {cl}")
             W()
-        def crop_name(st):
-            p = c["states"][st].get("crop")
-            if p:
-                return os.path.basename(p)
-            # measure.mjs names every crop {component}-{state}.png even when the
-            # state's crop field was not recorded in the JSON
-            f = re.sub(r"[^a-z0-9-]+", "-", f"{k}-{st}").strip("-") + ".png"
-            return f if Path("components/crops", f).is_file() else None
+        vars_ = next((s.get("vars") for s in c["states"].values() if s.get("vars")), None)
+        if vars_:
+            W("Tokens named in its classes: " + ", ".join(f"`{k}`" for k in sorted(vars_)) + ".")
+            W()
 
-        imgs = [f"![{c['title']} {st}](components/crops/{n})" for st in states if (n := crop_name(st))]
-        W(" ".join(imgs) if imgs else "No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
+# --------------------------------------------------------------------------- icons
 
-# ------------------------------------------------ icons
+# --------------------------------------------------------------------------- icons
+
+W("## Icon index")
 W()
-W("## Icons")
+W(f"{len(icons)} icons were lifted from the sprite symbols inlined in the page copies into [icons/](icons), named by their sprite id; the ones whose id is a content hash are named from the label of the control they sit in, with the hash kept. [icons/INDEX.tsv](icons/INDEX.tsv) lists each file's sprite id, viewBox, the sizes it was drawn at, how often and where. ChatGPT draws them through `<use href=\"sprites-core-*.svg#name\">` at 20px (`icon`), 16px (`icon-sm`) or 12px, filled in currentColor. A few glyphs are inline SVG rather than sprite symbols (the Think chip's brain, the mode toggle's sparkle, the composer's voice wave) and are not in the folder. The icons are OpenAI's property, kept for reference only.")
 W()
-W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots (the Doppler asterisk wordmark, the menu-link glyphs, the integration logos and the footer badges) are the product's artwork. Declared under layoutGaps in the catalog entry.")
-W()
-W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
-W("|---|---|---|---|---|---|")
+W("| Icon | Sizes | Where it was used |")
+W("|---|---|---|")
 for r in icons:
-    f, name, h, sizes, vb, style, seen, place, label = (r + [""] * 9)[:9]
-    W(f"| [{name}](icons/{f}) | {sizes} | {vb} | {style} | {seen} | {label.replace('|', '/')[:60]} |")
+    W(f"| `{r[0].replace('.svg', '')}` | {r[3]} | {(r[6] if len(r) > 6 and r[6] else '-')[:60].replace('|', '/')} |")
 W()
 
-# ------------------------------------------------ gaps
+# --------------------------------------------------------------------------- gaps
+
 W("## Gaps")
 W()
-W("### The signed-in product")
+W("- The copies were taken in the built-in browser pane while it was hidden, so no animation frame ran: entrance animations froze where they started. Modal backdrops render undimmed (the settings dialog's blur is there, its dim is not), the phone drawer's slide-in transform was set to its end state by hand before the copy, and the collapsed sidebar kept its 260 wide container (its width is driven by script frames) with the 52 wide rail drawn inside it, so the main column did not move.")
+W("- The thread is a virtualised list. Only the last turns were rendered (turns 1 to 5 of the conversation are empty placeholders), so there is no shot of the top of a thread and no first-turn spacing.")
+W("- The map widget in the thread is an iframe, kept as a same-size dark box; its frame is real, its contents are not. Lazy template thumbnails on Images were never requested, so only the first card has its picture.")
+W("- No code block appeared in any of the account's threads. Its look in the style guide comes from the code-block CSS only (`--code-block-surface`, the fade timings), not from a measured element.")
+W("- Hover and focus on the 390 wide copies were not measured (a phone has neither). Radix menu items highlight through script, so their hover is not measured either; the + menu's highlighted row is the captured state.")
+W("- The light theme was read by removing every `dark` class from the copies (ChatGPT also puts `dark` on each message's markdown body), not by changing the account's appearance. Every colour is a var() of the two palette blocks, so the readings match what Light shows, but anything ChatGPT swaps per theme through script would not have swapped. The accent was only ever blue in the copies; the other seven come from the CSS, read with `data-chat-theme` set on the probe page.")
+W("- Not captured: a streaming answer, voice mode, the Work mode, Codex, Scheduled, the Library's grid view and folders, the image editor, a plugin's detail page, the share dialog, and the Account, Billing and Data controls settings panes, since each either sends something, spends quota or shows account details.")
 W()
-W("Doppler's product — the secrets dashboard, projects, configs, service tokens, logs, integrations management and billing — lives behind sign-in on dashboard.doppler.com and was never reached. /demo carries a real request form: its fields were focused and sample-filled then deleted, but the Choose-a-Time submit was never pressed, so no scheduling or booking surface was captured. The dashboard mock-ups in the hero and product screenshots are marketing imagery: the 'Take a self-guided tour' affordance is painted inside the image, not a DOM control.")
-W()
-W("### Pages")
-W()
-W("- **The workspace.** Every post-login surface (dashboard, project/config views, token management, audit logs) needs an account and was never reached; Start for Free and Sign In point off-site to dashboard.doppler.com/register and /login and were measured, never followed.")
-W("- **The demo flow.** /demo's form was never submitted; the scheduling step behind Choose a Time is uncaptured.")
-W("- **Long-tail pages.** The captured set covers home, /platform/secrets-manager, /pricing, /demo, /agents, /integrations, /customers, /blog and /about; the site's other public routes (platform sub-pages, use-case pages, case studies, comparisons, legal) share the same components and were not screenshotted individually.")
-W()
-W("### States")
-W()
-W("- **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing.")
-W("- **Disabled, error and loading states** were not seen on the public surface.")
-W("- **Selected chips** are captured at rest (the blog's ALL chip) — toggling a chip only filters the grid.")
-W("- **The mega-menu's pressed state** is measured with the panel held open; a real press would navigate.")
-W()
-W("### Themes")
-W()
-W("doppler.com's public surface paints one dark theme (warm-black #1c1624); the stylesheet declares no light variant on the captured routes and the probe resolved only `dark`. The tokens.json export therefore holds core + dark only.")
-W()
-W("### Fonts")
-W()
-W("- **Doppler Repro** (all headings, nav, buttons and body — a variable face that also paints the 450 display weight), **Doppler Repro Mono** (inline code chips, CLI samples) and **Inter** (long-form copy such as the demo checklist) are the served faces, all self-hosted under /_next/static/media; the style guide falls back to system sans.")
-W()
-W("### Screenshots")
-W()
-W("- Product illustrations, dashboard mock-ups, the Doppler wordmark and customer logos in the screenshots are the product's published content. The CLI/terminal samples visible in several shots are baked into that imagery — the only real code element measured is the inline `span.text-code` chip on /agents.")
-W("- Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.")
-W("- The mobile full pages were taller than the capture bound: mobile-home-dark-full is stitched from two chunks (14,000 + 2,104 px) and mobile-pricing-dark-full from three (14,000 + 14,000 + 1,712 px) — the stitch boundaries are a capture artifact, not a page feature.")
-W()
-W("### Content left out")
-W()
-W("- Marketing copy, blog posts, case studies and integration descriptions are the product's content; only frames and components were measured.")
 
-Path("components.md").write_text("\n".join(L) + "\n")
-print("components.md:", len(L), "lines")
+open("components.md", "w").write("\n".join(L) + "\n")
+print(f"components.md: {len(C)} components, {n_states} states, {n_crops} crops, {len(L)} lines")
+

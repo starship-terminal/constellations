@@ -5,75 +5,170 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PlayStation style guide</title>
 <style>
-  :root {
-    --page: #FFFFFF;
-    --ink: #1F1F1F;
-    --muted: #6B6B6B;
-    --store: #363636;
-    --link: #0068BD;
-    --action: #0070CC;
-    --hero: #092391;
-    --footer: #00439C;
-    --tab: #EBEEF0;
-    --sans: sst, Arial, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--page); color: var(--ink); font: 400 14px/21px var(--sans); letter-spacing: 0.1px; }
-  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
-  h1 { font-weight: 300; font-size: 34px; line-height: 42.5px; letter-spacing: 0.1px; margin: 0 0 8px; }
-  h2 { font-weight: 300; font-size: 22px; line-height: 27.5px; margin: 32px 0 12px; }
-  .row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .sw { width: 140px; }
-  .sw i { display: block; height: 64px; border-radius: 6px; border: 1px solid #F3F3F3; }
-  .sw span { display: block; font-size: 12px; line-height: 18px; margin-top: 6px; color: var(--muted); }
-  .hero { background: var(--hero); color: #fff; padding: 28px; }
-  .hero h2 { color: #fff; margin-top: 0; }
-  .cta { display: inline-block; color: #fff; text-decoration: none; border-radius: 28px; padding: 2px; margin: 3.5px; line-height: 21px; }
-  .signin { display: inline-block; background: var(--action); color: #fff; border-radius: 999px; padding: 0 6px; font-weight: 500; font-size: 14px; line-height: 22px; letter-spacing: 0.4px; }
-  .tab { display: inline-block; background: var(--tab); color: #000; border-radius: 24px; padding: 4px 10px; font-weight: 500; margin-right: 8px; }
-  .tab.off { background: transparent; }
-  .badge { display: inline-block; background: #000; color: #fff; font-weight: 700; font-size: 12.25px; padding: 4px; border-radius: 3px; }
-  .field { display: block; width: 422px; max-width: 100%; height: 38px; border: 1px solid #B2B2B2; border-radius: 6px; padding: 6px 6px 6px 10px; font: 400 16px/20px var(--sans); color: var(--ink); background: #fff; }
-  .next { display: inline-block; background: #757575; color: #000; border-radius: 999px; padding: 0 10px; font-weight: 700; line-height: 34px; }
-  .footer { background: var(--footer); color: #fff; padding: 28px; margin-top: 32px; }
-  code { font-size: 12px; }
+:root {
+  --color-white: #ffffff;
+  --color-ink: #121314;
+  --color-blue: #0068bd;
+  --color-blueBright: #53b1ff;
+  --color-navy: #003697;
+  --color-orange: #d53b00;
+  --color-orangeDark: #d63d00;
+  --color-gold: #fcc71d;
+  --color-green: #007a62;
+  --color-red: #c81b3a;
+  --color-pink: #cb2070;
+  --color-grey: #6b6b6b;
+  --font-family-sst: sst, Arial, sans-serif;
+  --font-family-condensed: "sst condensed", "sst", Arial, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 128px;
+  --space-13: 256px;
+  --radius-0: 2px;
+  --radius-1: 4px;
+  --radius-2: 8px;
+  --radius-3: 16px;
+  --radius-4: 32px;
+  --radiusPill: 999px;
+  --fontSize-1: 10px;
+  --fontSize-2: 12px;
+  --fontSize-3: 14px;
+  --fontSize-4: 16px;
+  --fontSize-5: 20px;
+  --fontSize-6: 25px;
+  --fontSize-7: 31px;
+  --fontSize-8: 39px;
+  --fontSize-9: 49px;
+  --fontSize-10: 61px;
+  --fontSize-11: 76px;
+  --size-header: 64px;
+  --size-signIn: 24px;
+  --size-commerce: 44px;
+  --size-addToCart: 40px;
+  --size-navLabel: 13px;
+  --typography-display: var(--font-weight-light) var(--fontSize-8)/48.75px var(--font-family-sst);
+  --typography-body: var(--font-weight-regular) var(--fontSize-4)/24px var(--font-family-sst);
+  --typography-nav: var(--font-weight-medium) 13px/16px var(--font-family-sst);
+  --typography-button: var(--font-weight-bold) var(--fontSize-4)/20px var(--font-family-sst);
+  --page: #ffffff;
+  --surface: #f5f7fa;
+  --raised: #ebeef0;
+  --card: rgba(255, 255, 255, 0.97);
+  --overlay: rgba(255, 255, 255, 0.97);
+  --scrim: rgba(245, 247, 250, 0.3);
+  --text: #000000;
+  --muted: #6b6b6b;
+  --disabled: #d2d4d9;
+  --onAccent: #ffffff;
+  --link: #0068bd;
+  --linkHover: #005daa;
+  --placeholder: rgba(0, 0, 0, 0.6);
+  --border: #f3f3f3;
+  --borderStrong: rgba(0, 112, 204, 0.5);
+  --accent: #0070cc;
+  --accentHover: #0064b7;
+  --accentPressed: #0059a3;
+  --commerce: #d53b00;
+  --commerceHover: #c03500;
+  --commercePressed: #aa2f00;
+  --success: #007a62;
+  --warning: #c81b3a;
+  --info: #cb2070;
+  --psPlus: #fcc71d;
+  --formField: rgba(0, 0, 0, 0.06);
+  --focus: #0064b7;
+  --signIn: #0070cc;
+  --signInHover: #005499;
+  --navHover: #0070d1;
+  --addToCart: #d63d00;
+  --addToCartHover: #a32e00;
+  --textBody: #1f1f1f;
+  --storeText: #363636;
+  --footer: #00439c;
+  --tabSelected: #ebeef0;
+  color-scheme: light;
+  --sg-sans: sst, Arial, Helvetica, sans-serif;
+}
+[data-mode="dark"] {
+  --page: #121314;
+  --surface: #090a0a;
+  --raised: #000000;
+  --card: rgba(31, 32, 36, 0.97);
+  --overlay: rgba(18, 19, 20, 0.8);
+  --scrim: rgba(9, 10, 10, 0.3);
+  --text: #ffffff;
+  --muted: #b2b2b2;
+  --disabled: #2c2d33;
+  --onAccent: #000000;
+  --link: #53b1ff;
+  --linkHover: #31a1ff;
+  --placeholder: rgba(255, 255, 255, 0.6);
+  --border: rgba(255, 255, 255, 0.08);
+  --borderStrong: rgba(255, 255, 255, 0.5);
+  --accent: #ffffff;
+  --accentHover: #e5e5e5;
+  --accentPressed: #cccccc;
+  --commerce: #d63d00;
+  --commerceHover: #c03500;
+  --commercePressed: #aa2f00;
+  --success: #009476;
+  --warning: #ff143f;
+  --info: #d94a8d;
+  --psPlus: #fcc71d;
+  --formField: rgba(255, 255, 255, 0.08);
+  --focus: #e5e5e5;
+  color-scheme: dark;
+  --page: var(--page);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-weight: 300; font-size: 39px; line-height: 1.25; }
+h2 { font-weight: 500; font-size: 20px; margin-top: 40px; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.sw { width: 72px; height: 48px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); }
+.pill { display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border-radius: 999px; background: var(--signIn); color: #fff; font-weight: 500; font-size: 16px; }
+.commerce { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 999px; background: var(--commerce); color: #fff; font-weight: 700; }
+.nav { font-size: 13px; font-weight: 500; color: var(--textBody); }
+button.toggle { margin-left: 12px; }
 </style>
 </head>
 <body>
-<main>
-  <h1>PlayStation</h1>
-  <p>Light tokens from the public signed-out pages, 2026-11-19. SST falls back to Arial when it is not installed. Viewport of the capture was 1169 by 731.</p>
-  <h2>Colour</h2>
-  <div class="row">
-    <div class="sw"><i style="background:#FFFFFF"></i><span>page #FFFFFF</span></div>
-    <div class="sw"><i style="background:#1F1F1F"></i><span>ink #1F1F1F</span></div>
-    <div class="sw"><i style="background:#6B6B6B"></i><span>muted #6B6B6B</span></div>
-    <div class="sw"><i style="background:#363636"></i><span>store ink #363636</span></div>
-    <div class="sw"><i style="background:#0068BD"></i><span>link #0068BD</span></div>
-    <div class="sw"><i style="background:#0070CC"></i><span>action #0070CC</span></div>
-    <div class="sw"><i style="background:#092391"></i><span>hero #092391</span></div>
-    <div class="sw"><i style="background:#00439C"></i><span>footer #00439C</span></div>
-    <div class="sw"><i style="background:#EBEEF0"></i><span>tab #EBEEF0</span></div>
-    <div class="sw"><i style="background:#D53B00"></i><span>commerce #D53B00</span></div>
-  </div>
-  <h2>Type</h2>
-  <p style="font-weight:300;font-size:34px;line-height:42.5px;letter-spacing:0.1px">Discover PlayStation Plus</p>
-  <p style="font-weight:300;font-size:22px;line-height:27.5px">PlayStation 5 Console</p>
-  <p style="color:#6B6B6B;font-size:12px;line-height:18px">Secondary copy at 12px.</p>
+<div class="wrap">
+  <h1>PlayStation <button class="toggle" type="button" onclick="document.documentElement.dataset.mode=document.documentElement.dataset.mode==='dark'?'':'dark'">Theme</button></h1>
+  <p>Values come from tokens.json. SST is not loaded, so type falls back to Arial.</p>
+  <h2>Roles</h2>
+  <div class="row" id="swatches"></div>
   <h2>Controls</h2>
-  <p><span class="signin">Sign In</span></p>
-  <div class="hero">
-    <h2>Great PS4 and PS5 games</h2>
-    <a class="cta" href="#cta">Find out more</a>
+  <div class="row">
+    <span class="pill">Sign In</span>
+    <span class="commerce">Add to Cart</span>
+    <span class="nav">Games</span>
   </div>
-  <p><span class="tab">Latest</span><span class="tab off">Deals</span> <span class="badge">-50%</span></p>
-  <h2>Sign-in wall</h2>
-  <p style="font-weight:300;font-size:22px">Sign in to PlayStation</p>
-  <input class="field" placeholder="Sign-In ID (Email Address)" aria-label="Sign-In ID" readonly>
-  <p><span class="next">Next</span></p>
-  <div class="footer">
-    <p style="margin:0">Site footer plate #00439C.</p>
-  </div>
-</main>
+</div>
+<script>
+const T = {"core":{"color":{"white":{"v":"#ffffff","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-1-light","declared":"255 255 255"},"d":"Colour ramp 1, light."},"ink":{"v":"#121314","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-1-dark","declared":"18 19 20"},"d":"Colour ramp 1, dark."},"blue":{"v":"#0068bd","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-10-light","declared":"0 104 189"},"d":"Colour ramp 10, light. Link blue."},"blueBright":{"v":"#53b1ff","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-10-dark","declared":"83 177 255"},"d":"Colour ramp 10, dark."},"navy":{"v":"#003697","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-16-light","declared":"0 54 151"},"d":"Colour ramp 16."},"orange":{"v":"#d53b00","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-9-light","declared":"213 59 0"},"d":"Colour ramp 9, light. Commerce orange."},"orangeDark":{"v":"#d63d00","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-9-dark","declared":"214 61 0"},"d":"Colour ramp 9, dark."},"gold":{"v":"#fcc71d","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-11-light","declared":"252 199 29"},"d":"Colour ramp 11. PS Plus gold."},"green":{"v":"#007a62","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-12-light","declared":"0 122 98"},"d":"Colour ramp 12, light."},"red":{"v":"#c81b3a","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-13-light","declared":"200 27 58"},"d":"Colour ramp 13, light."},"pink":{"v":"#cb2070","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-14-light","declared":"203 32 112"},"d":"Colour ramp 14, light."},"grey":{"v":"#6b6b6b","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-5-light","declared":"107 107 107"},"d":"Colour ramp 5, light."}},"font":{"family":{"sst":{"v":"sst, Arial, sans-serif","t":"fontFamily","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--dk-font","declared":"\"sst\", Arial, sans-serif"},"d":"SST is the marketing body face. Proprietary; not bundled."},"condensed":{"v":"\"sst condensed\", \"sst\", Arial, sans-serif","t":"fontFamily","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--dk-font-condensed"}}},"weight":{"light":{"v":300,"t":"fontWeight","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"h1 fontWeight 300"}},"regular":{"v":400,"t":"fontWeight","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"body fontWeight 400"}},"medium":{"v":500,"t":"fontWeight","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"nav and Sign In fontWeight 500"}},"bold":{"v":700,"t":"fontWeight","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"Add to Cart fontWeight 700"}}}},"space":{"1":{"v":"2px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-1","declared":"2px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 1."},"2":{"v":"4px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-2","declared":"4px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 2."},"3":{"v":"8px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-3","declared":"8px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 3."},"4":{"v":"12px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-4","declared":"12px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 4."},"5":{"v":"16px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-5","declared":"16px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 5."},"6":{"v":"24px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-6","declared":"24px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 6."},"7":{"v":"32px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-7","declared":"32px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 7."},"8":{"v":"40px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-8","declared":"40px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 8."},"9":{"v":"48px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-9","declared":"48px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 9."},"10":{"v":"64px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-10","declared":"64px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 10."},"11":{"v":"80px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-11","declared":"80px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 11."},"12":{"v":"128px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-12","declared":"128px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 12."},"13":{"v":"256px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--space-13","declared":"256px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Space step 13."}},"radius":{"0":{"v":"2px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--corner-size-0","declared":"2px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Corner step 0."},"1":{"v":"4px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--corner-size-1","declared":"4px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Corner step 1."},"2":{"v":"8px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--corner-size-2","declared":"8px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Corner step 2."},"3":{"v":"16px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--corner-size-3","declared":"16px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Corner step 3."},"4":{"v":"32px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--corner-size-4","declared":"32px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Corner step 4."}},"radiusPill":{"v":"999px","t":"dimension","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"Sign In and Add to Cart borderRadius"},"d":"Pill radius on Sign In and Add to Cart."},"fontSize":{"1":{"v":"10px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-1","declared":"10px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 1, desktop :root resolution."},"2":{"v":"12px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-2","declared":"12px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 2, desktop :root resolution."},"3":{"v":"14px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-3","declared":"14px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 3, desktop :root resolution."},"4":{"v":"16px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-4","declared":"16px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 4, desktop :root resolution."},"5":{"v":"20px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-5","declared":"20px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 5, desktop :root resolution."},"6":{"v":"25px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-6","declared":"25px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 6, desktop :root resolution."},"7":{"v":"31px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-7","declared":"31px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 7, desktop :root resolution."},"8":{"v":"39px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-8","declared":"39px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 8, desktop :root resolution."},"9":{"v":"49px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-9","declared":"49px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 9, desktop :root resolution."},"10":{"v":"61px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-10","declared":"61px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 10, desktop :root resolution."},"11":{"v":"76px","t":"dimension","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--text-11","declared":"76px","note":"Resolved on :root at desktop. The same names are also declared at smaller type steps in other breakpoints."},"d":"Type step 11, desktop :root resolution."}},"size":{"header":{"v":"64px","t":"dimension","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"header rect height on home at 1440"},"d":"Shared nav height on the homepage."},"signIn":{"v":"24px","t":"dimension","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"Sign In rect height"},"d":"Sign In pill height. The control is short."},"commerce":{"v":"44px","t":"dimension","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"Shop Black Friday rect height"},"d":"Hero commerce link height."},"addToCart":{"v":"40px","t":"dimension","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"Add to Cart rect height"},"d":"Store primary button height."},"navLabel":{"v":"13px","t":"dimension","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"nav fontSize 13px"},"d":"Primary nav label size."}},"typography":{"display":{"v":{"fontFamily":"{font.family.sst}","fontWeight":"{font.weight.light}","fontSize":"{fontSize.8}","lineHeight":"48.75px"},"t":"typography","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"h1 39px / 300 / 48.75px"},"d":"Homepage h1, light weight."},"body":{"v":{"fontFamily":"{font.family.sst}","fontWeight":"{font.weight.regular}","fontSize":"{fontSize.4}","lineHeight":"24px"},"t":"typography","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"body 16px and commerce line-height 24px"}},"nav":{"v":{"fontFamily":"{font.family.sst}","fontWeight":"{font.weight.medium}","fontSize":"13px","lineHeight":"16px"},"t":"typography","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"nav button 13px / 500"}},"button":{"v":{"fontFamily":"{font.family.sst}","fontWeight":"{font.weight.bold}","fontSize":"{fontSize.4}","lineHeight":"20px"},"t":"typography","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"Add to Cart 16px / 700"}}}},"light":{"page":{"v":"#ffffff","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-page-backgrounds-primary-light","declared":"rgb(255 255 255/1)"},"d":"Page background."},"surface":{"v":"#f5f7fa","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-page-backgrounds-secondary-light","declared":"rgb(245 247 250/1)"},"d":"Secondary page surface."},"raised":{"v":"#ebeef0","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-page-backgrounds-tertiary-light","declared":"rgb(235 238 240/1)"},"d":"Tertiary page surface."},"card":{"v":"rgba(255, 255, 255, 0.97)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-card-light","declared":"rgb(255 255 255/0.97)"},"d":"Card fill."},"overlay":{"v":"rgba(255, 255, 255, 0.97)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-overlay-card-light","declared":"rgb(255 255 255/0.97)"},"d":"Overlay card fill."},"scrim":{"v":"rgba(245, 247, 250, 0.3)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-filter-light","declared":"rgb(245 247 250/0.3)"},"d":"Filter scrim."},"text":{"v":"#000000","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-primary-base-light","declared":"rgb(0 0 0/1)"},"d":"Primary text."},"muted":{"v":"#6b6b6b","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-secondary-light","declared":"rgb(107 107 107/1)"},"d":"Secondary text."},"disabled":{"v":"#d2d4d9","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-disabled-link-light","declared":"rgb(210 212 217/1)"},"d":"Disabled link text."},"onAccent":{"v":"#ffffff","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-button-light","declared":"rgb(255 255 255/1)"},"d":"Text on a primary button."},"link":{"v":"#0068bd","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-link-base-light","declared":"rgb(0 104 189/1)"},"d":"Link text."},"linkHover":{"v":"#005daa","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-link-hover-light","declared":"rgb(0 93 170/1)"},"d":"Link text, hover."},"placeholder":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-placeholder-light","declared":"rgb(0 0 0/0.6)"},"d":"Placeholder text."},"border":{"v":"#f3f3f3","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-borders-divider-line-base-light","declared":"rgb(243 243 243/1)"},"d":"Divider."},"borderStrong":{"v":"rgba(0, 112, 204, 0.5)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-borders-primary-link-base-light","declared":"rgb(0 112 204/0.5)"},"d":"Primary link border."},"accent":{"v":"#0070cc","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-primary-link-base-light","declared":"rgb(0 112 204/1)"},"d":"Primary link fill."},"accentHover":{"v":"#0064b7","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-primary-link-hover-light","declared":"rgb(0 100 183/1)"},"d":"Primary link fill, hover."},"accentPressed":{"v":"#0059a3","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-primary-link-active-light","declared":"rgb(0 89 163/1)"},"d":"Primary link fill, active."},"commerce":{"v":"#d53b00","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-commerce-link-base-light","declared":"rgb(213 59 0/1)"},"d":"Commerce button fill."},"commerceHover":{"v":"#c03500","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-commerce-link-hover-light","declared":"rgb(192 53 0/1)"},"d":"Commerce button fill, hover."},"commercePressed":{"v":"#aa2f00","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-commerce-link-active-light","declared":"rgb(170 47 0/1)"},"d":"Commerce button fill, active."},"success":{"v":"#007a62","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-success-light","declared":"rgb(0 122 98/1)"},"d":"Success text."},"warning":{"v":"#c81b3a","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-warning-light","declared":"rgb(200 27 58/1)"},"d":"Warning text."},"info":{"v":"#cb2070","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-hint-light","declared":"rgb(203 32 112/1)"},"d":"Hint text. The stylesheet names this hint, not info."},"psPlus":{"v":"#fcc71d","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-ps-plus-light","declared":"rgb(252 199 29/1)"},"d":"PlayStation Plus gold."},"formField":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-form-field-light","declared":"rgb(0 0 0/0.06)"},"d":"Form field fill."},"focus":{"v":"#0064b7","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-primary-link-focus-light","declared":"rgb(0 100 183/1)"},"d":"Primary link focus fill."},"signIn":{"v":"#0070cc","t":"color","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"header Sign In background","computed":"rgb(0, 112, 204)"}},"signInHover":{"v":"#005499","t":"color","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"header Sign In hover background","computed":"rgb(0, 84, 153)"}},"navHover":{"v":"#0070d1","t":"color","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"primary nav hover color","computed":"rgb(0, 112, 209)"}},"addToCart":{"v":"#d63d00","t":"color","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"Add to Cart computed backgroundColor on the public product page","computed":"rgb(214, 61, 0)"}},"addToCartHover":{"v":"#a32e00","t":"color","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"Add to Cart hover computed backgroundColor","computed":"rgb(163, 46, 0)"}},"textBody":{"v":"#1f1f1f","t":"color","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"body computed color on playstation.com","computed":"rgb(31, 31, 31)"}},"storeText":{"v":"#363636","t":"color","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"store.playstation.com body color","computed":"rgb(54, 54, 54)"}},"footer":{"v":"#00439c","t":"color","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"marketing footer background on ps5 page","computed":"rgb(0, 67, 156)"}},"tabSelected":{"v":"#ebeef0","t":"color","s":{"evidence":"Measured","file":"raw/state-readings.json","where":"store Deals tab selected background","computed":"rgb(235, 238, 240)"}}},"dark":{"page":{"v":"#121314","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-page-backgrounds-primary-dark","declared":"rgb(18 19 20/1)"},"d":"Page background."},"surface":{"v":"#090a0a","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-page-backgrounds-secondary-dark","declared":"rgb(9 10 10/1)"},"d":"Secondary page surface."},"raised":{"v":"#000000","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-page-backgrounds-tertiary-dark","declared":"rgb(0 0 0/1)"},"d":"Tertiary page surface."},"card":{"v":"rgba(31, 32, 36, 0.97)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-card-dark","declared":"rgb(31 32 36/0.97)"},"d":"Card fill."},"overlay":{"v":"rgba(18, 19, 20, 0.8)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-overlay-card-dark","declared":"rgb(18 19 20/0.8)"},"d":"Overlay card fill."},"scrim":{"v":"rgba(9, 10, 10, 0.3)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-filter-dark","declared":"rgb(9 10 10/0.3)"},"d":"Filter scrim."},"text":{"v":"#ffffff","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-primary-base-dark","declared":"rgb(255 255 255/1)"},"d":"Primary text."},"muted":{"v":"#b2b2b2","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-secondary-dark","declared":"rgb(178 178 178/1)"},"d":"Secondary text."},"disabled":{"v":"#2c2d33","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-disabled-link-dark","declared":"rgb(44 45 51/1)"},"d":"Disabled link text."},"onAccent":{"v":"#000000","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-button-dark","declared":"rgb(0 0 0/1)"},"d":"Text on a primary button."},"link":{"v":"#53b1ff","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-link-base-dark","declared":"rgb(83 177 255/1)"},"d":"Link text."},"linkHover":{"v":"#31a1ff","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-link-hover-dark","declared":"rgb(49 161 255/1)"},"d":"Link text, hover."},"placeholder":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-placeholder-dark","declared":"rgb(255 255 255/0.6)"},"d":"Placeholder text."},"border":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-borders-divider-line-base-dark","declared":"rgb(255 255 255/0.08)"},"d":"Divider."},"borderStrong":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-borders-primary-link-base-dark","declared":"rgb(255 255 255/0.5)"},"d":"Primary link border."},"accent":{"v":"#ffffff","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-primary-link-base-dark","declared":"rgb(255 255 255/1)"},"d":"Primary link fill."},"accentHover":{"v":"#e5e5e5","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-primary-link-hover-dark","declared":"rgb(229 229 229/1)"},"d":"Primary link fill, hover."},"accentPressed":{"v":"#cccccc","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-primary-link-active-dark","declared":"rgb(204 204 204/1)"},"d":"Primary link fill, active."},"commerce":{"v":"#d63d00","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-commerce-link-base-dark","declared":"rgb(214 61 0/1)"},"d":"Commerce button fill."},"commerceHover":{"v":"#c03500","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-commerce-link-hover-dark","declared":"rgb(192 53 0/1)"},"d":"Commerce button fill, hover."},"commercePressed":{"v":"#aa2f00","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-commerce-link-active-dark","declared":"rgb(170 47 0/1)"},"d":"Commerce button fill, active."},"success":{"v":"#009476","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-success-dark","declared":"rgb(0 148 118/1)"},"d":"Success text."},"warning":{"v":"#ff143f","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-warning-dark","declared":"rgb(255 20 63/1)"},"d":"Warning text."},"info":{"v":"#d94a8d","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-hint-dark","declared":"rgb(217 74 141/1)"},"d":"Hint text. The stylesheet names this hint, not info."},"psPlus":{"v":"#fcc71d","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-text-ps-plus-dark","declared":"rgb(252 199 29/1)"},"d":"PlayStation Plus gold."},"formField":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-form-field-dark","declared":"rgb(255 255 255/0.08)"},"d":"Form field fill."},"focus":{"v":"#e5e5e5","t":"color","s":{"evidence":"Measured","file":"raw/css-vars.json","property":"--color-role-backgrounds-primary-link-focus-dark","declared":"rgb(229 229 229/1)"},"d":"Primary link focus fill."}}};
+const box = document.getElementById('swatches');
+const light = T.light || {};
+for (const [name, tok] of Object.entries(light)) {
+  if (!tok || tok.t !== 'color') continue;
+  const d = document.createElement('div');
+  d.innerHTML = '<div class="sw" style="background:' + tok.v + '"></div><div>' + name + '<br>' + tok.v + '</div>';
+  box.appendChild(d);
+}
+</script>
 </body>
 </html>

@@ -1,27 +1,37 @@
-# Patterns
+# Understory patterns
 
-No page screenshot was saved. The preview browser returned "The browser is not producing screenshot frames". The notes below are from the live DOM and computed styles at 1440 by 900 CSS pixels.
+How the public marketing site combines the components. Screenshots are the evidence. The calendar in the homepage hero is a public demo, captured 2026-11-21 on https://understory.io/, not the signed-in backoffice.
 
-## Home
+## App shell
 
-`https://www.understory.io/` resolved to `https://understory.io/`. After Decline all, the page is a beige marketing page. The nav is a transparent bar, 52px tall, radius about 12px, with Booking system, Marketing, Made for, Pricing, Login, Book a demo and Try for free.
+A sticky wordmark bar: Booking system, Marketing, and Made for open hover menus. Pricing is a link. Login, Book a demo, and Try for free sit on the right. Phone collapses this into a drawer with a close control and full-width Login and Book a demo.
 
-The hero h1 reads "FINALLY, A BETTER WAY TO RUN AND GROW YOUR EXPERIENCE BUSINESS" in National 2 Condensed, uppercase, 63.75px, moss on beige. The primary hero action is an icon button, moss with white text. A second action is the soft green button.
+[screenshots/home-light-default.png](screenshots/home-light-default.png), [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png), [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
-Further down, booking and FAQ blocks sit on `#eae8dd`. Works tiles use sky, lilac and green-100. A trial block uses citrus. Story tiles use moss, rust, dark blue and dark red.
+## Marketing hero
+
+Condensed uppercase headline on the cream page, a short paragraph, a moss primary button with a citrus arrow chip, and a quiet secondary button. A product demo (calendar) sits in a rounded frame over a photograph.
+
+## Feature tabs
+
+Three tabs swap a heading, a paragraph, a "See how it works" button, and a demo image. [screenshots/home-light-tab.png](screenshots/home-light-tab.png).
 
 ## Pricing
 
-`https://understory.io/pricing` uses the same nav and the same display type. The h1 is "THE ONLY BOOKING SYSTEM YOU'LL EVER NEED". Plan cards are 227px wide, 15px radius, beige-new fill, 18px padding. Visible prices were €0, €29, €59 and €179 monthly. A yearly banner uses sky blue at 4.5px radius. A recommended label uses a moss fill.
+A volume slider, a Monthly / Yearly switch, and four plan cards. Explorer is the free trial. Starter is marked Recommended. Yearly changes the displayed prices without a submit. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png), [screenshots/pricing-light-yearly.png](screenshots/pricing-light-yearly.png).
 
-No plan was selected and no checkout was opened.
+## Blog index
 
-## Login
+A featured story, then filter tabs, then a card row. [screenshots/blog-light-default.png](screenshots/blog-light-default.png), [screenshots/blog-light-filter.png](screenshots/blog-light-filter.png).
 
-`https://backoffice.understory.io/login?language=en` is a signed-out form. The page background is `#f5f6f7`. A white card, 500px wide, 32px radius, holds "WELCOME BACK!", an email field, a password field, Forgot password, and a citrus Log in button. A language pill sits above the card.
+## FAQ
 
-The form was not submitted.
+A heading and stacked rows. The first row is open. [screenshots/home-light-faq.png](screenshots/home-light-faq.png), [screenshots/support-light-faq.png](screenshots/support-light-faq.png).
 
-## Signup
+## Help center
 
-`https://backoffice.understory.io/signup` uses the same page background and a white card with 48px top padding. The heading is "TRY UNDERSTORY FREE". Fields are email and password. A terms checkbox and a reCAPTCHA notice are on the page. The form was not submitted. No account was created.
+A separate host, help.understory.io, with a moss wordmark bar, a search field, and collection rows. [screenshots/help-light-default.png](screenshots/help-light-default.png).
+
+## Not captured
+
+Form validation, empty states inside the product, loading, error pages, destructive confirmation, toast feedback, search results, onboarding, and the signed-in app. Reasons are in the README coverage table.

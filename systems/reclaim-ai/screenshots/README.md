@@ -1,1 +1,0 @@
-No screenshots. preview_snapshot on the T3 preview tab returned "The browser is not producing screenshot frames" on https://reclaim.ai/ and again on https://reclaim.ai/contact. Measurements in ../raw/readings.json are from preview_evaluate on the same live tab. Do not invent frames.

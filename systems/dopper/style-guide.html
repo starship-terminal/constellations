@@ -2,321 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dopper style guide</title>
-<meta name="description" content="Dopper design tokens and the public signed-out surfaces' components, rendered from tokens.json with the declared marketing CSS variables and the measured computed styles.">
 <style>
-:root {
-  --font-family-display: Dopper;
-  --font-family-sans: Gilroy;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 600;
-  --font-weight-display: 400;
-  --font-size-display: 72px;
-  --font-size-display-hero: 72px;
-  --font-size-display-mobile: 44px;
-  --font-size-h2: 58px;
-  --font-size-menu-item: 34px;
-  --font-size-card-title: 43px;
-  --font-size-body: 16px;
-  --font-size-control: 18px;
-  --font-size-price: 16px;
-  --font-size-meta: 16px;
-  --font-size-label: 20px;
-  --font-lineHeight-display: 72px;
-  --font-lineHeight-display-hero: 72px;
-  --font-lineHeight-h2: 58px;
-  --font-lineHeight-body: 20.8px;
-  --font-lineHeight-control: 23.4px;
-  --color-darkBlue-default: #0067e5;
-  --color-darkBlue--1: #4183d9;
-  --color-darkBlue--2: #8ab1e6;
-  --color-darkBlue--3: #cce2ff;
-  --color-deep-sea-default: #000f2e;
-  --color-deep-sea--1: #515a8a;
-  --color-deep-sea--2: #999cba;
-  --color-deep-sea--3: #d4d5e6;
-  --color-deep-sea--overlay: rgba(0, 15, 46, 0.8);
-  --color-sand-default: #f6ecc8;
-  --color-sand--1: #f1e4b2;
-  --color-sand--2: #f9f3df;
-  --color-sand--3: #fcfaf2;
-  --color-yellow-default: #fed200;
-  --color-yellow--1: #ffe04d;
-  --color-yellow--2: #feec98;
-  --color-yellow--3: #fef5cb;
-  --color-carribean-default: #0abeaa;
-  --color-carribean--1: #45e6d3;
-  --color-carribean--2: #8cfff1;
-  --color-carribean--3: #bffff9;
-  --color-glowing-coral-default: #d0254a;
-  --color-glowing-coral--1: #f3859f;
-  --color-glowing-coral--2: #fbc9d5;
-  --color-glowing-coral--3: #fee5ea;
-  --color-neutral-ink: #000000;
-  --color-neutral-paper: #fcfaf2;
-  --color-neutral-scrim: rgba(0, 15, 46, 0.8);
-  --color-neutral-display-ink: #f6ecc8;
-  --color-neutral-text: #000f2e;
-  --color-status-teal: #116973;
-  --radius-l: 20px;
-  --radius-m: 16px;
-  --radius-s: 8px;
-  --radius-xs: 4px;
-  --radius-pill: 20px;
-  --radius-circle: 20px;
-  --radius-card: 20px;
-  --radius-field: 20px;
-  --motion-easing-bounce-in: cubic-bezier(0.8, -0.5, 0.25, 1.0);
-  --motion-easing-bounce-out: cubic-bezier(0.64, 0.1, 0.26, 1.6);
-  --motion-easing-ease-in-expo: cubic-bezier(0.7, 0.0, 0.84, 0.0);
-  --motion-easing-ease-in-out-expo: cubic-bezier(0.83, 0.0, 0.17, 1.0);
-  --motion-easing-ease-in-out-quint: cubic-bezier(0.83, 0.0, 0.17, 1.0);
-  --motion-easing-ease-in-quint: cubic-bezier(0.64, 0.0, 0.78, 0.0);
-  --motion-easing-ease-out-expo: cubic-bezier(0.16, 1.0, 0.3, 1.0);
-  --motion-easing-ease-out-quint: cubic-bezier(0.22, 1.0, 0.36, 1.0);
-  --motion-duration-menu-duration: 300ms;
-  --layout-touch-target-min: 44px;
-  --layout-z-index-higher: 2;
-  --layout-z-index-overlay: 9999;
-  --layout-z-index-section-background: -1;
-  --measured-focus-ring: #005fcc;
-  --measured-focus-ring-shop: #000f2e;
-  --surface-page: #fcfaf2;
-  --surface-card: #f9f3df;
-  --surface-band: #cce2ff;
-  --surface-menu-default: #fed200;
-  --surface-menu-mobile: #0067e5;
-  --surface-deep: #000f2e;
-  --text-primary: #000f2e;
-  --text-muted: #515a8a;
-  --text-on-dark: #fcfaf2;
-  --action-primary: #0067e5;
-  --action-dark: #000f2e;
-  --action-accent: #0abeaa;
-  --action-warm: #fed200;
-  --border-ink: #000f2e;
-  --focus-ring-default: #005fcc;
-  --focus-ring-shop: #000f2e;
-  --component-button-dark-fill: #000f2e;
-  --component-button-dark-fill-hover: #000f2e;
-  --component-button-dark-fill-pressed: #000f2e;
-  --component-button-dark-ink: #f6ecc8;
-  --component-button-primary-fill: #0067e5;
-  --component-button-primary-fill-hover: #0067e5;
-  --component-button-primary-ink: #f9f3df;
-  --component-button-outline-border: #f6ecc8;
-  --component-button-outline-ink: #f6ecc8;
-  --component-button-teal-fill: #0abeaa;
-  --component-link-color: #000f2e;
-  --component-link-color-hover: #0067e5;
-  --component-header-bg: rgba(252, 250, 242, 0.95);
-  --component-menu-bg: #0067e5;
-  --component-login-card-bg: #0067e5;
-  --component-new-card-bg: #cce2ff;
-  --component-field-bg: #fcfaf2;
-  --component-field-ink: #000f2e;
-  --component-field-placeholder: #000f2e;
-  --component-signin-fill: #000f2e;
-  --component-checkbox-ink: #fcfaf2;
-  --component-footer-bg: #f6ecc8;
-  --component-price-ink: #000f2e;
-  --component-cart-strip-bg: #cce2ff;
-  --component-button-height: 54px;
-  --component-button-padding-x: 25px;
-  --component-button-radius: 20px;
-  --component-field-height: 54px;
-  --component-nav-height: 110px;
-  --sg-sans: "Gilroy", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "Dopper", "Gilroy", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
-}
-[data-mode="dark"], .dark {
-
-}
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, var(--color-neutral-ink, #0f1015)); background: var(--surface-page, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
-.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
-.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.dark { background: #1a1630; padding: 12px; border-radius: 12px; }
-.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
-.navbar { display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 12px 0 22px; font-size: 14px; color: rgba(255, 255, 255, 0.898); }
-.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
-.navbar .sp { flex: 1; }
-.band { background: linear-gradient(160deg, #0067e5 0%, #116973 60%, #000f2e 130%); color: rgba(255, 255, 255, 0.95); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 54px); padding: 0 var(--component-button-padding-x, 25px); font-size: var(--font-size-control, 18px); font-weight: 600; border-radius: var(--component-button-radius, 20px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-primary, var(--color-brand-darkblue, #0067e5)); color: var(--text-on-action, #fff); }
-.btn.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--border-ghost, rgba(255, 255, 255, 0.2)); border-radius: var(--component-button-radius, 20px); height: 32px; }
-.btn.secondary { background: var(--action-secondary, rgba(255, 255, 255, 0.898)); color: var(--text-on-action, #0f1015); border-radius: var(--component-button-radius, 20px); height: 32px; }
-.btn.outline { background: transparent; color: var(--color-neutral-ink, #0f1015); box-shadow: inset 0 0 0 1px var(--border-hairline, rgba(53, 65, 90, 0.2)); }
-.hero { color: rgba(255, 255, 255, 0.898); padding: 64px 40px 80px; font: 400 56px/1.1 var(--sg-serif); letter-spacing: .01em; text-align: center; }
-.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: rgba(255, 255, 255, 0.898); margin: 16px auto 22px; max-width: 46ch; }
-.hero .big-cta { height: var(--component-button-height, 54px); padding: 0 var(--component-button-padding-x, 25px); border-radius: var(--component-button-radius, 20px); font-size: var(--font-size-control, 18px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 16px); }
-.tile .img { height: 120px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: 8px; }
-.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
-.tile .price { font: 500 26px/1.2 var(--sg-sans); margin: 10px 0 2px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #0f1015); opacity: .65; font-family: var(--sg-mono); }
-.toggle { display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; box-shadow: inset 0 0 0 1px var(--border-hairline, rgba(53, 65, 90, 0.2)); }
-.toggle span { padding: 8px 22px; border-radius: 999px; }
-.toggle .on { background: var(--action-primary, var(--color-brand-darkblue, #0067e5)); color: #fff; }
-.switch { display: inline-block; width: 40px; height: 24px; border-radius: 999px; background: var(--action-primary, var(--color-brand-darkblue, #0067e5)); position: relative; vertical-align: middle; }
-.switch i { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; }
+body { margin: 0; font: 400 16px/1.4 Gilroy, system-ui, sans-serif; background: #fcfaf2; color: #000f2e; }
+main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 400 48px/1 Georgia, serif; margin: 0 0 8px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { display: flex; gap: 8px; align-items: center; min-width: 220px; }
+.sw i { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #000f2e22; display: block; }
+.btn { display: inline-block; background: #0067e5; color: #f9f3df; border-radius: 20px; padding: 13px 25px; font-weight: 600; }
+.ink { display: inline-block; background: #000; color: #f6ecc8; border-radius: 999px; padding: 12px 20px; }
+.ghost { display: inline-block; color: #f6ecc8; border: 1px solid #f6ecc8; border-radius: 999px; padding: 12px 20px; }
+.hero { background: #0067e5; color: #f6ecc8; padding: 32px; border-radius: 16px; margin: 24px 0; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Dopper style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">Dopper, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared brand ramps (<code>--darkBlue #0067e5</code> with its tints, <code>--deep-sea #000f2e</code>, <code>--sand #f6ecc8</code>, <code>--yellow #fed200</code>, <code>--carribean #0abeaa</code>, <code>--glowing-coral #d0254a</code>) from the marketing stylesheet's :root layer, plus the Magento shop's compiled colours measured off real elements, and the 4–20px radius scale. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from www.dopper.com and shop.dopper.com, signed out, in headless Chromium — prices render in EUR, English locale only. The customer account, checkout and the filled cart behind the login and cart cards are a documented boundary. Dopper and Gilroy are licensed served faces and are not loaded here: samples fall back to system sans.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">On home the header is a white 110px bar: the dopper. wordmark, the Bottle / Travel Mug / Tap / Mission / Get Involved flyout triggers, right links and the bag button. The hero is a full-bleed video with the "Whatever the season" display and Watch now / Shop our collection pills — deep-sea and outlined controls at the measured 20px pill radius.</p>
-  <div class="mock band">
-    <div class="navbar"><span class="wm">dopper.</span><span>Bottle</span><span>Travel Mug</span><span>Tap</span><span>Mission</span><span>Get Involved</span><span class="sp"></span><span class="btn ghost">EN</span><span class="btn secondary">Bag</span></div>
-    <div class="hero">Whatever the season<small>Just Refill. Reusable water bottles, designed in the Netherlands.</small><span class="btn secondary big-cta">Shop our collection</span></div>
-  </div>
-
-  <h2 class="sh">The product list</h2>
-  <p class="lead">shop.dopper.com/bottles (Magento 2) centres the "Bottles" display above a teal "+ Filters" pill and a light-blue filter sheet — custom radio/checkbox rows and colour swatches — over a grid of white product cards with badge chips and EUR prices.</p>
-  <div class="mock" style="padding:20px">
-    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span class="on">+ Filters</span><span>Colour</span><span>Bundle</span></span></div>
-    <div class="grid">
-      <div class="tile"><b>Dopper Original</b><span class="sub">Pacific Blue</span><div class="price">&euro;24.95</div><span class="sub">450 ml</span></div>
-      <div class="tile"><b>Dopper Insulated</b><span class="sub">Breaker Blue</span><div class="price">&euro;34.95</div><span class="sub">350 ml</span></div>
-      <div class="tile"><b>Dopper Steel</b><span class="sub">Stainless</span><div class="price">&euro;34.95</div><span class="sub">490 ml</span></div>
-    </div>
-    <div style="margin-top:18px"><span class="btn primary">Add to cart</span> <span class="btn outline">Continue shopping</span></div>
-  </div>
-
-  <h2 class="sh">The auth card</h2>
-  <p class="lead">/customer/account/login pairs a darkBlue "Registered Customers" card — Email + Password fields, a 56px Sign in, Show password, Remember Me and the Forgot link — with a light-blue "New Customers" card whose Create an Account is its match. Measured and typed into, never sent.</p>
-  <div class="mock" style="padding:24px;display:flex;justify-content:center;gap:16px;background:#f6ecc8">
-    <div style="background:#0067e5;border-radius:var(--radius-card, 20px);padding:24px;width:320px;color:#fff">
-      <b style="font:600 20px/1.3 var(--sg-sans)">Registered Customers</b>
-      <p class="note" style="margin:6px 0 14px;color:#fff">If you have an account, sign in with your email address.</p>
-      <div style="display:grid;gap:8px"><span class="btn secondary">Email</span><span class="btn secondary">Password</span><span class="btn primary" style="background:#000f2e">Sign in</span></div>
-    </div>
-    <div style="background:#cce2ff;border-radius:var(--radius-card, 20px);padding:24px;width:320px">
-      <b style="font:600 20px/1.3 var(--sg-sans)">New Customers</b>
-      <p class="note" style="margin:6px 0 14px">Creating an account is easy.</p>
-      <div style="display:grid;gap:8px"><span class="btn primary">Create an Account</span></div>
-    </div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The core set carries the declared brand ramps — darkBlue, deep-sea, sand, yellow, darkTeal, carribean and glowing-coral, each with three tints — resolved from the marketing stylesheet's :root layer, plus the Magento shop's compiled colours measured off real elements. Light roles alias the palette; there is no dark set — the darkBlue menu and deep-sea bands are painted surfaces of the one light theme.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">The declared scale runs --border-radius-xs 4px to --border-radius-l 20px; pills, CTAs, cards and fields all measure the 20px step round. Fields sit at 54–56px high (a declared --touch-target-min of 44px); the colour swatches are the only circles (a 100% radius).</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Two served families: <code>Dopper</code> for the display faces and wordmark, <code>Gilroy</code> (400 body, Medium/500 links, Bold/600–700 controls and headings) for everything else — nav labels, buttons, prices and body copy. The ramp runs the ~90px hero display down to 14px control text. Samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Resolved the marketing stylesheet's :root custom properties and read computed styles on the elements of both hosts</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+<h1>Dopper</h1>
+<p>Measured from dopper.com and shop.dopper.com on 2026-11-21. Light only. Take values from tokens.json.</p>
+<div class="hero">
+  <p style="font:400 48px/1 Georgia,serif;margin:0 0 16px">Whatever the season</p>
+  <span class="ink">Shop our collection</span>
+  <span class="ghost">Watch now</span>
+</div>
+<p><span class="btn">Add to cart</span></p>
+<h2>Colours</h2>
+<div class="swatches">
+<div class="sw"><i style="background:#0067e5"></i><span>color.blue<br><code>#0067e5</code></span></div><div class="sw"><i style="background:#000f2e"></i><span>color.ink<br><code>#000f2e</code></span></div><div class="sw"><i style="background:#fcfaf2"></i><span>color.paper<br><code>#fcfaf2</code></span></div><div class="sw"><i style="background:#f6ecc8"></i><span>color.cream<br><code>#f6ecc8</code></span></div><div class="sw"><i style="background:#f9f3df"></i><span>color.cream-deep<br><code>#f9f3df</code></span></div><div class="sw"><i style="background:#000000"></i><span>color.black<br><code>#000000</code></span></div><div class="sw"><i style="background:#0abeaa"></i><span>color.green<br><code>#0abeaa</code></span></div><div class="sw"><i style="background:#000f2e"></i><span>color.focus-ring<br><code>#000f2e</code></span></div><div class="sw"><i style="background:#fcfaf2"></i><span>color.focus-gap<br><code>#fcfaf2</code></span></div>
+</div>
 </main>
-<script>
-const TOK = {"core":{"font":{"family":{"display":{"v":"Dopper","t":"fontFamily","s":"computed fontFamily of hero-display default (raw/components-computed.json); the Dopper-Regular webfont is served from www.dopper.com (raw/css-vars.json fonts)","d":"The Dopper display family used for h1s, the logo area and big menu rows."},"sans":{"v":"Gilroy","t":"fontFamily","s":"computed fontFamily of nav-link default (raw/components-computed.json); Gilroy-Medium/Gilroy-Bold webfonts from www.dopper.com (raw/css-vars.json fonts)","d":"The Gilroy stack on nav links, buttons and body text."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of breadcrumb default (raw/components-computed.json)","d":"The 400 reading on body copy and secondary text (Gilroy)."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"The 500 reading on header links and card titles (Gilroy-Medium)."},"bold":{"v":600,"t":"fontWeight","s":"computed fontWeight of add-to-cart default (raw/components-computed.json)","d":"The 600 reading on CTA labels, prices and shop headings (Gilroy-Bold)."},"display":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-display default (raw/components-computed.json)","d":"The Dopper display weight on h1s."}},"size":{"display":{"v":"72px","t":"dimension","s":"computed fontSize of plp-h1 default (raw/components-computed.json)","d":"The page/PLP display size (~80px Dopper)."},"display-hero":{"v":"72px","t":"dimension","s":"computed fontSize of hero-display default (raw/components-computed.json)","d":"The hero display size."},"display-mobile":{"v":"44px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The display size at 390 wide."},"h2":{"v":"58px","t":"dimension","s":"computed fontSize of collections-heading default (raw/components-computed.json)","d":"The section heading size."},"menu-item":{"v":"34px","t":"dimension","s":"computed fontSize of m-nav-item default (raw/components-computed.json)","d":"The ~40px mobile-menu rows."},"card-title":{"v":"43px","t":"dimension","s":"computed fontSize of content-card default (raw/components-computed.json)","d":"Card/section copy heading size."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"The 20.8px nav/body size."},"control":{"v":"18px","t":"dimension","s":"computed fontSize of btn-dark default (raw/components-computed.json)","d":"Button label size."},"price":{"v":"16px","t":"dimension","s":"computed fontSize of pdp-price default (raw/components-computed.json)","d":"The PDP/card price size."},"meta":{"v":"16px","t":"dimension","s":"computed fontSize of product-price default (raw/components-computed.json)","d":"PLP card price/meta size."},"label":{"v":"20px","t":"dimension","s":"computed fontSize of login-label default (raw/components-computed.json)","d":"Form label size."}},"lineHeight":{"display":{"v":"72px","t":"dimension","s":"computed lineHeight of plp-h1 default (raw/components-computed.json)","d":"Display leading."},"display-hero":{"v":"72px","t":"dimension","s":"computed lineHeight of hero-display default (raw/components-computed.json)","d":"Hero display leading."},"h2":{"v":"58px","t":"dimension","s":"computed lineHeight of collections-heading default (raw/components-computed.json)","d":"Heading leading."},"body":{"v":"20.8px","t":"dimension","s":"computed lineHeight of nav-link default (raw/components-computed.json)","d":"Body/link leading."},"control":{"v":"23.4px","t":"dimension","s":"computed lineHeight of btn-dark default (raw/components-computed.json)","d":"Button label leading."}}},"color":{"darkBlue":{"default":{"v":"#0067e5","t":"color","s":"css-var --darkBlue (light); css-var --darkBlue resolved light (raw/css-vars.json)","d":"The declared --darkBlue swatch (#0067e5)."},"-1":{"v":"#4183d9","t":"color","s":"css-var --darkBlue-1 (light); css-var --darkBlue-1 resolved light (raw/css-vars.json)","d":"The declared --darkBlue-1 swatch (#4183d9)."},"-2":{"v":"#8ab1e6","t":"color","s":"css-var --darkBlue-2 (light); css-var --darkBlue-2 resolved light (raw/css-vars.json)","d":"The declared --darkBlue-2 swatch (#8ab1e6)."},"-3":{"v":"#cce2ff","t":"color","s":"css-var --darkBlue-3 (light); css-var --darkBlue-3 resolved light (raw/css-vars.json)","d":"The declared --darkBlue-3 swatch (#cce2ff)."}},"deep_sea":{"default":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); css-var --deep-sea resolved light (raw/css-vars.json)","d":"The declared --deep-sea swatch (#000f2e)."},"-1":{"v":"#515a8a","t":"color","s":"css-var --deep-sea-1 (light); css-var --deep-sea-1 resolved light (raw/css-vars.json)","d":"The declared --deep-sea-1 swatch (#515a8a)."},"-2":{"v":"#999cba","t":"color","s":"css-var --deep-sea-2 (light); css-var --deep-sea-2 resolved light (raw/css-vars.json)","d":"The declared --deep-sea-2 swatch (#999cba)."},"-3":{"v":"#d4d5e6","t":"color","s":"css-var --deep-sea-3 (light); css-var --deep-sea-3 resolved light (raw/css-vars.json)","d":"The declared --deep-sea-3 swatch (#d4d5e6)."},"-overlay":{"v":"rgba(0, 15, 46, 0.8)","t":"color","s":"css-var --deep-sea-overlay (light); css-var --deep-sea-overlay resolved light (raw/css-vars.json)","d":"The declared --deep-sea-overlay swatch (rgba(0, 15, 46, 0.8))."}},"sand":{"default":{"v":"#f6ecc8","t":"color","s":"css-var --sand (light); css-var --sand resolved light (raw/css-vars.json)","d":"The declared --sand swatch (#f6ecc8)."},"-1":{"v":"#f1e4b2","t":"color","s":"css-var --sand-1 (light); css-var --sand-1 resolved light (raw/css-vars.json)","d":"The declared --sand-1 swatch (#f1e4b2)."},"-2":{"v":"#f9f3df","t":"color","s":"css-var --sand-2 (light); css-var --sand-2 resolved light (raw/css-vars.json)","d":"The declared --sand-2 swatch (#f9f3df)."},"-3":{"v":"#fcfaf2","t":"color","s":"css-var --sand-3 (light); css-var --sand-3 resolved light (raw/css-vars.json)","d":"The declared --sand-3 swatch (#fcfaf2)."}},"yellow":{"default":{"v":"#fed200","t":"color","s":"css-var --yellow (light); css-var --yellow resolved light (raw/css-vars.json)","d":"The declared --yellow swatch (#fed200)."},"-1":{"v":"#ffe04d","t":"color","s":"css-var --yellow-1 (light); css-var --yellow-1 resolved light (raw/css-vars.json)","d":"The declared --yellow-1 swatch (#ffe04d)."},"-2":{"v":"#feec98","t":"color","s":"css-var --yellow-2 (light); css-var --yellow-2 resolved light (raw/css-vars.json)","d":"The declared --yellow-2 swatch (#feec98)."},"-3":{"v":"#fef5cb","t":"color","s":"css-var --yellow-3 (light); css-var --yellow-3 resolved light (raw/css-vars.json)","d":"The declared --yellow-3 swatch (#fef5cb)."}},"carribean":{"default":{"v":"#0abeaa","t":"color","s":"css-var --carribean (light); css-var --carribean resolved light (raw/css-vars.json)","d":"The declared --carribean swatch (#0abeaa)."},"-1":{"v":"#45e6d3","t":"color","s":"css-var --carribean-1 (light); css-var --carribean-1 resolved light (raw/css-vars.json)","d":"The declared --carribean-1 swatch (#45e6d3)."},"-2":{"v":"#8cfff1","t":"color","s":"css-var --carribean-2 (light); css-var --carribean-2 resolved light (raw/css-vars.json)","d":"The declared --carribean-2 swatch (#8cfff1)."},"-3":{"v":"#bffff9","t":"color","s":"css-var --carribean-3 (light); css-var --carribean-3 resolved light (raw/css-vars.json)","d":"The declared --carribean-3 swatch (#bffff9)."}},"glowing_coral":{"default":{"v":"#d0254a","t":"color","s":"css-var --glowing-coral (light); css-var --glowing-coral resolved light (raw/css-vars.json)","d":"The declared --glowing-coral swatch (#d0254a)."},"-1":{"v":"#f3859f","t":"color","s":"css-var --glowing-coral-1 (light); css-var --glowing-coral-1 resolved light (raw/css-vars.json)","d":"The declared --glowing-coral-1 swatch (#f3859f)."},"-2":{"v":"#fbc9d5","t":"color","s":"css-var --glowing-coral-2 (light); css-var --glowing-coral-2 resolved light (raw/css-vars.json)","d":"The declared --glowing-coral-2 swatch (#fbc9d5)."},"-3":{"v":"#fee5ea","t":"color","s":"css-var --glowing-coral-3 (light); css-var --glowing-coral-3 resolved light (raw/css-vars.json)","d":"The declared --glowing-coral-3 swatch (#fee5ea)."}},"neutral":{"ink":{"v":"#000000","t":"color","s":"css-var --black (light); css-var --black resolved light (raw/css-vars.json)","d":"The declared #000 black."},"paper":{"v":"#fcfaf2","t":"color","s":"css-var --white (light); css-var --white resolved light (raw/css-vars.json)","d":"The declared #fcfaf2 off-white — the site's page field (sand-3 shares the value)."},"scrim":{"v":"rgba(0, 15, 46, 0.8)","t":"color","s":"css-var --deep-sea-overlay (light); css-var --deep-sea-overlay resolved light (raw/css-vars.json)","d":"The declared 80% deep-sea overlay."},"display-ink":{"v":"#f6ecc8","t":"color","s":"computed color of hero-display default (raw/components-computed.json)","d":"The sand (#f6ecc8-family) display ink on media heroes."},"text":{"v":"#000f2e","t":"color","s":"computed color of nav-link default (raw/components-computed.json)","d":"The link/body ink (deep-sea on the marketing chrome)."}},"status":{"teal":{"v":"#116973","t":"color","s":"css-var --darkTeal (light); css-var --darkTeal resolved light (raw/css-vars.json)","d":"The declared dark teal."}}},"radius":{"l":{"v":"20px","t":"dimension","s":"css-var --border-radius-l (light); css-var --border-radius-l resolved light (raw/css-vars.json)","d":"The declared --border-radius-l."},"m":{"v":"16px","t":"dimension","s":"css-var --border-radius-m (light); css-var --border-radius-m resolved light (raw/css-vars.json)","d":"The declared --border-radius-m."},"s":{"v":"8px","t":"dimension","s":"css-var --border-radius-s (light); css-var --border-radius-s resolved light (raw/css-vars.json)","d":"The declared --border-radius-s."},"xs":{"v":"4px","t":"dimension","s":"css-var --border-radius-xs (light); css-var --border-radius-xs resolved light (raw/css-vars.json)","d":"The declared --border-radius-xs."},"pill":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of filters-button default (raw/components-computed.json)","d":"The pill radius on + Filters / CTA pills (measured; bigger than radius-l)."},"circle":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of filter-close default (raw/components-computed.json)","d":"The 50% circle on the × close and icon buttons."},"card":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of login-card default (raw/components-computed.json)","d":"The card radius on the login/panel cards."},"field":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of login-email default (raw/components-computed.json)","d":"The field radius on the white inputs."}},"motion":{"easing":{"bounce-in":{"v":[0.8,-0.5,0.25,1.0],"t":"cubicBezier","s":"css-var --bounce-in (light); css-var --bounce-in resolved light (raw/css-vars.json)","d":"The declared --bounce-in easing."},"bounce-out":{"v":[0.64,0.1,0.26,1.6],"t":"cubicBezier","s":"css-var --bounce-out (light); css-var --bounce-out resolved light (raw/css-vars.json)","d":"The declared --bounce-out easing."},"ease-in-expo":{"v":[0.7,0.0,0.84,0.0],"t":"cubicBezier","s":"css-var --ease-in-expo (light); css-var --ease-in-expo resolved light (raw/css-vars.json)","d":"The declared --ease-in-expo easing."},"ease-in-out-expo":{"v":[0.83,0.0,0.17,1.0],"t":"cubicBezier","s":"css-var --ease-in-out-expo (light); css-var --ease-in-out-expo resolved light (raw/css-vars.json)","d":"The declared --ease-in-out-expo easing."},"ease-in-out-quint":{"v":[0.83,0.0,0.17,1.0],"t":"cubicBezier","s":"css-var --ease-in-out-quint (light); css-var --ease-in-out-quint resolved light (raw/css-vars.json)","d":"The declared --ease-in-out-quint easing."},"ease-in-quint":{"v":[0.64,0.0,0.78,0.0],"t":"cubicBezier","s":"css-var --ease-in-quint (light); css-var --ease-in-quint resolved light (raw/css-vars.json)","d":"The declared --ease-in-quint easing."},"ease-out-expo":{"v":[0.16,1.0,0.3,1.0],"t":"cubicBezier","s":"css-var --ease-out-expo (light); css-var --ease-out-expo resolved light (raw/css-vars.json)","d":"The declared --ease-out-expo easing."},"ease-out-quint":{"v":[0.22,1.0,0.36,1.0],"t":"cubicBezier","s":"css-var --ease-out-quint (light); css-var --ease-out-quint resolved light (raw/css-vars.json)","d":"The declared --ease-out-quint easing."}},"duration":{"menu-duration":{"v":"300ms","t":"duration","s":"computed transition of nav-trigger default (raw/components-computed.json)","d":"Nav/flyout transition duration."}}},"layout":{"touch-target-min":{"v":"44px","t":"dimension","s":"css-var --touch-target-min (light); css-var --touch-target-min resolved light (raw/css-vars.json)","d":"The declared 44px minimum touch target."},"z-index":{"higher":{"v":2,"t":"number","s":"css-var --z-higher resolved light (raw/css-vars.json)","d":"The declared --z-higher."},"overlay":{"v":9999,"t":"number","s":"css-var --z-overlay resolved light (raw/css-vars.json)","d":"The declared --z-overlay."},"section-background":{"v":-1,"t":"number","s":"css-var --z-section-background resolved light (raw/css-vars.json)","d":"The declared --z-section-background."}}},"measured":{"focus-ring":{"v":"#005fcc","t":"color","s":"computed outlineColor of btn-outline focus-visible (raw/components-computed.json)","d":"The keyboard focus ring colour on marketing controls (the header links' focus was never confirmed)."},"focus-ring-shop":{"v":"#000f2e","t":"color","s":"computed outlineColor of shop-nav-link focus-visible (raw/components-computed.json)","d":"The focus ring on the shop nav."}}},"light":{"surface":{"page":{"v":"#fcfaf2","t":"color","s":"css-var --sand-3 (light); computed backgroundColor of shop-header default; backgroundColor of newsletter-input default (raw/components-computed.json); css-var --sand-3 resolved light (raw/css-vars.json)","d":"The #fcfaf2 cream page field (sand-3/--white)."},"card":{"v":"#f9f3df","t":"color","s":"css-var --sand-2 (light); css-var --sand-2 resolved light (raw/css-vars.json)","d":"The sand-2 card field (declared; no captured visible surface paints it)."},"band":{"v":"#cce2ff","t":"color","s":"css-var --darkBlue-3 (light); computed backgroundColor of new-card default; backgroundColor of cart-strip default (raw/components-computed.json); css-var --darkBlue-3 resolved light (raw/css-vars.json)","d":"The darkBlue-3 light-blue band: the PLP filter sheet, the cart strip, the New Customers card."},"menu":{"default":{"v":"#fed200","t":"color","s":"css-var --yellow (light); css-var --yellow resolved light (raw/css-vars.json)","d":"The yellow mega-menu panel (declared --yellow; the opened panel was not measured)."},"mobile":{"v":"#0067e5","t":"color","s":"css-var --darkBlue (light); computed paint:dialog__background.bg of m-menu-open default (raw/components-computed.json); css-var --darkBlue resolved light (raw/css-vars.json)","d":"The darkBlue full-screen mobile menu."}},"deep":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed paint:burstButton_fakeButton.bg of btn-dark default (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)","d":"The deep-sea surface (filled pills, the × close button)."}},"text":{"primary":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed color of plp-h1 default (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)","d":"The deep-sea ink on headings and primary copy."},"muted":{"v":"#515a8a","t":"color","s":"css-var --deep-sea-1 (light); css-var --deep-sea-1 resolved light (raw/css-vars.json)","d":"The deep-sea-1 secondary text (declared; no captured component paints it)."},"on":{"dark":{"v":"#fcfaf2","t":"color","s":"css-var --sand-3 (light); computed color of m-nav-item default; text.color of m-menu-open default (raw/components-computed.json); css-var --sand-3 resolved light (raw/css-vars.json)","d":"Cream text on darkBlue/deep-sea surfaces."}}},"action":{"primary":{"v":"#0067e5","t":"color","s":"css-var --darkBlue (light); computed backgroundColor of add-to-cart default; ::before.backgroundColor of shop-hero-button default (raw/components-computed.json); css-var --darkBlue resolved light (raw/css-vars.json)","d":"The darkBlue fill on Add to cart / Sign in / shop CTAs."},"dark":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed paint:burstButton_fakeButton.bg of btn-dark default; ::before.backgroundColor of login-button default (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)","d":"The deep-sea fill on 'Watch now', Sign in, × close."},"accent":{"v":"#0abeaa","t":"color","s":"css-var --carribean (light); computed ::before.backgroundColor of filters-button default (raw/components-computed.json); css-var --carribean resolved light (raw/css-vars.json)","d":"The carribean '+ Filters' pill."},"warm":{"v":"#fed200","t":"color","s":"css-var --yellow (light); css-var --yellow resolved light (raw/css-vars.json)","d":"The yellow active tab / burger fill (declared --yellow; no captured reading paints it)."}},"border":{"ink":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed paint:button::before.border of login-button default; paint:RoiProductItem_radioButton.border of content-card default (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)","d":"The deep-sea rings on the Sign in pill and the option radios (the ghost pill measured on media paints cream)."}},"focus":{"ring":{"default":{"v":"#005fcc","t":"color","s":"computed outlineColor of btn-outline focus-visible; outlineColor of collection-tab focus-visible (raw/components-computed.json)","d":"The keyboard focus ring on the marketing chrome (buttons, pills, tabs)."},"shop":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed outlineColor of shop-nav-link focus-visible (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)","d":"The keyboard focus ring on shop controls."}}},"component":{"button-dark-fill":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed backgroundColor of the div.link_link__JtDHX.link_background__vwwg3 layer inside btn-dark default (raw/components-computed.json); matches css-var --deep-sea resolved light","d":"Deep-sea fill of the dark pill CTAs."},"button-dark-fill-hover":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed backgroundColor of the div.link_link__JtDHX.link_background__vwwg3 layer inside btn-dark hover (raw/components-computed.json); matches css-var --deep-sea resolved light","d":"Hover step of the dark pill."},"button-dark-fill-pressed":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed backgroundColor of the div.link_link__JtDHX.link_background__vwwg3 layer inside btn-dark pressed (raw/components-computed.json); matches css-var --deep-sea resolved light","d":"Pressed step of the dark pill."},"button-dark-ink":{"v":"#f6ecc8","t":"color","s":"css-var --sand (light); computed color of btn-dark default (raw/components-computed.json); matches css-var --sand resolved light","d":"Cream label on the dark pill."},"button-primary-fill":{"v":"#0067e5","t":"color","s":"css-var --darkBlue (light); computed backgroundColor of add-to-cart default (raw/components-computed.json); matches css-var --darkBlue resolved light","d":"darkBlue fill of Add to cart / Sign in / Create an Account."},"button-primary-fill-hover":{"v":"#0067e5","t":"color","s":"css-var --darkBlue (light); computed backgroundColor of add-to-cart hover (raw/components-computed.json); matches css-var --darkBlue resolved light","d":"Hover step of the blue CTA."},"button-primary-ink":{"v":"#f9f3df","t":"color","s":"css-var --sand-2 (light); computed color of add-to-cart default (raw/components-computed.json); matches css-var --sand-2 resolved light","d":"Cream label on the blue CTA."},"button-outline-border":{"v":"#f6ecc8","t":"color","s":"css-var --sand (light); computed borderTopColor of btn-outline default (raw/components-computed.json); matches css-var --sand resolved light","d":"The deep-sea outline ring on ghost pills."},"button-outline-ink":{"v":"#f6ecc8","t":"color","s":"css-var --sand (light); computed color of btn-outline default (raw/components-computed.json); matches css-var --sand resolved light","d":"Ink on the ghost pill."},"button-teal-fill":{"v":"#0abeaa","t":"color","s":"css-var --carribean (light); computed backgroundColor of the button::before.action.cta layer inside filters-button default (raw/components-computed.json); matches css-var --carribean resolved light","d":"The carribean filter pill fill."},"link-color":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed color of nav-link default (raw/components-computed.json); matches css-var --deep-sea resolved light","d":"Header link ink."},"link-color-hover":{"v":"#0067e5","t":"color","s":"css-var --darkBlue (light); computed color of nav-link hover (raw/components-computed.json); matches css-var --darkBlue resolved light","d":"Header link hover ink."},"header-bg":{"v":"rgba(252, 250, 242, 0.95)","t":"color","s":"computed backgroundColor of the nav.dopper-nav ancestor header default (raw/components-computed.json)","d":"The header bar background (transparent over media)."},"menu-bg":{"v":"#0067e5","t":"color","s":"css-var --darkBlue (light); computed backgroundColor of the div.dialog__background layer inside m-menu-open default (raw/components-computed.json); matches css-var --darkBlue resolved light","d":"The darkBlue mobile menu fill."},"login-card-bg":{"v":"#0067e5","t":"color","s":"css-var --darkBlue (light); computed backgroundColor of login-card default (raw/components-computed.json); matches css-var --darkBlue resolved light","d":"The darkBlue 'Registered Customers' card."},"new-card-bg":{"v":"#cce2ff","t":"color","s":"css-var --darkBlue-3 (light); computed backgroundColor of new-card default (raw/components-computed.json); matches css-var --darkBlue-3 resolved light","d":"The darkBlue-3 'New Customers' card."},"field-bg":{"v":"#fcfaf2","t":"color","s":"css-var --sand-3 (light); computed backgroundColor of login-email default (raw/components-computed.json); matches css-var --sand-3 resolved light","d":"The white input fill on the blue card."},"field-ink":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed color of login-email default (raw/components-computed.json); matches css-var --deep-sea resolved light","d":"Input text ink."},"field-placeholder":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed placeholder of login-email default (raw/components-computed.json); matches css-var --deep-sea resolved light","d":"Placeholder ink."},"signin-fill":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed backgroundColor of the button::before.action.js-button-animate layer inside login-button default (raw/components-computed.json); matches css-var --deep-sea resolved light","d":"The deep-sea Sign in pill on the blue card."},"checkbox-ink":{"v":"#fcfaf2","t":"color","s":"css-var --sand-3 (light); computed color of login-checkbox default (raw/components-computed.json); matches css-var --sand-3 resolved light","d":"Checkbox row ink on the blue card."},"footer-bg":{"v":"#f6ecc8","t":"color","s":"css-var --sand (light); computed backgroundColor of the div.main-section layer inside footer default (raw/components-computed.json); matches css-var --sand resolved light","d":"The sand footer field."},"price-ink":{"v":"#000f2e","t":"color","s":"css-var --deep-sea (light); computed color of product-price default (raw/components-computed.json); matches css-var --deep-sea resolved light","d":"PLP price ink."},"cart-strip-bg":{"v":"#cce2ff","t":"color","s":"css-var --darkBlue-3 (light); computed backgroundColor of cart-strip default (raw/components-computed.json); matches css-var --darkBlue-3 resolved light","d":"The darkBlue-3 cart strip."},"button-height":{"v":"54px","t":"dimension","s":"computed height of add-to-cart default (raw/components-computed.json)","d":"The 54px pill CTA height."},"button-padding-x":{"v":"25px","t":"dimension","s":"computed paddingLeft of add-to-cart default (raw/components-computed.json)","d":"Pill horizontal padding."},"button-radius":{"v":"20px","t":"dimension","s":"css-var --border-radius-l (light); computed borderTopLeftRadius of add-to-cart default; matches css-var --border-radius-l resolved light (raw/components-computed.json, raw/css-vars.json)","d":"The pill radius on the blue CTA."},"field-height":{"v":"54px","t":"dimension","s":"computed height of login-email default (raw/components-computed.json)","d":"The 54px field height."},"nav-height":{"v":"110px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The ~110px marketing header (content row is slimmer)."}}},"dark":{}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Dopper</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
 </body>
 </html>

@@ -463,6 +463,12 @@
     "type": "duration",
     "source": "--rd-rise-delay 0.75s",
     "description": "750ms, the delay before hero controls rise in"
+   },
+   "reduced": {
+    "value": "10ms",
+    "type": "duration",
+    "source": "Derived: --rd-mode-dur is declared 0.01s under @media (prefers-reduced-motion: reduce) on .rd-home in raw/css-vars.json (read 2026-11-21). Not a live computed style.",
+    "description": "10ms, --rd-mode-dur when the visitor asks for reduced motion"
    }
   },
   "easing": {

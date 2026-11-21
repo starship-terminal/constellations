@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "read": "2026-11-21",
+    "note": "Spec for tools/build_tokens.py. Colour channels are the declared rgb triplets in raw/css-vars.json. Component sizes are computed styles from raw/components-computed.json. Unread values are omitted, not invented."
+  },
+  "core": {
+    "color": {
+      "accent": {
+        "red": {"type": "color", "var": "--accent-red", "channels": true, "source": "declared on :root"},
+        "yellow": {"type": "color", "var": "--accent-yellow", "channels": true, "source": "declared on :root"},
+        "blue": {"type": "color", "var": "--accent-blue", "channels": true, "source": "declared on :root"}
+      },
+      "greyscale": {
+        "100": {"type": "color", "var": "--greyscale-100", "channels": true},
+        "150": {"type": "color", "var": "--greyscale-150", "channels": true},
+        "200": {"type": "color", "var": "--greyscale-200", "channels": true},
+        "300": {"type": "color", "var": "--greyscale-300", "channels": true},
+        "400": {"type": "color", "var": "--greyscale-400", "channels": true},
+        "default": {"type": "color", "var": "--greyscale-default", "channels": true},
+        "600": {"type": "color", "var": "--greyscale-600", "channels": true},
+        "700": {"type": "color", "var": "--greyscale-700", "channels": true},
+        "800": {"type": "color", "var": "--greyscale-800", "channels": true},
+        "900": {"type": "color", "var": "--greyscale-900", "channels": true},
+        "1000": {"type": "color", "var": "--greyscale-1000", "channels": true},
+        "black": {"type": "color", "var": "--greyscale-black", "channels": true},
+        "white": {"type": "color", "var": "--greyscale-white", "channels": true},
+        "dm-light": {"type": "color", "var": "--greyscale-dm-light", "channels": true},
+        "dm-dark": {"type": "color", "var": "--greyscale-dm-dark", "channels": true}
+      },
+      "ink": {"type": "color", "var": "--color-dark"},
+      "paper": {"type": "color", "var": "--color-light"}
+    },
+    "font": {
+      "family": {
+        "body": {"type": "fontFamily", "value": "NType82-Regular, sans-serif", "source": "computed fontFamily of promo-bar default (raw/components-computed.json)"},
+        "headline": {"type": "fontFamily", "value": "NType82-Headline, sans-serif", "source": "font face NType82-Headline 400 in raw/css-vars.json fonts"},
+        "dot": {"type": "fontFamily", "value": "Ndot-Regular, sans-serif", "source": "font face Ndot-Regular weight 55 in raw/css-vars.json fonts"},
+        "dot-bold": {"type": "fontFamily", "value": "Ndot-Bold, sans-serif", "source": "font face Ndot-Bold weight 57 in raw/css-vars.json fonts"},
+        "mono": {"type": "fontFamily", "value": "\"Geist Mono Variable\", ui-monospace, monospace", "source": "font face Geist Mono Variable in raw/css-vars.json fonts"},
+        "geist": {"type": "fontFamily", "value": "\"Geist Variable\", sans-serif", "source": "font face Geist Variable in raw/css-vars.json fonts"},
+        "lattera": {"type": "fontFamily", "value": "LatteraMonoLL, ui-monospace, monospace", "source": "font face LatteraMonoLL 400 in raw/css-vars.json fonts"}
+      }
+    },
+    "space": {
+      "header": {"type": "dimension", "var": "--header-height", "source": "declared on :root"},
+      "header-space": {"type": "dimension", "var": "--header-space", "source": "declared on body"},
+      "aside": {"type": "dimension", "var": "--aside-width", "source": "declared on :root"},
+      "grid-item": {"type": "dimension", "var": "--grid-item-width", "source": "declared on :root"},
+      "cart-summary": {"type": "dimension", "var": "--cart-aside-summary-height", "source": "declared on :root"},
+      "cart-summary-discount": {"type": "dimension", "var": "--cart-aside-summary-height-with-discount", "source": "declared on :root"}
+    },
+    "radius": {
+      "none": {"type": "dimension", "value": "0px", "source": "computed borderRadius of promo-bar default"},
+      "control": {"type": "dimension", "value": "4px", "source": "computed borderRadius of hero-cta default"},
+      "field": {"type": "dimension", "value": "800px", "source": "computed borderRadius of text-field default (pill)"}
+    }
+  },
+  "light": {
+    "color": {
+      "page": {"type": "color", "value": "{color.greyscale.100}", "source": "body class bg-grey-lightest maps to greyscale-100; sampled page fill on phones collection"},
+      "surface": {"type": "color", "value": "{color.greyscale.white}", "source": "header and card fill"},
+      "text": {"type": "color", "value": "{color.greyscale.black}", "source": "computed color of promo-bar and hero-cta"},
+      "promo": {"type": "color", "value": "{color.accent.yellow}", "source": "yellow announcement bar fill, accent-yellow"},
+      "on-promo": {"type": "color", "value": "{color.greyscale.black}", "source": "computed color of promo-bar text"},
+      "field": {"type": "color", "value": "#e9ecef", "source": "computed backgroundColor of text-field default rgb(233, 236, 239)"}
+    },
+    "component": {
+      "promo-bar": {
+        "text": {"type": "color", "value": "{color.greyscale.black}", "source": "computed color of promo-bar default"},
+        "font-size": {"type": "dimension", "value": "16px", "source": "computed fontSize of promo-bar default"},
+        "height": {"type": "dimension", "value": "29.75px", "source": "computed height of promo-bar default"}
+      },
+      "hero-cta": {
+        "background": {"type": "color", "value": "{color.greyscale.white}", "source": "computed backgroundColor of hero-cta default"},
+        "text": {"type": "color", "value": "{color.greyscale.black}", "source": "computed color of hero-cta default"},
+        "radius": {"type": "dimension", "value": "4px", "source": "computed borderRadius of hero-cta default"},
+        "height": {"type": "dimension", "value": "40px", "source": "computed height of hero-cta default"},
+        "padding": {"type": "dimension", "value": "12px", "source": "computed paddingTop of hero-cta default"}
+      },
+      "text-field": {
+        "background": {"type": "color", "value": "#e9ecef", "source": "computed backgroundColor of text-field default"},
+        "text": {"type": "color", "value": "{color.ink}", "source": "computed color of text-field default rgb(0, 0, 0)"},
+        "radius": {"type": "dimension", "value": "800px", "source": "computed borderRadius of text-field default"},
+        "height": {"type": "dimension", "value": "44px", "source": "computed height of text-field default"},
+        "font-size": {"type": "dimension", "value": "18px", "source": "computed fontSize of text-field default"}
+      },
+      "cart-button": {
+        "size": {"type": "dimension", "value": "32px", "source": "computed width of cart-button default"}
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "page": {"type": "color", "value": "{color.greyscale.dm-dark}", "source": "html.dark on Headphone (1) Pro; --greyscale-dm-dark"},
+      "surface": {"type": "color", "value": "{color.greyscale.dm-light}", "source": "--greyscale-dm-light, dark surface step"},
+      "text": {"type": "color", "value": "{color.greyscale.white}", "source": "dark product page paints light type on a dark canvas"},
+      "promo": {"type": "color", "value": "{color.accent.yellow}", "source": "same accent-yellow; CSS variable sheet does not change under html.dark"}
+    }
+  }
+}

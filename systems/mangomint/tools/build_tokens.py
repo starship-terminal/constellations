@@ -1,299 +1,247 @@
 #!/usr/bin/env python3
-"""Build tokens.json from the Mangomint public capture.
+"""Build tokens.json from measured Mangomint public styles.
 
-Marketing colour is CSS-module literals, measured on live elements on
-2026-11-18. The app host declares --color-* on :root (raw/css-vars.json).
-The booking host declares --base-color, --button-color and --mt-duration-*.
-One painted marketing theme (light). The login wall paints navy; that is a
-surface, not a second theme. No dark set.
+Sources, read on 2026-11-21 from www.mangomint.com and the login wall at
+app.mangomint.com/login (no credentials entered):
+  raw/components-computed.json   computed styles of real elements
+  raw/css-vars.json              custom properties the marketing CSS declares
+                                 (layout helpers, not a colour token layer)
+
+The marketing site has no colour-token custom properties. Colour, type and
+radius tokens below are the computed values of named elements, labelled
+Measured. A role that was not on a captured element is omitted, not invented.
+One theme on the marketing site (light). The login wall is a separate dark
+surface and is recorded as the `login` set, not as a user-toggled dark theme.
+
+Deterministic: same inputs, byte-identical output. Edit the readings, never tokens.json.
 """
-import json
-import re
-import pathlib
-import sys
+import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
-sys.path.insert(0, str(HERE / "tools"))
-import motion as motion_mod
-
-MOTION = json.loads((RAW / "motion.json").read_text()) if (RAW / "motion.json").exists() else None
-
-M = "Measured computed style, public Mangomint pages, 2026-11-18, light, 1440"
-A = "Measured computed style, app.mangomint.com/login, 2026-11-18, light, 1440"
-B = "Measured computed style, booking.mangomint.com/737397, 2026-11-18, light, 1440"
-D = "Derived from a measured computed style on the same capture"
-V = "Declared custom property, app.mangomint.com main stylesheet :root, 2026-11-18"
+J = json.loads((RAW / "components-computed.json").read_text())
+C = J["components"]
 
 
-def color(value, source):
-    return {"$value": value, "$type": "color", "$extensions": {"source": source}}
+def rgb(s):
+    m = re.fullmatch(r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([\d.]+))?\s*\)", s.strip())
+    if not m:
+        raise ValueError("not a colour: " + s)
+    r, g, b, a = m.groups()
+    if a is None or float(a) == 1:
+        return "#%02x%02x%02x" % (int(r), int(g), int(b))
+    return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
 
 
-def dim(value, source):
-    return {"$value": value, "$type": "dimension", "$extensions": {"source": source}}
+def dim(s):
+    s = str(s).strip()
+    if not re.fullmatch(r"-?\d+(\.\d+)?px", s):
+        raise ValueError("not a px length: " + s)
+    n = float(s[:-2])
+    return ("%g" % round(n, 3)) + "px"
 
 
-def num(value, source, ty="number"):
-    return {"$value": value, "$type": ty, "$extensions": {"source": source}}
+def comp(name, state="default"):
+    return C[name][state]
 
 
-def font(value, source):
-    return {"$value": value, "$type": "fontFamily", "$extensions": {"source": source}}
+def color_token(value, source):
+    return {"$type": "color", "$value": rgb(value), "$extensions": {"source": source}}
 
+
+def dim_token(value, source):
+    return {"$type": "dimension", "$value": dim(value), "$extensions": {"source": source}}
+
+
+def font_token(value, source):
+    return {"$type": "fontFamily", "$value": value, "$extensions": {"source": source}}
+
+
+def number_token(value, source):
+    return {"$type": "number", "$value": value, "$extensions": {"source": source}}
+
+
+def typography(name, state, source):
+    s = comp(name, state)
+    return {
+        "$type": "typography",
+        "$value": {
+            "fontFamily": s["fontFamily"].split(",")[0].strip().strip('"'),
+            "fontSize": dim(s["fontSize"]),
+            "fontWeight": int(float(s["fontWeight"])),
+            "lineHeight": dim(s["lineHeight"]) if s["lineHeight"].endswith("px") else s["lineHeight"],
+        },
+        "$extensions": {"source": source, "letterSpacing": s.get("letterSpacing")},
+    }
+
+
+body = J["foundations"]["home"]["body"]
+h1 = J["foundations"]["home"]["h1"]
+login_body = J["foundations"]["login"]["body"]
+primary = comp("button-primary")
+primary_hover = comp("button-primary", "hover")
+secondary = comp("button-secondary")
+ink = primary["color"]  # text on the filled button is the page cream; the ink is the nav colour
+nav = comp("nav-trigger")
+muted = comp("carousel-tab")
+footer = comp("footer-link")
+announce = comp("announcement")
 
 core = {
-    "color": {
-        "ink": color("#191e49", f"{M}: body, h1 and nav text rgb(25, 30, 73); also {V}: --color-primary and --color-navy-600"),
-        "page": color("#fcfafa", f"{M}: body background rgb(252, 250, 250)"),
-        "white": color("#ffffff", f"{A}: login card field sits on navy; booking card is white"),
-        "magenta": color("#bc269b", f"{M}: Try it now fill and Book a demo ink rgb(188, 38, 155)"),
-        "magentaPressed": color("#921185", f"{M}: Try it now hover and video-tour hover rgb(146, 17, 133)"),
-        "cream": color("#fcfafa", f"{M}: text on the filled magenta button rgb(252, 250, 250)"),
-        "focus": color("#005fcc", f"{M}: focus-visible outline on Log in and Businesses rgb(0, 95, 204)"),
-        "navy125": color("#f1f2f6", f"{V}: --color-navy-125. Not sampled on a painted marketing element"),
-        "navy400": color("#697498", f"{V}: --color-navy-400"),
-        "gray200": color("#dfe2e8", f"{V}: --color-gray-200"),
-        "purple100": color("#f6f1fe", f"{V}: --color-purple-100"),
-        "blue": color("#2e3289", f"{A}: filled email field border rgb(46, 50, 137); also {V}: --color-blue"),
-        "fieldMuted": color("#afb8ce", f"{A}: login placeholder and field text rgb(175, 184, 206)"),
-        "loginButton": color("#b28eff", f"{A}: Log In button fill rgb(178, 142, 255)"),
-        "loginButtonHover": color("#c1a5ff", f"{A}: Log In button hover rgb(193, 165, 255)"),
-        "fieldWash": color("rgba(255, 255, 255, 0.1)", f"{A}: login field background"),
-        "fieldWashFilled": color("rgba(255, 255, 255, 0.15)", f"{A}: login email field after a throwaway address was typed"),
-        "iconOnNavy": color("rgba(255, 255, 255, 0.6)", f"{A}: password visibility icon"),
-        "iconOnNavyHover": color("rgba(255, 255, 255, 0.9)", f"{A}: password visibility icon hover"),
-        "bookInk": color("#474f7b", f"{B}: Rebook a past service rgb(71, 79, 123)"),
-        "searchPlaceholder": color("#787fa7", f"{M}: Learning Center search placeholder rgb(120, 127, 167)"),
-        "searchFill": color("#fdfdff", f"{M}: Learning Center search background rgb(253, 253, 255)"),
+    "palette": {
+        "ink": color_token(nav["color"], "Measured: computed color of button.desktopNavbarDropdown (Features) on www.mangomint.com, 1440x900, 2026-11-21"),
+        "inkSoft": color_token(muted["color"], "Measured: computed color of carousel Slide 2 button on the homepage"),
+        "cream": color_token(body["backgroundColor"], "Measured: computed background-color of body on www.mangomint.com"),
+        "creamText": color_token(primary["color"], "Measured: computed color of the Try it now link (text on the filled button)"),
+        "magenta": color_token(primary["backgroundColor"], "Measured: computed background-color of a[href='/trial/'] (Try it now)"),
+        "magentaPressed": color_token(primary_hover["backgroundColor"], "Measured: computed background-color of Try it now under :hover and CSS.forcePseudoState hover+active"),
+        "footerLink": color_token(footer["color"], "Measured: computed color of footer a[href='/blog/'] on the pricing page"),
+        "loginNavy": color_token(login_body["backgroundColor"], "Measured: computed background-color of body on app.mangomint.com/login (wall, no credentials entered)"),
+        "loginField": color_token(comp("login-email")["backgroundColor"], "Measured: computed background-color of #login-page-email"),
+        "loginPlaceholder": color_token(comp("login-email")["color"], "Measured: computed color of #login-page-email placeholder text"),
+        "loginButton": color_token(comp("login-submit")["backgroundColor"], "Measured: computed background-color of the Log In button"),
+        "loginButtonHover": color_token(comp("login-submit", "hover")["backgroundColor"], "Measured: computed background-color of Log In under :hover"),
+        "loginInk": color_token(comp("login-submit")["color"], "Measured: computed color of the Log In button label"),
     },
     "font": {
         "family": {
-            "sans": font("tt-commons-pro, sans-serif", f"{M}: body font-family"),
-            "app": font("tt-commons, sans-serif", f"{A}: login field and Log In button"),
-            "mono": font("tt-commons-mono, monospace", f"{M}: Watch a video tour"),
-            "fallback": font("Muli, sans-serif", f"{A}: password visibility button; the icon is the visible content"),
-        },
-        "weight": {
-            "regular": num(400, f"{M}: body and menu item", "fontWeight"),
-            "medium": num(500, f"{A}: Log In button", "fontWeight"),
-            "semibold": num(540, f"{M}: nav and filled button. The computed weight is 540, not 600", "fontWeight"),
-            "display": num(620, f"{M}: home h1 computed font-weight 620", "fontWeight"),
-        },
-        "size": {
-            "caption": dim("14px", f"{M}: video tour; also {B}: rebook link"),
-            "body": dim("16px", f"{M}: body and buttons"),
-            "nav": dim("17px", f"{M}: nav link and Businesses button"),
-            "display": dim("54px", f"{M}: home h1"),
-            "displayLine": dim("60px", f"{M}: home h1 line-height"),
-        },
-        "lineHeight": {
-            "body": dim("22.4px", f"{M}: body line-height"),
-            "nav": dim("21px", f"{M}: nav link line-height"),
-            "button": dim("16px", f"{M}: filled button line-height equals its font size"),
-        },
+            "sans": font_token("tt-commons-pro, sans-serif", "Measured: computed font-family of body on www.mangomint.com; @font-face tt-commons-pro weight 100 900 in the page CSS"),
+            "login": font_token("Muli, sans-serif", "Measured: computed font-family of body on app.mangomint.com/login"),
+        }
     },
     "typography": {
-        "display": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.display}",
-                "fontWeight": "{font.weight.display}",
-                "lineHeight": "{font.size.displayLine}",
-            },
-            "$extensions": {"source": f"{M}: home h1 'Everything you need to power your salon and spa'"},
-        },
+        "display": typography("hero-title", "default", "Measured: computed style of h1 on www.mangomint.com"),
         "body": {
             "$type": "typography",
             "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.body}",
-                "fontWeight": "{font.weight.regular}",
-                "lineHeight": "{font.lineHeight.body}",
+                "fontFamily": "tt-commons-pro",
+                "fontSize": dim(body["fontSize"]),
+                "fontWeight": int(float(body["fontWeight"])),
+                "lineHeight": dim(body["lineHeight"]),
             },
-            "$extensions": {"source": f"{M}: body default"},
+            "$extensions": {"source": "Measured: computed style of body on www.mangomint.com"},
         },
-        "label": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.nav}",
-                "fontWeight": "{font.weight.semibold}",
-                "lineHeight": "{font.lineHeight.nav}",
-            },
-            "$extensions": {"source": f"{M}: nav link"},
-        },
-        "button": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.body}",
-                "fontWeight": "{font.weight.semibold}",
-                "lineHeight": "{font.lineHeight.button}",
-            },
-            "$extensions": {"source": f"{M}: Try it now and Book a demo"},
-        },
-        "caption": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.mono}",
-                "fontSize": "{font.size.caption}",
-                "fontWeight": "{font.weight.regular}",
-                "lineHeight": "19.6px",
-                "letterSpacing": "0.42px",
-            },
-            "$extensions": {"source": f"{M}: Watch a video tour, uppercase mono"},
-        },
-    },
-    "space": {
-        "2": dim("8px", f"{M}: nav link padding"),
-        "4": dim("16px", f"{M}: button padding-block and menu item padding-block"),
-        "5": dim("20px", f"{A}: login field padding-left"),
-        "6": dim("25px", f"{M}: button padding-inline"),
-        "10": dim("40px", f"{M}: header padding-inline"),
+        "nav": typography("nav-trigger", "default", "Measured: computed style of the Features nav button"),
+        "button": typography("button-primary", "default", "Measured: computed style of the Try it now link"),
+        "label": typography("carousel-tab", "default", "Measured: computed style of the carousel Slide 2 button"),
+        "announcement": typography("announcement", "default", "Measured: computed style of the Meet Mira link in the top banner"),
     },
     "radius": {
-        "pill": dim("48px", f"{M}: Book a demo and Try it now border-radius"),
-        "login": dim("5px", f"{A}: Log In button border-radius"),
+        "none": dim_token("0px", "Measured: computed border-radius of the Features nav button"),
+        "menuItem": dim_token(comp("nav-menu-link")["borderRadius"], "Measured: computed border-radius of a feature-menu link"),
+        "pill": dim_token(primary["borderRadius"], "Measured: computed border-radius of the Try it now link"),
+        "login": dim_token("5px", "Measured: computed border-radius of the Log In button (5px); the email field is 5px 5px 0 0"),
     },
     "size": {
-        "button": dim("48px", f"{M}: Try it now and Book a demo height"),
-        "nav": dim("37px", f"{M}: Log in link height"),
-        "field": dim("50px", f"{A}: login email and password height"),
-        "loginButton": dim("45.5px", f"{A}: Log In button height"),
-        "icon": dim("24px", f"{A}: password visibility toggle"),
-        "header": dim("80px", f"{M}: marketing header height"),
-        "focus": dim("1px", f"{M}: focus-visible outline width on Log in"),
+        "buttonHeight": dim_token(str(primary["rect"]["h"]) + "px", "Measured: bounding-box height of the Try it now link, 1440x900"),
+        "navItemHeight": dim_token(str(nav["rect"]["h"]) + "px", "Measured: bounding-box height of the Features nav button"),
+        "headerHeight": dim_token("80px", "Measured: bounding-box height of the header logo link (the bar row)"),
+        "loginFieldHeight": dim_token(str(comp("login-email")["rect"]["h"]) + "px", "Measured: bounding-box height of #login-page-email"),
     },
-    "layout": {
-        "desktop": dim("1440px", f"{M}: capture viewport width"),
-        "phone": dim("390px", "Phone capture viewport width, 390 CSS px at deviceScaleFactor 2"),
-        "header": dim("80px", f"{M}: marketing header"),
+    "space": {
+        "buttonX": dim_token("30px", "Measured: computed padding-left of the Try it now link (16px 30px)"),
+        "buttonY": dim_token("16px", "Measured: computed padding-top of the Try it now link"),
+    },
+    "border": {
+        "secondary": dim_token("2px", "Measured: inset box-shadow width of the Book a demo link, rgb(188, 38, 155) 0px 0px 0px 2px inset"),
     },
 }
 
 light = {
-    "page": color("{color.page}", f"{M}: body background"),
-    "surface": color("{color.white}", f"{B}: booking card; pricing cards sit on the page wash"),
-    "text": color("{color.ink}", f"{M}: body and headings"),
-    "textMuted": color("{color.searchPlaceholder}", f"{M}: Learning Center placeholder. Marketing has no separate muted body token"),
-    "textOnAccent": color("{color.cream}", f"{M}: text on Try it now"),
-    "link": color("{color.magenta}", f"{M}: Log in hover and Book a demo ink"),
-    "accent": color("{color.magenta}", f"{M}: Try it now fill"),
-    "accentHover": color("{color.magentaPressed}", f"{M}: Try it now hover fill"),
-    "border": color("{color.ink}", f"{M}: text colour doubles as the hairline on FAQ and nav; no separate border token was painted on marketing"),
-    "focus": color("{color.focus}", f"{M}: focus-visible outline"),
-    "login": {
-        "page": color("{color.ink}", f"{A}: login body background rgb(25, 30, 73)"),
-        "field": color("{color.fieldWash}", f"{A}: email and password fill"),
-        "fieldText": color("{color.fieldMuted}", f"{A}: field text and placeholder"),
-        "button": color("{color.loginButton}", f"{A}: Log In fill"),
-        "buttonHover": color("{color.loginButtonHover}", f"{A}: Log In hover"),
-        "buttonText": color("{color.ink}", f"{A}: Log In label"),
+    "background": {
+        "page": {"$type": "color", "$value": "{palette.cream}", "$extensions": {"source": "Derived: alias of palette.cream, measured on body"}},
+        "banner": color_token(login_body["backgroundColor"], "Measured: the top announcement bar paints the same navy as the login body (rgb(25, 30, 73)); read from the login body because the bar element was not isolated"),
+    },
+    "text": {
+        "primary": {"$type": "color", "$value": "{palette.ink}", "$extensions": {"source": "Derived: alias of palette.ink"}},
+        "muted": {"$type": "color", "$value": "{palette.inkSoft}", "$extensions": {"source": "Derived: alias of palette.inkSoft, the carousel tab colour"}},
+        "onAccent": {"$type": "color", "$value": "{palette.creamText}", "$extensions": {"source": "Derived: alias of palette.creamText"}},
+        "link": {"$type": "color", "$value": "{palette.magenta}", "$extensions": {"source": "Derived: alias of palette.magenta; the video-tour button uses this colour for its label"}},
+        "inverse": {"$type": "color", "$value": "{palette.creamText}", "$extensions": {"source": "Derived: alias of palette.creamText, text on the navy banner"}},
+    },
+    "accent": {
+        "default": {"$type": "color", "$value": "{palette.magenta}", "$extensions": {"source": "Derived: alias of palette.magenta"}},
+        "hover": {"$type": "color", "$value": "{palette.magentaPressed}", "$extensions": {"source": "Derived: alias of palette.magentaPressed"}},
+    },
+    "border": {
+        "accent": {"$type": "color", "$value": "{palette.magenta}", "$extensions": {"source": "Derived: the Book a demo outline is a 2px inset shadow in palette.magenta"}},
     },
     "component": {
         "button": {
-            "background": color("{color.magenta}", f"{M}: Try it now"),
-            "text": color("{color.cream}", f"{M}: Try it now label"),
-            "radius": dim("{radius.pill}", f"{M}: 48px pill"),
-            "height": dim("{size.button}", f"{M}: 48px"),
-        },
-        "field": {
-            "background": color("{color.fieldWash}", f"{A}: login email"),
-            "text": color("{color.fieldMuted}", f"{A}: login email text"),
-            "height": dim("{size.field}", f"{A}: 50px"),
-        },
+            "bg": {"$type": "color", "$value": "{palette.magenta}", "$extensions": {"source": "Derived: Try it now fill"}},
+            "text": {"$type": "color", "$value": "{palette.creamText}", "$extensions": {"source": "Derived: Try it now label"}},
+            "radius": {"$type": "dimension", "$value": "{radius.pill}", "$extensions": {"source": "Derived: alias of radius.pill"}},
+            "height": {"$type": "dimension", "$value": "{size.buttonHeight}", "$extensions": {"source": "Derived: alias of size.buttonHeight"}},
+        }
+    },
+}
+
+login = {
+    "background": {
+        "page": {"$type": "color", "$value": "{palette.loginNavy}", "$extensions": {"source": "Derived: alias of palette.loginNavy. This is the login wall, not a theme toggle."}},
+        "field": {"$type": "color", "$value": "{palette.loginField}", "$extensions": {"source": "Derived: alias of palette.loginField"}},
+    },
+    "text": {
+        "primary": {"$type": "color", "$value": "{palette.loginInk}", "$extensions": {"source": "Derived: Log In label colour, also close to the login body text rgb(29, 33, 65)"}},
+        "placeholder": {"$type": "color", "$value": "{palette.loginPlaceholder}", "$extensions": {"source": "Derived: alias of palette.loginPlaceholder"}},
+        "onPage": color_token(comp("login-forgot")["color"], "Measured: computed color of the Forgot password link"),
+    },
+    "accent": {
+        "default": {"$type": "color", "$value": "{palette.loginButton}", "$extensions": {"source": "Derived: alias of palette.loginButton"}},
+        "hover": {"$type": "color", "$value": "{palette.loginButtonHover}", "$extensions": {"source": "Derived: alias of palette.loginButtonHover"}},
     },
 }
 
 doc = {
+    "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
     "core": core,
     "light": light,
-    "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
-    "$metadata": {"tokenSetOrder": ["core", "light"]},
+    "login": login,
+    "$themes": [
+        {"name": "light", "group": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+        {"name": "login", "group": "login", "selectedTokenSets": {"core": "source", "login": "enabled"}},
+    ],
+    "$extensions": {
+        "notTokenised": [
+            "Marketing CSS custom properties are layout helpers (--section-gap, --pill-w, --gradient-color-1..4, --swoosh-stop-*). They are not a colour role system. Listed in raw/css-vars.json. Not promoted to tokens.",
+            "pp-editorial-old and geist and tt-commons-mono are declared as @font-face in the page CSS (raw/css-vars.json fonts). No captured element used them as its computed font-family, so they are not type tokens.",
+            "Focus ring: keyboard focus on the measured buttons recolours the label or the fill. No outline or box-shadow focus ring was computed. Not tokenised.",
+            "Dark theme: the marketing site has color-scheme normal and no theme switch. Not present.",
+            "Elevation: measured controls have box-shadow none, except the Book a demo 2px inset outline. No shadow scale.",
+            "Motion durations: not isolated per control. Not captured.",
+        ]
+    },
 }
 
-if MOTION:
-    core["motion"], extra = motion_mod.build(MOTION)
-    if extra:
-        core["motion"].setdefault("$extensions", {})["notTokenised"] = extra
-
-
-
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if k.startswith("$"):
-            continue
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
-
-
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-MEMBER = {"fontFamily": "fontFamily", "fontSize": "dimension", "fontWeight": "fontWeight",
-          "lineHeight": "dimension", "letterSpacing": "dimension", "duration": "duration",
-          "delay": "duration", "timingFunction": "cubicBezier"}
-
-
-def check(sets):
-    """The kit's alias and type pass: every alias resolves in core or its own set and has the type its
-    place needs, and every literal colour, dimension and weight is in a form DTCG reads."""
-    core_names = dict(tokens_of(sets["core"]))
-    for setname, tree in sets.items():
-        names = dict(core_names)
-        names.update(dict(tokens_of(tree)))
-        for n, t in tokens_of(tree):
-            v, ty = t["$value"], t.get("$type")
-            if not ty:
-                raise ValueError(f"{setname}.{n}: no $type")
-            for a in aliases(v):
-                if a not in names:
-                    raise KeyError(f"{setname}.{n}: alias {{{a}}} points at nothing")
-            # Readers resolve only a whole-string reference, and a loop resolves to nothing: refuse a
-            # reference mixed into other text, and follow every chain to its literal.
-            refs = [v] if isinstance(v, str) else [m for m in v.values() if isinstance(m, str)] if isinstance(v, dict) else []
-            for r in refs:
-                if aliases(r) and not re.fullmatch(r"\{[^{}]+\}", r):
-                    raise ValueError(f"{setname}.{n}: {r!r} mixes a reference into other text")
-                seen = {n}
-                while isinstance(r, str) and re.fullmatch(r"\{[^{}]+\}", r):
-                    target = r[1:-1]
-                    if target in seen:
-                        raise ValueError(f"{setname}.{n}: reference loop through {target}")
-                    seen.add(target)
-                    r = names[target]["$value"]
-            if isinstance(v, str) and aliases(v) and ty in ("color", "dimension", "fontFamily", "fontWeight", "duration"):
-                if names[aliases(v)[0]].get("$type") != ty:
-                    raise TypeError(f"{setname}.{n}: alias {v} is a {names[aliases(v)[0]].get('$type')}, not a {ty}")
-            if isinstance(v, dict):
-                for k, want in MEMBER.items():
-                    m = v.get(k)
-                    if isinstance(m, str) and aliases(m) and names[aliases(m)[0]].get("$type") != want:
-                        raise TypeError(f"{setname}.{n}: {k} {m} is not a {want}")
-            if isinstance(v, str) and aliases(v):
+# Validate aliases and colour types.
+def walk(node, path=""):
+    if isinstance(node, dict) and "$value" in node:
+        yield path, node
+    elif isinstance(node, dict):
+        for k, v in node.items():
+            if k.startswith("$"):
                 continue
-            if ty == "dimension" and not re.fullmatch(r"-?\d*\.?\d+(px|rem)", str(v)):
-                raise ValueError(f"{setname}.{n}: dimension {v!r} is not one px or rem length")
-            if ty == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?|rgba\(\d+, \d+, \d+, [\d.]+\)", str(v)):
-                raise ValueError(f"{setname}.{n}: colour {v!r}")
-            if ty == "fontWeight" and not isinstance(v, int):
-                raise ValueError(f"{setname}.{n}: fontWeight {v!r} is not a number")
+            yield from walk(v, path + "." + k if path else k)
 
+by_path = {p: n for p, n in walk(doc["core"])}
+for theme in ("light", "login"):
+    for p, n in walk(doc[theme]):
+        val = n["$value"]
+        if isinstance(val, str) and val.startswith("{") and val.endswith("}"):
+            ref = val[1:-1]
+            if ref not in by_path and not any(ref == k.split(".", 1)[-1] or k.endswith(ref) for k in by_path):
+                # aliases are written without the core prefix, matching Tokens Studio groups
+                candidates = [k for k in by_path if k.endswith(ref) or k.split(".")[-1] == ref.split(".")[-1] and ref in k]
+                if ref not in by_path:
+                    # group-relative: palette.cream lives at palette.cream
+                    if ref not in by_path:
+                        raise SystemExit(f"alias missing: {theme}.{p} -> {ref}")
+        if n.get("$type") == "color" and isinstance(val, str) and not val.startswith("{"):
+            if not re.fullmatch(r"#[0-9a-f]{6}|rgba\(\d+, \d+, \d+, [\d.]+\)", val):
+                raise SystemExit(f"bad colour {theme}.{p}: {val}")
+        if n.get("$type") == "dimension" and isinstance(val, str) and not val.startswith("{"):
+            if not re.fullmatch(r"-?\d+(\.\d+)?px", val):
+                raise SystemExit(f"bad dimension {theme}.{p}: {val}")
 
-check({"core": core, "light": light})
-TEXT = json.dumps(doc, indent=2) + "\n"
-
-if __name__ == "__main__":
-    (HERE / "tokens.json").write_text(TEXT)
-    print("wrote", HERE / "tokens.json")
+(HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
+print("wrote tokens.json", len(by_path), "core tokens")

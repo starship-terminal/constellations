@@ -1,0 +1,31 @@
+{
+  "signup": {
+    "sel": "[data-m=\"signup\"]",
+    "text": "Sign up for free",
+    "w": 139,
+    "h": 32,
+    "color": "lab(98.956 0.0000298023 -0.0000119209)",
+    "backgroundColor": "oklab(0.145 -0.00000143796 0.00000340492 / 0.9)",
+    "borderTopColor": "rgba(0, 0, 0, 0)",
+    "borderTopWidth": "1px",
+    "borderTopStyle": "solid",
+    "borderRadius": "8px",
+    "fontFamily": "\"TikTok Sans\", system-ui, arial",
+    "fontSize": "14px",
+    "fontWeight": "600",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "paddingTop": "0px",
+    "paddingRight": "16px",
+    "paddingBottom": "0px",
+    "paddingLeft": "16px",
+    "height": "32px",
+    "width": "138.859px",
+    "boxShadow": "none",
+    "outline": "oklab(0.747992 -0.0921395 -0.125864 / 0.5) none 0px",
+    "outlineOffset": "0px",
+    "gap": "4px",
+    "textTransform": "none",
+    "textDecorationLine": "none"
+  }
+}

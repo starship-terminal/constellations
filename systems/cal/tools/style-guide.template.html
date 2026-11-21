@@ -4,197 +4,70 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cal.com style guide</title>
-<meta name="description" content="Cal.com design tokens and the public marketing, booking and auth surfaces' components, rendered from tokens.json with the declared and measured values.">
 <style>
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: calSans, "calSans Fallback", fontSans, "fontSans Fallback", Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: calSans, "calSans Fallback", fontHeading, "fontHeading Fallback", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-sans: calSans, "calSans Fallback", system-ui, sans-serif;
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
-[data-mode="dark"], .dark {
-/*DARK*/
-}
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #242424); background: var(--surface-page, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-primary, #242424); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-hairline, rgba(15,35,75,.07)); }
-.lead { max-width: 62ch; color: var(--text-primary, #242424); opacity: .8; }
-.note { font-size: 13px; color: var(--text-primary, #242424); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary, #242424); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #e5e7eb); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-primary, #242424); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border, #e5e7eb); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--text-primary, #242424); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--border, #e5e7eb); overflow: hidden; background: var(--surface-page, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 12px 0 22px; font-size: 15px; background: var(--surface-bar, rgba(244,244,244,.72)); border-radius: var(--radius-2xl, 18px); }
-.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 36px); padding: 0 24px; font-size: 14px; font-weight: 500; border-radius: var(--radius-lg, 12px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-primary, #242424); color: var(--text-on-action, #fff); }
-.btn.small { height: var(--component-nav-button-height, 36px); border-radius: var(--radius-md, 10px); }
-.hero { color: var(--text-primary, #242424); padding: 64px 40px; font: 700 60px/1.08 var(--sg-serif); letter-spacing: -0.01em; text-align: center; }
-.hero small { display: block; font: 500 18px/1.4 var(--sg-sans); color: var(--text-muted, #6a6e78); margin: 16px auto 22px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--border-strong, #dee1e6); padding: 14px; font-size: 13px; background: #fff; }
-.tile b { display: block; font: 700 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
-.days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
-.days span { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm, 8px); font-size: 13px; color: var(--booker-text-emphasis, #070a0d); }
-.days .sel { background: var(--booker-surface-emphasis, #e5e7eb); }
-.days .today { background: var(--booker-action, #292929); color: #fff; }
-.slot { display: block; height: var(--component-slot-height, 36px); line-height: var(--component-slot-height, 36px); text-align: center; border: 1px solid var(--booker-border, #d1d5db); border-radius: var(--radius-md, 10px); font-size: 14px; font-weight: 500; color: var(--booker-text-default, #3c3e44); margin-bottom: 8px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-hairline, rgba(15,35,75,.07)); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--text-primary, #242424); opacity: .65; font-family: var(--sg-mono); }
-.toggle { display: inline-flex; background: var(--surface-field, #f3f4f6); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; }
-.toggle span { padding: 8px 22px; border-radius: 999px; }
-.toggle .on { background: var(--action-primary, #242424); color: var(--text-on-action, #fff); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #242424); background: var(--page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 700 40px/1.1 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 600 13px/1 var(--sg-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted, #676b75); margin: 48px 0 12px; border-bottom: 1px solid var(--border, #e5e7eb); padding-bottom: 8px; }
+p { max-width: 68ch; }
+.note { font-size: 13px; color: var(--muted, #676b75); }
+.nav { display: flex; align-items: center; gap: 8px; height: 64px; padding: 0 16px; border: 1px solid var(--border, #e5e7eb); border-radius: 16px; background: var(--page, #fff); }
+.nav .wm { font-weight: 700; font-size: 18px; margin-right: 8px; }
+.nav .sp { flex: 1; }
+.pill { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 10px; font-size: 14px; font-weight: 500; color: var(--text, #242424); }
+.cta { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 12px; background: var(--accent, #242424); color: var(--on-accent, #fff); font-size: 14px; font-weight: 500; border: 1px solid var(--accent, #242424); }
+.hero { padding: 48px 8px 16px; font: 700 64px/1.08 var(--sg-sans); letter-spacing: -0.02em; }
+.hero small { display: block; margin-top: 12px; font: 500 20px/1.4 var(--sg-sans); color: var(--muted, #676b75); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 132px; }
+.sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border, #e5e7eb); }
+.sw b, .sw span { display: block; font: 500 11px/1.3 var(--sg-mono); }
+.sw span { color: var(--muted, #676b75); font-weight: 400; }
+.card { border: 1px solid var(--border, #e5e7eb); border-radius: 16px; padding: 16px; background: var(--surface, #fff); }
+.field { height: 36px; border-radius: 10px; border: 1px solid var(--border, #e5e7eb); background: var(--field, #f3f4f6); padding: 0 12px; display: flex; align-items: center; color: var(--muted, #676b75); font-size: 14px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
 </style>
 </head>
 <body>
 <main>
   <h1>Cal.com style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+  <p class="note">Generated from tokens.json. Swatches are the declared tokens. The boxed nav is a reconstruction drawn with those tokens, not a screenshot. The public site paints light only.</p>
 
-  <h2 class="sh">Cal.com, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--color-hp-*</code> homepage layer (#242424 ink, #6a6e78 muted, #e5e7eb lines, the #cc4510 accent and the #0f234b-tinted shadows), the declared <code>--cal-*</code> semantic layer the booker and auth hosts paint (#3c3e44 text on white, #0f0f0f canvas in dark), the calSans type ramp from the 80px display to the 11px badge, the 8–18px radii and the measured focus rings. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from cal.com on 2026-11-11, signed out, in headless Chromium across three public hosts: the marketing pages on cal.com, the public booking page on i.cal.com (cal.com/peer) and the auth cards on app.cal.com. The signed-in product behind app.cal.com is a documented boundary; nothing was booked or submitted. calSans, fontSans, fontHeading and Inter are served faces and are not loaded here: samples fall back to system sans.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">A floating 72%-white glass bar carries the wordmark, the mega-menu triggers, plain links, Sign in and the dark Get-started pill. The same dark fill draws the hero's sign-up buttons; a 1px-white-gap + 3px-grey ring is the keyboard focus every control draws. A near-black footer closes every marketing page.</p>
-  <div class="mock" style="padding:20px">
-    <div class="navbar"><span class="wm">Cal.com</span><span>Products</span><span>Use cases</span><span>Features</span><span>Resources</span><span class="sp"></span><span>Sign in</span><span class="btn small primary">Get started</span></div>
-    <div class="hero">Where people find the time to meet<small>Making time for millions of people every month.</small><span class="btn primary" style="height:var(--component-hero-button-height,64px);border-radius:var(--radius-xl,14px);font-size:20px">Sign up with Google</span></div>
+  <h2>Colour roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>var(--page)</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>var(--text)</span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><b>muted</b><span>var(--muted)</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>var(--border)</span></div>
+    <div class="sw"><i style="background:var(--accent-brand)"></i><b>accent-brand</b><span>var(--accent-brand)</span></div>
+    <div class="sw"><i style="background:var(--success)"></i><b>success</b><span>var(--success)</span></div>
+    <div class="sw"><i style="background:var(--warning)"></i><b>warning</b><span>var(--warning)</span></div>
+    <div class="sw"><i style="background:var(--danger)"></i><b>danger</b><span>var(--danger)</span></div>
+    <div class="sw"><i style="background:var(--info)"></i><b>info</b><span>var(--info)</span></div>
   </div>
 
-  <h2 class="sh">Pricing</h2>
-  <p class="lead">/pricing centres plan tabs and a MONTHLY/YEARLY capsule switch above white plan cards on the page field; each card carries a 14px radius on a #dee1e6 hairline and a dark 12px action.</p>
-  <div class="mock" style="padding:20px">
-    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span>MONTHLY</span><span class="on">YEARLY</span></span></div>
-    <div class="grid">
-      <div class="tile" style="border-radius:var(--radius-xl,14px);background:var(--surface-raised,#fff);color:var(--text-primary,#242424)"><b>Free</b><span class="sub">Everything you could need for scheduling as an individual</span></div>
-      <div class="tile" style="border-radius:var(--radius-xl,14px);background:var(--surface-raised,#fff);color:var(--text-primary,#242424)"><b>Teams</b><span class="sub">$15/month per user</span></div>
-    </div>
-    <div style="margin-top:18px"><span class="btn primary">Use for free</span></div>
-  </div>
+  <h2>Chrome</h2>
+  <p>A white sticky bar, 64px tall, with a Cal Sans wordmark, text triggers, a quiet Sign in link and one ink pill. The orange brand accent is reserved for status chips such as Booked, not the primary action.</p>
+  <div class="nav"><span class="wm">Cal.com</span><span class="pill">Products</span><span class="pill">Pricing</span><span class="sp"></span><span class="pill">Sign in</span><span class="cta">Get started</span></div>
+  <div class="hero">Where people meet<small>Scheduling software for online bookings.</small></div>
 
-  <h2 class="sh">The public booking page</h2>
-  <p class="lead">cal.com/peer (served from i.cal.com) paints Inter on the <code>--cal-*</code> layer: a white canvas, #e5e7eb day cells, white slots on #d1d5db borders, and the host page's #292929 brand paint on today and confirm. Its supported embed mode paints the same tree dark: #0f0f0f canvas, #4d4d4d borders, #d4d4d4 text.</p>
-  <div class="mock" style="padding:20px;display:grid;grid-template-columns:1.2fr .8fr;gap:20px">
-    <div class="days">
-      <span>11</span><span>12</span><span class="today">13</span><span>14</span><span class="sel">15</span><span>16</span><span>17</span>
-    </div>
-    <div>
-      <span class="slot">4:00pm</span>
-      <span class="slot">4:15pm</span>
-      <span class="btn primary" style="width:100%">Confirm</span>
+  <h2>Field</h2>
+  <div class="row">
+    <div class="card" style="width:320px">
+      <div class="field">Email</div>
+      <p class="note">The login field was measured, not filled. Radius 10px, height 30px on the auth card.</p>
     </div>
   </div>
-  <div class="mock dark" style="margin-top:12px;padding:20px;background:var(--surface-page,#0f0f0f);color:var(--text-primary,#d4d4d4)">
-    <div class="grid">
-      <div class="tile" style="border-radius:var(--radius-md,10px);background:var(--surface-page,#0f0f0f);border:1px solid var(--border,#4d4d4d);color:var(--text-primary,#d4d4d4)"><b style="color:var(--text-emphasis,#fafafa)">Intro call</b><span class="sub" style="color:var(--text-muted,#a3a3a3)">30m · video</span></div>
-      <div class="tile" style="border-radius:var(--radius-md,10px);background:var(--surface-subtle,#262626);border:1px solid var(--border-subtle,#262626);color:var(--text-primary,#d4d4d4)"><b style="color:var(--text-emphasis,#fafafa)">Dark booker</b><span class="sub" style="color:var(--text-muted,#a3a3a3)">?theme=dark&amp;embed=true</span></div>
-    </div>
-    <div style="margin-top:18px"><span class="btn" style="height:36px;border-radius:var(--radius-md,10px);background:var(--action-primary,#f5f5f5);color:var(--text-inverted,#000);padding:0 18px;font-size:14px">Confirm</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The declared <code>--color-hp-*</code> layer carries the marketing neutrals and accent; the declared <code>--cal-*</code> layer carries the booker/app semantics in both themes; the measured <code>color.paint.*</code> readings carry the near-black paints the variables do not name.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">Controls sit on 10px radii, CTAs on 12px, hero buttons and cards on 14px, the glass bar and menu cards on 18px; the billing switch is a capsule. Borders are hairlines: #e5e7eb/#dee1e6 on marketing, #d1d5db on the booker, #4d4d4d in dark.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Four served faces: <code>calSans</code> on the marketing pages, <code>fontSans</code>/<code>fontHeading</code> on the app.cal.com auth cards, <code>Inter</code> on the booking page. Sizes are the measured steps; samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-hp-*/--cal-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <p class="note">Token data for scripts: /*TOKENS*/null</p>
 </main>
-<script>
-const TOK = /*TOKENS*/null;
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles (marketing + booker)'], ['dark', 'dark roles (booker)']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Cal.com</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
 </body>
 </html>

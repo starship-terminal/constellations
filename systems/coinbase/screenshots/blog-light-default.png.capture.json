@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T13:23:34.551Z",
+  "capturedAt": "2026-11-21T01:15:23.448Z",
   "screenshot": "blog-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://www.coinbase.com/en-sg/blog",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -24,7 +24,7 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,

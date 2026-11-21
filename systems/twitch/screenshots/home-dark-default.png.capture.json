@@ -1,26 +1,69 @@
 {
-  "capturedAt": "2026-11-19T00:00:00Z",
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T03:43:10.479Z",
+  "screenshot": "home-dark-default.png",
   "sanitizedSourceUrl": "https://www.twitch.tv/",
   "requested": {
-    "width": 1440,
-    "height": 900,
-    "devicePixelRatio": 2
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
   },
-  "viewport": {
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
     "innerWidth": 1440,
     "innerHeight": 900,
-    "devicePixelRatio": 2
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 900
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
   },
-  "visualViewport": {
-    "width": 1440,
-    "height": 900,
-    "scale": 1
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
   },
-  "themeClass": "tw-root--hover js-focus-visible tw-root--theme-dark",
-  "title": "Twitch",
   "png": {
     "width": 2880,
     "height": 1800
   },
-  "note": "Headless Chromium after the same URL loaded in the T3 preview tab without a Cloudflare challenge. Preview screenshots failed: The browser is not producing screenshot frames. Visual review of the PNG is separate from the CSS readings, which came from the 1169x731 preview tab."
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 2880,
+      "height": 1800
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Operator must inspect before accepting coverage."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
 }

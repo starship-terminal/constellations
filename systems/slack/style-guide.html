@@ -1,124 +1,104 @@
 <!doctype html>
-<html lang="en" data-mode="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slack style guide</title>
 <style>
 :root {
+  --fontFamily-heading: "Salesforce-Avant-Garde", system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --fontFamily-body: "Salesforce-Sans", system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --fontFamily-monospace: "Monaco", "Menlo", "Consolas", "Courier New", monospace;
+  --typography-display: 700 64px/68px var(--core-fontFamily-heading);
+  --typography-body: 400 18px/27.99px var(--core-fontFamily-body);
+  --typography-label: 700 14px/18px var(--core-fontFamily-body);
+  --typography-nav: 700 15px/23.32px var(--core-fontFamily-body);
+  --radius-control: 4px;
+  --radius-field: 4px;
+  --spacing-field-pad-x: 16px;
+  --spacing-button-pad-x: 40px;
+  --fontSize-body: 16px;
   --page: #ffffff;
-  --text: #1d1c1d;
-  --muted: #454447;
-  --accent: #730394;
-  --aubergine: #4a154b;
-  --section: #481a54;
-  --border: #e5e5e5;
-  --focus: #1264a3;
-  --promo: #f9f0ff;
-  --promo-border: #d17dfe;
-  --blue: #36c5f0;
-  --green: #2eb67d;
-  --yellow: #ecb22e;
-  --red: #e01e5a;
-  --horchata: #f4ede4;
-  --font-heading: "Salesforce-Avant-Garde", system-ui, sans-serif;
-  --font-body: "Salesforce-Sans", system-ui, sans-serif;
-  --font-auth: "Slack-Lato", system-ui, sans-serif;
+  --surface-default: #ffffff;
+  --surface-aubergine: #481a54;
+  --surface-sidebar: #400d40;
+  --text-primary: #1d1d1d;
+  --text-ink: #000000;
+  --text-on-accent: #ffffff;
+  --text-link: #0b5cab;
+  --muted: #5c5c5c;
+  --accent-default: #730394;
+  --accent-hover: #4b1958;
+  --border-default: #5c5c5c;
+  --border-accent: #730394;
+  --focus-ring: #730394;
+  --link-default: #0b5cab;
+  --link-hover: #014486;
+  --component-button-height: 57px;
+  --component-button-radius: 4px;
+  --component-button-outline-height: 42px;
+  --component-field-height: 58.78px;
+  --component-field-radius: 4px;
+  --component-field-border-width: 1px;
+  --component-focus-width: 2px;
+  --component-focus-offset: 5px;
+  --sg-sans: var(--fontFamily-body, "Salesforce-Sans", system-ui, sans-serif);
+  --sg-mono: ui-monospace, Menlo, monospace;
 }
 * { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--page);
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 16px;
-}
-main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
-h1 { font-family: var(--font-heading); font-weight: 700; font-size: 48px; line-height: 53.76px; letter-spacing: -0.576px; margin: 0 0 8px; }
-h2 { font-family: var(--font-heading); font-weight: 600; font-size: 28px; margin: 40px 0 12px; }
-p { color: var(--muted); }
-.row { display: flex; flex-wrap: wrap; gap: 12px; }
-.swatch { width: 140px; }
-.chip { height: 72px; border-radius: 8px; border: 1px solid var(--border); }
-.swatch span { display: block; font-size: 12px; margin-top: 6px; color: var(--text); }
-button, .btn {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.798px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  padding: 12px 16px;
-  border: 0;
-}
-.primary { background: var(--accent); color: #fff; }
-.secondary { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-.auth {
-  font-family: var(--font-auth);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: normal;
-  text-transform: none;
-  background: var(--aubergine);
-  color: #fff;
-  border-radius: 12px;
-  height: 44px;
-  padding: 0 16px 3px;
-}
-input {
-  font-family: var(--font-auth);
-  font-size: 18px;
-  color: var(--text);
-  background: #fff;
-  border: 1px solid transparent;
-  border-radius: 12px;
-  padding: 12px;
-  height: 44px;
-  width: 280px;
-  box-shadow: 0 0 0 1px var(--focus), 0 0 0 5px color-mix(in srgb, var(--focus) 30%, transparent);
-}
-.pill {
-  display: inline-block;
-  background: var(--promo);
-  border: 1px solid var(--promo-border);
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 10px;
-  font-weight: 600;
-  color: #000;
-}
-.band { background: var(--section); color: #fff; padding: 24px; border-radius: 8px; margin-top: 16px; }
-.band h3 { font-family: var(--font-heading); font-weight: 600; margin: 0; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #1d1d1d); background: var(--page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 40px/1.1 var(--fontFamily-heading, sans-serif); margin: 0 0 8px; letter-spacing: -0.02em; }
+h2 { font: 700 13px/1 var(--sg-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted, #5c5c5c); margin: 48px 0 12px; }
+.note { color: var(--muted, #5c5c5c); max-width: 68ch; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: var(--radius-control, 4px); border: 1px solid var(--border-default, #5c5c5c); }
+.sw b { display: block; font-size: 12px; margin-top: 6px; }
+.sw span { display: block; font: 11px/1.3 var(--sg-mono); color: var(--muted, #5c5c5c); }
+.mock { border: 1px solid var(--border-default, #ccc); border-radius: 8px; overflow: hidden; }
+.nav { display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 20px; background: var(--page, #fff); }
+.mark { width: 28px; height: 28px; border-radius: 6px; background: var(--accent-default, #730394); }
+.sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 57px); padding: 0 24px; border-radius: var(--radius-control, 4px); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; border: 0; }
+.btn.primary { background: var(--accent-default, #730394); color: var(--text-on-accent, #fff); }
+.btn.outline { height: var(--component-button-outline-height, 42px); color: var(--accent-default, #730394); background: transparent; box-shadow: inset 0 0 0 1px var(--accent-default, #730394); }
+.hero { padding: 48px 24px 32px; text-align: center; }
+.hero h3 { margin: 0; font: 700 40px/1.06 var(--fontFamily-heading, sans-serif); letter-spacing: -0.02em; }
+.hero p { color: var(--text-ink, #000); }
+.row { display: flex; gap: 12px; justify-content: center; }
+.field { height: var(--component-field-height, 59px); border: var(--component-field-border-width, 1px) solid var(--border-default, #5c5c5c); border-radius: var(--radius-field, 4px); padding: 0 16px; display: flex; align-items: center; color: var(--muted, #5c5c5c); max-width: 420px; background: #fff; }
+.aubergine { background: var(--surface-aubergine, #481a54); color: #fff; padding: 28px; border-radius: 8px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Slack</h1>
-  <p>Public marketing and signed-out sign-in chrome. Values are computed styles from 2026-11-19. Fonts fall back when Salesforce-Avant-Garde, Salesforce-Sans, and Slack-Lato are not installed.</p>
+  <h1>Slack style guide</h1>
+  <p class="note">Generated from tokens.json. Public marketing only, light theme, measured on slack.com on 2026-11-21. The signed-in app was not reached.</p>
   <h2>Colour</h2>
-  <div class="row">
-    <div class="swatch"><div class="chip" style="background:#ffffff"></div><span>Page #ffffff</span></div>
-    <div class="swatch"><div class="chip" style="background:#1d1c1d"></div><span>Text #1d1c1d</span></div>
-    <div class="swatch"><div class="chip" style="background:#454447"></div><span>Muted #454447</span></div>
-    <div class="swatch"><div class="chip" style="background:#730394"></div><span>Accent #730394</span></div>
-    <div class="swatch"><div class="chip" style="background:#4a154b"></div><span>Aubergine #4a154b</span></div>
-    <div class="swatch"><div class="chip" style="background:#481a54"></div><span>Section #481a54</span></div>
-    <div class="swatch"><div class="chip" style="background:#e5e5e5"></div><span>Border #e5e5e5</span></div>
-    <div class="swatch"><div class="chip" style="background:#1264a3"></div><span>Focus #1264a3</span></div>
-    <div class="swatch"><div class="chip" style="background:#36c5f0"></div><span>Slack blue #36c5f0</span></div>
-    <div class="swatch"><div class="chip" style="background:#2eb67d"></div><span>Slack green #2eb67d</span></div>
-    <div class="swatch"><div class="chip" style="background:#ecb22e"></div><span>Slack yellow #ecb22e</span></div>
-    <div class="swatch"><div class="chip" style="background:#e01e5a"></div><span>Slack red #e01e5a</span></div>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><b>Page</b><span>light.page</span></div>
+    <div class="sw"><i style="background:var(--surface-aubergine)"></i><b>Aubergine</b><span>light.surface.aubergine</span></div>
+    <div class="sw"><i style="background:var(--accent-default)"></i><b>Accent</b><span>light.accent.default</span></div>
+    <div class="sw"><i style="background:var(--accent-hover)"></i><b>Accent hover</b><span>light.accent.hover</span></div>
+    <div class="sw"><i style="background:var(--text-primary)"></i><b>Text</b><span>light.text.primary</span></div>
+    <div class="sw"><i style="background:var(--text-link)"></i><b>Link</b><span>light.text.link</span></div>
+    <div class="sw"><i style="background:var(--border-default)"></i><b>Border</b><span>light.border.default</span></div>
+    <div class="sw"><i style="background:var(--focus-ring)"></i><b>Focus</b><span>light.focus.ring</span></div>
   </div>
-  <h2>Controls</h2>
-  <div class="row">
-    <button class="primary" type="button">Get started</button>
-    <button class="secondary" type="button">Request a demo</button>
-    <button class="auth" type="button">Sign in with email</button>
+  <h2>Chrome</h2>
+  <div class="mock">
+    <div class="nav"><span class="mark"></span><span>Product</span><span>Pricing</span><span class="sp"></span><span class="btn outline">Request a demo</span><span class="btn primary">Get started</span></div>
+    <div class="hero">
+      <h3>All your people and AI agents working together</h3>
+      <p>Slack connects your team. Slackbot multiplies what they can do.</p>
+      <div class="row"><span class="btn primary">Get started</span><span class="btn outline">Find your subscription</span></div>
+    </div>
   </div>
-  <p><input type="email" value="name@work-email.com" readonly aria-label="Email, focused state"></p>
-  <p><span class="pill">50% off for three months</span></p>
-  <div class="band"><h3>Reimagine what’s possible with AI and agents</h3></div>
+  <h2>Field</h2>
+  <div class="field">Work email</div>
+  <h2>Aubergine band</h2>
+  <div class="aubergine">The marketing site uses this aubergine on lower bands and the product demo chrome.</div>
 </main>
 </body>
 </html>

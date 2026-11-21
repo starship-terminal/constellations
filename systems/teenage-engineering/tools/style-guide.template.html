@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teenage Engineering style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "te-20", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 300 16px/22px var(--sg-sans); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { border-bottom: 1px solid var(--border-muted); margin-bottom: 32px; }
+header.top h1 { font-weight: 100; font-size: 28px; margin: 0 0 8px; }
+p.lead { max-width: 70ch; color: var(--text-primary); }
+h2 { font-weight: 100; font-size: 26px; margin: 40px 0 12px; }
+h3 { font-weight: 300; font-size: 16px; margin: 24px 0 8px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border: 1px solid var(--border-muted); }
+.sw b, .sw span { display: block; font-size: 12px; font-weight: 300; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--size-button); min-width: 220px; padding: 0 24px; background: var(--action-primary); color: var(--action-primaryText); border: 0; font: 300 var(--font-scale-20)/29px var(--sg-sans); }
+.fld { display: block; width: min(480px, 100%); height: var(--size-field); border: var(--border-hairline) solid var(--border-default); background: var(--background-field); color: var(--text-primary); font: 300 var(--font-scale-15)/24px var(--sg-sans); padding: 0 12px; }
+.tile { width: 220px; height: 140px; background: var(--background-surface); }
+.ink { background: var(--background-pageInverse); color: var(--text-onBlack); padding: 16px; }
+.ink a { color: var(--text-onBlack); text-decoration: none; font-weight: 100; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border-muted); font-weight: 300; }
+code { font-family: var(--sg-mono); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>teenage engineering</h1>
+  <p class="lead">Public store, measured 2026-11-21. One theme. The home page is black. The store and forms are white. Values come from tokens.json.</p>
+</header>
+<section>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+</section>
+<section>
+  <h2>Type</h2>
+  <p style="font-weight:100;font-size:var(--font-scale-ui)">nav, weight 100, 16px at 1440</p>
+  <p style="font-weight:300;font-size:var(--font-scale-15)">field, weight 300</p>
+  <p style="font-weight:300;font-size:var(--font-scale-20)">button, weight 300</p>
+</section>
+<section>
+  <h2>Controls</h2>
+  <p><button class="btn" type="button">subscribe</button></p>
+  <p><input class="fld" placeholder="email" readonly></p>
+  <div class="tile"></div>
+  <div class="ink"><a href="#">store</a></div>
+</section>
+<section>
+  <h2>Space</h2>
+  <p>xs <span id="xs"></span> · sm <span id="sm"></span> · md <span id="md"></span> · lg <span id="lg"></span> · xl <span id="xl"></span></p>
+</section>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+const root = getComputedStyle(document.documentElement);
+const box = document.getElementById('swatches');
+const names = ['background-page','background-pageInverse','background-surface','text-primary','text-onInverse','text-onBlack','text-muted','border-default','action-primary','status-error','status-success'];
+for (const n of names) {
+  const el = document.createElement('div');
+  el.className = 'sw';
+  const v = root.getPropertyValue('--' + n).trim();
+  el.innerHTML = '<i style="background:' + v + '"></i><b>' + n + '</b><span>' + v + '</span>';
+  box.appendChild(el);
+}
+</script>
+</body>
+</html>

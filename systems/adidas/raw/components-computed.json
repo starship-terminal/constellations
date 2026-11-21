@@ -4483,7 +4483,7 @@
     "default": {
      "tag": "footer",
      "classes": "",
-     "text": "帮助中心 在线客服 客服热线 400-999-5999 周一至周日 9:00-18:00 关于adidas 职业发展 扫码关注，加入我们 员工登录 常见问题 网",
+     "text": "帮助中心 在线客服 客服热线 service-line 周一至周日 9:00-18:00 关于adidas 职业发展 扫码关注，加入我们 员工登录 常见问题 网",
      "rect": {
       "x": 0,
       "y": 540.1,
@@ -4653,7 +4653,7 @@
    "url": "https://www.adidas.com.cn/",
    "title": "Footer",
    "group": "Footer",
-   "desc": "The page foot: link columns and the tel:400-999-5999 service line.",
+   "desc": "The page foot: link columns and the published service line.",
    "recaptureMissed": "plp"
   },
   "footer-link": {

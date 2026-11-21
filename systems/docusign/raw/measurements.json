@@ -1,0 +1,29 @@
+{
+  "readAt": "2026-11-21",
+  "source": "getComputedStyle on https://www.docusign.com/ in headless Chromium, signed out, viewport 1440 x 900. The public site declared no CSS custom properties on :root.",
+  "theme": "light only. prefers-color-scheme dark was false in the capture browser, and no theme toggle was found on the public nav.",
+  "measured": {
+    "fontFamily": "DSIndigo, Helvetica, Arial, sans-serif",
+    "ink": "#130032",
+    "inkMuted": "rgba(19, 0, 50, 0.75)",
+    "paper": "#ffffff",
+    "accent": "#4c00ff",
+    "onAccent": "#ffffff",
+    "inkStrong": "#130032",
+    "heroBand": "#26065d",
+    "sand": "#f8f3f0",
+    "sandDeep": "#ede9e4",
+    "fieldBorder": "rgba(19, 0, 50, 0.15)",
+    "focus": "#005fcc",
+    "radiusControl": "8px",
+    "controlHeight": "45px",
+    "fieldHeight": "61px"
+  },
+  "notes": [
+    "rgb(19, 0, 50) is #130032. rgb(76, 0, 255) is #4c00ff. rgb(38, 6, 93) is #26065d. rgb(248, 243, 240) is #f8f3f0. rgb(237, 233, 228) is #ede9e4. rgb(0, 95, 204) is #005fcc.",
+    "The Get Started button background was the same rgb(19, 0, 50) as body text, so inkStrong aliases that reading.",
+    "Body line-height computed as the keyword normal. The 24px body line height in tokens is Derived, not a computed px.",
+    "Hover and pressed colours were not held long enough to read on this pass. They are Not captured.",
+    "No overlay, scrim, success, warning, danger, or info colour was isolated on the homepage. Those roles are Not captured."
+  ]
+}

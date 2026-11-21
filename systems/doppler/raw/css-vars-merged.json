@@ -1,0 +1,757 @@
+{
+  "capturedAt": "2026-11-21T01:24:22.486Z",
+  "source": "live CSSOM on public Doppler pages, signed out",
+  "count": 77,
+  "vars": {
+    "--tw-border-spacing-x": {
+      "value": "0",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-border-spacing-y": {
+      "value": "0",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-translate-x": {
+      "value": "0",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-translate-y": {
+      "value": "0",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-rotate": {
+      "value": "0",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-skew-x": {
+      "value": "0",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-skew-y": {
+      "value": "0",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-scale-x": {
+      "value": "1",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-scale-y": {
+      "value": "1",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-pan-x": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-pan-y": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-pinch-zoom": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-scroll-snap-strictness": {
+      "value": "proximity",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-gradient-from-position": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-gradient-via-position": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-gradient-to-position": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-ordinal": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-slashed-zero": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-numeric-figure": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-numeric-spacing": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-numeric-fraction": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-ring-inset": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-ring-offset-width": {
+      "value": "0px",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-ring-offset-color": {
+      "value": "#fff",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-ring-color": {
+      "value": "rgba(59,130,246,.5)",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-ring-offset-shadow": {
+      "value": "0 0 #0000",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-ring-shadow": {
+      "value": "0 0 #0000",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-shadow": {
+      "value": "0 0 #0000",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-shadow-colored": {
+      "value": "0 0 #0000",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-blur": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-brightness": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-contrast": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-grayscale": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-hue-rotate": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-invert": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-saturate": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-sepia": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-drop-shadow": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-backdrop-blur": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-backdrop-brightness": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-backdrop-contrast": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-backdrop-grayscale": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-backdrop-hue-rotate": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-backdrop-invert": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-backdrop-opacity": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-backdrop-saturate": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-backdrop-sepia": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-contain-size": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-contain-layout": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-contain-paint": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-contain-style": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-content": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-border-opacity": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-bg-opacity": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-gradient-from": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-gradient-to": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-gradient-stops": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-text-opacity": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--tw-placeholder-opacity": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--global-ease": {
+      "value": "cubic-bezier(0.9,0.1,0.1,0.9)",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--global-transition": {
+      "value": "350ms cubic-bezier(0.9,0.1,0.1,0.9)",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--font-doppler-repro": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--font-doppler-repro-mono": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--font-inter": {
+      "value": "",
+      "pages": [
+        "doppler-com-home",
+        "doppler-com-pricing",
+        "doppler-com-blog",
+        "doppler-com-integrations",
+        "doppler-com-customers"
+      ]
+    },
+    "--project-color-primary": {
+      "value": "#E9EBED",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--project-color-inverse": {
+      "value": "#222",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--recipe-button-color": {
+      "value": "#6B13F5",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--recipe-button-color-hover": {
+      "value": "#41079b",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--recipe-button-color-active": {
+      "value": "#2c056a",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--recipe-button-color-focus": {
+      "value": "rgba(107, 19, 245, 0.25)",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--recipe-button-color-disabled": {
+      "value": "#e6d7fd",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--emoji": {
+      "value": "",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--icon": {
+      "value": "",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--icon-color": {
+      "value": "",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--background": {
+      "value": "",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--border": {
+      "value": "",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    },
+    "--text": {
+      "value": "",
+      "pages": [
+        "docs-doppler-com-home"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page": "doppler-com-home",
+      "url": "https://www.doppler.com/",
+      "ruleCount": 159
+    },
+    {
+      "page": "doppler-com-pricing",
+      "url": "https://www.doppler.com/pricing",
+      "ruleCount": 159
+    },
+    {
+      "page": "doppler-com-blog",
+      "url": "https://www.doppler.com/blog",
+      "ruleCount": 159
+    },
+    {
+      "page": "doppler-com-integrations",
+      "url": "https://www.doppler.com/integrations",
+      "ruleCount": 159
+    },
+    {
+      "page": "doppler-com-customers",
+      "url": "https://www.doppler.com/customers",
+      "ruleCount": 159
+    },
+    {
+      "page": "docs-doppler-com-home",
+      "url": "https://docs.doppler.com/",
+      "ruleCount": 3
+    }
+  ]
+}

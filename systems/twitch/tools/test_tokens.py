@@ -11,11 +11,12 @@ class TokensTest(unittest.TestCase):
         self.data = json.loads(TOKENS.read_text())
 
     def test_sets(self):
-        self.assertEqual(set(self.data), {"core", "dark", "$themes"})
+        self.assertEqual(set(self.data), {"core", "dark", "light", "$themes"})
         themes = {t["id"]: t["selectedTokenSets"] for t in self.data["$themes"]}
         self.assertEqual(themes["dark"]["core"], "source")
         self.assertEqual(themes["dark"]["dark"], "enabled")
-        self.assertNotIn("light", themes)
+        self.assertEqual(themes["light"]["core"], "source")
+        self.assertEqual(themes["light"]["light"], "enabled")
 
     def test_every_token_has_a_source(self):
         missing = []
@@ -35,6 +36,7 @@ class TokensTest(unittest.TestCase):
 
         walk(self.data["core"], "core")
         walk(self.data["dark"], "dark")
+        walk(self.data["light"], "light")
         self.assertEqual(missing, [])
 
     def test_measured_brand(self):
@@ -42,6 +44,10 @@ class TokensTest(unittest.TestCase):
         self.assertEqual(accent, "#9147ff")
         page = self.data["dark"]["color"]["background"]["page"]["$value"]
         self.assertEqual(page, "#0e0e10")
+        light_page = self.data["light"]["color"]["background"]["page"]["$value"]
+        self.assertEqual(light_page, "#f7f7f8")
+        light_focus = self.data["light"]["color"]["border"]["focus"]["$value"]
+        self.assertEqual(light_focus, "#772ce8")
 
 
 if __name__ == "__main__":

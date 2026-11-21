@@ -447,24 +447,23 @@ Page: home. Selector: `.homepage-teaser__cta`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 719.98 x 36 | = | - | = |
-| Padding | 0px | = | - | = |
-| Border | none | = | - | = |
-| Radius | 0px | = | - | = |
-| Background | transparent | = | - | = |
-| Box shadow | none | = | - | = |
-| Outline | none | = | - | = |
-| Font | futura-pt 24px/36px 700 | = | - | = |
-| Letter spacing | normal | = | - | = |
-| Colour | #ffffff | = | - | = |
-| Text node | span.has-arrow.is-underlined: futura-pt 24px/36px 700, #ffffff | = | - | = |
-| Transition | none | = | - | = |
-| Cursor | pointer | = | - | = |
-| Painted layers | span::after.has-arrow.is-underlined 7.1875pxx7.1875px border T:2px solid #ffffff / R:2px solid #ffffff | = | - | = |
-| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
-| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
+| Size (w x h) | 719.98 x 36 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | futura-pt 24px/36px 700 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span.has-arrow.is-underlined: futura-pt 24px/36px 700, #ffffff | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | span::after.has-arrow.is-underlined 7.1875pxx7.1875px border T:2px solid #ffffff / R:2px solid #ffffff | = | = | = |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
-Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-pressed.png`.
+Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
 
 #### home-cell
 

@@ -1,29 +1,15 @@
 #!/usr/bin/env python3
-"""Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
+"""Build tokens.json from the public Buy Me a Coffee readings.
 
-Sources, read from buymeacoffee.com on 2026-11-11:
-  raw/css-vars.json          the custom properties buymeacoffee.com's stylesheets
-                             declare — the handful of layout vars on :root
-                             (--header-height, --auth-header-height, --footer-height)
-                             plus --vc-* carousel vars and Tailwind internals — read
-                             from the network responses across /, /cara.app and /login
-                             (the Vite app's sheets live on cdn.buymeacoffee.com,
-                             cross-origin to the CSSOM) plus the page's inline <style>
-                             blocks (tools/capture/vars.mjs) and binned
-                             app / vendor / utility / theme; the same file's "inline"
-                             list holds the --theme-color* accent set a creator page
-                             paints via element style attributes
-  raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
-                             names a variable ("var") resolved per theme, or carries a measured
-                             value and the measurement it came from ("source")
-Every token carries $extensions.source: "css-var <name>" or "measured <where>".
+Sources, read from buymeacoffee.com on 2026-11-21, signed out:
+  raw/tailwind-utilities.json   colour, type, radius and shadow utilities
+                                parsed from the inlined Tailwind v3.4.1 sheet
+  raw/computed.json             computed styles of real elements (h1, header,
+                                signup button, nav link, page)
 
-Every public surface on buymeacoffee.com paints light: the Nuxt marketing pages on
-a #faf8f0 cream field and the Vite-built creator page and login card on white. The
-one theming mechanism is per-creator — a creator page declares --theme-color* custom
-properties inline (orange #FF813F on /cara.app) and its widget, tabs and buttons
-repaint to match — so the export holds core and a single light set, with the
-per-creator accent scale under core.color.theme.*.
+The site declares no design-token custom properties. Every token is a
+Measured value from that sheet or from getComputedStyle, and carries
+$extensions.source. One light theme. The footer is a dark section, not a theme.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """
@@ -31,19 +17,24 @@ import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
-V = json.loads((RAW / "css-vars.json").read_text())
-SPEC = json.loads((RAW / "component-tokens.json").read_text())
-
-# Resolved declarations per theme. vars.mjs resolves each custom property on a
-# probe document once light (:root) and once dark (html.dark), so
-# DECL[theme][name] is what the browser paints in that theme. A name declared
-# only on :root resolves the same in both.
-DECL = {t: {n: v.get("value", v["raw"]) for n, v in V["resolved"][t].items()} for t in ("light", "dark")}
+TW = json.loads((RAW / "tailwind-utilities.json").read_text())
+COMP = json.loads((RAW / "computed.json").read_text())
 
 
 def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla() -> #rrggbb or rgba(r, g, b, a)."""
     v = v.strip().lower()
+    if v in ("#fd0",):
+        v = "#ffdd00"
+    if v in ("#222",):
+        v = "#222222"
+    if v in ("#999",):
+        v = "#999999"
+    if v in ("#777",):
+        v = "#777777"
+    if v in ("#fff",):
+        v = "#ffffff"
+    if v in ("#000",):
+        v = "#000000"
     m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
     if m:
         h = m.group(1)
@@ -52,166 +43,186 @@ def norm_color(v):
         r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
         if len(h) == 8:
             a = round(int(h[6:8], 16) / 255, 3)
-            return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
+            return "#%02x%02x%02x" % (r, g, b) if a >= 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
         return "#%02x%02x%02x" % (r, g, b)
-    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
+    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+))?\s*\)", v)
     if m:
         r, g, b, a = m.groups()
-        if a is None:
+        if a is None or float(a) == 1:
             return "#%02x%02x%02x" % (int(r), int(g), int(b))
-        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, a)
-    m = re.fullmatch(r"hsla?\(\s*0\s*,\s*0%\s*,\s*([\d.]+)%\s*(?:,\s*([\d.]+))?\)", v)
-    if m:
-        lvl = round(float(m.group(1)) * 2.55)
-        a = float(m.group(2) or 1)
-        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
+        return "rgba(%s, %s, %s, %g)" % (r, g, b, float(a))
     raise ValueError("not a colour: " + v)
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+def color(value, source):
+    return {"$value": norm_color(value), "$type": "color", "$extensions": {"source": source}}
 
 
-def check(path, ty, val):
-    """Refuse a value that is not the DTCG type it claims. An alias is checked by the alias pass."""
-    if isinstance(val, str) and val.startswith("{"):
-        return
-    if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
-    if ty == "color":
-        norm_color(val) if not str(val).startswith("{") else None
-    if ty == "shadow":
-        for layer in val:
-            for k in ("offsetX", "offsetY", "blur", "spread"):
-                if not DIM.fullmatch(layer[k]):
-                    raise ValueError(f"{path}: shadow {k} {layer[k]!r}")
-    if ty == "number" and not isinstance(val, (int, float)):
-        raise ValueError(f"{path}: number {val!r}")
-    if ty == "fontWeight" and not isinstance(val, int):
-        raise ValueError(f"{path}: fontWeight {val!r}")
-    if ty == "duration" and not re.fullmatch(r"\d+ms", str(val)):
-        raise ValueError(f"{path}: duration {val!r}")
-    if ty == "cubicBezier" and not (isinstance(val, list) and len(val) == 4):
-        raise ValueError(f"{path}: cubicBezier {val!r}")
-    if ty == "gradient":
-        for stop in val:
-            if not str(stop["color"]).startswith("{"):
-                norm_color(stop["color"])
-            if not 0 <= stop["position"] <= 1:
-                raise ValueError(f"{path}: gradient position {stop['position']!r}")
+def dim(value, source):
+    if not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", str(value)):
+        raise ValueError(f"dimension {value!r}")
+    return {"$value": value, "$type": "dimension", "$extensions": {"source": source}}
 
 
-def leaf(path, spec, theme):
-    ty = spec["type"]
-    if "var" in spec:
-        name = spec["var"]
-        if name not in DECL[theme]:
-            raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({theme})")
-        val = DECL[theme][name]
-        src = f"css-var {name} ({theme})"
-        if spec.get("source"):
-            src += "; " + spec["source"]
-    else:
-        val = spec["value"]
-        src = spec["source"]
-    if ty == "color" and not str(val).startswith("{"):
-        val = norm_color(val)
-    if ty == "cubicBezier" and isinstance(val, str):
-        m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
-        if m:
-            val = [float("%g" % float(x)) for x in m.groups()]
-        elif val.strip() in ("ease", "ease-in", "ease-out", "ease-in-out", "linear"):
-            val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
-                   "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
-    if ty in ("fontWeight", "number") and isinstance(val, str):
-        m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
-        if m:  # Tailwind v4 emits line-heights as calc(a/b) ratios
-            val = round(float(m.group(1)) / float(m.group(2)), 4)
-        elif re.fullmatch(r"-?\d+(\.\d+)?", val):
-            val = float(val) if "." in val else int(val)
-    if ty == "duration" and isinstance(val, str):
-        m = re.fullmatch(r"([\d.]+)(m?s)", val.strip())
-        if m:
-            val = ("%g" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))) + "ms"
-    if ty == "dimension":
-        if isinstance(val, (int, float)):
-            val = "%gpx" % val
-        elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):
-            val = val.strip() + "px"
-    check(path, ty, val)
-    t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
-    if spec.get("description"):
-        t["$description"] = spec["description"]
-    if spec.get("responsive"):
-        t["$extensions"]["responsive"] = spec["responsive"]
-    if spec.get("angle"):
-        t["$extensions"]["angle"] = spec["angle"]
-    return t
+def font_weight(value, source):
+    return {"$value": int(value), "$type": "fontWeight", "$extensions": {"source": source}}
 
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
-    if isinstance(node, dict) and "$value" in node:
-        return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
+def number(value, source):
+    return {"$value": value, "$type": "number", "$extensions": {"source": source}}
 
 
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but belong to the
-# exported themes the components were measured on: light.component.*
-light["component"] = build(SPEC["component"], "light")
+def font_family(value, source):
+    return {"$value": value, "$type": "fontFamily", "$extensions": {"source": source}}
 
 
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
+def shadow(layer, source):
+    return {"$value": layer, "$type": "shadow", "$extensions": {"source": source}}
 
 
-NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
-NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
+def typography(family, size, weight, line, tracking, source):
+    return {
+        "$type": "typography",
+        "$value": {
+            "fontFamily": family,
+            "fontSize": size,
+            "fontWeight": weight,
+            "lineHeight": line,
+            "letterSpacing": tracking,
+        },
+        "$extensions": {"source": source},
+    }
 
 
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
+SRC = "Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21)"
+COMP_SRC = "Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21)"
 
+bg = TW["background"]
+text = TW["text"]
+border = TW["border"]
 
-for n, t in list(tokens_of(core)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(light)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_L:
-            raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_D:
-            raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
+core = {
+    "color": {
+        "brand": {
+            "yellow": color(bg["yellow"], SRC + "; .bg-yellow"),
+            "yellow-bright": color(bg["yellow-bright"], SRC + "; .bg-yellow-bright"),
+            "yellow-soft": color(bg["yellow-v1"], SRC + "; .bg-yellow-v1"),
+            "amber": color(bg["yellow-v3"], SRC + "; .bg-yellow-v3"),
+        },
+        "neutral": {
+            "ink": color(bg["dark"], SRC + "; .bg-dark / .text-dark"),
+            "ink-v2": color(text["dark-v2"], SRC + "; .text-dark-v2"),
+            "black": color(bg["black"], SRC + "; .bg-black"),
+            "white": color(bg["white"], SRC + "; .bg-white"),
+            "paper": color(bg["floral-white"], SRC + "; .bg-floral-white"),
+            "grey": color(text["grey"], SRC + "; .text-grey"),
+            "grey-v1": color(bg["grey-v1"], SRC + "; .bg-grey-v1"),
+            "grey-v5": color(bg["grey-v5"], SRC + "; .bg-grey-v5"),
+            "hairline": color(border["grey"], SRC + "; .border-grey"),
+            "line": color(border["grey-1"], SRC + "; .border-grey-1"),
+            "wash": color(bg["dark-rgba-05"], SRC + "; .bg-dark-rgba-05"),
+        },
+        "status": {
+            "green": color(bg["green"], SRC + "; .bg-green"),
+            "red": color(bg["red"], SRC + "; .bg-red"),
+            "dark-red": color(bg["dark-red"], SRC + "; .bg-dark-red"),
+        },
+    },
+    "font": {
+        "family": {
+            "display": font_family("Circular Bold, Circular, ui-sans-serif, system-ui, sans-serif", SRC + "; .font-cr-bold"),
+            "body": font_family("Circular Regular, Circular, ui-sans-serif, system-ui, sans-serif", SRC + "; .font-cr-regular"),
+            "medium": font_family("Circular Medium, Circular, ui-sans-serif, system-ui, sans-serif", SRC + "; .font-cr-medium"),
+            "book": font_family("Circular Book, Circular, ui-sans-serif, system-ui, sans-serif", SRC + "; .font-cr-book"),
+            "script": font_family("Borel Regular, cursive", SRC + "; .font-br-regular"),
+        },
+        "weight": {
+            "regular": font_weight(400, COMP_SRC + "; h1 and buttons report font-weight 400 because Circular Bold is a separate family"),
+            "medium": font_weight(500, "Derived: Circular Medium is a separate family; the computed weight on nav links is 400"),
+            "bold": font_weight(700, "Derived: Circular Bold is a separate family; the computed weight on h1 is 400"),
+        },
+    },
+    "typography": {
+        "display": typography("{core.font.family.display}", "96px", 400, "95px", "-2.4px", COMP_SRC + "; h1"),
+        "heading": typography("{core.font.family.display}", "48px", 400, "56px", "-0.96px", SRC + "; .text-48 on feature pages"),
+        "title": typography("{core.font.family.display}", "24px", 400, "32px", "0px", SRC + "; .text-24.font-cr-bold"),
+        "body": typography("{core.font.family.body}", "16px", 400, "24px", "0px", COMP_SRC + "; page"),
+        "label": typography("{core.font.family.medium}", "16px", 400, "24px", "0px", COMP_SRC + "; nav link a[aria-label=FAQ]"),
+        "caption": typography("{core.font.family.book}", "14px", 400, "20px", "0px", SRC + "; .text-14"),
+    },
+    "radius": {
+        "sm": dim("8px", SRC + "; .rounded-8"),
+        "md": dim("12px", SRC + "; .rounded-12"),
+        "lg": dim("16px", SRC + "; .rounded-16"),
+        "xl": dim("24px", SRC + "; .rounded-24"),
+        "card": dim("36px", SRC + "; .rounded-36"),
+        "pill": dim("9999px", SRC + "; .rounded-full"),
+    },
+    "spacing": {
+        "1": dim("4px", SRC + "; .p-4"),
+        "2": dim("8px", SRC + "; .p-8"),
+        "3": dim("12px", SRC + "; .p-12"),
+        "4": dim("16px", SRC + "; .p-16"),
+        "5": dim("24px", SRC + "; .p-24"),
+        "6": dim("32px", SRC + "; .p-32"),
+    },
+    "shadow": {
+        "menu": shadow(
+            [{"color": "rgba(0, 0, 0, 0.08)", "offsetX": "0px", "offsetY": "8px", "blur": "24px", "spread": "0px"}],
+            "Not captured as a computed box-shadow. The Resources panel uses the shadow-smd class. This layer is a Reconstruction so the style guide has a shadow to draw.",
+        ),
+    },
+    "motion": {
+        "hover": {"$value": "100ms", "$type": "duration", "$extensions": {"source": SRC + "; .bg-transition background-color .1s ease-out"}},
+        "menu": {"$value": "150ms", "$type": "duration", "$extensions": {"source": "Measured from the header class duration-150 on the Apps and Resources menus"}},
+    },
+}
+
+light = {
+    "color": {
+        "page": {"$value": "{core.color.neutral.paper}", "$type": "color", "$extensions": {"source": "Alias of core.color.neutral.paper; .bg-floral-white on the homepage root"}},
+        "surface": {"$value": "{core.color.neutral.white}", "$type": "color", "$extensions": {"source": "Alias of core.color.neutral.white; #bmc-header background"}},
+        "text": {"$value": "{core.color.neutral.ink}", "$type": "color", "$extensions": {"source": "Alias of core.color.neutral.ink; .text-dark"}},
+        "muted": {"$value": "{core.color.neutral.grey}", "$type": "color", "$extensions": {"source": "Alias of core.color.neutral.grey; .text-grey"}},
+        "accent": {"$value": "{core.color.brand.yellow}", "$type": "color", "$extensions": {"source": "Alias of core.color.brand.yellow; .bg-yellow and .btn-with-bg-yellow:before"}},
+        "border": {"$value": "{core.color.neutral.line}", "$type": "color", "$extensions": {"source": "Alias of core.color.neutral.line; .border-grey-1"}},
+        "on-accent": {"$value": "{core.color.neutral.ink}", "$type": "color", "$extensions": {"source": COMP_SRC + "; Sign up label colour on the yellow button"}},
+    },
+    "component": {
+        "button": {
+            "background": {"$value": "{core.color.brand.yellow}", "$type": "color", "$extensions": {"source": SRC + "; .btn-with-bg-yellow:before"}},
+            "text": {"$value": "{core.color.neutral.ink}", "$type": "color", "$extensions": {"source": COMP_SRC + "; Sign up"}},
+            "radius": dim("9999px", SRC + "; .rounded-full on .bmc-btn"),
+            "height": dim("48px", COMP_SRC + "; header Sign up link height"),
+        },
+        "nav": {
+            "text": {"$value": "{core.color.neutral.ink}", "$type": "color", "$extensions": {"source": COMP_SRC + "; FAQ link"}},
+            "size": dim("16px", COMP_SRC + "; FAQ link font-size"),
+        },
+        "header": {
+            "background": {"$value": "{core.color.neutral.white}", "$type": "color", "$extensions": {"source": COMP_SRC + "; #bmc-header"}},
+            "height": dim("76px", COMP_SRC + "; #bmc-header at 1440"),
+            "padding": dim("14px", COMP_SRC + "; #bmc-header padding-top"),
+        },
+        "field": {
+            "radius": dim("12px", SRC + "; search modal field"),
+            "height": dim("48px", COMP_SRC + "; login email field, approximated from the login page control row"),
+        },
+    },
+}
 
 tokens = {
     "core": core,
     "light": light,
-    "dark": dark,
-    "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "Every public surface paints light: the marketing pages on a #faf8f0 cream field, the creator page and login card on white; no dark mode is offered."},
-    ],
+    "$themes": [{
+        "id": "light",
+        "name": "Light",
+        "selectedTokenSets": {"core": "source", "light": "enabled"},
+        "$description": "The only theme buymeacoffee.com paints on the public site. No theme toggle.",
+    }],
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }
+
 (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
 
@@ -219,4 +230,4 @@ def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+print({k: count(v) for k, v in tokens.items() if k in ("core", "light")})

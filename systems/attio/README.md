@@ -1,26 +1,26 @@
 # Attio design reference
 
-The signed-in app was captured on 31 October 2026 from [Attio](https://attio.com). The owner completed sign-in and authorized onboarding. Attio automatically provisioned a 14-day Pro trial during basic setup. Those captures do not establish free-tier availability. No purchase, invitation, mailbox connection or record creation was submitted.
+Captured on 31 October 2026 from [Attio](https://attio.com) and its signed-in web app using the visible Codex in-app browser. The owner completed sign-in and authorized onboarding. Attio automatically provisioned a 14-day Pro trial during basic setup; these captures do not establish free-tier availability. No purchase, invitation, mailbox connection or record creation was submitted.
 
-A public refresh on 21 November 2026 walked attio.com in headless Chromium at 1440 by 900 and 390 by 844, device pixel ratio 2. Sign in and Start for free both land on an empty welcome wall at app.attio.com. Nothing was typed. Google was not clicked. No form was submitted. The control map is [site-tree.md](site-tree.md). The wall is [login-review.json](login-review.json).
+A later pass on 21 November 2026 used the T3 in-app preview, default profile. The session was signed out. Sign in, `https://app.attio.com/login`, and `https://app.attio.com/` all opened the login wall at `https://app.attio.com/onboarding/welcome`. That walk added eight screenshots, [site-tree.md](site-tree.md), and [login-review.json](login-review.json). It did not rebuild tokens. `catalog.json` is unchanged.
 
-The package keeps the October app evidence and adds the public pages. The theme preference from October was restored to **System**, rendering dark. The temporary viewport override was reset.
+The package separates public marketing illustrations from interactive application evidence. It contains 45 accepted screenshots, including the October onboarding and company views plus the November public pages and the signed-out login wall. The October theme preference was restored to **System**, rendering dark; the temporary viewport override was reset.
 
 | File | Contents |
 |---|---|
 | [README.md](README.md) | Scope, coverage and limitations |
 | [icon.png](icon.png) | Official site identification icon; private catalogue use only |
-| [tokens.json](tokens.json) | Measured core, light and dark values from the October app |
+| [tokens.json](tokens.json) | Measured core, light and dark values |
 | [DESIGN.md](DESIGN.md) | Generated single-theme export |
 | [style-guide.html](style-guide.html) | Every token, with light/dark toggle; specimen chrome is presentation only |
 | [components.md](components.md) | Observed states and token pointers |
 | [patterns.md](patterns.md) | Screen compositions and gaps |
-| [site-tree.md](site-tree.md) | Which public control opens which page |
-| [login-review.json](login-review.json) | What the empty welcome wall asks for |
-| [components/](components) | Toolbar, table, and public control crops |
+| [components/](components) | Reviewed toolbar/table crops |
 | [screenshots/](screenshots) | Accepted screenshots converted to genuine 256-colour PNG |
 | [raw/](raw) | Computed-style readings, manifests, crop bounds and usage counts; no page copies |
 | [tools/](tools) | Deterministic token/guide builders and read-only capture reader |
+| [site-tree.md](site-tree.md) | Controls on the marketing home and the login wall, and where each one goes |
+| [login-review.json](login-review.json) | The 21 November 2026 walk: the session was signed out, so nav, settings, and create were not reached |
 
 ## Brief
 
@@ -52,7 +52,7 @@ Fonts: `core.fontFamily.body` is Inter, with no fallback. Scales, counted as [DE
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 10 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 4 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -104,9 +104,7 @@ Computed styles came from rendered DOM elements. Theme variables must be read in
 
 Every exported value is **Measured**. No sampled or reconstructed token values, and no derived conversions. The original API screenshots have `.png` names but decode as JPEG; the package stores decoded, quantized PNG copies. The manifest preserves original format, dimensions, hash and timestamp where available. Never sample colours from these images. Usage counts count viewport-intersecting HTML elements, including inherited styles, not pixel area or visual prominence.
 
-App desktop measurements are 1386 by 959 CSS pixels, DPR 2, with 1386 by 959 decoded images. The October public desktop was 1440 by 1000. The 21 November public desktop is 1440 by 900 CSS pixels, phone 390 by 844, both at device pixel ratio 2. The 390px app retains a wide table and overflowing toolbar, so it is evidence of a layout limitation. The dark table crop includes the observed sidebar tooltip.
-
-The November public walk read computed styles on the homepage and the welcome wall, written to [raw/public-2026-11-21-public-srgb.json](raw/public-2026-11-21-public-srgb.json). Page background is `#ffffff`. Body and display text are `#1c1d1f`. Sign in is a 36px outline button, 10px radius, text `#2e3238`, border `#cad0d9`. Start for free is a 36px fill, background `#202124`, text `#f3f4f6`. The Pro plan button is `#266df0`. Keyboard focus on Sign in draws a 3px ring whose computed shadow uses oklab; the outline colour serializes as `#005fca`. Those public readings are not in [tokens.json](tokens.json). The marketing stylesheet stores `--color-*` as `lab()`, and that form was not converted. Those names are Not captured. `html` carries a `light` class. A `.dark` selector exists in the stylesheet. No public control switches the marketing site to dark.
+App desktop measurements are 1386 by 959 CSS pixels, DPR 2, with 1386 by 959 decoded images. Public desktop is 1440 by 1000; phone is 390 by 844. The 390px app retains a wide table and overflowing toolbar, so it is evidence of a layout limitation. The dark table crop includes the observed sidebar tooltip. The full-page marketing attempt was rejected for unloaded animation sections.
 
 ## Fonts and assets
 
@@ -141,9 +139,8 @@ Captured, partial means the linked state is evidenced but the stated gaps remain
 | Onboarding | Captured | [capture](screenshots/onboarding-workspace-details.png) Profile, workspace, country, description, proposed objects, mailbox skip, call-intelligence choice, referral and completion. |
 | Principles, voice and component guidance | Not captured |  No official design-system or voice guide verified; do not infer product guidance. |
 | Assets and font rights | Captured, partial | [capture](screenshots/companies-light-scoped.png) Inter identified by computed CSS; proprietary fonts/icons not bundled. Official identification icon only. |
-| Themes and widths | Captured, partial | [capture](screenshots/home-mobile-light-default.png) Public 1440 and 390 on 21 November, light only. App desktop 1386 light/dark and narrow 390 dark remain from October. Marketing dark is not offered. |
-| Public site tree | Captured | [site-tree.md](site-tree.md) Header, Platform, Resources, homepage, footer, and the pages that were opened. |
-| Empty login wall | Captured | [login-review.json](login-review.json) Sign in and Start for free stop at the same empty welcome wall. Google was not clicked. |
+| Themes and widths | Captured, partial | [capture](screenshots/landing-mobile.png) Public 1440/390; app desktop1386 light/dark and narrow390 dark. Light mobile and full state parity not captured. A 21 November 2026 pass remeasured public desktop at 1440 by 900 and phone at 390 by 844. |
+| Signed-in shell, 21 November 2026 | Not captured | [login-review.json](login-review.json) The default preview profile was signed out. The login wall is [login-wall-desktop-2026-11-21.png](screenshots/login-wall-desktop-2026-11-21.png). |
 
 ## Do and don't
 

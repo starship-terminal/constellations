@@ -1,0 +1,4 @@
+name	role	source
+theme-toggle	Switches light and dark on the marketing shell	Observed in screenshots; SVG not extracted
+menu	Opens the phone nav overlay	Observed in screenshots; SVG not extracted
+logo	Relume wordmark in the header	Observed in screenshots; not extracted as an asset (docs/RIGHTS.md)

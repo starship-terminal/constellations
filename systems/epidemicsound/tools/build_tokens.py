@@ -1,233 +1,198 @@
 #!/usr/bin/env python3
-"""Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
+"""Build tokens.json from the Epidemic Sound public capture readings.
 
-Sources, read from epidemicsound.com on 2026-11-13:
-  raw/css-vars.json          the custom properties epidemicsound.com's stylesheets
-                             declare — the real Epidemic Sound design-token layer
-                             (151 semantic --es-color-* roles, --es-heading-*/
-                             --es-subheading-*/--es-text-* type scales,
-                             --es-radius-*/--es-elevation-*/--es-grid-*/,
-                             --es-play-button-size-*/--es-trackrow-*/--es-i-*
-                             component internals, the Inter + Sebenta stacks,
-                             and the Tailwind --font-weight-*/--ease-*/
-                             --breakpoint-*/--container-* layer) — read from the
-                             served stylesheets (tools/capture/vars.mjs) and
-                             resolved per body theme class
-  raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
-                             names a variable ("var") resolved per theme, or carries a measured
-                             value and the measurement it came from ("source")
-Every token carries $extensions.source: "css-var <name>" or "measured <where>".
+Sources, read on 2026-11-21 from www.epidemicsound.com, signed out:
+  raw/css-vars.json              declared --es-* and brand custom properties
+  raw/components-computed.json   computed styles of visible public controls
 
-epidemicsound.com paints two surfaces signed out: the alternative-light
-(ecru) marketing pages (/, /pricing/, /music/, /sound-effects/,
-/how-it-works/) and the dark catalog shell (/music/genres/*,
-/music/themes/*, /artists/*, /sound-effects/categories/*) plus the dark
-login.epidemicsound.com Keycloak forms. The themes are body classes —
-dark-theme-override (or bare :root), alternative-light-theme-override —
-paired with radii-override; not a user toggle. tokens.json holds core,
-light and dark: core carries the theme-invariant scales, light resolves
-the semantic names to the alternative-light values the marketing pages
-paint, dark to the catalog values, and the measured roles alias the
-declarations they match.
+The public marketing site paints one light theme. The --es-color-* set on
+:root is the product dark palette. It is recorded under `product` and is not
+treated as a theme the public site showed.
 
-Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
+Deterministic. Edit the raw files, never tokens.json.
 """
-import json, pathlib, re
+import json
+import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-RAW = HERE / "raw"
-V = json.loads((RAW / "css-vars.json").read_text())
-SPEC = json.loads((RAW / "component-tokens.json").read_text())
-
-# Resolved declarations per theme. vars.mjs resolves each custom property on a
-# probe document once light (:root) and once dark (html.dark), so
-# DECL[theme][name] is what the browser paints in that theme. A name declared
-# only on :root resolves the same in both. The light set resolves the
-# alternative-light pass — the theme the marketing pages paint; the plain
-# light pass resolves identically for every --es-color-* on this site.
-DECL = {"light": {n: v.get("value", v["raw"]) for n, v in V["resolved"]["alternativeLight"].items()},
-        "dark": {n: v.get("value", v["raw"]) for n, v in V["resolved"]["dark"].items()}}
+RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
+COMP = json.loads((HERE / "raw" / "components-computed.json").read_text())
+R = RAW["resolved"]
 
 
-def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla() -> #rrggbb or rgba(r, g, b, a)."""
-    v = v.strip().lower()
-    m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
-    if m:
-        h = m.group(1)
-        if len(h) in (3, 4):
-            h = "".join(c * 2 for c in h)
-        r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-        if len(h) == 8:
-            a = round(int(h[6:8], 16) / 255, 3)
-            return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
-        return "#%02x%02x%02x" % (r, g, b)
-    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
-    if m:
-        r, g, b, a = m.groups()
-        if a is None:
-            return "#%02x%02x%02x" % (int(r), int(g), int(b))
-        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, a)
-    m = re.fullmatch(r"hsla?\(\s*0\s*,\s*0%\s*,\s*([\d.]+)%\s*(?:,\s*([\d.]+))?\)", v)
-    if m:
-        lvl = round(float(m.group(1)) * 2.55)
-        a = float(m.group(2) or 1)
-        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    raise ValueError("not a colour: " + v)
+def color(value, source):
+    return {"$type": "color", "$value": value, "$extensions": {"source": source}}
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+def dim(value, source):
+    return {"$type": "dimension", "$value": value, "$extensions": {"source": source}}
 
 
-def check(path, ty, val):
-    """Refuse a value that is not the DTCG type it claims. An alias is checked by the alias pass."""
-    if isinstance(val, str) and val.startswith("{"):
-        return
-    if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
-    if ty == "color":
-        norm_color(val) if not str(val).startswith("{") else None
-    if ty == "shadow":
-        for layer in val:
-            for k in ("offsetX", "offsetY", "blur", "spread"):
-                if not DIM.fullmatch(layer[k]):
-                    raise ValueError(f"{path}: shadow {k} {layer[k]!r}")
-    if ty == "number" and not isinstance(val, (int, float)):
-        raise ValueError(f"{path}: number {val!r}")
-    if ty == "fontWeight" and not isinstance(val, int):
-        raise ValueError(f"{path}: fontWeight {val!r}")
-    if ty == "duration" and not re.fullmatch(r"\d+ms", str(val)):
-        raise ValueError(f"{path}: duration {val!r}")
-    if ty == "cubicBezier" and not (isinstance(val, list) and len(val) == 4):
-        raise ValueError(f"{path}: cubicBezier {val!r}")
-    if ty == "gradient":
-        for stop in val:
-            if not str(stop["color"]).startswith("{"):
-                norm_color(stop["color"])
-            if not 0 <= stop["position"] <= 1:
-                raise ValueError(f"{path}: gradient position {stop['position']!r}")
+def font(value, source):
+    return {"$type": "fontFamily", "$value": value, "$extensions": {"source": source}}
 
 
-def leaf(path, spec, theme):
-    ty = spec["type"]
-    if "var" in spec:
-        name = spec["var"]
-        if name not in DECL[theme]:
-            raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({theme})")
-        val = DECL[theme][name]
-        src = f"css-var {name} ({theme})"
-        if spec.get("source"):
-            src += "; " + spec["source"]
-    else:
-        val = spec["value"]
-        src = spec["source"]
-    if ty == "color" and not str(val).startswith("{"):
-        val = norm_color(val)
-    if ty == "cubicBezier" and isinstance(val, str):
-        m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
-        if m:
-            val = [float("%g" % float(x)) for x in m.groups()]
-        elif val.strip() in ("ease", "ease-in", "ease-out", "ease-in-out", "linear"):
-            val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
-                   "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
-    if ty in ("fontWeight", "number") and isinstance(val, str):
-        m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
-        if m:  # Tailwind v4 emits line-heights as calc(a/b) ratios
-            val = round(float(m.group(1)) / float(m.group(2)), 4)
-        elif re.fullmatch(r"-?\d+(\.\d+)?", val):
-            val = float(val) if "." in val else int(val)
-    if ty == "duration" and isinstance(val, str):
-        m = re.fullmatch(r"([\d.]+)(m?s)", val.strip())
-        if m:
-            val = ("%g" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))) + "ms"
-    if ty == "dimension":
-        if isinstance(val, (int, float)):
-            val = "%gpx" % val
-        elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):
-            val = val.strip() + "px"
-    check(path, ty, val)
-    t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
-    if spec.get("description"):
-        t["$description"] = spec["description"]
-    if spec.get("responsive"):
-        t["$extensions"]["responsive"] = spec["responsive"]
-    if spec.get("angle"):
-        t["$extensions"]["angle"] = spec["angle"]
-    return t
+def weight(value, source):
+    return {"$type": "fontWeight", "$value": value, "$extensions": {"source": source}}
 
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
-    if isinstance(node, dict) and "$value" in node:
-        return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
+def dur(value, source):
+    return {"$type": "duration", "$value": value, "$extensions": {"source": source}}
 
 
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but are
-# theme-independent measured geometry (sidebar width, player-bar height,
-# field heights), so they hang off core and reach both themes.
-core["component"] = build(SPEC["component"], "light")
+def bez(value, source):
+    return {"$type": "cubicBezier", "$value": value, "$extensions": {"source": source}}
 
 
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
+def num(value, source):
+    return {"$type": "number", "$value": value, "$extensions": {"source": source}}
 
 
-NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
-NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
+def alias(path):
+    return "{" + path + "}"
 
 
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
+def measured(name):
+    return COMP[name]
 
 
-for n, t in list(tokens_of(core)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(light)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_L:
-            raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_D:
-            raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
-
-tokens = {
-    "core": core,
-    "light": light,
-    "dark": dark,
+doc = {
+    "$schema": "https://design-tokens.org/schema.json",
+    "core": {
+        "color": {
+            "off-white": color(R["--es-color-brand-off-white"]["value"], "css-var --es-color-brand-off-white; painted page background"),
+            "black": color(R["--color-brand-black"]["value"], "css-var --color-brand-black; painted text and primary fill"),
+            "white": color(R["--color-brand-white"]["value"], "css-var --color-brand-white; text on primary buttons"),
+            "ink-soft": color("#272727", "measured header Create free account hover background, home 1440"),
+            "secondary-fill": color("rgba(61, 77, 116, 0.12)", "measured Contact sales and Log in button background"),
+            "ghost-hover": color("rgba(61, 77, 116, 0.08)", "measured Music nav button hover background"),
+            "muted": color("rgba(0, 0, 0, 0.6)", "measured footer link color"),
+            "yellow": color(R["--es-color-brand-yellow"]["value"], "css-var --es-color-brand-yellow; declared brand, not a painted marketing fill on the captured pages"),
+            "focus": color(R["--es-color-misc-focused"]["value"], "css-var --es-color-misc-focused; declared. Public buttons painted a white 2px outline on focus, not this blue"),
+            "product-base": color(R["--es-color-background-base"]["value"], "css-var --es-color-background-base; product dark palette, not the painted marketing page"),
+            "product-accent": color(R["--es-color-action-accent"]["value"], "css-var --es-color-action-accent; product dark palette"),
+        },
+        "font": {
+            "display": font("Sebenta, Georgia, \"Times New Roman\", \"Noto Serif\", serif", "css-var --es-i-header-font-family; computed on h1"),
+            "sans": font("Inter, Arial, \"Helvetica Neue\", sans-serif", "css-var --es-i-text-font-family; computed on body and buttons"),
+        },
+        "typography": {
+            "display": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": alias("core.font.display"),
+                    "fontSize": "80px",
+                    "fontWeight": 500,
+                    "lineHeight": "80px",
+                },
+                "$extensions": {"source": "measured h1 on / at 1440; family Sebenta weight 500"},
+            },
+            "heading": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": alias("core.font.display"),
+                    "fontSize": "64px",
+                    "fontWeight": 500,
+                    "lineHeight": "64px",
+                },
+                "$extensions": {"source": "css-var --es-heading-xl-font-size 4rem on body; weight from the display face"},
+            },
+            "body": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": alias("core.font.sans"),
+                    "fontSize": "16px",
+                    "fontWeight": 400,
+                    "lineHeight": "16px",
+                },
+                "$extensions": {"source": "measured body on / at 1440"},
+            },
+            "button-s": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": alias("core.font.sans"),
+                    "fontSize": "14px",
+                    "fontWeight": 600,
+                    "lineHeight": "24px",
+                },
+                "$extensions": {"source": "measured header Create free account, class es-text-button-s"},
+            },
+            "button-m": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": alias("core.font.sans"),
+                    "fontSize": "16px",
+                    "fontWeight": 600,
+                    "lineHeight": "24px",
+                },
+                "$extensions": {"source": "measured Contact sales, class es-text-button-m"},
+            },
+            "nav": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": alias("core.font.sans"),
+                    "fontSize": "14px",
+                    "fontWeight": 600,
+                    "lineHeight": "24px",
+                },
+                "$extensions": {"source": "measured header Music button"},
+            },
+        },
+        "radius": {
+            "none": dim("0px", "css-var --es-radius-button on body is 0; marketing controls override to a pill"),
+            "medium": dim(R["--es-radius-medium"]["value"], "css-var --es-radius-medium"),
+            "large": dim("8px", "css-var --es-radius-large on :root"),
+            "pill": dim("10000px", "measured border-radius on primary, secondary and nav buttons; .radii-override sets --es-radius-button to 10000px"),
+        },
+        "size": {
+            "button-s": dim(measured("button-primary-default")["height"], "measured header Create free account height"),
+            "button-m": dim(measured("button-secondary-hero")["height"], "measured Contact sales height"),
+            "nav": dim(measured("nav-button")["height"], "measured Music nav button height"),
+            "header": dim("100px", "measured header height at 1440"),
+            "switch": dim("40px", "measured pricing billing switch width; height 24px"),
+        },
+        "space": {
+            "button-s-x": dim("16px", "measured primary button padding-left"),
+            "button-s-y": dim("4px", "measured primary button padding-top"),
+            "button-m-x": dim("24px", "measured Contact sales padding-left"),
+            "nav-x": dim("16px", "measured Music button padding-left"),
+        },
+        "motion": {
+            "duration": dur("150ms", "measured button class duration-150; declared --animation-duration is 600ms and was not the control transition"),
+            "easing": bez([0, 0, 0.2, 1], "css-var --ease-out"),
+        },
+        "focus": {
+            "outline-width": dim("2px", "measured focus outline on header Create free account"),
+            "outline-color": color("#ffffff", "measured focus outline color on the black primary button"),
+        },
+    },
+    "light": {
+        "background": {
+            "page": color(alias("core.color.off-white"), "painted body background rgb(241, 240, 235)"),
+            "surface": color("#ffffff", "measured nav panel and pricing card fill"),
+            "header": color("rgba(0, 0, 0, 0)", "measured header background; the bar reads as a white pill over the page"),
+        },
+        "text": {
+            "primary": color(alias("core.color.black"), "measured body and h1 color"),
+            "muted": color(alias("core.color.muted"), "measured footer link color"),
+            "on-accent": color(alias("core.color.white"), "measured primary button text"),
+        },
+        "border": {
+            "default": color(alias("core.color.black"), "computed border color on text; most controls use fill, not a stroke"),
+        },
+        "action": {
+            "primary": color(alias("core.color.black"), "measured Create free account background"),
+            "primary-hover": color(alias("core.color.ink-soft"), "measured Create free account hover background"),
+            "secondary": color(alias("core.color.secondary-fill"), "measured Contact sales background"),
+            "ghost-hover": color(alias("core.color.ghost-hover"), "measured Music button hover background"),
+        },
+        "accent": color(alias("core.color.black"), "the public site uses black as the only strong fill; brand yellow is declared and not used as a marketing accent on the captured pages"),
+    },
     "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The alternative-light (ecru) surface: /, /pricing/, /music/, /sound-effects/ and /how-it-works/ paint it via body.alternative-light-theme-override; resolves identical to the plain light pass for every --es-color-*."},
-        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The dark surface: the catalog pages (/music/genres|themes/*, /artists/*, /sound-effects/categories/*) and the login.epidemicsound.com Keycloak forms paint dark via the :root defaults / dark-theme-override; not a user toggle."},
+        {"id": "light", "name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
     ],
-    "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
-
-def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
-
-
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+out = HERE / "tokens.json"
+out.write_text(json.dumps(doc, indent=2) + "\n")
+print("wrote", out, "tokens")

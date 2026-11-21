@@ -1,69 +1,89 @@
 # Components
 
-Measured on the public signed-out surfaces on 2026-11-19, at 1440 by 900. Crops are in [components/crops/](components/crops/). Values are token names from [tokens.json](tokens.json).
+Values are token paths. Take the numbers from [tokens.json](tokens.json). Crops are cut from the 256-colour screenshots, so they show layout and state, not exact colour.
 
-## Button
+## Header
 
-The marketing primary is white on ink, 32px tall, 13px semibold, radius `core.radius.button`.
+The shared header is 72 px tall in the older home rule and paints a 1 px bottom line. The live controls sit inside it at 32 px tall, 8 px radius, 13 px Inter.
 
-| State | Fill | Text | Evidence |
-|---|---|---|---|
-| default | `dark.color.button-primary` | `dark.color.button-primary-text` | [button-primary-default.png](components/crops/button-primary-default.png) |
-| hover | `dark.color.button-primary-hover` | `dark.color.button-primary-text` | [button-primary-hover.png](components/crops/button-primary-hover.png) |
-| focus-visible | same as hover, plus outline `dark.color.focus` | | computed on `.mwm-product-start` |
+| Control | Tokens | Shot |
+|---|---|---|
+| Products, Resources | `dark.component.nav-fg`, `dark.component.nav-height`, `core.typography.nav` | [screenshots/home-dark-products-menu.png](screenshots/home-dark-products-menu.png) |
+| Open MWM Console | `dark.component.button-secondary-bg`, `dark.component.button-secondary-fg` | [screenshots/home-dark-default.png](screenshots/home-dark-default.png) |
+| Build your app | `dark.component.button-primary-bg`, `dark.component.button-primary-fg`, `dark.component.button-primary-radius` | same |
+| Phone drawer | Observed. Opens from "Open navigation". | [screenshots/mobile-home-dark-nav-open.png](screenshots/mobile-home-dark-nav-open.png) |
 
-The secondary action, "Open MWM Console", uses `dark.color.nav-hover` at 10% white. Hover did not change the fill. Crop: [button-secondary-default.png](components/crops/button-secondary-default.png).
+Hover and pressed styles of these controls are not captured. `CSS.forcePseudoState` could not address the nodes, and the public sheets declare no `:hover` rule for them.
 
-The pricing call to action is the same white fill at 44px and 16px semibold. Crop: [plan-cta-default.png](components/crops/plan-cta-default.png).
+## Composer
 
-Console's "Sign In" uses `#f2f2f2` and lightens to white on hover. That fill is not a marketing token. See [console-sign-in-dark-email.png](screenshots/console-sign-in-dark-email.png).
+The home prompt is a panel under the display heading. The textarea measured 16 px Inter, 48 px tall, transparent background. The Agent chip measured 40 px tall, 8 px radius, fill `rgba(255, 255, 255, 0.05)`.
 
-## Nav item
+| Control | State | Evidence |
+|---|---|---|
+| Textarea | default, focused | [screenshots/home-dark-prompt-focused.png](screenshots/home-dark-prompt-focused.png). Focus did not change the textarea's computed colour, radius, or outline. |
+| Agent menu | open | [screenshots/home-dark-agent-menu.png](screenshots/home-dark-agent-menu.png). The lower options clip at the 900 px viewport. |
+| Platform menu | open | [screenshots/home-dark-platform-menu.png](screenshots/home-dark-platform-menu.png) |
+| Model menu | open | [screenshots/home-dark-model-menu.png](screenshots/home-dark-model-menu.png). Later models clip. |
+| Send | disabled | Observed. Declared fill `#fff3` until a prompt exists. The prompt was not typed, so the ready and hover states were not captured. |
+| Attachment, voice | present | Not used. |
 
-13px regular, padding 0 12px, height 32px, radius 8px. Resting fill is transparent. Hover and the open Products item use `dark.color.nav-hover`. Focus-visible adds the `dark.color.focus` outline. Crops: [nav-item-default.png](components/crops/nav-item-default.png), [nav-item-hover.png](components/crops/nav-item-hover.png).
+Declared composer focus ring: `core.shadow.composer-focus` (`0 0 0 2px #ffffff2e`) on icon buttons, menu options, send, and tool pills. Not measured via a forced pseudo-state.
 
-## Badge
+## Buttons elsewhere
 
-"MOST POPULAR" is `dark.color.orange` on white text, 14px bold, padding 5px 10px, radius `core.radius.pill`. Crop: [badge-default.png](components/crops/badge-default.png).
+| Control | Measured | Shot |
+|---|---|---|
+| Get MWM AI Pro | white fill, black label, 44 px, 8 px radius | [screenshots/pricing-dark-default.png](screenshots/pricing-dark-default.png) |
+| Submit Dispute, empty form | fill `#2a2a2a`, label `#616161`, 48 px | [screenshots/ip-dispute-dark-default.png](screenshots/ip-dispute-dark-default.png) |
+| FAQ trigger | 14 px Inter, transparent. Open and closed computed styles matched on the trigger itself. | [screenshots/pricing-dark-faq-open.png](screenshots/pricing-dark-faq-open.png) |
 
-The plan tier pill ("PRO") is `dark.color.chip` with `dark.color.muted` text.
+The pricing and console CTAs navigate to login walls. Those walls were not entered and are not screenshotted.
 
-## Text field
+## Fields
 
-The home prompt field is a borderless textarea, 16px, letter-spacing -0.32px, inside the prompt card. Crop: [text-field-default.png](components/crops/text-field-default.png).
+The IP dispute form was left empty.
 
-Console's email field is 16px on `dark.color.surface`, 1px `dark.color.control` border, radius `core.radius.field`, height 43px. Focus sets the border and a 2px outline to `dark.console.focus-ring`. The field was typed into and cleared. It was not submitted.
+| Control | Default | Focused |
+|---|---|---|
+| Text field | fill `#141414`, border `#1a1a1a`, 8 px radius, 12.25 px Inter, padding 10 px by 16 px | fill `#1c1c1c`, border `#3a3a3a` |
+| Textarea | same fill and border, taller | not separately measured |
+| Select | same fill, border, and type | not opened |
+| Checkbox | 18 px, fill `#141414` | not toggled |
 
-## Prompt card
+Shot: [screenshots/ip-dispute-dark-field-focused.png](screenshots/ip-dispute-dark-field-focused.png).
 
-`.mwm-prompt` is `dark.color.surface`, 1px `dark.color.prompt-border`, radius `core.radius.card`, shadow `core.shadow.prompt`. Crop: [prompt-default.png](components/crops/prompt-default.png).
+## Cards and filters
 
-Chips inside it are 40px tall, radius 8px, fill `dark.color.chip`, 14px medium. Crop: [chip-default.png](components/crops/chip-default.png). Focus-visible draws a 2px ring at 18% white.
+The glossary category card measured fill `#181818`, radius 16 px, padding 18 px. After the ASO card was clicked, fill became `#1d1d1d` and the box shadow became an inset 1 px ring of `rgba(255, 83, 1, 0.32)`, which matches `--mwm-orange-data-border-strong`.
 
-## Icon button
+Shot: [screenshots/glossary-dark-filter-aso.png](screenshots/glossary-dark-filter-aso.png).
 
-The prompt's add and voice buttons are 40px squares, radius 8px, fill `dark.color.chip`. Crop: [icon-button-default.png](components/crops/icon-button-default.png).
+Directory search measured fill `#0c0c0c`, height 48 px, radius 8 px.
 
-## Menu
+## Type
 
-The Products menu opens from the nav chevron. The open trigger uses `dark.color.nav-hover`. The panel itself is a full-width sheet under the top bar. Shot: [home-dark-products-menu.png](screenshots/home-dark-products-menu.png). The menu links were not followed.
+| Style | Size | Weight | Line height | Tracking | Where |
+|---|---|---|---|---|---|
+| Display | 72 px | 600 | 76 px | -2.88 px | Home h1, white. Pricing h1 is `#f7f8f8`. |
+| Lede | 16 px | 400 | 24 px | -0.32 px | Home paragraph, white at 70%. |
+| Nav | 13 px | 400 | 16 px | -0.26 px | Products button. |
+| Button | 13 px | 600 | 16 px | -0.26 px | Header CTAs. |
+| Chip | 14 px | 500 | 16 px | -0.07 px | Agent chip. |
+| Field | 12.25 px | 400 | 18.375 px | 0 | IP form. |
 
-## FAQ
-
-A pricing question is a full-width button, 72px tall, 14px, with a hairline under it. Opening one reveals the answer and flips the chevron. Shot: [pricing-dark-faq-open.png](screenshots/pricing-dark-faq-open.png).
-
-## Link
-
-`.mwm-build-link` is 18px, letter-spacing -0.54px, white, with a trailing arrow. No underline at rest.
-
-## Card
-
-`.mwm-number-card` is `dark.color.page`, 1px `dark.color.card-border`, radius `core.radius.card`, about 313 by 340. The plan price well is `dark.color.surface`, radius 8px, padding 0 18px.
+All of these computed to Inter. The declared display stack names Modern Gothic first. That face was not loaded.
 
 ## Gaps
 
-- Checkbox, radio, switch, select, tabs, tooltip, toast, table, avatar and list row do not appear on the captured public pages.
-- The console password field and the "Forgot password?" control were visible. Forgot password was not opened.
-- Create's provider buttons were measured and hovered. None was clicked.
-- Disabled, loading, error and pressed states were not shown by these pages.
-- The marketing site has no light theme. A `light` set exists in tokens.json and is empty.
+- Header button hover, focus-visible, and active: not captured.
+- Pricing CTA hover and active: not captured.
+- Submit Dispute hover, and the enabled submit after a valid form: not captured. The form was not filled.
+- Light theme: not present.
+- Signed-in Console and Create App: login walls, not entered.
+- Radio, switch, tooltip, toast, dialog: not present on the captured public pages.
+- Agent details were opened for one agent (Theo). Mira and Cody use the same panel. Coming-soon agents do not open.
+- One FAQ item was opened on pricing, MWM AI, Console, Publishing, the ASO tool, the glossary term, and the ranking chart. The other items were not each expanded.
+- Guide "On this page" is a phone control. Desktop click found a 0-size summary. Phone shot: [screenshots/mobile-guide-dark-on-this-page.png](screenshots/mobile-guide-dark-on-this-page.png).
+- Phone coverage is a subset: home (default, full, nav open), pricing (default, full), MWM AI, Console, Studio, articles, apps, glossary, rankings, and the guide contents. Other pages are desktop only.
+- Locale mirrors, careers, and external product sites: not captured.

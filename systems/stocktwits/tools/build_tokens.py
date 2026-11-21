@@ -1,291 +1,154 @@
 #!/usr/bin/env python3
-"""Write systems/stocktwits/tokens.json from the 2026-11-19 live readings.
+"""Build tokens.json from Stocktwits readings. Edit the readings, never tokens.json.
 
-Values are the custom properties resolved on stocktwits.com while the T3
-preview tab was on the public signed-out pages. Light and dark come from
-[data-theme="light"] and [data-theme="dark"] on the same document. A value
-that was not on the page is not invented here.
+Sources, read from stocktwits.com on 2026-11-21, signed out, light theme, 1440x900:
+  raw/components-computed.json  computed styles and the custom properties
+                                resolved on :root (html.light, data-theme=light).
+  raw/extra-readings.json       sign-in field and sentiment chips, measured in a
+                                fresh context after Cloudflare blocked a second
+                                navigation in the first session.
+Dark theme: the product paints light even when the browser prefers dark.
+No dark set is written.
 """
-
-from __future__ import annotations
-
 import json
-from pathlib import Path
+import pathlib
 
-PKG = Path(__file__).resolve().parent.parent
-OUT = PKG / "tokens.json"
-
-SRC = "stocktwits.com computed custom properties, T3 preview, 2026-11-19"
-
-
-def color(value: str, note: str) -> dict:
-    return {
-        "$value": value,
-        "$type": "color",
-        "$extensions": {"source": f"{SRC}: {note}"},
-    }
+HERE = pathlib.Path(__file__).resolve().parent.parent
+RAW = HERE / "raw"
+COMP = json.loads((RAW / "components-computed.json").read_text())
+VARS = COMP["_meta"]["foundations"]["resolved"]
 
 
-# Custom properties the page declared that no file in raw/ holds: raw/ has computed styles of
-# controls (components-computed.json) and motion rules, but no custom-property dump. These values
-# were typed in from the T3 preview at capture time, so they carry the hand-entered label.
-HAND = {
-    "black2", "white2", "blue", "blueAdaDark", "greenDark", "redDark", "orange", "sentimentOrange",
-    "edgeBlue", "edgePurple", "stLightGrey3", "stLightGrey7", "stDarkGrey3", "stDarkGrey4",
-    "stDarkGrey5", "stDarkGrey6", "charcoalDarker3", "pageDark",
-}
+def src_var(name):
+    return f"css-var {name} resolved on :root (raw/components-computed.json, html.light, 1440x900, 2026-11-21)"
 
 
-def hand(token: dict) -> dict:
-    """Relabel a token whose reading is not in raw/: Reconstruction, entered by hand."""
-    note = token["$extensions"]["source"][len(SRC) + 2:]
-    token["$extensions"]["source"] = (
-        f"Reconstruction: entered by hand at capture time from {note} on stocktwits.com "
-        "(T3 preview, 2026-11-19); no raw/ file holds this reading"
-    )
-    return token
+def src_comp(key, state, prop):
+    return f"computed {prop} of {key} {state} (raw/components-computed.json)"
 
 
-def dim(value: str, note: str) -> dict:
-    return {
-        "$value": value,
-        "$type": "dimension",
-        "$extensions": {"source": f"{SRC}: {note}"},
-    }
+def color(value, source, description):
+    return {"$value": value, "$type": "color", "$extensions": {"source": source}, "$description": description}
 
 
-def font_family(value: str, note: str) -> dict:
-    return {
-        "$value": value,
-        "$type": "fontFamily",
-        "$extensions": {"source": f"{SRC}: {note}"},
-    }
+def dim(value, source, description):
+    return {"$value": value, "$type": "dimension", "$extensions": {"source": source}, "$description": description}
 
 
-def font_weight(value: str, note: str) -> dict:
-    return {
-        "$value": value,
-        "$type": "fontWeight",
-        "$extensions": {"source": f"{SRC}: {note}"},
-    }
+def font(value, source, description):
+    return {"$value": value, "$type": "fontFamily", "$extensions": {"source": source}, "$description": description}
 
 
-def duration(value: str, note: str) -> dict:
-    return {
-        "$value": value,
-        "$type": "duration",
-        "$extensions": {"source": f"{SRC}: {note}"},
-    }
+def weight(value, source, description):
+    return {"$value": value, "$type": "fontWeight", "$extensions": {"source": source}, "$description": description}
 
 
-def bezier_points(value: str) -> list:
-    """"0.25, 0.1, 0.25, 1" as the four numbers DTCG's cubicBezier holds. A string would
-    export as a bare number list, which is not a CSS easing."""
-    points = [float(p) for p in value.split(",")]
-    assert len(points) == 4, value
-    return [int(p) if p.is_integer() else p for p in points]
+def number(value, source, description):
+    return {"$value": value, "$type": "number", "$extensions": {"source": source}, "$description": description}
 
 
-def cubic(value: str, note: str) -> dict:
-    return {
-        "$value": bezier_points(value),
-        "$type": "cubicBezier",
-        "$extensions": {"source": f"{SRC}: {note}"},
-    }
+def alias(path, source, description, ty="color"):
+    return {"$value": "{" + path + "}", "$type": ty, "$extensions": {"source": source}, "$description": description}
 
 
-def text(value: str, note: str) -> dict:
-    return {
-        "$value": value,
-        "$type": "other",
-        "$extensions": {"source": f"{SRC}: {note}"},
-    }
+def v(name):
+    if name not in VARS:
+        raise KeyError(name)
+    return VARS[name]
 
 
-def core() -> dict:
-    doc = {
+body_font = COMP["components"]["button-primary"]["default"]["style"]["fontFamily"]
+
+tokens = {
+    "core": {
         "color": {
-            "black": color("#000000", "--black"),
-            "black2": color("#101010", "--black-2"),
-            "white": color("#ffffff", "--white"),
-            "white2": color("#f8f8fb", "--white-2"),
-            "blue": color("#008fff", "--blue, also --primary-button-hover"),
-            "blue5": color("#1b66e7", "--blue-5, also --primary-button-background and --legal-blue"),
-            "blueAdaLight": color("#1b66e7", "--blue-ada on [data-theme=light]"),
-            "blueAdaDark": color("#008fff", "--blue-ada on [data-theme=dark]"),
-            "greenLight": color("#128760", "--green and --price-positive on [data-theme=light]"),
-            "greenDark": color("#19b682", "--green and --price-positive on [data-theme=dark]"),
-            "redLight": color("#dd331d", "--red and --price-negative on [data-theme=light]"),
-            "redDark": color("#fe433d", "--red and --price-negative on [data-theme=dark]"),
-            "purpleLight": color("#8146ff", "--purple on [data-theme=light]"),
-            "purpleDark": color("#9666ff", "--purple on [data-theme=dark]"),
-            "orange": color("#ff8125", "--orange"),
-            "sentimentOrange": color("#ba5d1a", "--sentiment-orange"),
-            "edgeBlue": color("#1b8dff", "--edge-blue"),
-            "edgePurple": color("#9369ee", "--edge-purple"),
-            "stLightGrey1": color("#8e8e93", "--st-light-grey-1, also --st-tertiary-text"),
-            "stLightGrey2": color("#aeaeb2", "--st-light-grey-2"),
-            "stLightGrey3": color("#c7c7cc", "--st-light-grey-3"),
-            "stLightGrey4": color("#d1d1d6", "--st-light-grey-4, also --primary-button-disabled in light"),
-            "stLightGrey5": color("#e5e5ea", "--st-light-grey-5, also --primary-border in light"),
-            "stLightGrey6": color("#f2f2f7", "--st-light-grey-6, also --secondary-background in light"),
-            "stLightGrey7": color("#f9f9fb", "--st-light-grey-7"),
-            "stDarkGrey2": color("#636366", "--st-dark-grey-2, also --st-secondary-text in light"),
-            "stDarkGrey3": color("#48484a", "--st-dark-grey-3"),
-            "stDarkGrey4": color("#3a3a3c", "--st-dark-grey-4"),
-            "stDarkGrey5": color("#2c2c2e", "--st-dark-grey-5"),
-            "stDarkGrey6": color("#1c1c1e", "--st-dark-grey-6, also --primary-background in dark"),
-            "charcoalDarker3": color("#151516", "--charcoal-darker-3"),
-            "pageDark": color("#0e0e0f", "--tertiary-background on [data-theme=dark]"),
-            "placeholder": color("#9ca3af", "computed ::placeholder on the sign-in email field, rgb(156, 163, 175)"),
-            "onetrust": color("#1d68d7", "computed background of the OneTrust I Accept button, rgb(29, 104, 215)"),
-            "strike": color("#aeaeb2", "computed colour of the struck list price on /subscriptions, rgb(174, 174, 178)"),
+            "page": color(v("--primary-background"), src_var("--primary-background"), "Page background."),
+            "surface": color(v("--secondary-background"), src_var("--secondary-background"), "Raised surface, also the field fill."),
+            "surface-sidebar": color(v("--sidebar-background"), src_var("--sidebar-background"), "Left rail wash."),
+            "text": color(v("--st-primary-text"), src_var("--st-primary-text"), "Primary text."),
+            "text-secondary": color(v("--st-secondary-text"), src_var("--st-secondary-text"), "Secondary text."),
+            "text-tertiary": color(v("--st-tertiary-text"), src_var("--st-tertiary-text"), "Muted labels and inactive tabs."),
+            "text-on-accent": color(v("--primary-button-text"), src_var("--primary-button-text"), "Text on a filled black or blue button."),
+            "border": color(v("--primary-border"), src_var("--primary-border"), "Hairline and control border."),
+            "link": color(v("--blue-5"), src_var("--blue-5"), "Inline link and announcement blue."),
+            "accent": color("#000000", src_comp("button-primary", "default", "backgroundColor"), "Filled pill. Sign Up paints black, not the blue token."),
+            "accent-hover": color("#2c2c2e", src_comp("button-primary", "hover", "backgroundColor"), "Filled pill on hover."),
+            "disabled": color("#d1d1d6", "computed backgroundColor of the disabled Log In button on /signin (raw/extra-readings.json)", "Disabled submit."),
+            "up": color(v("--sentiment-green"), src_var("--sentiment-green"), "Gain and bullish."),
+            "down": color(v("--sentiment-red"), src_var("--sentiment-red"), "Loss and bearish."),
+            "up-wash": color(v("--tag-green"), src_var("--tag-green"), "Bullish chip fill."),
+            "down-wash": color(v("--tag-red"), src_var("--tag-red"), "Bearish chip fill."),
+            "field": color(v("--st-input-background"), src_var("--st-input-background"), "Text field fill."),
+            "live": color("#6d28d9", "Not captured as a custom property. The Earnings badge paints a purple chip in screenshots/home-light-default.png. Value unread.", "Unread. Kept out of the token set."),
         },
         "font": {
             "family": {
-                "sans": font_family(
-                    "Source Sans 3, Source Sans 3 Fallback, Arial, sans-serif",
-                    "computed font-family on body: \"Source Sans 3\", \"Source Sans 3 Fallback\"; fallback @font-face is local(\"Arial\")",
-                ),
+                "ui": font(body_font, src_comp("button-primary", "default", "fontFamily"), "Source Sans 3, with the site's fallback face."),
+            },
+            "size": {
+                "body": dim("16px", "computed fontSize of body (raw/components-computed.json _meta.foundations.body)", "Body size."),
+                "button": dim("15px", src_comp("button-primary", "default", "fontSize"), "Filled button label."),
+                "nav": dim("13px", src_comp("nav-link", "default", "fontSize"), "Top nav label."),
+                "tab": dim("16px", src_comp("tab", "default", "fontSize"), "Feed tab."),
+                "link": dim("14px", src_comp("link", "default", "fontSize"), "Inline link."),
+                "field": dim("16px", "computed fontSize of input[name=login] on /signin (raw/extra-readings.json)", "Text field."),
+                "heading": dim("20px", "computed fontSize of h1 Log In on /signin (raw/extra-readings.json)", "Auth heading. Display sizes on marketing pages were not measured."),
             },
             "weight": {
-                "regular": font_weight("400", "computed weight of body, links, and the sign-in field"),
-                "semibold": font_weight("600", "computed weight of STButton and the symbol price"),
-                "bold": font_weight("700", "computed weight of the sign-in h1, plan name, and about hero"),
-                "black": font_weight("900", "computed weight of the sign-in welcome line"),
+                "regular": weight(400, src_comp("link", "default", "fontWeight"), "Body and links."),
+                "semibold": weight(600, src_comp("button-primary", "default", "fontWeight"), "Buttons."),
+                "bold": weight(700, "computed fontWeight of h1 Log In on /signin (raw/extra-readings.json)", "Auth heading."),
             },
-        },
-        "space": {
-            "1": dim("4px", "computed gap on the xs button and stream avatar spacing, --stream-message-timeline-avatar-spacing"),
-            "2": dim("8px", "computed gap on the md button and live-calls badge padding-block"),
-            "3": dim("12px", "computed padding-inline on the xs button and search field gap"),
-            "4": dim("16px", "computed search padding-inline and --stream-message-outer-spacing"),
-            "5": dim("20px", "computed padding-inline on the md button"),
-            "6": dim("24px", "computed padding-inline on the lg button"),
-            "7": dim("28px", "computed padding-inline on the xl button"),
-            "8": dim("32px", "computed gap of the about top nav, gap-x-[32px]"),
-            "10": dim("40px", "computed height of the md button and the sign-in field"),
+            "lineHeight": {
+                "body": number(1.5, "Derived: body line-height 24px / font-size 16px (raw/components-computed.json)", "Body line height."),
+            },
         },
         "radius": {
-            "none": dim("0px", "computed radius of the header and the For You tab"),
-            "sm": dim("6px", "computed radius of the enterprise sales field"),
-            "md": dim("8px", "computed radius of the sign-in and signup field"),
-            "lg": dim("12px", "computed radius of the subscription card"),
-            "xl": dim("40px", "computed radius of the about content card"),
-            "full": dim("9999px", "computed radius of STButton, the search pill, and the live-calls badge"),
+            "pill": dim("9999px", src_comp("button-primary", "default", "borderRadius"), "Buttons, chips, search."),
+            "field": dim("8px", "computed borderRadius of input[name=login] on /signin (raw/extra-readings.json)", "Text field."),
+            "card": dim("16px", "Not captured as a computed radius on a card crop. Trending cards look rounded in screenshots/home-light-default.png. Value unread.", "Unread."),
         },
         "size": {
-            "buttonXs": dim("24px", "computed height of the Use App button at 390px"),
-            "buttonMd": dim("40px", "computed height of STButton_md and the sign-in field"),
-            "buttonLg": dim("48px", "computed height of STButton_lg, Enter Stocktwits"),
-            "buttonXl": dim("56px", "computed height of STButton_xl, Get Started"),
-            "header": dim("90px", "resolved --header on the desktop shell"),
-            "mobileHeader": dim("52px", "computed height of MobileHeader at 390px"),
-            "sidebar": dim("300px", "resolved --sidebar, computed width of the watchlist column"),
-            "search": dim("36px", "computed height of the search pill"),
-            "avatar": dim("40px", "computed width and height of the stream avatar image"),
-            "maxLayout": dim("1280px", "resolved --max-layout-width"),
+            "button-md": dim("40px", "Observed height of Sign Up and the sign-in Log In button. Recorded as 40px from the sign-in reading (raw/extra-readings.json).", "Medium control."),
+            "button-xs": dim("24px", "css-var --size on .STButton_xs (stylesheets, 2026-11-21 probe)", "Icon button."),
+            "field": dim("40px", "computed height of input[name=login] (raw/extra-readings.json)", "Text field."),
         },
-        "shadow": {
-            "plan": text(
-                "0px 10px 20px 0px rgba(0, 0, 0, 0.05)",
-                "computed box-shadow of .Chargebee_card on /subscriptions",
-            ),
+        "space": {
+            "field-x": dim("12px", "computed paddingLeft of input[name=login] (raw/extra-readings.json)", "Field horizontal padding."),
+            "field-y": dim("8px", "computed paddingTop of input[name=login] (raw/extra-readings.json)", "Field vertical padding."),
+            "button-x": dim("20px", "computed paddingLeft of the sign-in Log In button (raw/extra-readings.json)", "Button horizontal padding."),
         },
-        "motion": {
-            "duration": {
-                "hamburger": duration("300ms", "declared transition-duration 0.3s on .HomeLandingPageMobileMenu_hamburgerLine"),
-                "float": duration("3000ms", "declared animation-duration 3s on .HomeLandingPage_floatingHeroImage"),
-                "gradient": duration("4000ms", "declared animation-duration 4s on .HomeLandingPage_gradientText"),
-                "count": duration("0ms", "under prefers-reduced-motion: reduce, AnimatedCount enter and exit animations are set to 0s"),
-            },
-            "easing": {
-                "ease": cubic("0.25, 0.1, 0.25, 1", "declared timing-function ease on the hamburger line, expanded from the CSS keyword"),
-                "progress": cubic("0, 0, 0.2, 1", "computed transition-timing-function of the top progress bar, cubic-bezier(0, 0, 0.2, 1), duration 0.25s"),
-            },
+    },
+    "light": {
+        "page": alias("core.color.page", "alias of core.color.page", "Page."),
+        "surface": alias("core.color.surface", "alias of core.color.surface", "Surface."),
+        "text": alias("core.color.text", "alias of core.color.text", "Primary text."),
+        "muted": alias("core.color.text-tertiary", "alias of core.color.text-tertiary", "Muted text."),
+        "accent": alias("core.color.accent", "alias of core.color.accent", "Filled action."),
+        "border": alias("core.color.border", "alias of core.color.border", "Border."),
+        "link": alias("core.color.link", "alias of core.color.link", "Link."),
+        "up": alias("core.color.up", "alias of core.color.up", "Gain."),
+        "down": alias("core.color.down", "alias of core.color.down", "Loss."),
+        "component": {
+            "button-primary-background": alias("core.color.accent", "alias", "Sign Up fill.", "color"),
+            "button-primary-text": alias("core.color.text-on-accent", "alias", "Sign Up label.", "color"),
+            "button-primary-radius": alias("core.radius.pill", "alias", "Pill radius.", "dimension"),
+            "button-disabled-background": alias("core.color.disabled", "alias", "Disabled Log In.", "color"),
+            "field-background": alias("core.color.field", "alias", "Field fill.", "color"),
+            "field-radius": alias("core.radius.field", "alias", "Field radius.", "dimension"),
+            "bullish-background": alias("core.color.up-wash", "alias", "Bullish chip.", "color"),
+            "bearish-background": alias("core.color.down-wash", "alias", "Bearish chip.", "color"),
         },
-    }
-    for key in HAND:
-        hand(doc["color"][key])
-    return doc
+    },
+    "$themes": [
+        {"id": "light", "name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+    ],
+}
 
+# Drop the unread live colour so no token lacks a measured source.
+del tokens["core"]["color"]["live"]
+del tokens["core"]["radius"]["card"]
 
-def semantic(theme: str) -> dict:
-    page = "{color.white}" if theme == "light" else "{color.stDarkGrey6}"
-    text = "{color.black}" if theme == "light" else "{color.white}"
-    muted = "{color.stDarkGrey2}" if theme == "light" else "{color.stLightGrey2}"
-    accent = "{color.blue5}" if theme == "light" else "{color.blueAdaDark}"
-    border = "{color.stLightGrey5}" if theme == "light" else "{color.stDarkGrey4}"
-    surface = "{color.stLightGrey6}" if theme == "light" else "{color.black}"
-    positive = "{color.greenLight}" if theme == "light" else "{color.greenDark}"
-    negative = "{color.redLight}" if theme == "light" else "{color.redDark}"
-    note = f"[data-theme={theme}]"
-    return {
-        "page": color(page, f"--primary-background on {note}"),
-        "surface": color(surface, f"--secondary-background on {note}"),
-        "text": color(text, f"--st-primary-text on {note}"),
-        "muted": color(muted, f"--st-secondary-text on {note}"),
-        "accent": color(accent, f"--blue-ada on {note}; the filled primary button stays --primary-button-background #1b66e7 in both themes"),
-        "border": color(border, f"--primary-border on {note}"),
-        "positive": color(positive, f"--price-positive on {note}"),
-        "negative": color(negative, f"--price-negative on {note}"),
-        "button": {
-            "primary": color(
-                "{color.blue5}",
-                "--primary-button-background, unchanged between themes; the filled shell control Sign up or log in was computed rgb(0, 0, 0), not this token",
-            ),
-            "primaryText": color("{color.white}", "--primary-button-text"),
-            "primaryHover": color("{color.blue}", "--primary-button-hover"),
-            "secondary": color(
-                "{color.white}" if theme == "light" else "{color.stDarkGrey6}",
-                f"--secondary-button-background on {note}",
-            ),
-            "secondaryText": color(text, f"--secondary-button-text on {note}"),
-            "secondaryBorder": color(border, f"--secondary-button-border on {note}"),
-            "disabled": color(
-                "{color.stLightGrey4}" if theme == "light" else "{color.stDarkGrey3}",
-                f"--primary-button-disabled on {note}; the empty Log In submit computed rgb(209, 209, 214)",
-            ),
-            "disabledText": color(
-                "{color.white}" if theme == "light" else "{color.black}",
-                f"--primary-button-disabled-text on {note}",
-            ),
-        },
-        "field": {
-            "background": color(
-                "{color.stLightGrey6}" if theme == "light" else "{color.stDarkGrey5}",
-                f"--st-input-background on {note}; the sign-in field computed rgb(242, 242, 247)",
-            ),
-        },
-        "focus": hand(color(
-            "#86b7fe" if theme == "light" else "#000000",
-            f"--select-focused on {note}. The focused sign-in field computed outline none and box-shadow none, so this token is declared and not painted on that control",
-        )),
-    }
-
-
-def build() -> dict:
-    """The token document; nothing is written (main() writes it)."""
-    return {
-        "core": core(),
-        "light": semantic("light"),
-        "dark": semantic("dark"),
-        "$themes": [
-            {"id": "light", "name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
-            {"id": "dark", "name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
-        ],
-    }
-
-
-def render() -> str:
-    """tokens.json's exact text."""
-    return json.dumps(build(), indent=2) + "\n"
-
-
-def main() -> None:
-    OUT.write_text(render())
-    print(f"wrote {OUT}")
-
-
-if __name__ == "__main__":
-    main()
+out = HERE / "tokens.json"
+out.write_text(json.dumps(tokens, indent=2) + "\n")
+print("wrote", out)

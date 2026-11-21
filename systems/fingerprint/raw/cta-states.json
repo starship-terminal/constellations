@@ -1,0 +1,29 @@
+{
+  "default": {
+    "bg": "rgb(243, 88, 32)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "6px",
+    "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.02) 0px -1px 0px 0px inset, rgba(23, 24, 22, 0.03) 0px 1px 2px 0px",
+    "outline": "rgb(243, 88, 32) none 0px",
+    "height": "32px",
+    "pad": "0px 14px"
+  },
+  "hover": {
+    "bg": "rgb(189, 64, 15)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "6px",
+    "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.02) 0px -1px 0px 0px inset, rgba(23, 24, 22, 0.03) 0px 1px 2px 0px",
+    "outline": "rgb(243, 88, 32) none 0px",
+    "height": "32px",
+    "pad": "0px 14px"
+  },
+  "focus": {
+    "bg": "rgb(189, 64, 15)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "6px",
+    "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 255, 255) 0px 0px 0px 2px, rgb(243, 88, 32) 0px 0px 0px 4px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.02) 0px -1px 0px 0px inset, rgba(23, 24, 22, 0.03) 0px 1px 2px 0px",
+    "outline": "rgb(243, 88, 32) none 0px",
+    "height": "32px",
+    "pad": "0px 14px"
+  }
+}

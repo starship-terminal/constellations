@@ -3,145 +3,55 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Nothing"
-description: "hardware-brand marketing: a declared greyscale and accent token layer (--greyscale-100..1000, --accent-yellow/red/blue), NType82 body type with Ndot product names, 4px controls, a frosted header pill, and a page-level dark theme on Nothing OS"
+description: "a sparse hardware storefront: yellow promo bar, white header island, dotted grey page, dot-matrix titles, and a dark product page"
 omitted:
+  - section: "typography"
+    reason: "tokens.json has no typography tokens under `core.typography`"
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#ffc700"
   neutral: "#f4f4f4"
-  surface: "#040404"
+  surface: "#ffffff"
   on-surface: "#040404"
-  on-surface-variant: "#595a5a"
+  on-surface-variant: "#858787"
   outline: "#d8d9d9"
-  background-page: "#f4f4f4"
-  background-white: "#ffffff"
-  surface-footer: "#040404"
-  surface-pill: "#ffffffcc"
-  surface-field: "#3c3c3c99"
-  surface-raised: "#ededed"
-  text-ink: "#040404"
-  text-body: "#000000"
-  text-on-dark: "#ffffff"
-  text-muted: "#595a5a"
-  action-primary: "#040404"
-  action-primary-text: "#ffffff"
-  action-inverse: "#ffffff"
-  action-inverse-text: "#040404"
-  action-accent: "#ffc700"
-  border-hairline: "#d8d9d9"
-  border-focus: "#ffc700"
-  status-red: "#c8102e"
-  status-blue: "#002f6c"
-typography:
-  body:
-    fontFamily: "NType82-Regular"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: "22.4px"
-    letterSpacing: "0px"
-  display-xxl:
-    fontFamily: "NType82-Regular"
-    fontSize: "60px"
-    fontWeight: 400
-    lineHeight: "60px"
-    letterSpacing: "0px"
-  display-xl:
-    fontFamily: "NType82-Regular"
-    fontSize: "48px"
-    fontWeight: 400
-    lineHeight: "48px"
-    letterSpacing: "0px"
-  display-lg:
-    fontFamily: "NType82-Regular"
-    fontSize: "40px"
-    fontWeight: 400
-    lineHeight: "40px"
-    letterSpacing: "0px"
-  heading-xl:
-    fontFamily: "NType82-Regular"
-    fontSize: "32px"
-    fontWeight: 400
-    lineHeight: "32px"
-    letterSpacing: "0px"
-  heading-lg:
-    fontFamily: "NType82-Regular"
-    fontSize: "24px"
-    fontWeight: 400
-    lineHeight: "26.4px"
-    letterSpacing: "0px"
-  heading-md:
-    fontFamily: "NType82-Regular"
-    fontSize: "20px"
-    fontWeight: 400
-    lineHeight: "24px"
-    letterSpacing: "0px"
-  subheading-lg:
-    fontFamily: "NType82-Regular"
-    fontSize: "18px"
-    fontWeight: 400
-    lineHeight: "25.2px"
-    letterSpacing: "0px"
-  subheading-md:
-    fontFamily: "NType82-Regular"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: "22.4px"
-    letterSpacing: "0px"
-  subheading-sm:
-    fontFamily: "NType82-Regular"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: "19.6px"
-    letterSpacing: "0px"
-  dot-display:
-    fontFamily: "Ndot-Regular"
-    fontSize: "40px"
-    fontWeight: 400
-    lineHeight: "40px"
-    letterSpacing: "0px"
-  dot-product:
-    fontFamily: "Ndot-Regular"
-    fontSize: "20px"
-    fontWeight: 55
-    lineHeight: "20px"
-    letterSpacing: "0px"
-  dot-eyebrow:
-    fontFamily: "Ndot-Bold"
-    fontSize: "20px"
-    fontWeight: 57
-    lineHeight: "20px"
-    letterSpacing: "0px"
-  mono-label:
-    fontFamily: "Geist Mono Variable"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: "17.5px"
-    letterSpacing: "0px"
-  mono-field:
-    fontFamily: "Geist Mono Variable"
-    fontSize: "12px"
-    fontWeight: 400
-    lineHeight: "15px"
-    letterSpacing: "0px"
-  callout:
-    fontFamily: "LatteraMonoLL"
-    fontSize: "11px"
-    fontWeight: 400
-    lineHeight: "12.1px"
-    letterSpacing: "0px"
+  accent-red: "#c8102e"
+  accent-yellow: "#ffc700"
+  accent-blue: "#002f6c"
+  greyscale-100: "#f4f4f4"
+  greyscale-150: "#ededed"
+  greyscale-200: "#d8d9d9"
+  greyscale-300: "#cbcccc"
+  greyscale-400: "#bec0c0"
+  greyscale-default: "#b1b3b3"
+  greyscale-600: "#9b9d9d"
+  greyscale-700: "#858787"
+  greyscale-800: "#6f7070"
+  greyscale-900: "#595a5a"
+  greyscale-1000: "#3c3c3c"
+  greyscale-black: "#040404"
+  greyscale-white: "#ffffff"
+  greyscale-dm-light: "#181818"
+  greyscale-dm-dark: "#040404"
+  ink: "#000000"
+  paper: "#ffffff"
+  page: "#f4f4f4"
+  text: "#040404"
+  promo: "#ffc700"
+  on-promo: "#040404"
+  field: "#e9ecef"
 rounded:
-  sm: "2px"
-  default: "4px"
-  md: "6px"
-  lg: "8px"
-  pill: "800px"
+  none: "0px"
+  control: "4px"
+  field: "800px"
 spacing:
-  "2": "8px"
-  "3": "12px"
-  "4": "16px"
-  "5": "32px"
-  "6": "64px"
+  header: "64px"
+  header-space: "4rem"
+  aside: "400px"
+  grid-item: "355px"
+  cart-summary: "250px"
+  cart-summary-discount: "300px"
 ---
 
 # Nothing
@@ -152,50 +62,41 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: hardware-brand marketing: a declared greyscale and accent token layer (--greyscale-100..1000, --accent-yellow/red/blue), NType82 body type with Ndot product names, 4px controls, a frosted header pill, and a page-level dark theme on Nothing OS.
+Good for: a sparse hardware storefront: yellow promo bar, white header island, dotted grey page, dot-matrix titles, and a dark product page.
 
-Captured 2026-11-19, read-only public signed-out pages (home, about, nothing-os, phone-4a-pro, support centre). Account login asks for a password and was not entered. Add to bag and contact-support were not submitted.. Themes: light, dark.
+Captured 2026-11-21, signed out. Themes: light, dark.
 
-Nothing (nothing.tech) is a hardware brand. This package records the public signed-out marketing site: the UK home, About, Nothing OS 5.0, and the Phone (4a) Pro product page, plus the separate Support Centre shell. Captured 2026-11-19 from a signed-out T3 preview tab at 1169 by 731 CSS pixels, device pixel ratio 2. Light is the home, About and product pages. Dark is the live `html.dark` class on Nothing OS 5.0. No account was created. No purchase was started.
+A token set and component reference for Nothing's public storefront. It was read from **nothing.tech** on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The UK store stayed selected. Captured: home, sale, the category collections, one product (Headphone (1) Pro), community, about, Nothing OS, offers, support, contact, privacy, business enquiry, two campaign pages, the accessibility statement, and the 404 at `/login`.
 
-<!-- brief:start -->
-<!-- brief:end -->
-
-<!-- health:start -->
-<!-- health:end -->
+Nothing's storefront is a Hydrogen shop. Chrome is a yellow promo bar over a white header island, NType82 at 16px, and a dotted `#f4f4f4` page. Product titles use Ndot. The product page for Headphone (1) Pro paints `html.dark`. The CSS custom properties do not change between a light probe and a dark probe. **Boundary:** account, checkout, and signup live on account.nothing.tech and were not entered.
 
 ## Colors
 
-The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
+The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `core.color` and `light.color`, named by its path with dots turned into hyphens.
 
-- **primary (#ffc700):** `light.action.accent`
-- **neutral (#f4f4f4):** `light.background.page`
-- **surface (#040404):** `light.surface.footer`
-- **on-surface (#040404):** `light.text.ink`
-- **on-surface-variant (#595a5a):** `light.text.muted`
-- **outline (#d8d9d9):** `light.border.hairline`
+- **primary (#ffc700):** `core.color.accent.yellow`
+- **neutral (#f4f4f4):** `light.color.page`
+- **surface (#ffffff):** `light.color.surface`
+- **on-surface (#040404):** `light.color.text`
+- **on-surface-variant (#858787):** `core.color.greyscale.700`
+- **outline (#d8d9d9):** `core.color.greyscale.200`
 
 ## Typography
 
-16 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Geist Mono Variable, LatteraMonoLL, NType82-Regular, Ndot-Bold, Ndot-Regular.
+No composite type styles in tokens.json; the README text below names the faces and sizes.
 
 ### Fonts (from README.md)
 
-| Family | Where it painted | Licence |
+| Family | Where | Licence |
 |---|---|---|
-| NType82-Regular | Body, headings, SHOP NOW | Proprietary. Not committed |
-| NType82-Headline | Declared as `.font-ntype82-headline`. Home h1 used Regular | Proprietary |
-| Ndot-Regular | Product name, footer links | Proprietary |
-| Ndot-Bold | BLACK FRIDAY eyebrow, weight 57 | Proprietary |
-| Geist Mono Variable | Category labels, footer email field | Loaded from the store CDN as a variable font |
-| LatteraMonoLL | Add to bag label | Proprietary |
-| Inter-Regular | Account login only | Not the store UI |
-
-Tokens name the measured family and fall back to `sans-serif` or `monospace`.
+| NType82-Regular, NType82-Headline | Body, promo, buttons. Declared as font faces in the storefront CSS | Nothing's brand face. Not redistributed. Tokens name the family and fall back to sans-serif |
+| Ndot-Regular, Ndot-Bold | Collection and page titles (dot matrix) | Brand face. Not redistributed |
+| Geist Variable, Geist Mono Variable | Loaded by the storefront CSS. Not the face on the measured chrome | Vendored by the site. Not redistributed |
+| LatteraMonoLL | Loaded by the storefront CSS. Not measured on a control in this pass | Not redistributed |
 
 ## Layout
 
-Spacing from `core.space`: `2` 8px, `3` 12px, `4` 16px, `5` 32px, `6` 64px.
+Spacing from `core.space`: `header` 64px, `header-space` 4rem, `aside` 400px, `grid-item` 355px, `cart-summary` 250px, `cart-summary-discount` 300px.
 
 ## Elevation & Depth
 
@@ -203,13 +104,13 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `sm` 2px, `default` 4px, `md` 6px, `lg` 8px, `pill` 800px.
+Corner radii from `core.radius`: `none` 0px, `control` 4px, `field` 800px.
 
 ## Components
 
 No component tokens map onto DESIGN.md's component properties.
 
-Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -221,21 +122,21 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The preview browser returned "The browser is not producing screenshot frames." There are no screenshots and no crops. Layout claims in this README come from DOM measurements, not from a reviewed PNG.
-
-Programmatic `focus()` on the logo did not paint the declared `outline-accent-yellow`. The focus colour is the declared token, not a painted outline.
-
-`--accent-red` and `--accent-blue` are declared on `:root`. I did not see them paint on the pages I opened. `--greyscale-150` through `--greyscale-800` are declared; only 100, 900, 1000 and black were sampled as painted colours.
-
-The Support Centre (https://nothing.tech/pages/support-centre) and the account host (https://account.nothing.tech) use a different shell: NType82 at 18px on a `rgb(243, 245, 248)` page, pill buttons at 800px radius, Inter on the login form. Those values are recorded in [raw/readings.json](raw/readings.json). They are not aliased into the store token sets.
-
-NType82, Ndot, Geist and LatteraMonoLL are the product's own fonts. The style guide falls back to system faces.
+- Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json) and [raw/css-vars.json](raw/css-vars.json), not from the PNGs.
+- The dark set is the greyscale-dm tokens plus the painted product page. It is not a second stylesheet. Unread dark-page computed styles stay Not captured.
+- Nav and cart crops from the first measure can be clipped. The region suggestion had shifted the header off the top of the viewport. The 32 px cart size is the computed width. The crop is not a clean rest state.
+- Promo-bar hover and focus readings moved to y=-22. They are not a second colour.
+- Accent red and accent blue are declared. This pass did not measure a control that paints them.
+- The contact field fill `#e9ecef` is a computed style. It is not one of the named greyscale channels.
+- Business enquiry and contact pages show empty form fields. Those fields were not filled. Do not treat placeholder copy as a token.
 
 ### Do and don't (from README.md)
 
-- **Use the greyscale and the yellow accent as the brand.** The page is `#f4f4f4`, ink is `#040404`, the promo bar is `#ffc700`, and the footer is `#040404`.
-- **Set display type in NType82 at weight 400 with a line-height of 1.** The home h1 was 48px on 48px. Do not invent a bold NType82 for store headlines.
-- **Use Ndot for product names and footer navigation.** The product title painted in Ndot-Regular at 20px. Footer links painted in Ndot-Regular at 40px, uppercase.
-- **Keep controls nearly square.** SHOP NOW and the header pill use 4px radius. Add to bag uses 6px. The 800px pill belongs to the Support Centre shell.
-- **Honour the dark class as a page theme.** Nothing OS 5.0 sets `html.dark` and paints `#181818`. Do not invent a second dark palette.
-- **Leave account and checkout alone.** Login asks for a password. Add to bag starts a purchase. This package stops at the public page.
+- **Do keep the page wash light grey and the header white.** The collection grid sits on `#f4f4f4` with a white island header. See [phones-light-default.png](screenshots/phones-light-default.png).
+- **Do put the promo line on yellow.** The bar is `#ffc700` with `#040404` type. See [home-light-default.png](screenshots/home-light-default.png).
+- **Do open AUDIO and PHONES as a white panel over a dimmed page.** See [home-light-menu-audio.png](screenshots/home-light-menu-audio.png).
+- **Do use the dot face for collection titles.** PHONES, ACCESSORIES and the 404 digits are Ndot, not the body face. See [phones-light-default.png](screenshots/phones-light-default.png).
+- **Do paint the product page dark when the page itself is dark.** Headphone (1) Pro uses `html.dark`. See [product-light-default.png](screenshots/product-light-default.png).
+- **Don't invent a dark token sheet.** The resolved custom properties match in both probes.
+- **Don't enter account or checkout from this package.** The account icon leaves for a login wall. See [site-tree.md](site-tree.md).
+- **Don't fill the newsletter or the business form.** Those fields were left empty on purpose.

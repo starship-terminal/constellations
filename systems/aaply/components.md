@@ -1,18 +1,18 @@
 # aaply components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from aaply.app on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was bought, downloaded, signed into, sent or submitted.
+The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from aaply.app on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was bought, downloaded, signed into, sent or submitted.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (51 components, 90 states).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (58 components, 103 states).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Poppins 57/60 700, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (89 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (99 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
-Screenshots are named `{page}-light-{state}.png` (the marketing site is light, with a black footer band). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x). The app host go.aaply.app returned "Not found" on /login, /sign, /signup and /workspace/demo, so the authenticated product is listed as an unreachable boundary, not captured.
+Screenshots are named `{page}-light-{state}.png` (the marketing site is light, with a black footer band). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x). The app host go.aaply.app returned "Not found" on /login, /sign, /signup and /workspace/demo, so the authenticated product is listed as an unreachable boundary, not captured. Which control opens which page is in [site-tree.md](site-tree.md).
 
 | Surface | URL | Screenshots |
 |---|---|---|
@@ -20,19 +20,30 @@ Screenshots are named `{page}-light-{state}.png` (the marketing site is light, w
 | Features. Numbered workflow steps, product panels, mega demo CTA; full page. | `/features` | [default](screenshots/features-light-default.png), [full](screenshots/features-light-full.png) |
 | Value. Display heading, value cells; full page. | `/value` | [default](screenshots/value-light-default.png), [full](screenshots/value-light-full.png) |
 | Pricing. Billing rail, plan cards, feature table; yearly state and full page. | `/pricing` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png), [yearly](screenshots/pricing-light-yearly.png) |
-| Reviews. Featured slide, testimonial grid; full page. | `/reviews` | [default](screenshots/reviews-light-default.png), [full](screenshots/reviews-light-full.png) |
+| Reviews. Featured slide, testimonial grid; full page. | `/reviews` | [default](screenshots/reviews-light-default.png), [full](screenshots/reviews-light-full.png), [slide-2](screenshots/reviews-light-slide-2.png) |
 | Our story. The editorial column; full page. | `/our-story` | [default](screenshots/our-story-light-default.png), [full](screenshots/our-story-light-full.png) |
 | Team. Display heading, member grid; full page. | `/team` | [default](screenshots/team-light-default.png), [full](screenshots/team-light-full.png) |
 | Figma plugin. Display heading, export steps; full page. | `/figma_plugin` | [default](screenshots/figma-plugin-light-default.png), [full](screenshots/figma-plugin-light-full.png) |
-| Home at 390: burger, hero, CTAs; full page. | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png) |
+| Early Users Program. Sitemap-only. Numbered steps, lime Sign up pill; full page. | `/early-program` | [default](screenshots/early-program-light-default.png), [full](screenshots/early-program-light-full.png) |
+| Manual. Sitemap-only. Display heading, embedded video; full page. | `/manual` | [default](screenshots/manual-light-default.png), [full](screenshots/manual-light-full.png) |
+| Home at 390: burger, hero, CTAs; full page and the open menu. | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu-open](screenshots/mobile-home-light-menu-open.png) |
 | Pricing at 390; full page. | `/pricing` | [default](screenshots/mobile-pricing-light-default.png), [full](screenshots/mobile-pricing-light-full.png) |
 | Features at 390; full page. | `/features` | [default](screenshots/mobile-features-light-default.png), [full](screenshots/mobile-features-light-full.png) |
+| Value at 390; full page. | `/value` | [default](screenshots/mobile-value-light-default.png), [full](screenshots/mobile-value-light-full.png) |
+| Reviews at 390; full page. | `/reviews` | [default](screenshots/mobile-reviews-light-default.png), [full](screenshots/mobile-reviews-light-full.png) |
+| Our story at 390; full page. | `/our-story` | [default](screenshots/mobile-our-story-light-default.png), [full](screenshots/mobile-our-story-light-full.png) |
+| Team at 390; full page. | `/team` | [default](screenshots/mobile-team-light-default.png), [full](screenshots/mobile-team-light-full.png) |
+| Figma plugin at 390; full page. | `/figma_plugin` | [default](screenshots/mobile-figma-plugin-light-default.png), [full](screenshots/mobile-figma-plugin-light-full.png) |
+| Early Users Program at 390; full page. | `/early-program` | [default](screenshots/mobile-early-program-light-default.png), [full](screenshots/mobile-early-program-light-full.png) |
+| Manual at 390; full page. | `/manual` | [default](screenshots/mobile-manual-light-default.png), [full](screenshots/mobile-manual-light-full.png) |
 
 ### Overlays and transient states
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
 | Monthly billing | pricing | the Monthly segment pressed (client-side state, nothing sent) | [billing-monthly-on](#monthly-option-selected), [plan-price-monthly](#plan-price-monthly) |
+| Reviews slide 2 | /reviews | carousel dot button[aria-label="2 of 6"] clicked; stays on the page | [reviews-light-slide-2.png](screenshots/reviews-light-slide-2.png) |
+| Phone menu | home at 390 | burger a[href="#open-nav"] clicked; closed with #close-nav | [mobile-home-light-menu-open.png](screenshots/mobile-home-light-menu-open.png) |
 | App host | go.aaply.app | nav Log in / Sign up / demo links followed to the app host | every route returned "Not found" — an unreachable boundary, not captured |
 | Chat bubbles | home / features / value | static annotation bubbles baked into the marketing pages | measured as elements ([chat-bubble](#chat-annotation-bubble)); no live widget was opened |
 
@@ -40,7 +51,7 @@ Screenshots are named `{page}-light-{state}.png` (the marketing site is light, w
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 10 components were given a real keyboard focus. 10 draw a ring: `logo` (3px auto #2015ff, offset 4px), `nav-link` (3px auto #2015ff, offset 4px), `nav-login` (3px auto #2015ff, offset 4px), `nav-signup` (3px auto #2015ff, offset 4px), `cta-signup-free` (3px auto #2015ff, offset 4px), `cta-demo` (3px auto #2015ff, offset 4px), `footer-link` (3px auto #2015ff, offset 4px), `social-icon` (3px auto #2015ff, offset 4px), `plan-cta` (3px auto #2015ff, offset 4px), `mega-demo-cta` (3px auto #2015ff, offset 4px). The other 0 draw none, so a keyboard user sees no change: . Focus could not be driven to `compare-cta` — its focus state is recorded as not captured.
+**Focus.** 12 components were given a real keyboard focus. 12 draw a ring: `logo` (3px auto #2015ff, offset 4px), `nav-link` (3px auto #2015ff, offset 4px), `nav-login` (3px auto #2015ff, offset 4px), `nav-signup` (3px auto #2015ff, offset 4px), `cta-signup-free` (3px auto #2015ff, offset 4px), `cta-demo` (3px auto #2015ff, offset 4px), `footer-link` (3px auto #2015ff, offset 4px), `social-icon` (3px auto #2015ff, offset 4px), `plan-cta` (3px auto #2015ff, offset 4px), `mega-demo-cta` (3px auto #2015ff, offset 4px), `early-cta` (3px auto #2015ff, offset 4px), `manual-cta` (3px auto #2015ff, offset 4px). The other 0 draw none, so a keyboard user sees no change: . Focus could not be driven to `compare-cta` — its focus state is recorded as not captured.
 
 **Pressed.** Only the nav Sign up pill swaps under :active — black to lime, the same as its hover; the hero and mega demo pills hold black through hover and pressed, and the lime pills hold flat; see the per-component state rows.
 
@@ -50,6 +61,7 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|
 | 0.2s | `ease-in-out` | background-color, border-color, box-shadow, color | billing-monthly, billing-monthly-on, billing-yearly, chat-bubble, compare-cta, cta-demo, cta-signup-free, early-birds and more |
 | 0.3s | `ease-in-out` | all | footer-link |
+| 0.6s | `ease` | opacity | m-menu |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
@@ -60,11 +72,11 @@ Values that apply across entries, from the measurement files.
 | [Plan card (Plus)](#plan-card-plus) | 561 x 618 | - | 36px | #e6e51e `lime` | none | 0 |
 | [Review slide](#review-slide) | 1157 x 418 | - | 40px | #e7e51e `lime-slide` | none | 0 |
 | [Review card](#review-card) | 370 x 580 | - | 40px | #ffffff `white` | none | 0 |
-| [Member card](#member-card) | 359 x 479 | 1px solid #cccccc `border-gray` | 36px | transparent | none | 0 |
+| [Member card](#member-card) | 359 x 479 | 1px solid #cccccc `border-gray` | 36px | - | none | 0 |
 | [Value card](#value-card) | 271 x 272 | - | 40px | #ffffff `white` | none | 0 |
 | [Feature table](#feature-table) | 527 x 1166 | - | 40px | #e6e51e `lime` | none | 0 |
-| [Export step card](#export-step-card) | 561 x 273 | 1px solid #cccccc `border-gray` | 36px | transparent | none | 0 |
-| [Billing toggle](#billing-toggle) | 1440 x 75 | - | - | #f2f2f2 `page-gray` | none | 0 |
+| [Export step card](#export-step-card) | 561 x 273 | 1px solid #cccccc `border-gray` | 36px | - | none | 0 |
+| [Billing toggle](#billing-toggle) | 1440 x 75 | - | 30px | #e7e51e `lime-slide` | none | 0 |
 | [Footer](#footer) | 1440 x 1088 | - | - | #000000 `black` | none | 0 |
 
 ## Components
@@ -129,14 +141,14 @@ The black Sign up pill in the nav bar; links to go.aaply.app/signup. Hovered and
 ![Sign up button default](components/crops/nav-signup-default.png) ![Sign up button hover](components/crops/nav-signup-hover.png) ![Sign up button focus-visible](components/crops/nav-signup-focus-visible.png) ![Sign up button pressed](components/crops/nav-signup-pressed.png)
 
 #### Footer
-The black footer band: "Made remotely with love", the aaply@aaply.app mail link, social icons (Twitter, Medium, LinkedIn, Discord, YouTube, Instagram) and the second nav list. Read as `footer` on the home page.
+The black footer band: "Made remotely with love", the [published contact] mail link, social icons (Twitter, Medium, LinkedIn, Discord, YouTube, Instagram) and the second nav list. Read as `footer` on the home page.
 
 **Values (default).** size 1440 x 1088; background #000000 `black`; text Times 16/normal 400, #000000 `black`; transition box-shadow 0.2s ease-in-out.
 
 ![Footer default](components/crops/footer-default.png)
 
 #### Footer mail link
-The aaply@aaply.app contact link in the footer. Read as `footer-link` on the home page.
+The [published contact] contact link in the footer. Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -145,7 +157,7 @@ The aaply@aaply.app contact link in the footer. Read as `footer-link` on the hom
 | focus-visible | outline 3px auto #2015ff, offset 4px |
 | pressed | text Inter 15/23 400, #c4c4c4 `silver` |
 
-![Footer mail link default](components/crops/footer-link-default.png) ![Footer mail link hover](components/crops/footer-link-hover.png) ![Footer mail link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer mail link pressed](components/crops/footer-link-pressed.png)
+No crop is kept: the element is the published contact address, which is not written into the package. The values above were read from computed styles.
 
 #### Social icon
 One of the social-icon links in the footer. Read as `social-icon` on the home page.
@@ -376,9 +388,9 @@ The "Compare features →" link under the cards. Read as `compare-cta` on the pr
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 851 x 60; background transparent; text Poppins 57/60 700, #000000 `black`; transition box-shadow 0.2s ease-in-out |
+| default (same: hover, focus-visible, pressed) | size 851 x 60; background transparent; text Poppins 57/60 700, #000000 `black`; transition box-shadow 0.2s ease-in-out |
 
-![Compare features link default](components/crops/compare-cta-default.png) ![Compare features link hover](components/crops/compare-cta-hover.png) ![Compare features link pressed](components/crops/compare-cta-pressed.png)
+![Compare features link default](components/crops/compare-cta-default.png) ![Compare features link hover](components/crops/compare-cta-hover.png) ![Compare features link focus-visible](components/crops/compare-cta-focus-visible.png) ![Compare features link pressed](components/crops/compare-cta-pressed.png)
 
 #### Feature table
 The feature-comparison table card: rows of features with checkmarks, "+" and "soon" pills. Read as `feature-table` on the pricing page.
@@ -466,9 +478,58 @@ A numbered step card in the export instructions (Design your app in Aaply → Cl
 
 ![Export step card default](components/crops/figma-step-default.png)
 
+### Early program
+
+The Early Users Program page (/early-program). In the sitemap, not linked from nav, footer, or the phone menu. Numbered steps and a lime Sign up for FREE pill that leaves for the app host.
+
+#### Early program title
+The "Early Users Program" Poppins display heading. The page is in the sitemap and is not linked from nav, footer, or the phone menu. Read as `early-title` on the early-program page.
+
+**Values (default).** size 605 x 60; background transparent; text Poppins 57/60 700, #000000 `black`.
+
+![Early program title default](components/crops/early-title-default.png)
+
+#### Early program step
+A numbered step label on the Early Users Program page ("Sign up to Aaply"). Read as `early-step` on the early-program page.
+
+**Values (default).** size 380 x 36; background transparent; text Poppins 27/36 500, #000000 `black`.
+
+![Early program step default](components/crops/early-step-default.png)
+
+#### Early program CTA
+The lime "Sign up for FREE" pill. Links to go.aaply.app/signup; hovered and focused only, never followed. Read as `early-cta` on the early-program page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, pressed) | size 227 x 60; radius 30px; background #e6e51e `lime`; text Inter 18/27.9 400, #000000 `black`; transition background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out |
+| focus-visible | outline 3px auto #2015ff, offset 4px |
+
+![Early program CTA default](components/crops/early-cta-default.png) ![Early program CTA hover](components/crops/early-cta-hover.png) ![Early program CTA focus-visible](components/crops/early-cta-focus-visible.png) ![Early program CTA pressed](components/crops/early-cta-pressed.png)
+
+### Manual
+
+The manual page (/manual). Sitemap-only. A display heading over an embedded product video, and a Start new project pill that leaves for the app host.
+
+#### Manual title
+"How to get started with Aaply?" — the Poppins display heading above an embedded product video. Sitemap-only; no in-page control opens it. Read as `manual-title` on the manual page.
+
+**Values (default).** size 955 x 60; background transparent; text Poppins 57/60 700, #000000 `black`.
+
+![Manual title default](components/crops/manual-title-default.png)
+
+#### Start new project CTA
+The "Start new project" pill. Links to https://go.aaply.app/, which is an auth wall (foreign document on the app host). Hovered and focused only. Read as `manual-cta` on the manual page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, pressed) | size 286 x 60; radius 30px; background #e6e51e `lime`; text Inter 18/27.9 500, #000000 `black`; transition background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out |
+| focus-visible | outline 3px auto #2015ff, offset 4px |
+
+![Start new project CTA default](components/crops/manual-cta-default.png) ![Start new project CTA hover](components/crops/manual-cta-hover.png) ![Start new project CTA focus-visible](components/crops/manual-cta-focus-visible.png) ![Start new project CTA pressed](components/crops/manual-cta-pressed.png)
+
 ### Mobile (390 wide)
 
-The same pages as a phone draws them, at 390 x 844 with an iPhone user agent: the burger menu, the hero and the full-width CTAs.
+The same pages as a phone draws them, at 390 x 844 with an iPhone user agent: the burger, the open overlay menu, the hero and the full-width CTAs.
 
 #### Mobile nav bar
 The mobile header: logo left, hamburger right. Read as `m-nav-bar` on the home page at 390 wide.
@@ -480,11 +541,11 @@ Child layers that carry the look: div 370.5x166 background #ffffff `white` radiu
 ![Mobile nav bar default](components/crops/m-nav-bar-default.png)
 
 #### Hamburger
-The mobile menu button at the top right. Not opened — the menu overlays the measured content. Read as `m-burger` on the home page at 390 wide.
+The mobile menu button at the top right (a[href="#open-nav"]). Opens an in-page overlay; the overlay is m-menu. Read as `m-burger` on the home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 92 x 24.53; background transparent; text Times 16/normal 400, #ff8562 `coral`; transition box-shadow 0.2s ease-in-out |
+| default (same: pressed) | size 24 x 24; background transparent; text Times 16/normal 400, #ff8562 `coral`; transition box-shadow 0.2s ease-in-out |
 
 ![Hamburger default](components/crops/m-burger-default.png) ![Hamburger pressed](components/crops/m-burger-pressed.png)
 
@@ -519,11 +580,26 @@ The circled step numeral in the mobile how-it-works column. Read as `m-step-numb
 **Values (default).** size 30 x 23; background transparent; text Poppins 15/23 700, #000000 `black`; transition box-shadow 0.2s ease-in-out.
 
 ![Mobile step number default](components/crops/m-step-number-default.png)
+
+#### Mobile menu
+The phone overlay opened by the burger: Log in and Sign up pills, then Features, Figma Plugin, Pricing, Reviews, Value, Story, Team, Blog. Close is #close-nav. Auth items were not followed. The whole overlay is also in screenshots/mobile-home-light-menu-open.png. Read as `m-menu` on the home page at 390 wide.
+
+**Values (default).** size 390 x 844; background transparent; text Times 16/normal 400, #000000 `black`; transition opacity 0.6s ease.
+
+![Mobile menu default](components/crops/m-menu-default.png)
+
+#### Mobile menu Log in
+The Log in pill in the open phone menu. Target is https://go.aaply.app/sign, which returns "Not found". Not followed. Read as `m-menu-login` on the home page at 390 wide.
+
+**Values (default).** size 276 x 44; border 1px solid #ffffff `white`; radius 30px; background #000000 `black`; text Inter 13/20.15 400, #ffffff `white`; transition background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out.
+
+![Mobile menu Log in default](components/crops/m-menu-login-default.png)
 ## Gaps
 
 ### Pages
 
-- **The app and everything behind sign-in.** The product itself lives on go.aaply.app (Log in / Sign up / "Try demo project" all point there), and every tested route — /login, /sign, /signup, /workspace/demo — returned the bare body "Not found" to this client. Whether the app host is retired, region-gated or simply down, no authenticated surface exists to measure: the package covers the marketing site only and records the app as an unreachable boundary. The footer still reads ©2024 and the Figma plugin page still links an export flow, so the product may be in maintenance mode.
+- **The app and everything behind sign-in.** The product itself lives on go.aaply.app (Log in / Sign up / "Try demo project" all point there). Probed again on 2026-11-21: /login, /sign, /signup and /workspace/demo each returned HTTP 404 with the body "Not found". The host root (https://go.aaply.app/) returned HTTP 200 but the document is not Aaply (a foreign title, no Aaply in the body), so it was not captured and no app package was invented from it. The marketing site is the only measured surface.
+- **Sitemap drafts, not product pages.** /page28901772.html ("Copy of Aaply", contains a Tilda form that was not submitted), /page29112172.html ("Blank page") and /page37280974.html ("test Pricing") are in the sitemap and are not opened by any control on the live pages. They were not captured. /workflow is the same walkthrough as /features and was not shot a second time.
 - **Anything that sends.** No form was submitted, nothing bought, nothing signed into; the auth-bound pills (Log in, Sign up, the demo CTAs) were hovered and focused but never pressed through.
 
 ### States
@@ -531,7 +607,7 @@ The circled step numeral in the mobile how-it-works column. Read as `m-step-numb
 - **Pressed** was forced with DevTools (`CSS.forcePseudoState` :active:hover), so a state a script adds on mousedown (if any) is missing.
 - **The billing toggle's held segment** paints its lime fill on a sibling shape, not on the text atom itself — the segment atoms measure transparent in both positions; the swap is visible in [pricing-light-yearly.png](screenshots/pricing-light-yearly.png).
 - **Monthly billing** was reached by pressing the Monthly segment (client-side state, nothing posted); Yearly was restored after.
-- **The reviews carousel** was measured on its first slide only; the dots' other slides were not advanced.
+- **The reviews carousel** was measured on slide 1. Slide 2 was opened by clicking the dot (`button[aria-label="2 of 6"]`) and shot as [reviews-light-slide-2.png](screenshots/reviews-light-slide-2.png). Slides 3 to 6 use the same control and were not shot.
 
 ### Themes
 

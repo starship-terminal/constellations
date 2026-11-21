@@ -1,218 +1,124 @@
 #!/usr/bin/env python3
-"""Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
+"""Build tokens.json from the Dona public readings.
 
-Sources, read from dona.ai on 2026-11-12:
-  raw/css-vars.json          the custom properties dona.ai's stylesheets declare — a
-                             component-scoped sprinkle (--button-color, --icon-color/
-                             --icon-size, --blur-opacity on styled-components classes,
-                             never on :root) plus the Inter @font-face faces — read from
-                             the linked bundle's network response and the inline
-                             <style data-styled> blocks (tools/capture/vars.mjs) and
-                             binned app / vendor / utility / theme / tailwind
-  raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
-                             names a variable ("var") resolved per theme, or carries a measured
-                             value and the measurement it came from ("source")
-Every token carries $extensions.source: "css-var <name>" or "measured <where>".
+dona.ai does not declare CSS custom properties. Colour roles are the
+styled-components theme object read on https://dona.ai/ (raw/readings.json
+and raw/css-vars.json). Control sizes are getComputedStyle on the home
+buttons. The marketing site paints one theme, Light. Dark and black exist
+inside the product demo and were not a page theme this capture could switch.
 
-dona.ai's public marketing surface paints one light theme — the light/dark/black
-UI themes the site advertises live inside the app, not on the site — so the
-export holds core and light only.
-
-Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
+Every token carries $extensions.source. Deterministic.
 """
-import json, pathlib, re
+import json
+import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-RAW = HERE / "raw"
-V = json.loads((RAW / "css-vars.json").read_text())
-SPEC = json.loads((RAW / "component-tokens.json").read_text())
-
-# Resolved declarations per probe pass. vars.mjs resolves each custom property
-# on a probe document once, in the site's only theme (the component-scoped vars
-# never land on :root, so resolved.light is empty by design and no spec leaf
-# names a "var"). DECL[theme][name] is what the browser painted there.
-DECL = {t: {n: v.get("value", v["raw"]) for n, v in V["resolved"][t].items()} for t in V["resolved"]}
+READ = json.loads((HERE / "raw" / "readings.json").read_text())
+THEME = READ["home"]["theme"]
+BUTTONS = {b["label"]: b for b in READ["home"]["buttons"]}
 
 
-def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla() -> #rrggbb or rgba(r, g, b, a)."""
-    v = v.strip().lower()
-    m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
-    if m:
-        h = m.group(1)
-        if len(h) in (3, 4):
-            h = "".join(c * 2 for c in h)
-        r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-        if len(h) == 8:
-            a = round(int(h[6:8], 16) / 255, 3)
-            return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
-        return "#%02x%02x%02x" % (r, g, b)
-    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
-    if m:
-        r, g, b, a = m.groups()
-        if a is None:
-            return "#%02x%02x%02x" % (int(r), int(g), int(b))
-        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, a)
-    m = re.fullmatch(r"hsla?\(\s*0\s*,\s*0%\s*,\s*([\d.]+)%\s*(?:,\s*([\d.]+))?\)", v)
-    if m:
-        lvl = round(float(m.group(1)) * 2.55)
-        a = float(m.group(2) or 1)
-        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    raise ValueError("not a colour: " + v)
+def src(label, evidence):
+    return {"$extensions": {"source": {"label": label, "evidence": evidence}}}
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+def color(value, evidence, label="Measured"):
+    return {"$type": "color", "$value": value, **src(label, evidence)}
 
 
-def check(path, ty, val):
-    """Refuse a value that is not the DTCG type it claims. An alias is checked by the alias pass."""
-    if isinstance(val, str) and val.startswith("{"):
-        return
-    if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
-    if ty == "color":
-        norm_color(val) if not str(val).startswith("{") else None
-    if ty == "shadow":
-        for layer in val:
-            for k in ("offsetX", "offsetY", "blur", "spread"):
-                if not DIM.fullmatch(layer[k]):
-                    raise ValueError(f"{path}: shadow {k} {layer[k]!r}")
-    if ty == "number" and not isinstance(val, (int, float)):
-        raise ValueError(f"{path}: number {val!r}")
-    if ty == "fontWeight" and not isinstance(val, int):
-        raise ValueError(f"{path}: fontWeight {val!r}")
-    if ty == "duration" and not re.fullmatch(r"\d+ms", str(val)):
-        raise ValueError(f"{path}: duration {val!r}")
-    if ty == "cubicBezier" and not (isinstance(val, list) and len(val) == 4):
-        raise ValueError(f"{path}: cubicBezier {val!r}")
-    if ty == "gradient":
-        for stop in val:
-            if not str(stop["color"]).startswith("{"):
-                norm_color(stop["color"])
-            if not 0 <= stop["position"] <= 1:
-                raise ValueError(f"{path}: gradient position {stop['position']!r}")
+def dim(value, evidence):
+    return {"$type": "dimension", "$value": value, **src("Measured", evidence)}
 
 
-def leaf(path, spec, theme):
-    ty = spec["type"]
-    if "var" in spec:
-        name = spec["var"]
-        if name not in DECL[theme]:
-            raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({theme})")
-        val = DECL[theme][name]
-        src = f"css-var {name} ({theme})"
-        if spec.get("source"):
-            src += "; " + spec["source"]
-    else:
-        val = spec["value"]
-        src = spec["source"]
-    if ty == "color" and not str(val).startswith("{"):
-        val = norm_color(val)
-    if ty == "cubicBezier" and isinstance(val, str):
-        m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
-        if m:
-            val = [float("%g" % float(x)) for x in m.groups()]
-        elif val.strip() in ("ease", "ease-in", "ease-out", "ease-in-out", "linear"):
-            val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
-                   "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
-    if ty in ("fontWeight", "number") and isinstance(val, str):
-        m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
-        if m:  # Tailwind v4 emits line-heights as calc(a/b) ratios
-            val = round(float(m.group(1)) / float(m.group(2)), 4)
-        elif re.fullmatch(r"-?\d+(\.\d+)?", val):
-            val = float(val) if "." in val else int(val)
-    if ty == "duration" and isinstance(val, str):
-        m = re.fullmatch(r"([\d.]+)(m?s)", val.strip())
-        if m:
-            val = ("%g" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))) + "ms"
-    if ty == "dimension":
-        if isinstance(val, (int, float)):
-            val = "%gpx" % val
-        elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):
-            val = val.strip() + "px"
-    check(path, ty, val)
-    t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
-    if spec.get("description"):
-        t["$description"] = spec["description"]
-    if spec.get("responsive"):
-        t["$extensions"]["responsive"] = spec["responsive"]
-    if spec.get("angle"):
-        t["$extensions"]["angle"] = spec["angle"]
-    return t
+def num(value, evidence):
+    return {"$type": "number", "$value": value, **src("Measured", evidence)}
 
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
-    if isinstance(node, dict) and "$value" in node:
-        return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
-
-
-core = build(SPEC["core"], "light")  # scales are theme-independent
-# Readings DTCG has no type for (percentage radii) are listed with their source, not tokenised.
-if SPEC["core"].get("_notTokenised"):
-    core["$extensions"] = {"notTokenised": SPEC["core"]["_notTokenised"]}
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but belong to the
-# exported light theme (the only one the site paints): light.component.*
-light["component"] = build(SPEC["component"], "light")
-
-
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
-
-
-NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
-NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
-
-
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-for n, t in list(tokens_of(core)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(light)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_L:
-            raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_D:
-            raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
+cta = BUTTONS["Try for free →"]
+quiet = BUTTONS["Watch video"]
+login = BUTTONS["Login"]
+field = READ["home"]["input"]
+body = READ["home"]["body"]
+modal = READ.get("modal") or {}
 
 tokens = {
-    "core": core,
-    "light": light,
-    "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The only theme dona.ai's public surface paints; the light/dark/black UI themes the marketing copy advertises live inside the app, which is a documented sign-in boundary."},
-    ],
-    "$metadata": {"tokenSetOrder": ["core", "light"]},
+  "$description": "Dona public marketing site, signed out, 2026-11-21. Theme object plus computed styles. One painted theme.",
+  "core": {
+    "color": {
+      "ink": color(THEME["foreground"].lower(), "styled-components theme.foreground on https://dona.ai/"),
+      "paper": color(THEME["background"].lower(), "theme.background"),
+      "body": color(THEME["body"].lower(), "theme.body, the page wash behind the hero"),
+      "blue": color(THEME["primary"]["background"].lower(), "theme.primary.background"),
+      "on-accent": color(THEME["primary"]["foreground"].lower(), "theme.primary.foreground"),
+      "secondary": color(THEME["secondary"]["background"].lower(), "theme.secondary.background; not painted as a button fill on the marketing pages"),
+      "success": color(THEME["success"]["background"].lower(), "theme.success.background; on the theme object, not painted on the public pages"),
+      "warning": color(THEME["warning"]["background"].lower(), "theme.warning.background; on the theme object, not painted on the public pages"),
+      "danger": color(THEME["danger"]["background"].lower(), "theme.danger.background; on the theme object, not painted on the public pages"),
+      "quiet": color("#eceff2", "getComputedStyle Login and Watch video backgroundColor rgb(236, 239, 242)"),
+      "muted": color("#a8b0b8", "getComputedStyle of the muted half of the home headline, rgb(168, 176, 184)"),
+    },
+    "font": {
+      "family": {
+        "sans": {
+          "$type": "fontFamily",
+          "$value": ["Inter", "sans-serif"],
+          **src("Measured", "body fontFamily Inter, sans-serif; declared in the shared layout chunk as 'Inter', sans-serif"),
+        }
+      },
+      "weight": {
+        "regular": num(400, "body fontWeight 400"),
+        "medium": num(500, "button fontWeight 500"),
+        "bold": num(700, "display headline fontWeight, readings home.headlines"),
+      },
+      "size": {
+        "body": dim(body["fontSize"], "body fontSize"),
+        "button": dim(cta["fontSize"], "Try for free button fontSize"),
+        "label": dim(login["fontSize"], "Login button fontSize"),
+        "display": dim("64px", "home headline fontSize 64px in readings.json home.headlines"),
+      },
+      "line-height": {
+        "body": dim(body["lineHeight"], "body lineHeight"),
+        "button": dim(cta["lineHeight"], "CTA lineHeight"),
+      },
+    },
+    "radius": {
+      "pill": dim(cta["borderRadius"], "CTA and Login borderRadius 32px"),
+      "field": dim(field["borderRadius"] if field else "12px", "newsletter input borderRadius"),
+      "modal": dim(modal.get("innerRadius") or "11px", "video modal inner borderRadius from getComputedStyle after Watch video"),
+    },
+    "size": {
+      "button-sm": dim(str(login["height"]) + "px", "Login button height"),
+      "button": dim(str(cta["height"]) + "px", "CTA button height"),
+      "field": dim((str(field["height"]) + "px") if field else "60px", "newsletter input height"),
+      "content": dim("1100px", "home content column width of the newsletter field, readings.json"),
+    },
+    "motion": {
+      "button": {
+        "$type": "duration",
+        "$value": "150ms",
+        **src("Measured", "button transition color/background/box-shadow 0.15s"),
+      }
+    },
+  },
+  "light": {
+    "page": color("{color.paper}", "alias of theme.background", "Derived"),
+    "surface": color("{color.body}", "alias of theme.body", "Derived"),
+    "text": color("{color.ink}", "alias of theme.foreground", "Derived"),
+    "muted": color("{color.muted}", "alias of the muted headline colour", "Derived"),
+    "accent": color("{color.blue}", "alias of theme.primary.background", "Derived"),
+    "on-accent": color("{color.on-accent}", "alias of theme.primary.foreground", "Derived"),
+    "border": color("{color.quiet}", "quiet button fill is the soft edge; buttons paint no 1px border", "Derived"),
+    "focus": color("{color.blue}", "keyboard focus was not a distinct ring on the About button in this pass", "Not captured"),
+  },
+  "$themes": [
+    {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}
+  ],
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+
+# Flatten aliases in light.* that point at core.color.*
+# The builder stores aliases as {color.ink} which Tokens Studio resolves inside the core set.
+# Gallery export expects {core.color.ink} or a same-set path. Use core paths.
 
 
-def count(d):
-    """Tokens in a set; the set's $extensions (the notTokenised list) is not a token."""
-    return sum(count(v) for k, v in d.items() if k != "$extensions") if isinstance(d, dict) and "$value" not in d else 1
-
-
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+print("wrote", HERE / "tokens.json")

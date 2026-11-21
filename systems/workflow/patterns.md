@@ -1,33 +1,15 @@
-# Patterns
+# Workflow patterns
 
-Public marketing pages, signed out, 2026-11-19.
+Public pages only. The app shell is behind sign-in.
 
-## Home
+| Pattern | Where | File |
+|---|---|---|
+| Marketing shell | Header with logo, Features, About, Pricing, Log in, Try now, and a three-column footer | [home-light-default](screenshots/home-light-default.png) |
+| Phone navigation | Toggle navigation opens a full-height link list | [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png) |
+| Product demo | Home tabs switch a recorded review of a published sample site | [home-light-tab-figma](screenshots/home-light-tab-figma.png) |
+| Pricing | Plan copy and a feature list. CTAs go to sign-up and were not followed | [pricing-light-default](screenshots/pricing-light-default.png) |
+| Contact directory | Links and buttons, no fields. Address and published emails are painted out of the screenshots | [contact-light-default](screenshots/contact-light-default.png) |
+| Error page | Footer Careers and `/login` both render the styled 404 | [careers-light-default](screenshots/careers-light-default.png), [not-found-light-default](screenshots/not-found-light-default.png) |
+| Help index | Category list | [help-light-default](screenshots/help-light-default.png) |
 
-A white page, a wordmark left, text links centred, Log in as text and Try now as a quiet button. The headline is Crimson Pro 32px weight 300. A product demo sits under a row of media tabs. Logos of customers follow. Feature blocks alternate a short Inter title with a demo. The footer repeats the wordmark and link columns.
-
-![Home, 1440](screenshots/home-light-desktop.png)
-
-At 390 the nav collapses to the wordmark and Try now. The same sections stack.
-
-![Home, 390](screenshots/home-light-phone.png)
-
-## Pricing
-
-An eyebrow in muted Inter 14px, then a Crimson Pro 32px heading. A feature grid uses check marks and 14px body. The plan price is Crimson Pro 32px with -1.6px tracking. The amount is geo-priced and is not a token. The yearly control is a 28 by 16px ink toggle.
-
-![Pricing, 1440](screenshots/pricing-light-desktop.png)
-
-## Features
-
-The heading computed at 60.992px, Crimson Pro, weight 300, at a 1169px viewport. Jump chips sit under the lede. Cards begin below the fold in the viewport shot.
-
-![Features, 1440](screenshots/features-light-desktop.png)
-
-## Contact
-
-A 32px heading and three address blocks. The only actions are mailto links. No form.
-
-## Not captured
-
-Signed-in shell, empty, loading and error states of the app, a validation error, a destructive confirmation, search, and a table. The login URL rendered a spinner and no fields.
+Empty, loading, destructive confirmation, search filtering, and onboarding of the product app were not reachable without an account.

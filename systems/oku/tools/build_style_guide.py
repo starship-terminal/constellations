@@ -1,127 +1,127 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
+"""Render style-guide.html from tokens.json.
 
-Every colour, radius, shadow and type style on the page is a CSS custom property generated from
-tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
-theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
-
-Placeholders in the template:
-  /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
-  /*TOKENS*/null                  a compact copy of the token tree for the JS tables
-  <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
-
-Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
+The kit template names Butter's token paths. This copy renders Oku's measured
+roles with a light/dark toggle. Deterministic.
 """
-import json, pathlib, re
+import json
+import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
 
 
-def flat(node, prefix=""):
-    for k, v in node.items():
+def css_block(tree, prefix=""):
+    lines = []
+    for k, v in tree.items():
         if k.startswith("$"):
             continue
+        path = f"{prefix}{k}"
         if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
+            val = v["$value"]
+            if v["$type"] == "shadow" and isinstance(val, dict):
+                val = f'{val["offsetX"]} {val["offsetY"]} {val["blur"]} {val["spread"]} {val["color"]}'
+            name = "--" + path.replace(".", "-")
+            lines.append(f"  {name}: {val};")
         elif isinstance(v, dict):
-            yield from flat(v, prefix + k + "-")
+            lines.extend(css_block(v, path + "-"))
+    return lines
 
 
-def cssname(path):
-    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
+core = "\n".join(css_block(T["core"]))
+light = "\n".join(css_block(T["light"]))
+dark = "\n".join(css_block(T["dark"]))
 
-
-def alias(v):
-    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
-
-
-def css_val(name, t):
-    v, ty = t["$value"], t["$type"]
-    if ty in ("transition", "animation"):
-        return None   # composites with no single CSS value; the Motion section reads them from the token tree
-    if ty == "cubicBezier":
-        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
-    if ty == "shadow":
-        if isinstance(v, str):
-            return alias(v)
-        if isinstance(v, dict):
-            v = [v]
-        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
-    if ty == "typography":
-        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
-    if ty == "gradient":
-        angle = t["$extensions"].get("angle", "180deg")
-        return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
-    return alias(v)
-
-
-# A light-only product has no dark set; every set that is missing renders as empty.
-SETS = [s for s in ("core", "light", "dark") if s in T]
-THEMES = [s for s in SETS if s != "core"]
-
-
-def block(setname):
-    """A set's custom properties; a set the product lacks renders as nothing."""
-    if setname not in T:
-        return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
-
-
-# a core name and a themed name must not land on the same custom property
-_core = {cssname(n) for n, _ in flat(T["core"])}
-for _set in THEMES:
-    _clash = _core & {cssname(n) for n, _ in flat(T[_set])}
-    if _clash:
-        raise SystemExit(f"core and {_set} share custom properties: {sorted(_clash)[:5]}")
-
-
-def slim(node):
-    if isinstance(node, dict) and "$value" in node:
-        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
-        for k in ("compact", "darkVariationAxis"):
-            if k in node["$extensions"]:
-                out[k] = node["$extensions"][k]
-        if node.get("$description"):
-            out["d"] = node["$description"]
-        return out
-    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
-
-
-# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
-# from ending the script early. JSON.parse and a JS literal read it back unchanged.
-data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
-                  ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-
-_uid = [0]
-ICON_SRC = {}
-
-
-def clean_svg(svg, size):
-    svg = re.sub(r"<\?xml[^>]*>\s*", "", svg).strip()
-    svg = re.sub(r"\s+", " ", svg).replace("> <", "><")
-    for i in sorted(set(re.findall(r'id="([^"]+)"', svg))):
-        _uid[0] += 1
-        svg = svg.replace(f'id="{i}"', f'id="i{_uid[0]}"').replace(f"url(#{i})", f"url(#i{_uid[0]})")
-    svg = re.sub(r"<svg\b", '<svg aria-hidden="true" focusable="false" class="ic"', svg, count=1)
-    if size:
-        svg = re.sub(r'\swidth="[^"]*"', "", svg, count=1)
-        svg = re.sub(r'\sheight="[^"]*"', "", svg, count=1)
-        svg = svg.replace("<svg ", f'<svg width="{size}" height="{size}" ', 1)
-    return svg
-
-
-def icon(m):
-    name, size = m.group(1), m.group(2)
-    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
-    return clean_svg(src, size)
-
-
-tpl = (HERE / "tools" / "style-guide.template.html").read_text()
-html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
-        .replace("/*TOKENS*/null", data))
-html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
+html = f"""<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oku style guide</title>
+<style>
+:root {{
+{core}
+{light}
+  --page: var(--color-page);
+  --text: var(--color-text);
+  --accent: var(--color-accent);
+  --on: var(--color-on-accent);
+  --surface: var(--color-page);
+  --border: var(--color-border);
+}}
+[data-mode="dark"] {{
+{dark}
+  --page: var(--color-page);
+  --text: var(--color-text);
+  --accent: var(--color-accent);
+  --on: var(--color-on-accent);
+  --surface: var(--color-page);
+  --border: var(--color-field-border);
+}}
+* {{ box-sizing: border-box; }}
+body {{ margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--font-family-body); }}
+main {{ max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }}
+h1 {{ font: 400 48px/1.3 var(--font-family-display); letter-spacing: -0.288px; margin: 0 0 8px; }}
+h2 {{ font: 500 13px/1 var(--font-family-body); letter-spacing: 0.08em; text-transform: uppercase; margin: 40px 0 12px; }}
+button.theme {{ float: right; height: 40px; padding: 0 24px; border-radius: 8px; border: 0; background: var(--accent); color: var(--on); font: 500 14px/40px var(--font-family-body); }}
+.row {{ display: flex; flex-wrap: wrap; gap: 12px; }}
+.sw {{ width: 140px; }}
+.sw i {{ display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); }}
+.sw span {{ display: block; font: 12px/1.4 ui-monospace, Menlo, monospace; margin-top: 4px; }}
+.btn {{ display: inline-flex; align-items: center; height: 40px; padding: 0 24px; border-radius: 8px; background: var(--accent); color: var(--on); font: 500 14px/40px var(--font-family-body); box-shadow: var(--shadow-button); }}
+.ghost {{ background: var(--page); color: var(--text); box-shadow: inset 0 0 0 1px var(--border); }}
+.field {{ display: block; width: 280px; height: 46px; margin-top: 8px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--color-field-border); background: var(--page); color: var(--text); font: 14px var(--font-family-body); }}
+.dialog {{ width: 320px; padding: 24px; border-radius: 20px; background: var(--page); border: 1px solid var(--border); }}
+.note {{ max-width: 62ch; opacity: 0.75; }}
+</style>
+</head>
+<body>
+<main>
+<button class="theme" type="button" id="theme">Dark</button>
+<h1>Oku</h1>
+<p class="note">Public surface, measured 2026-11-21. Values come from tokens.json. The signed-in library was not captured.</p>
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+<h2>Type</h2>
+<p style="font: 400 48px/1.3 var(--font-family-display); letter-spacing: -0.288px; margin: 0;">The companion app for every book</p>
+<p style="font: 400 24px/1.3 var(--font-family-display);">Book title</p>
+<p>Body at 16px Inter. Nav at 16px. Buttons at 14px medium.</p>
+<h2>Controls</h2>
+<p><span class="btn">Join</span> <span class="btn ghost">Sign in</span></p>
+<label>Email address<input class="field" placeholder="" readonly></label>
+<h2>Dialog</h2>
+<div class="dialog">
+  <p style="font: 400 20px/1.3 var(--font-family-display); text-align: center;">Join our book community</p>
+  <label>Email address<input class="field" readonly></label>
+  <p><span class="btn">Create a free account</span></p>
+</div>
+</main>
+<script>
+const tokens = {json.dumps({"light": T["light"]["color"], "dark": T["dark"]["color"]})};
+const root = document.documentElement;
+const btn = document.getElementById("theme");
+function paint() {{
+  const mode = root.getAttribute("data-mode");
+  const box = document.getElementById("swatches");
+  box.innerHTML = "";
+  for (const [name, token] of Object.entries(tokens[mode])) {{
+    const el = document.createElement("div");
+    el.className = "sw";
+    el.innerHTML = "<i></i><span></span>";
+    el.querySelector("i").style.background = token.$value;
+    el.querySelector("span").textContent = name + " " + token.$value;
+    box.appendChild(el);
+  }}
+  btn.textContent = mode === "dark" ? "Light" : "Dark";
+}}
+btn.addEventListener("click", () => {{
+  root.setAttribute("data-mode", root.getAttribute("data-mode") === "dark" ? "light" : "dark");
+  paint();
+}});
+paint();
+</script>
+</body>
+</html>
+"""
 (HERE / "style-guide.html").write_text(html)
-print("style-guide.html:", len(html.encode()), "bytes;",
-      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")
+print("wrote", HERE / "style-guide.html")

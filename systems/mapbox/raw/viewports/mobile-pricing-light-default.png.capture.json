@@ -1,0 +1,22 @@
+{
+  "screenshot": "mobile-pricing-light-default.png",
+  "capturedAt": "2026-11-20T20:54:40.687Z",
+  "sanitizedSourceUrl": "https://www.mapbox.com/pricing",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 390,
+    "height": 844,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0,
+    "pageLeft": 0,
+    "pageTop": 0
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "dimensionCheck": "pass"
+}

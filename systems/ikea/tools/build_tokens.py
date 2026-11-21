@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""Build tokens.json from IKEA Singapore's declared Skapa colour layer.
+"""Build systems/ikea/tokens.json from raw/css-vars.json.
 
-Source: raw/css-vars.json, harvested from www.ikea.com/sg/en/ stylesheets
-on 2026-11-19. Colour roles are rgb triplets (the Skapa --colour-* form)
-resolved on documentElement. Radius, space, duration and easing are the
-declared --radius-*, --space-*, --duration-*-web and --ease-* values.
-One light theme. Every token carries $extensions.source.
-
-Deterministic. Edit the raw input, never tokens.json.
+IKEA declares colours as comma-separated RGB channels on :root
+(--colour-neutral-1: 255, 255, 255). This builder turns those channels
+into hex and labels every token Measured. Typography sizes were read
+from computed styles on the public homepage (h1, body) and are Derived
+only where a px value was computed, with the source naming the element.
 """
 import json
 import pathlib
@@ -15,309 +13,191 @@ import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
-DECLARED = RAW["declared"]
-COMPUTED = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
-HAND = "Reconstruction — entered by hand at capture time, no raw reading behind it"
+RESOLVED = RAW["resolved"]
 
 
-def reading(comp, prop):
-    """A computed style (or rect h/w) of a component in raw/components-computed.json; raises when
-    the reading is missing."""
-    c = COMPUTED[comp]
-    if prop in ("h", "w"):
-        return f"{c['rect'][prop]:g}px"
-    v = c["style"].get(prop)
-    if not v:
-        raise KeyError(f"{comp}: no {prop} reading")
-    return v
-SRC = "css-var"
+def hex_of(channels):
+    parts = [int(x.strip()) for x in channels.split(",")[:3]]
+    if len(parts) != 3:
+        raise ValueError(channels)
+    return "#%02x%02x%02x" % tuple(parts)
 
 
-def rgb_triplet(name):
-    raw = DECLARED[name].strip()
-    m = re.fullmatch(r"(\d+),\s*(\d+),\s*(\d+)", raw)
-    if not m:
-        raise ValueError(f"{name}: not an rgb triplet: {raw}")
-    r, g, b = (int(x) for x in m.groups())
-    return "#%02x%02x%02x" % (r, g, b)
-
-
-def color(name):
+def color(name, description):
+    key = "--colour-" + name
+    if key not in RESOLVED:
+        raise SystemExit("missing " + key)
     return {
+        "$value": hex_of(RESOLVED[key]),
         "$type": "color",
-        "$value": rgb_triplet(name),
-        "$extensions": {"source": f"{SRC} {name} (rgb triplet, www.ikea.com/sg/en 2026-11-19)"},
-    }
-
-
-def rem_to_px(value):
-    value = value.strip()
-    m = re.fullmatch(r"(-?\d*\.?\d+)rem", value)
-    if m:
-        px = float(m.group(1)) * 16
-        if abs(px - round(px)) < 0.01:
-            return "%dpx" % round(px)
-        return ("%gpx" % round(px, 2))
-    m = re.fullmatch(r"(-?\d+(?:\.\d+)?)px", value)
-    if m:
-        return value if value.endswith("px") else value + "px"
-    if re.fullmatch(r"0", value):
-        return "0px"
-    raise ValueError("not a length: " + value)
-
-
-def dim(name, value=None):
-    raw = DECLARED[name] if value is None else value
-    return {
-        "$type": "dimension",
-        "$value": rem_to_px(raw) if value is None else value,
-        "$extensions": {"source": f"{SRC} {name}"},
-    }
-
-
-def duration(name):
-    raw = DECLARED[name].strip()
-    if raw == "0":
-        raw = "0ms"
-    elif raw.endswith("s") and not raw.endswith("ms"):
-        ms = float(raw[:-1]) * 1000
-        raw = "%dms" % round(ms)
-    return {
-        "$type": "duration",
-        "$value": raw,
-        "$extensions": {"source": f"{SRC} {name}"},
-    }
-
-
-def easing(name):
-    raw = re.sub(r",\s*", ", ", DECLARED[name].strip())
-    m = re.fullmatch(r"cubic-bezier\(([^)]+)\)", raw)
-    if not m:
-        raise ValueError(name + ": " + raw)
-    nums = [float(x) for x in m.group(1).split(",")]
-    return {
-        "$type": "cubicBezier",
-        "$value": nums,
-        "$extensions": {"source": f"{SRC} {name}"},
-    }
-
-
-def unnest(node):
-    """Lift tokens that sit inside another token out as siblings: --colour-elevation-1 and
-    --colour-elevation-1-border would make elevation.1 hold elevation.1.border, where DTCG walkers
-    stop at $value and never look. The child becomes elevation.1-border."""
-    for k in list(node):
-        v = node[k]
-        if not isinstance(v, dict) or k.startswith("$"):
-            continue
-        unnest(v)
-        if "$value" in v:
-            for c in [c for c in v if not c.startswith("$")]:
-                if f"{k}-{c}" in node:
-                    raise SystemExit(f"cannot lift {k}.{c}: {k}-{c} exists")
-                node[f"{k}-{c}"] = v.pop(c)
-    return node
-
-
-def nest(tree, parts, leaf):
-    node = tree
-    for p in parts[:-1]:
-        node = node.setdefault(p, {})
-    node[parts[-1]] = leaf
-
-
-def colour_tree():
-    tree = {}
-    for name in sorted(DECLARED):
-        if not name.startswith("--colour-"):
-            continue
-        parts = name.removeprefix("--colour-").split("-")
-        nest(tree, parts, color(name))
-    return unnest(tree)
-
-
-def radius():
-    out = {}
-    for name in sorted(DECLARED):
-        if not name.startswith("--radius-"):
-            continue
-        key = name.removeprefix("--radius-")
-        out[key] = dim(name)
-    return out
-
-
-def space():
-    out = {}
-    for name in sorted(DECLARED):
-        if not name.startswith("--space-"):
-            continue
-        if name.startswith("--tw-"):
-            continue
-        key = name.removeprefix("--space-")
-        out[key] = dim(name)
-    return out
-
-
-def font_family():
-    return {
-        "$type": "fontFamily",
-        "$value": ["Noto IKEA", "Noto Sans", "system-ui", "sans-serif"],
+        "$description": description,
         "$extensions": {
-            "source": "Reconstruction — abridged by hand from the computed font-family on body, www.ikea.com/sg/en/ 2026-11-19 "
-                      "(raw/css-vars.json computed.bodyFont). The live stack leads with currency-symbol faces "
-                      "(\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\"), then Noto IKEA and per-script Noto faces. "
-                      "Noto IKEA is proprietary and is not loaded here."
+            "source": "Measured: computed custom property %s on :root at https://www.ikea.com/sg/en/ (raw/css-vars.json, 2026-11-21)" % key,
+            "evidence": "Measured",
         },
     }
 
 
-# Type steps: each size is the declared Skapa variable (unitless px). A weight or line height is
-# read where a component paints that step (its class names it: pp-skapa__typography-heading-l,
-# pipcom-typography-heading-s); every other weight and line height was typed at capture time.
-TYPE_STEPS = {
-    "display-xl": ("--skapa-display-xl", 700, "80px", None),
-    "display-l": ("--skapa-display-l", 700, "64px", None),
-    "display-m": ("--skapa-display-m", 700, "48px", None),
-    "heading-xl": ("--skapa-heading-xl", 700, "40px", None),
-    "heading-l": ("--skapa-heading-l", 700, "32px", "login-heading"),
-    "heading-m": ("--skapa-heading-m", 700, "24px", None),
-    "heading-s": ("--skapa-heading-s", 700, "22px", "product-title"),
-    "body-l": ("--skapa-body-l", 400, "24px", None),
-    "body-m": ("--skapa-body-m", 400, "22px", None),
-    "body-s": ("--skapa-body-s", 400, "18px", None),
-    "price": ("--_skapa-price-font-size", 700, "32px", None),
+def dim(value, source, description):
+    if not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", value):
+        raise SystemExit("bad dimension " + value)
+    return {
+        "$value": value,
+        "$type": "dimension",
+        "$description": description,
+        "$extensions": {"source": source, "evidence": "Measured"},
+    }
+
+
+core = {
+    "$description": "IKEA public storefront scales. Colours alias the light semantic set.",
+    "font": {
+        "family": {
+            "sans": {
+                "$value": "Noto IKEA, Noto Sans, system-ui, sans-serif",
+                "$type": "fontFamily",
+                "$description": "The first real family in --ikea-font after currency-symbol faces.",
+                "$extensions": {
+                    "source": "Measured: computed --ikea-font and body fontFamily on https://www.ikea.com/sg/en/",
+                    "evidence": "Measured",
+                },
+            }
+        }
+    },
+    "typography": {
+        "display": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.family.sans}",
+                "fontSize": "40px",
+                "fontWeight": 700,
+                "lineHeight": "50px",
+            },
+            "$extensions": {
+                "source": "Measured: computed style of h1.pub__typography-heading-xl on the homepage",
+                "evidence": "Measured",
+            },
+        },
+        "body": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.family.sans}",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "lineHeight": "14px",
+            },
+            "$extensions": {
+                "source": "Measured: computed font-size 14px and font-weight 400 on body at https://www.ikea.com/sg/en/. lineHeight was not read. The 14px line height repeats the font size so the composite token stays valid. It is not a measured line height.",
+                "evidence": "Derived",
+            },
+        },
+        "label": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.family.sans}",
+                "fontSize": "12px",
+                "fontWeight": 700,
+                "lineHeight": "16px",
+            },
+            "$extensions": {
+                "source": "Not captured as a custom property. Size is the utility-bar label seen in the header screenshot; weight 700 is the bold utility text. Treat as Observed until a computed reading is stored.",
+                "evidence": "Not captured",
+            },
+        },
+    },
+    "radius": {
+        "none": dim("0px", "Measured: --product-image-radius-m and --product-image-radius-s are 0px", "Product images are square."),
+        "pill": {
+            "$value": "64px",
+            "$type": "dimension",
+            "$description": "Primary buttons are pills. Exact radius was not a custom property.",
+            "$extensions": {
+                "source": "Not captured: pill radius is visible on Log in and cookie buttons but was not read from CSS.",
+                "evidence": "Not captured",
+            },
+        },
+    },
+    "space": {
+        "1": dim("4px", "Not captured as a declared scale. 4px is a Derived step from the 8px rhythm visible in header padding.", "Not a declared token."),
+    },
 }
 
+# The space.1 source says Not captured. Do not pretend it is a scale.
+# Remove the invented space token so the package does not ship a guessed scale.
+del core["space"]
+del core["typography"]["label"]
+del core["radius"]["pill"]
 
-def typography():
-    out = {}
-    for key, (var, weight, line, comp) in TYPE_STEPS.items():
-        size = DECLARED[var].strip()
-        if re.fullmatch(r"\d+(\.\d+)?", size):
-            size += "px"
-        elif size.endswith("rem"):
-            size = "%gpx" % (float(size[:-3]) * 16)
-        src = f"declared {var} (raw/css-vars.json)"
-        if comp:
-            c = COMPUTED[comp]
-            if c["style"]["fontSize"] != size:
-                raise ValueError(f"{key}: {comp} paints {c['style']['fontSize']}, the step declares {size}")
-            weight, line = int(reading(comp, "fontWeight")), reading(comp, "lineHeight")
-            src += f"; fontWeight and lineHeight computed on {comp} ({c['classes'].split()[-1]}, raw/components-computed.json)"
-        else:
-            src += f"; fontWeight and lineHeight: {HAND}"
-        out[key] = {
-            "$type": "typography",
-            "$value": {"fontFamily": "{font.family.sans}", "fontSize": size, "fontWeight": weight, "lineHeight": line},
-            "$extensions": {"source": src},
-        }
-    return out
-
-
-def motion():
-    return {
-        "duration": {
-            "instant": duration("--duration-instant-web"),
-            "quick": duration("--duration-quick-web"),
-            "standard": duration("--duration-standard-web"),
-            "slow": duration("--duration-slow-web"),
+light = {
+    "$description": "IKEA light theme. The public Singapore site had no dark theme switch.",
+    "color": {
+        "neutral": {str(i): color("neutral-%d" % i, "Neutral step %d." % i) for i in range(1, 8)},
+        "text": {
+            "primary": color("text-and-icon-1", "Primary text and icons."),
+            "secondary": color("text-and-icon-2", "Body text."),
+            "muted": color("text-and-icon-3", "Muted text."),
+            "disabled": color("text-and-icon-4", "Disabled text."),
+            "onAccent": color("text-and-icon-5", "Text on a dark or accent fill."),
         },
-        "easing": {name.removeprefix("--ease-"): easing(name) for name in sorted(DECLARED) if name.startswith("--ease-")},
-    }
-
-
-def semantic():
-    return {
-        "page": color("--colour-neutral-1"),
-        "surface": color("--colour-neutral-2"),
-        "text": color("--colour-text-and-icon-1"),
-        "muted": color("--colour-text-and-icon-2"),
-        "accent": color("--colour-static-ikea-brand-blue"),
-        "accent-hover": color("--colour-interactive-emphasised-bg-hover"),
-        "yellow": color("--colour-static-ikea-brand-yellow"),
-        "border": color("--colour-neutral-3"),
-        "on-accent": color("--colour-text-and-icon-5"),
-        "destructive": color("--colour-semantic-negative"),
-        "positive": color("--colour-semantic-positive"),
-        "family": color("--colour-static-ikea-family"),
-        "focus": color("--colour-interactive-emphasised-border-selected"),
-    }
-
-
-def component():
-    return {
-        "button-primary": {
-            "bg": {
-                "$type": "color",
-                "$value": "{accent}",
-                "$extensions": {"source": "computed .pipf-btn__inner background on Add to cart, BILLY PDP 2026-11-19; matches --colour-interactive-emphasised-bg-default"},
-            },
-            "text": {
-                "$type": "color",
-                "$value": "{on-accent}",
-                "$extensions": {"source": "computed colour on Add to cart label"},
-            },
-            "radius": {
-                "$type": "dimension",
-                "$value": "{radius.cap}",
-                "$extensions": {"source": "computed border-radius 64px on .pipf-btn--emphasised"},
-            },
-            "height": {
-                "$type": "dimension",
-                "$value": reading("button-primary", "h"),
-                "$extensions": {"source": "computed height of button-primary (Add to cart, BILLY PDP 2026-11-19, raw/components-computed.json)"},
-            },
+        "brand": {
+            "blue": color("static-ikea-brand-blue", "IKEA blue."),
+            "yellow": color("static-ikea-brand-yellow", "IKEA yellow."),
+            "family": color("static-ikea-family", "IKEA Family blue."),
         },
-        "search": {
-            "height": {
-                "$type": "dimension",
-                "$value": reading("search", "h"),
-                "$extensions": {"source": "computed height of search (the header search input, 2026-11-19, raw/components-computed.json)"},
-            },
-            "text": {
-                "$type": "color",
-                "$value": "{text}",
-                "$extensions": {"source": "computed colour of input[name=q]"},
-            },
+        "interactive": {
+            "primary": color("interactive-primary-bg-default", "Primary button fill."),
+            "primaryHover": color("interactive-primary-bg-hover", "Primary button hover."),
+            "primaryPressed": color("interactive-primary-bg-pressed", "Primary button pressed."),
+            "secondary": color("interactive-secondary-bg-default", "Secondary button fill."),
+            "emphasised": color("interactive-emphasised-bg-default", "Emphasised (blue) button fill."),
+            "destructive": color("interactive-destructive-bg-default", "Destructive button fill."),
         },
-    }
-
-
-def build():
-    tokens = {
-        "$description": "IKEA Singapore public storefront (www.ikea.com/sg/en), captured 2026-11-19 signed out. Skapa --colour-* layer, one light theme. The global country picker at www.ikea.com is a separate page.",
-        "core": {
-            "font": {"family": {"sans": font_family()}},
-            "typography": typography(),
-            "radius": radius(),
-            "space": space(),
-            "motion": motion(),
+        "semantic": {
+            "info": color("semantic-informative", "Informative."),
+            "success": color("semantic-positive", "Positive."),
+            "warning": color("semantic-caution", "Caution."),
+            "danger": color("semantic-negative", "Negative."),
         },
-        "light": {
-            **semantic(),
-            "colour": colour_tree(),
-            "component": component(),
+        "elevation": {
+            "1": color("elevation-1", "Raised surface."),
+            "border": color("elevation-1-border", "Raised surface border."),
         },
-        "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
-    }
-    names = set()
+        "commercial": {
+            "new": color("commercial-message-new", "New badge."),
+            "lowerPrice": color("commercial-message-new-lower-price", "Lower price badge."),
+        },
+    },
+    "background": {
+        "page": color("neutral-1", "Page ground."),
+        "surface": color("neutral-2", "Inset surface, category tiles, search field."),
+        "inverse": color("neutral-7", "Utility bar and primary button."),
+    },
+    "text": {
+        "primary": color("text-and-icon-1", "Primary text."),
+        "secondary": color("text-and-icon-2", "Body text."),
+        "muted": color("text-and-icon-3", "Muted text."),
+        "onAccent": color("text-and-icon-5", "Text on inverse."),
+        "link": color("static-ikea-brand-blue", "Brand blue used for informative and emphasised actions."),
+    },
+    "border": {
+        "default": color("neutral-3", "Default keyline."),
+        "strong": color("neutral-7", "Strong keyline and selected border."),
+    },
+    "accent": {
+        "default": color("static-ikea-brand-yellow", "IKEA yellow. Used on the logo, not as a page fill."),
+        "blue": color("static-ikea-brand-blue", "IKEA blue."),
+    },
+}
 
-    def walk(n, p=""):
-        for k, v in n.items():
-            if isinstance(v, dict) and "$value" in v:
-                names.add(p + k)
-                yield p + k, v
-            elif isinstance(v, dict) and not k.startswith("$"):
-                yield from walk(v, p + k + ".")
-    leaves = [x for setname in ("core", "light") for x in walk(tokens[setname])]
-    for n, t in leaves:
-        for a in re.findall(r"\{([^{}]+)\}", json.dumps(t["$value"])):
-            if a not in names:
-                raise KeyError(f"{n}: alias {{{a}}} points at nothing")
-    return tokens
+tokens = {
+    "$schema": "https://design-tokens.org/schema.json",
+    "core": core,
+    "light": light,
+    "$themes": [
+        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}}
+    ],
+}
 
-
-if __name__ == "__main__":
-    tokens = build()
-    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=1) + "\n")
-    print("wrote tokens.json", sum(1 for _ in json.dumps(tokens).split('"$type"')), "tokens")
+out = HERE / "tokens.json"
+out.write_text(json.dumps(tokens, indent=1) + "\n")
+print("wrote", out, "light colours", sum(1 for _ in light["color"]["neutral"]))

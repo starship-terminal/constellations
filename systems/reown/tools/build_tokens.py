@@ -1,264 +1,274 @@
 #!/usr/bin/env python3
-"""Write tokens.json from raw/foundations.json. Measured values only."""
-from __future__ import annotations
+"""Build tokens.json from raw/css-vars.json and raw/components-computed.json.
 
+Marketing tokens are Reown's own --p-* primitives and --s-* semantic names,
+resolved on https://reown.com/ at 1440. Docs light and dark are a second
+surface (Mintlify). Demo AppKit colours are recorded under core.color.appkit
+when present. Unread values are not invented.
+"""
 import json
-from pathlib import Path
+import pathlib
+import re
 
-ROOT = Path(__file__).resolve().parents[1]
-SRC = "getComputedStyle on reown.com and docs.reown.com, 2026-11-19, T3 preview tab, viewport 1169x731 at devicePixelRatio 2"
+HERE = pathlib.Path(__file__).resolve().parent.parent
+RAW = HERE / "raw"
+V = json.loads((RAW / "css-vars.json").read_text())
+COMP = json.loads((RAW / "components-computed.json").read_text()) if (RAW / "components-computed.json").exists() else {"readings": []}
 
-
-def color(value: str, source: str) -> dict:
-    return {"$type": "color", "$value": value, "$extensions": {"source": source}}
-
-
-def dim(value: str, source: str) -> dict:
-    return {"$type": "dimension", "$value": value, "$extensions": {"source": source}}
-
-
-def num(value: str, source: str) -> dict:
-    return {"$type": "number", "$value": value, "$extensions": {"source": source}}
+M = V["marketing"]["resolved"]
+DOCS_L = V["docs"]["light"]["resolved"]
+DOCS_D = V["docs"]["dark"]["resolved"]
+DEMO = V.get("demo", {}).get("resolved", {})
 
 
-def font(value: str, source: str) -> dict:
-    return {"$type": "fontFamily", "$value": value, "$extensions": {"source": source}}
+def rgb_triplet(value):
+    value = value.strip()
+    m = re.fullmatch(r"(\d+),\s*(\d+),\s*(\d+)", value)
+    if m:
+        return "#%02x%02x%02x" % tuple(int(m.group(i)) for i in (1, 2, 3))
+    m = re.fullmatch(r"rgb\((\d+),\s*(\d+),\s*(\d+)\)", value)
+    if m:
+        return "#%02x%02x%02x" % tuple(int(m.group(i)) for i in (1, 2, 3))
+    m = re.fullmatch(r"rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)", value)
+    if m:
+        a = float(m.group(4))
+        if a >= 1:
+            return "#%02x%02x%02x" % tuple(int(m.group(i)) for i in (1, 2, 3))
+        return "rgba(%d, %d, %d, %g)" % (int(m.group(1)), int(m.group(2)), int(m.group(3)), round(a, 3))
+    if re.fullmatch(r"#[0-9a-fA-F]{6}", value):
+        return value.lower()
+    return None
 
 
-def cubic(value: str, source: str) -> dict:
-    return {"$type": "cubicBezier", "$value": value, "$extensions": {"source": source}}
+def tok(value, ty, source):
+    return {"$value": value, "$type": ty, "$extensions": {"source": source}}
 
 
-def duration(value: str, source: str) -> dict:
-    return {"$type": "duration", "$value": value, "$extensions": {"source": source}}
+def put(tree, path, token):
+    node = tree
+    for key in path[:-1]:
+        node = node.setdefault(key, {})
+    node[path[-1]] = token
 
 
-def typography(family: str, size: str, weight: str, line_height: str, letter_spacing: str, source: str) -> dict:
-    return {
-        "$type": "typography",
-        "$value": {
-            "fontFamily": family,
-            "fontSize": size,
-            "fontWeight": weight,
-            "lineHeight": line_height,
-            "letterSpacing": letter_spacing,
-        },
-        "$extensions": {"source": source},
+def dim(value, source):
+    value = value.strip()
+    if re.fullmatch(r"-?[\d.]+rem", value) or re.fullmatch(r"-?[\d.]+px", value) or re.fullmatch(r"-?[\d.]+ms", value):
+        return tok(value, "dimension" if not value.endswith("ms") else "duration", source)
+    return None
+
+
+core = {}
+light = {}
+dark = {}
+not_tokenised = []
+
+# Primitives. Marketing stores colours as "R, G, B" triplets.
+for name, raw in sorted(M.items()):
+    if not name.startswith("--p-color-"):
+        continue
+    leaf = name[len("--p-color-"):].replace("_", "-")
+    hexed = rgb_triplet(raw)
+    if not hexed:
+        not_tokenised.append({"name": name, "value": raw, "reason": "not a colour triplet"})
+        continue
+    put(core, ["color", "primitive", leaf], tok(hexed, "color", "Measured. css-var %s resolved on :root at https://reown.com/ (1440). Authored as an RGB triplet." % name))
+
+for name, raw in sorted(M.items()):
+    if name.startswith("--p-space-"):
+        leaf = name[len("--p-space-"):]
+        t = dim(raw, "Measured. css-var %s on https://reown.com/" % name)
+        if t:
+            put(core, ["spacing", leaf], t)
+    elif name.startswith("--p-radius-"):
+        leaf = name[len("--p-radius-"):]
+        t = dim(raw, "Measured. css-var %s on https://reown.com/" % name)
+        if t:
+            put(core, ["radius", leaf], t)
+    elif name.startswith("--p-text-"):
+        leaf = name[len("--p-text-"):]
+        t = dim(raw, "Measured. css-var %s on https://reown.com/" % name)
+        if t:
+            put(core, ["font", "size", leaf], t)
+    elif name.startswith("--p-duration-"):
+        leaf = name[len("--p-duration-"):]
+        raw_s = raw.strip()
+        if raw_s.endswith("ms"):
+            put(core, ["duration", leaf], tok(raw_s, "duration", "Measured. css-var %s" % name))
+        elif raw_s.endswith("s"):
+            ms = round(float(raw_s[:-1]) * 1000, 3)
+            put(core, ["duration", leaf], tok(("%g" % ms) + "ms", "duration", "Derived. %s is %s, converted to ms" % (name, raw_s)))
+    elif name.startswith("--p-ease-"):
+        leaf = name[len("--p-ease-"):]
+        m = re.fullmatch(r"cubic-bezier\(([^)]*)\)", raw.strip())
+        if m:
+            nums = [float(x) for x in m.group(1).split(",")]
+            put(core, ["easing", leaf], tok(nums, "cubicBezier", "Measured. css-var %s on https://reown.com/" % name))
+    elif name.startswith("--p-leading-"):
+        leaf = name[len("--p-leading-"):]
+        put(core, ["font", "leading", leaf], tok(raw.strip(), "number", "Measured. css-var %s" % name))
+    elif name.startswith("--p-weight-"):
+        leaf = name[len("--p-weight-"):]
+        put(core, ["font", "weight", leaf], tok(int(float(raw)), "fontWeight", "Measured. css-var %s" % name))
+    elif name.startswith("--p-tracking-"):
+        leaf = name[len("--p-tracking-"):]
+        put(core, ["font", "tracking", leaf], tok(raw.strip(), "dimension" if raw.strip().endswith(("rem", "em", "px")) else "other", "Measured. css-var %s" % name))
+        if not raw.strip().endswith(("rem", "em", "px")):
+            core["font"]["tracking"][leaf]["$type"] = "other"
+
+put(core, ["font", "family", "sans"], tok(M.get("--p-font-sans", "KHTeka-Regular, sans-serif"), "fontFamily", "Measured. css-var --p-font-sans on https://reown.com/. KH Teka is a licensed face; not redistributed."))
+put(core, ["font", "family", "mono"], tok(M.get("--p-font-mono", "KHTekaMono-Regular, monospace"), "fontFamily", "Measured. css-var --p-font-mono on https://reown.com/."))
+
+# Semantic marketing colours, also RGB triplets.
+SEMANTIC = {
+    "surface": "--s-color-surface",
+    "surface-lift": "--s-color-surface-lift",
+    "surface-dark": "--s-color-surface-dark",
+    "surface-dim": "--s-color-surface-dim",
+    "surface-subtle": "--s-color-surface-subtle",
+    "on-surface": "--s-color-on-surface",
+    "on-surface-muted": "--s-color-on-surface-muted",
+    "accent": "--s-color-accent",
+    "accent-blue": "--s-color-accent-blue",
+    "accent-green": "--s-color-accent-green",
+    "accent-orange": "--s-color-accent-orange",
+    "accent-yellow": "--s-color-accent-yellow",
+    "backdrop": "--s-color-backdrop",
+    "border": "--s-color-border",
+    "border-strong": "--s-color-border-strong",
+    "border-subtle": "--s-color-border-subtle",
+    "button-bg": "--s-color-button-bg",
+    "button-text": "--s-color-button-text",
+    "danger": "--s-color-danger",
+    "divider": "--s-color-divider",
+    "field-bg": "--s-color-field-bg",
+    "field-text": "--s-color-field-text",
+    "nav-overlay": "--s-color-nav-overlay",
+    "placeholder": "--s-color-placeholder",
+}
+for leaf, name in SEMANTIC.items():
+    raw = M.get(name)
+    if not raw:
+        continue
+    hexed = rgb_triplet(raw)
+    if not hexed:
+        not_tokenised.append({"name": name, "value": raw, "reason": "semantic colour not a triplet"})
+        continue
+    put(light, ["color", leaf], tok(hexed, "color", "Measured. css-var %s resolved on :root at https://reown.com/. The marketing site has one theme; section classes (theme--blue and others) override these locally." % name))
+
+# Type roles from --s-type-*
+roles = {}
+for name, raw in M.items():
+    m = re.fullmatch(r"--s-type-([a-z0-9]+)-(size|leading|tracking|weight)", name)
+    if not m:
+        continue
+    roles.setdefault(m.group(1), {})[m.group(2)] = raw.strip()
+for role, parts in sorted(roles.items()):
+    if "size" not in parts:
+        continue
+    composite = {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": parts["size"],
+        "fontWeight": int(float(parts["weight"])) if "weight" in parts else 400,
+        "lineHeight": parts.get("leading", "1.4"),
+        "letterSpacing": parts.get("tracking", "0"),
     }
+    put(core, ["typography", role], tok(composite, "typography", "Measured. --s-type-%s-* on https://reown.com/. fontFamily aliases --p-font-sans." % role))
 
+# Docs semantic colours. Mintlify stores some as space-separated RGB channels.
+def docs_color(raw):
+    raw = raw.strip()
+    hexed = rgb_triplet(raw)
+    if hexed:
+        return hexed
+    m = re.fullmatch(r"(\d+)\s+(\d+)\s+(\d+)", raw)
+    if m:
+        return "#%02x%02x%02x" % tuple(int(m.group(i)) for i in (1, 2, 3))
+    return None
 
-def build() -> dict:
-    raw = json.loads((ROOT / "raw" / "foundations.json").read_text())
-    tokens = raw["rootTokens"]
-    s = f"{SRC}. Declared on :root as comma-separated RGB channels."
-
-    def rgb(name: str) -> str:
-        channels = tokens[name]
-        r, g, b = [int(part.strip()) for part in channels.split(",")]
-        return f"#{r:02x}{g:02x}{b:02x}"
-
-    core = {
-        "color": {
-            "black": color("#000000", s + " --p-color-black"),
-            "white": color("#ffffff", s + " --p-color-white"),
-            "blue": color(rgb("--p-color-blue"), s + " --p-color-blue"),
-            "blue-surface": color(rgb("--p-color-blue-surface"), s + " --p-color-blue-surface"),
-            "blue-strong": color(rgb("--p-color-blue-strong"), s + " --p-color-blue-strong"),
-            "green": color(rgb("--p-color-green"), s + " --p-color-green"),
-            "orange": color(rgb("--p-color-orange"), s + " --p-color-orange"),
-            "yellow": color(rgb("--p-color-yellow"), s + " --p-color-yellow"),
-            "grey": {
-                "1": color(rgb("--p-color-grey-1"), s + " --p-color-grey-1"),
-                "1-5": color(rgb("--p-color-grey-1_5"), s + " --p-color-grey-1_5"),
-                "1-7": color(rgb("--p-color-grey-1_7"), s + " --p-color-grey-1_7"),
-                "2": color(rgb("--p-color-grey-2"), s + " --p-color-grey-2"),
-                "3": color(rgb("--p-color-grey-3"), s + " --p-color-grey-3"),
-                "3-5": color(rgb("--p-color-grey-3_5"), s + " --p-color-grey-3_5"),
-                "4": color(rgb("--p-color-grey-4"), s + " --p-color-grey-4"),
-                "5": color(rgb("--p-color-grey-5"), s + " --p-color-grey-5"),
-                "6": color(rgb("--p-color-grey-6"), s + " --p-color-grey-6"),
-                "7": color(rgb("--p-color-grey-7"), s + " --p-color-grey-7"),
-                "8": color(rgb("--p-color-grey-8"), s + " --p-color-grey-8"),
-            },
-        },
-        "font": {
-            "family": {
-                "sans": font("KHTeka-Regular, sans-serif", s + " --p-font-sans"),
-                "mono": font("KHTekaMono-Regular, monospace", s + " --p-font-mono"),
-                "docs": font(
-                    'Inter, -apple-system, system-ui, "Segoe UI", sans-serif',
-                    SRC + ". docs body fontFamily",
-                ),
-                "docs-mono": font(
-                    '"Paper Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
-                    SRC + ". docs code fontFamily",
-                ),
-            }
-        },
-        "typography": {
-            "h1": typography("KHTeka-Regular, sans-serif", "36px", "400", "1.1", "-0.02em", SRC + ". hero h1 computed, matching --s-type-h1 at this width"),
-            "h2": typography("KHTeka-Regular, sans-serif", "30px", "400", "1.1", "-0.02em", SRC + ". pricing title computed 32px; blog h2 computed 30px; token --s-type-h2-size resolved 1.875rem"),
-            "lead": typography("KHTeka-Regular, sans-serif", "18px", "400", "1.4", "-0.01em", SRC + ". hero lead computed 18px"),
-            "body": typography("KHTeka-Regular, sans-serif", "16px", "400", "1.5", "-0.01em", SRC + ". body and --s-type-body"),
-            "small": typography("KHTeka-Regular, sans-serif", "14px", "400", "1.4", "0", SRC + ". --s-type-small-size 0.875rem; footer link computed 14px"),
-            "caption": typography("KHTekaMono-Regular, monospace", "12px", "400", "1.5", "0", SRC + ". blog eyebrow computed 12px; --p-text-xs 0.75rem"),
-            "button": typography("KHTekaMono-Regular, monospace", "16px", "400", "1", "-0.05rem", SRC + ". Start building computed"),
-            "button-large": typography("KHTekaMono-Regular, monospace", "22px", "400", "22px", "-1.1px", SRC + ". nav Learn and Log in computed"),
-            "docs-h1": typography("Inter, sans-serif", "36px", "600", "40px", "0", SRC + ". docs h1 computed, dark and light"),
-            "docs-body": typography("Inter, sans-serif", "16px", "400", "24px", "0", SRC + ". docs body computed"),
-            "docs-small": typography("Inter, sans-serif", "14px", "400", "20px", "0", SRC + ". docs sidebar and muted computed"),
-            "price": typography("KHTeka-Regular, sans-serif", "40px", "400", "40px", "0", SRC + ". pricing $0 computed"),
-        },
-        "radius": {
-            "button": dim("16px", SRC + ". --s-radius-button 1rem and Start building borderRadius"),
-            "nav-pill": dim("14px", SRC + ". Learn and Log in computed borderRadius"),
-            "input": dim("32px", SRC + ". --c-input-radius resolved 2rem; newsletter field borderRadius 32px"),
-            "card": dim("16px", SRC + ". content card computed borderRadius"),
-            "card-2": dim("40px", SRC + ". announcement and FAQ title computed 40px; --p-radius-40 2.5rem"),
-            "card-3": dim("64px", SRC + ". blue content card and blog info card computed 64px"),
-            "card-4": dim("88px", SRC + ". blog content card computed 88px; --p-radius-88 5.5rem"),
-            "hero": dim("160px", SRC + ". hero computed borderRadius 160px; --s-radius-hero 10rem"),
-            "plan": dim("32px", SRC + ". pricing plan card computed 32px"),
-            "plan-ring": dim("40px", SRC + ". pricing featured wrapper computed 40px"),
-            "docs-code": dim("16px", SRC + ". docs code block computed borderRadius"),
-        },
-        "spacing": {
-            "2": dim("2px", s + " --p-space-2 0.125rem"),
-            "4": dim("4px", s + " --p-space-4 0.25rem"),
-            "8": dim("8px", s + " --p-space-8 0.5rem"),
-            "12": dim("12px", s + " --p-space-12 0.75rem"),
-            "16": dim("16px", s + " --p-space-16 1rem"),
-            "20": dim("20px", s + " --p-space-20 1.25rem"),
-            "24": dim("24px", s + " --p-space-24 1.5rem"),
-            "32": dim("32px", s + " --p-space-32 2rem"),
-            "40": dim("40px", s + " --p-space-40 2.5rem"),
-            "48": dim("48px", s + " --p-space-48 3rem"),
-            "64": dim("64px", s + " --p-space-64 4rem"),
-            "button-x": dim("15px", SRC + ". Start building padding 13px 15px"),
-            "button-y": dim("13px", SRC + ". Start building padding 13px 15px"),
-            "page-gutter": dim("8px", SRC + ". header padding 0px 8px; --s-space-page-gutter 0.5rem"),
-            "blog-pad": dim("40px", SRC + ". blog content padding 40px 40px 120px"),
-        },
-        "motion": {
-            "duration": {
-                "50": duration("50ms", s + " --p-duration-50"),
-                "150": duration("150ms", s + " --p-duration-150 0.15s"),
-                "250": duration("250ms", s + " --p-duration-250 0.25s"),
-                "300": duration("300ms", s + " --p-duration-300 0.3s"),
-                "600": duration("600ms", s + " --p-duration-600 0.6s"),
-            },
-            "easing": {
-                "standard": cubic([0.45, 0, 0.55, 1], s + " --p-ease-standard"),
-                "out": cubic([0.5, 1, 0.89, 1], s + " --p-ease-out"),
-                "in": cubic([0.11, 0, 0.5, 0], s + " --p-ease-in"),
-            },
-        },
+for theme_name, resolved, tree in (("light", DOCS_L, light), ("dark", DOCS_D, dark)):
+    mapping = {
+        "docs-primary": "--primary",
+        "docs-background": "--background-" + theme_name,
+        "docs-border": "--default-border-color",
     }
+    for leaf, name in mapping.items():
+        raw = resolved.get(name)
+        if not raw:
+            continue
+        hexed = docs_color(raw)
+        if not hexed:
+            not_tokenised.append({"name": name, "theme": theme_name, "value": raw[:80], "reason": "docs colour not parsed"})
+            continue
+        put(tree, ["color", leaf], tok(hexed, "color", "Measured. css-var %s resolved on docs.reown.com in the %s theme." % (name, theme_name)))
+    family = resolved.get("--default-font-family")
+    if family and theme_name == "light":
+        put(core, ["font", "family", "docs-sans"], tok(family.split(",")[0].strip().strip('"'), "fontFamily", "Measured. --default-font-family on docs.reown.com (first family). Full stack in raw/css-vars.json."))
 
-    marketing = {
-        "background": {
-            "page": color("#9a9a9a", SRC + ". body backgroundColor rgb(154, 154, 154); --s-color-surface"),
-            "surface": color("#202020", SRC + ". hero and card backgroundColor rgb(32, 32, 32); --p-color-grey-8"),
-            "surface-subtle": color("#e9e9e9", SRC + ". blog card and footer nav rgb(233, 233, 233)"),
-            "surface-dim": color("#d0d0d0", SRC + ". feature callout rgb(208, 208, 208)"),
-            "pricing": color("#363636", SRC + ". pricing body backgroundColor rgb(54, 54, 54)"),
-            "action": color("#379def", SRC + ". Start building backgroundColor rgb(55, 157, 239); --p-color-blue-surface"),
-            "action-ink": color("#0988f0", SRC + ". FAQ link and --p-color-blue rgb(9, 136, 240)"),
-            "announcement": color("#f4624a", SRC + ". announcement rgb(244, 98, 74)"),
-            "positive": color("#18ac65", SRC + ". green card and Growth button rgb(24, 172, 101)"),
-            "field": color("#363636", SRC + ". newsletter field rgb(54, 54, 54)"),
-        },
-        "text": {
-            "primary": color("#ffffff", SRC + ". hero h1 color rgb(255, 255, 255)"),
-            "secondary": color("#e4e4e4", SRC + ". hero lead rgb(228, 228, 228)"),
-            "muted": color("#6c6c6c", SRC + ". body color rgb(108, 108, 108); --s-color-on-surface"),
-            "ink": color("#202020", SRC + ". button label and blog heading rgb(32, 32, 32)"),
-            "prose": color("#383838", SRC + ". blog paragraph rgb(56, 56, 56)"),
-            "on-action": color("#202020", SRC + ". Start building color rgb(32, 32, 32)"),
-        },
-        "border": {
-            "stroke": color("#ffffff", SRC + ". Explore Plans border 1px solid rgb(255, 255, 255)"),
-            "subtle": color("#4f4f4f", SRC + ". --s-color-border resolved grey-6 rgb(79, 79, 79)"),
-            "divider": color("#bbbbbb", SRC + ". --s-color-divider grey-2 rgb(187, 187, 187)"),
-        },
-        "focus": {
-            "ring": color("#e59700", "Observed. Chromium's default focus ring (-webkit-focus-ring-color), not a Reown colour: the Start building outline after focus() reads rgb(229, 151, 0) and the marketing site styles no ring of its own. " + SRC),
-        },
-    }
+# Demo AppKit accent, hex already.
+accent = DEMO.get("--apkt-colors-accent100")
+if accent:
+    hexed = rgb_triplet(accent) or (accent if accent.startswith("#") else None)
+    # rgba(9, 136, 240, 1.0)
+    m = re.fullmatch(r"rgba\((\d+),\s*(\d+),\s*(\d+),\s*[\d.]+\)", accent.strip())
+    if m:
+        hexed = "#%02x%02x%02x" % tuple(int(m.group(i)) for i in (1, 2, 3))
+    if hexed:
+        put(core, ["color", "appkit", "accent"], tok(hexed, "color", "Measured. --apkt-colors-accent100 on https://demo.reown.com/."))
+for leaf, name in (("black", "--apkt-colors-black"), ("white", "--apkt-colors-white"), ("walletkit", "--apkt-colors-productWalletKit"), ("appkit", "--apkt-colors-productAppKit"), ("cloud", "--apkt-colors-productCloud"), ("documentation", "--apkt-colors-productDocumentation")):
+    raw = DEMO.get(name)
+    if raw and raw.startswith("#"):
+        put(core, ["color", "appkit", leaf], tok(raw.lower(), "color", "Measured. %s on https://demo.reown.com/." % name))
 
-    docs_dark = {
-        "background": {
-            "page": color("#202020", SRC + ". docs header bar rgb(32, 32, 32); --background-dark 32 32 32"),
-            "surface": color("#202020", SRC + ". docs header bar"),
-            "code": color("#0b0c0e", SRC + ". docs code block rgb(11, 12, 14)"),
-            "action": color("#008847", SRC + ". docs --primary and active nav rgb(0, 136, 71)"),
-        },
-        "text": {
-            "primary": color("#dee2e0", SRC + ". docs h1 rgb(222, 226, 224)"),
-            "secondary": color("#ffffff", SRC + ". docs body color rgb(255, 255, 255)"),
-            "muted": color("#9ea2a0", SRC + ". docs muted rgb(158, 162, 160)"),
-            "code": color("#d4d4d4", SRC + ". docs code rgb(212, 212, 212)"),
-            "on-action": color("#008847", SRC + ". active docs link rgb(0, 136, 71)"),
-        },
-        "border": {
-            "stroke": color("#252927", SRC + ". docs --default-border-color 37 41 39"),
-        },
-    }
+# Component measurements that are not a single variable.
+def reading(name, state="default"):
+    for row in COMP["readings"]:
+        if row.get("name") == name and row.get("state") == state:
+            return row
+    return None
 
-    docs_light = {
-        "background": {
-            "page": color("#ffffff", SRC + ". docs light header bar rgb(255, 255, 255); --background-light"),
-            "surface": color("#ffffff", SRC + ". docs light header bar"),
-            "action": color("#008847", SRC + ". docs --primary stays rgb(0, 136, 71) in light"),
-        },
-        "text": {
-            "primary": color("#161a18", SRC + ". docs light h1 rgb(22, 26, 24)"),
-            "secondary": color("#000000", SRC + ". docs light body color rgb(0, 0, 0)"),
-            "muted": color("#4f5452", SRC + ". docs light muted paragraph rgb(79, 84, 82)"),
-            "ink": color("#252927", SRC + ". docs light sidebar link rgb(37, 41, 39)"),
-        },
-        "border": {
-            "stroke": color("#eef2f0", SRC + ". docs light --default-border-color 238 242 240"),
-        },
-    }
+btn = reading("button-primary")
+if btn:
+    put(light, ["component", "button", "height"], tok(btn["height"], "dimension", "Measured. computed height of a.button--solid.theme--blue (Learn) on https://reown.com/ at 1440."))
+    put(light, ["component", "button", "radius"], tok(btn["borderRadius"], "dimension", "Measured. computed border-radius of the same button."))
+    put(light, ["component", "button", "font"], tok(btn["fontFamily"].split(",")[0].strip().strip('"'), "fontFamily", "Measured. computed font-family of the same button. Buttons use the mono face."))
+    bg = rgb_triplet(btn["backgroundColor"])
+    fg = rgb_triplet(btn["color"])
+    if bg:
+        put(light, ["component", "button", "bg"], tok(bg, "color", "Measured. computed background of a.button--solid.theme--blue. Section theme, not the root --s-color-button-bg."))
+    if fg:
+        put(light, ["component", "button", "text"], tok(fg, "color", "Measured. computed color of a.button--solid.theme--blue."))
 
-    sign_in = {
-        "background": {
-            "page": color("#202020", SRC + ". sign-in body rgb(32, 32, 32). Not submitted."),
-            "surface": color("#252525", SRC + ". sign-in field wrap rgb(37, 37, 37)"),
-            "action": color("#0989f1", SRC + ". Sign In button rgb(9, 137, 241)"),
-        },
-        "text": {
-            "primary": color("#ffffff", SRC + ". sign-in body and field text"),
-            "muted": color("#9a9a9a", SRC + ". Forgot password link rgb(154, 154, 154)"),
-            "on-action": color("#202020", SRC + ". Sign In label rgb(32, 32, 32)"),
-        },
-        "border": {
-            "stroke": color("#363636", SRC + ". sign-in field border 1px solid rgb(54, 54, 54)"),
-        },
-    }
+field = reading("text-field")
+if field:
+    put(light, ["component", "field", "radius"], tok(field["borderRadius"], "dimension", "Measured. computed border-radius of the footer newsletter input (placeholder Mail) on https://reown.com/pricing. Focused only. Not submitted."))
+    bg = rgb_triplet(field["backgroundColor"])
+    if bg:
+        put(light, ["component", "field", "bg"], tok(bg, "color", "Measured. computed background of that input."))
 
-    doc = {
-        "$schema": "https://www.designtokens.org/schemas/2025.10/format/",
-        "core": core,
-        "marketing": marketing,
-        "docs-dark": docs_dark,
-        "docs-light": docs_light,
-        "sign-in": sign_in,
-        "$themes": [
-            {"name": "marketing", "selectedTokenSets": {"core": "source", "marketing": "enabled"}},
-            {"name": "docs-dark", "selectedTokenSets": {"core": "source", "docs-dark": "enabled"}},
-            {"name": "docs-light", "selectedTokenSets": {"core": "source", "docs-light": "enabled"}},
-            {"name": "sign-in", "selectedTokenSets": {"core": "source", "sign-in": "enabled"}},
+if "color" not in dark:
+    raise SystemExit("docs dark colours were not read; refusing to invent a dark set")
+
+doc = {
+    "$description": "Reown public surfaces, captured 2026-11-21. Marketing tokens from reown.com. Docs tokens from docs.reown.com. AppKit colours from demo.reown.com. Dashboard sign-in was not entered.",
+    "core": core,
+    "light": light,
+    "dark": dark,
+    "$themes": [
+        {"id": "light", "name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+        {"id": "dark", "name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
+    ],
+    "$extensions": {
+        "notTokenised": not_tokenised,
+        "gaps": [
+            "Marketing has no dark theme. prefers-color-scheme: dark did not change body colors (raw/css-vars.json themeProbe).",
+            "Success, warning and info are not separate marketing semantic names. Green, orange and yellow exist as accents.",
+            "Disabled, loading and error control states were not shown on the public pages.",
+            "Dashboard (dashboard.reown.com/sign-in) was not entered.",
         ],
-    }
-    return doc
+    },
+}
 
-
-def main() -> None:
-    (ROOT / "tokens.json").write_text(json.dumps(build(), indent=2) + "\n")
-    print("wrote", ROOT / "tokens.json")
-
-
-if __name__ == "__main__":
-    main()
+text = json.dumps(doc, indent=2) + "\n"
+(HERE / "tokens.json").write_text(text)
+print("tokens written", sum(1 for _ in HERE.joinpath("tokens.json").read_text().split('"$value"')), "values")

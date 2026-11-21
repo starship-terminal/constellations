@@ -1,1 +1,0 @@
-No PNGs. On 19 November 2026 `preview_snapshot` returned "The browser is not producing screenshot frames". Measurements in tokens.json were read from the live page before that failure. No screenshot was invented.

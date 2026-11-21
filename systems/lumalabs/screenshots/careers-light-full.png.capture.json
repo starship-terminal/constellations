@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:28:57.183Z",
+  "capturedAt": "2026-11-20T20:58:24.754Z",
   "screenshot": "careers-light-full.png",
-  "sanitizedSourceUrl": "https://lumalabs.ai/careers",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
       "width": 1440,
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 381
     },
     "documentSize": {
       "width": 1440,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 381
     }
   },
   "capture": {

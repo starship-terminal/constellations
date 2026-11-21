@@ -1,12 +1,13 @@
 // Shared helpers for measuring the static Claude page copies (measure.mjs and ../layout.mjs).
 // Adapted from the Manus kit.
 //
-// A copy is a signed-in claude.ai page with every stylesheet inlined (snapshot.js read them from
+// Unused for the Super public capture. Super's signed-in app was not entered.
+// A copy is a signed-in page with every stylesheet inlined (snapshot.js read them from
 // the CSSOM, since assets-proxy.anthropic.com serves them with CORS headers), so what still comes
 // from the network is the fonts, a few images and the favicon, all on assets-proxy.anthropic.com.
 // Every response from that host is kept in a local cache directory the first time it is fetched
 // (CDN_CACHE, default <SNAPS>-cdn-cache beside the copies) and served from there afterwards, so a
-// re-run is offline and identical. Nothing is ever requested from claude.ai itself or any other
+// re-run is offline and identical. Nothing is ever requested from the product host or any other
 // host: those requests are aborted.
 import fs from 'node:fs';
 import path from 'node:path';

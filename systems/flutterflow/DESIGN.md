@@ -3,338 +3,170 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "FlutterFlow"
-description: "visual app builder marketing site: prompt-composer hero, pricing plans, enterprise contact form, Studio agency pages, light + dark"
+description: "Public marketing site: warm paper, Inter, near-black pill CTA, blue accent, named --ff-* tokens, light and dark via data-theme"
+omitted:
+  - section: "components"
+    reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#0a68e0"
   neutral: "#fcfcfb"
   surface: "#ffffff"
   on-surface: "#1a1a1a"
   on-surface-variant: "#6b6b6b"
-  outline: "rgba(0, 0, 0, 0.08)"
-  color-page: "#fcfcfb"
-  color-well: "#f5f5f5"
-  color-card: "#ffffff"
-  color-card-2: "#f0f0f0"
-  color-ink: "#1a1a1a"
-  color-ink-2: "#3d3d3d"
-  color-ink-soft: "#555555"
-  color-muted: "#6b6b6b"
-  color-faint: "#a3a3a3"
-  color-line: "rgba(0, 0, 0, 0.08)"
-  color-accent: "#0a68e0"
-  color-focus: "#1a1a1a"
-  color-send: "#0a68e0"
-  color-send-ink: "#ffffff"
-  color-success: "#177245"
-  color-danger: "#c4320a"
-  color-studio-ink: "#4b39ef"
-  color-studio-tint: "#ececfd"
-  color-contrast: "#1a1a1a"
-  color-contrast-ink: "#ffffff"
-  color-sheen: "rgba(255, 255, 255, 0.95)"
-  color-statusbar-ink: "#000000"
-  color-statusbar-ink-on-light: "#000000"
-  color-statusbar-ink-on-dark: "#ffffff"
-  color-chrome-bar: "#ececec"
-  color-chrome-bg: "#f7f7f7"
-  color-chrome-ink: "rgba(0, 0, 0, 0.55)"
-  color-chrome-line: "rgba(0, 0, 0, 0.08)"
-  color-tile: "#ffffff"
-  color-tile-ring: "rgba(0, 0, 0, 0.08)"
-  color-ui-card: "#ffffff"
-  color-ui-fill: "#ebebeb"
-  color-ui-line: "#dedede"
-  color-ui-frame: "#efefef"
-  color-selected-ring: "rgba(0, 0, 0, 0.08)"
-  drip-bg: "#f5f5f5"
-  drip-surface: "#ffffff"
-  drip-surface-2: "#efefef"
-  drip-fg: "#1a1a1a"
-  drip-muted: "#6b6b6b"
-  drip-border: "#dedede"
-  drip-sep: "#e4e4e4"
-  drip-sep-3: "#cecece"
-  drip-default: "#ebebeb"
-  drip-dim: "rgba(20, 20, 20, 0.1)"
-  drip-accent: "#0a68e0"
-  drip-accent-fg: "#ffffff"
-  drip-accent-soft: "rgba(10, 104, 224, 0.15)"
-  drip-accent-soft-fg: "#1b519f"
-  drip-success: "#177245"
-  drip-success-soft: "rgba(23, 114, 69, 0.15)"
-  drip-warning: "#8f5a0c"
-  drip-warning-soft: "rgba(143, 90, 12, 0.15)"
-  legacy-accent: "#0a68e0"
-  legacy-accent-ink: "#1b519f"
-  legacy-app: "#f5f5f5"
-  legacy-btn: "#1a1a1a"
-  legacy-btn-ink: "#ffffff"
-  legacy-card: "#ffffff"
-  legacy-card-2: "#f0f0f0"
-  legacy-edge: "rgba(0, 0, 0, 0.07)"
-  legacy-faint: "#a3a3a3"
-  legacy-ink: "#1a1a1a"
-  legacy-ink-2: "#3d3d3d"
-  legacy-line: "#e7e7e5"
-  legacy-line-1: "rgba(0, 0, 0, 0.08)"
-  legacy-muted: "#6b6b6b"
-  legacy-p-card: "#ffffff"
-  legacy-p-chip: "#eaeaea"
-  legacy-p-fill: "#ebebeb"
-  legacy-p-line: "#dedede"
-  legacy-p-widget: "#efefef"
-  legacy-page: "#fcfcfb"
-  legacy-sb: "#000000"
-  legacy-success: "#177245"
-  legacy-tender: "#f4f4f6"
-  component-button-primary-bg: "#1a1a1a"
-  component-button-primary-ink: "#ffffff"
-  component-button-secondary-bg: "#ffffff"
-  component-button-secondary-ink: "#1a1a1a"
-  component-button-secondary-ring: "rgba(0, 0, 0, 0.08)"
-  component-field-bg: "#ffffff"
-  component-field-ink: "#1a1a1a"
-  component-field-placeholder: "#6b6b6b"
-  component-field-border: "rgba(26, 26, 26, 0.12)"
-  component-field-focus-ring: "rgba(26, 26, 26, 0.06)"
-  component-field-error: "#c4320a"
-  component-segmented-ink: "#6b6b6b"
-  component-composer-go-bg: "rgba(26, 26, 26, 0.08)"
-  component-composer-go-ink: "rgba(26, 26, 26, 0.4)"
-  component-composer-key-border: "rgba(0, 0, 0, 0.07)"
-  component-radio-ring: "rgba(26, 26, 26, 0.3)"
-  component-radio-checked-fill: "#1a1a1a"
-  component-header-bg: "rgba(252, 252, 251, 0.86)"
+  outline: "rgba(0,0,0,.08)"
+  page: "#fcfcfb"
+  raised: "#f0f0f0"
+  well: "#f5f5f5"
+  text: "#1a1a1a"
+  textSecondary: "#3d3d3d"
+  muted: "#6b6b6b"
+  faint: "#a3a3a3"
+  border: "rgba(0,0,0,.08)"
+  accent: "#0a68e0"
+  accentInk: "#1b519f"
+  onAccent: "#ffffff"
+  focus: "#1a1a1a"
+  success: "#177245"
+  danger: "#c4320a"
+  button: "#1a1a1a"
+  buttonInk: "#ffffff"
+  studio: "#4b39ef"
+  studioTint: "#ececfd"
 typography:
-  article-title:
-    fontFamily: "Inter"
-    fontSize: "48px"
+  display:
+    fontFamily: "var(--ff-font-sans)"
+    fontWeight: 600
+    lineHeight: 1.03
+  heading:
+    fontFamily: "var(--ff-font-sans)"
     fontWeight: 510
     lineHeight: 1.08
-    letterSpacing: "-0.022em"
+  stat:
+    fontFamily: "var(--ff-font-sans)"
+    fontWeight: 510
+    lineHeight: 1
+  lede:
+    fontFamily: "var(--ff-font-sans)"
+    fontSize: "19px"
+    fontWeight: 400
+    lineHeight: "30px"
+  section-lede:
+    fontFamily: "var(--ff-font-sans)"
+    fontWeight: 400
+    lineHeight: 1.45
+  quote:
+    fontFamily: "var(--ff-font-sans)"
+    fontSize: "19px"
+    fontWeight: 400
+    lineHeight: "28px"
+  prompt:
+    fontFamily: "var(--ff-font-sans)"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "26px"
   body:
-    fontFamily: "Inter"
+    fontFamily: "var(--ff-font-sans)"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.55
-    letterSpacing: "0px"
-  card-body:
-    fontFamily: "Inter"
-    fontSize: "15px"
-    fontWeight: 400
-    lineHeight: "24px"
-    letterSpacing: "-0.011em"
   card-title:
-    fontFamily: "Inter"
+    fontFamily: "var(--ff-font-sans)"
     fontSize: "15px"
     fontWeight: 510
     lineHeight: "24px"
-    letterSpacing: "-0.011em"
-  display:
-    fontFamily: "Inter"
-    fontSize: "66px"
-    fontWeight: 600
-    lineHeight: 1.03
-    letterSpacing: "-0.035em"
-  heading:
-    fontFamily: "Inter"
-    fontSize: "48px"
-    fontWeight: 510
-    lineHeight: 1.08
-    letterSpacing: "-0.022em"
-  heading-sm:
-    fontFamily: "Inter"
-    fontSize: "42px"
-    fontWeight: 510
-    lineHeight: 1.1
-    letterSpacing: "-0.022em"
-  kicker:
-    fontFamily: "Inter"
-    fontSize: "14px"
-    fontWeight: 510
-    lineHeight: "20px"
-    letterSpacing: "0px"
-  label:
-    fontFamily: "ui-monospace"
-    fontSize: "11px"
-    fontWeight: 500
-    lineHeight: "16px"
-    letterSpacing: "0.06em"
-  lede:
-    fontFamily: "Inter"
-    fontSize: "19px"
+  card-body:
+    fontFamily: "var(--ff-font-sans)"
+    fontSize: "15px"
     fontWeight: 400
-    lineHeight: "30px"
-    letterSpacing: "0px"
+    lineHeight: "24px"
   nav:
-    fontFamily: "Inter"
+    fontFamily: "var(--ff-font-sans)"
     fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.55
-    letterSpacing: "0px"
-  prompt:
-    fontFamily: "Inter"
-    fontSize: "18px"
-    fontWeight: 400
-    lineHeight: "26px"
-    letterSpacing: "-0.01em"
-  prose:
-    fontFamily: "Inter"
-    fontSize: "18px"
-    fontWeight: 400
-    lineHeight: "30px"
-    letterSpacing: "-0.011em"
-  prose-h2:
-    fontFamily: "Inter"
-    fontSize: "28px"
+  kicker:
+    fontFamily: "var(--ff-font-sans)"
+    fontSize: "14px"
     fontWeight: 510
-    lineHeight: 1.2
-    letterSpacing: "-0.018em"
-  prose-h3:
-    fontFamily: "Inter"
-    fontSize: "19px"
-    fontWeight: 600
-    lineHeight: "28px"
-    letterSpacing: "-0.012em"
-  question:
-    fontFamily: "Inter"
-    fontSize: "17px"
-    fontWeight: 510
-    lineHeight: "26px"
-    letterSpacing: "-0.012em"
-  quote:
-    fontFamily: "Inter"
-    fontSize: "19px"
-    fontWeight: 400
-    lineHeight: "28px"
-    letterSpacing: "-0.01em"
-  section-lede:
-    fontFamily: "Inter"
-    fontSize: "20px"
-    fontWeight: 400
-    lineHeight: 1.45
-    letterSpacing: "-0.012em"
+    lineHeight: "20px"
   small:
-    fontFamily: "Inter"
+    fontFamily: "var(--ff-font-sans)"
     fontSize: "13px"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0px"
-  stat:
-    fontFamily: "Inter"
-    fontSize: "56px"
+  label:
+    fontFamily: "var(--ff-font-mono)"
+    fontSize: "11px"
+    fontWeight: 500
+    lineHeight: "16px"
+  article-title:
+    fontFamily: "var(--ff-font-sans)"
     fontWeight: 510
-    lineHeight: 1
-    letterSpacing: "-0.03em"
+    lineHeight: 1.08
+  prose:
+    fontFamily: "var(--ff-font-sans)"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "30px"
   testimonial:
-    fontFamily: "Inter"
-    fontSize: "34px"
+    fontFamily: "var(--ff-font-sans)"
     fontWeight: 510
     lineHeight: 1.25
-    letterSpacing: "-0.02em"
+  question:
+    fontFamily: "var(--ff-font-sans)"
+    fontSize: "17px"
+    fontWeight: 510
+    lineHeight: "26px"
 rounded:
+  page: "16px"
   card: "20px"
   field: "26px"
-  field-tall: "22px"
   icon: "10px"
-  page: "16px"
   pill: "999px"
 spacing:
   cell: "32px"
   column: "32px"
-  gutter: "48px"
-  head: "96px"
-  section: "128px"
   tile: "28px"
-  words: "64px"
-components:
-  button-primary:
-    backgroundColor: "{colors.component-button-primary-bg}"
-    height: "44px"
-    rounded: "999px"
-  button-secondary:
-    backgroundColor: "{colors.component-button-secondary-bg}"
-  field:
-    backgroundColor: "{colors.component-field-bg}"
-    height: "44px"
-    rounded: "26px"
-  composer-go:
-    backgroundColor: "{colors.component-composer-go-bg}"
-    size: "36px"
-  header:
-    backgroundColor: "{colors.component-header-bg}"
-    height: "64px"
-  select-popup:
-    rounded: "20px"
-  select-popup-option:
-    height: "44px"
-  nav-panel:
-    rounded: "16px"
-    padding: "8px"
-  segmented:
-    height: "38px"
-    padding: "3px"
-  segmented-option:
-    height: "32px"
-  composer:
-    height: "130px"
-    width: "640px"
-  composer-key:
-    rounded: "6px"
-  radio:
-    size: "18px"
-  tag:
-    height: "24px"
-    rounded: "999px"
-  tab:
-    height: "52px"
-  theme-switch:
-    height: "30px"
-  accordion:
-    width: "840px"
-  error-text:
-    size: "13px"
 ---
 
 # FlutterFlow
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 42 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 4 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: visual app builder marketing site: prompt-composer hero, pricing plans, enterprise contact form, Studio agency pages, light + dark.
+Good for: Public marketing site: warm paper, Inter, near-black pill CTA, blue accent, named --ff-* tokens, light and dark via data-theme.
 
-Captured 2026-03-01, signed out (every surface captured is public; the app sits at app.flutterflow.io behind login). Themes: light, dark.
+Captured 2026-11-21, signed out. Themes: light, dark.
 
-A token set and component reference for FlutterFlow's signed-out public site, captured from flutterflow.io on 2026-03-01 in headless Chromium at 1440 x 900 and 390 x 844: the home page, /product, /pricing, /enterprise, /ai, /studio, /studio/showcase, /studio/faq, /studio/apply-to-be-a-developer, /customer-stories, /blog, /changelog, /about-us, /contact-us, /flutterflow-vs-studio, /flutterflow-developer-groups and /student-ambassadors, in both of the site's themes. Everything captured is public marketing surface; nothing was signed into, submitted or sent.
+A token set and component reference for FlutterFlow's public site. Read from **www.flutterflow.io** on **2026-11-21**, signed out, in headless Chromium at 1440×900 and 390×844. The marketing site, docs, marketplace, and community index were opened. The walk stopped at the auth wall. The signed-in app was not captured.
 
-FlutterFlow is a visual builder for Flutter apps that leads its site with an AI prompt composer ("describe the app, we build it"). The site ships two generations of its design: the home page still runs the earlier `.composer`/`.pbtn` module skin on the legacy `--accent`/`--ink` shorthand, while every other page carries the `ff-*` layer — Inter at a 510 semibold, pill radii, ink-on-paper neutrals and one accent blue — whose tokens are declared per theme under `@layer ff.tokens`. Both are measured here. Studio (the agency arm) accents its pages in violet.
+FlutterFlow's marketing bundle ships a named token set on `:root` (`--ff-color-*`, `--ff-radius-*`, `--ff-space-*`, `--ff-text-*`) and a dark override on `:root[data-theme="dark"]`. The page is warm paper (`#fcfcfb`) with Inter, a near-black pill CTA, and a blue accent (`#0a68e0`) used for send and links. Setting `data-theme="dark"` paints the page (`#121212` page, `#5aa2f0` accent).
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#0a68e0):** `light.color.accent`
-- **neutral (#fcfcfb):** `light.color.page`
-- **surface (#ffffff):** `light.color.card`
-- **on-surface (#1a1a1a):** `light.color.ink`
-- **on-surface-variant (#6b6b6b):** `light.color.muted`
-- **outline (rgba(0, 0, 0, 0.08)):** `light.color.line`
+- **primary (#0a68e0):** `light.accent`
+- **neutral (#fcfcfb):** `light.page`
+- **surface (#ffffff):** `light.surface`
+- **on-surface (#1a1a1a):** `light.text`
+- **on-surface-variant (#6b6b6b):** `light.muted`
+- **outline (rgba(0,0,0,.08)):** `light.border`
 
 ## Typography
 
-21 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Inter, ui-monospace.
+18 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: var(--ff-font-mono), var(--ff-font-sans).
 
 ### Fonts (from README.md)
 
-- **Inter** (variable, wght 100-900, self-hosted `@font-face`) is the only shipped face and covers every role; FlutterFlow's semibold is the 510 stop.
-- **The mono roles** use `ui-monospace, "SF Mono", …` — the platform stack, nothing shipped. The style guide falls back the same way.
+**Inter**, self-hosted woff2, weights 400–700. The guide falls back to the system face. The webfont files are not committed.
 
 ## Layout
 
-Spacing from `core.space`: `cell` 32px, `column` 32px, `gutter` 48px, `head` 96px, `section` 128px, `tile` 28px, `words` 64px.
+Spacing from `core.space`: `cell` 32px, `column` 32px, `tile` 28px.
 
 ## Elevation & Depth
 
@@ -342,22 +174,17 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `core.shadow.field` | `0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 8px 24px -14px rgba(0, 0, 0, 0.14)` |
-| `light.shadow.field-focus` | `0px 0px 0px 4px rgba(26, 26, 26, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 8px 24px -14px rgba(0, 0, 0, 0.14)` |
-| `light.shadow.floating` | `0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 24px 48px -20px rgba(0, 0, 0, 0.28)` |
-| `light.shadow.resting` | `0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 18px 40px -22px rgba(0, 0, 0, 0.22)` |
-| `light.shadow.resting-sm` | `0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 12px 32px -18px rgba(0, 0, 0, 0.18)` |
-| `light.drip.surface-shadow` | `0px 1px 2px 0px rgba(0, 0, 0, 0.03), 0px 6px 20px 0px rgba(0, 0, 0, 0.05)` |
-| `light.drip.overlay-shadow` | `0px 2px 6px 0px rgba(0, 0, 0, 0.04), 0px 16px 40px 0px rgba(0, 0, 0, 0.08)` |
-| `light.legacy.field-shadow` | `0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 18px 40px -22px rgba(0, 0, 0, 0.22)` |
+| `core.shadow.resting` | `0 0 0 1px rgba(0,0,0,.08), 0 18px 40px -22px rgba(0,0,0,.22)` |
+| `core.shadow.field` | `0 1px 2px rgba(0,0,0,.04), 0 8px 24px -14px rgba(0,0,0,.14)` |
+| `core.shadow.floating` | `0 0 0 1px rgba(0,0,0,.08), 0 24px 48px -20px rgba(0,0,0,.28)` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `card` 20px, `field` 26px, `field-tall` 22px, `icon` 10px, `page` 16px, `pill` 999px.
+Corner radii from `core.radius`: `page` 16px, `card` 20px, `field` 26px, `icon` 10px, `pill` 999px.
 
 ## Components
 
-18 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+No component tokens map onto DESIGN.md's component properties.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -371,23 +198,19 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Two skins, don't mix them.** The home page's composer/buttons (`.composer`, `.pbtn`, `.btn-*`) are the older skin; `ff-btn`, `ff-fld`, `ff-seg`, `ff-snav` are the current layer. Their values mostly agree (same ink, same pill) but the home skin has its own `--accent`/`--card` aliases, kept under `legacy.*`.
-- **`pressed` is forced**, not a real mousedown: a JS-only press state would be missed.
-- **The error slot is declared, not painted.** `.ff-fld-err` sits in the DOM with the danger colour but paints nothing at rest; `field-error` in the measurements is its computed style at 0x0, honest about it.
-- **oklab() computed colours** (the composer send's ink-at-8% fill, field borders, the translucent header) are recorded in tokens as their sRGB equivalents with the note "sRGB equivalent" in the source.
-- **Hidden-slot readings.** `replay-btn-home` and `composer-key` record the DOM slot's declared style where the element painted 0x0 at capture time; their descriptions say so.
-- **Dark beyond four pages.** Home, product, pricing and enterprise have verified dark paint; the other routes' dark look is covered by the token set but not screenshot-verified.
-- **Screenshots are 256-colour** — never read a colour off them; use tokens.json or the raw files.
-- **Dark provenance.** Until the 2026-11 audit every dark token's `declared` and `responsive` extensions came from the light pass (the dark page cited a declared `#fcfcfb`). They now come from the dark and dark-390 resolutions; no value changed. The 48px `heading` type role no longer carries the 66px home-title measurement, which belongs to `display` only.
+- **Signed-in app tokens are Not captured.** The builder at app.flutterflow.io is a Flutter canvas behind the login wall. Its widget chrome is not in this package.
+- **Dark roles are computed, not a second stylesheet walk.** They match the `:root[data-theme="dark"]` overrides for the colour names that change. Grain and chevron data-URIs were truncated in the raw file and are not tokens.
+- **Later `:root` declarations** in the same sheet override type sizes and a few radii for narrower breakpoints. `core` keeps the first (desktop) value. Phone display type is smaller. That override is in the raw decls and was not promoted to a separate token set.
+- **`--sp-soft` and `--ff-ease-spring`** include a `linear()` spring. The builder skipped those. The cubic-bezier easings are the ones in `core.easing`.
+- **Warning and info colours** are not in the public token set. Danger is declared (`#c4320a` light) and was not seen on a painted error.
+- **Screenshots are full-colour viewport PNGs**, not quantised. Read colours from tokens.json, not from the images.
+- **The phone menu sheet was not photographed.** The hamburger click missed. Desktop menus were photographed.
 
 ### Do and don't (from README.md)
 
-- **Do set type at 510 where the site is confident.** Buttons, card titles, tabs and headings all take Inter's 510 stop; 600 is reserved for display ([plan-cta](components.md#plan-cta), [home title](components/crops/home-title-default.png)).
-- **Do pill everything a finger touches.** Fields, buttons, segmented controls and tags are `radius.pill`; reserve `radius.card` 20px for cards and popups, `radius.field-tall` 22px for multi-line input ([text field](components/crops/text-field-default.png), [select popup](components/crops/select-popup-default.png)).
-- **Do keep chrome translucent.** The bar is the page colour at 86% with blur and a hairline, so content slides under it ([header](components/crops/header-default.png)).
-- **Do make focus visible the site's way.** 2px solid `color.focus` offset 2px on ff-* controls, accent blue on the home skin's buttons ([tab](components/crops/tab-focus-visible.png), [composer-go](components/crops/composer-go-focus-visible.png)).
-- **Do theme through the roles.** Light and dark rebind every `color.*`, `legacy.*` and `drip.*` token; the two skins move together ([home-dark-dark-full](screenshots/home-dark-dark-full.png)).
-- **Don't use accent blue for primary actions.** The main CTAs are contrast ink (#1a1a1a light / #ededed dark); `#0a68e0` is for links, the composer send and focus on the old skin ([btn-primary-sm](components/crops/btn-primary-sm-default.png)).
-- **Don't draw boxes with hard borders.** Hairlines are `color.line` (ink or white at 8%) and elevation is ring-plus-drop; the floating chrome's shadow always carries a 1px ring layer ([nav-panel](components/crops/nav-panel-default.png)).
-- **Don't invent an error state.** Only the declared danger colour is known; the painted validation was never seen ([field-error](components.md#field-error), [form](screenshots/enterprise-light-form.png)).
-- **Don't ship the vendor cookie widget's `--ck-*` palette.** It is CookieScript's, not FlutterFlow's ([the widget, closed](screenshots/pricing-light-default.png)).
+- **Do ground on warm paper.** Page is `#fcfcfb`, cards are white. [screenshots/flutterflow-io-desktop.png](screenshots/flutterflow-io-desktop.png).
+- **Do use the near-black pill for the primary action.** Start building is `#1a1a1a` on white, 32px tall, 999px radius. [components/crops/nav-cta-default.png](components/crops/nav-cta-default.png).
+- **Do keep blue for the accent, not the primary button.** Accent is `#0a68e0` light and `#5aa2f0` dark. The primary button stays near-black in light.
+- **Do switch theme with `data-theme`.** Dark is a real paint, not a declared-only block. [screenshots/www-flutterflow-io-desktop-dark.png](screenshots/www-flutterflow-io-desktop-dark.png).
+- **Don't invent signed-in canvas chrome.** The builder was not captured. Stop at the auth wall.
+- **Don't treat the phone display size as the desktop token.** The sheet overrides `--ff-text-display` later for narrow widths. `core.typography.display` is the desktop value.

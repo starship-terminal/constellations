@@ -3,245 +3,139 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Shopify"
-description: "commerce marketing and signed-out login chrome: a dark home (page #000000, section #02090a, white 9999px pills, Shopify-Inter 330 display, shop purple #5433eb) and a Polaris login form (text #303030, field #f3f3f3, link and focus #005bd3, 8px controls)"
+description: "Commerce marketing site: black hero, white pill button, mega menu of image cards"
 omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
-  primary: "#005bd3"
-  neutral: "#ffffff"
-  surface: "#f3f3f3"
-  on-surface: "#303030"
-  on-surface-variant: "#616161"
-  outline: "#1a1a1a"
-  page: "#ffffff"
-  text: "#303030"
-  muted: "#616161"
-  accent: "#005bd3"
-  border: "#1a1a1a"
-  heading: "#303030"
-  label: "#202223"
-  input-fill: "#f3f3f3"
-  input-fill-password: "#ffffff"
-  link: "#005bd3"
-  focus: "#005bd3"
-  critical: "#e51b00"
-  critical-text: "#8e1f0b"
-  success: "#29845a"
-  success-text: "#0c5132"
-  caution: "#ffe600"
-  disabled: "#b5b5b5"
-  secondary: "#f1f1f1"
-  secondary-text: "#303030"
-  button-primary-bg: "#0b1314"
-  button-primary-text: "#fafcfc"
-  button-secondary-bg: "#f1f1f1"
-  button-secondary-text: "#303030"
-  field-bg: "#f3f3f3"
-  field-text: "#303030"
-  field-border: "#1a1a1a"
-  field-focus: "#005bd3"
+  primary: "#fff"
+  neutral: "#000"
+  surface: "#f4f4f5"
+  on-surface: "#fff"
+  on-surface-variant: "#a1a1aa"
+  outline: "#3f3f46"
+  background-page: "#000"
+  background-surface: "#f4f4f5"
+  background-inverse: "#fff"
+  text-primary: "#fff"
+  text-muted: "#a1a1aa"
+  text-on-accent: "#000"
+  text-link: "#fff"
+  border-default: "#3f3f46"
+  border-strong: "#fff"
+  action-primary: "#fff"
+  action-primary-hover: "#d4d4d8"
+  focus-ring: "#fff"
 typography:
   display:
     fontFamily: "Shopify-Inter"
-    fontSize: "4.375rem"
+    fontSize: "64px"
     fontWeight: 330
-    lineHeight: "4.725rem"
-    letterSpacing: "-0.015em"
-  t1:
+    lineHeight: 1.2
+  heading-1:
     fontFamily: "Shopify-Inter"
-    fontSize: "3.375rem"
+    fontSize: "56px"
     fontWeight: 330
-    lineHeight: "3.645rem"
-    letterSpacing: "-0.005em"
-  t2:
+    lineHeight: 1.2
+  heading-2:
     fontFamily: "Shopify-Inter"
-    fontSize: "3rem"
+    fontSize: "44px"
     fontWeight: 330
-    lineHeight: "3.3rem"
-    letterSpacing: "-0.02em"
-  t3:
+    lineHeight: 1.2
+  heading-3:
     fontFamily: "Shopify-Inter"
-    fontSize: "2.25rem"
+    fontSize: "34px"
     fontWeight: 330
-    lineHeight: "2.52rem"
-    letterSpacing: "-0.005em"
-  t4:
+    lineHeight: 1.2
+  heading-4:
     fontFamily: "Shopify-Inter"
-    fontSize: "1.875rem"
-    fontWeight: 330
-    lineHeight: "2.1375rem"
-    letterSpacing: "0em"
-  t5:
-    fontFamily: "Shopify-Inter"
-    fontSize: "1.625rem"
+    fontSize: "28px"
     fontWeight: 360
-    lineHeight: "1.95rem"
-    letterSpacing: "-0.01em"
-  t6:
+    lineHeight: 1.2
+  heading-5:
     fontFamily: "Shopify-Inter"
-    fontSize: "1.375rem"
+    fontSize: "24px"
     fontWeight: 400
-    lineHeight: "1.65rem"
-    letterSpacing: "-0.005em"
-  t7:
+    lineHeight: 1.2
+  body-large:
     fontFamily: "Shopify-Inter"
-    fontSize: "1.125rem"
+    fontSize: "20px"
     fontWeight: 450
-    lineHeight: "1.4625rem"
-    letterSpacing: "0em"
-  t8:
-    fontFamily: "Shopify-Inter"
-    fontSize: "0.875rem"
-    fontWeight: 450
-    lineHeight: "1.1375rem"
-    letterSpacing: "0em"
+    lineHeight: 1.2
   body:
     fontFamily: "Shopify-Inter"
-    fontSize: "1rem"
-    fontWeight: 420
-    lineHeight: "1.4rem"
-    letterSpacing: "-0.006em"
-  body-lg:
-    fontFamily: "Shopify-Inter"
-    fontSize: "1.125rem"
-    fontWeight: 400
-    lineHeight: "1.575rem"
-    letterSpacing: "0em"
-  body-sm:
-    fontFamily: "Shopify-Inter"
-    fontSize: "0.875rem"
-    fontWeight: 420
-    lineHeight: "1.1375rem"
-    letterSpacing: "0em"
-  button:
-    fontFamily: "Shopify-Inter"
-    fontSize: "1rem"
-    fontWeight: 550
-    lineHeight: "1.5rem"
-    letterSpacing: "0em"
-  button-lg:
-    fontFamily: "Shopify-Inter"
-    fontSize: "1.125rem"
-    fontWeight: 550
-    lineHeight: "1.75rem"
-    letterSpacing: "0em"
-  login-heading:
-    fontFamily: "ShopifyInter"
-    fontSize: "24px"
-    fontWeight: 700
-    lineHeight: "32px"
-    letterSpacing: "0px"
-  login-body:
-    fontFamily: "ShopifyInter"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: "20px"
-    letterSpacing: "0px"
-  login-field:
-    fontFamily: "ShopifyInter"
     fontSize: "16px"
     fontWeight: 450
-    letterSpacing: "0px"
+    lineHeight: 1.2
 rounded:
-  xs: "4px"
-  sm: "0.375rem"
-  md: "0.5rem"
-  lg: "0.75rem"
-  xl: "1rem"
-  card: "12px"
-  plan: "24px"
-  button: "8px"
-  pill: "9999px"
+  md: "6px"
+  lg: "8px"
+  xl: "12px"
+  "2xl": "16px"
 spacing:
-  spacing: "0.25rem"
-  xs: "0.5rem"
-  sm: "1rem"
-  md: "1.5rem"
-  lg: "2rem"
-  xl: "2.5rem"
-  "2xl": "4rem"
-  "3xl": "5rem"
-  "4xl": "8rem"
-  "5xl": "10rem"
-  margin: "3.125rem"
-  header: "4.5rem"
+  xs: "8px"
+  sm: "16px"
+  md: "24px"
+  lg: "32px"
+  xl: "40px"
+  "2xl": "64px"
+  "3xl": "80px"
+  "4xl": "128px"
+  "5xl": "160px"
 ---
 
 # Shopify
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 7 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: commerce marketing and signed-out login chrome: a dark home (page #000000, section #02090a, white 9999px pills, Shopify-Inter 330 display, shop purple #5433eb) and a Polaris login form (text #303030, field #f3f3f3, link and focus #005bd3, 8px controls).
+Good for: Commerce marketing site: black hero, white pill button, mega menu of image cards.
 
-Captured 2026-11-19, signed out. Public marketing pages and the account lookup form only. Start for free was not opened (paid trial). Email, password, passkey, Google, Apple, Facebook, and WhatsApp were not submitted. No card, phone, or KYC was entered. No store was created.. Themes: light, dark.
+Captured 2026-11-21, signed out (public marketing site). Themes: light.
 
-Public signed-out surfaces of [shopify.com](https://www.shopify.com/), captured 2026-11-19. The start URL redirected to `https://www.shopify.com/sg`. Pricing was `https://www.shopify.com/sg/pricing`. Log in was `https://accounts.shopify.com/lookup`, title "Log in — Shopify account". That form was measured and not submitted. No email, password, passkey, Google, Apple, Facebook, WhatsApp, card, phone, or KYC step was entered. No store was created. "Start for free" points at `admin.shopify.com/signup` with `paid_trial_experience` and was not opened.
+A token set and component reference for Shopify's public marketing site (shopify.com), signed out, captured 2026-11-21 in headless Chromium. Desktop is 1440x900. Phone is 390x844. The US English locale is pinned with `?country=us&lang=en` because the bare host geo-redirects. One light theme. The admin app was not entered.
 
-The measured viewport was 1169 by 731 CSS pixels, `devicePixelRatio` 2, visual viewport scale 1. That is the preview tab's fill size, not a 1440 or 390 pass.
-
-<!-- brief:start -->
+The public site is a black hero with white type, a white pill for the primary action, and a green bag logo. Shopify-Inter sets the type. Menus are image cards on desktop and a full-screen drawer on the phone.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#005bd3):** `light.accent`
-- **neutral (#ffffff):** `light.page`
-- **surface (#f3f3f3):** `light.surface`
-- **on-surface (#303030):** `light.text`
-- **on-surface-variant (#616161):** `light.muted`
-- **outline (#1a1a1a):** `light.border`
-
-### Colors (from README.md)
-
-Home body is black. Sections are `#02090a`. Footer text is `#a1a1aa`. The login form's text is `#303030` on white and `#f3f3f3` fields. The link and focus colour is `#005bd3`.
+- **primary (#fff):** `light.action.primary`
+- **neutral (#000):** `light.background.page`
+- **surface (#f4f4f5):** `light.background.surface`
+- **on-surface (#fff):** `light.text.primary`
+- **on-surface-variant (#a1a1aa):** `light.text.muted`
+- **outline (#3f3f46):** `light.border.default`
 
 ## Typography
 
-17 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Shopify-Inter, ShopifyInter.
+8 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Shopify-Inter.
 
 ### Fonts (from README.md)
 
-Shopify-Inter is the marketing face (`--font-base`: Shopify-Inter, Helvetica, Arial, sans-serif). Painted weights were 330 on display, 400 on body, 420 on body-base, 450 on small headings, and 550 on buttons. ShopifyInter is the login face, with Noto Sans Arabic and Noto Sans Hebrew in the stack (`--identity-font-family`). Neither face is committed. They are Shopify's fonts.
-
-### Typography (from README.md)
-
-Marketing display is Shopify-Inter 330. Body-base is 420. Buttons are 550. The login heading is ShopifyInter 700 at 24px.
+Shopify-Inter is proprietary. The tokens name it, then Helvetica, Arial, sans-serif. The style guide uses the fallback.
 
 ## Layout
 
-Spacing from `core.space`: `spacing` 0.25rem, `xs` 0.5rem, `sm` 1rem, `md` 1.5rem, `lg` 2rem, `xl` 2.5rem, `2xl` 4rem, `3xl` 5rem, `4xl` 8rem, `5xl` 10rem, `margin` 3.125rem, `header` 4.5rem.
-
-### Layout (from README.md)
-
-Header height is 4.5rem (72px painted). Page margin is 3.125rem (50px painted on the header's left). Plan cards use 24px radius and 24px padding.
+Spacing from `core.space`: `xs` 8px, `sm` 16px, `md` 24px, `lg` 32px, `xl` 40px, `2xl` 64px, `3xl` 80px, `4xl` 128px, `5xl` 160px.
 
 ## Elevation & Depth
 
-Shadows, resolved to CSS:
-
-| Token | box-shadow |
-|---|---|
-| `light.button.shadow` | `0px 3px 1px -1px rgba(26, 26, 26, 0.07)` |
+No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
 
 ## Shapes
 
-Corner radii from `core.radius`: `xs` 4px, `sm` 0.375rem, `md` 0.5rem, `lg` 0.75rem, `xl` 1rem, `card` 12px, `plan` 24px, `button` 8px, `pill` 9999px.
+Corner radii from `core.radius`: `md` 6px, `lg` 8px, `xl` 12px, `2xl` 16px.
 
 ## Components
 
 No component tokens map onto DESIGN.md's component properties.
 
-Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
-
-### Components (from README.md)
-
-The painted set is the marketing pill, the outline pill, the login field, and the login primary button. States beyond rest are gaps. See [components.md](components.md).
+Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -253,23 +147,18 @@ The painted set is the marketing pill, the outline pill, the login field, and th
 
 ### What to distrust (from README.md)
 
-The home `h1` computed to 70px, weight 330, line-height 75.6px, tracking -1.4px at this viewport. The display role token is 4.375rem (70px) from `--font-size-dsp`, with declared tracking -0.015em. The painted tracking was -0.02em (the h1 also has the class `tracking-[-0.02em]`). Both are measured. The token is the custom property.
-
-`--letter-spacing-t2` was -0.005em. `--text-t2--letter-spacing` was -0.02em. The t2 token uses the text token. `--text-body-sm--line-height` was 1.2rem. `--line-height-body-sm` was 1.1375rem. The body-sm token uses the font-size role's line height.
-
-`--signup-button-height` is 48px. The painted "Continue with email" button was 44px tall. The token uses 44px.
-
-oklch custom properties (`--color-blue-500`, `--color-purple-500`, the zinc steps) are listed under `$extensions.oklchNotTokenised`. They were not converted.
-
-The light swatches are the painted login form (white surface, `#303030` text, `#005bd3` link). The page behind that form is dark (`#0a1314`) and is `dark.login-page`. Treating the login page as a light theme would misreport it.
-
-`preview.cover` is [icon.png](icon.png) because no page screenshot exists.
+- The home hero is a video. A still is one frame.
+- The geo redirect can land on another locale. These shots are US English.
+- Help Center, the theme store, and the app store are sibling products with their own chrome. They are included as public pages, not as the marketing token set.
+- Pill radius 9999px is computed, not a `--radius-*` token.
+- Line height on type roles is a stand-in. The product does not publish a line-height custom property for those steps.
+- Hover on the white pill was measured. Focus-visible and pressed were not.
 
 ### Do and don't (from README.md)
 
-- **Use the white pill on the dark marketing page.** "Start for free" is white on black type, radius 9999px, padding 8px 20px, weight 550. The hero size is 12px 24px at 18px. See `dark.button` in [tokens.json](tokens.json).
-- **Keep Shopify-Inter for marketing and ShopifyInter for the login form.** Display weight is 330. Login headings are 700. See `core.font`.
-- **Use shop purple as the brand accent, not the button fill.** `--color-shop-purple` is `#5433eb`. The painted primary button is white. See `dark.accent`.
-- **Use the 8px login control, not the marketing pill, on the account form.** "Continue with email" is `#0b1314` on `#fafcfc`, radius 8px, height 44px. See `light.button`.
-- **Do not open Start for free as if it were a free email form.** The href includes `paid_trial_experience`. It was not entered.
-- **Do not invent a screenshot.** The frame failure is recorded above.
+- **Do set the hero in white on black.** The first screen is a black field, white display type, a white pill. [home-light-default](screenshots/home-light-default.png).
+- **Do use a pill for the primary action.** Radius is fully round, padding 8px 20px in the header, 12px 24px in the hero. [button-primary-default](components/crops/button-primary-default.png).
+- **Do open menus as image cards.** Why Shopify and Products are panels of photography, not text lists. [menu-open](components/crops/menu-open.png).
+- **Do keep the phone nav as a full-screen list.** Rows are large, with a Log in outline and a white Start for free at the bottom. [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
+- **Don't invent a dark-mode toggle.** The site does not publish one.
+- **Don't follow Log in or Start for free into the admin.** Those leave the public site.

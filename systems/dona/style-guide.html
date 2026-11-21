@@ -2,297 +2,50 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dona style guide</title>
-<meta name="description" content="Dona design tokens and the public signed-out marketing surface's components, rendered from tokens.json with the measured values.">
 <style>
-:root {
-  --font-family-sans: Inter, sans-serif;
-  --font-size-display: 84px;
-  --font-size-display-mobile: 40px;
-  --font-size-h2: 32px;
-  --font-size-h3: 26px;
-  --font-size-h4: 18px;
-  --font-size-lede: 24px;
-  --font-size-field-display: 40px;
-  --font-size-field-mobile: 28px;
-  --font-size-body-lg: 18px;
-  --font-size-body: 16px;
-  --font-size-small: 14px;
-  --font-size-button: 16px;
-  --font-size-button-sm: 14px;
-  --font-lineHeight-display: 92.4px;
-  --font-lineHeight-display-mobile: 44px;
-  --font-lineHeight-h2: 43.2px;
-  --font-lineHeight-h3: 35.1px;
-  --font-lineHeight-h4: 24.3px;
-  --font-lineHeight-lede: 34.8px;
-  --font-lineHeight-field-display: 60px;
-  --font-lineHeight-body-lg: 26.1px;
-  --font-lineHeight-body: 23.2px;
-  --font-lineHeight-small: 20.3px;
-  --font-lineHeight-button: 24px;
-  --font-lineHeight-button-sm: 24px;
-  --font-weight-display: 700;
-  --font-weight-h2: 600;
-  --font-weight-lede: 500;
-  --font-weight-body: 400;
-  --font-weight-button: 500;
-  --color-neutral-ink: #19191b;
-  --color-neutral-muted: #616870;
-  --color-neutral-placeholder: #bfc3c8;
-  --color-neutral-paper: #ffffff;
-  --color-fill-control: #eceff2;
-  --color-fill-control-hover: #e9ecef;
-  --color-fill-ghost-hover: #f2f4f8;
-  --color-fill-tile: #f4f4f5;
-  --color-fill-media: #eff2f5;
-  --color-fill-chip: #e0e3e7;
-  --color-fill-chip-hover: #dde0e4;
-  --color-fill-chip-pressed: #dadde1;
-  --color-fill-close: #b0b5ba;
-  --color-fill-close-hover: #a8adb3;
-  --color-fill-chip-twitter-pressed: #e6e9ed;
-  --color-fill-ring: #e6e9ed;
-  --color-brand-blue: #008ffd;
-  --color-brand-blue-hover: #0087fd;
-  --color-brand-ink: #19191b;
-  --color-brand-glow: #6fabff;
-  --color-brand-discord: #7289da;
-  --color-overlay-scrim: rgba(191, 195, 200, 0.8);
-  --radius-pill: 32px;
-  --radius-card: 20px;
-  --radius-banner: 40px;
-  --radius-chip: 14px;
-  --radius-avatar: 12px;
-  --shadow-button: 0px 2px 4px 0px rgba(12, 20, 66, 0.02), inset 0px -1px 2px 0px rgba(12, 20, 66, 0.03);
-  --shadow-action: 0px 2px 4px 0px rgba(12, 20, 66, 0.1), 0px 10px 40px 0px rgba(12, 20, 66, 0.06), inset 0px -1px 2px 0px rgba(12, 20, 66, 0.1);
-  --shadow-join: 0px 2px 4px 0px rgba(12, 20, 66, 0.1), 0px 10px 40px 0px rgba(12, 20, 66, 0.06), inset 0px -1px 2px 0px rgba(12, 20, 66, 0.08), inset 0px 0px 0px 999px rgba(0, 0, 0, 0);
-  --shadow-card: 0px 4px 12px 0px rgba(12, 20, 66, 0.02), 0px 30px 80px 0px rgba(12, 20, 66, 0.08), inset 0px 0px 0px 1px #e6e9ed;
-  --shadow-banner: 0px 1px 3px 0px rgba(12, 20, 66, 0.03), 0px 8px 16px 0px rgba(12, 20, 66, 0.04), 0px 16px 40px 0px rgba(12, 20, 66, 0.04);
-  --shadow-banner-mobile: 0px 1px 3px 0px rgba(12, 20, 66, 0.03), 0px -8px 16px 0px rgba(12, 20, 66, 0.04), 0px -16px 40px 0px rgba(12, 20, 66, 0.04);
-  --shadow-chip: 0px 2px 4px 0px rgba(0, 0, 0, 0.02), inset 0px -1px 2px 0px rgba(0, 0, 0, 0.03);
-  --shadow-glow: 0px 8px 140px 0px #6fabff;
-  --measured-focus-outline: #005fcc;
-  --measured-underline: #19191b;
-  --measured-ua-link: #0000ee;
-  --measured-ua-link-active: #ff0000;
-  --duration-hover: 150ms;
-  --duration-submit-background-color: 250ms;
-  --duration-submit-box-shadow: 150ms;
-  --duration-submit-padding: 300ms;
-  --duration-modal: 300ms;
-  --duration-reveal: 1000ms;
-  --easing-reveal: cubic-bezier(0.17, 0.17, 0.0, 1.0);
-  --easing-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --layout-container: 1140px;
-  --layout-gutter: 20px;
-  --layout-grid-gap: 32px;
-  --layout-content: 1100px;
-  --spacing-button-x: 26px;
-  --spacing-button-y: 14px;
-  --spacing-button-sm-x: 20px;
-  --spacing-button-sm-y: 6px;
-  --spacing-header-top: 32px;
-  --spacing-banner: 18px;
-  --spacing-footer-y: 64px;
-  --text-primary: var(--color-neutral-ink);
-  --text-secondary: var(--color-neutral-muted);
-  --text-placeholder: var(--color-neutral-placeholder);
-  --text-inverse: #ffffff;
-  --surface-page: var(--color-neutral-paper);
-  --surface-card: var(--color-fill-tile);
-  --surface-media: var(--color-fill-media);
-  --surface-inverse: var(--color-brand-ink);
-  --action-primary-default: var(--color-brand-blue);
-  --action-primary-hover: var(--color-brand-blue-hover);
-  --action-secondary-default: var(--color-fill-control);
-  --action-secondary-hover: var(--color-fill-control-hover);
-  --action-ghost-hover: var(--color-fill-ghost-hover);
-  --overlay-scrim: var(--color-overlay-scrim);
-  --border-hairline: var(--color-fill-ring);
-  --component-button-height: 52px;
-  --component-button-sm-height: 36px;
-  --component-header-height: 68px;
-  --component-field-height: 60px;
-  --component-close-size: 56px;
-  --component-chip-size: 40px;
-  --component-avatar-size: 125px;
-  --component-tile-size: 534px;
-  --component-banner-height: 76px;
-  --component-logo-width: 95.1875px;
-  --component-icon-size-sm: 14px;
-  --component-icon-size-md: 16px;
-  --component-icon-size-lg: 30px;
-  --component-icon-size-xl: 40px;
-  --sg-sans: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
-}
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 700 40px/1.15 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-fill-control, #aaa); }
-.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
-.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-fill-control, #aaa); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
-/* ---- dona mock ---- */
-.mock { border: 1px solid var(--color-fill-control, #aaa); overflow: hidden; background: var(--color-neutral-paper, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: 68px; padding: 0 24px; font-size: 15px; }
-.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--color-neutral-ink, #19191b); }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 26px; font-size: 16px; font-weight: 500; border-radius: var(--radius-pill, 32px); border: 0; }
-.btn.sm { height: 36px; padding: 0 20px; font-size: 14px; }
-.btn.secondary { background: var(--action-secondary-default, #eceff2); color: var(--color-neutral-ink, #19191b); box-shadow: var(--shadow-button, none); }
-.btn.primary { background: var(--action-primary-default, #008ffd); color: #fff; box-shadow: var(--shadow-action, none); }
-.btn.ink { background: var(--color-brand-ink, #19191b); color: #fff; box-shadow: var(--shadow-join, none); }
-.btn.ghosty { background: transparent; color: var(--color-neutral-ink, #19191b); box-shadow: none; }
-.hero { color: var(--color-neutral-ink, #19191b); padding: 72px 40px; font: var(--font-weight-display, 700) var(--font-size-display, 84px)/var(--font-lineHeight-display, 1.1) var(--sg-sans); letter-spacing: -0.02em; text-align: center; }
-.hero small { display: block; font: var(--font-weight-lede, 500) var(--font-size-lede, 24px)/var(--font-lineHeight-lede, 1.45) var(--sg-sans); color: var(--color-neutral-ink, #19191b); margin: 16px auto 22px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding: 0 0 4px; }
-.tile { padding: 20px; font-size: 13px; background: var(--color-fill-tile, #f4f4f5); border-radius: var(--radius-card, 20px); min-height: 140px; }
-.tile b { display: block; font: 600 20px/1.35 var(--sg-sans); color: var(--color-neutral-ink, #19191b); margin-bottom: 6px; }
-.tile .sub { color: var(--color-neutral-muted, #616870); font-size: 15px; }
-.nl { padding: 28px 24px; border-top: 1px solid var(--color-fill-control, #aaa); }
-.nl .fld { font: 400 var(--font-size-field-display, 40px)/var(--font-lineHeight-field-display, 1.5) var(--sg-sans); color: var(--color-neutral-placeholder, #bfc3c8); border: 0; padding: 4px 0; margin-bottom: 18px; }
-.chip { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-chip, 14px); background: var(--color-fill-chip, #e0e3e7); color: var(--color-neutral-ink, #19191b); font-size: 13px; }
-.bnr { display: flex; align-items: center; gap: 14px; padding: 18px; border-radius: var(--radius-banner, 40px); background: #fff; box-shadow: var(--shadow-banner, none); font-size: 14px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--color-fill-control, #aaa); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-fill-control, #aaa); }
-.tr .ts { font-family: var(--sg-sans); }
-.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+  :root {
+    --ink: #19191b;
+    --paper: #ffffff;
+    --body: #f2f4f6;
+    --blue: #008ffd;
+    --quiet: #eceff2;
+    --muted: #a8b0b8;
+  }
+  body { margin: 0; font: 400 16px/1.45 Inter, sans-serif; color: var(--ink); background: var(--paper); }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; }
+  h2 { margin-top: 40px; font-size: 20px; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .sw { width: 72px; height: 72px; border-radius: 12px; border: 1px solid var(--quiet); }
+  .pill { border: 0; border-radius: 32px; font: 500 16px/24px Inter, sans-serif; padding: 14px 26px; }
+  .primary { background: var(--blue); color: #fff; }
+  .quiet { background: var(--quiet); color: var(--ink); }
+  .ink { background: var(--ink); color: #fff; }
+  p.note { color: #616870; max-width: 62ch; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Dona style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">Dona, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the ink #19191b on white, the #008ffd Dona blue (the Try for free CTA and the elliptical swooshes), the #eceff2 pill greys and #f4f4f5 tiles, Inter at 84px display down to 14px small, the 32px button pills and 20px cards, and the low-alpha #0c1442 lift shadows. The public marketing surface paints one light theme — the light/dark/black UI themes in the copy live inside the app. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from dona.ai on 2026-11-12, signed out, in headless Chromium. app.dona.ai (the product, with its advertised themes) sits behind sign-in and is a documented boundary; the newsletter was never submitted. Inter is a served face and is not loaded here: samples render in a system sans fallback.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">A 68px header bar over a white page: a borderless About button that only picks up a grey wash on hover, the centred dona wordmark, and a #eceff2 Login pill. Every button is a 32px-radius pill with a hairline drop shadow and an inset top-light bevel.</p>
-  <div class="mock">
-    <div class="navbar"><span class="btn sm ghosty">About</span><span class="sp"></span><span class="wm">dona</span><span class="sp"></span><span class="btn sm secondary">Login</span></div>
-    <div class="hero">A more humane<br>to-do list<small>Dona is a back to basic to-do list focused on fast and delightful user experience.</small><span class="btn secondary">Watch video</span> <span class="btn primary">Try for free</span></div>
+  <h1>Dona</h1>
+  <p class="note">Public marketing tokens, light only. Values from the styled-components theme object and computed styles on dona.ai, 2026-11-21. Dark is not a theme of this site.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw" style="background:#ffffff"></div>
+    <div class="sw" style="background:#f2f4f6"></div>
+    <div class="sw" style="background:#19191b"></div>
+    <div class="sw" style="background:#008ffd"></div>
+    <div class="sw" style="background:#eceff2"></div>
+    <div class="sw" style="background:#a8b0b8"></div>
   </div>
-
-  <h2 class="sh">Tiles and the newsletter</h2>
-  <p class="lead">Feature tiles are #f4f4f5 20px cards with a blue swoosh behind them; the newsletter is a 40px text field over its own swoosh and an ink Join button with a blue glow.</p>
-  <div class="mock" style="padding:24px">
-    <div class="grid">
-      <div class="tile"><b>Fast &amp; delightful</b><span class="sub">Light, dark &amp; black UI theme.</span></div>
-      <div class="tile"><b>A note about speed</b><span class="sub">Quick add, natural language, keyboard-first.</span></div>
-    </div>
-    <div class="nl" style="margin-top:24px">
-      <div class="fld">Enter your email</div>
-      <span class="btn ink">Join our newsletter</span>
-    </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="pill quiet">Watch video</button>
+    <button class="pill primary">Try for free</button>
+    <button class="pill ink">Join our newsletter</button>
   </div>
-
-  <h2 class="sh">Consent and overlays</h2>
-  <p class="lead">The cookie notice floats as a 40px-radius white card on three stacked #0c1442 shadow layers; the video modal dims the page with a translucent grey scrim and a 56px round close.</p>
-  <div class="mock" style="padding:24px;background:var(--color-fill-tile,#f4f4f5)">
-    <div class="bnr"><span class="chip" style="border-radius:50%">✓</span><span>This website uses cookies. <u>Learn more</u></span><span class="sp" style="flex:1"></span><span class="btn sm secondary">Accept</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">Ink #19191b on white is the base; the blue #008ffd is the only brand colour on the surface (with its #0087fd hover step and the #6fabff glow), and a ladder of greys — #eceff2 pills, #f4f4f5/#eff2f5 tiles, #e0e3e7 chips — carries every secondary control.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">Buttons are 32px pills, cards 20px, the banner 40px, chips 14px and the close a 50% circle; the swoosh decorations are 75%-radius ellipses. The container is 1140px with 20px gutters and a 32px grid gap.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">One served face, <code>Inter</code>, does everything: 700 at the 84px display, 600 at the heads and the mission lede, 500 on every button label and the hero lede, 400 for body — with a 40px display-sized email field. Samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <h2>Type</h2>
+  <p style="font-size:64px;font-weight:700;line-height:1.05;letter-spacing:-0.03em;margin:0"><span style="color:#a8b0b8">A more humane</span><br>to-do list</p>
 </main>
-<script>
-const TOK = {"core":{"font":{"family":{"sans":{"v":"Inter, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json); the @font-face declarations are in raw/css-vars.json fonts","d":"The one family the surface paints: Inter, falling back to sans-serif. Inter 400/500/600/700 ship as inline woff2 plus /static/inter-*.woff2 subset files (raw/css-vars.json fonts)."}},"size":{"display":{"v":"84px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 84px display size on the home/about/legal h1s."},"display-mobile":{"v":"40px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The 40px display size the mobile h1 drops to."},"h2":{"v":"32px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 32px section head."},"h3":{"v":"26px","t":"dimension","s":"computed fontSize of section-h3 default (raw/components-computed.json)","d":"The 26px feature head."},"h4":{"v":"18px","t":"dimension","s":"computed fontSize of legal-h4 default (raw/components-computed.json)","d":"The 18px legal subhead."},"lede":{"v":"24px","t":"dimension","s":"computed fontSize of hero-lede default (raw/components-computed.json)","d":"The 24px hero/mission lede."},"field-display":{"v":"40px","t":"dimension","s":"computed fontSize of email-input default (raw/components-computed.json)","d":"The 40px newsletter email field — display-sized input text."},"field-mobile":{"v":"28px","t":"dimension","s":"computed fontSize of m-email-input default (raw/components-computed.json)","d":"The 28px mobile field size."},"body-lg":{"v":"18px","t":"dimension","s":"computed fontSize of section-para default (raw/components-computed.json)","d":"The 18px section body copy."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of legal-text default (raw/components-computed.json)","d":"The 16px base body size."},"small":{"v":"14px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"The 14px footer/legal small size."},"button":{"v":"16px","t":"dimension","s":"computed fontSize of try-cta default (raw/components-computed.json)","d":"The 16px big-button label."},"button-sm":{"v":"14px","t":"dimension","s":"computed fontSize of cookie-accept default (raw/components-computed.json)","d":"The 14px small-button label (nav, cookie Accept)."}},"lineHeight":{"display":{"v":"92.4px","t":"dimension","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"Display line height (92.4px, a 1.1 ratio)."},"display-mobile":{"v":"44px","t":"dimension","s":"computed lineHeight of m-hero default first text node (span) (raw/components-computed.json)","d":"Mobile display line height."},"h2":{"v":"43.2px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"Section-head line height."},"h3":{"v":"35.1px","t":"dimension","s":"computed lineHeight of section-h3 default (raw/components-computed.json)","d":"Feature-head line height."},"h4":{"v":"24.3px","t":"dimension","s":"computed lineHeight of legal-h4 default (raw/components-computed.json)","d":"Legal-subhead line height."},"lede":{"v":"34.8px","t":"dimension","s":"computed lineHeight of hero-lede default (raw/components-computed.json)","d":"Lede line height."},"field-display":{"v":"60px","t":"dimension","s":"computed lineHeight of email-input default (raw/components-computed.json)","d":"Field line height."},"body-lg":{"v":"26.1px","t":"dimension","s":"computed lineHeight of section-para default (raw/components-computed.json)","d":"Body-large line height (a 1.45 ratio)."},"body":{"v":"23.2px","t":"dimension","s":"computed lineHeight of legal-text default (raw/components-computed.json)","d":"Base line height (a 1.45 ratio)."},"small":{"v":"20.3px","t":"dimension","s":"computed lineHeight of footer-link default (raw/components-computed.json)","d":"Small line height."},"button":{"v":"24px","t":"dimension","s":"computed lineHeight of try-cta default (raw/components-computed.json)","d":"Button-label line height."},"button-sm":{"v":"24px","t":"dimension","s":"computed lineHeight of cookie-accept default (raw/components-computed.json)","d":"Small-button line height."}},"weight":{"display":{"v":700,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"Display weight — Inter Bold."},"h2":{"v":600,"t":"fontWeight","s":"computed fontWeight of section-h2 default (raw/components-computed.json)","d":"Section-head weight — Inter SemiBold."},"lede":{"v":500,"t":"fontWeight","s":"computed fontWeight of hero-lede default (raw/components-computed.json)","d":"Hero-lede weight — Inter Medium (mission text uses SemiBold)."},"body":{"v":400,"t":"fontWeight","s":"computed fontWeight of legal-text default (raw/components-computed.json)","d":"Body weight — Inter Regular."},"button":{"v":500,"t":"fontWeight","s":"computed fontWeight of try-cta default (raw/components-computed.json)","d":"Button-label weight — Inter Medium."}}},"color":{"neutral":{"ink":{"v":"#19191b","t":"color","s":"computed color of hero-h1 default (raw/components-computed.json)","d":"The near-black ink #19191b on every heading, button label and body line — also the declared --button-color on the Button classes (raw/css-vars.json app)."},"muted":{"v":"#616870","t":"color","s":"computed color of section-para default (raw/components-computed.json)","d":"The secondary body grey #616870 under the section heads."},"placeholder":{"v":"#bfc3c8","t":"color","s":"computed placeholder color of email-input default (raw/components-computed.json)","d":"The #bfc3c8 of the email field's placeholder text."},"paper":{"v":"#ffffff","t":"color","s":"computed backgroundColor of cookie-banner default (raw/components-computed.json)","d":"The white the page field and the cookie banner paint."}},"fill":{"control":{"v":"#eceff2","t":"color","s":"computed backgroundColor of cookie-accept default (raw/components-computed.json)","d":"The #eceff2 resting grey of the pill buttons (Accept, Login, Watch video)."},"control-hover":{"v":"#e9ecef","t":"color","s":"computed backgroundColor of cookie-accept hover (raw/components-computed.json)","d":"The #e9ecef hover step on the grey pills."},"ghost-hover":{"v":"#f2f4f8","t":"color","s":"computed backgroundColor of nav-about hover (raw/components-computed.json)","d":"The #f2f4f8 wash the borderless About button picks up on hover."},"tile":{"v":"#f4f4f5","t":"color","s":"computed backgroundColor of feature-tile default (raw/components-computed.json)","d":"The #f4f4f5 feature-tile field."},"media":{"v":"#eff2f5","t":"color","s":"computed backgroundColor of hero-video default (raw/components-computed.json)","d":"The #eff2f5 field the hero media tile paints."},"chip":{"v":"#e0e3e7","t":"color","s":"computed backgroundColor of social-link default (raw/components-computed.json)","d":"The #e0e3e7 social-chip fill."},"chip-hover":{"v":"#dde0e4","t":"color","s":"computed backgroundColor of social-link hover (raw/components-computed.json)","d":"The #dde0e4 chip hover step."},"chip-pressed":{"v":"#dadde1","t":"color","s":"computed backgroundColor of social-link pressed (raw/components-computed.json)","d":"The #dadde1 chip pressed step."},"close":{"v":"#b0b5ba","t":"color","s":"computed backgroundColor of modal-close default (raw/components-computed.json)","d":"The #b0b5ba round modal-close fill."},"close-hover":{"v":"#a8adb3","t":"color","s":"computed backgroundColor of modal-close hover (raw/components-computed.json)","d":"The #a8adb3 hover step on the close button."},"chip-twitter-pressed":{"v":"#e6e9ed","t":"color","s":"computed backgroundColor of footer-twitter pressed (raw/components-computed.json)","d":"The #e6e9ed deepest chip step, on the footer's Twitter chip."},"ring":{"v":"#e6e9ed","t":"color","s":"computed boxShadow inset layer of hero-video default (raw/components-computed.json)","d":"The #e6e9ed 1px inset hairline the media card draws instead of a border."}},"brand":{"blue":{"v":"#008ffd","t":"color","s":"computed backgroundColor of try-cta default (raw/components-computed.json)","d":"The Dona blue #008ffd: the Try for free CTA fill, the swoosh ellipses behind feature tiles and the newsletter field, and the follow-social button."},"blue-hover":{"v":"#0087fd","t":"color","s":"computed backgroundColor of try-cta hover (raw/components-computed.json)","d":"The #0087fd hover step on the blue CTA."},"ink":{"v":"#19191b","t":"color","s":"computed backgroundColor of join-btn default (raw/components-computed.json)","d":"The #19191b near-black fill of the Join button — same ink as the text."},"glow":{"v":"#6fabff","t":"color","s":"painted boxShadow of the submit wrapper's ::before inside newsletter default (raw/components-computed.json)","d":"The #6fabff blue glow behind the Join our newsletter button."},"discord":{"v":"#7289da","t":"color","s":"painted fill of the Discord social button inside newsletter default (raw/components-computed.json)","d":"The #7289da Discord-brand fill of the community button in the social row."}},"overlay":{"scrim":{"v":"rgba(191, 195, 200, 0.8)","t":"color","s":"computed backgroundColor of video-modal default (raw/components-computed.json)","d":"The translucent light-grey scrim rgba(191,195,200,.8) the video modal lays over the page."}}},"radius":{"pill":{"v":"32px","t":"dimension","s":"computed borderTopLeftRadius of try-cta default (raw/components-computed.json)","d":"The 32px pill on every Button — nav, CTAs, Join, Accept."},"card":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of feature-tile default (raw/components-computed.json)","d":"The 20px feature/media card radius."},"banner":{"v":"40px","t":"dimension","s":"computed borderTopLeftRadius of cookie-banner default (raw/components-computed.json)","d":"The 40px cookie-banner radius."},"chip":{"v":"14px","t":"dimension","s":"computed borderTopLeftRadius of social-link default (raw/components-computed.json)","d":"The 14px social-chip radius."},"avatar":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of team-avatar default (raw/components-computed.json)","d":"The 12px team-avatar radius."}},"shadow":{"button":{"v":[{"color":"rgba(12, 20, 66, 0.02)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.03)","offsetX":"0px","offsetY":"-1px","blur":"2px","spread":"0px","inset":true}],"t":"shadow","s":"computed boxShadow of cookie-accept default (raw/components-computed.json)","d":"The resting lift on the grey pill buttons: a hairline drop plus an inset top-light bevel."},"action":{"v":[{"color":"rgba(12, 20, 66, 0.1)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.06)","offsetX":"0px","offsetY":"10px","blur":"40px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.1)","offsetX":"0px","offsetY":"-1px","blur":"2px","spread":"0px","inset":true}],"t":"shadow","s":"computed boxShadow of try-cta default (raw/components-computed.json)","d":"The deeper lift on the coloured CTAs: drop + 40px ambient + inset bevel."},"join":{"v":[{"color":"rgba(12, 20, 66, 0.1)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.06)","offsetX":"0px","offsetY":"10px","blur":"40px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.08)","offsetX":"0px","offsetY":"-1px","blur":"2px","spread":"0px","inset":true},{"color":"rgba(0, 0, 0, 0)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"999px","inset":true}],"t":"shadow","s":"computed boxShadow of join-btn default (raw/components-computed.json)","d":"The Join button's shadow — the action lift plus a 999px inset overlay used for hover dimming (rgba(0,0,0,0) at rest)."},"card":{"v":[{"color":"rgba(12, 20, 66, 0.02)","offsetX":"0px","offsetY":"4px","blur":"12px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.08)","offsetX":"0px","offsetY":"30px","blur":"80px","spread":"0px"},{"color":"#e6e9ed","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":true}],"t":"shadow","s":"computed boxShadow of hero-video default (raw/components-computed.json)","d":"The hero-media card shadow: drop + 80px ambient + a #e6e9ed inset hairline ring."},"banner":{"v":[{"color":"rgba(12, 20, 66, 0.03)","offsetX":"0px","offsetY":"1px","blur":"3px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.04)","offsetX":"0px","offsetY":"8px","blur":"16px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.04)","offsetX":"0px","offsetY":"16px","blur":"40px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of cookie-banner default (raw/components-computed.json)","d":"The floating cookie-banner shadow (three ascending layers)."},"banner-mobile":{"v":[{"color":"rgba(12, 20, 66, 0.03)","offsetX":"0px","offsetY":"1px","blur":"3px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.04)","offsetX":"0px","offsetY":"-8px","blur":"16px","spread":"0px"},{"color":"rgba(12, 20, 66, 0.04)","offsetX":"0px","offsetY":"-16px","blur":"40px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of m-cookie-banner default (raw/components-computed.json); the marked node sat offscreen on the 390 pass and its crop caught body text, so this is not confirmed as the banner; recapture needed","d":"The mobile banner variant's upward shadow (the 8/16/40 layers run negative, the shape of a top-anchored bar) — read from the marked consent node, which sat offscreen on the 390 pass; its real placement is unverified."},"chip":{"v":[{"color":"rgba(0, 0, 0, 0.02)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.03)","offsetX":"0px","offsetY":"-1px","blur":"2px","spread":"0px","inset":true}],"t":"shadow","s":"computed boxShadow of social-link default (raw/components-computed.json)","d":"The social chip's bevel — same shape as the button lift but keyed on black, not #0c1442."},"glow":{"v":[{"color":"#6fabff","offsetX":"0px","offsetY":"8px","blur":"140px","spread":"0px"}],"t":"shadow","s":"painted boxShadow of the submit wrapper's ::before inside newsletter default (raw/components-computed.json)","d":"The #6fabff 140px bloom behind the Join our newsletter button."}},"measured":{"focus-outline":{"v":"#005fcc","t":"color","s":"computed outlineColor of cookie-learn focus-visible (raw/components-computed.json)","d":"The 1px #005fcc keyboard-focus ring — the browser's own ring, the site sets no custom :focus-visible style."},"underline":{"v":"#19191b","t":"color","s":"computed ::before backgroundColor of cookie-learn default (raw/components-computed.json)","d":"The 1px ink ::before bar the Learn more link paints as its underline."},"ua-link":{"v":"#0000ee","t":"color","s":"computed color of social-link default (raw/components-computed.json)","d":"#0000ee — the browser-default link colour on the unstyled social/logo anchors, not a Dona token."},"ua-link-active":{"v":"#ff0000","t":"color","s":"computed color of social-link pressed (raw/components-computed.json)","d":"#ff0000 — the UA :active link colour the same anchors pick up when pressed."}},"duration":{"hover":{"v":"150ms","t":"duration","s":"computed transition of cookie-accept default (raw/components-computed.json)","d":"The 150ms hover duration on the pill buttons (color, background-color, box-shadow)"},"submit-background-color":{"v":"250ms","t":"duration","s":"computed transition of join-btn default (raw/components-computed.json)","d":"The Join button's background-color duration."},"submit-box-shadow":{"v":"150ms","t":"duration","s":"computed transition of join-btn default (raw/components-computed.json)","d":"The Join button's box-shadow duration."},"submit-padding":{"v":"300ms","t":"duration","s":"computed transition of join-btn default (raw/components-computed.json)","d":"The Join button's padding duration."},"modal":{"v":"300ms","t":"duration","s":"computed transition of video-modal default (raw/components-computed.json)","d":"The 300ms opacity fade on the video modal (opacity)"},"reveal":{"v":"1000ms","t":"duration","s":"declared transition in the readable sheets on home (raw/components-computed.json _meta.sheets)","d":"The 1s scroll-in reveal the Fade wrapper carries."}},"easing":{"reveal":{"v":[0.17,0.17,0.0,1.0],"t":"cubicBezier","s":"declared transition in the readable sheets on home (raw/components-computed.json _meta.sheets)","d":"The custom out-quint-like reveal easing."},"standard":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":"computed transitionTimingFunction of cookie-accept default (raw/components-computed.json)","d":"The plain ease every 150ms hover transition uses."}},"layout":{"container":{"v":"1140px","t":"dimension","s":"Reconstruction: entered by hand at capture time from a probe never written to raw/; no reading in raw/ holds it (the maxWidth of Container__Wrapper)","d":"The 1140px content container."},"gutter":{"v":"20px","t":"dimension","s":"Reconstruction: entered by hand at capture time from a probe never written to raw/; no reading in raw/ holds it (the paddingLeft/Right of Container__Wrapper)","d":"The 20px side gutter inside the container."},"grid-gap":{"v":"32px","t":"dimension","s":"Reconstruction: entered by hand at capture time from a probe never written to raw/; no reading in raw/ holds it (the columnGap/rowGap of the pages__Grid feature grid)","d":"The 32px gap in the two-column feature grid."},"content":{"v":"1100px","t":"dimension","s":"computed width of header default and newsletter default (raw/components-computed.json)","d":"The 1100px measure the bars actually paint."}},"spacing":{"button-x":{"v":"26px","t":"dimension","s":"computed paddingLeft of try-cta default (raw/components-computed.json)","d":"The 26px inline padding on the 52px buttons."},"button-y":{"v":"14px","t":"dimension","s":"computed paddingTop of try-cta default (raw/components-computed.json)","d":"The 14px block padding on the 52px buttons."},"button-sm-x":{"v":"20px","t":"dimension","s":"computed paddingLeft of cookie-accept default (raw/components-computed.json)","d":"The 20px inline padding on the 36px buttons."},"button-sm-y":{"v":"6px","t":"dimension","s":"computed paddingTop of cookie-accept default (raw/components-computed.json)","d":"The 6px block padding on the 36px buttons."},"header-top":{"v":"32px","t":"dimension","s":"computed paddingTop of header default (raw/components-computed.json)","d":"The 32px the header bar drops from the top."},"banner":{"v":"18px","t":"dimension","s":"computed paddingTop of cookie-banner default (raw/components-computed.json)","d":"The 18px inside the cookie banner (12px on mobile)."},"footer-y":{"v":"64px","t":"dimension","s":"computed paddingTop of footer default (raw/components-computed.json)","d":"The 64px above and below the footer row."}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the measured core palette","d":"Headline, button-label and body ink."},"secondary":{"v":"{color.neutral.muted}","t":"color","s":"role alias over the measured core palette","d":"Section body copy."},"placeholder":{"v":"{color.neutral.placeholder}","t":"color","s":"role alias over the measured core palette","d":"The email field's placeholder."},"inverse":{"v":"#ffffff","t":"color","s":"computed color of try-cta default (raw/components-computed.json)","d":"White labels on the blue and ink buttons."}},"surface":{"page":{"v":"{color.neutral.paper}","t":"color","s":"role alias over the measured core palette","d":"The white page and banner field."},"card":{"v":"{color.fill.tile}","t":"color","s":"role alias over the measured core palette","d":"The #f4f4f5 feature-tile field."},"media":{"v":"{color.fill.media}","t":"color","s":"role alias over the measured core palette","d":"The #eff2f5 hero-media field."},"inverse":{"v":"{color.brand.ink}","t":"color","s":"role alias over the measured core palette","d":"The ink fill the Join button paints."}},"action":{"primary":{"default":{"v":"{color.brand.blue}","t":"color","s":"role alias over the measured core palette","d":"The #008ffd primary CTA and swoosh blue."},"hover":{"v":"{color.brand.blue-hover}","t":"color","s":"role alias over the measured core palette","d":"The #0087fd hover step on the primary CTA."}},"secondary":{"default":{"v":"{color.fill.control}","t":"color","s":"role alias over the measured core palette","d":"The #eceff2 resting fill of the grey pill buttons."},"hover":{"v":"{color.fill.control-hover}","t":"color","s":"role alias over the measured core palette","d":"The #e9ecef hover step on the grey pills."}},"ghost":{"hover":{"v":"{color.fill.ghost-hover}","t":"color","s":"role alias over the measured core palette","d":"The #f2f4f8 wash a borderless nav button picks up on hover."}}},"overlay":{"scrim":{"v":"{color.overlay.scrim}","t":"color","s":"role alias over the measured core palette","d":"The modal's translucent page scrim."}},"border":{"hairline":{"v":"{color.fill.ring}","t":"color","s":"role alias over the measured core palette","d":"The 1px inset ring on media cards — the only hairline on the surface."}},"component":{"button":{"height":{"v":"52px","t":"dimension","s":"computed height of try-cta default (raw/components-computed.json)","d":"The 52px big-button height."}},"button-sm":{"height":{"v":"36px","t":"dimension","s":"computed height of cookie-accept default (raw/components-computed.json)","d":"The 36px nav/cookie-button height."}},"header":{"height":{"v":"68px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The 68px header bar."}},"field":{"height":{"v":"60px","t":"dimension","s":"computed height of email-input default (raw/components-computed.json)","d":"The 60px email field line."}},"close":{"size":{"v":"56px","t":"dimension","s":"computed width of modal-close default (raw/components-computed.json)","d":"The 56px round close button."}},"chip":{"size":{"v":"40px","t":"dimension","s":"computed width of social-link default (raw/components-computed.json)","d":"The 40px social chip."}},"avatar":{"size":{"v":"125px","t":"dimension","s":"computed width of team-avatar default (raw/components-computed.json)","d":"The 125px team avatar."}},"tile":{"size":{"v":"534px","t":"dimension","s":"computed width of feature-tile default (raw/components-computed.json)","d":"The 534px feature tile (two per row with the 32px gap)."}},"banner":{"height":{"v":"76px","t":"dimension","s":"computed height of cookie-banner default (raw/components-computed.json)","d":"The 76px desktop cookie banner."}},"logo":{"width":{"v":"95.1875px","t":"dimension","s":"computed width of logo default (raw/components-computed.json)","d":"The 95x28 logo mark."}},"icon":{"size-sm":{"v":"14px","t":"dimension","s":"declared --icon-size on .dAKTtu svg in the readable sheets (raw/css-vars.json app)","d":"The 14px icon inside button labels."},"size-md":{"v":"16px","t":"dimension","s":"declared --icon-size on .cMsCXE in the readable sheets (raw/css-vars.json app)","d":"The 16px standard icon."},"size-lg":{"v":"30px","t":"dimension","s":"declared --icon-size on .biKXiR in the readable sheets (raw/css-vars.json app)","d":"The 30px feature icon."},"size-xl":{"v":"40px","t":"dimension","s":"declared --icon-size on .hCwPPL svg in the readable sheets (raw/css-vars.json app)","d":"The 40px cookie/social icon."}}}},"dark":{}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-  if (roles.length) {
-    h += `<div class="pal-h">light roles</div><div class="pal">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + (x.spread ?? '0px') + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function motion() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — A more humane to-do list</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Dona</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
 </body>
 </html>

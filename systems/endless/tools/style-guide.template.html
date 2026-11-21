@@ -1,260 +1,114 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Endless style guide</title>
-<meta name="description" content="Endless design tokens and the public marketing surface's components, rendered from tokens.json with the declared and measured values.">
 <style>
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: "TikTok Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+  --sg-sans: "TikTok Sans", system-ui, arial, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
 }
-[data-mode="dark"], .dark {
+[data-mode="dark"] {
 /*DARK*/
-}
-/* The light set re-emitted under .light, so the light-role swatches keep their
-   light values even when the page itself is showing the dark scope. */
-.light {
-/*LIGHT_SCOPE*/
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--foreground, #0a0a0a); background: var(--background, #fcfcfc); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 500 40px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--foreground, #0a0a0a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #e5e5e5); }
-.lead { max-width: 62ch; color: var(--foreground, #0a0a0a); opacity: .8; }
-.note { font-size: 13px; color: var(--muted-foreground, #6e6e6e); max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground, #6e6e6e); margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.dark { background: var(--background, #000); padding: 12px; border-radius: 8px; }
-.pal.dark .nm { color: var(--foreground, #fafafa); }
-.pal.dark .vl { color: var(--muted-foreground, #a1a1a1); }
-.sw { display: inline-flex; gap: 8px; align-items: center; min-width: 180px; padding: 6px 10px 6px 6px; border: 1px solid var(--border, #e5e5e5); border-radius: 10px; background: var(--card-default, #fff); }
-.pal.dark .sw { background: var(--card-default, #171717); border-color: var(--border, rgba(255,255,255,.1)); }
-.sw .dot { width: 28px; height: 28px; border-radius: 7px; border: 1px solid var(--hairline, rgba(10,10,10,.05)); overflow: hidden; flex: none; }
-.sw .dot i { display: block; width: 100%; height: 100%; }
-.nm { font-size: 11px; font-weight: 500; }
-.vl { font-size: 10px; color: var(--muted-foreground, #6e6e6e); font-family: var(--sg-mono); }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 6px 18px; margin-top: 10px; }
-.kv > div { display: flex; justify-content: space-between; gap: 12px; padding: 5px 0; border-bottom: 1px solid var(--hairline, rgba(10,10,10,.05)); font-size: 12px; }
-.kv b { font-weight: 500; font-family: var(--sg-mono); font-size: 11px; }
-.kv span { color: var(--muted-foreground, #6e6e6e); font-family: var(--sg-mono); font-size: 11px; text-align: right; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 6px 0; border-bottom: 1px solid var(--hairline, rgba(10,10,10,.05)); }
-.ts { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.tv { font-family: var(--sg-mono); font-size: 11px; color: var(--muted-foreground, #6e6e6e); flex: none; }
-.cmp { border-collapse: collapse; font-size: 13px; margin-top: 12px; }
-.cmp th, .cmp td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--border, #e5e5e5); vertical-align: top; }
-.cmp th { font-weight: 600; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--border, #e5e5e5); border-radius: var(--radius-xl, 16px); background: var(--background, #fcfcfc); overflow: hidden; margin-top: 14px; }
-.navbar { display: flex; align-items: center; gap: 4px; height: 56px; padding: 0 16px; border-bottom: 1px solid var(--hairline, rgba(10,10,10,.05)); font-size: 14px; }
-.navbar .wm { font-weight: 600; font-size: 15px; margin-right: 14px; }
-.navbar .nl { padding: 6px 10px; border-radius: 8px; color: var(--muted-foreground, #6e6e6e); }
-.navbar .nl:hover { background: var(--secondary-default, #f5f5f5); color: var(--foreground, #0a0a0a); }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-sm, 32px); padding: 0 var(--component-button-padding-x-sm, 16px); border-radius: var(--component-button-radius-sm, 8px); font-size: 14px; font-weight: 500; border: 1px solid transparent; cursor: default; white-space: nowrap; }
-.btn.primary { background: var(--primary-default, #171717); color: var(--primary-foreground, #fafafa); }
-.btn.secondary { background: var(--secondary-default, #f5f5f5); color: var(--secondary-foreground, #171717); border-color: var(--border, #e5e5e5); }
-.btn:focus-visible { box-shadow: var(--shadow-focus-ring, 0 0 0 3px rgba(1,188,255,.3)); border-color: var(--ring, #01bcff); }
-.btn.lg { height: var(--component-button-height-lg, 52px); padding: 0 var(--component-button-padding-x-lg, 28px); border-radius: var(--component-button-radius-md, 12px); font-size: 16px; font-weight: 600; }
-.hero { text-align: center; padding: 56px 20px 40px; }
-.hero h3 { font: 500 44px/1.08 var(--sg-sans); letter-spacing: -0.04em; margin: 0 0 12px; }
-.hero p { color: var(--muted-foreground, #6e6e6e); margin: 0 auto 28px; max-width: 46ch; }
-.composer { max-width: var(--component-composer-width, 660px); margin: 0 auto; background: var(--card-default, #fff); border-radius: var(--component-composer-radius, 20px); box-shadow: var(--shadow-card, 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px -1px rgba(0,0,0,.06), 0 2px 4px rgba(0,0,0,.04)); padding: 16px 20px; text-align: left; }
-.composer .ph { color: var(--muted-foreground, #6e6e6e); font-size: 16px; min-height: 40px; }
-.composer .row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
-.pill { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--border, #e5e5e5); font-size: 14px; font-weight: 500; color: var(--muted-foreground, #6e6e6e); background: transparent; }
-.send { width: 36px; height: 36px; border-radius: 12px; background: var(--secondary-default, #f5f5f5); color: var(--muted-foreground, #6e6e6e); display: inline-flex; align-items: center; justify-content: center; margin-left: auto; }
-.chip { display: inline-flex; align-items: center; height: 36px; padding: 0 10px; border-radius: var(--component-button-radius-md, 12px); border: 1px solid var(--border, #e5e5e5); background: var(--card-default, #fff); font-size: 14px; font-weight: 500; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-.tile { border: 1px solid var(--border, #e5e5e5); border-radius: var(--component-card-radius, 16px); background: var(--card-default, #fff); padding: var(--component-card-padding, 24px); }
-.tile b { font-size: 18px; font-weight: 600; display: block; }
-.tile .sub { font-size: 14px; color: var(--muted-foreground, #6e6e6e); }
-.field { height: var(--component-field-height, 40px); border-radius: var(--component-field-radius, 8px); border: 1px solid transparent; background: var(--measured-field-fill, rgba(229,229,229,.5)); padding: 0 12px; display: flex; align-items: center; font-size: 14px; color: var(--muted-foreground, #6e6e6e); }
-.field.focus { border-color: var(--ring, #01bcff); box-shadow: var(--shadow-focus-ring, 0 0 0 3px rgba(1,188,255,.3)); }
-.modepill { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: var(--radius-pill, 9999px); font-size: 14px; font-weight: 500; }
-.modepill.on { background: var(--primary-default, #171717); color: var(--primary-foreground, #fafafa); }
-.modepill.off { color: var(--muted-foreground, #6e6e6e); }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 28px; }
+h1 { font-size: 28px; font-weight: 500; margin: 0; }
+button.toggle { height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--border-default); background: var(--background-surface); color: var(--text-primary); font: 600 14px/20px var(--sg-sans); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border-default); border-radius: 12px; overflow: hidden; background: var(--background-surface); }
+.sw i { display: block; height: 64px; }
+.sw span { display: block; padding: 8px 10px; font-size: 12px; color: var(--text-muted); }
+h2 { font-size: 20px; font-weight: 500; margin: 36px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn { height: var(--component-button-height); padding: 0 14px; border-radius: var(--component-button-radius); background: var(--component-button-bg); color: var(--component-button-text); border: 0; font: 600 14px/20px var(--sg-sans); }
+.quiet { height: 32px; padding: 0 14px; border-radius: 8px; background: transparent; color: var(--text-muted); border: 0; font: 600 14px/20px var(--sg-sans); }
+.chip { height: 36px; padding: 0 12px; border-radius: var(--component-chip-radius); background: var(--component-chip-bg); color: var(--component-chip-text); border: 1px solid var(--border-default); font: 500 14px/20px var(--sg-sans); }
+.field { height: 40px; min-width: 240px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border-default); background: var(--background-surface); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.card { padding: 16px; border-radius: 16px; border: 1px solid var(--border-default); background: var(--background-surface); max-width: 280px; }
+.card strong { display: block; font-size: 32px; font-weight: 500; }
+.card em { color: var(--text-muted); font-style: normal; font-size: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); }
+.type-display { font: 500 59.2px/64px var(--sg-sans); margin: 0; }
+.note { color: var(--text-muted); font-size: 14px; max-width: 68ch; }
 </style>
-<script>
-  // The guide follows the system colour scheme — the trigger next-themes
-  // honours on the real site — and re-binds on change. A manual class="dark"
-  // on <html> still wins over the system preference.
-  (() => {
-    const mq = matchMedia('(prefers-color-scheme: dark)');
-    const apply = () => {
-      const el = document.documentElement;
-      el.dataset.mode = el.classList.contains('dark') || mq.matches ? 'dark' : 'light';
-    };
-    apply();
-    mq.addEventListener('change', apply);
-  })();
-</script>
 </head>
 <body>
-<main>
-  <h1>Endless style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels. The page follows your system colour scheme (the trigger next-themes honours) or add <code>class="dark"</code> to <code>&lt;html&gt;</code> — every colour on this page re-binds.</p>
-
-  <h2 class="sh">Endless, measured</h2>
-  <p class="lead">endless.app (what endless.io redirects to) is one Next.js + Tailwind v4 surface — the marketing pages, ~70 free tool pages, the model catalog, the social radar, /docs and /brand — over a single shadcn-style token layer: semantic roles that re-bind under a .dark class (next-themes, driven by the system scheme or the footer Theme control), the --mode-*/--label-*/--chart-*/--series-* product palettes, and a near-white neutral ramp with one sky accent #01bcff. TikTok Sans is the face everywhere; Geist Mono covers code. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from endless.app on 2026-11-13, signed out, in headless Chromium. The workspace behind s.endless.app (auth on clerk.endless.app) is a documented boundary; no form was ever submitted and no tool ever run. TikTok Sans and Geist Mono are served faces and are not loaded here: samples fall back to system sans and mono.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">Every page carries the same 56px sticky header on the near-white field (#fcfcfc): the mark, flat nav links, a bordered Sign in and the dark Sign-up-for-free pill. At phone width the links collapse into a 36px menu button that opens a full overlay. The hero centres the display headline over the Ask-Endless prompt composer — a 20px-radius white card on a floating-card shadow with a model pill, prompt chips and a 36px send well. Nothing was ever sent.</p>
-  <div class="mock" style="padding:0 0 24px">
-    <div class="navbar"><span class="wm">Endless</span><span class="nl">Product</span><span class="nl">Models</span><span class="nl">Industries</span><span class="nl">Pricing</span><span class="nl">Blog</span><span class="sp"></span><span class="btn secondary">Sign in</span><span class="btn primary">Sign up for free</span></div>
-    <div class="hero"><h3>What do you want to make?</h3><p>Social research, reports, images and video with 70+ models, in one workspace.</p>
-      <div class="composer"><div class="ph">Ask Endless…</div><div class="row"><span class="pill">GPT-6.1 Terra</span><span class="send">&#8593;</span></div></div>
-      <div style="margin-top:14px;display:flex;gap:8px;justify-content:center"><span class="chip">Account analysis</span><span class="chip">Launch post</span><span class="chip">Product video</span></div>
-    </div>
-  </div>
-
-  <h2 class="sh">Pricing and cards</h2>
-  <p class="lead">/pricing runs a Monthly/Annual segment in a full pill over 16px-radius plan cards; buttons come in three heights (32/36/52px) at 8&ndash;12px radii. The /models catalog filters with the same pill shape.</p>
-  <div class="mock" style="padding:20px">
-    <div style="text-align:center;margin-bottom:18px"><span class="modepill on">Annual</span> <span class="modepill off">Monthly</span></div>
-    <div class="grid">
-      <div class="tile"><b>Starter</b><span class="sub">For trying things out</span><div style="margin-top:12px"><span class="btn secondary">Start free</span></div></div>
-      <div class="tile" style="border-radius:var(--component-card-radius,16px)"><b>Pro</b><span class="sub">For creative teams</span><div style="margin-top:12px"><span class="btn primary">Get Pro</span></div></div>
-    </div>
-  </div>
-
-  <h2 class="sh">Fields</h2>
-  <p class="lead">The contact form is an unpainted 640px column of 40px fields on a translucent 50% neutral fill; keyboard focus paints a 3px 30% accent ring plus an accent border &mdash; there is no outline element.</p>
-  <div class="mock" style="padding:20px;max-width:660px;margin-left:auto;margin-right:auto">
-    <div style="display:grid;gap:10px">
-      <div class="field">Name</div>
-      <div class="field focus">name@example.com</div>
-      <div class="field" style="height:64px;align-items:flex-start;padding-top:12px">Message</div>
-      <div><span class="btn primary lg" style="width:100%">Send message</span></div>
-    </div>
-  </div>
-
-  <h2 class="sh">Dark</h2>
-  <p class="lead">The .dark class inverts the neutral ramp: the field goes to black, cards to #171717, the primary fill to #e5e5e5 with #171717 text, and the accent stays #01bcff. The dark mock below is the same markup inside a .dark scope, the mechanism next-themes writes.</p>
-  <div class="mock dark" style="padding:0 0 24px;background:var(--background,#000);color:var(--foreground,#fafafa)">
-    <div class="navbar"><span class="wm">Endless</span><span class="nl">Product</span><span class="nl">Models</span><span class="nl">Pricing</span><span class="sp"></span><span class="btn secondary">Sign in</span><span class="btn primary">Sign up for free</span></div>
-    <div class="hero"><h3 style="color:var(--foreground,#fafafa)">What do you want to make?</h3>
-      <div class="composer"><div class="ph">Ask Endless&hellip;</div><div class="row"><span class="pill">GPT-6.1 Terra</span><span class="send">&#8593;</span></div></div>
-    </div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The declared layer is mostly-neutral: the sky accent #01bcff does all the brand work, supported by the --label-* tag hues, the --mode-* modality colours and the --series-*/--chart-* data ramps. Light and dark roles are the same declared variables, re-bound by the .dark scope.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing, radius and layout</h2>
-  <p class="lead">Spacing is the 4px Tailwind unit; containers run 320&ndash;1152px. Radii are a small scale — 8px controls, 12px buttons and chips, 16px cards, 20px big tiles and the composer, plus a full pill — and the 22.5% icon mask.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead"><code>TikTok Sans</code> everywhere — 59.2px display down to 12px captions at 400/500/600 — and <code>Geist Mono</code> on code. Sizes are the declared --text-* ramp plus the measured display steps; samples fall back to system faces.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared shadcn-style variables from the live stylesheets and computed styles on the elements of every public route</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and filled states measured per component; the Annual segment, the mobile menu and field focus reached by their own controls</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the theme surface it was resolved on) or the measurement it came from</td></tr></table>
-</main>
+<div class="wrap">
+<header class="top">
+  <h1>Endless</h1>
+  <button class="toggle" type="button" id="theme">Theme</button>
+</header>
+<p class="note">Public marketing site, measured 2026-11-21. Values come from tokens.json. TikTok Sans is not loaded here, so the face falls back to system-ui.</p>
+<h2>Colour</h2>
+<div class="swatches" id="swatches"></div>
+<h2>Type</h2>
+<p class="type-display">Your team’s AI, finally in one place.</p>
+<p>Body at 16/24. <span style="font-size:12px;color:var(--text-muted)">Caption at 12, muted.</span></p>
+<h2>Controls</h2>
+<div class="row">
+  <button class="btn" type="button">Sign up for free</button>
+  <button class="quiet" type="button">Sign in</button>
+  <button class="chip" type="button">Account analysis</button>
+  <input class="field" placeholder="Ask Endless…" aria-label="Composer sample">
+</div>
+<h2>Pricing card</h2>
+<div class="card">
+  <em>Basic</em>
+  <strong>$49</strong>
+  <em>USD per workspace, monthly</em>
+</div>
+<h2>Tokens</h2>
+<table id="tokens"></table>
+</div>
 <script>
-const TOK = /*TOKENS*/null;
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-// For attribute values: a quoted font family ("TikTok Sans") would otherwise close style="...".
-const attr = (s) => esc(s).replace(/"/g, '&quot;');
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-const valText = (t) => Array.isArray(t.v)
-  ? t.v.map((s) => `${s.color} ${Math.round(s.position * 100)}%`).join(' \u2192 ')
-  : t.v;
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color' || t.t === 'gradient');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(valText(t))}</div></div></div>`;
-    h += '</div>';
+const TOKENS = /*TOKENS*/null;
+const root = document.documentElement;
+const btn = document.getElementById("theme");
+function paint() {
+  const mode = root.getAttribute("data-mode") || "light";
+  btn.textContent = mode === "dark" ? "Dark" : "Light";
+  const set = TOKENS[mode] || {};
+  const box = document.getElementById("swatches");
+  box.innerHTML = "";
+  const roles = [
+    ["page", "background-page"],
+    ["surface", "background-surface"],
+    ["text", "text-primary"],
+    ["muted", "text-muted"],
+    ["accent", "accent-default"],
+    ["border", "border-default"],
+  ];
+  for (const [name, key] of roles) {
+    const el = document.createElement("div");
+    el.className = "sw";
+    el.innerHTML = "<i></i><span></span>";
+    el.querySelector("i").style.background = "var(--" + key + ")";
+    el.querySelector("span").textContent = name;
+    box.appendChild(el);
   }
-  // Light roles and gradients: painted inside a .light scope so the dots keep
-  // the light values even when the page itself is showing .dark.
-  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => (t.t === 'color' || t.t === 'gradient') && !n.startsWith('component'));
-  if (lightRoles.length) {
-    h += `<div class="pal-h">light roles (.light scope)</div><div class="pal light">`;
-    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(valText(t))}</div></div></div>`;
-    h += '</div>';
-  }
-  // The dark set's custom properties only resolve inside a .dark scope:
-  // swatch dots must live under it or they paint the light values/unset.
-  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' || t.t === 'gradient');
-  if (darkRoles.length) {
-    h += `<div class="pal-h">dark roles (.dark scope)</div><div class="pal dark">`;
-    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(valText(t))}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function type() {
-  let h = '';
-  // Composite type styles first: each rendered at its measured spec.
-  for (const [n, t] of flat((TOK.core.font || {}).type || {}, 'font.type.')) {
-    const v = t.v;
-    if (v && typeof v === 'object' && v.fontSize) {
-      const px = Math.min(parseFloat(v.fontSize) || 14, 44);
-      h += `<div class="tr"><span class="ts" style="${attr(`font:${v.fontWeight} ${px}px/${v.lineHeight} ${v.fontFamily};letter-spacing:${v.letterSpacing}`)}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontFamily.split(',')[0].replace(/"/g, ''))} ${esc(v.fontSize)}/${esc(v.lineHeight)} ${esc(v.fontWeight)} ${esc(v.letterSpacing)}</span></div>`;
-    } else {
-      h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(typeof v === 'object' ? JSON.stringify(v) : v)}</span></div>`;
-    }
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Endless</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
+}
+btn.addEventListener("click", () => {
+  root.setAttribute("data-mode", root.getAttribute("data-mode") === "dark" ? "light" : "dark");
+  paint();
+});
+const rows = [];
+function walk(node, path) {
+  if (node && node.v !== undefined) rows.push([path, String(node.v)]);
+  else if (node && typeof node === "object") for (const k of Object.keys(node)) walk(node[k], path ? path + "." + k : k);
+}
+walk(TOKENS.core, "core");
+walk(TOKENS.light, "light");
+document.getElementById("tokens").innerHTML = rows.map(([p,v]) => "<tr><td>" + p + "</td><td>" + v + "</td></tr>").join("");
+paint();
 </script>
 </body>
 </html>

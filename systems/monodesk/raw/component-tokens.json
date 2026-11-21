@@ -1,0 +1,264 @@
+{
+  "capturedAt": "2026-11-20T21:17:26.228Z",
+  "source": "computed style on www.monodesk.com, signed out",
+  "home": {
+    "headerCta": {
+      "cls": "header-login-link",
+      "text": "Log in",
+      "box": {
+        "w": 40,
+        "h": 21
+      },
+      "color": "rgba(255, 255, 255, 0.85)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Geist, sans-serif",
+      "size": "14px",
+      "weight": "500",
+      "lh": "21px",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "radius": "0px",
+      "border": "0px none rgba(255, 255, 255, 0.85)",
+      "shadow": "none",
+      "backdrop": "none",
+      "gap": "normal"
+    },
+    "headerCtaTag": "header-login-link",
+    "heroCta": {
+      "cls": "hero-cta-button",
+      "text": "Get started free",
+      "box": {
+        "w": 197,
+        "h": 40
+      },
+      "color": "rgb(2, 98, 50)",
+      "bg": "rgb(209, 255, 110)",
+      "font": "Geist, sans-serif",
+      "size": "14px",
+      "weight": "500",
+      "lh": "21px",
+      "pad": [
+        "8px",
+        "16px",
+        "8px",
+        "16px"
+      ],
+      "radius": "100px",
+      "border": "0px none rgb(2, 98, 50)",
+      "shadow": "none",
+      "backdrop": "none",
+      "gap": "4px"
+    },
+    "loginHero": {
+      "cls": "hero-v4-desktop-only",
+      "text": "Log in",
+      "box": {
+        "w": 197,
+        "h": 40
+      },
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Geist, system-ui, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "radius": "0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "shadow": "none",
+      "backdrop": "none",
+      "gap": "normal"
+    },
+    "h1": {
+      "cls": "hero-v4-title",
+      "text": "Stuck on the boring bits of your creativ",
+      "box": {
+        "w": 834,
+        "h": 166
+      },
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Geist, sans-serif",
+      "size": "72px",
+      "weight": "400",
+      "lh": "82.8px",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "radius": "0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "shadow": "none",
+      "backdrop": "none",
+      "gap": "normal"
+    },
+    "menu": {
+      "cls": "menu is-visible",
+      "text": "by Creative Pros Features Pricing About ",
+      "box": {
+        "w": 1320,
+        "h": 66
+      },
+      "color": "rgb(231, 231, 231)",
+      "bg": "rgba(33, 33, 33, 0.25)",
+      "font": "Geist, system-ui, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "pad": [
+        "12px",
+        "16px",
+        "12px",
+        "16px"
+      ],
+      "radius": "16px",
+      "border": "1px solid rgba(255, 255, 255, 0.08)",
+      "shadow": "none",
+      "backdrop": "blur(20px)",
+      "gap": "normal"
+    },
+    "nav": {
+      "cls": "header-nav-link",
+      "text": "Creative Pros",
+      "box": {
+        "w": 106,
+        "h": 21
+      },
+      "color": "rgba(255, 255, 255, 0.85)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Geist, system-ui, sans-serif",
+      "size": "14px",
+      "weight": "500",
+      "lh": "21px",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "radius": "0px",
+      "border": "0px none rgba(255, 255, 255, 0.85)",
+      "shadow": "none",
+      "backdrop": "none",
+      "gap": "4px"
+    },
+    "body": {
+      "cls": "hero-header-4",
+      "text": "by Creative Pros Features Pricing About ",
+      "box": {
+        "w": 1440,
+        "h": 8648
+      },
+      "color": "rgb(231, 231, 231)",
+      "bg": "rgb(33, 33, 33)",
+      "font": "Geist, system-ui, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "radius": "0px",
+      "border": "0px none rgb(231, 231, 231)",
+      "shadow": "none",
+      "backdrop": "none",
+      "gap": "normal"
+    }
+  },
+  "pricing": {
+    "started": {
+      "cls": "ptable-cta",
+      "text": "Get started",
+      "box": {
+        "w": 105,
+        "h": 38
+      },
+      "color": "rgb(2, 98, 50)",
+      "bg": "rgb(209, 255, 110)",
+      "size": "13px",
+      "weight": "500",
+      "font": "Geist, system-ui, sans-serif",
+      "radius": "100px",
+      "pad": [
+        "9px",
+        "18px",
+        "9px",
+        "18px"
+      ],
+      "border": "0px none rgb(2, 98, 50)"
+    },
+    "badge": {
+      "cls": "ptable-popular",
+      "text": "MOST POPULAR",
+      "box": {
+        "w": 99,
+        "h": 23
+      },
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(2, 98, 50)",
+      "size": "10px",
+      "weight": "500",
+      "font": "\"Geist Mono\", ui-monospace, monospace",
+      "radius": "100px",
+      "pad": [
+        "4px",
+        "10px",
+        "4px",
+        "10px"
+      ],
+      "border": "0px none rgb(255, 255, 255)"
+    },
+    "card": {
+      "cls": "pricing-plans-section",
+      "text": "How pricing will work Free stays free On",
+      "box": {
+        "w": 1440,
+        "h": 609
+      },
+      "color": "rgb(231, 231, 231)",
+      "bg": "rgb(255, 255, 255)",
+      "size": "16px",
+      "weight": "400",
+      "font": "Geist, system-ui, sans-serif",
+      "radius": "0px",
+      "pad": [
+        "80px",
+        "90px",
+        "80px",
+        "170px"
+      ],
+      "border": "0px none rgb(231, 231, 231)"
+    }
+  },
+  "help": {
+    "box": {
+      "w": 560,
+      "h": 54
+    },
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(22, 22, 22)",
+    "radius": "100px",
+    "size": "16px",
+    "font": "Geist, system-ui, sans-serif",
+    "border": "0px none rgb(22, 22, 22)",
+    "pad": [
+      "15px",
+      "24px"
+    ],
+    "placeholder": "Search help articles…"
+  }
+}

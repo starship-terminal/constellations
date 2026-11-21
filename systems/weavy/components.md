@@ -1,55 +1,53 @@
 # Components
 
-Public marketing on weave.figma.com and the signed-out sign-in card on app.weavy.ai/signin. Values are computed styles. Crops were not cut: the preview browser did not produce screenshot frames, and the sign-in page was not opened in a second browser.
+Public marketing surface of Figma Weave (`www.weavy.ai`, which redirects to `weave.figma.com`), measured 2026-11-21. The signed-in editor was not opened. Crops are in [components/crops](components/crops). Values come from [raw/component-tokens.json](raw/component-tokens.json).
 
 ## Button
 
-Start Now (`.huge_nav-button.is-real`) is the marketing primary. At 1440 it is 40px Figma Sans, lemon `#f7ff9e`, black text, height 90px, only the bottom-left corner rounded 8px. Authored hover is rich black `#252525` with `#f4f4f4` text. That hover was not held.
+The nav call to action (`a.huge_nav-button.is-real`, "Start Now") is 206.3125 by 89.90625 px, fill `rgb(247, 255, 158)`, text `rgb(0, 0, 0)`, type 40px. Hover fill `rgb(37, 37, 37)`, hover text `rgb(244, 244, 244)` ([button-nav-hover.png](components/crops/button-nav-hover.png)). CSS transition is 200 ms, cubic-bezier(0.25, 0.46, 0.45, 0.94).
 
-Contact Sales (`.button-primary`) is lemon-100 `#f7ffa8`, richer black `#212126` text, 24px, radius 8.064px, 172 by 47. Hover computed richer black with `#f0ffff` text.
+The plan button (`.button.w-button`, "Start free") is 272.7 by 41.6 px, fill `rgb(37, 37, 37)`, text `rgb(255, 255, 255)`, radius 4px, padding 10.8px 21.6px 10.8px 21.6px. Hover fill `rgb(234, 242, 151)`, hover text `rgb(47, 47, 51)` ([button-plan-hover.png](components/crops/button-plan-hover.png)). Held pointer fill `rgb(247, 255, 158)` ([button-plan-pressed.png](components/crops/button-plan-pressed.png)). Focus outline width computed 0px ([button-plan-focus.png](components/crops/button-plan-focus.png)).
 
-Plan CTA (`.button`) is rich black `#252525`, white text, 14.4px, padding 10.8px 21.6px, radius 4px, height 42px. Hover computed lemon `#f7ff9e` with richer black text.
-
-The slider Try button is lemon, rich black text, 18.72px, padding 9.36px 18px, radius 0 10.08px 0 0. Authored hover swaps to rich black and lemon text.
+Disabled, loading and error were not on the public pages.
 
 ## Link
 
-Nav links are 12px uppercase, letter-spacing 0.15px, padding 6px 10px, radius 4px, white on a transparent fill. Hover computed white fill and rich black text. The current page computed white fill and richer black text.
-
-Footer links (`.text-link-xsmall`) are 12px / 14.04px, white, padding 1.08px 5.04px, radius 2.16px.
-
-Sign-in legal links are 12px, rgb(44, 44, 44), underlined.
+Nav links (`.nav_text-link`) are 12px, uppercase, letter-spacing 0.15px, `rgb(255, 255, 255)` on the dark nav bar. Hover sets text to `rgb(37, 37, 37)` ([link-hover.png](components/crops/link-hover.png)).
 
 ## Text field
 
-Not present on the signed-out surfaces. Sign-in has no email field.
+The only public field is the knowledge-center search (`input[name=q]`, placeholder "Search for articles..."). Focused, it computed fill `rgb(255, 255, 255)`, text `rgb(26, 26, 26)`, 18px, radius 8px, outline `rgba(0, 0, 0, 0) solid 2px` ([text-field-focus.png](components/crops/text-field-focus.png)). It was not typed into and not submitted.
 
 ## Tabs
 
-Pricing audience tabs are 14.4px, padding 8px 16px, radius 4px. Selected is richer black `#212126` with white text. Unselected is transparent with richer black text.
+Audience tabs on pricing (`.audience-tabs_link`) are 140 by 38 px, radius 4 px. Selected fill `#212126`, text white ([tabs-default.png](components/crops/tabs-default.png)). Teams is the unselected tab on the same control.
 
 ## Switch
 
-The billing control is a 32 by 16 pill, radius 144px, fill `#f1fa8c`, 0.5px border rgba(0, 0, 0, 0.2). The knob is 12 by 8, white, radius 144px. The Save 30% badge is lemon, 13px DM Sans, radius 2px. Monthly is rgba(0, 0, 0, 0.5). Annual, the active label, is rgba(0, 0, 0, 0.9).
+Billing switch (`.billing-toggle_switch`, role=switch) is 32 by 16 px, radius 144 px, fill `#f1fa8c` when annual is on ([switch-default.png](components/crops/switch-default.png)). Clicking it swaps the plan prices to monthly ([switch-selected.png](components/crops/switch-selected.png)).
+
+## Menu
+
+Changelog filters are Webflow dropdowns. Open audience menu: All users, Paid users, Free users, Enterprise, Enterprise & Teams ([menu-open.png](components/crops/menu-open.png)). Open type menu: All update types, New model, Product improvement, Feature release, Pricing update, Model deprecation ([menu-type-open.png](components/crops/menu-type-open.png)). Hover of a menu row is declared as `#fcffdc` and was not separately measured.
 
 ## Card
 
-Plan cards are `#f5f5f6`, 1px `#e6e6e6`, radius 13px, padding 21px, about 317px wide. The name is 24px weight 500. The price is 48px weight 700, letter-spacing -1.296px.
+Plan card (`.pricing_plan-v4`) is 316.8 by 487.2 px, fill `rgb(245, 245, 246)`, border `1px solid rgb(230, 230, 230)`, radius 13px, padding 21.0731px 21.0731px 21.0731px 21.0731px ([card-default.png](components/crops/card-default.png)).
 
-The sign-in card is white, radius 13px, padding 84px 48px, 444px wide. Its shadow matches the app elevation-100 token: `0 1px 3px #00000026, 0 0 0.5px #0000004d`.
+## Badge
 
-## Accordion
-
-FAQ rows have a 1px border at rgba(255, 255, 255, 0.15). The question is 14px white, padding 24px 0. The open answer is 14px / 17.5px, `#d0d0d2`. The icon rotates 45 degrees when open.
+"Save 30%" (`.billing-toggle_badge`) uses Dmsans, Arial, sans-serif at 13.0003px on `rgb(247, 255, 158)`, radius 2.00016px.
 
 ## Table
 
-The comparison table uses 14px text, `#1a1a1a`, line-height 22px, cell padding 8px 12px 8px 8px. Header weight is 700.
+The models pricing page (`content.weave.figma.com/models-pricing`) shows a public table. Cell styles were not measured. The pricing comparison grid on `/pricing` is a layout, not a `<table>`.
 
-## SSO button
+## Not present on the public surface
 
-Log in with Figma, Google, and Microsoft are 344 by 48, radius 8px, 1px `#e6e6e6`, white fill, 18px weight 700, label rgba(0, 0, 0, 0.3), padding 1px 16px 1px 70px. Hover computed `#f5f5f5`. They were not clicked.
+Icon button, text area, select, checkbox, radio, tooltip, dialog, toast, list row, avatar. The knowledge-center cards show staff avatars; they were not cropped as a component.
 
 ## Gaps
 
-Icon button, text area, select, checkbox, radio, menu, tooltip, dialog, toast, list row, avatar, and badge were not on the signed-out pages. Focus-visible did not match from a scripted focus. Pressed and disabled were not shown. Loading was not shown.
+- Focus rings computed to 0 px on the buttons that were focused. A visible focus style was not captured.
+- Pressed was read by holding the pointer down. It is one frame, not a CSS `:active` rule.
+- The signed-in editor, including its light mode, was not reached. See [site-tree.md](site-tree.md).

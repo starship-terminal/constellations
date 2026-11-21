@@ -1,45 +1,88 @@
-# Patterns
+# Zellerfeld patterns
 
-How the public pages are built. Screenshots are in [screenshots/](screenshots/).
+Public storefront only, captured 2026-11-21. The map of which control opens
+which page is [site-tree.md](site-tree.md).
 
-## Store shell
+## Shell
 
-Every store page shares one chrome. A 40px announcement strip sits above a black header. The header holds a 36px menu button, the wordmark, a home icon, a search field, an outline CREATE link, and a ghost SIGN IN button. At 390 the search field is not in the header. CREATE stays.
+A black bar. Left: a grid icon that opens the navigation drawer. Center: the
+wordmark, a home mark, and a search field. Right: Create (ember outline) and
+Sign in. On a phone the same jobs move to a bottom bar: Home, and a Menu
+button that opens a full-screen drawer with search at the top.
 
-[home-dark-default.png](screenshots/home-dark-default.png) shows the desktop shell. [home-dark-mobile.png](screenshots/home-dark-mobile.png) shows 390.
+![Home](screenshots/home-light-default.png)
 
-The menu opens a list of Phonic uppercase links: Careers, Open Letter, Gift cards, Customer reviews, Privacy, Help, Contact, Newsletter. [home-dark-nav-open.png](screenshots/home-dark-nav-open.png).
+![Phone home](screenshots/mobile-home-light-default.png)
 
-The footer repeats those links under "Company" and ends with "Shipping worldwide" in the display face. [home-dark-footer.png](screenshots/home-dark-footer.png).
+## Navigation
 
-## Home feed
+The drawer is a left sheet on desktop and a full screen on the phone. Shoes
+are Sneakers, Boots, Slides and Barefoot. Explore holds creator cards.
 
-The home page is a black storefront. A welcome line, a personalize sentence in Lateral, and a coral START ONBOARDING button sit over a blurred shoe. Below that, coral section bars name "Today's top shoes", "Selected for you", and "All time favourites". Ranked rows carry a number, a shoe image, a bold title, a muted creator name, colour dots, a price, and sometimes a sold-out badge.
+![Desktop nav](screenshots/home-light-nav.png)
 
-Onboarding was not continued. The button was measured at rest.
+![Phone nav](screenshots/mobile-home-light-nav.png)
+
+## Search
+
+Typing in the field (not submitted as a form) opens suggestions, a creator
+hit and a product grid on the same page. `/search?q=` is a 404.
+
+![Search](screenshots/home-light-search.png)
+
+## Catalogue
+
+A collection is a heading plus three sort chips (Trending, All time, New in)
+and a product grid. Cards carry a sold-out badge, a name, a creator and a price.
+
+![Sneakers](screenshots/sneakers-light-default.png)
+
+![Sneakers, New in](screenshots/sneakers-light-new-in.png)
 
 ## Product
 
-[product-dark-default.png](screenshots/product-dark-default.png) is `/products/pdf-bol-sneaker`. A large shoe image sits beside a 443px panel with a 12px radius. The panel holds the title, creator, price, colour tiles, a reviews outline button, a heart control, and a 56px BUY NOW. BUY NOW was not followed. No size was chosen and no card was entered.
+Gallery thumbs, colour links, a creator link, a reviews link, a wishlist
+heart and Buy now. Wishlist opens the sign-in dialog and stops. Buy now
+opens a Fit Profile dialog (usual size, then Proceed to payment). That
+dialog is a profile step. It was opened and closed. No size was chosen and
+payment was not started.
 
-## Content pages
+![Product](screenshots/product-light-default.png)
 
-FAQ, the open letter, shipping, how to scan, and careers share the shell and a large Lateral Zeller TM heading. FAQ questions are `details` rows. [faq-dark-open.png](screenshots/faq-dark-open.png) shows one answer open. [why-dark-default.png](screenshots/why-dark-default.png), [shipping-dark-default.png](screenshots/shipping-dark-default.png), and [scan-dark-default.png](screenshots/scan-dark-default.png) are the other content pages.
+![Fit dialog](screenshots/product-light-fit-dialog.png)
 
-## Lists
+## Content
 
-[creators-dark-default.png](screenshots/creators-dark-default.png) ranks creators. [reviews-dark-default.png](screenshots/reviews-dark-default.png) is the public wall of love. Reviewer names are published on that page. No review was written.
+FAQ questions are disclosures. Reviews are a public wall with Load more.
+Careers, the open letter, shipping, privacy, terms and privacy choices are
+long text pages. The newsletter page has an email field that was not filled
+and not submitted. A missing path renders "Hey, this is 404."
 
-## Forms that were not submitted
+![FAQ open](screenshots/faq-light-open.png)
 
-[newsletter-dark-default.png](screenshots/newsletter-dark-default.png) is an email field and a coral button. Nothing was typed or sent.
+![404](screenshots/notfound-light-default.png)
 
-[signin-dark-default.png](screenshots/signin-dark-default.png) is a light card on the black page: Google, an email field, Continue, Use phone, and Sign up. None of those were used. The phone control was not opened.
+## Onboarding and sign-in (walls)
 
-## Missing routes
+Start onboarding opens a welcome step with Let's go. Further steps ask for
+a profile. Stopped on the welcome. Sign in is a Clerk dialog: Continue with
+Google, email, phone, password, passkey, sign up. Not entered. Continue
+with Google was not clicked.
 
-`/collections/all` paints the same 404 as a made-up page: "Hey, this is 404." [notfound-dark-default.png](screenshots/notfound-dark-default.png).
+![Onboarding welcome](screenshots/onboarding-light-default.png)
 
-## Theme
+![Sign-in dialog](screenshots/home-light-signin.png)
 
-There is one painted theme. The page is black. Semantic tokens live on `.dark`. No light store theme was found.
+## Studio and help
+
+Create opens the public Studio landing (guest, not logged in). Log in on
+that host is a wall. The help center is a public Zendesk home. Its sign-in
+and request form were not used.
+
+![Studio](screenshots/studio-light-default.png)
+
+## Empty, loading, error, confirmation
+
+The styled 404 is the error page. Sold-out badges are the empty-purchase
+state on a product card. No toast, no destructive confirmation, and no
+validation error: no form was submitted. Loading was not held.

@@ -1,189 +1,118 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Buy Me a Coffee style guide</title>
-<meta name="description" content="Buy Me a Coffee design tokens and the public marketing plus creator-page surfaces' components, rendered from tokens.json with the declared and measured values.">
+<meta name="description" content="Buy Me a Coffee public-site tokens and components, rendered from tokens.json.">
 <style>
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: "Circular Book", "Circular Regular", "Circular Medium", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "Circular Bold", "Circular Black", "Borel Regular", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-sans: "Circular", ui-sans-serif, system-ui, sans-serif;
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
-[data-mode="dark"], .dark {
-/*DARK*/
-}
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #222); background: var(--surface-page, #faf8f0); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #222); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-divider, #e5e5e5); }
-.lead { max-width: 62ch; color: var(--color-neutral-ink, #222); opacity: .8; }
-.note { font-size: 13px; color: var(--color-neutral-ink, #222); opacity: .65; max-width: 62ch; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #222); background: var(--color-page, #faf8f0); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 400 48px/1.05 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.02em; }
+h2 { font: 400 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted, #777); margin: 48px 0 12px; }
+p.lead { max-width: 62ch; color: var(--color-muted, #777); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(34,34,34,.12); display: block; }
+.sw b { font: 500 12px/1.3 var(--sg-mono); display: block; }
+.sw span { font: 400 11px/1.3 var(--sg-mono); color: var(--color-muted, #777); }
+.mock { background: var(--color-surface, #fff); border-radius: 16px; overflow: hidden; border: 1px solid rgba(34,34,34,.08); }
+.bar { display: flex; align-items: center; gap: 16px; height: 76px; padding: 0 24px; background: #fff; font-size: 16px; }
+.bar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 18px; border-radius: 9999px; background: var(--color-accent, #ffdd00); color: var(--color-text, #222); font-size: 16px; border: 0; }
+.hero { padding: 64px 40px 48px; background: var(--color-page, #faf8f0); }
+.hero h3 { margin: 0; font: 400 64px/0.98 var(--sg-sans); letter-spacing: -0.025em; max-width: 12ch; }
+.hero p { color: var(--color-muted, #777); max-width: 42ch; }
+.card { margin: 16px; padding: 24px; background: #fff; border-radius: 36px; box-shadow: 0 8px 24px rgba(0,0,0,.08); max-width: 360px; }
+.field { height: 48px; border-radius: 12px; border: 1px solid rgba(34,34,34,.1); padding: 0 14px; display: flex; align-items: center; color: #777; background: rgba(0,0,0,.03); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(34,34,34,.08); }
+th { color: #777; font-weight: 500; }
 code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #222); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-divider, #e5e5e5); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #222); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-divider, #e5e5e5); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--color-neutral-ink, #222); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--color-neutral-divider, #e5e5e5); overflow: hidden; background: var(--surface-page, #faf8f0); }
-.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 12px 0 22px; font-size: 15px; background: #fff; }
-.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 48px); padding: 0 24px; font-size: 16px; font-weight: 400; border-radius: var(--radius-pill, 9999px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-primary, #fd0); color: var(--text-on-action, #222); }
-.btn.accent { background: var(--action-accent, #ff813f); color: var(--text-on-accent, #fff); }
-.btn.small { height: var(--component-button-height, 48px); font-size: 15px; }
-.hero { color: var(--color-neutral-ink, #222); padding: 72px 40px; font: 400 60px/1 var(--sg-serif); letter-spacing: -0.03em; text-align: center; }
-.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #222); margin: 16px auto 22px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--color-neutral-divider, #e5e5e5); padding: 14px; font-size: 13px; background: #fff; }
-.tile .img { height: 140px; background: var(--color-neutral-field, #f0f0f0); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
-.widget { border-radius: var(--radius-card, 24px); background: #fff; padding: 24px; border: 1px solid var(--color-neutral-divider, #e5e5e5); }
-.widget .qty { display: inline-flex; width: 48px; height: 48px; border-radius: var(--radius-pill, 9999px); border: 1px solid var(--color-theme-accent-25, rgba(255,129,63,.25)); align-items: center; justify-content: center; margin-right: 8px; color: var(--color-theme-accent, #ff813f); }
-.widget .qty.on { background: var(--color-theme-accent, #ff813f); color: var(--text-on-accent, #fff); }
-.widget .field { display: block; width: 100%; height: 48px; border-radius: var(--radius-field, 12px); background: var(--color-neutral-field, #f0f0f0); border: none; margin: 10px 0; padding: 12px 16px; font: inherit; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-divider, #e5e5e5); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-divider, #e5e5e5); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #222); opacity: .65; font-family: var(--sg-mono); }
-.qty-row { display: flex; gap: 8px; align-items: center; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Buy Me a Coffee style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+  <h1>Buy Me a Coffee</h1>
+  <p class="lead">Public marketing site, measured 2026-11-21, signed out. One light theme. Yellow <code>#ffdd00</code> on floral white <code>#faf8f0</code>, ink <code>#222222</code>, Circular. Circular is not shipped here, so this page falls back to the system sans.</p>
 
-  <h2 class="sh">Buy Me a Coffee, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the measured palette (#222 ink on the #faf8f0 cream marketing field and the white creator/login fields, the #f0f0f0 input fills, the #ffdd00 yellow pill paint and its #ffc800 hover), the per-creator <code>color.theme.*</code> accent set (#ff813f and its tints, declared inline as <code>--theme-color*</code>), the Circular ramp from the 96px display to the 15px tab, the 9999px pills, 40px button paint, 12-24px fields and cards, and the #2563eb focus ring the Vite app draws. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from buymeacoffee.com on 2026-11-11, signed out, in headless Chromium. The dashboard behind /login, the Stripe checkout behind Support, and the password step behind Continue-with-email are documented boundaries; the CookieYes banner was hidden, never answered. Circular and Borel are served faces and are not loaded here: samples fall back to system sans.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
 
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">A white header carries the wordmark, the FAQ and Wall-of-love links, the Apps and Resources dropdowns, the fake Search-creators pill, Log-in and the yellow Sign-up pill. The same yellow paint draws the hero's Start-my-page pill; the cream field runs under every marketing page and a drop-up footer closes them.</p>
-  <div class="mock" style="padding:20px">
-    <div class="navbar"><span class="wm">Buy me a coffee</span><span>FAQ</span><span>Wall of &#10084;</span><span>Apps</span><span>Resources</span><span class="sp"></span><span>Log in</span><span class="btn small primary">Sign up</span></div>
-    <div class="hero">Fund your creative work<small>Accept support. Start a membership. Setup a shop. It's easier than you think.</small><span class="btn primary">Start my page</span></div>
-  </div>
+  <h2>Type</h2>
+  <div id="type"></div>
 
-  <h2 class="sh">The creator page</h2>
-  <p class="lead">A public creator page (/cara.app) paints the product surface signed out: a sticky white bar with tabs, an About box, and the support widget — quantity pills, a custom-amount field, name and message fields on #f0f0f0, the monthly and private checkboxes, and the accent Support pill. Every accent on this page repaints to the creator's <code>--theme-color</code>.</p>
-  <div class="mock" style="padding:20px;background:#fff">
-    <div class="widget" style="max-width:420px">
-      <b style="font:400 20px/1.3 var(--sg-serif)">Buy Cara a coffee</b>
-      <div class="qty-row" style="margin:14px 0"><span class="qty on">1</span><span class="qty">3</span><span class="qty">5</span></div>
-      <span class="field" style="display:flex;align-items:center;color:#999">Name or @yoursocial</span>
-      <span class="field" style="height:80px;color:#999">Say something nice...</span>
-      <div style="margin:14px 0"><span class="btn accent" style="width:100%">Support $5</span></div>
+  <h2>Components</h2>
+  <div class="mock">
+    <div class="bar">
+      <span>FAQ</span><span>Wall of love</span><span>Apps</span><span>Resources</span>
+      <span class="sp"></span>
+      <span>Log in</span>
+      <span class="btn">Sign up</span>
+    </div>
+    <div class="hero">
+      <h3>Fund your creative work</h3>
+      <p>Accept support. Start a membership. Set up a shop.</p>
+      <span class="btn">Start my page</span>
     </div>
   </div>
-
-  <h2 class="sh">The login card</h2>
-  <p class="lead">/login centres a Welcome-back card: grey 12px fields (white + accent/ink border on focus), the yellow Continue-with-email pill, an or-login-with divider and the bordered social buttons.</p>
-  <div class="mock" style="padding:20px;background:#fff;max-width:480px">
-    <b style="font:400 20px/1.3 var(--sg-serif)">Welcome back</b>
-    <span class="field" style="display:flex;align-items:center;margin-top:14px;color:#999">Email</span>
-    <span class="field" style="display:flex;align-items:center;color:#999">Password</span>
-    <div style="margin:12px 0"><span class="btn primary" style="width:100%">Continue with email</span></div>
-    <div style="text-align:center;font-size:13px;opacity:.6">or login with</div>
-    <div style="margin-top:12px"><span class="btn" style="width:100%;background:#fff;border:1px solid var(--color-neutral-divider,#e5e5e5);color:var(--color-neutral-ink,#222)">Continue with Google</span></div>
+  <div class="card">
+    <strong>Support</strong>
+    <p>Quantity radios, a name field, a message. The payment button is not part of this guide's action.</p>
+    <div class="field">Name or @yoursocial</div>
   </div>
 
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The measured <code>color.neutral.*</code> readings carry the ink, cream, fields and hairlines; <code>color.brand.*</code> the yellow paint; <code>color.theme.*</code> the per-creator accent scale declared inline on the page root; <code>color.focus.*</code> the two focus paints. Light roles alias the palette.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">Buttons and quantity pills are 9999px pills; the marketing bmc-btn's paint layer is a 40px pill; fields and dropdowns sit on 12px, cards on 24px, creator tiles on 16px, menu rows on 10px, tabs on 8px and the checkboxes on 6px. Borders are hairlines: #e5e5e5 on light, theme-25% on the accent pills.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Five served faces: <code>Circular Bold</code> on display type and buttons, <code>Circular Regular</code> on body copy, <code>Circular Medium</code> on nav and labels, <code>Circular Book</code> on the app's fields, and <code>Borel Regular</code> as the script display accent. Sizes are the measured steps; samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles and painted layers on the live elements; the inline --theme-color* vars harvested from the DOM</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused/filled fields and open menus measured per component</td></tr><tr><td>No provenance</td><td>Every token names the variable or the measurement it came from</td></tr></table>
+  <h2>Radius and spacing</h2>
+  <table id="geom"></table>
 </main>
 <script>
-const TOK = /*TOKENS*/null;
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    h += `<div class="pal-h">${label}</div><div class="pal">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).letterSpacing || {}, 'font.letterSpacing.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Letter spacing</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
+const tokens = /*TOKENS*/null;
+function flat(node, prefix, out) {
+  out = out || [];
+  Object.keys(node || {}).forEach(function (k) {
+    if (k.charAt(0) === '$') return;
+    const v = node[k];
+    const path = prefix ? prefix + '.' + k : k;
+    if (v && v.v !== undefined) out.push([path, v]);
+    else if (v && typeof v === 'object') flat(v, path, out);
+  });
+  return out;
+}
+const sw = document.getElementById('swatches');
+flat(tokens.core.color).concat(flat(tokens.light.color)).forEach(function (row) {
+  const path = row[0], t = row[1];
+  if (t.t !== 'color') return;
+  const val = String(t.v);
+  if (val.charAt(0) === '{') return;
+  const el = document.createElement('div');
+  el.className = 'sw';
+  el.innerHTML = '<i style="background:' + val + '"></i><div><b>' + path + '</b><span>' + val + '</span></div>';
+  sw.appendChild(el);
+});
+const type = document.getElementById('type');
+flat(tokens.core.typography).forEach(function (row) {
+  const v = row[1].v;
+  const p = document.createElement('p');
+  p.style.fontSize = v.fontSize;
+  p.style.lineHeight = v.lineHeight;
+  p.style.letterSpacing = v.letterSpacing;
+  p.style.margin = '8px 0';
+  p.textContent = row[0] + ' ' + v.fontSize;
+  type.appendChild(p);
+});
+const geom = document.getElementById('geom');
+flat(tokens.core.radius).concat(flat(tokens.core.spacing)).forEach(function (row) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = '<td><code>' + row[0] + '</code></td><td>' + row[1].v + '</td>';
+  geom.appendChild(tr);
+});
 </script>
 </body>
 </html>

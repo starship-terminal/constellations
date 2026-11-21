@@ -1,49 +1,86 @@
-# Components
+# SoundCloud components
 
-Signed-out controls measured on soundcloud.com and secure.soundcloud.com/web-auth on 2026-11-19. Crops are 256-colour.
+Public pages only, captured 2026-11-21. Crops are cut from the screenshots. Values are token names. A state that was not on screen is Not captured.
 
 ## Button
 
-Hero Sign in is a 36px pill, white `#ffffff` with black type, padding `0 18px`, radius `9999px`, Söhne 14/600. See [hero-signin-default.png](components/crops/hero-signin-default.png).
+Desktop header. Create account is a white pill, 32px tall, radius 9999px, label 14px weight 600. Sign in is the same size with no fill.
 
-Hero Create account is the same height, black `#000000` with white type, width about 135px. See [hero-create-default.png](components/crops/hero-create-default.png).
+| State | Crop | Tokens |
+|---|---|---|
+| Default | [button-create-default.png](components/crops/button-create-default.png) | `dark.component.button.bg`, `dark.component.button.text`, `core.radius.pill`, `core.size.button` |
+| Hover | [button-create-hover.png](components/crops/button-create-hover.png) | Label fades to 40%. Fill does not change. Not a separate colour token. |
+| Focus | [button-create-focus.png](components/crops/button-create-focus.png) | `dark.color.focus` as a 2px inset ring |
+| Sign in | [button-signin-default.png](components/crops/button-signin-default.png) | Text `dark.color.text` on `dark.color.page` |
+| Sign in hover | [button-signin-hover.png](components/crops/button-signin-hover.png) | Label fades to 40% white |
+| Follow | [button-follow-default.png](components/crops/button-follow-default.png) | White pill on the profile. Same family as Create account. |
+| Phone | [button-listen-in-app.png](components/crops/button-listen-in-app.png) | `light.component.button.*`, radius 4px, height 40px |
 
-Get started is 32px tall, fill `#f3f3f3`, ink `#121212`, 17px/600, letter-spacing 0.2px, padding `0 24px`. See [hero-get-started-default.png](components/crops/hero-get-started-default.png).
+Pressed, disabled, and loading were not captured.
 
-The app header also computes a 32px Sign in (fill `#121212`, white type) and a white Create account. That header has `overflow: hidden` and height 0 on the marketing home, so those buttons are not painted there.
+## Icon button
 
-Phone Sign in is 40px, radius 4px, transparent, ink `#121212`. Listen in app and Create a free account are `#121212` with white type, radius 4px, heights 40px and 48px.
-
-Hover on the header pills did not change background, colour, or opacity. The transition is opacity over 200ms linear. A painted hover state was not observed.
+The header more control is three dots. [icon-button-more-default.png](components/crops/icon-button-more-default.png). Size was not measured as its own token.
 
 ## Link
 
-Learn More and the play button use `#699fff`. Footer links use `#999999` at 14/400. Terms of Use on the light auth tab uses `#044dd2`. Focus on the logo link computed `outline: dotted 1px`.
+Player links are `dark.color.link` (#699fff). Learn More in the banner is one. Help Center uses orange for the inline "here" link. Checkout uses `light.color.link` (#044dd2).
 
 ## Text field
 
-Header search is 36px, fill `#303030`, radius 3px, padding `8px 40px 8px 16px`, white type, 14/400. Focus sets the border to `1px solid rgba(153, 153, 153, 0.686)`.
+Desktop search: [text-field-search-default.png](components/crops/text-field-search-default.png), focused [text-field-search-focus.png](components/crops/text-field-search-focus.png). 440 by 36, radius 3px, fill `dark.color.surface`, caret `core.color.orange`. Focus border is a translucent grey, not tokenised.
 
-Auth email is a 54px field, radius 4px. Dark iframe fill is `#303030`. Light standalone tab fill is `#f3f3f3`, and focus draws a `#666666` border. Placeholder: "Your email address or profile URL". Error and disabled were not shown. The form was not submitted.
+Phone search: [text-field-search-mobile.png](components/crops/text-field-search-mobile.png). The fill in `light.component.field.bg` is Sampled.
 
-## OAuth button
+## Text area, select, checkbox, radio, switch
 
-Continue with Facebook, Google, and Apple are 48px, radius 100px, 16/600, letter-spacing 0.16px. Dark iframe: transparent fill, border `1px solid rgba(255, 255, 255, 0.16)`, white type. Light tab: the same border at `rgba(18, 18, 18, 0.16)` and ink `#121212`.
+Not present on the public pages opened.
 
-Continue is the primary. Dark iframe: white fill, ink `#121212`, opacity 0.5 while disabled. Light tab: `#121212` fill, white type, opacity 0.5 while disabled. It was not clicked.
+## Tabs
+
+Search filters: [tabs-search-default.png](components/crops/tabs-search-default.png) and [tabs-search-tracks-filters.png](components/crops/tabs-search-tracks-filters.png). The selected tab is a white pill. Profile uses a text tab with an underline (All, Popular tracks, Tracks, Albums, Playlists, Reposts) in [profile-dark-default.png](screenshots/profile-dark-default.png).
+
+Phone tabs are a text row with an underline, in [mobile-search-light-results.png](screenshots/mobile-search-light-results.png).
+
+## Menu
+
+Settings and more: [menu-settings-open.png](components/crops/menu-settings-open.png). Track more: [menu-track-more.png](components/crops/menu-track-more.png). Items are Add to Next up, Add to Playlist, Station. A share menu is in [share-menu-dark-open.png](screenshots/share-menu-dark-open.png).
+
+## Tooltip
+
+Not captured. No tooltip was held.
 
 ## Dialog
 
-Sign in opens `.auth-modal` over `rgba(255, 255, 255, 0.4)`. The sheet is `.modal__modal`, 450px wide, radius 4px, padding 16px. The form lives in an iframe from secure.soundcloud.com. Close is a 32px circle, fill `#303030`, white type. See [auth-card-default.png](components/crops/auth-card-default.png).
+Keyboard shortcuts: [dialog-shortcuts-open.png](components/crops/dialog-shortcuts-open.png). Language: [dialog-language-open.png](components/crops/dialog-language-open.png). Sign-in wall: [dialog-signin-wall.png](components/crops/dialog-signin-wall.png). The wall is an iframe. Its inner colours were not read. Facebook, Google, and Apple were not clicked.
+
+## Toast
+
+Not present.
 
 ## Card
 
-The home hero is 1240 by 450px at 1440, radius 16px. Contact inquiry cards are 608px wide, radius 20px. Press is `#e76b9f`. Advertising is `#ab87e2`. Help Center's own fill was transparent in the reading. Those cards are the company site, not the listener chrome.
+Playlist tile: [card-playlist.png](components/crops/card-playlist.png). Help topic: [card-help-topic.png](components/crops/card-help-topic.png). Plan card: [card-plan.png](components/crops/card-plan.png).
 
-## Play button
+## List row
 
-`.playButton` is a 64px circle, white fill, icon `#699fff`. The progress bar is 2px, `#ff5500`. The player bar is 48px. Playback was not started.
+A playing search row: [list-row-playing.png](components/crops/list-row-playing.png). Artwork, title, waveform, counts.
+
+## Table
+
+Not present.
+
+## Avatar
+
+Profile avatar sits on the banner in [profile-dark-default.png](screenshots/profile-dark-default.png). A verified mark is a blue check. The blue was not read as its own token.
+
+## Badge
+
+Genre tags such as # Dance & EDM are small grey pills on search rows. Their fill was not measured separately.
 
 ## Gaps
 
-Text area, select, checkbox, radio, switch, tabs, menu, tooltip, toast, table, avatar, and badge were not present on the pages that loaded, or they sit behind an account. No validation error was shown. No paid plan was opened. No email was submitted.
+- Pressed, disabled, loading, error, toast, table, checkbox, radio, switch, text area, select, tooltip: not captured or not present.
+- Sign-in iframe colours: Not captured. The iframe is cross-origin.
+- Phone search fill: Sampled.
+- Icons are not extracted. The logo and waveform are SoundCloud artwork ([docs/RIGHTS.md](../../docs/RIGHTS.md)).

@@ -1,363 +1,92 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fernand style guide</title>
-<meta name="description" content="Fernand design tokens and the public marketing, app and docs surfaces' components, rendered from tokens.json with the declared and measured values.">
 <style>
 :root {
-  --font-family-inter: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-display: 400;
-  --font-size-hero: 38px;
-  --font-size-lede: 17px;
-  --font-size-quote: 22px;
-  --font-size-body: 18px;
-  --font-size-button: 14px;
-  --font-size-eyebrow: 13px;
-  --font-size-mobileHero: 26px;
-  --font-lineHeight-hero: 1.2632;
-  --font-lineHeight-body: 1.65;
-  --font-lineHeight-quote: 1.55;
-  --black: #131e40;
-  --blue-default: #00a0ff;
-  --blue-pale: #e8f5ff;
-  --border-default: #eaecf8;
-  --border-strong: #e4e6eb;
-  --green-default: #2dbd33;
-  --green-dark: #33c27f;
-  --green-pale: #edf8eb;
-  --grey-default: #9fa3b5;
-  --grey-light: #f4f5f7;
-  --grey-medium: #717583;
-  --grey-strong: #3d4259;
-  --orange-default: #fb8c3b;
-  --orange-pale: #fffaf1;
-  --red-default: #dc2626;
-  --red-pale: #fee2e2;
-  --white: #ffffff;
+  --color-white: #ffffff;
+  --color-grey: #9fa3b5;
+  --color-grey-light: #f4f5f7;
+  --color-grey-medium: #717583;
+  --color-grey-strong: #3d4259;
+  --color-black: #131e40;
+  --color-blue: #00a0ff;
+  --color-blue-pale: #e8f5ff;
+  --color-orange: #fb8c3b;
+  --color-red: #dc2626;
+  --color-red-pale: #fee2e2;
+  --color-green: #2dbd33;
+  --color-green-dark: #33c27f;
+  --color-border: #eaecf8;
+  --color-border-strong: #e4e6eb;
+  --font-family-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --radius-control: 6px;
-  --radius-button: 8px;
-  --radius-card: 10px;
-  --radius-panel: 16px;
-  --radius-pill: 40px;
-  --radius-field: 4px;
-  --radius-bubble: 100%;
-  --motion-control: all 0.75s cubic-bezier(0.19, 1, 0.22, 1);
-  --component-topbar-height: 71.5px;
-  --component-hero-cta-height: 49px;
-  --component-nav-cta-height: 30px;
-  --component-hero-width: 1290px;
-  --component-channel-card-width: 300px;
-  --component-pricing-card-width: 636px;
-  --component-tag-height: 28px;
-  --component-launcher-size: 48px;
-  --component-ai-menu-width: 332px;
-  --component-help-search-width: 480px;
-  --component-help-card-width: 310px;
-  --component-mobile-topbar-height: 71.5px;
-  --component-app-login-h1-size: 25px;
-  --component-app-field-height: 46px;
-  --component-app-field-width: 350px;
-  --component-app-submit-height: 46px;
-  --component-app-create-panel-width: 720px;
-  --text-ink: #1a2035;
-  --text-muted: var(--grey-medium);
-  --text-link: #6f7b96;
-  --action-cta-fill: #1a2035;
-  --action-cta-ink: var(--white);
-  --surface-card: #f7fafc;
-  --border-focus-ring: #161616;
-  --background-page: var(--white);
-  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
-}
-.help {
-  --surface-card: rgba(0, 0, 0, 0);
-  --surface-field-bg: #ffffff;
-  --text-ink: #131e40;
-}
-.app {
-  --black: #131e40;
-  --blue-default: #00a0ff;
-  --blue-pale: #e8f5ff;
-  --border-default: #eaecf8;
-  --border-strong: #e4e6eb;
-  --green-default: #2dbd33;
-  --green-dark: #33c27f;
-  --green-pale: #edf8eb;
-  --grey-default: #e6e9eb;
-  --grey-light: #f7fafc;
-  --grey-medium: #5e6271;
-  --grey-strong: #9fa3b5;
-  --orange-default: #fb8c3b;
-  --orange-pale: #fffaf1;
-  --red-default: #dc2626;
-  --red-pale: #fee2e2;
-  --viewport-height: 900px;
-  --white: #ffffff;
-  --text-ink: var(--black);
-  --text-field-ink: var(--black);
-  --surface-field-bg: var(--white);
-  --action-primary-fill: var(--blue-default);
-  --action-primary-ink: var(--white);
-}
-[data-mode="dark"], .dark {
-  --black: #f7f8f8;
-  --blue-default: #00a0ff;
-  --blue-pale: #2d2f36;
-  --border-default: rgba(255, 255, 255, 0.1);
-  --border-strong: #44474e;
-  --green-default: #2dbd33;
-  --green-pale: #253023;
-  --grey-default: #e6e9eb;
-  --grey-light: #18181b;
-  --grey-medium: #8a8f98;
-  --grey-strong: #8a8f98;
-  --orange-default: #fb8c3b;
-  --orange-pale: #201a12;
-  --red-default: #dc2626;
-  --red-pale: #fee2e2;
-  --white: #161618;
-  --background-page: var(--white);
-  --text-ink: #ffffff;
-  --text-muted: #a1a1aa;
-  --text-link: var(--blue-default);
-  --surface-card: rgba(0, 0, 0, 0);
-  --surface-raised: #232326;
+  --space-control-pad-y: 8px;
+  --space-control-pad-x: 12px;
+  --page: #ffffff;
+  --surface: var(--color-grey-light);
+  --text: #1a2035;
+  --muted: #6f7b96;
+  --accent: var(--color-blue);
+  --border: var(--color-border);
+  --ink: var(--color-black);
+  --on-accent: var(--color-white);
+  --success: var(--color-green);
+  --warning: var(--color-orange);
+  --danger: var(--color-red);
+  --focus: #3b84d8;
+  --component-button-height: 30px;
+  --component-button-radius: var(--radius-control);
+  --component-button-font-size: 14px;
+  --component-hero-size: 38px;
+  --component-hero-line: 48px;
+  color-scheme: light;
+  --sg-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--black, #131e40); background: var(--white, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 600 38px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--black, #131e40); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #eaecf8); }
-.lead { max-width: 62ch; color: var(--black, #131e40); opacity: .8; }
-.note { font-size: 13px; color: var(--black, #131e40); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--black, #131e40); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-/* A non-light strip's values only read on its own field: the dark-role names
-   and value labels resolve to near-white inks, invisible on the white page. */
-.pal.dark { background: var(--background-page, #161618); color: var(--text-ink, #f7f8f8); padding: 12px; border-radius: 10px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-strong, #e4e6eb); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--black, #131e40); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-default, #eaecf8); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--black, #131e40); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--border-default, #eaecf8); overflow: hidden; background: var(--white, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 60px); padding: 0 12px 0 22px; font-size: 15px; color: var(--black, #131e40); background: var(--white, #fff); box-shadow: var(--border-default, #eaecf8) 0 1px 0 0; }
-.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-hero-cta-height, 40px); padding: 0 14px; font-size: var(--font-size-button, 15px); font-weight: 500; border-radius: var(--radius-button, 8px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-cta-fill, #1a2035); color: var(--action-cta-ink, #fff); }
-/* The other primary-looking actions measure the #00a0ff blue, not the hero's
-   near-black: the header Start-for-free and the docs dark toggle use the
-   palette's --blue-default, the app submit its own --action-primary-fill. */
-.btn.accent { background: var(--blue-default, #00a0ff); color: var(--action-cta-ink, #fff); }
-.app .btn.primary { background: var(--action-primary-fill, var(--blue-default, #00a0ff)); color: var(--action-primary-ink, #fff); }
-.btn.ghost { border-color: var(--border-strong, #e4e6eb); color: var(--black, #131e40); }
-.btn.small { height: var(--component-nav-cta-height, 32px); border-radius: var(--radius-control, 6px); font-size: 13px; font-weight: 500; }
-.hero { color: var(--black, #131e40); padding: 72px 40px; font: var(--font-weight-display, 400) var(--font-size-hero, 38px)/1.15 var(--sg-serif); letter-spacing: -0.02em; text-align: left; background: var(--white, #fff); }
-.hero small { display: block; font: 400 var(--font-size-lede, 17px)/1.55 var(--sg-sans); color: var(--text-muted, #717583); margin: 16px 0 22px; max-width: 46ch; }
-.tag { display: inline-block; padding: 4px 14px; border-radius: var(--radius-pill, 40px); background: var(--white, #fff); border: 1px solid var(--border-default, #eaecf8); font-size: var(--font-size-eyebrow, 12px); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--grey-medium, #717583); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--border-default, #eaecf8); padding: 24px; font-size: 13px; background: var(--surface-card, #f7fafc); border-radius: var(--radius-card, 10px); }
-.tile .img { height: 140px; background: var(--grey-light, #f7fafc); border: 1px solid var(--border-default, #eaecf8); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--grey-medium, #717583); }
-.tile b { display: block; font: 600 18px/1.25 var(--sg-serif); margin-bottom: 4px; color: var(--black, #131e40); }
-.tile .sub { opacity: .65; font-size: 12px; color: var(--grey-medium, #717583); }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--border-default, #eaecf8); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #eaecf8); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--black, #131e40); opacity: .65; font-family: var(--sg-mono); }
-.field { width: var(--component-app-field-width, 320px); height: var(--component-app-field-height, 42px); border: 1px solid var(--border-strong, #e4e6eb); border-radius: var(--radius-field, 6px); background: var(--surface-field-bg, #fff); color: var(--text-field-ink, #3d4259); padding: 0 12px; font-size: 14px; }
-.field::placeholder { color: var(--grey-default, #9fa3b5); }
-.launcher { width: var(--component-launcher-size, 48px); height: var(--component-launcher-size, 48px); border-radius: var(--radius-bubble, 50%); background: var(--action-cta-fill, #1a2035); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-weight: 600; }
-.theme-toggle { position: fixed; top: 18px; right: 18px; z-index: 50; display: inline-flex; gap: 0; border: 1px solid var(--border-strong, #e4e6eb); border-radius: 40px; background: var(--white, #fff); overflow: hidden; font: 500 12px/1 var(--sg-sans); }
-.theme-toggle button { border: 0; background: transparent; padding: 8px 14px; font: inherit; color: inherit; cursor: pointer; }
-.theme-toggle button.on { background: var(--action-cta-fill, #1a2035); color: var(--action-cta-ink, #fff); }
-body.dark { background: var(--background-page, #191c24); color: var(--text-ink, #f5f5f7); }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/22px var(--sg-sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-weight: 400; font-size: 32px; line-height: 40px; margin: 0 0 8px; }
+h2 { font-size: 18px; font-weight: 500; margin: 32px 0 12px; }
+p.lede { color: var(--muted); max-width: 62ch; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border); border-radius: var(--radius-control); overflow: hidden; }
+.sw i { display: block; height: 56px; }
+.sw span { display: block; padding: 8px 10px; font-size: 12px; color: var(--ink); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+a.btn { display: inline-block; background: var(--accent); color: var(--on-accent); text-decoration: none; border-radius: var(--button-radius); padding: 8px 12px; font-size: 14px; font-weight: 500; line-height: 14px; }
+a.quiet { display: inline-block; background: var(--page); color: var(--muted); text-decoration: none; border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 500; box-shadow: 0 0 0 1px rgba(18, 55, 105, 0.08); }
+.hero { font-size: var(--hero-size); line-height: var(--hero-line); font-weight: 400; color: var(--text); max-width: 16ch; }
 </style>
 </head>
 <body>
-<div class="theme-toggle"><button id="tt-light" class="on">Light</button><button id="tt-dark">Dark</button></div>
-<main>
-  <h1>Fernand style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">Fernand, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the flat <code>--white</code>/<code>--grey*</code>/<code>--black</code>/<code>--blue*</code>/<code>--orange*</code>/<code>--red*</code>/<code>--green*</code>/<code>--border*</code> palette the three public hosts declare on <code>:root</code>, the docs site's <code>body.dark-mode</code> remap behind its real "Switch to dark mode" link, the SPA's own palette resolution and <code>--viewport-height</code>, self-hosted Inter (300–700 + italics), the measured type ramp, the 6–16px radii plus the 40px eyebrow pills, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from getfernand.com, app.getfernand.com and help.getfernand.com, signed out, in headless Chromium. Everything post-login is a documented boundary; the login/signup forms were measured, never submitted; "Book a demo" is a Cal.com scheduler, never activated. Inter is a served face and is not loaded here: samples fall back to system sans.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">The fixed header pairs the wordmark with About us / Pricing / Log in links, the Cal.com "Book a demo" action and the "Start for free" button. The hero runs a 38px/400 masthead with a dated changelog eyebrow pill and a near-black 8px-radius CTA; sections are labelled by the white 40px-radius tag pills.</p>
-  <div class="mock" style="padding:0">
-    <div class="navbar"><span class="wm">Fernand</span><span>About us</span><span>Pricing</span><span class="sp"></span><span>Log in</span><span class="btn small ghost">Book a demo</span><span class="btn small accent">Start for free</span></div>
-    <div class="hero"><span class="tag">Oct. 27 — Dodo Payments integration</span><br><br>The free customer support<br>platform for SaaS teams<small>Respond on every channel, resolve with AI, and keep humans for the conversations that matter.</small><span class="btn primary">Start for free</span> <span class="btn ghost">Watch a 2 minute demo</span></div>
-  </div>
-
-  <h2 class="sh">Cards and the widget</h2>
-  <p class="lead">Channel and feature cards sit on the <code>--grey-light</code> #f7fafc field inside 10px radii; pricing cards step up to 16px on white with layered shadows. The product's own chat widget launcher is the 48px dark bubble fixed at the page corner.</p>
-  <div class="mock" style="padding:20px">
-    <div class="grid">
-      <div class="tile"><div class="img">channel</div><b>Email</b><span class="sub">Consolidate all your support channels in one workspace.</span></div>
-      <div class="tile" style="background:var(--white,#fff);border-radius:var(--radius-panel,16px)"><b>FREE</b><span class="sub">$0 — the free plan card.</span></div>
-    </div>
-    <div style="margin-top:18px;text-align:right"><span class="launcher">F</span></div>
-  </div>
-
-  <h2 class="sh">The app surface</h2>
-  <p class="lead">app.getfernand.com declares the same palette names with its own grey family (<code>--grey</code> #e6e9eb, <code>--grey-medium</code> #5e6271, <code>--grey-strong</code> #9fa3b5) plus <code>--viewport-height</code> and scoped sidebar overrides; the signed-out login and signup forms paint it. The swatches in this scope carry the app set.</p>
-  <div class="mock app" style="padding:24px;max-width:420px">
-    <b style="font-size:25px;font-weight:600">Welcome back</b>
-    <p class="sub" style="color:var(--grey-strong,#9fa3b5);font-size:14px;margin:4px 0 16px">Log in to your Fernand workspace</p>
-    <input class="field" placeholder="Your work email"><br><br>
-    <input class="field" placeholder="Your password"><br><br>
-    <span class="btn primary">Login</span>
-  </div>
-
-  <h2 class="sh">The docs dark surface</h2>
-  <p class="lead">help.getfernand.com ships a real "Switch to dark mode" link that sets <code>body.dark-mode</code> and persists it — the dark set resolves the palette under that class on the docs shell, which is what the swatches below paint.</p>
-  <div class="mock dark" style="padding:20px;background:var(--background-page,#191c24);color:var(--text-ink,#f5f5f7)">
-    <div class="grid">
-      <div class="tile" style="background:var(--surface-card,#1e222b);border:1px solid var(--border-default,#2a2e38);color:var(--text-ink,#f5f5f7)"><b style="color:var(--text-ink,#f5f5f7)">Getting started</b><span class="sub" style="color:var(--text-muted,#9fa3b5)">A docs collection card under dark-mode.</span></div>
-    </div>
-    <div style="margin-top:18px"><span class="btn accent">Switch to dark mode</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The declared palette runs the white/grey-light/grey/grey-medium/grey-strong/black grey ramp with the blue #00a0ff action accent and orange/red/green status family; the app re-resolves the grey family a step lighter, and the docs dark mode remaps the whole ramp. Measured roles alias the declared values they match.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing, radius and motion</h2>
-  <p class="lead">Radii climb 6px (header controls) → 8px (buttons, fields) → 10px (cards) → 16px (pricing panels) → 40px (eyebrow pills) with a full-radius launcher bubble. Components are padded in eights (24px card padding); the control transition is measured on the live buttons.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Self-hosted Inter carries everything: display headings and body at 400, buttons, nav links and eyebrow pills at 500, plan eyebrows and card titles at 600 — the heaviest weight the public surfaces set. The marketing sizes are measured (the sheets declare no type vars); the app's declared <code>--viewport-height</code> shows under its surface. Samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
-</main>
+<div class="wrap">
+<h1>Fernand</h1>
+<p class="lede">Public marketing site, one light theme. Values come from tokens.json, read off getfernand.com on 2026-11-21.</p>
+<h2>Colour</h2>
+<div class="swatches" id="swatches"></div>
+<h2>Type</h2>
+<p class="hero">The free customer support platform for SaaS teams</p>
+<h2>Controls</h2>
+<div class="row">
+  <a class="btn" href="#controls">Start for free</a>
+  <a class="quiet" href="#controls">Book a demo</a>
+</div>
+</div>
 <script>
-const TOK = {"core":{"font":{"family":{"inter":{"v":"Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json); the self-hosted Inter @font-face faces in raw/css-vars.json","d":"Inter — the self-hosted family every surface sets (weights 300–700 plus italics; the docs and app use a narrower weight band)."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-sub default (raw/components-computed.json)","d":"The 400 body weight."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of nav-cta default (raw/components-computed.json)","d":"The 500 weight on buttons and nav links."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of pricing-eyebrow default (raw/components-computed.json)","d":"The 600 weight on plan eyebrows, card titles and table heads — the heaviest weight the public surfaces set."},"display":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"The display-heading weight: the 38px masthead measures 400, not bold."}},"size":{"hero":{"v":"38px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 38px hero masthead."},"lede":{"v":"17px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The hero standfirst size."},"quote":{"v":"22px","t":"dimension","s":"computed fontSize of testimonial default (raw/components-computed.json)","d":"The 22px testimonial display copy."},"body":{"v":"18px","t":"dimension","s":"computed fontSize of channels-card default (raw/components-computed.json)","d":"The card/body copy size."},"button":{"v":"14px","t":"dimension","s":"computed fontSize of nav-cta default (raw/components-computed.json)","d":"The 14px button/nav size."},"eyebrow":{"v":"13px","t":"dimension","s":"computed fontSize of section-tag default (raw/components-computed.json)","d":"The small eyebrow-pill size."},"mobileHero":{"v":"26px","t":"dimension","s":"computed fontSize of m-hero-h1 default (raw/components-computed.json)","d":"The masthead at 390 wide."}},"lineHeight":{"hero":{"v":1.2632,"t":"number","s":"computed lineHeight/fontSize of hero-h1 default (48px over 38px, raw/components-computed.json)","d":"The hero masthead leading."},"body":{"v":1.65,"t":"number","s":"computed lineHeight/fontSize of hero-sub default (28.05px over 17px, raw/components-computed.json)","d":"The body leading."},"quote":{"v":1.55,"t":"number","s":"computed lineHeight/fontSize of testimonial default (34.1px over 22px, raw/components-computed.json)","d":"The testimonial leading (1.55)."}}},"black":{"v":"#131e40","t":"color","s":"css-var --black (light)"},"blue":{"default":{"v":"#00a0ff","t":"color","s":"css-var --blue (light)"},"pale":{"v":"#e8f5ff","t":"color","s":"css-var --blue-pale (light)"}},"border":{"default":{"v":"#eaecf8","t":"color","s":"css-var --border (light)"},"strong":{"v":"#e4e6eb","t":"color","s":"css-var --border-strong (light)"}},"green":{"default":{"v":"#2dbd33","t":"color","s":"css-var --green (light)"},"dark":{"v":"#33c27f","t":"color","s":"css-var --green-dark (light)"},"pale":{"v":"#edf8eb","t":"color","s":"css-var --green-pale (light)"}},"grey":{"default":{"v":"#9fa3b5","t":"color","s":"css-var --grey (light)"},"light":{"v":"#f4f5f7","t":"color","s":"css-var --grey-light (light)"},"medium":{"v":"#717583","t":"color","s":"css-var --grey-medium (light)"},"strong":{"v":"#3d4259","t":"color","s":"css-var --grey-strong (light)"}},"orange":{"default":{"v":"#fb8c3b","t":"color","s":"css-var --orange (light)"},"pale":{"v":"#fffaf1","t":"color","s":"css-var --orange-pale (light)"}},"red":{"default":{"v":"#dc2626","t":"color","s":"css-var --red (light)"},"pale":{"v":"#fee2e2","t":"color","s":"css-var --red-pale (light)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --white (light)"},"radius":{"control":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The ~6px radius on header buttons and links."},"button":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The 8px radius on the primary buttons."},"card":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of channels-card default (raw/components-computed.json)","d":"The 10px card radius."},"panel":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of price-free default (raw/components-computed.json)","d":"The 16px pricing-card radius."},"pill":{"v":"40px","t":"dimension","s":"computed borderTopLeftRadius of section-tag default (raw/components-computed.json)","d":"The 40px eyebrow-pill radius."},"field":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of login-field default (raw/components-computed.json)","d":"The app field radius."},"bubble":{"v":"100%","t":"other","s":"computed borderTopLeftRadius of launcher default (raw/components-computed.json)","d":"The widget launcher bubble radius."}},"motion":{"control":{"v":"all 0.75s cubic-bezier(0.19, 1, 0.22, 1)","t":"other","s":"computed transition of hero-cta default (raw/components-computed.json)","d":"The control transition the site puts on buttons and swatches."}},"component":{"topbar-height":{"v":"71.5px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The marketing header bar height."},"hero-cta-height":{"v":"49px","t":"dimension","s":"measured h of hero-cta default (raw/components-computed.json)","d":"The primary button height."},"nav-cta-height":{"v":"30px","t":"dimension","s":"measured h of nav-cta default (raw/components-computed.json)","d":"The header button height."},"hero-width":{"v":"1290px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The hero masthead measure."},"channel-card-width":{"v":"300px","t":"dimension","s":"measured w of channels-card default (raw/components-computed.json)","d":"The 300px channel-card width."},"pricing-card-width":{"v":"636px","t":"dimension","s":"measured w of price-free default (raw/components-computed.json)","d":"The pricing-card width."},"tag-height":{"v":"28px","t":"dimension","s":"measured h of section-tag default (raw/components-computed.json)","d":"The eyebrow-pill height."},"launcher-size":{"v":"48px","t":"dimension","s":"measured h of launcher default (raw/components-computed.json)","d":"The widget launcher bubble size."},"ai-menu-width":{"v":"332px","t":"dimension","s":"measured w of ai-setup-item default (raw/components-computed.json)","d":"The Install-with-AI menu width."},"help-search-width":{"v":"480px","t":"dimension","s":"measured w of help-search default (raw/components-computed.json)","d":"The docs search field width."},"help-card-width":{"v":"310px","t":"dimension","s":"measured w of help-card default (raw/components-computed.json)","d":"The docs collection-card width."},"mobile-topbar-height":{"v":"71.5px","t":"dimension","s":"measured h of m-topbar default (raw/components-computed.json)","d":"The phone header height."},"app":{"login-h1-size":{"v":"25px","t":"other","s":"computed fontSize of login-h1 default on app.getfernand.com (raw/components-computed.json)","d":"The 25px 'Welcome back' sign-in heading."},"field-height":{"v":"46px","t":"dimension","s":"measured h of login-field default on app.getfernand.com (raw/components-computed.json)","d":"The sign-in field height."},"field-width":{"v":"350px","t":"dimension","s":"measured w of login-field default on app.getfernand.com (raw/components-computed.json)","d":"The sign-in field width."},"submit-height":{"v":"46px","t":"dimension","s":"measured h of login-submit default on app.getfernand.com (raw/components-computed.json)","d":"The primary submit height."},"create-panel-width":{"v":"720px","t":"dimension","s":"measured w of create-panel default on app.getfernand.com (raw/components-computed.json)","d":"The signup intro panel width."}}}},"light":{"text":{"ink":{"v":"#1a2035","t":"color","s":"computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The near-black ink on headings and body copy (the --black navy)."},"muted":{"v":"{grey.medium}","t":"color","s":"computed color of hero-sub default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared grey.medium","d":"The mid-grey lede/secondary ink."},"link":{"v":"#6f7b96","t":"color","s":"computed color of nav-link default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The nav/footer link ink."}},"action":{"cta-fill":{"v":"#1a2035","t":"color","s":"computed backgroundColor of hero-cta default (raw/components-computed.json)","d":"The near-black fill of the primary buttons."},"cta-ink":{"v":"{white}","t":"color","s":"computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared white","d":"The white text on the dark buttons."}},"surface":{"card":{"v":"#f7fafc","t":"color","s":"computed backgroundColor of channels-card default (raw/components-computed.json)","d":"The light-grey card surface (the --grey-light field)."}},"border":{"focus-ring":{"v":"#161616","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json)","d":"The keyboard focus ring on controls, where the browser paints one."}},"background":{"page":{"v":"{white}","t":"color","s":"the body/html field behind every marketing page (screenshots/home-light-*.png); the declared --white","d":"The white page field — every marketing and docs light page paints on it."}}},"help":{"surface":{"card":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"computed backgroundColor of help-card default (raw/components-computed.json)","d":"The docs collection-card surface in light."},"field-bg":{"v":"#ffffff","t":"color","s":"computed backgroundColor of help-search default (raw/components-computed.json)","d":"The docs search field fill in light."}},"text":{"ink":{"v":"#131e40","t":"color","s":"computed color of help-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The docs article heading ink in light."}}},"app":{"black":{"v":"#131e40","t":"color","s":"css-var --black (app)"},"blue":{"default":{"v":"#00a0ff","t":"color","s":"css-var --blue (app)"},"pale":{"v":"#e8f5ff","t":"color","s":"css-var --blue-pale (app)"}},"border":{"default":{"v":"#eaecf8","t":"color","s":"css-var --border (app)"},"strong":{"v":"#e4e6eb","t":"color","s":"css-var --border-strong (app)"}},"green":{"default":{"v":"#2dbd33","t":"color","s":"css-var --green (app)"},"dark":{"v":"#33c27f","t":"color","s":"css-var --green-dark (app)"},"pale":{"v":"#edf8eb","t":"color","s":"css-var --green-pale (app)"}},"grey":{"default":{"v":"#e6e9eb","t":"color","s":"css-var --grey (app)"},"light":{"v":"#f7fafc","t":"color","s":"css-var --grey-light (app)"},"medium":{"v":"#5e6271","t":"color","s":"css-var --grey-medium (app)"},"strong":{"v":"#9fa3b5","t":"color","s":"css-var --grey-strong (app)"}},"orange":{"default":{"v":"#fb8c3b","t":"color","s":"css-var --orange (app)"},"pale":{"v":"#fffaf1","t":"color","s":"css-var --orange-pale (app)"}},"red":{"default":{"v":"#dc2626","t":"color","s":"css-var --red (app)"},"pale":{"v":"#fee2e2","t":"color","s":"css-var --red-pale (app)"}},"viewport":{"height":{"v":"900px","t":"dimension","s":"css-var --viewport-height (app)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --white (app)"},"text":{"ink":{"v":"{black}","t":"color","s":"computed color of login-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared black","d":"The app's heading ink on the signed-out forms."},"field-ink":{"v":"{black}","t":"color","s":"computed color of login-field default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared black","d":"The field text ink."}},"surface":{"field-bg":{"v":"{white}","t":"color","s":"computed backgroundColor of login-field default (raw/components-computed.json); matches declared white","d":"The sign-in field fill."}},"action":{"primary-fill":{"v":"{blue.default}","t":"color","s":"computed backgroundColor of login-submit default (raw/components-computed.json); matches declared blue.default","d":"The app primary button fill."},"primary-ink":{"v":"{white}","t":"color","s":"computed color of login-submit default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared white","d":"The app primary button text."}}},"dark":{"black":{"v":"#f7f8f8","t":"color","s":"css-var --black (dark)"},"blue":{"default":{"v":"#00a0ff","t":"color","s":"css-var --blue (dark)"},"pale":{"v":"#2d2f36","t":"color","s":"css-var --blue-pale (dark)"}},"border":{"default":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --border (dark)"},"strong":{"v":"#44474e","t":"color","s":"css-var --border-strong (dark)"}},"green":{"default":{"v":"#2dbd33","t":"color","s":"css-var --green (dark)"},"pale":{"v":"#253023","t":"color","s":"css-var --green-pale (dark)"}},"grey":{"default":{"v":"#e6e9eb","t":"color","s":"css-var --grey (dark)"},"light":{"v":"#18181b","t":"color","s":"css-var --grey-light (dark)"},"medium":{"v":"#8a8f98","t":"color","s":"css-var --grey-medium (dark)"},"strong":{"v":"#8a8f98","t":"color","s":"css-var --grey-strong (dark)"}},"orange":{"default":{"v":"#fb8c3b","t":"color","s":"css-var --orange (dark)"},"pale":{"v":"#201a12","t":"color","s":"css-var --orange-pale (dark)"}},"red":{"default":{"v":"#dc2626","t":"color","s":"css-var --red (dark)"},"pale":{"v":"#fee2e2","t":"color","s":"css-var --red-pale (dark)"}},"white":{"v":"#161618","t":"color","s":"css-var --white (dark)"},"background":{"page":{"v":"{white}","t":"color","s":"the body/html field behind the docs pages under body.dark-mode (screenshots/help-dark-*.png) — the docs redeclare --white #161618; the measured wrappers are transparent over it","d":"The docs dark page field — the remapped --white."}},"text":{"ink":{"v":"#ffffff","t":"color","s":"computed color of hd-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The docs heading ink under dark-mode."},"muted":{"v":"#a1a1aa","t":"color","s":"computed color of hd-prose default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The docs body/prose ink under dark-mode."},"link":{"v":"{blue.default}","t":"color","s":"computed color of hd-nav-item default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared blue.default","d":"The active docs nav item ink under dark-mode (the blue)."}},"surface":{"card":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"computed backgroundColor of hd-card default (raw/components-computed.json)","d":"The docs card surface under dark-mode."},"raised":{"v":"#232326","t":"color","s":"computed backgroundColor of hd-nav-item default (raw/components-computed.json)","d":"The filled list-item surface under dark-mode."}}}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  // The Fernand palette is a flat vocabulary at the set roots (white, grey.*,
-  // blue.*, …), not a --color-* namespace: collect the colour leaves wherever
-  // they live, grouped by first path segment.
-  const groups = {};
-  for (const [n, t] of flat(TOK.core, '')) {
-    if (t.t !== 'color' || n.startsWith('component')) continue;
-    (groups[n.split('.')[0]] ??= []).push([n, t]);
-  }
-  for (const g of Object.keys(groups).sort()) {
-    h += `<div class="pal-h">${esc(g)} (shared palette — app/dark re-resolve the same paths)</div><div class="pal">`;
-    for (const [n, t] of groups[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label, scope] of [['light', 'light roles', ''], ['help', 'docs roles + vocabulary', ' help'], ['app', 'app roles + vocabulary', ' app'], ['dark', 'docs dark roles', ' dark']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
-    if (!roles.length) continue;
-    // A non-light set's custom properties only resolve inside its own scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const setname of ['light', 'dark']) {
-    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  }
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  // Aliases are set-relative: the palette scales live under TOK.core, surface
-  // roles under TOK.light / TOK.app / TOK.dark. Try each root.
-  for (const root of [TOK.core, TOK.light, TOK.help, TOK.app, TOK.dark, TOK]) {
-    let node = root;
-    for (const k of m[1].split('.')) node = node && node[k];
-    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
-  }
-  return v;
-};
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.app || {}).fs || {}, 'app.fs.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">app ${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fernand</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-
-// The light/dark toggle repaints the page with the docs dark token scope —
-// the same paths the site's own "Switch to dark mode" link re-declares under
-// body.dark-mode. It is a reconstruction on this file's mocks, not the live
-// toggle; the real toggled surface is in screenshots/help-dark-*.
-(function theme() {
-  const bl = document.getElementById('tt-light'), bd = document.getElementById('tt-dark');
-  const set = (dark) => {
-    document.body.classList.toggle('dark', dark);
-    bl.classList.toggle('on', !dark); bd.classList.toggle('on', dark);
-  };
-  bl.onclick = () => set(false); bd.onclick = () => set(true);
-})();
+const tokens = {"light": true};
+const roles = ["page", "surface", "text", "muted", "accent", "border", "ink", "on-accent", "success", "warning", "danger", "focus"];
+const root = document.getElementById("swatches");
+for (const name of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i></i><span></span>";
+  el.querySelector("i").style.background = "var(--" + name + ")";
+  el.querySelector("span").textContent = name;
+  root.appendChild(el);
+}
 </script>
 </body>
 </html>

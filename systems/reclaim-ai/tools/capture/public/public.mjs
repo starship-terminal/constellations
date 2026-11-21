@@ -1,26 +1,17 @@
-// Captures Gauth's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
+// Captures Reclaim's public pages. Nothing is submitted. Login, signup,
+// Google, Microsoft, Dropbox and SSO are never clicked. The Osano cookie
+// banner is hidden, never answered.
 //
-//   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
-//
-// Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix. Gauth ships one theme, so there
-// is no dark run. Desktop shots are 1440x900 at 1x, mobile shots 390x844 at 2x, `*-full` shots 1x. A page
-// taller than one GPU texture is saved as name.partN.png tiles, which quantize.py stitches back together.
-// Nothing is sent, created or signed into: the only presses are dialog dismissals, tabs, Show more, the
-// lesson's own Not now, Continue (the audio gate), Pause, Settings and chapters, and a story card's
-// Explore, which opens a published story.
+//   PLAYWRIGHT=... node public.mjs [page,page,...]
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { M, closePromo, openStory, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { chromium, UA, UA_MOBILE, BASE, closePromo, patch } from './lib.mjs';
 
-// Full-colour shots are working files, never committed: by default they go outside the repository,
-// to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
-const inPackage = path.basename(path.dirname(PKG)) === 'systems';
-if (!process.env.RAW && !inPackage) { console.error('set RAW=<scratch dir> (this copy is not inside systems/<slug>/tools/)'); process.exit(2); }
-const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(PKG), 'raw-shots');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'reclaim-ai', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -28,13 +19,21 @@ const wait = (p, ms) => p.waitForTimeout(ms);
 
 async function lazyScroll(p) {
   const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
-  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
+  const cap = Math.min(h, 4800);
+  for (let y = 0; y < cap; y += 700) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 120); }
+  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 400);
 }
 
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr }; this.count = 0; }
-  async view(name) { await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
+  constructor(p, prefix, vw, vh, dpr) {
+    this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr;
+    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr };
+    this.count = 0;
+  }
+  async view(name) {
+    await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested);
+    this.count++; log('  shot', name);
+  }
   async full(name = 'full') {
     const p = this.p;
     await lazyScroll(p);
@@ -42,106 +41,124 @@ class Shooter {
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
-    // without a ceiling the tile loop writes forever (acuityscheduling filled
-    // 111 GB once). Truncate hard and record the boundary instead.
-    const MAXH = 8 * chunk;
+    const MAXH = 4 * chunk;
     const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
+    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
     if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+      await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    }
     this.count++; log('  shot', name, 'H=' + H);
-    await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
+    await p.evaluate(() => scrollTo(0, 0));
   }
 }
+
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
-const notNow = async (p) => { const b = p.getByRole('button', { name: 'Not now' }); if (await b.count()) { await b.click(); await wait(p, 1200); } };
-const gate = async (p) => { const b = p.getByRole('button', { name: 'Continue', exact: true }); if (await b.count()) { await b.click(); await wait(p, 4000); } };
-const pause = async (p) => { const b = p.getByRole('button', { name: /^Pause/ }); if (await b.count()) { await b.first().click().catch(() => {}); await wait(p, 600); } };
+
+async function openMenu(p, label) {
+  const t = p.locator('.header-link.w-dropdown-toggle').filter({ hasText: new RegExp('^' + label + '$') }).first();
+  await t.hover({ timeout: 4000 });
+  await wait(p, 500);
+}
 
 const desktop = {
-  home: { path: '/', promo: 'keep', run: async (p, S) => {
-    await S.view('promo');
-    await closePromo(p);
+  home: { path: '/', run: async (p, S) => {
     await S.view('default');
+    await step('product-menu', async () => { await openMenu(p, 'Product'); await S.view('product-menu'); await p.mouse.move(8, 400); });
+    await step('teams-menu', async () => { await openMenu(p, 'Teams'); await S.view('teams-menu'); await p.mouse.move(8, 400); });
+    await step('resources-menu', async () => { await openMenu(p, 'Resources'); await S.view('resources-menu'); await p.mouse.move(8, 400); });
+    await step('faq', async () => {
+      const b = p.locator('button, .faq-q').filter({ hasText: /What is Reclaim/i }).first();
+      await b.scrollIntoViewIfNeeded();
+      await b.click();
+      await wait(p, 400);
+      await S.view('faq');
+    });
     await S.full();
-    await step('question-focused', async () => { await p.locator(M('pc_input')).first().click(); await wait(p, 500); await S.view('question-focused'); await p.mouse.click(1400, 600); });
-    await step('sidebar-folded', async () => { await p.locator(M('side-menu_sidebar-collapse')).first().click(); await wait(p, 900); await S.view('sidebar-folded'); });
   } },
-  'academy-science': { path: '/course/science', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'academy-math': { path: '/course/math', run: async (p, S) => {
+  pricing: { path: '/pricing', run: async (p, S) => {
     await S.view('default');
-    await step('show-more', async () => {
-      const b = p.locator(M('catalog_expandButton')).first();
-      await b.click(); await wait(p, 1200);
-      await p.evaluate(() => scrollTo(0, 420)); await wait(p, 700);
-      await S.view('show-more');
+    await step('monthly', async () => {
+      await p.getByText('Monthly', { exact: true }).first().click();
+      await wait(p, 500);
+      await S.view('monthly');
     });
-  } },
-  'academy-history': { path: '/course/history', run: async (p, S) => { await S.view('default'); } },
-  'academy-my': { path: '/course/my', run: async (p, S) => {
-    await S.view('default');
-    await step('create-dialog', async () => { await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2500); await S.view('create-dialog'); });
-  } },
-  unit: { path: '/course/math/algebra-1?unit=real-numbers-and-sets', run: async (p, S) => {
-    await S.view('default');
-    await step('path', async () => { await p.evaluate(() => scrollTo(0, 700)); await wait(p, 1000); await S.view('path'); });
-    await step('unit-2', async () => { await p.evaluate(() => scrollTo(0, 0)); await p.locator(M('math-course-detail_unitButton')).nth(1).click(); await wait(p, 1500); await S.view('unit-2'); });
-  } },
-  'lesson-science': { path: '/course/science/how-things-work-1/learn?entry_source=start&from=science', wait: 7000, run: async (p, S) => {
-    await S.view('audio-dialog');
-    await notNow(p);
-    await S.view('default');
-    await step('settings', async () => { await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await S.view('settings'); await p.keyboard.press('Escape'); await wait(p, 500); });
-    await step('ask-tutor', async () => { await pause(p); await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1500); await S.view('ask-tutor'); await p.keyboard.press('Escape'); await p.mouse.click(700, 500); await wait(p, 500); });
-    await step('figure', async () => {
-      const play = p.getByRole('button', { name: 'Play' }); if (await play.count()) await play.click();
-      for (let i = 0; i < 60; i++) { const ok = await p.evaluate(() => { const e = document.querySelector('ol[class*="canvas_list__"]'); if (!e) return false; const r = e.getBoundingClientRect(); return r.bottom < innerHeight - 20 && r.top > 60; }); if (ok) break; await wait(p, 1500); }
-      await pause(p); await S.view('figure');
-      const play2 = p.getByRole('button', { name: 'Play' }); if (await play2.count()) await play2.click();
+    await step('features', async () => {
+      await p.getByText('See all features').first().click();
+      await wait(p, 400);
+      await S.view('features');
     });
-    await step('quiz', async () => {
-      for (let i = 0; i < 110; i++) { if (await p.locator('[aria-label="Close quiz and continue"]').count()) break; await wait(p, 2000); }
-      await S.view('quiz');
+    await step('faq', async () => {
+      const b = p.locator('button').filter({ hasText: /How does Reclaim/ }).first();
+      await b.scrollIntoViewIfNeeded();
+      await b.click();
+      await wait(p, 400);
+      await S.view('faq');
     });
-  } },
-  'lesson-math': { path: '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', wait: 8000, run: async (p, S) => {
-    await S.view('audio-gate');
-    await gate(p);
-    await S.view('default');
-    await step('chapters', async () => { await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1200); await S.view('chapters'); });
-  } },
-  'lesson-history': { path: '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await step('chapters', async () => { await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1200); await S.view('chapters'); });
-  } },
-  atlas: { path: '/atlas', run: async (p, S) => {
-    await S.view('default');
     await S.full();
-    await step('story', async () => {
-      const card = p.locator(M('user-cases_card')).filter({ hasText: 'Apollo 11' }).first();
-      await card.scrollIntoViewIfNeeded(); await card.click(); await wait(p, 3000);
-      await S.view('story-preview');
-      await p.locator(M('user-cases_exploreButton')).first().click(); await wait(p, 10000);
-      await p.mouse.move(700, 880); await wait(p, 600);
-      await S.view('story');
-      await p.evaluate(() => { const b = [...document.querySelectorAll('button')].find((e) => /Generate Video/.test(e.innerText || '') && e.getBoundingClientRect().top < 40); if (b) b.setAttribute('data-m', 'gen'); });
-      await p.locator('[data-m="gen"]').hover(); await wait(p, 1500);
-      await S.view('story-video-settings');
+  } },
+  contact: { path: '/contact', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  enterprise: { path: '/enterprise', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  blog: { path: '/blog', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'blog-post': { path: '/blog/10-google-calendar-issues-you-didnt-know-you-had', run: async (p, S) => { await S.view('default'); } },
+  glossary: { path: '/glossary', run: async (p, S) => { await S.view('default'); } },
+  search: { path: '/search', run: async (p, S) => { await S.view('default'); } },
+  integrations: { path: '/integrations', run: async (p, S) => { await S.view('default'); } },
+  'integration-asana': { path: '/integrations/asana', run: async (p, S) => { await S.view('default'); } },
+  customers: { path: '/customers', run: async (p, S) => { await S.view('default'); } },
+  'customer-story': { path: '/customers/1password', run: async (p, S) => { await S.view('default'); } },
+  compare: { path: '/compare', run: async (p, S) => { await S.view('default'); } },
+  'compare-clockwise': { path: '/compare/clockwise-alternative', run: async (p, S) => { await S.view('default'); } },
+  features: { path: '/features/habits', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'feature-focus': { path: '/features/focus-time', run: async (p, S) => { await S.view('default'); } },
+  team: { path: '/teams/engineering', run: async (p, S) => { await S.view('default'); } },
+  agents: { path: '/ai-agent-library', run: async (p, S) => { await S.view('default'); } },
+  'agent-detail': { path: '/ai-agent-library/adapt-workdays-automatically', run: async (p, S) => { await S.view('default'); } },
+  initiative: { path: '/initiatives/company-focus-time', run: async (p, S) => { await S.view('default'); } },
+  webinars: { path: '/webinars-demos', run: async (p, S) => { await S.view('default'); } },
+  affiliate: { path: '/affiliate-program', run: async (p, S) => { await S.view('default'); } },
+  about: { path: '/about', run: async (p, S) => { await S.view('default'); } },
+  privacy: { path: '/privacy', run: async (p, S) => { await S.view('default'); } },
+  careers: { path: '/careers', run: async (p, S) => { await S.view('default'); } },
+  security: { path: '/security', run: async (p, S) => { await S.view('default'); } },
+  discount: { path: '/pricing/education-discount', run: async (p, S) => { await S.view('default'); } },
+  pomodoro: { path: '/pomodoro-timer', run: async (p, S) => {
+    await S.view('default');
+    await step('break-tab', async () => {
+      await p.getByText('Short Break', { exact: true }).first().click();
+      await wait(p, 400);
+      await S.view('short-break');
     });
   } },
-  news: { path: '/news', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  calculator: { path: '/meeting-cost-calculator', run: async (p, S) => { await S.view('default'); } },
+  login: { path: 'https://app.reclaim.ai/login', abs: true, run: async (p, S) => { await S.view('wall'); } },
+  signup: { path: 'https://app.reclaim.ai/signup', abs: true, run: async (p, S) => { await S.view('wall'); } },
+  help: { path: 'https://help.reclaim.ai/en/', abs: true, run: async (p, S) => { await S.view('default'); } },
 };
 
 const mobile = {
-  home: { path: '/', promo: 'keep', run: async (p, S) => { await S.view('promo'); await closePromo(p); await S.view('default'); await S.full(); } },
-  academy: { path: '/course/math', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  unit: { path: '/course/math/algebra-1?unit=real-numbers-and-sets', run: async (p, S) => { await S.view('default'); await step('path', async () => { await p.evaluate(() => scrollTo(0, 700)); await wait(p, 900); await S.view('path'); }); } },
-  'lesson-math': { path: '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', wait: 8000, run: async (p, S) => { await S.view('audio-gate'); await gate(p); await S.view('default'); } },
-  atlas: { path: '/atlas', run: async (p, S) => { await S.view('default'); await step('story', async () => { await openStory(p, 'Artemis II'); await S.view('story'); }); } },
+  home: { path: '/', run: async (p, S) => {
+    await S.view('default');
+    await step('menu', async () => {
+      const btn = p.locator('.w-nav-button').first();
+      await btn.click();
+      await wait(p, 600);
+      await S.view('menu');
+      const product = p.locator('.mobile_nav_carrot.product').first();
+      if (await product.count()) { await product.click(); await wait(p, 400); await S.view('product'); }
+    });
+    await S.full();
+  } },
+  pricing: { path: '/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  contact: { path: '/contact', run: async (p, S) => { await S.view('default'); } },
+  blog: { path: '/blog', run: async (p, S) => { await S.view('default'); } },
+  features: { path: '/features/habits', run: async (p, S) => { await S.view('default'); } },
+  login: { path: 'https://app.reclaim.ai/login', abs: true, run: async (p, S) => { await S.view('wall'); } },
+  pomodoro: { path: '/pomodoro-timer', run: async (p, S) => { await S.view('default'); } },
+  enterprise: { path: '/enterprise', run: async (p, S) => { await S.view('default'); } },
 };
 
-const b = await chromium.launch();
+const b = await chromium.launch({ headless: true });
 let total = 0;
 const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
 for (const { k, mob } of runs) {
@@ -149,15 +166,23 @@ for (const { k, mob } of runs) {
   if (pageArg.length && !pageArg.includes(name)) continue;
   const spec = (mob ? mobile : desktop)[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
-  const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
+  const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US', reducedMotion: 'reduce' });
+  await patch(ctx);
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
   try {
-    await p.goto(BASE + spec.path, { waitUntil: 'load', timeout: 90000 });
-    await wait(p, spec.wait || 6000);
-    if (spec.promo !== 'keep') await closePromo(p);
-    await spec.run(p, S);
+    const url = spec.abs ? spec.path : BASE + spec.path;
+    await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await wait(p, spec.wait || 2200);
+    await closePromo(p);
+    // Stop if a public link bounced into Google / Microsoft sign-in.
+    if (/accounts\.google\.com|login\.microsoftonline\.com|dropbox\.com/i.test(p.url())) {
+      log('  STOP auth redirect', p.url().slice(0, 80));
+      await S.view('auth-redirect');
+    } else {
+      await spec.run(p, S);
+    }
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;
   await ctx.close();

@@ -1,45 +1,35 @@
-# Patterns
+# Sketch patterns
 
-Public pages only. The account shell was read while signed out and was not screenshotted, because the preview browser stopped producing frames.
+Public marketing site only. The Mac app, the web workspace and the iOS app were not reached.
 
-## Marketing shell
+## App shell
 
-Sticky nav, 80px at 1440px, transparent on the home page. Diamond logo at the left, Product / Explore / Pricing / Support, Sign In, and a primary "Get started" button. A black ribbon ("New in Sketch") sits above the nav on pricing, features and support. It was absent on the home capture.
+The desktop header is 80px, transparent over the homepage wash, with the diamond wordmark, Product / Explore / Support disclosures, a Pricing link, Sign In, and a black pill Get started button. At 390 the same lists sit in a white drawer opened by the Menu button. See [screenshots/home-light-default.png](screenshots/home-light-default.png) and [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
-![Home](screenshots/home-light-default.png)
+## Product menu
 
-Phone width (390 CSS px) collapses the nav to a menu button, the diamond, and Sign In.
-
-![Home, phone](screenshots/home-light-narrow.png)
+Hovering Product opens a white card of six feature links plus a changelog row with a NEW pill. [screenshots/home-light-nav-product.png](screenshots/home-light-nav-product.png). Explore and Support open the same kind of card: [screenshots/home-light-nav-explore.png](screenshots/home-light-nav-explore.png), [screenshots/home-light-nav-support.png](screenshots/home-light-nav-support.png).
 
 ## Hero
 
-Display title in Reckless at 76px, lead in Inter at 24px/32px, primary pill button, and a one-line system requirement under the button. The home hero sits on a pale wash. The page background measured `#f5f5f5`.
+A Reckless display line at 76px sits beside a short Inter paragraph and a black pill button. A white promo card under the hero links to a changelog article. The canvas illustration below is a public demo of the Mac app, not the signed-in product.
 
 ## Pricing
 
-Four plan cards in a row, a yearly/monthly pill, and a wider Mac-only license band under them. Prices on the capture were in euros (11 / 22 / 44). The page offers a currency control. No card was entered.
+Four plan cards (Standard, Professional, Enterprise, Private Cloud) on a pale wash, with a Yearly / Monthly pill and a currency select. A hover tooltip explains a feature. A "Thinking of switching tools?" card can sit over the grid. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png), [screenshots/pricing-light-monthly.png](screenshots/pricing-light-monthly.png), [screenshots/pricing-light-tooltip.png](screenshots/pricing-light-tooltip.png).
 
-![Pricing](screenshots/pricing-light-default.png)
+## Docs and support
 
-![Pricing, phone](screenshots/pricing-light-narrow.png)
+Documentation and Help Center share a search field and a long index. Search was focused and not submitted. [screenshots/docs-light-search-focused.png](screenshots/docs-light-search-focused.png).
 
-## Features
+## Auth wall
 
-A long public list of product features. The phone capture is the top of the page only. The desktop capture is the full page.
+Sign in is a centered column: Google, Apple, SSO, then email and password. The Sign In button stays a pale indigo until the fields have values. Those fields were focused empty. [screenshots/signin-light-default.png](screenshots/signin-light-default.png).
 
-![Features](screenshots/features-light-default.png)
+## Contact
 
-## Help Center
+The contact page asks the visitor to sign in before the message form. The form was not filled. [screenshots/contact-light-default.png](screenshots/contact-light-default.png).
 
-Search field, shortcut chips, and category cards of questions. This is the public support index, not a signed-in inbox.
+## Empty, loading, error, destructive confirmation
 
-![Support](screenshots/support-light-default.png)
-
-## Account
-
-Sign-in (`/signin/`) and signup (`/signup`) are a dark Inter UI, separate from the marketing CSS. Signup asks for a first name, an email and a password, plus Apple, Google and a newsletter checkbox. The form was not submitted. SSO is a separate link and was not opened.
-
-## Not captured
-
-Signed-in workspace, Mac app, payment, license-key entry, and the cookie or promo dialog states beyond the pricing popover that landed in the screenshot.
+Not present on the public pages that loaded. The signed-in app is the place those would appear, and that branch stopped at the sign-in wall.

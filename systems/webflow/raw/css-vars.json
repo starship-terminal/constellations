@@ -1,0 +1,3062 @@
+{
+ "capturedAt": "2026-11-20T23:37:07.680Z",
+ "url": "https://webflow.com/",
+ "brand": {
+  "themeColor": "#146EF5",
+  "themeColorDark": null,
+  "maskIcon": null,
+  "manifest": null
+ },
+ "stylesheetCount": 36,
+ "errors": [],
+ "fonts": [
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.shared.24093f3dd.min.css",
+   "font-family": "webflow-icons",
+   "src": "url(\"data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaGVhCXYFgQAABNQAAAAkaG10eCe4A1oAAAT4AAAAMGxvY2EDtALGAAAFKAAAABptYXhwABAAPgAABUQAAAAgbmFtZSoCsMsAAAVkAAABznBvc3QAAwAAAAAHNAAAACAAAwP4AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAQAAAAAwACAACAAQAAQAg5gPpA//9//8AAAAAACDmAOkA//3//wAB/+MaBBcIAAMAAQAAAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEBIAAAAyADgAAFAAAJAQcJARcDIP5AQAGA/oBAAcABwED+gP6AQAABAOAAAALgA4AABQAAEwEXCQEH4AHAQP6AAYBAAcABwED+gP6AQAAAAwDAAOADQALAAA8AHwAvAAABISIGHQEUFjMhMjY9ATQmByEiBh0BFBYzITI2PQE0JgchIgYdARQWMyEyNj0BNCYDIP3ADRMTDQJADRMTDf3ADRMTDQJADRMTDf3ADRMTDQJADRMTAsATDSANExMNIA0TwBMNIA0TEw0gDRPAEw0gDRMTDSANEwAAAAABAJ0AtAOBApUABQAACQIHCQEDJP7r/upcAXEBcgKU/usBFVz+fAGEAAAAAAL//f+9BAMDwwAEAAkAABcBJwEXAwE3AQdpA5ps/GZsbAOabPxmbEMDmmz8ZmwDmvxmbAOabAAAAgAA/8AEAAPAAB0AOwAABSInLgEnJjU0Nz4BNzYzMTIXHgEXFhUUBw4BBwYjNTI3PgE3NjU0Jy4BJyYjMSIHDgEHBhUUFx4BFxYzAgBqXV6LKCgoKIteXWpqXV6LKCgoKIteXWpVSktvICEhIG9LSlVVSktvICEhIG9LSlVAKCiLXl1qal1eiygoKCiLXl1qal1eiygoZiEgb0tKVVVKS28gISEgb0tKVVVKS28gIQABAAABwAIAA8AAEgAAEzQ3PgE3NjMxFSIHDgEHBhUxIwAoKIteXWpVSktvICFmAcBqXV6LKChmISBvS0pVAAAAAgAA/8AFtgPAADIAOgAAARYXHgEXFhUUBw4BBwYHIxUhIicuAScmNTQ3PgE3NjMxOAExNDc+ATc2MzIXHgEXFhcVATMJATMVMzUEjD83NlAXFxYXTjU1PQL8kz01Nk8XFxcXTzY1PSIjd1BQWlJJSXInJw3+mdv+2/7c25MCUQYcHFg5OUA/ODlXHBwIAhcXTzY1PTw1Nk8XF1tQUHcjIhwcYUNDTgL+3QFt/pOTkwABAAAAAQAAmM7nP18PPPUACwQAAAAAANciZKUAAAAA1yJkpf/9/70FtgPDAAAACAACAAAAAAAAAAEAAAPA/8AAAAW3//3//QW2AAEAAAAAAAAAAAAAAAAAAAAMBAAAAAAAAAAAAAAAAgAAAAQAASAEAADgBAAAwAQAAJ0EAP/9BAAAAAQAAAAFtwAAAAAAAAAKABQAHgAyAEYAjACiAL4BFgE2AY4AAAABAAAADAA8AAMAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADQAAAAEAAAAAAAIABwCWAAEAAAAAAAMADQBIAAEAAAAAAAQADQCrAAEAAAAAAAUACwAnAAEAAAAAAAYADQBvAAEAAAAAAAoAGgDSAAMAAQQJAAEAGgANAAMAAQQJAAIADgCdAAMAAQQJAAMAGgBVAAMAAQQJAAQAGgC4AAMAAQQJAAUAFgAyAAMAAQQJAAYAGgB8AAMAAQQJAAoANADsd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\") format(\"truetype\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.shared.24093f3dd.min.css",
+   "font-family": "\"WF Visual Sans Variable\"",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "100 900",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+   "font-family": "swiper-icons",
+   "src": "url(\"data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "\"Inter var\"",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "font-style": "normal",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inline-25",
+   "font-family": "\"Inter var\"",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "font-style": "italic",
+   "src": "url(…) format(\"woff2\")"
+  }
+ ],
+ "theme": [
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--_typography---paragraph-body--font": "var(--_typography---fonts--primary-font)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--_typography---paragraph-body--font-size": "1rem",
+    "--_typography---paragraph-body--line-height": "1.6",
+    "--_typography---paragraph-body--font-weight": "400",
+    "--_typography---paragraph-body--letter-spacing": "0em",
+    "--_typography---h1--bottom-margin": "var(--_layout---spacing--margin-md)",
+    "--_typography---h1--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---h1--font-size": "clamp(2.75*1rem,((2.75 - ((5 - 2.75)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((5 - 2.75)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),5*1rem)",
+    "--_typography---h1--line-height": "1.04",
+    "--_typography---h1--font-weight": "600",
+    "--_typography---h1--letter-spacing": "-.01em",
+    "--_typography---h2--bottom-margin": "var(--_layout---spacing--margin-md)",
+    "--_typography---h2--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---h2--font-size": "clamp(2*1rem,((2 - ((3.5 - 2)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((3.5 - 2)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),3.5*1rem)",
+    "--_typography---h2--line-height": "1.04",
+    "--_typography---h2--font-weight": "600",
+    "--_typography---h2--letter-spacing": "0em",
+    "--_typography---h3--bottom-margin": "var(--_layout---spacing--margin-sm)",
+    "--_typography---h3--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---h3--font-size": "clamp(1.75*1rem,((1.75 - ((2.5 - 1.75)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((2.5 - 1.75)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),2.5*1rem)",
+    "--_typography---h3--line-height": "1.2",
+    "--_typography---h3--font-weight": "600",
+    "--_typography---h3--letter-spacing": "0em",
+    "--_typography---h4--bottom-margin": "var(--_layout---spacing--margin-xs)",
+    "--_typography---h4--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---h4--font-size": "clamp(1.375*1rem,((1.375 - ((2 - 1.375)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((2 - 1.375)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),2*1rem)",
+    "--_typography---h4--line-height": "1.2",
+    "--_typography---h4--font-weight": "600",
+    "--_typography---h4--letter-spacing": "0em",
+    "--_typography---h5--bottom-margin": "var(--_layout---spacing--margin-sm)",
+    "--_typography---h5--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---h5--font-size": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((1.5 - 1.25)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),1.5*1rem)",
+    "--_typography---h5--line-height": "1.3",
+    "--_typography---h5--font-weight": "600",
+    "--_typography---h5--letter-spacing": "0em",
+    "--_typography---h6--bottom-margin": "var(--_layout---spacing--margin-xs)",
+    "--_typography---h6--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---h6--font-size": "clamp(1.125*1rem,((1.125 - ((1.25 - 1.125)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((1.25 - 1.125)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),1.25*1rem)",
+    "--_typography---h6--line-height": "1.4",
+    "--_typography---h6--font-weight": "600",
+    "--_typography---h6--letter-spacing": "0em",
+    "--_typography---paragraph-body--bottom-margin": "var(--_layout---spacing--margin-sm)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--_layout---section-spacing--small": "clamp(3*1rem,((3 - ((5 - 3)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((5 - 3)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),5*1rem)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--_layout---spacing--margin-xl": "clamp(2.25*1rem,((2.25 - ((3 - 2.25)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((3 - 2.25)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),3*1rem)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--_layout---spacing--margin-md": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((1.5 - 1.25)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),1.5*1rem)",
+    "--_layout---section-spacing--medium": "clamp(3*1rem,((3 - ((9 - 3)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((9 - 3)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),9*1rem)",
+    "--_components---nav--height": "4.25rem",
+    "--_layout---spacing--margin-sm": "clamp(.625*1rem,((.625 - ((1 - .625)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((1 - .625)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),1*1rem)",
+    "--_layout---section-spacing--extra-large": "clamp(10*1rem,((10 - ((28 - 10)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((28 - 10)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),28*1rem)",
+    "--_layout---spacing--margin-lg": "clamp(1.75*1rem,((1.75 - ((2 - 1.75)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((2 - 1.75)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),2*1rem)",
+    "--_layout---container--max-width": "calc(var(--_layout---fluid--max)*1rem)",
+    "--_layout---grid--gap-md": "var(--_layout---spacing--margin-md)",
+    "--_layout---grid--gap-main": "var(--_layout---spacing--margin-lg)",
+    "--_layout---grid--gap-sm": "var(--_layout---spacing--margin-sm)",
+    "--_layout---grid--gap-lg": "var(--_layout---spacing--margin-xl)",
+    "--_layout---grid--gap-xs": "var(--_layout---spacing--margin-xs)",
+    "--_layout---grid--gap-xl": "clamp(2.5*1rem,((2.5 - ((5 - 2.5)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((5 - 2.5)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),5*1rem)",
+    "--_color---secondary--purple": "#7a3dff",
+    "--_color---secondary--pink": "#ed52cb",
+    "--_components---button--vertical-padding": "1em",
+    "--_components---button--horizontal-padding": "1.5em",
+    "--_components---button--border-radius": ".25rem",
+    "--_components---button--font": "var(--_typography---fonts--primary-font)",
+    "--_color---neutral--white": "white",
+    "--_components---button--font-size": "1rem",
+    "--_components---button--line-height": "1.2em",
+    "--_components---button--font-weight": "500",
+    "--_components---button--letter-spacing": "-.01em",
+    "--_color---primary--webflow-blue": "#146ef5",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--_components---card--border-radius": ".5rem",
+    "--_layout---spacing--margin-xs": "clamp(.375*1rem,((.375 - ((.5 - .375)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((.5 - .375)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),.5*1rem)",
+    "--_components---card--padding": "clamp(1*1rem,((1 - ((1.5 - 1)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((1.5 - 1)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),1.5*1rem)",
+    "--_components---input--bottom-margin": "var(--_layout---grid--gap-md)",
+    "--_size---0-5rem<deleted|variable-70a8c3ac-c656-f79e-479c-716ec38165c2>": ".5rem",
+    "--_color---neutral--gray-400": "#898989",
+    "--_components---input--border-radius": ".25rem",
+    "--_components---input--font": "var(--_typography---fonts--primary-font)",
+    "--_components---input--font-size": "1rem",
+    "--_components---input--line-height": "1.5em",
+    "--_components---input--font-weight": "400",
+    "--_components---input--letter-spacing": "0em",
+    "--_components---input-label--font": "var(--_typography---fonts--primary-font)",
+    "--_components---input-label--font-size": ".9rem",
+    "--_components---input-label--line-height": "1.4em",
+    "--_components---input-label--font-weight": "500",
+    "--_typography---caption--letter-spacing": "0em",
+    "--_color---neutral--black": "#080808",
+    "--_color---neutral--gray-700": "#363636",
+    "--_typography---eyebrow--bottom-margin": "var(--_layout---spacing--margin-sm)",
+    "--_typography---eyebrow--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---eyebrow--font-size": "clamp(1*1rem,((1 - ((1.25 - 1)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((1.25 - 1)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),1.25*1rem)",
+    "--_typography---eyebrow--line-height": "1.4",
+    "--_typography---eyebrow--font-weight": "500",
+    "--_typography---eyebrow--letter-spacing": "0em",
+    "--_typography---paragraph-sm--bottom-margin": "var(--_layout---spacing--margin-sm)",
+    "--_typography---paragraph-sm--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---paragraph-sm--font-size": ".875rem",
+    "--_typography---paragraph-sm--line-height": "1.6",
+    "--_typography---paragraph-sm--font-weight": "400",
+    "--_typography---paragraph-sm--letter-spacing": "0em",
+    "--_typography---paragraph-lg--bottom-margin": "var(--_layout---spacing--margin-sm)",
+    "--_typography---paragraph-lg--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---paragraph-lg--font-size": "clamp(1.1*1rem,((1.1 - ((1.25 - 1.1)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((1.25 - 1.1)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),1.25*1rem)",
+    "--_typography---paragraph-lg--line-height": "1.5",
+    "--_typography---paragraph-lg--font-weight": "400",
+    "--_typography---paragraph-lg--letter-spacing": "0em",
+    "--_typography---paragraph-xl--bottom-margin": "var(--_layout---spacing--margin-md)",
+    "--_typography---paragraph-xl--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---paragraph-xl--font-size": "clamp(1.25*1rem,((1.25 - ((2 - 1.25)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((2 - 1.25)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),2*1rem)",
+    "--_typography---paragraph-xl--line-height": "1.4",
+    "--_typography---paragraph-xl--font-weight": "400",
+    "--_color---neutral--gray-100": "#f0f0f0",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--_typography---type-paragraph-lg--font-size-md<deleted|variable-cdbe9950-9272-2284-ccf6-60cab96acd5f>": "1.25rem",
+    "--_typography---type-paragraph-lg--font-size-sm<deleted|variable-841c9cf1-74b8-7850-db1d-b82cdc8d3013>": "1.1rem",
+    "--_typography---type-paragraph-lg--font-size-xs<deleted|variable-dab72a89-1875-a2f7-1d85-bd05f81dd817>": "1.1rem",
+    "--_typography---type-paragraph-sm--font-size-md<deleted|variable-94c5336e-6e13-9026-329b-a7b4ba64e183>": ".9rem",
+    "--_typography---type-paragraph-sm--font-size-sm<deleted|variable-dce65071-f183-75c5-98aa-d8afc83560a0>": ".9rem",
+    "--_typography---type-paragraph-sm--font-size-xs<deleted|variable-5ffbcc90-83d8-60d2-b7ba-601684d03f16>": ".9rem",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)",
+    "--_typography---subheading-xl--font-size": "var(--_typography---h4--font-size)",
+    "--_layout---fluid--max": "90",
+    "--_layout---fluid--min": "20",
+    "--_size---0-25rem<deleted|variable-2d47388d-3251-c56b-03c9-35dfc0a59c39>": ".25rem",
+    "--_size---1rem<deleted|variable-461c7c57-ec3c-d23c-768b-c6de52a540e5>": "1rem",
+    "--_color---neutral--gray-600": "#5a5a5a",
+    "--_size---0-75rem<deleted|variable-51df6ead-a71c-263d-332f-348c569f6d5f>": ".75rem",
+    "--_size---5rem<deleted|variable-ff14b77f-fe78-09a6-d1f0-e9e7c84aae7c>": "5rem",
+    "--_typography---caption--bottom-margin": "var(--_layout---spacing--margin-sm)",
+    "--_typography---caption--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---caption--font-size": ".8rem",
+    "--_typography---caption--line-height": "1.2",
+    "--_typography---caption--font-weight": "550",
+    "--_typography---paragraph-xxl--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---paragraph-xxl--font-size": "clamp(1.375*1rem,((1.375 - ((2.5 - 1.375)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((2.5 - 1.375)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),2.5*1rem)",
+    "--_typography---paragraph-xxl--line-height": "1.4",
+    "--_typography---paragraph-xxl--font-weight": "400",
+    "--_typography---paragraph-xxl--letter-spacing": "0em",
+    "--_color---neutral--gray-800": "#222",
+    "--_color---neutral--gray-900": "#171717",
+    "--_color---neutral--gray-500": "#757575",
+    "--_color---neutral--gray-300": "#ababab",
+    "--_color---neutral--gray-200": "#d8d8d8",
+    "--_layout---section-spacing--large": "clamp(3*1rem,((3 - ((15 - 3)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((15 - 3)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),15*1rem)",
+    "--_typography---h0--bottom-margin": "var(--_layout---spacing--margin-md)",
+    "--_typography---h0--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---h0--font-size": "clamp(3*1rem,((3 - ((7 - 3)/(var(--_layout---fluid--max) - var(--_layout---fluid--min))*var(--_layout---fluid--min)))*1rem + ((7 - 3)/(var(--_layout---fluid--max) - var(--_layout---fluid--min)))*100vw),7*1rem)",
+    "--_typography---h0--line-height": "1.04",
+    "--_typography---h0--font-weight": "600",
+    "--_typography---h0--letter-spacing": "0em",
+    "--_typography---subheading-xxl--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---subheading-xxl--font-size": "var(--_typography---h3--font-size)",
+    "--_typography---subheading-xxl--line-height": "1.2",
+    "--_typography---subheading-xxl--font-weight": "500",
+    "--_typography---subheading-xxl--letter-spacing": "0em",
+    "--_typography---subheading-lg--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---subheading-lg--font-size": "var(--_typography---h5--font-size)",
+    "--_typography---subheading-lg--line-height": "1.6",
+    "--_typography---subheading-lg--font-weight": "500",
+    "--_typography---subheading-lg--letter-spacing": "0em",
+    "--_typography---subheading--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---subheading--font-size": "var(--_typography---h6--font-size)",
+    "--_typography---subheading--line-height": "1.4",
+    "--_typography---subheading--font-weight": "500",
+    "--_typography---subheading--letter-spacing": "0px",
+    "--_typography---paragraph-xs--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---paragraph-xs--font-size": ".75rem",
+    "--_typography---paragraph-xs--line-height": "1.6",
+    "--_typography---paragraph-xs--font-weight": "400",
+    "--_typography---paragraph-xs--letter-spacing": "0em",
+    "--_color---secondary--orange": "#ff6b00",
+    "--_typography---subheading-xxl--bottom-margin": "var(--_layout---spacing--margin-sm)",
+    "--_typography---subheading-xl--bottom-margin": "var(--_layout---spacing--margin-xs)",
+    "--_typography---subheading-xl--font": "var(--_typography---fonts--primary-font)",
+    "--_typography---subheading-xl--line-height": "1.3",
+    "--_typography---subheading-xl--font-weight": "500",
+    "--_typography---subheading-xl--letter-spacing": "0em",
+    "--_typography---subheading-lg--bottom-margin": "var(--_layout---spacing--margin-xs)",
+    "--_typography---subheading--bottom-margin": "var(--_layout---spacing--margin-xs)",
+    "--_color---secondary--green": "#00d722",
+    "--_color---primary--blue-600": "#0055d4",
+    "--_components---image--float-size": "max(-2vw,-3.5rem)",
+    "--_typography---paragraph-xs--bottom-margin": "var(--_layout---spacing--margin-sm)",
+    "--_color---secondary--red": "#ee1d36",
+    "--_typography---fonts--primary-font": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "--_components---input-label--letter-spacing": "0em",
+    "--_color---primary--blue-400": "#3b89ff",
+    "--_color---secondary--yellow": "#ffae13",
+    "--_color---blue-300": "#006acc",
+    "--_typography---paragraph-xxl--bottom-margin": "var(--_layout---spacing--margin-md)",
+    "--_typography---paragraph-xl--letter-spacing": "0em"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section:where(.w-variant-ffdae436-6d76-12b6-39d6-0e4201c47aad)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-themed:where(.w-variant-ffdae436-6d76-12b6-39d6-0e4201c47aad)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-themed:where(.w-variant-570f9175-ee08-6e72-631e-75d8c055aaad)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-themed:where(.w-variant-17a1fb4f-1549-04d0-3ad8-f960aebc03d4)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-themed:where(.w-variant-17a1fb4f-1549-04d0-3ad8-f960aebc03d3)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-themed:where(.w-variant-acb97aeb-e17c-0cc4-e778-365337f276c7)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-themed:where(.w-variant-acb97aeb-e17c-0cc4-e778-365337f276c6)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-themed:where(.w-variant-a6d09936-03a4-333b-c77c-e8a3d6b6ddaa)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-themed:where(.w-variant-a6d09936-03a4-333b-c77c-e8a3d6b6dda9)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-key-points:where(.w-variant-ffdae436-6d76-12b6-39d6-0e4201c47aad)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-key-points:where(.w-variant-570f9175-ee08-6e72-631e-75d8c055aaad)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-key-points:where(.w-variant-17a1fb4f-1549-04d0-3ad8-f960aebc03d4)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-key-points:where(.w-variant-17a1fb4f-1549-04d0-3ad8-f960aebc03d3)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-key-points:where(.w-variant-acb97aeb-e17c-0cc4-e778-365337f276c7)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-key-points:where(.w-variant-acb97aeb-e17c-0cc4-e778-365337f276c6)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-key-points:where(.w-variant-a6d09936-03a4-333b-c77c-e8a3d6b6ddaa)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-key-points:where(.w-variant-a6d09936-03a4-333b-c77c-e8a3d6b6dda9)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-next-chapter:where(.w-variant-ffdae436-6d76-12b6-39d6-0e4201c47aad)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-next-chapter:where(.w-variant-570f9175-ee08-6e72-631e-75d8c055aaad)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-next-chapter:where(.w-variant-17a1fb4f-1549-04d0-3ad8-f960aebc03d4)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-next-chapter:where(.w-variant-17a1fb4f-1549-04d0-3ad8-f960aebc03d3)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-next-chapter:where(.w-variant-acb97aeb-e17c-0cc4-e778-365337f276c7)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-next-chapter:where(.w-variant-acb97aeb-e17c-0cc4-e778-365337f276c6)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-next-chapter:where(.w-variant-a6d09936-03a4-333b-c77c-e8a3d6b6ddaa)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".section.cc-next-chapter:where(.w-variant-a6d09936-03a4-333b-c77c-e8a3d6b6dda9)",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".card.cc-customers-slide",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".u-mode-light",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".u-mode-dark",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--black)",
+    "--colors--text": "var(--_color---neutral--white)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-700)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-900)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-300)",
+    "--colors--primary-accent-text": "var(--_color---primary--blue-400)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,white 6%)"
+   }
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.686294e363eb7e215bd2334b.7b8611ae8.opt.min.css",
+   "selector": ".logo-component",
+   "context": [],
+   "properties": {
+    "--colors--background": "var(--_color---neutral--white)",
+    "--colors--text": "var(--_color---neutral--black)",
+    "--colors--primary-accent": "var(--_color---primary--webflow-blue)",
+    "--colors--border": "var(--_color---neutral--gray-200)",
+    "--colors--secondary-background": "var(--_color---neutral--gray-100)",
+    "--colors--text-secondary": "var(--_color---neutral--gray-600)",
+    "--colors--primary-accent-text": "color-mix(in hsl,var(--colors--primary-accent)92%,var(--colors--text)8%)",
+    "--colors--primary-accent-background": "color-mix(in hsl,var(--colors--primary-accent)10%,transparent 90%)"
+   }
+  },
+  {
+   "file": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   }
+  },
+  {
+   "file": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-navigation-size": "44px"
+   }
+  },
+  {
+   "file": "https://cdn.jsdelivr.net/gh/webflow/brand_studio@5afa254/marketo/wow-marketo-forms.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--mkto-embed-color-button": "#146ef5",
+    "--mkto-embed-color-button-hover": "#0055d4",
+    "--mkto-embed-color-error": "#146ef5",
+    "--mkto-embed-font-family": "\"WF Visual Sans Variable\",sans-serif",
+    "--mkto-embed-color-text": "#080808",
+    "--mkto-embed-color-border": "#d8d8d8",
+    "--mkto-embed-color-border-hover": "#898989",
+    "--mkto-embed-color-background": "#ffffff",
+    "--mkto-embed-checkbox-checked": "#080808",
+    "--mkto-embed-checkbox-background": "#ffffff",
+    "--mkto-embed-checkbox-border": "#d8d8d8",
+    "--mkto-embed-color-placeholder": "#757575",
+    "--mkto-embed-color-link": "#080808"
+   }
+  },
+  {
+   "file": "https://cdn.jsdelivr.net/gh/webflow/brand_studio@5afa254/marketo/wow-marketo-forms.min.css",
+   "selector": "[data-brand-mode=\"dark\"], html.u-mode-dark",
+   "context": [],
+   "properties": {
+    "--mkto-embed-color-text": "#ffffff",
+    "--mkto-embed-color-link": "#ffffff",
+    "--mkto-embed-color-border": "#5a5a5a",
+    "--mkto-embed-color-border-hover": "#d8d8d8",
+    "--mkto-embed-color-background": "#171717",
+    "--mkto-embed-checkbox-checked": "#ffffff",
+    "--mkto-embed-checkbox-background": "#171717",
+    "--mkto-embed-checkbox-border": "#5a5a5a",
+    "--mkto-embed-color-placeholder": "#898989"
+   }
+  },
+  {
+   "file": "inline-16",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--transition-duration-1": "150ms",
+    "--transition-duration-2": "300ms",
+    "--transition-duration-3": "450ms",
+    "--transition-duration-4": "750ms",
+    "--transition-duration-5": "1200ms",
+    "--transition-duration-6": "1950ms",
+    "--transition-duration-7": "3150ms",
+    "--transition-timing-inoutquad": "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+    "--transition-timing-inoutcubic": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+    "--transition-timing-inoutquart": "cubic-bezier(0.77, 0, 0.175, 1)"
+   }
+  },
+  {
+   "file": "inline-16",
+   "selector": ":root",
+   "context": [
+    "@media (prefers-reduced-motion: reduce)"
+   ],
+   "properties": {
+    "--transition-duration-1": "0ms",
+    "--transition-duration-2": "0ms",
+    "--transition-duration-3": "0ms",
+    "--transition-duration-4": "0ms",
+    "--transition-duration-5": "0ms",
+    "--transition-duration-6": "0ms",
+    "--transition-duration-7": "0ms"
+   }
+  },
+  {
+   "file": "inline-16",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--animation-duration-1": "0.3s",
+    "--animation-duration-2": "0.45s",
+    "--animation-duration-3": "0.75s",
+    "--animation-duration-4": "1.2s",
+    "--animation-delay-d0": "0s",
+    "--animation-delay-d1": "0.3s",
+    "--animation-delay-d2": "0.45s",
+    "--animation-delay-d3": "0.75s",
+    "--animation-delay-d4": "1.2s",
+    "--animation-delay-d5": "1.95s",
+    "--animation-delay-d6": "2.7s",
+    "--animation-delay-d7": "3.45s"
+   }
+  }
+ ],
+ "app": [
+  {
+   "file": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/css/marketing-main.webflow.shared.24093f3dd.min.css",
+   "selector": ":where(.w-popover, .w-modal)",
+   "context": [],
+   "properties": {
+    "--w-backdrop-animation": "initial"
+   }
+  },
+  {
+   "file": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+   "selector": ".swiper-lazy-preloader-white",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#fff"
+   }
+  },
+  {
+   "file": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+   "selector": ".swiper-lazy-preloader-black",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#000"
+   }
+  },
+  {
+   "file": "https://cdn.jsdelivr.net/gh/webflow/brand_studio@5afa254/marketo/wow-marketo-forms.min.css",
+   "selector": "[data-brand-mode=\"light\"]",
+   "context": [],
+   "properties": {
+    "--mkto-embed-color-text": "#080808",
+    "--mkto-embed-color-link": "#080808",
+    "--mkto-embed-color-border": "#d8d8d8",
+    "--mkto-embed-color-border-hover": "#898989",
+    "--mkto-embed-color-background": "#ffffff",
+    "--mkto-embed-checkbox-checked": "#080808",
+    "--mkto-embed-checkbox-background": "#ffffff",
+    "--mkto-embed-checkbox-border": "#d8d8d8",
+    "--mkto-embed-color-placeholder": "#757575"
+   }
+  },
+  {
+   "file": "https://transcend-cdn.com/cm/8088b5a5-758a-405d-b0f7-015c7b573b7f/cm.css",
+   "selector": "*",
+   "context": [],
+   "properties": {
+    "--primary-color": "#146ef5",
+    "--text-color": "#2b2b2b"
+   }
+  },
+  {
+   "file": "https://transcend-cdn.com/cm/8088b5a5-758a-405d-b0f7-015c7b573b7f/cm.css",
+   "selector": ".do-not-sell-explainer-close",
+   "context": [],
+   "properties": {
+    "--squareDimension": "25px"
+   }
+  },
+  {
+   "file": "https://transcend-cdn.com/cm/8088b5a5-758a-405d-b0f7-015c7b573b7f/cm.css",
+   "selector": ".accept-all-reject-all-toggle-close",
+   "context": [],
+   "properties": {
+    "--squareDimension": "25px"
+   }
+  },
+  {
+   "file": "https://transcend-cdn.com/cm/8088b5a5-758a-405d-b0f7-015c7b573b7f/cm.css",
+   "selector": ".privacy-policy-notice-with-close-button-close",
+   "context": [],
+   "properties": {
+    "--squareDimension": "25px"
+   }
+  },
+  {
+   "file": "https://transcend-cdn.com/cm/8088b5a5-758a-405d-b0f7-015c7b573b7f/cm.css",
+   "selector": ".complete-options-toggle-close",
+   "context": [],
+   "properties": {
+    "--squareDimension": "25px"
+   }
+  },
+  {
+   "file": "https://transcend-cdn.com/cm/8088b5a5-758a-405d-b0f7-015c7b573b7f/cm.css",
+   "selector": ".switch",
+   "context": [],
+   "properties": {
+    "--switchHeight": "20px",
+    "--switchGutter": "2px",
+    "--switchButtonDiameter": "calc(var(--switchHeight) - var(--switchGutter) * 2)"
+   }
+  },
+  {
+   "file": "inline-15",
+   "selector": ".slider_offset",
+   "context": [],
+   "properties": {
+    "--slide-count": "var(--lg)",
+    "--lg": "3",
+    "--md": "var(--lg)",
+    "--sm": "var(--md)",
+    "--xs": "var(--sm)"
+   }
+  },
+  {
+   "file": "inline-15",
+   "selector": ".slider_offset",
+   "context": [
+    "@container (width < 50em)"
+   ],
+   "properties": {
+    "--slide-count": "var(--md)"
+   }
+  },
+  {
+   "file": "inline-15",
+   "selector": ".slider_offset",
+   "context": [
+    "@container (width < 35em)"
+   ],
+   "properties": {
+    "--slide-count": "var(--sm)"
+   }
+  },
+  {
+   "file": "inline-15",
+   "selector": ".slider_offset",
+   "context": [
+    "@container (width < 20em)"
+   ],
+   "properties": {
+    "--slide-count": "var(--xs)"
+   }
+  },
+  {
+   "file": "inline-16",
+   "selector": "[data-animation-gsap=\"line-mask\"] .line",
+   "context": [],
+   "properties": {
+    "--line-width": "100%"
+   }
+  },
+  {
+   "file": "inline-23",
+   "selector": ".webgl_slider_wrap",
+   "context": [
+    "@media (max-width: 767px)"
+   ],
+   "properties": {
+    "--mw-card-w": "clamp(240px, 26cqw, 620px)"
+   }
+  }
+ ],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [],
+ "counts": {
+  "theme": 37,
+  "app": 16,
+  "vendor": 0,
+  "utility": 0,
+  "tailwind": 0
+ },
+ "resolved": {
+  "light": {
+   "--_color---blue-300": {
+    "value": "#006acc",
+    "raw": "#006acc"
+   },
+   "--_color---neutral--black": {
+    "value": "#080808",
+    "raw": "#080808"
+   },
+   "--_color---neutral--gray-100": {
+    "value": "#f0f0f0",
+    "raw": "#f0f0f0"
+   },
+   "--_color---neutral--gray-200": {
+    "value": "#d8d8d8",
+    "raw": "#d8d8d8"
+   },
+   "--_color---neutral--gray-300": {
+    "value": "#ababab",
+    "raw": "#ababab"
+   },
+   "--_color---neutral--gray-400": {
+    "value": "#898989",
+    "raw": "#898989"
+   },
+   "--_color---neutral--gray-500": {
+    "value": "#757575",
+    "raw": "#757575"
+   },
+   "--_color---neutral--gray-600": {
+    "value": "#5a5a5a",
+    "raw": "#5a5a5a"
+   },
+   "--_color---neutral--gray-700": {
+    "value": "#363636",
+    "raw": "#363636"
+   },
+   "--_color---neutral--gray-800": {
+    "value": "#222",
+    "raw": "#222"
+   },
+   "--_color---neutral--gray-900": {
+    "value": "#171717",
+    "raw": "#171717"
+   },
+   "--_color---neutral--white": {
+    "value": "white",
+    "raw": "white"
+   },
+   "--_color---primary--blue-400": {
+    "value": "#3b89ff",
+    "raw": "#3b89ff"
+   },
+   "--_color---primary--blue-600": {
+    "value": "#0055d4",
+    "raw": "#0055d4"
+   },
+   "--_color---primary--webflow-blue": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--_color---secondary--green": {
+    "value": "#00d722",
+    "raw": "#00d722"
+   },
+   "--_color---secondary--orange": {
+    "value": "#ff6b00",
+    "raw": "#ff6b00"
+   },
+   "--_color---secondary--pink": {
+    "value": "#ed52cb",
+    "raw": "#ed52cb"
+   },
+   "--_color---secondary--purple": {
+    "value": "#7a3dff",
+    "raw": "#7a3dff"
+   },
+   "--_color---secondary--red": {
+    "value": "#ee1d36",
+    "raw": "#ee1d36"
+   },
+   "--_color---secondary--yellow": {
+    "value": "#ffae13",
+    "raw": "#ffae13"
+   },
+   "--_components---button--border-radius": {
+    "value": ".25rem",
+    "raw": ".25rem"
+   },
+   "--_components---button--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_components---button--font-size": {
+    "value": "1rem",
+    "raw": "1rem"
+   },
+   "--_components---button--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_components---button--horizontal-padding": {
+    "value": "1.5em",
+    "raw": "1.5em"
+   },
+   "--_components---button--letter-spacing": {
+    "value": "-.01em",
+    "raw": "-.01em"
+   },
+   "--_components---button--line-height": {
+    "value": "1.2em",
+    "raw": "1.2em"
+   },
+   "--_components---button--vertical-padding": {
+    "value": "1em",
+    "raw": "1em"
+   },
+   "--_components---card--border-radius": {
+    "value": ".5rem",
+    "raw": ".5rem"
+   },
+   "--_components---card--padding": {
+    "value": "clamp(1*1rem,((1 - ((1.5 - 1)/(90 - 20)*20))*1rem + ((1.5 - 1)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1*1rem,((1 - ((1.5 - 1)/(90 - 20)*20))*1rem + ((1.5 - 1)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_components---image--float-size": {
+    "value": "max(-2vw,-3.5rem)",
+    "raw": "max(-2vw,-3.5rem)"
+   },
+   "--_components---input--border-radius": {
+    "value": ".25rem",
+    "raw": ".25rem"
+   },
+   "--_components---input--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_components---input--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_components---input--font-size": {
+    "value": "1rem",
+    "raw": "1rem"
+   },
+   "--_components---input--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_components---input--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_components---input--line-height": {
+    "value": "1.5em",
+    "raw": "1.5em"
+   },
+   "--_components---input-label--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_components---input-label--font-size": {
+    "value": ".9rem",
+    "raw": ".9rem"
+   },
+   "--_components---input-label--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_components---input-label--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_components---input-label--line-height": {
+    "value": "1.4em",
+    "raw": "1.4em"
+   },
+   "--_components---nav--height": {
+    "value": "4.25rem",
+    "raw": "4.25rem"
+   },
+   "--_layout---container--max-width": {
+    "value": "calc(90*1rem)",
+    "raw": "calc(90*1rem)"
+   },
+   "--_layout---fluid--max": {
+    "value": "90",
+    "raw": "90"
+   },
+   "--_layout---fluid--min": {
+    "value": "20",
+    "raw": "20"
+   },
+   "--_layout---grid--gap-lg": {
+    "value": "clamp(2.25*1rem,((2.25 - ((3 - 2.25)/(90 - 20)*20))*1rem + ((3 - 2.25)/(90 - 20))*100vw),3*1rem)",
+    "raw": "clamp(2.25*1rem,((2.25 - ((3 - 2.25)/(90 - 20)*20))*1rem + ((3 - 2.25)/(90 - 20))*100vw),3*1rem)"
+   },
+   "--_layout---grid--gap-main": {
+    "value": "clamp(1.75*1rem,((1.75 - ((2 - 1.75)/(90 - 20)*20))*1rem + ((2 - 1.75)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.75*1rem,((1.75 - ((2 - 1.75)/(90 - 20)*20))*1rem + ((2 - 1.75)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_layout---grid--gap-md": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_layout---grid--gap-sm": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_layout---grid--gap-xl": {
+    "value": "clamp(2.5*1rem,((2.5 - ((5 - 2.5)/(90 - 20)*20))*1rem + ((5 - 2.5)/(90 - 20))*100vw),5*1rem)",
+    "raw": "clamp(2.5*1rem,((2.5 - ((5 - 2.5)/(90 - 20)*20))*1rem + ((5 - 2.5)/(90 - 20))*100vw),5*1rem)"
+   },
+   "--_layout---grid--gap-xs": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_layout---section-spacing--extra-large": {
+    "value": "clamp(10*1rem,((10 - ((28 - 10)/(90 - 20)*20))*1rem + ((28 - 10)/(90 - 20))*100vw),28*1rem)",
+    "raw": "clamp(10*1rem,((10 - ((28 - 10)/(90 - 20)*20))*1rem + ((28 - 10)/(90 - 20))*100vw),28*1rem)"
+   },
+   "--_layout---section-spacing--large": {
+    "value": "clamp(3*1rem,((3 - ((15 - 3)/(90 - 20)*20))*1rem + ((15 - 3)/(90 - 20))*100vw),15*1rem)",
+    "raw": "clamp(3*1rem,((3 - ((15 - 3)/(90 - 20)*20))*1rem + ((15 - 3)/(90 - 20))*100vw),15*1rem)"
+   },
+   "--_layout---section-spacing--medium": {
+    "value": "clamp(3*1rem,((3 - ((9 - 3)/(90 - 20)*20))*1rem + ((9 - 3)/(90 - 20))*100vw),9*1rem)",
+    "raw": "clamp(3*1rem,((3 - ((9 - 3)/(90 - 20)*20))*1rem + ((9 - 3)/(90 - 20))*100vw),9*1rem)"
+   },
+   "--_layout---section-spacing--small": {
+    "value": "clamp(3*1rem,((3 - ((5 - 3)/(90 - 20)*20))*1rem + ((5 - 3)/(90 - 20))*100vw),5*1rem)",
+    "raw": "clamp(3*1rem,((3 - ((5 - 3)/(90 - 20)*20))*1rem + ((5 - 3)/(90 - 20))*100vw),5*1rem)"
+   },
+   "--_layout---spacing--margin-lg": {
+    "value": "clamp(1.75*1rem,((1.75 - ((2 - 1.75)/(90 - 20)*20))*1rem + ((2 - 1.75)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.75*1rem,((1.75 - ((2 - 1.75)/(90 - 20)*20))*1rem + ((2 - 1.75)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_layout---spacing--margin-md": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_layout---spacing--margin-sm": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_layout---spacing--margin-xl": {
+    "value": "clamp(2.25*1rem,((2.25 - ((3 - 2.25)/(90 - 20)*20))*1rem + ((3 - 2.25)/(90 - 20))*100vw),3*1rem)",
+    "raw": "clamp(2.25*1rem,((2.25 - ((3 - 2.25)/(90 - 20)*20))*1rem + ((3 - 2.25)/(90 - 20))*100vw),3*1rem)"
+   },
+   "--_layout---spacing--margin-xs": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_size---0-25rem<deleted|variable-2d47388d-3251-c56b-03c9-35dfc0a59c39>": {
+    "value": ".25rem",
+    "raw": ".25rem"
+   },
+   "--_size---0-5rem<deleted|variable-70a8c3ac-c656-f79e-479c-716ec38165c2>": {
+    "value": ".5rem",
+    "raw": ".5rem"
+   },
+   "--_size---0-75rem<deleted|variable-51df6ead-a71c-263d-332f-348c569f6d5f>": {
+    "value": ".75rem",
+    "raw": ".75rem"
+   },
+   "--_size---1rem<deleted|variable-461c7c57-ec3c-d23c-768b-c6de52a540e5>": {
+    "value": "1rem",
+    "raw": "1rem"
+   },
+   "--_size---5rem<deleted|variable-ff14b77f-fe78-09a6-d1f0-e9e7c84aae7c>": {
+    "value": "5rem",
+    "raw": "5rem"
+   },
+   "--_typography---caption--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---caption--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---caption--font-size": {
+    "value": ".8rem",
+    "raw": ".8rem"
+   },
+   "--_typography---caption--font-weight": {
+    "value": "550",
+    "raw": "550"
+   },
+   "--_typography---caption--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---caption--line-height": {
+    "value": "1.2",
+    "raw": "1.2"
+   },
+   "--_typography---eyebrow--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---eyebrow--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---eyebrow--font-size": {
+    "value": "clamp(1*1rem,((1 - ((1.25 - 1)/(90 - 20)*20))*1rem + ((1.25 - 1)/(90 - 20))*100vw),1.25*1rem)",
+    "raw": "clamp(1*1rem,((1 - ((1.25 - 1)/(90 - 20)*20))*1rem + ((1.25 - 1)/(90 - 20))*100vw),1.25*1rem)"
+   },
+   "--_typography---eyebrow--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---eyebrow--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---eyebrow--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---fonts--primary-font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h0--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---h0--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h0--font-size": {
+    "value": "clamp(3*1rem,((3 - ((7 - 3)/(90 - 20)*20))*1rem + ((7 - 3)/(90 - 20))*100vw),7*1rem)",
+    "raw": "clamp(3*1rem,((3 - ((7 - 3)/(90 - 20)*20))*1rem + ((7 - 3)/(90 - 20))*100vw),7*1rem)"
+   },
+   "--_typography---h0--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h0--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h0--line-height": {
+    "value": "1.04",
+    "raw": "1.04"
+   },
+   "--_typography---h1--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---h1--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h1--font-size": {
+    "value": "clamp(2.75*1rem,((2.75 - ((5 - 2.75)/(90 - 20)*20))*1rem + ((5 - 2.75)/(90 - 20))*100vw),5*1rem)",
+    "raw": "clamp(2.75*1rem,((2.75 - ((5 - 2.75)/(90 - 20)*20))*1rem + ((5 - 2.75)/(90 - 20))*100vw),5*1rem)"
+   },
+   "--_typography---h1--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h1--letter-spacing": {
+    "value": "-.01em",
+    "raw": "-.01em"
+   },
+   "--_typography---h1--line-height": {
+    "value": "1.04",
+    "raw": "1.04"
+   },
+   "--_typography---h2--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---h2--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h2--font-size": {
+    "value": "clamp(2*1rem,((2 - ((3.5 - 2)/(90 - 20)*20))*1rem + ((3.5 - 2)/(90 - 20))*100vw),3.5*1rem)",
+    "raw": "clamp(2*1rem,((2 - ((3.5 - 2)/(90 - 20)*20))*1rem + ((3.5 - 2)/(90 - 20))*100vw),3.5*1rem)"
+   },
+   "--_typography---h2--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h2--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h2--line-height": {
+    "value": "1.04",
+    "raw": "1.04"
+   },
+   "--_typography---h3--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---h3--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h3--font-size": {
+    "value": "clamp(1.75*1rem,((1.75 - ((2.5 - 1.75)/(90 - 20)*20))*1rem + ((2.5 - 1.75)/(90 - 20))*100vw),2.5*1rem)",
+    "raw": "clamp(1.75*1rem,((1.75 - ((2.5 - 1.75)/(90 - 20)*20))*1rem + ((2.5 - 1.75)/(90 - 20))*100vw),2.5*1rem)"
+   },
+   "--_typography---h3--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h3--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h3--line-height": {
+    "value": "1.2",
+    "raw": "1.2"
+   },
+   "--_typography---h4--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---h4--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h4--font-size": {
+    "value": "clamp(1.375*1rem,((1.375 - ((2 - 1.375)/(90 - 20)*20))*1rem + ((2 - 1.375)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.375*1rem,((1.375 - ((2 - 1.375)/(90 - 20)*20))*1rem + ((2 - 1.375)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_typography---h4--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h4--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h4--line-height": {
+    "value": "1.2",
+    "raw": "1.2"
+   },
+   "--_typography---h5--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---h5--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h5--font-size": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---h5--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h5--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h5--line-height": {
+    "value": "1.3",
+    "raw": "1.3"
+   },
+   "--_typography---h6--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---h6--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h6--font-size": {
+    "value": "clamp(1.125*1rem,((1.125 - ((1.25 - 1.125)/(90 - 20)*20))*1rem + ((1.25 - 1.125)/(90 - 20))*100vw),1.25*1rem)",
+    "raw": "clamp(1.125*1rem,((1.125 - ((1.25 - 1.125)/(90 - 20)*20))*1rem + ((1.25 - 1.125)/(90 - 20))*100vw),1.25*1rem)"
+   },
+   "--_typography---h6--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h6--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h6--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---paragraph-body--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---paragraph-body--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-body--font-size": {
+    "value": "1rem",
+    "raw": "1rem"
+   },
+   "--_typography---paragraph-body--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-body--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-body--line-height": {
+    "value": "1.6",
+    "raw": "1.6"
+   },
+   "--_typography---paragraph-lg--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---paragraph-lg--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-lg--font-size": {
+    "value": "clamp(1.1*1rem,((1.1 - ((1.25 - 1.1)/(90 - 20)*20))*1rem + ((1.25 - 1.1)/(90 - 20))*100vw),1.25*1rem)",
+    "raw": "clamp(1.1*1rem,((1.1 - ((1.25 - 1.1)/(90 - 20)*20))*1rem + ((1.25 - 1.1)/(90 - 20))*100vw),1.25*1rem)"
+   },
+   "--_typography---paragraph-lg--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-lg--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-lg--line-height": {
+    "value": "1.5",
+    "raw": "1.5"
+   },
+   "--_typography---paragraph-sm--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---paragraph-sm--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-sm--font-size": {
+    "value": ".875rem",
+    "raw": ".875rem"
+   },
+   "--_typography---paragraph-sm--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-sm--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-sm--line-height": {
+    "value": "1.6",
+    "raw": "1.6"
+   },
+   "--_typography---paragraph-xl--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---paragraph-xl--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-xl--font-size": {
+    "value": "clamp(1.25*1rem,((1.25 - ((2 - 1.25)/(90 - 20)*20))*1rem + ((2 - 1.25)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((2 - 1.25)/(90 - 20)*20))*1rem + ((2 - 1.25)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_typography---paragraph-xl--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-xl--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-xl--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---paragraph-xs--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---paragraph-xs--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-xs--font-size": {
+    "value": ".75rem",
+    "raw": ".75rem"
+   },
+   "--_typography---paragraph-xs--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-xs--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-xs--line-height": {
+    "value": "1.6",
+    "raw": "1.6"
+   },
+   "--_typography---paragraph-xxl--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---paragraph-xxl--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-xxl--font-size": {
+    "value": "clamp(1.375*1rem,((1.375 - ((2.5 - 1.375)/(90 - 20)*20))*1rem + ((2.5 - 1.375)/(90 - 20))*100vw),2.5*1rem)",
+    "raw": "clamp(1.375*1rem,((1.375 - ((2.5 - 1.375)/(90 - 20)*20))*1rem + ((2.5 - 1.375)/(90 - 20))*100vw),2.5*1rem)"
+   },
+   "--_typography---paragraph-xxl--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-xxl--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-xxl--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---subheading--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---subheading--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---subheading--font-size": {
+    "value": "clamp(1.125*1rem,((1.125 - ((1.25 - 1.125)/(90 - 20)*20))*1rem + ((1.25 - 1.125)/(90 - 20))*100vw),1.25*1rem)",
+    "raw": "clamp(1.125*1rem,((1.125 - ((1.25 - 1.125)/(90 - 20)*20))*1rem + ((1.25 - 1.125)/(90 - 20))*100vw),1.25*1rem)"
+   },
+   "--_typography---subheading--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---subheading--letter-spacing": {
+    "value": "0px",
+    "raw": "0px"
+   },
+   "--_typography---subheading--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---subheading-lg--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---subheading-lg--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---subheading-lg--font-size": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---subheading-lg--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---subheading-lg--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---subheading-lg--line-height": {
+    "value": "1.6",
+    "raw": "1.6"
+   },
+   "--_typography---subheading-xl--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---subheading-xl--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---subheading-xl--font-size": {
+    "value": "clamp(1.375*1rem,((1.375 - ((2 - 1.375)/(90 - 20)*20))*1rem + ((2 - 1.375)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.375*1rem,((1.375 - ((2 - 1.375)/(90 - 20)*20))*1rem + ((2 - 1.375)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_typography---subheading-xl--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---subheading-xl--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---subheading-xl--line-height": {
+    "value": "1.3",
+    "raw": "1.3"
+   },
+   "--_typography---subheading-xxl--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---subheading-xxl--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---subheading-xxl--font-size": {
+    "value": "clamp(1.75*1rem,((1.75 - ((2.5 - 1.75)/(90 - 20)*20))*1rem + ((2.5 - 1.75)/(90 - 20))*100vw),2.5*1rem)",
+    "raw": "clamp(1.75*1rem,((1.75 - ((2.5 - 1.75)/(90 - 20)*20))*1rem + ((2.5 - 1.75)/(90 - 20))*100vw),2.5*1rem)"
+   },
+   "--_typography---subheading-xxl--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---subheading-xxl--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---subheading-xxl--line-height": {
+    "value": "1.2",
+    "raw": "1.2"
+   },
+   "--_typography---type-paragraph-lg--font-size-md<deleted|variable-cdbe9950-9272-2284-ccf6-60cab96acd5f>": {
+    "value": "1.25rem",
+    "raw": "1.25rem"
+   },
+   "--_typography---type-paragraph-lg--font-size-sm<deleted|variable-841c9cf1-74b8-7850-db1d-b82cdc8d3013>": {
+    "value": "1.1rem",
+    "raw": "1.1rem"
+   },
+   "--_typography---type-paragraph-lg--font-size-xs<deleted|variable-dab72a89-1875-a2f7-1d85-bd05f81dd817>": {
+    "value": "1.1rem",
+    "raw": "1.1rem"
+   },
+   "--_typography---type-paragraph-sm--font-size-md<deleted|variable-94c5336e-6e13-9026-329b-a7b4ba64e183>": {
+    "value": ".9rem",
+    "raw": ".9rem"
+   },
+   "--_typography---type-paragraph-sm--font-size-sm<deleted|variable-dce65071-f183-75c5-98aa-d8afc83560a0>": {
+    "value": ".9rem",
+    "raw": ".9rem"
+   },
+   "--_typography---type-paragraph-sm--font-size-xs<deleted|variable-5ffbcc90-83d8-60d2-b7ba-601684d03f16>": {
+    "value": ".9rem",
+    "raw": ".9rem"
+   },
+   "--animation-delay-d0": {
+    "value": "0s",
+    "raw": "0s"
+   },
+   "--animation-delay-d1": {
+    "value": "0.3s",
+    "raw": "0.3s"
+   },
+   "--animation-delay-d2": {
+    "value": "0.45s",
+    "raw": "0.45s"
+   },
+   "--animation-delay-d3": {
+    "value": "0.75s",
+    "raw": "0.75s"
+   },
+   "--animation-delay-d4": {
+    "value": "1.2s",
+    "raw": "1.2s"
+   },
+   "--animation-delay-d5": {
+    "value": "1.95s",
+    "raw": "1.95s"
+   },
+   "--animation-delay-d6": {
+    "value": "2.7s",
+    "raw": "2.7s"
+   },
+   "--animation-delay-d7": {
+    "value": "3.45s",
+    "raw": "3.45s"
+   },
+   "--animation-duration-1": {
+    "value": "0.3s",
+    "raw": "0.3s"
+   },
+   "--animation-duration-2": {
+    "value": "0.45s",
+    "raw": "0.45s"
+   },
+   "--animation-duration-3": {
+    "value": "0.75s",
+    "raw": "0.75s"
+   },
+   "--animation-duration-4": {
+    "value": "1.2s",
+    "raw": "1.2s"
+   },
+   "--colors--background": {
+    "value": "white",
+    "raw": "white"
+   },
+   "--colors--border": {
+    "value": "#d8d8d8",
+    "raw": "#d8d8d8"
+   },
+   "--colors--primary-accent": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--colors--primary-accent-background": {
+    "value": "color-mix(in hsl,#146ef5/**/10%,transparent 90%)",
+    "raw": "color-mix(in hsl,#146ef5/**/10%,transparent 90%)"
+   },
+   "--colors--primary-accent-text": {
+    "value": "color-mix(in hsl,#146ef5/**/92%,#080808/**/8%)",
+    "raw": "color-mix(in hsl,#146ef5/**/92%,#080808/**/8%)"
+   },
+   "--colors--secondary-background": {
+    "value": "#f0f0f0",
+    "raw": "#f0f0f0"
+   },
+   "--colors--text": {
+    "value": "#080808",
+    "raw": "#080808"
+   },
+   "--colors--text-secondary": {
+    "value": "#5a5a5a",
+    "raw": "#5a5a5a"
+   },
+   "--mkto-embed-checkbox-background": {
+    "value": "#ffffff",
+    "raw": "#ffffff"
+   },
+   "--mkto-embed-checkbox-border": {
+    "value": "#d8d8d8",
+    "raw": "#d8d8d8"
+   },
+   "--mkto-embed-checkbox-checked": {
+    "value": "#080808",
+    "raw": "#080808"
+   },
+   "--mkto-embed-color-background": {
+    "value": "#ffffff",
+    "raw": "#ffffff"
+   },
+   "--mkto-embed-color-border": {
+    "value": "#d8d8d8",
+    "raw": "#d8d8d8"
+   },
+   "--mkto-embed-color-border-hover": {
+    "value": "#898989",
+    "raw": "#898989"
+   },
+   "--mkto-embed-color-button": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--mkto-embed-color-button-hover": {
+    "value": "#0055d4",
+    "raw": "#0055d4"
+   },
+   "--mkto-embed-color-error": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--mkto-embed-color-link": {
+    "value": "#080808",
+    "raw": "#080808"
+   },
+   "--mkto-embed-color-placeholder": {
+    "value": "#757575",
+    "raw": "#757575"
+   },
+   "--mkto-embed-color-text": {
+    "value": "#080808",
+    "raw": "#080808"
+   },
+   "--mkto-embed-font-family": {
+    "value": "\"WF Visual Sans Variable\",sans-serif",
+    "raw": "\"WF Visual Sans Variable\",sans-serif"
+   },
+   "--primary-color": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--swiper-navigation-size": {
+    "value": "44px",
+    "raw": "44px"
+   },
+   "--swiper-theme-color": {
+    "value": "#007aff",
+    "raw": "#007aff"
+   },
+   "--text-color": {
+    "value": "#2b2b2b",
+    "raw": "#2b2b2b"
+   },
+   "--transition-duration-1": {
+    "value": "150ms",
+    "raw": "150ms"
+   },
+   "--transition-duration-2": {
+    "value": "300ms",
+    "raw": "300ms"
+   },
+   "--transition-duration-3": {
+    "value": "450ms",
+    "raw": "450ms"
+   },
+   "--transition-duration-4": {
+    "value": "750ms",
+    "raw": "750ms"
+   },
+   "--transition-duration-5": {
+    "value": "1200ms",
+    "raw": "1200ms"
+   },
+   "--transition-duration-6": {
+    "value": "1950ms",
+    "raw": "1950ms"
+   },
+   "--transition-duration-7": {
+    "value": "3150ms",
+    "raw": "3150ms"
+   },
+   "--transition-timing-inoutcubic": {
+    "value": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+    "raw": "cubic-bezier(0.645, 0.045, 0.355, 1)"
+   },
+   "--transition-timing-inoutquad": {
+    "value": "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+    "raw": "cubic-bezier(0.455, 0.03, 0.515, 0.955)"
+   },
+   "--transition-timing-inoutquart": {
+    "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+    "raw": "cubic-bezier(0.77, 0, 0.175, 1)"
+   },
+   "__paint": {
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(8, 8, 8)",
+    "scheme": "normal"
+   }
+  },
+  "dark": {
+   "--_color---blue-300": {
+    "value": "#006acc",
+    "raw": "#006acc"
+   },
+   "--_color---neutral--black": {
+    "value": "#080808",
+    "raw": "#080808"
+   },
+   "--_color---neutral--gray-100": {
+    "value": "#f0f0f0",
+    "raw": "#f0f0f0"
+   },
+   "--_color---neutral--gray-200": {
+    "value": "#d8d8d8",
+    "raw": "#d8d8d8"
+   },
+   "--_color---neutral--gray-300": {
+    "value": "#ababab",
+    "raw": "#ababab"
+   },
+   "--_color---neutral--gray-400": {
+    "value": "#898989",
+    "raw": "#898989"
+   },
+   "--_color---neutral--gray-500": {
+    "value": "#757575",
+    "raw": "#757575"
+   },
+   "--_color---neutral--gray-600": {
+    "value": "#5a5a5a",
+    "raw": "#5a5a5a"
+   },
+   "--_color---neutral--gray-700": {
+    "value": "#363636",
+    "raw": "#363636"
+   },
+   "--_color---neutral--gray-800": {
+    "value": "#222",
+    "raw": "#222"
+   },
+   "--_color---neutral--gray-900": {
+    "value": "#171717",
+    "raw": "#171717"
+   },
+   "--_color---neutral--white": {
+    "value": "white",
+    "raw": "white"
+   },
+   "--_color---primary--blue-400": {
+    "value": "#3b89ff",
+    "raw": "#3b89ff"
+   },
+   "--_color---primary--blue-600": {
+    "value": "#0055d4",
+    "raw": "#0055d4"
+   },
+   "--_color---primary--webflow-blue": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--_color---secondary--green": {
+    "value": "#00d722",
+    "raw": "#00d722"
+   },
+   "--_color---secondary--orange": {
+    "value": "#ff6b00",
+    "raw": "#ff6b00"
+   },
+   "--_color---secondary--pink": {
+    "value": "#ed52cb",
+    "raw": "#ed52cb"
+   },
+   "--_color---secondary--purple": {
+    "value": "#7a3dff",
+    "raw": "#7a3dff"
+   },
+   "--_color---secondary--red": {
+    "value": "#ee1d36",
+    "raw": "#ee1d36"
+   },
+   "--_color---secondary--yellow": {
+    "value": "#ffae13",
+    "raw": "#ffae13"
+   },
+   "--_components---button--border-radius": {
+    "value": ".25rem",
+    "raw": ".25rem"
+   },
+   "--_components---button--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_components---button--font-size": {
+    "value": "1rem",
+    "raw": "1rem"
+   },
+   "--_components---button--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_components---button--horizontal-padding": {
+    "value": "1.5em",
+    "raw": "1.5em"
+   },
+   "--_components---button--letter-spacing": {
+    "value": "-.01em",
+    "raw": "-.01em"
+   },
+   "--_components---button--line-height": {
+    "value": "1.2em",
+    "raw": "1.2em"
+   },
+   "--_components---button--vertical-padding": {
+    "value": "1em",
+    "raw": "1em"
+   },
+   "--_components---card--border-radius": {
+    "value": ".5rem",
+    "raw": ".5rem"
+   },
+   "--_components---card--padding": {
+    "value": "clamp(1*1rem,((1 - ((1.5 - 1)/(90 - 20)*20))*1rem + ((1.5 - 1)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1*1rem,((1 - ((1.5 - 1)/(90 - 20)*20))*1rem + ((1.5 - 1)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_components---image--float-size": {
+    "value": "max(-2vw,-3.5rem)",
+    "raw": "max(-2vw,-3.5rem)"
+   },
+   "--_components---input--border-radius": {
+    "value": ".25rem",
+    "raw": ".25rem"
+   },
+   "--_components---input--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_components---input--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_components---input--font-size": {
+    "value": "1rem",
+    "raw": "1rem"
+   },
+   "--_components---input--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_components---input--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_components---input--line-height": {
+    "value": "1.5em",
+    "raw": "1.5em"
+   },
+   "--_components---input-label--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_components---input-label--font-size": {
+    "value": ".9rem",
+    "raw": ".9rem"
+   },
+   "--_components---input-label--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_components---input-label--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_components---input-label--line-height": {
+    "value": "1.4em",
+    "raw": "1.4em"
+   },
+   "--_components---nav--height": {
+    "value": "4.25rem",
+    "raw": "4.25rem"
+   },
+   "--_layout---container--max-width": {
+    "value": "calc(90*1rem)",
+    "raw": "calc(90*1rem)"
+   },
+   "--_layout---fluid--max": {
+    "value": "90",
+    "raw": "90"
+   },
+   "--_layout---fluid--min": {
+    "value": "20",
+    "raw": "20"
+   },
+   "--_layout---grid--gap-lg": {
+    "value": "clamp(2.25*1rem,((2.25 - ((3 - 2.25)/(90 - 20)*20))*1rem + ((3 - 2.25)/(90 - 20))*100vw),3*1rem)",
+    "raw": "clamp(2.25*1rem,((2.25 - ((3 - 2.25)/(90 - 20)*20))*1rem + ((3 - 2.25)/(90 - 20))*100vw),3*1rem)"
+   },
+   "--_layout---grid--gap-main": {
+    "value": "clamp(1.75*1rem,((1.75 - ((2 - 1.75)/(90 - 20)*20))*1rem + ((2 - 1.75)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.75*1rem,((1.75 - ((2 - 1.75)/(90 - 20)*20))*1rem + ((2 - 1.75)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_layout---grid--gap-md": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_layout---grid--gap-sm": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_layout---grid--gap-xl": {
+    "value": "clamp(2.5*1rem,((2.5 - ((5 - 2.5)/(90 - 20)*20))*1rem + ((5 - 2.5)/(90 - 20))*100vw),5*1rem)",
+    "raw": "clamp(2.5*1rem,((2.5 - ((5 - 2.5)/(90 - 20)*20))*1rem + ((5 - 2.5)/(90 - 20))*100vw),5*1rem)"
+   },
+   "--_layout---grid--gap-xs": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_layout---section-spacing--extra-large": {
+    "value": "clamp(10*1rem,((10 - ((28 - 10)/(90 - 20)*20))*1rem + ((28 - 10)/(90 - 20))*100vw),28*1rem)",
+    "raw": "clamp(10*1rem,((10 - ((28 - 10)/(90 - 20)*20))*1rem + ((28 - 10)/(90 - 20))*100vw),28*1rem)"
+   },
+   "--_layout---section-spacing--large": {
+    "value": "clamp(3*1rem,((3 - ((15 - 3)/(90 - 20)*20))*1rem + ((15 - 3)/(90 - 20))*100vw),15*1rem)",
+    "raw": "clamp(3*1rem,((3 - ((15 - 3)/(90 - 20)*20))*1rem + ((15 - 3)/(90 - 20))*100vw),15*1rem)"
+   },
+   "--_layout---section-spacing--medium": {
+    "value": "clamp(3*1rem,((3 - ((9 - 3)/(90 - 20)*20))*1rem + ((9 - 3)/(90 - 20))*100vw),9*1rem)",
+    "raw": "clamp(3*1rem,((3 - ((9 - 3)/(90 - 20)*20))*1rem + ((9 - 3)/(90 - 20))*100vw),9*1rem)"
+   },
+   "--_layout---section-spacing--small": {
+    "value": "clamp(3*1rem,((3 - ((5 - 3)/(90 - 20)*20))*1rem + ((5 - 3)/(90 - 20))*100vw),5*1rem)",
+    "raw": "clamp(3*1rem,((3 - ((5 - 3)/(90 - 20)*20))*1rem + ((5 - 3)/(90 - 20))*100vw),5*1rem)"
+   },
+   "--_layout---spacing--margin-lg": {
+    "value": "clamp(1.75*1rem,((1.75 - ((2 - 1.75)/(90 - 20)*20))*1rem + ((2 - 1.75)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.75*1rem,((1.75 - ((2 - 1.75)/(90 - 20)*20))*1rem + ((2 - 1.75)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_layout---spacing--margin-md": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_layout---spacing--margin-sm": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_layout---spacing--margin-xl": {
+    "value": "clamp(2.25*1rem,((2.25 - ((3 - 2.25)/(90 - 20)*20))*1rem + ((3 - 2.25)/(90 - 20))*100vw),3*1rem)",
+    "raw": "clamp(2.25*1rem,((2.25 - ((3 - 2.25)/(90 - 20)*20))*1rem + ((3 - 2.25)/(90 - 20))*100vw),3*1rem)"
+   },
+   "--_layout---spacing--margin-xs": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_size---0-25rem<deleted|variable-2d47388d-3251-c56b-03c9-35dfc0a59c39>": {
+    "value": ".25rem",
+    "raw": ".25rem"
+   },
+   "--_size---0-5rem<deleted|variable-70a8c3ac-c656-f79e-479c-716ec38165c2>": {
+    "value": ".5rem",
+    "raw": ".5rem"
+   },
+   "--_size---0-75rem<deleted|variable-51df6ead-a71c-263d-332f-348c569f6d5f>": {
+    "value": ".75rem",
+    "raw": ".75rem"
+   },
+   "--_size---1rem<deleted|variable-461c7c57-ec3c-d23c-768b-c6de52a540e5>": {
+    "value": "1rem",
+    "raw": "1rem"
+   },
+   "--_size---5rem<deleted|variable-ff14b77f-fe78-09a6-d1f0-e9e7c84aae7c>": {
+    "value": "5rem",
+    "raw": "5rem"
+   },
+   "--_typography---caption--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---caption--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---caption--font-size": {
+    "value": ".8rem",
+    "raw": ".8rem"
+   },
+   "--_typography---caption--font-weight": {
+    "value": "550",
+    "raw": "550"
+   },
+   "--_typography---caption--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---caption--line-height": {
+    "value": "1.2",
+    "raw": "1.2"
+   },
+   "--_typography---eyebrow--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---eyebrow--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---eyebrow--font-size": {
+    "value": "clamp(1*1rem,((1 - ((1.25 - 1)/(90 - 20)*20))*1rem + ((1.25 - 1)/(90 - 20))*100vw),1.25*1rem)",
+    "raw": "clamp(1*1rem,((1 - ((1.25 - 1)/(90 - 20)*20))*1rem + ((1.25 - 1)/(90 - 20))*100vw),1.25*1rem)"
+   },
+   "--_typography---eyebrow--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---eyebrow--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---eyebrow--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---fonts--primary-font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h0--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---h0--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h0--font-size": {
+    "value": "clamp(3*1rem,((3 - ((7 - 3)/(90 - 20)*20))*1rem + ((7 - 3)/(90 - 20))*100vw),7*1rem)",
+    "raw": "clamp(3*1rem,((3 - ((7 - 3)/(90 - 20)*20))*1rem + ((7 - 3)/(90 - 20))*100vw),7*1rem)"
+   },
+   "--_typography---h0--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h0--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h0--line-height": {
+    "value": "1.04",
+    "raw": "1.04"
+   },
+   "--_typography---h1--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---h1--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h1--font-size": {
+    "value": "clamp(2.75*1rem,((2.75 - ((5 - 2.75)/(90 - 20)*20))*1rem + ((5 - 2.75)/(90 - 20))*100vw),5*1rem)",
+    "raw": "clamp(2.75*1rem,((2.75 - ((5 - 2.75)/(90 - 20)*20))*1rem + ((5 - 2.75)/(90 - 20))*100vw),5*1rem)"
+   },
+   "--_typography---h1--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h1--letter-spacing": {
+    "value": "-.01em",
+    "raw": "-.01em"
+   },
+   "--_typography---h1--line-height": {
+    "value": "1.04",
+    "raw": "1.04"
+   },
+   "--_typography---h2--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---h2--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h2--font-size": {
+    "value": "clamp(2*1rem,((2 - ((3.5 - 2)/(90 - 20)*20))*1rem + ((3.5 - 2)/(90 - 20))*100vw),3.5*1rem)",
+    "raw": "clamp(2*1rem,((2 - ((3.5 - 2)/(90 - 20)*20))*1rem + ((3.5 - 2)/(90 - 20))*100vw),3.5*1rem)"
+   },
+   "--_typography---h2--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h2--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h2--line-height": {
+    "value": "1.04",
+    "raw": "1.04"
+   },
+   "--_typography---h3--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---h3--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h3--font-size": {
+    "value": "clamp(1.75*1rem,((1.75 - ((2.5 - 1.75)/(90 - 20)*20))*1rem + ((2.5 - 1.75)/(90 - 20))*100vw),2.5*1rem)",
+    "raw": "clamp(1.75*1rem,((1.75 - ((2.5 - 1.75)/(90 - 20)*20))*1rem + ((2.5 - 1.75)/(90 - 20))*100vw),2.5*1rem)"
+   },
+   "--_typography---h3--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h3--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h3--line-height": {
+    "value": "1.2",
+    "raw": "1.2"
+   },
+   "--_typography---h4--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---h4--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h4--font-size": {
+    "value": "clamp(1.375*1rem,((1.375 - ((2 - 1.375)/(90 - 20)*20))*1rem + ((2 - 1.375)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.375*1rem,((1.375 - ((2 - 1.375)/(90 - 20)*20))*1rem + ((2 - 1.375)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_typography---h4--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h4--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h4--line-height": {
+    "value": "1.2",
+    "raw": "1.2"
+   },
+   "--_typography---h5--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---h5--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h5--font-size": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---h5--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h5--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h5--line-height": {
+    "value": "1.3",
+    "raw": "1.3"
+   },
+   "--_typography---h6--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---h6--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---h6--font-size": {
+    "value": "clamp(1.125*1rem,((1.125 - ((1.25 - 1.125)/(90 - 20)*20))*1rem + ((1.25 - 1.125)/(90 - 20))*100vw),1.25*1rem)",
+    "raw": "clamp(1.125*1rem,((1.125 - ((1.25 - 1.125)/(90 - 20)*20))*1rem + ((1.25 - 1.125)/(90 - 20))*100vw),1.25*1rem)"
+   },
+   "--_typography---h6--font-weight": {
+    "value": "600",
+    "raw": "600"
+   },
+   "--_typography---h6--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---h6--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---paragraph-body--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---paragraph-body--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-body--font-size": {
+    "value": "1rem",
+    "raw": "1rem"
+   },
+   "--_typography---paragraph-body--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-body--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-body--line-height": {
+    "value": "1.6",
+    "raw": "1.6"
+   },
+   "--_typography---paragraph-lg--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---paragraph-lg--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-lg--font-size": {
+    "value": "clamp(1.1*1rem,((1.1 - ((1.25 - 1.1)/(90 - 20)*20))*1rem + ((1.25 - 1.1)/(90 - 20))*100vw),1.25*1rem)",
+    "raw": "clamp(1.1*1rem,((1.1 - ((1.25 - 1.1)/(90 - 20)*20))*1rem + ((1.25 - 1.1)/(90 - 20))*100vw),1.25*1rem)"
+   },
+   "--_typography---paragraph-lg--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-lg--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-lg--line-height": {
+    "value": "1.5",
+    "raw": "1.5"
+   },
+   "--_typography---paragraph-sm--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---paragraph-sm--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-sm--font-size": {
+    "value": ".875rem",
+    "raw": ".875rem"
+   },
+   "--_typography---paragraph-sm--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-sm--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-sm--line-height": {
+    "value": "1.6",
+    "raw": "1.6"
+   },
+   "--_typography---paragraph-xl--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---paragraph-xl--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-xl--font-size": {
+    "value": "clamp(1.25*1rem,((1.25 - ((2 - 1.25)/(90 - 20)*20))*1rem + ((2 - 1.25)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((2 - 1.25)/(90 - 20)*20))*1rem + ((2 - 1.25)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_typography---paragraph-xl--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-xl--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-xl--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---paragraph-xs--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---paragraph-xs--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-xs--font-size": {
+    "value": ".75rem",
+    "raw": ".75rem"
+   },
+   "--_typography---paragraph-xs--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-xs--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-xs--line-height": {
+    "value": "1.6",
+    "raw": "1.6"
+   },
+   "--_typography---paragraph-xxl--bottom-margin": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---paragraph-xxl--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---paragraph-xxl--font-size": {
+    "value": "clamp(1.375*1rem,((1.375 - ((2.5 - 1.375)/(90 - 20)*20))*1rem + ((2.5 - 1.375)/(90 - 20))*100vw),2.5*1rem)",
+    "raw": "clamp(1.375*1rem,((1.375 - ((2.5 - 1.375)/(90 - 20)*20))*1rem + ((2.5 - 1.375)/(90 - 20))*100vw),2.5*1rem)"
+   },
+   "--_typography---paragraph-xxl--font-weight": {
+    "value": "400",
+    "raw": "400"
+   },
+   "--_typography---paragraph-xxl--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---paragraph-xxl--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---subheading--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---subheading--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---subheading--font-size": {
+    "value": "clamp(1.125*1rem,((1.125 - ((1.25 - 1.125)/(90 - 20)*20))*1rem + ((1.25 - 1.125)/(90 - 20))*100vw),1.25*1rem)",
+    "raw": "clamp(1.125*1rem,((1.125 - ((1.25 - 1.125)/(90 - 20)*20))*1rem + ((1.25 - 1.125)/(90 - 20))*100vw),1.25*1rem)"
+   },
+   "--_typography---subheading--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---subheading--letter-spacing": {
+    "value": "0px",
+    "raw": "0px"
+   },
+   "--_typography---subheading--line-height": {
+    "value": "1.4",
+    "raw": "1.4"
+   },
+   "--_typography---subheading-lg--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---subheading-lg--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---subheading-lg--font-size": {
+    "value": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)",
+    "raw": "clamp(1.25*1rem,((1.25 - ((1.5 - 1.25)/(90 - 20)*20))*1rem + ((1.5 - 1.25)/(90 - 20))*100vw),1.5*1rem)"
+   },
+   "--_typography---subheading-lg--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---subheading-lg--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---subheading-lg--line-height": {
+    "value": "1.6",
+    "raw": "1.6"
+   },
+   "--_typography---subheading-xl--bottom-margin": {
+    "value": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)",
+    "raw": "clamp(.375*1rem,((.375 - ((.5 - .375)/(90 - 20)*20))*1rem + ((.5 - .375)/(90 - 20))*100vw),.5*1rem)"
+   },
+   "--_typography---subheading-xl--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---subheading-xl--font-size": {
+    "value": "clamp(1.375*1rem,((1.375 - ((2 - 1.375)/(90 - 20)*20))*1rem + ((2 - 1.375)/(90 - 20))*100vw),2*1rem)",
+    "raw": "clamp(1.375*1rem,((1.375 - ((2 - 1.375)/(90 - 20)*20))*1rem + ((2 - 1.375)/(90 - 20))*100vw),2*1rem)"
+   },
+   "--_typography---subheading-xl--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---subheading-xl--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---subheading-xl--line-height": {
+    "value": "1.3",
+    "raw": "1.3"
+   },
+   "--_typography---subheading-xxl--bottom-margin": {
+    "value": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)",
+    "raw": "clamp(.625*1rem,((.625 - ((1 - .625)/(90 - 20)*20))*1rem + ((1 - .625)/(90 - 20))*100vw),1*1rem)"
+   },
+   "--_typography---subheading-xxl--font": {
+    "value": "\"WF Visual Sans Variable\",Arial,sans-serif",
+    "raw": "\"WF Visual Sans Variable\",Arial,sans-serif"
+   },
+   "--_typography---subheading-xxl--font-size": {
+    "value": "clamp(1.75*1rem,((1.75 - ((2.5 - 1.75)/(90 - 20)*20))*1rem + ((2.5 - 1.75)/(90 - 20))*100vw),2.5*1rem)",
+    "raw": "clamp(1.75*1rem,((1.75 - ((2.5 - 1.75)/(90 - 20)*20))*1rem + ((2.5 - 1.75)/(90 - 20))*100vw),2.5*1rem)"
+   },
+   "--_typography---subheading-xxl--font-weight": {
+    "value": "500",
+    "raw": "500"
+   },
+   "--_typography---subheading-xxl--letter-spacing": {
+    "value": "0em",
+    "raw": "0em"
+   },
+   "--_typography---subheading-xxl--line-height": {
+    "value": "1.2",
+    "raw": "1.2"
+   },
+   "--_typography---type-paragraph-lg--font-size-md<deleted|variable-cdbe9950-9272-2284-ccf6-60cab96acd5f>": {
+    "value": "1.25rem",
+    "raw": "1.25rem"
+   },
+   "--_typography---type-paragraph-lg--font-size-sm<deleted|variable-841c9cf1-74b8-7850-db1d-b82cdc8d3013>": {
+    "value": "1.1rem",
+    "raw": "1.1rem"
+   },
+   "--_typography---type-paragraph-lg--font-size-xs<deleted|variable-dab72a89-1875-a2f7-1d85-bd05f81dd817>": {
+    "value": "1.1rem",
+    "raw": "1.1rem"
+   },
+   "--_typography---type-paragraph-sm--font-size-md<deleted|variable-94c5336e-6e13-9026-329b-a7b4ba64e183>": {
+    "value": ".9rem",
+    "raw": ".9rem"
+   },
+   "--_typography---type-paragraph-sm--font-size-sm<deleted|variable-dce65071-f183-75c5-98aa-d8afc83560a0>": {
+    "value": ".9rem",
+    "raw": ".9rem"
+   },
+   "--_typography---type-paragraph-sm--font-size-xs<deleted|variable-5ffbcc90-83d8-60d2-b7ba-601684d03f16>": {
+    "value": ".9rem",
+    "raw": ".9rem"
+   },
+   "--animation-delay-d0": {
+    "value": "0s",
+    "raw": "0s"
+   },
+   "--animation-delay-d1": {
+    "value": "0.3s",
+    "raw": "0.3s"
+   },
+   "--animation-delay-d2": {
+    "value": "0.45s",
+    "raw": "0.45s"
+   },
+   "--animation-delay-d3": {
+    "value": "0.75s",
+    "raw": "0.75s"
+   },
+   "--animation-delay-d4": {
+    "value": "1.2s",
+    "raw": "1.2s"
+   },
+   "--animation-delay-d5": {
+    "value": "1.95s",
+    "raw": "1.95s"
+   },
+   "--animation-delay-d6": {
+    "value": "2.7s",
+    "raw": "2.7s"
+   },
+   "--animation-delay-d7": {
+    "value": "3.45s",
+    "raw": "3.45s"
+   },
+   "--animation-duration-1": {
+    "value": "0.3s",
+    "raw": "0.3s"
+   },
+   "--animation-duration-2": {
+    "value": "0.45s",
+    "raw": "0.45s"
+   },
+   "--animation-duration-3": {
+    "value": "0.75s",
+    "raw": "0.75s"
+   },
+   "--animation-duration-4": {
+    "value": "1.2s",
+    "raw": "1.2s"
+   },
+   "--colors--background": {
+    "value": "#080808",
+    "raw": "#080808"
+   },
+   "--colors--border": {
+    "value": "#363636",
+    "raw": "#363636"
+   },
+   "--colors--primary-accent": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--colors--primary-accent-background": {
+    "value": "color-mix(in hsl,#146ef5/**/10%,white 6%)",
+    "raw": "color-mix(in hsl,#146ef5/**/10%,white 6%)"
+   },
+   "--colors--primary-accent-text": {
+    "value": "#3b89ff",
+    "raw": "#3b89ff"
+   },
+   "--colors--secondary-background": {
+    "value": "#171717",
+    "raw": "#171717"
+   },
+   "--colors--text": {
+    "value": "white",
+    "raw": "white"
+   },
+   "--colors--text-secondary": {
+    "value": "#ababab",
+    "raw": "#ababab"
+   },
+   "--mkto-embed-checkbox-background": {
+    "value": "#171717",
+    "raw": "#171717"
+   },
+   "--mkto-embed-checkbox-border": {
+    "value": "#5a5a5a",
+    "raw": "#5a5a5a"
+   },
+   "--mkto-embed-checkbox-checked": {
+    "value": "#ffffff",
+    "raw": "#ffffff"
+   },
+   "--mkto-embed-color-background": {
+    "value": "#171717",
+    "raw": "#171717"
+   },
+   "--mkto-embed-color-border": {
+    "value": "#5a5a5a",
+    "raw": "#5a5a5a"
+   },
+   "--mkto-embed-color-border-hover": {
+    "value": "#d8d8d8",
+    "raw": "#d8d8d8"
+   },
+   "--mkto-embed-color-button": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--mkto-embed-color-button-hover": {
+    "value": "#0055d4",
+    "raw": "#0055d4"
+   },
+   "--mkto-embed-color-error": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--mkto-embed-color-link": {
+    "value": "#ffffff",
+    "raw": "#ffffff"
+   },
+   "--mkto-embed-color-placeholder": {
+    "value": "#898989",
+    "raw": "#898989"
+   },
+   "--mkto-embed-color-text": {
+    "value": "#ffffff",
+    "raw": "#ffffff"
+   },
+   "--mkto-embed-font-family": {
+    "value": "\"WF Visual Sans Variable\",sans-serif",
+    "raw": "\"WF Visual Sans Variable\",sans-serif"
+   },
+   "--primary-color": {
+    "value": "#146ef5",
+    "raw": "#146ef5"
+   },
+   "--swiper-navigation-size": {
+    "value": "44px",
+    "raw": "44px"
+   },
+   "--swiper-theme-color": {
+    "value": "#007aff",
+    "raw": "#007aff"
+   },
+   "--text-color": {
+    "value": "#2b2b2b",
+    "raw": "#2b2b2b"
+   },
+   "--transition-duration-1": {
+    "value": "150ms",
+    "raw": "150ms"
+   },
+   "--transition-duration-2": {
+    "value": "300ms",
+    "raw": "300ms"
+   },
+   "--transition-duration-3": {
+    "value": "450ms",
+    "raw": "450ms"
+   },
+   "--transition-duration-4": {
+    "value": "750ms",
+    "raw": "750ms"
+   },
+   "--transition-duration-5": {
+    "value": "1200ms",
+    "raw": "1200ms"
+   },
+   "--transition-duration-6": {
+    "value": "1950ms",
+    "raw": "1950ms"
+   },
+   "--transition-duration-7": {
+    "value": "3150ms",
+    "raw": "3150ms"
+   },
+   "--transition-timing-inoutcubic": {
+    "value": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+    "raw": "cubic-bezier(0.645, 0.045, 0.355, 1)"
+   },
+   "--transition-timing-inoutquad": {
+    "value": "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+    "raw": "cubic-bezier(0.455, 0.03, 0.515, 0.955)"
+   },
+   "--transition-timing-inoutquart": {
+    "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+    "raw": "cubic-bezier(0.77, 0, 0.175, 1)"
+   },
+   "__paint": {
+    "bg": "rgb(8, 8, 8)",
+    "color": "rgb(255, 255, 255)",
+    "scheme": "dark"
+   }
+  }
+ }
+}

@@ -1,26 +1,20 @@
-// Captures Gauth's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
+// Captures Runway's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
 //
-//   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
+//   PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
-// Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix. Gauth ships one theme, so there
-// is no dark run. Desktop shots are 1440x900 at 1x, mobile shots 390x844 at 2x, `*-full` shots 1x. A page
-// taller than one GPU texture is saved as name.partN.png tiles, which quantize.py stitches back together.
-// Nothing is sent, created or signed into: the only presses are dialog dismissals, tabs, Show more, the
-// lesson's own Not now, Continue (the audio gate), Pause, Settings and chapters, and a story card's
-// Explore, which opens a published story.
+// Desktop shots are 1440x900 at 1x, mobile shots 390x844 at 2x. Names are {page}-light-{state}.png;
+// mobile ones get a mobile- prefix. Runway's marketing site is light only.
+// Nothing is submitted or signed into. Consent overlays are hidden, never clicked.
+// Login, Try Runway, Google and Apple are not followed.
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { M, closePromo, openStory, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { chromium, UA, UA_MOBILE, hideConsent, dismissBanner, isWall } from './lib.mjs';
 
-// Full-colour shots are working files, never committed: by default they go outside the repository,
-// to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
-const inPackage = path.basename(path.dirname(PKG)) === 'systems';
-if (!process.env.RAW && !inPackage) { console.error('set RAW=<scratch dir> (this copy is not inside systems/<slug>/tools/)'); process.exit(2); }
-const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(PKG), 'raw-shots');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'runway', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -28,13 +22,26 @@ const wait = (p, ms) => p.waitForTimeout(ms);
 
 async function lazyScroll(p) {
   const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
-  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
+  const cap = Math.min(h, 9000);
+  for (let y = 0; y < cap; y += 700) {
+    await p.evaluate((y) => scrollTo(0, y), y);
+    await wait(p, 160);
+  }
+  await p.evaluate(() => scrollTo(0, 0));
+  await wait(p, 400);
 }
 
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr }; this.count = 0; }
-  async view(name) { await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
+  constructor(p, prefix, vw, vh, dpr) {
+    this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr;
+    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr };
+    this.count = 0;
+  }
+  async view(name) {
+    await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested);
+    this.count++;
+    log('  shot', name);
+  }
   async full(name = 'full') {
     const p = this.p;
     await lazyScroll(p);
@@ -42,125 +49,166 @@ class Shooter {
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
-    // without a ceiling the tile loop writes forever (acuityscheduling filled
-    // 111 GB once). Truncate hard and record the boundary instead.
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
+    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
     if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
-    this.count++; log('  shot', name, 'H=' + H);
-    await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
+    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+      await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    }
+    this.count++;
+    log('  shot', name, 'H=' + H);
+    await p.evaluate(() => scrollTo(0, 0));
+    await wait(p, 300);
   }
 }
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
-const notNow = async (p) => { const b = p.getByRole('button', { name: 'Not now' }); if (await b.count()) { await b.click(); await wait(p, 1200); } };
-const gate = async (p) => { const b = p.getByRole('button', { name: 'Continue', exact: true }); if (await b.count()) { await b.click(); await wait(p, 4000); } };
-const pause = async (p) => { const b = p.getByRole('button', { name: /^Pause/ }); if (await b.count()) { await b.first().click().catch(() => {}); await wait(p, 600); } };
+
+const step = async (label, fn) => {
+  try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); }
+};
+
+async function hoverNav(p, S, label) {
+  const loc = p.locator('header a, nav a').filter({ hasText: new RegExp('^' + label + '$') }).first();
+  await loc.hover({ timeout: 4000 });
+  await wait(p, 700);
+  const expanded = await loc.getAttribute('aria-expanded');
+  if (expanded !== 'true') log('  menu not expanded', label, expanded);
+  if (isWall(p.url())) { log('  WALL after hover', label, p.url()); return; }
+  await S.view('menu-' + label.toLowerCase());
+  await p.mouse.move(20, 860);
+  await wait(p, 250);
+}
 
 const desktop = {
-  home: { path: '/', promo: 'keep', run: async (p, S) => {
-    await S.view('promo');
-    await closePromo(p);
+  home: { url: 'https://runway.com/', run: async (p, S) => {
     await S.view('default');
     await S.full();
-    await step('question-focused', async () => { await p.locator(M('pc_input')).first().click(); await wait(p, 500); await S.view('question-focused'); await p.mouse.click(1400, 600); });
-    await step('sidebar-folded', async () => { await p.locator(M('side-menu_sidebar-collapse')).first().click(); await wait(p, 900); await S.view('sidebar-folded'); });
-  } },
-  'academy-science': { path: '/course/science', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'academy-math': { path: '/course/math', run: async (p, S) => {
-    await S.view('default');
-    await step('show-more', async () => {
-      const b = p.locator(M('catalog_expandButton')).first();
-      await b.click(); await wait(p, 1200);
-      await p.evaluate(() => scrollTo(0, 420)); await wait(p, 700);
-      await S.view('show-more');
+    for (const label of ['Creative', 'Dev', 'Robotics', 'Research', 'Resources', 'Enterprise']) {
+      await step('menu-' + label, () => hoverNav(p, S, label));
+    }
+    await step('language', async () => {
+      await p.getByRole('button', { name: /Change language|ENGLISH/i }).first().click();
+      await wait(p, 600);
+      await S.view('language');
+      await p.keyboard.press('Escape');
+      await wait(p, 300);
+    });
+    await step('platform-tab', async () => {
+      const b = p.getByRole('button', { name: 'Runway Dev', exact: true }).first();
+      if (await b.count()) { await b.click(); await wait(p, 600); await S.view('tab-dev'); }
     });
   } },
-  'academy-history': { path: '/course/history', run: async (p, S) => { await S.view('default'); } },
-  'academy-my': { path: '/course/my', run: async (p, S) => {
-    await S.view('default');
-    await step('create-dialog', async () => { await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2500); await S.view('create-dialog'); });
-  } },
-  unit: { path: '/course/math/algebra-1?unit=real-numbers-and-sets', run: async (p, S) => {
-    await S.view('default');
-    await step('path', async () => { await p.evaluate(() => scrollTo(0, 700)); await wait(p, 1000); await S.view('path'); });
-    await step('unit-2', async () => { await p.evaluate(() => scrollTo(0, 0)); await p.locator(M('math-course-detail_unitButton')).nth(1).click(); await wait(p, 1500); await S.view('unit-2'); });
-  } },
-  'lesson-science': { path: '/course/science/how-things-work-1/learn?entry_source=start&from=science', wait: 7000, run: async (p, S) => {
-    await S.view('audio-dialog');
-    await notNow(p);
-    await S.view('default');
-    await step('settings', async () => { await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await S.view('settings'); await p.keyboard.press('Escape'); await wait(p, 500); });
-    await step('ask-tutor', async () => { await pause(p); await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1500); await S.view('ask-tutor'); await p.keyboard.press('Escape'); await p.mouse.click(700, 500); await wait(p, 500); });
-    await step('figure', async () => {
-      const play = p.getByRole('button', { name: 'Play' }); if (await play.count()) await play.click();
-      for (let i = 0; i < 60; i++) { const ok = await p.evaluate(() => { const e = document.querySelector('ol[class*="canvas_list__"]'); if (!e) return false; const r = e.getBoundingClientRect(); return r.bottom < innerHeight - 20 && r.top > 60; }); if (ok) break; await wait(p, 1500); }
-      await pause(p); await S.view('figure');
-      const play2 = p.getByRole('button', { name: 'Play' }); if (await play2.count()) await play2.click();
-    });
-    await step('quiz', async () => {
-      for (let i = 0; i < 110; i++) { if (await p.locator('[aria-label="Close quiz and continue"]').count()) break; await wait(p, 2000); }
-      await S.view('quiz');
-    });
-  } },
-  'lesson-math': { path: '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', wait: 8000, run: async (p, S) => {
-    await S.view('audio-gate');
-    await gate(p);
-    await S.view('default');
-    await step('chapters', async () => { await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1200); await S.view('chapters'); });
-  } },
-  'lesson-history': { path: '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await step('chapters', async () => { await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1200); await S.view('chapters'); });
-  } },
-  atlas: { path: '/atlas', run: async (p, S) => {
+  product: { url: 'https://runway.com/product', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  pricing: { url: 'https://runway.com/pricing', run: async (p, S) => {
     await S.view('default');
     await S.full();
-    await step('story', async () => {
-      const card = p.locator(M('user-cases_card')).filter({ hasText: 'Apollo 11' }).first();
-      await card.scrollIntoViewIfNeeded(); await card.click(); await wait(p, 3000);
-      await S.view('story-preview');
-      await p.locator(M('user-cases_exploreButton')).first().click(); await wait(p, 10000);
-      await p.mouse.move(700, 880); await wait(p, 600);
-      await S.view('story');
-      await p.evaluate(() => { const b = [...document.querySelectorAll('button')].find((e) => /Generate Video/.test(e.innerText || '') && e.getBoundingClientRect().top < 40); if (b) b.setAttribute('data-m', 'gen'); });
-      await p.locator('[data-m="gen"]').hover(); await wait(p, 1500);
-      await S.view('story-video-settings');
+    await step('yearly', async () => {
+      const y = p.getByRole('button', { name: /^Yearly/ }).first();
+      if (await y.count()) { await y.click(); await wait(p, 500); await S.view('yearly'); }
+    });
+    await step('api-tab', async () => {
+      const t = p.getByRole('tab', { name: 'API' }).or(p.getByRole('button', { name: /^API$/ })).first();
+      if (await t.count()) { await t.click(); await wait(p, 600); await S.view('api'); }
     });
   } },
-  news: { path: '/news', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  enterprise: { url: 'https://runway.com/enterprise', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'enterprise-contact': { url: 'https://runway.com/enterprise-contact', run: async (p, S) => {
+    await S.view('default');
+    await step('field-focus', async () => {
+      const f = p.locator('input[name="first_name"]');
+      if (await f.count()) { await f.focus(); await wait(p, 300); await S.view('field-focus'); }
+    });
+  } },
+  research: { url: 'https://runway.com/research', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  resources: { url: 'https://runway.com/resources', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  robotics: { url: 'https://runway.com/product/robotics', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  agent: { url: 'https://runway.com/product/agent', run: async (p, S) => { await S.view('default'); } },
+  ads: { url: 'https://runway.com/product/ads', run: async (p, S) => { await S.view('default'); } },
+  plugins: { url: 'https://runway.com/plugins', run: async (p, S) => { await S.view('default'); } },
+  mcp: { url: 'https://runway.com/mcp', run: async (p, S) => { await S.view('default'); } },
+  workflows: { url: 'https://runway.com/workflows', run: async (p, S) => { await S.view('default'); } },
+  'team-plan': { url: 'https://runway.com/team-plan', run: async (p, S) => { await S.view('default'); } },
+  'use-cases': { url: 'https://runway.com/use-cases', run: async (p, S) => { await S.view('default'); } },
+  aleph: { url: 'https://runway.com/product/aleph-2', run: async (p, S) => { await S.view('default'); } },
+  characters: { url: 'https://runway.com/product/characters', run: async (p, S) => { await S.view('default'); } },
+  news: { url: 'https://runway.com/news', run: async (p, S) => { await S.view('default'); } },
+  about: { url: 'https://runway.com/about', run: async (p, S) => { await S.view('default'); } },
+  careers: { url: 'https://runway.com/careers', run: async (p, S) => { await S.view('default'); } },
+  safety: { url: 'https://runway.com/safety', run: async (p, S) => { await S.view('default'); } },
+  changelog: { url: 'https://runway.com/changelog', run: async (p, S) => { await S.view('default'); } },
+  'data-security': { url: 'https://runway.com/data-security', run: async (p, S) => { await S.view('default'); } },
+  educators: { url: 'https://runway.com/educators', run: async (p, S) => { await S.view('default'); } },
+  studios: { url: 'https://runway.com/studios', run: async (p, S) => { await S.view('default'); } },
+  'brand-guidelines': { url: 'https://runway.com/brand-guidelines', run: async (p, S) => { await S.view('default'); } },
+  terms: { url: 'https://runway.com/terms-of-use', run: async (p, S) => { await S.view('default'); } },
+  dev: { url: 'https://dev.runwayml.com/', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'dev-models': { url: 'https://dev.runwayml.com/models', run: async (p, S) => { await S.view('default'); } },
+  docs: { url: 'https://docs.dev.runwayml.com/', run: async (p, S) => {
+    await S.view('default');
+    await step('search', async () => {
+      const s = p.getByRole('button', { name: /search/i }).first();
+      if (await s.count()) { await s.click(); await wait(p, 700); if (!isWall(p.url())) await S.view('search'); await p.keyboard.press('Escape'); }
+    });
+  } },
+  academy: { url: 'https://academy.runwayml.com/', run: async (p, S) => { await S.view('default'); } },
+  help: { url: 'https://help.runwayml.com/hc/en-us', run: async (p, S) => { await S.view('default'); } },
+  status: { url: 'https://status.runwayml.com/', run: async (p, S) => { await S.view('default'); } },
+  login: { url: 'https://app.runwayml.com/login', wall: true, run: async (p, S) => { await S.view('default'); } },
 };
 
 const mobile = {
-  home: { path: '/', promo: 'keep', run: async (p, S) => { await S.view('promo'); await closePromo(p); await S.view('default'); await S.full(); } },
-  academy: { path: '/course/math', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  unit: { path: '/course/math/algebra-1?unit=real-numbers-and-sets', run: async (p, S) => { await S.view('default'); await step('path', async () => { await p.evaluate(() => scrollTo(0, 700)); await wait(p, 900); await S.view('path'); }); } },
-  'lesson-math': { path: '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', wait: 8000, run: async (p, S) => { await S.view('audio-gate'); await gate(p); await S.view('default'); } },
-  atlas: { path: '/atlas', run: async (p, S) => { await S.view('default'); await step('story', async () => { await openStory(p, 'Artemis II'); await S.view('story'); }); } },
+  home: { url: 'https://runway.com/', run: async (p, S) => {
+    await S.view('default');
+    await S.full();
+    await step('menu', async () => {
+      const b = p.getByRole('button', { name: 'Menu' });
+      await b.click();
+      await wait(p, 700);
+      await S.view('menu');
+    });
+  } },
+  product: { url: 'https://runway.com/product', run: async (p, S) => { await S.view('default'); } },
+  pricing: { url: 'https://runway.com/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  enterprise: { url: 'https://runway.com/enterprise', run: async (p, S) => { await S.view('default'); } },
+  research: { url: 'https://runway.com/research', run: async (p, S) => { await S.view('default'); } },
+  dev: { url: 'https://dev.runwayml.com/', run: async (p, S) => { await S.view('default'); } },
+  docs: { url: 'https://docs.dev.runwayml.com/', run: async (p, S) => { await S.view('default'); } },
+  login: { url: 'https://app.runwayml.com/login', wall: true, run: async (p, S) => { await S.view('default'); } },
 };
 
-const b = await chromium.launch();
+const browser = await chromium.launch({ headless: true });
 let total = 0;
 const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
 for (const { k, mob } of runs) {
   const name = (mob ? 'mobile-' : '') + k;
-  if (pageArg.length && !pageArg.includes(name)) continue;
+  if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
   const spec = (mob ? mobile : desktop)[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
-  const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
+  const ctx = await browser.newContext({
+    viewport: { width: vw, height: vh },
+    deviceScaleFactor: dpr,
+    userAgent: mob ? UA_MOBILE : UA,
+    isMobile: mob,
+    hasTouch: mob,
+    locale: 'en-US',
+  });
   const p = await ctx.newPage();
-  log(name);
+  log(name, spec.url);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
   try {
-    await p.goto(BASE + spec.path, { waitUntil: 'load', timeout: 90000 });
-    await wait(p, spec.wait || 6000);
-    if (spec.promo !== 'keep') await closePromo(p);
-    await spec.run(p, S);
+    const resp = await p.goto(spec.url, { waitUntil: 'domcontentloaded', timeout: 50000 });
+    log('  status', resp && resp.status(), 'final', p.url());
+    await wait(p, spec.wall ? 2500 : 2200);
+    await hideConsent(p);
+    if (!spec.wall) await dismissBanner(p);
+    if (isWall(p.url()) && !spec.wall) {
+      log('  WALL unexpected', p.url());
+    } else {
+      await spec.run(p, S);
+    }
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;
   await ctx.close();
 }
 log('done', total, 'screenshots ->', RAW);
-await b.close();
+await browser.close();

@@ -3,184 +3,105 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "DJI"
-description: "product-marketing and hardware-brand design: a declared token layer in the v3 bundles (--grey-0..12, --black-1..8/--white-1..8 + role names, --bg-0..7, --background-0..2, --brand-1..10 with --brand-primary-*/--brand-text-* roles, --green-*/--orange-*/--red-* status scales, --spacing-xs..xl, --radius, --grid-*/--col-width/--column-count, a --zindex-* ladder and --font-*/--line-height-*), section-scoped theming (:root .light-theme / :root .dark-theme re-declare the semantic roles and sections opt in by class - nav/listings/support light, hero/product/footer dark), the #0070d5 DJI blue Store pill with a 1408px radius, atom-design Buy Now/ghost CTA pairs (60px radius, 0.3s transitions), Open Sans + PingFang SC UI text, hero-vertical-card product grids, and two header generations (legacy dui-navbar over the hero, official-site-header on inner pages) plus a separate /sg/mobile site"
+description: "Product marketing site: white bar, one blue action, Open Sans, photographic heroes, pill buttons"
 omitted:
-  - section: "typography"
-    reason: "tokens.json has no typography tokens under `core.typography`"
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#0070d5"
   neutral: "#ffffff"
-  surface: "#272727"
-  on-surface: "rgba(0, 0, 0, 0.85)"
-  on-surface-variant: "rgba(0, 0, 0, 0.65)"
-  outline: "rgba(0, 0, 0, 0.06)"
-  color-background-0: "#ffffff"
-  color-background-1: "#f5f5f5"
-  color-background-2: "#f0f0f0"
-  color-bg-0: "#000000"
-  color-bg-1: "#141414"
-  color-bg-2: "#1f1f1f"
-  color-bg-3: "#434343"
-  color-bg-4: "#8c8c8c"
-  color-bg-5: "#d9d9d9"
-  color-bg-6: "#f5f5f5"
-  color-bg-7: "#ffffff"
-  color-black-1: "rgba(0, 0, 0, 0.02)"
-  color-black-2: "rgba(0, 0, 0, 0.04)"
-  color-black-3: "rgba(0, 0, 0, 0.06)"
-  color-black-4: "rgba(0, 0, 0, 0.15)"
-  color-black-5: "rgba(0, 0, 0, 0.25)"
-  color-black-6: "rgba(0, 0, 0, 0.45)"
-  color-black-7: "rgba(0, 0, 0, 0.65)"
-  color-black-8: "rgba(0, 0, 0, 0.85)"
-  color-brand-1: "#e7f3fb"
-  color-brand-10: "#002046"
-  color-brand-2: "#c5e3f7"
-  color-brand-3: "#8fc6ee"
-  color-brand-4: "#5ca9e6"
-  color-brand-5: "#2c8cdd"
-  color-brand-6: "#0070d5"
-  color-brand-7: "#005ab1"
-  color-brand-8: "#00468e"
-  color-brand-9: "#00326a"
-  color-green-1: "#ecfaef"
-  color-green-10: "#0e461f"
-  color-green-2: "#d0f6d7"
-  color-green-3: "#a4edb2"
-  color-green-4: "#7be391"
-  color-green-5: "#55da73"
-  color-green-6: "#31d158"
-  color-green-7: "#27ae4a"
-  color-green-8: "#1e8b3c"
-  color-green-9: "#15682e"
-  color-grey-0: "#ffffff"
-  color-grey-1: "#fafafa"
-  color-grey-10: "#1f1f1f"
-  color-grey-11: "#141414"
-  color-grey-12: "#000000"
-  color-grey-2: "#f5f5f5"
-  color-grey-3: "#f0f0f0"
-  color-grey-4: "#d9d9d9"
-  color-grey-5: "#bfbfbf"
-  color-grey-6: "#8c8c8c"
-  color-grey-7: "#595959"
-  color-grey-8: "#434343"
-  color-grey-9: "#262626"
-  color-orange-1: "#f9f0e5"
-  color-orange-10: "#6c1500"
-  color-orange-2: "#f2dcc3"
-  color-orange-3: "#e5b88b"
-  color-orange-4: "#d89459"
-  color-orange-5: "#cb712c"
-  color-orange-6: "#be4e04"
-  color-orange-7: "#aa3b00"
-  color-orange-8: "#952c00"
-  color-orange-9: "#812000"
-  color-red-1: "#fbecea"
-  color-red-10: "#44020e"
-  color-red-2: "#f6d0cc"
-  color-red-3: "#eda19d"
-  color-red-4: "#e57270"
-  color-red-5: "#dc4749"
-  color-red-6: "#d32029"
-  color-red-7: "#af1522"
-  color-red-8: "#8c0d1c"
-  color-red-9: "#680615"
-  color-white-1: "rgba(255, 255, 255, 0.04)"
-  color-white-2: "rgba(255, 255, 255, 0.08)"
-  color-white-3: "rgba(255, 255, 255, 0.12)"
-  color-white-4: "rgba(255, 255, 255, 0.2)"
-  color-white-5: "rgba(255, 255, 255, 0.3)"
-  color-white-6: "rgba(255, 255, 255, 0.45)"
-  color-white-7: "rgba(255, 255, 255, 0.65)"
-  color-white-8: "#ffffff"
-  bg: "rgba(0, 0, 0, 0.04)"
-  border-default: "rgba(0, 0, 0, 0.15)"
-  border-hairline: "rgba(0, 0, 0, 0.06)"
-  brand-primary-active: "rgba(0, 0, 0, 0.85)"
-  brand-primary-default: "rgba(0, 0, 0, 0.85)"
-  brand-primary-focus: "rgba(0, 0, 0, 0.15)"
-  brand-primary-hover: "rgba(0, 0, 0, 0.65)"
-  brand-text-active: "#00468e"
-  brand-text-default: "#005ab1"
-  brand-text-hover: "#0070d5"
-  danger: "#d32029"
-  disabled: "rgba(0, 0, 0, 0.25)"
-  divider: "rgba(0, 0, 0, 0.06)"
-  light-bg: "rgba(0, 0, 0, 0.02)"
-  primary-token: "rgba(0, 0, 0, 0.85)"
-  reverse-bg: "rgba(255, 255, 255, 0.08)"
-  reverse-border: "rgba(255, 255, 255, 0.2)"
-  reverse-disabled: "rgba(255, 255, 255, 0.3)"
-  reverse-divider: "rgba(255, 255, 255, 0.12)"
-  reverse-light-bg: "rgba(255, 255, 255, 0.04)"
-  reverse-primary: "#ffffff"
-  reverse-secondary: "rgba(255, 255, 255, 0.65)"
-  reverse-tertiary: "rgba(255, 255, 255, 0.45)"
-  secondary: "rgba(0, 0, 0, 0.65)"
-  success: "#1e8b3c"
-  tertiary: "rgba(0, 0, 0, 0.45)"
-  warning: "#be4e04"
+  surface: "#f2f2f2"
+  on-surface: "#3b3e40"
+  on-surface-variant: "#707473"
+  outline: "rgba(0, 0, 0, 0.15)"
   background-page: "#ffffff"
-  text-ink: "rgba(0, 0, 0, 0.85)"
-  text-muted: "rgba(0, 0, 0, 0.65)"
-  text-nav-ink: "#303233"
+  background-surface: "#f2f2f2"
+  background-header: "#ffffff"
+  text-primary: "#3b3e40"
+  text-muted: "#707473"
+  text-onAccent: "#ffffff"
+  text-disabled: "rgba(0, 0, 0, 0.25)"
+  text-link: "#0070d5"
+  border-default: "rgba(0, 0, 0, 0.15)"
+  border-strong: "rgba(0, 0, 0, 0.85)"
+  accent-default: "#0070d5"
+  accent-hover: "#2490e3"
   action-primary: "#0070d5"
-  action-primary-hover: "#2490e3"
-  action-primary-pressed: "#0058b0"
-  action-on-primary: "#ffffff"
-  surface-footer: "#272727"
+  action-disabled: "rgba(0, 0, 0, 0.04)"
+typography:
+  nav:
+    fontFamily: "Open Sans"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "64px"
+  body:
+    fontFamily: "Open Sans"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "24px"
+  button:
+    fontFamily: "Open Sans"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "16px"
+  heading:
+    fontFamily: "Open Sans"
+    fontSize: "32px"
+    fontWeight: 600
+    lineHeight: "36px"
+  display:
+    fontFamily: "Open Sans"
+    fontSize: "48px"
+    fontWeight: 500
+    lineHeight: "56px"
 rounded:
-  default: "16px"
-  pill-store: "1408px"
-  ghost: "60px"
-  hero-cta: "64px"
-  cta: "60px"
-  mobile-cta: "60px"
+  none: "0px"
+  field: "4px"
+  buy: "100px"
+  hero: "64px"
 spacing:
-  lg: "96px"
-  md: "64px"
-  sm: "32px"
-  xl: "128px"
-  xs: "16px"
+  "2": "8px"
+  "4": "16px"
 ---
 
 # DJI
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: product-marketing and hardware-brand design: a declared token layer in the v3 bundles (--grey-0..12, --black-1..8/--white-1..8 + role names, --bg-0..7, --background-0..2, --brand-1..10 with --brand-primary-*/--brand-text-* roles, --green-*/--orange-*/--red-* status scales, --spacing-xs..xl, --radius, --grid-*/--col-width/--column-count, a --zindex-* ladder and --font-*/--line-height-*), section-scoped theming (:root .light-theme / :root .dark-theme re-declare the semantic roles and sections opt in by class - nav/listings/support light, hero/product/footer dark), the #0070d5 DJI blue Store pill with a 1408px radius, atom-design Buy Now/ghost CTA pairs (60px radius, 0.3s transitions), Open Sans + PingFang SC UI text, hero-vertical-card product grids, and two header generations (legacy dui-navbar over the hero, official-site-header on inner pages) plus a separate /sg/mobile site.
+Good for: Product marketing site: white bar, one blue action, Open Sans, photographic heroes, pill buttons.
 
-Captured 2026-11-15, read-only (the /sg home, /camera-drones, /handheld, /mavic-4-pro, /support, /company, /where-to-buy/* and the /sg/mobile site are fully public signed out; the store (store.dji.com), Login/Register and checkout gate on a DJI account - an authenticated boundary never reached; the Store, Buy Now, Watch Video and search controls were measured at every paintable state, never followed or pressed). Themes: light, dark.
+Captured 2026-11-21, signed out. Themes: light.
 
-A token set and component reference for DJI's public brand site — for building product marketing pages, mega-nav headers, category grids and dark hero sections in the style of the real thing. It was read from **dji.com** on **2026-11-15**, signed out, in headless Chromium at 1440 x 900 and 390 x 844, on the geo-locale `/sg` site the Singapore client is routed to. Captured: the home hero (/sg), the category pages (/camera-drones, /handheld), a product page (/mavic-4-pro), /support, /company, /where-to-buy/online-stores, and the separate `/sg/mobile` site the phone UA is redirected to.
+A token set and page map for the public DJI site. Captured 2026-11-21, signed out, in headless Chromium. `https://www.dji.com/` redirected this client to the Singapore storefront (`https://www.dji.com/sg`). Desktop shots are 1440 by 900 at 1x. Phone shots are 390 by 844 at 2x, and a phone user agent is sent to `/sg/mobile`. One light theme. The homepage hero is a dark photograph under a white bar, not a dark theme.
 
-DJI is worth a capture because the site ships a declared token layer in its v3 bundles, not a convention reverse-engineered from pixels: `--grey-0..12`, `--black-1..8` + `--black-<role>` (primary/secondary/tertiary/divider/border/disabled/light-bg/bg), `--white-1..8` + `--white-<role>`, `--bg-0..7`, `--background-0..2`, `--brand-1..10` + `--brand-primary-*`/`--brand-text-*` roles, `--green-*`/`--orange-*`/`--red-*` status scales, `--success`/`--warning`/`--danger`, `--spacing-xs..xl` (16–128px), `--radius` (16px), `--grid-width`/`--grid-gap`/`--col-width`/`--column-count`, a `--zindex-*` ladder and `--font-*`/`--line-height-*` — 165 variables resolved per section theme. The twist: themes are scoped to sections, not the page — `:root .light-theme` and `:root .dark-theme` re-declare the semantic roles (`--primary`/`--secondary`/`--tertiary`, `--bg`, `--border`, `--divider`, `--disabled`, the inverted `--reverse-*` pair), and sections opt in by class. Both paint signed out: nav, listings and support carry `.light-theme` (white field, black@85% ink, `#0070d5` Store CTA = `--brand-6`/`--brand-default`, `#2490e3` hover, `#0058b0` pressed) while the home hero, the product page's dark panels, the `#272727` footer and the legacy `dui-navbar` over the hero carry `.dark-theme` (white ink, the white pill Buy CTA, white@9%/15% ghost hover/pressed, 60px ghost radius). **Boundary:** the store (store.dji.com), Login/Register and checkout gate on a DJI account — Store/Buy buttons were measured at every paintable state, never followed or pressed; mega-menu panels were hovered but not walked item-by-item.
+The site is a marketing front for camera drones, handheld cameras and gimbals, with a blue Store action (`#0070d5`) and Open Sans. Product buying, account and checkout sit on other hosts and were not entered.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#0070d5):** `light.action.primary`
+- **primary (#0070d5):** `light.accent.default`
 - **neutral (#ffffff):** `light.background.page`
-- **surface (#272727):** `light.surface.footer`
-- **on-surface (rgba(0, 0, 0, 0.85)):** `light.text.ink`
-- **on-surface-variant (rgba(0, 0, 0, 0.65)):** `light.text.muted`
-- **outline (rgba(0, 0, 0, 0.06)):** `light.border.hairline`
+- **surface (#f2f2f2):** `light.background.surface`
+- **on-surface (#3b3e40):** `light.text.primary`
+- **on-surface-variant (#707473):** `light.text.muted`
+- **outline (rgba(0, 0, 0, 0.15)):** `light.border.default`
 
 ## Typography
 
-No composite type styles in tokens.json; the README text below names the faces and sizes.
+5 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Open Sans.
+
+### Fonts (from README.md)
+
+Open Sans is the computed body family, with PingFang SC, Microsoft YaHei, Helvetica Neue, Hiragino Sans GB, WenQuanYi Micro Hei and Arial as fallbacks. Open Sans is a licensed webfont. The style guide falls back to the system face and does not ship the font file.
 
 ## Layout
 
-Spacing from `core.space`: `lg` 96px, `md` 64px, `sm` 32px, `xl` 128px, `xs` 16px.
+Spacing from `core.space`: `2` 8px, `4` 16px.
 
 ## Elevation & Depth
 
@@ -188,13 +109,13 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `default` 16px, `pill-store` 1408px, `ghost` 60px, `hero-cta` 64px, `cta` 60px, `mobile-cta` 60px.
+Corner radii from `core.radius`: `none` 0px, `field` 4px, `buy` 100px, `hero` 64px.
 
 ## Components
 
 No component tokens map onto DESIGN.md's component properties.
 
-Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -204,8 +125,20 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
 
-### Known gaps (from README.md)
+### What to distrust (from README.md)
 
-- `co-lede`: the first visible `<p>` on /company was the "Internet Explorer is no longer supported" notice in a modal box, not the company lede. `light.text.muted` and `core.font.size.measured.body` cite it and say so (the colour matches the declared `--black-secondary`, but the reading is not the lede). `tools/capture/public/measure.mjs` now skips the modal notice (edited, not run); recapture needed.
-- `m-menu` hover: the 2026-11-15 re-read timed out and the capture kept an earlier reading beside the `rerunError`, under the component's new run date. The reading's own date was not recorded. measure.mjs now pins a kept reading to its own run.
-- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
+- The region is whatever `www.dji.com` served this client (Singapore). Other regions were not opened.
+- Homepage Learn More text colour resolved to the browser default link blue. The painted outline is white. Do not treat that blue as the brand link colour.
+- The header Store control's computed `border-radius` was 1408px on a 32px control. The token uses the 100px radius measured on Buy Now, and records the capsule as a note.
+- Body, button and heading line heights marked Derived were not stored as computed `line-height`.
+- Camera Drones and Handheld did not open a product mega menu on hover. Category pages list series as in-page anchors instead.
+- Screenshots are 256-colour. Read colours from `tokens.json`.
+- The login wall is a photograph behind a white card. Its marketing copy and contact lines are not tokens.
+
+### Do and don't (from README.md)
+
+- **Do use one blue for the action.** Store and Buy Now are `#0070d5` with white type. Hover moves to `#2490e3` ([where-to-buy-light-default.png](screenshots/where-to-buy-light-default.png)).
+- **Do keep the bar white and the hero photographic.** Nav labels are near-black on white. The homepage title sits on the product photograph, with white outline pills ([home-light-default.png](screenshots/home-light-default.png)).
+- **Do set UI in Open Sans at 14px for the bar and 16px for actions.** Headings on interior pages are 32px to 48px and semibold or medium ([support-light-default.png](screenshots/support-light-default.png)).
+- **Don't follow Store, Login or Register into a capture.** Those leave the marketing site for a store or an account wall ([login-wall-light-default.png](screenshots/login-wall-light-default.png)).
+- **Don't invent a dark theme from the hero.** The page ground on category pages is white (`#ffffff`) or a light band (`#f2f2f2`).

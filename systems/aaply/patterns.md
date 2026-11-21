@@ -70,7 +70,7 @@ grid of 370x580 white testimonial cards
 ## Black footer band
 
 The one dark surface: a full-bleed 1440x1088 black band carrying the white
-"Join the early birds" heading (52px), the lime `aaply@aaply.app` mail link
+"Join the early birds" heading (52px), a lime mail link (the published address is not stored)
 (fades to `silver` on hover), coral social icons and the second nav list
 ([footer](components/crops/footer-default.png),
 [early-birds](components/crops/early-birds-default.png)). The same band

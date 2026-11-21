@@ -1,0 +1,22 @@
+{
+ "captured": "2026-11-21",
+ "url": "https://www.vsco.co/",
+ "note": "Custom properties declared in the home page stylesheets, plus --banner-h set inline on html. Banner pink is a computed background, not a custom property.",
+ "root": {
+  "--white": "white",
+  "--black": "black",
+  "--light-grey": "#f2f2f2",
+  "--v1-gold": "#ffbc3c",
+  "--surface-green": "#4d7d3f",
+  "--v1-dark-grey": "#737373",
+  "--gold-on-white": "#b2994f",
+  "--black-ish": "#111",
+  "--light-grey-hover": "#aaa",
+  "--dark-grey": "#1e1e1e",
+  "--100-red-l": "#f73100",
+  "--banner-pink": "#ff0877"
+ },
+ "inline": {
+  "--banner-h": "50px"
+ }
+}

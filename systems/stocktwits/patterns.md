@@ -1,47 +1,33 @@
-# Stocktwits patterns
+# Patterns
 
-Public signed-out pages, 2026-11-19. Measurements are computed styles. Screenshots of the product were not captured. [screenshots/capture-gap-light.png](screenshots/capture-gap-light.png) is a label for that gap.
+Public Stocktwits, signed out, light, 2026-11-21. Screenshots are in [screenshots/](screenshots). The control map is [site-tree.md](site-tree.md).
 
 ## App shell
 
-`https://stocktwits.com/` is the signed-out home. At 1440px the header is 90px, white, fixed. The watchlist column is 300px (`--sidebar`) and starts 81px from the left. The stream sits to its right. For You and Following are the two tabs under the header.
+Desktop is three columns. A left rail holds Google and Apple (not clicked), Create Account, a login link, a sample watchlist, and the footer. The centre is the stream. The right rail is news. The top bar is search, Trending, News, and Earnings. Phone drops the rail into a menu and adds a tab bar: Home, Watchlist, Trending, News, Explore, Profile. Watchlist and Profile are login walls.
 
-The left column holds Continue with Apple, Create Account, a blue text link to log in, and a default watchlist (AAPL, BTC, MSFT, NVDA, QQQ, SPY, TSLA on this load). A trending strip sits in the header.
+Shown in [screenshots/home-light-default.png](screenshots/home-light-default.png) and [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png).
 
-At 390px the sidebar computed `display: none`. A 52px mobile header spans the width, with a 1px `#f2f2f7` bottom border and a Use App pill. The For You row is 390px wide.
+## Stream
 
-## Auth
-
-`/signin` splits the viewport. The left panel is 719px, background `#000000`, with a 57.6px weight 900 white welcome line. The right side is the form: two fields, a disabled Log In pill, blue links, and Continue with Apple.
-
-`/signup` uses the same split. The form is one email field, a disabled Sign Up pill, and Continue with Apple. It was not submitted.
+For You is the default. Following stays on the same public feed when signed out. Messages show a handle, a time, cashtags, and Reply, Reshare, Like, Share. Those actions open `/signin`. The branch stops there.
 
 ## Symbol
 
-`/symbol/AAPL` keeps the shell. The quote block shows the ticker at 20px, the price at 30px, and the day's change in `light.positive` when the price is up. Tabs are Feed, News, Sentiment, Earnings, Futures, Fundamentals, Info. Feed is selected (black). The others are `#8e8e93`.
+`/symbol/AAPL` is a quote header, a chart that expands in place, Bullish and Bearish chips, and tabs for Feed, News, Sentiment, Earnings, Futures, Fundamentals, and Info. Shown in [screenshots/symbol-light-default.png](screenshots/symbol-light-default.png) and [screenshots/symbol-light-chart.png](screenshots/symbol-light-chart.png).
+
+## Table
+
+`/sentiment` is a ranked table with Equities and Crypto filters and chips for Trending, Most Active, Watchers, Most Bullish, Most Bearish, Top Gainers, and Top Losers. A fade and a Sign Up / Log In pair sit under the first rows. Shown in [screenshots/sentiment-light-default.png](screenshots/sentiment-light-default.png).
 
 ## Plans
 
-`/subscriptions` sits in the shell. The heading "Unlock the Power of Stocktwits Data" is 36px weight 700, white, so it sits on a dark band that was not isolated as its own box. Three cards follow: Ad Free, Edge, Enterprise. Subscribe and Get In Touch were not clicked. No card number was entered.
+`/subscriptions` is three cards on a dark band: Ad Free, Edge, Enterprise. Subscribe and Get In Touch were not clicked. Shown in [screenshots/subscriptions-light-default.png](screenshots/subscriptions-light-default.png).
 
-## Marketing
+## Auth wall
 
-`/about` is a black landing page. The hero title is 80px weight 700, line-height 74px, letter-spacing -2.4px, white, 530px wide. The hero container background is black plus a purple wash (`rgba(150, 102, 255, 0.44)` in the gradient). Content cards are 40px radius black panels.
+`/signin` is a split page: black panel, white form, Email or Username, Password, a disabled Log In, Forgot your password, Sign up, and Continue with Google and Continue with Apple. Nothing was typed. Shown in [screenshots/signin-light-default.png](screenshots/signin-light-default.png).
 
-`/widgets` is a white page. The title is 48px weight 700. The sample widget prints a loss in `light.negative`.
+## Empty, loading, error, destructive, onboarding
 
-`/enterprise` is a white sales form: name, job title, work email, company, website, message. It was not submitted.
-
-`/about/legal/privacy` is a white document. The title is 36px weight 700, line-height 42px.
-
-## OneTrust
-
-A privacy banner covers the lower right of every page that loaded. Its buttons are the vendor's `#1d68d7`, radius 2px. It was not accepted or rejected. It is not part of the Stocktwits component set.
-
-## Not entered
-
-- No account was created. Signup is email plus Apple on the first screen. The next step was not opened.
-- No password was typed. No Apple sheet was opened.
-- No brokerage, bank, card, phone, or government ID field was filled. Enterprise and subscriptions were read and left.
-- Search was not submitted.
-- The theme cookie stayed `viewMode=lightMode`. Dark values were read from `[data-theme=dark]` and the attribute was removed.
+Empty and loading states of the signed-in app were not reached. No destructive confirm was public. Onboarding starts at signup and was not entered. Cloudflare challenges on a second navigation in one session are recorded as a capture gap, not as a product error state.

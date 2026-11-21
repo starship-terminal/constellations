@@ -1,0 +1,274 @@
+{
+  "nav": [
+    {
+      "tag": "A",
+      "cls": "navbar07_logo-link w-nav-brand w--current",
+      "text": "home",
+      "display": "flex",
+      "w": 130,
+      "h": 34,
+      "x": 80
+    },
+    {
+      "tag": "A",
+      "cls": "navbar_link w-nav-link",
+      "text": "Product",
+      "display": "inline-block",
+      "w": 93,
+      "h": 48,
+      "x": 234
+    },
+    {
+      "tag": "A",
+      "cls": "navbar_link w-nav-link",
+      "text": "Writing examples",
+      "display": "inline-block",
+      "w": 166,
+      "h": 48,
+      "x": 327
+    },
+    {
+      "tag": "DIV",
+      "cls": "navbar_menu-dropdown w-dropdown",
+      "text": "",
+      "display": "inline-block",
+      "w": 0,
+      "h": 0,
+      "x": 498
+    },
+    {
+      "tag": "DIV",
+      "cls": "navbar_dropdown-toggle w-dropdown-toggle",
+      "text": "Resources",
+      "display": "none",
+      "w": 0,
+      "h": 0,
+      "x": 0
+    },
+    {
+      "tag": "A",
+      "cls": "navbar_dropdown-link w-inline-block",
+      "text": "Blog The best content automation resourc",
+      "display": "grid",
+      "w": 0,
+      "h": 0,
+      "x": 0
+    },
+    {
+      "tag": "A",
+      "cls": "navbar_dropdown-link w-inline-block",
+      "text": "Documentation Everything you need to be ",
+      "display": "grid",
+      "w": 0,
+      "h": 0,
+      "x": 0
+    },
+    {
+      "tag": "A",
+      "cls": "navbar_link w-nav-link",
+      "text": "Pricing",
+      "display": "inline-block",
+      "w": 86,
+      "h": 48,
+      "x": 498
+    },
+    {
+      "tag": "A",
+      "cls": "navbar_link w-nav-link",
+      "text": "Become an affiliate",
+      "display": "block",
+      "w": 180,
+      "h": 48,
+      "x": 916
+    },
+    {
+      "tag": "A",
+      "cls": "button-secondary-gray w-inline-block",
+      "text": "Log in",
+      "display": "flex",
+      "w": 81,
+      "h": 46,
+      "x": 1108
+    },
+    {
+      "tag": "A",
+      "cls": "button is-button-xsmall w-inline-block",
+      "text": "Start for free",
+      "display": "flex",
+      "w": 159,
+      "h": 46,
+      "x": 1201
+    }
+  ],
+  "foundations": {
+    "htmlBg": "rgba(0, 0, 0, 0)",
+    "bodyBg": "rgb(255, 253, 249)",
+    "bodyColor": "rgb(71, 84, 103)",
+    "bodyFont": "Inter, sans-serif",
+    "bodySize": "16px",
+    "bodyLh": "24px",
+    "h1": {
+      "color": "rgb(16, 24, 40)",
+      "size": "53.6px",
+      "weight": "700",
+      "lh": "64.32px",
+      "font": "Inter, sans-serif",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    "hits": [
+      {
+        "text": "Generate AI content that humans love to ",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(16, 24, 40)",
+        "h": 129,
+        "w": 630,
+        "cls": "highlight-heading"
+      },
+      {
+        "text": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(71, 84, 103)",
+        "h": 65,
+        "w": 639,
+        "cls": "highlight-hero-container"
+      },
+      {
+        "text": "",
+        "bg": "rgb(239, 204, 255)",
+        "color": "rgb(71, 84, 103)",
+        "h": 65,
+        "w": 639,
+        "cls": "highlight-hero"
+      },
+      {
+        "text": "Macaw",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(71, 84, 103)",
+        "h": 65,
+        "w": 639,
+        "cls": "highlight-hero-container _2"
+      },
+      {
+        "text": "",
+        "bg": "rgb(198, 92, 245)",
+        "color": "rgb(71, 84, 103)",
+        "h": 67,
+        "w": 4,
+        "cls": "highlight-hero-bar"
+      },
+      {
+        "text": "Macaw",
+        "bg": "rgb(198, 92, 245)",
+        "color": "rgb(255, 255, 255)",
+        "h": 22,
+        "w": 58,
+        "cls": "highlight-hero-tag"
+      },
+      {
+        "text": "Join 2000+ happy brands",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(71, 84, 103)",
+        "h": 58,
+        "w": 599,
+        "cls": "sub-highlight"
+      },
+      {
+        "text": "Everything you need to automate your con",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(71, 84, 103)",
+        "h": 129,
+        "w": 599,
+        "cls": "sub-highlight"
+      },
+      {
+        "text": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(71, 84, 103)",
+        "h": 65,
+        "w": 609,
+        "cls": "highlight-sub-container"
+      },
+      {
+        "text": "",
+        "bg": "rgb(255, 202, 197)",
+        "color": "rgb(71, 84, 103)",
+        "h": 65,
+        "w": 609,
+        "cls": "highlight-sub"
+      },
+      {
+        "text": "Macaw",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(71, 84, 103)",
+        "h": 65,
+        "w": 609,
+        "cls": "highlight-sub-container _2"
+      },
+      {
+        "text": "",
+        "bg": "rgb(246, 102, 88)",
+        "color": "rgb(71, 84, 103)",
+        "h": 67,
+        "w": 4,
+        "cls": "highlight-sub-bar"
+      },
+      {
+        "text": "Macaw",
+        "bg": "rgb(246, 102, 88)",
+        "color": "rgb(255, 255, 255)",
+        "h": 22,
+        "w": 58,
+        "cls": "highlight-sub-tag"
+      }
+    ]
+  },
+  "extra": {
+    "cards": [
+      {
+        "text": "Starter $59 /month Bille",
+        "bg": "rgb(246, 226, 255)",
+        "radius": "12px",
+        "borderW": "1px",
+        "borderC": "rgb(246, 226, 255)"
+      },
+      {
+        "text": "Pro $199 /month Billed a",
+        "bg": "rgb(255, 232, 226)",
+        "radius": "12px",
+        "borderW": "1px",
+        "borderC": "rgb(0, 0, 0)"
+      },
+      {
+        "text": "Scale $599 /month Billed",
+        "bg": "rgb(227, 238, 255)",
+        "radius": "12px",
+        "borderW": "0px",
+        "borderC": "rgb(71, 84, 103)"
+      }
+    ],
+    "badge": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(71, 84, 103)",
+      "radius": "0px",
+      "size": "16px",
+      "weight": "400",
+      "text": "MOST POPULAR"
+    },
+    "row": {
+      "bg": "rgb(251, 247, 238)",
+      "radius": "8px"
+    }
+  },
+  "icons": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://cdn.prod.website-files.com/666ef0f57dd9231f728c9840/667087bfef1c683687022472_macaw%20fav.png",
+      "sizes": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.prod.website-files.com/666ef0f57dd9231f728c9840/667087d6ba9469ee8ca896ab_favicon_au4_icon.ico",
+      "sizes": null
+    }
+  ]
+}

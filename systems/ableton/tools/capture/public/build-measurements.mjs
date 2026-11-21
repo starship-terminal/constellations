@@ -22,14 +22,6 @@ const sides = (t, r, b, l) => (t === r && r === b && b === l ? t : t === b && r 
 const fam = (f) => (f || '').split(',')[0].replace(/"/g, '');
 const esc = (s) => String(s ?? '').replace(/\|/g, '/').replace(/\n/g, ' ');
 
-// A state whose reading is not what its name says, kept out of the tables and the crop list (the
-// same rule as focus_not_captured in tools/build_components_md.py): a skipped one, or a focus-visible
-// reading taken where keyboard focus never landed (older runs saved the element at rest) or where the
-// element took focus without matching :focus-visible.
-const focusNotCaptured = (v) => Boolean(v.skipped) || v.via === 'focus failed' || v.focus?.matches === false;
-const notCapturedWhy = (v) => v.skipped || (v.via === 'focus failed' ? 'focus failed: keyboard focus did not reach the element' : 'focused without matching :focus-visible, so no keyboard-focus reading');
-
-
 function props(v) {
   const s = v.style || {};
   const o = {};
@@ -90,7 +82,6 @@ for (const g of groups) {
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
-      if (focusNotCaptured(v)) { (rows.Skipped ||= {})[st] = notCapturedWhy(v); continue; }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }
     W(`| Property | ${states.join(' | ')} |`);
@@ -99,7 +90,7 @@ for (const g of groups) {
       const first = vals[states[0]];
       W(`| ${p} | ${states.map((st, i) => (i && vals[st] === first && p !== 'How' ? '=' : esc(vals[st] ?? '-'))).join(' | ')} |`);
     }
-    const crops = states.filter((st) => !focusNotCaptured(c.states[st])).map((st) => c.states[st].crop).filter(Boolean).map((f) => '`' + path.basename(f) + '`');
+    const crops = states.map((st) => c.states[st].crop).filter(Boolean).map((f) => '`' + path.basename(f) + '`');
     W('');
     W(crops.length ? `Crops: ${crops.join(', ')}.` : 'Crops: none.');
   }

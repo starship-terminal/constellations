@@ -16,19 +16,19 @@ Screenshots are named `{page}-light-{state}.png`: the site paints one light them
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [menu](screenshots/home-light-menu.png) |
+| Home | `/` | [default](screenshots/home-light-default.png), [features-menu](screenshots/home-light-features-menu.png), [full](screenshots/home-light-full.png), [menu](screenshots/home-light-menu.png), [resources-menu](screenshots/home-light-resources-menu.png), [video-overlay](screenshots/home-light-video-overlay.png) |
 | Pricing | `/pricing` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png), [yearly](screenshots/pricing-light-yearly.png) |
 | AI storyboard generator | `/ai-storyboard-generator` | [default](screenshots/ai-storyboard-light-default.png), [full](screenshots/ai-storyboard-light-full.png) |
 | Storyboard software | `/storyboard-software` | [default](screenshots/storyboard-software-light-default.png), [full](screenshots/storyboard-software-light-full.png) |
 | Collaborate | `/collaborate` | [default](screenshots/collaborate-light-default.png), [full](screenshots/collaborate-light-full.png) |
-| Customers | `/customers` | [default](screenshots/customers-light-default.png) |
+| Customers | `/customers` | [default](screenshots/customers-light-default.png), [founders](screenshots/customers-light-founders.png), [full](screenshots/customers-light-full.png) |
 | Customer story (Mobula) | `/customers/mobula` | [default](screenshots/customer-story-light-default.png), [full](screenshots/customer-story-light-full.png) |
-| Docs | `/docs` | [default](screenshots/docs-light-default.png), [full](screenshots/docs-light-full.png) |
-| Script timer | `/script-timer` | [default](screenshots/script-timer-light-default.png), [full](screenshots/script-timer-light-full.png), [with-script](screenshots/script-timer-light-with-script.png) |
+| Docs | `/docs` | [default](screenshots/docs-light-default.png), [full](screenshots/docs-light-full.png), [search-query](screenshots/docs-light-search-query.png), [search](screenshots/docs-light-search.png) |
+| Script timer | `/script-timer` | [default](screenshots/script-timer-light-default.png), [filled](screenshots/script-timer-light-filled.png), [full](screenshots/script-timer-light-full.png), [with-script](screenshots/script-timer-light-with-script.png) |
 | Log in | `/login` | [default](screenshots/login-light-default.png) |
 | Sign up | `/signup` | [default](screenshots/signup-light-default.png) |
-| Book a demo | `/demo` | [default](screenshots/demo-light-default.png) |
-| Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu](screenshots/mobile-home-light-menu.png) |
+| Book a demo | `/demo` | [default](screenshots/demo-light-default.png), [full](screenshots/demo-light-full.png) |
+| Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [features](screenshots/mobile-home-light-features.png), [full](screenshots/mobile-home-light-full.png), [menu](screenshots/mobile-home-light-menu.png), [resources](screenshots/mobile-home-light-resources.png) |
 | Script timer, phone | `/script-timer` | [default](screenshots/mobile-script-timer-light-default.png), [full](screenshots/mobile-script-timer-light-full.png) |
 
 ### Overlays and transient states
@@ -47,7 +47,7 @@ Screenshots are named `{page}-light-{state}.png`: the site paints one light them
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 12 components were given a real keyboard focus. 6 draw an outline ring: `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `cta-demo` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-icon` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-menu-button` (1px auto #e59700, offset 0px). 2 draw a focus ring as a shadow instead: `timer-toggle`, `feature-row`. The other 4 show no measured change: `hero-cta`, `billing-tab`, `plan-cta`, `m-nav-item`.
+**Focus.** 12 components were given a real keyboard focus. 12 draw an outline ring: `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `cta-demo` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-cta` (2px solid transparent, offset 2px), `billing-tab` (2px solid transparent, offset 2px), `plan-cta` (2px solid transparent, offset 2px), `timer-toggle` (2px solid transparent, offset 2px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-icon` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-menu-button` (1px auto #e59700, offset 0px), `m-nav-item` (2px solid transparent, offset 2px), `feature-row` (2px solid transparent, offset 2px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): buttons and tabs read the same at rest and pressed — Boords controls press through scale in the DOM, not colour. Nothing a real press would submit was ever pressed.
 

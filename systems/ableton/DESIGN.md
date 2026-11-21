@@ -89,7 +89,7 @@ Good for: Music software marketing: restrained black Futura on white, one signat
 
 Captured 2026-11-08, signed out (every captured surface is public); consent card measured but never answered. Themes: light.
 
-A token set and component reference for Ableton's public marketing site, for building a music-product marketing page or account-entry screen in the style of a real music software company. It was read from www.ableton.com on 2026-11-08, signed out, in headless Chromium at 1440 wide and 390 wide: the home page, the product pages (Live, Push, Move, Note, Link), the trial, shop and Packs catalogue, the blog index, the about, help and jobs pages, and the log in / register page. The look is famously restrained: black Futura PT on white, one signature `#0000ff` blue for every action, zero border radius anywhere, and full-bleed photography doing the decorating.
+A token set and component reference for Ableton's public marketing site, for building a music-product marketing page or account-entry screen in the style of a real music software company. It was read from www.ableton.com on 2026-11-21, signed out, in headless Chromium at 1440×900 and 390×844. The site tree is [site-tree.md](site-tree.md). The look is famously restrained: black Futura PT on white, one signature `#0000ff` blue for every action, zero border radius anywhere, and full-bleed photography doing the decorating.
 
 Ableton's own products (Live, Push, Move, Note) are a different world; this package is the marketing and account-entry surface only. Nothing was signed into, bought, downloaded or submitted, and the cookie consent card was captured but never answered.
 
@@ -149,15 +149,14 @@ The home page is the screen to get right. A 69px white bar carries the 60px-wide
 
 ### What to distrust (from README.md)
 
-- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients and photography band slightly; read exact colours from tokens.json or the raw files.
+- **Published contact lines are painted out.** Press, imprint, contact, and privacy shots hide the street, the phone number, and the published mailboxes. The login country's selected option is painted out too: it is the browser's inferred location, not a design choice.
+- **Full pages stop at 8 chunks.** Packs, certified training, and user groups keep growing; their `-full` shots are truncated and the viewport shot is the layout evidence.
 - **Hero cells carry video.** Two captures of the same page can differ in the frame shown.
 - **The `main` rect in `raw/layout.json` is the whole page column** (Ableton wraps content in a single `<main>`), so "content x 0, 1440 wide" does not mean text spans 1440: the 1200px text column sits inside it.
 - **`palette.lime-stripe` is read off a patterned cell**, not a flat fill: the promo card's background alternates lime and pale-blue stripes, and the token is the lime of the brighter band, approximate by eye.
 - **Hover reads "same" on most controls by design.** Ableton's `abl-button`s genuinely do not restyle on hover (verified on the crop pairs); the entries are not missing a state.
 - **The register form's `ul` paints `#ffc2ca`** in the child-layers note: that is the password-strength meter's track, not the form's background.
-- **`trial-edition-card` and `pack-card` were read from the wrong elements.** `trial-edition-card` is the 720 x 655 hero column of /trial and `pack-card` is the 1440 x 348 page banner of /packs, not a single edition panel or Pack tile. Both need a recapture. `packs-green` now cites only `packs-title`, which holds the same value.
-- **`hero-cta` has no keyboard-focus reading.** Its selector matched the `<p class="homepage-teaser__cta">` around the "See what's new" link, and keyboard focus never reached it (the raw state says `focus failed`), so the stored focus-visible style is the element at rest. The builders leave that state out of components.md and raw/measurements.md, and the focus summary lists it as not captured. It needs a recapture that focuses the link itself.
 
 ### Do and don't (from README.md)
 

@@ -1,27 +1,29 @@
-# Patterns
+# Riverside patterns
 
-Pages measured on 19 November 2026, signed out, at 1169 by 731 CSS pixels. No screenshots were saved.
+How the measured components sit on riverside.com's public pages. Values are in [tokens.json](tokens.json) and [components.md](components.md). Screenshots are in [screenshots/](screenshots). The control map is [site-tree.md](site-tree.md).
 
-## Marketing home
+## App shell
 
-https://riverside.com/homepage. A 64px nav (`.c-updated-nav-desktop`, padding 12px 12px 12px 20px) holds text links and a 40px near-black Start for Free pill. The hero h1 is Sharp Grotesk 60px / 75px, black, max width 730px. Body is Instrument Sans 18px. Sections alternate a white page, a `#111111` band (padding 84px 30px) and a `#f6f6f6` band (padding 80px 30px). Document height was about 12297px.
+The desktop bar is 64px (`core.layout.header-height`) on a white field. It holds the wordmark, three Webflow dropdowns (Platform, Solutions, Resources), For Business, Pricing, Contact Sales, Login, and a black pill (`light.ink`, white label, `core.radius.pill`). The home hero behind it is a dark photograph, not a second theme.
+
+At 390 the same links sit behind `.w-nav-button`. The open menu is a white sheet: Platform, Solutions and Resources as rows with chevrons, then outlined Contact Sales and Login, then a black Start for Free pill ([mobile-home-light-menu](screenshots/mobile-home-light-menu.png)). A Google One Tap sheet can mount over the phone page. It was not clicked.
+
+## Hero
+
+The home hero is white Sharp Grotesk 60px (`core.typography.display`) over a dark photograph, with an Instrument Sans subline. Under that, translucent pill chips (Podcasts, Interviews, Webinars, Live streams, Social clips, Video marketing, Transcriptions) and a purple Start for Free button (`light.accent`). A product still sits below the fold. It is a public demo, not the signed-in studio ([home-light-default](screenshots/home-light-default.png)).
 
 ## Pricing
 
-https://riverside.com/pricing. Sharp Grotesk 50px title. Plan cards are 12px radius on white. The Grow card carries a 4px `#9671ff` border and a Best Value badge. A monthly/yearly control uses a translucent purple pill on a white 10px-radius track. Trial buttons are ink-outline pills. Prices were on the page and were not copied into tokens.
+https://riverside.com/pricing opens on "There's a plan for every story." A Monthly / Yearly control sits above four cards (Pro, Grow, Webinar, Business). Yearly is the default. Grow carries a lavender Best Value badge and a purple outline. Trial and Book a demo buttons were measured in screenshots and not followed ([pricing-light-default](screenshots/pricing-light-default.png)).
 
-## Product page
+## Login wall
 
-https://riverside.com/recording. Same nav. The h1 is white Sharp Grotesk 50px / 62.5px on a dark hero. The footer (`.c-enterprise-footer-new`) is `#f6f6f6`, text `#1d1d1d`, padding 42px 30px 80px.
+https://riverside.com/login is a split screen: a dark form panel and a photograph. The form shows email and password, a purple Log in button, and Google, Apple and Spotify buttons, plus an SSO link. Password was not submitted. SSO was not clicked ([login-light-wall](screenshots/login-light-wall.png)). The panel uses Inter and a `#222222` field, which is not the marketing theme.
 
-## Signed-out login
+## Blog and FAQ
 
-https://riverside.com/login. Body `#0d0d0d`, Inter, text `#fafafa`. A 320px form column: Sharp Grotesk Book 20px heading, three 40px social buttons, an email field, a password row, a `#7848ff` Log in button, a `#b196ff` SSO link. A 585px paper panel (`#151515`) sits beside it. No card field was shown.
+The blog index is a list of published posts with an email field. The field was focused and not submitted. FAQ is a short accordion page. Opening a question is a local toggle.
 
-## Register
+## Footer
 
-https://riverside.com/register. Same dark shell. The first step is Continue with Google, Apple, Spotify, or Email. Email opens name, email and password fields and a Create your account button. That form was not submitted.
-
-## Not entered
-
-The dashboard, a recording, an invite, SSO, social continue, a card, a phone number, and company login. https://riverside.com/signup is a marketing 404, not the register form.
+The footer is a dark band with light grey links (`light.footer-muted`) and social icons. Terms, Privacy and Cookies are public pages. Social profiles were left.

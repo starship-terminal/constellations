@@ -1,0 +1,127 @@
+{
+  "core": {
+    "palette": {
+      "ink": { "type": "color", "value": "#000000", "source": "Measured: computed color of h1 and body text on www.squarespace.com, 2026-11-21, desktop 1440. rgb(0, 0, 0)." },
+      "paper": { "type": "color", "value": "#ffffff", "source": "Measured: computed backgroundColor of body on www.squarespace.com, 2026-11-21. rgb(255, 255, 255)." },
+      "inkSoft": { "type": "color", "value": "#5a5a5a", "source": "Measured: computed color of the unselected Pay monthly option on /pricing, 2026-11-21. rgb(90, 90, 90)." },
+      "blue": { "type": "color", "value": "#0072f0", "source": "Measured: computed color of the 50% off badge on /pricing, 2026-11-21. rgb(0, 114, 240)." },
+      "blueWash": { "type": "color", "value": "#e7f2ff", "source": "Measured: computed backgroundColor of the 50% off badge on /pricing, 2026-11-21. rgb(231, 242, 255)." },
+      "promo": { "type": "color", "value": "rgba(36, 36, 36, 0.9)", "source": "Measured: computed backgroundColor of the promo banner surface on the homepage, 2026-11-21. rgba(36, 36, 36, 0.9)." },
+      "track": { "type": "color", "value": "rgba(0, 0, 0, 0.05)", "source": "Measured: computed backgroundColor of the billing toggle track on /pricing, 2026-11-21." }
+    },
+    "font": {
+      "family": {
+        "sans": { "type": "fontFamily", "value": "Clarkson, Helvetica, sans-serif", "source": "Measured: computed fontFamily of h1.text--title3 on the homepage, 2026-11-21." },
+        "fallback": { "type": "fontFamily", "value": "Clarkson, \"Clarkson Fallback\", Helvetica, sans-serif", "source": "Measured: computed fontFamily of h1 on /pricing, 2026-11-21. The fallback face is named in the stack; the file was not downloaded." }
+      }
+    },
+    "typography": {
+      "display": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "{fontSize.64}", "fontWeight": "{fontWeight.light}", "lineHeight": "1.04", "letterSpacing": "-0.06em" }, "source": "Measured: h1.text--title3 on the homepage. 64px / 66.5601px / 300 / letter-spacing -3.84px. Line height and tracking derived from those px readings." },
+      "title": { "type": "typography", "value": { "fontFamily": "{font.family.fallback}", "fontSize": "{fontSize.56}", "fontWeight": "{fontWeight.light}", "lineHeight": "1.08", "letterSpacing": "-0.04em" }, "source": "Measured: h1 on /pricing. 56px / 60.48px / 300 / letter-spacing -2.24px." },
+      "subtitle": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "{fontSize.40}", "fontWeight": "{fontWeight.regular}", "lineHeight": "1.08", "letterSpacing": "-0.04em" }, "source": "Measured: h2.text--subtitle1 on the homepage and the price figure on /pricing. 40px / 43.2px / 400 / letter-spacing -1.6px." },
+      "eyebrow": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "{fontSize.14}", "fontWeight": "{fontWeight.medium}", "lineHeight": "1", "letterSpacing": "0em" }, "source": "Measured: .text--eyebrow in the header (PRODUCTS). 14px / 14px / 500 / uppercase." },
+      "label": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "{fontSize.14}", "fontWeight": "{fontWeight.medium}", "lineHeight": "1", "letterSpacing": "0em" }, "source": "Measured: header GET STARTED and pricing START FREE TRIAL. 14px / 14px / 500 / uppercase." },
+      "body": { "type": "typography", "value": { "fontFamily": "sans-serif", "fontSize": "{fontSize.16}", "fontWeight": "{fontWeight.regular}", "lineHeight": "1.2", "letterSpacing": "0em" }, "source": "Measured: body on the homepage. 16px / 400 / line-height normal. The named family on body is the generic sans-serif, not Clarkson." }
+    },
+    "fontSize": {
+      "64": { "type": "dimension", "value": "64px", "source": "Measured: h1.text--title3 font-size on the homepage." },
+      "56": { "type": "dimension", "value": "56px", "source": "Measured: h1 font-size on /pricing." },
+      "40": { "type": "dimension", "value": "40px", "source": "Measured: h2.text--subtitle1 and the price figure font-size." },
+      "16": { "type": "dimension", "value": "16px", "source": "Measured: body font-size and the 50% off badge font-size." },
+      "14": { "type": "dimension", "value": "14px", "source": "Measured: eyebrow and CTA label font-size." }
+    },
+    "fontWeight": {
+      "light": { "type": "fontWeight", "value": 300, "source": "Measured: h1 font-weight 300." },
+      "regular": { "type": "fontWeight", "value": 400, "source": "Measured: h2 and body font-weight 400." },
+      "medium": { "type": "fontWeight", "value": 500, "source": "Measured: eyebrow and CTA font-weight 500." }
+    },
+    "space": {
+      "4": { "type": "dimension", "value": "4px", "source": "Measured: billing toggle track padding 4px on /pricing." },
+      "8": { "type": "dimension", "value": "8px", "source": "Measured: 50% off badge padding-block 8px." },
+      "16": { "type": "dimension", "value": "16px", "source": "Measured: billing option padding 16px and badge padding-inline 16px." },
+      "23": { "type": "dimension", "value": "23px", "source": "Measured: CTA padding-block 23px (header GET STARTED and pricing START FREE TRIAL)." },
+      "28": { "type": "dimension", "value": "28px", "source": "Measured: CTA padding-inline 28px." },
+      "40": { "type": "dimension", "value": "40px", "source": "Measured: promo banner padding-inline 40px on the homepage." }
+    },
+    "radius": {
+      "none": { "type": "dimension", "value": "0px", "source": "Measured: body, h1 and nav item border-radius 0px." },
+      "control": { "type": "dimension", "value": "4px", "source": "Measured: header GET STARTED and pricing START FREE TRIAL border-radius 4px." },
+      "menu": { "type": "dimension", "value": "8px", "source": "Measured: .global-navigation__menu border-radius 8px with the Products panel open." },
+      "badge": { "type": "dimension", "value": "30px", "source": "Measured: 50% off badge border-radius 30px." },
+      "pill": { "type": "dimension", "value": "120px", "source": "Measured: promo banner surface border-radius 120px." },
+      "track": { "type": "dimension", "value": "1000px", "source": "Measured: billing toggle track border-radius 1000px." }
+    },
+    "size": {
+      "header": { "type": "dimension", "value": "80px", "source": "Measured: #global-navigation height 80px on the homepage at 1440." },
+      "control": { "type": "dimension", "value": "60px", "source": "Measured: header GET STARTED height 60px and pricing START FREE TRIAL height 60px." },
+      "menu": { "type": "dimension", "value": "1082px", "source": "Measured: open Products menu width 1082px, height 534px, at 1440." },
+      "promo": { "type": "dimension", "value": "720px", "source": "Measured: promo banner surface width 720px, height 61px." }
+    },
+    "stroke": {
+      "none": { "type": "dimension", "value": "0px", "source": "Measured: primary CTA border-top-width 0px." },
+      "inset": { "type": "dimension", "value": "2px", "source": "Derived: the secondary BUY NOW control paints no border; its edge is an inset box-shadow of 2px. The 2px is the shadow spread, not a border-width." }
+    },
+    "shadow": {
+      "menu": { "type": "shadow", "value": [{ "offsetX": "0px", "offsetY": "134px", "blur": "80px", "spread": "0px", "color": "rgba(0, 0, 0, 0.05)" }, { "offsetX": "0px", "offsetY": "60px", "blur": "60px", "spread": "0px", "color": "rgba(0, 0, 0, 0.09)" }, { "offsetX": "0px", "offsetY": "15px", "blur": "33px", "spread": "0px", "color": "rgba(0, 0, 0, 0.1)" }], "source": "Measured: box-shadow of .global-navigation__menu with the Products panel open, 2026-11-21." },
+      "promo": { "type": "shadow", "value": [{ "offsetX": "0px", "offsetY": "5px", "blur": "40px", "spread": "0px", "color": "rgba(255, 255, 255, 0.1)" }], "source": "Measured: box-shadow of the promo banner surface. rgba(255, 255, 255, 0.1) 0px 5px 40px 0px." },
+      "outline": { "type": "shadow", "value": [{ "offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "2px", "color": "rgba(0, 0, 0, 0.2)", "inset": true }], "source": "Measured: BUY NOW box-shadow color(srgb 0 0 0 / 0.2) 0px 0px 0px 2px inset. Converted to rgba for the token." }
+    },
+    "motion": {
+      "duration": {
+        "fast": { "type": "duration", "value": "200ms", "source": "Measured: transition-duration 0.2s on a.cta--primary (skip link), homepage." },
+        "banner": { "type": "duration", "value": "400ms", "source": "Measured: transition-duration 0.4s on .promo-banner." }
+      }
+    },
+    "layout": {
+      "desktop": { "type": "dimension", "value": "1440px", "source": "Measured: window.innerWidth 1440 on desktop captures. Sidecar dimensionCheck passed." },
+      "phone": { "type": "dimension", "value": "390px", "source": "Measured: window.innerWidth 390 on phone captures. PNG is 780px at devicePixelRatio 2." }
+    }
+  },
+  "light": {
+    "background": {
+      "page": { "type": "color", "value": "{palette.paper}", "source": "Measured: body backgroundColor rgb(255, 255, 255) on the homepage. Alias of palette.paper." },
+      "surface": { "type": "color", "value": "{palette.paper}", "source": "Measured: pricing page body is the same paper. No separate raised card fill was isolated; plan cards read as paper on paper." },
+      "inverse": { "type": "color", "value": "{palette.ink}", "source": "Measured: open Products menu backgroundColor rgb(0, 0, 0). The phone nav drawer is the same black." },
+      "overlay": { "type": "color", "value": "{palette.promo}", "source": "Measured: promo banner surface rgba(36, 36, 36, 0.9)." },
+      "track": { "type": "color", "value": "{palette.track}", "source": "Measured: billing toggle track rgba(0, 0, 0, 0.05)." }
+    },
+    "text": {
+      "primary": { "type": "color", "value": "{palette.ink}", "source": "Measured: body and h2 color rgb(0, 0, 0)." },
+      "muted": { "type": "color", "value": "{palette.inkSoft}", "source": "Measured: unselected Pay monthly color rgb(90, 90, 90). Used as the muted role. Disabled text was not found on a public control." },
+      "onAccent": { "type": "color", "value": "{palette.paper}", "source": "Measured: START FREE TRIAL color rgb(255, 255, 255) on the black fill." },
+      "onInverse": { "type": "color", "value": "{palette.paper}", "source": "Measured: header eyebrow color rgb(255, 255, 255) over the dark hero, and menu link colour on the black panel." },
+      "link": { "type": "color", "value": "{palette.blue}", "source": "Measured: the 50% off badge text is rgb(0, 114, 240). The 'Pay annually to save' line on /pricing is blue in the screenshot; its computed colour was not isolated from the badge, so the link role uses the badge reading." }
+    },
+    "border": {
+      "default": { "type": "color", "value": "{palette.ink}", "source": "Measured: contact cards and the secondary BUY NOW edge read as black. BUY NOW paints the edge as an inset shadow, not a border." },
+      "strong": { "type": "color", "value": "{palette.ink}", "source": "Same black. No stronger border colour was measured." }
+    },
+    "accent": {
+      "default": { "type": "color", "value": "{palette.ink}", "source": "Measured: primary CTA fill rgb(0, 0, 0) on START FREE TRIAL. On the light header the same control inverts to white; see component.button.inverse." }
+    },
+    "status": {
+      "info": { "type": "color", "value": "{palette.blue}", "source": "Measured: discount badge text rgb(0, 114, 240) on wash rgb(231, 242, 255). This is a promo badge, not a status system. Success, warning and danger were not present on the captured public pages." }
+    },
+    "component": {
+      "button": {
+        "fill": { "type": "color", "value": "{palette.ink}", "source": "Measured: START FREE TRIAL backgroundColor rgb(0, 0, 0)." },
+        "text": { "type": "color", "value": "{palette.paper}", "source": "Measured: START FREE TRIAL color rgb(255, 255, 255)." },
+        "inverseFill": { "type": "color", "value": "{palette.paper}", "source": "Measured: header GET STARTED backgroundColor rgb(255, 255, 255) over the dark hero." },
+        "inverseText": { "type": "color", "value": "{palette.ink}", "source": "Measured: header GET STARTED color rgb(0, 0, 0)." },
+        "height": { "type": "dimension", "value": "{size.control}", "source": "Measured: 60px." },
+        "radius": { "type": "dimension", "value": "{radius.control}", "source": "Measured: 4px." },
+        "padY": { "type": "dimension", "value": "{space.23}", "source": "Measured: padding-block 23px." },
+        "padX": { "type": "dimension", "value": "{space.28}", "source": "Measured: padding-inline 28px." }
+      },
+      "menu": {
+        "fill": { "type": "color", "value": "{palette.ink}", "source": "Measured: Products panel backgroundColor rgb(0, 0, 0)." },
+        "radius": { "type": "dimension", "value": "{radius.menu}", "source": "Measured: 8px." }
+      },
+      "badge": {
+        "fill": { "type": "color", "value": "{palette.blueWash}", "source": "Measured: 50% off badge backgroundColor rgb(231, 242, 255)." },
+        "text": { "type": "color", "value": "{palette.blue}", "source": "Measured: badge color rgb(0, 114, 240)." },
+        "radius": { "type": "dimension", "value": "{radius.badge}", "source": "Measured: 30px." }
+      }
+    }
+  }
+}

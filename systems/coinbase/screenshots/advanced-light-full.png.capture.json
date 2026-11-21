@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T13:21:14.008Z",
+  "capturedAt": "2026-11-21T01:01:10.579Z",
   "screenshot": "advanced-light-full.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://www.coinbase.com/en-sg/advanced-trade",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -24,7 +24,7 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,
@@ -33,8 +33,8 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1433,
-      "height": 8602
+      "width": 1440,
+      "height": 8599
     },
     "scroll": {
       "x": 0,
@@ -47,14 +47,14 @@
     "clip": null
   },
   "png": {
-    "width": 1433,
-    "height": 8602
+    "width": 1440,
+    "height": 8599
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1433,
-      "height": 8602
+      "width": 1440,
+      "height": 8599
     },
     "basis": "fullPage"
   },

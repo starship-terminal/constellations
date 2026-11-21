@@ -60,7 +60,7 @@ const result = await page.evaluate((sheets) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
-        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
         fonts.push(o);
         continue;
       }

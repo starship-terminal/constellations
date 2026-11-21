@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T00:15:09.018Z",
+  "screenshot": "mobile-home-light-default.png",
+  "sanitizedSourceUrl": null,
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 390,
+      "height": 8370
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 780,
+      "height": 1688
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
+}

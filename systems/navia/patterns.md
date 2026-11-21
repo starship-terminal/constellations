@@ -1,37 +1,31 @@
 # Navia patterns
 
-Public signed-out surfaces only. Measured 2026-11-19 in the T3 preview browser at 1169 by 731, device pixel ratio 2. Screenshot frames failed, so these notes describe computed layout, not images.
+How the measured components compose on www.thenavia.com. Values are in [components.md](components.md) and [tokens.json](tokens.json). The control map is [site-tree.md](site-tree.md).
 
-## Marketing home
+## The shell
 
-`https://www.thenavia.com/` (the apex `thenavia.com` redirects here). Cream page `#faf4e6`. A fixed nav, 69px tall, padding `0 58.4453px`, transparent. Logo at the left, links Platform, Pricing, Resources, and a yellow pill, Get started, linking to `app.thenavia.com`.
+A 72px transparent header on the cream page: wordmark, Platform, Pricing, Resources, and a chartreuse Get started pill. The pill's fill is an inner `.button-base`, not the anchor. At 390 the links collapse behind a menu button of three 24 by 2 bars. Opening it shows the same links plus Get started for free. [home-light-default](screenshots/home-light-default.png), [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
 
-The hero is white text on a section whose own background computed as transparent. The h1 is Lora, 3.5rem, weight 400, white. A yellow pill and a white pill sit under it. Later sections alternate cream, white (`.section.is-white`) and ink (`.section.is-dark`, white text). A handwriting line, Notemakersmark, yellow, 7rem, letter-spacing -6px, reads over the ink band.
+## The hero and features
 
-The content column `.container-large` measured 1052px wide, inset 58px, which matches `.padding-global` at 5%.
+A left-aligned Lora hero at 56px, a chartreuse primary pill, and a secondary Book a demo link. Four feature rows act as buttons. Clicking one adds `is-active` and removes it from the others. The row itself stays transparent. [home-light-feature](screenshots/home-light-feature.png).
 
-## Pricing
+## Plans
 
-Three plans in a row on the home page, each 330px. Basic is free, Business is $49/mo on the ink highlight card, Growth is $79/mo. Sign up links go to `app.thenavia.com` and were not followed from the cards.
+Three static cards: Basic, Business, Growth. Each Sign up link goes to the app wall. There is no billing toggle. [home-light-default](screenshots/home-light-default.png).
 
-## Blog and article
+## Blog
 
-`/blog` uses the same cream page and a 5rem Lora title. Article cards link to `/blog/...`. One article was opened. Its title is 4rem Lora, the body column is 849px, Public Sans at 1rem, and inline links are orange.
+An 80px Lora title, article cards, and a Next control that walks `?55a1b861_page=`. Page 2 was captured. Pages 3 and 4 were mapped and not shot. A post is one column of article type with related cards and a Get started link to the wall. [blog-light-default](screenshots/blog-light-default.png), [post-light-default](screenshots/post-light-default.png).
 
 ## Contact
 
-`/contact-us` is a cream page with a 4rem Lora title and a Webflow form. Fields are first name, last name, email, phone, a topic select and a message. The submit is an orange pill with ink text. The form was not filled and not submitted. A phone field is present, so this is not an email-only signup.
+A cream form: 44px fields at 4px radius, a 44px topic select, a 180px message area, and a 48px orange pill. Focus turns a field white. The select was focused and no option was chosen. The form was not submitted, so validation, loading, and success are absent. A published mailbox line on the page was hidden before the shot. [contact-light-default](screenshots/contact-light-default.png), [contact-light-select-focused](screenshots/contact-light-select-focused.png).
 
-## Legal
+## Overlays
 
-`/privacy-policy` uses the same cream page, 4rem title and 849px body column. `/terms-and-conditions` is linked from the footer and was not opened. The privacy page already showed the legal pattern.
+CookieYes mounts on first paint: Customise, Reject All, Accept All. Customise opens a preference center. Reject All was used. Accept All was not. A Flodesk newsletter popup mounts on its own. It was closed and not filled. [home-light-cookies](screenshots/home-light-cookies.png), [home-light-cookie-preferences](screenshots/home-light-cookie-preferences.png).
 
-## App gate
+## Walls
 
-`https://app.thenavia.com/` is a cream screen, centered, max-width card with 32px padding. Lora title at 28px, weight 500, letter-spacing -0.28px. The lede is `#5a544c`. Two buttons: Sign In (white, `#dfd5c0` border) and Sign Up (orange). Neither was pressed. There is no email field on this screen.
-
-## Not captured
-
-- Desktop 1440 and phone 390. The preview tab was a 1169 fill viewport and could not be resized after frames failed.
-- Dark theme. The marketing site has a dark nav token set and ink sections. It has no page-level dark theme. The app stylesheet's `.dark` block was not applied.
-- Signed-in app, checkout, booking. Book a demo links to a Google Calendar appointment page and was not opened. Get started links to the app gate and was not submitted.
+Get started, plan Sign up, and the app host open https://app.thenavia.com/, which asks the visitor to sign in. That page was recorded. Sign In was not followed past the Cloudflare check on accounts.thenavia.com. [app-wall-light-default](screenshots/app-wall-light-default.png).

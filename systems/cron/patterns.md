@@ -1,6 +1,6 @@
 # Cron patterns — page layouts
 
-Captured signed out on 2026-11-12. Heights are the painted `scrollHeight` of each route at 1440 wide; mobile is 390 wide at DPR 2. Two painted surfaces, no theme attribute: the home is dark, the content pages are light.
+Public signed-out surfaces. The map of controls is [site-tree.md](site-tree.md). Shots are from the 2026-11-21 Playwright pass. Heights are the painted `scrollHeight` of each route at 1440 wide; mobile is 390 wide at DPR 2. Two painted surfaces, no theme attribute: the home is dark, the content pages are light.
 
 ## Shell
 

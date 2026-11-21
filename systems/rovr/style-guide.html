@@ -4,167 +4,145 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ROVR style guide</title>
+<meta name="description" content="ROVR (rovr.live) public design tokens, rendered from tokens.json.">
 <style>
 :root {
-  --font-family-kern: kernStandard, "kernStandard Fallback", system-ui, sans-serif;
-  --font-family-alpina: gtAlpina, "gtAlpina Fallback", serif;
-  --font-family-roboto: Roboto, "Roboto Fallback", sans-serif;
-  --font-weight-thin: 100;
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-  --font-size-micro: 10px;
-  --font-size-caption: 12px;
-  --font-size-body-sm: 14px;
-  --font-size-nav: 15px;
-  --font-size-body: 16px;
-  --font-size-section: 20px;
-  --font-size-show: 24px;
-  --font-size-curator: 28.8px;
-  --font-size-hour: 36px;
-  --font-size-player: 51px;
-  --font-size-hero: 60px;
-  --lineHeight-tight: 36px;
-  --lineHeight-body: 24px;
-  --lineHeight-body-sm: 20px;
-  --lineHeight-show: 32px;
-  --lineHeight-hero: 64px;
-  --letterSpacing-button: 0.8px;
-  --letterSpacing-privacy-body: -0.19px;
+  --color-brand-yellow: #fff057;
+  --color-brand-yellow-hover: rgba(255, 240, 87, 0.804);
+  --color-brand-ink: #000000;
+  --color-brand-paper: #fafafa;
+  --color-brand-page: #000000;
+  --color-brand-nav-quiet: rgba(255, 240, 87, 0.5);
+  --color-status-error-text: #e60000;
+  --color-status-success-text: #008a2e;
+  --color-status-info-text: #0973dc;
+  --color-status-warning-text: #dc7609;
+  --font-family-display: kernStandard, kernStandard Fallback, system-ui, sans-serif;
+  --font-family-body: kernStandard, kernStandard Fallback, system-ui, sans-serif;
+  --font-family-gt-alpina: gtAlpina, gtAlpina Fallback;
+  --font-family-roboto: Roboto, Roboto Fallback;
+  --typography-display: 700 51px/53.55px var(--core-font-family-display);
+  --typography-manifesto: 800 72px/72px var(--core-font-family-display);
+  --typography-curator: 400 40.8px/44.88px var(--core-font-family-display);
+  --typography-nav: 400 15px/22.5px var(--core-font-family-body);
+  --typography-button: 700 15px/15px var(--core-font-family-body);
+  --typography-body: 400 16px/24px var(--core-font-family-body);
+  --typography-label: 700 14px/20px var(--core-font-family-body);
+  --typography-caption: 400 10px/15px var(--core-font-family-body);
+  --typography-field: 400 14px/20px var(--core-font-family-body);
   --radius-none: 0px;
-  --radius-token: 8px;
-  --radius-menu: 30px;
-  --radius-pill: 9999px;
-  --space-2: 2px;
-  --space-7: 7px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-28: 28px;
-  --space-32: 32px;
-  --size-header: 70px;
-  --size-menu: 24px;
-  --size-auth: 36px;
-  --size-icon: 40px;
-  --size-oauth: 48px;
-  --size-listen: 65px;
-  --motion-duration-fast: 150ms;
-  --motion-duration-nav: 300ms;
-  --motion-duration-mood: 500ms;
-  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --color-background: #000000;
-  --color-foreground: #FAFAFA;
-  --color-card: #0A0A0A;
-  --color-card-foreground: #FAFAFA;
-  --color-popover: #0A0A0A;
-  --color-popover-foreground: #FAFAFA;
-  --color-primary: #FFFF57;
-  --color-primary-foreground: #000000;
-  --color-secondary: #262626;
-  --color-secondary-foreground: #FAFAFA;
-  --color-muted: #262626;
-  --color-muted-foreground: #A3A3A3;
-  --color-accent: #262626;
-  --color-accent-foreground: #FAFAFA;
-  --color-destructive: #7F1D1D;
-  --color-destructive-foreground: #FAFAFA;
-  --color-border: #262626;
-  --color-input: #262626;
-  --color-ring: #D4D4D4;
-  --color-brand: #FFF057;
-  --color-mood: #F2E84A;
-  --component-button-bg: var(--color-brand);
-  --component-button-text: var(--color-primary-foreground);
-  --component-button-radius: var(--radius-pill);
-  --component-auth-bg: var(--color-background);
-  --component-auth-text: var(--color-brand);
-  --component-auth-height: var(--size-auth);
+  --radius-pill: 30px;
+  --radius-full: 9999px;
+  --radius-shadcn: 8px;
+  --spacing-tab-x: 16px;
+  --spacing-control-40: 40px;
+  --spacing-play: 70px;
+  --border-hairline: 1px;
+  --border-ring: 2px;
+
   color-scheme: dark;
-  --sans: var(--font-family-kern);
+  --sg-sans: kernStandard, "kernStandard Fallback", system-ui, sans-serif;
 }
-[data-mode="light"] {
-  --color-background: #FFFFFF;
-  --color-foreground: #0A0A0A;
-  --color-card: #FFFFFF;
-  --color-card-foreground: #0A0A0A;
-  --color-popover: #FFFFFF;
-  --color-popover-foreground: #0A0A0A;
-  --color-primary: #FFFF57;
-  --color-primary-foreground: #000000;
-  --color-secondary: #F5F5F5;
-  --color-secondary-foreground: #171717;
-  --color-muted: #F5F5F5;
-  --color-muted-foreground: #737373;
-  --color-accent: #F5F5F5;
-  --color-accent-foreground: #171717;
-  --color-destructive: #EF4444;
-  --color-destructive-foreground: #FAFAFA;
-  --color-border: #E5E5E5;
-  --color-input: #E5E5E5;
-  --color-ring: #0A0A0A;
-  --color-brand: #FFF057;
-  --color-mood: #F2E84A;
-  --component-button-bg: var(--color-primary);
-  --component-button-text: var(--color-primary-foreground);
-  --component-button-radius: var(--radius-pill);
-  color-scheme: light;
+[data-mode="dark"] {
+  --page: var(--core-color-brand-page);
+  --surface: #0a0a0a;
+  --text: var(--core-color-brand-paper);
+  --muted: #a3a3a3;
+  --accent: var(--core-color-brand-yellow);
+  --border: #262626;
+  --primary: #ffff57;
+  --primary-foreground: #000000;
+  --secondary: #262626;
+  --destructive: #7f1d1d;
+  --ring: #d4d4d4;
+  --popover: #0a0a0a;
+  --input: #262626;
+  --focus-ring: #d4d4d4;
+  --component-button-bg: var(--core-color-brand-yellow);
+  --component-button-text: var(--core-color-brand-ink);
+  --component-button-radius: var(--core-radius-pill);
+  --component-button-height: 24px;
+  --component-play-bg: var(--core-color-brand-yellow);
+  --component-play-size: 70px;
+  --component-play-radius: var(--core-radius-full);
+  --component-field-text: #fff057;
+  --component-field-size: 14px;
+  --component-field-height: 20px;
+  --component-tab-bg: #fff057;
+  --component-tab-text: #000000;
+  --component-tab-height: 40px;
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--color-background); color: var(--color-foreground); font: 400 16px/24px var(--sans); }
-header { display: flex; gap: 16px; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--color-brand); }
-header h1 { margin: 0; font-size: 20px; letter-spacing: 0.8px; text-transform: uppercase; }
-button.theme { margin-left: auto; background: var(--color-brand); color: #000; border: 0; border-radius: 30px; padding: 4px 12px; font: italic 700 15px/15px var(--sans); }
-main { padding: 24px; max-width: 960px; }
-h2 { font-size: 24px; line-height: 32px; font-weight: 800; text-transform: uppercase; }
-.row { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0 32px; }
-.swatch { width: 140px; }
-.swatch i { display: block; height: 56px; border: 1px solid var(--color-border); }
-.swatch span { display: block; font-size: 12px; line-height: 16px; margin-top: 4px; }
-.pill { display: inline-flex; align-items: center; justify-content: center; background: var(--color-brand); color: #000; border-radius: 9999px; padding: 7px 12px; font: 700 12px/12px var(--sans); }
-.auth { display: flex; align-items: center; justify-content: center; width: 256px; height: 36px; background: #000; color: var(--color-brand); border: 2px solid #000; font: 700 16px/24px var(--sans); letter-spacing: 0.8px; }
-.note { color: var(--color-muted-foreground); font-size: 14px; max-width: 68ch; }
+body { margin: 0; background: var(--page, #000); color: var(--text, #fafafa); font: 400 16px/1.5 var(--sg-sans); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 40px/1.1 var(--sg-sans); margin: 0 0 8px; text-transform: uppercase; color: var(--accent, #fff057); }
+h2 { font: 700 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #a3a3a3); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--text, #fafafa); }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border: 1px solid var(--border, #262626); }
+.sw b, .sw span { display: block; font: 500 11px/1.4 ui-monospace, Menlo, monospace; }
+.sw span { color: var(--muted, #a3a3a3); }
+.chrome { border: 1px solid var(--border, #262626); background: var(--page, #000); }
+.bar { display: flex; align-items: center; gap: 18px; height: 56px; padding: 0 16px; border-bottom: 1px solid var(--accent, #fff057); font-size: 15px; font-style: italic; }
+.bar .mark { font-weight: 800; font-style: normal; letter-spacing: .08em; color: var(--accent, #fff057); }
+.bar .sp { flex: 1; }
+.bar a { color: var(--color-brand-nav-quiet, rgba(255,240,87,.5)); text-decoration: none; }
+.menu { display: inline-flex; align-items: center; height: var(--component-button-height, 24px); padding: 0 14px; border-radius: var(--component-button-radius, 30px); background: var(--component-button-bg, #fff057); color: var(--component-button-text, #000); font: 700 15px/1 var(--sg-sans); font-style: italic; }
+.stage { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 280px; }
+.stage .copy { padding: 28px 24px; }
+.stage h3 { margin: 0; font: 700 51px/1.05 var(--sg-sans); color: var(--accent, #fff057); text-transform: uppercase; }
+.stage .by { font: 400 28px/1.1 var(--sg-sans); margin: 8px 0; }
+.play { width: var(--component-play-size, 70px); height: var(--component-play-size, 70px); border-radius: var(--component-play-radius, 9999px); background: var(--component-play-bg, #fff057); color: #000; display: inline-flex; align-items: center; justify-content: center; font-size: 22px; }
+.track { background: var(--accent, #fff057); color: #000; padding: 12px 16px; font-size: 14px; }
+.field { border: 0; border-bottom: 1px solid var(--accent, #fff057); background: transparent; color: var(--component-field-text, #fff057); font: 400 14px/20px var(--sg-sans); width: 240px; padding: 6px 0; }
+.note { color: var(--muted, #a3a3a3); font-size: 13px; }
 </style>
 </head>
 <body>
-<header>
-  <h1>ROVR</h1>
-  <button class="theme" type="button" id="theme">Light tokens</button>
-</header>
 <main>
-  <p class="note">Dark is the theme that was on screen (html.dark). Light values are the stylesheet :root block, not a page that was shown. Brand yellow is the painted rgb(255, 240, 87), which is not the same as --primary.</p>
-  <h2>Colour</h2>
-  <div class="row" id="swatches"></div>
-  <h2>Controls</h2>
-  <div class="row">
-    <span class="pill">Message</span>
-    <span class="auth">SIGN UP</span>
+  <h1>ROVR</h1>
+  <p>Public radio chrome from rovr.live, dark only. Every swatch below is a token from tokens.json. kernStandard is not loaded here, so the page falls back to system-ui.</p>
+
+  <h2>Colour roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>var(--page)</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>var(--text)</span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><b>muted</b><span>var(--muted)</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>var(--border)</span></div>
+    <div class="sw"><i style="background:var(--primary)"></i><b>primary token</b><span>var(--primary)</span></div>
+    <div class="sw"><i style="background:var(--destructive)"></i><b>destructive</b><span>var(--destructive)</span></div>
   </div>
+  <p class="note">Accent is the painted yellow of the MENU pill. Primary is the computed --primary channel, a nearby yellow. They are not the same reading.</p>
+
+  <h2>Chrome</h2>
+  <div class="chrome">
+    <div class="bar"><span class="mark">ROVR</span><a>RADIO</a><a>MOODS</a><a>SCHEDULE</a><a>CURATORS</a><a>ARCHIVE</a><span class="sp"></span><span class="menu">MENU</span></div>
+    <div class="stage">
+      <div class="copy">
+        <h3>Morning strut</h3>
+        <div class="by">BY Curator</div>
+        <p>Vintage morning jams for early-birds</p>
+        <span class="play">▶</span>
+      </div>
+      <div style="background:#111"></div>
+    </div>
+    <div class="track">Track: Title · Artist · Label</div>
+  </div>
+
+  <h2>Field</h2>
+  <p class="note">The sign-in field was measured empty. This specimen is not a filled account form.</p>
+  <input class="field" placeholder="Enter your Email" readonly>
+
+  <h2>Type</h2>
+  <p style="font:700 51px/1.05 var(--sg-sans);text-transform:uppercase;color:var(--accent)">Display 51</p>
+  <p style="font:800 40px/1 var(--sg-sans);color:var(--text)">Manifesto weight 800</p>
+  <p style="font:400 15px/1.5 var(--sg-sans);font-style:italic;color:var(--color-brand-nav-quiet)">Nav italic 15</p>
+  <p style="font:400 10px/1.5 var(--sg-sans);color:var(--accent)">Caption 10</p>
 </main>
-<script>
-const tokens = {"dark": {"background": {"$value": "#000000", "$type": "color", "$extensions": {"source": "computed on html.dark --background 0 0% 0%", "evidence": "Measured"}}, "foreground": {"$value": "#FAFAFA", "$type": "color", "$extensions": {"source": "computed on html.dark --foreground 0 0% 98%", "evidence": "Measured"}}, "card": {"$value": "#0A0A0A", "$type": "color", "$extensions": {"source": "computed on html.dark --card 0 0% 3.9%", "evidence": "Measured"}}, "card-foreground": {"$value": "#FAFAFA", "$type": "color", "$extensions": {"source": "computed on html.dark --card-foreground 0 0% 98%", "evidence": "Measured"}}, "popover": {"$value": "#0A0A0A", "$type": "color", "$extensions": {"source": "computed on html.dark --popover 0 0% 3.9%", "evidence": "Measured"}}, "popover-foreground": {"$value": "#FAFAFA", "$type": "color", "$extensions": {"source": "computed on html.dark --popover-foreground 0 0% 98%", "evidence": "Measured"}}, "primary": {"$value": "#FFFF57", "$type": "color", "$extensions": {"source": "computed on html.dark --primary 60 100% 67%", "evidence": "Measured"}}, "primary-foreground": {"$value": "#000000", "$type": "color", "$extensions": {"source": "computed on html.dark --primary-foreground 0 0% 0%", "evidence": "Measured"}}, "secondary": {"$value": "#262626", "$type": "color", "$extensions": {"source": "computed on html.dark --secondary 0 0% 14.9%", "evidence": "Measured"}}, "secondary-foreground": {"$value": "#FAFAFA", "$type": "color", "$extensions": {"source": "computed on html.dark --secondary-foreground 0 0% 98%", "evidence": "Measured"}}, "muted": {"$value": "#262626", "$type": "color", "$extensions": {"source": "computed on html.dark --muted 0 0% 14.9%", "evidence": "Measured"}}, "muted-foreground": {"$value": "#A3A3A3", "$type": "color", "$extensions": {"source": "computed on html.dark --muted-foreground 0 0% 63.9%", "evidence": "Measured"}}, "accent": {"$value": "#262626", "$type": "color", "$extensions": {"source": "computed on html.dark --accent 0 0% 14.9%", "evidence": "Measured"}}, "accent-foreground": {"$value": "#FAFAFA", "$type": "color", "$extensions": {"source": "computed on html.dark --accent-foreground 0 0% 98%", "evidence": "Measured"}}, "destructive": {"$value": "#7F1D1D", "$type": "color", "$extensions": {"source": "computed on html.dark --destructive 0 62.8% 30.6%", "evidence": "Measured"}}, "destructive-foreground": {"$value": "#FAFAFA", "$type": "color", "$extensions": {"source": "computed on html.dark --destructive-foreground 0 0% 98%", "evidence": "Measured"}}, "border": {"$value": "#262626", "$type": "color", "$extensions": {"source": "computed on html.dark --border 0 0% 14.9%", "evidence": "Measured"}}, "input": {"$value": "#262626", "$type": "color", "$extensions": {"source": "computed on html.dark --input 0 0% 14.9%", "evidence": "Measured"}}, "ring": {"$value": "#D4D4D4", "$type": "color", "$extensions": {"source": "computed on html.dark --ring 0 0% 83.1%", "evidence": "Measured"}}, "brand": {"$value": "#FFF057", "$type": "color", "$extensions": {"source": "computed rgb(255, 240, 87) on header rule, MENU, nav, SIGN UP text, about and privacy text", "evidence": "Measured"}}, "mood": {"$value": "#F2E84A", "$type": "color", "$extensions": {"source": "computed rgb(242, 232, 74) on THINK / FEEL / MOVE; class literal text-[#F2E84A]", "evidence": "Measured"}}}, "light": {"background": {"$value": "#FFFFFF", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --background 0 0% 100%", "evidence": "Measured"}}, "foreground": {"$value": "#0A0A0A", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --foreground 0 0% 3.9%", "evidence": "Measured"}}, "card": {"$value": "#FFFFFF", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --card 0 0% 100%", "evidence": "Measured"}}, "card-foreground": {"$value": "#0A0A0A", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --card-foreground 0 0% 3.9%", "evidence": "Measured"}}, "popover": {"$value": "#FFFFFF", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --popover 0 0% 100%", "evidence": "Measured"}}, "popover-foreground": {"$value": "#0A0A0A", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --popover-foreground 0 0% 3.9%", "evidence": "Measured"}}, "primary": {"$value": "#FFFF57", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --primary 60 100% 67%", "evidence": "Measured"}}, "primary-foreground": {"$value": "#000000", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --primary-foreground 0 0% 0%", "evidence": "Measured"}}, "secondary": {"$value": "#F5F5F5", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --secondary 0 0% 96.1%", "evidence": "Measured"}}, "secondary-foreground": {"$value": "#171717", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --secondary-foreground 0 0% 9%", "evidence": "Measured"}}, "muted": {"$value": "#F5F5F5", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --muted 0 0% 96.1%", "evidence": "Measured"}}, "muted-foreground": {"$value": "#737373", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --muted-foreground 0 0% 45.1%", "evidence": "Measured"}}, "accent": {"$value": "#F5F5F5", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --accent 0 0% 96.1%", "evidence": "Measured"}}, "accent-foreground": {"$value": "#171717", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --accent-foreground 0 0% 9%", "evidence": "Measured"}}, "destructive": {"$value": "#EF4444", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --destructive 0 84.2% 60.2%", "evidence": "Measured"}}, "destructive-foreground": {"$value": "#FAFAFA", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --destructive-foreground 0 0% 98%", "evidence": "Measured"}}, "border": {"$value": "#E5E5E5", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --border 0 0% 89.8%", "evidence": "Measured"}}, "input": {"$value": "#E5E5E5", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --input 0 0% 89.8%", "evidence": "Measured"}}, "ring": {"$value": "#0A0A0A", "$type": "color", "$extensions": {"source": "stylesheet :root, not the live theme --ring 0 0% 3.9%", "evidence": "Measured"}}, "brand": {"$value": "#FFF057", "$type": "color", "$extensions": {"source": "same painted yellow; light theme was declared, not shown", "evidence": "Measured"}}, "mood": {"$value": "#F2E84A", "$type": "color", "$extensions": {"source": "mood title literal; light theme was not shown", "evidence": "Measured"}}}};
-const box = document.getElementById("swatches");
-function paint(mode) {
-  box.replaceChildren();
-  for (const [name, token] of Object.entries(tokens[mode])) {
-    const el = document.createElement("div");
-    el.className = "swatch";
-    el.innerHTML = "<i></i><span></span>";
-    el.querySelector("i").style.background = token.$value;
-    el.querySelector("span").textContent = name + " " + token.$value;
-    box.appendChild(el);
-  }
-}
-let mode = "dark";
-paint(mode);
-document.getElementById("theme").addEventListener("click", () => {
-  mode = mode === "dark" ? "light" : "dark";
-  document.documentElement.dataset.mode = mode;
-  document.getElementById("theme").textContent = mode === "dark" ? "Light tokens" : "Dark tokens";
-  paint(mode);
-});
-</script>
 </body>
 </html>

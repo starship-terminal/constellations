@@ -108,13 +108,13 @@ typography:
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "21px"
-    letterSpacing: "0px"
+    letterSpacing: "0em"
   button:
     fontFamily: "TWK Lausanne"
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "21px"
-    letterSpacing: "0px"
+    letterSpacing: "0em"
   small:
     fontFamily: "TWK Lausanne"
     fontSize: "11px"
@@ -157,9 +157,9 @@ Good for: SaaS marketing + product surfaces: near-white page, near-black #0d0d0d
 
 Captured 2026-11-11, signed out (every captured surface is public; the app on app.asana.com sits behind sign-in and was never reached; OneTrust consent banner was dismissed; the dark token set is declared in the shipped CSS but unbound on the captured routes). Themes: light, dark.
 
-A token set and component reference for Asana's public marketing site (https://asana.com), a Next.js site for a work/project-management product. Use it to build a marketing or product surface that borrows its look: a near-white page, near-black ink `#0d0d0d` on headings and `#3d3d3d` body text, TWK Lausanne (a webfont, Helvetica fallbacks) throughout, 3px control radii, near-black `#0d0d0d` primary buttons that lift to `#3d3d3d` on hover, `#f3f3f3` panels, `#cfcfcf` hairlines, and a full shipped design token layer — colour ramps (`--black-20..1100`, `--blue-0..980`, `--coral-*`, `--bright-*`), `--lightmode-*` semantic roles, a 16px-base `--spacing-*` scale, `--media-*` breakpoints, 12-column grid, `--shadow-10..40` and `--transition-*` durations. It was captured signed out, in headless Chromium at 1440 x 900 (mobile at 390 x 844) on 2026-11-11.
+A token set and component reference for Asana's public marketing site (https://asana.com), a Next.js site for a work/project-management product. Use it to build a marketing or product surface that borrows its look: a near-white page, near-black ink `#0d0d0d` on headings and `#3d3d3d` body text, TWK Lausanne (a webfont, Helvetica fallbacks) throughout, 3px control radii, near-black `#0d0d0d` primary buttons that lift to `#3d3d3d` on hover, `#f3f3f3` panels, `#cfcfcf` hairlines, and a full shipped design token layer — colour ramps (`--black-20..1100`, `--blue-0..980`, `--coral-*`, `--bright-*`), `--lightmode-*` semantic roles, a 16px-base `--spacing-*` scale, `--media-*` breakpoints, 12-column grid, `--shadow-10..40` and `--transition-*` durations. It was captured signed out, in headless Chromium at 1440 x 900 (mobile at 390 x 844) on 2026-11-21.
 
-It holds 19 screenshots across seven routes — /, /pricing, /product/ai, /features, /resources, /sales, /create-account — plus transient states (the nav flyout open, a pricing FAQ open, the mobile menu open), and 33 component entries — 32 measured, the create-account heading never resolved — with 80 states and 79 crops. The product itself (app.asana.com, workspaces, every Launch/Log in/Get started path) sits behind sign-in and was never reached: the app is recorded as a boundary, and nothing here claims its functionality. One capture note: the site ships a full `--darkmode-*` role set in its CSS, but every captured route paints light — the dark set is emitted as declared evidence, not a painted page (see [components.md](components.md) > Gaps).
+The site tree is [site-tree.md](site-tree.md): which header, menu and footer control opens which page. Screenshots cover that public tree at desktop, plus phone captures of home, pricing, product, sales, signup, resources, templates, enterprise and apps. Component crops are from the 2026-11-11 measure pass (32 of 33 entries measured). The product itself (app.asana.com) sits behind sign-in. On 2026-11-21 `https://app.asana.com/-/login` loaded a public login shell (Google, Microsoft, or email) and that branch stopped. No email was typed. No form was submitted. The site ships a full `--darkmode-*` role set in its CSS, but every captured route paints light. The dark set is declared evidence, not a painted page (see [components.md](components.md) > Gaps).
 
 This package contains no Asana code, and none of its artwork has been redrawn. The screenshots, product imagery and visual system they show belong to Asana ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the logo, artwork or brand assets.
 
@@ -219,8 +219,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
-- **The product is absent.** app.asana.com, workspaces, every Launch Asana / Log in / Get started path lead behind sign-in; no workspace was opened. Both forms were measured, never submitted — nothing here describes the app.
+- **The product is absent.** On 2026-11-21 `https://app.asana.com/-/login` returned a public login shell (Google, Microsoft, or email, plus reCAPTCHA). That branch stopped. No email was typed. Google and Microsoft were not clicked. No form was submitted. Nothing here describes a workspace.
 - **The dark set is declared, not painted.** Every captured route paints light; `dark` is emitted from the `--darkmode-*` vars the stylesheet ships. Do not present it as a verified dark screen — it is real product evidence, unbound on these routes. Asana's own CSS is the source: it even ships the name `--darkmode-inline-inline-link-text` (the extra `inline` segment is theirs, kept verbatim).
 - **Fields and buttons are the gate's, not the app's.** The 50px email field, continue button and SSO options belong to the sign-up gate; equivalent-looking controls inside the product were never seen.
 - **`gate-title` is missing.** The create-account heading never resolved to a measurable element; the field, continue and SSO entries around it did measure.

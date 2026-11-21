@@ -1,88 +1,69 @@
-# Components
+# RevenueCat components
 
-Measured on 2026-11-19 from computed styles. Marketing controls are from
-www.revenuecat.com at 1440 by 900. App controls are from the signed-out login
-and signup pages at app.revenuecat.com, which rendered with `html.dark`.
-
-Hover colours below are declared class rules (`hover:bg-secondary-blue-2`),
-not a held hover. Focus on the marketing header was read after `focus()`.
+Public marketing site and public docs, captured 2026-11-21, signed out. Crops are 2x element screenshots. Values are token names. A state that was not on the page is listed under Gaps.
 
 ## Button
 
-Marketing primary. Header "Sign up". Background `#576ddb`, text `#ffffff`,
-height 36px, padding 0 18px, font objectSans 14px / 500, radius pill
-(computed `16777215px`). Declared hover background is `#3d52b8`.
+The primary action is a blue pill. Nav Sign up is 36px tall, Object Sans 14/500, fill `light.component.button-primary-bg` (`#576cdb`), label `light.component.button-primary-text`. Hover darkens to `light.component.button-primary-bg-hover` (`#3e52b9`). The hero and sales submit buttons are the same fill at 48px (`light.component.button-lg-height`).
 
-Marketing large. Hero "Start for free". Same fill, height 48px, padding 0 28px,
-font 16px / 500. At 390px the same control was 44px tall, padding 0 20px,
-width 358px.
+| State | Crop |
+|---|---|
+| default | [nav-signup-default](components/crops/nav-signup-default.png) |
+| hover | [nav-signup-hover](components/crops/nav-signup-hover.png) |
+| focus | [nav-signup-focus](components/crops/nav-signup-focus.png) |
+| pressed | [nav-signup-pressed](components/crops/nav-signup-pressed.png) (forced `:active` failed; the crop matches focus, not a held press) |
+| large default | [hero-cta-default](components/crops/hero-cta-default.png) |
+| large hover | [hero-cta-hover](components/crops/hero-cta-hover.png) |
+| form submit | [sales-submit-default](components/crops/sales-submit-default.png), hover [sales-submit-hover](components/crops/sales-submit-hover.png) |
 
-Marketing ghost. Header "Contact sales". Transparent fill, text `#3d52b8`,
-1px border from `border-[#576cdb]/70`, height 36px, padding 0 18px, pill.
-Declared hover border and text are `#3d52b8`.
+Disabled and loading were not on any public page.
 
-App submit. "Log in" and "Sign up" were `disabled`. Background `#2d2f35`,
-text `#75777e`, height 32px, padding 6px 8px, radius 8px, weight 600,
-Inter Variable 14px. The enabled primary fill `#606dff` is a stylesheet
-token (`--button-primary-bottom`), not a state that was on screen.
+## Icon button
+
+Docs theme toggle is a 32px round icon button. [docs-theme-toggle-default](components/crops/docs-theme-toggle-default.png). Mobile menu close is the X in [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png). No separate icon-button hover crop.
 
 ## Link
 
-Header "Pricing": objectSans 14px / 400, `#1f1f47`, padding 0 12px, height
-64px, radius 4px, colour transition 300ms.
+Log in is text, not a pill: 14/500, `light.muted`, darkening on hover. [nav-login-default](components/crops/nav-login-default.png), [nav-login-hover](components/crops/nav-login-hover.png).
 
-"Log in": objectSans 14px / 500, `#3d3d5c`.
-
-"Talk to sales": objectSans 16px / 500, `#3d52b8`, no background.
-
-App "Sign up": Inter Variable 14px / 600, `#606dff`, padding 8px, radius 8px.
-
-App footer links: Inter Variable 12px / 400, `#a2a4ab`.
+Contact sales is an outline pill: text `light.component.button-outline-text`, 1px border. [nav-contact-default](components/crops/nav-contact-default.png), [nav-contact-hover](components/crops/nav-contact-hover.png).
 
 ## Text field
 
-Marketing email. Placeholder "Your email address...". White fill, 1px
-`#eaedf6` border, pill, height 64px, width 480px, padding 20px 176px 20px
-28px, objectSans 16px, shadow `rgba(61, 75, 143, 0.15) 0px 6px 16px 0px`.
+Hero email is a white pill, 64px, border `light.component.field-border`, focus border `light.component.field-border-focus`. Nothing was typed. [hero-email-default](components/crops/hero-email-default.png), [hero-email-focus](components/crops/hero-email-focus.png).
 
-App email, name and password. Surface `#14161b`, 1px `#2d2f35` border,
-radius 8px, height 32px, width 480px (password 434px beside a 24px show
-button), padding 6px 14px, Inter Variable 14px, text `#f2f3f5`. Placeholder
-"email@example.com".
+Sales first-name field is a 56px rounded-4 rectangle on `light.surface`, focus border the accent blue. [sales-field-default](components/crops/sales-field-default.png), [sales-field-focus](components/crops/sales-field-focus.png). The form was not submitted.
 
 ## Text area
 
-Not present on the pages that were open.
+Present on `/talk-to-sales` and `/contact` ("Tell us more", "How can we help?"). Not cropped. Not filled.
 
 ## Select
 
-Signup has a combobox reading "Select One", 480 by 32, radius 8px. It was
-not opened. Options were not read.
+`/talk-to-sales` has "What would you like to discuss?". The page runner looked for a button of that name and did not find one, so the open menu was not captured. The closed form is [talk-to-sales-light-default](screenshots/talk-to-sales-light-default.png). No value was chosen.
 
-## Checkbox
+## Checkbox, radio, switch
 
-Signup marketing opt-in is 16 by 20. Accent colour computed as `auto`.
-Checked, hover and disabled were not captured.
-
-## Radio
-
-Not present.
-
-## Switch
-
-Not present on the signed-out pages.
+Not present on the marketing pages that were captured. Signup has a marketing checkbox behind the signup wall, which was not filled.
 
 ## Tabs
 
-Not present. Pricing has in-page jump links (Growth Tools, All features,
-Testimonials, Certifications, FAQs), not a tab widget.
+Pricing in-page tabs (Growth Tools, All features, Testimonials, Certifications, FAQs) are text buttons, Helvetica Neue 18/500, accent blue. [pricing-tab-default](components/crops/pricing-tab-default.png), [pricing-tab-hover](components/crops/pricing-tab-hover.png), [pricing-tab-selected](components/crops/pricing-tab-selected.png). Page shots: [pricing-light-tab-all-features](screenshots/pricing-light-tab-all-features.png), [pricing-light-tab-testimonials](screenshots/pricing-light-tab-testimonials.png), [pricing-light-tab-faqs](screenshots/pricing-light-tab-faqs.png).
+
+Changelog filters (All, Integration, SDK, and the rest) are text chips. Selected state did not change the computed colour. [changelog-chip-default](components/crops/changelog-chip-default.png), [changelog-chip-hover](components/crops/changelog-chip-hover.png), [changelog-chip-selected](components/crops/changelog-chip-selected.png).
 
 ## Menu
 
-At 390px the header Menu button is 40 by 40. The open panel is
-`position: fixed; inset: 0`, white, z-index 40, padding-top 64px. Rows are
-52px, objectSans 15px / 400, `#1f1f47`: Why RevenueCat?, Solutions,
-Developers, Resources, Pricing. Desktop dropdown panels were not opened.
+Header mega-menus, opened by click:
+
+- [home-light-menu-why-revenuecat](screenshots/home-light-menu-why-revenuecat.png)
+- [home-light-menu-solutions](screenshots/home-light-menu-solutions.png)
+- [home-light-menu-developers](screenshots/home-light-menu-developers.png)
+- [home-light-menu-resources](screenshots/home-light-menu-resources.png)
+
+Phone sheet: [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png). The Eng locale control sits in that sheet. The desktop locale button did not receive a click (timeout); the phone sheet is the evidence.
+
+Nav trigger hover turns the label the brand red. [nav-trigger-default](components/crops/nav-trigger-default.png), [nav-trigger-hover](components/crops/nav-trigger-hover.png).
 
 ## Tooltip
 
@@ -90,58 +71,48 @@ Not present.
 
 ## Dialog
 
-An iubenda cookie banner was on the marketing home. Accept and Reject were
-both `#576cdb` (rgb(87, 108, 219)) fill, white text, height 38.4px, padding
-8px 32px, radius 64px, weight 700, font `-apple-system`. It was dismissed
-with Accept before the other reads. No product dialog was opened.
+Docs search opens a dialog with an empty field, filter chips, and a scrim. Nothing was typed and no AI prompt was sent. [docs-light-search-open](screenshots/docs-light-search-open.png). The cookie banner is a third-party dialog and was hidden, not accepted.
 
 ## Toast
 
-Not present. The app showed an incident banner, not a toast: background
-`#f0d81b`, text `#643c00`, radius 8px, padding 8px 12px, height 48px.
-Title "Ongoing incident." at 14px / 700.
+Not present.
 
 ## Card
 
-Home article: background `#f8f9fb`, 1px `#eaedf6` border, radius 16px,
-384 by 426. Title helveticaNeue 18px / 500. Body 18px / 300, line-height
-24.75px.
-
-Pricing PRO card: white, 1px `#d6dbf5`, radius 16px, padding 40px, width
-960px. Shadow `rgba(87, 108, 219, 0.06) 0 4px 20px, rgba(144, 138, 208, 0.05) 0 30px 60px, rgba(71, 92, 133, 0.03) 5px 5px 30px`.
+Pricing plan card and docs SDK cards. The pricing card is in [pricing-light-default](screenshots/pricing-light-default.png). Docs SDK cards are in [docs-light-default](screenshots/docs-light-default.png) and, dark, [docs-light-dark](screenshots/docs-light-dark.png). No separate crop.
 
 ## List row
 
-Not present as an app list. The phone menu rows are under Menu.
+FAQ row click opened the nav trigger of the same name rather than an FAQ answer, so [faq-row-open](components/crops/faq-row-open.png) is the nav label in the red hover colour, not an expanded answer. The FAQ tab page is [pricing-light-tab-faqs](screenshots/pricing-light-tab-faqs.png). Glossary letter P is [glossary-light-letter-p](screenshots/glossary-light-letter-p.png).
 
 ## Table
 
-Not present.
+Not measured. Pricing comparison, if present below the fold, is in [pricing-light-full](screenshots/pricing-light-full.png). No table token.
 
 ## Avatar
 
-Not present. No account was signed in.
+Not present on the marketing chrome. Customer logos in the homepage strip are brand marks, not avatars.
 
 ## Badge
 
-Pricing eyebrow "PRO": helveticaNeue 14px / 500, line-height 17.5px, colour
-`oklab(0.374539 0.012261 -0.0506019 / 0.8)`, canvas sRGB `#3d3d5bcc`.
+Changelog filter chips above. Docs "Popular articles" chips are in [docs-light-default](screenshots/docs-light-default.png). No separate badge crop.
 
-## Focus
+## Shared values
 
-Marketing header Sign up and Contact sales, after `focus()`: box-shadow
-`rgb(255, 255, 255) 0 0 0 2px, rgb(163, 199, 250) 0 0 0 4px`. The ring
-token is `hsl(215 90% 81%)`.
-
-App field: stylesheet rule `.Mui-focused .MuiOutlinedInput-notchedOutline`
-sets a 2px border in `--mui-palette-primary-main`. Forcing the
-`Mui-focused` class did not change the live computed border, so the held
-focus colour is a gap.
+| Role | Token |
+|---|---|
+| Page | `light.page` #ffffff |
+| Text | `light.text` #1f1f47 |
+| Accent | `light.accent` #576cdb |
+| Brand red | `light.brand` #f2545b |
+| Focus border | `light.focus` #576ddc |
+| Header height | `core.space.header` 64px |
+| Motion | `core.motion.duration` 0.15s, `core.motion.easing` cubic-bezier(0.4, 0, 0.2, 1) |
 
 ## Gaps
 
-- No marketing dark theme. `prefers-color-scheme` rules were not in the public stylesheets.
-- App light sheet exists on `:root, .light` and was not the live page.
-- Enabled app primary button, field error, checkbox checked, select options, desktop nav menus, hover-held states, and pressed states were not captured.
-- Password field on login is absent until an email is continued. It was not continued.
-- Signup was not submitted. It asks for a name and a password.
+- Pressed was not captured. CSS.forcePseudoState failed because the DOM agent was not enabled. The pressed crop matches focus.
+- Disabled, loading, error, toast, tooltip, checkbox, radio and switch were not on the public pages.
+- Docs dark has a heading colour and a screenshot. Page, surface, border and button fills in dark were not re-read after the toggle.
+- The sales select did not open. The runner found no button named "What would you like to discuss?".
+- Login and signup walls were photographed and not filled. They are boundaries, not components of the marketing system.

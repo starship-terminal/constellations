@@ -1,0 +1,271 @@
+{
+  "body": {
+    "tag": "BODY",
+    "cls": "body force-tablet",
+    "text": "Product Solutions Resources Enterprise Pricing Log",
+    "w": 1440,
+    "h": 12756.1,
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(24, 29, 37)",
+    "font": "Poppins, sans-serif",
+    "size": "18px",
+    "weight": "400",
+    "lh": "32px",
+    "radius": "0px",
+    "border": "0px none rgb(24, 29, 37)",
+    "shadow": "none",
+    "pad": "0px 0px",
+    "ls": "normal"
+  },
+  "h1": {
+    "tag": "H1",
+    "cls": "_26_h1",
+    "text": "#1 AI calendar for work",
+    "w": 1224,
+    "h": 90,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(24, 29, 37)",
+    "font": "\"Sharp Grotesk DB Book 23\", Georgia, sans-serif",
+    "size": "90px",
+    "weight": "500",
+    "lh": "90px",
+    "radius": "0px",
+    "border": "0px none rgb(24, 29, 37)",
+    "shadow": "none",
+    "pad": "0px 0px",
+    "ls": "-2px"
+  },
+  "h2": {
+    "tag": "H2",
+    "cls": "_25_h2 center",
+    "text": "What if AI could optimize your time?",
+    "w": 907.2,
+    "h": 57.6,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "font": "\"Sharp Grotesk DB Book 20\", Georgia, sans-serif",
+    "size": "48px",
+    "weight": "400",
+    "lh": "57.6px",
+    "radius": "0px",
+    "border": "0px none rgb(0, 0, 0)",
+    "shadow": "none",
+    "pad": "0px 0px",
+    "ls": "normal"
+  },
+  "buttons": [
+    {
+      "tag": "A",
+      "cls": "nav_text_link_wrap contact_sales button w-inline-block",
+      "text": "Book a Demo",
+      "w": 163,
+      "h": 40,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "\"Atlas Grotesk Web\", Arial, sans-serif",
+      "size": "14px",
+      "weight": "300",
+      "lh": "32px",
+      "radius": "10px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "shadow": "none",
+      "pad": "10px 30px",
+      "ls": "normal"
+    },
+    {
+      "tag": "A",
+      "cls": "nav_text_link_wrap contact_sales button w-inline-block",
+      "text": "Book a Demo",
+      "w": 0,
+      "h": 0,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "\"Atlas Grotesk Web\", Arial, sans-serif",
+      "size": "14px",
+      "weight": "300",
+      "lh": "32px",
+      "radius": "10px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "shadow": "none",
+      "pad": "10px 30px",
+      "ls": "normal"
+    },
+    {
+      "tag": "A",
+      "cls": "nav_start_button w-button",
+      "text": "Get Started",
+      "w": 148.8,
+      "h": 40,
+      "bg": "rgb(0, 97, 254)",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Atlas Grotesk Web\", Arial, sans-serif",
+      "size": "16px",
+      "weight": "300",
+      "lh": "20px",
+      "radius": "10px",
+      "border": "0px none rgb(255, 255, 255)",
+      "shadow": "none",
+      "pad": "10px 30px",
+      "ls": "normal"
+    },
+    {
+      "tag": "A",
+      "cls": "hero_cta_button mobile nav w-button",
+      "text": "Get started",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(85, 98, 235)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Poppins, sans-serif",
+      "size": "20px",
+      "weight": "400",
+      "lh": "24px",
+      "radius": "100px",
+      "border": "0px none rgb(255, 255, 255)",
+      "shadow": "none",
+      "pad": "15px 30px",
+      "ls": "normal"
+    },
+    {
+      "tag": "A",
+      "cls": "btn-header",
+      "text": "Get Started",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(24, 29, 37)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Poppins, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "18px",
+      "radius": "33px",
+      "border": "0px none rgb(255, 255, 255)",
+      "shadow": "none",
+      "pad": "12px 24px",
+      "ls": "normal"
+    },
+    {
+      "tag": "A",
+      "cls": "nav_cta w-inline-block",
+      "text": "Book a demo today→",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(238, 240, 254)",
+      "color": "rgb(0, 0, 238)",
+      "font": "Poppins, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "lh": "32px",
+      "radius": "100px",
+      "border": "0px none rgb(0, 0, 238)",
+      "shadow": "none",
+      "pad": "0px 0px",
+      "ls": "normal"
+    },
+    {
+      "tag": "A",
+      "cls": "nav_cta w-inline-block",
+      "text": "Book a demo today→",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(238, 240, 254)",
+      "color": "rgb(0, 0, 238)",
+      "font": "Poppins, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "lh": "32px",
+      "radius": "100px",
+      "border": "0px none rgb(0, 0, 238)",
+      "shadow": "none",
+      "pad": "0px 0px",
+      "ls": "normal"
+    },
+    {
+      "tag": "A",
+      "cls": "nav_start_button mobile w-button",
+      "text": "Get Started",
+      "w": 0,
+      "h": 0,
+      "bg": "rgb(82, 99, 243)",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Atlas Grotesk Web\", Arial, sans-serif",
+      "size": "24px",
+      "weight": "300",
+      "lh": "30px",
+      "radius": "20px",
+      "border": "0px none rgb(255, 255, 255)",
+      "shadow": "none",
+      "pad": "15px 20px",
+      "ls": "normal"
+    }
+  ],
+  "nav": null,
+  "pricing": {
+    "tag": "A",
+    "cls": "nav_text_link_wrap pricing w-inline-block",
+    "text": "Pricing",
+    "w": 82.8,
+    "h": 42,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(51, 51, 51)",
+    "font": "Poppins, sans-serif",
+    "size": "18px",
+    "weight": "400",
+    "lh": "32px",
+    "radius": "0px",
+    "border": "0px none rgb(51, 51, 51)",
+    "shadow": "none",
+    "pad": "5px 15px",
+    "ls": "normal"
+  },
+  "topMedia": [
+    [
+      "screen and (max-width: 767px)",
+      5
+    ],
+    [
+      "screen and (max-width: 479px)",
+      5
+    ],
+    [
+      "(max-width: 767px)",
+      4
+    ],
+    [
+      "screen and (min-width: 768px)",
+      3
+    ],
+    [
+      "screen and (max-width: 991px)",
+      3
+    ],
+    [
+      "(max-width: 991px)",
+      2
+    ],
+    [
+      "screen and (min-width: 376px)",
+      1
+    ],
+    [
+      "screen and (max-height: 800px) and (max-width: 1200px)",
+      1
+    ],
+    [
+      "(min-width: 768px)",
+      1
+    ],
+    [
+      "screen and (min-width: 1280px)",
+      1
+    ],
+    [
+      "(min-width: 992px)",
+      1
+    ],
+    [
+      "(min-width: 992px) and (max-width: 1440px)",
+      1
+    ]
+  ]
+}

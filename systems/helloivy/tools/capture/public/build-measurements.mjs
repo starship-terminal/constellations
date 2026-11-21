@@ -46,11 +46,12 @@ function props(v) {
 
 const L = [];
 const W = (s = '') => L.push(s);
-W('# Component measurements');
+W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
-W(`Computed styles read from www.helloivy.co and app.helloivy.co on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+// PRODUCT (adapt): describe this product's capture.
+W(`Computed styles read from www.gauth.com on ${J._meta.read} by \`tools/capture/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
-W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is the login field clicked into (nothing typed); `dark` is the same element after the footer\'s own "Change theme" toggle repainted html[toggle-theme=dark]; `opened` and the rest are resting states reached by a component\'s own UI toggle. Nothing was typed, sent or signed into.');
+W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
 W('## Components');
 const groups = [];
@@ -96,7 +97,8 @@ if (J._meta.backdrop) {
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('www.helloivy.co is a Framer SSR build — its sheets are inline <style> blocks; app.helloivy.co serves its own CSS same-origin (/assets/index-*.css), so this list is each surface\'s own transition declarations the CSSOM could read on each page.');
+// PRODUCT (adapt): describe this product's capture.
+W('Gauth\'s own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd\'s CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth\'s own rules.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

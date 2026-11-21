@@ -1,0 +1,100 @@
+{
+  "capturedAt": "2026-11-21",
+  "page": "https://weave.figma.com/",
+  "stylesheet": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/css/weavy-ai.webflow.shared.12c2e7cf9.css",
+  "stylesheetErrors": [
+    "Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules https://cdn.jsdelivr.net/npm/@splidejs/splide@3.2.2/dist/css/splide-core.min.css"
+  ],
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(51, 51, 51)",
+    "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+    "fontSize": "14.4px"
+  },
+  "resolved": {
+    "--w-backdrop-animation": "",
+    "--transparent-surface": "#fff0",
+    "--brand--lemon-100": "#f7ffa8",
+    "--brand--rich-black": "#252525",
+    "--brand--base--white": "white",
+    "--brand--lemon": "#f7ff9e",
+    "--brand--azure": "azure",
+    "--brand--ash-grey": "#aeb3a9",
+    "--brand--base--black": "black",
+    "--brand--richer-black": "#212126",
+    "--brand--eggshell": "#eaeada",
+    "--brand--base--surface--grey-300": "#f5f5f6",
+    "--brand--base--surface--grey-400": "#ececec",
+    "--border--soft-grey-200": "#d0d0d2",
+    "--brand--spring-wood": "#f7f7f0",
+    "--brand--moon-mist": "#dcdcc2",
+    "--pink-lavender": "#cc9de4",
+    "--stone-grey": "#656568",
+    "--brand--french-gray": "#c1cdd5",
+    "--wv--paper": "#fafafa",
+    "--wv--ink": "#111",
+    "--wv--dark": "#1a1a1a",
+    "--wv--pink": "#ff9bff",
+    "--wv--mint": "#2de1b0",
+    "--wv--night": "#0d0d11",
+    "--wv--cream": "#f7f3e8",
+    "--brand--lemon-40": "#fcffdc",
+    "--wv--grey-500": "#8e8e8e",
+    "--wv--grey-400": "#b4b4af",
+    "--brand--french-gray-op-45": "#c1ced573",
+    "--brand--white-op-30": "#ffffff4d",
+    "--brand--base--nav-link-text-size-small": ".975rem",
+    "--brand--base--nav-link-text-size-large": "2.77778rem",
+    "--wv--grey-100": "#eaeef1"
+  },
+  "declared": [
+    {
+      "selector": ":where(.w-popover, .w-modal)",
+      "href": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/css/weavy-ai.webflow.shared.12c2e7cf9.css",
+      "context": [],
+      "properties": {
+        "--w-backdrop-animation": "initial"
+      }
+    },
+    {
+      "selector": ":root",
+      "href": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/css/weavy-ai.webflow.shared.12c2e7cf9.css",
+      "context": [],
+      "properties": {
+        "--transparent-surface": "#fff0",
+        "--brand--lemon-100": "#f7ffa8",
+        "--brand--rich-black": "#252525",
+        "--brand--base--white": "white",
+        "--brand--lemon": "#f7ff9e",
+        "--brand--azure": "azure",
+        "--brand--ash-grey": "#aeb3a9",
+        "--brand--base--black": "black",
+        "--brand--richer-black": "#212126",
+        "--brand--eggshell": "#eaeada",
+        "--brand--base--surface--grey-300": "#f5f5f6",
+        "--brand--base--surface--grey-400": "#ececec",
+        "--border--soft-grey-200": "#d0d0d2",
+        "--brand--spring-wood": "#f7f7f0",
+        "--brand--moon-mist": "#dcdcc2",
+        "--pink-lavender": "#cc9de4",
+        "--stone-grey": "#656568",
+        "--brand--french-gray": "#c1cdd5",
+        "--wv--paper": "#fafafa",
+        "--wv--ink": "#111",
+        "--wv--dark": "#1a1a1a",
+        "--wv--pink": "#ff9bff",
+        "--wv--mint": "#2de1b0",
+        "--wv--night": "#0d0d11",
+        "--wv--cream": "#f7f3e8",
+        "--brand--lemon-40": "#fcffdc",
+        "--wv--grey-500": "#8e8e8e",
+        "--wv--grey-400": "#b4b4af",
+        "--brand--french-gray-op-45": "#c1ced573",
+        "--brand--white-op-30": "#ffffff4d",
+        "--brand--base--nav-link-text-size-small": ".975rem",
+        "--brand--base--nav-link-text-size-large": "2.77778rem",
+        "--wv--grey-100": "#eaeef1"
+      }
+    }
+  ]
+}

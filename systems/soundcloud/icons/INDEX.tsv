@@ -1,4 +1,3 @@
-file	role
-wordmark.svg	Hero and marketing wordmark, currentColor
-mark.svg	Cloud mark used in the hidden app header
-search.svg	Search icon from the home header
+role	file	note
+logo	not-kept	SoundCloud wordmark is artwork and is not extracted (docs/RIGHTS.md)
+waveform	not-kept	Player waveform is product artwork

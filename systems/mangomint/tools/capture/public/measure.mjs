@@ -1,211 +1,250 @@
-// Measures Mangomint public components. Nothing is submitted, signed into, or booked.
+// Measures Mangomint public controls. Nothing is submitted. Walls are not filled.
 //
-//   PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node measure.mjs
+//   PLAYWRIGHT=... node measure.mjs
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, APP, BOOK, launch, open, styleOf, crop, centre, RAW, hidePromo } from './lib.mjs';
+import { launch, open, styleOf, crop, CROPS, RAW, BASE, safeText } from './lib.mjs';
 
+fs.mkdirSync(CROPS, { recursive: true });
 fs.mkdirSync(RAW, { recursive: true });
-const OUT = path.join(RAW, 'components-computed.json');
-// Start from the committed readings and replace only what this run reads, so a page that fails
-// keeps the earlier readings of its components instead of dropping them.
-const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
-// _meta.captured keeps the earlier date until a component is read again, and each component
-// carries its own read date, so a partial run never makes retained readings look fresh.
-const today = new Date().toLocaleDateString('en-CA');
+
 const out = {
-  _meta: { ...(prev._meta || {}), product: 'Mangomint', route: 'public-web', theme: 'light' },
-  components: prev.components || {},
+  _meta: {
+    product: 'Mangomint',
+    captured: '2026-11-21',
+    base: BASE,
+    theme: 'light',
+    note: 'Public marketing site only. Login, demo and trial are walls. No field was filled and no form was submitted.',
+  },
+  components: {},
+  layout: {},
+  foundations: {},
 };
-if (!out._meta.captured) out._meta.captured = today;
-const done = new Set();
-const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n');
-const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
+const log = (...a) => console.log(...a);
 
-let page, context, browser, cdp, current;
+async function record(page, name, state, locator) {
+  const n = await locator.count();
+  if (!n) { log('  miss', name, state); return null; }
+  const el = locator.first();
+  const vis = await el.evaluate((node) => {
+    const r = node.getBoundingClientRect();
+    return r.width > 2 && r.height > 2;
+  }).catch(() => false);
+  if (!vis) { log('  hidden', name, state); return null; }
+  try { await el.scrollIntoViewIfNeeded({ timeout: 3000 }); } catch { /* still measure */ }
+  const style = await styleOf(el);
+  style.text = safeText(style.text);
+  out.components[name] ??= {};
+  out.components[name][state] = style;
+  const file = path.join(CROPS, `${name}-${state}.png`);
+  try {
+    await crop(el, file);
+    style.crop = `components/crops/${name}-${state}.png`;
+    log('  crop', name, state, style.rect.w + 'x' + style.rect.h, style.color, style.backgroundColor);
+  } catch (e) {
+    style.cropError = String(e.message).split('\n')[0];
+    log('  crop failed', name, state, style.cropError);
+  }
+  return el;
+}
 
-async function newPage(url, wait = 2200) {
-  if (page) await page.close().catch(() => {});
-  page = await context.newPage();
-  page.setDefaultTimeout(8000);
-  cdp = await context.newCDPSession(page);
+async function forcePseudo(page, locator, classes) {
+  const cdp = await page.context().newCDPSession(page);
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
-  current = url;
-  log('open', url);
-  await open(page, url, { wait });
-  await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
-  await hidePromo(page);
-}
-
-async function reset() {
-  await page.mouse.move(8, 8).catch(() => {});
-  await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
-  await page.waitForTimeout(120);
-}
-
-async function kbFocus(loc) {
-  await loc.evaluate((el) => el.focus());
-  await page.keyboard.press('Shift+Tab').catch(() => {});
-  await page.keyboard.press('Tab').catch(() => {});
-  const ok = await loc.evaluate((el) => el === document.activeElement || el.contains(document.activeElement));
-  await page.waitForTimeout(180);
-  return ok ? 'Shift+Tab, Tab' : 'focus failed';
-}
-
-async function forcePseudo(loc, classes) {
-  // Clear markers an earlier call left, or DOM.querySelector finds that element first and forces it.
   await page.evaluate(() => document.querySelectorAll('[data-m-force]').forEach((n) => n.removeAttribute('data-m-force')));
-  await loc.evaluate((el) => el.setAttribute('data-m-force', '1'));
+  await locator.evaluate((el) => el.setAttribute('data-m-force', '1'));
   const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
   const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-force]' });
-  if (!nodeId) return async () => {};
+  if (!nodeId) { await cdp.detach().catch(() => {}); return null; }
   await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: classes });
-  await page.waitForTimeout(200);
   return async () => {
     await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {});
-    await page.evaluate(() => document.querySelectorAll('[data-m-force]').forEach((n) => n.removeAttribute('data-m-force'))).catch(() => {});
+    await cdp.detach().catch(() => {});
   };
 }
 
-async function record(key, state, loc, meta, via) {
-  // A component this run reaches is rewritten from scratch; one it never reaches keeps its reading.
-  if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current, read: today }; done.add(key); out._meta.captured = today; }
-  const c = out.components[key];
+async function states(page, name, locator) {
+  const el = await record(page, name, 'default', locator);
+  if (!el) return;
   try {
-    await centre(loc);
-    const s = await styleOf(loc);
-    let file;
-    try { file = await crop(page, loc, `${key}-${state}`); } catch (e) { s.cropError = String(e.message).slice(0, 140); }
-    c.states[state] = { ...s, crop: file, via };
-    log(' ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h));
-  } catch (e) {
-    c.states[state] = { error: String(e.message).slice(0, 180), via };
-    log(' !', key, state, String(e.message).slice(0, 120));
-  }
+    await el.hover({ timeout: 2500 });
+    await page.waitForTimeout(280);
+    await record(page, name, 'hover', locator);
+  } catch (e) { log('  hover skip', name, e.message.split('\n')[0]); }
+  try {
+    await el.focus();
+    await page.waitForTimeout(180);
+    await record(page, name, 'focus-visible', locator);
+  } catch (e) { log('  focus skip', name, e.message.split('\n')[0]); }
+  try {
+    const release = await forcePseudo(page, locator.first(), ['hover', 'active']);
+    if (release) {
+      await page.waitForTimeout(120);
+      await record(page, name, 'pressed', locator);
+      await release();
+    } else log('  press skip', name, 'no node id');
+  } catch (e) { log('  press skip', name, e.message.split('\n')[0]); }
+  await page.mouse.move(8, 8).catch(() => {});
 }
 
-async function states(key, loc, list, meta) {
-  const target = loc.filter({ visible: true }).first();
-  if (!(await target.count())) {
-    log(' ! missing', key);
-    out.components[key] = { missing: true, ...meta, url: current, read: today, states: {} };
-    done.add(key);
-    out._meta.captured = today;
-    return;
-  }
-  for (const st of list) {
-    try {
-      await reset();
-      let undo, via = 'at rest';
-      if (st === 'hover') { await target.hover({ timeout: 4000 }).catch(() => {}); via = 'mouse hover'; await page.waitForTimeout(240); }
-      else if (st === 'focus-visible') {
-        via = await kbFocus(target);
-        if (via === 'focus failed') {
-          // Keyboard focus never reached the element, so a reading now would be the element at rest
-          // saved as its focus. Record the miss instead, as the kit does.
-          if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current, read: today }; done.add(key); out._meta.captured = today; }
-          out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via };
-          log('  -', key, st, 'skipped: focus failed');
-          continue;
-        }
+async function readFoundations(page) {
+  return page.evaluate(() => {
+    const pick = (sel) => {
+      const el = document.querySelector(sel);
+      if (!el) return null;
+      const s = getComputedStyle(el);
+      const r = el.getBoundingClientRect();
+      return {
+        sel,
+        color: s.color,
+        backgroundColor: s.backgroundColor,
+        fontFamily: s.fontFamily,
+        fontSize: s.fontSize,
+        fontWeight: s.fontWeight,
+        lineHeight: s.lineHeight,
+        letterSpacing: s.letterSpacing,
+        borderRadius: s.borderRadius,
+        padding: s.padding,
+        border: s.borderTopWidth + ' ' + s.borderTopStyle + ' ' + s.borderTopColor,
+        boxShadow: s.boxShadow,
+        height: Math.round(r.height),
+        text: (el.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 60),
+      };
+    };
+    const sheets = [];
+    for (const sheet of document.styleSheets) {
+      let rules;
+      try { rules = sheet.cssRules; } catch { sheets.push({ href: sheet.href, error: 'unreadable' }); continue; }
+      let vars = 0;
+      if (rules) {
+        const walk = (list) => {
+          for (const rule of list) {
+            if (rule.style) for (const n of rule.style) if (n.startsWith('--')) vars++;
+            if (rule.cssRules) walk(rule.cssRules);
+          }
+        };
+        walk(rules);
       }
-      else if (st === 'pressed') { undo = await forcePseudo(target, ['active', 'hover']); via = 'CDP forcePseudoState :active:hover'; }
-      else if (st === 'focused') { await target.focus().catch(() => target.click({ timeout: 4000 })); via = 'focused the field; nothing typed, nothing submitted'; await page.waitForTimeout(180); }
-      else if (st === 'filled') {
-        await target.click({ timeout: 4000 });
-        await target.fill('capture@example.com');
-        via = 'typed a throwaway address; not submitted';
-        await page.waitForTimeout(150);
-      }
-      await record(key, st, target, meta, via);
-      if (undo) await undo();
-      if (st === 'filled') await target.fill('').catch(() => {});
-    } catch (e) {
-      // One state that throws (a hover or click timing out) is recorded and the rest still run.
-      if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current, read: today }; done.add(key); out._meta.captured = today; }
-      out.components[key].states[st] = { error: String(e.message).slice(0, 180) };
-      log(' !', key, st, String(e.message).slice(0, 120));
+      sheets.push({ href: sheet.href || 'inline', rules: rules ? rules.length : 0, vars });
     }
-  }
-  await reset();
+    return {
+      innerWidth: window.innerWidth,
+      innerHeight: window.innerHeight,
+      dpr: window.devicePixelRatio,
+      visualViewport: window.visualViewport ? {
+        width: window.visualViewport.width,
+        height: window.visualViewport.height,
+        scale: window.visualViewport.scale,
+      } : null,
+      colorScheme: getComputedStyle(document.documentElement).colorScheme,
+      body: pick('body'),
+      h1: pick('h1'),
+      h2: pick('h2'),
+      sheets,
+    };
+  });
 }
 
-const B = ['default', 'hover', 'focus-visible', 'pressed'];
+const { browser, context } = await launch();
+const page = await context.newPage();
+page.setDefaultTimeout(8000);
 
-// Each page runs on its own: a page that throws is logged, and the readings so far are saved after
-// every page, so one missing selector no longer loses the whole run.
-const failed = [];
-async function step(url, fn) {
-  try { await fn(); } catch (e) { failed.push(url); log(' ! page failed', url, String(e.message).slice(0, 120)); }
-  save();
-}
+log('home');
+await open(page, BASE + '/');
+out.foundations.home = await readFoundations(page);
+out.layout.desktop = {
+  innerWidth: out.foundations.home.innerWidth,
+  innerHeight: out.foundations.home.innerHeight,
+  dpr: out.foundations.home.dpr,
+  visualViewport: out.foundations.home.visualViewport,
+};
 
-({ browser, context } = await launch({ width: 1440, height: 900 }));
+await states(page, 'nav-trigger', page.locator('button.desktopNavbarDropdown-module--link--047eb', { hasText: 'Features' }));
+await states(page, 'nav-pricing', page.locator('header a[href="/pricing/"], a[href="/pricing/"]').first());
+await states(page, 'nav-login', page.locator('a[href*="app.mangomint.com"]').first());
+await states(page, 'button-primary', page.locator('a[href="/trial/"]').first());
+await states(page, 'button-secondary', page.locator('header a[href="/demo/"]').first());
+await record(page, 'hero-title', 'default', page.locator('h1').first());
+await record(page, 'announcement', 'default', page.locator('a[href*="meetmira"]').first());
+await record(page, 'logo', 'default', page.locator('header a[href="/"]').first());
+await states(page, 'carousel-tab', page.getByRole('button', { name: 'Slide 2' }).first());
+await states(page, 'video-tour', page.locator('button.videoSelectionButton').first());
 
-await step(BASE + '/', async () => {
-  await newPage(BASE + '/');
-  await states('nav-login', page.getByRole('link', { name: 'Log in', exact: true }).first(), B, { title: 'Log in link', group: 'Navigation' });
-  await states('nav-demo', page.getByRole('link', { name: 'Book a demo', exact: true }).first(), B, { title: 'Book a demo outline button', group: 'Button' });
-  await states('nav-trial', page.locator('header a, [class*="navbar"] a').filter({ hasText: /^Try it now$/ }).first(), B, { title: 'Try it now filled button', group: 'Button' });
-  const businesses = page.locator('button[class*="desktopNavbarDropdown"]').filter({ hasText: 'Businesses' }).first();
-  await states('nav-businesses', businesses, B, { title: 'Businesses menu button', group: 'Navigation' });
-  await businesses.click();
-  await page.waitForTimeout(400);
-  await states('menu-item', page.getByRole('link', { name: 'Hair Salons' }).first(), ['default', 'hover'], { title: 'Businesses menu item', group: 'Menu' });
-  await page.keyboard.press('Escape');
+log('menu');
+await page.locator('button.desktopNavbarDropdown-module--link--047eb', { hasText: 'Features' }).first().click();
+await page.waitForTimeout(450);
+const panel = page.locator('[class*="dropdownContent"]').nth(1);
+await record(page, 'nav-menu', 'open', panel);
+await states(page, 'nav-menu-link', panel.locator('a').first());
+await page.keyboard.press('Escape');
+await page.mouse.click(12, 500);
+
+log('pricing');
+await open(page, BASE + '/pricing/');
+out.foundations.pricing = await readFoundations(page);
+await record(page, 'pricing-title', 'default', page.locator('h1').first());
+await states(page, 'stepper', page.getByRole('button', { name: 'Increase Locations' }));
+await record(page, 'price-card', 'default', page.locator('text=Locations').locator('xpath=ancestor::*[contains(@class,"card") or self::div][1]').first());
+await states(page, 'trial-cta', page.getByRole('link', { name: /start a free trial/i }).first());
+
+log('login wall, no typing');
+await open(page, 'https://app.mangomint.com/login', { wait: 2000 });
+out.foundations.login = await readFoundations(page);
+await record(page, 'login-email', 'default', page.locator('#login-page-email'));
+await record(page, 'login-password', 'default', page.locator('#login-page-password'));
+await states(page, 'login-submit', page.getByRole('button', { name: 'Log In' }));
+await record(page, 'login-forgot', 'default', page.getByRole('link', { name: /forgot/i }));
+const email = page.locator('#login-page-email');
+if (await email.count()) {
+  await email.focus();
   await page.waitForTimeout(200);
-  await states('video-tour', page.getByRole('button', { name: /WATCH A VIDEO TOUR/i }).first(), ['default', 'hover'], { title: 'Watch a video tour', group: 'Button' });
-});
+  await record(page, 'login-email', 'focused', email);
+}
 
-await step(BASE + '/pricing/', async () => {
-  await newPage(BASE + '/pricing/');
-  await states('price-digit', page.locator('[class*="pricing"]').filter({ hasText: '/mo' }).first(), ['default'], { title: 'Price calculator', group: 'Pricing' });
-  const faq = page.locator('[class*="faqs-module--questionButton"]').filter({ hasText: 'Who counts as a user' }).first();
-  await states('faq', faq, ['default', 'hover'], { title: 'Pricing FAQ question', group: 'Disclosure' });
-  await faq.click().catch(() => {});
-  await page.waitForTimeout(300);
-  await record('faq', 'open', faq, { title: 'Pricing FAQ question', group: 'Disclosure' }, 'clicked locally; nothing submitted');
-});
+log('demo wall, no selection');
+await open(page, BASE + '/demo/');
+await record(page, 'choice-card', 'default', page.getByRole('button', { name: /Haircuts/ }).first());
+await states(page, 'choice-card', page.getByRole('button', { name: /Haircuts/ }).first());
+await record(page, 'continue', 'default', page.getByRole('button', { name: 'Continue' }));
 
-await step(BASE + '/demo/', async () => {
-  await newPage(BASE + '/demo/');
-  await states('demo-chip', page.getByText('Haircuts & styling', { exact: true }).first(), ['default', 'hover'], { title: 'Demo service chip', group: 'Chip' });
-  await states('demo-continue', page.getByRole('button', { name: 'Continue', exact: true }), B, { title: 'Demo Continue', group: 'Button' });
-});
+log('blog card');
+await open(page, BASE + '/blog/');
+await record(page, 'blog-card', 'default', page.locator('a[href*="/blog/"]').nth(2));
 
-await step(BASE + '/trial/', async () => {
-  await newPage(BASE + '/trial/');
-  await states('trial-chip', page.getByText('Haircuts & styling', { exact: true }).first(), ['default'], { title: 'Trial service chip', group: 'Chip' });
-});
+log('footer link, no address');
+await open(page, BASE + '/pricing/');
+await page.evaluate(() => scrollTo(0, document.body.scrollHeight));
+await page.waitForTimeout(500);
+await states(page, 'footer-link', page.locator('footer a[href="/blog/"], footer a[href*="blog"]').first());
 
-await step(APP + '/login', async () => {
-  await newPage(APP + '/login', 2800);
-  await states('login-email', page.locator('#login-page-email'), ['default', 'focused', 'filled'], { title: 'Login email field', group: 'Text field' });
-  await states('login-password', page.locator('#login-page-password'), ['default', 'focused'], { title: 'Login password field', group: 'Text field' });
-  await states('login-toggle', page.getByRole('button', { name: 'Toggle password visibility' }), B, { title: 'Password visibility toggle', group: 'Icon button' });
-  await states('login-submit', page.getByRole('button', { name: 'Log In', exact: true }), B, { title: 'Log In button', group: 'Button' });
-  await states('login-forgot', page.getByRole('link', { name: 'Forgot password?' }), ['default', 'hover', 'focus-visible'], { title: 'Forgot password link', group: 'Link' });
-});
+await page.close();
 
-await step(APP + '/forgot-password', async () => {
-  await newPage(APP + '/forgot-password', 2200);
-  await states('forgot-email', page.locator('input').first(), ['default', 'focused'], { title: 'Reset email field', group: 'Text field' });
-  await states('forgot-continue', page.getByRole('button', { name: 'Continue', exact: true }), B, { title: 'Reset Continue', group: 'Button' });
+log('mobile');
+const ctxM = await browser.newContext({
+  viewport: { width: 390, height: 844 },
+  deviceScaleFactor: 2,
+  isMobile: true,
+  hasTouch: true,
+  userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1',
+  locale: 'en-US',
 });
+const m = await ctxM.newPage();
+await open(m, BASE + '/');
+out.layout.mobile = await m.evaluate(() => ({
+  innerWidth: window.innerWidth,
+  innerHeight: window.innerHeight,
+  dpr: window.devicePixelRatio,
+  visualViewport: window.visualViewport ? { width: window.visualViewport.width, height: window.visualViewport.height, scale: window.visualViewport.scale } : null,
+}));
+await states(m, 'm-hamburger', m.getByRole('button', { name: 'Toggle the navigation' }));
+await m.getByRole('button', { name: 'Toggle the navigation' }).click();
+await m.waitForTimeout(500);
+await record(m, 'm-menu-link', 'default', m.getByRole('link', { name: 'Pricing' }).first());
+await states(m, 'm-drawer-row', m.getByRole('button', { name: 'Features' }).first());
+await m.close();
+await ctxM.close();
 
-await step(BOOK, async () => {
-  await newPage(BOOK, 3500);
-  const rebook = page.getByRole('button', { name: /Rebook a past service/i });
-  await states('book-rebook', rebook, B, { title: 'Rebook a past service', group: 'Link' });
-});
-
-await step(BASE + '/learn/', async () => {
-  await newPage(BASE + '/learn/');
-  await states('learn-search', page.locator('#learning-center-search'), ['default', 'focused'], { title: 'Learning Center search', group: 'Text field' });
-});
-
-save();
-log('wrote', OUT, Object.keys(out.components).length, 'components');
+fs.writeFileSync(path.join(RAW, 'components-computed.json'), JSON.stringify(out, null, 2) + '\n');
+log('wrote', Object.keys(out.components).length, 'components');
 await browser.close();
-if (failed.length) { console.error('pages failed:', failed.join(', ')); process.exitCode = 1; }

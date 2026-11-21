@@ -1,35 +1,35 @@
 # Mangomint patterns
 
-Public pages, 2026-11-18. The salon admin was not reached. Recorded in [components.md](components.md) Gaps and in the catalog `capture.gaps`.
+How the public site combines the pieces in [components.md](components.md). The signed-in product was not entered.
 
-## Marketing frame
+## Shell
 
-A cream page (`#fcfafa`), an 80px transparent header, then a 54px headline. [Home](screenshots/home-light-default.png) leads with "Everything you need to power your salon and spa", an outline Book a demo, a filled Try it now, and a mono "Watch a video tour" link. [Phone](screenshots/mobile-home-light-default.png) collapses the bar to the wordmark, a Pricing pill, and a hamburger. The open menu is a full list with Book demo and Try it now ([open](screenshots/mobile-home-light-menu.png)).
+A navy announcement bar sits above a white header. The header holds the logo, three menu buttons, Pricing, Log in, an outlined Book a demo, and a filled Try it now. Menus open as a wide panel, not a small dropdown. [screenshots/home-light-default.png](screenshots/home-light-default.png) [screenshots/home-light-nav-features.png](screenshots/home-light-nav-features.png)
 
-## Businesses menu
+On a 390-wide phone the bar collapses to a logo, a filled Pricing pill, and a hamburger. The drawer lists Businesses, Features, Pricing, MIRA, Login, then the two buttons. [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png) [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png)
 
-Businesses is a local dropdown, not a page. It lists Hair Salons, Med Spas, IV Therapy and the other verticals ([open](screenshots/home-light-businesses.png)). The desktop Features menu did not open: the click timed out. Phone Features is a collapsed row in the menu shot.
+## Hero and product demo
 
-## Pricing
+The homepage hero is a large sentence on a cream-to-pink wash, a short paragraph, a video-tour link, then pill tabs that swap a product screenshot. That screenshot is a public demo, not the signed-in app. [screenshots/home-light-carousel-online-booking.png](screenshots/home-light-carousel-online-booking.png)
 
-`/pricing/` publishes "Monthly price is $120 per location and $10 per user." Add-ons are Phone $70/mo per line, Marketing starting at $30/mo, and Payroll $50/mo plus $8 per worker. The calculator default in the shot showed $200/mo. One FAQ was opened locally ([open](screenshots/pricing-light-faq-open.png)). Start a free trial was not pressed.
+## Pricing calculator
 
-## Demo and trial
+Two cards: a stepper card for locations and users, and a price card with a filled Start a free trial. Add-ons are rows with a plus control. Increasing locations stays on the page. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) [screenshots/pricing-light-locations-up.png](screenshots/pricing-light-locations-up.png)
 
-`/demo/` is "Talk to one of our software experts" with service chips and a Continue control ([page](screenshots/demo-light-default.png)). `/trial/` is step 1 of 5, the same chips ([page](screenshots/trial-light-default.png)). Continue was measured and not pressed, so no later step, no validation, and no account was created.
+## Feature and solution pages
 
-## Public booking
+A feature page repeats the shell, then a long marketing column with a product illustration. Scheduling is the example. [screenshots/scheduling-light-default.png](screenshots/scheduling-light-default.png) A solution page uses the same column. [screenshots/solution-light-default.png](screenshots/solution-light-default.png)
 
-`booking.mangomint.com` without a company id says the id is missing. Marketing embeds company id `737397`. That page loads signed out, titled "Mangomint Internal - Book appointment", with "Select a service" and one Rebook a past service control. The service list is empty ([desktop](screenshots/book-light-default.png), [phone](screenshots/mobile-book-light-default.png)). Rebook was not pressed. No slot and no checkout.
+## Content indexes
 
-## Sign-in wall
+Blog, learn, and videos are indexes of published articles. One article was opened as a sample of the reading layout. [screenshots/blog-light-default.png](screenshots/blog-light-default.png) [screenshots/learn-light-default.png](screenshots/learn-light-default.png) [screenshots/blog-post-light-default.png](screenshots/blog-post-light-default.png)
 
-`app.mangomint.com` redirects to `/login`: navy page, email, password, a visibility toggle, Log In, and Forgot password ([desktop](screenshots/login-light-default.png), [phone](screenshots/mobile-login-light-default.png)). The email field was typed into with a throwaway address, then cleared. Log In was not pressed. Forgot password was opened and not submitted ([page](screenshots/forgot-password-light-default.png)).
+## Walls
 
-## Other public pages
+Book a demo and Try for free leave the shell and ask which services you offer, as a grid of choice cards and a Continue button. Neither was answered. [screenshots/demo-light-wall.png](screenshots/demo-light-wall.png) [screenshots/trial-light-wall.png](screenshots/trial-light-wall.png)
 
-About, customers, blog, contact, learn and legal all load signed out. Learning Center search was focused and not queried. `/login` on the marketing host is a 404 ([shot](screenshots/notfound-light-default.png)). `book.mangomint.com` and `online.mangomint.com` did not resolve.
+Log in is a centered card on navy, with email, password, and Log In. Nothing was typed. [screenshots/login-light-wall.png](screenshots/login-light-wall.png)
 
-## Motion
+## Video tour dialog
 
-Reduced motion is partial: marketing pages keep many transitions, the login host honours reduce ([raw/motion.json](raw/motion.json)). The app sheet declares `--mt-duration-fast` 150ms, `--mt-duration-base` 200ms, `--mt-duration-normal` 300ms and `--mt-duration-slow` 500ms. Those are declared custom properties. The token file's durations come from the probe, not from a guessed ramp.
+Watch a video tour opens a dialog that asks which business you run, then a Watch video button. No option was chosen and Watch video was not pressed. [screenshots/home-light-video-tour.png](screenshots/home-light-video-tour.png)

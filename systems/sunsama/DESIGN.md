@@ -3,216 +3,99 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Sunsama"
-description: "Daily-planner marketing on white, with an orange pill, DM Sans headlines, and a signed-out login on cool grey"
+description: "a calm daily-planning marketing page: warm grey ground, DM Sans, one orange action"
+omitted:
+  - section: "typography"
+    reason: "tokens.json has no typography tokens under `core.typography`"
+  - section: "rounded"
+    reason: "tokens.json has no rounded tokens under `core.radius`"
+  - section: "spacing"
+    reason: "tokens.json has no spacing tokens under `core.spacing`"
+  - section: "components"
+    reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#ff891c"
-  neutral: "#ffffff"
-  surface: "#ffffff"
+  neutral: "#fafafa"
+  surface: "#f6f5f1"
   on-surface: "#202228"
-  on-surface-variant: "#20222899"
-  outline: "#f2f2f2"
-  color-page: "#ffffff"
-  color-warm: "#f6f5f1"
-  color-surface: "#ffffff"
-  color-surface-muted: "#fafafa"
-  color-surface-feature: "#f8f8f8"
-  color-auth-page: "#f7f8fa"
-  color-text: "#202228"
-  color-text-auth: "#413f39"
-  color-muted: "#20222899"
-  color-muted-auth: "#787878"
-  color-placeholder: "#b4b4b4"
-  color-divider: "#a1a1a1"
-  color-accent: "#ff891c"
-  color-accent-hover: "#db7414"
-  color-accent-deep: "#f06351"
-  color-accent-wash: "#ffe8e4"
-  color-on-accent: "#ffffff"
-  color-link: "#2ca7ff"
-  color-border: "#f2f2f2"
-  color-border-strong: "#dcdcdc"
-  color-border-feature: "#0000001f"
-  color-focus: "#8cb4f0"
-  color-focus-webflow: "#3898ec"
-  color-danger: "#f25a43"
-  color-disabled: "#d2d2d2"
-  color-success: "#4dcd7d"
-  color-warning: "#fdbd5b"
-  color-info: "#2da8ff"
-  component-button-primary-bg: "#ff891c"
-  component-button-primary-text: "#ffffff"
-  component-button-outline-bg: "#ffffff"
-  component-button-outline-text: "#ff891c"
-  component-field-text: "#b4b4b4"
-  component-button-email-bg: "#d2d2d2"
-  component-button-email-text: "#ffffff"
-typography:
-  display-cta:
-    fontFamily: "DM Sans"
-    fontSize: "56px"
-    fontWeight: 600
-    lineHeight: "70px"
-    letterSpacing: "-0.56px"
-  display:
-    fontFamily: "DM Sans"
-    fontSize: "48px"
-    fontWeight: 600
-    lineHeight: "55.68px"
-    letterSpacing: "-0.48px"
-  display-hero:
-    fontFamily: "DM Sans"
-    fontSize: "41.6px"
-    fontWeight: 600
-    lineHeight: "48.256px"
-    letterSpacing: "-0.416px"
-  price:
-    fontFamily: "DM Sans"
-    fontSize: "80px"
-    fontWeight: 500
-    lineHeight: "64px"
-    letterSpacing: "0px"
-  heading:
-    fontFamily: "DM Sans"
-    fontSize: "24px"
-    fontWeight: 600
-    lineHeight: "25.44px"
-    letterSpacing: "0px"
-  card-title:
-    fontFamily: "DM Sans"
-    fontSize: "20px"
-    fontWeight: 600
-    lineHeight: "23.2px"
-    letterSpacing: "-0.2px"
-  button-label:
-    fontFamily: "DM Sans"
-    fontSize: "18px"
-    fontWeight: 500
-    lineHeight: "27px"
-    letterSpacing: "0px"
-  body:
-    fontFamily: "DM Sans"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: "24px"
-    letterSpacing: "0px"
-  nav:
-    fontFamily: "DM Sans"
-    fontSize: "15px"
-    fontWeight: 400
-    lineHeight: "22.5px"
-    letterSpacing: "0px"
-  caption:
-    fontFamily: "DM Sans"
-    fontSize: "14px"
-    fontWeight: 500
-    lineHeight: "20.72px"
-    letterSpacing: "-0.14px"
-  auth-body:
-    fontFamily: "Avenir"
-    fontSize: "14px"
-    fontWeight: 500
-    lineHeight: "19.88px"
-    letterSpacing: "0px"
-  auth-control:
-    fontFamily: "Avenir"
-    fontSize: "15px"
-    fontWeight: 500
-    lineHeight: "21.3px"
-    letterSpacing: "0px"
-  auth-tab:
-    fontFamily: "Avenir"
-    fontSize: "14px"
-    fontWeight: 600
-    lineHeight: "19.88px"
-    letterSpacing: "0px"
-  auth-meta:
-    fontFamily: "Avenir"
-    fontSize: "13px"
-    fontWeight: 500
-    lineHeight: "18.46px"
-    letterSpacing: "0px"
-rounded:
-  sm: "4px"
-  md: "10px"
-  card: "12px"
-  lg: "16px"
-  xl: "24px"
-  pill: "30px"
-  nav: "50px"
-spacing:
-  "1": "4px"
-  "2": "8px"
-  "3": "10px"
-  "4": "12px"
-  "5": "20px"
-  "6": "22px"
-  "7": "24px"
-  "8": "32px"
-  "9": "40px"
-components:
-  button-primary:
-    backgroundColor: "{colors.component-button-primary-bg}"
-    textColor: "{colors.component-button-primary-text}"
-    rounded: "30px"
-    padding: "10px"
-    height: "47px"
-  button-outline:
-    backgroundColor: "{colors.component-button-outline-bg}"
-    textColor: "{colors.component-button-outline-text}"
-    rounded: "30px"
-  field:
-    textColor: "{colors.component-field-text}"
-    rounded: "4px"
-    height: "42.5px"
-  button-email:
-    backgroundColor: "{colors.component-button-email-bg}"
-    textColor: "{colors.component-button-email-text}"
-    rounded: "4px"
-    height: "45.3px"
+  on-surface-variant: "#2c3034"
+  outline: "#e5e4e0"
+  page: "#fafafa"
+  text: "#202228"
+  muted: "#2c3034"
+  accent: "#ff891c"
+  border: "#e5e4e0"
+  link: "#2da8ff"
+  app-page: "#ffffff"
+  app-surface: "#f7f8fa"
+  app-base: "#ecedee"
+  app-raised: "#f5f5f5"
+  app-overlay: "rgba(43, 36, 62, 0.3)"
+  app-text: "#413f39"
+  app-border: "#dcdcdc"
+  app-ghost: "rgba(0, 0, 0, 0.08)"
+  app-accent: "#2ca7ff"
+  app-success: "#4dcd7d"
+  app-danger: "#f34235"
+  app-warning: "#fdbd5b"
+  app-alert: "#eb8063"
+  app-info: "#7d4dcd"
+  app-urgent: "#eb8063"
+  app-important: "#a382ff"
+  app-low: "#787878"
+  app-channel-blue: "#2ca7ff"
+  app-channel-purple: "#a382ff"
+  app-channel-green: "#4dcd7d"
+  app-channel-orange: "#eb8063"
+  app-channel-grey: "#a0a0a0"
 ---
 
 # Sunsama
 
-Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
+Written with tools/catalog.py design_md() for this package only. `make design-md` was not run, because it reads catalog.json and this capture does not edit that file. After the package is registered, regenerate this file with `make design-md` and discard this copy if it differs.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 11 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 3 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Daily-planner marketing on white, with an orange pill, DM Sans headlines, and a signed-out login on cool grey.
+Good for: a calm daily-planning marketing page: warm grey ground, DM Sans, one orange action.
 
-Captured 2026-11-19, signed out. Themes: light.
+Captured 2026-11-21, signed out, public marketing site only. Themes: light, dark.
 
-Sunsama is a daily planner (sunsama.com). This package captures the public marketing site and the signed-out login form. No account was used.
+A token set and component reference for Sunsama's public marketing site, for building a calm daily-planning marketing page in that style. It was read from www.sunsama.com on 2026-11-21, signed out, in headless Chromium at 1440x900 and 390x844. The public site paints one light theme: warm grey page `#fafafa`, ink `#202228` in DM Sans, and one orange action colour `#ff891c` on the Start for Free buttons. The signed-in app was not entered.
 
-Surfaces: home, pricing, and login. Theme: light. Widths: 1440 and 390 CSS pixels. Captured 19 November 2026.
+Login at https://app.sunsama.com/login and signup at https://www.sunsama.com/start/signup are stop branches. No email was typed, no form was submitted, and Google, Outlook, and SSO were not clicked. Termly consent was hidden, never accepted. Dark app colours exist in the public CSS under `.sslab[data-theme="dark"]` and are tokenised. The marketing pages do not paint that attribute, so those values are declared CSS, not a live captured theme.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#ff891c):** `light.color.accent`
-- **neutral (#ffffff):** `light.color.page`
-- **surface (#ffffff):** `light.color.surface`
-- **on-surface (#202228):** `light.color.text`
-- **on-surface-variant (#20222899):** `light.color.muted`
-- **outline (#f2f2f2):** `light.color.border`
+- **primary (#ff891c):** `light.accent`
+- **neutral (#fafafa):** `light.page`
+- **surface (#f6f5f1):** `light.surface`
+- **on-surface (#202228):** `light.text`
+- **on-surface-variant (#2c3034):** `light.muted`
+- **outline (#e5e4e0):** `light.border`
 
 ## Typography
 
-14 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Avenir, DM Sans.
+No composite type styles in tokens.json; the README text below names the faces and sizes.
 
 ### Fonts (from README.md)
 
-Marketing type is DM Sans, loaded from Google Fonts as weights 300 to 700. The tokens fall back to `sans-serif`.
+| Family | Where it was read | Used for |
+|---|---|---|
+| DM Sans | Computed on `.navbar`, `.headlinemain`, buttons. Served from Google Fonts. | Marketing UI and headlines. Hero title is 51.2px / 600. |
+| Avenir | `--ss-font`, and computed on the price card, compare tab, and signup field. Eight `@font-face` rules in sunsama.css. | App demo and some marketing cards. |
+| Outfit | Computed on the signup title (56px / 500) and the opened demo panel. | Signup wall display. |
+| Inter, Inconsolata | `@font-face` only. Not measured on the captured controls. | Not captured as a used face. |
+| webflow-icons | Icon font in sunsama.css. | Webflow glyphs. Not extracted as SVG. |
 
-Login type is Avenir, then Arial, Helvetica Neue, Helvetica, sans-serif. Avenir is loaded from `app.sunsama.com/fonts/avenir`. It is proprietary and is not committed.
-
-Outfit and Inter are requested by the marketing font link. The measured headings and body computed to DM Sans. `.heading-xsmall` declares Outfit. The pricing h2 with that class computed DM Sans.
+DM Sans is a webfont. Avenir is served from the site's own `/fonts/` paths. No font file is committed. The style guide falls back to a system sans.
 
 ## Layout
 
-Spacing from `core.spacing`: `1` 4px, `2` 8px, `3` 10px, `4` 12px, `5` 20px, `6` 22px, `7` 24px, `8` 32px, `9` 40px.
+No spacing scale in tokens.json.
 
 ## Elevation & Depth
 
@@ -220,17 +103,20 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `light.shadow.card` | `0px 16px 30px 0px #1d1f271a` |
-| `light.shadow.auth-card` | `0px 1px 2px 0px #0000000a, 0px 12px 32px 0px #0000000f` |
-| `light.shadow.auth-hover` | `0px 3px 6px 0px #00000033` |
+| `core.shadow.card` | `0px 1px 1px 0px rgba(0, 0, 0, 0.1)` |
+| `core.shadow.button` | `0px 1px 2px 0px rgba(0, 0, 0, 0.1)` |
+| `core.shadow.modal` | `0px 3px 20px 0px rgba(0, 0, 0, 0.2)` |
+| `light.elevation.card` | `0px 1px 1px 0px rgba(0, 0, 0, 0.1)` |
+| `light.elevation.button` | `0px 1px 2px 0px rgba(0, 0, 0, 0.1)` |
+| `light.elevation.modal` | `0px 3px 20px 0px rgba(0, 0, 0, 0.2)` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `sm` 4px, `md` 10px, `card` 12px, `lg` 16px, `xl` 24px, `pill` 30px, `nav` 50px.
+No radius scale in tokens.json.
 
 ## Components
 
-4 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+No component tokens map onto DESIGN.md's component properties.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -244,26 +130,22 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The primary hover colour was not confirmed with a pointer. Adding Webflow's `w--hover` class left the computed background at `#ff891c`.
-
-The login email button looks disabled. Its class is `onboarding-btn-secondary`, `disabled` was false, and the fill was `#d2d2d2`.
-
-`--ss-*` tokens in the marketing stylesheet describe the product UI (dark surfaces, Avenir, 4px radius). They were not computed on the marketing page. Only the ones that also painted, or that the login page computed, are used as colours here. `--ss-green`, `--ss-caution` and `--blue` are recorded because the stylesheet declares them. They did not paint on these pages.
-
-The home page product screenshot is a marketing demo, not the signed-in app.
-
-Muted ink is `#202228` at alpha 0.6. On white that pair is 4.26:1, under 4.5:1. That is the measured colour.
-
-Screenshots are 256-colour. Read colours from [tokens.json](tokens.json).
+- Screenshots are 256-colour PNGs. Read colours from tokens.json or `raw/components-computed.json`.
+- The dark set is declared CSS on `.sslab[data-theme="dark"]`. No public control paints it. Marketing `page`, `text`, and `accent` are the same hex in `light` and `dark` because those names live on `:root`.
+- `--ss-*` app colours are the embedded demo layer, not the painted marketing page. A marketing screen should use `light.page`, `light.text`, and `light.accent`.
+- Nav link hover and pressed did not change computed colour. Do not invent a hover ink.
+- `cta-primary` focus-visible did not paint an outline. `nav-cta` did (1px auto `#005fcc`). They are different controls.
+- `m-menu-open` measured 390x15787. The crop is the overlay box, not a short sheet. The phone menu screenshot is [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
+- `footer-link` is the first footer anchor (a social icon, 47x17). It is not a text link style.
+- `lightbox-link` states other than default are Not captured. The trigger is an image, so a text filter missed it on the first pass.
+- `ai-tab` click timed out. Default, hover, pressed, and selected were measured. Opening a different assistant tab was not.
+- Footer mailto and community-invite URLs were not copied into this package.
 
 ### Do and don't (from README.md)
 
-1. **Use white for the page and orange for the primary pill.** The home and pricing pages sit on `#ffffff` with one filled action at `#ff891c`. [Home](screenshots/home-light-default.png).
-
-2. **Set marketing headlines in DM Sans at weight 600.** The home headline computed 41.6px. The pricing headline computed 56px. [Pricing](screenshots/pricing-light-default.png).
-
-3. **Keep login on cool grey, with white OAuth buttons and a grey email button.** The page is `#f7f8fa`. OAuth buttons are white with a `#dcdcdc` border. The email button is `#d2d2d2`. [Login](screenshots/login-light-default.png).
-
-4. **Do not invent a dark marketing theme.** The signed-out login CSS has `.dark` rules. They did not paint.
-
-5. **Do not submit signup or a calendar connection from this package.** Google, Outlook and SSO were on the login form and were not clicked.
+1. **Do use one orange for the primary action.** `#ff891c` fills Start for Free. Hover and pressed darken to `#db7414`. See [nav-cta-default](components/crops/nav-cta-default.png) and [nav-cta-hover](components/crops/nav-cta-hover.png).
+2. **Do set marketing type in DM Sans.** The hero is 51.2px weight 600, line-height 59.4px, ink `#202228`, on `#fafafa`. See [hero-title-default](components/crops/hero-title-default.png) and [home-light-default](screenshots/home-light-default.png).
+3. **Do keep the nav flat.** Links do not open a menu. Phone width replaces them with the overlay. See [header-default](components/crops/header-default.png) and [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
+4. **Don't treat the dark tokens as a captured marketing theme.** They are `.sslab[data-theme=dark]` declarations. The public pages stay light.
+5. **Don't invent a nav-link hover colour.** Computed colour stayed `rgb(32, 34, 40)` on hover and pressed.
+6. **Don't fill the signup field or follow Login.** Both are stop branches. The field crop is focus only. See [signup-light-wall](screenshots/signup-light-wall.png).

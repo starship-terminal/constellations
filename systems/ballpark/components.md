@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 14/21 500, #111827`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (108 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (109 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -100,10 +100,10 @@ The nav item that opens the mega menu of solutions pages on hover. Read as `nav-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 90 x 36; padding 0px 14px; radius 7px; background #ffffff `color.white`; text Inter 14/20 600, #111827 `color.gray.900` |
+| default (same: focus-visible, pressed) | size 90 x 36; padding 0px 14px; radius 7px; background #ffffff `color.white`; text Inter 14/20 600, #111827 `color.gray.900` |
 | hover | background #f3f4f6 `color.gray.100` |
 
-![Solutions menu link default](components/crops/nav-solutions-default.png) ![Solutions menu link hover](components/crops/nav-solutions-hover.png) ![Solutions menu link pressed](components/crops/nav-solutions-pressed.png)
+![Solutions menu link default](components/crops/nav-solutions-default.png) ![Solutions menu link hover](components/crops/nav-solutions-hover.png) ![Solutions menu link focus-visible](components/crops/nav-solutions-focus-visible.png) ![Solutions menu link pressed](components/crops/nav-solutions-pressed.png)
 
 #### Solutions menu, open
 The link after its own hover opens the menu; the crop holds the opened panel region. Read as `nav-solutions-open` on the home page.

@@ -1,4 +1,0 @@
-<svg data-hero="badge-chevron" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-      <line data-hero-part="shaft" x1="4" y1="8" x2="12" y2="8" stroke="#b0a6b1"></line>
-      <path data-hero-part="head" d="M6 12L10 8L6 4" stroke="#b0a6b1"></path>
-    </svg>

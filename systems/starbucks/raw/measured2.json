@@ -1,0 +1,169 @@
+{
+  "home": {
+    "Start an order": {
+      "tag": "A",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 98, 66)",
+      "size": "19px",
+      "weight": "300",
+      "lh": "33.25px",
+      "ls": "-0.19px",
+      "radius": "50px",
+      "bw": "2px",
+      "bc": "rgb(255, 255, 255)",
+      "pad": "2px 12px",
+      "h": 41,
+      "font": "SoDoSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "shadow": "none",
+      "outline": "rgb(255, 255, 255) none 0px"
+    },
+    "See the holiday menu": {
+      "tag": "A",
+      "color": "rgb(0, 117, 74)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "16px",
+      "weight": "600",
+      "lh": "19.2px",
+      "ls": "-0.16px",
+      "radius": "50px",
+      "bw": "1px",
+      "bc": "rgb(0, 117, 74)",
+      "pad": "7px 16px",
+      "h": 35,
+      "font": "SoDoSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "shadow": "none",
+      "outline": "rgb(0, 117, 74) none 0px"
+    },
+    "Join now": {
+      "tag": "A",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 0)",
+      "size": "14px",
+      "weight": "600",
+      "lh": "16.8px",
+      "ls": "-0.16px",
+      "radius": "50px",
+      "bw": "1px",
+      "bc": "rgb(0, 0, 0)",
+      "pad": "7px 16px",
+      "h": 33,
+      "font": "SoDoSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "shadow": "none",
+      "outline": "rgb(255, 255, 255) none 0px"
+    },
+    "Sign in": {
+      "tag": "A",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "14px",
+      "weight": "600",
+      "lh": "16.8px",
+      "ls": "-0.16px",
+      "radius": "50px",
+      "bw": "1px",
+      "bc": "rgba(0, 0, 0, 0.87)",
+      "pad": "7px 16px",
+      "h": 33,
+      "font": "SoDoSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "shadow": "none",
+      "outline": "rgba(0, 0, 0, 0.87) none 0px"
+    },
+    "MENU": {
+      "tag": "A",
+      "color": "rgba(0, 0, 0, 0.9)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "14px",
+      "weight": "700",
+      "lh": "21px",
+      "ls": "1.4px",
+      "radius": "0px",
+      "bw": "0px",
+      "bc": "rgba(0, 0, 0, 0.9)",
+      "pad": "0px",
+      "h": 21,
+      "font": "SoDoSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "shadow": "none",
+      "outline": "rgba(0, 0, 0, 0.9) none 0px"
+    },
+    "_regions": [
+      {
+        "bg": "rgb(0, 98, 66)",
+        "h": 110,
+        "w": 1440,
+        "y": 100,
+        "text": "It's a great day for coffee Start an ord"
+      },
+      {
+        "bg": "rgb(245, 241, 235)",
+        "h": 420,
+        "w": 1440,
+        "y": 242,
+        "text": "Holiday flavors are in town! Treat yours"
+      },
+      {
+        "bg": "rgb(0, 98, 66)",
+        "h": 420,
+        "w": 1440,
+        "y": 694,
+        "text": "Customize for free on 11/23 Spruce up yo"
+      },
+      {
+        "bg": "rgb(0, 98, 66)",
+        "h": 420,
+        "w": 1440,
+        "y": 1146,
+        "text": "Winter magic is on the way Our newest me"
+      },
+      {
+        "bg": "rgb(0, 98, 66)",
+        "h": 420,
+        "w": 1440,
+        "y": 1598,
+        "text": "The holidays just got a new album The St"
+      },
+      {
+        "bg": "rgb(0, 98, 66)",
+        "h": 420,
+        "w": 1440,
+        "y": 2050,
+        "text": "Holiday gifting made easy with Starbucks"
+      }
+    ]
+  },
+  "homeExtra": {
+    "h1": {
+      "text": "Holiday flavors are in town!",
+      "color": "rgb(0, 98, 66)",
+      "size": "24px",
+      "weight": "600",
+      "lh": "33.6px",
+      "ls": "-0.24px"
+    },
+    "footer": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "h": 981
+    },
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "h": 100,
+      "shadow": "none",
+      "border": "0px solid rgb(0, 0, 0)"
+    }
+  },
+  "signin": {
+    "href": "https://auth.starbucks.com/u/login",
+    "buttons": [],
+    "h1": null
+  },
+  "menu": {
+    "tab": {
+      "color": "rgba(0, 0, 0, 0.87)",
+      "size": "13px",
+      "weight": "400",
+      "borderBottom": "0px none rgba(0, 0, 0, 0.87)",
+      "decoration": "rgba(0, 0, 0, 0.87)",
+      "h": 52
+    }
+  }
+}

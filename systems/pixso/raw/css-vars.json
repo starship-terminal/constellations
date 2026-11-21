@@ -1,0 +1,310 @@
+{
+  "source": "https://pixso.net/ computed and declared custom properties, headless Chromium 1440x900, 2026-11-21",
+  "declared": {
+    "--blue": {
+      "value": "#007bff",
+      "selector": ":root"
+    },
+    "--indigo": {
+      "value": "#6610f2",
+      "selector": ":root"
+    },
+    "--purple": {
+      "value": "#6f42c1",
+      "selector": ":root"
+    },
+    "--pink": {
+      "value": "#e83e8c",
+      "selector": ":root"
+    },
+    "--red": {
+      "value": "#dc3545",
+      "selector": ":root"
+    },
+    "--orange": {
+      "value": "#fd7e14",
+      "selector": ":root"
+    },
+    "--yellow": {
+      "value": "#ffc107",
+      "selector": ":root"
+    },
+    "--green": {
+      "value": "#28a745",
+      "selector": ":root"
+    },
+    "--teal": {
+      "value": "#20c997",
+      "selector": ":root"
+    },
+    "--cyan": {
+      "value": "#17a2b8",
+      "selector": ":root"
+    },
+    "--gray": {
+      "value": "#6c757d",
+      "selector": ":root"
+    },
+    "--gray-dark": {
+      "value": "#343a40",
+      "selector": ":root"
+    },
+    "--primary": {
+      "value": "#000",
+      "selector": ":root"
+    },
+    "--secondary": {
+      "value": "#ffc400",
+      "selector": ":root"
+    },
+    "--success": {
+      "value": "#28a745",
+      "selector": ":root"
+    },
+    "--info": {
+      "value": "#17a2b8",
+      "selector": ":root"
+    },
+    "--warning": {
+      "value": "#ffc107",
+      "selector": ":root"
+    },
+    "--danger": {
+      "value": "#dc3545",
+      "selector": ":root"
+    },
+    "--light": {
+      "value": "#f8f9fa",
+      "selector": ":root"
+    },
+    "--dark": {
+      "value": "#343a40",
+      "selector": ":root"
+    },
+    "--white": {
+      "value": "#fff",
+      "selector": ":root"
+    },
+    "--black": {
+      "value": "#000",
+      "selector": ":root"
+    },
+    "--action": {
+      "value": "#006dff",
+      "selector": ":root"
+    },
+    "--support": {
+      "value": "#ffc400",
+      "selector": ":root"
+    },
+    "--breakpoint-xs": {
+      "value": "0",
+      "selector": ":root"
+    },
+    "--breakpoint-sm": {
+      "value": "576px",
+      "selector": ":root"
+    },
+    "--breakpoint-md": {
+      "value": "768px",
+      "selector": ":root"
+    },
+    "--breakpoint-lg": {
+      "value": "992px",
+      "selector": ":root"
+    },
+    "--breakpoint-xl": {
+      "value": "1280px",
+      "selector": ":root"
+    },
+    "--breakpoint-xxl": {
+      "value": "1600px",
+      "selector": ":root"
+    },
+    "--font-family-sans-serif": {
+      "value": "\"Poppins\", -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "selector": ":root"
+    },
+    "--font-family-monospace": {
+      "value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "selector": ":root"
+    },
+    "--v2--color-bg-brand-normal": {
+      "value": "#336fff",
+      "selector": ":root"
+    },
+    "--v2--color-bg-brand-hover": {
+      "value": "#4381ff",
+      "selector": ":root"
+    },
+    "--header-height": {
+      "value": "54px",
+      "selector": ":root"
+    },
+    "--content-max-width": {
+      "value": "1380px",
+      "selector": ":root"
+    },
+    "--pxn-blue": {
+      "value": "#336fff",
+      "selector": "#wsc-header[data-pixso-nav-version]"
+    },
+    "--pxn-ink": {
+      "value": "#1e2330",
+      "selector": "#wsc-header[data-pixso-nav-version]"
+    },
+    "--pxn-muted": {
+      "value": "#647084",
+      "selector": "#wsc-header[data-pixso-nav-version]"
+    },
+    "--pxn-border": {
+      "value": "#edf0f4",
+      "selector": "#wsc-header[data-pixso-nav-version]"
+    },
+    "--pxf-text": {
+      "value": "#202124",
+      "selector": "#common-footer.px-footer-unified, #wsc-footer.px-footer-unified"
+    },
+    "--pxf-muted": {
+      "value": "#667085",
+      "selector": "#common-footer.px-footer-unified, #wsc-footer.px-footer-unified"
+    },
+    "--pxf-rule": {
+      "value": "rgba(16, 24, 40, .12)",
+      "selector": "#common-footer.px-footer-unified, #wsc-footer.px-footer-unified"
+    }
+  },
+  "resolved": {
+    "--blue": "#007bff",
+    "--indigo": "#6610f2",
+    "--purple": "#6f42c1",
+    "--pink": "#e83e8c",
+    "--red": "#dc3545",
+    "--orange": "#fd7e14",
+    "--yellow": "#ffc107",
+    "--green": "#28a745",
+    "--teal": "#20c997",
+    "--cyan": "#17a2b8",
+    "--gray": "#6c757d",
+    "--gray-dark": "#343a40",
+    "--primary": "#000",
+    "--secondary": "#ffc400",
+    "--success": "#28a745",
+    "--info": "#17a2b8",
+    "--warning": "#ffc107",
+    "--danger": "#dc3545",
+    "--light": "#f8f9fa",
+    "--dark": "#343a40",
+    "--white": "#fff",
+    "--black": "#000",
+    "--action": "#006dff",
+    "--support": "#ffc400",
+    "--breakpoint-xs": "0",
+    "--breakpoint-sm": "576px",
+    "--breakpoint-md": "768px",
+    "--breakpoint-lg": "992px",
+    "--breakpoint-xl": "1280px",
+    "--breakpoint-xxl": "1600px",
+    "--font-family-sans-serif": "\"Poppins\", -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "--font-family-monospace": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "--v2--color-bg-brand-normal": "#336fff",
+    "--v2--color-bg-brand-hover": "#4381ff",
+    "--header-height": "54px",
+    "--content-max-width": "1380px"
+  },
+  "fontFaces": [
+    {
+      "family": "Figtree",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "Figtree",
+      "weight": "500",
+      "style": "normal"
+    },
+    {
+      "family": "Figtree",
+      "weight": "600",
+      "style": "normal"
+    },
+    {
+      "family": "Figtree",
+      "weight": "700",
+      "style": "normal"
+    }
+  ],
+  "computed": {
+    "body": {
+      "text": "Product AI design \u2197 Import from Figma Re",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "fontFamily": "Figtree, Arial, \"Helvetica Neue\", \"Microsoft YaHei\", Helvetica, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "height": 14978,
+      "border": "0px none rgb(0, 0, 0)",
+      "boxShadow": "none"
+    },
+    "h1": {
+      "text": "The collaborative UI/UX design tool, pow",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Figtree, Arial, \"Helvetica Neue\", \"Microsoft YaHei\", Helvetica, sans-serif",
+      "fontSize": "60px",
+      "fontWeight": "700",
+      "lineHeight": "66px",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "height": 132,
+      "border": "0px none rgb(0, 0, 0)",
+      "boxShadow": "none"
+    },
+    "ctaLink": {
+      "text": "Get started",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Figtree, Arial, \"Helvetica Neue\", \"Microsoft YaHei\", Helvetica, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "height": 20,
+      "border": "0px none rgb(255, 255, 255)",
+      "boxShadow": "none"
+    },
+    "loginLink": {
+      "text": "Log in",
+      "color": "rgb(61, 61, 61)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Figtree, Arial, \"Helvetica Neue\", \"Microsoft YaHei\", Helvetica, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "height": 20,
+      "border": "0px none rgb(61, 61, 61)",
+      "boxShadow": "none"
+    },
+    "pricingLink": {
+      "text": "Pricing",
+      "color": "rgb(30, 35, 48)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Figtree, Arial, \"Helvetica Neue\", \"Microsoft YaHei\", Helvetica, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "18.2px",
+      "borderRadius": "6px",
+      "padding": "10px 11px",
+      "height": 40,
+      "border": "0px none rgb(30, 35, 48)",
+      "boxShadow": "none"
+    }
+  },
+  "note": "declared count was 43; this file keeps the names read from :root and the header/footer selectors. Bootstrap palette names are declared but the painted marketing UI uses Figtree and the pxn/pxf/v2 names."
+}

@@ -3,184 +3,133 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "PlayStation"
-description: "Console marketing and signed-out store chrome: white nav, blue Sign In pill, navy hero, store tabs, product tiles, and the Sony account signup wall"
+description: "Games storefront: white page, SST type, blue Sign In pill, orange commerce button, mega-menu"
+omitted:
+  - section: "components"
+    reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
-  primary: "#0070CC"
-  neutral: "#FFFFFF"
-  surface: "#EBEEF0"
-  on-surface: "#1F1F1F"
-  on-surface-variant: "#6B6B6B"
-  outline: "#B2B2B2"
-  color-page: "#FFFFFF"
-  color-ink: "#1F1F1F"
-  color-muted: "#6B6B6B"
-  color-store-ink: "#363636"
-  color-link: "#0068BD"
-  color-action: "#0070CC"
-  color-commerce: "#D53B00"
-  color-hero: "#092391"
-  color-footer: "#00439C"
-  color-on-dark: "#FFFFFF"
-  color-tab-active: "#EBEEF0"
-  color-badge: "#000000"
-  color-field-border: "#B2B2B2"
-  color-disabled: "#757575"
-  color-signin-link: "#249CFF"
-  color-create-fill: "#FFFFFF24"
-  color-create-border: "#FFFFFFCC"
-  text-primary: "#1F1F1F"
-  text-muted: "#6B6B6B"
-  text-on-dark: "#FFFFFF"
-  text-link: "#0068BD"
-  background-page: "#FFFFFF"
-  background-surface: "#EBEEF0"
-  background-hero: "#092391"
-  background-footer: "#00439C"
-  background-action: "#0070CC"
-  border-field: "#B2B2B2"
-  component-button-signin-bg: "#0070CC"
-  component-button-signin-text: "#FFFFFF"
-  component-button-next-bg: "#757575"
-  component-button-next-text: "#000000"
-  component-button-create-text: "#FFFFFF"
-  component-tab-text: "#000000"
-  component-badge-bg: "#000000"
-  component-badge-text: "#FFFFFF"
+  primary: "#0070cc"
+  neutral: "#ffffff"
+  surface: "#f5f7fa"
+  on-surface: "#000000"
+  on-surface-variant: "#6b6b6b"
+  outline: "#f3f3f3"
+  page: "#ffffff"
+  raised: "#ebeef0"
+  card: "rgba(255, 255, 255, 0.97)"
+  overlay: "rgba(255, 255, 255, 0.97)"
+  scrim: "rgba(245, 247, 250, 0.3)"
+  text: "#000000"
+  muted: "#6b6b6b"
+  disabled: "#d2d4d9"
+  onAccent: "#ffffff"
+  link: "#0068bd"
+  linkHover: "#005daa"
+  placeholder: "rgba(0, 0, 0, 0.6)"
+  border: "#f3f3f3"
+  borderStrong: "rgba(0, 112, 204, 0.5)"
+  accent: "#0070cc"
+  accentHover: "#0064b7"
+  accentPressed: "#0059a3"
+  commerce: "#d53b00"
+  commerceHover: "#c03500"
+  commercePressed: "#aa2f00"
+  success: "#007a62"
+  warning: "#c81b3a"
+  info: "#cb2070"
+  psPlus: "#fcc71d"
+  formField: "rgba(0, 0, 0, 0.06)"
+  focus: "#0064b7"
+  signIn: "#0070cc"
+  signInHover: "#005499"
+  navHover: "#0070d1"
+  addToCart: "#d63d00"
+  addToCartHover: "#a32e00"
+  textBody: "#1f1f1f"
+  storeText: "#363636"
+  footer: "#00439c"
+  tabSelected: "#ebeef0"
 typography:
+  display:
+    fontFamily: "sst"
+    fontSize: "39px"
+    fontWeight: 300
+    lineHeight: "48.75px"
   body:
     fontFamily: "sst"
-    fontSize: "14px"
+    fontSize: "16px"
     fontWeight: 400
-    lineHeight: "21px"
-    letterSpacing: "0.1px"
-  large-title:
-    fontFamily: "sst"
-    fontSize: "34px"
-    fontWeight: 300
-    lineHeight: "42.5px"
-    letterSpacing: "0.1px"
-  medium-title:
-    fontFamily: "sst"
-    fontSize: "22px"
-    fontWeight: 300
-    lineHeight: "27.5px"
-    letterSpacing: "0.1px"
-  small-title:
-    fontFamily: "sst"
-    fontSize: "18px"
-    fontWeight: 300
-    lineHeight: "22.5px"
-    letterSpacing: "0.1px"
-  secondary:
-    fontFamily: "sst"
-    fontSize: "12px"
-    fontWeight: 400
-    lineHeight: "18px"
-    letterSpacing: "0px"
-  utility:
-    fontFamily: "sst"
-    fontSize: "10px"
-    fontWeight: 400
-    lineHeight: "15px"
-    letterSpacing: "0px"
+    lineHeight: "24px"
   nav:
-    fontFamily: "SST"
-    fontSize: "11.375px"
+    fontFamily: "sst"
+    fontSize: "13px"
     fontWeight: 500
-    lineHeight: "21px"
-    letterSpacing: "0px"
-  store-title:
+    lineHeight: "16px"
+  button:
     fontFamily: "sst"
-    fontSize: "36.75px"
-    fontWeight: 300
-    lineHeight: "51.45px"
-    letterSpacing: "0px"
-  signin-title:
-    fontFamily: "sst"
-    fontSize: "22px"
-    fontWeight: 300
-    lineHeight: "28px"
-    letterSpacing: "0px"
+    fontSize: "16px"
+    fontWeight: 700
+    lineHeight: "20px"
 rounded:
   "0": "2px"
-  "1": "3px"
-  "2": "6px"
-  "3": "12px"
-  "4": "24px"
-  cta: "28px"
-  pill: "999px"
+  "1": "4px"
+  "2": "8px"
+  "3": "16px"
+  "4": "32px"
 spacing:
   "1": "2px"
   "2": "4px"
-  "3": "7px"
-  "4": "10px"
-  "5": "14px"
-  "6": "21px"
-  "7": "28px"
-  "8": "35px"
-  "9": "42px"
-  "10": "56px"
-  "11": "70px"
-  "12": "112px"
-  "13": "224px"
-  gutter: "14px"
-  margin: "42px"
-  nav-height: "64px"
-  field-x: "10px"
-  tab-x: "10px"
-  tab-y: "4px"
-components:
-  button-signin:
-    backgroundColor: "{colors.component-button-signin-bg}"
-    textColor: "{colors.component-button-signin-text}"
-  button-next:
-    backgroundColor: "{colors.component-button-next-bg}"
-    textColor: "{colors.component-button-next-text}"
-  button-create:
-    textColor: "{colors.component-button-create-text}"
-  tab:
-    textColor: "{colors.component-tab-text}"
-  badge:
-    backgroundColor: "{colors.component-badge-bg}"
-    textColor: "{colors.component-badge-text}"
+  "3": "8px"
+  "4": "12px"
+  "5": "16px"
+  "6": "24px"
+  "7": "32px"
+  "8": "40px"
+  "9": "48px"
+  "10": "64px"
+  "11": "80px"
+  "12": "128px"
+  "13": "256px"
 ---
 
 # PlayStation
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Console marketing and signed-out store chrome: white nav, blue Sign In pill, navy hero, store tabs, product tiles, and the Sony account signup wall.
+Good for: Games storefront: white page, SST type, blue Sign In pill, orange commerce button, mega-menu.
 
-Captured 2026-11-19, signed out (the Sony account form was not entered). Themes: light.
+Captured 2026-11-21, signed out public marketing and store. Themes: light, dark.
 
-Public marketing pages and signed-out store chrome of playstation.com, read on 2026-11-19. Surfaces: `https://www.playstation.com/` (redirected to `/en-sg/`), `https://store.playstation.com/en-sg/pages/latest`, and the Sony account sign-in step at `https://my.account.sony.com/sonyacct/signin/`. Signed out. Light chrome. Viewport was the preview pane at 1169 by 731 CSS pixels, devicePixelRatio 2. No account was created. The email field was left empty. Create an Account was not clicked. Nothing was added to a bag.
+A token set and component reference for the public PlayStation site and PlayStation Store. Captured 2026-11-21 from `https://www.playstation.com/en-sg/` and `https://store.playstation.com/en-sg/`, signed out, headless Chromium at 1440x900 and 390x844. The locale is English (Singapore). No account was created.
+
+The public surface is light: white page, SST type, a blue Sign In pill, an orange commerce button, and blue mega-menus. Dark colour roles are declared in the same stylesheets and were not shown by a theme switch.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#0070CC):** `light.background.action`
-- **neutral (#FFFFFF):** `light.background.page`
-- **surface (#EBEEF0):** `light.background.surface`
-- **on-surface (#1F1F1F):** `light.text.primary`
-- **on-surface-variant (#6B6B6B):** `light.text.muted`
-- **outline (#B2B2B2):** `light.border.field`
+- **primary (#0070cc):** `light.accent`
+- **neutral (#ffffff):** `light.page`
+- **surface (#f5f7fa):** `light.surface`
+- **on-surface (#000000):** `light.text`
+- **on-surface-variant (#6b6b6b):** `light.muted`
+- **outline (#f3f3f3):** `light.border`
 
 ## Typography
 
-9 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: SST, sst.
+4 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: sst.
 
 ### Fonts (from README.md)
 
-SST is PlayStation's face, computed as `sst` on the body and `SST` on the shared nav, falling back to Arial or Helvetica, then sans-serif. The files are served from `static.playstation.com` (`font-all.css`, `font-sst-condensed.css`) and are not in this package. `document.fonts` also listed Bebas Neue, status unloaded. No element computed to Bebas Neue, so it is not a token.
+SST (`sst, Arial, sans-serif`) is Sony's face. It is proprietary and not included. The tokens fall back to Arial. SST Condensed is declared as `--dk-font-condensed` and was not measured on a visible heading in this capture.
 
 ## Layout
 
-Spacing from `core.spacing`: `1` 2px, `2` 4px, `3` 7px, `4` 10px, `5` 14px, `6` 21px, `7` 28px, `8` 35px, `9` 42px, `10` 56px, `11` 70px, `12` 112px, `13` 224px, `gutter` 14px, `margin` 42px, `nav-height` 64px, `field-x` 10px, `tab-x` 10px, `tab-y` 4px.
+Spacing from `core.space`: `1` 2px, `2` 4px, `3` 8px, `4` 12px, `5` 16px, `6` 24px, `7` 32px, `8` 40px, `9` 48px, `10` 64px, `11` 80px, `12` 128px, `13` 256px.
 
 ## Elevation & Depth
 
@@ -188,11 +137,11 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `0` 2px, `1` 3px, `2` 6px, `3` 12px, `4` 24px, `cta` 28px, `pill` 999px.
+Corner radii from `core.radius`: `0` 2px, `1` 4px, `2` 8px, `3` 16px, `4` 32px.
 
 ## Components
 
-5 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+No component tokens map onto DESIGN.md's component properties.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -206,21 +155,18 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Spacing, type, and radius steps are the computed custom properties at innerWidth 1169. The authored `:root` rule declares a different scale (for example `--space-2: 5px` and `--corner-size-4: 48px`). A 1440px capture would not match these numbers.
-
-`light.color.commerce` (`#D53B00`) is the computed `--color-9-light` channel triple. No purchase button on the page showed that fill. The visible CTAs were transparent.
-
-The sign-in page's html and body backgrounds computed transparent. White type says the plate is dark, but no solid page fill was isolated, so there is no sign-in page colour token.
-
-Create an Account uses an 8-digit hex (`#FFFFFF24`, `#FFFFFFCC`) for the measured alpha. The Next button looked disabled (class `psw-is-disabled`, grey face) while the email field was empty. That is the empty state, not a clicked error.
-
-No screenshot backs these numbers.
+- **Dark tokens are declared, not displayed.** The stylesheets publish `-dark` role colours. No public theme switch was found, so no dark screenshot exists.
+- **SST is not in the repo.** The family name was read from `--dk-font` and from computed `fontFamily`. The face is proprietary and is not bundled.
+- **Type steps change by breakpoint.** `--text-*` is declared more than once. The tokens use the desktop `:root` resolution.
+- **Sign In is an auth wall.** Its colour is captured. The account form is not.
+- **Add to Cart focus painted no outline.** That focus ring is Not captured.
+- **Commerce hover on the homepage** painted a 2px orange box-shadow on the link, while the fill sits on an inner node whose background computed as transparent. The commerce fill used in tokens is the declared `--color-role-backgrounds-commerce-link-base-light` and the Add to Cart computed fill, which match.
 
 ### Do and don't (from README.md)
 
-- **Use the measured ink, blue, and hero navy.** Body text is `light.color.ink` on `light.color.page`. Sign In is `light.color.action` with `light.color.on-dark`. The hero plate is `light.color.hero`. Readings are in [raw/measurements.md](raw/measurements.md).
-- **Use the blue pill for Sign In.** 22px tall, radius `core.radius.pill`, label weight 500. Marketing CTAs are a different control: transparent, radius `core.radius.cta`, label colour depending on the plate.
-- **Keep the sign-in email empty in any reconstruction of this capture.** The field was measured blank. No address was entered.
-- **Stop at the signup wall.** Create an Account is the last public step this capture saw. Do not invent the account form.
-- **Do not invent a site-wide dark theme.** `color-scheme` was `normal`. Dark classes are section banners.
-- **Do not treat the 1169px scale as the authored desktop scale.** Computed `--space-*` and `--corner-size-*` differ from the authored `:root` rule.
+- **Do keep the page white and the type in SST.** The marketing pages sit on white with near-black text. [screenshots/home-light-desktop.png](screenshots/home-light-desktop.png)
+- **Do use the blue pill for Sign In and the orange pill for commerce.** Sign In is `#0070cc`. Add to Cart is `#d63d00`. [components/crops/button-signin-default.png](components/crops/button-signin-default.png)
+- **Do open navigation as a menu, not a new page.** Store drops a panel on the same URL. [screenshots/home-light-desktop-store-menu.png](screenshots/home-light-desktop-store-menu.png)
+- **Don't invent a dark theme from the screenshots.** Dark roles exist in CSS and were not shown.
+- **Don't treat the Sony sign-in page as part of this package.** The branch stops at that URL.
+- **Don't copy the logo or game art.** Borrow structure and proportions.

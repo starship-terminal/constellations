@@ -1,37 +1,37 @@
-# Patterns
+# MonoDesk patterns
 
-## Marketing chrome
+Public marketing site, signed out, 2026-11-21.
 
-A blue grid fills the viewport (#1c64f5). A darker blue rounded bar holds the wordmark, "by Envato", Creative Pros, Features, Pricing, About, More, Log in, and Get started free. The bar is sticky enough to stay in the first viewport. Menus open on hover. This package did not isolate a menu panel token.
+## App shell
 
-[Home](screenshots/home-light-default.png)
+The marketing header is a floating pill (`.menu`): 66px tall, 16px radius, fill `rgba(33, 33, 33, 0.25)`, 1px border `rgba(255, 255, 255, 0.08)`, backdrop blur 20px. Logo, Envato "by" mark, four nav items with chevrons (Creative Pros, Features, More open mega menus; Pricing and About are links), Log in, and a highlighter pill "Get started free".
+
+Phone: the same pill collapses to logo, hamburger (`button.hamburger-btn`, aria-label "Toggle menu"), and a round highlighter button. The menu is a fixed full-viewport sheet (`nav.mobile-nav.is-open`). Its list scrolls inside `.mobile-nav-content`. More sits below Pricing and About and expands Help, Blog, and Playground. A sheet titled "On your phone right now?" asks for an email. That field was not filled. A Google One Tap bar can cover the bottom of the phone page. It was hidden for the menu shots and was not clicked.
+
+Screenshots: [home-dark-default.png](screenshots/home-dark-default.png), [mobile-home-dark-menu.png](screenshots/mobile-home-dark-menu.png), [mobile-home-dark-prompt.png](screenshots/mobile-home-dark-prompt.png).
 
 ## Hero
 
-Large white Geist headline, a one-line subhead, a highlighter pill, a translucent white "Log in" pill, then a tracked line: no credit card, try for free, zero commitment. Below that, a browser-frame demo of the product. That demo is a marketing illustration, not the signed-in app.
+Blue grid (`#1c64f5`) with a white Geist headline at 72px / 82.8px on desktop. Two pills: highlighter "Get started free" and a quieter "Log in". Under them, a product demo frame labelled `app.monodesk.com`. That frame is a marketing render, not the signed-in app.
 
 ## Pricing
 
-Three columns on a white slab over the blue page: Free $0, Core $19, Pro $29. Future prices are struck through at 60% ink. A green "Most popular" badge sits on Pro. A note says plans are free until the end of 2026. No card was entered. No plan was started.
+Three plan cards (Free, Core, Pro) on a light panel. Pro is outlined in highlighter and badged "Most popular". "Get started" on a plan goes to `https://app.monodesk.com/create`, which was not entered. "See full feature set" expands a comparison table on the same page.
 
-[Pricing](screenshots/pricing-light-full.png)
+Screenshot: [pricing-dark-default.png](screenshots/pricing-dark-default.png).
 
 ## Help
 
-Blue hero with a pill search, then a grey band of white category cards.
+Blue hero, white pill search, then white category cards on a light band. Search filters in place. Nothing was submitted.
 
-[Help](screenshots/help-light-default.png)
+Screenshot: [help-dark-default.png](screenshots/help-dark-default.png).
 
-## Signed-out app
+## Playground
 
-Login and create are a white card on a grey canvas (#e5eaed) over an illustration. Google first, then email and password, then an ink button. Create asks "What's the first thing you need to get done?" before the account fields. That prompt was not filled in.
+A separate dark layout with a blue wordmark and square tool tiles. "Have a play. Free, no sign-up." Tool pages that ask for a name, a location, or client details were not filled.
 
-[Login](screenshots/app-login-light-default.png)
+Screenshot: [playground-dark-default.png](screenshots/playground-dark-default.png).
 
-[Create](screenshots/app-create-light-default.png)
+## Not on the public site
 
-## Phone
-
-At 390 the home page swaps the headline and shows a sheet: "On your phone right now?" with an email field to send a desktop link. That field was not filled. The sheet is part of the mobile home capture.
-
-[Phone home](screenshots/mobile-home-light-default.png)
+Empty, loading, and error states of the workspace, destructive confirmations, and onboarding live in the app. Not captured.

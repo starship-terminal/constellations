@@ -1,62 +1,37 @@
-# Patterns
+# Overflow patterns
 
-How the public pages are built. Screenshots are viewport captures at 1440x900
-(desktop) and 390x844 at 2x (phone), after the cookie banner was dismissed
-with Required only except where a shot still shows it.
+Public pages only, captured 2026-11-21. The desktop app and the signed-in product are not in these shots.
 
 ## Marketing shell
 
-Sticky header, 96px tall on desktop, transparent over the hero, 77px on the phone. Wordmark left, Product / Examples / Blog / Pricing, then Sign In and a black Download for free button. Product opens a full-bleed white mega-menu. Phone replaces the links with a hamburger that opens a white drawer ending in Sign in and Download for free.
+Every marketing page shares a white header: wordmark, Product mega menu, Examples, Blog, Pricing, a quiet Sign In, and a black Download for free button. The footer repeats the same destinations plus Stories, Events, Media Kit, and the legal pages. Cookie bar is present on first load and was hidden, never accepted.
 
-[screenshots/home-light-default.png](screenshots/home-light-default.png)
-[screenshots/home-light-nav-open.png](screenshots/home-light-nav-open.png)
-[screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png)
-[screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png)
+Screenshots: [home-light-default.png](screenshots/home-light-default.png), [home-light-product-menu.png](screenshots/home-light-product-menu.png).
 
 ## Hero
 
-White type on a blue-violet wash, centred. Display headline, a two-line lede, one black primary button. The wash is painted, not a CSS gradient on the section. A product screenshot sits under the fold. A blue chat bubble is fixed at the bottom right (an iframe; not opened).
+A full-bleed blue-violet wash, a 56px extra-bold white headline, a centred lede, and one black button. A secondary text link opens the product-demo dialog. The wash is a painted gradient, not a token. The Canvas, Prototype, and Story labels under the hero open later frames of that same dialog. They are not in-page tab panels.
 
-## Interior page
-
-Same header. Black display headline on white, often over a faint blue wash at the right edge. Body sections alternate white, `#fafafc` (`.site-section--gray-light`, 156px padding) and `#f2f2f4` (`.site-section--gray-dark`).
-
-[screenshots/features-light-default.png](screenshots/features-light-default.png)
-[screenshots/how-it-works-light-default.png](screenshots/how-it-works-light-default.png)
-[screenshots/download-light-default.png](screenshots/download-light-default.png)
-[screenshots/examples-light-default.png](screenshots/examples-light-default.png)
-[screenshots/stories-light-default.png](screenshots/stories-light-default.png)
-[screenshots/integrations-light-default.png](screenshots/integrations-light-default.png)
-[screenshots/enterprise-light-default.png](screenshots/enterprise-light-default.png)
-[screenshots/blog-light-default.png](screenshots/blog-light-default.png)
+Screenshot: [home-light-default.png](screenshots/home-light-default.png).
 
 ## Pricing
 
-Two plan cards side by side, white, 24px radius, soft shadow. Pro leads with a blue title and a black price. Enterprise leads with a blue title and a "Everything in Pro plus" row. No billing switch.
+Two plan cards on white, 24px radius, a soft shadow, a black full-width trial button, then an FAQ accordion. No monthly/annual switch was on the page.
 
-[screenshots/pricing-light-default.png](screenshots/pricing-light-default.png)
-[screenshots/mobile-pricing-light-default.png](screenshots/mobile-pricing-light-default.png)
+Screenshots: [pricing-light-default.png](screenshots/pricing-light-default.png), [pricing-light-faq-open.png](screenshots/pricing-light-faq-open.png).
 
-## Footer
+## Phone
 
-White, 128px top padding, 14px type. Four link columns, a newsletter field (4% black, 8px radius, 48px) and a Subscribe button. Legal row: Cookie Statement, Terms, Privacy. Subscribe was not pressed.
+At 390px the header collapses to the wordmark and a 22px toggler. The opened menu is a white sheet of 24px bold links, plus Sign in and Download for free. Sign in is the wall and was not followed.
 
-## Cookie notice
+Screenshots: [mobile-home-light-default.png](screenshots/mobile-home-light-default.png), [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
-White bar over the lower hero. 14px sentence, a blue Cookie Statement link, Required only (grey) and Allow all (black). Required only was the only press used to dismiss it.
+## Shared player
 
-## Signed-out app
+`/s/<id>/` is a public Overflow document, not the marketing system. One homepage example was captured as the family. It is a demo of the product chrome, not the signed-in editor.
 
-Split layout at 1440: a 485px `#d6f3ff` panel with the wordmark, a short line, and an illustration; a white form column. Phone drops the panel and centres the form under the wordmark.
+Screenshot: [share-light-default.png](screenshots/share-light-default.png).
 
-Sign in: email, password, disabled Sign in until the fields validate, an "or" rule, Sign in with Google, Sign in with SSO, then a trial card with a platform menu and a blue Download for free. None of those actions were taken.
+## Not on the public site
 
-Sign up: first name, last name, email, password, two checkboxes, a disabled Sign up, Sign up with Google. Not submitted. The form asks for a name and a password, so it is not an email-only signup.
-
-[screenshots/signin-light-default.png](screenshots/signin-light-default.png)
-[screenshots/signup-light-default.png](screenshots/signup-light-default.png)
-[screenshots/mobile-signin-light-default.png](screenshots/mobile-signin-light-default.png)
-
-## What these pages do not show
-
-The signed-in product, the desktop app, a payment step, a validation error, an empty dashboard, a loading state, and a destructive confirm. `/n/forgot` is a 404. `support.overflow.io` returned 403.
+No validation form, empty state, loading state, error state, destructive confirmation, or onboarding. Those live behind the sign-in wall.

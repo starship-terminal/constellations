@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from appwrite.io on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) with the marketing site's pinned dark theme, and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from appwrite.io on 2026-11-21 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) with the marketing site's pinned dark theme, and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -14,27 +14,7 @@ Announcement banner. The strip above the header carrying the current announcemen
 
 Page: home. Selector: `div:has(> button[aria-label*="ismiss" i])`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 1440 x 57 |
-| Padding | 0px |
-| Border | T: none; R: none; B: 1px solid #2d2d31; L: none |
-| Radius | 0px |
-| Background | transparent |
-| Background image | linear-gradient(90deg, #0d0d10 0%, #1c191e 34%, #2b252b 100%) |
-| Box shadow | none |
-| Outline | none |
-| Font | -apple-system 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #fafafa |
-| Text node | span.items-center.justify-center: -apple-system 10px/15px 500, #ffb3d9 |
-| Transition | none |
-| Icon | 20 x 20, colour #fafafa, fill #000000 |
-| Painted layers | div.relative.isolate 1440.0x57.0 image linear-gradient(90deg, #0d0d10 0%, #1c191e 34%, #2b252b 100%) border B:1px solid #2d2d31; a.group.relative 1440.0x56.0 bg #ffffff @ 0.03; span.items-center.justify-center 85.0x19.0 bg #ffb3d9 @ 0.15 r 8px; span.hidden.h-3.5 1.0x14.0 bg #2d2d31; span.inline-flex.h-7 78.6x28.0 bg #ffb3d9 @ 0.9 r 8px |
-| Ancestor paint | 1 up div.sticky.top-0 bg #19191c |
-| How | at rest |
-
-Crops: `banner-default.png`.
+Not found on the page at capture time.
 
 #### banner-dismiss
 
@@ -42,25 +22,7 @@ Banner dismiss button.
 
 Page: home. Selector: `button[aria-label*="ismiss" i]`. States: default, hover, focus-visible, pressed.
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 32 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | #ffffff @ 0.05 | = | #ffffff @ 0.05 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #54545d @ 0.5 offset 0px | = |
-| Font | -apple-system 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #a8a8b3 | #fafafa | = | #fafafa |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #a8a8b3 | 16 x 16, colour #fafafa | = | 16 x 16, colour #fafafa |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | button.absolute.end-1 32.0x32.0 bg #ffffff @ 0.05 r 8px | button.absolute.end-1 32.0x32.0 r 8px outline 1px auto #54545d @ 0.5 offset 0px | button.absolute.end-1 32.0x32.0 bg #ffffff @ 0.05 r 8px |
-
-Crops: `banner-dismiss-default.png`, `banner-dismiss-hover.png`, `banner-dismiss-focus-visible.png`, `banner-dismiss-pressed.png`.
+Not found on the page at capture time.
 
 #### header
 
@@ -203,7 +165,7 @@ Page: home. Selector: `header a[aria-label*="GitHub" i]`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 76.83 x 36 | = | = | = |
+| Size (w x h) | 79.05 x 36 | = | = | = |
 | Padding | 0px 10px | = | = | = |
 | Gap | 6px | = | = | = |
 | Border | none | = | = | = |
@@ -219,7 +181,7 @@ Page: home. Selector: `header a[aria-label*="GitHub" i]`. States: default, hover
 | Cursor | pointer | = | = | = |
 | Icon | 16 x 16, colour #9f9fa9 | 16 x 16, colour #fafafa | 16 x 16, colour #fafafa | 16 x 16, colour #fafafa |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | a.inline-flex.h-9 76.8x36.0 bg #2d2d31 r 8px | a.inline-flex.h-9 76.8x36.0 bg #2d2d31 r 8px outline 1px auto #54545d @ 0.5 offset 1px | a.inline-flex.h-9 76.8x36.0 bg #2d2d31 r 8px |
+| Painted layers | - | a.inline-flex.h-9 79.0x36.0 bg #2d2d31 r 8px | a.inline-flex.h-9 79.0x36.0 bg #2d2d31 r 8px outline 1px auto #54545d @ 0.5 offset 1px | a.inline-flex.h-9 79.0x36.0 bg #2d2d31 r 8px |
 
 Crops: `nav-github-default.png`, `nav-github-hover.png`, `nav-github-focus-visible.png`, `nav-github-pressed.png`.
 
@@ -432,7 +394,7 @@ Page: home. Selector: `[aria-label="React"]`. States: default, hover, focus-visi
 | Transition | transform, translate, scale, rotate 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.group.flex 36.0x36.0 outline 1px auto #54545d @ 0.5 offset 1px | = |
+| Painted layers | - | = | a.home-tool-link.group 36.0x36.0 outline 1px auto #54545d @ 0.5 offset 1px | = |
 
 Crops: `framework-icon-default.png`, `framework-icon-hover.png`, `framework-icon-focus-visible.png`, `framework-icon-pressed.png`.
 
@@ -458,7 +420,7 @@ Page: home. Selector: `a[aria-label^="Learn more about"]`. States: default, hove
 | Cursor | pointer | = | = |
 | Ancestor paint | 2 up div.product-bento-grid.mt-10 bg #19191c shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa @ 0.06 0px 1px 0px 0px inset | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab |
-| Painted layers | - | = | a.link-unstyled.absolute 430.3x379.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #19191c 0px 0px 0px 2px, #54545d 0px 0px 0px 4px, #000000 @ 0 0px 0px 0px 0px |
+| Painted layers | - | = | a.link-unstyled.product-bento-link 430.3x379.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #19191c 0px 0px 0px 2px, #54545d 0px 0px 0px 4px, #000000 @ 0 0px 0px 0px 0px |
 
 Crops: `product-card-default.png`, `product-card-hover.png`, `product-card-focus-visible.png`.
 
@@ -623,23 +585,20 @@ Page: pricing. Selector: `button[aria-expanded]`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 720.69 x 60 | = | = | = |
-| Padding | 20px 0px | = | = | = |
-| Gap | 16px | = | = | = |
+| Size (w x h) | 32 x 32 | = | = | = |
+| Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 8px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #54545d @ 0.5 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | = |
-| Outline | none | = | = | = |
-| Font | -apple-system 14px/20px 500 | = | = | = |
+| Background | transparent | #2d2d31 | = | #2d2d31 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #54545d @ 0.5 offset 0px | = |
+| Font | -apple-system 16px/24px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #fafafa | = | = | = |
-| Text node | span.pe-4.text-[14px]: -apple-system 14px/20px 500, #fafafa | = | = | = |
-| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Colour | #9f9fa9 | #fafafa | = | #fafafa |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #9f9fa9 | = | = | = |
+| Painted layers | span.h-4.w-4 16.0x16.0 bg #9f9fa9 | button.flex.h-8 32.0x32.0 bg #2d2d31 r 8px; span.h-4.w-4 16.0x16.0 bg #fafafa | button.flex.h-8 32.0x32.0 r 8px outline 1px auto #54545d @ 0.5 offset 0px; span.h-4.w-4 16.0x16.0 bg #9f9fa9 | button.flex.h-8 32.0x32.0 bg #2d2d31 r 8px; span.h-4.w-4 16.0x16.0 bg #fafafa |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | button.focus-visible:border-ring.focus-visible:ring-ring/50 720.7x60.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #54545d @ 0.5 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | = |
 
 Crops: `faq-question-default.png`, `faq-question-hover.png`, `faq-question-focus-visible.png`, `faq-question-pressed.png`.
 
@@ -651,21 +610,19 @@ Page: pricing. Selector: `button[aria-expanded]`. States: opened.
 
 | Property | opened |
 |---|---|
-| Size (w x h) | 720.69 x 60 |
-| Padding | 20px 0px |
-| Gap | 16px |
+| Size (w x h) | 32 x 32 |
+| Padding | 0px |
 | Border | none |
 | Radius | 8px |
-| Background | transparent |
+| Background | #2d2d31 |
 | Box shadow | none |
 | Outline | none |
-| Font | -apple-system 14px/20px 500 |
+| Font | -apple-system 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #fafafa |
-| Text node | span.pe-4.text-[14px]: -apple-system 14px/20px 500, #fafafa |
-| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | Cursor | pointer |
-| Icon | 16 x 16, colour #9f9fa9 |
+| Painted layers | button.flex.h-8 32.0x32.0 bg #2d2d31 r 8px; span.h-4.w-4 16.0x16.0 bg #fafafa |
 | How | own toggle |
 
 Crops: `faq-open-opened.png`.
@@ -1146,7 +1103,7 @@ Page: signin. Selector: `button[aria-label="Login with GitLab"]`. States: defaul
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 36 x 36 | 278.98 x 36 | 279 x 36 | 279 x 36 |
+| Size (w x h) | 36 x 36 | 278.97 x 36 | 279 x 36 | 279 x 36 |
 | Padding | 8px 0px | = | = | = |
 | Gap | 0px | = | = | = |
 | Border | 1px solid #2d2d31 | = | = | = |
@@ -1222,29 +1179,29 @@ Crops: `passkey-button-default.png`, `passkey-button-hover.png`, `passkey-button
 
 #### email-input
 
-Email field. Text was typed and deleted; the form was never submitted.
+Email field. Focused with element.focus(). Nothing was typed and the form was never submitted.
 
-Page: signin. Selector: `input[placeholder="Your email"]`. States: default, focused, filled.
+Page: signin. Selector: `input[placeholder="Your email"]`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 367 x 36 | = | = |
-| Padding | 4px 12px | = | = |
-| Border | 1px solid #2d2d31 | 1px solid #54545d | 1px solid #54545d |
-| Radius | 8px | = | = |
-| Background | #2d2d31 @ 0.3 | = | = |
-| Box shadow | none | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #54545d @ 0.5 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #54545d @ 0.5 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
-| Outline | none | = | = |
-| Font | -apple-system 14px/20px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #fafafa | = | = |
-| Transition | color, box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
-| Cursor | text | = | = |
-| Placeholder | #9f9fa9, opacity 1 | = | = |
-| Painted layers | input.file:text-foreground.placeholder:text-muted-foreground 367.0x36.0 bg #2d2d31 @ 0.3 border T:1px solid #2d2d31 / R:1px solid #2d2d31 / B:1px solid #2d2d31 / L:1px solid #2d2d31 r 8px | input.file:text-foreground.placeholder:text-muted-foreground 367.0x36.0 bg #2d2d31 @ 0.3 border T:1px solid #54545d / R:1px solid #54545d / B:1px solid #54545d / L:1px solid #54545d r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #54545d @ 0.5 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | input.file:text-foreground.placeholder:text-muted-foreground 367.0x36.0 bg #2d2d31 @ 0.3 border T:1px solid #54545d / R:1px solid #54545d / B:1px solid #54545d / L:1px solid #54545d r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #54545d @ 0.5 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
-| How | at rest | clicked into the field | typed "dev@example.com", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 367 x 36 | = |
+| Padding | 4px 12px | = |
+| Border | 1px solid #2d2d31 | 1px solid #54545d |
+| Radius | 8px | = |
+| Background | #2d2d31 @ 0.3 | = |
+| Box shadow | none | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #54545d @ 0.5 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = |
+| Font | -apple-system 14px/20px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #fafafa | = |
+| Transition | color, box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Cursor | text | = |
+| Placeholder | #9f9fa9, opacity 1 | = |
+| Painted layers | input.file:text-foreground.placeholder:text-muted-foreground 367.0x36.0 bg #2d2d31 @ 0.3 border T:1px solid #2d2d31 / R:1px solid #2d2d31 / B:1px solid #2d2d31 / L:1px solid #2d2d31 r 8px | input.file:text-foreground.placeholder:text-muted-foreground 367.0x36.0 bg #2d2d31 @ 0.3 border T:1px solid #54545d / R:1px solid #54545d / B:1px solid #54545d / L:1px solid #54545d r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #54545d @ 0.5 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | element.focus(), nothing typed |
 
-Crops: `email-input-default.png`, `email-input-focused.png`, `email-input-filled.png`.
+Crops: `email-input-default.png`, `email-input-focused.png`.
 
 #### password-input
 
@@ -1268,7 +1225,7 @@ Page: signin. Selector: `input[type="password"]`. States: default, focused.
 | Cursor | text | = |
 | Placeholder | #9f9fa9, opacity 1 | = |
 | Painted layers | input.file:text-foreground.placeholder:text-muted-foreground 367.0x36.0 bg #2d2d31 @ 0.3 border T:1px solid #2d2d31 / R:1px solid #2d2d31 / B:1px solid #2d2d31 / L:1px solid #2d2d31 r 8px | input.file:text-foreground.placeholder:text-muted-foreground 367.0x36.0 bg #2d2d31 @ 0.3 border T:1px solid #54545d / R:1px solid #54545d / B:1px solid #54545d / L:1px solid #54545d r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #54545d @ 0.5 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
-| How | at rest | clicked into the field |
+| How | at rest | element.focus(), nothing typed |
 
 Crops: `password-input-default.png`, `password-input-focused.png`.
 

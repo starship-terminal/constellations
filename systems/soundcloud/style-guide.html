@@ -1,82 +1,163 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SoundCloud style guide</title>
 <style>
-  * { box-sizing: border-box; }
-  body { margin: 0; background: #121212; color: #ffffff; font: 400 14px/20px Söhne, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  header, main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
-  h1 { font-size: 28px; line-height: 36px; font-weight: 600; margin: 0 0 8px; }
-  h2 { font-size: 22px; line-height: 28px; font-weight: 600; margin: 36px 0 12px; }
-  p.lead { color: #999999; max-width: 68ch; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-  .sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
-  .sw i { width: 44px; height: 44px; border-radius: 4px; box-shadow: inset 0 0 0 1px #ffffff29; display: block; }
-  .sw b { display: block; font-size: 12px; }
-  .sw span, .ty small { color: #999999; font-size: 12px; font-weight: 400; }
-  .ty { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ffffff29; align-items: baseline; }
-  .sp { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
-  .sp i { height: 12px; background: #ff5500; display: block; }
-  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-  .pill { display: inline-flex; align-items: center; height: 36px; padding: 0 18px; border-radius: 9999px; font-weight: 600; border: 0; }
-  .white { background: #ffffff; color: #000000; }
-  .black { background: #000000; color: #ffffff; }
-  .soft { background: #f3f3f3; color: #121212; height: 32px; padding: 0 24px; font-size: 17px; }
-  .oauth { display: inline-flex; align-items: center; justify-content: center; height: 48px; width: 280px; border-radius: 100px; background: transparent; color: #ffffff; font-weight: 600; border: 1px solid #ffffff29; }
-  .field { height: 54px; width: 280px; border-radius: 4px; background: #303030; color: #ffffff; border: 0; padding: 0 16px; }
-  .link { color: #699fff; }
-  code { font-size: 12px; }
+:root {
+  --color-orange: #ff5500;
+  --color-link: #699fff;
+  --color-focus: #044dd2;
+  --color-page: #121212;
+  --color-white: #ffffff;
+  --color-muted: #999999;
+  --color-field: #303030;
+  --color-grey555: #555555;
+  --fontFamily-soehne: Söhne, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --fontFamily-inter: Inter, sans-serif;
+  --typography-display: 800 65px/55px var(--fontFamily-soehne);
+  --typography-title: 600 28px/36px var(--fontFamily-soehne);
+  --typography-heading: 600 22px/28px var(--fontFamily-soehne);
+  --typography-body: 400 14px/20px var(--fontFamily-soehne);
+  --typography-label: 600 14px/20px var(--fontFamily-soehne);
+  --typography-mobileTitle: 700 36px/45px var(--fontFamily-soehne);
+  --typography-helpTitle: 600 52px/72px var(--fontFamily-inter);
+  --radius-pill: 9999px;
+  --radius-field: 3px;
+  --radius-mobileControl: 4px;
+  --radius-helpSearch: 32px;
+  --space-1: 6px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --size-button: 32px;
+  --size-search: 36px;
+  --size-searchWidth: 440px;
+  --size-mobileButton: 40px;
+  --size-mobileCta: 48px;
+  --size-tab: 50px;
+  --size-focus: 2px;
+  --color-page: var(--core-color-page);
+  --color-surface: var(--core-color-field);
+  --color-text: var(--core-color-white);
+  --color-muted: var(--core-color-muted);
+  --color-accent: var(--core-color-orange);
+  --color-link: var(--core-color-link);
+  --color-border: #555555;
+  --color-onAccent: var(--core-color-page);
+  --color-button: var(--core-color-white);
+  --color-focus: var(--core-color-focus);
+  --component-button-bg: var(--dark-color-button);
+  --component-button-text: var(--dark-color-onAccent);
+  --component-button-radius: var(--core-radius-pill);
+  --component-button-height: var(--core-size-button);
+  --component-field-bg: var(--dark-color-surface);
+  --component-field-text: var(--dark-color-text);
+  --component-field-radius: var(--core-radius-field);
+  --component-field-height: var(--core-size-search);
+  color-scheme: dark;
+  --sg-sans: var(--core-fontFamily-soehne);
+}
+[data-mode="light"] {
+  --color-page: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: var(--core-color-page);
+  --color-muted: var(--core-color-muted);
+  --color-accent: var(--core-color-orange);
+  --color-link: var(--core-color-focus);
+  --color-border: #e2e8f0;
+  --color-onAccent: var(--core-color-white);
+  --color-button: var(--core-color-page);
+  --color-focus: var(--core-color-focus);
+  --component-button-bg: var(--light-color-button);
+  --component-button-text: var(--light-color-onAccent);
+  --component-button-radius: var(--core-radius-mobileControl);
+  --component-button-height: var(--core-size-mobileButton);
+  --component-field-bg: #f2f2f2;
+  --component-field-text: var(--light-color-text);
+  --component-field-radius: var(--core-radius-mobileControl);
+  --component-field-height: 44px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--dark-color-page); color: var(--dark-color-text); font: 400 14px/20px var(--sg-sans); }
+[data-mode="light"] body { background: var(--light-color-page); color: var(--light-color-text); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { font: 600 28px/36px var(--sg-sans); margin: 0; }
+h2 { font: 600 22px/28px var(--sg-sans); margin: 40px 0 12px; }
+p { max-width: 70ch; color: var(--dark-color-muted); }
+[data-mode="light"] p { color: var(--light-color-muted); }
+button.theme { background: var(--dark-color-button); color: var(--dark-color-onAccent); border: 0; border-radius: var(--core-radius-pill); height: var(--core-size-button); padding: 6px 12px; font: 600 14px/20px var(--sg-sans); cursor: pointer; }
+[data-mode="light"] button.theme { background: var(--light-color-button); color: var(--light-color-onAccent); border-radius: var(--core-radius-mobileControl); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 36px 1fr; gap: 8px; align-items: center; }
+.sw i { width: 36px; height: 36px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(128,128,128,.4); }
+.sw b { font-size: 12px; }
+.sw span { display: block; font-size: 11px; opacity: .7; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.pill { height: var(--dark-component-button-height); padding: 6px 12px; border: 0; border-radius: var(--dark-component-button-radius); background: var(--dark-component-button-bg); color: var(--dark-component-button-text); font: 600 14px/20px var(--sg-sans); }
+[data-mode="light"] .pill { height: var(--light-component-button-height); border-radius: var(--light-component-button-radius); background: var(--light-component-button-bg); color: var(--light-component-button-text); font-weight: 400; }
+.quiet { background: transparent; color: var(--dark-color-text); }
+[data-mode="light"] .quiet { color: var(--light-color-text); }
+.field { height: var(--dark-component-field-height); width: 280px; border-radius: var(--dark-component-field-radius); background: var(--dark-component-field-bg); color: var(--dark-component-field-text); border: 1px solid transparent; padding: 8px 16px; font: 400 14px/20px var(--sg-sans); }
+[data-mode="light"] .field { height: var(--light-component-field-height); border-radius: var(--light-component-field-radius); background: var(--light-component-field-bg); color: var(--light-component-field-text); border-color: var(--light-color-border); }
+.field:focus { outline: none; box-shadow: inset 0 0 0 var(--core-size-focus) var(--dark-color-focus); }
+a.sample { color: var(--dark-color-link); }
+[data-mode="light"] a.sample { color: var(--light-color-link); }
+.card { background: var(--dark-color-surface); border-radius: 4px; padding: 16px; max-width: 360px; }
+[data-mode="light"] .card { background: var(--light-color-surface); box-shadow: inset 0 0 0 1px var(--light-color-border); }
+.note { font-size: 12px; }
 </style>
 </head>
 <body>
+<div class="wrap">
 <header>
   <h1>SoundCloud</h1>
-  <p class="lead">Public signed-out surfaces, measured 2026-11-19. Dark is the listener home. Light is the standalone auth page and the phone home bar. Söhne is proprietary and falls back to the system sans here. Values come from tokens.json.</p>
+  <button class="theme" type="button" id="theme">Light shell</button>
 </header>
-<main>
-  <h2>Colour, dark</h2>
-  <div class="grid">
-    <div class="sw"><i style="background:#121212"></i><div><b>page</b><span>#121212</span></div></div>
-    <div class="sw"><i style="background:#303030"></i><div><b>surface</b><span>#303030</span></div></div>
-    <div class="sw"><i style="background:#ffffff"></i><div><b>text</b><span>#ffffff</span></div></div>
-    <div class="sw"><i style="background:#999999"></i><div><b>muted</b><span>#999999</span></div></div>
-    <div class="sw"><i style="background:#ff5500"></i><div><b>accent</b><span>#ff5500</span></div></div>
-    <div class="sw"><i style="background:#ffffff29"></i><div><b>border</b><span>#ffffff29</span></div></div>
-    <div class="sw"><i style="background:#f3f3f3"></i><div><b>button-soft</b><span>#f3f3f3</span></div></div>
-    <div class="sw"><i style="background:#699fff"></i><div><b>link</b><span>#699fff</span></div></div>
-  </div>
-  <h2>Colour, light</h2>
-  <div class="grid">
-    <div class="sw"><i style="background:#ffffff"></i><div><b>page</b><span>#ffffff</span></div></div>
-    <div class="sw"><i style="background:#f3f3f3"></i><div><b>surface</b><span>#f3f3f3</span></div></div>
-    <div class="sw"><i style="background:#121212"></i><div><b>text</b><span>#121212</span></div></div>
-    <div class="sw"><i style="background:#666666"></i><div><b>muted</b><span>#666666</span></div></div>
-    <div class="sw"><i style="background:#044dd2"></i><div><b>link</b><span>#044dd2</span></div></div>
-    <div class="sw"><i style="background:#e76b9f"></i><div><b>contact-pink</b><span>#e76b9f</span></div></div>
-    <div class="sw"><i style="background:#ab87e2"></i><div><b>contact-lilac</b><span>#ab87e2</span></div></div>
-  </div>
-  <h2>Type</h2>
-  <div class="ty"><div class="k">hero<small>65px / 55.25px · 800</small></div><div style="font-size:40px;font-weight:800;letter-spacing:-1.3px;line-height:1">Discover.</div></div>
-  <div class="ty"><div class="k">page-title<small>28px / 36px · 600</small></div><div style="font-size:28px;font-weight:600;line-height:36px">Discover Tracks and Playlists</div></div>
-  <div class="ty"><div class="k">section<small>22px / 28px · 600</small></div><div style="font-size:22px;font-weight:600">Artists to watch out for</div></div>
-  <div class="ty"><div class="k">lede<small>19px / 20.9px · 600</small></div><div style="font-size:19px;font-weight:600">Discover your next obsession.</div></div>
-  <div class="ty"><div class="k">body<small>14px / 20px · 400</small></div><div>Search for artists, bands, tracks, podcasts</div></div>
-  <h2>Radius and space</h2>
-  <div class="sp"><i style="width:999px;max-width:100%;border-radius:9999px"></i><span>pill 9999px</span></div>
-  <div class="sp"><i style="width:16px"></i><span>hero card 16px</span></div>
-  <div class="sp"><i style="width:4px"></i><span>field and mobile control 4px</span></div>
-  <div class="sp"><i style="width:3px"></i><span>header search 3px</span></div>
-  <h2>Controls</h2>
-  <div class="row">
-    <span class="pill white">Sign in</span>
-    <span class="pill black">Create account</span>
-    <span class="pill soft">Get started</span>
-    <span class="oauth">Continue with Google</span>
-    <input class="field" placeholder="Your email address or profile URL" aria-label="Email">
-    <span class="link">Learn More</span>
-  </div>
-</main>
+<p>Public capture, 2026-11-21. Dark is the signed-out desktop player. Light is the phone shell at m.soundcloud.com plus the Help Center orange. Values come from tokens.json.</p>
+<h2>Colour</h2>
+<div class="swatches" id="swatches"></div>
+<h2>Type</h2>
+<p style="font: var(--core-typography-display); color: inherit;">Discover. Get discovered.</p>
+<p style="font: var(--core-typography-title); color: inherit;">Discover tracks and playlists</p>
+<p style="font: var(--core-typography-body); color: inherit;">Body at 14px on 20px, Söhne with a system fallback.</p>
+<h2>Controls</h2>
+<div class="row">
+  <button class="pill" type="button">Create account</button>
+  <button class="pill quiet" type="button">Sign in</button>
+  <input class="field" placeholder="Search for artists, bands, tracks, podcasts" aria-label="Search">
+  <a class="sample" href="#colour">Learn more</a>
+</div>
+<div class="card">
+  <strong>Create an account or sign in</strong>
+  <p class="note">The real dialog is an iframe from secure.soundcloud.com. This card only shows the surface colour.</p>
+</div>
+<p class="note">Focus on the field uses the measured 2px inset blue. Hover on the real Create account button fades the label to 40% and does not change the fill. That opacity is listed under notTokenised.</p>
+</div>
+<script>
+const tokens = {"dark": {}, "note": "swatches are CSS variables"};
+const roles = ["page", "surface", "text", "muted", "accent", "link", "border", "button", "onAccent", "focus"];
+const box = document.getElementById("swatches");
+for (const role of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = '<i></i><div><b>' + role + '</b><span></span></div>';
+  el.querySelector("i").style.background = "var(--dark-color-" + role + ")";
+  box.appendChild(el);
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.getElementById("theme").textContent = next === "dark" ? "Light shell" : "Dark player";
+  for (const sw of box.querySelectorAll(".sw")) {
+    const role = sw.querySelector("b").textContent;
+    sw.querySelector("i").style.background = "var(--" + next + "-color-" + role + ")";
+  }
+});
+</script>
 </body>
 </html>

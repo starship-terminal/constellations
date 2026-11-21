@@ -10,7 +10,7 @@
 // Adapted from the Coursera kit's icons.mjs.
 import crypto from 'crypto';
 import fs from 'fs';
-import { BASE, APP, BOOK, chromium, UA, hidePromo } from './public/lib.mjs';
+import { M, BASE, chromium, UA, closePromo, openStory } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -84,21 +84,44 @@ async function open(p, path, w = 6500) {
 const failed = [];
 async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(label); console.log('  skip', label, String(e.message).split('\n')[0]); } }
 
-const b = await chromium.launch({ headless: true });
-const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
+const b = await chromium.launch();
+const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
 const p = await ctx.newPage();
 
-async function visit(url, tag) {
-  await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
-  await wait(p, 1800);
-  await hidePromo(p);
-  await scrollAll(p, tag);
+await open(p, '/');
+await grab(p, 'home (promo dialog)');
+await closePromo(p);
+await scrollAll(p, 'home');
+for (const [path, tag] of [['/course/science', 'academy'], ['/course/math', 'academy'], ['/course/my', 'academy'], ['/news', 'news']]) {
+  await open(p, path); await closePromo(p); await scrollAll(p, tag);
 }
-
-await visit(BASE + '/', 'home');
-await visit(BASE + '/pricing/', 'pricing');
-await visit(APP + '/login', 'login');
-await visit(BOOK, 'booking');
+await tryDo('create dialog', async () => { await open(p, '/course/my'); await closePromo(p); await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2000); await grab(p, 'academy (create dialog)'); });
+await open(p, '/course/math/algebra-1?unit=real-numbers-and-sets'); await closePromo(p); await grab(p, 'unit');
+await tryDo('science lesson', async () => {
+  await open(p, '/course/science/how-things-work-1/learn?entry_source=start&from=science', 7000);
+  await grab(p, 'lesson-science (audio dialog)');
+  const nn = p.getByRole('button', { name: 'Not now' }); if (await nn.count()) await nn.click();
+  await wait(p, 1500); await grab(p, 'lesson-science');
+  await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await grab(p, 'lesson-science (settings)');
+  await p.keyboard.press('Escape');
+  const pz = p.getByRole('button', { name: 'Pause' }); if (await pz.count()) await pz.click();
+  await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1200); await grab(p, 'lesson-science (ask tutor)');
+});
+await tryDo('math lesson', async () => {
+  await open(p, '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', 8000);
+  const c = p.getByRole('button', { name: 'Continue', exact: true }); if (await c.count()) { await c.click(); await wait(p, 3000); }
+  await grab(p, 'lesson-math');
+  await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1000); await grab(p, 'lesson-math (chapters)');
+});
+await tryDo('history lesson', async () => {
+  await open(p, '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', 8000);
+  await grab(p, 'lesson-history');
+  await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1000); await grab(p, 'lesson-history (chapters)');
+});
+await tryDo('atlas', async () => {
+  await open(p, '/atlas'); await closePromo(p); await scrollAll(p, 'atlas');
+  await openStory(p); await grab(p, 'atlas story');
+});
 await b.close();
 
 // The old set is replaced only after a complete collection, so a run that dies early or loses a page

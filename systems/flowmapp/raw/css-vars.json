@@ -1,779 +1,592 @@
 {
- "readAt": "2026-11-16",
- "source": "the stylesheet bodies read during live signed-out loads of www.flowmapp.com / (the Webflow CDN bundle + inline <style> blocks), app.flowmapp.com /signin and /share/projects/215285/sitemap/<id> (the SPA's CSS-module chunks), re-parsed with CSSStyleSheet; resolved in per-host probes carrying each host's real sheets at 1440 x 900 — every surface is light-only (no dark media query, no theme attribute)",
- "sheets": [
-  "marketing https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css (16493 bytes)",
-  "marketing https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/css/flowmapp-a1ea9c.webflow.shared.a6e488aae.min.css (285003 bytes)",
-  "marketing inline-0 (62 bytes)",
-  "marketing inline-1 (3737 bytes)",
-  "marketing inline-2 (1115 bytes)",
-  "app https://fonts.googleapis.com/css2 (7521 bytes)",
-  "app inline-0 (530 bytes)",
-  "app inline-1 (4827 bytes)",
-  "app inline-2 (373 bytes)",
-  "app inline-3 (9538 bytes)",
-  "app inline-4 (3088 bytes)",
-  "app inline-5 (5692 bytes)",
-  "app inline-6 (4314 bytes)",
-  "app inline-7 (3853 bytes)",
-  "app inline-8 (1308 bytes)",
-  "app inline-9 (4394 bytes)",
-  "app inline-10 (2243 bytes)",
-  "app inline-11 (300 bytes)",
-  "app inline-12 (2478 bytes)",
-  "app inline-13 (4015 bytes)",
-  "app inline-14 (679 bytes)",
-  "app inline-15 (1580 bytes)",
-  "app inline-16 (1304 bytes)",
-  "app inline-17 (812 bytes)",
-  "app inline-18 (421 bytes)",
-  "app inline-19 (471 bytes)",
-  "app inline-20 (502 bytes)",
-  "app inline-21 (800 bytes)",
-  "app inline-22 (520 bytes)",
-  "app inline-23 (349 bytes)",
-  "app inline-24 (1461 bytes)",
-  "app inline-25 (159 bytes)",
-  "app inline-26 (175 bytes)",
-  "app inline-27 (680 bytes)",
-  "app inline-28 (238 bytes)",
-  "app inline-29 (421 bytes)",
-  "app inline-30 (621 bytes)",
-  "app inline-31 (256 bytes)",
-  "app inline-32 (567 bytes)",
-  "app inline-33 (75 bytes)",
-  "app inline-34 (381 bytes)",
-  "app inline-35 (710 bytes)",
-  "app inline-36 (665 bytes)",
-  "app inline-37 (1241 bytes)",
-  "app inline-38 (539 bytes)",
-  "app inline-39 (94 bytes)",
-  "app inline-40 (320 bytes)",
-  "app inline-41 (65 bytes)",
-  "app inline-42 (427 bytes)",
-  "app inline-43 (474 bytes)",
-  "app inline-44 (1580 bytes)",
-  "app inline-45 (368 bytes)",
-  "app inline-46 (2374 bytes)",
-  "app inline-47 (100 bytes)",
-  "app inline-48 (755 bytes)",
-  "app inline-49 (1360 bytes)",
-  "app inline-50 (1860 bytes)",
-  "app inline-51 (1169 bytes)",
-  "app inline-52 (224 bytes)",
-  "app inline-53 (267 bytes)",
-  "app inline-54 (723 bytes)",
-  "app inline-55 (38 bytes)",
-  "app inline-56 (685 bytes)",
-  "app inline-57 (326 bytes)",
-  "app inline-58 (499 bytes)",
-  "app inline-59 (720 bytes)",
-  "app inline-60 (416 bytes)",
-  "app inline-61 (326 bytes)",
-  "app inline-62 (100 bytes)",
-  "app inline-63 (372 bytes)",
-  "app inline-64 (45 bytes)",
-  "app inline-65 (288 bytes)",
-  "app inline-66 (1008 bytes)",
-  "app inline-67 (380 bytes)",
-  "app inline-68 (1247 bytes)",
-  "app inline-69 (81 bytes)",
-  "app inline-70 (566 bytes)",
-  "app inline-71 (656 bytes)",
-  "app inline-72 (811 bytes)",
-  "app inline-73 (2258 bytes)",
-  "app inline-74 (300 bytes)",
-  "app inline-75 (986 bytes)",
-  "app inline-76 (230 bytes)",
-  "app inline-77 (243 bytes)",
-  "app inline-78 (272 bytes)",
-  "app inline-79 (119 bytes)",
-  "app inline-80 (399 bytes)",
-  "app inline-81 (145 bytes)",
-  "app inline-82 (113 bytes)",
-  "app inline-83 (1532 bytes)",
-  "app inline-84 (141 bytes)",
-  "app inline-85 (407 bytes)",
-  "app inline-86 (74 bytes)",
-  "app inline-87 (1058 bytes)",
-  "app inline-88 (349 bytes)",
-  "app inline-89 (32 bytes)",
-  "app inline-90 (123 bytes)",
-  "app inline-91 (704 bytes)",
-  "app inline-92 (698 bytes)",
-  "app inline-93 (1204 bytes)",
-  "app inline-94 (39 bytes)",
-  "app inline-95 (512 bytes)",
-  "app inline-96 (520 bytes)",
-  "app inline-97 (146 bytes)",
-  "app inline-98 (443 bytes)",
-  "app inline-99 (903 bytes)",
-  "app inline-100 (492 bytes)",
-  "app inline-101 (342 bytes)",
-  "app inline-102 (408 bytes)",
-  "app inline-103 (669 bytes)",
-  "app inline-104 (179 bytes)",
-  "app inline-105 (350 bytes)",
-  "app inline-106 (441 bytes)",
-  "app inline-107 (2049 bytes)",
-  "app inline-108 (183 bytes)",
-  "app inline-109 (951 bytes)",
-  "app inline-110 (942 bytes)",
-  "app inline-111 (474 bytes)",
-  "app inline-112 (221 bytes)",
-  "app inline-113 (562 bytes)",
-  "app inline-114 (1421 bytes)",
-  "app inline-115 (1439 bytes)",
-  "app inline-116 (942 bytes)",
-  "app inline-117 (942 bytes)",
-  "app inline-118 (418 bytes)",
-  "app inline-119 (680 bytes)",
-  "app inline-120 (1353 bytes)",
-  "app inline-121 (108 bytes)",
-  "app inline-122 (315 bytes)",
-  "app inline-123 (0 bytes)",
-  "app inline-124 (535 bytes)",
-  "app inline-125 (2674 bytes)",
-  "app inline-126 (390 bytes)",
-  "app inline-127 (966 bytes)",
-  "app inline-128 (1303 bytes)",
-  "app inline-129 (312 bytes)",
-  "app inline-130 (2765 bytes)",
-  "app inline-131 (783 bytes)",
-  "app inline-132 (1381 bytes)",
-  "app inline-133 (396 bytes)",
-  "app inline-134 (234 bytes)",
-  "app inline-135 (286 bytes)",
-  "app inline-136 (949 bytes)",
-  "app inline-137 (570 bytes)",
-  "app inline-138 (92 bytes)",
-  "app inline-139 (265 bytes)",
-  "app inline-140 (1068 bytes)",
-  "app inline-141 (751 bytes)",
-  "app inline-142 (1444 bytes)",
-  "app inline-143 (789 bytes)",
-  "app inline-144 (1288 bytes)",
-  "app inline-145 (1526 bytes)",
-  "app inline-146 (675 bytes)",
-  "app inline-147 (743 bytes)",
-  "app inline-148 (487 bytes)",
-  "app inline-149 (345 bytes)",
-  "app inline-150 (476 bytes)",
-  "app inline-151 (279 bytes)",
-  "app inline-152 (335 bytes)",
-  "app inline-153 (396 bytes)",
-  "app inline-154 (234 bytes)",
-  "app inline-155 (353 bytes)",
-  "app inline-156 (883 bytes)",
-  "app inline-157 (651 bytes)",
-  "app inline-158 (1131 bytes)",
-  "app inline-159 (397 bytes)",
-  "app inline-160 (821 bytes)",
-  "app inline-161 (1337 bytes)",
-  "app inline-162 (450 bytes)",
-  "app inline-163 (272 bytes)",
-  "app inline-164 (452 bytes)",
-  "app inline-165 (954 bytes)",
-  "app inline-166 (1104 bytes)",
-  "app inline-167 (642 bytes)",
-  "app inline-168 (295 bytes)",
-  "app inline-169 (499 bytes)",
-  "app inline-170 (280 bytes)",
-  "app inline-171 (76 bytes)",
-  "app inline-172 (369 bytes)",
-  "app inline-173 (705 bytes)",
-  "app inline-174 (587 bytes)",
-  "app inline-175 (467 bytes)",
-  "app inline-176 (1874 bytes)",
-  "app inline-177 (282 bytes)",
-  "app inline-178 (291 bytes)",
-  "app inline-179 (291 bytes)",
-  "app inline-180 (41 bytes)",
-  "app inline-181 (799 bytes)",
-  "app inline-182 (516 bytes)",
-  "app inline-183 (172 bytes)",
-  "app inline-184 (87 bytes)",
-  "app inline-185 (1041 bytes)",
-  "app inline-186 (106 bytes)",
-  "app inline-187 (164 bytes)",
-  "app inline-188 (331 bytes)",
-  "app inline-189 (1318 bytes)",
-  "app inline-190 (840 bytes)",
-  "app inline-191 (829 bytes)",
-  "app inline-192 (67072 bytes)",
-  "app inline-193 (22864 bytes)",
-  "app inline-194 (2159 bytes)",
-  "app inline-195 (1616 bytes)",
-  "app inline-196 (421 bytes)",
-  "app inline-197 (671 bytes)",
-  "app inline-198 (881 bytes)",
-  "app inline-199 (1715 bytes)",
-  "app inline-200 (496 bytes)",
-  "app inline-201 (0 bytes)",
-  "app inline-202 (421 bytes)",
-  "app inline-203 (159 bytes)",
-  "app inline-204 (35 bytes)",
-  "app inline-205 (2370 bytes)",
-  "app inline-206 (616 bytes)",
-  "app inline-207 (342 bytes)",
-  "app inline-208 (385 bytes)",
-  "app inline-209 (1321 bytes)",
-  "app inline-210 (387 bytes)",
-  "app inline-211 (100 bytes)",
-  "app inline-212 (176 bytes)",
-  "app inline-213 (112 bytes)",
-  "app inline-214 (250 bytes)",
-  "app inline-215 (114 bytes)",
-  "app inline-216 (662 bytes)",
-  "app inline-217 (860 bytes)",
-  "app inline-218 (439 bytes)",
-  "app inline-219 (959 bytes)",
-  "app inline-220 (572 bytes)",
-  "app inline-221 (175 bytes)",
-  "app inline-222 (1474 bytes)",
-  "app inline-223 (586 bytes)",
-  "app inline-224 (510 bytes)",
-  "app inline-225 (1410 bytes)",
-  "app inline-226 (126 bytes)",
-  "app inline-227 (563 bytes)",
-  "app inline-228 (716 bytes)",
-  "app inline-229 (98 bytes)",
-  "app inline-230 (412 bytes)",
-  "app inline-231 (378 bytes)",
-  "app inline-232 (295 bytes)",
-  "app inline-233 (32 bytes)",
-  "app inline-234 (295 bytes)",
-  "app inline-235 (126 bytes)",
-  "app inline-236 (183 bytes)",
-  "app inline-237 (187 bytes)",
-  "app inline-238 (670 bytes)",
-  "app inline-239 (298 bytes)",
-  "app inline-240 (1112 bytes)",
-  "app inline-241 (759 bytes)",
-  "app inline-242 (1308 bytes)",
-  "app inline-243 (1581 bytes)",
-  "app inline-244 (1072 bytes)",
-  "app inline-245 (128 bytes)",
-  "app inline-246 (1689 bytes)",
-  "app inline-247 (1598 bytes)",
-  "app inline-248 (509 bytes)",
-  "app inline-249 (272 bytes)",
-  "app inline-250 (123 bytes)",
-  "app inline-251 (132 bytes)",
-  "app inline-252 (96 bytes)",
-  "app inline-253 (660 bytes)",
-  "app inline-254 (220 bytes)",
-  "app inline-255 (651 bytes)",
-  "app inline-256 (535 bytes)",
-  "app inline-257 (583 bytes)",
-  "app inline-258 (136 bytes)",
-  "app inline-259 (680 bytes)",
-  "app inline-260 (326 bytes)",
-  "app inline-261 (1779 bytes)",
-  "app inline-262 (814 bytes)",
-  "app inline-263 (652 bytes)",
-  "app inline-264 (793 bytes)",
-  "app inline-265 (261 bytes)",
-  "app inline-266 (2986 bytes)",
-  "app inline-267 (1016 bytes)",
-  "app inline-268 (1354 bytes)",
-  "app inline-269 (902 bytes)",
-  "app inline-270 (822 bytes)",
-  "app inline-271 (542 bytes)",
-  "app inline-272 (203 bytes)",
-  "app inline-273 (265 bytes)",
-  "app inline-274 (489 bytes)",
-  "app inline-275 (76 bytes)",
-  "app inline-276 (43 bytes)",
-  "app inline-277 (247 bytes)",
-  "app inline-278 (91 bytes)",
-  "app inline-279 (426 bytes)",
-  "app inline-280 (36 bytes)",
-  "app inline-281 (36 bytes)",
-  "app inline-282 (554 bytes)",
-  "app inline-283 (109 bytes)",
-  "app inline-284 (934 bytes)",
-  "app inline-285 (62 bytes)",
-  "app inline-286 (186 bytes)",
-  "app inline-287 (180 bytes)",
-  "app inline-288 (426 bytes)",
-  "app inline-289 (36 bytes)",
-  "app inline-290 (221 bytes)",
-  "app inline-291 (385 bytes)",
-  "app inline-292 (1100 bytes)",
-  "app inline-293 (1071 bytes)",
-  "app inline-294 (995 bytes)",
-  "app inline-295 (985 bytes)",
-  "app inline-296 (393 bytes)",
-  "app inline-297 (458 bytes)",
-  "app inline-298 (2337 bytes)",
-  "app inline-299 (156 bytes)",
-  "app inline-300 (538 bytes)",
-  "app inline-301 (1418 bytes)",
-  "app inline-302 (179 bytes)",
-  "app inline-303 (420 bytes)",
-  "app inline-304 (759 bytes)",
-  "app inline-305 (90 bytes)",
-  "app inline-306 (122 bytes)",
-  "app inline-307 (135 bytes)",
-  "app inline-308 (191 bytes)",
-  "app inline-309 (365 bytes)",
-  "app inline-310 (781 bytes)",
-  "app inline-311 (348 bytes)",
-  "app inline-312 (429 bytes)",
-  "app inline-313 (270 bytes)",
-  "app inline-314 (72 bytes)",
-  "app inline-315 (268 bytes)",
-  "app inline-316 (384 bytes)",
-  "app inline-317 (65 bytes)",
-  "app inline-318 (704 bytes)",
-  "app inline-319 (65 bytes)",
-  "app inline-320 (36 bytes)",
-  "app inline-321 (345 bytes)",
-  "app inline-322 (65 bytes)",
-  "app inline-323 (65 bytes)",
-  "app inline-324 (103 bytes)",
-  "app inline-325 (319 bytes)",
-  "app inline-326 (140 bytes)",
-  "app inline-327 (126 bytes)",
-  "app inline-328 (74 bytes)",
-  "app inline-329 (1238 bytes)",
-  "app inline-330 (298 bytes)",
-  "app inline-331 (763 bytes)",
-  "app inline-332 (230 bytes)",
-  "app inline-333 (325 bytes)",
-  "app inline-334 (499 bytes)",
-  "app inline-335 (183 bytes)",
-  "app inline-336 (583 bytes)",
-  "app inline-337 (164 bytes)",
-  "app inline-338 (705 bytes)",
-  "app inline-339 (823 bytes)",
-  "app inline-340 (721 bytes)",
-  "app inline-341 (814 bytes)",
-  "app inline-342 (372 bytes)",
-  "app inline-343 (861 bytes)",
-  "app inline-344 (1259 bytes)",
-  "app inline-345 (53 bytes)",
-  "app inline-346 (220 bytes)",
-  "app inline-347 (1283 bytes)",
-  "app inline-348 (443 bytes)",
-  "app inline-349 (701 bytes)",
-  "app inline-350 (737 bytes)",
-  "share https://fonts.googleapis.com/css2 (7521 bytes)",
-  "share inline-0 (530 bytes)",
-  "share inline-1 (23748 bytes)",
-  "share inline-2 (179 bytes)",
-  "share inline-3 (189 bytes)",
-  "share inline-4 (180 bytes)",
-  "share inline-5 (190 bytes)",
-  "share inline-6 (216 bytes)",
-  "share inline-7 (217 bytes)",
-  "share inline-8 (217 bytes)",
-  "share inline-9 (218 bytes)",
-  "share inline-10 (127 bytes)",
-  "share inline-11 (116 bytes)",
-  "share inline-12 (530 bytes)",
-  "share inline-13 (10366 bytes)",
-  "share inline-14 (80 bytes)",
-  "share inline-15 (81 bytes)",
-  "share inline-16 (124 bytes)",
-  "share inline-17 (113 bytes)",
-  "share inline-18 (9045 bytes)",
-  "share inline-19 (373 bytes)",
-  "share inline-20 (373 bytes)",
-  "share inline-21 (9538 bytes)",
-  "share inline-22 (3088 bytes)",
-  "share inline-23 (5692 bytes)",
-  "share inline-24 (4314 bytes)",
-  "share inline-25 (3853 bytes)",
-  "share inline-26 (1308 bytes)",
-  "share inline-27 (4394 bytes)",
-  "share inline-28 (2243 bytes)",
-  "share inline-29 (300 bytes)",
-  "share inline-30 (2478 bytes)",
-  "share inline-31 (4015 bytes)",
-  "share inline-32 (679 bytes)",
-  "share inline-33 (1580 bytes)",
-  "share inline-34 (1304 bytes)",
-  "share inline-35 (812 bytes)",
-  "share inline-36 (421 bytes)",
-  "share inline-37 (471 bytes)",
-  "share inline-38 (502 bytes)",
-  "share inline-39 (800 bytes)",
-  "share inline-40 (520 bytes)",
-  "share inline-41 (349 bytes)",
-  "share inline-42 (1461 bytes)",
-  "share inline-43 (159 bytes)",
-  "share inline-44 (175 bytes)",
-  "share inline-45 (680 bytes)",
-  "share inline-46 (238 bytes)",
-  "share inline-47 (421 bytes)",
-  "share inline-48 (621 bytes)",
-  "share inline-49 (256 bytes)",
-  "share inline-50 (567 bytes)",
-  "share inline-51 (75 bytes)",
-  "share inline-52 (381 bytes)",
-  "share inline-53 (710 bytes)",
-  "share inline-54 (665 bytes)",
-  "share inline-55 (1241 bytes)",
-  "share inline-56 (539 bytes)",
-  "share inline-57 (94 bytes)",
-  "share inline-58 (320 bytes)",
-  "share inline-59 (65 bytes)",
-  "share inline-60 (427 bytes)",
-  "share inline-61 (474 bytes)",
-  "share inline-62 (1580 bytes)",
-  "share inline-63 (368 bytes)",
-  "share inline-64 (2374 bytes)",
-  "share inline-65 (100 bytes)",
-  "share inline-66 (755 bytes)",
-  "share inline-67 (1360 bytes)",
-  "share inline-68 (1860 bytes)",
-  "share inline-69 (1169 bytes)",
-  "share inline-70 (224 bytes)",
-  "share inline-71 (267 bytes)",
-  "share inline-72 (723 bytes)",
-  "share inline-73 (38 bytes)",
-  "share inline-74 (685 bytes)",
-  "share inline-75 (326 bytes)",
-  "share inline-76 (499 bytes)",
-  "share inline-77 (720 bytes)",
-  "share inline-78 (416 bytes)",
-  "share inline-79 (326 bytes)",
-  "share inline-80 (100 bytes)",
-  "share inline-81 (372 bytes)",
-  "share inline-82 (45 bytes)",
-  "share inline-83 (288 bytes)",
-  "share inline-84 (1008 bytes)",
-  "share inline-85 (380 bytes)",
-  "share inline-86 (1247 bytes)",
-  "share inline-87 (81 bytes)",
-  "share inline-88 (566 bytes)",
-  "share inline-89 (656 bytes)",
-  "share inline-90 (811 bytes)",
-  "share inline-91 (2258 bytes)",
-  "share inline-92 (300 bytes)",
-  "share inline-93 (986 bytes)",
-  "share inline-94 (230 bytes)",
-  "share inline-95 (243 bytes)",
-  "share inline-96 (272 bytes)",
-  "share inline-97 (119 bytes)",
-  "share inline-98 (399 bytes)",
-  "share inline-99 (145 bytes)",
-  "share inline-100 (113 bytes)",
-  "share inline-101 (1532 bytes)",
-  "share inline-102 (141 bytes)",
-  "share inline-103 (407 bytes)",
-  "share inline-104 (74 bytes)",
-  "share inline-105 (1058 bytes)",
-  "share inline-106 (349 bytes)",
-  "share inline-107 (32 bytes)",
-  "share inline-108 (123 bytes)",
-  "share inline-109 (704 bytes)",
-  "share inline-110 (698 bytes)",
-  "share inline-111 (1204 bytes)",
-  "share inline-112 (39 bytes)",
-  "share inline-113 (512 bytes)",
-  "share inline-114 (520 bytes)",
-  "share inline-115 (146 bytes)",
-  "share inline-116 (443 bytes)",
-  "share inline-117 (903 bytes)",
-  "share inline-118 (492 bytes)",
-  "share inline-119 (342 bytes)",
-  "share inline-120 (408 bytes)",
-  "share inline-121 (669 bytes)",
-  "share inline-122 (179 bytes)",
-  "share inline-123 (350 bytes)",
-  "share inline-124 (441 bytes)",
-  "share inline-125 (2049 bytes)",
-  "share inline-126 (183 bytes)",
-  "share inline-127 (951 bytes)",
-  "share inline-128 (942 bytes)",
-  "share inline-129 (474 bytes)",
-  "share inline-130 (221 bytes)",
-  "share inline-131 (562 bytes)",
-  "share inline-132 (1421 bytes)",
-  "share inline-133 (1439 bytes)",
-  "share inline-134 (942 bytes)",
-  "share inline-135 (942 bytes)",
-  "share inline-136 (418 bytes)",
-  "share inline-137 (680 bytes)",
-  "share inline-138 (1353 bytes)",
-  "share inline-139 (108 bytes)",
-  "share inline-140 (315 bytes)",
-  "share inline-141 (0 bytes)",
-  "share inline-142 (535 bytes)",
-  "share inline-143 (2674 bytes)",
-  "share inline-144 (390 bytes)",
-  "share inline-145 (966 bytes)",
-  "share inline-146 (1303 bytes)",
-  "share inline-147 (312 bytes)",
-  "share inline-148 (2765 bytes)",
-  "share inline-149 (783 bytes)",
-  "share inline-150 (1381 bytes)",
-  "share inline-151 (396 bytes)",
-  "share inline-152 (234 bytes)",
-  "share inline-153 (286 bytes)",
-  "share inline-154 (949 bytes)",
-  "share inline-155 (570 bytes)",
-  "share inline-156 (92 bytes)",
-  "share inline-157 (265 bytes)",
-  "share inline-158 (1068 bytes)",
-  "share inline-159 (751 bytes)",
-  "share inline-160 (1444 bytes)",
-  "share inline-161 (789 bytes)",
-  "share inline-162 (1288 bytes)",
-  "share inline-163 (1526 bytes)",
-  "share inline-164 (675 bytes)",
-  "share inline-165 (743 bytes)",
-  "share inline-166 (487 bytes)",
-  "share inline-167 (345 bytes)",
-  "share inline-168 (476 bytes)",
-  "share inline-169 (279 bytes)",
-  "share inline-170 (335 bytes)",
-  "share inline-171 (396 bytes)",
-  "share inline-172 (234 bytes)",
-  "share inline-173 (353 bytes)",
-  "share inline-174 (883 bytes)",
-  "share inline-175 (651 bytes)",
-  "share inline-176 (1131 bytes)",
-  "share inline-177 (397 bytes)",
-  "share inline-178 (821 bytes)",
-  "share inline-179 (1337 bytes)",
-  "share inline-180 (450 bytes)",
-  "share inline-181 (272 bytes)",
-  "share inline-182 (452 bytes)",
-  "share inline-183 (954 bytes)",
-  "share inline-184 (1104 bytes)",
-  "share inline-185 (642 bytes)",
-  "share inline-186 (295 bytes)",
-  "share inline-187 (499 bytes)",
-  "share inline-188 (280 bytes)",
-  "share inline-189 (76 bytes)",
-  "share inline-190 (369 bytes)",
-  "share inline-191 (705 bytes)",
-  "share inline-192 (587 bytes)",
-  "share inline-193 (467 bytes)",
-  "share inline-194 (1874 bytes)",
-  "share inline-195 (282 bytes)",
-  "share inline-196 (291 bytes)",
-  "share inline-197 (291 bytes)",
-  "share inline-198 (41 bytes)",
-  "share inline-199 (799 bytes)",
-  "share inline-200 (516 bytes)",
-  "share inline-201 (172 bytes)",
-  "share inline-202 (87 bytes)",
-  "share inline-203 (1041 bytes)",
-  "share inline-204 (106 bytes)",
-  "share inline-205 (164 bytes)",
-  "share inline-206 (331 bytes)",
-  "share inline-207 (1318 bytes)",
-  "share inline-208 (840 bytes)",
-  "share inline-209 (829 bytes)",
-  "share inline-210 (67072 bytes)",
-  "share inline-211 (22864 bytes)",
-  "share inline-212 (2159 bytes)",
-  "share inline-213 (1616 bytes)",
-  "share inline-214 (421 bytes)",
-  "share inline-215 (671 bytes)",
-  "share inline-216 (881 bytes)",
-  "share inline-217 (1715 bytes)",
-  "share inline-218 (496 bytes)",
-  "share inline-219 (0 bytes)",
-  "share inline-220 (421 bytes)",
-  "share inline-221 (159 bytes)",
-  "share inline-222 (35 bytes)",
-  "share inline-223 (2370 bytes)",
-  "share inline-224 (616 bytes)",
-  "share inline-225 (342 bytes)",
-  "share inline-226 (385 bytes)",
-  "share inline-227 (1321 bytes)",
-  "share inline-228 (387 bytes)",
-  "share inline-229 (100 bytes)",
-  "share inline-230 (176 bytes)",
-  "share inline-231 (112 bytes)",
-  "share inline-232 (250 bytes)",
-  "share inline-233 (114 bytes)",
-  "share inline-234 (662 bytes)",
-  "share inline-235 (860 bytes)",
-  "share inline-236 (439 bytes)",
-  "share inline-237 (959 bytes)",
-  "share inline-238 (572 bytes)",
-  "share inline-239 (175 bytes)",
-  "share inline-240 (1474 bytes)",
-  "share inline-241 (586 bytes)",
-  "share inline-242 (510 bytes)",
-  "share inline-243 (1410 bytes)",
-  "share inline-244 (126 bytes)",
-  "share inline-245 (563 bytes)",
-  "share inline-246 (716 bytes)",
-  "share inline-247 (98 bytes)",
-  "share inline-248 (412 bytes)",
-  "share inline-249 (378 bytes)",
-  "share inline-250 (295 bytes)",
-  "share inline-251 (32 bytes)",
-  "share inline-252 (295 bytes)",
-  "share inline-253 (126 bytes)",
-  "share inline-254 (183 bytes)",
-  "share inline-255 (187 bytes)",
-  "share inline-256 (670 bytes)",
-  "share inline-257 (298 bytes)",
-  "share inline-258 (1112 bytes)",
-  "share inline-259 (759 bytes)",
-  "share inline-260 (1308 bytes)",
-  "share inline-261 (1581 bytes)",
-  "share inline-262 (1072 bytes)",
-  "share inline-263 (128 bytes)",
-  "share inline-264 (1689 bytes)",
-  "share inline-265 (1598 bytes)",
-  "share inline-266 (509 bytes)",
-  "share inline-267 (272 bytes)",
-  "share inline-268 (123 bytes)",
-  "share inline-269 (132 bytes)",
-  "share inline-270 (96 bytes)",
-  "share inline-271 (660 bytes)",
-  "share inline-272 (220 bytes)",
-  "share inline-273 (651 bytes)",
-  "share inline-274 (535 bytes)",
-  "share inline-275 (583 bytes)",
-  "share inline-276 (136 bytes)",
-  "share inline-277 (680 bytes)",
-  "share inline-278 (326 bytes)",
-  "share inline-279 (1779 bytes)",
-  "share inline-280 (814 bytes)",
-  "share inline-281 (652 bytes)",
-  "share inline-282 (793 bytes)",
-  "share inline-283 (261 bytes)",
-  "share inline-284 (2986 bytes)",
-  "share inline-285 (1016 bytes)",
-  "share inline-286 (1354 bytes)",
-  "share inline-287 (902 bytes)",
-  "share inline-288 (822 bytes)",
-  "share inline-289 (542 bytes)",
-  "share inline-290 (203 bytes)",
-  "share inline-291 (265 bytes)",
-  "share inline-292 (489 bytes)",
-  "share inline-293 (76 bytes)",
-  "share inline-294 (43 bytes)",
-  "share inline-295 (247 bytes)",
-  "share inline-296 (91 bytes)",
-  "share inline-297 (426 bytes)",
-  "share inline-298 (36 bytes)",
-  "share inline-299 (36 bytes)",
-  "share inline-300 (554 bytes)",
-  "share inline-301 (109 bytes)",
-  "share inline-302 (934 bytes)",
-  "share inline-303 (62 bytes)",
-  "share inline-304 (186 bytes)",
-  "share inline-305 (180 bytes)",
-  "share inline-306 (426 bytes)",
-  "share inline-307 (36 bytes)",
-  "share inline-308 (221 bytes)",
-  "share inline-309 (385 bytes)",
-  "share inline-310 (1100 bytes)",
-  "share inline-311 (1071 bytes)",
-  "share inline-312 (995 bytes)",
-  "share inline-313 (985 bytes)",
-  "share inline-314 (393 bytes)",
-  "share inline-315 (458 bytes)",
-  "share inline-316 (2337 bytes)",
-  "share inline-317 (156 bytes)",
-  "share inline-318 (538 bytes)",
-  "share inline-319 (1418 bytes)",
-  "share inline-320 (179 bytes)",
-  "share inline-321 (420 bytes)",
-  "share inline-322 (759 bytes)",
-  "share inline-323 (90 bytes)",
-  "share inline-324 (122 bytes)",
-  "share inline-325 (135 bytes)",
-  "share inline-326 (191 bytes)",
-  "share inline-327 (365 bytes)",
-  "share inline-328 (781 bytes)",
-  "share inline-329 (348 bytes)",
-  "share inline-330 (429 bytes)",
-  "share inline-331 (270 bytes)",
-  "share inline-332 (72 bytes)",
-  "share inline-333 (268 bytes)",
-  "share inline-334 (384 bytes)",
-  "share inline-335 (65 bytes)",
-  "share inline-336 (704 bytes)",
-  "share inline-337 (65 bytes)",
-  "share inline-338 (36 bytes)",
-  "share inline-339 (345 bytes)",
-  "share inline-340 (65 bytes)",
-  "share inline-341 (65 bytes)",
-  "share inline-342 (103 bytes)",
-  "share inline-343 (319 bytes)",
-  "share inline-344 (140 bytes)",
-  "share inline-345 (126 bytes)",
-  "share inline-346 (74 bytes)",
-  "share inline-347 (1238 bytes)",
-  "share inline-348 (298 bytes)",
-  "share inline-349 (763 bytes)",
-  "share inline-350 (230 bytes)",
-  "share inline-351 (325 bytes)",
-  "share inline-352 (499 bytes)",
-  "share inline-353 (183 bytes)",
-  "share inline-354 (583 bytes)",
-  "share inline-355 (164 bytes)",
-  "share inline-356 (705 bytes)",
-  "share inline-357 (823 bytes)",
-  "share inline-358 (721 bytes)",
-  "share inline-359 (814 bytes)",
-  "share inline-360 (372 bytes)",
-  "share inline-361 (861 bytes)",
-  "share inline-362 (1259 bytes)",
-  "share inline-363 (53 bytes)",
-  "share inline-364 (220 bytes)",
-  "share inline-365 (1283 bytes)",
-  "share inline-366 (443 bytes)",
-  "share inline-367 (701 bytes)",
-  "share inline-368 (737 bytes)"
- ],
- "counts": {
-  "rules": 25,
-  "fonts": 48,
-  "names": {
-   "theme": 158,
-   "app": 10,
-   "vendor": 3,
-   "utility": 0,
-   "tailwind": 0
+  "captured": "2026-11-21",
+  "url": "https://www.flowmapp.com/",
+  "sheets": [
+    {
+      "href": null,
+      "rules": 1
+    },
+    {
+      "href": "https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/css/flowmapp-a1ea9c.webflow.shared.a6e488aae.min.css",
+      "rules": 1787
+    },
+    {
+      "href": "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
+      "error": "unreadable"
+    },
+    {
+      "href": null,
+      "rules": 37
+    },
+    {
+      "href": null,
+      "rules": 14
+    }
+  ],
+  "varCount": 80,
+  "vars": {
+    "--bg": [
+      {
+        "value": "#f6f8fa",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--black": [
+      {
+        "value": "black",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--dodger-blue": [
+      {
+        "value": "#0080ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--service-grey": [
+      {
+        "value": "#8c9baa",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--white": [
+      {
+        "value": "white",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--light-steel-blue": [
+      {
+        "value": "#cbd8e5",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--dodger-blue-20": [
+      {
+        "value": "#0080ff33",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--primary-blue": [
+      {
+        "value": "#0050ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--alice-blue": [
+      {
+        "value": "#e8edf2",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--gainsboro": [
+      {
+        "value": "#e6e6e6",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--yellow-green": [
+      {
+        "value": "#99dd2c",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--pale-violet-red": [
+      {
+        "value": "#ff759b",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--dark-grey": [
+      {
+        "value": "#5f6a75",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--basic-blue": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---typography--heading-font": [
+      {
+        "value": "Inter,sans-serif",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---typography--body-font": [
+      {
+        "value": "Inter,sans-serif",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---typography--button-font": [
+      {
+        "value": "Inter,sans-serif",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sizes--radius": [
+      {
+        "value": "20px",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--background": [
+      {
+        "value": "var(--bg)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--foreground": [
+      {
+        "value": "var(--black)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--card": [
+      {
+        "value": "var(--white)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--card-foreground": [
+      {
+        "value": "#060606",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--popover": [
+      {
+        "value": "#ebeaea",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--popover-foreground": [
+      {
+        "value": "#060606",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--primary": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--primary-foreground": [
+      {
+        "value": "#f5f9ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--secondary": [
+      {
+        "value": "#d5efff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--secondary-foreground": [
+      {
+        "value": "#0a0d13",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--muted": [
+      {
+        "value": "#f1f1f1",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--muted-foreground": [
+      {
+        "value": "#777374",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--accent": [
+      {
+        "value": "#ddd",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--accent-foreground": [
+      {
+        "value": "#0d0d0d",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--destructive": [
+      {
+        "value": "#e8262e",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--border": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--input": [
+      {
+        "value": "#0454ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--ring": [
+      {
+        "value": "#275fda",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-1": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-2": [
+      {
+        "value": "#4981f6",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-3": [
+      {
+        "value": "#003af0",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-4": [
+      {
+        "value": "#0037c6",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-5": [
+      {
+        "value": "#0000ab",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar": [
+      {
+        "value": "#f1f1f1",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-foreground": [
+      {
+        "value": "#060606",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-primary": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-primary-foreground": [
+      {
+        "value": "#f5f9ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-accent": [
+      {
+        "value": "#ddd",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-accent-foreground": [
+      {
+        "value": "#0d0d0d",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-border": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-ring": [
+      {
+        "value": "#275fda",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--background-dark": [
+      {
+        "value": "#060606",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--card-dark": [
+      {
+        "value": "#181818",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--card-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--popover-dark": [
+      {
+        "value": "#181818",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--popover-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--primary-dark": [
+      {
+        "value": "#2572ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--primary-foreground-dark": [
+      {
+        "value": "#090d16",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--secondary-dark": [
+      {
+        "value": "#021448",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--secondary-foreground-dark": [
+      {
+        "value": "#f5f9ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--muted-dark": [
+      {
+        "value": "#020202",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--muted-foreground-dark": [
+      {
+        "value": "#8c8c8c",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--accent-dark": [
+      {
+        "value": "#2e2e2e",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--accent-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--destructive-dark": [
+      {
+        "value": "#ef2f34",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--border-dark": [
+      {
+        "value": "#0050ff1a",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--input-dark": [
+      {
+        "value": "#ffffff26",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--ring-dark": [
+      {
+        "value": "#5491ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-1-dark": [
+      {
+        "value": "#2572ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-2-dark": [
+      {
+        "value": "#74afff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-3-dark": [
+      {
+        "value": "#004dff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-4-dark": [
+      {
+        "value": "#5a9cff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-5-dark": [
+      {
+        "value": "#04d",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-dark": [
+      {
+        "value": "#0b0b0b",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-primary-dark": [
+      {
+        "value": "#2572ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-primary-foreground-dark": [
+      {
+        "value": "#090d16",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-accent-dark": [
+      {
+        "value": "#2e2e2e",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-accent-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-border-dark": [
+      {
+        "value": "#ffffff1a",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-ring-dark": [
+      {
+        "value": "#5491ff",
+        "selector": ":root",
+        "context": []
+      }
+    ]
   },
-  "bySelector": {
-   "[vendor] marketing :root": 2,
-   "[vendor] marketing .swiper-lazy-preloader-white": 1,
-   "[vendor] marketing .swiper-lazy-preloader-black": 1,
-   "[theme] marketing :root": 80,
-   "[theme] app :root": 78,
-   "[app] app .emojiPickerContainer--abM98 em-emoji-picker": 4,
-   "[app] app .tox": 5,
-   "[app] share :where(.css-nnuwmp).ant-tooltip": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-blue .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-purple .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-cyan .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-green .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-magenta .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-pink .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-red .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-orange .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-yellow .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-volcano .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-geekblue .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-lime .ant-tooltip-arrow": 1,
-   "[app] share :where(.css-nnuwmp).ant-tooltip.ant-tooltip-gold .ant-tooltip-arrow": 1,
-   "[theme] share :root": 78,
-   "[app] share .emojiPickerContainer--abM98 em-emoji-picker": 4,
-   "[app] share .tox": 5
-  }
- },
- "errors": [],
- "theme": [
-  {
-   "file": "marketing https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/css/flowmapp-a1ea9c.webflow.shared.a6e488aae.min.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
+  "resolved": {
     "--bg": "#f6f8fa",
     "--black": "black",
     "--dodger-blue": "#0080ff",
@@ -787,18 +600,18 @@
     "--yellow-green": "#99dd2c",
     "--pale-violet-red": "#ff759b",
     "--dark-grey": "#5f6a75",
-    "--basic-blue": "var(--primary-blue)",
+    "--basic-blue": "#0050ff",
     "--_apps---typography--heading-font": "Inter,sans-serif",
     "--_apps---typography--body-font": "Inter,sans-serif",
     "--_apps---typography--button-font": "Inter,sans-serif",
     "--_apps---sizes--radius": "20px",
-    "--_apps---colors--background": "var(--bg)",
-    "--_apps---colors--foreground": "var(--black)",
-    "--_apps---colors--card": "var(--white)",
+    "--_apps---colors--background": "#f6f8fa",
+    "--_apps---colors--foreground": "black",
+    "--_apps---colors--card": "white",
     "--_apps---colors--card-foreground": "#060606",
     "--_apps---colors--popover": "#ebeaea",
     "--_apps---colors--popover-foreground": "#060606",
-    "--_apps---colors--primary": "var(--primary-blue)",
+    "--_apps---colors--primary": "#0050ff",
     "--_apps---colors--primary-foreground": "#f5f9ff",
     "--_apps---colors--secondary": "#d5efff",
     "--_apps---colors--secondary-foreground": "#0a0d13",
@@ -807,21 +620,21 @@
     "--_apps---colors--accent": "#ddd",
     "--_apps---colors--accent-foreground": "#0d0d0d",
     "--_apps---colors--destructive": "#e8262e",
-    "--_apps---colors--border": "var(--primary-blue)",
+    "--_apps---colors--border": "#0050ff",
     "--_apps---colors--input": "#0454ff",
     "--_apps---colors--ring": "#275fda",
-    "--_apps---charts--chart-1": "var(--primary-blue)",
+    "--_apps---charts--chart-1": "#0050ff",
     "--_apps---charts--chart-2": "#4981f6",
     "--_apps---charts--chart-3": "#003af0",
     "--_apps---charts--chart-4": "#0037c6",
     "--_apps---charts--chart-5": "#0000ab",
     "--_apps---sidebar--sidebar": "#f1f1f1",
     "--_apps---sidebar--sidebar-foreground": "#060606",
-    "--_apps---sidebar--sidebar-primary": "var(--primary-blue)",
+    "--_apps---sidebar--sidebar-primary": "#0050ff",
     "--_apps---sidebar--sidebar-primary-foreground": "#f5f9ff",
     "--_apps---sidebar--sidebar-accent": "#ddd",
     "--_apps---sidebar--sidebar-accent-foreground": "#0d0d0d",
-    "--_apps---sidebar--sidebar-border": "var(--primary-blue)",
+    "--_apps---sidebar--sidebar-border": "#0050ff",
     "--_apps---sidebar--sidebar-ring": "#275fda",
     "--_apps---colors--background-dark": "#060606",
     "--_apps---colors--foreground-dark": "#f8f8f8",
@@ -854,2022 +667,217 @@
     "--_apps---sidebar--sidebar-accent-foreground-dark": "#f8f8f8",
     "--_apps---sidebar--sidebar-border-dark": "#ffffff1a",
     "--_apps---sidebar--sidebar-ring-dark": "#5491ff"
-   },
-   "bin": "theme"
   },
-  {
-   "file": "app inline-5",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--transparent": "rgba(0, 0, 0, 0)",
-    "--primary-red-500": "rgba(255, 71, 111, 1)",
-    "--primary-basic-blue": "#0050ff",
-    "--primary-basic-white": "#ffffff",
-    "--primary-basic-gray": "#1f1f1f",
-    "--primary-basic-gray-40": "#f5f5f5",
-    "--primary-basic-gray-400": "rgba(153, 153, 153, 1)",
-    "--primary-basic-gray-560": "#707070",
-    "--primary-basic-gray-880": "rgba(31, 31, 31, 1)",
-    "--secondary-gray-800": "#4e4e4e",
-    "--secondary-red": "rgba(255, 112, 112)",
-    "--secondary-red-64": "rgba(255, 112, 112, 0.64)",
-    "--secondary-red-56": "rgba(255, 112, 112, 0.56)",
-    "--secondary-red-20": "rgba(255, 112, 112, 0.2)",
-    "--secondary-red-32": "rgba(255, 112, 112, 0.32)",
-    "--secondary-red-8": "rgba(255, 112, 112, 0.08)",
-    "--secondary-orange": "rgba(255, 163, 52)",
-    "--secondary-orange-64": "rgba(255, 163, 52, 0.64)",
-    "--secondary-orange-56": "rgba(255, 163, 52, 0.56)",
-    "--secondary-orange-20": "rgba(255, 163, 52, 0.2)",
-    "--secondary-orange-32": "rgba(255, 163, 52, 0.32)",
-    "--secondary-orange-8": "rgba(255, 163, 52, 0.08)",
-    "--secondary-yellow": "rgba(245, 204, 0)",
-    "--secondary-yellow-64": "rgba(245, 204, 0, 0.64)",
-    "--secondary-yellow-56": "rgba(245, 204, 0, 0.56)",
-    "--secondary-yellow-20": "rgba(245, 204, 0, 0.2)",
-    "--secondary-yellow-32": "rgba(245, 204, 0, 0.32)",
-    "--secondary-yellow-8": "rgba(245, 204, 0, 0.08)",
-    "--secondary-green": "rgba(54, 235, 141)",
-    "--secondary-green-800": "rgba(22, 94, 56, 1)",
-    "--secondary-green-500": "rgba(54, 235, 141, 1)",
-    "--secondary-green-64": "rgba(54, 235, 141, 0.64)",
-    "--secondary-green-56": "rgba(54, 235, 141, 0.56)",
-    "--secondary-green-20": "rgba(54, 235, 141, 0.2)",
-    "--secondary-green-32": "rgba(54, 235, 141, 0.32)",
-    "--secondary-green-8": "rgba(54, 235, 141, 0.08)",
-    "--secondary-electric": "rgba(58, 243, 255)",
-    "--secondary-electric-64": "rgba(58, 243, 255, 0.64)",
-    "--secondary-electric-56": "rgba(58, 243, 255, 0.56)",
-    "--secondary-electric-20": "rgba(58, 243, 255, 0.2)",
-    "--secondary-electric-32": "rgba(58, 243, 255, 0.32)",
-    "--secondary-electric-8": "rgba(58, 243, 255, 0.08)",
-    "--secondary-blue": "rgba(102, 150, 255)",
-    "--secondary-blue-64": "rgba(102, 150, 255, 0.64)",
-    "--secondary-blue-56": "rgba(102, 150, 255, 0.56)",
-    "--secondary-blue-20": "rgba(102, 150, 255, 0.2)",
-    "--secondary-blue-32": "rgba(102, 150, 255, 0.32)",
-    "--secondary-blue-8": "rgba(102, 150, 255, 0.08)",
-    "--secondary-purple": "rgba(155, 112, 255)",
-    "--secondary-purple-64": "rgba(155, 112, 255, 0.64)",
-    "--secondary-purple-56": "rgba(155, 112, 255, 0.56)",
-    "--secondary-purple-20": "rgba(155, 112, 255, 0.2)",
-    "--secondary-purple-32": "rgba(155, 112, 255, 0.32)",
-    "--secondary-purple-8": "rgba(155, 112, 255, 0.08)",
-    "--secondary-pink": "rgba(255, 153, 255)",
-    "--secondary-pink-64": "rgba(255, 153, 255, 0.64)",
-    "--secondary-pink-56": "rgba(255, 153, 255, 0.56)",
-    "--secondary-pink-20": "rgba(255, 153, 255, 0.2)",
-    "--secondary-pink-32": "rgba(255, 153, 255, 0.32)",
-    "--secondary-pink-8": "rgba(255, 153, 255, 0.08)",
-    "--secondary-gray": "rgba(173, 173, 173)",
-    "--secondary-gray-80": "rgba(173, 173, 173, 0.8)",
-    "--secondary-gray-64": "rgba(173, 173, 173, 0.64)",
-    "--secondary-gray-56": "rgba(173, 173, 173, 0.56)",
-    "--secondary-gray-20": "rgba(173, 173, 173, 0.2)",
-    "--secondary-gray-32": "rgba(173, 173, 173, 0.32)",
-    "--secondary-gray-8": "rgba(173, 173, 173, 0.08)",
-    "--neutral-gray-40": "rgba(245, 245, 245, 1)",
-    "--neutral-gray-80": "#EBEBEB",
-    "--neutral-gray-120": "#e0e0e0",
-    "--neutral-gray-160": "rgba(214, 214, 214, 1)",
-    "--neutral-gray-320": "#ADADAD",
-    "--neutral-gray-opacity-40": "rgba(0, 0, 0, 0.04)",
-    "--neutral-gray-opacity-60": "rgba(0, 0, 0, 0.06)",
-    "--neutral-gray-opacity-80": "rgba(0, 0, 0, 0.08)",
-    "--neutral-gray-400": "rgba(0, 0, 0, 0.4)",
-    "--neutral-gray-opacity-120": "rgba(0, 0, 0, 0.12)",
-    "--neutral-gray-gray-400": "#999999"
-   },
-   "bin": "theme"
+  "fonts": [
+    {
+      "family": "webflow-icons",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(\"data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaG"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")"
+    },
+    {
+      "family": "Inter",
+      "weight": "500",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")"
+    }
+  ],
+  "fontCount": 5,
+  "meta": {
+    "themeColor": null,
+    "mask": null,
+    "colorScheme": "normal",
+    "bodyBg": "rgb(246, 248, 250)",
+    "bodyColor": "rgb(0, 0, 0)",
+    "bodyFont": "Inter, sans-serif",
+    "bodySize": "14px"
   },
-  {
-   "file": "share inline-23",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--transparent": "rgba(0, 0, 0, 0)",
-    "--primary-red-500": "rgba(255, 71, 111, 1)",
-    "--primary-basic-blue": "#0050ff",
-    "--primary-basic-white": "#ffffff",
-    "--primary-basic-gray": "#1f1f1f",
-    "--primary-basic-gray-40": "#f5f5f5",
-    "--primary-basic-gray-400": "rgba(153, 153, 153, 1)",
-    "--primary-basic-gray-560": "#707070",
-    "--primary-basic-gray-880": "rgba(31, 31, 31, 1)",
-    "--secondary-gray-800": "#4e4e4e",
-    "--secondary-red": "rgba(255, 112, 112)",
-    "--secondary-red-64": "rgba(255, 112, 112, 0.64)",
-    "--secondary-red-56": "rgba(255, 112, 112, 0.56)",
-    "--secondary-red-20": "rgba(255, 112, 112, 0.2)",
-    "--secondary-red-32": "rgba(255, 112, 112, 0.32)",
-    "--secondary-red-8": "rgba(255, 112, 112, 0.08)",
-    "--secondary-orange": "rgba(255, 163, 52)",
-    "--secondary-orange-64": "rgba(255, 163, 52, 0.64)",
-    "--secondary-orange-56": "rgba(255, 163, 52, 0.56)",
-    "--secondary-orange-20": "rgba(255, 163, 52, 0.2)",
-    "--secondary-orange-32": "rgba(255, 163, 52, 0.32)",
-    "--secondary-orange-8": "rgba(255, 163, 52, 0.08)",
-    "--secondary-yellow": "rgba(245, 204, 0)",
-    "--secondary-yellow-64": "rgba(245, 204, 0, 0.64)",
-    "--secondary-yellow-56": "rgba(245, 204, 0, 0.56)",
-    "--secondary-yellow-20": "rgba(245, 204, 0, 0.2)",
-    "--secondary-yellow-32": "rgba(245, 204, 0, 0.32)",
-    "--secondary-yellow-8": "rgba(245, 204, 0, 0.08)",
-    "--secondary-green": "rgba(54, 235, 141)",
-    "--secondary-green-800": "rgba(22, 94, 56, 1)",
-    "--secondary-green-500": "rgba(54, 235, 141, 1)",
-    "--secondary-green-64": "rgba(54, 235, 141, 0.64)",
-    "--secondary-green-56": "rgba(54, 235, 141, 0.56)",
-    "--secondary-green-20": "rgba(54, 235, 141, 0.2)",
-    "--secondary-green-32": "rgba(54, 235, 141, 0.32)",
-    "--secondary-green-8": "rgba(54, 235, 141, 0.08)",
-    "--secondary-electric": "rgba(58, 243, 255)",
-    "--secondary-electric-64": "rgba(58, 243, 255, 0.64)",
-    "--secondary-electric-56": "rgba(58, 243, 255, 0.56)",
-    "--secondary-electric-20": "rgba(58, 243, 255, 0.2)",
-    "--secondary-electric-32": "rgba(58, 243, 255, 0.32)",
-    "--secondary-electric-8": "rgba(58, 243, 255, 0.08)",
-    "--secondary-blue": "rgba(102, 150, 255)",
-    "--secondary-blue-64": "rgba(102, 150, 255, 0.64)",
-    "--secondary-blue-56": "rgba(102, 150, 255, 0.56)",
-    "--secondary-blue-20": "rgba(102, 150, 255, 0.2)",
-    "--secondary-blue-32": "rgba(102, 150, 255, 0.32)",
-    "--secondary-blue-8": "rgba(102, 150, 255, 0.08)",
-    "--secondary-purple": "rgba(155, 112, 255)",
-    "--secondary-purple-64": "rgba(155, 112, 255, 0.64)",
-    "--secondary-purple-56": "rgba(155, 112, 255, 0.56)",
-    "--secondary-purple-20": "rgba(155, 112, 255, 0.2)",
-    "--secondary-purple-32": "rgba(155, 112, 255, 0.32)",
-    "--secondary-purple-8": "rgba(155, 112, 255, 0.08)",
-    "--secondary-pink": "rgba(255, 153, 255)",
-    "--secondary-pink-64": "rgba(255, 153, 255, 0.64)",
-    "--secondary-pink-56": "rgba(255, 153, 255, 0.56)",
-    "--secondary-pink-20": "rgba(255, 153, 255, 0.2)",
-    "--secondary-pink-32": "rgba(255, 153, 255, 0.32)",
-    "--secondary-pink-8": "rgba(255, 153, 255, 0.08)",
-    "--secondary-gray": "rgba(173, 173, 173)",
-    "--secondary-gray-80": "rgba(173, 173, 173, 0.8)",
-    "--secondary-gray-64": "rgba(173, 173, 173, 0.64)",
-    "--secondary-gray-56": "rgba(173, 173, 173, 0.56)",
-    "--secondary-gray-20": "rgba(173, 173, 173, 0.2)",
-    "--secondary-gray-32": "rgba(173, 173, 173, 0.32)",
-    "--secondary-gray-8": "rgba(173, 173, 173, 0.08)",
-    "--neutral-gray-40": "rgba(245, 245, 245, 1)",
-    "--neutral-gray-80": "#EBEBEB",
-    "--neutral-gray-120": "#e0e0e0",
-    "--neutral-gray-160": "rgba(214, 214, 214, 1)",
-    "--neutral-gray-320": "#ADADAD",
-    "--neutral-gray-opacity-40": "rgba(0, 0, 0, 0.04)",
-    "--neutral-gray-opacity-60": "rgba(0, 0, 0, 0.06)",
-    "--neutral-gray-opacity-80": "rgba(0, 0, 0, 0.08)",
-    "--neutral-gray-400": "rgba(0, 0, 0, 0.4)",
-    "--neutral-gray-opacity-120": "rgba(0, 0, 0, 0.12)",
-    "--neutral-gray-gray-400": "#999999"
-   },
-   "bin": "theme"
+  "components": {
+    "nav": {
+      "text": "Try Demo Project Features Use cases Pricing Help Blog Log in",
+      "cls": "nav w-nav",
+      "rect": {
+        "w": 1416,
+        "h": 82.1
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "radius": "0px",
+      "pad": "12px 0px 0px 0px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "logo": {
+      "text": "",
+      "cls": "nav__logo w-nav-brand w--current",
+      "rect": {
+        "w": 137,
+        "h": 33
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(51, 51, 51)",
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "radius": "0px",
+      "pad": "0px 0px 0px 0px",
+      "border": "0px none rgb(51, 51, 51)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "navLink": {
+      "text": "Try Demo Project",
+      "cls": "nav__link is-br-8 w-inline-block",
+      "rect": {
+        "w": 179.5,
+        "h": 46.1
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "lh": "22.4px",
+      "radius": "8px",
+      "pad": "11.04px 14.08px 11.04px 14.08px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "background-color 0.3s ease"
+    },
+    "login": {
+      "text": "Log in",
+      "cls": "nav__btn is-bc-gray__is-br-12--is-mob-hide w-inline-block",
+      "rect": {
+        "w": 76.9,
+        "h": 38.5
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "lh": "22.4px",
+      "radius": "12px",
+      "pad": "7.04px 16px 7.04px 16px",
+      "border": "1px solid rgba(0, 0, 0, 0.1)",
+      "shadow": "none",
+      "transition": "color, background-color 0.3s, 0.3s ease, ease"
+    },
+    "cta": {
+      "text": "Try for free",
+      "cls": "nav__btn is-bg-black--is-br-12--is-t-wh w-inline-block",
+      "rect": {
+        "w": 128.5,
+        "h": 38.5
+      },
+      "bg": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "lh": "22.4px",
+      "radius": "12px",
+      "pad": "7.04px 10.08px 7.04px 16px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "border-color, color, background-color 0.3s, 0.3s, 0.3s ease, ease, ease"
+    },
+    "hero": {
+      "text": "Visual platform for planning UX and pitching web design",
+      "cls": "main-heading-pivot",
+      "rect": {
+        "w": 1280,
+        "h": 216
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "72px",
+      "weight": "700",
+      "lh": "72px",
+      "radius": "0px",
+      "pad": "0px 240px 0px 240px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "start": {
+      "text": "Start planning",
+      "cls": "btn w-inline-block",
+      "rect": {
+        "w": 479.9,
+        "h": 120.1
+      },
+      "bg": "rgba(0, 128, 255, 0.2)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Inter, sans-serif",
+      "size": "30px",
+      "weight": "600",
+      "lh": "42px",
+      "radius": "1600px",
+      "pad": "12px 12px 12px 12px",
+      "border": "0px none rgb(255, 255, 255)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "body": {
+      "text": "Try Demo Project Features Use cases Pricing Help Blog Log in",
+      "cls": "",
+      "rect": {
+        "w": 1440,
+        "h": 11842.7
+      },
+      "bg": "rgb(246, 248, 250)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "radius": "0px",
+      "pad": "0px 0px 0px 0px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    }
+  },
+  "states": {
+    "cta": {
+      "before": "rgba(0, 128, 255, 0.2)",
+      "hover": {
+        "bg": "rgba(0, 128, 255, 0.2)",
+        "color": "rgb(255, 255, 255)",
+        "shadow": "none",
+        "transform": "none"
+      },
+      "focus": {
+        "outline": "rgb(255, 255, 255) none 0px",
+        "shadow": "none",
+        "outlineColor": "rgb(255, 255, 255)"
+      }
+    }
   }
- ],
- "app": [
-  {
-   "file": "app inline-77",
-   "selector": ".emojiPickerContainer--abM98 em-emoji-picker",
-   "context": [],
-   "properties": {
-    "--rgb-accent": "0, 80, 255",
-    "--rgb-color": "31, 31, 31",
-    "--rgb-input": "255, 255, 255",
-    "--border-radius": "12px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "app inline-192",
-   "selector": ".tox",
-   "context": [],
-   "properties": {
-    "--tox-pop-shadow": "0px 4px 12px 0px rgba(0, 0, 0, 0.08),\n    0px 16px 20px 0px rgba(0, 0, 0, 0.08), 0px 40px 24px 0px rgba(0, 0, 0, 0.08),\n    0px 2px 4px 0px rgba(0, 0, 0, 0.04)",
-    "--tox-btn-margin": "0px 0px 0px 0px",
-    "--tox-control-hover-bg": "rgba(0, 0, 0, 0.04)",
-    "--tox-control-border-radius": "10px",
-    "--tox-dialog-border-radius": "14px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "rgba(0, 0, 0, 0.85)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-blue .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#1677ff"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-purple .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#722ed1"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-cyan .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#13c2c2"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-green .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#52c41a"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-magenta .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#eb2f96"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-pink .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#eb2f96"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-red .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#f5222d"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-orange .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#fa8c16"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-yellow .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#fadb14"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-volcano .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#fa541c"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-geekblue .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#2f54eb"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-lime .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#a0d911"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-18",
-   "selector": ":where(.css-nnuwmp).ant-tooltip.ant-tooltip-gold .ant-tooltip-arrow",
-   "context": [],
-   "properties": {
-    "--antd-arrow-background-color": "#faad14"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-95",
-   "selector": ".emojiPickerContainer--abM98 em-emoji-picker",
-   "context": [],
-   "properties": {
-    "--rgb-accent": "0, 80, 255",
-    "--rgb-color": "31, 31, 31",
-    "--rgb-input": "255, 255, 255",
-    "--border-radius": "12px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "share inline-210",
-   "selector": ".tox",
-   "context": [],
-   "properties": {
-    "--tox-pop-shadow": "0px 4px 12px 0px rgba(0, 0, 0, 0.08),\n    0px 16px 20px 0px rgba(0, 0, 0, 0.08), 0px 40px 24px 0px rgba(0, 0, 0, 0.08),\n    0px 2px 4px 0px rgba(0, 0, 0, 0.04)",
-    "--tox-btn-margin": "0px 0px 0px 0px",
-    "--tox-control-hover-bg": "rgba(0, 0, 0, 0.04)",
-    "--tox-control-border-radius": "10px",
-    "--tox-dialog-border-radius": "14px"
-   },
-   "bin": "app"
-  }
- ],
- "vendor": [
-  {
-   "file": "marketing https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--swiper-theme-color": "#007aff"
-   },
-   "bin": "vendor"
-  },
-  {
-   "file": "marketing https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--swiper-navigation-size": "44px"
-   },
-   "bin": "vendor"
-  },
-  {
-   "file": "marketing https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
-   "selector": ".swiper-lazy-preloader-white",
-   "context": [],
-   "properties": {
-    "--swiper-preloader-color": "#fff"
-   },
-   "bin": "vendor"
-  },
-  {
-   "file": "marketing https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
-   "selector": ".swiper-lazy-preloader-black",
-   "context": [],
-   "properties": {
-    "--swiper-preloader-color": "#000"
-   },
-   "bin": "vendor"
-  }
- ],
- "utility": [],
- "tailwind": [],
- "fonts": [
-  {
-   "file": "marketing https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
-   "font-family": "swiper-icons",
-   "src": "url(\"data:application/font-woff;charset=utf-8;base64, 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\")",
-   "font-weight": "400",
-   "font-style": "normal"
-  },
-  {
-   "file": "marketing https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/css/flowmapp-a1ea9c.webflow.shared.a6e488aae.min.css",
-   "font-family": "webflow-icons",
-   "src": "url(\"data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaGVhCXYFgQAABNQAAAAkaG10eCe4A1oAAAT4AAAAMGxvY2EDtALGAAAFKAAAABptYXhwABAAPgAABUQAAAAgbmFtZSoCsMsAAAVkAAABznBvc3QAAwAAAAAHNAAAACAAAwP4AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAQAAAAAwACAACAAQAAQAg5gPpA//9//8AAAAAACDmAOkA//3//wAB/+MaBBcIAAMAAQAAAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEBIAAAAyADgAAFAAAJAQcJARcDIP5AQAGA/oBAAcABwED+gP6AQAABAOAAAALgA4AABQAAEwEXCQEH4AHAQP6AAYBAAcABwED+gP6AQAAAAwDAAOADQALAAA8AHwAvAAABISIGHQEUFjMhMjY9ATQmByEiBh0BFBYzITI2PQE0JgchIgYdARQWMyEyNj0BNCYDIP3ADRMTDQJADRMTDf3ADRMTDQJADRMTDf3ADRMTDQJADRMTAsATDSANExMNIA0TwBMNIA0TEw0gDRPAEw0gDRMTDSANEwAAAAABAJ0AtAOBApUABQAACQIHCQEDJP7r/upcAXEBcgKU/usBFVz+fAGEAAAAAAL//f+9BAMDwwAEAAkAABcBJwEXAwE3AQdpA5ps/GZsbAOabPxmbEMDmmz8ZmwDmvxmbAOabAAAAgAA/8AEAAPAAB0AOwAABSInLgEnJjU0Nz4BNzYzMTIXHgEXFhUUBw4BBwYjNTI3PgE3NjU0Jy4BJyYjMSIHDgEHBhUUFx4BFxYzAgBqXV6LKCgoKIteXWpqXV6LKCgoKIteXWpVSktvICEhIG9LSlVVSktvICEhIG9LSlVAKCiLXl1qal1eiygoKCiLXl1qal1eiygoZiEgb0tKVVVKS28gISEgb0tKVVVKS28gIQABAAABwAIAA8AAEgAAEzQ3PgE3NjMxFSIHDgEHBhUxIwAoKIteXWpVSktvICFmAcBqXV6LKChmISBvS0pVAAAAAgAA/8AFtgPAADIAOgAAARYXHgEXFhUUBw4BBwYHIxUhIicuAScmNTQ3PgE3NjMxOAExNDc+ATc2MzIXHgEXFhcVATMJATMVMzUEjD83NlAXFxYXTjU1PQL8kz01Nk8XFxcXTzY1PSIjd1BQWlJJSXInJw3+mdv+2/7c25MCUQYcHFg5OUA/ODlXHBwIAhcXTzY1PTw1Nk8XF1tQUHcjIhwcYUNDTgL+3QFt/pOTkwABAAAAAQAAmM7nP18PPPUACwQAAAAAANciZKUAAAAA1yJkpf/9/70FtgPDAAAACAACAAAAAAAAAAEAAAPA/8AAAAW3//3//QW2AAEAAAAAAAAAAAAAAAAAAAAMBAAAAAAAAAAAAAAAAgAAAAQAASAEAADgBAAAwAQAAJ0EAP/9BAAAAAQAAAAFtwAAAAAAAAAKABQAHgAyAEYAjACiAL4BFgE2AY4AAAABAAAADAA8AAMAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADQAAAAEAAAAAAAIABwCWAAEAAAAAAAMADQBIAAEAAAAAAAQADQCrAAEAAAAAAAUACwAnAAEAAAAAAAYADQBvAAEAAAAAAAoAGgDSAAMAAQQJAAEAGgANAAMAAQQJAAIADgCdAAMAAQQJAAMAGgBVAAMAAQQJAAQAGgC4AAMAAQQJAAUAFgAyAAMAAQQJAAYAGgB8AAMAAQQJAAoANADsd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\") format(\"truetype\")",
-   "font-weight": "400",
-   "font-style": "normal"
-  },
-  {
-   "file": "marketing https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/css/flowmapp-a1ea9c.webflow.shared.a6e488aae.min.css",
-   "font-family": "Inter",
-   "src": "url(…) format(\"woff2\")",
-   "font-weight": "700",
-   "font-style": "normal",
-   "font-display": "swap"
-  },
-  {
-   "file": "marketing https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/css/flowmapp-a1ea9c.webflow.shared.a6e488aae.min.css",
-   "font-family": "Inter",
-   "src": "url(…) format(\"woff2\")",
-   "font-weight": "400",
-   "font-style": "normal",
-   "font-display": "swap"
-  },
-  {
-   "file": "marketing https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/css/flowmapp-a1ea9c.webflow.shared.a6e488aae.min.css",
-   "font-family": "Inter",
-   "src": "url(…) format(\"woff2\")",
-   "font-weight": "600",
-   "font-style": "normal",
-   "font-display": "swap"
-  },
-  {
-   "file": "marketing https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/css/flowmapp-a1ea9c.webflow.shared.a6e488aae.min.css",
-   "font-family": "Inter",
-   "src": "url(…) format(\"woff2\")",
-   "font-weight": "500",
-   "font-style": "normal",
-   "font-display": "swap"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "app https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "share https://fonts.googleapis.com/css2",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  }
- ],
- "resolved": {
-  "light": {
-   "--_apps---charts--chart-1": {
-    "raw": "#0050ff",
-    "kind": "color",
-    "value": "#0050ff"
-   },
-   "--_apps---charts--chart-1-dark": {
-    "raw": "#2572ff",
-    "kind": "color",
-    "value": "#2572ff"
-   },
-   "--_apps---charts--chart-2": {
-    "raw": "#4981f6",
-    "kind": "color",
-    "value": "#4981f6"
-   },
-   "--_apps---charts--chart-2-dark": {
-    "raw": "#74afff",
-    "kind": "color",
-    "value": "#74afff"
-   },
-   "--_apps---charts--chart-3": {
-    "raw": "#003af0",
-    "kind": "color",
-    "value": "#003af0"
-   },
-   "--_apps---charts--chart-3-dark": {
-    "raw": "#004dff",
-    "kind": "color",
-    "value": "#004dff"
-   },
-   "--_apps---charts--chart-4": {
-    "raw": "#0037c6",
-    "kind": "color",
-    "value": "#0037c6"
-   },
-   "--_apps---charts--chart-4-dark": {
-    "raw": "#5a9cff",
-    "kind": "color",
-    "value": "#5a9cff"
-   },
-   "--_apps---charts--chart-5": {
-    "raw": "#0000ab",
-    "kind": "color",
-    "value": "#0000ab"
-   },
-   "--_apps---charts--chart-5-dark": {
-    "raw": "#04d",
-    "kind": "color",
-    "value": "#0044dd"
-   },
-   "--_apps---colors--accent": {
-    "raw": "#ddd",
-    "kind": "color",
-    "value": "#dddddd"
-   },
-   "--_apps---colors--accent-dark": {
-    "raw": "#2e2e2e",
-    "kind": "color",
-    "value": "#2e2e2e"
-   },
-   "--_apps---colors--accent-foreground": {
-    "raw": "#0d0d0d",
-    "kind": "color",
-    "value": "#0d0d0d"
-   },
-   "--_apps---colors--accent-foreground-dark": {
-    "raw": "#f8f8f8",
-    "kind": "color",
-    "value": "#f8f8f8"
-   },
-   "--_apps---colors--background": {
-    "raw": "#f6f8fa",
-    "kind": "color",
-    "value": "#f6f8fa"
-   },
-   "--_apps---colors--background-dark": {
-    "raw": "#060606",
-    "kind": "color",
-    "value": "#060606"
-   },
-   "--_apps---colors--border": {
-    "raw": "#0050ff",
-    "kind": "color",
-    "value": "#0050ff"
-   },
-   "--_apps---colors--border-dark": {
-    "raw": "#0050ff1a",
-    "kind": "color",
-    "value": "rgba(0, 80, 255, 0.1)"
-   },
-   "--_apps---colors--card": {
-    "raw": "white",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--_apps---colors--card-dark": {
-    "raw": "#181818",
-    "kind": "color",
-    "value": "#181818"
-   },
-   "--_apps---colors--card-foreground": {
-    "raw": "#060606",
-    "kind": "color",
-    "value": "#060606"
-   },
-   "--_apps---colors--card-foreground-dark": {
-    "raw": "#f8f8f8",
-    "kind": "color",
-    "value": "#f8f8f8"
-   },
-   "--_apps---colors--destructive": {
-    "raw": "#e8262e",
-    "kind": "color",
-    "value": "#e8262e"
-   },
-   "--_apps---colors--destructive-dark": {
-    "raw": "#ef2f34",
-    "kind": "color",
-    "value": "#ef2f34"
-   },
-   "--_apps---colors--foreground": {
-    "raw": "black",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--_apps---colors--foreground-dark": {
-    "raw": "#f8f8f8",
-    "kind": "color",
-    "value": "#f8f8f8"
-   },
-   "--_apps---colors--input": {
-    "raw": "#0454ff",
-    "kind": "color",
-    "value": "#0454ff"
-   },
-   "--_apps---colors--input-dark": {
-    "raw": "#ffffff26",
-    "kind": "color",
-    "value": "rgba(255, 255, 255, 0.15)"
-   },
-   "--_apps---colors--muted": {
-    "raw": "#f1f1f1",
-    "kind": "color",
-    "value": "#f1f1f1"
-   },
-   "--_apps---colors--muted-dark": {
-    "raw": "#020202",
-    "kind": "color",
-    "value": "#020202"
-   },
-   "--_apps---colors--muted-foreground": {
-    "raw": "#777374",
-    "kind": "color",
-    "value": "#777374"
-   },
-   "--_apps---colors--muted-foreground-dark": {
-    "raw": "#8c8c8c",
-    "kind": "color",
-    "value": "#8c8c8c"
-   },
-   "--_apps---colors--popover": {
-    "raw": "#ebeaea",
-    "kind": "color",
-    "value": "#ebeaea"
-   },
-   "--_apps---colors--popover-dark": {
-    "raw": "#181818",
-    "kind": "color",
-    "value": "#181818"
-   },
-   "--_apps---colors--popover-foreground": {
-    "raw": "#060606",
-    "kind": "color",
-    "value": "#060606"
-   },
-   "--_apps---colors--popover-foreground-dark": {
-    "raw": "#f8f8f8",
-    "kind": "color",
-    "value": "#f8f8f8"
-   },
-   "--_apps---colors--primary": {
-    "raw": "#0050ff",
-    "kind": "color",
-    "value": "#0050ff"
-   },
-   "--_apps---colors--primary-dark": {
-    "raw": "#2572ff",
-    "kind": "color",
-    "value": "#2572ff"
-   },
-   "--_apps---colors--primary-foreground": {
-    "raw": "#f5f9ff",
-    "kind": "color",
-    "value": "#f5f9ff"
-   },
-   "--_apps---colors--primary-foreground-dark": {
-    "raw": "#090d16",
-    "kind": "color",
-    "value": "#090d16"
-   },
-   "--_apps---colors--ring": {
-    "raw": "#275fda",
-    "kind": "color",
-    "value": "#275fda"
-   },
-   "--_apps---colors--ring-dark": {
-    "raw": "#5491ff",
-    "kind": "color",
-    "value": "#5491ff"
-   },
-   "--_apps---colors--secondary": {
-    "raw": "#d5efff",
-    "kind": "color",
-    "value": "#d5efff"
-   },
-   "--_apps---colors--secondary-dark": {
-    "raw": "#021448",
-    "kind": "color",
-    "value": "#021448"
-   },
-   "--_apps---colors--secondary-foreground": {
-    "raw": "#0a0d13",
-    "kind": "color",
-    "value": "#0a0d13"
-   },
-   "--_apps---colors--secondary-foreground-dark": {
-    "raw": "#f5f9ff",
-    "kind": "color",
-    "value": "#f5f9ff"
-   },
-   "--_apps---sidebar--sidebar": {
-    "raw": "#f1f1f1",
-    "kind": "color",
-    "value": "#f1f1f1"
-   },
-   "--_apps---sidebar--sidebar-accent": {
-    "raw": "#ddd",
-    "kind": "color",
-    "value": "#dddddd"
-   },
-   "--_apps---sidebar--sidebar-accent-dark": {
-    "raw": "#2e2e2e",
-    "kind": "color",
-    "value": "#2e2e2e"
-   },
-   "--_apps---sidebar--sidebar-accent-foreground": {
-    "raw": "#0d0d0d",
-    "kind": "color",
-    "value": "#0d0d0d"
-   },
-   "--_apps---sidebar--sidebar-accent-foreground-dark": {
-    "raw": "#f8f8f8",
-    "kind": "color",
-    "value": "#f8f8f8"
-   },
-   "--_apps---sidebar--sidebar-border": {
-    "raw": "#0050ff",
-    "kind": "color",
-    "value": "#0050ff"
-   },
-   "--_apps---sidebar--sidebar-border-dark": {
-    "raw": "#ffffff1a",
-    "kind": "color",
-    "value": "rgba(255, 255, 255, 0.1)"
-   },
-   "--_apps---sidebar--sidebar-dark": {
-    "raw": "#0b0b0b",
-    "kind": "color",
-    "value": "#0b0b0b"
-   },
-   "--_apps---sidebar--sidebar-foreground": {
-    "raw": "#060606",
-    "kind": "color",
-    "value": "#060606"
-   },
-   "--_apps---sidebar--sidebar-foreground-dark": {
-    "raw": "#f8f8f8",
-    "kind": "color",
-    "value": "#f8f8f8"
-   },
-   "--_apps---sidebar--sidebar-primary": {
-    "raw": "#0050ff",
-    "kind": "color",
-    "value": "#0050ff"
-   },
-   "--_apps---sidebar--sidebar-primary-dark": {
-    "raw": "#2572ff",
-    "kind": "color",
-    "value": "#2572ff"
-   },
-   "--_apps---sidebar--sidebar-primary-foreground": {
-    "raw": "#f5f9ff",
-    "kind": "color",
-    "value": "#f5f9ff"
-   },
-   "--_apps---sidebar--sidebar-primary-foreground-dark": {
-    "raw": "#090d16",
-    "kind": "color",
-    "value": "#090d16"
-   },
-   "--_apps---sidebar--sidebar-ring": {
-    "raw": "#275fda",
-    "kind": "color",
-    "value": "#275fda"
-   },
-   "--_apps---sidebar--sidebar-ring-dark": {
-    "raw": "#5491ff",
-    "kind": "color",
-    "value": "#5491ff"
-   },
-   "--_apps---sizes--radius": {
-    "raw": "20px",
-    "kind": "dimension",
-    "value": "20px"
-   },
-   "--_apps---typography--body-font": {
-    "raw": "Inter,sans-serif",
-    "kind": "fontFamily",
-    "value": "Inter,sans-serif"
-   },
-   "--_apps---typography--button-font": {
-    "raw": "Inter,sans-serif",
-    "kind": "fontFamily",
-    "value": "Inter,sans-serif"
-   },
-   "--_apps---typography--heading-font": {
-    "raw": "Inter,sans-serif",
-    "kind": "fontFamily",
-    "value": "Inter,sans-serif"
-   },
-   "--alice-blue": {
-    "raw": "#e8edf2",
-    "kind": "color",
-    "value": "#e8edf2"
-   },
-   "--basic-blue": {
-    "raw": "#0050ff",
-    "kind": "color",
-    "value": "#0050ff"
-   },
-   "--bg": {
-    "raw": "#f6f8fa",
-    "kind": "color",
-    "value": "#f6f8fa"
-   },
-   "--black": {
-    "raw": "black",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--dark-grey": {
-    "raw": "#5f6a75",
-    "kind": "color",
-    "value": "#5f6a75"
-   },
-   "--dodger-blue": {
-    "raw": "#0080ff",
-    "kind": "color",
-    "value": "#0080ff"
-   },
-   "--dodger-blue-20": {
-    "raw": "#0080ff33",
-    "kind": "color",
-    "value": "rgba(0, 128, 255, 0.2)"
-   },
-   "--gainsboro": {
-    "raw": "#e6e6e6",
-    "kind": "color",
-    "value": "#e6e6e6"
-   },
-   "--light-steel-blue": {
-    "raw": "#cbd8e5",
-    "kind": "color",
-    "value": "#cbd8e5"
-   },
-   "--pale-violet-red": {
-    "raw": "#ff759b",
-    "kind": "color",
-    "value": "#ff759b"
-   },
-   "--primary-blue": {
-    "raw": "#0050ff",
-    "kind": "color",
-    "value": "#0050ff"
-   },
-   "--service-grey": {
-    "raw": "#8c9baa",
-    "kind": "color",
-    "value": "#8c9baa"
-   },
-   "--swiper-navigation-size": {
-    "raw": "44px",
-    "kind": "dimension",
-    "value": "44px"
-   },
-   "--swiper-theme-color": {
-    "raw": "#007aff",
-    "kind": "color",
-    "value": "#007aff"
-   },
-   "--white": {
-    "raw": "white",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--yellow-green": {
-    "raw": "#99dd2c",
-    "kind": "color",
-    "value": "#99dd2c"
-   }
-  },
-  "app": {
-   "--neutral-gray-120": {
-    "raw": "#e0e0e0",
-    "kind": "color",
-    "value": "#e0e0e0"
-   },
-   "--neutral-gray-160": {
-    "raw": "rgba(214, 214, 214, 1)",
-    "kind": "color",
-    "value": "#d6d6d6"
-   },
-   "--neutral-gray-320": {
-    "raw": "#ADADAD",
-    "kind": "color",
-    "value": "#adadad"
-   },
-   "--neutral-gray-40": {
-    "raw": "rgba(245, 245, 245, 1)",
-    "kind": "color",
-    "value": "#f5f5f5"
-   },
-   "--neutral-gray-400": {
-    "raw": "rgba(0, 0, 0, 0.4)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.4)"
-   },
-   "--neutral-gray-80": {
-    "raw": "#EBEBEB",
-    "kind": "color",
-    "value": "#ebebeb"
-   },
-   "--neutral-gray-gray-400": {
-    "raw": "#999999",
-    "kind": "color",
-    "value": "#999999"
-   },
-   "--neutral-gray-opacity-120": {
-    "raw": "rgba(0, 0, 0, 0.12)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.12)"
-   },
-   "--neutral-gray-opacity-40": {
-    "raw": "rgba(0, 0, 0, 0.04)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.04)"
-   },
-   "--neutral-gray-opacity-60": {
-    "raw": "rgba(0, 0, 0, 0.06)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.06)"
-   },
-   "--neutral-gray-opacity-80": {
-    "raw": "rgba(0, 0, 0, 0.08)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.08)"
-   },
-   "--primary-basic-blue": {
-    "raw": "#0050ff",
-    "kind": "color",
-    "value": "#0050ff"
-   },
-   "--primary-basic-gray": {
-    "raw": "#1f1f1f",
-    "kind": "color",
-    "value": "#1f1f1f"
-   },
-   "--primary-basic-gray-40": {
-    "raw": "#f5f5f5",
-    "kind": "color",
-    "value": "#f5f5f5"
-   },
-   "--primary-basic-gray-400": {
-    "raw": "rgba(153, 153, 153, 1)",
-    "kind": "color",
-    "value": "#999999"
-   },
-   "--primary-basic-gray-560": {
-    "raw": "#707070",
-    "kind": "color",
-    "value": "#707070"
-   },
-   "--primary-basic-gray-880": {
-    "raw": "rgba(31, 31, 31, 1)",
-    "kind": "color",
-    "value": "#1f1f1f"
-   },
-   "--primary-basic-white": {
-    "raw": "#ffffff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--primary-red-500": {
-    "raw": "rgba(255, 71, 111, 1)",
-    "kind": "color",
-    "value": "#ff476f"
-   },
-   "--secondary-blue": {
-    "raw": "rgba(102, 150, 255)",
-    "kind": "color",
-    "value": "#6696ff"
-   },
-   "--secondary-blue-20": {
-    "raw": "rgba(102, 150, 255, 0.2)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.2)"
-   },
-   "--secondary-blue-32": {
-    "raw": "rgba(102, 150, 255, 0.32)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.32)"
-   },
-   "--secondary-blue-56": {
-    "raw": "rgba(102, 150, 255, 0.56)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.56)"
-   },
-   "--secondary-blue-64": {
-    "raw": "rgba(102, 150, 255, 0.64)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.64)"
-   },
-   "--secondary-blue-8": {
-    "raw": "rgba(102, 150, 255, 0.08)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.08)"
-   },
-   "--secondary-electric": {
-    "raw": "rgba(58, 243, 255)",
-    "kind": "color",
-    "value": "#3af3ff"
-   },
-   "--secondary-electric-20": {
-    "raw": "rgba(58, 243, 255, 0.2)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.2)"
-   },
-   "--secondary-electric-32": {
-    "raw": "rgba(58, 243, 255, 0.32)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.32)"
-   },
-   "--secondary-electric-56": {
-    "raw": "rgba(58, 243, 255, 0.56)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.56)"
-   },
-   "--secondary-electric-64": {
-    "raw": "rgba(58, 243, 255, 0.64)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.64)"
-   },
-   "--secondary-electric-8": {
-    "raw": "rgba(58, 243, 255, 0.08)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.08)"
-   },
-   "--secondary-gray": {
-    "raw": "rgba(173, 173, 173)",
-    "kind": "color",
-    "value": "#adadad"
-   },
-   "--secondary-gray-20": {
-    "raw": "rgba(173, 173, 173, 0.2)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.2)"
-   },
-   "--secondary-gray-32": {
-    "raw": "rgba(173, 173, 173, 0.32)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.32)"
-   },
-   "--secondary-gray-56": {
-    "raw": "rgba(173, 173, 173, 0.56)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.56)"
-   },
-   "--secondary-gray-64": {
-    "raw": "rgba(173, 173, 173, 0.64)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.64)"
-   },
-   "--secondary-gray-8": {
-    "raw": "rgba(173, 173, 173, 0.08)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.08)"
-   },
-   "--secondary-gray-80": {
-    "raw": "rgba(173, 173, 173, 0.8)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.8)"
-   },
-   "--secondary-gray-800": {
-    "raw": "#4e4e4e",
-    "kind": "color",
-    "value": "#4e4e4e"
-   },
-   "--secondary-green": {
-    "raw": "rgba(54, 235, 141)",
-    "kind": "color",
-    "value": "#36eb8d"
-   },
-   "--secondary-green-20": {
-    "raw": "rgba(54, 235, 141, 0.2)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.2)"
-   },
-   "--secondary-green-32": {
-    "raw": "rgba(54, 235, 141, 0.32)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.32)"
-   },
-   "--secondary-green-500": {
-    "raw": "rgba(54, 235, 141, 1)",
-    "kind": "color",
-    "value": "#36eb8d"
-   },
-   "--secondary-green-56": {
-    "raw": "rgba(54, 235, 141, 0.56)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.56)"
-   },
-   "--secondary-green-64": {
-    "raw": "rgba(54, 235, 141, 0.64)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.64)"
-   },
-   "--secondary-green-8": {
-    "raw": "rgba(54, 235, 141, 0.08)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.08)"
-   },
-   "--secondary-green-800": {
-    "raw": "rgba(22, 94, 56, 1)",
-    "kind": "color",
-    "value": "#165e38"
-   },
-   "--secondary-orange": {
-    "raw": "rgba(255, 163, 52)",
-    "kind": "color",
-    "value": "#ffa334"
-   },
-   "--secondary-orange-20": {
-    "raw": "rgba(255, 163, 52, 0.2)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.2)"
-   },
-   "--secondary-orange-32": {
-    "raw": "rgba(255, 163, 52, 0.32)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.32)"
-   },
-   "--secondary-orange-56": {
-    "raw": "rgba(255, 163, 52, 0.56)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.56)"
-   },
-   "--secondary-orange-64": {
-    "raw": "rgba(255, 163, 52, 0.64)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.64)"
-   },
-   "--secondary-orange-8": {
-    "raw": "rgba(255, 163, 52, 0.08)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.08)"
-   },
-   "--secondary-pink": {
-    "raw": "rgba(255, 153, 255)",
-    "kind": "color",
-    "value": "#ff99ff"
-   },
-   "--secondary-pink-20": {
-    "raw": "rgba(255, 153, 255, 0.2)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.2)"
-   },
-   "--secondary-pink-32": {
-    "raw": "rgba(255, 153, 255, 0.32)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.32)"
-   },
-   "--secondary-pink-56": {
-    "raw": "rgba(255, 153, 255, 0.56)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.56)"
-   },
-   "--secondary-pink-64": {
-    "raw": "rgba(255, 153, 255, 0.64)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.64)"
-   },
-   "--secondary-pink-8": {
-    "raw": "rgba(255, 153, 255, 0.08)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.08)"
-   },
-   "--secondary-purple": {
-    "raw": "rgba(155, 112, 255)",
-    "kind": "color",
-    "value": "#9b70ff"
-   },
-   "--secondary-purple-20": {
-    "raw": "rgba(155, 112, 255, 0.2)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.2)"
-   },
-   "--secondary-purple-32": {
-    "raw": "rgba(155, 112, 255, 0.32)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.32)"
-   },
-   "--secondary-purple-56": {
-    "raw": "rgba(155, 112, 255, 0.56)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.56)"
-   },
-   "--secondary-purple-64": {
-    "raw": "rgba(155, 112, 255, 0.64)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.64)"
-   },
-   "--secondary-purple-8": {
-    "raw": "rgba(155, 112, 255, 0.08)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.08)"
-   },
-   "--secondary-red": {
-    "raw": "rgba(255, 112, 112)",
-    "kind": "color",
-    "value": "#ff7070"
-   },
-   "--secondary-red-20": {
-    "raw": "rgba(255, 112, 112, 0.2)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.2)"
-   },
-   "--secondary-red-32": {
-    "raw": "rgba(255, 112, 112, 0.32)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.32)"
-   },
-   "--secondary-red-56": {
-    "raw": "rgba(255, 112, 112, 0.56)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.56)"
-   },
-   "--secondary-red-64": {
-    "raw": "rgba(255, 112, 112, 0.64)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.64)"
-   },
-   "--secondary-red-8": {
-    "raw": "rgba(255, 112, 112, 0.08)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.08)"
-   },
-   "--secondary-yellow": {
-    "raw": "rgba(245, 204, 0)",
-    "kind": "color",
-    "value": "#f5cc00"
-   },
-   "--secondary-yellow-20": {
-    "raw": "rgba(245, 204, 0, 0.2)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.2)"
-   },
-   "--secondary-yellow-32": {
-    "raw": "rgba(245, 204, 0, 0.32)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.32)"
-   },
-   "--secondary-yellow-56": {
-    "raw": "rgba(245, 204, 0, 0.56)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.56)"
-   },
-   "--secondary-yellow-64": {
-    "raw": "rgba(245, 204, 0, 0.64)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.64)"
-   },
-   "--secondary-yellow-8": {
-    "raw": "rgba(245, 204, 0, 0.08)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.08)"
-   },
-   "--transparent": {
-    "raw": "rgba(0, 0, 0, 0)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0)"
-   }
-  },
-  "share": {
-   "--neutral-gray-120": {
-    "raw": "#e0e0e0",
-    "kind": "color",
-    "value": "#e0e0e0"
-   },
-   "--neutral-gray-160": {
-    "raw": "rgba(214, 214, 214, 1)",
-    "kind": "color",
-    "value": "#d6d6d6"
-   },
-   "--neutral-gray-320": {
-    "raw": "#ADADAD",
-    "kind": "color",
-    "value": "#adadad"
-   },
-   "--neutral-gray-40": {
-    "raw": "rgba(245, 245, 245, 1)",
-    "kind": "color",
-    "value": "#f5f5f5"
-   },
-   "--neutral-gray-400": {
-    "raw": "rgba(0, 0, 0, 0.4)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.4)"
-   },
-   "--neutral-gray-80": {
-    "raw": "#EBEBEB",
-    "kind": "color",
-    "value": "#ebebeb"
-   },
-   "--neutral-gray-gray-400": {
-    "raw": "#999999",
-    "kind": "color",
-    "value": "#999999"
-   },
-   "--neutral-gray-opacity-120": {
-    "raw": "rgba(0, 0, 0, 0.12)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.12)"
-   },
-   "--neutral-gray-opacity-40": {
-    "raw": "rgba(0, 0, 0, 0.04)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.04)"
-   },
-   "--neutral-gray-opacity-60": {
-    "raw": "rgba(0, 0, 0, 0.06)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.06)"
-   },
-   "--neutral-gray-opacity-80": {
-    "raw": "rgba(0, 0, 0, 0.08)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.08)"
-   },
-   "--primary-basic-blue": {
-    "raw": "#0050ff",
-    "kind": "color",
-    "value": "#0050ff"
-   },
-   "--primary-basic-gray": {
-    "raw": "#1f1f1f",
-    "kind": "color",
-    "value": "#1f1f1f"
-   },
-   "--primary-basic-gray-40": {
-    "raw": "#f5f5f5",
-    "kind": "color",
-    "value": "#f5f5f5"
-   },
-   "--primary-basic-gray-400": {
-    "raw": "rgba(153, 153, 153, 1)",
-    "kind": "color",
-    "value": "#999999"
-   },
-   "--primary-basic-gray-560": {
-    "raw": "#707070",
-    "kind": "color",
-    "value": "#707070"
-   },
-   "--primary-basic-gray-880": {
-    "raw": "rgba(31, 31, 31, 1)",
-    "kind": "color",
-    "value": "#1f1f1f"
-   },
-   "--primary-basic-white": {
-    "raw": "#ffffff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--primary-red-500": {
-    "raw": "rgba(255, 71, 111, 1)",
-    "kind": "color",
-    "value": "#ff476f"
-   },
-   "--secondary-blue": {
-    "raw": "rgba(102, 150, 255)",
-    "kind": "color",
-    "value": "#6696ff"
-   },
-   "--secondary-blue-20": {
-    "raw": "rgba(102, 150, 255, 0.2)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.2)"
-   },
-   "--secondary-blue-32": {
-    "raw": "rgba(102, 150, 255, 0.32)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.32)"
-   },
-   "--secondary-blue-56": {
-    "raw": "rgba(102, 150, 255, 0.56)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.56)"
-   },
-   "--secondary-blue-64": {
-    "raw": "rgba(102, 150, 255, 0.64)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.64)"
-   },
-   "--secondary-blue-8": {
-    "raw": "rgba(102, 150, 255, 0.08)",
-    "kind": "color",
-    "value": "rgba(102, 150, 255, 0.08)"
-   },
-   "--secondary-electric": {
-    "raw": "rgba(58, 243, 255)",
-    "kind": "color",
-    "value": "#3af3ff"
-   },
-   "--secondary-electric-20": {
-    "raw": "rgba(58, 243, 255, 0.2)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.2)"
-   },
-   "--secondary-electric-32": {
-    "raw": "rgba(58, 243, 255, 0.32)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.32)"
-   },
-   "--secondary-electric-56": {
-    "raw": "rgba(58, 243, 255, 0.56)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.56)"
-   },
-   "--secondary-electric-64": {
-    "raw": "rgba(58, 243, 255, 0.64)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.64)"
-   },
-   "--secondary-electric-8": {
-    "raw": "rgba(58, 243, 255, 0.08)",
-    "kind": "color",
-    "value": "rgba(58, 243, 255, 0.08)"
-   },
-   "--secondary-gray": {
-    "raw": "rgba(173, 173, 173)",
-    "kind": "color",
-    "value": "#adadad"
-   },
-   "--secondary-gray-20": {
-    "raw": "rgba(173, 173, 173, 0.2)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.2)"
-   },
-   "--secondary-gray-32": {
-    "raw": "rgba(173, 173, 173, 0.32)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.32)"
-   },
-   "--secondary-gray-56": {
-    "raw": "rgba(173, 173, 173, 0.56)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.56)"
-   },
-   "--secondary-gray-64": {
-    "raw": "rgba(173, 173, 173, 0.64)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.64)"
-   },
-   "--secondary-gray-8": {
-    "raw": "rgba(173, 173, 173, 0.08)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.08)"
-   },
-   "--secondary-gray-80": {
-    "raw": "rgba(173, 173, 173, 0.8)",
-    "kind": "color",
-    "value": "rgba(173, 173, 173, 0.8)"
-   },
-   "--secondary-gray-800": {
-    "raw": "#4e4e4e",
-    "kind": "color",
-    "value": "#4e4e4e"
-   },
-   "--secondary-green": {
-    "raw": "rgba(54, 235, 141)",
-    "kind": "color",
-    "value": "#36eb8d"
-   },
-   "--secondary-green-20": {
-    "raw": "rgba(54, 235, 141, 0.2)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.2)"
-   },
-   "--secondary-green-32": {
-    "raw": "rgba(54, 235, 141, 0.32)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.32)"
-   },
-   "--secondary-green-500": {
-    "raw": "rgba(54, 235, 141, 1)",
-    "kind": "color",
-    "value": "#36eb8d"
-   },
-   "--secondary-green-56": {
-    "raw": "rgba(54, 235, 141, 0.56)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.56)"
-   },
-   "--secondary-green-64": {
-    "raw": "rgba(54, 235, 141, 0.64)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.64)"
-   },
-   "--secondary-green-8": {
-    "raw": "rgba(54, 235, 141, 0.08)",
-    "kind": "color",
-    "value": "rgba(54, 235, 141, 0.08)"
-   },
-   "--secondary-green-800": {
-    "raw": "rgba(22, 94, 56, 1)",
-    "kind": "color",
-    "value": "#165e38"
-   },
-   "--secondary-orange": {
-    "raw": "rgba(255, 163, 52)",
-    "kind": "color",
-    "value": "#ffa334"
-   },
-   "--secondary-orange-20": {
-    "raw": "rgba(255, 163, 52, 0.2)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.2)"
-   },
-   "--secondary-orange-32": {
-    "raw": "rgba(255, 163, 52, 0.32)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.32)"
-   },
-   "--secondary-orange-56": {
-    "raw": "rgba(255, 163, 52, 0.56)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.56)"
-   },
-   "--secondary-orange-64": {
-    "raw": "rgba(255, 163, 52, 0.64)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.64)"
-   },
-   "--secondary-orange-8": {
-    "raw": "rgba(255, 163, 52, 0.08)",
-    "kind": "color",
-    "value": "rgba(255, 163, 52, 0.08)"
-   },
-   "--secondary-pink": {
-    "raw": "rgba(255, 153, 255)",
-    "kind": "color",
-    "value": "#ff99ff"
-   },
-   "--secondary-pink-20": {
-    "raw": "rgba(255, 153, 255, 0.2)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.2)"
-   },
-   "--secondary-pink-32": {
-    "raw": "rgba(255, 153, 255, 0.32)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.32)"
-   },
-   "--secondary-pink-56": {
-    "raw": "rgba(255, 153, 255, 0.56)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.56)"
-   },
-   "--secondary-pink-64": {
-    "raw": "rgba(255, 153, 255, 0.64)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.64)"
-   },
-   "--secondary-pink-8": {
-    "raw": "rgba(255, 153, 255, 0.08)",
-    "kind": "color",
-    "value": "rgba(255, 153, 255, 0.08)"
-   },
-   "--secondary-purple": {
-    "raw": "rgba(155, 112, 255)",
-    "kind": "color",
-    "value": "#9b70ff"
-   },
-   "--secondary-purple-20": {
-    "raw": "rgba(155, 112, 255, 0.2)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.2)"
-   },
-   "--secondary-purple-32": {
-    "raw": "rgba(155, 112, 255, 0.32)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.32)"
-   },
-   "--secondary-purple-56": {
-    "raw": "rgba(155, 112, 255, 0.56)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.56)"
-   },
-   "--secondary-purple-64": {
-    "raw": "rgba(155, 112, 255, 0.64)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.64)"
-   },
-   "--secondary-purple-8": {
-    "raw": "rgba(155, 112, 255, 0.08)",
-    "kind": "color",
-    "value": "rgba(155, 112, 255, 0.08)"
-   },
-   "--secondary-red": {
-    "raw": "rgba(255, 112, 112)",
-    "kind": "color",
-    "value": "#ff7070"
-   },
-   "--secondary-red-20": {
-    "raw": "rgba(255, 112, 112, 0.2)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.2)"
-   },
-   "--secondary-red-32": {
-    "raw": "rgba(255, 112, 112, 0.32)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.32)"
-   },
-   "--secondary-red-56": {
-    "raw": "rgba(255, 112, 112, 0.56)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.56)"
-   },
-   "--secondary-red-64": {
-    "raw": "rgba(255, 112, 112, 0.64)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.64)"
-   },
-   "--secondary-red-8": {
-    "raw": "rgba(255, 112, 112, 0.08)",
-    "kind": "color",
-    "value": "rgba(255, 112, 112, 0.08)"
-   },
-   "--secondary-yellow": {
-    "raw": "rgba(245, 204, 0)",
-    "kind": "color",
-    "value": "#f5cc00"
-   },
-   "--secondary-yellow-20": {
-    "raw": "rgba(245, 204, 0, 0.2)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.2)"
-   },
-   "--secondary-yellow-32": {
-    "raw": "rgba(245, 204, 0, 0.32)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.32)"
-   },
-   "--secondary-yellow-56": {
-    "raw": "rgba(245, 204, 0, 0.56)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.56)"
-   },
-   "--secondary-yellow-64": {
-    "raw": "rgba(245, 204, 0, 0.64)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.64)"
-   },
-   "--secondary-yellow-8": {
-    "raw": "rgba(245, 204, 0, 0.08)",
-    "kind": "color",
-    "value": "rgba(245, 204, 0, 0.08)"
-   },
-   "--transparent": {
-    "raw": "rgba(0, 0, 0, 0)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0)"
-   }
-  }
- }
 }

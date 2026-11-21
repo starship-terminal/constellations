@@ -1,0 +1,1857 @@
+{
+  "title": "Doppler | Secrets Management for Humans and AI Agents",
+  "rules": [
+    {
+      "selector": "*, ::after, ::before",
+      "context": [],
+      "props": {
+        "--tw-border-spacing-x": "0",
+        "--tw-border-spacing-y": "0",
+        "--tw-translate-x": "0",
+        "--tw-translate-y": "0",
+        "--tw-rotate": "0",
+        "--tw-skew-x": "0",
+        "--tw-skew-y": "0",
+        "--tw-scale-x": "1",
+        "--tw-scale-y": "1",
+        "--tw-pan-x": "",
+        "--tw-pan-y": "",
+        "--tw-pinch-zoom": "",
+        "--tw-scroll-snap-strictness": "proximity",
+        "--tw-gradient-from-position": "",
+        "--tw-gradient-via-position": "",
+        "--tw-gradient-to-position": "",
+        "--tw-ordinal": "",
+        "--tw-slashed-zero": "",
+        "--tw-numeric-figure": "",
+        "--tw-numeric-spacing": "",
+        "--tw-numeric-fraction": "",
+        "--tw-ring-inset": "",
+        "--tw-ring-offset-width": "0px",
+        "--tw-ring-offset-color": "#fff",
+        "--tw-ring-color": "rgba(59,130,246,.5)",
+        "--tw-ring-offset-shadow": "0 0 #0000",
+        "--tw-ring-shadow": "0 0 #0000",
+        "--tw-shadow": "0 0 #0000",
+        "--tw-shadow-colored": "0 0 #0000",
+        "--tw-blur": "",
+        "--tw-brightness": "",
+        "--tw-contrast": "",
+        "--tw-grayscale": "",
+        "--tw-hue-rotate": "",
+        "--tw-invert": "",
+        "--tw-saturate": "",
+        "--tw-sepia": "",
+        "--tw-drop-shadow": "",
+        "--tw-backdrop-blur": "",
+        "--tw-backdrop-brightness": "",
+        "--tw-backdrop-contrast": "",
+        "--tw-backdrop-grayscale": "",
+        "--tw-backdrop-hue-rotate": "",
+        "--tw-backdrop-invert": "",
+        "--tw-backdrop-opacity": "",
+        "--tw-backdrop-saturate": "",
+        "--tw-backdrop-sepia": "",
+        "--tw-contain-size": "",
+        "--tw-contain-layout": "",
+        "--tw-contain-paint": "",
+        "--tw-contain-style": ""
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": "::backdrop",
+      "context": [],
+      "props": {
+        "--tw-border-spacing-x": "0",
+        "--tw-border-spacing-y": "0",
+        "--tw-translate-x": "0",
+        "--tw-translate-y": "0",
+        "--tw-rotate": "0",
+        "--tw-skew-x": "0",
+        "--tw-skew-y": "0",
+        "--tw-scale-x": "1",
+        "--tw-scale-y": "1",
+        "--tw-pan-x": "",
+        "--tw-pan-y": "",
+        "--tw-pinch-zoom": "",
+        "--tw-scroll-snap-strictness": "proximity",
+        "--tw-gradient-from-position": "",
+        "--tw-gradient-via-position": "",
+        "--tw-gradient-to-position": "",
+        "--tw-ordinal": "",
+        "--tw-slashed-zero": "",
+        "--tw-numeric-figure": "",
+        "--tw-numeric-spacing": "",
+        "--tw-numeric-fraction": "",
+        "--tw-ring-inset": "",
+        "--tw-ring-offset-width": "0px",
+        "--tw-ring-offset-color": "#fff",
+        "--tw-ring-color": "rgba(59,130,246,.5)",
+        "--tw-ring-offset-shadow": "0 0 #0000",
+        "--tw-ring-shadow": "0 0 #0000",
+        "--tw-shadow": "0 0 #0000",
+        "--tw-shadow-colored": "0 0 #0000",
+        "--tw-blur": "",
+        "--tw-brightness": "",
+        "--tw-contrast": "",
+        "--tw-grayscale": "",
+        "--tw-hue-rotate": "",
+        "--tw-invert": "",
+        "--tw-saturate": "",
+        "--tw-sepia": "",
+        "--tw-drop-shadow": "",
+        "--tw-backdrop-blur": "",
+        "--tw-backdrop-brightness": "",
+        "--tw-backdrop-contrast": "",
+        "--tw-backdrop-grayscale": "",
+        "--tw-backdrop-hue-rotate": "",
+        "--tw-backdrop-invert": "",
+        "--tw-backdrop-opacity": "",
+        "--tw-backdrop-saturate": "",
+        "--tw-backdrop-sepia": "",
+        "--tw-contain-size": "",
+        "--tw-contain-layout": "",
+        "--tw-contain-paint": "",
+        "--tw-contain-style": ""
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": "::after, ::before",
+      "context": [],
+      "props": {
+        "--tw-content": "\"\""
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-translate-x-1\\/2",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "-50%"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-translate-x-4",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "-4px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-translate-x-\\[32px\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "-32px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-translate-x-\\[82px\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "-82px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-translate-y-1\\/2",
+      "context": [],
+      "props": {
+        "--tw-translate-y": "-50%"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-translate-y-2",
+      "context": [],
+      "props": {
+        "--tw-translate-y": "-2px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-translate-y-\\[35\\%\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-y": "-35%"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-translate-y-\\[calc\\(50\\%\\+6px\\)\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-y": "calc(calc(50% + 6px) * -1)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-translate-y-\\[calc\\(50\\%-6px\\)\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-y": "calc(calc(50% - 6px) * -1)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".translate-x-0",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "0px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".translate-x-\\[20px\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "20px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".translate-x-\\[3px\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "3px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".translate-y-\\[45\\%\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-y": "45%"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".translate-y-\\[70\\%\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-y": "70%"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-rotate-180",
+      "context": [],
+      "props": {
+        "--tw-rotate": "-180deg"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-rotate-45",
+      "context": [],
+      "props": {
+        "--tw-rotate": "-45deg"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-rotate-90",
+      "context": [],
+      "props": {
+        "--tw-rotate": "-90deg"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-rotate-\\[60deg\\]",
+      "context": [],
+      "props": {
+        "--tw-rotate": "-60deg"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".rotate-0",
+      "context": [],
+      "props": {
+        "--tw-rotate": "0deg"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".rotate-180",
+      "context": [],
+      "props": {
+        "--tw-rotate": "180deg"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".rotate-45",
+      "context": [],
+      "props": {
+        "--tw-rotate": "45deg"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".rotate-90",
+      "context": [],
+      "props": {
+        "--tw-rotate": "90deg"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".scale-0",
+      "context": [],
+      "props": {
+        "--tw-scale-x": "0",
+        "--tw-scale-y": "0"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".scale-95",
+      "context": [],
+      "props": {
+        "--tw-scale-x": ".95",
+        "--tw-scale-y": ".95"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".scale-\\[0\\.85\\]",
+      "context": [],
+      "props": {
+        "--tw-scale-x": "0.85",
+        "--tw-scale-y": "0.85"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".-scale-x-\\[1\\], .scale-x-\\[-1\\]",
+      "context": [],
+      "props": {
+        "--tw-scale-x": "-1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".snap-mandatory",
+      "context": [],
+      "props": {
+        "--tw-scroll-snap-strictness": "mandatory"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".border-aluminum",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".border-carmine",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".border-charcoal",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".border-flourescent-green",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".border-glow-stroke-light",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".border-light-purple",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".border-stone-700",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".border-warm-white",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".border-t-\\[\\#A4A2A4\\]",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-\\[\\#000\\]",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-\\[\\#241E2C\\]",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-\\[\\#2D2734\\]",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-\\[\\#302C37\\]",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-\\[\\#A4A2A4\\]",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-\\[\\#fff\\]",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-\\[green\\]",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-basalt",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-black",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-brand-orange",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-charcoal",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-flourescent-green",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-light-purple",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-orange-300",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-purple",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-red-600",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-silver",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-warm-black",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-warm-white",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-white",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-yellow-300",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".bg-opacity-5",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "0.05"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".from-\\[rgba\\(0\\,0\\,0\\,0\\)\\]",
+      "context": [],
+      "props": {
+        "--tw-gradient-from": "transparent var(--tw-gradient-from-position)",
+        "--tw-gradient-to": "transparent var(--tw-gradient-to-position)",
+        "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".from-flourescent-green",
+      "context": [],
+      "props": {
+        "--tw-gradient-from": "#00f575 var(--tw-gradient-from-position)",
+        "--tw-gradient-to": "rgba(0,245,117,0) var(--tw-gradient-to-position)",
+        "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".from-purple",
+      "context": [],
+      "props": {
+        "--tw-gradient-from": "#6b13f5 var(--tw-gradient-from-position)",
+        "--tw-gradient-to": "rgba(107,19,245,0) var(--tw-gradient-to-position)",
+        "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".from-warm-black",
+      "context": [],
+      "props": {
+        "--tw-gradient-from": "#1c1624 var(--tw-gradient-from-position)",
+        "--tw-gradient-to": "rgba(28,22,36,0) var(--tw-gradient-to-position)",
+        "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".from-warm-white",
+      "context": [],
+      "props": {
+        "--tw-gradient-from": "#f1f0ec var(--tw-gradient-from-position)",
+        "--tw-gradient-to": "hsla(48,15%,94%,0) var(--tw-gradient-to-position)",
+        "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".via-light-purple",
+      "context": [],
+      "props": {
+        "--tw-gradient-to": "rgba(185,151,255,0) var(--tw-gradient-to-position)",
+        "--tw-gradient-stops": "var(--tw-gradient-from),#b997ff var(--tw-gradient-via-position),var(--tw-gradient-to)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".via-lilac",
+      "context": [],
+      "props": {
+        "--tw-gradient-to": "rgba(255,158,250,0) var(--tw-gradient-to-position)",
+        "--tw-gradient-stops": "var(--tw-gradient-from),#ff9efa var(--tw-gradient-via-position),var(--tw-gradient-to)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".via-purple",
+      "context": [],
+      "props": {
+        "--tw-gradient-to": "rgba(107,19,245,0) var(--tw-gradient-to-position)",
+        "--tw-gradient-stops": "var(--tw-gradient-from),#6b13f5 var(--tw-gradient-via-position),var(--tw-gradient-to)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".via-30\\%",
+      "context": [],
+      "props": {
+        "--tw-gradient-via-position": "30%"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".via-70\\%",
+      "context": [],
+      "props": {
+        "--tw-gradient-via-position": "70%"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".to-\\[rgba\\(0\\,0\\,0\\,0\\)\\]",
+      "context": [],
+      "props": {
+        "--tw-gradient-to": "transparent var(--tw-gradient-to-position)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".to-charcoal",
+      "context": [],
+      "props": {
+        "--tw-gradient-to": "#45403d var(--tw-gradient-to-position)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".to-light-purple",
+      "context": [],
+      "props": {
+        "--tw-gradient-to": "#b997ff var(--tw-gradient-to-position)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".to-purple",
+      "context": [],
+      "props": {
+        "--tw-gradient-to": "#6b13f5 var(--tw-gradient-to-position)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".to-transparent",
+      "context": [],
+      "props": {
+        "--tw-gradient-to": "transparent var(--tw-gradient-to-position)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".\\!text-brand-orange",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-aluminum",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-black",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-brand-orange, .text-carmine",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-charcoal",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-cloud",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-flourescent-green",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-flourescent-red",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-light-purple",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-lilac",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-silver",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-warm-black",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-warm-white",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".text-white",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".placeholder-silver::placeholder",
+      "context": [],
+      "props": {
+        "--tw-placeholder-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".placeholder-warm-white::placeholder",
+      "context": [],
+      "props": {
+        "--tw-placeholder-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".shadow-medium-dark",
+      "context": [],
+      "props": {
+        "--tw-shadow": "0 8px 30px rgba(0,0,0,.45)",
+        "--tw-shadow-colored": "0 8px 30px var(--tw-shadow-color)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".shadow-people",
+      "context": [],
+      "props": {
+        "--tw-shadow": "0px 1.133px 3.398px 0px rgba(0,0,0,.1),0px 6.797px 6.797px 0px rgba(0,0,0,.09),0px 14.727px 9.062px 0px rgba(0,0,0,.05),0px 26.055px 10.195px 0px rgba(0,0,0,.01),0px 40.781px 11.328px 0px transparent",
+        "--tw-shadow-colored": "0px 1.133px 3.398px 0px var(--tw-shadow-color),0px 6.797px 6.797px 0px var(--tw-shadow-color),0px 14.727px 9.062px 0px var(--tw-shadow-color),0px 26.055px 10.195px 0px var(--tw-shadow-color),0px 40.781px 11.328px 0px var(--tw-shadow-color)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".blur",
+      "context": [],
+      "props": {
+        "--tw-blur": "blur(8px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".blur-100, .blur-\\[100px\\]",
+      "context": [],
+      "props": {
+        "--tw-blur": "blur(100px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".blur-\\[40px\\]",
+      "context": [],
+      "props": {
+        "--tw-blur": "blur(40px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".blur-\\[50px\\]",
+      "context": [],
+      "props": {
+        "--tw-blur": "blur(50px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".blur-\\[5px\\]",
+      "context": [],
+      "props": {
+        "--tw-blur": "blur(5px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".blur-\\[60px\\]",
+      "context": [],
+      "props": {
+        "--tw-blur": "blur(60px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".blur-\\[6px\\]",
+      "context": [],
+      "props": {
+        "--tw-blur": "blur(6px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".blur-\\[80px\\]",
+      "context": [],
+      "props": {
+        "--tw-blur": "blur(80px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".blur-\\[90px\\]",
+      "context": [],
+      "props": {
+        "--tw-blur": "blur(90px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".contrast-\\[4000\\%\\]",
+      "context": [],
+      "props": {
+        "--tw-contrast": "contrast(4000%)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".invert",
+      "context": [],
+      "props": {
+        "--tw-invert": "invert(100%)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".backdrop-blur-\\[10px\\]",
+      "context": [],
+      "props": {
+        "--tw-backdrop-blur": "blur(10px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".backdrop-blur-\\[20px\\]",
+      "context": [],
+      "props": {
+        "--tw-backdrop-blur": "blur(20px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".backdrop-blur-\\[40px\\]",
+      "context": [],
+      "props": {
+        "--tw-backdrop-blur": "blur(40px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".backdrop-blur-\\[6px\\]",
+      "context": [],
+      "props": {
+        "--tw-backdrop-blur": "blur(6px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".backdrop-blur-md",
+      "context": [],
+      "props": {
+        "--tw-backdrop-blur": "blur(40px)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--global-ease": "cubic-bezier(0.9,0.1,0.1,0.9)",
+        "--global-transition": "350ms var(--global-ease)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".mktoForm .mktoLabel",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".mktoForm input::placeholder, .mktoForm select::placeholder",
+      "context": [],
+      "props": {
+        "--tw-placeholder-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".mktoForm input, .mktoForm select",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".mktoFormRow textarea::placeholder",
+      "context": [],
+      "props": {
+        "--tw-placeholder-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".mktoFormRow textarea",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".mktoCheckboxList label",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".after\\:bg-charcoal::after",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".after\\:from-transparent::after",
+      "context": [],
+      "props": {
+        "--tw-gradient-from": "transparent var(--tw-gradient-from-position)",
+        "--tw-gradient-to": "transparent var(--tw-gradient-to-position)",
+        "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".after\\:to-charcoal::after",
+      "context": [],
+      "props": {
+        "--tw-gradient-to": "#45403d var(--tw-gradient-to-position)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".after\\:content-\\[\\'\\'\\]::after",
+      "context": [],
+      "props": {
+        "--tw-content": "\"\""
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".hover\\:border-light-purple:hover",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".hover\\:text-flourescent-green-dark:hover",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".hover\\:text-silver:hover",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".hover\\:text-warm-white:hover",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".focus\\:border-light-purple:focus",
+      "context": [],
+      "props": {
+        "--tw-border-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".focus\\:text-warm-white:focus",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".active\\:scale-\\[1\\.05\\]:active",
+      "context": [],
+      "props": {
+        "--tw-scale-x": "1.05",
+        "--tw-scale-y": "1.05"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".active\\:bg-flourescent-green-dark:active",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".active\\:text-warm-white:active",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:-translate-x-0",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "-0px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:translate-x-0",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "0px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:translate-x-\\[3px\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "3px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:rotate-90",
+      "context": [],
+      "props": {
+        "--tw-rotate": "90deg"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:bg-brand-orange",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:bg-flourescent-green",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:bg-light-purple",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:text-flourescent-green",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:text-warm-white",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .group-hover\\:shadow-lg",
+      "context": [],
+      "props": {
+        "--tw-shadow": "0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)",
+        "--tw-shadow-colored": "0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:active .group-active\\:translate-x-0",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "0px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:active .group-active\\:text-flourescent-green",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".aria-expanded\\:text-warm-white[aria-expanded=\"true\"]",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".data-\\[open\\]\\:scale-100[data-open]",
+      "context": [],
+      "props": {
+        "--tw-scale-x": "1",
+        "--tw-scale-y": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".data-\\[checked\\]\\:bg-flourescent-green[data-checked]",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".data-\\[active\\]\\:text-warm-black[data-active], .data-\\[focus\\]\\:text-warm-black[data-focus]",
+      "context": [],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group[data-checked] .group-data-\\[checked\\]\\:translate-x-\\[19px\\]",
+      "context": [],
+      "props": {
+        "--tw-translate-x": "19px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group[data-checked] .group-data-\\[checked\\]\\:bg-warm-black",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".md\\:-translate-x-1\\/2",
+      "context": [
+        "@media (min-width: 1023px)"
+      ],
+      "props": {
+        "--tw-translate-x": "-50%"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".md\\:hover\\:scale-\\[1\\.05\\]:hover",
+      "context": [
+        "@media (min-width: 1023px)"
+      ],
+      "props": {
+        "--tw-scale-x": "1.05",
+        "--tw-scale-y": "1.05"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".md\\:hover\\:bg-flourescent-green-dark:hover",
+      "context": [
+        "@media (min-width: 1023px)"
+      ],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".md\\:hover\\:text-warm-white:hover",
+      "context": [
+        "@media (min-width: 1023px)"
+      ],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .md\\:group-hover\\:translate-x-\\[2px\\]",
+      "context": [
+        "@media (min-width: 1023px)"
+      ],
+      "props": {
+        "--tw-translate-x": "2px"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .md\\:group-hover\\:text-warm-black",
+      "context": [
+        "@media (min-width: 1023px)"
+      ],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".group:hover .md\\:group-hover\\:text-warm-white",
+      "context": [
+        "@media (min-width: 1023px)"
+      ],
+      "props": {
+        "--tw-text-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".\\[\\&\\>option\\]\\:bg-warm-black > option",
+      "context": [],
+      "props": {
+        "--tw-bg-opacity": "1"
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".__variable_a18e76",
+      "context": [],
+      "props": {
+        "--font-doppler-repro": "\"__DopplerRepro_a18e76\",\"__DopplerRepro_Fallback_a18e76\""
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".__variable_e3cbb4",
+      "context": [],
+      "props": {
+        "--font-doppler-repro-mono": "\"__DopplerReproMono_e3cbb4\",\"__DopplerReproMono_Fallback_e3cbb4\""
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "selector": ".__variable_dce187",
+      "context": [],
+      "props": {
+        "--font-inter": "\"__Inter_dce187\",\"__Inter_Fallback_dce187\""
+      },
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "__DopplerRepro_a18e76",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__DopplerRepro_a18e76",
+      "weight": "400",
+      "style": "italic",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__DopplerRepro_a18e76",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__DopplerRepro_a18e76",
+      "weight": "700",
+      "style": "italic",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__DopplerRepro_Fallback_a18e76",
+      "weight": "",
+      "style": "",
+      "src": "local(\"Arial\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__DopplerReproMono_e3cbb4",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__DopplerReproMono_Fallback_e3cbb4",
+      "weight": "",
+      "style": "",
+      "src": "local(\"Arial\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_dce187",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    },
+    {
+      "family": "__Inter_Fallback_dce187",
+      "weight": "",
+      "style": "",
+      "src": "local(\"Arial\")",
+      "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css"
+    }
+  ],
+  "resolved": {
+    "--tw-border-spacing-x": "0",
+    "--tw-border-spacing-y": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-pan-x": "",
+    "--tw-pan-y": "",
+    "--tw-pinch-zoom": "",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-gradient-from-position": "",
+    "--tw-gradient-via-position": "",
+    "--tw-gradient-to-position": "",
+    "--tw-ordinal": "",
+    "--tw-slashed-zero": "",
+    "--tw-numeric-figure": "",
+    "--tw-numeric-spacing": "",
+    "--tw-numeric-fraction": "",
+    "--tw-ring-inset": "",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "rgba(59,130,246,.5)",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--tw-blur": "",
+    "--tw-brightness": "",
+    "--tw-contrast": "",
+    "--tw-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--tw-invert": "",
+    "--tw-saturate": "",
+    "--tw-sepia": "",
+    "--tw-drop-shadow": "",
+    "--tw-backdrop-blur": "",
+    "--tw-backdrop-brightness": "",
+    "--tw-backdrop-contrast": "",
+    "--tw-backdrop-grayscale": "",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-backdrop-invert": "",
+    "--tw-backdrop-opacity": "",
+    "--tw-backdrop-saturate": "",
+    "--tw-backdrop-sepia": "",
+    "--tw-contain-size": "",
+    "--tw-contain-layout": "",
+    "--tw-contain-paint": "",
+    "--tw-contain-style": "",
+    "--tw-content": "",
+    "--tw-border-opacity": "",
+    "--tw-bg-opacity": "",
+    "--tw-gradient-from": "",
+    "--tw-gradient-to": "",
+    "--tw-gradient-stops": "",
+    "--tw-text-opacity": "",
+    "--tw-placeholder-opacity": "",
+    "--global-ease": "cubic-bezier(0.9,0.1,0.1,0.9)",
+    "--global-transition": "350ms cubic-bezier(0.9,0.1,0.1,0.9)",
+    "--font-doppler-repro": "",
+    "--font-doppler-repro-mono": "",
+    "--font-inter": ""
+  },
+  "html": {
+    "colorScheme": "normal",
+    "bg": "rgb(28, 22, 36)",
+    "color": "rgb(0, 0, 0)",
+    "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+    "className": "",
+    "dataTheme": null
+  },
+  "body": {
+    "bg": "rgb(28, 22, 36)",
+    "color": "rgb(0, 0, 0)",
+    "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px"
+  },
+  "h1": {
+    "tag": "h1",
+    "text": "One platform. Every secret. Human or AI.",
+    "w": 305,
+    "h": 173,
+    "color": "rgb(241, 240, 236)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+    "size": "48px",
+    "weight": "450",
+    "lh": "57.6px",
+    "radius": "0px",
+    "border": "0px solid rgb(229, 231, 235)",
+    "shadow": "none",
+    "pad": "0px",
+    "gap": "normal",
+    "letter": "-0.96px",
+    "transform": "none"
+  },
+  "nav": {
+    "tag": "header",
+    "text": "Platform Solutions Resources Doppler for Agents Customers Pr",
+    "w": 1412,
+    "h": 72,
+    "color": "rgb(241, 240, 236)",
+    "bg": "rgb(28, 22, 36)",
+    "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px",
+    "radius": "0px 0px 16px 16px",
+    "border": "0px solid rgb(85, 80, 91)",
+    "shadow": "none",
+    "pad": "0px 20px",
+    "gap": "normal",
+    "letter": "normal",
+    "transform": "none"
+  },
+  "buttons": [
+    {
+      "label": "Sign In",
+      "tag": "a",
+      "text": "Sign In",
+      "w": 0,
+      "h": 0,
+      "color": "rgb(208, 201, 196)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "16px",
+      "radius": "0px",
+      "border": "0px solid rgb(229, 231, 235)",
+      "shadow": "none",
+      "pad": "8px 0px",
+      "gap": "8px",
+      "letter": "0.15px",
+      "transform": "none"
+    },
+    {
+      "label": "Get Demo",
+      "tag": "a",
+      "text": "Get Demo",
+      "w": 0,
+      "h": 0,
+      "color": "rgb(241, 240, 236)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "radius": "12px",
+      "border": "1px solid rgb(241, 240, 236)",
+      "shadow": "none",
+      "pad": "10px 16px",
+      "gap": "8px",
+      "letter": "normal",
+      "transform": "none"
+    },
+    {
+      "label": "Start for Free",
+      "tag": "a",
+      "text": "Start for Free",
+      "w": 0,
+      "h": 0,
+      "color": "rgb(28, 22, 36)",
+      "bg": "rgb(0, 245, 117)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "radius": "12px",
+      "border": "0px solid rgb(229, 231, 235)",
+      "shadow": "none",
+      "pad": "10px 16px",
+      "gap": "8px",
+      "letter": "normal",
+      "transform": "none"
+    },
+    {
+      "label": "Sign In",
+      "tag": "a",
+      "text": "Sign In",
+      "w": 76,
+      "h": 33,
+      "color": "rgb(208, 201, 196)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+      "size": "15px",
+      "weight": "400",
+      "lh": "15px",
+      "radius": "12px",
+      "border": "1px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "pad": "8px 12px",
+      "gap": "8px",
+      "letter": "0.15px",
+      "transform": "none"
+    },
+    {
+      "label": "Get Demo",
+      "tag": "a",
+      "text": "Get Demo",
+      "w": 102,
+      "h": 33,
+      "color": "rgb(241, 240, 236)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "radius": "12px",
+      "border": "1px solid rgb(241, 240, 236)",
+      "shadow": "none",
+      "pad": "8px 12px",
+      "gap": "8px",
+      "letter": "normal",
+      "transform": "none"
+    },
+    {
+      "label": "Start for Free",
+      "tag": "a",
+      "text": "Start for Free",
+      "w": 148,
+      "h": 32,
+      "color": "rgb(28, 22, 36)",
+      "bg": "rgb(0, 245, 117)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "radius": "12px",
+      "border": "0px solid rgb(229, 231, 235)",
+      "shadow": "none",
+      "pad": "8px 12px",
+      "gap": "8px",
+      "letter": "normal",
+      "transform": "none"
+    },
+    {
+      "label": "Start for Free",
+      "tag": "a",
+      "text": "Start for Free",
+      "w": 156,
+      "h": 44,
+      "color": "rgb(28, 22, 36)",
+      "bg": "rgb(0, 245, 117)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "radius": "12px",
+      "border": "0px solid rgb(229, 231, 235)",
+      "shadow": "none",
+      "pad": "14px 16px",
+      "gap": "8px",
+      "letter": "normal",
+      "transform": "none"
+    },
+    {
+      "label": "Start for Free",
+      "tag": "a",
+      "text": "Start for Free",
+      "w": 136,
+      "h": 45,
+      "color": "rgb(241, 240, 236)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "radius": "12px",
+      "border": "1px solid rgb(241, 240, 236)",
+      "shadow": "none",
+      "pad": "14px 16px",
+      "gap": "8px",
+      "letter": "normal",
+      "transform": "none"
+    }
+  ],
+  "prefersDark": false,
+  "sheetCount": 7,
+  "ruleCount": 159
+}

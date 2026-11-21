@@ -1,31 +1,18 @@
-# Patterns
+# IKEA patterns
 
-IKEA Singapore's signed-out storefront, www.ikea.com/sg/en, 2026-11-19.
+Signed-out Singapore storefront. Screenshots are `{page}-light-{state}.png` at 1440×900 and `mobile-*-light-*.png` at 390×844.
 
-## App shell
+| Pattern | Where |
+|---|---|
+| App shell | Black utility bar, white header, logo, five nav entry points, search pill, account and cart icons. [home-light-default.png](screenshots/home-light-default.png) |
+| Mega menu | Products, Rooms, Offers, Ideas & guides, Services. [home-light-products-menu.png](screenshots/home-light-products-menu.png) |
+| Search | Focus opens suggestions. Typing a product word updates them. Enter was not pressed from the field. The search results page was loaded directly. [home-light-search-suggest.png](screenshots/home-light-search-suggest.png), [search-light-default.png](screenshots/search-light-default.png) |
+| Product list | Category page with cards. [plp-light-default.png](screenshots/plp-light-default.png) |
+| Product page | One public product page. [pdp-light-default.png](screenshots/pdp-light-default.png) |
+| Empty cart | [cart-light-default.png](screenshots/cart-light-default.png) |
+| Store dialog | Opened and closed. No store selected. [home-light-store-dialog.png](screenshots/home-light-store-dialog.png) |
+| Country sheet | Opened and closed. Country not changed. [home-light-country-dialog.png](screenshots/home-light-country-dialog.png) |
+| Phone shell | Logo, icons, menu. [mobile-home-light-default.png](screenshots/mobile-home-light-default.png), [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) |
+| Login wall | Email and password, not typed. [login-light-login-wall.png](screenshots/login-light-login-wall.png) |
 
-A white header. Left: the yellow-on-blue wordmark. Then Products, Rooms, Offers, Ideas and guides, Services. Right: a search field, Hej (log in), track order, shopping list, shopping cart. A thin promo strip sits above the header. See [home-light-default](screenshots/home-light-default.png). On a phone the same links sit behind Menu. See [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
-
-## Category
-
-Sofas and armchairs is a product grid under a title. Cards are a square photo, a name, and a price. See [category-light-default](screenshots/category-light-default.png).
-
-## Product
-
-The BILLY bookcase page puts the gallery on the left and the buy box on the right: name, price, quantity, a blue Add to cart pill, and an icon button for favourites. See [product-light-default](screenshots/product-light-default.png). Add to cart was not pressed.
-
-## Search
-
-Search for "lamp" returns a count and the same card grid, with a Sort control. See [search-light-default](screenshots/search-light-default.png).
-
-## Stores
-
-The store locator is public. It offers a store search and "Use your current location". Location was not granted. See [stores-light-default](screenshots/stores-light-default.png).
-
-## Login
-
-The login card is public and stops at "Log in to your account" plus an email field. Continue was not pressed. Signup, the account, the bag and checkout were not entered. See [login-light-default](screenshots/login-light-default.png).
-
-## Global picker
-
-www.ikea.com is the country list, not the shop. Singapore is the locale this host is pointed at. See [global-light-default](screenshots/global-light-default.png).
+Form validation, destructive confirmation, toast feedback and onboarding were not reached. The login form was not submitted, so its error state is Not captured.

@@ -1,1434 +1,784 @@
 {
- "readAt": "2026-11-14",
- "source": "the stylesheet bodies read during a live signed-out load of /postcards/app/folder/templates on designmodo.com (linked CSS bundles from network responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (.light) and with a .dark class, at 1440 x 900",
- "sheets": [
-  "https://fonts.googleapis.com/css2 (2528 bytes)",
-  "https://fonts.googleapis.com/css (35069 bytes)",
-  "inline-0 (2237 bytes)",
-  "inline-1 (7103 bytes)",
-  "inline-2 (3195 bytes)",
-  "inline-3 (11220 bytes)",
-  "inline-4 (24981 bytes)",
-  "inline-5 (241713 bytes)",
-  "inline-6 (5089 bytes)",
-  "inline-7 (179 bytes)",
-  "inline-8 (55 bytes)",
-  "inline-9 (1362 bytes)",
-  "inline-10 (179 bytes)",
-  "inline-11 (55 bytes)",
-  "inline-12 (9538 bytes)",
-  "inline-13 (1685 bytes)",
-  "inline-14 (1685 bytes)",
-  "inline-15 (195 bytes)",
-  "inline-16 (405 bytes)",
-  "inline-17 (1685 bytes)",
-  "inline-18 (1685 bytes)",
-  "inline-19 (1685 bytes)",
-  "inline-20 (1685 bytes)",
-  "inline-21 (1685 bytes)",
-  "inline-22 (1685 bytes)",
-  "inline-23 (1685 bytes)"
- ],
- "counts": {
-  "rules": 25,
-  "fonts": 104,
-  "names": {
-   "theme": 10,
-   "app": 14,
-   "skins": 0,
-   "vendor": 0,
-   "utility": 0,
-   "tailwind": 0
-  },
-  "bySelector": {
-   "[theme] @media (prefers-color-scheme: dark) .w-tc-editor": 10,
-   "[theme] @media (prefers-color-scheme: light) .w-tc-editor": 10,
-   "[theme] .w-tc-editor[data-color-mode*=\"dark\"], [data-color-mode*=\"dark\"] .w-tc-editor, [data-color-mode*=\"dark\"] .w-tc-editor-var, body[data-color-mode*=\"dark\"]": 10,
-   "[theme] .w-tc-editor[data-color-mode*=\"light\"], [data-color-mode*=\"light\"] .w-tc-editor, [data-color-mode*=\"light\"] .w-tc-editor-var, body[data-color-mode*=\"light\"]": 10,
-   "[app] :root, :host": 11,
-   "[app] .fa-spin-reverse": 1,
-   "[app] @-webkit-keyframes a ": 1,
-   "[app] @keyframes a ": 1,
-   "[app] @-webkit-keyframes sweepWobble ": 8,
-   "[app] @keyframes sweepWobble ": 8,
-   "[theme] .w-tc-editor[data-color-mode*=\"light\"]": 10
-  }
+ "capturedAt": "2026-11-21T01:22:44.048Z",
+ "brand": {
+  "themeColor": [],
+  "maskIcon": null,
+  "manifest": null,
+  "title": "Designmodo: Email & Web Design Suite for Everyone"
  },
- "errors": [],
- "theme": [
-  {
-   "file": "inline-1",
-   "selector": ".w-tc-editor",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--color-fg-default": "#c9d1d9",
-    "--color-canvas-subtle": "#161b22",
-    "--color-prettylights-syntax-comment": "#8b949e",
-    "--color-prettylights-syntax-entity-tag": "#7ee787",
-    "--color-prettylights-syntax-entity": "#d2a8ff",
-    "--color-prettylights-syntax-sublimelinter-gutter-mark": "#484f58",
-    "--color-prettylights-syntax-constant": "#79c0ff",
-    "--color-prettylights-syntax-string": "#a5d6ff",
-    "--color-prettylights-syntax-keyword": "#ff7b72",
-    "--color-prettylights-syntax-markup-bold": "#c9d1d9"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".w-tc-editor",
-   "context": [
-    "@media (prefers-color-scheme: light)"
-   ],
-   "properties": {
-    "--color-fg-default": "#24292f",
-    "--color-canvas-subtle": "#f6f8fa",
-    "--color-prettylights-syntax-comment": "#6e7781",
-    "--color-prettylights-syntax-entity-tag": "#116329",
-    "--color-prettylights-syntax-entity": "#8250df",
-    "--color-prettylights-syntax-sublimelinter-gutter-mark": "#8c959f",
-    "--color-prettylights-syntax-constant": "#0550ae",
-    "--color-prettylights-syntax-string": "#0a3069",
-    "--color-prettylights-syntax-keyword": "#cf222e",
-    "--color-prettylights-syntax-markup-bold": "#24292f"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".w-tc-editor[data-color-mode*=\"dark\"], [data-color-mode*=\"dark\"] .w-tc-editor, [data-color-mode*=\"dark\"] .w-tc-editor-var, body[data-color-mode*=\"dark\"]",
-   "context": [],
-   "properties": {
-    "--color-fg-default": "#c9d1d9",
-    "--color-canvas-subtle": "#161b22",
-    "--color-prettylights-syntax-comment": "#8b949e",
-    "--color-prettylights-syntax-entity-tag": "#7ee787",
-    "--color-prettylights-syntax-entity": "#d2a8ff",
-    "--color-prettylights-syntax-sublimelinter-gutter-mark": "#484f58",
-    "--color-prettylights-syntax-constant": "#79c0ff",
-    "--color-prettylights-syntax-string": "#a5d6ff",
-    "--color-prettylights-syntax-keyword": "#ff7b72",
-    "--color-prettylights-syntax-markup-bold": "#c9d1d9"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".w-tc-editor[data-color-mode*=\"light\"], [data-color-mode*=\"light\"] .w-tc-editor, [data-color-mode*=\"light\"] .w-tc-editor-var, body[data-color-mode*=\"light\"]",
-   "context": [],
-   "properties": {
-    "--color-fg-default": "#24292f",
-    "--color-canvas-subtle": "#f6f8fa",
-    "--color-prettylights-syntax-comment": "#6e7781",
-    "--color-prettylights-syntax-entity-tag": "#116329",
-    "--color-prettylights-syntax-entity": "#8250df",
-    "--color-prettylights-syntax-sublimelinter-gutter-mark": "#8c959f",
-    "--color-prettylights-syntax-constant": "#0550ae",
-    "--color-prettylights-syntax-string": "#0a3069",
-    "--color-prettylights-syntax-keyword": "#cf222e",
-    "--color-prettylights-syntax-markup-bold": "#24292f"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-5",
-   "selector": ".w-tc-editor[data-color-mode*=\"light\"]",
-   "context": [],
-   "properties": {
-    "--color-fg-default": "#24292f",
-    "--color-canvas-subtle": "#f6f8fa",
-    "--color-prettylights-syntax-comment": "#6e7781",
-    "--color-prettylights-syntax-entity-tag": "#116329",
-    "--color-prettylights-syntax-entity": "#8250df",
-    "--color-prettylights-syntax-sublimelinter-gutter-mark": "#8c959f",
-    "--color-prettylights-syntax-constant": "#0550ae",
-    "--color-prettylights-syntax-string": "#0a3069",
-    "--color-prettylights-syntax-keyword": "#cf222e",
-    "--color-prettylights-syntax-markup-bold": "#24292f"
-   },
-   "bin": "theme"
-  }
- ],
- "app": [
-  {
-   "file": "inline-3",
-   "selector": ":root, :host",
-   "context": [],
-   "properties": {
-    "--fa-font-solid": "normal 900 1em/1 'Font Awesome 6 Free'",
-    "--fa-font-regular": "normal 400 1em/1 'Font Awesome 6 Free'",
-    "--fa-font-light": "normal 300 1em/1 'Font Awesome 6 Pro'",
-    "--fa-font-thin": "normal 100 1em/1 'Font Awesome 6 Pro'",
-    "--fa-font-duotone": "normal 900 1em/1 'Font Awesome 6 Duotone'",
-    "--fa-font-brands": "normal 400 1em/1 'Font Awesome 6 Brands'",
-    "--fa-font-sharp-solid": "normal 900 1em/1 'Font Awesome 6 Sharp'",
-    "--fa-font-sharp-regular": "normal 400 1em/1 'Font Awesome 6 Sharp'",
-    "--fa-font-sharp-light": "normal 300 1em/1 'Font Awesome 6 Sharp'",
-    "--fa-font-sharp-thin": "normal 100 1em/1 'Font Awesome 6 Sharp'",
-    "--fa-font-sharp-duotone-solid": "normal 900 1em/1 'Font Awesome 6 Sharp Duotone'"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-3",
-   "selector": ".fa-spin-reverse",
-   "context": [],
-   "properties": {
-    "--fa-animation-direction": "reverse"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@-webkit-keyframes a"
-   ],
-   "properties": {
-    "--a": "1turn"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@keyframes a"
-   ],
-   "properties": {
-    "--a": "1turn"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@-webkit-keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "50deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@-webkit-keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "75deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@-webkit-keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "35deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@-webkit-keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "65deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@-webkit-keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "30deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@-webkit-keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "80deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@-webkit-keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "42deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@-webkit-keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "50deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "50deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "75deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "35deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "65deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "30deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "80deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "42deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-5",
-   "selector": "",
-   "context": [
-    "@keyframes sweepWobble"
-   ],
-   "properties": {
-    "--sweep": "50deg"
-   },
-   "bin": "app"
-  }
- ],
- "skins": [],
- "vendor": [],
- "utility": [],
- "tailwind": [],
+ "varCount": 13,
+ "ruleCount": 21,
  "fonts": [
   {
-   "file": "https://fonts.googleapis.com/css2",
-   "font-family": "\"Source Serif 4\"",
+   "file": "css2",
+   "font-family": "Archivo",
    "font-style": "normal",
-   "font-weight": "400",
+   "font-weight": "400 900",
+   "font-stretch": "62% 125%",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/sourceserif4/v15/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqnhZdDs4DrjTMX0gz.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css2",
-   "font-family": "\"Source Serif 4\"",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/sourceserif4/v15/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqnh9dDs4DrjTMX0gz.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css2",
-   "font-family": "\"Source Serif 4\"",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/sourceserif4/v15/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqnhhdDs4DrjTMX0gz.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css2",
-   "font-family": "\"Source Serif 4\"",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/sourceserif4/v15/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqnhRdDs4DrjTMX0gz.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
   },
   {
-   "file": "https://fonts.googleapis.com/css2",
-   "font-family": "\"Source Serif 4\"",
+   "file": "css2",
+   "font-family": "Archivo",
    "font-style": "normal",
-   "font-weight": "400",
+   "font-weight": "400 900",
+   "font-stretch": "62% 125%",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/sourceserif4/v15/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqnhVdDs4DrjTMX0gz.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
   },
   {
-   "file": "https://fonts.googleapis.com/css2",
-   "font-family": "\"Source Serif 4\"",
+   "file": "css2",
+   "font-family": "Archivo",
    "font-style": "normal",
-   "font-weight": "400",
+   "font-weight": "400 900",
+   "font-stretch": "62% 125%",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/sourceserif4/v15/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqnhtdDs4DrjTMXw.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "100",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9A4kDNxMZdWfMOD5VvkrCqUT3fcXbMn0ruHA.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "100",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9A4kDNxMZdWfMOD5VvkrCqUTTfcXbMn0ruHA.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "100",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9A4kDNxMZdWfMOD5VvkrCqUTzfcXbMn0ruHA.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "100",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9A4kDNxMZdWfMOD5VvkrCqUTPfcXbMn0ruHA.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "100",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9A4kDNxMZdWfMOD5VvkrCqUT_fcXbMn0ruHA.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "100",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9A4kDNxMZdWfMOD5VvkrCqUT7fcXbMn0ruHA.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "100",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9A4kDNxMZdWfMOD5VvkrCqUTDfcXbMn0o.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "300",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "500",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBiQyf1VFnklULWJXg.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "300",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "500",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBiQyf8VFnklULWJXg.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "300",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "500",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBiQyf0VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "300",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "500",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBiQyf7VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "300",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBiQyf3VFnklULWJXg.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "300",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "500",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBiQyf2VFnklULWJXg.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "300",
+   "file": "css2",
+   "font-family": "\"IBM Plex Mono\"",
+   "font-style": "normal",
+   "font-weight": "500",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBiQyf4VFnklULW.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
+   "file": "css2",
+   "font-family": "Prata",
+   "font-style": "normal",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5VvkrjEYTLVdlTOr0s.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
+   "file": "css2",
+   "font-family": "Prata",
+   "font-style": "normal",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5VvkrjNYTLVdlTOr0s.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
+   "file": "css2",
+   "font-family": "Prata",
+   "font-style": "normal",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5VvkrjFYTLVdlTOr0s.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5VvkrjKYTLVdlTOr0s.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5VvkrjGYTLVdlTOr0s.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
+   "file": "css2",
+   "font-family": "Prata",
+   "font-style": "normal",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5VvkrjHYTLVdlTOr0s.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5VvkrjJYTLVdlTO.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "500",
+   "file": "inter.css",
+   "font-family": "InterVariable",
+   "font-style": "normal",
+   "font-weight": "100 900",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrA6Qif1VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+   "src": "url(…) format(\"woff2\")"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inter.css",
+   "font-family": "InterVariable",
    "font-style": "italic",
-   "font-weight": "500",
+   "font-weight": "100 900",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrA6Qif8VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+   "src": "url(…) format(\"woff2\")"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrA6Qif0VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrA6Qif7VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrA6Qif3VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrA6Qif2VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrA6Qif4VFnklULW.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrAWRSf1VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrAWRSf8VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrAWRSf0VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrAWRSf7VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrAWRSf3VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrAWRSf2VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrAWRSf4VFnklULW.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrByRCf1VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrByRCf8VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrByRCf0VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrByRCf7VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrByRCf3VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrByRCf2VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrByRCf4VFnklULW.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBuRyf1VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBuRyf8VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBuRyf0VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBuRyf7VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBuRyf3VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBuRyf2VFnklULWJXg.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "italic",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9f4kDNxMZdWfMOD5VvkrBuRyf4VFnklULW.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inter.css",
+   "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "100",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5Vn9LjEYTLVdlTOr0s.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+   "src": "url(…) format(\"woff2\")"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
    "font-style": "normal",
    "font-weight": "100",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5Vn9LjNYTLVdlTOr0s.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+   "src": "url(…) format(\"woff2\")"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
    "font-weight": "100",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5Vn9LjFYTLVdlTOr0s.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
+   "src": "url(…) format(\"woff2\")"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inter.css",
+   "font-family": "InterDisplay",
    "font-style": "normal",
-   "font-weight": "100",
+   "font-weight": "200",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5Vn9LjKYTLVdlTOr0s.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+   "src": "url(…) format(\"woff2\")"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "100",
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "200",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5Vn9LjGYTLVdlTOr0s.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+   "src": "url(…) format(\"woff2\")"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "100",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5Vn9LjHYTLVdlTOr0s.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "100",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9C4kDNxMZdWfMOD5Vn9LjJYTLVdlTO.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inter.css",
+   "font-family": "InterDisplay",
    "font-style": "normal",
    "font-weight": "300",
    "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnPKreSxf6Xl7Gl3LX.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "swiper-bundle.min.css",
+   "font-family": "swiper-icons",
+   "src": "url(…)",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "inline-3",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inline-3",
+   "font-family": "Inter",
    "font-style": "normal",
-   "font-weight": "300",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnPKreQhf6Xl7Gl3LX.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inline-3",
+   "font-family": "Inter",
    "font-style": "normal",
-   "font-weight": "300",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnPKreShf6Xl7Gl3LX.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+1F00-1FFF"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inline-3",
+   "font-family": "Inter",
    "font-style": "normal",
-   "font-weight": "300",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnPKreRRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inline-3",
+   "font-family": "Inter",
    "font-style": "normal",
-   "font-weight": "300",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnPKreSRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inline-3",
+   "font-family": "Inter",
    "font-style": "normal",
-   "font-weight": "300",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnPKreSBf6Xl7Gl3LX.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
   },
   {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "300",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnPKreRhf6Xl7Glw.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
+   "file": "inline-3",
+   "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9E4kDNxMZdWfMOD5VvmojLazX3dGTP.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9E4kDNxMZdWfMOD5Vvk4jLazX3dGTP.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9E4kDNxMZdWfMOD5Vvm4jLazX3dGTP.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9E4kDNxMZdWfMOD5VvlIjLazX3dGTP.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9E4kDNxMZdWfMOD5VvmIjLazX3dGTP.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9E4kDNxMZdWfMOD5VvmYjLazX3dGTP.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9E4kDNxMZdWfMOD5Vvl4jLazX3dA.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnZKveSxf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnZKveQhf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnZKveShf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnZKveRRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnZKveSRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnZKveSBf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnZKveRhf6Xl7Glw.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnSKzeSxf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnSKzeQhf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnSKzeShf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnSKzeRRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnSKzeSRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnSKzeSBf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnSKzeRhf6Xl7Glw.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnLK3eSxf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnLK3eQhf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnLK3eShf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnLK3eRRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnLK3eSRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnLK3eSBf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnLK3eRhf6Xl7Glw.woff2\") format(\"woff2\")",
-   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnMK7eSxf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnMK7eQhf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnMK7eShf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+1F00-1FFF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnMK7eRRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnMK7eSRf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnMK7eSBf6Xl7Gl3LX.woff2\") format(\"woff2\")",
-   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
-  },
-  {
-   "file": "https://fonts.googleapis.com/css",
-   "font-family": "\"Fira Sans\"",
-   "font-style": "normal",
-   "font-weight": "800",
-   "font-display": "swap",
-   "src": "url(\"https://fonts.gstatic.com/s/firasans/v18/va9B4kDNxMZdWfMOD5VnMK7eRhf6Xl7Glw.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
   }
  ],
- "resolved": {
-  "dark": {
-   "--a": {
-    "raw": "0deg",
-    "kind": "other"
-   },
-   "--fa-font-brands": {
-    "raw": "normal 400 1em/1 'Font Awesome 6 Brands'",
-    "kind": "other"
-   },
-   "--fa-font-duotone": {
-    "raw": "normal 900 1em/1 'Font Awesome 6 Duotone'",
-    "kind": "other"
-   },
-   "--fa-font-light": {
-    "raw": "normal 300 1em/1 'Font Awesome 6 Pro'",
-    "kind": "other"
-   },
-   "--fa-font-regular": {
-    "raw": "normal 400 1em/1 'Font Awesome 6 Free'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-duotone-solid": {
-    "raw": "normal 900 1em/1 'Font Awesome 6 Sharp Duotone'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-light": {
-    "raw": "normal 300 1em/1 'Font Awesome 6 Sharp'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-regular": {
-    "raw": "normal 400 1em/1 'Font Awesome 6 Sharp'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-solid": {
-    "raw": "normal 900 1em/1 'Font Awesome 6 Sharp'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-thin": {
-    "raw": "normal 100 1em/1 'Font Awesome 6 Sharp'",
-    "kind": "other"
-   },
-   "--fa-font-solid": {
-    "raw": "normal 900 1em/1 'Font Awesome 6 Free'",
-    "kind": "other"
-   },
-   "--fa-font-thin": {
-    "raw": "normal 100 1em/1 'Font Awesome 6 Pro'",
-    "kind": "other"
-   },
-   "--sweep": {
-    "raw": "55deg",
-    "kind": "other"
+ "vars": {
+  "--swiper-theme-color": [
+   {
+    "value": "#007aff",
+    "selector": ":root",
+    "file": "swiper-bundle.min.css",
+    "context": []
    }
-  },
-  "light": {
-   "--a": {
-    "raw": "0deg",
-    "kind": "other"
-   },
-   "--fa-font-brands": {
-    "raw": "normal 400 1em/1 'Font Awesome 6 Brands'",
-    "kind": "other"
-   },
-   "--fa-font-duotone": {
-    "raw": "normal 900 1em/1 'Font Awesome 6 Duotone'",
-    "kind": "other"
-   },
-   "--fa-font-light": {
-    "raw": "normal 300 1em/1 'Font Awesome 6 Pro'",
-    "kind": "other"
-   },
-   "--fa-font-regular": {
-    "raw": "normal 400 1em/1 'Font Awesome 6 Free'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-duotone-solid": {
-    "raw": "normal 900 1em/1 'Font Awesome 6 Sharp Duotone'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-light": {
-    "raw": "normal 300 1em/1 'Font Awesome 6 Sharp'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-regular": {
-    "raw": "normal 400 1em/1 'Font Awesome 6 Sharp'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-solid": {
-    "raw": "normal 900 1em/1 'Font Awesome 6 Sharp'",
-    "kind": "other"
-   },
-   "--fa-font-sharp-thin": {
-    "raw": "normal 100 1em/1 'Font Awesome 6 Sharp'",
-    "kind": "other"
-   },
-   "--fa-font-solid": {
-    "raw": "normal 900 1em/1 'Font Awesome 6 Free'",
-    "kind": "other"
-   },
-   "--fa-font-thin": {
-    "raw": "normal 100 1em/1 'Font Awesome 6 Pro'",
-    "kind": "other"
-   },
-   "--sweep": {
-    "raw": "55deg",
-    "kind": "other"
+  ],
+  "--swiper-navigation-size": [
+   {
+    "value": "44px",
+    "selector": ":root",
+    "file": "swiper-bundle.min.css",
+    "context": []
    }
-  }
+  ],
+  "--swiper-preloader-color": [
+   {
+    "value": "#fff",
+    "selector": ".swiper-lazy-preloader-white",
+    "file": "swiper-bundle.min.css",
+    "context": []
+   },
+   {
+    "value": "#000",
+    "selector": ".swiper-lazy-preloader-black",
+    "file": "swiper-bundle.min.css",
+    "context": []
+   }
+  ],
+  "--no-of-website-slides": [
+   {
+    "value": "7",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": []
+   }
+  ],
+  "--website-img-width": [
+   {
+    "value": "354px",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": []
+   },
+   {
+    "value": "calc(((100vw - (2 * (5vw + 15px + 7.5px))) / 2) * 0.61)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 1590px)"
+    ]
+   },
+   {
+    "value": "calc(((100vw - (2 * 6vw)) / 2) * 0.61)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 1265px)"
+    ]
+   },
+   {
+    "value": "calc((100vw - (2 * 6vw)) * 0.61)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 767px)"
+    ]
+   }
+  ],
+  "--website-slide-width": [
+   {
+    "value": "calc(var(--website-img-width) + 30px)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": []
+   },
+   {
+    "value": "calc(var(--website-img-width) + 15px)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 767px)"
+    ]
+   }
+  ],
+  "--website-iteration-time": [
+   {
+    "value": "calc(10s * var(--no-of-website-slides))",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": []
+   }
+  ],
+  "--no-of-email-slides": [
+   {
+    "value": "8",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": []
+   }
+  ],
+  "--email-img-width": [
+   {
+    "value": "328px",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": []
+   },
+   {
+    "value": "calc(((100vw - (2 * (5vw + 15px + 7.5px))) / 2) * 0.48)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 1590px)"
+    ]
+   },
+   {
+    "value": "calc(((100vw - (2 * 6vw)) / 2) * 0.48)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 1265px)"
+    ]
+   },
+   {
+    "value": "calc((100vw - (2 * 6vw)) * 0.48)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 767px)"
+    ]
+   }
+  ],
+  "--email-slide-width": [
+   {
+    "value": "calc(var(--email-img-width) + 40px)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": []
+   },
+   {
+    "value": "calc(var(--email-img-width) + 22px)",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 767px)"
+    ]
+   }
+  ],
+  "--email-iteration-time": [
+   {
+    "value": "calc(10s * var(--no-of-email-slides))",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": []
+   }
+  ],
+  "--variable-width": [
+   {
+    "value": "-220px",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": []
+   },
+   {
+    "value": "-200px",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 1200px)"
+    ]
+   },
+   {
+    "value": "-180px",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 1023px)"
+    ]
+   },
+   {
+    "value": "-150px",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 870px)"
+    ]
+   },
+   {
+    "value": "-200px",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 767px)"
+    ]
+   },
+   {
+    "value": "-180px",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 576px)"
+    ]
+   },
+   {
+    "value": "-130px",
+    "selector": ":root",
+    "file": "landing.css",
+    "context": [
+     "@media (max-width: 435px)"
+    ]
+   }
+  ],
+  "--bf-token": [
+   {
+    "value": "56px",
+    "selector": ".bf-banner-token",
+    "file": "bf-banner.css",
+    "context": []
+   },
+   {
+    "value": "44px",
+    "selector": ".bf-bubble .bf-banner-token",
+    "file": "bf-banner.css",
+    "context": []
+   }
+  ]
  }
 }

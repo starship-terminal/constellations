@@ -1,0 +1,560 @@
+{
+  "light": {
+    "home": {
+      "signIn": {
+        "text": "Sign in",
+        "box": {
+          "w": 112,
+          "h": 40
+        },
+        "color": "rgb(19, 19, 20)",
+        "bg": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "shadow": "rgba(19, 19, 20, 0.22) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.25) 0px 4px 4px -5px",
+        "font": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "size": "14px",
+        "weight": "500",
+        "lh": "40px",
+        "ls": "normal",
+        "pad": "0px 24px 0px 24px",
+        "border": "0px none rgb(19, 19, 20)",
+        "deco": "none"
+      },
+      "joinFree": {
+        "text": "Join for free",
+        "box": {
+          "w": 135,
+          "h": 54
+        },
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(0, 0, 0)",
+        "radius": "8px",
+        "shadow": "rgba(0, 0, 0, 0.25) 0px 4px 4px -5px",
+        "font": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "size": "15px",
+        "weight": "500",
+        "lh": "54px",
+        "ls": "normal",
+        "pad": "0px 24px 0px 24px",
+        "border": "0px none rgb(255, 255, 255)",
+        "deco": "none"
+      },
+      "member": {
+        "text": "Explore Blog Pricing Twitter Contact Sign in Join ",
+        "box": {
+          "w": 1440,
+          "h": 7112
+        },
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "font": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "pad": "0px 0px 0px 0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "deco": "none"
+      },
+      "logo": {
+        "text": "",
+        "box": {
+          "w": 60,
+          "h": 44
+        },
+        "color": "rgb(0, 0, 238)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "font": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "pad": "0px 0px 0px 0px",
+        "border": "0px none rgb(0, 0, 238)",
+        "deco": "none"
+      }
+    },
+    "pricing": {
+      "h1": {
+        "text": "Oku Premium",
+        "box": {
+          "w": 720,
+          "h": 62,
+          "y": 144
+        },
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px rgb(0, 0, 0)",
+        "size": "48px",
+        "weight": "400",
+        "font": "FabricSerifWeb",
+        "pad": "0px 0px"
+      },
+      "priceCount": 4,
+      "cards": [
+        {
+          "text": "Free $0 All accounts let you track, rate",
+          "box": {
+            "w": 297,
+            "h": 506,
+            "y": 472
+          },
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "shadow": "none",
+          "border": "0px rgb(0, 0, 0)",
+          "size": "16px",
+          "weight": "400",
+          "font": "Inter",
+          "pad": "0px 0px"
+        },
+        {
+          "text": "Free $0 All accounts let you track, rate",
+          "box": {
+            "w": 297,
+            "h": 506,
+            "y": 472
+          },
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "shadow": "none",
+          "border": "0px rgb(0, 0, 0)",
+          "size": "16px",
+          "weight": "400",
+          "font": "Inter",
+          "pad": "0px 0px"
+        },
+        {
+          "text": "save 50% PREMIUM $35 / year ($0.67 per w",
+          "box": {
+            "w": 297,
+            "h": 399,
+            "y": 472
+          },
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "shadow": "none",
+          "border": "0px rgb(0, 0, 0)",
+          "size": "16px",
+          "weight": "400",
+          "font": "Inter",
+          "pad": "0px 0px"
+        }
+      ],
+      "price": {
+        "text": "$0",
+        "box": {
+          "w": 45,
+          "h": 39,
+          "y": 511
+        },
+        "color": "rgb(19, 19, 20)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px rgb(19, 19, 20)",
+        "size": "39px",
+        "weight": "400",
+        "font": "FabricSerifWeb",
+        "pad": "0px 0px"
+      }
+    },
+    "book": {
+      "h1": {
+        "text": "Taipei Story",
+        "color": "rgb(19, 19, 20)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "size": "24px",
+        "weight": "400",
+        "font": "FabricSerifWeb",
+        "radius": "0px",
+        "box": {
+          "w": 652,
+          "h": 31
+        }
+      },
+      "tabs": [
+        {
+          "text": "Book Info",
+          "color": "rgb(19, 19, 20)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "size": "15px",
+          "weight": "400",
+          "font": "Inter",
+          "radius": "0px",
+          "box": {
+            "w": 67,
+            "h": 59
+          }
+        },
+        {
+          "text": "Reviews 0",
+          "color": "rgb(140, 140, 144)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "size": "15px",
+          "weight": "400",
+          "font": "Inter",
+          "radius": "0px",
+          "box": {
+            "w": 91,
+            "h": 59
+          }
+        },
+        {
+          "text": "Highlights 0",
+          "color": "rgb(140, 140, 144)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "size": "15px",
+          "weight": "400",
+          "font": "Inter",
+          "radius": "0px",
+          "box": {
+            "w": 103,
+            "h": 59
+          }
+        }
+      ]
+    },
+    "blog": {
+      "text": "Apr 11, 2022 Oku now available for iOS! Oku is newly availab",
+      "color": "rgb(0, 0, 238)",
+      "bg": "rgb(255, 255, 255)",
+      "radius": "8px",
+      "size": "16px",
+      "box": {
+        "w": 616,
+        "h": 675
+      }
+    },
+    "dialog": {
+      "panel": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "radius": "20px",
+        "shadow": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "box": {
+          "w": 480,
+          "h": 756
+        },
+        "size": "16px",
+        "pad": "0px 0px"
+      },
+      "scrim": "rgba(0, 0, 0, 0.6)",
+      "input": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(19, 19, 20)",
+        "radius": "8px",
+        "shadow": "none",
+        "border": "1px solid rgb(209, 209, 211)",
+        "box": {
+          "w": 384,
+          "h": 46
+        },
+        "size": "14px",
+        "pad": "0px 16px"
+      },
+      "submit": {
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "shadow": "rgba(0, 0, 0, 0.25) 0px 4px 4px -5px",
+        "border": "0px none rgb(255, 255, 255)",
+        "box": {
+          "w": 193,
+          "h": 40
+        },
+        "size": "14px",
+        "pad": "0px 24px"
+      }
+    }
+  },
+  "dark": {
+    "home": {
+      "signIn": {
+        "text": "Sign in",
+        "box": {
+          "w": 112,
+          "h": 40
+        },
+        "color": "rgb(224, 225, 228)",
+        "bg": "rgb(19, 19, 20)",
+        "radius": "8px",
+        "shadow": "rgba(224, 225, 228, 0.22) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.25) 0px 4px 4px -5px",
+        "font": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "size": "14px",
+        "weight": "500",
+        "lh": "40px",
+        "ls": "normal",
+        "pad": "0px 24px 0px 24px",
+        "border": "0px none rgb(224, 225, 228)",
+        "deco": "none"
+      },
+      "joinFree": {
+        "text": "Join for free",
+        "box": {
+          "w": 135,
+          "h": 54
+        },
+        "color": "rgb(193, 190, 203)",
+        "bg": "rgb(36, 36, 38)",
+        "radius": "8px",
+        "shadow": "none",
+        "font": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "size": "15px",
+        "weight": "500",
+        "lh": "54px",
+        "ls": "normal",
+        "pad": "0px 24px 0px 24px",
+        "border": "0px none rgb(193, 190, 203)",
+        "deco": "none"
+      },
+      "member": {
+        "text": "Explore Blog Pricing Twitter Contact Sign in Join ",
+        "box": {
+          "w": 1440,
+          "h": 7112
+        },
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "font": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "pad": "0px 0px 0px 0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "deco": "none"
+      },
+      "logo": {
+        "text": "",
+        "box": {
+          "w": 60,
+          "h": 44
+        },
+        "color": "rgb(158, 158, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "font": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "pad": "0px 0px 0px 0px",
+        "border": "0px none rgb(158, 158, 255)",
+        "deco": "none"
+      }
+    },
+    "pricing": {
+      "h1": {
+        "text": "Oku Premium",
+        "box": {
+          "w": 720,
+          "h": 62,
+          "y": 144
+        },
+        "color": "rgb(224, 225, 228)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px rgb(224, 225, 228)",
+        "size": "48px",
+        "weight": "400",
+        "font": "FabricSerifWeb",
+        "pad": "0px 0px"
+      },
+      "priceCount": 4,
+      "cards": [
+        {
+          "text": "Free $0 All accounts let you track, rate",
+          "box": {
+            "w": 297,
+            "h": 506,
+            "y": 472
+          },
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "shadow": "none",
+          "border": "0px rgb(0, 0, 0)",
+          "size": "16px",
+          "weight": "400",
+          "font": "Inter",
+          "pad": "0px 0px"
+        },
+        {
+          "text": "Free $0 All accounts let you track, rate",
+          "box": {
+            "w": 297,
+            "h": 506,
+            "y": 472
+          },
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "shadow": "none",
+          "border": "0px rgb(0, 0, 0)",
+          "size": "16px",
+          "weight": "400",
+          "font": "Inter",
+          "pad": "0px 0px"
+        },
+        {
+          "text": "save 50% PREMIUM $35 / year ($0.67 per w",
+          "box": {
+            "w": 297,
+            "h": 399,
+            "y": 472
+          },
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "shadow": "none",
+          "border": "0px rgb(0, 0, 0)",
+          "size": "16px",
+          "weight": "400",
+          "font": "Inter",
+          "pad": "0px 0px"
+        }
+      ],
+      "price": {
+        "text": "$0",
+        "box": {
+          "w": 45,
+          "h": 39,
+          "y": 511
+        },
+        "color": "rgb(193, 190, 203)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "shadow": "none",
+        "border": "0px rgb(193, 190, 203)",
+        "size": "39px",
+        "weight": "400",
+        "font": "FabricSerifWeb",
+        "pad": "0px 0px"
+      }
+    },
+    "book": {
+      "h1": {
+        "text": "Taipei Story",
+        "color": "rgb(193, 190, 203)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "size": "24px",
+        "weight": "400",
+        "font": "FabricSerifWeb",
+        "radius": "0px",
+        "box": {
+          "w": 652,
+          "h": 31
+        }
+      },
+      "tabs": [
+        {
+          "text": "Book Info",
+          "color": "rgb(193, 190, 203)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "size": "15px",
+          "weight": "400",
+          "font": "Inter",
+          "radius": "0px",
+          "box": {
+            "w": 67,
+            "h": 59
+          }
+        },
+        {
+          "text": "Reviews 0",
+          "color": "rgb(106, 104, 111)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "size": "15px",
+          "weight": "400",
+          "font": "Inter",
+          "radius": "0px",
+          "box": {
+            "w": 91,
+            "h": 59
+          }
+        },
+        {
+          "text": "Highlights 0",
+          "color": "rgb(106, 104, 111)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "size": "15px",
+          "weight": "400",
+          "font": "Inter",
+          "radius": "0px",
+          "box": {
+            "w": 103,
+            "h": 59
+          }
+        }
+      ]
+    },
+    "blog": {
+      "text": "Apr 11, 2022 Oku now available for iOS! Oku is newly availab",
+      "color": "rgb(158, 158, 255)",
+      "bg": "rgb(19, 19, 20)",
+      "radius": "8px",
+      "size": "16px",
+      "box": {
+        "w": 616,
+        "h": 675
+      }
+    },
+    "dialog": {
+      "panel": {
+        "bg": "rgb(19, 19, 20)",
+        "color": "rgb(0, 0, 0)",
+        "radius": "20px",
+        "shadow": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "box": {
+          "w": 480,
+          "h": 756
+        },
+        "size": "16px",
+        "pad": "0px 0px"
+      },
+      "scrim": "rgba(0, 0, 0, 0.6)",
+      "input": {
+        "bg": "rgb(19, 19, 20)",
+        "color": "rgb(193, 190, 203)",
+        "radius": "8px",
+        "shadow": "none",
+        "border": "1px solid rgb(54, 53, 57)",
+        "box": {
+          "w": 384,
+          "h": 46
+        },
+        "size": "14px",
+        "pad": "0px 16px"
+      },
+      "submit": {
+        "bg": "rgb(36, 36, 38)",
+        "color": "rgb(193, 190, 203)",
+        "radius": "8px",
+        "shadow": "none",
+        "border": "0px none rgb(193, 190, 203)",
+        "box": {
+          "w": 193,
+          "h": 40
+        },
+        "size": "14px",
+        "pad": "0px 24px"
+      }
+    }
+  }
+}

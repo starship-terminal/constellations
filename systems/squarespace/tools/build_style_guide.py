@@ -1,149 +1,127 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json. Light only. Deterministic."""
-import html
-import json
-import pathlib
-import re
+"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
+
+Every colour, radius, shadow and type style on the page is a CSS custom property generated from
+tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
+`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
+theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
+
+Placeholders in the template:
+  /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
+  /*TOKENS*/null                  a compact copy of the token tree for the JS tables
+  <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
+
+Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
+"""
+import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
 
 
 def flat(node, prefix=""):
-    for key, value in node.items():
-        if key.startswith("$"):
+    for k, v in node.items():
+        if k.startswith("$"):
             continue
-        if isinstance(value, dict) and "$value" in value:
-            yield prefix + key, value
-        elif isinstance(value, dict):
-            yield from flat(value, prefix + key + "-")
+        if isinstance(v, dict) and "$value" in v:
+            yield prefix + k, v
+        elif isinstance(v, dict):
+            yield from flat(v, prefix + k + "-")
 
 
-def resolve(value, seen=None):
-    seen = seen or set()
-    if not isinstance(value, str):
-        return value
-
-    def repl(match):
-        path = match.group(1)
-        if path in seen:
-            return path
-        node = T["core"]
-        for part in path.split("."):
-            node = node[part]
-        return str(resolve(node["$value"], seen | {path}))
-
-    return re.sub(r"\{([^{}]+)\}", repl, value)
+def cssname(path):
+    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
 
 
-def css(value, typ):
-    value = resolve(value)
-    if typ == "cubicBezier":
-        return "cubic-bezier(%s)" % ", ".join(str(item) for item in value)
-    if typ == "typography":
-        return {key: resolve(item) if isinstance(item, str) else item for key, item in value.items()}
-    return value
+def alias(v):
+    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
 
 
-rows_color = [(name, css(tok["$value"], tok["$type"])) for name, tok in flat(T["light"]["color"])]
-type_rows = [(name, css(tok["$value"], "typography")) for name, tok in flat(T["core"]["typography"])]
-radius_rows = [(name, css(tok["$value"], tok["$type"])) for name, tok in flat(T["core"]["radius"])]
-space_rows = [(name, css(tok["$value"], tok["$type"])) for name, tok in flat(T["core"]["space"])]
+def css_val(name, t):
+    v, ty = t["$value"], t["$type"]
+    if ty == "cubicBezier":
+        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
+    if ty == "shadow":
+        if isinstance(v, str):
+            return alias(v)
+        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
+    if ty == "typography":
+        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
+    if ty == "gradient":
+        angle = t["$extensions"].get("angle", "180deg")
+        return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
+    return alias(v)
 
 
-def swatch(name, value):
-    return (
-        f'<div class="sw"><i style="background:{value}"></i>'
-        f"<div><b>{name}</b><span>{value}</span></div></div>"
-    )
+# A light-only product has no dark set; every set that is missing renders as empty.
+SETS = [s for s in ("core", "light", "dark") if s in T]
+THEMES = [s for s in SETS if s != "core"]
 
 
-def specimen_style(value):
-    """The specimen's style attribute, escaped: a quoted family would otherwise close it."""
-    css = ";".join(f"{prop}:{value[key]}" for prop, key in (
-        ("font-family", "fontFamily"), ("font-size", "fontSize"), ("font-weight", "fontWeight"),
-        ("line-height", "lineHeight"), ("letter-spacing", "letterSpacing")))
-    return html.escape(css, quote=True)
+def block(setname):
+    """A set's custom properties; a set the product lacks renders as nothing."""
+    if setname not in T:
+        return ""
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
 
 
-color_html = "\n".join(swatch(name, value) for name, value in rows_color)
-type_html = "\n".join(
-    f'<div class="ty"><div class="k">{name}<small>{value["fontSize"]} / {value["lineHeight"]} · {value["fontWeight"]}</small></div>'
-    f'<div style="{specimen_style(value)}">A website makes it real</div></div>'
-    for name, value in type_rows
-)
-radius_html = "\n".join(
-    f'<div class="sw"><i style="background:#000000;border-radius:{value}"></i><div><b>{name}</b><span>{value}</span></div></div>'
-    for name, value in radius_rows
-)
-space_html = "\n".join(
-    f'<div class="sp"><i style="width:{value}"></i><span>{name} · {value}</span></div>'
-    for name, value in space_rows
-)
+# a core name and a themed name must not land on the same custom property
+_core = {cssname(n) for n, _ in flat(T["core"])}
+for _set in THEMES:
+    _clash = _core & {cssname(n) for n, _ in flat(T[_set])}
+    if _clash:
+        raise SystemExit(f"core and {_set} share custom properties: {sorted(_clash)[:5]}")
 
-page = css(T["light"]["color"]["page"]["$value"], "color")
-ink = css(T["light"]["color"]["ink"]["$value"], "color")
-muted = css(T["light"]["color"]["muted"]["$value"], "color")
-accent = css(T["light"]["color"]["accent"]["$value"], "color")
-line = css(T["light"]["color"]["line"]["$value"], "color")
-sans = css(T["core"]["font"]["family"]["clarkson"]["$value"], "fontFamily")
 
-html = f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Squarespace style guide</title>
-<style>
-  * {{ box-sizing: border-box; }}
-  body {{ margin: 0; background: {page}; color: {ink}; font: 400 15px/21px {sans}; }}
-  header, main {{ max-width: 960px; margin: 0 auto; padding: 32px 24px; }}
-  h1 {{ font-weight: 300; font-size: 56px; line-height: 60px; letter-spacing: -2.24px; margin: 0 0 8px; }}
-  h2 {{ font-size: 20px; font-weight: 500; margin: 36px 0 12px; }}
-  p.lead {{ color: {muted}; max-width: 68ch; }}
-  .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }}
-  .sw {{ display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }}
-  .sw i {{ width: 44px; height: 44px; border-radius: 4px; box-shadow: inset 0 0 0 1px {line}; display: block; }}
-  .sw b, .ty .k {{ display: block; font-size: 12px; }}
-  .sw span, .ty small {{ color: {muted}; font-size: 12px; font-weight: 400; }}
-  .ty {{ display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid {line}; align-items: baseline; }}
-  .sp {{ display: flex; align-items: center; gap: 12px; margin: 6px 0; }}
-  .sp i {{ height: 12px; background: {accent}; display: block; }}
-  .btn {{ display: inline-flex; align-items: center; justify-content: center; height: 60px; padding: 23px 28px; border-radius: 4px; background: #000; color: #fff; font: 500 14px/14px {sans}; letter-spacing: 0; text-transform: uppercase; border: 0; }}
-  .btn-inv {{ display: inline-flex; align-items: center; justify-content: center; height: 60px; padding: 23px 28px; border-radius: 4px; background: #fff; color: #000; font: 500 14px/14px {sans}; text-transform: uppercase; border: 0; box-shadow: inset 0 0 0 1px {line}; }}
-  .login {{ display: inline-flex; align-items: center; justify-content: center; height: 44px; width: 327px; background: #f2f2f2; color: #b7b7b7; font: 500 12px/22px {sans}; letter-spacing: 0.5px; text-transform: uppercase; border: 0; }}
-  .oauth {{ display: flex; align-items: center; height: 55px; width: 327px; padding: 0 22px; border: 1px solid #000; background: transparent; color: #000; font: 500 14px/22px {sans}; }}
-  .field {{ width: 327px; border-bottom: 1px solid {line}; padding: 11px 0; color: {muted}; font: 500 9.75px/16px {sans}; letter-spacing: 0.75px; text-transform: uppercase; }}
-  .field b {{ display: block; margin-top: 8px; color: #0e0e0e; font: 400 14px/22px {sans}; letter-spacing: 0; text-transform: none; }}
-  .row {{ display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }}
-  .stack {{ display: grid; gap: 12px; justify-items: start; }}
-</style>
-</head>
-<body>
-<header>
-  <h1>Squarespace</h1>
-  <p class="lead">Public marketing and signed-out login chrome, measured 2026-11-19. Clarkson is not bundled, so specimens fall back to Helvetica.</p>
-</header>
-<main>
-  <h2>Colour</h2>
-  <div class="grid">{color_html}</div>
-  <h2>Type</h2>
-  {type_html}
-  <h2>Radius</h2>
-  <div class="grid">{radius_html}</div>
-  <h2>Space</h2>
-  {space_html}
-  <h2>Controls</h2>
-  <div class="stack">
-    <div class="row"><span class="btn">Get started</span><span class="btn-inv">Get started</span></div>
-    <div class="field">Email address<b>name@example.com</b></div>
-    <span class="login">Log in</span>
-    <span class="oauth">Continue with Google</span>
-  </div>
-</main>
-</body>
-</html>
-"""
+def slim(node):
+    if isinstance(node, dict) and "$value" in node:
+        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
+        for k in ("compact", "darkVariationAxis"):
+            if k in node["$extensions"]:
+                out[k] = node["$extensions"][k]
+        if node.get("$description"):
+            out["d"] = node["$description"]
+        return out
+    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
 
+
+# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
+# from ending the script early. JSON.parse and a JS literal read it back unchanged.
+data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
+                  ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+
+_uid = [0]
+ICON_SRC = {}
+
+
+def clean_svg(svg, size):
+    svg = re.sub(r"<\?xml[^>]*>\s*", "", svg).strip()
+    svg = re.sub(r"\s+", " ", svg).replace("> <", "><")
+    for i in sorted(set(re.findall(r'id="([^"]+)"', svg))):
+        _uid[0] += 1
+        svg = svg.replace(f'id="{i}"', f'id="i{_uid[0]}"').replace(f"url(#{i})", f"url(#i{_uid[0]})")
+    svg = re.sub(r"<svg\b", '<svg aria-hidden="true" focusable="false" class="ic"', svg, count=1)
+    if size:
+        svg = re.sub(r'\swidth="[^"]*"', "", svg, count=1)
+        svg = re.sub(r'\sheight="[^"]*"', "", svg, count=1)
+        svg = svg.replace("<svg ", f'<svg width="{size}" height="{size}" ', 1)
+    return svg
+
+
+def icon(m):
+    name, size = m.group(1), m.group(2)
+    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
+    return clean_svg(src, size)
+
+
+tpl_path = HERE / "tools" / "style-guide.template.html"
+if not tpl_path.exists():
+    raise SystemExit("missing tools/style-guide.template.html")
+tpl = tpl_path.read_text()
+html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
+        .replace("/*TOKENS*/null", data))
+if "<!--icon:" in html:
+    html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
 (HERE / "style-guide.html").write_text(html)
-print("wrote", HERE / "style-guide.html")
+print("style-guide.html:", len(html.encode()), "bytes;",
+      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")

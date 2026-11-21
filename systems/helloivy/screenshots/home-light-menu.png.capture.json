@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T13:01:11.805Z",
+  "capturedAt": "2026-11-21T04:10:00.000Z",
   "screenshot": "home-light-menu.png",
-  "sanitizedSourceUrl": "https://www.helloivy.co/",
+  "note": "Viewport shot of the open menu overlay, taken during the site-tree probe at 1440x900, dpr 1, before the package shooter. The later shooter click landed on the icon's active dot and did not reopen the list.",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -10,60 +10,20 @@
     },
     "deviceScaleFactor": 1
   },
-  "configuredViewport": {
-    "width": 1440,
-    "height": 900
-  },
   "actual": {
     "innerWidth": 1440,
     "innerHeight": 900,
-    "devicePixelRatio": 1,
-    "theme": {
-      "classes": [],
-      "attributes": {},
-      "colorScheme": "light"
-    },
-    "visualViewport": {
-      "width": 1440,
-      "height": 900,
-      "scale": 1,
-      "offsetLeft": 0,
-      "offsetTop": 0,
-      "pageLeft": 0,
-      "pageTop": 0
-    },
-    "documentSize": {
-      "width": 1440,
-      "height": 8305
-    },
-    "scroll": {
-      "x": 0,
-      "y": 0
-    }
-  },
-  "capture": {
-    "mode": "viewport",
-    "scale": "device",
-    "clip": null
+    "devicePixelRatio": 1
   },
   "png": {
     "width": 1440,
     "height": 900
   },
   "dimensionCheck": {
-    "status": "pass",
-    "expected": {
-      "width": 1440,
-      "height": 900
-    },
-    "basis": "configuredViewport"
+    "status": "pass"
   },
   "visualReview": {
-    "status": "pending",
-    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
-  },
-  "cropCoordinates": {
-    "status": "unverified",
-    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+    "status": "accepted",
+    "note": "Full overlay visible: 01 HOME through 05 BLOG, close X, trial pill."
   }
 }

@@ -5,128 +5,224 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pexels style guide</title>
 <style>
-/* Values copied from tokens.json, measured on pexels.com 2026-11-19.
-   Canva Sans is not shipped. The fallback is Helvetica Neue. */
-:root, [data-mode="light"] {
-  --page: #ffffff;
-  --surface: #f7f7f7;
-  --text: #000000;
-  --muted: #747474;
-  --accent: #191919;
-  --on-accent: #ffffff;
-  --border: #ededed;
-  --action: #54ca84;
-  --focus: #f5f5f5;
+:root {
+  --font-family-sans: Canva Sans, Helvetica Neue, Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-display: Canva Sans Display, Canva Sans, Helvetica Neue, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --typography-display: 700 48px/52.8px var(--font-family-sans);
+  --typography-body: 400 14px/19.6px var(--font-family-sans);
+  --typography-label: 400 17px/17px var(--font-family-sans);
+  --radius-control: 12px;
+  --radius-search: 12px;
+  --radius-pill: 30px;
+  --radius-chip: 180px;
+  --radius-nav: 25px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --size-control: 48px;
+  --size-logo: 38px;
+  --size-logoWidth: 115px;
+  --border-width: 1px;
+  --motion-hover: 100ms;
+  --motion-border: 250ms;
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --color-greyscale-100: #fafafa;
+  --color-greyscale-200: #f7f7f7;
+  --color-greyscale-300: #f5f5f5;
+  --color-greyscale-400: #ededed;
+  --color-greyscale-500: #e5e5e5;
+  --color-greyscale-600: #cdcdcd;
+  --color-greyscale-700: #a8a8a8;
+  --color-greyscale-800: #747474;
+  --color-greyscale-900: #393939;
+  --color-greyscale-black: #000000;
+  --color-greyscale-shadow: #191919;
+  --color-greyscale-white: #ffffff;
+  --color-alien-light: #ddf4e6;
+  --color-alien-lighter: #bbeace;
+  --color-alien-mid: #54ca84;
+  --color-alien-dark: #32ac64;
+  --color-jellyfish-light: #ececfe;
+  --color-jellyfish-lighter: #dadafe;
+  --color-jellyfish-mid: #a2a2fc;
+  --color-jellyfish-dark: #7a7add;
+  --color-papaya-light: #ffe5d8;
+  --color-papaya-lighter: #ffc4a7;
+  --color-papaya-mid: #ff7b3a;
+  --color-papaya-dark: #de5c1c;
+  --color-strawberry-light: #ffe3ec;
+  --color-strawberry-lighter: #ffb4cc;
+  --color-strawberry-mid: #ff3a78;
+  --color-strawberry-dark: #db255f;
+  --color-sunshine-light: #fff8dc;
+  --color-sunshine-lighter: #fff1ba;
+  --color-sunshine-mid: #ffdb52;
+  --color-sunshine-dark: #fdca08;
+  --background-page: var(--color-greyscale-white);
+  --background-surface: var(--color-greyscale-200);
+  --background-sunken: var(--color-greyscale-100);
+  --text-primary: var(--color-greyscale-black);
+  --text-secondary: var(--color-greyscale-shadow);
+  --text-muted: var(--color-greyscale-800);
+  --text-onAccent: var(--color-greyscale-white);
+  --text-link: #0000ee;
+  --border-default: var(--color-greyscale-400);
+  --border-strong: var(--color-greyscale-shadow);
+  --action-primary: var(--color-greyscale-shadow);
+  --action-primaryHover: #393939;
+  --action-selected: var(--color-greyscale-black);
+  --action-download: var(--color-alien-dark);
+  --focus-ring: var(--color-greyscale-black);
+  color-scheme: light;
+  --sg-sans: "Canva Sans", "Helvetica Neue", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 [data-mode="dark"] {
-  --page: #000000;
-  --surface: #393939;
-  --text: #ffffff;
-  --muted: #ededed;
-  --accent: #ffffff;
-  --on-accent: #000000;
-  --border: #a8a8a8;
-  --action: #54ca84;
-  --focus: #747474;
+  --color-greyscale-100: #191919;
+  --color-greyscale-200: #393939;
+  --color-greyscale-300: #747474;
+  --color-greyscale-400: #a8a8a8;
+  --color-greyscale-500: #cdcdcd;
+  --color-greyscale-600: #e5e5e5;
+  --color-greyscale-700: #ededed;
+  --color-greyscale-800: #f5f5f5;
+  --color-greyscale-900: #f7f7f7;
+  --color-greyscale-black: #ffffff;
+  --color-greyscale-shadow: #ffffff;
+  --color-greyscale-white: #000000;
+  --color-alien-light: #ddf4e6;
+  --color-alien-lighter: #bbeace;
+  --color-alien-mid: #54ca84;
+  --color-alien-dark: #32ac64;
+  --color-jellyfish-light: #ececfe;
+  --color-jellyfish-lighter: #dadafe;
+  --color-jellyfish-mid: #a2a2fc;
+  --color-jellyfish-dark: #7a7add;
+  --color-papaya-light: #ffe5d8;
+  --color-papaya-lighter: #ffc4a7;
+  --color-papaya-mid: #ff7b3a;
+  --color-papaya-dark: #de5c1c;
+  --color-strawberry-light: #ffe3ec;
+  --color-strawberry-lighter: #ffb4cc;
+  --color-strawberry-mid: #ff3a78;
+  --color-strawberry-dark: #db255f;
+  --color-sunshine-light: #fff8dc;
+  --color-sunshine-lighter: #fff1ba;
+  --color-sunshine-mid: #ffdb52;
+  --color-sunshine-dark: #fdca08;
+  --background-page: var(--color-greyscale-white);
+  --background-surface: var(--color-greyscale-200);
+  --background-sunken: var(--color-greyscale-100);
+  --text-primary: var(--color-greyscale-black);
+  --text-secondary: var(--color-greyscale-shadow);
+  --text-muted: var(--color-greyscale-800);
+  --text-onAccent: var(--color-greyscale-white);
+  --text-link: #0000ee;
+  --border-default: var(--color-greyscale-400);
+  --border-strong: var(--color-greyscale-shadow);
+  --action-primary: var(--color-greyscale-shadow);
+  --action-primaryHover: #393939;
+  --action-selected: var(--color-greyscale-black);
+  --action-download: var(--color-alien-dark);
+  --focus-ring: var(--color-greyscale-black);
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--page);
-  color: var(--text);
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 19.6px;
-  font-weight: 400;
-}
-header, main { padding: 30px; }
-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-h1 { margin: 0; font-size: 48px; line-height: 1.1; letter-spacing: -2px; font-weight: 700; }
-h2 { margin: 40px 0 12px; font-size: 24px; line-height: 1.3; letter-spacing: -1.5px; font-weight: 700; }
-p { max-width: 62ch; }
-button.toggle {
-  background: var(--accent);
-  color: var(--on-accent);
-  border: 1px solid var(--accent);
-  border-radius: 12px;
-  height: 48px;
-  padding: 1px 20px;
-  font: inherit;
-  font-size: 17px;
-  letter-spacing: -0.5px;
-  cursor: pointer;
-}
-.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
-.swatch { border: 1px solid var(--border); border-radius: 12px; min-height: 88px; padding: 12px; background: var(--surface); }
-.swatch i { display: block; height: 36px; border-radius: 8px; margin-bottom: 8px; }
-.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  height: 48px; padding: 1px 20px; border-radius: 12px;
-  background: var(--accent); color: var(--on-accent);
-  border: 1px solid var(--accent);
-  font-size: 17px; letter-spacing: -0.5px; text-decoration: none;
-}
-.btn.white { background: var(--page); color: var(--text); border-color: var(--border); }
-.btn.alien { background: var(--action); color: #ffffff; border-color: var(--action); }
-.tab {
-  display: inline-flex; align-items: center; height: 48px; padding: 0 20px;
-  border-radius: 30px; color: #393939; text-decoration: none; font-size: 17px; letter-spacing: -0.5px;
-}
-.tab.on { background: #000000; color: #ffffff; }
-[data-mode="dark"] .tab { color: var(--muted); }
-[data-mode="dark"] .tab.on { background: #ffffff; color: #000000; }
-.search {
-  display: flex; align-items: center; gap: 12px;
-  background: var(--surface); border-radius: 12px; height: 72px; padding: 12px;
-  max-width: 640px; color: var(--muted);
-}
-.field {
-  height: 48px; border-radius: 10px; border: 0; padding: 4px 16px;
-  background: var(--page); color: #393939; font: inherit; font-size: 15px; letter-spacing: -0.5px;
-  width: 240px;
-}
-.note { color: var(--muted); font-size: 14px; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 14px/19.6px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { font-size: 32px; line-height: 1.1; letter-spacing: -1px; margin: 0; }
+h2 { font-size: 20px; margin: 36px 0 12px; }
+button.toggle { height: 48px; padding: 0 20px; border-radius: 12px; border: 1px solid var(--action-primary); background: var(--action-primary); color: var(--text-onAccent); font: inherit; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.swatch { width: 92px; }
+.swatch i { display: block; height: 48px; border-radius: 12px; border: 1px solid var(--border-default); }
+.swatch span { display: block; font-size: 11px; color: var(--text-muted); margin-top: 4px; word-break: break-all; }
+.btn { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 12px; background: var(--action-primary); color: var(--text-onAccent); border: 1px solid var(--action-primary); font: 400 17px/17px var(--sg-sans); letter-spacing: -0.5px; }
+.pill { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 30px; background: var(--action-selected); color: var(--text-onAccent); }
+.chip { display: inline-flex; align-items: center; height: 48px; padding: 8px; border-radius: 180px; border: 1px solid var(--border-default); }
+.search { display: flex; align-items: center; height: 72px; padding: 12px; border-radius: 12px; background: var(--background-surface); width: 100%; max-width: 768px; color: var(--text-muted); }
+.card { border: 1px solid var(--border-default); border-radius: 12px; padding: 16px; background: var(--background-page); }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border-default); vertical-align: top; }
+.note { color: var(--text-muted); max-width: 68ch; }
 </style>
 </head>
 <body>
+<div class="wrap">
 <header>
   <h1>Pexels</h1>
-  <button class="toggle" type="button" id="theme">Dark</button>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle declared dark</button>
 </header>
-<main>
-  <p>Measured on the public signed-out site. Dark greyscale is the declared <code>[data-mode="dark"]</code> block. It was not painted on the pages this capture opened.</p>
-  <h2>Colour</h2>
-  <div class="swatches">
-    <div class="swatch"><i style="background:var(--page);border:1px solid var(--border)"></i>page</div>
-    <div class="swatch"><i style="background:var(--surface)"></i>surface #f7f7f7</div>
-    <div class="swatch"><i style="background:var(--text)"></i>text</div>
-    <div class="swatch"><i style="background:var(--muted)"></i>muted #747474</div>
-    <div class="swatch"><i style="background:var(--accent)"></i>accent #191919</div>
-    <div class="swatch"><i style="background:var(--action)"></i>action #54ca84</div>
-    <div class="swatch"><i style="background:var(--border)"></i>border #ededed</div>
-  </div>
-  <h2>Controls</h2>
-  <div class="row">
-    <a class="btn" href="#">Join</a>
-    <a class="btn white" href="#">Load More</a>
-    <a class="btn alien" href="#">Free download</a>
-    <a class="tab on" href="#">Home</a>
-    <a class="tab" href="#">Videos</a>
-  </div>
-  <h2>Search</h2>
-  <div class="search">Photos &nbsp; Search for free photos</div>
-  <h2>Field</h2>
-  <input class="field" placeholder="Email" readonly>
-  <p class="note">Canva Sans is the product family. This page uses Helvetica Neue because the woff2 files are not shipped.</p>
-</main>
+<p class="note">Rendered from tokens.json. The public site paints light. Dark is the stylesheet's <code>[data-mode=dark]</code> set, not a theme the captured pages applied.</p>
+
+<h2>Type</h2>
+<p style="font: 700 48px/52.8px var(--sg-sans); letter-spacing: -2px; margin: 0;">The best free stock photos.</p>
+<p>Body is 14px Canva Sans. Labels on controls are 17px with -0.5px tracking.</p>
+
+<h2>Controls</h2>
+<p>
+  <span class="btn">Join</span>
+  <span class="pill">Home</span>
+  <span class="chip">Ocean</span>
+</p>
+<div class="search">Search for free photos</div>
+
+<h2>Greyscale</h2>
+<div class="row" id="greys"></div>
+<h2>Named hues</h2>
+<div class="row" id="hues"></div>
+
+<h2>Tokens</h2>
+<table id="tokens"><tbody></tbody></table>
+</div>
 <script>
-document.getElementById('theme').addEventListener('click', () => {
-  const html = document.documentElement;
-  const next = html.getAttribute('data-mode') === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-mode', next);
-  document.getElementById('theme').textContent = next === 'dark' ? 'Light' : 'Dark';
-});
+const TOKENS = {"core":{"font":{"family":{"sans":{"v":"Canva Sans, Helvetica Neue, Roboto, -apple-system, BlinkMacSystemFont, sans-serif","t":"fontFamily","s":"Measured. body computed font on www.pexels.com/, raw/css-vars.json resolved.body. @font-face Canva Sans from static.pexels.com/1/fonts/CanvaSans-Medium.woff2 and CanvaSans-Bold.woff2."},"display":{"v":"Canva Sans Display, Canva Sans, Helvetica Neue, sans-serif","t":"fontFamily","s":"Measured. @font-face Canva Sans Display Regular/Medium/Bold in the same stylesheet. The homepage h1 computed to Canva Sans, not Display, so display is the declared face, not the h1's used face."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"Measured. body computed font on www.pexels.com/, raw/css-vars.json resolved.body."},"bold":{"v":700,"t":"fontWeight","s":"Measured. homepage h1 computed style, same page."}}},"typography":{"display":{"v":{"fontFamily":"{font.family.sans}","fontSize":"48px","fontWeight":700,"lineHeight":"52.8px","letterSpacing":"-2px"},"t":"typography","s":"Measured. homepage h1 computed style, same page."},"body":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","fontWeight":400,"lineHeight":"19.6px"},"t":"typography","s":"Measured. body computed font on www.pexels.com/, raw/css-vars.json resolved.body."},"label":{"v":{"fontFamily":"{font.family.sans}","fontSize":"17px","fontWeight":400,"lineHeight":"17px","letterSpacing":"-0.5px"},"t":"typography","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json."}},"radius":{"control":{"v":"12px","t":"dimension","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json. border-radius 12px."},"search":{"v":"12px","t":"dimension","s":"Measured. SearchInput container computed style, same page. border-radius 12px."},"pill":{"v":"30px","t":"dimension","s":"Measured. Home subnav pill computed style, same page. border-radius 30px."},"chip":{"v":"180px","t":"dimension","s":"Measured. trending search chip computed style, same page. border-radius 180px. Stylesheet --radius-outer on .SearchTermPill_pill is 180px."},"nav":{"v":"25px","t":"dimension","s":"Measured. License nav link computed style, same page. border-radius 25px."}},"space":{"4":{"v":"4px","t":"dimension","s":"Derived. 4px base. Chip padding starts at 5px and 8px (raw/components-sample.json pill). Not a published spacing scale."},"8":{"v":"8px","t":"dimension","s":"Measured. Search chip padding-top 8px."},"12":{"v":"12px","t":"dimension","s":"Measured. Search container padding 12px."},"16":{"v":"16px","t":"dimension","s":"Measured. License link padding-left 16px."},"20":{"v":"20px","t":"dimension","s":"Measured. Join button padding-left and padding-right 20px."}},"size":{"control":{"v":"48px","t":"dimension","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json. height 48px. Home pill and search chip are also 48px."},"logo":{"v":"38px","t":"dimension","s":"Measured. Navbar logo height 38px, width 115px."},"logoWidth":{"v":"115px","t":"dimension","s":"Measured. Navbar logo width 115px."}},"border":{"width":{"v":"1px","t":"dimension","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json. border-top-width 1px. Search chip border is also 1px."}},"motion":{"hover":{"v":"100ms","t":"duration","s":"Measured. Join button transition, same page. background-color 0.1s."},"border":{"v":"250ms","t":"duration","s":"Measured. Join button transition, same page. border-color 0.25s."}},"layout":{"desktop":{"v":"1440px","t":"dimension","s":"Requested desktop viewport 1440x900. Sidecars record the measured innerWidth."},"phone":{"v":"390px","t":"dimension","s":"Requested phone viewport 390x844 at deviceScaleFactor 2."}}},"light":{"color":{"greyscale":{"100":{"v":"#fafafa","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-100: #fafafa. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"200":{"v":"#f7f7f7","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-200: #f7f7f7. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"300":{"v":"#f5f5f5","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-300: #f5f5f5. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"400":{"v":"#ededed","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-400: #ededed. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"500":{"v":"#e5e5e5","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-500: #e5e5e5. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"600":{"v":"#cdcdcd","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-600: #cdcdcd. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"700":{"v":"#a8a8a8","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-700: #a8a8a8. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"800":{"v":"#747474","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-800: #747474. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"900":{"v":"#393939","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-900: #393939. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"black":{"v":"#000000","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-black: #000. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"shadow":{"v":"#191919","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-shadow: #191919. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"white":{"v":"#ffffff","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-greyscale-white: #fff. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"alien":{"light":{"v":"#ddf4e6","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-alien-light: #ddf4e6. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#bbeace","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-alien-lighter: #bbeace. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#54ca84","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-alien-mid: #54ca84. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#32ac64","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-alien-dark: #32ac64. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"jellyfish":{"light":{"v":"#ececfe","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-jellyfish-light: #ececfe. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#dadafe","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-jellyfish-lighter: #dadafe. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#a2a2fc","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-jellyfish-mid: #a2a2fc. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#7a7add","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-jellyfish-dark: #7a7add. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"papaya":{"light":{"v":"#ffe5d8","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-papaya-light: #ffe5d8. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#ffc4a7","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-papaya-lighter: #ffc4a7. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#ff7b3a","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-papaya-mid: #ff7b3a. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#de5c1c","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-papaya-dark: #de5c1c. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"strawberry":{"light":{"v":"#ffe3ec","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-strawberry-light: #ffe3ec. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#ffb4cc","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-strawberry-lighter: #ffb4cc. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#ff3a78","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-strawberry-mid: #ff3a78. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#db255f","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-strawberry-dark: #db255f. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"sunshine":{"light":{"v":"#fff8dc","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-sunshine-light: #fff8dc. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#fff1ba","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-sunshine-lighter: #fff1ba. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#ffdb52","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-sunshine-mid: #ffdb52. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#fdca08","t":"color","s":"Measured. the light selector `[data-mode=\"light\"], body` declares --color-sunshine-dark: #fdca08. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}}},"background":{"page":{"v":"{color.greyscale.white}","t":"color","s":"the light selector `[data-mode=\"light\"], body` page is the white greyscale step. Body background computed transparent over it."},"surface":{"v":"{color.greyscale.200}","t":"color","s":"Measured. Search container background rgb(247, 247, 247), which is --color-greyscale-200 on the light selector `[data-mode=\"light\"], body`."},"sunken":{"v":"{color.greyscale.100}","t":"color","s":"Declared --color-greyscale-100 on the light selector `[data-mode=\"light\"], body`. Not measured on a painted element in this pass."}},"text":{"primary":{"v":"{color.greyscale.black}","t":"color","s":"Measured. homepage h1 computed style, same page. color rgb(0, 0, 0), --color-greyscale-black."},"secondary":{"v":"{color.greyscale.shadow}","t":"color","s":"Measured. License nav link computed style, same page. color rgb(25, 25, 25), --color-greyscale-shadow."},"muted":{"v":"{color.greyscale.800}","t":"color","s":"Declared --color-greyscale-800 on the light selector `[data-mode=\"light\"], body`. Used for secondary labels. Not re-measured on a caption in this pass."},"onAccent":{"v":"{color.greyscale.white}","t":"color","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json. color rgb(255, 255, 255) on the ink button."},"link":{"v":"#0000ee","t":"color","s":"Measured. License nav link computed style, same page. Unstyled anchors computed to rgb(0, 0, 238). Nav links override this to greyscale-shadow."}},"border":{"default":{"v":"{color.greyscale.400}","t":"color","s":"Measured. trending search chip computed style, same page. border rgb(237, 237, 237), --color-greyscale-400."},"strong":{"v":"{color.greyscale.shadow}","t":"color","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json. border rgb(25, 25, 25), --color-greyscale-shadow."}},"action":{"primary":{"v":"{color.greyscale.shadow}","t":"color","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json. background rgb(25, 25, 25)."},"primaryHover":{"v":"#393939","t":"color","s":"Measured. Join button :hover, same page, raw/components-sample.json joinHover. Hover background rgb(57, 57, 57), --color-greyscale-900 in the light set. Recorded as a literal because the dark set's 900 step is a light grey."},"selected":{"v":"{color.greyscale.black}","t":"color","s":"Measured. Home subnav pill computed style, same page. selected Home pill background rgb(0, 0, 0)."},"download":{"v":"{color.alien.dark}","t":"color","s":"Observed. Free download button paints green. --color-alien-dark is #32ac64 on both theme selectors. The exact computed green was not read in this pass, so the token aliases the declared accent."}},"focus":{"ring":{"v":"{color.greyscale.black}","t":"color","s":"Measured. Search wrap outline color rgb(0, 0, 0) with style none and width 3px while the field was focused. No painted ring was observed."}}},"dark":{"color":{"greyscale":{"100":{"v":"#191919","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-100: #191919. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"200":{"v":"#393939","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-200: #393939. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"300":{"v":"#747474","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-300: #747474. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"400":{"v":"#a8a8a8","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-400: #a8a8a8. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"500":{"v":"#cdcdcd","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-500: #cdcdcd. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"600":{"v":"#e5e5e5","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-600: #e5e5e5. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"700":{"v":"#ededed","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-700: #ededed. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"800":{"v":"#f5f5f5","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-800: #f5f5f5. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"900":{"v":"#f7f7f7","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-900: #f7f7f7. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"black":{"v":"#ffffff","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-black: #fff. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"shadow":{"v":"#ffffff","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-shadow: #fff. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"white":{"v":"#000000","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-greyscale-white: #000. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"alien":{"light":{"v":"#ddf4e6","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-alien-light: #ddf4e6. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#bbeace","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-alien-lighter: #bbeace. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#54ca84","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-alien-mid: #54ca84. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#32ac64","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-alien-dark: #32ac64. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"jellyfish":{"light":{"v":"#ececfe","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-jellyfish-light: #ececfe. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#dadafe","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-jellyfish-lighter: #dadafe. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#a2a2fc","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-jellyfish-mid: #a2a2fc. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#7a7add","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-jellyfish-dark: #7a7add. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"papaya":{"light":{"v":"#ffe5d8","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-papaya-light: #ffe5d8. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#ffc4a7","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-papaya-lighter: #ffc4a7. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#ff7b3a","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-papaya-mid: #ff7b3a. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#de5c1c","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-papaya-dark: #de5c1c. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"strawberry":{"light":{"v":"#ffe3ec","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-strawberry-light: #ffe3ec. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#ffb4cc","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-strawberry-lighter: #ffb4cc. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#ff3a78","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-strawberry-mid: #ff3a78. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#db255f","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-strawberry-dark: #db255f. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}},"sunshine":{"light":{"v":"#fff8dc","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-sunshine-light: #fff8dc. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"lighter":{"v":"#fff1ba","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-sunshine-lighter: #fff1ba. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"mid":{"v":"#ffdb52","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-sunshine-mid: #ffdb52. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."},"dark":{"v":"#fdca08","t":"color","s":"Measured. the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages declares --color-sunshine-dark: #fdca08. Next stylesheet 619c2e3a161a45cb.css, parsed 2026-11-21."}}},"background":{"page":{"v":"{color.greyscale.white}","t":"color","s":"the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages page is the white greyscale step. Body background computed transparent over it."},"surface":{"v":"{color.greyscale.200}","t":"color","s":"Measured. Search container background rgb(247, 247, 247), which is --color-greyscale-200 on the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages."},"sunken":{"v":"{color.greyscale.100}","t":"color","s":"Declared --color-greyscale-100 on the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages. Not measured on a painted element in this pass."}},"text":{"primary":{"v":"{color.greyscale.black}","t":"color","s":"Measured. homepage h1 computed style, same page. color rgb(0, 0, 0), --color-greyscale-black."},"secondary":{"v":"{color.greyscale.shadow}","t":"color","s":"Measured. License nav link computed style, same page. color rgb(25, 25, 25), --color-greyscale-shadow."},"muted":{"v":"{color.greyscale.800}","t":"color","s":"Declared --color-greyscale-800 on the dark selector `[data-mode=\"dark\"]`, declared and not applied on the public pages. Used for secondary labels. Not re-measured on a caption in this pass."},"onAccent":{"v":"{color.greyscale.white}","t":"color","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json. color rgb(255, 255, 255) on the ink button."},"link":{"v":"#0000ee","t":"color","s":"Measured. License nav link computed style, same page. Unstyled anchors computed to rgb(0, 0, 238). Nav links override this to greyscale-shadow."}},"border":{"default":{"v":"{color.greyscale.400}","t":"color","s":"Measured. trending search chip computed style, same page. border rgb(237, 237, 237), --color-greyscale-400."},"strong":{"v":"{color.greyscale.shadow}","t":"color","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json. border rgb(25, 25, 25), --color-greyscale-shadow."}},"action":{"primary":{"v":"{color.greyscale.shadow}","t":"color","s":"Measured. Join button computed style on www.pexels.com/ at 1440x900, 2026-11-21, raw/components-sample.json. background rgb(25, 25, 25)."},"primaryHover":{"v":"#393939","t":"color","s":"Not captured as a live hover. The light Join hover computed to #393939. The dark theme was not on screen, so this value is the light measurement copied, not a dark-theme reading."},"selected":{"v":"{color.greyscale.black}","t":"color","s":"Measured. Home subnav pill computed style, same page. selected Home pill background rgb(0, 0, 0)."},"download":{"v":"{color.alien.dark}","t":"color","s":"Observed. Free download button paints green. --color-alien-dark is #32ac64 on both theme selectors. The exact computed green was not read in this pass, so the token aliases the declared accent."}},"focus":{"ring":{"v":"{color.greyscale.black}","t":"color","s":"Measured. Search wrap outline color rgb(0, 0, 0) with style none and width 3px while the field was focused. No painted ring was observed."}}}};
+const mode = () => document.documentElement.dataset.mode || "light";
+function paint() {
+  const set = TOKENS[mode()] || TOKENS.light;
+  const g = document.getElementById("greys");
+  g.innerHTML = "";
+  for (const [k, t] of Object.entries(set.color.greyscale)) {
+    const d = document.createElement("div");
+    d.className = "swatch";
+    d.innerHTML = `<i style="background:${css(t.v, set)}"></i><span>${k}<br>${t.v}</span>`;
+    g.appendChild(d);
+  }
+  const h = document.getElementById("hues");
+  h.innerHTML = "";
+  for (const hue of ["alien", "jellyfish", "papaya", "strawberry", "sunshine"]) {
+    for (const [k, t] of Object.entries(set.color[hue])) {
+      const d = document.createElement("div");
+      d.className = "swatch";
+      d.innerHTML = `<i style="background:${css(t.v, set)}"></i><span>${hue} ${k}</span>`;
+      h.appendChild(d);
+    }
+  }
+  const body = document.querySelector("#tokens tbody");
+  body.innerHTML = "";
+  const rows = [];
+  const walk = (node, path) => {
+    if (node && node.v !== undefined) rows.push([path, node.t, String(node.v)]);
+    else if (node && typeof node === "object") for (const [k, v] of Object.entries(node)) walk(v, path ? path + "." + k : k);
+  };
+  walk(TOKENS.core, "core");
+  walk(set, mode());
+  for (const [p, t, v] of rows) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${p}</td><td>${t}</td><td>${v}</td>`;
+    body.appendChild(tr);
+  }
+}
+function css(v, set) {
+  return String(v).replace(/\{color\.([^.}]+)\.([^}]+)\}/g, (_, hue, step) => set.color[hue][step].v);
+}
+document.querySelector(".toggle").addEventListener("click", () => setTimeout(paint, 0));
+paint();
 </script>
 </body>
 </html>

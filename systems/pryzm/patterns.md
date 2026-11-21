@@ -1,33 +1,49 @@
-# Patterns
+# Pryzm patterns
 
-Public signed-out pages. Each screenshot is a headless Playwright capture at 1440x900 CSS, devicePixelRatio 1, except the phone shot.
+Public pages only. The map of which control opens which page is [site-tree.md](site-tree.md).
 
-## Marketing home
+## App shell
 
-[screenshots/home-dark-desktop.png](screenshots/home-dark-desktop.png). Fixed 64px header: wordmark, Inspiration, Lab, Pricing, Open studio, Sign in. The hero sits over a scrolling wall of look thumbnails. Eyebrow "New: share a look, remix a link", h1 "Backgrounds nobody else has, in seconds", a short lede, then Open studio and Browse inspiration.
+Marketing pages use a transparent top bar over a black canvas: wordmark, Inspiration, Lab, Pricing, then Open studio and Sign in. At 390 px the links collapse into a Menu dialog. [home-dark-default.png](screenshots/home-dark-default.png), [mobile-home-dark-menu.png](screenshots/mobile-home-dark-menu.png).
 
-[screenshots/home-dark-phone.png](screenshots/home-dark-phone.png) is the same page at 390x844. The nav collapses to a menu button. The h1 drops to 30px.
+Studio, Lab, Flow, Gallery and Docs use a left rail: Studios (Studio, Lab, Flow), Library (Inspiration, My work), Documentation, Give Feedback, Collapse, Sign in. Collapse turns the label to Expand. [studio-dark-default.png](screenshots/studio-dark-default.png), [gallery-dark-sidebar-collapsed.png](screenshots/gallery-dark-sidebar-collapsed.png).
 
-## Pricing
+## Navigation
 
-[screenshots/pricing-dark-desktop.png](screenshots/pricing-dark-desktop.png). Eyebrow PRICING, h2 "Free to create. Pro to export without limits.", a Monthly / Yearly pill, then two cards. Free is $0 with Open studio. Pryzm Pro is $9 per month with Get Pryzm Pro. Get Pryzm Pro points at `/api/checkout` and was not opened.
+The rail is the product switcher. Marketing footer repeats Studio, Inspiration, Flow, Blog, Pricing, About, Docs, Support, Privacy, Terms. Docs sections are buttons that set a hash on the same page. [docs-dark-quick-start.png](screenshots/docs-dark-quick-start.png).
 
-## Gallery
+## Form
 
-[screenshots/gallery-dark-desktop.png](screenshots/gallery-dark-desktop.png). App shell: 256px sidebar (Studios, Library, Documentation, Sign in) and an inset canvas. Filter chips, then cards. All is selected. Cards carry a PRO badge, a title, a one-line description and small effect chips.
+The only public form that was opened is the sign-in wall. It was not submitted, so there is no validation error. [signin-dark-wall.png](screenshots/signin-dark-wall.png). The newsletter field on marketing pages was not typed.
 
-## Sign in
+## Empty
 
-[screenshots/signin-dark-desktop.png](screenshots/signin-dark-desktop.png). A 896px panel, 14px radius, card fill, shadow `0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)`. Left column is the form. Right column is a look. Continue with Google, an OR rule, email, password, Reset password, Continue. Sign up swaps the heading to "Sign up for Pryzm", adds a newsletter checkbox, and changes the submit label to Create account. Nothing was submitted.
+Flow's Import look dialog says there are no saved looks. [flow-dark-import-empty.png](screenshots/flow-dark-import-empty.png).
 
-## Lab
+## Loading and error
 
-[screenshots/lab-dark-desktop.png](screenshots/lab-dark-desktop.png). Signed-out Lab: Layers list, a live preview, Props (Grain, Blending, Animation). Share and Export are outline buttons. Save is the primary button. None of those were clicked.
+No loading skeleton was held. `/login` is a 404 page. [login-dark-404.png](screenshots/login-dark-404.png). The studio export dialog can show an encoder error in red when MP4 cannot encode the current size. [studio-dark-export-dialog.png](screenshots/studio-dark-export-dialog.png). That message was on screen without a click on Export.
 
-## Docs, about, blog
+## Destructive confirmation
 
-[screenshots/docs-dark-desktop.png](screenshots/docs-dark-desktop.png) uses the app shell with a docs nav and an "On this page" list. [screenshots/about-dark-desktop.png](screenshots/about-dark-desktop.png) is a narrow marketing column. [screenshots/blog-dark-desktop.png](screenshots/blog-dark-desktop.png) is a card grid under topic chips.
+Not present on the public pages. Delete layer exists in Lab and was not used, because it changes a local stack and was not needed to read the system.
 
-## Not captured
+## Feedback after an action
 
-Checkout, Google sign-in, My work, hover and focus, form errors, empty and loading states, and a light theme.
+Share opens a dialog that asks you to save first. [studio-dark-share-dialog.png](screenshots/studio-dark-share-dialog.png). Save itself is an account action and was not followed.
+
+## Search and filtering
+
+Gallery filters are links: All, Gradient, Photographic, Halftone, Dither, ASCII, Glass, Grain. [gallery-dark-filter-glass.png](screenshots/gallery-dark-filter-glass.png). There is no search field on the public gallery.
+
+## List
+
+The gallery is a card grid, not a table. [gallery-dark-default.png](screenshots/gallery-dark-default.png).
+
+## Onboarding
+
+Not present. No account was created.
+
+## Paywall
+
+Remix on a Pro look opens a Pryzm Pro dialog. Checkout was not followed. [look-pro-dark-remix-paywall.png](screenshots/look-pro-dark-remix-paywall.png). Pricing itself is on the home page. [home-dark-pricing-yearly.png](screenshots/home-dark-pricing-yearly.png).

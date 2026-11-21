@@ -1,6 +1,6 @@
 # Patterns
 
-Public signed-out pages only. No screenshots. Layout numbers are from `getBoundingClientRect` and computed style at 1169 by 731 CSS pixels.
+Public signed-out pages. Layout numbers from 2026-11-19 are `getBoundingClientRect` at 1169 by 731 CSS pixels. The 2026-11-21 shots are 1440 by 900, and one phone location shot is 390. The control map is [site-tree.md](site-tree.md).
 
 ## Home
 

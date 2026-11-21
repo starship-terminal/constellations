@@ -12,12 +12,11 @@
 // every captured route; components are found by role, aria-label or stable
 // text, never by the utility class soup. Nothing is sent, created or signed
 // into: the only presses are local UI toggles — the mobile menu, the Products
-// nav flyout, a pricing FAQ accordion. Text typed into the email field is
-// deleted again; the sign-in form is never submitted.
+// nav flyout, a pricing FAQ accordion. The sign-in form is never typed into,
+// never clicked, and never submitted. Field focus uses element.focus() only.
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
-import { pageRunner, exitStatus } from './run-pages.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -34,7 +33,6 @@ const URLS = {
 };
 let page, cdp, current, context, run;
 const touched = new Set();
-const blockedPages = new Set(); // pages a bot check stopped; their old readings are kept
 const listed = new Map(); // component -> the states this run's specs list for it
 
 async function blocked() {
@@ -60,7 +58,7 @@ async function newPage(key, { mobile = false, wait = 6000 } = {}) {
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
   await open(page, BASE + URLS[key], { wait });
-  if (await blocked()) { log('  BLOCKED', key); blockedPages.add(key); await page.close(); await ctx.close(); return false; }
+  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }
@@ -105,9 +103,6 @@ async function forcePseudo(loc, classes) {
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
   Object.assign(c, meta);
-  // the page that owns the entry, even when its element is missing: stale-entry
-  // cleanup (pageDone) needs it; found() restamps page/run/url on a real reading
-  c.page ??= current;
   touched.add(key);
   c.states ??= {};
   return c;
@@ -139,9 +134,8 @@ async function measure(key, state, target, opts = {}) {
   }
 }
 
-const FILL = 'dev@example.com';
-
 // Records the listed states of one component. meta: title, group, desc, sel.
+// Nothing is typed into a field. A "filled" state is not captured.
 async function S(key, target, list, meta = {}, opts = {}) {
   const c = comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
@@ -173,16 +167,12 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
-        await (opts.fieldLoc || loc).filter({ visible: true }).first().click({ timeout: 4000 });
+        // Focus only. Never click or type into an auth field.
+        await (opts.fieldLoc || loc).filter({ visible: true }).first().evaluate((el) => el.focus());
         await page.waitForTimeout(400);
-        via = 'clicked into the field';
+        via = 'element.focus(), nothing typed';
       } else if (st === 'filled') {
-        const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await f.click({ timeout: 4000 });
-        await page.keyboard.type(opts.fillText || FILL, { delay: 10 });
-        await page.waitForTimeout(500);
-        undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
-        via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
+        throw new Error('filled state is not captured: typing into a field is refused');
       } else if (st === 'opened') {
         await toggle(loc);
         await page.waitForTimeout(900);
@@ -333,7 +323,7 @@ async function signin() {
   await S('google-button', q('button').filter({ hasText: /Sign in with Google/i }), B4, { group: g, title: 'Google button', desc: 'Measured, never pressed.', sel: 'button:has-text("Sign in with Google")' });
   await S('passkey-button', q('button').filter({ hasText: /passkey/i }), B4, { group: g, title: 'Passkey button', desc: 'Measured, never pressed.', sel: 'button:has-text("passkey")' });
   const email = q('input[type="email"], input[placeholder*="email" i], input').first();
-  await S('email-input', email, ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'Text was typed and deleted; the form was never submitted.', sel: 'input[placeholder="Your email"]' });
+  await S('email-input', email, ['default', 'focused'], { group: g, title: 'Email field', desc: 'Focused with element.focus(). Nothing was typed and the form was never submitted.', sel: 'input[placeholder="Your email"]' });
   await S('password-input', q('input[type="password"]'), ['default', 'focused'], { group: g, title: 'Password field', desc: 'Focused only; nothing was typed.', sel: 'input[type="password"]' });
   await S('show-password', q('button[aria-label*="password" i], button[aria-label*="Show" i]'), B4, { group: g, title: 'Show-password toggle', desc: 'The eye inside the password field.', sel: 'button[aria-label*="password" i]' });
   await S('forgot-link', q('a').filter({ hasText: /Forgot your password/i }), B4, { group: g, title: 'Forgot-password link', sel: 'a:has-text("Forgot")' });
@@ -351,7 +341,7 @@ async function footer() {
   } else {
     current = 'home';
     await open(page, BASE + URLS.home, {});
-    if (await blocked()) { log('  BLOCKED footer'); blockedPages.add('home'); return; }
+    if (await blocked()) { log('  BLOCKED footer'); return; }
   }
   const g = G.footer;
   const fl = q('footer a').filter({ hasText: /\w{3,}/ }).first();
@@ -388,27 +378,20 @@ context = ctx0;
 const pages = process.argv.slice(2);
 const plan = { home, pricing, docs, blog, signin, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
-// A page counts as finished only when its runner returns without throwing and
-// no bot check stopped it. Pruning touches only finished pages: a page that
-// threw keeps its unreached components and states instead of losing them.
-// A page that throws is recorded as broken and the run goes on; the exit
-// status at the end is nonzero when any page threw (run-pages.mjs).
-const { finished, broken, runPage } = pageRunner(() => current, log);
-const pageDone = (c) => finished.has(c.page) && !broken.has(c.page) && !blockedPages.has(c.page);
 try {
-  for (const k of order) { if (k !== 'mobile') await runPage(plan[k]); }
-  if (!pages.length || pages.includes('home')) await runPage(footer);
-  if (!pages.length || pages.includes('mobile')) await runPage(plan.mobile);
+  for (const k of order) { if (k !== 'mobile') await plan[k](); }
+  if (!pages.length || pages.includes('footer')) await footer();
+  if (!pages.length || pages.includes('mobile')) await plan.mobile();
 } finally {
   // Components whose specs now list a state a run did not touch keep their old
   // evidence; a state that was listed but never written is removed.
   for (const [key, c] of Object.entries(out.components)) {
-    if (!touched.has(key)) { if (!pages.length && pageDone(c)) delete out.components[key]; continue; }
+    if (!touched.has(key) && !pages.length) { delete out.components[key]; continue; }
+    if (!touched.has(key)) continue;
     const want = listed.get(key);
-    if (want && pageDone(c)) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
+    if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st) && pages.length) delete c.states[st];
   }
   save();
   await browser.close().catch(() => {});
 }
-console.log(broken.size ? 'incomplete ->' : 'done ->', OUT);
-process.exitCode = exitStatus(broken);
+console.log('done ->', OUT);

@@ -1,0 +1,72 @@
+{
+  "product": "Curater",
+  "domain": "curater.org",
+  "capturedAt": "2026-11-21",
+  "account": "signed-out",
+  "emailField": false,
+  "passwordField": false,
+  "oauthClicked": false,
+  "formsSubmitted": false,
+  "stop": "Google sign-in wall",
+  "walls": [
+    {
+      "control": "Sign in or create account",
+      "from": "https://curater.org/",
+      "opens": "Google sign-in",
+      "note": "Leaves the site immediately. Redirect host on the Curater side is auth.curater.org. Not clicked further. Query string omitted."
+    },
+    {
+      "control": "Continue with Google",
+      "from": "https://curater.org/auth/login",
+      "opens": "Google sign-in",
+      "note": "Present on the login page and in the sign-in dialog. Not clicked."
+    },
+    {
+      "control": "Notifications, Profile, Create",
+      "from": "https://curater.org/",
+      "opens": "sign-in dialog on the same URL",
+      "note": "Dialog title is Sign in. Only action is Continue with Google."
+    },
+    {
+      "control": "Settings menu, Settings",
+      "from": "https://curater.org/",
+      "opens": "https://curater.org/auth/login",
+      "note": "Menu item, not a settings page. /settings is a 404."
+    },
+    {
+      "control": "Settings menu, Sign in",
+      "from": "https://curater.org/",
+      "opens": "https://curater.org/auth/login"
+    },
+    {
+      "control": "Log in or sign up",
+      "from": "https://curater.org/feed",
+      "opens": "https://curater.org/auth/login"
+    },
+    {
+      "control": "More, Subscriptions",
+      "from": "https://curater.org/feed",
+      "opens": "login wall on https://curater.org/feed",
+      "note": "URL stays /feed. The feed is replaced by Continue with Google."
+    },
+    {
+      "control": "Add to my taste",
+      "from": "https://curater.org/curation/sVWPDcCJ",
+      "opens": "disabled until sign-in, with Continue with Google beside it"
+    },
+    {
+      "path": "/onboarding",
+      "opens": "https://curater.org/auth/login",
+      "note": "Not filled."
+    },
+    {
+      "path": "/signin",
+      "opens": "https://curater.org/auth/login"
+    },
+    {
+      "path": "/auth/callback",
+      "opens": "https://curater.org/auth/login"
+    }
+  ],
+  "notPresent": ["email field", "password field", "Apple", "GitHub", "SSO button", "captcha", "one-time code"]
+}

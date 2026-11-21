@@ -1,31 +1,39 @@
-# Patterns
+# Pexels patterns
 
-## Home
+How the public pages combine. Screenshots are 256-colour. Desktop is 1440x900 at 1x. Phone shots are prefixed `mobile-` and captured at 390x844 at 2x.
 
-https://www.pexels.com/ signed out. White page, wordmark left, Explore, License, and a black Join pill on the right. Hero heading at 48px bold, tracking -2px, beside a challenge card. Search field under the heading. Pill tabs (Home, Videos, Leaderboard, Challenges, Winners Wall, Photography Series). Topic chips sit in white cards with a 1px #ededed border.
+## Shell
 
-Desktop screenshot is 1440×900 CSS, PNG 2880×1800. Phone screenshot is 390×844 CSS, PNG 780×1688.
+Logo left, Explore, License, more, and Join on the right. On interior pages the search field moves into the header. Phone collapses Explore and License into a search icon, Join, and a hamburger that did not open in this capture.
 
-![Home](screenshots/home-light-default.png)
+[home-light-default.png](screenshots/home-light-default.png), [mobile-home-light-default.png](screenshots/mobile-home-light-default.png)
 
-![Home, phone](screenshots/home-light-phone.png)
+## Search and filter
 
-## Search
+Typing in the home field opens suggestions and collection cards without submitting. Submitting (by opening `/search/ocean/` directly) shows a photo grid, Photos/Videos/Users counts, related chips, and a Filters control that opens a left rail of orientation, people, and age chips.
 
-https://www.pexels.com/search/nature/ loaded in the preview tab. Heading "Nature Images" at 36px bold, tracking -2px, colour #191919. Tabs Photos, Videos, Users use the same pill as Home. Related terms are 180px-radius pills with a 1px #ededed border. Headless Chromium got a Cloudflare challenge on this URL, so there is no screenshot.
+[home-light-search-suggest.png](screenshots/home-light-search-suggest.png), [search-light-default.png](screenshots/search-light-default.png), [search-light-filter.png](screenshots/search-light-filter.png)
 
-## Photo
+## Photo detail
 
-https://www.pexels.com/photo/slow-shutter-city-night-late-night-brake-light-4057078/ loaded in the preview tab. Free download is the alien button. License reads Free. No file was downloaded. No screenshot: the headless retry hit Cloudflare.
+A published photo, photographer name, Crop / Remove Background / Edit (Canva, external), bookmark, like count, and a green Free download split button.
 
-## License and about
+[photo-light-default.png](screenshots/photo-light-default.png)
 
-https://www.pexels.com/license/ and https://www.pexels.com/about/ are public. Headings use the 36px title style. Body copy on the license page is 17px, max-width 490px. Footer is white, padding 80px 30px 30px, with Pexels, Company, and download links. No screenshots: headless Chromium hit Cloudflare after the home page.
+## Login wall
 
-## Join and login
+Desktop mounts the form as a dialog over a photo mosaic. Phone is a full page. Both ask for Google, Apple, Facebook, email, and password, and show a Cloudflare checkbox. The branch stops there.
 
-https://www.pexels.com/join/ asks for first name, last name, email, and password, plus Google. https://www.pexels.com/login/ asks for email and password, plus Google, with a forgot-password link to /password/new/. Neither form was submitted. The join form is not email-only, so AgentMail was not used. No card, phone, or KYC field was entered.
+[login-light-wall.png](screenshots/login-light-wall.png), [mobile-login-light-wall.png](screenshots/mobile-login-light-wall.png)
 
-## Gaps
+## Empty and error
 
-Signed-in library, upload, Pro, checkout, and account settings were not entered. Dark mode is declared and was not switched on. Phone layout was screenshotted only for home.
+A missing path returns a styled 404 with helpful links and a published photo credit.
+
+[missing-light-default.png](screenshots/missing-light-default.png)
+
+## List
+
+The leaderboard is numbered rows: avatar, name, follow button, and a strip of media.
+
+[leaderboard-light-default.png](screenshots/leaderboard-light-default.png)

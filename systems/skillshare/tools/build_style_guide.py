@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json. Light only. Deterministic."""
-import html
+"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
+
+Every colour, radius, shadow and type style on the page is a CSS custom property generated from
+tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
+`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
+theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
+
+Placeholders in the template:
+  /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
+  /*TOKENS*/null                  a compact copy of the token tree for the JS tables
+  <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
+
+Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
+"""
 import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
@@ -17,129 +29,95 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + "-")
 
 
-def resolve(value, seen=None):
-    seen = seen or set()
-    if not isinstance(value, str):
-        return value
-    def repl(m):
-        path = m.group(1)
-        if path in seen:
-            return path
-        node = T["core"]
-        for part in path.split("."):
-            node = node[part]
-        return str(resolve(node["$value"], seen | {path}))
-    return re.sub(r"\{([^{}]+)\}", repl, value)
+def cssname(path):
+    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
 
 
-def css(value, typ):
-    value = resolve(value)
-    if typ == "cubicBezier":
-        return "cubic-bezier(%s)" % ", ".join(str(x) for x in value)
-    if typ == "typography":
-        v = {k: resolve(val) if isinstance(val, str) else val for k, val in value.items()}
-        return v
-    return value
+def alias(v):
+    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
 
 
-rows_color = []
-for name, tok in flat(T["light"]["color"]):
-    rows_color.append((name, css(tok["$value"], tok["$type"])))
-
-type_rows = []
-for name, tok in flat(T["core"]["typography"]):
-    type_rows.append((name, css(tok["$value"], "typography")))
-
-radius_rows = [(n, css(t["$value"], t["$type"])) for n, t in flat(T["core"]["radius"])]
-space_rows = [(n, css(t["$value"], t["$type"])) for n, t in flat(T["core"]["space"])]
-
-def swatch(name, value):
-    return f'<div class="sw"><i style="background:{value}"></i><div><b>{name}</b><span>{value}</span></div></div>'
-
-def specimen_style(v):
-    """The specimen's style attribute, escaped: the quoted family would otherwise close it."""
-    css = ";".join(f"{prop}:{v[key]}" for prop, key in (
-        ("font-family", "fontFamily"), ("font-size", "fontSize"), ("font-weight", "fontWeight"),
-        ("line-height", "lineHeight")))
-    return html.escape(css, quote=True)
+def css_val(name, t):
+    v, ty = t["$value"], t["$type"]
+    if ty == "cubicBezier":
+        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
+    if ty == "shadow":
+        if isinstance(v, str):
+            return alias(v)
+        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
+    if ty == "typography":
+        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
+    if ty == "gradient":
+        angle = t["$extensions"].get("angle", "180deg")
+        return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
+    return alias(v)
 
 
-color_html = "\n".join(swatch(n, v) for n, v in rows_color)
-type_html = "\n".join(
-    f'<div class="ty"><div class="k">{n}<small>{v["fontSize"]} / {v["lineHeight"]} · {v["fontWeight"]}</small></div>'
-    f'<div style="{specimen_style(v)}">Creative classes</div></div>'
-    for n, v in type_rows
-)
-radius_html = "\n".join(
-    f'<div class="sw"><i style="background:#55da9b;border-radius:{v}"></i><div><b>{n}</b><span>{v}</span></div></div>'
-    for n, v in radius_rows
-)
-space_html = "\n".join(
-    f'<div class="sp"><i style="width:{v}"></i><span>{n} · {v}</span></div>' for n, v in space_rows
-)
+# A light-only product has no dark set; every set that is missing renders as empty.
+SETS = [s for s in ("core", "light", "dark") if s in T]
+THEMES = [s for s in SETS if s != "core"]
 
-page = css(T["light"]["color"]["page"]["$value"], "color")
-ink = css(T["light"]["color"]["ink-soft"]["$value"], "color")
-muted = css(T["light"]["color"]["muted"]["$value"], "color")
-accent = css(T["light"]["color"]["accent"]["$value"], "color")
-link = css(T["light"]["color"]["link"]["$value"], "color")
-border = css(T["light"]["color"]["border"]["$value"], "color")
-sans = css(T["core"]["font"]["family"]["sans"]["$value"], "fontFamily")
 
-html = f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Skillshare style guide</title>
-<style>
-  * {{ box-sizing: border-box; }}
-  body {{ margin: 0; background: {page}; color: {ink}; font: 400 15px/22px {sans}; }}
-  header, main {{ max-width: 960px; margin: 0 auto; padding: 32px 24px; }}
-  h1 {{ font-size: 36px; line-height: 43px; margin: 0 0 8px; }}
-  h2 {{ font-size: 22px; margin: 36px 0 12px; }}
-  p.lead {{ color: {muted}; max-width: 68ch; }}
-  .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }}
-  .sw {{ display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }}
-  .sw i {{ width: 44px; height: 44px; border-radius: 4px; box-shadow: inset 0 0 0 1px {border}; display: block; }}
-  .sw b, .ty .k {{ display: block; font-size: 12px; }}
-  .sw span, .ty small {{ color: {muted}; font-size: 12px; font-weight: 400; }}
-  .ty {{ display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid {border}; align-items: baseline; }}
-  .sp {{ display: flex; align-items: center; gap: 12px; margin: 6px 0; }}
-  .sp i {{ height: 12px; background: {accent}; display: block; }}
-  .btn {{ display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; border-radius: 4px; background: {accent}; color: {ink}; font-weight: 700; border: 1px solid {accent}; }}
-  .oauth {{ display: inline-flex; align-items: center; justify-content: center; height: 40px; width: 240px; border-radius: 4px; background: #fff; color: {ink}; font-weight: 700; border: 1px solid {muted}; }}
-  .textbtn {{ color: {link}; font-weight: 700; background: transparent; border: 0; height: 40px; }}
-  .row {{ display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }}
-  code {{ font-size: 12px; }}
-</style>
-</head>
-<body>
-<header>
-  <h1>Skillshare</h1>
-  <p class="lead">Public signed-out surfaces, measured 2026-11-19. Light only. GT Walsheim Pro is proprietary and falls back to the system sans here. Values come from tokens.json.</p>
-</header>
-<main>
-  <h2>Colour</h2>
-  <div class="grid">
-    {color_html}
-  </div>
-  <h2>Type</h2>
-  {type_html}
-  <h2>Radius</h2>
-  <div class="grid">{radius_html}</div>
-  <h2>Space</h2>
-  {space_html}
-  <h2>Controls</h2>
-  <div class="row">
-    <span class="btn">Sign Up</span>
-    <span class="oauth">Continue with Google</span>
-    <span class="textbtn">Continue with email</span>
-  </div>
-  <p class="lead">Sign Up hover fills #50cf93. Google hover fills rgba(11, 18, 21, 0.04). Email hover underlines and fills rgba(85, 218, 155, 0.04). Focus outline is #5620c1.</p>
-</main>
-</body>
-</html>
-"""
+def block(setname):
+    """A set's custom properties; a set the product lacks renders as nothing."""
+    if setname not in T:
+        return ""
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
+
+
+# a core name and a themed name must not land on the same custom property
+_core = {cssname(n) for n, _ in flat(T["core"])}
+for _set in THEMES:
+    _clash = _core & {cssname(n) for n, _ in flat(T[_set])}
+    if _clash:
+        raise SystemExit(f"core and {_set} share custom properties: {sorted(_clash)[:5]}")
+
+
+def slim(node):
+    if isinstance(node, dict) and "$value" in node:
+        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
+        for k in ("compact", "darkVariationAxis"):
+            if k in node["$extensions"]:
+                out[k] = node["$extensions"][k]
+        if node.get("$description"):
+            out["d"] = node["$description"]
+        return out
+    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
+
+
+# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
+# from ending the script early. JSON.parse and a JS literal read it back unchanged.
+data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
+                  ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+
+_uid = [0]
+ICON_SRC = {}
+
+
+def clean_svg(svg, size):
+    svg = re.sub(r"<\?xml[^>]*>\s*", "", svg).strip()
+    svg = re.sub(r"\s+", " ", svg).replace("> <", "><")
+    for i in sorted(set(re.findall(r'id="([^"]+)"', svg))):
+        _uid[0] += 1
+        svg = svg.replace(f'id="{i}"', f'id="i{_uid[0]}"').replace(f"url(#{i})", f"url(#i{_uid[0]})")
+    svg = re.sub(r"<svg\b", '<svg aria-hidden="true" focusable="false" class="ic"', svg, count=1)
+    if size:
+        svg = re.sub(r'\swidth="[^"]*"', "", svg, count=1)
+        svg = re.sub(r'\sheight="[^"]*"', "", svg, count=1)
+        svg = svg.replace("<svg ", f'<svg width="{size}" height="{size}" ', 1)
+    return svg
+
+
+def icon(m):
+    name, size = m.group(1), m.group(2)
+    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
+    return clean_svg(src, size)
+
+
+tpl = (HERE / "tools" / "style-guide.template.html").read_text()
+html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
+        .replace("/*TOKENS*/null", data))
+html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
 (HERE / "style-guide.html").write_text(html)
-print("wrote", HERE / "style-guide.html")
+print("style-guide.html:", len(html.encode()), "bytes;",
+      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")

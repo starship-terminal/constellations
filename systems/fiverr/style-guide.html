@@ -4,261 +4,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fiverr style guide</title>
-<meta name="description" content="Fiverr design tokens and the public signed-out surfaces' components, rendered from tokens.json with the measured values.">
+<meta name="description" content="Fiverr public capture, 2026-11-21. Only sampled fills from the login wall are rendered. Unread roles are marked Not captured.">
 <style>
-:root {
-  --font-family-sans: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-body: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-ui: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-size-hero: 72px;
-  --font-size-section: 48px;
-  --font-size-title: 28px;
-  --font-size-body: 14px;
-  --font-size-label: 16px;
-  --font-size-chip: 16px;
-  --font-size-price: 20px;
-  --font-lineHeight-hero: 86.4px;
-  --font-weight-hero: 280;
-  --font-weight-section: 400;
-  --font-weight-label: 600;
-  --color-neutral-ink: #222325;
-  --color-neutral-body: #404145;
-  --color-neutral-muted: #62646a;
-  --color-neutral-faint: #74767e;
-  --color-neutral-line: #dadbdd;
-  --color-neutral-field-line: #c5c6c9;
-  --color-neutral-nav-ink: #222325;
-  --color-neutral-paper: #ffffff;
-  --color-neutral-scrim: #000000;
-  --color-neutral-press-wash: #efeff0;
-  --color-neutral-on-dark-wash: rgba(255, 255, 255, 0.1);
-  --color-brand-fill: #222325;
-  --color-brand-fill-hover: #222325;
-  --color-brand-submit: #222325;
-  --color-brand-submit-hover: #222325;
-  --color-brand-cta: #000000;
-  --color-brand-accent: #1dbf73;
-  --measured-button-radius: 8px;
-  --measured-search-radius: 12px;
-  --measured-card-radius: 8px;
-  --measured-field-radius: 12px;
-  --measured-chip-radius: 8px;
-  --measured-control-height: 42px;
-  --measured-field-height: 60px;
-  --measured-search-height: 60px;
-  --measured-header-padding-x: 0px;
-  --measured-focus-outline: #222325;
-  --measured-focus-outline-width: 2px;
-  --measured-hover-fill: rgba(255, 255, 255, 0.1);
-  --measured-control-transition: 70ms;
-  --text-primary: var(--color-neutral-ink);
-  --text-body: var(--color-neutral-body);
-  --text-muted: var(--color-neutral-muted);
-  --text-faint: var(--color-neutral-faint);
-  --text-onAccent: #ffffff;
-  --surface-page: var(--color-neutral-paper);
-  --surface-card: var(--color-neutral-paper);
-  --border-hairline: var(--color-neutral-line);
-  --border-field: var(--color-neutral-field-line);
-  --action-primary-default: var(--color-brand-cta);
-  --action-primary-hover: var(--color-brand-fill-hover);
-  --action-accent: var(--color-brand-accent);
-  --component-header-height: 86px;
-  --component-cta-height: 42px;
-  --component-cta-width: 88px;
-  --component-search-height: 60px;
-  --component-search-width: 1159.94px;
-  --component-field-height: 60px;
-  --component-mobile-topbar-height: 136px;
-  --sg-sans: "Macan", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
-  --sg-serif: "Macan", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
-  --sg-mono: "Macan Mono", ui-monospace, "SF Mono", Menlo, monospace;
-}
-[data-mode="dark"], .dark {
-
-}
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #404145); background: var(--surface-page, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-primary, #404145); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-hairline, #e4e5e7); }
-.lead { max-width: 62ch; color: var(--text-primary, #404145); opacity: .8; }
-.note { font-size: 13px; color: var(--text-primary, #404145); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary, #404145); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-hairline, #e4e5e7); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-primary, #404145); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-hairline, #e4e5e7); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--text-primary, #404145); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--border-hairline, #e4e5e7); overflow: hidden; background: var(--surface-page, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 86px); padding: 0 12px 0 22px; font-size: 15px; color: var(--text-primary, #404145); background: var(--surface-page, #fff); box-shadow: rgba(0,0,0,.16) 0 1px 0 0; }
-.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 42px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--measured-button-radius, 8px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-primary-default, #222325); color: var(--text-onAccent, #fff); }
-.btn.ghost { background: transparent; border-color: var(--border-hairline, #e4e5e7); color: var(--text-primary, #404145); }
-.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
-/* The hero band's deep green was read off the page but no surface.hero token
-   was emitted, so it stays a literal here. */
-.hero { color: var(--text-onAccent, #fff); padding: 80px 40px; font: var(--font-weight-hero, 280) var(--font-size-hero, 72px)/var(--font-lineHeight-hero, 86.4px) var(--sg-serif); text-align: left; background: #003912; }
-.hero small { display: block; font: 400 var(--font-size-body, 14px)/1.4 var(--sg-sans); color: var(--text-onAccent, #fff); opacity: .9; margin: 20px 0 26px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--border-hairline, #e4e5e7); border-radius: var(--measured-card-radius, 8px); padding: 14px; font-size: 13px; background: var(--surface-card, #fff); }
-.tile .img { height: 140px; background: var(--color-neutral-press-wash, #f5f5f5); border-radius: var(--measured-card-radius, 8px); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-.tile b { display: block; font: 600 var(--font-size-title, 20px)/1.3 var(--sg-serif); margin-bottom: 4px; }
-.tile .sub { color: var(--text-muted, #62646a); font-size: 12px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, #e4e5e7); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-hairline, #ddd); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--text-primary, #404145); opacity: .65; font-family: var(--sg-mono); }
- .pill-nav { display: inline-flex; background: var(--color-neutral-press-wash, #f5f5f5); border-radius: 9999px; padding: 4px; gap: 4px; font-size: 14px; color: var(--text-muted, #62646a); }
-.pill-nav span { padding: 6px 14px; border-radius: 9999px; }
-.pill-nav .on { background: var(--surface-page, #fff); color: var(--text-primary, #404145); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
-.field { display: block; width: 280px; height: var(--component-field-height, 42px); padding: 0 14px; border: 0; border-radius: var(--measured-field-radius, 4px); background: var(--surface-page, #fff); border: 1px solid var(--border-hairline, #e4e5e7); font-size: 15px; color: var(--text-primary, #404145); }
-.badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 9999px; background: var(--color-neutral-press-wash, #f5f5f5); color: var(--text-primary, #404145); font-size: 12px; font-weight: 500; }
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --text: #222325;
+    --accent: #1dbf73;
+    --panel: #76293b;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/1.45 system-ui, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  .swatch { display: inline-block; width: 28px; height: 18px; border: 1px solid #ccc; vertical-align: middle; margin-right: 8px; }
+  .note { color: #444; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Fiverr style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">Fiverr, measured</h2>
-  <p class="lead">fiverr.com is a React app styled with atomic hashed classes: its served sheets declare ~1,290 custom properties on <code>:root</code>, all named by content hash — a token-free layer with no semantic names to alias, so every value on this page is a computed style measured on the live public pages, not a var alias. Macan (self-hosted woff2, weights 400/600/700) carries the type; the dark ink fill drives Join, the hero search submit and the gig Continue, while the brand green (#1dbf73) survives as the accent — the category-nav hover underline. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from fiverr.com, signed out, in Chromium. The buyer/seller account, checkout and inbox are a documented boundary; the join, login and search fields were measured and typed into then cleared, never submitted. One light theme is painted — the hero's dark band is a component skin, not a site theme. Macan is a served face and is not loaded here: samples fall back to system sans. PerimeterX's press&hold was driven automatically, never answered by hand.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">The sticky header is a white bar on the white page: the Fiverr wordmark, the Sidebar-menu hamburger (which slides in the Browse-categories drawer), Connect to your AI, the EN locale button, Become a Seller, Sign in and the dark Join button; a category strip runs beneath. The hero below sits on a deep-green band and carries the dark-skinned search form with its submit button.</p>
-  <div class="mock" style="padding:0">
-    <div class="navbar"><span class="wm">fiverr.</span><span>Connect to your AI</span><span class="sp"></span><span>EN</span><span>Become a Seller</span><span>Sign in</span><span class="btn small primary">Join</span></div>
-    <div class="hero">Our freelancers will take it from here<small>Search for any service…</small><span class="btn primary">Search</span></div>
-  </div>
-
-  <h2 class="sh">The marketplace</h2>
-  <p class="lead">Search results are gig cards — thumbnail, seller row, star rating, a collect heart and the localized "From S$xx" starting price — behind filter dropdown triggers and a sort control. The gig page carries the Basic/Standard/Premium package tablist and its price card with the dark Continue.</p>
-  <div class="mock" style="padding:20px">
-    <div class="pill-nav"><span class="on">Basic</span><span>Standard</span><span>Premium</span></div>
-    <div class="grid" style="margin-top:16px">
-      <div class="tile"><div class="img">gig thumb</div><b>Gig card</b><span class="sub">★ 4.9 · Level 2 · From S$xx</span></div>
-      <div class="tile"><div class="img">price</div><b>S$xx.xx</b><span class="sub">per package · Continue</span></div>
-    </div>
-    <div style="margin-top:16px"><span class="btn primary">Continue</span>&nbsp;&nbsp;<span class="btn ghost">Contact me</span>&nbsp;&nbsp;<input class="field" placeholder="Username or email"></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The measured palette: the white page and off-white section surfaces, the ink and muted grays of the text ramp, the hairline borders, the dark action fills — Join, the search submit and Continue — and the #1dbf73 green accent, each labelled with the component and state it was measured on.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing, radius and motion</h2>
-  <p class="lead">Measured control geometry: the Join pill radius, the search field and auth field heights and radii, the gig card radius, the header padding and the control transition durations.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Macan carries every heading, control and body — the hero display, section headings, gig titles, nav labels and the package price are the measured steps; samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles on the running pages (the site's ~1,290 :root variables are all hash-named — nothing semantic to alias — so the atomic-class values are read inline)</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names the measurement it came from</td></tr></table>
+  <h1>Fiverr</h1>
+  <p class="note">Light only. Values below are the sampled fills in <a href="tokens.json">tokens.json</a>. A dark theme was not observed. Roles that were not read are Not captured and are not given a colour here.</p>
+  <table>
+    <thead><tr><th>Role</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td><span class="swatch" style="background:#ffffff"></span>page, surface</td><td>#ffffff</td><td>Sampled, login page and sign-in card</td></tr>
+      <tr><td><span class="swatch" style="background:#222325"></span>text, Join fill</td><td>#222325</td><td>Sampled, Join button</td></tr>
+      <tr><td><span class="swatch" style="background:#1dbf73"></span>accent, wordmark</td><td>#1dbf73</td><td>Sampled, wordmark green</td></tr>
+      <tr><td><span class="swatch" style="background:#76293b"></span>login panel</td><td>#76293b</td><td>Sampled, left panel</td></tr>
+      <tr><td>muted, border, type, space, radius, motion</td><td>Not captured</td><td>Human-check blocked the measurement pass</td></tr>
+    </tbody>
+  </table>
+  <p class="note">The signed-in app was not captured. See <a href="site-tree.md">site-tree.md</a> and <a href="login-review.json">login-review.json</a>.</p>
 </main>
-<script>
-const TOK = {"core":{"font":{"family":{"sans":{"v":"Macan, \"Helvetica Neue\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json)","d":"The Macan headline stack."},"body":{"v":"Macan, \"Helvetica Neue\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of section-h2 default (raw/components-computed.json)","d":"The body/section stack."},"ui":{"v":"Macan, \"Helvetica Neue\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of nav-join default (raw/components-computed.json)","d":"The UI/control stack."}},"size":{"hero":{"v":"72px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The hero display size."},"section":{"v":"48px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"A section heading size."},"title":{"v":"28px","t":"dimension","s":"computed fontSize of gig-h1 default (raw/components-computed.json)","d":"The gig title size."},"body":{"v":"14px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Body/footer text size."},"label":{"v":"16px","t":"dimension","s":"computed fontSize of nav-seller default (raw/components-computed.json)","d":"Nav label size."},"chip":{"v":"16px","t":"dimension","s":"computed fontSize of popular-chip default (raw/components-computed.json)","d":"Popular-chip label size."},"price":{"v":"20px","t":"dimension","s":"computed fontSize of pkg-price default (raw/components-computed.json)","d":"The package price size."}},"lineHeight":{"hero":{"v":"86.4px","t":"dimension","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"Hero line height."}},"weight":{"hero":{"v":280,"t":"number","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"Hero weight."},"section":{"v":400,"t":"number","s":"computed fontWeight of section-h2 default (raw/components-computed.json)","d":"Section heading weight."},"label":{"v":600,"t":"number","s":"computed fontWeight of nav-seller default (raw/components-computed.json)","d":"Nav label weight."}}},"color":{"neutral":{"ink":{"v":"#222325","t":"color","s":"computed color of nav-seller default (raw/components-computed.json)","d":"The dark ink (nav text, logo, the dark Join/submit button fill)."},"body":{"v":"#404145","t":"color","s":"computed color of section-h2 default (raw/components-computed.json)","d":"Body/section heading text."},"muted":{"v":"#62646a","t":"color","s":"computed color of cat-nav default (raw/components-computed.json)","d":"Muted chrome text (nav strip, footer)."},"faint":{"v":"#74767e","t":"color","s":"computed color of footer-currency default (raw/components-computed.json)","d":"Fainter utility text (footer locale buttons)."},"line":{"v":"#dadbdd","t":"color","s":"computed borderTopColor of footer default (raw/components-computed.json)","d":"The footer's hairline."},"field-line":{"v":"#c5c6c9","t":"color","s":"computed borderTopColor of hero-search-input default (raw/components-computed.json)","d":"The field border grey."},"nav-ink":{"v":"#222325","t":"color","s":"computed color of nav-seller default (raw/components-computed.json)","d":"The nav link ink."},"paper":{"v":"#ffffff","t":"color","s":"painted fill inside/under hero-search-input default (raw/components-computed.json)","d":"The page/field white."},"scrim":{"v":"#000000","t":"color","s":"painted fill inside/under mkt-header default (raw/components-computed.json)","d":"The black dim layer the search bar paints (its dim-background child)."},"press-wash":{"v":"#efeff0","t":"color","s":"computed backgroundColor of nav-seller pressed (raw/components-computed.json)","d":"The light-grey nav wash, painted while a nav link is pressed (hover paints none)."},"on-dark-wash":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"computed backgroundColor of popular-chip default (raw/components-computed.json)","d":"The translucent white chip wash on the dark hero band."}},"brand":{"fill":{"v":"#222325","t":"color","s":"painted fill inside nav-join default (raw/components-computed.json)","d":"The dark action fill of the Join pill."},"fill-hover":{"v":"#222325","t":"color","s":"painted fill inside nav-join hover (raw/components-computed.json)","d":"The action fill on hover."},"submit":{"v":"#222325","t":"color","s":"painted fill inside hero-search-btn default (raw/components-computed.json)","d":"The search submit's dark fill."},"submit-hover":{"v":"#222325","t":"color","s":"painted fill inside hero-search-btn hover (raw/components-computed.json)","d":"The submit fill on hover."},"cta":{"v":"#000000","t":"color","s":"painted fill inside gig-continue default (raw/components-computed.json)","d":"The gig Continue button's fill."},"accent":{"v":"#1dbf73","t":"color","s":"computed backgroundColor of the cat-nav hover ::after underline (raw/components-computed.json)","d":"The fiverr green accent (the category-nav hover underline)."}}},"measured":{"button-radius":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-join default (raw/components-computed.json)","d":"The Join pill's corner radius."},"search-radius":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of hero-search-input default (raw/components-computed.json)","d":"The search field's corner radius."},"card-radius":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of popular-chip default (raw/components-computed.json)","d":"The chip's corner radius (fallback while gig cards are unmeasured)."},"field-radius":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of hero-search-input default (raw/components-computed.json)","d":"The search field's corner radius (fallback while auth fields are unmeasured)."},"chip-radius":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of popular-chip default (raw/components-computed.json)","d":"The popular-chip corner radius."},"control-height":{"v":"42px","t":"dimension","s":"computed height of nav-join default (raw/components-computed.json)","d":"The header CTA height."},"field-height":{"v":"60px","t":"dimension","s":"computed height of hero-search-input default (raw/components-computed.json)","d":"The search field height (fallback while auth fields are unmeasured)."},"search-height":{"v":"60px","t":"dimension","s":"computed height of hero-search-input default (raw/components-computed.json)","d":"The hero search field height."},"header-padding-x":{"v":"0px","t":"dimension","s":"computed paddingLeft of mkt-header default (raw/components-computed.json)","d":"The header's horizontal padding."},"focus-outline":{"v":"#222325","t":"color","s":"computed outlineColor of filter-btn focus-visible (raw/components-computed.json)","d":"The keyboard-focus ring colour (fallback source)."},"focus-outline-width":{"v":"2px","t":"dimension","s":"computed outlineWidth of filter-btn focus-visible (raw/components-computed.json)","d":"The focus ring width (fallback source)."},"hover-fill":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"computed backgroundColor of popular-chip hover (raw/components-computed.json)","d":"The chip's hover fill."},"control-transition":{"v":"70ms","t":"duration","s":"computed transitionDuration of nav-join default (raw/components-computed.json)","d":"The control transition duration."}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the measured core palette","d":"Headline, nav and strong text."},"body":{"v":"{color.neutral.body}","t":"color","s":"role alias over the measured core palette","d":"Body and section text."},"muted":{"v":"{color.neutral.muted}","t":"color","s":"role alias over the measured core palette","d":"Muted chrome text."},"faint":{"v":"{color.neutral.faint}","t":"color","s":"role alias over the measured core palette","d":"The faintest utility text."},"onAccent":{"v":"#ffffff","t":"color","s":"computed color of nav-join default (raw/components-computed.json)","d":"Text on the dark action fills."}},"surface":{"page":{"v":"{color.neutral.paper}","t":"color","s":"role alias over the measured core palette","d":"The page background."},"card":{"v":"{color.neutral.paper}","t":"color","s":"role alias over the measured core palette","d":"Card panels (join/login cards, pricing card)."}},"border":{"hairline":{"v":"{color.neutral.line}","t":"color","s":"role alias over the measured core palette","d":"Footer and card hairlines."},"field":{"v":"{color.neutral.field-line}","t":"color","s":"role alias over the measured core palette","d":"The search/auth field border."}},"action":{"primary":{"default":{"v":"{color.brand.cta}","t":"color","s":"role alias over the measured core palette","d":"Primary CTAs (Continue, Join, search submit)."},"hover":{"v":"{color.brand.fill-hover}","t":"color","s":"role alias over the measured core palette","d":"Primary fills on hover."}},"accent":{"v":"{color.brand.accent}","t":"color","s":"role alias over the measured core palette","d":"The fiverr green accent (hover underlines, brand marks)."}},"component":{"header":{"height":{"v":"86px","t":"dimension","s":"computed height of mkt-header default (raw/components-computed.json)","d":"The sticky header height."}},"cta":{"height":{"v":"42px","t":"dimension","s":"computed height of nav-join default (raw/components-computed.json)","d":"The header Join pill height."},"width":{"v":"88px","t":"dimension","s":"computed width of nav-join default (raw/components-computed.json)","d":"The header Join pill width."}},"search":{"height":{"v":"60px","t":"dimension","s":"computed height of hero-search-input default (raw/components-computed.json)","d":"The hero search field height."},"width":{"v":"1159.94px","t":"dimension","s":"computed width of hero-search-input default (raw/components-computed.json)","d":"The hero search field width."}},"field":{"height":{"v":"60px","t":"dimension","s":"computed height of hero-search-input default (raw/components-computed.json)","d":"The search field height (fallback)."}},"mobile-topbar":{"height":{"v":"136px","t":"dimension","s":"computed height of m-topbar default (raw/components-computed.json)","d":"The mobile header height."}}}},"dark":{}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (declared — no public page painted data-theme="dark" while captured)']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  // Shadows, when measured, land in core.elevation.
-  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.aspect || {}), 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  // Aliases are set-relative: {font.size.body} and the palette scales live
-  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
-  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
-    let node = root;
-    for (const k of m[1].split('.')) node = node && node[k];
-    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
-  }
-  return v;
-};
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fiverr</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
 </body>
 </html>

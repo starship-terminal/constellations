@@ -1,45 +1,54 @@
-# Components
+# Nothing components
 
-Measured on the public signed-out pages on 2026-11-19. No crops: the preview browser did not produce screenshot frames.
+Public storefront controls measured on 2026-11-21 at 1440 x 900. Values are computed styles from [raw/components-computed.json](raw/components-computed.json). Crops are in [components/crops/](components/crops). Hover and focus readings that moved off-screen (y below 0) are not treated as a second visual state.
 
-## Button
+## promo-bar
 
-Store marketing buttons are links with `rounded`, padding `12px 16px`, height 40px, radius 4px, NType82-Regular 16px / 22.4px, weight 400.
+Yellow announcement strip. The link's own background is transparent; the yellow is the bar behind it (`--accent-yellow` `#ffc700`).
 
-| State | Fill | Text | Where |
+| State | Crop | Type | Fill | Radius | Size |
+|---|---|---|---|---|---|
+| default | [promo-bar-default.png](components/crops/promo-bar-default.png) | 16px/400 NType82-Regular, colour `#040404` | transparent on the yellow bar | 0 | 708 x 30, padding 8px 16px |
+
+## hero-cta
+
+The "Shop now" control on the homepage hero.
+
+| State | Crop | Type | Fill | Radius | Size |
+|---|---|---|---|---|---|
+| default | [hero-cta-default.png](components/crops/hero-cta-default.png) | 16px/400 NType82-Regular, colour `#040404` | `#ffffff` | 4px | height 40, padding 12px 16px |
+
+## text-field
+
+Contact support search field. Not filled.
+
+| State | Crop | Type | Fill | Radius | Size |
+|---|---|---|---|---|---|
+| default | [text-field-default.png](components/crops/text-field-default.png) | 18px/300 NType82, colour `#000000` | `#e9ecef` | 800px (pill) | height 44 |
+
+## cart-button
+
+Header cart icon. Opens the empty-cart dialog. The measured box sat at y=-43 because the region suggestion shifted the header during the first measure. Size 32 x 32 is the reading. Re-measure after Stay is a gap.
+
+| State | Crop | Type | Size |
 |---|---|---|---|
-| Default (SHOP NOW, DISCOVER, PLAY) | `#ffffff` | `#040404` | Home and Nothing OS |
-| Add to bag | `#040404` | `#ffffff` | Phone (4a) Pro. LatteraMonoLL 11px / 12.1px, padding 16px, radius 6px, height 48px |
-| Hover, pressed, disabled, loading | Gap | Gap | Declared `hover:opacity-70` and `hover:bg-pure-black/80`. Not painted in this capture |
+| default | [cart-button-default.png](components/crops/cart-button-default.png) | 16px/400 NType82-Regular | 32 x 32 |
 
-Focus is declared as a 2px `accent-yellow` outline with a 2px offset on the logo and nav links. Programmatic focus did not paint it.
+## nav-link
 
-Support Centre uses a different button: transparent fill, 1px `#000000` border, radius 800px, LetteraMonoLL 18px weight 300, padding `16px 20px`, height 54px.
+Header label. The first measure placed it at y=-37, so the crop may clip the label. Type matches the promo bar: 16px/400 NType82-Regular, colour `#040404`, transparent fill.
 
-## Link
+## Shared values
 
-Footer links use Ndot-Regular 40px / 40px, uppercase, `#ffffff` on `#040404`, opacity transition 100ms `cubic-bezier(0.4, 0, 0.2, 1)`.
-
-Quiet links use `#595a5a` (`--greyscale-900`) and a 200ms opacity transition. The declared hover is opacity 0.7.
-
-## Text field
-
-The footer newsletter field is an email input, placeholder "Email address", fill `rgba(60, 60, 60, 0.6)`, text `#ffffff`, Geist Mono Variable 12px / 15px, uppercase, padding `8px 16px`, radius 4px, height 48px, no border. I did not submit it.
-
-The Support Centre search field is white, NType82 18px weight 300, padding `12px 20px 12px 0`, radius 0, height 40px.
-
-## Icon button, menu, dialog, toast, tabs
-
-Not captured as Nothing components. The cookie notice was Didomi (Arial, 8px radius, black Agree button). I dismissed it with Disagree and close.
-
-## Card
-
-Category tiles (EARBUDS, HEADPHONES, PHONES, CMF) are 234 by 267 at this viewport, with a 500ms opacity transition and `motion-reduce:transition-none`. The label is Geist Mono Variable 14px, uppercase, `#595a5a`. No separate card fill was sampled.
+- Body type on chrome is NType82-Regular at 16px / 400.
+- Control radius on the hero button is 4px. The contact field is a pill (800px).
+- Ink is `#040404` (`--greyscale-black`). Page wash is `#f4f4f4` (`--greyscale-100`).
+- Promo yellow is `#ffc700`. Accent red `#c8102e` and accent blue `#002f6c` are declared and not assigned to a measured control in this pass.
 
 ## Gaps
 
-- No screenshots or crops. Preview snapshot failed.
-- No hover, pressed, disabled, loading, or error states.
-- No text area, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, table, avatar, or badge from the product's own UI.
-- Nav at 1169px was `display: none` (the desktop nav class is `xl:block`).
-- Account login and contact-support forms were not filled.
+- Add to bag on the product page was not measured. The dark product page shows a black button labelled ADD TO BAG. Its computed style is Not captured.
+- Menu-link and footer-link locators missed. Not captured.
+- Focus rings did not paint in the first measure (outline width 0). Not captured as a distinct focus style.
+- Pressed states were not measured.
+- Icons were not extracted as SVG. The site icon is [icon.png](icon.png).

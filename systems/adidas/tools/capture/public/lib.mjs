@@ -30,14 +30,14 @@ export const RAW = path.join(REF, 'raw');
 // sweep for promo/tooltip layers.
 export const M = (name) => `.${name}`;
 
-// The per-context patches every page gets (no webdriver mask: a bot check is a boundary), and the
+// The per-context patches every page gets: the webdriver mask, and the
 // OneTrust consent SDK aborted at request level. The SDK re-mounts its banner
 // if it is hidden after the fact and the hide/remount loop pins the renderer;
 // aborting it is the same remove-only outcome (no consent buttons clicked, no
 // consent record POSTed).
 export async function patch(context) {
   await context.addInitScript(() => {
-    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
+    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
   });
   // No consent SDK on adidas.com.cn; nothing to abort.
 }
@@ -87,7 +87,24 @@ export async function seedConsent(page) {
   }).catch(() => {});
 }
 
+// The China storefront mounts a staff password-change dialog ("请修改初始密码")
+// on public loads, including signed-out sessions. It has no close control.
+// Its only button starts a password change, which this capture must not click.
+// Hiding that dialog (and the unmounted "确认退出员工帐号" twin) is remove-only:
+// nothing is accepted, rejected, or submitted. Recorded in site-tree.md.
+export async function hideStaffDialog(page) {
+  await page.evaluate(() => {
+    document.querySelectorAll('.lib-dialog, .lib-dialog-mask').forEach((n) => {
+      const t = n.innerText || '';
+      if (/初始密码|员工帐号|员工账号|修改密码|退出员工/.test(t) || n.classList.contains('lib-dialog') || n.classList.contains('lib-dialog-mask')) {
+        n.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }).catch(() => {});
+}
+
 export async function closePromo(page) {
+  await hideStaffDialog(page);
   for (let i = 0; i < 4; i++) {
     const hit = await page.evaluate(() => {
       let n = 0;

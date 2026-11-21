@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typeform style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Twklausanne", Arial, sans-serif;
+  --sg-display: Tobias, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text-primary); font: 400 16px/1.4 var(--sg-sans); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 400 48px/1 var(--sg-display); letter-spacing: -1px; margin: 0 0 8px; }
+h2 { font: 400 28px/1.1 var(--sg-display); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--text-secondary); }
+code { font-family: var(--sg-mono); font-size: 0.85em; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 12px; border: 1px solid var(--border-default); }
+.sw b, .sw span { display: block; font-size: 12px; }
+.sw span { color: var(--text-secondary); }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 20px; border-radius: 12px; text-decoration: none; font-size: 16px; }
+.btn.primary { background: var(--accent-default); color: var(--text-on-accent); }
+.btn.secondary { background: var(--button-secondary-bg); color: var(--accent-default); box-shadow: inset 0 0 0 1px var(--border-strong); }
+.card { background: #ffffff; border: 1px solid var(--border-default); border-radius: 24px; padding: 20px; max-width: 280px; }
+.nav { display: flex; gap: 20px; align-items: center; background: var(--invert); color: var(--text-invert); border-radius: 16px; padding: 16px 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Typeform</h1>
+  <p>Public marketing tokens from www.typeform.com, one light theme. Values on this page are CSS custom properties generated from tokens.json. Proprietary faces are not loaded: Tobias falls back to Times New Roman, Twklausanne to Arial.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>light.page</span></div>
+    <div class="sw"><i style="background:#ffffff"></i><b>surface</b><span>measured card white</span></div>
+    <div class="sw"><i style="background:var(--text-primary)"></i><b>text</b><span>light.text.primary</span></div>
+    <div class="sw"><i style="background:var(--text-secondary)"></i><b>muted</b><span>light.text.secondary</span></div>
+    <div class="sw"><i style="background:var(--accent-default)"></i><b>accent</b><span>light.accent.default</span></div>
+    <div class="sw"><i style="background:var(--border-default)"></i><b>border</b><span>light.border.default</span></div>
+    <div class="sw"><i style="background:var(--text-highlight)"></i><b>highlight</b><span>light.text.highlight</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font:400 64px/1 var(--sg-display);color:var(--text-primary);letter-spacing:-2px">Forms that feel human</p>
+  <p style="font-size:20px;color:var(--text-primary)">Body copy sits in Twklausanne. Eyebrows use the purple highlight.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn primary" href="#components">Sign up</a>
+    <a class="btn secondary" href="#components">Contact sales</a>
+  </div>
+  <h2>Nav</h2>
+  <div class="nav"><strong>Typeform</strong><span>Platform</span><span>Solutions</span><span>Resources</span><span style="margin-left:auto">Log in</span></div>
+  <h2>Card</h2>
+  <div class="card"><b>Core</b><p style="margin:8px 0 0">Plans for everyone. Cards use a large radius on a white surface.</p></div>
+</main>
+</body>
+</html>

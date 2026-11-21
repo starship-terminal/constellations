@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Build components.md for the Faire design reference.
+"""Build components.md for the Gauth design reference.
 
-Reads raw/components-computed.json (every component and state, measured),
-tokens.json, screenshots/ and writes components.md next to them. Every value
-is a cell of the measurement file, condensed: colours are hex followed by the
-palette token whose value matches, the font family is named once per value,
-and a state row shows only what differs from the first state. Adapted from
-the Coursera kit's builder via the Deezer package, which read markdown; this
-one reads the JSON directly.
+Reads raw/components-computed.json (every component and state, measured), raw/layout.json,
+tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to them. Every value
+is a cell of the measurement file, condensed: colours are hex followed by the palette token whose
+value matches, the font family is named once per value, and a state row shows only what differs
+from the first state. Adapted from the Coursera kit's builder, which read markdown; this one reads
+the JSON directly.
 
 Deterministic: re-running it on the same inputs reproduces components.md byte for byte.
 Run from anywhere: python3 tools/build_components_md.py
@@ -19,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
-LAYOUT = {}
+LAYOUT = json.load(open("raw/layout.json"))
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens
@@ -36,7 +35,7 @@ def flat(node, prefix=""):
 
 
 BY_COLOR = {}
-for n, t in flat(T["core"]):
+for n, t in flat(T["core"]["palette"]):
     if t["$type"] == "color":
         BY_COLOR.setdefault(t["$value"], n)
 
@@ -143,35 +142,14 @@ def props(v):
         o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"])
-    # Painted layers that carry a state but not the root box: the element's own
-    # ::before/::after always, and descendant paint only when the root paints
-    # nothing (the case "Child layers" reports). A nav underline that goes
-    # transparent -> black on hover lives in a::after, so it diffs here.
-    bits = []
-    for pe in ("::before", "::after"):
-        if v.get(pe):
-            p = v[pe]
-            bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
-    # A root box-shadow (e.g. the 1px focus ring gained on focus-visible) does
-    # not remove the painted children: keep reporting their layers, which is
-    # where a state-carrying child outline (the 3px cyan CTA ring) shows up.
-    if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
-        for p in v.get("paint", [])[:6]:
-            bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
-    if bits:
-        o["layers"] = "; ".join(bits)[:400]
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
-    # A state whose capture failed (e.g. via: "focus failed" — the element would
-    # not hold a real keyboard focus) is not a captured state: it is reported
-    # separately so a failed attempt can never read as a measured absence of a
-    # focus ring.
-    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
+    states = [s for s in c["states"] if "style" in c["states"][s]]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -208,7 +186,7 @@ def child_layers(c):
         return None
     out = []
     for p in st["paint"][:3]:
-        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], re.sub(r"\.0+(?=x|px|$)", "", p["size"])]
+        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
         if p.get("bg"):
             bits.append("background " + colour(p["bg"]))
         if p.get("bgImage"):
@@ -225,56 +203,43 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
-PAGE_NAME = {"home": "home", "category": "category teaser", "brand": "brand storefront",
-             "suppliers": "suppliers listing", "suppliersAll": "suppliers A-Z",
-             "howItWorks": "how-faire-works", "about": "about", "news": "newsroom",
-             "careers": "careers", "largeRetailers": "large-retailers", "pos": "point-of-sale",
-             "markets": "markets", "support": "help center", "affiliates": "affiliates",
-             "apply": "brand application", "signin": "sign-in dialog", "signup": "sign-up dialog",
-             "notfound": "404", "mobile": "home"}
+PAGE_NAME = {"home": "Homework home", "science": "Academy (Science Labs)", "math": "Academy (Math Curriculum)", "history": "Academy (History Signature)",
+             "my": "Academy (My Course)", "unit": "unit", "lesson-science": "science lesson", "lesson-math": "math lesson",
+             "lesson-history": "history lesson", "atlas": "Atlas", "story": "Atlas story", "news": "Insights"}
 
 GROUP_INTRO = {
-    "Site chrome": "The fixed header on every page: the Faire wordmark, the 'All categories' dropdown (its panel is a full-width white sheet), the search field, the EN-US locale control, Blog, 'Sign up to sell', 'Sign in' and the dark 'Sign up to buy' fs-button--primary — plus the sub-header category strip and the promo line above.",
-    "Home": "The home page: the 'Find your next bestseller' serif display hero over lifestyle media, the featured-brands pill tabs, brand and category tiles and the sign-up CTAs.",
-    "Category teaser": "/category/Home Decor — the public teaser grid: a 'Wholesale home decor' serif masthead over media, the 'All filters' pill, subcategory cards, product tiles that all link to the sign-up dialog and a sign-up wall at the bottom.",
-    "Brand storefront": "/brand/b_d72c56fe — a public brand page (54 Celsius): cover photo, circular fs-avatar, 'Top Shop' and rating badges, the section tab row, product tiles and an 'About' card; every buy path leads to the sign-up wall.",
-    "Suppliers listings": "The SEO /suppliers/* listings (the candles subcategory and the /suppliers/All Brands A-Z): breadcrumb, 'Wholesale … suppliers' masthead and rows of brand cards — intermittently gated by the Cloudflare edge challenge.",
-    "Marketing pages": "The signed-out marketing surface — /how-faire-works, /about, /news, /careers, /large-retailers, /point-of-sale/about, /markets, /affiliates: serif mastheads, CTAs and content cards.",
-    "Brand application (/apply)": "The /apply brand-onboarding form measured at rest: name/e-mail/phone/password fields, the +1 country-code prefix, show-password icon, terms and marketing fs-checkbox inputs and the 'Next' submit — focused and typed into then cleared, never submitted.",
-    "Sign-in dialog": "The 'Sign in to Faire' fs-modal mounted by ?signIn=1 over the home page — e-mail and password fields, the dark Sign in submit, Google/Apple SSO buttons, a sign-up link and the close icon; measured at rest, never submitted.",
-    "Sign-up dialog": "The 'Unlock wholesale pricing' fs-modal mounted by ?signUp=1 — the business-e-mail field, 'Sign up for free' submit, Google/Apple SSO and a sign-in link; measured at rest, never submitted. The same dialog mounts when a product tile is clicked.",
-    "Help center": "/support — the help-center masthead, the 'Search retailer guides' field and topic links.",
-    "Mobile (390 wide)": "The phone surface at 390 wide: the top bar with Menu button and search icon, the nav drawer the Menu button opens, the search overlay the magnifier opens and the hero.",
-    "Footer": "The page footer: the brand promise line in the serif face, sitemap columns, locale/social links and the legal row.",
+    "Shell and navigation": "The app shell shared by Homework, Academy and Insights: a fixed 220px sidebar and a 60px top bar over the content. The sidebar is white with a cool grey current item on Homework and Insights, and takes the warm `#faf9f5` ground with a beige current item on Academy. Atlas and the lesson players have shells of their own (their groups below).",
+    "Homework home": "The question-first home page: a serif hero over a lilac gradient, the question field, an upload panel and subject chips, then marketing sections. Nothing was ever sent or uploaded.",
+    "Academy catalogue": "The course catalogue: the Playfair title and Create Course, four category tabs, then course sections of card grids. Science Labs and History Signature use cover cards with a progress track; Math Curriculum uses unit cards with an 80px cover tile.",
+    "Unit page": "A math course's page: a back link, a tinted course banner, the unit rail at the left and the topic path at the right, with a floating Start panel.",
+    "Lesson player: science canvas": "The science player is built in Astryx, a separate design system (`astryx-*` classes, StyleX variables, the \"stone\" theme): a narrated canvas that pans by itself, a section rail, transport controls and a docked Ask Tutor bar. Its focus ring is the only blue one on the site.",
+    "Lesson player: math": "The math player puts a tutor column at the left and the slide in a white frame at the right, on the warm ground.",
+    "Lesson player: history": "The history player is immersive: chapter pills at the top, the scene in the middle, a play disc and a caption line.",
+    "Atlas": "Atlas has its own shell (a 56px header and a 230px drawer), a prompt box, recommendation chips and a grid of story cards. A story opens as a video preview, then a story page.",
+    "Insights": "The news and blog list in the app shell.",
+    "Dialogs and overlays": "The promo dialog every page opens with, the Create a Course dialog, the science player's audio dialog, the math player's audio gate and the Atlas story preview. The promo's overlay is `rgba(15, 17, 20, 0.45)`.",
+    "Mobile (390 wide)": "A few components as a phone draws them, at 390 x 844 with an iPhone user agent.",
 }
 
 SHOTS = [
-    ("home", "Home", "/"),
-    ("category-home-decor", "Category teaser (Home decor)", "/category/Home Decor"),
-    ("category-new-products", "Category teaser (New products)", "/category/New Products"),
-    ("brand", "Brand storefront (54 Celsius)", "/brand/b_d72c56fe"),
-    ("suppliers-candles", "Suppliers listing (Candles)", "/suppliers/Home Decor/subcategory/Candles & Holders/Candles"),
-    ("suppliers-all", "Suppliers A-Z", "/suppliers/All Brands/brand-value/women-owned"),
-    ("how-faire-works", "How Faire works", "/how-faire-works"),
-    ("about", "About", "/about"),
-    ("news", "Newsroom", "/news"),
-    ("careers", "Careers", "/careers"),
-    ("large-retailers", "Large retailers", "/large-retailers"),
-    ("point-of-sale", "Point of sale", "/point-of-sale/about"),
-    ("markets", "Faire Markets", "/markets"),
-    ("support", "Help center", "/support"),
-    ("affiliates", "Affiliates", "/affiliates"),
-    ("apply", "Brand application", "/apply"),
-    ("signin", "Sign-in dialog", "/?signIn=1"),
-    ("signup", "Sign-up dialog", "/?signUp=1"),
-    ("notfound", "404", "/pagenotfound"),
-    ("tos", "Terms of service", "/tos"),
+    ("home", "Homework home. Serif hero, question field, upload panel, subject chips, then the Atlas, AI solution and live tutor bands, comments and the footer. The promo dialog, the field focused and the folded sidebar captured.", "/"),
+    ("academy-science", "Academy, Science Labs. Title, Create Course, tabs, course sections of lesson cards.", "/course/science"),
+    ("academy-math", "Academy, Math Curriculum. Unit cards, six per course, and Show more expanded (the toolbar sticks with Create Course in it).", "/course/math"),
+    ("academy-history", "Academy, History Signature. Illustrated lesson cards.", "/course/history"),
+    ("academy-my", "Academy, My Course. The signed-out empty state, and the Create a Course dialog.", "/course/my"),
+    ("unit", "Unit page (Algebra 1). Banner, unit rail, topic path, Start panel; scrolled down the path; Unit 2 chosen in the rail.", "/course/math/algebra-1?unit=real-numbers-and-sets"),
+    ("lesson-science", "Science lesson. The audio dialog, the first chapter, Settings open, Ask Tutor opened, a figure with its callout and list, and a quiz.", "/course/science/how-things-work-1/learn"),
+    ("lesson-math", "Math lesson. The audio gate, the playing slide with the tutor column, the chapters panel.", "/course/math/algebra-1/fundamentals-of-set-theory/learn"),
+    ("lesson-history", "History lesson. The opening scene, the chapter panel.", "/course/history/crossing-the-ocean-wall/learn"),
+    ("atlas", "Atlas. Landing, prompt box, chips, Popular Stories, FAQ; a story card's video preview; the Apollo 11 story page, and its Video Settings popover.", "/atlas"),
+    ("news", "Insights. Breadcrumb, News and Blog tabs, featured article, article rows.", "/news"),
 ]
 MOBILE = [
-    ("mobile-home", "Home, phone", "/"),
-    ("mobile-category-home-decor", "Category teaser, phone", "/category/Home Decor"),
-    ("mobile-apply", "Brand application, phone", "/apply"),
-    ("mobile-signin", "Sign-in dialog, phone", "/?signIn=1"),
+    ("mobile-home", "Homework home at 390: the promo dialog, the hero, the full page with the app banner.", "/"),
+    ("mobile-academy", "Academy at 390: Math Curriculum (Science Labs is not offered on a phone).", "/course/math"),
+    ("mobile-unit", "Unit page at 390, and scrolled down the path.", "/course/math/algebra-1?unit=real-numbers-and-sets"),
+    ("mobile-lesson-math", "Math lesson at 390: the audio gate and the slide.", "/course/math/algebra-1/fundamentals-of-set-theory/learn"),
+    ("mobile-atlas", "Atlas at 390, and a story page (Artemis II).", "/atlas"),
 ]
 
 L = []
@@ -290,7 +255,7 @@ shots = sorted(p.name for p in Path("screenshots").glob("*.png"))
 def links(prefix):
     out = []
     for f in shots:
-        m = re.fullmatch(re.escape(prefix) + r"-(?:light|dark)-(.+)\.png", f)
+        m = re.fullmatch(re.escape(prefix) + r"-light-(.+)\.png", f)
         if m:
             out.append(f"[{m.group(1)}](screenshots/{f})")
     return ", ".join(out)
@@ -298,23 +263,23 @@ def links(prefix):
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
-icons = []
+icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n")[1:]]
 
-W("# Faire components")
+W("# Gauth components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from faire.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, registered, bought or submitted; the application and auth forms were measured and typed into then cleared, never sent; every link and CTA was measured, never followed — product tiles open the sign-up dialog, which is the deepest public surface.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from www.gauth.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
 W()
-W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [patterns.md](patterns.md).")
+W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Graphik_fix 14/20 400, #333333`, and is read from the first text node inside the component.")
+W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the page painted at capture — `light` on every surface here: faire.com paints a single light theme signed out (no theme attribute, no user toggle, and the probe's .dark pass resolves identically to :root). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-light-{state}.png` (Gauth has one theme). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -326,15 +291,19 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("OneTrust consent layer", "every page", "the consent SDK mounts a banner or the Privacy Preference Center; it is hidden with display:none, never answered — no accept/reject was clicked", "hidden before every shot and reading"),
-    ("Cloudflare edge challenge", "fresh clients, some routes", "an intermittent Turnstile 'Just a moment…' interstitial; waited out and retried on a fresh context, never solved or clicked", "category/suppliers/brand routes intermittently degrade; the states it ate are listed in Gaps"),
-    ("All categories menu", "home page header", "the 'All categories' button's own toggle — pointer click, keyboard Enter as fallback", "[home-light-categories-menu](screenshots/home-light-categories-menu.png), [all-categories-btn](#all-categories-button), [categories-panel](#categories-menu-panel)"),
-    ("Mobile nav drawer", "home page, phone width", "the Menu button's own toggle", "[mobile-home-light-drawer](screenshots/mobile-home-light-drawer.png), [m-drawer](#mobile-nav-drawer)"),
-    ("Mobile search overlay", "home page, phone width", "the unlabelled magnifier button's own toggle", "[m-search](#mobile-search-field)"),
-    ("Sign-in dialog", "/?signIn=1", "mounted by the query parameter; fields typed into then cleared — nothing sent", "[signin-light-default](screenshots/signin-light-default.png), [signin-dialog](#sign-in-dialog), [signin-email](#email-field-sign-in)"),
-    ("Sign-up dialog", "/?signUp=1 (also every product tile)", "mounted by the query parameter; fields typed into then cleared — nothing sent", "[signup-light-default](screenshots/signup-light-default.png), [signup-dialog](#sign-up-dialog), [signup-email](#business-email-field)"),
-    ("Application fields", "/apply", "typed into then cleared — nothing sent", "[field-firstname](#first-name-field), [field-email](#email-field), [field-phone](#phone-field), [field-password](#password-field)"),
-    ("Signed-in marketplace", "a Faire account", "every post-dialog surface — search results, product detail, cart, checkout, account — needs an account", "boundary; see Gaps"),
+    ("Promo dialog (\"Introducing Gauth Academy\")", "every page, on load", "at rest; then dismissed with its own close button for every other capture", "[home-light-promo](screenshots/home-light-promo.png), [promo-dialog](#promo-dialog)"),
+    ("Create a Course dialog", "Academy", "Create Course pressed (opens the dialog); a prompt typed and deleted, no suggestion pressed", "[academy-my-light-create-dialog](screenshots/academy-my-light-create-dialog.png), [create-a-course-dialog](#create-a-course-dialog)"),
+    ("Enable audio dialog", "science lesson", "on load; Not now pressed, Enable audio never pressed", "[lesson-science-light-audio-dialog](screenshots/lesson-science-light-audio-dialog.png)"),
+    ("Audio gate", "math lesson", "on load; Continue pressed to start playback", "[lesson-math-light-audio-gate](screenshots/lesson-math-light-audio-gate.png)"),
+    ("Settings popover", "science lesson", "the lesson's Settings button", "[lesson-science-light-settings](screenshots/lesson-science-light-settings.png)"),
+    ("Ask Tutor, opened", "science lesson", "clicked into the bar; sample text typed and deleted, nothing sent", "[lesson-science-light-ask-tutor](screenshots/lesson-science-light-ask-tutor.png)"),
+    ("Quiz", "science lesson", "reached by letting the lesson play about three minutes; no option chosen", "[lesson-science-light-quiz](screenshots/lesson-science-light-quiz.png)"),
+    ("Chapters panel", "math and history lessons", "the chapters button", "[lesson-math-light-chapters](screenshots/lesson-math-light-chapters.png), [lesson-history-light-chapters](screenshots/lesson-history-light-chapters.png)"),
+    ("Show more", "Math Curriculum", "the Show 14 more button", "[academy-math-light-show-more](screenshots/academy-math-light-show-more.png)"),
+    ("Folded sidebar", "Homework home", "the sidebar's collapse button", "[home-light-sidebar-folded](screenshots/home-light-sidebar-folded.png)"),
+    ("Story preview", "Atlas", "a story card pressed (opens a video preview)", "[atlas-light-story-preview](screenshots/atlas-light-story-preview.png)"),
+    ("Story page", "Atlas", "Explore in the preview (opens the published story)", "[atlas-light-story](screenshots/atlas-light-story.png), [mobile-atlas-light-story](screenshots/mobile-atlas-light-story.png)"),
+    ("Video Settings popover", "Atlas story", "hovering Generate Video; nothing in it pressed", "[atlas-light-story-video-settings](screenshots/atlas-light-story-video-settings.png)"),
 ]
 for r in OVER:
     W("| " + " | ".join(r) + " |")
@@ -348,37 +317,16 @@ W()
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st or st.get("via") == "focus failed":
+    if not st or "style" not in st:
         continue
     s = st["style"]
-    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    # A ring painted on a child layer instead of the wrapper: offer buttons
-    # draw 1px dotted outlines on their inner anchor while the wrapper's own
-    # outline stays none. Those states must count as ringed too.
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
-    shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
-    border = any(
-        s[f"border{d}{p}"] != base[f"border{d}{p}"]
-        for d in ("Top", "Right", "Bottom", "Left")
-        for p in ("Color", "Width", "Style")
-    )
-    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
-parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
-if with_shadow:
-    parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
-if with_border:
-    parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
-if without:
-    parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
+    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
+with_ring = [f"`{k}` ({r})" for k, r in foc if r]
+without = [f"`{k}`" for k, r in foc if not r]
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
 W()
-W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.")
+W("**Pressed.** Gauth's primary buttons shrink when pressed instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -413,12 +361,31 @@ def dur_ms(d):
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
     W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
+W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
+W()
+W("| Page | 1440 | 1920 | 1024 | 390 |")
+W("|---|---|---|---|---|")
+
+
+def grid_of(key):
+    v = LAYOUT.get(key)
+    if not v:
+        return "-"
+    g = v["grids"][0] if v["grids"] else None
+    cols = re.sub(r"(\d+\.\d)\d*px", r"\1", g["cols"]).replace("px", "") if g else ""
+    main = f"content x {v['main']['x']}, {v['main']['w']} wide" if v["main"]["w"] else "content full width"
+    return f"{main}; grid {cols} gap {g['colGap']}" if g else main
+
+
+for page in ["home", "academy-science", "academy-math", "unit", "lesson-math", "atlas"]:
+    W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390)) + " |")
+W()
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # PRODUCT (adapt): the card-like components to compare in one table.
-for k in ["categories-panel", "subcat-card", "brand-card", "news-card", "signin-dialog", "signup-dialog", "m-drawer"]:
+for k in ["lesson-card", "unit-card", "story-card", "feature-card", "solution-option", "create-suggestion", "quiz-card", "quiz-option", "learning-panel", "settings-popover", "chapters-panel", "video-settings", "view-rail", "m-unit-card"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
@@ -427,22 +394,25 @@ for k in ["categories-panel", "subcat-card", "brand-card", "news-card", "signin-
     if st is None:
         continue
     p = props(st)
+    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
+        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
+        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
 # ------------------------------------------------ entries
 W("## Components")
-groups = [g for g in GROUP_INTRO if any(c.get("group") == g for c in C.values())]
+groups = [g for g in GROUP_INTRO if any(c["group"] == g for c in C.values())]
 for c in C.values():
-    if c.get("group") not in groups:
-        groups.append(c.get("group") or "Other")
+    if c["group"] not in groups:
+        groups.append(c["group"])
 for g in groups:
     W()
     W(f"### {g}")
     W()
     W(GROUP_INTRO.get(g, ""))
     for k, c in C.items():
-        if c.get("group") != g:
+        if c["group"] != g:
             continue
         W()
         W(f"#### {c['title']}")
@@ -455,7 +425,6 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -465,9 +434,6 @@ for g in groups:
             W("|---|---|")
             for lab, d in rows:
                 W(f"| {lab} | {fmt(d)} |")
-            W()
-        if failed:
-            W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.")
             W()
         cl = child_layers(c)
         if cl:
@@ -480,7 +446,7 @@ for g in groups:
 W()
 W("## Icons")
 W()
-W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots (the Faire wordmark, the header glyphs, social icons, the product badges) are the product's artwork. Declared under layoutGaps in the catalog entry.")
+W(f"{len(icons)} SVGs were lifted from the pages into [icons/](icons), named by role, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. Lesson content (the canvas, slides and formulas) was left out; these are the interface icons. The SVGs are Gauth's property, kept for reference only.")
 W()
 W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
 W("|---|---|---|---|---|---|")
@@ -492,43 +458,41 @@ W()
 # ------------------------------------------------ gaps
 W("## Gaps")
 W()
-W("### The signed-in marketplace")
-W()
-W("Faire's product is the marketplace: every surface past the sign-up/sign-in dialogs — search results, product detail, cart, checkout, orders, the retailer and brand dashboards — needs an account and was never reached. Product tiles link to `?signUp=product`, which mounts the sign-up dialog: the deepest public surface, and it was measured as a form, never submitted. The /brand-portal route redirects to sign-in.")
-W()
 W("### Pages")
 W()
-W("- **The account.** Every post-sign-in surface was never reached; both auth dialogs were measured at rest and never submitted; Google/Apple SSO was never followed.")
-W("- **Forms.** The /apply brand application was measured at rest and typed into then cleared — 'Next' was never pressed; what the second step or a submission returns is unverified.")
-W("- **Cloudflare.** The edge intermittently serves a Turnstile interstitial, worst on the category/suppliers/brand routes; those components were captured across several passes and a few entries below are marked missing or carry `recaptureMissed` runs — the routes it ate during a pass are documented, not patched over.")
-W("- **Blog.** The header's Blog link leaves faire.com for the blog subdomain; not captured.")
-W("- **Newsroom articles** are not followed; /news is covered by the index and its cards.")
+W("- **Signed-in pages.** Nothing behind sign-in was captured: a learner's own My Course list, course progress, history, the homework answer page, Atlas topics a learner made, account settings and the subscription checkout. The kit never signs in.")
+W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, no quiz option was chosen.")
+W("- **Study Resources.** `/study-resources/*` redirects to gauthmath.com, which answers a headless browser with Access Denied.")
+W("- **The science lesson's Completed screen** (a cover, a laurel \"Completed\" title, Share and View Canvas) was seen while exploring, after a lesson played to its end, but the kit does not wait the several minutes it takes, so there is no crop or measurement.")
+W("- **Mobile science lessons.** A phone is redirected from `/course/science` to `/course/math`; Science Labs is not offered on a phone.")
+W("- **Other lesson kinds.** Math lessons carry interactive steps (matching, drag, number lines, flashcards, graphs; their CSS is in the stylesheets) that only appear as a lesson plays on; the capture saw the first slides only.")
 W()
 W("### States")
 W()
-W("- **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing.")
-W("- **Disabled, error, loading and validation states** were not seen on the public surface — the forms were never submitted.")
-W("- **Dialog fields' validation states** are unseen — validation needs a submit, which was never performed.")
-W("- **signup-apple** is absent from the sign-up dialog as rendered to this client (Google only); `brand-tile`, `sup-h1` and `wall-submit` stayed missing/unmeasured because the routes degraded during every later pass.")
+W("- **Pressed** was forced with DevTools on every control except toggles, so a state a script adds on mousedown (if any) is missing.")
+W("- **Hover on the feature cards, the article rows, the Share button and the play disc** changed nothing measurable; their entries read 'same'.")
+W("- **The tutor transcript** held only the status line during the 25 seconds of playback the kit waits; transcript text was not captured.")
+W("- **Disabled states** were not seen on any public control.")
 W()
 W("### Themes")
 W()
-W('faire.com has no user theme toggle, no theme attribute and no `prefers-color-scheme` switch: one light theme signed out. The vars probe resolved every custom property a second time under a `dark` class nothing on the site sets and the values are identical — the only "dark" contexts are inverse surfaces inside the light page (the dark marketing band, controls over hero media), which the declared `.fs-mode-on-surface` scope re-themes; its resolved values sit under `light.color.onSurface.*`.')
+W("Gauth shows one light theme. Its stylesheets do declare dark values: TikTok's TUX theme under `[data-theme=\"dark\"]` and `.twv-container` with `prefers-color-scheme: dark`, the lesson palette under `[data-lesson-style=\"dark\"]`, and Astryx's stone theme as `light-dark()` pairs. None of them is applied on any page captured: no page sets a dark attribute, the science player pins `data-theme=\"light\"`, and every page painted the same under `prefers-color-scheme: dark` (`themeChecks` in [raw/css-vars.json](raw/css-vars.json)). There is no theme switch in the sidebar, the lesson Settings or the footer. The token file therefore ships no dark set, and the dark declarations stay in the raw file for reference.")
 W()
 W("### Fonts")
 W()
-W("- **Graphik_fix** (the UI sans — body, controls, fields), **Nantes_fix** (the marketing display serif — mastheads, the footer promise line) are the declared faces; **GT Canon** (category mastheads, dialog titles), **GT Standard** (large CTAs) and **GT Standard M** (mono accents) appear in measured styles. All are served woff2 faces from cdn.faire.com; the style guide falls back to system sans.")
+W("- **SF Pro** is Apple's system face; Gauth declares an \"SF Pro\" family over `local()` only, so it renders as SF Pro on Apple devices and falls back elsewhere.")
+W("- **Satoshi** (the science canvas's \"Canvas Print\" and \"Canvas Heading\") is from Fontshare and is not on Google Fonts; the style guide falls back to the system font.")
+W("- **Rubik**, named on small Atlas labels, has no `@font-face` on the page and rendered as a fallback in the capture.")
 W()
 W("### Screenshots")
 W()
-W("- The product photography, brand imagery and video frames in the screenshots are the site's published content.")
-W("- The suppliers-candles default screenshot caught the skeleton loader; the full shot and the measurements show the real listing.")
-W("- Full-page shots are bounded at eight chunks; the bounds each page hit are in the `.png.capture.json` sidecars.")
+W("- Covers, illustrations, videos and story images are Gauth's content and appear only inside screenshots and crops. The lesson canvas and the Atlas story keep moving, so two captures of the same view can differ in what the narration has drawn.")
 W("- Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.")
 W()
 W("### Content left out")
 W()
-W("- Article copy, product names, brand names and prices are the site's content; only frames and components were measured.")
+W("- Lesson content (slides, canvas drawings, formulas, narration) was not transcribed; only the frames around it were measured.")
+W("- No personal data was captured: the pages were read signed out, and the Atlas drawer was empty.")
 
 Path("components.md").write_text("\n".join(L) + "\n")
-print("components.md:", len(L), "lines")
+print("components.md:", len(L), "lines,", len(C), "entries,", n_crops, "crops,", len(icons), "icons")

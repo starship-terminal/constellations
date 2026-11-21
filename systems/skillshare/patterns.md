@@ -1,21 +1,39 @@
-# Patterns
+# Skillshare patterns
 
-Signed-out marketing pages. Screenshots are viewport captures at the measured CSS size, deviceScaleFactor 2, so a 1440 CSS viewport is a 2880-pixel PNG. A cookie overlay (`rgba(0, 0, 0, 0.7)`) was hidden for the shots and never answered.
+How the public pages combine. Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json).
 
-| Pattern | Where | Shot |
-|---|---|---|
-| Home with signup card | https://www.skillshare.com/en/ | [home-light-default.png](screenshots/home-light-default.png) |
-| Home at 390 | same URL, innerWidth 390 | [home-light-mobile.png](screenshots/home-light-mobile.png) |
-| About | /en/about, dark nav, photo hero, gray content | [about-light-default.png](screenshots/about-light-default.png) |
-| Teach | /en/teach, 74px white headline, mint Sign Up to Teach, purple band | [teach-light-default.png](screenshots/teach-light-default.png) |
-| Teams | /teams, black nav, mint Get Started and See Plans | [teams-light-default.png](screenshots/teams-light-default.png) |
-| Press | /en/press, same marketing nav as About | [press-light-default.png](screenshots/press-light-default.png) |
-| Terms | legal.skillshare.com, black header, mint Search submit | [terms-light-default.png](screenshots/terms-light-default.png) |
+## Marketing shell
 
-The home nav is an 80px white bar with 16px 20px padding: wordmark, Browse, a 500px search field, Sign In, and a mint Sign Up. The hero sits a signup card on the right: "Get 7 free days of Skillshare" at 22px/700, then Google, Facebook, Apple, and a purple text button. The card was not submitted.
+The home, browse, search, about, teach, gift, and login pages share one header: wordmark, Browse, a search combobox, Sign In, and a green Sign Up. A black promo bar sometimes sits above it (Black Friday offer in the menu and video shots). The footer is near-black with Company, Work With Us, Teach with Us, Shop, and Mobile columns.
 
-About, Teach, and Press invert the same bar to `{color.ink-soft}` and paint the nav labels white. Teams uses a black bar and a filled Sign In (`{color.ink-soft}` face, white label, 16px, 4px radius).
+See [home-light-default](screenshots/home-light-default.png) and [home-light-menu](screenshots/home-light-menu.png).
 
-## Not captured
+## Signup module on the home hero
 
-Class pages, teacher profiles, browse, and the blog hit a Cloudflare challenge in headless Chromium. The signed-in classroom, membership checkout, and the Sign In sheet were not entered.
+The hero is a 46px GT Walsheim Pro headline beside a "Get 7 free days" module: Google, Facebook, and Apple buttons, then a purple Continue with email link. Those controls are walls. They were not clicked.
+
+See [home-light-default](screenshots/home-light-default.png).
+
+## Browse and search
+
+Browse is a category list plus class cards. Search for `watercolor` shows filter chips (Classes, Learning Paths, Digital Products, 1-on-1 Sessions) and result cards with Staff Pick and New badges.
+
+See [browse-light-default](screenshots/browse-light-default.png) and [search-light-default](screenshots/search-light-default.png).
+
+## Login wall
+
+`/en/login` is a public form on a `#f4f4f4` canvas: three social buttons, an empty email field, an unchecked checkbox, and a green Sign In. Nothing was typed or submitted. Header Sign In and Sign Up leave the site for Auth0 and were not followed past the URL.
+
+See [login-light-default](screenshots/login-light-default.png).
+
+## Phone
+
+At 390x844 the header collapses to a hamburger, a search icon, the wordmark, and Sign Up. The drawer lists Home, Classes, Learning Paths, Student Projects, Individual, Teams, Digital Products, 1-on-1 Sessions, and Blog.
+
+See [mobile-home-light-default](screenshots/mobile-home-light-default.png) and [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
+
+## Other public surfaces
+
+Teams (`/en/for-teams/home`) uses the same type family with a 50px headline and a white Sign In on a dark header. The blog, Help Center, and legal articles are separate Zendesk or blog chrome. Careers redirects to Workable. The cookie dialog was hidden, not accepted.
+
+See [teams-light-default](screenshots/teams-light-default.png), [help-light-default](screenshots/help-light-default.png), [careers-light-default](screenshots/careers-light-default.png).

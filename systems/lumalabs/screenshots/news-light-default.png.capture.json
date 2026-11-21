@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:28:13.381Z",
+  "capturedAt": "2026-11-20T20:58:17.035Z",
   "screenshot": "news-light-default.png",
-  "sanitizedSourceUrl": "https://lumalabs.ai/news",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
       "width": 1440,

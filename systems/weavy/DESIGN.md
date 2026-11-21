@@ -3,180 +3,149 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Weavy"
-description: "Creative-workflow marketing with a lemon action fill, tight oversized display type, and a signed-out SSO card on a dark shell"
-omitted:
-  - section: "components"
-    reason: "tokens.json has no components tokens under the colour set's `component` group"
+description: "Creative-workflow marketing: a white Webflow page, a #252525 nav, one lemon #f7ff9e accent on a fixed Start Now block, 94px tight display type, and #f5f5f6 plan cards with 13px radius"
 colors:
   primary: "#f7ff9e"
   neutral: "#ffffff"
   surface: "#f5f5f6"
   on-surface: "#333333"
-  on-surface-variant: "#00000080"
+  on-surface-variant: "#656568"
   outline: "#e6e6e6"
-  color-marketing-page: "#ffffff"
-  color-marketing-text: "#333333"
-  color-marketing-text-strong: "#000000"
-  color-marketing-lemon: "#f7ff9e"
-  color-marketing-lemon-100: "#f7ffa8"
-  color-marketing-rich-black: "#252525"
-  color-marketing-richer-black: "#212126"
-  color-marketing-surface: "#f5f5f6"
-  color-marketing-border: "#e6e6e6"
-  color-marketing-french-gray: "#c1cdd5"
-  color-marketing-ash-grey: "#aeb3a9"
-  color-marketing-ink: "#111111"
-  color-marketing-on-lemon: "#000000"
-  color-marketing-on-dark: "#ffffff"
-  color-marketing-nav-hover-text: "#252525"
-  color-marketing-primary-hover-text: "#f0ffff"
-  color-marketing-faq-answer: "#d0d0d2"
-  color-marketing-faq-border: "#ffffff26"
-  color-marketing-muted: "#00000080"
-  color-app-page: "#ffffff"
-  color-app-shell: "#2c2c2c"
-  color-app-surface: "#ffffff"
-  color-app-surface-secondary: "#f5f5f5"
-  color-app-surface-tertiary: "#e6e6e6"
-  color-app-text: "#000000e5"
-  color-app-text-secondary: "#00000080"
-  color-app-text-tertiary: "#0000004d"
-  color-app-text-disabled: "#0000004d"
-  color-app-text-brand: "#007be5"
-  color-app-text-danger: "#dc3412"
-  color-app-text-success: "#009951"
-  color-app-text-warning: "#b86200"
-  color-app-on-brand: "#ffffff"
-  color-app-border: "#e6e6e6"
-  color-app-border-strong: "#2c2c2c"
-  color-app-border-selected: "#0d99ff"
-  color-app-brand: "#0d99ff"
-  color-app-danger: "#f24822"
-  color-app-success: "#14ae5c"
-  color-app-warning: "#ffcd29"
-  color-app-title: "#282828"
-  color-app-sso-label: "#0000004d"
-  color-app-link: "#2c2c2c"
+  color-help-card: "#232329"
+  color-help-card-border: "rgba(255, 255, 255, 0.15)"
+  color-search-text: "#1a1a1a"
+  color-page: "#ffffff"
+  color-surface: "#f5f5f6"
+  color-surface-muted: "#ececec"
+  color-inverse: "#252525"
+  color-ink: "#000000"
+  color-text: "#333333"
+  color-text-on-inverse: "#ffffff"
+  color-text-on-accent-hover: "#f4f4f4"
+  color-muted: "#656568"
+  color-accent: "#f7ff9e"
+  color-accent-hover: "#252525"
+  color-button: "#252525"
+  color-button-hover: "#eaf297"
+  color-button-pressed: "#f7ff9e"
+  color-button-text-hover: "#2f2f33"
+  color-tab-selected: "#212126"
+  color-border: "#e6e6e6"
+  color-border-strong: "#d0d0d2"
+  component-button-primary-background: "#252525"
+  component-button-primary-text: "#ffffff"
+  component-nav-cta-background: "#f7ff9e"
+  component-nav-cta-text: "#000000"
+  component-card-background: "#f5f5f6"
+  component-card-border: "#e6e6e6"
 typography:
   display:
     fontFamily: "Figma Sans Regular"
     fontSize: "94px"
     fontWeight: 400
-    lineHeight: "80px"
+    lineHeight: "79.9px"
     letterSpacing: "-4.32px"
   heading:
     fontFamily: "Figma Sans Regular"
     fontSize: "94px"
     fontWeight: 400
     lineHeight: "82px"
-    letterSpacing: "-4.61px"
-  pricing-title:
-    fontFamily: "Figma Sans Regular"
-    fontSize: "48px"
-    fontWeight: 400
-    lineHeight: "58px"
-    letterSpacing: "-2.4px"
-  plan-name:
-    fontFamily: "Figma Sans Regular"
-    fontSize: "24px"
-    fontWeight: 500
-    lineHeight: "34px"
-  price:
-    fontFamily: "Figma Sans Regular"
-    fontSize: "48px"
-    fontWeight: 700
-    lineHeight: "58px"
-    letterSpacing: "-1.3px"
+    letterSpacing: "-4.608px"
   body:
     fontFamily: "Figma Sans Regular"
-    fontSize: "18px"
+    fontSize: "14.4px"
     fontWeight: 400
     lineHeight: "20px"
-  body-small:
-    fontFamily: "Figma Sans Regular"
-    fontSize: "15px"
-    fontWeight: 400
-    lineHeight: "17px"
-  nav:
+    letterSpacing: "0px"
+  label:
     fontFamily: "Figma Sans Regular"
     fontSize: "12px"
     fontWeight: 400
-    lineHeight: "12px"
+    lineHeight: "16px"
     letterSpacing: "0.15px"
-  signin-title:
+  caption:
+    fontFamily: "Dmsans"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "16.9px"
+    letterSpacing: "0.1px"
+  button:
     fontFamily: "Figma Sans Regular"
-    fontSize: "30px"
-    fontWeight: 500
-    lineHeight: "39px"
-  sso-label:
-    fontFamily: "Figma Sans Regular"
-    fontSize: "18px"
-    fontWeight: 700
-    lineHeight: "18px"
-  legal:
-    fontFamily: "Figma Sans Regular"
-    fontSize: "12px"
+    fontSize: "14.4px"
     fontWeight: 400
     lineHeight: "20px"
-    letterSpacing: "0.24px"
-  faq-title:
-    fontFamily: "DM Sans"
-    fontSize: "43px"
-    fontWeight: 400
-    lineHeight: "52px"
+    letterSpacing: "0px"
 rounded:
-  nav: "4px"
-  plan: "13px"
-  start: "8px"
-  primary: "8px"
+  badge: "2px"
+  control: "4px"
+  nav: "8px"
+  search: "8px"
+  card: "13px"
   pill: "144px"
-  signin-button: "8px"
 spacing:
-  nav-x: "10px"
-  nav-y: "6px"
-  plan: "21px"
-  plan-button-x: "22px"
-  plan-button-y: "11px"
-  signin-card-x: "48px"
-  signin-card-y: "84px"
+  "2": "2px"
+  "6": "6px"
+  "8": "8px"
+  "11": "10.8px"
+  "13": "12.76px"
+  "21": "21.07px"
+  "22": "21.6px"
+  "24": "24.36px"
+components:
+  button-primary:
+    backgroundColor: "{colors.component-button-primary-background}"
+    textColor: "{colors.component-button-primary-text}"
+    rounded: "4px"
+    height: "41.6px"
+  nav-cta:
+    backgroundColor: "{colors.component-nav-cta-background}"
+    textColor: "{colors.component-nav-cta-text}"
+    height: "89.9px"
+  card:
+    backgroundColor: "{colors.component-card-background}"
+    rounded: "13px"
 ---
 
 # Weavy
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 1 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 5 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Creative-workflow marketing with a lemon action fill, tight oversized display type, and a signed-out SSO card on a dark shell.
+Good for: Creative-workflow marketing: a white Webflow page, a #252525 nav, one lemon #f7ff9e accent on a fixed Start Now block, 94px tight display type, and #f5f5f6 plan cards with 13px radius.
 
-Captured 2026-11-19, signed out (public marketing at weave.figma.com, the redirect from weavy.ai, plus app.weavy.ai/signin; SSO buttons were not clicked). Themes: light, dark.
+Captured 2026-11-21, signed out. Themes: light.
 
-Weavy is the product now branded Figma Weave. This package covers the public marketing site and the signed-out sign-in page, measured on 19 November 2026. https://www.weavy.ai/ redirects to https://weave.figma.com/. Themes on the marketing site are one light theme. The app stylesheet also declares a dark theme, which the sign-in page did not paint. Widths measured in the live tab were 1440 and 390. No account was created. Sign-in is company SSO only, and those buttons were not clicked.
+A token set and component reference for the public surface of Weavy, now branded Figma Weave. Read on 2026-11-21, signed out, in headless Chromium at 1440 x 900 and 390 x 844. `https://www.weavy.ai/` redirects to `https://weave.figma.com/`.
+
+The marketing site is a Webflow site with one painted theme: white page, `#252525` nav and footer, lemon `#f7ff9e` as the only accent. The signed-in editor at `app.weavy.ai` was not entered. The changelog says that editor gained a light mode on 2026-11-02. That switch is behind the login wall.
+
+The control map is [site-tree.md](site-tree.md).
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#f7ff9e):** `light.color.marketing.lemon`
-- **neutral (#ffffff):** `light.color.marketing.page`
-- **surface (#f5f5f6):** `light.color.marketing.surface`
-- **on-surface (#333333):** `light.color.marketing.text`
-- **on-surface-variant (#00000080):** `light.color.marketing.muted`
-- **outline (#e6e6e6):** `light.color.marketing.border`
+- **primary (#f7ff9e):** `light.color.accent`
+- **neutral (#ffffff):** `light.color.page`
+- **surface (#f5f5f6):** `light.color.surface`
+- **on-surface (#333333):** `light.color.text`
+- **on-surface-variant (#656568):** `light.color.muted`
+- **outline (#e6e6e6):** `light.color.border`
 
 ## Typography
 
-12 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: DM Sans, Figma Sans Regular.
+6 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Dmsans, Figma Sans Regular.
 
 ### Fonts (from README.md)
 
-Figma Sans Regular is the marketing face, a proprietary woff2 on the Webflow CDN. Figma Sans VF (300 to 900) is declared. DM Sans 200, 400, 500, and 600 is used on the billing labels, the save badge, and the FAQ heading. The sign-in title uses Figma Sans with Inter as the fallback. Inter is the app's `--font-family-default`. Roboto Mono is declared as the app mono and was not used on the sign-in page. The tokens name the families. The font files are not in this package.
+Figma Sans Regular is the computed family on body, nav, hero and plan cards. The stylesheet loads it as a woff2 from the Webflow CDN, plus Figma Sans Vf as a ttf. Both are proprietary. Tokens fall back to Arial. DM Sans (`Dmsans`) is the badge face, weights 200, 400, 500 and 600, also from the Webflow CDN. It is not committed.
 
 ## Layout
 
-Spacing from `core.space`: `nav-x` 10px, `nav-y` 6px, `plan` 21px, `plan-button-x` 22px, `plan-button-y` 11px, `signin-card-x` 48px, `signin-card-y` 84px.
+Spacing from `core.spacing`: `2` 2px, `6` 6px, `8` 8px, `11` 10.8px, `13` 12.76px, `21` 21.07px, `22` 21.6px, `24` 24.36px.
 
 ## Elevation & Depth
 
@@ -184,17 +153,17 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `light.shadow.card` | `0px 1px 3px 0px #00000026, 0px 0px 0.5px 0px #0000004d` |
+| `light.shadow.card` | `0px 1px 2px 0px rgba(0, 0, 0, 0.05)` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `nav` 4px, `plan` 13px, `start` 8px, `primary` 8px, `pill` 144px, `signin-button` 8px.
+Corner radii from `core.radius`: `badge` 2px, `control` 4px, `nav` 8px, `search` 8px, `card` 13px, `pill` 144px.
 
 ## Components
 
-No component tokens map onto DESIGN.md's component properties.
+3 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
-Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -206,16 +175,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The dark set is declared, not painted. The sign-in page had no `data-preferred-theme` attribute. Eleven dark roles and the three light status fills (`danger`, `success`, `warning`) were resolved from the stylesheet ramps but are not in [raw/readings.json](raw/readings.json); they are labelled Reconstruction, entered by hand at capture time. Enterprise's grey field is a video under a 50% black gradient, not a token. `--brand--azure` is the CSS keyword `azure`, while the Contact Sales hover computed `#f0ffff`. Several `--wv--*` names are declared and unused on the pages that were read. Screenshots are headless Playwright of the public URLs because preview_snapshot returned "The browser is not producing screenshot frames". The sign-in page has no screenshot. Do not read colours off the PNGs.
+Screenshots are 256-colour PNGs. Read colours from tokens.json. The hero type is 94 px in the computed style and 3.5 rem in an unused `.heading-style-h1` rule. The nav call to action computed a 0 px radius while the stylesheet declares 8 px on the bottom left. Focus outlines computed to 0 px. The knowledge-center page fill was not read as a custom property. The editor's light mode was not opened.
 
 ### Do and don't (from README.md)
 
-**Lemon is the action fill.** Start Now, Contact Sales, the slider Try, the plan-button hover, and the Save 30% badge use `#f7ff9e` or `#f7ffa8`. [screenshots/home-light-default.png](screenshots/home-light-default.png)
-
-**Nav type stays small and uppercase.** Links are 12px with 0.15px tracking and a 4px radius. The current page is a white chip. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png)
-
-**Display type is tight.** Headlines are about 94px with letter-spacing around -4.6px. [screenshots/enterprise-light-default.png](screenshots/enterprise-light-default.png)
-
-**Quiet actions are rich black.** Plan buttons and the footer are `#252525`. Hover turns the plan button lemon. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png)
-
-**The sign-in card sits on a dark shell.** The page behind the card is `#2c2c2c`. The card is white, 13px radius, and the only light surface.
+- **Do keep the page white and the accent lemon.** The only filled accent on the marketing site is `#f7ff9e`, on Start Now, the save badge and the billing switch. [home-light-default.png](screenshots/home-light-default.png)
+- **Do invert the nav call to action on hover.** Start Now goes from lemon on black text to `#252525` with `#f4f4f4` text. [button-nav-hover.png](components/crops/button-nav-hover.png)
+- **Do set display type tight.** The hero is 94 px with a negative letter-spacing and a line-height under the size. [home-light-default.png](screenshots/home-light-default.png)
+- **Do put plans on grey cards with a 13 px radius.** The card fill is `#f5f5f6` and the button inside is near-black. [card-default.png](components/crops/card-default.png)
+- **Don't style the editor from this package.** The node canvas, layers and the editor light mode were not opened. [site-tree.md](site-tree.md)
+- **Don't follow Sign in.** It opens `https://app.weavy.ai/signin`. That branch stopped.

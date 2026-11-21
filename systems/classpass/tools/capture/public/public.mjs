@@ -1,20 +1,22 @@
-// Captures classpass.com's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
+// Captures ClassPass public pages into RAW (full-colour PNGs).
 //
-//   PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page ...]
+//   PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [name,name,...]
 //
-// Only signed-out surfaces: the marketing pages, the public studio search,
-// the plan picker, the gift/review/feature pages, the /login sign-in card
-// and the /walkthrough trial entry — the last two are documented boundaries,
-// screenshotted never acted on. The TrustArc consent overlay is hidden, never
-// answered; the promo banner is left painted (real UI).
+// Names are {page}-light-{state}.png. Mobile ones get a mobile- prefix.
+// Desktop 1440x900 at 1x. Phone 390x844 at 2x. Full pages are 1x relative to
+// that viewport. A page taller than one GPU texture is saved as part tiles.
+//
+// Nothing is submitted. Cookie banners are hidden, never accepted. Login,
+// signup, reset-password and SSO are not clicked. A fresh browser is used
+// per page because ClassPass 403s a reused session.
 import fs from 'fs';
-import os from 'node:os';
-import path from 'node:path';
+import os from 'os';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { chromium, UA, UA_MOBILE, BASE, hideConsent, closePromo } from './lib.mjs';
 
-// Full-colour shots stay outside the repo (docs/PACKAGE.md): quantize.py writes the
-// committed screenshots/ from this scratch folder.
+const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'classpass', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
@@ -22,229 +24,225 @@ const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
 
 async function lazyScroll(p) {
-  const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
-  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
+  let last = 0;
+  for (let i = 0; i < 14; i++) {
+    const h = await p.evaluate(() => document.documentElement.scrollHeight);
+    if (h === last && i > 1) break;
+    last = h;
+    const y = Math.min(h, (i + 1) * 700);
+    await p.evaluate((yy) => scrollTo(0, yy), y);
+    await wait(p, 250);
+  }
+  await p.evaluate(() => scrollTo(0, 0));
+  await wait(p, 500);
 }
 
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr }; this.count = 0; }
-  async view(name) { await closePromo(this.p); await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
+  constructor(p, prefix, vw, vh, dpr) {
+    this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr;
+    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr };
+    this.count = 0;
+  }
+  async view(name) {
+    await hideConsent(this.p);
+    // Phone contexts are launched at deviceScaleFactor 2, but some pages
+    // report devicePixelRatio 1 while Playwright still writes a 2x PNG.
+    // CSS scale keeps the PNG at the CSS viewport the sidecar expects.
+    const scale = this.dpr > 1 ? 'css' : 'device';
+    await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png`, scale }, this.requested);
+    this.count++;
+    log('  shot', name);
+  }
   async full(name = 'full') {
     const p = this.p;
-    await closePromo(p);
     await lazyScroll(p);
+    await hideConsent(p);
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
-    // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
-    // without a ceiling the tile loop writes forever. Truncate hard and record
-    // the boundary instead.
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    // Stage every tile under a .new name and swap it in only after the whole
-    // shot succeeds, so a failed tile never truncates the previous capture.
-    const staged = [];
-    try {
-      if (hCap <= chunk) {
-        await screenshotWithMetadata(p, { path: f + '.new.png', fullPage: true }, this.requested);
-        staged.push([f + '.new.png', f + '.png']);
-      } else {
-        for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
-          const tmp = `${f}.part${i}.new.png`;
-          await screenshotWithMetadata(p, { path: tmp, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
-          staged.push([tmp, `${f}.part${i}.png`]);
-        }
-      }
-    } catch (e) {
-      for (const [tmp] of staged) {
-        fs.existsSync(tmp) && fs.unlinkSync(tmp);
-        fs.existsSync(tmp + '.capture.json') && fs.unlinkSync(tmp + '.capture.json');
-      }
-      throw e;
+    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
+    if (hCap <= chunk) {
+      // Viewport-sized pages use a normal screenshot. fullPage on a short phone
+      // page came back at 2x CSS pixels and failed the dimension check.
+      const scale = this.dpr > 1 ? 'css' : 'device';
+      if (hCap <= this.requested.viewport.height + 2) await screenshotWithMetadata(p, { path: f + '.png', scale }, this.requested);
+      else await screenshotWithMetadata(p, { path: f + '.png', fullPage: true, scale }, this.requested);
     }
-    // Swap the staged files in first: a `.new.png` tile is not a stale tile,
-    // and the previous capture stays intact until its replacement is fully
-    // renamed. The .capture.json sidecar moves with its PNG and records the
-    // final screenshot name.
-    const keep = new Set();
-    for (const [tmp, final] of staged) {
-      fs.renameSync(tmp, final);
-      keep.add(path.basename(final));
-      const sideTmp = tmp + '.capture.json', sideFinal = final + '.capture.json';
-      if (fs.existsSync(sideTmp)) {
-        try {
-          const meta = JSON.parse(fs.readFileSync(sideTmp, 'utf8'));
-          meta.screenshot = path.basename(final);
-          fs.writeFileSync(sideTmp, JSON.stringify(meta, null, 2) + '\n');
-        } catch { /* keep the sidecar as written */ }
-        fs.renameSync(sideTmp, sideFinal);
-        keep.add(path.basename(sideFinal));
-      }
+    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+      await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, scale: 'css', clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
     }
-    // Only now drop leftovers the new shot does not produce: higher part
-    // numbers of a previous taller capture (and their sidecars), or the old
-    // single-file shot.
-    const isStaged = (n) => n.endsWith('.new.png') || n.endsWith('.new.png.capture.json');
-    for (const old of fs.readdirSync(RAW).filter((n) =>
-      !isStaged(n) && !keep.has(n) &&
-      (n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png` || n === `${this.prefix}-${name}.png.capture.json`))) {
-      fs.unlinkSync(`${RAW}/${old}`);
-    }
-    this.count++; log('  shot', name, 'H=' + H);
-    await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
+    this.count++;
+    log('  shot', name, 'H=' + H);
+    await p.evaluate(() => scrollTo(0, 0));
+    await wait(p, 300);
   }
 }
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
-const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
-// Opens the header "How it works" dropdown (a Headless-UI menu button —
-// a local nav toggle, never a link).
-const openNavDropdown = async (p) => {
-  const ok = await p.evaluate(() => {
-    const el = document.querySelector('[class*="NavDesktopDropdown_Button"]');
-    if (!el) return false;
-    el.setAttribute('data-m-nav', '1');
-    return true;
-  });
-  if (!ok) return false;
-  await clickEl(p.locator('[data-m-nav="1"]'));
-  await wait(p, 1200);
-  return true;
-};
-
-// Opens the public search's "Activities" multi-select (a local filter
-// toggle — Clear/Done are never pressed).
-const openFilterPanel = async (p) => {
-  const ok = await p.evaluate(() => {
-    const el = [...document.querySelectorAll('[data-testid="MultiSelectFilter"]')].find((n) => /activities/i.test(n.innerText || ''));
-    const btn = el && (el.tagName === 'BUTTON' ? el : el.querySelector('button'));
-    if (!btn) return false;
-    btn.setAttribute('data-m-filter', '1');
-    return true;
-  });
-  if (!ok) return false;
-  await clickEl(p.locator('[data-m-filter="1"]'));
-  await wait(p, 1200);
-  return true;
-};
-
-// The mobile header's menu trigger: button.Menu_toggler at the bar's right edge.
-const openMobileMenu = async (p) => {
-  const ok = await p.evaluate(() => {
-    const el = [...document.querySelectorAll('[class*="Menu_toggler"]')].find((n) => {
-      const r = n.getBoundingClientRect();
-      return r.y >= 0 && r.y < 90 && r.width >= 24;
-    });
-    if (!el) return false;
-    el.setAttribute('data-m-menu', '1');
-    return true;
-  });
-  if (!ok) return false;
-  await clickEl(p.locator('[data-m-menu="1"]'));
-  await wait(p, 1600);
-  return true;
+const step = async (label, fn) => {
+  try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); }
 };
 
 const desktop = {
-  home: { url: '/', wait: 10000, run: async (p, S) => {
+  home: { path: '/', run: async (p, S) => {
+    await S.view('banner');
     await S.view('default');
-    await step('menu', async () => { if (await openNavDropdown(p)) { await S.view('menu'); await p.keyboard.press('Escape'); await wait(p, 500); } });
+    await step('how-menu', async () => {
+      await p.getByRole('button', { name: 'How it works' }).first().click();
+      await wait(p, 700);
+      await S.view('how-menu');
+      await p.keyboard.press('Escape');
+      await wait(p, 300);
+    });
+    await S.full();
+    await step('language', async () => {
+      await p.evaluate(() => scrollTo(0, document.body.scrollHeight));
+      await wait(p, 500);
+      await hideConsent(p);
+      const lang = p.getByRole('button', { name: /select site language|English/i }).first();
+      if (await lang.count()) {
+        await lang.click();
+        await wait(p, 700);
+        await S.view('language');
+        await p.keyboard.press('Escape');
+      }
+    });
+  } },
+  search: { path: '/search', run: async (p, S) => {
+    await S.view('default');
+    await step('fitness-filter', async () => {
+      const b = p.getByRole('button', { name: 'Fitness' }).first();
+      if (await b.count()) { await b.click(); await wait(p, 700); await S.view('fitness-filter'); await p.keyboard.press('Escape'); await wait(p, 300); }
+    });
+    await step('activities-filter', async () => {
+      const b = p.getByRole('button', { name: 'Activities' }).first();
+      if (await b.count()) { await b.click(); await wait(p, 700); await S.view('activities-filter'); await p.keyboard.press('Escape'); await wait(p, 300); }
+    });
+    await step('distance-filter', async () => {
+      const b = p.getByRole('button', { name: 'Distance' }).first();
+      if (await b.count()) { await b.click(); await wait(p, 700); await S.view('distance-filter'); await p.keyboard.press('Escape'); }
+    });
     await S.full();
   } },
-  search: { url: '/search', wait: 12000, run: async (p, S) => {
+  plans: { path: '/plans', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  gifts: { path: '/gifts', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  partners: { path: '/partners', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'partners-how': { path: '/partners/how-it-works', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'partners-calculator': { path: '/partners/revenue-calculator', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'partners-integrations': { path: '/partners/classpass-booking-integrations', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'partners-resources': { path: '/partners/resources', run: async (p, S) => { await S.view('default'); } },
+  'partners-blog': { path: '/partners/blog', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'partners-faqs': { path: '/partners/faqs', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'partners-contact': { path: '/partners/contact', run: async (p, S) => { await S.view('default'); } },
+  about: { path: '/about', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  careers: { path: '/about/careers', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  fitness: { path: '/fitness', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  features: { path: '/features', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'how-it-works': { path: '/how-classpass-works', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  reviews: { path: '/try/reviews', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  contact: { path: '/contact', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  blog: { path: '/blog', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  activities: { path: '/search-index', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  brands: { path: '/brands', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  gym: { path: '/gym', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  press: { path: '/press-room', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  referral: { path: '/try/referral-program', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  affiliate: { path: '/try/affiliate-program', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  partnerships: { path: '/try/brand-partnerships', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  location: { path: '/location', run: async (p, S) => { await S.view('default'); } },
+  terms: { path: '/terms', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  privacy: { path: '/privacy', run: async (p, S) => { await S.view('default'); } },
+  accessibility: { path: '/about/accessibility', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  login: { path: '/login', run: async (p, S) => { await S.view('default'); } },
+  'reset-password': { path: '/reset-password', run: async (p, S) => { await S.view('default'); } },
+  walkthrough: { path: '/walkthrough', run: async (p, S) => {
     await S.view('default');
-    await step('filter-open', async () => { if (await openFilterPanel(p)) { await S.view('filter-open'); await p.keyboard.press('Escape'); await wait(p, 400); } });
-    await S.full();
+    await step('next', async () => {
+      const n = p.getByRole('button', { name: /Next/ }).first();
+      if (await n.count()) { await n.click(); await wait(p, 800); await S.view('slide-2'); }
+    });
   } },
-  plans: { url: '/plans', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  features: { url: '/features', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  how: { url: '/how-classpass-works', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  fitness: { url: '/fitness', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  gifts: { url: '/gifts', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  reviews: { url: '/try/reviews', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  partners: { url: '/partners', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  corp: { url: '/corporate-wellness', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  about: { url: '/about', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  contact: { url: '/contact', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  blog: { url: '/blog', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  terms: { url: '/terms', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-  } },
-  signin: { url: '/login', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-  } },
-  walk: { url: '/walkthrough', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-  } },
+  'walkthrough-edu': { path: '/walkthrough/edusignup', run: async (p, S) => { await S.view('default'); } },
+  signup: { path: '/member-signup/getclasspass', run: async (p, S) => { await S.view('default'); } },
+  studio: { path: '/studios/dopamine-movement-serangoon-garden-singapore', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  brand: { path: '/brands/soulcycle', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'blog-post': { path: '/blog/what-is-somatic-yoga/', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'activity-city': { path: '/search-index/amsterdam', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const mobile = {
-  home: { url: '/', wait: 10000, run: async (p, S) => {
+  home: { path: '/', run: async (p, S) => {
     await S.view('default');
-    await step('menu-open', async () => { if (await openMobileMenu(p)) { await S.view('menu-open'); await p.keyboard.press('Escape'); await wait(p, 500); } });
+    await step('menu', async () => {
+      const btn = p.locator('button').filter({ has: p.locator('svg') }).first();
+      const named = p.getByRole('button', { name: /menu|open/i });
+      const target = (await named.count()) ? named.first() : p.locator('header button, nav button, [aria-label*="menu" i]').first();
+      if (await target.count()) {
+        await target.click();
+        await wait(p, 800);
+        await S.view('menu');
+      } else {
+        log('  no mobile menu button');
+      }
+    });
     await S.full();
   } },
-  search: { url: '/search', wait: 11000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  plans: { url: '/plans', wait: 9000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  search: { path: '/search', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  plans: { path: '/plans', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  login: { path: '/login', run: async (p, S) => { await S.view('default'); } },
+  gifts: { path: '/gifts', run: async (p, S) => { await S.view('default'); } },
+  about: { path: '/about', run: async (p, S) => { await S.view('default'); } },
+  features: { path: '/features', run: async (p, S) => { await S.view('default'); } },
+  walkthrough: { path: '/walkthrough', run: async (p, S) => { await S.view('default'); } },
+  signup: { path: '/member-signup/getclasspass', run: async (p, S) => { await S.view('default'); } },
+  contact: { path: '/contact', run: async (p, S) => { await S.view('default'); } },
+  partners: { path: '/partners', run: async (p, S) => { await S.view('default'); } },
+  blog: { path: '/blog', run: async (p, S) => { await S.view('default'); } },
 };
 
-const b = await chromium.launch();
-let total = 0;
-const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
-for (const { k, mob } of runs) {
-  const name = (mob ? 'mobile-' : '') + k;
-  if (pageArg.length && !pageArg.includes(name)) continue;
-  const spec = (mob ? mobile : desktop)[k];
+async function shoot(name, spec, mob) {
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
-  const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
-  await patch(ctx);
+  const browser = await chromium.launch({ headless: true });
+  const ctx = await browser.newContext({
+    viewport: { width: vw, height: vh },
+    deviceScaleFactor: dpr,
+    userAgent: mob ? UA_MOBILE : UA,
+    isMobile: mob,
+    hasTouch: mob,
+    locale: 'en-US',
+  });
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   const p = await ctx.newPage();
-  log(name);
-  const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
+  const prefix = `${mob ? 'mobile-' : ''}${name}-light`;
+  const S = new Shooter(p, prefix, vw, vh, dpr);
+  log(prefix);
   try {
-    const u = /^https?:/.test(spec.url) ? spec.url : BASE + spec.url;
-    await p.goto(u, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.url); await ctx.close(); continue; }
-    await wait(p, spec.wait || 7000);
-    await spec.run(p, S);
-  } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
-  total += S.count;
+    await p.goto(BASE + spec.path, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await wait(p, spec.wait || 2800);
+    const statusish = p.url();
+    const title = await p.title();
+    log('  url', statusish, 'title', title.slice(0, 70));
+    if (/access denied|just a moment|attention required/i.test(title)) {
+      log('  BLOCKED', name);
+    } else {
+      await hideConsent(p);
+      await spec.run(p, S);
+    }
+  } catch (e) {
+    log('  PAGE FAILED', name, e.message.split('\n')[0]);
+  }
   await ctx.close();
+  await browser.close();
+  return S.count;
+}
+
+const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false, spec: desktop[k] })), ...Object.keys(mobile).map((k) => ({ k, mob: true, spec: mobile[k] }))];
+let total = 0;
+for (const { k, mob, spec } of runs) {
+  const name = (mob ? 'mobile-' : '') + k;
+  if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
+  total += await shoot(k, spec, mob);
 }
 log('done', total, 'screenshots ->', RAW);
-await b.close();

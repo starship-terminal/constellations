@@ -1,220 +1,191 @@
 <!doctype html>
-<html lang="en" data-mode="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Weavy style guide</title>
+<title>Figma Weave style guide</title>
 <style>
 :root {
-  --font-family-figma-sans: Figma Sans Regular, Arial, sans-serif;
-  --font-family-dm-sans: DM Sans, Arial, sans-serif;
-  --font-family-inter: Inter, ui-sans-serif, system-ui, sans-serif;
-  --typography-display-family: var(--font-family-figma-sans);
-  --typography-display-size: 94px;
-  --typography-display-weight: 400;
-  --typography-display-line: 80px;
-  --typography-display-track: -4.32px;
-  --typography-heading-family: var(--font-family-figma-sans);
-  --typography-heading-size: 94px;
-  --typography-heading-weight: 400;
-  --typography-heading-line: 82px;
-  --typography-heading-track: -4.61px;
-  --typography-pricing-title-family: var(--font-family-figma-sans);
-  --typography-pricing-title-size: 48px;
-  --typography-pricing-title-weight: 400;
-  --typography-pricing-title-line: 58px;
-  --typography-pricing-title-track: -2.4px;
-  --typography-plan-name-family: var(--font-family-figma-sans);
-  --typography-plan-name-size: 24px;
-  --typography-plan-name-weight: 500;
-  --typography-plan-name-line: 34px;
-  --typography-price-family: var(--font-family-figma-sans);
-  --typography-price-size: 48px;
-  --typography-price-weight: 700;
-  --typography-price-line: 58px;
-  --typography-price-track: -1.3px;
-  --typography-body-family: var(--font-family-figma-sans);
-  --typography-body-size: 18px;
-  --typography-body-weight: 400;
-  --typography-body-line: 20px;
-  --typography-body-small-family: var(--font-family-figma-sans);
-  --typography-body-small-size: 15px;
-  --typography-body-small-weight: 400;
-  --typography-body-small-line: 17px;
-  --typography-nav-family: var(--font-family-figma-sans);
-  --typography-nav-size: 12px;
-  --typography-nav-weight: 400;
-  --typography-nav-line: 12px;
-  --typography-nav-track: 0.15px;
-  --typography-signin-title-family: var(--font-family-figma-sans);
-  --typography-signin-title-size: 30px;
-  --typography-signin-title-weight: 500;
-  --typography-signin-title-line: 39px;
-  --typography-sso-label-family: var(--font-family-figma-sans);
-  --typography-sso-label-size: 18px;
-  --typography-sso-label-weight: 700;
-  --typography-sso-label-line: 18px;
-  --typography-legal-family: var(--font-family-figma-sans);
-  --typography-legal-size: 12px;
-  --typography-legal-weight: 400;
-  --typography-legal-line: 20px;
-  --typography-legal-track: 0.24px;
-  --typography-faq-title-family: var(--font-family-dm-sans);
-  --typography-faq-title-size: 43px;
-  --typography-faq-title-weight: 400;
-  --typography-faq-title-line: 52px;
-  --radius-nav: 4px;
-  --radius-plan: 13px;
-  --radius-start: 8px;
-  --radius-primary: 8px;
+  --color-brand-lemon: #f7ff9e;
+  --color-brand-lemon-100: #f7ffa8;
+  --color-brand-lemon-40: #fcffdc;
+  --color-brand-rich-black: #252525;
+  --color-brand-richer-black: #212126;
+  --color-brand-black: #000000;
+  --color-brand-white: #ffffff;
+  --color-brand-azure: #f0ffff;
+  --color-brand-ash-grey: #aeb3a9;
+  --color-brand-eggshell: #eaeada;
+  --color-brand-spring-wood: #f7f7f0;
+  --color-brand-moon-mist: #dcdcc2;
+  --color-brand-french-gray: #c1cdd5;
+  --color-brand-pink-lavender: #cc9de4;
+  --color-brand-stone-grey: #656568;
+  --color-brand-paper: #fafafa;
+  --color-brand-ink: #111111;
+  --color-brand-dark: #1a1a1a;
+  --color-brand-pink: #ff9bff;
+  --color-brand-mint: #2de1b0;
+  --color-brand-night: #0d0d11;
+  --color-brand-cream: #f7f3e8;
+  --color-brand-grey-100: #eaeef1;
+  --color-brand-grey-400: #b4b4af;
+  --color-brand-grey-500: #8e8e8e;
+  --color-brand-surface-grey-300: #f5f5f6;
+  --color-brand-surface-grey-400: #ececec;
+  --color-brand-soft-grey-200: #d0d0d2;
+  --color-brand-french-gray-45: rgba(193, 206, 213, 0.451);
+  --color-brand-white-30: rgba(255, 255, 255, 0.302);
+  --color-brand-transparent-surface: rgba(255, 255, 255, 0);
+  --fontFamily-sans: Figma Sans Regular, Arial, sans-serif;
+  --fontFamily-sans-vf: Figma Sans Vf, Arial, sans-serif;
+  --fontFamily-meta: Dmsans, Arial, sans-serif;
+  --fontSize-display: 94px;
+  --fontSize-heading: 94px;
+  --fontSize-title: 56px;
+  --fontSize-body: 14.4px;
+  --fontSize-label: 12px;
+  --fontSize-caption: 13px;
+  --fontSize-button: 14.4px;
+  --fontSize-cta: 40px;
+  --lineHeight-display: 79.9px;
+  --lineHeight-heading: 82px;
+  --lineHeight-title: 67.2px;
+  --lineHeight-body: 20px;
+  --lineHeight-label: 16px;
+  --lineHeight-caption: 16.9px;
+  --lineHeight-button: 20px;
+  --lineHeight-cta: 40px;
+  --fontWeight-regular: 400;
+  --fontWeight-bold: 700;
+  --typography-display: var(--fontWeight-regular) var(--fontSize-display)/var(--lineHeight-display) var(--fontFamily-sans);
+  --typography-heading: var(--fontWeight-regular) var(--fontSize-heading)/var(--lineHeight-heading) var(--fontFamily-sans);
+  --typography-body: var(--fontWeight-regular) var(--fontSize-body)/var(--lineHeight-body) var(--fontFamily-sans);
+  --typography-label: var(--fontWeight-regular) var(--fontSize-label)/var(--lineHeight-label) var(--fontFamily-sans);
+  --typography-caption: var(--fontWeight-regular) var(--fontSize-caption)/var(--lineHeight-caption) var(--fontFamily-meta);
+  --typography-button: var(--fontWeight-regular) var(--fontSize-button)/var(--lineHeight-button) var(--fontFamily-sans);
+  --spacing-2: 2px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-11: 10.8px;
+  --spacing-13: 12.76px;
+  --spacing-21: 21.07px;
+  --spacing-22: 21.6px;
+  --spacing-24: 24.36px;
+  --radius-badge: 2px;
+  --radius-control: 4px;
+  --radius-nav: 8px;
+  --radius-search: 8px;
+  --radius-card: 13px;
   --radius-pill: 144px;
-  --radius-signin-button: 8px;
-  --space-nav-x: 10px;
-  --space-nav-y: 6px;
-  --space-plan: 21px;
-  --space-plan-button-x: 22px;
-  --space-plan-button-y: 11px;
-  --space-signin-card-x: 48px;
-  --space-signin-card-y: 84px;
-  --size-nav-link: 24px;
-  --size-plan-button: 42px;
-  --size-sso-button: 48px;
-  --size-start-now: 90px;
-  --color-marketing-page: #ffffff;
-  --color-marketing-text: #333333;
-  --color-marketing-text-strong: #000000;
-  --color-marketing-lemon: #f7ff9e;
-  --color-marketing-lemon-100: #f7ffa8;
-  --color-marketing-rich-black: #252525;
-  --color-marketing-richer-black: #212126;
-  --color-marketing-surface: #f5f5f6;
-  --color-marketing-border: #e6e6e6;
-  --color-marketing-french-gray: #c1cdd5;
-  --color-marketing-ash-grey: #aeb3a9;
-  --color-marketing-ink: #111111;
-  --color-marketing-on-lemon: #000000;
-  --color-marketing-on-dark: #ffffff;
-  --color-marketing-nav-hover-text: #252525;
-  --color-marketing-primary-hover-text: #f0ffff;
-  --color-marketing-faq-answer: #d0d0d2;
-  --color-marketing-faq-border: #ffffff26;
-  --color-marketing-muted: #00000080;
-  --color-app-page: #ffffff;
-  --color-app-shell: #2c2c2c;
-  --color-app-surface: #ffffff;
-  --color-app-surface-secondary: #f5f5f5;
-  --color-app-surface-tertiary: #e6e6e6;
-  --color-app-text: #000000e5;
-  --color-app-text-secondary: #00000080;
-  --color-app-text-tertiary: #0000004d;
-  --color-app-text-disabled: #0000004d;
-  --color-app-text-brand: #007be5;
-  --color-app-text-danger: #dc3412;
-  --color-app-text-success: #009951;
-  --color-app-text-warning: #b86200;
-  --color-app-on-brand: #ffffff;
-  --color-app-border: #e6e6e6;
-  --color-app-border-strong: #2c2c2c;
-  --color-app-border-selected: #0d99ff;
-  --color-app-brand: #0d99ff;
-  --color-app-danger: #f24822;
-  --color-app-success: #14ae5c;
-  --color-app-warning: #ffcd29;
-  --color-app-title: #282828;
-  --color-app-sso-label: #0000004d;
-  --color-app-link: #2c2c2c;
-  --shadow-card: 0px 1px 3px 0px #00000026;
+  --borderWidth-hairline: 1px;
+  --duration-nav: 200ms;
+  --easing-nav: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --size-nav-cta-height: 89.9px;
+  --size-plan-button-height: 41.6px;
+  --size-switch: 32px;
+  --size-audience-tab-height: 38px;
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --layout-content: 1310px;
+  --layout-breakpoint-tablet: 991px;
+  --layout-breakpoint-phone: 767px;
+  --layout-breakpoint-small: 479px;
+  --color-help-card: #232329;
+  --color-help-card-border: rgba(255, 255, 255, 0.15);
+  --color-search-text: #1a1a1a;
+  --color-page: #ffffff;
+  --color-surface: #f5f5f6;
+  --color-surface-muted: #ececec;
+  --color-inverse: #252525;
+  --color-ink: #000000;
+  --color-text: #333333;
+  --color-text-on-inverse: #ffffff;
+  --color-text-on-accent-hover: #f4f4f4;
+  --color-muted: #656568;
+  --color-accent: #f7ff9e;
+  --color-accent-hover: #252525;
+  --color-button: #252525;
+  --color-button-hover: #eaf297;
+  --color-button-pressed: #f7ff9e;
+  --color-button-text-hover: #2f2f33;
+  --color-tab-selected: #212126;
+  --color-border: #e6e6e6;
+  --color-border-strong: #d0d0d2;
+  --shadow-card: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --component-button-primary-background: var(--color-button);
+  --component-button-primary-text: var(--color-text-on-inverse);
+  --component-button-primary-radius: var(--radius-control);
+  --component-button-primary-height: var(--size-plan-button-height);
+  --component-nav-cta-background: var(--color-accent);
+  --component-nav-cta-text: var(--color-ink);
+  --component-nav-cta-height: var(--size-nav-cta-height);
+  --component-card-background: var(--color-surface);
+  --component-card-radius: var(--radius-card);
+  --component-card-border: var(--color-border);
   color-scheme: light;
-}
-[data-mode="dark"] {
-  --color-app-page: #2c2c2c;
-  --color-app-surface: #1e1e1e;
-  --color-app-surface-secondary: #383838;
-  --color-app-surface-tertiary: #444444;
-  --color-app-text: #ffffff;
-  --color-app-text-secondary: #ffffffb2;
-  --color-app-text-tertiary: #ffffff66;
-  --color-app-text-disabled: #ffffff66;
-  --color-app-text-brand: #80caff;
-  --color-app-text-danger: #ffafa3;
-  --color-app-text-success: #8ddda4;
-  --color-app-text-warning: #ffd966;
-  --color-app-on-brand: #ffffff;
-  --color-app-border: #444444;
-  --color-app-border-strong: #ffffffe5;
-  --color-app-border-selected: #0d99ff;
-  --color-app-brand: #0d99ff;
-  --color-app-danger: #f24822;
-  --color-app-success: #14ae5c;
-  --color-app-warning: #ffcd29;
-  color-scheme: dark;
+  --sg-sans: "Figma Sans Regular", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--color-marketing-page); color: var(--color-marketing-text); font: 400 16px/1.4 var(--font-family-figma-sans); }
-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--color-marketing-border); }
+body { margin: 0; background: var(--color-page); color: var(--color-text); font: 400 14.4px/20px var(--sg-sans); }
+header { padding: 20px 28px; display: flex; justify-content: space-between; align-items: center; background: var(--color-inverse); color: var(--color-text-on-inverse); }
 header h1 { margin: 0; font-size: 20px; font-weight: 400; }
-button.theme { background: var(--color-marketing-rich-black); color: var(--color-marketing-on-dark); border: 0; border-radius: 4px; padding: 6px 10px; font: inherit; cursor: pointer; }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
-h2 { font-size: 28px; font-weight: 400; letter-spacing: -0.6px; margin: 40px 0 12px; }
-.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
-.sw { display: flex; gap: 10px; align-items: center; }
-.sw i { width: 36px; height: 36px; border-radius: 4px; box-shadow: inset 0 0 0 1px #0002; display: block; }
-.sw b { display: block; font-size: 12px; font-weight: 500; }
-.sw span { font-size: 12px; color: var(--color-marketing-muted); }
-.nav { background: var(--color-marketing-rich-black); color: white; padding: 8px; display: flex; gap: 8px; align-items: center; width: fit-content; }
-.nav a { color: white; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.15px; padding: 6px 10px; border-radius: 4px; }
-.nav a.on { background: white; color: var(--color-marketing-richer-black); }
-.start { background: var(--color-marketing-lemon); color: black; text-decoration: none; font-size: 28px; line-height: 1; padding: 8px 16px 6px 10px; border-bottom-left-radius: 8px; }
-.plan { background: var(--color-marketing-surface); border: 1px solid var(--color-marketing-border); border-radius: 13px; padding: 21px; width: 240px; }
-.plan .name { font-size: 24px; font-weight: 500; }
-.plan .price { font-size: 48px; font-weight: 700; letter-spacing: -1.3px; line-height: 1; }
-.plan a { display: block; text-align: center; margin-top: 12px; background: var(--color-marketing-rich-black); color: white; text-decoration: none; border-radius: 4px; padding: 11px 22px; }
-.app-shell { background: var(--color-app-shell); padding: 24px; border-radius: 8px; width: fit-content; }
-.card { background: var(--color-app-surface); color: var(--color-app-title); width: 320px; border-radius: 13px; padding: 28px 24px; box-shadow: var(--shadow-card), 0 0 0.5px #0000004d; }
-.card h3 { margin: 0 0 16px; font-size: 22px; font-weight: 500; }
-.sso { width: 100%; height: 48px; border-radius: 8px; border: 1px solid var(--color-app-border); background: white; color: var(--color-app-sso-label); font-weight: 700; font-size: 16px; }
-[data-mode="dark"] body { background: var(--color-app-page); color: var(--color-app-text); }
-[data-mode="dark"] .app-shell { background: var(--color-app-page); }
-[data-mode="dark"] .card { background: var(--color-app-surface); color: var(--color-app-text); }
-[data-mode="dark"] .sso { background: var(--color-app-surface-secondary); color: var(--color-app-text); border-color: var(--color-app-border); }
-p.note { max-width: 70ch; }
+.cta { background: var(--color-accent); color: var(--color-ink); padding: 10px 16px; font-size: 28px; line-height: 1; text-decoration: none; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
+h2 { font-size: 28px; font-weight: 400; letter-spacing: -0.8px; margin: 36px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; }
+.sw { width: 180px; }
+.sw i { display: block; height: 56px; border: 1px solid var(--color-border); }
+.sw b, .sw span { display: block; font-size: 12px; line-height: 16px; }
+.sw span { color: var(--color-muted); }
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 21px; width: 280px; }
+.card h3 { margin: 0 0 8px; font-size: 22px; font-weight: 400; }
+.btn { display: inline-block; background: var(--color-button); color: var(--color-text-on-inverse); border-radius: var(--radius-control); padding: 10.8px 21.6px; text-decoration: none; }
+.badge { background: var(--color-accent); color: rgba(0,0,0,.9); border-radius: var(--radius-badge); padding: 2px 6px; font-family: Dmsans, Arial, sans-serif; font-size: 13px; }
+.tab { background: var(--color-tab-selected); color: white; border-radius: var(--radius-control); padding: 8px 16px; }
+.note { color: var(--color-muted); max-width: 68ch; }
+.type-display { font-size: var(--fontSize-display); line-height: var(--lineHeight-display); letter-spacing: -4.32px; color: var(--color-ink); }
 </style>
 </head>
 <body>
 <header>
-  <h1>Weavy</h1>
-  <button class="theme" type="button">Theme</button>
+  <h1>Figma Weave</h1>
+  <a class="cta" href="#components">Start Now</a>
 </header>
 <main>
-  <p class="note">Marketing colours come from weave.figma.com. App colours come from the signed-out sign-in page. Dark is the declared app theme. The marketing site did not paint it.</p>
-  <h2>Marketing colour</h2>
-  <div class="swatches" id="marketing"></div>
-  <h2>Nav and start</h2>
-  <div class="nav"><a>Collective</a><a class="on">Pricing</a><a>Sign in</a><a class="start">Start Now</a></div>
-  <h2>Plan card</h2>
-  <div class="plan"><div class="name">Free</div><div class="price">$0</div><a>Start free</a></div>
-  <h2>Sign-in card</h2>
-  <div class="app-shell"><div class="card"><h3>Welcome to Figma Weave</h3><button class="sso" type="button">Log in with Figma</button></div></div>
-  <h2>App colour</h2>
-  <div class="swatches" id="app"></div>
+  <p class="note">Public marketing surface of weavy.ai, captured 2026-11-21. One theme. Values come from tokens.json. Figma Sans is not loaded here, so the page falls back to Arial.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p class="type-display">Figma Weave</p>
+  <p>Body at 14.4px. Nav labels are 12px uppercase.</p>
+  <h2 id="components">Components</h2>
+  <div class="row">
+    <div class="card">
+      <span class="badge">Save 30%</span>
+      <h3>Free</h3>
+      <p>Explore Figma Weave's possibilities</p>
+      <a class="btn" href="#components">Start free</a>
+    </div>
+    <div>
+      <span class="tab">Individuals</span>
+      <p class="note">The plan button hover fill is #eaf297. The nav Start Now hover fill is #252525 with #f4f4f4 text.</p>
+    </div>
+  </div>
 </main>
 <script>
-
-const marketing = {"page": "#ffffff", "text": "#333333", "text-strong": "#000000", "lemon": "#f7ff9e", "lemon-100": "#f7ffa8", "rich-black": "#252525", "richer-black": "#212126", "surface": "#f5f5f6", "border": "#e6e6e6", "french-gray": "#c1cdd5", "ash-grey": "#aeb3a9", "ink": "#111111", "on-lemon": "#000000", "on-dark": "#ffffff", "nav-hover-text": "#252525", "primary-hover-text": "#f0ffff", "faq-answer": "#d0d0d2", "faq-border": "#ffffff26", "muted": "#00000080"};
-const app = {"page": "#ffffff", "shell": "#2c2c2c", "surface": "#ffffff", "surface-secondary": "#f5f5f5", "surface-tertiary": "#e6e6e6", "text": "#000000e5", "text-secondary": "#00000080", "text-tertiary": "#0000004d", "text-disabled": "#0000004d", "text-brand": "#007be5", "text-danger": "#dc3412", "text-success": "#009951", "text-warning": "#b86200", "on-brand": "#ffffff", "border": "#e6e6e6", "border-strong": "#2c2c2c", "border-selected": "#0d99ff", "brand": "#0d99ff", "danger": "#f24822", "success": "#14ae5c", "warning": "#ffcd29", "title": "#282828", "sso-label": "#0000004d", "link": "#2c2c2c"};
-function paint(id, map) {
-  document.getElementById(id).innerHTML = Object.entries(map).map(([k,v]) =>
-    '<div class="sw"><i style="background:' + v + '"></i><div><b>' + k + '</b><span>' + v + '</span></div></div>'
-  ).join('');
+const roles = [
+  ["page", "--color-page"], ["surface", "--color-surface"], ["inverse", "--color-inverse"],
+  ["text", "--color-text"], ["ink", "--color-ink"], ["muted", "--color-muted"],
+  ["accent", "--color-accent"], ["button", "--color-button"], ["border", "--color-border"]
+];
+const root = document.getElementById("swatches");
+for (const [name, prop] of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:var(${prop})"></i><b>${name}</b><span>${getComputedStyle(document.documentElement).getPropertyValue(prop)}</span>`;
+  root.append(el);
 }
-paint('marketing', marketing);
-paint('app', app);
-
-document.querySelector('.theme').addEventListener('click', () => {
-  const html = document.documentElement;
-  html.dataset.mode = html.dataset.mode === 'dark' ? 'light' : 'dark';
-  paint('app', html.dataset.mode === 'dark' ? {"page": "#2c2c2c", "surface": "#1e1e1e", "surface-secondary": "#383838", "surface-tertiary": "#444444", "text": "#ffffff", "text-secondary": "#ffffffb2", "text-tertiary": "#ffffff66", "text-disabled": "#ffffff66", "text-brand": "#80caff", "text-danger": "#ffafa3", "text-success": "#8ddda4", "text-warning": "#ffd966", "on-brand": "#ffffff", "border": "#444444", "border-strong": "#ffffffe5", "border-selected": "#0d99ff", "brand": "#0d99ff", "danger": "#f24822", "success": "#14ae5c", "warning": "#ffcd29"} : app);
-});
 </script>
 </body>
 </html>

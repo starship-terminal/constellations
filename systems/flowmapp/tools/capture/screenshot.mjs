@@ -68,9 +68,7 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     metadata.actual = actual;
     metadata.dimensionCheck.expected = expected;
     metadata.dimensionCheck.basis = mode === 'viewport' ? configuredViewport ? 'configuredViewport' : 'actualInnerViewport' : mode;
-    // A tall full-page shot can take well past the 30s default while the
-    // browser rasterises it; give it room instead of failing the page.
-    metadata.png = pngDimensions(await page.screenshot({ ...options, type: 'png', timeout: 120000 }));
+    metadata.png = pngDimensions(await page.screenshot({ ...options, type: 'png' }));
     // A fractional CSS edge can round in either direction in the browser.
     const matches = Math.abs(metadata.png.width - expected.width) <= 1 && Math.abs(metadata.png.height - expected.height) <= 1;
     metadata.dimensionCheck.status = matches ? 'pass' : 'fail';

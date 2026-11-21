@@ -1,0 +1,1622 @@
+{
+ "readAt": "2026-11-21",
+ "source": "stylesheet bodies read during a live home load on www.sunsama.com (linked CSS from network responses plus inline style blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain and with a .dark class, at 1440 x 900. The public site does not set .dark.",
+ "sheets": [
+  "https://www.sunsama.com/_astro/index.djXcyZ3S.css (6512 bytes)",
+  "https://www.sunsama.com/css/sunsama.css (312070 bytes)",
+  "https://fonts.googleapis.com/css (22618 bytes)",
+  "inline-0 (62 bytes)",
+  "inline-1 (88 bytes)",
+  "inline-2 (86 bytes)",
+  "inline-3 (2678 bytes)",
+  "inline-4 (1676 bytes)",
+  "inline-5 (1513 bytes)",
+  "inline-6 (186 bytes)",
+  "inline-7 (823 bytes)",
+  "inline-8 (919 bytes)",
+  "inline-9 (106 bytes)",
+  "inline-10 (3286 bytes)",
+  "inline-11 (2938 bytes)",
+  "inline-12 (1052 bytes)",
+  "inline-13 (86 bytes)",
+  "inline-14 (996 bytes)",
+  "inline-15 (1378 bytes)",
+  "inline-16 (2138 bytes)"
+ ],
+ "counts": {
+  "rules": 24,
+  "fonts": 70,
+  "names": {
+   "theme": 35,
+   "app": 56,
+   "vendor": 1,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[theme] :root": 15,
+   "[app] .sslab": 51,
+   "[app] .sslab[data-theme=\"dark\"]": 20,
+   "[theme] .sslab-fit": 1,
+   "[theme] @supports (scale: tan(atan2(1px, 1px))) .sslab-fit": 1,
+   "[app] .ss-cal-event.is-event": 1,
+   "[app] .ss-cal-event.is-task": 1,
+   "[app] .ss-cal-event.is-focus": 1,
+   "[app] .ss-cal-event.is-proposed": 1,
+   "[app] .ss-fp": 1,
+   "[theme] .sslab.ss-tc": 3,
+   "[theme] .sslab .is-periwinkle": 1,
+   "[theme] .sslab .is-lavender": 1,
+   "[theme] .sslab .is-mauve": 1,
+   "[theme] .sslab .is-peach": 1,
+   "[app] .sslab .ss-tk-cal": 1,
+   "[app] .sslab .ss-tk-week": 2,
+   "[theme] .ap-page": 9,
+   "[theme] .ap-steps": 1,
+   "[theme] .apm-cal_shutdown::before": 4,
+   "[theme] .hdp": 3,
+   "[theme] .hdp-tiles.other-feature": 1,
+   "[vendor] .termly-styles-root-b0aebb": 1,
+   "[vendor] .termly-styles-root-b0aebb.termly-styles-compact-af2a7f": 1
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--black": "#202228",
+    "--ss-orange": "#ff891c",
+    "--light-black": "#2c3034",
+    "--border-new": "#f2f2f2",
+    "--bg-light-grey-new": "#fafafa",
+    "--border-2-new": "#eeece6e3",
+    "--card-bg-white-50-new": "#ffffff80",
+    "--bg-secondary-new": "#f6f5f1",
+    "--blue": "#2da8ff",
+    "--ss-dark-organge": "#f06351",
+    "--orange-light": "#ffe8e4",
+    "--border-dark": "#e5e4e0",
+    "--gradient-bg-grey": "#f4f4f4",
+    "--black-2": "#202228",
+    "--grey": "#e9e9ea"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab-fit",
+   "context": [],
+   "properties": {
+    "--lab-fit": "1"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab-fit",
+   "context": [
+    "@supports (scale: tan(atan2(1px, 1px)))"
+   ],
+   "properties": {
+    "--lab-fit": "tan(atan2(100cqw, calc(var(--lab-w) * 1px)))"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab.ss-tc",
+   "context": [],
+   "properties": {
+    "--tc-ink": "#2b2740",
+    "--tc-coral": "#dc5b45",
+    "--tc-brand": "linear-gradient(118deg, #6e7bc5, #9e8acb, #ce9fc1, #eeb1ad)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab .is-periwinkle",
+   "context": [],
+   "properties": {
+    "--tk-tone": "#6e7bc5"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab .is-lavender",
+   "context": [],
+   "properties": {
+    "--tk-tone": "#9e8acb"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab .is-mauve",
+   "context": [],
+   "properties": {
+    "--tk-tone": "#ce9fc1"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab .is-peach",
+   "context": [],
+   "properties": {
+    "--tk-tone": "#eeb1ad"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".ap-page",
+   "context": [],
+   "properties": {
+    "--ap-ink": "#202228",
+    "--ap-ink-muted": "#202228",
+    "--ap-orange": "#ff891c",
+    "--ap-gradient": "linear-gradient(101.24deg, #f59549 0%, #f06351 100%)",
+    "--ap-border": "#f2f2f2",
+    "--ap-holder": "rgba(250, 250, 250, 0.6)",
+    "--ap-warm": "#f6f5f1",
+    "--ap-lift": "0 0 0 0 rgba(61, 71, 83, 0.05), 0 1px 0 0 rgba(61, 71, 83, 0.05), 0 2px 4px 0 rgba(61, 71, 83, 0.08)",
+    "--ap-float": "0 1px 2px rgba(43, 39, 64, 0.04), 0 12px 32px rgba(43, 39, 64, 0.08)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".ap-steps",
+   "context": [],
+   "properties": {
+    "--ap-step-h": "min(33rem, calc(100vh - 11rem))"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".apm-cal_shutdown::before",
+   "context": [],
+   "properties": {
+    "--a": "90deg",
+    "--s": "8px",
+    "--b": "1px",
+    "--_g": "var(--s) repeat-x\n        conic-gradient(from calc(var(--a) / -2) at bottom, #0000, #000 1deg calc(var(--a) - 1deg), #0000 var(--a))"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".hdp",
+   "context": [],
+   "properties": {
+    "--ap-border": "#f2f2f2",
+    "--ap-holder": "rgba(250, 250, 250, 0.6)",
+    "--ap-float": "0 1px 2px rgba(43, 39, 64, 0.04), 0 12px 32px rgba(43, 39, 64, 0.08)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".hdp-tiles.other-feature",
+   "context": [],
+   "properties": {
+    "--hdp-visual": "76%"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab",
+   "context": [],
+   "properties": {
+    "--ss-bg": "rgb(255, 255, 255)",
+    "--ss-bg-muted": "rgb(247, 248, 250)",
+    "--ss-bg-base": "rgb(236, 237, 238)",
+    "--ss-bg-highlight": "rgb(245, 245, 245)",
+    "--ss-bg-muted-highlight": "rgb(232, 235, 240)",
+    "--ss-bg-overlay": "rgba(43, 36, 62, 0.3)",
+    "--ss-text": "rgb(65, 63, 57)",
+    "--ss-text-secondary": "rgb(120, 120, 120)",
+    "--ss-text-muted": "rgb(180, 180, 180)",
+    "--ss-border-divider": "rgb(240, 240, 240)",
+    "--ss-border": "rgb(220, 220, 220)",
+    "--ss-border-input": "rgb(220, 220, 220)",
+    "--ss-border-layout": "rgb(240, 240, 240)",
+    "--ss-ghost": "rgba(0, 0, 0, 0.08)",
+    "--ss-blue": "#2ca7ff",
+    "--ss-green": "#4dcd7d",
+    "--ss-red": "#f34235",
+    "--ss-caution": "#fdbd5b",
+    "--ss-caution-text": "#7e5f30",
+    "--ss-alert": "#eb8063",
+    "--ss-purple-objective": "#7d4dcd",
+    "--ss-urgent": "#eb8063",
+    "--ss-urgent-bg": "#fcf0ee",
+    "--ss-important": "#a382ff",
+    "--ss-important-bg": "#f3f0ff",
+    "--ss-low": "rgb(120, 120, 120)",
+    "--ss-low-bg": "rgb(240, 240, 240)",
+    "--ss-channel-blue": "#2ca7ff",
+    "--ss-channel-purple": "#a382ff",
+    "--ss-channel-green": "#4dcd7d",
+    "--ss-channel-orange": "#eb8063",
+    "--ss-channel-grey": "rgb(160, 160, 160)",
+    "--ss-font": "Avenir, Arial, 'Helvetica Neue', Helvetica, sans-serif",
+    "--ss-text-1": "10px",
+    "--ss-text-2": "12px",
+    "--ss-text-3": "14px",
+    "--ss-text-4": "16px",
+    "--ss-text-6": "20px",
+    "--ss-leading": "1.42",
+    "--ss-radius": "4px",
+    "--ss-radius-sm": "2px",
+    "--ss-radius-pill": "10px",
+    "--ss-radius-circle": "100px",
+    "--ss-shadow-card": "0 1px 1px rgba(0, 0, 0, 0.1)",
+    "--ss-shadow-button": "0 1px 2px rgba(0, 0, 0, 0.1)",
+    "--ss-shadow-modal": "0 3px 20px rgba(0, 0, 0, 0.2)",
+    "--ss-column-width": "272px",
+    "--ss-calendar-gutter": "48px",
+    "--ss-card-padding": "12px",
+    "--ss-card-gap": "8px",
+    "--ss-calendar-pane": "380px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab[data-theme=\"dark\"]",
+   "context": [],
+   "properties": {
+    "--ss-bg": "rgb(33, 33, 35)",
+    "--ss-bg-muted": "rgb(20, 20, 21)",
+    "--ss-bg-base": "rgb(8, 9, 10)",
+    "--ss-bg-highlight": "rgb(81, 81, 83)",
+    "--ss-bg-muted-highlight": "rgb(27, 27, 28)",
+    "--ss-bg-overlay": "rgba(78, 73, 90, 0.6)",
+    "--ss-text": "rgb(230, 230, 230)",
+    "--ss-text-secondary": "rgb(160, 160, 160)",
+    "--ss-text-muted": "rgb(124, 124, 124)",
+    "--ss-border-divider": "rgb(40, 40, 40)",
+    "--ss-border": "rgb(48, 49, 50)",
+    "--ss-border-input": "rgb(60, 60, 60)",
+    "--ss-border-layout": "rgb(30, 30, 30)",
+    "--ss-ghost": "rgba(255, 255, 255, 0.08)",
+    "--ss-urgent-bg": "#51332e",
+    "--ss-important-bg": "#3c3457",
+    "--ss-low-bg": "rgb(60, 60, 60)",
+    "--ss-shadow-card": "0 1px 1px rgba(0, 0, 0, 0.5)",
+    "--ss-shadow-button": "0 1px 2px rgba(0, 0, 0, 0.9)",
+    "--ss-shadow-modal": "0 3px 30px rgba(0, 0, 0, 0.4)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".ss-cal-event.is-event",
+   "context": [],
+   "properties": {
+    "--ss-cal-color": "var(--ss-blue)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".ss-cal-event.is-task",
+   "context": [],
+   "properties": {
+    "--ss-cal-color": "var(--ss-green)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".ss-cal-event.is-focus",
+   "context": [],
+   "properties": {
+    "--ss-cal-color": "var(--ss-purple-objective)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".ss-cal-event.is-proposed",
+   "context": [],
+   "properties": {
+    "--ss-cal-color": "var(--ss-blue)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".ss-fp",
+   "context": [],
+   "properties": {
+    "--ss-fp-pitch": "34px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab .ss-tk-cal",
+   "context": [],
+   "properties": {
+    "--ss-tk-hour": "4.3cqw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "selector": ".sslab .ss-tk-week",
+   "context": [],
+   "properties": {
+    "--ss-tk-week-hour": "4.2cqw",
+    "--ss-tk-week-col": "8.4cqw"
+   },
+   "bin": "app"
+  }
+ ],
+ "vendor": [
+  {
+   "file": "inline-10",
+   "selector": ".termly-styles-root-b0aebb",
+   "context": [],
+   "properties": {
+    "--termly-prompt-padding": "2.5em"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-10",
+   "selector": ".termly-styles-root-b0aebb.termly-styles-compact-af2a7f",
+   "context": [],
+   "properties": {
+    "--termly-prompt-padding": "1.5em"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "font-family": "webflow-icons",
+   "src": "url(\"data:application/x-font-ttf;charset=utf-8;base64,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\") format(\"truetype\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "font-family": "Avenir",
+   "src": "url(\"/fonts/62d2033a0e07abf1ebc0a35a_c9033012-9826-4249-9537-be9d2f0c2652.ttf\") format(\"truetype\")",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "font-family": "Avenir",
+   "src": "url(\"/fonts/62d2033a09ffbd98567e4d85_d9ab3b13-ad13-4930-b776-7069fb16fbfc.ttf\") format(\"truetype\")",
+   "font-weight": "300",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "font-family": "Avenir",
+   "src": "url(\"/fonts/62d2033a93cde45ec795e14f_ddda1572-4388-4d33-98d2-8f6e68113b5b.ttf\") format(\"truetype\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "font-family": "Avenir",
+   "src": "url(\"/fonts/62d20339fc49d77c5fd89a9a_790df82d-9aae-4e1b-af10-d0ddb48c1652.ttf\") format(\"truetype\")",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "font-family": "Avenir",
+   "src": "url(\"/fonts/62d20339aa648f6710f75d29_2c8bff81-d390-4ce5-8611-d4932e64d05d.ttf\") format(\"truetype\"), url(\"/fonts/62d203394aec356f1d7fbeef_7ce0560a-1399-4d97-bca7-75fc1ad7ca07.ttf\") format(\"truetype\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "font-family": "Avenir",
+   "src": "url(\"/fonts/62d2033a09ffbdcab97e4d87_f228c365-c26c-4ec1-a50a-dca7e8911bd3.ttf\") format(\"truetype\"), url(\"/fonts/62d2033a09ffbd21667e4d86_d9d4496a-5574-4808-b7a6-8587a2c8884a.ttf\") format(\"truetype\")",
+   "font-weight": "500",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "font-family": "Avenir",
+   "src": "url(\"/fonts/62d2033a0e80b2f0155e9c64_e5f40243-1250-46a5-b1be-9cdafabc981b.ttf\") format(\"truetype\")",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sunsama.com/css/sunsama.css",
+   "font-family": "Avenir",
+   "src": "url(\"/fonts/62d203395f31d715519c3371_371a2a73-c1cd-413b-812e-07b7c8c65ec8.ttf\") format(\"truetype\")",
+   "font-weight": "600",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"DM Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyxq15IDhunJ_o.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyx615IDhunJ_o.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyxq15IDhunJ_o.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyx615IDhunJ_o.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqUYLkn8BJ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqUYLkn8BJ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqUYLkn8BJ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqUYLkn8BJ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqUYLkn8BJ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Outfit",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--bg-light-grey-new": {
+    "raw": "#fafafa",
+    "kind": "color",
+    "value": "#fafafa"
+   },
+   "--bg-secondary-new": {
+    "raw": "#f6f5f1",
+    "kind": "color",
+    "value": "#f6f5f1"
+   },
+   "--black": {
+    "raw": "#202228",
+    "kind": "color",
+    "value": "#202228"
+   },
+   "--black-2": {
+    "raw": "#202228",
+    "kind": "color",
+    "value": "#202228"
+   },
+   "--blue": {
+    "raw": "#2da8ff",
+    "kind": "color",
+    "value": "#2da8ff"
+   },
+   "--border-2-new": {
+    "raw": "#eeece6e3",
+    "kind": "color",
+    "value": "rgba(238, 236, 230, 0.89)"
+   },
+   "--border-dark": {
+    "raw": "#e5e4e0",
+    "kind": "color",
+    "value": "#e5e4e0"
+   },
+   "--border-new": {
+    "raw": "#f2f2f2",
+    "kind": "color",
+    "value": "#f2f2f2"
+   },
+   "--card-bg-white-50-new": {
+    "raw": "#ffffff80",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.5)"
+   },
+   "--gradient-bg-grey": {
+    "raw": "#f4f4f4",
+    "kind": "color",
+    "value": "#f4f4f4"
+   },
+   "--grey": {
+    "raw": "#e9e9ea",
+    "kind": "color",
+    "value": "#e9e9ea"
+   },
+   "--light-black": {
+    "raw": "#2c3034",
+    "kind": "color",
+    "value": "#2c3034"
+   },
+   "--orange-light": {
+    "raw": "#ffe8e4",
+    "kind": "color",
+    "value": "#ffe8e4"
+   },
+   "--ss-alert": {
+    "raw": "#eb8063",
+    "kind": "color",
+    "value": "#eb8063"
+   },
+   "--ss-bg": {
+    "raw": "rgb(33, 33, 35)",
+    "kind": "color",
+    "value": "#212123"
+   },
+   "--ss-bg-base": {
+    "raw": "rgb(8, 9, 10)",
+    "kind": "color",
+    "value": "#08090a"
+   },
+   "--ss-bg-highlight": {
+    "raw": "rgb(81, 81, 83)",
+    "kind": "color",
+    "value": "#515153"
+   },
+   "--ss-bg-muted": {
+    "raw": "rgb(20, 20, 21)",
+    "kind": "color",
+    "value": "#141415"
+   },
+   "--ss-bg-muted-highlight": {
+    "raw": "rgb(27, 27, 28)",
+    "kind": "color",
+    "value": "#1b1b1c"
+   },
+   "--ss-bg-overlay": {
+    "raw": "rgba(78, 73, 90, 0.6)",
+    "kind": "color",
+    "value": "rgba(78, 73, 90, 0.6)"
+   },
+   "--ss-blue": {
+    "raw": "#2ca7ff",
+    "kind": "color",
+    "value": "#2ca7ff"
+   },
+   "--ss-border": {
+    "raw": "rgb(48, 49, 50)",
+    "kind": "color",
+    "value": "#303132"
+   },
+   "--ss-border-divider": {
+    "raw": "rgb(40, 40, 40)",
+    "kind": "color",
+    "value": "#282828"
+   },
+   "--ss-border-input": {
+    "raw": "rgb(60, 60, 60)",
+    "kind": "color",
+    "value": "#3c3c3c"
+   },
+   "--ss-border-layout": {
+    "raw": "rgb(30, 30, 30)",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--ss-calendar-gutter": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--ss-calendar-pane": {
+    "raw": "380px",
+    "kind": "dimension",
+    "value": "380px"
+   },
+   "--ss-card-gap": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--ss-card-padding": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--ss-caution": {
+    "raw": "#fdbd5b",
+    "kind": "color",
+    "value": "#fdbd5b"
+   },
+   "--ss-caution-text": {
+    "raw": "#7e5f30",
+    "kind": "color",
+    "value": "#7e5f30"
+   },
+   "--ss-channel-blue": {
+    "raw": "#2ca7ff",
+    "kind": "color",
+    "value": "#2ca7ff"
+   },
+   "--ss-channel-green": {
+    "raw": "#4dcd7d",
+    "kind": "color",
+    "value": "#4dcd7d"
+   },
+   "--ss-channel-grey": {
+    "raw": "rgb(160, 160, 160)",
+    "kind": "color",
+    "value": "#a0a0a0"
+   },
+   "--ss-channel-orange": {
+    "raw": "#eb8063",
+    "kind": "color",
+    "value": "#eb8063"
+   },
+   "--ss-channel-purple": {
+    "raw": "#a382ff",
+    "kind": "color",
+    "value": "#a382ff"
+   },
+   "--ss-column-width": {
+    "raw": "272px",
+    "kind": "dimension",
+    "value": "272px"
+   },
+   "--ss-dark-organge": {
+    "raw": "#f06351",
+    "kind": "color",
+    "value": "#f06351"
+   },
+   "--ss-font": {
+    "raw": "Avenir, Arial, 'Helvetica Neue', Helvetica, sans-serif",
+    "kind": "fontFamily",
+    "value": "Avenir, Arial, 'Helvetica Neue', Helvetica, sans-serif"
+   },
+   "--ss-ghost": {
+    "raw": "rgba(255, 255, 255, 0.08)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.08)"
+   },
+   "--ss-green": {
+    "raw": "#4dcd7d",
+    "kind": "color",
+    "value": "#4dcd7d"
+   },
+   "--ss-important": {
+    "raw": "#a382ff",
+    "kind": "color",
+    "value": "#a382ff"
+   },
+   "--ss-important-bg": {
+    "raw": "#3c3457",
+    "kind": "color",
+    "value": "#3c3457"
+   },
+   "--ss-leading": {
+    "raw": "1.42",
+    "kind": "number",
+    "value": 1.42
+   },
+   "--ss-low": {
+    "raw": "rgb(120, 120, 120)",
+    "kind": "color",
+    "value": "#787878"
+   },
+   "--ss-low-bg": {
+    "raw": "rgb(60, 60, 60)",
+    "kind": "color",
+    "value": "#3c3c3c"
+   },
+   "--ss-orange": {
+    "raw": "#ff891c",
+    "kind": "color",
+    "value": "#ff891c"
+   },
+   "--ss-purple-objective": {
+    "raw": "#7d4dcd",
+    "kind": "color",
+    "value": "#7d4dcd"
+   },
+   "--ss-radius": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--ss-radius-circle": {
+    "raw": "100px",
+    "kind": "dimension",
+    "value": "100px"
+   },
+   "--ss-radius-pill": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--ss-radius-sm": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--ss-red": {
+    "raw": "#f34235",
+    "kind": "color",
+    "value": "#f34235"
+   },
+   "--ss-shadow-button": {
+    "raw": "0 1px 2px rgba(0, 0, 0, 0.9)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.9) 0px 1px 2px 0px"
+   },
+   "--ss-shadow-card": {
+    "raw": "0 1px 1px rgba(0, 0, 0, 0.5)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.5) 0px 1px 1px 0px"
+   },
+   "--ss-shadow-modal": {
+    "raw": "0 3px 30px rgba(0, 0, 0, 0.4)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.4) 0px 3px 30px 0px"
+   },
+   "--ss-text": {
+    "raw": "rgb(230, 230, 230)",
+    "kind": "color",
+    "value": "#e6e6e6"
+   },
+   "--ss-text-1": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--ss-text-2": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--ss-text-3": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--ss-text-4": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--ss-text-6": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--ss-text-muted": {
+    "raw": "rgb(124, 124, 124)",
+    "kind": "color",
+    "value": "#7c7c7c"
+   },
+   "--ss-text-secondary": {
+    "raw": "rgb(160, 160, 160)",
+    "kind": "color",
+    "value": "#a0a0a0"
+   },
+   "--ss-urgent": {
+    "raw": "#eb8063",
+    "kind": "color",
+    "value": "#eb8063"
+   },
+   "--ss-urgent-bg": {
+    "raw": "#51332e",
+    "kind": "color",
+    "value": "#51332e"
+   }
+  },
+  "light": {
+   "--bg-light-grey-new": {
+    "raw": "#fafafa",
+    "kind": "color",
+    "value": "#fafafa"
+   },
+   "--bg-secondary-new": {
+    "raw": "#f6f5f1",
+    "kind": "color",
+    "value": "#f6f5f1"
+   },
+   "--black": {
+    "raw": "#202228",
+    "kind": "color",
+    "value": "#202228"
+   },
+   "--black-2": {
+    "raw": "#202228",
+    "kind": "color",
+    "value": "#202228"
+   },
+   "--blue": {
+    "raw": "#2da8ff",
+    "kind": "color",
+    "value": "#2da8ff"
+   },
+   "--border-2-new": {
+    "raw": "#eeece6e3",
+    "kind": "color",
+    "value": "rgba(238, 236, 230, 0.89)"
+   },
+   "--border-dark": {
+    "raw": "#e5e4e0",
+    "kind": "color",
+    "value": "#e5e4e0"
+   },
+   "--border-new": {
+    "raw": "#f2f2f2",
+    "kind": "color",
+    "value": "#f2f2f2"
+   },
+   "--card-bg-white-50-new": {
+    "raw": "#ffffff80",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.5)"
+   },
+   "--gradient-bg-grey": {
+    "raw": "#f4f4f4",
+    "kind": "color",
+    "value": "#f4f4f4"
+   },
+   "--grey": {
+    "raw": "#e9e9ea",
+    "kind": "color",
+    "value": "#e9e9ea"
+   },
+   "--light-black": {
+    "raw": "#2c3034",
+    "kind": "color",
+    "value": "#2c3034"
+   },
+   "--orange-light": {
+    "raw": "#ffe8e4",
+    "kind": "color",
+    "value": "#ffe8e4"
+   },
+   "--ss-alert": {
+    "raw": "#eb8063",
+    "kind": "color",
+    "value": "#eb8063"
+   },
+   "--ss-bg": {
+    "raw": "rgb(255, 255, 255)",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ss-bg-base": {
+    "raw": "rgb(236, 237, 238)",
+    "kind": "color",
+    "value": "#ecedee"
+   },
+   "--ss-bg-highlight": {
+    "raw": "rgb(245, 245, 245)",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--ss-bg-muted": {
+    "raw": "rgb(247, 248, 250)",
+    "kind": "color",
+    "value": "#f7f8fa"
+   },
+   "--ss-bg-muted-highlight": {
+    "raw": "rgb(232, 235, 240)",
+    "kind": "color",
+    "value": "#e8ebf0"
+   },
+   "--ss-bg-overlay": {
+    "raw": "rgba(43, 36, 62, 0.3)",
+    "kind": "color",
+    "value": "rgba(43, 36, 62, 0.3)"
+   },
+   "--ss-blue": {
+    "raw": "#2ca7ff",
+    "kind": "color",
+    "value": "#2ca7ff"
+   },
+   "--ss-border": {
+    "raw": "rgb(220, 220, 220)",
+    "kind": "color",
+    "value": "#dcdcdc"
+   },
+   "--ss-border-divider": {
+    "raw": "rgb(240, 240, 240)",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--ss-border-input": {
+    "raw": "rgb(220, 220, 220)",
+    "kind": "color",
+    "value": "#dcdcdc"
+   },
+   "--ss-border-layout": {
+    "raw": "rgb(240, 240, 240)",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--ss-calendar-gutter": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--ss-calendar-pane": {
+    "raw": "380px",
+    "kind": "dimension",
+    "value": "380px"
+   },
+   "--ss-card-gap": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--ss-card-padding": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--ss-caution": {
+    "raw": "#fdbd5b",
+    "kind": "color",
+    "value": "#fdbd5b"
+   },
+   "--ss-caution-text": {
+    "raw": "#7e5f30",
+    "kind": "color",
+    "value": "#7e5f30"
+   },
+   "--ss-channel-blue": {
+    "raw": "#2ca7ff",
+    "kind": "color",
+    "value": "#2ca7ff"
+   },
+   "--ss-channel-green": {
+    "raw": "#4dcd7d",
+    "kind": "color",
+    "value": "#4dcd7d"
+   },
+   "--ss-channel-grey": {
+    "raw": "rgb(160, 160, 160)",
+    "kind": "color",
+    "value": "#a0a0a0"
+   },
+   "--ss-channel-orange": {
+    "raw": "#eb8063",
+    "kind": "color",
+    "value": "#eb8063"
+   },
+   "--ss-channel-purple": {
+    "raw": "#a382ff",
+    "kind": "color",
+    "value": "#a382ff"
+   },
+   "--ss-column-width": {
+    "raw": "272px",
+    "kind": "dimension",
+    "value": "272px"
+   },
+   "--ss-dark-organge": {
+    "raw": "#f06351",
+    "kind": "color",
+    "value": "#f06351"
+   },
+   "--ss-font": {
+    "raw": "Avenir, Arial, 'Helvetica Neue', Helvetica, sans-serif",
+    "kind": "fontFamily",
+    "value": "Avenir, Arial, 'Helvetica Neue', Helvetica, sans-serif"
+   },
+   "--ss-ghost": {
+    "raw": "rgba(0, 0, 0, 0.08)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.08)"
+   },
+   "--ss-green": {
+    "raw": "#4dcd7d",
+    "kind": "color",
+    "value": "#4dcd7d"
+   },
+   "--ss-important": {
+    "raw": "#a382ff",
+    "kind": "color",
+    "value": "#a382ff"
+   },
+   "--ss-important-bg": {
+    "raw": "#f3f0ff",
+    "kind": "color",
+    "value": "#f3f0ff"
+   },
+   "--ss-leading": {
+    "raw": "1.42",
+    "kind": "number",
+    "value": 1.42
+   },
+   "--ss-low": {
+    "raw": "rgb(120, 120, 120)",
+    "kind": "color",
+    "value": "#787878"
+   },
+   "--ss-low-bg": {
+    "raw": "rgb(240, 240, 240)",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--ss-orange": {
+    "raw": "#ff891c",
+    "kind": "color",
+    "value": "#ff891c"
+   },
+   "--ss-purple-objective": {
+    "raw": "#7d4dcd",
+    "kind": "color",
+    "value": "#7d4dcd"
+   },
+   "--ss-radius": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--ss-radius-circle": {
+    "raw": "100px",
+    "kind": "dimension",
+    "value": "100px"
+   },
+   "--ss-radius-pill": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--ss-radius-sm": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--ss-red": {
+    "raw": "#f34235",
+    "kind": "color",
+    "value": "#f34235"
+   },
+   "--ss-shadow-button": {
+    "raw": "0 1px 2px rgba(0, 0, 0, 0.1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px"
+   },
+   "--ss-shadow-card": {
+    "raw": "0 1px 1px rgba(0, 0, 0, 0.1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.1) 0px 1px 1px 0px"
+   },
+   "--ss-shadow-modal": {
+    "raw": "0 3px 20px rgba(0, 0, 0, 0.2)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.2) 0px 3px 20px 0px"
+   },
+   "--ss-text": {
+    "raw": "rgb(65, 63, 57)",
+    "kind": "color",
+    "value": "#413f39"
+   },
+   "--ss-text-1": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--ss-text-2": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--ss-text-3": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--ss-text-4": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--ss-text-6": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--ss-text-muted": {
+    "raw": "rgb(180, 180, 180)",
+    "kind": "color",
+    "value": "#b4b4b4"
+   },
+   "--ss-text-secondary": {
+    "raw": "rgb(120, 120, 120)",
+    "kind": "color",
+    "value": "#787878"
+   },
+   "--ss-urgent": {
+    "raw": "#eb8063",
+    "kind": "color",
+    "value": "#eb8063"
+   },
+   "--ss-urgent-bg": {
+    "raw": "#fcf0ee",
+    "kind": "color",
+    "value": "#fcf0ee"
+   }
+  }
+ }
+}

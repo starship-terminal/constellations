@@ -8,7 +8,7 @@
 // Nothing is sent, bought or signed into: the only presses are local UI toggles — the Menu drawer,
 // the SEARCH panel, the PLP FILTER rail, a PDP size swatch and LOAD MORE. The OneTrust cookie
 // banner is hidden remove-only (its buttons are never clicked). The geo check serves the
-// Singapore store (data-sid=acne_sg, /sg/en/...): the capture is of the served variant.
+// locale store (/sg/en/...): the capture is of the served variant.
 import fs from 'fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { M, closePromo, killGeo, clearChallenge, chromium, patch, UA, UA_MOBILE, BASE } from './lib.mjs';
@@ -37,13 +37,8 @@ class Shooter {
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    // An infinite or growing page reports a scrollHeight without end: tile at most 8 chunks
-    // and log the boundary (the kit's cap), never one tile per chunk for ever.
-    const MAXH = 8 * chunk;
-    const hCap = Math.min(H, MAXH);
-    if (H > MAXH) console.log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }

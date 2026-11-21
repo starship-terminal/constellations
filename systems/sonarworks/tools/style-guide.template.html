@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonarworks style guide</title>
+<meta name="description" content="Sonarworks public-site tokens, rendered from tokens.json. One light theme.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: Inter, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
+header.top { position: sticky; top: 0; background: var(--surface-inverse); color: var(--text-on-inverse); }
+header.top .in { max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; gap: 20px; align-items: center; }
+header.top h1 { margin: 0; font: 600 16px/24px var(--sg-sans); }
+header.top nav { display: flex; gap: 16px; }
+header.top a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
+section.s { padding-top: 40px; }
+h2.sh { font: 400 24px/32px var(--sg-sans); letter-spacing: -0.5px; margin: 0 0 8px; }
+p.lead { color: var(--text-secondary); max-width: 72ch; }
+code { font-family: var(--sg-mono); font-size: 12px; }
+.pal { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw .dot { width: 40px; height: 40px; box-shadow: inset 0 0 0 1px var(--border-hairline); position: relative; }
+.sw .dot i { position: absolute; inset: 0; }
+.sw .nm { font: 600 12px/1.3 var(--sg-mono); }
+.sw .vl { font-size: 12px; color: var(--text-secondary); }
+.pal-h { margin: 16px 0 8px; color: var(--text-secondary); }
+.typerow { display: grid; grid-template-columns: 220px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border-hairline); }
+.typerow .k { font: 600 12px/1.4 var(--sg-mono); }
+.boxes { display: flex; gap: 12px; flex-wrap: wrap; }
+.bx { width: 72px; height: 72px; background: var(--surface-raised); box-shadow: inset 0 0 0 1px var(--border-hairline); display: flex; align-items: flex-end; justify-content: center; font-size: 11px; color: var(--text-secondary); padding: 4px; text-align: center; }
+.navdemo { background: var(--surface-inverse); color: var(--text-muted); height: 56px; display: flex; align-items: center; gap: 8px; padding: 0 8px; }
+.navdemo a { color: var(--text-muted); text-decoration: none; padding: 8px 16px; }
+.navdemo .on { color: var(--text-on-inverse); font-weight: 600; }
+.pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: var(--radius-full); background: var(--accent-default); color: var(--text-primary); }
+.menu { background: var(--surface-menu); color: var(--text-on-inverse); padding: 8px 0; width: 220px; }
+.menu a { display: block; color: var(--text-on-inverse); text-decoration: none; padding: 8px 16px; }
+.field { height: 40px; border: 1px solid var(--border-hairline); padding: 0 12px; font: 400 16px/24px var(--sg-sans); width: 280px; }
+.cap { font-size: 12px; color: var(--text-secondary); margin-top: 6px; }
+.states { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <h1>Sonarworks style guide</h1>
+  <nav>
+    <a href="#colour">Colour</a><a href="#type">Type</a><a href="#shape">Shape</a><a href="#components">Components</a>
+  </nav>
+</div></header>
+<div class="wrap">
+<section class="s" id="intro">
+  <h2 class="sh">Sonarworks, measured</h2>
+  <p class="lead">Values come from the public site at www.sonarworks.com on 2026-11-21. The marketing pages declare a Tailwind base scale (black through white) and a highlight scale. There is no dark theme toggle. Inter is the only computed family. Drawings here use the tokens. The real pages are in screenshots/.</p>
+</section>
+<section class="s" id="colour">
+  <h2 class="sh">Colour</h2>
+  <p class="lead">Page ground is white. The header is black with muted grey links. Highlight colours are campaign accents, not status roles.</p>
+  <div id="roles-out"></div>
+</section>
+<section class="s" id="type">
+  <h2 class="sh">Type</h2>
+  <p class="lead">Inter at 400 for display and body, 600 on the wordmark. Display is 44/52 with -1.5px tracking.</p>
+  <div id="type-out"></div>
+</section>
+<section class="s" id="shape">
+  <h2 class="sh">Radius</h2>
+  <div class="boxes" id="radius-out"></div>
+</section>
+<section class="s" id="components">
+  <h2 class="sh">Components</h2>
+  <div class="states">
+    <div>
+      <div class="navdemo"><a>Reviews</a><a>Blog</a><a class="on">Sonarworks</a></div>
+      <div class="cap">Top bar 56px, black, text-base-60 links</div>
+    </div>
+    <div>
+      <div class="menu"><a>About us</a><a>Careers</a><a>Contact us</a></div>
+      <div class="cap">Company menu, bg-base-10</div>
+    </div>
+    <div>
+      <span class="pill">Learn more</span>
+      <div class="cap">Highlight blue pill. Not every CTA uses it.</div>
+    </div>
+    <div>
+      <input class="field" placeholder="Email address" readonly>
+      <div class="cap">Contact field. Not submitted.</div>
+    </div>
+  </div>
+</section>
+</div>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+(function roles() {
+  let h = '';
+  for (const [label, set, prefix] of [['core.color', TOK.core.color, 'color.'], ['light', TOK.light, '']]) {
+    const items = flat(set, prefix).filter(([, t]) => t.t === 'color');
+    h += `<div class="pal-h">${label}</div><div class="pal">`;
+    for (const [n, t] of items) {
+      const bg = t.v.startsWith('{') ? 'var(' + cssname(t.v.replace(/[{}]/g, '')) + ')' : t.v;
+      h += `<div class="sw"><span class="dot"><i style="background:${bg}"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    }
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography, 'typography.')) {
+    const v = t.v;
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(v.fontSize)} / ${esc(v.lineHeight)}</small></div><div style="font-size:${esc(v.fontSize)};line-height:${esc(v.lineHeight)};font-weight:${esc(v.fontWeight)};letter-spacing:${esc(v.letterSpacing || 'normal')}">SoundID Reference</div></div>`;
+  }
+  $('#type-out').innerHTML = h;
+})();
+(function radius() {
+  let r = '';
+  for (const [n, t] of flat(TOK.core.radius, 'radius.')) {
+    r += `<div class="bx" style="border-radius:min(${esc(t.v)}, 36px)">${esc(n.replace('radius.', ''))}<br>${esc(t.v)}</div>`;
+  }
+  $('#radius-out').innerHTML = r;
+})();
+</script>
+</body>
+</html>

@@ -1,70 +1,58 @@
-// Captures masterclass.com's public signed-out pages into RAW.
+// Captures MasterClass public pages. Nothing is submitted. Login and signup
+// walls are recorded as a URL and that branch stops. Google and Apple are
+// never clicked. Newsletter, profile, birthday, plan and quiz fields are
+// never filled.
 //
-//   RAW=/some/scratch PLAYWRIGHT=... node public.mjs [page,page,...]
-//
-// Desktop 1440x900 at 1x, phone 390x844 at 2x. Consent overlays are hidden,
-// never clicked. Nothing is signed into, purchased, or submitted.
+//   PLAYWRIGHT=... node public.mjs [page,page]
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { chromium, UA, UA_MOBILE, BASE, hideConsent } from './lib.mjs';
+import { chromium, UA, UA_MOBILE, BASE, hidePromo, open } from './lib.mjs';
 
-// Full-colour shots go outside the repo (the kit's default), never into systems/ or the repo root.
+const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'masterclass', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
-const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
+const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
 
 async function lazyScroll(p) {
-  let last = 0;
-  for (let i = 0; i < 24; i++) {
-    const h = await p.evaluate(() => document.documentElement.scrollHeight);
-    if (h === last && i > 2) break;
-    last = h;
-    const y = Math.min(i * 700, Math.max(0, h - 800));
+  const h = await p.evaluate(() => document.documentElement.scrollHeight);
+  const cap = Math.min(h, 4800);
+  for (let y = 0; y < cap; y += 700) {
     await p.evaluate((y) => scrollTo(0, y), y);
     await wait(p, 180);
   }
   await p.evaluate(() => scrollTo(0, 0));
-  await wait(p, 500);
+  await wait(p, 400);
 }
 
 class Shooter {
   constructor(p, prefix, vw, vh, dpr) {
     this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr;
-    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr };
+    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: null };
     this.count = 0;
   }
   async view(name) {
-    await hideConsent(this.p);
     await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested);
     this.count++;
     log('  shot', this.prefix, name);
   }
   async full(name = 'full') {
     const p = this.p;
-    await hideConsent(p);
     await lazyScroll(p);
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    // Bounded: at most 8 viewport tiles (AGENTS.md "Bound every full-page capture").
-    const MAXH = Math.min(8 * chunk, 8 * this.p.viewportSize().height);
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${path.basename(f)}.part`))) fs.unlinkSync(`${RAW}/${old}`);
+    const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
-    // Always clip to the configured viewport width. fullPage uses document width,
-    // which at deviceScaleFactor 2 produced a PNG half as wide as the check expected.
-    const tile = async (file, y, height) => {
-      await p.evaluate((yy) => scrollTo(0, yy), y);
-      await wait(p, 200);
-      await screenshotWithMetadata(p, { path: file }, this.requested);
-    };
-    if (hCap <= this.p.viewportSize().height) await tile(f + '.png', 0, hCap);
-    else for (let i = 0, y = 0; y < hCap; i++, y += this.p.viewportSize().height) {
-      await tile(`${f}.part${i}.png`, y, Math.min(this.p.viewportSize().height, hCap - y));
+    if (H > MAXH) log(`  ! ${name}: page is ${H}px, capturing first ${hCap}px`);
+    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+      await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
     }
     this.count++;
     log('  shot', this.prefix, name, 'H=' + H);
@@ -73,74 +61,110 @@ class Shooter {
   }
 }
 
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
+const step = async (label, fn) => {
+  try { await fn(); } catch (e) { log('  FAILED', label, String(e.message || e).split('\n')[0]); }
+};
 
 const desktop = {
-  home: { path: '/', wait: 5000, run: async (p, S) => {
+  home: { path: '/', run: async (p, S) => {
+    await S.view('promo');
+    await hidePromo(p);
     await S.view('default');
+    await S.full();
     await step('browse', async () => {
-      const b = p.locator('header button').filter({ hasText: /^Browse$/ }).first();
+      await p.getByRole('button', { name: 'Browse', exact: true }).click();
+      await wait(p, 700);
+      await S.view('browse');
+      await p.keyboard.press('Escape');
+      await wait(p, 300);
+    });
+    await step('search', async () => {
+      await p.locator('#searchInput').click();
+      await wait(p, 700);
+      await S.view('search');
+      await p.keyboard.press('Escape');
+    });
+    await step('trailer', async () => {
+      const b = p.getByRole('button', { name: 'Watch Trailer' }).first();
       if (await b.count()) {
-        await b.click({ timeout: 5000 });
-        await wait(p, 900);
-        await S.view('browse');
+        await b.click();
+        await wait(p, 1600);
+        await S.view('trailer');
         await p.keyboard.press('Escape');
-        await wait(p, 300);
       }
     });
-    await S.full();
-  } },
-  class: { path: '/classes/revolutionize-your-workflows-with-ai', wait: 5000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  checkout: { path: '/checkout', wait: 5000, run: async (p, S) => {
-    await S.view('default');
-    // Plan Select on /checkout is not clicked: it changes checkout state on the live site.
-    // The plans are shot at rest; a selected plan is a boundary, not captured.
     await step('faq', async () => {
-      const q = p.locator('button').filter({ hasText: /What is MasterClass/i }).first();
-      if (await q.count()) {
-        await q.click({ timeout: 5000 });
+      const b = p.getByRole('button', { name: 'What is MasterClass?' }).first();
+      if (await b.count()) {
+        await b.scrollIntoViewIfNeeded();
+        await b.click();
         await wait(p, 500);
         await S.view('faq');
       }
     });
-    await S.full();
   } },
-  login: { path: '/auth/login', wait: 4000, run: async (p, S) => { await S.view('default'); } },
-  categories: { path: '/categories', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  gift: { path: '/gift', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  business: { path: '/for-business', wait: 4500, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  quiz: { path: '/find-my-classes', wait: 4000, run: async (p, S) => { await S.view('default'); } },
+  categories: { path: '/categories', run: async (p, S) => { await hidePromo(p); await S.view('default'); await S.full(); } },
+  culinary: { path: '/categories/culinary', run: async (p, S) => { await hidePromo(p); await S.view('default'); await S.full(); } },
+  class: { path: '/classes/gordon-ramsay-teaches-cooking', run: async (p, S) => {
+    await hidePromo(p);
+    await S.view('default');
+    await S.full();
+    await step('lesson-plan', async () => {
+      const b = p.getByRole('button', { name: /View lesson plan/i }).first();
+      if (await b.count()) { await b.click(); await wait(p, 800); await S.view('lesson-plan'); }
+    });
+    await step('sample', async () => {
+      const b = p.getByRole('button', { name: 'Sample', exact: true }).first();
+      if (await b.count()) { await b.click(); await wait(p, 1200); await S.view('sample'); await p.keyboard.press('Escape'); }
+    });
+  } },
+  session: { path: '/sessions/classes/design-stunning-floral-arrangements', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  gift: { path: '/gift', run: async (p, S) => {
+    await hidePromo(p);
+    await S.view('default');
+    await step('chip', async () => {
+      const b = p.getByRole('button', { name: 'Foodies', exact: true }).first();
+      if (await b.count()) { await b.click(); await wait(p, 700); await S.view('chip'); }
+    });
+  } },
+  promotion: { path: '/promotion', run: async (p, S) => { await hidePromo(p); await S.view('default'); await S.full(); } },
+  checkout: { path: '/checkout', run: async (p, S) => { await hidePromo(p); await S.view('default'); await S.full(); } },
+  quiz: { path: '/find-my-classes', run: async (p, S) => { await S.view('default'); } },
+  certificates: { path: '/certificates', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  certificate: { path: '/certificates/ai-fundamentals-think-create-and-work-smarter', run: async (p, S) => { await S.view('default'); } },
+  executive: { path: '/executive', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  business: { path: '/for-business', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  articles: { path: '/articles', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  article: { path: '/articles/ron-finley-how-to-grow-potatoes-in-a-sack-like-a-gangsta', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  help: { path: '/help-center', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  helparticle: { path: '/help-center/masterclass/answers/requesting-a-refund--id--ffUda_F-TPqkca5o9hJc5g', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  newsroom: { path: '/newsroom', run: async (p, S) => { await S.view('default'); } },
+  terms: { path: '/terms', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  sitemap: { path: '/sitemap', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  notfound: { path: '/this-page-is-not-a-real-masterclass-route', run: async (p, S) => { await S.view('default'); } },
 };
 
 const mobile = {
-  home: { path: '/', wait: 5000, run: async (p, S) => {
+  home: { path: '/', run: async (p, S) => {
+    await hidePromo(p);
     await S.view('default');
-    await step('menu', async () => {
-      const m = p.locator('header button').filter({ hasText: /^Menu$/ }).first();
-      const alt = p.locator('header button[aria-label*="menu" i], header button[aria-label*="Menu" i]').first();
-      const btn = (await m.count()) ? m : alt;
-      if (await btn.count()) {
-        await btn.click({ timeout: 5000 });
-        await wait(p, 900);
-        await S.view('menu');
-      }
+    await S.full();
+    await step('browse', async () => {
+      await p.getByRole('button', { name: 'Browse', exact: true }).click();
+      await wait(p, 700);
+      await S.view('browse');
     });
-    await S.full();
   } },
-  class: { path: '/classes/revolutionize-your-workflows-with-ai', wait: 5000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  checkout: { path: '/checkout', wait: 5000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
+  categories: { path: '/categories', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  class: { path: '/classes/gordon-ramsay-teaches-cooking', run: async (p, S) => { await hidePromo(p); await S.view('default'); await S.full(); } },
+  gift: { path: '/gift', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  checkout: { path: '/checkout', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
+  certificates: { path: '/certificates', run: async (p, S) => { await S.view('default'); } },
+  business: { path: '/for-business', run: async (p, S) => { await S.view('default'); } },
+  help: { path: '/help-center', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
 };
 
-const browser = await chromium.launch({ headless: true });
+const b = await chromium.launch({ headless: true });
 let total = 0;
 const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
 for (const { k, mob } of runs) {
@@ -148,30 +172,20 @@ for (const { k, mob } of runs) {
   if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
   const spec = (mob ? mobile : desktop)[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
-  const ctx = await browser.newContext({
+  const ctx = await b.newContext({
     viewport: { width: vw, height: vh }, deviceScaleFactor: dpr,
     userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US',
   });
-  // Automation is not hidden (no webdriver mask): a bot check is recorded as a boundary, not bypassed.
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-dark`, vw, vh, dpr);
   try {
-    await p.goto(BASE + spec.path, { waitUntil: 'domcontentloaded', timeout: 90000 });
-    await wait(p, spec.wait || 4000);
-    await hideConsent(p);
-    const title = await p.title();
-    const url = p.url();
-    log('  landed', url, title);
-    if (/just a moment|attention required|verify you are human/i.test(title)) {
-      log('  BLOCKED challenge', spec.path);
-      await ctx.close();
-      continue;
-    }
+    await open(p, BASE + spec.path, { wait: spec.wait || 2800 });
     await spec.run(p, S);
-  } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
+  } catch (e) { log('  PAGE FAILED', name, String(e.message || e).split('\n')[0]); }
   total += S.count;
   await ctx.close();
 }
 log('done', total, 'screenshots ->', RAW);
-await browser.close();
+await b.close();

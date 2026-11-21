@@ -1,18 +1,8 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
-
-Every colour, radius, shadow and type style on the page is a CSS custom property generated from
-tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `app` set on `.app` (the SPA's own ramp). Aliases like {dodger.blue.default} become var(--dodger-blue-default).
-
-Placeholders in the template:
-  /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
-  /*TOKENS*/null                  a compact copy of the token tree for the JS tables
-  <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
-
-Deterministic: same inputs, byte-identical output. Adapted from the getfernand package's builder.
-"""
-import json, pathlib, re
+"""Render style-guide.html from tokens.json. Light is the painted theme."""
+import json
+import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
@@ -33,90 +23,106 @@ def cssname(path):
 
 
 def alias(v):
-    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
+    return re.sub(r"\{([^{}]+)\}", lambda m: "var(%s)" % cssname(m.group(1)), str(v))
 
 
-def css_val(name, t):
+def css_val(t):
     v, ty = t["$value"], t["$type"]
-    if ty == "cubicBezier":
-        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
     if ty == "shadow":
-        if isinstance(v, str):
-            return alias(v)
-        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
+        return ", ".join(
+            "%s %s %s %s %s" % (s["offsetX"], s["offsetY"], s["blur"], s["spread"], alias(s["color"]))
+            for s in v
+        )
     if ty == "typography":
-        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
-    if ty == "gradient":
-        angle = t["$extensions"].get("angle", "180deg")
-        return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
+        return "%s %s/%s %s" % (alias(v["fontWeight"]), alias(v["fontSize"]), alias(v["lineHeight"]), alias(v["fontFamily"]))
     return alias(v)
 
 
-# A light-only product has no dark set; every set that is missing renders as empty.
-SETS = [s for s in ("core", "light", "app") if s in T]
+def block(theme):
+    lines = []
+    for name, tok in flat(T[theme]):
+        lines.append("  %s: %s;" % (cssname(name), css_val(tok)))
+    return "\n".join(lines)
 
 
-def block(setname):
-    """A set's custom properties; a set the product lacks renders as nothing."""
-    if setname not in T:
-        return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
-
-
-# The sets that share :root (core + light) must not land on the same custom
-# property; the app set deliberately re-declares its role paths under its own
-# scope — that is the theme-override mechanism.
-_core = {cssname(n) for n, _ in flat(T["core"])}
-_clash = _core & {cssname(n) for n, _ in flat(T.get("light", {}))}
-if _clash:
-    raise SystemExit(f"core and light share custom properties: {sorted(_clash)[:5]}")
-
-
-def slim(node):
-    if isinstance(node, dict) and "$value" in node:
-        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
-        for k in ("compact", "darkVariationAxis"):
-            if k in node["$extensions"]:
-                out[k] = node["$extensions"][k]
-        if node.get("$description"):
-            out["d"] = node["$description"]
-        return out
-    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
-
-
-# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
-# from ending the script early. JSON.parse and a JS literal read it back unchanged.
-data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "app")},
-                  ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-
-_uid = [0]
-ICON_SRC = {}
-
-
-def clean_svg(svg, size):
-    svg = re.sub(r"<\?xml[^>]*>\s*", "", svg).strip()
-    svg = re.sub(r"\s+", " ", svg).replace("> <", "><")
-    for i in sorted(set(re.findall(r'id="([^"]+)"', svg))):
-        _uid[0] += 1
-        svg = svg.replace(f'id="{i}"', f'id="i{_uid[0]}"').replace(f"url(#{i})", f"url(#i{_uid[0]})")
-    svg = re.sub(r"<svg\b", '<svg aria-hidden="true" focusable="false" class="ic"', svg, count=1)
-    if size:
-        svg = re.sub(r'\swidth="[^"]*"', "", svg, count=1)
-        svg = re.sub(r'\sheight="[^"]*"', "", svg, count=1)
-        svg = svg.replace("<svg ", f'<svg width="{size}" height="{size}" ', 1)
-    return svg
-
-
-def icon(m):
-    name, size = m.group(1), m.group(2)
-    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
-    return clean_svg(src, size)
-
-
-tpl = (HERE / "tools" / "style-guide.template.html").read_text()
-html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*HELP*/", block("help")).replace("/*APP*/", block("app")).replace("/*DARK*/", block("dark"))
-        .replace("/*TOKENS*/null", data))
-html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
+html = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowMapp style guide</title>
+<style>
+:root {{
+{core}
+{light}
+  --sg-sans: Inter, sans-serif;
+}}
+[data-mode="dark"] {{
+{dark}
+}}
+* {{ box-sizing: border-box; }}
+body {{ margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text); background: var(--page); }}
+main {{ max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }}
+h1 {{ font: 700 40px/1.1 var(--sg-sans); letter-spacing: -0.03em; margin: 0 0 8px; }}
+.note {{ color: var(--muted); max-width: 68ch; }}
+.row {{ display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 28px; }}
+.sw {{ width: 148px; }}
+.dot {{ height: 48px; border-radius: 12px; border: 1px solid rgba(0,0,0,.08); }}
+.nm {{ font: 600 12px/1.3 var(--sg-sans); margin-top: 6px; }}
+.vl {{ font: 400 11px/1.3 ui-monospace, Menlo, monospace; color: var(--muted); }}
+.nav {{ display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 16px; background: white; border-radius: 16px; }}
+.sp {{ flex: 1; }}
+.btn {{ display: inline-flex; align-items: center; height: 38.5px; padding: 0 16px; border-radius: 12px; font-weight: 600; text-decoration: none; }}
+.btn.ghost {{ border: 1px solid rgba(0,0,0,.1); color: black; }}
+.btn.black {{ background: black; color: white; }}
+.hero {{ margin-top: 28px; text-align: center; }}
+.pill {{ display: inline-flex; align-items: center; justify-content: center; min-width: 280px; height: 72px; padding: 0 28px; border-radius: 999px; background: #0080ff; color: white; font-weight: 600; font-size: 22px; box-shadow: 0 8px 10px rgba(0,128,255,.34); }}
+table {{ border-collapse: collapse; width: 100%; font-size: 14px; }}
+td, th {{ text-align: left; padding: 6px 8px; border-bottom: 1px solid #e6e6e6; }}
+</style>
+</head>
+<body>
+<main>
+<h1>FlowMapp</h1>
+<p class="note">Public marketing tokens read from flowmapp.com on 2026-11-21. The painted site is light. The dark slots below are declared on :root and were not bound on a captured public page. The toggle only swaps those declared slots.</p>
+<p><button type="button" id="theme">Show declared dark slots</button></p>
+<h2>Painted roles</h2>
+<div class="row" id="roles"></div>
+<h2>Nav</h2>
+<div class="nav"><b>Flowmapp</b><span>Features</span><span>Use cases</span><span>Pricing</span><span class="sp"></span><a class="btn ghost">Log in</a><a class="btn black">Try for free</a></div>
+<div class="hero"><a class="pill">Start planning</a></div>
+<h2>Token paths</h2>
+<table id="tokens"></table>
+</main>
+<script>
+const tokens = {tokens};
+const roles = ["page","surface","text","muted","accent","border","destructive","focus"];
+const box = document.getElementById("roles");
+for (const role of roles) {{
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = '<div class="dot" style="background:var(--'+role+')"></div><div class="nm">'+role+'</div>';
+  box.appendChild(el);
+}}
+const table = document.getElementById("tokens");
+function rows(node, prefix) {{
+  for (const [k,v] of Object.entries(node)) {{
+    if (k.startsWith("$")) continue;
+    if (v && v.$value !== undefined) {{
+      const tr = document.createElement("tr");
+      tr.innerHTML = "<td><code>"+prefix+k+"</code></td><td>"+JSON.stringify(v.$value)+"</td>";
+      table.appendChild(tr);
+    }} else if (v && typeof v === "object") rows(v, prefix+k+".");
+  }}
+}}
+rows(tokens.light, "light.");
+document.getElementById("theme").onclick = () => {{
+  const on = document.documentElement.getAttribute("data-mode") === "dark";
+  document.documentElement.setAttribute("data-mode", on ? "light" : "dark");
+}};
+</script>
+</body>
+</html>
+""".format(core=block("core"), light=block("light"), dark=block("dark"), tokens=json.dumps({"light": T["light"], "dark": T["dark"]}))
 (HERE / "style-guide.html").write_text(html)
-print("style-guide.html:", len(html.encode()), "bytes;",
-      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")
+print("wrote style-guide.html", len(html))

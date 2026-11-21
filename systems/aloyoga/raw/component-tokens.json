@@ -207,7 +207,7 @@
     "description": "The keyboard-focus ring on nav items."
    },
    "button-hover": {
-    "value": "#000000",
+    "value": "#ffffff",
     "type": "color",
     "source": "computed backgroundColor of hero-button hover (raw/components-computed.json)",
     "description": "The hero button's hover fill."
@@ -219,7 +219,7 @@
     "description": "The Add to bag fill."
    },
    "action-bg-hover": {
-    "value": "#000000",
+    "value": "#232323",
     "type": "color",
     "source": "computed backgroundColor of add-to-bag hover (raw/components-computed.json)",
     "description": "Add to bag on hover."
@@ -305,9 +305,9 @@
    },
    "fieldHeight": {
     "type": "dimension",
-    "value": "35px",
-    "source": "computed height of email-input default (raw/components-computed.json)",
-    "description": "The login field height."
+    "value": "48.3906px",
+    "source": "computed height of newsletter-input default (raw/components-computed.json)",
+    "description": "The footer newsletter field height. The login form was not measured."
    },
    "radius": {
     "type": "dimension",

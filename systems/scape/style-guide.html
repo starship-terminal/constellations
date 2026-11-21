@@ -1,92 +1,164 @@
 <!doctype html>
-<html lang="en" data-mode="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Scape style guide</title>
 <style>
-  :root {
-    --page: #fef5f0;
-    --surface: #fefaf7;
-    --ink: #000000;
-    --muted: rgba(0, 0, 0, 0.5);
-    --accent: #ec6ce7;
-    --banner: #ec6ce7;
-    --footer: #2e2e30;
-    --inverse: #fef5f0;
-    --border: rgba(0, 0, 0, 0.2);
-    --focus: #c1b1a0;
-    --pill: 100px;
-    --radius: 8px;
-    --control: 4px;
-    --display: "GrotzecCondensed", Inter, Impact, sans-serif;
-    --body: Visuelt, Arial, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; }
-  header.bar { background: var(--accent); color: rgb(33, 37, 41); padding: 10px 32px; font-size: 16px; }
-  main { max-width: 1100px; margin: 0 auto; padding: 32px; }
-  h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 0.84; letter-spacing: 0; text-transform: uppercase; margin: 0 0 16px; }
-  h1 { font-size: 64px; }
-  h2 { font-size: 32px; margin-top: 48px; }
-  p { max-width: 68ch; }
-  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .swatch { width: 140px; }
-  .chip { height: 72px; border-radius: var(--control); border: 1px solid var(--border); }
-  .name { font-size: 12px; margin-top: 6px; }
-  button, .btn { font-family: var(--body); font-size: 14px; line-height: 1; text-transform: uppercase; border-radius: var(--pill); padding: 10px 14px; height: 40px; cursor: pointer; }
-  .primary { background: transparent; color: #000; border: 1px solid #000; }
-  .secondary { background: #000; color: #fef5f0; border: 1px solid #000; }
-  .light { background: #fef5f0; color: #000; border: 1px solid rgba(0,0,0,0.2); }
-  .field { display: block; width: 280px; margin-top: 8px; padding: 12px 20px; border: 1px solid rgba(0,0,0,0.2); border-radius: var(--control); background: #fff; color: #000; font: 16px/1.2 var(--body); }
-  .field:focus-visible { outline: 1px solid var(--focus); outline-offset: -2px; }
-  .card { width: 240px; background: var(--surface); box-shadow: 0 0 16px rgba(0,0,0,0.12); }
-  .card .photo { height: 140px; background: #d0d0d9; }
-  .card .body { padding: 16px; }
-  .badge { display: inline-block; background: rgba(0,0,0,0.08); border-radius: 4px; padding: 4px; font-size: 10px; font-weight: 500; }
-  .plus { background: #feff55; }
-  footer.note { margin-top: 48px; background: var(--footer); color: var(--inverse); padding: 32px; }
-  a { color: #000; }
+:root {
+  --color-black: #000000;
+  --color-white: #fef5f0;
+  --color-paper: #ffffff;
+  --color-ink: #212529;
+  --color-darkGrey: #2e2e30;
+  --color-lightGrey: #d0d0d9;
+  --color-darkWhite: #ede8de;
+  --color-card: #fefaf7;
+  --color-pink: #ec6ce7;
+  --color-red: #ea5b53;
+  --color-darkRed: #44011e;
+  --color-green: #576a46;
+  --color-darkGreen: #004247;
+  --color-brightGreen: #70f085;
+  --color-turquoise: #4badaf;
+  --color-purple: #8997f0;
+  --color-darkPurple: #370043;
+  --color-lightPurple: #e5dcfa;
+  --color-lightPink: #f1b3f4;
+  --color-brightBlue: #0f5bec;
+  --color-lightBlue: #c1e5f9;
+  --color-brightOrange: #ff6110;
+  --color-brightYellow: #feff55;
+  --color-lightYellow: #f2ed8f;
+  --color-tintBlack16: rgba(0, 0, 0, 0.16);
+  --color-tintBlack20: rgba(0, 0, 0, 0.2);
+  --color-tintBlack50: rgba(0, 0, 0, 0.5);
+  --color-tintBlack80: rgba(0, 0, 0, 0.8);
+  --color-tintWhite50: rgba(254, 245, 241, 0.5);
+  --color-tintWhite80: rgba(254, 245, 241, 0.8);
+  --color-darkRedTint50: rgba(68, 1, 30, 0.5);
+  --color-darkGreenTint50: rgba(0, 66, 71, 0.5);
+  --color-darkPurpleTint50: rgba(55, 0, 67, 0.5);
+  --color-lightBlueTint50: rgba(193, 229, 249, 0.5);
+  --color-lightGreenTint50: rgba(198, 242, 195, 0.5);
+  --color-lightPinkTint50: rgba(241, 179, 244, 0.5);
+  --font-family-sans: Visuelt, Arial, sans-serif;
+  --font-family-display: GrotzecCondensed, Inter, sans-serif;
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-base: 16px;
+  --space-m: 24px;
+  --space-l: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --radius-none: 0px;
+  --radius-tab: 4px;
+  --radius-field: 4px;
+  --radius-pill: 100px;
+  --size-button: 40px;
+  --size-icon: 24px;
+  --size-header: 72px;
+  --size-banner: 41px;
+  --size-focusOffset: 2px;
+  --border-width: 1px;
+  --shadow-card: 0px 0px 16px rgba(0,0,0,.12);
+  --shadow-cardHover: 0px 0px 8px rgba(0,0,0,.32);
+  --motion-card: 300ms;
+  --motion-easing: cubic-bezier(c, u, b, i, c, -, b, e, z, i, e, r, (, 0, ., 2, 2, ,,  , 1, ,,  , 0, ., 3, 6, ,,  , 1, ));
+  --layout-page: 1440px;
+  --layout-mobile: 580px;
+  --layout-tablet: 768px;
+  --layout-desktop: 1024px;
+  --layout-content: 900px;
+  --background-page: var(--color-white);
+  --background-surface: var(--color-card);
+  --background-raised: var(--color-paper);
+  --background-overlay: var(--color-tintBlack16);
+  --background-scrim: var(--color-tintBlack50);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-darkGrey);
+  --text-muted: var(--color-darkGrey);
+  --text-onAccent: var(--color-white);
+  --text-link: var(--color-pink);
+  --text-onDark: var(--color-white);
+  --border-default: var(--color-tintBlack20);
+  --border-strong: var(--color-black);
+  --border-focus: var(--color-black);
+  --accent-default: var(--color-pink);
+  --status-success: var(--color-brightGreen);
+  --status-warning: var(--color-brightOrange);
+  --status-danger: var(--color-red);
+  --status-info: var(--color-brightBlue);
+  --action-primary-background: var(--color-white);
+  --action-primary-text: var(--color-black);
+  --action-primary-radius: 100px;
+  --action-secondary-background: var(--color-black);
+  --action-secondary-text: var(--color-white);
+  --sg-sans: Arial, sans-serif;
+  --sg-display: "Arial Narrow", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font: 700 48px/1 var(--sg-display); text-transform: uppercase; margin: 0 0 8px; }
+h2 { font: 700 28px/1 var(--sg-display); text-transform: uppercase; margin: 40px 0 12px; }
+p { max-width: 68ch; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border-radius: 4px; border: 1px solid var(--border-default); }
+.sw span { display: block; font-size: 12px; line-height: 16px; margin-top: 4px; }
+.btn { display: inline-flex; align-items: center; height: var(--size-button); padding: 10px 14px; border-radius: var(--radius-pill); border: 1px solid transparent; font-size: 14px; line-height: 14px; text-transform: uppercase; text-decoration: none; }
+.btn-fill { background: var(--action-primary-background); color: var(--action-primary-text); }
+.btn-line { background: transparent; color: var(--action-secondary-text); border-color: var(--border-strong); background: var(--action-secondary-background); }
+.chip { display: inline-flex; height: 26px; align-items: center; padding: 6px 12px 4px; border-radius: var(--radius-tab); border: 1px solid var(--border-default); font-size: 14px; }
+.card { background: var(--background-surface); box-shadow: var(--shadow-card); padding: 16px; max-width: 280px; }
+.field { display: block; width: 280px; padding: 12px 20px; border-radius: var(--radius-field); border: 1px solid var(--border-default); background: var(--background-page); color: var(--text-primary); font: inherit; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 </style>
 </head>
 <body>
-<header class="bar">Rates for 27/28 now live</header>
-<main>
-  <h1>Scape</h1>
-  <p>Public signed-out marketing site, measured on www.scape.com on 19 November 2026. One light theme. Display is Grotzec Condensed. Body is Visuelt. Buttons are pills.</p>
-  <h2>Colour</h2>
-  <div class="swatches">
-    <div class="swatch"><div class="chip" style="background:#fef5f0"></div><div class="name">page #fef5f0</div></div>
-    <div class="swatch"><div class="chip" style="background:#fefaf7"></div><div class="name">surface #fefaf7</div></div>
-    <div class="swatch"><div class="chip" style="background:#000"></div><div class="name">text #000</div></div>
-    <div class="swatch"><div class="chip" style="background:#ec6ce7"></div><div class="name">accent #ec6ce7</div></div>
-    <div class="swatch"><div class="chip" style="background:#2e2e30"></div><div class="name">footer #2e2e30</div></div>
-    <div class="swatch"><div class="chip" style="background:#ff6110"></div><div class="name">orange #ff6110</div></div>
-    <div class="swatch"><div class="chip" style="background:#004247"></div><div class="name">dark green #004247</div></div>
-    <div class="swatch"><div class="chip" style="background:#44011e"></div><div class="name">dark red #44011e</div></div>
-  </div>
-  <h2>Type</h2>
-  <p style="font-family:var(--display);font-size:48px;line-height:0.84;font-weight:700;text-transform:uppercase">Student living</p>
-  <p>Body copy sits at 16px Visuelt with a 1.5 line height. Nav links are 16px. Buttons are 14px and uppercase.</p>
-  <h2>Controls</h2>
-  <div class="row">
-    <button class="primary">Compare now</button>
-    <button class="secondary">Find a room</button>
-    <button class="light">Find a room</button>
-  </div>
-  <label>Email address
-    <input class="field" type="text" placeholder="Measured, not submitted">
-  </label>
-  <h2>Card</h2>
-  <div class="card">
-    <div class="photo"></div>
-    <div class="body">
-      <div class="name">Shoreditch | London</div>
-      <strong>Studios</strong> <span class="badge">STANDARD</span> <span class="badge plus">PLUS</span>
-      <div>From £428 per week</div>
-    </div>
-  </div>
-</main>
-<footer class="note">Footer on --scape-dark-grey, type in --scape-white.</footer>
+<div class="wrap">
+<h1>Scape</h1>
+<p>Rendered from tokens.json. Visuelt and Grotzec Condensed are proprietary, so this page uses Arial. One light theme.</p>
+<h2>Colour</h2>
+<div class="swatches">
+<div class="sw"><i style="background:#000000"></i><span>color-black<br>#000000</span></div>
+<div class="sw"><i style="background:#fef5f0"></i><span>color-white<br>#fef5f0</span></div>
+<div class="sw"><i style="background:#ffffff"></i><span>color-paper<br>#ffffff</span></div>
+<div class="sw"><i style="background:#212529"></i><span>color-ink<br>#212529</span></div>
+<div class="sw"><i style="background:#2e2e30"></i><span>color-darkGrey<br>#2e2e30</span></div>
+<div class="sw"><i style="background:#d0d0d9"></i><span>color-lightGrey<br>#d0d0d9</span></div>
+<div class="sw"><i style="background:#ede8de"></i><span>color-darkWhite<br>#ede8de</span></div>
+<div class="sw"><i style="background:#fefaf7"></i><span>color-card<br>#fefaf7</span></div>
+<div class="sw"><i style="background:#ec6ce7"></i><span>color-pink<br>#ec6ce7</span></div>
+<div class="sw"><i style="background:#ea5b53"></i><span>color-red<br>#ea5b53</span></div>
+<div class="sw"><i style="background:#44011e"></i><span>color-darkRed<br>#44011e</span></div>
+<div class="sw"><i style="background:#576a46"></i><span>color-green<br>#576a46</span></div>
+<div class="sw"><i style="background:#004247"></i><span>color-darkGreen<br>#004247</span></div>
+<div class="sw"><i style="background:#70f085"></i><span>color-brightGreen<br>#70f085</span></div>
+<div class="sw"><i style="background:#4badaf"></i><span>color-turquoise<br>#4badaf</span></div>
+<div class="sw"><i style="background:#8997f0"></i><span>color-purple<br>#8997f0</span></div>
+<div class="sw"><i style="background:#370043"></i><span>color-darkPurple<br>#370043</span></div>
+<div class="sw"><i style="background:#e5dcfa"></i><span>color-lightPurple<br>#e5dcfa</span></div>
+<div class="sw"><i style="background:#f1b3f4"></i><span>color-lightPink<br>#f1b3f4</span></div>
+<div class="sw"><i style="background:#0f5bec"></i><span>color-brightBlue<br>#0f5bec</span></div>
+<div class="sw"><i style="background:#c1e5f9"></i><span>color-lightBlue<br>#c1e5f9</span></div>
+<div class="sw"><i style="background:#ff6110"></i><span>color-brightOrange<br>#ff6110</span></div>
+<div class="sw"><i style="background:#feff55"></i><span>color-brightYellow<br>#feff55</span></div>
+<div class="sw"><i style="background:#f2ed8f"></i><span>color-lightYellow<br>#f2ed8f</span></div>
+</div>
+<h2>Type</h2>
+<p style="font: 700 64px/0.84 var(--sg-display); text-transform: uppercase; margin: 0;">Student living</p>
+<p>Body is 16px / 24px. Labels are 14px, uppercase on buttons.</p>
+<h2>Controls</h2>
+<div class="row">
+<a class="btn btn-fill" href="#">Find a room</a>
+<a class="btn btn-line" href="#">Book</a>
+<span class="chip">Location</span>
+</div>
+<h2>Field and card</h2>
+<input class="field" placeholder="Search" aria-label="Example field">
+<div class="card" style="margin-top:16px"><strong>Wembley</strong><p>Room card surface.</p></div>
+</div>
 </body>
 </html>

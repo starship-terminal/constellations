@@ -1,20 +1,7 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
-
-Every colour, radius, shadow and type style on the page is a CSS custom property generated from
-tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-mode="dark"]`/`.dark`, matching how calendly.com scopes
-its .dark islands: the guide's theme toggle sets data-mode on <html>. Aliases like
-{text.primary} become var(--text-primary).
-
-Placeholders in the template:
-  /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
-  /*TOKENS*/null                  a compact copy of the token tree for the JS tables
-  <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
-
-Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
-"""
-import json, pathlib, re
+"""Write style-guide.html from tokens.json. Self-contained. No external fonts."""
+import json
+import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
@@ -24,101 +11,120 @@ def flat(node, prefix=""):
     for k, v in node.items():
         if k.startswith("$"):
             continue
+        path = f"{prefix}.{k}" if prefix else k
         if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
+            yield path, v
         elif isinstance(v, dict):
-            yield from flat(v, prefix + k + "-")
+            yield from flat(v, path)
 
 
-def cssname(path):
-    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
+def resolve(value, table, seen=None):
+    seen = seen or set()
+    if not isinstance(value, str) or not value.startswith("{"):
+        return value
+    key = value.strip("{}")
+    if key in seen:
+        return value
+    tok = table.get(key)
+    if not tok:
+        return value
+    return resolve(tok["$value"], table, seen | {key})
 
 
-def alias(v):
-    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
+core = dict(flat(T["core"]))
+dark = dict(flat(T["dark"]))
+light = dict(flat(T["light"]))
+joined = {**core, **dark}
 
-
-def css_val(name, t):
-    v, ty = t["$value"], t["$type"]
-    if ty == "cubicBezier":
-        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
-    if ty == "shadow":
-        if isinstance(v, str):
-            return alias(v)
-        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
-    if ty == "typography":
-        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
-    if ty == "gradient":
-        angle = t["$extensions"].get("angle", "180deg")
-        return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
-    return alias(v)
-
-
-# A light-only product has no dark set; every set that is missing renders as empty.
-SETS = [s for s in ("core", "light", "dark") if s in T]
-THEMES = [s for s in SETS if s != "core"]
-
-
-def block(setname):
-    """A set's custom properties; a set the product lacks renders as nothing."""
-    if setname not in T:
+def R(path):
+    tok = joined.get(path) or core.get(path) or dark.get(path)
+    if not tok:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
+    return resolve(tok["$value"], {**core, **dark})
 
+page = R("background.page") or "#1c1624"
+text = R("text.primary") or "#f1f0ec"
+accent = R("accent.default") or "#00f575"
+hover = R("accent.hover") or "#00c05b"
+on_accent = R("text.on-accent") or "#1c1624"
+docs_page = "#ffffff"
+docs_ink = "#32343a"
 
-# a core name and a themed name must not land on the same custom property
-_core = {cssname(n) for n, _ in flat(T["core"])}
-for _set in THEMES:
-    _clash = _core & {cssname(n) for n, _ in flat(T[_set])}
-    if _clash:
-        raise SystemExit(f"core and {_set} share custom properties: {sorted(_clash)[:5]}")
+swatches = [
+    ("Warm black", R("palette.warm-black")),
+    ("Warm white", R("palette.warm-white")),
+    ("Fluorescent green", R("palette.fluorescent-green")),
+    ("Green hover", R("palette.green-hover")),
+    ("Purple", R("palette.purple")),
+    ("Light purple", R("palette.light-purple")),
+    ("Carmine", R("palette.carmine")),
+    ("Lilac", R("palette.lilac")),
+    ("Factory yellow", R("palette.factory-yellow")),
+    ("Docs ink", R("palette.docs-ink")),
+    ("Focus blue", R("palette.focus-blue")),
+]
 
+swatch_html = "\n".join(
+    f'<div class="sw"><i style="background:{v}"></i><div><b>{n}</b><span>{v}</span></div></div>'
+    for n, v in swatches if v
+)
 
-def slim(node):
-    if isinstance(node, dict) and "$value" in node:
-        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
-        for k in ("compact", "darkVariationAxis"):
-            if k in node["$extensions"]:
-                out[k] = node["$extensions"][k]
-        if node.get("$description"):
-            out["d"] = node["$description"]
-        return out
-    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
-
-
-# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
-# from ending the script early. JSON.parse and a JS literal read it back unchanged.
-data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
-                  ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-
-_uid = [0]
-ICON_SRC = {}
-
-
-def clean_svg(svg, size):
-    svg = re.sub(r"<\?xml[^>]*>\s*", "", svg).strip()
-    svg = re.sub(r"\s+", " ", svg).replace("> <", "><")
-    for i in sorted(set(re.findall(r'id="([^"]+)"', svg))):
-        _uid[0] += 1
-        svg = svg.replace(f'id="{i}"', f'id="i{_uid[0]}"').replace(f"url(#{i})", f"url(#i{_uid[0]})")
-    svg = re.sub(r"<svg\b", '<svg aria-hidden="true" focusable="false" class="ic"', svg, count=1)
-    if size:
-        svg = re.sub(r'\swidth="[^"]*"', "", svg, count=1)
-        svg = re.sub(r'\sheight="[^"]*"', "", svg, count=1)
-        svg = svg.replace("<svg ", f'<svg width="{size}" height="{size}" ', 1)
-    return svg
-
-
-def icon(m):
-    name, size = m.group(1), m.group(2)
-    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
-    return clean_svg(src, size)
-
-
-tpl = (HERE / "tools" / "style-guide.template.html").read_text()
-html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
-        .replace("/*TOKENS*/null", data))
-html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
+html = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doppler style guide</title>
+<style>
+  :root {{
+    --page: {page};
+    --text: {text};
+    --accent: {accent};
+    --hover: {hover};
+    --on-accent: {on_accent};
+    --docs-page: {docs_page};
+    --docs-ink: {docs_ink};
+  }}
+  * {{ box-sizing: border-box; }}
+  body {{ margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px system-ui, sans-serif; }}
+  main {{ max-width: 960px; margin: 0 auto; padding: 48px 24px 96px; }}
+  h1 {{ font-weight: 450; font-size: 48px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 8px; }}
+  h2 {{ font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400; opacity: 0.7; margin: 48px 0 12px; }}
+  p {{ max-width: 62ch; }}
+  .row {{ display: flex; flex-wrap: wrap; gap: 12px; }}
+  .sw {{ display: flex; gap: 10px; align-items: center; min-width: 200px; }}
+  .sw i {{ width: 36px; height: 36px; border-radius: 8px; display: block; border: 1px solid rgba(241,240,236,0.2); }}
+  .sw b {{ display: block; font-weight: 400; font-size: 14px; }}
+  .sw span {{ font-size: 12px; opacity: 0.7; }}
+  .btn {{ display: inline-flex; align-items: center; height: 32px; padding: 8px 12px; border-radius: 12px; background: var(--accent); color: var(--on-accent); text-decoration: none; }}
+  .btn.secondary {{ background: transparent; color: var(--text); border: 1px solid var(--text); height: auto; padding: 10px 16px; }}
+  .docs {{ margin-top: 16px; background: var(--docs-page); color: var(--docs-ink); border-radius: 12px; padding: 24px; }}
+  .docs h3 {{ margin: 0 0 8px; font-size: 31px; line-height: 1.28; }}
+  code {{ font-size: 13px; }}
+</style>
+</head>
+<body>
+<main>
+  <h1>Doppler</h1>
+  <p>Public marketing site, one dark theme. Docs are a separate light chrome. Values come from computed styles on 2026-11-21. Take numbers from tokens.json.</p>
+  <h2>Palette</h2>
+  <div class="row">
+    {swatch_html}
+  </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn" href="#primary">Start for Free</a>
+    <a class="btn secondary" href="#secondary">Get Demo</a>
+  </div>
+  <p>Primary fill {accent}, hover {hover}, label {on_accent}, radius 12px. Secondary is a 1px warm-white outline.</p>
+  <h2>Docs chrome</h2>
+  <div class="docs">
+    <h3>Welcome</h3>
+    <p>docs.doppler.com paints a white page and ink type. No theme toggle was found.</p>
+  </div>
+</main>
+</body>
+</html>
+"""
 (HERE / "style-guide.html").write_text(html)
-print("style-guide.html:", len(html.encode()), "bytes;",
-      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")
+print("wrote style-guide.html")

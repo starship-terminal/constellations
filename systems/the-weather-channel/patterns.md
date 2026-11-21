@@ -1,25 +1,37 @@
 # Patterns
 
-Public signed-out pages only. Screenshots are in [screenshots/](screenshots/).
+Public pages only. The control map is [site-tree.md](site-tree.md).
 
 ## App shell
 
-Desktop ([today-light-default.png](screenshots/today-light-default.png)): an 80px left rail with the logo, Forecasts, Radar, Allergy Tracker, Air Quality Index, More, and Sign in. The top bar holds a dark location chip and the Today / Hourly / 10-Day / Monthly tabs. The main column is the condition hero, then Today's outlook and the hourly strip. A right column holds Air Quality Index and Health & Activities.
+The editorial pages (`/news`, `/science`, `/safety`, `/news/health-and-wellness`) use a white header, a left sidebar of forecast links, and a story grid. The selected section is a blue pill. Phone width replaces the sidebar with a Menu button and a bottom bar (Forecast, News, My Plans, Radar).
 
-Phone ([today-light-phone.png](screenshots/today-light-phone.png), 390 CSS pixels): the rail collapses into a menu button. The location chip and Sign in sit in the header. Tabs wrap onto a second row. The hero stacks under the title.
+[screenshots/news-light-default.png](screenshots/news-light-default.png) shows the desktop shell. [screenshots/mobile-news-light-default.png](screenshots/mobile-news-light-default.png) shows the phone shell. The location control in both is painted over so a place name is not stored.
+
+## Maps shell
+
+`/maps` lands on `/maps/currentusweather`. A left rail lists Home, Today, Hourly, 10 Day, Monthly, Radar, Video, and Explore. Section menus sit below it. The main column is a map with tabs. Sign in is a filled black button. Search is an empty field.
+
+[screenshots/maps-light-default.png](screenshots/maps-light-default.png)
+
+## Settings
+
+Settings opens a units dialog (Imperial, Metric, Hybrid) and a language row. It does not open an account form.
+
+[screenshots/news-light-settings.png](screenshots/news-light-settings.png)
 
 ## Search
 
-Opening the location chip shows a field with placeholder "Search for a location", a 2px `#3a61cc` border, and radius 24px ([search-light-open.png](screenshots/search-light-open.png)). No location was submitted.
+Location search opens a dialog. The maps chrome has "Search City or Zip Code" on the page. Neither was typed into. Forecast results that would show a street address were not captured.
 
-## Sign-in
+## Empty, loading, error
 
-[login-light-default.png](screenshots/login-light-default.png) is the empty public form: Continue with Google, email, password, and a disabled Sign in. Nothing was typed or submitted. The form does not ask for a phone number.
+Ad slots on the maps page render as empty gray rectangles. The sitemap is a short date index. No product error state was reached. The bot interstitial (title Challenge Validation) blocked `https://weather.com/` in headed Chrome and is recorded as a boundary in [site-tree.md](site-tree.md).
 
-## Legal
+## Login wall
 
-[privacy-light-default.png](screenshots/privacy-light-default.png) is trust.weather.com. It uses a system font stack and a 60px heading, separate from the Inter forecast page.
+Sign in goes to `https://weather.com/login`. That branch stops. The page was not screenshotted because it shows a password field.
 
-## Not captured
+## Destructive confirmation, feedback, onboarding
 
-Empty, loading, and error states of the forecast were not reached. No destructive confirmation appeared. Filtering is the unit radios in More, which were opened and not changed. Onboarding and a signed-in home were not entered.
+Not present on the public pages that were reached.

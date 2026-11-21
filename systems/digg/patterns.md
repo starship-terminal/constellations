@@ -1,41 +1,33 @@
-# Digg patterns
+# Patterns
 
-How the measured components combine into the public pages. Every value resolves in [tokens.json](tokens.json); the components are in [components.md](components.md), the crops in [components/crops/](components/crops), the full pages in [screenshots/](screenshots).
+## App shell
 
-## The sidebar rail
+Desktop: a 255px sidebar (logo, topic links, theme cycle, Log in, Sign up) and a main column that starts at x 256. The feed has a sort control and a density control, then posts, with a right rail of Top Contributors and Top Posts Today. [screenshots/home-light-default.png](screenshots/home-light-default.png). Folding the sidebar is [screenshots/home-light-sidebar-folded.png](screenshots/home-light-sidebar-folded.png).
 
-Every surface carries a fixed left rail over the `#fdfdff` page (`light.background.page`): the digg wordmark, then 231x40 full-pill nav rows (`core.component.sidebar-item`, `core.radius.pill` = `calc(infinity * 1px)`) — Home, Technology, Gaming, Entertainment, World & Business, Science, Sports, AI — at 14px semibold in `#161617` (`light.text.ink`, `{foreground.default}`). The selected row fills `#f0f0f5` (`light.background.fill`, `{sidebar.accent.default}`); the rest ride transparent. Below the scroll: the theme pill (System -> Light -> Dark, 26px control radius), a Log in row and the primary `Sign up` CTA — white text on `#1c66eb` (`light.action.primary`, `{primary.default}`) in the same 231x40 footprint.
+Phone: a header with the menu button and wordmark, a horizontal topic scroller, then the same sort and density controls. The menu opens a sheet. [screenshots/mobile-home-light-feed.png](screenshots/mobile-home-light-feed.png), [screenshots/mobile-home-light-nav-open.png](screenshots/mobile-home-light-nav-open.png).
 
-## Feed controls
+Dark uses the same structure with `#161617` page and `#1c1c1f` cards. [screenshots/home-dark-default.png](screenshots/home-dark-default.png), [screenshots/mobile-home-dark-feed.png](screenshots/mobile-home-dark-feed.png).
 
-The feed opens with a right-aligned control pair at 36px tall: the `Trending` sort dropdown (`feed-trending`, 105x36, `core.radius.control` 26px, translucent input wash `light.background.input-fill` over a `#e5e5e5` `{input}` border — the opened state is measured) and the `Compact` density toggle (`feed-compact`, 64x36, same recipe). On the category pages the pair trades places with a 30px bold category heading (`cat-title`, `core.font.size.measured.page`).
+## Feed
 
-## The story card
+One post pattern repeats: topic chip, title, summary, digg count, comment count, source avatars, source count, thumbnail. Compact is the default density. Comfy shows a larger media block. [screenshots/home-light-comfy.png](screenshots/home-light-comfy.png). Topic feeds (`/tech`, `/gaming`, `/entertainment`, `/world-business`, `/science`, `/sports`, `/ai`) use the same shell with that topic selected.
 
-The feed's unit is a 704px card (`post-card`, `core.radius.card` 18px, `core.component.story-card` 183px): a 16px semibold headline (`post-headline`, `core.font.size.measured.headline`, tracking -0.12px) over a 14px muted summary (`post-summary`, `light.text.muted` ink@70%), then the action row — the vote pill (`post-vote`, 32x24, full pill, `#1c66eb` @20% border over the page fill, the count in vt323 odometer digits), the 32x32 comment link (`post-comment`), the 24px source-avatar cluster (`post-avatars`) and the `'N Sources'` link (`post-sources`, 2px tight radius, `light.text.muted`). A 120x80 thumbnail (`post-thumb`, `core.component.thumb`) sits right. Category feeds and `/u/<source>` profiles reuse the identical card (`cat-card`, `pf-card`).
+## Story
 
-## The right rail
+A story page keeps the sidebar, adds back and topic chips, a headline, a digg control, sources, and a related column. [screenshots/story-light-default.png](screenshots/story-light-default.png), dark in [screenshots/story-dark-default.png](screenshots/story-dark-default.png), phone in [screenshots/mobile-story-light-default.png](screenshots/mobile-story-light-default.png).
 
-Two white panels ride beside the feed on `rgba(0,0,0,0.08)` hairlines (`light.border.hairline`, `{border.default}`) at 376px wide (`core.component.rail-card`): **Top Contributors** (`rail-contribs`, 376x352) — ranked users with the `#e37b4c` rank-one accent (`light.text.rank-one`, `{rank.one.default}`) — and **Top Posts Yesterday** (`rail-posts`, 376x556) — numbered story rows with mini thumbnails. In dark they repaint `#1c1c1f` (`dark.background.card`, `{card.default}`) on rgba(255,255,255,0.08) hairlines.
+## Profile
 
-## The story page
+A public profile shows a handle, a follow button, and counts. Follow opens the login wall. [screenshots/profile-light-default.png](screenshots/profile-light-default.png).
 
-A story detail page stacks: the tracked-out REPORT kicker (`st-kicker`, 16px), the 36px bold headline (`st-h1`, `core.font.size.measured.display`, 672px column), the 20px muted summary (`st-summary`, `core.font.size.measured.deck`), the 138x44 digg-it pill (`st-vote`, `core.component.digg-it`, `core.radius.vote` 999px — primary-blue @20% border, hover/focus/pressed measured) and the `'N Sources'` meta row. The right column holds the 376x384 stat card (`st-stat` — TODAY'S RANK over COMBINED VIEWS in one panel) and the sources list (`st-srclist`, 376x246) — all white cards on the hairline at 18px. Below, the TLDR label (`st-tldr`, 10px tracked-out caps) over 18px medium paragraphs (`st-para`, `core.font.size.measured.lead`, 31.5px leading) in a 605px measure.
+## Walls
 
-## The auth surface
+Login and signup are full pages, not dialogs. They offer Google, X, or email. Those identity buttons were not used. [screenshots/login-light-default.png](screenshots/login-light-default.png), [screenshots/signup-light-default.png](screenshots/signup-light-default.png), phone login in [screenshots/mobile-login-light-default.png](screenshots/mobile-login-light-default.png).
 
-`/login` and `/sign-up` paint the Clerk card: a 24px semibold heading (`lg-h1`, `core.font.size.measured.card-title`), the Google and X OAuth outline buttons (`lg-google`, `lg-x`, 353x36, full pill, `light.action.oauth-fill` page-fill on hairline), the 8px email and password fields (`lg-email`, `lg-pass`, `core.radius.field`, `#e5e5e5` `{input}` border, the capture's one real shadow — `core.shadow.field` 0 1px 2px rgba(0,0,0,0.05)), the primary `Continue` pill (`lg-continue`, `#1c66eb` on white text, 0.1s auth transition) and the 13px sign-up link (`lg-signup`, `light.text.link` = `{primary.default}`). Focused and filled field states are measured; nothing was ever submitted.
+## Static pages
 
-## Dark theme
+About, Contact, Privacy, Terms, and Community Guidelines sit in the same shell. [screenshots/about-light-default.png](screenshots/about-light-default.png). A missing URL renders a 404 in that shell. [screenshots/not-found-light-default.png](screenshots/not-found-light-default.png).
 
-The sidebar pill cycles System -> Light -> Dark and the whole surface repaints: `#161617` field (`dark.background.default`), `#1c1c1f` cards, `#fdfdff` ink (`dark.text.ink`), ink@70% muted, rgba(255,255,255,0.08) hairlines (`dark.border.hairline`), white@4.5% control washes — the `d-*` components are real measured dark paint. The `#1c66eb` primary is identical in both themes; the focus ring switches `#ababbf` -> `#1c66eb`.
+## Cookie notice
 
-## Mobile
-
-At 390 wide the sidebar collapses to a 107px top bar (`m-bar`, `core.component.mobile-bar`, the page's near-white fill) over the same story card (`m-card`, 390x207) and a muted feed footer (`m-footer`, 358x48). The vote pill keeps its 32x24 footprint (`m-vote`).
-
-## Boundaries
-
-- Voting, commenting, submitting, following and settings need an account and were never reached — the controls gate on sign-in.
-- The `'N Sources'` links and story links point at external publications; they were measured, never followed.
-- A cookie banner painted on first load; hidden for screenshots only — no consent choice was made.
+The notice offers Accept all, Only necessary, and Manage preferences. It was hidden for the other shots. Cookie preferences, opened from the footer, is the dialog pattern. [screenshots/about-light-cookie-preferences.png](screenshots/about-light-cookie-preferences.png).

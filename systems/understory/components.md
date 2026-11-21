@@ -1,41 +1,73 @@
-# Components
+# Understory components
 
-Values are token names where a token exists. Readings are in [raw/computed.json](raw/computed.json). No crops were saved: the preview browser did not produce screenshot frames.
+Public marketing UI on understory.io, measured 2026-11-21. Crops were not cut. The states below are the full screenshots. Values are token names from [tokens.json](tokens.json).
 
 ## Button
 
-Marketing `.button-n` uses `{light.background.action}` and `{light.text.on-action}`, radius `{core.radius.button}`, padding `{core.spacing.button-y}` `{core.spacing.button-x}`, weight 500.
+Primary is `a.button-n`. Fill `light.action.primary` (moss), label `light.action.primaryText`, radius `core.radius.button` (9px), type `core.typography.label`. Header instance is 29px tall (`core.size.button`). Pricing "Start your free trial" is 40px tall with 12px 15px padding. Hover did not change the computed background.
 
-The soft button `.button-n.is-lightgreen` uses `{light.background.action-soft}` and `{light.text.primary}`. The yellow button and the form submit use `{light.background.citrus}` and `{light.text.on-citrus}`. The icon button is 3.5rem tall and turns citrus on hover, with the label switching to moss.
+Secondary is `a.button-n.is-lightgreen`. Fill `light.action.secondary` (moss at 10%). Ghost Login is `a.button-n.is-transparent`.
 
-The backoffice primary button computed `{light.background.app-action}`, text `{light.text.app-link}`, height 48px, radius `{core.radius.app-medium}`, padding inline `{core.spacing.app-large}`, weight 600.
+Shown in [screenshots/home-light-default.png](screenshots/home-light-default.png) and [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png).
 
-## Link and text button
+## Link
 
-Nav links use `{core.typography.nav}` and `{light.text.primary}`. The pricing nav link has radius `{core.radius.nav-link}` and turns `{light.background.surface}` on hover.
-
-The backoffice "Sign up now" and "Forgot password?" controls are text buttons: transparent, `{light.text.app-link}`, 14px, weight 600, radius `{core.radius.app-small}`.
+Nav labels are `.dropdown-toggle_nav` and `.nav_menu_link`, Inter 13.5px weight 450, colour `light.text.nav` on the toggle (`#222222`) and moss elsewhere. Dropdown items inside the open menu are white on moss.
 
 ## Text field
 
-The marketing field `.field-form_link` is 38px tall, left padding 15px, radius 0, border none, colour `{light.text.primary}`. Focus draws a 3px outline in `{light.text.primary}`.
+`input.field-form_link.w-input`. Height 38px, transparent fill, no border, padding-left 15px, placeholder "Enter your website" or "Enter your email". Not submitted. Focus shot: [screenshots/home-light-field-focus.png](screenshots/home-light-field-focus.png). A focus ring was not measured.
 
-The backoffice field is 48px tall, radius `{core.radius.app-small}`, padding inline `{core.spacing.app-medium}`, border 1px `{light.border.app}`, background `{light.background.raised}`. Focus outline is 2px `{light.border.app-focus}`, offset -1px. The label is 12px `{light.text.app-secondary}`.
+Help center search is a separate field on help.understory.io: [screenshots/help-light-default.png](screenshots/help-light-default.png). Not submitted.
+
+## Tabs
+
+Homepage tabs: Less admin, More bookings, Better booking experience. Current tab is underlined. Shown in [screenshots/home-light-tab.png](screenshots/home-light-tab.png).
+
+Pricing feature tabs (Sell more, Save time, Get paid faster, Get insights) exist below the plan cards. The selected pricing tab measured a `rgb(223, 221, 210)` fill and 9px radius. That fill is not a declared custom property. Not tokenised.
+
+Blog filters (All Stories, Industry Insights, News, Host Story) are radios styled as tabs. [screenshots/blog-light-filter.png](screenshots/blog-light-filter.png).
+
+## Menu
+
+Booking system and Marketing are hover dropdowns. The open panel is moss, white text, 12px radius, 327px tall. [screenshots/home-light-menu-booking.png](screenshots/home-light-menu-booking.png), [screenshots/home-light-menu-marketing.png](screenshots/home-light-menu-marketing.png).
+
+Phone drawer: [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). Nested sections were not expanded.
+
+## Dialog
+
+No marketing dialog was opened. The cookie banner (`#coiOverlay`) was hidden, not accepted. Login is a separate page, not a dialog, and was not screenshotted.
 
 ## Card
 
-`.plan-card.starter` computed background `{light.background.surface}`, radius `{core.radius.plan}`, padding 18px, 227 by 483px.
+Plan cards (`.plan-card`) use `light.background.surface` (`#eae8dd`), radius 15px, no shadow. Recommended badge is moss fill, 6px top radius. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png).
 
-The login card computed background `{light.background.raised}`, radius `{core.radius.app-card}`, padding `{core.spacing.app-xlarge}`, width 500px, shadow `{light.shadow.app-large}`.
+## Switch
 
-## Language pill
+Pricing Monthly / Yearly is `.billing-toggle` / `.toggle-track`, 27px tall. Clicking Yearly (no form submit) changed Starter from €29 to €35. [screenshots/pricing-light-yearly.png](screenshots/pricing-light-yearly.png). Track colours were not isolated as tokens.
 
-The backoffice language control is a white pill, radius `{core.radius.pill}`, height 48px, border 1px `{light.border.app}`, shadow `0px 4px 16px rgba(0, 0, 0, 0.08)`. That shadow is not a named token. The small and medium shadow tokens were resolved and not used by this control.
+## Accordion
+
+FAQ rows (`.faq-item_heading`) open on the page. The first home FAQ is active on load. [screenshots/home-light-faq.png](screenshots/home-light-faq.png), [screenshots/support-light-faq.png](screenshots/support-light-faq.png).
+
+## Badge
+
+"Recommended" on the Starter plan. "For workshops, classes, tours, & events" is a small pill on the homepage. Pill fill was not isolated.
+
+## Icon button
+
+Phone close control in the nav drawer. Chat launcher (dark circle, bottom right) is a third-party widget. Not measured.
+
+## Not present on the captured public pages
+
+Text area, select, checkbox (the try-for-free page has checkboxes; that form was not filled), radio as a control style beyond the blog filter, toast, table, avatar, tooltip.
 
 ## Gaps
 
-- No component crop. `preview_snapshot` did not produce frames.
-- Hover, pressed, disabled and error states were not forced on live controls. Hover colours that appear above come from stylesheet rules.
-- Text area, select, radio, switch, tabs, menu, tooltip, dialog, toast, table and avatar were not measured as product components.
-- The signup terms checkbox was present and not measured as its own control.
-- Phone width was not captured.
+- Hover and pressed colours for the primary button: computed background stayed moss. Not captured as a distinct step.
+- Focus ring: not painted on the measured controls. Not captured.
+- Disabled, loading, and error states: not shown without submitting a form.
+- Motion durations and easings: not read.
+- Elevation: plan cards have `box-shadow: none`.
+- Dark theme: not on understory.io. developer.understory.io ships a theme button; the dark frame in [screenshots/docs-dark-default.png](screenshots/docs-dark-default.png) is that site's own theme, not tokenised.
+- Signed-in backoffice, signup, preview URL submit, newsletter, demo booking, guest checkout: not captured. Login URL recorded in [site-tree.md](site-tree.md).

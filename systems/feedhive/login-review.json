@@ -1,0 +1,41 @@
+{
+  "product": "FeedHive",
+  "signed_in": false,
+  "captured_at": "2026-11-21",
+  "public_login_url": {
+    "url": "https://www.feedhive.com/login",
+    "status": 404,
+    "title": "FeedHive - Social Media Automation",
+    "body": "404 This page could not be found."
+  },
+  "wall": {
+    "requested_from": "Login in the www.feedhive.com header",
+    "href": "https://app.feedhive.io/signin",
+    "landed": "https://app.feedhive.com/signin",
+    "status": 200,
+    "title": "FeedHive",
+    "heading": "Let's get you signed in",
+    "controls": [
+      { "label": "Sign up", "kind": "link", "href": "/signup", "note": "Not followed past recording the signup page URL." },
+      { "label": "Sign in with Google", "kind": "button", "note": "Not clicked." },
+      { "label": "Email", "kind": "input", "type": "email", "name": "email", "placeholder": "Email address", "note": "Not typed." },
+      { "label": "Password", "kind": "input", "type": "password", "name": "password", "placeholder": "Password", "note": "Not typed." },
+      { "label": "Sign in", "kind": "button", "note": "Not clicked. No code was sent." },
+      { "label": "Forgot your password?", "kind": "link", "href": "/recovery", "note": "Not followed." }
+    ],
+    "signup_url_seen": "https://app.feedhive.com/signup",
+    "signup_note": "The signup page painted a name, email, and password form plus Sign up with Google. No field was filled. No account was created."
+  },
+  "gaps": [
+    "Signed-in app was not captured.",
+    "Unread token values are Not captured.",
+    "Onboarding was not filled.",
+    "No email, password, or code was entered.",
+    "Google and other SSO were not clicked."
+  ],
+  "screenshots": [
+    "screenshots/signin-wall-light-default.png",
+    "screenshots/mobile-signin-wall-light-default.png",
+    "screenshots/login-404-light-default.png"
+  ]
+}

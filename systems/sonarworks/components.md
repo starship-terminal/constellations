@@ -1,95 +1,102 @@
-# Components
+# Sonarworks components
 
-Measured on the live Sonarworks pages on 19 November 2026. The preview browser returned "The browser is not producing screenshot frames", so this inventory has no crops. Each value is a computed style, or a stylesheet rule marked as declared when the state was not on screen.
+Public marketing site at www.sonarworks.com, captured 2026-11-21, signed out, light only. Desktop 1440×900 at 1x. Phone 390×844 at 2x. Computed styles are in [raw/components-computed.json](raw/components-computed.json). Crops are in [components/crops/](components/crops).
 
-## Button
+Nothing was submitted. CookieScript and GetSiteControl were removed from the DOM, never clicked. Login was opened and not filled. Facebook, Google and Apple were not clicked.
 
-Learn More, Buy now, Get Free Trial and the social continue buttons.
+## Discovery
 
-| State | Where | Values |
+The control map is [site-tree.md](site-tree.md). Screenshots are `{page}-light-{state}.png`.
+
+| Surface | URL | Screenshot |
 |---|---|---|
-| Dark pill | Buy now on /black-friday | background `#000000`, text `#ffffff`, radius `9999px`, padding `12px 20px`, height 48px, Inter 16/24 weight 400 |
-| Light pill | Learn More on a dark photo | background `#ffffff`, text `#000000`, radius `9999px`, padding `12px 16px`, height 48px |
-| Outlined pill | Continue with Google on /account/login | background `#ffffff`, text `#000000`, border `1px solid #000000`, radius `9999px`, padding `12px 24px`, height 50px |
-| Trial | 7-day Free Trial class `.bg-highlight-blue` | background `#68befd`, text `#000000`, radius `9999px`, padding `4px 16px` |
-| Disabled | Log in and Sign up submits before the form is valid | background `#d8d9da`, text `#636669`, border `1px solid #d8d9da`, radius `9999px`, padding `12px 20px`, height 50px, cursor default |
-| Hover | not measured | Links underline on hover (`a:hover { text-decoration-line: underline }`). A filled pill's hover fill was not read, because hover cannot be forced without a pointer screenshot. |
-| Focus | email field focused | outline `none 0px`. No focus ring colour was painted. |
-| Pressed | not captured | |
-| Loading | `.animate-spin` is declared at 1s linear. No spinner was on screen. | |
+| Home, company menu, product bar | `/` | [home-light-default](screenshots/home-light-default.png), [home-light-company-menu](screenshots/home-light-company-menu.png), [home-light-product-menu](screenshots/home-light-product-menu.png) |
+| SoundID Reference | `/soundid-reference` | [reference-light-default](screenshots/reference-light-default.png) |
+| VM PRO | `/soundid-vm-pro` | [vm-pro-light-default](screenshots/vm-pro-light-default.png) |
+| VoiceAI | `/soundid-produce/voiceai` | [voiceai-light-default](screenshots/voiceai-light-default.png) |
+| SoundID app | `/soundid` | [soundid-light-default](screenshots/soundid-light-default.png) |
+| Pricing (redirects) | `/soundid-reference/pricing` lands on `/black-friday` | [pricing-light-default](screenshots/pricing-light-default.png) |
+| Download center | `/download-center` | [download-center-light-default](screenshots/download-center-light-default.png) |
+| Blog, reviews, company, contacts, legal | footer and top bar | matching `{page}-light-default.png` |
+| Login wall | `/account/login` | [login-light-wall](screenshots/login-light-wall.png) |
+| Store, empty cart | store.sonarworks.com | [store-light-default](screenshots/store-light-default.png), [cart-light-default](screenshots/cart-light-default.png) |
+| Phone home and menu | `/` at 390 | [mobile-home-light-default](screenshots/mobile-home-light-default.png), [mobile-home-light-menu](screenshots/mobile-home-light-menu.png) |
 
-## Link
+## Components
 
-Top-bar links are Inter 16/24, `#96999c`, padding `8px 16px`, no underline at rest. Footer primary links are `#ffffff`. Legal links on signup are 11/16, `#000000`. Forgot your password is 11px and underlined.
+### Top link
 
-## Text field
+Reviews in the black utility bar. Transparent fill, Inter 16/24 400, color `#96999c` (`core.color.base.60`). Padding 8px 16px. Height 40. Radius 0. Crop: [top-link-default](components/crops/top-link-default.png).
 
-Email on /account/login: width 318px, height 48px, padding 12px, border `1px solid #000000`, radius 0, background `#ffffff`, text `#000000`, placeholder "Email address". Password at rest: border `1px solid #dfe0e1`. Focus keeps the black border and sets outline to 0. Error border `#fc5b41` is declared on `.field.has-errors .control input` and was not shown.
+### Primary tab
 
-The newsletter field on /soundid-reference is a pill: height 64px, padding 20px, radius `9999px`, border 0 at this width, placeholder colour class `text-base-60`.
+Product tab in `#primary-navigation`. Transparent fill, Inter 16/24 400, color `#96999c`. Height 104 at 1440. Hover and keyboard focus both paint background `#1e1f20` (`core.color.base.10`). Crops: [primary-tab-default](components/crops/primary-tab-default.png), [primary-tab-hover](components/crops/primary-tab-hover.png).
 
-## Text area
+### Wordmark
 
-Not present on the pages visited.
+"Sonarworks" link. Inter 16/24 600, color `#ffffff` (`light.text.on-inverse`).
 
-## Select
+### Hero title
 
-Not present.
+Home `h1`. Inter 44/52 400, color `#000000`, letter-spacing -1.5px. Token `core.typography.display`.
 
-## Checkbox
+### Section title
 
-Not present. Signup has no checkbox. The legal line is 11px `#636669`: "By continuing you agree to SoundID Privacy Policy and Terms of Service."
+First home `h2` sits on a photo and computes color `#ffffff`, Inter 24/32 400, letter-spacing -0.5px. That white is the on-image treatment, not the page text role.
 
-## Radio
+### Learn more
 
-Not present.
+Pill CTA. Background `#ffffff`, color `#000000`, radius 9999px (`core.radius.full`), height 32. The home page also paints a black pill on the light card. Both are visible in [home-light-default](screenshots/home-light-default.png).
 
-## Switch
+### Company menu
 
-Not present.
+Hover on Company. Panel class `bg-base-10` (`#1e1f20`). Items are white Inter 16. Screenshot: [home-light-company-menu](screenshots/home-light-company-menu.png). The item crop missed because the panel's first link reported height 0 while the panel itself was visible.
 
-## Tabs
+### Footer link
 
-Not present. Product navigation is a list of links.
+About Us. Inter 16/24 400, color `#ffffff` on the black footer. Height 88 including the footer cell.
 
-## Menu
+### FAQ
 
-The company disclosure uses a 16px chevron, stroke `#96999c`. The mobile menu (`#mobile-navigation`) was off screen at 1169px. Its open transition is 0.3s ease. Not opened.
+`<details>` on `/soundid-reference`. Summary Inter 16/24 400, color `#000000`, height 96. Open state was set in the DOM. Crop of the closed summary failed (clip outside the viewport after scroll). The open reading is in raw/components-computed.json under `faq-open`.
 
-## Tooltip
+### Contact field
 
-Not present.
+On `/company/contacts`. Background `#000000`, color `#f3f3f3`, radius 4px (`core.radius.md`), height 34. Label "Email *" is `#d8d9da` (`core.color.base.85`). Not typed. Not submitted. Crop: [field-default](components/crops/field-default.png).
 
-## Dialog
+### Send
 
-CookieScript banner was on the home page before it was dismissed: white bar, text `#2d2d2d`, Open Sans 14/21, "Got it" pill radius 999px, border `1px solid #2d2d2d`, padding `12px 16px`. That banner is a third-party widget, not the product type system.
+The first button on the contact page is Cancel: transparent fill, white text, radius 9999px, height 66. Send the message was not clicked.
 
-## Toast
+### Login field
 
-`.alert[data-type=success]` is `#6fe362` and `.alert[data-type=danger]` is `#fc5b41`. Neither was on screen.
+Email field on the wall. Background `#ffffff`, color `#000000`, height 48, radius 0. Empty placeholder only. Crop: [login-field-default](components/crops/login-field-default.png).
 
-## Card
+## Shared values
 
-Home product tiles are 389 by 365px photo grids. Type sits in a 16px pad over the image. No card radius, no shadow. Pricing cells on /black-friday have a 1px `#dfe0e1` border and padding `16px 16px 32px`.
-
-## List row
-
-FAQ `details` on /soundid-reference: summary 24/32, weight 400, padding `16px 16px 48px`, bottom border `1px solid #d8d9da`. Closed when measured.
-
-## Table
-
-System-requirements rows sit inside those details. Not expanded.
-
-## Avatar
-
-The account icon is a 16px stroke glyph, `#96999c`. No user avatar was shown.
-
-## Badge
-
-"You save €29.00" on /black-friday: background `#ffe701`, text `#000000`, 16/24. The struck price is `#636669`.
+| Role | Value | Token |
+|---|---|---|
+| Page | `#ffffff` | `light.surface.page` |
+| Header | `#000000` | `light.surface.inverse` |
+| Muted nav text | `#96999c` | `light.text.muted` |
+| Menu panel | `#1e1f20` | `light.surface.menu` |
+| Body type | Inter 16/24 400 | `core.typography.body` |
+| Display | Inter 44/52 400, -1.5px | `core.typography.display` |
+| Pill radius | 9999px | `core.radius.full` |
+| Field radius | 4px | `core.radius.md` |
 
 ## Gaps
 
-- No component crops. The preview browser did not produce screenshot frames.
-- Hover, pressed, loading, error, success, open menu, open FAQ and the phone width were not captured.
-- Checkbox, radio, switch, select, text area, tabs and tooltip were not on these pages.
+| Item | Status |
+|---|---|
+| Text area, select, checkbox, radio, switch | Not captured as distinct controls. Pricing checkboxes exist on `/black-friday` and were not measured. |
+| Tabs | Not present as a tab widget. Product nav is hover bars. |
+| Tooltip, toast, dialog (product) | Cookie dialog was hidden, not captured as a component. No product dialog was opened. |
+| Table, avatar, badge | No avatar or table on the public shell. "Badge" crop is the same pill as Learn more. |
+| Disabled, loading, error | Not present on the pages measured. Login submit looks muted in the screenshot. Its computed disabled style was not read (the button selector missed it). |
+| Pressed | Not captured. CDP pressed was not run. |
+| Focus ring colour | `--tw-ring-color` is declared. A painted focus ring on `:focus-visible` was not confirmed. Primary-tab focus matched hover (`#1e1f20`). |
+| Dark theme | Not present. |
+| Signed-in app, checkout, support center | Not captured. Login wall stops the account branch. Support is a Cloudflare challenge. |
+| Icon set | Not extracted. Glyphs stay in screenshots. |
+| Hover on Learn more, footer link, field | Not captured. |

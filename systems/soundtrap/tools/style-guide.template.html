@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soundtrap style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: Matter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/1.4 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { font-size: 32px; margin: 0; }
+button.theme { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 8px 14px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 24px; }
+.sw { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.sw i { display: block; height: 64px; }
+.sw span { display: block; padding: 8px 10px; font-size: 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+.btn { background: var(--accent); color: var(--onAccent); border: 0; border-radius: var(--radius-pill); padding: 11px 16px; font: 500 15px/1.25 var(--sg-sans); }
+.btn.quiet { background: var(--component-heroCta-background); color: var(--component-heroCta-text); }
+.field { background: var(--component-field-background); border-radius: var(--radius-control); height: 40px; padding: 0 16px; border: 1px solid var(--border); color: var(--muted); display: flex; align-items: center; min-width: 240px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; min-width: 180px; }
+h2 { margin-top: 40px; }
+p.note { color: var(--muted); max-width: 70ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Soundtrap</h1>
+  <button class="theme" type="button">Theme</button>
+</header>
+<p class="note">Rendered from tokens.json. Matter is not loaded here, so type falls back to the system sans. The dark set is declared in the stylesheet and was not applied on the public pages captured.</p>
+<section class="swatches" id="swatches"></section>
+<h2>Type</h2>
+<div id="type"></div>
+<h2>Components</h2>
+<div class="row">
+  <button class="btn" type="button">Log in</button>
+  <button class="btn quiet" type="button">Get started for free</button>
+  <div class="field">Enter your email</div>
+</div>
+<div class="row">
+  <div class="card"><strong>Sound Starter</strong><p class="note">Plan card uses the accent fill on pricing.</p></div>
+</div>
+</div>
+<script>
+const T = /*TOKENS*/null;
+const root = document.documentElement;
+document.querySelector("button.theme").addEventListener("click", () => {
+  root.dataset.mode = root.dataset.mode === "dark" ? "light" : "dark";
+});
+const roles = ["page", "surface", "text", "muted", "accent", "border", "link", "onAccent", "danger", "success", "warning", "focus"];
+const box = document.getElementById("swatches");
+for (const role of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:var(--${role})"></i><span>${role}</span>`;
+  box.appendChild(el);
+}
+const type = document.getElementById("type");
+const typos = (T.core && T.core.typography) || {};
+for (const [name, tok] of Object.entries(typos)) {
+  const v = tok.v;
+  const row = document.createElement("p");
+  row.style.fontSize = v.fontSize;
+  row.style.fontWeight = v.fontWeight;
+  row.style.lineHeight = v.lineHeight;
+  row.textContent = name + "  Music production, made simple.";
+  type.appendChild(row);
+}
+</script>
+</body>
+</html>

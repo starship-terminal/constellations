@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <title>Pixso style guide</title>
@@ -7,76 +7,52 @@
   :root {
     --page: #ffffff;
     --text: #000000;
-    --muted: #8b8c8f;
-    --ink: #1e2330;
-    --lead: #576173;
+    --muted: #647084;
+    --button: #202125;
+    --on-button: #ffffff;
     --brand: #336fff;
-    --brand-text: #1f61ff;
-    --on-brand: #ffffff;
-    --button: rgba(0, 0, 0, 0.84);
-    --product: #20222c;
-    --border: rgba(0, 0, 0, 0.1);
-    --card-border: #d3dae8;
-    --focus: #1f61ff;
-    --font: Figtree, Arial, "Helvetica Neue", Helvetica, sans-serif;
-    --font-login: Outfit, Inter, -apple-system, "Segoe UI", sans-serif;
+    --field: #f7f7f9;
+    --border: #edf0f4;
+    --font: Figtree, Arial, "Helvetica Neue", sans-serif;
   }
   body { margin: 0; background: var(--page); color: var(--text); font: 16px/24px var(--font); }
   main { max-width: 960px; margin: 0 auto; padding: 32px; }
-  h1 { font-size: 48px; line-height: 52.8px; font-weight: 700; margin: 0 0 8px; }
-  h2 { font-size: 28px; line-height: 33.6px; font-weight: 600; margin: 32px 0 12px; }
-  p { color: var(--lead); max-width: 62ch; }
-  .row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .swatch { width: 140px; }
-  .chip { height: 64px; border-radius: 8px; border: 1px solid rgba(18, 17, 42, 0.07); }
-  .name { font-size: 12px; line-height: 18px; letter-spacing: 0.48px; color: var(--ink); margin-top: 6px; }
-  button, .btn { font: 600 14px/16.1px var(--font); border-radius: 8px; padding: 10px 20px; cursor: default; }
-  .primary { background: var(--button); color: var(--on-brand); border: 1px solid #000; box-shadow: rgba(255, 255, 255, 0.3) 0px 0.8px 0px 0px inset; }
-  .product { background: var(--product); color: #fff; border: 1px solid transparent; border-radius: 9px; padding: 12px 22px; font-weight: 650; height: 50px; }
-  .secondary { background: #fff; color: rgb(37, 45, 61); border: 1px solid var(--card-border); border-radius: 9px; padding: 12px 22px; font-weight: 650; height: 50px; }
-  .login { background: var(--brand); color: #fff; border: 0; border-radius: 8px; height: 40px; width: 358px; font: 500 14px/20px var(--font-login); }
-  .card { width: 474px; max-width: 100%; background: #fff; border-radius: 12px; padding: 50px 58px; box-shadow: rgba(31, 19, 135, 0.04) 0px 8px 16px 0px, rgba(17, 30, 58, 0.2) 0px 0px 2px 0px; box-sizing: border-box; }
-  .card h3 { font: 600 28px/35px var(--font-login); margin: 0 0 8px; color: #19191a; }
-  .hint { color: #8b8c8f; font: 400 14px/22px var(--font-login); }
-  .hint a { color: var(--brand-text); text-decoration: none; }
-  input { display: block; width: 100%; box-sizing: border-box; height: 40px; margin: 12px 0; border-radius: 8px; border: 1px solid var(--border); padding: 13px; font: 400 14px/20px var(--font-login); }
-  input:focus { outline: none; border: 2px solid var(--focus); }
-  .note { font-size: 14px; color: var(--muted); }
+  h1 { font-size: 40px; line-height: 46px; font-weight: 600; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--border); border-radius: 8px; padding: 10px; }
+  .swatch i { display: block; height: 48px; border-radius: 6px; border: 1px solid var(--border); }
+  code { display: block; margin-top: 8px; font-size: 12px; }
+  .btn { display: inline-block; background: var(--button); color: var(--on-button); border-radius: 7px; padding: 6px 15px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .brand { display: inline-block; background: var(--brand); color: white; border-radius: 7px; padding: 6px 15px; margin-left: 8px; }
+  input { background: var(--field); border: 1px solid rgba(0,0,0,.1); border-radius: 6px; height: 40px; padding: 0 16px; font: 14px var(--font); }
+  .note { color: var(--muted); }
 </style>
 </head>
 <body>
 <main>
-  <h1>Pixso</h1>
-  <p>Light surfaces measured on pixso.net, signed out, 19 November 2026. The live viewport was 1169 by 731. Figtree may fall back to Arial if it is not installed.</p>
-
-  <h2>Colour</h2>
-  <div class="row">
-    <div class="swatch"><div class="chip" style="background:#fff"></div><div class="name">page #ffffff</div></div>
-    <div class="swatch"><div class="chip" style="background:#000"></div><div class="name">text #000000</div></div>
-    <div class="swatch"><div class="chip" style="background:#8b8c8f"></div><div class="name">muted #8b8c8f</div></div>
-    <div class="swatch"><div class="chip" style="background:#336fff"></div><div class="name">brand #336fff</div></div>
-    <div class="swatch"><div class="chip" style="background:rgba(0,0,0,.84)"></div><div class="name">marketing button</div></div>
-    <div class="swatch"><div class="chip" style="background:#20222c"></div><div class="name">product button</div></div>
-    <div class="swatch"><div class="chip" style="background:#1e2330"></div><div class="name">nav ink #1e2330</div></div>
-    <div class="swatch"><div class="chip" style="background:#576173"></div><div class="name">lead #576173</div></div>
-  </div>
-
-  <h2>Buttons</h2>
-  <div class="row">
-    <button class="primary">Start designing for free</button>
-    <button class="product">Start designing for free</button>
-    <button class="secondary">Generate UI with AI</button>
-  </div>
-
-  <h2>Login card</h2>
-  <div class="card">
-    <h3>Welcome to Pixso</h3>
-    <div class="hint">Don't have an account? <a href="#">Sign up for free</a></div>
-    <input placeholder="Email" aria-label="Email">
-    <input type="password" placeholder="Please enter the password" aria-label="Password">
-    <button class="login">Log in</button>
-  </div>
-  <p class="note">Focus the email field to see the 2px #1f61ff border that was computed on the live page.</p>
+  <h1>Pixso public site</h1>
+  <p class="note">Rendered from tokens.json. One light theme. Values were read from pixso.net CSS on 2026-11-21.</p>
+  <p><a class="btn" href="#">Get started</a><span class="brand">Brand</span></p>
+  <p><input placeholder="Enter your name" readonly></p>
+  <p class="t" style="font-size:60px;font-weight:700;line-height:66px">display 60px / 66px</p><p class="t" style="font-size:40px;font-weight:600;line-height:46px">heading 40px / 46px</p><p class="t" style="font-size:16px;font-weight:400;line-height:24px">body 16px / 24px</p><p class="t" style="font-size:14px;font-weight:500;line-height:20px">label 14px / 20px</p><p class="t" style="font-size:14px;font-weight:400;line-height:20px">caption 14px / 20px</p>
+  <h2>Light roles</h2>
+  <div class="swatches"><div class="swatch"><i style="background:#ffffff"></i><code>light.background.page</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#f7f7f9"></i><code>light.background.surface</code><span>#f7f7f9</span></div>
+<div class="swatch"><i style="background:#202125"></i><code>light.background.button</code><span>#202125</span></div>
+<div class="swatch"><i style="background:#336fff"></i><code>light.background.brand</code><span>#336fff</span></div>
+<div class="swatch"><i style="background:#000000"></i><code>light.text.primary</code><span>#000000</span></div>
+<div class="swatch"><i style="background:#1e2330"></i><code>light.text.ink</code><span>#1e2330</span></div>
+<div class="swatch"><i style="background:#647084"></i><code>light.text.muted</code><span>#647084</span></div>
+<div class="swatch"><i style="background:#ffffff"></i><code>light.text.onButton</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#336fff"></i><code>light.text.link</code><span>#336fff</span></div>
+<div class="swatch"><i style="background:#edf0f4"></i><code>light.border.default</code><span>#edf0f4</span></div>
+<div class="swatch"><i style="background:rgba(16, 24, 40, 0.12)"></i><code>light.border.rule</code><span>rgba(16, 24, 40, 0.12)</span></div>
+<div class="swatch"><i style="background:rgba(0, 0, 0, 0.1)"></i><code>light.border.field</code><span>rgba(0, 0, 0, 0.1)</span></div>
+<div class="swatch"><i style="background:#1f61ff"></i><code>light.border.focus</code><span>#1f61ff</span></div>
+<div class="swatch"><i style="background:#28a745"></i><code>light.status.success</code><span>#28a745</span></div>
+<div class="swatch"><i style="background:#ffc107"></i><code>light.status.warning</code><span>#ffc107</span></div>
+<div class="swatch"><i style="background:#dc3545"></i><code>light.status.danger</code><span>#dc3545</span></div>
+<div class="swatch"><i style="background:#17a2b8"></i><code>light.status.info</code><span>#17a2b8</span></div></div>
 </main>
 </body>
 </html>

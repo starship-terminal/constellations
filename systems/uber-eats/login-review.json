@@ -1,0 +1,82 @@
+{
+  "product": "Uber Eats",
+  "slug": "uber-eats",
+  "date": "2026-11-21",
+  "scope": "public signed-out",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "submitted": false,
+  "typed": false,
+  "identity_providers_clicked": false,
+  "captcha_solved": false,
+  "account_created": false,
+  "probe_note": "https://www.ubereats.com/orders redirected to the Uber sign-in page. Session was not present. Probe is closed. This pass did not reopen /orders.",
+  "viewport": {
+    "desktop": "1440x900 at 1x",
+    "phone": "390x844 at 2x, location page only. Homepage phone gate was not kept."
+  },
+  "walls": [
+    {
+      "name": "login",
+      "url": "https://auth.uber.com/v2/",
+      "opened": true,
+      "file": "screenshots/login-wall-light-default.png",
+      "asks_for": "phone number or email",
+      "controls_seen": ["Continue", "Continue with Google", "Continue with Apple"],
+      "typed": false,
+      "submitted": false,
+      "identity_provider_clicked": false,
+      "stopped": true
+    },
+    {
+      "name": "signup",
+      "url": "https://auth.uber.com/v2/",
+      "opened": false,
+      "note": "Sign up uses the same auth host as Log in. The photographed wall is the shared ask. The branch was not continued into account creation."
+    },
+    {
+      "name": "restaurant-signup",
+      "url": "https://merchants.ubereats.com/s/signup/",
+      "opened": false,
+      "stopped": true
+    },
+    {
+      "name": "courier-signup",
+      "url": "https://www.uber.com/deliver/",
+      "opened": false,
+      "stopped": true,
+      "note": "The nav drawer linked www.uber.com/drive/delivery/ on the same pass. Neither was opened."
+    },
+    {
+      "name": "business-account",
+      "url": "https://www.uber.com/business/eats",
+      "opened": false,
+      "stopped": true
+    }
+  ],
+  "cookie_dialog": {
+    "present": false,
+    "note": "No cookie consent dialog painted. A Cloudflare challenge overlay did paint on some loads and was hidden, not solved."
+  },
+  "signed_in_app": "not in scope",
+  "not_submitted": [
+    "email",
+    "phone",
+    "password",
+    "verification code",
+    "address",
+    "search",
+    "schedule",
+    "language change",
+    "gift card",
+    "restaurant signup",
+    "courier signup",
+    "business account",
+    "Uber One join"
+  ],
+  "gaps": [
+    "Signed-in feed, orders, checkout, and account settings were not entered.",
+    "Phone homepage stayed on an app gate after Continue in browser, then a verify dialog. Not solved. Frames discarded.",
+    "/near-me, /shopping, /pickup/near-me, and /promo did not render past a security check."
+  ]
+}

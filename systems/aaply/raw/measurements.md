@@ -139,7 +139,7 @@ Crops: `nav-signup-default.png`, `nav-signup-hover.png`, `nav-signup-focus-visib
 
 #### footer
 
-Footer. The black footer band: "Made remotely with love", the aaply@aaply.app mail link, social icons (Twitter, Medium, LinkedIn, Discord, YouTube, Instagram) and the second nav list.
+Footer. The black footer band: "Made remotely with love", the the published contact mail link, social icons (Twitter, Medium, LinkedIn, Discord, YouTube, Instagram) and the second nav list.
 
 Page: home. Selector: `footer band`. States: default.
 
@@ -163,7 +163,7 @@ Crops: `footer-default.png`.
 
 #### footer-link
 
-Footer mail link. The aaply@aaply.app contact link in the footer.
+Footer mail link. The the published contact contact link in the footer.
 
 Page: home. Selector: `footer mailto`. States: default, hover, focus-visible, pressed.
 
@@ -711,21 +711,20 @@ Page: pricing. Selector: `compare link`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 851 x 60 | = | - | = |
-| Padding | 0px | = | - | = |
-| Border | none | = | - | = |
-| Radius | 0px | = | - | = |
-| Background | transparent | = | - | = |
-| Box shadow | none | = | - | = |
-| Outline | none | = | - | = |
-| Font | Poppins 57px/60px 700 | = | - | = |
-| Letter spacing | -1px | = | - | = |
-| Colour | #000000 | = | - | = |
-| Transition | background-color, color, border-color, box-shadow 0s, 0s, 0s, 0.2s ease-in-out, ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s, 0s | = | - | = |
-| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
-| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
+| Size (w x h) | 851 x 60 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Poppins 57px/60px 700 | = | = | = |
+| Letter spacing | -1px | = | = | = |
+| Colour | #000000 | = | = | = |
+| Transition | background-color, color, border-color, box-shadow 0s, 0s, 0s, 0.2s ease-in-out, ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s, 0s | = | = | = |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
-Crops: `compare-cta-default.png`, `compare-cta-hover.png`, `compare-cta-pressed.png`.
+Crops: `compare-cta-default.png`, `compare-cta-hover.png`, `compare-cta-focus-visible.png`, `compare-cta-pressed.png`.
 
 #### feature-table
 

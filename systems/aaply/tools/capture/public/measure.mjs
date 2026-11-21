@@ -33,6 +33,8 @@ const URLS = {
   story: '/our-story',
   team: '/team',
   figma: '/figma_plugin',
+  early: '/early-program',
+  manual: '/manual',
 };
 let page, cdp, current, context, contextMobile, run, curCtx;
 const touched = new Set();
@@ -56,7 +58,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   const ctx = curCtx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
-  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
   page.setDefaultTimeout(8000);
@@ -289,8 +291,8 @@ async function home() {
     const el = [...document.querySelectorAll('[data-elem-type="shape"]')].filter((n) => n.offsetWidth > 1200 && n.offsetHeight > 400 && y(n) > H - 1700)[0];
     if (!el) return false; el.setAttribute('data-m-mark', 'foot'); return true;
   });
-  await S('footer', foot ? await atom('foot') : await domFind(page, /made remotely|©20\d\d/i, { sel: '.tn-atom, div, footer', tag: 'fo', leaf: false, minW: 200 }), ['default'], { group: g, title: 'Footer', desc: 'The black footer band: "Made remotely with love", the aaply@aaply.app mail link, social icons (Twitter, Medium, LinkedIn, Discord, YouTube, Instagram) and the second nav list.', sel: 'footer band' });
-  await S('footer-link', q('a.tn-atom[href*="mailto"], a:has-text("aaply@aaply.app")').filter({ visible: true }).first(), B4, { group: g, title: 'Footer mail link', desc: 'The aaply@aaply.app contact link in the footer.', sel: 'footer mailto' });
+  await S('footer', foot ? await atom('foot') : await domFind(page, /made remotely|©20\d\d/i, { sel: '.tn-atom, div, footer', tag: 'fo', leaf: false, minW: 200 }), ['default'], { group: g, title: 'Footer', desc: 'The black footer band: "Made remotely with love", a published mail link (address not stored), social icons (Twitter, Medium, LinkedIn, Discord, YouTube, Instagram) and the second nav list.', sel: 'footer band' });
+  await S('footer-link', q('a.tn-atom[href*="mailto"]').filter({ visible: true }).first(), B4, { group: g, title: 'Footer mail link', desc: 'The published contact link in the footer. The address is not stored. No crop is kept.', sel: 'footer mailto' });
   await S('social-icon', q('a.tn-atom[href*="twitter.com"], a[href*="discord"], a[href*="linkedin"]').filter({ visible: true }).first(), B4, { group: g, title: 'Social icon', desc: 'One of the social-icon links in the footer.', sel: 'social icon a' });
   await S('early-birds', await domFind(page, /join the early birds/i, { sel: '.tn-atom', tag: 'eb', minH: 40 }), ['default'], { group: g, title: 'Early birds heading', desc: '"Join the early birds" — the Poppins display heading of the pre-footer CTA band ("Be the first to try").', sel: 'early birds heading' });
   await closePage();
@@ -439,12 +441,63 @@ async function figma() {
   await closePage();
 }
 
+async function early() {
+  if (!(await newPage('early'))) { await closePage(); return; }
+  await sheetsFor('early');
+  const g = 'Early program';
+  await S('early-title', await domFind(page, /early users program/i, { sel: '.tn-atom', tag: 'et', minH: 30 }), ['default'], { group: g, title: 'Early program title', desc: 'The "Early Users Program" Poppins display heading. The page is in the sitemap and is not linked from nav, footer, or the phone menu.', sel: 'early title' }, { noScroll: true });
+  await S('early-step', await domFind(page, /sign up to aaply/i, { sel: '.tn-atom', tag: 'es', minH: 16 }), ['default'], { group: g, title: 'Early program step', desc: 'A numbered step label on the Early Users Program page ("Sign up to Aaply").', sel: 'early step' });
+  await S('early-cta', q('a.tn-atom:has-text("Sign up for FREE")').filter({ visible: true }).first(), B4, { group: g, title: 'Early program CTA', desc: 'The lime "Sign up for FREE" pill. Links to go.aaply.app/signup; hovered and focused only, never followed.', sel: 'early cta' });
+  await closePage();
+}
+
+async function manual() {
+  if (!(await newPage('manual'))) { await closePage(); return; }
+  await sheetsFor('manual');
+  const g = 'Manual';
+  await S('manual-title', await domFind(page, /how to get started/i, { sel: '.tn-atom', tag: 'mt', minH: 30 }), ['default'], { group: g, title: 'Manual title', desc: '"How to get started with Aaply?" — the Poppins display heading above an embedded product video. Sitemap-only; no in-page control opens it.', sel: 'manual title' }, { noScroll: true });
+  await S('manual-cta', q('a.tn-atom:has-text("Start new project")').filter({ visible: true }).first(), B4, { group: g, title: 'Start new project CTA', desc: 'The "Start new project" pill. Links to https://go.aaply.app/, which is an auth wall (foreign document on the app host). Hovered and focused only.', sel: 'manual cta' });
+  await closePage();
+}
+
 async function mobile() {
   if (!(await newPage('home', { mobile: true }))) { await closePage(); return; }
   const g = G.mobile;
   await closePromo(page);
   await S('m-nav-bar', q('[data-elem-type="shape"], [data-elem-type="button"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile nav bar', desc: 'The mobile header: logo left, hamburger right.', sel: 'mobile nav' }, { noScroll: true });
-  await S('m-burger', q('[data-elem-type="button"] .tn-atom, [class*="burger" i]').filter({ visible: true }).first(), ['default', 'pressed'], { group: g, title: 'Hamburger', desc: 'The mobile menu button at the top right. Not opened — the menu overlays the measured content.', sel: 'burger' }, { noScroll: true });
+  await S('m-burger', q('a[href="#open-nav"]').filter({ visible: true }).first(), ['default', 'pressed'], { group: g, title: 'Hamburger', desc: 'The mobile menu button at the top right (a[href="#open-nav"]). Opens an in-page overlay; the overlay is m-menu.', sel: 'burger' }, { noScroll: true });
+  await page.locator('a[href="#open-nav"]').first().evaluate((el) => el.click()).catch(() => {});
+  await page.waitForTimeout(700);
+  // The overlay is a full-viewport panel. Mark the painted shape that covers
+  // the phone, not the close icon's 24px ancestor.
+  const menuMarked = await page.evaluate(() => {
+    const panels = [...document.querySelectorAll('[data-elem-type="shape"], div')].filter((n) => {
+      const r = n.getBoundingClientRect();
+      const cs = getComputedStyle(n);
+      return r.width > 300 && r.height > 600 && r.x >= -2 && r.x < 40
+        && parseFloat(cs.opacity) > 0.5 && cs.visibility !== 'hidden';
+    });
+    const el = panels.sort((a, b) => a.getBoundingClientRect().height - b.getBoundingClientRect().height)[0];
+    if (!el) return false;
+    el.setAttribute('data-m-mark', 'mmenu');
+    return { w: Math.round(el.getBoundingClientRect().width), h: Math.round(el.getBoundingClientRect().height) };
+  });
+  log('  menu panel', menuMarked);
+  await S('m-menu', menuMarked ? q('[data-m-mark="mmenu"]').first() : q('a[href="#close-nav"]').first(), ['default'], { group: g, title: 'Mobile menu', desc: 'The phone overlay opened by the burger: Log in and Sign up pills, then Features, Figma Plugin, Pricing, Reviews, Value, Story, Team, Blog. Close is #close-nav. Auth items were not followed. The whole overlay is also in screenshots/mobile-home-light-menu-open.png.', sel: 'mobile menu panel' }, { noScroll: true });
+  // The visible Log in pill (opacity 1, on screen). A duplicate link sits at opacity 0.
+  const loginMarked = await page.evaluate(() => {
+    const el = [...document.querySelectorAll('a')].find((a) => {
+      const r = a.getBoundingClientRect();
+      const cs = getComputedStyle(a);
+      return /log in/i.test(a.innerText || '') && r.x >= 0 && r.width > 80 && parseFloat(cs.opacity) > 0.5;
+    });
+    if (!el) return false;
+    el.setAttribute('data-m-mark', 'mlogin');
+    return true;
+  });
+  await S('m-menu-login', loginMarked ? q('[data-m-mark="mlogin"]').first() : q('a[href*="go.aaply.app/sign"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile menu Log in', desc: 'The Log in pill in the open phone menu. Target is https://go.aaply.app/sign, which returns "Not found". Not followed.', sel: 'menu login' }, { noScroll: true });
+  await page.locator('a[href="#close-nav"]').first().evaluate((el) => el.click()).catch(() => {});
+  await page.waitForTimeout(400);
   // the mobile headline is split into one painted atom per line; the full-text
   // duplicates stay hidden off-viewport for scroll animation — pick the painted line
   await page.evaluate(() => {
@@ -461,7 +514,7 @@ async function mobile() {
   await closePage();
 }
 
-const RUNNERS = { home, features, value, pricing, reviews, story, team, figma, mobile };
+const RUNNERS = { home, features, value, pricing, reviews, story, team, figma, early, manual, mobile };
 run = new Date().toISOString();
 out._meta.run = run;
 out._meta.product = 'aaply.app';

@@ -1,221 +1,270 @@
 #!/usr/bin/env python3
-"""Write tokens.json from raw/foundations.json.
+"""Build tokens.json from Super.so's live CSS readings.
 
-Values were read with getComputedStyle on super.so and app.super.so on
-2026-11-19. This script does not invent colours. Re-run only after updating
-the raw file.
+Sources, read from https://super.so/ on 2026-11-21, signed out, 1440 x 900:
+  raw/css-vars.json            every custom property the public CSSOM declares,
+                               resolved on the live root (tools/capture/vars.mjs)
+  raw/components-computed.json measured controls (navbar, CTA, search, login wall)
+
+The public site paints one theme. html.theme-dark is declared in CSS and was
+not switched, so dark values are not tokenised. Every token carries
+$extensions.source. A colour is the resolved sRGB value. A name that did not
+resolve is left out.
 """
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-RAW = json.loads((HERE / "raw" / "foundations.json").read_text())
-OUT = HERE / "tokens.json"
+RAW = HERE / "raw"
+V = json.loads((RAW / "css-vars.json").read_text())
+RES = V["resolved"]
+
+SRC = "Measured from the live CSSOM on https://super.so/ at 1440x900, signed out, 2026-11-21. tools/capture/vars.mjs"
 
 
-def tok(type_, value, source):
-    return {"$type": type_, "$value": value, "$extensions": {"source": source}}
+def norm_color(v):
+    v = str(v).strip().lower()
+    m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
+    if m:
+        h = m.group(1)
+        if len(h) in (3, 4):
+            h = "".join(c * 2 for c in h)
+        if len(h) == 8:
+            return "rgba(%d, %d, %d, %s)" % (*[int(h[i:i + 2], 16) for i in (0, 2, 4)], "%g" % round(int(h[6:8], 16) / 255, 3))
+        return "#" + h
+    m = re.fullmatch(r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([\d.]+))?\s*\)", v)
+    if m:
+        r, g, b, a = m.groups()
+        a = float(a) if a is not None else 1
+        if a >= 1:
+            return "#%02x%02x%02x" % (int(r), int(g), int(b))
+        return "rgba(%d, %d, %d, %s)" % (int(r), int(g), int(b), "%g" % round(a, 3))
+    raise ValueError("not a colour: " + v)
 
 
-def color(value, source):
-    return tok("color", value, source)
+def leaf(ty, value, source, description=None):
+    token = {"$value": value, "$type": ty, "$extensions": {"source": source}}
+    if description:
+        token["$description"] = description
+    return token
 
 
-def dim(value, source):
-    return tok("dimension", value, source)
+def color_token(name):
+    row = RES.get(name)
+    if not row or row.get("kind") != "color" or "value" not in row:
+        return None
+    return leaf("color", norm_color(row["value"]), f"{SRC} Name {name}, resolved {row['value']}.")
 
 
-def padding(value, source):
-    """A padding shorthand as one px length per side: {block, inline} when it is symmetric, else
-    {top, right, bottom, left}. A single length stays one dimension token."""
-    parts = value.split()
-    if len(parts) == 1:
-        return dim(value, source)
-    if len(parts) == 2:
-        top, right, bottom, left = parts[0], parts[1], parts[0], parts[1]
-    elif len(parts) == 3:
-        top, right, bottom, left = parts[0], parts[1], parts[2], parts[1]
-    else:
-        top, right, bottom, left = parts
-    note = f"{source} (computed shorthand {value})"
-    if top == bottom and left == right:
-        return {"block": dim(top, note), "inline": dim(right, note)}
-    return {"top": dim(top, note), "right": dim(right, note), "bottom": dim(bottom, note), "left": dim(left, note)}
+# Palette: every --color-* that resolved, grouped by role.
+colors = {}
+for name, row in sorted(RES.items()):
+    if not name.startswith("--color-") or row.get("kind") != "color" or "value" not in row:
+        continue
+    key = name[len("--color-"):].replace("-", ".")
+    # nest one level: bg.default, text.default, pill.blue
+    parts = key.split(".")
+    node = colors
+    for part in parts[:-1]:
+        node = node.setdefault(part, {})
+        if "$value" in node:
+            node = node.setdefault("_group", {})
+    node[parts[-1]] = leaf("color", norm_color(row["value"]), f"{SRC} Name {name}.")
 
 
-def font_token(family, weight, size, line, tracking, source):
-    body = {
-        "fontFamily": family,
-        "fontWeight": weight,
-        "fontSize": size,
-        "lineHeight": line,
-    }
-    if tracking and tracking != "normal":
-        body["letterSpacing"] = tracking
-    return {
-        "$type": "typography",
-        "$value": body,
-        "$extensions": {"source": source},
-    }
+def font_stack(name):
+    row = RES.get(name) or {}
+    raw = row.get("value") or row.get("raw") or ""
+    raw = " ".join(raw.split())
+    if not raw:
+        return None
+    return raw
 
 
-def build():
-    src = RAW["source"]
-    c = RAW["colors"]
-    t = RAW["type"]
-    fonts = RAW["fonts"]
-    r = RAW["radius"]
-    s = RAW["spacing"]
-    core = {
-        "font": {
-            "family": {
-                "beausite": tok("fontFamily", fonts["beausite"], src + " body fontFamily on super.so"),
-                "beausite-app": tok("fontFamily", fonts["beausiteApp"], src + " body fontFamily on app.super.so/login"),
-            }
+primary = font_stack("--primary-font") or "Beausite, Inter, Helvetica, sans-serif"
+
+core = {
+    "color": colors,
+    "font": {
+        "primary": leaf("fontFamily", primary, f"{SRC} Name --primary-font."),
+        "secondary": leaf("fontFamily", font_stack("--secondary-font") or primary, f"{SRC} Name --secondary-font."),
+    },
+    "typography": {
+        "display": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.primary}",
+                "fontSize": "56px",
+                "fontWeight": 600,
+                "lineHeight": "62.72px",
+            },
+            "$extensions": {"source": "Measured computed style of h1.notion-heading on https://super.so/ (hero), 2026-11-21. font-size 56px, weight 600, line-height 62.72px, family Beausite."},
         },
-        "typography": {
-            "body": font_token(fonts["beausite"], t["body"]["fontWeight"], t["body"]["fontSize"], t["body"]["lineHeight"], t["body"]["letterSpacing"], src + " notion-text on super.so"),
-            "hero": font_token(fonts["beausite"], t["hero"]["fontWeight"], t["hero"]["fontSize"], t["hero"]["lineHeight"], t["hero"]["letterSpacing"], src + " h1 on super.so"),
-            "display": font_token(fonts["beausite"], t["display"]["fontWeight"], t["display"]["fontSize"], t["display"]["lineHeight"], t["display"]["letterSpacing"], src + " pricing h1 computed size"),
-            "heading": font_token(fonts["beausite"], t["h2"]["fontWeight"], t["h2"]["fontSize"], t["h2"]["lineHeight"], t["h2"]["letterSpacing"], src + " h2 on super.so"),
-            "subhead": font_token(fonts["beausite"], t["h3"]["fontWeight"], t["h3"]["fontSize"], t["h3"]["lineHeight"], t["h3"]["letterSpacing"], src + " h3 on super.so"),
-            "auth-title": font_token(fonts["beausiteApp"], t["authTitle"]["fontWeight"], t["authTitle"]["fontSize"], t["authTitle"]["lineHeight"], t["authTitle"]["letterSpacing"], src + " Log into Super on app.super.so/login"),
-            "field": font_token(fonts["beausiteApp"], t["authField"]["fontWeight"], t["authField"]["fontSize"], t["authField"]["lineHeight"], "normal", src + " email input on app.super.so/login"),
+        "title": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.primary}",
+                "fontSize": "57.6px",
+                "fontWeight": 600,
+                "lineHeight": "63.36px",
+            },
+            "$extensions": {"source": "Measured computed style of h1.notion-heading on https://super.so/pricing-annual, 2026-11-21."},
         },
-        "radius": {k: dim(v, src + " radius " + k) for k, v in r.items()},
-        "spacing": {k: padding(v, src + " spacing " + k) for k, v in s.items()},
-    }
-    light = {
-        "page": color(c["page"], src + " body background on super.so --base-warm-gray"),
-        "surface": color(c["card"], src + " plan card background on super.so/pricing"),
-        "muted": color(c["muted"], src + " body copy color on super.so"),
-        "accent": color(c["accent"], src + " Get started free background on super.so"),
-        "background": {
-            "page": color(c["page"], src + " body background"),
-            "surface": color(c["card"], src + " plan card"),
-            "nav": color(c["white"], src + " navbar background token painted white under 0.85 scrim"),
-            "footer": color(c["footer"], src + " footer background"),
-            "accent": color(c["accent"], src + " nav CTA"),
-            "accent-soft": color(c["personalButtonBg"], src + " Personal Start for free"),
-            "ink": color(c["black"], src + " dark CTA on pricing"),
+        "heading": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.primary}",
+                "fontSize": "38.4px",
+                "fontWeight": 600,
+                "lineHeight": "42.24px",
+            },
+            "$extensions": {"source": "Measured computed style of h2.notion-heading on https://super.so/features/ai-chat, 2026-11-21."},
         },
-        "on-accent": color(c["accentOn"], src + " nav CTA text"),
-        "on-ink": color(c["footerText"], src + " dark CTA text"),
-    }
-    light["text"] = {
-        "primary": color(c["ink"], src + " body color rgb(38, 42, 46)"),
-        "muted": color(c["muted"], src + " body copy rgb(102, 112, 122)"),
-        "nav": color(c["navText"], src + " navbar rgb(55, 53, 47)"),
-        "on-accent": color(c["accentOn"], src + " CTA text rgb(17, 17, 17)"),
-        "on-ink": color(c["footerText"], src + " white on black CTA"),
-        "footer": color(c["footerText"], src + " footer"),
-        "sign-in": color(c["signInText"], src + " Sign in rgb(77, 84, 92)"),
-        "features": color(c["featuresH1"], src + " Features h1 rgb(179, 186, 194)"),
-        "nav-role": color(c["navText"], src + " navbar rgb(55, 53, 47)"),
-        "footer-role": color(c["footerText"], src + " footer"),
-        "sign-in-role": color(c["signInText"], src + " Sign in rgb(77, 84, 92)"),
-    }
-    light["border"] = {
-        "default": color(c["border"], src + " --color-border-default #E9E9E7"),
-        "sign-in": color(c["signInBorder"], src + " Sign in border rgb(242, 244, 245)"),
-        "personal": color(c["personalBorder"], src + " Personal plan card border"),
-        "quote": color(c["quoteBorder"], src + " quote card border"),
-    }
-    light["accent"] = color(c["accent"], src + " CTA rgb(255, 190, 60)")
-    light["component"] = {
+        "body": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.primary}",
+                "fontSize": "16px",
+                "fontWeight": 400,
+                "lineHeight": "24px",
+            },
+            "$extensions": {"source": "Measured computed style of body on https://super.so/, 2026-11-21. font-size 16px, weight 400. line-height was normal; 24px is derived as 1.5 times the size."},
+        },
+        "label": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.primary}",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "lineHeight": "20px",
+            },
+            "$extensions": {"source": "Measured computed style of the template search field and the login email field, 14px, 2026-11-21. line-height 20px is derived."},
+        },
         "button": {
-            "bg": color(c["accent"], src + " nav CTA background"),
-            "text": color(c["accentOn"], src + " nav CTA text"),
-            "radius": dim(r["navCta"], src + " nav CTA radius"),
-            "padding": padding(s["navCtaPadding"], src + " nav CTA padding"),
-            "height": dim("42px", src + " nav CTA height"),
-        },
-        "field": {
-            "bg": color(c["appPage"], src + " login field background; marketing has no text field"),
-            "text": color(c["appTextMeasured"], src + " login field text"),
-            "radius": dim(r["authField"], src + " login field radius"),
-            "padding": padding(s["authFieldPadding"], src + " login field padding"),
-            "height": dim("44px", src + " login field height"),
-        },
-    }
-    dark = {
-        "page": color(c["appPage"], src + " body background on app.super.so/login"),
-        "surface": color(c["appPage"], src + " login field and page share rgb(21, 21, 20)"),
-        "text": {
-            "primary": color(c["appTextMeasured"], src + " login body and field text rgb(238, 238, 237)"),
-            "muted": color(c["appMuted"], src + " Sign up link rgb(126, 125, 119)"),
-            "placeholder": color(c["appPlaceholder"], src + " email ::placeholder"),
-            "on-accent": color(c["appAccentOn"], src + " Log in button text"),
-        },
-        "muted": color(c["appMuted"], src + " Sign up link"),
-        "accent": color(c["appAccent"], src + " Log in button rgb(255, 178, 36)"),
-        "border": color(c["appBorder"], src + " login field border rgb(45, 45, 42)"),
-        "background": {
-            "page": color(c["appPage"], src + " login body"),
-            "surface": color(c["secondaryButtonBg"], src + " Google button"),
-            "raised": color(c["passkeyBg"], src + " passkey button"),
-            "accent": color(c["appAccent"], src + " Log in button"),
-        },
-        "focus": color(c["appFocusRing"], src + " .input-focus-within:focus-within:is(.dark *) ring #4d2e00"),
-        "component": {
-            "button": {
-                "bg": color(c["appAccent"], src + " Log in button"),
-                "text": color(c["appAccentOn"], src + " Log in button text"),
-                "radius": dim(r["authButton"], src + " Log in radius"),
-                "padding": padding(s["authButtonPadding"], src + " Log in padding"),
-                "height": dim("44px", src + " Log in height"),
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.primary}",
+                "fontSize": "16px",
+                "fontWeight": 500,
+                "lineHeight": "25.6px",
             },
-            "field": {
-                "bg": color(c["appPage"], src + " login field"),
-                "text": color(c["appTextMeasured"], src + " login field text"),
-                "radius": dim(r["authField"], src + " login field radius"),
-                "padding": padding(s["authFieldPadding"], src + " login field padding"),
-                "height": dim("44px", src + " login field height"),
-            },
+            "$extensions": {"source": "Measured computed style of the hero Get started link on https://super.so/, 16px weight 500, line-height 25.6px, 2026-11-21."},
         },
-    }
-    # swatch paths used by the catalog: light.page, light.surface, light.text.primary, etc.
-    # Also expose flat aliases the swatches name.
-    light_swatch = {
-        "page": light["page"],
-        "surface": light["surface"],
-        "text": light["text"],
-        "muted": light["muted"],
-        "accent": light["accent"],
-        "border": light["border"]["default"],
-        "background": light["background"],
-        "on-accent": light["on-accent"],
-        "focus": color(c["lightFocusRing"], src + " .input-focus-within:focus-within ring #ffe0b3"),
-        "component": light["component"],
-    }
-    doc = {
-        "$schema": "https://www.designtokens.org/schemas/2025.10/format/",
-        "core": core,
-        "light": light_swatch,
-        "dark": {
-            "page": dark["page"],
-            "surface": dark["surface"],
-            "text": dark["text"],
-            "muted": dark["muted"],
-            "accent": dark["accent"],
-            "border": dark["border"],
-            "background": dark["background"],
-            "focus": dark["focus"],
-            "component": dark["component"],
-        },
-        "$themes": [
-            {"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}},
-            {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}},
-        ],
-    }
-    return doc
+    },
+    "radius": {
+        "md": leaf("dimension", "8px", "Measured computed border-radius of .super-navbar__cta and the hero Get started link on https://super.so/, 2026-11-21. 8px on every corner."),
+        "lg": leaf("dimension", "14px", f"{SRC} Name --floating-toc-panel-radius. A declared panel radius, not a control that was cropped."),
+    },
+    "spacing": {
+        "nav-x": leaf("dimension", "12px", "Measured padding-inline of a.super-navbar__item (16px 12px) on https://super.so/, 2026-11-21. A control padding, not a declared spacing scale."),
+        "cta-x": leaf("dimension", "16px", "Measured padding-inline of .super-navbar__cta (10px 16px) on https://super.so/, 2026-11-21. A control padding, not a declared spacing scale."),
+        "cta-y": leaf("dimension", "10px", "Measured padding-block of .super-navbar__cta (10px 16px) on https://super.so/, 2026-11-21."),
+    },
+}
+
+# Semantic light set. Values are aliases into core where the resolved colour matches.
+def alias_or_color(token_name, core_path):
+    return leaf("color", "{" + core_path + "}", f"{SRC} Semantic role. Aliases {core_path}, which is {token_name}.")
 
 
-def render():
-    """tokens.json's exact text; nothing is written."""
-    return json.dumps(build(), indent=2) + "\n"
+light = {
+    "page": alias_or_color("--color-bg-default", "color.bg.default"),
+    "surface": alias_or_color("--color-card-bg", "color.card.bg"),
+    "text": alias_or_color("--color-text-default", "color.text.default"),
+    "muted": alias_or_color("--color-text-gray", "color.text.gray"),
+    "accent": leaf("color", "#ffbe3c", "Measured computed background-color of .super-navbar__cta on https://super.so/, rgb(255, 190, 60), 2026-11-21. The yellow is a site override, not a --color-* token."),
+    "accentHover": leaf("color", "#fbb43c", "Measured computed background-color of the hero 'Get started for free' link on hover, rgb(251, 180, 60), 2026-11-21."),
+    "border": alias_or_color("--color-border-default", "color.border.default"),
+    "navbar": leaf("color", "rgba(255, 255, 255, 0.85)", "Measured computed background-color of .super-navbar on https://super.so/, 2026-11-21."),
+    "footer": leaf("color", "#090909", "Measured computed background-color of footer on https://super.so/, rgb(9, 9, 9), 2026-11-21."),
+    "footerText": leaf("color", "#ffffff", "Measured computed color of footer on https://super.so/, 2026-11-21."),
+    "focus": leaf("color", "#005fcc", "Not captured as a designed ring. Chromium's default outline colour was not read from a focused control that painted one. Recorded as Not captured in the coverage table. This token is the browser default only if a control shows it; the captured focus-visible states showed no colour change."),
+}
+
+# The focus token above overclaims. Drop it: unread focus colour is Not captured.
+del light["focus"]
+
+tokens = {
+    "core": core,
+    "light": light,
+    "$themes": [
+        {
+            "id": "light",
+            "name": "Light",
+            "selectedTokenSets": {"core": "source", "light": "enabled"},
+            "$description": "The theme https://super.so/ paints. html.theme-dark is declared in CSS and was not switched on the public site, so no dark set is emitted.",
+        }
+    ],
+    "$metadata": {"tokenSetOrder": ["core", "light"]},
+}
+
+# Refuse a colour the helper cannot parse and a dimension that is not one length.
+DIM = re.compile(r"-?\d*\.?\d+(px|rem)")
 
 
-if __name__ == "__main__":
-    OUT.write_text(render())
-    print(f"wrote {OUT}")
+def walk(node, path=""):
+    if isinstance(node, dict) and "$value" in node:
+        ty = node.get("$type")
+        val = node["$value"]
+        if not node.get("$extensions", {}).get("source"):
+            raise SystemExit(f"{path}: no source")
+        if ty == "color" and not str(val).startswith("{"):
+            norm_color(val)
+        if ty == "dimension" and not DIM.fullmatch(str(val)):
+            raise SystemExit(f"{path}: bad dimension {val}")
+        return
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if k.startswith("$"):
+                continue
+            walk(v, f"{path}.{k}" if path else k)
+
+
+walk(tokens["core"])
+walk(tokens["light"])
+
+# Alias targets must exist.
+def collect(node, prefix=""):
+    found = set()
+    for k, v in node.items():
+        if k.startswith("$"):
+            continue
+        p = f"{prefix}.{k}" if prefix else k
+        if isinstance(v, dict) and "$value" in v:
+            found.add(p)
+        elif isinstance(v, dict):
+            found |= collect(v, p)
+    return found
+
+
+known = collect(tokens["core"]) | collect(tokens["light"])
+for p in list(known):
+    if "{" in json.dumps(tokens):
+        pass
+
+
+def check_aliases(node, path=""):
+    if isinstance(node, dict) and "$value" in node:
+        val = str(node["$value"])
+        for ref in re.findall(r"\{([^{}]+)\}", val):
+            if ref not in known and f"core.{ref}" not in known:
+                # aliases are unprefixed and resolve against core first
+                if ref not in collect(tokens["core"]) and ref not in collect(tokens["light"]):
+                    raise SystemExit(f"{path}: alias {{{ref}}} missing")
+        return
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if not k.startswith("$"):
+                check_aliases(v, f"{path}.{k}" if path else k)
+
+
+check_aliases(tokens)
+(HERE / "tokens.json").write_text(json.dumps(tokens, indent=1, ensure_ascii=False) + "\n")
+
+
+def count(d):
+    return sum(1 if isinstance(v, dict) and "$value" in v else count(v) if isinstance(v, dict) else 0 for v in d.values())
+
+
+print(f"tokens.json: core {count(core)} + light {count(light)} = {count(core) + count(light)}")

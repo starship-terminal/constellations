@@ -1,0 +1,133 @@
+{
+  "captured": "2026-11-21",
+  "viewport": { "width": 1440, "height": 900, "deviceScaleFactor": 1 },
+  "url": "https://fibery.com/",
+  "body": {
+    "backgroundColor": "rgb(250, 235, 214)",
+    "color": "rgb(37, 29, 26)",
+    "fontFamily": "\"Suisse Intl\", sans-serif",
+    "fontSize": "16px"
+  },
+  "meta": {
+    "themeColor": null,
+    "colorScheme": "normal",
+    "htmlClass": "",
+    "darkThemeSwitch": "not present on the public marketing pages"
+  },
+  "components": [
+    {
+      "name": "display",
+      "selector": "h1",
+      "page": "https://fibery.com/",
+      "color": "rgb(37, 29, 26)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "\"Suisse Intl\", sans-serif",
+      "fontSize": "64px",
+      "fontWeight": "800",
+      "lineHeight": "64px",
+      "letterSpacing": "normal"
+    },
+    {
+      "name": "heading",
+      "selector": "h2",
+      "page": "https://fibery.com/",
+      "color": "rgb(250, 235, 214)",
+      "fontFamily": "\"Suisse Intl\", sans-serif",
+      "fontSize": "48px",
+      "fontWeight": "800",
+      "lineHeight": "48px"
+    },
+    {
+      "name": "title",
+      "selector": "h3",
+      "page": "https://fibery.com/",
+      "color": "rgb(37, 29, 26)",
+      "fontFamily": "\"Suisse Intl\", sans-serif",
+      "fontSize": "36px",
+      "fontWeight": "700",
+      "lineHeight": "36px"
+    },
+    {
+      "name": "body",
+      "selector": "body",
+      "page": "https://fibery.com/",
+      "color": "rgb(37, 29, 26)",
+      "backgroundColor": "rgb(250, 235, 214)",
+      "fontFamily": "\"Suisse Intl\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "19.2px"
+    },
+    {
+      "name": "button-primary",
+      "selector": "header a[href=\"/sign-up\"]",
+      "page": "https://fibery.com/",
+      "text": "Sign up for free",
+      "color": "rgb(250, 235, 214)",
+      "backgroundColor": "rgb(37, 29, 26)",
+      "fontFamily": "\"Suisse Intl\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "40px",
+      "height": "40px",
+      "padding": "0px 16px",
+      "borderRadius": "6px",
+      "border": "0px none",
+      "hoverBackground": "rgb(37, 29, 26)",
+      "hoverNote": "Hover on the header signup link did not change the computed background on 2026-11-21."
+    },
+    {
+      "name": "button-quiet",
+      "selector": "header a[href=\"/login\"]",
+      "page": "https://fibery.com/",
+      "text": "Log in",
+      "color": "rgb(37, 29, 26)",
+      "backgroundColor": "rgb(253, 247, 239)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "height": "40px",
+      "padding": "0px 16px",
+      "borderRadius": "6px"
+    },
+    {
+      "name": "pill",
+      "selector": "[class*=\"TabPillButton\"]",
+      "page": "https://fibery.com/",
+      "text": "Startup",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgb(240, 215, 200)",
+      "height": "34px",
+      "padding": "6px 12px",
+      "borderRadius": "48px",
+      "fontSize": "13.3333px"
+    },
+    {
+      "name": "login-email",
+      "selector": "button Continue with Email",
+      "page": "https://fibery.io/login",
+      "color": "rgb(37, 29, 26)",
+      "backgroundColor": "rgb(255, 253, 250)",
+      "height": "36px",
+      "padding": "8px 12px",
+      "borderRadius": "6px",
+      "border": "1px solid oklab(0.239148 0.0103381 0.00917888 / 0.1)",
+      "fontSize": "16px",
+      "fontWeight": "500"
+    },
+    {
+      "name": "header",
+      "selector": "header",
+      "page": "https://fibery.com/",
+      "height": "88px",
+      "padding": "12px",
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "name": "focus",
+      "selector": "document.activeElement after Tab",
+      "page": "https://fibery.com/",
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "note": "First tab stop was the logo link. Outline is the browser default, not a product ring."
+    }
+  ]
+}

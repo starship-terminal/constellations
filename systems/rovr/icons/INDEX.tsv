@@ -1,7 +1,0 @@
-role	file	note
-wordmark	—	Not extracted. The preview browser produced no screenshot frames, and the inline SVG pass was not run.
-nav-current	—	RADIO is type, not an icon.
-menu	—	MENU is a yellow pill of type.
-listen	—	A 65px yellow circle. The glyph inside was not extracted.
-oauth-google	—	A 48px button labelled Continue with Google. Not pressed, glyph not extracted.
-oauth-apple	—	A 48px button labelled Continue with Apple. Not pressed, glyph not extracted.

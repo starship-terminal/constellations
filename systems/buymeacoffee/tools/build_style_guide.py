@@ -44,7 +44,8 @@ def css_val(name, t):
     if ty == "shadow":
         if isinstance(v, str):
             return alias(v)
-        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
+        layers = v if isinstance(v, list) else [v]
+        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in layers)
     if ty == "typography":
         return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
     if ty == "gradient":

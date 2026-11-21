@@ -1,202 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Typeform style guide</title>
 <style>
-  :root {
-    --page: #FAF9FB;
-    --surface: #FFFFFF;
-    --ink: #2A222B;
-    --muted: #655D67;
-    --accent: #2A222B;
-    --accent-text: #FAF9FB;
-    --border: #E5E1E5;
-    --inverse: #2A222B;
-    --inverse-text: #FAF9FB;
-    --eyebrow: #ECCFFA;
-    --focus: #E59700;
-    --purple: #A25FBA;
-    --green: #428A47;
-    --auth: #3C323E;
-    --auth-page: #F7F7F8;
-  }
-  html[data-theme="dark"] {
-    --page: #2A222B;
-    --surface: #251C27;
-    --ink: #FAF9FB;
-    --muted: #655D67;
-    --accent: #FAF9FB;
-    --accent-text: #2A222B;
-    --border: #E5E1E5;
-    --inverse: #FAF9FB;
-    --inverse-text: #2A222B;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--page);
-    color: var(--ink);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.3;
-  }
-  header, main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
-  h1 { font-weight: 400; font-size: 48px; letter-spacing: -1px; line-height: 1; margin: 0 0 8px; }
-  h2 { font-weight: 400; font-size: 24px; margin: 32px 0 12px; }
-  p { color: var(--muted); }
-  button.toggle {
-    background: var(--accent);
-    color: var(--accent-text);
-    border: 0;
-    border-radius: 12px;
-    padding: 8px 20px;
-    font: inherit;
-    cursor: pointer;
-  }
-  .row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .swatch { width: 140px; }
-  .chip { height: 64px; border-radius: 12px; border: 1px solid var(--border); }
-  .name { font-size: 12px; margin-top: 4px; }
-  .hero {
-    background: var(--inverse);
-    color: var(--inverse-text);
-    border-radius: 12px;
-    padding: 48px 32px;
-    margin-top: 24px;
-  }
-  .hero h3 { font-weight: 400; font-size: 48px; letter-spacing: -1px; line-height: 1; margin: 8px 0; }
-  .eyebrow { color: var(--eyebrow); font-size: 14px; letter-spacing: 0; }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 12px;
-    padding: 12px 20px;
-    font-size: 16px;
-    line-height: 16px;
-    text-decoration: none;
-    margin-right: 8px;
-  }
-  .btn-fill { background: var(--accent-text); color: var(--accent); }
-  .hero .btn-fill { background: #FAF9FB; color: #2A222B; }
-  .btn-line { background: transparent; color: var(--inverse-text); border: 1px solid #FAF9FB; }
-  .card {
-    background: #FFFFFF;
-    color: #2A222B;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    width: 280px;
-  }
-  .card strong { font-weight: 400; font-size: 24px; }
-  .card .price { font-size: 36px; margin: 12px 0 4px; }
-  .save { color: var(--green); font-size: 14px; }
-  .plan-btn {
-    display: inline-block;
-    margin-top: 16px;
-    background: #2A222B;
-    color: #FAF9FB;
-    border-radius: 12px;
-    padding: 8px 24px;
-    height: 48px;
-    line-height: 32px;
-  }
-  .field {
-    width: 320px;
-    height: 44px;
-    border-radius: 12px;
-    border: 1px solid rgba(81, 76, 84, 0.15);
-    background: #FAFAFA;
-    padding: 0 12px;
-    font: inherit;
-  }
-  .field:focus { outline: 2px solid #3C323E; border-color: #3C323E; }
-  .auth-btn {
-    display: block;
-    width: 320px;
-    margin-top: 8px;
-    height: 44px;
-    border-radius: 12px;
-    border: 1px solid rgba(81, 76, 84, 0.15);
-    background: rgba(255, 255, 255, 0.8);
-    color: #655D67;
-    font: inherit;
-  }
-  .auth-submit {
-    background: #3C323E;
-    color: #FFFFFF;
-    border-color: transparent;
-  }
-  table { border-collapse: collapse; width: 100%; font-size: 14px; }
-  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+:root {
+  --color-neutral-25: #faf9fb;
+  --color-neutral-50: #f5f3f6;
+  --color-neutral-100: #eeecee;
+  --color-neutral-200: #e5e1e5;
+  --color-neutral-300: #d4d1d5;
+  --color-neutral-400: #c5c0c6;
+  --color-neutral-500: #a49da6;
+  --color-neutral-600: #837a85;
+  --color-neutral-700: #655d67;
+  --color-neutral-800: #564b58;
+  --color-neutral-900: #3e3040;
+  --color-neutral-1000: #2a222b;
+  --color-purple-25: #fdfbfe;
+  --color-purple-50: #fcf9fd;
+  --color-purple-100: #f9f2fd;
+  --color-purple-200: #f7edfc;
+  --color-purple-300: #eccffa;
+  --color-purple-400: #ddb7f0;
+  --color-purple-500: #b66dd5;
+  --color-purple-600: #a25fba;
+  --color-purple-700: #9454ab;
+  --color-purple-800: #753a88;
+  --color-purple-900: #5c2e6b;
+  --color-purple-1000: #482050;
+  --color-lavender-25: #fbfafe;
+  --color-lavender-50: #f9f9fd;
+  --color-lavender-100: #f2f1fe;
+  --color-lavender-200: #ece9fb;
+  --color-lavender-300: #ddd6fa;
+  --color-lavender-400: #c6b8fe;
+  --color-lavender-500: #a494eb;
+  --color-lavender-600: #8772c0;
+  --color-lavender-700: #7761b3;
+  --color-lavender-800: #564794;
+  --color-lavender-900: #42377b;
+  --color-lavender-1000: #2d2553;
+  --color-blue-25: #fafcff;
+  --color-blue-50: #f6fafd;
+  --color-blue-100: #ecf5fe;
+  --color-blue-200: #e2f0fe;
+  --color-blue-300: #bdddf9;
+  --color-blue-400: #9ac9f4;
+  --color-blue-500: #6badeb;
+  --color-blue-600: #4a85ba;
+  --color-blue-700: #3c73a5;
+  --color-blue-800: #26598c;
+  --color-blue-900: #01487f;
+  --color-blue-1000: #00325f;
+  --color-green-25: #fafcf9;
+  --color-green-50: #f9fbf7;
+  --color-green-100: #f1f7ed;
+  --color-green-200: #e7f2e4;
+  --color-green-300: #c4e3ba;
+  --color-green-400: #97da90;
+  --color-green-500: #6bb878;
+  --color-green-600: #428a47;
+  --color-green-700: #457d4e;
+  --color-green-800: #2d6236;
+  --color-green-900: #274e2e;
+  --color-green-1000: #1b3620;
+  --color-red-25: #fdfafa;
+  --color-red-50: #fdf9f8;
+  --color-red-100: #faf0f0;
+  --color-red-200: #f8e4e3;
+  --color-red-300: #f8cdd8;
+  --color-red-400: #f4a9af;
+  --color-red-500: #e27474;
+  --color-red-600: #ce5d55;
+  --color-red-700: #c74e43;
+  --color-red-800: #913b21;
+  --color-red-900: #673222;
+  --color-red-1000: #4d2519;
+  --color-yellow-25: #fcfbf7;
+  --color-yellow-50: #fcfaf6;
+  --color-yellow-100: #f9f3ec;
+  --color-yellow-200: #fcf0ca;
+  --color-yellow-300: #fbe19d;
+  --color-yellow-400: #e7c97e;
+  --color-yellow-500: #be993a;
+  --color-yellow-600: #9c781c;
+  --color-yellow-700: #8b6a18;
+  --color-yellow-800: #765d1e;
+  --color-yellow-900: #66511a;
+  --color-yellow-1000: #4a3d1c;
+  --color-brand-400: #f3e4fb;
+  --color-brand-700: #a057bb;
+  --color-brand-800: #580273;
+  --font-family-sans: Twklausanne, Arial, sans-serif;
+  --font-family-display: Tobias, "Times New Roman", sans-serif;
+  --font-family-mono: Apercu Mono, ui-monospace, monospace;
+  --typography-display: 400 5rem/1em var(--font-family-display);
+  --typography-heading-1: 400 4.5rem/1em var(--font-family-display);
+  --typography-heading-2: 400 4rem/1.1em var(--font-family-display);
+  --typography-heading-3: 350 3rem/1.1em var(--font-family-sans);
+  --typography-heading-4: 400 2.25rem/1.15em var(--font-family-sans);
+  --typography-heading-5: 500 1.875rem/1.15em var(--font-family-sans);
+  --typography-heading-6: 500 1.5rem/1.15em var(--font-family-sans);
+  --typography-body-lg: 350 1.5rem/1.3em var(--font-family-sans);
+  --typography-body: 400 1.25rem/1.3em var(--font-family-sans);
+  --typography-body-sm: 400 1rem/1.3em var(--font-family-sans);
+  --typography-caption: 400 0.875rem/1.3em var(--font-family-sans);
+  --typography-label: 600 0.875rem/1.2em var(--font-family-sans);
+  --typography-action: 500 1rem/1.3em var(--font-family-sans);
+  --spacing-400: 4rem;
+  --spacing-250: 2.5rem;
+  --spacing-500: 5rem;
+  --spacing-300: 3rem;
+  --spacing-150: 1.5rem;
+  --spacing-100: 1rem;
+  --spacing-075: 0.75rem;
+  --spacing-050: 0.5rem;
+  --spacing-200: 2rem;
+  --spacing-125: 1.25rem;
+  --spacing-025: 0.25rem;
+  --spacing-0125: 0.125rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.5rem;
+  --radius-xl: 5rem;
+  --radius-full: 1000rem;
+  --radius-xs: 0.25rem;
+  --radius-lg: 3rem;
+  --layout-content-large: 96rem;
+  --layout-content-medium: 80rem;
+  --layout-gutter: 2rem;
+  --layout-margin: 3rem;
+  --layout-section-small: 2rem;
+  --layout-section-medium: 3rem;
+  --layout-section-large: 5rem;
+  --measured-button-height: 40px;
+  --measured-button-radius: 12px;
+  --measured-button-padding-x: 20px;
+  --measured-nav-item-height: 88px;
+  --measured-menu-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.04);
+  --measured-hero-size: 80px;
+  --measured-focus-outline-width: 0px;
+  --page: var(--color-neutral-25);
+  --surface: var(--color-neutral-25);
+  --raised: var(--color-neutral-50);
+  --invert: var(--color-neutral-1000);
+  --text-primary: var(--color-neutral-1000);
+  --text-secondary: var(--color-neutral-700);
+  --text-on-accent: var(--color-neutral-25);
+  --text-invert: var(--color-neutral-25);
+  --text-highlight: var(--color-purple-700);
+  --text-eyebrow: var(--color-purple-600);
+  --border-default: var(--color-neutral-200);
+  --border-strong: var(--color-neutral-1000);
+  --accent-default: var(--color-neutral-1000);
+  --accent-hover: var(--color-neutral-800);
+  --accent-pressed: #3e3040;
+  --button-secondary-bg: var(--color-neutral-25);
+  --button-secondary-hover: var(--color-neutral-100);
+  --button-tertiary-hover: var(--color-purple-600);
+  --sg-sans: "Twklausanne", Arial, sans-serif;
+  --sg-display: Tobias, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text-primary); font: 400 16px/1.4 var(--sg-sans); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 400 48px/1 var(--sg-display); letter-spacing: -1px; margin: 0 0 8px; }
+h2 { font: 400 28px/1.1 var(--sg-display); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--text-secondary); }
+code { font-family: var(--sg-mono); font-size: 0.85em; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 12px; border: 1px solid var(--border-default); }
+.sw b, .sw span { display: block; font-size: 12px; }
+.sw span { color: var(--text-secondary); }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 20px; border-radius: 12px; text-decoration: none; font-size: 16px; }
+.btn.primary { background: var(--accent-default); color: var(--text-on-accent); }
+.btn.secondary { background: var(--button-secondary-bg); color: var(--accent-default); box-shadow: inset 0 0 0 1px var(--border-strong); }
+.card { background: #ffffff; border: 1px solid var(--border-default); border-radius: 24px; padding: 20px; max-width: 280px; }
+.nav { display: flex; gap: 20px; align-items: center; background: var(--invert); color: var(--text-invert); border-radius: 16px; padding: 16px 20px; }
 </style>
 </head>
 <body>
-<header>
-  <button class="toggle" type="button" id="theme">Dark hero</button>
-  <h1>Typeform</h1>
-  <p>Values measured on www.typeform.com and the signed-out login on 19 November 2026. Tobias and Twklausanne are not in this page, so type falls back to Arial.</p>
-</header>
 <main>
+  <h1>Typeform</h1>
+  <p>Public marketing tokens from www.typeform.com, one light theme. Values on this page are CSS custom properties generated from tokens.json. Proprietary faces are not loaded: Tobias falls back to Times New Roman, Twklausanne to Arial.</p>
   <h2>Colour</h2>
-  <div class="row" id="swatches"></div>
-  <div class="hero">
-    <div class="eyebrow">AI FORMS &amp; AUTOMATION</div>
-    <h3>Your favorite forms.</h3>
-    <p style="color:#FAF9FB">Combine AI forms and automated workflows to drive revenue growth.</p>
-    <a class="btn btn-fill" href="#">Get started—it’s free</a>
-    <a class="btn btn-line" href="#">Contact sales</a>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>light.page</span></div>
+    <div class="sw"><i style="background:#ffffff"></i><b>surface</b><span>measured card white</span></div>
+    <div class="sw"><i style="background:var(--text-primary)"></i><b>text</b><span>light.text.primary</span></div>
+    <div class="sw"><i style="background:var(--text-secondary)"></i><b>muted</b><span>light.text.secondary</span></div>
+    <div class="sw"><i style="background:var(--accent-default)"></i><b>accent</b><span>light.accent.default</span></div>
+    <div class="sw"><i style="background:var(--border-default)"></i><b>border</b><span>light.border.default</span></div>
+    <div class="sw"><i style="background:var(--text-highlight)"></i><b>highlight</b><span>light.text.highlight</span></div>
   </div>
-  <h2>Plan card</h2>
-  <div class="card">
-    <strong>Basic</strong>
-    <div class="price">28 USD<span style="font-size:16px">/mo</span></div>
-    <div class="save">Save 132 USD /yr</div>
-    <span class="plan-btn">Get Basic</span>
+  <h2>Type</h2>
+  <p style="font:400 64px/1 var(--sg-display);color:var(--text-primary);letter-spacing:-2px">Forms that feel human</p>
+  <p style="font-size:20px;color:var(--text-primary)">Body copy sits in Twklausanne. Eyebrows use the purple highlight.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn primary" href="#components">Sign up</a>
+    <a class="btn secondary" href="#components">Contact sales</a>
   </div>
-  <h2>Login field</h2>
-  <label>Email<br><input class="field" type="email" placeholder="Email"></label>
-  <button class="auth-btn" type="button">Continue with Google</button>
-  <button class="auth-btn auth-submit" type="button">Continue with email</button>
-  <h2>Radius and spacing</h2>
-  <table>
-    <tr><th>Token</th><th>Value</th></tr>
-    <tr><td>radius xs</td><td>4px</td></tr>
-    <tr><td>radius sm</td><td>12px</td></tr>
-    <tr><td>radius md</td><td>24px</td></tr>
-    <tr><td>radius lg</td><td>48px</td></tr>
-    <tr><td>button height, nav</td><td>40px</td></tr>
-    <tr><td>button height, hero and plan</td><td>48px</td></tr>
-    <tr><td>field height</td><td>44px</td></tr>
-    <tr><td>page gutter</td><td>48px</td></tr>
-  </table>
+  <h2>Nav</h2>
+  <div class="nav"><strong>Typeform</strong><span>Platform</span><span>Solutions</span><span>Resources</span><span style="margin-left:auto">Log in</span></div>
+  <h2>Card</h2>
+  <div class="card"><b>Core</b><p style="margin:8px 0 0">Plans for everyone. Cards use a large radius on a white surface.</p></div>
 </main>
-<script>
-  const colours = [
-    ["page", "#FAF9FB"],
-    ["ink", "#2A222B"],
-    ["muted", "#655D67"],
-    ["border", "#E5E1E5"],
-    ["eyebrow", "#ECCFFA"],
-    ["focus", "#E59700"],
-    ["purple", "#A25FBA"],
-    ["green", "#428A47"],
-    ["auth", "#3C323E"],
-    ["auth page", "#F7F7F8"]
-  ];
-  const row = document.getElementById("swatches");
-  for (const [name, hex] of colours) {
-    const d = document.createElement("div");
-    d.className = "swatch";
-    d.innerHTML = '<div class="chip" style="background:' + hex + '"></div><div class="name">' + name + ' ' + hex + '</div>';
-    row.appendChild(d);
-  }
-  document.getElementById("theme").addEventListener("click", () => {
-    const html = document.documentElement;
-    const next = html.getAttribute("data-theme") === "dark" ? "" : "dark";
-    if (next) html.setAttribute("data-theme", next);
-    else html.removeAttribute("data-theme");
-  });
-</script>
 </body>
 </html>

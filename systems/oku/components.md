@@ -1,73 +1,95 @@
 # Oku components
 
-Measured on the public signed-out pages of oku.club on 2026-11-19, from computed styles. The preview browser did not produce screenshot frames, so there are no crops.
+Public signed-out surface, measured on oku.club on 2026-11-21. Crops are from the 256-colour screenshots. Values are token names from [tokens.json](tokens.json).
 
 ## Button
 
-The header Join control is the filled action. On the dark paint it is olive `#E0E1E4` text on `#131314`, Inter 14/500, 40px tall, padding 0 24px, radius 8px, shadow `rgba(0, 0, 0, 0.25) 0px 4px 4px -5px`. Sign in beside it is a quiet button: page fill, olive text, same size and radius.
+The header Join control. 112×40, 8px radius, 14px Inter at weight 500, 24px horizontal padding.
 
-Join for free on the homepage is a quieter fill, blueberry-10 `#242426`, blueberry-100 text, 15/500, 54px tall. At 390px it is 46px tall and 14px type. Subscribe on pricing is an outline: transparent fill, 1px inset ring at 22% olive, 40px tall, full card width.
+| State | Crop | Values |
+|---|---|---|
+| default, light | [join-button-default.png](components/crops/join-button-default.png) | `light.component.button.background` #000000, `light.component.button.text` #ffffff, `core.radius.control` 8px, `core.shadow.button` |
+| default, dark | [join-button-dark-default.png](components/crops/join-button-dark-default.png) | `dark.component.button.background` #e0e1e4, `dark.component.button.text` #131314 |
+| hover | not captured as a colour change | computed background and color matched default |
+| focus-visible | not captured as a ring | outline width 0px. Focus moved the button shadow blur from 4px to about 6px. |
+| pressed, disabled, loading | not captured | not shown on the public surface |
 
-Hover, pressed, disabled and loading were not measured. Focus on Join computed `outline: none`. The stylesheet sets `:focus { outline: none }`.
+Hero Join for free is the same fill at 54px tall and 15px type. See [hero-cta-default.png](components/crops/hero-cta-default.png).
 
-## Icon button
+## Sign in button
 
-Explore carousel controls are 32px circles, page fill, olive text. The phone menu button is 22 by 40, transparent, olive, with a 24px stroked icon. Shelf actions on a book page are 92 by 50, radius 8px, page fill, 1px inset ring plus the lift shadow, and a 28px filled glyph.
+A quiet twin of Join: white fill, ink label, an inset 1px ring at `light.color.border`.
+
+| State | Crop | Values |
+|---|---|---|
+| default | [sign-in-button-default.png](components/crops/sign-in-button-default.png) | `light.component.sign-in.background` #ffffff, `light.component.sign-in.text` #131314 |
 
 ## Link
 
-Nav links are Inter 16/400, line-height 24px, blueberry-100, no underline. Inline links in captions use the surrounding muted colour and no underline. Book cards report a link colour of `rgb(158, 158, 255)` in dark and `rgb(0, 0, 238)` in light. The light value is the browser default, not a declared token.
+Nav links are 16px Inter, no underline, no radius. Explore, Blog, Pricing, Twitter, Contact.
+
+| State | Crop | Values |
+|---|---|---|
+| default | [nav-link-default.png](components/crops/nav-link-default.png) | `light.color.text-secondary` #131314 |
+| hover | same colour | computed color stayed #000000 on hover, #e0e1e4 in dark |
+| focus-visible | no ring | outline width 0px |
+
+The inline "Sign in." under the hero is an underlined text link. Not a separate token.
 
 ## Text field
 
-Sign-in, join and reset share one field: 368 by 46, radius 8px, 1px blueberry-20 border, page fill, blueberry-100 text and placeholder, padding 0 16px, Inter 14/400. Labels are Inter 14/400, blueberry-80, line-height 25.2px.
+Shown only inside the signup dialog and on the sign-in wall. 384×46, 8px radius, 16px horizontal padding, 1px solid border.
 
-## Text area, select, checkbox, radio
+| State | Crop | Values |
+|---|---|---|
+| empty | [text-field-default.png](components/crops/text-field-default.png) | `light.color.field-border` #d1d1d3, `core.size.field-height` 46px |
+| filled, error | not captured | no field was typed into, no form was submitted |
 
-Not present on the measured public pages.
+## Dialog
 
-## Switch
+Join opens a 480px panel, 20px radius, over an `rgba(0, 0, 0, 0.6)` scrim. The panel asks for email, username, and password. It was not filled.
 
-The pricing billing control is a checkbox plus a label. The label is 42 by 27, radius 27px, blueberry-10 in the rule and olive when yearly is checked. The knob is a 21px circle, 3px from the top and left, milk fill, transition 300ms `cubic-bezier(0.23, 1, 0.32, 1)`. Active scales the knob on X to 1.1. The unchecked position rule was not in the accessible stylesheets.
+| State | Crop | Values |
+|---|---|---|
+| open | [dialog-default.png](components/crops/dialog-default.png) | `light.component.dialog.background` #ffffff, `core.radius.dialog` 20px, `light.color.scrim` |
 
-## Tabs
-
-Book Info, Reviews and Highlights are links. Selected: blueberry-100, 15px, padding 16px 0, 3px bottom border in blueberry-100. Idle: blueberry-50, transparent 3px bottom border.
+Dark paints the same panel at `dark.component.dialog.background` #131314. Screenshot: [home-dark-join-dialog.png](screenshots/home-dark-join-dialog.png).
 
 ## Menu
 
-The phone drawer is a nav, absolute, page fill, padding 24px, full viewport. Links are Fabric Serif 36/400, line-height 54px, blueberry-100. No desktop menu was opened.
+Phone only. The header button opens a full-screen list: Join, Sign in, Explore, Blog, Pricing, Twitter, Contact. Close is the same button, drawn as an ×.
 
-## Tooltip, dialog, toast
+| State | Crop |
+|---|---|
+| open | [menu-open-default.png](components/crops/menu-open-default.png) |
 
-Not shown. Toastify custom properties are on `:root` (info `#3498db`, success `#07bc0c`, warning `#f1c40f`, error `#e74c3c`) and no toast was on screen. A Nolt feedback widget declares `#fd6a65` and was not opened.
+## Card, list row, tabs
 
-## Card
+Book covers, activity rows, and blog posts are lists of links, not a separate card component with its own fill. Book pages have Book Info, Reviews, and Highlights as text tabs. See [book-light-default.png](screenshots/book-light-default.png).
 
-Book cards on explore are 388 by 410, radius 8px. Dark fill is the page colour. Light fill is white with a 1px blueberry-10 border. Covers are 154 by 252, radius 3px, no shadow.
+Pricing columns are 297px wide with no card fill or radius. The price figure is FabricSerifWeb at 39px (`core.font.size.price`).
 
-Pricing cards are 368px wide, padding 40px, radius 8px. Free is blueberry-5 `#1C1C1D`. Premium is badge-premium-13 `#1F241F`. Supporter is badge-supporter-13 `#292328`.
+## Display type
 
-## List row
+| Role | Crop | Values |
+|---|---|---|
+| hero | [hero-title-default.png](components/crops/hero-title-default.png) | FabricSerifWeb 48px, line-height 62.4px, letter-spacing -0.288px |
+| pricing title | [pricing-h1-default.png](components/crops/pricing-h1-default.png) | same 48px display |
+| book title | [book-title-default.png](components/crops/book-title-default.png) | FabricSerifWeb 24px, #131314 |
 
-The homepage activity list is links with no card chrome. Names and times were not copied into tokens. Collection chips on a book page use radius 6px and padding 8px.
+## Header
 
-## Table
+Fixed, 80px, transparent. [header-default.png](components/crops/header-default.png).
 
-Not present.
+## Not present
 
-## Avatar
-
-User marks appear on the activity list. Size and radius were not isolated from the list link.
-
-## Badge
-
-Save ribbons on pricing are 12px, weight 700, white, on a 50px box. The "Save 50%!" note is Inter 12/400, badge-premium-100 `#6F9965`. Premium and supporter names are serif labels, not pills.
+Checkbox, radio, switch, select, text area, tooltip, toast, table, avatar as a component, badge, icon button with a name. Toastify CSS is loaded. No toast was shown.
 
 ## Gaps
 
-- No hover, pressed, disabled, loading or error state was held.
-- Focus is removed by a global outline rule.
-- Text area, select, checkbox, radio, tooltip, dialog, toast, table and avatar were not measured as components.
-- Light theme was measured on explore only. Pricing cards, fields and the homepage were not remeasured in light.
-- No screenshots or crops. The preview browser returned "The browser is not producing screenshot frames".
+- Signed-in library, collections editor, highlights editor, goals, and checkout were not opened.
+- `/signin` is a wall. Screenshot [signin-light-wall.png](screenshots/signin-light-wall.png) shows empty fields. Nothing was typed.
+- `/login` is the public 404, not a login form.
+- Hover and focus did not paint a new colour. Pressed was not held.
+- Section heading size (the 36px h2 below the fold) is not in tokens.json. The viewport readings did not include an h2.
+- No icon SVG index. The wordmark is in the header crop.

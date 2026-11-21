@@ -1,102 +1,69 @@
 {
- "schemaVersion": 1,
- "capturedAt": "2026-11-17T13:26:32.895Z",
- "screenshot": "mobile-business-light-full.png",
- "sanitizedSourceUrl": null,
- "requested": {
-  "viewport": {
-   "width": 390,
-   "height": 844
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T01:11:35.873Z",
+  "screenshot": "mobile-business-light-full.png",
+  "sanitizedSourceUrl": "https://www.coinbase.com/en-sg/business",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
   },
-  "deviceScaleFactor": 2
- },
- "configuredViewport": {
-  "width": 390,
-  "height": 844
- },
- "actual": {
-  "innerWidth": 390,
-  "innerHeight": 844,
-  "devicePixelRatio": 2,
-  "theme": {
-   "classes": [],
-   "attributes": {},
-   "colorScheme": "normal"
+  "configuredViewport": {
+    "width": 390,
+    "height": 844
   },
-  "visualViewport": {
-   "width": 390,
-   "height": 844,
-   "scale": 1,
-   "offsetLeft": 0,
-   "offsetTop": 0,
-   "pageLeft": 0,
-   "pageTop": 0
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 390,
+      "height": 15057
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
   },
-  "documentSize": {
-   "width": 390,
-   "height": 15057
+  "capture": {
+    "mode": "fullPage",
+    "scale": "device",
+    "clip": null
   },
-  "scroll": {
-   "x": 0,
-   "y": 0
+  "png": {
+    "width": 780,
+    "height": 30114
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 780,
+      "height": 30114
+    },
+    "basis": "fullPage"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
   }
- },
- "capture": {
-  "mode": "stitchedParts",
-  "scale": "device",
-  "clip": {
-   "x": 0,
-   "y": 0,
-   "width": 390,
-   "height": 15057
-  }
- },
- "png": {
-  "width": 780,
-  "height": 30114
- },
- "dimensionCheck": {
-  "status": "pass",
-  "expected": {
-   "width": 780,
-   "height": 30114
-  },
-  "basis": "stitchedParts"
- },
- "visualReview": {
-  "status": "pending",
-  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
- },
- "cropCoordinates": {
-  "status": "unverified",
-  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
- },
- "stitchedFrom": [
-  "mobile-business-light-full.part0.png",
-  "mobile-business-light-full.part1.png",
-  "mobile-business-light-full.part2.png"
- ],
- "partClip": [
-  {
-   "x": 0,
-   "y": 0,
-   "width": 390,
-   "height": 7000,
-   "documentY": 0
-  },
-  {
-   "x": 0,
-   "y": 7000,
-   "width": 390,
-   "height": 7000,
-   "documentY": 7000
-  },
-  {
-   "x": 0,
-   "y": 14000,
-   "width": 390,
-   "height": 1057,
-   "documentY": 14000
-  }
- ]
 }

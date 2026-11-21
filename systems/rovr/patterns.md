@@ -1,20 +1,33 @@
-# Patterns
+# ROVR patterns
 
-Signed-out pages only. The pane was 1169 by 731. Screenshots were not saved.
+Public pages only. The signed-in library is a wall, recorded in [site-tree.md](site-tree.md).
 
-| Pattern | Page | What was on screen |
-|---|---|---|
-| App shell | Every page | A 70px black header with a yellow 1px rule, italic nav, a yellow MENU pill. The body is `overflow: hidden` and `100dvh`. |
-| Live radio | `/` | Show title in yellow, curator name in gtAlpina, a yellow Message pill, a 65px listen circle, a yellow track card, a Roboto clock |
-| Mood chooser | `/moods` | THINK, FEEL, MOVE in `#F2E84A`, clamp type, a 500ms colour transition |
-| Schedule | `/schedule` | A day strip (THU 19 through WED 25) and a list of shows with a 36px hour |
-| Auth gate | `/login` | A yellow panel, `w-64`, with RADIO REINVENTED, a black SIGN UP block, an outlined SIGN IN block, and 48px Google and Apple buttons |
-| About | `/about` | A yellow manifesto (60px black type) and a yellow-on-black store section |
-| Legal | `/privacy` | Yellow type on black. Title 36px, headings 20px, body 14px |
+## Player shell
 
-## Not captured
+The home page is the radio. A black header holds the wordmark, italic yellow nav, and a yellow MENU pill. The live show sits on the left: time slot, uppercase yellow title, italic curator name, a 70 px yellow play button, and a yellow track strip. Artwork fills the right half. [screenshots/home-dark-default.png](screenshots/home-dark-default.png)
 
-- Search, the drawer menu, and the Alexa modal were present as buttons and were not opened.
-- Empty, loading and error states were not shown.
-- No form validation was triggered. The login page has no email field.
-- Phone width and a 1440 width were not measured.
+On a 390 px width the nav collapses into a hamburger and the artwork sits above the title. [screenshots/mobile-home-dark-default.png](screenshots/mobile-home-dark-default.png)
+
+## Drawer
+
+MENU opens a yellow panel from the right. Account items (sign in, my tracks, saved shows, curator messages) either navigate to `/login` or open a sign-in dialog. Search lives in the drawer and goes to `/search`. [screenshots/home-dark-menu.png](screenshots/home-dark-menu.png)
+
+## Stations
+
+Moods is three full-bleed illustrated columns, each with a yellow play button. [screenshots/moods-dark-default.png](screenshots/moods-dark-default.png)
+
+## Lists
+
+Schedule is a week strip and show rows. Archive is a card grid with Shows and Saved tabs. Saved opens the sign-in dialog and that branch stops. [screenshots/schedule-dark-default.png](screenshots/schedule-dark-default.png) [screenshots/archive-dark-default.png](screenshots/archive-dark-default.png)
+
+## Show page
+
+An archived show reuses the player: title, curator, tracklist toggle, message button, play, and the yellow track strip. [screenshots/show-dark-default.png](screenshots/show-dark-default.png)
+
+## Manifesto
+
+About is a yellow field with black display type and the wordmark. [screenshots/about-dark-default.png](screenshots/about-dark-default.png)
+
+## Auth wall
+
+Sign-in is a black page, yellow wordmark, email and password fields, a yellow SIGN IN button, and Google and Apple buttons. Nothing was typed or submitted. [screenshots/sign-in-dark-default.png](screenshots/sign-in-dark-default.png)

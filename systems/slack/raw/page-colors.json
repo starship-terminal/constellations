@@ -1,0 +1,29 @@
+{
+  "body": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "font": "Salesforce-Sans, system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "size": "16px"
+  },
+  "header": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "h": "0px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "footer": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+  },
+  "surfaces": [
+    {
+      "bg": "rgb(72, 26, 84)",
+      "h": 865,
+      "w": 1440
+    },
+    {
+      "bg": "rgb(72, 26, 84)",
+      "h": 52,
+      "w": 492
+    }
+  ]
+}

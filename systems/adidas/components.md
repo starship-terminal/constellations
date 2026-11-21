@@ -8,28 +8,38 @@ How to read an entry:
 
 - A colour is its value followed by the token in [tokens.json](tokens.json) whose value is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `AdihausDIN 15/20 700, #000000`, and is read from the first text node inside the component.
 - The first state of each entry lists every value; later states list only what changed. A state identical to the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do; a state that only repaints a child layer is listed as "child paint".
-- Crops are images of the component in [components/crops/](components/crops) (34 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component in [components/crops/](components/crops) (38 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
-Screenshots are named `{page}-light-{state}.png`. Desktop shots are 1440 x 900 at 2x; `-full` shots are whole pages; mobile shots are `mobile-{page}-light-{state}.png`, 390 x 844 at 2x. Only light exists — the storefront has no dark theme.
+Screenshots are named `{page}-light-{state}.png`. Desktop viewport shots are 1440 x 900. Phone viewport shots are 390 x 844 at 2x (780 x 1688). `-full` shots tile the inner scroll shell, so they are taller than the viewport. Only light exists. The storefront has no dark theme. Which control opens which page is in [site-tree.md](site-tree.md).
 
 | Surface | URL | Screenshots |
 |---|---|---|
 | Home. The campaign band, tag strip, product rows and footer. Captured at rest, search open, and full-page. | `/` | [default (light)](screenshots/home-light-default.png), [full (light)](screenshots/home-light-full.png), [search (light)](screenshots/home-light-search.png) |
 | A catalogue page (跑步 running, men's). Captured at rest, filter open, and full-page. | `/plp/sp_run_app_male` | [default (light)](screenshots/plp-light-default.png), [filter (light)](screenshots/plp-light-filter.png), [full (light)](screenshots/plp-light-full.png) |
 | A product page (articleId JP1477 — pinned so the screenshots and the measurements describe the same product). Captured at rest and full-page. | `/pdp?articleId=JP1477` | [default (light)](screenshots/pdp-light-default.png), [full (light)](screenshots/pdp-light-full.png) |
-| The cart route. | `/cart` | [default (light)](screenshots/cart-light-default.png), [full (light)](screenshots/cart-light-full.png) |
-| Home at 390, at rest and full-page. | `/` | [default (light)](screenshots/mobile-home-light-default.png), [full (light)](screenshots/mobile-home-light-full.png), [menu (light)](screenshots/mobile-home-light-menu.png) |
+| The empty bag. | `/cart` | [default (light)](screenshots/cart-light-default.png), [full (light)](screenshots/cart-light-full.png) |
+| The public site map: the catalog tree as a page. | `/siteMap` | [default (light)](screenshots/sitemap-light-default.png), [full (light)](screenshots/sitemap-light-full.png) |
+| A campaign listing (one /splp tile from home). | `/splp?contentId=SPLP_NGuAJiSc` | [default (light)](screenshots/campaign-light-default.png), [full (light)](screenshots/campaign-light-full.png) |
+| A brand content page linked from the home brand tiles. | `/clp?contentId=904` | [default (light)](screenshots/clp-light-default.png), [full (light)](screenshots/clp-light-full.png) |
+| The published privacy statement. The registered-address span is painted out. | `/my-account/privacy-statement` | [default (light)](screenshots/privacy-light-default.png), [full (light)](screenshots/privacy-light-full.png) |
+| Home at 390, at rest, search open, and full-page. No burger is mounted. | `/` | [default (light)](screenshots/mobile-home-light-default.png), [full (light)](screenshots/mobile-home-light-full.png), [search (light)](screenshots/mobile-home-light-search.png) |
 | The catalogue page at 390. | `/plp/sp_run_app_male` | [default (light)](screenshots/mobile-plp-light-default.png), [full (light)](screenshots/mobile-plp-light-full.png) |
 | The product page at 390. | `/pdp?articleId=JP1477` | [default (light)](screenshots/mobile-pdp-light-default.png), [full (light)](screenshots/mobile-pdp-light-full.png) |
+| The empty bag at 390. | `/cart` | [default (light)](screenshots/mobile-cart-light-default.png), [full (light)](screenshots/mobile-cart-light-full.png) |
+| The category tab: the catalog tree, already open. | `/category` | [default (light)](screenshots/mobile-category-light-default.png), [full (light)](screenshots/mobile-category-light-full.png) |
+| The account tab. Login wall. The register control was not clicked. | `/my-account` | [default (light)](screenshots/mobile-account-light-default.png) |
 
 ### Overlays and transient states
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| Search disclosure | home | the Search header button | [home-light-search](screenshots/home-light-search.png) |
+| Search disclosure | home | the search pill | [home-light-search](screenshots/home-light-search.png), [mobile-home-light-search](screenshots/mobile-home-light-search.png) |
 | Filter rail | PLP | the filter/sort control | [plp-light-filter](screenshots/plp-light-filter.png), [filter-row](#filter-row) |
+| Login drawer | home | 请登录 and the profile icon. Branch stopped. Not screenshotted. | not captured: login wall |
+| Catalog mega-menu | home | a category label. Parent stayed hidden in this headless session. | [sitemap](screenshots/sitemap-light-default.png) and [mobile category](screenshots/mobile-category-light-default.png) show the same links |
+| Staff password dialog | every desktop load | mounted with no close control. Not clicked. Hidden before shots. | not captured: password change |
 
 ## Shared values
 
@@ -67,31 +77,31 @@ The 124px two-strip header every page shares: a 40px black utility strip (在线
 
 <a id="nav-item"></a>`nav-item`, on home. A top-level category item (男装, 男鞋, 女装, 女鞋, 儿童, 配件).
 
-<img src="components/crops/nav-item-default.png" alt="Nav item, default" height="84"> <img src="components/crops/nav-item-hover.png" alt="Nav item, hover" height="84"> <img src="components/crops/nav-item-pressed.png" alt="Nav item, pressed" height="84"> 
+<img src="components/crops/nav-item-default.png" alt="Nav item, default" height="84"> <img src="components/crops/nav-item-hover.png" alt="Nav item, hover" height="84"> <img src="components/crops/nav-item-focus-visible.png" alt="Nav item, focus-visible" height="84"> <img src="components/crops/nav-item-pressed.png" alt="Nav item, pressed" height="84"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 47 x 84; background transparent; text AdihausDIN 15/20 700, #000000 `text.primary` |
+| default (same: hover, focus-visible, pressed) | size 47 x 84; background transparent; text AdihausDIN 15/20 700, #000000 `text.primary` |
 
 #### Utility link
 
 <a id="utility-link"></a>`utility-link`, on home. A utility-strip entry (在线客服 online service, 请登录 sign in).
 
-<img src="components/crops/utility-link-default.png" alt="Utility link, default" height="38"> <img src="components/crops/utility-link-hover.png" alt="Utility link, hover" height="38"> <img src="components/crops/utility-link-pressed.png" alt="Utility link, pressed" height="38"> 
+<img src="components/crops/utility-link-default.png" alt="Utility link, default" height="38"> <img src="components/crops/utility-link-hover.png" alt="Utility link, hover" height="38"> <img src="components/crops/utility-link-focus-visible.png" alt="Utility link, focus-visible" height="38"> <img src="components/crops/utility-link-pressed.png" alt="Utility link, pressed" height="38"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 74 x 38; background transparent; text AdihausDIN 13/18 400, #ffffff `text.onDark` |
+| default (same: hover, focus-visible, pressed) | size 74 x 38; background transparent; text AdihausDIN 13/18 400, #ffffff `text.onDark` |
 
 #### Promo tag
 
 <a id="promo-tag"></a>`promo-tag`, on home. A campaign tag in the strip under the nav (11.11 不止5折, 雪境漫游, 降温毛衣精选).
 
-<img src="components/crops/promo-tag-default.png" alt="Promo tag, default" height="32"> <img src="components/crops/promo-tag-hover.png" alt="Promo tag, hover" height="32"> <img src="components/crops/promo-tag-pressed.png" alt="Promo tag, pressed" height="32"> 
+<img src="components/crops/promo-tag-default.png" alt="Promo tag, default" height="32"> <img src="components/crops/promo-tag-hover.png" alt="Promo tag, hover" height="32"> <img src="components/crops/promo-tag-focus-visible.png" alt="Promo tag, focus-visible" height="32"> <img src="components/crops/promo-tag-pressed.png" alt="Promo tag, pressed" height="32"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 261.33 x 32; background #f9f9f9 `background.surface`; text AdihausDIN 13/18 400, #9a9b9b `text.muted` |
+| default (same: hover, focus-visible, pressed) | size 261.33 x 32; background #f9f9f9 `background.surface`; text AdihausDIN 13/18 400, #9a9b9b `text.muted` |
 
 #### Wordmark
 
@@ -136,7 +146,7 @@ The page foot (360px): bold 15/20 column titles (帮助中心…) over 11/16 lin
 
 #### Footer
 
-<a id="footer"></a>`footer`, on home. The page foot: link columns and the tel:400-999-5999 service line.
+<a id="footer"></a>`footer`, on home. The page foot: link columns and the published service line service line.
 
 <img src="components/crops/footer-default.png" alt="Footer, default" height="120"> 
 
@@ -171,11 +181,11 @@ A catalogue page (/plp/sp_run_app_male): grey filter/sort labels, then the produ
 
 <a id="filter-row"></a>`filter-row`, on plp. A refinement row in the left filter column (性别 gender, category, price).
 
-<img src="components/crops/filter-row-default.png" alt="Filter row, default" height="56"> <img src="components/crops/filter-row-hover.png" alt="Filter row, hover" height="56"> <img src="components/crops/filter-row-pressed.png" alt="Filter row, pressed" height="56"> 
+<img src="components/crops/filter-row-default.png" alt="Filter row, default" height="56"> <img src="components/crops/filter-row-hover.png" alt="Filter row, hover" height="56"> <img src="components/crops/filter-row-focus-visible.png" alt="Filter row, focus-visible" height="56"> <img src="components/crops/filter-row-pressed.png" alt="Filter row, pressed" height="56"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 51 x 56; padding 19px 24px 19px 0px; background transparent; text AdihausDIN 13/18 400, #9a9b9b `text.muted` |
+| default (same: hover, focus-visible, pressed) | size 51 x 56; padding 19px 24px 19px 0px; background transparent; text AdihausDIN 13/18 400, #9a9b9b `text.muted` |
 
 #### Product tile
 

@@ -151,8 +151,12 @@ core = build(SPEC["core"], "light")  # scales are theme-independent
 light = build(SPEC["light"], "light")
 dark = build(SPEC["dark"], "dark")
 # The component tokens live in their own top-level spec tree but belong to the
-# exported light theme (the only one the site paints): light.component.*
+# exported light theme (the marketing surface paints light): light.component.*
 light["component"] = build(SPEC["component"], "light")
+# Docs is the one public surface with a theme switch. Its colours are declared
+# as channel triples on :root and html.dark, so they live in their own sets.
+docs_light = build(SPEC["docs-light"], "light")
+docs_dark = build(SPEC["docs-dark"], "dark")
 
 
 # every alias must point at a token that exists
@@ -167,6 +171,8 @@ def tokens_of(tree, prefix=""):
 NAMES = {n for n, _ in tokens_of(core)}
 NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
 NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
+NAMES_DL = NAMES | {n for n, _ in tokens_of(docs_light)}
+NAMES_DD = NAMES | {n for n, _ in tokens_of(docs_dark)}
 
 
 def aliases(v):
@@ -191,15 +197,29 @@ for n, t in list(tokens_of(dark)):
     for a in aliases(t["$value"]):
         if a not in NAMES_D:
             raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
+for n, t in list(tokens_of(docs_light)):
+    for a in aliases(t["$value"]):
+        if a not in NAMES_DL:
+            raise KeyError(f"docs-light.{n}: alias {{{a}}} points at nothing")
+for n, t in list(tokens_of(docs_dark)):
+    for a in aliases(t["$value"]):
+        if a not in NAMES_DD:
+            raise KeyError(f"docs-dark.{n}: alias {{{a}}} points at nothing")
 
 tokens = {
     "core": core,
     "light": light,
+    "docs-light": docs_light,
+    "docs-dark": docs_dark,
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The only theme boords.com paints; no dark theme is offered on the captured surface."},
+         "$description": "The marketing site paints light. The footer is a dark section, not a theme."},
+        {"id": "docs-light", "name": "Docs light", "selectedTokenSets": {"core": "source", "docs-light": "enabled"},
+         "$description": "Docs default. Channel tokens on :root, read 2026-11-21."},
+        {"id": "docs-dark", "name": "Docs dark", "selectedTokenSets": {"core": "source", "docs-dark": "enabled"},
+         "$description": "Docs with html.dark, set by the Dark radio on /docs. Read 2026-11-21."},
     ],
-    "$metadata": {"tokenSetOrder": ["core", "light"]},
+    "$metadata": {"tokenSetOrder": ["core", "light", "docs-light", "docs-dark"]},
 }
 (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
@@ -208,4 +228,4 @@ def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+print({k: count(v) for k, v in tokens.items() if not k.startswith("$")})

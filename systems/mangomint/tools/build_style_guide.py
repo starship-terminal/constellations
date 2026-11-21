@@ -39,8 +39,6 @@ def alias(v):
 
 def css_val(name, t):
     v, ty = t["$value"], t["$type"]
-    if ty in ("transition", "animation"):
-        return None   # composites with no single CSS value; the Motion section reads them from the token tree
     if ty == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
     if ty == "shadow":
@@ -56,7 +54,8 @@ def css_val(name, t):
 
 
 # A light-only product has no dark set; every set that is missing renders as empty.
-SETS = [s for s in ("core", "light", "dark") if s in T]
+# Mangomint adds a `login` set for the app login wall. It is not a theme toggle.
+SETS = [s for s in ("core", "light", "dark", "login") if s in T]
 THEMES = [s for s in SETS if s != "core"]
 
 
@@ -64,7 +63,7 @@ def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
 
 
 # a core name and a themed name must not land on the same custom property
@@ -89,7 +88,7 @@ def slim(node):
 
 # Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
 # from ending the script early. JSON.parse and a JS literal read it back unchanged.
-data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
+data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark", "login")},
                   ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
 
 _uid = [0]
@@ -110,16 +109,9 @@ def clean_svg(svg, size):
     return svg
 
 
-def icon(m):
-    name, size = m.group(1), m.group(2)
-    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
-    return clean_svg(src, size)
-
-
 tpl = (HERE / "tools" / "style-guide.template.html").read_text()
-html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
+html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark") or block("login"))
         .replace("/*TOKENS*/null", data))
-html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
 (HERE / "style-guide.html").write_text(html)
 print("style-guide.html:", len(html.encode()), "bytes;",
       " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")

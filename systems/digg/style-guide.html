@@ -1,857 +1,117 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Digg style guide</title>
-<meta name="description" content="Digg design tokens and the public feed, category, story, profile, login and mobile surfaces' components, rendered from tokens.json with the declared and measured values.">
 <style>
-:root {
-  --font-family-ui: roobert, "roobert Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-family-body: roobert, "roobert Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-family-mono: "vt323", "vt323 Fallback";
-  --font-family-typeset: "ibmPlexSans", "ibmPlexSans Fallback";
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-declared-bold: 700;
-  --font-weight-declared-medium: 500;
-  --font-weight-declared-normal: 400;
-  --font-weight-declared-semibold: 600;
-  --font-size-base: 1rem;
-  --font-size-cookie: .8125rem;
-  --font-size-lg: 1.125rem;
-  --font-size-sm: .875rem;
-  --font-size-xl: 1.25rem;
-  --font-size-xs: .75rem;
-  --font-size-measured-label: 10px;
-  --font-size-measured-micro: 12px;
-  --font-size-measured-note: 13px;
-  --font-size-measured-body: 14px;
-  --font-size-measured-headline: 16px;
-  --font-size-measured-lead: 18px;
-  --font-size-measured-deck: 20px;
-  --font-size-measured-card-title: 24px;
-  --font-size-measured-page: 30px;
-  --font-size-measured-display: 36px;
-  --font-tracking-base: -.0075em;
-  --font-tracking-cookie: -.0065em;
-  --font-tracking-xl: -.0095em;
-  --font-tracking-xs: -.005em;
-  --font-tracking-normal: 0em;
-  --font-tracking-tight: -.025em;
-  --font-tracking-wide: .025em;
-  --font-tracking-wider: .05em;
-  --font-tracking-widest: .1em;
-  --font-lineHeight-base: 1.5rem;
-  --font-lineHeight-cookie: 1.1875rem;
-  --font-lineHeight-sm: 1.25rem;
-  --font-lineHeight-xl: 1.75rem;
-  --font-lineHeight-xs: 1rem;
-  --font-lineHeight-normal: 1.5;
-  --font-lineHeight-relaxed: 1.625;
-  --font-lineHeight-snug: 1.375;
-  --font-lineHeight-tight: 1.25;
-  --color-black: #000000;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5dc;
-  --color-gray-400: #99a1af;
-  --color-gray-50: #f9fafb;
-  --color-gray-500: #6a7282;
-  --color-gray-600: #4a5565;
-  --color-gray-700: #364153;
-  --color-gray-800: #1e2939;
-  --color-gray-900: #101828;
-  --color-gray-950: #030712;
-  --color-primary: #1c66eb;
-  --color-white: #ffffff;
-  --size-container-2xl: 42rem;
-  --size-container-3xl: 48rem;
-  --size-container-4xl: 56rem;
-  --size-container-5xl: 64rem;
-  --size-container-6xl: 72rem;
-  --size-container-lg: 32rem;
-  --size-container-md: 28rem;
-  --size-container-sm: 24rem;
-  --size-container-xl: 36rem;
-  --size-container-xs: 20rem;
-  --radius-2xl: 18px;
-  --radius-4xl: 26px;
-  --radius-lg: .625rem;
-  --radius-md: 8px;
-  --radius-sm: 6px;
-  --radius-xl: 14px;
-  --radius-default: .625rem;
-  --radius-tight: 2px;
-  --radius-field: var(--radius-md);
-  --radius-card: var(--radius-2xl);
-  --radius-control: var(--radius-4xl);
-  --radius-pill: calc(infinity * 1px);
-  --radius-vote: 999px;
-  --easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
-  --motion-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
-  --motion-spin: spin 1s linear infinite;
-  --motion-control: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  --motion-auth: background-color, background, border-color, color, fill, stroke, opacity, box-shadow, transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  --blur-3xl: 64px;
-  --blur-md: 12px;
-  --blur-sm: 8px;
-  --blur-xl: 24px;
-  --blur-xs: 4px;
-  --default-transition-duration: 0.15s;
-  --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  --shadow-md: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
-  --shadow-field: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-  --accent-default: #1c66eb;
-  --accent-foreground: #ffffff;
-  --amber: #c47700;
-  --aspect-video: 16 / 9;
-  --blue: #1c66eb;
-  --chart-1: #d4d4d4;
-  --chart-2: #737373;
-  --chart-3: #525252;
-  --chart-4: #404040;
-  --chart-5: #262626;
-  --cyan: #00a1a2;
-  --destructive: #cc434d;
-  --emerald: #3ba267;
-  --featured-image-black: #000000;
-  --featured-image-white: #ffffff;
-  --fuchsia: #c965bf;
-  --green: #6aa15a;
-  --indigo: #6683eb;
-  --lime: #929200;
-  --media-overlay-default: rgba(0, 0, 0, 0.6);
-  --media-overlay-blur: 32px;
-  --media-overlay-border-default: rgba(255, 255, 255, 0.3);
-  --media-overlay-border-hover: rgba(255, 255, 255, 0.45);
-  --media-overlay-foreground: #ffffff;
-  --media-overlay-hover: rgba(0, 0, 0, 0.75);
-  --media-overlay-ring: rgba(255, 255, 255, 0.55);
-  --media-overlay-shadow: lab(0 0 0 / 0.25) 0px 10px 6px 0px;
-  --media-viewer: #000000;
-  --orange: #e37b4c;
-  --pink: #d05c99;
-  --primary-default: #1c66eb;
-  --primary-foreground: #ffffff;
-  --purple: #7759c2;
-  --rank-one-default: #e37b4c;
-  --rank-one-muted: rgba(227, 123, 76, 0.18);
-  --red: #cc434d;
-  --rose: #d95a75;
-  --scroll-fade-b: 0px;
-  --scroll-fade-e: 0px;
-  --scroll-fade-s: 0px;
-  --sidebar-primary: #1c66eb;
-  --site-page-controls-height: 40px;
-  --site-page-controls-top: 16px;
-  --site-topic-bar-fade-end: 0px;
-  --site-topic-bar-fade-start: 0px;
-  --sky: #009ac6;
-  --spacing: .25rem;
-  --success: #6aa15a;
-  --teal: #1ca18e;
-  --violet: #8379e7;
-  --yellow: #f3c05a;
-  --component-sidebar-item: 231px;
-  --component-sort-control: 105.28px;
-  --component-density-control: 64px;
-  --component-story-card: 183px;
-  --component-vote-pill: 32px;
-  --component-comment-link: 32px;
-  --component-avatar: 24px;
-  --component-thumb: 120px;
-  --component-rail-card: 376px;
-  --component-digg-it: 138.33px;
-  --component-auth-field: 353px;
-  --component-auth-link: 17.98px;
-  --component-mobile-bar: 107px;
-  --component-mobile-card: 390px;
-  --color-amber-100: #f3e8dc;
-  --color-amber-200: #ead5be;
-  --color-amber-300: #dfb98e;
-  --color-amber-400: #cf9143;
-  --color-amber-50: #f9f5f0;
-  --color-amber-500: #c47700;
-  --color-amber-600: #b16400;
-  --color-amber-700: #945300;
-  --color-amber-800: #7a4600;
-  --color-amber-900: #653c00;
-  --color-amber-950: #351d00;
-  --color-blue-100: #cce0ff;
-  --color-blue-200: #a3c6ff;
-  --color-blue-300: #6ba4ff;
-  --color-blue-400: #4085ff;
-  --color-blue-50: #edf4ff;
-  --color-blue-500: #1c66eb;
-  --color-blue-600: #0e50c6;
-  --color-blue-700: #0542b2;
-  --color-blue-800: #03369c;
-  --color-blue-900: #002b80;
-  --color-blue-950: #002061;
-  --color-cyan-100: #deeded;
-  --color-cyan-200: #c2e0df;
-  --color-cyan-300: #95cccc;
-  --color-cyan-400: #49b2b2;
-  --color-cyan-50: #f1f7f7;
-  --color-cyan-500: #00a1a2;
-  --color-cyan-600: #008f90;
-  --color-cyan-700: #007778;
-  --color-cyan-800: #006263;
-  --color-cyan-900: #005253;
-  --color-cyan-950: #002a2a;
-  --color-emerald-100: #e1eee5;
-  --color-emerald-200: #c9e0d0;
-  --color-emerald-300: #a1cdaf;
-  --color-emerald-400: #67b383;
-  --color-emerald-50: #f2f7f3;
-  --color-emerald-500: #3ba267;
-  --color-emerald-600: #1b9055;
-  --color-emerald-700: #157846;
-  --color-emerald-800: #18633b;
-  --color-emerald-900: #1d5334;
-  --color-emerald-950: #0b2b18;
-  --color-featured-image-gray-100: #f3f4f6;
-  --color-featured-image-gray-200: #e5e7eb;
-  --color-featured-image-gray-300: #d1d5dc;
-  --color-featured-image-gray-400: #99a1af;
-  --color-featured-image-gray-50: #f9fafb;
-  --color-featured-image-gray-500: #6a7282;
-  --color-featured-image-gray-600: #4a5565;
-  --color-featured-image-gray-700: #364153;
-  --color-featured-image-gray-800: #1e2939;
-  --color-featured-image-gray-900: #101828;
-  --color-featured-image-gray-950: #030712;
-  --color-fuchsia-100: #f3e5f1;
-  --color-fuchsia-200: #ebcfe7;
-  --color-fuchsia-300: #dfaed8;
-  --color-fuchsia-400: #cf7fc6;
-  --color-fuchsia-50: #f9f3f8;
-  --color-fuchsia-500: #c965bf;
-  --color-fuchsia-600: #b04ba7;
-  --color-fuchsia-700: #933d8b;
-  --color-fuchsia-800: #793573;
-  --color-fuchsia-900: #642f5f;
-  --color-fuchsia-950: #351632;
-  --color-green-100: #e5ede3;
-  --color-green-200: #cfdecb;
-  --color-green-300: #afcaa7;
-  --color-green-400: #82ae75;
-  --color-green-50: #f3f6f2;
-  --color-green-500: #6aa15a;
-  --color-green-600: #528a41;
-  --color-green-700: #437335;
-  --color-green-800: #395f2e;
-  --color-green-900: #32502a;
-  --color-green-950: #182913;
-  --color-indigo-100: #e4eaf9;
-  --color-indigo-200: #ced8f6;
-  --color-indigo-300: #adbff3;
-  --color-indigo-400: #819bef;
-  --color-indigo-50: #f3f5fc;
-  --color-indigo-500: #6683eb;
-  --color-indigo-600: #556fda;
-  --color-indigo-700: #465cb6;
-  --color-indigo-800: #3a4d95;
-  --color-indigo-900: #33427a;
-  --color-indigo-950: #182141;
-  --color-lime-100: #eaebdc;
-  --color-lime-200: #dadcbf;
-  --color-lime-300: #c3c58f;
-  --color-lime-400: #a4a645;
-  --color-lime-50: #f6f6f0;
-  --color-lime-500: #929200;
-  --color-lime-600: #807f00;
-  --color-lime-700: #6a6a00;
-  --color-lime-800: #585800;
-  --color-lime-900: #4a4a00;
-  --color-lime-950: #252600;
-  --color-orange-100: #f6e6e0;
-  --color-orange-200: #efd2c6;
-  --color-orange-300: #e7b39d;
-  --color-orange-400: #e37b4c;
-  --color-orange-50: #faf4f1;
-  --color-orange-500: #d16a3b;
-  --color-orange-600: #be5723;
-  --color-orange-700: #9f471c;
-  --color-orange-800: #833c1b;
-  --color-orange-900: #6c351c;
-  --color-orange-950: #39190b;
-  --color-pink-100: #f6e4ec;
-  --color-pink-200: #f0cedd;
-  --color-pink-300: #e7acc7;
-  --color-pink-400: #da7dab;
-  --color-pink-50: #faf3f6;
-  --color-pink-500: #d05c99;
-  --color-pink-600: #bd4887;
-  --color-pink-700: #9e3b70;
-  --color-pink-800: #82325d;
-  --color-pink-900: #6b2e4e;
-  --color-pink-950: #391528;
-  --color-purple-100: #eae7f7;
-  --color-purple-200: #dad5f2;
-  --color-purple-300: #c2b7ed;
-  --color-purple-400: #a48fe7;
-  --color-purple-50: #f5f4fb;
-  --color-purple-500: #9175e1;
-  --color-purple-600: #7759c2;
-  --color-purple-700: #6a50ad;
-  --color-purple-800: #58448e;
-  --color-purple-900: #4a3b74;
-  --color-purple-950: #251d3e;
-  --color-red-100: #f9e4e3;
-  --color-red-200: #f6cecd;
-  --color-red-300: #f1abaa;
-  --color-red-400: #e9797b;
-  --color-red-50: #fcf3f3;
-  --color-red-500: #e0565e;
-  --color-red-600: #cc434d;
-  --color-red-700: #ab343d;
-  --color-red-800: #8d2d34;
-  --color-red-900: #742b2e;
-  --color-red-950: #3e1315;
-  --color-rose-100: #f8e4e6;
-  --color-rose-200: #f3ced3;
-  --color-rose-300: #edacb5;
-  --color-rose-400: #e37c8d;
-  --color-rose-50: #fbf3f4;
-  --color-rose-500: #d95a75;
-  --color-rose-600: #c64563;
-  --color-rose-700: #a53852;
-  --color-rose-800: #883144;
-  --color-rose-900: #702d3b;
-  --color-rose-950: #3c151d;
-  --color-sky-100: #deedf3;
-  --color-sky-200: #c2deea;
-  --color-sky-300: #95c9df;
-  --color-sky-400: #4badd0;
-  --color-sky-50: #f1f7f9;
-  --color-sky-500: #009ac6;
-  --color-sky-600: #0088b4;
-  --color-sky-700: #007196;
-  --color-sky-800: #005e7c;
-  --color-sky-900: #004f66;
-  --color-sky-950: #002836;
-  --color-teal-100: #e0edea;
-  --color-teal-200: #c6e0da;
-  --color-teal-300: #9cccc1;
-  --color-teal-400: #5bb2a2;
-  --color-teal-50: #f1f7f5;
-  --color-teal-500: #1ca18e;
-  --color-teal-600: #008f7c;
-  --color-teal-700: #007767;
-  --color-teal-800: #006255;
-  --color-teal-900: #0f5248;
-  --color-teal-950: #042a24;
-  --color-violet-100: #e8e8f8;
-  --color-violet-200: #d6d6f4;
-  --color-violet-300: #babaf1;
-  --color-violet-400: #9893ec;
-  --color-violet-50: #f5f5fb;
-  --color-violet-500: #8379e7;
-  --color-violet-600: #7266d5;
-  --color-violet-700: #5f54b2;
-  --color-violet-800: #4e4792;
-  --color-violet-900: #423d78;
-  --color-violet-950: #211e40;
-  --color-yellow-100: #fcf2d6;
-  --color-yellow-200: #f9e4ac;
-  --color-yellow-300: #f7d881;
-  --color-yellow-400: #f3c457;
-  --color-yellow-50: #fefaee;
-  --color-yellow-500: #f3ad2c;
-  --color-yellow-600: #e09a19;
-  --color-yellow-700: #c78306;
-  --color-yellow-800: #a36a00;
-  --color-yellow-900: #5c3a00;
-  --color-yellow-950: #291a00;
-  --background-default: #fdfdff;
-  --background-page: var(--background-default);
-  --background-card: var(--card-default);
-  --background-fill: var(--sidebar-accent-default);
-  --background-input-fill: rgba(229, 229, 229, 0.3);
-  --border-default: rgba(0, 0, 0, 0.08);
-  --border-vote-border: rgba(28, 102, 235, 0.2);
-  --border-hairline: var(--border-default);
-  --border-input: var(--input);
-  --border-focus: rgba(171, 171, 191, 0.5);
-  --brand-text: #1c66eb;
-  --card-default: #ffffff;
-  --card-foreground: #161617;
-  --destructive-foreground: #ffffff;
-  --foreground-default: #161617;
-  --input: #e5e5e5;
-  --muted-default: #f0f0f5;
-  --muted-foreground: rgba(22, 22, 23, 0.7);
-  --popover-default: #ffffff;
-  --popover-foreground: #161617;
-  --ring: #ababbf;
-  --secondary-default: #f0f0f5;
-  --secondary-foreground: #161617;
-  --secondary-hover: #dbe3f6;
-  --sidebar-default: #f8f8fb;
-  --sidebar-accent-default: #f0f0f5;
-  --sidebar-accent-foreground: #161617;
-  --sidebar-border: rgba(0, 0, 0, 0.08);
-  --sidebar-foreground: #161617;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-ring: #ababbf;
-  --success-foreground: #ffffff;
-  --text-ink: var(--foreground-default);
-  --text-muted: var(--muted-foreground);
-  --text-link: var(--primary-default);
-  --text-rank-one: var(--rank-one-default);
-  --action-primary: var(--primary-default);
-  --action-primary-hover: rgba(28, 102, 235, 0.8);
-  --action-on-primary: var(--primary-foreground);
-  --action-oauth-fill: var(--background-default);
-  --sg-sans: roobert, "roobert Fallback", ui-sans-serif, system-ui, sans-serif;
-  --sg-serif: roobert, "roobert Fallback", ui-sans-serif, system-ui, sans-serif;
-  --sg-mono: vt323, ui-monospace, "SF Mono", Menlo, monospace;
-}
-[data-mode="dark"], .dark {
-  --color-amber-100: #f3e8dc;
-  --color-amber-200: #ead5be;
-  --color-amber-300: #dfb98e;
-  --color-amber-400: #cf9143;
-  --color-amber-50: #f9f5f0;
-  --color-amber-500: #c47700;
-  --color-amber-600: #b16400;
-  --color-amber-700: #945300;
-  --color-amber-800: #7a4600;
-  --color-amber-900: #653c00;
-  --color-amber-950: #351d00;
-  --color-blue-100: #cce0ff;
-  --color-blue-200: #a3c6ff;
-  --color-blue-300: #6ba4ff;
-  --color-blue-400: #4085ff;
-  --color-blue-50: #edf4ff;
-  --color-blue-500: #1c66eb;
-  --color-blue-600: #0e50c6;
-  --color-blue-700: #0542b2;
-  --color-blue-800: #03369c;
-  --color-blue-900: #002b80;
-  --color-blue-950: #002061;
-  --color-cyan-100: #deeded;
-  --color-cyan-200: #c2e0df;
-  --color-cyan-300: #95cccc;
-  --color-cyan-400: #49b2b2;
-  --color-cyan-50: #f1f7f7;
-  --color-cyan-500: #00a1a2;
-  --color-cyan-600: #008f90;
-  --color-cyan-700: #007778;
-  --color-cyan-800: #006263;
-  --color-cyan-900: #005253;
-  --color-cyan-950: #002a2a;
-  --color-emerald-100: #e1eee5;
-  --color-emerald-200: #c9e0d0;
-  --color-emerald-300: #a1cdaf;
-  --color-emerald-400: #67b383;
-  --color-emerald-50: #f2f7f3;
-  --color-emerald-500: #3ba267;
-  --color-emerald-600: #1b9055;
-  --color-emerald-700: #157846;
-  --color-emerald-800: #18633b;
-  --color-emerald-900: #1d5334;
-  --color-emerald-950: #0b2b18;
-  --color-featured-image-gray-100: #f3f4f6;
-  --color-featured-image-gray-200: #e5e7eb;
-  --color-featured-image-gray-300: #d1d5dc;
-  --color-featured-image-gray-400: #99a1af;
-  --color-featured-image-gray-50: #f9fafb;
-  --color-featured-image-gray-500: #6a7282;
-  --color-featured-image-gray-600: #4a5565;
-  --color-featured-image-gray-700: #364153;
-  --color-featured-image-gray-800: #1e2939;
-  --color-featured-image-gray-900: #101828;
-  --color-featured-image-gray-950: #030712;
-  --color-fuchsia-100: #f3e5f1;
-  --color-fuchsia-200: #ebcfe7;
-  --color-fuchsia-300: #dfaed8;
-  --color-fuchsia-400: #cf7fc6;
-  --color-fuchsia-50: #f9f3f8;
-  --color-fuchsia-500: #c965bf;
-  --color-fuchsia-600: #b04ba7;
-  --color-fuchsia-700: #933d8b;
-  --color-fuchsia-800: #793573;
-  --color-fuchsia-900: #642f5f;
-  --color-fuchsia-950: #351632;
-  --color-green-100: #e5ede3;
-  --color-green-200: #cfdecb;
-  --color-green-300: #afcaa7;
-  --color-green-400: #82ae75;
-  --color-green-50: #f3f6f2;
-  --color-green-500: #6aa15a;
-  --color-green-600: #528a41;
-  --color-green-700: #437335;
-  --color-green-800: #395f2e;
-  --color-green-900: #32502a;
-  --color-green-950: #182913;
-  --color-indigo-100: #e4eaf9;
-  --color-indigo-200: #ced8f6;
-  --color-indigo-300: #adbff3;
-  --color-indigo-400: #819bef;
-  --color-indigo-50: #f3f5fc;
-  --color-indigo-500: #6683eb;
-  --color-indigo-600: #556fda;
-  --color-indigo-700: #465cb6;
-  --color-indigo-800: #3a4d95;
-  --color-indigo-900: #33427a;
-  --color-indigo-950: #182141;
-  --color-lime-100: #eaebdc;
-  --color-lime-200: #dadcbf;
-  --color-lime-300: #c3c58f;
-  --color-lime-400: #a4a645;
-  --color-lime-50: #f6f6f0;
-  --color-lime-500: #929200;
-  --color-lime-600: #807f00;
-  --color-lime-700: #6a6a00;
-  --color-lime-800: #585800;
-  --color-lime-900: #4a4a00;
-  --color-lime-950: #252600;
-  --color-orange-100: #f6e6e0;
-  --color-orange-200: #efd2c6;
-  --color-orange-300: #e7b39d;
-  --color-orange-400: #e37b4c;
-  --color-orange-50: #faf4f1;
-  --color-orange-500: #d16a3b;
-  --color-orange-600: #be5723;
-  --color-orange-700: #9f471c;
-  --color-orange-800: #833c1b;
-  --color-orange-900: #6c351c;
-  --color-orange-950: #39190b;
-  --color-pink-100: #f6e4ec;
-  --color-pink-200: #f0cedd;
-  --color-pink-300: #e7acc7;
-  --color-pink-400: #da7dab;
-  --color-pink-50: #faf3f6;
-  --color-pink-500: #d05c99;
-  --color-pink-600: #bd4887;
-  --color-pink-700: #9e3b70;
-  --color-pink-800: #82325d;
-  --color-pink-900: #6b2e4e;
-  --color-pink-950: #391528;
-  --color-purple-100: #eae7f7;
-  --color-purple-200: #dad5f2;
-  --color-purple-300: #c2b7ed;
-  --color-purple-400: #a48fe7;
-  --color-purple-50: #f5f4fb;
-  --color-purple-500: #9175e1;
-  --color-purple-600: #7759c2;
-  --color-purple-700: #6a50ad;
-  --color-purple-800: #58448e;
-  --color-purple-900: #4a3b74;
-  --color-purple-950: #251d3e;
-  --color-red-100: #f9e4e3;
-  --color-red-200: #f6cecd;
-  --color-red-300: #f1abaa;
-  --color-red-400: #e9797b;
-  --color-red-50: #fcf3f3;
-  --color-red-500: #e0565e;
-  --color-red-600: #cc434d;
-  --color-red-700: #ab343d;
-  --color-red-800: #8d2d34;
-  --color-red-900: #742b2e;
-  --color-red-950: #3e1315;
-  --color-rose-100: #f8e4e6;
-  --color-rose-200: #f3ced3;
-  --color-rose-300: #edacb5;
-  --color-rose-400: #e37c8d;
-  --color-rose-50: #fbf3f4;
-  --color-rose-500: #d95a75;
-  --color-rose-600: #c64563;
-  --color-rose-700: #a53852;
-  --color-rose-800: #883144;
-  --color-rose-900: #702d3b;
-  --color-rose-950: #3c151d;
-  --color-sky-100: #deedf3;
-  --color-sky-200: #c2deea;
-  --color-sky-300: #95c9df;
-  --color-sky-400: #4badd0;
-  --color-sky-50: #f1f7f9;
-  --color-sky-500: #009ac6;
-  --color-sky-600: #0088b4;
-  --color-sky-700: #007196;
-  --color-sky-800: #005e7c;
-  --color-sky-900: #004f66;
-  --color-sky-950: #002836;
-  --color-teal-100: #e0edea;
-  --color-teal-200: #c6e0da;
-  --color-teal-300: #9cccc1;
-  --color-teal-400: #5bb2a2;
-  --color-teal-50: #f1f7f5;
-  --color-teal-500: #1ca18e;
-  --color-teal-600: #008f7c;
-  --color-teal-700: #007767;
-  --color-teal-800: #006255;
-  --color-teal-900: #0f5248;
-  --color-teal-950: #042a24;
-  --color-violet-100: #e8e8f8;
-  --color-violet-200: #d6d6f4;
-  --color-violet-300: #babaf1;
-  --color-violet-400: #9893ec;
-  --color-violet-50: #f5f5fb;
-  --color-violet-500: #8379e7;
-  --color-violet-600: #7266d5;
-  --color-violet-700: #5f54b2;
-  --color-violet-800: #4e4792;
-  --color-violet-900: #423d78;
-  --color-violet-950: #211e40;
-  --color-yellow-100: #fcf2d6;
-  --color-yellow-200: #f9e4ac;
-  --color-yellow-300: #f7d881;
-  --color-yellow-400: #f3c457;
-  --color-yellow-50: #fefaee;
-  --color-yellow-500: #f3ad2c;
-  --color-yellow-600: #e09a19;
-  --color-yellow-700: #c78306;
-  --color-yellow-800: #a36a00;
-  --color-yellow-900: #5c3a00;
-  --color-yellow-950: #291a00;
-  --background-default: #161617;
-  --background-card: var(--card-default);
-  --background-input-fill: rgba(255, 255, 255, 0.045);
-  --background-page: var(--background-default);
-  --background-fill: var(--sidebar-accent-default);
-  --border-default: rgba(255, 255, 255, 0.08);
-  --border-hairline: var(--border-default);
-  --border-input: var(--input);
-  --border-focus: rgba(28, 102, 235, 0.5);
-  --border-vote-border: rgba(28, 102, 235, 0.2);
-  --brand-text: #6ba4ff;
-  --card-default: #1c1c1f;
-  --card-foreground: #fdfdff;
-  --destructive-foreground: #cc434d;
-  --foreground-default: #fdfdff;
-  --input: rgba(255, 255, 255, 0.15);
-  --muted-default: #242424;
-  --muted-foreground: rgba(253, 253, 255, 0.7);
-  --popover-default: #27272c;
-  --popover-foreground: #fdfdff;
-  --ring: #1c66eb;
-  --secondary-default: #242424;
-  --secondary-foreground: #b4b4b6;
-  --secondary-hover: #2c2c2c;
-  --sidebar-default: #0f0f10;
-  --sidebar-accent-default: #27272c;
-  --sidebar-accent-foreground: #ccccce;
-  --sidebar-border: #242424;
-  --sidebar-foreground: #ccccce;
-  --sidebar-primary-foreground: #0f0f10;
-  --sidebar-ring: #1c66eb;
-  --success-foreground: #6aa15a;
-  --text-ink: var(--foreground-default);
-  --text-muted: var(--muted-foreground);
-  --text-link: var(--primary-default);
-  --text-rank-one: var(--rank-one-default);
-  --action-primary: var(--primary-default);
-  --action-on-primary: var(--primary-foreground);
-  --action-primary-hover: rgba(28, 102, 235, 0.8);
-  --action-oauth-fill: var(--background-default);
-}
-[data-mode="dark"] body { background: #161617; color: #e5e5ea; }
-[data-mode="dark"] h2.sh, [data-mode="dark"] .lead, [data-mode="dark"] .note, [data-mode="dark"] .pal-h, [data-mode="dark"] .sw .vl, [data-mode="dark"] .kv span, [data-mode="dark"] .tr .tv { color: #e5e5ea; }
-[data-mode="dark"] .mock { background: #0f0f10; }
-#mode { position: fixed; top: 12px; right: 12px; z-index: 10; font: 500 12px/1 var(--sg-sans); border: 1px solid currentColor; border-radius: 999px; background: transparent; color: inherit; padding: 8px 14px; cursor: pointer; }
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 700 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
-.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
-.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
-.sidebar { width: 240px; padding: 12px; background: var(--background-page, #fdfdff); display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
-.sidebar .row { display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 14px; border-radius: var(--radius-pill, 999px); color: var(--text-ink, #161617); font-weight: 600; }
-.sidebar .row.on { background: var(--background-fill, #f0f0f5); }
-.sidebar .cta { display: flex; align-items: center; justify-content: center; height: 40px; border-radius: var(--radius-control, 26px); background: var(--action-primary, #1c66eb); color: var(--action-on-primary, #fff); font-weight: 500; }
-.card { border-radius: var(--radius-card, 18px); border: 1px solid var(--border-hairline, rgba(0,0,0,.08)); background: var(--background-card, #fff); padding: 16px; color: var(--text-ink, #161617); }
-.card.feed { background: transparent; border-color: transparent; }
-.card h3 { font: 600 16px/1.5 var(--sg-serif); letter-spacing: -0.01em; margin: 0 0 4px; }
-.card p { font: 400 14px/1.45 var(--sg-sans); color: var(--text-muted, rgba(22,22,23,.7)); margin: 0 0 12px; }
-.vote { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: var(--radius-vote, 999px); border: 1px solid var(--border-vote-border, rgba(28,102,235,.2)); background: var(--background-page, #fdfdff); font: 500 14px var(--sg-mono); color: var(--text-ink, #161617); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 24px; font-size: 14px; font-weight: 500; border-radius: var(--radius-pill, 999px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-primary, #1c66eb); color: var(--action-on-primary, #fff); }
-.btn.small { height: 36px; border-radius: var(--radius-control, 26px); font-size: 14px; }
-.hero { color: var(--text-ink, #161617); padding: 40px; font: 700 36px/1.15 var(--sg-serif); letter-spacing: -0.01em; background: var(--background-page, #fdfdff); }
-.hero small { display: block; font: 400 20px/1.4 var(--sg-sans); color: var(--text-muted, rgba(22,22,23,.7)); margin: 12px auto 20px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--border-hairline, rgba(0,0,0,.08)); padding: 14px; font-size: 13px; background: var(--background-card, #fff); border-radius: var(--radius-card, 18px); color: var(--text-ink, #161617); }
-.tile b { display: block; font: 600 14px/1.4 var(--sg-sans); margin-bottom: 4px; }
-.tile .sub { color: var(--text-muted, rgba(22,22,23,.7)); font-size: 12px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
-.sort { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: var(--radius-control, 26px); border: 1px solid var(--border-input, #e5e5e5); background: var(--background-input-fill, rgba(229,229,229,.3)); font: 400 14px var(--sg-sans); color: var(--text-ink, #161617); }
-.field { display: block; width: 100%; height: 36px; padding: 0 12px; border-radius: var(--radius-field, 8px); border: 1px solid var(--border-input, #e5e5e5); background: var(--background-card, #fff); font: 400 14px var(--sg-sans); color: var(--text-ink, #161617); box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+  :root, [data-theme="light"] {
+    --page: #fdfdff;
+    --surface: #ffffff;
+    --text: #161617;
+    --muted: #151517;
+    --accent: #1c66eb;
+    --on-accent: #ffffff;
+    --secondary: #f0f0f5;
+    --border: rgba(0, 0, 0, 0.08);
+    --sidebar: #f8f8fb;
+    --destructive: #cc434d;
+  }
+  [data-theme="dark"] {
+    --page: #161617;
+    --surface: #1c1c1f;
+    --text: #fdfdff;
+    --muted: rgba(254, 254, 255, 0.7);
+    --accent: #1c66eb;
+    --on-accent: #ffffff;
+    --secondary: #242424;
+    --border: rgba(255, 255, 255, 0.08);
+    --sidebar: #0f0f10;
+    --destructive: #cc434d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 400 16px/1.5 "roobert", ui-sans-serif, system-ui, sans-serif; background: var(--page); color: var(--text); }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 14px; font-weight: 600; margin: 36px 0 10px; }
+  p { max-width: 62ch; }
+  button.theme { height: 40px; padding: 0 16px; border-radius: 26px; border: 0; background: var(--secondary); color: var(--text); font: inherit; font-size: 14px; font-weight: 500; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sw { width: 148px; }
+  .sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border); }
+  .sw span { display: block; font-size: 12px; margin-top: 4px; }
+  .pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 26px; font-size: 14px; font-weight: 500; }
+  .pill.primary { background: var(--accent); color: var(--on-accent); }
+  .pill.secondary { background: var(--secondary); color: var(--text); }
+  .field { height: 36px; border-radius: 8px; border: 1px solid var(--border); padding: 4px 10px; background: transparent; color: var(--text); font: inherit; font-size: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 14px 16px; max-width: 420px; }
+  .card b { font-weight: 600; }
+  .shell { display: grid; grid-template-columns: 200px 1fr; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .side { background: var(--sidebar); padding: 12px; }
+  .side a { display: block; height: 40px; line-height: 40px; padding: 0 12px; border-radius: 999px; color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .side a.on { background: var(--secondary); }
+  .feed { padding: 16px; }
+  .note { font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
-<button id="mode" type="button" aria-pressed="false">Dark</button>
 <main>
-  <h1>Digg style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+  <button class="theme" type="button" id="theme">Theme: light</button>
+  <h1>Digg</h1>
+  <p class="note">Rendered from measured tokens in tokens.json. Roobert is not bundled, so the fallback stack shows here.</p>
 
-  <h2 class="sh">Digg, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared shadcn-style token layer (<code>--background</code>/<code>--foreground</code>, the <code>--primary*</code>/<code>--secondary*</code>/<code>--muted*</code>/<code>--accent*</code>/<code>--border</code>/<code>--input</code>/<code>--ring</code> semantics, the <code>--sidebar-*</code> rail set and the full Tailwind hue scales) plus the theme-invariant Tailwind layer, roobert across the UI, the measured 10-36px type ramp, the #1c66eb primary blue and the vote pill's odometer mono. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from digg.com on 2026-11-14, signed out, in headless Chromium (the 2025 Digg reboot — "News, before it trends"). Both themes are real: the sidebar theme pill cycles System -&gt; Light -&gt; Dark and the dark roles below were measured through it. Everything behind an account — voting, commenting, submitting, profile settings — is a documented boundary; the Log in/Sign up buttons and Clerk fields were measured, never submitted. roobert, ibmPlexSans and vt323 are served faces and are not loaded here: samples fall back to system fonts.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
 
-  <h2 class="sh">The sidebar</h2>
-  <p class="lead">The left rail carries pill-radius nav rows (the active Home row fills #f0f0f5), the theme pill and the primary Sign up CTA in #1c66eb.</p>
-  <div class="mock" style="padding:20px">
-    <div class="sidebar">
-      <div class="row on">Home</div>
-      <div class="row">Technology</div>
-      <div class="row">Gaming</div>
-      <div class="row">AI</div>
-      <div class="cta">Sign up</div>
-    </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <span class="pill primary">Sign up</span>
+    <span class="pill secondary">Log in</span>
   </div>
 
-  <h2 class="sh">The story card</h2>
-  <p class="lead">Feed cards are 18px-rounded transparent surfaces on the page field (the white fill+border belongs to the rail panels): a 16px semibold headline, a muted summary, the vote pill (blue@20% border over the page fill) and the comment/source row.</p>
-  <div class="mock" style="padding:20px">
-    <div class="card feed">
-      <h3>Example story headline renders in semibold roobert</h3>
-      <p>A muted one-line dek at ink @70% sits under the headline, then the action row.</p>
-      <span class="vote">▲ 128</span>&nbsp;&nbsp;<span class="sort" style="height:32px;border-radius:26px">💬 12</span>
+  <h2>Field</h2>
+  <input class="field" placeholder="Enter your email address" aria-label="Email example" readonly>
+
+  <h2>Shell</h2>
+  <div class="shell">
+    <div class="side">
+      <a class="on" href="#home">Home</a>
+      <a href="#tech">Technology</a>
+      <a href="#ai">AI</a>
+    </div>
+    <div class="feed">
+      <div class="card">
+        <div class="note">AI</div>
+        <b>Story title, 16px semibold</b>
+        <p class="note">Summary in the body size. Cards use an 18px radius and a hairline border.</p>
+      </div>
     </div>
   </div>
-
-  <h2 class="sh">Controls and auth</h2>
-  <p class="lead">The Trending sort trigger and Compact control share the 26px control radius over the translucent input wash; the Clerk auth fields are 8px-rounded with the field's 0 1px 2px shadow, and Continue is a primary pill.</p>
-  <div class="mock" style="padding:20px">
-    <span class="sort">Trending ▾</span>&nbsp;&nbsp;<span class="sort">Compact</span>
-    <div style="height:16px"></div>
-    <div class="card" style="max-width:400px">
-      <input class="field" placeholder="Email address">
-      <div style="height:10px"></div>
-      <span class="btn primary" style="width:100%">Continue</span>
-    </div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The declared layer carries the full Tailwind hue scales per theme under color.*; the shadcn semantic names (<code>--background</code>, <code>--card</code>, <code>--primary</code>, <code>--border</code>, <code>--ring</code>, <code>--sidebar-*</code>, <code>--rank-one</code>) resolve per theme in the light and dark sets — a real painted .dark theme, cycled through the sidebar pill and measured signed out. Measured roles alias the declared values they match.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">Sidebar items, primary CTAs and the feed vote pill are full pills (calc(infinity * 1px); the story digg-it is a 999px rounded-full); controls are 26px, story cards and rail panels 18px, auth fields 8px and source links 2px. Hairlines are rgba(0,0,0,0.08), fields #e5e5e5, and the focus ring #ababbf.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Served faces: <code>roobert</code> on everything — UI, cards and headings at 400-700 — with <code>ibmPlexSans</code> declared for typeset prose and <code>vt323</code>, the retro bitmap mono, on the vote odometer's digits. Sizes are the measured steps; samples fall back to system fonts.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared variables from the live stylesheets (353 resolved per theme) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
 </main>
 <script>
-const TOK = {"core":{"font":{"family":{"ui":{"v":"roobert, \"roobert Fallback\", ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"computed fontFamily of post-headline default (raw/components-computed.json)","d":"roobert — every sidebar row, card, control and heading, 400–700."},"body":{"v":"roobert, \"roobert Fallback\", ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"computed fontFamily of st-para default (raw/components-computed.json)","d":"roobert — the TLDR story prose at 18px medium."},"mono":{"v":"\"vt323\", \"vt323 Fallback\"","t":"fontFamily","s":"declared --font-vt323 in the site stylesheet (raw/css-vars.json); the retro bitmap face of the vote-odometer digits","d":"vt323 — the pixel-style mono the odometer counts are drawn in."},"typeset":{"v":"\"ibmPlexSans\", \"ibmPlexSans Fallback\"","t":"fontFamily","s":"declared --font-ibm-plex in the site stylesheet (raw/css-vars.json); not exercised on any measured public component","d":"ibmPlexSans — the declared typeset/prose face."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of post-summary default (raw/components-computed.json)","d":"400 — card summaries, TLDR lead and rail panels."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of post-vote default (raw/components-computed.json)","d":"500 — vote pills, controls and OAuth buttons."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of post-headline default (raw/components-computed.json)","d":"600 — card headlines, sidebar rows and source counts."},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of st-h1 default (raw/components-computed.json)","d":"700 — the story and category headings."},"declared":{"bold":{"v":700,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-bold","d":"The declared `--font-weight-bold`."},"medium":{"v":500,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-medium","d":"The declared `--font-weight-medium`."},"normal":{"v":400,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-normal","d":"The declared `--font-weight-normal`."},"semibold":{"v":600,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-semibold","d":"The declared `--font-weight-semibold`."}}},"size":{"base":{"v":"1rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-base","d":"The declared `--text-base`."},"cookie":{"v":".8125rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-cookie","d":"The declared `--text-cookie`."},"lg":{"v":"1.125rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-lg","d":"The declared `--text-lg`."},"sm":{"v":".875rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-sm","d":"The declared `--text-sm`."},"xl":{"v":"1.25rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xl","d":"The declared `--text-xl`."},"xs":{"v":".75rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xs","d":"The declared `--text-xs`."},"measured":{"label":{"v":"10px","t":"fontSize","s":"computed fontSize of st-tldr default (raw/components-computed.json)","d":"The 10px tracked-out TLDR/REPORT labels."},"micro":{"v":"12px","t":"fontSize","s":"computed fontSize of site-footer default (raw/components-computed.json)","d":"The 12px footer and meta text."},"note":{"v":"13px","t":"fontSize","s":"computed fontSize of lg-signup default (raw/components-computed.json)","d":"The 13px auth link text."},"body":{"v":"14px","t":"fontSize","s":"computed fontSize of post-summary default (raw/components-computed.json)","d":"The 14px card body, controls and sidebar."},"headline":{"v":"16px","t":"fontSize","s":"computed fontSize of post-headline default (raw/components-computed.json)","d":"The 16px card headline (and story kicker)."},"lead":{"v":"18px","t":"fontSize","s":"computed fontSize of st-para default (raw/components-computed.json)","d":"The 18px TLDR story prose."},"deck":{"v":"20px","t":"fontSize","s":"computed fontSize of st-summary default (raw/components-computed.json)","d":"The 20px story summary / profile name."},"card-title":{"v":"24px","t":"fontSize","s":"computed fontSize of lg-h1 default (raw/components-computed.json)","d":"The 24px auth card heading."},"page":{"v":"30px","t":"fontSize","s":"computed fontSize of cat-title default (raw/components-computed.json)","d":"The 30px category page heading."},"display":{"v":"36px","t":"fontSize","s":"computed fontSize of st-h1 default (raw/components-computed.json)","d":"The 36px story headline."}}},"tracking":{"base":{"v":"-.0075em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-base--letter-spacing","d":"The declared `--text-base--letter-spacing`."},"cookie":{"v":"-.0065em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-cookie--letter-spacing","d":"The declared `--text-cookie--letter-spacing`."},"xl":{"v":"-.0095em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xl--letter-spacing","d":"The declared `--text-xl--letter-spacing`."},"xs":{"v":"-.005em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xs--letter-spacing","d":"The declared `--text-xs--letter-spacing`."},"normal":{"v":"0em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-normal","d":"The declared `--tracking-normal`."},"tight":{"v":"-.025em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-tight","d":"The declared `--tracking-tight`."},"wide":{"v":".025em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-wide","d":"The declared `--tracking-wide`."},"wider":{"v":".05em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-wider","d":"The declared `--tracking-wider`."},"widest":{"v":".1em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-widest","d":"The declared `--tracking-widest`."}},"lineHeight":{"base":{"v":"1.5rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-base--line-height","d":"The declared `--text-base--line-height`."},"cookie":{"v":"1.1875rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-cookie--line-height","d":"The declared `--text-cookie--line-height`."},"sm":{"v":"1.25rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-sm--line-height","d":"The declared `--text-sm--line-height`."},"xl":{"v":"1.75rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xl--line-height","d":"The declared `--text-xl--line-height`."},"xs":{"v":"1rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xs--line-height","d":"The declared `--text-xs--line-height`."},"normal":{"v":1.5,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-normal","d":"The declared `--leading-normal`."},"relaxed":{"v":1.625,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-relaxed","d":"The declared `--leading-relaxed`."},"snug":{"v":1.375,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-snug","d":"The declared `--leading-snug`."},"tight":{"v":1.25,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-tight","d":"The declared `--leading-tight`."}}},"color":{"black":{"v":"#000000","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black","d":"The declared `--color-black`."},"gray":{"100":{"v":"#f3f4f6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-100","d":"The declared `--color-gray-100`."},"200":{"v":"#e5e7eb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-200","d":"The declared `--color-gray-200`."},"300":{"v":"#d1d5dc","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-300","d":"The declared `--color-gray-300`."},"400":{"v":"#99a1af","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-400","d":"The declared `--color-gray-400`."},"50":{"v":"#f9fafb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-50","d":"The declared `--color-gray-50`."},"500":{"v":"#6a7282","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-500","d":"The declared `--color-gray-500`."},"600":{"v":"#4a5565","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-600","d":"The declared `--color-gray-600`."},"700":{"v":"#364153","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-700","d":"The declared `--color-gray-700`."},"800":{"v":"#1e2939","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-800","d":"The declared `--color-gray-800`."},"900":{"v":"#101828","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-900","d":"The declared `--color-gray-900`."},"950":{"v":"#030712","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gray-950","d":"The declared `--color-gray-950`."}},"primary":{"v":"#1c66eb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-primary","d":"The declared `--color-primary`."},"white":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white","d":"The declared `--color-white`."}},"size":{"container":{"2xl":{"v":"42rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-2xl","d":"The declared `--container-2xl`."},"3xl":{"v":"48rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-3xl","d":"The declared `--container-3xl`."},"4xl":{"v":"56rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-4xl","d":"The declared `--container-4xl`."},"5xl":{"v":"64rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-5xl","d":"The declared `--container-5xl`."},"6xl":{"v":"72rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-6xl","d":"The declared `--container-6xl`."},"lg":{"v":"32rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-lg","d":"The declared `--container-lg`."},"md":{"v":"28rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-md","d":"The declared `--container-md`."},"sm":{"v":"24rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-sm","d":"The declared `--container-sm`."},"xl":{"v":"36rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-xl","d":"The declared `--container-xl`."},"xs":{"v":"20rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-xs","d":"The declared `--container-xs`."}}},"radius":{"2xl":{"v":"18px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-2xl","d":"The declared `--radius-2xl`."},"4xl":{"v":"26px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-4xl","d":"The declared `--radius-4xl`."},"lg":{"v":".625rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-lg","d":"The declared `--radius-lg`."},"md":{"v":"8px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-md","d":"The declared `--radius-md`."},"sm":{"v":"6px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-sm","d":"The declared `--radius-sm`."},"xl":{"v":"14px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-xl","d":"The declared `--radius-xl`."},"default":{"v":".625rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius","d":"The declared `--radius`."},"tight":{"v":"2px","t":"dimension","s":"computed borderTopLeftRadius of post-sources default (raw/components-computed.json)","d":"The 2px tight link radius."},"field":{"v":"{radius.md}","t":"dimension","s":"computed borderTopLeftRadius of lg-email default (raw/components-computed.json); matches declared --radius-md","d":"The 8px auth-field radius."},"card":{"v":"{radius.2xl}","t":"dimension","s":"computed borderTopLeftRadius of post-card default (raw/components-computed.json); matches declared --radius-2xl","d":"The 18px story-card / rail-panel radius (rounded-2xl)."},"control":{"v":"{radius.4xl}","t":"dimension","s":"computed borderTopLeftRadius of sb-signup default (raw/components-computed.json); matches declared --radius-4xl","d":"The 26px control radius on Sign up/Log in/theme pill (rounded-4xl)."},"pill":{"v":"calc(infinity * 1px)","t":"other","s":"computed borderTopLeftRadius of sb-home default (raw/components-computed.json)","d":"The full-pill radius (calc(infinity * 1px)) on sidebar items and primary CTAs."},"vote":{"v":"999px","t":"dimension","s":"computed borderTopLeftRadius of st-vote default (raw/components-computed.json)","d":"The 999px story digg-it pill radius."}},"easing":{"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-in-out","d":"The declared `--ease-in-out`."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-out","d":"The declared `--ease-out`."}},"motion":{"pulse":{"v":"pulse 2s cubic-bezier(.4, 0, .6, 1) infinite","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-pulse","d":"The declared `--animate-pulse`."},"spin":{"v":"spin 1s linear infinite","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-spin","d":"The declared `--animate-spin`."},"control":{"v":"all 0.15s cubic-bezier(0.4, 0, 0.2, 1)","t":"other","s":"computed transition of sb-signup default (raw/components-computed.json)","d":"The measured control transition (all 0.15s cubic-bezier(0.4,0,0.2,1))."},"auth":{"v":"background-color, background, border-color, color, fill, stroke, opacity, box-shadow, transform 0.1s cubic-bezier(0.4, 0, 0.2, 1)","t":"other","s":"computed transition of lg-continue default (raw/components-computed.json)","d":"The measured auth-button transition (0.1s)."}},"blur":{"3xl":{"v":"64px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-3xl","d":"The declared `--blur-3xl`."},"md":{"v":"12px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-md","d":"The declared `--blur-md`."},"sm":{"v":"8px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-sm","d":"The declared `--blur-sm`."},"xl":{"v":"24px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-xl","d":"The declared `--blur-xl`."},"xs":{"v":"4px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-xs","d":"The declared `--blur-xs`."}},"default":{"transition-duration":{"v":"0.15s","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --default-transition-duration","d":"The declared `--default-transition-duration`."},"transition-timing-function":{"v":"cubic-bezier(.4, 0, .2, 1)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --default-transition-timing-function","d":"The declared `--default-transition-timing-function`."}},"shadow":{"md":{"v":"rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --shadow-md","d":"The declared `--shadow-md`."},"field":{"v":[{"offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","color":"rgba(0, 0, 0, 0.05)"}],"t":"shadow","s":"computed boxShadow of lg-email default, transparent ring placeholders left out (raw/components-computed.json)","d":"The auth field's 0 1px 2px rgba(0,0,0,0.05) shadow (shadow-xs)."}},"accent":{"default":{"v":"#1c66eb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --accent","d":"The declared `--accent`."},"foreground":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --accent-foreground","d":"The declared `--accent-foreground`."}},"amber":{"v":"#c47700","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --amber","d":"The declared `--amber`."},"aspect":{"video":{"v":"16 / 9","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --aspect-video","d":"The declared `--aspect-video`."}},"blue":{"v":"#1c66eb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blue","d":"The declared `--blue`."},"chart":{"1":{"v":"#d4d4d4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --chart-1","d":"The declared `--chart-1`."},"2":{"v":"#737373","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --chart-2","d":"The declared `--chart-2`."},"3":{"v":"#525252","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --chart-3","d":"The declared `--chart-3`."},"4":{"v":"#404040","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --chart-4","d":"The declared `--chart-4`."},"5":{"v":"#262626","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --chart-5","d":"The declared `--chart-5`."}},"cyan":{"v":"#00a1a2","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --cyan","d":"The declared `--cyan`."},"destructive":{"v":"#cc434d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --destructive","d":"The declared `--destructive`."},"emerald":{"v":"#3ba267","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --emerald","d":"The declared `--emerald`."},"featured":{"image":{"black":{"v":"#000000","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --featured-image-black","d":"The declared `--featured-image-black`."},"white":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --featured-image-white","d":"The declared `--featured-image-white`."}}},"fuchsia":{"v":"#c965bf","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --fuchsia","d":"The declared `--fuchsia`."},"green":{"v":"#6aa15a","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --green","d":"The declared `--green`."},"indigo":{"v":"#6683eb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --indigo","d":"The declared `--indigo`."},"lime":{"v":"#929200","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --lime","d":"The declared `--lime`."},"media":{"overlay":{"default":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --media-overlay","d":"The declared `--media-overlay`."},"blur":{"v":"32px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --media-overlay-blur","d":"The declared `--media-overlay-blur`."},"border":{"default":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --media-overlay-border","d":"The declared `--media-overlay-border`."},"hover":{"v":"rgba(255, 255, 255, 0.45)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --media-overlay-border-hover","d":"The declared `--media-overlay-border-hover`."}},"foreground":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --media-overlay-foreground","d":"The declared `--media-overlay-foreground`."},"hover":{"v":"rgba(0, 0, 0, 0.75)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --media-overlay-hover","d":"The declared `--media-overlay-hover`."},"ring":{"v":"rgba(255, 255, 255, 0.55)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --media-overlay-ring","d":"The declared `--media-overlay-ring`."},"shadow":{"v":"lab(0 0 0 / 0.25) 0px 10px 6px 0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --media-overlay-shadow","d":"The declared `--media-overlay-shadow`."}},"viewer":{"v":"#000000","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --media-viewer","d":"The declared `--media-viewer`."}},"orange":{"v":"#e37b4c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --orange","d":"The declared `--orange`."},"pink":{"v":"#d05c99","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --pink","d":"The declared `--pink`."},"primary":{"default":{"v":"#1c66eb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --primary","d":"The declared `--primary`."},"foreground":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --primary-foreground","d":"The declared `--primary-foreground`."}},"purple":{"v":"#7759c2","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --purple","d":"The declared `--purple`."},"rank":{"one":{"default":{"v":"#e37b4c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --rank-one","d":"The declared `--rank-one`."},"muted":{"v":"rgba(227, 123, 76, 0.18)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --rank-one-muted","d":"The declared `--rank-one-muted`."}}},"red":{"v":"#cc434d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --red","d":"The declared `--red`."},"rose":{"v":"#d95a75","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --rose","d":"The declared `--rose`."},"scroll":{"fade":{"b":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --scroll-fade-b","d":"The declared `--scroll-fade-b`."},"e":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --scroll-fade-e","d":"The declared `--scroll-fade-e`."},"s":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --scroll-fade-s","d":"The declared `--scroll-fade-s`."}}},"sidebar":{"primary":{"v":"#1c66eb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --sidebar-primary","d":"The declared `--sidebar-primary`."}},"site":{"page":{"controls":{"height":{"v":"40px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --site-page-controls-height","d":"The declared `--site-page-controls-height`."},"top":{"v":"16px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --site-page-controls-top","d":"The declared `--site-page-controls-top`."}}},"topic":{"bar":{"fade":{"end":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --site-topic-bar-fade-end","d":"The declared `--site-topic-bar-fade-end`."},"start":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --site-topic-bar-fade-start","d":"The declared `--site-topic-bar-fade-start`."}}}}},"sky":{"v":"#009ac6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --sky","d":"The declared `--sky`."},"spacing":{"v":".25rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --spacing","d":"The declared `--spacing`."},"success":{"v":"#6aa15a","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --success","d":"The declared `--success`."},"teal":{"v":"#1ca18e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --teal","d":"The declared `--teal`."},"violet":{"v":"#8379e7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --violet","d":"The declared `--violet`."},"yellow":{"v":"#f3c05a","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --yellow","d":"The declared `--yellow`."},"component":{"sidebar-item":{"v":"231px","t":"dimension","s":"measured w of sb-home default (raw/components-computed.json)","d":"The 231x40 full-width sidebar row (items, theme pill, Log in, Sign up all share it)."},"sort-control":{"v":"105.28px","t":"dimension","s":"measured w of feed-trending default (raw/components-computed.json)","d":"The 105x36 Trending sort trigger."},"density-control":{"v":"64px","t":"dimension","s":"measured w of feed-compact default (raw/components-computed.json)","d":"The 64x36 Compact density control."},"story-card":{"v":"183px","t":"dimension","s":"measured h of post-card default (raw/components-computed.json)","d":"The ~183px feed story card (704px column)."},"vote-pill":{"v":"32px","t":"dimension","s":"measured w of post-vote default (raw/components-computed.json)","d":"The 32x24 card vote pill (icon + odometer)."},"comment-link":{"v":"32px","t":"dimension","s":"measured w of post-comment default (raw/components-computed.json)","d":"The 32x32 comment-count link."},"avatar":{"v":"24px","t":"dimension","s":"measured w of post-avatars default (raw/components-computed.json)","d":"The 24x24 source avatar in the cluster."},"thumb":{"v":"120px","t":"dimension","s":"measured w of post-thumb default (raw/components-computed.json)","d":"The 120x80 card thumbnail."},"rail-card":{"v":"376px","t":"dimension","s":"measured w of rail-contribs default (raw/components-computed.json)","d":"The 376px right-rail panel width."},"digg-it":{"v":"138.33px","t":"dimension","s":"measured w of st-vote default (raw/components-computed.json)","d":"The 138x44 story digg-it pill."},"auth-field":{"v":"353px","t":"dimension","s":"measured w of lg-email default (raw/components-computed.json)","d":"The 353x36 auth form field/button width."},"auth-link":{"v":"17.98px","t":"dimension","s":"measured h of lg-signup default (raw/components-computed.json)","d":"The ~18px auth link line."},"mobile-bar":{"v":"107px","t":"dimension","s":"measured h of m-bar default (raw/components-computed.json)","d":"The 107px phone top bar."},"mobile-card":{"v":"390px","t":"dimension","s":"measured w of m-card default (raw/components-computed.json)","d":"The 390px phone story card."}}},"light":{"color":{"amber":{"100":{"v":"#f3e8dc","t":"color","s":"css-var --amber-100 (light)"},"200":{"v":"#ead5be","t":"color","s":"css-var --amber-200 (light)"},"300":{"v":"#dfb98e","t":"color","s":"css-var --amber-300 (light)"},"400":{"v":"#cf9143","t":"color","s":"css-var --amber-400 (light)"},"50":{"v":"#f9f5f0","t":"color","s":"css-var --amber-50 (light)"},"500":{"v":"#c47700","t":"color","s":"css-var --amber-500 (light)"},"600":{"v":"#b16400","t":"color","s":"css-var --amber-600 (light)"},"700":{"v":"#945300","t":"color","s":"css-var --amber-700 (light)"},"800":{"v":"#7a4600","t":"color","s":"css-var --amber-800 (light)"},"900":{"v":"#653c00","t":"color","s":"css-var --amber-900 (light)"},"950":{"v":"#351d00","t":"color","s":"css-var --amber-950 (light)"}},"blue":{"100":{"v":"#cce0ff","t":"color","s":"css-var --blue-100 (light)"},"200":{"v":"#a3c6ff","t":"color","s":"css-var --blue-200 (light)"},"300":{"v":"#6ba4ff","t":"color","s":"css-var --blue-300 (light)"},"400":{"v":"#4085ff","t":"color","s":"css-var --blue-400 (light)"},"50":{"v":"#edf4ff","t":"color","s":"css-var --blue-50 (light)"},"500":{"v":"#1c66eb","t":"color","s":"css-var --blue-500 (light)"},"600":{"v":"#0e50c6","t":"color","s":"css-var --blue-600 (light)"},"700":{"v":"#0542b2","t":"color","s":"css-var --blue-700 (light)"},"800":{"v":"#03369c","t":"color","s":"css-var --blue-800 (light)"},"900":{"v":"#002b80","t":"color","s":"css-var --blue-900 (light)"},"950":{"v":"#002061","t":"color","s":"css-var --blue-950 (light)"}},"cyan":{"100":{"v":"#deeded","t":"color","s":"css-var --cyan-100 (light)"},"200":{"v":"#c2e0df","t":"color","s":"css-var --cyan-200 (light)"},"300":{"v":"#95cccc","t":"color","s":"css-var --cyan-300 (light)"},"400":{"v":"#49b2b2","t":"color","s":"css-var --cyan-400 (light)"},"50":{"v":"#f1f7f7","t":"color","s":"css-var --cyan-50 (light)"},"500":{"v":"#00a1a2","t":"color","s":"css-var --cyan-500 (light)"},"600":{"v":"#008f90","t":"color","s":"css-var --cyan-600 (light)"},"700":{"v":"#007778","t":"color","s":"css-var --cyan-700 (light)"},"800":{"v":"#006263","t":"color","s":"css-var --cyan-800 (light)"},"900":{"v":"#005253","t":"color","s":"css-var --cyan-900 (light)"},"950":{"v":"#002a2a","t":"color","s":"css-var --cyan-950 (light)"}},"emerald":{"100":{"v":"#e1eee5","t":"color","s":"css-var --emerald-100 (light)"},"200":{"v":"#c9e0d0","t":"color","s":"css-var --emerald-200 (light)"},"300":{"v":"#a1cdaf","t":"color","s":"css-var --emerald-300 (light)"},"400":{"v":"#67b383","t":"color","s":"css-var --emerald-400 (light)"},"50":{"v":"#f2f7f3","t":"color","s":"css-var --emerald-50 (light)"},"500":{"v":"#3ba267","t":"color","s":"css-var --emerald-500 (light)"},"600":{"v":"#1b9055","t":"color","s":"css-var --emerald-600 (light)"},"700":{"v":"#157846","t":"color","s":"css-var --emerald-700 (light)"},"800":{"v":"#18633b","t":"color","s":"css-var --emerald-800 (light)"},"900":{"v":"#1d5334","t":"color","s":"css-var --emerald-900 (light)"},"950":{"v":"#0b2b18","t":"color","s":"css-var --emerald-950 (light)"}},"featured":{"image":{"gray":{"100":{"v":"#f3f4f6","t":"color","s":"css-var --featured-image-gray-100 (light)"},"200":{"v":"#e5e7eb","t":"color","s":"css-var --featured-image-gray-200 (light)"},"300":{"v":"#d1d5dc","t":"color","s":"css-var --featured-image-gray-300 (light)"},"400":{"v":"#99a1af","t":"color","s":"css-var --featured-image-gray-400 (light)"},"50":{"v":"#f9fafb","t":"color","s":"css-var --featured-image-gray-50 (light)"},"500":{"v":"#6a7282","t":"color","s":"css-var --featured-image-gray-500 (light)"},"600":{"v":"#4a5565","t":"color","s":"css-var --featured-image-gray-600 (light)"},"700":{"v":"#364153","t":"color","s":"css-var --featured-image-gray-700 (light)"},"800":{"v":"#1e2939","t":"color","s":"css-var --featured-image-gray-800 (light)"},"900":{"v":"#101828","t":"color","s":"css-var --featured-image-gray-900 (light)"},"950":{"v":"#030712","t":"color","s":"css-var --featured-image-gray-950 (light)"}}}},"fuchsia":{"100":{"v":"#f3e5f1","t":"color","s":"css-var --fuchsia-100 (light)"},"200":{"v":"#ebcfe7","t":"color","s":"css-var --fuchsia-200 (light)"},"300":{"v":"#dfaed8","t":"color","s":"css-var --fuchsia-300 (light)"},"400":{"v":"#cf7fc6","t":"color","s":"css-var --fuchsia-400 (light)"},"50":{"v":"#f9f3f8","t":"color","s":"css-var --fuchsia-50 (light)"},"500":{"v":"#c965bf","t":"color","s":"css-var --fuchsia-500 (light)"},"600":{"v":"#b04ba7","t":"color","s":"css-var --fuchsia-600 (light)"},"700":{"v":"#933d8b","t":"color","s":"css-var --fuchsia-700 (light)"},"800":{"v":"#793573","t":"color","s":"css-var --fuchsia-800 (light)"},"900":{"v":"#642f5f","t":"color","s":"css-var --fuchsia-900 (light)"},"950":{"v":"#351632","t":"color","s":"css-var --fuchsia-950 (light)"}},"green":{"100":{"v":"#e5ede3","t":"color","s":"css-var --green-100 (light)"},"200":{"v":"#cfdecb","t":"color","s":"css-var --green-200 (light)"},"300":{"v":"#afcaa7","t":"color","s":"css-var --green-300 (light)"},"400":{"v":"#82ae75","t":"color","s":"css-var --green-400 (light)"},"50":{"v":"#f3f6f2","t":"color","s":"css-var --green-50 (light)"},"500":{"v":"#6aa15a","t":"color","s":"css-var --green-500 (light)"},"600":{"v":"#528a41","t":"color","s":"css-var --green-600 (light)"},"700":{"v":"#437335","t":"color","s":"css-var --green-700 (light)"},"800":{"v":"#395f2e","t":"color","s":"css-var --green-800 (light)"},"900":{"v":"#32502a","t":"color","s":"css-var --green-900 (light)"},"950":{"v":"#182913","t":"color","s":"css-var --green-950 (light)"}},"indigo":{"100":{"v":"#e4eaf9","t":"color","s":"css-var --indigo-100 (light)"},"200":{"v":"#ced8f6","t":"color","s":"css-var --indigo-200 (light)"},"300":{"v":"#adbff3","t":"color","s":"css-var --indigo-300 (light)"},"400":{"v":"#819bef","t":"color","s":"css-var --indigo-400 (light)"},"50":{"v":"#f3f5fc","t":"color","s":"css-var --indigo-50 (light)"},"500":{"v":"#6683eb","t":"color","s":"css-var --indigo-500 (light)"},"600":{"v":"#556fda","t":"color","s":"css-var --indigo-600 (light)"},"700":{"v":"#465cb6","t":"color","s":"css-var --indigo-700 (light)"},"800":{"v":"#3a4d95","t":"color","s":"css-var --indigo-800 (light)"},"900":{"v":"#33427a","t":"color","s":"css-var --indigo-900 (light)"},"950":{"v":"#182141","t":"color","s":"css-var --indigo-950 (light)"}},"lime":{"100":{"v":"#eaebdc","t":"color","s":"css-var --lime-100 (light)"},"200":{"v":"#dadcbf","t":"color","s":"css-var --lime-200 (light)"},"300":{"v":"#c3c58f","t":"color","s":"css-var --lime-300 (light)"},"400":{"v":"#a4a645","t":"color","s":"css-var --lime-400 (light)"},"50":{"v":"#f6f6f0","t":"color","s":"css-var --lime-50 (light)"},"500":{"v":"#929200","t":"color","s":"css-var --lime-500 (light)"},"600":{"v":"#807f00","t":"color","s":"css-var --lime-600 (light)"},"700":{"v":"#6a6a00","t":"color","s":"css-var --lime-700 (light)"},"800":{"v":"#585800","t":"color","s":"css-var --lime-800 (light)"},"900":{"v":"#4a4a00","t":"color","s":"css-var --lime-900 (light)"},"950":{"v":"#252600","t":"color","s":"css-var --lime-950 (light)"}},"orange":{"100":{"v":"#f6e6e0","t":"color","s":"css-var --orange-100 (light)"},"200":{"v":"#efd2c6","t":"color","s":"css-var --orange-200 (light)"},"300":{"v":"#e7b39d","t":"color","s":"css-var --orange-300 (light)"},"400":{"v":"#e37b4c","t":"color","s":"css-var --orange-400 (light)"},"50":{"v":"#faf4f1","t":"color","s":"css-var --orange-50 (light)"},"500":{"v":"#d16a3b","t":"color","s":"css-var --orange-500 (light)"},"600":{"v":"#be5723","t":"color","s":"css-var --orange-600 (light)"},"700":{"v":"#9f471c","t":"color","s":"css-var --orange-700 (light)"},"800":{"v":"#833c1b","t":"color","s":"css-var --orange-800 (light)"},"900":{"v":"#6c351c","t":"color","s":"css-var --orange-900 (light)"},"950":{"v":"#39190b","t":"color","s":"css-var --orange-950 (light)"}},"pink":{"100":{"v":"#f6e4ec","t":"color","s":"css-var --pink-100 (light)"},"200":{"v":"#f0cedd","t":"color","s":"css-var --pink-200 (light)"},"300":{"v":"#e7acc7","t":"color","s":"css-var --pink-300 (light)"},"400":{"v":"#da7dab","t":"color","s":"css-var --pink-400 (light)"},"50":{"v":"#faf3f6","t":"color","s":"css-var --pink-50 (light)"},"500":{"v":"#d05c99","t":"color","s":"css-var --pink-500 (light)"},"600":{"v":"#bd4887","t":"color","s":"css-var --pink-600 (light)"},"700":{"v":"#9e3b70","t":"color","s":"css-var --pink-700 (light)"},"800":{"v":"#82325d","t":"color","s":"css-var --pink-800 (light)"},"900":{"v":"#6b2e4e","t":"color","s":"css-var --pink-900 (light)"},"950":{"v":"#391528","t":"color","s":"css-var --pink-950 (light)"}},"purple":{"100":{"v":"#eae7f7","t":"color","s":"css-var --purple-100 (light)"},"200":{"v":"#dad5f2","t":"color","s":"css-var --purple-200 (light)"},"300":{"v":"#c2b7ed","t":"color","s":"css-var --purple-300 (light)"},"400":{"v":"#a48fe7","t":"color","s":"css-var --purple-400 (light)"},"50":{"v":"#f5f4fb","t":"color","s":"css-var --purple-50 (light)"},"500":{"v":"#9175e1","t":"color","s":"css-var --purple-500 (light)"},"600":{"v":"#7759c2","t":"color","s":"css-var --purple-600 (light)"},"700":{"v":"#6a50ad","t":"color","s":"css-var --purple-700 (light)"},"800":{"v":"#58448e","t":"color","s":"css-var --purple-800 (light)"},"900":{"v":"#4a3b74","t":"color","s":"css-var --purple-900 (light)"},"950":{"v":"#251d3e","t":"color","s":"css-var --purple-950 (light)"}},"red":{"100":{"v":"#f9e4e3","t":"color","s":"css-var --red-100 (light)"},"200":{"v":"#f6cecd","t":"color","s":"css-var --red-200 (light)"},"300":{"v":"#f1abaa","t":"color","s":"css-var --red-300 (light)"},"400":{"v":"#e9797b","t":"color","s":"css-var --red-400 (light)"},"50":{"v":"#fcf3f3","t":"color","s":"css-var --red-50 (light)"},"500":{"v":"#e0565e","t":"color","s":"css-var --red-500 (light)"},"600":{"v":"#cc434d","t":"color","s":"css-var --red-600 (light)"},"700":{"v":"#ab343d","t":"color","s":"css-var --red-700 (light)"},"800":{"v":"#8d2d34","t":"color","s":"css-var --red-800 (light)"},"900":{"v":"#742b2e","t":"color","s":"css-var --red-900 (light)"},"950":{"v":"#3e1315","t":"color","s":"css-var --red-950 (light)"}},"rose":{"100":{"v":"#f8e4e6","t":"color","s":"css-var --rose-100 (light)"},"200":{"v":"#f3ced3","t":"color","s":"css-var --rose-200 (light)"},"300":{"v":"#edacb5","t":"color","s":"css-var --rose-300 (light)"},"400":{"v":"#e37c8d","t":"color","s":"css-var --rose-400 (light)"},"50":{"v":"#fbf3f4","t":"color","s":"css-var --rose-50 (light)"},"500":{"v":"#d95a75","t":"color","s":"css-var --rose-500 (light)"},"600":{"v":"#c64563","t":"color","s":"css-var --rose-600 (light)"},"700":{"v":"#a53852","t":"color","s":"css-var --rose-700 (light)"},"800":{"v":"#883144","t":"color","s":"css-var --rose-800 (light)"},"900":{"v":"#702d3b","t":"color","s":"css-var --rose-900 (light)"},"950":{"v":"#3c151d","t":"color","s":"css-var --rose-950 (light)"}},"sky":{"100":{"v":"#deedf3","t":"color","s":"css-var --sky-100 (light)"},"200":{"v":"#c2deea","t":"color","s":"css-var --sky-200 (light)"},"300":{"v":"#95c9df","t":"color","s":"css-var --sky-300 (light)"},"400":{"v":"#4badd0","t":"color","s":"css-var --sky-400 (light)"},"50":{"v":"#f1f7f9","t":"color","s":"css-var --sky-50 (light)"},"500":{"v":"#009ac6","t":"color","s":"css-var --sky-500 (light)"},"600":{"v":"#0088b4","t":"color","s":"css-var --sky-600 (light)"},"700":{"v":"#007196","t":"color","s":"css-var --sky-700 (light)"},"800":{"v":"#005e7c","t":"color","s":"css-var --sky-800 (light)"},"900":{"v":"#004f66","t":"color","s":"css-var --sky-900 (light)"},"950":{"v":"#002836","t":"color","s":"css-var --sky-950 (light)"}},"teal":{"100":{"v":"#e0edea","t":"color","s":"css-var --teal-100 (light)"},"200":{"v":"#c6e0da","t":"color","s":"css-var --teal-200 (light)"},"300":{"v":"#9cccc1","t":"color","s":"css-var --teal-300 (light)"},"400":{"v":"#5bb2a2","t":"color","s":"css-var --teal-400 (light)"},"50":{"v":"#f1f7f5","t":"color","s":"css-var --teal-50 (light)"},"500":{"v":"#1ca18e","t":"color","s":"css-var --teal-500 (light)"},"600":{"v":"#008f7c","t":"color","s":"css-var --teal-600 (light)"},"700":{"v":"#007767","t":"color","s":"css-var --teal-700 (light)"},"800":{"v":"#006255","t":"color","s":"css-var --teal-800 (light)"},"900":{"v":"#0f5248","t":"color","s":"css-var --teal-900 (light)"},"950":{"v":"#042a24","t":"color","s":"css-var --teal-950 (light)"}},"violet":{"100":{"v":"#e8e8f8","t":"color","s":"css-var --violet-100 (light)"},"200":{"v":"#d6d6f4","t":"color","s":"css-var --violet-200 (light)"},"300":{"v":"#babaf1","t":"color","s":"css-var --violet-300 (light)"},"400":{"v":"#9893ec","t":"color","s":"css-var --violet-400 (light)"},"50":{"v":"#f5f5fb","t":"color","s":"css-var --violet-50 (light)"},"500":{"v":"#8379e7","t":"color","s":"css-var --violet-500 (light)"},"600":{"v":"#7266d5","t":"color","s":"css-var --violet-600 (light)"},"700":{"v":"#5f54b2","t":"color","s":"css-var --violet-700 (light)"},"800":{"v":"#4e4792","t":"color","s":"css-var --violet-800 (light)"},"900":{"v":"#423d78","t":"color","s":"css-var --violet-900 (light)"},"950":{"v":"#211e40","t":"color","s":"css-var --violet-950 (light)"}},"yellow":{"100":{"v":"#fcf2d6","t":"color","s":"css-var --yellow-100 (light)"},"200":{"v":"#f9e4ac","t":"color","s":"css-var --yellow-200 (light)"},"300":{"v":"#f7d881","t":"color","s":"css-var --yellow-300 (light)"},"400":{"v":"#f3c457","t":"color","s":"css-var --yellow-400 (light)"},"50":{"v":"#fefaee","t":"color","s":"css-var --yellow-50 (light)"},"500":{"v":"#f3ad2c","t":"color","s":"css-var --yellow-500 (light)"},"600":{"v":"#e09a19","t":"color","s":"css-var --yellow-600 (light)"},"700":{"v":"#c78306","t":"color","s":"css-var --yellow-700 (light)"},"800":{"v":"#a36a00","t":"color","s":"css-var --yellow-800 (light)"},"900":{"v":"#5c3a00","t":"color","s":"css-var --yellow-900 (light)"},"950":{"v":"#291a00","t":"color","s":"css-var --yellow-950 (light)"}}},"background":{"default":{"v":"#fdfdff","t":"color","s":"css-var --background (light)"},"page":{"v":"{background.default}","t":"color","s":"computed backgroundColor of st-vote default (raw/components-computed.json); matches declared --background","d":"The #fdfdff near-white field the public surfaces paint (the vote pill's fill)."},"card":{"v":"{card.default}","t":"color","s":"computed backgroundColor of rail-contribs default (raw/components-computed.json); matches declared --card","d":"The #ffffff white card field on rail panels."},"fill":{"v":"{sidebar.accent.default}","t":"color","s":"computed backgroundColor of sb-home default (raw/components-computed.json); matches declared --sidebar-accent","d":"The #f0f0f5 light-gray fill on the selected sidebar row and story crumb (matches --sidebar-accent/--muted/--secondary)."},"input-fill":{"v":"rgba(229, 229, 229, 0.3)","t":"color","s":"computed backgroundColor of feed-trending default (raw/components-computed.json)","d":"The translucent wash (bg-input/30) on the feed sort controls."}},"border":{"default":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --border (light)"},"vote-border":{"v":"rgba(28, 102, 235, 0.2)","t":"color","s":"computed borderTopColor of st-vote default (raw/components-computed.json)","d":"The primary-blue @20% border on the story digg-it pill."},"hairline":{"v":"{border.default}","t":"color","s":"computed borderTopColor of rail-contribs default (raw/components-computed.json); matches declared --border","d":"The rgba(0,0,0,0.08) hairline on cards and panels (matches --border)."},"input":{"v":"{input}","t":"color","s":"computed borderTopColor of lg-email default (raw/components-computed.json); matches declared --input","d":"The #e5e5e5 field border (matches --input)."},"focus":{"v":"rgba(171, 171, 191, 0.5)","t":"color","s":"computed outlineColor of sb-signup focus-visible (raw/components-computed.json)","d":"The #ababbf focus-visible ring on controls (matches --ring/--sidebar-ring)."}},"brand":{"text":{"v":"#1c66eb","t":"color","s":"css-var --brand-text (light)"}},"card":{"default":{"v":"#ffffff","t":"color","s":"css-var --card (light)"},"foreground":{"v":"#161617","t":"color","s":"css-var --card-foreground (light)"}},"destructive":{"foreground":{"v":"#ffffff","t":"color","s":"css-var --destructive-foreground (light)"}},"foreground":{"default":{"v":"#161617","t":"color","s":"css-var --foreground (light)"}},"input":{"v":"#e5e5e5","t":"color","s":"css-var --input (light)"},"muted":{"default":{"v":"#f0f0f5","t":"color","s":"css-var --muted (light)"},"foreground":{"v":"rgba(22, 22, 23, 0.7)","t":"color","s":"css-var --muted-foreground (light)"}},"popover":{"default":{"v":"#ffffff","t":"color","s":"css-var --popover (light)"},"foreground":{"v":"#161617","t":"color","s":"css-var --popover-foreground (light)"}},"ring":{"v":"#ababbf","t":"color","s":"css-var --ring (light)"},"secondary":{"default":{"v":"#f0f0f5","t":"color","s":"css-var --secondary (light)"},"foreground":{"v":"#161617","t":"color","s":"css-var --secondary-foreground (light)"},"hover":{"v":"#dbe3f6","t":"color","s":"css-var --secondary-hover (light)"}},"sidebar":{"default":{"v":"#f8f8fb","t":"color","s":"css-var --sidebar (light)"},"accent":{"default":{"v":"#f0f0f5","t":"color","s":"css-var --sidebar-accent (light)"},"foreground":{"v":"#161617","t":"color","s":"css-var --sidebar-accent-foreground (light)"}},"border":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --sidebar-border (light)"},"foreground":{"v":"#161617","t":"color","s":"css-var --sidebar-foreground (light)"},"primary":{"foreground":{"v":"#ffffff","t":"color","s":"css-var --sidebar-primary-foreground (light)"}},"ring":{"v":"#ababbf","t":"color","s":"css-var --sidebar-ring (light)"}},"success":{"foreground":{"v":"#ffffff","t":"color","s":"css-var --success-foreground (light)"}},"text":{"ink":{"v":"{foreground.default}","t":"color","s":"computed color of post-headline default (raw/components-computed.json); matches declared --foreground","d":"The #161617 ink — every headline, sidebar row and control label (matches --foreground)."},"muted":{"v":"{muted.foreground}","t":"color","s":"computed color of post-summary default (raw/components-computed.json); matches declared --muted-foreground","d":"The ink@70% muted text — card summaries, source counts, footer links (matches --muted-foreground)."},"link":{"v":"{primary.default}","t":"color","s":"computed color of lg-signup default (raw/components-computed.json); matches declared --primary","d":"The #1c66eb blue on text links like the login Sign up link (matches --primary/--accent)."},"rank-one":{"v":"{rank.one.default}","t":"color","s":"declared --rank-one (raw/css-vars.json resolved.light); no measured component paints it; matches declared --rank-one","d":"The #e37b4c orange of the #1 contributor rank (declared --rank-one)."}},"action":{"primary":{"v":"{primary.default}","t":"color","s":"computed backgroundColor of sb-signup default (raw/components-computed.json); matches declared --primary","d":"The #1c66eb primary blue on Sign up and Continue (matches --primary/--accent/--sidebar-primary)."},"primary-hover":{"v":"rgba(28, 102, 235, 0.8)","t":"color","s":"computed backgroundColor of sb-signup hover (raw/components-computed.json)","d":"The blue @80% the primary CTAs take on hover/pressed."},"on-primary":{"v":"{primary.foreground}","t":"color","s":"computed color of lg-continue default (raw/components-computed.json); matches declared --primary-foreground","d":"The white label on the primary CTAs (matches --primary-foreground)."},"oauth-fill":{"v":"{background.default}","t":"color","s":"computed backgroundColor of lg-google default (raw/components-computed.json); matches declared --background","d":"The near-white fill on the OAuth outline buttons."}}},"dark":{"color":{"amber":{"100":{"v":"#f3e8dc","t":"color","s":"css-var --amber-100 (dark)"},"200":{"v":"#ead5be","t":"color","s":"css-var --amber-200 (dark)"},"300":{"v":"#dfb98e","t":"color","s":"css-var --amber-300 (dark)"},"400":{"v":"#cf9143","t":"color","s":"css-var --amber-400 (dark)"},"50":{"v":"#f9f5f0","t":"color","s":"css-var --amber-50 (dark)"},"500":{"v":"#c47700","t":"color","s":"css-var --amber-500 (dark)"},"600":{"v":"#b16400","t":"color","s":"css-var --amber-600 (dark)"},"700":{"v":"#945300","t":"color","s":"css-var --amber-700 (dark)"},"800":{"v":"#7a4600","t":"color","s":"css-var --amber-800 (dark)"},"900":{"v":"#653c00","t":"color","s":"css-var --amber-900 (dark)"},"950":{"v":"#351d00","t":"color","s":"css-var --amber-950 (dark)"}},"blue":{"100":{"v":"#cce0ff","t":"color","s":"css-var --blue-100 (dark)"},"200":{"v":"#a3c6ff","t":"color","s":"css-var --blue-200 (dark)"},"300":{"v":"#6ba4ff","t":"color","s":"css-var --blue-300 (dark)"},"400":{"v":"#4085ff","t":"color","s":"css-var --blue-400 (dark)"},"50":{"v":"#edf4ff","t":"color","s":"css-var --blue-50 (dark)"},"500":{"v":"#1c66eb","t":"color","s":"css-var --blue-500 (dark)"},"600":{"v":"#0e50c6","t":"color","s":"css-var --blue-600 (dark)"},"700":{"v":"#0542b2","t":"color","s":"css-var --blue-700 (dark)"},"800":{"v":"#03369c","t":"color","s":"css-var --blue-800 (dark)"},"900":{"v":"#002b80","t":"color","s":"css-var --blue-900 (dark)"},"950":{"v":"#002061","t":"color","s":"css-var --blue-950 (dark)"}},"cyan":{"100":{"v":"#deeded","t":"color","s":"css-var --cyan-100 (dark)"},"200":{"v":"#c2e0df","t":"color","s":"css-var --cyan-200 (dark)"},"300":{"v":"#95cccc","t":"color","s":"css-var --cyan-300 (dark)"},"400":{"v":"#49b2b2","t":"color","s":"css-var --cyan-400 (dark)"},"50":{"v":"#f1f7f7","t":"color","s":"css-var --cyan-50 (dark)"},"500":{"v":"#00a1a2","t":"color","s":"css-var --cyan-500 (dark)"},"600":{"v":"#008f90","t":"color","s":"css-var --cyan-600 (dark)"},"700":{"v":"#007778","t":"color","s":"css-var --cyan-700 (dark)"},"800":{"v":"#006263","t":"color","s":"css-var --cyan-800 (dark)"},"900":{"v":"#005253","t":"color","s":"css-var --cyan-900 (dark)"},"950":{"v":"#002a2a","t":"color","s":"css-var --cyan-950 (dark)"}},"emerald":{"100":{"v":"#e1eee5","t":"color","s":"css-var --emerald-100 (dark)"},"200":{"v":"#c9e0d0","t":"color","s":"css-var --emerald-200 (dark)"},"300":{"v":"#a1cdaf","t":"color","s":"css-var --emerald-300 (dark)"},"400":{"v":"#67b383","t":"color","s":"css-var --emerald-400 (dark)"},"50":{"v":"#f2f7f3","t":"color","s":"css-var --emerald-50 (dark)"},"500":{"v":"#3ba267","t":"color","s":"css-var --emerald-500 (dark)"},"600":{"v":"#1b9055","t":"color","s":"css-var --emerald-600 (dark)"},"700":{"v":"#157846","t":"color","s":"css-var --emerald-700 (dark)"},"800":{"v":"#18633b","t":"color","s":"css-var --emerald-800 (dark)"},"900":{"v":"#1d5334","t":"color","s":"css-var --emerald-900 (dark)"},"950":{"v":"#0b2b18","t":"color","s":"css-var --emerald-950 (dark)"}},"featured":{"image":{"gray":{"100":{"v":"#f3f4f6","t":"color","s":"css-var --featured-image-gray-100 (dark)"},"200":{"v":"#e5e7eb","t":"color","s":"css-var --featured-image-gray-200 (dark)"},"300":{"v":"#d1d5dc","t":"color","s":"css-var --featured-image-gray-300 (dark)"},"400":{"v":"#99a1af","t":"color","s":"css-var --featured-image-gray-400 (dark)"},"50":{"v":"#f9fafb","t":"color","s":"css-var --featured-image-gray-50 (dark)"},"500":{"v":"#6a7282","t":"color","s":"css-var --featured-image-gray-500 (dark)"},"600":{"v":"#4a5565","t":"color","s":"css-var --featured-image-gray-600 (dark)"},"700":{"v":"#364153","t":"color","s":"css-var --featured-image-gray-700 (dark)"},"800":{"v":"#1e2939","t":"color","s":"css-var --featured-image-gray-800 (dark)"},"900":{"v":"#101828","t":"color","s":"css-var --featured-image-gray-900 (dark)"},"950":{"v":"#030712","t":"color","s":"css-var --featured-image-gray-950 (dark)"}}}},"fuchsia":{"100":{"v":"#f3e5f1","t":"color","s":"css-var --fuchsia-100 (dark)"},"200":{"v":"#ebcfe7","t":"color","s":"css-var --fuchsia-200 (dark)"},"300":{"v":"#dfaed8","t":"color","s":"css-var --fuchsia-300 (dark)"},"400":{"v":"#cf7fc6","t":"color","s":"css-var --fuchsia-400 (dark)"},"50":{"v":"#f9f3f8","t":"color","s":"css-var --fuchsia-50 (dark)"},"500":{"v":"#c965bf","t":"color","s":"css-var --fuchsia-500 (dark)"},"600":{"v":"#b04ba7","t":"color","s":"css-var --fuchsia-600 (dark)"},"700":{"v":"#933d8b","t":"color","s":"css-var --fuchsia-700 (dark)"},"800":{"v":"#793573","t":"color","s":"css-var --fuchsia-800 (dark)"},"900":{"v":"#642f5f","t":"color","s":"css-var --fuchsia-900 (dark)"},"950":{"v":"#351632","t":"color","s":"css-var --fuchsia-950 (dark)"}},"green":{"100":{"v":"#e5ede3","t":"color","s":"css-var --green-100 (dark)"},"200":{"v":"#cfdecb","t":"color","s":"css-var --green-200 (dark)"},"300":{"v":"#afcaa7","t":"color","s":"css-var --green-300 (dark)"},"400":{"v":"#82ae75","t":"color","s":"css-var --green-400 (dark)"},"50":{"v":"#f3f6f2","t":"color","s":"css-var --green-50 (dark)"},"500":{"v":"#6aa15a","t":"color","s":"css-var --green-500 (dark)"},"600":{"v":"#528a41","t":"color","s":"css-var --green-600 (dark)"},"700":{"v":"#437335","t":"color","s":"css-var --green-700 (dark)"},"800":{"v":"#395f2e","t":"color","s":"css-var --green-800 (dark)"},"900":{"v":"#32502a","t":"color","s":"css-var --green-900 (dark)"},"950":{"v":"#182913","t":"color","s":"css-var --green-950 (dark)"}},"indigo":{"100":{"v":"#e4eaf9","t":"color","s":"css-var --indigo-100 (dark)"},"200":{"v":"#ced8f6","t":"color","s":"css-var --indigo-200 (dark)"},"300":{"v":"#adbff3","t":"color","s":"css-var --indigo-300 (dark)"},"400":{"v":"#819bef","t":"color","s":"css-var --indigo-400 (dark)"},"50":{"v":"#f3f5fc","t":"color","s":"css-var --indigo-50 (dark)"},"500":{"v":"#6683eb","t":"color","s":"css-var --indigo-500 (dark)"},"600":{"v":"#556fda","t":"color","s":"css-var --indigo-600 (dark)"},"700":{"v":"#465cb6","t":"color","s":"css-var --indigo-700 (dark)"},"800":{"v":"#3a4d95","t":"color","s":"css-var --indigo-800 (dark)"},"900":{"v":"#33427a","t":"color","s":"css-var --indigo-900 (dark)"},"950":{"v":"#182141","t":"color","s":"css-var --indigo-950 (dark)"}},"lime":{"100":{"v":"#eaebdc","t":"color","s":"css-var --lime-100 (dark)"},"200":{"v":"#dadcbf","t":"color","s":"css-var --lime-200 (dark)"},"300":{"v":"#c3c58f","t":"color","s":"css-var --lime-300 (dark)"},"400":{"v":"#a4a645","t":"color","s":"css-var --lime-400 (dark)"},"50":{"v":"#f6f6f0","t":"color","s":"css-var --lime-50 (dark)"},"500":{"v":"#929200","t":"color","s":"css-var --lime-500 (dark)"},"600":{"v":"#807f00","t":"color","s":"css-var --lime-600 (dark)"},"700":{"v":"#6a6a00","t":"color","s":"css-var --lime-700 (dark)"},"800":{"v":"#585800","t":"color","s":"css-var --lime-800 (dark)"},"900":{"v":"#4a4a00","t":"color","s":"css-var --lime-900 (dark)"},"950":{"v":"#252600","t":"color","s":"css-var --lime-950 (dark)"}},"orange":{"100":{"v":"#f6e6e0","t":"color","s":"css-var --orange-100 (dark)"},"200":{"v":"#efd2c6","t":"color","s":"css-var --orange-200 (dark)"},"300":{"v":"#e7b39d","t":"color","s":"css-var --orange-300 (dark)"},"400":{"v":"#e37b4c","t":"color","s":"css-var --orange-400 (dark)"},"50":{"v":"#faf4f1","t":"color","s":"css-var --orange-50 (dark)"},"500":{"v":"#d16a3b","t":"color","s":"css-var --orange-500 (dark)"},"600":{"v":"#be5723","t":"color","s":"css-var --orange-600 (dark)"},"700":{"v":"#9f471c","t":"color","s":"css-var --orange-700 (dark)"},"800":{"v":"#833c1b","t":"color","s":"css-var --orange-800 (dark)"},"900":{"v":"#6c351c","t":"color","s":"css-var --orange-900 (dark)"},"950":{"v":"#39190b","t":"color","s":"css-var --orange-950 (dark)"}},"pink":{"100":{"v":"#f6e4ec","t":"color","s":"css-var --pink-100 (dark)"},"200":{"v":"#f0cedd","t":"color","s":"css-var --pink-200 (dark)"},"300":{"v":"#e7acc7","t":"color","s":"css-var --pink-300 (dark)"},"400":{"v":"#da7dab","t":"color","s":"css-var --pink-400 (dark)"},"50":{"v":"#faf3f6","t":"color","s":"css-var --pink-50 (dark)"},"500":{"v":"#d05c99","t":"color","s":"css-var --pink-500 (dark)"},"600":{"v":"#bd4887","t":"color","s":"css-var --pink-600 (dark)"},"700":{"v":"#9e3b70","t":"color","s":"css-var --pink-700 (dark)"},"800":{"v":"#82325d","t":"color","s":"css-var --pink-800 (dark)"},"900":{"v":"#6b2e4e","t":"color","s":"css-var --pink-900 (dark)"},"950":{"v":"#391528","t":"color","s":"css-var --pink-950 (dark)"}},"purple":{"100":{"v":"#eae7f7","t":"color","s":"css-var --purple-100 (dark)"},"200":{"v":"#dad5f2","t":"color","s":"css-var --purple-200 (dark)"},"300":{"v":"#c2b7ed","t":"color","s":"css-var --purple-300 (dark)"},"400":{"v":"#a48fe7","t":"color","s":"css-var --purple-400 (dark)"},"50":{"v":"#f5f4fb","t":"color","s":"css-var --purple-50 (dark)"},"500":{"v":"#9175e1","t":"color","s":"css-var --purple-500 (dark)"},"600":{"v":"#7759c2","t":"color","s":"css-var --purple-600 (dark)"},"700":{"v":"#6a50ad","t":"color","s":"css-var --purple-700 (dark)"},"800":{"v":"#58448e","t":"color","s":"css-var --purple-800 (dark)"},"900":{"v":"#4a3b74","t":"color","s":"css-var --purple-900 (dark)"},"950":{"v":"#251d3e","t":"color","s":"css-var --purple-950 (dark)"}},"red":{"100":{"v":"#f9e4e3","t":"color","s":"css-var --red-100 (dark)"},"200":{"v":"#f6cecd","t":"color","s":"css-var --red-200 (dark)"},"300":{"v":"#f1abaa","t":"color","s":"css-var --red-300 (dark)"},"400":{"v":"#e9797b","t":"color","s":"css-var --red-400 (dark)"},"50":{"v":"#fcf3f3","t":"color","s":"css-var --red-50 (dark)"},"500":{"v":"#e0565e","t":"color","s":"css-var --red-500 (dark)"},"600":{"v":"#cc434d","t":"color","s":"css-var --red-600 (dark)"},"700":{"v":"#ab343d","t":"color","s":"css-var --red-700 (dark)"},"800":{"v":"#8d2d34","t":"color","s":"css-var --red-800 (dark)"},"900":{"v":"#742b2e","t":"color","s":"css-var --red-900 (dark)"},"950":{"v":"#3e1315","t":"color","s":"css-var --red-950 (dark)"}},"rose":{"100":{"v":"#f8e4e6","t":"color","s":"css-var --rose-100 (dark)"},"200":{"v":"#f3ced3","t":"color","s":"css-var --rose-200 (dark)"},"300":{"v":"#edacb5","t":"color","s":"css-var --rose-300 (dark)"},"400":{"v":"#e37c8d","t":"color","s":"css-var --rose-400 (dark)"},"50":{"v":"#fbf3f4","t":"color","s":"css-var --rose-50 (dark)"},"500":{"v":"#d95a75","t":"color","s":"css-var --rose-500 (dark)"},"600":{"v":"#c64563","t":"color","s":"css-var --rose-600 (dark)"},"700":{"v":"#a53852","t":"color","s":"css-var --rose-700 (dark)"},"800":{"v":"#883144","t":"color","s":"css-var --rose-800 (dark)"},"900":{"v":"#702d3b","t":"color","s":"css-var --rose-900 (dark)"},"950":{"v":"#3c151d","t":"color","s":"css-var --rose-950 (dark)"}},"sky":{"100":{"v":"#deedf3","t":"color","s":"css-var --sky-100 (dark)"},"200":{"v":"#c2deea","t":"color","s":"css-var --sky-200 (dark)"},"300":{"v":"#95c9df","t":"color","s":"css-var --sky-300 (dark)"},"400":{"v":"#4badd0","t":"color","s":"css-var --sky-400 (dark)"},"50":{"v":"#f1f7f9","t":"color","s":"css-var --sky-50 (dark)"},"500":{"v":"#009ac6","t":"color","s":"css-var --sky-500 (dark)"},"600":{"v":"#0088b4","t":"color","s":"css-var --sky-600 (dark)"},"700":{"v":"#007196","t":"color","s":"css-var --sky-700 (dark)"},"800":{"v":"#005e7c","t":"color","s":"css-var --sky-800 (dark)"},"900":{"v":"#004f66","t":"color","s":"css-var --sky-900 (dark)"},"950":{"v":"#002836","t":"color","s":"css-var --sky-950 (dark)"}},"teal":{"100":{"v":"#e0edea","t":"color","s":"css-var --teal-100 (dark)"},"200":{"v":"#c6e0da","t":"color","s":"css-var --teal-200 (dark)"},"300":{"v":"#9cccc1","t":"color","s":"css-var --teal-300 (dark)"},"400":{"v":"#5bb2a2","t":"color","s":"css-var --teal-400 (dark)"},"50":{"v":"#f1f7f5","t":"color","s":"css-var --teal-50 (dark)"},"500":{"v":"#1ca18e","t":"color","s":"css-var --teal-500 (dark)"},"600":{"v":"#008f7c","t":"color","s":"css-var --teal-600 (dark)"},"700":{"v":"#007767","t":"color","s":"css-var --teal-700 (dark)"},"800":{"v":"#006255","t":"color","s":"css-var --teal-800 (dark)"},"900":{"v":"#0f5248","t":"color","s":"css-var --teal-900 (dark)"},"950":{"v":"#042a24","t":"color","s":"css-var --teal-950 (dark)"}},"violet":{"100":{"v":"#e8e8f8","t":"color","s":"css-var --violet-100 (dark)"},"200":{"v":"#d6d6f4","t":"color","s":"css-var --violet-200 (dark)"},"300":{"v":"#babaf1","t":"color","s":"css-var --violet-300 (dark)"},"400":{"v":"#9893ec","t":"color","s":"css-var --violet-400 (dark)"},"50":{"v":"#f5f5fb","t":"color","s":"css-var --violet-50 (dark)"},"500":{"v":"#8379e7","t":"color","s":"css-var --violet-500 (dark)"},"600":{"v":"#7266d5","t":"color","s":"css-var --violet-600 (dark)"},"700":{"v":"#5f54b2","t":"color","s":"css-var --violet-700 (dark)"},"800":{"v":"#4e4792","t":"color","s":"css-var --violet-800 (dark)"},"900":{"v":"#423d78","t":"color","s":"css-var --violet-900 (dark)"},"950":{"v":"#211e40","t":"color","s":"css-var --violet-950 (dark)"}},"yellow":{"100":{"v":"#fcf2d6","t":"color","s":"css-var --yellow-100 (dark)"},"200":{"v":"#f9e4ac","t":"color","s":"css-var --yellow-200 (dark)"},"300":{"v":"#f7d881","t":"color","s":"css-var --yellow-300 (dark)"},"400":{"v":"#f3c457","t":"color","s":"css-var --yellow-400 (dark)"},"50":{"v":"#fefaee","t":"color","s":"css-var --yellow-50 (dark)"},"500":{"v":"#f3ad2c","t":"color","s":"css-var --yellow-500 (dark)"},"600":{"v":"#e09a19","t":"color","s":"css-var --yellow-600 (dark)"},"700":{"v":"#c78306","t":"color","s":"css-var --yellow-700 (dark)"},"800":{"v":"#a36a00","t":"color","s":"css-var --yellow-800 (dark)"},"900":{"v":"#5c3a00","t":"color","s":"css-var --yellow-900 (dark)"},"950":{"v":"#291a00","t":"color","s":"css-var --yellow-950 (dark)"}}},"background":{"default":{"v":"#161617","t":"color","s":"css-var --background (dark)"},"card":{"v":"{card.default}","t":"color","s":"computed backgroundColor of d-rail default (raw/components-computed.json, theme pill set to dark); matches declared --card","d":"The #1c1c1f dark card field on rail panels (matches --card)."},"input-fill":{"v":"rgba(255, 255, 255, 0.045)","t":"color","s":"computed backgroundColor of d-trending default (raw/components-computed.json, theme pill set to dark)","d":"The white @4.5% wash on the feed sort controls in dark."},"page":{"v":"{background.default}","t":"color","s":"declared .dark value of --background (raw/css-vars.json resolved.dark); no d-* component reading of it; matches declared --background","d":"The #161617 near-black field the dark captures paint."},"fill":{"v":"{sidebar.accent.default}","t":"color","s":"declared .dark value of --sidebar-accent (raw/css-vars.json resolved.dark); no d-* component reading of it; matches declared --sidebar-accent","d":"The #27272c selected-row fill on the dark sidebar (matches --sidebar-accent)."}},"border":{"default":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --border (dark)"},"hairline":{"v":"{border.default}","t":"color","s":"computed borderTopColor of d-rail default (raw/components-computed.json, theme pill set to dark); matches declared --border","d":"The rgba(255,255,255,0.08) hairline on dark cards (matches --border)."},"input":{"v":"{input}","t":"color","s":"computed borderTopColor of d-trending default (raw/components-computed.json, theme pill set to dark); matches declared --input","d":"The white @15% control border in dark (matches --input)."},"focus":{"v":"rgba(28, 102, 235, 0.5)","t":"color","s":"computed outlineColor of d-signup focus-visible (raw/components-computed.json, theme pill set to dark)","d":"The #1c66eb primary at 50% the focus-visible outline resolves in dark."},"vote-border":{"v":"rgba(28, 102, 235, 0.2)","t":"color","s":"computed borderTopColor of st-vote default (raw/components-computed.json): the border-primary/20 recipe — --primary resolves the identical #1c66eb in dark (raw/css-vars.json); measured on the light story vote pill, not re-measured in dark","d":"The primary-blue @20% border on the story digg-it pill, theme-invariant."}},"brand":{"text":{"v":"#6ba4ff","t":"color","s":"css-var --brand-text (dark)"}},"card":{"default":{"v":"#1c1c1f","t":"color","s":"css-var --card (dark)"},"foreground":{"v":"#fdfdff","t":"color","s":"css-var --card-foreground (dark)"}},"destructive":{"foreground":{"v":"#cc434d","t":"color","s":"css-var --destructive-foreground (dark)"}},"foreground":{"default":{"v":"#fdfdff","t":"color","s":"css-var --foreground (dark)"}},"input":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"css-var --input (dark)"},"muted":{"default":{"v":"#242424","t":"color","s":"css-var --muted (dark)"},"foreground":{"v":"rgba(253, 253, 255, 0.7)","t":"color","s":"css-var --muted-foreground (dark)"}},"popover":{"default":{"v":"#27272c","t":"color","s":"css-var --popover (dark)"},"foreground":{"v":"#fdfdff","t":"color","s":"css-var --popover-foreground (dark)"}},"ring":{"v":"#1c66eb","t":"color","s":"css-var --ring (dark)"},"secondary":{"default":{"v":"#242424","t":"color","s":"css-var --secondary (dark)"},"foreground":{"v":"#b4b4b6","t":"color","s":"css-var --secondary-foreground (dark)"},"hover":{"v":"#2c2c2c","t":"color","s":"css-var --secondary-hover (dark)"}},"sidebar":{"default":{"v":"#0f0f10","t":"color","s":"css-var --sidebar (dark)"},"accent":{"default":{"v":"#27272c","t":"color","s":"css-var --sidebar-accent (dark)"},"foreground":{"v":"#ccccce","t":"color","s":"css-var --sidebar-accent-foreground (dark)"}},"border":{"v":"#242424","t":"color","s":"css-var --sidebar-border (dark)"},"foreground":{"v":"#ccccce","t":"color","s":"css-var --sidebar-foreground (dark)"},"primary":{"foreground":{"v":"#0f0f10","t":"color","s":"css-var --sidebar-primary-foreground (dark)"}},"ring":{"v":"#1c66eb","t":"color","s":"css-var --sidebar-ring (dark)"}},"success":{"foreground":{"v":"#6aa15a","t":"color","s":"css-var --success-foreground (dark)"}},"text":{"ink":{"v":"{foreground.default}","t":"color","s":"computed color of d-headline default (raw/components-computed.json, theme pill set to dark); matches declared --foreground","d":"The #fdfdff near-white ink in dark (matches --foreground)."},"muted":{"v":"{muted.foreground}","t":"color","s":"computed color of d-vote default (raw/components-computed.json, theme pill set to dark); matches declared --muted-foreground","d":"The ink@70% muted text in dark (matches --muted-foreground)."},"link":{"v":"{primary.default}","t":"color","s":"declared .dark value of --primary (raw/css-vars.json resolved.dark); no d-* component reading of it; matches declared --primary","d":"The #1c66eb blue on text links, theme-invariant (matches --primary)."},"rank-one":{"v":"{rank.one.default}","t":"color","s":"declared .dark value of --rank-one (raw/css-vars.json resolved.dark); no d-* component reading of it; matches declared --rank-one","d":"The #e37b4c rank-one orange, theme-invariant (matches --rank-one)."}},"action":{"primary":{"v":"{primary.default}","t":"color","s":"computed backgroundColor of d-signup default (raw/components-computed.json, theme pill set to dark); matches declared --primary","d":"The #1c66eb primary blue, identical in dark (matches --primary/--accent)."},"on-primary":{"v":"{primary.foreground}","t":"color","s":"computed color of d-signup default (raw/components-computed.json, theme pill set to dark); matches declared --primary-foreground","d":"The white label on the primary CTA in dark (matches --primary-foreground)."},"primary-hover":{"v":"rgba(28, 102, 235, 0.8)","t":"color","s":"computed backgroundColor of d-signup hover (raw/components-computed.json, theme pill set to dark)","d":"The primary blue @80% the CTA takes on hover — identical in dark."},"oauth-fill":{"v":"{background.default}","t":"color","s":"declared .dark value of --background (raw/css-vars.json resolved.dark); no d-* component reading of it; matches declared --background","d":"The dark field the OAuth outline buttons' bg-background recipe paints (theme-invariant recipe; the auth pages were not re-captured in dark)."}}}};
-const $ = (s) => document.querySelector(s);
-// The light/dark toggle. digg.com really paints both themes signed out:
-// the dark set holds measured values, so flipping data-mode swaps every
-// token var and the samples below repaint for real.
-$('#mode').addEventListener('click', () => {
-  const on = document.documentElement.getAttribute('data-mode') === 'dark';
-  document.documentElement.setAttribute('data-mode', on ? '' : 'dark');
-  $('#mode').textContent = on ? 'Dark' : 'Light';
-  $('#mode').setAttribute('aria-pressed', on ? 'false' : 'true');
-});
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (measured through the sidebar theme pill)']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  let node = TOK.core || TOK, seen = [];
-  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
-  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+const roles = [
+  ["page", "--page"],
+  ["surface", "--surface"],
+  ["text", "--text"],
+  ["muted", "--muted"],
+  ["accent", "--accent"],
+  ["secondary", "--secondary"],
+  ["sidebar", "--sidebar"],
+  ["destructive", "--destructive"],
+];
+const box = document.getElementById("swatches");
+for (const [name, v] of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i style=\"background:var(" + v + ")\"></i><span>" + name + "</span>";
+  box.appendChild(el);
+}
+document.getElementById("theme").onclick = () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  html.setAttribute("data-theme", next);
+  document.getElementById("theme").textContent = "Theme: " + next;
 };
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const v = resolveVal(t.v).trim();
-    const m = /^([\d.]+)(px|rem|em)$/.exec(v);
-    const size = m ? `min(${m[1]}${m[2]}, 44px)` : '13px';
-    h += `<div class="tr"><span class="ts" style="font-size:${size}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Digg</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
 </script>
 </body>
 </html>

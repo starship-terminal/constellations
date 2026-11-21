@@ -6,127 +6,117 @@
 <title>Zellerfeld style guide</title>
 <style>
 :root {
+  --color-grey-01: #171717;
+  --color-grey-02: #2c2c2c;
+  --color-grey-03: #e0e0e0;
+  --color-grey-04: #f1f1f1;
+  --color-ember: #ff5e3e;
+  --color-focus: #3773f5;
+  --color-danger: #ef4444;
+  --color-success: #17f455;
+  --color-white: #ffffff;
+  --color-black: #000000;
   --font-family-primary: Lateral, ui-sans-serif, system-ui, sans-serif;
-  --font-family-display: "Lateral Zeller TM", Lateral, ui-sans-serif, system-ui, sans-serif;
-  --font-family-secondary: var(--font-family-exposure);
-  --font-family-exposure: Exposure, ui-sans-serif, system-ui, sans-serif;
+  --font-family-secondary: Exposure, ui-sans-serif, system-ui, sans-serif;
   --font-family-tertiary: Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-family-system: Arial, sans-serif;
-  --primitive-grey-01: #171717;
-  --primitive-grey-02: #2c2c2c;
-  --primitive-grey-03: #e0e0e0;
-  --primitive-grey-04: #f1f1f1;
-  --primitive-coral: #ff5e3e;
-  --primitive-success: #17f455;
-  --primitive-destructive: #ef4444;
-  --primitive-focus: #3773f5;
-  --primitive-white: #ffffff;
-  --primitive-black: #000000;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
   --radius-none: 0px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
-  --radius-cookie: 16px;
-  --spacing-0: 0px;
-  --spacing-1: 4px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-5: 20px;
-  --spacing-6: 24px;
-  --spacing-8: 32px;
-  --spacing-10: 40px;
-  --spacing-12: 48px;
-  --spacing-16: 64px;
-  --shadow-sm: 0 1px 2px 0 #0000000d;
-  --shadow-md: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
-  --shadow-lg: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
-  --shadow-xl: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
-  --size-button: 36px;
-  --size-icon-button: 36px;
-  --size-buy: 56px;
-  --size-banner: 40px;
-  --size-header: 84px;
-  --size-content-max: 2480px;
-  --page: #000000;
-  --surface: #171717;
-  --surface-card: #1b1b1b;
-  --text: #ffffff;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --shadow-sm: 0px 1px 2px 0px #0000000d;
+  --shadow-md: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a;
+  --shadow-lg: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a;
+  --shadow-xl: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a;
+  --motion-duration: 150ms;
+  --motion-easeOut: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easeInOut: cubic-bezier(0.4, 0, 0.2, 1);
+  --layout-contentMax: 2480px;
+  --background-page: {color.grey.01};
+  --background-surface: #1b1b1b;
+  --background-raised: #fff3;
+  --background-overlay: #ffffff1a;
+  --background-muted: #ffffff1a;
+  --background-popover: {color.grey.01};
+  --text-primary: {color.white};
   --text-muted: #ffffff80;
-  --accent: #ff5e3e;
-  --accent-foreground: #000000;
-  --border: #ff5e3e;
-  --focus: #3773f5;
-  --muted: #ffffff1a;
-  --success: #17f455;
-  --destructive: #ef4444;
-  --secondary-foreground: #ff5e3e;
-  --elevated: #ffffff33;
-  --overlay: #ffffff1a;
-  --popover: #171717;
-  --signin-card: #fafafa;
-  --signin-ink: #171717;
-  --cookie: #ffffff;
-  --component-button-primary-bg: var(--accent);
-  --component-button-primary-text: var(--accent-foreground);
-  --component-button-primary-radius: 4px;
-  --component-button-primary-height: 36px;
-  --component-button-primary-padding: 16px;
-  --component-button-outline-bg: transparent;
-  --component-button-outline-text: var(--accent);
-  --component-button-outline-border: var(--accent);
-  --component-button-outline-radius: 4px;
-  --component-button-outline-height: 36px;
-  --component-button-ghost-bg: var(--muted);
-  --component-button-ghost-text: var(--text);
-  --component-button-ghost-radius: 4px;
-  --component-button-ghost-height: 36px;
-  color-scheme: dark;
+  --text-onAccent: {color.black};
+  --text-accent: #ff5e3e;
+  --text-card: {color.white};
+  --border-default: #ff5e3e;
+  --border-input: #ff5e3e;
+  --border-ring: #ff5e3e;
+  --accent-default: {color.ember};
+  --accent-foreground: {color.black};
+  --accent-soft: #fff3;
+  --status-success: {color.success};
+  --status-successForeground: {color.black};
+  --status-danger: {color.danger};
+  --status-dangerForeground: {color.white};
+  --focus-ring: {color.focus};
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px Exposure, ui-sans-serif, system-ui, sans-serif; }
-main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
-h1 { font-family: "Lateral Zeller TM", Lateral, ui-sans-serif, system-ui, sans-serif; font-size: 32px; line-height: 28px; margin: 0 0 8px; }
-h2 { font-size: 18px; margin: 40px 0 12px; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 14px/20px var(--font-family-tertiary); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-family: var(--font-family-primary); font-weight: 400; font-size: 32px; letter-spacing: -0.03em; }
+h2 { font-family: var(--font-family-secondary); font-weight: 400; font-size: 22px; margin: 40px 0 12px; }
 p { color: var(--text-muted); max-width: 68ch; }
-.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-.sw { display: flex; gap: 12px; align-items: center; }
-.sw i { width: 44px; height: 44px; border-radius: 4px; box-shadow: inset 0 0 0 1px #ffffff33; display: block; }
-.sw code { display: block; font-size: 12px; }
-.sw small { color: var(--text-muted); font-size: 12px; }
-table { width: 100%; border-collapse: collapse; }
-td { border-bottom: 1px solid #ffffff1a; padding: 10px 8px; vertical-align: baseline; }
-.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 16px; border-radius: 4px; font-family: Phonic, ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; letter-spacing: -0.01em; text-transform: uppercase; text-decoration: none; }
-.btn.primary { background: var(--accent); color: var(--accent-foreground); border: 0; }
-.btn.outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
-.btn.ghost { background: var(--muted); color: var(--text); border: 0; }
-.card { background: var(--signin-card); color: var(--signin-ink); border-radius: 8px; padding: 24px; max-width: 402px; }
-.card h3 { margin: 0 0 8px; font-size: 20px; }
-.field { display: block; width: 100%; height: 40px; border-radius: 6px; border: 1px solid #e0e0e0; padding: 8px 16px; font-family: Phonic, ui-monospace, monospace; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 64px; border-radius: var(--radius-md); box-shadow: inset 0 0 0 1px #ffffff22; }
+.sw b, .sw span { display: block; font-size: 11px; line-height: 1.4; }
+.sw span { color: var(--text-muted); }
+button.demo, a.demo { font: 500 14px/1 var(--font-family-tertiary); text-transform: uppercase; letter-spacing: -0.01em; border-radius: var(--radius-sm); padding: 10px 14px; }
+button.primary { background: var(--accent-default); color: var(--accent-foreground); border: 0; }
+button.quiet { background: var(--background-muted); color: var(--text-primary); border: 0; }
+a.demo { color: var(--text-accent); text-decoration: none; border: 1px solid var(--border-default); }
+input.demo { background: transparent; color: var(--text-primary); border: 1px solid var(--border-input); border-radius: 8px; padding: 8px 12px; font: 500 14px/1 var(--font-family-tertiary); text-transform: uppercase; }
+.card { background: var(--background-surface); border-radius: var(--radius-lg); padding: 16px; width: 220px; }
+.focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 </style>
 </head>
 <body>
-<main>
+<div class="wrap">
 <h1>Zellerfeld</h1>
-<p>Public signed-out surfaces measured on 2026-11-19. One theme: dark. The store paints black; the published semantic background is #171717.</p>
+<p>Rendered from tokens.json. One theme. Lateral, Exposure and Phonic are not loaded; the stacks fall back to the system faces named in the tokens.</p>
 <h2>Colour</h2>
-<div class="swatches"><div class="sw"><i style="background:#000000"></i><span><code>page</code><small>#000000</small></span></div><div class="sw"><i style="background:#171717"></i><span><code>surface</code><small>#171717</small></span></div><div class="sw"><i style="background:#1b1b1b"></i><span><code>surface-card</code><small>#1b1b1b</small></span></div><div class="sw"><i style="background:#ffffff"></i><span><code>text</code><small>#ffffff</small></span></div><div class="sw"><i style="background:#ffffff80"></i><span><code>text-muted</code><small>#ffffff80</small></span></div><div class="sw"><i style="background:#ff5e3e"></i><span><code>accent</code><small>#ff5e3e</small></span></div><div class="sw"><i style="background:#000000"></i><span><code>accent-foreground</code><small>#000000</small></span></div><div class="sw"><i style="background:#ff5e3e"></i><span><code>border</code><small>#ff5e3e</small></span></div><div class="sw"><i style="background:#3773f5"></i><span><code>focus</code><small>#3773f5</small></span></div><div class="sw"><i style="background:#ffffff1a"></i><span><code>muted</code><small>#ffffff1a</small></span></div><div class="sw"><i style="background:#17f455"></i><span><code>success</code><small>#17f455</small></span></div><div class="sw"><i style="background:#ef4444"></i><span><code>destructive</code><small>#ef4444</small></span></div><div class="sw"><i style="background:#ff5e3e"></i><span><code>secondary-foreground</code><small>#ff5e3e</small></span></div><div class="sw"><i style="background:#ffffff33"></i><span><code>elevated</code><small>#ffffff33</small></span></div><div class="sw"><i style="background:#ffffff1a"></i><span><code>overlay</code><small>#ffffff1a</small></span></div><div class="sw"><i style="background:#171717"></i><span><code>popover</code><small>#171717</small></span></div><div class="sw"><i style="background:#fafafa"></i><span><code>signin-card</code><small>#fafafa</small></span></div><div class="sw"><i style="background:#171717"></i><span><code>signin-ink</code><small>#171717</small></span></div><div class="sw"><i style="background:#ffffff"></i><span><code>cookie</code><small>#ffffff</small></span></div><div class="sw"><i style="background:var(--accent)"></i><span><code>component-button-primary-bg</code><small>var(--accent)</small></span></div><div class="sw"><i style="background:var(--accent-foreground)"></i><span><code>component-button-primary-text</code><small>var(--accent-foreground)</small></span></div><div class="sw"><i style="background:transparent"></i><span><code>component-button-outline-bg</code><small>transparent</small></span></div><div class="sw"><i style="background:var(--accent)"></i><span><code>component-button-outline-text</code><small>var(--accent)</small></span></div><div class="sw"><i style="background:var(--accent)"></i><span><code>component-button-outline-border</code><small>var(--accent)</small></span></div><div class="sw"><i style="background:var(--muted)"></i><span><code>component-button-ghost-bg</code><small>var(--muted)</small></span></div><div class="sw"><i style="background:var(--text)"></i><span><code>component-button-ghost-text</code><small>var(--text)</small></span></div></div>
-<h2>Type</h2>
-<table><tr><td><code>typography-button</code></td><td style="font-family:var(--font-family-tertiary);font-size:14px;font-weight:400;line-height:20px;letter-spacing:-0.14px;color:#fff">Printed shoes</td><td>14px / 400</td></tr><tr><td><code>typography-price</code></td><td style="font-family:var(--font-family-tertiary);font-size:14px;font-weight:703;line-height:14px;letter-spacing:-0.14px;color:#fff">Printed shoes</td><td>14px / 703</td></tr><tr><td><code>typography-badge</code></td><td style="font-family:var(--font-family-tertiary);font-size:12px;font-weight:703;line-height:12px;letter-spacing:-0.12px;color:#fff">Printed shoes</td><td>12px / 703</td></tr><tr><td><code>typography-brand</code></td><td style="font-family:var(--font-family-tertiary);font-size:12px;font-weight:400;line-height:12px;letter-spacing:0px;color:#fff">Printed shoes</td><td>12px / 400</td></tr><tr><td><code>typography-product-title</code></td><td style="font-family:var(--font-family-display);font-size:18px;font-weight:700;line-height:22.5px;letter-spacing:-0.36px;color:#fff">Printed shoes</td><td>18px / 700</td></tr><tr><td><code>typography-card-title</code></td><td style="font-family:var(--font-family-display);font-size:14px;font-weight:700;line-height:12px;letter-spacing:0px;color:#fff">Printed shoes</td><td>14px / 700</td></tr><tr><td><code>typography-page-title</code></td><td style="font-family:var(--font-family-display);font-size:72px;font-weight:700;line-height:72px;letter-spacing:-1.8px;color:#fff">Printed shoes</td><td>72px / 700</td></tr><tr><td><code>typography-section-title</code></td><td style="font-family:var(--font-family-display);font-size:32px;font-weight:700;line-height:28px;letter-spacing:0px;color:#fff">Printed shoes</td><td>32px / 700</td></tr><tr><td><code>typography-body</code></td><td style="font-family:var(--font-family-exposure);font-size:16px;font-weight:400;line-height:24px;letter-spacing:0px;color:#fff">Printed shoes</td><td>16px / 400</td></tr><tr><td><code>typography-lead</code></td><td style="font-family:var(--font-family-primary);font-size:18px;font-weight:600;line-height:28px;letter-spacing:0px;color:#fff">Printed shoes</td><td>18px / 600</td></tr><tr><td><code>typography-legal</code></td><td style="font-family:var(--font-family-exposure);font-size:12px;font-weight:400;line-height:20px;letter-spacing:0px;color:#fff">Printed shoes</td><td>12px / 400</td></tr><tr><td><code>typography-signin-title</code></td><td style="font-family:var(--font-family-display);font-size:20px;font-weight:700;line-height:24px;letter-spacing:0px;color:#fff">Printed shoes</td><td>20px / 700</td></tr></table>
-<h2>Buttons</h2>
 <div class="row">
-  <a class="btn outline">Create</a>
-  <button class="btn ghost">Sign in</button>
-  <a class="btn primary">Start onboarding</a>
+<div class="sw"><i style="background:var(--background-page)"></i><b>page</b><span>var(--background-page)</span></div>
+<div class="sw"><i style="background:var(--background-surface)"></i><b>surface</b><span>var(--background-surface)</span></div>
+<div class="sw"><i style="background:var(--background-raised)"></i><b>raised</b><span>var(--background-raised)</span></div>
+<div class="sw"><i style="background:var(--accent-default)"></i><b>accent</b><span>var(--accent-default)</span></div>
+<div class="sw"><i style="background:var(--text-primary)"></i><b>text</b><span>var(--text-primary)</span></div>
+<div class="sw"><i style="background:var(--text-muted)"></i><b>muted</b><span>var(--text-muted)</span></div>
+<div class="sw"><i style="background:var(--border-default)"></i><b>border</b><span>var(--border-default)</span></div>
+<div class="sw"><i style="background:var(--focus-ring)"></i><b>focus</b><span>var(--focus-ring)</span></div>
+<div class="sw"><i style="background:var(--status-success)"></i><b>success</b><span>var(--status-success)</span></div>
+<div class="sw"><i style="background:var(--status-danger)"></i><b>danger</b><span>var(--status-danger)</span></div>
 </div>
-<h2>Sign-in card</h2>
-<div class="card">
-  <h3>Sign in</h3>
-  <p style="color:#171717">Welcome back. The phone control was not used.</p>
-  <input class="field" placeholder="Enter your email address" readonly>
+<h2>Type</h2>
+<p style="font-family:var(--font-family-primary);font-size:32px;color:var(--text-primary)">Lateral, printed shoes</p>
+<p style="font-family:var(--font-family-secondary);font-size:28px;color:var(--text-primary)">Exposure, for display lines</p>
+<p style="font-family:var(--font-family-tertiary);font-size:14px;letter-spacing:-0.01em;text-transform:uppercase;color:var(--text-primary)">Phonic, for controls</p>
+<h2>Controls</h2>
+<div class="row">
+<button class="demo primary">Buy now</button>
+<button class="demo quiet">Sign in</button>
+<a class="demo" href="#components">Create</a>
+<input class="demo" placeholder="What are you looking for?" value="">
+<button class="demo quiet focus">Focused</button>
 </div>
-</main>
+<div class="card" style="margin-top:16px">
+<b style="font-family:var(--font-family-tertiary);text-transform:uppercase">PDF Bol Sneaker</b>
+<span style="color:var(--text-muted);font-size:12px">PDF Channel</span>
+<div style="margin-top:12px;color:var(--text-primary)">$249.00</div>
+</div>
+</div>
 </body>
 </html>

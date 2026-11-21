@@ -1,0 +1,98 @@
+[
+  {
+    "key": "news",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/news"
+  },
+  {
+    "key": "maps",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/maps/currentusweather"
+  },
+  {
+    "key": "science",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/science"
+  },
+  {
+    "key": "safety",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/safety"
+  },
+  {
+    "key": "health",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/news/health-and-wellness"
+  },
+  {
+    "key": "severe",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/severe-weather"
+  },
+  {
+    "key": "storm-radar",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/storm-radar"
+  },
+  {
+    "key": "privacy",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/privacy-settings"
+  },
+  {
+    "key": "data-rights",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/data-rights"
+  },
+  {
+    "key": "accessibility",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/accessibility-statement"
+  },
+  {
+    "key": "sitemap",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/sitemap"
+  },
+  {
+    "key": "explore",
+    "prefix": "",
+    "skipped": false,
+    "href": "https://weather.com/news"
+  },
+  {
+    "key": "news",
+    "prefix": "mobile-",
+    "skipped": false,
+    "href": "https://weather.com/news"
+  },
+  {
+    "key": "maps",
+    "prefix": "mobile-",
+    "skipped": false,
+    "href": "https://weather.com/maps/currentusweather"
+  },
+  {
+    "key": "science",
+    "prefix": "mobile-",
+    "skipped": false,
+    "href": "https://weather.com/science"
+  },
+  {
+    "key": "severe",
+    "prefix": "mobile-",
+    "skipped": false,
+    "href": "https://weather.com/severe-weather"
+  }
+]

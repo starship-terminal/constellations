@@ -1,33 +1,35 @@
-# Patterns
+# Nothing patterns
 
-Public signed-out pages only. No screenshots.
+How the public storefront combines the controls. Screenshots are in [screenshots/](screenshots). The site tree is [site-tree.md](site-tree.md).
 
-## Home
+## Header island
 
-https://nothing.tech/ paints a light page (`#f4f4f4`, NType82-Regular 16px). A fixed header holds a yellow promo strip (`#ffc700`, 4px radius, 30px tall) and a frosted white pill (`rgba(255, 255, 255, 0.8)`, blur 45px, 4px radius, 48px tall) with the NOTHING (R) wordmark. The hero headline is white NType82 at 48px / 48px. Category tiles sit under a 40px heading. The footer is a full-viewport black block (`#040404`) with Ndot links at 40px and an email field.
+A white bar under a yellow promo strip. Wordmark on the left, AUDIO PHONES WATCHES CMF COMMUNITY in the centre, cart and account on the right. AUDIO and PHONES open a white mega menu over a dimmed page. WATCHES, CMF and COMMUNITY navigate. See [home-light-default.png](screenshots/home-light-default.png), [home-light-menu-audio.png](screenshots/home-light-menu-audio.png), [home-light-menu-phones.png](screenshots/home-light-menu-phones.png).
 
-## Product
+## Promo bar
 
-https://nothing.tech/products/phone-4a-pro uses the same store shell. The product name is Ndot-Regular 20px, weight 55: "phone ( 4a ) pro". Add to bag is a full-width black button, 48px tall, 6px radius, LatteraMonoLL 11px, showing the price and the action in one label. I did not press it.
+One line, centred, black on yellow. It rotates between the sale line and the student line. The sale line goes to `/collections/sale`. The student line leaves the site. Not followed.
 
-## Nothing OS (dark page)
+## Collection grid
 
-https://nothing.tech/nothing-os sets `html.dark` and paints the body `#181818` with white text. The yellow promo and the white PLAY button stay the same as on the light home. The footer stays `#040404`.
+Dot-matrix title, a category strip (ALL, AUDIO, HEADPHONES, and the rest), FILTER & SORT on the right, then three-up product cards on `#f4f4f4`. Card titles use the same dot face as the page title. Prices sit under the name. A struck price marks a sale. See [phones-light-default.png](screenshots/phones-light-default.png).
 
-## About
+## Product page
 
-https://nothing.tech/about is the light store page. The h1 is NType82 36px / 40px at this width (`text-3xl`), colour `#040404`. Section headings are 24px / 32px.
+Headphone (1) Pro paints `html.dark`: a dark canvas, a gallery, a yellow SAVE badge, a black ADD TO BAG control, and overview/specs. This is a painted page state. The CSS variable sheet does not change between light and dark probes. See [product-light-default.png](screenshots/product-light-default.png).
 
-## Support shell
+## Empty cart
 
-https://nothing.tech/pages/support-centre is a separate Shopify theme. Page fill `rgb(243, 245, 248)`, body NType82 18px / 25.2px, header 60px. Outline pills at 800px radius. Contact support (https://nothing.tech/pages/contact-support) asks for product type, inquiry, language, first name, last name, email and a message. I did not fill it.
+A centred dialog: CART, "Your cart is empty", a black CONTINUE SHOPPING button, then text links for All products, Audio, Headphones, Phones, Earbuds, Speakers. See [home-light-cart.png](screenshots/home-light-cart.png).
 
-## Account
+## Error
 
-https://account.nothing.tech/v2/login/ is a password form (email, password, agreement checkbox, Sign in). I did not type a password or create an account. Its type is Inter, not NType82, on `rgb(242, 242, 242)`.
+`/login` is a 404. A white card on the dotted page says Page Not Found, with a black BACK TO HOME button. See [notfound-light-default.png](screenshots/notfound-light-default.png).
 
-## Gaps
+## Phone width
 
-- No 1440 and no 390 layout. The pane was 1169 by 731, so the `xl` nav never showed.
-- No checkout, bag, or order confirmation.
-- No screenshots.
+The header collapses to a Menu button. The drawer lists AUDIO and PHONES with chevrons, then WATCHES, CMF, COMMUNITY. See [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
+
+## Account wall
+
+The account icon leaves the store for `https://account.nothing.tech/v2/login/` and asks for email and password. That branch stops. Nothing was typed.

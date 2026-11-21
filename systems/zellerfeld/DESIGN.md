@@ -3,194 +3,91 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Zellerfeld"
-description: "Printed-shoe store marketing: black page, coral #ff5e3e actions, Phonic uppercase labels, Lateral Zeller TM headlines, a light sign-in card on the dark store"
+description: "Dark storefront: ember primary action, uppercase mono controls, overlay search and a left nav drawer"
+omitted:
+  - section: "typography"
+    reason: "tokens.json has no typography tokens under `core.typography`"
+  - section: "spacing"
+    reason: "tokens.json has no spacing tokens under `core.spacing`"
+  - section: "components"
+    reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#ff5e3e"
-  neutral: "#000000"
-  surface: "#171717"
+  neutral: "#171717"
+  surface: "#1b1b1b"
   on-surface: "#ffffff"
   on-surface-variant: "#ffffff80"
   outline: "#ff5e3e"
-  page: "#000000"
-  surface-card: "#1b1b1b"
-  text: "#ffffff"
+  background-page: "#171717"
+  background-surface: "#1b1b1b"
+  background-raised: "#fff3"
+  background-overlay: "#ffffff1a"
+  background-muted: "#ffffff1a"
+  background-popover: "#171717"
+  text-primary: "#ffffff"
   text-muted: "#ffffff80"
-  accent: "#ff5e3e"
+  text-onAccent: "#000000"
+  text-accent: "#ff5e3e"
+  text-card: "#ffffff"
+  border-default: "#ff5e3e"
+  border-input: "#ff5e3e"
+  border-ring: "#ff5e3e"
+  accent-default: "#ff5e3e"
   accent-foreground: "#000000"
-  border: "#ff5e3e"
-  focus: "#3773f5"
-  muted: "#ffffff1a"
-  success: "#17f455"
-  destructive: "#ef4444"
-  secondary-foreground: "#ff5e3e"
-  elevated: "#ffffff33"
-  overlay: "#ffffff1a"
-  popover: "#171717"
-  signin-card: "#fafafa"
-  signin-ink: "#171717"
-  cookie: "#ffffff"
-  component-button-primary-bg: "#ff5e3e"
-  component-button-primary-text: "#000000"
-  component-button-outline-bg: "transparent"
-  component-button-outline-text: "#ff5e3e"
-  component-button-outline-border: "#ff5e3e"
-  component-button-ghost-bg: "#ffffff1a"
-  component-button-ghost-text: "#ffffff"
-typography:
-  button:
-    fontFamily: "Phonic"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: "20px"
-    letterSpacing: "-0.14px"
-  price:
-    fontFamily: "Phonic"
-    fontSize: "14px"
-    fontWeight: 703
-    lineHeight: "14px"
-    letterSpacing: "-0.14px"
-  badge:
-    fontFamily: "Phonic"
-    fontSize: "12px"
-    fontWeight: 703
-    lineHeight: "12px"
-    letterSpacing: "-0.12px"
-  brand:
-    fontFamily: "Phonic"
-    fontSize: "12px"
-    fontWeight: 400
-    lineHeight: "12px"
-    letterSpacing: "0px"
-  product-title:
-    fontFamily: "Lateral Zeller TM"
-    fontSize: "18px"
-    fontWeight: 700
-    lineHeight: "22.5px"
-    letterSpacing: "-0.36px"
-  card-title:
-    fontFamily: "Lateral Zeller TM"
-    fontSize: "14px"
-    fontWeight: 700
-    lineHeight: "12px"
-    letterSpacing: "0px"
-  page-title:
-    fontFamily: "Lateral Zeller TM"
-    fontSize: "72px"
-    fontWeight: 700
-    lineHeight: "72px"
-    letterSpacing: "-1.8px"
-  section-title:
-    fontFamily: "Lateral Zeller TM"
-    fontSize: "32px"
-    fontWeight: 700
-    lineHeight: "28px"
-    letterSpacing: "0px"
-  body:
-    fontFamily: "Exposure"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: "24px"
-    letterSpacing: "0px"
-  lead:
-    fontFamily: "Lateral"
-    fontSize: "18px"
-    fontWeight: 600
-    lineHeight: "28px"
-    letterSpacing: "0px"
-  legal:
-    fontFamily: "Exposure"
-    fontSize: "12px"
-    fontWeight: 400
-    lineHeight: "20px"
-    letterSpacing: "0px"
-  signin-title:
-    fontFamily: "Lateral Zeller TM"
-    fontSize: "20px"
-    fontWeight: 700
-    lineHeight: "24px"
-    letterSpacing: "0px"
+  accent-soft: "#fff3"
+  status-success: "#17f455"
+  status-successForeground: "#000000"
+  status-danger: "#ef4444"
+  status-dangerForeground: "#ffffff"
+  focus-ring: "#3773f5"
 rounded:
   none: "0px"
-  sm: "4px"
-  md: "6px"
-  lg: "8px"
-  xl: "12px"
-  cookie: "16px"
-spacing:
-  "0": "0px"
-  "1": "4px"
-  "2": "8px"
-  "3": "12px"
-  "4": "16px"
-  "5": "20px"
-  "6": "24px"
-  "8": "32px"
-  "10": "40px"
-  "12": "48px"
-  "16": "64px"
-components:
-  button-primary:
-    backgroundColor: "{colors.component-button-primary-bg}"
-    textColor: "{colors.component-button-primary-text}"
-    rounded: "4px"
-    height: "36px"
-    padding: "16px"
-  button-outline:
-    backgroundColor: "{colors.component-button-outline-bg}"
-    textColor: "{colors.component-button-outline-text}"
-    rounded: "4px"
-    height: "36px"
-  button-ghost:
-    backgroundColor: "{colors.component-button-ghost-bg}"
-    textColor: "{colors.component-button-ghost-text}"
-    rounded: "4px"
-    height: "36px"
+  sm: "0.25rem"
+  md: "0.375rem"
+  lg: "0.5rem"
+  xl: "0.75rem"
+  "2xl": "1rem"
+  "3xl": "1.5rem"
 ---
 
 # Zellerfeld
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `dark` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 7 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Printed-shoe store marketing: black page, coral #ff5e3e actions, Phonic uppercase labels, Lateral Zeller TM headlines, a light sign-in card on the dark store.
+Good for: Dark storefront: ember primary action, uppercase mono controls, overlay search and a left nav drawer.
 
-Captured 2026-11-19, signed out (public store, product, FAQ, reviews, creators, newsletter, policies, and the sign-in card; no purchase, size, card, phone, or email was entered). Themes: dark.
+Captured 2026-11-21, signed out. Themes: light.
 
-A token set for Zellerfeld's public store, read from **www.zellerfeld.com** on **2026-11-19**, signed out. The product is a printed-shoe shop. The captured surfaces are the marketing store: home, a product page, FAQ, reviews, the open letter, careers, shipping, privacy, terms, how to scan, creators, newsletter, a 404, and the sign-in card. Desktop readings are 1440 x 900. The phone reading is 390 x 844 at 2x. The store paints one theme, dark.
+A token set and component reference for Zellerfeld, the printed-shoe storefront at [zellerfeld.com](https://www.zellerfeld.com/). Captured on 2026-11-21, signed out, in headed Chrome through Playwright. One theme (`color-scheme: normal`, no theme switch). Desktop 1440x900 at 1x. Phone 390x844 at 2x. The control map is [site-tree.md](site-tree.md), written before the screenshots.
 
-Nothing was purchased. No size was chosen. No card, phone number, or email was entered. Google sign-in, Use phone, Sign up, Continue, and the newsletter button were not pressed. Cookie Accept and Decline were not pressed. The cookie and Perfect Fit dialogs were hidden in CSS for screenshots only.
+The storefront is a dark page (`#171717`) with white type, an ember accent (`#ff5e3e`) on Create and primary actions, and Phonic in uppercase for controls. Lateral sets the wordmark. Exposure sets display lines. Search, the nav drawer, collections, a product page, FAQ, reviews and the content pages are public. Sign-in, wishlist, orders, fit profiles and checkout stop at a Clerk wall.
 
 ## Colors
 
-The roles below are the catalog's swatches for the `dark` theme. The front matter then lists every colour token under `dark`, named by its path with dots turned into hyphens.
+The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#ff5e3e):** `dark.accent`
-- **neutral (#000000):** `dark.page`
-- **surface (#171717):** `dark.surface`
-- **on-surface (#ffffff):** `dark.text`
-- **on-surface-variant (#ffffff80):** `dark.text-muted`
-- **outline (#ff5e3e):** `dark.border`
+- **primary (#ff5e3e):** `light.accent.default`
+- **neutral (#171717):** `light.background.page`
+- **surface (#1b1b1b):** `light.background.surface`
+- **on-surface (#ffffff):** `light.text.primary`
+- **on-surface-variant (#ffffff80):** `light.text.muted`
+- **outline (#ff5e3e):** `light.border.default`
 
 ## Typography
 
-12 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Exposure, Lateral, Lateral Zeller TM, Phonic.
+No composite type styles in tokens.json; the README text below names the faces and sizes.
 
 ### Fonts (from README.md)
 
-| Family | Role | Licence |
-|---|---|---|
-| Exposure | Body, announcement, FAQ answers | Proprietary woff2 served by the site. Not committed. |
-| Lateral | Lead sentences | Proprietary. |
-| Lateral Zeller TM | Headlines and product titles at weight 700 | Proprietary. |
-| Phonic | Buttons, prices, nav labels | Proprietary monospaced face, weight 703 on prices. |
-| Arial | `--font-system` fallback | System. |
+Lateral, Exposure (including Exposure Default) and Phonic are loaded from the site's own CSS. They are proprietary. The tokens name system fallbacks. The style guide does not load the brand files. A Lateral wordmark cut (`Lateral Zeller Wordmark`) is brand artwork and is not extracted.
 
 ## Layout
 
-Spacing from `core.spacing`: `0` 0px, `1` 4px, `2` 8px, `3` 12px, `4` 16px, `5` 20px, `6` 24px, `8` 32px, `10` 40px, `12` 48px, `16` 64px.
+No spacing scale in tokens.json.
 
 ## Elevation & Depth
 
@@ -198,18 +95,18 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `core.shadow.sm` | `0 1px 2px 0 #0000000d` |
-| `core.shadow.md` | `0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a` |
-| `core.shadow.lg` | `0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a` |
-| `core.shadow.xl` | `0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a` |
+| `core.shadow.sm` | `0px 1px 2px 0px #0000000d` |
+| `core.shadow.md` | `0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a` |
+| `core.shadow.lg` | `0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a` |
+| `core.shadow.xl` | `0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `none` 0px, `sm` 4px, `md` 6px, `lg` 8px, `xl` 12px, `cookie` 16px.
+Corner radii from `core.radius`: `none` 0px, `sm` 0.25rem, `md` 0.375rem, `lg` 0.5rem, `xl` 0.75rem, `2xl` 1rem, `3xl` 1.5rem.
 
 ## Components
 
-3 components from the `component` tokens of the `dark` set, keeping only the properties DESIGN.md defines.
+No component tokens map onto DESIGN.md's component properties.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -223,21 +120,20 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- The preview browser never painted a frame. Headless screenshots are the images. Quantizing to 256 colours can shift a photograph. Read colours from the tokens.
-- Feed-tab fills are visible in the home shot and were not isolated as computed styles.
-- CREATE hover was measured and did not change the fill. Pressed and disabled were not forced.
-- Sign-in field borders came back as `lab()` from the browser. The token file does not convert those. The card fill `rgb(250, 250, 250)` and the heading `rgb(23, 23, 23)` are the recorded values.
-- Fonts are proprietary (Exposure, Lateral, Lateral Zeller TM, Phonic). The style guide falls back to system faces. Font files are not in this package.
-- Studio (`studio.zellerfeld.com`) showed a guest drop zone and was not measured as part of this store system.
-- Help Center is on `help.zellerfeld.com` and was not opened.
+- `--semantic-border` and `--semantic-input` resolve to the ember `#ff5e3e`. Painted hairlines on the search field and the drawer are white at low opacity. The token is what the custom property says. The screenshots show the painted edge.
+- `--semantic-accent` is white at 20% (`#fff3`), not the ember. The ember is `--semantic-primary`.
+- `core.space` is absent. The site does not publish a spacing ramp. Spacing in the coverage table is not captured.
+- Named type sizes (display, heading, body, label, caption) are not custom properties. Families and weights are measured. Sizes in crops are computed on those elements only.
+- Shadow tokens are the Tailwind `--shadow-*` utilities. Cards on the storefront mostly sit flat.
+- One theme only. Calling the dark page "light" is the set name the library uses for the single shipped theme.
+- Help center and Studio are separate hosts. Their shots are public landings. Signed-in Studio and Zendesk were not entered.
+- Mobile search results did not open. The query was typed into the menu field. The suggestion list did not mount. Desktop search did.
 
 ### Do and don't (from README.md)
 
-1. **Paint the store black and the action coral.** The page is `#000000`. Filled actions and the CREATE outline are `#ff5e3e` with black text on the fill. [home](screenshots/home-dark-default.png).
-2. **Set UI labels in Phonic, uppercase, with -0.14px tracking.** CREATE, SIGN IN, prices, and footer links use that face. [product](screenshots/product-dark-default.png).
-3. **Set headlines in Lateral Zeller TM at 700.** FAQ is 72px at 1440. Product titles are 18px. [faq](screenshots/faq-dark-open.png).
-4. **Use 4px radii on buttons and 12px on the product panel.** The sign-in card is 8px. [sign-in](screenshots/signin-dark-default.png).
-5. **Keep the sign-in card light on the black page.** The panel is `#fafafa` with near-black ink. Do not restyle it as a dark card.
-6. **Don't enter checkout, a card, a phone number, or a size from this package.** Those surfaces were not captured.
-7. **Don't invent a light theme.** The site did not paint one on these pages.
-8. **Don't ship the wordmark or the font files.** They belong to Zellerfeld.
+- **Do paint the page near-black and the type white.** The homepage sits on `#171717` with white type. [home-light-default.png](screenshots/home-light-default.png)
+- **Do spend the ember on one primary action.** Create is an ember outline. Buy now is an ember fill. Secondary actions stay quiet. [product-light-default.png](screenshots/product-light-default.png)
+- **Do set controls in uppercase Phonic.** Sign in, Create, sort chips and prices use the tertiary face, tracked tight. [sneakers-light-default.png](screenshots/sneakers-light-default.png)
+- **Do open search, nav and sign-in as overlays on the same page.** They do not navigate until a result is chosen. [home-light-search.png](screenshots/home-light-search.png)
+- **Don't round the page.** Controls use a 4px radius. Cards use a larger radius. The page itself is square. [home-light-nav.png](screenshots/home-light-nav.png)
+- **Don't treat the sign-in dialog as a captured account.** It is the wall. Nothing past it was entered. [home-light-signin.png](screenshots/home-light-signin.png)

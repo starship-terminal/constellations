@@ -1,0 +1,96 @@
+{
+  "capturedAt": "2026-11-20T19:50:40.313Z",
+  "layout": [
+    {
+      "label": "home-1440",
+      "url": "https://reown.com/",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2,
+      "scrollHeight": 7920,
+      "header": {
+        "h": 52,
+        "position": "fixed",
+        "bg": "rgba(0, 0, 0, 0)",
+        "z": "10000"
+      },
+      "h1": {
+        "font": "KHTeka-Regular, sans-serif",
+        "size": "36px",
+        "weight": "400",
+        "leading": "39.6px",
+        "tracking": "-0.72px",
+        "color": "rgb(255, 255, 255)"
+      }
+    },
+    {
+      "label": "pricing-1440",
+      "url": "https://reown.com/pricing",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2,
+      "scrollHeight": 4553,
+      "header": {
+        "h": 52,
+        "position": "fixed",
+        "bg": "rgba(0, 0, 0, 0)",
+        "z": "10000"
+      },
+      "h1": null
+    },
+    {
+      "label": "docs-1440",
+      "url": "https://docs.reown.com/",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2,
+      "scrollHeight": 3478,
+      "header": {
+        "h": 56,
+        "position": "sticky",
+        "bg": "rgba(0, 0, 0, 0)",
+        "z": "30"
+      },
+      "h1": {
+        "font": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+        "size": "36px",
+        "weight": "600",
+        "leading": "40px",
+        "tracking": "-0.9px",
+        "color": "rgb(22, 26, 24)"
+      }
+    },
+    {
+      "label": "demo-1440",
+      "url": "https://demo.reown.com/",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2,
+      "scrollHeight": 900,
+      "header": null,
+      "h1": null
+    },
+    {
+      "label": "home-390",
+      "url": "https://reown.com/",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 2,
+      "scrollHeight": 11074,
+      "header": {
+        "h": 50,
+        "position": "fixed",
+        "bg": "rgba(0, 0, 0, 0)",
+        "z": "10000"
+      },
+      "h1": {
+        "font": "KHTeka-Regular, sans-serif",
+        "size": "30px",
+        "weight": "400",
+        "leading": "33px",
+        "tracking": "-0.6px",
+        "color": "rgb(255, 255, 255)"
+      }
+    }
+  ]
+}

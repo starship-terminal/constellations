@@ -1,0 +1,143 @@
+[
+  {
+    "url": "https://www.doppler.com/",
+    "html": {
+      "colorScheme": "normal",
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "className": "",
+      "dataTheme": null
+    },
+    "body": {
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px"
+    },
+    "prefersDark": false,
+    "title": "Doppler | Secrets Management for Humans and AI Agents",
+    "status": 200
+  },
+  {
+    "url": "https://www.doppler.com/pricing",
+    "html": {
+      "colorScheme": "normal",
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "className": "",
+      "dataTheme": null
+    },
+    "body": {
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px"
+    },
+    "prefersDark": false,
+    "title": "Doppler Pricing | Per-Seat Secrets Management. No Agent Fees.",
+    "status": 200
+  },
+  {
+    "url": "https://www.doppler.com/blog",
+    "html": {
+      "colorScheme": "normal",
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "className": "",
+      "dataTheme": null
+    },
+    "body": {
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px"
+    },
+    "prefersDark": false,
+    "title": "Secrets Management Blog | Doppler",
+    "status": 200
+  },
+  {
+    "url": "https://www.doppler.com/integrations",
+    "html": {
+      "colorScheme": "normal",
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "className": "",
+      "dataTheme": null
+    },
+    "body": {
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px"
+    },
+    "prefersDark": false,
+    "title": "Simplify Workflow, Supercharge Security: Explore Doppler's Extensive Integrations",
+    "status": 200
+  },
+  {
+    "url": "https://www.doppler.com/customers",
+    "html": {
+      "colorScheme": "normal",
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "className": "",
+      "dataTheme": null
+    },
+    "body": {
+      "bg": "rgb(28, 22, 36)",
+      "color": "rgb(0, 0, 0)",
+      "font": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px"
+    },
+    "prefersDark": false,
+    "title": "Secrets Management Case Studies | Doppler",
+    "status": 200
+  },
+  {
+    "url": "https://docs.doppler.com/",
+    "html": {
+      "colorScheme": "normal",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Times",
+      "className": " useReactApp  ",
+      "dataTheme": null
+    },
+    "body": {
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(50, 52, 58)",
+      "font": "Ubuntu, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "size": "15px",
+      "weight": "400",
+      "lh": "normal"
+    },
+    "prefersDark": false,
+    "title": "Welcome 👋",
+    "status": 200
+  },
+  {
+    "url": "https://www.doppler.com/",
+    "emulated": "dark",
+    "htmlBg": "rgb(28, 22, 36)",
+    "bodyBg": "rgb(28, 22, 36)",
+    "bodyColor": "rgb(0, 0, 0)",
+    "colorScheme": "normal",
+    "className": ""
+  }
+]

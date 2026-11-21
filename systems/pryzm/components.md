@@ -1,59 +1,51 @@
-# Components
+# Pryzm components
 
-Measured on the dark public pages. Rest state only. Hover, focus-visible, pressed, disabled and error were not captured.
+Public pages of https://pryzm.design, captured 2026-11-21, signed out, dark theme only. Crops are element screenshots from the live page. Values are computed styles in [raw/components-computed.json](raw/components-computed.json), named against [tokens.json](tokens.json) where they match.
 
-## Button
+## Checklist
 
-| Variant | Where | Fill | Label | Size | Radius |
-|---|---|---|---|---|---|
-| Primary | Get Pryzm Pro, Subscribe, Continue, Create account | `#e5e5e5` | `#171717` | 32px tall on marketing, 12px / 500. 44px tall on sign-in, 14px / 500 | 8px |
-| Secondary | Open Flow | `#262626` | `#fafafa` | 32px, 12px / 500 | 8px |
-| Outline | Browse inspiration, Share, Export | white at 4.5% | `#fafafa` | 32px, 12px / 500, 1px border `#ffffff1c` | 8px |
-| Ghost | Header Open studio, header Sign in | white at 15% | `#ffffff` | 24px, padding 0 8px, 12px / 500, 1px border white at 20% | 8px |
-| Text | Reset password, Sign up | none | `#fafafa`, Sign up is weight 600 | 14px / 500 or 600 | 0 |
+| Component | Status | Where |
+|---|---|---|
+| Button | Captured | Marketing Open studio link, studio Export, sign-in Continue. [button-primary-default.png](components/crops/button-primary-default.png), [button-export-default.png](components/crops/button-export-default.png), [button-submit-default.png](components/crops/button-submit-default.png) |
+| Icon button | Captured | Studio Undo, 28px. [button-icon-default.png](components/crops/button-icon-default.png) |
+| Link | Captured | Marketing nav Inspiration. [link-nav-default.png](components/crops/link-nav-default.png) |
+| Text field | Captured | Sign-in email field, empty, not typed. [text-field-default.png](components/crops/text-field-default.png) |
+| Text area | Not present | No public textarea on the pages that loaded. |
+| Select | Captured as combobox | Lab blend mode, role combobox. [combobox-default.png](components/crops/combobox-default.png). Native `<select>` not present. |
+| Checkbox | Not present | No public checkbox. |
+| Radio | Not present | Pricing uses tabs, not radios. |
+| Switch | Captured | Studio Grain enable switch. [switch-default.png](components/crops/switch-default.png) |
+| Tabs | Captured | Pricing Monthly / Yearly. [tab-default.png](components/crops/tab-default.png) |
+| Menu | Captured | Phone Menu dialog. [menu-default.png](components/crops/menu-default.png). Aspect menu and Add node are dialogs. |
+| Tooltip | Not captured | Info marks exist in the studio. No tooltip was held open. |
+| Dialog | Captured | Studio Export sheet. [dialog-default.png](components/crops/dialog-default.png). Share, aspect, add-node, remix paywall are in screenshots/. |
+| Toast | Not present | Sonner colour hooks are in CSS. No toast was shown. |
+| Card | Captured | Gallery look card. [card-default.png](components/crops/card-default.png) |
+| List row | Not present | Layer rows are disclosure buttons, not a list component. |
+| Table | Not present | |
+| Avatar | Not present | Signed out. No account avatar. |
+| Badge | Captured | PRO pill on a look page. [badge-default.png](components/crops/badge-default.png) |
 
-Transition on the button class is `all 150ms cubic-bezier(0.4, 0, 0.2, 1)`.
+## States
 
-## Segmented control
+Hover and focus-visible were requested on the controls above. Computed background, colour and radius did not change on most of them. That is recorded as no measured change, not as a missing state file. Pressed, disabled, loading and error were not captured: no form was submitted, and no disabled control was on the public pages that were opened.
 
-Monthly is selected: fill `#fafafa`, label `#000000`, 32px tall, padding 6px 14px, pill radius, 14px / 500. Yearly is rest: transparent fill, label `#ffffff` at 60%. The "3 months free" tag sits inside the Yearly control.
+## Shared values
 
-## Text field
+| Role | Token | Measured |
+|---|---|---|
+| Page | `dark.page` | `#000` |
+| Surface | `dark.surface` | `#141414` |
+| Text | `dark.text-primary` | `#fafafa` |
+| Accent button | `dark.accent` | `#e5e5e5` on dark, near-black text |
+| Radius, controls | `core.radius.md` | 8px |
+| Radius, cards and dialogs | `core.radius.card` | 18px |
+| Field height | `core.sizing.field` | 44px |
+| Studio button height | `core.sizing.studio-button` | 32px |
 
-Sign-in email and password: 383px by 44px, 8px radius, 1px border `#ffffff1c`, fill `#000000`, padding 0 12px, 14px Inter, placeholder "Email address*" and "Password*". The password field has extra right padding (40px) for the visibility icon.
+## Gaps
 
-Footer newsletter input (`#newsletter-footer`): 32px tall, 8px radius, 12px text, same border and black fill, placeholder "you@example.com". It was not submitted.
-
-Lab numeric fields: 68px by 32px, 8px radius, 12px text, fill white at 4.5%, border white at about 10%.
-
-## Checkbox
-
-Sign up has one checkbox, 16px, unchecked, next to "Email me about new features and gallery drops." The painted box was not isolated from the native control.
-
-## Chip
-
-Gallery filters. Selected All: fill `#e5e5e5`, label `#171717`, 26px tall, padding 4px 12px, pill radius, 1px border `#fafafa`, 12px text. Rest chips: transparent fill, label `#ffffff` at 60%, 1px border `#ffffff1c`.
-
-## Badge
-
-PRO on gallery cards: 10px / 600, letter-spacing 0.25px, padding 2px 6px, height 16px, pill, white label, black at 40% fill, 1px border white at 20%.
-
-Popular on the Pro plan: 11px / 500, padding 2px 8px, pill, fill `#141414`, label `#ffffff` at 60%, 1px border `#ffffff1c`.
-
-## Card
-
-Gallery card: fill `#141414`, 1px border `#ffffff1c`, 18px radius, title 14px / 600 with -0.35px letter-spacing. Width was 261px at 1169px and 210.8px in the 1440 gallery. Hover class is `-translate-y-0.5` over 300ms. Hover was not screenshotted.
-
-Pricing card: 372px wide, 14px radius, 24px padding, 1px border `#ffffff1c`, black fill. Price is 30px / 600 with -0.75px letter-spacing.
-
-## Sidebar item
-
-256px sidebar, black. Item is 240px by 32px, 14px Inter, padding 8px, radius 11.2px. The active Inspiration item fills `#141414`.
-
-## Link
-
-Footer and about links use muted text (`#ffffff` at 60%) at 14px, with a color transition of 150ms. The Framer templates link in the about body is weight 600.
-
-## Not present on these pages
-
-Select (the Lab Blend control looks like a select and was not opened), textarea, radio, switch, tabs, menu, tooltip, dialog, toast, table, avatar. FAQ questions were in the homepage text and no accordion trigger was measured.
+- Focus ring: programmatic focus did not change outline or box-shadow on the measured controls. Not captured.
+- Pressed, disabled, loading, error, tooltip, toast: not captured or not present, as the table says.
+- The light token set is declared and not painted.
+- Sign-in fields were not filled. Google was not clicked. Continue was not submitted.

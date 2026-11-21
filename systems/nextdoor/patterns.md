@@ -1,31 +1,33 @@
-# Patterns
+# Nextdoor patterns
 
-Public signed-out pages only. No screenshots: the preview browser returned no frames.
+Public pages only. The neighborhood product is behind login.
 
-## Marketing home
+## App shell
 
-https://nextdoor.com/ at `innerWidth` 1169 and at 390.
+Two shells.
 
-A white page (`#FFFFFF`). Header actions are pill buttons: Partners and Businesses (40px, transparent), Log in (48px, `#F0F2F5`), Sign up (48px, `#1B8751`). The headline "Discover your neighborhood" is 22px / 26px, weight 620, `#232F46`.
+The product marketing shell (nextdoor.com) is a white bar: green house-and-wordmark, Partners and Businesses menus, a gray Log in pill, a green Sign up pill. Phone width collapses the menus into a 40px icon button and keeps Log in and Sign up. See [home-light-default.png](screenshots/home-light-default.png) and [mobile-home-light-default.png](screenshots/mobile-home-light-default.png).
 
-The signup card is white, 12px radius, 24px padding, 400px wide on desktop. It holds Continue with Google and Continue with Apple (neutral pills), an email field, a password field, and a green Continue pill. Legal links sit under the fields. The card was not submitted.
+The corporate shell (about.nextdoor.com, business.nextdoor.com) is a white bar with text links and one dark or green pill. See [about-light-default.png](screenshots/about-light-default.png) and [smallbiz-light-default.png](screenshots/smallbiz-light-default.png).
 
-At 390 the page grid reports 4 columns and 24px margins. The headline size stays 22px. The card shrinks to 326px.
+The directory shell is quieter: wordmark, a dark Sign up pill, a text Log in. See [directories-light-default.png](screenshots/directories-light-default.png).
 
-The footer groups links under About, Neighbors, Partners, Industries and Legal. Footer links are 14px, weight 620, `#576580`.
+## Signup card
 
-## Login
+The homepage hero is a photo with a centered white card. The card offers Google, Apple, an email field, a password field, and a green Continue pill. Those controls are a signup wall. The capture left them empty and unclicked. [home-light-menu-partners.png](screenshots/home-light-menu-partners.png) shows the Partners menu over that card.
 
-https://nextdoor.com/login/ shows "Welcome back" at 22px / 26px, weight 620. Fields are email or mobile number, and password. The submit is a green pill with 14px type. Google, Facebook and Apple are neutral pills. The form was not submitted.
+## Marketing hero
 
-## About
+About and business pages put a large Saans headline over a photograph or beside one, then a single pill. Secondary actions are gray pills. The ink is `light.color.text` (#232f46). The green is reserved for the one forward action.
 
-https://about.nextdoor.com/ (redirect from /about_us/) uses Saans on white. The hero headline is 60px, weight 600, white on a dark hero. Body copy is 18px, `#232F46`. This page is the corporate site, same face, larger display size than the app marketing home.
+## Directory
 
-## Help center
+A heading, then a four-column list of category links in `light.color.link`. City rows sit below. No search was submitted. [directories-light-full.png](screenshots/directories-light-full.png).
 
-Privacy and neighborhood guidelines redirect to help.nextdoor.com, a Salesforce help center. Body face is Lato at 13px. That surface is not the Blocks system.
+## Help and legal
 
-## Gate
+The help center is a Salesforce topic page with a search field. Legal articles are long single-column pages. [help-light-default.png](screenshots/help-light-default.png), [privacy-light-default.png](screenshots/privacy-light-default.png).
 
-Neighborhood verification asks for an address. That flow was not opened. The homepage copy states that neighbors verify an address to join.
+## Empty, loading, error, destructive, onboarding
+
+Not present on the public pages. Onboarding starts at choose-address, join, or the homepage card, all of which are walls.

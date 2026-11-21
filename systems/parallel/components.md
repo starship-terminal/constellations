@@ -1,27 +1,57 @@
 # Components
 
-Measured on useparallel.com, signed out, 2026-11-19. Desktop shots are 1440×900. Crops are from those shots.
+Public controls on www.useparallel.com, captured 2026-11-21, signed out. Values are token names where a token exists. A state that was not read is Not captured.
 
-| Component | State | Value | Crop |
-|---|---|---|---|
-| Button, primary | default | Fill rgb(31, 31, 31), label rgb(255, 255, 255), 14px/500 Inter, radius 12px, height 43px, padding 12px 20px | [button-primary-default.png](components/crops/button-primary-default.png) |
-| Button, LinkedIn | default | Fill rgb(255, 255, 255), border 1px rgb(230, 230, 230), label rgb(41, 41, 41), radius 12px, height 43px | [button-secondary-default.png](components/crops/button-secondary-default.png) |
-| Button, trial | default | Gradient rgb(239, 110, 7) to rgb(255, 183, 125), label rgb(255, 255, 255), 19px/500, radius 12px, height 61px | [button-trial-default.png](components/crops/button-trial-default.png) |
-| Button, nav | default | Sign up fill rgba(255, 255, 255, 0.12), label rgba(255, 255, 255, 0.88), radius 10px, height 40px. Try free fill rgb(31, 31, 31), label rgb(255, 255, 255) | [button-nav-default.png](components/crops/button-nav-default.png) |
-| Text field | default | Fill rgb(244, 243, 241), text rgb(15, 15, 15), 16px Inter, tracking -0.32px, radius 12px, height 41px, padding 10px 12px | [text-field-default.png](components/crops/text-field-default.png) |
-| Text field | focus | Border rgb(15, 15, 15) 1px. Outline style none | not cropped |
-| Text field | error | Message "Password must be at least 8 characters long", rgb(239, 7, 7), 14px Inter. Triggered with `not-an-email` and a one-character password. Not submitted | not cropped |
-| Search | default | Field container rgb(253, 253, 253), radius 15px, height 66px. Arrow 38px, gradient rgb(239, 110, 7) to rgb(255, 183, 125) | [search-default.png](components/crops/search-default.png) |
-| Chip | default | Fill rgba(255, 255, 255, 0.1), border 1px rgba(255, 255, 255, 0.3), label rgb(255, 255, 255), 14px/500, radius 9999px, height 36px, padding 10px 16px | [search-default.png](components/crops/search-default.png) |
-| Card | default | Fill rgb(255, 255, 255), border 1px rgb(230, 230, 230), radius 32px, padding 32px 24px, 472×532 | [card-default.png](components/crops/card-default.png) |
-| Link | default | "Create new account" and "Sign in" on the auth cards. Colour rgb(5, 5, 5), 14px/500, underline on the account link | [card-default.png](components/crops/card-default.png) |
-| Nav | default | Logo plus Explore, Talent, Employers, Sign in, Sign up over the homepage photo | [nav-default.png](components/crops/nav-default.png) |
+## Button
+
+The header Sign up and the employer Start Free are pill buttons. The login wall's Sign in is a black pill. See [login-wall-light-default](screenshots/login-wall-light-default.png) and [home-light-default](screenshots/home-light-default.png).
+
+| State | Evidence |
+|---|---|
+| default | captured, screenshots |
+| hover | Not captured as a separate reading |
+| focus-visible | forced in [raw/components-computed.json](raw/components-computed.json); crop in [components/crops/](components/crops) |
+| pressed | Not captured |
+| disabled, loading | not present |
+
+## Link
+
+Footer links (Explore Jobs, Platform, Manifesto, Terms) and in-page text links. See any full-page marketing shot.
+
+## Text field
+
+Home "Search roles" and the job-search field "Search by role, skill, or company". Placeholder text only. Not submitted. See [search-light-default](screenshots/search-light-default.png).
+
+## Menu
+
+Explore opens a four-item menu: Explore Paths, Explore Jobs, AI Training, Take Workform. See [home-light-explore-menu](screenshots/home-light-explore-menu.png). The employer header opens Overview, Platform, Recruiting, Studio. See [employers-light-overview-menu](screenshots/employers-light-overview-menu.png). Phone uses Open menu. See [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png).
+
+## Tabs
+
+Talent and Employers in the header. Jobs and Companies on the search page.
+
+## Dialog
+
+`/login` is a centered card: email, password, Sign in, or LinkedIn. `/signup` is LinkedIn only. Both are walls. Not filled. See [login-wall-light-default](screenshots/login-wall-light-default.png) and [signup-wall-light-default](screenshots/signup-wall-light-default.png).
+
+## Card and list row
+
+Job cards on the search page: logo, company, title, location, salary chip, type chip, save heart. See [search-light-default](screenshots/search-light-default.png).
+
+## Accordion
+
+Employer FAQ. One item opened. See [employers-light-faq-open](screenshots/employers-light-faq-open.png).
+
+## Switch and select
+
+Search has a Remote Only switch and Location, Salary, Job Type, and Sort menus. Visible in [search-light-default](screenshots/search-light-default.png). Their open panels are in [search-light-filters](screenshots/search-light-filters.png).
+
+## Not present on the public pages
+
+Checkbox, radio, tooltip, toast, data table, and a dedicated badge component were not found. Avatar-like marks are company logos on job cards, not a user avatar component.
 
 ## Gaps
 
-- Hover, pressed, disabled, loading, and selected were not held. The jobs "Jobs" tab was filled white and "Companies" was not. That is the only selected state read.
-- Checkbox, radio, switch, select, textarea, tabs, menu, tooltip, dialog, toast, table, avatar, and badge were not on the signed-out pages that were opened.
-- The homepage Explore control is a button. Its menu was not opened.
-- Signup has no email field. The only action is LinkedIn. That button was not clicked.
-- Focus painted a 1px black border and `outline-style: none`. A focus ring was not visible.
-- Declared `--shadow-primary` (8px 8px 0 #0f0f0f) was not on the captured controls.
+- Signed-in Hire, candidate matches, messages, and profile were not reached.
+- Hover and pressed were not tokenised.
+- Radii and motion durations were not declared as custom properties, so they stay Not captured rather than estimated from screenshots.

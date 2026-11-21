@@ -1,0 +1,283 @@
+{
+  "product": "sharewillow",
+  "captured": "2026-11-21",
+  "url": "https://www.sharewillow.com/",
+  "theme": "light only; no data-theme toggle. --color-hero-* paints a dark section inside the light page.",
+  "stylesheetCount": 2,
+  "stylesheets": [
+    "https://www.sharewillow.com/_next/static/chunks/0braxkjc4fp2j.css",
+    "https://www.sharewillow.com/_next/static/chunks/0jwjejqggizyt.css"
+  ],
+  "fontFaces": [
+    {
+      "file": "network",
+      "font-family": "Matter",
+      "src": "url(…) format(\"woff2\")",
+      "font-weight": "300",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "network",
+      "font-family": "Matter",
+      "src": "url(…) format(\"woff2\")",
+      "font-weight": "400",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "network",
+      "font-family": "Matter",
+      "src": "url(…) format(\"woff2\")",
+      "font-weight": "500",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "network",
+      "font-family": "Matter",
+      "src": "url(…) format(\"woff2\")",
+      "font-weight": "600",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "network",
+      "font-family": "Matter",
+      "src": "url(…) format(\"woff2\")",
+      "font-weight": "700",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "network",
+      "font-family": "Mackinac",
+      "src": "url(…) format(\"woff2\")",
+      "font-weight": "400",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "network",
+      "font-family": "Mackinac",
+      "src": "url(…) format(\"woff2\")",
+      "font-weight": "500",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "network",
+      "font-family": "Mackinac",
+      "src": "url(…) format(\"woff2\")",
+      "font-weight": "700",
+      "font-style": "normal",
+      "font-display": "swap"
+    }
+  ],
+  "resolved": {
+    "light": {
+      "--font-sans": {
+        "raw": "\"Matter\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+        "value": "\"Matter\", ui-sans-serif, system-ui, -apple-system, sans-serif"
+      },
+      "--font-mono": {
+        "raw": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, monospace",
+        "value": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, monospace"
+      },
+      "--spacing": {
+        "raw": ".25rem",
+        "value": ".25rem"
+      },
+      "--font-weight-normal": {
+        "raw": "400",
+        "value": "400"
+      },
+      "--font-weight-medium": {
+        "raw": "500",
+        "value": "500"
+      },
+      "--font-weight-semibold": {
+        "raw": "600",
+        "value": "600"
+      },
+      "--font-weight-bold": {
+        "raw": "700",
+        "value": "700"
+      },
+      "--tracking-tight": {
+        "raw": "-.025em",
+        "value": "-.025em"
+      },
+      "--tracking-normal": {
+        "raw": "0em",
+        "value": "0em"
+      },
+      "--tracking-wider": {
+        "raw": ".05em",
+        "value": ".05em"
+      },
+      "--leading-tight": {
+        "raw": "1.25",
+        "value": "1.25"
+      },
+      "--leading-snug": {
+        "raw": "1.375",
+        "value": "1.375"
+      },
+      "--leading-relaxed": {
+        "raw": "1.625",
+        "value": "1.625"
+      },
+      "--radius-sm": {
+        "raw": "6px",
+        "value": "6px"
+      },
+      "--radius-md": {
+        "raw": "10px",
+        "value": "10px"
+      },
+      "--radius-lg": {
+        "raw": "16px",
+        "value": "16px"
+      },
+      "--radius-xl": {
+        "raw": "24px",
+        "value": "24px"
+      },
+      "--radius-2xl": {
+        "raw": "32px",
+        "value": "32px"
+      },
+      "--radius-3xl": {
+        "raw": "1.5rem",
+        "value": "1.5rem"
+      },
+      "--ease-out": {
+        "raw": "cubic-bezier(0, 0, .2, 1)",
+        "value": "cubic-bezier(0, 0, .2, 1)"
+      },
+      "--ease-in-out": {
+        "raw": "cubic-bezier(.4, 0, .2, 1)",
+        "value": "cubic-bezier(.4, 0, .2, 1)"
+      },
+      "--color-lemon": {
+        "raw": "#faf082",
+        "value": "#faf082"
+      },
+      "--color-lemon-deep": {
+        "raw": "#f5e75a",
+        "value": "#f5e75a"
+      },
+      "--color-ivory": {
+        "raw": "#f7f5f1",
+        "value": "#f7f5f1"
+      },
+      "--color-paper": {
+        "raw": "#fff",
+        "value": "#fff"
+      },
+      "--color-espresso": {
+        "raw": "#180600",
+        "value": "#180600"
+      },
+      "--color-lime": {
+        "raw": "#b2fa82",
+        "value": "#b2fa82"
+      },
+      "--color-peach": {
+        "raw": "#faa064",
+        "value": "#faa064"
+      },
+      "--color-sky": {
+        "raw": "#82aafa",
+        "value": "#82aafa"
+      },
+      "--color-rose": {
+        "raw": "#fa8282",
+        "value": "#fa8282"
+      },
+      "--color-bg": {
+        "raw": "#f7f5f1",
+        "value": "#f7f5f1"
+      },
+      "--color-surface": {
+        "raw": "#fff",
+        "value": "#fff"
+      },
+      "--color-surface-2": {
+        "raw": "#faf7e8",
+        "value": "#faf7e8"
+      },
+      "--color-border": {
+        "raw": "#18060014",
+        "value": "#18060014"
+      },
+      "--color-border-strong": {
+        "raw": "#18060029",
+        "value": "#18060029"
+      },
+      "--color-ink": {
+        "raw": "#180600",
+        "value": "#180600"
+      },
+      "--color-ink-muted": {
+        "raw": "#6b5b4a",
+        "value": "#6b5b4a"
+      },
+      "--color-ink-subtle": {
+        "raw": "#9a8c7a",
+        "value": "#9a8c7a"
+      },
+      "--color-accent": {
+        "raw": "#faf082",
+        "value": "#faf082"
+      },
+      "--color-accent-ink": {
+        "raw": "#180600",
+        "value": "#180600"
+      },
+      "--color-hero-bg": {
+        "raw": "#0d0a07",
+        "value": "#0d0a07"
+      },
+      "--color-hero-surface": {
+        "raw": "#181310",
+        "value": "#181310"
+      },
+      "--color-hero-surface-2": {
+        "raw": "#221c17",
+        "value": "#221c17"
+      },
+      "--color-hero-border": {
+        "raw": "#f5f2e01a",
+        "value": "#f5f2e01a"
+      },
+      "--color-hero-border-strong": {
+        "raw": "#f5f2e033",
+        "value": "#f5f2e033"
+      },
+      "--color-hero-ink": {
+        "raw": "#f5f2e0",
+        "value": "#f5f2e0"
+      },
+      "--color-hero-ink-muted": {
+        "raw": "#f5f2e0a6",
+        "value": "#f5f2e0a6"
+      },
+      "--color-hero-ink-subtle": {
+        "raw": "#f5f2e073",
+        "value": "#f5f2e073"
+      },
+      "--font-display": {
+        "raw": "\"Mackinac\", \"Matter\", ui-serif, Georgia, serif",
+        "value": "\"Mackinac\", \"Matter\", ui-serif, Georgia, serif"
+      },
+      "--ease-out-quart": {
+        "raw": "cubic-bezier(.25, 1, .5, 1)",
+        "value": "cubic-bezier(.25, 1, .5, 1)"
+      }
+    }
+  },
+  "utilityCount": 99,
+  "ruleCount": 258
+}

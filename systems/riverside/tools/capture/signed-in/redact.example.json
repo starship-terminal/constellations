@@ -1,7 +1,7 @@
 {
  "replace": [
   ["Account Holder", "gi", "Learner"],
-  ["account\\.holder(@|%40)example\\.com", "gi", "learner@example.com"]
+  ["account\\.holder(@|%40)example\\.invalid", "gi", "learner"]
  ],
  "badges": []
 }

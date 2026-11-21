@@ -1,39 +1,41 @@
 # Oku patterns
 
-Public signed-out pages on oku.club, 2026-11-19. No screenshots: the preview browser did not produce frames.
+How the public pages are built. Screenshots are 256-colour. The site tree is [site-tree.md](site-tree.md).
 
 ## App shell
 
-A fixed bar, 80px tall, transparent, sits over every measured page. Desktop padding on the header is 48px inline. The wordmark is a 60 by 24 svg. Nav links are Explore, Blog, Pricing, Twitter, Contact. Sign in and Join sit at the end.
+A fixed 80px header on a white page. Logo left, text links centered, Sign in and Join at the right. No sidebar. Phone replaces the links with one menu button. See [home-light-default.png](screenshots/home-light-default.png) and [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
-At 390px the same bar stays 80px. A 22 by 40 menu button opens a full-viewport nav with Fabric Serif 36px links.
+Dark is the same shell with the page at #131314 and the Join button inverted. See [home-dark-default.png](screenshots/home-dark-default.png). There is no theme control on the page. Dark follows the browser.
 
-## Marketing page
+## Marketing home
 
-The homepage h1 is Fabric Serif 48/400, line-height 62.4px, tracking -0.288px, olive, about 460px wide. Section h2 is 36px. Body is Inter 16/400, line-height 28.8px, blueberry-80. The primary page action is Join for free, 54px, blueberry-10. An App Store badge sits in the hero and was not followed.
+One display line, two buttons (Join for free, App Store), a line drawing, then feature sections and a live activity feed of public books and profiles. The feed is other people's public reading activity. See [home-light-tile1.png](screenshots/home-light-tile1.png) onward for the sections below the fold.
 
-Dark-named illustrations (`trackYourReadingDark@2x`, `discoverBooksDark@2x`) shipped with the default dark paint.
+## Explore
+
+A heading and a grid of public book covers. No search field. See [explore-light-default.png](screenshots/explore-light-default.png).
 
 ## Pricing
 
-Three cards in a row: Free $0, Premium $35/year, Supporter $125/year, with a yearly billing switch on. Subscribe was not followed. Checkout was not entered.
+Three columns: Free at $0, Premium at $35 / year, and a third plan at $125 / year. "Pay monthly" and "Pay yearly" are labels. Clicking them did not change the prices. Subscribe and Join for free go to the signup wall. See [pricing-light-default.png](screenshots/pricing-light-default.png).
 
-## Explore and book
+## Book and profile
 
-Explore is a public catalog: an h1, book cards, collection titles. A book page is a 480px column: Fabric Serif 24px title, byline, three shelf actions, then tabs. Shelf actions were not submitted.
+A public book page shows the cover, title, author, description, and three status buttons. Those buttons open the signup dialog. A public profile shows shelves. See [book-light-default.png](screenshots/book-light-default.png) and [profile-light-default.png](screenshots/profile-light-default.png).
 
-## Blog and legal
+## Review
 
-The blog index uses a 36px card title. A post and the privacy page share an 816px column, with the heading and body measuring 752px. Post body is the same 16/28.8 Inter as the homepage.
+A public review with a spoiler toggle. Opening it stays on the page. See [review-light-spoiler.png](screenshots/review-light-spoiler.png).
 
-## Auth
+## Signup dialog
 
-Sign in, join and reset are a 368px form, no card chrome, 48px padding above the heading. The heading is Fabric Serif 24px, tracking -0.7px. None of the forms were submitted.
+Join, the hero Join for free button, and a book status button open the same dialog. Escape closes it. The fields were left empty. See [home-light-join-dialog.png](screenshots/home-light-join-dialog.png).
 
-## Not found
+## Walls
 
-`/this-page-does-not-exist-capture` returns title "404 - Not found / Oku". The heading is "How did you get here?" at 24px. The body is Inter 14/25.2, blueberry-80.
+Sign in is a split page: form on the left, the line drawing on the right. See [signin-light-wall.png](screenshots/signin-light-wall.png). `/login` renders the 404. See [login-missing-light-default.png](screenshots/login-missing-light-default.png).
 
-## Empty, loading, error, confirmation
+## Not on this surface
 
-Not shown on the public pages. No validation error was provoked, because the forms were not submitted.
+No form was submitted, so there is no validation error. No empty, loading, or error state was shown. No destructive confirmation. No search. No onboarding. Those stay not captured.
