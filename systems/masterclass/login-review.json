@@ -1,0 +1,67 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public capture, signed out. https://www.masterclass.com/auth/login was opened from the header at 1440 and 390. The page stayed on MasterClass and showed a Log in dialog. Google, Facebook, and Apple were visible and not clicked. Log In With Email, Sign Up, Reset Password, and Log in with your organization were not clicked. The phone dialog showed empty Email and Password fields. Nothing was typed. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [],
+      "reached": [],
+      "note": "The signed-in app was not entered. Marketing nav is recorded in site-tree.md."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No account settings were offered before the wall."
+    },
+    "create": {
+      "items": [],
+      "reached": [],
+      "note": "Sign Up was visible on the login dialog and not clicked. No create flow was offered before the wall."
+    }
+  },
+  "screens": [
+    "screenshots/login-dark-wall.png",
+    "screenshots/mobile-login-dark-wall.png",
+    "screenshots/home-dark-browse.png",
+    "screenshots/home-dark-browse-food.png",
+    "screenshots/home-dark-search.png",
+    "screenshots/mobile-home-dark-menu.png",
+    "screenshots/mobile-home-dark-browse.png",
+    "screenshots/checkout-dark-default.png",
+    "screenshots/quiz-dark-default.png"
+  ],
+  "gaps": [
+    "The signed-in library, lesson player, notes, downloads, and account settings were not entered.",
+    "offered.nav, offered.settings, and offered.create are empty because the wall stopped the branch.",
+    "Log In With Google, Log In With Facebook, and Log In With Apple were visible and not clicked.",
+    "Log In With Email was visible on desktop and not clicked. The phone dialog already showed empty Email and Password fields.",
+    "Sign Up, Reset Password, Forgot your password, and Log in with your organization were visible and not clicked.",
+    "Checkout stayed on the Membership step. Continue was not clicked, so Account and Payment were not opened.",
+    "The quiz stayed on Interests. Skip and Next were not clicked.",
+    "The homepage newsletter email, the footer email, and the At Work contact form were left empty and not submitted.",
+    "The phone hamburger menu is clipped at the bottom of the 844 viewport. Executive and At Work sit below the fold in that shot.",
+    "The sample-lesson button on the class page did not click in time. The lesson-plan state was captured."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "Log In",
+    "Log In With Google",
+    "Log In With Facebook",
+    "Log In With Apple",
+    "Log In With Email",
+    "Sign Up",
+    "Reset Password",
+    "Forgot your password",
+    "Log in with your organization",
+    "newsletter email",
+    "footer subscribe",
+    "quiz",
+    "checkout Continue",
+    "At Work contact form"
+  ]
+}

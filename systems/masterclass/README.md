@@ -1,6 +1,6 @@
 # MasterClass design reference
 
-A token set and component reference for MasterClass's public site (`www.masterclass.com`), captured signed out on 2026-11-21 in headless Chromium. Desktop is 1440x900. Phone is 390x844. The public site ships one dark theme: black page, white type, one pink accent. Signed-in class playback, account and checkout payment were not entered. Login at `https://www.masterclass.com/auth/login` redirected to a Google sign-in. Google was not clicked. No form was submitted.
+A token set and component reference for MasterClass's public site (`www.masterclass.com`), refreshed signed out on 2026-11-21 in headless Chromium. Desktop is 1440x900. Phone is 390x844. The public site ships one dark theme: black page, white type, one pink accent. Signed-in class playback, account and checkout payment were not entered. Login at `https://www.masterclass.com/auth/login` stays on MasterClass and opens a Log in dialog with Google, Facebook, Apple, and email. None of those were clicked. No form was submitted. The stop is recorded in [login-review.json](login-review.json).
 
 The site tree, written before the screenshots, is [site-tree.md](site-tree.md).
 
@@ -13,8 +13,9 @@ The site tree, written before the screenshots, is [site-tree.md](site-tree.md).
 | [components.md](components.md) | Component inventory, crops and gaps |
 | [patterns.md](patterns.md) | How the controls combine on the public pages |
 | [site-tree.md](site-tree.md) | Which control opens which page, menu or dialog |
+| [login-review.json](login-review.json) | What the login wall offered, and what was not submitted |
 | [components/crops/](components/crops) | Element crops of the header controls at 2x |
-| [screenshots/](screenshots) | 48 `{page}-dark-{state}.png` captures, 256-colour. `mobile-*` are 390 wide |
+| [screenshots/](screenshots) | 52 `{page}-dark-{state}.png` captures, 256-colour. `mobile-*` are 390 wide |
 | [raw/](raw) | `css-vars.json` (572 custom properties) and `measurements.md` |
 | [tools/](tools) | Builders and the Playwright capture kit |
 
@@ -31,7 +32,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 3. Do set headlines in condensed caps.
 4. Do use the Browse menu for categories.
 5. Don't round the page into a light theme.
-6. Don't fill the signup fields.
+6. Don't fill the login or signup fields.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -102,7 +103,7 @@ Component crops were taken live with Playwright at deviceScaleFactor 2. Screensh
 - Code type uses the browser monospace. The public pages do not declare a code family.
 - Hover was captured for the primary button and Log In. Pressed and focus-visible were not held on every control.
 - The sample-lesson button on the class page did not click in time. The lesson-plan state was captured.
-- Login, signup, payment, newsletter and contact fields were not filled.
+- Login stays on MasterClass. Google, Facebook, Apple, email, signup, and reset were visible and not used. Payment, newsletter, and contact fields were not filled.
 
 ## Fonts
 
@@ -160,7 +161,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Public page
 | Feedback | Promo strip. No toast | `screenshots/home-dark-promo.png` |
 | Search and filtering | Search menu and category chips | `screenshots/home-dark-search.png` |
 | Onboarding | Quiz first step captured. Later steps are a signup wall | `screenshots/quiz-dark-default.png` |
-| Login | Wall. Redirects to Google. Not clicked | [site-tree.md](site-tree.md) |
+| Login | Wall on `/auth/login`. Google, Facebook, Apple, and email offered. Not clicked | [login-review.json](login-review.json), [screenshots/login-dark-wall.png](screenshots/login-dark-wall.png) |
 
 ## Do and don't
 
@@ -169,7 +170,7 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Public page
 - **Do set headlines in condensed caps.** The hero is Sohne Schmal, uppercase. See [screenshots/home-dark-default.png](screenshots/home-dark-default.png).
 - **Do use the Browse menu for categories.** It opens on the page. View All Categories is the index. See [screenshots/home-dark-browse.png](screenshots/home-dark-browse.png).
 - **Don't round the page into a light theme.** No light toggle was on the public site.
-- **Don't fill the signup fields.** Login is a Google wall, and the newsletter fields were left empty.
+- **Don't fill the login or signup fields.** The login dialog offers Google, Facebook, Apple, and email. None were used. Newsletter fields were left empty. See [screenshots/login-dark-wall.png](screenshots/login-dark-wall.png).
 
 ## Rebuild
 

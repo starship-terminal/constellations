@@ -92,7 +92,7 @@ Instructor portraits are the card images. No account avatar is shown signed out.
 
 ## Gaps
 
-- Login and signup are a wall. `https://www.masterclass.com/auth/login` redirected to a Google sign-in. Google was not clicked. There is no site email field on that wall.
+- Login and signup are a wall. `https://www.masterclass.com/auth/login` stays on MasterClass and opens a Log in dialog. Google, Facebook, Apple, and email are offered. None were clicked. See [login-review.json](login-review.json).
 - Checkout account and payment, certificate signup, Executive apply, and the quiz after the first step were not entered.
 - Newsletter, contact, phone and plan fields were not filled and not submitted.
 - Dark is the only public theme. A light theme is not shipped on these pages.

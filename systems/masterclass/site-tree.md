@@ -1,12 +1,12 @@
 # MasterClass public site tree
 
-Mapped from the live homepage `https://www.masterclass.com/` on 2026-11-21 in headless Chromium, before screenshots. Signed out. No form was submitted. No Google or Apple control was clicked. A control that opens a login or signup wall is recorded and that branch stops.
+Mapped from the live homepage `https://www.masterclass.com/` on 2026-11-21 in the T3 preview browser (incognito), before screenshots. Signed out. No form was submitted. No Google, Apple, or other identity provider was clicked. A control that opens a login, signup, subscribe, or identity-provider wall is recorded and that branch stops.
 
 Official product: MasterClass (`www.masterclass.com`). Related public hosts linked from the homepage: `oncall.masterclass.com`, `learn.masterclass.com`, `careers.masterclass.com`, `privacy.masterclass.com`. Those hosts are recorded as leaves, not crawled.
 
 ## Shell (desktop 1440 and phone 390)
 
-The same header is on marketing pages. Phone width still shows Browse, Gifts, View Plans, Log In and Get MasterClass. There is no separate hamburger.
+The same header is on marketing pages. Desktop shows Certificates, On Call, Executive, At Work, Browse, Search, Gifts, View Plans, Log In and Get MasterClass. Phone width collapses the product links into a Menu button.
 
 | Control | Opens |
 |---|---|
@@ -22,15 +22,34 @@ The same header is on marketing pages. Phone width still shows Browse, Gifts, Vi
 | View Plans | `/checkout` (plan picker, account step is a login wall) |
 | Log In | `/auth/login` (login wall, stop) |
 | Get MasterClass | `/promotion` |
+| Hamburger (phone, unlabeled icon at the right of the header) | Dialog "Dropdown menu" on the same page. See Menu dialog. A button labelled Menu exists in the desktop DOM at 0 by 0 and does not paint. |
 | Close banner | Dismisses the promo strip on the same page. Not a consent POST. |
 
-## Browse dialog
+## Menu dialog (phone)
 
-Buttons, not links. Clicking a category filters the homepage carousel in place and stays on `/`.
+Opened by the unlabeled hamburger at the right of the phone header. Close dismisses it. Search in this dialog is the same search field, not a submitted query. The 390 by 844 shot clips Executive and At Work below the fold.
 
 | Control | Opens |
 |---|---|
-| Acting & Performing Arts, Art & Design, Business & Entrepreneurship, Community & Government, Film & TV, Food & Drink, Games & Digital Media, Health & Wellness, Music, Outdoor Adventures & Events, Science & Technology, Sports & Athletics, Writing | Homepage category filter (same URL) |
+| Close | Closes the dialog |
+| MasterClass | Stays in the dialog (product label) |
+| View Plans / Get 50% off | `/checkout` |
+| Gifts | `/gift` |
+| Support | `/help-center` |
+| Log In | `/auth/login` (login wall, stop) |
+| Get MasterClass | `/promotion` |
+| Certificates | `/certificates` |
+| On Call | `https://oncall.masterclass.com/` (other host, stop) |
+| Executive | `/executive` |
+| At Work | `/for-business` |
+
+## Browse dialog
+
+Buttons, not links. Clicking a category opens a nested list of subtopics in the same dialog and stays on `/`. The nested items are also buttons. View All Categories is the only link.
+
+| Control | Opens |
+|---|---|
+| Acting & Performing Arts, Art & Design, Business & Entrepreneurship, Community & Government, Film & TV, Food & Drink, Games & Digital Media, Health & Wellness, Music, Outdoor Adventures & Events, Science & Technology, Sports & Athletics, Writing | Nested subtopic list in the same dialog. Food & Drink opened: Bake Delicious Bread & Pastries, Cook Hearty Pasta & Rice Dishes, Craft Nutritious Flavorful Meals, Create Healthy & Tasty Vegetarian Meals, Elevate Everyday Cuisine, Elevate Your Cooking Skills & Techniques, Explore Global Cuisines & Food Culture, Make Everyday Meals Gourmet, Make The Most Of Your Ingredients, Pair Wines, Mix Cocktails, & Brew Coffee, Prepare Fresh Seafood Recipes, Refine Your Beef, Chicken, & Meat Dishes, Spice Up Your Food With Sauces & Herbs. Those buttons stay in the dialog. |
 | View All Categories | `/categories` |
 | Close | Closes the dialog |
 
@@ -132,7 +151,7 @@ App Store, Google Play, Amazon app store, Roku, Twitter, Instagram, Facebook, Yo
 
 | URL | What happened on 2026-11-21 |
 |---|---|
-| `https://www.masterclass.com/auth/login` | Known probe: redirects to a Google sign-in. No site email field. Google was not clicked. |
+| `https://www.masterclass.com/auth/login` | Stays on MasterClass. Dialog offers Log In With Google, Log In With Facebook, Log In With Apple, Log In With Email, Sign Up, Reset Password, and Log in with your organization (`/auth/discovery`). None of those were clicked. No email was typed. |
 | Checkout Account step, certificate Sign Up, Executive LOG IN, quiz completion, lesson playback past the sample | Recorded as walls. Not entered. |
 
 ## Not present on the public site
