@@ -241,9 +241,9 @@
      "description": "JetBrains Sans, the marketing UI face"
     },
     "ui": {
-     "value": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
+     "value": "Arial",
      "type": "fontFamily",
-     "source": "computed fontFamily of email-field default (raw/components-computed.json); account.jetbrains.com/login, the --rs-font-family-ui fallback stack"
+     "source": "computed fontFamily of oauth-button default (raw/components-computed.json); account.jetbrains.com/login Continue with Google, at rest"
     }
    },
    "weight": {
@@ -294,7 +294,7 @@
     "body": {
      "value": "24px",
      "type": "dimension",
-     "source": "computed lineHeight of email-field default (raw/components-computed.json)"
+     "source": "computed lineHeight of link default (raw/components-computed.json)"
     },
     "tight": {
      "value": "1.1",

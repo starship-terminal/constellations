@@ -121,7 +121,7 @@ SPEC["core"]["font"] = {
     "family": {
         "sans": computed("button-primary", "fontFamily", "fontFamily", what="the header CTA on home",
                          description="JetBrains Sans, the marketing UI face"),
-        "ui": computed("email-field", "fontFamily", "fontFamily", what="account.jetbrains.com/login, the --rs-font-family-ui fallback stack"),
+        "ui": computed("oauth-button", "fontFamily", "fontFamily", what="account.jetbrains.com/login Continue with Google, at rest"),
     },
     "weight": {
         "regular": computed("button-primary", "fontWeight", "fontWeight"),
@@ -136,7 +136,7 @@ SPEC["core"]["font"] = {
         "display": hand("48px", "display size on the home hero", "dimension"),
     },
     "line-height": {
-        "body": computed("email-field", "lineHeight", "dimension"),
+        "body": computed("link", "lineHeight", "dimension"),
         "tight": hand("1.1", "display headings", "number"),
     },
 }

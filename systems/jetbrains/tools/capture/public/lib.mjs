@@ -38,10 +38,12 @@ export async function patch(context) {
 // Cookiebot-style banner (#ch2-dialog). Hide it. Never click Accept, Opt-Out
 // or Manage Settings: those POST a consent choice.
 export async function closePromo(page) {
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 6; i++) {
     await page.evaluate(() => {
       document.querySelectorAll('#ch2-dialog, [class*="ch2-"], [id*="CybotCookiebot" i], [class*="CybotCookiebot" i], #onetrust-banner-sdk, [id*="onetrust" i]').forEach((x) => {
         x.style.setProperty('display', 'none', 'important');
+        x.style.setProperty('visibility', 'hidden', 'important');
+        x.style.setProperty('pointer-events', 'none', 'important');
       });
       document.body && document.body.style.removeProperty('overflow');
       document.documentElement && document.documentElement.style.removeProperty('overflow');

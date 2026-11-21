@@ -1,0 +1,56 @@
+{
+  "slug": "jetbrains",
+  "product": "JetBrains",
+  "domain": "jetbrains.com",
+  "signed_in": false,
+  "probe": "no-form",
+  "login_extracted": "not-started",
+  "when": "2026-11-21",
+  "host": "headless Chromium via Playwright",
+  "url": "https://account.jetbrains.com/login",
+  "cookie_banner": "present as #ch2-dialog on www.jetbrains.com; hidden with CSS; not accepted",
+  "typed": [],
+  "clicked_identity_providers": [],
+  "submitted": [],
+  "offered": {
+    "identity_providers": [
+      "Google",
+      "GitHub",
+      "Apple",
+      "GitLab",
+      "WeChat",
+      "Bitbucket"
+    ],
+    "email": "Continue with email is a button on the login card. It was not clicked. No email field was opened. No email was typed.",
+    "signup": "Create an account is a link on the login card. It was not followed.",
+    "other_walls": [
+      "https://account.jetbrains.com/ (header Navigate to profile; redirects toward login)",
+      "https://account.jetbrains.com/profile-details",
+      "https://account.jetbrains.com/licenses"
+    ]
+  },
+  "screens": [
+    {"name": "Login wall, desktop, empty", "file": "screenshots/login-light-default.png"},
+    {"name": "Login wall, phone, empty", "file": "screenshots/mobile-login-light-default.png"}
+  ],
+  "stopped_because": "The page is a login wall. This pass photographs the empty wall and stops. Continue with email, identity providers, signup, and any submit stay unclicked.",
+  "gaps": [
+    "Signed-in profile and licenses were not opened.",
+    "Create an account was not followed.",
+    "Continue with email was not clicked, so no email field was seen.",
+    "The privacy notice at https://www.jetbrains.com/legal/docs/privacy/privacy was not photographed: its first screen publishes a contact email and a street address."
+  ],
+  "not_submitted": [
+    "Continue with email",
+    "Continue",
+    "Google",
+    "GitHub",
+    "Apple",
+    "GitLab",
+    "WeChat",
+    "Bitbucket",
+    "Create an account",
+    "Cookie accept or opt-out",
+    "Any email, name, password, or code"
+  ]
+}
