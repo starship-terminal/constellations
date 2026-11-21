@@ -1,6 +1,6 @@
 # Awwwards components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from awwwards.com on 2026-11-11, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was voted on, signed into, created, sent or submitted.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Screenshots were taken from awwwards.com on 2026-11-21, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844). Computed styles were read on 2026-11-11 from the same class selectors. Nothing was voted on, signed into, created, sent or submitted. The control map is [site-tree.md](site-tree.md).
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (36 components, 57 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -16,20 +16,52 @@ Screenshots are named `{page}-light-{state}.png`: the site paints one light them
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/` | [arrival](screenshots/home-light-arrival.png), [card-hover](screenshots/home-light-card-hover.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png) |
+| Home | `/` | [arrival](screenshots/home-light-arrival.png), [default](screenshots/home-light-default.png), [explore-open](screenshots/home-light-explore-open.png), [full](screenshots/home-light-full.png) |
 | Winners grid | `/websites/` | [default](screenshots/websites-light-default.png), [filter-open](screenshots/websites-light-filter-open.png), [full](screenshots/websites-light-full.png) |
-| Site detail | `first site card on the winners grid` | [default](screenshots/site-light-default.png), [full](screenshots/site-light-full.png) |
+| Nominees | `/websites/nominees/` | [default](screenshots/nominees-light-default.png), [full](screenshots/nominees-light-full.png) |
+| Sites of the Day | `/websites/sites_of_the_day/` | [default](screenshots/sotd-light-default.png), [full](screenshots/sotd-light-full.png) |
+| Sites of the Month | `/websites/sites_of_the_month/` | [default](screenshots/sotm-light-default.png), [full](screenshots/sotm-light-full.png) |
+| Sites of the Year | `/websites/sites_of_the_year/` | [default](screenshots/soty-light-default.png), [full](screenshots/soty-light-full.png) |
+| Honors | `/honors/winners` | [default](screenshots/honors-light-default.png), [full](screenshots/honors-light-full.png) |
+| Most Awarded Profiles | `/winner-list/` | [default](screenshots/winners-light-default.png), [full](screenshots/winners-light-full.png) |
+| Jury 2026 | `/jury/2026/` | [default](screenshots/jury-light-default.png), [full](screenshots/jury-light-full.png) |
+| Annual Awards | `/annual-awards/` | [default](screenshots/awards-light-default.png), [full](screenshots/awards-light-full.png) |
+| Site detail | `first /websites/ card whose page still has a Vote control` | [default](screenshots/site-light-default.png), [full](screenshots/site-light-full.png) |
 | Collections | `/collections/` | [default](screenshots/collections-light-default.png), [full](screenshots/collections-light-full.png) |
+| Library | `/library/` | [default](screenshots/library-light-default.png), [full](screenshots/library-light-full.png) |
+| Elements | `/elements/` | [default](screenshots/elements-light-default.png), [full](screenshots/elements-light-full.png) |
+| Directory | `/directory/` | [default](screenshots/directory-light-default.png), [full](screenshots/directory-light-full.png) |
+| Academy | `/academy/` | [default](screenshots/academy-light-default.png), [full](screenshots/academy-light-full.png) |
+| Jobs | `/jobs/` | [default](screenshots/jobs-light-default.png), [full](screenshots/jobs-light-full.png) |
+| Market | `/market/` | [default](screenshots/market-light-default.png) |
+| Be Pro | `/pro` | [default](screenshots/pro-light-default.png), [full](screenshots/pro-light-full.png) |
 | Submit gate | `/submit/` | [default](screenshots/submit-light-default.png), [full](screenshots/submit-light-full.png) |
+| User plans | `/plans/user-plans` | [default](screenshots/plans-light-default.png), [full](screenshots/plans-light-full.png) |
+| Blog | `/blog/` | [default](screenshots/blog-light-default.png), [full](screenshots/blog-light-full.png) |
+| Conferences | `/conferences/` | [default](screenshots/conferences-light-default.png), [full](screenshots/conferences-light-full.png) |
+| FAQs | `/faqs/` | [default](screenshots/faqs-light-default.png), [full](screenshots/faqs-light-full.png) |
+| About | `/about-us/` | [default](screenshots/about-light-default.png), [full](screenshots/about-light-full.png) |
+| Contact | `/contact-us/` | [default](screenshots/contact-light-default.png), [full](screenshots/contact-light-full.png) |
+| Cookies policy | `/cookies-policy/` | [default](screenshots/cookies-light-default.png), [full](screenshots/cookies-light-full.png) |
+| Legal terms | `/terms/` | [default](screenshots/terms-light-default.png), [full](screenshots/terms-light-full.png) |
+| Privacy policy | `/privacy-policy/` | [default](screenshots/privacy-light-default.png), [full](screenshots/privacy-light-full.png) |
 | Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu](screenshots/mobile-home-light-menu.png) |
 | Winners grid, phone | `/websites/` | [default](screenshots/mobile-websites-light-default.png), [full](screenshots/mobile-websites-light-full.png) |
+| Collections, phone | `/collections/` | [default](screenshots/mobile-collections-light-default.png), [full](screenshots/mobile-collections-light-full.png) |
+| Directory, phone | `/directory/` | [default](screenshots/mobile-directory-light-default.png), [full](screenshots/mobile-directory-light-full.png) |
+| Academy, phone | `/academy/` | [default](screenshots/mobile-academy-light-default.png), [full](screenshots/mobile-academy-light-full.png) |
+| Jobs, phone | `/jobs/` | [default](screenshots/mobile-jobs-light-default.png), [full](screenshots/mobile-jobs-light-full.png) |
+| Market, phone | `/market/` | [default](screenshots/mobile-market-light-default.png) |
+| Blog, phone | `/blog/` | [default](screenshots/mobile-blog-light-default.png), [full](screenshots/mobile-blog-light-full.png) |
+| Submit, phone | `/submit/` | [default](screenshots/mobile-submit-light-default.png), [full](screenshots/mobile-submit-light-full.png) |
 
 ### Overlays and transient states
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
 | Arrival view | home, on load | the page as it arrives, before any consent or promo layer is hidden (nothing is ever answered) | [home-light-arrival](screenshots/home-light-arrival.png) |
-| Card hover layer | home site cards | the card held under the pointer; the Vote Now layer shows | [home-light-card-hover](screenshots/home-light-card-hover.png) |
+| Explore dropdown | home header | the Explore control's own toggle | [home-light-explore-open](screenshots/home-light-explore-open.png) |
+| Card hover layer | home site cards | not captured on 2026-11-21: the card hover timed out in headless Chrome | Not captured |
 | Filter dropdown | winners grid | the first filter tab's own toggle | [websites-light-filter-open](screenshots/websites-light-filter-open.png), [filter-dropdown](#filter-dropdown) |
 | Mobile menu | home, phone | the menu button's own toggle | [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-open](#mobile-menu-open) |
 
@@ -401,11 +433,13 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Pages
 
-- **Voting, submitting and anything behind sign-in.** The Vote button was measured but never clicked (a vote records a score), /submit/ was never submitted, and Log in / Sign Up did not render on the headless loads — no public login page exists signed-out. Jury tools, Pro dashboards and account pages were never reached.
-- **Anything that sends or joins.** No form was submitted, no vote cast, no search was run, no account was created, no consent choice was made.
-- **The filter dropdown's innards** were measured at the first option only; Academy, Jobs, Market, Directory and Jury pages are outside this pass.
-- **The card hover layer.** The Vote Now overlay on grid cards stayed `display:none` under headless hover on the measured runs (recorded as a gap on `card-cta`/`card-action`, not fabricated); the screenshot `home-light-card-hover` shows it.
-- **Headless access.** awwwards.com serves headless Chrome a 200 on every captured route.
+- **Voting, submitting and anything behind sign-in.** The Vote button was measured but never clicked (a vote records a score). `/submit/` and `/contact-us/` were never submitted. `https://www.awwwards.com/login` asks for email or username and a password. Those fields were not filled. Google, Twitter, and Facebook on that page were not clicked. `/register` and `/forgot-password` were not opened.
+- **Anything that sends or joins.** No form was submitted, no vote cast, no search query was run, no account was created, no consent choice was made.
+- **The filter dropdown's innards** were measured at the first option only. Academy, Jobs, Market, Directory, and Jury have viewport screenshots. Their inner filters were not re-measured.
+- **The card hover layer.** The Vote Now overlay stayed `display:none` under headless hover (recorded as a gap on `card-cta`/`card-action`). The 2026-11-21 recapture of `home-light-card-hover` timed out, so that file is gone.
+- **Market full page.** `/market/` grows without bound. The capture keeps the viewport shot. The 8-chunk full-page tiles were not committed.
+- **Unread token values** on pages that were only screenshotted (directory filters, job cards, course cards, legal type) are Not captured.
+- **Headless access.** awwwards.com served headless Chrome a 200 on every captured route on 2026-11-21.
 
 ### States
 

@@ -67,10 +67,45 @@ const openFilter = async (p) => {
   return false;
 };
 
+const viewAndFull = async (p, S) => { await S.view('default'); await S.full(); };
+
+// Section indexes from site-tree.md. Each is a public page reached from the
+// homepage header, Explore dropdown, or footer. No form is submitted.
+const sections = {
+  nominees: '/websites/nominees/',
+  sotd: '/websites/sites_of_the_day/',
+  sotm: '/websites/sites_of_the_month/',
+  soty: '/websites/sites_of_the_year/',
+  honors: '/honors/winners',
+  winners: '/winner-list/',
+  jury: '/jury/2026/',
+  awards: '/annual-awards/',
+  library: '/library/',
+  directory: '/directory/',
+  academy: '/academy/',
+  jobs: '/jobs/',
+  market: '/market/',
+  pro: '/pro',
+  elements: '/elements/',
+  conferences: '/conferences/',
+  blog: '/blog/',
+  faqs: '/faqs/',
+  about: '/about-us/',
+  contact: '/contact-us/',
+  cookies: '/cookies-policy/',
+  terms: '/terms/',
+  privacy: '/privacy-policy/',
+  plans: '/plans/user-plans',
+};
+
 const desktop = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.raw('arrival');                       // the page as it arrives, any consent layer included
     await S.view('default');
+    await step('explore-open', async () => {
+      const item = p.locator('li.nav-header-main__item.has-dropdown').first();
+      if (await item.count()) { await item.hover(); await wait(p, 600); await item.locator('span.nav-header-main__link').click({ timeout: 4000 }).catch(() => {}); await wait(p, 900); await S.view('explore-open'); await p.keyboard.press('Escape').catch(() => {}); }
+    });
     await step('card-hover', async () => {
       const card = p.locator('a.figure-rollover__link').filter({ visible: true }).first();
       if (await card.count()) { await card.hover(); await wait(p, 1200); await S.view('card-hover'); await p.mouse.move(20, 400); await wait(p, 500); }
@@ -93,16 +128,15 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
-  collections: { path: '/collections/', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
+  collections: { path: '/collections/', wait: 9000, run: async (p, S) => viewAndFull(p, S) },
   submit: { path: '/submit/', wait: 9000, run: async (p, S) => {
     // The submission intro/pricing page: captured, never submitted.
-    await S.view('default');
-    await S.full();
+    await viewAndFull(p, S);
   } },
 };
+for (const [name, path] of Object.entries(sections)) {
+  desktop[name] = { path, wait: 6000, run: viewAndFull };
+}
 
 const mobile = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
@@ -111,11 +145,18 @@ const mobile = {
     // home view, and full() hides consent/promo layers only.
     await S.full();
     await step('menu', async () => {
-      const m = p.locator('header [class*="burger" i], header [class*="trigger" i], header button, [class*="menu-mobile" i]').filter({ visible: true }).first();
+      const m = p.locator('header .header-main__hamburger, header [class*="hamburger" i], header [class*="burger" i]').filter({ visible: true }).first();
       if (await m.count()) { await clickEl(m); await wait(p, 1600); await S.view('menu'); }
     });
   } },
-  websites: { path: '/websites/', wait: 9000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  websites: { path: '/websites/', wait: 9000, run: async (p, S) => viewAndFull(p, S) },
+  collections: { path: '/collections/', wait: 6000, run: viewAndFull },
+  directory: { path: '/directory/', wait: 6000, run: viewAndFull },
+  academy: { path: '/academy/', wait: 6000, run: viewAndFull },
+  jobs: { path: '/jobs/', wait: 6000, run: viewAndFull },
+  market: { path: '/market/', wait: 6000, run: viewAndFull },
+  blog: { path: '/blog/', wait: 6000, run: viewAndFull },
+  submit: { path: '/submit/', wait: 6000, run: viewAndFull },
 };
 
 const b = await chromium.launch({ channel: 'chrome', headless: true });

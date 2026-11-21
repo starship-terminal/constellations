@@ -1,21 +1,21 @@
 {
- "readAt": "2026-11-11",
+ "readAt": "2026-11-21",
  "source": "the stylesheet bodies fetched during a live home load on www.awwwards.com (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
  "sheets": [
-  "https://www.gstatic.com/recaptcha/releases/0lEGiwO4Qwx5R9ArxUy0mBpf/styles__ltr.css (75062 bytes)",
+  "https://www.gstatic.com/recaptcha/releases/4i3aN5wAweL7i3ADI7BSX4B-/styles__ltr.css (75062 bytes)",
   "inline-0 (104 bytes)",
-  "inline-1 (179451 bytes)",
+  "inline-1 (181934 bytes)",
   "inline-2 (2600 bytes)",
   "inline-3 (100 bytes)",
   "inline-4 (2183 bytes)",
   "inline-5 (235 bytes)"
  ],
  "counts": {
-  "rules": 159,
+  "rules": 162,
   "fonts": 1,
   "names": {
    "generated": 1,
-   "app": 180,
+   "app": 181,
    "vendor": 1,
    "utility": 0,
    "tailwind": 0
@@ -23,33 +23,6 @@
   "bySelector": {
    "[app] :root": 98,
    "[app] .breadcrumb-filters": 1,
-   "[app] body.dark": 2,
-   "[app] body.header-dark #header": 5,
-   "[app] .sticker-svg": 7,
-   "[app] .sticker-svg.sc-orange-beige": 2,
-   "[app] .sticker-svg.sc-orange-black": 2,
-   "[app] .sticker-svg.sc-beige-purple": 2,
-   "[app] .sticker-svg.sc-green-black": 2,
-   "[app] .sticker-svg.sc-green-purple": 2,
-   "[app] .sticker-svg.sc-purple-pink": 2,
-   "[app] .sticker-svg.sc-purple-green": 2,
-   "[app] .has-content-header, .modal .header-floating": 2,
-   "[app] body.has-header-dark .header-main": 5,
-   "[app] body.has-header-dark .header-main .button[class*=\"--outline\"]": 1,
-   "[app] body.has-header-dark .header-main .button[class*=\"--outline\"]:hover": 1,
-   "[app] body.has-header-dark:has(.nav-header-main__link.is-open) .header-main, body.has-header-dark:has(.header-main.has-search-focus) .header-main": 2,
-   "[app] @media (max-width: 1270px) body:has(.nav-header-main__link.is-open), body:has(.header-main.has-search-focus), body:has(.nav-header-main.is-open)": 1,
-   "[app] #header": 1,
-   "[app] @media (max-width: 768px) #header": 1,
-   "[app] .c-header-main": 1,
-   "[app] .header-main": 10,
-   "[app] .header-main:has(.nav-header-main__link.is-open), .header-main.has-search-focus": 6,
-   "[app] @media (max-width: 1270px) .nav-header-main": 1,
-   "[app] @media (max-width: 1270px) .nav-header-main .search-inspiration": 1,
-   "[app] .search-inspiration": 2,
-   "[app] @media (max-width: 1270px) .search-inspiration": 1,
-   "[app] @media (max-width: 1270px) .search-inspiration__menu li": 1,
-   "[app] .dropdown-user": 1,
    "[app] .form-field.is-invalid .link-underlined": 1,
    "[app] .check-toggle input:checked + label": 1,
    "[app] .input-ranger-double": 1,
@@ -85,6 +58,45 @@
    "[app] .budget-circle[class*=\"small\"]": 1,
    "[app] .budget-circle[class*=\"red\"]": 2,
    "[app] .budget": 1,
+   "[app] .menu-float": 1,
+   "[app] .menu-float__wrapper": 1,
+   "[app] .menu-float .button[class*=\"--awwward\"], .menu-float .button[class*=\"--awwward\"]:hover": 2,
+   "[app] .menu-float .button--suggestions": 2,
+   "[app] .style-1": 3,
+   "[app] .style-2": 3,
+   "[app] .style-3": 3,
+   "[app] .style-4": 3,
+   "[app] .style-5": 3,
+   "[app] .style-6": 3,
+   "[app] .has-content-header, .modal .header-floating": 2,
+   "[app] body.has-header-dark .header-main": 5,
+   "[app] body.has-header-dark .header-main .button[class*=\"--outline\"]": 1,
+   "[app] body.has-header-dark .header-main .button[class*=\"--outline\"]:hover": 1,
+   "[app] body.has-header-dark:has(.nav-header-main__link.is-open) .header-main, body.has-header-dark:has(.header-main.has-search-focus) .header-main": 2,
+   "[app] @media (max-width: 1270px) body:has(.nav-header-main__link.is-open), body:has(.header-main.has-search-focus), body:has(.nav-header-main.is-open)": 1,
+   "[app] #header": 1,
+   "[app] @media (max-width: 768px) #header": 1,
+   "[app] .c-header-main": 1,
+   "[app] .header-main": 10,
+   "[app] .header-main:has(.nav-header-main__link.is-open), .header-main.has-search-focus": 6,
+   "[app] @media (max-width: 1270px) .nav-header-main": 1,
+   "[app] @media (max-width: 1270px) .nav-header-main .search-inspiration": 1,
+   "[app] .search-inspiration": 2,
+   "[app] @media (max-width: 1270px) .search-inspiration": 1,
+   "[app] @media (max-width: 1270px) .search-inspiration__menu li": 1,
+   "[app] .dropdown-user": 1,
+   "[app] .footer__grid": 2,
+   "[app] @media (max-width: 1024px) .footer__grid": 1,
+   "[app] body.dark": 2,
+   "[app] body.header-dark #header": 5,
+   "[app] .sticker-svg": 7,
+   "[app] .sticker-svg.sc-orange-beige": 2,
+   "[app] .sticker-svg.sc-orange-black": 2,
+   "[app] .sticker-svg.sc-beige-purple": 2,
+   "[app] .sticker-svg.sc-green-black": 2,
+   "[app] .sticker-svg.sc-green-purple": 2,
+   "[app] .sticker-svg.sc-purple-pink": 2,
+   "[app] .sticker-svg.sc-purple-green": 2,
    "[app] .link-underlined--white": 1,
    "[app] .link-underlined--red": 1,
    "[app] .loading": 3,
@@ -120,6 +132,9 @@
    "[app] .grid-jobs": 2,
    "[generated] .grid-jury": 1,
    "[generated] @media (min-width: 1600px) .grid-jury": 1,
+   "[app] .grid-library": 1,
+   "[app] @media (max-width: 900px) .grid-library": 1,
+   "[app] .card-blog-new": 1,
    "[app] .card-awwward-mini": 5,
    "[app] .card-awwward-mini--small": 5,
    "[app] .card-asset": 5,
@@ -151,18 +166,6 @@
    "[app] .marquee-top--awwwards": 1,
    "[app] .marquee-top--dmk": 1,
    "[app] .marquee-top--gray": 2,
-   "[app] .menu-float": 1,
-   "[app] .menu-float__wrapper": 1,
-   "[app] .menu-float .button[class*=\"--awwward\"], .menu-float .button[class*=\"--awwward\"]:hover": 2,
-   "[app] .menu-float .button--suggestions": 2,
-   "[app] .style-1": 3,
-   "[app] .style-2": 3,
-   "[app] .style-3": 3,
-   "[app] .style-4": 3,
-   "[app] .style-5": 3,
-   "[app] .style-6": 3,
-   "[app] .footer__grid": 2,
-   "[app] @media (max-width: 1024px) .footer__grid": 1,
    "[app] @media (max-width: 1280px) :root": 1,
    "[app] @media (max-width: 1280px) .list-palette": 4,
    "[app] @media (max-width: 1280px) .list-palette--v": 3,
@@ -381,386 +384,6 @@
    "context": [],
    "properties": {
     "--bf-line-height": "130%"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--font-1": "Inter Tight",
-    "--font-light": "300",
-    "--font-normal": "400",
-    "--font-medium": "500",
-    "--font-bold": "600",
-    "--font-extrabold": "700",
-    "--font-black": "800",
-    "--color-primary": "#222",
-    "--color-primary-rgb": "34, 34, 34",
-    "--color-link": "#222",
-    "--color-white": "#fff",
-    "--color-white-rgb": "255, 255, 255",
-    "--color-orange": "#FA5D29",
-    "--color-errors": "#FA5D29",
-    "--color-blue": "#49B3FC",
-    "--color-featured": "#f8f0ee",
-    "--color-red": "#FA5D29",
-    "--color-underlined": "var(--color-primary-rgb)",
-    "--color-connect": "#FF602C",
-    "--color-connect-2": "#FFAE94",
-    "--color-connect-3": "#FFC5B1",
-    "--color-inspire": "#AAEEC4",
-    "--color-inspire-2": "#C8E4D3",
-    "--color-inspire-3": "#E2F4E9",
-    "--color-awards": "#502bd8",
-    "--color-awards-2": "#6749d1",
-    "--color-awards-3": "#917eda",
-    "--color-read": "#c0ab3c",
-    "--color-read-2": "#CDC38B",
-    "--color-read-3": "#DBD6C0",
-    "--color-learn": "#FFF083",
-    "--color-learn-2": "#FFF9D0",
-    "--color-learn-3": "#fffbe2",
-    "--color-jobs": "#74bcff",
-    "--color-jobs-2": "#99ccfc",
-    "--color-jobs-3": "#b4d7f8",
-    "--text-size-small": "11px",
-    "--text-size-primary": "14px",
-    "--text-size-medium": "18px",
-    "--text-size-large": "22px",
-    "--border-gray": "#ededed",
-    "--color-dotteds-rgb": "34, 34, 34",
-    "--bg-primary": "#F8F8F8",
-    "--bg-primary-rgb": "248, 248, 248",
-    "--bg-secondary": "#222",
-    "--bg-3rd": "#ededed",
-    "--bg-4rd": "#f8f8f8",
-    "--bg-white": "white",
-    "--innerWidth": "1816px",
-    "--header-height": "71px",
-    "--gutter": "20px",
-    "--pad-inner": "52px",
-    "--color-odd-rows": "#f8f8f8",
-    "--avatar-bg": "#F8F8F8",
-    "--border-table": "#222",
-    "--border-thin": "0.5px",
-    "--alert-green": "#e0f4d9",
-    "--alert-green-rgb": "224, 244, 217",
-    "--alert-yellow": "#FFF083",
-    "--alert-yellow-rgb": "255, 240, 131",
-    "--modal-alpha": "0.7",
-    "--rounded-small": "4px",
-    "--rounded-normal": "8px",
-    "--rounded-large": "1rem",
-    "--img-resizing-site": "16 / 12",
-    "--img-resizing-paronamic": "2 / 1",
-    "--img-resizing-desktop": "19 / 10"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": "body.dark",
-   "context": [],
-   "properties": {
-    "--color-primary": "#eee",
-    "--bg-primary": "#121212"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": "body.header-dark #header",
-   "context": [],
-   "properties": {
-    "--color-primary": "#fff",
-    "--bg-primary": "#222",
-    "--sf-bg": "#383838",
-    "--button-bg": "var(--color-primary)",
-    "--button-color": "#222"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".sticker-svg",
-   "context": [],
-   "properties": {
-    "--color-1": "#ec6237",
-    "--color-2": "#e5d8ca",
-    "--color-3": "#AAEEC4",
-    "--color-4": "#502BD8",
-    "--color-5": "#222",
-    "--color-6": "#502BD8",
-    "--color-7": "#FCB6F2"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".sticker-svg.sc-orange-beige",
-   "context": [],
-   "properties": {
-    "--sc-1": "var(--color-1)",
-    "--sc-2": "var(--color-2)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".sticker-svg.sc-orange-black",
-   "context": [],
-   "properties": {
-    "--sc-1": "var(--color-1)",
-    "--sc-2": "var(--color-5)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".sticker-svg.sc-beige-purple",
-   "context": [],
-   "properties": {
-    "--sc-1": "var(--color-2)",
-    "--sc-2": "var(--color-4)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".sticker-svg.sc-green-black",
-   "context": [],
-   "properties": {
-    "--sc-1": "var(--color-3)",
-    "--sc-2": "var(--color-5)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".sticker-svg.sc-green-purple",
-   "context": [],
-   "properties": {
-    "--sc-1": "var(--color-3)",
-    "--sc-2": "var(--color-4)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".sticker-svg.sc-purple-pink",
-   "context": [],
-   "properties": {
-    "--sc-1": "var(--color-6)",
-    "--sc-2": "var(--color-7)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".sticker-svg.sc-purple-green",
-   "context": [],
-   "properties": {
-    "--sc-1": "var(--color-6)",
-    "--sc-2": "var(--color-3)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--sf-height": "42px",
-    "--sf-bg": "#ededed",
-    "--hf-bg": "var(--bg-primary)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".has-content-header, .modal .header-floating",
-   "context": [],
-   "properties": {
-    "--sf-bg": "var(--ch-bg, #f8f8f8)",
-    "--hf-bg": "var(--ch-bg, --bg-primary)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": "body.has-header-dark .header-main",
-   "context": [],
-   "properties": {
-    "--hm-color": "white",
-    "--button-color": "var(--color-primary)",
-    "--button-bg": "var(--hm-color)",
-    "--button-border": "var(--hm-color)",
-    "--sf-bg": "#333"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": "body.has-header-dark .header-main .button[class*=\"--outline\"]",
-   "context": [],
-   "properties": {
-    "--button-color": "var(--hm-color)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": "body.has-header-dark .header-main .button[class*=\"--outline\"]:hover",
-   "context": [],
-   "properties": {
-    "--button-border": "var(--color-primary)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": "body.has-header-dark:has(.nav-header-main__link.is-open) .header-main, body.has-header-dark:has(.header-main.has-search-focus) .header-main",
-   "context": [],
-   "properties": {
-    "--hm-color": "#222",
-    "--sf-bg": "var(--nf-bg-3)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": "body:has(.nav-header-main__link.is-open), body:has(.header-main.has-search-focus), body:has(.nav-header-main.is-open)",
-   "context": [
-    "@media (max-width: 1270px)"
-   ],
-   "properties": {
-    "--ch-bg": "var(--bg-primary)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": "#header",
-   "context": [],
-   "properties": {
-    "--header-mt": "8px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": "#header",
-   "context": [
-    "@media (max-width: 768px)"
-   ],
-   "properties": {
-    "--header-mt": "0px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".c-header-main",
-   "context": [],
-   "properties": {
-    "--header-height": "54px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".header-main",
-   "context": [],
-   "properties": {
-    "--hm-color": "var(--color-primary)",
-    "--hm-text": "var(--text-size-primary)",
-    "--hm-active-bg": "#ededed",
-    "--hm-active-bg-2": "var(--bg-primary)",
-    "--hm-active-color": "var(--color-primary)",
-    "--hm-active-2-color": "var(--color-primary)",
-    "--hm-active-3-color": "rgba(0,0,0,0.13)",
-    "--hm-border-alpha": "0.3",
-    "--hm-separator": "10px",
-    "--color-link": "var(--hm-color)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".header-main:has(.nav-header-main__link.is-open), .header-main.has-search-focus",
-   "context": [],
-   "properties": {
-    "--color-primary": "#222",
-    "--hm-color": "#222",
-    "--sf-bg": "var(--nf-bg-3)",
-    "--button-bg": "var(--hm-color)",
-    "--button-color": "white",
-    "--button-border": "var(--hm-color)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".nav-header-main",
-   "context": [
-    "@media (max-width: 1270px)"
-   ],
-   "properties": {
-    "--nhm--top": "calc(var(--header-height) + calc(var(--header-mt) * 2 ))"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".nav-header-main .search-inspiration",
-   "context": [
-    "@media (max-width: 1270px)"
-   ],
-   "properties": {
-    "--si-gap": "16px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".search-inspiration",
-   "context": [],
-   "properties": {
-    "--si-gap": "28px",
-    "--si-nav-width": "180px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".search-inspiration",
-   "context": [
-    "@media (max-width: 1270px)"
-   ],
-   "properties": {
-    "--si-nav-width": "100%"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".search-inspiration__menu li",
-   "context": [
-    "@media (max-width: 1270px)"
-   ],
-   "properties": {
-    "--hm-border-alpha": "0.1"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".dropdown-user",
-   "context": [],
-   "properties": {
-    "--color-hover": "rgba(255,255,255, 0.1)"
    },
    "bin": "app"
   },
@@ -1156,6 +779,511 @@
   },
   {
    "file": "inline-1",
+   "selector": ".menu-float",
+   "context": [],
+   "properties": {
+    "--menu-color-3": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".menu-float__wrapper",
+   "context": [],
+   "properties": {
+    "--bg-menu-wrapper": "34, 34, 34"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".menu-float .button[class*=\"--awwward\"], .menu-float .button[class*=\"--awwward\"]:hover",
+   "context": [],
+   "properties": {
+    "--button-bg": "var(--color-award)",
+    "--button-color": "var(--color-primary)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".menu-float .button--suggestions",
+   "context": [],
+   "properties": {
+    "--button-bg": "var(--bg-secondary)",
+    "--button-color": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".style-1",
+   "context": [],
+   "properties": {
+    "--menu-color-1": "var(--color-inspire)",
+    "--menu-color-2": "var(--color-inspire-2)",
+    "--menu-color-3": "var(--color-inspire-3)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".style-2",
+   "context": [],
+   "properties": {
+    "--menu-color-1": "var(--color-learn)",
+    "--menu-color-2": "var(--color-learn-2)",
+    "--menu-color-3": "var(--color-learn-3)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".style-3",
+   "context": [],
+   "properties": {
+    "--menu-color-1": "var(--color-connect)",
+    "--menu-color-2": "var(--color-connect-2)",
+    "--menu-color-3": "var(--color-connect-3)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".style-4",
+   "context": [],
+   "properties": {
+    "--menu-color-1": "var(--color-read)",
+    "--menu-color-2": "var(--color-read-2)",
+    "--menu-color-3": "var(--color-read-3)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".style-5",
+   "context": [],
+   "properties": {
+    "--menu-color-1": "var(--color-awards)",
+    "--menu-color-2": "var(--color-awards-2)",
+    "--menu-color-3": "var(--color-awards-3)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".style-6",
+   "context": [],
+   "properties": {
+    "--menu-color-1": "var(--color-jobs)",
+    "--menu-color-2": "var(--color-jobs-2)",
+    "--menu-color-3": "var(--color-jobs-3)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--sf-height": "42px",
+    "--sf-bg": "#ededed",
+    "--hf-bg": "var(--bg-primary)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".has-content-header, .modal .header-floating",
+   "context": [],
+   "properties": {
+    "--sf-bg": "var(--ch-bg, #f8f8f8)",
+    "--hf-bg": "var(--ch-bg, --bg-primary)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": "body.has-header-dark .header-main",
+   "context": [],
+   "properties": {
+    "--hm-color": "white",
+    "--button-color": "var(--color-primary)",
+    "--button-bg": "var(--hm-color)",
+    "--button-border": "var(--hm-color)",
+    "--sf-bg": "#333"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": "body.has-header-dark .header-main .button[class*=\"--outline\"]",
+   "context": [],
+   "properties": {
+    "--button-color": "var(--hm-color)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": "body.has-header-dark .header-main .button[class*=\"--outline\"]:hover",
+   "context": [],
+   "properties": {
+    "--button-border": "var(--color-primary)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": "body.has-header-dark:has(.nav-header-main__link.is-open) .header-main, body.has-header-dark:has(.header-main.has-search-focus) .header-main",
+   "context": [],
+   "properties": {
+    "--hm-color": "#222",
+    "--sf-bg": "var(--nf-bg-3)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": "body:has(.nav-header-main__link.is-open), body:has(.header-main.has-search-focus), body:has(.nav-header-main.is-open)",
+   "context": [
+    "@media (max-width: 1270px)"
+   ],
+   "properties": {
+    "--ch-bg": "var(--bg-primary)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": "#header",
+   "context": [],
+   "properties": {
+    "--header-mt": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": "#header",
+   "context": [
+    "@media (max-width: 768px)"
+   ],
+   "properties": {
+    "--header-mt": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".c-header-main",
+   "context": [],
+   "properties": {
+    "--header-height": "54px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".header-main",
+   "context": [],
+   "properties": {
+    "--hm-color": "var(--color-primary)",
+    "--hm-text": "var(--text-size-primary)",
+    "--hm-active-bg": "#ededed",
+    "--hm-active-bg-2": "var(--bg-primary)",
+    "--hm-active-color": "var(--color-primary)",
+    "--hm-active-2-color": "var(--color-primary)",
+    "--hm-active-3-color": "rgba(0,0,0,0.13)",
+    "--hm-border-alpha": "0.3",
+    "--hm-separator": "10px",
+    "--color-link": "var(--hm-color)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".header-main:has(.nav-header-main__link.is-open), .header-main.has-search-focus",
+   "context": [],
+   "properties": {
+    "--color-primary": "#222",
+    "--hm-color": "#222",
+    "--sf-bg": "var(--nf-bg-3)",
+    "--button-bg": "var(--hm-color)",
+    "--button-color": "white",
+    "--button-border": "var(--hm-color)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".nav-header-main",
+   "context": [
+    "@media (max-width: 1270px)"
+   ],
+   "properties": {
+    "--nhm--top": "calc(var(--header-height) + calc(var(--header-mt) * 2 ))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".nav-header-main .search-inspiration",
+   "context": [
+    "@media (max-width: 1270px)"
+   ],
+   "properties": {
+    "--si-gap": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".search-inspiration",
+   "context": [],
+   "properties": {
+    "--si-gap": "28px",
+    "--si-nav-width": "180px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".search-inspiration",
+   "context": [
+    "@media (max-width: 1270px)"
+   ],
+   "properties": {
+    "--si-nav-width": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".search-inspiration__menu li",
+   "context": [
+    "@media (max-width: 1270px)"
+   ],
+   "properties": {
+    "--hm-border-alpha": "0.1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".dropdown-user",
+   "context": [],
+   "properties": {
+    "--color-hover": "rgba(255,255,255, 0.1)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".footer__grid",
+   "context": [],
+   "properties": {
+    "--grid-min": "18%",
+    "--menu-margin": "clamp(10px, 4vw, 20px)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".footer__grid",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--grid-min": "40%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--font-1": "Inter Tight",
+    "--font-light": "300",
+    "--font-normal": "400",
+    "--font-medium": "500",
+    "--font-bold": "600",
+    "--font-extrabold": "700",
+    "--font-black": "800",
+    "--color-primary": "#222",
+    "--color-primary-rgb": "34, 34, 34",
+    "--color-link": "#222",
+    "--color-white": "#fff",
+    "--color-white-rgb": "255, 255, 255",
+    "--color-orange": "#FA5D29",
+    "--color-errors": "#FA5D29",
+    "--color-blue": "#49B3FC",
+    "--color-featured": "#f8f0ee",
+    "--color-red": "#FA5D29",
+    "--color-underlined": "var(--color-primary-rgb)",
+    "--color-connect": "#FF602C",
+    "--color-connect-2": "#FFAE94",
+    "--color-connect-3": "#FFC5B1",
+    "--color-inspire": "#AAEEC4",
+    "--color-inspire-2": "#C8E4D3",
+    "--color-inspire-3": "#E2F4E9",
+    "--color-awards": "#502bd8",
+    "--color-awards-2": "#6749d1",
+    "--color-awards-3": "#917eda",
+    "--color-read": "#c0ab3c",
+    "--color-read-2": "#CDC38B",
+    "--color-read-3": "#DBD6C0",
+    "--color-learn": "#FFF083",
+    "--color-learn-2": "#FFF9D0",
+    "--color-learn-3": "#fffbe2",
+    "--color-jobs": "#74bcff",
+    "--color-jobs-2": "#99ccfc",
+    "--color-jobs-3": "#b4d7f8",
+    "--text-size-small": "11px",
+    "--text-size-primary": "14px",
+    "--text-size-medium": "18px",
+    "--text-size-large": "22px",
+    "--border-gray": "#ededed",
+    "--color-dotteds-rgb": "34, 34, 34",
+    "--bg-primary": "#F8F8F8",
+    "--bg-primary-rgb": "248, 248, 248",
+    "--bg-secondary": "#222",
+    "--bg-3rd": "#ededed",
+    "--bg-4rd": "#f8f8f8",
+    "--bg-white": "white",
+    "--innerWidth": "1816px",
+    "--header-height": "71px",
+    "--gutter": "20px",
+    "--pad-inner": "52px",
+    "--color-odd-rows": "#f8f8f8",
+    "--avatar-bg": "#F8F8F8",
+    "--border-table": "#222",
+    "--border-thin": "0.5px",
+    "--alert-green": "#e0f4d9",
+    "--alert-green-rgb": "224, 244, 217",
+    "--alert-yellow": "#FFF083",
+    "--alert-yellow-rgb": "255, 240, 131",
+    "--modal-alpha": "0.7",
+    "--rounded-small": "4px",
+    "--rounded-normal": "8px",
+    "--rounded-large": "1rem",
+    "--img-resizing-site": "16 / 12",
+    "--img-resizing-paronamic": "2 / 1",
+    "--img-resizing-desktop": "19 / 10"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": "body.dark",
+   "context": [],
+   "properties": {
+    "--color-primary": "#eee",
+    "--bg-primary": "#121212"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": "body.header-dark #header",
+   "context": [],
+   "properties": {
+    "--color-primary": "#fff",
+    "--bg-primary": "#222",
+    "--sf-bg": "#383838",
+    "--button-bg": "var(--color-primary)",
+    "--button-color": "#222"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".sticker-svg",
+   "context": [],
+   "properties": {
+    "--color-1": "#ec6237",
+    "--color-2": "#e5d8ca",
+    "--color-3": "#AAEEC4",
+    "--color-4": "#502BD8",
+    "--color-5": "#222",
+    "--color-6": "#502BD8",
+    "--color-7": "#FCB6F2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".sticker-svg.sc-orange-beige",
+   "context": [],
+   "properties": {
+    "--sc-1": "var(--color-1)",
+    "--sc-2": "var(--color-2)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".sticker-svg.sc-orange-black",
+   "context": [],
+   "properties": {
+    "--sc-1": "var(--color-1)",
+    "--sc-2": "var(--color-5)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".sticker-svg.sc-beige-purple",
+   "context": [],
+   "properties": {
+    "--sc-1": "var(--color-2)",
+    "--sc-2": "var(--color-4)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".sticker-svg.sc-green-black",
+   "context": [],
+   "properties": {
+    "--sc-1": "var(--color-3)",
+    "--sc-2": "var(--color-5)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".sticker-svg.sc-green-purple",
+   "context": [],
+   "properties": {
+    "--sc-1": "var(--color-3)",
+    "--sc-2": "var(--color-4)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".sticker-svg.sc-purple-pink",
+   "context": [],
+   "properties": {
+    "--sc-1": "var(--color-6)",
+    "--sc-2": "var(--color-7)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".sticker-svg.sc-purple-green",
+   "context": [],
+   "properties": {
+    "--sc-1": "var(--color-6)",
+    "--sc-2": "var(--color-3)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
    "selector": ".link-underlined--white",
    "context": [],
    "properties": {
@@ -1294,6 +1422,35 @@
    "properties": {
     "--minthumb": "400px",
     "--itemDisplay": "block"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".grid-library",
+   "context": [],
+   "properties": {
+    "--grid-columns": "3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".grid-library",
+   "context": [
+    "@media (max-width: 900px)"
+   ],
+   "properties": {
+    "--grid-columns": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ".card-blog-new",
+   "context": [],
+   "properties": {
+    "--card-bg": "var(--bg-white)"
    },
    "bin": "app"
   },
@@ -1625,131 +1782,6 @@
    "properties": {
     "--marquee-bg": "var(--sf-bg)",
     "--marquee-color": "var(--color-primary)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".menu-float",
-   "context": [],
-   "properties": {
-    "--menu-color-3": "#fff"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".menu-float__wrapper",
-   "context": [],
-   "properties": {
-    "--bg-menu-wrapper": "34, 34, 34"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".menu-float .button[class*=\"--awwward\"], .menu-float .button[class*=\"--awwward\"]:hover",
-   "context": [],
-   "properties": {
-    "--button-bg": "var(--color-award)",
-    "--button-color": "var(--color-primary)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".menu-float .button--suggestions",
-   "context": [],
-   "properties": {
-    "--button-bg": "var(--bg-secondary)",
-    "--button-color": "#fff"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".style-1",
-   "context": [],
-   "properties": {
-    "--menu-color-1": "var(--color-inspire)",
-    "--menu-color-2": "var(--color-inspire-2)",
-    "--menu-color-3": "var(--color-inspire-3)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".style-2",
-   "context": [],
-   "properties": {
-    "--menu-color-1": "var(--color-learn)",
-    "--menu-color-2": "var(--color-learn-2)",
-    "--menu-color-3": "var(--color-learn-3)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".style-3",
-   "context": [],
-   "properties": {
-    "--menu-color-1": "var(--color-connect)",
-    "--menu-color-2": "var(--color-connect-2)",
-    "--menu-color-3": "var(--color-connect-3)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".style-4",
-   "context": [],
-   "properties": {
-    "--menu-color-1": "var(--color-read)",
-    "--menu-color-2": "var(--color-read-2)",
-    "--menu-color-3": "var(--color-read-3)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".style-5",
-   "context": [],
-   "properties": {
-    "--menu-color-1": "var(--color-awards)",
-    "--menu-color-2": "var(--color-awards-2)",
-    "--menu-color-3": "var(--color-awards-3)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".style-6",
-   "context": [],
-   "properties": {
-    "--menu-color-1": "var(--color-jobs)",
-    "--menu-color-2": "var(--color-jobs-2)",
-    "--menu-color-3": "var(--color-jobs-3)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".footer__grid",
-   "context": [],
-   "properties": {
-    "--grid-min": "18%",
-    "--menu-margin": "clamp(10px, 4vw, 20px)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "inline-1",
-   "selector": ".footer__grid",
-   "context": [
-    "@media (max-width: 1024px)"
-   ],
-   "properties": {
-    "--grid-min": "40%"
    },
    "bin": "app"
   },

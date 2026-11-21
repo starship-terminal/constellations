@@ -4,7 +4,7 @@ How the measured components combine on each public surface of awwwards.com (sign
 
 ## Chrome: the header
 
-The header is a 54px bar (`header`, same on mobile) — transparent on desktop, a #f8f8f8 `--bg-primary` fill on mobile. Left: the wordmark (`logo`, 30x16 SVG). Middle: the nav row — Explore, Directory, Academy, Jobs, Market (`nav-item`, 14px Inter Tight 500). Right: Be Pro (`bepro-link`, an 80x42 ink #222 pill, 8px radius, white label — it lifts to #383838 on hover), the outlined Submit Website (`submit-cta`, 139x42, transparent at rest — it fills #383838 and inverts the label on hover), and the Log in / Sign Up links, which did not render on the captured headless loads (recorded missing, not absent). Focus is the browser's `#005fcc` ring.
+The header is a 54px bar (`header`, same on mobile) — transparent on desktop, a #f8f8f8 `--bg-primary` fill on mobile. Left: the wordmark (`logo`, 30x16 SVG). Middle: the nav row — Explore (a dropdown, not a link), Directory, Academy, Jobs, Market (`nav-item`, 14px Inter Tight 500). Right: a search field ("Search by Inspiration"), Log in, Sign Up, Be Pro (`bepro-link`, an ink #222 pill, 8px radius, white label — it lifts to #383838 on hover), and the outlined Submit Website (`submit-cta`, transparent at rest — it fills #383838 and inverts the label on hover). Log in and Sign Up are visible on the 2026-11-21 shots and were not clicked. Focus is the browser's `#005fcc` ring. The Explore dropdown is [home-light-explore-open](screenshots/home-light-explore-open.png).
 
 At 390px the bar keeps wordmark + `m-menu-button` (54x54). Its own toggle opens the mobile menu (`m-menu-open`); rows inside it are `m-nav-link` (390x54 full-width rows). The open menu is [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
 
@@ -12,7 +12,7 @@ At 390px the bar keeps wordmark + `m-menu-button` (54x54). Its own toggle opens 
 
 `/websites/` opens with the title (`grid-title`, 14px Inter Tight 600) and the filter bar — 42px `.nav-filters__item` tabs (Awards, Category, Tag, Technology) on the #f8f8f8 `--bg-primary` strip (`filter-item`). A tab's own toggle opens `filter-dropdown` (280x346, #f8f8f8 panel): rows are `filter-option` (264x40) that pick up the #ededed `--bg-3rd` fill on hover — [websites-light-filter-open](screenshots/websites-light-filter-open.png).
 
-Cards (`grid-card`, 432x324 at 1440 — three across inside the 1816px `--innerWidth`) are 4px-radius image+caption rows (the home-page `site-card` is the 14px one): the site screenshot inside `grid-card-link` over a 15px Inter Tight 300 caption row. Hovering a card reveals the rollover layer (`figure-rollover__hover`) with the centred Vote Now button — it stayed `display:none` for headless measurement (recorded gap on `card-cta`); the layer shows in [home-light-card-hover](screenshots/home-light-card-hover.png).
+Cards (`grid-card`, 432x324 at 1440 — three across inside the 1816px `--innerWidth`) are 4px-radius image+caption rows (the home-page `site-card` is the 14px one): the site screenshot inside `grid-card-link` over a 15px Inter Tight 300 caption row. Hovering a card reveals the rollover layer (`figure-rollover__hover`) with the centred Vote Now button. It stayed `display:none` for headless measurement (recorded gap on `card-cta`). The 2026-11-21 hover shot timed out, so that state is Not captured.
 
 ## Site detail
 
