@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fenty Beauty public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #2d2929;
+    --muted: #666666;
+    --promo: #000000;
+    --on-promo: #ffffff;
+    --hero: #fdcbd4;
+    --danger: #bd0100;
+    --font: Brown, -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif;
+    --button: "Brown Optical", Brown, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); }
+  .promo { height: 37px; display: flex; align-items: center; justify-content: center; background: var(--promo); color: var(--on-promo); font-size: 12px; }
+  .bar { height: 64px; display: flex; align-items: center; justify-content: center; }
+  .word { font-size: 16px; font-weight: 700; letter-spacing: 0.16px; text-transform: uppercase; }
+  .nav { display: flex; gap: 22px; justify-content: center; padding: 8px 40px 20px; font-size: 14px; }
+  main { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
+  .hero { background: var(--hero); padding: 72px 60px; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.36px; text-transform: uppercase; margin: 0 0 16px; }
+  h1 { font-size: 48px; font-weight: 700; line-height: 48px; letter-spacing: 0.48px; margin: 0 0 16px; max-width: 520px; }
+  .deck { font-size: 16px; line-height: 22px; max-width: 480px; }
+  .cta { display: inline-flex; align-items: center; height: 40px; margin-top: 24px; padding: 0 20px; background: var(--promo); color: var(--on-promo); font-family: var(--button); font-size: 12px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; text-decoration: none; }
+  .stage { padding: 48px 40px; }
+  h2 { font-size: 24px; font-weight: 700; letter-spacing: 0.24px; text-transform: uppercase; line-height: 24px; margin: 0 0 16px; }
+  .price { font-size: 16px; color: var(--muted); }
+  .compare { font-size: 16px; color: var(--danger); text-decoration: line-through; margin-left: 8px; }
+  .add { display: inline-flex; align-items: center; justify-content: center; height: 40px; margin-top: 20px; padding: 0 20px; background: var(--promo); color: var(--on-promo); font-family: var(--button); font-size: 12px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+  .swatch { width: 120px; font-size: 12px; }
+  .chip { height: 48px; border: 1px solid #d8d8d8; }
+</style>
+</head>
+<body>
+  <div class="promo">Create an account to unlock free U.S. standard shipping + returns. | SIGN IN | SIGN UP</div>
+  <header class="bar"><div class="word">Fenty Beauty</div></header>
+  <nav class="nav">
+    <span>The Holiday Windows Collection</span>
+    <span>New + Bestsellers</span>
+    <span>Makeup</span>
+    <span>Skincare</span>
+    <span>Body</span>
+    <span>Hair</span>
+    <span>Fragrance</span>
+    <span>Sale</span>
+    <span>Discover</span>
+  </nav>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Gift guide</p>
+      <h1>Gifts so good you’ll want ’em too</h1>
+      <p class="deck">Peek through the Holiday Windows Collection + find something for everyone on your list.</p>
+      <a class="cta" href="#gift">Get Giftin'</a>
+    </section>
+    <section class="stage">
+      <h2>Glossy Posse IX 4-Piece Lip Set</h2>
+      <div><span class="price">$85.00 SGD</span><span class="compare">$150.00 SGD</span></div>
+      <div class="add">Add to Bag</div>
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:#ffffff"></div>page #ffffff</div>
+        <div class="swatch"><div class="chip" style="background:#2d2929"></div>ink #2d2929</div>
+        <div class="swatch"><div class="chip" style="background:#000000"></div>promo #000000</div>
+        <div class="swatch"><div class="chip" style="background:#fdcbd4"></div>hero #fdcbd4</div>
+        <div class="swatch"><div class="chip" style="background:#666666"></div>muted #666666</div>
+        <div class="swatch"><div class="chip" style="background:#bd0100"></div>danger #bd0100</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
