@@ -1,0 +1,51 @@
+{
+  "product": "Patagonia",
+  "domain": "patagonia.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in",
+      "url": "https://www.patagonia.com/account/login/",
+      "title": "Log in - Patagonia Account",
+      "painted": true,
+      "headings": ["Log in."],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Password Help?", "Log in", "Create One Now"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Both fields were empty. Log in was not clicked. Password Help was not opened. No identity provider was on the wall."
+    },
+    {
+      "control": "Create One Now, and the footer Create an Account link",
+      "url": "https://www.patagonia.com/account/login/?action=register",
+      "title": "Register - Patagonia Account",
+      "painted": true,
+      "headings": ["Create an Account."],
+      "asksFor": [
+        { "label": "First Name", "type": "text", "required": true },
+        { "label": "Last Name", "type": "text", "required": true },
+        { "label": "Email", "type": "email", "required": true },
+        { "label": "Confirm Email", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true },
+        { "label": "Confirm Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Receive emails about new products, sales and store events.", "Create Account", "reCAPTCHA"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Every field was empty. The email checkbox was not changed. Create Account was not clicked. The reCAPTCHA was not solved."
+    }
+  ]
+}
