@@ -1,0 +1,92 @@
+{
+  "slug": "ia",
+  "product": "iA Writer",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-offered",
+  "route": "public Playwright, signed out, https://ia.net/writer. No login, signup, or identity-provider control on the Writer pages. No email, password, or code was typed. No form was submitted. No identity provider was clicked. Download buttons were not pressed. Checkout links were not followed.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "iA to /",
+        "Writer to /writer",
+        "Support to /writer/support",
+        "Buy to /writer/pricing",
+        "Download to /writer/download",
+        "Menu summary"
+      ],
+      "reached": [
+        "/writer",
+        "/writer/pricing",
+        "/writer/download",
+        "/writer/support",
+        "/downloads/writer",
+        "/topics/category/writer",
+        "Menu",
+        "quote more"
+      ]
+    },
+    "settings": {
+      "items": [
+        "No account settings. No theme switch. Locale links sit in the menu and were not opened."
+      ],
+      "reached": []
+    },
+    "create": {
+      "items": [
+        "Download for Mac",
+        "Download for Windows",
+        "Download on the App Store",
+        "Pricing checkout is a store link, not a card form",
+        "Notebook shipping dialog",
+        "Newsletter email field"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-menu.png",
+    "screenshots/home-light-quote.png",
+    "screenshots/home-light-full.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-full.png",
+    "screenshots/download-light-default.png",
+    "screenshots/download-light-full.png",
+    "screenshots/support-light-default.png",
+    "screenshots/support-light-full.png",
+    "screenshots/extras-light-default.png",
+    "screenshots/extras-light-full.png",
+    "screenshots/topics-light-default.png",
+    "screenshots/topics-light-full.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-download-light-default.png",
+    "screenshots/mobile-pricing-light-default.png",
+    "screenshots/mobile-pricing-light-full.png"
+  ],
+  "gaps": [
+    "No login wall on the public Writer site, so no signed-in editor, settings, or account chrome.",
+    "Download buttons were not pressed.",
+    "App Store and checkout store links were not opened.",
+    "The Notebook shipping dialog screenshot was not committed because it marks a region from the visitor network.",
+    "Mobile home full-page tiles failed a dimension check and were not committed.",
+    "Windows download pill was absent on the Mac homepage.",
+    "Newsletter and support search were left empty."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "code",
+    "newsletter form",
+    "support search",
+    "download buttons",
+    "identity providers",
+    "checkout",
+    "captcha"
+  ]
+}
