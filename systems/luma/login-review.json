@@ -1,0 +1,102 @@
+{
+  "product": "Luma",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "signed_in": false,
+  "origin": "https://lu.ma",
+  "landed": "https://luma.com/",
+  "offered": {
+    "nav": {
+      "items": [
+        "Spark logo (not a link)",
+        "Sign In /signin?next=%2Fhome",
+        "Discover Events /discover",
+        "Pricing /pricing (footer)",
+        "App /app (footer)",
+        "Terms /terms",
+        "Privacy /privacy-policy",
+        "Security /security",
+        "DMCA /dmca",
+        "City menu on Popular Events"
+      ],
+      "reached": [
+        "Sign In /signin?next=%2Fhome",
+        "Discover Events /discover",
+        "Pricing /pricing",
+        "App /app",
+        "Terms /terms",
+        "City menu"
+      ],
+      "note": "Signed out. The landing header is the spark and Sign In. Discover, Pricing, and App sit in the footer. Inner pages add Luma Home, Discover Events, and Sign In. The city control opens a menu on the homepage. Phone width has no Open menu button. Google and Passkey were not clicked. Help, Instagram, X, and mailto leave the site and were not opened."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings surface is offered signed out. No theme switch was found. Account preferences sit behind the login wall."
+    },
+    "create": {
+      "items": [
+        "Create Your First Event /create",
+        "Get Started /signin",
+        "Get Luma Plus /calendar/manage/plus",
+        "Continue with Email",
+        "Sign in with Google",
+        "Sign in with Passkey",
+        "Subscribe on a category page"
+      ],
+      "reached": [
+        "Create Your First Event /create"
+      ],
+      "note": "Create opens a public composer with a sign-in card over it. The card was not submitted. Get Started goes to the same login wall. Get Luma Plus was not opened. Subscribe was not clicked. Continue with Email, Google, and Passkey were not clicked."
+    }
+  },
+  "screens": [
+    "screenshots/app-light-default.png",
+    "screenshots/category-light-default.png",
+    "screenshots/category-light-full.png",
+    "screenshots/create-light-default.png",
+    "screenshots/discover-light-default.png",
+    "screenshots/discover-light-full.png",
+    "screenshots/event-dark-default.png",
+    "screenshots/event-dark-full.png",
+    "screenshots/home-light-city-menu.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/mobile-discover-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-pricing-light-default.png",
+    "screenshots/mobile-signin-light-default.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-full.png",
+    "screenshots/pricing-light-monthly.png",
+    "screenshots/signin-light-default.png",
+    "screenshots/terms-light-default.png",
+    "screenshots/terms-light-full.png"
+  ],
+  "gaps": [
+    "Signed-in Events, Calendars, Create, Notifications, Preferences, and Payment were not entered. Older shots of those screens were removed from this public pass.",
+    "Sign in with Google and Sign in with Passkey are on the login card and were not clicked.",
+    "Use Phone Number was not clicked. No phone number was typed.",
+    "Get Luma Plus was not opened. Checkout was not started.",
+    "Follow, Contact the Host, Report Event, and the access-code field were not used.",
+    "The phone city list is inline under the fold. A tap did not open the desktop popup, so no phone menu shot was kept.",
+    "No cookie dialog was present."
+  ],
+  "not_submitted": [
+    "sign in",
+    "sign up",
+    "continue with email",
+    "sign in with Google",
+    "sign in with Passkey",
+    "use phone number",
+    "create event",
+    "get luma plus",
+    "subscribe",
+    "follow",
+    "contact the host",
+    "report event",
+    "access code",
+    "any form"
+  ]
+}

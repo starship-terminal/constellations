@@ -1,6 +1,6 @@
 # Component measurements: Luma
 
-Computed styles read from luma.com on 2026-11-18 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). Marketing pages paint `html.theme-root.light`; the public event page paints `html.theme-root.dark` on its own. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from luma.com on 2026-11-21 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). Marketing pages paint `html.theme-root.light`; the public event page paints `html.theme-root.dark` on its own. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -690,28 +690,28 @@ Crops: `signin-title-default.png`.
 
 Email field. The email input (8px radius). Sample text was typed and deleted. Continue was never pressed.
 
-Page: signin. Selector: `input.lux-input`. States: default, focused.
+Page: signin. Selector: `input.lux-input`. States: default, focused, filled.
 
-| Property | default | focused |
-|---|---|---|
-| Size (w x h) | 320 x 38 | = |
-| Padding | 10px 14px | = |
-| Border | 1px solid #151515 @ 0.08 | 1px solid #151515 |
-| Radius | 8px | = |
-| Background | #ffffff | = |
-| Background image | -webkit-linear-gradient(top, #ffffff @ 0, #ffffff @ 0) | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | -apple-system 16px/16px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #151515 | = |
-| Transition | all 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = |
-| Cursor | text | = |
-| Placeholder | #151515 @ 0.32, opacity 1 | = |
-| Painted layers | input.lux-input 320.0x38.0 bg #ffffff image -webkit-linear-gradient(top, #ffffff @ 0, #ffffff @ 0) border T:1px solid #151515 @ 0.08 / R:1px solid #151515 @ 0.08 / B:1px solid #151515 @ 0.08 / L:1px solid #151515 @ 0.08 r 8px | input.lux-input 320.0x38.0 bg #ffffff image -webkit-linear-gradient(top, #ffffff @ 0, #ffffff @ 0) border T:1px solid #151515 / R:1px solid #151515 / B:1px solid #151515 / L:1px solid #151515 r 8px |
-| How | at rest | clicked into the field |
+| Property | default | focused | filled |
+|---|---|---|---|
+| Size (w x h) | 320 x 38 | = | = |
+| Padding | 10px 14px | = | = |
+| Border | 1px solid #151515 @ 0.08 | 1px solid #151515 | 1px solid #151515 |
+| Radius | 8px | = | = |
+| Background | #ffffff | = | = |
+| Background image | -webkit-linear-gradient(top, #ffffff @ 0, #ffffff @ 0) | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | -apple-system 16px/16px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #151515 | = | = |
+| Transition | all 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | text | = | = |
+| Placeholder | #151515 @ 0.32, opacity 1 | = | = |
+| Painted layers | input.lux-input 320.0x38.0 bg #ffffff image -webkit-linear-gradient(top, #ffffff @ 0, #ffffff @ 0) border T:1px solid #151515 @ 0.08 / R:1px solid #151515 @ 0.08 / B:1px solid #151515 @ 0.08 / L:1px solid #151515 @ 0.08 r 8px | input.lux-input 320.0x38.0 bg #ffffff image -webkit-linear-gradient(top, #ffffff @ 0, #ffffff @ 0) border T:1px solid #151515 / R:1px solid #151515 / B:1px solid #151515 / L:1px solid #151515 r 8px | input.lux-input 320.0x38.0 bg #ffffff image -webkit-linear-gradient(top, #ffffff @ 0, #ffffff @ 0) border T:1px solid #151515 / R:1px solid #151515 / B:1px solid #151515 / L:1px solid #151515 r 8px |
+| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
 
-Crops: `email-field-default.png`, `email-field-focused.png`.
+Crops: `email-field-default.png`, `email-field-focused.png`, `email-field-filled.png`.
 
 #### phone-toggle
 
