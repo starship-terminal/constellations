@@ -2357,7 +2357,7 @@
       "description": "Meet Gemini, Google's AI assistant",
       "status": "captured",
       "package": "systems/gemini",
-      "notes": "https://gemini.google.com/app has no site email field. Sign in is a Google account button. No code was sent.",
+      "notes": "https://gemini.google.com/app has no site email field. Sign in is a Google account button. No code was sent. Public walk 2026-11-21: the homepage loaded, then the worker died on a usage limit before writing the package. No pull request. No package invented. login-probe stays oauth-only. login-extracted stays not-started. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "oauth-only",
       "batch": 7
@@ -6381,7 +6381,7 @@
       "description": "Organized work communication for flexible teams",
       "status": "pending",
       "package": null,
-      "notes": "https://twist.com/a/ landed on Sign up or log in. Session was not present. Skipped.",
+      "notes": "https://twist.com/a/ landed on Sign up or log in. Session was not present. Skipped. Public walk 2026-11-21: the marketing homepage loaded, then the worker died on a usage limit before writing the package. No pull request. No package invented. login-probe stays closed. login-extracted stays not-started. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 19
