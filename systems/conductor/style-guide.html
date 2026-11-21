@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Conductor tokens</title>
+<style>
+  :root, [data-theme="dark"] {
+    --page: #141110;
+    --surface: #211e1c;
+    --text: #eae8e6;
+    --muted: #a5a09c;
+    --accent: #f3f2f1;
+    --accent-text: #141110;
+    --border: #ffffff1a;
+  }
+  [data-theme="light"] {
+    --page: #ffffff;
+    --surface: #fafaf9;
+    --text: #2c2826;
+    --muted: #756f6c;
+    --accent: #413030;
+    --accent-text: #f3f2f1;
+    --border: #eae8e6;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font: 16px/1.5 ui-sans-serif, system-ui, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 36px; line-height: 40px; letter-spacing: -0.9px; font-weight: 600; }
+  button, .pill {
+    background: var(--accent);
+    color: var(--accent-text);
+    border: 0;
+    border-radius: 6px;
+    height: 40px;
+    padding: 0 16px;
+    font: 600 14px/20px ui-sans-serif, system-ui, sans-serif;
+  }
+  .swatch { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 32px; }
+  .swatch div { width: 96px; }
+  .chip { height: 48px; border-radius: 6px; border: 1px solid var(--border); }
+  .muted { color: var(--muted); }
+  .surface { background: var(--surface); padding: 16px; border-radius: 8px; }
+  nav { display: flex; justify-content: space-between; margin-bottom: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <nav>
+    <strong>Conductor</strong>
+    <button type="button" id="theme">Theme</button>
+  </nav>
+  <h1>Run a team of coding agents in the cloud.</h1>
+  <p class="muted">Public marketing tokens, measured 2026-11-22. Geist is the intended sans. This page uses the system stack.</p>
+  <p><span class="pill">Get Conductor</span></p>
+  <div class="swatch">
+    <div><div class="chip" style="background:var(--page)"></div><small>page</small></div>
+    <div><div class="chip" style="background:var(--surface)"></div><small>surface</small></div>
+    <div><div class="chip" style="background:var(--text)"></div><small>text</small></div>
+    <div><div class="chip" style="background:var(--muted)"></div><small>muted</small></div>
+    <div><div class="chip" style="background:var(--accent)"></div><small>accent</small></div>
+    <div><div class="chip" style="background:var(--border)"></div><small>border</small></div>
+  </div>
+  <div class="surface">
+    <p>Changelog, Docs, and Sign in stay quiet. Download is the light pill.</p>
+  </div>
+</main>
+<script>
+  document.getElementById('theme').onclick = () => {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+  };
+</script>
+</body>
+</html>
