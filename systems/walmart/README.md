@@ -1,14 +1,19 @@
 # Walmart
 
-Public signed-out surfaces of Walmart, captured on 2026-11-19 from https://www.walmart.com/ with no account. Desktop captures are a 1440 by 900 CSS viewport at device pixel ratio 2. The phone capture is a 390 by 844 CSS viewport at device pixel ratio 2. The site paints one theme. `color-scheme` is `normal`, and a dark `prefers-color-scheme` left the header blue.
+Public signed-out surfaces of Walmart, refreshed on 2026-11-21 from https://www.walmart.com/ with no account. This package already existed on origin/main from a 2026-11-19 capture. The slug is `walmart`.
 
-The T3 preview tab loaded the home page and supplied the custom properties and the first computed styles. It then stopped producing screenshot frames. Screenshots and the remaining computed styles come from headless Chromium on the same public home URL, which returned 200 with no Cloudflare challenge. Help, Walmart+, and a missing route returned a bot block. Those were not screenshotted.
+Desktop captures are a 1440 CSS viewport. The phone captures are a 390 by 844 CSS viewport. The site paints one theme. `color-scheme` is `normal`.
+
+The T3 preview tab loaded the home page, the Departments and Services lists, the account menu, the toys category, one product page, and Walmart+ at phone width. Headless Chromium confirmed the home controls and was then sent to `/blocked` on inner routes. Those blocked shots were discarded.
+
+Sign-in and signup were not photographed as empty forms. Following "Sign in or create account" landed on a "Robot or human?" captcha at identity.walmart.com. It was not solved. Nothing was typed. Checkout was not entered. `catalog.json` was not edited. `login-extracted` stays not-started.
 
 | File | What it holds |
 |---|---|
 | [README.md](README.md) | This file |
+| [site-tree.md](site-tree.md) | Which controls open which pages, menus, and walls |
 | [icon.png](icon.png) | 128 px site icon |
-| [DESIGN.md](DESIGN.md) | Generated from the tokens. Do not edit |
+| [DESIGN.md](DESIGN.md) | Generated from the tokens on 2026-11-19. Not regenerated on this refresh, so the catalog stays as it is |
 | [tokens.json](tokens.json) | DTCG tokens, one light set, each value sourced |
 | [style-guide.html](style-guide.html) | Specimens drawn from the tokens |
 | [components.md](components.md) | Component inventory and gaps |
@@ -28,8 +33,8 @@ Read this before designing in this style. Take every value from [tokens.json](to
 
 1. Paint the storefront bar in true blue.
 2. Use a pill for search and chips.
-3. Set prices as a split bold number.
-4. Leave product tiles flat.
+3. Set the current price in green, with the old price beside it.
+4. Leave product tiles flat, and put the buy box on a pale surface.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -48,7 +53,7 @@ Fonts: `core.fontFamily.everyday-sans` is EverydaySans, then 4 fallbacks. Scales
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 6 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -72,66 +77,65 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Walmart's spark 
 
 ## How the values were read
 
-Custom properties were read from `getComputedStyle(document.documentElement)` on the home page in the T3 preview tab at 1440 by 900, after the page settled. The root exposes about 1,245 custom properties: `--color-core-*`, `--ld-semantic-*`, `--ld-primitive-*`, and `--wcp-semantic-*`. Computed component styles were read the same way, then again in headless Chromium on the home URL. Corporate and privacy were measured in headless Chromium after `load`. Hover was a real pointer hover on Departments. Focus was `element.focus()` on Departments and the search field.
+Custom properties were read from `getComputedStyle(document.documentElement)` on the home page in the T3 preview tab on 2026-11-19, and again on the toys category and the product page on 2026-11-21. The root exposes about 1,245 custom properties. Headless Chromium on 2026-11-21 still returned `--color-core-blue-100` `#0053e2`, `--color-core-spark-100` `#ffc220`, and `--ld-semantic-color-top-nav-fill` `#0053e2`, with `varCount` 0 in the first probe and 40 named colours in the saved dump. Computed component styles were read the same way.
 
-The storefront root font size is 16px, so a `rem` there is 16px. corporate.walmart.com uses a 10px root. Headless Chromium did not expose the custom properties (`varCount` 0). Those values come from the preview tab only. The two agreed on the search field, Departments, the header blue, and EverydaySans.
+On 2026-11-21 the toys category Add control computed 77 by 40, fill `rgb(0, 83, 226)`, white 16px / 700 EverydaySans, radius 1000px. The product title computed 18px / 700, color `rgb(46, 47, 50)`. Add to cart computed 126 by 40, the same blue fill, white 16px / 700, radius 1000px. The current price on that page is green "Now $64.00" beside a muted was-price. That green matches the declared positive token. It was read from the screenshot and the page text, not from a new computed-style dump of the price node.
 
-Nothing was typed. No account was created. No card, phone number, or address was entered. The location dialog's close control was pressed so the bar could be read. Sign In was not followed.
+The storefront root font size is 16px. EverydaySans is the face that loaded. Nothing was typed into a password, email, phone, or address field. A product search was submitted once and the next frame was the bot wall, so no results page was kept.
 
 ## What to distrust
 
-Screenshots are 256-colour. Read colours from the tokens. The preview tab and headless Chromium agreed on the home controls. Custom properties exist only in the preview reading.
+Screenshots are 256-colour. Read colours from the tokens.
 
-The product title link colour `rgb(0, 0, 238)` is the browser default, not a Walmart semantic token. The search field's focused outline `rgb(0, 95, 204)` is a user-agent outline. Departments focused with a 0px outline.
+The toys category shot is two opaque bands from one frame, joined where a transparent hole had been. The product shot keeps the header and the buy box. The gallery and the item-details column painted as a torn hole and were not kept. Do not treat the white gap on that shot as layout.
 
-`--border-radius-round` is 62.5rem (1000px at the 16px root). Departments measured 100px. The search field measured 9999px. The pill token records the Departments value.
+The product title link colour `rgb(0, 0, 238)` is the browser default, not a Walmart semantic token. The search field's focused outline `rgb(0, 95, 204)` is a user-agent outline.
 
-Elevation tokens are declared and were not used by a measured element. Status colours are declared and were not seen on a live control.
+`--border-radius-round` is 62.5rem. Departments measured 100px. The search field measured 9999px. Add and Add to cart measured 1000px.
 
-Corporate is a separate site. Its 60px headline and white pill are recorded, and they are not the storefront system. Its first screenshots were blank until the page was waited on past `load`.
-
-Bogle is declared as a font and stayed unloaded. EverydaySans is the face that loaded.
+Elevation tokens are declared and were not used by a measured element. Corporate is a separate site. Its 60px headline is not the storefront system. Bogle is declared and stayed unloaded.
 
 ## Fonts
 
 EverydaySans is the storefront face, weights 400 and 700, computed stack `EverydaySans, "Helvetica Neue", Helvetica, Arial, sans-serif`. It is proprietary and is not in this package. Specimens fall back to Helvetica Neue.
 
-Everyday Sans Headline is the corporate display face, weight 900 on the hero. EverydaySansMono is declared for mono body styles and was not used by a measured element. None of these files are committed.
+Everyday Sans Headline is the corporate display face. EverydaySansMono is declared and was not used by a measured element. None of these files are committed.
 
 ## Coverage
 
 | Checklist | Result |
 |---|---|
 | Colour roles, light | Captured. [tokens.json](tokens.json), [screenshots/home-light-default.png](screenshots/home-light-default.png) |
-| Colour roles, dark | Not present. No theme switch. A dark colour-scheme preference left the page light |
+| Colour roles, dark | Not present. No theme switch |
 | Type | Captured from computed styles. Families are proprietary, so the package does not ship the files |
-| Spacing, radii, borders | Captured on the header controls. The rem scale is derived at the 16px root |
+| Spacing, radii, borders | Captured on the header controls and on Add to cart |
 | Elevation | Declared as `--elevation-100` through `--elevation-300`. No measured element used a shadow |
 | Motion | Durations and easings captured from custom properties. Reduced-motion emulation was not run |
-| Button | Departments chip and EN pill captured. Hover did not change Departments. Pressed and disabled not captured |
-| Icon button | Search submit and cart captured. Favorite button measured, not activated |
-| Link | Product title link and Shop now captured. Sign In not followed |
-| Text field | Search field captured, including keyboard focus. Nothing typed. No text area |
-| Select, checkbox, radio, switch | Not present on the captured pages |
+| Button | Departments chip, Add, and Add to cart captured. Pressed and disabled not captured. Add to cart was not clicked |
+| Icon button | Search submit and cart captured. Favorite was not activated |
+| Link | Shop now and the account menu captured. Sign-in was followed only as far as the captcha |
+| Text field | Search field captured. Nothing typed into it on the kept shots. No text area |
+| Select, checkbox, radio, switch | Condition radios and empty protection-plan checkboxes are on the buy box. They were not changed. No switch |
 | Tabs | Not present |
-| Menu | Phone menu button and Departments were not opened |
-| Tooltip, dialog, toast | Location dialog observed, then closed. No tooltip or toast |
-| Card | Product tile measured: 208px, radius 0, no shadow. Hero cards are photographs |
-| List row, table, avatar, badge | Not present as components. Price is a split span |
-| App shell | Header captured at 1440 and 390. Footer links were in the DOM and not on screen |
+| Menu | Departments, Services, the account menu, and the phone drawer captured. See [site-tree.md](site-tree.md) |
+| Tooltip, dialog, toast | Fulfillment dialog opened and closed. Sparky opened itself and was closed. No toast |
+| Card | Product tiles on the toys page. Hero cards are photographs |
+| List row, table, avatar, badge | Rollback badge captured. No table or avatar |
+| App shell | Header captured at 1440 and 390. Footer links were read from the DOM and were not on screen |
 | Form with a validation error | Not captured. Nothing was submitted |
-| Empty, loading, error | A missing route returned a bot block. Stopped there. No empty or loading state |
+| Empty, loading, error | A missing route, search, and help returned a bot block. Stopped there. Cart showed `$0.00` and was not opened |
 | Destructive confirmation | Not present |
-| Search | Field captured. No query was submitted |
-| Widths | 1440 and 390 |
-| Help, Walmart+ | Not captured. Headless Chromium was redirected to `/blocked`. Stopped there |
+| Search | Field captured. A submitted query hit the bot wall. No results page |
+| Widths | 1440 and 390, home and one inner page (`/plus` at 390, toys at 1440) |
+| Login and signup | Not captured. The wall is a captcha. `login-extracted` stays not-started |
+| Help | Not captured. Direct load was `/blocked` |
 
 ## Do and don't
 
 - **Paint the storefront bar in true blue.** The header is `#0053e2`, white type, 52px controls. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
-- **Use a pill for search and chips.** The search field is a 52px pill. Departments is a 32px pill with a `#c9dcfd` border and `#001e60` label. See [components/crops/text-field-search.png](components/crops/text-field-search.png).
-- **Set prices as a split bold number.** Dollars are 24px / 700. The dollar sign and cents are 14px / 700. See [screenshots/home-light-phone.png](screenshots/home-light-phone.png).
-- **Leave product tiles flat.** No radius, no shadow, no card border. The image is a square. See [components.md](components.md).
+- **Use a pill for search, chips, and Add.** The search field is a 52px pill. Add is a blue pill. See [components/crops/button-add.png](components/crops/button-add.png).
+- **Set the current price in green.** "Now" and the dollars are green. The previous price sits beside them in gray. See [components/crops/price-now.png](components/crops/price-now.png).
+- **Leave product tiles flat.** No radius, no shadow, no card border. The buy box is a pale raised column with a blue Add to cart pill. See [screenshots/category-light-default.png](screenshots/category-light-default.png).
 
 ## Rebuild
 
@@ -141,4 +145,4 @@ python3 tools/package_tests.py walmart
 python3 tools/fetch_icon.py walmart
 ```
 
-The tokens were written from the live readings in [raw/](raw/). There is no `build_tokens.py` mapping for this package. `tools/` is the unmodified kit copy.
+The tokens were written from the live readings in [raw/](raw/). There is no `build_tokens.py` mapping for this package. `tools/` is the kit copy plus [tools/capture/public/capture.mjs](tools/capture/public/capture.mjs). Do not run `design-md` as part of a refresh that must leave `catalog.json` alone.
