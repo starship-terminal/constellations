@@ -1,0 +1,19 @@
+{
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "url": "https://vercel.com/signup",
+  "title": "Sign Up – Vercel",
+  "htmlClass": "VEU71W_className BK_Dwq_className VEU71W_variable BK_Dwq_variable dash light-theme js-focus-visible",
+  "colorScheme": "light",
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "file": "screenshots/signup-light-desktop.png"
+}

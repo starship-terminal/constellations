@@ -1,0 +1,172 @@
+{
+  "home": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "url": "https://vercel.com/",
+    "title": "Agentic Infrastructure - Vercel",
+    "htmlClass": "VEU71W_className BK_Dwq_className VEU71W_variable BK_Dwq_variable dark-theme",
+    "colorScheme": "dark",
+    "bodyBackground": "rgb(0, 0, 0)",
+    "bodyColor": "rgb(237, 237, 237)",
+    "png": {
+      "width": 1440,
+      "height": 900
+    },
+    "file": "screenshots/home-dark-desktop.png"
+  },
+  "homeEl": {
+    "h1": {
+      "text": "Agentic Infrastructure",
+      "color": "rgb(237, 237, 237)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "fontSize": "64px",
+      "fontWeight": "400",
+      "height": "128px"
+    },
+    "signup": {
+      "text": "Sign Up",
+      "color": "rgb(10, 10, 10)",
+      "backgroundColor": "rgb(237, 237, 237)",
+      "borderRadius": "6px",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "height": "32px"
+    },
+    "login": {
+      "text": "Log In",
+      "color": "rgb(237, 237, 237)",
+      "backgroundColor": "rgb(10, 10, 10)",
+      "borderRadius": "6px",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "height": "32px"
+    },
+    "vars": {
+      "--geist-background": "#000",
+      "--geist-foreground": "#fff",
+      "--ds-background-100": "hsla(0, 0%, 4%, 1)",
+      "--ds-background-200": "hsla(0, 0%, 0%, 1)",
+      "--ds-gray-1000": "hsla(0, 0%, 93%, 1)",
+      "--ds-gray-900": "hsla(0, 0%, 63%, 1)",
+      "--geist-link-color": "hsla(210, 100%, 66%, 1)",
+      "--geist-success": "#0070f3",
+      "--geist-error": "red",
+      "--geist-warning": "#f5a623",
+      "--ds-blue-700": "hsla(212, 100%, 48%, 1)"
+    },
+    "bodyBg": "rgb(0, 0, 0)",
+    "bodyColor": "rgb(237, 237, 237)"
+  },
+  "products": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "url": "https://vercel.com/",
+    "title": "Agentic Infrastructure - Vercel",
+    "htmlClass": "VEU71W_className BK_Dwq_className VEU71W_variable BK_Dwq_variable dark-theme",
+    "colorScheme": "dark",
+    "bodyBackground": "rgb(0, 0, 0)",
+    "bodyColor": "rgb(237, 237, 237)",
+    "png": {
+      "width": 1440,
+      "height": 900
+    },
+    "file": "screenshots/products-menu-dark-desktop.png"
+  },
+  "pricing": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "url": "https://vercel.com/pricing",
+    "title": "Vercel Pricing: Hobby, Pro, and Enterprise plans",
+    "htmlClass": "VEU71W_className BK_Dwq_className VEU71W_variable BK_Dwq_variable dark-theme",
+    "colorScheme": "dark",
+    "bodyBackground": "rgb(0, 0, 0)",
+    "bodyColor": "rgb(237, 237, 237)",
+    "png": {
+      "width": 1440,
+      "height": 900
+    },
+    "file": "screenshots/pricing-dark-desktop.png"
+  },
+  "docs": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "url": "https://vercel.com/docs",
+    "title": "Vercel Documentation",
+    "htmlClass": "VEU71W_className BK_Dwq_className VEU71W_variable BK_Dwq_variable uncontained tailwind tailwind-preflight dark-theme",
+    "colorScheme": "dark",
+    "bodyBackground": "rgb(0, 0, 0)",
+    "bodyColor": "rgb(237, 237, 237)",
+    "png": {
+      "width": 1440,
+      "height": 900
+    },
+    "file": "screenshots/docs-dark-desktop.png"
+  },
+  "homePhone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "url": "https://vercel.com/",
+    "title": "Agentic Infrastructure - Vercel",
+    "htmlClass": "VEU71W_className BK_Dwq_className VEU71W_variable BK_Dwq_variable dark-theme",
+    "colorScheme": "dark",
+    "bodyBackground": "rgb(0, 0, 0)",
+    "bodyColor": "rgb(237, 237, 237)",
+    "png": {
+      "width": 780,
+      "height": 1688
+    },
+    "file": "screenshots/home-dark-phone.png"
+  },
+  "menuPhone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "url": "https://vercel.com/",
+    "title": "Agentic Infrastructure - Vercel",
+    "htmlClass": "VEU71W_className BK_Dwq_className VEU71W_variable BK_Dwq_variable dark-theme",
+    "colorScheme": "dark",
+    "bodyBackground": "rgb(0, 0, 0)",
+    "bodyColor": "rgb(237, 237, 237)",
+    "png": {
+      "width": 780,
+      "height": 1688
+    },
+    "file": "screenshots/menu-dark-phone.png"
+  }
+}

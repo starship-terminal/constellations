@@ -1,0 +1,21 @@
+{
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "url": "https://vercel.com/docs",
+  "title": "Vercel Documentation",
+  "htmlClass": "VEU71W_className BK_Dwq_className VEU71W_variable BK_Dwq_variable uncontained tailwind tailwind-preflight dark-theme",
+  "colorScheme": "dark",
+  "bodyBackground": "rgb(0, 0, 0)",
+  "bodyColor": "rgb(237, 237, 237)",
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "file": "screenshots/docs-dark-desktop.png"
+}

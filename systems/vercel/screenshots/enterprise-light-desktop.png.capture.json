@@ -1,0 +1,19 @@
+{
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "url": "https://vercel.com/enterprise",
+  "title": "Enterprise",
+  "htmlClass": "VEU71W_className BK_Dwq_className VEU71W_variable BK_Dwq_variable light-theme",
+  "colorScheme": "light",
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "file": "screenshots/enterprise-dark-desktop.png"
+}
