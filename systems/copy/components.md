@@ -1,6 +1,6 @@
 # Copy.ai components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from copy.ai on 2026-11-12, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, submitted or paid for; the contact form's fields were focused and filled then cleared, never sent; the login.copy.ai auth card was measured, never used; the demo, trial, checkout and OAuth actions were never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from copy.ai on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, submitted or paid for; the contact form's fields were focused and filled then cleared, never sent; the login.copy.ai auth card was measured, never used; the demo, trial, checkout and OAuth actions were never followed.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (45 components, 120 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (119 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (120 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -16,7 +16,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [menu](screenshots/home-light-menu.png) |
+| Home | `/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [menu-gtm](screenshots/home-light-menu-gtm.png), [menu-resources](screenshots/home-light-menu-resources.png), [menu-use-cases](screenshots/home-light-menu-use-cases.png), [menu](screenshots/home-light-menu.png) |
 | Pricing | `/prices` | [default](screenshots/pricing-light-default.png), [faq](screenshots/pricing-light-faq.png), [full](screenshots/pricing-light-full.png) |
 | Platform (How it Works) | `/platform/how-it-works` | [default](screenshots/platform-light-default.png), [full](screenshots/platform-light-full.png) |
 | Use case (Prospecting Cockpit) | `/use-cases/prospecting-cockpit` | [default](screenshots/use-case-light-default.png), [full](screenshots/use-case-light-full.png) |
@@ -43,7 +43,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 22 components were given a real keyboard focus. 22 draw an outline ring: `nav-dd-toggle` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `btn-nav` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `login-link` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `dd-link` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `playbook-card` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `invert-cta` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `platform-card` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `blog-card` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `plan-toggle` (1px auto #005fcc `measured.focus-ring-light`, offset 0px), `plan-cta` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `faq-item` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `send-button` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `contact-faq` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `auth-continue` (2px solid #a396ff `measured.focus-ring-auth`, offset 2px), `auth-oauth` (2px solid #a396ff `measured.focus-ring-auth`, offset -1px), `auth-signup` (2px solid #a396ff `measured.focus-ring-auth`, offset 2px), `footer-link` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `social-icon` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `m-menu-button` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `m-nav-item` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `m-login` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `m-sales` (1px auto #005fcc `measured.focus-ring-light`, offset 1px).
+**Focus.** 22 components were given a real keyboard focus. 22 draw an outline ring: `nav-dd-toggle` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `btn-nav` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `login-link` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `dd-link` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `playbook-card` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `invert-cta` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `platform-card` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `blog-card` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `plan-toggle` (1px auto #005fcc `measured.focus-ring-light`, offset 0px), `plan-cta` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `faq-item` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `send-button` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `contact-faq` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `auth-continue` (2px solid #a396ff `measured.focus-ring-auth`, offset 2px), `auth-oauth` (2px solid #a396ff `measured.focus-ring-auth`, offset -1px), `auth-signup` (2px solid #a396ff `measured.focus-ring-auth`, offset 2px), `footer-link` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `social-icon` (1px auto #005fcc `measured.focus-ring-light`, offset 1px), `m-menu-button` (1px auto #e59700, offset 1px), `m-nav-item` (2px solid #4d65ff `measured.focus-ring-blue`, offset 2px), `m-login` (1px auto #e59700, offset 1px), `m-sales` (1px auto #e59700, offset 1px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -62,7 +62,7 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Plan card](#plan-card) | 360 x 594.59 | 1px solid #e0e0e0 `color.neutral.border` | - | #ffffff `color.neutral.white` | none | 24px |
 | [Platform card](#platform-card) | 700 x 121.97 | - | - | #29007a `color.brand.purple-deep` | none | 24px 105px 24px 24px |
-| [Blog card](#blog-card) | 360 x 462.78 | 1px solid #e0e0e0 `color.neutral.border` | - | #ffffff `color.neutral.white` | none | 0px 8px |
+| [Blog card](#blog-card) | 360 x 510.78 | 1px solid #e0e0e0 `color.neutral.border` | - | #ffffff `color.neutral.white` | none | 0px 8px |
 | [Auth card](#auth-card) | 344 x 283.89 | - | - | transparent | none | 0 |
 
 ## Components
@@ -100,7 +100,7 @@ The Platform trigger that opens the mega-menu; toggled for the menu screenshot, 
 | default | size 132.31 x 88; padding 8px 24px; background transparent; text Inter 16/24 500, #222222; transition box-shadow 0.4s ease; icon 20 x 20, #222222 |
 | hover | shadow #171717 0px -1px 0px 0px inset; layers div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 rgb(23, 23, 23) 0px -1px 0px 0px inset |
 | focus-visible | outline 2px solid #4d65ff `measured.focus-ring-blue`, offset 2px; layers div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 2px solid rgb(77, 101, 255) offset 2px |
-| pressed | shadow #171717 0px -1px 0px 0px inset; layers div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 rgb(23, 23, 23) 0px -1px 0px 0px inset |
+| pressed | shadow #171717 0px -0.999058px 0px 0px inset; layers div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 rgba(23, 23, 23, 1) 0px -0.999058px 0px 0px inset |
 
 ![Nav dropdown trigger default](components/crops/nav-dd-toggle-default.png) ![Nav dropdown trigger hover](components/crops/nav-dd-toggle-hover.png) ![Nav dropdown trigger focus-visible](components/crops/nav-dd-toggle-focus-visible.png) ![Nav dropdown trigger pressed](components/crops/nav-dd-toggle-pressed.png)
 
@@ -127,7 +127,7 @@ The header Login action (app.copy.ai); measured, never followed. Read as `login-
 #### Mega-menu panel
 The opened Platform mega-menu (OVERVIEW / WORKFLOWS / INTELLIGENCE LAYER / TECHNICAL RESOURCES columns). Read as `nav-dd-panel` on the home page.
 
-**Values (default).** size 1440 x 389; padding 40px; border T: 1px solid #e0e0e0 `color.neutral.border`; background #ffffff `color.neutral.white`; shadow rgba(0, 0, 0, 0.03) 0px 40px 34px 0px; text Inter 12/24 500, #171717 `color.neutral.ink`; icon 16 x 16, #171717 `color.neutral.ink`.
+**Values (default).** size 1440 x 365; padding 40px; border T: 1px solid #e0e0e0 `color.neutral.border`; background #ffffff `color.neutral.white`; shadow rgba(0, 0, 0, 0.03) 0px 40px 34px 0px; text Inter 12/24 500, #171717 `color.neutral.ink`; icon 16 x 16, #171717 `color.neutral.ink`.
 
 ![Mega-menu panel default](components/crops/nav-dd-panel-default.png)
 
@@ -229,7 +229,7 @@ A blog/article card in the home slider; measured, never followed. Read as `blog-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 360 x 462.78; padding 0px 8px; border 1px solid #e0e0e0 `color.neutral.border`; background #ffffff `color.neutral.white`; text ABC Normal 24/33.6 500, #000b0f; transition border-color 0.3s ease |
+| default (same: hover) | size 360 x 510.78; padding 0px 8px; border 1px solid #e0e0e0 `color.neutral.border`; background #ffffff `color.neutral.white`; text ABC Normal 24/33.6 500, #000b0f; transition border-color 0.3s ease |
 | focus-visible | outline 1px auto #005fcc `measured.focus-ring-light`, offset 1px |
 | pressed | border 1px solid #171717 `color.neutral.ink` |
 
@@ -460,7 +460,7 @@ The circled burger toggle (a.mega--nav_burger_trigger). Read as `m-menu-button` 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 46 x 46; background transparent; text Inter 14/20 400, #171717 `color.neutral.ink`; icon 17.59 x 17.59, #171717 `color.neutral.ink` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-ring-light`, offset 1px; layers a.mega--nav_burger_trigger.w-inline-block 46.0x46.0 1px auto rgb(0, 95, 204) offset 1px |
+| focus-visible | outline 1px auto #e59700, offset 1px; layers a.mega--nav_burger_trigger.w-inline-block 46.0x46.0 1px auto rgb(229, 151, 0) offset 1px |
 
 ![Menu button default](components/crops/m-menu-button-default.png) ![Menu button hover](components/crops/m-menu-button-hover.png) ![Menu button focus-visible](components/crops/m-menu-button-focus-visible.png) ![Menu button pressed](components/crops/m-menu-button-pressed.png)
 
@@ -479,7 +479,7 @@ A row inside the opened mobile menu. Read as `m-nav-item` on the home page at 39
 | default | size 350 x 89; padding 32px 0px; border B: 1px solid #e0e0e0 `color.neutral.border`; background transparent; text Inter 16/24 500, #222222; transition all 0.2s ease, box-shadow 0.4s ease; icon 20 x 20, #222222; layers div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 B:1px solid rgb(224, 224, 224) |
 | hover | shadow #171717 0px -1px 0px 0px inset; layers div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 B:1px solid rgb(224, 224, 224) rgb(23, 23, 23) 0px -1px 0px 0px inset |
 | focus-visible | outline 2px solid #4d65ff `measured.focus-ring-blue`, offset 2px; layers div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 B:1px solid rgb(224, 224, 224) 2px solid rgb(77, 101, 255) offset 2px |
-| pressed | shadow #171717 0px -1px 0px 0px inset; layers div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 B:1px solid rgb(224, 224, 224) rgba(23, 23, 23, 1) 0px -1px 0px 0px inset |
+| pressed | shadow #171717 0px -0.999046px 0px 0px inset; layers div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 B:1px solid rgb(224, 224, 224) rgba(23, 23, 23, 1) 0px -0.999046px 0px 0px inset |
 
 Child layers that carry the look: div 350x89 border 1px solid #e0e0e0 `color.neutral.border`.
 
@@ -491,7 +491,7 @@ The Login action inside the mobile menu; measured, never followed. Read as `m-lo
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 118 x 50; padding 12px 16px; border 1px solid #e0e0e0 `color.neutral.border`; radius 8px; background transparent; text Inter 16/24 700, #171717 `color.neutral.ink` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-ring-light`, offset 1px |
+| focus-visible | outline 1px auto #e59700, offset 1px |
 
 ![Mobile login default](components/crops/m-login-default.png) ![Mobile login hover](components/crops/m-login-hover.png) ![Mobile login focus-visible](components/crops/m-login-focus-visible.png) ![Mobile login pressed](components/crops/m-login-pressed.png)
 
@@ -501,7 +501,7 @@ The purple Contact Sales action inside the mobile menu; measured, never followed
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 208 x 50; padding 12px 16px; radius 4px; background #693edf; text Inter 16/24 700, #ffffff `color.neutral.white` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-ring-light`, offset 1px |
+| focus-visible | outline 1px auto #e59700, offset 1px |
 
 ![Mobile sales CTA default](components/crops/m-sales-default.png) ![Mobile sales CTA hover](components/crops/m-sales-hover.png) ![Mobile sales CTA focus-visible](components/crops/m-sales-focus-visible.png) ![Mobile sales CTA pressed](components/crops/m-sales-pressed.png)
 
