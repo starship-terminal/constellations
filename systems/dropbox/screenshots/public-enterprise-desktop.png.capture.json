@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-enterprise-desktop.png",
+  "sanitizedSourceUrl": "https://www.dropbox.com/enterprise",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://www.dropbox.com/enterprise",
+    "title": "Enterprise - Dropbox",
+    "h1": "Secure collaboration across your corporation",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "note": "Business nav destination. Contact sales was not submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

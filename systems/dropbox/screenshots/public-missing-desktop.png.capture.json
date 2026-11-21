@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-missing-desktop.png",
+  "sanitizedSourceUrl": "https://www.dropbox.com/this-page-is-not-a-dropbox-route-capture",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://www.dropbox.com/this-page-is-not-a-dropbox-route-capture",
+    "title": "Dropbox - 404",
+    "h1": "Error (404)",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "note": "Unknown path, photographed as the public empty or error state. No form filled.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

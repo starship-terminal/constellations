@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-product-desktop.png",
+  "sanitizedSourceUrl": "https://www.dropbox.com/dropbox",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://www.dropbox.com/dropbox",
+    "title": "Organized, Secure, Always Accessible - Dropbox",
+    "h1": "Don\u2019t just store your files\u2014put them to work",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "note": "Product page /dropbox. Signed out.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

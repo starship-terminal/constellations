@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-plans-phone.png",
+  "sanitizedSourceUrl": "https://www.dropbox.com/plans",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://www.dropbox.com/plans",
+    "title": "Find Your Dropbox Plan | Get 30 Days Free Trial",
+    "h1": null,
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "note": "Phone pricing page. No purchase.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

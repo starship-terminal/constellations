@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-plans-desktop.png",
+  "sanitizedSourceUrl": "https://www.dropbox.com/plans",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://www.dropbox.com/plans",
+    "title": "Find Your Dropbox Plan | Get 30 Days Free Trial",
+    "h1": null,
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "note": "Pricing page. Buy now and Try for free were not clicked.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}
