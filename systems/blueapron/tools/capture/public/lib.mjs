@@ -91,7 +91,8 @@ export async function closePromo(page) {
         const r = x.getBoundingClientRect();
         const cs = getComputedStyle(x);
         return (cs.position === 'fixed' || cs.position === 'sticky')
-          && /cookie|we value privacy|newsletter|subscribe to|sign up for|join to shop|off sitewide|first order/i.test(t)
+          && !x.closest('.sqs-announcement-bar, .announcement-bar')
+          && /cookie|we value privacy|newsletter|subscribe to|sign up for|join to shop|off sitewide/i.test(t)
           && t.length < 1600 && r.width > 200 && r.width < 1400 && r.height > 60 && +cs.zIndex > 5;
       });
       if (box) { box.style.setProperty('display', 'none', 'important'); n++; }

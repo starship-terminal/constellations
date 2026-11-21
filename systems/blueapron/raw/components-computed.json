@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-11",
+  "read": "2026-11-21",
   "viewport": "1440 x 900 (mobile group 390 x 844), light theme",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -155,7 +155,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Announcement bar",
    "group": "Shell and navigation",
@@ -569,7 +569,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Announcement close",
    "group": "Shell and navigation",
@@ -757,7 +757,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Header",
    "group": "Shell and navigation",
@@ -851,7 +851,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Logo",
    "group": "Shell and navigation",
@@ -1222,7 +1222,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Nav link",
    "group": "Shell and navigation",
@@ -1598,7 +1598,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Header CTA",
    "group": "Shell and navigation",
@@ -1608,7 +1608,7 @@
   "cart-icon": {
    "states": {},
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Cart icon",
    "group": "Shell and navigation",
@@ -1903,11 +1903,11 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/search-field-filled.png",
-     "via": "typed \"name@example.com\", then deleted; nothing sent"
+     "via": "typed \"dinner ideas\", then deleted; nothing sent"
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Search field",
    "group": "Blog home and cards",
@@ -1917,7 +1917,7 @@
   "search-button": {
    "states": {},
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Search button",
    "group": "Blog home and cards",
@@ -2031,7 +2031,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Blog card",
    "group": "Blog home and cards",
@@ -2125,7 +2125,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Card image",
    "group": "Blog home and cards",
@@ -2523,7 +2523,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Card title",
    "group": "Blog home and cards",
@@ -2873,7 +2873,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Category link",
    "group": "Blog home and cards",
@@ -2979,7 +2979,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Card excerpt",
    "group": "Blog home and cards",
@@ -3419,7 +3419,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Read-more link",
    "group": "Blog home and cards",
@@ -3524,7 +3524,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Card meta",
    "group": "Blog home and cards",
@@ -3637,7 +3637,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "List pagination",
    "group": "Blog home and cards",
@@ -4063,7 +4063,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Pagination link",
    "group": "Blog home and cards",
@@ -4163,7 +4163,7 @@
      "via": "at rest"
     },
     "hover": {
-     "error": "locator.hover: Element is outside of the viewport\nCall log:\n  - waiting for locator('.sqs-button-element--primary, a.sqs-block-button-element--primary').filter({ visible: true }).first().filter({ visi"
+     "error": "locator.hover: Element is outside of the viewport\nCall log:\n\u001b[2m  - waiting for locator('.sqs-button-element--primary, a.sqs-block-button-element--primary').filter({ visible: true }).first().filter({ "
     },
     "focus-visible": {
      "tag": "a",
@@ -4350,7 +4350,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Primary button",
    "group": "Blog home and cards",
@@ -4728,7 +4728,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Secondary button",
    "group": "Blog home and cards",
@@ -4822,7 +4822,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Content image",
    "group": "Blog home and cards",
@@ -4928,7 +4928,7 @@
     }
    },
    "page": "category",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/category/Recipes",
    "title": "Category heading",
    "group": "Category list",
@@ -5011,7 +5011,7 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "auto",
-      "opacity": "0.999394",
+      "opacity": "0.999848",
       "transform": "matrix(1, 0, 0, 1, 933, 0)",
       "overflow": "visible",
       "zIndex": "auto",
@@ -5041,7 +5041,7 @@
     }
    },
    "page": "category",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/category/Recipes",
    "title": "Category card",
    "group": "Category list",
@@ -5147,7 +5147,7 @@
     }
    },
    "page": "article",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
    "title": "Article title",
    "group": "Article page",
@@ -5253,7 +5253,7 @@
     }
    },
    "page": "article",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
    "title": "Article meta",
    "group": "Article page",
@@ -5347,7 +5347,7 @@
     }
    },
    "page": "article",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
    "title": "Body paragraph",
    "group": "Article page",
@@ -5357,7 +5357,7 @@
   "article-lede": {
    "states": {},
    "page": "article",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
    "title": "Article image",
    "group": "Article page",
@@ -5539,7 +5539,7 @@
      "text": "See This Week's Quick Dinner Recipes",
      "rect": {
       "x": 388.8,
-      "y": 1476.8,
+      "y": 1645.8,
       "w": 266.91,
       "h": 17
      },
@@ -5708,7 +5708,7 @@
     }
    },
    "page": "article",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
    "title": "Body link",
    "group": "Article page",
@@ -6166,7 +6166,7 @@
     }
    },
    "page": "article",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
    "title": "Article pager",
    "group": "Article page",
@@ -6176,7 +6176,7 @@
   "comments-toggle": {
    "states": {},
    "page": "article",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
    "title": "Comments toggle",
    "group": "Article page",
@@ -6187,7 +6187,7 @@
   "comments-open": {
    "states": {},
    "page": "article",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
    "title": "Comments toggle, open",
    "group": "Article page",
@@ -6294,7 +6294,7 @@
     }
    },
    "page": "faq",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/membership-autoship-faq",
    "title": "FAQ title",
    "group": "Article page",
@@ -6388,7 +6388,7 @@
     }
    },
    "page": "faq",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/membership-autoship-faq",
    "title": "FAQ heading",
    "group": "Article page",
@@ -6482,7 +6482,7 @@
     }
    },
    "page": "faq",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/guides/membership-autoship-faq",
    "title": "FAQ paragraph",
    "group": "Article page",
@@ -6670,7 +6670,7 @@
     }
    },
    "page": "cart",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/cart",
    "title": "Cart page",
    "group": "Cart",
@@ -6834,7 +6834,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Footer",
    "group": "Footer",
@@ -7232,7 +7232,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Footer link",
    "group": "Footer",
@@ -7609,7 +7609,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://blog.blueapron.com/",
    "title": "Social icon",
    "group": "Footer",
@@ -7797,7 +7797,7 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "title": "Mobile header",
    "group": "Mobile (390 wide)",
    "selector": "header at 390"
@@ -8211,7 +8211,7 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "title": "Burger button",
    "group": "Mobile (390 wide)",
    "desc": "The hamburger that opens the mobile menu.",
@@ -8321,7 +8321,7 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "title": "Mobile menu, open",
    "group": "Mobile (390 wide)",
    "desc": "The burger after its own toggle; the opened menu overlay shows in the crop of the whole menu panel.",
@@ -8718,7 +8718,7 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "title": "Mobile nav item",
    "group": "Mobile (390 wide)",
    "selector": ".header-menu-nav-item a",
@@ -8801,7 +8801,7 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "auto",
-      "opacity": "0.575858",
+      "opacity": "0.575844",
       "transform": "matrix(1, 0, 0, 1, 0, 0)",
       "overflow": "visible",
       "zIndex": "auto",
@@ -8831,7 +8831,7 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "title": "Mobile blog card",
    "group": "Mobile (390 wide)",
    "selector": ".blog-item at 390"

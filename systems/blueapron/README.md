@@ -1,6 +1,6 @@
 # Blue Apron design reference
 
-A token set and component reference for Blue Apron's public editorial surface — for building recipe/editorial pages in the style of the real thing. It was read from **blog.blueapron.com** ("Extra Helpings") on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the blog home, the Recipes category list, a guide article, the membership/Autoship FAQ and the empty cart.
+A token set and component reference for Blue Apron's public editorial surface — for building recipe/editorial pages in the style of the real thing. It was read from **blog.blueapron.com** ("Extra Helpings") on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the blog home, the Recipes category list, a guide article, the membership/Autoship FAQ and the empty cart. The same day, https://www.blueapron.com/ returned a Cloudflare block in the T3 preview and from curl, so the shop is still a recorded gap.
 
 Blue Apron is worth a capture because its new (Wonder-era) editorial surface is a clean study in one blue on cream: a `#002856` navy promo strip over a `#f2f0e5` field, the navy wordmark, a `#2959e0` pill CTA that recurs as every button, blue Ovo serif headlines over Almarai body text, and a masonry guide grid with no card chrome. **Boundary:** www.blueapron.com itself (the shop, menu, sign-in and checkout) hard-blocks this client at the Cloudflare edge — 403 "Sorry, you have been blocked" on every route including robots.txt, reproduced with curl, headless Chromium, headed Chromium and real Chrome; the egress IP is non-US and the shop is US-only. The blog host (Squarespace) does not block, so it is the whole capturable surface; everything on www is a recorded gap, never inferred.
 
@@ -14,6 +14,8 @@ Blue Apron is worth a capture because its new (Wonder-era) editorial surface is 
 | [patterns.md](patterns.md) | How the components combine on each surface: the promo/header stack, the masonry grid, the guide page, the navy footer, the mobile menu |
 | [components/crops/](components/crops) | 84 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 15 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-home-light-menu` the opened menu overlay |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog, written before the 2026-11-21 screenshots |
+| [login-review.json](login-review.json) | The public walk: signed-in nav, settings, and create were not offered; the shop host stopped at a Cloudflare block |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the Squarespace stylesheet harvest — ~1,700 declared vars), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
@@ -113,7 +115,7 @@ Nothing was signed into, bought or submitted: the search field was filled with s
 - **One theme only.** The site paints light everywhere; the navy footer is a section style. `tokens.json` ships no dark set. Ten section palettes are declared in raw/css-vars.json for the record.
 - **Squarespace vars are scoped.** The resolved values in css-vars.json are the `:root` (light) readings; section-theme vars (`data-section-theme`) are harvested per selector but resolve in their own scopes — the footer's navy was measured, not resolved.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
-- **Some states were taken without their options.** The capture put `fillText` and `cropLoc` where they were ignored, so `search-field` filled was typed with the default `name@example.com` rather than a search phrase, and the `m-menu-open` crop shows only the toggle, not the opened panel. `comments-open` was never captured: its entry is marked missing with no states. The script now passes these as options (not run since); the readings stand as labelled by their `via`.
+- **The opened menu crop is the toggle.** `m-menu-open` still frames the burger button, not the overlay. The overlay itself is [mobile-home-light-menu](screenshots/mobile-home-light-menu.png). `comments-open` was not mounted on the sampled article. The filled search field was typed with "dinner ideas" and deleted, never submitted.
 
 ## Fonts
 
@@ -179,4 +181,6 @@ node tools/capture/public/measure.mjs          # computed styles + crops -> raw/
 RAW=<scratch> node tools/capture/public/public.mjs   # screenshots -> <scratch>
 ```
 
-The www host remains edge-blocked for this client: retry with a US egress if the shop surface is ever to be captured; blog.blueapron.com loads fine headless.
+The www host remains edge-blocked for this client (confirmed 2026-11-21 in the T3 preview and with curl): retry with a US egress if the shop surface is ever to be captured; blog.blueapron.com loads fine headless. The control map is [site-tree.md](site-tree.md). The stop at the shop wall is [login-review.json](login-review.json).
+
+The catalog `captured` date stays 2026-11-11 because this refresh does not edit catalog.json. The readings and screenshots in this folder are from 2026-11-21.

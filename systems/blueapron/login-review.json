@@ -1,0 +1,78 @@
+{
+  "product": "Blue Apron",
+  "slug": "blueapron",
+  "date": "2026-11-21",
+  "scope": "public signed-out",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "submitted": false,
+  "typed": false,
+  "identity_providers_clicked": false,
+  "captcha_solved": false,
+  "account_created": false,
+  "probe_note": "https://www.blueapron.com/ returned Cloudflare 'Sorry, you have been blocked' in the T3 preview (default and incognito) and from curl. No login, signup, or identity-provider control was reachable. The public blog at https://blog.blueapron.com/ loaded. No password, email, phone, or code was typed.",
+  "offered": {
+    "nav": {
+      "items": [],
+      "reached": [],
+      "note": "No signed-in navigation was offered. The shop host that would hold account navigation is the Cloudflare block."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings control was offered on the public blog, and the shop host did not load."
+    },
+    "create": {
+      "items": [],
+      "reached": [],
+      "note": "No create-account or identity-provider control was mounted on the blog. Affiliates links to an external publisher signup and was not opened."
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/category-light-default.png",
+    "screenshots/category-light-full.png",
+    "screenshots/article-light-default.png",
+    "screenshots/article-light-full.png",
+    "screenshots/faq-light-default.png",
+    "screenshots/faq-light-full.png",
+    "screenshots/cart-light-default.png",
+    "screenshots/cart-light-full.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-article-light-default.png",
+    "screenshots/mobile-article-light-full.png"
+  ],
+  "walls": [
+    {
+      "name": "shop-edge-block",
+      "url": "https://www.blueapron.com/",
+      "opened": true,
+      "asks_for": "nothing. Cloudflare block page, heading 'Sorry, you have been blocked'. Not a captcha and not a login form.",
+      "typed": false,
+      "submitted": false,
+      "identity_provider_clicked": false,
+      "stopped": true
+    }
+  ],
+  "gaps": [
+    "www.blueapron.com menu, membership, subscribe-and-save, gifts, cookbook, about, terms, and privacy did not load past the Cloudflare block.",
+    "Sign-in, signup, checkout, and account settings were not reached. No identity provider was shown.",
+    "Careers (Workday), Help Center (Zendesk), Affiliates (publisher signup), and social profiles are other hosts and were not opened.",
+    "Search was not submitted. The empty cart was photographed and checkout was not started."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "phone",
+    "verification code",
+    "search",
+    "promo code",
+    "checkout",
+    "identity provider",
+    "affiliates signup",
+    "cookie consent"
+  ]
+}
