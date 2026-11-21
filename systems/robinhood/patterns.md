@@ -6,7 +6,9 @@ Black bar, 64px, wordmark left, product links, a US menu, an outlined Log in, an
 
 Screenshots: [home-light-default.png](screenshots/home-light-default.png), [home-light-phone.png](screenshots/home-light-phone.png).
 
-At 390 the nav collapses to the wordmark, a lime Sign up, and a menu button. The menu was not opened.
+At 1440 the header is a wordmark, What We Offer, Robinhood Agents, Crypto, Predict, Gold, Legend, Learn, Support, a US locale control, an outlined Log in, and a lime Sign up. What We Offer, Robinhood Agents, and Crypto open menus. The 2026-11-22 map is [site-tree.md](site-tree.md).
+
+At 390 the nav collapses to the wordmark, Log in, Sign up, and a drawer button. The drawer was not photographed on 2026-11-22. That pass hit HTTP 429.
 
 ## Login
 

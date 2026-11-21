@@ -1,0 +1,42 @@
+{
+  "product": "Robinhood",
+  "domain": "robinhood.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright and T3 preview, signed out, 1440x900. Login and signup URLs returned 429 on this pass, so the empty walls were not re-photographed.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in",
+      "url": "https://robinhood.com/login/",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": [],
+      "stopped": true,
+      "screenshot": "screenshots/login-dark-default.png",
+      "note": "On 2026-11-22 both the T3 preview and headless Chromium got HTTP 429, body 'Too Many Requests'. No field was visible. Nothing was typed. No provider was clicked. The 2026-11-19 package shot remains the empty-wall evidence. This pass did not enter the account."
+    },
+    {
+      "control": "header Sign up and hero Get started",
+      "url": "https://robinhood.com/signup/",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": [],
+      "stopped": true,
+      "screenshot": "screenshots/signup-dark-default.png",
+      "note": "HTTP 429 on 2026-11-22. The region question was not reached. No country was chosen. Continue was not pressed. The 2026-11-19 package shot remains the empty-wall evidence."
+    }
+  ],
+  "note": "catalog.json and webapps-manifest.json were left unchanged, so login-extracted stays not-started there."
+}
