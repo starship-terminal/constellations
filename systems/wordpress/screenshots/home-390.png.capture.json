@@ -1,0 +1,23 @@
+{
+  "name": "home-390",
+  "url": "https://wordpress.com/",
+  "title": "WordPress.com: Everything You Need to Build Your Website",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "dpr": 2,
+  "inner": {
+    "w": 390,
+    "h": 844,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

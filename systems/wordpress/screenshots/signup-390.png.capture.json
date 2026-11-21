@@ -1,0 +1,23 @@
+{
+  "name": "signup-390",
+  "url": "https://wordpress.com/setup/onboarding/user?ref=logged-out-homepage-lp",
+  "title": "Create a site \u2014 WordPress.com",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "dpr": 2,
+  "inner": {
+    "w": 390,
+    "h": 844,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

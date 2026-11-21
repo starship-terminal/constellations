@@ -1,0 +1,23 @@
+{
+  "name": "compare-1440",
+  "url": "https://wordpress.com/compare/",
+  "title": "Compare WordPress.com vs Wix, Squarespace, Shopify & More",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "dpr": 2,
+  "inner": {
+    "w": 1440,
+    "h": 900,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}
