@@ -203,7 +203,7 @@ Good for: Ride-hailing marketing chrome: a black 64px header, near-black 8px pri
 
 Captured 2026-11-19, signed out (US ride, about, business, and drive pages measured; signup wall at auth.uber.com/v2 measured and not entered; no phone, email, card, or ride). Themes: light, dark.
 
-Public signed-out capture of [uber.com](https://www.uber.com/) on 2026-11-19. The measured surfaces are the US ride page (`/us/en/ride/`), About (`/us/en/about/`), Business (`/us/en/business/`), and Drive (`/us/en/drive/`), plus the signup wall at `https://auth.uber.com/v2/` with no field filled in. Themes in the package are the stylesheet's v2 light and dark token sets. The marketing pages themselves render light. Desktop shots are 1440 by 900 CSS pixels at device pixel ratio 2. A 390-wide reload hit a reCAPTCHA interstitial and was not kept.
+Public signed-out capture of [uber.com](https://www.uber.com/), refreshed on 2026-11-21. The 2026-11-19 package measured the US ride page. On this refresh that URL, Business, cities, and the bare homepage hit a reCAPTCHA wall or a regional 404, so they were not recaptured. Pages that loaded: Drive (`/us/en/drive/`), About, Safety, How Uber works, Offerings, driver requirements, the blog, Help, and the empty auth wall at `https://auth.uber.com/v2/`. The control map is [site-tree.md](site-tree.md). Themes in the package are still the stylesheet's v2 light and dark token sets. Marketing pages render light, and the Drive hero is black. Desktop shots are 1440 by 900 CSS pixels at device pixel ratio 2. Phone shots are 390 by 844 at device pixel ratio 2, on Drive and About. `login-extracted` stays `not-started`.
 
 ## Colors
 
@@ -260,12 +260,12 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Dark colours are the stylesheet's dark block, not a dark marketing page. The ride, about, business, and drive pages stayed light. The sheet's accent (`#1175dd`) is not the black primary button on the marketing chrome. Header pills and "See prices" use `#111111` on `#fcfcfc`. A blue link (`rgb(0, 0, 238)`) on "Learn more" is the browser default, not a Base token. UberMove and UberMoveText are named in the font stack and are not shipped here. Phone width is a gap: the 390 reload showed a reCAPTCHA wall and was discarded. Hover and pressed states were not held.
+Dark colours are the stylesheet's dark block, not a dark marketing page. About, safety, and help stayed light. The Drive hero is black, which is a page fill, not the dark token set. The sheet's accent (`#1175dd`) is not the black header pill. Header pills use `#111111` on `#fcfcfc`. A blue "Log in" on the riders help page (`#276ef1` area) is help-site chrome, not the marketing pill. UberMove and UberMoveText are named in the font stack and are not shipped here. The rider homepage, Business, and cities were behind a reCAPTCHA wall on 2026-11-21 and were not recaptured. Hover and pressed states were not held. The empty auth Continue computed to `#111111`, not the disabled fill recorded in 2026-11-19, because nothing was typed and no error state was forced.
 
 ### Do and don't (from README.md)
 
-1. **Paint the marketing header black and the primary action near-black.** The header is `#000000` and "See prices" is `#111111` with `#fcfcfc` text, 8px radius, 48px tall. See [screenshots/ride-light-default.png](screenshots/ride-light-default.png).
-2. **Use the white pill for Sign up and the dark pill for Log in.** Both are 999px radius, 14px medium, 36px tall. See the same screenshot.
-3. **Put location fields on `#f6f6f6` with an 8px radius.** Pickup and dropoff boxes are 56px tall. Do not invent a blue fill for them.
-4. **Keep the signup wall as a wall.** It asks for a phone number or email before Continue, and it warns that a verification code may arrive by text or WhatsApp. Do not draw a filled account behind it.
-5. **Do not treat the Base blue accent as the marketing button.** `#1175dd` is `--base-accent-background-primary-bold`. The public ride page does not use it on "See prices".
+1. **Paint the marketing header black and the primary action near-black.** The header is `#000000`. Header pills are `#111111` with `#fcfcfc` text, 999px radius, 36px tall. See [screenshots/drive-light-default.png](screenshots/drive-light-default.png).
+2. **Use the white pill for Sign up and the dark pill for Log in.** Both sit on the black header. See the same screenshot.
+3. **On a black hero, invert the primary action.** Drive's "Get started" is white, 8px radius, 48px tall, on the black hero. Do not paint it blue.
+4. **Keep the auth wall empty.** It asks for a phone number or email before Continue, and it warns that a verification code may arrive by text or WhatsApp. See [screenshots/auth-light-empty.png](screenshots/auth-light-empty.png).
+5. **Do not treat the Base blue accent as the marketing button.** `#1175dd` is `--base-accent-background-primary-bold`. The public header does not use it on Log in or Sign up.

@@ -19,8 +19,9 @@ class BuildTokensTest(unittest.TestCase):
 
     def test_signup_wall_records_nothing_entered(self):
         wall = json.loads((ROOT / "raw" / "auth-wall.json").read_text())
-        self.assertEqual(wall["entered"], "nothing. No phone, email, card, or continue click.")
-        self.assertIn("phone-or-email", wall["gap"])
+        self.assertIn("nothing", wall["entered"])
+        self.assertEqual(wall["loginExtracted"], "not-started")
+        self.assertNotIn("@", wall["entered"])
 
     def test_committed_primary_background_matches_builder(self):
         built = build_tokens.build()

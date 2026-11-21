@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-21",
+  "loginExtracted": "not-started",
+  "blocked": [
+    "https://www.uber.com/ redirects to /sg/en/ and 404s from this network",
+    "https://www.uber.com/us/en/ redirects to /sg/en/ and 404s",
+    "https://www.uber.com/us/en/ride/ lands on def.uber.com reCAPTCHA. Not solved.",
+    "https://www.uber.com/us/en/business/, /us/en/city-hub/, /us/en/newsroom/, /us/en/uberai/, /us/en/freight/ also land on that captcha",
+    "https://m.uber.com/go/home is a ride request form. Not entered. Not screenshotted."
+  ],
+  "opened": [
+    "https://www.uber.com/us/en/drive/",
+    "https://www.uber.com/us/en/about/",
+    "https://www.uber.com/us/en/safety/",
+    "https://www.uber.com/us/en/about/how-does-uber-work/",
+    "https://www.uber.com/us/en/about/uber-offerings/",
+    "https://www.uber.com/us/en/drive/requirements/",
+    "https://www.uber.com/us/en/blog/",
+    "https://help.uber.com/",
+    "https://help.uber.com/riders",
+    "https://auth.uber.com/v2/"
+  ],
+  "viewports": {
+    "desktop": "1440x900 css, dpr 2",
+    "phone": "390x844 css, dpr 2"
+  }
+}

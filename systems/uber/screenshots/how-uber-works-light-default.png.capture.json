@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "screenshot": "how-uber-works-light-default.png",
+  "requested": {
+    "w": 1440,
+    "h": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "url": "https://www.uber.com/us/en/about/how-does-uber-work/",
+  "title": "How Uber Works for Drivers and Riders | Overview",
+  "heading": "How Uber works",
+  "note": "Public signed-out capture, 2026-11-21. Quantized to 256 colours after measurement."
+}
