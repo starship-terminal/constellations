@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-11-21T15:27:55.690Z",
+  "screenshot": "web-home-dark-language.png",
+  "actual": {
+    "href": "https://open.spotify.com/",
+    "title": "Spotify - Web Player: Listen to Music, Podcasts, and Audiobooks Online",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "dark",
+    "classes": [
+      "encore-dark-theme",
+      "encore-layout-themes",
+      "no-focus-outline",
+      "spotify__os--is-macos",
+      "spotify__container--is-web",
+      "fullscreen"
+    ],
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "quantize": "(2880, 1800)",
+  "quantizeErr": null,
+  "sanitizedSourceUrl": "https://open.spotify.com/"
+}
