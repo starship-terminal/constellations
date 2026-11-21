@@ -1,0 +1,44 @@
+{
+  "signed_in": false,
+  "catalog": "Fourmula.ai",
+  "capturedAt": "2026-11-21",
+  "marketingLogin": {
+    "url": "https://fourmula.ai/login",
+    "status": 404,
+    "title": "Page Not Found | 404 Error",
+    "h1": "Our fourmula is broken",
+    "note": "The marketing host has no login route. The account lives on the app host."
+  },
+  "wall": {
+    "url": "https://app.fourmula.ai/auth",
+    "status": 200,
+    "title": "Fourmula AI",
+    "asksFor": [
+      "email address",
+      "password",
+      "Continue with Google",
+      "Forgot password",
+      "Sign up, which asks for email and password on the same dialog"
+    ],
+    "submitted": false,
+    "googleClicked": false,
+    "fieldsFilled": false,
+    "codeEntered": false,
+    "accountCreated": false,
+    "screenshots": [
+      "screenshots/auth-dark-signin.png",
+      "screenshots/auth-dark-signup.png",
+      "screenshots/auth-dark-forgot.png",
+      "screenshots/auth-dark-menu.png",
+      "screenshots/mobile-auth-dark-signin.png",
+      "screenshots/mobile-auth-dark-signup.png",
+      "screenshots/mobile-auth-dark-menu.png"
+    ]
+  },
+  "stoppedBecause": "The control opens a login and signup wall. The empty wall was photographed. The branch stopped there.",
+  "gaps": [
+    "signed-in app was not captured",
+    "unread token values are Not captured",
+    "onboarding was not filled"
+  ]
+}
