@@ -1,0 +1,115 @@
+{
+  "htmlClass": "dark c15t-dark",
+  "colorScheme": "dark",
+  "varCount": 6,
+  "sampleVars": {
+    "--motif-subtle-1": "#ff5500a6",
+    "--motif-subtle-2": "#ffd50059",
+    "--motif-accent-1": "#1e69f6",
+    "--motif-accent-2": "#93ccdc",
+    "--dithering-back": "#0751cf80",
+    "--dithering-front": "#0751cf"
+  },
+  "body": {
+    "text": "Product Resources Extensions Docs Pricing Delta P ",
+    "font": "writer, \"writer Fallback\"",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px",
+    "color": "oklch(0.747396 0.0150116 262.882)",
+    "bg": "rgb(17, 18, 22)",
+    "radius": "0px",
+    "pad": "0px",
+    "border": "0px solid lab(91.6229 -0.159115 -2.26791)",
+    "w": 1440,
+    "h": 8128
+  },
+  "h1": {
+    "text": "Your last next editor",
+    "font": "plexSerif, \"plexSerif Fallback\"",
+    "size": "48px",
+    "weight": "320",
+    "lh": "57.6px",
+    "color": "lab(77.5052 -6.4629 -36.42)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "pad": "0px",
+    "border": "0px solid lab(91.6229 -0.159115 -2.26791)",
+    "w": 388,
+    "h": 58
+  },
+  "download": {
+    "text": "Download now D",
+    "font": "writer, \"writer Fallback\"",
+    "size": "14px",
+    "weight": "400",
+    "lh": "20px",
+    "color": "rgb(255, 255, 255)",
+    "bg": "lab(36.3314 31.1715 -81.0014)",
+    "radius": "4px",
+    "pad": "0px 6px 0px 10px",
+    "border": "1px solid rgba(0, 0, 0, 0)",
+    "w": 163,
+    "h": 36
+  },
+  "clone": {
+    "text": "Clone source C",
+    "font": "writer, \"writer Fallback\"",
+    "size": "14px",
+    "weight": "400",
+    "lh": "20px",
+    "color": "oklch(0.915795 0.00503706 262.882)",
+    "bg": "oklab(0.747396 -0.00186008 -0.0148959 / 0.05)",
+    "radius": "4px",
+    "pad": "0px 6px 0px 10px",
+    "border": "1px solid oklab(0.642147 -0.00263254 -0.0210819 / 0.2)",
+    "w": 152,
+    "h": 36
+  },
+  "navLink": {
+    "text": "Docs",
+    "font": "writer, \"writer Fallback\"",
+    "size": "14px",
+    "weight": "400",
+    "lh": "20px",
+    "color": "oklch(0.915795 0.00503706 262.882)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "4px",
+    "pad": "0px 10px",
+    "border": "1px solid rgba(0, 0, 0, 0)",
+    "w": 54,
+    "h": 32
+  },
+  "icons": [
+    {
+      "rel": "icon",
+      "href": "https://zed.dev/favicon_black_16.png",
+      "sizes": "16x16"
+    },
+    {
+      "rel": "icon",
+      "href": "https://zed.dev/favicon_black_32.png",
+      "sizes": "32x32"
+    },
+    {
+      "rel": "icon",
+      "href": "https://zed.dev/favicon_black_64.png",
+      "sizes": "64x64"
+    },
+    {
+      "rel": "icon",
+      "href": "https://zed.dev/favicon_white_16.png",
+      "sizes": "16x16"
+    },
+    {
+      "rel": "icon",
+      "href": "https://zed.dev/favicon_white_32.png",
+      "sizes": "32x32"
+    },
+    {
+      "rel": "icon",
+      "href": "https://zed.dev/favicon_white_64.png",
+      "sizes": "64x64"
+    }
+  ]
+}
