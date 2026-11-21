@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22T05:58:00Z",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "T3 incognito preview. Playwright headless gets Cloudflare 403 on www.tealhq.com. Nothing typed. No form submitted."
+}

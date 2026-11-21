@@ -15,7 +15,8 @@ Teal's marketing page is white, set in Roobert, with a goldfinch yellow pill but
 | [patterns.md](patterns.md) | How the public pages combine those controls. |
 | [components/crops/](components/crops/) | Empty. The preview browser did not produce screenshot frames, so no crops were cut. |
 | [icons/](icons/) | The header menu caret, taken from the live SVG. |
-| [screenshots/](screenshots/) | One page: [privacy-light-default.png](screenshots/privacy-light-default.png), the only public URL headless Chromium loaded without a Cloudflare block. |
+| [site-tree.md](site-tree.md) | Public header, footer, and where this pass stopped. Mapped 2026-11-22. |
+| [screenshots/](screenshots/) | Public marketing pages plus empty login and signup walls. See [screenshots/README.md](screenshots/README.md). |
 | [raw/](raw/) | `readings.json`, the computed styles this package keeps. |
 | [tools/](tools/) | The kit copy, `build_tokens.py` and `build_style_guide.py`. |
 
@@ -115,7 +116,7 @@ The T3 preview browser returned "The browser is not producing screenshot frames"
 | Text field | Captured. Sign-in email and password, sign-up email. Empty. Not submitted. |
 | Text area, select, checkbox, radio, switch | Not present on these pages. |
 | Tabs | Captured at rest. Hero tabs and How it Works tabs, 47px, no radius. Selected state is the `w--current` class. A separate selected colour was not computed beyond the shared tab colour `rgb(34, 34, 34)`. |
-| Menu | The Tools and Resources menus are in the DOM (rows 8px radius, padding 12px, declared hover `#F9FAFB`). They were not opened, so the open panel was not measured. |
+| Menu | Tools and Resources were opened on 2026-11-22. The desktop frames were discarded because the sample resume behind the menu shows a phone and an email. The phone menu is [home-light-menu-phone.png](screenshots/home-light-menu-phone.png). |
 | Tooltip, dialog, toast | Not present. |
 | Card | Captured as computed boxes. Feature cards `#e9f3f3`, radius 16px, padding 24px. Pricing columns on the home page are `#f1f2f2` and `#005149`, bottom radius 24px, height 566px. |
 | List row | Not captured as an app list. Resume-example links are marketing links. |
@@ -127,8 +128,8 @@ The T3 preview browser returned "The browser is not producing screenshot frames"
 | Search | Not present on these pages. |
 | Onboarding, destructive confirm | Not present. Sign-up stops at email plus LinkedIn. |
 | Motion | Partial. Marketing default transition is 150ms `cubic-bezier(0.4, 0, 0.2, 1)`. Yellow buttons transition 0.2s. App buttons use `duration-75` and `active:scale-95`. One reduced-motion rule sets `.hero-glow` animation to none. |
-| Widths | 1169 by 731 only. Phone width not captured. |
-| Screenshots | Partial. [privacy](screenshots/privacy-light-default.png) only. Home, pricing, the resume checker, sign-in and sign-up have computed styles and no PNG. Preview snapshot failed with "The browser is not producing screenshot frames". Headless Playwright was blocked by Cloudflare on those hosts. |
+| Widths | Tokens were read at 1169 by 731. The 2026-11-22 photographs are 1440 by 900 and 390 by 844. |
+| Screenshots | Public site tree on 2026-11-22. See [site-tree.md](site-tree.md). Homepage and resume-builder frames were discarded because the sample resume shows a phone and an email. |
 
 ## Do and don't
 
