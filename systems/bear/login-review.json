@@ -1,0 +1,97 @@
+{
+  "product": "Bear",
+  "domain": "bear.app",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "community header Log In",
+      "url": "https://community.bear.app/login",
+      "title": "Bear Community",
+      "painted": true,
+      "headings": [
+        "Welcome back"
+      ],
+      "asksFor": [
+        {
+          "label": "Email / Username",
+          "type": "text",
+          "required": false,
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "required": false,
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [
+        "Passkey"
+      ],
+      "otherControls": [
+        "Email me a one-time login code",
+        "I forgot my password",
+        "Log In",
+        "Sign Up"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-wall.png",
+      "note": "Both fields were empty. Passkey was not clicked. The one-time code link and the forgot-password link were not clicked. Log In was not submitted."
+    },
+    {
+      "control": "community header Sign Up",
+      "url": "https://community.bear.app/signup",
+      "title": "Bear Community",
+      "painted": true,
+      "headings": [
+        "Create your account"
+      ],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "required": false,
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "Continue",
+        "privacy policy",
+        "terms of service"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/signup-wall.png",
+      "note": "The email field was empty. Continue was not clicked. The page says a confirmation code would be sent. No code was requested."
+    },
+    {
+      "control": "Bear Web, not linked from the marketing nav",
+      "url": "https://web.bear.app/",
+      "title": "Bear Web",
+      "painted": true,
+      "headings": [
+        "Bear",
+        "Sign in to access your notes in Bear."
+      ],
+      "asksFor": [],
+      "identityProvidersSeen": [
+        "Apple"
+      ],
+      "otherControls": [
+        "Read more about Bear",
+        "dismiss banner"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/web-signin-wall.png",
+      "note": "Sign in with Apple was not clicked. The banner was not dismissed. The grey layout behind the card is a placeholder, not a signed-in notes library."
+    }
+  ]
+}
