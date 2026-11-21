@@ -117,12 +117,19 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Icons | layout gap — no standalone SVG set lifted; product glyphs visible in crops/screenshots |
 | Fonts | declared and measured; served faces (Assistant, Excalifont, Cascadia) not redistributed |
 
+## Signed-in pass (2026-11-21)
+
+The account session was present. https://app.excalidraw.com/ redirected to `/no-workspace` (no workspace yet). Five dark desktop shots at a measured 1440×900 CSS viewport (PNG 2880×1800) are in [screenshots/signed-in/](screenshots/signed-in): empty workspace, account menu, profile danger zone, preferences, and personal MCP/API keys. The control map is [site-tree.md](site-tree.md). Every post-auth screen reached or missed is named in [login-review.json](login-review.json).
+
+Plus colour roles were read from computed custom properties on `/no-workspace` in the dark theme (`raw/plus-css-vars-dark.json`, 470 resolved names). They are not merged into [tokens.json](tokens.json): the preview died before a light reading, a phone reading, and a component pass, so the signed-out token set is still the one to design from. Account email and name were replaced in the page with "signed-in Google account" before each saved shot. The avatar was replaced with a violet initial.
+
 ## Known gaps
 
 - `lib-empty` (Library empty state): the 2026-11-13 reading is the "Browse libraries" block, not the empty-state text; its selector's `.sidebar div` matching /libraries/ caught the wrong element. Needs a recapture. `measure.mjs` now selects the empty-state text only; it was edited, not run.
 - `undo-btn`, `redo-btn`, `theme-choice` and `export-switch`: keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md leaves them out and `raw/measurements.md` shows them as Skipped. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
 - `core.font.family.mono` (`"Cascadia", ui-monospace, monospace`) was entered by hand at capture time: no measured element computes it and `raw/css-vars.json` has no `@font-face` for Cascadia. Its source says so.
 - **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
+- **Signed-in pass stopped mid-tree.** Connected apps, export, my workspaces, create workspace, phone width, and the light theme were not shot. [login-review.json](login-review.json) lists each one. Plus tokens in `raw/plus-css-vars-dark.json` are a dark-only reading and are not in `tokens.json`.
 
 ## Rebuild
 
