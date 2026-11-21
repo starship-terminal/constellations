@@ -1,0 +1,63 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://obsidian.md/",
+  "viewport": {"width": 1440, "height": 900, "devicePixelRatio": 2},
+  "title": "Obsidian - Sharpen your thinking",
+  "colorScheme": "dark",
+  "bodyClass": "theme-dark",
+  "html": {
+    "backgroundColor": "rgb(15, 15, 15)",
+    "declaredPrimary": "#0F0F0F",
+    "declaredAccent600": "#7c3aed",
+    "declaredPurple": "#a882ff"
+  },
+  "body": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(238, 238, 238)",
+    "fontFamily": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", Roboto, Inter, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px"
+  },
+  "h1": {
+    "text": "Sharpen your thinking.",
+    "color": "rgb(238, 238, 238)",
+    "fontSize": "60px",
+    "fontWeight": "600",
+    "lineHeight": "60px",
+    "letterSpacing": "-1.2px"
+  },
+  "lead": {
+    "text": "The free and flexible app for your private thoughts.",
+    "color": "rgb(188, 188, 188)",
+    "fontSize": "36px",
+    "fontWeight": "400",
+    "lineHeight": "40px",
+    "letterSpacing": "normal"
+  },
+  "nav": {
+    "text": "Pricing",
+    "color": "rgb(188, 188, 188)",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "height": 33,
+    "padding": "8px 12px",
+    "borderRadius": "8px"
+  },
+  "cta": {
+    "text": "Get Obsidian for macOS",
+    "backgroundColor": "rgb(124, 58, 237)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "20px",
+    "fontWeight": "500",
+    "height": 60,
+    "padding": "16px 24px",
+    "borderRadius": "8px"
+  },
+  "header": {
+    "height": 90,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "position": "fixed",
+    "declaredHeaderHeight": "90px"
+  }
+}
