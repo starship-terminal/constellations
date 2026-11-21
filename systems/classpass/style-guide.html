@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClassPass style guide</title>
+<style>
+:root {
+  --fontFamily-sans: norms, sans-serif;
+  --fontFamily-mono: monospace, monospace;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontSize-nav: 14px;
+  --fontSize-body: 16px;
+  --fontSize-field: 18px;
+  --fontSize-display: 60px;
+  --lineHeight-nav: 20px;
+  --lineHeight-body: 24px;
+  --lineHeight-display: 62.4px;
+  --radius-field: 4px;
+  --radius-button: 9999px;
+  --radius-chip: 16px;
+  --space-4: 16px;
+  --size-header: 64px;
+  --size-field: 42px;
+  --size-button: 48px;
+  --typography-nav: {fontWeight.medium} {fontSize.nav}/{lineHeight.nav} norms, sans-serif;
+  --typography-body: {fontWeight.regular} {fontSize.body}/{lineHeight.body} norms, sans-serif;
+  --typography-display: {fontWeight.regular} {fontSize.display}/{lineHeight.display} norms, sans-serif;
+  --typography-field: {fontWeight.regular} {fontSize.field}/{lineHeight.body} norms, sans-serif;
+  --background-page: #ffffff;
+  --background-surface: #ffffff;
+  --background-raised: #f7f7f7;
+  --background-muted: #f7f7f7;
+  --background-hero: #e6f3ff;
+  --text-primary: #000000;
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --text-on-accent: #ffffff;
+  --text-link: #1a5ee5;
+  --border-default: #e7e7e7;
+  --border-strong: #000000;
+  --border-focus: #1a5ee5;
+  --accent-default: #0055ff;
+  --component-button-primary-background: #0055ff;
+  --component-button-primary-text: #ffffff;
+  --component-button-primary-radius: 9999px;
+  --component-button-primary-height: 48px;
+  --component-button-sso-background: #ffffff;
+  --component-button-sso-text: #000000;
+  --component-button-sso-radius: 9999px;
+  --component-field-background: #ffffff;
+  --component-field-text: #000000;
+  --component-field-radius: 4px;
+  --component-field-height: 42px;
+  --component-field-border-width: 1px;
+  --component-chip-text: #0055ff;
+  --component-chip-background-open: #f7f7f7;
+  --component-header-background: #ffffff;
+  --component-header-height: 64px;
+  --component-header-shadow: rgba(0, 0, 0, 0.08) 0px 2px 10px 0px;
+  --component-nav-hover-background: #f7f7f7;
+  --component-search-text: #000000;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px norms, ui-sans-serif, system-ui, sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 400 48px/56px norms, sans-serif; margin: 0 0 8px; }
+h2 { font: 500 20px/28px norms, sans-serif; margin: 40px 0 12px; }
+p { color: #333; max-width: 68ch; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 48px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 48px; height: 48px; border-radius: 8px; box-shadow: inset 0 0 0 1px #e7e7e7; display: block; }
+.sw code { display: block; font-size: 12px; }
+.sw span { font-size: 12px; color: #555; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height); padding: 0 20px; border-radius: var(--component-button-primary-radius); background: var(--component-button-primary-background); color: var(--component-button-primary-text); border: 0; font: 500 16px/24px norms, sans-serif; }
+.sso { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 20px; border-radius: var(--component-button-sso-radius); background: var(--component-button-sso-background); color: var(--component-button-sso-text); border: 1px solid #d6d6d6; font: 500 16px/24px norms, sans-serif; }
+.field { height: var(--component-field-height); border-radius: var(--component-field-radius); border: var(--component-field-border-width) solid var(--border-default); padding: 0 12px; font: 400 18px/24px norms, sans-serif; width: 280px; }
+.field:focus { outline: none; border-color: var(--border-focus); }
+.chip { height: 32px; padding: 0 12px; border-radius: var(--radius-chip); border: 1px solid #d6d6d6; background: #fff; color: var(--component-chip-text); font: 500 14px/20px norms, sans-serif; }
+.header { height: var(--size-header); display: flex; align-items: center; gap: 16px; background: var(--component-header-background); box-shadow: var(--component-header-shadow); padding: 0 16px; margin: 16px -24px; }
+.nav { font: 500 14px/20px norms, sans-serif; }
+.display { font: var(--typography-display); }
+note { display: block; font-size: 13px; color: #555; }
+</style>
+</head>
+<body>
+<main>
+<h1>ClassPass</h1>
+<p>Public site tokens, light only. TT Norms is not loaded here, so the page falls back to the system sans. Values come from tokens.json.</p>
+<h2>Colour</h2>
+<div class="swatches">
+<div class="sw"><i style="background:#ffffff"></i><div><code>background.page</code><span>#ffffff</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><code>background.surface</code><span>#ffffff</span></div></div><div class="sw"><i style="background:#f7f7f7"></i><div><code>background.raised</code><span>#f7f7f7</span></div></div><div class="sw"><i style="background:#f7f7f7"></i><div><code>background.muted</code><span>#f7f7f7</span></div></div><div class="sw"><i style="background:#e6f3ff"></i><div><code>background.hero</code><span>#e6f3ff</span></div></div><div class="sw"><i style="background:#000000"></i><div><code>text.primary</code><span>#000000</span></div></div><div class="sw"><i style="background:rgba(0, 0, 0, 0.6)"></i><div><code>text.secondary</code><span>rgba(0, 0, 0, 0.6)</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><code>text.on-accent</code><span>#ffffff</span></div></div><div class="sw"><i style="background:#1a5ee5"></i><div><code>text.link</code><span>#1a5ee5</span></div></div><div class="sw"><i style="background:#e7e7e7"></i><div><code>border.default</code><span>#e7e7e7</span></div></div><div class="sw"><i style="background:#000000"></i><div><code>border.strong</code><span>#000000</span></div></div><div class="sw"><i style="background:#1a5ee5"></i><div><code>border.focus</code><span>#1a5ee5</span></div></div><div class="sw"><i style="background:#0055ff"></i><div><code>accent.default</code><span>#0055ff</span></div></div><div class="sw"><i style="background:#0055ff"></i><div><code>component.button-primary-background</code><span>#0055ff</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><code>component.button-primary-text</code><span>#ffffff</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><code>component.button-sso-background</code><span>#ffffff</span></div></div><div class="sw"><i style="background:#000000"></i><div><code>component.button-sso-text</code><span>#000000</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><code>component.field-background</code><span>#ffffff</span></div></div><div class="sw"><i style="background:#000000"></i><div><code>component.field-text</code><span>#000000</span></div></div><div class="sw"><i style="background:#0055ff"></i><div><code>component.chip-text</code><span>#0055ff</span></div></div><div class="sw"><i style="background:#f7f7f7"></i><div><code>component.chip-background-open</code><span>#f7f7f7</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><code>component.header-background</code><span>#ffffff</span></div></div><div class="sw"><i style="background:#f7f7f7"></i><div><code>component.nav-hover-background</code><span>#f7f7f7</span></div></div><div class="sw"><i style="background:#000000"></i><div><code>component.search-text</code><span>#000000</span></div></div>
+</div>
+<h2>Type</h2>
+<p class="display">Choose how much to spend</p>
+<p class="nav">Search, Plans, How it works</p>
+<h2>Controls</h2>
+<div class="header"><strong>classpass</strong><span class="nav">Search</span><span class="nav">Plans</span><span class="btn" style="height:36px;margin-left:auto">Get 14 days free</span></div>
+<div class="row">
+  <button class="btn">Log in</button>
+  <button class="sso">Sign in with Apple</button>
+  <button class="chip">Fitness</button>
+</div>
+<div class="row">
+  <input class="field" placeholder="Email address" aria-label="Email address">
+</div>
+<p>Header shadow, pill radius and the blue accent are the measured values. Hover, pressed, disabled and dark are not in this guide because they were not captured.</p>
+</main>
+</body>
+</html>

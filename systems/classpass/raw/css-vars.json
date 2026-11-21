@@ -1,0 +1,187 @@
+{
+  "product": "ClassPass",
+  "url": "https://classpass.com/",
+  "captured": "2026-11-21T00:55:47.215Z",
+  "theme": "light",
+  "note": "Public marketing site. No dark theme switch was found on the captured pages.",
+  "colorScheme": "normal",
+  "rootFontFamily": "norms, sans-serif",
+  "rootBackground": "rgb(255, 255, 255)",
+  "rootColor": "rgb(0, 0, 0)",
+  "stylesheetHrefs": [
+    "inline",
+    "inline",
+    "inline",
+    "inline",
+    "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/fdc3aafe52867ba0.css",
+    "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/718450efc6784b01.css",
+    "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/2c00c939808aee7b.css",
+    "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/05294c1f7e12e5ab.css",
+    "inline",
+    "inline",
+    "inline"
+  ],
+  "skipped": [],
+  "fonts": [
+    {
+      "file": "fdc3aafe52867ba0.css",
+      "font-family": "norms",
+      "font-display": "swap",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"truetype\")"
+    },
+    {
+      "file": "fdc3aafe52867ba0.css",
+      "font-family": "norms",
+      "font-weight": "500",
+      "font-display": "swap",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"truetype\")"
+    },
+    {
+      "file": "fdc3aafe52867ba0.css",
+      "font-family": "norms",
+      "font-weight": "700",
+      "font-display": "swap",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"truetype\")"
+    },
+    {
+      "file": "fdc3aafe52867ba0.css",
+      "font-family": "circuit",
+      "font-display": "fallback",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"truetype\")"
+    },
+    {
+      "file": "fdc3aafe52867ba0.css",
+      "font-family": "circuit",
+      "font-style": "italic",
+      "font-display": "fallback",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"truetype\")"
+    },
+    {
+      "file": "fdc3aafe52867ba0.css",
+      "font-family": "hiragino",
+      "font-display": "swap",
+      "src": "url(…) format(\"opentype\")"
+    },
+    {
+      "file": "fdc3aafe52867ba0.css",
+      "font-family": "hiragino",
+      "font-weight": "500",
+      "font-display": "swap",
+      "src": "url(…) format(\"opentype\")"
+    },
+    {
+      "file": "fdc3aafe52867ba0.css",
+      "font-family": "hiragino",
+      "font-weight": "700",
+      "font-display": "swap",
+      "src": "url(…) format(\"opentype\")"
+    },
+    {
+      "file": "fdc3aafe52867ba0.css",
+      "font-family": "hiragino",
+      "font-weight": "800",
+      "font-display": "swap",
+      "src": "url(…) format(\"opentype\")"
+    }
+  ],
+  "ruleCount": 9,
+  "nameCount": 10,
+  "rules": [
+    {
+      "file": "2c00c939808aee7b.css",
+      "selector": ".HeroAnimationBlock_box__TmTph .HeroAnimationBlock_card__8rFyJ",
+      "context": [],
+      "properties": {
+        "--box-reach": "max(100%,var(--inline-max,0px) + 12px)",
+        "--card-inline": "calc(var(--box-reach) - var(--inline, 0px))"
+      }
+    },
+    {
+      "file": "2c00c939808aee7b.css",
+      "selector": ".CmsAnimatedHero_hero__Nk75d",
+      "context": [],
+      "properties": {
+        "--hero-background": "#ffffff",
+        "--hero-text": "#000000",
+        "--hero-legal": "rgba(0,0,0,0.6)",
+        "--hero-link": "#0032d7",
+        "--hero-link-hover": "#0726aa"
+      }
+    },
+    {
+      "file": "2c00c939808aee7b.css",
+      "selector": ".CmsAnimatedHero_bgSky__MRekl",
+      "context": [],
+      "properties": {
+        "--hero-background": "#e6f3ff"
+      }
+    },
+    {
+      "file": "2c00c939808aee7b.css",
+      "selector": ".CmsAnimatedHero_bgOyster__XfreV",
+      "context": [],
+      "properties": {
+        "--hero-background": "#f7f7f7"
+      }
+    },
+    {
+      "file": "2c00c939808aee7b.css",
+      "selector": ".CmsAnimatedHero_bgBlack__B7vGF",
+      "context": [],
+      "properties": {
+        "--hero-background": "#000",
+        "--hero-text": "#ffffff",
+        "--hero-legal": "#ffffff",
+        "--hero-link": "#71b3fe",
+        "--hero-link-hover": "#97ccfe"
+      }
+    },
+    {
+      "file": "2c00c939808aee7b.css",
+      "selector": ".CmsLogoTicker_height-small__Nhdur",
+      "context": [],
+      "properties": {
+        "--ticker-height": "32px"
+      }
+    },
+    {
+      "file": "2c00c939808aee7b.css",
+      "selector": ".CmsLogoTicker_height-medium__1aY97",
+      "context": [],
+      "properties": {
+        "--ticker-height": "55px"
+      }
+    },
+    {
+      "file": "2c00c939808aee7b.css",
+      "selector": ".CmsTestimonialsCarousel_dotsWrapper__X_wHB",
+      "context": [],
+      "properties": {
+        "--carousel-dot-active-color": "currentColor",
+        "--carousel-dot-color": "rgba(255,255,255,0.2)"
+      }
+    },
+    {
+      "file": "2c00c939808aee7b.css",
+      "selector": ".CmsTestimonialsCarousel_dotsWrapper__X_wHB",
+      "context": [
+        "@supports (color:color-mix(in srgb,currentColor 20%,transparent))"
+      ],
+      "properties": {
+        "--carousel-dot-color": "color-mix(in srgb,currentColor 20%,transparent)"
+      }
+    }
+  ],
+  "resolved": {
+    "--box-reach": "",
+    "--card-inline": "",
+    "--carousel-dot-active-color": "",
+    "--carousel-dot-color": "",
+    "--hero-background": "",
+    "--hero-legal": "",
+    "--hero-link": "",
+    "--hero-link-hover": "",
+    "--hero-text": "",
+    "--ticker-height": ""
+  }
+}
