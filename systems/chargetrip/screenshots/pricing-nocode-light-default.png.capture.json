@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T08:39:47.491Z",
+  "capturedAt": "2026-11-21T10:08:22.325Z",
   "screenshot": "pricing-nocode-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4668
+      "height": 4647
     },
     "scroll": {
       "x": 0,

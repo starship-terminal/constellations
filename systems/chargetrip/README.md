@@ -1,6 +1,6 @@
 # Chargetrip design reference
 
-A token set and component reference for Chargetrip's public surface — for building warm-cream, editorial-serif B2B pages and EV-routing chrome in the style of the real thing. It was read from **www.chargetrip.com** on **2026-11-12**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the marketing routes (home, Routing, API, No-code, CPO, both pricing pages, About, Newsroom, Contact, Contact sales and Terms), the public sign-in card on **account.chargetrip.io**, and the documentation shell on **developers.chargetrip.com** plus the credential-gated **playground.chargetrip.com** as boundaries.
+A token set and component reference for Chargetrip's public surface — for building warm-cream, editorial-serif B2B pages and EV-routing chrome in the style of the real thing. It was read from **www.chargetrip.com** on **2026-11-12** and refreshed **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the marketing routes (home, Routing, API, No-code, CPO, both pricing pages, About, Newsroom, Contact, Contact sales and Terms), the empty sign-in card on **account.chargetrip.io**, and the documentation shell on **developers.chargetrip.com** plus the credential-gated **playground.chargetrip.com** as boundaries. The control map is [site-tree.md](site-tree.md). The login review is [login-review.json](login-review.json).
 
 Chargetrip ("EV routing, solved") is worth a capture because it is a study in warm restraint: a `#efede5` cream page ground with near-white `#fffffb` cards, a warm ink ramp (`#262322` text and dark fills, `#877f78` muted) doing all the structural work, and a single high-chroma `#f94d00` orange reserved for CTAs, hovers and the press state of footer links — all set in Geist with Cirka, an editorial serif, at an 88px display size for the headlines. The dark hero band and the "Most popular" plan card are dark islands inside the one light theme, not a dark theme. **Boundary:** the routing engine, dashboard, API playground credentials and every account surface sit behind sign-in on account.chargetrip.io and were never crossed; the sign-in card itself was measured but nothing was ever submitted.
 
@@ -16,6 +16,8 @@ Chargetrip ("EV routing, solved") is worth a capture because it is a study in wa
 | [screenshots/](screenshots) | 33 `{page}-light-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages (the two mobile `-full` shots are stitched from `.partN` tiles), `mobile-*` phone shots at 2x, `*-menu` and `*-menu-open` the flyout states |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the Framer bundle's stylesheet harvest — the `--token-*` palette, the `--framer-*` internals, 83 @font-face faces, each name resolved on a probe), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [site-tree.md](site-tree.md) | Public tree from the 2026-11-21 walk: which control opens which page, menu, or dialog, and which branches stopped at a wall. |
+| [login-review.json](login-review.json) | Empty sign-in wall only. The signed-in app was not entered. |
 
 ## Brief
 
@@ -105,6 +107,8 @@ Every value came off the running signed-out site in headless Chromium:
 - **Screenshots.** [tools/capture/public/public.mjs](tools/capture/public/public.mjs) takes viewport and full-page shots per route with `.capture.json` sidecars; [tools/capture/quantize.py](tools/capture/quantize.py) posterises them to 256 colours and stitches the tiled mobile pages.
 
 Nothing was signed into, booked, sent or consented to: the Products flyout and the mobile menu are local toggles, each opened once for the reading and closed again; the "Cookie Settings" card was hidden, never answered; the sales and sign-in fields were focused and the sign-in card was filled with the documented `name@example.com` test address, then cleared — no form was ever submitted, and every Book-a-demo / Plan-a-route / Contact-sales / Sign-in / Create-account / Send action was never followed.
+
+The 2026-11-21 refresh re-photographed the public routes and wrote [site-tree.md](site-tree.md) before those shots. That pass left the sign-in field empty. Continue, Create account, and Apply ids were not clicked. No identity provider was offered or clicked.
 
 ## What to distrust
 

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-16T08:42:56.272Z",
+ "capturedAt": "2026-11-21T10:11:55.593Z",
  "screenshot": "mobile-pricing-api-light-full.png",
  "sanitizedSourceUrl": null,
  "requested": {
@@ -34,7 +34,7 @@
   },
   "documentSize": {
    "width": 390,
-   "height": 7846
+   "height": 7823
   },
   "scroll": {
    "x": 0,
@@ -48,18 +48,18 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 7846
+   "height": 7823
   }
  },
  "png": {
   "width": 780,
-  "height": 15692
+  "height": 15646
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 780,
-   "height": 15692
+   "height": 15646
   },
   "basis": "stitchedParts"
  },
@@ -87,7 +87,7 @@
    "x": 0,
    "y": 7000,
    "width": 390,
-   "height": 846,
+   "height": 823,
    "documentY": 7000
   }
  ]

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-16T08:42:34.780Z",
+ "capturedAt": "2026-11-21T10:11:34.521Z",
  "screenshot": "mobile-home-light-full.png",
  "sanitizedSourceUrl": null,
  "requested": {
@@ -34,7 +34,7 @@
   },
   "documentSize": {
    "width": 390,
-   "height": 8851
+   "height": 8759
   },
   "scroll": {
    "x": 0,
@@ -48,18 +48,18 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 8851
+   "height": 8759
   }
  },
  "png": {
   "width": 780,
-  "height": 17702
+  "height": 17518
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 780,
-   "height": 17702
+   "height": 17518
   },
   "basis": "stitchedParts"
  },
@@ -87,7 +87,7 @@
    "x": 0,
    "y": 7000,
    "width": 390,
-   "height": 1851,
+   "height": 1759,
    "documentY": 7000
   }
  ]

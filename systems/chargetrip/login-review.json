@@ -1,0 +1,132 @@
+{
+  "product": "Chargetrip",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "signed_in": false,
+  "origin": "https://www.chargetrip.com",
+  "offered": {
+    "nav": {
+      "header": [
+        "Logo /",
+        "Products (hover panel)",
+        "Use cases (hover panel)",
+        "Developers (hover panel)",
+        "Pricing (hover panel)",
+        "Company (hover panel)",
+        "Contact sales /contact/sales",
+        "Sign in https://account.chargetrip.com"
+      ],
+      "products": [
+        "No-code /no-code",
+        "API /api",
+        "Integration Partners /use-case-legacy/integration-partners"
+      ],
+      "useCases": [
+        "CPO /cpo",
+        "eMSP /emsp",
+        "Leasing /leasing",
+        "Rental /rental",
+        "OEM /oems",
+        "Fleet Management /fleets",
+        "Consulting /consulting",
+        "Retailers /retailers"
+      ],
+      "developers": [
+        "Playground https://playground.chargetrip.com",
+        "Documentation https://developers.chargetrip.com"
+      ],
+      "pricing": [
+        "No-Code Pricing /pricing/nocode",
+        "API Pricing /pricing/api"
+      ],
+      "company": [
+        "About /about",
+        "Careers /careers",
+        "Newsroom /newsroom",
+        "Mission /mission"
+      ],
+      "phone": [
+        "Menu icon",
+        "Sign in",
+        "No-code",
+        "API",
+        "Integration Partners",
+        "Use Cases",
+        "Developers",
+        "Pricing",
+        "Company"
+      ]
+    },
+    "settings": {
+      "seen": false,
+      "reason": "No settings surface is offered signed out. The account page shows an English control and a Light control beside the empty sign-in card. Neither was opened. Cookie Settings was hidden, not answered."
+    },
+    "create": {
+      "seen": true,
+      "items": [
+        "Create account on the empty sign-in card",
+        "Sign up in the footer (https://account.chargetrip.io/sign-in)",
+        "Sign up named inside the playground credential dialog"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/about-light-default.png",
+    "screenshots/about-light-full.png",
+    "screenshots/api-light-default.png",
+    "screenshots/api-light-full.png",
+    "screenshots/contact-light-default.png",
+    "screenshots/contact-light-full.png",
+    "screenshots/cpo-light-default.png",
+    "screenshots/cpo-light-full.png",
+    "screenshots/developers-light-default.png",
+    "screenshots/developers-light-full.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-menu.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-home-light-menu-open.png",
+    "screenshots/mobile-pricing-api-light-default.png",
+    "screenshots/mobile-pricing-api-light-full.png",
+    "screenshots/newsroom-light-default.png",
+    "screenshots/newsroom-light-full.png",
+    "screenshots/nocode-light-default.png",
+    "screenshots/nocode-light-full.png",
+    "screenshots/playground-light-default.png",
+    "screenshots/pricing-api-light-default.png",
+    "screenshots/pricing-api-light-full.png",
+    "screenshots/pricing-nocode-light-default.png",
+    "screenshots/pricing-nocode-light-full.png",
+    "screenshots/routing-light-default.png",
+    "screenshots/routing-light-full.png",
+    "screenshots/sales-light-default.png",
+    "screenshots/sales-light-full.png",
+    "screenshots/signin-light-default.png",
+    "screenshots/terms-light-default.png"
+  ],
+  "gaps": [
+    "Sign in stops at the empty card: E-mail address, Continue, Create account. Nothing typed. Continue was not clicked.",
+    "Create account and the footer Sign up were not opened.",
+    "No Google, Apple, or other identity provider was offered on the empty card. None was clicked.",
+    "Playground loads a public examples shell and a credential dialog (x-client-id, x-app-id, Apply ids). The dialog was not filled and Apply ids was not clicked.",
+    "English and Light on the account page were not opened. No signed-out settings page exists.",
+    "Book a demo and Schedule a call go to HubSpot meetings. Not submitted.",
+    "The signed-in app, dashboard, API keys, and billing were not entered."
+  ],
+  "not_submitted": [
+    "E-mail address",
+    "Continue",
+    "Create account",
+    "Sign up",
+    "Apply ids",
+    "x-client-id",
+    "x-app-id",
+    "Book a demo",
+    "Contact sales form",
+    "newsletter Sign up",
+    "Cookie Settings",
+    "any form"
+  ]
+}
