@@ -1,0 +1,46 @@
+{
+  "product": "SeatGeek",
+  "domain": "seatgeek.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Incognito preview tab, signed out, 1440x900 CSS pixels, device pixel ratio 2",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in",
+      "url": "https://seatgeek.com/sports-tickets",
+      "title": "Sports Tickets | 2026-2027 events & schedule | SeatGeek",
+      "painted": true,
+      "headings": [
+        "Sign in or create account",
+        "Enter your email to sign in to or create your SeatGeek account."
+      ],
+      "asksFor": [
+        {
+          "label": "Email",
+          "name": "email",
+          "type": "email",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "Continue",
+        "Dismiss"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "The header Sign in button opens a dialog on the current page. It is the login wall and the signup wall. The email field was empty. Continue was not clicked. No identity provider or wallet was shown. No form was submitted."
+    }
+  ],
+  "notOpened": [
+    "https://seatgeek.com/login was not opened. An earlier pass recorded it as a DataDome interstitial.",
+    "Checkout, ticket purchase, follow performer, subscribe, and the creators phone field were not opened.",
+    "Connect to Spotify was visible on the homepage and was not clicked."
+  ]
+}
