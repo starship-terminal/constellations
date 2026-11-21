@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:17:03.965Z",
+  "screenshot": "category-light-mobile.png",
+  "sanitizedSourceUrl": "https://www.lego.com/en-us/themes/city",
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "title": "LEGO® City Toys | Official LEGO® Shop US",
+    "path": "/en-us/themes/city",
+    "host": "www.lego.com"
+  },
+  "capture": {
+    "mode": "viewport"
+  }
+}

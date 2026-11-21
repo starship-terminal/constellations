@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:15:35.715Z",
+  "screenshot": "login-light-empty.png",
+  "sanitizedSourceUrl": "https://identity.lego.com/en-US/login",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "title": "LEGO® account",
+    "path": "/en-US/login",
+    "host": "identity.lego.com"
+  },
+  "capture": {
+    "mode": "viewport"
+  }
+}

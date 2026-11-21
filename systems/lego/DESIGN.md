@@ -92,7 +92,7 @@ Good for: toy retail and brand shop design: a declared Skroll token layer (--ds-
 
 Captured 2026-11-18, read-only (home, theme, bestsellers, product, offers, service, about and search are public signed out; sign-in, bag, checkout, wish list contents and membership signup were not entered). Themes: light.
 
-A token set and component reference for the public Official LEGO Shop US. It was read from **lego.com/en-us** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, City theme, bestsellers, a product page (Dump Truck & Front End Loader 60494), offers, customer service, about, and search results for `city`.
+A token set and component reference for the public Official LEGO Shop US. Values were read from **lego.com/en-us** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. A public refresh on **2026-11-21** mapped the homepage controls and added shots of the shop, Discover, and Help panels, the Insiders dialog, search, footer, City theme, Tower Bridge, customer service, an empty search, phone width, and the empty login and signup walls. The account was not entered.
 
 The shop ships a declared Skroll token layer (`--ds-color-*`, `--ds-layout-spacing-*`, `--ds-layout-radius-*`, `--ds-shadow-*`) and paints one light theme. The header is yellow. Primary actions are `#005ad2`. The product Add to Bag is emphasis orange `#e96f14`. Type is Cera Pro, which is proprietary and not committed. Icons are CSS masks, not SVG files.
 
@@ -175,4 +175,4 @@ Every committed reading was taken with `navigator.webdriver` masked by the captu
 5. **Do keep product cards flat.** The leaf is image, title and price, with a small yellow badge when the shop shows one. See [product-card-default](components/crops/product-card-default.png).
 6. **Don't invent a dark theme.** The shop does not publish one.
 7. **Don't square the buy button.** Add to Bag is a pill. The quantity stepper is 4px. See [quantity-default](components/crops/quantity-default.png).
-8. **Don't follow Add to Bag, Sign In or checkout for a visual.** Those leave the public surface.
+8. **Don't follow Add to Bag, Sign In or checkout for a visual.** Those leave the public surface. The empty walls are in [login-light-empty](screenshots/login-light-empty.png) and [signup-light-empty](screenshots/signup-light-empty.png).

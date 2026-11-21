@@ -1,6 +1,6 @@
 # LEGO design reference
 
-A token set and component reference for the public Official LEGO Shop US. It was read from **lego.com/en-us** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, City theme, bestsellers, a product page (Dump Truck & Front End Loader 60494), offers, customer service, about, and search results for `city`.
+A token set and component reference for the public Official LEGO Shop US. Values were read from **lego.com/en-us** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. A public refresh on **2026-11-21** mapped the homepage controls and added shots of the shop, Discover, and Help panels, the Insiders dialog, search, footer, City theme, Tower Bridge, customer service, an empty search, phone width, and the empty login and signup walls. The account was not entered.
 
 The shop ships a declared Skroll token layer (`--ds-color-*`, `--ds-layout-spacing-*`, `--ds-layout-radius-*`, `--ds-shadow-*`) and paints one light theme. The header is yellow. Primary actions are `#005ad2`. The product Add to Bag is emphasis orange `#e96f14`. Type is Cera Pro, which is proprietary and not committed. Icons are CSS masks, not SVG files.
 
@@ -12,6 +12,8 @@ The shop ships a declared Skroll token layer (`--ds-color-*`, `--ds-layout-spaci
 | [style-guide.html](style-guide.html) | Renders the roles, brand colours, spacing and the main controls |
 | [components.md](components.md) | Component inventory with crops and measured values |
 | [patterns.md](patterns.md) | How the components combine on the public shop |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog, written 2026-11-21 |
+| [login-review.json](login-review.json) | Signed-out pass. `login_extracted` stays `not-started` |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | Page captures, desktop 1440 and phone 390 |
 | [icons/](icons) | Index only: shop icons are CSS masks (`.sk-icon`), not SVG files |
@@ -102,6 +104,8 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 The age-gate dialog (`dialog.AgeGate_age-gate__wrapper`) and the consent modal were removed from the DOM. No consent button was clicked. No Add to Bag, Sign In, checkout or email submit was used.
 
+The 2026-11-21 refresh added screenshots and [site-tree.md](site-tree.md). It did not re-read CSS. Token values are still the 2026-11-18 readings.
+
 ## What to distrust
 
 Screenshots are 256-colour PNGs. Read colours from the tokens. Cera Pro is not loaded in the style guide, so the guide's type is a fallback. The listing Add to Bag measured `#f47d20` (`--ds-color-brand-bright-orange`); the product Add to Bag measured `#e96f14` (`--ds-color-action-emphasis-enabled`). Both are real. A forced pressed state on the listing button came back as a `lab()` colour and is not tokenised. The filter panel did not open, so its interior is unmeasured.
@@ -146,7 +150,7 @@ Cera Pro is the computed UI family (400, 500, 700). It is proprietary and is not
 | Tabs | captured | product Overview / Features / Specifications / Reviews in [product-default](screenshots/product-default.png) |
 | Menu | captured | [mega-menu-open](components/crops/mega-menu-open.png) |
 | Tooltip | not captured | not opened |
-| Dialog | not captured | age gate and consent were hidden, not captured as a product dialog |
+| Dialog | captured | [home-light-account-drawer](screenshots/home-light-account-drawer.png), [home-light-shop-menu](screenshots/home-light-shop-menu.png). Age gate and consent were hidden, not captured |
 | Toast | not present | none shown |
 | Card | captured | [product-card-default](components/crops/product-card-default.png) |
 | List row | not present | the shop uses a card grid, not rows |
@@ -157,7 +161,7 @@ Cera Pro is the computed UI family (400, 500, 700). It is proprietary and is not
 | Disabled | not present | no disabled control on the public pages |
 | Loading | not captured | no loading state held still |
 | Error | not present | no validation error on the public pages |
-| Empty | not captured | search for `city` returned results; an empty query was not forced |
+| Empty | captured | [search-light-empty](screenshots/search-light-empty.png): a quoted empty query shows "Oops, we couldn't find anything" |
 | App shell | captured | [home-default](screenshots/home-default.png), [mobile-home-default](screenshots/mobile-home-default.png) |
 | Form with validation | not captured | footer email and sign-in were not submitted |
 | Destructive confirmation | not present | none on the public shop |
@@ -178,7 +182,7 @@ Cera Pro is the computed UI family (400, 500, 700). It is proprietary and is not
 5. **Do keep product cards flat.** The leaf is image, title and price, with a small yellow badge when the shop shows one. See [product-card-default](components/crops/product-card-default.png).
 6. **Don't invent a dark theme.** The shop does not publish one.
 7. **Don't square the buy button.** Add to Bag is a pill. The quantity stepper is 4px. See [quantity-default](components/crops/quantity-default.png).
-8. **Don't follow Add to Bag, Sign In or checkout for a visual.** Those leave the public surface.
+8. **Don't follow Add to Bag, Sign In or checkout for a visual.** Those leave the public surface. The empty walls are in [login-light-empty](screenshots/login-light-empty.png) and [signup-light-empty](screenshots/signup-light-empty.png).
 
 ## Rebuild
 

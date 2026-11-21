@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:16:58.882Z",
+  "screenshot": "search-light-results.png",
+  "sanitizedSourceUrl": "https://www.lego.com/en-us/search",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "title": "Search Results | LEGO Shop",
+    "path": "/en-us/search",
+    "host": "www.lego.com"
+  },
+  "capture": {
+    "mode": "viewport"
+  }
+}

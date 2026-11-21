@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:16:53.951Z",
+  "screenshot": "help-light-default.png",
+  "sanitizedSourceUrl": "https://www.lego.com/en-us/service",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "title": "Customer Service - LEGO.com US",
+    "path": "/en-us/service",
+    "host": "www.lego.com"
+  },
+  "capture": {
+    "mode": "viewport"
+  }
+}
