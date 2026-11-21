@@ -1,0 +1,114 @@
+{
+  "product": "Jitter",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "signed_in": false,
+  "origin": "https://jitter.video",
+  "landed": "https://jitter.video/",
+  "offered": {
+    "nav": {
+      "items": [
+        "Logo /",
+        "Product menu",
+        "Customers menu",
+        "Templates /templates/",
+        "Pricing /pricing/",
+        "Log in /login/",
+        "Sign up /join/",
+        "Open menu (phone)"
+      ],
+      "reached": [
+        "Logo /",
+        "Product menu",
+        "Customers menu",
+        "Templates /templates/",
+        "Pricing /pricing/",
+        "Log in /login/",
+        "Sign up /join/",
+        "Open menu (phone)"
+      ],
+      "note": "Signed out. Product and Customers are links with aria-haspopup that open hover menus on /. Log in and Sign up are full pages. The phone drawer lists Product, Customers, Templates, Pricing, Contact sales, and Sign up. Google and SSO were not clicked."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings surface is offered signed out. No theme switch was found. Account and workspace settings sit behind login."
+    },
+    "create": {
+      "items": [
+        "Sign up",
+        "Try Jitter for free",
+        "Get started for free",
+        "Get started",
+        "Continue with email"
+      ],
+      "reached": [
+        "Sign up"
+      ],
+      "note": "Sign up and /join/ open an empty card: Continue with Google, an empty work-email field, Continue with email. Nothing was typed or submitted. Get started on a plan was not clicked. Continue with email was not clicked."
+    }
+  },
+  "screens": [
+    "screenshots/agencies-light-default.png",
+    "screenshots/agencies-light-full.png",
+    "screenshots/changelog-light-default.png",
+    "screenshots/changelog-light-full.png",
+    "screenshots/community-light-default.png",
+    "screenshots/community-light-full.png",
+    "screenshots/compare-light-default.png",
+    "screenshots/compare-light-full.png",
+    "screenshots/contact-light-default.png",
+    "screenshots/customer-light-default.png",
+    "screenshots/customer-light-full.png",
+    "screenshots/customers-light-default.png",
+    "screenshots/customers-light-full.png",
+    "screenshots/home-light-customers-menu.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-product-menu.png",
+    "screenshots/login-light-default.png",
+    "screenshots/manifesto-light-default.png",
+    "screenshots/manifesto-light-full.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-home-light-menu-open.png",
+    "screenshots/mobile-login-light-default.png",
+    "screenshots/mobile-pricing-light-default.png",
+    "screenshots/mobile-pricing-light-full.png",
+    "screenshots/mobile-product-light-default.png",
+    "screenshots/mobile-templates-light-default.png",
+    "screenshots/mobile-templates-light-full.png",
+    "screenshots/notfound-light-default.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-faq.png",
+    "screenshots/pricing-light-full.png",
+    "screenshots/product-light-default.png",
+    "screenshots/product-light-full.png",
+    "screenshots/signup-light-default.png",
+    "screenshots/templates-light-default.png",
+    "screenshots/templates-light-full.png",
+    "screenshots/templates-light-search-focus.png"
+  ],
+  "gaps": [
+    "Signed-in files, account, editor, onboarding, brand kit and trash were not entered. Older shots of those screens were removed from this public pass.",
+    "Continue with Google is on the login card and was not clicked. Continue with SSO was not on the card.",
+    "A public /file/ template opened an editor with a chat assistant. That shot was not committed.",
+    "The contact-sales page ships sample placeholders. The email and phone placeholders were covered in the page shot. The form was not submitted.",
+    "No cookie dialog was present. The Intercom launcher was hidden and not clicked.",
+    "Dark theme is not present. Pricing already shows Pay annually selected, so a separate monthly shot was not taken.",
+    "DESIGN.md was not regenerated. Regenerating it requires a catalog edit, which this pass does not make."
+  ],
+  "not_submitted": [
+    "login",
+    "sign up",
+    "continue with email",
+    "continue with Google",
+    "continue with SSO",
+    "contact sales",
+    "newsletter",
+    "template search",
+    "checkout",
+    "cookie consent",
+    "any form"
+  ]
+}

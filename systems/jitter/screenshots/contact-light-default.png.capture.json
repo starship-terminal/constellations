@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:55:38.394Z",
+  "capturedAt": "2026-11-21T13:12:20.424Z",
   "screenshot": "contact-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -65,6 +65,5 @@
   "cropCoordinates": {
     "status": "unverified",
     "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
-  },
-  "redaction": "published sample email and phone placeholders covered with the field fill, 2026-11-18"
+  }
 }

@@ -1,8 +1,8 @@
 # Jitter design reference
 
-A token set and component reference for Jitter's marketing site and the signed-in product. Read from **jitter.video** on **2026-11-18**, first signed out then on a free email account, in headless Chromium at 1440 x 900 and 390 x 844.
+A token set and component reference for Jitter's public marketing site. Read from **jitter.video** on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844.
 
-Jitter is a motion design tool on the web. The public site is a React app with CSS-module classes. It paints one light theme. Body declares `--bg-color` `#ffffff`, `--primary-color` `#19171c`, `--primary-color-alt` `#fba6ec` and `--secondary-color` `#6e6e73`. Buttons are pills: the fill paints on `span.button-inner`, not on the anchor. Violet `#b593ff`, yellow `#f5ff63`, blue `#50b8ff` and ink `#19171c` are the fills that show. Type is TWK Lausanne on marketing controls, Inter on body and in the editor. Euclid Circular B is the display face. Sign-in used email only: a magic link, never Google or SSO. Files, account, trash, brand kit, onboarding and the editor were captured. Billing checkout, paid export and Invite were not opened.
+Jitter is a motion design tool on the web. The public site is a React app with CSS-module classes. It paints one light theme. Body declares `--bg-color` `#ffffff`, `--primary-color` `#19171c`, `--primary-color-alt` `#fba6ec` and `--secondary-color` `#6e6e73`. Buttons are pills: the fill paints on `span.button-inner`, not on the anchor. Violet `#b593ff`, yellow `#f5ff63`, blue `#50b8ff` and ink `#19171c` are the fills that show. Type is TWK Lausanne on marketing controls, Inter on body. Euclid Circular B is the display face. Log in and Sign up are the same empty card: Continue with Google, an empty work-email field, Continue with email. Google was not clicked. Nothing was typed or submitted. Files, account, the editor and onboarding were not entered on this pass.
 
 | File | What it is |
 |---|---|
@@ -12,6 +12,8 @@ Jitter is a motion design tool on the web. The public site is a React app with C
 | [style-guide.html](style-guide.html) | One page that renders the tokens |
 | [components.md](components.md) | Component inventory with crops and the Gaps |
 | [patterns.md](patterns.md) | How the public pages combine |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, or wall |
+| [login-review.json](login-review.json) | What the signed-out shell offered, and what was not submitted |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 at 1x, phone 390 at 2x. Full pages taller than one viewport are stitched from tiles, capped at 8 |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [motion.json](raw/motion.json) |
@@ -29,8 +31,8 @@ Read this before designing in this style. Take every value from [tokens.json](to
 2. Keep the page white and the ink near-black.
 3. Colour a button by role.
 4. Don't invent a dark theme.
-5. Don't follow Google, SSO or a billing control.
-6. Keep the editor header dark and square.
+5. Don't follow Google or a billing control.
+6. Stop at the empty login card.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -69,7 +71,7 @@ Scorecard: **8 of 25 met, 14 partly, 3 missing**; C5, V1, V2 are optional for a 
 
 | Open | Grade | Evidence |
 |---|---|---|
-| F1 Colour ramps | Missing | Named fills (ink, page, grey, violet, yellow, blue, blue-strong, pink, muted, violet-export #9262f0, violet-upgrade #7a40ed), not a 10-step ramp per hue. None were invented. |
+| F1 Colour ramps | Missing | Named fills (ink, page, grey, violet, yellow, blue, pink, muted), not a 10-step ramp per hue. Editor Share and Export fills were not re-measured on this public pass. None were invented. |
 | F6 Status colours | Missing | Success, warning, danger and info still do not appear. Offline in the editor is a status chip, not a semantic danger/success token. None were invented. |
 | F12 Elevation | Missing | Marketing pills compute box-shadow none. The Superagents card sits as an overlay without a published elevation scale. None were invented. |
 | F2 Background roles | Partly | Page (#ffffff), surface (header grey #f2f1f3, files shell), raised (account menu), overlay (Superagents card on the editor). Scrim still not isolated. |
@@ -84,7 +86,7 @@ Scorecard: **8 of 25 met, 14 partly, 3 missing**; C5, V1, V2 are optional for a 
 | C1 Component coverage | Partly | Now isolated or screenshotted: button, icon button, link, text field, text area, tabs (Design/Animate), menu, card, list row, avatar, empty state. Select, checkbox, radio, switch, tooltip, dialog, toast, table, badge still missing. Below 17 of 19. |
 | C2 States | Partly | Buttons have hover, focus-visible and pressed on marketing. Files create/figma have hover. Fields have focused. Disabled, loading and error were not produced after sign-in. |
 | C4 Token-based specs | Partly | tokens.json names the fills, type and sizes. components.md still quotes measured hex and pixels next to crops. |
-| P1 Patterns | Partly | patterns.md covers marketing, sign-in, onboarding, files, account, editor and empty team files. Validation, destructive confirmation and feedback after submit were not reached. |
+| P1 Patterns | Partly | patterns.md covers the marketing shell, menus, pricing, templates, the empty login card, contact sales and not-found. Validation, destructive confirmation and feedback after submit were not reached. |
 | A1 Assets | Partly | Fonts named with sans-serif fallbacks. No standalone SVG icon set was lifted; wordmark, menu glyph and editor tools stay in screenshots. |
 
 Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SVG icon set was lifted; the wordmark and menu glyph stay in the screenshots).
@@ -93,7 +95,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 ## How the values were read
 
-Foundation colours are the custom properties declared on `body`, harvested by [tools/capture/vars.mjs](tools/capture/vars.mjs) from the live home page. Marketing button fills come from [tools/capture/public/measure.mjs](tools/capture/public/measure.mjs). Signed-in fills (editor Share, Export, Upgrade now) come from [tools/capture/public/measure-signed-in.mjs](tools/capture/public/measure-signed-in.mjs). Screenshots come from [tools/capture/public/public.mjs](tools/capture/public/public.mjs) and [tools/capture/public/signed-in.mjs](tools/capture/public/signed-in.mjs) with a persistent Chromium profile. Motion comes from [tools/capture/motion-probe.mjs](tools/capture/motion-probe.mjs) on the home, pricing and login pages. Intercom and any cookie overlay were hidden. Consent controls were never clicked. Google, SSO, billing checkout, paid export and Invite were never followed.
+Foundation colours are the custom properties declared on `body`, harvested by [tools/capture/vars.mjs](tools/capture/vars.mjs) from the live home page on 2026-11-21. Marketing button fills come from [tools/capture/public/measure.mjs](tools/capture/public/measure.mjs). Screenshots come from [tools/capture/public/public.mjs](tools/capture/public/public.mjs). Motion comes from [tools/capture/motion-probe.mjs](tools/capture/motion-probe.mjs) on the home, pricing and login pages. Intercom was hidden. No cookie dialog was present. Google was not clicked. No form was submitted.
 
 ## What to distrust
 
@@ -104,7 +106,9 @@ Foundation colours are the custom properties declared on `body`, harvested by [t
 - `--ease-overshoot-linear` is a `linear()` spring. It is recorded under motion notTokenised, not as a cubic bezier.
 - Reduced motion is partial on the home page and ignored on pricing and login. That is the product's behaviour.
 - The phone menu button was not isolated as its own crop. The open drawer is the menu-open screenshot.
-- The contact-sales page ships sample placeholders, including an email and a phone number. Those characters were covered in the page shot. The email crop was removed because covering the address left an empty field.
+- The contact-sales page ships sample placeholders, including an email and a phone number. Those two were covered in the page shot. The name placeholder "John Doe" remains, because it is the site's sample, not an account.
+- Continue with SSO was not on the login card. A selector that claimed to measure it matched the email field, so that reading was dropped.
+- DESIGN.md still quotes the 2026-11-18 signed-in capture in places. Regenerating it needs a catalog edit, which this pass does not make.
 
 ## Fonts
 
@@ -126,32 +130,32 @@ TWK Lausanne, Inter and Euclid Circular B are proprietary faces served by jitter
 | Button | Captured. Black, violet, yellow, blue. [components/crops/hero-cta-default.png](components/crops/hero-cta-default.png) |
 | Icon button | Captured as the phone menu control in [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png). No isolated crop |
 | Link | Captured. Header log-in and nav items. [components/crops/nav-login-default.png](components/crops/nav-login-default.png) |
-| Text field | Captured: login email, files search, account name. [components/crops/login-field-default.png](components/crops/login-field-default.png), [components/crops/account-name-default.png](components/crops/account-name-default.png) |
+| Text field | Captured: login email, template search, contact name. [components/crops/login-field-default.png](components/crops/login-field-default.png), [components/crops/search-default.png](components/crops/search-default.png) |
 | Text area | Captured at the contact-sales boundary, focused empty, never submitted. [components/crops/contact-body-default.png](components/crops/contact-body-default.png) |
 | Select | Not present on the signed-out pages |
 | Checkbox | Not present on the signed-out pages |
 | Radio | Not present. The billing toggle is a segmented control, not a radio. [components/crops/plan-toggle-default.png](components/crops/plan-toggle-default.png) |
 | Switch | Not present on the signed-out pages |
-| Tabs | Captured in the editor as Design / Animate. [components/crops/editor-design-default.png](components/crops/editor-design-default.png) |
-| Menu | Captured as the phone drawer. [screenshots/mobile-home-light-menu-open.png](screenshots/mobile-home-light-menu-open.png). The desktop product submenu was not isolated |
+| Tabs | Not captured. Design / Animate sit in the editor, which was not entered |
+| Menu | Captured. Product and Customers hover menus, and the phone drawer. [screenshots/home-light-product-menu.png](screenshots/home-light-product-menu.png), [screenshots/mobile-home-light-menu-open.png](screenshots/mobile-home-light-menu-open.png) |
 | Tooltip | Not present on the signed-out pages |
 | Dialog | Not present. Login is a full page, not a dialog |
 | Toast | Not present. Nothing was submitted |
 | Card | Captured as the login card. [screenshots/login-light-default.png](screenshots/login-light-default.png) |
 | List row | Captured as the FAQ row. [components/crops/faq-default.png](components/crops/faq-default.png) |
 | Table | Not present on the signed-out pages |
-| Avatar | Captured as the header K mark on files and account. [screenshots/files-light-default.png](screenshots/files-light-default.png) |
+| Avatar | Not captured. The signed-out header has no avatar |
 | Badge | Not present as a component. Plan names sit in the pricing cards |
-| App shell | Captured. Marketing header and the signed-in files shell. [screenshots/files-light-default.png](screenshots/files-light-default.png) |
-| Form with validation error | Not captured. No form was submitted after sign-in |
-| Empty state | Captured as not-found, empty team files, and empty Brand Kit. [screenshots/team-light-default.png](screenshots/team-light-default.png) |
+| App shell | Captured. Marketing header. [screenshots/home-light-default.png](screenshots/home-light-default.png). The files shell was not entered |
+| Form with validation error | Not captured. No form was submitted |
+| Empty state | Captured as the not-found page. [screenshots/notfound-light-default.png](screenshots/notfound-light-default.png) |
 | Loading state | Not present on the signed-out pages |
 | Error state | Captured as the not-found page only. No form error was produced |
 | Destructive confirmation | Not present signed out |
 | Feedback after an action | Not captured. No action was submitted |
 | Search | Captured. Template search, focused, not typed. [components/crops/search-default.png](components/crops/search-default.png) |
 | List or table | Captured as the pricing FAQ and the changelog listing. [screenshots/changelog-light-default.png](screenshots/changelog-light-default.png) |
-| Onboarding | Captured. Name, role, team join, invite skip, start. [screenshots/onboarding-light-name.png](screenshots/onboarding-light-name.png) |
+| Onboarding | Not captured. It sits behind sign-in |
 | Light and dark | Captured as one light theme. No dark theme is published |
 | Desktop 1440 and phone 390 | Captured |
 
@@ -161,8 +165,8 @@ TWK Lausanne, Inter and Euclid Circular B are proprietary faces served by jitter
 - **Keep the page white and the ink near-black.** Page is `#ffffff`, text is `#19171c`. The header band is `#f2f1f3`. [home-light-default.png](screenshots/home-light-default.png)
 - **Colour a button by role.** Violet starts a trial, yellow points at stories, blue is the free plan, ink is Sign up. [pricing-light-default.png](screenshots/pricing-light-default.png)
 - **Don't invent a dark theme.** The site publishes one light theme. Dark bands inside a page are not a second theme. [login-light-default.png](screenshots/login-light-default.png)
-- **Don't follow Google, SSO or a billing control.** Email sign-in is enough for the product. Upgrade your plan and Export stay at rest. [login-google-default.png](components/crops/login-google-default.png)
-- **Keep the editor header dark and square.** Share is a 32px blue chip. Export is a 48px violet slab with radius 0. Marketing stays pill-shaped. [editor-light-default.png](screenshots/editor-light-default.png)
+- **Don't follow Google or a billing control.** The login card shows Continue with Google. It was not clicked. Get started on a plan was not clicked. [login-google-default.png](components/crops/login-google-default.png)
+- **Stop at the empty login card.** `/login/` and `/join/` are the same card. The email field stays empty. [login-light-default.png](screenshots/login-light-default.png)
 
 ## Rebuild
 

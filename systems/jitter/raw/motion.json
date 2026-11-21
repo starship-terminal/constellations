@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "readAt": "2026-11-18",
+  "readAt": "2026-11-21",
   "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
   "source": "public pages, headless Chromium, read at rest",
   "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
@@ -23,7 +23,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 3118,
+   "scanned": 3125,
    "capped": false,
    "unreadableSheets": 0,
    "sheetsTruncated": {
@@ -1657,7 +1657,7 @@
      ]
     },
     {
-     "name": "_fade-in_bsun9_1",
+     "name": "_fade-in_a7jre_1",
      "steps": [
       {
        "offset": "0%",
@@ -1674,6 +1674,22 @@
      ],
      "properties": [
       "opacity"
+     ]
+    },
+    {
+     "name": "_light-menu-in_a7jre_1",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
      ]
     },
     {
@@ -1733,7 +1749,7 @@
      ]
     },
     {
-     "name": "_fade-in_1l1w3_1",
+     "name": "_fade-in_jto9u_1",
      "steps": [
       {
        "offset": "0%",
@@ -1750,6 +1766,22 @@
      ],
      "properties": [
       "opacity"
+     ]
+    },
+    {
+     "name": "_light-menu-in_jto9u_1",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
      ]
     },
     {
@@ -2757,22 +2789,6 @@
       }
      ],
      "properties": [
-      "transform"
-     ]
-    },
-    {
-     "name": "_menuIn_1aetx_1",
-     "steps": [
-      {
-       "offset": "0%",
-       "properties": [
-        "opacity",
-        "transform"
-       ]
-      }
-     ],
-     "properties": [
-      "opacity",
       "transform"
      ]
     },
@@ -3908,7 +3924,7 @@
      ]
     },
     {
-     "name": "_menuOpen_16n3u_1",
+     "name": "_menuOpen_18sfd_1",
      "steps": [
       {
        "offset": "0%",
@@ -3936,7 +3952,7 @@
      ]
     },
     {
-     "name": "_menuClose_16n3u_1",
+     "name": "_menuClose_18sfd_1",
      "steps": [
       {
        "offset": "0%",
@@ -3965,7 +3981,7 @@
      ]
     },
     {
-     "name": "_toolIconBounce_16n3u_1",
+     "name": "_toolIconBounce_18sfd_1",
      "steps": [
       {
        "offset": "0%, 100%",
@@ -3985,7 +4001,7 @@
      ]
     },
     {
-     "name": "_toolButtonOrbit_16n3u_1",
+     "name": "_toolButtonOrbit_18sfd_1",
      "steps": [
       {
        "offset": "100%",
@@ -4454,20 +4470,6 @@
      ]
     },
     {
-     "name": "_trashHop_6bd7q_1",
-     "steps": [
-      {
-       "offset": "40%",
-       "properties": [
-        "translate"
-       ]
-      }
-     ],
-     "properties": [
-      "translate"
-     ]
-    },
-    {
      "name": "_copiedBlink_r9j03_1",
      "steps": [
       {
@@ -4579,6 +4581,20 @@
      ],
      "properties": [
       "rotate"
+     ]
+    },
+    {
+     "name": "_trashHop_6bd7q_1",
+     "steps": [
+      {
+       "offset": "40%",
+       "properties": [
+        "translate"
+       ]
+      }
+     ],
+     "properties": [
+      "translate"
      ]
     },
     {
@@ -5216,6 +5232,23 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "._lightDropdown_a7jre_187._dropdownContent_a7jre_84",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
      "selector": "._content_1ebl6_71:is([role=\"menu\"], [role=\"listbox\"])",
      "declarations": {
       "animation-duration": "auto",
@@ -5244,7 +5277,7 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
-     "selector": "._content_1aetx_71",
+     "selector": "._lightContextMenu_jto9u_177._contextMenuContent_jto9u_73",
      "declarations": {
       "animation-duration": "auto",
       "animation-timing-function": "ease",
@@ -5434,7 +5467,7 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
-     "selector": "._menuContent_16n3u_211, ._toolButton_16n3u_126[aria-current] > svg, ._bouncingIcon_16n3u_255, ._shimmering_16n3u_159::before",
+     "selector": "._menuContent_18sfd_210, ._toolButton_18sfd_125[aria-current] > svg, ._bouncingIcon_18sfd_254, ._shimmering_18sfd_158::before",
      "declarations": {
       "animation-duration": "auto",
       "animation-timing-function": "ease",
@@ -5671,23 +5704,6 @@
      }
     },
     {
-     "media": "@media (prefers-reduced-motion: no-preference)",
-     "selector": "._actionBarIconButton_6bd7q_202:hover > svg",
-     "declarations": {
-      "animation-duration": "0.25s",
-      "animation-timing-function": "ease-out",
-      "animation-delay": "0.4s",
-      "animation-iteration-count": "1",
-      "animation-direction": "normal",
-      "animation-fill-mode": "none",
-      "animation-play-state": "running",
-      "animation-name": "_trashHop_6bd7q_1",
-      "animation-timeline": "auto",
-      "animation-range-start": "normal",
-      "animation-range-end": "normal"
-     }
-    },
-    {
      "media": "@media (prefers-reduced-motion: reduce)",
      "selector": "._copied_r9j03_13",
      "declarations": {
@@ -5773,6 +5789,23 @@
      }
     },
     {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": "._actionBarIconButton_6bd7q_202:hover > svg",
+     "declarations": {
+      "animation-duration": "0.25s",
+      "animation-timing-function": "ease-out",
+      "animation-delay": "0.4s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "_trashHop_6bd7q_1",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
      "media": "@media (prefers-reduced-motion: reduce)",
      "selector": "._tile_tenoe_171",
      "declarations": {
@@ -5814,7 +5847,7 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
-     "selector": "._navBar_1gjhb_84",
+     "selector": "._navBar_1icme_84",
      "declarations": {
       "transition-behavior": "normal",
       "transition-duration": "0s",
@@ -6876,7 +6909,7 @@
      "animations": []
     },
     {
-     "selector": "._chevronIcon_bsun9_65",
+     "selector": "._chevronIcon_a7jre_65",
      "context": [],
      "transitions": [
       {
@@ -6889,15 +6922,32 @@
      "animations": []
     },
     {
-     "selector": "._dropdownContent_bsun9_84",
+     "selector": "._dropdownContent_a7jre_84",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_fade-in_bsun9_1",
+       "name": "_fade-in_a7jre_1",
        "durationMs": 100,
        "delayMs": 0,
        "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "._lightDropdown_a7jre_187._dropdownContent_a7jre_84",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "_light-menu-in_a7jre_1",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease-out",
        "iterationCount": "1",
        "direction": "normal",
        "fillMode": "none",
@@ -6983,15 +7033,32 @@
      ]
     },
     {
-     "selector": "._contextMenuContent_1l1w3_73",
+     "selector": "._contextMenuContent_jto9u_73",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_fade-in_1l1w3_1",
+       "name": "_fade-in_jto9u_1",
        "durationMs": 100,
        "delayMs": 0,
        "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "._lightContextMenu_jto9u_177._contextMenuContent_jto9u_73",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "_light-menu-in_jto9u_1",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease-out",
        "iterationCount": "1",
        "direction": "normal",
        "fillMode": "none",
@@ -8832,38 +8899,17 @@
      "animations": []
     },
     {
-     "selector": "._content_1aetx_71",
+     "selector": "._profilePictureListOverflowList_13or3_127::-webkit-scrollbar-thumb",
      "context": [],
-     "transitions": [],
-     "animations": [
+     "transitions": [
       {
-       "name": "_menuIn_1aetx_1",
-       "durationMs": 120,
+       "property": "border",
+       "durationMs": 200,
        "delayMs": 0,
-       "easing": "ease-out",
-       "iterationCount": "1",
-       "direction": "normal",
-       "fillMode": "none",
-       "playState": "running"
+       "easing": "ease"
       }
-     ]
-    },
-    {
-     "selector": "._check_osp3a_156",
-     "context": [],
-     "transitions": [],
-     "animations": [
-      {
-       "name": "_checkPop_osp3a_1",
-       "durationMs": 320,
-       "delayMs": 0,
-       "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
-       "iterationCount": "1",
-       "direction": "normal",
-       "fillMode": "none",
-       "playState": "running"
-      }
-     ]
+     ],
+     "animations": []
     },
     {
      "selector": "._container_ufvau_129",
@@ -8905,17 +8951,21 @@
      "animations": []
     },
     {
-     "selector": "._profilePictureListOverflowList_13or3_127::-webkit-scrollbar-thumb",
+     "selector": "._check_osp3a_156",
      "context": [],
-     "transitions": [
+     "transitions": [],
+     "animations": [
       {
-       "property": "border",
-       "durationMs": 200,
+       "name": "_checkPop_osp3a_1",
+       "durationMs": 320,
        "delayMs": 0,
-       "easing": "ease"
+       "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
       }
-     ],
-     "animations": []
+     ]
     },
     {
      "selector": "._sidebarItemMenuTrigger_1ikh0_207",
@@ -11400,12 +11450,12 @@
      ]
     },
     {
-     "selector": "._toolButton_16n3u_126[aria-current] > svg",
+     "selector": "._toolButton_18sfd_125[aria-current] > svg",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_toolIconBounce_16n3u_1",
+       "name": "_toolIconBounce_18sfd_1",
        "durationMs": 180,
        "delayMs": 0,
        "easing": "ease-out",
@@ -11417,12 +11467,12 @@
      ]
     },
     {
-     "selector": "._shimmering_16n3u_159::before",
+     "selector": "._shimmering_18sfd_158::before",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_toolButtonOrbit_16n3u_1",
+       "name": "_toolButtonOrbit_18sfd_1",
        "durationMs": 4000,
        "delayMs": 0,
        "easing": "linear",
@@ -11434,12 +11484,12 @@
      ]
     },
     {
-     "selector": "._menuContent_16n3u_211[data-state=\"open\"]",
+     "selector": "._menuContent_18sfd_210[data-state=\"open\"]",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_menuOpen_16n3u_1",
+       "name": "_menuOpen_18sfd_1",
        "durationMs": 320,
        "delayMs": 0,
        "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
@@ -11451,32 +11501,15 @@
      ]
     },
     {
-     "selector": "._menuContent_16n3u_211[data-state=\"closed\"]",
+     "selector": "._menuContent_18sfd_210[data-state=\"closed\"]",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_menuClose_16n3u_1",
+       "name": "_menuClose_18sfd_1",
        "durationMs": 260,
        "delayMs": 0,
        "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
-       "iterationCount": "1",
-       "direction": "normal",
-       "fillMode": "both",
-       "playState": "running"
-      }
-     ]
-    },
-    {
-     "selector": "._bouncingIcon_16n3u_255",
-     "context": [],
-     "transitions": [],
-     "animations": [
-      {
-       "name": "_toolIconBounce_16n3u_1",
-       "durationMs": 180,
-       "delayMs": 0,
-       "easing": "ease-out",
        "iterationCount": "1",
        "direction": "normal",
        "fillMode": "both",
@@ -11542,7 +11575,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 1705,
+   "scanned": 1704,
    "capped": false,
    "unreadableSheets": 0,
    "sheetsTruncated": {
@@ -13024,7 +13057,7 @@
      ]
     },
     {
-     "name": "_fade-in_bsun9_1",
+     "name": "_fade-in_a7jre_1",
      "steps": [
       {
        "offset": "0%",
@@ -13041,6 +13074,22 @@
      ],
      "properties": [
       "opacity"
+     ]
+    },
+    {
+     "name": "_light-menu-in_a7jre_1",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
      ]
     },
     {
@@ -13100,7 +13149,7 @@
      ]
     },
     {
-     "name": "_fade-in_1l1w3_1",
+     "name": "_fade-in_jto9u_1",
      "steps": [
       {
        "offset": "0%",
@@ -13117,6 +13166,22 @@
      ],
      "properties": [
       "opacity"
+     ]
+    },
+    {
+     "name": "_light-menu-in_jto9u_1",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
      ]
     },
     {
@@ -14124,22 +14189,6 @@
       }
      ],
      "properties": [
-      "transform"
-     ]
-    },
-    {
-     "name": "_menuIn_1aetx_1",
-     "steps": [
-      {
-       "offset": "0%",
-       "properties": [
-        "opacity",
-        "transform"
-       ]
-      }
-     ],
-     "properties": [
-      "opacity",
       "transform"
      ]
     },
@@ -15275,7 +15324,7 @@
      ]
     },
     {
-     "name": "_menuOpen_16n3u_1",
+     "name": "_menuOpen_18sfd_1",
      "steps": [
       {
        "offset": "0%",
@@ -15303,7 +15352,7 @@
      ]
     },
     {
-     "name": "_menuClose_16n3u_1",
+     "name": "_menuClose_18sfd_1",
      "steps": [
       {
        "offset": "0%",
@@ -15332,7 +15381,7 @@
      ]
     },
     {
-     "name": "_toolIconBounce_16n3u_1",
+     "name": "_toolIconBounce_18sfd_1",
      "steps": [
       {
        "offset": "0%, 100%",
@@ -15352,7 +15401,7 @@
      ]
     },
     {
-     "name": "_toolButtonOrbit_16n3u_1",
+     "name": "_toolButtonOrbit_18sfd_1",
      "steps": [
       {
        "offset": "100%",
@@ -15821,20 +15870,6 @@
      ]
     },
     {
-     "name": "_trashHop_6bd7q_1",
-     "steps": [
-      {
-       "offset": "40%",
-       "properties": [
-        "translate"
-       ]
-      }
-     ],
-     "properties": [
-      "translate"
-     ]
-    },
-    {
      "name": "_copiedBlink_r9j03_1",
      "steps": [
       {
@@ -15946,6 +15981,20 @@
      ],
      "properties": [
       "rotate"
+     ]
+    },
+    {
+     "name": "_trashHop_6bd7q_1",
+     "steps": [
+      {
+       "offset": "40%",
+       "properties": [
+        "translate"
+       ]
+      }
+     ],
+     "properties": [
+      "translate"
      ]
     },
     {
@@ -16583,6 +16632,23 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "._lightDropdown_a7jre_187._dropdownContent_a7jre_84",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
      "selector": "._content_1ebl6_71:is([role=\"menu\"], [role=\"listbox\"])",
      "declarations": {
       "animation-duration": "auto",
@@ -16611,7 +16677,7 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
-     "selector": "._content_1aetx_71",
+     "selector": "._lightContextMenu_jto9u_177._contextMenuContent_jto9u_73",
      "declarations": {
       "animation-duration": "auto",
       "animation-timing-function": "ease",
@@ -16801,7 +16867,7 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
-     "selector": "._menuContent_16n3u_211, ._toolButton_16n3u_126[aria-current] > svg, ._bouncingIcon_16n3u_255, ._shimmering_16n3u_159::before",
+     "selector": "._menuContent_18sfd_210, ._toolButton_18sfd_125[aria-current] > svg, ._bouncingIcon_18sfd_254, ._shimmering_18sfd_158::before",
      "declarations": {
       "animation-duration": "auto",
       "animation-timing-function": "ease",
@@ -17038,23 +17104,6 @@
      }
     },
     {
-     "media": "@media (prefers-reduced-motion: no-preference)",
-     "selector": "._actionBarIconButton_6bd7q_202:hover > svg",
-     "declarations": {
-      "animation-duration": "0.25s",
-      "animation-timing-function": "ease-out",
-      "animation-delay": "0.4s",
-      "animation-iteration-count": "1",
-      "animation-direction": "normal",
-      "animation-fill-mode": "none",
-      "animation-play-state": "running",
-      "animation-name": "_trashHop_6bd7q_1",
-      "animation-timeline": "auto",
-      "animation-range-start": "normal",
-      "animation-range-end": "normal"
-     }
-    },
-    {
      "media": "@media (prefers-reduced-motion: reduce)",
      "selector": "._copied_r9j03_13",
      "declarations": {
@@ -17140,6 +17189,23 @@
      }
     },
     {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": "._actionBarIconButton_6bd7q_202:hover > svg",
+     "declarations": {
+      "animation-duration": "0.25s",
+      "animation-timing-function": "ease-out",
+      "animation-delay": "0.4s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "_trashHop_6bd7q_1",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
      "media": "@media (prefers-reduced-motion: reduce)",
      "selector": "._tile_tenoe_171",
      "declarations": {
@@ -17181,7 +17247,7 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
-     "selector": "._navBar_1gjhb_84",
+     "selector": "._navBar_1icme_84",
      "declarations": {
       "transition-behavior": "normal",
       "transition-duration": "0s",
@@ -18243,7 +18309,7 @@
      "animations": []
     },
     {
-     "selector": "._chevronIcon_bsun9_65",
+     "selector": "._chevronIcon_a7jre_65",
      "context": [],
      "transitions": [
       {
@@ -18256,15 +18322,32 @@
      "animations": []
     },
     {
-     "selector": "._dropdownContent_bsun9_84",
+     "selector": "._dropdownContent_a7jre_84",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_fade-in_bsun9_1",
+       "name": "_fade-in_a7jre_1",
        "durationMs": 100,
        "delayMs": 0,
        "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "._lightDropdown_a7jre_187._dropdownContent_a7jre_84",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "_light-menu-in_a7jre_1",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease-out",
        "iterationCount": "1",
        "direction": "normal",
        "fillMode": "none",
@@ -18350,15 +18433,32 @@
      ]
     },
     {
-     "selector": "._contextMenuContent_1l1w3_73",
+     "selector": "._contextMenuContent_jto9u_73",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_fade-in_1l1w3_1",
+       "name": "_fade-in_jto9u_1",
        "durationMs": 100,
        "delayMs": 0,
        "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "._lightContextMenu_jto9u_177._contextMenuContent_jto9u_73",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "_light-menu-in_jto9u_1",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease-out",
        "iterationCount": "1",
        "direction": "normal",
        "fillMode": "none",
@@ -20199,38 +20299,17 @@
      "animations": []
     },
     {
-     "selector": "._content_1aetx_71",
+     "selector": "._profilePictureListOverflowList_13or3_127::-webkit-scrollbar-thumb",
      "context": [],
-     "transitions": [],
-     "animations": [
+     "transitions": [
       {
-       "name": "_menuIn_1aetx_1",
-       "durationMs": 120,
+       "property": "border",
+       "durationMs": 200,
        "delayMs": 0,
-       "easing": "ease-out",
-       "iterationCount": "1",
-       "direction": "normal",
-       "fillMode": "none",
-       "playState": "running"
+       "easing": "ease"
       }
-     ]
-    },
-    {
-     "selector": "._check_osp3a_156",
-     "context": [],
-     "transitions": [],
-     "animations": [
-      {
-       "name": "_checkPop_osp3a_1",
-       "durationMs": 320,
-       "delayMs": 0,
-       "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
-       "iterationCount": "1",
-       "direction": "normal",
-       "fillMode": "none",
-       "playState": "running"
-      }
-     ]
+     ],
+     "animations": []
     },
     {
      "selector": "._container_ufvau_129",
@@ -20272,17 +20351,21 @@
      "animations": []
     },
     {
-     "selector": "._profilePictureListOverflowList_13or3_127::-webkit-scrollbar-thumb",
+     "selector": "._check_osp3a_156",
      "context": [],
-     "transitions": [
+     "transitions": [],
+     "animations": [
       {
-       "property": "border",
-       "durationMs": 200,
+       "name": "_checkPop_osp3a_1",
+       "durationMs": 320,
        "delayMs": 0,
-       "easing": "ease"
+       "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
       }
-     ],
-     "animations": []
+     ]
     },
     {
      "selector": "._sidebarItemMenuTrigger_1ikh0_207",
@@ -22767,12 +22850,12 @@
      ]
     },
     {
-     "selector": "._toolButton_16n3u_126[aria-current] > svg",
+     "selector": "._toolButton_18sfd_125[aria-current] > svg",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_toolIconBounce_16n3u_1",
+       "name": "_toolIconBounce_18sfd_1",
        "durationMs": 180,
        "delayMs": 0,
        "easing": "ease-out",
@@ -22784,12 +22867,12 @@
      ]
     },
     {
-     "selector": "._shimmering_16n3u_159::before",
+     "selector": "._shimmering_18sfd_158::before",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_toolButtonOrbit_16n3u_1",
+       "name": "_toolButtonOrbit_18sfd_1",
        "durationMs": 4000,
        "delayMs": 0,
        "easing": "linear",
@@ -22801,12 +22884,12 @@
      ]
     },
     {
-     "selector": "._menuContent_16n3u_211[data-state=\"open\"]",
+     "selector": "._menuContent_18sfd_210[data-state=\"open\"]",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_menuOpen_16n3u_1",
+       "name": "_menuOpen_18sfd_1",
        "durationMs": 320,
        "delayMs": 0,
        "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
@@ -22818,32 +22901,15 @@
      ]
     },
     {
-     "selector": "._menuContent_16n3u_211[data-state=\"closed\"]",
+     "selector": "._menuContent_18sfd_210[data-state=\"closed\"]",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_menuClose_16n3u_1",
+       "name": "_menuClose_18sfd_1",
        "durationMs": 260,
        "delayMs": 0,
        "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
-       "iterationCount": "1",
-       "direction": "normal",
-       "fillMode": "both",
-       "playState": "running"
-      }
-     ]
-    },
-    {
-     "selector": "._bouncingIcon_16n3u_255",
-     "context": [],
-     "transitions": [],
-     "animations": [
-      {
-       "name": "_toolIconBounce_16n3u_1",
-       "durationMs": 180,
-       "delayMs": 0,
-       "easing": "ease-out",
        "iterationCount": "1",
        "direction": "normal",
        "fillMode": "both",
@@ -22909,7 +22975,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 118,
+   "scanned": 117,
    "capped": false,
    "unreadableSheets": 0,
    "sheetsTruncated": {
@@ -23276,7 +23342,7 @@
      ]
     },
     {
-     "name": "_fade-in_bsun9_1",
+     "name": "_fade-in_a7jre_1",
      "steps": [
       {
        "offset": "0%",
@@ -23293,6 +23359,22 @@
      ],
      "properties": [
       "opacity"
+     ]
+    },
+    {
+     "name": "_light-menu-in_a7jre_1",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
      ]
     },
     {
@@ -23352,7 +23434,7 @@
      ]
     },
     {
-     "name": "_fade-in_1l1w3_1",
+     "name": "_fade-in_jto9u_1",
      "steps": [
       {
        "offset": "0%",
@@ -23369,6 +23451,22 @@
      ],
      "properties": [
       "opacity"
+     ]
+    },
+    {
+     "name": "_light-menu-in_jto9u_1",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
      ]
     },
     {
@@ -24376,22 +24474,6 @@
       }
      ],
      "properties": [
-      "transform"
-     ]
-    },
-    {
-     "name": "_menuIn_1aetx_1",
-     "steps": [
-      {
-       "offset": "0%",
-       "properties": [
-        "opacity",
-        "transform"
-       ]
-      }
-     ],
-     "properties": [
-      "opacity",
       "transform"
      ]
     },
@@ -25527,7 +25609,7 @@
      ]
     },
     {
-     "name": "_menuOpen_16n3u_1",
+     "name": "_menuOpen_18sfd_1",
      "steps": [
       {
        "offset": "0%",
@@ -25555,7 +25637,7 @@
      ]
     },
     {
-     "name": "_menuClose_16n3u_1",
+     "name": "_menuClose_18sfd_1",
      "steps": [
       {
        "offset": "0%",
@@ -25584,7 +25666,7 @@
      ]
     },
     {
-     "name": "_toolIconBounce_16n3u_1",
+     "name": "_toolIconBounce_18sfd_1",
      "steps": [
       {
        "offset": "0%, 100%",
@@ -25604,7 +25686,7 @@
      ]
     },
     {
-     "name": "_toolButtonOrbit_16n3u_1",
+     "name": "_toolButtonOrbit_18sfd_1",
      "steps": [
       {
        "offset": "100%",
@@ -26073,20 +26155,6 @@
      ]
     },
     {
-     "name": "_trashHop_6bd7q_1",
-     "steps": [
-      {
-       "offset": "40%",
-       "properties": [
-        "translate"
-       ]
-      }
-     ],
-     "properties": [
-      "translate"
-     ]
-    },
-    {
      "name": "_copiedBlink_r9j03_1",
      "steps": [
       {
@@ -26198,6 +26266,20 @@
      ],
      "properties": [
       "rotate"
+     ]
+    },
+    {
+     "name": "_trashHop_6bd7q_1",
+     "steps": [
+      {
+       "offset": "40%",
+       "properties": [
+        "translate"
+       ]
+      }
+     ],
+     "properties": [
+      "translate"
      ]
     },
     {
@@ -26835,6 +26917,23 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "._lightDropdown_a7jre_187._dropdownContent_a7jre_84",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
      "selector": "._content_1ebl6_71:is([role=\"menu\"], [role=\"listbox\"])",
      "declarations": {
       "animation-duration": "auto",
@@ -26863,7 +26962,7 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
-     "selector": "._content_1aetx_71",
+     "selector": "._lightContextMenu_jto9u_177._contextMenuContent_jto9u_73",
      "declarations": {
       "animation-duration": "auto",
       "animation-timing-function": "ease",
@@ -27053,7 +27152,7 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
-     "selector": "._menuContent_16n3u_211, ._toolButton_16n3u_126[aria-current] > svg, ._bouncingIcon_16n3u_255, ._shimmering_16n3u_159::before",
+     "selector": "._menuContent_18sfd_210, ._toolButton_18sfd_125[aria-current] > svg, ._bouncingIcon_18sfd_254, ._shimmering_18sfd_158::before",
      "declarations": {
       "animation-duration": "auto",
       "animation-timing-function": "ease",
@@ -27290,23 +27389,6 @@
      }
     },
     {
-     "media": "@media (prefers-reduced-motion: no-preference)",
-     "selector": "._actionBarIconButton_6bd7q_202:hover > svg",
-     "declarations": {
-      "animation-duration": "0.25s",
-      "animation-timing-function": "ease-out",
-      "animation-delay": "0.4s",
-      "animation-iteration-count": "1",
-      "animation-direction": "normal",
-      "animation-fill-mode": "none",
-      "animation-play-state": "running",
-      "animation-name": "_trashHop_6bd7q_1",
-      "animation-timeline": "auto",
-      "animation-range-start": "normal",
-      "animation-range-end": "normal"
-     }
-    },
-    {
      "media": "@media (prefers-reduced-motion: reduce)",
      "selector": "._copied_r9j03_13",
      "declarations": {
@@ -27392,6 +27474,23 @@
      }
     },
     {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": "._actionBarIconButton_6bd7q_202:hover > svg",
+     "declarations": {
+      "animation-duration": "0.25s",
+      "animation-timing-function": "ease-out",
+      "animation-delay": "0.4s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "_trashHop_6bd7q_1",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
      "media": "@media (prefers-reduced-motion: reduce)",
      "selector": "._tile_tenoe_171",
      "declarations": {
@@ -27433,7 +27532,7 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
-     "selector": "._navBar_1gjhb_84",
+     "selector": "._navBar_1icme_84",
      "declarations": {
       "transition-behavior": "normal",
       "transition-duration": "0s",
@@ -28495,7 +28594,7 @@
      "animations": []
     },
     {
-     "selector": "._chevronIcon_bsun9_65",
+     "selector": "._chevronIcon_a7jre_65",
      "context": [],
      "transitions": [
       {
@@ -28508,15 +28607,32 @@
      "animations": []
     },
     {
-     "selector": "._dropdownContent_bsun9_84",
+     "selector": "._dropdownContent_a7jre_84",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_fade-in_bsun9_1",
+       "name": "_fade-in_a7jre_1",
        "durationMs": 100,
        "delayMs": 0,
        "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "._lightDropdown_a7jre_187._dropdownContent_a7jre_84",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "_light-menu-in_a7jre_1",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease-out",
        "iterationCount": "1",
        "direction": "normal",
        "fillMode": "none",
@@ -28602,15 +28718,32 @@
      ]
     },
     {
-     "selector": "._contextMenuContent_1l1w3_73",
+     "selector": "._contextMenuContent_jto9u_73",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_fade-in_1l1w3_1",
+       "name": "_fade-in_jto9u_1",
        "durationMs": 100,
        "delayMs": 0,
        "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "._lightContextMenu_jto9u_177._contextMenuContent_jto9u_73",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "_light-menu-in_jto9u_1",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease-out",
        "iterationCount": "1",
        "direction": "normal",
        "fillMode": "none",
@@ -30451,38 +30584,17 @@
      "animations": []
     },
     {
-     "selector": "._content_1aetx_71",
+     "selector": "._profilePictureListOverflowList_13or3_127::-webkit-scrollbar-thumb",
      "context": [],
-     "transitions": [],
-     "animations": [
+     "transitions": [
       {
-       "name": "_menuIn_1aetx_1",
-       "durationMs": 120,
+       "property": "border",
+       "durationMs": 200,
        "delayMs": 0,
-       "easing": "ease-out",
-       "iterationCount": "1",
-       "direction": "normal",
-       "fillMode": "none",
-       "playState": "running"
+       "easing": "ease"
       }
-     ]
-    },
-    {
-     "selector": "._check_osp3a_156",
-     "context": [],
-     "transitions": [],
-     "animations": [
-      {
-       "name": "_checkPop_osp3a_1",
-       "durationMs": 320,
-       "delayMs": 0,
-       "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
-       "iterationCount": "1",
-       "direction": "normal",
-       "fillMode": "none",
-       "playState": "running"
-      }
-     ]
+     ],
+     "animations": []
     },
     {
      "selector": "._container_ufvau_129",
@@ -30524,17 +30636,21 @@
      "animations": []
     },
     {
-     "selector": "._profilePictureListOverflowList_13or3_127::-webkit-scrollbar-thumb",
+     "selector": "._check_osp3a_156",
      "context": [],
-     "transitions": [
+     "transitions": [],
+     "animations": [
       {
-       "property": "border",
-       "durationMs": 200,
+       "name": "_checkPop_osp3a_1",
+       "durationMs": 320,
        "delayMs": 0,
-       "easing": "ease"
+       "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
       }
-     ],
-     "animations": []
+     ]
     },
     {
      "selector": "._sidebarItemMenuTrigger_1ikh0_207",
@@ -33019,12 +33135,12 @@
      ]
     },
     {
-     "selector": "._toolButton_16n3u_126[aria-current] > svg",
+     "selector": "._toolButton_18sfd_125[aria-current] > svg",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_toolIconBounce_16n3u_1",
+       "name": "_toolIconBounce_18sfd_1",
        "durationMs": 180,
        "delayMs": 0,
        "easing": "ease-out",
@@ -33036,12 +33152,12 @@
      ]
     },
     {
-     "selector": "._shimmering_16n3u_159::before",
+     "selector": "._shimmering_18sfd_158::before",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_toolButtonOrbit_16n3u_1",
+       "name": "_toolButtonOrbit_18sfd_1",
        "durationMs": 4000,
        "delayMs": 0,
        "easing": "linear",
@@ -33053,12 +33169,12 @@
      ]
     },
     {
-     "selector": "._menuContent_16n3u_211[data-state=\"open\"]",
+     "selector": "._menuContent_18sfd_210[data-state=\"open\"]",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_menuOpen_16n3u_1",
+       "name": "_menuOpen_18sfd_1",
        "durationMs": 320,
        "delayMs": 0,
        "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
@@ -33070,32 +33186,15 @@
      ]
     },
     {
-     "selector": "._menuContent_16n3u_211[data-state=\"closed\"]",
+     "selector": "._menuContent_18sfd_210[data-state=\"closed\"]",
      "context": [],
      "transitions": [],
      "animations": [
       {
-       "name": "_menuClose_16n3u_1",
+       "name": "_menuClose_18sfd_1",
        "durationMs": 260,
        "delayMs": 0,
        "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
-       "iterationCount": "1",
-       "direction": "normal",
-       "fillMode": "both",
-       "playState": "running"
-      }
-     ]
-    },
-    {
-     "selector": "._bouncingIcon_16n3u_255",
-     "context": [],
-     "transitions": [],
-     "animations": [
-      {
-       "name": "_toolIconBounce_16n3u_1",
-       "durationMs": 180,
-       "delayMs": 0,
-       "easing": "ease-out",
        "iterationCount": "1",
        "direction": "normal",
        "fillMode": "both",
