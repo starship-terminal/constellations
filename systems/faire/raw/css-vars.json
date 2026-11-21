@@ -1,0 +1,5 @@
+{
+  "note": "Faire's public pages did not declare a product token layer on :root. The custom properties read from stylesheets were Toastify vendor variables. They are not Faire tokens. See measurements.md.",
+  "vendor": "toastify",
+  "capturedAt": "2026-11-21"
+}

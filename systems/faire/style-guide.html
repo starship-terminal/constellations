@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faire style guide</title>
+<style>
+  :root {
+    --page: #fbf8f6;
+    --surface: #ffffff;
+    --ink: #333333;
+    --ink-strong: #161616;
+    --black: #000000;
+    --white: #ffffff;
+    --hairline: #dadada;
+    --focus: #275ec5;
+    --sans: Graphik, "Helvetica Neue", sans-serif;
+    --serif: "Iowan Old Style", Palatino, Georgia, serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.4 var(--sans); }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.15; }
+  h2 { font-size: 14px; letter-spacing: 0.15px; font-weight: 400; margin-top: 36px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 120px; }
+  .swatch i { display: block; height: 64px; border: 1px solid var(--hairline); border-radius: 4px; }
+  .swatch span { display: block; margin-top: 6px; font-size: 12px; }
+  button.primary { background: var(--ink); color: var(--white); border: 1px solid transparent; border-radius: 4px; height: 40px; padding: 0 16px; font: 14px/20px var(--sans); letter-spacing: 0.15px; }
+  button.primary:hover { background: var(--black); }
+  button.primary:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  button.quiet { background: transparent; color: var(--ink); border: 0; height: 40px; padding: 0 16px; font: 14px/20px var(--sans); }
+  .field { display: flex; align-items: center; height: 40px; width: 340px; border: 1px solid var(--hairline); border-radius: 4px; background: var(--surface); padding: 0 12px; color: #888; font-size: 14px; }
+  .pill { height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--hairline); background: var(--surface); font: 16px/20px var(--sans); }
+  .note { font-size: 13px; max-width: 62ch; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Faire</h1>
+  <p class="note">Public signed-out tokens, measured 2026-11-21. One light theme. Display is set in a serif fallback because Nantes is not licensed for this file. UI is set in a sans fallback because Graphik is not licensed for this file.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#fbf8f6"></i><span>page #fbf8f6</span></div>
+    <div class="swatch"><i style="background:#ffffff"></i><span>surface #ffffff</span></div>
+    <div class="swatch"><i style="background:#333333"></i><span>ink #333333</span></div>
+    <div class="swatch"><i style="background:#161616"></i><span>strong #161616</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>hover #000000</span></div>
+    <div class="swatch"><i style="background:#dadada"></i><span>hairline #dadada</span></div>
+    <div class="swatch"><i style="background:#275ec5"></i><span>focus #275ec5</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-family:var(--serif);font-size:52px;line-height:64px;font-weight:400;margin:0">Find your next bestseller</p>
+  <p style="font-size:14px;letter-spacing:0.15px">Nav and buttons, 14px, 0.15px tracking.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Sign up to buy</button>
+    <button class="quiet">Sign in</button>
+    <button class="pill">All filters</button>
+  </div>
+  <h2>Field</h2>
+  <div class="field">Email</div>
+</main>
+</body>
+</html>
