@@ -6685,9 +6685,9 @@
         726
       ],
       "description": "A creative place where life is 24/7",
-      "status": "pending",
-      "package": null,
-      "notes": "Email probe: https://www.volkshotel.nl/en/login redirected to a WordPress login that is a 404. No product sign-in.",
+      "status": "captured",
+      "package": "systems/volkshotel",
+      "notes": "Email probe: https://www.volkshotel.nl/en/login redirected to a WordPress login that is a 404. No product sign-in. Public walk 2026-11-21: the public site tree is in systems/volkshotel/site-tree.md. BOOK ROOM opens a date dialog and was not submitted. /en/login redirects to a WordPress login that loops on itself. Nothing was typed. No form was submitted. login-review.json has offered.nav, offered.settings, and offered.create. screens is an empty list, so the done checker is not met. login-extracted stays not-started. Public package refresh in PR 1708 at 9f8f26f300c9. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 20
