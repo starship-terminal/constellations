@@ -1,0 +1,23 @@
+{
+  "name": "pricing-390",
+  "url": "https://wordpress.com/pricing/",
+  "title": "WordPress.com Pricing | Find the Right Plan for You",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "dpr": 2,
+  "inner": {
+    "w": 390,
+    "h": 844,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

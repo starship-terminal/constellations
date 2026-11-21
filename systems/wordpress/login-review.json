@@ -1,0 +1,32 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "Log in shows an empty email or username field. Signup shows an empty email field and a disabled Continue. Identity providers were visible and not clicked. Email me a login link and Lost your password were not opened. No email, password, code, phone, or address was typed. No form was submitted. No site was created. catalog.json was left alone.",
+  "walls": [
+    {
+      "url": "https://wordpress.com/log-in/",
+      "opened_from": "header Log in",
+      "title": "Log in — WordPress.com",
+      "heading": "Log in to WordPress.com",
+      "desktop": "screenshots/login-1440.png",
+      "phone": null,
+      "phone_reason": "Headless Chromium at 390 received a captcha interstitial. That shot was discarded. The captcha was not solved.",
+      "controls_not_used": ["Continue with Google", "Continue with Apple", "Continue with GitHub", "Email me a login link", "Lost your password?", "Continue", "Create an account"],
+      "stopped": true
+    },
+    {
+      "url": "https://wordpress.com/setup/onboarding/user?ref=logged-out-homepage-lp",
+      "opened_from": "header Get started and home Get started",
+      "title": "Create a site — WordPress.com",
+      "heading": "Create your account",
+      "desktop": "screenshots/signup-1440.png",
+      "phone": "screenshots/signup-390.png",
+      "controls_not_used": ["Continue with Google", "Continue with Apple", "Continue with GitHub", "Continue"],
+      "stopped": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "menu-phone-390",
+  "url": "https://wordpress.com/",
+  "title": "WordPress.com: Everything You Need to Build Your Website",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "dpr": 2,
+  "inner": {
+    "w": 390,
+    "h": 844
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}
