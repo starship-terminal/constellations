@@ -6991,11 +6991,11 @@
         177
       ],
       "description": "Versatile & Robust Project Management Software",
-      "status": "pending",
-      "package": null,
-      "notes": "Email probe: https://login.wrike.com/login/ asked for a password after the capture inbox. Password not submitted. Continue with Google did not open an account chooser.",
+      "status": "captured",
+      "package": "systems/wrike",
+      "notes": "Email probe: https://login.wrike.com/login/ asked for a password after the capture inbox. Password not submitted. Continue with Google did not open an account chooser. Public walk 2026-11-21: the public site tree is in systems/wrike/site-tree.md. https://www.wrike.com/ loaded. Log in stops at https://login.wrike.com/login/ with an empty email or corporate ID and a Next button that was not clicked. Google, Apple, and Office were visible and not clicked. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1678 at 89120702e015. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 21
     },
     {
