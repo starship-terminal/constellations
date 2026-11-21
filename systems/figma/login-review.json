@@ -1,0 +1,52 @@
+{
+  "slug": "figma",
+  "captured": "2026-11-22",
+  "signed_in": false,
+  "route": "public-web",
+  "login_extracted": "not-started",
+  "session": "Public pages on https://www.figma.com. Login and signup are empty identity walls. No email, password, code, phone, or address was typed. Continue with Google, Use single sign-on, Log in, and Continue with email were not clicked. No form was submitted. No captcha was solved. Cookie Allow all and Do not allow were not clicked.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measuredInner": "1440x900",
+      "devicePixelRatio": 2,
+      "png": "2880x1800",
+      "colorScheme": "normal"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measuredInner": "390x844",
+      "devicePixelRatio": 2,
+      "png": "780x1688",
+      "colorScheme": "normal"
+    }
+  },
+  "walls": [
+    {
+      "name": "login",
+      "url": "https://www.figma.com/login",
+      "title": "Login | Figma",
+      "heading": "Sign in to Figma",
+      "fields": ["email", "password"],
+      "fieldValueLengths": [0, 0],
+      "notClicked": ["Continue with Google", "Log in", "Use single sign-on", "Reset password", "Create one"]
+    },
+    {
+      "name": "signup",
+      "url": "https://www.figma.com/signup",
+      "title": "Sign Up for Figma",
+      "heading": "Welcome to Figma",
+      "fields": ["email"],
+      "fieldValueLengths": [0],
+      "notClicked": ["Continue with Google", "Continue with email"]
+    }
+  ],
+  "leftAlone": [
+    "catalog.json",
+    "webapps-manifest.json",
+    "DESIGN.md",
+    "tokens.json",
+    "screenshots from 2026-11-14",
+    "components/crops"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22T16:40:00.000Z",
+  "screenshot": "public-2026-11-22/design-light-default.png",
+  "sanitizedSourceUrl": "https://www.figma.com/design/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 2880,
+      "height": 1800
+    },
+    "basis": "cssViewportTimesDevicePixelRatio",
+    "note": "Preview tool metadata reported 1280x800. JS measured the CSS viewport above. PNG pixels are 2x that viewport."
+  },
+  "visualReview": {
+    "status": "checked",
+    "note": "Figma Design marketing page. Not the editor."
+  },
+  "privacy": {
+    "signedIn": false,
+    "fieldsTyped": false,
+    "identityProvidersClicked": false,
+    "formsSubmitted": false
+  }
+}
