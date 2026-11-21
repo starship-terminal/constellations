@@ -946,7 +946,7 @@
       "description": "Cofounder plugs into your existing tools, writes automations, and organizes workflows",
       "status": "captured",
       "package": "systems/cofounder",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/630: signed-out marketing plus app.cofounder.co/os/login as a boundary. Manifest row was left pending after merge. https://app.cofounder.co/os/login offers only Google and GitHub. No email field.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/630: signed-out marketing plus app.cofounder.co/os/login as a boundary. Manifest row was left pending after merge. https://app.cofounder.co/os/login offers only Google and GitHub. No email field. Public walk 2026-11-21: the public site tree is in systems/cofounder/site-tree.md. https://cofounder.co/ loaded. Run a company stops at https://app.cofounder.co/os/login with Continue with Google, Continue with GitHub, and Continue with Email. None was clicked. No email field was on the page. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1682 at 3fb09352dd54. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "oauth-only",
       "batch": 3
