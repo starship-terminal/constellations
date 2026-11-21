@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:25:40.617Z",
+  "source": "playwright-headless-incognito",
+  "url": "https://app.krisp.ai/login",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "available": true
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Empty auth wall at phone width. Nothing typed. No identity provider clicked. No form submitted."
+}

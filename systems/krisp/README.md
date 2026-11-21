@@ -1,6 +1,8 @@
 # Krisp design reference
 
-A token set and component reference for Krisp's public marketing site and the signed-in web app. Marketing was read from **krisp.ai** on **2026-11-18**, signed out, in headless Chromium at 1440×900 and 390×844. The app pass used a free account at **app.krisp.ai** the same day (passwordless email OTP), at 1440×900 and 390×844, light and dark (`data-theme=auto` follows `prefers-color-scheme`). Captured: the marketing home, pricing, AI meeting assistant, noise cancellation, customers, about, security, blog, careers, the 404; and in the app, setup/download, My Notes (empty), Action Items (Core paywall), account settings, AI Note Taker settings, billing on the Free plan, connect-calendar (not connected), and the settings shell.
+A token set and component reference for Krisp's public marketing site and the signed-in web app. Marketing was read from **krisp.ai** on **2026-11-18**, signed out, in headless Chromium at 1440×900 and 390×844.
+
+A 2026-11-22 pass mapped the public website into [site-tree.md](site-tree.md) and photographed the marketing pages the header and footer open, plus the empty login and signup walls. No account was used. Nothing was typed. Google, Microsoft, Apple, and SSO were not clicked. `login-extracted` stays as it was. catalog.json was left alone. The app pass used a free account at **app.krisp.ai** the same day (passwordless email OTP), at 1440×900 and 390×844, light and dark (`data-theme=auto` follows `prefers-color-scheme`). Captured: the marketing home, pricing, AI meeting assistant, noise cancellation, customers, about, security, blog, careers, the 404; and in the app, setup/download, My Notes (empty), Action Items (Core paywall), account settings, AI Note Taker settings, billing on the Free plan, connect-calendar (not connected), and the settings shell.
 
 Krisp paints a white field, ink `#131032`, and one indigo action `#614efa` (hover `#4a3bbe`). The marketing header is 73px: wordmark, product menus, Sign in, a near-black Book a demo pill, and an indigo Get Krisp pill, both at 8px radius. Display type is Plus Jakarta Sans. The signed-in app uses Inter, named canvas/surface tokens, and a dark set. **Boundary:** `/meetings` and recordings redirect to `/setup` (desktop app download) for this free account. Upgrade, Download, Connect Google/Outlook, Delete account, Enable 2FA and OneTrust were not pressed. Book a demo still opens /contact-sales/, not submitted.
 
@@ -12,6 +14,8 @@ Krisp paints a white field, ink `#131032`, and one indigo action `#614efa` (hove
 | [style-guide.html](style-guide.html) | Renders the tokens and the main marketing components |
 | [components.md](components.md) | Component inventory with crops, plus Gaps |
 | [patterns.md](patterns.md) | How the header, hero, pricing cards and footer combine |
+| [site-tree.md](site-tree.md) | Which header and footer controls open which public page or wall. Mapped 2026-11-22 |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login-extracted` is not-started |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | `{page}-light-{state}.png` captures. Desktop 1440×900 at 1x; phone viewport shots are 2x of 390×844 |
 | [raw/](raw) | Readings: motion, component computed styles, measurements |
