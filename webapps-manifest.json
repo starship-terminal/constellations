@@ -2034,9 +2034,9 @@
       "description": "Build your company workspace with no code",
       "status": "captured",
       "package": "systems/fibery",
-      "notes": "https://fibery.io/login offers Google, Microsoft, and Continue with Email. The email path asks for work email and password. No code was sent. Workspace SSO also offered.",
+      "notes": "https://fibery.io/login offers Google, Microsoft, and Continue with Email. The email path asks for work email and password. No code was sent. Workspace SSO also offered. Public walk 2026-11-21: the public site tree is in systems/fibery/site-tree.md. fibery.io redirects to fibery.com. Log in stops at https://fibery.io/login with Google, Microsoft, Continue with Email, and Workspace SSO. The email path shows an empty work email and password. Sign up stops at https://fibery.io/sign-up. Nothing was typed. Google, Microsoft, and Workspace SSO were not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1661 at 4ae48bd4f842. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 6
     },
     {
@@ -2068,9 +2068,9 @@
       "description": "Identify Every Web Visitor & Mobile Device",
       "status": "captured",
       "package": "systems/fingerprint",
-      "notes": "https://fingerprint.com/login/ is a missing page. The dashboard at https://dashboard.fingerprint.com/login offers Google, GitHub, and Microsoft. Continue with email asks for email and password. No code was sent.",
+      "notes": "https://fingerprint.com/login/ is a missing page. The dashboard at https://dashboard.fingerprint.com/login offers Google, GitHub, and Microsoft. Continue with email asks for email and password. No code was sent. Public walk 2026-11-21: the public site tree is in systems/fingerprint/site-tree.md. https://fingerprint.com/login/ is still a 404. Login and Get Started stop at https://dashboard.fingerprint.com/login and /signup with Google, GitHub, and Microsoft. Continue with email shows an empty email and password form. Nothing was typed. Google, GitHub, and Microsoft were not clicked. Docs Log In stops at dashboard.fingerprint.com/mintlify_login. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1662 at 9d3c70f2482d. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
