@@ -1,0 +1,53 @@
+{
+  "product": "Kit",
+  "domain": "kit.com",
+  "reviewed": "2026-11-21",
+  "entered_signed_in_app": false,
+  "offered": {
+    "login": {
+      "url": "https://app.kit.com/users/login",
+      "http_status": 200,
+      "title": "Log In - Kit",
+      "fields": ["email", "password"],
+      "controls": [
+        "Log in tab",
+        "Create account link",
+        "Show password",
+        "Keep me logged in on this device",
+        "Log in submit",
+        "I forgot my password"
+      ],
+      "identity_providers": [],
+      "typed": false,
+      "submitted": false
+    },
+    "password_reset": {
+      "url": "https://app.kit.com/users/password/new",
+      "http_status": 200,
+      "title": "Reset your password - Kit",
+      "fields": ["email"],
+      "controls": ["Send me a reset link", "Back to log in"],
+      "typed": false,
+      "submitted": false
+    }
+  },
+  "screens": [
+    "screenshots/login-light-default.png",
+    "screenshots/mobile-login-light-default.png",
+    "screenshots/password-reset-light-default.png"
+  ],
+  "gaps": [
+    "https://app.kit.com/users/signup?plan=1k returned HTTP 403 from Cloudflare before the page rendered. Vendor: Cloudflare. Title was Just a moment. The branch stopped. No product screenshot was stored.",
+    "https://kit.com/migrations returned HTTP 403 from Cloudflare before the page rendered. Vendor: Cloudflare. The branch stopped.",
+    "The signed-in creator app was not entered. Dashboard, settings, and create flows were not seen.",
+    "No identity provider button was on the login wall. None was clicked."
+  ],
+  "not_submitted": [
+    "login form at https://app.kit.com/users/login",
+    "password reset form at https://app.kit.com/users/password/new",
+    "create account link",
+    "request-a-demo form at https://kit.com/request-demo",
+    "newsletter signup",
+    "pricing trial and signup links"
+  ]
+}
