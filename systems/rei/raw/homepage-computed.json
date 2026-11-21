@@ -1,0 +1,145 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.rei.com/",
+  "title": "REI: A Life Outdoors is a Life Well Lived | REI Co-op",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "png": {
+    "file": "screenshots/home-light-1440.png",
+    "pixelWidth": 2880,
+    "pixelHeight": 1800
+  },
+  "fontsLoaded": [
+    "Graphik",
+    "Stuart",
+    "Graphik fallback",
+    "Stuart fallback"
+  ],
+  "readings": {
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "Graphik, Graphik fallback, Helvetica Neue, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "-0.16px"
+    },
+    "utilityBar": {
+      "selector": "header .unav",
+      "backgroundColor": "rgb(41, 41, 41)",
+      "height": "40px"
+    },
+    "utilityLink": {
+      "text": "Shop REI",
+      "color": "rgb(250, 250, 250)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px"
+    },
+    "mainBar": {
+      "selector": "header .gnav",
+      "backgroundColor": "rgb(244, 242, 237)",
+      "height": "128px"
+    },
+    "shopWord": {
+      "color": "rgb(41, 41, 41)",
+      "fontFamily": "Stuart, Stuart fallback, Georgia, serif",
+      "fontSize": "24px",
+      "fontWeight": "600",
+      "lineHeight": "30px"
+    },
+    "search": {
+      "backgroundColor": "rgba(255, 255, 255, 0.85)",
+      "color": "rgb(46, 46, 43)",
+      "fontSize": "16px",
+      "borderRadius": "4px",
+      "height": "46px",
+      "boxShadow": "rgb(149, 142, 131) 0px 0px 0px 1px inset"
+    },
+    "category": {
+      "text": "Deals",
+      "color": "rgb(75, 74, 72)",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "letterSpacing": "0.2px"
+    },
+    "promo": {
+      "backgroundColor": "rgb(199, 55, 15)",
+      "color": "rgb(250, 251, 249)"
+    },
+    "primaryButton": {
+      "text": "Shop the sale",
+      "backgroundColor": "rgb(199, 55, 15)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "22px",
+      "borderRadius": "4px",
+      "height": "38px",
+      "padding": "8px 16px"
+    },
+    "sectionTitle": {
+      "text": "Deals on top brands",
+      "color": "rgb(199, 55, 15)",
+      "fontFamily": "Stuart",
+      "fontSize": "32px",
+      "fontWeight": "500"
+    },
+    "productTitle": {
+      "color": "rgb(64, 110, 181)",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "22px"
+    },
+    "price": {
+      "text": "$239.00",
+      "color": "rgb(75, 74, 72)",
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    "footerSignup": {
+      "backgroundColor": "rgb(75, 74, 72)",
+      "color": "rgb(250, 251, 249)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "borderRadius": "4px",
+      "height": "40px"
+    },
+    "footerEmail": {
+      "backgroundColor": "rgba(247, 245, 243, 0.15)",
+      "color": "rgb(46, 46, 43)",
+      "borderRadius": "4px",
+      "boxShadow": "rgb(149, 142, 131) 0px 0px 0px 1px inset",
+      "height": "40px"
+    },
+    "h1": {
+      "text": "REI Homepage: Outdoor Gear and Clothing",
+      "fontSize": "32px",
+      "fontWeight": "700",
+      "visuallyHidden": true
+    }
+  },
+  "cssVariablesSample": {
+    "--cdr-color-background-primary": "#f4f2ed",
+    "--cdr-color-background-secondary": "#dcd6cb",
+    "--cdr-color-border-primary": "#958e83",
+    "--cdr-color-border-secondary": "#726d64",
+    "--cdr-color-text-primary": "var(--cdr-membership-subtle-color-text-primary, #13352c)",
+    "--cdr-color-background-button-primary-rest": "var(--cdr-membership-subtle-color-background-button-primary-rest, #13352c)"
+  },
+  "stopped": [
+    "Subscribe modal appeared on the homepage. Closed with the dialog Close control. No email typed. Sign me up was not clicked.",
+    "Direct navigation and in-page clicks to /h/camping-and-hiking, /product/249057/patagonia-nano-puff-insulated-jacket-womens, /about-rei, and /learn/expert-advice returned a PerimeterX Press and Hold wall. The wall was not solved.",
+    "Cart, Sign in, membership join, and footer Sign me up were not followed.",
+    "A later scroll on the homepage also raised a Press and Hold overlay. That frame was discarded."
+  ]
+}
