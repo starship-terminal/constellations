@@ -2799,9 +2799,9 @@
       "description": "Essential tools for software developers and teams",
       "status": "captured",
       "package": "systems/jetbrains",
-      "notes": "https://account.jetbrains.com/login offers Google, GitHub, Apple, GitLab, WeChat, and Bitbucket. Continue with email showed an email field, and Continue did not advance. No code was sent. Cookie banner was not accepted.",
+      "notes": "https://account.jetbrains.com/login offers Google, GitHub, Apple, GitLab, WeChat, and Bitbucket. Continue with email showed an email field, and Continue did not advance. No code was sent. Cookie banner was not accepted. Public walk 2026-11-21: the public site tree is in systems/jetbrains/site-tree.md. The empty login wall offers Google, GitHub, Apple, GitLab, WeChat, and Bitbucket, then Continue with email. Nothing was typed. No identity provider was clicked. Continue with email was not pressed. The cookie dialog was hidden, not accepted. The privacy notice was not photographed because it publishes a contact email and a street address. login-review.json has screens, gaps, and not_submitted. offered does not answer nav, settings, and create. login-extracted stays not-started. Public package refresh in PR 1701 at 11a7ea6a42ef. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 9
     },
     {
