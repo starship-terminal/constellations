@@ -1,0 +1,86 @@
+{
+  "captured_at": "2026-11-21",
+  "product": "Cartesia",
+  "route": "public-web",
+  "entry": "https://www.cartesia.ai/",
+  "stopped_at": {
+    "login": "https://play.cartesia.ai/sign-in",
+    "signup": "https://play.cartesia.ai/sign-in/create"
+  },
+  "offered": {
+    "nav": {
+      "desktop": [
+        { "label": "Logo", "opens": "page", "target": "https://www.cartesia.ai/" },
+        { "label": "Products", "opens": "menu", "items": ["Sonic", "Ink", "Managed Agents", "Voices", "Languages"] },
+        { "label": "Solutions", "opens": "menu", "items": ["Customer support", "Appointment scheduling", "SDR and lead qualification", "IT helpdesk", "Financial services", "Healthcare", "Retail and e-commerce", "Telecommunications", "Travel and hospitality"] },
+        { "label": "Resources", "opens": "menu", "items": ["Blog", "Free tools", "Compare", "Startups", "About", "Careers", "Research", "Events", "Docs", "Integrations", "Cookbooks", "MCP server", "Introducing Managed Agents"] },
+        { "label": "Customers", "opens": "page", "target": "https://www.cartesia.ai/customers" },
+        { "label": "Pricing", "opens": "page", "target": "https://www.cartesia.ai/pricing" },
+        { "label": "Sign in", "opens": "login-wall", "target": "https://play.cartesia.ai/sign-in" },
+        { "label": "Contact Sales", "opens": "page", "target": "https://www.cartesia.ai/contact" },
+        { "label": "Try Cartesia", "opens": "signup-wall", "target": "https://play.cartesia.ai/sign-up" }
+      ],
+      "phone": [
+        { "label": "Logo", "opens": "page", "target": "https://www.cartesia.ai/" },
+        { "label": "Try Cartesia", "opens": "signup-wall", "target": "https://play.cartesia.ai/sign-up" },
+        { "label": "Open menu", "opens": "menu", "items": ["Products", "Solutions", "Resources", "Customers", "Pricing", "Sign in", "Contact Sales"] }
+      ],
+      "login_wall": [
+        { "label": "Continue with Google", "kind": "identity-provider", "clicked": false },
+        { "label": "Continue with GitHub", "kind": "identity-provider", "clicked": false },
+        { "label": "Email address", "kind": "field", "typed": false },
+        { "label": "Continue", "kind": "submit", "clicked": false },
+        { "label": "Sign in with passkey", "kind": "identity", "clicked": false }
+      ]
+    },
+    "settings": {
+      "reached": false,
+      "reason": "Settings sit behind the login wall at play.cartesia.ai. The public site has no settings control. Theme is light only; no theme switch was offered. The footer English control opens a locale dialog, not settings."
+    },
+    "create": {
+      "reached": false,
+      "entry": "Try Cartesia opens https://play.cartesia.ai/sign-up, which redirects to https://play.cartesia.ai/sign-in/create. Photographed, then stopped.",
+      "offered_fields": ["Email address"],
+      "offered_actions": ["Continue with Google", "Continue with GitHub", "Continue", "Sign in instead?"],
+      "submitted": false
+    }
+  },
+  "screens": [
+    "screenshots/tree/home-light-default.png",
+    "screenshots/tree/home-light-products-menu.png",
+    "screenshots/tree/home-light-solutions-menu.png",
+    "screenshots/tree/home-light-resources-menu.png",
+    "screenshots/tree/home-light-language-dialog.png",
+    "screenshots/tree/sonic-light-default.png",
+    "screenshots/tree/pricing-light-default.png",
+    "screenshots/tree/customers-light-default.png",
+    "screenshots/tree/contact-light-default.png",
+    "screenshots/tree/customer-servicenow-light-default.png",
+    "screenshots/tree/blog-light-default.png",
+    "screenshots/tree/blog-managed-agents-light-default.png",
+    "screenshots/tree/mobile-home-light-default.png",
+    "screenshots/tree/mobile-home-light-menu-open.png",
+    "screenshots/tree/login-wall-light-default.png",
+    "screenshots/tree/signup-wall-light-default.png"
+  ],
+  "gaps": [
+    "Signed-in playground, settings, and create flows were not entered.",
+    "Docs, status, help, trust center, Luma events, and social profiles are other hosts and were not opened.",
+    "Use-case, capability, legal, and locale pages linked from the homepage were mapped and not photographed in this refresh.",
+    "Talk to Skylar and Talk to Cartesia were not started.",
+    "Cookie settings was not opened. The footer link is covered by the Talk to Cartesia pill.",
+    "No dark theme was offered on the marketing pages.",
+    "The T3 preview tab could not paint frames (Preview automation snapshot failed: The browser is not producing screenshot frames). Shots were taken with Playwright instead."
+  ],
+  "not_submitted": [
+    "Contact sales form (work email, first name, last name, use case, Get in touch)",
+    "Signup email Continue",
+    "Login email Continue",
+    "Continue with Google",
+    "Continue with GitHub",
+    "Sign in with passkey",
+    "Cookie settings",
+    "Talk to Skylar",
+    "Talk to Cartesia"
+  ]
+}
