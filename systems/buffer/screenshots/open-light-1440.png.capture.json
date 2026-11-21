@@ -1,0 +1,23 @@
+{
+  "captured": "2026-11-22",
+  "name": "open-light-1440",
+  "url": "https://buffer.com/open",
+  "title": "Buffer | Open",
+  "h1": "Open metrics",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "note": "First viewport. Signed out. Cookie overlay hidden, not accepted. No form submitted. Read colours from tokens.json, not from this PNG."
+}

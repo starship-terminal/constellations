@@ -1,0 +1,19 @@
+{
+  "captured": "2026-11-22",
+  "name": "login-empty-light-390",
+  "url": "https://auth.buffer.com/login",
+  "title": "Buffer - Log In",
+  "h1": "Log in to Buffer",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Empty auth wall. Session path segment stripped. Nothing typed. No identity provider clicked. No form submitted."
+}
