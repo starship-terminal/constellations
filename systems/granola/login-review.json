@@ -1,0 +1,71 @@
+{
+  "slug": "granola",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public web only. Homepage mapped before screenshots. No email, password, or code was typed. No form was submitted. Google, Microsoft, Apple, and SSO were not clicked.",
+  "offered": {
+    "nav": {
+      "features": {
+        "label": "Features",
+        "opens": "hover menu",
+        "items": ["Notepad", "Chat", "Mobile & Watch", "MCP", "Voice typing by Granola"]
+      },
+      "enterprise": {"label": "Enterprise", "href": "https://www.granola.ai/enterprise"},
+      "pricing": {"label": "Pricing", "href": "https://www.granola.ai/pricing"},
+      "blog": {"label": "Blog", "href": "https://www.granola.ai/blog"},
+      "careers": {"label": "Careers", "href": "https://www.granola.ai/jobs"},
+      "talk_to_sales": {"label": "Talk to sales", "href": "https://www.granola.ai/contact/sales?source=nav", "submitted": false},
+      "download": {"label": "Download", "href": "https://notes.granola.ai/download", "result": "HTTP 500, then a preparing-download paint"},
+      "open_menu": {"label": "Open menu", "opens": "phone drawer", "width": 390},
+      "sign_in_with_google": {"label": "Sign in with Google", "page": "https://notes.granola.ai/login", "reached": false, "reason": "identity provider was not clicked"},
+      "sign_in_with_microsoft": {"label": "Sign in with Microsoft", "page": "https://notes.granola.ai/login", "reached": false, "reason": "identity provider was not clicked"},
+      "sign_in_with_sso": {"label": "Sign in with SSO", "page": "https://notes.granola.ai/login", "reached": false, "reason": "SSO was not clicked"}
+    },
+    "settings": {},
+    "create": {}
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-features-menu.png",
+    "screenshots/home-light-mobile-dialog.png",
+    "screenshots/home-light-mobile-default.png",
+    "screenshots/home-light-mobile-menu.png",
+    "screenshots/home-light-cookie.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-mobile-default.png",
+    "screenshots/enterprise-light-default.png",
+    "screenshots/chat-light-default.png",
+    "screenshots/blog-light-default.png",
+    "screenshots/security-light-default.png",
+    "screenshots/integrations-light-default.png",
+    "screenshots/contact-light-default.png",
+    "screenshots/download-light-default.png",
+    "screenshots/notes-download-error.png",
+    "screenshots/notes-login-error.png"
+  ],
+  "gaps": [
+    "https://notes.granola.ai/download returned HTTP 500. A preparing-download page then painted. No download page was invented.",
+    "https://notes.granola.ai/login returned HTTP 500 and painted Sign in with Google, Sign in with Microsoft, and Sign in with SSO. None were clicked.",
+    "https://notes.granola.ai/ redirected to https://granola.ai/.",
+    "https://app.granola.ai/ did not resolve.",
+    "No signed-in settings or create control exists on the public homepage.",
+    "Cookie Reject all and Accept all were not clicked.",
+    "The email field in the Granola for mobile dialog was left empty.",
+    "Dark theme was not public. No theme toggle was found.",
+    "catalog.json and DESIGN.md were not edited. Generating DESIGN.md needs a catalog entry."
+  ],
+  "not_submitted": [
+    "Send link",
+    "Your work email",
+    "Talk to sales",
+    "Contact us",
+    "Reject all",
+    "Accept all",
+    "Manage my preferences",
+    "Sign in with Google",
+    "Sign in with Microsoft",
+    "Sign in with SSO",
+    "Get started",
+    "Sign-up in app"
+  ]
+}
