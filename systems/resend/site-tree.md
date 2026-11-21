@@ -1,6 +1,6 @@
 # Resend public site tree
 
-Mapped on 2026-11-21 from the live public site before screenshots. Official
+Mapped on 2026-11-21 from the live public site, then refreshed the same day. Official
 domain confirmed as `https://resend.com/` (title "Resend · Email for
 developers", h1 "Email for developers"). Headless Playwright, signed out.
 Nothing was typed, submitted, or clicked on Google or GitHub.
@@ -13,8 +13,8 @@ Auth walls, recorded and not entered:
 
 | Control | Opens | Action |
 |---|---|---|
-| Header "Get started", footer "Get started", pricing plan "Get started" | `https://resend.com/signup` | Stopped. Did not create an account. |
-| Header "Log in" | `https://resend.com/login` | Observed only. Page shows email, "Log in with Google", "Log in with GitHub", and "Log In". Did not type an email. Did not click Google or GitHub. |
+| Header "Get started", footer "Get started", pricing plan "Get started" | `https://resend.com/signup` | Photographed empty on 2026-11-21. Did not type. Did not click Google or GitHub. Did not submit. |
+| Header "Log in" | `https://resend.com/login` | Photographed empty. Page shows email, "Log in with Google", "Log in with GitHub", and "Log In". Did not type. Did not click Google or GitHub. Did not submit. |
 | `https://resend.com/get-started` | redirects to `https://resend.com/signup` | Stopped. |
 | `https://resend.com/settings/usage` (linked from a public page) | redirects to `https://resend.com/login` | Stopped. |
 
@@ -114,6 +114,7 @@ open them. Escape and moving the pointer away closes them. No dialog.
 | Codex | `/codex` |
 | GitHub Copilot | `/github-copilot` |
 | Gemini | `/gemini` |
+| v0 | `/v0` |
 | Bolt | `/bolt` |
 | Lovable | `/lovable` |
 | Replit | `/replit` |
