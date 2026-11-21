@@ -1,0 +1,142 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.madewell.com/",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "country": "United States",
+  "currency": "USD",
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "p22-underground, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "cssVars": {
+    "--color-black": "#000000",
+    "--color-white": "#fff",
+    "--color-red": "#c00",
+    "--color-outline": "#949494",
+    "--font-default": "\"p22-underground\",sans-serif",
+    "--font-courier": "\"Courier\",sans-serif",
+    "--font-avenir": "\"Avenir\",sans-serif",
+    "--font-arial": "\"Arial\",sans-serif"
+  },
+  "announcement": {
+    "backgroundColor": "rgb(172, 20, 10)",
+    "color": "rgb(255, 255, 255)",
+    "height": "55px",
+    "fontFamily": "p22-underground, sans-serif",
+    "fontSize": "16px"
+  },
+  "nav": {
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "p22-underground, sans-serif",
+    "fontSize": "11px",
+    "fontWeight": "500",
+    "letterSpacing": "0.88px",
+    "textTransform": "uppercase",
+    "lineHeight": "12px"
+  },
+  "navAccent": { "color": "rgb(183, 19, 46)" },
+  "navSale": { "color": "rgb(172, 20, 10)" },
+  "header": { "height": "124px" },
+  "wordmark": { "width": "111px", "height": "26px", "alt": "Madewell | clothing" },
+  "search": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "border": "0.5px solid rgb(204, 204, 204)",
+    "height": "32px",
+    "width": "201px",
+    "fontSize": "11px",
+    "borderRadius": "0px",
+    "placeholder": "What are you looking for?"
+  },
+  "heroTitle": {
+    "color": "rgb(172, 20, 10)",
+    "fontFamily": "manop-variable, sans-serif",
+    "fontSize": "40px",
+    "letterSpacing": "1.2px",
+    "textTransform": "uppercase"
+  },
+  "heroOffer": {
+    "color": "rgb(172, 20, 10)",
+    "fontFamily": "manop-variable, sans-serif",
+    "fontSize": "150px",
+    "letterSpacing": "4.5px",
+    "text": "40% OFF"
+  },
+  "heroScript": {
+    "color": "rgb(172, 20, 10)",
+    "fontFamily": "Times New Roman",
+    "fontSize": "110px",
+    "text": "everything"
+  },
+  "heroButton": {
+    "color": "rgb(172, 20, 10)",
+    "border": "1px solid rgb(172, 20, 10)",
+    "height": "48px",
+    "width": "202px",
+    "fontSize": "16px",
+    "borderRadius": "0px",
+    "clicked": false
+  },
+  "categoryTitle": {
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "TAYBigBird, sans-serif",
+    "fontSize": "44px",
+    "letterSpacing": "2.2px",
+    "textTransform": "uppercase",
+    "text": "WOMEN’S JEANS"
+  },
+  "product": {
+    "url": "https://www.madewell.com/p/womens/clothing/jeans/wide-leg-jeans/the-perfect-vintage-wide-leg-jean/OB265/",
+    "titleFontFamily": "p22-underground, sans-serif",
+    "titleFontSize": "16px",
+    "titleColor": "rgb(0, 0, 0)",
+    "price": "$148",
+    "promoColor": "rgb(172, 20, 10)"
+  },
+  "addToBag": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "height": "44px",
+    "width": "400px",
+    "borderRadius": "0px",
+    "fontFamily": "p22-underground, sans-serif",
+    "letterSpacing": "1.04px",
+    "textTransform": "uppercase",
+    "clicked": false
+  },
+  "footer": {
+    "backgroundColor": "rgb(248, 248, 248)",
+    "padding": "40px 48px",
+    "headingSize": "13px",
+    "headingWeight": "600",
+    "headingLetterSpacing": "1.04px",
+    "linkSize": "12px",
+    "linkLetterSpacing": "0.36px"
+  },
+  "newsletter": {
+    "backgroundColor": "rgb(241, 241, 241)",
+    "border": "0.5px solid rgb(204, 204, 204)",
+    "height": "40px",
+    "width": "400px",
+    "fontSize": "14px",
+    "borderRadius": "0px",
+    "submitted": false
+  },
+  "aboutTitle": {
+    "fontFamily": "TAYBigBird, sans-serif",
+    "fontSize": "50px",
+    "letterSpacing": "1.5px",
+    "lineHeight": "50px",
+    "textTransform": "uppercase"
+  },
+  "login": {
+    "opened": true,
+    "url": "https://www.madewell.com/",
+    "emailEmpty": true,
+    "submitted": false,
+    "identityProvidersClicked": false,
+    "screenshotDiscarded": true
+  }
+}
