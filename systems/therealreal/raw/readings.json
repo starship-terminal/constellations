@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-22",
+  "url": "https://www.therealreal.com/",
+  "title": "Buy & Sell Designer Clothes, Bags, Shoes & More | The RealReal",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewportWidth": 1440,
+    "visualViewportHeight": 900,
+    "scale": 1
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "body": {
+    "backgroundColor": "#ffffff",
+    "color": "#333333",
+    "fontFamily": "SuisseIntl, \"SuisseIntl Fallback\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "25.6px"
+  },
+  "promo": {
+    "selector": "header .bg-black",
+    "backgroundColor": "#000000",
+    "color": "#ffffff",
+    "height": 40,
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "text": "3 DAYS LEFT: Order by 11/24 at 11:59 PM ET to get it by Hanukkah"
+  },
+  "header": {
+    "height": 229,
+    "backgroundColor": "#ffffff"
+  },
+  "logo": {
+    "width": 172,
+    "height": 28,
+    "naturalWidth": 192,
+    "naturalHeight": 31,
+    "alt": "The RealReal: Authenticated Luxury Consignment"
+  },
+  "search": {
+    "height": 40,
+    "width": 416,
+    "backgroundColor": "#ffffff",
+    "color": "#000000",
+    "border": "1px solid #666666",
+    "radius": "0px",
+    "fontSize": "14px",
+    "letterSpacing": "0.48px",
+    "padding": "8px 96px 8px 8px",
+    "placeholder": "Search by Designer or Items"
+  },
+  "sell": {
+    "selector": "a[href=\"/sell-trr\"]",
+    "text": "SELL",
+    "backgroundColor": "#e6f0a5",
+    "color": "#000000",
+    "height": 32,
+    "width": 112,
+    "fontSize": "11px",
+    "fontWeight": "700",
+    "letterSpacing": "3.3px",
+    "textTransform": "uppercase",
+    "padding": "0px 12px",
+    "radius": "0px",
+    "pngSample": "#e8f0ad"
+  },
+  "nav": {
+    "text": "New Arrivals",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "25.6px",
+    "textTransform": "none",
+    "height": 28,
+    "color": "#333333"
+  },
+  "signIn": {
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "textDecoration": "underline",
+    "color": "#333333"
+  },
+  "shippingLink": {
+    "text": "Holiday Shipping Guidelines",
+    "fontSize": "14px",
+    "fontWeight": "600",
+    "textDecoration": "underline",
+    "color": "#333333"
+  },
+  "footer": {
+    "backgroundColor": "#000000",
+    "height": 1006
+  },
+  "footerHeading": {
+    "text": "Account",
+    "color": "#ffffff",
+    "fontSize": "18px",
+    "fontWeight": "600",
+    "letterSpacing": "5.4px",
+    "textTransform": "uppercase"
+  },
+  "footerLink": {
+    "color": "#ffffff",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "textDecoration": "none"
+  },
+  "shopNow": {
+    "note": "Painted on the homepage hero. Not opened as an element. Sampled from the 2880 by 1800 PNG.",
+    "pngSample": "#000000",
+    "bannerSample": "#e8d7e6"
+  },
+  "category": {
+    "url": "https://www.therealreal.com/women",
+    "title": "Women's Luxury Resale - Shop Top Designers | The RealReal"
+  },
+  "rootTokens": {
+    "--color-black": "#000",
+    "--color-white": "#fff",
+    "--color-gray-50": "#f6f6f6",
+    "--color-gray-300": "#ccc",
+    "--color-gray-600": "#666",
+    "--color-gray-800": "#595959",
+    "--color-sell-50": "#f8fce4",
+    "--color-sell-300": "#e6f0a5",
+    "--color-sell-600": "#d8ec5d",
+    "--color-teal-link": "#4a7d76",
+    "--color-teal-100": "#e5f2f0",
+    "--color-teal-900": "#95cac5",
+    "--color-red-600": "#a22",
+    "--color-green-500": "#38a169",
+    "--chakra-fonts-body": "'SuisseIntl','SuisseIntl Fallback'",
+    "--chakra-fonts-heading": "'TRRFont','TRRFont Fallback'",
+    "--chakra-fonts-SuisseWorks": "'SuisseWorks','SuisseWorks Fallback'",
+    "--form-field-height-md": "44px",
+    "--text-base": "16px",
+    "--text-sm": "14px",
+    "--text-xs": "12px",
+    "--radius-sm": ".25rem"
+  }
+}
