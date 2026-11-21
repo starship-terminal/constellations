@@ -1,6 +1,6 @@
 # Mailchimp design reference
 
-A token set and component reference for Mailchimp's signed-out public surfaces, for building marketing and log-in pages in the style of the real thing. It was read from **mailchimp.com** and the signed-out card at **login.mailchimp.com** on 2026-11-18, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, pricing (`/pricing/marketing/`), features, about, and the log-in card, plus 390px passes on home, pricing, features and log-in.
+A token set and component reference for Mailchimp's signed-out public surfaces, for building marketing and log-in pages in the style of the real thing. It was read from **mailchimp.com** and the signed-out card at **login.mailchimp.com** on 2026-11-18, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, pricing (`/pricing/marketing/`), features, about, and the log-in card, plus 390px passes on home, pricing, features and log-in. Refreshed 2026-11-21: the same public pages were photographed again, and [site-tree.md](site-tree.md) maps which homepage control opens which page, menu, or dialog. The empty login and signup walls were photographed and not entered. [login-review.json](login-review.json) records what was offered and what was not submitted.
 
 Mailchimp ships one light marketing system on its Plums/CXP CSS. The home hero is a dark band with white Means Web at 64px. Primary actions are yellow `#ffe01b` with caviar ink `#231e15` and a 1px caviar stroke. UI and body on the marketing site are Tally, then Graphik Web. The log-in card is a separate Graphik Web surface: a teal submit `#017e89` and ink `#21262a`. It does not share the marketing token layer.
 
@@ -16,7 +16,9 @@ The account and campaign builder behind log-in were never reached. Signup was no
 | [components.md](components.md) | The discovery list, one entry per measured component with crops, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine on the marketing pages, the pricing plan, and the log-in card. |
 | [components/crops/](components/crops) | Element crops at 2x, named `{component}-{state}.png`. |
-| [screenshots/](screenshots) | Quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900. Phone shots are `mobile-*` at 390 x 844. |
+| [screenshots/](screenshots) | Quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900. Phone shots are `mobile-*` at 390 x 844. Opened menus, the cookie banner, the survey, and the empty walls are in [screenshots/site-tree/](screenshots/site-tree/). |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog. Written before the 2026-11-21 screenshots. |
+| [login-review.json](login-review.json) | What the signed-out shell offered, the screenshot list, the gaps, and what was not submitted. |
 | [raw/](raw) | The evidence: `css-vars.json`, `component-tokens.json`, `components-computed.json`, `measurements.md`, `motion.json`. |
 | [tools/](tools) | The builders and the capture runners. Adapted from the shared kit. This folder is the product package, not `tools/kit/`. |
 
@@ -131,7 +133,7 @@ Consent overlays were hidden in CSS and never answered. Nothing was signed into,
 | Tabs | not present | The log-in card has a Create an account link, not a tab widget. Signup was not started. |
 | Menu | captured | Industries and Solutions, and Resources. See [home-light-menu-resources](screenshots/home-light-menu-resources.png) and [nav-panel](components/crops/nav-panel-default.png). |
 | Tooltip | not present | No tooltip opened on the public pages. |
-| Dialog | not present | No dialog mounted. Consent and the survey were hidden, never answered. |
+| Dialog | captured | The home survey "Make Mailchimp work for you" mounts on load. See [desktop-home-survey](screenshots/site-tree/desktop-home-survey.png). It was not answered. |
 | Toast | not present | No toast appeared. |
 | Card | captured | The Standard plan cell on [pricing-light-default](screenshots/pricing-light-default.png). |
 | List row | captured | Footer sitemap links. See [footer-link](components/crops/footer-link-default.png). |
@@ -151,7 +153,7 @@ Consent overlays were hidden in CSS and never answered. Nothing was signed into,
 | Desktop 1440 | captured | Sidecars in `screenshots/*.capture.json`. |
 | Phone 390 | captured | `mobile-home`, `mobile-pricing`, `mobile-features`, `mobile-login`. |
 | Signed-in product | not captured | The account and campaign builder need sign-in. Recorded in catalog `capture.gaps`. |
-| Signup | not captured | https://login.mailchimp.com/signup/ was not started and was not submitted. |
+| Signup | not captured | The empty wall at https://login.mailchimp.com/signup/ was photographed in [desktop-signup-wall](screenshots/site-tree/desktop-signup-wall.png) and was not submitted. |
 | Password reset | not captured | Forgot username and forgot password were linked and not followed. |
 | Checkout and trial | not captured | Plan links point at `/signup/` with a plan query. Measured, never followed. Checkout was not started. |
 | Request a demo and Chat with Sales | not captured | Linked from pricing. Neither form was submitted. |

@@ -1,0 +1,117 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public Playwright capture, signed out. https://login.mailchimp.com/ was opened from a direct load. The empty wall was photographed at 1440 and 390. https://login.mailchimp.com/signup/ was opened from a direct load and photographed empty at 1440. The branch stopped. No email, password, username, or code was typed. Continue with Google was not clicked. No form was submitted. Query strings on the marketing Log In link were not recorded.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Wordmark to /",
+        "Industries and Solutions menu",
+        "Integrations menu",
+        "Resources menu",
+        "Switch to Mailchimp",
+        "Pricing",
+        "Search",
+        "Language EN",
+        "Sales phone",
+        "Log In",
+        "Start Free Trial",
+        "Main Menu at 390"
+      ],
+      "reached": [
+        "/",
+        "/pricing/marketing/",
+        "/features/",
+        "/about/",
+        "Industries and Solutions menu",
+        "Integrations menu",
+        "Resources menu",
+        "phone Main Menu"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Language EN in the header",
+        "Cookie Customize settings",
+        "Cookie Preferences in the footer",
+        "No account settings on the public site",
+        "No theme switch"
+      ],
+      "reached": []
+    },
+    "create": {
+      "items": [
+        "Start Free Trial",
+        "Create an account",
+        "Business email",
+        "Username",
+        "Password",
+        "Sign up",
+        "Continue with Google",
+        "Marketing opt-out checkbox"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-menu-industries-and-solutions.png",
+    "screenshots/home-light-menu-resources.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-full.png",
+    "screenshots/features-light-default.png",
+    "screenshots/features-light-full.png",
+    "screenshots/about-light-default.png",
+    "screenshots/about-light-full.png",
+    "screenshots/login-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-pricing-light-default.png",
+    "screenshots/mobile-pricing-light-full.png",
+    "screenshots/mobile-features-light-default.png",
+    "screenshots/mobile-login-light-default.png",
+    "screenshots/site-tree/desktop-home-consent.png",
+    "screenshots/site-tree/desktop-home-survey.png",
+    "screenshots/site-tree/desktop-menu-industries.png",
+    "screenshots/site-tree/desktop-menu-integrations.png",
+    "screenshots/site-tree/desktop-menu-resources.png",
+    "screenshots/site-tree/desktop-login-wall.png",
+    "screenshots/site-tree/desktop-signup-wall.png",
+    "screenshots/site-tree/phone-nav-drawer.png",
+    "screenshots/site-tree/phone-login-wall.png"
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Campaigns, audiences, and account settings were not offered on a signed-in shell.",
+    "Continue with Google was visible on the login wall and the signup wall and was not clicked.",
+    "The username, email, and password fields were empty. Log in and Sign up were not pressed.",
+    "Forgot username and Forgot password were visible and not followed.",
+    "Create an account on the login wall was not clicked. The signup wall was a separate direct load.",
+    "The home survey was photographed and not answered. Customize my experience was not pressed.",
+    "Cookie Customize settings was not pressed.",
+    "No dark theme was offered.",
+    "The language control was visible and not opened.",
+    "Search, Switch to Mailchimp, and the sales phone link were mapped and not opened on this pass."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "username",
+    "code",
+    "Log in",
+    "Sign up",
+    "Continue with Google",
+    "Create an account",
+    "Forgot username",
+    "Forgot password",
+    "Customize my experience",
+    "No thank you",
+    "cookie Customize settings",
+    "home survey"
+  ]
+}

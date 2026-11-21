@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:22:57.102Z",
+  "capturedAt": "2026-11-21T13:33:42.825Z",
   "screenshot": "home-light-default.png",
   "sanitizedSourceUrl": "https://mailchimp.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 7268
+      "height": 5948
     },
     "scroll": {
       "x": 0,
