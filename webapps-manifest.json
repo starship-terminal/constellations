@@ -2170,9 +2170,9 @@
       "description": "AI Product Generation",
       "status": "captured",
       "package": "systems/fourmula",
-      "notes": "https://fourmula.ai/login is a 404. The app account is https://app.fourmula.ai/auth with email and password, or Google. No code was sent. Cookie banner was not accepted.",
+      "notes": "https://fourmula.ai/login is a 404. The app account is https://app.fourmula.ai/auth with email and password, or Google. No code was sent. Cookie banner was not accepted. Public walk 2026-11-21: the public site tree is in systems/fourmula/site-tree.md. https://fourmula.ai/login is still a 404. Log in stops at https://app.fourmula.ai/auth with email and password, or Google. Sign up and Forgot password stay on that same dialog. Nothing was typed. Google was not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1667 at 8c86b1c0bb8f. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
