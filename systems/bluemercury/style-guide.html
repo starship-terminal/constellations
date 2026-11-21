@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bluemercury style guide</title>
+  <style>
+    :root {
+      --ink: #1c262e;
+      --page: #ffffff;
+      --deep: #2f394b;
+      --on-deep: #ffffff;
+      --muted: #6d7275;
+      --link: #0b51c1;
+      --chip: #f5f5f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: "Neue Haas Grotesk Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    header.promo {
+      height: 35px;
+      background: var(--deep);
+      color: var(--on-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+    main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 300;
+      font-size: 50px;
+      margin: 0 0 8px;
+    }
+    .note { color: var(--muted); font-size: 14px; margin: 0 0 32px; }
+    h2 { font-size: 16px; font-weight: 400; letter-spacing: 0.8px; margin: 32px 0 12px; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 120px; }
+    .swatch i { display: block; height: 64px; border: 1px solid #e6e6e6; }
+    .swatch span { display: block; font-size: 12px; margin-top: 6px; }
+    .search {
+      width: 450px;
+      max-width: 100%;
+      height: 48px;
+      border: 0;
+      border-bottom: 1px solid var(--muted);
+      border-radius: 0;
+      font: 16px/1 inherit;
+      color: var(--ink);
+      background: transparent;
+      padding: 14px 0;
+    }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .chip {
+      height: 36px;
+      padding: 0 16px;
+      border: 1px solid var(--chip);
+      background: var(--chip);
+      color: var(--deep);
+      font: 14px/36px inherit;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+    .chip.on {
+      background: var(--deep);
+      border-color: var(--deep);
+      color: var(--on-deep);
+    }
+    .shop {
+      display: inline-block;
+      width: 300px;
+      height: 63px;
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid transparent;
+      border-radius: 0;
+      font: 15px/63px inherit;
+      letter-spacing: 0.75px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .bag {
+      display: inline-block;
+      width: 320px;
+      height: 60px;
+      background: var(--deep);
+      color: var(--on-deep);
+      border: 0;
+      border-radius: 0;
+      font: 15px/60px inherit;
+      letter-spacing: 0.75px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .link { color: var(--link); }
+    .price { font-size: 20px; letter-spacing: 0.2px; }
+    .brand { font-size: 14px; letter-spacing: 0.7px; color: var(--muted); text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <header class="promo">Up to 30% off almost everything</header>
+  <main>
+    <h1>Skincare</h1>
+    <p class="note">Measured from bluemercury.com on 2026-11-22. Juana is substituted with Georgia. Neue Haas is substituted with Helvetica Neue.</p>
+
+    <h2>Colour</h2>
+    <div class="swatches">
+      <div class="swatch"><i style="background:#1c262e"></i><span>Ink #1c262e</span></div>
+      <div class="swatch"><i style="background:#ffffff"></i><span>Page #ffffff</span></div>
+      <div class="swatch"><i style="background:#2f394b"></i><span>Deep sea #2f394b</span></div>
+      <div class="swatch"><i style="background:#6d7275"></i><span>Muted #6d7275</span></div>
+      <div class="swatch"><i style="background:#0b51c1"></i><span>Link #0b51c1</span></div>
+      <div class="swatch"><i style="background:#f5f5f5"></i><span>Chip #f5f5f5</span></div>
+    </div>
+
+    <h2>Department</h2>
+    <p><span class="link">Gift Guide</span> &nbsp; HSA/FSA &nbsp; Bestsellers &nbsp; Skincare</p>
+
+    <h2>Search</h2>
+    <input class="search" placeholder="What can we help you find?" readonly>
+
+    <h2>Chips</h2>
+    <div class="row">
+      <span class="chip on">All skincare</span>
+      <span class="chip">Cleansers</span>
+      <span class="chip">Serums &amp; treatments</span>
+    </div>
+
+    <h2>Product</h2>
+    <p class="brand">Skinceuticals</p>
+    <p class="price">C E Ferulic &nbsp; $185</p>
+    <p><span class="shop">Shop now</span></p>
+    <p><span class="bag">Add to bag</span></p>
+  </main>
+</body>
+</html>
