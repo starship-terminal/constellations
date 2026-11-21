@@ -1,0 +1,44 @@
+{
+  "slug": "monday",
+  "product": "monday.com",
+  "domain": "monday.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Headless Chrome opened https://auth.monday.com/login. The work-email field placeholder was Example@company.com and its value length was 0. Google and Microsoft were not clicked. Next was not clicked. Nothing was typed. The in-app preview browser was redirected to an unsupported-browser page and was not used for this wall.",
+  "wall": {
+    "url": "https://auth.monday.com/auth/login_monday",
+    "requested": "https://auth.monday.com/login",
+    "title": "monday.com: Where Teams Get Work Done",
+    "heading": "Log in to your account",
+    "email_field": true,
+    "password_field": false,
+    "identity_providers_not_clicked": ["Google", "Microsoft"],
+    "next_not_clicked": true,
+    "inputs": [
+      {
+        "type": "text",
+        "placeholder": "Example@company.com",
+        "filled": false
+      }
+    ],
+    "note": "The first screen asks for a work email. The password step was not opened. Sign up was not clicked."
+  },
+  "signup_wall": {
+    "url": "https://auth.monday.com/users/sign_up_new",
+    "title": "monday.com: Your team's growth made easy | Sign Up",
+    "heading": "Welcome to monday.com You lead, agents act.",
+    "same_as_login": false,
+    "continued": false,
+    "identity_providers_not_clicked": ["Google"],
+    "inputs": [
+      {
+        "type": "email",
+        "placeholder": "name@company.com",
+        "filled": false
+      }
+    ],
+    "note": "Continue and Continue with Google were not clicked. No workspace was created."
+  }
+}
