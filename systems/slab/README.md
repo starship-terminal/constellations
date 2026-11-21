@@ -1,8 +1,8 @@
 # Slab
 
-Slab (slab.com) is knowledge-base and wiki software. This package records the public marketing site and the signed-out login page, measured on 2026-11-19. No account was created. Google signup was not clicked. The register form asks for an email, a full name and a password, so it was not submitted.
+Slab (slab.com) is knowledge-base and wiki software. This package records the public marketing site and the signed-out login and signup walls. Tokens were measured on 2026-11-19. A 2026-11-22 pass mapped the public control tree into [site-tree.md](site-tree.md) and photographed the pages those controls open. No account was created. Google signup was not clicked. The register form asks for an email, a full name and a password, so it was not submitted. `login-extracted` stays not-started. catalog.json was left alone.
 
-Computed styles were read in a T3 preview tab at 1169 by 731 CSS pixels, devicePixelRatio 2. Headless Playwright then saved public marketing screenshots at 1440 by 900 and 390 by 844, after those pages had already loaded without a Cloudflare challenge. Login and register were not opened in that headless session.
+Computed styles were read in a T3 preview tab at 1169 by 731 CSS pixels, devicePixelRatio 2. The 2026-11-22 photographs are headless Playwright at 1440 by 900 and 390 by 844, devicePixelRatio 2, after those pages loaded without a Cloudflare challenge.
 
 | File | What it holds |
 |---|---|
@@ -13,9 +13,11 @@ Computed styles were read in a T3 preview tab at 1169 by 731 CSS pixels, deviceP
 | [style-guide.html](style-guide.html) | Swatches and the measured buttons and field |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Public page patterns |
+| [site-tree.md](site-tree.md) | Header, footer, and the public pages those controls open. Mapped 2026-11-22. |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login-extracted` is not-started. |
 | [components/](components/) | Crops cut from the marketing screenshots |
 | [icons/](icons/) | The public favicon SVG and an index |
-| [screenshots/](screenshots/) | Home and pricing, desktop and phone |
+| [screenshots/](screenshots/) | Public pages at 1440 and 390, plus the empty login and signup walls |
 | [raw/](raw/) | Computed-style readings |
 | [tools/](tools/) | Builders and the copied capture kit |
 
@@ -104,10 +106,10 @@ Whitney is the marketing sans (`whitney, system-ui, helvetica, sans-serif`). Sen
 | Table | Pricing comparison table on https://slab.com/pricing/ |
 | Avatar, badge | Not present as components on the public pages |
 | App shell | Marketing nav, plum on home and white on pricing. [patterns.md](patterns.md) |
-| Login | Opened at https://slab.com/login/ and not submitted |
-| Register | Opened. Asks for email, full name and password. Not submitted |
-| Signed-in app, SSO, payment | Not entered |
-| Screenshots | Home and pricing at 1440, home at 390. Login and register have no screenshots |
+| Login | Empty wall at https://slab.com/login/. Subdomain left empty. Continue not clicked. [screenshots/login-wall-desktop.png](screenshots/login-wall-desktop.png) |
+| Register | Empty wall at https://slab.com/register/. Email, name and password left empty. Google not clicked. Not submitted. [screenshots/signup-wall-desktop.png](screenshots/signup-wall-desktop.png) |
+| Signed-in app, SSO, payment | Not entered. Stopped at the walls and at pricing plan buttons |
+| Screenshots | Public header and footer destinations at 1440, plus home, pricing, library, and both walls at 390. See [site-tree.md](site-tree.md) |
 | Phone 390 computed styles | Not measured. The 390 shot is visual only |
 
 ## Do and don't

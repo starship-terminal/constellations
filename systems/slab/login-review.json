@@ -1,0 +1,42 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "Login and signup are two empty walls. The subdomain field, email, full name, and password were left empty. Continue, Sign up with Google, and Create my account were not clicked. No password, code, phone, address, or identity provider was used. No workspace was created. Pricing plan buttons and Contact Sales were not clicked.",
+  "walls": [
+    {
+      "url": "https://slab.com/login/",
+      "opened_from": "header Log In",
+      "heading": "Welcome back!",
+      "subheading": "Log in to your account",
+      "desktop": "screenshots/login-wall-desktop.png",
+      "phone": "screenshots/login-wall-phone.png",
+      "subdomain_value_length": 0,
+      "controls_not_used": [
+        "Continue",
+        "subdomain field (left empty)"
+      ],
+      "stopped": true
+    },
+    {
+      "url": "https://slab.com/register/",
+      "opened_from": "login card Sign up for Slab, and the phone menu Get Started",
+      "heading": "Welcome to Slab",
+      "subheading": "Enter your info to get started",
+      "desktop": "screenshots/signup-wall-desktop.png",
+      "phone": "screenshots/signup-wall-phone.png",
+      "email_value_length": 0,
+      "name_value_length": 0,
+      "password_value_length": 0,
+      "controls_not_used": [
+        "Sign up with Google",
+        "Create my account",
+        "email, full name, and password fields (left empty)"
+      ],
+      "stopped": true
+    }
+  ]
+}
