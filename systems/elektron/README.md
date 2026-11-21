@@ -1,6 +1,6 @@
 # Elektron design reference
 
-A token set and component reference for Elektron's public site — for building dark, instrument-grade music-hardware storefront and product surfaces in the style of the real thing. It was read from **www.elektron.se** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page (with the Search and Account header modals opened), /shop, the Digitakt II and PL-2 product pages (with the Key Features accordion opened), /explore, /kulture, /support-downloads, /who-we-are, /contact-us, the empty /cart drawer, the signed-out /my-account magic-login card and /store-locator, plus the mobile captures of home (menu opened), shop and the Digitakt II page.
+A token set and component reference for Elektron's public site — for building dark, instrument-grade music-hardware storefront and product surfaces in the style of the real thing. Tokens were read from **www.elektron.se** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The public tree was mapped again on **2026-11-21**: header, footer, search, account drawer, cart drawer, region picker, cookie dialog, shop, catalog, product accordions, support, and the empty login wall. The control map is [site-tree.md](site-tree.md). The walls where the pass stopped are [login-review.json](login-review.json). Nothing was submitted.
 
 Elektron is worth a capture because it is a rare fully inverted monochrome: a `#151515` ground under `#eeeef2` "paper" that is at once the text colour, the icon colour, the 2px stroke of every outline action and the fill those actions take on hover — the accent is the paper, not a brand hue. Everything is square (`--tdc-radius: 0`), spaced on a 7px rhythm, and set in Neue Haas Grotesk — Text Pro for the 14px UI, Display Pro for the 24-64px headings — with the hardware-flavoured **digi one v2** on block-button labels and **Analog One V2.** in the search field. Links hover by a `#333333` gradient underline-sweep; fields are light `#eeeef2` slabs on the dark page; modals are right drawers over a 50% scrim; and keyboard focus draws a double ring — a 2px white spread under a 2px black outline.
 
@@ -13,7 +13,10 @@ Elektron is worth a capture because it is a rare fully inverted monochrome: a `#
 | [components.md](components.md) | The discovery list of every measured component with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the transparent shell, the outline-button vocabulary, the underline-sweep, product rows and PDP, the drawers and the contact form |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | `{page}-dark-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-search`/`-account`/`-menu`/`-features` the opened overlays |
+| [screenshots/](screenshots) | `{page}-dark-{state}.png` captures from 2026-11-13. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-search`/`-account`/`-menu`/`-features` the opened overlays |
+| [screenshots/states/](screenshots/states) | 2026-11-21 opened states at 1440 and 390: cookie dialog, cookie settings, search, account drawer, login wall, cart drawer, region picker, product accordion, support, phone menu |
+| [site-tree.md](site-tree.md) | Which control opens which page, dialog, drawer or in-page interaction |
+| [login-review.json](login-review.json) | The login walls this pass stopped at, and that nothing was submitted |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property the same-origin sheets declare, binned theme/app/vendor, resolved in a probe, plus the 27 @font-face declarations), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads). The unquantized captures and their `.capture.json` sidecars are kept outside the repository (`~/.design-systems/elektron/raw-shots`, the kit's default) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
@@ -129,13 +132,13 @@ Declared in `raw/css-vars.json` (`fonts`, 27 faces), all same-origin from the si
 | Button, link | captured | `submit-button`, `add-to-cart`, `pdp-explore`, `cart-continue`, `magic-send`, `login-send`, `login-create`, `nav-link`, `nav-icon-link`, `footer-link`, `explore-link`, `download-row` |
 | Ghost/bordered button | captured | the outline actions are the ghost variant: 2px paper stroke, transparent -> paper on hover |
 | Text field, text area | captured | `text-field`, `textarea-field`, `magic-email`, `login-email`, `search-field` (default/focused/filled) |
-| Select | captured | `select-field` (default/focused); options never opened |
+| Select | captured | `select-field` (default/focused). The support "Pick subject" list did not paint open in headless Chromium on 2026-11-21; option labels are Not captured |
 | Checkbox, radio, switch | not present | none on the public surface |
 | Segmented control, tabs | not present | none on the captured routes |
 | Menu | captured | `m-menu-open` mobile sheet ([mobile-home-dark-menu](screenshots/mobile-home-dark-menu.png)) |
 | Carousel control | not present | none measured on the captured routes |
 | Tooltip, toast | not present | none surfaced |
-| Dialog | captured | `search-modal` dropdown, `account-modal` and `cart-drawer` right drawers |
+| Dialog | captured | `search-modal` dropdown, `account-modal` and `cart-drawer` right drawers. 2026-11-21 also opened the cookie dialog and cookie settings ([screenshots/states/](screenshots/states/)) |
 | Card | captured | `product-card` shop row, `login-panel` magic-login card |
 | Badge | not present | no badge/chip on the captured surface |
 | States: default, hover, focus-visible, pressed | captured | every interactive entry; pressed via CDP |
@@ -147,7 +150,7 @@ Declared in `raw/css-vars.json` (`fonts`, 27 faces), all same-origin from the si
 | Loading, error states | not present | none on the public surface |
 | Feedback after an action | partly | hover/focus/press measured; post-action states need the product |
 | Search and filtering | captured | `search-modal` + `search-field` ([home-dark-search](screenshots/home-dark-search.png)); a query was never submitted |
-| Onboarding, the product itself | not captured | the account area and serial-registered downloads sit behind the magic login |
+| Onboarding, the product itself | not captured | stopped at the empty login wall on 2026-11-21 ([login-review.json](login-review.json)). `/login` asks for an email and offers SEND ME A CODE. The code path was not used. No code was sent. Nothing was typed or submitted |
 | Themes: light, dark | partly | dark painted everywhere; no light variant declared |
 | Widths: 1440, 390 | captured | desktop + `mobile-*` shots and the Mobile group |
 
