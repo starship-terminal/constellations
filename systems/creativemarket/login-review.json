@@ -1,64 +1,71 @@
 {
-  "status": "partial",
-  "note": "Manifest login-extracted stays not-started in this PR. catalog.json and webapps-manifest.json are deferred. A done review needs every offered item opened; this walk stopped when the preview stopped producing frames and when settings hit an unrecognized-device wall.",
+  "capturedAt": "2026-11-21",
+  "signed_in": false,
+  "method": "Public web only. Homepage mapped in the T3 preview incognito tab at CSS 1440x900 (session.isAuthenticated false). Screenshots taken in headless Playwright after the preview tab stopped producing frames. CookieYes banner hidden, never answered. No email, password, phone, or code typed. No identity provider clicked. No form submitted. No checkout.",
   "offered": {
     "nav": {
       "items": [
-        "My profile",
-        "My purchases",
-        "My collections",
-        "My likes",
-        "Messages",
-        "Notifications",
-        "Shop updates",
-        "Settings"
+        "no signed-in navigation"
       ],
-      "reached": [
-        "My profile",
-        "My purchases"
-      ]
+      "reached": [],
+      "note": "Signed out. Public header: search, wordmark, overflow (Enterprise, Free Downloads, Open a Shop), Join, Log in, Save 25%, cart. Category bar: FONTS, TEMPLATES, GRAPHICS & ILLUSTRATIONS, BRUSHES & EFFECTS, MORE, SALE, INSPIRATION, ENTERPRISE. A hidden user dropdown exists in the DOM (My profile, My purchases, My collections, My likes, Messages, Notifications, Shop updates, Settings, Log out) and is not painted."
     },
     "settings": {
       "items": [
-        "no settings area: /account/settings redirects to /account/unauthorized-device"
+        "no settings area"
       ],
-      "reached": []
+      "reached": [],
+      "note": "No signed-in settings surface was offered. The hidden shop menu lists Settings; it was not opened."
     },
     "create": {
       "items": [
-        "Add a new product (shop menu, not opened)"
+        "no create flow"
       ],
-      "reached": []
+      "reached": [],
+      "note": "Open a Shop links to /sell and was not followed into a submit. Add a new product is only in the hidden shop menu (/account/products/new) and was not opened."
     }
   },
   "screens": [
     {
-      "name": "Account menu",
-      "file": "screenshots/signed-in-account-menu-light-desktop.png"
+      "name": "Homepage, signed out, light, 1440",
+      "file": "screenshots/home-light-default.png"
     },
     {
-      "name": "My purchases",
-      "file": "screenshots/signed-in-purchases-light-desktop.png"
+      "name": "Homepage, Fonts mega menu open, light, 1440",
+      "file": "screenshots/home-light-fonts-menu.png"
     },
     {
-      "name": "My profile",
-      "file": "screenshots/signed-in-profile-light-desktop.png"
+      "name": "Homepage, overflow menu open, light, 1440",
+      "file": "screenshots/home-light-overflow-menu.png"
+    },
+    {
+      "name": "Fonts category, signed out, light, 1440",
+      "file": "screenshots/category-light-default.png"
+    },
+    {
+      "name": "Homepage, signed out, light, phone (measured CSS 394x853, PNG 780x1688)",
+      "file": "screenshots/mobile-home-light-default.png"
+    },
+    {
+      "name": "Homepage, phone drawer open, light (measured CSS 394x853, PNG 780x1688)",
+      "file": "screenshots/mobile-home-light-menu.png"
     }
   ],
   "gaps": [
-    "Settings, shop settings, and payouts: /account/settings redirects to /account/unauthorized-device. The page asks this browser to be authorized from an email. That email was not opened, and Send it again was not clicked.",
-    "My collections, My likes, Messages, Notifications, and Shop updates: listed in the account menu. The preview stopped producing screenshot frames after the profile shot, before those pages could be saved.",
-    "Shop menu (Shop profiles, Dashboard, Sales, Products, Marketing tools, Discounts, Add a new product): present in the DOM, never painted. Hover did not open it.",
-    "Phone 390x844: not captured. The three shots are desktop. Measured CSS viewport 1440x900, devicePixelRatio 2, visualViewport 1440x900 scale 1. PNG 2880x1800.",
-    "Purchases is empty (NO PURCHASES FOUND), so a download and a purchase detail were not on screen.",
-    "The unauthorized-device page was read, not screenshotted: frame capture failed on that URL.",
-    "Profile tabs Likes, Collections, and About were on the profile page and were not opened as their own shots."
+    "Signed-in nav, settings, and create were not offered. The hidden account and shop menus were not painted and were not opened.",
+    "Log in (/sign-in) stayed on a Cloudflare security check (Just a moment..., Performing security verification). The check was not solved. No login form was photographed.",
+    "Join (/sign-up) was not opened.",
+    "Cart was not opened. Checkout was not started.",
+    "Newsletter SIGN UP was not submitted. The font-search field on the homepage was not submitted.",
+    "Phone shots were requested at 390x844. Playwright reported innerWidth 394 and innerHeight 853. The PNGs are 780x1688."
   ],
   "not_submitted": [
-    "no purchase, cart checkout, or membership join",
-    "no product created, published, or added",
-    "no settings, profile, payout, or Dropbox connection saved",
-    "device-authorization email was not requested again and was not opened",
-    "Log out was not clicked"
+    "no login, signup, or identity-provider click",
+    "no email, password, phone, or code typed",
+    "no newsletter or search form submitted",
+    "no cart checkout, purchase, or membership join",
+    "no product created or published",
+    "CookieYes Reject All, Accept All, and Customize were not clicked",
+    "Cloudflare security check on /sign-in was not solved"
   ]
 }
