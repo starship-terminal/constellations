@@ -691,9 +691,9 @@
       "description": "The all-in-one video editor for modern brands",
       "status": "captured",
       "package": "systems/butter",
-      "notes": "cursor badge only paints for real pointer input and is captured in its hidden state; paywalled product surfaces out of scope https://www.butter.video/login asks for email and password, or Google. No code was sent.",
+      "notes": "cursor badge only paints for real pointer input and is captured in its hidden state; paywalled product surfaces out of scope https://www.butter.video/login asks for email and password, or Google. No code was sent. Public walk 2026-11-21: the public site tree is in systems/butter/site-tree.md. https://usebutter.com/ redirects to https://www.butter.video/. Sign in stops at https://www.butter.video/login with an empty email and password, or Google. Nothing was typed. Google was not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1681 at bba4c84b34ff. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 2
     },
     {
