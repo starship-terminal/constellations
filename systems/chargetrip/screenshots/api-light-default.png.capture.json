@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T08:38:27.074Z",
+  "capturedAt": "2026-11-21T10:07:06.263Z",
   "screenshot": "api-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 7440
+      "height": 7494
     },
     "scroll": {
       "x": 0,
