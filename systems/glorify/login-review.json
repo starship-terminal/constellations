@@ -1,0 +1,74 @@
+{
+  "offered": {
+    "login": {
+      "url": "https://app.glorify.com/dashboard/login",
+      "also_reached_from": [
+        "https://glorify.com/ header Login",
+        "https://app.glorify.com/welcome"
+      ],
+      "title": "Log In",
+      "status": 200,
+      "asks_for": [
+        "Sign in with Google",
+        "Email",
+        "Password",
+        "Remember me",
+        "Forgot password?",
+        "Sign in",
+        "Sign Up"
+      ],
+      "fields_empty": true,
+      "typed": false,
+      "submitted": false,
+      "identity_provider_clicked": false
+    },
+    "signup": {
+      "url": "https://app.glorify.com/dashboard/register",
+      "also_reached_from": [
+        "https://glorify.com/pricing Start a free trial"
+      ],
+      "status": 200,
+      "asks_for": [
+        "Sign up with Google",
+        "Full name",
+        "Email",
+        "Password",
+        "I'm not a robot (reCAPTCHA)",
+        "Sign Up",
+        "Terms & Conditions",
+        "Privacy Policy",
+        "Sign In"
+      ],
+      "fields_empty": true,
+      "typed": false,
+      "submitted": false,
+      "identity_provider_clicked": false
+    }
+  },
+  "screens": [
+    "screenshots/login-wall-empty-2026-11-21.png",
+    "screenshots/register-wall-empty-2026-11-21.png",
+    "screenshots/login-wall-empty-2026-11-21-390.png",
+    "screenshots/register-wall-empty-2026-11-21-390.png"
+  ],
+  "gaps": [
+    "Signed-in app was not entered. offered.nav, offered.settings, and offered.create are absent because those surfaces were not opened.",
+    "Google was visible on both walls and was not clicked.",
+    "The register wall shows an unchecked reCAPTCHA checkbox. It was not clicked.",
+    "Forgot password, Sign Up on the login wall, and Sign In on the register wall were not followed.",
+    "Play for free (https://app.glorify.com/designer/use-template/0) was not opened on this walk."
+  ],
+  "not_submitted": [
+    "login email",
+    "login password",
+    "login Remember me",
+    "login Sign in",
+    "signup full name",
+    "signup email",
+    "signup password",
+    "signup reCAPTCHA",
+    "signup Sign Up",
+    "partners apply form",
+    "template search"
+  ]
+}
