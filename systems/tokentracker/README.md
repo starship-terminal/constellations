@@ -14,7 +14,9 @@ It is the reference for Quiver's macOS app, which takes TokenTracker's look and 
 | [patterns.md](patterns.md) | The app shell, page header, forms and validation, empty/loading/error states, destructive confirmation, feedback, search and filtering, data display and first run, each with its components, layout and screenshots. |
 | [components/crops/](components/crops) | 308 element screenshots, `{component}[.light]-{state}.png`, at 2x, except the six over 1.2 megapixels (the cost dialog, the share sheet and the Sessions loading state, in each theme), which were halved to 1x. |
 | [icons/](icons) | Lucide icons as SVG, named by their Lucide class, with [icons/INDEX.tsv](icons/INDEX.tsv). |
-| [screenshots/](screenshots) | 80 `{page}-{theme}-{state}.png` captures: 1440 x 900 at 2x, `-full` for whole pages, `mobile-*` at 390 x 844, `onboarding-*` from the empty install, `sessions-loading-*` and `sessions-error-*` for those states. |
+| [screenshots/](screenshots) | 80 `{page}-{theme}-{state}.png` captures of the local dashboard: 1440 x 900 at 2x, `-full` for whole pages, `mobile-*` at 390 x 844, `onboarding-*` from the empty install, `sessions-loading-*` and `sessions-error-*` for those states. Public-site shots from 2026-11-22 live in [screenshots/public/](screenshots/public). |
+| [site-tree.md](site-tree.md) | Which public controls open which pages, menus, and dialogs. Login and signup stop at the empty wall. |
+| [DESIGN.public.md](DESIGN.public.md) | Hand-written measurements from the public site. Not the generated [DESIGN.md](DESIGN.md). |
 | [raw/](raw) | The readings: every custom property in the CSS bundle, resolved in both themes (`css-vars.json`); computed styles per component, state and theme (`components-computed.json`, and `measurements.md` built from it); every rendered value counted per page and theme, plus the stylesheet's breakpoints, reduced-motion rules and colour utilities (`census.json`). |
 | [tools/](tools) | The three builders and the capture scripts. See Rebuild. |
 
@@ -81,6 +83,16 @@ Scorecard: **18 of 25 met, 7 partly, 0 missing**; C5, V1, V2 are optional for a 
 Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../../docs/PACKAGE.md)).
 
 <!-- health:end -->
+
+## Public site, 2026-11-22
+
+The public site is `https://www.tokentracker.cc/`. `https://tokentracker.app` redirects to `https://ivan.dev` and is not this product. `https://tokens.studio` is a different product. The control map is [site-tree.md](site-tree.md). Shots are in [screenshots/public/](screenshots/public). Measured colours and type are in [DESIGN.public.md](DESIGN.public.md). Readings for the homepage shell are in [raw/public/homepage-computed-2026-11-22.json](raw/public/homepage-computed-2026-11-22.json).
+
+Captured signed out, in headless Chromium. Desktop shots are 1440 × 900 at 1x. Phone shots are 390 × 844 at 2x. Pages: homepage, landing, Cloud pricing, self-host, pricing, terms, privacy, the empty login wall, the empty email sign-in form, and the empty create-account form. Phone shots cover the homepage, Cloud, and the empty login wall.
+
+Login and signup were photographed empty. No email, password, code, phone, or address was typed. GitHub and Google were not clicked. No form was submitted. No captcha was solved. The signed-in dashboard was not entered. `login-extracted` stays not-started. catalog.json was left alone.
+
+The public leaderboard shows other people's names and photos, so it was mapped and not kept as a screenshot. The local dashboard tokens in [tokens.json](tokens.json) are unchanged. [DESIGN.md](DESIGN.md) was not regenerated.
 
 ## How the values were read
 
