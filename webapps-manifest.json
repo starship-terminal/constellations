@@ -164,9 +164,9 @@
       "description": "Online Booking & Appointment Scheduling",
       "status": "captured",
       "package": "systems/acuityscheduling",
-      "notes": "https://www.acuityscheduling.com/login.php asks for email and password, or Squarespace. No code was sent.",
+      "notes": "https://www.acuityscheduling.com/login.php asks for email and password, or Squarespace. No code was sent. Public walk 2026-11-21: the header opens How It Works, Solutions, Product, Resources, and Pricing. The phone sheet keeps those links. Get started and Log in leave for Squarespace and stop. Pricing has an annual/monthly pill, plan tooltips, and a FAQ accordion. Feature, solution, compare, learn, integrations, about, and enterprise pages open. The enterprise lead form was not submitted. Squarespace, Google, and Apple were not clicked. No email was typed. No form was submitted. Signed-in scheduler was not captured. Public package refresh in PR 1611 at 825a05110ed1. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 1
     },
     {
