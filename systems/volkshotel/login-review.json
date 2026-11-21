@@ -1,0 +1,50 @@
+{
+  "slug": "volkshotel",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "public Playwright capture. No product sign-in.",
+  "probe": {
+    "url": "https://www.volkshotel.nl/en/login",
+    "status": 302,
+    "final": "https://www.volkshotel.nl/wordpress/wp-login.php",
+    "note": "The WordPress login redirects to itself. Playwright timed out waiting for domcontentloaded. The wall was not filled. No identity provider was clicked. login-extracted stays not-started."
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "No signed-in navigation. The public header has BOOK ROOM and MENU, not Sign in."
+      ],
+      "reached": []
+    },
+    "settings": {
+      "items": [
+        "No account settings. /en/account is a 404."
+      ],
+      "reached": []
+    },
+    "create": {
+      "items": [
+        "No create-account control on the public site."
+      ],
+      "reached": []
+    }
+  },
+  "screens": [],
+  "gaps": [
+    "No product account. /en/login and /login redirect to a WordPress login that loops. That wall was recorded and not entered.",
+    "The date dialog from BOOK ROOM was photographed and not submitted.",
+    "The Zenchef reserve-a-table iframe, the newsletter iframe, and the gift card balance field were not filled.",
+    "jobs.volkshotel.nl was not entered."
+  ],
+  "not_submitted": [
+    "WordPress login",
+    "BOOK ROOM date dialog",
+    "Promocode",
+    "Newsletter iframe",
+    "Gift card balance",
+    "Zenchef reserve a table",
+    "Meetings contact forms",
+    "Any identity provider"
+  ]
+}
