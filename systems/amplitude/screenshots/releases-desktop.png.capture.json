@@ -1,0 +1,103 @@
+{
+  "slug": "releases",
+  "requested": "https://amplitude.com/releases",
+  "final": "https://amplitude.com/releases",
+  "title": "Changelog | Amplitude",
+  "h1": [
+    "Changelog"
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "Search the changelog\u2026",
+      "valueLen": 0,
+      "autocomplete": "off"
+    },
+    {
+      "type": "email",
+      "name": "Email",
+      "placeholder": "Email",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "Country",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "privacyPolicyAgreement",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignContent",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignSource",
+      "placeholder": "",
+      "valueLen": 8,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignMedium",
+      "placeholder": "",
+      "valueLen": 6,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignID",
+      "placeholder": "",
+      "valueLen": 9,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignTerm",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "GCLID__c",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "Bambu_blaid__c",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "formid",
+      "placeholder": "",
+      "valueLen": 4,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:39:30.594Z",
+  "file": "releases-desktop.png"
+}

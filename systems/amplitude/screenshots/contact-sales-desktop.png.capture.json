@@ -1,0 +1,104 @@
+{
+  "slug": "contact-sales",
+  "requested": "https://amplitude.com/sales-contact",
+  "final": "https://amplitude.com/sales-contact",
+  "title": "Contact Sales",
+  "h1": [
+    "Unlock the power of your products",
+    "Unlock the power of your products"
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "email",
+      "name": "Email",
+      "placeholder": "Work email",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "text",
+      "name": "FirstName",
+      "placeholder": "First name",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "text",
+      "name": "LastName",
+      "placeholder": "Last name",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "text",
+      "name": "Company",
+      "placeholder": "Company Name",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "Country",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "subscribeOptin",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "privacyPolicyAgreement",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignContent",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignSource",
+      "placeholder": "",
+      "valueLen": 8,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignMedium",
+      "placeholder": "",
+      "valueLen": 6,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "City",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignTerm",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:39:50.886Z",
+  "file": "contact-sales-desktop.png"
+}

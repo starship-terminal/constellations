@@ -1,0 +1,437 @@
+[
+  {
+    "file": "activation-desktop.png",
+    "final": "https://amplitude.com/activation",
+    "title": "Amplitude Activation | Integrated and Unified Customer Insights"
+  },
+  {
+    "file": "agent-analytics-desktop.png",
+    "final": "https://amplitude.com/agent-analytics",
+    "title": "Amplitude Agent Analytics"
+  },
+  {
+    "file": "agents-desktop.png",
+    "final": "https://amplitude.com/ai-agents",
+    "title": "Amplitude AI Agents - Agentic AI Data Analytics"
+  },
+  {
+    "file": "ai-desktop.png",
+    "final": "https://amplitude.com/ai",
+    "title": "Amplitude AI"
+  },
+  {
+    "file": "ai-feedback-desktop.png",
+    "final": "https://amplitude.com/ai-feedback",
+    "title": "AI Feedback | Listen to users at scale with AI"
+  },
+  {
+    "file": "amp-champs-desktop.png",
+    "final": "https://amplitude.com/amp-champs",
+    "title": "Amp Champ Leadership & Networking Program | Amplitude"
+  },
+  {
+    "file": "aup-desktop.png",
+    "final": "https://amplitude.com/aup",
+    "title": "Acceptable Use Policy"
+  },
+  {
+    "file": "benchmarks-desktop.png",
+    "final": "https://amplitude.com/benchmarks/product-performance",
+    "title": "Benchmark your product"
+  },
+  {
+    "file": "blog-desktop.png",
+    "final": "https://amplitude.com/blog",
+    "title": "Amplitude Blog - Product Best Practices & More"
+  },
+  {
+    "file": "careers-desktop.png",
+    "final": "https://amplitude.com/careers",
+    "title": "Work for Amplitude | Amplitude"
+  },
+  {
+    "file": "chart-maker-desktop.png",
+    "final": "https://amplitude.com/free-chart-maker",
+    "title": "Free Chart Maker: Turn a CSV Into a Chart | Amplitude"
+  },
+  {
+    "file": "company-desktop.png",
+    "final": "https://amplitude.com/company",
+    "title": "Make every release smarter than the last."
+  },
+  {
+    "file": "compare-adobe-desktop.png",
+    "final": "https://amplitude.com/compare/adobe-analytics",
+    "title": "Amplitude vs Adobe Analytics - The Best Alternative to Adobe Analytics"
+  },
+  {
+    "file": "compare-contentsquare-desktop.png",
+    "final": "https://amplitude.com/compare/contentsquare",
+    "title": "Amplitude vs Contentsquare | Digital Analytics Platform"
+  },
+  {
+    "file": "compare-desktop.png",
+    "final": "https://amplitude.com/compare",
+    "title": "How Amplitude Compares"
+  },
+  {
+    "file": "compare-fullstory-desktop.png",
+    "final": "https://amplitude.com/compare/fullstory",
+    "title": "Amplitude vs. Fullstory - Fullstory Alternatives"
+  },
+  {
+    "file": "compare-ga-desktop.png",
+    "final": "https://amplitude.com/compare/google-analytics",
+    "title": "Google Analytics 4 vs. Amplitude - GA4 Alternatives | Amplitude"
+  },
+  {
+    "file": "compare-heap-desktop.png",
+    "final": "https://amplitude.com/compare/heap",
+    "title": "Amplitude vs. Heap - Heap Alternatives"
+  },
+  {
+    "file": "compare-launchdarkly-desktop.png",
+    "final": "https://amplitude.com/compare/launchdarkly",
+    "title": "Amplitude vs. LaunchDarkly: Feature Flags + Analytics"
+  },
+  {
+    "file": "compare-mixpanel-desktop.png",
+    "final": "https://amplitude.com/compare/mixpanel",
+    "title": "Amplitude vs. Mixpanel - Mixpanel Alternatives"
+  },
+  {
+    "file": "compare-optimizely-desktop.png",
+    "final": "https://amplitude.com/compare/optimizely",
+    "title": "Amplitude vs. Optimizely"
+  },
+  {
+    "file": "compare-pendo-desktop.png",
+    "final": "https://amplitude.com/compare/pendo",
+    "title": "Amplitude vs. Pendo\u2014A Better Pendo Alternative"
+  },
+  {
+    "file": "compare-posthog-desktop.png",
+    "final": "https://amplitude.com/compare/posthog",
+    "title": "Amplitude vs. PostHog: The AI analytics platform built for builders"
+  },
+  {
+    "file": "contact-desktop.png",
+    "final": "https://amplitude.com/contact",
+    "title": "Contact Us"
+  },
+  {
+    "file": "contact-sales-desktop.png",
+    "final": "https://amplitude.com/sales-contact",
+    "title": "Contact Sales"
+  },
+  {
+    "file": "customers-desktop.png",
+    "final": "https://amplitude.com/customers",
+    "title": "Meet Our Customers | The Digital Disruptors"
+  },
+  {
+    "file": "data-governance-desktop.png",
+    "final": "https://amplitude.com/data-governance",
+    "title": "Data Governance | The Complete Data Solution You Can Trust for Digital Analytics"
+  },
+  {
+    "file": "dei-desktop.png",
+    "final": "https://amplitude.com/diversity-equity-inclusion",
+    "title": "Diversity, Equity, Inclusion, and Social Impact"
+  },
+  {
+    "file": "dev-docs-desktop.png",
+    "final": "https://amplitude.com/docs",
+    "title": "Amplitude Documentation"
+  },
+  {
+    "file": "docs-desktop.png",
+    "final": "https://amplitude.com/docs",
+    "title": "Amplitude Documentation"
+  },
+  {
+    "file": "early-access-desktop.png",
+    "final": "https://amplitude.com/early-access-program",
+    "title": "Amplitude Early Access Program | New AI Features"
+  },
+  {
+    "file": "enterprise-desktop.png",
+    "final": "https://amplitude.com/enterprise",
+    "title": "Enterprise Data & Analytics Platform"
+  },
+  {
+    "file": "events-desktop.png",
+    "final": "https://amplitude.com/events",
+    "title": "Upcoming Events"
+  },
+  {
+    "file": "explore-desktop.png",
+    "final": "https://amplitude.com/explore",
+    "title": "Amplitude Explore Hub - Product and Analytics 101"
+  },
+  {
+    "file": "feature-experimentation-desktop.png",
+    "final": "https://amplitude.com/amplitude-experiment",
+    "title": "Amplitude Feature Experimentation: A/B testing & Product Experimentation Platform"
+  },
+  {
+    "file": "feature-management-desktop.png",
+    "final": "https://amplitude.com/feature-management",
+    "title": "Feature Management powered by customer insights | Amplitude"
+  },
+  {
+    "file": "get-started-desktop.png",
+    "final": "https://amplitude.com/get-started",
+    "title": "Get Started | Amplitude"
+  },
+  {
+    "file": "glossary-desktop.png",
+    "final": "https://amplitude.com/glossary/terms",
+    "title": "Product and Analytics Definitions, Terms, & Examples - Glossary"
+  },
+  {
+    "file": "guides-surveys-desktop.png",
+    "final": "https://amplitude.com/guides-and-surveys",
+    "title": "In-App Guides and Surveys"
+  },
+  {
+    "file": "headless-desktop.png",
+    "final": "https://amplitude.com/headless",
+    "title": "Headless Amplitude: Product Analytics in Your AI Tools"
+  },
+  {
+    "file": "heatmaps-desktop.png",
+    "final": "https://amplitude.com/heatmaps",
+    "title": "Website Heatmap Tool by Amplitude | Amplitude"
+  },
+  {
+    "file": "home-desktop.png",
+    "final": "https://amplitude.com/",
+    "title": "Amplitude | A new era for product teams"
+  },
+  {
+    "file": "home-phone.png",
+    "final": "https://amplitude.com/",
+    "title": "Amplitude | A new era for product teams"
+  },
+  {
+    "file": "industry-b2b-desktop.png",
+    "final": "https://amplitude.com/industry/b2b-saas",
+    "title": "Amplitude: B2B SaaS Product & Digital Analytics Platform"
+  },
+  {
+    "file": "industry-ecommerce-desktop.png",
+    "final": "https://amplitude.com/industry/ecommerce",
+    "title": "Amplitude: Ecommerce Analytics & Conversion Platform"
+  },
+  {
+    "file": "industry-financial-desktop.png",
+    "final": "https://amplitude.com/industry/financial-services",
+    "title": "Amplitude: Financial Services Analytics Platform"
+  },
+  {
+    "file": "industry-healthcare-desktop.png",
+    "final": "https://amplitude.com/industry/healthcare",
+    "title": "Amplitude: Healthcare Analytics & Data Analysis Platform"
+  },
+  {
+    "file": "industry-media-desktop.png",
+    "final": "https://amplitude.com/industry/media",
+    "title": "Amplitude: Engagement Analytics for Media & Entertainment"
+  },
+  {
+    "file": "integrations-desktop.png",
+    "final": "https://amplitude.com/integrations",
+    "title": "Data & Marketing Integrations | Amplitude"
+  },
+  {
+    "file": "legal-desktop.png",
+    "final": "https://amplitude.com/legal",
+    "title": "Legal"
+  },
+  {
+    "file": "login-desktop.png",
+    "final": "https://app.amplitude.com/login",
+    "title": "Amplitude"
+  },
+  {
+    "file": "login-phone.png",
+    "final": "https://app.amplitude.com/login",
+    "title": "Amplitude"
+  },
+  {
+    "file": "maturity-model-desktop.png",
+    "final": "https://amplitude.com/digital-maturity-model",
+    "title": "Amplitude Digital Experience Maturity Model | Amplitude"
+  },
+  {
+    "file": "mcp-desktop.png",
+    "final": "https://amplitude.com/mcp-server",
+    "title": "Amplitude MCP: Connect Amplitude to your Agents"
+  },
+  {
+    "file": "partner-directory-desktop.png",
+    "final": "https://amplitude.com/partners",
+    "title": "Partner Directory"
+  },
+  {
+    "file": "partners-desktop.png",
+    "final": "https://amplitude.com/partner-program",
+    "title": "Grow faster. Together with Amplitude."
+  },
+  {
+    "file": "platform-desktop.png",
+    "final": "https://amplitude.com/self-improving-products",
+    "title": "Self-Improving Products | Amplitude"
+  },
+  {
+    "file": "press-desktop.png",
+    "final": "https://amplitude.com/press",
+    "title": "Amplitude in the News"
+  },
+  {
+    "file": "pricing-desktop.png",
+    "final": "https://amplitude.com/pricing",
+    "title": "Amplitude Pricing"
+  },
+  {
+    "file": "pricing-phone.png",
+    "final": "https://amplitude.com/pricing",
+    "title": "Amplitude Pricing"
+  },
+  {
+    "file": "privacy-desktop.png",
+    "final": "https://amplitude.com/privacy",
+    "title": "Privacy Notice"
+  },
+  {
+    "file": "product-analytics-desktop.png",
+    "final": "https://amplitude.com/amplitude-analytics",
+    "title": "Product and Web Analytics Tool"
+  },
+  {
+    "file": "prompt-library-desktop.png",
+    "final": "https://amplitude.com/prompt-library",
+    "title": "Amplitude Agents Prompt Library \u2013 Prompts to get you started"
+  },
+  {
+    "file": "releases-desktop.png",
+    "final": "https://amplitude.com/releases",
+    "title": "Changelog | Amplitude"
+  },
+  {
+    "file": "resources-desktop.png",
+    "final": "https://amplitude.com/resources",
+    "title": "Resources & Guides | Amplitude"
+  },
+  {
+    "file": "security-desktop.png",
+    "final": "https://amplitude.com/security-and-privacy",
+    "title": "Security and Privacy | Amplitude"
+  },
+  {
+    "file": "services-desktop.png",
+    "final": "https://amplitude.com/services",
+    "title": "Amplitude Professional Services | Expert Guidance for Business Success"
+  },
+  {
+    "file": "session-replay-desktop.png",
+    "final": "https://amplitude.com/session-replay",
+    "title": "Session Replay and Experience Analytics"
+  },
+  {
+    "file": "signup-desktop.png",
+    "final": "https://app.amplitude.com/signup",
+    "title": "Amplitude"
+  },
+  {
+    "file": "signup-phone.png",
+    "final": "https://app.amplitude.com/signup",
+    "title": "Amplitude"
+  },
+  {
+    "file": "solutions-acquisition-desktop.png",
+    "final": "https://amplitude.com/solutions/user-acquisition",
+    "title": "Amplitude: Digital Analytics Platform for User Acquisition Growth"
+  },
+  {
+    "file": "solutions-data-desktop.png",
+    "final": "https://amplitude.com/solutions/data",
+    "title": "Elevate Self-Serve Data and Insights"
+  },
+  {
+    "file": "solutions-desktop.png",
+    "final": "https://amplitude.com/solutions",
+    "title": "Amplitude Solutions by Use Case, Industry, and Team"
+  },
+  {
+    "file": "solutions-engineering-desktop.png",
+    "final": "https://amplitude.com/solutions/engineering",
+    "title": "Quantify Engineering Impact | Amplitude"
+  },
+  {
+    "file": "solutions-marketing-desktop.png",
+    "final": "https://amplitude.com/solutions/marketing",
+    "title": "Marketing and Web Analytics | Amplitude"
+  },
+  {
+    "file": "solutions-monetization-desktop.png",
+    "final": "https://amplitude.com/solutions/monetization",
+    "title": "Product Monetization and Revenue Generation Platform | Amplitude"
+  },
+  {
+    "file": "solutions-product-desktop.png",
+    "final": "https://amplitude.com/solutions/product",
+    "title": "Product Analytics | Amplitude"
+  },
+  {
+    "file": "solutions-retention-desktop.png",
+    "final": "https://amplitude.com/solutions/retention",
+    "title": "Retention Customer Lifetime Value | Amplitude"
+  },
+  {
+    "file": "startups-desktop.png",
+    "final": "https://amplitude.com/startups",
+    "title": "Amplitude for startups | One year of Growth free"
+  },
+  {
+    "file": "status-desktop.png",
+    "final": "https://status.amplitude.com/",
+    "title": "Amplitude Status"
+  },
+  {
+    "file": "taxonomy-desktop.png",
+    "final": "https://amplitude.com/taxonomy-generator",
+    "title": "Free Website Event Taxonomy Generator | Amplitude"
+  },
+  {
+    "file": "templates-desktop.png",
+    "final": "https://amplitude.com/templates",
+    "title": "Amplitude Chart Template Library | Amplitude"
+  },
+  {
+    "file": "terms-desktop.png",
+    "final": "https://amplitude.com/terms",
+    "title": "Terms of Service"
+  },
+  {
+    "file": "tracking-desktop.png",
+    "final": "https://amplitude.com/track",
+    "title": "Track Anything with Ease Using Amplitude"
+  },
+  {
+    "file": "wave-desktop.png",
+    "final": "https://amplitude.com/wave",
+    "title": "Amplitude Wave | Self Improving Products"
+  },
+  {
+    "file": "web-analytics-desktop.png",
+    "final": "https://amplitude.com/web-analytics",
+    "title": "Web Analytics Platform by Amplitude"
+  },
+  {
+    "file": "web-experimentation-desktop.png",
+    "final": "https://amplitude.com/web-experimentation",
+    "title": "Optimize conversion rates with Amplitude Web Experimentation"
+  }
+]

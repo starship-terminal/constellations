@@ -1,0 +1,47 @@
+{
+  "slug": "prompt-library",
+  "requested": "https://amplitude.com/prompt-library",
+  "final": "https://amplitude.com/prompt-library",
+  "title": "Amplitude Agents Prompt Library \u2013 Prompts to get you started",
+  "h1": [
+    "Amplitude Agents Prompt|"
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "search",
+      "name": "",
+      "placeholder": "Search prompts\u2026",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:39:36.951Z",
+  "file": "prompt-library-desktop.png"
+}

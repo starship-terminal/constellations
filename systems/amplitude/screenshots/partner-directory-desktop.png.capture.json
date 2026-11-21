@@ -1,0 +1,33 @@
+{
+  "slug": "partner-directory",
+  "requested": "https://amplitude.com/partners",
+  "final": "https://amplitude.com/partners",
+  "title": "Partner Directory",
+  "h1": [
+    "Partner Directory"
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "select",
+      "name": "partnerType",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "market",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:40:26.879Z",
+  "file": "partner-directory-desktop.png"
+}

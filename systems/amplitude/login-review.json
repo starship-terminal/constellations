@@ -1,0 +1,67 @@
+{
+  "product": "Amplitude",
+  "domain": "amplitude.com",
+  "reviewed_at": "2026-11-22",
+  "method": "public Playwright, signed out, 1440x900 and 390x844",
+  "typed": false,
+  "submitted": false,
+  "identity_provider_clicked": false,
+  "account_created": false,
+  "captcha_solved": false,
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Login",
+      "url": "https://app.amplitude.com/login",
+      "title": "Amplitude",
+      "painted": true,
+      "headings": ["Log in or Sign up"],
+      "asks_for": [
+        {
+          "label": "Work Email",
+          "type": "email",
+          "placeholder": "jane.doe@company.com",
+          "value_length": 0
+        }
+      ],
+      "identity_providers_seen": ["Google", "Slack", "GitHub"],
+      "other_controls": ["Continue", "Have an Org URL?"],
+      "stopped": true,
+      "screenshot": "screenshots/login-desktop.png",
+      "note": "The email field was empty. Continue was disabled. Google, Slack, and GitHub were not clicked. Org URL was not opened. The query string on the nav link was discarded."
+    },
+    {
+      "control": "header Get started",
+      "url": "https://app.amplitude.com/signup",
+      "title": "Amplitude",
+      "painted": true,
+      "headings": ["Log in or Sign up"],
+      "asks_for": [
+        {
+          "label": "Work Email",
+          "type": "email",
+          "placeholder": "jane.doe@company.com",
+          "value_length": 0
+        }
+      ],
+      "identity_providers_seen": ["Google", "Slack", "GitHub"],
+      "other_controls": ["Continue", "Have an Org URL?"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-desktop.png",
+      "note": "Signup paints the same empty card as login. Nothing was typed. No identity provider was clicked."
+    },
+    {
+      "control": "header Contact sales",
+      "url": "https://amplitude.com/sales-contact",
+      "title": "Contact Sales",
+      "painted": true,
+      "asks_for": ["Work email", "First name", "Last name", "Company Name", "Country"],
+      "identity_providers_seen": [],
+      "stopped": true,
+      "screenshot": "screenshots/contact-sales-desktop.png",
+      "note": "Every visible field was empty. The form was not submitted."
+    }
+  ]
+}

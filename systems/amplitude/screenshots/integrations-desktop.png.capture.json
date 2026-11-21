@@ -1,0 +1,26 @@
+{
+  "slug": "integrations",
+  "requested": "https://amplitude.com/integrations",
+  "final": "https://amplitude.com/integrations",
+  "title": "Data & Marketing Integrations | Amplitude",
+  "h1": [
+    "Connect your customer data stack"
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "Search",
+      "valueLen": 0,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:38:30.964Z",
+  "file": "integrations-desktop.png"
+}

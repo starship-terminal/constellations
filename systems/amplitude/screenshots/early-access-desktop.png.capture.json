@@ -1,0 +1,103 @@
+{
+  "slug": "early-access",
+  "requested": "https://amplitude.com/early-access-program",
+  "final": "https://amplitude.com/early-access-program",
+  "title": "Amplitude Early Access Program | New AI Features",
+  "h1": [
+    "New AI Features Before They Ship."
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "text",
+      "name": "FirstName",
+      "placeholder": "First Name",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "text",
+      "name": "LastName",
+      "placeholder": "Last Name",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "email",
+      "name": "Email",
+      "placeholder": "Work Email",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "text",
+      "name": "Company",
+      "placeholder": "Company",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "Country",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "textarea",
+      "name": "marketingOperationsField16",
+      "placeholder": "Which feature are you interested in using?",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "marketingOperationsField9",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "subscribeOptin",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "privacyPolicyAgreement",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignContent",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignSource",
+      "placeholder": "",
+      "valueLen": 8,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignMedium",
+      "placeholder": "",
+      "valueLen": 6,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:38:07.424Z",
+  "file": "early-access-desktop.png"
+}

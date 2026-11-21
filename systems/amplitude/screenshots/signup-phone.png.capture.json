@@ -1,0 +1,18 @@
+{
+  "slug": "signup",
+  "final": "https://app.amplitude.com/signup",
+  "title": "Amplitude",
+  "text": "Log in or Sign up Work Email Continue or Continue with Google Continue with Slack Continue with GitHub This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply. Have an Org URL? Enter it here",
+  "h1": [
+    "Log in or Sign up"
+  ],
+  "inputs": [
+    {
+      "type": "email",
+      "placeholder": "jane.doe@company.com",
+      "valueLen": 0
+    }
+  ],
+  "capturedAt": "2026-11-21T18:42:01.123Z",
+  "file": "signup-phone.png"
+}

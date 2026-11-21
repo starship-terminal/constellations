@@ -1,0 +1,33 @@
+{
+  "slug": "blog",
+  "requested": "https://amplitude.com/blog",
+  "final": "https://amplitude.com/blog",
+  "title": "Amplitude Blog - Product Best Practices & More",
+  "h1": [
+    "Blog"
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "text",
+      "name": "blog search",
+      "placeholder": "Search the blog",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "text",
+      "name": "blog search",
+      "placeholder": "Search the blog",
+      "valueLen": 0,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:39:10.416Z",
+  "file": "blog-desktop.png"
+}

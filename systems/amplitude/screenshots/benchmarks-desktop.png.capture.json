@@ -1,0 +1,54 @@
+{
+  "slug": "benchmarks",
+  "requested": "https://amplitude.com/benchmarks/product-performance",
+  "final": "https://amplitude.com/benchmarks/product-performance",
+  "title": "Benchmark your product",
+  "h1": [
+    "Benchmark your product"
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "select",
+      "name": "ai",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "companySize",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "industry",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "audience",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "fundingStage",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:39:34.710Z",
+  "file": "benchmarks-desktop.png"
+}

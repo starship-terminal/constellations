@@ -1,0 +1,33 @@
+{
+  "slug": "docs",
+  "requested": "https://www.docs.developers.amplitude.com/",
+  "final": "https://amplitude.com/docs",
+  "title": "Amplitude Documentation",
+  "h1": [
+    "Send your first event in under five minutes."
+  ],
+  "text": "Docs Get Started Products Admin Developers Search docs\u2026 \u2318 K / Full width For AI agents: a documentation index is available at /docs/llms.txt. Append .md to any page URL for markdown, or send Accept: text/markdown. Send your first event in under five minutes. Amplitude's docs cove",
+  "inputs": [
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2,
+      "autocomplete": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:40:56.249Z",
+  "file": "docs-desktop.png"
+}
