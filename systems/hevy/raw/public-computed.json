@@ -1,0 +1,210 @@
+{
+  "accent": [
+    {
+      "text": "Log in",
+      "color": "rgb(38, 127, 232)",
+      "size": "17px",
+      "weight": "600"
+    },
+    {
+      "text": "Get Stronger",
+      "color": "rgb(38, 127, 232)",
+      "size": "64px",
+      "weight": "600"
+    },
+    {
+      "text": "Get Stronger",
+      "color": "rgb(38, 127, 232)",
+      "size": "64px",
+      "weight": "600"
+    },
+    {
+      "text": "",
+      "color": "rgb(29, 131, 234)",
+      "size": "17px",
+      "weight": "500"
+    },
+    {
+      "text": "",
+      "color": "rgb(29, 131, 234)",
+      "size": "17px",
+      "weight": "500"
+    },
+    {
+      "text": "",
+      "color": "rgb(29, 131, 234)",
+      "size": "17px",
+      "weight": "500"
+    },
+    {
+      "text": "How to Get Started",
+      "color": "rgb(29, 131, 234)",
+      "size": "17px",
+      "weight": "500"
+    },
+    {
+      "text": "",
+      "color": "rgb(29, 131, 234)",
+      "size": "17px",
+      "weight": "500"
+    }
+  ],
+  "card": [
+    {
+      "tag": "DIV",
+      "w": 224,
+      "radius": "0px",
+      "shadow": "none",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "tag": "DIV",
+      "w": 224,
+      "radius": "0px",
+      "shadow": "none",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "tag": "DIV",
+      "w": 224,
+      "radius": "0px",
+      "shadow": "none",
+      "bg": "rgba(0, 0, 0, 0)"
+    }
+  ],
+  "search": {
+    "input": {
+      "text": "",
+      "w": 1104,
+      "h": 50,
+      "color": "rgb(4, 5, 5)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "fontFamily": "Arial, Helvetica, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "lineHeight": "15px",
+      "padding": "0px",
+      "height": "50px",
+      "boxShadow": "none",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(4, 5, 5)"
+    },
+    "button": {
+      "text": "",
+      "w": 16,
+      "h": 50,
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(34, 130, 226)",
+      "borderRadius": "0px",
+      "fontFamily": "Arial, Helvetica, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "16px",
+      "padding": "0px",
+      "height": "50px",
+      "boxShadow": "none",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(255, 255, 255)"
+    },
+    "tile": {
+      "text": "",
+      "w": 166,
+      "h": 38,
+      "color": "rgb(10, 10, 10)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "fontFamily": "Inter, sans-serif",
+      "fontSize": "17px",
+      "fontWeight": "400",
+      "lineHeight": "25.5px",
+      "padding": "0px",
+      "height": "38px",
+      "boxShadow": "none",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(10, 10, 10)"
+    }
+  },
+  "menuStyle": [
+    {
+      "w": 225,
+      "h": 187,
+      "bg": "rgb(255, 255, 255)",
+      "radius": "10px",
+      "shadow": "rgba(0, 0, 0, 0.25) 0px 0px 6px 0px",
+      "display": "block"
+    },
+    {
+      "w": 225,
+      "h": 297,
+      "bg": "rgb(255, 255, 255)",
+      "radius": "10px",
+      "shadow": "rgba(0, 0, 0, 0.25) 0px 0px 6px 0px",
+      "display": "block"
+    }
+  ],
+  "brand": {
+    "links": [
+      {
+        "name": "",
+        "content": ""
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "robots",
+        "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      {
+        "name": "description",
+        "content": "Hevy is the #1 free gym workout tracker & planner app for iOS and Android. Plan your lifting routines, log workouts, and track progress."
+      },
+      {
+        "name": "",
+        "content": "en_US"
+      },
+      {
+        "name": "",
+        "content": "website"
+      },
+      {
+        "name": "",
+        "content": "Hevy - The #1 Workout Tracker & Gym Logger App"
+      },
+      {
+        "name": "",
+        "content": "Hevy is the #1 free gym workout tracker & planner app for iOS and Android. Plan your lifting routines, log workouts, and track progress."
+      },
+      {
+        "name": "",
+        "content": "https://www.hevyapp.com/"
+      },
+      {
+        "name": "",
+        "content": "Hevy - #1 Workout Tracker & Planner Gym Log App"
+      },
+      {
+        "name": "",
+        "content": "http://facebook.com/hevyapp"
+      },
+      {
+        "name": "",
+        "content": "2026-11-20T13:05:01+00:00"
+      },
+      {
+        "name": "",
+        "content": "https://www.hevyapp.com/wp-content/uploads/OG-image.png"
+      },
+      {
+        "name": "",
+        "content": "1200"
+      },
+      {
+        "name": "",
+        "content": "630"
+      }
+    ]
+  }
+}

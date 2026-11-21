@@ -14,6 +14,9 @@ This package contains no Hevy code, and no Hevy artwork has been redrawn. The sc
 | [style-guide.html](style-guide.html) | One self-contained page generated from `tokens.json`: every colour with light and dark side by side, radii, spacing, sizes, the type scale and component specimens (buttons, chips, a tip banner and PRO badge, set rows, the rest timer bar, a routine card, settings rows), with a Light/Dark toggle. Open it straight from disk. |
 | [components.md](components.md) | The component inventory: one entry per component with size, radius, fill (as token names), states and a link to the capture that shows it, then a Gaps section. |
 | [page-tree.md](page-tree.md) | Every screen, tab, sheet, menu, dialog and toast in Hevy 3.1.16 and whether it was explored, with links to the captures. |
+| [site-tree.md](site-tree.md) | Public-web control map written on 2026-11-21 before screenshots: which control opens which page, menu, or wall. |
+| [login-review.json](login-review.json) | Public-web walk: offered nav, settings, and create, the screenshot files, the gaps, and what was not submitted. |
+| [screenshots/public/](screenshots/public) | Signed-out marketing site, 2026-11-21, light only, desktop 1440×900 at 1× and one phone home at 390 CSS pixels (PNG 780×1688). |
 | [screenshots/light/](screenshots/light) | 17 light captures of the main flows, `01-home.png` to `17-workout-settings-toggles.png`. |
 | [screenshots/dark/](screenshots/dark) | 17 dark captures, `d01-theme-setting.png` to `d17-home.png`. |
 | [screenshots/pages/](screenshots/pages) | 166 detail pages, sheets and menus (dark): `p01` to `p35` from the first pass and `t01` to `t131` from the tree pass. |
@@ -96,6 +99,16 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `patterns.md` (no patterns
 
 <!-- health:end -->
 
+## Public web, 2026-11-21
+
+A second route, signed out, from `https://www.hevyapp.com/`. The iOS capture above is unchanged. This pass did not edit [catalog.json](../../catalog.json), so the catalog still describes the iOS package. [DESIGN.md](DESIGN.md) was not regenerated, because that command reads the catalog.
+
+The public site is a light marketing site. The header is a wordmark, Home, Product, Articles, Hevy Coach, About Us, Careers, a blue Log in link, and a blue Sign Up pill. Product and Articles open white dropdowns. The workout logger in the hero is a marketing mock, not the signed-in app. [site-tree.md](site-tree.md) is the control map. [login-review.json](login-review.json) lists what was opened.
+
+Public colour and type readings are the `public-web` set in [tokens.json](tokens.json), built by [tools/build_public_tokens.py](tools/build_public_tokens.py) from [raw/home-computed.json](raw/home-computed.json) and [raw/public-computed.json](raw/public-computed.json). They are Measured computed styles. They are not the iOS `light` and `dark` sets.
+
+Nothing was typed. Google and Apple were not clicked. Login and Sign Up were not submitted. Contact and the privacy policy were not screenshotted because they show an email address.
+
 ## Masked regions
 
 The captures come from the owner's own account. On 2026-10-12 every region
@@ -125,9 +138,28 @@ The measured reference grades each value on four levels. They map onto the label
 
 Where a value was documented in one theme only, the other theme is filled from the closest documented role and marked Derived, with the reason in `$description`. This happens for the light sheets and wheel band (the detail pages were captured in dark only), the light `surface.raised2`, the light medals and the failure and drop set types, and the dark `accent.glass`, `button.disabledGlass` and `state.live`. Three values were read from the captures while building this package because the measured reference gave no number: the two `switch.offTrack` greys (it says only "light grey") and the dark `divider`. Their `$description` says so. The sheet and wheel band values from the reference were re-checked against p10, p16, p18 and t70.
 
-`capture` in each token's source is a path inside this package: the screenshot a value was read from, or a section of `raw/hevy-style-measured.md` where the value is a Derived scale step or has no single capture.
+`capture` in each token's source is a path inside this package: the screenshot a value was read from, a section of `raw/hevy-style-measured.md` where the value is a Derived scale step or has no single capture, or a JSON reading under `raw/` for the public-web set.
 
 The logging screens were captured with throwaway workouts that were all discarded, and the appearance was switched between Light and Dark for the two sets. Other users, the owner's private profile values and nearby gyms are blurred in the captures.
+
+### Public-web coverage
+
+| Item | Status |
+|---|---|
+| Page, text, heading, accent, link, on-accent | Captured in `public-web` from [raw/home-computed.json](raw/home-computed.json) and [raw/public-computed.json](raw/public-computed.json) |
+| Success, warning, danger, info | Not captured on the public site. The green set row in the hero is a phone mock, not a measured web control |
+| Dark theme | Not present. `color-scheme` stayed `normal` |
+| Type | Captured. Body 17/400/25.5, display 64/600/76.8, family `Inter, sans-serif` |
+| Sign Up radius and size | Captured. Computed radius `11.3213px`, box 100×48 |
+| Menu elevation | Captured. `rgba(0, 0, 0, 0.25) 0px 0px 6px 0px`, radius 10px |
+| Button, link, menu, text field, card | Captured as screenshots. Sign Up hover did not change its fill. Log in focus is in [home-light-login-focus.png](screenshots/public/home-light-login-focus.png) |
+| Text area, select, checkbox, radio, switch, tabs, tooltip, dialog, toast, table, avatar, badge | Not present on the photographed public pages. Careers has three selects. They were not measured |
+| App shell | Captured. [home-light-default.png](screenshots/public/home-light-default.png), [home-light-product-menu.png](screenshots/public/home-light-product-menu.png), [home-light-articles-menu.png](screenshots/public/home-light-articles-menu.png) |
+| Search | The exercise library field is in [exercises-light-default.png](screenshots/public/exercises-light-default.png). Search was not submitted |
+| Form validation, empty, loading, error, destructive confirm, onboarding | Not captured. Behind login, or not shown |
+| Desktop 1440 and phone 390 | Home is both. Other pages are desktop only. Phone PNG is 780×1688 because deviceScaleFactor is 2. Measured `innerWidth` was 390 |
+| Login, signup, identity providers | Mapped in [site-tree.md](site-tree.md). Not entered |
+| Phone menu | Not captured. The Menu Toggle did not open in headless Chromium |
 
 ## Evidence labels
 

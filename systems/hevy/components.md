@@ -1,5 +1,7 @@
 # Hevy components
 
+Public web, 2026-11-21, is a separate surface from the iOS inventory below. Sign Up is a blue pill, 100×48, radius 11.3213px, fill rgb(38, 127, 232), white label. Log in is the same blue as text, weight 500, 17px. Product and Articles open a white menu, 225px wide, radius 10px, shadow rgba(0, 0, 0, 0.25) 0px 0px 6px 0px. The exercise search field is 50px tall. See [screenshots/public/](screenshots/public) and the `public-web` set in [tokens.json](tokens.json).
+
 One entry per component in the measured reference ([raw/hevy-style-measured.md](raw/hevy-style-measured.md)), with size, radius, fill, states and the capture that shows it. Captured from Hevy 3.1.16 on iOS 26, free account, 2026-10-10, through iPhone Mirroring, at 390 x 844 pt (1 px = 1 pt, screen offset (8, 38) inside each PNG).
 
 How to read an entry:

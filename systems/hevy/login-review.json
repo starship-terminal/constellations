@@ -1,0 +1,113 @@
+{
+  "product": "Hevy",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "origin": "https://www.hevyapp.com",
+  "landed": "https://www.hevyapp.com/",
+  "offered": {
+    "nav": {
+      "header": [
+        "Home /",
+        "Product menu",
+        "Articles menu",
+        "Hevy Coach https://hevycoach.com/",
+        "About Us /about-us/",
+        "Careers /careers/",
+        "Log in https://www.hevy.com/login",
+        "Sign Up https://www.hevy.com/signup"
+      ],
+      "product": [
+        "Features /features/",
+        "Use Cases /use-cases/",
+        "Comparisons /compare/",
+        "Community Updates /community-updates/"
+      ],
+      "articles": [
+        "Blog /blog/",
+        "Guides /guides/",
+        "Exercise Library /exercises/",
+        "Personal Training Blog /personal-training-blog/",
+        "Workout Splits /workout-splits/",
+        "Compound vs Isolation Exercises /compound-vs-isolation-exercises/"
+      ],
+      "footer": [
+        "Features /features/",
+        "Reviews /reviews/",
+        "Affiliate /affiliate/",
+        "Use Cases /use-cases/",
+        "Students /students/",
+        "Help https://hevyapp.zendesk.com/hc/en-us",
+        "About /about-us/",
+        "Contact /contact/",
+        "Careers /careers/",
+        "Press /press/",
+        "Partners /partners/",
+        "Submit a story /submit-story/",
+        "Blog /blog/",
+        "Guides /guides/",
+        "Exercise Library /exercises/",
+        "API https://api.hevyapp.com/docs",
+        "Terms /legal/terms-and-conditions/",
+        "Privacy /legal/privacy-policy/",
+        "Cookies /legal/cookie-policy/",
+        "Status /status/"
+      ],
+      "mobile": ["Menu Toggle", "Download"]
+    },
+    "settings": {
+      "seen": false,
+      "reason": "No settings surface is offered signed out. The app lives behind https://www.hevy.com/login."
+    },
+    "create": {
+      "seen": false,
+      "reason": "Sign Up is a wall at https://www.hevy.com/signup. It was not opened and nothing was submitted. Careers shows an Apply now control that was not clicked."
+    }
+  },
+  "screens": [
+    "screenshots/public/about-light-default.png",
+    "screenshots/public/about-light-full.png",
+    "screenshots/public/blog-light-default.png",
+    "screenshots/public/blog-light-full.png",
+    "screenshots/public/careers-light-default.png",
+    "screenshots/public/careers-light-full.png",
+    "screenshots/public/exercises-light-default.png",
+    "screenshots/public/exercises-light-full.png",
+    "screenshots/public/features-light-default.png",
+    "screenshots/public/features-light-full.png",
+    "screenshots/public/guide-article-light-default.png",
+    "screenshots/public/guide-article-light-full.png",
+    "screenshots/public/guides-light-default.png",
+    "screenshots/public/guides-light-full.png",
+    "screenshots/public/home-light-articles-menu.png",
+    "screenshots/public/home-light-default.png",
+    "screenshots/public/home-light-full.png",
+    "screenshots/public/home-light-login-focus.png",
+    "screenshots/public/home-light-product-menu.png",
+    "screenshots/public/home-light-signup-hover.png",
+    "screenshots/public/mobile-home-light-default.png"
+  ],
+  "gaps": [
+    "Login stops at https://www.hevy.com/login. The page offers Login with Google, Login with Apple, and an email form. Nothing was typed. Google and Apple were not clicked. The screenshot was discarded because the marketing panel shows a username.",
+    "Sign Up was not opened.",
+    "Account, workout log, routines, and settings sit behind that wall.",
+    "Contact and the privacy policy were not screenshotted. Both pages show an email address.",
+    "The phone Menu Toggle did not open in headless Chromium. The click handler never set hfe-active-menu. The closed header is in mobile-home-light-default.png.",
+    "Dark theme is not offered on the public site. color-scheme stayed normal.",
+    "The iOS package in screenshots/light, screenshots/dark, and screenshots/pages is the 2026-10-10 iPhone Mirroring capture. This pass did not recapture it."
+  ],
+  "not_submitted": [
+    "Log in",
+    "Sign Up",
+    "Login with Google",
+    "Login with Apple",
+    "Forgot Password",
+    "email or username",
+    "password",
+    "Apply now",
+    "exercise search",
+    "cookie Accept",
+    "cookie Reject",
+    "any form",
+    "any identity provider"
+  ]
+}
