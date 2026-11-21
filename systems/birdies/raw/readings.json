@@ -1,0 +1,154 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://birdies.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "computed": {
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "Nunito, sans-serif",
+      "fontSize": "14px"
+    },
+    "announcement": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Sofia Pro Regular\", \"Sofia Pro\", sans-serif",
+      "fontSize": "11px",
+      "height": 44,
+      "padding": "11px 48px"
+    },
+    "announcementStrong": {
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Sofia Pro\", \"Sofia Pro Regular\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700"
+    },
+    "shopNow": {
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "textDecorationLine": "underline",
+      "href": "/collections/all"
+    },
+    "header": {
+      "height": 88,
+      "top": 44,
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "Nunito, sans-serif"
+    },
+    "navLink": {
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Sofia Pro Regular\", \"Sofia Pro\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "22px",
+      "height": 36
+    },
+    "shopAll": {
+      "backgroundColor": "rgb(246, 244, 241)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Sofia Pro\", \"Sofia Pro Regular\", sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "height": 40,
+      "border": "1px rgb(0, 0, 0)",
+      "borderRadius": "0px",
+      "textTransform": "uppercase"
+    },
+    "heroButton": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Sofia Pro\", \"Sofia Pro Regular\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "700",
+      "height": 50,
+      "padding": "0px 40px",
+      "borderRadius": "0px",
+      "textTransform": "uppercase",
+      "clicked": false
+    },
+    "heroTitle": {
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "calluna, Georgia, serif",
+      "fontSize": "50px",
+      "fontWeight": "400",
+      "lineHeight": "60px"
+    },
+    "collectionTitle": {
+      "url": "https://birdies.com/collections/new-arrivals",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "calluna, serif",
+      "fontSize": "60px",
+      "fontWeight": "500",
+      "lineHeight": "73px"
+    },
+    "productTitle": {
+      "url": "https://birdies.com/products/womens-boots-starling-50-tall-boot-chocolate-suede",
+      "color": "rgb(34, 34, 34)",
+      "fontFamily": "Calluna, Georgia, serif",
+      "fontSize": "40px",
+      "fontWeight": "400",
+      "lineHeight": "48px"
+    },
+    "productPrice": {
+      "color": "rgb(34, 34, 34)",
+      "fontFamily": "\"Sofia Pro Regular\", \"Sofia Pro\", sans-serif",
+      "fontSize": "24px",
+      "fontWeight": "400"
+    },
+    "addToBag": {
+      "text": "ADD TO BAG",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Sofia Pro\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "height": 58,
+      "border": "1px solid rgb(0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "10.4px 28px",
+      "textTransform": "uppercase",
+      "clicked": false
+    },
+    "sizeChip": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(34, 34, 34)",
+      "border": "1px solid rgb(34, 34, 34)",
+      "borderRadius": "0px",
+      "width": 52,
+      "height": 55,
+      "fontSize": "14px",
+      "selected": false
+    },
+    "footer": {
+      "backgroundColor": "rgb(246, 244, 241)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Sofia Pro Regular\", \"Sofia Pro\", sans-serif",
+      "fontSize": "14px",
+      "photographed": false
+    }
+  },
+  "customProperties": {
+    "--nav-warm": "#f6f4f1",
+    "--nav-rule": "#d9d9d9",
+    "--nav-gold": "#b99653",
+    "--nav-tan": "#c9a66b",
+    "--nav-chip": "#dde0e6",
+    "--nav-eyebrow": "#767676",
+    "--home-gold": "#c9a66b",
+    "--home-panel": "#e4e5e9",
+    "--home-tile": "#f3f4f6",
+    "--button-border-radius": "0.0rem",
+    "--input-border-radius": "0.0rem",
+    "--button-letter-spacing": "0.1em",
+    "--on-sale-text": "227 44 43",
+    "--success-text": "48 122 7",
+    "--error-text": "203 43 43",
+    "--warning-text": "237 138 0"
+  }
+}
