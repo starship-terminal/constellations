@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:52:54.810Z",
+  "capturedAt": "2026-11-21T13:14:33.096Z",
   "screenshot": "games-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 2674
+      "height": 2698
     },
     "scroll": {
       "x": 0,

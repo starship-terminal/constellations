@@ -1,6 +1,6 @@
 # Kickstarter design reference
 
-A token set and component reference for Kickstarter's public signed-out site. Read from kickstarter.com on 2026-11-18, signed out, in headed Chrome at 1440 x 900 and 390 x 844. Surfaces: home and its category menu, Discover, an Art category, Games, search for "camera", one public project (`/projects/shirtaloon/hwfwm`), the login card, the first step of `/start`, and the public pages for creators, about, rules, trust, press, environment, and the blog.
+A token set and component reference for Kickstarter's public signed-out site. Refreshed from kickstarter.com on 2026-11-21, signed out, in headed Chrome at 1440 x 900 and 390 x 844. Surfaces: home and its category menu, Discover, an Art category, Games, search for "camera", one public project (`/projects/arex/arex-ar-dive-computer-mask-and-marine-life-identification`), the login card, the first step of `/start`, and the public pages for creators, about, rules, trust, press, environment, and the blog. The control map is [site-tree.md](site-tree.md).
 
 Kickstarter ships a real token layer, KDS: `--kds-color-*`, `--kds-elevation-*`, `--kds-shadow-*`, and `--kds-dimension-corner-radius-*` in the atomic stylesheet on `a.kickstarter.com`. The public site paints one light theme. Brand green is `#05CE78`. Actions are near-black (`#171717`, hover `#000000`, pressed `#2C2C2C`). The pledge button is a deeper green (`#028858`, hover `#015738`). Type is Inter.
 
@@ -12,12 +12,13 @@ Kickstarter ships a real token layer, KDS: `--kds-color-*`, `--kds-elevation-*`,
 | [style-guide.html](style-guide.html) | Renders the tokens and the main controls |
 | [components.md](components.md) | Component inventory with crops and token names |
 | [patterns.md](patterns.md) | How the chrome, Discover, a project, login, and `/start` fit together |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, or dialog, written from the homepage before the 2026-11-21 screenshots |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [icons/](icons) | 21 SVG symbols from the in-page sprite, named in [icons/INDEX.tsv](icons/INDEX.tsv) |
 | [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900 at 1x. `mobile-*` at 390 wide, 2x. `-full` pages are capped at eight chunks |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [motion.json](raw/motion.json) |
 | [tools/](tools) | Builders and the adapted capture kit. `build_tokens.py` writes `core.motion` itself from [raw/motion.json](raw/motion.json) and [raw/css-vars.json](raw/css-vars.json); the kit's unadapted `motion.py`, which no builder imported, was removed in the 2026-11 audit |
-| [login-review.json](login-review.json) | Signed-in walk on 2026-11-20: nav, settings, create, screens, gaps, and what was not submitted |
+| [login-review.json](login-review.json) | Public walk on 2026-11-21: offered nav, settings, and create, the screenshot files, gaps, and what was not submitted |
 
 ## Do and don't
 
@@ -27,7 +28,7 @@ Kickstarter ships a real token layer, KDS: `--kds-color-*`, `--kds-elevation-*`,
 4. **Do show funding as a green rule.** Project cards and the campaign meter use the brand green as a progress bar, not as body text. See [progress-default](components/crops/progress-default.png).
 5. **Don't invent a dark theme.** The public site paints one light theme. No theme toggle was found. See [raw/css-vars.json](raw/css-vars.json).
 6. **Don't press pledge, save, or Continue.** Those controls were measured in every reachable state and never activated. Checkout, save, and the account sit behind sign-in. See [login-light-default](screenshots/login-light-default.png).
-7. **Don't treat the status toast as chrome.** The yellow "Abnormal System Error Rate" card was live site content on the capture day. It is not a brand banner. See [project-light-default](screenshots/project-light-default.png).
+7. **Don't treat a live error toast as chrome.** The 2026-11-21 phone Discover shot showed a site error toast. It is not a brand banner. See [mobile-discover-light-default](screenshots/mobile-discover-light-default.png).
 
 ## Brief
 
@@ -143,8 +144,8 @@ Inter, loaded from Google Fonts (`fonts.googleapis.com`, weights 100–900, opti
 | Tabs | captured | [tab-campaign](components/crops/tab-campaign-default.png) |
 | Menu | captured | [home-light-category-menu](screenshots/home-light-category-menu.png) |
 | Tooltip | not present | No tooltip painted signed-out |
-| Dialog | not captured | Rules exist in the sheet. None opened without an account action |
-| Toast | not captured | jGrowl rules exist in the sheet. The yellow status card is a third-party status embed, not a KDS toast |
+| Dialog | captured | Login dialog on `/login`, never submitted. [login-light-default](screenshots/login-light-default.png) |
+| Toast | not captured | jGrowl rules exist in the sheet. A site error toast on phone Discover is live page content, not a KDS toast |
 | Card | captured | [project-card](components/crops/project-card-default.png) |
 | List row | not present | Discover is a card grid, not a list row |
 | Table | not present | No data table on the public pages |
@@ -164,11 +165,12 @@ Inter, loaded from Google Fonts (`fonts.googleapis.com`, weights 100–900, opti
 | Dark theme | not present | One light theme |
 | Desktop 1440 | captured | Sidecars record innerWidth 1440 |
 | Phone 390 | captured | `mobile-*` shots, deviceScaleFactor 2 |
-| Signed-in shell | captured | [recommendations-light-signed-in.png](screenshots/recommendations-light-signed-in.png), [login-review.json](login-review.json) |
-| Signed-in settings | captured | [settings-account-light-default.png](screenshots/settings-account-light-default.png), [settings-notifications-light-default.png](screenshots/settings-notifications-light-default.png). Payment methods and shipping address not opened |
-| Signed-in empty states | captured | Saved projects, messages, activity, following, profile backed list |
-| Switch | captured signed-in | Notification rows, left off. Not flipped |
-| Create a project | captured, not submitted | [start-project-light-step1.png](screenshots/start-project-light-step1.png). Step 1 of 3. Next not clicked |
+| Site tree | captured | [site-tree.md](site-tree.md) |
+| Signed-in shell | not captured | Login wall. See [login-review.json](login-review.json) |
+| Signed-in settings | not captured | No settings surface signed out |
+| Signed-in empty states | not captured | Behind the login wall |
+| Switch | not present | No switch on the public pages walked |
+| Create a project | captured, not submitted | [start-light-default.png](screenshots/start-light-default.png). Step 1 of 3. Next not clicked |
 
 ## Rebuild
 
@@ -183,26 +185,6 @@ python3 tools/build_style_guide.py
 
 Run from `systems/kickstarter`. Scratch stays in `~/.design-systems/kickstarter/`.
 
-## Signed-in review
+## Public review
 
-Walked on 2026-11-20 in the T3 preview, default profile, already signed in. The account menu offered Profile, Saved projects, Recommended for you, Following, Settings, Messages, Activity, and Log out. No login wall and no robot check. Desktop CSS viewport was 1440 x 900 at devicePixelRatio 2 (PNG 2880 x 1800). Phone CSS viewport was 390 x 844 at devicePixelRatio 2 (PNG 780 x 1688). The Transcend consent card was hidden with CSS. Confirm and Accept all were not clicked.
-
-| Screen | File |
-|---|---|
-| Recommendations, account menu open | [recommendations-light-signed-in.png](screenshots/recommendations-light-signed-in.png) |
-| Settings, Account | [settings-account-light-default.png](screenshots/settings-account-light-default.png) |
-| Saved projects, empty | [saved-projects-light-empty.png](screenshots/saved-projects-light-empty.png) |
-| Profile, backed empty | [profile-light-empty.png](screenshots/profile-light-empty.png) |
-| Messages, inbox empty | [messages-light-empty.png](screenshots/messages-light-empty.png) |
-| Activity, empty | [activity-light-empty.png](screenshots/activity-light-empty.png) |
-| Settings, Notifications | [settings-notifications-light-default.png](screenshots/settings-notifications-light-default.png) |
-| Start a project, step 1 of 3 | [start-project-light-step1.png](screenshots/start-project-light-step1.png) |
-| Following, empty | [following-light-empty.png](screenshots/following-light-empty.png) |
-| Recommendations, phone | [recommendations-light-phone.png](screenshots/recommendations-light-phone.png) |
-| Account menu, phone | [account-menu-light-phone.png](screenshots/account-menu-light-phone.png) |
-| Settings, Account, phone | [settings-account-light-phone.png](screenshots/settings-account-light-phone.png) |
-| Account menu crop | [menu-account-open.png](components/crops/menu-account-open.png) |
-
-The email field on Settings was replaced in the page with `name@example.com` before the screenshot. The account was not saved. The recommendations location filter listed a saved city. Those radio labels were painted out of the screenshot before commit. Payment methods and shipping address were not opened. Create stopped at step 1. Next was disabled and was not clicked, so no project was created. Notification switches were left off. Log out was not clicked. The full list is [login-review.json](login-review.json).
-
-Signed-in controls that the public capture did not show: a switch row (notifications, off), an account menu, an empty saved-projects state, an empty inbox, and a blue primary button (Get started, `#2752ff`, the same blue as links). The public KDS tokens still hold the colour roles. These screenshots are layout evidence, not a second token set.
+Walked signed out on 2026-11-21. Log in opens a dialog and the branch stops. Settings are not offered. `/start` is step 1 of 3 and Next was not clicked. The file list, gaps, and what was not submitted are in [login-review.json](login-review.json). The control map is [site-tree.md](site-tree.md).

@@ -1,93 +1,145 @@
 {
+  "product": "Kickstarter",
   "slug": "kickstarter",
-  "captured": "2026-11-20",
-  "signed_in": true,
-  "session": "T3 in-app preview, default profile. Account menu offered Profile, Saved projects, Recommended for you, Following, Settings, Messages, Activity, Log out. Recommendations loaded without a login wall.",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "signed_in": false,
+  "origin": "https://www.kickstarter.com",
+  "landed": "https://www.kickstarter.com/",
   "viewport": {
     "desktop": {
       "requested": "1440x900",
       "innerWidth": 1440,
       "innerHeight": 900,
-      "devicePixelRatio": 2,
-      "visualViewport": {"width": 1440, "height": 900, "scale": 1},
-      "png": "2880x1800"
+      "devicePixelRatio": 1
     },
     "phone": {
       "requested": "390x844",
       "innerWidth": 390,
       "innerHeight": 844,
-      "devicePixelRatio": 2,
-      "visualViewport": {"width": 390, "height": 844, "scale": 1},
-      "png": "780x1688"
+      "devicePixelRatio": 2
     }
   },
   "offered": {
-    "nav": [
-      {"label": "Profile", "href": "/profile/{id}", "reached": true},
-      {"label": "Saved projects", "href": "/profile/saved_projects", "reached": true},
-      {"label": "Recommended for you", "href": "/recommendations", "reached": true},
-      {"label": "Following", "href": "/profile/following", "reached": true},
-      {"label": "Settings", "href": "/settings/account", "reached": true},
-      {"label": "Messages", "href": "/messages", "reached": true},
-      {"label": "Activity", "href": "/activity", "reached": true},
-      {"label": "Log out", "href": "/logout", "reached": false}
-    ],
-    "settings": [
-      {"label": "Account", "href": "/settings/account", "reached": true},
-      {"label": "Edit profile", "href": "/settings/profile", "reached": false},
-      {"label": "Notifications", "href": "/settings/notifications", "reached": true},
-      {"label": "Saved searches", "href": "/settings/saved_searches", "reached": false},
-      {"label": "Payment methods", "href": "/profile/credit_cards", "reached": false},
-      {"label": "Shipping address", "href": "/profile/addresses", "reached": false},
-      {"label": "Following", "href": "/profile/following/welcome", "reached": false}
-    ],
+    "nav": {
+      "items": [
+        "Wordmark /",
+        "Search field, stays on the page",
+        "For creators /creators",
+        "Log in dialog on the current URL",
+        "Art /discover/categories/art",
+        "Comics /discover/categories/comics",
+        "Crafts /discover/categories/crafts",
+        "Dance /discover/categories/dance",
+        "Design /discover/categories/design",
+        "Fashion /discover/categories/fashion",
+        "Film /discover/categories/film & video",
+        "Food /discover/categories/food",
+        "Games /discover/categories/games",
+        "Journalism /discover/categories/journalism",
+        "Music /discover/categories/music",
+        "Photography /discover/categories/photography",
+        "Publishing /discover/categories/publishing",
+        "Technology /discover/categories/technology",
+        "Theater /discover/categories/theater",
+        "Discover /discover",
+        "About us /about",
+        "Press /press",
+        "Our Rules /rules",
+        "Trust & Safety /trust"
+      ],
+      "reached": [
+        "Wordmark /",
+        "Search field, stays on the page",
+        "For creators /creators",
+        "Log in dialog on the current URL",
+        "Art /discover/categories/art",
+        "Games /discover/categories/games",
+        "Discover /discover",
+        "About us /about",
+        "Press /press",
+        "Our Rules /rules",
+        "Trust & Safety /trust"
+      ]
+    },
+    "settings": {
+      "items": [
+        "No settings surface is offered signed out"
+      ],
+      "reached": [
+        "No settings surface is offered signed out"
+      ]
+    },
     "create": {
       "items": [
-        {"label": "Start a project, step 1 of 3", "href": "/start", "reached": true},
-        {"label": "Additional subcategory", "href": "/start", "reached": false},
-        {"label": "Later create steps", "href": "/start", "reached": false}
+        "Start a project, step 1 of 3, /start"
       ],
-      "reached": "Opened /start while signed in. The page showed step 1 of 3, category and subcategory selects, a disabled Next, and the line that nothing is public until launch. Next was not clicked, so no project was created."
+      "reached": [
+        "Start a project, step 1 of 3, /start"
+      ]
     }
   },
   "screens": [
-    {"name": "recommendations-light-signed-in", "file": "screenshots/recommendations-light-signed-in.png"},
-    {"name": "settings-account-light-default", "file": "screenshots/settings-account-light-default.png"},
-    {"name": "saved-projects-light-empty", "file": "screenshots/saved-projects-light-empty.png"},
-    {"name": "profile-light-empty", "file": "screenshots/profile-light-empty.png"},
-    {"name": "messages-light-empty", "file": "screenshots/messages-light-empty.png"},
-    {"name": "activity-light-empty", "file": "screenshots/activity-light-empty.png"},
-    {"name": "settings-notifications-light-default", "file": "screenshots/settings-notifications-light-default.png"},
-    {"name": "start-project-light-step1", "file": "screenshots/start-project-light-step1.png"},
-    {"name": "following-light-empty", "file": "screenshots/following-light-empty.png"},
-    {"name": "recommendations-light-phone", "file": "screenshots/recommendations-light-phone.png"},
-    {"name": "account-menu-light-phone", "file": "screenshots/account-menu-light-phone.png"},
-    {"name": "settings-account-light-phone", "file": "screenshots/settings-account-light-phone.png"},
-    {"name": "menu-account-open", "file": "components/crops/menu-account-open.png"}
+    "screenshots/about-light-default.png",
+    "screenshots/about-light-full.png",
+    "screenshots/blog-light-default.png",
+    "screenshots/creators-light-default.png",
+    "screenshots/creators-light-full.png",
+    "screenshots/discover-art-light-default.png",
+    "screenshots/discover-art-light-full.png",
+    "screenshots/discover-light-default.png",
+    "screenshots/discover-light-full.png",
+    "screenshots/environment-light-default.png",
+    "screenshots/environment-light-full.png",
+    "screenshots/games-light-default.png",
+    "screenshots/home-light-category-menu.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-search-focused.png",
+    "screenshots/login-light-default.png",
+    "screenshots/login-light-full.png",
+    "screenshots/mobile-discover-light-default.png",
+    "screenshots/mobile-discover-light-full.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-login-light-default.png",
+    "screenshots/mobile-login-light-full.png",
+    "screenshots/mobile-project-light-default.png",
+    "screenshots/mobile-project-light-full.png",
+    "screenshots/mobile-start-light-default.png",
+    "screenshots/press-light-default.png",
+    "screenshots/project-light-default.png",
+    "screenshots/project-light-full.png",
+    "screenshots/rules-light-default.png",
+    "screenshots/rules-light-full.png",
+    "screenshots/search-light-default.png",
+    "screenshots/search-light-full.png",
+    "screenshots/start-light-default.png",
+    "screenshots/start-light-full.png",
+    "screenshots/trust-light-default.png",
+    "screenshots/trust-light-full.png"
   ],
   "gaps": [
-    "Edit profile, saved searches, and the Following welcome settings page were offered and not opened.",
-    "Payment methods and shipping address were offered and not opened. They hold payment and address data.",
-    "Create stopped at step 1. Next was disabled and was not clicked. No project was created.",
-    "Notification switches were left off. Turning one on would change the account.",
-    "Log out was not clicked.",
-    "No dark theme was offered in the signed-in UI that was walked.",
-    "Hover, pressed, and focus-visible were not recaptured on the signed-in pages. The public package already holds those states for signed-out controls.",
-    "The Transcend consent card was hidden with CSS. Confirm and Accept all were not clicked.",
-    "The recommendations location filter listed a saved city. Those radio labels were painted out of the screenshot before commit. Anywhere and the search field remain."
+    "Log in stops at the dialog: email, Continue, Sign in with Apple. Nothing typed. Apple was not clicked. Google was not offered.",
+    "Settings, profile, saved projects, messages, activity, and following are behind that wall.",
+    "Category drawers other than Art were linked from the homepage and not each opened.",
+    "The phone hamburger was visible and not opened. The phone project and Discover shots painted a blank body under the header.",
+    "Mobile Discover showed a site error toast. It was not dismissed.",
+    "Back this project, Notify me, and Save this project were not clicked.",
+    "No dark theme switch was found. The public site paints light."
   ],
   "not_submitted": [
-    "Change email address",
-    "Delete my Kickstarter account",
-    "Set up two-factor authentication",
-    "Log me out on all other devices",
-    "Log out",
-    "Next on /start",
-    "Notification switches",
+    "login Continue",
+    "Sign in with Apple",
+    "Facebook account recovery",
+    "search",
+    "Save this project",
     "Save this search",
-    "Get started on Following",
-    "Discover projects",
-    "Opt out, turn off recommendations, request personal data, opt in to research",
-    "Back this project, pledge, and any payment or address form"
+    "Back this project",
+    "Notify me on launch",
+    "start Next",
+    "consent Confirm",
+    "consent Accept all",
+    "any form"
   ]
 }

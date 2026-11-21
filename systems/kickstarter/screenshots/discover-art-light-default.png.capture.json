@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:52:48.746Z",
+  "capturedAt": "2026-11-21T13:14:27.376Z",
   "screenshot": "discover-art-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 2674
+      "height": 2650
     },
     "scroll": {
       "x": 0,

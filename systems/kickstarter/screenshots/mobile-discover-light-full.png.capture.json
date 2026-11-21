@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:53:40.861Z",
+  "capturedAt": "2026-11-21T13:15:54.620Z",
   "screenshot": "mobile-discover-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 5954
+      "height": 2008
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 780,
-    "height": 11908
+    "height": 4016
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 780,
-      "height": 11908
+      "height": 4016
     },
     "basis": "fullPage"
   },

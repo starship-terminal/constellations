@@ -8,7 +8,7 @@ A white header: green wordmark, a search field, "For creators", "Log in", then a
 
 On a 390-wide phone the category row scrolls sideways and a menu glyph sits at the right of the header. [mobile-home-light-default](screenshots/mobile-home-light-default.png).
 
-A yellow status toast ("Abnormal System Error Rate on Sign in with Apple") was on the live site during this capture. It is page content, not a consent dialog.
+The 2026-11-21 refresh did not show that yellow status toast. The phone Discover shot showed a site error toast. It is page content, not a consent dialog. [mobile-discover-light-default](screenshots/mobile-discover-light-default.png).
 
 ## Home
 
@@ -36,15 +36,7 @@ About, rules, trust, press, creators, environment, and the blog are public marke
 
 ## Signed-in shell
 
-Walked on 2026-11-20. The header swaps Log in for an avatar. The account menu lists Profile, Saved projects, Recommended for you, Following, Settings, Messages, Activity, and Log out. [recommendations-light-signed-in](screenshots/recommendations-light-signed-in.png), [menu-account-open](components/crops/menu-account-open.png).
-
-On a 390-wide phone the same menu opens as a centred card over a dimmed page, with a close button. [account-menu-light-phone](screenshots/account-menu-light-phone.png).
-
-Settings is a title, a tab row (Account, Edit profile, Notifications, Saved searches, Payment methods, Shipping address, Following), then the account card and a right-hand list of privacy, security, and delete links. [settings-account-light-default](screenshots/settings-account-light-default.png). Notifications is a list of rows with Email and App switches, left off. [settings-notifications-light-default](screenshots/settings-notifications-light-default.png).
-
-Empty states are a sentence and one button: Discover projects on saved projects, Get started on Following. Messages is a search field, an Inbox select, and a yellow spam note. Activity is a short paragraph and a link. The profile says the page is only visible to the owner and shows a backed count of zero.
-
-`/start` while signed in is step 1 of 3, with the same category selects and a disabled Next. Next was not clicked. [start-project-light-step1](screenshots/start-project-light-step1.png).
+Not captured on this public pass. Log in opens a dialog and the branch stops. Settings, saved projects, messages, and the account menu sit behind that wall. See [site-tree.md](site-tree.md) and [login-review.json](login-review.json).
 
 ## Not on the signed-out surface
 
