@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T19:03:08.186Z",
+  "capturedAt": "2026-11-21T10:50:33.411Z",
   "screenshot": "mobile-home-dark-menu.png",
   "sanitizedSourceUrl": "https://flask.do/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 7177
+      "height": 7157
     },
     "scroll": {
       "x": 0,

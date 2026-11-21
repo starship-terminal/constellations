@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:50:43.750Z",
+  "capturedAt": "2026-11-21T10:46:46.295Z",
   "screenshot": "security-dark-full.png",
   "sanitizedSourceUrl": "https://flask.do/security",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 3126
+      "height": 3103
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 3126
+    "height": 3103
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 3126
+      "height": 3103
     },
     "basis": "fullPage"
   },

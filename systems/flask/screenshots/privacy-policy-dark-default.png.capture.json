@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:51:47.594Z",
+  "capturedAt": "2026-11-21T10:47:31.011Z",
   "screenshot": "privacy-policy-dark-default.png",
   "sanitizedSourceUrl": "https://flask.do/privacy-policy",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8262
+      "height": 8214
     },
     "scroll": {
       "x": 0,

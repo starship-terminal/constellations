@@ -1,0 +1,105 @@
+{
+  "product": "Flask",
+  "site": "https://flask.do",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "offered": {
+    "nav": {
+      "header": [
+        "Flask wordmark /",
+        "Pricing /pricing",
+        "Features /pricing#features",
+        "Sign Up /home (login wall)"
+      ],
+      "menu": [
+        "Open menu is md:hidden and has zero size at 1440. At phone width it opens Pricing and Features."
+      ],
+      "footer": [
+        "Product: Pricing /pricing, MCP /mcp, Login /login",
+        "Resources: Video Collaboration, Video Feedback for Agents, Frame.io Alternatives, Video Review Software, Flask vs. Frame.io, Frame.io vs. Dropbox Replay",
+        "For AI agents: Video review for AI agents, Remotion and HyperFrames, Timestamped feedback, AI video feedback, Flask vs. Frame.io, Best video review software",
+        "Company: About /about",
+        "Security: Trust Center /security",
+        "Privacy /privacy-policy, Terms /terms-of-service"
+      ],
+      "hero": [
+        "Open Flask /home (login wall)",
+        "Copy Prompt copies a prompt, no page",
+        "Book a Chat and Book a Demo open https://cal.com/enricotartarotti/flask-20 in a new tab. Not opened."
+      ]
+    },
+    "settings": {
+      "seen": false,
+      "reason": "No settings surface is offered signed out. Theme, team, profile, members, and billing live on signed-in routes (/profile, /team-settings, /members, /subscription) that were not entered."
+    },
+    "create": {
+      "seen": false,
+      "reason": "Sign Up and Open Flask both go to /home, which redirects to the login wall. No account was created. Book a Demo and Book a Chat are a Cal.com booking link and were not opened or submitted."
+    }
+  },
+  "screens": [
+    "screenshots/about-dark-default.png",
+    "screenshots/about-dark-full.png",
+    "screenshots/ai-video-feedback-dark-default.png",
+    "screenshots/ai-video-feedback-dark-full.png",
+    "screenshots/best-video-review-software-dark-default.png",
+    "screenshots/best-video-review-software-dark-full.png",
+    "screenshots/flask-vs-frame-io-dark-default.png",
+    "screenshots/flask-vs-frame-io-dark-full.png",
+    "screenshots/frame-io-alternative-dark-default.png",
+    "screenshots/frame-io-alternative-dark-full.png",
+    "screenshots/frame-io-vs-dropbox-replay-dark-default.png",
+    "screenshots/frame-io-vs-dropbox-replay-dark-full.png",
+    "screenshots/home-dark-default.png",
+    "screenshots/home-dark-demo-asset-2.png",
+    "screenshots/home-dark-full.png",
+    "screenshots/login-dark-default.png",
+    "screenshots/login-dark-full.png",
+    "screenshots/mcp-dark-default.png",
+    "screenshots/mcp-dark-full.png",
+    "screenshots/mobile-home-dark-default.png",
+    "screenshots/mobile-home-dark-full.png",
+    "screenshots/mobile-home-dark-menu.png",
+    "screenshots/mobile-login-dark-default.png",
+    "screenshots/mobile-login-dark-full.png",
+    "screenshots/mobile-pricing-dark-default.png",
+    "screenshots/mobile-pricing-dark-full.png",
+    "screenshots/pricing-dark-billed-quarterly.png",
+    "screenshots/pricing-dark-default.png",
+    "screenshots/pricing-dark-faq-open.png",
+    "screenshots/pricing-dark-full.png",
+    "screenshots/privacy-policy-dark-default.png",
+    "screenshots/privacy-policy-dark-full.png",
+    "screenshots/remotion-hyperframes-video-review-dark-default.png",
+    "screenshots/remotion-hyperframes-video-review-dark-full.png",
+    "screenshots/security-dark-default.png",
+    "screenshots/security-dark-full.png",
+    "screenshots/terms-of-service-dark-default.png",
+    "screenshots/terms-of-service-dark-full.png",
+    "screenshots/timestamped-video-feedback-dark-default.png",
+    "screenshots/timestamped-video-feedback-dark-full.png",
+    "screenshots/video-collaboration-dark-default.png",
+    "screenshots/video-collaboration-dark-full.png",
+    "screenshots/video-review-for-ai-agents-dark-default.png",
+    "screenshots/video-review-for-ai-agents-dark-full.png"
+  ],
+  "gaps": [
+    "Login and signup stop at /login: Continue with Google, an email field, Continue with Email. Nothing typed. Google was not clicked. Continue with Email was not clicked.",
+    "The workspace behind /home (uploads, canvas, feedback, folders, versions, sharing, settings) was not entered.",
+    "Book a Demo and Book a Chat open a Cal.com booking page. That page was not opened and the form was not submitted.",
+    "No settings, create, or account menu is offered on the public homepage.",
+    "Dark is the only theme. There is no light toggle.",
+    "The hero product chrome is a painted demo. Its chips do not open pages."
+  ],
+  "not_submitted": [
+    "Continue with Email",
+    "Continue with Google",
+    "email field",
+    "Sign Up",
+    "Open Flask",
+    "Book a Demo",
+    "Book a Chat",
+    "Copy Prompt",
+    "any form"
+  ]
+}

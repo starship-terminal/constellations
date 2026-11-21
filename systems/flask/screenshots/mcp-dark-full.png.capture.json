@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:49:42.034Z",
+  "capturedAt": "2026-11-21T10:46:15.203Z",
   "screenshot": "mcp-dark-full.png",
   "sanitizedSourceUrl": "https://flask.do/mcp",
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 18
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
-      "height": 11382
+      "height": 11144
     },
     "scroll": {
       "x": 0,
-      "y": 18
+      "y": 0
     }
   },
   "capture": {
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 11382
+    "height": 11144
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 11382
+      "height": 11144
     },
     "basis": "fullPage"
   },

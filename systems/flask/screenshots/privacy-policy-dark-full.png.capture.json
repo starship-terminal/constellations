@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:51:53.990Z",
+  "capturedAt": "2026-11-21T10:47:37.229Z",
   "screenshot": "privacy-policy-dark-full.png",
   "sanitizedSourceUrl": "https://flask.do/privacy-policy",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8262
+      "height": 8214
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 8262
+    "height": 8214
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 8262
+      "height": 8214
     },
     "basis": "fullPage"
   },

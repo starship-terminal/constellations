@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:51:34.982Z",
+  "capturedAt": "2026-11-21T10:47:21.201Z",
   "screenshot": "frame-io-alternative-dark-full.png",
   "sanitizedSourceUrl": "https://flask.do/frame-io-alternative",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 10940
+      "height": 10872
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 10940
+    "height": 10872
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 10940
+      "height": 10872
     },
     "basis": "fullPage"
   },

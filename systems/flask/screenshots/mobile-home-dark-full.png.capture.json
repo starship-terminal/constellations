@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-15T19:03:15.320Z",
+ "capturedAt": "2026-11-21T10:50:39.570Z",
  "screenshot": "mobile-home-dark-full.png",
  "sanitizedSourceUrl": "https://flask.do/",
  "requested": {
@@ -30,15 +30,15 @@
    "offsetLeft": 0,
    "offsetTop": 0,
    "pageLeft": 0,
-   "pageTop": 909
+   "pageTop": 0
   },
   "documentSize": {
    "width": 390,
-   "height": 7177
+   "height": 7157
   },
   "scroll": {
    "x": 0,
-   "y": 909
+   "y": 0
   }
  },
  "capture": {
@@ -48,18 +48,18 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 7177
+   "height": 7157
   }
  },
  "png": {
   "width": 390,
-  "height": 7177
+  "height": 7157
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 390,
-   "height": 7177
+   "height": 7157
   },
   "basis": "stitchedParts"
  },
@@ -86,8 +86,8 @@
    "x": 0,
    "y": 7000,
    "width": 390,
-   "height": 177
+   "height": 157
   }
  ],
- "intendedHeight": 7177
+ "intendedHeight": 7157
 }

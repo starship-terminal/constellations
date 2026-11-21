@@ -122,6 +122,15 @@ const desktop = {
   'frame-io-alternative': { url: BASE + '/frame-io-alternative', wait: 7000, theme: 'dark', run: BOTH },
   'privacy-policy': { url: BASE + '/privacy-policy', wait: 6000, theme: 'dark', run: BOTH },
   'terms-of-service': { url: BASE + '/terms-of-service', wait: 6000, theme: 'dark', run: BOTH },
+  // Homepage footer pages mapped 2026-11-21. Same public shell. Login wall is
+  // photographed at rest; nothing is typed or submitted.
+  'ai-video-feedback': { url: BASE + '/ai-video-feedback', wait: 7000, theme: 'dark', run: BOTH },
+  'best-video-review-software': { url: BASE + '/best-video-review-software', wait: 7000, theme: 'dark', run: BOTH },
+  'flask-vs-frame-io': { url: BASE + '/flask-vs-frame-io', wait: 7000, theme: 'dark', run: BOTH },
+  'frame-io-vs-dropbox-replay': { url: BASE + '/frame-io-vs-dropbox-replay', wait: 7000, theme: 'dark', run: BOTH },
+  'video-review-for-ai-agents': { url: BASE + '/video-review-for-ai-agents', wait: 7000, theme: 'dark', run: BOTH },
+  'remotion-hyperframes-video-review': { url: BASE + '/remotion-hyperframes-video-review', wait: 7000, theme: 'dark', run: BOTH },
+  'timestamped-video-feedback': { url: BASE + '/timestamped-video-feedback', wait: 7000, theme: 'dark', run: BOTH },
   login: { url: LOGIN_URL, wait: 8000, theme: 'dark', run: async (p, S) => {
     await S.view('default');
     await S.full();

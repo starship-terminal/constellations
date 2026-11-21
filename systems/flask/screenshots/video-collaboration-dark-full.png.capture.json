@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:51:11.464Z",
+  "capturedAt": "2026-11-21T10:47:02.819Z",
   "screenshot": "video-collaboration-dark-full.png",
   "sanitizedSourceUrl": "https://flask.do/video-collaboration",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6908
+      "height": 6878
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 6908
+    "height": 6878
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 6908
+      "height": 6878
     },
     "basis": "fullPage"
   },
