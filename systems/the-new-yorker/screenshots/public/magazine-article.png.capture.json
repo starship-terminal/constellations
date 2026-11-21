@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:37:54.154Z",
+  "screenshot": "magazine-article.png",
+  "sanitizedSourceUrl": "https://www.newyorker.com/magazine/2026/11/16/breaking-the-decade-long-trump-fever",
+  "title": "Breaking the Decade-Long Trump Fever | The New Yorker",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "css"
+  },
+  "visualReview": {
+    "status": "pending"
+  }
+}

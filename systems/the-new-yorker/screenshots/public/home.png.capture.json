@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:37:29.437Z",
+  "screenshot": "home.png",
+  "sanitizedSourceUrl": "https://www.newyorker.com/",
+  "title": "The New Yorker",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "css"
+  },
+  "visualReview": {
+    "status": "pending"
+  }
+}
