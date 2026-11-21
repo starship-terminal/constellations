@@ -1,22 +1,33 @@
 {
-  "source": "headless Chromium via Playwright, 2026-11-19",
+  "source": "headless Chromium via Playwright, 2026-11-21",
   "file": "docs-faq-dark.png",
+  "capturedAt": "2026-11-20T19:21:37.212Z",
+  "sanitizedSourceUrl": "https://docs.getmocha.com/getting-started/faq",
+  "status": 200,
+  "theme": "dark",
+  "state": "default",
+  "width": 1440,
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
   "meta": {
-    "name": "docs-faq-dark",
-    "url": "https://docs.getmocha.com/getting-started/faq",
-    "title": "FAQ - Mocha",
-    "status": 200,
     "innerWidth": 1440,
     "innerHeight": 900,
-    "dpr": 2,
+    "devicePixelRatio": 2,
+    "themeClass": [
+      "dark"
+    ],
+    "colorScheme": "dark",
     "visualViewport": {
-      "w": 1440,
-      "h": 900,
+      "width": 1440,
+      "height": 900,
       "scale": 1
     },
-    "theme": "dark",
-    "capturedAt": "2026-11-18T16:35:35.102Z",
-    "fullPage": true,
-    "scrollHeight": 1917
+    "scrollHeight": 1917,
+    "title": "FAQ - Mocha"
   }
 }

@@ -1,0 +1,33 @@
+{
+  "source": "headless Chromium via Playwright, 2026-11-21",
+  "file": "mobile-docs-welcome-light-menu.png",
+  "capturedAt": "2026-11-20T19:22:49.174Z",
+  "sanitizedSourceUrl": "https://docs.getmocha.com/welcome",
+  "status": 200,
+  "theme": "light",
+  "state": "menu",
+  "width": 390,
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "meta": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "themeClass": [
+      "light"
+    ],
+    "colorScheme": "light",
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "scrollHeight": 3054,
+    "title": "Welcome - Mocha"
+  }
+}

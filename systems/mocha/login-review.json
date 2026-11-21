@@ -1,0 +1,88 @@
+{
+  "signedInSurface": false,
+  "capturedAt": "2026-11-21",
+  "productUrl": "https://getmocha.com/",
+  "reason": "getmocha.com has no DNS A or AAAA record. https://getmocha.com/ and https://getmocha.com/login fail with net::ERR_NAME_NOT_RESOLVED. There is no sign-in form, no password field, no code field, no captcha, and no OAuth button, because the host never connects. mocha.app returns HTTP 301 to https://getmocha.com/, which then fails DNS.",
+  "productHosts": {
+    "https://app.mocha.app/": "HTTP 410. Visible text: This app is no longer available. Mocha has shut down. Mocha apps can no longer be accessed. Read the shutdown announcement.",
+    "https://login.mocha.app/": "HTTP 410. Same page. No form.",
+    "https://auth.mocha.app/": "HTTP 410. Same page. No form.",
+    "https://dashboard.mocha.app/": "HTTP 410. Same page.",
+    "https://studio.mocha.app/": "HTTP 410. Same page.",
+    "https://build.mocha.app/": "HTTP 410. Same page.",
+    "https://vidsync.mocha.app/": "HTTP 410. Same page."
+  },
+  "offered": {
+    "nav": {
+      "items": ["no signed-in navigation"],
+      "reached": ["no signed-in navigation"]
+    },
+    "settings": {
+      "items": ["no settings area"],
+      "reached": ["no settings area"]
+    },
+    "create": {
+      "items": ["no create flow"],
+      "reached": ["no create flow"]
+    }
+  },
+  "screens": [],
+  "publicScreens": [
+    "https://docs.getmocha.com/welcome",
+    "https://docs.getmocha.com/getting-started",
+    "https://docs.getmocha.com/getting-started/faq",
+    "https://docs.getmocha.com/getting-started/migrating",
+    "https://docs.getmocha.com/basics/hosting",
+    "https://docs.getmocha.com/basics/analytics",
+    "https://docs.getmocha.com/basics/email",
+    "https://docs.getmocha.com/basics/discuss-mode",
+    "https://docs.getmocha.com/basics/max-mode",
+    "https://docs.getmocha.com/basics/direct-edit",
+    "https://docs.getmocha.com/basics/assets",
+    "https://docs.getmocha.com/basics/versions",
+    "https://docs.getmocha.com/basics/duplicate",
+    "https://docs.getmocha.com/basics/backend",
+    "https://docs.getmocha.com/basics/auth",
+    "https://docs.getmocha.com/basics/databases",
+    "https://docs.getmocha.com/basics/custom-domains",
+    "https://docs.getmocha.com/basics/custom-knowledge",
+    "https://docs.getmocha.com/basics/custom-login-branding",
+    "https://docs.getmocha.com/integrations/accepting-payments",
+    "https://docs.getmocha.com/integrations/scraping-data",
+    "https://docs.getmocha.com/integrations/generating-images",
+    "https://docs.getmocha.com/integrations/using-voice-ai",
+    "https://docs.getmocha.com/billing/account-subscriptions",
+    "https://docs.getmocha.com/billing/billing",
+    "https://docs.getmocha.com/billing/limits",
+    "https://docs.getmocha.com/guides/idea-to-website",
+    "https://docs.getmocha.com/guides/prompting",
+    "https://docs.getmocha.com/guides/video-tutorials",
+    "https://docs.getmocha.com/guides/troubleshooting",
+    "https://docs.getmocha.com/guides/troubleshooting-login",
+    "https://docs.getmocha.com/guides/network-blocking",
+    "https://docs.getmocha.com/guides/remove-watermark",
+    "https://docs.getmocha.com/community/community",
+    "https://docs.getmocha.com/community/bugs-features",
+    "https://app.mocha.app/",
+    "https://login.mocha.app/",
+    "https://auth.mocha.app/",
+    "https://dashboard.mocha.app/",
+    "https://studio.mocha.app/",
+    "https://build.mocha.app/",
+    "https://vidsync.mocha.app/"
+  ],
+  "gaps": [
+    "getmocha.com does not resolve, so the marketing home, pricing, and the shutdown blog were not opened",
+    "no signed-in builder, account, or billing checkout exists on the hosts that answer",
+    "the search dialog was opened empty and closed; no query was typed",
+    "the assistant textarea was not filled and Send was not pressed",
+    "Go to Mocha, Support, Community, YouTube, Twitter, GitHub, LinkedIn, and the shutdown announcement were not followed"
+  ],
+  "not_submitted": [
+    "no account created",
+    "no password, code, or OAuth consent entered",
+    "no search query",
+    "no assistant message",
+    "no payment, plan, or profile field"
+  ]
+}
