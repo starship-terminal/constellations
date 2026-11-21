@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:49:52.230Z",
+  "capturedAt": "2026-11-21T03:50:00.000Z",
   "screenshot": "mobile-home-light-menu.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://www.jasper.ai/",
   "requested": {
     "viewport": {
       "width": 390,
@@ -32,10 +32,6 @@
       "pageLeft": 0,
       "pageTop": 0
     },
-    "documentSize": {
-      "width": 390,
-      "height": 16114
-    },
     "scroll": {
       "x": 0,
       "y": 0
@@ -59,11 +55,12 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pending",
-    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+    "status": "reviewed",
+    "note": "Phone drawer photographed after the hamburger opened. URL stayed on /. Log In and Start A Free Trial were not followed."
   },
   "cropCoordinates": {
     "status": "unverified",
     "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
-  }
+  },
+  "note": "Public Playwright capture 2026-11-21. Quantized to 256 colours. Viewport measured on the same device context as mobile-home-light-default (390x844 at 2x)."
 }

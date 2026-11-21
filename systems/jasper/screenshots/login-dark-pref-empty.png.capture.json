@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T03:45:05.125Z",
+  "screenshot": "login-dark-pref-empty.png",
+  "sanitizedSourceUrl": "https://app.jasper.ai/auth/login",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 1440,
+      "height": 900
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  },
+  "note": "Public Playwright capture 2026-11-21. Quantized to 256 colours after visual review of the full-colour shot. Consent overlays hidden, never answered. No form submitted."
+}
