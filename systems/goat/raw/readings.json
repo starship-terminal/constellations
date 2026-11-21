@@ -1,0 +1,31 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.goat.com/",
+  "viewport": {"w": 1440, "h": 900, "dpr": 2},
+  "notes": "getComputedStyle on the live signed-out shop. Homepage is black. Sneakers, the product, and About are white. Sign Up was not clicked. Buy New and Make Offer were not clicked. Account was not opened.",
+  "readings": [
+    {"role": "body-home", "page": "https://www.goat.com/", "color": "rgb(255, 255, 255)", "background": "rgb(0, 0, 0)", "fontFamily": "GOATProductVariableVF, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif", "fontSize": "11.5px", "fontWeight": "400", "lineHeight": "14px"},
+    {"role": "body-interior", "page": "https://www.goat.com/sneakers", "color": "rgb(0, 0, 0)", "background": "rgb(255, 255, 255)", "fontSize": "11.5px", "fontWeight": "400", "lineHeight": "14px"},
+    {"role": "header-home", "page": "https://www.goat.com/", "color": "rgb(255, 255, 255)", "background": "rgb(0, 0, 0)", "height": "50px", "padding": "0px", "borderBottom": "1px solid rgba(255, 255, 255, 0.7)", "innerPadding": "12px 32px 0px"},
+    {"role": "header-interior", "page": "https://www.goat.com/sneakers", "color": "rgb(0, 0, 0)", "background": "rgb(255, 255, 255)", "height": "50px", "borderBottom": "1px solid rgba(0, 0, 0, 0.7)"},
+    {"role": "nav", "page": "https://www.goat.com/", "color": "rgb(255, 255, 255)", "fontFamily": "GOATProductVariableVF, sans-serif", "fontSize": "11.5px", "fontWeight": "300", "lineHeight": "14px", "letterSpacing": "normal", "padding": "12px 8px", "height": "38px"},
+    {"role": "search", "page": "https://www.goat.com/", "color": "rgb(255, 255, 255)", "fontSize": "11.5px", "fontWeight": "300", "lineHeight": "14px", "padding": "12px 0px"},
+    {"role": "account", "page": "https://www.goat.com/sneakers", "color": "rgb(0, 0, 0)", "fontSize": "12px", "fontWeight": "300", "lineHeight": "18px", "padding": "10px 0px", "height": "38px", "width": "46px"},
+    {"role": "menu-heading", "page": "https://www.goat.com/", "text": "Categories", "color": "rgb(255, 255, 255)", "fontSize": "9.5px", "fontWeight": "400", "lineHeight": "14.25px", "margin": "12.635px 0px 16px"},
+    {"role": "menu-link", "page": "https://www.goat.com/", "text": "Sneakers", "color": "rgb(255, 255, 255)", "fontSize": "11.5px", "fontWeight": "300", "lineHeight": "17.25px", "padding": "0px 0px 8px", "height": "25px"},
+    {"role": "menu-panel", "page": "https://www.goat.com/", "background": "rgb(0, 0, 0)", "width": "564px", "height": "311px", "padding": "20px 24px", "borderRadius": "0px", "boxShadow": "none"},
+    {"role": "section-title", "page": "https://www.goat.com/", "text": "JUST DROPPED", "color": "rgb(255, 255, 255)", "fontSize": "11.5px", "fontWeight": "300", "lineHeight": "14px", "textTransform": "capitalize"},
+    {"role": "category-title", "page": "https://www.goat.com/sneakers", "text": "SNEAKERS", "color": "rgb(0, 0, 0)", "fontSize": "11.5px", "fontWeight": "700", "lineHeight": "14px", "textTransform": "uppercase"},
+    {"role": "product-title", "page": "https://www.goat.com/sneakers/air-jordan-3-retro-not-nice-if4396-001", "text": "Air Jordan 3 Retro 'Not Nice'", "color": "rgb(0, 0, 0)", "fontSize": "11.5px", "fontWeight": "300", "lineHeight": "14px"},
+    {"role": "price", "page": "https://www.goat.com/sneakers/air-jordan-3-retro-not-nice-if4396-001", "text": "S$518", "color": "rgb(0, 0, 0)", "fontSize": "12px", "fontWeight": "300", "lineHeight": "14px"},
+    {"role": "buy-new", "page": "https://www.goat.com/sneakers/air-jordan-3-retro-not-nice-if4396-001", "color": "rgb(0, 0, 0)", "background": "rgba(0, 0, 0, 0)", "fontSize": "12px", "fontWeight": "300", "lineHeight": "18px", "height": "19px", "clicked": false},
+    {"role": "about-title", "page": "https://www.goat.com/about-us", "text": "ABOUT US", "color": "rgb(0, 0, 0)", "fontSize": "11.5px", "fontWeight": "600", "lineHeight": "16px", "textTransform": "uppercase"},
+    {"role": "about-body", "page": "https://www.goat.com/about-us", "color": "rgb(0, 0, 0)", "fontSize": "11.5px", "fontWeight": "400", "lineHeight": "14px"},
+    {"role": "footer-home", "page": "https://www.goat.com/", "color": "rgb(255, 255, 255)", "background": "rgb(0, 0, 0)", "padding": "64px 32px 24px", "height": "224px"},
+    {"role": "footer-interior", "page": "https://www.goat.com/sneakers", "color": "rgb(0, 0, 0)", "background": "rgb(255, 255, 255)"},
+    {"role": "footer-link", "page": "https://www.goat.com/sneakers", "text": "About", "color": "rgb(0, 0, 0)", "fontSize": "12.5px", "fontWeight": "300", "lineHeight": "14px"},
+    {"role": "signup", "page": "https://www.goat.com/sneakers", "color": "rgb(255, 255, 255)", "background": "rgb(0, 0, 0)", "fontSize": "11px", "fontWeight": "300", "lineHeight": "14px", "padding": "7px 18px", "height": "32px", "width": "77px", "borderRadius": "1px", "border": "1px solid rgb(0, 0, 0)", "clicked": false},
+    {"role": "email-field", "page": "https://www.goat.com/sneakers", "placeholder": "Email Address", "wrapperBorder": "1px solid rgba(0, 0, 0, 0.25)", "wrapperRadius": "1px", "wrapperHeight": "49px", "wrapperWidth": "358px", "typed": false},
+    {"role": "link", "page": "https://www.goat.com/sneakers", "color": "rgb(0, 0, 0)", "textDecorationLine": "underline"}
+  ]
+}
