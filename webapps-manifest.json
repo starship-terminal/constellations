@@ -555,9 +555,9 @@
       "description": "App Builder: No Code",
       "status": "captured",
       "package": "systems/base44",
-      "notes": "app.base44.com never signed into; declared-but-unpainted .dark token set and empty app-side --sem-* vars recorded as declared/boundary evidence https://app.base44.com/login accepted the email, then asked for a password. Google, Apple, and GitHub are also offered. No code was sent.",
+      "notes": "app.base44.com never signed into; declared-but-unpainted .dark token set and empty app-side --sem-* vars recorded as declared/boundary evidence https://app.base44.com/login accepted the email, then asked for a password. Google, Apple, and GitHub are also offered. No code was sent. Public walk 2026-11-21: the public site tree is in systems/base44/site-tree.md. https://base44.com/ loaded. Sign in stops at https://app.base44.com/login with an empty email field, or Google, Apple, or GitHub. Continue with email was not pressed. Sign up stops at https://app.base44.com/register with an empty email and password and a captcha that was not solved. Nothing was typed. No identity provider was clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1677 at 2f24f11202be. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 2
     },
     {
