@@ -1,0 +1,94 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public Playwright capture, signed out. https://zapier.com/app/login and https://zapier.com/sign-up were opened empty. Both walls were photographed. Both branches stopped. No email, name, password, or code was typed. No identity provider was clicked. No form was submitted. No account was created.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": "innerWidth 1440, innerHeight 900, devicePixelRatio 2",
+      "png": "2880x1800"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": "innerWidth 390, innerHeight 844, devicePixelRatio 2",
+      "png": "780x1688"
+    }
+  },
+  "offered": {
+    "wall": "https://zapier.com/app/login",
+    "status": 200,
+    "themes": ["light"],
+    "fields": [
+      {"label": "Email", "type": "email", "name": "email", "value": "empty"},
+      {"label": "Password", "type": "password", "name": "password", "value": "empty"}
+    ],
+    "actions": [
+      "Continue with Google",
+      "Continue with Facebook",
+      "Continue with Microsoft",
+      "Continue with SSO",
+      "Continue",
+      "Forgot Password?",
+      "Sign Up",
+      "Explore Zapier Enterprise"
+    ],
+    "legal": ["Privacy", "Your Privacy Choices"]
+  },
+  "screens": [
+    {"name": "Login wall, empty, light, 1440", "file": "screenshots/login-light-empty.png"},
+    {"name": "Login wall, empty, light, 390", "file": "screenshots/mobile-login-light-empty.png"},
+    {"name": "Signup wall, empty, light, 1440", "file": "screenshots/signup-light-empty.png"},
+    {"name": "Signup wall, empty, light, 390", "file": "screenshots/mobile-signup-light-empty.png"}
+  ],
+  "adjacent_walls_stopped": [
+    {
+      "url": "https://zapier.com/sign-up",
+      "how": "Header Sign up, and Start free with email on the homepage.",
+      "fields_empty": ["Work email", "First name", "Last name", "password"],
+      "actions_not_used": ["Sign up with Google", "Get started for free"],
+      "file": "screenshots/signup-light-empty.png"
+    },
+    {
+      "url": "https://zapier.com/app/login/forgot",
+      "how": "Forgot Password? on the login wall. Linked, not opened.",
+      "fields_empty": [],
+      "actions_not_used": ["Forgot Password?"]
+    },
+    {
+      "url": "https://zapier.com/app/login/sso",
+      "how": "Continue with SSO. Not clicked.",
+      "fields_empty": [],
+      "actions_not_used": ["Continue with SSO"]
+    },
+    {
+      "url": "https://zapier.com/google-sso/start",
+      "how": "Continue with Google, Sign up with Google, and Start free with Google. Not clicked.",
+      "fields_empty": [],
+      "actions_not_used": ["Continue with Google", "Sign up with Google", "Start free with Google"]
+    }
+  ],
+  "gaps": [
+    "The signed-in app was not entered. https://zapier.com/app/home was not opened. A prior probe of that URL redirected to login, and this pass had no session.",
+    "No dark theme was offered on the login or signup wall.",
+    "Continue with Google, Facebook, Microsoft, and SSO were visible and not clicked.",
+    "Forgot Password? and Continue with SSO were not opened.",
+    "Contact sales was not opened. It is a sales form.",
+    "Google One Tap painted a Sign in to Zapier with Google sheet on the phone homepage without a click. It was hidden and not photographed into the package. Continue on that sheet was not clicked."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "Continue",
+    "Get started for free",
+    "Continue with Google",
+    "Continue with Facebook",
+    "Continue with Microsoft",
+    "Continue with SSO",
+    "Sign up with Google",
+    "Start free with Google",
+    "Forgot Password?",
+    "contact sales"
+  ]
+}

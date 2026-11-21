@@ -1,6 +1,6 @@
 # Zapier
 
-Zapier's public marketing site and signed-out account pages, measured on 19 November 2026. Surfaces: [https://zapier.com/](https://zapier.com/), [https://zapier.com/pricing](https://zapier.com/pricing), [https://zapier.com/app/login](https://zapier.com/app/login) and [https://zapier.com/sign-up](https://zapier.com/sign-up). No account was created and no field was submitted. The only theme on these pages is light. The live tab measured 1169 by 731 CSS pixels at devicePixelRatio 2, not the 1440 and 390 plan widths.
+Zapier's public marketing site and empty signed-out walls, refreshed on 21 November 2026 with headless Playwright. Surfaces photographed: [https://zapier.com/](https://zapier.com/), pricing, workflows, apps, enterprise, blog, templates, MCP, and the empty login and signup walls. Desktop viewport measured 1440 by 900 CSS pixels at devicePixelRatio 2 (PNG 2880 by 1800). Phone viewport measured 390 by 844 CSS pixels at devicePixelRatio 2 (PNG 780 by 1688). No account was created. No field was typed. No form was submitted. No identity provider was clicked. The only theme on these pages is light. The 19 November computed-style readings still hold the token values. This pass adds screenshots and the site tree.
 
 | Path | What it holds |
 |---|---|
@@ -11,8 +11,11 @@ Zapier's public marketing site and signed-out account pages, measured on 19 Nove
 | [style-guide.html](style-guide.html) | Specimens drawn from the tokens |
 | [components.md](components.md) | Component inventory and states |
 | [patterns.md](patterns.md) | Home, pricing, login and signup layout |
+| [screenshots/](screenshots/) | 20 public captures, 1440 and 390, light only |
+| [site-tree.md](site-tree.md) | Which public control opens which page |
+| [login-review.json](login-review.json) | Empty login and signup walls, not submitted |
 | [raw/](raw/) | Computed-style readings and stylesheet notes |
-| [tools/](tools/) | Kit copy plus a source check for tokens.json |
+| [tools/](tools/) | Capture scripts plus a source check for tokens.json |
 
 ## Brief
 
@@ -73,9 +76,7 @@ The T3 preview browser opened each URL in its own tab. `preview_evaluate` read c
 
 ## What to distrust
 
-Screenshots are missing. The preview browser returned "The browser is not producing screenshot frames", so layout claims rest on DOM geometry, not images.
-
-The viewport was 1169 wide. Button metrics change at 1024px in the stylesheet (non-xsmall buttons become 48px and 18px). A 1440 or 390 capture was not taken.
+The 19 November readings were taken at 1169 CSS pixels. This pass photographed 1440 and 390. Button metrics change at 1024px in the stylesheet (non-xsmall buttons become 48px and 18px). Token colours were not re-sampled from the new PNGs. Screenshots are 256-colour.
 
 Hover, pressed and focus-visible were not held, except the email field, which was already focused and showed the 1px ink ring. Those other states are stylesheet declarations.
 
@@ -109,7 +110,7 @@ Inter is the UI face, loaded from Google Fonts on the login host and as `Inter` 
 | Radio | Captured on pricing, checked and unchecked |
 | Switch | Not present on these pages |
 | Tabs | Captured on pricing, selected and unselected |
-| Menu | Links present. Open panel not measured. Shadow from the stylesheet |
+| Menu | Captured open: [screenshots/home-light-menu-products.png](screenshots/home-light-menu-products.png), solutions, resources, and [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) |
 | Tooltip | Not present |
 | Dialog | Not opened. Scrim not captured |
 | Toast | Not present |
@@ -126,12 +127,12 @@ Inter is the UI face, loaded from Google Fonts on the login host and as `Inter` 
 | Search and filtering | Not captured |
 | List or table | Footer app index only, not measured as a component |
 | Onboarding | Not entered |
-| Widths 1440 and 390 | Not captured. Live tab was 1169 by 731 |
-| Screenshots | Not captured. Preview frames failed |
+| Widths 1440 and 390 | Captured. Desktop PNG 2880 by 1800. Phone PNG 780 by 1688. Sidecars record innerWidth |
+| Screenshots | Captured in [screenshots/](screenshots/). 20 files |
 
 ## Do and don't
 
-- **Orange is the one brand action.** "Start free with email", nav Sign up and "Get started for free" use `#ff4f00`. Pricing plan CTAs are ink (`#201515`), and Google or SSO actions are outline buttons. See [components.md](components.md).
+- **Orange is the one brand action.** "Start free with email", nav Sign up and "Get started for free" use `#ff4f00`. Pricing plan CTAs are ink (`#201515`), and Google or SSO actions are outline buttons. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
 - **Display type is Degular, feature type is Serrif, UI type is Inter.** Do not set a Serrif heading in the 600 weight the UI uses. Feature headings computed at weight 300.
 - **Nav Sign up is a pill. In-page brand buttons are 4px.** The marketing nav pill measured radius 18px. Login's header Sign up measured radius 40px. Do not round every button into a pill.
 - **Pricing cards are square.** Plan cards computed border-radius 0. Feature cards on the home page computed 12px. Do not give plan cards the feature radius.
