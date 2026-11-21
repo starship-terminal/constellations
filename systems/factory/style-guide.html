@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factory style guide</title>
+<meta name="description" content="Factory (factory.com) design tokens and the public site's components, rendered from tokens.json.">
+<style>
+:root {
+  --color-accent-100: #ef6f2e;
+  --color-accent-200: #ee6018;
+  --color-accent-300: #d15010;
+  --color-base-darkPrimary: #020202;
+  --color-base-darkSecondary: #101010;
+  --color-base-lightPrimary: #eeeeee;
+  --color-base-lightSecondary: #fafafa;
+  --color-surface-page: #f9f9f9;
+  --color-surface-raised: #ffffff;
+  --color-surface-sunken: #ebebeb;
+  --color-neutral-100: #d6d3d2;
+  --color-neutral-200: #ccc9c7;
+  --color-neutral-300: #b8b3b0;
+  --color-neutral-400: #a49d9a;
+  --color-neutral-500: #8a8380;
+  --color-neutral-600: #5c5855;
+  --color-neutral-700: #4d4947;
+  --color-neutral-800: #3d3a39;
+  --color-neutral-900: #2e2c2b;
+  --color-neutral-1000: #1f1d1c;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-2xl: 10px;
+  --radius-3xl: 12px;
+  --radius-default: 6px;
+  --space-unit: 4px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --fontWeight-light: 300;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --fontFamily-sans: Geist, "Geist Fallback", sans-serif;
+  --fontFamily-pixel: "Geist Pixel Square",ui-monospace,monospace;
+  --fontFamily-mono: ui-monospace, monospace;
+  --typography-display: var(--fontWeight-medium) 60.48px/60.48px var(--fontFamily-sans);
+  --typography-body: var(--fontWeight-regular) var(--text-base)/24px var(--fontFamily-sans);
+  --typography-nav: var(--fontWeight-regular) 12px/12px var(--fontFamily-sans);
+  --typography-button: var(--fontWeight-regular) var(--text-base)/24px var(--fontFamily-sans);
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+  --text-7xl: 72px;
+  --text-8xl: 96px;
+  --duration-default: 150ms;
+  --easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --layout-contentColumn: 1440px;
+  --layout-contentGutter: 36px;
+  --layout-breakpoint3xl: 1920px;
+  --background: #f9f9f9;
+  --foreground: #020202;
+  --surfaceRaised: #ffffff;
+  --darkBasePrimary: #f9f9f9;
+  --darkBaseSecondary: #ebebeb;
+  --lightBasePrimary: #020202;
+  --lightBaseSecondary: #101010;
+  --accent: #ef6f2e;
+  --accentHover: #ee6018;
+  --accentPressed: #d15010;
+  --base-100: #1f1d1c;
+  --base-200: #2e2c2b;
+  --base-300: #3d3a39;
+  --base-400: #4d4947;
+  --base-500: #5c5855;
+  --base-600: #8a8380;
+  --base-700: #a49d9a;
+  --base-800: #b8b3b0;
+  --base-900: #ccc9c7;
+  --base-1000: #d6d3d2;
+  --component-control-heightCta: 31px;
+  --component-control-radiusCta: 3px;
+  --component-control-padXCta: 14px;
+  --component-control-heightNavLink: 12px;
+  --component-control-navSize: 12px;
+  --component-control-focusOutline: 1px;
+  --component-control-focusOffset: 4px;
+  --component-button-primaryBg: #101010;
+  --component-button-primaryText: #f9f9f9;
+  --component-button-primaryHoverBg: #f9f9f9;
+  --component-button-primaryHoverText: #101010;
+  --component-button-secondaryBg: #f9f9f9;
+  --component-button-secondaryText: #020202;
+  --component-button-secondaryBorder: #a49d9a;
+  --component-button-secondaryHoverBorder: #8a8380;
+  --sg-sans: Geist, "Geist Fallback", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+  --background: #020202;
+  --foreground: #eeeeee;
+  --surfaceRaised: #101010;
+  --darkBasePrimary: #020202;
+  --darkBaseSecondary: #101010;
+  --lightBasePrimary: #eeeeee;
+  --lightBaseSecondary: #fafafa;
+  --accent: #ef6f2e;
+  --accentHover: #ee6018;
+  --accentPressed: #d15010;
+  --base-100: #d6d3d2;
+  --base-200: #ccc9c7;
+  --base-300: #b8b3b0;
+  --base-400: #a49d9a;
+  --base-500: #8a8380;
+  --base-600: #5c5855;
+  --base-700: #4d4947;
+  --base-800: #3d3a39;
+  --base-900: #2e2c2b;
+  --base-1000: #1f1d1c;
+  --component-control-heightCta: 31px;
+  --component-control-radiusCta: 3px;
+  --component-control-padXCta: 14px;
+  --component-control-heightNavLink: 12px;
+  --component-control-navSize: 12px;
+  --component-control-focusOutline: 1px;
+  --component-control-focusOffset: 4px;
+  --component-button-primaryBg: #101010;
+  --component-button-primaryText: #f9f9f9;
+  --component-button-primaryHoverBg: #f9f9f9;
+  --component-button-primaryHoverText: #101010;
+  --component-button-secondaryBg: #f9f9f9;
+  --component-button-secondaryText: #020202;
+  --component-button-secondaryBorder: #a49d9a;
+  --component-button-secondaryHoverBorder: #8a8380;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--foreground, #020202); background: var(--background, #f9f9f9); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 48px/1 var(--sg-sans); letter-spacing: -0.04em; text-transform: uppercase; margin: 0 0 8px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--base-500, #5c5855); margin: 48px 0 0; padding-bottom: 8px; border-bottom: 1px solid var(--base-400, #a49d9a); }
+.lead, .note { max-width: 68ch; color: var(--base-700, #4d4947); }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw i { width: 28px; height: 28px; border-radius: 3px; border: 1px solid var(--base-400, #a49d9a); display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--base-600, #8a8380); }
+.mode { position: fixed; top: 14px; right: 18px; z-index: 5; font: 400 12px/1 var(--sg-sans); padding: 8px 12px; border-radius: 3px; border: 1px solid var(--base-400, #a49d9a); background: var(--background, #f9f9f9); color: var(--foreground, #020202); cursor: pointer; }
+.mock { border: 1px solid var(--base-400, #a49d9a); border-radius: 3px; overflow: hidden; background: var(--background, #f9f9f9); }
+.navbar { display: flex; align-items: center; gap: 18px; height: 48px; padding: 0 16px; font-size: 12px; text-transform: uppercase; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 31px; padding: 0 14px; border-radius: 3px; font-size: 16px; border: 1px solid transparent; text-decoration: none; }
+.btn.primary { background: var(--component-button-primaryBg, #101010); color: var(--component-button-primaryText, #f9f9f9); }
+.btn.ghost { background: var(--component-button-secondaryBg, #f9f9f9); color: var(--component-button-secondaryText, #020202); border-color: var(--component-button-secondaryBorder, #a49d9a); }
+.hero { padding: 64px 32px; font: 500 48px/1 var(--sg-sans); letter-spacing: -0.04em; text-transform: uppercase; }
+.hero small { display: block; margin-top: 16px; font: 400 16px/1.5 var(--sg-sans); letter-spacing: 0; text-transform: none; max-width: 46ch; color: var(--base-700, #4d4947); }
+.row { display: flex; gap: 8px; margin-top: 20px; }
+.accent { color: var(--accent, #ef6f2e); }
+</style>
+</head>
+<body>
+<button class="mode" id="mode">Dark</button>
+<main>
+  <h1>Factory</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Swatches are tokens. The public marketing site paints light. Dark is the theme-layer default, and docs.factory.com paints it when its switch is set to Dark.</p>
+
+  <h2 class="sh">Measured</h2>
+  <div class="mock">
+    <div class="navbar"><span>Factory</span><span>Product</span><span>Pricing</span><span class="sp"></span><span>Sign in</span><a class="btn ghost" href="#contact">Contact sales</a></div>
+    <div class="hero">AI coding agents<span class="accent">.</span>
+      <small>Warm paper page, near-black primary button, 3px radius, Geist.</small>
+      <div class="row"><a class="btn primary" href="#download">Download for Mac</a><a class="btn ghost" href="#demo">Book demo</a></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Roles</h2>
+  <div class="pal" id="roles"></div>
+  <h2 class="sh">Neutrals and accent</h2>
+  <div class="pal" id="palette"></div>
+  <h2 class="sh">Scales</h2>
+  <div class="kv" id="scales" style="font: 12px/1.8 var(--sg-mono)"></div>
+</main>
+<script>
+const T = {"core":{"color":{"accent":{"100":{"v":"#ef6f2e","t":"color","s":"css-var --accent-100"},"200":{"v":"#ee6018","t":"color","s":"css-var --accent-200"},"300":{"v":"#d15010","t":"color","s":"css-var --accent-300"}},"base":{"darkPrimary":{"v":"#020202","t":"color","s":"css-var --dark-base-primary"},"darkSecondary":{"v":"#101010","t":"color","s":"css-var --dark-base-secondary"},"lightPrimary":{"v":"#eeeeee","t":"color","s":"css-var --light-base-primary"},"lightSecondary":{"v":"#fafafa","t":"color","s":"css-var --light-base-secondary"}},"surface":{"page":{"v":"#f9f9f9","t":"color","s":"css-var --surface-page"},"raised":{"v":"#ffffff","t":"color","s":"css-var --surface-raised"},"sunken":{"v":"#ebebeb","t":"color","s":"css-var --surface-sunken"}},"neutral":{"100":{"v":"#d6d3d2","t":"color","s":"css-var --neutral-100"},"200":{"v":"#ccc9c7","t":"color","s":"css-var --neutral-200"},"300":{"v":"#b8b3b0","t":"color","s":"css-var --neutral-300"},"400":{"v":"#a49d9a","t":"color","s":"css-var --neutral-400"},"500":{"v":"#8a8380","t":"color","s":"css-var --neutral-500"},"600":{"v":"#5c5855","t":"color","s":"css-var --neutral-600"},"700":{"v":"#4d4947","t":"color","s":"css-var --neutral-700"},"800":{"v":"#3d3a39","t":"color","s":"css-var --neutral-800"},"900":{"v":"#2e2c2b","t":"color","s":"css-var --neutral-900"},"1000":{"v":"#1f1d1c","t":"color","s":"css-var --neutral-1000"}},"black":{"v":"#000000","t":"color","s":"css-var --color-black"},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white"}},"radius":{"xs":{"v":"2px","t":"dimension","s":"css-var --radius-xs"},"sm":{"v":"3px","t":"dimension","s":"css-var --radius-sm"},"md":{"v":"4px","t":"dimension","s":"css-var --radius-md"},"lg":{"v":"6px","t":"dimension","s":"css-var --radius-lg"},"xl":{"v":"8px","t":"dimension","s":"css-var --radius-xl"},"2xl":{"v":"10px","t":"dimension","s":"css-var --radius-2xl"},"3xl":{"v":"12px","t":"dimension","s":"css-var --radius-3xl"},"default":{"v":"6px","t":"dimension","s":"css-var --radius"}},"space":{"unit":{"v":"4px","t":"dimension","s":"css-var --spacing"},"1":{"v":"4px","t":"dimension","s":"derived: 1 x --spacing (4px), factory.com :root"},"2":{"v":"8px","t":"dimension","s":"derived: 2 x --spacing"},"3":{"v":"12px","t":"dimension","s":"derived: 3 x --spacing"},"4":{"v":"16px","t":"dimension","s":"derived: 4 x --spacing"},"5":{"v":"20px","t":"dimension","s":"derived: 5 x --spacing"},"6":{"v":"24px","t":"dimension","s":"derived: 6 x --spacing"},"8":{"v":"32px","t":"dimension","s":"derived: 8 x --spacing"},"9":{"v":"36px","t":"dimension","s":"derived: --content-gutter at min-width 64rem, resolved 36px"}},"fontWeight":{"light":{"v":300,"t":"fontWeight","s":"css-var --font-weight-light"},"regular":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal"},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold"},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold"}},"fontFamily":{"sans":{"v":"Geist, \"Geist Fallback\", sans-serif","t":"fontFamily","s":"measured: getComputedStyle(body).fontFamily on factory.com home, 2026-11-21. --font-sans aliases --font-geist-sans, which is set by next/font and did not resolve on the probe."},"pixel":{"v":"\"Geist Pixel Square\",ui-monospace,monospace","t":"fontFamily","s":"css-var --font-pixel"},"mono":{"v":"ui-monospace, monospace","t":"fontFamily","s":"declared fallback of --font-pixel and --default-mono-font-family. --font-geist-mono did not resolve on the probe. Not captured as a loaded face."}},"typography":{"display":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"60.48px","fontWeight":"{fontWeight.medium}","lineHeight":"60.48px","letterSpacing":"-2.4192px"},"t":"typography","s":"measured: h1 on factory.com home, 1440px, 2026-11-21. text-transform uppercase."},"body":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"{text.base}","fontWeight":"{fontWeight.regular}","lineHeight":"24px"},"t":"typography","s":"measured: body on factory.com home. Size aliases --text-base (16px)."},"nav":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"12px","fontWeight":"{fontWeight.regular}","lineHeight":"12px"},"t":"typography","s":"measured: header Pricing link on factory.com home."},"button":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"{text.base}","fontWeight":"{fontWeight.regular}","lineHeight":"24px"},"t":"typography","s":"measured: DOWNLOAD FOR MAC and BOOK DEMO on factory.com home."}},"text":{"xs":{"v":"12px","t":"dimension","s":"css-var --text-xs"},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm"},"base":{"v":"16px","t":"dimension","s":"css-var --text-base"},"lg":{"v":"18px","t":"dimension","s":"css-var --text-lg"},"xl":{"v":"20px","t":"dimension","s":"css-var --text-xl"},"2xl":{"v":"24px","t":"dimension","s":"css-var --text-2xl"},"3xl":{"v":"30px","t":"dimension","s":"css-var --text-3xl"},"4xl":{"v":"36px","t":"dimension","s":"css-var --text-4xl"},"5xl":{"v":"48px","t":"dimension","s":"css-var --text-5xl"},"7xl":{"v":"72px","t":"dimension","s":"css-var --text-7xl"},"8xl":{"v":"96px","t":"dimension","s":"css-var --text-8xl"}},"duration":{"default":{"v":"150ms","t":"duration","s":"derived: --default-transition-duration .15s on :root @layer theme"}},"easing":{"standard":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function"},"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out"},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out"}},"layout":{"contentColumn":{"v":"1440px","t":"dimension","s":"css-var --content-column"},"contentGutter":{"v":"36px","t":"dimension","s":"css-var --content-gutter"},"breakpoint3xl":{"v":"1920px","t":"dimension","s":"derived: --breakpoint-3xl 120rem at 16px root"}}},"light":{"background":{"v":"#f9f9f9","t":"color","s":"css-var --color-background"},"foreground":{"v":"#020202","t":"color","s":"css-var --color-foreground"},"surfaceRaised":{"v":"#ffffff","t":"color","s":"css-var --color-surface-raised"},"darkBasePrimary":{"v":"#f9f9f9","t":"color","s":"css-var --color-dark-base-primary"},"darkBaseSecondary":{"v":"#ebebeb","t":"color","s":"css-var --color-dark-base-secondary"},"lightBasePrimary":{"v":"#020202","t":"color","s":"css-var --color-light-base-primary"},"lightBaseSecondary":{"v":"#101010","t":"color","s":"css-var --color-light-base-secondary"},"accent":{"v":"#ef6f2e","t":"color","s":"css-var --color-accent-100"},"accentHover":{"v":"#ee6018","t":"color","s":"css-var --color-accent-200"},"accentPressed":{"v":"#d15010","t":"color","s":"css-var --color-accent-300"},"base":{"100":{"v":"#1f1d1c","t":"color","s":"css-var --color-base-100"},"200":{"v":"#2e2c2b","t":"color","s":"css-var --color-base-200"},"300":{"v":"#3d3a39","t":"color","s":"css-var --color-base-300"},"400":{"v":"#4d4947","t":"color","s":"css-var --color-base-400"},"500":{"v":"#5c5855","t":"color","s":"css-var --color-base-500"},"600":{"v":"#8a8380","t":"color","s":"css-var --color-base-600"},"700":{"v":"#a49d9a","t":"color","s":"css-var --color-base-700"},"800":{"v":"#b8b3b0","t":"color","s":"css-var --color-base-800"},"900":{"v":"#ccc9c7","t":"color","s":"css-var --color-base-900"},"1000":{"v":"#d6d3d2","t":"color","s":"css-var --color-base-1000"}},"component":{"control":{"heightCta":{"v":"31px","t":"dimension","s":"measured: DOWNLOAD FOR MAC and BOOK DEMO bounding box on factory.com home, 1440px"},"radiusCta":{"v":"3px","t":"dimension","s":"measured: BOOK DEMO border-radius. Primary split button uses 3px 0 0 3px on the label half."},"padXCta":{"v":"14px","t":"dimension","s":"measured: padding-inline on DOWNLOAD FOR MAC and BOOK DEMO"},"heightNavLink":{"v":"12px","t":"dimension","s":"measured: header Pricing link height"},"navSize":{"v":"12px","t":"dimension","s":"measured: header Pricing link font-size"},"focusOutline":{"v":"1px","t":"dimension","s":"measured: DOWNLOAD FOR MAC :focus-visible outline-width, outline-offset 4px, colour rgb(16, 16, 16)"},"focusOffset":{"v":"4px","t":"dimension","s":"measured: DOWNLOAD FOR MAC :focus-visible outline-offset"}},"button":{"primaryBg":{"v":"#101010","t":"color","s":"measured: DOWNLOAD FOR MAC background rgb(16, 16, 16), which is --dark-base-secondary"},"primaryText":{"v":"#f9f9f9","t":"color","s":"measured: painted text child of DOWNLOAD FOR MAC, rgb(249, 249, 249), which is --surface-page"},"primaryHoverBg":{"v":"#f9f9f9","t":"color","s":"measured: DOWNLOAD FOR MAC :hover background rgb(249, 249, 249)"},"primaryHoverText":{"v":"#101010","t":"color","s":"measured: DOWNLOAD FOR MAC :hover text rgb(16, 16, 16)"},"secondaryBg":{"v":"#f9f9f9","t":"color","s":"measured: BOOK DEMO background"},"secondaryText":{"v":"#020202","t":"color","s":"measured: BOOK DEMO text rgb(2, 2, 2)"},"secondaryBorder":{"v":"#a49d9a","t":"color","s":"measured: BOOK DEMO border-top-color rgb(164, 157, 154), which is --neutral-400"},"secondaryHoverBorder":{"v":"#8a8380","t":"color","s":"measured: DOWNLOAD FOR MAC :hover border rgb(138, 131, 128), which is --neutral-500"}}}},"dark":{"background":{"v":"#020202","t":"color","s":"css-var --color-background"},"foreground":{"v":"#eeeeee","t":"color","s":"css-var --color-foreground"},"surfaceRaised":{"v":"#101010","t":"color","s":"css-var --color-surface-raised"},"darkBasePrimary":{"v":"#020202","t":"color","s":"css-var --color-dark-base-primary"},"darkBaseSecondary":{"v":"#101010","t":"color","s":"css-var --color-dark-base-secondary"},"lightBasePrimary":{"v":"#eeeeee","t":"color","s":"css-var --color-light-base-primary"},"lightBaseSecondary":{"v":"#fafafa","t":"color","s":"css-var --color-light-base-secondary"},"accent":{"v":"#ef6f2e","t":"color","s":"css-var --color-accent-100"},"accentHover":{"v":"#ee6018","t":"color","s":"css-var --color-accent-200"},"accentPressed":{"v":"#d15010","t":"color","s":"css-var --color-accent-300"},"base":{"100":{"v":"#d6d3d2","t":"color","s":"css-var --color-base-100"},"200":{"v":"#ccc9c7","t":"color","s":"css-var --color-base-200"},"300":{"v":"#b8b3b0","t":"color","s":"css-var --color-base-300"},"400":{"v":"#a49d9a","t":"color","s":"css-var --color-base-400"},"500":{"v":"#8a8380","t":"color","s":"css-var --color-base-500"},"600":{"v":"#5c5855","t":"color","s":"css-var --color-base-600"},"700":{"v":"#4d4947","t":"color","s":"css-var --color-base-700"},"800":{"v":"#3d3a39","t":"color","s":"css-var --color-base-800"},"900":{"v":"#2e2c2b","t":"color","s":"css-var --color-base-900"},"1000":{"v":"#1f1d1c","t":"color","s":"css-var --color-base-1000"}},"component":{"control":{"heightCta":{"v":"31px","t":"dimension","s":"measured: DOWNLOAD FOR MAC and BOOK DEMO bounding box on factory.com home, 1440px"},"radiusCta":{"v":"3px","t":"dimension","s":"measured: BOOK DEMO border-radius. Primary split button uses 3px 0 0 3px on the label half."},"padXCta":{"v":"14px","t":"dimension","s":"measured: padding-inline on DOWNLOAD FOR MAC and BOOK DEMO"},"heightNavLink":{"v":"12px","t":"dimension","s":"measured: header Pricing link height"},"navSize":{"v":"12px","t":"dimension","s":"measured: header Pricing link font-size"},"focusOutline":{"v":"1px","t":"dimension","s":"measured: DOWNLOAD FOR MAC :focus-visible outline-width, outline-offset 4px, colour rgb(16, 16, 16)"},"focusOffset":{"v":"4px","t":"dimension","s":"measured: DOWNLOAD FOR MAC :focus-visible outline-offset"}},"button":{"primaryBg":{"v":"#101010","t":"color","s":"measured: DOWNLOAD FOR MAC background rgb(16, 16, 16), which is --dark-base-secondary"},"primaryText":{"v":"#f9f9f9","t":"color","s":"measured: painted text child of DOWNLOAD FOR MAC, rgb(249, 249, 249), which is --surface-page"},"primaryHoverBg":{"v":"#f9f9f9","t":"color","s":"measured: DOWNLOAD FOR MAC :hover background rgb(249, 249, 249)"},"primaryHoverText":{"v":"#101010","t":"color","s":"measured: DOWNLOAD FOR MAC :hover text rgb(16, 16, 16)"},"secondaryBg":{"v":"#f9f9f9","t":"color","s":"measured: BOOK DEMO background"},"secondaryText":{"v":"#020202","t":"color","s":"measured: BOOK DEMO text rgb(2, 2, 2)"},"secondaryBorder":{"v":"#a49d9a","t":"color","s":"measured: BOOK DEMO border-top-color rgb(164, 157, 154), which is --neutral-400"},"secondaryHoverBorder":{"v":"#8a8380","t":"color","s":"measured: DOWNLOAD FOR MAC :hover border rgb(138, 131, 128), which is --neutral-500"}}}}};
+const mode = document.getElementById('mode');
+function theme() { return document.documentElement.getAttribute('data-mode') === 'dark' ? 'dark' : 'light'; }
+function paint() {
+  const set = T[theme()] || {};
+  const roles = document.getElementById('roles');
+  roles.innerHTML = '';
+  for (const [k, tok] of Object.entries(set)) {
+    if (!tok || tok.t !== 'color') continue;
+    roles.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:${tok.v}"></i><div><div class="nm">${k}</div><div class="vl">${tok.v}</div></div></div>`);
+  }
+  const pal = document.getElementById('palette');
+  pal.innerHTML = '';
+  const walk = (node, prefix) => {
+    for (const [k, v] of Object.entries(node || {})) {
+      if (v && v.t === 'color') pal.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:${v.v}"></i><div><div class="nm">${prefix}${k}</div><div class="vl">${v.v}</div></div></div>`);
+      else if (v && !v.t) walk(v, prefix + k + '.');
+    }
+  };
+  walk(T.core && T.core.color, '');
+}
+mode.addEventListener('click', () => {
+  const dark = document.documentElement.getAttribute('data-mode') === 'dark';
+  if (dark) document.documentElement.removeAttribute('data-mode');
+  else document.documentElement.setAttribute('data-mode', 'dark');
+  mode.textContent = dark ? 'Dark' : 'Light';
+  paint();
+});
+paint();
+</script>
+</body>
+</html>

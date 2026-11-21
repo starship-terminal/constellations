@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factory style guide</title>
+<meta name="description" content="Factory (factory.com) design tokens and the public site's components, rendered from tokens.json.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Geist, "Geist Fallback", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--foreground, #020202); background: var(--background, #f9f9f9); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 48px/1 var(--sg-sans); letter-spacing: -0.04em; text-transform: uppercase; margin: 0 0 8px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--base-500, #5c5855); margin: 48px 0 0; padding-bottom: 8px; border-bottom: 1px solid var(--base-400, #a49d9a); }
+.lead, .note { max-width: 68ch; color: var(--base-700, #4d4947); }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw i { width: 28px; height: 28px; border-radius: 3px; border: 1px solid var(--base-400, #a49d9a); display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--base-600, #8a8380); }
+.mode { position: fixed; top: 14px; right: 18px; z-index: 5; font: 400 12px/1 var(--sg-sans); padding: 8px 12px; border-radius: 3px; border: 1px solid var(--base-400, #a49d9a); background: var(--background, #f9f9f9); color: var(--foreground, #020202); cursor: pointer; }
+.mock { border: 1px solid var(--base-400, #a49d9a); border-radius: 3px; overflow: hidden; background: var(--background, #f9f9f9); }
+.navbar { display: flex; align-items: center; gap: 18px; height: 48px; padding: 0 16px; font-size: 12px; text-transform: uppercase; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 31px; padding: 0 14px; border-radius: 3px; font-size: 16px; border: 1px solid transparent; text-decoration: none; }
+.btn.primary { background: var(--component-button-primaryBg, #101010); color: var(--component-button-primaryText, #f9f9f9); }
+.btn.ghost { background: var(--component-button-secondaryBg, #f9f9f9); color: var(--component-button-secondaryText, #020202); border-color: var(--component-button-secondaryBorder, #a49d9a); }
+.hero { padding: 64px 32px; font: 500 48px/1 var(--sg-sans); letter-spacing: -0.04em; text-transform: uppercase; }
+.hero small { display: block; margin-top: 16px; font: 400 16px/1.5 var(--sg-sans); letter-spacing: 0; text-transform: none; max-width: 46ch; color: var(--base-700, #4d4947); }
+.row { display: flex; gap: 8px; margin-top: 20px; }
+.accent { color: var(--accent, #ef6f2e); }
+</style>
+</head>
+<body>
+<button class="mode" id="mode">Dark</button>
+<main>
+  <h1>Factory</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Swatches are tokens. The public marketing site paints light. Dark is the theme-layer default, and docs.factory.com paints it when its switch is set to Dark.</p>
+
+  <h2 class="sh">Measured</h2>
+  <div class="mock">
+    <div class="navbar"><span>Factory</span><span>Product</span><span>Pricing</span><span class="sp"></span><span>Sign in</span><a class="btn ghost" href="#contact">Contact sales</a></div>
+    <div class="hero">AI coding agents<span class="accent">.</span>
+      <small>Warm paper page, near-black primary button, 3px radius, Geist.</small>
+      <div class="row"><a class="btn primary" href="#download">Download for Mac</a><a class="btn ghost" href="#demo">Book demo</a></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Roles</h2>
+  <div class="pal" id="roles"></div>
+  <h2 class="sh">Neutrals and accent</h2>
+  <div class="pal" id="palette"></div>
+  <h2 class="sh">Scales</h2>
+  <div class="kv" id="scales" style="font: 12px/1.8 var(--sg-mono)"></div>
+</main>
+<script>
+const T = /*TOKENS*/null;
+const mode = document.getElementById('mode');
+function theme() { return document.documentElement.getAttribute('data-mode') === 'dark' ? 'dark' : 'light'; }
+function paint() {
+  const set = T[theme()] || {};
+  const roles = document.getElementById('roles');
+  roles.innerHTML = '';
+  for (const [k, tok] of Object.entries(set)) {
+    if (!tok || tok.t !== 'color') continue;
+    roles.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:${tok.v}"></i><div><div class="nm">${k}</div><div class="vl">${tok.v}</div></div></div>`);
+  }
+  const pal = document.getElementById('palette');
+  pal.innerHTML = '';
+  const walk = (node, prefix) => {
+    for (const [k, v] of Object.entries(node || {})) {
+      if (v && v.t === 'color') pal.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:${v.v}"></i><div><div class="nm">${prefix}${k}</div><div class="vl">${v.v}</div></div></div>`);
+      else if (v && !v.t) walk(v, prefix + k + '.');
+    }
+  };
+  walk(T.core && T.core.color, '');
+}
+mode.addEventListener('click', () => {
+  const dark = document.documentElement.getAttribute('data-mode') === 'dark';
+  if (dark) document.documentElement.removeAttribute('data-mode');
+  else document.documentElement.setAttribute('data-mode', 'dark');
+  mode.textContent = dark ? 'Dark' : 'Light';
+  paint();
+});
+paint();
+</script>
+</body>
+</html>

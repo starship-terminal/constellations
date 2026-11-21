@@ -1,0 +1,595 @@
+{
+ "_about": "Token tree for factory.com, read 2026-11-21. Brand paints and scales are :root custom properties. Role colours invert between the painted light theme and the theme-layer dark default. Component leaves are computed styles on the live home page.",
+ "core": {
+  "color": {
+   "accent": {
+    "100": {
+     "var": "--accent-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--accent-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--accent-300",
+     "type": "color"
+    }
+   },
+   "base": {
+    "darkPrimary": {
+     "var": "--dark-base-primary",
+     "type": "color"
+    },
+    "darkSecondary": {
+     "var": "--dark-base-secondary",
+     "type": "color"
+    },
+    "lightPrimary": {
+     "var": "--light-base-primary",
+     "type": "color"
+    },
+    "lightSecondary": {
+     "var": "--light-base-secondary",
+     "type": "color"
+    }
+   },
+   "surface": {
+    "page": {
+     "var": "--surface-page",
+     "type": "color"
+    },
+    "raised": {
+     "var": "--surface-raised",
+     "type": "color"
+    },
+    "sunken": {
+     "var": "--surface-sunken",
+     "type": "color"
+    }
+   },
+   "neutral": {
+    "100": {
+     "var": "--neutral-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--neutral-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--neutral-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--neutral-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--neutral-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--neutral-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--neutral-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--neutral-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--neutral-900",
+     "type": "color"
+    },
+    "1000": {
+     "var": "--neutral-1000",
+     "type": "color"
+    }
+   },
+   "black": {
+    "var": "--color-black",
+    "type": "color"
+   },
+   "white": {
+    "var": "--color-white",
+    "type": "color"
+   }
+  },
+  "radius": {
+   "xs": {
+    "var": "--radius-xs",
+    "type": "dimension"
+   },
+   "sm": {
+    "var": "--radius-sm",
+    "type": "dimension"
+   },
+   "md": {
+    "var": "--radius-md",
+    "type": "dimension"
+   },
+   "lg": {
+    "var": "--radius-lg",
+    "type": "dimension"
+   },
+   "xl": {
+    "var": "--radius-xl",
+    "type": "dimension"
+   },
+   "2xl": {
+    "var": "--radius-2xl",
+    "type": "dimension"
+   },
+   "3xl": {
+    "var": "--radius-3xl",
+    "type": "dimension"
+   },
+   "default": {
+    "var": "--radius",
+    "type": "dimension"
+   }
+  },
+  "space": {
+   "unit": {
+    "var": "--spacing",
+    "type": "dimension"
+   },
+   "1": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "derived: 1 x --spacing (4px), factory.com :root"
+   },
+   "2": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "derived: 2 x --spacing"
+   },
+   "3": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "derived: 3 x --spacing"
+   },
+   "4": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "derived: 4 x --spacing"
+   },
+   "5": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "derived: 5 x --spacing"
+   },
+   "6": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "derived: 6 x --spacing"
+   },
+   "8": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "derived: 8 x --spacing"
+   },
+   "9": {
+    "value": "36px",
+    "type": "dimension",
+    "source": "derived: --content-gutter at min-width 64rem, resolved 36px"
+   }
+  },
+  "fontWeight": {
+   "light": {
+    "var": "--font-weight-light",
+    "type": "fontWeight"
+   },
+   "regular": {
+    "var": "--font-weight-normal",
+    "type": "fontWeight"
+   },
+   "medium": {
+    "var": "--font-weight-medium",
+    "type": "fontWeight"
+   },
+   "semibold": {
+    "var": "--font-weight-semibold",
+    "type": "fontWeight"
+   },
+   "bold": {
+    "var": "--font-weight-bold",
+    "type": "fontWeight"
+   }
+  },
+  "fontFamily": {
+   "sans": {
+    "value": "Geist, \"Geist Fallback\", sans-serif",
+    "type": "fontFamily",
+    "source": "measured: getComputedStyle(body).fontFamily on factory.com home, 2026-11-21. --font-sans aliases --font-geist-sans, which is set by next/font and did not resolve on the probe."
+   },
+   "pixel": {
+    "var": "--font-pixel",
+    "type": "fontFamily"
+   },
+   "mono": {
+    "value": "ui-monospace, monospace",
+    "type": "fontFamily",
+    "source": "declared fallback of --font-pixel and --default-mono-font-family. --font-geist-mono did not resolve on the probe. Not captured as a loaded face."
+   }
+  },
+  "typography": {
+   "display": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{fontFamily.sans}",
+     "fontSize": "60.48px",
+     "fontWeight": "{fontWeight.medium}",
+     "lineHeight": "60.48px",
+     "letterSpacing": "-2.4192px"
+    },
+    "source": "measured: h1 on factory.com home, 1440px, 2026-11-21. text-transform uppercase."
+   },
+   "body": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{fontFamily.sans}",
+     "fontSize": "{text.base}",
+     "fontWeight": "{fontWeight.regular}",
+     "lineHeight": "24px"
+    },
+    "source": "measured: body on factory.com home. Size aliases --text-base (16px)."
+   },
+   "nav": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{fontFamily.sans}",
+     "fontSize": "12px",
+     "fontWeight": "{fontWeight.regular}",
+     "lineHeight": "12px"
+    },
+    "source": "measured: header Pricing link on factory.com home."
+   },
+   "button": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{fontFamily.sans}",
+     "fontSize": "{text.base}",
+     "fontWeight": "{fontWeight.regular}",
+     "lineHeight": "24px"
+    },
+    "source": "measured: DOWNLOAD FOR MAC and BOOK DEMO on factory.com home."
+   }
+  },
+  "text": {
+   "xs": {
+    "var": "--text-xs",
+    "type": "dimension"
+   },
+   "sm": {
+    "var": "--text-sm",
+    "type": "dimension"
+   },
+   "base": {
+    "var": "--text-base",
+    "type": "dimension"
+   },
+   "lg": {
+    "var": "--text-lg",
+    "type": "dimension"
+   },
+   "xl": {
+    "var": "--text-xl",
+    "type": "dimension"
+   },
+   "2xl": {
+    "var": "--text-2xl",
+    "type": "dimension"
+   },
+   "3xl": {
+    "var": "--text-3xl",
+    "type": "dimension"
+   },
+   "4xl": {
+    "var": "--text-4xl",
+    "type": "dimension"
+   },
+   "5xl": {
+    "var": "--text-5xl",
+    "type": "dimension"
+   },
+   "7xl": {
+    "var": "--text-7xl",
+    "type": "dimension"
+   },
+   "8xl": {
+    "var": "--text-8xl",
+    "type": "dimension"
+   }
+  },
+  "duration": {
+   "default": {
+    "value": "150ms",
+    "type": "duration",
+    "source": "derived: --default-transition-duration .15s on :root @layer theme"
+   }
+  },
+  "easing": {
+   "standard": {
+    "var": "--default-transition-timing-function",
+    "type": "cubicBezier"
+   },
+   "inOut": {
+    "var": "--ease-in-out",
+    "type": "cubicBezier"
+   },
+   "out": {
+    "var": "--ease-out",
+    "type": "cubicBezier"
+   }
+  },
+  "layout": {
+   "contentColumn": {
+    "var": "--content-column",
+    "type": "dimension"
+   },
+   "contentGutter": {
+    "var": "--content-gutter",
+    "type": "dimension"
+   },
+   "breakpoint3xl": {
+    "value": "1920px",
+    "type": "dimension",
+    "source": "derived: --breakpoint-3xl 120rem at 16px root"
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "var": "--color-background",
+   "type": "color"
+  },
+  "foreground": {
+   "var": "--color-foreground",
+   "type": "color"
+  },
+  "surfaceRaised": {
+   "var": "--color-surface-raised",
+   "type": "color"
+  },
+  "darkBasePrimary": {
+   "var": "--color-dark-base-primary",
+   "type": "color"
+  },
+  "darkBaseSecondary": {
+   "var": "--color-dark-base-secondary",
+   "type": "color"
+  },
+  "lightBasePrimary": {
+   "var": "--color-light-base-primary",
+   "type": "color"
+  },
+  "lightBaseSecondary": {
+   "var": "--color-light-base-secondary",
+   "type": "color"
+  },
+  "accent": {
+   "var": "--color-accent-100",
+   "type": "color"
+  },
+  "accentHover": {
+   "var": "--color-accent-200",
+   "type": "color"
+  },
+  "accentPressed": {
+   "var": "--color-accent-300",
+   "type": "color"
+  },
+  "base": {
+   "100": {
+    "var": "--color-base-100",
+    "type": "color"
+   },
+   "200": {
+    "var": "--color-base-200",
+    "type": "color"
+   },
+   "300": {
+    "var": "--color-base-300",
+    "type": "color"
+   },
+   "400": {
+    "var": "--color-base-400",
+    "type": "color"
+   },
+   "500": {
+    "var": "--color-base-500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--color-base-600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--color-base-700",
+    "type": "color"
+   },
+   "800": {
+    "var": "--color-base-800",
+    "type": "color"
+   },
+   "900": {
+    "var": "--color-base-900",
+    "type": "color"
+   },
+   "1000": {
+    "var": "--color-base-1000",
+    "type": "color"
+   }
+  }
+ },
+ "dark": {
+  "background": {
+   "var": "--color-background",
+   "type": "color"
+  },
+  "foreground": {
+   "var": "--color-foreground",
+   "type": "color"
+  },
+  "surfaceRaised": {
+   "var": "--color-surface-raised",
+   "type": "color"
+  },
+  "darkBasePrimary": {
+   "var": "--color-dark-base-primary",
+   "type": "color"
+  },
+  "darkBaseSecondary": {
+   "var": "--color-dark-base-secondary",
+   "type": "color"
+  },
+  "lightBasePrimary": {
+   "var": "--color-light-base-primary",
+   "type": "color"
+  },
+  "lightBaseSecondary": {
+   "var": "--color-light-base-secondary",
+   "type": "color"
+  },
+  "accent": {
+   "var": "--color-accent-100",
+   "type": "color"
+  },
+  "accentHover": {
+   "var": "--color-accent-200",
+   "type": "color"
+  },
+  "accentPressed": {
+   "var": "--color-accent-300",
+   "type": "color"
+  },
+  "base": {
+   "100": {
+    "var": "--color-base-100",
+    "type": "color"
+   },
+   "200": {
+    "var": "--color-base-200",
+    "type": "color"
+   },
+   "300": {
+    "var": "--color-base-300",
+    "type": "color"
+   },
+   "400": {
+    "var": "--color-base-400",
+    "type": "color"
+   },
+   "500": {
+    "var": "--color-base-500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--color-base-600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--color-base-700",
+    "type": "color"
+   },
+   "800": {
+    "var": "--color-base-800",
+    "type": "color"
+   },
+   "900": {
+    "var": "--color-base-900",
+    "type": "color"
+   },
+   "1000": {
+    "var": "--color-base-1000",
+    "type": "color"
+   }
+  }
+ },
+ "component": {
+  "control": {
+   "heightCta": {
+    "value": "31px",
+    "type": "dimension",
+    "source": "measured: DOWNLOAD FOR MAC and BOOK DEMO bounding box on factory.com home, 1440px"
+   },
+   "radiusCta": {
+    "value": "3px",
+    "type": "dimension",
+    "source": "measured: BOOK DEMO border-radius. Primary split button uses 3px 0 0 3px on the label half."
+   },
+   "padXCta": {
+    "value": "14px",
+    "type": "dimension",
+    "source": "measured: padding-inline on DOWNLOAD FOR MAC and BOOK DEMO"
+   },
+   "heightNavLink": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "measured: header Pricing link height"
+   },
+   "navSize": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "measured: header Pricing link font-size"
+   },
+   "focusOutline": {
+    "value": "1px",
+    "type": "dimension",
+    "source": "measured: DOWNLOAD FOR MAC :focus-visible outline-width, outline-offset 4px, colour rgb(16, 16, 16)"
+   },
+   "focusOffset": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "measured: DOWNLOAD FOR MAC :focus-visible outline-offset"
+   }
+  },
+  "button": {
+   "primaryBg": {
+    "value": "#101010",
+    "type": "color",
+    "source": "measured: DOWNLOAD FOR MAC background rgb(16, 16, 16), which is --dark-base-secondary"
+   },
+   "primaryText": {
+    "value": "#f9f9f9",
+    "type": "color",
+    "source": "measured: painted text child of DOWNLOAD FOR MAC, rgb(249, 249, 249), which is --surface-page"
+   },
+   "primaryHoverBg": {
+    "value": "#f9f9f9",
+    "type": "color",
+    "source": "measured: DOWNLOAD FOR MAC :hover background rgb(249, 249, 249)"
+   },
+   "primaryHoverText": {
+    "value": "#101010",
+    "type": "color",
+    "source": "measured: DOWNLOAD FOR MAC :hover text rgb(16, 16, 16)"
+   },
+   "secondaryBg": {
+    "value": "#f9f9f9",
+    "type": "color",
+    "source": "measured: BOOK DEMO background"
+   },
+   "secondaryText": {
+    "value": "#020202",
+    "type": "color",
+    "source": "measured: BOOK DEMO text rgb(2, 2, 2)"
+   },
+   "secondaryBorder": {
+    "value": "#a49d9a",
+    "type": "color",
+    "source": "measured: BOOK DEMO border-top-color rgb(164, 157, 154), which is --neutral-400"
+   },
+   "secondaryHoverBorder": {
+    "value": "#8a8380",
+    "type": "color",
+    "source": "measured: DOWNLOAD FOR MAC :hover border rgb(138, 131, 128), which is --neutral-500"
+   }
+  }
+ }
+}
