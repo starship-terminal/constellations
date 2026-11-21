@@ -1,6 +1,8 @@
 # Aesop design reference
 
-A token set and component reference for Aesop, the skincare house — for building storefront, campaign and editorial surfaces in the style of the real thing. Captured from the US storefront (`aesop.com`, Salesforce B2C Commerce `Sites-aesop-us-Site`) on 2026-11-10, signed out, in headless Chromium at 1440 and 390 wide: the home page and its search disclosure, sign-up modal, cart drawer and nav hover, the Shop all catalogue with its Filter-by rail, the Skin Care landing, one PDP (The Aesop Valise, APB399) with an open accordion, the store locator with its No-result dialog, the empty cart page, the Demandware sign-in page and the styled error page, plus the mobile burger drawer.
+A token set and component reference for Aesop, the skincare house, for building storefront, campaign and editorial surfaces in the style of the real thing. Captured from the US storefront (`aesop.com`, Salesforce B2C Commerce `Sites-aesop-us-Site`) on 2026-11-21, signed out, in headed Chrome (Playwright) at a measured 1440×900 and 390×844. Headless Chromium is stopped by Cloudflare on every document, so the shots use `channel: chrome`. The control map is [site-tree.md](site-tree.md).
+
+The 2026-11-21 pass covers the home page and its search disclosure, email sign-up dialog, account sign-in dialog (login wall, not submitted), cart drawer and Skin Care flyout, Shop all with the Filter-by rail, Skin Care, Gifts, Library, Experience, Our story, Contact us, Gift Finder, The Aesop Gift Gathering, the site map, one PDP (The Aesop Valise, APB399) with an open accordion, the store locator (map tiles painted out), the empty cart, the Demandware sign-in page (login wall, not submitted), the styled error pages at `/account` and `/account/login`, and the phone menu.
 
 The reason Aesop is worth a capture: a single warm ink (#333333) does text, keylines and button fills on a cream ground (#fffef2); one tannin amber (#945c26) is the only accent (badges, promos, inline links); Suisse Intl in two cuts sets everything in sentence case; rules are 1px hairlines, many drawn as box-shadows; corners are square; the footer inverts to cream-on-ink.
 
@@ -12,8 +14,9 @@ The reason Aesop is worth a capture: a single warm ink (#333333) does text, keyl
 | [style-guide.html](style-guide.html) | One self-contained page rendering every token and the main components with the real values |
 | [components.md](components.md) | The discovery list and component inventory (68 components, 152 states) written in tokens with crops, shared values and Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or interaction, mapped 2026-11-21 |
 | [components/crops/](components/crops) | 152 element screenshots, `{component}-{state}.png` at 2x |
-| [screenshots/](screenshots) | 29 `{page}-light-{state}.png` captures: desktop 1440x900 at 1x, `mobile-*` 390x844 at 2x, `-full` whole pages |
+| [screenshots/](screenshots) | `{page}-light-{state}.png` captures: desktop 1440x900 at 1x, `mobile-*` 390x844 at 2x, `-full` whole pages |
 | [raw/](raw) | The unprocessed readings: `css-vars.json`, `components-computed.json`, `measurements.md`, `component-tokens.json`, run logs. Full-colour captures stay outside the repo at `~/.design-systems/aesop/raw-full/` |
 | [tools/](tools) | The builders and the capture kit. See Rebuild |
 
@@ -92,11 +95,13 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Aesop's icon art
 
 ## What to distrust
 
-- The capture is the US storefront; other regions (different assortment, promos, footer copy) were not visited.
-- The ADD TO CART bar was caught mid-hydration labelled "Loading …" — the resting label state was not captured.
-- The sign-up modal's remote fragment never rendered in headless; the dialog was measured as an empty shell.
-- The cart drawer's body logs a JSON parse warning in headless; the drawer chrome measured fine.
-- Several components were re-measured after selector fixes; `search-panel` (its container) and `cart-close` (no measurable close button) are honest misses, and `qty-select` does not exist on a one-variant PDP.
+- The capture is the US storefront. A region dialog may name another country before it is hidden. Other regional assortments were not visited.
+- Store-locator map tiles are painted out. Street names and nearby-store lists are not in the package. Geolocate was not granted.
+- The signup dialog's empty phone field is painted out. Nothing was typed into it.
+- The Account dialog and `Login-Show` are login walls. Nothing was typed or submitted. Facebook and Google were not clicked.
+- https://www.aesop.com/account/login returns the styled error page (HTTP 404), not a form.
+- Headless Chromium does not load this storefront. Values read on 2026-11-10 came from a headless session that Cloudflare no longer allows. The 2026-11-21 screenshots are the live record. Token numbers were not re-read in this pass where the 2026-11-10 computed styles still name them.
+- The ADD TO CART bar was caught mid-hydration labelled "Loading …" on the 2026-11-10 measurement. The 2026-11-21 phone PDP shows the resting "Add to cart" label.
 
 ## Fonts
 
@@ -117,14 +122,15 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Aesop's icon art
 | Buttons, links, fields, selects, cards, badges, accordions, drawers, dialogs | captured | [components.md](components.md) |
 | Switch, tabs, toast, tooltip, table, avatar | not present | not on the public surface |
 | States | captured | default/hover/focus-visible/pressed; focused/filled on fields; disabled, error-on-field, loading-on-button not present publicly |
-| Signed-in, checkout, purchase | not captured | account beyond the sign-in page, bag contents, checkout never entered |
-| 1440 and 390 | captured | [screenshots/](screenshots) |
+| Signed-in, checkout, purchase | not captured | Account dialog and Login-Show are login walls. Branch stopped. Nothing typed or submitted. |
+| 1440 and 390 | captured | [screenshots/](screenshots), measured viewports in the `.capture.json` sidecars under `~/.design-systems/aesop/raw-full/` |
+| Site tree | captured | [site-tree.md](site-tree.md) |
 | Icons | partly | no `icons/` kept (brand artwork, docs/RIGHTS.md) |
 | Fonts | captured | families and scale in `core.font` |
 
 ## How the values were read
 
-Every surface is public, so pages were captured signed out in headless Chromium: a script tours the routes at 1440 x 900 and 390 x 844 at 2x, aborts the OneTrust consent SDK at request level (its banner never mounts; no consent button is ever pressed), scrolls to defeat lazy rendering, and writes raw PNGs plus a `.capture.json` per shot. Cloudflare lets each browser context load one document before Turnstile challenges, so a PDP is resolved on the catalogue page, then loaded as the first request of a fresh context. `vars.mjs` dumps declared custom properties (only app/vendor internals — recorded as evidence, not tokens); `measure.mjs` measures components on the live DOM — default, real hover, real keyboard focus, CDP-forced pressed — and crops each state at 2x. Values are tokenised only where a measurement names them; `$extensions.source` keeps the trace.
+Every surface is public. The 2026-11-21 screenshots were taken signed out in headed Chrome (`channel: chrome`), because headless Chromium is stopped by Cloudflare ("Just a moment...") on every document. A script tours the routes at 1440 x 900 and 390 x 844 at 2x, aborts the OneTrust consent SDK at request level (its banner never mounts; no consent button is ever pressed), hides the region dialog without submitting it, scrolls to defeat lazy rendering, and writes raw PNGs plus a `.capture.json` per shot. A PDP is resolved on the catalogue page, then loaded as the first request of a fresh context. `vars.mjs` dumps declared custom properties (only app/vendor internals, recorded as evidence, not tokens). `measure.mjs` measures components on the live DOM: default, real hover, real keyboard focus, CDP-forced pressed, and crops each state at 2x. Values are tokenised only where a measurement names them. `$extensions.source` keeps the trace. The 2026-11-10 computed-style readings were not rebuilt in this pass.
 
 ## Do and don't
 
@@ -142,7 +148,7 @@ Every surface is public, so pages were captured signed out in headless Chromium:
 cd systems/aesop
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
   RAW=~/.design-systems/aesop/raw-full \
-  node tools/capture/public/public.mjs          # raw captures + .capture.json
+  node tools/capture/public/public.mjs          # headed Chrome; raw captures + .capture.json
 python3 tools/capture/quantize.py ~/.design-systems/aesop/raw-full   # screenshots/
 PLAYWRIGHT=... node tools/capture/vars.mjs      # raw/css-vars.json
 PLAYWRIGHT=... node tools/capture/public/measure.mjs   # raw/components-computed.json + crops

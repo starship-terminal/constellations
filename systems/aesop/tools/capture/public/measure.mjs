@@ -17,7 +17,7 @@
 // pseudo-classes only. The OneTrust consent SDK is aborted at request level.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, closePromo, killGeo, clearChallenge, domClick, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, M, launch, patch, open, closePromo, killGeo, clearChallenge, domClick, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE, launchOptions } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};

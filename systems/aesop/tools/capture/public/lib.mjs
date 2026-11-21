@@ -41,8 +41,16 @@ export async function patch(context) {
   await context.route(/cookielaw\.org|onetrust\.com|cookiepro\.com/, (r) => r.abort());
 }
 
+export function launchOptions() {
+  // Headless Chromium is challenged by Cloudflare ("Just a moment...") on
+  // every document. Headed Chrome (channel: chrome) loads the storefront.
+  // AESOP_HEADLESS=1 keeps the old path for a host that is not challenged.
+  if (process.env.AESOP_HEADLESS === '1') return { headless: true };
+  return { headless: false, channel: process.env.AESOP_CHANNEL || 'chrome' };
+}
+
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(launchOptions());
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
@@ -88,6 +96,21 @@ export async function seedConsent(page) {
   }).catch(() => {});
 }
 
+export async function hideGeo(page) {
+  // Region interstitial ("It Seems Like You are in …"). Hide only. Never
+  // click Continue, Change region, or any country control.
+  await page.evaluate(() => {
+    for (const el of document.querySelectorAll('.c-modal, [role="dialog"]')) {
+      const t = (el.innerText || '').slice(0, 500);
+      if (/it seems like you are in|before you begin browsing|prices and payment are shown in/i.test(t)) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    }
+    document.body.classList.remove('m-lock', 'lock');
+    document.body.style.removeProperty('overflow');
+  }).catch(() => {});
+}
+
 export async function closePromo(page) {
   for (let i = 0; i < 4; i++) {
     const hit = await page.evaluate(() => {
@@ -123,6 +146,7 @@ export async function closePromo(page) {
 // Alias kept for callers that clear an interstitial before each step: the
 // sweep above covers the newsletter dialog and pop-ups.
 export async function killGeo(page) {
+  await hideGeo(page);
   await closePromo(page);
 }
 

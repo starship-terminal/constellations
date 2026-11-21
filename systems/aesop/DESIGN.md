@@ -115,7 +115,9 @@ Good for: Skincare storefront: one warm ink on a cream ground, a single tannin-a
 
 Captured 2026-11-10, signed out (every captured surface is public); US storefront Sites-aesop-us-Site, OneTrust consent SDK network-blocked. Themes: light.
 
-A token set and component reference for Aesop, the skincare house — for building storefront, campaign and editorial surfaces in the style of the real thing. Captured from the US storefront (`aesop.com`, Salesforce B2C Commerce `Sites-aesop-us-Site`) on 2026-11-10, signed out, in headless Chromium at 1440 and 390 wide: the home page and its search disclosure, sign-up modal, cart drawer and nav hover, the Shop all catalogue with its Filter-by rail, the Skin Care landing, one PDP (The Aesop Valise, APB399) with an open accordion, the store locator with its No-result dialog, the empty cart page, the Demandware sign-in page and the styled error page, plus the mobile burger drawer.
+A token set and component reference for Aesop, the skincare house, for building storefront, campaign and editorial surfaces in the style of the real thing. Captured from the US storefront (`aesop.com`, Salesforce B2C Commerce `Sites-aesop-us-Site`) on 2026-11-21, signed out, in headed Chrome (Playwright) at a measured 1440×900 and 390×844. Headless Chromium is stopped by Cloudflare on every document, so the shots use `channel: chrome`. The control map is [site-tree.md](site-tree.md).
+
+The 2026-11-21 pass covers the home page and its search disclosure, email sign-up dialog, account sign-in dialog (login wall, not submitted), cart drawer and Skin Care flyout, Shop all with the Filter-by rail, Skin Care, Gifts, Library, Experience, Our story, Contact us, Gift Finder, The Aesop Gift Gathering, the site map, one PDP (The Aesop Valise, APB399) with an open accordion, the store locator (map tiles painted out), the empty cart, the Demandware sign-in page (login wall, not submitted), the styled error pages at `/account` and `/account/login`, and the phone menu.
 
 The reason Aesop is worth a capture: a single warm ink (#333333) does text, keylines and button fills on a cream ground (#fffef2); one tannin amber (#945c26) is the only accent (badges, promos, inline links); Suisse Intl in two cuts sets everything in sentence case; rules are 1px hairlines, many drawn as box-shadows; corners are square; the footer inverts to cream-on-ink.
 
@@ -166,11 +168,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- The capture is the US storefront; other regions (different assortment, promos, footer copy) were not visited.
-- The ADD TO CART bar was caught mid-hydration labelled "Loading …" — the resting label state was not captured.
-- The sign-up modal's remote fragment never rendered in headless; the dialog was measured as an empty shell.
-- The cart drawer's body logs a JSON parse warning in headless; the drawer chrome measured fine.
-- Several components were re-measured after selector fixes; `search-panel` (its container) and `cart-close` (no measurable close button) are honest misses, and `qty-select` does not exist on a one-variant PDP.
+- The capture is the US storefront. A region dialog may name another country before it is hidden. Other regional assortments were not visited.
+- Store-locator map tiles are painted out. Street names and nearby-store lists are not in the package. Geolocate was not granted.
+- The signup dialog's empty phone field is painted out. Nothing was typed into it.
+- The Account dialog and `Login-Show` are login walls. Nothing was typed or submitted. Facebook and Google were not clicked.
+- https://www.aesop.com/account/login returns the styled error page (HTTP 404), not a form.
+- Headless Chromium does not load this storefront. Values read on 2026-11-10 came from a headless session that Cloudflare no longer allows. The 2026-11-21 screenshots are the live record. Token numbers were not re-read in this pass where the 2026-11-10 computed styles still name them.
+- The ADD TO CART bar was caught mid-hydration labelled "Loading …" on the 2026-11-10 measurement. The 2026-11-21 phone PDP shows the resting "Add to cart" label.
 
 ### Do and don't (from README.md)
 

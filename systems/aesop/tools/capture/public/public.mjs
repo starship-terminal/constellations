@@ -11,7 +11,7 @@
 // is ever clicked). The store served is the US site (Sites-aesop-us-Site).
 import fs from 'fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { M, closePromo, killGeo, clearChallenge, chromium, patch, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { M, closePromo, killGeo, clearChallenge, chromium, patch, launchOptions, UA, UA_MOBILE, BASE } from './lib.mjs';
 
 const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
 fs.mkdirSync(RAW, { recursive: true });
@@ -144,6 +144,19 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
+  login404: { path: '/account/login', run: async (p, S) => {
+    // Probe note: this URL 404s. Record the styled error page and stop.
+    await S.view('default');
+    await S.full();
+  } },
+  gifts: { path: '/gifts.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  library: { path: '/library.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  experience: { path: '/experience.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  story: { path: '/our-story.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  contact: { path: '/customer-service/contact-us.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  finder: { path: '/gift-finder/', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  gathering: { path: '/the-aesop-gift-gathering/', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  sitemap: { path: '/customer-service/customer-service-sitemap.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const mobile = {
@@ -156,6 +169,12 @@ const mobile = {
     await S.full();
   } },
   shopall: { path: '/shop-all/', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  skincare: { path: '/skin-care.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  gifts: { path: '/gifts.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  stores: { path: '/stores', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  cart: { path: '/cart', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  contact: { path: '/customer-service/contact-us.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  library: { path: '/library.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
   pdp: { resolve: (b) => resolvePdp(b, true), run: async (p, S) => {
     await S.view('default');
     await step('accordion', async () => {
@@ -166,7 +185,7 @@ const mobile = {
   } },
 };
 
-const b = await chromium.launch();
+const b = await chromium.launch(launchOptions());
 let total = 0;
 const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
 for (const { k, mob } of runs) {

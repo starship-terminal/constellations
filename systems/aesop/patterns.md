@@ -1,6 +1,6 @@
 # Aesop patterns
 
-How the components combine on each surface, with the screenshots that show them. Captured on aesop.com (US storefront) on 2026-11-10, signed out, at 1440 x 900 and 390 x 844.
+How the components combine on each surface, with the screenshots that show them. Captured on aesop.com (US storefront) on 2026-11-21, signed out, at 1440 x 900 and 390 x 844. The control map is [site-tree.md](site-tree.md).
 
 ## Shell
 
@@ -9,7 +9,8 @@ Two tiers on every page: a 30px utility row (Stores / Customer service left; Ema
 ## Overlays
 
 - **Search disclosure** — a full-width band under the nav ("I'm looking for…", a 960px field at 24px, Close at right). [home-light-search](screenshots/home-light-search.png)
-- **Email sign up modal** — a centred 970x450 cream panel; in headless its remote Demandware fragment rendered empty (see Gaps). [home-light-signup](screenshots/home-light-signup.png)
+- **Email sign up modal** — a cream panel, "Subscribe to stay in-the-know", with an email field and a submit button. The empty phone field is painted out. Not submitted. [home-light-signup](screenshots/home-light-signup.png)
+- **Account sign-in dialog** — opened from the Account control. Email, password, Stay signed in, Facebook, Google, Create My Account. Login wall. Nothing typed, nothing clicked through. [home-light-account](screenshots/home-light-account.png)
 - **My cart drawer** — a 405px right sliding panel: "My cart" head, empty-state body, secure-payment note. [home-light-cart](screenshots/home-light-cart.png)
 - **Filter rail** — a 400px left rail "Filter by / Cancel": accordion groups (Price, Skin type, Skin concern, Form, Ingredients, Aroma), RESET ALL + ink APPLY at the foot. [shopall-light-sort](screenshots/shopall-light-sort.png)
 - **No-result dialog** — the locator's "No result found" card (415px) with an ink OK dismiss.
@@ -28,4 +29,8 @@ Dark ink ground (#252525): secure-checkout and samples lines, then link columns 
 
 ## Error surfaces
 
-`/account` 404s and `Login-Show` can serve the styled "unexpected error" page, both in full chrome with a "You may also like" rail — the error pattern is designed, not bare. [notfound-light-full](screenshots/notfound-light-full.png), [login-light-default](screenshots/login-light-default.png)
+`/account` and `/account/login` both serve the styled "unexpected error" page in full chrome with a "You may also like" rail. `Login-Show` serves the Demandware sign-in form. That form is a login wall: nothing was typed or submitted. [notfound-light-default](screenshots/notfound-light-default.png), [login404-light-default](screenshots/login404-light-default.png), [login-light-default](screenshots/login-light-default.png)
+
+## 2026-11-21 surfaces
+
+Gifts, Library, Experience, Our story, Contact us, Gift Finder, The Aesop Gift Gathering and the site map use the same shell. [gifts-light-default](screenshots/gifts-light-default.png), [library-light-default](screenshots/library-light-default.png), [contact-light-default](screenshots/contact-light-default.png), [sitemap-light-default](screenshots/sitemap-light-default.png). Store-locator map tiles are painted out. [stores-light-default](screenshots/stores-light-default.png)
