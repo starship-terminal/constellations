@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-home-phone.png",
+  "sanitizedSourceUrl": "https://chatgpt.com/",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://chatgpt.com/",
+    "title": "ChatGPT: Chat, Work, Create & Code with AI",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "theme": null
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Logged-out phone homepage. Headline differs from desktop."
+}

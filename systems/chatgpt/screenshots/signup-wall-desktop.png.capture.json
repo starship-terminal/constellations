@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "signup-wall-desktop.png",
+  "sanitizedSourceUrl": "https://chatgpt.com/auth/login",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://chatgpt.com/auth/login",
+    "title": "Log in or sign up",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "theme": null
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Same empty wall as login. Sign up for free opens /auth/login. Nothing typed."
+}

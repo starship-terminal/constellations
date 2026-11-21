@@ -1,0 +1,53 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://chatgpt.com/pricing/",
+  "title": "Plans and Pricing | ChatGPT",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "dpr": 2 },
+  "dataTheme": null,
+  "colorScheme": "dark",
+  "body": { "backgroundColor": "rgb(0, 0, 0)", "color": "rgb(255, 255, 255)" },
+  "h1": {
+    "text": "Pricing",
+    "fontSize": "64px",
+    "lineHeight": "64px",
+    "fontWeight": "500",
+    "color": "rgb(255, 255, 255)"
+  },
+  "currency": "SGD",
+  "plans": [
+    { "name": "Free", "price": "SGD 0 / month", "cta": "Get Free", "href": "/" },
+    { "name": "Go", "price": "SGD 11 / month", "cta": "Get Go", "href": "https://chatgpt.com/explore/go" },
+    { "name": "Plus", "price": "SGD 30 / month", "cta": "Get Plus", "followed": false },
+    { "name": "Pro", "price": "From SGD 138 / month", "cta": "Get Pro", "followed": false }
+  ],
+  "logIn": {
+    "backgroundColor": "rgb(249, 249, 249)",
+    "color": "rgb(13, 13, 13)",
+    "fontSize": "14px",
+    "lineHeight": "20px",
+    "fontWeight": "500",
+    "height": 36,
+    "borderRadius": "pill"
+  },
+  "signUp": {
+    "backgroundColor": "rgb(33, 33, 33)",
+    "border": "1px solid rgba(255, 255, 255, 0.15)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px",
+    "lineHeight": "20px",
+    "fontWeight": "500",
+    "height": 36,
+    "borderRadius": "pill"
+  },
+  "getFree": {
+    "backgroundColor": "rgb(249, 249, 249)",
+    "color": "rgb(13, 13, 13)",
+    "fontSize": "14px",
+    "lineHeight": "22.96px",
+    "fontWeight": "500",
+    "height": 44,
+    "padding": "0 20px",
+    "borderRadius": "pill"
+  },
+  "note": "Logged out. Individual selected. Business and Enterprise not switched. Paid CTAs not clicked. Get Plus and Get Pro hrefs carried a query and were not followed."
+}

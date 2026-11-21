@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-pricing-desktop.png",
+  "sanitizedSourceUrl": "https://chatgpt.com/pricing/",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://chatgpt.com/pricing/",
+    "title": "Plans and Pricing | ChatGPT",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "theme": "dark"
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Public pricing, Individual selected, SGD. Paid CTAs not clicked."
+}
