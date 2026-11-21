@@ -1,0 +1,86 @@
+{
+  "product": "Bombas",
+  "domain": "bombas.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "region": "Public shop at https://bombas.com/. Promo bar shows Singapore. Prices read SGD.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log In",
+      "url": "https://bombas.com/",
+      "title": "Bombas. Socks, Underwear, T-Shirts, Slippers designed for comfort, quality, and impact",
+      "painted": true,
+      "headings": ["Log In"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": ["Continue with Facebook", "Continue with Google"],
+      "otherControls": ["Forgot Password?", "Sign Up", "close"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email and password were empty. Log In was not clicked. Forgot Password was not clicked. Continue with Facebook was not clicked. Continue with Google was not clicked. Sign Up was not clicked. No form was submitted."
+    },
+    {
+      "control": "login dialog Sign Up",
+      "url": "https://bombas.com/",
+      "title": "Bombas. Socks, Underwear, T-Shirts, Slippers designed for comfort, quality, and impact",
+      "painted": true,
+      "headings": ["Don't Have An Account?"],
+      "asksFor": [],
+      "identityProvidersSeen": ["Continue with Facebook", "Continue with Google"],
+      "otherControls": ["Sign Up"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Sign Up sits on the same empty Log In dialog. It was not clicked, so no separate signup form was opened."
+    },
+    {
+      "control": "footer Get 25% Off",
+      "url": "https://bombas.com/",
+      "title": "Bombas. Socks, Underwear, T-Shirts, Slippers designed for comfort, quality, and impact",
+      "painted": true,
+      "headings": ["Get 25% Off"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Sign Up"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "The newsletter email was not typed and Sign Up was not clicked."
+    },
+    {
+      "control": "header cart",
+      "url": "https://bombas.com/",
+      "title": "Bombas. Socks, Underwear, T-Shirts, Slippers designed for comfort, quality, and impact",
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Cart", "Add to Bag"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Cart is a checkout wall. The cart button was not clicked. Add to Bag was not clicked."
+    },
+    {
+      "control": "Help Start a Return or Exchange",
+      "url": "https://bombas.loopreturns.com/",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Start a Return or Exchange"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Returns host. It was listed from the Help drawer and not opened."
+    }
+  ]
+}
