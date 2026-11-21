@@ -1609,9 +1609,9 @@
       "description": "Create a Website Design Your Future",
       "status": "captured",
       "package": "systems/elementor",
-      "notes": "https://my.elementor.com/login/ shows Sign in but never rendered an email field or a button. No code was sent.",
+      "notes": "https://my.elementor.com/login/ shows Sign in but never rendered an email field or a button. No code was sent. Public walk 2026-11-21: the map starts at elementor.com and records which header, footer, and in-page control opens which page, menu, or login wall. Marketing pages, pricing, and opened menus were photographed at desktop and phone. Login now renders an email field, Continue, Google, passkey, and SSO at https://my.elementor.com/login/. Nothing was typed. Those controls were not clicked. Sign up and checkout were recorded and not opened. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1658 at 8b76579ca716. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 5
     },
     {
