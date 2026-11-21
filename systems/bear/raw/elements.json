@@ -1,0 +1,485 @@
+{
+  "capturedAt": "2026-11-22",
+  "home": {
+    "url": "https://bear.app/",
+    "vars": {
+      "--background-color": {
+        "raw": "#fff",
+        "computedColor": "rgb(255, 255, 255)",
+        "computedBackground": "rgb(255, 255, 255)"
+      },
+      "--background-secondary-color": {
+        "raw": "#F3F5F7",
+        "computedColor": "rgb(243, 245, 247)",
+        "computedBackground": "rgb(243, 245, 247)"
+      },
+      "--background-tertiary-color": {
+        "raw": "#E4E5E6",
+        "computedColor": "rgb(228, 229, 230)",
+        "computedBackground": "rgb(228, 229, 230)"
+      },
+      "--text-color": {
+        "raw": "#444444",
+        "computedColor": "rgb(68, 68, 68)",
+        "computedBackground": "rgb(68, 68, 68)"
+      },
+      "--text-secondary-color": {
+        "raw": "#888888",
+        "computedColor": "rgb(136, 136, 136)",
+        "computedBackground": "rgb(136, 136, 136)"
+      },
+      "--text-tertiary-color": {
+        "raw": "#d9d9d9",
+        "computedColor": "rgb(217, 217, 217)",
+        "computedBackground": "rgb(217, 217, 217)"
+      },
+      "--accent-color": {
+        "raw": "#DD4C4F",
+        "computedColor": "rgb(221, 76, 79)",
+        "computedBackground": "rgb(221, 76, 79)"
+      },
+      "--stroke-color": {
+        "raw": "#D9D9D9",
+        "computedColor": "rgb(217, 217, 217)",
+        "computedBackground": "rgb(217, 217, 217)"
+      },
+      "--text-font": {
+        "raw": "\"bearsans\"",
+        "computedColor": "rgb(68, 68, 68)",
+        "computedBackground": "rgba(0, 0, 0, 0)"
+      },
+      "--heading-font": {
+        "raw": "\"bearsansheadline\"",
+        "computedColor": "rgb(68, 68, 68)",
+        "computedBackground": "rgba(0, 0, 0, 0)"
+      },
+      "--code-font": {
+        "raw": "\"roboto-mono\"",
+        "computedColor": "rgb(68, 68, 68)",
+        "computedBackground": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "elements": {
+      "body": {
+        "selector": "body",
+        "text": "Bear Features Pricing Blog Community Merch Support Markdown ",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsans",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "9711px",
+        "width": "1440px"
+      },
+      "nav": {
+        "selector": "nav.navigation",
+        "text": "Bear Features Pricing Blog Community Merch Support",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "bearsans",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "64px",
+        "width": "1440px"
+      },
+      "navLink": {
+        "selector": ".navigation-menu a",
+        "text": "Features",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsans",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "20px",
+        "width": "62px"
+      },
+      "h1": {
+        "selector": "h1",
+        "text": "Markdown notes you’ll love on Mac, iPhone & iPad",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsansheadline",
+        "fontSize": "51.2px",
+        "fontWeight": "400",
+        "lineHeight": "56.32px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "119px",
+        "width": "656px"
+      },
+      "sectionHeading": {
+        "selector": "h2.section-heading",
+        "text": "Write naturally",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsansheadline",
+        "fontSize": "51.2px",
+        "fontWeight": "400",
+        "lineHeight": "56.32px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "56px",
+        "width": "960px"
+      },
+      "subtitle": {
+        "selector": ".subtitle",
+        "text": "Bear is a beautiful, powerfully simple Markdown note taking ",
+        "color": "rgb(136, 136, 136)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsans",
+        "fontSize": "22.4px",
+        "fontWeight": "400",
+        "lineHeight": "31.36px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "582.4px",
+        "height": "63px",
+        "width": "582px"
+      },
+      "button": {
+        "selector": "a.link-button",
+        "text": "Subscribe",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(221, 76, 79)",
+        "fontFamily": "bearsans",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "0.5px",
+        "borderRadius": "8px",
+        "padding": "8px 24px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "43px",
+        "width": "123px"
+      },
+      "price": {
+        "selector": ".price-tier-price",
+        "text": "$2.99/month",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsans",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "34px",
+        "width": "169px"
+      },
+      "period": {
+        "selector": ".price-tier-period",
+        "text": "/month",
+        "color": "rgb(136, 136, 136)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsans",
+        "fontSize": "20px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "25px",
+        "width": "68px"
+      },
+      "offer": {
+        "selector": ".price-tier-offer",
+        "text": "-15%",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgb(211, 255, 164)",
+        "fontFamily": "bearsans",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "4.32px",
+        "padding": "0px 5.76px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "38px",
+        "width": "51px"
+      },
+      "card": {
+        "selector": ".more-info-block",
+        "text": "Resize and crop images Keep what you need, leave out the res",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgb(243, 245, 247)",
+        "fontFamily": "bearsans",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "40px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "609px",
+        "width": "439px"
+      },
+      "ribbon": {
+        "selector": ".community-story-ribbon",
+        "text": "",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgb(221, 76, 79)",
+        "fontFamily": "bearsans",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "25.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "16px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "82px",
+        "width": "4px"
+      },
+      "storyTitle": {
+        "selector": ".community-story-title",
+        "text": "Bear 2 is a terrific notes app",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsans",
+        "fontSize": "17.6px",
+        "fontWeight": "700",
+        "lineHeight": "25.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px 0px 0px 21.12px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "26px",
+        "width": "408px"
+      },
+      "wrapper": {
+        "selector": ".wrapper",
+        "text": "Bear Features Pricing Blog Community Merch Support",
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsans",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px 32px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "960px",
+        "height": "64px",
+        "width": "960px"
+      },
+      "inlineLink": {
+        "selector": "a.apps-mac-store-button",
+        "text": "",
+        "color": "rgb(221, 76, 79)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "bearsans",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "27.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "maxWidth": "none",
+        "height": "20px",
+        "width": "243px"
+      }
+    },
+    "featureH2": [
+      {
+        "text": "Seamless Markdown",
+        "color": "rgb(69, 106, 163)",
+        "fontSize": "41.6px",
+        "fontFamily": "bearsansheadline"
+      },
+      {
+        "text": "Organize easily",
+        "color": "rgb(136, 74, 168)",
+        "fontSize": "41.6px",
+        "fontFamily": "bearsansheadline"
+      },
+      {
+        "text": "Universal beauty",
+        "color": "rgb(43, 100, 81)",
+        "fontSize": "41.6px",
+        "fontFamily": "bearsansheadline"
+      },
+      {
+        "text": "Private security",
+        "color": "rgb(68, 68, 68)",
+        "fontSize": "41.6px",
+        "fontFamily": "bearsansheadline"
+      }
+    ],
+    "proTags": [
+      {
+        "text": "PRO",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(252, 184, 39)",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "borderRadius": "4.8px",
+        "parent": "list"
+      },
+      {
+        "text": "PRO",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(221, 76, 79)",
+        "fontSize": "12.8px",
+        "fontWeight": "700",
+        "borderRadius": "3.84px",
+        "parent": ""
+      },
+      {
+        "text": "PRO",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(221, 76, 79)",
+        "fontSize": "12.8px",
+        "fontWeight": "700",
+        "borderRadius": "3.84px",
+        "parent": ""
+      },
+      {
+        "text": "PRO",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(68, 162, 229)",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "borderRadius": "4.8px",
+        "parent": "more-info-block-title"
+      },
+      {
+        "text": "PRO",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(221, 76, 79)",
+        "fontSize": "28.8px",
+        "fontWeight": "700",
+        "borderRadius": "8.64px",
+        "parent": "pricing-tier-title"
+      }
+    ]
+  },
+  "states": {
+    "link": {
+      "default": {
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(68, 68, 68) none 0px",
+        "outlineColor": "rgb(68, 68, 68)",
+        "outlineWidth": "0px",
+        "boxShadow": "none",
+        "textDecoration": "none"
+      },
+      "hover": {
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(68, 68, 68) none 0px",
+        "outlineColor": "rgb(68, 68, 68)",
+        "outlineWidth": "0px",
+        "boxShadow": "none",
+        "textDecoration": "none"
+      },
+      "focus": {
+        "color": "rgb(68, 68, 68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "outlineColor": "rgb(0, 95, 204)",
+        "outlineWidth": "1px",
+        "boxShadow": "none",
+        "textDecoration": "none"
+      }
+    },
+    "button": {
+      "default": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(221, 76, 79)",
+        "outline": "rgb(255, 255, 255) none 0px",
+        "outlineColor": "rgb(255, 255, 255)",
+        "outlineWidth": "0px",
+        "boxShadow": "none",
+        "textDecoration": "none"
+      },
+      "hover": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(221, 76, 79)",
+        "outline": "rgb(255, 255, 255) none 0px",
+        "outlineColor": "rgb(255, 255, 255)",
+        "outlineWidth": "0px",
+        "boxShadow": "none",
+        "textDecoration": "none"
+      },
+      "focus": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(221, 76, 79)",
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "outlineColor": "rgb(0, 95, 204)",
+        "outlineWidth": "1px",
+        "boxShadow": "none",
+        "textDecoration": "none"
+      }
+    }
+  },
+  "dark": {
+    "match": true,
+    "body": "rgb(68, 68, 68)",
+    "nav": "rgb(255, 255, 255)",
+    "button": "rgb(221, 76, 79)"
+  },
+  "phone": {
+    "innerWidth": 390,
+    "h1FontSize": "41.6px"
+  },
+  "code": {
+    "fontFamily": "roboto-mono",
+    "fontSize": "14.4px",
+    "color": "rgb(68, 68, 68)",
+    "backgroundColor": "rgb(243, 245, 247)",
+    "borderRadius": "4.32px"
+  }
+}
