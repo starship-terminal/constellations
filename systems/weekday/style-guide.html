@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Weekday public tokens</title>
+<style>
+  :root {
+    --ink: #1d1d1b;
+    --ink-black: #000000;
+    --page: #ffffff;
+    --promo: #ffff03;
+    --sale: #d1443b;
+    --button: #1d1d1b;
+    --on-button: #ffffff;
+    --footer-line: #b4b4b4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px;
+    background: var(--page);
+    color: var(--ink-black);
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+  }
+  h1 { font-size: 34px; letter-spacing: -0.85px; line-height: 38px; margin: 0 0 24px; }
+  h2 { font-size: 18px; letter-spacing: -0.45px; margin: 32px 0 12px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 120px; }
+  .chip { height: 48px; border: 1px solid var(--footer-line); }
+  .name { margin-top: 6px; font-size: 16px; color: var(--ink); }
+  .promo {
+    height: 58px;
+    background: var(--promo);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: ui-monospace, monospace;
+    font-size: 16px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    background: var(--page);
+    color: var(--ink);
+    font-size: 16px;
+    gap: 12px;
+  }
+  .wordmark { margin: 0 auto; font-size: 26px; letter-spacing: -0.52px; font-weight: 700; }
+  .search {
+    width: 220px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    font: inherit;
+    font-size: 16px;
+    padding: 0 8px;
+  }
+  .row { display: flex; gap: 12px; align-items: center; margin-top: 16px; }
+  .primary, .outline {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 0;
+    font: inherit;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .primary { background: var(--button); color: var(--on-button); border: 1px solid var(--button); }
+  .outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .sale { color: var(--sale); font-size: 22px; }
+  p.note { font-size: 16px; max-width: 640px; }
+</style>
+</head>
+<body>
+  <div class="promo">UP TO 50% OFF SELECTED WINTERWEAR</div>
+  <div class="header">
+    <span>WOMEN</span>
+    <span>MEN</span>
+    <input class="search" placeholder="SEARCH HERE" disabled>
+    <span class="wordmark">WEEKDAY</span>
+    <span>LOGIN</span>
+  </div>
+  <h1>WEEKDAY</h1>
+  <p class="note">Public tokens measured on weekday.com/en-ww/ on 2026-11-22. Faces in the live shop are weekdayRegularFont, weekdaySemiBoldFont, and weekdayMonoFont. This page uses Arial Narrow because those files are not in the package. The promo swatch is the computed value #ffff03. A 2x screenshot of the same bar samples near #ffff55.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#1d1d1b"></div><div class="name">ink #1d1d1b</div></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div class="name">ink-black #000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffff03"></div><div class="name">promo #ffff03</div></div>
+    <div class="swatch"><div class="chip" style="background:#d1443b"></div><div class="name">sale #d1443b</div></div>
+    <div class="swatch"><div class="chip" style="background:#b4b4b4"></div><div class="name">footer line #b4b4b4</div></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary" type="button">Add to cart</button>
+    <button class="outline" type="button">Join now</button>
+    <span class="sale">Up to 50% off</span>
+  </div>
+</body>
+</html>

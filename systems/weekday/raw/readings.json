@@ -1,0 +1,28 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.weekday.com/en-ww/",
+  "region": "Worldwide English storefront. Footer country button read Singapore. Shipping dialog confirmed Singapore / English. No second regional slug.",
+  "viewport": {"w": 1440, "h": 900, "dpr": 2, "scale": 1},
+  "notes": "getComputedStyle on the live signed-out shop. www.weekday.com geo-redirected to /en-ww/. Cookie banner dismissed with Only required cookies. Shipping dialog confirmed YES, DELIVER TO SINGAPORE. Nothing was typed. Login, favourites, cart, search submit, newsletter submit, add to cart, find in store, and store locator were not opened.",
+  "readings": [
+    {"role": "body", "page": "https://www.weekday.com/en-ww/", "color": "rgb(0, 0, 0)", "background": "rgb(255, 255, 255)", "fontFamily": "weekdayRegularFont, weekdayRegularFont Fallback, Arial Narrow, Arial, sans-serif", "fontSize": "18px", "fontWeight": "400", "lineHeight": "27px"},
+    {"role": "promo", "page": "https://www.weekday.com/en-ww/", "color": "rgb(29, 29, 27)", "background": "rgb(255, 255, 3)", "fontFamily": "weekdayMonoFont", "fontSize": "16px", "height": "58px", "sampled": "#ffff55"},
+    {"role": "header", "page": "https://www.weekday.com/en-ww/", "color": "rgb(29, 29, 27)", "background": "rgb(255, 255, 255)", "height": "56px", "borderBottom": "none"},
+    {"role": "nav", "page": "https://www.weekday.com/en-ww/", "text": "WOMEN", "color": "rgb(29, 29, 27)", "fontFamily": "weekdayRegularFont", "fontSize": "16px", "fontWeight": "400", "padding": "8px 12px", "height": "56px", "textTransform": "none"},
+    {"role": "login", "page": "https://www.weekday.com/en-ww/", "text": "LOGIN", "color": "rgb(29, 29, 27)", "fontSize": "16px", "fontWeight": "400", "padding": "8px 16px", "height": "56px", "width": "101px", "textTransform": "uppercase", "clicked": false},
+    {"role": "search", "page": "https://www.weekday.com/en-ww/", "placeholder": "SEARCH HERE", "color": "rgb(29, 29, 27)", "fontSize": "16px", "padding": "16px 56px 16px 48px", "height": "56px", "width": "394px", "typed": false},
+    {"role": "home-title", "page": "https://www.weekday.com/en-ww/", "text": "WEEKDAY", "color": "rgb(0, 0, 0)", "fontFamily": "weekdaySemiBoldFont", "fontSize": "34px", "fontWeight": "400", "lineHeight": "38px", "letterSpacing": "-0.85px", "padding": "0px 0px 18px"},
+    {"role": "hero-title", "page": "https://www.weekday.com/en-ww/", "text": "WOMEN", "color": "rgb(0, 0, 0)", "fontFamily": "weekdaySemiBoldFont", "fontSize": "26px", "fontWeight": "400", "lineHeight": "30px", "letterSpacing": "-0.52px"},
+    {"role": "sale", "page": "https://www.weekday.com/en-ww/", "text": "UP TO 50% OFF", "color": "rgb(209, 68, 59)", "fontFamily": "weekdayRegularFont", "fontSize": "22px", "fontWeight": "400"},
+    {"role": "join", "page": "https://www.weekday.com/en-ww/", "text": "JOIN NOW", "color": "rgb(29, 29, 27)", "background": "rgba(0, 0, 0, 0)", "border": "1px solid rgb(29, 29, 27)", "fontSize": "16px", "fontWeight": "400", "height": "40px", "width": "137px", "borderRadius": "0px", "textTransform": "uppercase", "clicked": false},
+    {"role": "primary", "page": "https://www.weekday.com/en-ww/", "text": "YES, DELIVER TO SINGAPORE", "color": "rgb(255, 255, 255)", "background": "rgb(29, 29, 27)", "fontSize": "16px", "fontWeight": "400", "height": "40px", "borderRadius": "0px"},
+    {"role": "add-to-cart", "page": "https://www.weekday.com/en-ww/p/women/jeans/flared-fit/aura-low-rise-relaxed-bootcut-jeans-marina-blue-dark-blue-1337521004/", "color": "rgb(255, 255, 255)", "background": "rgb(29, 29, 27)", "fontFamily": "weekdayRegularFont", "fontSize": "16px", "fontWeight": "400", "height": "40px", "width": "432px", "borderRadius": "0px", "clicked": false},
+    {"role": "category-title", "page": "https://www.weekday.com/en-ww/women/view-all/", "text": "WOMEN'S CLOTHING", "fontFamily": "weekdayRegularFont", "fontSize": "18px", "fontWeight": "400"},
+    {"role": "product-title", "page": "https://www.weekday.com/en-ww/p/women/jeans/flared-fit/aura-low-rise-relaxed-bootcut-jeans-marina-blue-dark-blue-1337521004/", "text": "AURA LOW RISE RELAXED BOOTCUT JEANS", "color": "rgb(0, 0, 0)", "fontFamily": "weekdayRegularFont", "fontSize": "16px", "fontWeight": "400", "lineHeight": "22px"},
+    {"role": "price", "page": "https://www.weekday.com/en-ww/p/women/jeans/flared-fit/aura-low-rise-relaxed-bootcut-jeans-marina-blue-dark-blue-1337521004/", "text": "74.99 USD", "color": "rgb(0, 0, 0)", "fontSize": "16px"},
+    {"role": "about-title", "page": "https://www.weekday.com/en-ww/about-us/", "text": "ABOUT US", "color": "rgb(0, 0, 0)", "fontFamily": "weekdaySemiBoldFont", "fontSize": "74px", "fontWeight": "400", "letterSpacing": "1.48px", "height": "100px"},
+    {"role": "footer-heading", "page": "https://www.weekday.com/en-ww/", "text": "WEEKDAY", "color": "rgb(29, 29, 27)", "fontFamily": "weekdayRegularFont", "fontSize": "18px", "fontWeight": "400", "lineHeight": "22px", "letterSpacing": "-0.45px"},
+    {"role": "footer-link", "page": "https://www.weekday.com/en-ww/", "color": "rgb(29, 29, 27)", "fontSize": "16px", "height": "30px"},
+    {"role": "footer-border", "page": "https://www.weekday.com/en-ww/", "border": "1px solid rgb(180, 180, 180)"}
+  ]
+}
