@@ -1,75 +1,53 @@
 # Portrait components
 
-Values are computed styles from portrait.so on 2026-11-19, viewport 1169 by 731. The preview browser did not produce screenshot frames, so this file has no crops. A state that was not on the page is a gap.
+Values are computed styles from portrait.so on 2026-11-21, viewport 1440 by 900, unless a row says 2026-11-19. Crops are in [components/crops/](components/crops). A state that was not on the public page is a gap.
 
 ## Button
 
-Primary face (Create your Portrait, Apply for early access, Get Plus): background `#2c2c2c` (`gray.700`), text white, height 44px, padding 0 20px, pill radius, font-weight 540, stacked shadow at 3% black. Hover class on the quiet sibling is `bg-gray-25`. Live hover was not read: the preview snapshot could not land on the control.
+Primary face (Create your Portrait on `/pages`, Apply for early access on `/wallet`): inner span background `#2c2c2c` (`gray.700`), text white, height 44px, padding 0 20px, pill radius, font-weight 540, stacked shadow at 3% black. The outer button is transparent. See [button-primary-default.png](components/crops/button-primary-default.png).
 
-Sign up: white inner face, text `#2c2c2c`, height 36px in the header (inner face 30px), 3px rainbow ring. The ring is `linear-gradient(90deg, #26c0ff, #e600c2 20%, #ff494e 40%, #ffa13e 60%, #ffc837 80%, #00cc3d)`.
+Sign up: white inner face, text `#2c2c2c`, height 36px in the header, inner face 30px. The ring is `linear-gradient(90deg, rgb(38, 192, 255), rgb(230, 0, 194) 20%, rgb(255, 73, 78) 40%, rgb(255, 161, 62) 60%, rgb(255, 200, 55) 80%, rgb(0, 204, 61))`. See [button-signup-default.png](components/crops/button-signup-default.png).
 
-Log in: transparent face, text `#585858`, height 36px, padding 0 16px, pill. Focused outline-color `#e59700`, outline-style none, width 1px.
+Log in: transparent face, text `#585858`, height 36px, padding 0 16px, pill, weight 540, 14px. Focused outline was `1px none rgb(0, 95, 204)`: no ring was painted. See [button-login-default.png](components/crops/button-login-default.png).
 
-Accept (terms): background `#121212`, text white, height 46px, padding 12px 16px, radius 12px.
+Points "Sign up or log in": dark pill, not clicked. See [button-points-default.png](components/crops/button-points-default.png).
 
-Editor Publish: dark face `#141414`, white text, rainbow ring, height 44px. Editor Account: white at 14% fill, white at 20% border, height 44px, pill.
+Editor Login: white pill on the signed-out wall. Not clicked. See [button-editor-login-default.png](components/crops/button-editor-login-default.png).
 
-Disabled, loading, and pressed were not on the page.
+Disabled, loading, pressed, and a live hover were not captured on this pass.
 
 ## Link
 
-Footer links (Overview, Pages, Wallet, Pay) computed 16px, color `#797979`. Header wallet link is a pill, 36px tall. Underline on hover is a class (`hover:underline`), not a live hover read.
+Footer links (Pages and the rest) computed 16px, color `#797979`. The wallet announcement is a pill link. See [link-wallet-pill-default.png](components/crops/link-wallet-pill-default.png).
 
 ## Text field
 
-Homepage username field: white wrapper, 1px border `#dedede`, pill, height 80px. Input padding `0 140px 0 210px`, font 36px, color `#1b1b1b`, placeholder "username".
-
-Sign-in email field: white, border `#ebebeb`, radius 25px, height 50px, padding `12px 88px 12px 52px`, font 14px, color `#4d4d4d`, placeholder "your@email.com".
-
-Confirmation code: six cells, 46 by 58px, radius 12px, font 18px, white fill. The focused cell border was `#121212`. The others were `#ebebeb`.
+Homepage username field: input height 78px, padding `0 140px 0 210px`, font 36px, color `#1b1b1b`, placeholder "username", empty. The email field from 2026-11-19 was not opened. Sign in with email was not clicked.
 
 ## Text area, select, checkbox, radio, switch
 
-Not present on the public pages or the email sign-in dialog.
+Not present on the public pages or the empty Sign in dialog.
 
 ## Tabs
 
-Points page: Dashboard is a white tab, 220 by 28px, radius 6px, padding 4px 12px, text `#202020`, weight 500. Leaderboard was labelled "(soon)" and was not a second measured tab.
+Points page: Dashboard is the selected tab. Leaderboard is labelled "(soon)" and was not a second measured control. See [screenshots/points-light-default.png](screenshots/points-light-default.png).
 
 ## Menu
 
-Editor account menu: 272 by 200px, padding 6px, radius 20px, background black at 80%, border white at 12%. Items 244 by 44px, radius 8px, padding 0 12px, text `#c7c7c7`. System, the current appearance, had a white 8% fill and white text. Cancel was `#9f9f9f`.
-
-## Tooltip, toast, table, list row
-
-Not present on the captured pages.
+Desktop Menu (`aria-label="Menu"`) stayed `aria-expanded="false"` after a click at 1440. At 390 it opens a drawer with Home and Introducing Portrait Wallet. See [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). The 2026-11-19 editor account menu was not re-opened.
 
 ## Dialog
 
-Sign-in dialog: 420 by 277px, white, radius 16px, 1px white border, the same stacked 3% shadow as the primary button. Title "Sign in" in Basier Circle, 20px, weight 600, color `#202020`. Options: Sign in with Portrait Wallet, Sign in with email, Sign in with other wallet. Each option face was white, text `#2c2c2c`, height 44px, pill, padding `0 20px 0 16px`.
+Log in and Sign up open one dialog, 420 by 277 px, white, radius 16 px, text `#202020`. Buttons: Close, Sign in with Portrait Wallet, Sign in with email, Sign in with other wallet. None of the three sign-in buttons were clicked. No email field was on screen. See [dialog-signin-default.png](components/crops/dialog-signin-default.png).
 
-The email step and the confirmation-code step replaced that dialog. The terms step used a 12px Accept button. The welcome step said the account was created. Those later steps were measured as text and controls, not as a second dialog box size.
+## Card, badge, avatar
 
-## Card
+New badge: background `#dff3ff`, text `#084e72`, 12px, weight 600, height 24px, pill, padding 0 10px. See [badge-new-default.png](components/crops/badge-new-default.png). Blog cards are on [screenshots/blog-light-default.png](screenshots/blog-light-default.png). Editor avatar was not re-measured.
 
-Blog card: 506 by 455px, radius 16px, background white at 40%, a 10% black shadow. Points summary cells were transparent, 224 by 50px, no radius.
+## Tooltip, toast, table, list row
 
-## Avatar
+Not present.
 
-Editor Account control includes a 28px round avatar. No initials were read.
+## Empty states
 
-## Badge
-
-"New" on the wallet announcement: background `#dff3ff`, text `#084e72`, 12px, weight 600, padding 0 10px, pill, height 24px.
-
-"NEW" on the wallet section: background `#ffebd6`, text `#bd6100`, 11px, weight 500, padding 1px 5px, radius 4px.
-
-"DIGITAL" on a demo product card: violet-600 (`oklch(0.541 0.281 293.009)`), white text, 10px, weight 700, tracking 0.25px, padding 2px 10px, pill.
-
-## Gaps
-
-- No screenshots or crops. The preview browser returned "The browser is not producing screenshot frames".
-- Hover, pressed, disabled, and loading were not held on a live element.
-- Text area, select, checkbox, radio, switch, tooltip, toast, table, and list row were not on the captured pages.
-- Phone width (390) was not measured. The viewport stayed 1169 by 731.
-- Wallet connect, card, and payment were not entered.
+`/pricing`, `/plus`, and `/signup` render "Uh oh / This user does not exist." with Go to home. See [screenshots/missing-light-default.png](screenshots/missing-light-default.png). `/editor` renders "You are not logged in" and a Login button that was not clicked. See [screenshots/editor-light-wall.png](screenshots/editor-light-wall.png).

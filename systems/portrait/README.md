@@ -1,19 +1,24 @@
 # Portrait
 
-Portrait (portrait.so) is a link-in-bio and wallet product. This package records the public marketing pages and the signed-out email sign-in, plus the editor shell that appears after an email-only signup. Captured 2026-11-19 from a live preview tab at 1169 by 731, light color scheme. No account name is stored. The preview browser did not produce screenshot frames.
+**Boundary:** the 2026-11-21 refresh is public only. The Sign in dialog and the editor wall were photographed empty and the branch stopped. `login-extracted` stays `not-started`. `catalog.json` was left alone, so the generated overview line below still quotes the 2026-11-19 access note.
+
+Portrait (portrait.so) is a link-in-bio and wallet product. Refreshed 2026-11-21 from the public site only, in headless Chrome at 1440 by 900 (devicePixelRatio 1) and 390 by 844 (devicePixelRatio 2). The page paints light (`#f7f7f7`, `data-mode="light"`). Surfaces: home, Pages, Wallet, Pay, Hosting, Blog, one blog post, Points, the missing-user page, the empty Sign in dialog, and the empty editor wall. No email, password, code, phone or address was typed. Identity providers were not clicked. `login-extracted` stays not-started. The control map is [site-tree.md](site-tree.md).
 
 | Path | Holds |
 |---|---|
 | [README.md](README.md) | This file |
 | [DESIGN.md](DESIGN.md) | Generated from tokens.json |
-| [tokens.json](tokens.json) | Measured colour ramps; type, radius, spacing, and component roles typed in from live readings (labelled Reconstruction) |
+| [tokens.json](tokens.json) | Measured colour ramps and the public component roles |
 | [style-guide.html](style-guide.html) | A small page of the measured roles |
 | [components.md](components.md) | Component inventory and gaps |
-| [patterns.md](patterns.md) | Marketing shell, sign-in, editor |
+| [patterns.md](patterns.md) | Marketing shell, sign-in dialog, empty editor wall |
+| [site-tree.md](site-tree.md) | Which control opens which page, drawer, or dialog |
+| [login-review.json](login-review.json) | Empty login and signup walls. Probe stopped there |
 | [icon.png](icon.png) | Site icon, 128px, from the apple touch icon |
-| [icons/](icons/INDEX.tsv) | No extracted icons |
-| [raw/](raw/css-vars.json) | Declared colour custom properties and the measurement notes |
-| [tools/](tools/build_tokens.py) | The builder and a resolver test |
+| [screenshots/](screenshots) | Public pages, the empty walls, and phone width |
+| [components/crops/](components/crops) | Control crops from the public pages |
+| [raw/](raw) | Computed custom properties and the 2026-11-21 readings |
+| [tools/](tools) | The builder and a resolver test |
 
 <!-- brief:start -->
 ## Brief
@@ -24,7 +29,12 @@ Read this before designing in this style. Take every value from [tokens.json](to
 
 ### Principles
 
-The README's [Do and don't](#do-and-dont) section lists no rules.
+1. Use the navy heading on the gray page.
+2. Primary actions are dark pills.
+3. Sign up wears the rainbow ring.
+4. Stop at the Sign in dialog.
+
+Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
 ### Using tokens
 
@@ -41,7 +51,7 @@ Fonts: `core.font.family.display` is Basier Circle, then 1 fallback; `core.font.
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; no components/ (No crops. The same screenshot-frame failure blocked element captures); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 9 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -61,23 +71,25 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 Not graded yet: no scorecard snapshot reviews this package. Review it against [scorecard/criteria.json](../../scorecard/criteria.json) in the wording for its platform (`python3 tools/grade.py --criteria portrait` prints it) and merge the grades with `python3 tools/grade.py --write --review portrait=<grades.json>`.
 
-Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops. The same screenshot-frame failure blocked element captures), `screenshots/` (Preview browser returned: The browser is not producing screenshot frames. No PNG was invented).
+Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): screenshots and crops from the 2026-11-21 public pass. The health line above is the last scorecard snapshot and still describes the 2026-11-19 frame failure.
 
 <!-- health:end -->
 
 ## How the values were read
 
-Custom properties were read from `getComputedStyle(document.documentElement)` on https://portrait.so/. Component colours, sizes, radii, and padding were read from `getComputedStyle` on the live elements named in [components.md](components.md). Dark page and text colours were read after setting `data-mode="dark"` on the document. The site's own selector is `:where([data-mode="dark"], [data-mode="dark"] *)`. That pass is a forced attribute, not a click on Appearance.
+Custom properties were read from `getComputedStyle(document.documentElement)` on https://portrait.so/ at 1440 by 900. Component colours, sizes, radii and padding were read from `getComputedStyle` on the live public elements named in [components.md](components.md). The display size is the h1 at this width (76.29px). The declared clamp is in the token source.
+
+Dark page and text colours are the 2026-11-19 forced `data-mode="dark"` pass. This refresh did not force that attribute and did not find a public theme switch.
 
 ## What to distrust
 
-There are no screenshots. The preview browser returned "The browser is not producing screenshot frames". Do not treat a missing image as a measured layout.
+Screenshots are 256-colour. Read colours from [raw/css-vars.json](raw/css-vars.json) and [tokens.json](tokens.json), not from the PNGs.
 
-Only the `--color-*` custom properties were saved, in [raw/css-vars.json](raw/css-vars.json). Every other value (type, radius, spacing, sizes, shadows, motion, the component values) and each role's mapping onto a colour step was typed into the builder from live readings that were not saved, so tokens.json labels them Reconstruction. A recapture should save those readings to raw/.
+Email field, confirmation code, editor menu, and editor canvas colours are the 2026-11-19 pass. This refresh stopped before Sign in with email and did not enter the editor. Those tokens say so in their source strings.
 
-The focused Log in button reported `outline-color` #e59700, Chromium's default focus-ring colour, with `outline-style: none`: no ring was painted, so the package publishes no focus token.
+The focused Log in button reported `outline-style: none` and `outline-color: rgb(0, 95, 204)`. No ring was painted, so the package publishes no focus token.
 
-Hover classes (`group-hocus/button:bg-gray-25`, `shadow-lg`) were read from the class list, not from a live `:hover`. The forced dark pass left the h1 navy. A live Dark appearance in the editor was not applied.
+Hover was not held on the primary face. The quiet-button hover class from 2026-11-19 stays labelled as a class read.
 
 Basier Circle, Switzer, JetBrains Mono, and Open Runde are the computed family names. The token stacks are those names plus a system fallback. The files are not in this package.
 
@@ -91,40 +103,38 @@ Basier Circle is the display face (computed `__basierCircle` on headings). Switz
 
 | Item | Status |
 |---|---|
-| Colour roles, light | Captured in [tokens.json](tokens.json) |
-| Colour roles, dark | Page and text only, forced `data-mode`. Editor canvas captured live |
-| Type | Captured at 1169px. Fluid clamps are in the token sources |
+| Colour roles, light | Captured in [tokens.json](tokens.json) from the 2026-11-21 public pass |
+| Colour roles, dark | Not re-measured. Earlier forced `data-mode` only |
+| Type | Captured at 1440px. Fluid clamps are in the token sources |
 | Spacing, radius, shadow, motion | Captured from custom properties and computed styles |
-| Button | Default captured. Hover class only. Pressed, disabled, loading not on the page |
-| Link | Footer link captured |
-| Text field | Username and email fields captured. Code cells captured |
+| Button | Primary, Sign up ring, Log in, and Points CTA captured. Pressed, disabled, loading not on the page |
+| Link | Footer link and wallet pill captured |
+| Text field | Username field captured empty. Email field not opened |
 | Text area, select, checkbox, radio, switch | Not present |
-| Tabs | Points Dashboard tab captured |
-| Menu | Editor account menu captured |
-| Dialog | Sign-in dialog captured |
-| Card, badge, avatar | Captured |
+| Tabs | Points Dashboard tab photographed. Leaderboard is labelled soon |
+| Menu | Phone drawer captured. Desktop Menu did not open |
+| Dialog | Empty Sign in dialog captured. Providers not clicked |
+| Card, badge, avatar | Badge and blog card captured. Editor avatar not re-measured |
 | Tooltip, toast, table, list row | Not present |
-| Marketing shell | Captured as computed styles, no screenshot |
+| Marketing shell | Captured, with screenshots |
 | Form validation error | Not shown |
-| Phone 390 | Not captured. Viewport stayed 1169 |
-| Screenshots | Not captured. Preview frames unavailable |
+| Empty state | Missing-user page at `/pricing` and `/signup`, and the editor signed-out wall |
+| Phone 390 | Home and Wallet captured |
+| Signed-in product | Not captured. `login-extracted` stays not-started |
 
 ## Do and don't
 
-**Use the navy heading on the gray page.** Headings are `#08304c` on `#f7f7f7`. Body text is `#353535`.
-
-**Primary actions are dark pills.** Create your Portrait is `#2c2c2c`, white text, 44px, full radius.
-
-**Sign up wears the rainbow ring.** The ring is the brand gradient, not a second fill. The face stays white.
-
-**Keep the editor dark.** The editor canvas is `#141414` even when the marketing page is light.
+- Use the navy heading on the gray page. Headings are `#08304c` on `#f7f7f7`. Body text is `#353535`. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- Primary actions are dark pills. Apply for early access is `#2c2c2c`, white text, 44px, full radius. See [components/crops/button-primary-default.png](components/crops/button-primary-default.png).
+- Sign up wears the rainbow ring. The ring is the brand gradient, not a second fill. The face stays white. See [components/crops/button-signup-default.png](components/crops/button-signup-default.png).
+- Stop at the Sign in dialog. Log in and Sign up open the same empty dialog. The first step has no email field. See [screenshots/login-light-default.png](screenshots/login-light-default.png).
 
 ## Rebuild
 
 ```bash
-python3 tools/build_tokens.py
+python3 systems/portrait/tools/build_tokens.py
 python3 tools/catalog.py design-md portrait
-python3 tools/package_tests.py portrait
+python3 systems/portrait/tools/test_build_tokens.py
 ```
 
-Run those from the repository root. The package tools path is `systems/portrait/tools/`.
+Run those from the repository root. `catalog.json` was left alone. `python3 tools/catalog.py design-md portrait` rewrites only this package's DESIGN.md.
