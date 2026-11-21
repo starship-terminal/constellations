@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>Weights &amp; Biases style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-mono: ui-monospace, Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg-page); color: var(--color-text-primary); font: var(--typography-ui); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font: var(--typography-display); font-size: 40px; line-height: 1.1; }
+h2 { font: var(--typography-heading); font-size: 28px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: var(--radius-lg); border: 1px solid var(--color-border-default); }
+button.theme { margin-left: 12px; }
+.cta {
+  display: inline-block;
+  color: var(--color-text-onAccent);
+  background: linear-gradient(270deg, var(--color-gradientStart), var(--color-gradientEnd));
+  border-radius: var(--radius-lg);
+  padding: 16px 28px;
+  font: var(--typography-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p>Weights &amp; Biases public capture, 2026-11-21. <button class="theme" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle theme</button></p>
+  <h1>AI is easy to productionize</h1>
+  <p class="cta">Get started with Weave</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+</div>
+<script>
+const tokens = /*TOKENS*/null;
+const box = document.getElementById('swatches');
+function paint() {
+  const mode = document.documentElement.dataset.mode;
+  const set = tokens[mode].color;
+  box.innerHTML = '';
+  for (const [group, roles] of Object.entries(set)) {
+    for (const [role, token] of Object.entries(roles)) {
+      const el = document.createElement('div');
+      el.className = 'sw';
+      const chip = document.createElement('i');
+      chip.style.background = getComputedStyle(document.documentElement).getPropertyValue('--color-' + group + '-' + role);
+      el.append(chip, document.createTextNode(group + '.' + role));
+      box.append(el);
+    }
+  }
+}
+paint();
+document.querySelector('.theme').addEventListener('click', () => setTimeout(paint, 0));
+</script>
+</body>
+</html>

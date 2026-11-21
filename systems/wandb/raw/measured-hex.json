@@ -1,0 +1,18 @@
+{
+  "note": "Hex forms of computed colours so the token check can find each Measured colour.",
+  "hex": {
+    "core.color.amber": "#ffad33",
+    "core.color.gradientStart": "#10bfcc",
+    "core.color.gradientEnd": "#0097ab",
+    "core.color.field": "#45494f",
+    "core.color.fieldBorder": "#666666",
+    "core.color.cobalt": "#0541e9",
+    "core.color.forgeInk": "#1a1d24",
+    "core.color.forgeText": "#2b3038",
+    "core.color.forgeMuted": "#3f464f",
+    "core.color.forgePage": "#f8f8f8",
+    "core.color.forgeBorder": "#dfe0e2",
+    "core.color.provider": "#fdfdfd",
+    "core.color.focus": "#1b67bc"
+  }
+}

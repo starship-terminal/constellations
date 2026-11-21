@@ -1,0 +1,1582 @@
+{
+  "colours": {
+    "declared": 21,
+    "resolved": {
+      "--e-global-color-primary": "#FFFFFF",
+      "--e-global-color-secondary": "#FFCC33",
+      "--e-global-color-text": "#ADB0B5",
+      "--e-global-color-accent": "#00AFC2",
+      "--e-global-color-586eaa9": "#1A1C1F",
+      "--e-global-typography-primary-font-family": "\"Source Sans 3\"",
+      "--e-global-typography-primary-font-size": "20px",
+      "--e-global-typography-primary-font-weight": "400",
+      "--e-global-typography-primary-line-height": "28px",
+      "--e-global-typography-secondary-font-family": "\"Source Sans 3\"",
+      "--e-global-typography-secondary-font-size": "20px",
+      "--e-global-typography-secondary-font-weight": "400",
+      "--e-global-typography-text-font-family": "\"Source Sans 3\"",
+      "--e-global-typography-text-font-size": "14px",
+      "--e-global-typography-text-font-weight": "400",
+      "--e-global-typography-text-line-height": "28px",
+      "--e-global-typography-accent-font-family": "\"Source Sans 3\"",
+      "--e-global-typography-accent-font-size": "16px",
+      "--e-global-typography-accent-font-weight": "400",
+      "--e-global-typography-accent-line-height": "18px",
+      "--e-global-typography-8d864dc-font-weight": "400"
+    }
+  },
+  "cta": {
+    "text": "GET STARTED WITH WEAVE",
+    "href": "/site/weave/",
+    "w": 274,
+    "h": 60,
+    "color": "rgb(26, 28, 31)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "linear-gradient(270deg, rgb(16, 191, 204) 0%, rgb(0, 151, 171) 100%)",
+    "radius": "8px",
+    "font": "\"Source Sans 3\", sans-serif",
+    "size": "16px",
+    "weight": "600",
+    "transform": "uppercase",
+    "letterSpacing": "0.96px",
+    "padding": "21px 35px",
+    "shadow": "none"
+  },
+  "home-readings": {
+    "url": "https://wandb.ai/site",
+    "title": "Weights & Biases: The AI developer platform",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "colorScheme": "normal",
+    "body": {
+      "bg": "rgb(26, 28, 31)",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "20px"
+    },
+    "themeColor": null,
+    "h1": {
+      "text": "AI is easy to productionize",
+      "tag": "H1",
+      "w": 925,
+      "h": 162,
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImage": "none",
+      "font": "\"Source Serif 4\", serif",
+      "size": "72px",
+      "weight": "600",
+      "lineHeight": "72px",
+      "radius": "0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "padding": "54px 0px 36px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "shadow": "none"
+    },
+    "login": {
+      "text": "LOG IN",
+      "tag": "A",
+      "w": 51,
+      "h": 18,
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImage": "linear-gradient(rgba(47, 83, 87, 0) 0%, rgba(0, 0, 0, 0) 0%)",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lineHeight": "18px",
+      "radius": "8px",
+      "border": "0px none rgb(255, 255, 255)",
+      "padding": "0px",
+      "letterSpacing": "0.96px",
+      "textTransform": "uppercase",
+      "shadow": "none"
+    },
+    "signup": {
+      "text": "SIGN UP",
+      "tag": "A",
+      "w": 62,
+      "h": 18,
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImage": "linear-gradient(rgba(47, 83, 87, 0) 0%, rgba(0, 0, 0, 0) 0%)",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lineHeight": "18px",
+      "radius": "8px",
+      "border": "0px none rgb(255, 255, 255)",
+      "padding": "0px",
+      "letterSpacing": "0.96px",
+      "textTransform": "uppercase",
+      "shadow": "none"
+    },
+    "contact": {
+      "text": "CONTACT",
+      "tag": "A",
+      "w": 70,
+      "h": 18,
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImage": "linear-gradient(rgba(47, 83, 87, 0) 0%, rgba(0, 0, 0, 0) 0%)",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lineHeight": "18px",
+      "radius": "8px",
+      "border": "0px none rgb(255, 255, 255)",
+      "padding": "0px",
+      "letterSpacing": "0.96px",
+      "textTransform": "uppercase",
+      "shadow": "none"
+    },
+    "docs": {
+      "text": "Docs",
+      "tag": "A",
+      "w": 33,
+      "h": 20,
+      "color": "rgb(0, 175, 194)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImage": "none",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "20px",
+      "weight": "400",
+      "lineHeight": "30px",
+      "radius": "0px",
+      "border": "0px none rgb(0, 175, 194)",
+      "padding": "0px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "shadow": "none"
+    },
+    "pricing": {
+      "text": "Pricing",
+      "tag": "A",
+      "w": 47,
+      "h": 20,
+      "color": "rgb(0, 175, 194)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImage": "none",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "20px",
+      "weight": "400",
+      "lineHeight": "30px",
+      "radius": "0px",
+      "border": "0px none rgb(0, 175, 194)",
+      "padding": "0px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "shadow": "none"
+    },
+    "sales": null,
+    "varCount": 0,
+    "vars": {},
+    "signupHover": {
+      "color": "rgb(255, 173, 51)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "decoration": "none"
+    },
+    "signupFocus": {
+      "outline": "rgb(27, 103, 188) auto 1px",
+      "outlineOffset": "0.890625px",
+      "boxShadow": "none",
+      "color": "rgb(255, 173, 51)"
+    }
+  },
+  "login-readings": {
+    "url": "https://id.coreweave.com/login",
+    "title": "Forge",
+    "text": "Weights & Biases is now CoreWeave Forge. Your existing Weights & Biases credentials work here \u2014 sign in to access your projects and data. Build, train, and improve with CoreWeave Forge Run every model and agent in one connected environment\u2014without stitching together tools yourself. TRUSTED BY THE BUILDERS OF MODERN AI Looking for Cloud Console? Sign up Log in Log in to your account Your existing Weights & Biases credentials work here. Continue with Google Continue with GitHub Continue with Apple",
+    "inputs": [
+      {
+        "type": "email",
+        "label": "Email",
+        "h": 32,
+        "radius": "4px",
+        "border": "rgb(223, 224, 226)",
+        "bg": "rgb(255, 255, 255)"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Continue with Google",
+        "bg": "rgb(253, 253, 253)",
+        "color": "rgb(26, 29, 36)",
+        "radius": "8px",
+        "h": 46,
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px",
+        "weight": "500"
+      },
+      {
+        "text": "Continue with GitHub",
+        "bg": "rgb(253, 253, 253)",
+        "color": "rgb(26, 29, 36)",
+        "radius": "8px",
+        "h": 46,
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px",
+        "weight": "500"
+      },
+      {
+        "text": "Continue with Apple",
+        "bg": "rgb(253, 253, 253)",
+        "color": "rgb(26, 29, 36)",
+        "radius": "8px",
+        "h": 46,
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px",
+        "weight": "500"
+      },
+      {
+        "text": "Continue with Microsoft",
+        "bg": "rgb(253, 253, 253)",
+        "color": "rgb(26, 29, 36)",
+        "radius": "8px",
+        "h": 46,
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px",
+        "weight": "500"
+      },
+      {
+        "text": "Log in",
+        "bg": "rgb(5, 65, 233)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "4px",
+        "h": 32,
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px",
+        "weight": "500"
+      },
+      {
+        "text": "Forgot your password?",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(63, 70, 79)",
+        "radius": "4px",
+        "h": 32,
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px",
+        "weight": "500"
+      }
+    ],
+    "bg": "rgba(0, 0, 0, 0)",
+    "colorScheme": "light"
+  },
+  "login-walls": [
+    {
+      "control": "direct navigation of wandb.ai/",
+      "from": "https://wandb.ai/",
+      "url": "https://id.coreweave.com/",
+      "title": "Forge",
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "submitted": false,
+      "typed": false,
+      "stopped": true,
+      "bodyExcerpt": ""
+    },
+    {
+      "control": "direct navigation of wandb.ai/home",
+      "from": "https://wandb.ai/home",
+      "url": "https://id.coreweave.com/",
+      "title": "Forge",
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "submitted": false,
+      "typed": false,
+      "stopped": true,
+      "bodyExcerpt": "W&B"
+    },
+    {
+      "control": "header LOG IN",
+      "from": "https://id.coreweave.com/login",
+      "url": "https://id.coreweave.com/login",
+      "title": "Forge",
+      "headings": [
+        "Build, train, and improve with CoreWeave Forge",
+        "TRUSTED BY THE BUILDERS OF MODERN AI",
+        "Log in to your account"
+      ],
+      "asksFor": [
+        {
+          "tag": "input",
+          "type": "email",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "autocomplete": null,
+          "placeholder": "Search\u2026",
+          "aria": "Cookie list search",
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        }
+      ],
+      "identityProvidersSeen": [
+        "Continue with Google",
+        "Continue with GitHub",
+        "Continue with Apple",
+        "Continue with Microsoft"
+      ],
+      "submitted": false,
+      "typed": false,
+      "stopped": true,
+      "bodyExcerpt": "Weights & Biases is now CoreWeave Forge. Your existing Weights & Biases credentials work here \u2014 sign in to access your projects and data. Build, train, and improve with CoreWeave Forge Run every model and agent in one connected environment\u2014without stitching together tools yoursel"
+    },
+    {
+      "control": "header SIGN UP",
+      "from": "https://id.coreweave.com/signup",
+      "url": "https://id.coreweave.com/signup",
+      "title": "Forge",
+      "headings": [
+        "Build, train, and improve with CoreWeave Forge",
+        "TRUSTED BY THE BUILDERS OF MODERN AI",
+        "Create your account"
+      ],
+      "asksFor": [
+        {
+          "tag": "input",
+          "type": "email",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "autocomplete": null,
+          "placeholder": "Search\u2026",
+          "aria": "Cookie list search",
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "autocomplete": null,
+          "placeholder": null,
+          "aria": null,
+          "required": false
+        }
+      ],
+      "identityProvidersSeen": [
+        "Continue with Google",
+        "Continue with GitHub",
+        "Continue with Microsoft"
+      ],
+      "submitted": false,
+      "typed": false,
+      "stopped": true,
+      "bodyExcerpt": "Weights & Biases is now CoreWeave Forge. Your existing Weights & Biases credentials work here \u2014 sign in to access your projects and data. Build, train, and improve with CoreWeave Forge Run every model and agent in one connected environment\u2014without stitching together tools yoursel"
+    }
+  ],
+  "menus": {
+    "Weave": [
+      {
+        "text": "Traces Explore and debug AI applications",
+        "href": "https://wandb.ai/site/traces/",
+        "top": 179,
+        "left": 199
+      },
+      {
+        "text": "Evaluations Rigorous evaluations of AI applications",
+        "href": "https://wandb.ai/site/evaluations/",
+        "top": 259,
+        "left": 199
+      },
+      {
+        "text": "Playground Explore prompts and models",
+        "href": "https://wandb.ai/site/playground",
+        "top": 339,
+        "left": 199
+      },
+      {
+        "text": "Monitors Continuously improve in production",
+        "href": "https://wandb.ai/site/online-evaluations",
+        "top": 419,
+        "left": 199
+      },
+      {
+        "text": "GET STARTED WITH WEAVE",
+        "href": "https://wandb.ai/site/weave/",
+        "top": 698,
+        "left": 583
+      }
+    ],
+    "Solutions": [
+      {
+        "text": "Autonomous Vehicles",
+        "href": "https://wandb.ai/site/solutions/autonomous-vehicles/",
+        "top": 229,
+        "left": 249
+      },
+      {
+        "text": "Communications",
+        "href": "https://wandb.ai/site/solutions/communications-media-entertainment/",
+        "top": 279,
+        "left": 249
+      },
+      {
+        "text": "Financial Services",
+        "href": "https://wandb.ai/site/solutions/finance",
+        "top": 329,
+        "left": 249
+      },
+      {
+        "text": "Healthcare & Life Sciences",
+        "href": "https://wandb.ai/site/solutions/healthcare-and-life-sciences/",
+        "top": 379,
+        "left": 249
+      },
+      {
+        "text": "Public Sector",
+        "href": "https://wandb.ai/site/solutions/public-sector/",
+        "top": 429,
+        "left": 249
+      },
+      {
+        "text": "Scientific Research",
+        "href": "https://wandb.ai/site/solutions/scientific-research/",
+        "top": 479,
+        "left": 249
+      },
+      {
+        "text": "Case Studies",
+        "href": "https://wandb.ai/site/customers",
+        "top": 179,
+        "left": 527
+      },
+      {
+        "text": "Canva Learn how Canva leverages W&B to deploy models",
+        "href": "https://wandb.ai/site/customers/canva-model-registry",
+        "top": 229,
+        "left": 527
+      },
+      {
+        "text": "Microsoft Learn how Microsoft uses W&B for their ML projects",
+        "href": "https://wandb.ai/site/customers/how-microsoft-leveraged-weights-biases-to-build-the-models-behind-ink",
+        "top": 309,
+        "left": 527
+      },
+      {
+        "text": "Toyota Learn how Toyota uses W&B for autonomous driving",
+        "href": "https://wandb.ai/site/customers/woven",
+        "top": 389,
+        "left": 527
+      },
+      {
+        "text": "GET STARTED WITH WEAVE",
+        "href": "https://wandb.ai/site/weave/",
+        "top": 698,
+        "left": 583
+      }
+    ],
+    "Enterprise": [
+      {
+        "text": "Security",
+        "href": "https://wandb.ai/site/security",
+        "top": 155,
+        "left": 528
+      },
+      {
+        "text": "Deployment",
+        "href": "https://wandb.ai/site/for-enterprise/deployment-options/",
+        "top": 191,
+        "left": 528
+      },
+      {
+        "text": "Performance",
+        "href": "https://wandb.ai/site/models-performance",
+        "top": 227,
+        "left": 528
+      },
+      {
+        "text": "Partners",
+        "href": "https://wandb.ai/site/partners",
+        "top": 263,
+        "left": 528
+      },
+      {
+        "text": "Support",
+        "href": "https://wandb.ai/site/support",
+        "top": 299,
+        "left": 528
+      },
+      {
+        "text": "GET STARTED WITH WEAVE",
+        "href": "https://wandb.ai/site/weave/",
+        "top": 698,
+        "left": 583
+      }
+    ],
+    "Resources": [
+      {
+        "text": "AI SideQuest",
+        "href": "https://wandb.ai/site/ai-sidequest",
+        "top": 155,
+        "left": 634
+      },
+      {
+        "text": "Blog",
+        "href": "https://forge.coreweave.com/forge-reports",
+        "top": 191,
+        "left": 634
+      },
+      {
+        "text": "Articles",
+        "href": "https://wandb.ai/site/articles/",
+        "top": 227,
+        "left": 634
+      },
+      {
+        "text": "Podcast",
+        "href": "https://wandb.ai/site/resources/podcast/",
+        "top": 263,
+        "left": 634
+      },
+      {
+        "text": "Whitepapers",
+        "href": "https://wandb.ai/site/resources/whitepapers",
+        "top": 299,
+        "left": 634
+      },
+      {
+        "text": "Events & Webinars",
+        "href": "https://wandb.ai/site/resources/events/",
+        "top": 335,
+        "left": 634
+      },
+      {
+        "text": "Press",
+        "href": "https://wandb.ai/site/press-releases/",
+        "top": 371,
+        "left": 634
+      },
+      {
+        "text": "GET STARTED WITH WEAVE",
+        "href": "https://wandb.ai/site/weave/",
+        "top": 698,
+        "left": 583
+      }
+    ]
+  },
+  "contact-fields": {
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "placeholder": "First Name",
+        "name": "FirstName",
+        "w": 522,
+        "h": 42,
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(69, 73, 79)",
+        "border": "1px rgb(102, 102, 102)",
+        "radius": "3px",
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "placeholder": "Last Name",
+        "name": "LastName",
+        "w": 522,
+        "h": 42,
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(69, 73, 79)",
+        "border": "1px rgb(102, 102, 102)",
+        "radius": "3px",
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "input",
+        "type": "tel",
+        "placeholder": "Phone",
+        "name": "Phone",
+        "w": 522,
+        "h": 42,
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(69, 73, 79)",
+        "border": "1px rgb(102, 102, 102)",
+        "radius": "3px",
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "placeholder": "Company",
+        "name": "Company",
+        "w": 522,
+        "h": 42,
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(69, 73, 79)",
+        "border": "1px rgb(102, 102, 102)",
+        "radius": "3px",
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "placeholder": "Work Email",
+        "name": "Email",
+        "w": 522,
+        "h": 42,
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(69, 73, 79)",
+        "border": "1px rgb(102, 102, 102)",
+        "radius": "3px",
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "select",
+        "type": null,
+        "placeholder": null,
+        "name": "Country",
+        "w": 522,
+        "h": 42,
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(69, 73, 79)",
+        "border": "1px rgb(102, 102, 102)",
+        "radius": "3px",
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "select",
+        "type": null,
+        "placeholder": null,
+        "name": "Interested_In__c",
+        "w": 522,
+        "h": 42,
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(69, 73, 79)",
+        "border": "1px rgb(102, 102, 102)",
+        "radius": "3px",
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px"
+      },
+      {
+        "tag": "textarea",
+        "type": null,
+        "placeholder": "Comments",
+        "name": "Personal_Note_1__c",
+        "w": 522,
+        "h": 114,
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(69, 73, 79)",
+        "border": "1px rgb(102, 102, 102)",
+        "radius": "3px",
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px"
+      }
+    ],
+    "submit": {
+      "text": "SUBMIT",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 28, 31)",
+      "radius": "8px",
+      "h": 50,
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "16px",
+      "weight": "600"
+    }
+  },
+  "extras-home": {
+    "demo": {
+      "text": "REQUEST DEMO",
+      "href": "/site/contact",
+      "w": 175,
+      "h": 50,
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "1px solid rgb(173, 176, 181)",
+      "radius": "8px",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "padding": "15px 26px",
+      "letterSpacing": "0.96px",
+      "transform": "uppercase"
+    },
+    "sales": null,
+    "bar": {
+      "text": "Skip to content",
+      "href": "#content",
+      "w": 1,
+      "h": 1,
+      "color": "rgb(0, 175, 194)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 175, 194)",
+      "radius": "0px",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "20px",
+      "weight": "400",
+      "padding": "0px",
+      "letterSpacing": "normal",
+      "transform": "none"
+    }
+  },
+  "extras-pricing": [
+    {
+      "text": "GET STARTED",
+      "href": "https://id.coreweave.com/signup",
+      "w": 316,
+      "h": 49,
+      "color": "rgb(250, 250, 250)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "8px",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "16px",
+      "weight": "600"
+    },
+    {
+      "text": "CONTACT US",
+      "href": "https://wandb.ai/site/contact/",
+      "w": 316,
+      "h": 49,
+      "color": "rgb(250, 250, 250)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "8px",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "16px",
+      "weight": "600"
+    }
+  ],
+  "extras-contact": {
+    "submit": {
+      "text": "SUBMIT",
+      "w": 108,
+      "h": 50,
+      "color": "rgb(26, 28, 31)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px rgb(26, 28, 31)",
+      "radius": "8px",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "16px",
+      "weight": "600"
+    },
+    "field": {
+      "text": "First Name",
+      "w": 522,
+      "h": 42,
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(69, 73, 79)",
+      "border": "1px rgb(102, 102, 102)",
+      "radius": "3px",
+      "font": "\"Source Sans 3\", sans-serif",
+      "size": "16px",
+      "weight": "400"
+    }
+  },
+  "site-tree": {
+    "capturedAt": "2026-11-21T04:03:14.377Z",
+    "product": "Weights & Biases",
+    "domain": "wandb.ai",
+    "method": "public Playwright, signed out, no form submit, no identity provider click",
+    "roots": [
+      {
+        "requested": "https://wandb.ai/",
+        "status": 200,
+        "landed": "https://id.coreweave.com/",
+        "wall": true,
+        "facts": {
+          "title": "Forge",
+          "body": "",
+          "inputs": [],
+          "providers": []
+        }
+      },
+      {
+        "requested": "https://wandb.ai/home",
+        "landed": "https://id.coreweave.com/",
+        "wall": true,
+        "title": "Forge",
+        "status": 200
+      }
+    ],
+    "controls": [
+      {
+        "surface": "header",
+        "items": [
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://wandb.ai/site",
+            "top": 61,
+            "left": 24,
+            "w": 245,
+            "h": 48
+          },
+          {
+            "tag": "BUTTON",
+            "text": "OPEN WEAVE",
+            "href": null,
+            "top": 73,
+            "left": 370,
+            "w": 0,
+            "h": 20
+          },
+          {
+            "tag": "BUTTON",
+            "text": "OPEN SOLUTIONS",
+            "href": null,
+            "top": 73,
+            "left": 490,
+            "w": 0,
+            "h": 20
+          },
+          {
+            "tag": "BUTTON",
+            "text": "OPEN ENTERPRISE",
+            "href": null,
+            "top": 73,
+            "left": 616,
+            "w": 0,
+            "h": 20
+          },
+          {
+            "tag": "BUTTON",
+            "text": "OPEN RESOURCES",
+            "href": null,
+            "top": 73,
+            "left": 741,
+            "w": 0,
+            "h": 20
+          },
+          {
+            "tag": "A",
+            "text": "Docs",
+            "href": "https://docs.wandb.ai/",
+            "top": 73,
+            "left": 777,
+            "w": 33,
+            "h": 20
+          },
+          {
+            "tag": "A",
+            "text": "Pricing",
+            "href": "https://wandb.ai/site/privately-hosted-pricing/",
+            "top": 73,
+            "left": 846,
+            "w": 47,
+            "h": 20
+          },
+          {
+            "tag": "A",
+            "text": "CONTACT",
+            "href": "https://wandb.ai/site/contact/",
+            "top": 77,
+            "left": 1186,
+            "w": 70,
+            "h": 18
+          },
+          {
+            "tag": "A",
+            "text": "LOG IN",
+            "href": "https://id.coreweave.com/login",
+            "top": 77,
+            "left": 1273,
+            "w": 51,
+            "h": 18
+          },
+          {
+            "tag": "A",
+            "text": "SIGN UP",
+            "href": "https://id.coreweave.com/signup",
+            "top": 77,
+            "left": 1342,
+            "w": 62,
+            "h": 18
+          }
+        ]
+      },
+      {
+        "surface": "menu",
+        "opens": "Weave",
+        "via": "hover header label",
+        "links": []
+      },
+      {
+        "surface": "menu",
+        "opens": "Solutions",
+        "via": "hover header label",
+        "links": [
+          {
+            "text": "Security",
+            "href": "https://wandb.ai/site/security"
+          },
+          {
+            "text": "Deployment",
+            "href": "https://wandb.ai/site/for-enterprise/deployment-options/"
+          },
+          {
+            "text": "Performance",
+            "href": "https://wandb.ai/site/models-performance"
+          },
+          {
+            "text": "Partners",
+            "href": "https://wandb.ai/site/partners"
+          },
+          {
+            "text": "Support",
+            "href": "https://wandb.ai/site/support"
+          }
+        ]
+      },
+      {
+        "surface": "menu",
+        "opens": "Enterprise",
+        "via": "hover header label",
+        "links": [
+          {
+            "text": "AI SideQuest",
+            "href": "https://wandb.ai/site/ai-sidequest"
+          },
+          {
+            "text": "Blog",
+            "href": "https://forge.coreweave.com/forge-reports"
+          },
+          {
+            "text": "Articles",
+            "href": "https://wandb.ai/site/articles/"
+          },
+          {
+            "text": "Podcast",
+            "href": "https://wandb.ai/site/resources/podcast/"
+          },
+          {
+            "text": "Whitepapers",
+            "href": "https://wandb.ai/site/resources/whitepapers"
+          },
+          {
+            "text": "Events & Webinars",
+            "href": "https://wandb.ai/site/resources/events/"
+          },
+          {
+            "text": "Press",
+            "href": "https://wandb.ai/site/press-releases/"
+          }
+        ]
+      },
+      {
+        "surface": "menu",
+        "opens": "Resources",
+        "via": "hover header label",
+        "links": []
+      },
+      {
+        "surface": "mobile-header",
+        "width": 390,
+        "links": [
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://wandb.ai/site"
+          },
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://wandb.ai/site"
+          },
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://wandb.ai/site"
+          },
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://wandb.ai/site"
+          },
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://wandb.ai/site"
+          },
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://docs.wandb.ai/"
+          },
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://wandb.ai/site/privately-hosted-pricing/"
+          },
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://wandb.ai/site/contact/"
+          },
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://id.coreweave.com/login"
+          },
+          {
+            "tag": "A",
+            "text": "",
+            "href": "https://id.coreweave.com/signup"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "COPY",
+            "href": null
+          },
+          {
+            "tag": "A",
+            "text": "GET STARTED WITH WEAVE",
+            "href": "https://wandb.ai/site/weave/"
+          },
+          {
+            "tag": "A",
+            "text": "REQUEST DEMO",
+            "href": "https://wandb.ai/site/contact"
+          }
+        ]
+      }
+    ],
+    "pages": [
+      {
+        "name": "home",
+        "requested": "https://wandb.ai/site",
+        "landed": "https://wandb.ai/site",
+        "status": 200,
+        "wall": false,
+        "title": "Weights & Biases: The AI developer platform",
+        "theme": "normal",
+        "bg": "rgb(26, 28, 31)"
+      },
+      {
+        "name": "pricing",
+        "requested": "https://wandb.ai/site/privately-hosted-pricing/",
+        "landed": "https://wandb.ai/site/pricing-privately-hosted/",
+        "status": 200,
+        "wall": false,
+        "title": "Explore Weights & Biases pricing plans",
+        "theme": "normal",
+        "bg": "rgb(26, 28, 31)"
+      },
+      {
+        "name": "contact",
+        "requested": "https://wandb.ai/site/contact/",
+        "landed": "https://wandb.ai/site/contact/",
+        "status": 200,
+        "wall": false,
+        "title": "Connect with us at Weights & Biases for AI success",
+        "theme": "normal",
+        "bg": "rgb(26, 28, 31)"
+      },
+      {
+        "name": "weave",
+        "requested": "https://wandb.ai/site/weave/",
+        "landed": "https://wandb.ai/site/weave/",
+        "status": 200,
+        "wall": false,
+        "title": "W&B Weave: Observability for production agents\u200b",
+        "theme": "normal",
+        "bg": "rgb(26, 28, 31)"
+      },
+      {
+        "name": "about",
+        "requested": "https://wandb.ai/site/company/about-us/",
+        "landed": "https://wandb.ai/site/company/about-us/",
+        "status": 200,
+        "wall": false,
+        "title": "About Weights & Biases",
+        "theme": "normal",
+        "bg": "rgb(26, 28, 31)"
+      },
+      {
+        "name": "careers",
+        "requested": "https://wandb.ai/site/careers/",
+        "landed": "https://wandb.ai/site/careers/",
+        "status": 200,
+        "wall": false,
+        "title": "Join Weights & Biases: Career opportunities in AI",
+        "theme": "normal",
+        "bg": "rgb(26, 28, 31)"
+      },
+      {
+        "name": "brand",
+        "requested": "https://wandb.ai/site/brand-identity/",
+        "landed": "https://wandb.ai/site/brand-identity/",
+        "status": 200,
+        "wall": false,
+        "title": "Weights & Biases brand identity guidelines",
+        "theme": "normal",
+        "bg": "rgb(26, 28, 31)"
+      },
+      {
+        "name": "security",
+        "requested": "https://wandb.ai/site/security",
+        "landed": "https://wandb.ai/site/security/",
+        "status": 200,
+        "wall": false,
+        "title": "Weights & Biases' security measures",
+        "theme": "normal",
+        "bg": "rgb(26, 28, 31)"
+      },
+      {
+        "name": "docs",
+        "requested": "https://docs.wandb.ai/",
+        "landed": "https://docs.coreweave.com/forge-home",
+        "status": 200,
+        "wall": false,
+        "title": "Forge Home - CoreWeave Docs",
+        "theme": "light",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "login",
+        "requested": "https://id.coreweave.com/login",
+        "landed": "https://id.coreweave.com/login",
+        "wall": true,
+        "title": "Forge",
+        "stopped": true
+      },
+      {
+        "name": "signup",
+        "requested": "https://id.coreweave.com/signup",
+        "landed": "https://id.coreweave.com/signup",
+        "wall": true,
+        "title": "Forge",
+        "stopped": true
+      },
+      {
+        "name": "home-mobile",
+        "landed": "https://wandb.ai/site",
+        "wall": false,
+        "title": "Weights & Biases: The AI developer platform",
+        "width": 390
+      },
+      {
+        "name": "pricing-mobile",
+        "landed": "https://wandb.ai/site/pricing-privately-hosted/",
+        "wall": false,
+        "title": "Explore Weights & Biases pricing plans",
+        "width": 390
+      }
+    ],
+    "walls": [
+      {
+        "control": "direct navigation of wandb.ai/",
+        "from": "https://wandb.ai/",
+        "url": "https://id.coreweave.com/",
+        "title": "Forge",
+        "headings": [],
+        "asksFor": [],
+        "identityProvidersSeen": [],
+        "submitted": false,
+        "typed": false,
+        "stopped": true,
+        "bodyExcerpt": ""
+      },
+      {
+        "control": "direct navigation of wandb.ai/home",
+        "from": "https://wandb.ai/home",
+        "url": "https://id.coreweave.com/",
+        "title": "Forge",
+        "headings": [],
+        "asksFor": [],
+        "identityProvidersSeen": [],
+        "submitted": false,
+        "typed": false,
+        "stopped": true,
+        "bodyExcerpt": "W&B"
+      },
+      {
+        "control": "header LOG IN",
+        "from": "https://id.coreweave.com/login",
+        "url": "https://id.coreweave.com/login",
+        "title": "Forge",
+        "headings": [
+          "Build, train, and improve with CoreWeave Forge",
+          "TRUSTED BY THE BUILDERS OF MODERN AI",
+          "Log in to your account"
+        ],
+        "asksFor": [
+          {
+            "tag": "input",
+            "type": "email",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "autocomplete": null,
+            "placeholder": "Search\u2026",
+            "aria": "Cookie list search",
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          }
+        ],
+        "identityProvidersSeen": [
+          "Continue with Google",
+          "Continue with GitHub",
+          "Continue with Apple",
+          "Continue with Microsoft"
+        ],
+        "submitted": false,
+        "typed": false,
+        "stopped": true,
+        "bodyExcerpt": "Weights & Biases is now CoreWeave Forge. Your existing Weights & Biases credentials work here \u2014 sign in to access your projects and data. Build, train, and improve with CoreWeave Forge Run every model and agent in one connected environment\u2014without stitching together tools yoursel"
+      },
+      {
+        "control": "header SIGN UP",
+        "from": "https://id.coreweave.com/signup",
+        "url": "https://id.coreweave.com/signup",
+        "title": "Forge",
+        "headings": [
+          "Build, train, and improve with CoreWeave Forge",
+          "TRUSTED BY THE BUILDERS OF MODERN AI",
+          "Create your account"
+        ],
+        "asksFor": [
+          {
+            "tag": "input",
+            "type": "email",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "autocomplete": null,
+            "placeholder": "Search\u2026",
+            "aria": "Cookie list search",
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "autocomplete": null,
+            "placeholder": null,
+            "aria": null,
+            "required": false
+          }
+        ],
+        "identityProvidersSeen": [
+          "Continue with Google",
+          "Continue with GitHub",
+          "Continue with Microsoft"
+        ],
+        "submitted": false,
+        "typed": false,
+        "stopped": true,
+        "bodyExcerpt": "Weights & Biases is now CoreWeave Forge. Your existing Weights & Biases credentials work here \u2014 sign in to access your projects and data. Build, train, and improve with CoreWeave Forge Run every model and agent in one connected environment\u2014without stitching together tools yoursel"
+      }
+    ],
+    "notes": [
+      "https://wandb.ai/ redirected to a login wall. That branch stopped.",
+      "https://wandb.ai/home redirected to a login wall. Not photographed again. Branch stopped."
+    ]
+  },
+  "weave-hover": {
+    "color": "rgb(26, 28, 31)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "linear-gradient(270deg, rgb(16, 191, 204) 0%, rgb(0, 151, 171) 100%)",
+    "shadow": "none"
+  },
+  "sales": null,
+  "viewport": {
+    "homeDesktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "theme": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "normal"
+      },
+      "visualViewport": {
+        "width": 1440,
+        "height": 900,
+        "scale": 1,
+        "offsetLeft": 0,
+        "offsetTop": 0,
+        "pageLeft": 0,
+        "pageTop": 0
+      },
+      "documentSize": {
+        "width": 1440,
+        "height": 4037
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "capturedAt": "2026-11-21",
+    "note": "Desktop shots requested 1440x900 at deviceScaleFactor 1. Mobile shots requested 390x844 at deviceScaleFactor 2. Sidecars live outside the repo under the capture scratch dir."
+  },
+  "forgePanels": {
+    "panels": {
+      "surfaces": [
+        {
+          "w": 1440,
+          "h": 900,
+          "top": 0,
+          "left": 0,
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(43, 48, 56)"
+        },
+        {
+          "w": 778,
+          "h": 852,
+          "top": 48,
+          "left": 0,
+          "bg": "rgb(248, 248, 248)",
+          "color": "rgb(43, 48, 56)"
+        }
+      ],
+      "banner": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 48, 56)",
+        "h": 24,
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "16px"
+      },
+      "h1": {
+        "font": "\"Source Sans 3\", sans-serif",
+        "size": "44.8px",
+        "weight": "700",
+        "color": "rgb(26, 29, 36)",
+        "lh": "60.48px"
+      }
+    },
+    "frames": [
+      "https://wandb.ai/site"
+    ],
+    "sales": null,
+    "submit": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImage": "linear-gradient(270deg, rgb(255, 204, 51) 50%, rgb(255, 173, 51) 100%)",
+      "color": "rgb(26, 28, 31)"
+    }
+  }
+}
