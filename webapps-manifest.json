@@ -181,7 +181,7 @@
       "description": "More than sportswear and workout clothes",
       "status": "captured",
       "package": "systems/adidas",
-      "notes": "global .com Akamai IP-blocked; package covers adidas.com.cn https://www.adidas.com/us/account-login accepted the email in the field, then Continue did nothing. No code was sent and no next field appeared.",
+      "notes": "global .com Akamai IP-blocked; package covers adidas.com.cn https://www.adidas.com/us/account-login accepted the email in the field, then Continue did nothing. No code was sent and no next field appeared. Public walk 2026-11-21: www.adidas.com still returns HTTP 403 before any page renders. The China storefront header opens search as an overlay and the bag at cart. Login and the profile icon open an adiClub login drawer and stop. Catalog labels are meant to open a mega-menu that stayed hidden, so the same links were captured on the site map and, on the phone, the category tab. Phone tab bar is home, categories, bag, and account. No burger. Search was opened and not submitted. A staff password dialog had no close control and was not clicked. Privacy shots paint out a registered address and a service number. Login, checkout, orders, and employee login were not entered. No dark theme. Signed-in account was not captured. Public package refresh in PR 1615 at 421d49fe5442. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 1
