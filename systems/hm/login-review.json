@@ -1,0 +1,47 @@
+{
+  "product": "H&M",
+  "domain": "www2.hm.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in, and footer My account",
+      "url": "https://www2.hm.com/en_sg/login",
+      "title": "Login - H&M SG",
+      "painted": true,
+      "headings": ["Welcome", "Sign in with your email or sign up to become a member."],
+      "asksFor": [
+        { "label": "Email", "type": "text", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "H&M Membership"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email field was empty. Continue was visible and was not clicked. Singapore has no separate signup URL. The same wall is the start of sign up. No provider was on the form. No form was submitted."
+    },
+    {
+      "control": "US register URL, because Singapore has no register page",
+      "url": "https://www2.hm.com/en_us/register",
+      "title": "Register - H&M US",
+      "painted": true,
+      "headings": ["Become a Member"],
+      "asksFor": [
+        { "label": "Email", "type": "text", "required": true },
+        { "label": "Create a password", "type": "password", "required": true },
+        { "label": "Date of birth", "type": "number", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Toggle visibility", "Add more info to earn more points", "Sign up", "Back to sign in"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Fields were empty. Sign up was not clicked. Password visibility was not toggled. Add more info was not expanded. No provider was clicked. No form was submitted."
+    }
+  ]
+}
