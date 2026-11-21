@@ -2,7 +2,8 @@
 
 How the measured components combine on endel.io's and app.endel.io's public
 surfaces, read from the screenshots and the component entries in
-[components.md](components.md). Both hosts paint one dark theme over a pure
+[components.md](components.md). The control map is [site-tree.md](site-tree.md).
+Both hosts paint one dark theme over a pure
 black field; all values are from the dark set unless noted.
 
 ## The scrim header

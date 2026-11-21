@@ -141,6 +141,9 @@ const openLogin = async (p) => {
   await p.locator('header button').filter({ hasText: /Sign In/ }).first().click({ timeout: 8000 }).catch(() => {});
   await p.waitForURL('**/login**', { timeout: 15000 }).catch(() => {});
   await wait(p, 2500);
+  // The email field's placeholder is the product's own example address, and
+  // Chromium paints it as the field value. Hide it for the shot. Nothing is typed.
+  await p.addStyleTag({ content: 'input::placeholder{color:transparent!important}' }).catch(() => {});
 };
 
 const desktop = {
@@ -162,6 +165,7 @@ const desktop = {
   about: { url: BASE + '/about', wait: 8000, ...plain },
   blog: { url: BASE + '/blog', wait: 8000, ...plain },
   newsroom: { url: BASE + '/newsroom', wait: 8000, ...plain },
+  scenarios: { url: BASE + '/scenarios', wait: 8000, ...plain },
   'privacy-policy': { url: BASE + '/privacy-policy', wait: 7000, ...plain },
   impressum: { url: BASE + '/impressum', wait: 7000, ...plain },
   'app-explore': { url: APP + '/', wait: 9000, ...plain },
@@ -181,6 +185,7 @@ const mobile = {
   } },
   focus: { url: BASE + '/focus', wait: 8000, ...plain },
   soundscapes: { url: BASE + '/soundscapes', wait: 8000, ...plain },
+  scenarios: { url: BASE + '/scenarios', wait: 8000, ...plain },
   'app-explore': { url: APP + '/', wait: 9000, ...plain },
   'app-login': { url: APP + '/', wait: 8000, pre: openLogin, ...plain },
 };

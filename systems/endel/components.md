@@ -1,6 +1,6 @@
 # Endel components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from endel.io and app.endel.io on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from endel.io and app.endel.io on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (55 components, 138 states).
 
@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `apercuPro 22/28 400, #ffffff`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (136 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (137 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -30,6 +30,7 @@ Screenshots are named `{page}-dark-{state}.png`: the site paints one dark theme.
 | About | `https://endel.io/about` | [default](screenshots/about-dark-default.png), [full](screenshots/about-dark-full.png) |
 | Blog | `https://endel.io/blog` | [default](screenshots/blog-dark-default.png), [full](screenshots/blog-dark-full.png) |
 | Newsroom | `https://endel.io/newsroom` | [default](screenshots/newsroom-dark-default.png), [full](screenshots/newsroom-dark-full.png) |
+| Scenarios | `https://endel.io/scenarios` | [default](screenshots/scenarios-dark-default.png), [full](screenshots/scenarios-dark-full.png) |
 | Privacy Policy | `https://endel.io/privacy-policy` | [default](screenshots/privacy-policy-dark-default.png), [full](screenshots/privacy-policy-dark-full.png) |
 | Impressum | `https://endel.io/impressum` | [default](screenshots/impressum-dark-default.png), [full](screenshots/impressum-dark-full.png) |
 | Web app, explore (signed out) | `https://app.endel.io/` | [default](screenshots/app-explore-dark-default.png), [full](screenshots/app-explore-dark-full.png) |
@@ -38,6 +39,7 @@ Screenshots are named `{page}-dark-{state}.png`: the site paints one dark theme.
 | Home, phone | `https://endel.io/` | [default](screenshots/mobile-home-dark-default.png), [full](screenshots/mobile-home-dark-full.png), [menu-open](screenshots/mobile-home-dark-menu-open.png) |
 | Focus, phone | `https://endel.io/focus` | [default](screenshots/mobile-focus-dark-default.png), [full](screenshots/mobile-focus-dark-full.png) |
 | Soundscapes, phone | `https://endel.io/soundscapes` | [default](screenshots/mobile-soundscapes-dark-default.png), [full](screenshots/mobile-soundscapes-dark-full.png) |
+| Scenarios, phone | `https://endel.io/scenarios` | [default](screenshots/mobile-scenarios-dark-default.png), [full](screenshots/mobile-scenarios-dark-full.png) |
 | Web app explore, phone | `https://app.endel.io/` | [default](screenshots/mobile-app-explore-dark-default.png), [full](screenshots/mobile-app-explore-dark-full.png) |
 | Web app sign-in, phone | `https://app.endel.io/ via Sign In` | [default](screenshots/mobile-app-login-dark-default.png), [full](screenshots/mobile-app-login-dark-full.png) |
 
@@ -497,11 +499,11 @@ The premium upsell inside the timer dialog. Measured, never pressed (it starts c
 The sign-in/register panel the app's own Sign In button navigates to.
 
 #### Sign-in card
-The "Sign In or Register" panel: email field, Continue and the OAuth buttons. Nothing was submitted. Read as `login-card` on the web app's sign-in page.
+The "Sign In or Register" panel: an empty email field, Continue, and three icon-only identity-provider buttons (Google, Apple, Facebook). Nothing was typed or submitted. The provider buttons were not clicked. Read as `login-card` on the web app's sign-in page.
 
 **Values (default).** size 564 x 665; padding 88px 0px; background transparent; text apercuProRegular 44/normal 400, #ffffff `color.neutral.white`; icon 24 x 24, #ffffff `color.neutral.white`.
 
-Child layers that carry the look: input 564x62 border 2px solid #808080 `color.neutral.500` radius 12px; button 564x56 background #262626 `color.neutral.700` border 2px solid #ffffff `color.neutral.white` radius 12px; div::before 258.156pxx2px image linear-gradient(90deg, transparent 0%, #262626 `color.neutral.700` 100%) radius 2px.
+Child layers that carry the look: input 564x62 border 2px solid #808080 `color.neutral.500` radius 12px; button 564x56 background #262626 `color.neutral.700` border 2px solid #ffffff `color.neutral.white` radius 12px; div::before 258.141pxx2px image linear-gradient(90deg, transparent 0%, #262626 `color.neutral.700` 100%) radius 2px.
 
 ![Sign-in card default](components/crops/login-card-default.png)
 
@@ -510,7 +512,7 @@ Read default and focused; no address was ever typed on this page. Read as `input
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 564 x 62; padding 16px 12px 14px 12px; border 2px solid #808080 `color.neutral.500`; radius 12px; background transparent; text apercuProRegular 22/22 400, #ffffff `color.neutral.white`; placeholder #757575 |
+| default | size 564 x 62; padding 16px 12px 14px 12px; border 2px solid #808080 `color.neutral.500`; radius 12px; background transparent; text apercuProRegular 22/22 400, #ffffff `color.neutral.white`; placeholder transparent |
 | focused | border 2px solid #ffffff `color.neutral.white`; child paint input.Input-module__iEWt7a__input: border 2px solid #ffffff `color.neutral.white` |
 
 ![Email field (sign-in) default](components/crops/input-email-login-default.png) ![Email field (sign-in) focused](components/crops/input-email-login-focused.png)
@@ -527,8 +529,8 @@ Submits the sign-in form. Measured in all states, never pressed for real. Read a
 
 ![Continue button default](components/crops/btn-continue-default.png) ![Continue button hover](components/crops/btn-continue-hover.png) ![Continue button focus-visible](components/crops/btn-continue-focus-visible.png) ![Continue button pressed](components/crops/btn-continue-pressed.png)
 
-#### OAuth button
-One of the icon-only provider buttons (Apple, Facebook). Measured, never pressed. Read as `btn-oauth` on the web app's sign-in page.
+#### Identity-provider button
+The Google icon button on the sign-in card. Apple and Facebook sit beside it. Measured, never pressed. Read as `btn-oauth` on the web app's sign-in page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -537,7 +539,7 @@ One of the icon-only provider buttons (Apple, Facebook). Measured, never pressed
 | focus-visible | shadow #666666 0px 0px 0px 6px; child paint button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic: shadow rgb(102, 102, 102) 0px 0px 0px 6px |
 | pressed | border 2px solid #808080 `color.neutral.500`; background #808080 `color.neutral.500`; child paint button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic: background #808080 `color.neutral.500`; border 2px solid #808080 `color.neutral.500` |
 
-![OAuth button default](components/crops/btn-oauth-default.png) ![OAuth button hover](components/crops/btn-oauth-hover.png) ![OAuth button focus-visible](components/crops/btn-oauth-focus-visible.png) ![OAuth button pressed](components/crops/btn-oauth-pressed.png)
+![Identity-provider button default](components/crops/btn-oauth-default.png) ![Identity-provider button hover](components/crops/btn-oauth-hover.png) ![Identity-provider button focus-visible](components/crops/btn-oauth-focus-visible.png) ![Identity-provider button pressed](components/crops/btn-oauth-pressed.png)
 
 ### Footer
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T02:45:19.899Z",
+  "capturedAt": "2026-11-21T10:49:19.914Z",
   "screenshot": "mobile-focus-dark-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 5176
     },
     "documentSize": {
       "width": 390,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 5176
     }
   },
   "capture": {
