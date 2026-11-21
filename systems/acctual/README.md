@@ -1,8 +1,8 @@
 # Acctual design reference
 
-A token set and component reference for Acctual's public marketing site, for building an invoicing/fintech marketing page in the style of a real payments company. It was read from acctual.com on 2026-11-10, signed out, in headless Chromium at 1440 wide and 390 wide: the home page, pricing, teams, about, the blog index and one post, the Altitude announcement, the freelancer/stablecoin/location landing pages, and the terms and privacy pages. The look is a quiet `#fafafa` ground with ink text, a single `#0098f2` blue accent on links and check bullets, and every action inside a `#0d111b` capsule — a frosted nav pill floats on top.
+A token set and component reference for Acctual's public marketing site, for building an invoicing/fintech marketing page in the style of a real payments company. It was read from acctual.com on 2026-11-10 and recaptured on 2026-11-21, signed out, in headless Chromium at 1440x900 and 390x844. The 2026-11-21 pass mapped the public site tree first ([site-tree.md](site-tree.md)), then captured every reachable marketing page, the footer-linked posts, the public help centre at guides.acctual.com, and the phone menu. The look is a quiet `#fafafa` ground with ink text, a single `#0098f2` blue accent on links and check bullets, and every action inside a `#0d111b` capsule. A frosted nav pill floats on top.
 
-Acctual's product (the invoicing app at app.acctual.com) is a different surface; this package is the marketing site only. The interactive invoice in the home hero is a marketing demo, not the app. Nothing was signed into, sent or submitted: the Log-in and Sign-up links were never opened, the mobile menu and one FAQ question were the only controls pressed (both local disclosures), and no consent banner ever rendered.
+Acctual's product (the invoicing app at app.acctual.com) is a different surface. The interactive invoice in the home hero is a marketing demo, not the app. Nothing was signed into, sent or submitted. `https://app.acctual.com/sign-in` was opened only far enough to record the wall (email, password, Continue with Google) and that branch stopped: nothing was typed and Google was not clicked. The phone menu and one FAQ question were the only controls pressed (both local disclosures). No consent banner rendered.
 
 | File | What it is |
 |---|---|
@@ -12,9 +12,10 @@ Acctual's product (the invoicing app at app.acctual.com) is a different surface;
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components (the frosted nav pill, the capsule buttons, the count pill and check bullets, a persona card, fee rows, the FAQ accordion, a dark panel, the footer) with the real values, states side by side |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (49) written in tokens with crops of the real product, the shared values (focus, pressed, motion, layout grid, card shapes), the icon index, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the shared shell, the centred-hero marketing page, the programmatic landing page, the legal text page, forms and consent handling, and the mobile fold |
-| [components/crops/](components/crops) | 89 element screenshots, `{component}-{state}.png`, at 2x |
+| [components/crops/](components/crops) | 88 element screenshots, `{component}-{state}.png`, at 2x |
 | [icons/](icons) | 54 SVGs lifted from the pages (the wordmark, the menu trigger, the fee and persona marks, social marks), named by role in [icons/INDEX.tsv](icons/INDEX.tsv). Acctual's property, kept for reference only |
-| [screenshots/](screenshots) | 30 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the same width; `mobile-*` shots are 390 wide at 2x. The mobile home also keeps the opened-menu state |
+| [site-tree.md](site-tree.md) | The public control map, written before screenshots on 2026-11-21: which control opens which page, menu, or auth wall |
+| [screenshots/](screenshots) | 99 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the same width; `mobile-*` shots are 390 wide at 2x. The mobile home also keeps the opened-menu state. Guide full shots are tiles of the docs pane's inner scroller |
 | [raw/](raw) | The unprocessed readings: the resolved `--token-<uuid>` custom properties (`css-vars.json`), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at four widths (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars are working evidence, not committed (see Rebuild for how `public.mjs` re-takes them) |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild |
 
@@ -133,9 +134,14 @@ Open Runde ships through Google Fonts, so the style guide previews in the real f
 | Text field, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, avatar, list row, icon button | not present | none exist on the public marketing surface (the demo's fields are mock artwork) |
 | States | captured | hover, focus-visible (browser ring), pressed (forced), open (mobile menu, FAQ); disabled, error, loading, selected never appear |
 | App shell and navigation, the marketing page, landing page, legal text, mobile fold | captured | [patterns.md](patterns.md) |
-| Product app, sign-in, sign-up, checkout | not captured | app.acctual.com was never opened; the home invoice mock is a demo |
-| Light theme, 1440 and 390 | captured | [screenshots/](screenshots): 12 desktop pages (default + full), mobile home + pricing |
+| Product app, sign-in, sign-up, checkout | not captured | `https://app.acctual.com/sign-in` asks for an email, a password, or Google. The probe recorded that wall and stopped. Nothing was typed. Google was not clicked. The home invoice mock is a demo |
+| Light theme, 1440 and 390 | captured | [screenshots/](screenshots): marketing pages, footer posts, help-centre samples, phone menu |
+| Site tree | captured | [site-tree.md](site-tree.md) |
+| Public help centre | captured | guides.acctual.com getting started, overview, create invoice, pay a bill, rates. Remaining guide pages share that template |
+| help.acctual.com | not captured | HTTP 403 from this client (Cloudflare CNAME ban) |
 | Icons and fonts | captured | [icons/INDEX.tsv](icons/INDEX.tsv); Fonts above |
+| Remaining blog posts and corridors | not captured as separate screens | Same article and corridor templates. The index, one representative post, the footer-linked posts, and two corridors are captured. The rest are listed in [site-tree.md](site-tree.md) |
+| Product app | not captured | `https://app.acctual.com/sign-in` asks for email and password, or Google. Nothing typed. Google not clicked |
 
 ## Do and don't
 
