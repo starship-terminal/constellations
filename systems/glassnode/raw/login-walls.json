@@ -1,0 +1,15 @@
+{
+  "capturedAt": "2026-11-21T02:20:48.951Z",
+  "login": {
+    "url": "https://auth.glassnode.com/u/login",
+    "text": "Welcome Log in to Glassnode to continue to Glassnode Studio. Email address * Password * Reset password Continue Don't have an account? Sign up OR Continue with Google",
+    "typed": false,
+    "submitted": false
+  },
+  "signup": {
+    "url": "https://auth.glassnode.com/u/signup",
+    "text": "Welcome Sign Up to Glassnode to continue to Glassnode Studio. Email address * Password * First Name* Last Name* By clicking “Continue” below, you agree to our Terms of Service and Privacy Policy. Continue Already have an account? Log in OR Continue with Google",
+    "typed": false,
+    "submitted": false
+  }
+}

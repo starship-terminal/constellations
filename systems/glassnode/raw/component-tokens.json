@@ -1,0 +1,335 @@
+{
+  "_about": "Token tree for Glassnode public capture, 2026-11-21. Studio roles are Ant Design custom properties resolved on the theme holder at studio.glassnode.com. Marketing display type is a computed style on glassnode.com h1. One light theme.",
+  "core": {
+    "color": {
+      "primary": {
+        "var": "--ant-color-primary",
+        "type": "color"
+      },
+      "primary-hover": {
+        "var": "--ant-color-primary-hover",
+        "type": "color"
+      },
+      "primary-active": {
+        "var": "--ant-color-primary-active",
+        "type": "color"
+      },
+      "info": {
+        "var": "--ant-color-info",
+        "type": "color"
+      },
+      "success": {
+        "var": "--ant-color-success",
+        "type": "color"
+      },
+      "warning": {
+        "var": "--ant-color-warning",
+        "type": "color"
+      },
+      "error": {
+        "var": "--ant-color-error",
+        "type": "color"
+      },
+      "link-marketing": {
+        "value": "rgb(143, 165, 246)",
+        "type": "color",
+        "source": "measured button-contact default color (marketing link blue)"
+      }
+    },
+    "font": {
+      "family": {
+        "ui": {
+          "value": "\"Inter Variable\", Inter, \"Helvetica Neue\", system-ui, sans-serif",
+          "type": "fontFamily",
+          "source": "measured button-primary default fontFamily"
+        },
+        "marketing": {
+          "value": "Inter, \"Inter Fallback\"",
+          "type": "fontFamily",
+          "source": "measured button-launch default fontFamily"
+        },
+        "display": {
+          "value": "fraktion, \"fraktion Fallback\"",
+          "type": "fontFamily",
+          "source": "measured glassnode.com h1 fontFamily"
+        },
+        "code": {
+          "var": "--ant-font-family-code",
+          "type": "fontFamily"
+        },
+        "auth": {
+          "value": "ulp-font, -apple-system, \"system-ui\", Roboto, Helvetica, sans-serif",
+          "type": "fontFamily",
+          "source": "measured auth-email default fontFamily"
+        }
+      },
+      "size": {
+        "body": {
+          "var": "--ant-font-size",
+          "type": "dimension"
+        },
+        "sm": {
+          "var": "--ant-font-size-sm",
+          "type": "dimension"
+        },
+        "lg": {
+          "var": "--ant-font-size-lg",
+          "type": "dimension"
+        },
+        "h1": {
+          "var": "--ant-font-size-heading-1",
+          "type": "dimension"
+        },
+        "h3": {
+          "var": "--ant-font-size-heading-3",
+          "type": "dimension"
+        },
+        "h4": {
+          "var": "--ant-font-size-heading-4",
+          "type": "dimension"
+        },
+        "h5": {
+          "var": "--ant-font-size-heading-5",
+          "type": "dimension"
+        },
+        "display": {
+          "value": "51.2px",
+          "type": "dimension",
+          "source": "measured glassnode.com h1 fontSize"
+        }
+      },
+      "weight": {
+        "display": {
+          "value": 700,
+          "type": "fontWeight",
+          "source": "measured glassnode.com h1 fontWeight"
+        },
+        "ui": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "measured button-primary default fontWeight"
+        }
+      }
+    },
+    "radius": {
+      "control": {
+        "var": "--ant-border-radius",
+        "type": "dimension"
+      },
+      "xs": {
+        "var": "--ant-border-radius-xs",
+        "type": "dimension"
+      }
+    },
+    "border": {
+      "width": {
+        "var": "--ant-line-width",
+        "type": "dimension"
+      },
+      "width-bold": {
+        "var": "--ant-line-width-bold",
+        "type": "dimension"
+      },
+      "width-focus": {
+        "var": "--ant-line-width-focus",
+        "type": "dimension"
+      }
+    },
+    "size": {
+      "control": {
+        "var": "--ant-control-height",
+        "type": "dimension"
+      },
+      "control-lg": {
+        "var": "--ant-control-height-lg",
+        "type": "dimension"
+      },
+      "control-sm": {
+        "var": "--ant-control-height-sm",
+        "type": "dimension"
+      },
+      "icon": {
+        "var": "--ant-font-size-icon",
+        "type": "dimension"
+      }
+    },
+    "motion": {
+      "fast": {
+        "var": "--ant-motion-duration-fast",
+        "type": "duration"
+      },
+      "mid": {
+        "var": "--ant-motion-duration-mid",
+        "type": "duration"
+      },
+      "slow": {
+        "var": "--ant-motion-duration-slow",
+        "type": "duration"
+      },
+      "ease-out": {
+        "var": "--ant-motion-ease-out",
+        "type": "cubicBezier"
+      },
+      "ease-in-out": {
+        "var": "--ant-motion-ease-in-out",
+        "type": "cubicBezier"
+      }
+    },
+    "space": {
+      "unit": {
+        "var": "--ant-size-unit",
+        "type": "dimension"
+      }
+    }
+  },
+  "light": {
+    "page": {
+      "var": "--ant-color-bg-base",
+      "type": "color"
+    },
+    "surface": {
+      "var": "--ant-color-bg-container",
+      "type": "color"
+    },
+    "raised": {
+      "var": "--ant-color-bg-elevated",
+      "type": "color"
+    },
+    "layout": {
+      "var": "--ant-color-bg-layout",
+      "type": "color"
+    },
+    "scrim": {
+      "var": "--ant-color-bg-mask",
+      "type": "color"
+    },
+    "text": {
+      "var": "--ant-color-text",
+      "type": "color"
+    },
+    "text-heading": {
+      "var": "--ant-color-text-heading",
+      "type": "color"
+    },
+    "muted": {
+      "var": "--ant-color-text-secondary",
+      "type": "color"
+    },
+    "disabled": {
+      "var": "--ant-color-text-disabled",
+      "type": "color"
+    },
+    "on-accent": {
+      "var": "--ant-color-text-light-solid",
+      "type": "color"
+    },
+    "link": {
+      "var": "--ant-color-link",
+      "type": "color"
+    },
+    "border": {
+      "var": "--ant-color-border",
+      "type": "color"
+    },
+    "border-strong": {
+      "var": "--ant-color-border-secondary",
+      "type": "color"
+    },
+    "accent": {
+      "var": "--ant-color-primary",
+      "type": "color"
+    },
+    "accent-hover": {
+      "var": "--ant-color-primary-hover",
+      "type": "color"
+    },
+    "accent-pressed": {
+      "var": "--ant-color-primary-active",
+      "type": "color"
+    },
+    "success": {
+      "var": "--ant-color-success",
+      "type": "color"
+    },
+    "warning": {
+      "var": "--ant-color-warning",
+      "type": "color"
+    },
+    "danger": {
+      "var": "--ant-color-error",
+      "type": "color"
+    },
+    "info": {
+      "var": "--ant-color-info",
+      "type": "color"
+    }
+  },
+  "component": {
+    "button": {
+      "primary-bg": {
+        "value": "rgb(26, 26, 26)",
+        "type": "color",
+        "source": "measured button-primary default backgroundColor"
+      },
+      "primary-fg": {
+        "value": "rgb(255, 255, 255)",
+        "type": "color",
+        "source": "measured button-primary default color"
+      },
+      "primary-radius": {
+        "value": "2px",
+        "type": "dimension",
+        "source": "measured button-primary default borderRadius"
+      },
+      "primary-height": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured button-primary default height"
+      },
+      "primary-font-size": {
+        "value": "14px",
+        "type": "dimension",
+        "source": "measured button-primary default fontSize"
+      },
+      "login-fg": {
+        "value": "rgb(26, 26, 26)",
+        "type": "color",
+        "source": "measured button-login default color"
+      }
+    },
+    "field": {
+      "search-bg": {
+        "value": "rgb(247, 248, 250)",
+        "type": "color",
+        "source": "measured search-field default backgroundColor"
+      },
+      "search-height": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured search-field default height"
+      },
+      "auth-height": {
+        "value": "52px",
+        "type": "dimension",
+        "source": "measured auth-email default height"
+      }
+    },
+    "type": {
+      "display-size": {
+        "value": "51.2px",
+        "type": "dimension",
+        "source": "measured glassnode.com h1 fontSize"
+      },
+      "display-line-height": {
+        "value": "61.44px",
+        "type": "dimension",
+        "source": "measured glassnode.com h1 lineHeight"
+      },
+      "display-color": {
+        "value": "rgb(51, 51, 51)",
+        "type": "color",
+        "source": "measured glassnode.com h1 color"
+      }
+    }
+  }
+}

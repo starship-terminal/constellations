@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glassnode style guide</title>
+<meta name="description" content="Glassnode public design tokens, rendered from tokens.json. One light theme.">
+<style>
+:root {
+  --color-primary: #1a1a1a;
+  --color-primary-hover: #262626;
+  --color-primary-active: #000000;
+  --color-info: #1677ff;
+  --color-success: #52c41a;
+  --color-warning: #faad14;
+  --color-error: #ff4d4f;
+  --color-link-marketing: #8fa5f6;
+  --font-family-ui: "Inter Variable", Inter, "Helvetica Neue", system-ui, sans-serif;
+  --font-family-marketing: Inter, "Inter Fallback";
+  --font-family-display: fraktion, "fraktion Fallback";
+  --font-family-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  --font-family-auth: ulp-font, -apple-system, "system-ui", Roboto, Helvetica, sans-serif;
+  --font-size-body: 14px;
+  --font-size-sm: 12px;
+  --font-size-lg: 14px;
+  --font-size-h1: 30px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-h5: 16px;
+  --font-size-display: 51.2px;
+  --font-weight-display: 700;
+  --font-weight-ui: 400;
+  --radius-control: 2px;
+  --radius-xs: 1px;
+  --border-width: 1px;
+  --border-width-bold: 2px;
+  --border-width-focus: 3px;
+  --size-control: 32px;
+  --size-control-lg: 40px;
+  --size-control-sm: 24px;
+  --size-icon: 12px;
+  --motion-fast: 100ms;
+  --motion-mid: 200ms;
+  --motion-slow: 300ms;
+  --motion-ease-out: cubic-bezier(0.215, 0.61, 0.355, 1.0);
+  --motion-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1.0);
+  --space-unit: 4px;
+  --typography-display: 700 51.2px/61.44px fraktion, "fraktion Fallback";
+  --typography-body: 400 14px/22.001px "Inter Variable", Inter, "Helvetica Neue", system-ui, sans-serif;
+  --page: #ffffff;
+  --surface: #ffffff;
+  --raised: #ffffff;
+  --layout: #f5f5f5;
+  --scrim: rgba(0, 0, 0, 0.45);
+  --text: rgba(0, 0, 0, 0.88);
+  --text-heading: rgba(0, 0, 0, 0.88);
+  --muted: rgba(0, 0, 0, 0.65);
+  --disabled: rgba(0, 0, 0, 0.25);
+  --on-accent: #ffffff;
+  --link: #1a1a1a;
+  --border: #d9d9d9;
+  --border-strong: #f0f0f0;
+  --accent: #1a1a1a;
+  --accent-hover: #262626;
+  --accent-pressed: #000000;
+  --success: #52c41a;
+  --warning: #faad14;
+  --danger: #ff4d4f;
+  --info: #1677ff;
+  --component-button-primary-bg: #1a1a1a;
+  --component-button-primary-fg: #ffffff;
+  --component-button-primary-radius: 2px;
+  --component-button-primary-height: 32px;
+  --component-button-primary-font-size: 14px;
+  --component-button-login-fg: #1a1a1a;
+  --component-field-search-bg: #f7f8fa;
+  --component-field-search-height: 40px;
+  --component-field-auth-height: 52px;
+  --component-type-display-size: 51.2px;
+  --component-type-display-line-height: 61.44px;
+  --component-type-display-color: #333333;
+  --sg-sans: Inter, "Helvetica Neue", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #000); background: var(--page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.15 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.02em; }
+h2 { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #666); margin: 48px 0 12px; }
+.lead { max-width: 68ch; color: var(--muted, #666); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #d9d9d9); display: block; }
+.sw b { font: 500 12px/1.3 var(--sg-mono); }
+.sw span { display: block; font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #666); }
+.mock { border: 1px solid var(--border, #d9d9d9); border-radius: 2px; overflow: hidden; background: var(--page, #fff); }
+.nav { display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 16px; border-bottom: 1px solid var(--border, #d9d9d9); font-size: 14px; }
+.nav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height, 32px); padding: 0 15px; border-radius: var(--component-button-primary-radius, 2px); background: var(--component-button-primary-bg, #1a1a1a); color: var(--component-button-primary-fg, #fff); font-size: 14px; border: 0; }
+.quiet { background: transparent; color: var(--component-button-login-fg, #1a1a1a); }
+.field { height: var(--component-field-search-height, 40px); background: var(--component-field-search-bg, #f7f8fa); border-radius: 2px; display: flex; align-items: center; padding: 0 12px; color: var(--muted, #666); font-size: 14px; width: 220px; }
+.hero { background: var(--layout, #f5f5f5); padding: 40px 24px; }
+.hero h3 { margin: 0; font: 700 40px/1.2 var(--sg-sans); color: var(--component-type-display-color, #333); max-width: 12ch; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 16px; background: var(--layout, #f5f5f5); }
+.card { background: var(--surface, #fff); border: 1px solid var(--border-strong, #f0f0f0); border-radius: 2px; padding: 12px; min-height: 88px; }
+.card b { display: block; font-size: 14px; }
+.card span { color: var(--danger, #ff4d4f); font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Glassnode</h1>
+<p class="lead">Public marketing site and Studio shell, light theme only. Values come from tokens.json. Inter and Fraktion are not loaded here; the page falls back to the system sans.</p>
+<h2>Roles</h2>
+<div class="swatches" id="roles"></div>
+<h2>Studio shell</h2>
+<div class="mock">
+  <div class="nav"><b>glassnode.studio</b><span class="field">Search</span><span class="sp"></span><span class="btn quiet">Log in</span><span class="btn">Sign up</span></div>
+  <div class="cards">
+    <div class="card"><b>Market cap</b><span>-27.2%</span></div>
+    <div class="card"><b>Spot volume</b></div>
+    <div class="card"><b>Top gainers</b></div>
+  </div>
+</div>
+<h2>Marketing hero</h2>
+<div class="mock">
+  <div class="hero"><h3>Pioneering digital asset market intelligence</h3></div>
+</div>
+<h2>Tokens</h2>
+<div id="all"></div>
+</main>
+<script>
+const T = {"core":{"color":{"primary":{"v":"#1a1a1a","t":"color","s":"css-var --ant-color-primary resolved on studio theme holder"},"primary-hover":{"v":"#262626","t":"color","s":"css-var --ant-color-primary-hover resolved on studio theme holder"},"primary-active":{"v":"#000000","t":"color","s":"css-var --ant-color-primary-active resolved on studio theme holder"},"info":{"v":"#1677ff","t":"color","s":"css-var --ant-color-info resolved on studio theme holder"},"success":{"v":"#52c41a","t":"color","s":"css-var --ant-color-success resolved on studio theme holder"},"warning":{"v":"#faad14","t":"color","s":"css-var --ant-color-warning resolved on studio theme holder"},"error":{"v":"#ff4d4f","t":"color","s":"css-var --ant-color-error resolved on studio theme holder"},"link-marketing":{"v":"#8fa5f6","t":"color","s":"measured button-contact default color (marketing link blue)"}},"font":{"family":{"ui":{"v":"\"Inter Variable\", Inter, \"Helvetica Neue\", system-ui, sans-serif","t":"fontFamily","s":"measured button-primary default fontFamily"},"marketing":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"measured button-launch default fontFamily"},"display":{"v":"fraktion, \"fraktion Fallback\"","t":"fontFamily","s":"measured glassnode.com h1 fontFamily"},"code":{"v":"'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace","t":"fontFamily","s":"css-var --ant-font-family-code resolved on studio theme holder"},"auth":{"v":"ulp-font, -apple-system, \"system-ui\", Roboto, Helvetica, sans-serif","t":"fontFamily","s":"measured auth-email default fontFamily"}},"size":{"body":{"v":"14px","t":"dimension","s":"css-var --ant-font-size resolved on studio theme holder"},"sm":{"v":"12px","t":"dimension","s":"css-var --ant-font-size-sm resolved on studio theme holder"},"lg":{"v":"14px","t":"dimension","s":"css-var --ant-font-size-lg resolved on studio theme holder"},"h1":{"v":"30px","t":"dimension","s":"css-var --ant-font-size-heading-1 resolved on studio theme holder"},"h3":{"v":"24px","t":"dimension","s":"css-var --ant-font-size-heading-3 resolved on studio theme holder"},"h4":{"v":"20px","t":"dimension","s":"css-var --ant-font-size-heading-4 resolved on studio theme holder"},"h5":{"v":"16px","t":"dimension","s":"css-var --ant-font-size-heading-5 resolved on studio theme holder"},"display":{"v":"51.2px","t":"dimension","s":"measured glassnode.com h1 fontSize"}},"weight":{"display":{"v":700,"t":"fontWeight","s":"measured glassnode.com h1 fontWeight"},"ui":{"v":400,"t":"fontWeight","s":"measured button-primary default fontWeight"}}},"radius":{"control":{"v":"2px","t":"dimension","s":"css-var --ant-border-radius resolved on studio theme holder"},"xs":{"v":"1px","t":"dimension","s":"css-var --ant-border-radius-xs resolved on studio theme holder"}},"border":{"width":{"v":"1px","t":"dimension","s":"css-var --ant-line-width resolved on studio theme holder"},"width-bold":{"v":"2px","t":"dimension","s":"css-var --ant-line-width-bold resolved on studio theme holder"},"width-focus":{"v":"3px","t":"dimension","s":"css-var --ant-line-width-focus resolved on studio theme holder"}},"size":{"control":{"v":"32px","t":"dimension","s":"css-var --ant-control-height resolved on studio theme holder"},"control-lg":{"v":"40px","t":"dimension","s":"css-var --ant-control-height-lg resolved on studio theme holder"},"control-sm":{"v":"24px","t":"dimension","s":"css-var --ant-control-height-sm resolved on studio theme holder"},"icon":{"v":"12px","t":"dimension","s":"css-var --ant-font-size-icon resolved on studio theme holder"}},"motion":{"fast":{"v":"100ms","t":"duration","s":"css-var --ant-motion-duration-fast resolved on studio theme holder"},"mid":{"v":"200ms","t":"duration","s":"css-var --ant-motion-duration-mid resolved on studio theme holder"},"slow":{"v":"300ms","t":"duration","s":"css-var --ant-motion-duration-slow resolved on studio theme holder"},"ease-out":{"v":[0.215,0.61,0.355,1.0],"t":"cubicBezier","s":"css-var --ant-motion-ease-out resolved on studio theme holder"},"ease-in-out":{"v":[0.645,0.045,0.355,1.0],"t":"cubicBezier","s":"css-var --ant-motion-ease-in-out resolved on studio theme holder"}},"space":{"unit":{"v":"4px","t":"dimension","s":"css-var --ant-size-unit resolved on studio theme holder"}},"typography":{"display":{"v":{"fontFamily":"fraktion, \"fraktion Fallback\"","fontSize":"51.2px","fontWeight":700,"lineHeight":"61.44px"},"t":"typography","s":"measured glassnode.com h1 computed style"},"body":{"v":{"fontFamily":"\"Inter Variable\", Inter, \"Helvetica Neue\", system-ui, sans-serif","fontSize":"14px","fontWeight":400,"lineHeight":"22.001px"},"t":"typography","s":"font family and size from Sign up button and --ant-font-size; line-height measured button-primary default"}}},"light":{"page":{"v":"#ffffff","t":"color","s":"css-var --ant-color-bg-base resolved on studio theme holder"},"surface":{"v":"#ffffff","t":"color","s":"css-var --ant-color-bg-container resolved on studio theme holder"},"raised":{"v":"#ffffff","t":"color","s":"css-var --ant-color-bg-elevated resolved on studio theme holder"},"layout":{"v":"#f5f5f5","t":"color","s":"css-var --ant-color-bg-layout resolved on studio theme holder"},"scrim":{"v":"rgba(0, 0, 0, 0.45)","t":"color","s":"css-var --ant-color-bg-mask resolved on studio theme holder"},"text":{"v":"rgba(0, 0, 0, 0.88)","t":"color","s":"css-var --ant-color-text resolved on studio theme holder"},"text-heading":{"v":"rgba(0, 0, 0, 0.88)","t":"color","s":"css-var --ant-color-text-heading resolved on studio theme holder"},"muted":{"v":"rgba(0, 0, 0, 0.65)","t":"color","s":"css-var --ant-color-text-secondary resolved on studio theme holder"},"disabled":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"css-var --ant-color-text-disabled resolved on studio theme holder"},"on-accent":{"v":"#ffffff","t":"color","s":"css-var --ant-color-text-light-solid resolved on studio theme holder"},"link":{"v":"#1a1a1a","t":"color","s":"css-var --ant-color-link resolved on studio theme holder"},"border":{"v":"#d9d9d9","t":"color","s":"css-var --ant-color-border resolved on studio theme holder"},"border-strong":{"v":"#f0f0f0","t":"color","s":"css-var --ant-color-border-secondary resolved on studio theme holder"},"accent":{"v":"#1a1a1a","t":"color","s":"css-var --ant-color-primary resolved on studio theme holder"},"accent-hover":{"v":"#262626","t":"color","s":"css-var --ant-color-primary-hover resolved on studio theme holder"},"accent-pressed":{"v":"#000000","t":"color","s":"css-var --ant-color-primary-active resolved on studio theme holder"},"success":{"v":"#52c41a","t":"color","s":"css-var --ant-color-success resolved on studio theme holder"},"warning":{"v":"#faad14","t":"color","s":"css-var --ant-color-warning resolved on studio theme holder"},"danger":{"v":"#ff4d4f","t":"color","s":"css-var --ant-color-error resolved on studio theme holder"},"info":{"v":"#1677ff","t":"color","s":"css-var --ant-color-info resolved on studio theme holder"},"component":{"button":{"primary-bg":{"v":"#1a1a1a","t":"color","s":"measured button-primary default backgroundColor"},"primary-fg":{"v":"#ffffff","t":"color","s":"measured button-primary default color"},"primary-radius":{"v":"2px","t":"dimension","s":"measured button-primary default borderRadius"},"primary-height":{"v":"32px","t":"dimension","s":"measured button-primary default height"},"primary-font-size":{"v":"14px","t":"dimension","s":"measured button-primary default fontSize"},"login-fg":{"v":"#1a1a1a","t":"color","s":"measured button-login default color"}},"field":{"search-bg":{"v":"#f7f8fa","t":"color","s":"measured search-field default backgroundColor"},"search-height":{"v":"40px","t":"dimension","s":"measured search-field default height"},"auth-height":{"v":"52px","t":"dimension","s":"measured auth-email default height"}},"type":{"display-size":{"v":"51.2px","t":"dimension","s":"measured glassnode.com h1 fontSize"},"display-line-height":{"v":"61.44px","t":"dimension","s":"measured glassnode.com h1 lineHeight"},"display-color":{"v":"#333333","t":"color","s":"measured glassnode.com h1 color"}}}},"dark":{}};
+const roles = [
+  ['page','page'],['surface','surface'],['text','text'],['muted','muted'],
+  ['accent','accent'],['border','border'],['danger','danger'],['success','success'],
+  ['warning','warning'],['info','info']
+];
+const box = document.getElementById('roles');
+for (const [name, key] of roles) {
+  const t = T.light[key];
+  if (!t) continue;
+  const d = document.createElement('div');
+  d.className = 'sw';
+  d.innerHTML = '<i style="background:'+t.v+'"></i><div><b>'+name+'</b><span>'+t.v+'</span></div>';
+  box.appendChild(d);
+}
+const all = document.getElementById('all');
+function walk(node, prefix) {
+  for (const [k,v] of Object.entries(node)) {
+    if (v && v.v !== undefined) {
+      const row = document.createElement('div');
+      row.style.cssText = 'font:12px/1.6 ui-monospace,monospace';
+      row.textContent = prefix+k+' = '+JSON.stringify(v.v);
+      all.appendChild(row);
+    } else if (v && typeof v === 'object') walk(v, prefix+k+'.');
+  }
+}
+walk(T.core, 'core.');
+walk(T.light, 'light.');
+</script>
+</body>
+</html>
