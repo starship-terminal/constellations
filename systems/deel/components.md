@@ -445,14 +445,14 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Members and external destinations
 
-Deel's product lives behind app.deel.com — an authenticated boundary that was never reached: this package covers the public marketing site at www.deel.com only. The 'Log in' link and every 'Book a demo'/'Claim offer' CTA were measured as outbound/form destinations, never followed. Demo and contact forms exist behind CTAs and were not opened, typed into or submitted.
+Deel's product sits behind a login wall. A 2026-11-21 refresh opened Log in and stopped. Desktop: [login-wall-light-default](screenshots/login-wall-light-default.png). Phone: [mobile-login-wall-light-default](screenshots/mobile-login-wall-light-default.png). The wall offers the Deel app, SSO, Google, email, and password. Nothing was typed. Nothing was submitted. Those buttons were not clicked. Book a demo opens a public dialog ([home-light-demo-dialog](screenshots/home-light-demo-dialog.png)) and was not filled. The control map is [site-tree.md](site-tree.md).
 
 ### Pages
 
-- **Outbound links.** 'Log in' (app.deel.com), 'Book a demo', 'Claim offer' and every product/store/social link were measured, never followed — they leave the captured surface or open a form.
+- **Login wall.** Log in opens the login wall and that branch stops. See [login-review.json](login-review.json). Book a demo opens a public dialog and was not filled. Claim offer and product links stay measured destinations.
 - **Product sub-pages.** /hr/, /global-payroll/ and /about-us/ were captured; the dozens of other product/resource/solution pages share the same chrome and hero/card vocabulary but are not individually documented.
 - **The Solutions/Use cases/Who we serve/Resources dropdowns** open on hover as mega panels; the open panel was screenshot (home-light-menu) but its inner items were not individually componentized.
-- **Geo/personalisation.** The promo strip and offers are served per region/campaign; what was captured is what this server IP was served.
+- **Geo/personalisation.** The promo strip and offers are served per region and campaign. What was captured is the offer that loaded for this signed-out visit.
 
 ### States
 

@@ -1,8 +1,8 @@
 # Deel design reference
 
-A token set and component reference for Deel's public marketing surface — for building SaaS marketing pages, hero panels, pricing tiers and FAQ sections in the style of the real thing. It was read from **deel.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the home page, /pricing/, /hr/, /global-payroll/ and /about-us/, plus a 390px mobile pass on home and pricing.
+A token set and component reference for Deel's public marketing surface, for building SaaS marketing pages, hero panels, pricing tiers and FAQ sections in the style of the real thing. It was read from **deel.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the home page, /pricing/, /hr/, /global-payroll/ and /about-us/, plus a 390px mobile pass on home and pricing. A 2026-11-21 refresh followed Log in to the login wall and stopped.
 
-Deel is worth a capture because a Next.js + MUI + Tailwind marketing site paints an unusually confident system: a white field topped by a 64px `#1b1b1b` promo strip and an 80px nav, a 732px `#201547` deep-purple hero panel carrying five glass action tiles and a 375x51 rounded-full white Book-a-demo pill, `#b1d8fc` sky-blue accents on the promo chip and pricing-card top strip, and `#faf4ee` cream on footer headings and FAQ hairlines. Three voices carry the type: BagossCondensedFont at 60px/500 on the hero (160px/600 on the about numeral), BagossStandardVF at 14-15px/500 on nav items and small pills, and Inter at 400/600 on everything else. Interactive language is one pill: `#1b1b1b` fills with white text for primary, white fills with ink text for secondary, inverting to `#3f3f3f` on hover/pressed. **Boundary:** the product lives behind app.deel.com — an authenticated surface never reached; Book a demo, Claim offer and Log in were measured, never followed; the Cookiebot banner was hidden, never answered; no form was opened, typed into or submitted.
+Deel is worth a capture because a Next.js + MUI + Tailwind marketing site paints an unusually confident system: a white field topped by a 64px `#1b1b1b` promo strip and an 80px nav, a 732px `#201547` deep-purple hero panel carrying five glass action tiles and a 375x51 rounded-full white Book-a-demo pill, `#b1d8fc` sky-blue accents on the promo chip and pricing-card top strip, and `#faf4ee` cream on footer headings and FAQ hairlines. Three voices carry the type: BagossCondensedFont at 60px/500 on the hero (160px/600 on the about numeral), BagossStandardVF at 14-15px/500 on nav items and small pills, and Inter at 400/600 on everything else. Interactive language is one pill: `#1b1b1b` fills with white text for primary, white fills with ink text for secondary, inverting to `#3f3f3f` on hover/pressed. **Boundary:** the product lives behind a login wall. A 2026-11-21 refresh opened Log in and stopped. Desktop and phone shots are [login-wall-light-default](screenshots/login-wall-light-default.png) and [mobile-login-wall-light-default](screenshots/mobile-login-wall-light-default.png). The wall offers the Deel app, SSO, Google, email, and password. Nothing was typed. Nothing was submitted. Google, Apple, the Deel app, SSO, and Create account were not clicked. Book a demo opens a public dialog and was not filled. The control map is [site-tree.md](site-tree.md). The Cookiebot banner was hidden, never answered.
 
 | File | What it is |
 |---|---|
@@ -13,7 +13,9 @@ Deel is worth a capture because a Next.js + MUI + Tailwind marketing site paints
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (36, 80+ states) with crops and values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the promo strip + sticky nav chrome, the purple hero, the pricing tiers and FAQ, the footer, mobile |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 16 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale (the phone home stitches to 390 x 11,078); `mobile-*` viewport shots are 2x captures of the 390 x 844 viewport, plus the toggled states: home mega-menu and mobile drawer |
+| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale (the phone home stitches to 390 x 11,078); `mobile-*` viewport shots are 2x captures of the 390 x 844 viewport, plus the toggled states: home mega-menu and mobile drawer. The 2026-11-21 refresh adds the login wall, the demo dialog, the language menu, and a speed tab. |
+| [site-tree.md](site-tree.md) | Public control map from 2026-11-21: which header, footer, and in-page control opens which page, menu, dialog, or login wall. |
+| [login-review.json](login-review.json) | Signed-out stop at the login wall. What was offered, what was not submitted. |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — the Tailwind @theme layer resolves a full declared token set), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
@@ -51,7 +53,7 @@ Fonts: `core.font.family.display` is BagossCondensedFont, then 4 fallbacks; `cor
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 82 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 85 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -102,9 +104,9 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 3. **Do glass the tiles on dark.** The hero action tiles are 4%-white fill with a 10%-white hairline on the purple panel — translucency, not a lighter paint. See [hero-tile](components/crops/hero-tile-default.png).
 4. **Do round the controls.** 200px small pills, full-radius hero CTAs, a 50% hamburger circle; cards and tiles get 12px. See [hero-demo](components/crops/hero-demo-default.png).
 5. **Do pair the Bagoss voices.** BagossCondensedFont owns every display heading (60px hero to 160px numeral); BagossStandardVF owns nav items and small pills; Inter carries body copy. See [hero-h1](components/crops/hero-h1-default.png).
-6. **Don't style the app from this package.** app.deel.com is an authenticated product that was never reached — this package covers the marketing site only.
+6. **Don't style the app from this package.** The login wall is the stop. See [login-wall-light-default](screenshots/login-wall-light-default.png). The signed-in product was not entered.
 7. **Don't invent a dark theme.** The promo strip, purple hero and video cards are dark surfaces inside the single theme; there is no dark token set.
-8. **Don't treat the promo strip as static.** Offers are served per region/campaign; what is captured is what this IP was served.
+8. **Don't treat the promo strip as static.** Offers are served per region and campaign. What is captured is the offer that loaded for this signed-out visit.
 
 ## Rebuild
 
