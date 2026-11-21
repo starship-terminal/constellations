@@ -1,0 +1,2 @@
+hash	name
+# one row per icon: the geometry hash icons.mjs names a file icon-<hash> by, a tab, then the name to give it

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ulysses public tokens</title>
+  <style>
+    :root {
+      --ink: #27272b;
+      --page: #ffffff;
+      --footer: #262626;
+      --accent: #ffcc00;
+      --field: #f7f7f5;
+      --focus: #ffe680;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font: 15px/24px interstate, -apple-system, system-ui, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1 { font-size: 48px; line-height: 57.6px; font-weight: 700; margin: 0 0 16px; }
+    p { margin: 0 0 24px; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 32px; }
+    .swatch { width: 96px; }
+    .swatch i { display: block; height: 64px; border: 1px solid #e4e4e2; }
+    .swatch span { display: block; font-size: 12px; margin-top: 6px; }
+    button { font: inherit; color: var(--ink); background: transparent; border: 2px solid var(--accent); border-radius: 3px; padding: 6px 36px; }
+    .field { display: block; width: 280px; box-sizing: border-box; margin: 16px 0 24px; background: var(--field); border: 2px solid var(--focus); border-radius: 3px; padding: 6px 10px; }
+    footer { background: var(--footer); color: #fff; padding: 32px 24px; }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ulysses</h1>
+    <p>Public marketing tokens, measured 2026-11-22. One light theme. The action is a yellow outline.</p>
+    <div class="swatches">
+      <div class="swatch"><i style="background:#ffffff"></i><span>Page #ffffff</span></div>
+      <div class="swatch"><i style="background:#27272b"></i><span>Ink #27272b</span></div>
+      <div class="swatch"><i style="background:#262626"></i><span>Footer #262626</span></div>
+      <div class="swatch"><i style="background:#ffcc00"></i><span>Accent #ffcc00</span></div>
+      <div class="swatch"><i style="background:#f7f7f5"></i><span>Field #f7f7f5</span></div>
+      <div class="swatch"><i style="background:#ffe680"></i><span>Focus #ffe680</span></div>
+    </div>
+    <button type="button">Get Ulysses</button>
+    <input class="field" type="text" value="" placeholder="Email" readonly>
+  </main>
+  <footer>
+    <a href="site-tree.md">Site tree</a>
+  </footer>
+</body>
+</html>

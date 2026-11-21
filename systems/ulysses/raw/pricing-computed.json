@@ -1,0 +1,220 @@
+{
+  "url": "https://ulysses.app/en/pricing/",
+  "title": "Ulysses › Pricing",
+  "colorScheme": "normal",
+  "body": {
+    "text": "Ulysses Why Ulysses Pricing Stories Help Get the Ultimate Writing App for Only $39.99 per Year Or $5.99 per Month Ulysse",
+    "color": "rgb(39, 39, 43)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "interstate, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "15px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "border": "0px none rgb(39, 39, 43)"
+  },
+  "h1": {
+    "text": "Get the Ultimate Writing App for Only $39.99 per Year",
+    "color": "rgb(39, 39, 43)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "interstate, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "48px",
+    "fontWeight": "700",
+    "lineHeight": "57.6px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "border": "0px none rgb(39, 39, 43)"
+  },
+  "h2": {
+    "text": "Businesses and Organizations",
+    "color": "rgb(39, 39, 43)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "interstate, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "30px",
+    "fontWeight": "700",
+    "lineHeight": "36px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "border": "0px none rgb(39, 39, 43)"
+  },
+  "get": null,
+  "nav": {
+    "text": "Ulysses Why Ulysses Pricing Stories Help",
+    "color": "rgb(39, 39, 43)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "interstate, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "15px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "padding": "15px 0px",
+    "border": "0px none rgb(39, 39, 43)"
+  },
+  "footer": {
+    "backgroundColor": "rgb(38, 38, 38)",
+    "color": "rgb(255, 255, 255)"
+  },
+  "email": null,
+  "password": null,
+  "submit": null,
+  "vars": [
+    [
+      "--blue",
+      "#007bff"
+    ],
+    [
+      "--indigo",
+      "#6610f2"
+    ],
+    [
+      "--purple",
+      "#6f42c1"
+    ],
+    [
+      "--pink",
+      "#e83e8c"
+    ],
+    [
+      "--red",
+      "#f56a6a"
+    ],
+    [
+      "--orange",
+      "#e9714c"
+    ],
+    [
+      "--yellow",
+      "#fc0"
+    ],
+    [
+      "--green",
+      "#00c675"
+    ],
+    [
+      "--teal",
+      "#20c997"
+    ],
+    [
+      "--cyan",
+      "#4eb7b7"
+    ],
+    [
+      "--white",
+      "#fff"
+    ],
+    [
+      "--gray",
+      "#545352"
+    ],
+    [
+      "--primary",
+      "#fc0"
+    ],
+    [
+      "--secondary",
+      "#403f3e"
+    ],
+    [
+      "--success",
+      "#00c675"
+    ],
+    [
+      "--info",
+      "#4eb7b7"
+    ],
+    [
+      "--warning",
+      "#fc0"
+    ],
+    [
+      "--danger",
+      "#f56a6a"
+    ],
+    [
+      "--light",
+      "#f7f7f5"
+    ],
+    [
+      "--dark",
+      "#27272b"
+    ],
+    [
+      "--gray-dark",
+      "#363534"
+    ],
+    [
+      "--theme-color-primary",
+      "#fc0"
+    ],
+    [
+      "--theme-color-secondary",
+      "#403f3e"
+    ],
+    [
+      "--theme-color-success",
+      "#00c675"
+    ],
+    [
+      "--theme-color-info",
+      "#4eb7b7"
+    ],
+    [
+      "--theme-color-warning",
+      "#fc0"
+    ],
+    [
+      "--theme-color-danger",
+      "#f56a6a"
+    ],
+    [
+      "--theme-color-light",
+      "#f7f7f5"
+    ],
+    [
+      "--theme-color-dark",
+      "#27272b"
+    ],
+    [
+      "--theme-color-gray-dark",
+      "#363534"
+    ],
+    [
+      "--breakpoint-xs",
+      "0"
+    ],
+    [
+      "--breakpoint-sm",
+      "576px"
+    ],
+    [
+      "--breakpoint-md",
+      "768px"
+    ],
+    [
+      "--breakpoint-lg",
+      "1040px"
+    ],
+    [
+      "--breakpoint-xl",
+      "1200px"
+    ],
+    [
+      "--font-family-sans-serif",
+      "\"interstate\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+    ],
+    [
+      "--font-family-monospace",
+      "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    ]
+  ],
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1
+  }
+}
