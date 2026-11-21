@@ -1,31 +1,17 @@
 # Lummi patterns
 
-Public signed-out pages, 2026-11-18. Downloads, the account, checkout and generation were not reached.
+Signed-out public site, 2026-11-21. Screenshots land in [screenshots/](screenshots) after quantize. The control map is [site-tree.md](site-tree.md).
 
-## App shell
+| Pattern | Where |
+|---|---|
+| App shell | Header: Photos, Illustrations, 3D, search, Try Pro, Log in, overflow. Home grid under a display headline. |
+| Search | Focusing the search field opens a command dialog with chips, creators, and create actions. Create is not submitted. |
+| Sort | Daily picks opens Daily picks / Popular / New. Local. |
+| Pricing dialog | Try Pro for free opens Monthly / Yearly and Pro / Max. The trial link is a signup wall. Stop. |
+| Overflow | Product, Resources, Plugins, Company, legal. Cookies opens OneTrust. Not submitted. |
+| Grids | Photos, illustrations, 3D, search, category, creator, shoot, collection. Infinite scroll is truncated. |
+| Marketing | Pro, contribute, developers, blog, trends, events, about, advertise, apps, sref, updates. |
+| Login wall | `/login` asks for email and password, or Google. Recorded. Branch stops. |
+| Dark | `prefers-color-scheme: dark` swaps `:root` tokens to the `*-dark` set when `data-theme` is not `light`. |
 
-A white header: italic wordmark, Photos / Illustrations / 3D, a pill search, Try Pro for free, Log in, a menu button. Below that, a tight display headline and a masonry of public images. [Desktop](screenshots/home-light-default.png). [Phone](screenshots/mobile-home-light-default.png) keeps the wordmark, a search pill and the menu button, and stacks the masonry in two columns.
-
-## Search
-
-Clicking the header field opens a command palette over an 80% black scrim: create actions, suggested tags, creators, explore cards. [Open](screenshots/home-light-search-palette.png). A results page is a large title over the same masonry. [Forest](screenshots/search-light-default.png). The query was a public path, not a submitted form.
-
-## Filtering
-
-Tools is a local menu of effects and filters, including a Video switch. [Open](screenshots/home-light-tools-menu.png). Daily picks is a second menu. [Open](screenshots/home-light-daily-picks.png). Neither menu navigated.
-
-## Image page
-
-A public photo is a creator row, the image, a title, a short caption, colour dots, tags, and Download. [Page](screenshots/photo-light-default.png). Download was not pressed. Similar images sit under By Subject / By Vibes.
-
-## Sign-in wall
-
-`/login` is a split card: fields on the left, a published image on the right. Email, password, Continue, Continue with Google, Sign up. [Desktop](screenshots/login-light-default.png). [Phone](screenshots/mobile-login-light-default.png). Continue and Google were not pressed. The email field was filled and cleared.
-
-## Pricing page
-
-`/pro` is a marketing page, not the app chrome. It uses DM Sans and a Get Pro Yearly link to a Stripe checkout URL. That link was not pressed. [Shot](screenshots/pro-light-default.png).
-
-## What is not on the captured surface
-
-The account, downloads, generation, checkout, a validation error, and onboarding sit behind sign-in. The missing-path page is the public not-found state. [Shot](screenshots/notfound-light-default.png).
+Empty, loading, error, destructive confirm, and onboarding are not on the public signed-out surface that was reached.
