@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>beehiiv style guide</title>
+<style>
+  :root, [data-mode="dark"] {
+    color-scheme: dark;
+    --page: #060419;
+    --surface: #0d0b28;
+    --raised: #141230;
+    --text: #ffffff;
+    --muted: #c4c2d6;
+    --accent: #ff5ec4;
+    --on-accent: #060419;
+    --primary: #2f39ba;
+    --on-primary: #ffffff;
+    --outline: #3843d0;
+    --border: #ffffff1f;
+    --nav: #dddce8;
+  }
+  [data-mode="light"] {
+    color-scheme: light;
+    --page: #ffffff;
+    --surface: #f5f5f5;
+    --raised: #ffffff;
+    --text: #171717;
+    --muted: #a3a3a3;
+    --accent: #8b5cf6;
+    --on-accent: #ffffff;
+    --primary: #2f39ba;
+    --on-primary: #ffffff;
+    --outline: #3843d0;
+    --border: #e5e7eb;
+    --nav: #111827;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px Helvetica, system-ui, sans-serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+  header { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+  h1 { font-size: 40px; line-height: 44px; font-weight: 700; margin: 0; letter-spacing: 0; }
+  h2 { font-size: 20px; margin: 32px 0 12px; }
+  p { color: var(--muted); max-width: 68ch; }
+  button.mode { background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font: 600 14px/20px inherit; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .swatch { width: 96px; }
+  .chip { height: 48px; border-radius: 6px; border: 1px solid var(--border); }
+  .swatch span { display: block; font-size: 12px; line-height: 16px; margin-top: 4px; color: var(--muted); }
+  .btn { display: inline-flex; align-items: center; height: 36px; padding: 8px 12px; border-radius: 6px; font: 600 14px/20px inherit; text-decoration: none; }
+  .btn.white { background: #fff; color: #060419; border: 1px solid #fff; }
+  .btn.ghost { background: transparent; color: var(--nav); border: 1px solid transparent; }
+  .btn.demo { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.2); }
+  .btn.plan { height: 46px; padding: 8px 24px; font-size: 18px; font-weight: 700; }
+  .btn.primary { background: var(--primary); color: var(--on-primary); border: 1px solid var(--primary); }
+  .btn.outline { background: #fff; color: var(--outline); border: 1px solid var(--outline); }
+  .field { width: 280px; height: 38px; border: 1px solid #e5e7eb; border-radius: 6px; background: #fff; color: #111827; padding: 8px 12px; font: 14px/20px inherit; }
+  .disabled { height: 38px; width: 280px; border-radius: 6px; border: 1px solid #d1d5db; background: #d1d5db; color: #6b7280; font: 500 14px/20px inherit; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+</style>
+</head>
+<body data-mode="dark">
+<div class="wrap">
+  <header>
+    <h1>beehiiv</h1>
+    <button class="mode" type="button" id="mode">Light login wall</button>
+  </header>
+  <p>Public marketing tokens from 2026-11-22. Dark is the marketing site. Light is the empty login wall. Satoshi and Clash Grotesk are named in the tokens and fall back here.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Nav buttons</h2>
+  <div class="row">
+    <a class="btn ghost">Log in</a>
+    <a class="btn demo">Get a demo</a>
+    <a class="btn white">Sign up for free</a>
+  </div>
+  <h2>Plan buttons</h2>
+  <div class="row">
+    <a class="btn plan outline">Start for free</a>
+    <a class="btn plan primary">Try for free</a>
+  </div>
+  <h2>Login field</h2>
+  <div class="row">
+    <input class="field" placeholder="name@email.com" readonly>
+    <button class="disabled" type="button" disabled>Sign in</button>
+  </div>
+</div>
+<script>
+  const roles = [
+    ["page", "--page"], ["surface", "--surface"], ["text", "--text"],
+    ["muted", "--muted"], ["accent", "--accent"], ["primary", "--primary"], ["border", "--border"]
+  ];
+  const box = document.getElementById("swatches");
+  function paint() {
+    const cs = getComputedStyle(document.body);
+    box.innerHTML = roles.map(([name, key]) => {
+      const value = cs.getPropertyValue(key).trim();
+      return `<div class="swatch"><div class="chip" style="background:${value}"></div><span>${name}<br><code>${value}</code></span></div>`;
+    }).join("");
+  }
+  document.getElementById("mode").onclick = () => {
+    const next = document.body.dataset.mode === "dark" ? "light" : "dark";
+    document.body.dataset.mode = next;
+    document.getElementById("mode").textContent = next === "dark" ? "Light login wall" : "Dark marketing";
+    paint();
+  };
+  paint();
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+  "slug": "blog",
+  "requested": "https://blog.beehiiv.com/",
+  "final": "https://www.beehiiv.com/blog",
+  "status": 200,
+  "title": "Blog | beehiiv",
+  "h1": "THE BEEHIIV BLOG",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free THE BEEHIIV BLOG The beehiiv blog is your go-to resource for all things related to the Content Economy. From mastering newsletter growth to dialing in your monetization strategy, learn fr",
+  "inputs": [
+    {
+      "type": "search",
+      "name": "",
+      "placeholder": "Search blog posts...",
+      "valueLen": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:27:34.909Z"
+}

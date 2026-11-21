@@ -1,0 +1,59 @@
+{
+  "slug": "integrations",
+  "requested": "https://www.beehiiv.com/integrations",
+  "final": "https://www.beehiiv.com/integrations",
+  "status": 200,
+  "title": "Integrations - beehiiv",
+  "h1": "YOUR STACK, FINALLY TALKING TO YOUR CONTENT.",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free YOUR STACK, FINALLY TALKING TO YOUR CONTENT. Easily connect ecommerce, payments, CRM, analytics, and automation tools directly to beehiiv. Start Free Browse Integrations BROWSE EVERY INTE",
+  "inputs": [
+    {
+      "type": "search",
+      "name": "",
+      "placeholder": "Search",
+      "valueLen": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:26:53.790Z"
+}

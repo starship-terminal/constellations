@@ -1,0 +1,29 @@
+{
+  "slug": "home",
+  "requested": "https://www.beehiiv.com/",
+  "final": "https://www.beehiiv.com/",
+  "status": 200,
+  "title": "Newsletter Platform: Create Newsletters and Websites - beehiiv",
+  "h1": "NEWSLETTERS. PODCASTS. COMMUNITY. ONE PLATFORM.",
+  "text": "Sign up NEWSLETTERS. PODCASTS. COMMUNITY. ONE PLATFORM. The all-in-one platform helping the world's best newsletters publish, grow and earn. Start in seconds 4.9/5 from 28,479 customers Sign up with Google Sign up with email Get started for free. No credit card required. TRUSTED ",
+  "inputs": [
+    {
+      "type": "hidden",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 402
+    },
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 1
+    }
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:25:47.358Z"
+}

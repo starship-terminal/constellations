@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "newsletter-platform",
+    "suffix": "desktop",
+    "url": "https://www.beehiiv.com/newsletter-platform",
+    "final": "https://www.beehiiv.com/newsletter-platform",
+    "status": 200,
+    "title": "Newsletter Platform for Creators & Publishers - beehiiv",
+    "h1": "THE PLATFORM BEHIND TODAY'S BIGGEST NEWSLETTERS.",
+    "bytes": 117063
+  },
+  {
+    "slug": "podcasts",
+    "suffix": "desktop",
+    "url": "https://www.beehiiv.com/features/podcasts",
+    "final": "https://www.beehiiv.com/features/podcasts",
+    "status": 200,
+    "title": "Podcast Website Builder for Audio & Newsletters - beehiiv",
+    "h1": "HOST, GROW, AND MONETIZE YOUR PODCAST.",
+    "bytes": 436397
+  }
+]

@@ -1,0 +1,89 @@
+{
+  "slug": "case-studies",
+  "requested": "https://www.beehiiv.com/case-studies",
+  "final": "https://www.beehiiv.com/case-studies",
+  "status": 200,
+  "title": "Case Studies - beehiiv",
+  "h1": "HOW 130,000 BUSINESSES RUN NEWSLETTERS & GROW ON BEEHIIV.",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free Ramp: 58% open rate Stark Raving Dad: 300 paid community members in the first month Experts Exchange: $32,000 in Q1 ad placements The Chief Of Staff: ~54% newsletter open rate Fiscal AI: ",
+  "inputs": [
+    {
+      "type": "search",
+      "name": "",
+      "placeholder": "Search case studies...",
+      "valueLen": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:27:21.474Z"
+}

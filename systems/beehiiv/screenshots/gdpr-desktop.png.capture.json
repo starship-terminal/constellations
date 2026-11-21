@@ -1,0 +1,23 @@
+{
+  "slug": "gdpr",
+  "requested": "https://www.beehiiv.com/privacy/gdpr",
+  "final": "https://www.beehiiv.com/privacy/gdpr",
+  "status": 200,
+  "title": "GDPR - beehiiv",
+  "h1": "Data Redaction Form",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free Data Redaction Form I confirm that I want to receive an email listing my current subscriptions and the option to manage them. Submit By submitting this request, you acknowledge that we wi",
+  "inputs": [
+    {
+      "type": "email",
+      "name": "email",
+      "placeholder": "Email Address",
+      "valueLen": 0
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:28:34.416Z"
+}

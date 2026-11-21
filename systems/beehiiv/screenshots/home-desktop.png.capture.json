@@ -1,0 +1,29 @@
+{
+  "slug": "home",
+  "requested": "https://www.beehiiv.com/",
+  "final": "https://www.beehiiv.com/",
+  "status": 200,
+  "title": "Newsletter Platform: Create Newsletters and Websites - beehiiv",
+  "h1": "NEWSLETTERS. PODCASTS. COMMUNITY. ONE PLATFORM.",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free NEWSLETTERS. PODCASTS. COMMUNITY. ONE PLATFORM. The all-in-one platform helping the world's best newsletters publish, grow and earn. Start in seconds 4.9/5 from 28,479 customers Sign up w",
+  "inputs": [
+    {
+      "type": "hidden",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 402
+    },
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 1
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:25:44.712Z"
+}

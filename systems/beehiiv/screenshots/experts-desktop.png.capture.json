@@ -1,0 +1,89 @@
+{
+  "slug": "experts",
+  "requested": "https://www.beehiiv.com/experts",
+  "final": "https://www.beehiiv.com/experts",
+  "status": 200,
+  "title": "Discover Experts - beehiiv",
+  "h1": "DISCOVER EXPERTS",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free Directory DISCOVER EXPERTS Hire experts that can help you supercharge your newsletter Become an Expert Browse Experts FEATURED PARTNERS storyarb North America · from $10,000 Verified Expe",
+  "inputs": [
+    {
+      "type": "search",
+      "name": "",
+      "placeholder": "Search...",
+      "valueLen": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:28:00.820Z"
+}

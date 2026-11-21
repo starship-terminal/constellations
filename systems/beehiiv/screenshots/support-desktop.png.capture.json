@@ -1,0 +1,23 @@
+{
+  "slug": "support",
+  "requested": "https://www.beehiiv.com/support",
+  "final": "https://www.beehiiv.com/support",
+  "status": 200,
+  "title": "Support - beehiiv",
+  "h1": "Knowledge Base",
+  "text": "Looking for something? The beehiiv app has a new navigation menu. Features are now grouped by function in the left side panel, making it easier to find what you need. Check out what moved where → Search knowledge base... or Ask Chatbot Log in Sign Up Home Getting Started Newslett",
+  "inputs": [
+    {
+      "type": "search",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 0
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:27:37.939Z"
+}

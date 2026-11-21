@@ -1,0 +1,23 @@
+{
+  "slug": "state-of-newsletters",
+  "requested": "https://www.beehiiv.com/blog/the-state-of-newsletters-2026",
+  "final": "https://www.beehiiv.com/blog/the-state-of-newsletters-2026",
+  "status": 200,
+  "title": "The State of Newsletters 2026 | beehiiv Blog",
+  "h1": "The State of Newsletters 2026",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free Home Posts The State of Newsletters 2026 Ask AI The State of Newsletters 2026 Trends, Growth, and What’s Next for Email in 2026 Tyler Denk, Kanishka & Taylor Cromwell January 05, 2026 If ",
+  "inputs": [
+    {
+      "type": "email",
+      "name": "",
+      "placeholder": "you@example.com",
+      "valueLen": 0
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:28:05.223Z"
+}

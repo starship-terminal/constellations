@@ -1,0 +1,162 @@
+{
+  "captured": "2026-11-22",
+  "product": "beehiiv",
+  "home": "https://www.beehiiv.com/",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "theme": "The public marketing site is a dark navy page. No light theme toggle was on the homepage or pricing. The signed-out login wall is a light page.",
+  "fonts": {
+    "body": "SatoshiFont, SatoshiFont Fallback, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+    "display": "ClashGroteskFont, ClashGroteskFont Fallback, sans-serif",
+    "loaded": ["SatoshiFont 400", "SatoshiFont 500", "SatoshiFont 700", "ClashGroteskFont 700"]
+  },
+  "computed": {
+    "nav": {
+      "background": "#060419",
+      "note": "Visible navigation bar. The header element itself had height 0."
+    },
+    "footer": { "background": "#060419" },
+    "h1": {
+      "color": "#ffffff",
+      "font": "ClashGroteskFont",
+      "size": "60px",
+      "weight": "700",
+      "lineHeight": "60px",
+      "text": "NEWSLETTERS. PODCASTS. COMMUNITY. ONE PLATFORM."
+    },
+    "loginLink": {
+      "color": "#dddce8",
+      "size": "14px",
+      "weight": "600",
+      "padding": "8px 12px",
+      "radius": "6px",
+      "height": "36px"
+    },
+    "demoButton": {
+      "color": "#ffffff",
+      "border": "1px solid rgba(255, 255, 255, 0.2)",
+      "radius": "6px",
+      "padding": "8px 12px",
+      "size": "14px",
+      "weight": "600",
+      "height": "36px"
+    },
+    "signupForFree": {
+      "background": "#ffffff",
+      "color": "#060419",
+      "border": "1px solid #ffffff",
+      "radius": "6px",
+      "padding": "8px 12px",
+      "size": "14px",
+      "weight": "600",
+      "height": "36px"
+    },
+    "pricingStartForFree": {
+      "background": "#ffffff",
+      "color": "#3843d0",
+      "border": "1px solid #3843d0",
+      "radius": "6px",
+      "padding": "8px 24px",
+      "size": "18px",
+      "weight": "700",
+      "height": "46px"
+    },
+    "pricingTryForFree": {
+      "background": "#2f39ba",
+      "color": "#ffffff",
+      "radius": "6px",
+      "padding": "8px 24px",
+      "size": "18px",
+      "weight": "700",
+      "height": "46px"
+    },
+    "pricingContactSales": {
+      "background": "#060419",
+      "color": "#ffffff",
+      "radius": "6px",
+      "height": "46px"
+    },
+    "pricingH1": {
+      "font": "ClashGroteskFont",
+      "size": "64px",
+      "lineHeight": "66px",
+      "weight": "700",
+      "color": "#ffffff"
+    },
+    "subscriberCount": { "color": "#ff5ec4", "size": "24px", "weight": "700" }
+  },
+  "customProperties": {
+    "--surface-page": "#060419",
+    "--surface-1": "#0d0b28",
+    "--surface-2": "#141230",
+    "--surface-3": "#1c1940",
+    "--text-primary": "#fff",
+    "--text-secondary": "#f7f5ff",
+    "--text-tertiary": "#c4c2d6",
+    "--text-disabled": "#4e4e6c",
+    "--text-accent-pink": "#ff5ec4",
+    "--text-accent-blue": "#7079d5",
+    "--text-accent-lavender": "#bcbef3",
+    "--text-fusion-blue-50": "#d4d7f5",
+    "--text-fusion-blue-400": "#5b66cb",
+    "--border-default": "#ffffff1f",
+    "--border-strong": "#fff3",
+    "--border-subtle": "#ffffff0f",
+    "--border-flamingo": "#ff5ec4",
+    "--border-fusion-blue": "#2f39ba",
+    "--button-primary-fill": "#2f39ba",
+    "--button-primary-fill-hover": "#2a33a3",
+    "--button-primary-fill-pressed": "#20288c",
+    "--button-primary-text": "#fff",
+    "--button-accent-fill": "#ff5ec4",
+    "--button-accent-fill-hover": "#e040a8",
+    "--button-accent-fill-pressed": "#c42d8c",
+    "--button-accent-text": "#060419",
+    "--button-link-text": "#7079d5",
+    "--button-link-text-hover": "#bcbef3",
+    "--button-tertiary-text": "#d4d7f5",
+    "--action-ghost-text": "#dddce8",
+    "--action-secondary-border": "#06041933",
+    "--radius-xl": "12px",
+    "--font-satoshi": "\"SatoshiFont\", \"SatoshiFont Fallback\"",
+    "--clash-grotesk-font-family": "\"ClashGroteskFont\", \"ClashGroteskFont Fallback\""
+  },
+  "loginWall": {
+    "url": "https://app.beehiiv.com/login",
+    "title": "Login - beehiiv",
+    "heading": "Log in to beehiiv",
+    "emailPlaceholder": "name@email.com",
+    "emailValueLength": 0,
+    "email": {
+      "background": "#ffffff",
+      "color": "#111827",
+      "border": "1px #e5e7eb",
+      "radius": "6px",
+      "height": "38px",
+      "padding": "8px 12px",
+      "size": "14px",
+      "font": "ui-sans-serif, system-ui, sans-serif"
+    },
+    "signInDisabled": {
+      "background": "#d1d5db",
+      "color": "#6b7280",
+      "radius": "6px",
+      "height": "38px",
+      "size": "14px",
+      "weight": "500"
+    },
+    "identityProvidersNotClicked": ["Sign in with Google"],
+    "appTokensSample": {
+      "--color-background": "#fff",
+      "--color-text-primary": "#171717",
+      "--color-text-secondary": "#a3a3a3",
+      "--color-text-accent": "#8b5cf6",
+      "--color-border": "#e5e5e5",
+      "--color-background-secondary": "#f5f5f5",
+      "--neutral-1000": "#0e0f13"
+    }
+  },
+  "signupWall": {
+    "url": "https://app.beehiiv.com/signup",
+    "result": "PerimeterX press-and-hold wall. Title: Access to this page has been denied. Not solved."
+  }
+}

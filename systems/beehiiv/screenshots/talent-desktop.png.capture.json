@@ -1,0 +1,89 @@
+{
+  "slug": "talent",
+  "requested": "https://www.beehiiv.com/talent",
+  "final": "https://www.beehiiv.com/talent",
+  "status": 200,
+  "title": "The newsletter platform used by the world's top talent",
+  "h1": "YOUR AUDIENCE IS BIGGER THAN THE ALGORITHM.",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free YOUR AUDIENCE IS BIGGER THAN THE ALGORITHM. A newsletter gives you a direct relationship with your audience. Forget scrolling feeds and complex algorithms. It's just your ideas, your audi",
+  "inputs": [
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 6
+    },
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 5
+    },
+    {
+      "type": "text",
+      "name": "firstname",
+      "placeholder": "Alex",
+      "valueLen": 0
+    },
+    {
+      "type": "text",
+      "name": "lastname",
+      "placeholder": "Johnson",
+      "valueLen": 0
+    },
+    {
+      "type": "email",
+      "name": "email",
+      "placeholder": "",
+      "valueLen": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "textarea",
+      "name": "notes",
+      "placeholder": "",
+      "valueLen": 0
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:27:18.469Z"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "beehiiv",
+  "product": "beehiiv",
+  "domain": "beehiiv.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Incognito preview tab opened https://app.beehiiv.com/login. The email field placeholder was name@email.com and its value length was 0. Sign in was disabled. Sign in with Google was not clicked. Forgot your password was not clicked. No email, password, code, phone, or address was typed. No form was submitted.",
+  "wall": {
+    "url": "https://app.beehiiv.com/login",
+    "title": "Login - beehiiv",
+    "heading": "Log in to beehiiv",
+    "email_field": true,
+    "password_field": false,
+    "identity_providers_not_clicked": ["Sign in with Google"],
+    "sign_in_not_clicked": true,
+    "inputs": [
+      {
+        "type": "text",
+        "name": "email",
+        "placeholder": "name@email.com",
+        "filled": false
+      }
+    ],
+    "note": "The first screen asks for email only. The password step was not reached. Create one links to /signup."
+  },
+  "signup_wall": {
+    "url": "https://app.beehiiv.com/signup",
+    "title": "Access to this page has been denied",
+    "same_as_login": false,
+    "continued": false,
+    "note": "PerimeterX press-and-hold wall. The button was not held. No account was created. No publication was created. Headless Chromium got a Cloudflare 403 and those frames were discarded."
+  },
+  "stopped": "Photographed the empty login wall. Stopped at the signup captcha. Did not click Google. Did not type. Did not submit. Did not create a publication. Did not subscribe."
+}
