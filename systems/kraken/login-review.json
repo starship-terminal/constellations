@@ -1,0 +1,47 @@
+{
+  "product": "Kraken",
+  "signed_in": false,
+  "captured": "2026-11-21",
+  "note": "Walls were opened only far enough to see what they ask for. No email, username, password, phone, or code was typed. Google, Apple, passkey, and Continue were not clicked. No form was submitted. No account was created.",
+  "walls": [
+    {
+      "url": "https://www.kraken.com/sign-in",
+      "also_seen_at": "https://id.kraken.com/sign-in",
+      "title": "Sign in to Kraken",
+      "asks_for": [
+        "Email or username",
+        "Password",
+        "Show password toggle",
+        "Forgot password or username",
+        "Continue",
+        "Sign in with Google",
+        "Sign in with Apple",
+        "Sign in with passkey",
+        "Still can't sign in? Email us",
+        "Language control: English (US)",
+        "Create Account link"
+      ],
+      "identity_providers_present": ["Google", "Apple", "passkey"],
+      "identity_providers_clicked": [],
+      "submitted": false,
+      "screenshot": "screenshots/sign-in-light-wall.png"
+    },
+    {
+      "url": "https://www.kraken.com/sign-up",
+      "title": "Create an account",
+      "asks_for": [
+        "Personal or Business toggle",
+        "Email",
+        "Invite Code (optional)",
+        "Continue",
+        "Continue with Google",
+        "Continue with Apple",
+        "Sign in link"
+      ],
+      "identity_providers_present": ["Google", "Apple"],
+      "identity_providers_clicked": [],
+      "submitted": false,
+      "screenshot": "screenshots/sign-up-light-wall.png"
+    }
+  ]
+}

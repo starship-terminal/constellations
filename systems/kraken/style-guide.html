@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kraken style guide</title>
+<style>
+  :root {
+    --page: #f6f5f9;
+    --surface: #ffffff;
+    --text: #101114;
+    --muted: #686b82;
+    --accent: #7132f5;
+    --accent-hover: #5b1ecf;
+    --on-accent: #ffffff;
+    --border: #686b8229;
+    --success: #08844f;
+    --warning: #c39621;
+    --danger: #d11d45;
+    --info: #0079b4;
+    --font: "IBM Plex Sans", Helvetica, Arial, sans-serif;
+  }
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--font); }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
+  main { max-width: 960px; margin: 0 auto; padding: 24px; }
+  h1 { font-weight: 400; font-size: 48px; line-height: 56px; margin: 0 0 8px; }
+  h2 { font-size: 24px; font-weight: 500; margin: 32px 0 12px; }
+  p.note { color: var(--muted); max-width: 68ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .swatch i { display: block; height: 56px; border-radius: 12px; border: 1px solid var(--border); }
+  .swatch span { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  button, .btn { border: 0; border-radius: 12px; height: 36px; padding: 8px 12px; font: 500 14px/20px var(--font); }
+  .primary { background: var(--accent); color: var(--on-accent); }
+  .quiet { background: transparent; color: var(--text); }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+  th { color: var(--muted); font-weight: 500; }
+  .up { color: var(--success); }
+  .down { color: var(--danger); }
+  .card { background: var(--surface); border-radius: 20px; padding: 24px; max-width: 420px; }
+  input { width: 100%; border: 0; background: #f3f2f6; border-radius: 12px; padding: 12px; font: 16px/24px var(--font); margin: 8px 0; }
+  label.toggle { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <strong>Kraken</strong>
+  <label class="toggle">Theme
+    <select id="theme">
+      <option value="light">Light (live)</option>
+      <option value="dark">Dark (declared, not live)</option>
+    </select>
+  </label>
+</header>
+<main>
+  <h1>Own the power of your money</h1>
+  <p class="note">Values are the public magic-light tokens read on 2026-11-21. Kraken-Brand and Kraken-Product are not loaded here. The fallback is IBM Plex Sans, which the computed stacks name. Dark colours are declared in the same stylesheet and were not applied on the public site.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Button</h2>
+  <div class="row">
+    <button class="primary">Sign up</button>
+    <button class="quiet">Log in</button>
+  </div>
+  <h2>Price row</h2>
+  <table>
+    <thead><tr><th>Asset</th><th>Price</th><th>24h</th></tr></thead>
+    <tbody>
+      <tr><td>Bitcoin</td><td>Sample</td><td class="down">Negative</td></tr>
+      <tr><td>Tether</td><td>Sample</td><td class="up">Positive</td></tr>
+    </tbody>
+  </table>
+  <h2>Auth card shape</h2>
+  <div class="card">
+    <strong>Sign in</strong>
+    <input placeholder="Email or username" readonly>
+    <input placeholder="Password" readonly>
+    <button class="primary" style="width:100%">Continue</button>
+    <p class="note">Specimen only. The capture did not type into these fields.</p>
+  </div>
+</main>
+<script>
+const light = {
+  page: "#f6f5f9", surface: "#ffffff", text: "#101114", muted: "#686b82",
+  accent: "#7132f5", accentHover: "#5b1ecf", onAccent: "#ffffff", border: "#686b8229",
+  success: "#08844f", warning: "#c39621", danger: "#d11d45", info: "#0079b4"
+};
+const roles = Object.keys(light);
+const host = document.getElementById("swatches");
+for (const role of roles) {
+  const el = document.createElement("div");
+  el.className = "swatch";
+  el.innerHTML = "<i></i><span></span>";
+  el.querySelector("i").style.background = light[role];
+  el.querySelector("span").textContent = role + " " + light[role];
+  host.appendChild(el);
+}
+document.getElementById("theme").addEventListener("change", (e) => {
+  document.documentElement.dataset.theme = e.target.value;
+});
+</script>
+</body>
+</html>
