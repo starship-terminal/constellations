@@ -1,0 +1,86 @@
+{
+  "product": "ThirdLove",
+  "domain": "thirdlove.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Playwright Chromium, signed out, 1440x900, devicePixelRatio 2. The shared preview opened the homepage. Full-resolution shots were taken in Playwright because the preview snapshot is scaled.",
+  "region": "Public shop at https://www.thirdlove.com/. Product prices in USD. Locale en.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "public account login URL",
+      "url": "https://www.thirdlove.com/account/login",
+      "title": "Account – Thirdlove",
+      "painted": true,
+      "headings": ["Sign In", "Membership Perks"],
+      "asksFor": [
+        { "label": "Email Address", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": ["Google"],
+      "otherControls": ["Sign In", "Forgot password?", "Manage Subscriptions", "Join Now"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email and password were empty. Sign In was not clicked. Google was not clicked. Join Now was not clicked. No form was submitted. The header account control points at #k-hub and was not clicked."
+    },
+    {
+      "control": "Join Now on the same wall is also signup",
+      "url": "https://www.thirdlove.com/account/login",
+      "title": "Account – Thirdlove",
+      "painted": true,
+      "headings": ["Hooked", "Membership Perks"],
+      "asksFor": [],
+      "identityProvidersSeen": ["Google"],
+      "otherControls": ["Join Now"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "There is no separate signup form before Join Now is clicked. Join Now was not clicked. Nothing was typed."
+    },
+    {
+      "control": "footer email",
+      "url": "https://www.thirdlove.com/",
+      "title": "Thirdlove - Bras and Underwear for Every Body",
+      "painted": true,
+      "headings": ["Join The List"],
+      "asksFor": [
+        { "label": "Signup for email alerts", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Sign Up"],
+      "stopped": true,
+      "screenshot": "screenshots/footer-light-1440.png",
+      "note": "The newsletter email was not typed and Sign Up was not clicked. The contact line that prints a phone number was hidden before the shot and is not stored."
+    },
+    {
+      "control": "header cart",
+      "url": "https://www.thirdlove.com/",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["cart"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Cart is a checkout wall. The cart button was not opened. Select Size was not clicked. Add to Bag was not shown and was not clicked."
+    },
+    {
+      "control": "Find My Fit quiz",
+      "url": "https://www.thirdlove.com/pages/digioh-quiz-updated",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Find My Fit"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "The fit quiz was not started. No email or size was entered."
+    }
+  ]
+}
