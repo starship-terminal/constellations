@@ -1,6 +1,6 @@
 # Miro
 
-Miro's public marketing site and signed-out auth, measured on 2026-11-18 from the T3 preview browser. Pages: miro.com, pricing, AI Workflows, AI Trust, Miroverse templates, login and signup. Light only. No account was created. Viewport was 1169x731 CSS pixels at devicePixelRatio 2.
+Miro's public marketing site and signed-out auth. Tokens were measured on 2026-11-18. The public site tree and page shots were refreshed on 2026-11-21 from Playwright, signed out, at 1440×900 and 390×844. Pages: miro.com, pricing, Intelligent Canvas, AI Workflows, AI Trust, Miroverse templates, enterprise, customers, integrations, login and signup. Light only. No account was created. Login and signup are empty walls.
 
 | File | What it holds |
 |---|---|
@@ -10,7 +10,10 @@ Miro's public marketing site and signed-out auth, measured on 2026-11-18 from th
 | [style-guide.html](style-guide.html) | The light tokens and the main controls |
 | [components.md](components.md) | Measured controls, no crops |
 | [patterns.md](patterns.md) | How the public pages combine those controls |
+| [site-tree.md](site-tree.md) | Which public control opens which page, menu, or wall |
+| [login-review.json](login-review.json) | What the empty login wall offered, and what was not submitted |
 | [icon.png](icon.png) | The site favicon, 128 px, from the homepage link |
+| [screenshots/](screenshots) | Quantised page shots, desktop and phone, from 2026-11-21 |
 | [raw/](raw/) | Pricing `:root` custom properties and the component readings |
 | [tools/](tools/) | `build_tokens.py`, `build_style_guide.py`, and `test_tokens.py` |
 
@@ -62,7 +65,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 Not graded yet: no scorecard snapshot reviews this package. Review it against [scorecard/criteria.json](../../scorecard/criteria.json) in the wording for its platform (`python3 tools/grade.py --criteria miro` prints it) and merge the grades with `python3 tools/grade.py --write --review miro=<grades.json>`.
 
-Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops. The preview pane returned no screenshot frames), `icons/` (Inline icons were not exported. The preview pane returned no screenshot frames), `screenshots/` (The preview pane returned no screenshot frames, so no page captures were saved).
+Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops. The preview pane returned no screenshot frames), `icons/` (Inline icons were not exported. The preview pane returned no screenshot frames).
 
 <!-- health:end -->
 
@@ -71,11 +74,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops. T
 
 Computed styles in the T3 preview tab, not a headless browser. Custom properties were read from `getComputedStyle(document.documentElement)` on [https://miro.com/pricing/](https://miro.com/pricing/) and saved as [raw/pricing-root-vars.json](raw/pricing-root-vars.json). Component colours, type, padding and radii were read from the live elements and saved as [raw/components-computed.json](raw/components-computed.json).
 
-The homepage is a Framer page and uses Apris for the title. Pricing, product pages and the 404 use a local Roobert face (`roobertPROLocal`). Login and signup use `"Roobert PRO"`. Nav buttons and plan actions use Noto Sans. The OneTrust banner was visible and was not clicked. No theme class was switched.
+The homepage is a Framer page and uses Apris for the title. Pricing, product pages and the 404 use a local Roobert face (`roobertPROLocal`). Login and signup use `"Roobert PRO"`. Nav buttons and plan actions use Noto Sans. On 2026-11-21 the OneTrust banner was rejected (Reject All) before the screenshots. Accept All Cookies was not clicked. No theme class was switched. Token values were not re-read on that pass.
 
 ## What to distrust
 
-The viewport was 1169px wide, not 1440. Phone width was not measured. Hover and pressed button colours are declared tokens, not a hovered element. The login email field already had a blue border before focus, so that border is not a focus ring. Plan cards computed `box-shadow: none` even though `--shadow-*` is declared. Screenshots were not taken: the preview pane returned no frames. [icon.png](icon.png) is the site favicon, also named as the catalog cover because a cover path is required. It is not a page capture. The style guide falls back to Noto Sans because Roobert PRO and Apris are not loaded.
+The 2026-11-18 readings used a 1169px viewport. The 2026-11-21 screenshots are 1440×900 and 390×844, and they were not used to re-read tokens. Hover and pressed button colours are declared tokens, not a hovered element. The login email field already had a blue border before focus, so that border is not a focus ring. Plan cards computed `box-shadow: none` even though `--shadow-*` is declared. [icon.png](icon.png) is the site favicon, also named as the catalog cover because a cover path is required. It is not a page capture. The style guide falls back to Noto Sans because Roobert PRO and Apris are not loaded. Screenshots are quantised to 256 colours.
 
 [raw/pricing-root-vars.json](raw/pricing-root-vars.json) excludes `--tw-*` and `--wcds-*` names. The 16 tokens sourced to a `--tw-*` name (font weights, the `font.size` steps, `motion.duration.fast` and the two easings) have no reading behind them, so their sources say Reconstruction. `--wcds-*` is the cookie-consent banner's own design system, not Miro's. `radius.sm`, `md`, `lg` and `xl`, `space.100`, `200` and `300`, and `motion.duration.cookie` (the OneTrust button, saved as `pages.home.cookieBanner.accept` in [raw/components-computed.json](raw/components-computed.json)) were read from that banner. They are marked as read from the wrong element and need a recapture from Miro's own controls.
 
@@ -98,20 +101,20 @@ Roobert PRO and Apris are proprietary and are not in this package. Tokens name t
 | Text area, select, radio, switch | Not on these pages |
 | Checkbox | Login "Remember me", unchecked |
 | Tabs | Billing pill on pricing. No tablist |
-| Menu, tooltip, dialog, toast | Not opened |
+| Menu | Captured. [screenshots/home-light-product-menu.png](screenshots/home-light-product-menu.png) |
 | Card | Pricing plans and the auth card |
 | List, table, avatar, badge | FAQ type only. No table or avatar |
 | App shell | Not captured. `/app/` redirected to signup |
 | Form error | Signup rejected the capture inbox domain |
 | Empty, loading, destructive | Not captured. Signed-in product was not entered |
-| Widths | 1169px only |
+| Widths | Screenshots at 1440 and 390. Token readings still from the 1169px pass |
 
 ## Do and don't
 
-- **Use the blue `#3859ff` for a pricing action and `#2e4de6` for the auth submit.** They are different blues on different surfaces. Page captures are missing; the only image is the site icon, [icon.png](icon.png).
-- **Keep plan cards flat.** They computed with no shadow and a 20px radius. Business is the one card with a blue border. Page captures are missing; the only image is the site icon, [icon.png](icon.png).
-- **Set marketing nav type in Noto Sans at 14px.** The homepage title is Apris, not the same face as the buttons. Page captures are missing; the only image is the site icon, [icon.png](icon.png).
-- **Leave the page warm on auth (`#fbf7ef`) and cool on pricing (`#fafafc`).** Do not paint the marketing home with the pricing page colour. Page captures are missing; the only image is the site icon, [icon.png](icon.png).
+- **Use the blue `#3859ff` for a pricing action and `#2e4de6` for the auth submit.** They are different blues on different surfaces. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) and [screenshots/login-light-empty.png](screenshots/login-light-empty.png).
+- **Keep plan cards flat.** They computed with no shadow and a 20px radius. Business is the one card with a blue border. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png).
+- **Set marketing nav type in Noto Sans at 14px.** The homepage title is Apris, not the same face as the buttons. [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- **Leave the page warm on auth (`#fbf7ef`) and cool on pricing (`#fafafc`).** Do not paint the marketing home with the pricing page colour. [screenshots/login-light-empty.png](screenshots/login-light-empty.png) and [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png).
 
 ## Rebuild
 

@@ -73,7 +73,7 @@ Good for: Visual collaboration marketing and signed-out auth: a cool gray page, 
 
 Captured 2026-11-18, signed-out public marketing, pricing, product, templates, login and signup. Signup rejected the capture inbox. No board created. No purchase.. Themes: light.
 
-Miro's public marketing site and signed-out auth, measured on 2026-11-18 from the T3 preview browser. Pages: miro.com, pricing, AI Workflows, AI Trust, Miroverse templates, login and signup. Light only. No account was created. Viewport was 1169x731 CSS pixels at devicePixelRatio 2.
+Miro's public marketing site and signed-out auth. Tokens were measured on 2026-11-18. The public site tree and page shots were refreshed on 2026-11-21 from Playwright, signed out, at 1440×900 and 390×844. Pages: miro.com, pricing, Intelligent Canvas, AI Workflows, AI Trust, Miroverse templates, enterprise, customers, integrations, login and signup. Light only. No account was created. Login and signup are empty walls.
 
 ## Colors
 
@@ -129,13 +129,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The viewport was 1169px wide, not 1440. Phone width was not measured. Hover and pressed button colours are declared tokens, not a hovered element. The login email field already had a blue border before focus, so that border is not a focus ring. Plan cards computed `box-shadow: none` even though `--shadow-*` is declared. Screenshots were not taken: the preview pane returned no frames. [icon.png](icon.png) is the site favicon, also named as the catalog cover because a cover path is required. It is not a page capture. The style guide falls back to Noto Sans because Roobert PRO and Apris are not loaded.
+The 2026-11-18 readings used a 1169px viewport. The 2026-11-21 screenshots are 1440×900 and 390×844, and they were not used to re-read tokens. Hover and pressed button colours are declared tokens, not a hovered element. The login email field already had a blue border before focus, so that border is not a focus ring. Plan cards computed `box-shadow: none` even though `--shadow-*` is declared. [icon.png](icon.png) is the site favicon, also named as the catalog cover because a cover path is required. It is not a page capture. The style guide falls back to Noto Sans because Roobert PRO and Apris are not loaded. Screenshots are quantised to 256 colours.
 
 [raw/pricing-root-vars.json](raw/pricing-root-vars.json) excludes `--tw-*` and `--wcds-*` names. The 16 tokens sourced to a `--tw-*` name (font weights, the `font.size` steps, `motion.duration.fast` and the two easings) have no reading behind them, so their sources say Reconstruction. `--wcds-*` is the cookie-consent banner's own design system, not Miro's. `radius.sm`, `md`, `lg` and `xl`, `space.100`, `200` and `300`, and `motion.duration.cookie` (the OneTrust button, saved as `pages.home.cookieBanner.accept` in [raw/components-computed.json](raw/components-computed.json)) were read from that banner. They are marked as read from the wrong element and need a recapture from Miro's own controls.
 
 ### Do and don't (from README.md)
 
-- **Use the blue `#3859ff` for a pricing action and `#2e4de6` for the auth submit.** They are different blues on different surfaces. Page captures are missing; the only image is the site icon, [icon.png](icon.png).
-- **Keep plan cards flat.** They computed with no shadow and a 20px radius. Business is the one card with a blue border. Page captures are missing; the only image is the site icon, [icon.png](icon.png).
-- **Set marketing nav type in Noto Sans at 14px.** The homepage title is Apris, not the same face as the buttons. Page captures are missing; the only image is the site icon, [icon.png](icon.png).
-- **Leave the page warm on auth (`#fbf7ef`) and cool on pricing (`#fafafc`).** Do not paint the marketing home with the pricing page colour. Page captures are missing; the only image is the site icon, [icon.png](icon.png).
+- **Use the blue `#3859ff` for a pricing action and `#2e4de6` for the auth submit.** They are different blues on different surfaces. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) and [screenshots/login-light-empty.png](screenshots/login-light-empty.png).
+- **Keep plan cards flat.** They computed with no shadow and a 20px radius. Business is the one card with a blue border. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png).
+- **Set marketing nav type in Noto Sans at 14px.** The homepage title is Apris, not the same face as the buttons. [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- **Leave the page warm on auth (`#fbf7ef`) and cool on pricing (`#fafafc`).** Do not paint the marketing home with the pricing page colour. [screenshots/login-light-empty.png](screenshots/login-light-empty.png) and [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png).
