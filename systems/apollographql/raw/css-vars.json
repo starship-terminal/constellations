@@ -1,20 +1,20 @@
 {
- "readAt": "2026-11-10",
+ "readAt": "2026-11-21",
  "source": "the live CSSOM on apollographql.com (the compiled _next/static/css bundles are same-origin, readable); semantic names resolved on a .dark probe, one theme per page, at 1440 x 900",
  "sheetsSkippedCrossOrigin": [],
  "counts": {
-  "rules": 310,
+  "rules": 315,
   "fonts": 16,
   "names": {
    "theme": 35,
-   "app": 164,
+   "app": 166,
    "utility": 25,
-   "tailwind": 286
+   "tailwind": 294
   },
   "bySelector": {
    "[theme] :root": 4,
    "[tailwind] @layer properties @supports ((-webkit-hyphens:none) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) *, ::backdrop, ::after, ::before": 71,
-   "[tailwind] @layer theme :host, :root": 179,
+   "[tailwind] @layer theme :host, :root": 187,
    "[tailwind] @layer utilities .prose": 36,
    "[tailwind] @layer utilities .-translate-x-1\\/2": 1,
    "[tailwind] @layer utilities .translate-x-1\\/2": 1,
@@ -33,6 +33,7 @@
    "[tailwind] @layer utilities :where(.space-y-3 > :not(:last-child))": 1,
    "[tailwind] @layer utilities :where(.space-y-4 > :not(:last-child))": 1,
    "[tailwind] @layer utilities :where(.space-y-5 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-6 > :not(:last-child))": 1,
    "[tailwind] @layer utilities :where(.space-y-8 > :not(:last-child))": 1,
    "[tailwind] @layer utilities :where(.space-y-10 > :not(:last-child))": 1,
    "[tailwind] @layer utilities :where(.space-y-12 > :not(:last-child))": 1,
@@ -149,6 +150,8 @@
    "[tailwind] @layer utilities .ease-in-out": 1,
    "[tailwind] @layer utilities .ease-linear": 1,
    "[tailwind] @layer utilities .ease-out": 1,
+   "[app] @layer utilities .events-layout": 1,
+   "[app] @layer utilities @media (min-width: 744px) .events-layout": 1,
    "[tailwind] @layer utilities .outline-none": 1,
    "[utility] @layer utilities .\\[--bar-color\\:var\\(--color-horizon\\)\\]": 1,
    "[utility] @layer utilities .\\[--bar-color\\:var\\(--color-nebula\\)\\]": 1,
@@ -289,6 +292,8 @@
    "[app] @media (max-width: 767px) .tablet-overlapping + *": 1,
    "[app] @media (max-width: 767px) .mobile-overlapping": 1,
    "[theme] .events-refresh": 7,
+   "[theme] .events-landing": 2,
+   "[app] @layer utilities .events-landing .events-panel-surface": 1,
    "[theme] .adorn_adorn__COPnp.adorn_adorn-nebulla__KCwhY": 1,
    "[theme] .adorn_adorn__COPnp.adorn_adorn-regolith__ezRLC": 1,
    "[theme] .adorn_adorn__COPnp .adorn_adornCircle__z18D0:first-child": 1,
@@ -330,7 +335,7 @@
    "bin": "theme"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".dark",
    "context": [],
    "properties": {
@@ -350,18 +355,18 @@
    "bin": "theme"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":root",
    "context": [
     "@media (max-width: 767px)"
    ],
    "properties": {
-    "--container-side-spaces": "clamp(16px,1.11111vw,16px)"
+    "--container-side-spaces": "var(--spacing-container-mobile)"
    },
    "bin": "theme"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": "[data-theme=\"dark\"]",
    "context": [],
    "properties": {
@@ -380,7 +385,7 @@
    "bin": "theme"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".events-refresh",
    "context": [],
    "properties": {
@@ -395,7 +400,17 @@
    "bin": "theme"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "367989760bd8b1b8.css",
+   "selector": ".events-landing",
+   "context": [],
+   "properties": {
+    "--color-content-primary": "var(--color-neutral-900)",
+    "--color-content-muted": "var(--color-neutral-700)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "31ec9b0741a1e065.css",
    "selector": ".adorn_adorn__COPnp.adorn_adorn-nebulla__KCwhY",
    "context": [],
    "properties": {
@@ -404,7 +419,7 @@
    "bin": "theme"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".adorn_adorn__COPnp.adorn_adorn-regolith__ezRLC",
    "context": [],
    "properties": {
@@ -413,7 +428,7 @@
    "bin": "theme"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".adorn_adorn__COPnp .adorn_adornCircle__z18D0:first-child",
    "context": [],
    "properties": {
@@ -422,7 +437,7 @@
    "bin": "theme"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".home-hero_hero__ioCtE",
    "context": [],
    "properties": {
@@ -431,7 +446,7 @@
    "bin": "theme"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".homepage_page__YKDcC",
    "context": [],
    "properties": {
@@ -444,7 +459,30 @@
  ],
  "app": [
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
+   "selector": ".events-layout",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--events-container-padding": "var(--spacing-container-mobile)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "367989760bd8b1b8.css",
+   "selector": ".events-layout",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 744px)"
+   ],
+   "properties": {
+    "--events-container-padding": "var(--spacing-spacing-32)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "367989760bd8b1b8.css",
    "selector": "",
    "context": [
     "@keyframes asteroid-fly"
@@ -456,7 +494,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": "",
    "context": [
     "@keyframes asteroid-fly"
@@ -468,7 +506,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": "",
    "context": [
     "@keyframes asteroid-fly"
@@ -480,7 +518,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -536,7 +574,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":root",
    "context": [
     "@media (hover: none) and (pointer: coarse)"
@@ -548,7 +586,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": "body.dark, body[data-theme=\"dark\"]",
    "context": [],
    "properties": {
@@ -569,7 +607,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":root",
    "context": [
     "@media (detachedmediaquery:0)"
@@ -580,7 +618,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -592,7 +630,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -644,9 +682,9 @@
     "--color-error": "#ff5151",
     "--surface-default": "var(--color-offwhite)",
     "--content": "var(--color-nebula)",
-    "--layout-lg": "1440px",
-    "--layout-md": "1440px",
-    "--container-side-spaces": "clamp(24px,3.33333vw,48px)",
+    "--layout-lg": "var(--container-astra-frame)",
+    "--layout-md": "var(--container-astra-frame)",
+    "--container-side-spaces": "var(--spacing-container)",
     "--article-main-content-width": "clamp(600px,62.5vw,900px)",
     "--header-height": "clamp(70px,5.41667vw,78px)",
     "--header-top": "clamp(24px,2.22222vw,32px)",
@@ -677,7 +715,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".overlapping",
    "context": [],
    "properties": {
@@ -686,7 +724,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".overlapping",
    "context": [
     "@media (max-width: 767px)"
@@ -697,7 +735,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet-overlapping",
    "context": [
     "@media (max-width: 1280px)"
@@ -708,7 +746,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet-overlapping",
    "context": [
     "@media (max-width: 767px)"
@@ -719,7 +757,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet-overlapping + *",
    "context": [
     "@media (max-width: 767px)"
@@ -730,7 +768,7 @@
    "bin": "app"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".mobile-overlapping",
    "context": [
     "@media (max-width: 767px)"
@@ -741,7 +779,18 @@
    "bin": "app"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "367989760bd8b1b8.css",
+   "selector": ".events-landing .events-panel-surface",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--panel-bleed": "calc((100cqw - var(--container-events-content)) / 2)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "31ec9b0741a1e065.css",
    "selector": ".home-hero_cta__1T2Dn",
    "context": [],
    "properties": {
@@ -752,7 +801,7 @@
    "bin": "app"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".home-hero_cta__1T2Dn:hover",
    "context": [],
    "properties": {
@@ -763,7 +812,7 @@
    "bin": "app"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": "",
    "context": [
     "@keyframes home-hero_cta-orbit__4vypO"
@@ -774,7 +823,7 @@
    "bin": "app"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": "",
    "context": [
     "@keyframes home-hero_cta-orbit__4vypO"
@@ -785,7 +834,7 @@
    "bin": "app"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".slider-dots_sliderDots__baSaN.slider-dots_theme-satellite__d_IOs",
    "context": [],
    "properties": {
@@ -794,7 +843,7 @@
    "bin": "app"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".slider-dots_sliderDots__baSaN.slider-dots_theme-nebula__AjuWo",
    "context": [],
    "properties": {
@@ -803,7 +852,7 @@
    "bin": "app"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".testimonials-carousel_quote__m67sx",
    "context": [],
    "properties": {
@@ -812,19 +861,19 @@
    "bin": "app"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".testimonials-carousel_currentViewport__OK7BF",
    "context": [
     "@media (width >= 1024px)"
    ],
    "properties": {
-    "--column-offset": "max(0px,(100cqw - 90rem)/2)",
-    "--frame-offset": "max(1.5rem,(100cqw - 86rem)/2)"
+    "--column-offset": "max(0px,(100cqw - 79rem)/2)",
+    "--frame-offset": "max(1.5rem,(100cqw - 80rem)/2)"
    },
    "bin": "app"
   },
   {
-   "file": "a50fa9fa3233183e.css",
+   "file": "31ec9b0741a1e065.css",
    "selector": ".roadmap-diagram_scene__MO6ms",
    "context": [],
    "properties": {
@@ -964,7 +1013,7 @@
  ],
  "utility": [
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--bar-color\\:var\\(--color-horizon\\)\\]",
    "context": [
     "@layer utilities"
@@ -975,7 +1024,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--bar-color\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -986,7 +1035,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--bar-color\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -997,7 +1046,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--bar-left\\:0px\\]",
    "context": [
     "@layer utilities"
@@ -1008,7 +1057,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--bar-width\\:0px\\]",
    "context": [
     "@layer utilities"
@@ -1019,7 +1068,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--button-outline-color\\:inherit\\]",
    "context": [
     "@layer utilities"
@@ -1030,7 +1079,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--button-outline-color\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1041,7 +1090,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--button-outline-color\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1052,7 +1101,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--checkbox-background\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1063,7 +1112,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--checkbox-background\\:var\\(--color-satellite\\)\\]",
    "context": [
     "@layer utilities"
@@ -1074,7 +1123,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--checkbox-background\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1085,7 +1134,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--checkbox-border\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1096,7 +1145,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--checkbox-border\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1107,7 +1156,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--checkbox-color\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1118,7 +1167,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--checkbox-color\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1129,7 +1178,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--gap\\:24px\\]",
    "context": [
     "@layer utilities"
@@ -1140,7 +1189,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--heading-height\\:224px\\]",
    "context": [
     "@layer utilities"
@@ -1151,7 +1200,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--height-fallback\\:65vh\\]",
    "context": [
     "@layer utilities"
@@ -1162,7 +1211,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--height\\:65svh\\]",
    "context": [
     "@layer utilities"
@@ -1173,7 +1222,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--input-background\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1184,7 +1233,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--input-background\\:var\\(--color-satellite\\)\\]",
    "context": [
     "@layer utilities"
@@ -1195,7 +1244,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--input-background\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1206,7 +1255,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--input-border\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1217,7 +1266,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--input-border\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1228,7 +1277,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--input-color\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1239,7 +1288,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--input-color\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1250,7 +1299,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--input-placeholder\\:var\\(--color-placeholder\\)\\]",
    "context": [
     "@layer utilities"
@@ -1261,7 +1310,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--input-placeholder\\:var\\(--color-placeholder-alt\\)\\]",
    "context": [
     "@layer utilities"
@@ -1272,7 +1321,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--padding-size\\:154px\\]",
    "context": [
     "@layer utilities"
@@ -1283,7 +1332,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--section-play-state\\:paused\\]",
    "context": [
     "@layer utilities"
@@ -1294,7 +1343,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--section-play-state\\:running\\]",
    "context": [
     "@layer utilities"
@@ -1305,7 +1354,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--select-background\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1316,7 +1365,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--select-background\\:var\\(--color-satellite\\)\\]",
    "context": [
     "@layer utilities"
@@ -1327,7 +1376,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--select-background\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1338,7 +1387,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--select-border\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1349,7 +1398,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--select-border\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1360,7 +1409,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--select-color\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1371,7 +1420,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--select-color\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1382,7 +1431,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--textarea-background\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1393,7 +1442,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--textarea-background\\:var\\(--color-satellite\\)\\]",
    "context": [
     "@layer utilities"
@@ -1404,7 +1453,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--textarea-background\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1415,7 +1464,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--textarea-border\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1426,7 +1475,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--textarea-border\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1437,7 +1486,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--textarea-color\\:var\\(--color-nebula\\)\\]",
    "context": [
     "@layer utilities"
@@ -1448,7 +1497,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--textarea-color\\:var\\(--surface-default\\)\\]",
    "context": [
     "@layer utilities"
@@ -1459,7 +1508,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--textarea-placeholder\\:var\\(--color-placeholder\\)\\]",
    "context": [
     "@layer utilities"
@@ -1470,7 +1519,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--textarea-placeholder\\:var\\(--color-placeholder-alt\\)\\]",
    "context": [
     "@layer utilities"
@@ -1481,7 +1530,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[--top-height\\:clamp\\(70px\\,7\\.222vw\\,104px\\)\\]",
    "context": [
     "@layer utilities"
@@ -1492,7 +1541,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".mobile\\:\\[--height-fallback\\:55vh\\]",
    "context": [
     "@layer utilities",
@@ -1504,7 +1553,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".mobile\\:\\[--height\\:55svh\\]",
    "context": [
     "@layer utilities",
@@ -1516,7 +1565,7 @@
    "bin": "utility"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".mobile\\:\\[--top-height\\:42px\\]",
    "context": [
     "@layer utilities",
@@ -1530,7 +1579,7 @@
  ],
  "tailwind": [
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": "*, ::backdrop, ::after, ::before",
    "context": [
     "@layer properties",
@@ -1612,14 +1661,13 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":host, :root",
    "context": [
     "@layer theme"
    ],
    "properties": {
     "--font-sans": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "--font-serif": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
     "--font-mono": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
     "--color-red-600": "oklch(57.7% .245 27.325)",
     "--color-orange-50": "#fff8f4",
@@ -1655,7 +1703,6 @@
     "--color-white": "var(--color-white)",
     "--spacing": ".25rem",
     "--breakpoint-xl": "1280px",
-    "--breakpoint-2xl": "96rem",
     "--container-xs": "20rem",
     "--container-sm": "24rem",
     "--container-md": "28rem",
@@ -1734,6 +1781,8 @@
     "--font-size-base": "16px",
     "--font-size-sm": "14px",
     "--font-size-xs": "12px",
+    "--font-size-campaign-hero": "60px",
+    "--font-size-campaign-section": "42px",
     "--color-navy-50": "#f3f6f8",
     "--color-navy-100": "#e6ecef",
     "--color-navy-200": "#c9d3d9",
@@ -1745,6 +1794,7 @@
     "--color-navy-800": "#1e333d",
     "--color-navy-900": "#15252d",
     "--color-navy-950": "#0a1720",
+    "--color-navy-campaign-node": "#023650",
     "--spacing-spacing-8": "8px",
     "--spacing-spacing-16": "16px",
     "--spacing-spacing-24": "24px",
@@ -1752,8 +1802,15 @@
     "--spacing-spacing-48": "48px",
     "--spacing-spacing-96": "96px",
     "--spacing-spacing-128": "128px",
-    "--spacing-container": "48px",
+    "--spacing-container": "32px",
     "--spacing-container-mobile": "16px",
+    "--spacing-events-cta": "528px",
+    "--container-events-content": "1200px",
+    "--container-events-panel": "1296px",
+    "--container-events-frame": "1264px",
+    "--container-astra-content": "1200px",
+    "--container-astra-panel": "1296px",
+    "--container-astra-frame": "1264px",
     "--radius-none": "0px",
     "--radius-full": "999px",
     "--border-border-width-thin": "1px",
@@ -1801,7 +1858,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".prose",
    "context": [
     "@layer utilities"
@@ -1847,7 +1904,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".-translate-x-1\\/2",
    "context": [
     "@layer utilities"
@@ -1858,7 +1915,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".translate-x-1\\/2",
    "context": [
     "@layer utilities"
@@ -1869,7 +1926,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".translate-x-\\[30\\%\\]",
    "context": [
     "@layer utilities"
@@ -1880,7 +1937,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".-translate-y-1\\/2",
    "context": [
     "@layer utilities"
@@ -1891,7 +1948,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".-translate-y-full",
    "context": [
     "@layer utilities"
@@ -1902,7 +1959,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".translate-y-0",
    "context": [
     "@layer utilities"
@@ -1913,7 +1970,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".translate-y-10",
    "context": [
     "@layer utilities"
@@ -1924,7 +1981,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".translate-y-\\[-20px\\]",
    "context": [
     "@layer utilities"
@@ -1935,7 +1992,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".translate-y-\\[calc\\(var\\(--heading-height\\)\\/3\\*-1\\.5\\)\\]",
    "context": [
     "@layer utilities"
@@ -1946,7 +2003,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".translate-y-full",
    "context": [
     "@layer utilities"
@@ -1957,7 +2014,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".scale-95",
    "context": [
     "@layer utilities"
@@ -1970,7 +2027,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".scale-100",
    "context": [
     "@layer utilities"
@@ -1983,7 +2040,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".scale-120",
    "context": [
     "@layer utilities"
@@ -1996,7 +2053,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":where(.space-y-2 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -2007,7 +2064,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":where(.space-y-3 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -2018,7 +2075,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":where(.space-y-4 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -2029,7 +2086,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":where(.space-y-5 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -2040,7 +2097,18 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
+   "selector": ":where(.space-y-6 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "367989760bd8b1b8.css",
    "selector": ":where(.space-y-8 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -2051,7 +2119,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":where(.space-y-10 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -2062,7 +2130,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":where(.space-y-12 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -2073,7 +2141,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ":where(.divide-y > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -2084,7 +2152,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".bg-linear-to-b",
    "context": [
     "@layer utilities"
@@ -2095,7 +2163,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".bg-linear-to-b",
    "context": [
     "@layer utilities",
@@ -2107,7 +2175,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".bg-linear-to-l",
    "context": [
     "@layer utilities"
@@ -2118,7 +2186,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".bg-linear-to-l",
    "context": [
     "@layer utilities",
@@ -2130,7 +2198,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".bg-linear-to-r",
    "context": [
     "@layer utilities"
@@ -2141,7 +2209,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".bg-linear-to-r",
    "context": [
     "@layer utilities",
@@ -2153,7 +2221,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".bg-gradient-to-b",
    "context": [
     "@layer utilities"
@@ -2164,7 +2232,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-navy-100",
    "context": [
     "@layer utilities"
@@ -2176,7 +2244,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-orange-100",
    "context": [
     "@layer utilities"
@@ -2188,7 +2256,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-teal-500",
    "context": [
     "@layer utilities"
@@ -2200,7 +2268,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-transparent",
    "context": [
     "@layer utilities"
@@ -2212,7 +2280,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-white",
    "context": [
     "@layer utilities"
@@ -2224,7 +2292,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-white\\/0",
    "context": [
     "@layer utilities"
@@ -2235,7 +2303,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-white\\/0",
    "context": [
     "@layer utilities",
@@ -2247,7 +2315,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-white\\/0",
    "context": [
     "@layer utilities"
@@ -2258,7 +2326,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-white\\/70",
    "context": [
     "@layer utilities"
@@ -2269,7 +2337,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-white\\/70",
    "context": [
     "@layer utilities",
@@ -2281,7 +2349,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-white\\/70",
    "context": [
     "@layer utilities"
@@ -2292,7 +2360,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".from-30\\%",
    "context": [
     "@layer utilities"
@@ -2303,7 +2371,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-\\[var\\(--color-satellite\\)\\]",
    "context": [
     "@layer utilities"
@@ -2315,7 +2383,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-navy-50",
    "context": [
     "@layer utilities"
@@ -2327,7 +2395,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-navy-200",
    "context": [
     "@layer utilities"
@@ -2339,7 +2407,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-orange-600",
    "context": [
     "@layer utilities"
@@ -2351,7 +2419,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-transparent",
    "context": [
     "@layer utilities"
@@ -2363,7 +2431,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-white",
    "context": [
     "@layer utilities"
@@ -2375,7 +2443,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-white\\/0",
    "context": [
     "@layer utilities"
@@ -2386,7 +2454,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-white\\/0",
    "context": [
     "@layer utilities",
@@ -2398,7 +2466,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-white\\/0",
    "context": [
     "@layer utilities"
@@ -2409,7 +2477,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".to-85\\%",
    "context": [
     "@layer utilities"
@@ -2420,7 +2488,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".text-body-sb",
    "context": [
     "@layer utilities"
@@ -2431,7 +2499,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-4",
    "context": [
     "@layer utilities"
@@ -2442,7 +2510,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-4\\.5",
    "context": [
     "@layer utilities"
@@ -2453,7 +2521,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-5",
    "context": [
     "@layer utilities"
@@ -2464,7 +2532,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-5\\.5, .leading-5\\.5\\!",
    "context": [
     "@layer utilities"
@@ -2475,7 +2543,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-6",
    "context": [
     "@layer utilities"
@@ -2486,7 +2554,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-6\\.5",
    "context": [
     "@layer utilities"
@@ -2497,7 +2565,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-7",
    "context": [
     "@layer utilities"
@@ -2508,7 +2576,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-7\\.5",
    "context": [
     "@layer utilities"
@@ -2519,7 +2587,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-9",
    "context": [
     "@layer utilities"
@@ -2530,7 +2598,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-10",
    "context": [
     "@layer utilities"
@@ -2541,7 +2609,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-11",
    "context": [
     "@layer utilities"
@@ -2552,7 +2620,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-13",
    "context": [
     "@layer utilities"
@@ -2563,7 +2631,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-14\\.5",
    "context": [
     "@layer utilities"
@@ -2574,7 +2642,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-16",
    "context": [
     "@layer utilities"
@@ -2585,7 +2653,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-17",
    "context": [
     "@layer utilities"
@@ -2596,7 +2664,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-20",
    "context": [
     "@layer utilities"
@@ -2607,7 +2675,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-\\[0\\.94\\]",
    "context": [
     "@layer utilities"
@@ -2618,7 +2686,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-\\[1\\.4\\]",
    "context": [
     "@layer utilities"
@@ -2629,7 +2697,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-\\[1\\.5\\]",
    "context": [
     "@layer utilities"
@@ -2640,7 +2708,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-\\[1\\.12\\]",
    "context": [
     "@layer utilities"
@@ -2651,7 +2719,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-\\[1\\.25\\]",
    "context": [
     "@layer utilities"
@@ -2662,7 +2730,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-\\[1\\.35\\]",
    "context": [
     "@layer utilities"
@@ -2673,7 +2741,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-\\[1\\.36\\]",
    "context": [
     "@layer utilities"
@@ -2684,7 +2752,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-\\[40px\\]",
    "context": [
     "@layer utilities"
@@ -2695,7 +2763,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-home-hero",
    "context": [
     "@layer utilities"
@@ -2706,7 +2774,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-none",
    "context": [
     "@layer utilities"
@@ -2717,7 +2785,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-normal",
    "context": [
     "@layer utilities"
@@ -2728,7 +2796,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-relaxed",
    "context": [
     "@layer utilities"
@@ -2739,7 +2807,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-snug",
    "context": [
     "@layer utilities"
@@ -2750,7 +2818,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".leading-tight",
    "context": [
     "@layer utilities"
@@ -2761,7 +2829,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".font-\\[var\\(--font-aeonik\\)\\]",
    "context": [
     "@layer utilities"
@@ -2772,7 +2840,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".font-bold",
    "context": [
     "@layer utilities"
@@ -2783,7 +2851,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".font-medium",
    "context": [
     "@layer utilities"
@@ -2794,7 +2862,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".font-normal",
    "context": [
     "@layer utilities"
@@ -2805,7 +2873,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".font-semibold",
    "context": [
     "@layer utilities"
@@ -2816,7 +2884,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-\\[-0\\.01em\\]",
    "context": [
     "@layer utilities"
@@ -2827,7 +2895,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-\\[-0\\.02em\\]",
    "context": [
     "@layer utilities"
@@ -2838,7 +2906,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-\\[0\\.1em\\]",
    "context": [
     "@layer utilities"
@@ -2849,7 +2917,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-\\[0\\.04em\\]",
    "context": [
     "@layer utilities"
@@ -2860,7 +2928,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-\\[0\\.5px\\]",
    "context": [
     "@layer utilities"
@@ -2871,7 +2939,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-\\[0\\.08em\\]",
    "context": [
     "@layer utilities"
@@ -2882,7 +2950,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-\\[0\\.84px\\]",
    "context": [
     "@layer utilities"
@@ -2893,7 +2961,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-\\[1\\.1px\\]",
    "context": [
     "@layer utilities"
@@ -2904,7 +2972,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-normal",
    "context": [
     "@layer utilities"
@@ -2915,7 +2983,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-tight",
    "context": [
     "@layer utilities"
@@ -2926,7 +2994,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-tighter",
    "context": [
     "@layer utilities"
@@ -2937,7 +3005,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-wide",
    "context": [
     "@layer utilities"
@@ -2948,7 +3016,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-wider",
    "context": [
     "@layer utilities"
@@ -2959,7 +3027,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tracking-widest",
    "context": [
     "@layer utilities"
@@ -2970,7 +3038,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tabular-nums",
    "context": [
     "@layer utilities"
@@ -2981,7 +3049,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".shadow",
    "context": [
     "@layer utilities"
@@ -2992,7 +3060,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".shadow-\\[0_0_10px_4px_var\\(--color-satellite\\)\\]",
    "context": [
     "@layer utilities"
@@ -3003,7 +3071,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".shadow-\\[0_28px_64px_-20px_rgba\\(9\\,27\\,35\\,0\\.42\\)\\,0_6px_16px_rgba\\(9\\,27\\,35\\,0\\.08\\)\\]",
    "context": [
     "@layer utilities"
@@ -3014,7 +3082,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".shadow-sm",
    "context": [
     "@layer utilities"
@@ -3025,7 +3093,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".shadow-xl",
    "context": [
     "@layer utilities"
@@ -3036,7 +3104,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\!ring, .ring, .ring-1",
    "context": [
     "@layer utilities"
@@ -3047,7 +3115,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".shadow-orange-600\\/25",
    "context": [
     "@layer utilities"
@@ -3058,7 +3126,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".shadow-orange-600\\/25",
    "context": [
     "@layer utilities",
@@ -3070,7 +3138,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".shadow-orange-700\\/15",
    "context": [
     "@layer utilities"
@@ -3081,7 +3149,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".shadow-orange-700\\/15",
    "context": [
     "@layer utilities",
@@ -3093,7 +3161,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ring-ring",
    "context": [
     "@layer utilities"
@@ -3104,7 +3172,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".blur",
    "context": [
     "@layer utilities"
@@ -3115,7 +3183,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".blur-3xl",
    "context": [
     "@layer utilities"
@@ -3126,7 +3194,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".blur-\\[30px\\]",
    "context": [
     "@layer utilities"
@@ -3137,7 +3205,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".brightness-0",
    "context": [
     "@layer utilities"
@@ -3148,7 +3216,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".brightness-35",
    "context": [
     "@layer utilities"
@@ -3159,7 +3227,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".grayscale",
    "context": [
     "@layer utilities"
@@ -3170,7 +3238,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".invert",
    "context": [
     "@layer utilities"
@@ -3181,7 +3249,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".backdrop-blur-\\[12px\\]",
    "context": [
     "@layer utilities"
@@ -3192,7 +3260,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".duration-100",
    "context": [
     "@layer utilities"
@@ -3203,7 +3271,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".duration-150",
    "context": [
     "@layer utilities"
@@ -3214,7 +3282,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".duration-200",
    "context": [
     "@layer utilities"
@@ -3225,7 +3293,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".duration-300",
    "context": [
     "@layer utilities"
@@ -3236,7 +3304,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".duration-500",
    "context": [
     "@layer utilities"
@@ -3247,7 +3315,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".duration-\\[var\\(--duration-fast\\)\\]",
    "context": [
     "@layer utilities"
@@ -3258,7 +3326,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".duration-\\[var\\(--duration-normal\\)\\]",
    "context": [
     "@layer utilities"
@@ -3269,7 +3337,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".duration-\\[var\\(--duration-slow\\)\\]",
    "context": [
     "@layer utilities"
@@ -3280,7 +3348,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ease-\\[cubic-bezier\\(0\\.06\\,0\\.47\\,0\\.1\\,1\\)\\]",
    "context": [
     "@layer utilities"
@@ -3291,7 +3359,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ease-\\[var\\(--ease-galactic\\)\\]",
    "context": [
     "@layer utilities"
@@ -3302,7 +3370,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ease-\\[var\\(--ease-galactic-out\\)\\]",
    "context": [
     "@layer utilities"
@@ -3313,7 +3381,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ease-\\[var\\(--ease-out-soft\\)\\]",
    "context": [
     "@layer utilities"
@@ -3324,7 +3392,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ease-\\[var\\(--ease-slow\\)\\]",
    "context": [
     "@layer utilities"
@@ -3335,7 +3403,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ease-in-out",
    "context": [
     "@layer utilities"
@@ -3346,7 +3414,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ease-linear",
    "context": [
     "@layer utilities"
@@ -3357,7 +3425,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ease-out",
    "context": [
     "@layer utilities"
@@ -3368,7 +3436,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".outline-none",
    "context": [
     "@layer utilities"
@@ -3379,7 +3447,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".ring-inset",
    "context": [
     "@layer utilities"
@@ -3390,7 +3458,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".group-hover\\:translate-x-0\\.5:is(:where(.group):hover *)",
    "context": [
     "@layer utilities",
@@ -3402,7 +3470,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".group-hover\\:translate-x-1:is(:where(.group):hover *)",
    "context": [
     "@layer utilities",
@@ -3414,7 +3482,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".group-active\\:scale-95:is(:where(.group):active *)",
    "context": [
     "@layer utilities"
@@ -3427,7 +3495,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".before\\:-translate-x-1\\/2::before",
    "context": [
     "@layer utilities"
@@ -3438,7 +3506,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".before\\:content-\\[\\'\\'\\]::before",
    "context": [
     "@layer utilities"
@@ -3449,7 +3517,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".before\\:content-\\[\\\\\\'\\\\\\'\\]::before",
    "context": [
     "@layer utilities"
@@ -3460,7 +3528,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".before\\:content-\\[counter\\(step\\)\\]::before",
    "context": [
     "@layer utilities"
@@ -3471,7 +3539,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:-translate-x-1\\/2::after",
    "context": [
     "@layer utilities"
@@ -3482,7 +3550,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:-translate-y-1\\/2::after",
    "context": [
     "@layer utilities"
@@ -3493,7 +3561,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:scale-0::after",
    "context": [
     "@layer utilities"
@@ -3506,7 +3574,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:scale-100::after",
    "context": [
     "@layer utilities"
@@ -3519,7 +3587,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:blur-\\[4px\\]::after",
    "context": [
     "@layer utilities"
@@ -3530,7 +3598,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:duration-100::after",
    "context": [
     "@layer utilities"
@@ -3541,7 +3609,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:duration-200::after",
    "context": [
     "@layer utilities"
@@ -3552,7 +3620,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:duration-\\[667ms\\]::after",
    "context": [
     "@layer utilities"
@@ -3563,7 +3631,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:ease-\\[var\\(--ease-galactic-out\\)\\]::after",
    "context": [
     "@layer utilities"
@@ -3574,7 +3642,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:ease-linear::after",
    "context": [
     "@layer utilities"
@@ -3585,7 +3653,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".after\\:content-\\[\\'\\'\\]::after",
    "context": [
     "@layer utilities"
@@ -3596,7 +3664,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:translate-x-\\[2px\\]:hover",
    "context": [
     "@layer utilities",
@@ -3608,7 +3676,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:-translate-y-1:hover",
    "context": [
     "@layer utilities",
@@ -3620,7 +3688,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:-translate-y-\\[1\\%\\]:hover",
    "context": [
     "@layer utilities",
@@ -3632,7 +3700,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:translate-y-\\[-10px\\]:hover",
    "context": [
     "@layer utilities",
@@ -3644,7 +3712,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:from-orange-200:hover",
    "context": [
     "@layer utilities",
@@ -3657,7 +3725,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:to-navy-100:hover",
    "context": [
     "@layer utilities",
@@ -3670,7 +3738,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:shadow-lg:hover",
    "context": [
     "@layer utilities",
@@ -3682,7 +3750,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:shadow-sm:hover",
    "context": [
     "@layer utilities",
@@ -3694,7 +3762,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:shadow-orange-600\\/15:hover",
    "context": [
     "@layer utilities",
@@ -3706,7 +3774,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:shadow-orange-600\\/15:hover",
    "context": [
     "@layer utilities",
@@ -3719,7 +3787,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".focus\\:outline-none:focus",
    "context": [
     "@layer utilities"
@@ -3730,7 +3798,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".focus-visible\\:ring-2:focus-visible",
    "context": [
     "@layer utilities"
@@ -3741,7 +3809,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".focus-visible\\:ring-ring:focus-visible",
    "context": [
     "@layer utilities"
@@ -3752,7 +3820,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".focus-visible\\:outline-none:focus-visible",
    "context": [
     "@layer utilities"
@@ -3763,7 +3831,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".max-md\\:leading-10",
    "context": [
     "@layer utilities",
@@ -3775,7 +3843,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".md\\:leading-13",
    "context": [
     "@layer utilities",
@@ -3787,7 +3855,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".md\\:leading-16",
    "context": [
     "@layer utilities",
@@ -3799,7 +3867,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".md\\:leading-21",
    "context": [
     "@layer utilities",
@@ -3811,7 +3879,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".lg\\:leading-7",
    "context": [
     "@layer utilities",
@@ -3823,7 +3891,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".lg\\:tracking-normal",
    "context": [
     "@layer utilities",
@@ -3835,7 +3903,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".xl\\:before\\:content-\\[\\'\\'\\]::before",
    "context": [
     "@layer utilities",
@@ -3847,7 +3915,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".min-\\[1281px\\]\\:-translate-y-\\[calc\\(var\\(--header-spacing\\)\\*1\\.5\\)\\]",
    "context": [
     "@layer utilities",
@@ -3859,7 +3927,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".min-\\[1281px\\]\\:-translate-y-\\[var\\(--header-spacing\\)\\]",
    "context": [
     "@layer utilities",
@@ -3871,7 +3939,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".prose-headings\\:font-normal :where(h1, h2, h3, h4, h5, h6, th):not(:where([class~=\"not-prose\"], [class~=\"not-prose\"] *))",
    "context": [
     "@layer utilities"
@@ -3882,7 +3950,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".prose-headings\\:tracking-normal :where(h1, h2, h3, h4, h5, h6, th):not(:where([class~=\"not-prose\"], [class~=\"not-prose\"] *))",
    "context": [
     "@layer utilities"
@@ -3893,7 +3961,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".prose-p\\:leading-relaxed :where(p):not(:where([class~=\"not-prose\"], [class~=\"not-prose\"] *))",
    "context": [
     "@layer utilities"
@@ -3904,7 +3972,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".prose-a\\:text-link :where(a):not(:where([class~=\"not-prose\"], [class~=\"not-prose\"] *))",
    "context": [
     "@layer utilities"
@@ -3915,7 +3983,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet-lg\\:scale-75",
    "context": [
     "@layer utilities",
@@ -3929,7 +3997,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet-lg\\:leading-\\[1\\.33\\]",
    "context": [
     "@layer utilities",
@@ -3941,7 +4009,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet-lg\\:leading-\\[1\\.67\\]",
    "context": [
     "@layer utilities",
@@ -3953,7 +4021,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet-lg\\:leading-tight",
    "context": [
     "@layer utilities",
@@ -3965,7 +4033,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet-lg\\:blur-\\[20px\\]",
    "context": [
     "@layer utilities",
@@ -3977,7 +4045,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet\\:leading-\\[1\\.4\\]",
    "context": [
     "@layer utilities",
@@ -3989,7 +4057,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".tablet\\:leading-tight",
    "context": [
     "@layer utilities",
@@ -4001,7 +4069,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".mobile\\:-translate-y-\\[150\\%\\]",
    "context": [
     "@layer utilities",
@@ -4013,7 +4081,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".mobile\\:leading-\\[1\\.2\\]",
    "context": [
     "@layer utilities",
@@ -4025,7 +4093,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".mobile\\:leading-\\[1\\.3\\]",
    "context": [
     "@layer utilities",
@@ -4037,7 +4105,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".mobile\\:font-bold",
    "context": [
     "@layer utilities",
@@ -4049,7 +4117,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".mobile\\:font-semibold",
    "context": [
     "@layer utilities",
@@ -4061,7 +4129,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".min-tablet\\:font-normal",
    "context": [
     "@layer utilities",
@@ -4073,7 +4141,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:\\[\\&_\\.event-card-arrow\\]\\:translate-x-\\[5px\\]:hover .event-card-arrow",
    "context": [
     "@layer utilities",
@@ -4085,7 +4153,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:\\[\\&_\\.series-arrow\\]\\:translate-x-\\[5px\\]:hover .series-arrow",
    "context": [
     "@layer utilities",
@@ -4097,7 +4165,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".hover\\:\\[\\&_\\.series-image_img\\]\\:scale-105:hover .series-image img",
    "context": [
     "@layer utilities",
@@ -4111,7 +4179,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[\\&_mark\\]\\:\\!font-bold mark",
    "context": [
     "@layer utilities"
@@ -4122,7 +4190,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[\\&_mark\\]\\:font-normal mark",
    "context": [
     "@layer utilities"
@@ -4133,7 +4201,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[\\&_span\\]\\:\\!font-bold span",
    "context": [
     "@layer utilities"
@@ -4144,7 +4212,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[\\&_ul_li_p\\]\\:leading-\\[1\\.36\\] ul li p",
    "context": [
     "@layer utilities"
@@ -4155,7 +4223,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[\\&\\:not\\(\\:last-child\\)\\]\\:after\\:content-\\[\\'\\'\\]:not(:last-child)::after",
    "context": [
     "@layer utilities"
@@ -4166,7 +4234,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[\\&\\>\\*\\]\\:before\\:leading-\\[1\\.4\\] > ::before",
    "context": [
     "@layer utilities"
@@ -4177,7 +4245,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".\\[\\&\\>\\*\\]\\:before\\:content-\\[counter\\(item\\)\\] > ::before",
    "context": [
     "@layer utilities"
@@ -4188,7 +4256,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": ".paragraph, p",
    "context": [],
    "properties": {
@@ -4197,7 +4265,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": "h1",
    "context": [],
    "properties": {
@@ -4206,7 +4274,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": "h2, h3, h4",
    "context": [],
    "properties": {
@@ -4215,7 +4283,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "selector": "h5",
    "context": [],
    "properties": {
@@ -4226,7 +4294,7 @@
  ],
  "fonts": [
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__interFont_b14d2f",
    "src": "url(\"/_next/static/media/0336a89fb4e7fc1d-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4234,7 +4302,7 @@
    "font-style": "normal"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__interFont_Fallback_b14d2f",
    "src": "local(\"Arial\")",
    "ascent-override": "89.79%",
@@ -4243,7 +4311,7 @@
    "size-adjust": "107.89%"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikFont_a2019c",
    "src": "url(\"/_next/static/media/c87a3097311cecc0-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4251,7 +4319,7 @@
    "font-style": "normal"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikFont_a2019c",
    "src": "url(\"/_next/static/media/8aca9715200f150b-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4259,7 +4327,7 @@
    "font-style": "italic"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikFont_a2019c",
    "src": "url(\"/_next/static/media/d29f230aa4662873-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4267,7 +4335,7 @@
    "font-style": "normal"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikFont_a2019c",
    "src": "url(\"/_next/static/media/502fd2f4a617ff50-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4275,7 +4343,7 @@
    "font-style": "normal"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikFont_a2019c",
    "src": "url(\"/_next/static/media/27ebf6bb0d7babf2-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4283,7 +4351,7 @@
    "font-style": "italic"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikFont_a2019c",
    "src": "url(\"/_next/static/media/776eb793ac0e716d-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4291,7 +4359,7 @@
    "font-style": "italic"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikFont_Fallback_a2019c",
    "src": "local(\"Arial\")",
    "ascent-override": "98.63%",
@@ -4300,7 +4368,7 @@
    "size-adjust": "101.39%"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__firaCodeFont_e66e50",
    "src": "url(\"/_next/static/media/bbc4555e681de899-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4308,7 +4376,7 @@
    "font-style": "normal"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__firaCodeFont_e66e50",
    "src": "url(\"/_next/static/media/a78a31a1218d2815-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4316,7 +4384,7 @@
    "font-style": "normal"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__firaCodeFont_e66e50",
    "src": "url(\"/_next/static/media/0f7fb29b34a2926d-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4324,7 +4392,7 @@
    "font-style": "normal"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__firaCodeFont_Fallback_e66e50",
    "src": "local(\"Arial\")",
    "ascent-override": "75.29%",
@@ -4333,7 +4401,7 @@
    "size-adjust": "131.49%"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikAirFont_e4bea8",
    "src": "url(\"/_next/static/media/19c2335dcef346d9-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4341,7 +4409,7 @@
    "font-style": "normal"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikAirFont_e4bea8",
    "src": "url(\"/_next/static/media/ac48b0b17c9d9a56-s.p.woff2\") format(\"woff2\")",
    "font-display": "swap",
@@ -4349,7 +4417,7 @@
    "font-style": "italic"
   },
   {
-   "file": "541d0ea62717b571.css",
+   "file": "367989760bd8b1b8.css",
    "font-family": "__aeonikAirFont_Fallback_e4bea8",
    "src": "local(\"Arial\")",
    "ascent-override": "103.91%",
@@ -4691,11 +4759,6 @@
    "kind": "dimension",
    "value": "9999px"
   },
-  "--breakpoint-2xl": {
-   "raw": "96rem",
-   "kind": "dimension",
-   "value": "1536px"
-  },
   "--breakpoint-xl": {
    "raw": "1280px",
    "kind": "dimension",
@@ -4895,6 +4958,11 @@
    "raw": "#0a1720",
    "kind": "color",
    "value": "#0a1720"
+  },
+  "--color-navy-campaign-node": {
+   "raw": "#023650",
+   "kind": "color",
+   "value": "#023650"
   },
   "--color-nebula": {
    "raw": "#15252d",
@@ -5241,6 +5309,36 @@
    "kind": "dimension",
    "value": "1280px"
   },
+  "--container-astra-content": {
+   "raw": "1200px",
+   "kind": "dimension",
+   "value": "1200px"
+  },
+  "--container-astra-frame": {
+   "raw": "1264px",
+   "kind": "dimension",
+   "value": "1264px"
+  },
+  "--container-astra-panel": {
+   "raw": "1296px",
+   "kind": "dimension",
+   "value": "1296px"
+  },
+  "--container-events-content": {
+   "raw": "1200px",
+   "kind": "dimension",
+   "value": "1200px"
+  },
+  "--container-events-frame": {
+   "raw": "1264px",
+   "kind": "dimension",
+   "value": "1264px"
+  },
+  "--container-events-panel": {
+   "raw": "1296px",
+   "kind": "dimension",
+   "value": "1296px"
+  },
   "--container-lg": {
    "raw": "32rem",
    "kind": "dimension",
@@ -5252,10 +5350,9 @@
    "value": "448px"
   },
   "--container-side-spaces": {
-   "raw": "clamp(24px,3.33333vw,48px)",
+   "raw": "32px",
    "kind": "dimension",
-   "value": "47.9844px",
-   "note": "viewport-relative, resolved at 1440 x 900"
+   "value": "32px"
   },
   "--container-sm": {
    "raw": "24rem",
@@ -5392,11 +5489,6 @@
    "kind": "fontFamily",
    "value": "Inter"
   },
-  "--font-serif": {
-   "raw": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
-   "kind": "fontFamily",
-   "value": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif"
-  },
   "--font-size-2xl": {
    "raw": "24px",
    "kind": "dimension",
@@ -5421,6 +5513,16 @@
    "raw": "16px",
    "kind": "dimension",
    "value": "16px"
+  },
+  "--font-size-campaign-hero": {
+   "raw": "60px",
+   "kind": "dimension",
+   "value": "60px"
+  },
+  "--font-size-campaign-section": {
+   "raw": "42px",
+   "kind": "dimension",
+   "value": "42px"
   },
   "--font-size-lg": {
    "raw": "18px",
@@ -5495,14 +5597,14 @@
    "value": "#ff0000"
   },
   "--layout-lg": {
-   "raw": "1440px",
+   "raw": "1264px",
    "kind": "dimension",
-   "value": "1440px"
+   "value": "1264px"
   },
   "--layout-md": {
-   "raw": "1440px",
+   "raw": "1264px",
    "kind": "dimension",
-   "value": "1440px"
+   "value": "1264px"
   },
   "--leading-home-hero": {
    "raw": "1.05",
@@ -5625,14 +5727,19 @@
    "value": "4px"
   },
   "--spacing-container": {
-   "raw": "48px",
+   "raw": "32px",
    "kind": "dimension",
-   "value": "48px"
+   "value": "32px"
   },
   "--spacing-container-mobile": {
    "raw": "16px",
    "kind": "dimension",
    "value": "16px"
+  },
+  "--spacing-events-cta": {
+   "raw": "528px",
+   "kind": "dimension",
+   "value": "528px"
   },
   "--spacing-spacing-128": {
    "raw": "128px",
