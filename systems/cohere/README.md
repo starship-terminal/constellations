@@ -12,6 +12,7 @@ Cohere is worth a capture because the site is a **Next.js App Router / Tailwind 
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (39, 97 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the promo banner + glass header, the gradient pill CTAs, the pricing rate table and FAQ accordion, the footer bands, and the full-screen mobile menu |
+| [site-tree.md](site-tree.md) | Which public control opens which page or in-page state, desktop and phone, including menus, the cookie dialog, docs search and theme, and the login wall where that branch stops |
 | [components/crops/](components/crops) | 93 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 28 `{page}-{theme}-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots at 2x; the privacy/terms and mobile fulls exceed one GPU texture and are stitched from `.partN` tiles (bounded at 8 chunks each) |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 1,596 rules across 8 sheets, 1,086 literal utility declarations, 49 @font-face records), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads). The full-colour pre-quantization shots are kept outside the repo |
@@ -84,6 +85,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 ## What was captured
 
 Routes: `/` (with the promo banner, glass header, hero, customer marquee, callout cards and footer), `/pricing` (the per-model rate table plus the FAQ accordion), `/north` and `/command` (product pages), `/models-overview`, `/developers`, `/customer-stories`, `/about`, `/privacy`, `/terms-of-use`, the mobile passes for home/pricing/north at 390 x 844 with the hamburger menu opened by its own press, and `dashboard.cohere.com/welcome/login` at rest. 28 screenshots, 39 measured components in 97 states, 93 crops.
+
+A 2026-11-21 public pass mapped which control opens which page. [site-tree.md](site-tree.md) is that map: desktop mega menus, the phone drawer, footer accordions, the cookie dialog, pricing tabs, blog and docs search, and the docs Theme menu. The login wall is recorded there and was not entered. Token values from the 2026-11-17 capture were not re-read on this pass.
 
 ## Known gaps
 
