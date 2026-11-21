@@ -1173,9 +1173,9 @@ Page: login. Selector: `input[name=email]`. States: default, focused, filled.
 | Transition | none | = | = |
 | Cursor | text | = | = |
 | Placeholder | #949494, opacity 1 | = | = |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | focused empty; nothing typed or sent |
 
-Crops: `login-email-default.png`, `login-email-focused.png`, `login-email-filled.png`.
+Crops: `login-email-focus.png` (empty; earlier typed crops removed).
 
 #### login-password
 
