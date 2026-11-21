@@ -1,0 +1,320 @@
+{
+  "title": "Things - To-Do List App for Mac & iOS",
+  "h1": {
+    "text": "Things",
+    "tag": "H1",
+    "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "size": "23.994px",
+    "weight": "400",
+    "lh": "29.9925px",
+    "color": "rgb(48, 51, 54)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "pad": "0px"
+  },
+  "body": {
+    "bg": "rgb(242, 245, 247)",
+    "color": "rgb(48, 51, 54)",
+    "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "size": "18px"
+  },
+  "buttons": [],
+  "links": [
+    {
+      "t": "Things",
+      "h": "https://culturedcode.com/things/"
+    },
+    {
+      "t": "Features",
+      "h": "https://culturedcode.com/things/features/"
+    },
+    {
+      "t": "Support",
+      "h": "https://culturedcode.com/things/support/"
+    },
+    {
+      "t": "Blog",
+      "h": "https://culturedcode.com/things/blog/"
+    },
+    {
+      "t": "See features",
+      "h": "https://culturedcode.com/things/features/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/things/mac/appstore/"
+    },
+    {
+      "t": "view in your currency",
+      "h": "https://culturedcode.com/things/pricing/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/things/download/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/things/mac/appstore/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/things/iphone/appstore/"
+    },
+    {
+      "t": "view in your currency",
+      "h": "https://culturedcode.com/things/pricing/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/things/iphone/appstore/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/things/ipad/appstore/"
+    },
+    {
+      "t": "view in your currency",
+      "h": "https://culturedcode.com/things/pricing/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/things/ipad/appstore/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/things/vision/appstore/"
+    },
+    {
+      "t": "view in your currency",
+      "h": "https://culturedcode.com/things/pricing/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/things/vision/appstore/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/bluesky/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/x/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/threads/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/instagram/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/mastodon/"
+    },
+    {
+      "t": "@not_sacke",
+      "h": "https://x.com/not_sacke"
+    },
+    {
+      "t": "",
+      "h": "https://x.com/manamachinesinc/status/2117489596229705869"
+    },
+    {
+      "t": "Mana Machines",
+      "h": "https://x.com/manamachinesinc/status/2117489596229705869"
+    },
+    {
+      "t": "@not_sacke",
+      "h": "https://x.com/not_sacke"
+    },
+    {
+      "t": "",
+      "h": "https://x.com/weskcode/status/2117433762405548483"
+    },
+    {
+      "t": "wes",
+      "h": "https://x.com/weskcode/status/2117433762405548483"
+    },
+    {
+      "t": "@culturedcode",
+      "h": "https://x.com/culturedcode"
+    },
+    {
+      "t": "",
+      "h": "https://x.com/sailingdev/status/2113729116457333100"
+    },
+    {
+      "t": "Mikha'el",
+      "h": "https://x.com/sailingdev/status/2113729116457333100"
+    },
+    {
+      "t": "@culturedcode",
+      "h": "https://x.com/culturedcode"
+    },
+    {
+      "t": "",
+      "h": "https://x.com/pieteromvlee/status/2113697104581292364"
+    },
+    {
+      "t": "Pieter Omvlee",
+      "h": "https://x.com/pieteromvlee/status/2113697104581292364"
+    },
+    {
+      "t": "@culturedcode",
+      "h": "https://x.com/culturedcode"
+    },
+    {
+      "t": "",
+      "h": "https://x.com/Shawzborne/status/2113694710351204558"
+    },
+    {
+      "t": "Shawzborne",
+      "h": "https://x.com/Shawzborne/status/2113694710351204558"
+    },
+    {
+      "t": "@culturedcode",
+      "h": "https://x.com/culturedcode"
+    },
+    {
+      "t": "",
+      "h": "https://x.com/cassiodiego/status/2113680064453701683"
+    },
+    {
+      "t": "Cassio Diego",
+      "h": "https://x.com/cassiodiego/status/2113680064453701683"
+    },
+    {
+      "t": "@culturedcode",
+      "h": "https://x.com/culturedcode"
+    },
+    {
+      "t": "",
+      "h": "https://x.com/AntronNYC/status/2113677489172021630"
+    },
+    {
+      "t": "Antron",
+      "h": "https://x.com/AntronNYC/status/2113677489172021630"
+    },
+    {
+      "t": "@MacRumors",
+      "h": "https://x.com/MacRumors"
+    },
+    {
+      "t": "",
+      "h": "https://x.com/efrapinus/status/2113184075787763886"
+    },
+    {
+      "t": "Efrain Salas",
+      "h": "https://x.com/efrapinus/status/2113184075787763886"
+    },
+    {
+      "t": "Next Posts",
+      "h": "https://culturedcode.com/things/#"
+    },
+    {
+      "t": "",
+      "h": "https://www.apple.com/newsroom/2026/11/meet-the-2026-app-store-award-finalists/"
+    },
+    {
+      "t": "unsubscribe",
+      "h": "https://culturedcode.com/mailinglist/unsubscribe/"
+    },
+    {
+      "t": "Privacy Policy",
+      "h": "https://culturedcode.com/privacy/"
+    },
+    {
+      "t": "Things for Mac",
+      "h": "https://culturedcode.com/things/mac/"
+    },
+    {
+      "t": "Things for iPhone",
+      "h": "https://culturedcode.com/things/iphone/"
+    },
+    {
+      "t": "Things for Watch",
+      "h": "https://culturedcode.com/things/watch/"
+    },
+    {
+      "t": "Things for iPad",
+      "h": "https://culturedcode.com/things/ipad/"
+    },
+    {
+      "t": "Things for Vision",
+      "h": "https://culturedcode.com/things/vision/"
+    },
+    {
+      "t": "Help",
+      "h": "https://culturedcode.com/things/support/"
+    },
+    {
+      "t": "Contact",
+      "h": "https://culturedcode.com/contact/"
+    },
+    {
+      "t": "Getting Productive",
+      "h": "https://culturedcode.com/things/guide/"
+    },
+    {
+      "t": "Blog",
+      "h": "https://culturedcode.com/things/blog/"
+    },
+    {
+      "t": "Newsletter",
+      "h": "https://culturedcode.com/mailinglist/subscribe/"
+    },
+    {
+      "t": "Status Board",
+      "h": "https://culturedcode.com/status/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/bluesky/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/x/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/threads/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/instagram/"
+    },
+    {
+      "t": "",
+      "h": "https://culturedcode.com/follow/mastodon/"
+    },
+    {
+      "t": "About Us",
+      "h": "https://culturedcode.com/about/"
+    },
+    {
+      "t": "Jobs",
+      "h": "https://culturedcode.com/jobs/"
+    },
+    {
+      "t": "Privacy Policy",
+      "h": "https://culturedcode.com/privacy/"
+    },
+    {
+      "t": "Terms",
+      "h": "https://culturedcode.com/terms/"
+    },
+    {
+      "t": "Press",
+      "h": "https://culturedcode.com/press/"
+    },
+    {
+      "t": "Cultured Code",
+      "h": "https://culturedcode.com/"
+    }
+  ],
+  "cssVarCount": 0,
+  "cssVars": {},
+  "colorScheme": "normal",
+  "htmlClass": "browser-has-js browser-is-mac browser-is-click"
+}

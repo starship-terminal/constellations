@@ -1,0 +1,237 @@
+{
+  "https://culturedcode.com/things/": {
+    "status": 200,
+    "href": "https://culturedcode.com/things/",
+    "title": "Things - To-Do List App for Mac & iOS",
+    "h1": {
+      "text": "Things",
+      "tag": "H1",
+      "cls": "hero-title",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "23.994px",
+      "weight": "400",
+      "lh": "29.9925px",
+      "color": "rgb(48, 51, 54)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none rgb(48, 51, 54)",
+      "x": 499,
+      "y": 137,
+      "w": 1,
+      "h": 1
+    },
+    "bodyBg": "rgb(242, 245, 247)",
+    "bodyColor": "rgb(48, 51, 54)",
+    "bodyFont": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "bodySize": "18px",
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": "email",
+        "name": "email",
+        "placeholder": "me@example.com",
+        "text": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "submit",
+        "name": "",
+        "placeholder": "",
+        "text": ""
+      }
+    ],
+    "scrollH": 8467
+  },
+  "https://culturedcode.com/things/pricing/": {
+    "status": 200,
+    "href": "https://culturedcode.com/things/pricing/",
+    "title": "App Store Pricing \u2013 Things \u2013 Cultured Code",
+    "h1": {
+      "text": "App Store Pricing",
+      "tag": "H1",
+      "cls": "fancysection-heading",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "36px",
+      "weight": "700",
+      "lh": "36px",
+      "color": "rgb(44, 49, 56)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none rgb(44, 49, 56)",
+      "x": 500,
+      "y": 168,
+      "w": 440,
+      "h": 49
+    },
+    "bodyBg": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(48, 51, 54)",
+    "bodyFont": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "bodySize": "18px",
+    "inputs": [],
+    "scrollH": 1012
+  },
+  "https://culturedcode.com/things/download/": {
+    "error": "Error: page.goto: Download is starting\nCall log:\n\u001b[2m  - navigating to \"https://culturedcode.com/things/download/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+  },
+  "https://culturedcode.com/things/support/": {
+    "status": 200,
+    "href": "https://culturedcode.com/things/support/",
+    "title": "Things Support",
+    "h1": {
+      "text": "Support",
+      "tag": "H1",
+      "cls": "visuallyhidden",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "lh": "25.2px",
+      "color": "rgb(48, 51, 54)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none rgb(48, 51, 54)",
+      "x": 379,
+      "y": 389,
+      "w": 1,
+      "h": 1
+    },
+    "bodyBg": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(48, 51, 54)",
+    "bodyFont": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "bodySize": "18px",
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "name": "",
+        "placeholder": "Type\u2026",
+        "text": ""
+      }
+    ],
+    "scrollH": 3877
+  },
+  "https://culturedcode.com/things/features/": {
+    "status": 200,
+    "href": "https://culturedcode.com/things/features/",
+    "title": "What\u2019s New in the all-new Things. Your to-do list for Mac & iOS",
+    "h1": {
+      "text": "What\u2019s new in the all-new Things?",
+      "tag": "H1",
+      "cls": "fancysection-heading",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "36px",
+      "weight": "700",
+      "lh": "36px",
+      "color": "rgb(44, 49, 56)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none rgb(44, 49, 56)",
+      "x": 500,
+      "y": 178,
+      "w": 440,
+      "h": 72
+    },
+    "bodyBg": "rgb(213, 217, 222)",
+    "bodyColor": "rgb(48, 51, 54)",
+    "bodyFont": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "bodySize": "18px",
+    "inputs": [],
+    "scrollH": 22452
+  },
+  "https://culturedcode.com/things/blog/": {
+    "status": 200,
+    "href": "https://culturedcode.com/things/blog/",
+    "title": "Things Blog - Cultured Code",
+    "h1": {
+      "text": "Hello Duo \ud83d\udc4b",
+      "tag": "H1",
+      "cls": "post-headline",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "37.8px",
+      "weight": "700",
+      "lh": "43.47px",
+      "color": "rgb(48, 51, 54)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none rgb(48, 51, 54)",
+      "x": 434,
+      "y": 541,
+      "w": 571,
+      "h": 43
+    },
+    "bodyBg": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(48, 51, 54)",
+    "bodyFont": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "bodySize": "18px",
+    "inputs": [],
+    "scrollH": 20951
+  },
+  "https://culturedcode.com/contact/": {
+    "status": 200,
+    "href": "https://culturedcode.com/contact/",
+    "title": "Contact \u2013 Things",
+    "h1": {
+      "text": "Contact",
+      "tag": "H1",
+      "cls": "fancysection-heading",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "36px",
+      "weight": "700",
+      "lh": "36px",
+      "color": "rgb(44, 49, 56)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none rgb(44, 49, 56)",
+      "x": 500,
+      "y": 168,
+      "w": 440,
+      "h": 36
+    },
+    "bodyBg": "rgb(242, 245, 247)",
+    "bodyColor": "rgb(48, 51, 54)",
+    "bodyFont": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "bodySize": "18px",
+    "inputs": [],
+    "scrollH": 1337
+  },
+  "https://culturedcode.com/about/": {
+    "status": 200,
+    "href": "https://culturedcode.com/about/",
+    "title": "About - Cultured Code",
+    "h1": {
+      "text": "About Us",
+      "tag": "H1",
+      "cls": "h2 is-tight",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "27px",
+      "weight": "700",
+      "lh": "33.75px",
+      "color": "rgb(48, 51, 54)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none rgb(48, 51, 54)",
+      "x": 451,
+      "y": 216,
+      "w": 538,
+      "h": 34
+    },
+    "bodyBg": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(48, 51, 54)",
+    "bodyFont": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "bodySize": "18px",
+    "inputs": [],
+    "scrollH": 2096
+  },
+  "download": {
+    "note": "https://culturedcode.com/things/download/ starts a file download. Not saved."
+  },
+  "mac": {
+    "note": "https://culturedcode.com/things/mac/ redirects to the App Store. Not captured as a Things page."
+  }
+}

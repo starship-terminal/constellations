@@ -1,0 +1,28 @@
+{
+  "login-extracted": "not-started",
+  "captured": "2026-11-22",
+  "product": "Things",
+  "url": "https://culturedcode.com/things/",
+  "signupUrl": null,
+  "wall": "The public marketing site has no sign-in page. /things/login/, /login/, /signin/, /account/, and /things/account/ each return 404 Oops! Page Not Found. Things Cloud accounts are created in the apps, not on this site. cloud.culturedcode.com returned an empty document with no form.",
+  "empty": true,
+  "typed": false,
+  "submitted": false,
+  "identityProvidersClicked": [],
+  "captchaSolved": false,
+  "controls": [
+    "Newsletter email (placeholder me@example.com, empty, not typed)",
+    "Subscribe (not clicked)",
+    "Support search (placeholder Type…, empty, not typed)",
+    "Write Email (not clicked)",
+    "App Store badges (not clicked)",
+    "Back Home on the 404 (not clicked)"
+  ],
+  "stopped": "Photographed the public pages and the 404. Did not type. Did not submit. Did not open the App Store. Did not start the /things/download/ file. Did not click Write Email or a social follow link.",
+  "shots": [
+    "screenshots/not-found-1440.png",
+    "screenshots/not-found-390.png",
+    "screenshots/newsletter-1440.png",
+    "screenshots/support-1440.png"
+  ]
+}
