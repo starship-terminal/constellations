@@ -1,0 +1,19 @@
+{
+  "name": "nav-subjects-menu",
+  "capturedAt": "2026-11-21T15:20:00Z",
+  "url": "https://quizlet.com/",
+  "title": "Quizlet homepage, Subjects menu open",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Study tools menu was still open beside Subjects."
+}

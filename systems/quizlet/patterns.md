@@ -1,23 +1,31 @@
 # Quizlet patterns
 
-Signed-in night shell, captured 2026-11-21. The live theme class is `theme-night`. Settings Theme was set to Auto. Light mode was offered in the account menu and was not switched.
+Public marketing site, captured 2026-11-21, signed out. The live theme class is `theme-default`. `emulateMedia` dark did not switch it. The control map is [site-tree.md](site-tree.md).
 
 ## Home
 
-Your Sets at `/latest` has a left sidebar: Home, Your library, Study groups, Notifications, Flashcards, Podcasts, Study Guides, Games, Practice Tests, Expert Solutions, and New folder. The header has Search, Record lecture, Create, a trial pill, the avatar, and Ask Quizlet. The desktop shot of that page with both menus open was deleted because it showed the account email. The phone home and phone nav shots remain. An ad iframe and a promo banner were hidden or dismissed before the shots. The banner Close was the promo's own control. Consent was not clicked.
+[home-light-default](screenshots/home-light-default.png) is https://quizlet.com/. The header holds the logo, Teachers, Study tools, Subjects, Create, Search, Log in, and Sign up for free. The hero asks "How do you want to study?" and offers four cards that link to the signup URL. Those cards were not followed. A cookie host was hidden with CSS. Consent was not clicked. A promo banner can sit under the header. Its Close control hides it.
 
-## Library
+## Menus
 
-[library-night-empty](screenshots/library-night-empty.png) is the flashcard-sets tab of Your library. The tab is empty and offers Create a flashcard set. Other library tabs (Activities, Classes, Folders, Podcasts, Practice tests, Study guides, Expert solutions) were listed and not opened.
+Study tools opens a two-group menu: Students and Teachers. Shot: [nav-study-tools-menu](screenshots/nav-study-tools-menu.png). Subjects opens exam and subject headings. Shot: [nav-subjects-menu](screenshots/nav-subjects-menu.png). Create opens Flashcard set, Folder, and Study group. Shot: [nav-create-menu](screenshots/nav-create-menu.png). Escape did not close the earlier menus, so the Subjects and Create shots still show Study tools beside them. Create items were not clicked.
 
-## Settings
+## Search
 
-Settings is one scrolling page, not a tab set. [settings-night-profile](screenshots/settings-night-profile.png) shows Subscription, Personal information, and Appearance. The email text node was replaced with a placeholder in the page before the shot, then the shot was quantized. [settings-night-notifications](screenshots/settings-night-notifications.png) shows email toggles and the reminder time. The timezone city was painted out. Account and privacy was opened. It shows Create password, Link Facebook, privacy switches, and Delete account. None of those controls were used. The screenshot was deleted because the timezone city was still visible at the top of the frame.
+The search combobox is in the header. Typing a public subject word did not open a suggestion list, and the search was not submitted. Shot: [search-light-open](screenshots/search-light-open.png). A results URL in a new browser context hit Press and Hold and was discarded.
 
-## Create
+## Pricing
 
-[create-set-night-empty](screenshots/create-set-night-empty.png) is `/create-set` after a Quizlet Plus modal was closed. The form shows a Public chip, an empty title, Import, a locked Add diagram, and empty term cards. Nothing was typed. Create and Create and practice were not clicked.
+[pricing-light-default](screenshots/pricing-light-default.png) is the public upgrade page, opened from the footer Quizlet Plus link. The page background is twilight-900 even though the marketing homepage is gray-200. The trial button is sunset-400. It was not clicked.
+
+## Footer
+
+[home-light-footer](screenshots/home-light-footer.png) is the homepage scrolled to the footer. Columns are About, For students, For teachers, and Resources, then language, Country, and social links. Country sites were not followed.
 
 ## Phone
 
-The preview preset `iphone-14-pro-max` measured `innerWidth` 430 and `innerHeight` 932 at device pixel ratio 2. A freeform 390 by 844 request did not change that CSS viewport. [home-night-phone](screenshots/home-night-phone.png), [nav-night-phone](screenshots/nav-night-phone.png), and [settings-night-phone](screenshots/settings-night-phone.png) are that width. The hamburger repeats the desktop sidebar. The email on the phone settings shot was replaced in the page before capture.
+[home-light-phone](screenshots/home-light-phone.png) is the homepage at 390 by 844. [nav-light-phone-menu](screenshots/nav-light-phone-menu.png) is the drawer. A Google one-tap sheet appeared unprompted and was closed. Continue was not clicked. An App Store badge overlaps the bottom of the drawer. A phone shot of the flashcards page was covered by a captcha and discarded.
+
+## Walls
+
+Log in and Sign up for free are buttons. Each opens a dialog on the homepage and leaves the URL on https://quizlet.com/. Both dialogs were photographed empty. Identity providers were not clicked. Nothing was typed. Nothing was submitted. Direct visits to /login and /sign-up in a new context hit Press and Hold, so those URLs are not the shots in this package.

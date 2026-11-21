@@ -6,50 +6,59 @@
 <title>Quizlet style guide</title>
 <style>
   :root {
-    --page: {color.twilight.900};
-    --text: {color.gray.200};
-    --accent: {color.twilight.500};
-    --trial: {color.sunset.400};
-    --surface: {color.gray.700};
-    --muted: {color.gray.400};
+    --page: #F6F7FB;
+    --text: #282E3E;
+    --accent: #4255FF;
+    --hover: #423ED8;
+    --trial: #FFCD1F;
+    --on-trial: #282E3E;
+    --surface: #F6F7FB;
+    --night: #0A092D;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/26px -apple-system, system-ui, sans-serif; }
   main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
-  h1 { font-size: 32px; line-height: 40px; font-weight: 700; }
+  h1 { font-size: 44px; line-height: 56px; font-weight: 700; color: #000000; }
   h2 { font-size: 20px; line-height: 28px; font-weight: 600; margin-top: 40px; }
   p { max-width: 68ch; }
   .swatches, .roles { display: flex; flex-wrap: wrap; gap: 12px; }
-  .sw, .role { width: 140px; }
-  .sw i, .role i, .step i { display: block; height: 48px; border-radius: 8px; }
-  code, small { display: block; font: 12px/16px ui-monospace, Menlo, monospace; color: var(--muted); }
+  .sw, .role { width: 160px; }
+  .sw i, .role i, .step i { display: block; height: 48px; border-radius: 8px; border: 1px solid #D9DDE8; }
+  code, small { display: block; font: 12px/16px ui-monospace, Menlo, monospace; }
   .hue { margin: 16px 0; }
   .ramp { display: flex; gap: 6px; }
   .step { width: 64px; }
-  button.primary, a.trial { display: inline-block; border: 0; border-radius: 200px; padding: 10px 16px; font: 600 14px/20px -apple-system, system-ui, sans-serif; text-decoration: none; }
-  button.primary { background: var(--accent); color: #FFFFFF; }
-  a.trial { background: var(--trial); color: #282E3E; margin-left: 8px; }
-  .search { margin-top: 16px; background: var(--surface); border-radius: 8px; padding: 10px 16px; width: 280px; color: var(--text); }
+  button.login, button.signup, button.trial { display: inline-block; border: 2px solid transparent; border-radius: 200px; font-weight: 600; }
+  button.login { background: var(--accent); color: #FFFFFF; padding: 10px 16px; height: 40px; font-size: 14px; }
+  button.login:hover { background: var(--hover); }
+  button.signup { background: var(--accent); color: #FFFFFF; padding: 12px 24px; height: 48px; font-size: 16px; margin-left: 8px; }
+  button.trial { background: var(--trial); color: var(--on-trial); padding: 12px 24px; height: 48px; font-size: 16px; margin-left: 8px; }
+  .search { margin-top: 16px; background: var(--surface); border: 2px solid transparent; border-radius: 8px; height: 40px; padding: 8px 16px; width: 320px; }
+  .night { margin-top: 24px; background: var(--night); color: #F6F7FB; border-radius: 16px; padding: 24px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Quizlet, night</h1>
-  <p>Rendered from tokens.json. Values were computed on the signed-in page while body had theme-night. Light mode was offered and not switched. Hurme Geometric Sans 2 is the product face and is not loaded here.</p>
-  <h2>Roles</h2>
+  <h1>Quizlet, public light</h1>
+  <p>Rendered from tokens.json. Values were computed on the signed-out homepage while body had theme-default. The night panel uses the prior signed-in readings. This public pass did not open the signed-in app. Hurme Geometric Sans 2 is the product face and is not loaded here.</p>
+  <h2>Light roles</h2>
   <div class="roles">
-    <div class="sw"><i style="background:{color.twilight.900}"></i><code>night.page</code><span>{color.twilight.900}</span></div>
-<div class="sw"><i style="background:{color.gray.200}"></i><code>night.text</code><span>{color.gray.200}</span></div>
-<div class="sw"><i style="background:{color.gray.100}"></i><code>night.text-strong</code><span>{color.gray.100}</span></div>
-<div class="sw"><i style="background:{color.gray.400}"></i><code>night.text-muted</code><span>{color.gray.400}</span></div>
-<div class="sw"><i style="background:{color.twilight.500}"></i><code>night.accent</code><span>{color.twilight.500}</span></div>
-<div class="sw"><i style="background:{color.twilight.300}"></i><code>night.accent-text</code><span>{color.twilight.300}</span></div>
-<div class="sw"><i style="background:{color.twilight.400}"></i><code>night.selected</code><span>{color.twilight.400}</span></div>
-<div class="sw"><i style="background:{color.gray.700}"></i><code>night.surface</code><span>{color.gray.700}</span></div>
-<div class="sw"><i style="background:{color.sunset.400}"></i><code>night.trial</code><span>{color.sunset.400}</span></div>
-<div class="sw"><i style="background:{color.gray.800}"></i><code>night.on-trial</code><span>{color.gray.800}</span></div>
-<div class="sw"><i style="background:{color.error.300}"></i><code>night.danger</code><span>{color.error.300}</span></div>
+    <div class="sw"><i style="background:#F6F7FB"></i><code>light.page</code><span>#F6F7FB</span></div>
+<div class="sw"><i style="background:#282E3E"></i><code>light.text</code><span>#282E3E</span></div>
+<div class="sw"><i style="background:#1A1D28"></i><code>light.text-strong</code><span>#1A1D28</span></div>
+<div class="sw"><i style="background:#4255FF"></i><code>light.accent</code><span>#4255FF</span></div>
+<div class="sw"><i style="background:#423ED8"></i><code>light.accent-hover</code><span>#423ED8</span></div>
+<div class="sw"><i style="background:#4255FF"></i><code>light.link</code><span>#4255FF</span></div>
+<div class="sw"><i style="background:#F6F7FB"></i><code>light.surface</code><span>#F6F7FB</span></div>
+<div class="sw"><i style="background:#FFCD1F"></i><code>light.trial</code><span>#FFCD1F</span></div>
+<div class="sw"><i style="background:#282E3E"></i><code>light.on-trial</code><span>#282E3E</span></div>
+<div class="sw"><i style="background:#0A092D"></i><code>light.pricing-page</code><span>#0A092D</span></div>
   </div>
+  <h2>Controls</h2>
+  <button class="login" type="button">Log in</button>
+  <button class="signup" type="button">Sign up for free</button>
+  <button class="trial" type="button">Start 7-day free trial</button>
+  <div class="search">Search</div>
   <h2>Ramps</h2>
   <div class="hue"><h3>error</h3><div class="ramp"><div class="step"><i style="background:#FF7873"></i><small>100</small></div><div class="step"><i style="background:#DA4543"></i><small>200</small></div><div class="step"><i style="background:#B00020"></i><small>300</small></div></div></div>
 <div class="hue"><h3>gray</h3><div class="ramp"><div class="step"><i style="background:#FFFFFF"></i><small>100</small></div><div class="step"><i style="background:#F6F7FB"></i><small>200</small></div><div class="step"><i style="background:#EDEFF4"></i><small>300</small></div><div class="step"><i style="background:#D9DDE8"></i><small>400</small></div><div class="step"><i style="background:#939BB4"></i><small>500</small></div><div class="step"><i style="background:#586380"></i><small>600</small></div><div class="step"><i style="background:#2E3856"></i><small>700</small></div><div class="step"><i style="background:#282E3E"></i><small>800</small></div><div class="step"><i style="background:#1A1D28"></i><small>900</small></div></div></div>
@@ -60,10 +69,22 @@
 <div class="hue"><h3>sky</h3><div class="ramp"><div class="step"><i style="background:#EAF9FF"></i><small>100</small></div><div class="step"><i style="background:#CBF1FF"></i><small>200</small></div><div class="step"><i style="background:#98E3FF"></i><small>300</small></div><div class="step"><i style="background:#51CFFF"></i><small>400</small></div><div class="step"><i style="background:#008EC4"></i><small>500</small></div></div></div>
 <div class="hue"><h3>sunset</h3><div class="ramp"><div class="step"><i style="background:#FFF9E3"></i><small>100</small></div><div class="step"><i style="background:#FFEDAB"></i><small>200</small></div><div class="step"><i style="background:#FFDC62"></i><small>300</small></div><div class="step"><i style="background:#FFCD1F"></i><small>400</small></div><div class="step"><i style="background:#997700"></i><small>500</small></div></div></div>
 <div class="hue"><h3>twilight</h3><div class="ramp"><div class="step"><i style="background:#EDEFFF"></i><small>100</small></div><div class="step"><i style="background:#DBDFFF"></i><small>200</small></div><div class="step"><i style="background:#A8B1FF"></i><small>300</small></div><div class="step"><i style="background:#7583FF"></i><small>400</small></div><div class="step"><i style="background:#4255FF"></i><small>500</small></div><div class="step"><i style="background:#423ED8"></i><small>600</small></div><div class="step"><i style="background:#1F1C8B"></i><small>700</small></div><div class="step"><i style="background:#14125C"></i><small>800</small></div><div class="step"><i style="background:#0A092D"></i><small>900</small></div></div></div>
-  <h2>Controls</h2>
-  <button class="primary" type="button">Create a flashcard set</button>
-  <a class="trial" href="#trial">Upgrade: free 7-day trial</a>
-  <div class="search">Search</div>
+  <h2>Prior night roles</h2>
+  <div class="night">
+    <div class="roles">
+      <div class="sw"><i style="background:#0A092D"></i><code>night.page</code><span>#0A092D</span></div>
+<div class="sw"><i style="background:#F6F7FB"></i><code>night.text</code><span>#F6F7FB</span></div>
+<div class="sw"><i style="background:#FFFFFF"></i><code>night.text-strong</code><span>#FFFFFF</span></div>
+<div class="sw"><i style="background:#D9DDE8"></i><code>night.text-muted</code><span>#D9DDE8</span></div>
+<div class="sw"><i style="background:#4255FF"></i><code>night.accent</code><span>#4255FF</span></div>
+<div class="sw"><i style="background:#A8B1FF"></i><code>night.accent-text</code><span>#A8B1FF</span></div>
+<div class="sw"><i style="background:#7583FF"></i><code>night.selected</code><span>#7583FF</span></div>
+<div class="sw"><i style="background:#2E3856"></i><code>night.surface</code><span>#2E3856</span></div>
+<div class="sw"><i style="background:#FFCD1F"></i><code>night.trial</code><span>#FFCD1F</span></div>
+<div class="sw"><i style="background:#282E3E"></i><code>night.on-trial</code><span>#282E3E</span></div>
+<div class="sw"><i style="background:#B00020"></i><code>night.danger</code><span>#B00020</span></div>
+    </div>
+  </div>
 </main>
 </body>
 </html>

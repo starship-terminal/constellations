@@ -1,0 +1,19 @@
+{
+  "name": "search-light-open",
+  "capturedAt": "2026-11-21T15:20:00Z",
+  "url": "https://quizlet.com/",
+  "title": "Search field with the word algebra typed",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Typed algebra. Did not submit. No suggestion list appeared."
+}

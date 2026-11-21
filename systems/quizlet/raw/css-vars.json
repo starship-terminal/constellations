@@ -1,8 +1,7 @@
 {
   "readAt": "2026-11-21",
-  "source": "getComputedStyle(document.documentElement) on https://quizlet.com/settings while signed in, body class theme-night. Cross-origin sheets on assets.quizlet.com are CSSOM-blocked, so declared rules were not parsed. Toastify variables are a library and are omitted.",
-  "themeClass": "theme-night",
-  "colorScheme": "normal",
+  "source": "getComputedStyle(document.documentElement) on https://quizlet.com/ signed out, body class theme-default. Cross-origin sheets on assets.quizlet.com are CSSOM-blocked, so these are resolved custom properties.",
+  "themeClass": "theme-default",
   "computed": {
     "--error-100": "#FF7873",
     "--error-200": "#DA4543",
@@ -54,10 +53,6 @@
     "--twilight-600": "#423ED8",
     "--twilight-700": "#1F1C8B",
     "--twilight-800": "#14125C",
-    "--twilight-900": "#0A092D",
-    "--typography-body-weight": "400",
-    "--typography-heading-weight": "700",
-    "--typography-section-weight": "600",
-    "--modal-animation-speed": "500ms"
+    "--twilight-900": "#0A092D"
   }
 }
