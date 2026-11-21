@@ -20,67 +20,116 @@
     }
   },
   "offered": {
-    "nav": [
-      "Home",
-      "Starred",
-      "Shared",
-      "Workspaces",
-      "Templates and apps",
-      "Marketplace",
-      "Import",
-      "Create",
-      "Search",
-      "What's new",
-      "Help",
-      "Notifications",
-      "Account",
-      "Data",
-      "Automations",
-      "Interfaces",
-      "Forms",
-      "Omni"
-    ],
-    "settings": [
-      "Account overview",
-      "Referral credits",
-      "Recent activity",
-      "Workspace settings (My First Workspace)",
-      "Notification preferences",
-      "Language preferences",
-      "Appearance",
-      "Integrations",
-      "Builder hub",
-      "Trash"
-    ],
-    "create": {
+    "nav": {
       "items": [
-        "Create a workspace",
-        "Create (workspace)",
-        "Start from scratch",
-        "Build with Omni",
-        "New table",
-        "New table with web data",
-        "Airtable base",
-        "CSV file",
-        "Google Calendar",
-        "Google Sheets",
-        "Microsoft Excel",
-        "Salesforce",
-        "26 more sources",
-        "Create new view"
+        "Home",
+        "Starred",
+        "Shared",
+        "Workspaces",
+        "Templates and apps",
+        "Marketplace",
+        "Import",
+        "Create",
+        "Search",
+        "What's new",
+        "Help",
+        "Notifications",
+        "Account",
+        "Data",
+        "Automations",
+        "Interfaces",
+        "Forms",
+        "Omni"
       ],
       "reached": [
-        "Add or import menu opened on Study Guides; nothing created"
+        "Home",
+        "Starred",
+        "Shared",
+        "Workspaces",
+        "Templates and apps",
+        "Marketplace",
+        "Import",
+        "Create",
+        "Search",
+        "What's new",
+        "Help",
+        "Notifications",
+        "Account",
+        "Data",
+        "Automations",
+        "Interfaces",
+        "Forms",
+        "Omni"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Account overview",
+        "Referral credits",
+        "Recent activity",
+        "Workspace settings (My First Workspace)",
+        "Notification preferences",
+        "Language preferences",
+        "Appearance",
+        "Integrations",
+        "Builder hub",
+        "Trash"
+      ],
+      "reached": [
+        "Account overview",
+        "Referral credits",
+        "Recent activity",
+        "Workspace settings (My First Workspace)",
+        "Notification preferences",
+        "Language preferences",
+        "Appearance",
+        "Integrations",
+        "Builder hub",
+        "Trash"
+      ]
+    },
+    "create": {
+      "items": [
+        "Add or import menu (opened; nothing created)"
+      ],
+      "reached": [
+        "Add or import menu (opened; nothing created)"
       ]
     }
   },
   "screens": [
-    {"name": "workspaces home, desktop, appearance menu open", "file": "screenshots/app/desktop-home.png"},
-    {"name": "account menu, desktop, open", "file": "screenshots/app/desktop-account-menu.png"},
-    {"name": "base grid, desktop, onboarding card in front", "file": "screenshots/app/desktop-base-grid.png"},
-    {"name": "add or import menu, desktop, open", "file": "screenshots/app/desktop-create-menu.png"},
-    {"name": "account overview, desktop", "file": "screenshots/app/desktop-account.png"},
-    {"name": "workspaces home, phone", "file": "screenshots/app/phone-home.png"}
+    {
+      "name": "workspaces home, desktop, appearance menu open",
+      "file": "screenshots/app/desktop-home.png"
+    },
+    {
+      "name": "account menu, desktop, open",
+      "file": "screenshots/app/desktop-account-menu.png"
+    },
+    {
+      "name": "base grid, desktop, onboarding card in front",
+      "file": "screenshots/app/desktop-base-grid.png"
+    },
+    {
+      "name": "add or import menu, desktop, open",
+      "file": "screenshots/app/desktop-create-menu.png"
+    },
+    {
+      "name": "account overview, desktop",
+      "file": "screenshots/app/desktop-account.png"
+    },
+    {
+      "name": "workspaces home, phone",
+      "file": "screenshots/app/phone-home.png"
+    },
+    {
+      "name": "Public login wall, desktop 1440, nothing typed",
+      "file": "screenshots/login-light-default.png"
+    },
+    {
+      "name": "Public login wall, email field focused, nothing typed",
+      "file": "screenshots/login-light-email-focus.png"
+    }
   ],
   "gaps": [
     "Phone base grid was loaded at 390x844 CSS, then the preview stopped producing screenshot frames. No phone-base shot.",
@@ -92,7 +141,9 @@
     "Google Drive was not linked. Developer hub was not opened. No invite was sent. No table, view, or record was created.",
     "Calendar view was not opened. The views list shows Main View and Not yet memorized.",
     "Dark theme was offered (Appearance, beta) and not switched.",
-    "catalog.json, the root README, and webapps-manifest.json were left for a later PR."
+    "catalog.json, the root README, and webapps-manifest.json were left for a later PR.",
+    "Public phone-width login returned a Press and hold verification wall. That shot was discarded and not committed.",
+    "Create items listed on the add-or-import menu (Start from scratch, Build with Omni, New table, imports) were visible and not opened. Nothing was created."
   ],
   "not_submitted": [
     "Create a workspace",
@@ -107,6 +158,7 @@
     "Add password",
     "Edit name or email",
     "Delete account",
-    "Cookie Agree or Reject"
+    "Cookie Agree or Reject",
+    "Public login Continue, Google, Apple ID, ChatGPT, and Single Sign On were not used. The email field was focused and left empty."
   ]
 }
