@@ -1,0 +1,133 @@
+{
+  "slug": "dock",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "public Playwright, signed out. https://auth.dock.us/login and https://auth.dock.us/sign-up were opened once from a direct load. The empty walls were photographed. The branch stopped. No email, password, subdomain, or code was typed. No identity provider was clicked. No form was submitted. No captcha was solved.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Logo to /",
+        "Product menu: Sales Deal Rooms, Sales Order Forms, Customer Onboarding, Client Portals, Content Management, Slides, Learning Management, Playbooks, Roleplay, Tutors, Dock AI, AI Agents, Buyer AI Chat, Dock MCP, Salesforce, HubSpot, Chrome Extension, API, All integrations",
+        "Pricing",
+        "Customers",
+        "Resources menu: Product Updates, Templates, Podcast, Newsletter, The Revenue Lab Blog, Webinars and Events, The Revenue Archives, Sales, Customer Success, Marketing, Enablement",
+        "Log in",
+        "Request demo",
+        "Start for free",
+        "Phone Menu"
+      ],
+      "reached": [
+        "/",
+        "/pricing",
+        "/customers",
+        "/library",
+        "/templates",
+        "/product/dock-ai",
+        "/product/learning-management",
+        "/product/content-management",
+        "/product/integrations",
+        "/solutions/sales",
+        "/solutions/client-portal",
+        "/product-updates",
+        "/events",
+        "/about-us",
+        "/demo",
+        "Product menu",
+        "Resources menu",
+        "phone menu"
+      ]
+    },
+    "settings": {
+      "items": [
+        "No account settings on the public site. No theme switch."
+      ],
+      "reached": []
+    },
+    "create": {
+      "items": [
+        "Start for free",
+        "Continue with Google",
+        "Continue with Microsoft",
+        "Work Email",
+        "Continue with Email",
+        "Verify you are human",
+        "Sign in subdomain",
+        "Continue",
+        "Schedule demo"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-product.png",
+    "screenshots/home-light-resources.png",
+    "screenshots/home-light-full.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-full.png",
+    "screenshots/customers-light-default.png",
+    "screenshots/customers-light-full.png",
+    "screenshots/library-light-default.png",
+    "screenshots/library-light-full.png",
+    "screenshots/templates-light-default.png",
+    "screenshots/templates-light-full.png",
+    "screenshots/dock-ai-light-default.png",
+    "screenshots/dock-ai-light-full.png",
+    "screenshots/learning-light-default.png",
+    "screenshots/learning-light-full.png",
+    "screenshots/product-light-default.png",
+    "screenshots/product-light-full.png",
+    "screenshots/integrations-light-default.png",
+    "screenshots/integrations-light-full.png",
+    "screenshots/sales-light-default.png",
+    "screenshots/sales-light-full.png",
+    "screenshots/solutions-light-default.png",
+    "screenshots/solutions-light-full.png",
+    "screenshots/updates-light-default.png",
+    "screenshots/updates-light-full.png",
+    "screenshots/events-light-default.png",
+    "screenshots/events-light-full.png",
+    "screenshots/demo-light-default.png",
+    "screenshots/demo-light-full.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-pricing-light-default.png",
+    "screenshots/login-light-empty.png",
+    "screenshots/signup-light-empty.png",
+    "screenshots/about-light-2026-11-21.png",
+    "screenshots/about-light-full-2026-11-21.png"
+  ],
+  "gaps": [
+    "The signed-in workspace was not entered. Rooms, content library, learning paths, billing, and settings were not offered on a signed-in shell.",
+    "Continue with Google and Continue with Microsoft were visible on the empty signup wall and not clicked.",
+    "The signup email field was empty. Continue with Email was not pressed. The Cloudflare human check was not solved.",
+    "The login subdomain field was empty. Continue was not pressed.",
+    "The demo form was left empty. Schedule demo was not pressed.",
+    "No dark theme switch was offered. Dark islands on the marketing site are painted sections, not a theme.",
+    "Phone full-page shots were not kept. The screenshot helper rejected a 18px and a 20px height drift at 2x. Phone evidence is the 390 viewport shots.",
+    "developers.dock.us, help.dock.us, status.dock.us, the careers board, LinkedIn, YouTube, and the Trust Center were linked and not opened.",
+    "/legal/terms was linked and not photographed.",
+    "Token values were not re-read on this pass. They stay the 2026-11-13 measurements.",
+    "/legal/privacy loaded and was photographed, then the file was deleted. The page prints a street address. It is linked in site-tree.md and not committed."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "subdomain",
+    "name",
+    "company",
+    "code",
+    "Continue",
+    "Continue with Email",
+    "Continue with Google",
+    "Continue with Microsoft",
+    "Schedule demo",
+    "Start for free",
+    "captcha"
+  ]
+}
