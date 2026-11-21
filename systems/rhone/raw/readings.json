@@ -1,0 +1,132 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.rhone.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "title": "Welcome to Rhone® | Rhone",
+  "fontsLoaded": ["Denim 400", "Denim 500", "Reckless 400"],
+  "computed": {
+    "body": {
+      "backgroundColor": "rgb(251, 249, 249)",
+      "color": "rgb(28, 21, 25)",
+      "fontFamily": "Denim, -apple-system, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif",
+      "fontSize": "16px"
+    },
+    "shippingBar": {
+      "selector": ".ge-free-shipping-container",
+      "backgroundColor": "rgb(28, 21, 25)",
+      "color": "rgb(251, 249, 249)",
+      "fontSize": "12px",
+      "height": 30
+    },
+    "courtesyNav": {
+      "selector": ".courtesy-nav",
+      "backgroundColor": "rgb(239, 237, 234)",
+      "color": "rgb(28, 21, 25)",
+      "fontSize": "16px",
+      "height": 32
+    },
+    "mainNav": {
+      "selector": ".main-nav.main-nav--opaque",
+      "backgroundColor": "rgb(251, 249, 249)",
+      "color": "rgb(28, 21, 25)",
+      "height": 101,
+      "border": "1px solid rgb(227, 223, 217)"
+    },
+    "navLabel": {
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "color": "rgb(28, 21, 25)",
+      "fontFamily": "Denim"
+    },
+    "heroH1": {
+      "text": "Keep showing up",
+      "color": "rgb(251, 249, 249)",
+      "fontSize": "56px",
+      "fontWeight": "400",
+      "lineHeight": "58px",
+      "fontFamily": "Denim"
+    },
+    "shopButton": {
+      "class": "btn btn--solid btn--large btn--white",
+      "backgroundColor": "rgb(251, 249, 249)",
+      "color": "rgb(28, 21, 25)",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "26px",
+      "padding": "14.5px 22.5px",
+      "borderRadius": "0px",
+      "height": 57
+    },
+    "addToBag": {
+      "page": "https://www.rhone.com/products/mens-commuter-pant-slim/",
+      "backgroundColor": "rgb(28, 21, 25)",
+      "color": "rgb(251, 249, 249)",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "padding": "13.5px 22.5px",
+      "borderRadius": "0px",
+      "height": 55,
+      "clicked": false
+    },
+    "sizeChip": {
+      "backgroundColor": "rgb(251, 249, 249)",
+      "color": "rgb(28, 21, 25)",
+      "border": "1px solid rgb(227, 223, 217)",
+      "borderRadius": "0px",
+      "height": 32
+    },
+    "bundleSave": {
+      "color": "rgb(97, 114, 89)",
+      "fontSize": "16px"
+    },
+    "productTitle": {
+      "text": "Commuter® Pant - Slim",
+      "fontSize": "24px",
+      "fontWeight": "500",
+      "color": "rgb(28, 21, 25)",
+      "fontFamily": "Denim"
+    },
+    "price": {
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "color": "rgb(28, 21, 25)"
+    },
+    "aboutH1": {
+      "text": "Performance apparel fit for progress.®",
+      "fontSize": "56px",
+      "fontWeight": "400",
+      "color": "rgb(251, 249, 249)",
+      "fontFamily": "Denim"
+    },
+    "aboutH2": {
+      "fontSize": "32px",
+      "fontWeight": "400",
+      "color": "rgb(28, 21, 25)",
+      "fontFamily": "Denim"
+    },
+    "oliveBand": {
+      "selector": ".textblock__container",
+      "backgroundColor": "rgb(97, 114, 89)"
+    },
+    "quoteBand": {
+      "backgroundColor": "rgb(227, 223, 217)"
+    },
+    "search": {
+      "fontSize": "14px",
+      "color": "rgb(28, 21, 25)",
+      "borderRadius": "0px",
+      "submitted": false
+    },
+    "logo": {
+      "fill": "#1c1519",
+      "viewBox": "0 0 702 190",
+      "renderedHeight": "25px",
+      "renderedWidth": 74
+    }
+  }
+}
