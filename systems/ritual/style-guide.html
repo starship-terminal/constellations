@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ritual tokens</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --page-secondary: #fef6eb;
+      --text: #142b6f;
+      --muted: #717171;
+      --accent: #ab4824;
+      --border: #b3b2b1;
+      --button: #142b6f;
+      --button-text: #ffffff;
+      --button-hover: #ffd600;
+      --focus: #a1aac5;
+    }
+    body { margin: 0; background: var(--page); color: var(--text); font: 16px/24px ui-sans-serif, system-ui, sans-serif; }
+    main { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
+    h1 { font-size: 66px; font-weight: 450; letter-spacing: -1.32px; line-height: 1.1; margin: 0 0 8px; }
+    p { color: var(--muted); }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .swatch { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .chip { height: 64px; }
+    .label { padding: 8px 10px; font-size: 13px; }
+    button { background: var(--button); color: var(--button-text); border: 0; border-radius: 999px; padding: 12px 20px; font: inherit; }
+    button:focus-visible { outline: 3px solid var(--focus); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ritual</h1>
+    <p>Declared colours from the public homepage, 22 November 2026. CircularXX is not committed. This page uses the system fallback.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">page #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#fef6eb"></div><div class="label">secondary #fef6eb</div></div>
+      <div class="swatch"><div class="chip" style="background:#142b6f"></div><div class="label">text #142b6f</div></div>
+      <div class="swatch"><div class="chip" style="background:#717171"></div><div class="label">muted #717171</div></div>
+      <div class="swatch"><div class="chip" style="background:#ab4824"></div><div class="label">accent #ab4824</div></div>
+      <div class="swatch"><div class="chip" style="background:#b3b2b1"></div><div class="label">border #b3b2b1</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffd600"></div><div class="label">button hover #ffd600</div></div>
+      <div class="swatch"><div class="chip" style="background:#a1aac5"></div><div class="label">focus #a1aac5</div></div>
+    </div>
+    <p><button type="button">Add to Cart</button></p>
+  </main>
+</body>
+</html>

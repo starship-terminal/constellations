@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "product-light-390",
+  "url": "https://ritual.com/products/essential-for-women-multivitamin",
+  "requestedUrl": "https://ritual.com/products/essential-for-women-multivitamin",
+  "title": "Women's Multivitamin | Essential for Women 18+ | Ritual",
+  "h1": "Women\u2019s Multivitamin 18+",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted. No add to bag.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "home-light-390",
+  "url": "https://ritual.com/",
+  "requestedUrl": "https://ritual.com/",
+  "title": "Ritual",
+  "h1": "",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted. No add to bag.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

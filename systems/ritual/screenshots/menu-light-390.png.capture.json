@@ -1,0 +1,22 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-light-390",
+  "url": "https://ritual.com/",
+  "title": "Ritual",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "Menu opened by click. Cookie banner hidden with CSS, not accepted. Nothing typed.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}
