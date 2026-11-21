@@ -1,0 +1,18 @@
+{
+  "title": "Attio",
+  "text": "Let’s get started. Attio is the agentic CRM that meets you where you work, compounds every customer signal into context, then acts across your pipeline to let you move at unmatched speed and scale. From here, you'll always know your next move. Sign in with Google OR Sign in with email By inserting your email you confirm you agree to Attio contacting you about our product and services. You can opt out at any time by clicking unsubscribe in our emails. Find out more about how we use data in our privacy policy. “When I first opened Attio, I instantly got the feeling this was the next generation of CRM.” Margaret Shen Head of Business Operations · Modal",
+  "buttons": [
+    "Sign in with Google",
+    "Continue",
+    "privacy policy"
+  ],
+  "inputs": [
+    {
+      "type": "email",
+      "name": "email",
+      "autocomplete": null,
+      "placeholder": "Enter your work email address..."
+    }
+  ],
+  "href": "https://app.attio.com/onboarding/welcome"
+}
