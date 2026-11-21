@@ -1,0 +1,16 @@
+{
+  "slug": "sitemap",
+  "requested": "https://www.beehiiv.com/sitemap",
+  "final": "https://www.beehiiv.com/sitemap",
+  "status": 200,
+  "title": "Sitemap | beehiiv",
+  "h1": "Sitemap",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free Sitemap Home Homepage Features 3D Analytics A/B Test Ad Network Ad Network Brands Ad Network Publishers Analyze Artificial Intelligence Automation Recommendations Gating Pop Ups Grow Magi",
+  "inputs": [],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:28:44.554Z"
+}

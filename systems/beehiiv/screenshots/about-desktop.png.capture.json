@@ -1,0 +1,16 @@
+{
+  "slug": "about",
+  "requested": "https://www.beehiiv.com/about",
+  "final": "https://www.beehiiv.com/about",
+  "status": 200,
+  "title": "About - beehiiv",
+  "h1": "EMAIL WAS JUST THE BEGINNING.",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free EMAIL WAS JUST THE BEGINNING. Founders Tyler Denk, Benjamin Hargett, & Jacob Hurd beehiiv was founded in 2021 by early employees at Morning Brew who helped turn a newsletter into a major ",
+  "inputs": [],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:28:20.231Z"
+}

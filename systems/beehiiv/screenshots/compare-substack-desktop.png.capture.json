@@ -1,0 +1,41 @@
+{
+  "slug": "compare-substack",
+  "requested": "https://www.beehiiv.com/comparisons/substack",
+  "final": "https://www.beehiiv.com/comparisons/substack",
+  "status": 200,
+  "title": "beehiiv vs Substack: Compare Fees, Features & Pricing 2026",
+  "h1": "BEEHIIV VS. SUBSTACK",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free BEEHIIV VS. SUBSTACK beehiiv is the dynamic and modern alternative to Substack, focused on newsletter growth and monetization. Make the switch Substack vs beehiiv paid subscription earnin",
+  "inputs": [
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 5
+    },
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 4
+    },
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 1
+    },
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 1
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:27:46.219Z"
+}

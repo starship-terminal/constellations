@@ -1,0 +1,23 @@
+{
+  "slug": "pricing",
+  "requested": "https://www.beehiiv.com/pricing",
+  "final": "https://www.beehiiv.com/pricing",
+  "status": 200,
+  "title": "Pricing - beehiiv — The newsletter platform built for growth",
+  "h1": "EVERY PLAN IS BUILT FOR GROWTH.",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free EVERY PLAN IS BUILT FOR GROWTH. From your first subscriber to thousands more, beehiiv is the only platform with everything you need to grow and monetize your audience. All plans include N",
+  "inputs": [
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 1
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:28:11.117Z"
+}

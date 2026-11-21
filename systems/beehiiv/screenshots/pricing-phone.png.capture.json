@@ -1,0 +1,23 @@
+{
+  "slug": "pricing",
+  "requested": "https://www.beehiiv.com/pricing",
+  "final": "https://www.beehiiv.com/pricing",
+  "status": 200,
+  "title": "Pricing - beehiiv — The newsletter platform built for growth",
+  "h1": "EVERY PLAN IS BUILT FOR GROWTH.",
+  "text": "Sign up EVERY PLAN IS BUILT FOR GROWTH. From your first subscriber to thousands more, beehiiv is the only platform with everything you need to grow and monetize your audience. All plans include Newsletter Website Podcast Community Digital Products Pricing for 1,000 subscribers Ye",
+  "inputs": [
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 1
+    }
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:28:13.784Z"
+}

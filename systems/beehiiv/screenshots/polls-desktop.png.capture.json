@@ -1,0 +1,89 @@
+{
+  "slug": "polls",
+  "requested": "https://www.beehiiv.com/features/polls",
+  "final": "https://www.beehiiv.com/features",
+  "status": 200,
+  "title": "Powerful Features for Newsletter Growth & Monetization - beehiiv",
+  "h1": "ALL THE TOOLS YOU NEED TO ENGAGE, GROW, AND MONETIZE YOUR AUDIENCE.",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free Discover the full power of beehiiv. ALL THE TOOLS YOU NEED TO ENGAGE, GROW, AND MONETIZE YOUR AUDIENCE. beehiiv is a modern newsletter platform built for creators and brands who need powe",
+  "inputs": [
+    {
+      "type": "search",
+      "name": "",
+      "placeholder": "Search...",
+      "valueLen": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:26:09.536Z"
+}

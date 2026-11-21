@@ -1,0 +1,41 @@
+{
+  "slug": "premium-subscriptions",
+  "requested": "https://www.beehiiv.com/features/premium-subscriptions",
+  "final": "https://www.beehiiv.com/features/paid-subscriptions",
+  "status": 200,
+  "title": "Paid Newsletter Subscriptions Made Simple – Monetize with beehiiv",
+  "h1": "LAUNCH A PAID NEWSLETTER THAT SCALES",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free Paid Subscriptions LAUNCH A PAID NEWSLETTER THAT SCALES Turn engaged readers into recurring revenue with a paid newsletter subscription model designed for operators who want full control.",
+  "inputs": [
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 5
+    },
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 4
+    },
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 1
+    },
+    {
+      "type": "range",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 1
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:26:31.848Z"
+}

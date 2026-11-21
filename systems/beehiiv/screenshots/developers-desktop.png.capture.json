@@ -1,0 +1,16 @@
+{
+  "slug": "developers",
+  "requested": "https://developers.beehiiv.com/",
+  "final": "https://developers.beehiiv.com/welcome/getting-started",
+  "status": 200,
+  "title": "Getting Started | beehiiv | Developer Documentation",
+  "h1": "Getting Started",
+  "text": "For AI agents: a documentation index is available at the root level at /llms.txt. Append /llms.txt to any URL for a page-level index, or .md for the markdown version of any page. Login Start trial Get a demo Skip to navigation Welcome Getting Started Copy page beehiiv is the news",
+  "inputs": [],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:27:00.090Z"
+}

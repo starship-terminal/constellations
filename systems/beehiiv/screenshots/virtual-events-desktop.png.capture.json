@@ -1,0 +1,83 @@
+{
+  "slug": "virtual-events",
+  "requested": "https://www.beehiiv.com/virtual-events",
+  "final": "https://www.beehiiv.com/virtual-events",
+  "status": 200,
+  "title": "Virtual Events - beehiiv",
+  "h1": "VIRTUAL EVENTS",
+  "text": "Product Solutions Resources Enterprise Ad Network Pricing Log in Get a demo Sign up for free VIRTUAL EVENTS Check out our latest virtual events and learn how to grow your newsletter with experts Upcoming Virtual Events Past Virtual Events Filters Host Conor Gallagher (2) Mik Renf",
+  "inputs": [
+    {
+      "type": "search",
+      "name": "",
+      "placeholder": "Search virtual events",
+      "valueLen": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "radio",
+      "name": "sort",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "radio",
+      "name": "sort",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "radio",
+      "name": "sort",
+      "placeholder": "",
+      "valueLen": 2
+    },
+    {
+      "type": "radio",
+      "name": "sort",
+      "placeholder": "",
+      "valueLen": 2
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:27:58.069Z"
+}
