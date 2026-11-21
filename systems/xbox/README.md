@@ -1,6 +1,6 @@
 # Xbox design reference
 
-Public signed-out surfaces of Xbox (xbox.com), captured 2026-11-19. `https://www.xbox.com/` redirected to `https://www.xbox.com/en-SG/`. No Microsoft sign-in, no cart, no card, no purchase.
+Public signed-out surfaces of Xbox (xbox.com), captured 2026-11-19 on `en-SG`, refreshed 2026-11-21 on `en-US`. `https://www.xbox.com/` redirected to `https://www.xbox.com/en-US/` on the refresh. No email, phone, name, password, or code was typed. Create an account was not opened. No identity provider was clicked. No purchase.
 
 The marketing site (home, games, consoles, Game Pass) is Microsoft Web Framework: dark 54px header `#1b1d1b`, square corners, lime CTA `#9bf00b` with green ink `#054b16`, Xbox green `#107c10`, yellow badges `#ffd800`, Segoe UI body and Segoe Pro Black on CTAs. Search and the store are a second module: 4px radius, Segoe UI, and on the product page a sampled green `#008746` GET GAME PASS and grey `#484e58` BUY. Computed styles came from the live T3 preview at 1169×731. Screenshots are headless Playwright at 1440×900 and 390×844 after the preview browser stopped producing frames.
 
@@ -12,7 +12,9 @@ The marketing site (home, games, consoles, Game Pass) is Microsoft Web Framework
 | [style-guide.html](style-guide.html) | Token and component specimens |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Header, hero, catalogue, Game Pass, store |
-| [screenshots/](screenshots) | 12 viewport PNGs: home, games, consoles, game-pass, search, product, at 1440 and 390 |
+| [screenshots/](screenshots) | 12 viewport PNGs from 2026-11-19, plus [refresh-2026-11-21/](screenshots/refresh-2026-11-21) |
+| [site-tree.md](site-tree.md) | Public control map from the 2026-11-21 en-US homepage |
+| [login-review.json](login-review.json) | What the Microsoft sign-in wall asked for. Nothing was typed. |
 | [raw/](raw) | `capture-meta.json`, `components-computed.json`, `measurements.md` |
 | [tools/](tools) | Kit copy (public route only) and `test_tokens.py`. Tokens were written from the readings. |
 
@@ -70,6 +72,12 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (preview bro
 
 <!-- health:end -->
 
+## Public site tree, 2026-11-21
+
+The refresh mapped the en-US homepage header, footer, and the pages those controls open. The map is [site-tree.md](site-tree.md). Sign in stops at the Microsoft account wall recorded in [login-review.json](login-review.json). New screenshots are in [screenshots/refresh-2026-11-21/](screenshots/refresh-2026-11-21).
+
+The home hero CTA on that day computed to campaign pink `rgb(251, 95, 184)` with black text, not the lime fill in the tokens. JOIN GAME PASS on the Game Pass page still computed to `#9bf00b`. Store GET GAME PASS computed to `rgb(0, 135, 70)` and BUY to `rgb(72, 78, 88)`, both at 4px radius. Those store fills were sampled from a quantised PNG in the first pass. This pass read them as computed styles. Tokens were not rewritten from one campaign hero.
+
 ## How the values were read
 
 Computed styles and `:root` custom properties were read in the T3 preview tab on the live page. Stylesheets included `mwf-main.min.css`, `xbox-MWF-2021.css`, `oct2017HP.css`, and the store chunk `3772.a5189507.css`. Hover was applied to the home hero CTA with a real pointer; its computed fill did not change. GET GAME PASS and BUY were sampled from the screenshot pixels because those controls had not painted in the preview DOM. Screenshot colours were quantised to 256-colour sRGB PNGs.
@@ -98,7 +106,9 @@ Segoe UI is the body stack (`"Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, A
 | Avatar | Signed-out ME circle only. No gamerpic. |
 | Icon button, text area, select, checkbox, radio, switch, menu, tooltip, dialog, toast, table | Not on the public pages measured |
 | Form error, empty, loading, destructive confirm | Not present on these pages |
-| Sign-in, checkout, subscription form | Not entered |
+| Sign-in wall | Photographed and stopped. [signin-desktop-wall.png](screenshots/refresh-2026-11-21/signin-desktop-wall.png). Asks for email or phone, then Next. Create an account was not opened. |
+| Checkout, subscription form | Not entered |
+| Public site tree | [site-tree.md](site-tree.md). 2026-11-21 en-US. |
 | Phone and desktop widths | Screenshots at 390 and 1440. Computed styles at 1169. |
 
 ## Do and don't

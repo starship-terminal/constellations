@@ -1,0 +1,36 @@
+{
+  "product": "Xbox",
+  "reviewed": "2026-11-21",
+  "account": "signed-out",
+  "loginExtracted": "not-started",
+  "url": "https://www.xbox.com/en-US/auth/msa?action=logIn",
+  "redirectsTo": "https://login.live.com/oauth20_authorize.srf",
+  "alsoLinkedFrom": [
+    "https://www.xbox.com/en-US/",
+    "https://www.xbox.com/en-US/games",
+    "https://www.xbox.com/en-US/play"
+  ],
+  "loaded": true,
+  "status": 200,
+  "title": "Sign in",
+  "asksFor": ["email or phone number"],
+  "codeSent": false,
+  "typedEmail": false,
+  "typedPhone": false,
+  "typedPassword": false,
+  "typedName": false,
+  "submitted": false,
+  "oauthClicked": false,
+  "oauthVisible": [],
+  "identityProvidersNotClicked": ["Microsoft"],
+  "otherControls": ["Forgot your username?", "Next", "Create an account", "Help and feedback", "Terms of use", "Privacy and cookies"],
+  "createAccountOpened": false,
+  "stopped": "login wall",
+  "phone": {
+    "url": "https://www.xbox.com/en-US/auth/msa?action=logIn",
+    "title": "Try again later",
+    "asksFor": [],
+    "note": "The phone viewport showed a Microsoft error: we can't sign you in right now. No field was shown. Nothing was typed."
+  },
+  "notes": "The desktop sign-in wall asks for an email or phone number on a Microsoft account, then Next. No Google or Apple button was on that first paint. Create an account was visible and was not opened. No field was filled. Next was not clicked. No code was sent."
+}

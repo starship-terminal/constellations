@@ -47,6 +47,14 @@
     "--breakpoint-lg": "1084px",
     "--breakpoint-xl": "1400px"
   },
+  "refresh2026-11-21": {
+    "locale": "en-US",
+    "route": "public Playwright, signed out",
+    "loginExtracted": "not-started",
+    "home": "https://www.xbox.com/en-US/",
+    "loginWall": "https://www.xbox.com/en-US/auth/msa?action=logIn",
+    "note": "Hero CTA computed rgb(251, 95, 184). JOIN GAME PASS still #9bf00b. GET GAME PASS computed rgb(0, 135, 70). BUY computed rgb(72, 78, 88). Tokens not rewritten from the campaign hero."
+  },
   "pages": {
     "home": "https://www.xbox.com/en-SG/",
     "games": "https://www.xbox.com/en-SG/games",
