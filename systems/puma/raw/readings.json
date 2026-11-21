@@ -1,0 +1,104 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://us.puma.com/us/en",
+  "resolvedFrom": "https://us.puma.com",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "png": { "width": 2880, "height": 1800 },
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(25, 25, 25)",
+    "fontFamily": "FFDINforPuma, Inter, -apple-system, system-ui, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px"
+  },
+  "nav": {
+    "backgroundColor": "rgb(25, 25, 25)",
+    "color": "rgb(255, 255, 255)",
+    "height": "80px",
+    "linkWeight": "700"
+  },
+  "promo": {
+    "text": "GET FREE SHIPPING ON ORDERS $75 | $50 FOR MEMBERS",
+    "height": "44px",
+    "color": "rgb(25, 25, 25)"
+  },
+  "hero": {
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "40px",
+    "fontWeight": "700",
+    "lineHeight": "44px",
+    "text": "THE WAIT IS OVER UP TO 50% OFF"
+  },
+  "shopMen": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(25, 25, 25)",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "textTransform": "uppercase",
+    "height": "42px",
+    "padding": "8px 20px",
+    "borderRadius": "0px",
+    "border": "1px solid rgb(255, 255, 255)"
+  },
+  "search": {
+    "color": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(103, 109, 117)",
+    "height": "40px",
+    "borderRadius": "2px"
+  },
+  "salePrice": {
+    "color": "rgb(186, 43, 32)",
+    "fontWeight": "700",
+    "fontSize": "16px",
+    "productFontSize": "24px"
+  },
+  "wasPrice": {
+    "color": "rgb(25, 25, 25)",
+    "textDecorationLine": "line-through",
+    "fontWeight": "400"
+  },
+  "addToCart": {
+    "backgroundColor": "rgb(25, 25, 25)",
+    "color": "rgb(255, 255, 255)",
+    "height": "56px",
+    "borderRadius": "2px",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "text": "ADD TO CART"
+  },
+  "productTitle": {
+    "color": "rgb(25, 25, 25)",
+    "fontSize": "32px",
+    "fontWeight": "700",
+    "text": "Desierto v3 Puretex"
+  },
+  "accountTitle": {
+    "color": "rgb(25, 25, 25)",
+    "fontSize": "48px",
+    "fontWeight": "700",
+    "text": "My account"
+  },
+  "fieldLabel": {
+    "color": "rgb(25, 25, 25)",
+    "fontSize": "12px",
+    "fontWeight": "700"
+  },
+  "field": {
+    "height": "48px",
+    "border": "0px solid rgb(229, 231, 235)",
+    "wrapperBorder": "rgb(229, 231, 235)"
+  },
+  "disabledButton": {
+    "backgroundColor": "rgb(189, 193, 197)",
+    "color": "rgb(59, 64, 71)",
+    "height": "56px",
+    "borderRadius": "2px",
+    "text": "LOGIN"
+  },
+  "logo": {
+    "source": "https://us.puma.com/_next/static/assets/icons/puma-logo.svg",
+    "fill": "currentColor",
+    "headerColor": "rgb(255, 255, 255)"
+  }
+}
