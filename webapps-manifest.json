@@ -1541,9 +1541,9 @@
       "description": "Secure Cloud Storage",
       "status": "captured",
       "package": "systems/dropbox",
-      "notes": "https://www.dropbox.com/login accepted the email, then signup asked for a name and password. The form was not submitted. No code was sent.",
+      "notes": "https://www.dropbox.com/login accepted the email, then signup asked for a name and password. The form was not submitted. No code was sent. Public walk 2026-11-21: the map starts at dropbox.com and records which header, footer, and in-page control opens which page, menu, or login wall. Marketing pages, product pages, plans, menus, and language dialogs were photographed at desktop and phone. Cookie banner was hidden, never accepted. Login, sign up, and checkout stop at the auth wall. Nothing was typed. Apple, Google, and Microsoft were not clicked. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1650 at ad0676dba0af. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
