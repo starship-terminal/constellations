@@ -1,0 +1,46 @@
+{
+  "product": "NotebookLM",
+  "publicName": "Gemini Notebook",
+  "domain": "notebooklm.google.com",
+  "canonical": "https://notebook.google.com/trynow",
+  "reviewedAt": "2026-11-22",
+  "method": "T3 preview, incognito, signed out, 1440x900 and 390x844",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "catalogJson": "left alone",
+  "systemsGoogle": "not touched",
+  "walls": [
+    {
+      "control": "header Sign in and hero Sign in to Gemini Notebook",
+      "requestUrl": "https://notebook.google.com/login",
+      "landedHost": "accounts.google.com",
+      "landedPath": "/v3/signin/identifier",
+      "title": "Sign in - Google Accounts",
+      "painted": true,
+      "headings": ["Sign in", "Use your Google Account"],
+      "asksFor": [
+        {
+          "label": "Email or phone",
+          "type": "text",
+          "name": "identifier",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [],
+      "accountChooser": false,
+      "otherControls": ["Forgot email?", "Create account", "Next", "Help", "Privacy", "Terms", "language list"],
+      "stopped": true,
+      "screenshots": [
+        "screenshots/login-empty-light-desktop.png",
+        "screenshots/login-empty-light-phone.png"
+      ],
+      "note": "The email or phone field was empty. Next was not clicked. Create account was not opened. Forgot email was not opened. No password step, no account chooser, and no identity provider was shown. A hidden password input exists in the DOM and was not a filled field."
+    }
+  ],
+  "stopped": "Login and signup stop at the empty Google identifier wall. The signed-in app was not opened. No notebook was created."
+}

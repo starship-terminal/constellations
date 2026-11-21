@@ -1,6 +1,6 @@
 # Gemini Notebook (NotebookLM) design reference
 
-A token set, component reference and pattern notes for Google's Gemini Notebook (formerly NotebookLM), for building mockups that match the product. Recaptured from notebook.google.com on 2026-10-17 while signed in, in the UI generation Google ships as "luminous": near-black and off-white surfaces, one variable family (Google Sans Flex) and pill buttons. The 2026-09-25 capture of the earlier lavender UI is replaced, not merged; the product no longer paints those values. One value, `blur.panel-glass`, is carried over from it (see What to distrust).
+A token set, component reference and pattern notes for Google's Gemini Notebook (formerly NotebookLM), for building mockups that match the product. Recaptured from notebook.google.com on 2026-10-17 while signed in. A public signed-out pass on 2026-11-22 mapped the marketing page and the empty login wall ([site-tree.md](site-tree.md)). catalog.json was left alone., in the UI generation Google ships as "luminous": near-black and off-white surfaces, one variable family (Google Sans Flex) and pill buttons. The 2026-09-25 capture of the earlier lavender UI is replaced, not merged; the product no longer paints those values. One value, `blur.panel-glass`, is carried over from it (see What to distrust).
 
 | File | What it is |
 |---|---|
@@ -11,7 +11,9 @@ A token set, component reference and pattern notes for Google's Gemini Notebook 
 | [patterns.md](patterns.md) | App shell, forms and validation, empty/loading/error, destructive confirmation, feedback, search, data display, onboarding |
 | [style-guide.html](style-guide.html) | One page rendering every token and every component crop, with a light/dark switch |
 | [icons/INDEX.tsv](icons/INDEX.tsv) | The 65 icon ligatures seen, by role, place, size and the font that drew them |
-| [screenshots/](screenshots) | 60 full-page renders: every copy in dark and light, `{page}-{theme}-{state}.png`, 1440 x 900 and 390 x 844 at 2x |
+| [screenshots/](screenshots) | 60 full-page renders of the signed-in app, plus four public signed-out shots from 2026-11-22 |
+| [site-tree.md](site-tree.md) | Public header and footer controls, dated November 2026 |
+| [login-review.json](login-review.json) | Empty Google sign-in wall. `login-extracted` stays not-started |
 | [components/crops/](components/crops) | 302 crops, one per state and theme for 47 of the 64 components (the other 17 are shown by the screenshots) |
 | [raw/](raw) | The readings: [css-vars.json](raw/css-vars.json) (848 variables in both themes), [css-facts.json](raw/css-facts.json), [components-computed.json](raw/components-computed.json), [measurements.md](raw/measurements.md), [tonal-ramps.json](raw/tonal-ramps.json), [brand.json](raw/brand.json) |
 | [tools/](tools) | The capture scripts (`tools/capture/`) and the builders |
@@ -142,6 +144,8 @@ Icons are ligatures in Luminous Symbols, mostly 20px in controls (37 of the 65) 
 ## Coverage
 
 Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Captured on 2026-10-17, dark and light, 1440 and 390.
+
+The public signed-out surface, mapped 2026-11-22, is a separate pass. It is one marketing page and an empty Google sign-in wall. Those shots are [home-public-light-desktop](screenshots/home-public-light-desktop.png), [home-public-light-phone](screenshots/home-public-light-phone.png), [login-empty-light-desktop](screenshots/login-empty-light-desktop.png), and [login-empty-light-phone](screenshots/login-empty-light-phone.png). The signed-in tokens above were not remeasured.
 
 | Item | Status | Where |
 |---|---|---|
