@@ -102,7 +102,7 @@
     "header": { "background": "oklab(0 0 0 / 0.8)", "height": "64px", "note": "Declared. At 1169px the desktop header is display:none (tablet:hidden). The painted header is the mobile About menu." },
     "signIn": { "border": "1px solid rgba(255, 255, 255, 0.1)", "radius": "pill", "padding": "0 12px", "fontSize": "13px", "fontWeight": "500", "letterSpacing": "0.13px", "color": "rgb(255, 255, 255)", "note": "Zero-size at 1169px. Not followed." },
     "footerLink": { "color": "rgba(255, 255, 255, 0.6)", "fontSize": "13px", "letterSpacing": "0.13px" },
-    "themeChip": { "background": "rgba(255, 255, 255, 0.1)", "size": "24px", "radius": "pill", "note": "Not pressed. Light theme of about.x.com was not captured." },
+    "themeChip": { "background": "rgba(255, 255, 255, 0.1)", "size": "24px", "radius": "pill", "note": "Pressed on 2026-11-21. Light theme paints body background rgb(255, 255, 255) and color-scheme light. Sign In was not followed." },
     "fonts": "xVF and xVFDisplay, variable 200-800, self-hosted woff2. Not shipped."
   },
   "fonts": {
@@ -115,6 +115,23 @@
     "Continue, Continue with phone, Continue with Apple, Continue with Google, Sign In and Log in were not pressed.",
     "No account was created. No post was made.",
     "Privacy Settings, checkout, company SSO and help.x.com were not opened.",
-    "The about.x.com theme control was not pressed."
-  ]
+    "The about.x.com Light theme control was pressed on 2026-11-21 so the light marketing page could be photographed. Sign In was not followed."
+  ],
+  "refresh2026-11-21": {
+    "harness": "T3 preview, incognito, signed out. Legal pages also in headless Chromium.",
+    "loginDialog": {
+      "url": "https://x.com/i/jf/onboarding/web?mode=login",
+      "name": "Log in to X",
+      "background": "rgb(20, 20, 20)",
+      "radius": "24px",
+      "width": "700px",
+      "height": "664px",
+      "continueEmpty": { "background": "rgb(38, 38, 38)", "labelColor": "rgb(120, 113, 108)", "radius": "9999px", "height": "48px", "fontSize": "17px", "fontWeight": "500" },
+      "inputs": "username_or_email and password were empty. Nothing was typed."
+    },
+    "aboutLight": { "url": "https://about.x.com/en", "background": "rgb(255, 255, 255)", "colorScheme": "light", "how": "Public Light theme control. Sign In was not followed." },
+    "news": { "url": "https://x.com/i/jf/stories/home", "note": "Public signed-out News. Story cards were not opened." },
+    "download": { "url": "https://x.com/download", "note": "QR page. No form." },
+    "wallsNotEntered": ["/explore", "/search", "/login", "signup dialog", "about Sign In"]
+  }
 }

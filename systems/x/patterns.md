@@ -4,11 +4,15 @@ Public signed-out surfaces only. Nothing was typed, submitted, or posted.
 
 | Pattern | What was on the page | Evidence |
 |---|---|---|
-| Login chrome | Dark page, "Happening now." headline, light pills, Google button, "or" divider, email field, empty Continue, footer, QR card | [raw/readings.json](raw/readings.json). No screenshot: preview frames failed, headless Chromium returned 403 |
-| Logged-out shell | Missing route paints a 600px column, a white Search pill, and a sign-up card. "Page not found" and the grey empty line are in the DOM | readings.json loggedOutShell. No screenshot, same 403 |
+| Login chrome | Dark page, "Happening now." headline, light pills, Google button, "or" divider, email field, empty Continue, footer, QR card | [screenshots/home-login-dark-1440.png](screenshots/home-login-dark-1440.png) |
+| Login dialog | "Log in to X", 700 by 664, 24px radius, empty fields, stone Continue | [screenshots/login-dark-1440.png](screenshots/login-dark-1440.png) |
+| Signup dialog | Same shell, title "Sign up for X". Empty. Not submitted | [screenshots/signup-dark-1440.png](screenshots/signup-dark-1440.png) |
+| Logged-out shell | Missing route paints a 600px column, a white Search pill, and a sign-up card. "Hmm...this page doesn't exist" | [screenshots/missing-dark-1440.png](screenshots/missing-dark-1440.png) |
+| News | Public signed-out story index. Sidebar login card. Story cards not opened | [screenshots/news-dark-1440.png](screenshots/news-dark-1440.png) |
+| Download | QR page, no form | [screenshots/download-dark-390.png](screenshots/download-dark-390.png) |
 | Legal page | White page, black X, huge headline, date band, Download PDF pill | [screenshots/tos-light-1440.png](screenshots/tos-light-1440.png), [screenshots/privacy-light-1440.png](screenshots/privacy-light-1440.png) |
-| About marketing | Black page, xVF display headline, translucent header that is hidden at 1169px | readings.json about. No screenshot: headless Chromium hit Cloudflare |
+| About marketing | Black page and, after the Light control, a white page. Sign In not followed | [screenshots/about-dark-1440.png](screenshots/about-dark-1440.png), [screenshots/about-light-1440.png](screenshots/about-light-1440.png) |
 
 ## Not on these pages
 
-Form validation, empty-app state, loading, error toast, destructive confirmation, search results, lists, tables and onboarding sit behind sign-in or behind a query. Search was not submitted. The theme control on about.x.com was not pressed.
+Form validation, loading, error toast, destructive confirmation, and search results sit behind sign-in or behind a query. Search and Explore redirect to the login wall and were not submitted. The signed-in timeline was not entered. login-extracted stays not-started.

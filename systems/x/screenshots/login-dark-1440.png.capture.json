@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-21T15:42:00Z",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "source": "https://x.com/i/jf/onboarding/web?mode=login",
+  "title": "X - The Everything App / X",
+  "note": "Empty login dialog from /login. Email and password inputs were empty. Nothing typed. Identity providers were not clicked. Viewport screenshot, not a full-page stitch."
+}

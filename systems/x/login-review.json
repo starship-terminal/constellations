@@ -1,0 +1,70 @@
+{
+  "slug": "x",
+  "product": "X",
+  "domain": "x.com",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "phone-google-apple-and-email",
+  "session": "T3 preview incognito, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://x.com/i/jf/onboarding/web?mode=login",
+    "title": "X - The Everything App / X",
+    "dialog": "Log in to X",
+    "asks": [
+      "Continue with phone",
+      "Continue with Google",
+      "Continue with Apple",
+      "Email or username",
+      "Continue"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "code_field": false,
+    "inputs": [
+      {"name": "username_or_email", "type": "text", "filled": false},
+      {"name": "password", "type": "password", "filled": false}
+    ],
+    "note": "Reached from /login. Both inputs were empty. Continue was not clicked. Phone, Google and Apple were not clicked. The desktop homepage at https://x.com/ is the same empty wall without the dialog chrome."
+  },
+  "signup_wall": {
+    "url": "https://x.com/i/jf/onboarding/web?mode=signup",
+    "dialog": "Sign up for X",
+    "asks": ["Continue with phone", "Continue with Google", "Continue with Apple", "Email or username", "Continue"],
+    "email_field": true,
+    "continued": false,
+    "note": "Empty dialog. Continue, phone, Google and Apple were not clicked."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/login-dark-1440.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/home-dark-390.png"
+    }
+  },
+  "screens": [
+    {"name": "Homepage login wall, desktop, empty", "file": "screenshots/home-login-dark-1440.png"},
+    {"name": "Homepage, phone, empty", "file": "screenshots/home-dark-390.png"},
+    {"name": "Login dialog, desktop, empty", "file": "screenshots/login-dark-1440.png"},
+    {"name": "Signup dialog, desktop, empty", "file": "screenshots/signup-dark-1440.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Continue with phone, Continue with Google and Continue with Apple were not clicked.",
+    "The email and password fields were left empty. Continue was not clicked.",
+    "The signed-in timeline, composer, inbox and settings were not reached.",
+    "catalog.json and webapps-manifest.json were not edited, so the catalog login-extracted flag was not changed."
+  ],
+  "not_submitted": [
+    "Continue with phone",
+    "Continue with Google",
+    "Continue with Apple",
+    "Continue",
+    "about.x.com Sign In"
+  ]
+}

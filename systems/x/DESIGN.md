@@ -158,7 +158,7 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `pill` 9999px, `field` 6px, `google` 20px, `card` 22px, `show-more` 14px, `legal-button` 48px.
+Corner radii from `core.radius`: `pill` 9999px, `field` 6px, `google` 20px, `card` 22px, `show-more` 14px, `legal-button` 48px, `dialog` 24px.
 
 ## Components
 
