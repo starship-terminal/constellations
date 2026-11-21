@@ -1,0 +1,142 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.jcrew.com/sg/",
+  "requested": "https://www.jcrew.com",
+  "redirect": "https://www.jcrew.com/sg/?",
+  "title": "J.Crew: Clothes, Shoes & Accessories For Women, Men & Kids",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "screenshots": {
+    "pixelWidth": 2880,
+    "pixelHeight": 1800
+  },
+  "currency": "SGD",
+  "country": "Singapore",
+  "body": {
+    "backgroundColor": "transparent on html and body; page reads white",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "soleil, Helvetica, Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "18.4px",
+    "letterSpacing": "0.3px"
+  },
+  "announcement": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "height": "55px",
+    "copy": "Have a question? We can help. Shop now"
+  },
+  "header": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "height": "116px",
+    "logo": { "width": 114, "height": 24, "src": "https://www.jcrew.com/next-static/images/sidecar-modules/navigation/jcrew-logo-fall-21.svg", "fill": "#231f20" }
+  },
+  "navLink": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "12px",
+    "fontWeight": "600",
+    "letterSpacing": "1.2px",
+    "textTransform": "uppercase",
+    "padding": "7px 12px",
+    "height": "28px",
+    "giftsColor": "rgb(208, 2, 27)"
+  },
+  "search": {
+    "backgroundColor": "rgb(239, 239, 239)",
+    "border": "1px solid rgb(190, 190, 190)",
+    "color": "rgb(101, 101, 101)",
+    "fontSize": "12px",
+    "height": "36px",
+    "width": "346px",
+    "borderRadius": "70px",
+    "padding": "11px 38px",
+    "placeholder": "Search J.Crew"
+  },
+  "signIn": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "textTransform": "capitalize",
+    "height": "60px"
+  },
+  "heroCta": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "soleil, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "600",
+    "textTransform": "uppercase",
+    "height": "36px",
+    "width": "210px",
+    "borderRadius": "0px",
+    "padding": "12px 0px"
+  },
+  "sectionTitle": {
+    "text": "Where to begin? Here...",
+    "fontFamily": "\"Adobe Caslon Pro\", adobe-caslon-pro, Georgia, \"Times New Roman\", serif",
+    "fontSize": "24px",
+    "fontWeight": "400",
+    "color": "rgb(25, 25, 25)",
+    "letterSpacing": "0.48px"
+  },
+  "collection": {
+    "url": "https://www.jcrew.com/sg/plp/womens/categories/clothing",
+    "h1": "Shop All Women's Clothing",
+    "h1Font": "\"Adobe Caslon Pro\", adobe-caslon-pro, serif",
+    "h1Size": "24px",
+    "h1LineHeight": "48px",
+    "itemCount": "968 items",
+    "countColor": "rgb(118, 118, 118)",
+    "badge": { "text": "TOP RATED", "color": "rgb(118, 118, 118)", "fontSize": "12px", "fontWeight": "300" },
+    "price": { "fontSize": "14px", "fontWeight": "300", "letterSpacing": "0.96px" },
+    "imageBackground": "rgb(248, 248, 248)",
+    "crumbColor": "rgb(190, 190, 190)"
+  },
+  "product": {
+    "url": "https://www.jcrew.com/sg/p/womens/categories/clothing/sweaters/pullovers/CZ308",
+    "title": "Mockneck sweater in argyle vintage wool",
+    "titleColor": "rgb(43, 43, 43)",
+    "titleFont": "\"Adobe Caslon Pro\", adobe-caslon-pro, Georgia, \"Times New Roman\", serif",
+    "titleSize": "24px",
+    "price": "SGD 328",
+    "priceWeight": "300",
+    "priceSize": "16px",
+    "addToBag": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "height": "40px",
+      "width": "163px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "letterSpacing": "1.4px",
+      "borderRadius": "0px",
+      "textTransform": "uppercase",
+      "clicked": false
+    }
+  },
+  "about": {
+    "url": "https://www.jcrew.com/sg/s/aboutus",
+    "panel": "rgb(41, 70, 145)",
+    "eyebrow": { "text": "HERITAGE MADE MODERN", "color": "rgb(255, 255, 255)", "fontSize": "20px", "fontWeight": "700", "letterSpacing": "1px" }
+  },
+  "footer": {
+    "backgroundColor": "rgb(240, 241, 242)",
+    "signup": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "height": "36px",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "letterSpacing": "1.5px",
+      "borderRadius": "0px",
+      "submitted": false
+    },
+    "copyright": "© 2026 J.Crew"
+  }
+}
