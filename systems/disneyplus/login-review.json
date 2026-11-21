@@ -1,0 +1,43 @@
+{
+  "product": "Disney+",
+  "domain": "disneyplus.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright and the shared preview browser, signed out",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header LOG IN",
+      "url": "https://www.disneyplus.com/identity/login/enter-email",
+      "title": "Login to Disney+ | Login or Signup",
+      "painted": false,
+      "headings": ["Enter your email address to continue"],
+      "asksFor": [
+        { "label": "Email", "type": "text", "required": false, "valueLength": 0 }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "and more"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "The email field was empty. Continue was not clicked. MyDisney is named in the copy. No identity provider button was on this first screen, and none was clicked. No password field was on this screen."
+    },
+    {
+      "control": "hero DISNEY+ ANNUAL, DISNEY+ MONTHLY, and SIGN UP NOW",
+      "url": "https://www.disneyplus.com/en-gb/commerce/plans",
+      "title": "Select Plan | Disney+",
+      "painted": false,
+      "headings": ["Choose your plan", "Disney+ Premium", "Disney+ Standard"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["SELECT PLAN", "Log In", "Learn more"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-default.png",
+      "note": "This is the subscribe wall. SELECT PLAN was not clicked. No email, card, or address was typed. No subscription was started."
+    }
+  ]
+}
