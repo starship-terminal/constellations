@@ -1,0 +1,96 @@
+{
+  "emailRest": {
+    "placeholder": "julie.young@hey.com",
+    "name": "EMAIL",
+    "value": "",
+    "color": "rgba(0, 0, 0, 0.75)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "\"Lab Grotesque Mono\", monospace",
+    "size": "14.534px",
+    "weight": "400",
+    "radius": "0px",
+    "border": "0px none rgba(0, 0, 0, 0.75)",
+    "pad": "2.1801px 0px 2.1801px 17.4408px",
+    "h": 36,
+    "w": 351,
+    "outline": "rgba(0, 0, 0, 0.75) none 0px"
+  },
+  "notifyShot": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollH": 3008,
+    "url": "https://37signals.com/jobs"
+  },
+  "emailFocus": {
+    "outline": "rgba(0, 0, 0, 0.75) none 0px",
+    "shadow": "none",
+    "border": "0px none rgba(0, 0, 0, 0.75)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "active": true
+  },
+  "focusShot": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollH": 3008,
+    "url": "https://37signals.com/jobs"
+  },
+  "buttonHover": {
+    "text": "Sign up",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(154, 162, 0)",
+    "decoration": "none"
+  },
+  "hoverShot": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollH": 3008,
+    "url": "https://37signals.com/jobs"
+  },
+  "podcast": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollH": 8482,
+    "url": "https://37signals.com/podcast/"
+  },
+  "menuOpen": {
+    "checked": true,
+    "navDisplay": "flex",
+    "text": "Menu\nSignals\nBasecamp\nHEY\nFizzy\nONCE\n1999\nBooks\nThoughts\nJobs\nUpdates\nPodcast\nSupply\nDev\nPolicies"
+  },
+  "menuShot": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 1,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "scrollH": 1505,
+    "url": "https://37signals.com/"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "podcast-light-default",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "url": "https://37signals.com/podcast/",
+  "scrollH": 8482,
+  "capturedAt": "2026-11-21T15:41:51.784Z",
+  "note": "viewport only; page scrollHeight is unbounded-ish marketing"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "home-light-default",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollH": 2299,
+  "url": "https://37signals.com/",
+  "theme": "139, 119, 255",
+  "capturedAt": "2026-11-21T15:41:37.256Z",
+  "themePinned": "--rgb-theme-3"
+}
