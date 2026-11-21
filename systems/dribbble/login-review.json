@@ -1,0 +1,135 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public Playwright capture, signed out. https://dribbble.com/session/new and https://dribbble.com/signups/new were opened after the homepage tree was written. The empty walls were photographed at 1440 and 390. The branch stopped. No email, username, password, phone, or code was typed. Google was not clicked. Continue was not pressed. No form was submitted. The reCAPTCHA was not solved.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": "innerWidth 1440, innerHeight 900, devicePixelRatio 1, visualViewport 1440x900 scale 1",
+      "png": "1440x900",
+      "file": "screenshots/login-light-empty.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": "innerWidth 390, innerHeight 844, devicePixelRatio 2, visualViewport 390x844 scale 1",
+      "png": "780x1688",
+      "file": "screenshots/mobile-login-light-empty.png"
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "no signed-in navigation"
+      ],
+      "reached": [
+        "no signed-in navigation"
+      ],
+      "note": "Signed out. The public header offers Explore, Hire Talent, Get Hired, Community, Sign up, and Log in. Each of the first four opens a menu on the homepage. Log in stays on dribbble.com at /session/new. Sign up stays at /signups/new."
+    },
+    "settings": {
+      "items": [
+        "no settings area"
+      ],
+      "reached": [
+        "no settings area"
+      ],
+      "note": "No signed-in settings surface was offered."
+    },
+    "create": {
+      "items": [
+        "no create flow"
+      ],
+      "reached": [
+        "no create flow"
+      ],
+      "note": "Share Your Work points at /uploads/new and was not followed. Start Your Project Brief, Get Started, and Continue were not submitted."
+    },
+    "wall": "https://dribbble.com/session/new",
+    "status": 200,
+    "title": "Dribbble - Discover the World's Top Designers & Creative Professionals",
+    "themes": [
+      "light"
+    ],
+    "fields": [
+      {
+        "label": "Email address or username",
+        "placeholder": "Enter email or username",
+        "type": "text",
+        "value": "empty"
+      }
+    ],
+    "actions": [
+      "Continue",
+      "Sign up",
+      "Sign in with Google Button"
+    ],
+    "legal": [
+      "Terms",
+      "Privacy Policy"
+    ],
+    "captcha": "A reCAPTCHA iframe is in the page and paints 0 x 0. Not solved."
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-menu.png",
+    "screenshots/home-light-menu-hire.png",
+    "screenshots/home-light-menu-get-hired.png",
+    "screenshots/home-light-menu-community.png",
+    "screenshots/home-light-full.png",
+    "screenshots/shots-light-default.png",
+    "screenshots/shots-light-full.png",
+    "screenshots/shot-light-default.png",
+    "screenshots/shot-light-full.png",
+    "screenshots/designer-light-default.png",
+    "screenshots/designer-light-full.png",
+    "screenshots/designers-light-default.png",
+    "screenshots/designers-light-full.png",
+    "screenshots/jobs-light-default.png",
+    "screenshots/jobs-light-full.png",
+    "screenshots/search-light-default.png",
+    "screenshots/search-light-full.png",
+    "screenshots/stories-light-default.png",
+    "screenshots/stories-light-full.png",
+    "screenshots/signup-light-empty.png",
+    "screenshots/login-light-empty.png",
+    "screenshots/hire-light-default.png",
+    "screenshots/services-light-default.png",
+    "screenshots/briefs-light-default.png",
+    "screenshots/about-light-default.png",
+    "screenshots/pro-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-shots-light-default.png",
+    "screenshots/mobile-shots-light-full.png",
+    "screenshots/mobile-designer-light-default.png",
+    "screenshots/mobile-designer-light-full.png",
+    "screenshots/mobile-login-light-empty.png"
+  ],
+  "gaps": [
+    "The signed-in product was not entered. Nav, settings, and create were not offered on a signed-in shell.",
+    "Continue was not pressed. No password or code step appeared.",
+    "Sign in with Google is a Google iframe. It was not clicked.",
+    "The reCAPTCHA iframe was present and not solved.",
+    "Share Your Work points at /uploads/new and was not followed.",
+    "Post a Full-Time Job points at /jobs/new and was not followed.",
+    "Help Center and the social profiles were linked and not followed.",
+    "T3 preview_snapshot could not paint frames. Screenshots are from headless Playwright."
+  ],
+  "not_submitted": [
+    "email",
+    "username",
+    "password",
+    "code",
+    "Continue",
+    "Sign up",
+    "Sign in with Google",
+    "captcha",
+    "search",
+    "Get Started",
+    "Start Your Project Brief",
+    "Share Your Work",
+    "Post a Full-Time Job",
+    "Add Service"
+  ]
+}
