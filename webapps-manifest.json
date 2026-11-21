@@ -980,9 +980,9 @@
       "description": "Buy and Sell Bitcoin, Ethereum, and more with trust",
       "status": "captured",
       "package": "systems/coinbase",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/637: public marketing surface (en-sg) and login.coinbase.com sign-in boundary. Manifest row was left pending after merge. https://login.coinbase.com/signin accepted the email, then asked for a password. Passkey, Google, and Apple are also offered. No code was sent.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/637: public marketing surface (en-sg) and login.coinbase.com sign-in boundary. Manifest row was left pending after merge. https://login.coinbase.com/signin accepted the email, then asked for a password. Passkey, Google, and Apple are also offered. No code was sent. Public walk 2026-11-21: the map starts at coinbase.com, which redirects to /en-sg, and records which header, menu, search, language, country, footer, and phone-drawer control opens which page or in-page interaction. Search was opened and not submitted. Cookie dialogs were hidden, never accepted. Sign-in stopped at login.coinbase.com/signin with an empty email field. Nothing was typed. Passkey, Google, and Apple were not clicked. Signed-in app was not captured. Public package refresh in PR 1639 at 33e105f54db6. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 3
     },
     {
