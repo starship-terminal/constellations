@@ -1,0 +1,120 @@
+{
+  "slug": "miro",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "Public Playwright capture, signed out. https://miro.com/login/ and https://miro.com/signup/ were opened once each. The empty walls were photographed. The branch stopped. No email, password, or code was typed. No identity provider was clicked. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Logo to /index",
+        "Product menu: Intelligent Canvas, Flows, Prototypes & Wireframes, Mermaid Diagrams, Engage, AI Overview, MCP Server, Blueprints, Integrations, Security, Enterprise Guard, Developer Platform, Download Apps, Whiteboard, Diagrams, Kanban, Timelines, TalkTrack, Tables, Docs, Slides, Release Notes",
+        "Use Cases menu: Explore AI Playbooks, Explore Templates, Diagramming, Workshops, Brainstorming, Mind Maps, Concept Maps, Flowcharts, Roadmapping, Process Mapping, Technical Design & Documentation, Prototypes & Wireframes, Customer Journey Mapping, Research Synthesis, Design Workshops, Planning & Delivery, Goal Planning, Org Design",
+        "Solutions menu: Enterprise, Small Businesses, Startups, industries, teams, and strategic initiatives",
+        "Resources menu: Customer Stories, Academy, Webinars, Reforge Learning, Help Center, Events, Community, Blog, Miro Professional Services, Solution Partners, AI Playbooks",
+        "Pricing",
+        "Enterprise",
+        "Login",
+        "Contact sales",
+        "Get started free"
+      ],
+      "reached": [
+        "/",
+        "/pricing",
+        "/intelligent-canvas",
+        "/products/ai-workflows",
+        "/ai-trust",
+        "/templates",
+        "/enterprise",
+        "/customers",
+        "/integrations",
+        "/login",
+        "/signup",
+        "Product menu",
+        "Use Cases menu",
+        "Solutions menu",
+        "Resources menu",
+        "phone menu"
+      ]
+    },
+    "settings": {
+      "items": [
+        "No account settings on the public site. No theme switch. OneTrust offered Cookies Settings, Reject All, and Accept All Cookies. Login and signup offer an EN language button."
+      ],
+      "reached": [
+        "Reject All on the live walk"
+      ]
+    },
+    "create": {
+      "items": [
+        "Get started free",
+        "Get Started Free",
+        "Start for free",
+        "Try for free",
+        "Take me to my canvas",
+        "Enter your work email",
+        "Google",
+        "Office365",
+        "Slack",
+        "Sign up to a different region or a private organization"
+      ],
+      "reached": [
+        "/signup empty wall"
+      ]
+    }
+  },
+  "screens": [
+    "screenshots/ai-trust-light-default.png",
+    "screenshots/ai-workflows-light-default.png",
+    "screenshots/customers-light-default.png",
+    "screenshots/enterprise-light-default.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-product-menu.png",
+    "screenshots/home-light-resources-menu.png",
+    "screenshots/home-light-solutions-menu.png",
+    "screenshots/home-light-use-cases-menu.png",
+    "screenshots/integrations-light-default.png",
+    "screenshots/intelligent-canvas-light-default.png",
+    "screenshots/login-light-empty.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-login-light-empty.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/signup-light-empty.png",
+    "screenshots/templates-light-default.png"
+  ],
+  "gaps": [
+    "The signed-in canvas was not entered. Boards, billing, and account settings were not offered on a signed-in shell.",
+    "Google, Microsoft, Show more sign-in options, and SSO were visible on login and not clicked.",
+    "Google, Office365, and Slack were visible on signup and not clicked.",
+    "The email field was empty. Continue with email was not pressed. Take me to my canvas was not pressed. No code was sent.",
+    "Request a magic sign in link was not followed.",
+    "No dark theme was offered as a switch.",
+    "Contact sales, Book a demo, Buy this plan, and Use template were not pressed.",
+    "Developer Platform, Academy, Help Center, status, and social links were linked and not opened.",
+    "Token values were not re-read on this pass. They stay the 2026-11-18 measurements.",
+    "Phone Product, Use Cases, Solutions, and Resources rows were not expanded."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "Continue with email",
+    "Take me to my canvas",
+    "Google",
+    "Microsoft",
+    "Office365",
+    "Slack",
+    "SSO",
+    "Show more sign-in options",
+    "Request a magic sign in link",
+    "Contact sales",
+    "Book a demo",
+    "captcha"
+  ]
+}
