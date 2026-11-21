@@ -1,0 +1,108 @@
+{
+  "href": "https://business.vivid.money/en/login",
+  "title": "Log in to Vivid Business",
+  "inputs": [
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "en"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "English"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "De"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "It"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "Fr"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "Es"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "Nl"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "Phone"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "Email"
+    },
+    {
+      "tag": "INPUT",
+      "type": null,
+      "text": "Country"
+    },
+    {
+      "tag": "INPUT",
+      "type": "tel",
+      "text": "Phone number"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "Continue"
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "text": "Services and Privacy info"
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "text": "Cookie statement"
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "text": "What we collect"
+    },
+    {
+      "tag": "BUTTON",
+      "type": null,
+      "text": "Accept"
+    },
+    {
+      "tag": "BUTTON",
+      "type": null,
+      "text": "Reject non-essential"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "Customize"
+    }
+  ],
+  "theme": null,
+  "font": "inter, \"inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+}

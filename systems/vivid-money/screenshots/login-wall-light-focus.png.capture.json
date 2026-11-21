@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T16:09:32.548Z",
+  "screenshot": "login-wall-light-focus.png",
+  "sanitizedSourceUrl": "https://business.vivid.money/en/login",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://business.vivid.money/en/login",
+    "title": "Log in to Vivid Business",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "theme": null,
+    "scrollHeight": 900
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Cookie dialog hidden with CSS. No consent button pressed. No form submitted."
+}

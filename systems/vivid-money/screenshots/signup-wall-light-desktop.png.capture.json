@@ -1,0 +1,35 @@
+{
+  "capturedAt": "2026-11-21T16:10:44.149Z",
+  "screenshot": "signup-wall-light-desktop.png",
+  "sanitizedSourceUrl": "https://vivid.money/en-eu/",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Get started clicked. Cookie overlay hidden. Nothing typed. Form not submitted.",
+  "dialog": {
+    "href": "https://vivid.money/en-eu/#open-account",
+    "dialogs": [
+      {
+        "tag": "SECTION",
+        "id": "open-account",
+        "cls": "ceN1Sq deN1Sq beN1Sq",
+        "display": "flex",
+        "text": "Open a business account Country Business type Business type Registered Company Legal entity type Legal entity type GmbH Company name Phone number Get updates & offers from Vivid, t"
+      },
+      {
+        "tag": "DIV",
+        "id": "popup-1",
+        "cls": "popup-content ",
+        "display": "none",
+        "text": "CookiesWe use cookies to improve our website and offers as well as for marketing purposes. By clicking on \"Accept\" you consent to our use of such technologies. Your consent can be "
+      }
+    ],
+    "bodyHasOpen": true
+  }
+}

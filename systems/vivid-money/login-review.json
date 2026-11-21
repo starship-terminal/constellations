@@ -1,0 +1,43 @@
+{
+  "product": "Vivid Money",
+  "slug": "vivid-money",
+  "date": "2026-11-22",
+  "scope": "public signed-out",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "submitted": false,
+  "typed": false,
+  "identity_providers_clicked": false,
+  "captcha_solved": false,
+  "account_created": false,
+  "viewport": {
+    "desktop": "1440x900 at 2x",
+    "phone": "390x844 at 2x"
+  },
+  "walls": [
+    {
+      "name": "login",
+      "url": "https://business.vivid.money/en/login",
+      "opened": true,
+      "file": "screenshots/login-wall-light-desktop.png",
+      "phone": "screenshots/login-wall-light-phone.png",
+      "asks_for": "phone number or email",
+      "controls_seen": ["Phone", "Email", "Continue", "language chips"],
+      "typed": false,
+      "submitted": false,
+      "identity_provider_clicked": false,
+      "stopped": true
+    },
+    {
+      "name": "signup",
+      "url": "https://vivid.money/en-eu/#open-account",
+      "opened": true,
+      "file": "screenshots/signup-wall-light-desktop.png",
+      "asks_for": "company name and phone number",
+      "controls_seen": ["Country", "Business type", "Legal entity type", "Company name", "Phone number", "Open a business account"],
+      "typed": false,
+      "submitted": false,
+      "stopped": true
+    }
+  ]
+}

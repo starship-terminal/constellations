@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T16:09:18.929Z",
+  "screenshot": "about-light-desktop.png",
+  "sanitizedSourceUrl": "https://vivid.money/en-eu/about-us/",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://vivid.money/en-eu/about-us/",
+    "title": "About Vivid | Vivid Europe",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "theme": "light",
+    "scrollHeight": 6107
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Cookie dialog hidden with CSS. No consent button pressed. No form submitted."
+}

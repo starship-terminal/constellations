@@ -1,6 +1,6 @@
 # Vivid Money design reference
 
-Tokens and component notes for Vivid Money, the European business and personal bank at [vivid.money](https://vivid.money/). Captured 2026-11-19. Desktop screenshots are 1440×900. Phone screenshots are 390×844. Public marketing pages and the signed-out login chrome only. No account was created. No email, phone number, card, or KYC value was typed. No form was submitted.
+Tokens and component notes for Vivid Money, the European business and personal bank at [vivid.money](https://vivid.money/). Refreshed 2026-11-22 from the public Europe English site. Desktop screenshots are 1440×900 CSS pixels at 2x. Phone screenshots are 390×844 CSS pixels at 2x. Public marketing pages, the header menus, and the signed-out login chrome only. No account was created. No email, phone number, card, or KYC value was typed. No form was submitted. `login-extracted` stays not-started.
 
 The marketing site is a tokenised CSS build. Custom properties on `:root` name colour (`--main-c*`, `--color-*`), type, spacing, radii, shadows and layout. `html` carried `data-theme="light"`. The business login at `business.vivid.money/en/login` paints a different purple and uses Inter for body text. Satoshi is the marketing face and the login heading face.
 
@@ -13,6 +13,7 @@ The marketing site is a tokenised CSS build. Custom properties on `:root` name c
 | [style-guide.html](style-guide.html) | Renders the tokens. Satoshi is not loaded. |
 | [components.md](components.md) | Measured controls, and the gaps. |
 | [patterns.md](patterns.md) | How the public pages are built, and where they stop. |
+| [site-tree.md](site-tree.md) | Which header controls open which pages, menus, and walls. |
 | [components/](components/) | Crop folder. Element crops were not cut; the page screenshots hold the controls. |
 | [icons/](icons/) | The header wordmark, with [INDEX.tsv](icons/INDEX.tsv). |
 | [screenshots/](screenshots/) | Quantised page shots, desktop and phone. |
@@ -85,7 +86,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 ## How the values were read
 
-Custom properties were read with `getComputedStyle(document.documentElement)` on `https://vivid.money/en-eu/` in the T3 preview tab on 2026-11-19. That tab was 1169×731 CSS pixels at devicePixelRatio 2. Component styles were read from the same page, from the plans page, and from `https://business.vivid.money/en/login` after the cookie banner was dismissed. Desktop and phone screenshots were taken in headless Playwright at 1440×900 and 390×844, deviceScaleFactor 2, on public marketing URLs that loaded without a Cloudflare challenge. The preview browser did not produce screenshot frames, so the package does not include a preview-tab screenshot. Stylesheet version in the page was `2.0.440`.
+Custom properties were read with `getComputedStyle` and the page stylesheets on `https://vivid.money/en-eu/` in headless Playwright on 2026-11-22, viewport 1440×900, devicePixelRatio 2. `html` carried `data-theme="light"`. Component styles were read from the same page and from `https://business.vivid.money/en/login`. The cookie dialog was hidden with CSS. Accept, Reject non-essential, and Customize were not pressed. Stylesheet version in the page was `2.0.454`. The earlier pass on 2026-11-19 read version `2.0.440`. The colour roles in [tokens.json](tokens.json) still match this pass.
 
 ## What to distrust
 
@@ -108,7 +109,7 @@ Satoshi is the marketing family, declared as `--font-family` and loaded at weigh
 | Colour, type, space, radius, shadow | Captured from custom properties and computed styles. [tokens.json](tokens.json) |
 | Light theme | Captured. `html[data-theme=light]` on the marketing site. |
 | Dark theme | Not captured. No public page showed a dark theme. |
-| Desktop 1440 and phone 390 | Captured for home, pricing, personal and customers. |
+| Desktop 1440 and phone 390 | Captured for home and pricing. Desktop also covers personal, customers, business, cards, freelancers, about, the four mega-menus, and the language panel. |
 | Button, link, text field, tabs, menu, dialog, card, badge | Observed on public pages. See [components.md](components.md). |
 | Checkbox, radio, switch, select, text area, toast, table, avatar | Not captured, or only the marketing demo of them. |
 | Signed-in app, KYC, card entry | Not entered. |
@@ -118,7 +119,7 @@ Satoshi is the marketing family, declared as `--font-family` and loaded at weigh
 - **Do paint Get started as a purple pill.** The fill is `#7d33f6`, the radius is `100px`, the label is white at 16px weight 500. [screenshots/home-light-desktop.png](screenshots/home-light-desktop.png)
 - **Do keep Login as an outline pill.** The border is `#7d33f6` and the label matches it. [screenshots/home-light-desktop.png](screenshots/home-light-desktop.png)
 - **Do set the headline in Satoshi at 52px, weight 500, with tight tracking.** [screenshots/home-light-desktop.png](screenshots/home-light-desktop.png)
-- **Do paint the promo bar `#222`.** The seat button on it is a white pill. [screenshots/home-light-desktop.png](screenshots/home-light-desktop.png)
+- **Do paint a promo bar `#222` when the site shows one.** On 2026-11-22 the homepage had no promo bar. The token stays `--color-black-skinhead`.
 - **Do use the soft purple for the featured plan.** The Pro card is `#f4edff` with a 24px radius. [screenshots/pricing-light-desktop.png](screenshots/pricing-light-desktop.png)
 - **Don't invent a dark theme.** The public pages stayed on light.
 - **Don't treat the login purple as the marketing purple.** Continue on the login page is `#6a26d9`.

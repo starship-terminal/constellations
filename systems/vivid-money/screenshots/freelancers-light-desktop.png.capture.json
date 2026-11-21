@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T16:09:25.202Z",
+  "screenshot": "freelancers-light-desktop.png",
+  "sanitizedSourceUrl": "https://vivid.money/en-eu/business/freelancers/",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://vivid.money/en-eu/business/freelancers/",
+    "title": "Business account for freelancers: unlimited IBANs",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "theme": "light",
+    "scrollHeight": 13395
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Cookie dialog hidden with CSS. No consent button pressed. No form submitted."
+}
