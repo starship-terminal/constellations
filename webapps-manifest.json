@@ -4817,9 +4817,9 @@
       "description": "Smart Scheduling App for Teams",
       "status": "pending",
       "package": null,
-      "notes": "https://app.reclaim.ai/login offers Google, Microsoft, Dropbox, and SSO. No email field.",
+      "notes": "https://app.reclaim.ai/login offers Google, Microsoft, Dropbox, and SSO. No email field. Public walk 2026-11-21: Product, Solutions, and Resources open menus and stay on the page. Enterprise and Pricing open their pages. Log in opens the app login and stops. Get Started opens signup and stops. Book a Demo opens contact and was not submitted. Phone uses a hamburger with the same walls. Google, Microsoft, Dropbox, and SSO were not clicked. No email was typed. No form was submitted. Signed-in calendar was not captured. Public package refresh in PR 1603 at 34479bae47e5. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "oauth-only",
+      "login-probe": "closed",
       "batch": 14
     },
     {
