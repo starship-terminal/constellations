@@ -112,6 +112,22 @@ The app has no login, so anyone who can reach it can replace or remove the
 saved key and spend it through the chat, as with the env key before. Nobody
 can read it back.
 
+## Content-Security-Policy
+
+Every page is sent with a Content-Security-Policy ([proxy.ts](proxy.ts),
+built by [lib/csp.ts](lib/csp.ts), tested by `lib/csp.test.ts`), the second
+wall behind [lib/markdown.ts](lib/markdown.ts)'s raw HTML allowlist. Scripts
+run only with the per-request nonce Next and [app/layout.tsx](app/layout.tsx)
+put on them (so every page renders per request), images and video load only
+from this origin and the refero media hosts (the bucket named by
+`DESIGN_SYSTEMS_MEDIA_BASE` now and when the refero data was built, and
+refero's CDN), fetches go only to this
+origin, and no other site may frame a page. `next dev` adds `'unsafe-eval'`
+and inline styles for React's dev tools and hot reload; production has
+neither. `/api/` answers and `/media/` files are left out: a media file keeps
+its own `sandbox` policy. A new remote host for images or video, or a new
+inline script, needs its place in `lib/csp.ts` or the browser blocks it.
+
 ## The docs site's Settings page
 
 The published docs site ([tools/site.py](../tools/site.py)) has the same
