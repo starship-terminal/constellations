@@ -1,0 +1,23 @@
+{
+  "product": "Urban Outfitters",
+  "domain": "urbanoutfitters.com",
+  "reviewedAt": "2026-11-22",
+  "method": "T3 preview browser, incognito, signed out, 1440x900, devicePixelRatio 2.",
+  "region": "Public US shop at https://www.urbanoutfitters.com/.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign In / Sign Up",
+      "url": "https://www.urbanoutfitters.com/",
+      "painted": false,
+      "stopped": true,
+      "note": "The button was not clicked. No email, phone, or password was typed."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.urbanoutfitters.com/",
+  "viewport": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2},
+  "cssVars": {
+    "--text-dark": "rgb(34, 34, 34)",
+    "--text-medium": "rgb(112, 112, 112)",
+    "--text-light": "rgb(255, 255, 255)",
+    "--price-sale": "rgb(216, 54, 4)",
+    "--price-promotion": "rgb(58, 135, 0)",
+    "--price-original": "rgb(34, 34, 34)",
+    "--site-background": "rgb(255, 255, 255)",
+    "--site-background-secondary": "rgb(245, 245, 245)",
+    "--grey-dark": "34, 34, 34",
+    "--grey": "112, 112, 112",
+    "--grey-light": "221, 221, 221",
+    "--grey-lightest": "245, 245, 245",
+    "--red": "216, 54, 4",
+    "--green": "58, 135, 0",
+    "--white": "255, 255, 255",
+    "--off-white": "244, 245, 240",
+    "--font-body": "Helvetica, Arial, sans-serif",
+    "--focus-ring": "rgb(112, 112, 112)",
+    "--button-primary-background": "rgb(34, 34, 34)",
+    "--button-primary-text": "rgb(255, 255, 255)",
+    "--button-cart-background": "rgb(34, 34, 34)",
+    "--button-cart-text": "rgb(255, 255, 255)",
+    "--input-border": "rgb(112, 112, 112)",
+    "--input-border-focus": "rgb(34, 34, 34)",
+    "--border-default": "rgb(221, 221, 221)"
+  },
+  "computed": {
+    "nav": {"color": "rgb(34, 34, 34)", "fontFamily": "Helvetica, Arial, sans-serif", "fontSize": "12px", "fontWeight": "400", "letterSpacing": "0.5px"},
+    "saleLink": {"color": "rgb(216, 54, 4)", "fontSize": "12px", "letterSpacing": "0.5px", "text": "Extra 40% Off Sale"},
+    "searchWrap": {"backgroundColor": "rgb(255, 255, 255)", "border": "1px solid rgb(112, 112, 112)", "borderRadius": "0px", "height": "45px"},
+    "promoType": {"color": "rgb(255, 255, 255)", "fontFamily": "Helvetica, Arial, sans-serif", "fontSize": "12px", "letterSpacing": "0.2px"},
+    "headerHeight": "207px",
+    "communityH1": {"color": "rgb(34, 34, 34)", "fontFamily": "Helvetica, Arial, sans-serif", "fontSize": "30px", "fontWeight": "400", "letterSpacing": "0.5px"}
+  },
+  "sampled": {
+    "promoBar": "rgb(34, 34, 34) at screenshot pixel (1440, 20) in screenshots/home-light-1440.png"
+  }
+}
