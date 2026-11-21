@@ -12,7 +12,8 @@ Dashboard readings record actual CSS viewport widths of 390, 884, 1440 and 1600.
 | [style-guide.html](style-guide.html) | Token tables, measured specimens and screenshot gallery |
 | [components.md](components.md) | Checklist components, exact reading references and observed states |
 | [patterns.md](patterns.md) | Page patterns tied to captures |
-| [screenshots/](screenshots/) | Public landing pages and signed-in dashboard page/state captures |
+| [site-tree.md](site-tree.md) | Which public control opens which page, menu, drawer, dialog, or wall |
+| [screenshots/](screenshots/) | Public marketing pages from 2026-11-22, plus the 2026-10-30 dashboard captures |
 | [components/](components/) | Native-pixel crops of captured controls |
 | [raw/](raw/) | Sanitized CSS readings, component manifest, crop coordinates and capture inventory |
 | [tools/](tools/) | Capture functions, privacy ingestion and deterministic builders |
@@ -95,6 +96,12 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Icons remain vis
 
 <!-- health:end -->
 
+## Public marketing refresh
+
+The public site was refreshed on 2026-11-22, signed out, in headless Chromium. Desktop shots are 1440 × 900 at 1x. Phone shots are 390 × 844 at 1x. The control map is [site-tree.md](site-tree.md). Login and signup were photographed empty and not filled. The dashboard was not entered on this pass. `login-extracted` stays not-started. catalog.json was left alone.
+
+Measured public colours, type, and control sizes are in the `public` set of [tokens.json](tokens.json), with sources in [raw/public-2026-11-22.json](raw/public-2026-11-22.json). The dashboard `core`, `light`, and `dark` sets are unchanged.
+
 ## How the values were read
 
 The capture reads computed styles on real DOM elements and custom properties from the document root. Each reading records its actual viewport, element index, class, rectangle, state and measured properties. These readings stay distinct from screenshots: the browser screenshot path reflows some layouts, so DOM rectangles cannot safely select screenshot crops. The crop builder accepts only visually checked native screenshot coordinates.
@@ -173,6 +180,15 @@ The dashboard’s computed sans stack is `geistNumbers, suisse, "suisse Fallback
 | Principles and voice | Not captured, optional | No official product design/voice guide captured; no intent inferred from screenshots |
 | Per-component behavior | Not captured, optional | Visual observations only, not an official behavior specification |
 | Icons and font licenses | Not captured | Assets remain visible in screenshots; licensing not established |
+| Public site tree | Captured | [site-tree.md](site-tree.md), mapped 2026-11-22 |
+| Public homepage | Captured | [Home](screenshots/public-home-desktop.png), [phone](screenshots/public-home-mobile.png) |
+| Public nav | Captured | [Products](screenshots/public-nav-products-desktop.png), [Docs](screenshots/public-nav-docs-desktop.png), [Changelog](screenshots/public-nav-changelog-desktop.png), [Company](screenshots/public-nav-company-desktop.png), [AI](screenshots/public-nav-ai-desktop.png), [phone drawer](screenshots/public-menu-mobile.png) |
+| Public pricing | Captured | [Desktop](screenshots/public-pricing-desktop.png), [phone](screenshots/public-pricing-mobile.png) |
+| Public docs landing | Captured | [Docs](screenshots/public-docs-desktop.png), [empty search](screenshots/public-docs-search-desktop.png) |
+| Public footer | Captured | [Footer](screenshots/public-footer-desktop.png) |
+| Empty login wall | Captured | [Sign in](screenshots/login-wall-desktop.png), fields empty, providers not clicked |
+| Empty signup wall | Captured | [Sign up](screenshots/signup-wall-desktop.png), fields empty, providers not clicked |
+| Public empty state | Captured | [404](screenshots/public-missing-desktop.png), [FAQ open](screenshots/public-faq-desktop.png) |
 
 ## Do and don't
 
