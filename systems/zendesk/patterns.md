@@ -2,6 +2,10 @@
 
 How the public signed-out pages are put together. Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json).
 
+## Site tree
+
+Which control opens which page is in [site-tree.md](site-tree.md). Opened menus, the cookie dialog, the phone drawer, and the footer are in [screenshots/site-tree/](screenshots/site-tree/).
+
 ## Marketing home
 
 A promo strip (fill not sampled; the cookie dialog covered it), a white header, then a dark hero (rgb(17, 17, 13)) with a photograph, a cream display line, a white email field and a lime submit. Below that the page returns to white, with one forest-green band (rgb(32, 53, 36)) for a report.

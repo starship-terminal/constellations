@@ -126,7 +126,7 @@ Display on the hero: 68px / 500 / 71.4px line height, colour rgb(245, 245, 242),
 
 ## Gaps
 
-- The Platform menu did not open from a script click. No menu crop.
+- The Platform menu opened on 2026-11-21 as a site-tree shot, not a measured crop. See [site-tree.md](site-tree.md).
 - Pricing suite tabs were visible and not measured. The tab locator missed them.
 - Contact textarea and select styles were read while the nodes were at 0×0 in one pass. The contact screenshot shows them. Their resting fill and radius match the raised field.
 - Pressed states were forced with CSS `forcePseudoState`. A script-applied mousedown style is missing.

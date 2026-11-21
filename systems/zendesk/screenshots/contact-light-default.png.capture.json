@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-11-18T20:57:26.079Z",
+  "capturedAt": "2026-11-21T15:57:36.681Z",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -22,6 +22,5 @@
     "height": 900
   },
   "theme": "light",
-  "sanitizedSourceUrl": "https://www.zendesk.com/sg/contact/",
-  "redaction": "published sales phone line painted over before commit; form was not filled or submitted"
+  "sanitizedSourceUrl": "https://www.zendesk.com/sg/contact/"
 }
