@@ -6,7 +6,7 @@ The site paints one light theme; all values are from the light set unless noted.
 
 ## The shell
 
-A floating 59px bar on the cream ground ([home-light-default](screenshots/home-light-default.png)):
+The public tree of controls is [site-tree.md](site-tree.md). A floating 59px bar on the cream ground ([home-light-default](screenshots/home-light-default.png)):
 the red-dot logo, a Radix **Features** flyout button ([nav-flyout-button](components/crops/nav-flyout-button-default.png),
 opened: [home-light-features](screenshots/home-light-features.png)), text links
 (Pricing, Login) and the small blue Get started. At 390px the bar stays but the
@@ -40,6 +40,14 @@ own CTA; below, the FAQ is a column of 68px hairline-separated Radix
 accordions ([faq-question](components/crops/faq-question-default.png),
 opened: [faq-open](components/crops/faq-open-opened.png),
 [pricing-light-faq](screenshots/pricing-light-faq.png)).
+
+## Docs and dialogs
+
+Documentation adds a left sidebar plus an "On this page" rail
+([documentation-light-default](screenshots/documentation-light-default.png)).
+Watch demo opens a scrimmed dialog over a feature page
+([features-notes-light-demo](screenshots/features-notes-light-demo.png)):
+scrim rgba(0, 0, 0, 0.6), black panel, 16px radius.
 
 ## Forms
 

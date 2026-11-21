@@ -1,0 +1,49 @@
+{
+  "readAt": "2026-11-21",
+  "page": "https://amie.so/features/notes",
+  "state": "watch-demo dialog open, youtube iframe mounted, not interacted",
+  "dialog": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "shadow": "none",
+    "w": 1440,
+    "h": 900
+  },
+  "overlays": [
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "w": 1440,
+      "h": 900,
+      "z": "50",
+      "cls": "fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+    }
+  ],
+  "watch": {
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(92, 92, 92)",
+    "radius": "12px",
+    "border": "0px solid rgb(205, 205, 205)",
+    "font": "600 16px / 25.6px Inter, \"Inter Fallback\"",
+    "h": 50,
+    "pad": "12px 28px"
+  },
+  "panel": {
+    "selector": ".relative.z-10 (Watch demo dialog panel)",
+    "background": "rgb(0, 0, 0)",
+    "radius": "16px",
+    "width": 896,
+    "height": 504,
+    "shadow": "shadow-2xl (computed shadow truncated; class is shadow-2xl)"
+  },
+  "scrim": {
+    "selector": ".absolute.inset-0.bg-black\\/60",
+    "background": "rgba(0, 0, 0, 0.6)",
+    "backdropFilter": "blur (class backdrop-blur-sm)"
+  },
+  "close": {
+    "background": "rgba(255, 255, 255, 0.2)",
+    "radius": "9999px",
+    "size": "40px"
+  },
+  "note": "role=dialog node itself is the transparent fixed wrapper. Scrim and panel are children. YouTube iframe not interacted with."
+}

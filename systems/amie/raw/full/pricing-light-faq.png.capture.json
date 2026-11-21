@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T17:18:38.153Z",
+  "capturedAt": "2026-11-21T00:24:01.689Z",
   "screenshot": "pricing-light-faq.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -31,15 +31,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 1988
+      "pageTop": 1784
     },
     "documentSize": {
       "width": 1440,
-      "height": 3097
+      "height": 3153
     },
     "scroll": {
       "x": 0,
-      "y": 1988
+      "y": 1784
     }
   },
   "capture": {

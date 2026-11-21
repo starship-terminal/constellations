@@ -1,6 +1,6 @@
 # Amie design reference
 
-A token set and component reference for Amie's public site — for building AI-product marketing and pricing surfaces in the style of the real thing. It was read from **amie.so** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home (with the Features flyout), pricing (billing toggle + FAQ), changelog, blog, stories, calendar, tools, templates, download and contact.
+A token set and component reference for Amie's public site — for building AI-product marketing and pricing surfaces in the style of the real thing. It was read from **amie.so** on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The [site tree](site-tree.md) maps every public control. Captured pages are the sitemap (65 URLs) plus blog pagination, the sales contact variant, the Features flyout, billing and FAQ toggles, the Watch demo dialog, and the response-generator style menu. Login, signup, downloads, and form submits were not taken.
 
 Amie is worth a capture because it is a current reference for a soft, colorful productivity-marketing surface: a cream #fafafa ground, a single action blue (`--color-blue-500` #11a8ff) against a red brand accent (`--color-accent` #fd2b38), full Tailwind `--color-*` ramps shipped as RGB triplets, rounded-12px CTAs, a floating 59px nav bar, and the product's own layout metrics (`--nav-width`, `--inbox-width`, calendar `--grid-*`) declared in the same bundle.
 
@@ -12,8 +12,9 @@ Amie is worth a capture because it is a current reference for a soft, colorful p
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (30+, ~110 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the floating shell, CTA vocabulary, hero, pricing, forms, footer |
+| [site-tree.md](site-tree.md) | Which control opens which public page, menu, dialog, or auth wall. Mapped 2026-11-21 before screenshots |
 | [components/crops/](components/crops) | ~110 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 27 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-features`/`-yearly`/`-faq` the opened states |
+| [screenshots/](screenshots) | `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-features`/`-yearly`/`-faq`/`-demo` the opened states |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property, binned app/theme/vendor/tailwind/utility, resolved light+dark), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) (full-colour captures with `.capture.json` sidecars) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
@@ -90,7 +91,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## How the values were read
 
-Every value came off the running signed-out site in headless Chromium:
+Every value came off the running signed-out site in headless Chromium on 2026-11-21 (CSS custom properties re-read that day; component crops measured 2026-11-11 and still matching the live controls):
 
 - **Tokens.** [tools/capture/vars.mjs](tools/capture/vars.mjs) captured every stylesheet body from the network responses, re-parsed them with `CSSStyleSheet`, and wrote every custom property to [raw/css-vars.json](raw/css-vars.json) binned `app`/`theme`/`vendor`/`utility`/`tailwind`. The `--color-*` ramps are RGB triplets (`"253,43,56"`) for Tailwind's `<alpha-value>` utilities — [tools/build_tokens.py](tools/build_tokens.py) converts them to hex. Each name is resolved in a probe carrying the real sheets, light and with a `dark` class (only `--foreground` and the two wysiwyg shadows re-declare). [tools/build_component_tokens.py](tools/build_component_tokens.py) writes the spec.
 - **Components.** [tools/capture/public/measure.mjs](tools/capture/public/measure.mjs) opens each route in a fresh context and reads `getComputedStyle`, painted layers and boxes per element in default, hover, focus-visible and a CDP-forced pressed state, plus `opened` on the Features flyout, billing toggle and FAQ accordion, and `focused` on the contact field (nothing typed). Results in [raw/components-computed.json](raw/components-computed.json) and [raw/measurements.md](raw/measurements.md).
@@ -107,6 +108,8 @@ Nothing was sent, downloaded, signed into or trialled. The public marketing surf
 - **No hamburger at 390px.** The mobile header collapses to the icon row — the `m-menu-*` entries are recorded missing.
 - **`hero-title` missed its selector** on this pass (the headline isn't an `h1`); visible in screenshots.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **A few full-page shots are wider than the viewport.** `/recap` and the pomodoro, prompt-generator, and some docs pages set a min-width, so their `-full` PNGs are wider than 1440 or 780. The `-default` viewport shots are 1440×900 and 780×1688 (390×844 at 2x).
+- **Form placeholders.** Subscribe, contact, and sales forms show the site's own example text in empty fields. Nothing was typed. Those strings are painted out of the captures.
 
 ## Fonts
 
@@ -136,16 +139,19 @@ Two webfonts ship on the marketing pages (declared in `raw/css-vars.json`): **In
 | States: default, hover, focus-visible, pressed | captured | every interactive entry; pressed via CDP |
 | States: selected | captured | `billing-yearly-on`, `faq-open`, `nav-flyout-open` |
 | States: disabled, error, loading | not present | none surfaced |
-| App shell and navigation | captured | [home-light-default](screenshots/home-light-default.png), [patterns.md](patterns.md) |
-| Form with a validation error | not captured | the contact form was never submitted |
+| Dialog | captured | Watch demo on `/features/notes`: scrim `rgba(0,0,0,0.6)`, panel `#000` radius 16px, 896×504. [features-notes-light-demo](screenshots/features-notes-light-demo.png). Readings in [raw/dialog-computed.json](raw/dialog-computed.json) |
+| Menu | captured | Features flyout; Style menu on the response generator |
+| App shell and navigation | captured | [home-light-default](screenshots/home-light-default.png), [patterns.md](patterns.md). Docs sidebar on [documentation-light-default](screenshots/documentation-light-default.png) |
+| Form with a validation error | not captured | contact, subscribe, and tool feedback forms were never submitted |
 | Empty, loading, error states | not present | none on the public surface |
 | Feedback after an action | partly | hover/focus/press measured; post-submit needs sign-in |
 | Search and filtering | not present | none on the public surface |
 | List or table view | captured | changelog, blog, templates indexes |
 | Onboarding | not captured | behind sign-in / download |
 | Themes: light, dark | partly | light painted everywhere; `.dark` barely declared |
-| Widths: 1440, 390 | captured | desktop + `mobile-*` shots and the Mobile group |
-| App, calendar, inbox, recording | not captured | behind sign-in and download |
+| Widths: 1440, 390 | captured | desktop + `mobile-*` shots. Phone header has no hamburger |
+| Public pages beyond the first 10 routes | captured | sitemap pages, blog pagination, docs, feature pages, tools, templates. Index: [site-tree.md](site-tree.md) |
+| App, calendar, inbox, recording | not captured | https://calendar.amie.so/login is an auth wall (Continue with Google, Continue with Outlook, Continue with the app). Not entered. https://app.amie.so/login is a 404 |
 
 ## Do and don't
 
