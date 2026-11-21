@@ -1,0 +1,39 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.atlassian.com/software/jira",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "h1": {
+    "fontFamily": "Charlie Display, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+    "fontSize": "64px",
+    "fontWeight": "500",
+    "lineHeight": "66.56px",
+    "letterSpacing": "-1.28px",
+    "color": "rgb(16, 18, 20)",
+    "text": "Turn plans into agent-ready tasks"
+  },
+  "body": {
+    "fontFamily": "Charlie Text, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+    "fontSize": "16px",
+    "color": "rgb(41, 42, 46)"
+  },
+  "ctaGetItFree": {
+    "backgroundColor": "rgb(24, 104, 219)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "10000px",
+    "fontSize": "16px",
+    "fontWeight": "500",
+    "height": "40px",
+    "padding": "8px 22px"
+  },
+  "computedCustomProperties": {
+    "--ds-background-brand-bold": "#1868DB",
+    "--ds-text": "#292A2E",
+    "--ds-link": "#1868DB",
+    "--ds-surface": "#FFFFFF",
+    "--ds-text-subtle": "#505258"
+  }
+}

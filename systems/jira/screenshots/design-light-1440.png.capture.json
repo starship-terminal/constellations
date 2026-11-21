@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "design-light-1440",
+  "url": "https://www.atlassian.com/jira/solutions/design",
+  "requestedUrl": "https://www.atlassian.com/jira/solutions/design",
+  "title": "Design Project Management Software | Atlassian",
+  "h1": "Design with all the right context with Jira",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}
