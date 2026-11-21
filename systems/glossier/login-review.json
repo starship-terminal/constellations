@@ -1,0 +1,52 @@
+{
+  "product": "Glossier",
+  "domain": "www.glossier.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in",
+      "url": "https://www.glossier.com/en-sg/account/login",
+      "title": "Account – Glossier",
+      "painted": true,
+      "headings": ["Login"],
+      "asksFor": [
+        { "label": "Email address", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Forgot your password?", "Manage subscriptions", "Sign in", "Create an account"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Fields were empty. Sign in was not clicked. Forgot your password was not clicked. Manage subscriptions was not opened. No identity provider was on the form."
+    },
+    {
+      "control": "Create an account on the login wall",
+      "url": "https://www.glossier.com/en-sg/account/register",
+      "title": "Create Account – Glossier",
+      "painted": true,
+      "headings": ["Create an account"],
+      "asksFor": [
+        { "label": "First name", "type": "text", "required": true },
+        { "label": "Last name", "type": "text", "required": true },
+        { "label": "Email", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true },
+        { "label": "Terms of Use and Privacy Policy", "type": "checkbox", "required": false },
+        { "label": "Sign up for emails", "type": "checkbox", "required": false },
+        { "label": "Get our texts", "type": "checkbox", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Create an account", "Sign in to Glossier.com"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Fields were empty. Checkboxes were unchecked and were not toggled. Create an account was not clicked. The phone field stayed hidden. No provider was on the form."
+    }
+  ]
+}
