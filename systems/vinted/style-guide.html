@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vinted public shop</title>
+  <style>
+    :root {
+      --ink: #15191a;
+      --quiet: #5a6566;
+      --page: #edf2f2;
+      --surface: #ffffff;
+      --teal: #007782;
+      --on-teal: #ffffff;
+      --chip: #e6fafa;
+      --chip-border: #b6bebf;
+      --hairline: #ededed;
+      --mint: #edffe9;
+      --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    body { margin: 0; background: var(--page); color: var(--quiet); font: 13px/1.25 var(--font); }
+    main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+    h1 { margin: 0 0 8px; color: var(--ink); font-size: 24px; font-weight: 500; line-height: 32px; }
+    p { margin: 0 0 24px; }
+    h2 { margin: 32px 0 12px; color: var(--ink); font-size: 18px; font-weight: 400; }
+    .row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .swatch { width: 140px; background: var(--surface); border-radius: 6px; overflow: hidden; }
+    .swatch i { display: block; height: 56px; }
+    .swatch span { display: block; padding: 8px; color: var(--ink); }
+    header.bar { display: flex; align-items: center; gap: 12px; background: var(--surface); border-bottom: 1px solid var(--hairline); padding: 8px 16px; border-radius: 6px; }
+    .logo { color: var(--teal); font-weight: 700; font-size: 20px; }
+    .search { flex: 1; height: 36px; background: var(--page); border-radius: 6px; color: var(--quiet); display: flex; align-items: center; padding: 0 12px; }
+    .login { height: 32px; padding: 0 12px; border: 1px solid var(--teal); border-radius: 6px; color: var(--teal); background: transparent; font: 12px var(--font); }
+    .sell { height: 32px; padding: 0 12px; border: 0; border-radius: 6px; background: var(--teal); color: var(--on-teal); font: 12px var(--font); }
+    .card { width: 384px; background: var(--surface); border-radius: 12px; padding: 24px; }
+    .card h3 { margin: 0 0 16px; color: var(--ink); font-size: 24px; font-weight: 500; line-height: 32px; }
+    .hero-sell { display: block; height: 44px; border-radius: 6px; background: var(--teal); color: var(--on-teal); text-align: center; line-height: 44px; font-size: 16px; font-weight: 500; }
+    .learn { display: block; margin-top: 8px; height: 44px; color: var(--teal); text-align: center; line-height: 44px; font-size: 16px; font-weight: 500; }
+    .chip { display: inline-flex; align-items: center; height: 36px; padding: 0 12px; border-radius: 3996px; background: var(--chip); border: 1px solid var(--teal); }
+    .chip.idle { background: var(--page); border-color: var(--chip-border); }
+    .band { background: var(--mint); padding: 24px; border-radius: 6px; color: var(--ink); font-size: 22px; font-weight: 580; }
+    .note { margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Vinted</h1>
+    <p>Public shop, measured 2026-11-22 on www.vinted.com. V-Inter is not in this file. Helvetica stands in.</p>
+    <h2>Color</h2>
+    <div class="row">
+      <div class="swatch"><i style="background:#15191a"></i><span>Ink #15191a</span></div>
+      <div class="swatch"><i style="background:#5a6566"></i><span>Quiet #5a6566</span></div>
+      <div class="swatch"><i style="background:#edf2f2"></i><span>Page #edf2f2</span></div>
+      <div class="swatch"><i style="background:#ffffff; border-bottom:1px solid #ededed"></i><span>Surface #ffffff</span></div>
+      <div class="swatch"><i style="background:#007782"></i><span>Teal #007782</span></div>
+      <div class="swatch"><i style="background:#e6fafa"></i><span>Chip #e6fafa</span></div>
+      <div class="swatch"><i style="background:#edffe9"></i><span>Mint #edffe9</span></div>
+    </div>
+    <h2>Header</h2>
+    <header class="bar">
+      <div class="logo">Vinted</div>
+      <div class="search">Search for items</div>
+      <button class="login" type="button">Sign up | Log in</button>
+      <button class="sell" type="button">Sell now</button>
+    </header>
+    <h2>Hero card</h2>
+    <div class="card">
+      <h3>Ready to declutter your closet?</h3>
+      <div class="hero-sell">Sell now</div>
+      <div class="learn">Learn how it works</div>
+    </div>
+    <h2>Chips</h2>
+    <div class="row">
+      <span class="chip">Category</span>
+      <span class="chip idle">Women</span>
+    </div>
+    <h2>How it works band</h2>
+    <div class="band">Sell your clothes with zero fees</div>
+    <p class="note">Sell now and Sign up were not clicked on the live shop. This page only paints the measured sizes and colors.</p>
+  </main>
+</body>
+</html>

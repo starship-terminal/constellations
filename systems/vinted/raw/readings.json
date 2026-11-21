@@ -1,0 +1,217 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.vinted.com/",
+  "title": "Vinted | Sell and buy clothes, shoes and accessories",
+  "lang": "en-US",
+  "region": "United States storefront on www.vinted.com. A Where do you live dialog offered other country domains. Close was clicked. No country link was followed.",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "readings": [
+    {
+      "role": "body",
+      "color": "rgb(90, 101, 102)",
+      "background": "rgb(237, 242, 242)",
+      "fontFamily": "V_INTER",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "lineHeight": "16.25px"
+    },
+    {
+      "role": "header",
+      "background": "rgb(255, 255, 255)",
+      "height": "98px"
+    },
+    {
+      "role": "nav",
+      "color": "rgb(90, 101, 102)",
+      "fontSize": "14px",
+      "fontWeight": "375",
+      "height": "44px"
+    },
+    {
+      "role": "ink",
+      "color": "rgb(21, 25, 26)"
+    },
+    {
+      "role": "search",
+      "background": "rgb(237, 242, 242)",
+      "height": "36px",
+      "borderRadius": "6px",
+      "width": "737px"
+    },
+    {
+      "role": "search-input",
+      "color": "rgb(21, 25, 26)",
+      "fontSize": "16px",
+      "fontWeight": "375",
+      "lineHeight": "22px",
+      "placeholder": "Search for items"
+    },
+    {
+      "role": "login",
+      "color": "rgb(0, 119, 130)",
+      "border": "1px solid rgb(0, 119, 130)",
+      "height": "32px",
+      "borderRadius": "6px",
+      "fontSize": "12px",
+      "fontWeight": "375",
+      "href": "/member/signup/select_type?ref_url=%2F"
+    },
+    {
+      "role": "sell",
+      "background": "rgb(0, 119, 130)",
+      "color": "rgb(255, 255, 255)",
+      "height": "32px",
+      "borderRadius": "6px",
+      "fontSize": "12px",
+      "fontWeight": "375",
+      "href": "/member/signup/select_type"
+    },
+    {
+      "role": "hero-title",
+      "color": "rgb(21, 25, 26)",
+      "fontSize": "24px",
+      "fontWeight": "500",
+      "lineHeight": "32px",
+      "text": "Ready to declutter your closet?"
+    },
+    {
+      "role": "hero-card",
+      "background": "rgb(255, 255, 255)",
+      "borderRadius": "12px",
+      "width": "384px",
+      "height": "260px"
+    },
+    {
+      "role": "hero-sell",
+      "background": "rgb(0, 119, 130)",
+      "color": "rgb(255, 255, 255)",
+      "height": "44px",
+      "width": "320px",
+      "borderRadius": "6px",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "href": "/member/signup/select_type?ref_url=%2Fitems%2Fnew"
+    },
+    {
+      "role": "learn",
+      "color": "rgb(0, 119, 130)",
+      "background": "rgb(255, 255, 255)",
+      "height": "44px",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "borderRadius": "6px",
+      "href": "/how_it_works"
+    },
+    {
+      "role": "price",
+      "color": "rgb(90, 101, 102)",
+      "fontSize": "12px",
+      "fontWeight": "375"
+    },
+    {
+      "role": "footer-label",
+      "color": "rgb(90, 101, 102)",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "24px"
+    },
+    {
+      "role": "footer-link",
+      "color": "rgb(90, 101, 102)",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "lineHeight": "24px"
+    },
+    {
+      "role": "menu-link",
+      "color": "rgb(0, 119, 130)",
+      "fontSize": "16px",
+      "fontWeight": "375",
+      "height": "42px"
+    },
+    {
+      "role": "menu-panel",
+      "background": "rgb(255, 255, 255)",
+      "width": "1240px",
+      "height": "342px"
+    },
+    {
+      "role": "category-title",
+      "color": "rgb(21, 25, 26)",
+      "fontSize": "22px",
+      "fontWeight": "580",
+      "lineHeight": "28px",
+      "text": "Women"
+    },
+    {
+      "role": "crumb",
+      "color": "rgb(90, 101, 102)",
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    {
+      "role": "chip-selected",
+      "background": "rgb(230, 250, 250)",
+      "color": "rgb(90, 101, 102)",
+      "border": "1px solid rgb(0, 119, 130)",
+      "borderRadius": "3996px",
+      "height": "36px",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "padding": "8px 12px"
+    },
+    {
+      "role": "chip",
+      "background": "rgb(237, 242, 242)",
+      "color": "rgb(90, 101, 102)",
+      "border": "1px solid rgb(182, 190, 191)",
+      "borderRadius": "3996px",
+      "height": "36px"
+    },
+    {
+      "role": "subcategory",
+      "color": "rgb(0, 119, 130)",
+      "fontSize": "13px",
+      "fontWeight": "400"
+    },
+    {
+      "role": "about-title",
+      "color": "rgb(21, 25, 26)",
+      "fontSize": "24px",
+      "fontWeight": "500",
+      "lineHeight": "32px"
+    },
+    {
+      "role": "about-body",
+      "color": "rgb(90, 101, 102)",
+      "fontSize": "16px",
+      "fontWeight": "375",
+      "lineHeight": "22px"
+    },
+    {
+      "role": "how-band",
+      "background": "rgb(237, 255, 233)"
+    },
+    {
+      "role": "how-title",
+      "color": "rgb(21, 25, 26)",
+      "fontSize": "22px",
+      "fontWeight": "580"
+    },
+    {
+      "role": "hairline",
+      "sampled": "rgb(237, 237, 237)"
+    },
+    {
+      "role": "logo",
+      "src": "https://marketplace-web-assets.vinted.com/_next/static/media/logo.3issu8lydfi_-.svg",
+      "width": "73px",
+      "height": "42px"
+    }
+  ]
+}
