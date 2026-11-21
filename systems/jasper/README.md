@@ -1,10 +1,10 @@
 # Jasper design reference
 
-A token set and component reference for Jasper's public marketing site. It was read from **www.jasper.ai** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Routes: home, platform, agents, pricing, brand, blog, company, legal, the demo form at rest, and the login card at **app.jasper.ai/auth/login**.
+A token set and component reference for Jasper's public marketing site. It was read from **www.jasper.ai** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844, and refreshed on **2026-11-21**. Routes: home, platform, agents, pricing, brand, blog, company, legal, the demo form at rest, and the empty login and signup walls at **app.jasper.ai**. The 2026-11-21 pass did not type an email and did not press Continue with email.
 
 Jasper's marketing site is a Webflow build. The declared layer is custom properties: `--swatch--*` ramps, `--_theme---*` roles rebound by `.u-theme-light` and `.u-theme-dark`, plus type, spacing and radius scales. Pages paint light (page `#ffffff`, text `#00063d`, primary button flame `#fa4028`). Dark is an island rebinding (footer and code bands), not a page-wide toggle. UI type is ABC ROM. Display type is Feature.
 
-The product app sits behind `https://app.jasper.ai/`. The login card was measured at rest. A signed-in pass on 2026-11-18 used Continue with email on `/auth/signup` and `/auth/login`. The API `continueWithEmail` returned HTTP 401 and the page toasted "Failed to send login link. Please contact support for further assistance." There is no password field. Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared. Canvas, agents, Brand IQ and campaigns were not reached.
+The product app sits behind `https://app.jasper.ai/`. The login and signup walls were photographed empty on 2026-11-21. Continue with email was visible and not pressed. Continue with Google was visible and not clicked. There is no password field. The control map is [site-tree.md](site-tree.md). The wall record is [login-review.json](login-review.json). A 2026-11-18 pass that pressed Continue with email is not this pass. Canvas, agents, Brand IQ and campaigns were not reached.
 
 | File | What it is |
 |---|---|
@@ -14,6 +14,8 @@ The product app sits behind `https://app.jasper.ai/`. The login card was measure
 | [style-guide.html](style-guide.html) | One page that renders the token roles and the three button styles |
 | [components.md](components.md) | Measured components with crops, written from [raw/components-computed.json](raw/components-computed.json) |
 | [patterns.md](patterns.md) | How the nav, hero, pricing chart, footer, demo form and login card combine |
+| [site-tree.md](site-tree.md) | Every public control and what it opens |
+| [login-review.json](login-review.json) | Empty login and signup walls. Continue with email not pressed |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900 at 1x. Phone shots are 390 CSS px at 2x |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json), [motion.json](raw/motion.json) |
@@ -96,7 +98,7 @@ Declared values come from the Webflow stylesheet. `tools/capture/vars.mjs` resol
 
 ## What to distrust
 
-The login card on `app.jasper.ai` is the product's auth chrome (white card, blue Continue with email). It is not the marketing navy and flame system. Do not mix those colours into a marketing screen. The phone menu was not opened: at 390 the desktop `.nav_menu` is `display: none` and no hamburger mounts, so [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) is the hero, not an open menu. `m-menu-open` and `m-nav-item` crops grabbed the visible Log In link and a hero chip, not a menu panel. `text-link` and `faq-item` were not found. Pricing has no FAQ accordion on the captured page. The demo form was never submitted. Continue with email on login and signup was submitted and failed with HTTP 401; the failure toast is recorded as a gap, not as a product validation state. Dark screenshots were not taken. The dark token set is the declared `.u-theme-dark` rebinding, measured from CSS, not from a page-wide theme switch. The email placeholder `jenny@example.com` is Jasper's published sample on the login field. It was not typed.
+The login card on `app.jasper.ai` is the product's auth chrome (white card, blue Continue with email). It is not the marketing navy and flame system. Do not mix those colours into a marketing screen. The 2026-11-21 pass opened the phone menu: `.nav_cta_mobile_btn` expands Platform, Solutions, Resources, Company, and Pricing on the same URL. See [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). Older `m-menu-open` crops from 2026-11-18 grabbed the visible Log In link, not that drawer. `text-link` and `faq-item` were not found. Pricing has a Monthly and Yearly toggle and no FAQ accordion. The demo form was never submitted. Continue with email was not pressed on 2026-11-21. Dark screenshots of marketing pages were not taken. The dark token set is the declared `.u-theme-dark` rebinding, measured from CSS, not from a page-wide theme switch. The email placeholder `jenny@example.com` is Jasper's published sample on the login field. It was not typed.
 
 ## Fonts
 
@@ -123,27 +125,27 @@ ABC ROM is the UI face (`"ABC ROM", Arial, sans-serif`), weights 450, 500, 600 a
 | Radio | not present | No radio on the captured public pages |
 | Switch | not present | No switch on the captured public pages |
 | Tabs | not present | Pricing is a comparison chart, not tabs |
-| Menu | captured | Desktop Platform mega-menu. [home-light-menu.png](screenshots/home-light-menu.png), [nav-dropdown-default.png](components/crops/nav-dropdown-default.png). Phone menu not captured: no hamburger mounts at 390 |
+| Menu | captured | Desktop Platform, Solutions, Resources, and Company panels. [home-light-menu-platform.png](screenshots/home-light-menu-platform.png). Phone drawer: [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) |
 | Tooltip | not present | No tooltip on the captured public pages |
 | Dialog | not captured | Consent dialogs were hidden and never accepted. No product dialog is public |
-| Toast | not captured | Continue with email painted "Failed to send login link. Please contact support for further assistance." That is an auth-send failure, not a product toast on canvas/agents. Not screenshotted (the email field held the capture inbox) |
+| Toast | not captured | Continue with email was not pressed on 2026-11-21, so no toast appeared. A 2026-11-18 press is not this pass |
 | Card | captured | [card-default.png](components/crops/card-default.png), [demo-card-default.png](components/crops/demo-card-default.png) |
 | List row | captured | Footer link row and dropdown link. [footer-link-default.png](components/crops/footer-link-default.png) |
 | Table | captured | Pricing comparison chart. [pricing-light-default.png](screenshots/pricing-light-default.png), [price-card-default.png](components/crops/price-card-default.png) |
 | Avatar | not present | No user avatar on the signed-out pages |
 | Badge | captured | The red New chip on the home hero. [home-light-default.png](screenshots/home-light-default.png) |
 | Hover, focus-visible, pressed | captured | On buttons and links that were measured. See crops named `*-hover`, `*-focus-visible`, `*-pressed` |
-| Disabled, loading, error | not captured | Demo form was not submitted. Continue with email returned HTTP 401 and toasted Failed to send login link; that toast was not cropped. No disabled control was mounted on the public pages |
+| Disabled, loading, error | not captured | Demo form was not submitted. Continue with email was not pressed. No disabled control was mounted on the public pages |
 | App shell | captured | Marketing nav and footer. [header-default.png](components/crops/header-default.png), [footer-default.png](components/crops/footer-default.png) |
-| Form with validation | not captured | Demo form at `https://www.jasper.ai/demo` was measured at rest and never submitted. Login/signup Continue with email was submitted and 401d (Failed to send login link), which is an auth-send failure, not field validation |
+| Form with validation | not captured | Demo form at `https://www.jasper.ai/demo` was photographed empty and never submitted. Continue with email was not pressed |
 | Empty, loading, error states | not present | The public marketing pages do not show those states |
 | Destructive confirmation | not present | No destructive action on the public pages |
 | Search and filtering | not present | No search field on the captured public pages |
-| Onboarding | not captured | Signup at `https://app.jasper.ai/auth/signup`: Continue with email returned HTTP 401 (Failed to send login link). No onboarding, canvas, agents, Brand IQ or campaigns screen loaded |
+| Onboarding | not captured | Signup at `https://app.jasper.ai/auth/signup` was photographed empty and the branch stopped. Continue with email was not pressed. No onboarding screen loaded |
 | Light theme | captured | Every screenshot |
 | Dark theme | not captured | `.u-theme-dark` is tokenised from CSS. No page-wide dark switch was found, so no dark page screenshot was taken |
 | Desktop 1440 | captured | Sidecars record 1440 x 900 at devicePixelRatio 1 |
-| Phone 390 | captured | Sidecars record 390 CSS px at devicePixelRatio 2. The phone menu did not open |
+| Phone 390 | captured | Sidecars record 390 CSS px at devicePixelRatio 2. The phone drawer opened on the same URL |
 
 ## Do and don't
 
@@ -151,7 +153,7 @@ ABC ROM is the UI face (`"ABC ROM", Arial, sans-serif`), weights 450, 500, 600 a
 - **Do set display type in Feature and UI type in ABC ROM.** Headlines use Feature. Nav, buttons and body use ABC ROM at weight 450 or 500. See [hero-title-default.png](components/crops/hero-title-default.png).
 - **Do treat dark as an island.** The footer and code bands rebind `.u-theme-dark` (background `#262627`, text `#ffffff`). The page stays light. See [footer-default.png](components/crops/footer-default.png).
 - **Don't invent a page-wide dark theme.** The site does not switch the marketing pages. The dark token set is the island rebinding only.
-- **Don't infer the product from the marketing pages or the login card.** The canvas, agents runtime and Brand IQ editor sit behind `https://app.jasper.ai/`. The login card was measured at rest. See [signin-light-default.png](screenshots/signin-light-default.png).
+- **Don't infer the product from the marketing pages or the login card.** The canvas, agents runtime and Brand IQ editor sit behind `https://app.jasper.ai/`. The empty login wall is [login-light-empty.png](screenshots/login-light-empty.png).
 - **Don't copy the wordmark, customer logos, or hero illustrations into anything that ships.** They are Jasper's and its customers' marks. See [logo-default.png](components/crops/logo-default.png).
 
 ## Rebuild
@@ -175,7 +177,7 @@ Capture conduct, edited in the 2026-11 audit and not run since:
 
 These were not captured. They are recorded so a later pass can backfill them.
 
-- Product app (canvas, agents runtime, Brand IQ editor, campaigns) at `https://app.jasper.ai/`. A 2026-11-18 signed-in pass submitted Continue with email on `/auth/signup` and `/auth/login`. `continueWithEmail` returned HTTP 401 and the page toasted "Failed to send login link. Please contact support for further assistance." No password field exists. Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared.
-- Signup and free trial at `https://app.jasper.ai/auth/signup`. Continue with email 401s, so no trial that needs a card was started.
-- Get a Demo form at `https://www.jasper.ai/demo`. The HubSpot form was measured at rest and never submitted.
-- Help center and courses at `https://help.jasper.ai/`.
+- Product app (canvas, agents runtime, Brand IQ editor, campaigns) at `https://app.jasper.ai/`. The 2026-11-21 pass opened the empty login wall and stopped. Continue with email was not pressed. Google was not clicked. No password field exists.
+- Signup and free trial at `https://app.jasper.ai/auth/signup`. Photographed empty. Continue with email was not pressed, so no trial or onboarding was started.
+- Get a Demo form at `https://www.jasper.ai/demo`. Photographed empty and never submitted.
+- Help center and courses at `https://help.jasper.ai/`. This pass stopped on a Cloudflare verification page and did not solve it.

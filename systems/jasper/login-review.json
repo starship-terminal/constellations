@@ -1,0 +1,97 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "probe": "no-form",
+  "login_extracted": "not-started",
+  "session": "Public Playwright capture, signed out. https://app.jasper.ai/auth/login and https://app.jasper.ai/auth/signup were opened directly. The empty walls were photographed. The branch stopped. No email, name, password, or code was typed. Continue with email was not pressed. Google was not clicked. No form was submitted. No captcha was solved. No account was created.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": "innerWidth 1440, innerHeight 900, devicePixelRatio 1, visualViewport 1440x900 scale 1",
+      "file": "screenshots/login-light-empty.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": "innerWidth 390, innerHeight 844, devicePixelRatio 2, visualViewport 390x844 scale 1",
+      "file": "screenshots/mobile-login-light-empty.png"
+    }
+  },
+  "offered": {
+    "wall": "https://app.jasper.ai/auth/login",
+    "status": 200,
+    "title": "Login - Jasper",
+    "themes": ["light"],
+    "dark": "prefers-color-scheme dark was requested. The page stayed the same light paint. No theme control was on the wall. screenshots/login-dark-pref-empty.png",
+    "fields": [
+      {
+        "label": "Email",
+        "placeholder": "jenny@example.com",
+        "type": "text",
+        "name": "email",
+        "id": "email-input",
+        "value": "empty",
+        "note": "The placeholder is Jasper's published sample. It was not typed. The field value was empty."
+      }
+    ],
+    "actions": [
+      "Continue with Google",
+      "Continue with email",
+      "Sign up"
+    ],
+    "legal": [
+      "Terms of Service",
+      "Privacy policy"
+    ],
+    "continue_with_email": "Visible and enabled while the email field is empty. Not pressed.",
+    "password": "No password field on the login wall or the signup wall.",
+    "nav": {
+      "items": ["no signed-in navigation: the walk stopped on the empty login wall"]
+    },
+    "settings": {
+      "items": ["no settings area: the walk stopped on the empty login wall"]
+    },
+    "create": {
+      "items": ["no create flow: the walk stopped on the empty login wall"]
+    }
+  },
+  "screens": [
+    {"name": "Log-in wall, empty, light, 1440", "file": "screenshots/login-light-empty.png"},
+    {"name": "Log-in wall, empty, light, 390", "file": "screenshots/mobile-login-light-empty.png"},
+    {"name": "Log-in wall, email field focused, still empty, 1440", "file": "screenshots/login-light-field-focus.png"},
+    {"name": "Log-in wall, dark preference requested, still light, 1440", "file": "screenshots/login-dark-pref-empty.png"},
+    {"name": "Sign-up wall, empty, light, 1440", "file": "screenshots/signup-light-empty.png"}
+  ],
+  "adjacent_walls_stopped": [
+    {
+      "url": "https://app.jasper.ai/auth/signup",
+      "how": "Free Trial and Start Free Trial on the marketing site, and Sign up on the login wall.",
+      "title": "Sign up - Jasper",
+      "fields_empty": ["Email"],
+      "actions_not_used": ["Continue with Google", "Continue with email", "Log in"],
+      "copy": "Create your free account. Try Jasper free for 7 days.",
+      "file": "screenshots/signup-light-empty.png"
+    }
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Canvas, agents, Brand IQ, campaigns, settings, and onboarding were not offered on a signed-in shell.",
+    "Continue with email was not pressed. No login link was requested. No code step appeared. A 2026-11-18 pass that did press it is not this pass.",
+    "Continue with Google was visible and not clicked.",
+    "Sign up was opened only far enough to see the empty email field, then stopped.",
+    "No dark theme was offered on the login wall.",
+    "catalog.json and webapps-manifest.json are deferred, so login-extracted stays not-started."
+  ],
+  "not_submitted": [
+    "email",
+    "name",
+    "password",
+    "code",
+    "Continue with email",
+    "Continue with Google",
+    "Sign up",
+    "Log in",
+    "captcha",
+    "Get a Demo",
+    "Contact Sales",
+    "profile, birthday, plan, survey, and onboarding fields"
+  ]
+}

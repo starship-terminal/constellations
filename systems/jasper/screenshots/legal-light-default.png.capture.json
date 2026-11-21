@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:48:58.755Z",
+  "capturedAt": "2026-11-21T03:45:59.616Z",
   "screenshot": "legal-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://www.jasper.ai/legal",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -31,10 +31,6 @@
       "offsetTop": 0,
       "pageLeft": 0,
       "pageTop": 0
-    },
-    "documentSize": {
-      "width": 1440,
-      "height": 3649
     },
     "scroll": {
       "x": 0,
@@ -65,5 +61,6 @@
   "cropCoordinates": {
     "status": "unverified",
     "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
-  }
+  },
+  "note": "Public Playwright capture 2026-11-21. Quantized to 256 colours after visual review of the full-colour shot. Consent overlays hidden, never answered. No form submitted."
 }
