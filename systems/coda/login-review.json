@@ -1,0 +1,44 @@
+{
+  "slug": "coda",
+  "product": "Coda",
+  "domain": "coda.io",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Incognito preview tab opened https://coda.io/signin. The work-email field placeholder was Work email and its value length was 0. Google, Microsoft, Apple, and SSO were not clicked. Continue was not clicked. Password sign-in was not opened. Nothing was typed.",
+  "wall": {
+    "url": "https://coda.io/signin",
+    "title": "Superhuman Docs | Welcome back",
+    "heading": "Welcome back",
+    "email_field": true,
+    "password_field": false,
+    "identity_providers_not_clicked": ["Google", "Microsoft", "Apple", "SSO"],
+    "continue_not_clicked": true,
+    "inputs": [
+      {
+        "type": "email",
+        "placeholder": "Work email",
+        "filled": false
+      }
+    ],
+    "note": "The first screen asks for a work email, then emails a password-free link. The password step was not opened. Sign up links to /signup."
+  },
+  "signup_wall": {
+    "url": "https://coda.io/signup",
+    "title": "Superhuman Docs | Welcome to Superhuman Docs",
+    "heading": "Welcome to Superhuman Docs",
+    "same_as_login": false,
+    "continued": false,
+    "identity_providers_not_clicked": ["Google", "Microsoft", "SSO"],
+    "inputs": [
+      {
+        "type": "email",
+        "placeholder": "Work email",
+        "filled": false
+      }
+    ],
+    "note": "Empty signup wall. Continue was not clicked. No doc was created. Get started on the homepage goes to https://docs.superhuman.com/docs and was not followed past the signup wall."
+  },
+  "stopped": "Photographed the empty login and signup walls. Did not click Google, Microsoft, Apple, or SSO. Did not type. Did not submit. Did not create a doc. Did not start a plan."
+}
