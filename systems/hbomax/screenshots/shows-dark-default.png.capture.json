@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:52:05.489Z",
+  "capturedAt": "2026-11-21T12:38:19.326Z",
   "screenshot": "shows-dark-default.png",
-  "sanitizedSourceUrl": "https://www.hbomax.com/sg/en/shows",
+  "sanitizedSourceUrl": "https://www.hbomax.com/sg/en/series",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -24,7 +24,7 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,
@@ -33,8 +33,8 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1425,
-      "height": 3881
+      "width": 1440,
+      "height": 4038
     },
     "scroll": {
       "x": 0,

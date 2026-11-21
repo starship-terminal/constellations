@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:59:27.476Z",
+  "capturedAt": "2026-11-21T12:40:24.341Z",
   "screenshot": "mobile-home-dark-default.png",
   "sanitizedSourceUrl": "https://www.hbomax.com/sg/en",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 11217
+      "height": 11291
     },
     "scroll": {
       "x": 0,

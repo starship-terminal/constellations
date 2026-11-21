@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:53:42.195Z",
+  "capturedAt": "2026-11-21T12:40:07.667Z",
   "screenshot": "show-dark-default.png",
   "sanitizedSourceUrl": "https://www.hbomax.com/sg/en/show/e6e7bad9-d48d-4434-b334-7c651ffc4bdf",
   "requested": {
@@ -24,7 +24,7 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,
@@ -33,8 +33,8 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1425,
-      "height": 4570
+      "width": 1440,
+      "height": 4727
     },
     "scroll": {
       "x": 0,

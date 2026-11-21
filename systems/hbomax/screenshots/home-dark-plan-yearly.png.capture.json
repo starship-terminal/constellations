@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:46:40.699Z",
+  "capturedAt": "2026-11-21T12:42:01.667Z",
   "screenshot": "home-dark-plan-yearly.png",
   "sanitizedSourceUrl": "https://www.hbomax.com/sg/en",
   "requested": {
@@ -24,21 +24,21 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 311
     },
     "documentSize": {
-      "width": 1425,
-      "height": 9822
+      "width": 1440,
+      "height": 10015
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 311
     }
   },
   "capture": {
