@@ -1,0 +1,78 @@
+{
+  "slug": "savee",
+  "product": "Savee",
+  "domain": "savee.com",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-google-apple",
+  "session": "T3 preview tab, incognito, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://savee.com/login/",
+    "title": "Log in – Savee",
+    "asks": [
+      "Continue with Google",
+      "Continue with Apple",
+      "Email or username",
+      "Continue"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "text", "name": "email", "placeholder": "Email or username", "filled": false}
+    ],
+    "continue_disabled_while_empty": true,
+    "note": "The heading is Let's get you inside. The lede is Log in or sign up, no password needed. Continue is disabled while the field is empty. Google and Apple were not clicked."
+  },
+  "signup_wall": {
+    "url": "https://savee.com/join/",
+    "lands_on": "https://savee.com/login/",
+    "asks": ["Continue with Google", "Continue with Apple", "Email or username", "Continue"],
+    "email_field": true,
+    "continued": false,
+    "note": "/join/ redirects to /login/. There is no separate signup form. /signup/ and /register/ paint the public Not found page."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/login-light-default.png",
+      "note": "T3 preview window. The PNG is 2880x1800 because the window devicePixelRatio is 2. CSS viewport was 1440x900."
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/mobile-login-light-default.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Log in", "href": "https://savee.com/login/", "reached": "wall only"},
+      {"label": "Join for free", "href": "https://savee.com/join/", "reached": "wall only"}
+    ]
+  },
+  "screens": [
+    {"name": "Login wall, desktop, empty", "file": "screenshots/login-light-default.png"},
+    {"name": "Login wall, phone, empty", "file": "screenshots/mobile-login-light-default.png"},
+    {"name": "Signup redirect, desktop, empty", "file": "screenshots/signup-light-default.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Continue with Google was not clicked.",
+    "Continue with Apple was not clicked.",
+    "The email field was left empty. Continue was not clicked. No magic link was requested.",
+    "The signed-in library, boards and checkout were not reached.",
+    "A headless browser received a human-check on /login/. Those frames were discarded."
+  ],
+  "not_submitted": [
+    "Continue with Google",
+    "Continue with Apple",
+    "Continue",
+    "Contact us",
+    "Apply now",
+    "Get Pro",
+    "Get Portfolio",
+    "Create team"
+  ]
+}

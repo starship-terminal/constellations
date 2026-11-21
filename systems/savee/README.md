@@ -1,21 +1,23 @@
 # SAVEE
 
-SAVEE (savee.it, which redirects to savee.com) is a visual reference library for designers. This package records the public marketing site and the signed-out login, measured on 2026-11-19 from a live T3 preview tab. The login field was filled with an email, then cleared. It was not submitted. Google and Apple were not followed. No card was entered.
+Savee (savee.it, which redirects to savee.com) is a visual reference library for designers. This package records the public marketing site, public browse pages, and the empty login wall, refreshed on 2026-11-21. Desktop marketing frames are CSS 1440 by 900. Phone frames are CSS 390 by 844. Home, features, pricing, site and login ship `html` class `theme-light`. FAQ, contact, team, MCP, search and the public item ship `theme-dark`.
 
-The live CSS viewport was 1169 by 731 at devicePixelRatio 2. Home, features, pricing and login ship `html` class `theme-light`. FAQ, contact and team ship `theme-dark`.
+The email field was left empty. Continue stayed disabled. Google and Apple were not clicked. No form was submitted. `login-extracted` stays not-started. `catalog.json` was left alone.
 
 | File | What it holds |
 |---|---|
 | [README.md](README.md) | This entry file |
 | [icon.png](icon.png) | 128 px site icon from the apple-touch icon |
-| [DESIGN.md](DESIGN.md) | Generated token export |
+| [DESIGN.md](DESIGN.md) | Hand-updated token export for the 1440 hero and the 40 px login title. The catalog generator was not run |
 | [tokens.json](tokens.json) | Measured colour, type, radius, spacing and motion tokens |
 | [style-guide.html](style-guide.html) | Token swatches and the measured button and field |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Public page patterns |
-| [components/](components/) | Crop folder, empty because screenshot frames failed |
+| [site-tree.md](site-tree.md) | Which controls open which public pages, and where the capture stopped |
+| [login-review.json](login-review.json) | Empty login and signup walls. login-extracted is not-started |
+| [components/](components/) | Crop folder. No new element crops on this pass |
 | [icons/](icons/) | Index pointing at the site icon |
-| [screenshots/](screenshots/) | Note that no frames were produced |
+| [screenshots/](screenshots/) | Public marketing, browse, empty login wall, desktop 1440 and phone 390 |
 | [raw/](raw/) | Computed-style readings |
 | [tools/](tools/) | Builders and the copied capture kit |
 
@@ -31,7 +33,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 2. Use black pills for the primary action in light, and white pills in dark.
 3. Keep login as an email field.
 4. Use saveeFont for every role.
-5. Do not invent a 1440 screenshot.
+5. Stop at the empty login wall.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -75,13 +77,13 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-Custom properties were read with `getComputedStyle(document.documentElement)` on https://savee.com/. Component colour, type, radius, padding and size were read with `getComputedStyle` on the live elements. RGB channels in the custom properties were resolved by painting a probe element. The cross-origin stylesheet at `st.savee-cdn.com` could not be read as text. Dark values were read on pages that shipped `theme-dark` (FAQ, contact, team), not by flipping the home class.
+Custom properties and computed styles were read with `getComputedStyle` on the live pages. Marketing frames were taken in Playwright at CSS 1440 by 900, devicePixelRatio 1. The empty login wall was photographed in the T3 preview tab after a headless browser received a human-check and those frames were discarded. Dark values were read on pages that shipped `theme-dark`, not by flipping the home class. The cross-origin stylesheet at `st.savee-cdn.com` still could not be read as text.
 
-The preview browser returned "The browser is not producing screenshot frames" on `preview_snapshot`, twice. No screenshots were invented. Headless Playwright was not launched.
+Hero size and the login title were remeasured at 1440 and written into [tokens.json](tokens.json) and [DESIGN.md](DESIGN.md) by hand. `catalog.json` was not regenerated, so the rest of the token file still cites the 2026-11-19 1169 px pass for values that did not change (page `#fdfdfd`, text `#0a0a0a`, pill radius, nav height).
 
 ## What to distrust
 
-The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. Home shell `#f3f3f3` is a Tailwind arbitrary value, not a custom property. The nav scrim is `oklab` white at 80 percent plus a 24px blur, so a flat hex would be wrong. Pill radius computed as `16777200px`. `--nav-height` is 100px and the rendered bar is 64px. Dark social-button ring was not remeasured. `saveeFontItalic` was unloaded. Screenshot folders are empty on purpose.
+Home shell `#f3f3f3` is a Tailwind arbitrary value, not a custom property. The nav scrim is `oklab` white at 80 percent plus a 24 px blur, so a flat hex would be wrong. Pill radius computed as `16777200px`. `--nav-height` is 100 px and the rendered bar is 64 px. The login wall PNG is 2880 by 1800 because the preview window devicePixelRatio is 2. The CSS viewport for that shot was 1440 by 900. `signup-light-default.png` is the same wall, because `/join/` redirects to `/login/`. `saveeFontItalic` was unloaded. Gray scale steps in tokens.json were not re-read on this pass.
 
 ## Fonts
 
@@ -98,29 +100,32 @@ saveeFont is the UI face, with "saveeFont Fallback" and Savee in the stack. Body
 | Button disabled | Empty Continue on login, opacity 0.6 |
 | Button hover, focus-visible, pressed | Not captured. Classes name a focus ring. The states were not shown |
 | Link | Captured on nav and footer |
-| Text field | Email on https://savee.com/login/. Filled, then cleared, not submitted |
+| Text field | Email or username on https://savee.com/login/. Left empty. Not submitted |
 | Text area | Message on https://savee.com/contact/. Not filled, not submitted |
-| Select, checkbox, radio, switch | Not present on the pages opened |
-| Tabs | Yearly and Monthly billing toggle on pricing. Monthly was not selected |
-| Menu, dialog, toast | Not opened |
+| Select, checkbox, radio, switch | Pricing yearly/monthly radios. Marketplace filter radios and checkboxes. No native select on the marketing pages |
+| Tabs | Review tabs on home and pricing. MCP client buttons. Monthly was selected for one frame |
+| Menu | Item more-options menu and the phone drawer. [screenshots/item-dark-menu.png](screenshots/item-dark-menu.png) [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) |
+| Dialog, toast | Not opened. The home app card is a fixed panel |
 | Tooltip | Present at opacity 0 on the team page. Not hovered |
-| Card | Save tiles and three plan cards |
-| Badge | Popular on the Pro plan |
-| Table, avatar | Not present as components |
-| App shell | Fixed frosted nav, described in [patterns.md](patterns.md) |
-| Login | Opened. Email-only magic link, plus Google and Apple. Not submitted |
-| Signed-in library, boards, search | Not entered |
+| Card | Save tiles, three plan cards, marketplace tiles |
+| Badge | Popular on the Pro plan. BETA on the site page |
+| Table | Not present. Shortcuts are a list |
+| Avatar | A face stack on the public item. Not measured as a component |
+| App shell | Fixed nav, described in [patterns.md](patterns.md) and [site-tree.md](site-tree.md) |
+| Login and signup | Empty wall only. `/join/` redirects to `/login/`. [login-review.json](login-review.json) |
+| Public search and item | Captured. [screenshots/search-dark-default.png](screenshots/search-dark-default.png) [screenshots/item-dark-default.png](screenshots/item-dark-default.png) |
+| Signed-in library | Not entered. `login-extracted` is not-started |
 | Payment, Google, Apple, reCAPTCHA | Not entered |
-| Screenshots | Not captured. Preview frames failed |
-| Phone 390 and desktop 1440 | Not applied. Live width was 1169 |
+| Screenshots | Captured. Desktop 1440 and phone 390 |
+| Empty state | Not found page. [screenshots/notfound-dark-default.png](screenshots/notfound-dark-default.png) |
 
 ## Do and don't
 
 - **Use the warm off-white page and the gray shell.** Home renders on `#fdfdfd` with a `#f3f3f3` shell and `#0a0a0a` headlines. [patterns.md](patterns.md) describes that shell.
 - **Use black pills for the primary action in light, and white pills in dark.** "Join for free" is `#0a0a0a` with `#fdfdfd` text on marketing, and the reverse on FAQ. [components.md](components.md) lists the sizes.
-- **Keep login as an email field.** https://savee.com/login/ asks for an email or username and emails a link. Do not invent a password field or a signed-in library behind it. [components.md](components.md) records the gap.
+- **Keep login as an email field.** https://savee.com/login/ asks for an email or username and emails a link. The field was left empty. Continue is disabled until it has text. [screenshots/login-light-default.png](screenshots/login-light-default.png)
 - **Use saveeFont for every role.** Headlines, nav, buttons and fields share one family. [tokens.json](tokens.json) keeps that stack.
-- **Do not invent a 1440 screenshot.** The preview browser produced no frames. [screenshots/](screenshots/) says so.
+- **Stop at the empty login wall.** Google, Apple, Continue, checkout and the signed-in library were not entered. `login-extracted` is not-started. [login-review.json](login-review.json)
 
 ## Rebuild
 
