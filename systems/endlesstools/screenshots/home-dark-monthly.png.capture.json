@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T02:35:42.841Z",
+  "capturedAt": "2026-11-21T10:27:20.868Z",
   "screenshot": "home-dark-monthly.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 2674
+      "pageTop": 2946
     },
     "documentSize": {
       "width": 1440,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 2674
+      "y": 2946
     }
   },
   "capture": {

@@ -1,0 +1,74 @@
+{
+  "product": "Endless Tools",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "signed_in": false,
+  "origin": "https://endlesstools.io",
+  "offered": {
+    "nav": {
+      "items": [
+        "no signed-in navigation"
+      ],
+      "reached": [
+        "no signed-in navigation"
+      ],
+      "note": "Signed out. The public bar offers Log in and Start for free. Both go to https://app.endlesstools.io/login. The homepage has no menu."
+    },
+    "settings": {
+      "items": [
+        "no settings area"
+      ],
+      "reached": [
+        "no settings area"
+      ],
+      "note": "No settings surface is offered signed out. No theme switch. CookieYes is in the DOM and was not answered."
+    },
+    "create": {
+      "items": [
+        "no create flow"
+      ],
+      "reached": [
+        "no create flow"
+      ],
+      "note": "Start for free, Start exploring, Try for free, Go PRO, Get Education, and Create team all point at the login wall. None was followed into an account. The newsletter form was not submitted."
+    }
+  },
+  "screens": [
+    "screenshots/home-dark-default.png",
+    "screenshots/home-dark-full.png",
+    "screenshots/home-dark-monthly.png",
+    "screenshots/login-dark-default.png",
+    "screenshots/login-dark-password.png",
+    "screenshots/mobile-home-dark-default.png",
+    "screenshots/mobile-home-dark-full.png",
+    "screenshots/mobile-login-dark-default.png",
+    "screenshots/mobile-privacy-dark-default.png",
+    "screenshots/privacy-dark-default.png",
+    "screenshots/privacy-dark-full.png",
+    "screenshots/terms-dark-default.png",
+    "screenshots/terms-dark-full.png"
+  ],
+  "gaps": [
+    "Log in and Start for free stop at the empty card: Email, Send Code, Log in with password. Nothing typed. Send Code was not clicked.",
+    "The password form is a local toggle. Email, Password, and Log in were not filled or clicked. Forgot your password was not opened.",
+    "No Google, Apple, or other identity provider was offered on the empty card. None was clicked.",
+    "No signed-out settings page exists. CookieYes was not accepted or rejected.",
+    "The newsletter (Your email, Stay updated, consent) was not filled or submitted.",
+    "The canvas editor, teams, billing, and library behind sign-in were not entered."
+  ],
+  "not_submitted": [
+    "Email",
+    "Send Code",
+    "Password",
+    "Log in",
+    "Forgot your password",
+    "Your email",
+    "Stay updated",
+    "consent checkbox",
+    "Try for free",
+    "Go PRO",
+    "Get Education",
+    "Create team",
+    "Request Education access"
+  ]
+}

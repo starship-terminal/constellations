@@ -59,9 +59,22 @@ const desktop = {
     await S.view('default');
     await step('monthly', async () => {
       // The billing toggle is a local UI switch between the same two labels;
-      // flipping it never submits or buys anything.
+      // flipping it never submits or buys anything. Scroll it into view first
+      // so the shot shows the toggle, not whatever the page settled on.
       const t = p.locator('button').filter({ hasText: /^\s*Monthly\s*$/ }).filter({ visible: true }).first();
-      if (await t.count()) { await clickEl(t); await wait(p, 1200); await S.view('monthly'); }
+      if (await t.count()) {
+        await t.scrollIntoViewIfNeeded();
+        await clickEl(t);
+        await wait(p, 800);
+        await p.evaluate(() => {
+          const btn = [...document.querySelectorAll('button')].find((el) => /^\s*Monthly\s*$/.test(el.innerText || ''));
+          if (!btn) return;
+          const y = btn.getBoundingClientRect().top + window.scrollY - 160;
+          window.scrollTo(0, Math.max(0, y));
+        });
+        await wait(p, 600);
+        await S.view('monthly');
+      }
     });
     await S.full();
   } },
@@ -90,6 +103,9 @@ const mobile = {
     await S.full();
   } },
   login: { url: APP + '/login', wait: 8000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  privacy: { url: APP + '/legal/privacy_policy', wait: 8000, run: async (p, S) => {
     await S.view('default');
   } },
 };
