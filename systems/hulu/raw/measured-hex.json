@@ -1,0 +1,15 @@
+{
+  "capturedAt": "2026-11-22",
+  "page": "#f7f7f9",
+  "ink": "#0d0e11",
+  "select": "#040405",
+  "selectHover": "rgba(4, 4, 5, 0.8)",
+  "onSelect": "#ffffff",
+  "accent": "#1cbc74",
+  "wordmark": "#1ce783",
+  "wordmarkOpaque": "#0b8e4f",
+  "loginWall": "#252526",
+  "field": "#e9ebf0",
+  "helpSearchBorder": "#15bc74",
+  "link": "#0000ee"
+}

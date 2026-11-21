@@ -1,0 +1,72 @@
+{
+  "product": "Hulu",
+  "domain": "hulu.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright, signed out, from Singapore",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "plan chooser LOG IN",
+      "url": "https://auth.hulu.com/web/login/enter-email",
+      "title": "Hulu Login | Hulu",
+      "painted": true,
+      "headings": ["Enter your email to continue"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false, "valueLength": 0 }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "and more"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "The email field was empty. Continue was not clicked. MyDisney is named in the copy. No identity provider button was on this first screen, and none was clicked. No password field was on this screen."
+    },
+    {
+      "control": "plan chooser SELECT",
+      "url": "https://secure.hulu.com/commerce/plans?hitsFlowName=suf_web_default",
+      "title": "Hulu",
+      "painted": true,
+      "headings": ["Choose Your Plan"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["SELECT", "Details", "Terms apply", "LOG IN"],
+      "stopped": true,
+      "screenshot": "screenshots/home-light-default.png",
+      "note": "This is the subscribe wall. SELECT was not clicked. No email, card, or address was typed. No subscription was started."
+    },
+    {
+      "control": "press Sign In",
+      "url": "https://press.hulu.com/login/?redirect_to=https%3A%2F%2Fpress.hulu.com%2F&site_id=34",
+      "title": "Login – Hulu Press",
+      "painted": true,
+      "headings": ["Login", "Account Sign In"],
+      "asksFor": [
+        { "label": "Username or Email Address", "type": "text", "required": false, "valueLength": 0 },
+        { "label": "Password", "type": "password", "required": false, "valueLength": 0 }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Forgot Password?", "Log In"],
+      "stopped": true,
+      "screenshot": "screenshots/press-login-light-default.png",
+      "note": "Both fields were empty. Log In was not clicked. Forgot Password was not opened."
+    },
+    {
+      "control": "press Sign Up",
+      "url": "https://www.detpress.com/members/register/?site_id=34",
+      "title": "Register – Hulu Press",
+      "painted": true,
+      "headings": ["Register"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Sign Up"],
+      "stopped": true,
+      "screenshot": "screenshots/press-signup-light-default.png",
+      "note": "Press registration is for qualified media professionals. No field was filled. No form was submitted."
+    }
+  ]
+}
