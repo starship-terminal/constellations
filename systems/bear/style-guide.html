@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bear style guide</title>
+<style>
+:root {
+  --core-color-paper: #ffffff;
+  --core-color-mist: #f3f5f7;
+  --core-color-fog: #e4e5e6;
+  --core-color-ink: #444444;
+  --core-color-muted: #888888;
+  --core-color-hairline: #d9d9d9;
+  --core-color-accent: #dd4c4f;
+  --core-color-on-accent: #ffffff;
+  --core-color-markdown: #456aa3;
+  --core-color-organize: #884aa8;
+  --core-color-beauty: #2b6451;
+  --core-color-gold: #fcb827;
+  --core-color-sky: #44a2e5;
+  --core-color-offer: #d3ffa4;
+  --core-color-focus: #005fcc;
+  --core-font-family-body: bearsans, sans-serif;
+  --core-font-family-heading: bearsansheadline, sans-serif;
+  --core-font-family-code: roboto-mono, ui-monospace, monospace;
+  --core-font-weight-regular: 400;
+  --core-font-weight-bold: 700;
+  --core-font-size-body: 16px;
+  --core-font-size-nav: 16px;
+  --core-font-size-button: 16px;
+  --core-font-size-subtitle: 22.4px;
+  --core-font-size-feature: 41.6px;
+  --core-font-size-display: 51.2px;
+  --core-font-size-display-narrow: 41.6px;
+  --core-font-size-price: 40px;
+  --core-font-size-period: 20px;
+  --core-font-size-offer: 14.4px;
+  --core-font-size-story: 17.6px;
+  --core-font-size-code: 14.4px;
+  --core-font-line-height-body: 27.2px;
+  --core-font-line-height-heading: 56.32px;
+  --core-font-line-height-subtitle: 31.36px;
+  --core-font-letter-spacing-button: 0.5px;
+  --core-radius-none: 0px;
+  --core-radius-tag: 4.8px;
+  --core-radius-offer: 4.32px;
+  --core-radius-button: 8px;
+  --core-radius-ribbon: 16px;
+  --core-radius-card: 40px;
+  --core-radius-code: 4.32px;
+  --core-space-nav: 64px;
+  --core-space-button-y: 8px;
+  --core-space-button-x: 24px;
+  --core-space-wrapper: 32px;
+  --core-space-column: 960px;
+  --core-shadow-none: none;
+  --light-page: #ffffff;
+  --light-surface: #f3f5f7;
+  --light-surface-selected: #e4e5e6;
+  --light-text: #444444;
+  --light-muted: #888888;
+  --light-accent: #dd4c4f;
+  --light-on-accent: #ffffff;
+  --light-border: #d9d9d9;
+  --light-focus: #005fcc;
+  --light-link: #dd4c4f;
+  --light-component-button-background: #dd4c4f;
+  --light-component-button-text: #ffffff;
+  --light-component-button-radius: 8px;
+  --light-component-button-padding-y: 8px;
+  --light-component-button-padding-x: 24px;
+  --light-component-nav-background: #ffffff;
+  --light-component-nav-text: #444444;
+  --light-component-nav-height: 64px;
+  --light-component-card-background: #f3f5f7;
+  --light-component-card-radius: 40px;
+  --light-component-card-text: #444444;
+  --light-component-tag-background: #fcb827;
+  --light-component-tag-text: #ffffff;
+  --light-component-tag-radius: 4.8px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 400 var(--core-font-size-body)/var(--core-font-line-height-body) var(--core-font-family-body);
+  color: var(--light-text);
+  background: var(--light-page);
+}
+main { max-width: 960px; margin: 0 auto; padding: 48px 32px 80px; }
+h1 {
+  font: 400 var(--core-font-size-display)/1.1 var(--core-font-family-heading);
+  margin: 0 0 8px;
+  color: var(--light-text);
+}
+h2 {
+  font: 400 13px/1 var(--core-font-family-body);
+  letter-spacing: 0.04em;
+  color: var(--light-muted);
+  margin: 40px 0 12px;
+}
+.note { color: var(--light-muted); max-width: 66ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i {
+  display: block;
+  height: 56px;
+  border-radius: var(--core-radius-button);
+  border: 1px solid var(--light-border);
+}
+.sw b, .sw span { display: block; font: 12px/1.4 ui-monospace, Menlo, monospace; }
+.sw span { color: var(--light-muted); word-break: break-all; }
+.type { margin: 0 0 8px; color: var(--light-text); }
+.mock {
+  border: 1px solid var(--light-border);
+  border-radius: var(--core-radius-card);
+  overflow: hidden;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  height: var(--core-space-nav);
+  padding: 0 24px;
+  background: var(--light-component-nav-background);
+  color: var(--light-component-nav-text);
+  gap: 20px;
+}
+.nav b { font-family: var(--core-font-family-heading); }
+.nav span { color: var(--light-muted); }
+.hero { padding: 40px 32px 32px; }
+.hero h3 {
+  margin: 0;
+  font: 400 var(--core-font-size-display)/1.1 var(--core-font-family-heading);
+  color: var(--light-text);
+}
+.hero p { color: var(--light-muted); font-size: var(--core-font-size-subtitle); line-height: 1.4; max-width: 36ch; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--core-space-button-y) var(--core-space-button-x);
+  border-radius: var(--core-radius-button);
+  background: var(--light-accent);
+  color: var(--light-on-accent);
+  letter-spacing: var(--core-font-letter-spacing-button);
+  text-decoration: none;
+}
+.card {
+  margin: 0 32px 32px;
+  padding: 24px;
+  background: var(--light-surface);
+  border-radius: var(--core-radius-card);
+  color: var(--light-text);
+}
+.tags { display: flex; gap: 8px; margin-top: 12px; }
+.tag {
+  color: var(--light-on-accent);
+  padding: 0 0.3em;
+  border-radius: var(--core-radius-tag);
+  font-weight: 700;
+}
+.offer {
+  background: var(--core-color-offer);
+  color: var(--light-text);
+  border-radius: var(--core-radius-offer);
+  padding: 0 6px;
+  font-size: var(--core-font-size-offer);
+}
+.focus {
+  outline: 1px auto var(--light-focus);
+  outline-offset: 2px;
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Bear</h1>
+  <p class="note">Generated from tokens.json. Public marketing site, signed out, light only. Bear Sans is not bundled, so this page falls back to the system sans.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#ffffff"></i><b>paper</b><span>#ffffff</span><span>color.paper</span></div><div class="sw"><i style="background:#f3f5f7"></i><b>mist</b><span>#f3f5f7</span><span>color.mist</span></div><div class="sw"><i style="background:#e4e5e6"></i><b>fog</b><span>#e4e5e6</span><span>color.fog</span></div><div class="sw"><i style="background:#444444"></i><b>ink</b><span>#444444</span><span>color.ink</span></div><div class="sw"><i style="background:#888888"></i><b>muted</b><span>#888888</span><span>color.muted</span></div><div class="sw"><i style="background:#d9d9d9"></i><b>hairline</b><span>#d9d9d9</span><span>color.hairline</span></div><div class="sw"><i style="background:#dd4c4f"></i><b>accent</b><span>#dd4c4f</span><span>color.accent</span></div><div class="sw"><i style="background:#ffffff"></i><b>on-accent</b><span>#ffffff</span><span>color.on-accent</span></div><div class="sw"><i style="background:#456aa3"></i><b>markdown</b><span>#456aa3</span><span>color.markdown</span></div><div class="sw"><i style="background:#884aa8"></i><b>organize</b><span>#884aa8</span><span>color.organize</span></div><div class="sw"><i style="background:#2b6451"></i><b>beauty</b><span>#2b6451</span><span>color.beauty</span></div><div class="sw"><i style="background:#fcb827"></i><b>gold</b><span>#fcb827</span><span>color.gold</span></div><div class="sw"><i style="background:#44a2e5"></i><b>sky</b><span>#44a2e5</span><span>color.sky</span></div><div class="sw"><i style="background:#d3ffa4"></i><b>offer</b><span>#d3ffa4</span><span>color.offer</span></div><div class="sw"><i style="background:#005fcc"></i><b>focus</b><span>#005fcc</span><span>color.focus</span></div>
+  </div>
+  <h2>Type</h2>
+  <p class="type" style="font:51.2px/1.1 var(--core-font-family-heading)">Display 51.2px</p><p class="type" style="font:41.6px/1.1 var(--core-font-family-heading)">Feature 41.6px</p><p class="type" style="font:22.4px/1.1 var(--core-font-family-body)">Subtitle 22.4px</p><p class="type" style="font:40px/1.1 var(--core-font-family-body)">Price 40px</p><p class="type" style="font:16px/1.1 var(--core-font-family-body)">Body 16px</p><p class="type" style="font:16px/1.1 var(--core-font-family-body)">Button 16px</p>
+  <h2>Chrome</h2>
+  <div class="mock">
+    <div class="nav"><b>Bear</b><span>Features</span><span>Pricing</span><span>Blog</span></div>
+    <div class="hero">
+      <h3>Markdown notes</h3>
+      <p>Ink on white, one red accent, rounded cards.</p>
+      <a class="btn focus">Subscribe</a>
+    </div>
+    <div class="card">
+      Feature card, mist fill, 40px radius.
+      <div class="tags">
+        <span class="tag" style="background: var(--core-color-gold)">PRO</span>
+        <span class="tag" style="background: var(--core-color-sky)">PRO</span>
+        <span class="tag" style="background: var(--core-color-accent)">PRO</span>
+        <span class="offer">-15%</span>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
