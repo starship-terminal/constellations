@@ -1,0 +1,38 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.tower28beauty.com/",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "screenshots": { "width": 2880, "height": 1800 },
+  "home": {
+    "body": { "backgroundColor": "rgb(255, 255, 255)", "color": "rgb(135, 38, 38)", "fontFamily": "Scto Grotesk A Medium", "fontSize": "16px", "letterSpacing": "0.6px" },
+    "announcement": { "backgroundColor": "rgb(215, 64, 21)", "color": "rgb(255, 255, 255)", "height": 29, "fontSize": "12px" },
+    "header": { "backgroundColor": "rgb(255, 255, 255)", "height": 56, "padding": "0 32px" },
+    "navLink": { "color": "rgb(135, 38, 38)", "fontSize": "15px", "fontWeight": "400", "height": 57 },
+    "shopNow": { "backgroundColor": "rgb(215, 64, 21)", "color": "rgb(255, 255, 255)", "height": 38, "borderRadius": "40px", "fontSize": "14px", "padding": "0 60px" },
+    "heading": { "fontFamily": "Cooper Lt BT", "fontSize": "48px", "letterSpacing": "-1px", "color": "rgb(135, 38, 38)" },
+    "shopAll": { "fontSize": "14px", "fontWeight": "500", "letterSpacing": "0.6px", "textTransform": "uppercase", "textDecoration": "underline" }
+  },
+  "category": {
+    "url": "https://www.tower28beauty.com/collections/makeup",
+    "badge": { "backgroundColor": "rgb(239, 227, 243)", "color": "rgb(135, 38, 38)", "fontSize": "12px", "height": 28, "borderRadius": "9999px" },
+    "add": { "backgroundColor": "rgb(215, 64, 21)", "color": "rgb(255, 255, 255)", "height": 38, "borderRadius": "40px", "fontSize": "14px" }
+  },
+  "product": {
+    "url": "https://www.tower28beauty.com/products/swipe-serum-concealer",
+    "title": { "fontFamily": "Cooper Lt BT", "fontSize": "32px", "letterSpacing": "-1px", "color": "rgb(135, 38, 38)" },
+    "price": { "color": "rgb(135, 38, 38)", "fontSize": "16px", "fontFamily": "Scto Grotesk A Medium" },
+    "add": { "backgroundColor": "rgb(215, 64, 21)", "color": "rgb(255, 255, 255)", "height": 44, "borderRadius": "40px", "width": 398 },
+    "shade": { "backgroundColor": "rgb(255, 255, 255)", "border": "1px solid rgba(135, 38, 38, 0.3)", "borderRadius": "10px", "height": 52 }
+  },
+  "cssVars": {
+    "--color-link": "215,64,22",
+    "--color-shadow": "135,38,38",
+    "--font-body-family": "Scto Grotesk A Medium",
+    "--font-heading-family": "Cooper Lt BT",
+    "--buttons-radius": "40px",
+    "--inputs-radius": "40px",
+    "--gradient-background": "#ffffff"
+  },
+  "logoFill": "#ee542f",
+  "favicon": "https://www.tower28beauty.com/cdn/shop/files/Logo_Favicon.png"
+}
