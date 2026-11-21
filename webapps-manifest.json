@@ -6464,9 +6464,9 @@
         519
       ],
       "description": "Food Delivery and Takeout",
-      "status": "pending",
-      "package": null,
-      "notes": "https://www.ubereats.com/orders redirected to the Uber sign-in page. Session was not present. Skipped.",
+      "status": "captured",
+      "package": "systems/uber-eats",
+      "notes": "https://www.ubereats.com/orders redirected to the Uber sign-in page. Session was not present. Skipped. Public walk 2026-11-21: the public site tree is in systems/uber-eats/site-tree.md. Log in and Sign up open https://auth.uber.com/v2/, which asks for a phone number or email, then Google or Apple. Nothing was typed. No identity provider was clicked. No form was submitted. /near-me, /shopping, /pickup, /promo, and brand pages stopped on a security check, which was not solved. login-review.json has gaps and not_submitted. offered and screens are absent, so the done checker is not met. login-extracted stays not-started. Public package refresh in PR 1702 at 114d5326ff37. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 19
