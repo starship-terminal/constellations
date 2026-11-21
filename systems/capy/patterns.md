@@ -11,7 +11,7 @@ Public pages only. The product frame on the homepage is a marketing demo, not a 
 | Download | Public download page | [download-light-default.png](screenshots/download-light-default.png) |
 | Demo form | Empty, not submitted | [demo-light-default.png](screenshots/demo-light-default.png) |
 | Empty 404 | Missing path | [notfound-light-default.png](screenshots/notfound-light-default.png) |
-| Phone shell | Homepage and menu | [mobile-home-light-default.png](screenshots/mobile-home-light-default.png), [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) |
+| Phone shell | Homepage, menu, and pricing | [mobile-home-light-default.png](screenshots/mobile-home-light-default.png), [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png), [mobile-pricing-light-default.png](screenshots/mobile-pricing-light-default.png) |
 | Auth walls | Empty sign-in and signup | [login-light-default.png](screenshots/login-light-default.png), [signup-light-default.png](screenshots/signup-light-default.png) |
 
 The phone menu is a drawer. Desktop Product and Resources are panels under the black header. Plan buttons on pricing go to signup and were not followed.
