@@ -1,0 +1,17 @@
+{
+  "placeholder": "Search Microsoft.com",
+  "backgroundColor": "rgb(255, 255, 255)",
+  "color": "rgb(38, 38, 38)",
+  "border": "1px solid rgb(0, 103, 184)",
+  "fontSize": "16px",
+  "fontFamily": "\"Segoe UI Variable Text\", \"Segoe UI\", segoeui, \"Helvetica Neue\", helvetica, arial, sans-serif",
+  "height": "36px",
+  "borderRadius": "0px",
+  "outline": "rgb(0, 103, 184) solid 2px",
+  "box": {
+    "x": 219,
+    "y": 9,
+    "w": 1075.265625,
+    "h": 36
+  }
+}

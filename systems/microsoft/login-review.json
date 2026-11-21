@@ -1,0 +1,115 @@
+{
+  "slug": "microsoft",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Playwright headless, signed out. https://www.microsoft.com redirected to https://www.microsoft.com/en-sg. Sign in opened a Microsoft account wall on login.live.com. That host is outside this package. The wall asked for an email or phone number, then Next. Create an account was visible. No field was filled. Next was not clicked. No identity provider was clicked. No code was sent. The OAuth URL was not saved.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "devicePixelRatio": 1,
+        "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+      }
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 390, "height": 844, "scale": 1}
+      }
+    }
+  },
+  "offered": {
+    "nav": {
+      "Sign in": {
+        "page": "https://www.microsoft.com/en-sg",
+        "opens": "Microsoft account wall on login.live.com",
+        "reached": false,
+        "reason": "stopped at the login wall; no field filled"
+      },
+      "ME": {
+        "page": "https://www.microsoft.com/en-sg",
+        "opens": "same Sign in control at 390",
+        "reached": false,
+        "reason": "not clicked"
+      },
+      "Cart": {
+        "page": "https://www.microsoft.com/en-sg",
+        "opens": "/en-sg/store/cart",
+        "reached": false,
+        "reason": "not opened"
+      },
+      "Search": {
+        "page": "https://www.microsoft.com/en-sg",
+        "opens": "search field",
+        "reached": true,
+        "reason": "field opened and focused; nothing typed or submitted"
+      }
+    },
+    "settings": {
+      "English (Singapore)": {
+        "page": "https://www.microsoft.com/en-sg",
+        "opens": "/en-sg/locale",
+        "reached": false,
+        "reason": "locale picker not opened"
+      },
+      "Your Privacy Choices": {
+        "page": "https://www.microsoft.com/en-sg",
+        "opens": "aka.ms",
+        "reached": false,
+        "reason": "off microsoft.com; not followed"
+      },
+      "Animation toggle": {
+        "page": "https://www.microsoft.com/en-sg/microsoft-products-and-apps",
+        "opens": "on-page motion switch",
+        "reached": false,
+        "reason": "seen in the products screenshot; not toggled"
+      }
+    },
+    "create": {
+      "Create an account": {
+        "page": "login.live.com sign-in wall",
+        "reached": false,
+        "reason": "visible on the wall; not clicked"
+      }
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-menu-all-microsoft.png",
+    "screenshots/home-light-search.png",
+    "screenshots/home-light-cta-hover.png",
+    "screenshots/home-light-footer.png",
+    "screenshots/products-light-default.png",
+    "screenshots/microsoft-365-light-default.png",
+    "screenshots/windows-light-default.png",
+    "screenshots/surface-light-default.png",
+    "screenshots/sale-light-default.png",
+    "screenshots/sitemap-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png"
+  ],
+  "gaps": [
+    "Signed-in account, settings, and create were not reachable. Sign in stopped at login.live.com.",
+    "The login wall screenshot was not kept. Its URL carried OAuth state.",
+    "Azure, Copilot, XBOX, Support, and other off-host links were recorded and not followed.",
+    "No public theme switch was found. color-scheme was normal. One light theme.",
+    "Pressed, disabled, and loading button states were not held.",
+    "Cart, locale, and phone menu groups were not opened."
+  ],
+  "not_submitted": [
+    "Sign in",
+    "Next",
+    "Create an account",
+    "Search Microsoft.com",
+    "Forgot your username?",
+    "Cart",
+    "Banner close",
+    "Your Privacy Choices",
+    "Animation toggle"
+  ]
+}
