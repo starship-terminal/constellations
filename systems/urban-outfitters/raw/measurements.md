@@ -1,6 +1,6 @@
 # Urban Outfitters measurements
 
-Read from the live signed-out site on 2026-11-19 in the T3 preview browser. CSS viewport 1440 by 900, devicePixelRatio 2. The preview browser returned "The browser is not producing screenshot frames", so this file is the evidence. No screenshot was invented.
+Read from the live signed-out site on 2026-11-19 in the T3 preview browser, CSS viewport 1440 by 900, devicePixelRatio 2. That run had no screenshot frames. On 2026-11-22 the same browser wrote frames. Custom properties were read again on the homepage: 464 names on `:root`. The roles below still match. `--grey-dark` is `34, 34, 34`. `--red` is `216, 54, 4`. `--green` is `58, 135, 0`. `--button-primary-background` and `--button-cart-background` are `rgb(34, 34, 34)`. `--font-body` is Helvetica, Arial, sans-serif. Nav links computed 12px Helvetica, `#222222`, radius 0. The sale nav link computed `#d83604`. Search computed 12px, 43px tall, radius 0. `color-scheme` was `normal`. Phone CSS viewport was 390 by 844, devicePixelRatio 2.
 
 Nothing was added to bag, checked out, or typed into a phone, email, or card field.
 

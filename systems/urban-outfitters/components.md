@@ -1,6 +1,6 @@
 # Components
 
-Measured on the signed-out Urban Outfitters site on 2026-11-19. Values are computed styles or authored rules that reference the site's custom properties. Crops were not taken: the preview browser did not produce screenshot frames.
+Measured on the signed-out Urban Outfitters site on 2026-11-19 and checked on 2026-11-22. Values are computed styles or authored rules that reference the site's custom properties. Page shots are in [screenshots/](screenshots/). Element crops were not cut.
 
 ## Button
 
@@ -92,6 +92,6 @@ No product badge was visible in the measured tiles. `--badge-background` is `#f5
 ## Gaps
 
 - Hover, pressed, disabled, and error states were read from authored rules, not from a live repaint, except search focus, which did not change the computed border.
-- No screenshot crops.
+- No element crops. Page shots are in [screenshots/](screenshots/).
 - Checkout, bag, and payment were not opened.
 - The phone field and email tab were not filled.

@@ -82,7 +82,7 @@ Good for: Fashion storefront: white page, #222 ink, Helvetica 12px chrome, squar
 
 Captured 2026-11-19, signed out (public marketing pages and the sign-in dialog only; no phone, email, bag, or card was entered). Themes: light.
 
-A token set for Urban Outfitters' public signed-out storefront, for building a fashion shop in that style. It was read from urbanoutfitters.com on 2026-11-19, signed out, in the T3 preview browser at a measured CSS viewport of 1440 by 900 (devicePixelRatio 2). Pages read: the home page, the women's clothing grid, one product page, and the sign-in dialog that opens from the header. No account was created. Nothing was added to bag.
+A token set for Urban Outfitters' public signed-out storefront, for building a fashion shop in that style. Values were read from urbanoutfitters.com on 2026-11-19 and checked again on 2026-11-22, signed out, in the T3 preview browser. Desktop CSS viewport 1440 by 900, phone CSS viewport 390 by 844, both at devicePixelRatio 2. Pages photographed: home, the Women's mega-menu, the women's clothing grid, one product page, search, the empty bag, and the empty sign-in and create-account dialogs. No account was created. Nothing was added to bag. Checkout was not entered. `/login` stopped at a captcha wall, which was not solved and not saved.
 
 The storefront is white, with `#222222` ink, Helvetica at 12px for chrome, square controls, a black cart button, red sale prices, and green promo lines. The first promo slide is a measured red (`#eb4034`) that is not a custom property.
 
@@ -137,7 +137,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **No screenshots.** Layout notes in [patterns.md](patterns.md) follow computed boxes, not a picture.
+- **Viewport shots, not full-page stitches.** [screenshots/](screenshots/) shows the first screen of each page. The women's grid reports a scroll height near 20,000px and was not tiled.
 - **One theme.** No dark switch was on the pages that were measured. There is no dark token set.
 - **Promo red is computed, not declared.** `#eb4034` is the first slide's background. Later slides use `#222222`. Do not treat the red as a permanent brand token.
 - **Hover and disabled colours are authored.** They resolve from `--button-*-hover` and `--button-*-disabled`. A live hover repaint was not captured, because synthetic mouse events did not change computed colour.
@@ -148,7 +148,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### Do and don't (from README.md)
 
-1. **Do keep the shop white and the ink `#222222`.** Chrome, tiles, and the dialog sit on `#ffffff`. Muted copy is `#707070`. Hairlines are `#dddddd`. See [raw/measurements.md](raw/measurements.md).
+1. **Do keep the shop white and the ink `#222222`.** Chrome, tiles, and the dialog sit on `#ffffff`. Muted copy is `#707070`. Hairlines are `#dddddd`. See [screenshots/home-desktop-viewport.png](screenshots/home-desktop-viewport.png).
 2. **Do keep controls square.** Nav, search, cart, size chips, and the dialog are 0px radius. The country select is the measured exception at 5px, and swatches are circles.
 3. **Do use black for the buy button.** The cart button and Next are `#222222` with white bold 16px type. Hover, from the stylesheet, is `#707070`.
 4. **Do use red only for the sale price and green only for the promo line.** Sale computed `#d83604`. Promo copy computed `#3a8700`.
