@@ -1,0 +1,126 @@
+{
+  "slug": "arcade",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "public Playwright, signed out. https://app.arcade.software/auth was opened once from a direct load. The empty wall was photographed. The branch stopped. No email, password, or code was typed. No identity provider was clicked. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Logo to /",
+        "Product menu: AI Video, Interactive Demos, Agents, Apps, Chrome Extension",
+        "Pricing",
+        "Resources menu: Blog, Showcase, Changelog, Knowledge Base",
+        "Enterprise",
+        "Log in",
+        "Sign up"
+      ],
+      "reached": [
+        "/",
+        "/pricing",
+        "/product/interactive-demo",
+        "/agents",
+        "/apps",
+        "/enterprise",
+        "/ai-video-examples",
+        "/blog",
+        "/changelog",
+        "/contact-sales",
+        "/careers",
+        "/brand",
+        "/security",
+        "/privacy",
+        "Product menu",
+        "Resources menu",
+        "phone menu"
+      ]
+    },
+    "settings": {
+      "items": [
+        "No account settings on the public site. No theme switch."
+      ],
+      "reached": []
+    },
+    "create": {
+      "items": [
+        "Sign up",
+        "Sign up for free",
+        "Get started",
+        "Open Arcade",
+        "Open app",
+        "Continue with Google",
+        "Continue with Microsoft",
+        "Continue with Apple",
+        "Email field",
+        "Continue"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-product.png",
+    "screenshots/home-light-resources.png",
+    "screenshots/home-light-suggestion.png",
+    "screenshots/home-light-quote-next.png",
+    "screenshots/home-light-full.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-faq.png",
+    "screenshots/pricing-light-full.png",
+    "screenshots/interactive-demo-light-default.png",
+    "screenshots/interactive-demo-light-full.png",
+    "screenshots/agents-light-default.png",
+    "screenshots/agents-light-full.png",
+    "screenshots/apps-light-default.png",
+    "screenshots/apps-light-full.png",
+    "screenshots/enterprise-light-default.png",
+    "screenshots/enterprise-light-full.png",
+    "screenshots/video-examples-light-default.png",
+    "screenshots/video-examples-light-full.png",
+    "screenshots/blog-light-default.png",
+    "screenshots/blog-light-full.png",
+    "screenshots/changelog-light-default.png",
+    "screenshots/changelog-light-full.png",
+    "screenshots/contact-sales-light-default.png",
+    "screenshots/contact-sales-light-full.png",
+    "screenshots/careers-light-default.png",
+    "screenshots/brand-light-default.png",
+    "screenshots/security-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-pricing-light-default.png",
+    "screenshots/mobile-pricing-light-full.png",
+    "screenshots/mobile-interactive-demo-light-default.png",
+    "screenshots/mobile-interactive-demo-light-full.png",
+    "screenshots/login-light-empty.png",
+    "screenshots/mobile-login-light-empty.png"
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Editor, agents workspace, billing, and settings were not offered on a signed-in shell.",
+    "Continue with Google, Continue with Microsoft, and Continue with Apple were visible and not clicked.",
+    "The email field was empty. Continue was not pressed. No code was sent.",
+    "No dark theme was offered.",
+    "docs.arcade.software, the Chrome Web Store, Slack, status page, and social links were linked and not opened.",
+    "/terms-of-service was not photographed. It prints a street address and a contact email.",
+    "The contact form was left empty and not submitted. The captcha was not solved.",
+    "Token values were not re-read on this pass. They stay the 2026-11-10 measurements."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "Continue",
+    "Continue with Google",
+    "Continue with Microsoft",
+    "Continue with Apple",
+    "Talk to sales",
+    "Create video from prompt",
+    "captcha"
+  ]
+}

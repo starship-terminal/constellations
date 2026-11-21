@@ -103,9 +103,24 @@ const tapSuggestion = async (p) => {
   return false;
 };
 
+const openMenu = async (p, label) => {
+  const a = p.locator('.navbar a.nav-btn, .w-nav a.nav-btn').filter({ hasText: new RegExp('^' + label + '$') }).first();
+  if (!(await a.count())) return false;
+  await a.hover().catch(() => {});
+  await clickEl(a);
+  await wait(p, 700);
+  return true;
+};
+
 const desktop = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.view('default');
+    await step('product-menu', async () => { if (await openMenu(p, 'Product')) await S.view('product'); });
+    await p.keyboard.press('Escape').catch(() => {});
+    await wait(p, 300);
+    await step('resources-menu', async () => { if (await openMenu(p, 'Resources')) await S.view('resources'); });
+    await p.keyboard.press('Escape').catch(() => {});
+    await wait(p, 300);
     await step('suggestion', async () => { if (await tapSuggestion(p)) await S.view('suggestion'); });
     await step('quote-next', async () => {
       const n = p.locator('.spotlight-next').filter({ visible: true }).first();
@@ -143,9 +158,24 @@ const desktop = {
     await S.full();
   } },
   'contact-sales': { path: '/contact-sales', wait: 8000, run: async (p, S) => {
+    // The published form ships with sample name and email values. Clear them
+    // before the shot. Never type a replacement and never submit.
+    await p.evaluate(() => {
+      document.querySelectorAll('input, textarea').forEach((el) => {
+        if (el.type === 'hidden' || el.type === 'checkbox' || el.type === 'radio') return;
+        el.value = '';
+        el.setAttribute('value', '');
+      });
+    });
+    await wait(p, 400);
     await S.view('default');
     await S.full();
   } },
+  apps: { path: '/apps', wait: 8000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  careers: { path: '/careers', wait: 8000, run: async (p, S) => { await S.view('default'); } },
+  brand: { path: '/brand', wait: 8000, run: async (p, S) => { await S.view('default'); } },
+  security: { path: '/security', wait: 8000, run: async (p, S) => { await S.view('default'); } },
+  privacy: { path: '/privacy', wait: 8000, run: async (p, S) => { await S.view('default'); } },
 };
 
 const mobile = {
@@ -161,7 +191,7 @@ const mobile = {
   'interactive-demo': { path: '/product/interactive-demo', wait: 9000, run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
-const b = await chromium.launch();
+const b = await chromium.launch({ headless: true });
 let total = 0;
 const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
 for (const { k, mob } of runs) {
@@ -185,3 +215,52 @@ for (const { k, mob } of runs) {
 }
 log('done', total, 'screenshots ->', RAW);
 await b.close();
+
+// Auth wall, photographed empty. Never type, never click an identity provider,
+// never submit. A separate context so a redirect cannot ride a marketing session.
+async function shootWall() {
+  if (pageArg.length && !pageArg.includes('login') && !pageArg.includes('auth')) return;
+  const AUTH = 'https://app.arcade.software/auth';
+  for (const mob of [false, true]) {
+    const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
+    const prefix = mob ? 'mobile-login-light' : 'login-light';
+    const browser = await chromium.launch({ headless: true });
+    try {
+      const context = await browser.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
+      await patch(context);
+      const p = await context.newPage();
+      log(prefix);
+      try {
+        const res = await p.goto(AUTH, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => null);
+        const status = res ? res.status() : 0;
+        await wait(p, 4000);
+        const info = await p.evaluate(() => {
+          const text = (document.body && document.body.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 800);
+          const fields = [...document.querySelectorAll('input, textarea')].map((el) => ({
+            type: el.type || el.tagName.toLowerCase(),
+            name: el.getAttribute('name') || '',
+            label: el.getAttribute('aria-label') || el.getAttribute('placeholder') || '',
+            value: el.value ? 'filled' : 'empty',
+          }));
+          const buttons = [...document.querySelectorAll('button, a, [role="button"]')]
+            .map((el) => (el.innerText || el.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim())
+            .filter(Boolean)
+            .slice(0, 24);
+          return { title: document.title, text, fields, buttons, host: location.host };
+        }).catch(() => ({ title: '', text: '', fields: [], buttons: [], host: '' }));
+        fs.writeFileSync(`${RAW}/${prefix}-probe.json`, JSON.stringify({ status, ...info }, null, 2) + '\n');
+        const challenging = /just a moment|verify you are human|captcha|security verification/i.test(info.title + info.text);
+        if (challenging) { log('  WALL challenge, not photographed', prefix); }
+        else {
+          await closePromo(p);
+          const S = new Shooter(p, prefix, vw, vh, dpr);
+          await S.view('empty');
+        }
+      } catch (e) { log('  WALL FAILED', prefix, String(e.message).split('\n')[0]); }
+      await context.close();
+    } finally {
+      await browser.close();
+    }
+  }
+}
+await shootWall();

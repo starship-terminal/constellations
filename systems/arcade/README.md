@@ -1,6 +1,6 @@
 # Arcade design reference
 
-A token set and component reference for Arcade's public marketing site (https://www.arcade.software), a Webflow build selling an AI video generator for marketing teams. Use it to build a web page or marketing surface that borrows its look: a pure-white page, black-on-white chrome, Inter Display 56px display lines over Inter Variable UI, black 12px-radius pill CTAs, `#f4f4f4` 24px plan cards, a hairline `#e5e7eb` border system, pastel `--card-bg-*` washes, and a `#2142e7` brand blue kept for the demo pages. It was captured signed out, in headless Chromium at 1440 x 900 (mobile pages at 390 x 844) on 2026-11-10.
+A token set and component reference for Arcade's public marketing site (https://www.arcade.software), a Webflow build selling an AI video generator for marketing teams. Use it to build a web page or marketing surface that borrows its look: a pure-white page, black-on-white chrome, Inter Display 56px display lines over Inter Variable UI, black 12px-radius pill CTAs, `#f4f4f4` 24px plan cards, a hairline `#e5e7eb` border system, pastel `--card-bg-*` washes, and a `#2142e7` brand blue kept for the demo pages. It was captured signed out, in headless Chromium at 1440 x 900 (mobile pages at 390 x 844). Tokens were read on 2026-11-10. The public site tree and screenshots were refreshed on 2026-11-21. The auth wall was photographed empty and not entered.
 
 It holds 28 screenshots across nine desktop routes and three phone routes — home, /pricing, /product/interactive-demo, /agents, /enterprise, /ai-video-examples, /blog, /changelog, /contact-sales — plus transient states (prompt suggestion applied, spotlight quote advanced, FAQ open, the mobile menu), and 49 measured components with 126 states and 125 crops. The product itself (the demo editor, agents) sits behind sign-up and was never reached: the app is recorded as a boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
 
@@ -15,7 +15,9 @@ This package contains no Arcade code, and none of its artwork has been redrawn. 
 | [components.md](components.md) | 49 components, each with its measured values per state and crops of the real page, then a Gaps section |
 | [patterns.md](patterns.md) | The nav/hero/prompt/scatter/pricing/forms/footer patterns the marketing pages compose |
 | [components/crops/](components/crops) | 125 element crops, `{component}-{state}.png`, cut from the live page by `tools/capture/public/measure.mjs` |
-| [screenshots/](screenshots) | 28 captures, `{page}-light-{state}.png` at 1440 x 900 (`-full` whole pages) and `mobile-*` at 780 wide, quantised to 256 colours |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog, written before the 2026-11-21 screenshots |
+| [login-review.json](login-review.json) | Empty auth wall: offered nav, settings, and create; screens that exist; gaps; what was not submitted |
+| [screenshots/](screenshots) | Public captures, `{page}-light-{state}.png` at 1440 x 900 (`-full` whole pages) and `mobile-*` at 780 wide, quantised to 256 colours. 2026-11-21 added the Product and Resources menus, `/apps`, `/careers`, `/brand`, `/security`, and the empty auth wall |
 | [raw/](raw) | `components-computed.json` (every measured value per state), `measurements.md` (the same as tables), `css-vars.json` (the Webflow `:root` custom properties), `component-tokens.json` (the token spec), `full/` (the unquantised captures with `.capture.json` sidecars) |
 | [tools/](tools) | `capture/` (`public/`: lib, public tour, measure, build-measurements; `vars.mjs`, `screenshot.mjs`, `quantize.py`, `css-colour.mjs`, `safe-url.mjs`) and the builders (`build_component_tokens.py`, `build_tokens.py`, `build_components_md.py`, `build_style_guide.py`, `token_checks.py`, `style-guide.template.html`) |
 
@@ -102,7 +104,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 ## What to distrust
 
 - **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
-- **The app is absent.** Sign up / Log in lead to the product behind an account; no editor, agent or dashboard screen is in this package — only the marketing site that links to it.
+- **The app is absent.** Sign up and Log in open `https://app.arcade.software/auth`. That wall was photographed empty on 2026-11-21 and not entered. No editor, agent workspace, or dashboard is in this package.
 - **The brand blue is not the site's main action colour.** On the marketing surface every primary CTA is black `ink`; `--primary-*` shows on the demo pages (url-to-demo button, signup pair) and in links. Do not paint primary actions blue.
 - **Hover values are mild.** Nav ghosts lift to a 6%-black wash and black CTAs to `#404040`; pressed states shrink ~3% (a Webflow transform). Nothing changes colour.
 - **The scatter wall is animated.** Cards drift and scale on hover and scroll; their measured rects are one frame of a moving layout, not fixed geometry.
@@ -133,7 +135,9 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | States | captured | default on all 49 components; hover/focus-visible/pressed on controls; focused/filled on fields; opened on FAQ + mobile menu. Disabled, error and loading never appear on public pages |
 | App shell and navigation, marketing page, mobile fold | captured | [patterns.md](patterns.md) |
 | Signed-in product | not captured | app.arcade.software sits behind sign-up; Log in, Sign up, Get started, plan CTAs and every submit were measured, never followed or pressed |
-| Light theme, 1440 and 390 | captured | [screenshots/](screenshots): 9 desktop routes (default + full + states), 3 mobile routes |
+| Light theme, 1440 and 390 | captured | [screenshots/](screenshots): desktop marketing routes plus Product and Resources menus, phone home and pricing, empty auth wall |
+| Public site tree | captured | [site-tree.md](site-tree.md), written from the homepage before the 2026-11-21 shots |
+| Signed-out auth wall | captured, not entered | [login-review.json](login-review.json), [login-light-empty.png](screenshots/login-light-empty.png) |
 | Icons | not captured | the icon extraction pass was not run; the product mark sits on the nav bar and the fetched icon.png — declared under layoutGaps |
 | Fonts | captured | `core.font.family.display` (Inter Display), `.ui` (Inter Variable), `.mono`, `.script`, `.serif` from @font-face faces |
 
