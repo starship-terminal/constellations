@@ -1,0 +1,29 @@
+{
+  "product": "Frame.io",
+  "reviewed": "2026-11-21",
+  "wall": "https://accounts.frame.io/welcome",
+  "entry": "https://app.frame.io/ redirects to the welcome wall. https://next.frame.io/login is HTTP 404.",
+  "offered": {
+    "email": "Empty email field, label Email, placeholder you@example.com, name email. Value length 0. Not typed.",
+    "password": "A password input is in the DOM on the app.frame.io redirect and on the signup query, value length 0. It is not painted. The painted wall is email plus Let's go.",
+    "submit": "Button Let's go. Not pressed.",
+    "copy": "Welcome. Enter your email to get started.",
+    "identity_providers": []
+  },
+  "screens": [
+    "screenshots/welcome-light-empty-desktop.png",
+    "screenshots/welcome-light-empty-phone.png",
+    "screenshots/welcome-light-default.png",
+    "screenshots/welcome-light-full.png",
+    "screenshots/mobile-welcome-light-default.png",
+    "screenshots/mobile-welcome-light-full.png",
+    "screenshots/next-login-not-found.png"
+  ],
+  "gaps": [
+    "The signed-in app was not entered.",
+    "Let's go was not pressed, so the next step after the email is not captured.",
+    "No identity provider is offered on the empty wall.",
+    "https://next.frame.io/login returns Page not found."
+  ],
+  "not_submitted": true
+}

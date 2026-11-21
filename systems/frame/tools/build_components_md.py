@@ -246,7 +246,7 @@ GROUP_INTRO = {
     "Home": "The home hero: the centred FrameGothic display masthead, the paired Start-Free-Trial pill / Take-a-Product-Tour ghost, and section headings.",
     "Pricing": "The /pricing grid: the Monthly/Annually billing switch (Annually carries a 'SAVE 13%' badge), the plan columns at $0/$15/$25 and their CTAs, the feature-comparison category accordions and the pricing FAQ.",
     "Contact": "The /contact hub — 'Hello, how can we help you?' — with the white 'Schedule a Meeting' button (it mounts a Calendly scheduler — a vendor widget, never opened) and the 'Talk with Sales' text link.",
-    "Contact form": "The /contact/form card: 'Enter your info below. We'll get back to you shortly.' with underlined Name/Email/Message fields and the Submit pill — measured and typed into then cleared, never submitted.",
+    "Contact form": "The /contact/form card: 'Enter your info below. We'll get back to you shortly.' with underlined Name/Email/Message fields and the Submit pill — photographed empty, never typed into, never submitted.",
     "Sign-in surface (accounts.frame.io — a different stack)": "accounts.frame.io/welcome — where 'Sign In' lands — the light styled-components sign-in card: 'Welcome / Enter your email to get started.', one e-mail field and the cobalt 'Let's go' submit. A different stack that does not share the marketing --* layer; measured as a form, never submitted.",
     "Customers, case study, integrations, what's new": "The gallery surfaces: the /customers index and a published case study (Ford), the /integrations cards and the /whats-new release index — published marketing content, measured at rest, never followed.",
     "Mobile (390 wide)": "The phone surface at 390 wide: the header with the nav button and 'Start Free Trial' pill, the full-viewport nav overlay opened by 'Toggle mobile navigation', the hero and CTA.",
@@ -338,8 +338,8 @@ OVER = [
     ("Billing toggle", "/pricing", "the Monthly/Annually switch was measured at rest — flipping re-prices the grid, so it was never switched", "[price-toggle](#billing-toggle), [price-toggle-alt](#billing-toggle-annual)"),
     ("Comparison accordions", "/pricing", "clicked one comparison-row category — a local UI toggle", "[ptable-acc](#feature-comparison-accordion)" + (", [pricing-dark-accordion-open](screenshots/pricing-dark-accordion-open.png)" if "pricing-dark-accordion-open.png" in shots else " — the accordion-open screenshot was not captured this run (the accordion trigger did not open)")),
     ("Pricing FAQ", "/pricing", "clicked one FAQ row — a local UI toggle", "[faq-acc](#faq-accordion)"),
-    ("Contact form fields", "/contact/form", "typed into then cleared — nothing sent; Submit was never pressed", "[form-name](#name-field), [form-email](#email-field), [form-message](#message-field)"),
-    ("Sign-in field", "accounts.frame.io/welcome", "typed into then cleared — nothing sent; 'Let's go' was never pressed", "[login-email](#email-field-sign-in)"),
+    ("Contact form fields", "/contact/form", "empty — nothing typed; Submit was never pressed", "[form-name](#name-field), [form-email](#email-field), [form-message](#message-field)"),
+    ("Sign-in field", "accounts.frame.io/welcome", "empty — nothing typed; 'Let's go' was never pressed", "[login-email](#email-field-sign-in)"),
     ("Schedule a Meeting", "/contact", "it mounts a Calendly scheduler — a vendor widget; the button was measured, never pressed", "[schedule-btn](#schedule-a-meeting)"),
     ("Signed-in product", "a Frame.io account", "the app and every post-login surface needs an account", "boundary; see Gaps"),
 ]
@@ -506,7 +506,7 @@ W()
 W("### Pages")
 W()
 W("- **The account.** The app and every post-login surface (projects, the player, uploads, admin, billing) was never reached; the accounts.frame.io/welcome sign-in was measured as a form and never submitted.")
-W("- **Forms.** The /contact/form fields were measured at rest and typed into then cleared — nothing was sent; what a submission returns is unverified.")
+W("- **Forms.** The /contact/form fields and the welcome email field were photographed empty — nothing was typed or sent; what a submission returns is unverified.")
 W("- **The /lp/* campaign landings and the remaining sitemap routes** are the same templates with different copy; a representative set was captured, not all 60+ public URLs.")
 W("- **Case studies, release notes, integration pages and blog posts** are index-level captures plus one case study; individual articles are the same templates, unmeasured.")
 W("- **Schedule a Meeting** mounts a Calendly scheduler — a third-party widget; the button was measured at rest and never pressed, so the scheduler frame is uncaptured.")
