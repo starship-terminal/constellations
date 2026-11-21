@@ -1,8 +1,8 @@
 # Retool design reference
 
-Tokens and component notes for Retool, captured **2026-11-19**. The preview viewport was 1169 by 731, devicePixelRatio 2. Marketing and docs were dark. Login was light. Signed out the whole time.
+Tokens and component notes for Retool. First readings **2026-11-19**. Public pages refreshed **2026-11-21** from https://retool.com at 1440 by 900 (devicePixelRatio 1) and 390 by 844 (devicePixelRatio 2). Marketing pages paint dark. Login and signup paint light. Signed out the whole time.
 
-Retool (retool.com) is a builder for internal software. This package covers the public homepage, pricing, the signed-out login and signup pages, and the public docs. No account was created. No email was typed. No demo was booked. No card, phone, government ID, company SSO, or database connection was entered.
+Retool (retool.com) is a builder for internal software. This package covers the public marketing site, pricing, empty login and signup walls, and the site tree mapped from the homepage. No account was created. No email, password, code, phone or address was typed. No identity provider was clicked. No form was submitted. No signed-in app was opened. `login-extracted` stays not-started.
 
 | File | What it is |
 |---|---|
@@ -15,9 +15,9 @@ Retool (retool.com) is a builder for internal software. This package covers the 
 | [patterns.md](patterns.md) | Marketing shell, pricing grid, login, signup, docs. |
 | [components/](components/) | Not created. No element crops were cut on either pass. |
 | [icons/](icons/) | Not created. No icon set was extracted. |
-| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog or stopped branch, mapped from the homepage on 2026-11-20 before the screenshot pass |
-| [screenshots/](screenshots/) | 125 public-page captures from headless Playwright on 2026-11-20, desktop 1440 x 900 and phone 390 x 844, painted dark, quantised to 256 colours. Named `{page}-dark-{state}.png` |
-| [raw/](raw/) | `measured.json` from 2026-11-19, plus `css-vars.json` and `live-readings.json` from the 2026-11-20 stylesheet harvest |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog or stopped branch, remapped from the homepage on 2026-11-21 |
+| [screenshots/](screenshots/) | 106 public-page captures from headless Playwright on 2026-11-21, desktop 1440 x 900 and phone 390 x 844, painted dark, quantised to 256 colours. Named `{page}-dark-{state}.png`. Login and signup are empty walls. |
+| [raw/](raw/) | `measured.json` from 2026-11-19, plus `css-vars.json` and `live-readings.json` from the 2026-11-20 stylesheet harvest. 2026-11-21 computed roles still match those tokens. |
 | [tools/](tools/) | `build_tokens.py`, `build_style_guide.py`, `test_measured.py`, and the copied kit. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
@@ -85,7 +85,7 @@ Homepage `html` loaded with `class` containing `dark` and a payload `themeMode` 
 
 A class swap on the homepage, removing `dark` and adding `light`, changed `--surface-background-base` to `#e9ebdf` and the body background to rgb(233, 235, 223). The painted h1 stayed rgb(233, 235, 223). Those light tokens are labelled as a class probe.
 
-A later pass on 2026-11-20, in headless Playwright, captured the public marketing pages at 1440 x 900 and 390 x 844. Those frames are in [screenshots/](screenshots/). The site tree mapped before that pass is [site-tree.md](site-tree.md). The stylesheet harvest from that pass is [raw/css-vars.json](raw/css-vars.json). Login and signup were not opened in that pass. The 2026-11-19 readings in [raw/measured.json](raw/measured.json) still hold those.
+A refresh on 2026-11-21, in headless Playwright, recaptured the public marketing pages at 1440 x 900 (devicePixelRatio 1) and the homepage plus pricing at 390 x 844 (devicePixelRatio 2). Those frames replaced the 2026-11-20 set in [screenshots/](screenshots/). The site tree remapped that day is [site-tree.md](site-tree.md). At 1440 the painted nav is Solution, Resources, Use cases, App gallery, Pricing and Ask AI. The Audience button is in the DOM and `display: none`; the same destinations stay in the mobile drawer and the footer. Login and signup were opened only as empty walls and not filled. The 2026-11-19 readings in [raw/measured.json](raw/measured.json) still hold the login colours. Computed marketing roles on 2026-11-21 still match them: page `#151515`, text `#e9ebdf`, accent `#518dd2`.
 
 ## What to distrust
 
@@ -121,10 +121,10 @@ Marketing display is saansFont, with a saansFont Fallback. Docs call it SaansReg
 | Form validation | Not captured. Login and signup were not submitted |
 | Pricing | Captured as computed styles. No checkout |
 | Docs | Captured dark. Theme toggle not used. Search not opened |
-| Signed-in app | Not captured. https://login.retool.com/auth/login shows email, password, Google, or a login link. None was used on 2026-11-20. |
-| Public pages at 1440 and 390 | Captured 2026-11-20. [screenshots/home-dark-default.png](screenshots/home-dark-default.png), [screenshots/mobile-home-dark-menu.png](screenshots/mobile-home-dark-menu.png). Measured viewport 1440 x 900 and 390 x 844, `html` class `dark` |
-| 390px width | Captured 2026-11-20 on the phone pass. Viewport 390 x 844, devicePixelRatio 2. [screenshots/mobile-home-dark-default.png](screenshots/mobile-home-dark-default.png). The 2026-11-19 preview stayed at 1169. |
-| Screenshots | Captured 2026-11-20. 125 frames in [screenshots/](screenshots/). The 2026-11-19 preview produced no frames. |
+| Signed-in app | Not captured. https://login.retool.com/auth/login shows an empty email field, an empty password field, Google, and a login link. None was used on 2026-11-21. `login-extracted` is not-started. |
+| Public pages at 1440 and 390 | Captured 2026-11-21. [screenshots/home-dark-default.png](screenshots/home-dark-default.png), [screenshots/mobile-home-dark-menu.png](screenshots/mobile-home-dark-menu.png). Measured viewport 1440 x 900 (devicePixelRatio 1) and 390 x 844 (devicePixelRatio 2), `html` class `dark` |
+| 390px width | Captured 2026-11-21 on the homepage and pricing. Viewport 390 x 844, devicePixelRatio 2. [screenshots/mobile-home-dark-default.png](screenshots/mobile-home-dark-default.png), [screenshots/mobile-pricing-dark-default.png](screenshots/mobile-pricing-dark-default.png). |
+| Screenshots | Recaptured 2026-11-21. 106 frames in [screenshots/](screenshots/), including empty [screenshots/login-dark-default.png](screenshots/login-dark-default.png) and [screenshots/signup-dark-default.png](screenshots/signup-dark-default.png). |
 
 ## Do and don't
 

@@ -1,38 +1,40 @@
 # Retool public site tree
 
-Mapped from the live homepage https://retool.com/ on 2026-11-20, before any
-screenshot pass. Playwright loaded the page (HTTP 200, title "Build internal
-software better, with AI. | Retool"). The desktop nav buttons expose
+Mapped from the live homepage https://retool.com/ on 2026-11-21. The page
+returned HTTP 200 with the title "Build internal software better, with AI. |
+Retool". `html` class included `dark`. Desktop nav buttons expose
 `aria-controls` panels that are already in the DOM. The published HTML sitemap
-at https://retool.com/sitemap-page (227 links, 145 unique hrefs) lists the
-same nav destinations plus the index samples below.
+at https://retool.com/sitemap-page still lists the same nav destinations.
 
-This tree records which control opens which page, menu, dialog or interaction.
-A control that leaves the marketing origin, or that opens a login or signup
-wall, stops that branch. No form is submitted. No email is typed. Google is
-not clicked. The login-link request is not used.
+This tree records which control opens which page, menu, dialog or stopped
+branch. A control that leaves the marketing origin, or that opens a login or
+signup wall, stops that branch. No form was submitted. No email, password,
+code, phone or address was typed. No identity provider was clicked.
 
 ## Shell
 
 | Control | Opens |
 |---|---|
 | Logo "Retool" | Page `/` |
-| Skip to main content | In-page `#main-content` |
 | Banner "Get early access" | Page `/agents-waitlist` |
-| Top link "Use cases" | Page `/use-cases` |
-| Top link "Pricing" | Page `/pricing` |
-| Button "Sign in" | Login wall `https://login.retool.com/auth/login?source=navbarcta`. Stop. Known probe: email and password, or Google, or a login link. Not typed, not clicked, not requested. |
-| Button "Book a demo" | Page `/demo?meeting_page_source=navbarcta` (form; do not submit) |
-| Button "Start for free" | Signup wall `https://login.retool.com/auth/signup?source=navbarcta`. Stop. |
-| Button "Ask AI" (⌘K) | In-page search dialog. A result link "Go to docs" leaves for `https://docs.retool.com`. Do not submit a query that leaves the page. |
-| Button "Open navigation" | Mobile drawer `#global-nav-mobile-menu` (visible at 390). Same three groups as the desktop menus. |
-| Button "Play background video" / "Pause" | Toggles the hero background video. No navigation. |
+| Button "Solution" | Desktop menu `#global-nav-menu-desktop-7dce14f92e3c`. Painted at 1440. |
+| Button "Audience" | Present in the DOM (`#global-nav-menu-desktop-faaab62ecd3f`) but `display: none` at 1440. Painted only inside the mobile drawer and the footer. |
+| Button "Resources" | Desktop menu `#global-nav-menu-desktop-a61efda0b862c09dd492ea6cd41520a7`. Painted at 1440. The first Discover item is Integrations. App gallery is a top-level link, not a menu row. |
+| Link "Use cases" | Page `/use-cases` |
+| Link "App gallery" | Page `/app-gallery`. Top-level at 1440 on 2026-11-21. |
+| Link "Pricing" | Page `/pricing` |
+| Button "Ask AI" | In-page search dialog. A result can leave for `https://docs.retool.com`. The dialog was opened empty and closed. No query was typed. |
+| Link "Sign in" | Login wall `https://login.retool.com/auth/login?source=navbarcta`. Stop. |
+| Link "Book a demo" | Page `/demo?meeting_page_source=navbarcta` (form; not submitted) |
+| Link "Start for free" | Signup wall `https://login.retool.com/auth/signup?source=navbarcta`. Stop. |
+| Button "Open navigation" | Mobile drawer (visible at 390). Same three groups as the desktop menus. |
+| Button "Pause background video" | Toggles the hero background video. No navigation. |
 | Button "Pause scrolling logos" / "Pause illustration" | Pauses a marquee or illustration. No navigation. |
 
 ## Desktop menu: Solution
 
 Button "Solution" sets `aria-expanded=true` and shows
-`#global-nav-menu-desktop-7dce14f92e3c` (about 734 by 372). Escape closes it.
+`#global-nav-menu-desktop-7dce14f92e3c`. Escape closes it.
 
 | Group | Control | Opens |
 |---|---|---|
@@ -50,9 +52,13 @@ Button "Solution" sets `aria-expanded=true` and shows
 | CAPABILITIES | Mobile apps | Page `/launch-enterprise-apps/mobile` |
 | CAPABILITIES | Self-hosting | Page `/govern-enterprise-apps/self-hosted` |
 
-## Desktop menu: Audience
+## Audience menu
 
-Button "Audience" opens `#global-nav-menu-desktop-faaab62ecd3f`.
+The desktop Audience button is in the DOM and `display: none` at 1440 on
+2026-11-21. The same destinations are painted in the mobile drawer
+(`#global-nav-menu-mobile-faaab62ecd3f`) and in the footer. The panel id
+that the hidden desktop button controls is
+`#global-nav-menu-desktop-faaab62ecd3f`.
 
 | Group | Control | Opens |
 |---|---|---|
@@ -70,7 +76,6 @@ Button "Resources" opens `#global-nav-menu-desktop-a61efda0b862c09dd492ea6cd4152
 
 | Group | Control | Opens |
 |---|---|---|
-| DISCOVER | App gallery | Page `/app-gallery` |
 | DISCOVER | Integrations | Page `/integrations` |
 | DISCOVER | Templates | Page `/templates` |
 | DISCOVER | Utilities | Page `/utilities` |
@@ -78,42 +83,38 @@ Button "Resources" opens `#global-nav-menu-desktop-a61efda0b862c09dd492ea6cd4152
 | DISCOVER | Customer stories | Page `/customers` |
 | DISCOVER | Videos | Page `/resources/videos` |
 | DISCOVER | Resource hub | Page `/resources` |
-| DEVELOPERS | Documentation | External `https://docs.retool.com/`. Separate product docs origin. |
-| DEVELOPERS | Community | External `https://community.retool.com/`. |
-| DEVELOPERS | Retool University | External `https://university.retool.com/`. |
-| DEVELOPERS | API reference | External `https://docs.retool.com/reference/api/v2`. |
-| DEVELOPERS | CLI reference | External `https://docs.retool.com/build/apps/reference/cli`. |
-| DEVELOPERS | MCP server | External `https://docs.retool.com/org-users/guides/mcp`. |
+| DEVELOPERS | Documentation | External `https://docs.retool.com/`. Stop. |
+| DEVELOPERS | Community | External `https://community.retool.com/`. Stop. |
+| DEVELOPERS | Retool University | External `https://university.retool.com/`. Stop. |
+| DEVELOPERS | API reference | External `https://docs.retool.com/reference/api/v2`. Stop. |
+| DEVELOPERS | CLI reference | External `https://docs.retool.com/build/apps/reference/cli`. Stop. |
+| DEVELOPERS | MCP server | External `https://docs.retool.com/org-users/guides/mcp`. Stop. |
 | COMPANY | About | Page `/about` |
 | COMPANY | Careers | Page `/careers` |
 | COMPANY | Partners | Page `/partners` |
-| COMPANY | Support | External `https://docs.retool.com/support`. |
+| COMPANY | Support | External `https://docs.retool.com/support`. Stop. |
 | COMPANY | Newsroom | Page `/newsroom` |
 
-The mobile drawer repeats these three groups under buttons that control
-`#global-nav-menu-mobile-7dce14f92e3c`, `#global-nav-menu-mobile-faaab62ecd3f`
-and `#global-nav-menu-mobile-a61efda0b862c09dd492ea6cd41520a7`.
+The mobile drawer repeats these three groups. At 390 the drawer button is
+"Open navigation".
 
 ## Homepage interactions that stay on the page
 
 | Control | Opens |
 |---|---|
-| "Starter prompts" (`aria-haspopup=dialog`) | Prompt-picker dialog. Do not submit the prompt. |
-| "Import code" (`aria-haspopup=dialog`) | Import dialog (React / Lovable / Replit). Do not upload or submit. |
-| "Build with AI agents" (`aria-haspopup=dialog`) | Agent-builder dialog (Claude Code, Cursor, Codex, ChatGPT, Kiro CLI). Do not submit. |
-| "Submit prompt" | Would send the hero prompt. Do not click. |
+| "Starter prompts" (`aria-haspopup=dialog`) | Prompt-picker dialog. Not submitted. |
+| "Import code" (`aria-haspopup=dialog`) | Import dialog (React / Lovable / Replit). Not uploaded, not submitted. |
+| "Build with AI agents" (`aria-haspopup=dialog`) | Agent-builder dialog (Claude Code, Cursor, Codex, ChatGPT, Kiro CLI). Not submitted. |
+| "Submit prompt" | Would send the hero prompt. Not clicked. |
 | "See what's new. Watch the film" | Film overlay or player on the homepage. |
-| Card "Learn about the app builder" | Page `/build-enterprise-apps/apps` |
-| Card links MCP / CLI / import docs | External docs.retool.com paths. Stop at the origin change. |
-| "See the full list of integrations" | Page `/integrations` |
-| "Learn about security and governance" | Page `/govern-enterprise-apps` |
-| "View app gallery" | Page `/app-gallery` |
-| App-gallery cards on the homepage | One page each under `/app-gallery/<slug>` (18 cards on the homepage). |
-| Customer logo row | One page each under `/customers/<slug>` or a team page. |
+| Card links under the hero | Same-origin product pages, or external docs.retool.com paths. The docs origin stops the branch. |
 
 ## Footer
 
-The footer repeats the Solution, Audience and Resources destinations, plus:
+The footer repeats the Solution, Audience and Resources destinations, and adds
+AppGen (`/ai-app-generation`). Community, API reference, CLI reference, MCP
+server and Support stay in the Resources menu and are not repeated in the
+footer column that was read on 2026-11-21.
 
 | Control | Opens |
 |---|---|
@@ -122,41 +123,39 @@ The footer repeats the Solution, Audience and Resources destinations, plus:
 | Retool on LinkedIn | External `https://www.linkedin.com/company/tryretool/`. Stop. |
 | Retool on Twitter/X | External `https://x.com/retool`. Stop. |
 | Retool on Reddit | External `https://www.reddit.com/r/Retool/`. Stop. |
-| Terms of use | External `https://docs.retool.com/legal` |
-| Privacy policy | External `https://docs.retool.com/legal/privacy-policy` |
-| Security | External `https://docs.retool.com/legal/security` |
-| Trust Center | External `https://trust.retool.com/` |
-| Report abuse | `mailto:` link. Do not open. The address is not written into this package. |
-| Changelog | External `https://docs.retool.com/changelog` |
-| Status | External `https://retool.statuspage.io/` |
+| Terms of use | External `https://docs.retool.com/legal`. Stop. |
+| Privacy policy | External `https://docs.retool.com/legal/privacy-policy`. Stop. |
+| Security | External `https://docs.retool.com/legal/security`. Stop. |
+| Trust Center | External `https://trust.retool.com/`. Stop. |
+| Report abuse | `mailto:` link. Not opened. The address is not written into this package. |
+| Changelog | External `https://docs.retool.com/changelog`. Stop. |
+| Status | External `https://retool.statuspage.io/`. Stop. |
 | Site map | Page `/sitemap-page` |
 
-## Sitemap index samples
+## Pages captured from this tree
 
-https://retool.com/sitemap-page groups further same-origin pages. Each item is
-a page. "View all" returns to the parent index.
+Desktop 1440 x 900, painted dark: homepage (default, full, Solution menu,
+Resources menu, empty Ask AI, starter prompts), pricing, use cases and one
+use-case detail, each Solution and Audience destination, app gallery,
+integrations and one integration, templates and one template, utilities,
+blog and one post (`/blog/ai-agent-governance-agent-org-chart`), customers and one story, videos, resource hub, about,
+careers, partners, newsroom, demo (fields visible, not submitted), agents
+waitlist (fields visible, not submitted), sitemap, AI app security, AppGen,
+and one competitor page.
 
-| Group | Sample pages |
-|---|---|
-| Customer stories | `/customers/doordash`, `/customers/ramp`, `/customers/snowflake`, `/customers/greenly`, `/customers/remitly`, `/customers/plaid`, `/customers/equipmentshare`, `/customers/westhill`, `/customers/orangetheory`, `/customers/holland-and-barrett` |
-| Blog | `/blog/retool-launches-react-ai-app-builder`, `/blog/best-react-calendar-components`, `/blog/top-redis-guis`, `/blog/the-react-lifecycle-methods-and-hooks-explained`, `/blog/filtering-data-in-react-filter-map-and-for-loops`, `/blog/how-low-code-for-manufacturing-transforms-operations`, `/blog/how-to-make-your-react-native-apps-work-on-the-web`, `/blog/building-a-react-navbar`, `/blog/expo-cli-vs-react-native-cli`, `/blog/state-of-ai-h1-2024` |
-| Use cases | `/use-case/react-components`, `/use-case/front-end-database`, `/use-case/admin-panels`, `/use-case/postgresql-gui`, `/use-case/mysql-gui`, `/use-case/sql-gui`, `/use-case/sql-front-end`, `/use-case/google-sheets-front-end`, `/use-case/openai-gui-frontend` |
-| Templates | `/templates/business-intelligence-dashboard`, `/templates/snowflake-dashboard`, `/templates/data-visualization-dashboard`, `/templates/library-management-system`, `/templates/rest-api-dashboard`, `/templates/kpi-dashboard`, `/templates/postgresql-admin-panel`, `/templates/rest-api-admin-panel`, `/templates/firebase-admin-panel`, `/templates/google-sheets-dashboard` |
-| Integrations | `/integrations/rest-api`, `/integrations/google-sheets`, `/integrations/postgresql`, `/integrations/mysql`, `/integrations/mongodb`, `/integrations/aws-s3`, `/integrations/firebase`, `/integrations/snowflake`, `/integrations/graphql`, `/integrations/aws-dynamodb` |
-| Misc | `/vertical/manufacturing`, `/industry/financial-services`, `/ai-app-generation`, `/competitor/airtable`, `/competitor/lovable`, `/competitor/powerapps`, `/competitor/replit` |
+Phone 390 x 844: homepage (default, full, open drawer, Solution group) and
+pricing (default, full).
 
-Blog, customer, template, integration, use-case and gallery indexes paginate
-or list more items than the sitemap samples. Those extra items are the same
-page type. Capture records the index plus one representative detail page,
-and names the rest as the same pattern.
+Login and signup walls were photographed empty and the branch stopped.
 
 ## Stopped branches
 
 | Control | Why the branch stops |
 |---|---|
-| Sign in | Login wall at login.retool.com. Email, password, Google and the login link are not used. |
+| Sign in | Login wall at login.retool.com. Email, password, Google and any login link are not used. |
 | Start for free | Signup wall at login.retool.com. |
-| Any control that redirects to login.retool.com or a signup form | Record the URL and stop. |
-| Google sign-in | Not clicked. |
-| Demo, waitlist, newsletter and contact forms | Opened only to see the fields. Never submitted. No email, phone, location, birthday, plan, survey or onboarding field is filled. |
-| docs.retool.com, community.retool.com, university.retool.com, trust.retool.com, statuspage.io, social networks | Different products or off-site. Not part of the marketing-site capture. |
+| Any control that redirects to login.retool.com | Record the URL and stop. |
+| Google or any other identity provider | Not clicked. |
+| Demo, waitlist, newsletter and contact forms | Opened only to see the empty fields. Never submitted. |
+| docs.retool.com, community.retool.com, university.retool.com, trust.retool.com, statuspage.io, social networks | Different products or off-site. |
+| Signed-in app | Not entered. `login-extracted` stays not-started. |

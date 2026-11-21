@@ -1,12 +1,12 @@
 # Patterns
 
-Captured signed out on 2026-11-19. Viewport 1169 by 731, devicePixelRatio 2. No screenshots: the preview browser did not produce frames.
+Captured signed out. First readings 2026-11-19. Public pages and empty auth walls refreshed 2026-11-21. Desktop viewport 1440 by 900, devicePixelRatio 1. Phone viewport 390 by 844, devicePixelRatio 2.
 
 ## Marketing shell
 
 [https://retool.com/](https://retool.com/) and [https://retool.com/pricing](https://retool.com/pricing) share one dark shell. `html` carries `class="scroll-pt-nav-offset dark"`. The page's own payload sets `themeMode` to dark. Body fill is rgb(21, 21, 21). Text is rgb(233, 235, 223).
 
-The header is fixed. `--dvt-nav-height` is 5rem and `--dvt-banner-height` is 2.5rem. The header box computed 120px tall. Nav labels use pxGroteskFont at 12.6971px. The right side is `Sign in`, a gray-stroke `Book a demo` pill, and a cream `Start for free` pill.
+The header is fixed. `--dvt-nav-height` is 5rem and `--dvt-banner-height` is 2.5rem. On 2026-11-21 the painted 1440 nav is Solution, Resources, Use cases, App gallery, Pricing and Ask AI. Audience is in the DOM and `display: none` at that width. The right side is `Sign in`, a gray-stroke `Book a demo` pill, and a cream `Start for free` pill.
 
 The homepage h1 is saansFont, 66.7885px, weight 300, letter-spacing -1.46935px. Pricing's h1 is the same family at 54.7885px.
 
@@ -20,7 +20,7 @@ Four plans sit in a grid with a 12px radius and a 1px rgba(233, 235, 223, 0.2) b
 
 ## Signup
 
-[https://login.retool.com/auth/signup](https://login.retool.com/auth/signup) asks for a work email and a password, plus Continue with Google. It is not email-only, so AgentMail was not used. No card, phone, or company SSO appeared. The form was not submitted. A docs banner said new Cloud signups are temporarily paused.
+[https://login.retool.com/auth/signup](https://login.retool.com/auth/signup) asks for a work email and a password, plus Continue with Google. The fields were empty on 2026-11-21. Nothing was typed. Google was not clicked. The form was not submitted. [screenshots/signup-dark-default.png](screenshots/signup-dark-default.png)
 
 ## Docs
 
@@ -28,4 +28,4 @@ Four plans sit in a grid with a 12px radius and a 1px rgba(233, 235, 223, 0.2) b
 
 ## Not captured
 
-App shell after sign-in, form validation, empty and loading states, destructive confirmation, onboarding, and a 390px layout. Book a demo was not opened. No database was connected.
+App shell after sign-in, form validation, destructive confirmation, and onboarding. Book a demo and the agents waitlist were opened only to see empty fields. No database was connected. `login-extracted` stays not-started. Phone width on 2026-11-21 covers the homepage and pricing: [screenshots/mobile-home-dark-default.png](screenshots/mobile-home-dark-default.png), [screenshots/mobile-pricing-dark-default.png](screenshots/mobile-pricing-dark-default.png).
