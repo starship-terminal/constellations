@@ -2323,9 +2323,9 @@
       "description": "All-In-One Salon, Spa & Medspa Software",
       "status": "captured",
       "package": "systems/glossgenius",
-      "notes": "public marketing, signed-out auth (/login, /signup, /forgot-password) and a real published booking website read only to its public /book date-picker; everything post-login and past the date-picker is out of scope https://app.glossgenius.com/login asks for email and password. No code was sent.",
+      "notes": "public marketing, signed-out auth (/login, /signup, /forgot-password) and a real published booking website read only to its public /book date-picker; everything post-login and past the date-picker is out of scope https://app.glossgenius.com/login asks for email and password. No code was sent. Public walk 2026-11-21: the public site tree is in systems/glossgenius/site-tree.md. https://glossgenius.com/ loaded. Log in stops at https://app.glossgenius.com/login with empty email and password. Sign up stops at https://app.glossgenius.com/signup. Forgot password stops at https://app.glossgenius.com/forgot-password. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1679 at 60cf336bc418. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
