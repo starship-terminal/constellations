@@ -1,0 +1,19 @@
+{
+  "url": "https://account.ghost.org/signup",
+  "title": "Sign up for Ghost(Pro)",
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "date": "2026-11-22"
+}

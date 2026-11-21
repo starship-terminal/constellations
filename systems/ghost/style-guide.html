@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ghost public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --text: #15171a;
+    --muted: #738a94;
+    --accent: #15171a;
+    --accent-text: #ffffff;
+    --chip: #ffd400;
+    --link: #3eb0ef;
+    --icon: #5dcf1f;
+    --pink: #ff247d;
+    --border: #e5eff5;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/1.4 system-ui, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 32px; letter-spacing: -0.025em; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 28px; }
+  .swatch { width: 120px; }
+  .chip { height: 64px; border-radius: 12px; border: 1px solid var(--border); }
+  .label { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .pill { display: inline-block; background: var(--accent); color: var(--accent-text); border-radius: 8px; padding: 10px 16px; font-weight: 650; }
+  .yellow { display: inline-block; background: var(--chip); color: #15171a; border-radius: 999px; padding: 8px 14px; font-weight: 650; margin-left: 8px; }
+  p.note { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ghost</h1>
+  <p class="note">Declared public colours. Screenshots are 256-colour and are not a source of values.</p>
+  <p><span class="pill">Get Started — free</span><span class="yellow">Just launched</span></p>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#15171a"></div><div class="label">base #15171A</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffd400"></div><div class="label">yellow #ffd400</div></div>
+    <div class="swatch"><div class="chip" style="background:#3eb0ef"></div><div class="label">blue #3eb0ef</div></div>
+    <div class="swatch"><div class="chip" style="background:#5dcf1f"></div><div class="label">green #5dcf1f</div></div>
+    <div class="swatch"><div class="chip" style="background:#ff247d"></div><div class="label">pink #ff247d</div></div>
+    <div class="swatch"><div class="chip" style="background:#738a94"></div><div class="label">midgrey #738a94</div></div>
+    <div class="swatch"><div class="chip" style="background:#e5eff5"></div><div class="label">whitegrey #e5eff5</div></div>
+  </div>
+</main>
+</body>
+</html>

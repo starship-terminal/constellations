@@ -1,0 +1,31 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "Sign in asks for a site address and was left empty. Signup asks for name, email, and password and was left empty. Placeholders only. Continue was not clicked. No identity provider was on either wall. No email, password, code, phone, or address was typed. No form was submitted. No site was created. catalog.json was left alone.",
+  "walls": [
+    {
+      "url": "https://account.ghost.org/signin",
+      "opened_from": "header Sign in",
+      "title": "Ghost: Sign in",
+      "heading": "Site address",
+      "desktop": "screenshots/signin-1440.png",
+      "phone": "screenshots/signin-390.png",
+      "controls_not_used": ["Continue", "Create one here"],
+      "stopped": true
+    },
+    {
+      "url": "https://account.ghost.org/signup",
+      "opened_from": "header Get Started, home Try Ghost, footer Start publishing now",
+      "title": "Sign up for Ghost(Pro)",
+      "heading": "Let's get started.",
+      "desktop": "screenshots/signup-1440.png",
+      "phone": "screenshots/signup-390.png",
+      "controls_not_used": ["Continue"],
+      "stopped": true
+    }
+  ]
+}
