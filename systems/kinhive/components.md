@@ -32,7 +32,7 @@ Name, email, a topic select, and a message textarea sit on a canvas panel. The s
 
 ## Join and sign-in
 
-`/join` and `/sign-in` drop the marketing chrome for a split layout: a form column and a photograph. Fields are white, line-bordered, 8px radius. Continue and "Email me a sign-in code" are full-width ink buttons. LinkedIn is an outlined button and was not followed. After Continue, the form asks for a 6-digit code. Continue stays grey until six digits are entered. A wrong code and a send-rate limit both paint `--color-destructive` #d93a1f as body text, sampled as (217, 58, 31) on the error screenshot. See [join-continue-default](components/crops/join-continue-default.png), [join-code-field-default](components/crops/join-code-field-default.png), [join-continue-disabled](components/crops/join-continue-disabled.png), [join-code-error](components/crops/join-code-error.png), [join-rate-limit-error](components/crops/join-rate-limit-error.png), [signin-code-field-default](components/crops/signin-code-field-default.png).
+`/join` and `/sign-in` drop the marketing chrome for a split layout: a form column and a photograph. Fields are white, line-bordered, 8px radius. Continue and "Email me a sign-in code" are full-width ink buttons. LinkedIn is an outlined button. The 2026-11-21 walk photographed both walls empty and did not click Continue or LinkedIn. See [signin-light-empty](screenshots/signin-light-empty.png) and [join-light-empty](screenshots/join-light-empty.png).
 
 ## Cart
 
