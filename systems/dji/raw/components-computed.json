@@ -1,0 +1,662 @@
+{
+  "home": [
+    {
+      "label": "logo",
+      "miss": true,
+      "sel": "#site-header a[href=\"/sg\"], header a[href=\"/sg\"]"
+    },
+    {
+      "label": "store-button",
+      "sel": "header a:has-text(\"Store\"), a.btn-store, a:has-text(\"Store\")",
+      "def": {
+        "text": "Store",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(0, 112, 213)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px",
+        "weight": "400",
+        "lh": "14px",
+        "radius": "1408px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "8px 16px 8px 34px",
+        "shadow": "none",
+        "h": 32,
+        "w": 83
+      },
+      "hover": {
+        "text": "Store",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(36, 144, 227)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px",
+        "weight": "400",
+        "lh": "14px",
+        "radius": "1408px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "8px 16px 8px 34px",
+        "shadow": "none",
+        "h": 32,
+        "w": 83
+      },
+      "focus": {
+        "text": "Store",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(36, 144, 227)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px",
+        "weight": "400",
+        "lh": "14px",
+        "radius": "1408px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "8px 16px 8px 34px",
+        "shadow": "rgb(24, 144, 255) 0px 0px 0px 3px",
+        "h": 32,
+        "w": 83
+      },
+      "box": {
+        "x": 1236.734375,
+        "y": 64,
+        "width": 83.265625,
+        "height": 32
+      }
+    },
+    {
+      "label": "hero-learn-more",
+      "sel": "a:has-text(\"Learn More\")",
+      "def": {
+        "text": "Learn More",
+        "color": "rgb(0, 0, 238)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "radius": "64px",
+        "bw": "1px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "5px 16px",
+        "shadow": "none",
+        "h": 32,
+        "w": 132
+      },
+      "hover": {
+        "text": "Learn More",
+        "color": "rgb(0, 0, 238)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "radius": "64px",
+        "bw": "1px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "5px 16px",
+        "shadow": "none",
+        "h": 32,
+        "w": 132
+      },
+      "focus": {
+        "text": "Learn More",
+        "color": "rgb(0, 0, 238)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "radius": "64px",
+        "bw": "1px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "5px 16px",
+        "shadow": "none",
+        "h": 32,
+        "w": 132
+      },
+      "box": {
+        "x": 654.234375,
+        "y": 232,
+        "width": 131.53125,
+        "height": 32
+      }
+    },
+    {
+      "label": "hero-buy-now",
+      "sel": "a:has-text(\"Buy Now\")",
+      "def": {
+        "text": "Buy Now",
+        "color": "rgb(0, 0, 238)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "radius": "64px",
+        "bw": "1px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "5px 16px",
+        "shadow": "none",
+        "h": 32,
+        "w": 114
+      },
+      "hover": {
+        "text": "Buy Now",
+        "color": "rgb(0, 0, 238)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "radius": "64px",
+        "bw": "1px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "5px 16px",
+        "shadow": "none",
+        "h": 32,
+        "w": 114
+      },
+      "focus": {
+        "text": "Buy Now",
+        "color": "rgb(0, 0, 238)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "radius": "64px",
+        "bw": "1px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "5px 16px",
+        "shadow": "none",
+        "h": 32,
+        "w": 114
+      },
+      "box": {
+        "x": 736.625,
+        "y": 0,
+        "width": 114.265625,
+        "height": 32
+      }
+    },
+    {
+      "label": "nav-link",
+      "sel": "nav a:has-text(\"Camera Drones\"), a.nav-item-title",
+      "def": {
+        "text": "Camera Drones",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px",
+        "weight": "400",
+        "lh": "14px",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgba(0, 0, 0, 0.85)",
+        "pad": "0px",
+        "shadow": "none",
+        "h": 64,
+        "w": 99
+      },
+      "hover": {
+        "text": "Camera Drones",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px",
+        "weight": "400",
+        "lh": "14px",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgba(0, 0, 0, 0.85)",
+        "pad": "0px",
+        "shadow": "none",
+        "h": 64,
+        "w": 99
+      },
+      "focus": {
+        "text": "Camera Drones",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px",
+        "weight": "400",
+        "lh": "14px",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgba(0, 0, 0, 0.85)",
+        "pad": "0px",
+        "shadow": "none",
+        "h": 64,
+        "w": 99
+      },
+      "box": {
+        "x": 204,
+        "y": 0,
+        "width": 98.5,
+        "height": 64
+      }
+    }
+  ],
+  "support": [
+    {
+      "label": "support-search",
+      "sel": "input[placeholder*=\"Search\"], input[type=\"search\"]",
+      "def": {
+        "text": "",
+        "color": "rgb(48, 50, 51)",
+        "bg": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(48, 50, 51)",
+        "pad": "4px 8px",
+        "shadow": "none",
+        "h": 32,
+        "w": 640
+      },
+      "hover": {
+        "text": "",
+        "color": "rgb(48, 50, 51)",
+        "bg": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(48, 50, 51)",
+        "pad": "4px 8px",
+        "shadow": "none",
+        "h": 32,
+        "w": 640
+      },
+      "focus": {
+        "text": "",
+        "color": "rgb(48, 50, 51)",
+        "bg": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(48, 50, 51)",
+        "pad": "4px 8px",
+        "shadow": "none",
+        "h": 32,
+        "w": 640
+      },
+      "box": {
+        "x": 414,
+        "y": 64,
+        "width": 640,
+        "height": 32
+      }
+    },
+    {
+      "label": "support-search-button",
+      "miss": true,
+      "sel": "button:has-text(\"Search\")"
+    },
+    {
+      "label": "support-h1",
+      "sel": "h1",
+      "def": {
+        "text": "Support",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "48px",
+        "weight": "500",
+        "lh": "56px",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "0px",
+        "shadow": "none",
+        "h": 56,
+        "w": 1200
+      },
+      "hover": {
+        "text": "Support",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "48px",
+        "weight": "500",
+        "lh": "56px",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "0px",
+        "shadow": "none",
+        "h": 56,
+        "w": 1200
+      },
+      "focus": {
+        "text": "Support",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "48px",
+        "weight": "500",
+        "lh": "56px",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "0px",
+        "shadow": "none",
+        "h": 56,
+        "w": 1200
+      },
+      "box": {
+        "x": 120,
+        "y": 264,
+        "width": 1200,
+        "height": 56
+      }
+    }
+  ],
+  "whereToBuy": [
+    {
+      "label": "buy-now",
+      "sel": "a:has-text(\"Buy Now\")",
+      "def": {
+        "text": "Buy Now",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(0, 112, 213)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20px",
+        "radius": "100px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "0px 16px",
+        "shadow": "none",
+        "h": 40,
+        "w": 120
+      },
+      "hover": {
+        "text": "Buy Now",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(35, 143, 227)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20px",
+        "radius": "100px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "0px 16px",
+        "shadow": "none",
+        "h": 40,
+        "w": 120
+      },
+      "focus": {
+        "text": "Buy Now",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(36, 144, 227)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20px",
+        "radius": "100px",
+        "bw": "0px",
+        "bc": "rgb(255, 255, 255)",
+        "pad": "0px 16px",
+        "shadow": "none",
+        "h": 40,
+        "w": 120
+      },
+      "box": {
+        "x": 168,
+        "y": 597.96875,
+        "width": 120,
+        "height": 40
+      }
+    },
+    {
+      "label": "h1",
+      "sel": "h1",
+      "def": {
+        "text": "Where To Buy",
+        "color": "rgb(59, 62, 64)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "32px",
+        "weight": "600",
+        "lh": "35.2px",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(59, 62, 64)",
+        "pad": "24px 0px 16px",
+        "shadow": "none",
+        "h": 76,
+        "w": 1200
+      },
+      "hover": {
+        "text": "Where To Buy",
+        "color": "rgb(59, 62, 64)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "32px",
+        "weight": "600",
+        "lh": "35.2px",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(59, 62, 64)",
+        "pad": "24px 0px 16px",
+        "shadow": "none",
+        "h": 76,
+        "w": 1200
+      },
+      "focus": {
+        "text": "Where To Buy",
+        "color": "rgb(59, 62, 64)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "32px",
+        "weight": "600",
+        "lh": "35.2px",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(59, 62, 64)",
+        "pad": "24px 0px 16px",
+        "shadow": "none",
+        "h": 76,
+        "w": 1200
+      },
+      "box": {
+        "x": 120,
+        "y": 164.59375,
+        "width": 1200,
+        "height": 76.1875
+      }
+    }
+  ],
+  "login": [
+    {
+      "label": "email",
+      "miss": true,
+      "sel": "input[type=\"email\"], input[name*=\"email\"], input[placeholder*=\"mail\" i]"
+    },
+    {
+      "label": "password",
+      "sel": "input[type=\"password\"]",
+      "def": {
+        "text": "Password",
+        "color": "rgba(0, 0, 0, 0.65)",
+        "bg": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20px",
+        "radius": "4px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0.15)",
+        "pad": "7px 40px 7px 11px",
+        "shadow": "none",
+        "h": 40,
+        "w": 400
+      },
+      "hover": {
+        "text": "Password",
+        "color": "rgba(0, 0, 0, 0.65)",
+        "bg": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20px",
+        "radius": "4px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0.15)",
+        "pad": "7px 40px 7px 11px",
+        "shadow": "none",
+        "h": 40,
+        "w": 400
+      },
+      "focus": {
+        "text": "Password",
+        "color": "rgba(0, 0, 0, 0.65)",
+        "bg": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20px",
+        "radius": "4px",
+        "bw": "1px",
+        "bc": "rgba(0, 110, 209, 0.91)",
+        "pad": "7px 40px 7px 11px",
+        "shadow": "rgba(24, 144, 255, 0.18) 0px 0px 0px 3.57035px",
+        "h": 40,
+        "w": 400
+      },
+      "box": {
+        "x": 872,
+        "y": 532,
+        "width": 400,
+        "height": 40
+      }
+    },
+    {
+      "label": "submit",
+      "sel": "button:has-text(\"Log In\"), button[type=\"submit\"]",
+      "def": {
+        "text": "Log In",
+        "color": "rgba(0, 0, 0, 0.25)",
+        "bg": "rgba(0, 0, 0, 0.04)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20px",
+        "radius": "4px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0.15)",
+        "pad": "0px 15px",
+        "shadow": "none",
+        "h": 48,
+        "w": 400
+      },
+      "hover": {
+        "text": "Log In",
+        "color": "rgba(0, 0, 0, 0.25)",
+        "bg": "rgba(0, 0, 0, 0.04)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20px",
+        "radius": "4px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0.15)",
+        "pad": "0px 15px",
+        "shadow": "none",
+        "h": 48,
+        "w": 400
+      },
+      "focus": {
+        "text": "Log In",
+        "color": "rgba(0, 0, 0, 0.25)",
+        "bg": "rgba(0, 0, 0, 0.04)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20px",
+        "radius": "1.6px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0.15)",
+        "pad": "0px 15px",
+        "shadow": "none",
+        "h": 48,
+        "w": 400
+      },
+      "box": {
+        "x": 872,
+        "y": 672,
+        "width": 400,
+        "height": 48
+      }
+    }
+  ],
+  "mobileNotes": [
+    {
+      "id": "home",
+      "finalUrl": "https://www.dji.com/sg/mobile",
+      "viewport": {
+        "url": "https://www.dji.com/sg/mobile",
+        "w": 390,
+        "h": 844,
+        "dpr": 2,
+        "title": "DJI - Official Website"
+      }
+    },
+    {
+      "id": "camera-drones",
+      "finalUrl": "https://www.dji.com/sg/mobile/camera-drones",
+      "viewport": {
+        "url": "https://www.dji.com/sg/mobile/camera-drones",
+        "w": 390,
+        "h": 844,
+        "dpr": 2,
+        "title": "Buy DJI Camera Drone for Professional Aerial Photography Now - DJI Singapore"
+      }
+    },
+    {
+      "id": "mavic",
+      "finalUrl": "https://www.dji.com/sg/mobile/mavic-4-pro",
+      "viewport": {
+        "url": "https://www.dji.com/sg/mobile/mavic-4-pro",
+        "w": 390,
+        "h": 844,
+        "dpr": 2,
+        "title": "DJI Mavic 4 Pro - Spin Your World - DJI Singapore"
+      }
+    },
+    {
+      "id": "support",
+      "finalUrl": "https://www.dji.com/sg/mobile/support",
+      "viewport": {
+        "url": "https://www.dji.com/sg/mobile/support",
+        "w": 390,
+        "h": 844,
+        "dpr": 2,
+        "title": "DJI Support for Products Repairs Services and Technical Help - DJI Singapore"
+      }
+    },
+    {
+      "id": "where-to-buy",
+      "finalUrl": "https://www.dji.com/sg/mobile/where-to-buy/online-stores",
+      "viewport": {
+        "url": "https://www.dji.com/sg/mobile/where-to-buy/online-stores",
+        "w": 390,
+        "h": 844,
+        "dpr": 2,
+        "title": "DJI - Official Website"
+      }
+    }
+  ]
+}

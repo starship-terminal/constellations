@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DJI style guide</title>
+<style>
+:root {
+  --color-ink: rgba(0, 0, 0, 0.85);
+  --color-inkSolid: #3b3e40;
+  --color-muted: #707473;
+  --color-paper: #ffffff;
+  --color-band: #f2f2f2;
+  --color-accent: #0070d5;
+  --color-accentHover: #2490e3;
+  --color-onAccent: #ffffff;
+  --color-heroOutline: #ffffff;
+  --color-fieldBorder: rgba(0, 0, 0, 0.15);
+  --color-disabledText: rgba(0, 0, 0, 0.25);
+  --color-disabledFill: rgba(0, 0, 0, 0.04);
+  --font-family-sans: "Open Sans", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", "Hiragino Sans GB", "WenQuanYi Micro Hei", Arial, "sans-serif";
+  --typography-nav: 400 14px/64px var(--font-family-sans);
+  --typography-body: 400 16px/24px var(--font-family-sans);
+  --typography-button: 400 14px/16px var(--font-family-sans);
+  --typography-heading: 600 32px/36px var(--font-family-sans);
+  --typography-display: 500 48px/56px var(--font-family-sans);
+  --radius-none: 0px;
+  --radius-field: 4px;
+  --radius-buy: 100px;
+  --radius-hero: 64px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --size-store: 32px;
+  --size-buy: 40px;
+  --size-field: 40px;
+  --size-submit: 48px;
+  --size-nav: 64px;
+  --size-search: 32px;
+  --border-hairline: 1px;
+  --border-hero: 1px;
+  --background-page: var(--color-paper);
+  --background-surface: var(--color-band);
+  --background-header: var(--color-paper);
+  --text-primary: var(--color-inkSolid);
+  --text-muted: var(--color-muted);
+  --text-onAccent: var(--color-onAccent);
+  --text-disabled: var(--color-disabledText);
+  --text-link: var(--color-accent);
+  --border-default: var(--color-fieldBorder);
+  --border-strong: var(--color-ink);
+  --accent-default: var(--color-accent);
+  --accent-hover: var(--color-accentHover);
+  --action-primary: var(--color-accent);
+  --action-disabled: var(--color-disabledFill);
+  color-scheme: light;
+  --sg-sans: "Open Sans", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-size: 32px; font-weight: 600; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 32px 0 12px; }
+p { color: var(--text-muted); max-width: 68ch; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.sw { width: 72px; height: 48px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); }
+.store { display: inline-flex; align-items: center; height: var(--size-store); padding: 8px 16px; border-radius: 999px; background: var(--action-primary); color: var(--text-onAccent); font-size: 14px; text-decoration: none; }
+.buy { display: inline-flex; align-items: center; height: var(--size-buy); padding: 0 16px; border-radius: var(--radius-buy); background: var(--accent-default); color: var(--text-onAccent); text-decoration: none; }
+.ghost { display: inline-flex; align-items: center; height: 32px; padding: 5px 16px; border-radius: var(--radius-hero); border: 1px solid #fff; color: #fff; background: #1a1d24; text-decoration: none; }
+.field { height: var(--size-field); border: 1px solid var(--border-default); border-radius: var(--radius-field); padding: 7px 11px; font: inherit; }
+.disabled { height: var(--size-submit); padding: 0 15px; border-radius: var(--radius-field); border: 1px solid var(--border-default); background: var(--action-disabled); color: var(--text-disabled); }
+nav.sample { display: flex; gap: 20px; height: var(--size-nav); align-items: center; background: var(--background-header); }
+nav.sample a { color: var(--text-primary); text-decoration: none; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>DJI</h1>
+  <p>Public site, one light theme. Values come from tokens.json. The homepage hero is a photograph, so the outline pills below sit on a dark sample, not a tokenised dark theme.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw" style="background: var(--background-page)"></div>
+    <div class="sw" style="background: var(--background-surface)"></div>
+    <div class="sw" style="background: var(--accent-default)"></div>
+    <div class="sw" style="background: var(--accent-hover)"></div>
+    <div class="sw" style="background: var(--text-primary)"></div>
+    <div class="sw" style="background: var(--text-muted)"></div>
+  </div>
+  <h2>Bar</h2>
+  <nav class="sample"><strong>dji</strong><a>Camera Drones</a><a>Handheld</a><a>Support</a></nav>
+  <h2>Actions</h2>
+  <div class="row">
+    <a class="store">Store</a>
+    <a class="buy">Buy Now</a>
+    <a class="ghost">Learn More</a>
+    <button class="disabled" disabled>Log In</button>
+  </div>
+  <h2>Field</h2>
+  <input class="field" placeholder="Password" readonly>
+</div>
+</body>
+</html>

@@ -1,0 +1,2192 @@
+{
+  "product": "dji",
+  "note": "Declared custom properties found in same-origin stylesheets. An empty list is an honest reading, not a guess.",
+  "pages": {
+    "home": {
+      "url": "https://www.dji.com/sg",
+      "varCount": 0,
+      "vars": [],
+      "body": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px"
+      }
+    },
+    "camera-drones": {
+      "url": "https://www.dji.com/sg/camera-drones",
+      "varCount": 48,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    },
+    "handheld": {
+      "url": "https://www.dji.com/sg/handheld",
+      "varCount": 48,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    },
+    "power": {
+      "url": "https://www.dji.com/sg/products/power-series",
+      "varCount": 0,
+      "vars": [],
+      "body": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(242, 242, 242)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px"
+      }
+    },
+    "delivery": {
+      "url": "https://www.dji.com/sg/delivery",
+      "varCount": 48,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    },
+    "company": {
+      "url": "https://www.dji.com/sg/company",
+      "varCount": 0,
+      "vars": [],
+      "body": {
+        "color": "rgb(112, 116, 115)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px"
+      }
+    },
+    "media": {
+      "url": "https://www.dji.com/sg/media-center",
+      "varCount": 48,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    },
+    "trust": {
+      "url": "https://www.dji.com/sg/trust-center",
+      "varCount": 48,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    },
+    "support": {
+      "url": "https://www.dji.com/sg/support",
+      "varCount": 48,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    },
+    "where-to-buy": {
+      "url": "https://www.dji.com/sg/where-to-buy/online-stores",
+      "varCount": 0,
+      "vars": [],
+      "body": {
+        "color": "rgb(112, 116, 115)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px"
+      }
+    },
+    "mavic": {
+      "url": "https://www.dji.com/sg/mavic-4-pro",
+      "varCount": 196,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    },
+    "compare": {
+      "url": "https://www.dji.com/sg/products/comparison-consumer-drones",
+      "varCount": 0,
+      "vars": [],
+      "body": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px"
+      }
+    },
+    "choose": {
+      "url": "https://www.dji.com/sg/help-me-choose/camera-drones",
+      "varCount": 48,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(245, 245, 245)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    },
+    "search": {
+      "url": "https://www.dji.com/sg/search?q=mavic",
+      "varCount": 0,
+      "vars": [],
+      "body": {
+        "color": "rgb(112, 116, 115)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px"
+      }
+    },
+    "a11y": {
+      "url": "https://www.dji.com/sg/accessibility/web-accessibility",
+      "varCount": 48,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    },
+    "notfound": {
+      "url": "https://www.dji.com/sg/404?from=/sg/this-page-does-not-exist-capture",
+      "varCount": 48,
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      }
+    }
+  }
+}

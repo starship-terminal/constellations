@@ -1,0 +1,3263 @@
+{
+  "pages": {
+    "home": {
+      "url": "https://www.dji.com/sg",
+      "title": "DJI - Official Website",
+      "body": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "DJI",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "DJI.COM Accessibility",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Learn More",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "64px",
+        "borderTopWidth": "1px",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "padding": "5px 16px",
+        "height": "32px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "NAV",
+        "text": "Skip to main content Camera Drones Handheld Lifestyle Tech P",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [],
+      "varCount": 0,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "camera-drones": {
+      "url": "https://www.dji.com/sg/camera-drones",
+      "title": "Buy DJI Camera Drone for Professional Aerial Photography Now - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Camera Drones",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "48px",
+        "fontWeight": "600",
+        "lineHeight": "52px",
+        "letterSpacing": "-1.44px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px",
+        "height": "52px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Shop Now",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "lineHeight": "16px",
+        "letterSpacing": "-0.24px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "76px 8px 16px",
+        "height": "140px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 48,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "handheld": {
+      "url": "https://www.dji.com/sg/handheld",
+      "title": "Handheld Imaging Devices & Action Camera - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Handheld Imaging Devices",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "40px",
+        "fontWeight": "600",
+        "lineHeight": "52px",
+        "letterSpacing": "-1.2px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px",
+        "height": "52px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Shop Now",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "lineHeight": "16px",
+        "letterSpacing": "-0.24px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "76px 8px 16px",
+        "height": "144px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 48,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "power": {
+      "url": "https://www.dji.com/sg/products/power-series",
+      "title": "Portable Power Stations for Drones & Devices | DJI",
+      "body": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(242, 242, 242)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Portable Power Station",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "600",
+        "lineHeight": "48px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px",
+        "height": "48px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Learn More",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0.04)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "48px",
+        "letterSpacing": "-0.32px",
+        "borderRadius": "999px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px 32px",
+        "height": "48px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "NAV",
+        "text": "Skip to main content Camera Drones Handheld Lifestyle Tech P",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [],
+      "varCount": 0,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "delivery": {
+      "url": "https://www.dji.com/sg/delivery",
+      "title": "DJI Delivery - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "DJI FLYCART 30",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "lineHeight": "40.32px",
+        "letterSpacing": "-0.96px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "padding": "0px",
+        "height": "40px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Dynamic Aerial Delivery DJI FLYCART 30 Learn More Contact Us",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "0px",
+        "fontWeight": "400",
+        "lineHeight": "0px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px",
+        "height": "640px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 48,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "company": {
+      "url": "https://www.dji.com/sg/company",
+      "title": "About Us - DJI",
+      "body": {
+        "color": "rgb(112, 116, 115)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "",
+        "color": "rgb(112, 116, 115)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "42px",
+        "fontWeight": "300",
+        "lineHeight": "46.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(112, 116, 115)",
+        "padding": "0px",
+        "height": "0px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(112, 116, 115)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(112, 116, 115)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": null,
+      "header": {
+        "tag": "NAV",
+        "text": "Skip to main content Camera Drones Handheld Lifestyle Tech P",
+        "color": "rgb(112, 116, 115)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(112, 116, 115)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [],
+      "varCount": 0,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "media": {
+      "url": "https://www.dji.com/sg/media-center",
+      "title": "DJI Official Media Center - News, Insights & Media Coverage - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Media Center",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "lineHeight": "40.32px",
+        "letterSpacing": "-0.96px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px",
+        "height": "40px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": null,
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 48,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "trust": {
+      "url": "https://www.dji.com/sg/trust-center",
+      "title": "Trust Center - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "A Longstanding Commitment to Safety and Security",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "48px",
+        "fontWeight": "600",
+        "lineHeight": "56px",
+        "letterSpacing": "-1.44px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "padding": "0px",
+        "height": "112px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Learn More",
+        "color": "rgb(24, 144, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "-0.32px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(24, 144, 255)",
+        "padding": "0px",
+        "height": "25px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 48,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "support": {
+      "url": "https://www.dji.com/sg/support",
+      "title": "DJI Support for Products Repairs Services and Technical Help - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Support",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "lineHeight": "56px",
+        "letterSpacing": "-1.44px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "padding": "0px",
+        "height": "56px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Learn More",
+        "color": "rgb(24, 144, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "-0.28px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(24, 144, 255)",
+        "padding": "0px",
+        "height": "21px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 48,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "where-to-buy": {
+      "url": "https://www.dji.com/sg/where-to-buy/online-stores",
+      "title": "DJI - Official Website",
+      "body": {
+        "color": "rgb(112, 116, 115)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Where To Buy",
+        "color": "rgb(59, 62, 64)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "lineHeight": "35.2px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(59, 62, 64)",
+        "padding": "24px 0px 16px",
+        "height": "76px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(112, 116, 115)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(112, 116, 115)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Buy Now",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(0, 112, 213)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "-0.32px",
+        "borderRadius": "100px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "padding": "0px 16px",
+        "height": "40px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "NAV",
+        "text": "Skip to main content Camera Drones Handheld Lifestyle Tech P",
+        "color": "rgb(112, 116, 115)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(112, 116, 115)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [],
+      "varCount": 0,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "mavic": {
+      "url": "https://www.dji.com/sg/mavic-4-pro",
+      "title": "DJI Mavic 4 Pro - Spin Your World - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": null,
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Buy Now",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(0, 112, 213)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "14px",
+        "letterSpacing": "normal",
+        "borderRadius": "2px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "padding": "7px 16px",
+        "height": "30px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 196,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "compare": {
+      "url": "https://www.dji.com/sg/products/comparison-consumer-drones",
+      "title": "Compare DJI Mavic & Consumer Drones – Specs and Features",
+      "body": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Consumer Drones Comparison",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "lineHeight": "36px",
+        "letterSpacing": "-0.96px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "padding": "0px",
+        "height": "36px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Buy Now",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(60, 62, 64)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "4px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "padding": "8px 16px",
+        "height": "40px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "NAV",
+        "text": "Skip to main content Camera Drones Handheld Lifestyle Tech P",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [],
+      "varCount": 0,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "choose": {
+      "url": "https://www.dji.com/sg/help-me-choose/camera-drones",
+      "title": "Choose the right drone for you - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(245, 245, 245)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Find the best DJI drone for you",
+        "color": "rgb(59, 62, 64)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "40px",
+        "fontWeight": "500",
+        "lineHeight": "56px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(59, 62, 64)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": null,
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 48,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "search": {
+      "url": "https://www.dji.com/sg/search?q=mavic",
+      "title": "Search - DJI",
+      "body": {
+        "color": "rgb(112, 116, 115)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "size": "14px"
+      },
+      "h1": null,
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(112, 116, 115)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(112, 116, 115)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "tag": "A",
+        "text": "Learn more",
+        "color": "rgb(0, 112, 213)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 112, 213)",
+        "padding": "0px",
+        "height": "32px",
+        "boxShadow": "none"
+      },
+      "header": {
+        "tag": "NAV",
+        "text": "Skip to main content Camera Drones Handheld Lifestyle Tech P",
+        "color": "rgb(112, 116, 115)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(112, 116, 115)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [],
+      "varCount": 0,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "a11y": {
+      "url": "https://www.dji.com/sg/accessibility/web-accessibility",
+      "title": "Web Accessibility - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Web Accessibility",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "lineHeight": "60px",
+        "letterSpacing": "-1.44px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px",
+        "height": "60px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": null,
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 48,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    },
+    "notfound": {
+      "url": "https://www.dji.com/sg/404?from=/sg/this-page-does-not-exist-capture",
+      "title": "404 Page - Page not found - DJI Singapore",
+      "body": {
+        "color": "rgb(59, 62, 64)",
+        "background": "rgb(255, 255, 255)",
+        "font": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "size": "16px"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "404",
+        "color": "rgba(0, 0, 0, 0.85)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "96px",
+        "fontWeight": "600",
+        "lineHeight": "96px",
+        "letterSpacing": "-1.92px",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgba(0, 0, 0, 0.85)",
+        "padding": "0px",
+        "height": "96px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "tag": "A",
+        "text": "Skip to main content",
+        "color": "rgb(0, 0, 238)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(0, 0, 238)",
+        "padding": "0px",
+        "height": "1px",
+        "boxShadow": "none"
+      },
+      "button": null,
+      "header": {
+        "tag": "HEADER",
+        "text": "Camera Drones Handheld Lifestyle Tech Specialized Explore Su",
+        "color": "rgb(48, 50, 51)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, \"sans-serif\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopColor": "rgb(48, 50, 51)",
+        "padding": "0px",
+        "height": "64px",
+        "boxShadow": "none"
+      },
+      "vars": [
+        {
+          "name": "--nav-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-sticky",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-bg-open",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-hover",
+          "value": "#303233",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-text-secondary",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-dropdown-bg",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-underline-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-link-color",
+          "value": "rgba(0,0,0,0.85)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-divider-color",
+          "value": "#f0f1f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text",
+          "value": "#fff",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-light-text-hover",
+          "value": "hsla(0,0%,100%,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text",
+          "value": "#000",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-theme-dark-text-hover",
+          "value": "rgba(0,0,0,0.65)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-z-index",
+          "value": "1001",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-padding",
+          "value": "25px 0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-title-line-height",
+          "value": "14px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-font-weight",
+          "value": "400",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-item-gap",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-text-align",
+          "value": "normal",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-regular-align-items",
+          "value": "center",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-position",
+          "value": "fixed",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding",
+          "value": "unset",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-padding-y",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-submenu-padding-y",
+          "value": "12px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-item-active-bg",
+          "value": "rgba(0,0,0,0.02)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-l1-active-bg",
+          "value": "var(--nav-mobile-item-active-bg)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-open-bar-border",
+          "value": "#f2f2f2",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-hamburger-padding-x",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-inset",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-chevron-image",
+          "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgeG1sbnM9Imh0dH",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-step",
+          "value": "16px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l2",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step))",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l3",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*2)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-indent-l4",
+          "value": "calc(var(--nav-mobile-item-padding-x) + var(--nav-mobile-indent-step)*3)",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-panel-padding-bottom",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-color",
+          "value": "transparent",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-height",
+          "value": "0",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        },
+        {
+          "name": "--nav-mobile-divider-margin-left",
+          "value": "24px",
+          "selector": ":where(.siteHeader-module__siteHeader___BKc3I)"
+        }
+      ],
+      "varCount": 48,
+      "viewport": {
+        "w": 1440,
+        "h": 900,
+        "dpr": 1
+      }
+    }
+  },
+  "components": {}
+}
