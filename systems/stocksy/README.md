@@ -1,5 +1,7 @@
 # Stocksy
 
+Public site tree, dated 2026-11-22, is [site-tree.md](site-tree.md). That pass photographed the signed-out marketing pages, one collection, one asset page, the Ideas editorial index, and the empty login and signup walls. It did not replace the tokens or the 2026-11-19 readings below. `catalog.json` was left alone. `login-extracted` stays not-started.
+
 Stocksy is an artist-owned stock photo, video and illustration library at [stocksy.com](https://www.stocksy.com/). This package records the public signed-out site on 2026-11-19. No account was created. Nothing was purchased.
 
 The capture used the T3 preview browser. Computed styles were read from the live page at 1440 by 900, once at the fill width 1169 by 731, and on the home at 390 by 844. `devicePixelRatio` was 2. The preview browser did not produce screenshot frames. Headless Playwright was stopped by Cloudflare, so this package has no screenshots.
@@ -15,7 +17,8 @@ The capture used the T3 preview browser. Computed styles were read from the live
 | [patterns.md](patterns.md) | How the public pages are built. |
 | [components/](components/) | Empty `crops/` folder. Screenshot capture failed. |
 | [icons/](icons/) | Wordmark plus 17 stroke icons fetched from the public icon URLs, with [icons/INDEX.tsv](icons/INDEX.tsv). |
-| [screenshots/](screenshots/) | Empty. The preview browser returned no frames, and headless Playwright hit Cloudflare. |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22. Nav, footer, photographed pages, and where the walk stopped |
+| [screenshots/](screenshots/) | Public-page PNGs from 2026-11-22, listed in [screenshots/README.md](screenshots/README.md). The 2026-11-19 pass saved none. |
 | [raw/](raw/) | [raw/readings.md](raw/readings.md) and [raw/viewport.json](raw/viewport.json). |
 | [tools/](tools/) | Note on how the values were read. No Playwright rebuild. |
 
