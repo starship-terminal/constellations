@@ -487,9 +487,9 @@
       "description": "Des vêtements et accessoires fonctionnels et durables pour les professionnels du cinéma et de la musique",
       "status": "captured",
       "package": "systems/avnier",
-      "notes": "https://avnier.com/account/login asks for email and password. No code was sent.",
+      "notes": "https://avnier.com/account/login asks for email and password. No code was sent. Public walk 2026-11-21: the map starts at avnier.com and records which control opens which page, menu, overlay, dialog, or wall. SHOP mega-menu, search overlay, colour filter, size-guide dialog, first-order promo, contact, and histoire were photographed. Login, register, newsletter, contact, loyalty, and the promo form were not filled. Signed-in app was not captured. Public package refresh in PR 1631 at e195afacc3ee. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 2
     },
     {
@@ -878,9 +878,9 @@
       "description": "Book Fitness Classes & Salon Appointments",
       "status": "captured",
       "package": "systems/classpass",
-      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/607: signed-out marketing routes plus /login and /walkthrough as boundaries. Manifest row was left pending after merge. https://classpass.com/login asks for email and password, or Apple or Google. No code was sent.",
+      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/607: signed-out marketing routes plus /login and /walkthrough as boundaries. Manifest row was left pending after merge. https://classpass.com/login asks for email and password, or Apple or Google. No code was sent. Public walk 2026-11-21: the map starts at classpass.com and records which control opens which page, menu, drawer, or wall. Distinct public pages were photographed at desktop and phone. Login, signup, reset-password, and Apple, Google, Facebook, or SSO were recorded and not submitted. No email or password was typed. Signed-in app was not captured. Public package refresh in PR 1630 at 1d34f4183815. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 3
     },
     {
