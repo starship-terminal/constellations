@@ -1,0 +1,26 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "The public login and signup wall is https://app.spatial.chat/login. Start for Free, Try it Free, Sign Up, and Join SpatialChat open the same page. Continue with Google and Sign in with Apple were not clicked. The email field was left on the placeholder example@mail.com. Continue was not clicked. No password, code, phone number, or address was typed. Buy Now and the 14-day trial go to Stripe and were not opened. The reCAPTCHA on /free-trial-ad was not solved.",
+  "walls": [
+    {
+      "url": "https://app.spatial.chat/login",
+      "opened_from": "header Login, header Start for Free, hero Try it Free, footer Sign Up, SpatialChat Center Join SpatialChat",
+      "heading": "Welcome to SpatialChat",
+      "subheading": "Make your online meetings awesome",
+      "desktop": "screenshots/public/login-wall-desktop.png",
+      "phone": "screenshots/public/login-wall-phone.png",
+      "controls_not_used": [
+        "Continue with Google",
+        "Sign in with Apple",
+        "Enter your email",
+        "Continue"
+      ],
+      "stopped": true
+    }
+  ]
+}

@@ -23,3 +23,7 @@ At 390 CSS px the header is 72px. The desktop Login button's box height was 0. T
 ## Not captured
 
 Signed-in app shell, empty and loading states inside the product, destructive confirmation, search, tables, and onboarding. Those sit behind login. The email form was not submitted, so there is no validation pattern.
+
+## Public site
+
+[site-tree.md](site-tree.md) maps the homepage header, footer, and the pages those controls open. Shots from 2026-11-22 live in [screenshots/public/](screenshots/public/). The marketing pages are white with a purple news bar and a purple primary button. Login and signup are the same empty wall at https://app.spatial.chat/login: Google, Apple, an email field, and Continue. None of those were used.

@@ -2,6 +2,8 @@
 
 SpatialChat is a virtual events and meetings product. This package covers the public marketing site at https://spatial.chat/ and the signed-out login at https://app.spatial.chat/login, measured on 2026-11-19. No account was created. Themes seen: light only. Widths measured: 1440 and 390 CSS px.
 
+A 2026-11-22 pass mapped the public website at https://spatial.chat/ into [site-tree.md](site-tree.md) and photographed the marketing pages plus the empty login wall. Login, Start for Free, Try it Free, and Join SpatialChat open the same wall. Google and Apple were not clicked. The email field was not typed. `login-extracted` stays not-started. catalog.json was left alone.
+
 | File | What it holds |
 |---|---|
 | [README.md](README.md) | This file |
@@ -10,8 +12,11 @@ SpatialChat is a virtual events and meetings product. This package covers the pu
 | [tokens.json](tokens.json) | Measured colours, type, radii, spacing, and component roles |
 | [style-guide.html](style-guide.html) | Light guide rendered from the tokens |
 | [components.md](components.md) | Component inventory and gaps |
-| [patterns.md](patterns.md) | Marketing shell, pricing, and login layout |
+| [patterns.md](patterns.md) | Marketing shell, pricing, login layout, and the public site |
+| [site-tree.md](site-tree.md) | Which header and footer controls open which public page or wall |
+| [login-review.json](login-review.json) | Empty login wall. `login-extracted` is not-started |
 | [raw/](raw/) | Computed-style readings |
+| [screenshots/](screenshots/) | `public/` marketing pages and the empty login wall from 2026-11-22. Quantised to 256 colours |
 | [tools/](tools/) | Kit copy plus the builders used for this package |
 
 ## Brief
