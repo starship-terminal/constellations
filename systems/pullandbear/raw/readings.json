@@ -1,0 +1,70 @@
+{
+  "captured": "2026-11-22",
+  "region": "United Kingdom",
+  "startUrl": "https://www.pullandbear.com",
+  "landed": "https://www.pullandbear.com/sg/",
+  "storefront": "https://www.pullandbear.com/gb/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "png": { "pixelWidth": 2880, "pixelHeight": 1800 },
+  "body": {
+    "fontFamily": "\"Neue Haas\", Helvetica, Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "0.7px",
+    "lineHeight": "16px",
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)"
+  },
+  "search": {
+    "fontSize": "13.3333px",
+    "fontWeight": "400",
+    "letterSpacing": "0.7px",
+    "color": "rgb(0, 0, 0)",
+    "borderBottom": "0.5px solid rgb(0, 0, 0)",
+    "width": 128,
+    "height": 20
+  },
+  "account": { "width": 24, "height": 24, "opened": false },
+  "basket": { "width": 24, "height": 24, "opened": false, "count": "0" },
+  "promoBar": {
+    "sampled": "rgb(113, 197, 250)",
+    "hex": "#71c5fa",
+    "cssHeight": 36,
+    "text": "MIX & MATCH: 5% off with 2 items, 10% off with 3 or more | See selection",
+    "href": "https://www.pullandbear.com/gb/woman/clothing/make-your-pack-n7761"
+  },
+  "sale": {
+    "sampled": "rgb(203, 44, 59)",
+    "hex": "#cb2c3b",
+    "note": "Sampled from the -44% chip in screenshots/footer-light-1440.png. The chip is small, so the hex is the reddest pixel, not a flat fill reading."
+  },
+  "company": {
+    "url": "https://www.pullandbear.com/gb/page/company.html",
+    "kicker": { "tag": "H2", "fontSize": "22px", "fontWeight": "400", "lineHeight": "38px", "letterSpacing": "0.7px", "color": "rgb(0, 0, 0)" },
+    "display": { "tag": "H3", "fontSize": "46px", "fontWeight": "600", "lineHeight": "70px", "letterSpacing": "0.7px", "color": "rgb(0, 0, 0)", "text": "AN EVER YOUNG COMMUNITY" },
+    "body": { "fontSize": "12px", "fontWeight": "400", "lineHeight": "26px", "letterSpacing": "0.7px", "color": "rgb(90, 90, 90)", "width": 500 }
+  },
+  "categoryTitle": { "text": "New", "fontSize": "13px", "fontWeight": "600", "letterSpacing": "0.7px", "lineHeight": "13px", "color": "rgb(0, 0, 0)" },
+  "tokens": {
+    "--default-font-family": "'Neue Haas',Helvetica,Arial,sans-serif",
+    "--font-weight-base": "400",
+    "--font-weight-high": "600",
+    "--font-letter-spacing": ".7px",
+    "--color-primary-blue": "#2D64E3",
+    "--color-semantic-default-blue": "#346CEE",
+    "--color-semantic-default-red": "#D24343",
+    "--color-secondary-red": "#F25555",
+    "--color-greyscale-1000": "#000000",
+    "--color-greyscale-900": "#242424",
+    "--color-greyscale-800": "#5A5A5A",
+    "--color-greyscale-000": "#FFFFFF",
+    "--theme-foreground-color-new-header": "#000000"
+  },
+  "add": { "clicked": false },
+  "login": { "opened": false }
+}

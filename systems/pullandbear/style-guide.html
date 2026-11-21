@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pull&Bear public styles</title>
+<style>
+  :root {
+    --ink: #000000;
+    --page: #ffffff;
+    --muted: #5a5a5a;
+    --promo: #71c5fa;
+    --link: #2d64e3;
+    --sale: #cb2c3b;
+    --font: Helvetica, Arial, sans-serif;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--font);
+    letter-spacing: 0.7px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 91px;
+    padding: 0 40px;
+  }
+  .mark { font-weight: 700; letter-spacing: 0.5px; }
+  .search {
+    border: 0;
+    border-bottom: 0.5px solid var(--ink);
+    width: 128px;
+    height: 20px;
+    font: 13px var(--font);
+    letter-spacing: 0.7px;
+  }
+  .promo {
+    background: var(--promo);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+  main { padding: 48px 64px 80px; max-width: 880px; }
+  h1 { font-size: 46px; font-weight: 600; line-height: 70px; letter-spacing: 0.7px; margin: 0; }
+  .kicker { font-size: 22px; font-weight: 400; line-height: 38px; margin: 0 0 8px; }
+  p { font-size: 12px; line-height: 26px; color: var(--muted); max-width: 500px; }
+  .swatches { display: flex; gap: 16px; margin: 32px 0; }
+  .swatch { width: 96px; }
+  .chip { height: 48px; border: 1px solid #e4e4e4; }
+  .name { font-size: 12px; margin-top: 6px; }
+  .add {
+    background: var(--ink);
+    color: var(--page);
+    border: 0;
+    height: 44px;
+    padding: 0 48px;
+    font: 14px var(--font);
+  }
+  .sale {
+    display: inline-block;
+    background: var(--sale);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 6px;
+  }
+  a { color: var(--link); }
+  footer { border-top: 1px solid #e4e4e4; padding: 24px 64px; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="promo">MIX &amp; MATCH: 5% off with 2 items, 10% off with 3 or more</div>
+  <header>
+    <span>Menu</span>
+    <span class="mark">PULL&amp;BEAR</span>
+    <input class="search" placeholder="Search" aria-label="Search">
+  </header>
+  <main>
+    <p class="kicker">CONCEPT</p>
+    <h1>AN EVER YOUNG COMMUNITY</h1>
+    <p>Neue Haas is the live face. This page uses Helvetica, the fallback the site names. Display is 46px, weight 600. Body copy is 12px on #5a5a5a.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#000"></div><div class="name">Ink #000000</div></div>
+      <div class="swatch"><div class="chip" style="background:#fff"></div><div class="name">Page #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#5a5a5a"></div><div class="name">Muted #5a5a5a</div></div>
+      <div class="swatch"><div class="chip" style="background:#71c5fa"></div><div class="name">Promo #71c5fa</div></div>
+      <div class="swatch"><div class="chip" style="background:#2d64e3"></div><div class="name">Link #2d64e3</div></div>
+      <div class="swatch"><div class="chip" style="background:#cb2c3b"></div><div class="name">Sale #cb2c3b</div></div>
+    </div>
+    <p><span class="sale">-44%</span> £19.99</p>
+    <p><a href="https://www.pullandbear.com/gb/woman/promotions-n6492">Promotions</a></p>
+    <button class="add" type="button">Add</button>
+  </main>
+  <footer>United Kingdom. Signed-out capture, 2026-11-22. Add was not clicked.</footer>
+</body>
+</html>
