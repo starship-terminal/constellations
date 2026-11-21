@@ -16,7 +16,8 @@ The public default is **Light** (Vector 2022, `skin-theme-clientpref-day`). Text
 | [icon.png](icon.png) | 128px favicon, resized from wikipedia.ico. |
 | [tokens.json](tokens.json) | W3C tokens. `core` holds type and the search control. `light` and `dark` hold Codex colour roles. |
 | [DESIGN.md](DESIGN.md) | Hand-written from the measured tokens. Not regenerated, because that would rewrite the catalog. |
-| [style-guide.html](style-guide.html) | Swatches, the article title, a progressive link, and the search control. |
+| [style-guide.html](style-guide.html) | Swatches, the article title, a progressive link, and the search control. Hand-written from the measured tokens. |
+| [tools/](tools/) | How `style-guide.html` was written from `tokens.json`. No builder. |
 | [components.md](components.md) | Component inventory and gaps. No crops. |
 | [patterns.md](patterns.md) | Main page, article, search, appearance, and the auth walls. |
 | [raw/measured-home.json](raw/measured-home.json) | Computed styles and Codex custom properties on the main page, Light. |
