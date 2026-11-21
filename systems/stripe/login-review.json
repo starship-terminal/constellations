@@ -1,0 +1,96 @@
+{
+  "product": "Stripe",
+  "domain": "stripe.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in",
+      "url": "https://dashboard.stripe.com/login",
+      "title": "Stripe Login | Sign in to the Stripe Dashboard",
+      "painted": true,
+      "headings": [
+        "Sign in to your account"
+      ],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "required": false,
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "required": false,
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [
+        "Google",
+        "Passkey",
+        "SSO"
+      ],
+      "otherControls": [
+        "Forgot your password?",
+        "Remember me on this device",
+        "Sign in",
+        "Create account"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email and password were empty. An hCaptcha response field was present and empty. No provider was clicked. No form was submitted. The dashboard was not entered."
+    },
+    {
+      "control": "header Get started and phone Start now",
+      "url": "https://dashboard.stripe.com/register",
+      "title": "Sign up and create a Stripe account | Stripe",
+      "painted": true,
+      "headings": [
+        "Create your Stripe account"
+      ],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "required": false,
+          "valueLength": 0
+        },
+        {
+          "label": "Full name",
+          "type": "text",
+          "required": false,
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "required": false,
+          "valueLength": 0
+        },
+        {
+          "label": "Country",
+          "type": "select",
+          "value": "Singapore"
+        }
+      ],
+      "identityProvidersSeen": [
+        "Google"
+      ],
+      "otherControls": [
+        "Create account",
+        "Sign in"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/register-light-1440.png",
+      "note": "Fields were empty. Country was preselected to Singapore and was not opened. A blurred sample dashboard sits behind the card. That is the wall, not a signed-in session. No provider was clicked. No form was submitted."
+    }
+  ]
+}
