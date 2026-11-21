@@ -1,1 +1,1 @@
-No element crops. The preview browser did not produce screenshot frames.
+No element crops. Page shots are in [screenshots/](../../screenshots/).

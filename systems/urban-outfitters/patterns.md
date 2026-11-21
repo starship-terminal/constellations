@@ -1,6 +1,6 @@
 # Patterns
 
-How the measured pieces sit together on the signed-out site. Screenshot frames were unavailable, so these notes follow the computed layout.
+How the measured pieces sit together on the signed-out site. Viewport shots from 2026-11-22 are in [screenshots/](screenshots/). The map of controls is [site-tree.md](site-tree.md).
 
 ## Shop chrome
 
@@ -18,6 +18,10 @@ The title is 22px, weight 100, `#222222`. The sale price uses the same size in `
 
 Sign In opens as a 475px white dialog. It asks for a mobile number, with an Email tab beside it. A country select (radius 5px) sits left of a square phone field. Next is the black primary button. The form was closed without a phone number, email, or verification code.
 
+## Phone
+
+At 390px the utility row and primary nav collapse. Search, heart, bag, and Open navigation stay in the header. Open navigation is an in-page drawer with the same category links. The homepage then shows a two-column grid of black category tiles. See [screenshots/home-mobile.png](screenshots/home-mobile.png) and [screenshots/home-mobile-nav.png](screenshots/home-mobile-nav.png).
+
 ## What was not reached
 
-Bag, checkout, payment, store locator details, and a signed-in account were not opened. The mobile width was not measured. No dark theme was offered on these pages.
+Checkout, payment, and a signed-in account were not opened. The empty bag was. `/login` stopped at a captcha. No dark theme was offered on these pages.

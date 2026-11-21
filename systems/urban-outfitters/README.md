@@ -1,6 +1,6 @@
 # Urban Outfitters design reference
 
-A token set for Urban Outfitters' public signed-out storefront, for building a fashion shop in that style. It was read from urbanoutfitters.com on 2026-11-19, signed out, in the T3 preview browser at a measured CSS viewport of 1440 by 900 (devicePixelRatio 2). Pages read: the home page, the women's clothing grid, one product page, and the sign-in dialog that opens from the header. No account was created. Nothing was added to bag.
+A token set for Urban Outfitters' public signed-out storefront, for building a fashion shop in that style. Values were read from urbanoutfitters.com on 2026-11-19 and checked again on 2026-11-22, signed out, in the T3 preview browser. Desktop CSS viewport 1440 by 900, phone CSS viewport 390 by 844, both at devicePixelRatio 2. Pages photographed: home, the Women's mega-menu, the women's clothing grid, one product page, search, the empty bag, and the empty sign-in and create-account dialogs. No account was created. Nothing was added to bag. Checkout was not entered. `/login` stopped at a captcha wall, which was not solved and not saved.
 
 The storefront is white, with `#222222` ink, Helvetica at 12px for chrome, square controls, a black cart button, red sale prices, and green promo lines. The first promo slide is a measured red (`#eb4034`) that is not a custom property.
 
@@ -12,8 +12,9 @@ The storefront is white, with `#222222` ink, Helvetica at 12px for chrome, squar
 | [style-guide.html](style-guide.html) | A page that renders the measured colours, type, and controls |
 | [components.md](components.md) | Component inventory with computed values and gaps |
 | [patterns.md](patterns.md) | How the chrome, grid, product page, and sign-in dialog fit together |
-| [components/](components/) | `crops/` has no images. The preview browser did not produce screenshot frames. |
-| [screenshots/](screenshots/) | No page captures. Same screenshot-frame failure. Readings are in [raw/](raw/). |
+| [site-tree.md](site-tree.md) | Which controls open which pages, menus, drawers, and dialogs |
+| [components/](components/) | `crops/` has no element crops. Page shots are in [screenshots/](screenshots/). |
+| [screenshots/](screenshots/) | Public viewport captures from 2026-11-22, desktop and phone |
 | [raw/](raw/) | [css-vars.json](raw/css-vars.json) (417 custom properties from `:root`) and [measurements.md](raw/measurements.md) |
 | [tools/](tools/) | The copied kit, plus the style-guide template |
 
@@ -79,13 +80,13 @@ Every colour, type size, radius, and box came from `getComputedStyle` on the liv
 
 - **Tokens.** Custom properties were read from `document.documentElement` on the home page. Quiq chat-widget variables were dropped. Channel triplets such as `--grey-dark: 34, 34, 34` were composed to hex only when a matching `rgb()` token or a computed colour confirmed them.
 - **Components.** Header, promo strip, nav, search, product tiles, the product page buy column, and the sign-in dialog were measured in place. The sign-in dialog was opened and closed. The phone field was not filled.
-- **Screenshots.** `preview_snapshot` returned "The browser is not producing screenshot frames". No image was invented, and no headless session was started after that failure.
+- **Screenshots.** On 2026-11-22 `preview_snapshot` wrote viewport PNGs at the measured CSS sizes. They were quantised to 256 colours. The 2026-11-19 run had no frames. Those notes stay in [raw/measurements.md](raw/measurements.md).
 
 Nothing was bought, added to bag, subscribed, or signed in.
 
 ## What to distrust
 
-- **No screenshots.** Layout notes in [patterns.md](patterns.md) follow computed boxes, not a picture.
+- **Viewport shots, not full-page stitches.** [screenshots/](screenshots/) shows the first screen of each page. The women's grid reports a scroll height near 20,000px and was not tiled.
 - **One theme.** No dark switch was on the pages that were measured. There is no dark token set.
 - **Promo red is computed, not declared.** `#eb4034` is the first slide's background. Later slides use `#222222`. Do not treat the red as a permanent brand token.
 - **Hover and disabled colours are authored.** They resolve from `--button-*-hover` and `--button-*-disabled`. A live hover repaint was not captured, because synthetic mouse events did not change computed colour.
@@ -118,7 +119,7 @@ Nothing was bought, added to bag, subscribed, or signed in.
 | Radio | captured | colour swatches |
 | Switch | not captured | only inside the unanswered cookie center |
 | Tabs | captured | Mobile Number and Email in the sign-in dialog |
-| Menu | partly | primary nav measured; mega-menu not opened |
+| Menu | captured | Women's mega-menu, [screenshots/home-womens-menu.png](screenshots/home-womens-menu.png); phone drawer [screenshots/home-mobile-nav.png](screenshots/home-mobile-nav.png) |
 | Tooltip | not captured | trigger measured; panel not opened |
 | Dialog | captured | sign-in dialog, then closed |
 | Toast | not present | notification tokens exist; no toast was shown |
@@ -130,14 +131,14 @@ Nothing was bought, added to bag, subscribed, or signed in.
 | States: hover, pressed, disabled, error | partly | authored button tokens; no live repaint |
 | App shell | captured | home header and women's grid |
 | Form with a validation error | not captured | the phone form was not submitted |
-| Empty, loading, checkout | not captured | bag and checkout were not opened |
+| Empty, loading, checkout | partly | empty bag [screenshots/cart-empty.png](screenshots/cart-empty.png); checkout not entered; no loading state held |
 | Themes | partly | light only |
-| Widths | partly | 1440 measured; 390 not measured |
-| Screenshots | not captured | preview browser produced no screenshot frames |
+| Widths | captured | 1440 and 390, both devicePixelRatio 2 |
+| Screenshots | captured | [screenshots/](screenshots/), viewport only |
 
 ## Do and don't
 
-1. **Do keep the shop white and the ink `#222222`.** Chrome, tiles, and the dialog sit on `#ffffff`. Muted copy is `#707070`. Hairlines are `#dddddd`. See [raw/measurements.md](raw/measurements.md).
+1. **Do keep the shop white and the ink `#222222`.** Chrome, tiles, and the dialog sit on `#ffffff`. Muted copy is `#707070`. Hairlines are `#dddddd`. See [screenshots/home-desktop-viewport.png](screenshots/home-desktop-viewport.png).
 2. **Do keep controls square.** Nav, search, cart, size chips, and the dialog are 0px radius. The country select is the measured exception at 5px, and swatches are circles.
 3. **Do use black for the buy button.** The cart button and Next are `#222222` with white bold 16px type. Hover, from the stylesheet, is `#707070`.
 4. **Do use red only for the sale price and green only for the promo line.** Sale computed `#d83604`. Promo copy computed `#3a8700`.
@@ -153,8 +154,8 @@ cd systems/urban-outfitters
 python3 ../../tools/catalog.py design-md urban-outfitters
 ```
 
-The live readings are in [raw/](raw/). Re-measure in a browser that can take screenshots before adding crops.
+The live readings are in [raw/](raw/). Page shots are in [screenshots/](screenshots/).
 
-## Screenshot gap
+## Where this capture stopped
 
-The T3 preview browser loaded the public pages and allowed DOM measurement. `preview_snapshot` failed with "The browser is not producing screenshot frames". This package records that gap and does not invent images.
+Public shop pages, the Women's menu, search, the empty bag, and the empty sign-in and create-account dialogs were photographed. No field was typed. No form was submitted. Checkout was not entered. `/login` (the heart icon) returned a captcha wall. That shot was discarded. `login-extracted` stays not-started. [catalog.json](../../catalog.json) was not edited in this refresh.
