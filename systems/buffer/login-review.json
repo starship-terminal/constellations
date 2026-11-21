@@ -1,0 +1,96 @@
+{
+  "product": "Buffer",
+  "domain": "buffer.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. The session path segment on auth.buffer.com was stripped from the recorded URL.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in",
+      "url": "https://login.buffer.com/login",
+      "paintedUrlHost": "auth.buffer.com",
+      "title": "Buffer - Log In",
+      "painted": true,
+      "headings": ["Log in to Buffer"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "name": "email",
+          "type": "email",
+          "placeholder": "Your email address",
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "name": "password",
+          "type": "password",
+          "placeholder": "Your password",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "Create an account",
+        "Show password",
+        "Forgot Password?",
+        "Continue",
+        "Terms of Service",
+        "Privacy Policy",
+        "Security"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-empty-light-1440.png",
+      "note": "Empty login wall. Both fields were empty. Continue was not clicked. Forgot Password was not opened. No identity provider was shown."
+    },
+    {
+      "control": "header Get started for free",
+      "url": "https://login.buffer.com/signup",
+      "paintedUrlHost": "auth.buffer.com",
+      "title": "Buffer - Sign Up",
+      "painted": true,
+      "headings": ["Create a Buffer Account"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "name": "email",
+          "type": "email",
+          "placeholder": "Your email address",
+          "valueLength": 0
+        },
+        {
+          "label": "Create Password",
+          "name": "password",
+          "type": "password",
+          "placeholder": "Your password",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "Log in instead",
+        "Show password",
+        "Sign Up",
+        "Terms of Service",
+        "Privacy Policy",
+        "Security"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/signup-empty-light-1440.png",
+      "note": "Empty signup wall. Email and password were empty. Sign Up was not clicked. A captcha field was present and was not solved. The Insights panel on the right is a marketing illustration, not a signed-in inbox."
+    }
+  ],
+  "notOpened": [
+    "Continue, Sign Up, and Forgot Password were not clicked.",
+    "No identity provider was shown, and none was clicked.",
+    "Pricing Let's go and Start 14-day free trial were not clicked. Those are signup and checkout walls.",
+    "Open Buffer (publish.buffer.com) was not opened. That is the signed-in app.",
+    "Homepage Enter your email was left empty and was not submitted.",
+    "App store, social, and mailto links were not followed."
+  ]
+}

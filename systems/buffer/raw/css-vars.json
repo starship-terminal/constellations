@@ -1,0 +1,11 @@
+{
+  "captured": "2026-11-22",
+  "page": "https://buffer.com/",
+  "note": "No custom properties resolved on :root. Marketing CSS is hashed Next sheets on static.buffer.com. Values below are getComputedStyle readings, not stylesheet variables.",
+  "stylesheets": [
+    "https://static.buffer.com/marketing/_next/static/css/5958c7d79b682537.css",
+    "https://static.buffer.com/marketing/_next/static/css/57475ad63b1ee9d4.css",
+    "https://static.buffer.com/marketing/_next/static/css/7a91ba57f9bb4039.css"
+  ],
+  "customPropertyCount": 0
+}

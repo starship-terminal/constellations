@@ -1,0 +1,23 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-phone-light-390",
+  "url": "https://buffer.com/",
+  "title": "Buffer: Social media management for everyone",
+  "h1": "Buffer",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "note": "First viewport. Signed out. Cookie overlay hidden, not accepted. No form submitted. Read colours from tokens.json, not from this PNG."
+}

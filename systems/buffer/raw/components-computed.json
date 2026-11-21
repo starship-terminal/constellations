@@ -1,0 +1,78 @@
+{
+  "captured": "2026-11-22",
+  "page": "https://buffer.com/",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "colorScheme": "normal",
+  "readings": {
+    "body": {
+      "backgroundColor": "rgb(254, 253, 251)",
+      "color": "rgb(33, 49, 48)",
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "25.2px"
+    },
+    "header": {
+      "backgroundColor": "rgb(254, 253, 251)",
+      "color": "rgb(33, 49, 48)",
+      "height": "73px"
+    },
+    "hero": {
+      "text": "Your social media workspace",
+      "fontFamily": "Stolzl, ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "75.8px",
+      "fontWeight": "400",
+      "lineHeight": "83.38px",
+      "letterSpacing": "-1.516px",
+      "color": "rgb(33, 49, 48)"
+    },
+    "wordmark": {
+      "text": "Buffer",
+      "fontFamily": "Stolzl",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "color": "rgb(33, 49, 48)"
+    },
+    "muted": {
+      "text": "362,636 creators, brands, and agencies using Buffer",
+      "color": "rgb(110, 110, 104)",
+      "fontFamily": "Stolzl",
+      "fontSize": "18px",
+      "fontWeight": "400"
+    },
+    "primaryButton": {
+      "text": "Get started for free",
+      "element": "span.ButtonBrand_buttonContent__5EuHe",
+      "backgroundColor": "rgb(176, 236, 156)",
+      "color": "rgb(33, 49, 48)",
+      "borderRadius": "1440px",
+      "height": "63px",
+      "fontFamily": "Figtree",
+      "fontSize": "18px",
+      "fontWeight": "400"
+    },
+    "emailField": {
+      "placeholder": "Enter your email...",
+      "valueLength": 0,
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(33, 49, 48)",
+      "borderRadius": "1440px",
+      "padding": "18px 27px",
+      "height": "61px",
+      "fontSize": "18px",
+      "wrapperBorder": "1px solid rgb(110, 110, 104)",
+      "wrapperShadow": "rgba(23, 23, 23, 0.1) 0px 4px 12px -2px, rgba(23, 23, 23, 0.05) 0px 0px 1px 1px"
+    },
+    "loginLink": {
+      "color": "rgb(33, 49, 48)",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "borderRadius": "1440px",
+      "note": "The outline sits on a wrapper. That border colour was not measured."
+    },
+    "footer": {
+      "backgroundColor": "rgb(33, 49, 48)",
+      "color": "rgb(255, 255, 255)"
+    }
+  }
+}
