@@ -1,0 +1,17 @@
+{
+  "slug": "fraud-desktop",
+  "requested": "https://www.twilio.com/en-us/use-cases/fraud-prevention",
+  "final": "https://www.twilio.com/en-us/use-cases/fraud-prevention",
+  "title": "Fraud prevention | Twilio",
+  "h1": [
+    "Fraud prevention",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "fraud-desktop.png",
+  "status": 200
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "partners-desktop",
+  "requested": "https://www.twilio.com/en-us/partners",
+  "final": "https://www.twilio.com/en-us/partners",
+  "title": "Move Faster with a Twilio Partner for Custom Solutions | Twilio",
+  "h1": [
+    "Move faster with a Twilio Partner"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "partners-desktop.png",
+  "status": 200
+}

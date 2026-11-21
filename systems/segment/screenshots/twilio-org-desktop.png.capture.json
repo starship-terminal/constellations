@@ -1,0 +1,16 @@
+{
+  "slug": "twilio-org-desktop",
+  "requested": "https://www.twilio.org/en-us",
+  "final": "https://www.twilio.org/en-us",
+  "title": "Nonprofit Communications | Twilio.org",
+  "h1": [
+    "Create impact at scale through communication"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "twilio-org-desktop.png",
+  "status": 200
+}

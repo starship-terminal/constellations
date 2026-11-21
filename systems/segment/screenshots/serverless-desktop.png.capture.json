@@ -1,0 +1,17 @@
+{
+  "slug": "serverless-desktop",
+  "requested": "https://www.twilio.com/en-us/serverless",
+  "final": "https://www.twilio.com/en-us/serverless",
+  "title": "Serverless | Twilio",
+  "h1": [
+    "Build it. Deploy it. Serverless and stress-free.",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "serverless-desktop.png",
+  "status": 200
+}

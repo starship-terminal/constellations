@@ -1,0 +1,17 @@
+{
+  "slug": "solutions-desktop",
+  "requested": "https://www.twilio.com/en-us/solutions",
+  "final": "https://www.twilio.com/en-us/solutions",
+  "title": "Solutions overview | Twilio",
+  "h1": [
+    "Twilio Solutions",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "solutions-desktop.png",
+  "status": 200
+}

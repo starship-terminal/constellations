@@ -1,0 +1,17 @@
+{
+  "slug": "engage-desktop",
+  "requested": "https://www.twilio.com/en-us/products/engage",
+  "final": "https://www.twilio.com/en-us/products/engage",
+  "title": "Engage | Twilio",
+  "h1": [
+    "Build experiences that react in real time, everywhere your customers are.",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "engage-desktop.png",
+  "status": 200
+}

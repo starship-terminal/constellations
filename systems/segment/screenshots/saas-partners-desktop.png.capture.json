@@ -1,0 +1,17 @@
+{
+  "slug": "saas-partners-desktop",
+  "requested": "https://www.twilio.com/en-us/partners/saas",
+  "final": "https://www.twilio.com/en-us/partners/saas#/",
+  "title": "Find a Twilio SaaS Partner | Twilio",
+  "h1": [
+    "SaaS Solutions - Powered by Twilio",
+    "Filters"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "saas-partners-desktop.png",
+  "status": 200
+}

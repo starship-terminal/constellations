@@ -1,0 +1,374 @@
+[
+  {
+    "file": "acquisition-desktop.png",
+    "final": "https://www.twilio.com/en-us/use-cases/customer-acquisition-activation",
+    "title": "Customer acquisition activation | Twilio",
+    "status": 200
+  },
+  {
+    "file": "agent-productivity-desktop.png",
+    "final": "https://www.twilio.com/en-us/solutions/agent-productivity",
+    "title": "AI agent productivity | Twilio",
+    "status": 200
+  },
+  {
+    "file": "ai-desktop.png",
+    "final": "https://www.twilio.com/en-us/ai",
+    "title": "AI for personalized customer engagement | Twilio",
+    "status": 200
+  },
+  {
+    "file": "audience-desktop.png",
+    "final": "https://www.twilio.com/en-us/use-cases/segmentation-audience-activation",
+    "title": "Audience Segmentation & Activation | Twilio",
+    "status": 200
+  },
+  {
+    "file": "auth-identity-desktop.png",
+    "final": "https://www.twilio.com/en-us/user-authentication-identity",
+    "title": "User Authentication & Identity | Twilio",
+    "status": 200
+  },
+  {
+    "file": "beta-desktop.png",
+    "final": "https://www.twilio.com/en-us/products/beta",
+    "title": "Beta products and features | Twilio",
+    "status": 200
+  },
+  {
+    "file": "branded-calling-desktop.png",
+    "final": "https://www.twilio.com/en-us/voice/branded-calling",
+    "title": "Branded calling | Twilio",
+    "status": 200
+  },
+  {
+    "file": "bulk-email-desktop.png",
+    "final": "https://www.twilio.com/en-us/resource-center/bulk-email-guide",
+    "title": "Bulk email service: What it is & how to send mass emails | Twilio",
+    "status": 200
+  },
+  {
+    "file": "catalog-desktop.png",
+    "final": "https://www.twilio.com/en-us/catalog",
+    "title": "Catalog | Twilio",
+    "status": 200
+  },
+  {
+    "file": "cdp-desktop.png",
+    "final": "https://www.twilio.com/en-us/customer-data-platform",
+    "title": "Twilio Customer data platform (CDP) | Twilio",
+    "status": 200
+  },
+  {
+    "file": "cep-desktop.png",
+    "final": "https://www.twilio.com/en-us/customer-engagement-platform",
+    "title": "Customer Engagement Platform | Twilio",
+    "status": 200
+  },
+  {
+    "file": "company-desktop.png",
+    "final": "https://www.twilio.com/en-us/company",
+    "title": "Twilio - About the Cloud Communications Company | Twilio",
+    "status": 200
+  },
+  {
+    "file": "connections-desktop.png",
+    "final": "https://www.twilio.com/en-us/products/connections",
+    "title": "Connections | Twilio",
+    "status": 200
+  },
+  {
+    "file": "connections-pricing-desktop.png",
+    "final": "https://www.twilio.com/en-us/products/connections/pricing",
+    "title": "Connections pricing | Twilio",
+    "status": 200
+  },
+  {
+    "file": "contact-center-desktop.png",
+    "final": "https://www.twilio.com/en-us/flex/use-cases/contact-center",
+    "title": "Contact Center Software | Twilio",
+    "status": 200
+  },
+  {
+    "file": "contact-sales-desktop.png",
+    "final": "https://www.twilio.com/en-us/help/sales",
+    "title": "Talk to Sales | Twilio",
+    "status": 200
+  },
+  {
+    "file": "conversational-ai-desktop.png",
+    "final": "https://www.twilio.com/en-us/products/conversational-ai",
+    "title": "Twilio Conversations - The Engine for Conversational AI | Twilio",
+    "status": 200
+  },
+  {
+    "file": "cpaas-desktop.png",
+    "final": "https://www.twilio.com/en-us/cpaas",
+    "title": "Twilio Communications platform CPaaS | Twilio",
+    "status": 200
+  },
+  {
+    "file": "customer-data-pricing-desktop.png",
+    "final": "https://www.twilio.com/en-us/pricing/customer-data",
+    "title": "Customer Data Platform Pricing | Twilio",
+    "status": 200
+  },
+  {
+    "file": "customers-desktop.png",
+    "final": "https://customers.twilio.com/en-us",
+    "title": "Customer Stories | Twilio",
+    "status": 200
+  },
+  {
+    "file": "data-management-desktop.png",
+    "final": "https://www.twilio.com/en-us/use-cases/customer-data-management-integration",
+    "title": "Customer Data Management & Integration | Twilio",
+    "status": 200
+  },
+  {
+    "file": "docs-connections-desktop.png",
+    "final": "https://www.twilio.com/docs/segment/connections",
+    "title": "Connections Overview | Twilio",
+    "status": 200
+  },
+  {
+    "file": "docs-conversations-desktop.png",
+    "final": "https://www.twilio.com/docs/conversations",
+    "title": "Twilio Conversations | Twilio",
+    "status": 200
+  },
+  {
+    "file": "docs-desktop.png",
+    "final": "https://www.twilio.com/docs",
+    "title": "Docs: API Reference, Tutorials, and Integration | Twilio",
+    "status": 200
+  },
+  {
+    "file": "docs-segment-desktop.png",
+    "final": "https://www.twilio.com/docs/segment",
+    "title": "Twilio Segment | Twilio",
+    "status": 200
+  },
+  {
+    "file": "docs-sms-desktop.png",
+    "final": "https://www.twilio.com/docs/messaging/api",
+    "title": "Messaging API Overview | Twilio",
+    "status": 200
+  },
+  {
+    "file": "docs-smtp-desktop.png",
+    "final": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/getting-started-smtp",
+    "title": "How to send an Email with SMTP | SendGrid Docs | Twilio",
+    "status": 200
+  },
+  {
+    "file": "docs-voice-desktop.png",
+    "final": "https://www.twilio.com/docs/voice",
+    "title": "Programmable Voice | Twilio",
+    "status": 200
+  },
+  {
+    "file": "docs-whatsapp-desktop.png",
+    "final": "https://www.twilio.com/docs/whatsapp",
+    "title": "WhatsApp Business Platform with Twilio | Twilio",
+    "status": 200
+  },
+  {
+    "file": "email-api-desktop.png",
+    "final": "https://www.twilio.com/en-us/products/email-api",
+    "title": "Twilio SendGrid Email API | Twilio",
+    "status": 200
+  },
+  {
+    "file": "engage-desktop.png",
+    "final": "https://www.twilio.com/en-us/products/engage",
+    "title": "Engage | Twilio",
+    "status": 200
+  },
+  {
+    "file": "events-desktop.png",
+    "final": "https://www.twilio.com/en-us/events",
+    "title": "Events | Twilio",
+    "status": 200
+  },
+  {
+    "file": "fraud-desktop.png",
+    "final": "https://www.twilio.com/en-us/use-cases/fraud-prevention",
+    "title": "Fraud prevention | Twilio",
+    "status": 200
+  },
+  {
+    "file": "help-center-desktop.png",
+    "final": "https://help.twilio.com/",
+    "title": "Twilio Help Center",
+    "status": 200
+  },
+  {
+    "file": "home-desktop.png",
+    "final": "https://www.twilio.com/en-us/segment",
+    "title": "Twilio Segment Customer Data Platform | Twilio",
+    "status": 200
+  },
+  {
+    "file": "home-phone.png",
+    "final": "https://www.twilio.com/en-us/segment",
+    "title": "Twilio Segment Customer Data Platform | Twilio",
+    "status": 200
+  },
+  {
+    "file": "ivr-desktop.png",
+    "final": "https://www.twilio.com/en-us/use-cases/ivr",
+    "title": "Interactive voice response (IVR) solutions | Twilio",
+    "status": 200
+  },
+  {
+    "file": "legal-desktop.png",
+    "final": "https://www.twilio.com/en-us/legal/tos",
+    "title": "Twilio Terms of Service | Twilio",
+    "status": 200
+  },
+  {
+    "file": "login-desktop.png",
+    "final": "https://app.segment.com/login",
+    "title": "Sign In - Segment",
+    "status": 200
+  },
+  {
+    "file": "login-phone.png",
+    "final": "https://app.segment.com/login",
+    "title": "Sign In - Segment",
+    "status": 200
+  },
+  {
+    "file": "mass-texting-desktop.png",
+    "final": "https://www.twilio.com/en-us/use-cases/mass-texting",
+    "title": "Mass texting service | Twilio",
+    "status": 200
+  },
+  {
+    "file": "partners-desktop.png",
+    "final": "https://www.twilio.com/en-us/partners",
+    "title": "Move Faster with a Twilio Partner for Custom Solutions | Twilio",
+    "status": 200
+  },
+  {
+    "file": "press-desktop.png",
+    "final": "https://www.twilio.com/en-us/press",
+    "title": "Press | Twilio",
+    "status": 200
+  },
+  {
+    "file": "pricing-phone.png",
+    "final": "https://www.twilio.com/en-us/pricing/customer-data",
+    "title": "Customer Data Platform Pricing | Twilio",
+    "status": 200
+  },
+  {
+    "file": "privacy-desktop.png",
+    "final": "https://www.twilio.com/en-us/legal/privacy",
+    "title": "Website Privacy Notice | Twilio",
+    "status": 200
+  },
+  {
+    "file": "products-desktop.png",
+    "final": "https://www.twilio.com/en-us/products",
+    "title": "Product, services, features | Twilio",
+    "status": 200
+  },
+  {
+    "file": "rcs-desktop.png",
+    "final": "https://www.twilio.com/en-us/messaging/channels/rcs",
+    "title": "RCS Business Messaging | Twilio",
+    "status": 200
+  },
+  {
+    "file": "recipes-desktop.png",
+    "final": "https://www.twilio.com/en-us/recipes",
+    "title": "Recipes | Twilio",
+    "status": 200
+  },
+  {
+    "file": "saas-partners-desktop.png",
+    "final": "https://www.twilio.com/en-us/partners/saas#/",
+    "title": "Find a Twilio SaaS Partner | Twilio",
+    "status": 200
+  },
+  {
+    "file": "sdks-desktop.png",
+    "final": "https://www.twilio.com/docs/libraries",
+    "title": "SDKs | Twilio",
+    "status": 200
+  },
+  {
+    "file": "security-desktop.png",
+    "final": "https://www.twilio.com/en-us/security",
+    "title": "Secure Communications with Twilio | Twilio",
+    "status": 200
+  },
+  {
+    "file": "serverless-desktop.png",
+    "final": "https://www.twilio.com/en-us/serverless",
+    "title": "Serverless | Twilio",
+    "status": 200
+  },
+  {
+    "file": "signup-desktop.png",
+    "final": "https://app.segment.com/signup",
+    "title": "Twilio | Try Twilio Free",
+    "status": 200
+  },
+  {
+    "file": "signup-phone.png",
+    "final": "https://app.segment.com/signup",
+    "title": "Twilio | Try Twilio Free",
+    "status": 200
+  },
+  {
+    "file": "sms-marketing-desktop.png",
+    "final": "https://www.twilio.com/en-us/solutions/text-marketing",
+    "title": "SMS Marketing & Text Message Marketing to Drive ROI | Twilio",
+    "status": 200
+  },
+  {
+    "file": "smtp-desktop.png",
+    "final": "https://www.twilio.com/en-us/products/email-api/smtp-service",
+    "title": "Email SMTP relay service | Twilio",
+    "status": 200
+  },
+  {
+    "file": "solutions-desktop.png",
+    "final": "https://www.twilio.com/en-us/solutions",
+    "title": "Solutions overview | Twilio",
+    "status": 200
+  },
+  {
+    "file": "status-desktop.png",
+    "final": "https://status.segment.com/",
+    "title": "Segment Status",
+    "status": 200
+  },
+  {
+    "file": "support-plans-desktop.png",
+    "final": "https://www.twilio.com/en-us/support-plans",
+    "title": "Support Plans for Text, VoIP & Voice APIs - Twilio | Twilio",
+    "status": 200
+  },
+  {
+    "file": "twilio-home-desktop.png",
+    "final": "https://www.twilio.com/en-us",
+    "title": "Conversational AI and APIs for SMS, Email, Voice | Twilio",
+    "status": 200
+  },
+  {
+    "file": "twilio-org-desktop.png",
+    "final": "https://www.twilio.org/en-us",
+    "title": "Nonprofit Communications | Twilio.org",
+    "status": 200
+  },
+  {
+    "file": "why-twilio-desktop.png",
+    "final": "https://www.twilio.com/en-us/why-twilio",
+    "title": "Why Choose Twilio | Twilio",
+    "status": 200
+  }
+]

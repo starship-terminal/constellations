@@ -1,0 +1,16 @@
+{
+  "slug": "privacy-desktop",
+  "requested": "https://www.twilio.com/en-us/legal/privacy",
+  "final": "https://www.twilio.com/en-us/legal/privacy",
+  "title": "Website Privacy Notice | Twilio",
+  "h1": [
+    "Twilio Privacy Notice"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "privacy-desktop.png",
+  "status": 200
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "products-desktop",
+  "requested": "https://www.twilio.com/en-us/products",
+  "final": "https://www.twilio.com/en-us/products",
+  "title": "Product, services, features | Twilio",
+  "h1": [
+    "Twilio Products",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "products-desktop.png",
+  "status": 200
+}

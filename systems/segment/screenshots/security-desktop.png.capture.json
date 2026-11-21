@@ -1,0 +1,16 @@
+{
+  "slug": "security-desktop",
+  "requested": "https://www.twilio.com/en-us/security",
+  "final": "https://www.twilio.com/en-us/security",
+  "title": "Secure Communications with Twilio | Twilio",
+  "h1": [
+    "Security is at the core of our products and platform"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "security-desktop.png",
+  "status": 200
+}

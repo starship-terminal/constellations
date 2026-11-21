@@ -1,0 +1,16 @@
+{
+  "slug": "sdks-desktop",
+  "requested": "https://www.twilio.com/docs/libraries",
+  "final": "https://www.twilio.com/docs/libraries",
+  "title": "SDKs | Twilio",
+  "h1": [
+    "SDKs"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "sdks-desktop.png",
+  "status": 200
+}

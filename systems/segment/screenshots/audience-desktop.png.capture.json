@@ -1,0 +1,17 @@
+{
+  "slug": "audience-desktop",
+  "requested": "https://www.twilio.com/en-us/use-cases/segmentation-audience-activation",
+  "final": "https://www.twilio.com/en-us/use-cases/segmentation-audience-activation",
+  "title": "Audience Segmentation & Activation | Twilio",
+  "h1": [
+    "Tap into the full potential of your campaign",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "audience-desktop.png",
+  "status": 200
+}

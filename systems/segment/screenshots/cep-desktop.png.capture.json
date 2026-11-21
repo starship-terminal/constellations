@@ -1,0 +1,17 @@
+{
+  "slug": "cep-desktop",
+  "requested": "https://www.twilio.com/en-us/customer-engagement-platform",
+  "final": "https://www.twilio.com/en-us/customer-engagement-platform",
+  "title": "Customer Engagement Platform | Twilio",
+  "h1": [
+    "Introducing the next generation of the Twilio platform",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "cep-desktop.png",
+  "status": 200
+}

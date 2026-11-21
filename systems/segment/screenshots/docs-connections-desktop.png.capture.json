@@ -1,0 +1,16 @@
+{
+  "slug": "docs-connections-desktop",
+  "requested": "https://www.twilio.com/docs/segment/connections",
+  "final": "https://www.twilio.com/docs/segment/connections",
+  "title": "Connections Overview | Twilio",
+  "h1": [
+    "Connections Overview"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "docs-connections-desktop.png",
+  "status": 200
+}

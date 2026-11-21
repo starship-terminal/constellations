@@ -1,0 +1,102 @@
+{
+  "capturedAt": "2026-11-22",
+  "home": {
+    "requested": "https://segment.com/",
+    "url": "https://www.twilio.com/en-us/segment",
+    "title": "Twilio Segment Customer Data Platform | Twilio",
+    "heroBackground": "rgb(0, 13, 37)",
+    "h1": {
+      "text": "Segment ❤️ Twilio. We're finally moving in together on Twilio.com!",
+      "fontFamily": "\"Whitney SSm\", helvetica, arial, sans-serif",
+      "fontSize": "48px",
+      "fontWeight": "700",
+      "lineHeight": "60px",
+      "letterSpacing": "-1.44px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "h2": {
+      "text": "Same CDP, new home base.",
+      "fontFamily": "\"Whitney SSm\", helvetica, arial, sans-serif",
+      "fontSize": "40px",
+      "fontWeight": "700",
+      "lineHeight": "52px",
+      "letterSpacing": "-0.8px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "login": {
+      "text": "Login",
+      "fontFamily": "\"Whitney SSm\", helvetica, arial, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "color": "rgb(0, 13, 37)"
+    },
+    "contactSales": {
+      "text": "Contact sales",
+      "fontFamily": "\"Whitney SSm\", helvetica, arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "24px",
+      "color": "rgb(24, 102, 238)",
+      "background": "rgba(0, 0, 0, 0)",
+      "radius": "50px",
+      "height": 36
+    },
+    "startForFree": {
+      "text": "Start for free",
+      "fontFamily": "\"Whitney SSm\", helvetica, arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "24px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(24, 102, 238)",
+      "radius": "50px",
+      "height": 36
+    },
+    "visitTwilio": {
+      "text": "Visit Twilio.com",
+      "fontFamily": "\"Whitney SSm\", helvetica, arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "24px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(24, 102, 238)",
+      "radius": "50px",
+      "height": 40
+    }
+  },
+  "login": {
+    "url": "https://app.segment.com/login",
+    "title": "Sign In - Segment",
+    "bodyBackground": "rgb(255, 255, 255)",
+    "heading": {
+      "text": "Sign In to Segment",
+      "fontFamily": "\"SF UI Text\", -apple-system, system-ui, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": "600",
+      "lineHeight": "32px",
+      "letterSpacing": "-0.48px",
+      "color": "rgb(71, 77, 102)"
+    },
+    "email": {
+      "placeholder": "you@company.com",
+      "valueLength": 0,
+      "fontFamily": "\"SF UI Text\", -apple-system, system-ui, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "color": "rgb(71, 77, 102)",
+      "radius": "4px",
+      "height": 36
+    },
+    "next": {
+      "text": "Next",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(51, 102, 255)",
+      "radius": "4px",
+      "height": 36
+    }
+  }
+}

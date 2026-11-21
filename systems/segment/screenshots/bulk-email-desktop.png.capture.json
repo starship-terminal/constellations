@@ -1,0 +1,16 @@
+{
+  "slug": "bulk-email-desktop",
+  "requested": "https://www.twilio.com/en-us/resource-center/bulk-email-guide",
+  "final": "https://www.twilio.com/en-us/resource-center/bulk-email-guide",
+  "title": "Bulk email service: What it is & how to send mass emails | Twilio",
+  "h1": [
+    "Bulk email service: What it is & how to send mass emails"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "bulk-email-desktop.png",
+  "status": 200
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "help-center-desktop",
+  "requested": "https://help.twilio.com/",
+  "final": "https://help.twilio.com/",
+  "title": "Twilio Help Center",
+  "h1": [
+    "Help Center",
+    "System status"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "help-center-desktop.png",
+  "status": 200
+}

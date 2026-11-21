@@ -1,0 +1,17 @@
+{
+  "slug": "email-api-desktop",
+  "requested": "https://www.twilio.com/en-us/products/email-api",
+  "final": "https://www.twilio.com/en-us/products/email-api",
+  "title": "Twilio SendGrid Email API | Twilio",
+  "h1": [
+    "Move blazing fast with the SendGrid Email API",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "email-api-desktop.png",
+  "status": 200
+}

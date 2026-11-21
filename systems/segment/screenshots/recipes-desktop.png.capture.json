@@ -1,0 +1,16 @@
+{
+  "slug": "recipes-desktop",
+  "requested": "https://www.twilio.com/en-us/recipes",
+  "final": "https://www.twilio.com/en-us/recipes",
+  "title": "Recipes | Twilio",
+  "h1": [
+    "Explore popular solutions to empower every team"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "recipes-desktop.png",
+  "status": 200
+}

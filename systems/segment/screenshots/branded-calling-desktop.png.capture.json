@@ -1,0 +1,17 @@
+{
+  "slug": "branded-calling-desktop",
+  "requested": "https://www.twilio.com/en-us/voice/branded-calling",
+  "final": "https://www.twilio.com/en-us/voice/branded-calling",
+  "title": "Branded calling | Twilio",
+  "h1": [
+    "Unknown calls get ignored. Earn trust with Branded Calling.",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "branded-calling-desktop.png",
+  "status": 200
+}

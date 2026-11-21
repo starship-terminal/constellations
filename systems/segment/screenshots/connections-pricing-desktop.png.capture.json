@@ -1,0 +1,17 @@
+{
+  "slug": "connections-pricing-desktop",
+  "requested": "https://www.twilio.com/en-us/products/connections/pricing",
+  "final": "https://www.twilio.com/en-us/products/connections/pricing",
+  "title": "Connections pricing | Twilio",
+  "h1": [
+    "Customer Data Pipeline",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "connections-pricing-desktop.png",
+  "status": 200
+}

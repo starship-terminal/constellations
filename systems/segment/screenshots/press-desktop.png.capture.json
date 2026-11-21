@@ -1,0 +1,16 @@
+{
+  "slug": "press-desktop",
+  "requested": "https://www.twilio.com/en-us/press",
+  "final": "https://www.twilio.com/en-us/press",
+  "title": "Press | Twilio",
+  "h1": [
+    "Press"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "press-desktop.png",
+  "status": 200
+}

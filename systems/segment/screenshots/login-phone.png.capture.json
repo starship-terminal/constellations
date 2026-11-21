@@ -1,0 +1,16 @@
+{
+  "slug": "login-phone",
+  "requested": "https://app.segment.com/login",
+  "final": "https://app.segment.com/login",
+  "title": "Sign In - Segment",
+  "h1": [
+    "Sign In to Segment"
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "capturedAt": "2026-11-22",
+  "file": "login-phone.png",
+  "status": 200
+}
