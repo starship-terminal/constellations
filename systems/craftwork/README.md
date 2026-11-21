@@ -1,6 +1,6 @@
 # Craftwork (craftwork.design)
 
-Craftwork's public signed-out surface — the home page, pricing, components, catalog, the Black Friday deal page and the OTP login card — captured 2026-11-12 in headless Chromium at 1440 x 900, plus the home and pricing pages at 390 x 844. The account, purchases and asset downloads sit behind the OTP login; Send code was never pressed.
+Craftwork's public signed-out surface, refreshed 2026-11-21 in headless Chromium at 1440 x 900 and 390 x 844. The homepage, nav menus, search dialog, pricing, catalog, components, deal, FAQ, and a product page were photographed. Sign in and https://craftwork.design/login were opened empty and not submitted. The map of controls is [site-tree.md](site-tree.md). The walk record is [login-review.json](login-review.json). `login_extracted` is `not-started`.
 
 ## Brief
 
@@ -69,6 +69,14 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 A Next.js app on Tailwind utilities with a real semantic layer on `:root` — `--background-*` roles (brand lime, primary, secondary, field, surface-1..5, ghost, plate, reversed), `--text-icons-*`, `--stroke-*`, the 12-hue `--category-*` palette, `--catalog-tint-*` chips, `--status-*`/`--indicators-*`/`--viz-*`, `--controls-*` and `--cw-toast-*` — 215 vars resolved under `data-theme=light` and 220 under `data-theme=dark`, both painted by the nav's theme toggle. The site is Craftwork's own shopfront: a marketplace for UI kits, templates and fonts.
 
+## Do and don't
+
+- **One dark action per band.** The primary control is a hard dark pill, and the secondary control is a quiet grey pill. [home-light-default.png](screenshots/home-light-default.png) shows Get full access beside Browse the catalog.
+- **Menus stay on the page.** Assets, Templates, and Inspiration open a panel, not a new route. [home-light-menu-assets.png](screenshots/home-light-menu-assets.png) shows the category list and the component cards.
+- **Search is a dialog, left empty.** The field opens over the page. Do not treat a typed query as part of this capture. [home-light-search.png](screenshots/home-light-search.png).
+- **The account wall is a dialog, and the login page is a split card.** Sign in stays on the homepage. /login is the one-time-code card. Neither was submitted. [login-light-dialog.png](screenshots/login-light-dialog.png), [login-light-default.png](screenshots/login-light-default.png).
+- **The theme toggle is local.** Flipping it paints `data-theme="dark"` and the same page. [home-dark-default.png](screenshots/home-dark-default.png). Flip it back after a shot.
+
 ## The design language
 
 - **White page, hard darks.** The page is white; every structural fill is #1e1e1e — the Connect agent pill, Get full access, the Google login button — over a #161616 promo bar. Secondary and disabled fills are #efefef; the search pill floats on #fafafa.
@@ -88,17 +96,38 @@ A Next.js app on Tailwind utilities with a real semantic layer on `:root` — `-
 | [DESIGN.md](DESIGN.md) | the generated one-theme export |
 | [icon.png](icon.png) | the Craftwork app icon, 128px (Git LFS) |
 | [components/](components) | `crops/` — 92 quantized state crops at 2x |
-| [screenshots/](screenshots) | 18 quantized captures (desktop 1440, mobile 390@2x, full-page bounded at 8 chunks) |
+| [screenshots/](screenshots) | quantized captures (desktop 1440, mobile 390@2x, full-page bounded at 8 chunks) plus the 2026-11-21 public walk |
+| [site-tree.md](site-tree.md) | Which public control opens which page or dialog |
+| [login-review.json](login-review.json) | Public walk record. `login_extracted` is `not-started` |
 | [raw/](raw) | `css-vars.json` (the two-theme var harvest), `components-computed.json`, `component-tokens.json`, `measurements.md` |
 | [tools/](tools) | the builders and capture scripts that produced this package |
+
+## Coverage
+
+The 2026-11-21 walk is the public site only. Token values still come from the 2026-11-12 CSS readings. A value that was not re-read stays Not captured.
+
+| Item | Status |
+|---|---|
+| Homepage, light and dark, 1440 | Captured. [home-light-default.png](screenshots/home-light-default.png), [home-dark-default.png](screenshots/home-dark-default.png) |
+| Homepage, phone 390, menu open | Captured. [mobile-home-light-default.png](screenshots/mobile-home-light-default.png), [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) |
+| Assets, Templates, Inspiration menus | Captured. [site-tree.md](site-tree.md) |
+| Search dialog, empty | Captured. [home-light-search.png](screenshots/home-light-search.png) |
+| Pricing, catalog, components, deal, FAQ, product | Captured. See [login-review.json](login-review.json) |
+| Sign in dialog and empty /login | Captured, then stopped. [login-light-dialog.png](screenshots/login-light-dialog.png), [login-light-default.png](screenshots/login-light-default.png) |
+| Signed-in library, cart, downloads | Not captured. No session. |
+| Email, Google, Send code, checkout | Not entered. |
+| Contact, newsletter, student, affiliate, become-an-author | Not captured. Those pages ask for a name or an email. |
+| Select, checkbox, radio, tooltip, dialog beyond the account wall, table, avatar, badge | Not present on the public pages that were opened, or not captured. |
+| Motion durations, focus ring geometry, spacing scale | Not captured. Unread values from the 2026-11-12 notes stay as they were. |
 
 ## Boundaries
 
 - **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
-- The signed-in library — the account, cart/checkout, asset downloads, the Pro purchase and the author dashboard — was never reached. /login is an OTP card whose Send code was never pressed.
+- The signed-in library, cart, downloads, and the author dashboard were not reached. Sign in opens an account dialog (Continue with Google, an empty email field, Continue with email). /login asks for an email and a one-time code. Neither field was filled. Send code was not pressed. Google was not clicked. An older filled-field shot was removed.
+- Contact, newsletter, student, affiliate, and become-an-author were not opened. They ask for a name or an email. The contact page also shows a street address, so it is not in screenshots/.
 - The theme toggle was flipped for one dark screenshot and flipped back; it is a local UI switch, not an account setting.
 - The fixed cookie notice was hidden, never answered.
-- The Assets/Templates/Inspiration dropdowns were never opened; their links are captured in the nav row.
+- The Assets, Templates, and Inspiration menus were opened on 2026-11-21. Their links are in [site-tree.md](site-tree.md).
 - The /components h1 ("Components, 1,224") is a 1x1 accessibility heading; the library row was measured instead.
 - Dark-theme values are var-resolved, not component-measured — the toggle was flipped only for the home screenshot.
 - No standalone icon set was lifted; the wordmark, glyphs and product artwork are the product's.

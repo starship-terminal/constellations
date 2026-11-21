@@ -1,6 +1,6 @@
 # Craftwork components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from craftwork.design on 2026-11-12, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, submitted or paid for; the nav theme toggle was flipped to dark and back for one shot, the OTP email field was filled and cleared but Send code was never pressed, and Connect agent, Get full access, every plan CTA and the Google button were never followed. The fixed cookie notice was hidden, never answered.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from craftwork.design on 2026-11-12, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, submitted or paid for. The 2026-11-21 refresh did not type an email. Crops that still showed a typed address were removed. Connect agent, Get full access, every plan CTA and the Google button were never followed. The fixed cookie notice was hidden, never answered.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (36 components, 96 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -21,7 +21,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 | Components | `/components` | [default](screenshots/components-light-default.png), [full](screenshots/components-light-full.png) |
 | Catalog | `/catalog` | [default](screenshots/catalog-light-default.png), [full](screenshots/catalog-light-full.png) |
 | Black Friday deal | `/black-friday` | [default](screenshots/deal-light-default.png), [full](screenshots/deal-light-full.png) |
-| Login | `/login` | [default](screenshots/login-light-default.png), [filled](screenshots/login-light-filled.png) |
+| Login | `/login` | [default](screenshots/login-light-default.png) |
 | Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu](screenshots/mobile-home-light-menu.png) |
 | Pricing, phone | `/pricing` | [default](screenshots/mobile-pricing-light-default.png), [full](screenshots/mobile-pricing-light-full.png) |
 
@@ -31,7 +31,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 |---|---|---|---|
 | Mobile menu overlay | home, phone width | the menu button's own toggle | [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-open](#mobile-menu-open), [m-nav-item](#mobile-menu-row) |
 | Dark theme | home | the nav theme toggle (aria-label Dark theme) — flipped for the shot, flipped back | [home-dark-default](screenshots/home-dark-default.png), [theme-toggle](#theme-toggle) |
-| OTP form, filled | /login | the email field filled with a placeholder and cleared — Send code never pressed | [login-light-filled](screenshots/login-light-filled.png), [login-field](#email-field) |
+| OTP form, empty | /login | the email field was left empty. Send code was not pressed | [login-light-default](screenshots/login-light-default.png), [login-field](#email-field) |
 | Cookie notice | every page | hidden via the generic overlay hider, never answered | not captured |
 | The signed-in library | accounts, purchases | Sign in leads to the OTP card; Pro purchase and every download were never used | boundary; see Gaps |
 
@@ -269,7 +269,7 @@ A catalog filter/search input; measured in place, never submitted. Read as `comp
 
 Child layers that carry the look: input 157x30.
 
-![Filter field default](components/crops/components-filter-default.png) ![Filter field focus-visible](components/crops/components-filter-focus-visible.png) ![Filter field filled](components/crops/components-filter-filled.png)
+![Filter field default](components/crops/components-filter-default.png) ![Filter field focus-visible](components/crops/components-filter-focus-visible.png)
 
 #### Catalog card
 An asset card in the catalog grid; measured, never followed. Read as `components-card` on the components page.
@@ -294,7 +294,7 @@ A catalog filter/search input; measured in place, never submitted. Read as `cata
 
 Child layers that carry the look: input 193x30.
 
-![Filter field default](components/crops/catalog-filter-default.png) ![Filter field focus-visible](components/crops/catalog-filter-focus-visible.png) ![Filter field filled](components/crops/catalog-filter-filled.png)
+![Filter field default](components/crops/catalog-filter-default.png) ![Filter field focus-visible](components/crops/catalog-filter-focus-visible.png)
 
 #### Catalog card
 An asset card in the catalog grid; measured, never followed. Read as `catalog-card` on the catalog page.
@@ -332,7 +332,7 @@ The OTP auth card at /login: "Log in or sign up to craftwork", the 46px email fi
 ![Login headline default](components/crops/login-h1-default.png)
 
 #### Email field
-The "Your Email" OTP field (390 wide); filled with a placeholder for the shot, never submitted. Read as `login-field` on the login page.
+The "Your Email" OTP field (390 wide). The filled crop was removed on 2026-11-21 because it showed a typed address. Read as `login-field` on the login page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -340,7 +340,7 @@ The "Your Email" OTP field (390 wide); filled with a placeholder for the shot, n
 
 Child layers that carry the look: input 338x46.
 
-![Email field default](components/crops/login-field-default.png) ![Email field focus-visible](components/crops/login-field-focus-visible.png) ![Email field filled](components/crops/login-field-filled.png)
+![Email field default](components/crops/login-field-default.png) ![Email field focus-visible](components/crops/login-field-focus-visible.png)
 
 #### Send code button
 The "Send code" submit (390x46); measured only — pressing it would send a one-time code, so it is never pressed. Read as `send-code` on the login page.
@@ -462,7 +462,7 @@ The signed-in library — the account, the asset downloads, the cart and checkou
 ### Pages
 
 - **Purchases and CTAs.** Get full access, Connect agent, every plan CTA and the deal's Get the deal were measured or screenshotted, never followed; no purchase was made and no file fetched.
-- **Sign in.** The OTP card's email field was filled with a placeholder and cleared; Send code and Log in with Google were never pressed, so the one-time-code step is undocumented.
+- **Sign in.** The email field was left empty on 2026-11-21. Send code and Log in with Google were not pressed, so the one-time-code step is undocumented. The filled crops from 2026-11-12 were removed.
 - **External surfaces** (social profiles, author pages, the shader studio) are linked from the site but were never opened.
 - **The /components h1.** "Components, 1,224" is a 1x1 accessibility heading; the library row was measured instead.
 
