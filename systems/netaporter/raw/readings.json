@@ -1,0 +1,203 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.net-a-porter.com/en-us/",
+  "viewport": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2},
+  "computed": {
+    "ribbon": {
+      "backgroundColor": "rgb(203, 203, 203)",
+      "color": "rgb(17, 17, 17)",
+      "fontFamily": "AkkuratPro, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "letterSpacing": "0.14px",
+      "height": "32px"
+    },
+    "header": {
+      "backgroundColor": "rgb(17, 17, 17)",
+      "height": "106px",
+      "logoFill": "#fff"
+    },
+    "navLink": {
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "AkkuratPro, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "letterSpacing": "0.14px"
+    },
+    "sale": {
+      "color": "rgb(255, 255, 255)",
+      "note": "Sale uses the same white as the other department links"
+    },
+    "heroTitle": {
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Chronicle Display\", \"Times New Roman\", serif, sans-serif",
+      "fontSize": "32px",
+      "fontWeight": "500",
+      "lineHeight": "40px"
+    },
+    "heroBody": {
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "ChronicleText, Georgia, serif, sans-serif, \"MSung PRC Medium\"",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "24px"
+    },
+    "shopNow": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(17, 17, 17)",
+      "fontFamily": "AkkuratPro, sans-serif, \"MSung PRC Medium\"",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "letterSpacing": "0.14px",
+      "borderRadius": "2px",
+      "border": "1px solid rgb(255, 255, 255)",
+      "padding": "11px 16px",
+      "height": "42px",
+      "width": "240px",
+      "clicked": false
+    },
+    "sectionTitle": {
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Chronicle Display\", \"Times New Roman\", serif, sans-serif, \"MSung PRC Medium\"",
+      "fontSize": "48px",
+      "fontWeight": "500",
+      "lineHeight": "60px",
+      "text": "New In"
+    },
+    "listingTitle": {
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Chronicle Display\"",
+      "fontSize": "32px",
+      "fontWeight": "400",
+      "lineHeight": "40px",
+      "letterSpacing": "1px",
+      "text": "Clothing"
+    },
+    "designer": {
+      "color": "rgb(17, 17, 17)",
+      "fontFamily": "AkkuratPro, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "18px",
+      "letterSpacing": "0.28px",
+      "textTransform": "uppercase"
+    },
+    "productName": {
+      "color": "rgb(101, 101, 101)",
+      "fontFamily": "ChronicleText, Georgia, serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "21px"
+    },
+    "listingPrice": {
+      "color": "rgb(17, 17, 17)",
+      "fontFamily": "AkkuratPro, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "letterSpacing": "0.28px"
+    },
+    "productBrand": {
+      "color": "rgb(43, 43, 43)",
+      "fontFamily": "\"Chronicle Display\"",
+      "fontSize": "32px",
+      "fontWeight": "400",
+      "lineHeight": "40px",
+      "letterSpacing": "1.6px"
+    },
+    "productTitle": {
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "ChronicleText, Georgia, serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px"
+    },
+    "productPrice": {
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "AkkuratPro, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "700",
+      "lineHeight": "20px",
+      "letterSpacing": "0.16px"
+    },
+    "addToBag": {
+      "backgroundColor": "rgb(17, 17, 17)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "AkkuratPro, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "22px",
+      "letterSpacing": "0.14px",
+      "borderRadius": "2px",
+      "border": "1px solid rgb(17, 17, 17)",
+      "height": "40px",
+      "clicked": false
+    },
+    "wishList": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(17, 17, 17)",
+      "border": "1px solid rgb(17, 17, 17)",
+      "borderRadius": "2px",
+      "height": "40px",
+      "clicked": false
+    },
+    "sizeChip": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgb(229, 229, 229)",
+      "borderRadius": "2px",
+      "fontSize": "14px",
+      "height": "40px",
+      "width": "90px",
+      "selected": false,
+      "note": "Computed color is black. On the black product panel the labels did not paint until color was forced to white for the photograph. Trust the computed color, not that override."
+    },
+    "footerHeading": {
+      "color": "rgb(17, 17, 17)",
+      "fontFamily": "ChronicleText, Georgia, serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "22px"
+    },
+    "footerMeta": {
+      "color": "rgb(101, 101, 101)",
+      "fontFamily": "AkkuratPro, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "lineHeight": "16px",
+      "letterSpacing": "0.12px",
+      "textTransform": "uppercase"
+    },
+    "email": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(203, 203, 203)",
+      "borderRadius": "2px",
+      "height": "40px",
+      "placeholder": "your@address.com",
+      "typed": false,
+      "submitted": false
+    },
+    "signUp": {
+      "color": "rgb(17, 17, 17)",
+      "border": "1px solid rgb(17, 17, 17)",
+      "borderRadius": "2px",
+      "height": "40px",
+      "clicked": false
+    },
+    "aboutTitle": {
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Chronicle Display\", \"Times New Roman\", serif, sans-serif",
+      "fontSize": "48px",
+      "fontWeight": "500",
+      "lineHeight": "60px"
+    },
+    "aboutBody": {
+      "color": "rgb(17, 17, 17)",
+      "fontFamily": "ChronicleText, Georgia, serif",
+      "fontSize": "14px",
+      "fontWeight": "500"
+    }
+  }
+}
