@@ -3,557 +3,295 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Doctronic style guide</title>
-<meta name="description" content="Doctronic (doctronic.ai) design tokens and the public signed-out surface's components, rendered from tokens.json with the declared @layer tokens values and the measured computed styles.">
+<title>Doctronic AI style guide</title>
 <style>
 :root {
+  --color-white: #ffffff;
+  --color-blue-50: #f0f6ff;
   --color-blue-100: #dcebfe;
   --color-blue-200: #bedbfe;
   --color-blue-300: #91c3fd;
   --color-blue-400: #61a6fa;
-  --color-blue-50: #f0f6ff;
   --color-blue-500: #3c83f6;
   --color-blue-600: #2463eb;
   --color-blue-700: #1d4fd7;
   --color-blue-800: #1e3fae;
   --color-blue-900: #1e3b8a;
   --color-blue-950: #172554;
-  --color-error-100: #fbd5d9;
-  --color-error-200: #f5a8b1;
-  --color-error-300: #ed7383;
-  --color-error-400: #de3f57;
-  --color-error-50: #fdedee;
-  --color-error-500: #c52640;
-  --color-error-600: #a61c31;
-  --color-error-700: #841527;
-  --color-error-800: #610f1d;
-  --color-error-900: #3e0914;
-  --color-error-950: #20030a;
-  --color-lime-100: #efffcc;
-  --color-lime-200: #e4ff9e;
-  --color-lime-300: #d9ff80;
-  --color-lime-400: #beec4b;
-  --color-lime-50: #f7ffe6;
-  --color-lime-500: #a3ce2c;
-  --color-lime-600: #82a91e;
-  --color-lime-700: #66841a;
-  --color-lime-800: #4d641b;
-  --color-lime-900: #33421a;
-  --color-lime-950: #1a230b;
+  --color-neutral-50: #fdfdf7;
   --color-neutral-100: #f5f5f0;
   --color-neutral-200: #e4e4dc;
   --color-neutral-300: #cecec5;
   --color-neutral-400: #a7a7a0;
-  --color-neutral-50: #fdfdf7;
   --color-neutral-500: #797972;
   --color-neutral-600: #53544f;
   --color-neutral-700: #3c3c39;
   --color-neutral-800: #272725;
   --color-neutral-900: #1b1b18;
   --color-neutral-950: #0b0b0a;
+  --color-sage-50: #f1f8f2;
   --color-sage-100: #e1efe3;
   --color-sage-200: #c9e3cc;
   --color-sage-300: #b9dabd;
   --color-sage-400: #8dbf93;
-  --color-sage-50: #f1f8f2;
   --color-sage-500: #5e9c65;
   --color-sage-600: #45824d;
   --color-sage-700: #34653a;
   --color-sage-800: #264b2c;
   --color-sage-900: #16311a;
   --color-sage-950: #0a190c;
+  --color-lime-50: #f7ffe6;
+  --color-lime-100: #efffcc;
+  --color-lime-200: #e4ff9e;
+  --color-lime-300: #d9ff80;
+  --color-lime-400: #beec4b;
+  --color-lime-500: #a3ce2c;
+  --color-lime-600: #82a91e;
+  --color-lime-700: #66841a;
+  --color-lime-800: #4d641b;
+  --color-lime-900: #33421a;
+  --color-lime-950: #1a230b;
+  --color-error-50: #fdedee;
+  --color-error-100: #fbd5d9;
+  --color-error-200: #f5a8b1;
+  --color-error-300: #ed7383;
+  --color-error-400: #de3f57;
+  --color-error-500: #c52640;
+  --color-error-600: #a61c31;
+  --color-error-700: #841527;
+  --color-error-800: #610f1d;
+  --color-error-900: #3e0914;
+  --color-error-950: #20030a;
+  --color-success-50: #f1f8f2;
   --color-success-100: #ddeedf;
   --color-success-200: #bad9be;
   --color-success-300: #8ebe95;
   --color-success-400: #5ea168;
-  --color-success-50: #f1f8f2;
   --color-success-500: #438448;
   --color-success-600: #2f6a36;
   --color-success-700: #235328;
   --color-success-800: #193e1e;
   --color-success-900: #112c15;
   --color-success-950: #061309;
+  --color-warning-50: #fef9e7;
   --color-warning-100: #fcefc0;
   --color-warning-200: #f8de82;
   --color-warning-300: #f1c946;
   --color-warning-400: #e0ab1a;
-  --color-warning-50: #fef9e7;
   --color-warning-500: #c28d0f;
   --color-warning-600: #9d6f0b;
   --color-warning-700: #7b550a;
   --color-warning-800: #59410d;
   --color-warning-900: #3c2d0b;
   --color-warning-950: #1f1605;
-  --color-white: #ffffff;
-  --color-wash-lavender-soft: #efecf9;
-  --color-wash-lavender-deep: #e5e1f4;
-  --color-wash-sky: #e7eef3;
+  --color-graphic-blue-bold: #3c83f6;
+  --color-graphic-blue-strong: #61a6fa;
+  --color-graphic-blue-moderate: #91c3fd;
+  --color-graphic-blue-muted: #bedbfe;
+  --color-graphic-blue-soft: #dcebfe;
+  --color-graphic-blue-subtle: #f0f6ff;
+  --color-wash-lavenderDeep: #e5e1f4;
+  --color-wash-lavenderSoft: #efecf9;
   --color-wash-sage: #ebf4ec;
-  --color-graphic-blue-bold: var(--color-blue-500);
-  --color-graphic-blue-moderate: var(--color-blue-300);
-  --color-graphic-blue-muted: var(--color-blue-200);
-  --color-graphic-blue-soft: var(--color-blue-100);
-  --color-graphic-blue-strong: var(--color-blue-400);
-  --color-graphic-blue-subtle: var(--color-blue-50);
-  --gradient-chat-sheet-accent: linear-gradient(90deg, #2463eb 0.0%, #0ea5e9 20.0%, #22c55e 40.0%, #84cc16 60.0%, #0ea5e9 80.0%, #2463eb 100.0%);
-  --font-family-display: "fraunces", Georgia, Times New Roman, serif;
-  --font-family-sans: "geist", system-ui, Arial, sans-serif;
-  --font-family-mono: "geistMono", ui-monospace, Courier New, monospace;
-  --font-family-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
-  --typography-body-10: 400 10px/14px var(--font-family-sans);
-  --typography-body-12: 400 12px/16.8px var(--font-family-sans);
-  --typography-body-14: 400 14px/19.6px var(--font-family-sans);
-  --typography-body-16: 400 16px/22.4px var(--font-family-sans);
-  --typography-body-18: 400 18px/25.2px var(--font-family-sans);
-  --typography-body-20: 400 20px/28px var(--font-family-sans);
-  --typography-body-24: 400 24px/33.6px var(--font-family-sans);
-  --typography-body-28: 400 28px/39.2px var(--font-family-sans);
-  --typography-body-32: 400 32px/44.8px var(--font-family-sans);
-  --typography-display-24: 400 24px/28.08px var(--font-family-display);
-  --typography-display-32: 400 32px/37.44px var(--font-family-display);
-  --typography-display-40: 400 40px/46.8px var(--font-family-display);
-  --typography-display-48: 400 48px/56.16px var(--font-family-display);
-  --typography-display-56: 400 56px/65.52px var(--font-family-display);
-  --typography-display-64: 400 64px/74.88px var(--font-family-display);
-  --typography-display-72: 400 72px/84.24px var(--font-family-display);
-  --typography-heading-10: 600 10px/14px var(--font-family-sans);
-  --typography-heading-12: 600 12px/16.8px var(--font-family-sans);
-  --typography-heading-14: 600 14px/19.6px var(--font-family-sans);
-  --typography-heading-16: 600 16px/22.4px var(--font-family-sans);
-  --typography-heading-18: 600 18px/25.2px var(--font-family-sans);
-  --typography-heading-20: 600 20px/28px var(--font-family-sans);
-  --typography-heading-24: 600 24px/33.6px var(--font-family-sans);
-  --typography-heading-28: 600 28px/39.2px var(--font-family-sans);
-  --typography-heading-32: 600 32px/44.8px var(--font-family-sans);
-  --typography-heading-italic-10: italic 600 10px/14px var(--font-family-sans);
-  --typography-heading-italic-12: italic 600 12px/16.8px var(--font-family-sans);
-  --typography-heading-italic-14: italic 600 14px/19.6px var(--font-family-sans);
-  --typography-heading-italic-16: italic 600 16px/22.4px var(--font-family-sans);
-  --typography-heading-italic-18: italic 600 18px/25.2px var(--font-family-sans);
-  --typography-heading-italic-20: italic 600 20px/28px var(--font-family-sans);
-  --typography-heading-italic-24: italic 600 24px/33.6px var(--font-family-sans);
-  --typography-heading-italic-28: italic 600 28px/39.2px var(--font-family-sans);
-  --typography-heading-italic-32: italic 600 32px/44.8px var(--font-family-sans);
-  --typography-italic-14: italic 400 14px/17.5px var(--font-family-display);
-  --typography-italic-18: italic 400 18px/22.5px var(--font-family-display);
-  --typography-italic-24: italic 400 24px/30px var(--font-family-display);
-  --typography-italic-32: italic 400 32px/40px var(--font-family-display);
-  --typography-italic-40: italic 400 40px/50px var(--font-family-display);
-  --typography-italic-48: italic 400 48px/60px var(--font-family-display);
-  --typography-italic-56: italic 400 56px/70px var(--font-family-display);
-  --typography-italic-64: italic 400 64px/80px var(--font-family-display);
-  --typography-italic-72: italic 400 72px/90px var(--font-family-display);
-  --typography-label-10: 500 10px/14px var(--font-family-sans);
-  --typography-label-12: 500 12px/16.8px var(--font-family-sans);
-  --typography-label-14: 500 14px/19.6px var(--font-family-sans);
-  --typography-label-16: 500 16px/22.4px var(--font-family-sans);
-  --typography-label-18: 500 18px/25.2px var(--font-family-sans);
-  --typography-label-20: 500 20px/28px var(--font-family-sans);
-  --typography-label-24: 500 24px/33.6px var(--font-family-sans);
-  --typography-label-28: 500 28px/39.2px var(--font-family-sans);
-  --typography-label-32: 500 32px/44.8px var(--font-family-sans);
-  --typography-mono-10: 400 10px/14px var(--font-family-mono);
-  --typography-mono-12: 400 12px/16.8px var(--font-family-mono);
-  --typography-mono-14: 400 14px/19.6px var(--font-family-mono);
-  --typography-mono-16: 400 16px/22.4px var(--font-family-mono);
-  --typography-mono-18: 400 18px/25.2px var(--font-family-mono);
-  --typography-mono-20: 400 20px/28px var(--font-family-mono);
-  --typography-mono-24: 400 24px/33.6px var(--font-family-mono);
-  --typography-mono-28: 400 28px/39.2px var(--font-family-mono);
-  --typography-mono-32: 400 32px/44.8px var(--font-family-mono);
-  --typography-mono-bold-10: 600 10px/14px var(--font-family-mono);
-  --typography-mono-bold-12: 600 12px/16.8px var(--font-family-mono);
-  --typography-mono-bold-14: 600 14px/19.6px var(--font-family-mono);
-  --typography-mono-bold-16: 600 16px/22.4px var(--font-family-mono);
-  --typography-mono-bold-18: 600 18px/25.2px var(--font-family-mono);
-  --typography-mono-bold-20: 600 20px/28px var(--font-family-mono);
-  --typography-mono-bold-24: 600 24px/33.6px var(--font-family-mono);
-  --typography-mono-bold-28: 600 28px/39.2px var(--font-family-mono);
-  --typography-mono-bold-32: 600 32px/44.8px var(--font-family-mono);
-  --tracking-display: -.01em;
-  --tracking-tight: -.02em;
-  --shadow-xs: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-  --shadow-sm: 0px 1px 12px 0px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0px 2px 24px 0px rgba(0, 0, 0, 0.06);
-  --shadow-xl: 0px 5px 32px 0px rgba(0, 0, 0, 0.1);
-  --shadow-brand-glow: 0px 4px 14px 0px rgba(9, 97, 228, 0.39);
-  --shadow-brand-glow-hover: 0px 6px 20px 0px rgba(9, 97, 228, 0.5);
-  --layout-header-height: 72px;
-  --layout-tap-target-min: 44px;
-  --measured-focus-outline: #3c83f6;
-  --color-accent-bg: var(--color-blue-600);
-  --color-accent-bg-disabled: var(--color-neutral-200);
-  --color-accent-bg-hover: var(--color-blue-700);
-  --color-accent-bg-pressed: var(--color-blue-800);
-  --color-accent-fg: var(--color-white);
-  --color-accent-fg-disabled: var(--color-neutral-500);
-  --color-accent-focus-ring: var(--color-blue-500);
-  --color-accent-focus-ring-black: var(--color-neutral-950);
-  --color-border-default: rgba(27, 27, 24, 0.08);
-  --color-border-disabled: var(--color-neutral-300);
-  --color-border-light: rgba(27, 27, 24, 0.04);
-  --color-border-strong: rgba(27, 27, 24, 0.2);
-  --color-border-subtle: var(--color-neutral-100);
-  --color-divider-default: var(--color-neutral-200);
-  --color-divider-strong: var(--color-neutral-300);
-  --color-error-bg: var(--color-error-50);
-  --color-error-border: var(--color-error-200);
-  --color-error-fg: var(--color-error-800);
-  --color-fg-default: var(--color-neutral-900);
-  --color-fg-disabled: rgba(27, 27, 24, 0.3);
-  --color-fg-muted: rgba(27, 27, 24, 0.73);
-  --color-fg-subtle: rgba(27, 27, 24, 0.6);
-  --color-icon-default: var(--color-neutral-950);
-  --color-info-bg: var(--color-blue-50);
-  --color-info-border: var(--color-blue-200);
-  --color-info-fg: var(--color-blue-800);
-  --color-link-default: var(--color-accent-bg);
-  --color-link-disabled: var(--color-neutral-500);
-  --color-link-hover: var(--color-blue-700);
-  --color-link-visited: var(--color-blue-800);
-  --color-solid-bg: var(--color-neutral-950);
-  --color-solid-bg-disabled: var(--color-neutral-200);
-  --color-solid-bg-hover: var(--color-neutral-800);
-  --color-solid-bg-pressed: var(--color-neutral-900);
-  --color-solid-fg: var(--color-neutral-50);
-  --color-solid-fg-disabled: var(--color-neutral-500);
-  --color-success-bg: var(--color-success-50);
-  --color-success-border: var(--color-success-200);
-  --color-success-fg: var(--color-success-800);
-  --color-surface-canvas: var(--color-neutral-50);
-  --color-surface-muted-blue: #dbe2eb;
-  --color-surface-muted-rose: #e6dbe6;
-  --color-surface-muted-sage: #dbe6dc;
-  --color-surface-muted-warm: #e4e1d8;
-  --color-surface-raised: var(--color-white);
-  --color-surface-sunken: var(--color-neutral-100);
-  --color-warning-bg: var(--color-warning-50);
-  --color-warning-border: var(--color-warning-200);
-  --color-warning-fg: var(--color-warning-800);
-  --gradient-skeleton: linear-gradient(90deg, var(--color-neutral-200) 43.67%, var(--color-neutral-100) 75.79%, var(--color-neutral-200) 100.0%);
-  --shadow-focus-ring: 0px 0px 0px 2px #2463eb;
-  --component-button-height: 34.7969px;
-  --component-button-cta-height: 43.5938px;
-  --component-button-cta-radius: 52px;
-  --component-send-height: 32px;
-  --component-inputcard-radius: 16px;
-  --component-inputcard-height: 126px;
-  --component-starter-height: 20.5938px;
-  --component-starter-radius: 8px;
-  --component-sidebar-width: 256px;
-  --component-sidebar-collapsed-width: 74px;
-  --component-dialog-radius: 24px;
-  --component-dialog-width: 393px;
-  --component-header-height: 72px;
-  --sg-serif: "fraunces", Georgia, "Times New Roman", serif;
-  --sg-sans: "geist", system-ui, Arial, sans-serif;
-  --sg-mono: "geistMono", ui-monospace, "Courier New", monospace;
-}
-[data-theme="dark"], .dark {
-  --color-accent-bg: var(--color-blue-400);
-  --color-accent-bg-disabled: var(--color-neutral-800);
-  --color-accent-bg-hover: var(--color-blue-300);
-  --color-accent-bg-pressed: var(--color-blue-500);
-  --color-accent-fg: var(--color-blue-950);
-  --color-accent-fg-disabled: var(--color-neutral-700);
-  --color-accent-focus-ring: var(--color-blue-400);
-  --color-accent-focus-ring-black: var(--color-neutral-50);
-  --color-border-default: rgba(253, 253, 247, 0.08);
-  --color-border-disabled: var(--color-neutral-800);
-  --color-border-light: rgba(253, 253, 247, 0.04);
-  --color-border-strong: rgba(253, 253, 247, 0.2);
-  --color-border-subtle: var(--color-neutral-800);
-  --color-divider-default: var(--color-neutral-700);
-  --color-divider-strong: var(--color-neutral-600);
-  --color-error-bg: var(--color-error-900);
-  --color-error-border: var(--color-error-700);
-  --color-error-fg: var(--color-error-200);
-  --color-fg-default: var(--color-neutral-50);
-  --color-fg-disabled: rgba(253, 253, 247, 0.3);
-  --color-fg-muted: rgba(253, 253, 247, 0.73);
-  --color-fg-subtle: rgba(253, 253, 247, 0.6);
-  --color-icon-default: var(--color-neutral-50);
-  --color-info-bg: var(--color-blue-900);
-  --color-info-border: var(--color-blue-700);
-  --color-info-fg: var(--color-blue-200);
-  --color-link-default: var(--color-blue-400);
-  --color-link-disabled: var(--color-neutral-700);
-  --color-link-hover: var(--color-blue-300);
-  --color-link-visited: var(--color-blue-200);
-  --color-solid-bg: var(--color-neutral-50);
-  --color-solid-bg-disabled: var(--color-neutral-800);
-  --color-solid-bg-hover: var(--color-neutral-200);
-  --color-solid-bg-pressed: var(--color-neutral-100);
-  --color-solid-fg: var(--color-neutral-950);
-  --color-solid-fg-disabled: var(--color-neutral-700);
-  --color-success-bg: var(--color-success-900);
-  --color-success-border: var(--color-success-700);
-  --color-success-fg: var(--color-success-200);
-  --color-surface-canvas: #0d0e0b;
-  --color-surface-muted-blue: #162136;
-  --color-surface-muted-rose: #2c2131;
-  --color-surface-muted-sage: #18251c;
-  --color-surface-muted-warm: #262421;
-  --color-surface-raised: var(--color-neutral-900);
-  --color-surface-sunken: #080907;
-  --color-warning-bg: var(--color-warning-900);
-  --color-warning-border: var(--color-warning-700);
-  --color-warning-fg: var(--color-warning-200);
-  --gradient-skeleton: linear-gradient(90deg, var(--color-neutral-800) 43.67%, var(--color-neutral-700) 75.79%, var(--color-neutral-800) 100.0%);
-  --shadow-focus-ring: 0px 0px 0px 2px #61a6fa;
-}
-/* The light palette panel re-declares the light roles on itself so its
-   swatches still paint the light values after the page toggles to dark. */
-.light-scope {
-  --color-accent-bg: var(--color-blue-600);
-  --color-accent-bg-disabled: var(--color-neutral-200);
-  --color-accent-bg-hover: var(--color-blue-700);
-  --color-accent-bg-pressed: var(--color-blue-800);
-  --color-accent-fg: var(--color-white);
-  --color-accent-fg-disabled: var(--color-neutral-500);
-  --color-accent-focus-ring: var(--color-blue-500);
-  --color-accent-focus-ring-black: var(--color-neutral-950);
-  --color-border-default: rgba(27, 27, 24, 0.08);
-  --color-border-disabled: var(--color-neutral-300);
-  --color-border-light: rgba(27, 27, 24, 0.04);
-  --color-border-strong: rgba(27, 27, 24, 0.2);
-  --color-border-subtle: var(--color-neutral-100);
-  --color-divider-default: var(--color-neutral-200);
-  --color-divider-strong: var(--color-neutral-300);
-  --color-error-bg: var(--color-error-50);
-  --color-error-border: var(--color-error-200);
-  --color-error-fg: var(--color-error-800);
-  --color-fg-default: var(--color-neutral-900);
-  --color-fg-disabled: rgba(27, 27, 24, 0.3);
-  --color-fg-muted: rgba(27, 27, 24, 0.73);
-  --color-fg-subtle: rgba(27, 27, 24, 0.6);
-  --color-icon-default: var(--color-neutral-950);
-  --color-info-bg: var(--color-blue-50);
-  --color-info-border: var(--color-blue-200);
-  --color-info-fg: var(--color-blue-800);
-  --color-link-default: var(--color-accent-bg);
-  --color-link-disabled: var(--color-neutral-500);
-  --color-link-hover: var(--color-blue-700);
-  --color-link-visited: var(--color-blue-800);
-  --color-solid-bg: var(--color-neutral-950);
-  --color-solid-bg-disabled: var(--color-neutral-200);
-  --color-solid-bg-hover: var(--color-neutral-800);
-  --color-solid-bg-pressed: var(--color-neutral-900);
-  --color-solid-fg: var(--color-neutral-50);
-  --color-solid-fg-disabled: var(--color-neutral-500);
-  --color-success-bg: var(--color-success-50);
-  --color-success-border: var(--color-success-200);
-  --color-success-fg: var(--color-success-800);
-  --color-surface-canvas: var(--color-neutral-50);
-  --color-surface-muted-blue: #dbe2eb;
-  --color-surface-muted-rose: #e6dbe6;
-  --color-surface-muted-sage: #dbe6dc;
-  --color-surface-muted-warm: #e4e1d8;
-  --color-surface-raised: var(--color-white);
-  --color-surface-sunken: var(--color-neutral-100);
-  --color-warning-bg: var(--color-warning-50);
-  --color-warning-border: var(--color-warning-200);
-  --color-warning-fg: var(--color-warning-800);
-  --gradient-skeleton: linear-gradient(90deg, var(--color-neutral-200) 43.67%, var(--color-neutral-100) 75.79%, var(--color-neutral-200) 100.0%);
-  --shadow-focus-ring: 0px 0px 0px 2px #2463eb;
-  --component-button-height: 34.7969px;
-  --component-button-cta-height: 43.5938px;
-  --component-button-cta-radius: 52px;
-  --component-send-height: 32px;
-  --component-inputcard-radius: 16px;
-  --component-inputcard-height: 126px;
-  --component-starter-height: 20.5938px;
-  --component-starter-radius: 8px;
-  --component-sidebar-width: 256px;
-  --component-sidebar-collapsed-width: 74px;
-  --component-dialog-radius: 24px;
-  --component-dialog-width: 393px;
-  --component-header-height: 72px;
-  color: var(--color-fg-default, #1b1b18);
-  background: var(--color-surface-canvas, #fdfdf7);
+  --color-wash-sky: #e7eef3;
+  --color-chat-stop1: #2463eb;
+  --color-chat-stop2: #0ea5e9;
+  --color-chat-stop3: #22c55e;
+  --color-chat-stop4: #84cc16;
+  --font-display: "fraunces", Georgia, Times New Roman, serif;
+  --font-sans: "geist", system-ui, Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --font-mono: "geistMono", ui-monospace, Courier New, monospace;
+  --typography-body-10: 400 10px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-12: 400 12px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-14: 400 14px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-16: 400 16px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-18: 400 18px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-20: 400 20px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-24: 400 24px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-28: 400 28px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-32: 400 32px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-display-24: 400 24px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-32: 400 32px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-40: 400 40px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-48: 400 48px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-56: 400 56px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-64: 400 64px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-72: 400 72px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-heading-10: 600 10px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-12: 600 12px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-14: 600 14px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-16: 600 16px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-18: 600 18px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-20: 600 20px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-24: 600 24px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-28: 600 28px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-32: 600 32px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-10: italic 600 10px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-12: italic 600 12px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-14: italic 600 14px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-16: italic 600 16px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-18: italic 600 18px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-20: italic 600 20px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-24: italic 600 24px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-28: italic 600 28px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-32: italic 600 32px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-italic-14: italic 400 14px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-18: italic 400 18px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-24: italic 400 24px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-32: italic 400 32px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-40: italic 400 40px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-48: italic 400 48px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-56: italic 400 56px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-64: italic 400 64px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-72: italic 400 72px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-label-10: 500 10px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-12: 500 12px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-14: 500 14px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-16: 500 16px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-18: 500 18px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-20: 500 20px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-24: 500 24px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-28: 500 28px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-32: 500 32px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-mono-10: 400 10px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-12: 400 12px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-14: 400 14px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-16: 400 16px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-18: 400 18px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-20: 400 20px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-24: 400 24px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-28: 400 28px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-32: 400 32px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-10: 600 10px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-12: 600 12px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-14: 600 14px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-16: 600 16px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-18: 600 18px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-20: 600 20px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-24: 600 24px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-28: 600 28px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-32: 600 32px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --shadow-xs: 0px 1px 2px 0px rgba(0, 0, 0, 0.059);
+  --shadow-sm: 0px 1px 12px 0px rgba(0, 0, 0, 0.051);
+  --shadow-md: 0px 2px 12px 0px rgba(0, 0, 0, 0.059);
+  --shadow-lg: 0px 2px 24px 0px rgba(0, 0, 0, 0.059);
+  --shadow-xl: 0px 5px 32px 0px rgba(0, 0, 0, 0.102);
+  --shadow-brandGlow: 0px 4px 14px 0px rgba(9, 97, 228, 0.388);
+  --shadow-brandGlowHover: 0px 6px 20px 0px rgba(9, 97, 228, 0.502);
+  --shadow-focusRing: 0px 2px 0px 0px #2463eb;
+  --size-header: 72px;
+  --size-tapTarget: 44px;
+  --size-focusRingWidth: 2px;
+  --size-focusRingOffset: 2px;
+  --measured-controlRadiusPill: 32px;
+  --measured-controlRadiusCta: 52px;
+  --measured-controlHeightLogin: 35px;
+  --measured-controlHeightCta: 44px;
+  --measured-displaySize: 48px;
+  --page: #fdfdf7;
+  --surface: #ffffff;
+  --sunken: #f5f5f0;
+  --text: #1b1b18;
+  --muted: hsl(from #1b1b18 h s l / .73);
+  --subtle: hsl(from #1b1b18 h s l / .6);
+  --disabled: hsl(from #1b1b18 h s l / .3);
+  --onAccent: #ffffff;
+  --link: #2463eb;
+  --border: hsl(from #1b1b18 h s l / .08);
+  --borderStrong: hsl(from #1b1b18 h s l / .2);
+  --accent: #2463eb;
+  --accentHover: #1d4fd7;
+  --accentPressed: #1e3fae;
+  --focus: #3c83f6;
+  --success: #193e1e;
+  --successBg: #f1f8f2;
+  --warning: #59410d;
+  --warningBg: #fef9e7;
+  --danger: #610f1d;
+  --dangerBg: #fdedee;
+  --info: #1e3fae;
+  --infoBg: #f0f6ff;
+  --solid: #0b0b0a;
+  --solidText: #fdfdf7;
+  --sg-sans: "geist", system-ui, sans-serif;
+  --sg-display: "fraunces", Georgia, serif;
+  --sg-mono: "geistMono", ui-monospace, monospace;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-fg-default, #1b1b18); background: var(--color-surface-canvas, #fdfdf7); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.17 var(--sg-serif); margin: 0 0 4px; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-fg-default, #1b1b18); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-divider, #e4e4dc); }
-.lead { max-width: 62ch; color: var(--color-fg-default, #1b1b18); opacity: .8; }
-.note { font-size: 13px; color: var(--color-fg-default, #1b1b18); opacity: .65; max-width: 62ch; }
+body { margin: 0; font: 400 16px/1.4 var(--sg-sans); color: var(--text, #1b1b18); background: var(--page, #fdfdf7); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 400 48px/1.17 var(--sg-display); margin: 0 0 8px; letter-spacing: -0.01em; }
+h2 { font: 600 20px/1.4 var(--sg-sans); margin: 48px 0 12px; }
+.note { color: var(--muted, #6a6a6a); max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, rgba(27,27,24,.12)); display: block; }
+.sw b { font: 500 12px/1.3 var(--sg-mono); display: block; }
+.sw span { font: 400 11px/1.3 var(--sg-mono); color: var(--muted); }
+.mock { border: 1px solid var(--border, rgba(27,27,24,.08)); border-radius: 24px; background: var(--page); padding: 28px; max-width: 720px; }
+.bar { display: flex; align-items: center; gap: 12px; margin-bottom: 36px; }
+.mark { width: 22px; height: 22px; border-radius: 50%; background: var(--accent, #2463eb); }
+.word { font: 600 16px/1 var(--sg-sans); margin-right: auto; }
+.pill { display: inline-flex; align-items: center; height: 35px; padding: 0 14px; border-radius: 32px; font: 400 16px/1 var(--sg-sans); border: 1px solid var(--borderStrong, rgba(27,27,24,.2)); background: transparent; color: var(--text); }
+.pill.solid { background: var(--solid, #0b0b0a); color: var(--solidText, #fdfdf7); border-color: transparent; }
+.hero { font: 400 48px/1.17 var(--sg-display); margin: 0 0 8px; }
+.lede { max-width: 46ch; color: var(--text); }
+.composer { margin-top: 24px; background: var(--surface, #fff); border-radius: 20px; padding: 16px; box-shadow: var(--shadow-sm, 0 1px 12px rgba(0,0,0,.05)); }
+.composer .ph { color: var(--subtle, #6a6a6a); font-size: 14px; }
+.composer .actions { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 34px; border: 1px solid var(--border); font-size: 13px; }
+.cta { display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 52px; background: var(--accent); color: var(--onAccent, #fff); font: 500 16px/1 var(--sg-sans); }
+.suggest { display: inline-flex; margin: 8px 8px 0 0; height: 36px; padding: 0 12px; border-radius: 8px; background: var(--sunken, #f5f5f0); align-items: center; }
 code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-fg-default, #1b1b18); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.dark { background: #0d0e0b; padding: 12px; border-radius: 12px; }
-.pal.dark .nm, .pal.dark .vl { color: #fdfdf7; }
-.pal.light-scope { padding: 12px; border-radius: 12px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); display: inline-flex; flex: 0 0 auto; background-image: linear-gradient(45deg, #80808022 25%, transparent 25%, transparent 75%, #80808022 75%), linear-gradient(45deg, #80808022 25%, transparent 25%, transparent 75%, #80808022 75%); background-size: 8px 8px; background-position: 0 0, 4px 4px; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-fg-muted, rgba(27,27,24,.73)); }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--color-fg-default, #1b1b18); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); overflow: hidden; background: var(--color-surface-canvas, #fdfdf7); border-radius: 12px; }
-.navbar { display: flex; align-items: center; gap: 8px; height: 72px; padding: 0 12px 0 20px; font-size: 14px; color: var(--color-fg-default, #1b1b18); background: var(--color-surface-canvas, #fdfdf7); }
-.navbar .wm { font-family: var(--sg-serif); font-weight: 600; font-size: 20px; }
-.navbar .sp { flex: 1; }
-/* The content pages' bar is a different, shorter bar on a sage wash (a
-   literal Tailwind hex, not a token — the content pages carry utilities). */
-.navbar.mkt { height: 56px; background: #e2f0e4; color: #0c0e12; }
-.npill { padding: 4px 10px; border-radius: 999px; font-size: 14px; font-weight: 600; }
-.menubtn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: inherit; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 36px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: 999px; border: 1px solid transparent; font-family: var(--sg-sans); }
-.btn.primary { background: var(--color-accent-bg, #2463eb); color: var(--color-accent-fg, #fff); box-shadow: var(--shadow-brand-glow, none); }
-.btn.solid { background: var(--color-solid-bg, #0b0b0a); color: var(--color-solid-fg, #fdfdf7); }
-.btn.ghost { background: transparent; color: var(--color-fg-default, #1b1b18); box-shadow: inset 0 0 0 1px var(--color-border-default, rgba(27,27,24,.08)); }
-.btn.dark-accent { background: #61a6fa; color: #172554; }
-.chatcard { display: flex; align-items: center; gap: 12px; background: var(--color-surface-raised, #fff); border-radius: var(--component-inputcard-radius, 28px); box-shadow: var(--shadow-md, 0 2px 12px rgba(0,0,0,.06)); padding: 10px 10px 10px 20px; border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); }
-.chatcard .ph { flex: 1; color: var(--color-fg-subtle, rgba(27,27,24,.6)); font-size: 16px; }
-/* The chip's measured height is its content-box height (the page measures
-   20.59px + 8px/16px padding = ~36.6px total); content-box keeps the token
-   meaning the same thing it did in the capture. */
-.chip { display: inline-flex; align-items: center; gap: 6px; box-sizing: content-box; height: var(--component-starter-height, 20px); padding: 8px 16px; border-radius: var(--component-starter-radius, 8px); border: 0; background: var(--color-neutral-100, #f5f5f0); color: var(--color-fg-default, #1b1b18); font-size: 14px; }
-.accentband { height: 4px; border-radius: 4px; background: var(--gradient-chat-sheet-accent, linear-gradient(90deg, #2463eb, #0ea5e9, #22c55e, #84cc16, #0ea5e9, #2463eb)); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); padding: 14px; font-size: 13px; background: var(--color-surface-raised, #fff); border-radius: 12px; }
-.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-divider, #e4e4dc); }
-.tr .ts { font-family: var(--sg-sans); }
-.tr .tv { font-size: 12px; color: var(--color-fg-default, #1b1b18); opacity: .65; font-family: var(--sg-mono); }
-.shadowbox { display: inline-flex; align-items: flex-end; justify-content: center; width: 120px; height: 64px; background: var(--color-surface-raised, #fff); border-radius: 10px; font: 500 11px var(--sg-mono); color: var(--color-fg-muted, rgba(27,27,24,.73)); margin: 0 14px 14px 0; padding-bottom: 8px; }
-.themebar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: flex-end; padding: 8px 0; }
-.themebar button { font: 500 12px/1 var(--sg-sans); border-radius: 999px; border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); background: var(--color-surface-raised, #fff); color: var(--color-fg-default, #1b1b18); padding: 8px 14px; cursor: pointer; }
-html[data-theme="dark"] body, body.dark { color-scheme: dark; }
 </style>
 </head>
 <body>
 <main>
-  <div class="themebar"><button onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'">toggle light / dark</button></div>
-  <h1>Doctronic style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, shadow and type row below is a token, not a restated number. The boxed mocks are reconstructions drawn with those tokens, not captured pixels. doctronic.ai's dark set is its real user-selectable theme — the toggle above switches this page's <code>data-theme</code> the same way the site's own theme choice does.</p>
+  <h1>Doctronic AI</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Values are the custom properties declared on doctronic.ai. The site paints one light theme.</p>
 
-  <h2 class="sh">Doctronic, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the seven eleven-step ramps (neutral, blue, sage, lime, success, warning, error), the semantic roles the site redeclares under <code>[data-theme="dark"]</code>, the Fraunces / Geist / Geist Mono composite type ramp, the five-step elevation scale and the brand glow. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from www.doctronic.ai, signed out, in headless Chromium. The chat product itself, health records, prescriptions and every signed-in surface behind Log in / Sign up are a documented boundary — the public pages, the chat's signed-out composer and the sign-in dialog were measured, never used.</p>
+  <h2>Roles</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><div><b>page</b><span>var(--page)</span></div></div>
+    <div class="sw"><i style="background:var(--surface)"></i><div><b>surface</b><span>var(--surface)</span></div></div>
+    <div class="sw"><i style="background:var(--text)"></i><div><b>text</b><span>var(--text)</span></div></div>
+    <div class="sw"><i style="background:var(--accent)"></i><div><b>accent</b><span>var(--accent)</span></div></div>
+    <div class="sw"><i style="background:var(--solid)"></i><div><b>solid</b><span>var(--solid)</span></div></div>
+    <div class="sw"><i style="background:var(--successBg)"></i><div><b>success</b><span>var(--successBg)</span></div></div>
+    <div class="sw"><i style="background:var(--warningBg)"></i><div><b>warning</b><span>var(--warningBg)</span></div></div>
+    <div class="sw"><i style="background:var(--dangerBg)"></i><div><b>danger</b><span>var(--dangerBg)</span></div></div>
+  </div>
 
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">Two different top bars were measured. The 72px home bar carries the wordmark, the quiet Log in, the solid dark Sign up pill and the round menu button that opens the site-menu drawer. The 56px bar on the content pages sits on a sage wash and carries the wordmark, the rounded-full pill links (About, FAQ, Blog, Online Treatment, Wall of Love, LegitScript) and the dark "Try Doctronic For Free" CTA. Buttons are 999px pills: the accent action paints blue-600 (light) / blue-400 (dark) with the brand-glow shadow; the dark solid button is the inverted <code>solid-bg</code>/<code>solid-fg</code> pair.</p>
+  <h2>Home composer</h2>
   <div class="mock">
-    <div class="navbar"><span class="wm">Doctronic</span><span class="sp"></span><span class="btn ghost">Log in</span><span class="btn solid">Sign up</span><span class="menubtn" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2.5 5.5h13M2.5 9h13M2.5 12.5h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
+    <div class="bar">
+      <i class="mark"></i>
+      <span class="word">doctronic</span>
+      <span class="pill">Log in</span>
+      <span class="pill solid">Sign up</span>
+    </div>
+    <p class="hero">Hi, I’m Doctronic</p>
+    <p class="lede">Describe your symptoms and I’ll provide a treatment plan, based on peer-reviewed medical research.</p>
+    <div class="composer">
+      <div class="ph">Describe symptom or ask any health questions...</div>
+      <div class="actions">
+        <span class="chip">Anonymous</span>
+        <span class="cta">Start chat</span>
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <span class="suggest">Check my symptoms</span>
+      <span class="suggest">Get treatment advice</span>
+    </div>
   </div>
-  <div class="mock" style="margin-top:12px">
-    <div class="navbar mkt"><span class="wm">Doctronic</span><span class="npill">About</span><span class="npill">FAQ</span><span class="npill">Blog</span><span class="npill">Online Treatment</span><span class="npill">Wall of Love</span><span class="npill">LegitScript</span><span class="sp"></span><span class="btn solid">Try Doctronic For Free</span></div>
-  </div>
 
-  <h2 class="sh">The chat composer</h2>
-  <p class="lead">The surface every page is built around: a raised card at the measured radius carrying the question textarea and the accent submit control, an animated accent border (the <code>chat-sheet-accent</code> sweep) and suggestion chips underneath. Measured, never submitted.</p>
-  <div class="mock" style="padding:28px">
-    <div class="chatcard"><span class="ph">Ask a question about your health…</span><span class="btn primary">Start chat</span></div>
-    <div class="accentband" style="margin-top:14px"></div>
-    <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap"><span class="chip">Check my symptoms</span><span class="chip">Get treatment advice</span><span class="chip">Get or refill a prescription</span><span class="chip">Understand my lab results</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The core set carries the primitive ramps; the light and dark sets carry the semantic roles the site declares on <code>:root</code> and redeclares under <code>[data-theme="dark"]</code> — plain <code>var()</code> declarations are kept as aliases, the <code>hsl(from … / α)</code> derivations are resolved per theme. The dark palette below sits inside a <code>.dark</code> scope, the way the site scopes it.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Layout and measured extras</h2>
-  <p class="lead">Radii are not declared as tokens on the public surface — they live at the component level (999px pills, the measured input-card radius), so the radius values here are measured on the real elements, not restated scales.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Three self-hosted faces: <code>fraunces</code> for display and italic text, <code>geist</code> for heading/body/label, <code>geistMono</code> for mono. The <code>--text-*</code> tokens are composite font shorthands — display at /1.17, italic display at /1.25, everything else at /1.4 — 400 body and display, 500 label, 600 heading and mono-bold. The webfonts are licensed and not loaded here; samples fall back to Georgia/system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the @layer tokens custom-property layer off the same-origin chunks and computed styles on the real elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, expanded and the real dark theme measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <h2>Type</h2>
+  <p style="font:var(--typography-display-48)">Display 48, Fraunces</p>
+  <p style="font:var(--typography-heading-20)">Heading 20, Geist 600</p>
+  <p style="font:var(--typography-body-16)">Body 16, Geist 400. The chat and the marketing copy sit on this step.</p>
+  <p style="font:var(--typography-label-14)">Label 14, Geist 500</p>
+  <p style="font:var(--typography-mono-14)">Mono 14, Geist Mono</p>
 </main>
-<script>
-const TOK = {"core":{"color":{"blue":{"100":{"v":"#dcebfe","t":"color","s":"css-var --color-blue-100 (light); css-var --color-blue-100 (:root @layer tokens)","d":"The blue ramp's 100 step."},"200":{"v":"#bedbfe","t":"color","s":"css-var --color-blue-200 (light); css-var --color-blue-200 (:root @layer tokens)","d":"The blue ramp's 200 step."},"300":{"v":"#91c3fd","t":"color","s":"css-var --color-blue-300 (light); css-var --color-blue-300 (:root @layer tokens)","d":"The blue ramp's 300 step."},"400":{"v":"#61a6fa","t":"color","s":"css-var --color-blue-400 (light); css-var --color-blue-400 (:root @layer tokens)","d":"The blue ramp's 400 step."},"50":{"v":"#f0f6ff","t":"color","s":"css-var --color-blue-50 (light); css-var --color-blue-50 (:root @layer tokens)","d":"The blue ramp's 50 step."},"500":{"v":"#3c83f6","t":"color","s":"css-var --color-blue-500 (light); css-var --color-blue-500 (:root @layer tokens)","d":"The blue ramp's 500 step."},"600":{"v":"#2463eb","t":"color","s":"css-var --color-blue-600 (light); css-var --color-blue-600 (:root @layer tokens)","d":"The blue ramp's 600 step."},"700":{"v":"#1d4fd7","t":"color","s":"css-var --color-blue-700 (light); css-var --color-blue-700 (:root @layer tokens)","d":"The blue ramp's 700 step."},"800":{"v":"#1e3fae","t":"color","s":"css-var --color-blue-800 (light); css-var --color-blue-800 (:root @layer tokens)","d":"The blue ramp's 800 step."},"900":{"v":"#1e3b8a","t":"color","s":"css-var --color-blue-900 (light); css-var --color-blue-900 (:root @layer tokens)","d":"The blue ramp's 900 step."},"950":{"v":"#172554","t":"color","s":"css-var --color-blue-950 (light); css-var --color-blue-950 (:root @layer tokens)","d":"The blue ramp's 950 step."}},"error":{"100":{"v":"#fbd5d9","t":"color","s":"css-var --color-error-100 (light); css-var --color-error-100 (:root @layer tokens)","d":"The error ramp's 100 step."},"200":{"v":"#f5a8b1","t":"color","s":"css-var --color-error-200 (light); css-var --color-error-200 (:root @layer tokens)","d":"The error ramp's 200 step."},"300":{"v":"#ed7383","t":"color","s":"css-var --color-error-300 (light); css-var --color-error-300 (:root @layer tokens)","d":"The error ramp's 300 step."},"400":{"v":"#de3f57","t":"color","s":"css-var --color-error-400 (light); css-var --color-error-400 (:root @layer tokens)","d":"The error ramp's 400 step."},"50":{"v":"#fdedee","t":"color","s":"css-var --color-error-50 (light); css-var --color-error-50 (:root @layer tokens)","d":"The error ramp's 50 step."},"500":{"v":"#c52640","t":"color","s":"css-var --color-error-500 (light); css-var --color-error-500 (:root @layer tokens)","d":"The error ramp's 500 step."},"600":{"v":"#a61c31","t":"color","s":"css-var --color-error-600 (light); css-var --color-error-600 (:root @layer tokens)","d":"The error ramp's 600 step."},"700":{"v":"#841527","t":"color","s":"css-var --color-error-700 (light); css-var --color-error-700 (:root @layer tokens)","d":"The error ramp's 700 step."},"800":{"v":"#610f1d","t":"color","s":"css-var --color-error-800 (light); css-var --color-error-800 (:root @layer tokens)","d":"The error ramp's 800 step."},"900":{"v":"#3e0914","t":"color","s":"css-var --color-error-900 (light); css-var --color-error-900 (:root @layer tokens)","d":"The error ramp's 900 step."},"950":{"v":"#20030a","t":"color","s":"css-var --color-error-950 (light); css-var --color-error-950 (:root @layer tokens)","d":"The error ramp's 950 step."}},"lime":{"100":{"v":"#efffcc","t":"color","s":"css-var --color-lime-100 (light); css-var --color-lime-100 (:root @layer tokens)","d":"The lime ramp's 100 step."},"200":{"v":"#e4ff9e","t":"color","s":"css-var --color-lime-200 (light); css-var --color-lime-200 (:root @layer tokens)","d":"The lime ramp's 200 step."},"300":{"v":"#d9ff80","t":"color","s":"css-var --color-lime-300 (light); css-var --color-lime-300 (:root @layer tokens)","d":"The lime ramp's 300 step."},"400":{"v":"#beec4b","t":"color","s":"css-var --color-lime-400 (light); css-var --color-lime-400 (:root @layer tokens)","d":"The lime ramp's 400 step."},"50":{"v":"#f7ffe6","t":"color","s":"css-var --color-lime-50 (light); css-var --color-lime-50 (:root @layer tokens)","d":"The lime ramp's 50 step."},"500":{"v":"#a3ce2c","t":"color","s":"css-var --color-lime-500 (light); css-var --color-lime-500 (:root @layer tokens)","d":"The lime ramp's 500 step."},"600":{"v":"#82a91e","t":"color","s":"css-var --color-lime-600 (light); css-var --color-lime-600 (:root @layer tokens)","d":"The lime ramp's 600 step."},"700":{"v":"#66841a","t":"color","s":"css-var --color-lime-700 (light); css-var --color-lime-700 (:root @layer tokens)","d":"The lime ramp's 700 step."},"800":{"v":"#4d641b","t":"color","s":"css-var --color-lime-800 (light); css-var --color-lime-800 (:root @layer tokens)","d":"The lime ramp's 800 step."},"900":{"v":"#33421a","t":"color","s":"css-var --color-lime-900 (light); css-var --color-lime-900 (:root @layer tokens)","d":"The lime ramp's 900 step."},"950":{"v":"#1a230b","t":"color","s":"css-var --color-lime-950 (light); css-var --color-lime-950 (:root @layer tokens)","d":"The lime ramp's 950 step."}},"neutral":{"100":{"v":"#f5f5f0","t":"color","s":"css-var --color-neutral-100 (light); css-var --color-neutral-100 (:root @layer tokens)","d":"The neutral ramp's 100 step."},"200":{"v":"#e4e4dc","t":"color","s":"css-var --color-neutral-200 (light); css-var --color-neutral-200 (:root @layer tokens)","d":"The neutral ramp's 200 step."},"300":{"v":"#cecec5","t":"color","s":"css-var --color-neutral-300 (light); css-var --color-neutral-300 (:root @layer tokens)","d":"The neutral ramp's 300 step."},"400":{"v":"#a7a7a0","t":"color","s":"css-var --color-neutral-400 (light); css-var --color-neutral-400 (:root @layer tokens)","d":"The neutral ramp's 400 step."},"50":{"v":"#fdfdf7","t":"color","s":"css-var --color-neutral-50 (light); css-var --color-neutral-50 (:root @layer tokens)","d":"The neutral ramp's 50 step."},"500":{"v":"#797972","t":"color","s":"css-var --color-neutral-500 (light); css-var --color-neutral-500 (:root @layer tokens)","d":"The neutral ramp's 500 step."},"600":{"v":"#53544f","t":"color","s":"css-var --color-neutral-600 (light); css-var --color-neutral-600 (:root @layer tokens)","d":"The neutral ramp's 600 step."},"700":{"v":"#3c3c39","t":"color","s":"css-var --color-neutral-700 (light); css-var --color-neutral-700 (:root @layer tokens)","d":"The neutral ramp's 700 step."},"800":{"v":"#272725","t":"color","s":"css-var --color-neutral-800 (light); css-var --color-neutral-800 (:root @layer tokens)","d":"The neutral ramp's 800 step."},"900":{"v":"#1b1b18","t":"color","s":"css-var --color-neutral-900 (light); css-var --color-neutral-900 (:root @layer tokens)","d":"The neutral ramp's 900 step."},"950":{"v":"#0b0b0a","t":"color","s":"css-var --color-neutral-950 (light); css-var --color-neutral-950 (:root @layer tokens)","d":"The neutral ramp's 950 step."}},"sage":{"100":{"v":"#e1efe3","t":"color","s":"css-var --color-sage-100 (light); css-var --color-sage-100 (:root @layer tokens)","d":"The sage ramp's 100 step."},"200":{"v":"#c9e3cc","t":"color","s":"css-var --color-sage-200 (light); css-var --color-sage-200 (:root @layer tokens)","d":"The sage ramp's 200 step."},"300":{"v":"#b9dabd","t":"color","s":"css-var --color-sage-300 (light); css-var --color-sage-300 (:root @layer tokens)","d":"The sage ramp's 300 step."},"400":{"v":"#8dbf93","t":"color","s":"css-var --color-sage-400 (light); css-var --color-sage-400 (:root @layer tokens)","d":"The sage ramp's 400 step."},"50":{"v":"#f1f8f2","t":"color","s":"css-var --color-sage-50 (light); css-var --color-sage-50 (:root @layer tokens)","d":"The sage ramp's 50 step."},"500":{"v":"#5e9c65","t":"color","s":"css-var --color-sage-500 (light); css-var --color-sage-500 (:root @layer tokens)","d":"The sage ramp's 500 step."},"600":{"v":"#45824d","t":"color","s":"css-var --color-sage-600 (light); css-var --color-sage-600 (:root @layer tokens)","d":"The sage ramp's 600 step."},"700":{"v":"#34653a","t":"color","s":"css-var --color-sage-700 (light); css-var --color-sage-700 (:root @layer tokens)","d":"The sage ramp's 700 step."},"800":{"v":"#264b2c","t":"color","s":"css-var --color-sage-800 (light); css-var --color-sage-800 (:root @layer tokens)","d":"The sage ramp's 800 step."},"900":{"v":"#16311a","t":"color","s":"css-var --color-sage-900 (light); css-var --color-sage-900 (:root @layer tokens)","d":"The sage ramp's 900 step."},"950":{"v":"#0a190c","t":"color","s":"css-var --color-sage-950 (light); css-var --color-sage-950 (:root @layer tokens)","d":"The sage ramp's 950 step."}},"success":{"100":{"v":"#ddeedf","t":"color","s":"css-var --color-success-100 (light); css-var --color-success-100 (:root @layer tokens)","d":"The success ramp's 100 step."},"200":{"v":"#bad9be","t":"color","s":"css-var --color-success-200 (light); css-var --color-success-200 (:root @layer tokens)","d":"The success ramp's 200 step."},"300":{"v":"#8ebe95","t":"color","s":"css-var --color-success-300 (light); css-var --color-success-300 (:root @layer tokens)","d":"The success ramp's 300 step."},"400":{"v":"#5ea168","t":"color","s":"css-var --color-success-400 (light); css-var --color-success-400 (:root @layer tokens)","d":"The success ramp's 400 step."},"50":{"v":"#f1f8f2","t":"color","s":"css-var --color-success-50 (light); css-var --color-success-50 (:root @layer tokens)","d":"The success ramp's 50 step."},"500":{"v":"#438448","t":"color","s":"css-var --color-success-500 (light); css-var --color-success-500 (:root @layer tokens)","d":"The success ramp's 500 step."},"600":{"v":"#2f6a36","t":"color","s":"css-var --color-success-600 (light); css-var --color-success-600 (:root @layer tokens)","d":"The success ramp's 600 step."},"700":{"v":"#235328","t":"color","s":"css-var --color-success-700 (light); css-var --color-success-700 (:root @layer tokens)","d":"The success ramp's 700 step."},"800":{"v":"#193e1e","t":"color","s":"css-var --color-success-800 (light); css-var --color-success-800 (:root @layer tokens)","d":"The success ramp's 800 step."},"900":{"v":"#112c15","t":"color","s":"css-var --color-success-900 (light); css-var --color-success-900 (:root @layer tokens)","d":"The success ramp's 900 step."},"950":{"v":"#061309","t":"color","s":"css-var --color-success-950 (light); css-var --color-success-950 (:root @layer tokens)","d":"The success ramp's 950 step."}},"warning":{"100":{"v":"#fcefc0","t":"color","s":"css-var --color-warning-100 (light); css-var --color-warning-100 (:root @layer tokens)","d":"The warning ramp's 100 step."},"200":{"v":"#f8de82","t":"color","s":"css-var --color-warning-200 (light); css-var --color-warning-200 (:root @layer tokens)","d":"The warning ramp's 200 step."},"300":{"v":"#f1c946","t":"color","s":"css-var --color-warning-300 (light); css-var --color-warning-300 (:root @layer tokens)","d":"The warning ramp's 300 step."},"400":{"v":"#e0ab1a","t":"color","s":"css-var --color-warning-400 (light); css-var --color-warning-400 (:root @layer tokens)","d":"The warning ramp's 400 step."},"50":{"v":"#fef9e7","t":"color","s":"css-var --color-warning-50 (light); css-var --color-warning-50 (:root @layer tokens)","d":"The warning ramp's 50 step."},"500":{"v":"#c28d0f","t":"color","s":"css-var --color-warning-500 (light); css-var --color-warning-500 (:root @layer tokens)","d":"The warning ramp's 500 step."},"600":{"v":"#9d6f0b","t":"color","s":"css-var --color-warning-600 (light); css-var --color-warning-600 (:root @layer tokens)","d":"The warning ramp's 600 step."},"700":{"v":"#7b550a","t":"color","s":"css-var --color-warning-700 (light); css-var --color-warning-700 (:root @layer tokens)","d":"The warning ramp's 700 step."},"800":{"v":"#59410d","t":"color","s":"css-var --color-warning-800 (light); css-var --color-warning-800 (:root @layer tokens)","d":"The warning ramp's 800 step."},"900":{"v":"#3c2d0b","t":"color","s":"css-var --color-warning-900 (light); css-var --color-warning-900 (:root @layer tokens)","d":"The warning ramp's 900 step."},"950":{"v":"#1f1605","t":"color","s":"css-var --color-warning-950 (light); css-var --color-warning-950 (:root @layer tokens)","d":"The warning ramp's 950 step."}},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light); css-var --color-white (:root)","d":"The white every raised surface and accent label paints."},"wash":{"lavender":{"soft":{"v":"#efecf9","t":"color","s":"css-var --color-wash-lavender-soft (light); css-var --color-wash-lavender-soft (:root @layer tokens)","d":"A soft lavender decorative wash."},"deep":{"v":"#e5e1f4","t":"color","s":"css-var --color-wash-lavender-deep (light); css-var --color-wash-lavender-deep (:root @layer tokens)","d":"The deeper lavender wash."}},"sky":{"v":"#e7eef3","t":"color","s":"css-var --color-wash-sky (light); css-var --color-wash-sky (:root @layer tokens)","d":"A pale sky wash."},"sage":{"v":"#ebf4ec","t":"color","s":"css-var --color-wash-sage (light); css-var --color-wash-sage (:root @layer tokens)","d":"A pale sage wash."}},"graphic-blue":{"bold":{"v":"{color.blue.500}","t":"color","s":"css-var --color-graphic-blue-bold = var(--color-blue-500)","d":"The blue illustration ramp's bold step, the blue ramp's 500."},"moderate":{"v":"{color.blue.300}","t":"color","s":"css-var --color-graphic-blue-moderate = var(--color-blue-300)","d":"The blue illustration ramp's moderate step, the blue ramp's 300."},"muted":{"v":"{color.blue.200}","t":"color","s":"css-var --color-graphic-blue-muted = var(--color-blue-200)","d":"The blue illustration ramp's muted step, the blue ramp's 200."},"soft":{"v":"{color.blue.100}","t":"color","s":"css-var --color-graphic-blue-soft = var(--color-blue-100)","d":"The blue illustration ramp's soft step, the blue ramp's 100."},"strong":{"v":"{color.blue.400}","t":"color","s":"css-var --color-graphic-blue-strong = var(--color-blue-400)","d":"The blue illustration ramp's strong step, the blue ramp's 400."},"subtle":{"v":"{color.blue.50}","t":"color","s":"css-var --color-graphic-blue-subtle = var(--color-blue-50)","d":"The blue illustration ramp's subtle step, the blue ramp's 50."}}},"gradient":{"chat-sheet-accent":{"v":[{"color":"#2463eb","position":0.0},{"color":"#0ea5e9","position":0.2},{"color":"#22c55e","position":0.4},{"color":"#84cc16","position":0.6},{"color":"#0ea5e9","position":0.8},{"color":"#2463eb","position":1.0}],"t":"gradient","s":"css-var --chat-sheet-accent-gradient (:root @layer tokens): the blue→sky→green→lime sweep the chat input card's accent border animates","d":"The accent sweep painted around the hero chat input card."}},"font":{"family":{"display":{"v":"\"fraunces\", Georgia, Times New Roman, serif","t":"fontFamily","s":"css-var --font-display declared on .AGcgpq_variable; the @font-face blocks (self-hosted woff2) are in raw/css-vars.json fonts","d":"The Fraunces face the display, italic and oath text is set in."},"sans":{"v":"\"geist\", system-ui, Arial, sans-serif","t":"fontFamily","s":"css-var --font-sans declared on .Ijxoba_variable; the @font-face blocks (self-hosted woff2) are in raw/css-vars.json fonts","d":"The Geist face the UI, headings, body and label text is set in."},"mono":{"v":"\"geistMono\", ui-monospace, Courier New, monospace","t":"fontFamily","s":"css-var --font-mono declared on .P2jE_a_variable; the @font-face blocks (self-hosted woff2) are in raw/css-vars.json fonts","d":"The Geist Mono face the mono tokens are set in."},"body":{"v":"-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif","t":"fontFamily","s":"css-var --font-body (:root)","d":"The system fallback stack the plain body font reads."}}},"typography":{"body":{"10":{"v":{"fontFamily":"{font.family.sans}","fontSize":"10px","lineHeight":"14px","fontWeight":400},"t":"typography","s":"css-var --text-body-10 (:root @layer tokens): \"400 .625rem/1.4 var(--font-sans)\"","d":"Body (Geist 400) at 10px."},"12":{"v":{"fontFamily":"{font.family.sans}","fontSize":"12px","lineHeight":"16.8px","fontWeight":400},"t":"typography","s":"css-var --text-body-12 (:root @layer tokens): \"400 .75rem/1.4 var(--font-sans)\"","d":"Body (Geist 400) at 12px."},"14":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","lineHeight":"19.6px","fontWeight":400},"t":"typography","s":"css-var --text-body-14 (:root @layer tokens): \"400 .875rem/1.4 var(--font-sans)\"","d":"Body (Geist 400) at 14px."},"16":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","lineHeight":"22.4px","fontWeight":400},"t":"typography","s":"css-var --text-body-16 (:root @layer tokens): \"400 1rem/1.4 var(--font-sans)\"","d":"Body (Geist 400) at 16px."},"18":{"v":{"fontFamily":"{font.family.sans}","fontSize":"18px","lineHeight":"25.2px","fontWeight":400},"t":"typography","s":"css-var --text-body-18 (:root @layer tokens): \"400 1.125rem/1.4 var(--font-sans)\"","d":"Body (Geist 400) at 18px."},"20":{"v":{"fontFamily":"{font.family.sans}","fontSize":"20px","lineHeight":"28px","fontWeight":400},"t":"typography","s":"css-var --text-body-20 (:root @layer tokens): \"400 1.25rem/1.4 var(--font-sans)\"","d":"Body (Geist 400) at 20px."},"24":{"v":{"fontFamily":"{font.family.sans}","fontSize":"24px","lineHeight":"33.6px","fontWeight":400},"t":"typography","s":"css-var --text-body-24 (:root @layer tokens): \"400 1.5rem/1.4 var(--font-sans)\"","d":"Body (Geist 400) at 24px."},"28":{"v":{"fontFamily":"{font.family.sans}","fontSize":"28px","lineHeight":"39.2px","fontWeight":400},"t":"typography","s":"css-var --text-body-28 (:root @layer tokens): \"400 1.75rem/1.4 var(--font-sans)\"","d":"Body (Geist 400) at 28px."},"32":{"v":{"fontFamily":"{font.family.sans}","fontSize":"32px","lineHeight":"44.8px","fontWeight":400},"t":"typography","s":"css-var --text-body-32 (:root @layer tokens): \"400 2rem/1.4 var(--font-sans)\"","d":"Body (Geist 400) at 32px."}},"display":{"24":{"v":{"fontFamily":"{font.family.display}","fontSize":"24px","lineHeight":"28.08px","fontWeight":400},"t":"typography","s":"css-var --text-display-24 (:root @layer tokens): \"400 1.5rem/1.17 var(--font-display)\"","d":"Display (Fraunces) at 24px."},"32":{"v":{"fontFamily":"{font.family.display}","fontSize":"32px","lineHeight":"37.44px","fontWeight":400},"t":"typography","s":"css-var --text-display-32 (:root @layer tokens): \"400 2rem/1.17 var(--font-display)\"","d":"Display (Fraunces) at 32px."},"40":{"v":{"fontFamily":"{font.family.display}","fontSize":"40px","lineHeight":"46.8px","fontWeight":400},"t":"typography","s":"css-var --text-display-40 (:root @layer tokens): \"400 2.5rem/1.17 var(--font-display)\"","d":"Display (Fraunces) at 40px."},"48":{"v":{"fontFamily":"{font.family.display}","fontSize":"48px","lineHeight":"56.16px","fontWeight":400},"t":"typography","s":"css-var --text-display-48 (:root @layer tokens): \"400 3rem/1.17 var(--font-display)\"","d":"Display (Fraunces) at 48px."},"56":{"v":{"fontFamily":"{font.family.display}","fontSize":"56px","lineHeight":"65.52px","fontWeight":400},"t":"typography","s":"css-var --text-display-56 (:root @layer tokens): \"400 3.5rem/1.17 var(--font-display)\"","d":"Display (Fraunces) at 56px."},"64":{"v":{"fontFamily":"{font.family.display}","fontSize":"64px","lineHeight":"74.88px","fontWeight":400},"t":"typography","s":"css-var --text-display-64 (:root @layer tokens): \"400 4rem/1.17 var(--font-display)\"","d":"Display (Fraunces) at 64px."},"72":{"v":{"fontFamily":"{font.family.display}","fontSize":"72px","lineHeight":"84.24px","fontWeight":400},"t":"typography","s":"css-var --text-display-72 (:root @layer tokens): \"400 4.5rem/1.17 var(--font-display)\"","d":"Display (Fraunces) at 72px."}},"heading":{"10":{"v":{"fontFamily":"{font.family.sans}","fontSize":"10px","lineHeight":"14px","fontWeight":600},"t":"typography","s":"css-var --text-heading-10 (:root @layer tokens): \"600 .625rem/1.4 var(--font-sans)\"","d":"Heading (Geist 600) at 10px."},"12":{"v":{"fontFamily":"{font.family.sans}","fontSize":"12px","lineHeight":"16.8px","fontWeight":600},"t":"typography","s":"css-var --text-heading-12 (:root @layer tokens): \"600 .75rem/1.4 var(--font-sans)\"","d":"Heading (Geist 600) at 12px."},"14":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","lineHeight":"19.6px","fontWeight":600},"t":"typography","s":"css-var --text-heading-14 (:root @layer tokens): \"600 .875rem/1.4 var(--font-sans)\"","d":"Heading (Geist 600) at 14px."},"16":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","lineHeight":"22.4px","fontWeight":600},"t":"typography","s":"css-var --text-heading-16 (:root @layer tokens): \"600 1rem/1.4 var(--font-sans)\"","d":"Heading (Geist 600) at 16px."},"18":{"v":{"fontFamily":"{font.family.sans}","fontSize":"18px","lineHeight":"25.2px","fontWeight":600},"t":"typography","s":"css-var --text-heading-18 (:root @layer tokens): \"600 1.125rem/1.4 var(--font-sans)\"","d":"Heading (Geist 600) at 18px."},"20":{"v":{"fontFamily":"{font.family.sans}","fontSize":"20px","lineHeight":"28px","fontWeight":600},"t":"typography","s":"css-var --text-heading-20 (:root @layer tokens): \"600 1.25rem/1.4 var(--font-sans)\"","d":"Heading (Geist 600) at 20px."},"24":{"v":{"fontFamily":"{font.family.sans}","fontSize":"24px","lineHeight":"33.6px","fontWeight":600},"t":"typography","s":"css-var --text-heading-24 (:root @layer tokens): \"600 1.5rem/1.4 var(--font-sans)\"","d":"Heading (Geist 600) at 24px."},"28":{"v":{"fontFamily":"{font.family.sans}","fontSize":"28px","lineHeight":"39.2px","fontWeight":600},"t":"typography","s":"css-var --text-heading-28 (:root @layer tokens): \"600 1.75rem/1.4 var(--font-sans)\"","d":"Heading (Geist 600) at 28px."},"32":{"v":{"fontFamily":"{font.family.sans}","fontSize":"32px","lineHeight":"44.8px","fontWeight":600},"t":"typography","s":"css-var --text-heading-32 (:root @layer tokens): \"600 2rem/1.4 var(--font-sans)\"","d":"Heading (Geist 600) at 32px."}},"heading-italic":{"10":{"v":{"fontFamily":"{font.family.sans}","fontSize":"10px","lineHeight":"14px","fontWeight":600,"fontStyle":"italic"},"t":"typography","s":"css-var --text-heading-italic-10 (:root @layer tokens): \"italic 600 .625rem/1.4 var(--font-sans)\"","d":"Italic heading (Geist 600) at 10px."},"12":{"v":{"fontFamily":"{font.family.sans}","fontSize":"12px","lineHeight":"16.8px","fontWeight":600,"fontStyle":"italic"},"t":"typography","s":"css-var --text-heading-italic-12 (:root @layer tokens): \"italic 600 .75rem/1.4 var(--font-sans)\"","d":"Italic heading (Geist 600) at 12px."},"14":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","lineHeight":"19.6px","fontWeight":600,"fontStyle":"italic"},"t":"typography","s":"css-var --text-heading-italic-14 (:root @layer tokens): \"italic 600 .875rem/1.4 var(--font-sans)\"","d":"Italic heading (Geist 600) at 14px."},"16":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","lineHeight":"22.4px","fontWeight":600,"fontStyle":"italic"},"t":"typography","s":"css-var --text-heading-italic-16 (:root @layer tokens): \"italic 600 1rem/1.4 var(--font-sans)\"","d":"Italic heading (Geist 600) at 16px."},"18":{"v":{"fontFamily":"{font.family.sans}","fontSize":"18px","lineHeight":"25.2px","fontWeight":600,"fontStyle":"italic"},"t":"typography","s":"css-var --text-heading-italic-18 (:root @layer tokens): \"italic 600 1.125rem/1.4 var(--font-sans)\"","d":"Italic heading (Geist 600) at 18px."},"20":{"v":{"fontFamily":"{font.family.sans}","fontSize":"20px","lineHeight":"28px","fontWeight":600,"fontStyle":"italic"},"t":"typography","s":"css-var --text-heading-italic-20 (:root @layer tokens): \"italic 600 1.25rem/1.4 var(--font-sans)\"","d":"Italic heading (Geist 600) at 20px."},"24":{"v":{"fontFamily":"{font.family.sans}","fontSize":"24px","lineHeight":"33.6px","fontWeight":600,"fontStyle":"italic"},"t":"typography","s":"css-var --text-heading-italic-24 (:root @layer tokens): \"italic 600 1.5rem/1.4 var(--font-sans)\"","d":"Italic heading (Geist 600) at 24px."},"28":{"v":{"fontFamily":"{font.family.sans}","fontSize":"28px","lineHeight":"39.2px","fontWeight":600,"fontStyle":"italic"},"t":"typography","s":"css-var --text-heading-italic-28 (:root @layer tokens): \"italic 600 1.75rem/1.4 var(--font-sans)\"","d":"Italic heading (Geist 600) at 28px."},"32":{"v":{"fontFamily":"{font.family.sans}","fontSize":"32px","lineHeight":"44.8px","fontWeight":600,"fontStyle":"italic"},"t":"typography","s":"css-var --text-heading-italic-32 (:root @layer tokens): \"italic 600 2rem/1.4 var(--font-sans)\"","d":"Italic heading (Geist 600) at 32px."}},"italic":{"14":{"v":{"fontFamily":"{font.family.display}","fontSize":"14px","lineHeight":"17.5px","fontWeight":400,"fontStyle":"italic"},"t":"typography","s":"css-var --text-italic-14 (:root @layer tokens): \"italic 400 .875rem/1.25 var(--font-display)\"","d":"Italic display (Fraunces) at 14px."},"18":{"v":{"fontFamily":"{font.family.display}","fontSize":"18px","lineHeight":"22.5px","fontWeight":400,"fontStyle":"italic"},"t":"typography","s":"css-var --text-italic-18 (:root @layer tokens): \"italic 400 1.125rem/1.25 var(--font-display)\"","d":"Italic display (Fraunces) at 18px."},"24":{"v":{"fontFamily":"{font.family.display}","fontSize":"24px","lineHeight":"30px","fontWeight":400,"fontStyle":"italic"},"t":"typography","s":"css-var --text-italic-24 (:root @layer tokens): \"italic 400 1.5rem/1.25 var(--font-display)\"","d":"Italic display (Fraunces) at 24px."},"32":{"v":{"fontFamily":"{font.family.display}","fontSize":"32px","lineHeight":"40px","fontWeight":400,"fontStyle":"italic"},"t":"typography","s":"css-var --text-italic-32 (:root @layer tokens): \"italic 400 2rem/1.25 var(--font-display)\"","d":"Italic display (Fraunces) at 32px."},"40":{"v":{"fontFamily":"{font.family.display}","fontSize":"40px","lineHeight":"50px","fontWeight":400,"fontStyle":"italic"},"t":"typography","s":"css-var --text-italic-40 (:root @layer tokens): \"italic 400 2.5rem/1.25 var(--font-display)\"","d":"Italic display (Fraunces) at 40px."},"48":{"v":{"fontFamily":"{font.family.display}","fontSize":"48px","lineHeight":"60px","fontWeight":400,"fontStyle":"italic"},"t":"typography","s":"css-var --text-italic-48 (:root @layer tokens): \"italic 400 3rem/1.25 var(--font-display)\"","d":"Italic display (Fraunces) at 48px."},"56":{"v":{"fontFamily":"{font.family.display}","fontSize":"56px","lineHeight":"70px","fontWeight":400,"fontStyle":"italic"},"t":"typography","s":"css-var --text-italic-56 (:root @layer tokens): \"italic 400 3.5rem/1.25 var(--font-display)\"","d":"Italic display (Fraunces) at 56px."},"64":{"v":{"fontFamily":"{font.family.display}","fontSize":"64px","lineHeight":"80px","fontWeight":400,"fontStyle":"italic"},"t":"typography","s":"css-var --text-italic-64 (:root @layer tokens): \"italic 400 4rem/1.25 var(--font-display)\"","d":"Italic display (Fraunces) at 64px."},"72":{"v":{"fontFamily":"{font.family.display}","fontSize":"72px","lineHeight":"90px","fontWeight":400,"fontStyle":"italic"},"t":"typography","s":"css-var --text-italic-72 (:root @layer tokens): \"italic 400 4.5rem/1.25 var(--font-display)\"","d":"Italic display (Fraunces) at 72px."}},"label":{"10":{"v":{"fontFamily":"{font.family.sans}","fontSize":"10px","lineHeight":"14px","fontWeight":500},"t":"typography","s":"css-var --text-label-10 (:root @layer tokens): \"500 .625rem/1.4 var(--font-sans)\"","d":"Label (Geist 500) at 10px."},"12":{"v":{"fontFamily":"{font.family.sans}","fontSize":"12px","lineHeight":"16.8px","fontWeight":500},"t":"typography","s":"css-var --text-label-12 (:root @layer tokens): \"500 .75rem/1.4 var(--font-sans)\"","d":"Label (Geist 500) at 12px."},"14":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","lineHeight":"19.6px","fontWeight":500},"t":"typography","s":"css-var --text-label-14 (:root @layer tokens): \"500 .875rem/1.4 var(--font-sans)\"","d":"Label (Geist 500) at 14px."},"16":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","lineHeight":"22.4px","fontWeight":500},"t":"typography","s":"css-var --text-label-16 (:root @layer tokens): \"500 1rem/1.4 var(--font-sans)\"","d":"Label (Geist 500) at 16px."},"18":{"v":{"fontFamily":"{font.family.sans}","fontSize":"18px","lineHeight":"25.2px","fontWeight":500},"t":"typography","s":"css-var --text-label-18 (:root @layer tokens): \"500 1.125rem/1.4 var(--font-sans)\"","d":"Label (Geist 500) at 18px."},"20":{"v":{"fontFamily":"{font.family.sans}","fontSize":"20px","lineHeight":"28px","fontWeight":500},"t":"typography","s":"css-var --text-label-20 (:root @layer tokens): \"500 1.25rem/1.4 var(--font-sans)\"","d":"Label (Geist 500) at 20px."},"24":{"v":{"fontFamily":"{font.family.sans}","fontSize":"24px","lineHeight":"33.6px","fontWeight":500},"t":"typography","s":"css-var --text-label-24 (:root @layer tokens): \"500 1.5rem/1.4 var(--font-sans)\"","d":"Label (Geist 500) at 24px."},"28":{"v":{"fontFamily":"{font.family.sans}","fontSize":"28px","lineHeight":"39.2px","fontWeight":500},"t":"typography","s":"css-var --text-label-28 (:root @layer tokens): \"500 1.75rem/1.4 var(--font-sans)\"","d":"Label (Geist 500) at 28px."},"32":{"v":{"fontFamily":"{font.family.sans}","fontSize":"32px","lineHeight":"44.8px","fontWeight":500},"t":"typography","s":"css-var --text-label-32 (:root @layer tokens): \"500 2rem/1.4 var(--font-sans)\"","d":"Label (Geist 500) at 32px."}},"mono":{"10":{"v":{"fontFamily":"{font.family.mono}","fontSize":"10px","lineHeight":"14px","fontWeight":400},"t":"typography","s":"css-var --text-mono-10 (:root @layer tokens): \"400 .625rem/1.4 var(--font-mono)\"","d":"Mono (Geist Mono 400) at 10px."},"12":{"v":{"fontFamily":"{font.family.mono}","fontSize":"12px","lineHeight":"16.8px","fontWeight":400},"t":"typography","s":"css-var --text-mono-12 (:root @layer tokens): \"400 .75rem/1.4 var(--font-mono)\"","d":"Mono (Geist Mono 400) at 12px."},"14":{"v":{"fontFamily":"{font.family.mono}","fontSize":"14px","lineHeight":"19.6px","fontWeight":400},"t":"typography","s":"css-var --text-mono-14 (:root @layer tokens): \"400 .875rem/1.4 var(--font-mono)\"","d":"Mono (Geist Mono 400) at 14px."},"16":{"v":{"fontFamily":"{font.family.mono}","fontSize":"16px","lineHeight":"22.4px","fontWeight":400},"t":"typography","s":"css-var --text-mono-16 (:root @layer tokens): \"400 1rem/1.4 var(--font-mono)\"","d":"Mono (Geist Mono 400) at 16px."},"18":{"v":{"fontFamily":"{font.family.mono}","fontSize":"18px","lineHeight":"25.2px","fontWeight":400},"t":"typography","s":"css-var --text-mono-18 (:root @layer tokens): \"400 1.125rem/1.4 var(--font-mono)\"","d":"Mono (Geist Mono 400) at 18px."},"20":{"v":{"fontFamily":"{font.family.mono}","fontSize":"20px","lineHeight":"28px","fontWeight":400},"t":"typography","s":"css-var --text-mono-20 (:root @layer tokens): \"400 1.25rem/1.4 var(--font-mono)\"","d":"Mono (Geist Mono 400) at 20px."},"24":{"v":{"fontFamily":"{font.family.mono}","fontSize":"24px","lineHeight":"33.6px","fontWeight":400},"t":"typography","s":"css-var --text-mono-24 (:root @layer tokens): \"400 1.5rem/1.4 var(--font-mono)\"","d":"Mono (Geist Mono 400) at 24px."},"28":{"v":{"fontFamily":"{font.family.mono}","fontSize":"28px","lineHeight":"39.2px","fontWeight":400},"t":"typography","s":"css-var --text-mono-28 (:root @layer tokens): \"400 1.75rem/1.4 var(--font-mono)\"","d":"Mono (Geist Mono 400) at 28px."},"32":{"v":{"fontFamily":"{font.family.mono}","fontSize":"32px","lineHeight":"44.8px","fontWeight":400},"t":"typography","s":"css-var --text-mono-32 (:root @layer tokens): \"400 2rem/1.4 var(--font-mono)\"","d":"Mono (Geist Mono 400) at 32px."}},"mono-bold":{"10":{"v":{"fontFamily":"{font.family.mono}","fontSize":"10px","lineHeight":"14px","fontWeight":600},"t":"typography","s":"css-var --text-mono-bold-10 (:root @layer tokens): \"600 .625rem/1.4 var(--font-mono)\"","d":"Mono bold (Geist Mono 600) at 10px."},"12":{"v":{"fontFamily":"{font.family.mono}","fontSize":"12px","lineHeight":"16.8px","fontWeight":600},"t":"typography","s":"css-var --text-mono-bold-12 (:root @layer tokens): \"600 .75rem/1.4 var(--font-mono)\"","d":"Mono bold (Geist Mono 600) at 12px."},"14":{"v":{"fontFamily":"{font.family.mono}","fontSize":"14px","lineHeight":"19.6px","fontWeight":600},"t":"typography","s":"css-var --text-mono-bold-14 (:root @layer tokens): \"600 .875rem/1.4 var(--font-mono)\"","d":"Mono bold (Geist Mono 600) at 14px."},"16":{"v":{"fontFamily":"{font.family.mono}","fontSize":"16px","lineHeight":"22.4px","fontWeight":600},"t":"typography","s":"css-var --text-mono-bold-16 (:root @layer tokens): \"600 1rem/1.4 var(--font-mono)\"","d":"Mono bold (Geist Mono 600) at 16px."},"18":{"v":{"fontFamily":"{font.family.mono}","fontSize":"18px","lineHeight":"25.2px","fontWeight":600},"t":"typography","s":"css-var --text-mono-bold-18 (:root @layer tokens): \"600 1.125rem/1.4 var(--font-mono)\"","d":"Mono bold (Geist Mono 600) at 18px."},"20":{"v":{"fontFamily":"{font.family.mono}","fontSize":"20px","lineHeight":"28px","fontWeight":600},"t":"typography","s":"css-var --text-mono-bold-20 (:root @layer tokens): \"600 1.25rem/1.4 var(--font-mono)\"","d":"Mono bold (Geist Mono 600) at 20px."},"24":{"v":{"fontFamily":"{font.family.mono}","fontSize":"24px","lineHeight":"33.6px","fontWeight":600},"t":"typography","s":"css-var --text-mono-bold-24 (:root @layer tokens): \"600 1.5rem/1.4 var(--font-mono)\"","d":"Mono bold (Geist Mono 600) at 24px."},"28":{"v":{"fontFamily":"{font.family.mono}","fontSize":"28px","lineHeight":"39.2px","fontWeight":600},"t":"typography","s":"css-var --text-mono-bold-28 (:root @layer tokens): \"600 1.75rem/1.4 var(--font-mono)\"","d":"Mono bold (Geist Mono 600) at 28px."},"32":{"v":{"fontFamily":"{font.family.mono}","fontSize":"32px","lineHeight":"44.8px","fontWeight":600},"t":"typography","s":"css-var --text-mono-bold-32 (:root @layer tokens): \"600 2rem/1.4 var(--font-mono)\"","d":"Mono bold (Geist Mono 600) at 32px."}}},"tracking":{"display":{"v":"-.01em","t":"other","s":"css-var --tracking-display (:root @layer tokens)","d":"The display/tight letter-spacing."},"tight":{"v":"-.02em","t":"other","s":"css-var --tracking-tight (:root @layer tokens)","d":"The display/tight letter-spacing."}},"shadow":{"xs":{"v":[{"color":"rgba(0, 0, 0, 0.06)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --shadow-xs resolved (:root @layer tokens): \"0 1px 2px #0000000f\"","d":"The hairline 1px lift."},"sm":{"v":[{"color":"rgba(0, 0, 0, 0.05)","offsetX":"0px","offsetY":"1px","blur":"12px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --shadow-sm resolved (:root @layer tokens): \"0 1px 12px #0000000d\"","d":"The 1px/12px soft lift."},"md":{"v":[{"color":"rgba(0, 0, 0, 0.06)","offsetX":"0px","offsetY":"2px","blur":"12px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --shadow-md resolved (:root @layer tokens): \"0 2px 12px #0000000f\"","d":"The 2px/12px card lift — the chat input card carries it."},"lg":{"v":[{"color":"rgba(0, 0, 0, 0.06)","offsetX":"0px","offsetY":"2px","blur":"24px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --shadow-lg resolved (:root @layer tokens): \"0 2px 24px #0000000f\"","d":"The 2px/24px raised lift."},"xl":{"v":[{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"5px","blur":"32px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --shadow-xl resolved (:root @layer tokens): \"0 5px 32px #0000001a\"","d":"The 5px/32px overlay lift."},"brand-glow":{"v":[{"color":"rgba(9, 97, 228, 0.39)","offsetX":"0px","offsetY":"4px","blur":"14px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --shadow-brand-glow resolved (:root @layer tokens): \"0 4px 14px #0961e463\"","d":"The blue glow the accent button paints."},"brand-glow-hover":{"v":[{"color":"rgba(9, 97, 228, 0.5)","offsetX":"0px","offsetY":"6px","blur":"20px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --shadow-brand-glow-hover resolved (:root @layer tokens): \"0 6px 20px #0961e480\"","d":"The stronger glow on hover."}},"layout":{"header-height":{"v":"72px","t":"dimension","s":"css-var --header-height (light); css-var --header-height (:root)","d":"The 72px marketing top bar."},"tap-target-min":{"v":"44px","t":"dimension","s":"css-var --tap-target-min (light); css-var --tap-target-min (:root)","d":"The 44px minimum tap target."}},"measured":{"focus-outline":{"v":"#3c83f6","t":"color","s":"computed outlineColor of signup-button focus-visible (raw/components-computed.json)","d":"The keyboard focus colour on the header actions (auto outline)."}}},"light":{"color":{"accent":{"bg":{"v":"{color.blue.600}","t":"color","s":"css-var --color-accent-bg = var(--color-blue-600) (light)","d":"The accent-bg role, declared over --color-blue-600."},"bg-disabled":{"v":"{color.neutral.200}","t":"color","s":"css-var --color-accent-bg-disabled = var(--color-neutral-200) (light)","d":"The accent-bg-disabled role, declared over --color-neutral-200."},"bg-hover":{"v":"{color.blue.700}","t":"color","s":"css-var --color-accent-bg-hover = var(--color-blue-700) (light)","d":"The accent-bg-hover role, declared over --color-blue-700."},"bg-pressed":{"v":"{color.blue.800}","t":"color","s":"css-var --color-accent-bg-pressed = var(--color-blue-800) (light)","d":"The accent-bg-pressed role, declared over --color-blue-800."},"fg":{"v":"{color.white}","t":"color","s":"css-var --color-accent-fg = var(--color-white) (light)","d":"The accent-fg role, declared over --color-white."},"fg-disabled":{"v":"{color.neutral.500}","t":"color","s":"css-var --color-accent-fg-disabled = var(--color-neutral-500) (light)","d":"The accent-fg-disabled role, declared over --color-neutral-500."},"focus-ring":{"v":"{color.blue.500}","t":"color","s":"css-var --color-accent-focus-ring = var(--color-blue-500) (light)","d":"The accent-focus-ring role, declared over --color-blue-500."},"focus-ring-black":{"v":"{color.neutral.950}","t":"color","s":"css-var --color-accent-focus-ring-black = var(--color-neutral-950) (light)","d":"The accent-focus-ring-black role, declared over --color-neutral-950."}},"border":{"default":{"v":"rgba(27, 27, 24, 0.08)","t":"color","s":"css-var --color-border-default (light); css-var --color-border-default (light): an hsl(from …) derivation of --color-neutral-900","d":"The border-default role."},"disabled":{"v":"{color.neutral.300}","t":"color","s":"css-var --color-border-disabled = var(--color-neutral-300) (light)","d":"The border-disabled role, declared over --color-neutral-300."},"light":{"v":"rgba(27, 27, 24, 0.04)","t":"color","s":"css-var --color-border-light (light); css-var --color-border-light (light): an hsl(from …) derivation of --color-neutral-900","d":"The border-light role."},"strong":{"v":"rgba(27, 27, 24, 0.2)","t":"color","s":"css-var --color-border-strong (light); css-var --color-border-strong (light): an hsl(from …) derivation of --color-neutral-900","d":"The border-strong role."},"subtle":{"v":"{color.neutral.100}","t":"color","s":"css-var --color-border-subtle = var(--color-neutral-100) (light)","d":"The border-subtle role, declared over --color-neutral-100."}},"divider":{"default":{"v":"{color.neutral.200}","t":"color","s":"css-var --color-divider = var(--color-neutral-200) (light)","d":"The divider role, declared over --color-neutral-200."},"strong":{"v":"{color.neutral.300}","t":"color","s":"css-var --color-divider-strong = var(--color-neutral-300) (light)","d":"The divider-strong role, declared over --color-neutral-300."}},"error":{"bg":{"v":"{color.error.50}","t":"color","s":"css-var --color-error-bg = var(--color-error-50) (light)","d":"The error-bg role, declared over --color-error-50."},"border":{"v":"{color.error.200}","t":"color","s":"css-var --color-error-border = var(--color-error-200) (light)","d":"The error-border role, declared over --color-error-200."},"fg":{"v":"{color.error.800}","t":"color","s":"css-var --color-error-fg = var(--color-error-800) (light)","d":"The error-fg role, declared over --color-error-800."}},"fg":{"default":{"v":"{color.neutral.900}","t":"color","s":"css-var --color-fg-default = var(--color-neutral-900) (light)","d":"The fg-default role, declared over --color-neutral-900."},"disabled":{"v":"rgba(27, 27, 24, 0.3)","t":"color","s":"css-var --color-fg-disabled (light); css-var --color-fg-disabled (light): an hsl(from …) derivation of --color-neutral-900","d":"The fg-disabled role."},"muted":{"v":"rgba(27, 27, 24, 0.73)","t":"color","s":"css-var --color-fg-muted (light); css-var --color-fg-muted (light): an hsl(from …) derivation of --color-neutral-900","d":"The fg-muted role."},"subtle":{"v":"rgba(27, 27, 24, 0.6)","t":"color","s":"css-var --color-fg-subtle (light); css-var --color-fg-subtle (light): an hsl(from …) derivation of --color-neutral-900","d":"The fg-subtle role."}},"icon":{"default":{"v":"{color.neutral.950}","t":"color","s":"css-var --color-icon-default = var(--color-neutral-950) (light)","d":"The icon-default role, declared over --color-neutral-950."}},"info":{"bg":{"v":"{color.blue.50}","t":"color","s":"css-var --color-info-bg = var(--color-blue-50) (light)","d":"The info-bg role, declared over --color-blue-50."},"border":{"v":"{color.blue.200}","t":"color","s":"css-var --color-info-border = var(--color-blue-200) (light)","d":"The info-border role, declared over --color-blue-200."},"fg":{"v":"{color.blue.800}","t":"color","s":"css-var --color-info-fg = var(--color-blue-800) (light)","d":"The info-fg role, declared over --color-blue-800."}},"link":{"default":{"v":"{color.accent.bg}","t":"color","s":"css-var --color-link-default = var(--color-accent-bg) (light)","d":"The link-default role, declared over --color-accent-bg."},"disabled":{"v":"{color.neutral.500}","t":"color","s":"css-var --color-link-disabled = var(--color-neutral-500) (light)","d":"The link-disabled role, declared over --color-neutral-500."},"hover":{"v":"{color.blue.700}","t":"color","s":"css-var --color-link-hover = var(--color-blue-700) (light)","d":"The link-hover role, declared over --color-blue-700."},"visited":{"v":"{color.blue.800}","t":"color","s":"css-var --color-link-visited = var(--color-blue-800) (light)","d":"The link-visited role, declared over --color-blue-800."}},"solid":{"bg":{"v":"{color.neutral.950}","t":"color","s":"css-var --color-solid-bg = var(--color-neutral-950) (light)","d":"The solid-bg role, declared over --color-neutral-950."},"bg-disabled":{"v":"{color.neutral.200}","t":"color","s":"css-var --color-solid-bg-disabled = var(--color-neutral-200) (light)","d":"The solid-bg-disabled role, declared over --color-neutral-200."},"bg-hover":{"v":"{color.neutral.800}","t":"color","s":"css-var --color-solid-bg-hover = var(--color-neutral-800) (light)","d":"The solid-bg-hover role, declared over --color-neutral-800."},"bg-pressed":{"v":"{color.neutral.900}","t":"color","s":"css-var --color-solid-bg-pressed = var(--color-neutral-900) (light)","d":"The solid-bg-pressed role, declared over --color-neutral-900."},"fg":{"v":"{color.neutral.50}","t":"color","s":"css-var --color-solid-fg = var(--color-neutral-50) (light)","d":"The solid-fg role, declared over --color-neutral-50."},"fg-disabled":{"v":"{color.neutral.500}","t":"color","s":"css-var --color-solid-fg-disabled = var(--color-neutral-500) (light)","d":"The solid-fg-disabled role, declared over --color-neutral-500."}},"success":{"bg":{"v":"{color.success.50}","t":"color","s":"css-var --color-success-bg = var(--color-success-50) (light)","d":"The success-bg role, declared over --color-success-50."},"border":{"v":"{color.success.200}","t":"color","s":"css-var --color-success-border = var(--color-success-200) (light)","d":"The success-border role, declared over --color-success-200."},"fg":{"v":"{color.success.800}","t":"color","s":"css-var --color-success-fg = var(--color-success-800) (light)","d":"The success-fg role, declared over --color-success-800."}},"surface":{"canvas":{"v":"{color.neutral.50}","t":"color","s":"css-var --color-surface-canvas = var(--color-neutral-50) (light)","d":"The surface-canvas role, declared over --color-neutral-50."},"muted-blue":{"v":"#dbe2eb","t":"color","s":"css-var --color-surface-muted-blue (light); css-var --color-surface-muted-blue (light): a literal declaration","d":"The surface-muted-blue role."},"muted-rose":{"v":"#e6dbe6","t":"color","s":"css-var --color-surface-muted-rose (light); css-var --color-surface-muted-rose (light): a literal declaration","d":"The surface-muted-rose role."},"muted-sage":{"v":"#dbe6dc","t":"color","s":"css-var --color-surface-muted-sage (light); css-var --color-surface-muted-sage (light): a literal declaration","d":"The surface-muted-sage role."},"muted-warm":{"v":"#e4e1d8","t":"color","s":"css-var --color-surface-muted-warm (light); css-var --color-surface-muted-warm (light): a literal declaration","d":"The surface-muted-warm role."},"raised":{"v":"{color.white}","t":"color","s":"css-var --color-surface-raised = var(--color-white) (light)","d":"The surface-raised role, declared over --color-white."},"sunken":{"v":"{color.neutral.100}","t":"color","s":"css-var --color-surface-sunken = var(--color-neutral-100) (light)","d":"The surface-sunken role, declared over --color-neutral-100."}},"warning":{"bg":{"v":"{color.warning.50}","t":"color","s":"css-var --color-warning-bg = var(--color-warning-50) (light)","d":"The warning-bg role, declared over --color-warning-50."},"border":{"v":"{color.warning.200}","t":"color","s":"css-var --color-warning-border = var(--color-warning-200) (light)","d":"The warning-border role, declared over --color-warning-200."},"fg":{"v":"{color.warning.800}","t":"color","s":"css-var --color-warning-fg = var(--color-warning-800) (light)","d":"The warning-fg role, declared over --color-warning-800."}}},"gradient":{"skeleton":{"v":[{"color":"{color.neutral.200}","position":0.43670000000000003},{"color":"{color.neutral.100}","position":0.7579},{"color":"{color.neutral.200}","position":1.0}],"t":"gradient","s":"css-var --skeleton-loader-gradient (light): the loading shimmer sweep","d":"The skeleton shimmer sweep."}},"shadow":{"focus-ring":{"v":[{"color":"#2463eb","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"2px","inset":false}],"t":"shadow","s":"css-var --shadow-focus-ring resolved light: \"0 0 0 2px #2463eb\"","d":"The 2px accent keyboard ring."}},"component":{"button":{"height":{"v":"34.7969px","t":"dimension","s":"computed height of signup-button default (raw/components-computed.json)","d":"The header Sign up button height."}},"button-cta":{"height":{"v":"43.5938px","t":"dimension","s":"computed height of start-chat-button default (raw/components-computed.json)","d":"The hero Start chat button height."},"radius":{"v":"52px","t":"dimension","s":"computed borderTopLeftRadius of start-chat-button default (raw/components-computed.json)","d":"The Start chat button radius."}},"send":{"height":{"v":"32px","t":"dimension","s":"computed height of send-button default (raw/components-computed.json)","d":"The chat composer Send control height."}},"inputcard":{"radius":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of form.inputCard.inputCardExpanded (paint layer of input-card default) (raw/components-computed.json)","d":"The chat input card's radius."},"height":{"v":"126px","t":"dimension","s":"computed height of form.inputCard.inputCardExpanded (paint layer of input-card default) (raw/components-computed.json)","d":"The chat input card's resting height."}},"starter":{"height":{"v":"20.5938px","t":"dimension","s":"computed height of starter default (raw/components-computed.json)","d":"A suggestion chip's height."},"radius":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of starter default (raw/components-computed.json)","d":"The suggestion chip's pill radius."}},"sidebar":{"width":{"v":"256px","t":"dimension","s":"computed width of chat-sidebar-open default (raw/components-computed.json)","d":"The expanded chat rail's width."}},"sidebar-collapsed":{"width":{"v":"74px","t":"dimension","s":"computed width of chat-sidebar default (raw/components-computed.json)","d":"The collapsed rail's width."}},"dialog":{"radius":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of div.modal (ancestor layer of signin-dialog default) (raw/components-computed.json)","d":"The sign-in dialog's radius."},"width":{"v":"393px","t":"dimension","s":"computed width of signin-dialog default (raw/components-computed.json); read from the dialog's transparent inner section, not the painted div.modal: read from the wrong element, recapture needed","d":"The sign-in dialog's width."}},"header":{"height":{"v":"72px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The measured top-bar height (the declared --header-height is 72px)."}}}},"dark":{"color":{"accent":{"bg":{"v":"{color.blue.400}","t":"color","s":"css-var --color-accent-bg = var(--color-blue-400) (dark)","d":"The accent-bg role, declared over --color-blue-400."},"bg-disabled":{"v":"{color.neutral.800}","t":"color","s":"css-var --color-accent-bg-disabled = var(--color-neutral-800) (dark)","d":"The accent-bg-disabled role, declared over --color-neutral-800."},"bg-hover":{"v":"{color.blue.300}","t":"color","s":"css-var --color-accent-bg-hover = var(--color-blue-300) (dark)","d":"The accent-bg-hover role, declared over --color-blue-300."},"bg-pressed":{"v":"{color.blue.500}","t":"color","s":"css-var --color-accent-bg-pressed = var(--color-blue-500) (dark)","d":"The accent-bg-pressed role, declared over --color-blue-500."},"fg":{"v":"{color.blue.950}","t":"color","s":"css-var --color-accent-fg = var(--color-blue-950) (dark)","d":"The accent-fg role, declared over --color-blue-950."},"fg-disabled":{"v":"{color.neutral.700}","t":"color","s":"css-var --color-accent-fg-disabled = var(--color-neutral-700) (dark)","d":"The accent-fg-disabled role, declared over --color-neutral-700."},"focus-ring":{"v":"{color.blue.400}","t":"color","s":"css-var --color-accent-focus-ring = var(--color-blue-400) (dark)","d":"The accent-focus-ring role, declared over --color-blue-400."},"focus-ring-black":{"v":"{color.neutral.50}","t":"color","s":"css-var --color-accent-focus-ring-black = var(--color-neutral-50) (dark)","d":"The accent-focus-ring-black role, declared over --color-neutral-50."}},"border":{"default":{"v":"rgba(253, 253, 247, 0.08)","t":"color","s":"css-var --color-border-default (dark); css-var --color-border-default (dark): an hsl(from …) derivation of --color-neutral-50","d":"The border-default role."},"disabled":{"v":"{color.neutral.800}","t":"color","s":"css-var --color-border-disabled = var(--color-neutral-800) (dark)","d":"The border-disabled role, declared over --color-neutral-800."},"light":{"v":"rgba(253, 253, 247, 0.04)","t":"color","s":"css-var --color-border-light (dark); css-var --color-border-light (dark): an hsl(from …) derivation of --color-neutral-50","d":"The border-light role."},"strong":{"v":"rgba(253, 253, 247, 0.2)","t":"color","s":"css-var --color-border-strong (dark); css-var --color-border-strong (dark): an hsl(from …) derivation of --color-neutral-50","d":"The border-strong role."},"subtle":{"v":"{color.neutral.800}","t":"color","s":"css-var --color-border-subtle = var(--color-neutral-800) (dark)","d":"The border-subtle role, declared over --color-neutral-800."}},"divider":{"default":{"v":"{color.neutral.700}","t":"color","s":"css-var --color-divider = var(--color-neutral-700) (dark)","d":"The divider role, declared over --color-neutral-700."},"strong":{"v":"{color.neutral.600}","t":"color","s":"css-var --color-divider-strong = var(--color-neutral-600) (dark)","d":"The divider-strong role, declared over --color-neutral-600."}},"error":{"bg":{"v":"{color.error.900}","t":"color","s":"css-var --color-error-bg = var(--color-error-900) (dark)","d":"The error-bg role, declared over --color-error-900."},"border":{"v":"{color.error.700}","t":"color","s":"css-var --color-error-border = var(--color-error-700) (dark)","d":"The error-border role, declared over --color-error-700."},"fg":{"v":"{color.error.200}","t":"color","s":"css-var --color-error-fg = var(--color-error-200) (dark)","d":"The error-fg role, declared over --color-error-200."}},"fg":{"default":{"v":"{color.neutral.50}","t":"color","s":"css-var --color-fg-default = var(--color-neutral-50) (dark)","d":"The fg-default role, declared over --color-neutral-50."},"disabled":{"v":"rgba(253, 253, 247, 0.3)","t":"color","s":"css-var --color-fg-disabled (dark); css-var --color-fg-disabled (dark): an hsl(from …) derivation of --color-neutral-50","d":"The fg-disabled role."},"muted":{"v":"rgba(253, 253, 247, 0.73)","t":"color","s":"css-var --color-fg-muted (dark); css-var --color-fg-muted (dark): an hsl(from …) derivation of --color-neutral-50","d":"The fg-muted role."},"subtle":{"v":"rgba(253, 253, 247, 0.6)","t":"color","s":"css-var --color-fg-subtle (dark); css-var --color-fg-subtle (dark): an hsl(from …) derivation of --color-neutral-50","d":"The fg-subtle role."}},"icon":{"default":{"v":"{color.neutral.50}","t":"color","s":"css-var --color-icon-default = var(--color-neutral-50) (dark)","d":"The icon-default role, declared over --color-neutral-50."}},"info":{"bg":{"v":"{color.blue.900}","t":"color","s":"css-var --color-info-bg = var(--color-blue-900) (dark)","d":"The info-bg role, declared over --color-blue-900."},"border":{"v":"{color.blue.700}","t":"color","s":"css-var --color-info-border = var(--color-blue-700) (dark)","d":"The info-border role, declared over --color-blue-700."},"fg":{"v":"{color.blue.200}","t":"color","s":"css-var --color-info-fg = var(--color-blue-200) (dark)","d":"The info-fg role, declared over --color-blue-200."}},"link":{"default":{"v":"{color.blue.400}","t":"color","s":"css-var --color-link-default = var(--color-blue-400) (dark)","d":"The link-default role, declared over --color-blue-400."},"disabled":{"v":"{color.neutral.700}","t":"color","s":"css-var --color-link-disabled = var(--color-neutral-700) (dark)","d":"The link-disabled role, declared over --color-neutral-700."},"hover":{"v":"{color.blue.300}","t":"color","s":"css-var --color-link-hover = var(--color-blue-300) (dark)","d":"The link-hover role, declared over --color-blue-300."},"visited":{"v":"{color.blue.200}","t":"color","s":"css-var --color-link-visited = var(--color-blue-200) (dark)","d":"The link-visited role, declared over --color-blue-200."}},"solid":{"bg":{"v":"{color.neutral.50}","t":"color","s":"css-var --color-solid-bg = var(--color-neutral-50) (dark)","d":"The solid-bg role, declared over --color-neutral-50."},"bg-disabled":{"v":"{color.neutral.800}","t":"color","s":"css-var --color-solid-bg-disabled = var(--color-neutral-800) (dark)","d":"The solid-bg-disabled role, declared over --color-neutral-800."},"bg-hover":{"v":"{color.neutral.200}","t":"color","s":"css-var --color-solid-bg-hover = var(--color-neutral-200) (dark)","d":"The solid-bg-hover role, declared over --color-neutral-200."},"bg-pressed":{"v":"{color.neutral.100}","t":"color","s":"css-var --color-solid-bg-pressed = var(--color-neutral-100) (dark)","d":"The solid-bg-pressed role, declared over --color-neutral-100."},"fg":{"v":"{color.neutral.950}","t":"color","s":"css-var --color-solid-fg = var(--color-neutral-950) (dark)","d":"The solid-fg role, declared over --color-neutral-950."},"fg-disabled":{"v":"{color.neutral.700}","t":"color","s":"css-var --color-solid-fg-disabled = var(--color-neutral-700) (dark)","d":"The solid-fg-disabled role, declared over --color-neutral-700."}},"success":{"bg":{"v":"{color.success.900}","t":"color","s":"css-var --color-success-bg = var(--color-success-900) (dark)","d":"The success-bg role, declared over --color-success-900."},"border":{"v":"{color.success.700}","t":"color","s":"css-var --color-success-border = var(--color-success-700) (dark)","d":"The success-border role, declared over --color-success-700."},"fg":{"v":"{color.success.200}","t":"color","s":"css-var --color-success-fg = var(--color-success-200) (dark)","d":"The success-fg role, declared over --color-success-200."}},"surface":{"canvas":{"v":"#0d0e0b","t":"color","s":"css-var --color-surface-canvas (dark); css-var --color-surface-canvas (dark): a literal declaration","d":"The surface-canvas role."},"muted-blue":{"v":"#162136","t":"color","s":"css-var --color-surface-muted-blue (dark); css-var --color-surface-muted-blue (dark): a literal declaration","d":"The surface-muted-blue role."},"muted-rose":{"v":"#2c2131","t":"color","s":"css-var --color-surface-muted-rose (dark); css-var --color-surface-muted-rose (dark): a literal declaration","d":"The surface-muted-rose role."},"muted-sage":{"v":"#18251c","t":"color","s":"css-var --color-surface-muted-sage (dark); css-var --color-surface-muted-sage (dark): a literal declaration","d":"The surface-muted-sage role."},"muted-warm":{"v":"#262421","t":"color","s":"css-var --color-surface-muted-warm (dark); css-var --color-surface-muted-warm (dark): a literal declaration","d":"The surface-muted-warm role."},"raised":{"v":"{color.neutral.900}","t":"color","s":"css-var --color-surface-raised = var(--color-neutral-900) (dark)","d":"The surface-raised role, declared over --color-neutral-900."},"sunken":{"v":"#080907","t":"color","s":"css-var --color-surface-sunken (dark); css-var --color-surface-sunken (dark): a literal declaration","d":"The surface-sunken role."}},"warning":{"bg":{"v":"{color.warning.900}","t":"color","s":"css-var --color-warning-bg = var(--color-warning-900) (dark)","d":"The warning-bg role, declared over --color-warning-900."},"border":{"v":"{color.warning.700}","t":"color","s":"css-var --color-warning-border = var(--color-warning-700) (dark)","d":"The warning-border role, declared over --color-warning-700."},"fg":{"v":"{color.warning.200}","t":"color","s":"css-var --color-warning-fg = var(--color-warning-200) (dark)","d":"The warning-fg role, declared over --color-warning-200."}}},"gradient":{"skeleton":{"v":[{"color":"{color.neutral.800}","position":0.43670000000000003},{"color":"{color.neutral.700}","position":0.7579},{"color":"{color.neutral.800}","position":1.0}],"t":"gradient","s":"css-var --skeleton-loader-gradient (dark): the loading shimmer sweep","d":"The skeleton shimmer sweep."}},"shadow":{"focus-ring":{"v":[{"color":"#61a6fa","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"2px","inset":false}],"t":"shadow","s":"css-var --shadow-focus-ring resolved dark: \"0 0 0 2px #61a6fa\"","d":"The 2px accent keyboard ring."}}}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (inside .dark / [data-theme="dark"])']]) {
-    const roles = flat((TOK[setname] || {}).color || {}, 'color.').filter(([, t]) => t.t === 'color');
-    if (!roles.length) continue;
-    // The themed sets' custom properties only resolve inside their own scope:
-    // swatch dots must live under .dark / .light-scope or they paint the page
-    // theme's values — after the toggle sets dark, an unscoped light swatch
-    // shows the dark value under a light label.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ' light-scope'}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.tracking || {}, 'tracking.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#spacing-out').innerHTML = m || '<div><b>none declared</b></div>';
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.'))
-    e += `<span class="shadowbox" style="box-shadow:var(${cssname(n)})">${esc(n)}</span>`;
-  for (const [n, t] of flat(TOK.core.gradient || {}, 'gradient.'))
-    e += `<div style="margin:4px 0 12px"><div class="accentband" style="background:var(${cssname(n)});width:320px"></div><div class="nm" style="font:500 11px var(--sg-mono);margin-top:4px">${esc(n)}</div></div>`;
-  for (const [n, t] of flat((TOK.light || {}).shadow || {}, 'shadow.'))
-    e += `<span class="shadowbox" style="box-shadow:var(${cssname(n)})">${esc(n)}</span>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light || {}).component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function type() {
-  let h = '';
-  for (const [role, grp] of Object.entries((TOK.core || {}).typography || {})) {
-    const items = flat(grp, 'typography.' + role + '.');
-    h += `<div class="pal-h">typography.${esc(role)}</div>`;
-    for (const [n, t] of items) {
-      const v = t.v || {};
-      const px = parseFloat(v.fontSize);
-      // The sample sets the token's own shorthand var, so family, line-height,
-      // style and weight all come from the token; font-size only caps display
-      // sizes so the 72px samples still fit the row.
-      h += `<div class="tr"><span class="ts" style="font:var(${cssname(n)});font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontSize || '')} / ${esc(v.lineHeight || '')} ${esc(v.fontWeight || '')}${v.fontStyle === 'italic' ? ' italic' : ''}</span></div>`;
-    }
-  }
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
 </body>
 </html>

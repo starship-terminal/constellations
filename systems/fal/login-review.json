@@ -1,0 +1,58 @@
+{
+  "product": "fal",
+  "domain": "fal.ai",
+  "captured": "2026-11-21",
+  "probe": "oauth-only",
+  "login_extracted": "not-started",
+  "offered": [
+    "Continue with GitHub (/api/auth/v2/connect/github?returnTo=%2Fdashboard)",
+    "Continue with Google (/api/auth/v2/connect/google?returnTo=%2Fdashboard)",
+    "Continue with Microsoft (/api/auth/v2/connect/microsoft?returnTo=%2Fdashboard)",
+    "Use SSO (button, not clicked; no email field is visible on the wall)"
+  ],
+  "screens": [
+    {
+      "url": "https://fal.ai/login",
+      "title": "Login to fal | Access 1000+ Generative AI Models",
+      "heading": "Welcome to fal",
+      "subheading": "Login or sign up",
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "Same wall serves login and sign up. No email, name, password, or code field."
+    },
+    {
+      "url": "https://fal.ai/login?returnTo=%2Fdashboard",
+      "title": "Login to fal | Access 1000+ Generative AI Models",
+      "heading": "Welcome to fal",
+      "note": "Get Started and /dashboard redirect here. Same providers. Not submitted."
+    },
+    {
+      "url": "https://fal.ai/signup",
+      "title": "404",
+      "heading": "We couldn't connect this one.",
+      "note": "No signup page. The 404 Get Started link points at /login?returnTo=%2Fsignup. Stopped."
+    }
+  ],
+  "gaps": [
+    "No email field on the login wall.",
+    "No password field.",
+    "No one-time code field.",
+    "SSO was not opened, so any SSO email step is not captured.",
+    "Signed-in dashboard, keys, workflows, and billing were not reached."
+  ],
+  "not_submitted": [
+    "No OAuth provider was clicked.",
+    "Use SSO was not clicked.",
+    "No email, name, password, or code was typed.",
+    "No account was created.",
+    "No form was submitted.",
+    "No captcha was solved.",
+    "The DataGrail consent banner (Accept All / Reject All / Customize My Choices) was removed from the DOM for screenshots and was not accepted."
+  ],
+  "branches_stopped": [
+    {"from": "Header Get Started", "url": "https://fal.ai/login?returnTo=%2Fdashboard"},
+    {"from": "Hero Get Started", "url": "https://fal.ai/login?returnTo=%2Fdashboard"},
+    {"from": "/dashboard", "url": "https://fal.ai/login?returnTo=%2Fdashboard"},
+    {"from": "Footer Workflows", "url": "https://fal.ai/login?returnTo=%2Fworkflows"},
+    {"from": "/signup", "url": "https://fal.ai/signup (404); its Get Started points at /login?returnTo=%2Fsignup"}
+  ]
+}

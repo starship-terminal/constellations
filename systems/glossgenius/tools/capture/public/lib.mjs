@@ -22,14 +22,13 @@ export const APP = 'https://app.glossgenius.com';
 export const LOGIN_URL = APP + '/login';
 export const SIGNUP_URL = APP + '/signup';
 export const FORGOT_URL = APP + '/forgot-password';
-// A real published GlossGenius booking website — every business on the
-// platform gets a public <name>.glossgenius.com booking site (the product's
-// own public output, like a published share link; no account needed to view
-// it). Honey Hive Salon, Chicago — chosen for its short, ordinary service
-// list. Nothing on it is ever booked or submitted.
-export const BOOK_HOME = 'https://honeyhivesalon.glossgenius.com/';
+// A published GlossGenius booking website. bookings.glossgenius.com is the
+// platform's public booking host (it serves Lavender Lounge Salon). Capture
+// stops at the public date-picker: no service is selected, no day is chosen,
+// and no appointment is booked.
+export const BOOK_HOME = 'https://bookings.glossgenius.com/';
 export const BOOK_SERVICES = BOOK_HOME + 'services';
-export const BOOK_BOOK = BOOK_HOME + 'book';
+export const BOOK_BOOK = BOOK_HOME + 'booking-flow';
 
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
@@ -48,10 +47,11 @@ export const RAW = path.join(REF, 'raw');
 // Button_root__UrOfw) with a full design-token layer on :root: --content-*,
 // --surface-*, --gray-*/--gloss-gray-*, --brand-*, --space-*x, --size-*x,
 // --radius-*, --font-*, --border-*. /login, /signup and /forgot-password are
-// reachable signed out. honeyhivesalon.glossgenius.com is a real published
-// booking website (its own CSS-module token family: --button-*, --text-*,
-// --space-*, --chip-*, --input-*): the public service list, professional
-// select and date-picker step are all reachable without an account.
+// reachable signed out. bookings.glossgenius.com is a published booking
+// website (its own CSS-module token family: --button-*, --text-*,
+// --space-*, --chip-*, --input-*): the public service list and the empty
+// date-picker step are reachable without an account. The capture never
+// selects a service or a day.
 // Specs select by role, aria-label, class substring or text. No consent
 // overlay was observed on any host; any consent/dialog overlay that appears
 // is hidden, never answered.

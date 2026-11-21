@@ -30,7 +30,7 @@ declared vocabulary:
                       /signup and /forgot-password paint the light set;
                       .dark is declared but nothing signed out applies it.
 
-  honeyhivesalon.glossgenius.com  a real published booking website (every
+  bookings.glossgenius.com  a real published booking website (every
                       business gets a public <name>.glossgenius.com site) —
                       its own CSS-module token family under
                       .tokens_glossDS__* classes: --button-*, --text-*,

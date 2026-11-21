@@ -1,7 +1,6 @@
-// Shared helpers for the foodnoms.com public captures (adapted from the
-// public-capture lineage).
+// Shared helpers for the Gauth captures (adapted from the Coursera kit).
 // Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
-// directory has no node_modules.
+// directory has no node_modules of its own.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -18,140 +17,58 @@ export const UA =
 export const UA_MOBILE =
   'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
 export const BASE = 'https://foodnoms.com';
-// The product is an iOS/macOS app distributed through the App Store: there is
-// no web sign-in. The site is a Framer-published marketing site; /download and
-// every "Download"/"Get the App" link bounce to apps.apple.com, and
-// /open/settings/* are static "Open in Foodnoms" deep-link interstitials.
 
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');
 
-// foodnoms.com is one Framer-published marketing site serving both light and
-// dark through a real (prefers-color-scheme: dark) media rule — captured by
-// emulating each scheme. Routes: home, /plus pricing (a Framer comparison
-// Table component), the /help center (Framer search modal + Closed/Open
-// accordions), /news (+ the newsletter form and article cards), /press, the
-// /vs/* and /family-plan article pages, /terms, /privacy and the
-// /open/settings/* interstitials. It declares a flat --token-<uuid> palette
-// plus --framer-* internals on <body>; components carry stable
-// data-framer-name labels, so specs select by those names, role or text.
-// No consent overlay was observed; any overlay that appears is hidden, never
-// answered.
-export const M = (name) => `[class*="${name}"]`;
+// Gauth styles its pages with CSS modules: a class is `<file>_<name>__<hash>`.
+// M('catalog_card') selects by the stable part, so a rebuild that changes the
+// hash does not break the kit.
+export const M = (name) => `[class*="${name}__"]`;
 
-// The per-context patches every page gets: the webdriver mask, plus a record of
-// the real devicePixelRatio before app code runs — a page's scripts can make
-// window.devicePixelRatio read 1 while the renderer still paints at the
-// context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
-// __captureDPR keeps the launch-time value for the screenshot sidecar.
-export async function patch(context) {
-  await context.addInitScript(() => {
-    // no navigator.webdriver mask: removed in the 2026-11 audit (D7), not run since
-    try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
-  });
-}
-
-export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
+export async function launch({ width = 1440, height = 900, mobile = false, colorScheme = 'light' } = {}) {
   const browser = await chromium.launch();
   const context = await browser.newContext(mobile
-    ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
-    : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
-  await patch(context);
+    ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US', colorScheme }
+    : { viewport: { width, height }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', colorScheme, reducedMotion: 'no-preference' });
   return { browser, context };
 }
 
-// Waits out any bot interstitial and reports whether the real document
-// arrived. foodnoms.com has never shown one to a headless client.
-export async function clearChallenge(page, { tries = 12, step = 2000 } = {}) {
-  for (let i = 0; i < tries; i++) {
-    const s = await page.evaluate(() => ({
-      title: document.title,
-      body: (document.body && document.body.innerText || '').slice(0, 400),
-    })).catch(() => ({ title: '', body: '' }));
-    const challenging = /just a moment|attention required/i.test(s.title)
-      || /performing security verification|verify you are human|verifying you are human|checking your browser|unusual activity from your computer network|press ?& ?hold|not a robot|you have been blocked|unable to access/i.test(s.body);
-    if (!challenging && s.body.length > 40) return true;
-    await page.waitForTimeout(step);
+// Every page opens with a promo dialog ("Introducing Gauth Academy"); its own
+// close button dismisses it. `waitUntil: 'networkidle'` never settles on
+// gauth.com, so a page is `load` plus a fixed wait.
+export async function closePromo(page) {
+  const x = page.locator(M('atlas-intro-modal_aw-atlas-intro-modal-close'));
+  for (let i = 0; i < 3; i++) {
+    if (await x.count() && await x.first().isVisible().catch(() => false)) {
+      await x.first().click().catch(() => {});
+      await page.waitForTimeout(800);
+      return true;
+    }
+    await page.waitForTimeout(700);
   }
   return false;
 }
 
-// Hide (never click) every overlay that mounts over the page: a
-// consent/cookie line and any fixed promo/newsletter layer. REMOVE-ONLY:
-// hiding never accepts or rejects anything, and no button inside any of these
-// is ever clicked. foodnoms.com showed no consent banner during capture; this
-// pass is a safety net only and leaves the Framer search modal alone (its
-// text does not match the consent patterns).
-export async function closePromo(page) {
-  for (let i = 0; i < 4; i++) {
-    const hit = await page.evaluate(() => {
-      let n = 0;
-      // Any fixed consent/cookie overlay in the page's own DOM (never
-      // body/html): hidden, never answered.
-      document.querySelectorAll('div[id*="onetrust" i], div[class*="onetrust" i], div[id*="termly" i], div[class*="termly" i], div[id*="cookie" i], div[class*="cookie" i], iframe[title*="privacy" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      const box = [...document.querySelectorAll('div,section,aside,[role="dialog"],[role="alertdialog"]')].find((x) => {
-        const t = x.innerText || '';
-        const r = x.getBoundingClientRect();
-        const cs = getComputedStyle(x);
-        return (cs.position === 'fixed' || cs.position === 'sticky')
-          && /we use cookies|cookie|we value privacy|personal data|consent/i.test(t)
-          && t.length < 1600 && r.width > 200 && r.width < 1400 && r.height > 40 && +cs.zIndex > 5;
-      });
-      if (box) { box.style.setProperty('display', 'none', 'important'); n++; }
-      if (document.body) document.body.style.removeProperty('overflow');
-      document.documentElement && document.documentElement.style.removeProperty('overflow');
-      return n;
-    }).catch(() => 0);
-    if (!hit) { await page.waitForTimeout(600); continue; }
-    await page.waitForTimeout(600);
-  }
-  return true;
-}
-
-// Finds a visible element in-page whose trimmed innerText matches reText,
-// tags it with data-m-mark="<tag>" and returns a locator for it. up optionally
-// retargets an ancestor (closest()). Use where getByRole/hasText miss nodes
-// whose text lives in nested spans.
-export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0 } = {}) {
-  const ok = await page.evaluate(
-    ([src, flags, s, t, upSel, i, leafOnly, w, h]) => {
-      const re = new RegExp(src, flags);
-      document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
-      const els = [...document.querySelectorAll(s)].filter((n) => {
-        const r = n.getBoundingClientRect();
-        const cs = getComputedStyle(n);
-        return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.opacity !== '0' && re.test((n.innerText || '').trim());
-      });
-      // leaf: a container holding another match is a wrapper, not the target
-      const pool = leafOnly ? els.filter((n) => !els.some((o) => o !== n && n.contains(o))) : els;
-      const el = pool[i] || els[i];
-      if (!el) return false;
-      (upSel ? el.closest(upSel) || el : el).setAttribute('data-m-mark', t);
-      return true;
-    },
-    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH],
-  );
-  return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
-}
-
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  // A failed load or a challenge page that never clears is a boundary,
-  // never measured as the product: open() logs BLOCKED, leaves the tab on
-  // about:blank and returns false (true once the page loaded), without
-  // stopping the rest of the run. Every caller checks the result and skips
-  // the page or group, or fails the reading, so a blank tab is never saved
-  // as the product (2026-11 audit, finding 20-4; not run since).
-  const loaded = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).then(() => true, (e) => { console.log(`BLOCKED ${url}: ${String(e.message).split('\n')[0]}`); return false; });
-  if (!loaded || !(await clearChallenge(page))) {
-    if (loaded) console.log(`BLOCKED ${url}: the challenge page never cleared`);
-    await page.goto('about:blank').catch(() => {});
-    return false;
-  }
+  await page.goto(url, { waitUntil: 'load', timeout: 90000 });
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
-  return true;
+}
+
+// A story's own URL (/atlas/session/<id>) belongs to the browser that opened it and redirects to /atlas
+// anywhere else, so the story is reached the way a visitor reaches it: its card, then Explore.
+export async function openStory(p, title = 'Apollo 11') {
+  // desktop cards are user-cases_card and open a preview with Explore; phone cards are home_caseItem
+  const card = p.locator(`${M('user-cases_card')}, ${M('home_caseItem')}`).filter({ hasText: title }).first();
+  await card.scrollIntoViewIfNeeded();
+  await card.click();
+  await p.waitForTimeout(3000);
+  const explore = p.locator(M('user-cases_exploreButton'));
+  if (await explore.count()) await explore.first().click();
+  await p.waitForTimeout(10000);
 }
 
 // Computed style properties recorded for every component and state.
@@ -177,9 +94,11 @@ export const PROPS = [
 // Reads the computed style of the element, its ::before/::after if they paint
 // anything, the rect, the painted layers in its subtree, a focus ring or fill
 // painted by an ancestor, the first text node's type, and the first svg icon.
+// Class names are reported without their CSS-module hash.
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
-    const cls = (n) => [...n.classList].map((c) => String(c)).filter((c) => c && !/^x[0-9a-z]{5,8}$/.test(c));
+    const strip = (c) => String(c).replace(/__[A-Za-z0-9_-]{5,6}$/, '');
+    const cls = (n) => [...n.classList].map(strip).filter((c) => !/^x[0-9a-z]{5,8}$/.test(c));
     // A url() in a computed value (a background photo, a cursor) can be a signed URL: recorded as
     // url(…), only data: and #fragment references kept.
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
@@ -216,7 +135,7 @@ export async function styleOf(locator) {
       for (const pe of [null, '::before', '::after']) {
         const c = getComputedStyle(n, pe);
         if (pe && (c.content === 'none' || c.content === 'normal')) continue;
-        const bw = ['Top', 'Right', 'Bottom', 'Left'].map((sd) => parseFloat(c[`border${sd}Width`]) > 0 && c[`border${sd}Style`] !== 'none' ? `${sd[0]}:${c[`border${sd}Width`]} ${c[`border${sd}Style`]}` : '').filter(Boolean);
+        const bw = ['Top', 'Right', 'Bottom', 'Left'].map((sd) => parseFloat(c[`border${sd}Width`]) > 0 && c[`border${sd}Style`] !== 'none' ? `${sd[0]}:${c[`border${sd}Width`]} ${c[`border${sd}Style`]} ${c[`border${sd}Color`]}` : '').filter(Boolean);
         const bg = c.backgroundColor !== 'rgba(0, 0, 0, 0)' ? c.backgroundColor : '';
         const bgi = c.backgroundImage !== 'none' && !/^url\("?https?:/.test(c.backgroundImage) ? noUrl(c.backgroundImage).replace(/url\("data:[^)]{60,}\)/g, 'url(data:…)').slice(0, 200) : '';
         const sh = c.boxShadow !== 'none' ? c.boxShadow : '';
@@ -264,32 +183,22 @@ export async function styleOf(locator) {
 }
 
 // Element screenshot into components/crops/<name>.png, padded so a focus ring
-// or shadow is not clipped, then quantized to 256 colours. Fixed/sticky bars
-// that do not hold the element are hidden for the shot — the site's chrome is
-// Framer position:fixed containers, so the hide pass looks at computed
-// position, not at the hashed class.
+// or shadow is not clipped, then quantized to 256 colours. Sticky bars that do
+// not hold the element are hidden for the shot.
+const STICKY = [M('pc-header_header'), M('catalog_stickyToolbar'), M('math-course-detail_backBar'), M('header_header')].join(', ');
 export async function crop(page, locator, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
   const file = path.join(CROPS, `${name}.png`);
-  const hidden = await locator.evaluate((el, { pad }) => {
+  const hidden = await locator.evaluate((el, sel) => {
     let n = 0;
-    const er = el.getBoundingClientRect();
-    document.querySelectorAll('body *').forEach((s) => {
+    document.querySelectorAll(sel).forEach((s) => {
       if (s.contains(el) || el.contains(s)) return;
-      const cs = getComputedStyle(s);
-      if (cs.position !== 'fixed' && cs.position !== 'sticky') return;
-      if (+cs.zIndex < 1) return;
-      // A sticky layer painted behind the target supplies its backdrop; hiding
-      // it turns the crop into the page's plain field.
-      const sr = s.getBoundingClientRect();
-      const overlap = !(sr.right < er.left - pad || sr.left > er.right + pad || sr.bottom < er.top - pad || sr.top > er.bottom + pad);
-      if (overlap) return;
       s.setAttribute('data-m-hidden', '1');
       s.style.setProperty('visibility', 'hidden', 'important');
       n++;
     });
     return n;
-  }, { pad });
+  }, STICKY);
   try {
     const box = await locator.boundingBox();
     if (!box) throw new Error(`no box for ${name}`);

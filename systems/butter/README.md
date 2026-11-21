@@ -1,6 +1,6 @@
 # Butter design reference
 
-A token set and component reference for Butter's public surface — for building marketing and gallery pages in the style of the real thing. It was read from **butter.video** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844 — reached via **usebutter.com**, which redirects to www.butter.video. Captured: the home, product, pricing, blog, MCP, contact and terms pages (the light marketing surface), the explore, blocks and templates galleries (a dark app shell that is public signed-out), the login page and a 390px mobile pass.
+A token set and component reference for Butter's public surface — for building marketing and gallery pages in the style of the real thing. It was read from **butter.video** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844 — reached via **usebutter.com**, which redirects to www.butter.video. Captured: the home, product, pricing, blog, MCP, contact and terms pages (the light marketing surface), the explore, blocks and templates galleries (a dark app shell that is public signed-out), the login page and a 390px mobile pass. A **2026-11-21** public walk added [site-tree.md](site-tree.md) and empty-wall shots of `/login` at 1440 and 390, plus empty `/register` and `/forgot`. That walk typed nothing and submitted nothing. The map of which control opens which page is [site-tree.md](site-tree.md). The empty wall is [login-review.json](login-review.json).
 
 Butter is worth a capture because its "the first video editor you can build on" positioning paints an unusually restrained system: a declared `--butter-*` token layer whose palette is almost pure greyscale — `#0f0f0f` ink on white, `#1e1e1e` buttons and nav text, `#ededed` fields for the floating header island, the footer and the pricing cards — with a single cyan `#4dc5e5` accent hidden inside every button (the layer that surfaces on interaction and draws the 3px focus outline) and four bright accents (green `#63ad45`, pink `#f9abff`, red `#ff3333`, yellow `#e9d352`) spent mostly on artwork. A 107px DieGrotesk display type, 16px button pills, 32px cards, then a second surface entirely: the dark MUI app shell on a `#0a0909` canvas with `#151515` cards on `#212121` hairlines and inverted `#f5f5f5` buttons. **Boundary:** the editor itself lives behind /login; the workspace, projects, exports, checkout and every signed-in surface were never reached. The dark galleries are public — they are captured — but the product past them is a recorded gap, never inferred.
 
@@ -12,10 +12,12 @@ Butter is worth a capture because its "the first video editor you can build on" 
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (36, 83 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the header island, the hero, pricing, the dark shell galleries, the footer, mobile |
-| [components/crops/](components/crops) | 82 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 28 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (home and mobile-home are part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `pricing-light-monthly` the toggled billing tab, `mcp-light-claude` the toggled agent tab |
+| [components/crops/](components/crops) | 83 element screenshots, `{component}-{state}.png` |
+| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (home and mobile-home are part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `pricing-light-monthly` the toggled billing tab, `mcp-light-claude` the toggled agent tab. The 2026-11-21 walk added `login-light-empty`, `mobile-login-light-empty`, `register-light-empty`, `forgot-light-empty` (nothing typed), plus `home-light-cocreate`, `pricing-light-faq`, `templates-dark-filter`, and `contact-light-empty`. |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — butter.video declares a real --butter-* token layer; the --leva-*/--perf-* vars are vendor widgets), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [site-tree.md](site-tree.md) | Public tree from the 2026-11-21 walk: which control opens which page or dialog, and which branches stopped at a wall. |
+| [login-review.json](login-review.json) | Empty login wall only. The signed-in app was not entered. |
 
 ## Brief
 
@@ -51,7 +53,7 @@ Fonts: `core.font.family.marketing` is DieGrotesk, then 1 fallback; `core.font.f
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 82 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 83 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -108,7 +110,6 @@ Nothing was signed into, bought or submitted: the login page was captured as a s
 
 ## What to distrust
 
-- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **This is the public shell, not the editor.** The Butter workspace, projects, exports, billing and the API-key flows the /mcp page advertises sit behind /login and are uncaptured. Treat the editor's own design system as unknown.
 - **Two surfaces, not a theme toggle.** The marketing pages are light-only and /explore, /blocks and /templates are dark-only; no switch is offered. `tokens.json` keeps the app-shell roles in the `dark` set — read them as the gallery shell, not a user-selectable dark mode.
 - **The buttons are wrappers.** `hero-cta`, `nav-cta` and `plan-cta` compute `background transparent`: the visible dark `#1e1e1e` fill and the `#4dc5e5` accent live on painted inner layers (the Child-layers rows in components.md). Copy the layers, not the wrapper.

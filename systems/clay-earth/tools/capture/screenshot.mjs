@@ -40,11 +40,7 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     const actual = await page.evaluate(() => {
       const root = document.documentElement, body = document.body, visual = window.visualViewport;
       return {
-        innerWidth, innerHeight,
-        // Some page scripts (Google Maps among them) make window.devicePixelRatio
-        // read 1 while the renderer keeps painting at the context's
-        // deviceScaleFactor — __captureDPR holds the launch-time truth.
-        devicePixelRatio: window.__captureDPR ?? devicePixelRatio,
+        innerWidth, innerHeight, devicePixelRatio,
         theme: {
           classes: [...root.classList].filter(name => name === 'light' || name === 'dark'),
           attributes: Object.fromEntries(['data-theme', 'data-mode', 'data-color-mode'].flatMap(name => {

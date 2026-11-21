@@ -1,7 +1,6 @@
-// Shared helpers for the fourthwall.com public captures (adapted from the
-// getfernand copy, which came from the enode/deezer/Boords/Blue Apron lineage).
+// Shared helpers for the Gauth captures (adapted from the Coursera kit).
 // Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
-// directory has no node_modules.
+// directory has no node_modules of its own.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -17,153 +16,59 @@ export const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 export const UA_MOBILE =
   'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
-export const BASE = 'https://fourthwall.com';
-export const PRODUCTS = 'https://products.fourthwall.com';
-export const DOCS = 'https://docs.fourthwall.com';
-export const HELP = 'https://help.fourthwall.com';
-export const SIGNUP_URL = BASE + '/get-started';  // redirects to auth.fourthwall.com (Keycloak)
-export const PDP_URL = PRODUCTS + '/comfort-colors-garment-dyed-heavyweight-t-shirt-dtg';
-export const ALL_URL = PRODUCTS + '/all';
+export const BASE = 'https://www.gauth.com';
 
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');
 
-// fourthwall.com is a Webflow marketing site, signed out: a Webflow variable
-// layer on :root (--_primitives---*/--_rhythm---*/--_surface---* semantics over
-// ink/paper colours plus flat --gs*/--b*/--g*/--r*/--y* ramps and --twitch*).
-// The --_surface---* layer inverts under "on-ink" scope classes (.on-ink,
-// .site-footer, .nav-menu, .mega-clip, .leg-section.*, .closer-section, …) —
-// dark sections inside the light page; there is no user theme toggle.
-// products.fourthwall.com is the public product catalogue, a styled-components
-// React app shipping the Fourthwall design system proper: --color-* ramps and
-// --bg-*/--border-*/--text-*/--icon-*/--font-*/--space-*/--radius-*/--shadow-*/
-// --motion-*/--input-*/--button-*/--panel-* semantics resolved with light-dark().
-// Its dark branch is declared, not toggled: the catalogue ships no theme
-// control, so the catalogDark values are a forced colour-scheme resolution,
-// never an observed painted surface. fourthwall.com/
-// get-started redirects to auth.fourthwall.com (Keycloak) with the same DS
-// behind the signed-out Sign-up-with-Google/Apple/email choices.
-// docs.fourthwall.com is Mintlify (light class on <html>, a "Change theme
-// preference" control, --gray-*/--primary*/--background-* vars).
-// help.fourthwall.com is Docusaurus (--ifm-* + --fw-* Fourthwall overrides +
-// --eli-*/--ask-ai-* assistant vars) with a real data-theme="dark" toggle.
-// Specs select by role, aria-label, class or text. Marketing pages mount an
-// Osano cookie-consent layer (--cc-* vars, .cc_div/#cc-main); any consent or
-// promo overlay is hidden, never answered.
-export const M = (name) => `[class*="${name}"]`;
-
-// The per-context patches every page gets: the webdriver mask, plus a record of
-// the real devicePixelRatio before app code runs — a page's scripts can make
-// window.devicePixelRatio read 1 while the renderer still paints at the
-// context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
-// __captureDPR keeps the launch-time value for the screenshot sidecar.
-export async function patch(context) {
-  await context.addInitScript(() => {
-    // no navigator.webdriver mask: removed in the 2026-11 audit (D7), not run since
-    try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
-  });
-}
+// Gauth styles its pages with CSS modules: a class is `<file>_<name>__<hash>`.
+// M('catalog_card') selects by the stable part, so a rebuild that changes the
+// hash does not break the kit.
+export const M = (name) => `[class*="${name}__"]`;
 
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
   const browser = await chromium.launch();
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
-  await patch(context);
   return { browser, context };
 }
 
-// Waits out any bot interstitial and reports whether the real document
-// arrived.
-export async function clearChallenge(page, { tries = 12, step = 2000 } = {}) {
-  for (let i = 0; i < tries; i++) {
-    const s = await page.evaluate(() => ({
-      title: document.title,
-      body: (document.body && document.body.innerText || '').slice(0, 400),
-    })).catch(() => ({ title: '', body: '' }));
-    const challenging = /just a moment|attention required/i.test(s.title)
-      || /performing security verification|verify you are human|verifying you are human|checking your browser|unusual activity from your computer network|press ?& ?hold|not a robot|you have been blocked|unable to access/i.test(s.body);
-    if (!challenging && s.body.length > 40) return true;
-    await page.waitForTimeout(step);
+// Every page opens with a promo dialog ("Introducing Gauth Academy"); its own
+// close button dismisses it. `waitUntil: 'networkidle'` never settles on
+// gauth.com, so a page is `load` plus a fixed wait.
+export async function closePromo(page) {
+  const x = page.locator(M('atlas-intro-modal_aw-atlas-intro-modal-close'));
+  for (let i = 0; i < 3; i++) {
+    if (await x.count() && await x.first().isVisible().catch(() => false)) {
+      await x.first().click().catch(() => {});
+      await page.waitForTimeout(800);
+      return true;
+    }
+    await page.waitForTimeout(700);
   }
   return false;
 }
 
-// Hide (never click) any fixed overlay that mounts over the page: a consent or
-// promo layer. REMOVE-ONLY: hiding never accepts or rejects anything.
-export async function closePromo(page) {
-  for (let i = 0; i < 4; i++) {
-    const hit = await page.evaluate(() => {
-      let n = 0;
-      // Known consent managers and cookie dialogs — fourthwall.com and
-      // docs.fourthwall.com mount Osano cookieconsent (.cc_div, #cc-main).
-      // Hidden, never answered — Decline/Accept are never clicked.
-      document.querySelectorAll('#cc-main, .cc_div, [class*="cc--main" i], [id*="cookieconsent" i], [class*="cookieconsent" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      document.querySelectorAll('#CybotCookiebotDialog, #CybotCookiebotDialogBodyUnderlay, [id*="cybotcookie" i], [class*="cookiebot" i], div[id*="cookiebanner" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      document.querySelectorAll('div[id*="onetrust" i], div[class*="onetrust" i], div[id*="termly" i], iframe[title*="privacy" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      const box = [...document.querySelectorAll('div,section,aside,[role="dialog"],[role="alertdialog"]')].find((x) => {
-        const t = x.innerText || '';
-        const r = x.getBoundingClientRect();
-        const cs = getComputedStyle(x);
-        return (cs.position === 'fixed' || cs.position === 'sticky')
-          && /note about our cookies|we use cookies|cookie settings|we value privacy|personal data \(such as identifiers/i.test(t)
-          && t.length < 1600 && r.width > 200 && r.width < 1400 && r.height > 60 && +cs.zIndex > 5;
-      });
-      if (box) { box.style.setProperty('display', 'none', 'important'); n++; }
-      if (document.body) document.body.style.removeProperty('overflow');
-      document.documentElement && document.documentElement.style.removeProperty('overflow');
-      return n;
-    }).catch(() => 0);
-    if (!hit) { await page.waitForTimeout(600); continue; }
-    await page.waitForTimeout(600);
-  }
-  return true;
-}
-
-// Finds a visible element in-page whose trimmed innerText matches reText,
-// tags it with data-m-mark="<tag>" and returns a locator for it. up optionally
-// retargets an ancestor (closest()). Use where getByRole/hasText miss nodes
-// whose text lives in nested spans.
-export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0 } = {}) {
-  const ok = await page.evaluate(
-    ([src, flags, s, t, upSel, i, leafOnly, w, h]) => {
-      const re = new RegExp(src, flags);
-      document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
-      const els = [...document.querySelectorAll(s)].filter((n) => {
-        const r = n.getBoundingClientRect();
-        const cs = getComputedStyle(n);
-        return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.opacity !== '0' && re.test((n.innerText || '').trim());
-      });
-      // leaf: a container holding another match is a wrapper, not the target
-      const pool = leafOnly ? els.filter((n) => !els.some((o) => o !== n && n.contains(o))) : els;
-      const el = pool[i] || els[i];
-      if (!el) return false;
-      (upSel ? el.closest(upSel) || el : el).setAttribute('data-m-mark', t);
-      return true;
-    },
-    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH],
-  );
-  return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
-}
-
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  // A failed load or a challenge page that never clears is a boundary,
-  // never measured as the product: open() logs BLOCKED, leaves the tab on
-  // about:blank and returns false (true once the page loaded), without
-  // stopping the rest of the run. Every caller checks the result and skips
-  // the page or group, or fails the reading, so a blank tab is never saved
-  // as the product (2026-11 audit, finding 20-4; not run since).
-  const loaded = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).then(() => true, (e) => { console.log(`BLOCKED ${url}: ${String(e.message).split('\n')[0]}`); return false; });
-  if (!loaded || !(await clearChallenge(page))) {
-    if (loaded) console.log(`BLOCKED ${url}: the challenge page never cleared`);
-    await page.goto('about:blank').catch(() => {});
-    return false;
-  }
+  await page.goto(url, { waitUntil: 'load', timeout: 90000 });
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
-  return true;
+}
+
+// A story's own URL (/atlas/session/<id>) belongs to the browser that opened it and redirects to /atlas
+// anywhere else, so the story is reached the way a visitor reaches it: its card, then Explore.
+export async function openStory(p, title = 'Apollo 11') {
+  // desktop cards are user-cases_card and open a preview with Explore; phone cards are home_caseItem
+  const card = p.locator(`${M('user-cases_card')}, ${M('home_caseItem')}`).filter({ hasText: title }).first();
+  await card.scrollIntoViewIfNeeded();
+  await card.click();
+  await p.waitForTimeout(3000);
+  const explore = p.locator(M('user-cases_exploreButton'));
+  if (await explore.count()) await explore.first().click();
+  await p.waitForTimeout(10000);
 }
 
 // Computed style properties recorded for every component and state.
@@ -189,9 +94,11 @@ export const PROPS = [
 // Reads the computed style of the element, its ::before/::after if they paint
 // anything, the rect, the painted layers in its subtree, a focus ring or fill
 // painted by an ancestor, the first text node's type, and the first svg icon.
+// Class names are reported without their CSS-module hash.
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
-    const cls = (n) => [...n.classList].map((c) => String(c)).filter((c) => c && !/^x[0-9a-z]{5,8}$/.test(c));
+    const strip = (c) => String(c).replace(/__[A-Za-z0-9_-]{5,6}$/, '');
+    const cls = (n) => [...n.classList].map(strip).filter((c) => !/^x[0-9a-z]{5,8}$/.test(c));
     // A url() in a computed value (a background photo, a cursor) can be a signed URL: recorded as
     // url(…), only data: and #fragment references kept.
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
@@ -278,54 +185,36 @@ export async function styleOf(locator) {
 // Element screenshot into components/crops/<name>.png, padded so a focus ring
 // or shadow is not clipped, then quantized to 256 colours. Sticky bars that do
 // not hold the element are hidden for the shot.
-const STICKY = ['header', 'nav[class*="sticky" i]', '[class*="sticky" i] header', 'div[class*="sticky" i]:has(> nav)'].join(', ');
+const STICKY = [M('pc-header_header'), M('catalog_stickyToolbar'), M('math-course-detail_backBar'), M('header_header')].join(', ');
 export async function crop(page, locator, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
   const file = path.join(CROPS, `${name}.png`);
-  const hidden = await locator.evaluate((el, { sel, pad }) => {
+  const hidden = await locator.evaluate((el, sel) => {
     let n = 0;
-    const er = el.getBoundingClientRect();
     document.querySelectorAll(sel).forEach((s) => {
       if (s.contains(el) || el.contains(s)) return;
-      // A sticky layer painted behind the target supplies its backdrop; hiding
-      // it turns the crop into the page's plain field.
-      const sr = s.getBoundingClientRect();
-      const overlap = !(sr.right < er.left - pad || sr.left > er.right + pad || sr.bottom < er.top - pad || sr.top > er.bottom + pad);
-      if (overlap) return;
       s.setAttribute('data-m-hidden', '1');
       s.style.setProperty('visibility', 'hidden', 'important');
       n++;
     });
     return n;
-  }, { sel: STICKY, pad });
+  }, STICKY);
   try {
     const box = await locator.boundingBox();
     if (!box) throw new Error(`no box for ${name}`);
     const vp = page.viewportSize();
     const inView = box.y - pad >= 0 && box.y + box.height + pad <= vp.height && box.x >= 0 && box.x + box.width <= vp.width + 1;
-    // A screenshot can stall waiting for document.fonts.ready while a lazy
-    // font request hangs; give it room (the run's default 8s timed out on
-    // font loads that finish at ~15-30s) and retry, then fail without
-    // leaving a stale crop from an earlier run behind.
-    let lastErr;
-    for (let i = 0; i < 3; i++) {
-      try {
-        if (inView) {
-          const clip = {
-            x: Math.max(0, box.x - pad),
-            y: Math.max(0, box.y - pad),
-            width: Math.min(vp.width - Math.max(0, box.x - pad), box.width + 2 * pad),
-            height: Math.min(vp.height - Math.max(0, box.y - pad), box.height + 2 * pad),
-          };
-          await page.screenshot({ path: file, clip, animations: 'allow', timeout: 25000 });
-        } else {
-          await locator.screenshot({ path: file, animations: 'allow', timeout: 25000 });
-        }
-        lastErr = null;
-        break;
-      } catch (e) { lastErr = e; await page.waitForTimeout(900); }
+    if (inView) {
+      const clip = {
+        x: Math.max(0, box.x - pad),
+        y: Math.max(0, box.y - pad),
+        width: Math.min(vp.width - Math.max(0, box.x - pad), box.width + 2 * pad),
+        height: Math.min(vp.height - Math.max(0, box.y - pad), box.height + 2 * pad),
+      };
+      await page.screenshot({ path: file, clip, animations: 'allow' });
+    } else {
+      await locator.screenshot({ path: file, animations: 'allow' });
     }
-    if (lastErr) { try { fs.unlinkSync(file); } catch { /* none */ } throw lastErr; }
   } finally {
     if (hidden) await page.evaluate(() => document.querySelectorAll('[data-m-hidden]').forEach((n) => { n.style.removeProperty('visibility'); n.removeAttribute('data-m-hidden'); }));
   }
@@ -336,31 +225,6 @@ export async function crop(page, locator, name, pad = 8) {
 export async function centre(locator) {
   await locator.evaluate((el) => el.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' })).catch(() => {});
   await locator.page().waitForTimeout(350);
-  // The marketing reveal is a 1.8s (+stagger delay) opacity/transform
-  // transition that can start a beat after the scroll lands: a fixed 350ms
-  // read caught mid-animation styles (opacity:0, translateY(56px) on the
-  // published tile/design-preview defaults), and a getAnimations snapshot
-  // alone can land before the reveal class is even applied. Poll until the
-  // element's computed opacity/transform stop changing with no transition
-  // still running, capped so a looping or never-firing reveal cannot hang
-  // the run.
-  try {
-    await locator.evaluate(async (el) => {
-      const probe = () => {
-        const cs = getComputedStyle(el);
-        const running = el.getAnimations({ subtree: true }).some((a) => a.playState === 'running');
-        return [cs.opacity, cs.transform, running];
-      };
-      let prev = probe();
-      for (let i = 0; i < 18; i++) {
-        await new Promise((r) => setTimeout(r, 250));
-        const cur = probe();
-        if (!cur[2] && cur[0] === prev[0] && cur[1] === prev[1]) return;
-        prev = cur;
-      }
-    });
-  } catch { /* no getAnimations support: keep the fixed wait above */ }
-  await locator.page().waitForTimeout(150);
 }
 
 // 256 colours, and a crop larger than about 1.2 megapixels (a whole sidebar or

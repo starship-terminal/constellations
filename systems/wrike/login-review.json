@@ -1,0 +1,34 @@
+{
+  "product": "Wrike",
+  "reviewedAt": "2026-11-21",
+  "entry": {
+    "from": "https://www.wrike.com/ header link labelled Log in",
+    "href": "https://login.wrike.com/login/",
+    "method": "Clicked the visible Log in link in the desktop header. No credentials typed. No identity provider clicked. No form submitted."
+  },
+  "landed": {
+    "url": "https://login.wrike.com/login/",
+    "title": "Sign in to your Wrike account",
+    "screenshot": "screenshots/login-wall-light-default.png"
+  },
+  "asksFor": [
+    "An email or corporate ID in input#login-input-id (type=email, placeholder and aria-label \"Email or corporate ID\").",
+    "A Next submit button. Next was not clicked. No password field was on this screen."
+  ],
+  "alsoVisibleNotClicked": [
+    "Forgot password?",
+    "Google",
+    "Sign in with Apple",
+    "Office (Microsoft)",
+    "Get started now (signup link, not followed)",
+    "Have multiple accounts? Log in here",
+    "Log in with One-Time Password",
+    "Get in touch",
+    "Wrike Help Center"
+  ],
+  "knownProbe": "A later step of this same host, after an email is submitted, asks for a password. This capture did not submit an email, so that password field was not reached and is Not captured.",
+  "stopped": true,
+  "submitted": false,
+  "identityProvidersClicked": [],
+  "privateStrings": "None written. The field was left empty."
+}

@@ -16,8 +16,8 @@
 // so specs select by role, aria-label, the stable class part
 // ([class*="navigationMainItem"]) or text. Nothing is sent, bought or signed
 // into: the only presses are local UI toggles — the header's mega-menu
-// triggers, the pricing accordions, the mobile nav button; the contact-form
-// and sign-in fields are typed into and cleared, never submitted; Schedule a
+// triggers, the pricing accordions, the mobile nav button. Fields stay
+// empty: nothing is typed. Schedule a
 // Meeting, Talk with Sales, Sign Up Now, Start Free Trial, Let's go and every
 // CTA are measured, never followed or clicked. The announcement banner is
 // real chrome, never hidden; any consent overlay would be hidden, never
@@ -239,12 +239,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
         await page.waitForTimeout(400);
         via = 'clicked into the field';
       } else if (st === 'filled') {
-        const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await f.click({ timeout: 4000 }).catch(() => f.evaluate((el) => el.focus()));
-        await page.keyboard.type(opts.fillText || 'name@example.com', { delay: 10 });
-        await page.waitForTimeout(500);
-        undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
-        via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
+        // Public capture does not type into email, name, password, or message fields.
+        throw new Error('filled is not captured: typing into a form is refused');
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
         else {
@@ -399,7 +395,7 @@ async function openMobileMenu() {
   return 'activated the menu button; the overlay did not report open';
 }
 
-const FIELD = ['default', 'focused', 'filled'];
+const FIELD = ['default', 'focused'];
 
 async function home() {
   if (!(await newPage('home'))) return;
@@ -465,9 +461,9 @@ async function contactform() {
   await chrome('contactform');
   const g = G.contactForm;
   await S('form-panel', q('form, [class*="ContactForm"], main').filter({ visible: true }).first(), ['default'], { group: g, title: 'Contact form card', desc: 'The dark form card on /contact/form — "Enter your info below. We\'ll get back to you shortly." with Name/Email/Message fields and a Submit pill; never submitted.', sel: 'contact form' });
-  await S('form-name', q('form input[type="text"], [class*="ContactForm"] input[type="text"], input[type="text"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Name field', desc: 'The underlined "Name" input; focused and typed into then cleared — never submitted.', sel: 'contact Name input' }, { fillText: 'Example Name' });
-  await S('form-email', q('form input[type="email"], input[type="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field', desc: 'The underlined "Email" input; focused and typed into then cleared — never submitted.', sel: 'contact Email input' }, { fillText: 'name@example.com' });
-  await S('form-message', q('form textarea, form input[type="text"], textarea').filter({ visible: true }).last(), FIELD, { group: g, title: 'Message field', desc: 'The underlined "Message" input; focused and typed into then cleared — never submitted.', sel: 'contact Message input' }, { fillText: 'Hello, this is a test.' });
+  await S('form-name', q('form input[type="text"], [class*="ContactForm"] input[type="text"], input[type="text"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Name field', desc: 'The underlined "Name" input, photographed empty. Focus lands in the field. Nothing is typed.', sel: 'contact Name input' });
+  await S('form-email', q('form input[type="email"], input[type="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field', desc: 'The underlined "Email" input, photographed empty. Focus lands in the field. Nothing is typed.', sel: 'contact Email input' });
+  await S('form-message', q('form textarea, form input[type="text"], textarea').filter({ visible: true }).last(), FIELD, { group: g, title: 'Message field', desc: 'The underlined "Message" input, photographed empty. Focus lands in the field. Nothing is typed.', sel: 'contact Message input' });
   await S('form-submit', q('form button[type="submit"], button[type="submit"]').filter({ hasText: /Submit/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Submit', desc: 'The form\'s pill "Submit" button; its states were measured but the button was never clicked — nothing was sent.', sel: 'contact Submit' });
   save();
 }
@@ -478,7 +474,7 @@ async function welcome() {
   await chrome('welcome');
   const g = G.auth;
   await S('login-panel', q('form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-in panel', desc: 'The accounts.frame.io/welcome sign-in card — the Frame.io mark, "Welcome / Enter your email to get started.", an e-mail field and a "Let\'s go" submit on a light page (styled-components — a different stack from the marketing site); never submitted.', sel: 'welcome form' }, { noScroll: true });
-  await S('login-email', q('input[type="email"], input[name="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field (sign-in)', desc: 'The "Email" input with placeholder "you@example.com"; focused and typed into then cleared — never submitted.', sel: 'welcome input[type=email]' }, { noScroll: true, fillText: 'name@example.com' });
+  await S('login-email', q('input[type="email"], input[name="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field (sign-in)', desc: 'The "Email" input with placeholder "you@example.com", photographed empty. Focus lands in the field. Nothing is typed.', sel: 'welcome input[type=email]' }, { noScroll: true });
   await S('login-submit', q('button[type="submit"], button').filter({ hasText: /Let.s go/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Let\'s go submit', desc: 'The cobalt "Let\'s go" submit; its states were measured but the button was never clicked — nothing was submitted.', sel: 'welcome Lets go' }, { noScroll: true });
   save();
 }

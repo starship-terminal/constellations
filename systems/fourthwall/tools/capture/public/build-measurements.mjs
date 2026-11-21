@@ -46,9 +46,10 @@ function props(v) {
 
 const L = [];
 const W = (s = '') => L.push(s);
-W('# Fourthwall component measurements');
+W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
-W(`Computed styles read from fourthwall.com, products.fourthwall.com, docs.fourthwall.com and help.fourthwall.com on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the public surfaces — the marketing pages' light surface and on-ink dark sections, the products catalogue, the signed-out /get-started auth shell, and the docs and help sites in light plus the dark themes their own theme controls paint — with any consent layer hidden (never answered), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+// PRODUCT (adapt): describe this product's capture.
+W(`Computed styles read from www.gauth.com on ${J._meta.read} by \`tools/capture/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
@@ -72,10 +73,6 @@ for (const g of groups) {
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
-      if (!v.style || !v.rect) { // a note entry (e.g. pdp_url) carries no computed style
-        (rows.Note ||= {})[st] = v.text || v.via || '';
-        continue;
-      }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }
     W(`| Property | ${states.join(' | ')} |`);
@@ -100,19 +97,12 @@ if (J._meta.backdrop) {
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('fourthwall.com serves its CSS same-origin (the Webflow mkt.css plus inline blocks; the catalogue SPA bundles its DS sheet; Mintlify and Docusaurus serve their own), so this list holds the transitions the readable sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.');
+// PRODUCT (adapt): describe this product's capture.
+W('Gauth\'s own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd\'s CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth\'s own rules.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');
   W(`- ${pg}: ${uniq.map((t) => `\`${esc(t.transition)}\``).join(', ') || 'none'}`);
-}
-if (J._meta.reducedMotion) {
-  W('');
-  W('## Reduced motion');
-  for (const [pg, rm] of Object.entries(J._meta.reducedMotion)) {
-    W('');
-    W(`- ${pg} (\`${rm.selector}\` under prefers-reduced-motion): ${rm.reduce ? `transition \`${esc(rm.reduce.transition)}\`, animation \`${esc(rm.reduce.animation)}\`, html scroll-behavior \`${rm.reduce.scrollBehavior}\`` : (rm.error || 'element not found')}`);
-  }
 }
 fs.writeFileSync(path.join(REF, 'raw', 'measurements.md'), L.join('\n') + '\n');
 console.log('raw/measurements.md', L.length, 'lines');

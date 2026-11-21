@@ -362,7 +362,7 @@ async function features() {
   await sheetsFor('features');
   const g = G.features;
   await S('feat-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Features headline', desc: 'The /features masthead.', sel: 'h1' }, { noScroll: true });
-  await S('feat-search', q('#feature-explorer-search'), FIELD, { group: g, title: 'Feature search', desc: 'The feature explorer search field. Focused and typed into, then cleared. Nothing was submitted.', sel: '#feature-explorer-search' }, { fillText: 'sponsorships' });
+  await S('feat-search', q('#feature-explorer-search'), ['default', 'focused'], { group: g, title: 'Feature search', desc: 'The feature explorer search field. Focused, never typed into, never submitted.', sel: '#feature-explorer-search' });
   save();
 }
 
@@ -379,8 +379,8 @@ async function login() {
   await sheetsFor('login');
   const g = G.login;
   await S('login-panel', await paintedCard(q('input[name="user[email]"]').filter({ visible: true }).first(), { minR: 6, maxW: 640 }), ['default'], { group: g, title: 'Log-in card', desc: 'The signed-out log-in card on app.kit.com/users/login. A separate app from the marketing site. Nothing was submitted.', sel: 'login card' }, { noScroll: true });
-  await S('login-email', q('input[name="user[email]"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field', desc: 'The Email field. Focused and typed into with a placeholder address, then cleared. Nothing was submitted.', sel: 'input[name=user[email]]' }, { noScroll: true, fillText: 'name@example.com' });
-  await S('login-password', q('input[name="user[password]"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Password field', desc: 'The Password field. Focused and typed into, then cleared. Nothing was submitted.', sel: 'input[name=user[password]]' }, { noScroll: true, fillText: 'not-a-real-password' });
+  await S('login-email', q('input[name="user[email]"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Email field', desc: 'The Email field on the empty log-in wall. Focused, never typed into, never submitted.', sel: 'input[name=user[email]]' }, { noScroll: true });
+  await S('login-password', q('input[name="user[password]"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Password field', desc: 'The Password field on the empty log-in wall. Focused, never typed into, never submitted.', sel: 'input[name=user[password]]' }, { noScroll: true });
   await S('login-show', q('button').filter({ hasText: /Show password/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Show password', desc: 'The Show password control. Measured, never used to reveal a real password.', sel: 'Show password' }, { noScroll: true });
   await S('login-remember', q('input[name="user[remember_me]"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Remember me', desc: 'The Keep me logged in checkbox. Measured at rest, never toggled into a session.', sel: 'input[name=user[remember_me]]' }, { noScroll: true });
   await S('login-submit', q('button[type="submit"]').filter({ hasText: /Log in/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Log in submit', desc: 'The Log in submit. States were measured. The button was never clicked.', sel: 'login submit' }, { noScroll: true });

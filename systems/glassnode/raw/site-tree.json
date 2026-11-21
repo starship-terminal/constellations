@@ -1,0 +1,403 @@
+[
+  {
+    "from": "start",
+    "control": "home",
+    "opens": "page",
+    "url": "https://glassnode.com/",
+    "status": 200,
+    "title": "Glassnode - Digital Asset Market Intelligence",
+    "h1": [
+      "Pioneering digital asset market intelligence",
+      "Our flagship platform"
+    ],
+    "cookies": "Deny"
+  },
+  {
+    "from": "direct",
+    "control": "about",
+    "opens": "page",
+    "url": "https://glassnode.com/about",
+    "status": 200,
+    "title": "About Glassnode – Digital Asset Data, Analytics & Research",
+    "h1": [
+      "Setting the standard in digital asset market intelligence"
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "data",
+    "opens": "page",
+    "url": "https://glassnode.com/products/data",
+    "status": 200,
+    "title": "Digital Asset Market Data | On-Chain, Spot & Derivatives – Glassnode",
+    "h1": [
+      "The backbone of Glassnode"
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "studio-product",
+    "opens": "page",
+    "url": "https://glassnode.com/products/studio",
+    "status": 200,
+    "title": "Glassnode - Digital Asset Market Intelligence",
+    "h1": [
+      "Analyze market activity with precision"
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "research-product",
+    "opens": "page",
+    "url": "https://glassnode.com/products/research",
+    "status": 200,
+    "title": "Digital Asset Research – Glassnode",
+    "h1": [
+      "Glassnode research, under your brand or alongside ours"
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "vector",
+    "opens": "page",
+    "url": "https://glassnode.com/pricing/vector",
+    "status": 200,
+    "title": "Bitcoin Vector - Pricing - Glassnode",
+    "h1": [
+      "Know Bitcoin's risk regime, every day."
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "alpha-lab-product",
+    "opens": "page",
+    "url": "https://glassnode.com/products/studio/alpha-lab",
+    "status": 200,
+    "title": "Alpha Lab · Turn Metrics Into Testable Trading Heuristics",
+    "h1": [
+      "Find Your Edge."
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "contact",
+    "opens": "page",
+    "url": "https://glassnode.com/contact",
+    "status": 200,
+    "title": "Contact Us - Glassnode",
+    "h1": [],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "stories",
+    "opens": "page",
+    "url": "https://glassnode.com/customer-stories",
+    "status": 200,
+    "title": "Customer Success Stories – Glassnode",
+    "h1": [
+      "Explore customer stories"
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "events",
+    "opens": "page",
+    "url": "https://glassnode.com/events",
+    "status": 200,
+    "title": "Glassnode - Digital Asset Market Intelligence",
+    "h1": [
+      "Meet us at our events"
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "solutions-trading",
+    "opens": "page",
+    "url": "https://glassnode.com/solutions/trading-and-investing",
+    "status": 200,
+    "title": "Digital Asset Trading & Investing Intelligence – Glassnode",
+    "h1": [
+      "Insights for data-driven trading"
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "solutions-content",
+    "opens": "page",
+    "url": "https://glassnode.com/solutions/crypto-content-creation",
+    "status": 200,
+    "title": "Digital Asset Research & Content Creation – Glassnode",
+    "h1": [
+      "Craft compelling digital asset research"
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "direct",
+    "control": "market-compass-product",
+    "opens": "page",
+    "url": "https://glassnode.com/products/studio/market-compass",
+    "status": 200,
+    "title": "Market Compass · Read the Market Like an Analyst",
+    "h1": [
+      "Read the Market Like an Analyst."
+    ],
+    "cookies": "none"
+  },
+  {
+    "from": "home header",
+    "control": "Products button",
+    "opens": "dropdown",
+    "items": [
+      {
+        "text": "Studio",
+        "href": "/products/studio"
+      },
+      {
+        "text": "Research",
+        "href": "/products/research"
+      },
+      {
+        "text": "VectorNEW",
+        "href": "/pricing/vector"
+      },
+      {
+        "text": "Alpha LabNEW",
+        "href": "/products/studio/alpha-lab"
+      }
+    ]
+  },
+  {
+    "from": "home",
+    "control": "Next metrics",
+    "opens": "carousel step"
+  },
+  {
+    "from": "home",
+    "control": "Send me free research email field",
+    "opens": "focus only; not typed, not submitted"
+  },
+  {
+    "from": "contact",
+    "control": "category cards",
+    "opens": "chooser visible",
+    "items": [
+      "Contact Sales Interested in a Professional plan subscription",
+      "General Inquiries Looking for support, partnerships, or have",
+      "Impressum"
+    ]
+  },
+  {
+    "from": "data",
+    "control": "Search metrics",
+    "opens": "filter",
+    "query": "active"
+  },
+  {
+    "from": "marketing Launch Studio",
+    "control": "Launch Studio",
+    "opens": "studio home",
+    "url": "https://studio.glassnode.com/",
+    "status": 200,
+    "title": "Glassnode Studio - Digital Asset Analytics"
+  },
+  {
+    "from": "studio header",
+    "control": "search button",
+    "opens": "search overlay"
+  },
+  {
+    "from": "studio header",
+    "control": "Resources",
+    "opens": "menu",
+    "items": [
+      {
+        "text": "TRX",
+        "href": "https://studio.glassnode.com/dashboards/asset-overview?a=TRX"
+      },
+      {
+        "text": "BTC",
+        "href": "https://studio.glassnode.com/dashboards/asset-overview?a=BTC"
+      },
+      {
+        "text": "XRP",
+        "href": "https://studio.glassnode.com/dashboards/asset-overview?a=XRP"
+      },
+      {
+        "text": "SOL",
+        "href": "https://studio.glassnode.com/dashboards/asset-overview?a=SOL"
+      },
+      {
+        "text": "Latency Monitor",
+        "href": "https://latency.glassnode.com/"
+      },
+      {
+        "text": "Documentation",
+        "href": "https://docs.glassnode.com/"
+      },
+      {
+        "text": "API",
+        "href": "https://docs.glassnode.com/basic-api/api"
+      },
+      {
+        "text": "Catalog",
+        "href": "https://docs.glassnode.com/data/metric-catalog"
+      }
+    ]
+  },
+  {
+    "from": "studio header",
+    "control": "icon-only button (changelog)",
+    "opens": "popover"
+  },
+  {
+    "from": "studio home",
+    "control": "7d period",
+    "opens": "filter"
+  },
+  {
+    "from": "studio nav or direct",
+    "control": "studio-pricing",
+    "opens": "page",
+    "url": "https://studio.glassnode.com/pricing",
+    "status": 200,
+    "title": "Pricing - Glassnode Studio",
+    "h1": [
+      "Plans & Pricing"
+    ]
+  },
+  {
+    "from": "studio nav or direct",
+    "control": "studio-charts",
+    "opens": "page",
+    "url": "https://studio.glassnode.com/charts/market.PriceUsdClose?a=BTC",
+    "status": 200,
+    "title": "BTC Price Chart - Glassnode",
+    "h1": []
+  },
+  {
+    "from": "studio nav or direct",
+    "control": "studio-dashboards",
+    "opens": "page",
+    "url": "https://studio.glassnode.com/dashboards/asset-overview?a=BTC",
+    "status": 200,
+    "title": "BTC Overview Dashboard - Glassnode Studio",
+    "h1": []
+  },
+  {
+    "from": "studio nav or direct",
+    "control": "studio-compass",
+    "opens": "page",
+    "url": "https://studio.glassnode.com/market-compass",
+    "status": 200,
+    "title": "Glassnode Studio - Digital Asset Analytics",
+    "h1": []
+  },
+  {
+    "from": "studio nav or direct",
+    "control": "studio-catalog",
+    "opens": "page",
+    "url": "https://docs.glassnode.com/introduction/metric-catalog",
+    "status": 200,
+    "title": "Metric Catalog | Glassnode Docs",
+    "h1": [
+      "Metric Catalog"
+    ]
+  },
+  {
+    "from": "studio nav or direct",
+    "control": "studio-login-404",
+    "opens": "page",
+    "url": "https://studio.glassnode.com/login",
+    "status": 404,
+    "title": "Glassnode Studio - Digital Asset Analytics",
+    "h1": []
+  },
+  {
+    "from": "studio charts",
+    "control": "asset control",
+    "opens": "menu or picker if it opened"
+  },
+  {
+    "from": "studio header",
+    "control": "Log in",
+    "opens": "auth wall",
+    "url": "https://auth.glassnode.com/u/login",
+    "offered": "email, password, reset password, continue, sign up, continue with Google",
+    "typed": false
+  },
+  {
+    "from": "studio header",
+    "control": "Sign up",
+    "opens": "auth wall",
+    "url": "https://auth.glassnode.com/u/signup",
+    "typed": false
+  },
+  {
+    "from": "phone",
+    "control": "home",
+    "opens": "page",
+    "url": "https://glassnode.com/",
+    "status": 200,
+    "width": 390
+  },
+  {
+    "from": "phone",
+    "control": "studio-home",
+    "opens": "page",
+    "url": "https://studio.glassnode.com/",
+    "status": 200,
+    "width": 390
+  },
+  {
+    "from": "phone",
+    "control": "data",
+    "opens": "page",
+    "url": "https://glassnode.com/products/data",
+    "status": 200,
+    "width": 390
+  },
+  {
+    "from": "phone studio or last page",
+    "control": "header buttons",
+    "opens": "inventory",
+    "items": [
+      {
+        "text": "",
+        "x": 338
+      }
+    ]
+  },
+  {
+    "from": "phone",
+    "control": "last header button",
+    "opens": "possible menu"
+  },
+  {
+    "from": "phone marketing",
+    "control": "header",
+    "opens": "inventory",
+    "items": [
+      {
+        "text": "",
+        "x": 24,
+        "tag": "A"
+      },
+      {
+        "text": "",
+        "x": 338,
+        "tag": "BUTTON"
+      }
+    ]
+  }
+]

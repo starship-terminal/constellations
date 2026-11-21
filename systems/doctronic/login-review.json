@@ -1,0 +1,107 @@
+{
+  "slug": "doctronic",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "probe": "no-form",
+  "login_extracted": "not-started",
+  "session": "Headless Playwright. No email, name, password, or code was typed. Get Login Code and Get Sign up Code were not clicked. Google, Apple, and Facebook were not clicked.",
+  "product_version": "v1.40.575",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Marketing sidebar: New chat, About Chat, Health Record, Health Information, About us, Careers, For Partners",
+        "Chat rail: New chat, Health record, Appointments, Prescriptions"
+      ],
+      "reached": [
+        "Marketing sidebar opened on /",
+        "About Chat menu opened",
+        "Health Information menu opened",
+        "Chat rail visible on /chat/"
+      ]
+    },
+    "settings": {
+      "items": [
+        "No signed-in settings. Login and signup dialogs are the account entry."
+      ],
+      "reached": [
+        "Login dialog photographed empty",
+        "Signup dialog photographed empty",
+        "Email step photographed empty"
+      ]
+    },
+    "create": {
+      "items": [
+        "Start chat",
+        "Send message",
+        "Get Login Code",
+        "Get Sign up Code",
+        "Create an account"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    {"name": "Login dialog, empty, desktop", "file": "screenshots/home-light-login.png"},
+    {"name": "Signup dialog, empty, desktop", "file": "screenshots/home-light-signup.png"},
+    {"name": "Login email step, empty, desktop", "file": "screenshots/home-light-login-email.png"},
+    {"name": "Login dialog, empty, phone", "file": "screenshots/mobile-login-light-default.png"}
+  ],
+  "gaps": [
+    "Signed-in app was not entered. login-extracted stays not-started.",
+    "Health record and Appointments redirect to /chat/?modal=signin. Those branches stopped at the login wall.",
+    "Email-code sign-in was not tried. A prior probe found Get Login Code did not advance and no code was sent. This pass did not click that button.",
+    "Google, Apple, and Facebook were visible and not clicked.",
+    "No password field is on the email step. A code field was not reached.",
+    "Onboarding was not shown."
+  ],
+  "not_submitted": [
+    "Get Login Code",
+    "Get Sign up Code",
+    "Continue with Google",
+    "Continue with Apple",
+    "Continue with Facebook",
+    "Sign up with Google",
+    "Sign up with Apple",
+    "Sign up with Facebook",
+    "Start chat",
+    "Send message",
+    "Do not sell form",
+    "Any email, name, password, or code"
+  ],
+  "walls": [
+    {
+      "url": "https://www.doctronic.ai/?modal=signin",
+      "asks": ["Log in with email", "Continue with Google", "Continue with Apple", "Continue with Facebook", "Create an account"]
+    },
+    {
+      "url": "https://www.doctronic.ai/?modal=signin&step=email",
+      "asks": ["Email address", "Get Login Code"]
+    },
+    {
+      "url": "https://www.doctronic.ai/?modal=signup",
+      "asks": ["Sign up with email", "Sign up with Google", "Sign up with Apple", "Sign up with Facebook"]
+    },
+    {
+      "url": "https://www.doctronic.ai/?modal=signup&step=email",
+      "asks": ["Email address", "Get Sign up Code"]
+    },
+    {
+      "url": "https://www.doctronic.ai/chat/?modal=signin&returnUrl=%2Fhealth-record%2F",
+      "asks": ["Login wall. Branch stopped."]
+    },
+    {
+      "url": "https://www.doctronic.ai/chat/?modal=signin&returnUrl=%2Fappointments%2F",
+      "asks": ["Login wall. Branch stopped."]
+    }
+  ]
+}

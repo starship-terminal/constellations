@@ -4,251 +4,178 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lemon Squeezy style guide</title>
-<meta name="description" content="Lemon Squeezy public-site tokens, rendered from tokens.json. Captured 2026-11-18, signed out.">
 <style>
 :root {
-  --color-neutral-50: #f7f7f8;
-  --color-neutral-100: #e8e8ed;
-  --color-neutral-200: #d1d1db;
-  --color-neutral-300: #a9a9bc;
-  --color-neutral-500: #6c6c89;
-  --color-neutral-700: #3f3f50;
-  --color-neutral-900: #121217;
-  --color-neutral-950: #191919;
-  --color-purple-50: #f4f1fd;
-  --color-purple-100: #e2dafb;
-  --color-purple-200: #c6b6f7;
-  --color-purple-300: #a991f3;
-  --color-purple-400: #8d6cef;
-  --color-purple-500: #7047eb;
-  --color-purple-600: #5423e7;
-  --color-purple-700: #4316ca;
-  --color-purple-900: #2b0e81;
-  --color-yellow-50: #fff9eb;
-  --color-yellow-100: #fff3d6;
-  --color-yellow-200: #ffe7ad;
-  --color-yellow-300: #ffda85;
-  --color-yellow-400: #ffce5c;
-  --color-yellow-500: #ffc233;
-  --color-yellow-700: #c28800;
-  --color-pink-50: #feecfb;
-  --color-pink-100: #fdddf8;
-  --color-pink-200: #fcc5f3;
-  --color-pink-300: #fa99ea;
-  --color-pink-400: #f87ce4;
-  --color-pink-500: #f75fde;
-  --color-pink-600: #f42ad3;
-  --color-pink-700: #db0bb9;
-  --color-pink-800: #a5088c;
-  --color-green-50: #eefbf4;
-  --color-green-100: #dff8ea;
-  --color-green-200: #b2eecc;
-  --color-green-300: #84e4ae;
-  --color-green-400: #56d990;
-  --color-green-500: #2dca72;
-  --color-green-600: #26a95f;
-  --color-green-700: #1e874c;
-  --color-blue-50: #f0faff;
-  --color-blue-100: #dbf3ff;
-  --color-blue-200: #ade4ff;
-  --color-blue-300: #70d1ff;
-  --color-blue-400: #38beff;
-  --color-blue-500: #00acff;
-  --color-blue-600: #0090d6;
-  --color-blue-700: #0075ad;
-  --color-orange-50: #fff2ee;
-  --color-orange-100: #ffe8e1;
-  --color-orange-200: #ffcdbd;
-  --color-orange-300: #ffb399;
-  --color-orange-400: #ff9876;
-  --color-orange-500: #ff7d52;
-  --color-orange-600: #ff571f;
-  --color-orange-700: #eb3a00;
-  --color-red-50: #fef0f4;
-  --color-red-100: #fdd8e1;
-  --color-red-200: #fbb1c4;
-  --color-red-400: #f76489;
-  --color-red-500: #f53d6b;
-  --color-red-700: #d50b3e;
-  --color-plum-100: #e5b5fe;
-  --color-plum-500: #cf75ff;
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --font-family-display: "Circularpro book", sans-serif;
-  --font-family-sans: Inter, sans-serif;
+  --palette-black: #000000;
+  --palette-black-2: #121217;
+  --palette-blue: #5423e7;
+  --palette-blue-50: #f0faff;
+  --palette-blue-100: #dbf3ff;
+  --palette-blue-200: #ade4ff;
+  --palette-blue-300: #70d1ff;
+  --palette-blue-400: #38beff;
+  --palette-blue-500: #00acff;
+  --palette-blue-600: #0090d6;
+  --palette-blue-700: #0075ad;
+  --palette-blue-violet: #7047eb;
+  --palette-border: #d1d1db;
+  --palette-gray-300: #a9a9bc;
+  --palette-gray-500: #6c6c89;
+  --palette-green-50: #eefbf4;
+  --palette-green-100: #dff8ea;
+  --palette-green-200: #b2eecc;
+  --palette-green-300: #84e4ae;
+  --palette-green-400: #56d990;
+  --palette-green-500: #2dca72;
+  --palette-green-600: #26a95f;
+  --palette-green-700: #1e874c;
+  --palette-grey-50: #f7f7f8;
+  --palette-grey-100: #e8e8ed;
+  --palette-grey-200: #d1d1db;
+  --palette-grey-700: #3f3f50;
+  --palette-ink: #191919;
+  --palette-yellow: #ffc233;
+  --palette-yellow-lighter: #ffd266;
+  --palette-yellow-50: #fff9eb;
+  --palette-yellow-100: #fff3d6;
+  --palette-yellow-200: #ffe7ad;
+  --palette-yellow-300: #ffda85;
+  --palette-yellow-400: #ffce5c;
+  --palette-yellow-500: #ffc233;
+  --palette-yellow-700: #c28800;
+  --palette-orange-50: #fff2ee;
+  --palette-orange-100: #ffe8e1;
+  --palette-orange-200: #ffcdbd;
+  --palette-orange-300: #ffb399;
+  --palette-orange-400: #ff9876;
+  --palette-orange-500: #ff7d52;
+  --palette-orange-600: #ff571f;
+  --palette-orange-700: #eb3a00;
+  --palette-pink-50: #feecfb;
+  --palette-pink-100: #fdddf8;
+  --palette-pink-200: #fcc5f3;
+  --palette-pink-300: #fa99ea;
+  --palette-pink-400: #f87ce4;
+  --palette-pink-500: #f75fde;
+  --palette-pink-600: #f42ad3;
+  --palette-pink-700: #db0bb9;
+  --palette-pink-800: #a5088c;
+  --palette-purple-50: #f4f1fd;
+  --palette-purple-100: #e2dafb;
+  --palette-purple-200: #c6b6f7;
+  --palette-purple-300: #a991f3;
+  --palette-purple-400: #8d6cef;
+  --palette-purple-500: #7047eb;
+  --palette-purple-600: #5423e7;
+  --palette-purple-700: #4316ca;
+  --palette-purple-900: #2b0e81;
+  --palette-red-50: #fef0f4;
+  --palette-red-100: #fdd8e1;
+  --palette-red-200: #fbb1c4;
+  --palette-red-400: #f76489;
+  --palette-red-500: #f53d6b;
+  --palette-red-700: #d50b3e;
+  --palette-white: #ffffff;
+  --palette-white-10: #ffffff1a;
+  --font-family-display: Circularpro book, sans-serif;
+  --font-family-body: Inter, sans-serif;
+  --font-family-auth: Inter, ui-sans-serif, system-ui, sans-serif;
   --font-family-mono: Jetbrainsmono, ui-monospace, monospace;
-  --typography-display: 400 80px/80px var(--font-family-display);
-  --typography-heading: 400 56px/63.84px var(--font-family-display);
-  --typography-title: 400 26px/31.72px var(--font-family-display);
-  --typography-body: 400 18px/30.6px var(--font-family-sans);
-  --typography-body-strong: 500 15px/24px var(--font-family-sans);
-  --typography-label: 500 14px/22.4px var(--font-family-sans);
-  --typography-caption: 400 14px/22.4px var(--font-family-sans);
-  --typography-code: 400 14px/22.4px var(--font-family-mono);
-  --radius-pill: 40px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-display: 80px;
+  --font-size-title: 56px;
+  --font-size-auth-title: 24px;
+  --font-size-body: 18px;
+  --font-size-nav: 15px;
+  --font-size-caption: 14px;
+  --font-size-auth-button: 16px;
   --radius-control: 8px;
-  --radius-docs: 8px;
+  --radius-pill: 40px;
   --radius-none: 0px;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
-  --size-nav-button: 40px;
-  --size-field: 40px;
-  --size-submit: 48px;
-  --size-orchid: 46.3906px;
-  --size-icon-button: 40px;
-  --size-checkbox: 16px;
-  --stroke-hairline: 1px;
-  --stroke-focus: 2px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --size-nav-height: 88px;
+  --size-banner-height: 70px;
+  --size-button-height: 40px;
+  --size-auth-button-height: 48px;
+  --size-field-height: 40px;
+  --size-oauth-height: 50px;
+  --size-logo: 40px;
+  --typography-display: var(--font-weight-regular) var(--font-size-display)/80px var(--font-family-display);
+  --typography-title: var(--font-weight-regular) var(--font-size-title)/63.84px var(--font-family-display);
+  --typography-body: var(--font-weight-regular) var(--font-size-body)/28.8px var(--font-family-body);
+  --typography-nav: var(--font-weight-medium) var(--font-size-nav)/24px var(--font-family-body);
+  --typography-caption: var(--font-weight-regular) var(--font-size-caption)/22.4px var(--font-family-body);
+  --typography-auth-title: var(--font-weight-medium) var(--font-size-auth-title)/32px var(--font-family-auth);
   --motion-duration-fast: 100ms;
-  --motion-duration-docs: 150ms;
-  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --surface-page: #ffffff;
-  --surface-hero: #5423e7;
-  --surface-banner: #ffc233;
-  --surface-footer: #5423e7;
-  --surface-raised: #f7f7f8;
-  --surface-overlay: #5423e7;
-  --surface-scrim: rgba(18, 18, 23, 0.4);
-  --text-primary: #121217;
-  --text-secondary: #6c6c89;
-  --text-muted: rgba(255, 255, 255, 0.6);
+  --motion-duration-nav: 400ms;
+  --motion-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-card: rgba(17, 17, 46, 0.06) 0px 2px 4px, rgba(17, 17, 46, 0.09) 0px 8px 13px;
+  --page: #5423e7;
+  --surface: #ffffff;
+  --surface-muted: #f7f7f8;
+  --text: #121217;
   --text-on-accent: #ffffff;
-  --text-on-hero: #ffffff;
-  --text-link: #7047eb;
-  --text-disabled: #a9a9bc;
-  --border-default: #d1d1db;
-  --border-strong: #3f3f50;
-  --border-focus: #7047eb;
-  --accent: #7047eb;
-  --accent-hover: #7e59ed;
-  --accent-pressed: #4316ca;
-  --status-success: #2dca72;
-  --status-warning: #ffc233;
-  --status-danger: #f53d6b;
-  --status-info: #00acff;
-  --component-button-bg: rgba(255, 255, 255, 0.902);
-  --component-button-text: #121217;
-  --component-button-radius: 40px;
-  --component-button-height: 40px;
-  --component-field-bg: #ffffff;
-  --component-field-text: #25252d;
-  --component-field-radius: 8px;
-  --component-field-height: 40px;
-  --sg-sans: Inter, ui-sans-serif, system-ui, sans-serif;
-  --sg-display: "Circularpro book", Inter, ui-sans-serif, system-ui, sans-serif;
-  --sg-mono: Jetbrainsmono, ui-monospace, SFMono-Regular, Menlo, monospace;
+  --muted: #ffffff99;
+  --muted-ink: #6c6c89;
+  --accent: #5423e7;
+  --accent-auth: #7047eb;
+  --banner: #ffc233;
+  --link: #7047eb;
+  --border: #d1d1db;
+  --focus: #3889ec;
+  --success: #2dca72;
+  --warning: #ffc233;
+  --danger: #f53d6b;
+  --info: #00acff;
+  color-scheme: light;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #121217); background: var(--surface-page, #fff); }
-main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
-h1 { font: 400 48px/1 var(--sg-display); letter-spacing: -1.6px; margin: 0 0 8px; }
-h2 { font: 500 13px/1 var(--sg-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary, #6c6c89); margin: 48px 0 12px; }
-.lead { max-width: 62ch; color: var(--text-secondary, #6c6c89); }
-.note { font-size: 13px; color: var(--text-secondary, #6c6c89); max-width: 68ch; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
-.sw i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(18,18,23,.12); display: block; }
-.sw b { font: 500 12px/1.3 var(--sg-mono); display: block; }
-.sw span { font: 400 11px/1.3 var(--sg-mono); color: var(--text-secondary, #6c6c89); }
-.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.pill { display: inline-flex; align-items: center; height: 40px; padding: 0 20px; border-radius: 40px; background: var(--component-button-bg, #fff); color: var(--component-button-text, #121217); font: 500 15px/1 var(--sg-sans); letter-spacing: -.15px; text-decoration: none; }
-.hero { background: var(--surface-hero, #5423e7); color: #fff; border-radius: 16px; padding: 48px 32px; }
-.hero h3 { font: 400 40px/1 var(--sg-display); letter-spacing: -1.4px; margin: 0 0 12px; }
-.cta { display: inline-flex; align-items: center; height: 48px; padding: 0 28px; border-radius: 40px; background: rgba(255,255,255,.9); color: #121217; font: 500 16px/1 var(--sg-sans); }
-.field { display: block; width: 280px; height: 40px; border: 0; border-radius: 8px; padding: 0 16px; box-shadow: inset 0 0 0 1px rgba(10,10,46,.16); font: 400 14px/1 var(--sg-sans); }
-.submit { height: 48px; border: 0; border-radius: 8px; padding: 0 20px; background: var(--accent, #7047eb); color: #fff; font: 500 16px/1 var(--sg-sans); }
-.banner { background: var(--surface-banner, #ffc233); color: #121217; border-radius: 8px; padding: 12px 16px; font-size: 14px; }
+body { margin: 0; background: var(--light-surface); color: var(--light-text); font: 400 16px/24px Inter, ui-sans-serif, system-ui, sans-serif; }
+header { background: var(--light-page); color: var(--light-text-on-accent); padding: 28px 32px; }
+header p { color: var(--light-muted); max-width: 62ch; }
+.banner { background: var(--light-banner); color: var(--light-text); padding: 12px 32px; font-size: 15px; }
+main { padding: 32px; max-width: 1100px; }
+h2 { font-size: 28px; font-weight: 500; margin: 36px 0 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 44px; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--light-border); display: block; }
+.nm { font: 600 12px/1.3 ui-monospace, monospace; }
+.vl { font-size: 12px; color: var(--light-muted-ink); }
+.typerow { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--light-border); align-items: baseline; }
+.k { font: 600 12px/1.4 ui-monospace, monospace; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+.btn { display: inline-flex; align-items: center; height: var(--size-button-height); padding: 8px 20px; border-radius: var(--radius-pill); background: var(--light-surface); color: var(--light-text); font-weight: 500; font-size: 15px; text-decoration: none; }
+.btn-auth { display: inline-flex; align-items: center; height: var(--size-auth-button-height); padding: 10px 16px; border-radius: var(--radius-control); background: var(--light-accent-auth); color: white; font-weight: 500; }
+.field { height: var(--size-field-height); border: 1px solid var(--light-border); border-radius: var(--radius-control); padding: 8px 16px; width: 280px; }
+.card { background: var(--core-palette-pink-100); border-radius: var(--radius-control); padding: 24px; max-width: 420px; }
 </style>
 </head>
 <body>
-<main>
+<div class="banner">Lemon Squeezy is no longer accepting new sign-ups and will shut down on March 31, 2027</div>
+<header>
   <h1>Lemon Squeezy</h1>
-  <p class="lead">Public marketing site, docs and the sign-in card, captured signed out on 2026-11-18. One light theme. Values come from tokens.json.</p>
-
-  <h2>Hero</h2>
-  <div class="hero">
-    <h3>Sell digital products globally</h3>
-    <p>A merchant-of-record marketing page on the purple-600 field, with a frosted white pill.</p>
-    <span class="cta">Explore Managed Payments</span>
-  </div>
-
-  <h2>Banner and pills</h2>
-  <div class="row">
-    <div class="banner">Sign-ups are closed. Shutdown 31 March 2027.</div>
-    <span class="pill">Start with Managed Payments</span>
-  </div>
-
-  <h2>Sign-in controls</h2>
-  <div class="row">
-    <input class="field" placeholder="Email address" readonly>
-    <button class="submit" type="button">Sign in</button>
-  </div>
-  <p class="note">The purple submit is the auth card, not the marketing pill. Marketing pills are 40px radius. Auth controls are 8px.</p>
-
-  <h2>Colour</h2>
-  <div id="swatches"></div>
-  <p class="note">Ramps are the :root custom properties from the Webflow stylesheet. Semantic roles are the light set.</p>
+  <p>Public marketing and account-entry tokens, read on 2026-11-21. One theme. The signed-in app was not entered.</p>
+</header>
+<main>
+  <h2>Roles</h2>
+  <div class="grid"><div class="sw"><i style="background:#5423e7"></i><div><div class="nm">light.page</div><div class="vl">#5423e7</div></div></div><div class="sw"><i style="background:#ffffff"></i><div><div class="nm">light.surface</div><div class="vl">#ffffff</div></div></div><div class="sw"><i style="background:#f7f7f8"></i><div><div class="nm">light.surface-muted</div><div class="vl">#f7f7f8</div></div></div><div class="sw"><i style="background:#121217"></i><div><div class="nm">light.text</div><div class="vl">#121217</div></div></div><div class="sw"><i style="background:#ffffff"></i><div><div class="nm">light.text-on-accent</div><div class="vl">#ffffff</div></div></div><div class="sw"><i style="background:#ffffff99"></i><div><div class="nm">light.muted</div><div class="vl">#ffffff99</div></div></div><div class="sw"><i style="background:#6c6c89"></i><div><div class="nm">light.muted-ink</div><div class="vl">#6c6c89</div></div></div><div class="sw"><i style="background:#5423e7"></i><div><div class="nm">light.accent</div><div class="vl">#5423e7</div></div></div><div class="sw"><i style="background:#7047eb"></i><div><div class="nm">light.accent-auth</div><div class="vl">#7047eb</div></div></div><div class="sw"><i style="background:#ffc233"></i><div><div class="nm">light.banner</div><div class="vl">#ffc233</div></div></div><div class="sw"><i style="background:#7047eb"></i><div><div class="nm">light.link</div><div class="vl">#7047eb</div></div></div><div class="sw"><i style="background:#d1d1db"></i><div><div class="nm">light.border</div><div class="vl">#d1d1db</div></div></div><div class="sw"><i style="background:#3889ec"></i><div><div class="nm">light.focus</div><div class="vl">#3889ec</div></div></div><div class="sw"><i style="background:#2dca72"></i><div><div class="nm">light.success</div><div class="vl">#2dca72</div></div></div><div class="sw"><i style="background:#ffc233"></i><div><div class="nm">light.warning</div><div class="vl">#ffc233</div></div></div><div class="sw"><i style="background:#f53d6b"></i><div><div class="nm">light.danger</div><div class="vl">#f53d6b</div></div></div><div class="sw"><i style="background:#00acff"></i><div><div class="nm">light.info</div><div class="vl">#00acff</div></div></div></div>
+  <h2>Palette</h2>
+  <div class="grid"><div class="sw"><i style="background:#000000"></i><div><div class="nm">black</div><div class="vl">#000000</div></div></div><div class="sw"><i style="background:#121217"></i><div><div class="nm">black-2</div><div class="vl">#121217</div></div></div><div class="sw"><i style="background:#5423e7"></i><div><div class="nm">blue</div><div class="vl">#5423e7</div></div></div><div class="sw"><i style="background:#f0faff"></i><div><div class="nm">blue-50</div><div class="vl">#f0faff</div></div></div><div class="sw"><i style="background:#dbf3ff"></i><div><div class="nm">blue-100</div><div class="vl">#dbf3ff</div></div></div><div class="sw"><i style="background:#ade4ff"></i><div><div class="nm">blue-200</div><div class="vl">#ade4ff</div></div></div><div class="sw"><i style="background:#70d1ff"></i><div><div class="nm">blue-300</div><div class="vl">#70d1ff</div></div></div><div class="sw"><i style="background:#38beff"></i><div><div class="nm">blue-400</div><div class="vl">#38beff</div></div></div><div class="sw"><i style="background:#00acff"></i><div><div class="nm">blue-500</div><div class="vl">#00acff</div></div></div><div class="sw"><i style="background:#0090d6"></i><div><div class="nm">blue-600</div><div class="vl">#0090d6</div></div></div><div class="sw"><i style="background:#0075ad"></i><div><div class="nm">blue-700</div><div class="vl">#0075ad</div></div></div><div class="sw"><i style="background:#7047eb"></i><div><div class="nm">blue-violet</div><div class="vl">#7047eb</div></div></div><div class="sw"><i style="background:#d1d1db"></i><div><div class="nm">border</div><div class="vl">#d1d1db</div></div></div><div class="sw"><i style="background:#a9a9bc"></i><div><div class="nm">gray-300</div><div class="vl">#a9a9bc</div></div></div><div class="sw"><i style="background:#6c6c89"></i><div><div class="nm">gray-500</div><div class="vl">#6c6c89</div></div></div><div class="sw"><i style="background:#eefbf4"></i><div><div class="nm">green-50</div><div class="vl">#eefbf4</div></div></div><div class="sw"><i style="background:#dff8ea"></i><div><div class="nm">green-100</div><div class="vl">#dff8ea</div></div></div><div class="sw"><i style="background:#b2eecc"></i><div><div class="nm">green-200</div><div class="vl">#b2eecc</div></div></div><div class="sw"><i style="background:#84e4ae"></i><div><div class="nm">green-300</div><div class="vl">#84e4ae</div></div></div><div class="sw"><i style="background:#56d990"></i><div><div class="nm">green-400</div><div class="vl">#56d990</div></div></div><div class="sw"><i style="background:#2dca72"></i><div><div class="nm">green-500</div><div class="vl">#2dca72</div></div></div><div class="sw"><i style="background:#26a95f"></i><div><div class="nm">green-600</div><div class="vl">#26a95f</div></div></div><div class="sw"><i style="background:#1e874c"></i><div><div class="nm">green-700</div><div class="vl">#1e874c</div></div></div><div class="sw"><i style="background:#f7f7f8"></i><div><div class="nm">grey-50</div><div class="vl">#f7f7f8</div></div></div><div class="sw"><i style="background:#e8e8ed"></i><div><div class="nm">grey-100</div><div class="vl">#e8e8ed</div></div></div><div class="sw"><i style="background:#d1d1db"></i><div><div class="nm">grey-200</div><div class="vl">#d1d1db</div></div></div><div class="sw"><i style="background:#3f3f50"></i><div><div class="nm">grey-700</div><div class="vl">#3f3f50</div></div></div><div class="sw"><i style="background:#191919"></i><div><div class="nm">ink</div><div class="vl">#191919</div></div></div><div class="sw"><i style="background:#ffc233"></i><div><div class="nm">yellow</div><div class="vl">#ffc233</div></div></div><div class="sw"><i style="background:#ffd266"></i><div><div class="nm">yellow-lighter</div><div class="vl">#ffd266</div></div></div><div class="sw"><i style="background:#fff9eb"></i><div><div class="nm">yellow-50</div><div class="vl">#fff9eb</div></div></div><div class="sw"><i style="background:#fff3d6"></i><div><div class="nm">yellow-100</div><div class="vl">#fff3d6</div></div></div><div class="sw"><i style="background:#ffe7ad"></i><div><div class="nm">yellow-200</div><div class="vl">#ffe7ad</div></div></div><div class="sw"><i style="background:#ffda85"></i><div><div class="nm">yellow-300</div><div class="vl">#ffda85</div></div></div><div class="sw"><i style="background:#ffce5c"></i><div><div class="nm">yellow-400</div><div class="vl">#ffce5c</div></div></div><div class="sw"><i style="background:#ffc233"></i><div><div class="nm">yellow-500</div><div class="vl">#ffc233</div></div></div><div class="sw"><i style="background:#c28800"></i><div><div class="nm">yellow-700</div><div class="vl">#c28800</div></div></div><div class="sw"><i style="background:#fff2ee"></i><div><div class="nm">orange-50</div><div class="vl">#fff2ee</div></div></div><div class="sw"><i style="background:#ffe8e1"></i><div><div class="nm">orange-100</div><div class="vl">#ffe8e1</div></div></div><div class="sw"><i style="background:#ffcdbd"></i><div><div class="nm">orange-200</div><div class="vl">#ffcdbd</div></div></div><div class="sw"><i style="background:#ffb399"></i><div><div class="nm">orange-300</div><div class="vl">#ffb399</div></div></div><div class="sw"><i style="background:#ff9876"></i><div><div class="nm">orange-400</div><div class="vl">#ff9876</div></div></div><div class="sw"><i style="background:#ff7d52"></i><div><div class="nm">orange-500</div><div class="vl">#ff7d52</div></div></div><div class="sw"><i style="background:#ff571f"></i><div><div class="nm">orange-600</div><div class="vl">#ff571f</div></div></div><div class="sw"><i style="background:#eb3a00"></i><div><div class="nm">orange-700</div><div class="vl">#eb3a00</div></div></div><div class="sw"><i style="background:#feecfb"></i><div><div class="nm">pink-50</div><div class="vl">#feecfb</div></div></div><div class="sw"><i style="background:#fdddf8"></i><div><div class="nm">pink-100</div><div class="vl">#fdddf8</div></div></div><div class="sw"><i style="background:#fcc5f3"></i><div><div class="nm">pink-200</div><div class="vl">#fcc5f3</div></div></div><div class="sw"><i style="background:#fa99ea"></i><div><div class="nm">pink-300</div><div class="vl">#fa99ea</div></div></div><div class="sw"><i style="background:#f87ce4"></i><div><div class="nm">pink-400</div><div class="vl">#f87ce4</div></div></div><div class="sw"><i style="background:#f75fde"></i><div><div class="nm">pink-500</div><div class="vl">#f75fde</div></div></div><div class="sw"><i style="background:#f42ad3"></i><div><div class="nm">pink-600</div><div class="vl">#f42ad3</div></div></div><div class="sw"><i style="background:#db0bb9"></i><div><div class="nm">pink-700</div><div class="vl">#db0bb9</div></div></div><div class="sw"><i style="background:#a5088c"></i><div><div class="nm">pink-800</div><div class="vl">#a5088c</div></div></div><div class="sw"><i style="background:#f4f1fd"></i><div><div class="nm">purple-50</div><div class="vl">#f4f1fd</div></div></div><div class="sw"><i style="background:#e2dafb"></i><div><div class="nm">purple-100</div><div class="vl">#e2dafb</div></div></div><div class="sw"><i style="background:#c6b6f7"></i><div><div class="nm">purple-200</div><div class="vl">#c6b6f7</div></div></div><div class="sw"><i style="background:#a991f3"></i><div><div class="nm">purple-300</div><div class="vl">#a991f3</div></div></div><div class="sw"><i style="background:#8d6cef"></i><div><div class="nm">purple-400</div><div class="vl">#8d6cef</div></div></div><div class="sw"><i style="background:#7047eb"></i><div><div class="nm">purple-500</div><div class="vl">#7047eb</div></div></div><div class="sw"><i style="background:#5423e7"></i><div><div class="nm">purple-600</div><div class="vl">#5423e7</div></div></div><div class="sw"><i style="background:#4316ca"></i><div><div class="nm">purple-700</div><div class="vl">#4316ca</div></div></div><div class="sw"><i style="background:#2b0e81"></i><div><div class="nm">purple-900</div><div class="vl">#2b0e81</div></div></div><div class="sw"><i style="background:#fef0f4"></i><div><div class="nm">red-50</div><div class="vl">#fef0f4</div></div></div><div class="sw"><i style="background:#fdd8e1"></i><div><div class="nm">red-100</div><div class="vl">#fdd8e1</div></div></div><div class="sw"><i style="background:#fbb1c4"></i><div><div class="nm">red-200</div><div class="vl">#fbb1c4</div></div></div><div class="sw"><i style="background:#f76489"></i><div><div class="nm">red-400</div><div class="vl">#f76489</div></div></div><div class="sw"><i style="background:#f53d6b"></i><div><div class="nm">red-500</div><div class="vl">#f53d6b</div></div></div><div class="sw"><i style="background:#d50b3e"></i><div><div class="nm">red-700</div><div class="vl">#d50b3e</div></div></div><div class="sw"><i style="background:#ffffff"></i><div><div class="nm">white</div><div class="vl">#ffffff</div></div></div><div class="sw"><i style="background:#ffffff1a"></i><div><div class="nm">white-10</div><div class="vl">#ffffff1a</div></div></div></div>
+  <h2>Type</h2>
+  <div class="typerow"><div class="k">display</div><div class="sample" style="font:var(--font-weight-regular) var(--font-size-display)/80px var(--font-family-display)">Sell digital products globally</div></div><div class="typerow"><div class="k">title</div><div class="sample" style="font:var(--font-weight-regular) var(--font-size-title)/63.84px var(--font-family-display)">Sell digital products globally</div></div><div class="typerow"><div class="k">body</div><div class="sample" style="font:var(--font-weight-regular) var(--font-size-body)/28.8px var(--font-family-body)">Sell digital products globally</div></div><div class="typerow"><div class="k">nav</div><div class="sample" style="font:var(--font-weight-medium) var(--font-size-nav)/24px var(--font-family-body)">Sell digital products globally</div></div><div class="typerow"><div class="k">caption</div><div class="sample" style="font:var(--font-weight-regular) var(--font-size-caption)/22.4px var(--font-family-body)">Sell digital products globally</div></div><div class="typerow"><div class="k">auth-title</div><div class="sample" style="font:var(--font-weight-medium) var(--font-size-auth-title)/32px var(--font-family-auth)">Sell digital products globally</div></div>
+  <h2>Controls</h2>
+  <div class="row"><a class="btn">Start with Managed Payments</a><span class="btn-auth">Sign in</span></div>
+  <div class="row"><input class="field" placeholder="Email address" readonly></div>
+  <div class="card"><strong>5% + 50¢</strong><p>Pricing comparison column uses the pink-100 fill.</p></div>
 </main>
-<script>
-const T = {"core":{"color":{"neutral":{"50":{"v":"#f7f7f8","t":"color","s":"css-var --grey-50 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"100":{"v":"#e8e8ed","t":"color","s":"css-var --grey-100 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"200":{"v":"#d1d1db","t":"color","s":"css-var --grey-200 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"300":{"v":"#a9a9bc","t":"color","s":"css-var --gray-300 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"500":{"v":"#6c6c89","t":"color","s":"css-var --gray-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"700":{"v":"#3f3f50","t":"color","s":"css-var --grey-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"900":{"v":"#121217","t":"color","s":"css-var --black-2 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"950":{"v":"#191919","t":"color","s":"css-var --dark-grey (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"purple":{"50":{"v":"#f4f1fd","t":"color","s":"css-var --purple-50-501 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"100":{"v":"#e2dafb","t":"color","s":"css-var --purple-100 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"200":{"v":"#c6b6f7","t":"color","s":"css-var --purple-200 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"300":{"v":"#a991f3","t":"color","s":"css-var --purple-300 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"400":{"v":"#8d6cef","t":"color","s":"css-var --purple-400 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"500":{"v":"#7047eb","t":"color","s":"css-var --purple-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"600":{"v":"#5423e7","t":"color","s":"css-var --purple-600 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"700":{"v":"#4316ca","t":"color","s":"css-var --purple-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"900":{"v":"#2b0e81","t":"color","s":"css-var --purple-900 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"yellow":{"50":{"v":"#fff9eb","t":"color","s":"css-var --yellow-50-501 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"100":{"v":"#fff3d6","t":"color","s":"css-var --yellow-100 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"200":{"v":"#ffe7ad","t":"color","s":"css-var --yellow-200 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"300":{"v":"#ffda85","t":"color","s":"css-var --yellow-300 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"400":{"v":"#ffce5c","t":"color","s":"css-var --yellow-400 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"500":{"v":"#ffc233","t":"color","s":"css-var --yellow-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"700":{"v":"#c28800","t":"color","s":"css-var --yellow-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"pink":{"50":{"v":"#feecfb","t":"color","s":"css-var --pink-50 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"100":{"v":"#fdddf8","t":"color","s":"css-var --pink-100 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"200":{"v":"#fcc5f3","t":"color","s":"css-var --pink-200 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"300":{"v":"#fa99ea","t":"color","s":"css-var --pink-300 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"400":{"v":"#f87ce4","t":"color","s":"css-var --pink-400 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"500":{"v":"#f75fde","t":"color","s":"css-var --pink-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"600":{"v":"#f42ad3","t":"color","s":"css-var --pink-600 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"700":{"v":"#db0bb9","t":"color","s":"css-var --pink-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"800":{"v":"#a5088c","t":"color","s":"css-var --pink-800 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"green":{"50":{"v":"#eefbf4","t":"color","s":"css-var --green-50-501 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"100":{"v":"#dff8ea","t":"color","s":"css-var --green-100 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"200":{"v":"#b2eecc","t":"color","s":"css-var --green-200 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"300":{"v":"#84e4ae","t":"color","s":"css-var --green-300 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"400":{"v":"#56d990","t":"color","s":"css-var --green-400 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"500":{"v":"#2dca72","t":"color","s":"css-var --green-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"600":{"v":"#26a95f","t":"color","s":"css-var --green-600 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"700":{"v":"#1e874c","t":"color","s":"css-var --green-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"blue":{"50":{"v":"#f0faff","t":"color","s":"css-var --blue-50-501 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"100":{"v":"#dbf3ff","t":"color","s":"css-var --blue-100 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"200":{"v":"#ade4ff","t":"color","s":"css-var --blue-200 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"300":{"v":"#70d1ff","t":"color","s":"css-var --blue-300 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"400":{"v":"#38beff","t":"color","s":"css-var --blue-400 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"500":{"v":"#00acff","t":"color","s":"css-var --blue-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"600":{"v":"#0090d6","t":"color","s":"css-var --blue-600 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"700":{"v":"#0075ad","t":"color","s":"css-var --blue-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"orange":{"50":{"v":"#fff2ee","t":"color","s":"css-var --orange-50 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"100":{"v":"#ffe8e1","t":"color","s":"css-var --orange-100 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"200":{"v":"#ffcdbd","t":"color","s":"css-var --orange-200 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"300":{"v":"#ffb399","t":"color","s":"css-var --orange-300 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"400":{"v":"#ff9876","t":"color","s":"css-var --orange-400 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"500":{"v":"#ff7d52","t":"color","s":"css-var --orange-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"600":{"v":"#ff571f","t":"color","s":"css-var --orange-600 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"700":{"v":"#eb3a00","t":"color","s":"css-var --orange-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"red":{"50":{"v":"#fef0f4","t":"color","s":"css-var --red-50-501 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"100":{"v":"#fdd8e1","t":"color","s":"css-var --red-100 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"200":{"v":"#fbb1c4","t":"color","s":"css-var --red-200 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"400":{"v":"#f76489","t":"color","s":"css-var --red-400 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"500":{"v":"#f53d6b","t":"color","s":"css-var --red-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"700":{"v":"#d50b3e","t":"color","s":"css-var --red-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"plum":{"100":{"v":"#e5b5fe","t":"color","s":"css-var --plum-100 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"500":{"v":"#cf75ff","t":"color","s":"css-var --plum-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --white-900 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"black":{"v":"#000000","t":"color","s":"css-var --black (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"font":{"family":{"display":{"v":"\"Circularpro book\", sans-serif","t":"fontFamily","s":"computed fontFamily on price-card/default (), https://www.lemonsqueezy.com/pricing"},"sans":{"v":"Inter, sans-serif","t":"fontFamily","s":"computed fontFamily on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/"},"mono":{"v":"Jetbrainsmono, ui-monospace, monospace","t":"fontFamily","s":"@font-face Jetbrainsmono in the Webflow stylesheet (raw/css-vars.json fonts)"}}},"typography":{"display":{"v":{"fontFamily":"{font.family.display}","fontSize":"80px","fontWeight":400,"lineHeight":"80px","letterSpacing":"-3.2px"},"t":"typography","s":"Reconstruction: entered by hand at capture time; no raw reading holds this value; the home h1.heading-xxlarge, which no capture measured"},"heading":{"v":{"fontFamily":"{font.family.display}","fontSize":"56px","fontWeight":400,"lineHeight":"63.84px","letterSpacing":"-1.68px"},"t":"typography","s":"computed type on price-card/default (), https://www.lemonsqueezy.com/pricing"},"title":{"v":{"fontFamily":"{font.family.display}","fontSize":"26px","fontWeight":400,"lineHeight":"31.72px","letterSpacing":"-0.52px"},"t":"typography","s":"Reconstruction: entered by hand at capture time; no raw reading holds this value; .text-size-xlarge on the home page, which no capture measured"},"body":{"v":{"fontFamily":"{font.family.sans}","fontSize":"18px","fontWeight":400,"lineHeight":"30.6px","letterSpacing":"0px"},"t":"typography","s":"Reconstruction: entered by hand at capture time; no raw reading holds this value; the home hero paragraph, which no capture measured"},"body-strong":{"v":{"fontFamily":"{font.family.sans}","fontSize":"15px","fontWeight":500,"lineHeight":"24px","letterSpacing":"-0.15px"},"t":"typography","s":"computed type on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/"},"label":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","fontWeight":500,"lineHeight":"22.4px","letterSpacing":"0px"},"t":"typography","s":"Reconstruction: entered by hand at capture time; no raw reading holds this value; .text-size-small.text-weight-medium, which no capture measured"},"caption":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","fontWeight":400,"lineHeight":"22.4px","letterSpacing":"0px"},"t":"typography","s":"computed type on footer-link/default (), https://www.lemonsqueezy.com/"},"code":{"v":{"fontFamily":"{font.family.mono}","fontSize":"14px","fontWeight":400,"lineHeight":"22.4px","letterSpacing":"0px"},"t":"typography","s":"Reconstruction: entered by hand at capture time; no raw reading holds this value; the @font-face Jetbrainsmono family at the caption size; no code block was measured"}},"radius":{"pill":{"v":"40px","t":"dimension","s":"computed borderTopLeftRadius on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/"},"control":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius on login-email/default (form-input), https://auth.lemonsqueezy.com/login"},"docs":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius on docs-nav/default (transition-100 -mx-3 flex items-center gap-2), https://docs.lemonsqueezy.com/help"},"none":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius on banner/default (banner is-annoucement w-inline-block), https://www.lemonsqueezy.com/"}},"space":{"1":{"v":"4px","t":"dimension","s":"computed paddingTop on docs-nav/default (transition-100 -mx-3 flex items-center gap-2), https://docs.lemonsqueezy.com/help"},"2":{"v":"8px","t":"dimension","s":"computed paddingTop on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/"},"3":{"v":"12px","t":"dimension","s":"computed paddingRight on docs-nav/default (transition-100 -mx-3 flex items-center gap-2), https://docs.lemonsqueezy.com/help"},"4":{"v":"16px","t":"dimension","s":"computed paddingLeft on login-email/default (form-input), https://auth.lemonsqueezy.com/login"},"5":{"v":"20px","t":"dimension","s":"computed paddingLeft on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/"},"6":{"v":"24px","t":"dimension","s":"Derived: computed lineHeight on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/; a line-height reused as a spacing step, not a measured gap"},"8":{"v":"32px","t":"dimension","s":"computed paddingTop on nav-link/default (nav_link w-inline-block), https://www.lemonsqueezy.com/"},"10":{"v":"40px","t":"dimension","s":"computed height on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/"}},"size":{"nav-button":{"v":"40px","t":"dimension","s":"computed height on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/"},"field":{"v":"40px","t":"dimension","s":"computed height on login-email/default (form-input), https://auth.lemonsqueezy.com/login"},"submit":{"v":"48px","t":"dimension","s":"computed height on login-submit/default (btn btn-primary btn-large w-full), https://auth.lemonsqueezy.com/login"},"orchid":{"v":"46.3906px","t":"dimension","s":"computed height on button-orchid/default (button-primary-small is-orchid w-inline-block), https://www.lemonsqueezy.com/help"},"icon-button":{"v":"40px","t":"dimension","s":"computed height on menu-button/default (nav_menu-mobile-button w-nav-button), https://www.lemonsqueezy.com/; mobile home at 390"},"checkbox":{"v":"16px","t":"dimension","s":"computed height on login-remember/default (form-checkbox mr-1.5 flex-shrink-0), https://auth.lemonsqueezy.com/login"}},"stroke":{"hairline":{"v":"1px","t":"dimension","s":"auth field inset ring is 1px (computed box-shadow spread)"},"focus":{"v":"2px","t":"dimension","s":"computed focus ring width on auth input (box-shadow 0 0 0 2px)"}},"motion":{"duration":{"fast":{"v":"100ms","t":"duration","s":"computed transitionDuration on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/"},"docs":{"v":"150ms","t":"duration","s":"computed transitionDuration on docs-nav/default (transition-100 -mx-3 flex items-center gap-2), https://docs.lemonsqueezy.com/help"}},"easing":{"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":"Derived: CSS keyword ease on .nav_button, expanded to control points"},"standard":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":"computed transitionTimingFunction on docs-nav/default (transition-100 -mx-3 flex items-center gap-2), https://docs.lemonsqueezy.com/help"}}}},"light":{"surface":{"page":{"v":"#ffffff","t":"color","s":"computed page background is transparent over white; auth card sits on white, 2026-11-18"},"hero":{"v":"#5423e7","t":"color","s":"css-var --purple-600 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"banner":{"v":"#ffc233","t":"color","s":"css-var --yellow-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"footer":{"v":"#5423e7","t":"color","s":"footer_component.background-color-blue paints --purple-600; confirmed on the home screenshot"},"raised":{"v":"#f7f7f8","t":"color","s":"css-var --grey-50 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"overlay":{"v":"#5423e7","t":"color","s":"css-var --purple-600 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"scrim":{"v":"rgba(18, 18, 23, 0.4)","t":"color","s":"Reconstruction: entered by hand at capture time; no raw reading holds this value; --black-2 at 40% for a mobile nav overlay; the menu itself paints --purple-600"}},"text":{"primary":{"v":"#121217","t":"color","s":"css-var --black-2 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"secondary":{"v":"#6c6c89","t":"color","s":"css-var --gray-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"muted":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"computed color on nav-link/default (nav_link w-inline-block), https://www.lemonsqueezy.com/"},"on-accent":{"v":"#ffffff","t":"color","s":"css-var --white-900 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"on-hero":{"v":"#ffffff","t":"color","s":"css-var --white-900 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"link":{"v":"#7047eb","t":"color","s":"css-var --purple-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"disabled":{"v":"#a9a9bc","t":"color","s":"css-var --gray-300 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"border":{"default":{"v":"#d1d1db","t":"color","s":"css-var --border-color (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"strong":{"v":"#3f3f50","t":"color","s":"css-var --grey-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"focus":{"v":"#7047eb","t":"color","s":"css-var --purple-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"accent":{"v":"#7047eb","t":"color","s":"css-var --purple-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"accent-hover":{"v":"#7e59ed","t":"color","s":"computed backgroundColor on login-submit/hover (btn btn-primary btn-large w-full), https://auth.lemonsqueezy.com/login"},"accent-pressed":{"v":"#4316ca","t":"color","s":"css-var --purple-700 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"status":{"success":{"v":"#2dca72","t":"color","s":"css-var --green-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"warning":{"v":"#ffc233","t":"color","s":"css-var --yellow-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"danger":{"v":"#f53d6b","t":"color","s":"css-var --red-500; computed color on the login error text after a failed sign-in is rgb(245, 61, 107) (#f53d6b), auth.lemonsqueezy.com/login, 2026-11-18"},"info":{"v":"#00acff","t":"color","s":"css-var --blue-500 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"}},"component":{"button-bg":{"v":"rgba(255, 255, 255, 0.902)","t":"color","s":"css-var --button-primary-light (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"button-text":{"v":"#121217","t":"color","s":"css-var --black-2 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"button-radius":{"v":"40px","t":"dimension","s":"computed borderTopLeftRadius on button-primary/default (button-primary w-inline-block), https://www.lemonsqueezy.com/"},"button-height":{"v":"40px","t":"dimension","s":"computed height on nav-button/default (nav_button w-inline-block), https://www.lemonsqueezy.com/"},"field-bg":{"v":"#ffffff","t":"color","s":"css-var --white-900 (declared on :root in lemon-squeezy-staging.shared CSS (raw/css-vars.json), captured 2026-11-18)"},"field-text":{"v":"#25252d","t":"color","s":"computed color on login-email/default (form-input), https://auth.lemonsqueezy.com/login"},"field-radius":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius on login-email/default (form-input), https://auth.lemonsqueezy.com/login"},"field-height":{"v":"40px","t":"dimension","s":"computed height on login-email/default (form-input), https://auth.lemonsqueezy.com/login"}}},"dark":{}};
-const root = document.getElementById('swatches');
-function hex(v) {
-  if (typeof v === 'string' && (v[0] === '#' || v.startsWith('rgb'))) return v;
-  return null;
-}
-function add(title, items) {
-  const h = document.createElement('h2');
-  h.textContent = title;
-  root.appendChild(h);
-  const pal = document.createElement('div');
-  pal.className = 'pal';
-  for (const [name, value] of items) {
-    const sw = document.createElement('div');
-    sw.className = 'sw';
-    const i = document.createElement('i');
-    i.style.background = value;
-    const t = document.createElement('div');
-    const b = document.createElement('b');
-    b.textContent = name;
-    const sp = document.createElement('span');
-    sp.textContent = value;
-    t.append(b, sp);
-    sw.append(i, t);
-    pal.appendChild(sw);
-  }
-  root.appendChild(pal);
-}
-const core = T.core || {};
-const color = core.color || {};
-for (const hue of Object.keys(color)) {
-  const node = color[hue];
-  if (!node || !node.v) {
-    const items = [];
-    for (const [step, tok] of Object.entries(node || {})) {
-      if (tok && tok.v && hex(tok.v)) items.push([hue + '-' + step, tok.v]);
-    }
-    if (items.length) add(hue, items);
-  } else if (hex(node.v)) {
-    add('named', [[hue, node.v]]);
-  }
-}
-const light = T.light || {};
-function flat(node, prefix, into) {
-  for (const [k, v] of Object.entries(node || {})) {
-    if (v && v.v && typeof v.v === 'string' && hex(v.v)) into.push([prefix + k, v.v]);
-    else if (v && typeof v === 'object' && !v.v) flat(v, prefix + k + '.', into);
-  }
-}
-const roles = [];
-flat(light, '', roles);
-if (roles.length) add('roles', roles);
-</script>
 </body>
 </html>

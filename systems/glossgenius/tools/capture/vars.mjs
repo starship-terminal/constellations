@@ -20,8 +20,8 @@
 //                      --radius-*, --font-*, --border-* and component vars
 //                      (--button-*, --input-*, --checkbox-*…). /login is the
 //                      lightest signed-out entry.
-//   honeyhivesalon.glossgenius.com  a real published booking website — its
-//                      own CSS-module token family (--button-*, --text-*,
+//   bookings.glossgenius.com  a published booking website — its own
+//                      CSS-module token family (--button-*, --text-*,
 //                      --space-*, --chip-*, --input-*, --gray-*, --bg-*).
 //                      /services loads the booking surface's sheets.
 //
@@ -292,7 +292,7 @@ for (const r of ok) {
 const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
   readAt: new Date().toLocaleDateString('en-CA'),
-  source: 'the stylesheet bodies read during live signed-out loads of glossgenius.com / (the Webflow CDN bundle + marketing-assets + inline <style> blocks), app.glossgenius.com /login (the Next.js CSS chunks) and honeyhivesalon.glossgenius.com /services (a real published booking site\'s chunks), re-parsed with CSSStyleSheet; resolved in per-host probes carrying each host\'s first-party sheets at 1440 x 900 with the page\'s own scope classes replayed (.light, .tokens_glossDS__*) — every surface is light-only (no dark media query, no theme attribute). Third-party sheets (the decagon.ai chat widget, reCAPTCHA, icon fonts) are harvested under `external` for provenance only: never resolved, never part of a token set',
+  source: 'the stylesheet bodies read during live signed-out loads of glossgenius.com / (the Webflow CDN bundle + marketing-assets + inline <style> blocks), app.glossgenius.com /login (the Next.js CSS chunks) and bookings.glossgenius.com /services (a real published booking site\'s chunks), re-parsed with CSSStyleSheet; resolved in per-host probes carrying each host\'s first-party sheets at 1440 x 900 with the page\'s own scope classes replayed (.light, .tokens_glossDS__*) — every surface is light-only (no dark media query, no theme attribute). Third-party sheets (the decagon.ai chat widget, reCAPTCHA, icon fonts) are harvested under `external` for provenance only: never resolved, never part of a token set',
   sheets: sheets.map(([n, t, party]) => `${n} (${t.length} bytes)${party === 'third' ? ' [third-party]' : ''}`),
   scopes,
   counts: {

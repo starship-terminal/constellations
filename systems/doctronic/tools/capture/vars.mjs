@@ -1,80 +1,35 @@
-// Reads every custom property doctronic.ai's stylesheets declare and writes
-// raw/css-vars.json.
-//
-//   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs
-//
-// doctronic.ai is a Next.js app: its styles arrive as linked CSS chunks from
-// /_next/static/chunks/ on the same origin plus inline <style> blocks. The
-// chunks declare a real design-token layer — --color-* ramps and semantic
-// roles, --text-* composite font tokens, --font-* stacks, --shadow-*,
-// --tracking-* and layout vars — resolved under :root for light and
-// [data-theme="dark"] on <html> for dark (the site's own persisted-preference
-// mechanism: localStorage.theme = "light" | "dark" | "system").
-// External bodies are read from the network responses, inline <style> blocks
-// through the CSSOM, then re-parsed in the page with a constructed
-// CSSStyleSheet — the same parse the browser does. Every rule declaring a --*
-// property is kept with its selector and enclosing @media/@layer context, and
-// @font-face rules are kept too.
-//
-// Each name is resolved in a probe document that carries the real sheets,
-// once with data-theme="light" and once with data-theme="dark" on <html>
-// (the site's own theme mechanism), computed the way the browser computes
-// it: colours come back as sRGB hex, lengths as px at 1440 x 900.
-//
-// Bins:
-//   theme     the design-token layer: --color-*, --text-*, --font-*,
-//             --shadow-*, --tracking-*, --header-height, --tap-target-*,
-//             the chat-sheet surface tokens and the skeleton gradient
-//   app       component-scoped vars (--holo-*, --chat-sheet-mobile-*,
-//             --fade-*, --corner-radius-*, pointer/animation plumbing, ...)
-//   vendor    third-party widget vars (recaptcha, trustpilot, ...)
-//   utility   a one-off `[--x:value]` arbitrary-property utility class
-//   tailwind  Tailwind internals: --tw-*, @layer properties, --lightningcss-*
+// Read custom properties declared on doctronic.ai stylesheets (live, public).
+// Writes raw/css-vars.json. No signed-in copies.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BASE, UA, launch, clearChallenge, patch } from './public/lib.mjs';
+import { chromium, BASE, UA } from './public/lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
+const OUT = path.join(REF, 'raw', 'css-vars.json');
+fs.mkdirSync(path.dirname(OUT), { recursive: true });
 
-const { browser } = await launch();
-// The stylesheet bodies are same-origin, but reading them off the network is
-// identical to what the page loaded and works regardless of CSSOM visibility.
-const bodies = new Map();
-let page = null, inline = [];
-for (let tries = 0; tries < 4 && !page; tries++) {
-  const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
-  await patch(context);
-  const p = await context.newPage();
-  p.on('response', async (r) => {
-    if (r.request().resourceType() !== 'stylesheet') return;
-    try { bodies.set(r.url().split('?')[0], await r.text()); } catch { /* body gone */ }
-  });
-  await p.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await p.waitForTimeout(6000);
-  if (await clearChallenge(p, { tries: 3, step: 1500 })) {
-    page = p;
-    inline = await p.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));
-    break;
-  }
-  console.log('challenge page, fresh context (try ' + (tries + 1) + ')');
-  await context.close();
-}
-if (!page) { console.log('blocked by the edge on every try; css-vars.json not written'); await browser.close(); process.exit(2); }
-// inline sheets read via CSSOM; link sheets via the captured bodies
-const sheets = [...bodies.entries()].concat(inline);
-await page.close();
+const browser = await chromium.launch({ headless: true });
+const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
+const page = await context.newPage();
+const bodies = [];
+page.on('response', async (res) => {
+  const ct = res.headers()['content-type'] || '';
+  if (!/text\/css|javascript/.test(ct) && !res.url().includes('.css')) return;
+  if (!/text\/css/.test(ct) && !res.url().endsWith('.css')) return;
+  try {
+    const text = await res.text();
+    if (text.includes('--')) bodies.push({ url: res.url().split('?')[0].slice(0, 180), css: text });
+  } catch { /* cross-origin body unavailable */ }
+});
+await page.goto(BASE + '/', { waitUntil: 'networkidle', timeout: 60000 });
+await page.waitForTimeout(1000);
 
-// ---- harvest: every rule with --* declarations ----
-// The probe resolves vw/vh/dvh and @media at the 1440 x 900 the notes below claim; a bare
-// browser.newPage() would give Playwright's 1280 x 720 default (finding 19-1).
-const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-const result = await probe.evaluate((sheets) => {
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+const parsed = await page.evaluate((sheets) => {
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\([^)]*\)/gi, 'url(…)') : v);
   const rules = [];
   const fonts = [];
-  const errors = [];
   const walk = (list, ctx, file) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
@@ -84,139 +39,65 @@ const result = await probe.evaluate((sheets) => {
         continue;
       }
       if (r.cssRules && !r.style) {
-        const head = r.type === CSSRule.MEDIA_RULE ? '@media ' + r.media.mediaText
-          : r.type === CSSRule.SUPPORTS_RULE ? '@supports ' + r.conditionText
-          : r.constructor.name === 'CSSLayerBlockRule' ? '@layer ' + r.name
-          : r.constructor.name === 'CSSContainerRule' ? '@container ' + r.conditionText
-          : (r.cssText || '').split('{')[0].trim().slice(0, 120);
+        const head = r.cssText.split('{')[0].trim().slice(0, 160);
         walk(r.cssRules, [...ctx, head], file);
         continue;
       }
       if (!r.style) continue;
       const props = {};
-      let n = 0;
       for (let i = 0; i < r.style.length; i++) {
         const k = r.style[i];
-        if (k && k.startsWith('--')) { props[k] = noUrl(r.style.getPropertyValue(k).trim()); n++; }
+        if (k.startsWith('--')) props[k] = noUrl(r.style.getPropertyValue(k).trim());
       }
-      if (n) rules.push({ file, selector: (r.selectorText || '').slice(0, 200), context: ctx, properties: props });
-      if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, (r.selectorText || '').slice(0, 120)], file);
+      if (Object.keys(props).length) rules.push({ selector: r.selectorText || '', ctx, file, props });
     }
   };
-  for (const [name, text] of sheets) {
-    const ss = new CSSStyleSheet();
-    try { ss.replaceSync(text); } catch (e) { errors.push({ file: name, error: String(e) }); continue; }
-    walk(ss.cssRules, [], name);
+  for (const sheet of document.styleSheets) {
+    let list;
+    try { list = sheet.cssRules; } catch { continue; }
+    walk(list, [], sheet.href || 'inline');
   }
-  return { rules, fonts, errors };
-}, sheets);
-
-// ---- resolution: probe document with the real sheets, light and dark ----
-const shell = (theme) => '<!doctype html><html lang="en" data-theme="' + theme + '"><head>'
-  + sheets.map(([n, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
-  + '</head><body><div id="probe-root"></div></body></html>';
-const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]
-  .filter((n) => !/^--(tw-|_|lightningcss-)/.test(n)).sort();
-const resolved = {};
-for (const pass of ['light', 'dark']) {
-  await probe.setContent(shell(pass), { waitUntil: 'load' });
-  resolved[pass] = await probe.evaluate((names) => {
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
-    const box = document.createElement('div');
-    box.style.cssText = 'position:absolute;left:0;top:0;width:1000px;height:1000px;visibility:hidden';
-    const p = document.createElement('div');
-    box.appendChild(p);
-    document.body.appendChild(box);
-    const lin = (c) => (c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055);
-    const fromOklab = (L, a, b) => {
-      const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3, m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3, s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3;
-      return [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s].map((v) => Math.round(Math.min(1, Math.max(0, lin(v))) * 255));
-    };
-    const num = (x) => (x.endsWith('%') ? parseFloat(x) / 100 : parseFloat(x));
-    const norm = (c) => {
-      let m = c.match(/^rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)$/);
-      let rgb, a = 1;
-      if (m) { rgb = [m[1], m[2], m[3]].map((v) => Math.round(+v)); a = m[4] === undefined ? 1 : +m[4]; }
-      else if ((m = c.match(/^color\(srgb ([-\d.e]+) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { rgb = [m[1], m[2], m[3]].map((v) => Math.round(Math.min(1, Math.max(0, +v)) * 255)); a = m[4] === undefined ? 1 : num(m[4]); }
-      else if ((m = c.match(/^oklab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { rgb = fromOklab(num(m[1]), +m[2], +m[3]); a = m[4] === undefined ? 1 : num(m[4]); }
-      else if ((m = c.match(/^oklch\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { const h = (+m[3] * Math.PI) / 180; rgb = fromOklab(num(m[1]), +m[2] * Math.cos(h), +m[2] * Math.sin(h)); a = m[4] === undefined ? 1 : num(m[4]); }
-      else if ((m = c.match(/^lab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) {
-        // CIELAB D50 -> sRGB
-        const fy = (num(m[1]) + 16) / 116, fx = fy + (+m[2]) / 500, fz = fy - (+m[3]) / 200;
-        const eps = 216 / 24389, kap = 24389 / 27;
-        const f = (t) => (t ** 3 > eps ? t ** 3 : (116 * t - 16) / kap);
-        const X = 0.96422 * f(fx), Y = f(fy), Z = 0.82521 * f(fz);
-        const r = 3.1338561 * X - 1.6168667 * Y - 0.4906146 * Z, g = -0.9787684 * X + 1.9161415 * Y + 0.033454 * Z, bl = 0.0719453 * X - 0.2289914 * Y + 1.4052427 * Z;
-        rgb = [r, g, bl].map((v) => Math.round(Math.min(1, Math.max(0, lin(v))) * 255)); a = m[4] === undefined ? 1 : num(m[4]);
-      }
-      else return { unparsed: c };
-      a = Math.round(a * 1000) / 1000;
-      return a === 1 ? '#' + rgb.map((v) => v.toString(16).padStart(2, '0')).join('') : `rgba(${rgb.join(', ')}, ${a})`;
-    };
-    const out = {};
-    for (const name of names) {
-      const raw = noUrl(getComputedStyle(document.documentElement).getPropertyValue(name).trim());
-      if (!raw) continue;
-      const r = { raw: raw.length > 300 ? raw.slice(0, 300) + '…' : raw };
-      p.removeAttribute('style');
-      if (/^-?\d*\.?\d+$/.test(raw)) { r.kind = 'number'; r.value = +raw; }
-      else if (/currentcolor/i.test(raw)) { r.kind = 'other'; r.note = 'depends on currentColor'; }
-      else if (CSS.supports('color', raw) && !/^(inherit|initial|unset|revert)$/.test(raw)) {
-        p.style.color = raw; r.kind = 'color'; r.value = norm(getComputedStyle(p).color);
-        if (typeof r.value === 'object') { r.kind = 'other'; r.note = 'colour space not converted: ' + r.value.unparsed; delete r.value; }
-      } else if (!raw.includes('%') && CSS.supports('width', raw)) { p.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(p).width; if (/vw|vh|dvh/.test(raw)) r.note = 'viewport-relative, resolved at 1440 x 900'; }
-      else if (CSS.supports('box-shadow', raw)) { p.style.boxShadow = raw; r.kind = 'shadow'; r.value = getComputedStyle(p).boxShadow; }
-      else if (CSS.supports('transition-duration', raw)) { p.style.transitionDuration = raw; r.kind = 'duration'; r.value = getComputedStyle(p).transitionDuration; }
-      else if (CSS.supports('transition-timing-function', raw) && !/^[a-z-]+$/.test(raw) || /^(ease|ease-in|ease-out|ease-in-out|linear)$/.test(raw)) { r.kind = 'easing'; r.value = raw; }
-      else if (/[A-Za-z]/.test(raw) && CSS.supports('font-family', raw)) { r.kind = 'fontFamily'; r.value = raw; }
-      else r.kind = 'other';
-      out[name] = r;
+  // also parse fetched css text via constructed sheets
+  const extra = [];
+  for (const s of sheets) {
+    try {
+      const sheet = new CSSStyleSheet();
+      sheet.replaceSync(s.css);
+      const before = rules.length;
+      walk(sheet.cssRules, [], s.url);
+      extra.push({ url: s.url, added: rules.length - before });
+    } catch (e) {
+      extra.push({ url: s.url, error: String(e).slice(0, 120) });
     }
-    box.remove();
-    return out;
-  }, want);
-}
-await browser.close();
+  }
+  const resolved = {};
+  const cs = getComputedStyle(document.documentElement);
+  const names = new Set(rules.flatMap((r) => Object.keys(r.props)));
+  for (const name of names) resolved[name] = cs.getPropertyValue(name).trim();
+  const brand = {
+    themeColor: document.querySelector('meta[name="theme-color"]')?.content || '',
+    maskIcon: document.querySelector('link[rel="mask-icon"]')?.getAttribute('color') || '',
+    colorScheme: getComputedStyle(document.documentElement).colorScheme,
+  };
+  return { rules, fonts, extra, resolved, brand, ruleCount: rules.length };
+}, bodies.map((b) => ({ url: b.url, css: b.css.slice(0, 1_500_000) })));
 
-const THEME = /^--(color|font|text|tracking|shadow|header-height|tap-target|skeleton|chat-sheet-(accent|tag|card|progress)|input-hero)/;
-const VENDOR = /recaptcha|grecaptcha|trustpilot|__tp_|intercom|--s-/;
-const binOf = (r) => {
-  const names = Object.keys(r.properties);
-  if (/\\\[--/.test(r.selector || '')) return 'utility';
-  if (names.every((n) => n.startsWith('--tw-')) || r.context.some((c) => c === '@layer properties')) return 'tailwind';
-  if (VENDOR.test(r.selector || '') || names.every((n) => VENDOR.test(n))) return 'vendor';
-  if (names.every((n) => THEME.test(n))) return 'theme';
-  return 'app';
-};
-const ok = result.rules;
-for (const r of ok) r.bin = binOf(r);
-const bySelector = {};
-for (const r of ok) {
-  const key = `[${r.bin}] ` + (r.context.length ? r.context.join(' ') + ' ' : '') + r.selector;
-  bySelector[key] = (bySelector[key] || 0) + Object.keys(r.properties).length;
+const light = {};
+for (const [name, value] of Object.entries(parsed.resolved)) {
+  if (!value) continue;
+  light[name] = { raw: value, value };
 }
-const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
-  readAt: new Date().toLocaleDateString('en-CA'),
-  source: 'the stylesheet bodies read during a live home load on www.doctronic.ai (the Next.js chunks from /_next/static/chunks/ captured as network responses plus the inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, with data-theme="light" and data-theme="dark" on <html> — the site\'s own persisted-preference mechanism — at 1440 x 900',
-  sheets: sheets.map(([n, t]) => `${n} (${t.length} bytes)`),
-  counts: {
-    rules: ok.length,
-    fonts: result.fonts.length,
-    names: { theme: names('theme').length, app: names('app').length, vendor: names('vendor').length, utility: names('utility').length, tailwind: names('tailwind').length },
-    bySelector,
-  },
-  errors: result.errors,
-  theme: ok.filter((r) => r.bin === 'theme'),
-  app: ok.filter((r) => r.bin === 'app'),
-  vendor: ok.filter((r) => r.bin === 'vendor'),
-  utility: ok.filter((r) => r.bin === 'utility'),
-  tailwind: ok.filter((r) => r.bin === 'tailwind'),
-  fonts: result.fonts,
-  resolved,
+  product: 'doctronic.ai',
+  captured: '2026-11-21',
+  route: 'public-web live stylesheets',
+  brand: parsed.brand,
+  fonts: parsed.fonts.slice(0, 40),
+  ruleCount: parsed.ruleCount,
+  extra: parsed.extra,
+  rules: parsed.rules.filter((r) => Object.keys(r.props).some((k) => k.startsWith('--color-') || k.startsWith('--font') || k.startsWith('--radius') || k.startsWith('--space') || k.startsWith('--shadow'))).slice(0, 400),
+  resolved: { light, dark: {} },
 };
-fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
-fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
-console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names theme ${out.counts.names.theme}, app ${out.counts.names.app}, vendor ${out.counts.names.vendor}, utility ${out.counts.names.utility}, tailwind ${out.counts.names.tailwind}`);
-console.log(`resolved: light ${Object.keys(resolved.light).length}, dark ${Object.keys(resolved.dark).length}`);
-for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 25)) console.log(`  ${v}\t${k.slice(0, 150)}`);
+fs.writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n');
+console.log('vars', Object.keys(light).length, 'rules', parsed.ruleCount, 'fonts', parsed.fonts.length, '->', OUT);
+await browser.close();

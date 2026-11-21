@@ -4,272 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cofounder style guide</title>
-<meta name="description" content="Cofounder (cofounder.co) design tokens and the public site's components, rendered from tokens.json with the declared and measured values.">
 <style>
-:root {
-  --color-surface: #f5f5f2;
-  --color-ink-90: #171717;
-  --color-ink-ui: #202020;
-  --color-ink-80: rgba(38, 35, 35, 0.8);
-  --color-ink-70: rgba(38, 35, 35, 0.7);
-  --color-ink-50: rgba(38, 35, 35, 0.5);
-  --color-lime-200: #d8f999;
-  --color-lime-300: #bbf451;
-  --color-feature-neutral: #bfbfbf;
-  --color-feature-success: #34a853;
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --color-surfaceRaised: #fbfbf8;
-  --color-band: #1a6fd1;
-  --color-borderCard: #dee2de;
-  --color-tile: #f3f3f0;
-  --color-ctaDark: rgba(32, 32, 32, 0.85);
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
-  --radius-xxl: 16px;
-  --radius-control: 8px;
-  --radius-tile: 10px;
-  --motion-duration-default: 150ms;
-  --motion-duration-control: 140ms;
-  --motion-duration-nav: 60ms;
-  --motion-curve-in-: cubic-bezier(0.4, 0.0, 1.0, 1.0);
-  --motion-curve-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
-  --motion-curve-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --motion-curve-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --motion-curve-control: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --spacing-unit: 4px;
-  --blur-sm: 8px;
-  --blur-md: 12px;
-  --blur-lg: 16px;
-  --fontSize-xs: 12px;
-  --fontSize-sm: 14px;
-  --fontWeight-normal: 400;
-  --fontWeight-medium: 500;
-  --fontWeight-semibold: 600;
-  --font-family-display: neoris, "neoris Fallback", sans-serif;
-  --font-family-ui: "Inter", "Inter Fallback";
-  --font-family-mono: "IBM Plex Mono", "IBM Plex Mono Fallback";
-  --font-family-departure: "departureMono", "departureMono Fallback";
-  --font-size-hero: 46px;
-  --font-size-h2: 40px;
-  --font-size-mHero: 34px;
-  --font-size-nav: 15px;
-  --font-size-footer: 15px;
-  --font-size-planName: 15px;
-  --font-size-howtoCard: 15px;
-  --component-control-heightNavCta: 41px;
-  --component-control-heightNavItem: 22.5px;
-  --component-control-heightHeroCta: 41px;
-  --component-control-heightPromptBtn: 41px;
-  --component-control-heightMenuButton: 41px;
-  --component-control-radiusCta: 8px;
-  --component-card-radiusPlan: 16px;
-  --component-card-width: 640px;
-  --component-nav-height: 91px;
-  --component-footer-height: 749.391px;
-  --component-drawer-width: 390px;
-  --component-heroTitle-width: 580px;
-  --component-tile-width: 170px;
-  --surface-page: var(--color-surface);
-  --surface-raised: var(--color-surfaceRaised);
-  --surface-band: var(--color-band);
-  --surface-glass: rgba(255, 255, 255, 0.16);
-  --text-primary: var(--color-ink-80);
-  --text-muted: var(--color-ink-70);
-  --text-faint: var(--color-ink-50);
-  --text-nav: var(--color-surfaceRaised);
-  --text-onAccent: rgba(255, 255, 255, 0.9);
-  --text-onBand: var(--color-white);
-  --text-link: var(--color-ink-80);
-  --text-linkHover: var(--color-ink-80);
-  --accent: var(--color-ctaDark);
-  --accentHover: var(--color-ctaDark);
-  --border-subtle: rgba(32, 32, 32, 0.1);
-  --border-card: var(--color-borderCard);
-  --border-cta: #383838;
-  --focus: #101010;
-  --shadow-control: 0px 0px 0px 1px rgba(64, 64, 64, 0.12), inset 0px 2px 0px 0px rgba(255, 255, 255, 0.24), inset 0px -0.5px 2px 0px rgba(0, 0, 0, 0.25), 0px 2px 8px 0px rgba(0, 0, 0, 0.03), 0px 3px 4px 0px rgba(0, 0, 0, 0.16);
-  --sg-sans: var(--font-family-ui, "Inter"), "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --sg-display: var(--font-family-display, neoris), "neoris Fallback", var(--sg-sans);
-  --sg-mono: var(--font-family-mono, "IBM Plex Mono"), "IBM Plex Mono Fallback", ui-monospace, "SF Mono", Menlo, monospace;
-}
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-ink-90, #171717); background: var(--surface-page, #f5f5f2); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.4px; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted, #262323b3); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-card, #dee2de); }
-.lead { max-width: 62ch; color: var(--text-muted, #262323b3); }
-.note { font-size: 13px; color: var(--text-muted, #262323b3); max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #262323b3); margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-card, #dee2de); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #262323b3); }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--text-muted, #262323b3); }
-/* ---- site mock: the marketing surface ---- */
-.mock { border: 1px solid var(--border-card, #dee2de); border-radius: var(--radius-xl, 12px); overflow: hidden; }
-.mock.light { background: var(--surface-page, #f5f5f2); color: var(--text-primary, #262323cc); }
-.navbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 64px); padding: 0 32px; font-size: 15px; font-weight: 410; color: var(--text-nav, #fbfbf8); background: linear-gradient(#ffffff29, #ffffff14); backdrop-filter: blur(var(--blur-lg, 16px)); -webkit-backdrop-filter: blur(var(--blur-lg, 16px)); }
-.navbar .wm { font-family: var(--sg-display); font-size: 18px; color: rgb(23,23,23); }
-.navbar .sp { flex: 1; }
-.navbar .lk { height: var(--component-control-heightNavItem, 41px); display: inline-flex; align-items: center; padding: 0 6px; }
-.navbar .cta { height: var(--component-control-heightNavCta, 41px); display: inline-flex; align-items: center; padding: 0 12px; border-radius: var(--component-control-radiusCta, 8px); background: #f1f1ee; color: rgb(23,23,23); font-weight: 460; }
-.hero { padding: 72px 40px 64px; text-align: left; color: #fff; background: linear-gradient(160deg, #4a90d9 0%, #1a6fd1 55%, #145db5 100%); }
-.hero h3 { font: 400 var(--font-size-hero, 46px)/1.08 var(--sg-display); margin: 0 0 14px; max-width: 20ch; }
-.hero p { margin: 0 0 36px; color: rgba(255,255,255,.85); max-width: 46ch; }
-.herorow { display: flex; gap: 10px; align-items: center; }
-.bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightHeroCta, 41px); padding: 0 12px; border-radius: var(--component-control-radiusCta, 8px); background: var(--surface-page, #f5f5f2); border: 1px solid rgba(32,32,32,.1); color: var(--text-primary, #262323cc); font-size: 15px; font-weight: 460; box-shadow: 0 2px 3px rgba(0,0,0,.06), inset 0 0 .357px 1.5px #ffffff59, inset 0 2px #fff; }
-.glassbtn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightPromptBtn, 41px); padding: 0 10px; border-radius: var(--component-control-radiusCta, 8px); background: linear-gradient(#ffffff29, #ffffff14); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid transparent; color: #fff; font-size: 15px; font-weight: 460; box-shadow: inset 0 -1px rgba(0,0,0,.12), inset 0 1px 1px #ffffff3d; font-family: var(--sg-mono); }
-/* ---- tools band ---- */
-.band { margin: 0; background: var(--surface-band, #1a6fd1); color: #fff; padding: 32px 28px; }
-.band .h { font: 400 28px/1.15 var(--sg-display); text-align: center; }
-.band .tabs { display: flex; gap: 16px; margin-top: 18px; font-size: 15px; }
-.band .tab { padding: 2px 0; color: rgba(255,255,255,.4); }
-.band .tab.on { color: #fff; }
-/* ---- pricing ---- */
-.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 24px; background: var(--surface-page, #f5f5f2); }
-.pcard { border-radius: var(--radius-xxl, 16px); background: var(--surface-raised, #fbfbf8); border: 1px solid var(--border-card, #dee2de); padding: 16px 12px 32px; font-weight: 460; box-shadow: inset 0 0 .357px 1.5px #ffffff59, inset 0 2px #fff, 0 0 2px rgba(0,0,0,.25), 0 0 0 4px #e8e7e652; }
-.pcard .cap { font-size: 15px; color: var(--text-muted, #262323b3); font-weight: 460; }
-.pcard .price { font: 400 34px/1.1 var(--sg-display); margin-top: 8px; }
-.pcard .per { font-size: 13px; color: var(--text-muted, #262323b3); }
-.feat { padding: 24px; background: var(--surface-raised, #fbfbf8); border-top: 1px solid var(--border-card, #dee2de); font-size: 14px; color: var(--text-muted, #262323b3); }
-.feat b { color: var(--text-primary, #262323cc); font-weight: 460; }
-/* ---- the sign-in card (app boundary) ---- */
-.signin { max-width: 460px; margin: 28px auto; padding: 28px; background: var(--surface-raised, #fbfbf8); border: 1px solid var(--border-card, #dee2de); border-radius: var(--radius-xl, 12px); font-size: 14px; color: var(--text-primary, #262323cc); }
-.signin .h { font: 400 26px/1.2 var(--sg-display); color: var(--text-primary, #262323cc); margin-bottom: 16px; text-align: center; }
-.obtn { display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 999px; margin-bottom: 10px; font-size: 14px; font-weight: 500; background: linear-gradient(to top, #0f0f0f, #262626); border: 2px solid #4f4f4f; color: #fff; box-shadow: 0 13px 5px rgba(0,0,0,.03), 0 7px 4px rgba(0,0,0,.07), 0 3px 3px rgba(0,0,0,.14), 0 1px 2px rgba(0,0,0,.19), inset 0 0 .357px 1.071px rgba(255,255,255,.2), inset 0 0 .357px 1.071px rgba(255,255,255,.15); }
-.back { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--text-muted, #262323b3); }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--border-card, #dee2de); padding: 6px 14px; text-align: left; }
+  :root {
+    --page: #f5f5f2;
+    --text: #171717;
+    --surface: #ffffff;
+    --nav: #fbfbf8;
+    --focus: #005fcc;
+    --dialog: rgba(247, 247, 243, 0.68);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-weight: 400; font-size: 32px; line-height: 1.1; margin: 0 0 8px; }
+  h2 { font-weight: 400; font-size: 22px; margin: 36px 0 8px; }
+  p { margin: 0 0 12px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(23,23,23,0.12); }
+  .name { font-size: 12px; line-height: 16px; margin-top: 6px; }
+  .pill { display: inline-flex; align-items: center; height: 41px; padding: 0 12px; border-radius: 8px; background: #fff; color: #171717; text-decoration: none; }
+  .ghost { display: inline-flex; align-items: center; height: 41px; padding: 0 12px; border-radius: 8px; color: #fff; background: rgba(255,255,255,0.16); }
+  .row { display: flex; gap: 12px; align-items: center; padding: 16px; border-radius: 12px; background: #3d8fd4; }
+  .note { font-size: 13px; line-height: 18px; max-width: 70ch; }
+  code { font-family: ui-monospace, monospace; font-size: 12px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Cofounder style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-
-  <h2 class="sh">Cofounder, declared and measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. cofounder.co declares a Tailwind v4 theme layer on <code>:root</code> — <code>--background</code>/<code>--color-surface</code> #f5f5f2, the <code>--color-lime-*</code> accent pair, <code>--color-ink-ui-solid</code>, the <code>--font-*</code> families (TT Neoris, Inter, Departure Mono, IBM Plex Mono) and the <code>--radius-*</code>/<code>--spacing</code>/<code>--blur-*</code>/<code>--ease-*</code> primitives — while its semantic palette (ink #262323 at three opacities, surface-raised #fbfbf8, border-card #dee2de, the #1a6fd1 tools band) ships as literal utility colours. Roles are measured on the painted chrome: the dark-gradient CTAs, the glass nav and hero prompt button (backdrop-blur 16–24px), the whole-card plan anchors and the logo tiles. Brand art is pixel-art scenery.</p>
-  <p class="note">One light theme across the marketing routes, with the #1a6fd1 tools band and the pixel-art hero inside it; app.cofounder.co/os/login is a separate app surface measured at rest as the sign-in boundary. Read from cofounder.co on 2026-11-17, signed out, in headless Chromium. Nothing was signed into, paid for, submitted or copied.</p>
-
-  <h2 class="sh">The marketing surface</h2>
-  <p class="lead">The fixed glass header (nav links + the dark Run-a-company pill), the blue-gradient hero over pixel-art scenery with its white and glass buttons, then the #1a6fd1 tools band whose aria-pressed tabs switch the diagram.</p>
-  <div class="mock light">
-    <div class="navbar"><span class="wm">Cofounder</span><span class="lk">Start</span><span class="lk">Build</span><span class="lk">Sell</span><span class="lk">Scale</span><span class="sp"></span><span class="cta">Run a company</span></div>
-    <div class="hero">
-      <h3>Cofounder lets you run an entire company with AI</h3>
-      <p>Start with an AI cofounder, then hire AI employees: sales, marketing, design, finance and ops agents.</p>
-      <div class="herorow"><span class="bigcta">Run a company</span><span class="glassbtn">⌘ Copy Setup Prompt</span></div>
-    </div>
-    <div class="band"><div class="h">All the tools and systems your company needs</div><div class="tabs"><span class="tab on">Build</span><span class="tab">Sell</span><span class="tab">Scale</span></div></div>
+  <h1>Cofounder</h1>
+  <p class="note">Rendered from measured values in <a href="tokens.json">tokens.json</a>. The marketing site paints one light theme. Neoris is not loaded here, so type falls back to the system face. The login wall's primary button colour was sampled from a screenshot and is marked as such in the token file.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#f5f5f2"></div><div class="name">page #f5f5f2</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">surface #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#171717"></div><div class="name">text #171717</div></div>
+    <div class="swatch"><div class="chip" style="background:#fbfbf8"></div><div class="name">nav on hero #fbfbf8</div></div>
+    <div class="swatch"><div class="chip" style="background:#005fcc"></div><div class="name">focus #005fcc</div></div>
+    <div class="swatch"><div class="chip" style="background:#d8f999"></div><div class="name">declared lime-200 #d8f999</div></div>
   </div>
-
-  <h2 class="sh">Pricing</h2>
-  <p class="lead">The whole-card plan anchors — raised ground, #dee2de border and layered shadows, with the dark CTA chip revealed only on hover. Cards link to the app, never followed.</p>
-  <div class="mock light">
-    <div class="plans">
-      <div class="pcard"><div class="cap">Cofounder</div><div class="price">$49<span class="per">/mo</span></div></div>
-      <div class="pcard"><div class="cap">Team</div><div class="price">$249<span class="per">/mo</span></div></div>
-    </div>
-    <div class="feat"><b>Everything included</b> — every card reveals its dark CTA chip on hover.</div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="pill" href="https://app.cofounder.co/os">Run a company</a>
+    <span class="ghost">Copy Setup Prompt</span>
   </div>
-
-  <h2 class="sh">The sign-in card</h2>
-  <p class="lead">app.cofounder.co/os/login is a separate app surface — a plain card with Continue-with OAuth buttons; measured at rest, never submitted.</p>
-  <div class="mock light"><div class="signin">
-    <div class="h">Sign in to Cofounder</div>
-    <div class="obtn">Continue with Google</div>
-    <div class="obtn">Continue with GitHub</div>
-    <span class="back">← Back to Cofounder</span>
-  </div></div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The page ground is <code>light.surface.page</code> #f5f5f2 (<code>color.surface</code> = declared <code>--background</code>); raised surfaces are <code>light.surface.raised</code> #fbfbf8 and the tools band <code>light.surface.band</code> #1a6fd1. Ink runs <code>light.text.primary</code> #262323cc through muted/faint alphas; the accent control is the dark CTA <code>light.accent</code> (~#202020 gradient base = <code>color.ink.ui</code>), and lime <code>color.lime.300</code> #bbf451 is the declared accent pair. Borders are <code>light.border.card</code> #dee2de.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Component metrics</h2>
-  <p class="lead">Measured boxes: the 41px controls, the fixed header, the 8px button radius, the 16px pricing-card radius, the 170x84 logo tiles and the mobile menu panel.</p>
-  <div id="layout-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2>
-  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared CSS variables (the :root Tailwind theme layer) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible and CDP-forced pressed states measured per component; the tools-band tabs read at their aria-pressed value</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from; literal utility colours (ink opacities, the blue band, border-card) are labelled as painted values, not declarations</td></tr></table>
+  <p class="note">The white pill is the header CTA (41px, 8px radius). The ghost control matches Copy Setup Prompt on the hero: transparent fill, white text, 8px radius. Both open or sit beside the login wall. Do not follow the pill from this file.</p>
+  <h2>Type</h2>
+  <p style="font-size:46px;line-height:1.08;font-weight:400;margin:0 0 8px">Cofounder lets you run an entire company with AI</p>
+  <p class="note">Hero is 46px Neoris at weight 400 on the live site. This page cannot load Neoris.</p>
 </main>
-<script>
-const TOK = {"core":{"color":{"surface":{"v":"#f5f5f2","t":"color","s":"declared --color-surface (raw/css-vars.json)","d":"Declared color-surface (#f5f5f2) — the warm off-white page ground (same value as --background)."},"ink":{"90":{"v":"#171717","t":"color","s":"declared --foreground (raw/css-vars.json)","d":"Declared foreground (#171717) — the deepest text ink."},"ui":{"v":"#202020","t":"color","s":"declared --color-ink-ui-solid (raw/css-vars.json)","d":"Declared ink-ui-solid (#202020) — solid UI ink, the dark CTA base."},"80":{"v":"rgba(38, 35, 35, 0.8)","t":"color","s":"computed textStyle.color of section-title default (raw/components-computed.json)","d":"The primary ink #262323 at 80% (text-ink literal)."},"70":{"v":"rgba(38, 35, 35, 0.7)","t":"color","s":"computed color of plan-name default (raw/components-computed.json)","d":"Muted ink #262323 at 70% (text-ink-muted literal)."},"50":{"v":"rgba(38, 35, 35, 0.5)","t":"color","s":"computed color of footer-social default (raw/components-computed.json)","d":"Faint ink #262323 at 50% — the footer social icons."}},"lime":{"200":{"v":"#d8f999","t":"color","s":"declared --color-lime-200 (raw/css-vars.json)","d":"Declared lime-200 (lab ≈ #d8f999) — the light lime accent step."},"300":{"v":"#bbf451","t":"color","s":"declared --color-lime-300 (raw/css-vars.json)","d":"Declared lime-300 (lab ≈ #bbf451) — the lime accent."}},"feature":{"neutral":{"v":"#bfbfbf","t":"color","s":"declared --color-feature-neutral (raw/css-vars.json)","d":"Declared feature-neutral (#bfbfbf)."},"success":{"v":"#34a853","t":"color","s":"declared --color-feature-success (raw/css-vars.json)","d":"Declared feature-success (#34a853) — the only status colour declared."}},"black":{"v":"#000000","t":"color","s":"declared --color-black (raw/css-vars.json)","d":"Declared color-black (#000)."},"white":{"v":"#ffffff","t":"color","s":"declared --color-white (raw/css-vars.json)","d":"Declared color-white (#fff) — text on the dark CTA and the blue band."},"surfaceRaised":{"v":"#fbfbf8","t":"color","s":"computed paint.0.bg of plan-card default (raw/components-computed.json)","d":"The #fbfbf8 raised card ground (bg-surface-raised literal, painted on the inner .pricing-card layer)."},"band":{"v":"#1a6fd1","t":"color","s":"computed backgroundColor of blue-section default (raw/components-computed.json)","d":"The #1a6fd1 tools band (bg-[#1a6fd1] literal)."},"borderCard":{"v":"#dee2de","t":"color","s":"computed paint.0.border of plan-card default (raw/components-computed.json)","d":"The #dee2de card border (border-border-card literal, on the inner .pricing-card)."},"tile":{"v":"#f3f3f0","t":"color","s":"computed backgroundColor of logo-tile default (raw/components-computed.json)","d":"The #f3f3f0 logo-tile fill."},"ctaDark":{"v":"rgba(32, 32, 32, 0.85)","t":"color","s":"computed backgroundImage.lastColor of cta-dark default (raw/components-computed.json)","d":"The dark CTA gradient's base colour (≈ #202020d9 at the bottom stop)."}},"measured":{},"radius":{"md":{"v":"6px","t":"dimension","s":"declared --radius-md (raw/css-vars.json)","d":"Declared radius-md (.375rem = 6px)."},"lg":{"v":"8px","t":"dimension","s":"declared --radius-lg (raw/css-vars.json)","d":"Declared radius-lg (.5rem = 8px) — the button radius."},"xl":{"v":"12px","t":"dimension","s":"declared --radius-xl (raw/css-vars.json)","d":"Declared radius-xl (.75rem = 12px)."},"xxl":{"v":"16px","t":"dimension","s":"declared --radius-2xl (raw/css-vars.json)","d":"Declared radius-2xl (1rem = 16px) — pricing cards."},"control":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The button radius on the pill controls."},"tile":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of logo-tile default (raw/components-computed.json)","d":"The logo-tile corner (10px)."}},"motion":{"duration":{"default":{"v":"150ms","t":"duration","s":"declared --default-transition-duration (raw/css-vars.json)","d":"The default transition duration (.15s)."},"control":{"v":"140ms","t":"duration","s":"computed transitionDuration of hero-cta default (raw/components-computed.json)","d":"The control transition (.14s on the light pill buttons)."},"nav":{"v":"60ms","t":"duration","s":"computed transitionDuration of nav-item default (raw/components-computed.json)","d":"The nav-link colour transition (.06s)."}},"curve":{"in_":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"declared --ease-in (raw/css-vars.json)","d":"Declared ease-in."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared --ease-out (raw/css-vars.json)","d":"Declared ease-out."},"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared --ease-in-out (raw/css-vars.json)","d":"Declared ease-in-out."},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared --default-transition-timing-function (raw/css-vars.json)","d":"Declared default-transition-timing-function."},"control":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"computed transitionTimingFunction of tool-button default (raw/components-computed.json)","d":"The tool-button ease (the declared default curve, measured on the paint)."}}},"spacing":{"unit":{"v":"4px","t":"dimension","s":"declared --spacing (raw/css-vars.json)","d":"The spacing base unit (.25rem = 4px) — every gap/padding multiplies it."}},"blur":{"sm":{"v":"8px","t":"dimension","s":"declared --blur-sm (raw/css-vars.json)","d":"Declared blur-sm — backdrop-blur step (the glass pill uses 16px+)."},"md":{"v":"12px","t":"dimension","s":"declared --blur-md (raw/css-vars.json)","d":"Declared blur-md — backdrop-blur step (the glass pill uses 16px+)."},"lg":{"v":"16px","t":"dimension","s":"declared --blur-lg (raw/css-vars.json)","d":"Declared blur-lg — backdrop-blur step (the glass pill uses 16px+)."}},"fontSize":{"xs":{"v":"12px","t":"dimension","s":"declared --text-xs (raw/css-vars.json)","d":"Declared text-xs."},"sm":{"v":"14px","t":"dimension","s":"declared --text-sm (raw/css-vars.json)","d":"Declared text-sm."}},"fontWeight":{"normal":{"v":400,"t":"fontWeight","s":"declared --font-weight-normal (raw/css-vars.json)","d":"Declared font-weight-normal."},"medium":{"v":500,"t":"fontWeight","s":"declared --font-weight-medium (raw/css-vars.json)","d":"Declared font-weight-medium."},"semibold":{"v":600,"t":"fontWeight","s":"declared --font-weight-semibold (raw/css-vars.json)","d":"Declared font-weight-semibold."}},"font":{"family":{"display":{"v":"neoris, \"neoris Fallback\", sans-serif","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"The display face on the hero headline."},"ui":{"v":"\"Inter\", \"Inter Fallback\"","t":"fontFamily","s":"declared --font-inter (raw/css-vars.json)","d":"Inter — the UI face."},"mono":{"v":"\"IBM Plex Mono\", \"IBM Plex Mono Fallback\"","t":"fontFamily","s":"declared --font-mono (raw/css-vars.json)","d":"The declared mono face (IBM Plex Mono loader)."},"departure":{"v":"\"departureMono\", \"departureMono Fallback\"","t":"fontFamily","s":"declared --font-departure (raw/css-vars.json)","d":"Departure Mono — the pixel-flavoured display mono."}},"size":{"hero":{"v":"46px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The hero display headline at 1440px (46px/108%)."},"h2":{"v":"40px","t":"dimension","s":"computed fontSize of section-title default (raw/components-computed.json)","d":"Section headings."},"mHero":{"v":"34px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The hero headline at 390px."},"nav":{"v":"15px","t":"dimension","s":"computed fontSize of nav-item default (raw/components-computed.json)","d":"Nav labels (15px)."},"footer":{"v":"15px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Footer links."},"planName":{"v":"15px","t":"dimension","s":"computed fontSize of plan-name default (raw/components-computed.json)","d":"The plan label inside a pricing card (15px)."},"howtoCard":{"v":"15px","t":"dimension","s":"computed fontSize of howto-card-title default (raw/components-computed.json)","d":"The guide card titles (20px Neoris)."}}},"component":{"control":{"heightNavCta":{"v":"41px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The nav Run-a-company pill."},"heightNavItem":{"v":"22.5px","t":"dimension","s":"computed height of nav-item default (raw/components-computed.json)","d":"Nav links."},"heightHeroCta":{"v":"41px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The hero Run-a-company button."},"heightPromptBtn":{"v":"41px","t":"dimension","s":"computed height of hero-prompt-btn default (raw/components-computed.json)","d":"The glass copy-prompt button (41px)."},"heightMenuButton":{"v":"41px","t":"dimension","s":"computed height of m-menu-button default (raw/components-computed.json)","d":"The mobile menu toggle (41x41)."},"radiusCta":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"Button corner radius."}},"card":{"radiusPlan":{"v":"16px","t":"dimension","s":"computed paint.0.radius of plan-card default (raw/components-computed.json)","d":"Pricing-card corner (radius-2xl, on the inner .pricing-card)."},"width":{"v":"640px","t":"dimension","s":"computed width of plan-card default (raw/components-computed.json)","d":"A pricing card column at 1440px."}},"nav":{"height":{"v":"91px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The fixed header bar at 1440px."}},"footer":{"height":{"v":"749.391px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}},"drawer":{"width":{"v":"390px","t":"dimension","s":"computed width of m-menu-open default (raw/components-computed.json)","d":"The mobile menu panel at 390px."}},"heroTitle":{"width":{"v":"580px","t":"dimension","s":"computed width of hero-title default (raw/components-computed.json)","d":"The hero headline's measure."}},"tile":{"width":{"v":"170px","t":"dimension","s":"computed width of logo-tile default (raw/components-computed.json)","d":"A customer logo tile (170x84)."}}}},"light":{"surface":{"page":{"v":"{color.surface}","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.surface","d":"The page ground — painted by the body (#f5f5f2 = declared --background/--color-surface)."},"raised":{"v":"{color.surfaceRaised}","t":"color","s":"computed paint.0.bg of plan-card default (raw/components-computed.json); same value as core.color.surfaceRaised","d":"The raised card ground (#fbfbf8) the pricing card paints."},"band":{"v":"{color.band}","t":"color","s":"computed backgroundColor of blue-section default (raw/components-computed.json); same value as core.color.band","d":"The #1a6fd1 tools band inside the single light theme."},"glass":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"computed paint bgImage of header default (raw/components-computed.json): linear-gradient(rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.08) 100%), its top stop","d":"The white-glass tint on the nav pill and hero prompt button (backdrop-blur 16px over it); the gradient's top stop."}},"text":{"primary":{"v":"{color.ink.80}","t":"color","s":"computed textStyle.color of section-title default (raw/components-computed.json); same value as core.color.ink.80","d":"The primary ink (#262323 at 80% = the text-ink utility)."},"muted":{"v":"{color.ink.70}","t":"color","s":"computed color of plan-name default (raw/components-computed.json); same value as core.color.ink.70","d":"Muted ink (#262323 at 70% = text-ink-muted)."},"faint":{"v":"{color.ink.50}","t":"color","s":"computed color of footer-social default (raw/components-computed.json); same value as core.color.ink.50","d":"Faint ink (#262323 at 50%) — the footer social icons and the tool-button captions."},"nav":{"v":"{color.surfaceRaised}","t":"color","s":"computed color of nav-item default (raw/components-computed.json); same value as core.color.surfaceRaised","d":"The nav-link ink at rest (#fbfbf8 surface-raised text on the glass nav)."},"onAccent":{"v":"rgba(255, 255, 255, 0.9)","t":"color","s":"computed textStyle.color of cta-dark default (raw/components-computed.json)","d":"White-90 text on the dark CTA controls."},"onBand":{"v":"{color.white}","t":"color","s":"computed textStyle.color of tool-tab default (raw/components-computed.json); same value as core.color.white","d":"White text on the #1a6fd1 tools band."},"link":{"v":"{color.ink.80}","t":"color","s":"computed color of footer-link default (raw/components-computed.json); same value as core.color.ink.80","d":"Footer link ink at rest (text-ink; hover keeps the colour and paints a rounded highlight behind it)."},"linkHover":{"v":"{color.ink.80}","t":"color","s":"computed color of footer-link hover (raw/components-computed.json); same value as core.color.ink.80","d":"Footer link ink on hover — the colour holds, a 4px-radius tint pill appears behind it."}},"accent":{"v":"{color.ctaDark}","t":"color","s":"computed backgroundImage.lastColor of cta-dark default (raw/components-computed.json); same value as core.color.ctaDark","d":"The dark CTA fill — the surface's accent control (gradient base ≈ #202020d9)."},"accentHover":{"v":"{color.ctaDark}","t":"color","s":"computed backgroundImage.lastColor of cta-dark hover (raw/components-computed.json); same value as core.color.ctaDark","d":"The dark CTA's hover fill (gradient base on hover)."},"border":{"subtle":{"v":"rgba(32, 32, 32, 0.1)","t":"color","s":"computed borderTopColor of cta-light default (raw/components-computed.json)","d":"The 1px rgba(32,32,32,.1) hairline on the light-surface buttons."},"card":{"v":"{color.borderCard}","t":"color","s":"computed paint.0.border of plan-card default (raw/components-computed.json); same value as core.color.borderCard","d":"The pricing card border (#dee2de = border-border-card utility, on the inner .pricing-card)."},"cta":{"v":"#383838","t":"color","s":"computed borderTopColor of cta-dark default (raw/components-computed.json)","d":"The dark CTA's #383838 edge."}},"focus":{"v":"#101010","t":"color","s":"computed outlineColor of nav-item focus-visible (raw/components-computed.json)","d":"The focus ring on the surface's controls (outline-ink/outline-white depending on ground)."},"shadow":{"control":{"v":[{"color":"rgba(64, 64, 64, 0.12)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(255, 255, 255, 0.24)","offsetX":"0px","offsetY":"2px","blur":"0px","spread":"0px","inset":true},{"color":"rgba(0, 0, 0, 0.25)","offsetX":"0px","offsetY":"-0.5px","blur":"2px","spread":"0px","inset":true},{"color":"rgba(0, 0, 0, 0.03)","offsetX":"0px","offsetY":"2px","blur":"8px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.16)","offsetX":"0px","offsetY":"3px","blur":"4px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of cta-dark default (raw/components-computed.json)","d":"The cta-dark's layered shadow — the surface's painted elevation (inset edge lights + ambient drops)."}}},"dark":{}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
-    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    h += `<div class="pal-h">${set} roles</div><div class="pal">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
-  if (grads.length) {
-    h += `<div class="pal-h">gradients</div><div class="pal">`;
-    for (const [n, t] of grads) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc((t.v||[]).map(s=>s.color).join(' → '))}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function layout() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#layout-out').innerHTML = m;
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function groups() {
-  // Every remaining token group gets a key/value table — fonts, radii,
-  // spacing, blur, motion, shadows, typography and the light set's
-  // non-colour roles, so the guide covers all of tokens.json.
-  const show = (v) => Array.isArray(v) ? (typeof v[0] === 'object' ? v.map((l) => `${l.color} ${l.offsetX} ${l.offsetY} ${l.blur} ${l.spread}${l.inset ? ' inset' : ''}`).join(', ') : v.join(', ')) : String(v);
-  const skip = new Set(['color', 'component', 'measured', 'gradient']);
-  let h = '';
-  for (const [set, toks] of [['core', TOK.core], ['light', TOK.light], ['dark', TOK.dark]]) {
-    for (const [g, grp] of Object.entries(toks || {})) {
-      if (skip.has(g)) continue;
-      const items = flat(grp, g + '.').filter(([, t]) => t.t !== 'color');
-      if (!items.length) continue;
-      h += `<div class="pal-h">${esc(set)}.${esc(g)}</div><div class="kv">`;
-      for (const [n, t] of items) h += `<div><b>${esc(n)}</b> <span>${esc(show(t.v))}</span></div>`;
-      h += '</div>';
-    }
-  }
-  if (h) {
-    const sec = document.createElement('div');
-    sec.innerHTML = `<h2 class="sh">Scales and roles</h2>` + h;
-    $('#meas-out').appendChild(sec);
-  }
-})();
-</script>
 </body>
 </html>

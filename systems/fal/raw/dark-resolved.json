@@ -1,0 +1,40 @@
+{
+  "count": 59,
+  "resolvedCount": 25,
+  "colorScheme": "dark",
+  "bodyBg": "rgba(0, 0, 0, 0)",
+  "bodyColor": "rgb(255, 255, 255)",
+  "sample": {
+    "surface": "",
+    "content": "",
+    "page": "",
+    "stroke": ""
+  },
+  "resolved": {
+    "--default-border-color": "39 38 43",
+    "--tw-translate-x": "0",
+    "--tw-border-style": "solid",
+    "--tw-gradient-from": "rgba(0, 0, 0, 0)",
+    "--tw-gradient-via": "rgba(0, 0, 0, 0)",
+    "--tw-gradient-to": "rgba(0, 0, 0, 0)",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-ring-offset-color": "#fff",
+    "--twoslash-border-color": "#222526",
+    "--twoslash-popup-bg": "#151819",
+    "--twoslash-highlighted-border": "#ffa50080",
+    "--twoslash-highlighted-bg": "#ffa50030",
+    "--twoslash-unmatched-color": "#aaa",
+    "--twoslash-cursor-color": "#bbbb",
+    "--twoslash-error-color": "#ff6b6b",
+    "--twoslash-error-bg": "#ff6b6b30",
+    "--twoslash-warn-color": "orange",
+    "--twoslash-warn-bg": "#ffa50030",
+    "--twoslash-tag-color": "#6bb6ff",
+    "--twoslash-tag-bg": "#6bb6ff30",
+    "--twoslash-tag-warn-color": "orange",
+    "--twoslash-tag-warn-bg": "#ffa50030",
+    "--twoslash-tag-annotate-color": "#4ade80",
+    "--twoslash-tag-annotate-bg": "#4ade8030"
+  }
+}

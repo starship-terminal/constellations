@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T17:53:34.935Z",
+  "capturedAt": "2026-11-21T02:24:50.767Z",
   "screenshot": "book-home-light-default.png",
-  "sanitizedSourceUrl": "https://honeyhivesalon.glossgenius.com/",
+  "sanitizedSourceUrl": "https://bookings.glossgenius.com/",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 900
+      "height": 4620
     },
     "scroll": {
       "x": 0,

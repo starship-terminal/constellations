@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-11-21T02:26:42.171Z",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1
+  },
+  "sanitizedSourceUrl": "https://kit.com/apps"
+}

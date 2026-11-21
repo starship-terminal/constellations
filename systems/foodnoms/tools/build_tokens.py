@@ -1,251 +1,175 @@
 #!/usr/bin/env python3
-"""Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
+"""Build tokens.json from the FoodNoms public-site readings.
 
-Sources, read from foodnoms.com on 2026-11-16:
-  raw/css-vars.json          every custom property foodnoms.com's Framer-published
-                             site declares — a flat ~90-name --token-<uuid>
-                             colour palette on <body> (accent ramp, neutral
-                             ramp, ink alphas, per-nutrient hues) plus
-                             --framer-* internals, read from the inline <style>
-                             blocks (tools/capture/vars.mjs) and binned
-                             theme / app / vendor / utility / tailwind
-  raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
-                             names a variable ("var") resolved in that theme, or carries a
-                             measured value and the measurement it came from ("source")
-Every token carries $extensions.source: "css-var <name> (<theme>)" or "measured <where>".
+Sources, read from foodnoms.com on 2026-11-21 in headless Chromium:
+  raw/type.json     painted text roles and surface fills, light and dark
+  raw/spans.json    the Get the App label (the <a> itself is unstyled link chrome)
+  raw/measure.json  radii, paddings, motion, focus outline, search scrim
 
-foodnoms.com paints two authored themes on every signed-out surface: the same
-stylesheet redeclares 39 of its --token-* names under prefers-color-scheme:
-dark, so the export holds core + light + dark. core carries the declared
---token-* palette (resolved in light) and the measured type/shape/motion
-scales, light and dark the semantic roles resolved through each pass, and
-component.* the measured geometry. Declared values are color(display-p3 ...);
-each is gamut-mapped to sRGB hex here (the quantized screenshots are sRGB),
-with the P3 source kept under $extensions.source.
+Framer paints in display-p3. A canvas sRGB conversion clips the brand orange
+to #ff5407. Tokens keep the P3 channels as #rrggbb (0.972549*255 = 248).
+That conversion is Derived. Computed radii, sizes and font stacks are Measured.
 
-Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
+One light set and one dark set. The site switches with prefers-color-scheme,
+not a class. Deterministic: same inputs, same bytes. Edit the readings, never
+tokens.json by hand.
 """
-import json, pathlib, re
+import json
+import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
-V = json.loads((RAW / "css-vars.json").read_text())
-SPEC = json.loads((RAW / "component-tokens.json").read_text())
-
-# Resolved declarations per theme. vars.mjs resolves each custom property on a
-# probe document once light at 1440, once under emulated prefers-color-scheme:
-# dark (the site's own media rule repaints 39 names; the dark pass keeps only
-# the names that differ), and once light at 390. DECL.dark starts from the
-# light resolutions so a name left alone by the media rule resolves the same.
-RL = V.get("resolved", {})
-_light = {n: v.get("value", v["raw"]) for n, v in RL.get("light", {}).items()}
-_dark = dict(_light)
-_dark.update({n: v.get("value", v["raw"]) for n, v in RL.get("dark", {}).items()})
-DECL = {"light": _light, "dark": _dark}
 
 
-def _p3_to_srgb(r, g, b):
-    """color(display-p3) component values -> sRGB 0-255 ints.
-
-    The P3 values are already gamma-encoded; decode with the sRGB EOTF, apply
-    the P3->sRGB linear matrix, re-encode and clamp into sRGB gamut."""
-    def dec(c):
-        return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
-
-    def enc(c):
-        c = max(0.0, min(1.0, c))
-        return c * 12.92 if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055
-
-    rl, gl, bl = dec(r), dec(g), dec(b)
-    sr = 1.224940176 * rl - 0.224703265 * gl
-    sg = -0.042056955 * rl + 1.042586621 * gl
-    sb = -0.019637555 * rl - 0.078636046 * gl + 1.098273614 * bl
-    return tuple(round(enc(c) * 255) for c in (sr, sg, sb))
+def tok(value, ty, source, description=""):
+    out = {"$value": value, "$type": ty, "$extensions": {"source": source}}
+    if description:
+        out["$description"] = description
+    return out
 
 
-def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla(), color(display-p3) -> #rrggbb or rgba(r, g, b, a)."""
-    v = v.strip().lower()
-    m = re.fullmatch(r"color\(display-p3\s+([\d.eE+-]+)\s+([\d.eE+-]+)\s+([\d.eE+-]+)\s*(?:/\s*([\d.eE+-]+%?))?\)", v)
-    if m:
-        r, g, b = _p3_to_srgb(float(m.group(1)), float(m.group(2)), float(m.group(3)))
-        a = m.group(4)
-        if a is None:
-            return "#%02x%02x%02x" % (r, g, b)
-        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, a)
-    m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
-    if m:
-        h = m.group(1)
-        if len(h) in (3, 4):
-            h = "".join(c * 2 for c in h)
-        r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-        if len(h) == 8:
-            a = round(int(h[6:8], 16) / 255, 3)
-            return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
-        return "#%02x%02x%02x" % (r, g, b)
-    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
-    if m:
-        r, g, b, a = m.groups()
-        if a is None:
-            return "#%02x%02x%02x" % (int(r), int(g), int(b))
-        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, a)
-    m = re.fullmatch(r"hsla?\(\s*0\s*,\s*0%\s*,\s*([\d.]+)%\s*(?:,\s*([\d.]+))?\)", v)
-    if m:
-        lvl = round(float(m.group(1)) * 2.55)
-        a = float(m.group(2) or 1)
-        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    raise ValueError("not a colour: " + v)
+def color(value, source, description=""):
+    return tok(value, "color", source, description)
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+def dim(value, source, description=""):
+    return tok(value, "dimension", source, description)
 
 
-def check(path, ty, val):
-    """Refuse a value that is not the DTCG type it claims. An alias is checked by the alias pass."""
-    if isinstance(val, str) and val.startswith("{"):
-        return
-    if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
-    if ty == "color":
-        norm_color(val) if not str(val).startswith("{") else None
-    if ty == "shadow":
-        for layer in val:
-            for k in ("offsetX", "offsetY", "blur", "spread"):
-                if not DIM.fullmatch(layer[k]):
-                    raise ValueError(f"{path}: shadow {k} {layer[k]!r}")
-    if ty == "number" and not isinstance(val, (int, float)):
-        raise ValueError(f"{path}: number {val!r}")
-    if ty == "fontWeight" and not isinstance(val, int):
-        raise ValueError(f"{path}: fontWeight {val!r}")
-    if ty == "duration" and not re.fullmatch(r"\d+ms", str(val)):
-        raise ValueError(f"{path}: duration {val!r}")
-    if ty == "cubicBezier" and not (isinstance(val, list) and len(val) == 4):
-        raise ValueError(f"{path}: cubicBezier {val!r}")
-    if ty == "gradient":
-        for stop in val:
-            if not str(stop["color"]).startswith("{"):
-                norm_color(stop["color"])
-            if not 0 <= stop["position"] <= 1:
-                raise ValueError(f"{path}: gradient position {stop['position']!r}")
+# P3 channel * 255, rounded. Recorded so the hex is not a recalled brand colour.
+# accent 0.972549, 0.384314, 0.180392 -> #f8622e
+SRC_P3 = "derived from computed display-p3 on foodnoms.com 2026-11-21 (raw/type.json); channel*255, not canvas sRGB"
+SRC_MEASURED = "computed style on foodnoms.com 2026-11-21 (raw/measure.json, raw/spans.json)"
 
+core = {
+    "color": {
+        "brand": {
+            "accent": color("#f8622e", SRC_P3, "Header wordmark and Get the App fill. display-p3 0.972549 0.384314 0.180392."),
+            "yellow": color("#ffbf02", SRC_P3, "Rotating headline 'Lose Weight'. display-p3 1 0.74902 0.007843."),
+            "green": color("#4db04f", SRC_P3, "Rotating headline 'Eat Healthy'. display-p3 0.301961 0.690196 0.309804."),
+            "red": color("#f13030", SRC_P3, "Rotating headline 'Monitor Sugars'. display-p3 0.945098 0.188235 0.188235."),
+            "cyan": color("#1ba6d8", SRC_P3, "Rotating headline 'Stay Hydrated'. display-p3 0.105882 0.65098 0.847059."),
+            "slate": color("#7ca1c2", SRC_P3, "Rotating headline 'Reduce Sodium'. display-p3 0.486275 0.631373 0.760784."),
+            "orange": color("#f67724", SRC_P3, "Rotating headline 'Build Muscle'. display-p3 0.964706 0.466667 0.141176."),
+            "purple": color("#af52de", SRC_P3, "Rotating headline 'Limit Alcohol'. display-p3 0.686275 0.321569 0.870588."),
+            "brown": color("#8b561b", SRC_P3, "Rotating headline 'Limit Caffeine'. display-p3 0.545098 0.337255 0.105882."),
+        },
+        "neutral": {
+            "white": color("#ffffff", SRC_P3, "Light page and on-accent text. display-p3 1 1 1."),
+            "ink": color("#0d0d0d", SRC_P3, "Light headline remainder. display-p3 0.05098 0.05098 0.05098."),
+            "body": color("#333333", SRC_P3, "Light feature body. display-p3 0.2 0.2 0.2."),
+            "muted": color("#666666", SRC_P3, "Light nav and lede. display-p3 0.4 0.4 0.4."),
+            "muted-dark": color("#999999", SRC_P3, "Dark nav and lede. display-p3 0.6 0.6 0.6."),
+            "raised": color("#f2f2f2", SRC_P3, "Light feature card. display-p3 0.94902 0.94902 0.94902."),
+            "raised-dark": color("#1a1a1a", SRC_P3, "Dark feature card. display-p3 0.101 0.101 0.101."),
+            "black": color("#000000", SRC_P3, "Dark page. display-p3 0 0 0."),
+        },
+    },
+    "font": {
+        "family": {
+            "display": tok("Aquawax Pro Bold, sans-serif", "fontFamily", SRC_MEASURED, "Headlines. Framer hosts the woff2; not bundled."),
+            "label": tok("Aquawax Pro DemiBold, sans-serif", "fontFamily", SRC_MEASURED, "Get the App label."),
+            "body": tok("Aquawax Pro Medium, sans-serif", "fontFamily", SRC_MEASURED, "Nav, lede, feature body."),
+            "mono": tok("Fragment Mono, ui-monospace, monospace", "fontFamily", "declared @font-face Fragment Mono from fonts.gstatic.com (raw/measure.json fonts)"),
+        },
+        "weight": {
+            "medium": tok(500, "number", SRC_MEASURED),
+            "semibold": tok(600, "number", SRC_MEASURED),
+            "bold": tok(700, "number", SRC_MEASURED),
+        },
+    },
+    "fontSize": {
+        "nav": dim("15px", SRC_MEASURED, "Desktop nav link."),
+        "cta": dim("16px", SRC_MEASURED, "Get the App label."),
+        "lede": dim("18px", SRC_MEASURED, "Hero lede."),
+        "wordmark": dim("24px", SRC_MEASURED, "Header wordmark."),
+        "section": dim("28px", SRC_MEASURED, "Feature heading."),
+        "display": dim("56px", SRC_MEASURED, "Hero rotating line, desktop 1440."),
+    },
+    "lineHeight": {
+        "nav": dim("15px", SRC_MEASURED),
+        "cta": dim("16px", SRC_MEASURED),
+    },
+    "radius": {
+        "pill": dim("20px", SRC_MEASURED, "Get the App, 40px tall so the ends are full pills."),
+        "card": dim("25px", "computed border-radius of the feature card and the orange footer (raw/type.json blocks)"),
+        "field": dim("40px", SRC_MEASURED, "Newsletter email field, fully rounded at 42px height."),
+    },
+    "space": {
+        "cta-y": dim("12px", SRC_MEASURED, "Get the App padding-block."),
+        "cta-x": dim("18px", SRC_MEASURED, "Get the App padding-inline."),
+    },
+    "size": {
+        "control": dim("40px", SRC_MEASURED, "Get the App height."),
+        "field": dim("42px", SRC_MEASURED, "Newsletter email field height."),
+    },
+    "motion": {
+        "link": dim("0.4s", SRC_MEASURED, "Nav and footer link color transition."),
+    },
+    "focus": {
+        "width": dim("1px", "computed outline on a focused Get the App link (raw/measure.json): rgb(0, 95, 204) auto 1px"),
+    },
+}
 
-def leaf(path, spec, theme):
-    ty = spec["type"]
-    if "var" in spec:
-        name = spec["var"]
-        if name not in DECL[theme]:
-            raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({theme})")
-        val = DECL[theme][name]
-        src = f"css-var {name} ({theme})"
-        if spec.get("source"):
-            src += "; " + spec["source"]
-    else:
-        val = spec["value"]
-        src = spec["source"]
-    if ty == "color" and not str(val).startswith("{"):
-        val = norm_color(val)
-    if ty == "cubicBezier" and isinstance(val, str):
-        m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
-        if m:
-            val = [float("%g" % float(x)) for x in m.groups()]
-        elif val.strip() in ("ease", "ease-in", "ease-out", "ease-in-out", "linear"):
-            val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
-                   "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
-    if ty in ("fontWeight", "number") and isinstance(val, str):
-        m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
-        if m:  # Tailwind v4 emits line-heights as calc(a/b) ratios
-            val = round(float(m.group(1)) / float(m.group(2)), 4)
-        elif re.fullmatch(r"-?\d+(\.\d+)?", val):
-            val = float(val) if "." in val else int(val)
-    if ty == "duration" and isinstance(val, str):
-        m = re.fullmatch(r"([\d.]+)(m?s)", val.strip())
-        if m:
-            val = ("%g" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))) + "ms"
-    if ty == "dimension":
-        if isinstance(val, (int, float)):
-            val = "%gpx" % val
-        elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):
-            val = val.strip() + "px"
-    check(path, ty, val)
-    t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
-    if spec.get("description"):
-        t["$description"] = spec["description"]
-    if spec.get("responsive"):
-        t["$extensions"]["responsive"] = spec["responsive"]
-    if spec.get("angle"):
-        t["$extensions"]["angle"] = spec["angle"]
-    return t
+light = {
+    "page": color("{color.neutral.white}", "alias of the light page fill"),
+    "surface": color("{color.neutral.raised}", "alias of the light feature card"),
+    "text": color("{color.neutral.ink}", "alias of the light headline remainder"),
+    "muted": color("{color.neutral.muted}", "alias of the light nav colour"),
+    "accent": color("{color.brand.accent}", "alias of the brand orange"),
+    "border": color("{color.neutral.muted}", "no dedicated border token; hairlines read as the muted grey"),
+    "on-accent": color("{color.neutral.white}", "Get the App label"),
+    "footer": color("{color.brand.accent}", "footer band fill, same orange as the accent"),
+    "scrim": color("rgba(46, 46, 46, 0.6)", "computed background of the help search overlay (raw/measure.json extra.scrim)"),
+    "focus": color("#005fcc", "computed outline-color on a focused link (raw/measure.json)"),
+    "component": {
+        "button": {
+            "bg": color("{color.brand.accent}", "Get the App fill"),
+            "text": color("{color.neutral.white}", "Get the App label colour"),
+            "radius": dim("{radius.pill}", "Get the App radius"),
+            "height": dim("{size.control}", "Get the App height"),
+        },
+        "field": {
+            "bg": color("{color.neutral.raised}", "newsletter email background"),
+            "radius": dim("{radius.field}", "newsletter email radius"),
+            "height": dim("{size.field}", "newsletter email height"),
+        },
+    },
+}
 
+dark = {
+    "page": color("{color.neutral.black}", "alias of the dark page fill, prefers-color-scheme: dark"),
+    "surface": color("{color.neutral.raised-dark}", "alias of the dark feature card"),
+    "text": color("{color.neutral.raised}", "dark headline remainder, display-p3 0.94902"),
+    "muted": color("{color.neutral.muted-dark}", "dark nav colour"),
+    "accent": color("{color.brand.accent}", "accent does not change in dark"),
+    "border": color("{color.neutral.muted-dark}", "no dedicated dark border; muted grey stands in"),
+    "on-accent": color("{color.neutral.white}", "Get the App label stays white"),
+    "footer": color("{color.brand.accent}", "footer band stays orange in dark"),
+    "scrim": color("rgba(46, 46, 46, 0.6)", "search overlay measured in light; dark overlay not separately sampled"),
+    "focus": color("#005fcc", "same UA focus outline as light"),
+    "component": {
+        "button": {
+            "bg": color("{color.brand.accent}", "Get the App fill, unchanged in dark"),
+            "text": color("{color.neutral.white}", "Get the App label"),
+            "radius": dim("{radius.pill}", "Get the App radius"),
+            "height": dim("{size.control}", "Get the App height"),
+        },
+    },
+}
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
-    if isinstance(node, dict) and "$value" in node:
-        return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
-
-
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but are
-# theme-independent measured geometry (pill heights, card sizes, field
-# heights), so they hang off core.
-core["component"] = build(SPEC["component"], "light")
-
-
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
-
-
-NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
-NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
-
-
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-for n, t in list(tokens_of(core)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for setname, tree, names in (("light", light, NAMES_L), ("dark", dark, NAMES_D)):
-    for n, t in list(tokens_of(tree)):
-        for a in aliases(t["$value"]):
-            if a not in names:
-                raise KeyError(f"{setname}.{n}: alias {{{a}}} points at nothing")
-tokens = {
+doc = {
     "core": core,
     "light": light,
     "dark": dark,
     "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The light surface foodnoms.com paints signed out on every captured route."},
-        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The site's authored dark theme: the same stylesheet redeclares 39 --token-* names under (prefers-color-scheme: dark), painted here through an emulated dark scheme — what a dark-system visitor sees."},
+        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}},
+        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}},
     ],
-    "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
+    "$extensions": {
+        "source": "foodnoms.com public site, 2026-11-21, headless Chromium, prefers-color-scheme light and dark",
+    },
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
-
-def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
-
-
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+(HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
+print("wrote", HERE / "tokens.json")

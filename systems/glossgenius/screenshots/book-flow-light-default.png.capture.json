@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T02:25:37.559Z",
+  "screenshot": "book-flow-light-default.png",
+  "sanitizedSourceUrl": "https://bookings.glossgenius.com/booking-flow",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 1307
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 658
+    }
+  },
+  "png": {
+    "width": 1440,
+    "height": 658
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 1440,
+      "height": 658
+    },
+    "basis": "redacted crop above booking footer"
+  },
+  "visualReview": {
+    "status": "redacted",
+    "note": "Cropped above the published booking footer so a street address is not in the committed PNG."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
+}

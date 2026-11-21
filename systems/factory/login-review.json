@@ -1,0 +1,85 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "probe": "no-form",
+  "login_extracted": "not-started",
+  "session": "Public Playwright capture, signed out. https://factory.ai/login redirects to https://factory.com/login, a Vercel login page (HTTP 404) whose stylesheet did not paint. The empty email field and identity buttons were read from the DOM and photographed unstyled. https://app.factory.ai/ redirects to https://auth.factory.ai/ and was photographed empty at 1440 and 390. No email, name, password, or code was typed. Continue with Email was not pressed. Google, GitHub, ChatGPT, SAML, and passkey were not clicked. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "wall": "https://factory.com/login",
+    "reached_from": "https://factory.ai/login",
+    "status": 404,
+    "title": "Login – Vercel",
+    "paint": "unstyled. The page CSS returned 404, so the card was forced visible to photograph the empty fields. Nothing was accepted.",
+    "fields": [
+      {"label": "Email Address", "type": "email", "name": "email", "value": "empty"}
+    ],
+    "actions_not_used": [
+      "Continue with Email",
+      "Continue with Google",
+      "Continue with GitHub",
+      "Continue with ChatGPT",
+      "Continue with SAML SSO",
+      "Continue with Passkey",
+      "Show other options",
+      "Sign Up"
+    ]
+  },
+  "screens": [
+    {"name": "Vercel login wall, empty fields, unstyled, 1440", "file": "screenshots/vercel-login-unstyled.png"},
+    {"name": "Factory auth sign-in, empty, dark, 1440", "file": "screenshots/login-dark-empty.png"},
+    {"name": "Factory auth sign-in, empty, dark, 390", "file": "screenshots/mobile-login-dark-empty.png"}
+  ],
+  "adjacent_walls_stopped": [
+    {
+      "url": "https://auth.factory.ai/",
+      "how": "Header SIGN IN and https://app.factory.ai/ redirect here.",
+      "fields_empty": ["Email"],
+      "actions_not_used": ["Continue with email", "Continue with Google", "Sign up"],
+      "file": "screenshots/login-dark-empty.png"
+    },
+    {
+      "url": "https://auth.factory.ai/sign-up",
+      "how": "Sign up on the sign-in wall, and links that carry screenHint=sign-up.",
+      "fields_empty": ["Email"],
+      "actions_not_used": ["Continue", "Continue with Google", "Sign in"],
+      "file": "screenshots/signup-dark-empty.png"
+    },
+    {
+      "url": "https://factory.com/guild/login",
+      "how": "Existing member on /ambassador.",
+      "fields_empty": ["Email"],
+      "placeholder_seen": "you@example.com",
+      "actions_not_used": ["Continue with Google", "Send link", "Apply"],
+      "file": "screenshots/guild-login-light-empty.png"
+    }
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Sessions, missions, settings, and billing were not offered.",
+    "Continue with Email was visible on the Vercel wall and was not pressed. No code was sent.",
+    "Google, GitHub, ChatGPT, SAML SSO, and passkey were visible and not clicked.",
+    "The Vercel page did not paint its stylesheet (CSS 404). The photograph shows the empty fields unstyled.",
+    "The Guild login shows a placeholder address in the field. Nothing was typed over it and Send link was not pressed."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "Continue with Email",
+    "Continue with email",
+    "Continue",
+    "Continue with Google",
+    "Continue with GitHub",
+    "Continue with ChatGPT",
+    "Continue with SAML SSO",
+    "Continue with Passkey",
+    "Send link",
+    "contact form",
+    "guild application",
+    "onboarding"
+  ]
+}

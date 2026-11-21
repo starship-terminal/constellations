@@ -1,617 +1,121 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fable style guide</title>
-<meta name="description" content="Fable design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --font-family-body: "Inter", system-ui, sans-serif;
-  --font-family-heading: "Heldane Display", serif;
-  --font-family-note: "PalmerLakePrint", cursive;
-  --font-family-script: "DesMontilles", cursive;
-  --font-family-list-workSans: "Work Sans", "Work Sans Fallback";
-  --font-family-list-cormorantGaramond: "Cormorant Garamond", "Cormorant Garamond Fallback";
-  --font-family-list-newRocker: "New Rocker", "New Rocker Fallback";
-  --font-family-list-pirataOne: "Pirata One", "Pirata One Fallback";
-  --font-family-list-savate: "Savate", sans-serif;
-  --font-family-list-specialElite: "Special Elite", "Special Elite Fallback";
-  --font-family-list-tradeWinds: "Trade Winds", "Trade Winds Fallback";
-  --font-size-display: 80px;
-  --font-size-masthead: 72px;
-  --font-size-discoverTitle: 64px;
-  --font-size-pageTitle: 58px;
-  --font-size-detailTitle: 46px;
-  --font-size-sectionTitle: 36px;
-  --font-size-panelTitle: 26px;
-  --font-size-feature: 24px;
-  --font-size-body: 16px;
-  --font-size-small: 15px;
-  --font-size-control: 14px;
-  --font-size-footerText: 14px;
-  --font-size-trigger: 14px;
-  --font-size-meta: 12px;
-  --font-size-micro: 10px;
-  --font-size-fallback: 13.3333px;
-  --font-lineHeight-masthead: 62px;
-  --font-lineHeight-sectionTitle: 36px;
-  --font-lineHeight-detailTitle: 48px;
-  --font-lineHeight-body: 20px;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --color-amber-100: #fff6db;
-  --color-amber-200: #f8f89c;
-  --color-amber-300: #f4d46f;
-  --color-amber-400: #fac826;
-  --color-amber-500: #c2970d;
-  --color-amber-fade-10: rgba(244, 212, 111, 0.1);
-  --color-amber-fade-20: rgba(244, 212, 111, 0.2);
-  --color-black-default: #070607;
-  --color-black-100: #070607;
-  --color-coral-100: #ffefe3;
-  --color-coral-200: #f7d1b6;
-  --color-coral-300: #f0af80;
-  --color-coral-400: #f38b56;
-  --color-coral-500: #f25b0e;
-  --color-dark-fade-10: rgba(7, 6, 7, 0.1);
-  --color-dark-fade-20: rgba(7, 6, 7, 0.2);
-  --color-dark-fade-25: rgba(7, 6, 7, 0.25);
-  --color-dark-fade-30: rgba(7, 6, 7, 0.3);
-  --color-dark-fade-40: rgba(7, 6, 7, 0.4);
-  --color-dark-fade-5: rgba(7, 6, 7, 0.05);
-  --color-dark-fade-60: rgba(7, 6, 7, 0.6);
-  --color-dark-fade-75: rgba(7, 6, 7, 0.75);
-  --color-fern-100: #e8f9e6;
-  --color-fern-400: #6e9a36;
-  --color-forest-100: #12654c;
-  --color-forest-200: #064c37;
-  --color-forest-300: #053829;
-  --color-forest-400: #042119;
-  --color-forest-500: #06120e;
-  --color-graphite-default: #292229;
-  --color-graphite-100: #f8f8f8;
-  --color-graphite-200: #e1e0e1;
-  --color-graphite-300: #b1acaf;
-  --color-graphite-400: #746e72;
-  --color-graphite-500: #4b4649;
-  --color-graphite-600: #1b1a1b;
-  --color-green-dark: #4f8111;
-  --color-indigo-100: #e6efff;
-  --color-indigo-400: #4252f1;
-  --color-iris-100: #eddeff;
-  --color-iris-200: #cca7f7;
-  --color-iris-300: #9042e9;
-  --color-iris-400: #4d0c98;
-  --color-iris-500: #230841;
-  --color-lemon-400: #f2d63f;
-  --color-meadow-400: #81ba6d;
-  --color-olive-100: #e9f3ce;
-  --color-olive-200: #c6dd88;
-  --color-olive-300: #88c900;
-  --color-olive-400: #76a938;
-  --color-olive-500: #526c03;
-  --color-olive-fade-10: rgba(118, 169, 56, 0.1);
-  --color-olive-fade-20: rgba(118, 169, 56, 0.2);
-  --color-olive-fade-30: rgba(118, 169, 56, 0.3);
-  --color-pearl-100: #f7f4eb;
-  --color-pearl-200: #ebe7d9;
-  --color-pearl-300: #c9c3b0;
-  --color-pearl-400: #b0aa95;
-  --color-pearl-50: #fcf9f5;
-  --color-pearl-500: #797566;
-  --color-pearl-extra-light: #f7f4ee;
-  --color-pewter-grey: #6c728c;
-  --color-quote-theme-1: #064c37;
-  --color-quote-theme-10: #bf9c16;
-  --color-quote-theme-11: #ad087e;
-  --color-quote-theme-12: #b74200;
-  --color-quote-theme-2: #c19c4e;
-  --color-quote-theme-3: #126ecc;
-  --color-quote-theme-4: #ff8000;
-  --color-quote-theme-5: #e4adbb;
-  --color-quote-theme-6: #161015;
-  --color-quote-theme-7: #526c03;
-  --color-quote-theme-8: #030096;
-  --color-quote-theme-9: #0076ba;
-  --color-rose-100: #ffeaef;
-  --color-rose-200: #ffd0dc;
-  --color-rose-300: #f5afc0;
-  --color-rose-400: #e895ad;
-  --color-rose-500: #cd5786;
-  --color-royal-100: #e4f5ff;
-  --color-royal-200: #7ac3ed;
-  --color-royal-300: #0076ba;
-  --color-royal-400: #0064c3;
-  --color-royal-500: #00479b;
-  --color-royal-fade-10: rgba(122, 195, 237, 0.1);
-  --color-royal-fade-20: rgba(122, 195, 237, 0.2);
-  --color-royal-fade-30: rgba(122, 195, 237, 0.3);
-  --color-scarlet-100: #ffebe6;
-  --color-scarlet-200: #f6c2b5;
-  --color-scarlet-300: #ffa095;
-  --color-scarlet-400: #fc7676;
-  --color-scarlet-500: #d12e2e;
-  --color-scarlet-fade-10: rgba(255, 160, 149, 0.1);
-  --color-scarlet-fade-20: rgba(255, 160, 149, 0.2);
-  --color-sky-400: #43a1d7;
-  --color-white-default: #ffffff;
-  --color-white-100: #ffffff;
-  --color-white-fade-10: rgba(255, 255, 255, 0.1);
-  --color-white-fade-20: rgba(255, 255, 255, 0.2);
-  --color-white-fade-25: rgba(255, 255, 255, 0.25);
-  --color-white-fade-40: rgba(255, 255, 255, 0.4);
-  --color-white-fade-50: rgba(255, 255, 255, 0.5);
-  --color-white-fade-70: rgba(255, 255, 255, 0.7);
-  --color-yellow: #f2d63f;
-  --radius-0: 0px;
-  --radius-12: 12px;
-  --radius-16: 16px;
-  --radius-2: 2px;
-  --radius-20: 20px;
-  --radius-24: 24px;
-  --radius-32: 32px;
-  --radius-4: 4px;
-  --radius-40: 40px;
-  --radius-6: 6px;
-  --radius-8: 8px;
-  --radius-full: 9999px;
-  --radius-pill: var(--radius-full);
-  --radius-emotionPill: 60px;
-  --radius-fieldShell: 44px;
-  --radius-modal: var(--radius-24);
-  --radius-input: var(--radius-12);
-  --radius-cover: var(--radius-8);
-  --shadow-above-1: rgba(0, 0, 0, 0.4) 0px -4px 6px -2px;
-  --shadow-above-2: rgba(0, 0, 0, 0.12) 0px -6px 16px 0px;
-  --shadow-above-3: rgba(0, 0, 0, 0.17) 0px -8px 36px 0px;
-  --shadow-above-4: rgba(0, 0, 0, 0.28) 0px -20px 56px 0px;
-  --shadow-below-1: rgba(0, 0, 0, 0.4) 0px 4px 6px -2px;
-  --shadow-below-2: rgba(0, 0, 0, 0.12) 0px 6px 16px 0px;
-  --shadow-below-3: rgba(0, 0, 0, 0.17) 0px 8px 36px 0px;
-  --shadow-below-4: rgba(0, 0, 0, 0.28) 0px 20px 56px 0px;
-  --border-width-1: 1px;
-  --border-width-2: 2px;
-  --border-width-3: 3px;
-  --breakpoint-2xl: 1536px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-md: 768px;
-  --breakpoint-mobile: 430px;
-  --breakpoint-mobileSm: 392px;
-  --breakpoint-sm: 640px;
-  --breakpoint-xl: 1280px;
-  --spacing-base: 1px;
-  --animate-flicker: flicker 1s linear infinite;
-  --motion-catalogControl: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
-  --motion-emotionControl: border 0.2s ease, background 0.2s ease, color 0.2s ease;
-  --motion-cardZoom: transform 0.4s ease-in-out;
-  --motion-hoverFade: 0.85;
-  --component-headerHeight: 60px;
-  --component-logoWidth: 82px;
-  --component-heroMastheadW: 500px;
-  --component-heroCoverW: 151px;
-  --component-heroCoverH: 225px;
-  --component-marketingPillH: 52px;
-  --component-marketingPillRadius: 60px;
-  --component-ctaHeight: 44px;
-  --component-catalogButtonH: 52px;
-  --component-catalogButtonW: 361px;
-  --component-genrePillH: 46px;
-  --component-iconBtn: 40px;
-  --component-searchIconBtn: 44px;
-  --component-searchTriggerW: 440px;
-  --component-searchTriggerH: 52px;
-  --component-searchModalW: 480px;
-  --component-searchModalH: 497px;
-  --component-searchInputH: 41px;
-  --component-spoilerPillH: 28px;
-  --component-clubCardW: 256px;
-  --component-clubCardH: 372px;
-  --component-bookCoverW: 167px;
-  --component-appBannerH: 132px;
-  --component-signinPanelW: 396px;
-  --component-signinFieldH: 50px;
-  --component-signinButtonH: 44px;
-  --component-supportCardPad: 18px;
-  --component-footerPadY: 100px;
-  --component-mHeaderH: 60px;
-  --component-mClubCardW: 316.89px;
-  --component-mFooterPadY: 80px;
-  --component-discoverFieldW: 420px;
-  --component-discoverFieldH: 60.19px;
-  --component-discoverPillH: 50.38px;
-  --component-discoverWordmarkW: 80.75px;
-  --component-skin-marketing-marketingInk: var(--color-quote-theme-6);
-  --component-skin-marketing-marketingPillFill: var(--color-graphite-default);
-  --component-skin-marketing-marketingPillHoverFill: #433944;
-  --component-skin-marketing-marketingPillInk: var(--color-quote-theme-6);
-  --component-skin-marketing-marketingPillHoverInk: #332e32;
-  --component-skin-marketing-textInputBorder: #bcbcbc;
-  --component-skin-catalog-catalogFocus: var(--color-royal-400);
-  --component-skin-catalog-catalogChipHover: var(--color-graphite-100);
-  --component-skin-catalog-coverPlaceholder: var(--color-pearl-200);
-  --component-skin-catalog-bannerInk: var(--color-forest-200);
-  --component-skin-catalog-modalShadow: rgba(0, 0, 0, 0.12) 0px -6px 16px 0px;
-  --component-skin-discover-discoverPillFill: var(--color-forest-400);
-  --component-skin-discover-discoverPillInk: #c5c1c5;
-  --component-skin-discover-discoverFieldInk: var(--color-quote-theme-6);
-  --component-skin-discover-wallScrim: radial-gradient(120% 95% at 50% 32%, rgba(12, 92, 66, 0.85), rgba(0, 0, 0, 0) 64%), radial-gradient(85% 75% at 12% 4%, rgba(9, 74, 54, 0.6), rgba(0, 0, 0, 0) 62%), radial-gradient(80% 70% at 92% 100%, rgba(3, 40, 29, 0.7), rgba(0, 0, 0, 0) 64%), linear-gradient(160deg, rgb(7, 87, 64) 0%, rgb(4, 48, 31) 100%);
-  --component-skin-discover-fieldShadow: rgba(12, 12, 12, 0.45) 0px 10px 34px 0px;
-  --color-background-amber: #fac826;
-  --color-background-amberfademid: rgba(244, 212, 111, 0.2);
-  --color-background-coral: #f25b0e;
-  --color-background-dark: #1b1a1b;
-  --color-background-darkfadefixed: rgba(7, 6, 7, 0.6);
-  --color-background-darkfadehigh: rgba(7, 6, 7, 0.4);
-  --color-background-darkfadelow: rgba(7, 6, 7, 0.1);
-  --color-background-darkfadelowest: rgba(7, 6, 7, 0.05);
-  --color-background-darkfademid: rgba(7, 6, 7, 0.2);
-  --color-background-darkhover: #4b4649;
-  --color-background-disabled: #746e72;
-  --color-background-disabled2: #b1acaf;
-  --color-background-error: #d12e2e;
-  --color-background-fern: #6e9a36;
-  --color-background-fernlight: #e8f9e6;
-  --color-background-forest: #064c37;
-  --color-background-gray: #e1e0e1;
-  --color-background-graylight: #f8f8f8;
-  --color-background-indigo: #4252f1;
-  --color-background-indigolight: #e6efff;
-  --color-background-inverse: #1b1a1b;
-  --color-background-iris: #4d0c98;
-  --color-background-lemon: #f2d63f;
-  --color-background-light: #ffffff;
-  --color-background-lightfadehigh: rgba(255, 255, 255, 0.7);
-  --color-background-lightfadelow: rgba(255, 255, 255, 0.2);
-  --color-background-lightfademid: rgba(255, 255, 255, 0.5);
-  --color-background-meadow: #81ba6d;
-  --color-background-mid: #746e72;
-  --color-background-olive: #76a938;
-  --color-background-olivedark: #526c03;
-  --color-background-olivefadelow: rgba(118, 169, 56, 0.1);
-  --color-background-olivefademid: rgba(118, 169, 56, 0.2);
-  --color-background-ondark: #ffffff;
-  --color-background-ondlight: #070607;
-  --color-background-passive: rgba(7, 6, 7, 0.1);
-  --color-background-pearllight: #fcf9f5;
-  --color-background-primary: #ffffff;
-  --color-background-quote: #06120e;
-  --color-background-rose: #cd5786;
-  --color-background-royal: #0064c3;
-  --color-background-royalfademid: rgba(122, 195, 237, 0.2);
-  --color-background-scarletfademid: rgba(255, 160, 149, 0.2);
-  --color-background-secondary: #f7f4eb;
-  --color-background-sky: #43a1d7;
-  --color-background-success: #526c03;
-  --color-background-surfacehigh: #ffffff;
-  --color-background-tertiary: #ebe7d9;
-  --color-border-amber: #c2970d;
-  --color-border-dark: #1b1a1b;
-  --color-border-disabled: #746e72;
-  --color-border-error: #d12e2e;
-  --color-border-light: #ffffff;
-  --color-border-mid: #746e72;
-  --color-border-olive: #76a938;
-  --color-border-ondark: #ffffff;
-  --color-border-passive: rgba(7, 6, 7, 0.1);
-  --color-border-primary: #b1acaf;
-  --color-border-secondary: #f7f4eb;
-  --color-focus: #0064c3;
-  --color-line-passive: rgba(7, 6, 7, 0.1);
-  --color-line-primary: #b1acaf;
-  --color-olive: #526c03;
-  --color-primary: #1b1a1b;
-  --color-secondary: #4b4649;
-  --color-text-amber: #c2970d;
-  --color-text-dark: #1b1a1b;
-  --color-text-disabled: #746e72;
-  --color-text-disabled2: #4b4649;
-  --color-text-error: #d12e2e;
-  --color-text-light: #ffffff;
-  --color-text-mid: #746e72;
-  --color-text-olive: #76a938;
-  --color-text-ondark: #ffffff;
-  --color-text-primary: #1b1a1b;
-  --color-text-royal: #0064c3;
-  --color-text-royalfixed: #7ac3ed;
-  --color-text-secondary: #4b4649;
-  --color-text-sub: #b1acaf;
-  --color-text-success: #526c03;
-  --text-ink: var(--color-graphite-600);
-  --text-emotionInk: var(--color-quote-theme-6);
-  --text-onDark: var(--color-pearl-extra-light);
-  --text-muted: var(--color-graphite-500);
-  --text-footerMuted: #847f7c;
-  --action-ctaFill: var(--color-graphite-600);
-  --action-ctaInk: var(--color-white-default);
-  --action-emotionCtaFill: var(--color-graphite-default);
-  --action-emotionCtaInk: var(--color-white-default);
-  --border-focusRing: var(--color-royal-400);
-  --border-emotionFocusRing: #116ecd;
-  --border-hairline: var(--color-graphite-300);
-  --background-page: var(--color-white-default);
-  --background-surface: var(--color-pearl-100);
-  --background-surfaceHover: var(--color-pearl-200);
-  --background-band: var(--color-forest-200);
-  --background-appBanner: var(--color-forest-300);
-  --background-footer: var(--color-black-default);
-  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "Heldane Display", heldane, Georgia, "Times New Roman", serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
-}
-[data-mode="dark"], .dark {
-  --color-background-amber: #fac826;
-  --color-background-amberfademid: rgba(244, 212, 111, 0.2);
-  --color-background-coral: #f38b56;
-  --color-background-dark: #f8f8f8;
-  --color-background-darkfadefixed: rgba(7, 6, 7, 0.6);
-  --color-background-darkfadehigh: rgba(255, 255, 255, 0.5);
-  --color-background-darkfadelow: rgba(255, 255, 255, 0.2);
-  --color-background-darkfadelowest: rgba(255, 255, 255, 0.1);
-  --color-background-darkfademid: rgba(255, 255, 255, 0.4);
-  --color-background-darkhover: #e1e0e1;
-  --color-background-disabled: #746e72;
-  --color-background-disabled2: #746e72;
-  --color-background-error: #fc7676;
-  --color-background-fern: #6e9a36;
-  --color-background-fernlight: #e8f9e6;
-  --color-background-forest: #064c37;
-  --color-background-gray: #4b4649;
-  --color-background-graylight: #1b1a1b;
-  --color-background-indigo: #4252f1;
-  --color-background-indigolight: #e6efff;
-  --color-background-inverse: #4b4649;
-  --color-background-iris: #9042e9;
-  --color-background-lemon: #f2d63f;
-  --color-background-light: #ffffff;
-  --color-background-lightfadehigh: rgba(7, 6, 7, 0.1);
-  --color-background-lightfadelow: rgba(255, 255, 255, 0.2);
-  --color-background-lightfademid: rgba(255, 255, 255, 0.4);
-  --color-background-meadow: #81ba6d;
-  --color-background-mid: #b1acaf;
-  --color-background-olive: #88c900;
-  --color-background-olivedark: #526c03;
-  --color-background-olivefadelow: rgba(118, 169, 56, 0.1);
-  --color-background-olivefademid: rgba(118, 169, 56, 0.2);
-  --color-background-ondark: #070607;
-  --color-background-ondlight: #070607;
-  --color-background-passive: rgba(7, 6, 7, 0.6);
-  --color-background-pearllight: #1b1a1b;
-  --color-background-primary: #070607;
-  --color-background-quote: #06120e;
-  --color-background-rose: #e895ad;
-  --color-background-royal: #0076ba;
-  --color-background-royalfademid: rgba(122, 195, 237, 0.2);
-  --color-background-scarletfademid: rgba(255, 160, 149, 0.2);
-  --color-background-secondary: #1b1a1b;
-  --color-background-sky: #43a1d7;
-  --color-background-success: #76a938;
-  --color-background-surfacehigh: #4b4649;
-  --color-background-tertiary: #4b4649;
-  --color-border-amber: #fac826;
-  --color-border-dark: #f8f8f8;
-  --color-border-disabled: #746e72;
-  --color-border-error: #fc7676;
-  --color-border-light: #ffffff;
-  --color-border-mid: #746e72;
-  --color-border-olive: #88c900;
-  --color-border-ondark: #070607;
-  --color-border-passive: rgba(255, 255, 255, 0.2);
-  --color-border-primary: #746e72;
-  --color-border-secondary: #1b1a1b;
-  --color-focus: #0076ba;
-  --color-line-passive: rgba(255, 255, 255, 0.2);
-  --color-line-primary: #746e72;
-  --color-olive: #88c900;
-  --color-primary: #f8f8f8;
-  --color-secondary: #b1acaf;
-  --color-text-amber: #f4d46f;
-  --color-text-dark: #1b1a1b;
-  --color-text-disabled: #746e72;
-  --color-text-disabled2: #4b4649;
-  --color-text-error: #fc7676;
-  --color-text-light: #ffffff;
-  --color-text-mid: #b1acaf;
-  --color-text-olive: #88c900;
-  --color-text-ondark: #ffffff;
-  --color-text-primary: #f8f8f8;
-  --color-text-royal: #7ac3ed;
-  --color-text-royalfixed: #7ac3ed;
-  --color-text-secondary: #b1acaf;
-  --color-text-sub: #b1acaf;
-  --color-text-success: #76a938;
-  --text-discoverInk: var(--color-pearl-extra-light);
-  --text-footerInk: var(--color-white-default);
-  --background-footer: var(--color-black-default);
+  --color-forest: #064c37;
+  --color-cream: #f7f4ee;
+  --color-creamPage: #f7f4eb;
+  --color-ink: #1b1a1b;
+  --color-inkSoft: #161015;
+  --color-inkButton: #292229;
+  --color-paper: #ffffff;
+  --color-footer: #070607;
+  --color-link: #116ecd;
+  --color-focus: #116ecd;
+  --color-chipBorder: #b1acaf;
+  --color-badge: #526c03;
+  --color-hoverWash: #f9f9f9;
+  --font-family-display: Heldane Display, serif;
+  --font-family-sans: Inter, serif;
+  --typography-display: 500 72px/62px var(--font-family-display);
+  --typography-title: 700 46px/48px var(--font-family-display);
+  --typography-clubsTitle: 700 58px/60px var(--font-family-display);
+  --typography-dialogTitle: 500 22px/28px var(--font-family-sans);
+  --typography-lede: 500 24px/34px var(--font-family-sans);
+  --typography-body: 400 16px/24px var(--font-family-sans);
+  --typography-label: 600 14px/20px var(--font-family-sans);
+  --typography-caption: 400 12px/15px var(--font-family-sans);
+  --radius-none: 0px;
+  --radius-dialog: 12px;
+  --radius-pill: 60px;
+  --radius-chip: 9999px;
+  --space-chipX: 20px;
+  --space-chipY: 10px;
+  --space-footer: 100px;
+  --space-footerX: 52px;
+  --size-header: 60px;
+  --size-cta: 52px;
+  --size-field: 50px;
+  --size-authButton: 44px;
+  --size-chip: 46px;
+  --size-content: 1200px;
+  --size-dialog: 384px;
+  --border-hairline: 1px;
+  --border-control: 2px;
+  --border-focus: 2px;
+  --background-page: var(--color-cream);
+  --background-hero: var(--color-forest);
+  --background-surface: var(--color-paper);
+  --background-book: var(--color-creamPage);
+  --background-inverse: var(--color-footer);
+  --text-primary: var(--color-ink);
+  --text-onHero: var(--color-cream);
+  --text-onInverse: var(--color-paper);
+  --text-link: var(--color-link);
+  --text-muted: var(--color-inkSoft);
+  --border-default: var(--color-chipBorder);
+  --border-strong: var(--color-ink);
+  --action-primary: var(--color-inkButton);
+  --action-onPrimary: var(--color-paper);
+  --action-quiet: var(--color-paper);
+  --action-onQuiet: var(--color-inkSoft);
+  --focus-ring: var(--color-focus);
+  color-scheme: light;
+  --sg-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --sg-display: "Source Serif 4", Georgia, serif;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-graphite-600, #1b1a1b); background: var(--color-white-100, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-graphite-600, #1b1a1b); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-graphite-300, #b1acaf); }
-.lead { max-width: 62ch; color: var(--color-graphite-600, #1b1a1b); opacity: .8; }
-.note { font-size: 13px; color: var(--color-graphite-600, #1b1a1b); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-graphite-600, #1b1a1b); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-graphite-300, #b1acaf); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-graphite-600, #1b1a1b); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-graphite-300, #b1acaf); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--color-graphite-600, #1b1a1b); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--color-graphite-300, #b1acaf); overflow: hidden; background: var(--color-white-100, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-headerHeight, 60px); padding: 0 12px 0 22px; font-size: 14px; color: var(--color-pearl-extra-light, #f7f4ee); background: var(--color-forest-200, #064c37); }
-.navbar.light-bar { color: var(--color-graphite-600, #1b1a1b); background: var(--color-white-100, #fff); border-bottom: 1px solid var(--color-graphite-200, #e1e0e1); }
-.navbar .wm { font-family: var(--sg-serif); font-weight: 700; font-size: 20px; }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-marketingPillH, 52px); padding: 0 22px; font-size: 14px; font-weight: 600; border-radius: var(--component-marketingPillRadius, 60px); border: 2px solid transparent; font-family: var(--sg-sans); }
-.btn.darkpill { background: var(--component-skin-marketing-marketingPillFill, #292229); border-color: var(--component-skin-marketing-marketingPillFill, #292229); color: var(--color-white-100, #fff); }
-.btn.whitepill { background: var(--color-white-100, #fff); border-color: var(--color-white-100, #fff); color: var(--color-quote-theme-6, #161015); }
-.btn.cat { height: var(--component-catalogButtonH, 52px); border-radius: var(--radius-full, 9999px); border-width: 1px; background: var(--color-graphite-600, #1b1a1b); border-color: var(--color-graphite-600, #1b1a1b); color: var(--color-white-100, #fff); }
-.btn.cat.ghost { background: transparent; color: var(--color-graphite-600, #1b1a1b); }
-.hero { color: var(--color-pearl-extra-light, #f7f4ee); padding: 72px 40px; font: 500 var(--font-size-masthead, 72px)/var(--font-lineHeight-masthead, 62px) var(--sg-serif); text-align: left; background: var(--color-forest-200, #064c37); }
-.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); margin: 18px 0 22px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--color-graphite-300, #b1acaf); padding: 14px; font-size: 13px; background: #fff; }
-.tile b { display: block; font: 700 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
-.chip { display: inline-flex; align-items: center; height: var(--component-genrePillH, 46px); padding: 0 18px; border-radius: var(--radius-full, 9999px); border: 1px solid var(--color-graphite-300, #b1acaf); background: var(--color-white-100, #fff); font-size: 14px; color: var(--color-graphite-600, #1b1a1b); }
-.disc { position: relative; padding: 64px 40px; color: var(--color-pearl-extra-light, #f7f4ee); background: var(--color-forest-500, #06120e); }
-.disc::before { content: ""; position: absolute; inset: 0; background: var(--component-skin-discover-wallScrim, radial-gradient(120% 95% at 50% 32%, rgba(12, 92, 66, 0.85), rgba(0, 0, 0, 0) 64%)); }
-.disc h3 { position: relative; font: 500 var(--font-size-discoverTitle, 64px)/1.08 var(--sg-serif); margin: 0 0 26px; }
-.disc .field { position: relative; display: flex; align-items: center; width: var(--component-discoverFieldW, 420px); max-width: 100%; height: var(--component-discoverFieldH, 60px); border-radius: var(--component-marketingPillRadius, 60px); background: var(--color-white-100, #fff); color: var(--color-quote-theme-6, #161015); padding: 0 24px; font-size: 14px; box-shadow: var(--component-skin-discover-fieldShadow, rgba(12, 12, 12, 0.45) 0px 10px 34px 0px); }
-.disc .pills { position: relative; margin-top: 16px; display: flex; gap: 10px; }
-.disc .fpill { display: inline-flex; align-items: center; height: var(--component-discoverPillH, 50px); padding: 0 18px; border-radius: 999px; background: var(--component-skin-discover-discoverPillFill, #042119); color: var(--component-skin-discover-discoverPillInk, #c5c1c5); font-size: 14px; font-weight: 500; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--color-graphite-300, #b1acaf); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-graphite-300, #b1acaf); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--color-graphite-600, #1b1a1b); opacity: .65; font-family: var(--sg-mono); }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 500 40px/44px var(--sg-display); margin: 0 0 8px; }
+h2 { font: 500 28px/32px var(--sg-display); margin: 40px 0 8px; }
+p { max-width: 68ch; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border-radius: 12px; border: 1px solid var(--border-default); }
+.sw span { display: block; font-size: 12px; margin-top: 4px; }
+.cta { display: inline-flex; align-items: center; height: var(--size-cta); padding: 0 22px; border-radius: var(--radius-pill); background: var(--action-quiet); color: var(--action-onQuiet); font-weight: 600; font-size: 14px; border: 0; }
+.primary { display: inline-flex; align-items: center; height: var(--size-authButton); padding: 0 22px; border-radius: var(--radius-pill); background: var(--action-primary); color: var(--action-onPrimary); font-weight: 600; font-size: 14px; border: 2px solid var(--action-primary); }
+.chip { display: inline-flex; align-items: center; height: var(--size-chip); padding: 10px 20px; border-radius: var(--radius-chip); border: 1px solid var(--border-default); background: var(--background-surface); }
+.hero { background: var(--background-hero); color: var(--text-onHero); border-radius: 16px; padding: 32px; }
+.hero h3 { font: 500 48px/44px var(--sg-display); margin: 0 0 12px; }
+.note { color: var(--text-muted); font-size: 13px; }
+code { font-size: 13px; }
 </style>
 </head>
 <body>
-<main>
-  <h1>Fable style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">Fable, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--color-graphite/pearl/forest/olive/royal-*</code> palette scales, the <code>--color-*-fade-*</code> alpha ramps, the 12 <code>--color-quote-theme-*</code> reader colours, the <code>--color-background-*</code>/<code>--color-text-*</code>/<code>--color-border-*</code>/<code>--color-line-*</code> semantic roles that the stylesheet redeclares under a scoped <code>.dark</code> class, the Heldane Display + Inter pairing (with PalmerLakePrint and DesMontilles accents and seven reader list faces), the <code>--radius-*</code> scale up to the 9999px pill, the above/below shadow steps, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from fable.co on 2026-11-14, signed out, in headless Chromium. Everything behind an account — joined clubs, the reader, lists, checkout — is a documented boundary; the sign-in form was measured, never submitted. Heldane Display and Inter are served faces and are not loaded here: samples fall back to system serif/sans.</p>
-
-  <h2 class="sh">The marketing skin</h2>
-  <p class="lead">The emotion-styled marketing pages paint cream ink over deep forest bands: the 60px header floats on the hero, the masthead runs 72px Heldane Display medium (46px on the phone), and the calls to action are 60px-radius pills — white with <code>quote-theme-6</code> ink or the named graphite <code>#292229</code> fill.</p>
-  <div class="mock" style="padding:0">
-    <div class="navbar"><span class="wm">Fable</span><span>Clubs</span><span>Books</span><span>Library</span><span>Blog</span><span class="sp"></span><span>Sign in</span><span class="btn darkpill" style="height:40px">Get the app</span></div>
-    <div class="hero">The modern app<br>for every reader<small>Book clubs, a reader and a store in one.</small><span class="btn whitepill">Get the app</span></div>
+<div class="wrap">
+  <h1>Fable, measured</h1>
+  <p>Public site only, signed out, 2026-11-21. Heldane Display is proprietary and is not loaded here. Display samples use Source Serif 4. Inter is the measured UI face. Values are CSS variables generated from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--background-page)"></i><span>page</span></div>
+    <div class="sw"><i style="background:var(--background-hero)"></i><span>hero</span></div>
+    <div class="sw"><i style="background:var(--background-surface)"></i><span>surface</span></div>
+    <div class="sw"><i style="background:var(--background-book)"></i><span>book</span></div>
+    <div class="sw"><i style="background:var(--background-inverse)"></i><span>inverse</span></div>
+    <div class="sw"><i style="background:var(--action-primary)"></i><span>primary action</span></div>
+    <div class="sw"><i style="background:var(--text-link)"></i><span>link</span></div>
+    <div class="sw"><i style="background:var(--color-badge)"></i><span>badge</span></div>
   </div>
-
-  <h2 class="sh">The catalog skin</h2>
-  <p class="lead">The product surfaces (<code>/clubs</code>, <code>/books</code>, <code>/book/*</code>, <code>/club/*</code>) are CSS modules on white: the same 60px header in graphite ink, heldane mastheads, 9999px pill buttons and chips, hairline <code>graphite-300</code> borders and the declared royal <code>--color-focus</code> ring.</p>
-  <div class="mock" style="padding:0">
-    <div class="navbar light-bar"><span class="wm">Fable</span><span>Clubs</span><span>Books</span><span>Library</span><span>Blog</span><span class="sp"></span><span class="btn cat" style="height:40px;padding:0 18px">Join the club</span></div>
-    <div style="padding:26px 40px">
-      <div style="font:700 var(--font-size-pageTitle,58px)/var(--font-lineHeight-detailTitle,48px) var(--sg-serif);color:var(--color-graphite-600,#1b1a1b);margin-bottom:14px">Find your people</div>
-      <span class="chip">Fantasy</span> <span class="chip">Romance</span> <span class="chip">Sci-fi</span>
-      <div style="margin-top:18px"><span class="btn cat">Get Heated Rivalry</span> <span class="btn cat ghost">Add to list</span></div>
-    </div>
+  <h2>Hero and controls</h2>
+  <div class="hero">
+    <h3>The modern app for every reader</h3>
+    <p>Join a community of good people to discuss great stories on Fable.</p>
+    <button class="cta">Get the app</button>
   </div>
-
-  <h2 class="sh">The discover cover wall</h2>
-  <p class="lead">/discover is the one page painted dark signed out: a drifting wall of book covers under the forest radial-gradient scrim, the cream 64px headline, a white 420px search field with a heavy drop shadow, and forest-400 pills with muted <code>#c5c1c5</code> ink.</p>
-  <div class="mock disc">
-    <h3>Find new books to obsess over</h3>
-    <div class="field">Search for a book you love…</div>
-    <div class="pills"><span class="fpill">Random</span><span class="fpill">What is this?</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The declared scales: warm <code>pearl-*</code> neutrals and <code>graphite-*</code> inks, the signature <code>forest-*</code> greens, plus olive/royal/iris/coral/rose/scarlet/amber ramps, the <code>*-fade-*</code> alpha partners and the 12 <code>quote-theme-*</code> reader colours. The semantic <code>--color-background-*</code>/<code>--color-text-*</code>/<code>--color-border-*</code>/<code>--color-line-*</code> roles resolve in the light set; the dark set resolves the same names through the declared <code>.dark</code> scope. Measured roles alias the declared values they match.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing, radius and motion</h2>
-  <p class="lead">The declared <code>--radius-0..40</code> scale plus <code>--radius-full</code> 9999px — catalog pills, chips and buttons run full-round; the emotion skin uses literal 60px pills and a 44px text-input shell. Controls transition over 0.15s ease in the catalog skin and 0.2s on the marketing skin; the marketing club card zooms to scale(1.01) over 0.4s ease-in-out.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Heldane Display (<code>heldane</code>, 400/500/700) carries every masthead — 80px marketing displays, 72px hero (46px on the phone), 58px page titles, 46px detail titles, 64px on /discover — and Inter carries controls, body and captions; PalmerLakePrint and DesMontilles are the note/script accents, and seven <code>--font-list-*</code> faces theme the reader's lists. Sizes below are measured; samples fall back to system serif/sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--font-*/--radius-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
-</main>
-<script>
-const TOK = {"core":{"font":{"family":{"body":{"v":"\"Inter\", system-ui, sans-serif","t":"fontFamily","s":"css-var --font-body (light)","d":"Inter — every control, body and caption."},"heading":{"v":"\"Heldane Display\", serif","t":"fontFamily","s":"css-var --font-heading (light)","d":"Heldane Display — mastheads, section and detail titles."},"note":{"v":"\"PalmerLakePrint\", cursive","t":"fontFamily","s":"css-var --font-note (light)","d":"PalmerLakePrint — the hand-drawn annotation face."},"script":{"v":"\"DesMontilles\", cursive","t":"fontFamily","s":"css-var --font-script (light)","d":"DesMontilles — the script/display accent face."},"list":{"workSans":{"v":"\"Work Sans\", \"Work Sans Fallback\"","t":"fontFamily","s":"declared on the .work_sans_70cb6bf5-module__jFbMpW__variable next/font module class (raw/css-vars.json); a reader list/quote theme face, not resolved on :root","d":"The reader list-theme face `workSans`."},"cormorantGaramond":{"v":"\"Cormorant Garamond\", \"Cormorant Garamond Fallback\"","t":"fontFamily","s":"declared on the .cormorant_garamond_a09e58a5-module__BiOu6a__variable next/font module class (raw/css-vars.json); a reader list/quote theme face, not resolved on :root","d":"The reader list-theme face `cormorantGaramond`."},"newRocker":{"v":"\"New Rocker\", \"New Rocker Fallback\"","t":"fontFamily","s":"declared on the .new_rocker_cb1eb6d2-module__F7w8JG__variable next/font module class (raw/css-vars.json); a reader list/quote theme face, not resolved on :root","d":"The reader list-theme face `newRocker`."},"pirataOne":{"v":"\"Pirata One\", \"Pirata One Fallback\"","t":"fontFamily","s":"declared on the .pirata_one_b9b6f67b-module__7J5DLa__variable next/font module class (raw/css-vars.json); a reader list/quote theme face, not resolved on :root","d":"The reader list-theme face `pirataOne`."},"savate":{"v":"\"Savate\", sans-serif","t":"fontFamily","s":"declared on the .savate_6af24d04-module__E2CeMq__variable next/font module class (raw/css-vars.json); a reader list/quote theme face, not resolved on :root","d":"The reader list-theme face `savate`."},"specialElite":{"v":"\"Special Elite\", \"Special Elite Fallback\"","t":"fontFamily","s":"declared on the .special_elite_2cb45384-module__vxFYyW__variable next/font module class (raw/css-vars.json); a reader list/quote theme face, not resolved on :root","d":"The reader list-theme face `specialElite`."},"tradeWinds":{"v":"\"Trade Winds\", \"Trade Winds Fallback\"","t":"fontFamily","s":"declared on the .trade_winds_3c1588aa-module__UT13Fa__variable next/font module class (raw/css-vars.json); a reader list/quote theme face, not resolved on :root","d":"The reader list-theme face `tradeWinds`."}}},"size":{"display":{"v":"80px","t":"dimension","s":"computed fontSize of section-h2 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 80px marketing section display (Heldane Display)."},"masthead":{"v":"72px","t":"dimension","s":"computed fontSize of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 72px home hero masthead — Heldane Display, 62px line."},"discoverTitle":{"v":"64px","t":"dimension","s":"computed fontSize of disc-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 64px /discover headline — Heldane Display, cream ink."},"pageTitle":{"v":"58px","t":"dimension","s":"computed fontSize of clubs-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 58px catalog/support masthead (clubs index, support)."},"detailTitle":{"v":"46px","t":"dimension","s":"computed fontSize of book-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 46px book/club detail title — also the 390px hero size."},"sectionTitle":{"v":"36px","t":"dimension","s":"computed fontSize of club-h2 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 36px in-page section title."},"panelTitle":{"v":"26px","t":"dimension","s":"computed fontSize of signin-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 26px sign-in panel title."},"feature":{"v":"24px","t":"dimension","s":"computed fontSize of feature-h default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 24px marketing feature heading."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of faq-q default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 16px body/support copy size."},"small":{"v":"15px","t":"dimension","s":"computed fontSize of search-input default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 15px search-field text."},"control":{"v":"14px","t":"dimension","s":"computed fontSize of btn-primary default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 14px control label."},"footerText":{"v":"14px","t":"dimension","s":"computed fontSize of footer-link default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 14px footer-link text."},"trigger":{"v":"14px","t":"dimension","s":"computed fontSize of search-trigger default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 14px Inter label inside the unstyled 13.333px search-trigger shell."},"meta":{"v":"12px","t":"dimension","s":"computed fontSize of author-link default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 12px byline/meta size."},"micro":{"v":"10px","t":"dimension","s":"computed fontSize of spoiler-pill default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 10px badge/pill label."},"fallback":{"v":"13.3333px","t":"dimension","s":"computed fontSize of icon-btn default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 13.333px browser-default Arial left on icon-only controls — no font styles reach them."}},"lineHeight":{"masthead":{"v":"62px","t":"dimension","s":"computed lineHeight of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 62px hero masthead line (~0.86x)."},"sectionTitle":{"v":"36px","t":"dimension","s":"computed lineHeight of club-h2 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 36px section-title line (1x)."},"detailTitle":{"v":"48px","t":"dimension","s":"computed lineHeight of book-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 48px detail-title line."},"body":{"v":"20px","t":"dimension","s":"computed lineHeight of faq-q default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The 20px body line (1.25x)."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of mkt-header default (raw/components-computed.json)","d":"Body/regular weight."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"The Heldane display weight on mastheads."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of btn-primary default (raw/components-computed.json)","d":"Control-label weight."},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of clubs-h1 default (raw/components-computed.json)","d":"The heldane bold masthead weight (catalog skin)."}}},"color":{"amber":{"100":{"v":"#fff6db","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-amber-100","d":"The declared `--color-amber-100`."},"200":{"v":"#f8f89c","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-amber-200","d":"The declared `--color-amber-200`."},"300":{"v":"#f4d46f","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-amber-300","d":"The declared `--color-amber-300`."},"400":{"v":"#fac826","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-amber-400","d":"The declared `--color-amber-400`."},"500":{"v":"#c2970d","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-amber-500","d":"The declared `--color-amber-500`."},"fade":{"10":{"v":"rgba(244, 212, 111, 0.1)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-amber-fade-10","d":"The declared `--color-amber-fade-10`."},"20":{"v":"rgba(244, 212, 111, 0.2)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-amber-fade-20","d":"The declared `--color-amber-fade-20`."}}},"black":{"default":{"v":"#070607","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-black","d":"The declared `--color-black`."},"100":{"v":"#070607","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-black-100","d":"The declared `--color-black-100`."}},"coral":{"100":{"v":"#ffefe3","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-coral-100","d":"The declared `--color-coral-100`."},"200":{"v":"#f7d1b6","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-coral-200","d":"The declared `--color-coral-200`."},"300":{"v":"#f0af80","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-coral-300","d":"The declared `--color-coral-300`."},"400":{"v":"#f38b56","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-coral-400","d":"The declared `--color-coral-400`."},"500":{"v":"#f25b0e","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-coral-500","d":"The declared `--color-coral-500`."}},"dark":{"fade":{"10":{"v":"rgba(7, 6, 7, 0.1)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-dark-fade-10","d":"The declared `--color-dark-fade-10`."},"20":{"v":"rgba(7, 6, 7, 0.2)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-dark-fade-20","d":"The declared `--color-dark-fade-20`."},"25":{"v":"rgba(7, 6, 7, 0.25)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-dark-fade-25","d":"The declared `--color-dark-fade-25`."},"30":{"v":"rgba(7, 6, 7, 0.3)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-dark-fade-30","d":"The declared `--color-dark-fade-30`."},"40":{"v":"rgba(7, 6, 7, 0.4)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-dark-fade-40","d":"The declared `--color-dark-fade-40`."},"5":{"v":"rgba(7, 6, 7, 0.05)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-dark-fade-5","d":"The declared `--color-dark-fade-5`."},"60":{"v":"rgba(7, 6, 7, 0.6)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-dark-fade-60","d":"The declared `--color-dark-fade-60`."},"75":{"v":"rgba(7, 6, 7, 0.75)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-dark-fade-75","d":"The declared `--color-dark-fade-75`."}}},"fern":{"100":{"v":"#e8f9e6","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-fern-100","d":"The declared `--color-fern-100`."},"400":{"v":"#6e9a36","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-fern-400","d":"The declared `--color-fern-400`."}},"forest":{"100":{"v":"#12654c","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-forest-100","d":"The declared `--color-forest-100`."},"200":{"v":"#064c37","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-forest-200","d":"The declared `--color-forest-200`."},"300":{"v":"#053829","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-forest-300","d":"The declared `--color-forest-300`."},"400":{"v":"#042119","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-forest-400","d":"The declared `--color-forest-400`."},"500":{"v":"#06120e","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-forest-500","d":"The declared `--color-forest-500`."}},"graphite":{"default":{"v":"#292229","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-graphite","d":"The declared `--color-graphite`."},"100":{"v":"#f8f8f8","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-graphite-100","d":"The declared `--color-graphite-100`."},"200":{"v":"#e1e0e1","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-graphite-200","d":"The declared `--color-graphite-200`."},"300":{"v":"#b1acaf","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-graphite-300","d":"The declared `--color-graphite-300`."},"400":{"v":"#746e72","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-graphite-400","d":"The declared `--color-graphite-400`."},"500":{"v":"#4b4649","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-graphite-500","d":"The declared `--color-graphite-500`."},"600":{"v":"#1b1a1b","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-graphite-600","d":"The declared `--color-graphite-600`."}},"green":{"dark":{"v":"#4f8111","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-green-dark","d":"The declared `--color-green-dark`."}},"indigo":{"100":{"v":"#e6efff","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-indigo-100","d":"The declared `--color-indigo-100`."},"400":{"v":"#4252f1","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-indigo-400","d":"The declared `--color-indigo-400`."}},"iris":{"100":{"v":"#eddeff","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-iris-100","d":"The declared `--color-iris-100`."},"200":{"v":"#cca7f7","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-iris-200","d":"The declared `--color-iris-200`."},"300":{"v":"#9042e9","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-iris-300","d":"The declared `--color-iris-300`."},"400":{"v":"#4d0c98","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-iris-400","d":"The declared `--color-iris-400`."},"500":{"v":"#230841","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-iris-500","d":"The declared `--color-iris-500`."}},"lemon":{"400":{"v":"#f2d63f","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-lemon-400","d":"The declared `--color-lemon-400`."}},"meadow":{"400":{"v":"#81ba6d","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-meadow-400","d":"The declared `--color-meadow-400`."}},"olive":{"100":{"v":"#e9f3ce","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-olive-100","d":"The declared `--color-olive-100`."},"200":{"v":"#c6dd88","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-olive-200","d":"The declared `--color-olive-200`."},"300":{"v":"#88c900","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-olive-300","d":"The declared `--color-olive-300`."},"400":{"v":"#76a938","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-olive-400","d":"The declared `--color-olive-400`."},"500":{"v":"#526c03","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-olive-500","d":"The declared `--color-olive-500`."},"fade":{"10":{"v":"rgba(118, 169, 56, 0.1)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-olive-fade-10","d":"The declared `--color-olive-fade-10`."},"20":{"v":"rgba(118, 169, 56, 0.2)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-olive-fade-20","d":"The declared `--color-olive-fade-20`."},"30":{"v":"rgba(118, 169, 56, 0.3)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-olive-fade-30","d":"The declared `--color-olive-fade-30`."}}},"pearl":{"100":{"v":"#f7f4eb","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-pearl-100","d":"The declared `--color-pearl-100`."},"200":{"v":"#ebe7d9","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-pearl-200","d":"The declared `--color-pearl-200`."},"300":{"v":"#c9c3b0","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-pearl-300","d":"The declared `--color-pearl-300`."},"400":{"v":"#b0aa95","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-pearl-400","d":"The declared `--color-pearl-400`."},"50":{"v":"#fcf9f5","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-pearl-50","d":"The declared `--color-pearl-50`."},"500":{"v":"#797566","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-pearl-500","d":"The declared `--color-pearl-500`."},"extra":{"light":{"v":"#f7f4ee","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-pearl-extra-light","d":"The declared `--color-pearl-extra-light`."}}},"pewter":{"grey":{"v":"#6c728c","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-pewter-grey","d":"The declared `--color-pewter-grey`."}},"quote":{"theme":{"1":{"v":"#064c37","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-1","d":"The declared `--color-quote-theme-1`."},"10":{"v":"#bf9c16","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-10","d":"The declared `--color-quote-theme-10`."},"11":{"v":"#ad087e","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-11","d":"The declared `--color-quote-theme-11`."},"12":{"v":"#b74200","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-12","d":"The declared `--color-quote-theme-12`."},"2":{"v":"#c19c4e","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-2","d":"The declared `--color-quote-theme-2`."},"3":{"v":"#126ecc","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-3","d":"The declared `--color-quote-theme-3`."},"4":{"v":"#ff8000","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-4","d":"The declared `--color-quote-theme-4`."},"5":{"v":"#e4adbb","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-5","d":"The declared `--color-quote-theme-5`."},"6":{"v":"#161015","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-6","d":"The declared `--color-quote-theme-6`."},"7":{"v":"#526c03","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-7","d":"The declared `--color-quote-theme-7`."},"8":{"v":"#030096","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-8","d":"The declared `--color-quote-theme-8`."},"9":{"v":"#0076ba","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-quote-theme-9","d":"The declared `--color-quote-theme-9`."}}},"rose":{"100":{"v":"#ffeaef","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-rose-100","d":"The declared `--color-rose-100`."},"200":{"v":"#ffd0dc","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-rose-200","d":"The declared `--color-rose-200`."},"300":{"v":"#f5afc0","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-rose-300","d":"The declared `--color-rose-300`."},"400":{"v":"#e895ad","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-rose-400","d":"The declared `--color-rose-400`."},"500":{"v":"#cd5786","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-rose-500","d":"The declared `--color-rose-500`."}},"royal":{"100":{"v":"#e4f5ff","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-royal-100","d":"The declared `--color-royal-100`."},"200":{"v":"#7ac3ed","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-royal-200","d":"The declared `--color-royal-200`."},"300":{"v":"#0076ba","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-royal-300","d":"The declared `--color-royal-300`."},"400":{"v":"#0064c3","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-royal-400","d":"The declared `--color-royal-400`."},"500":{"v":"#00479b","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-royal-500","d":"The declared `--color-royal-500`."},"fade":{"10":{"v":"rgba(122, 195, 237, 0.1)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-royal-fade-10","d":"The declared `--color-royal-fade-10`."},"20":{"v":"rgba(122, 195, 237, 0.2)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-royal-fade-20","d":"The declared `--color-royal-fade-20`."},"30":{"v":"rgba(122, 195, 237, 0.3)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-royal-fade-30","d":"The declared `--color-royal-fade-30`."}}},"scarlet":{"100":{"v":"#ffebe6","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-scarlet-100","d":"The declared `--color-scarlet-100`."},"200":{"v":"#f6c2b5","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-scarlet-200","d":"The declared `--color-scarlet-200`."},"300":{"v":"#ffa095","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-scarlet-300","d":"The declared `--color-scarlet-300`."},"400":{"v":"#fc7676","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-scarlet-400","d":"The declared `--color-scarlet-400`."},"500":{"v":"#d12e2e","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-scarlet-500","d":"The declared `--color-scarlet-500`."},"fade":{"10":{"v":"rgba(255, 160, 149, 0.1)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-scarlet-fade-10","d":"The declared `--color-scarlet-fade-10`."},"20":{"v":"rgba(255, 160, 149, 0.2)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-scarlet-fade-20","d":"The declared `--color-scarlet-fade-20`."}}},"sky":{"400":{"v":"#43a1d7","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-sky-400","d":"The declared `--color-sky-400`."}},"white":{"default":{"v":"#ffffff","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-white","d":"The declared `--color-white`."},"100":{"v":"#ffffff","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-white-100","d":"The declared `--color-white-100`."},"fade":{"10":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-white-fade-10","d":"The declared `--color-white-fade-10`."},"20":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-white-fade-20","d":"The declared `--color-white-fade-20`."},"25":{"v":"rgba(255, 255, 255, 0.25)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-white-fade-25","d":"The declared `--color-white-fade-25`."},"40":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-white-fade-40","d":"The declared `--color-white-fade-40`."},"50":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-white-fade-50","d":"The declared `--color-white-fade-50`."},"70":{"v":"rgba(255, 255, 255, 0.7)","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-white-fade-70","d":"The declared `--color-white-fade-70`."}}},"yellow":{"v":"#f2d63f","t":"color","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --color-yellow","d":"The declared `--color-yellow`."}},"radius":{"0":{"v":"0px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-0","d":"The declared `--radius-0`."},"12":{"v":"12px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-12","d":"The declared `--radius-12`."},"16":{"v":"16px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-16","d":"The declared `--radius-16`."},"2":{"v":"2px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-2","d":"The declared `--radius-2`."},"20":{"v":"20px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-20","d":"The declared `--radius-20`."},"24":{"v":"24px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-24","d":"The declared `--radius-24`."},"32":{"v":"32px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-32","d":"The declared `--radius-32`."},"4":{"v":"4px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-4","d":"The declared `--radius-4`."},"40":{"v":"40px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-40","d":"The declared `--radius-40`."},"6":{"v":"6px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-6","d":"The declared `--radius-6`."},"8":{"v":"8px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-8","d":"The declared `--radius-8`."},"full":{"v":"9999px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --radius-full","d":"The declared `--radius-full`."},"pill":{"v":"{radius.full}","t":"dimension","s":"computed borderTopLeftRadius of btn-primary default (raw/components-computed.json); matches declared --radius-full","d":"The catalog pill radius (radius-full 9999px)."},"emotionPill":{"v":"60px","t":"dimension","s":"the painted radius of getapp-hero's rounded layer default (raw/components-computed.json paint list)","d":"The emotion skin's 60px pill radius — a literal, not a declared var."},"fieldShell":{"v":"44px","t":"dimension","s":"the painted radius of show-btn's wrapper ancestor default (raw/components-computed.json)","d":"The 44px radius of the sign-in text-input shell."},"modal":{"v":"{radius.24}","t":"dimension","s":"the painted radius of search-modal's rounded layer default (raw/components-computed.json paint list); matches declared --radius-24","d":"The search modal corner radius (radius-24)."},"input":{"v":"{radius.12}","t":"dimension","s":"the painted radius of search-input's rounded layer default (raw/components-computed.json paint list); matches declared --radius-12","d":"The search input corner radius (radius-12)."},"cover":{"v":"{radius.8}","t":"dimension","s":"the painted radius of book-card's rounded layer default (raw/components-computed.json paint list); matches declared --radius-8","d":"The book-cover thumbnail radius (radius-8)."}},"shadow":{"above":{"1":{"v":"rgba(0, 0, 0, 0.4) 0px -4px 6px -2px","t":"other","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --shadow-above-1","d":"The declared `--shadow-above-1` elevation layer."},"2":{"v":"rgba(0, 0, 0, 0.12) 0px -6px 16px 0px","t":"other","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --shadow-above-2","d":"The declared `--shadow-above-2` elevation layer."},"3":{"v":"rgba(0, 0, 0, 0.17) 0px -8px 36px 0px","t":"other","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --shadow-above-3","d":"The declared `--shadow-above-3` elevation layer."},"4":{"v":"rgba(0, 0, 0, 0.28) 0px -20px 56px 0px","t":"other","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --shadow-above-4","d":"The declared `--shadow-above-4` elevation layer."}},"below":{"1":{"v":"rgba(0, 0, 0, 0.4) 0px 4px 6px -2px","t":"other","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --shadow-below-1","d":"The declared `--shadow-below-1` elevation layer."},"2":{"v":"rgba(0, 0, 0, 0.12) 0px 6px 16px 0px","t":"other","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --shadow-below-2","d":"The declared `--shadow-below-2` elevation layer."},"3":{"v":"rgba(0, 0, 0, 0.17) 0px 8px 36px 0px","t":"other","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --shadow-below-3","d":"The declared `--shadow-below-3` elevation layer."},"4":{"v":"rgba(0, 0, 0, 0.28) 0px 20px 56px 0px","t":"other","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --shadow-below-4","d":"The declared `--shadow-below-4` elevation layer."}}},"border":{"width":{"1":{"v":"1px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --border-width-1","d":"The declared `--border-width-1`."},"2":{"v":"2px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --border-width-2","d":"The declared `--border-width-2`."},"3":{"v":"3px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --border-width-3","d":"The declared `--border-width-3`."}}},"breakpoint":{"2xl":{"v":"1536px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --breakpoint-2xl","d":"The declared `--breakpoint-2xl`."},"lg":{"v":"1024px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --breakpoint-lg","d":"The declared `--breakpoint-lg`."},"md":{"v":"768px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --breakpoint-md","d":"The declared `--breakpoint-md`."},"mobile":{"v":"430px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --breakpoint-mobile","d":"The declared `--breakpoint-mobile`."},"mobileSm":{"v":"392px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --breakpoint-mobile-sm","d":"The declared `--breakpoint-mobile-sm`."},"sm":{"v":"640px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --breakpoint-sm","d":"The declared `--breakpoint-sm`."},"xl":{"v":"1280px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --breakpoint-xl","d":"The declared `--breakpoint-xl`."}},"spacing":{"base":{"v":"1px","t":"dimension","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --spacing","d":"The declared `--spacing`."}},"animate":{"flicker":{"v":"flicker 1s linear infinite","t":"other","s":"declared design-system variable in fable.co's app bundle (raw/css-vars.json): --animate-flicker","d":"The declared `flicker 1s linear infinite` keyframe animation."}},"motion":{"catalogControl":{"v":"background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease, border-color 0.15s ease","t":"other","s":"computed transition of btn-primary default (raw/components-computed.json)","d":"The 0.15s ease on catalog controls (the Button module's background/color/opacity/border transition)."},"emotionControl":{"v":"border 0.2s ease, background 0.2s ease, color 0.2s ease","t":"other","s":"computed transition of getapp-hero default (raw/components-computed.json)","d":"The 0.2s ease on emotion pill controls."},"cardZoom":{"v":"transform 0.4s ease-in-out","t":"other","s":"computed transition of club-card default (raw/components-computed.json)","d":"The 0.4s ease-in-out transform on the marketing club card (scale 1.01 on hover)."},"hoverFade":{"v":0.85,"t":"number","s":"computed opacity of btn-primary hover/pressed (raw/components-computed.json)","d":"The 0.85 opacity the catalog primary button fades to on hover/pressed."}},"component":{"headerHeight":{"v":"60px","t":"dimension","s":"measured h of cat-header default (raw/components-computed.json)","d":"The 60px header bar (identical on both skins)."},"logoWidth":{"v":"82px","t":"dimension","s":"measured w of mkt-logo default (raw/components-computed.json)","d":"The ~82px Fable wordmark."},"heroMastheadW":{"v":"500px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The hero masthead measure."},"heroCoverW":{"v":"151px","t":"dimension","s":"measured w of hero-cover default (raw/components-computed.json)","d":"The 151px hero cover tile."},"heroCoverH":{"v":"225px","t":"dimension","s":"measured h of hero-cover default (raw/components-computed.json)","d":"The 225px hero cover height."},"marketingPillH":{"v":"52px","t":"dimension","s":"measured h of getapp-hero default (raw/components-computed.json)","d":"The 52px marketing pill height."},"marketingPillRadius":{"v":"60px","t":"dimension","s":"measured paint:radius of getapp-hero default (raw/components-computed.json)","d":"The 60px emotion pill radius."},"ctaHeight":{"v":"44px","t":"dimension","s":"measured h of getapp-cta default (raw/components-computed.json)","d":"The 44px 'Get the app' CTA height."},"catalogButtonH":{"v":"52px","t":"dimension","s":"measured h of btn-primary default (raw/components-computed.json)","d":"The 52px catalog button height."},"catalogButtonW":{"v":"361px","t":"dimension","s":"measured w of btn-primary default (raw/components-computed.json)","d":"The 361px catalog button width (form-width)."},"genrePillH":{"v":"46px","t":"dimension","s":"measured h of genre-pill default (raw/components-computed.json)","d":"The 46px genre chip height."},"iconBtn":{"v":"40px","t":"dimension","s":"measured w of icon-btn default (raw/components-computed.json)","d":"The 40px round icon button."},"searchIconBtn":{"v":"44px","t":"dimension","s":"measured w of search-icon-btn default (raw/components-computed.json)","d":"The 44px pearl search button."},"searchTriggerW":{"v":"440px","t":"dimension","s":"measured w of search-trigger default (raw/components-computed.json)","d":"The 440px clubs search pill."},"searchTriggerH":{"v":"52px","t":"dimension","s":"measured h of search-trigger default (raw/components-computed.json)","d":"The 52px clubs search pill height."},"searchModalW":{"v":"480px","t":"dimension","s":"measured w of search-modal default (raw/components-computed.json)","d":"The 480px search modal."},"searchModalH":{"v":"497px","t":"dimension","s":"measured h of search-modal default (raw/components-computed.json)","d":"The 497px search modal height."},"searchInputH":{"v":"41px","t":"dimension","s":"measured h of search-input default (raw/components-computed.json)","d":"The 41px modal search input."},"spoilerPillH":{"v":"28px","t":"dimension","s":"measured h of spoiler-pill default (raw/components-computed.json)","d":"The 28px 'Spoilers' sizeXs badge."},"clubCardW":{"v":"256px","t":"dimension","s":"measured w of club-card-cat default (raw/components-computed.json)","d":"The 256px stacked-cover club card."},"clubCardH":{"v":"372px","t":"dimension","s":"measured h of club-card-cat default (raw/components-computed.json)","d":"The 372px club card height."},"bookCoverW":{"v":"167px","t":"dimension","s":"measured w of book-card default (raw/components-computed.json)","d":"The 167px book card cover width."},"appBannerH":{"v":"132px","t":"dimension","s":"measured h of app-banner default (raw/components-computed.json)","d":"The 132px app-download banner."},"signinPanelW":{"v":"396px","t":"dimension","s":"measured w of signin-panel default (raw/components-computed.json)","d":"The ~396px sign-in panel width."},"signinFieldH":{"v":"50px","t":"dimension","s":"measured h of field-email default (raw/components-computed.json)","d":"The ~50px sign-in field height (52px painted shell)."},"signinButtonH":{"v":"44px","t":"dimension","s":"measured h of submit-btn default (raw/components-computed.json)","d":"The 44px sign-in button height."},"supportCardPad":{"v":"18px","t":"dimension","s":"measured paddingTop of help-card default (raw/components-computed.json)","d":"The 18px support-card padding."},"footerPadY":{"v":"100px","t":"dimension","s":"measured paddingTop of footer default (raw/components-computed.json)","d":"The 100px footer padding (80px on the phone)."},"mHeaderH":{"v":"60px","t":"dimension","s":"measured h of m-header default (raw/components-computed.json)","d":"The 60px phone header."},"mClubCardW":{"v":"316.89px","t":"dimension","s":"measured w of m-club-card default (raw/components-computed.json)","d":"The ~317px phone club card."},"mFooterPadY":{"v":"80px","t":"dimension","s":"measured paddingTop of m-footer default (raw/components-computed.json)","d":"The 80px phone footer padding."},"discoverFieldW":{"v":"420px","t":"dimension","s":"measured w of disc-field default (raw/components-computed.json)","d":"The 420px discover search field."},"discoverFieldH":{"v":"60.19px","t":"dimension","s":"measured h of disc-field default (raw/components-computed.json)","d":"The ~60px discover search field height."},"discoverPillH":{"v":"50.38px","t":"dimension","s":"measured h of disc-random default (raw/components-computed.json)","d":"The ~50px discover pill height."},"discoverWordmarkW":{"v":"80.75px","t":"dimension","s":"measured w of disc-wordmark default (raw/components-computed.json)","d":"The ~81px discover wordmark."},"skin":{"marketing":{"marketingInk":{"v":"{color.quote.theme.6}","t":"color","s":"computed color of signin-h1 default (raw/components-computed.json); matches declared color.quote.theme.6","d":"The emotion skin's near-black ink (#161015, quote-theme-6)."},"marketingPillFill":{"v":"{color.graphite.default}","t":"color","s":"computed backgroundColor of getapp-dark default (raw/components-computed.json); matches declared color.graphite.default","d":"The dark emotion pill fill (--color-graphite #292229)."},"marketingPillHoverFill":{"v":"#433944","t":"color","s":"computed backgroundColor of getapp-dark hover (raw/components-computed.json)","d":"The dark pill's hover fill (#433944 — a literal)."},"marketingPillInk":{"v":"{color.quote.theme.6}","t":"color","s":"computed color of getapp-hero default (raw/components-computed.json); matches declared color.quote.theme.6","d":"The ink on the white emotion pill (#161015)."},"marketingPillHoverInk":{"v":"#332e32","t":"color","s":"computed color of getapp-hero hover (raw/components-computed.json)","d":"The hover ink on emotion pills (#332e32 — a literal)."},"textInputBorder":{"v":"#bcbcbc","t":"color","s":"the 1px border painted on signin-panel's input shell default (raw/components-computed.json paint list)","d":"The #bcbcbc sign-in text-input hairline — a literal, not a declared var."}},"catalog":{"catalogFocus":{"v":"{color.royal.400}","t":"color","s":"computed outlineColor of cat-nav-link focus-visible (raw/components-computed.json); matches declared color.royal.400","d":"The catalog focus ring #0064c3 (--color-focus)."},"catalogChipHover":{"v":"{color.graphite.100}","t":"color","s":"computed backgroundColor of genre-pill hover (raw/components-computed.json); matches declared color.graphite.100","d":"The #f8f8f8 chip hover (graphite-100)."},"coverPlaceholder":{"v":"{color.pearl.200}","t":"color","s":"the painted background of book-card's layer default (raw/components-computed.json paint list); matches declared color.pearl.200","d":"The pearl-200 #ebe7d9 book-cover placeholder fill."},"bannerInk":{"v":"{color.forest.200}","t":"color","s":"computed color of app-banner default (raw/components-computed.json); matches declared color.forest.200","d":"The forest-200 #064c37 headline inside the forest-300 banner."},"modalShadow":{"v":"rgba(0, 0, 0, 0.12) 0px -6px 16px 0px","t":"other","s":"the painted shadow of search-modal default (raw/components-computed.json paint list)","d":"The search modal's elevation shadow."}},"discover":{"discoverPillFill":{"v":"{color.forest.400}","t":"color","s":"the painted background of disc-random's layer default (raw/components-computed.json paint list); matches declared color.forest.400","d":"The forest-400 #042119 discover pill fill."},"discoverPillInk":{"v":"#c5c1c5","t":"color","s":"computed color of disc-random default (raw/components-computed.json)","d":"The muted lilac-grey discover pill ink (#c5c1c5 — a literal)."},"discoverFieldInk":{"v":"{color.quote.theme.6}","t":"color","s":"computed color of disc-field default (raw/components-computed.json); matches declared color.quote.theme.6","d":"The #161015 ink inside the white discover field."},"wallScrim":{"v":"radial-gradient(120% 95% at 50% 32%, rgba(12, 92, 66, 0.85), rgba(0, 0, 0, 0) 64%), radial-gradient(85% 75% at 12% 4%, rgba(9, 74, 54, 0.6), rgba(0, 0, 0, 0) 62%), radial-gradient(80% 70% at 92% 100%, rgba(3, 40, 29, 0.7), rgba(0, 0, 0, 0) 64%), linear-gradient(160deg, rgb(7, 87, 64) 0%, rgb(4, 48, 31) 100%)","t":"other","s":"computed backgroundImage of disc-wall default (raw/components-computed.json)","d":"The layered radial-gradient scrim over the cover wall — rgba(12,92,66,0.85) lead stop, transparent by ~64%."},"fieldShadow":{"v":"rgba(12, 12, 12, 0.45) 0px 10px 34px 0px","t":"other","s":"computed boxShadow of disc-field default (raw/components-computed.json)","d":"The discover field's drop shadow — rgba(12,12,12,0.45) 0px 10px 34px."}}}}},"light":{"color":{"background":{"amber":{"v":"#fac826","t":"color","s":"css-var --color-background-amber (light)"},"amberfademid":{"v":"rgba(244, 212, 111, 0.2)","t":"color","s":"css-var --color-background-amberfademid (light)"},"coral":{"v":"#f25b0e","t":"color","s":"css-var --color-background-coral (light)"},"dark":{"v":"#1b1a1b","t":"color","s":"css-var --color-background-dark (light)"},"darkfadefixed":{"v":"rgba(7, 6, 7, 0.6)","t":"color","s":"css-var --color-background-darkfadefixed (light)"},"darkfadehigh":{"v":"rgba(7, 6, 7, 0.4)","t":"color","s":"css-var --color-background-darkfadehigh (light)"},"darkfadelow":{"v":"rgba(7, 6, 7, 0.1)","t":"color","s":"css-var --color-background-darkfadelow (light)"},"darkfadelowest":{"v":"rgba(7, 6, 7, 0.05)","t":"color","s":"css-var --color-background-darkfadelowest (light)"},"darkfademid":{"v":"rgba(7, 6, 7, 0.2)","t":"color","s":"css-var --color-background-darkfademid (light)"},"darkhover":{"v":"#4b4649","t":"color","s":"css-var --color-background-darkhover (light)"},"disabled":{"v":"#746e72","t":"color","s":"css-var --color-background-disabled (light)"},"disabled2":{"v":"#b1acaf","t":"color","s":"css-var --color-background-disabled2 (light)"},"error":{"v":"#d12e2e","t":"color","s":"css-var --color-background-error (light)"},"fern":{"v":"#6e9a36","t":"color","s":"css-var --color-background-fern (light)"},"fernlight":{"v":"#e8f9e6","t":"color","s":"css-var --color-background-fernlight (light)"},"forest":{"v":"#064c37","t":"color","s":"css-var --color-background-forest (light)"},"gray":{"v":"#e1e0e1","t":"color","s":"css-var --color-background-gray (light)"},"graylight":{"v":"#f8f8f8","t":"color","s":"css-var --color-background-graylight (light)"},"indigo":{"v":"#4252f1","t":"color","s":"css-var --color-background-indigo (light)"},"indigolight":{"v":"#e6efff","t":"color","s":"css-var --color-background-indigolight (light)"},"inverse":{"v":"#1b1a1b","t":"color","s":"css-var --color-background-inverse (light)"},"iris":{"v":"#4d0c98","t":"color","s":"css-var --color-background-iris (light)"},"lemon":{"v":"#f2d63f","t":"color","s":"css-var --color-background-lemon (light)"},"light":{"v":"#ffffff","t":"color","s":"css-var --color-background-light (light)"},"lightfadehigh":{"v":"rgba(255, 255, 255, 0.7)","t":"color","s":"css-var --color-background-lightfadehigh (light)"},"lightfadelow":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --color-background-lightfadelow (light)"},"lightfademid":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"css-var --color-background-lightfademid (light)"},"meadow":{"v":"#81ba6d","t":"color","s":"css-var --color-background-meadow (light)"},"mid":{"v":"#746e72","t":"color","s":"css-var --color-background-mid (light)"},"olive":{"v":"#76a938","t":"color","s":"css-var --color-background-olive (light)"},"olivedark":{"v":"#526c03","t":"color","s":"css-var --color-background-olivedark (light)"},"olivefadelow":{"v":"rgba(118, 169, 56, 0.1)","t":"color","s":"css-var --color-background-olivefadelow (light)"},"olivefademid":{"v":"rgba(118, 169, 56, 0.2)","t":"color","s":"css-var --color-background-olivefademid (light)"},"ondark":{"v":"#ffffff","t":"color","s":"css-var --color-background-ondark (light)"},"ondlight":{"v":"#070607","t":"color","s":"css-var --color-background-ondlight (light)"},"passive":{"v":"rgba(7, 6, 7, 0.1)","t":"color","s":"css-var --color-background-passive (light)"},"pearllight":{"v":"#fcf9f5","t":"color","s":"css-var --color-background-pearllight (light)"},"primary":{"v":"#ffffff","t":"color","s":"css-var --color-background-primary (light)"},"quote":{"v":"#06120e","t":"color","s":"css-var --color-background-quote (light)"},"rose":{"v":"#cd5786","t":"color","s":"css-var --color-background-rose (light)"},"royal":{"v":"#0064c3","t":"color","s":"css-var --color-background-royal (light)"},"royalfademid":{"v":"rgba(122, 195, 237, 0.2)","t":"color","s":"css-var --color-background-royalfademid (light)"},"scarletfademid":{"v":"rgba(255, 160, 149, 0.2)","t":"color","s":"css-var --color-background-scarletfademid (light)"},"secondary":{"v":"#f7f4eb","t":"color","s":"css-var --color-background-secondary (light)"},"sky":{"v":"#43a1d7","t":"color","s":"css-var --color-background-sky (light)"},"success":{"v":"#526c03","t":"color","s":"css-var --color-background-success (light)"},"surfacehigh":{"v":"#ffffff","t":"color","s":"css-var --color-background-surfacehigh (light)"},"tertiary":{"v":"#ebe7d9","t":"color","s":"css-var --color-background-tertiary (light)"}},"border":{"amber":{"v":"#c2970d","t":"color","s":"css-var --color-border-amber (light)"},"dark":{"v":"#1b1a1b","t":"color","s":"css-var --color-border-dark (light)"},"disabled":{"v":"#746e72","t":"color","s":"css-var --color-border-disabled (light)"},"error":{"v":"#d12e2e","t":"color","s":"css-var --color-border-error (light)"},"light":{"v":"#ffffff","t":"color","s":"css-var --color-border-light (light)"},"mid":{"v":"#746e72","t":"color","s":"css-var --color-border-mid (light)"},"olive":{"v":"#76a938","t":"color","s":"css-var --color-border-olive (light)"},"ondark":{"v":"#ffffff","t":"color","s":"css-var --color-border-ondark (light)"},"passive":{"v":"rgba(7, 6, 7, 0.1)","t":"color","s":"css-var --color-border-passive (light)"},"primary":{"v":"#b1acaf","t":"color","s":"css-var --color-border-primary (light)"},"secondary":{"v":"#f7f4eb","t":"color","s":"css-var --color-border-secondary (light)"}},"focus":{"v":"#0064c3","t":"color","s":"css-var --color-focus (light)"},"line":{"passive":{"v":"rgba(7, 6, 7, 0.1)","t":"color","s":"css-var --color-line-passive (light)"},"primary":{"v":"#b1acaf","t":"color","s":"css-var --color-line-primary (light)"}},"olive":{"v":"#526c03","t":"color","s":"css-var --color-olive (light)"},"primary":{"v":"#1b1a1b","t":"color","s":"css-var --color-primary (light)"},"secondary":{"v":"#4b4649","t":"color","s":"css-var --color-secondary (light)"},"text":{"amber":{"v":"#c2970d","t":"color","s":"css-var --color-text-amber (light)"},"dark":{"v":"#1b1a1b","t":"color","s":"css-var --color-text-dark (light)"},"disabled":{"v":"#746e72","t":"color","s":"css-var --color-text-disabled (light)"},"disabled2":{"v":"#4b4649","t":"color","s":"css-var --color-text-disabled2 (light)"},"error":{"v":"#d12e2e","t":"color","s":"css-var --color-text-error (light)"},"light":{"v":"#ffffff","t":"color","s":"css-var --color-text-light (light)"},"mid":{"v":"#746e72","t":"color","s":"css-var --color-text-mid (light)"},"olive":{"v":"#76a938","t":"color","s":"css-var --color-text-olive (light)"},"ondark":{"v":"#ffffff","t":"color","s":"css-var --color-text-ondark (light)"},"primary":{"v":"#1b1a1b","t":"color","s":"css-var --color-text-primary (light)"},"royal":{"v":"#0064c3","t":"color","s":"css-var --color-text-royal (light)"},"royalfixed":{"v":"#7ac3ed","t":"color","s":"css-var --color-text-royalfixed (light)"},"secondary":{"v":"#4b4649","t":"color","s":"css-var --color-text-secondary (light)"},"sub":{"v":"#b1acaf","t":"color","s":"css-var --color-text-sub (light)"},"success":{"v":"#526c03","t":"color","s":"css-var --color-text-success (light)"}}},"text":{"ink":{"v":"{color.graphite.600}","t":"color","s":"computed color of cat-nav-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.graphite.600","d":"The near-black catalog ink (graphite-600 / --color-text-primary)."},"emotionInk":{"v":"{color.quote.theme.6}","t":"color","s":"computed color of signin-h1 default (raw/components-computed.json); matches declared color.quote.theme.6","d":"The softer near-black the emotion marketing pages use (quote-theme-6 #161015)."},"onDark":{"v":"{color.pearl.extra.light}","t":"color","s":"computed color of hero-h1 default (raw/components-computed.json); matches declared color.pearl.extra.light","d":"The cream display ink on forest and dark bands (pearl-extra-light #f7f4ee)."},"muted":{"v":"{color.graphite.500}","t":"color","s":"computed color of read-more default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.graphite.500","d":"The graphite secondary text (--color-text-secondary #4b4649); the club card mutes to #3f383d and the footer to #847f7c."},"footerMuted":{"v":"#847f7c","t":"color","s":"computed color of footer default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The warm grey footer text (#847f7c — unnamed in the stylesheet)."}},"action":{"ctaFill":{"v":"{color.graphite.600}","t":"color","s":"computed backgroundColor of btn-primary default (raw/components-computed.json); matches declared color.graphite.600","d":"The near-black catalog CTA fill (graphite-600)."},"ctaInk":{"v":"{color.white.default}","t":"color","s":"computed color of btn-primary default (raw/components-computed.json); matches declared color.white.default","d":"The white ink on the catalog CTA."},"emotionCtaFill":{"v":"{color.graphite.default}","t":"color","s":"computed backgroundColor of submit-btn default (raw/components-computed.json); matches declared color.graphite.default","d":"The dark emotion pill fill (named --color-graphite #292229)."},"emotionCtaInk":{"v":"{color.white.default}","t":"color","s":"computed color of submit-btn default (raw/components-computed.json); matches declared color.white.default","d":"The white ink on the dark emotion pill."}},"border":{"focusRing":{"v":"{color.royal.400}","t":"color","s":"computed outlineColor of btn-primary focus-visible (raw/components-computed.json); matches declared color.royal.400","d":"The catalog keyboard focus ring (declared --color-focus #0064c3)."},"emotionFocusRing":{"v":"#116ecd","t":"color","s":"computed outlineColor of mkt-nav-link focus-visible (raw/components-computed.json)","d":"The emotion pages' lighter blue focus outline (#116ecd — a literal, not a declared var)."},"hairline":{"v":"{color.graphite.300}","t":"color","s":"the 1px border painted on genre-pill default (raw/components-computed.json paint list); matches declared color.graphite.300","d":"The graphite-300 hairline on white pills/chips (--color-border-primary)."}},"background":{"page":{"v":"{color.white.default}","t":"color","s":"the painted background of search-modal's wrapper ancestor default (raw/components-computed.json); matches declared color.white.default","d":"The white catalog page field (--color-background-primary)."},"surface":{"v":"{color.pearl.100}","t":"color","s":"computed backgroundColor of search-icon-btn default (raw/components-computed.json); matches declared color.pearl.100","d":"The pearl-100 raised surface on circular icon buttons (--color-background-secondary)."},"surfaceHover":{"v":"{color.pearl.200}","t":"color","s":"computed backgroundColor of search-icon-btn hover (raw/components-computed.json); matches declared color.pearl.200","d":"The pearl-200 hover fill on icon buttons (--color-background-tertiary #ebe7d9)."},"band":{"v":"{color.forest.200}","t":"color","s":"the painted background of support-masthead's wrapper ancestor default (raw/components-computed.json); matches declared color.forest.200","d":"The deep forest-green masthead band (forest-200 #064c37 = --color-background-forest)."},"appBanner":{"v":"{color.forest.300}","t":"color","s":"computed backgroundColor of app-banner default (raw/components-computed.json); matches declared color.forest.300","d":"The darker forest app-download banner (forest-300 #053829)."},"footer":{"v":"{color.black.default}","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json); matches declared color.black.default","d":"The near-black footer field (black-100 #070607)."}}},"dark":{"color":{"background":{"amber":{"v":"#fac826","t":"color","s":"css-var --color-background-amber (dark; not redeclared under .dark)"},"amberfademid":{"v":"rgba(244, 212, 111, 0.2)","t":"color","s":"css-var --color-background-amberfademid (dark; not redeclared under .dark)"},"coral":{"v":"#f38b56","t":"color","s":"css-var --color-background-coral (.dark scope, resolved through its declared var() chain)"},"dark":{"v":"#f8f8f8","t":"color","s":"css-var --color-background-dark (.dark scope, resolved through its declared var() chain)"},"darkfadefixed":{"v":"rgba(7, 6, 7, 0.6)","t":"color","s":"css-var --color-background-darkfadefixed (dark; not redeclared under .dark)"},"darkfadehigh":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"css-var --color-background-darkfadehigh (.dark scope, resolved through its declared var() chain)"},"darkfadelow":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --color-background-darkfadelow (.dark scope, resolved through its declared var() chain)"},"darkfadelowest":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --color-background-darkfadelowest (.dark scope, resolved through its declared var() chain)"},"darkfademid":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"css-var --color-background-darkfademid (.dark scope, resolved through its declared var() chain)"},"darkhover":{"v":"#e1e0e1","t":"color","s":"css-var --color-background-darkhover (.dark scope, resolved through its declared var() chain)"},"disabled":{"v":"#746e72","t":"color","s":"css-var --color-background-disabled (dark; not redeclared under .dark)"},"disabled2":{"v":"#746e72","t":"color","s":"css-var --color-background-disabled2 (.dark scope, resolved through its declared var() chain)"},"error":{"v":"#fc7676","t":"color","s":"css-var --color-background-error (.dark scope, resolved through its declared var() chain)"},"fern":{"v":"#6e9a36","t":"color","s":"css-var --color-background-fern (dark; not redeclared under .dark)"},"fernlight":{"v":"#e8f9e6","t":"color","s":"css-var --color-background-fernlight (dark; not redeclared under .dark)"},"forest":{"v":"#064c37","t":"color","s":"css-var --color-background-forest (dark; not redeclared under .dark)"},"gray":{"v":"#4b4649","t":"color","s":"css-var --color-background-gray (.dark scope, resolved through its declared var() chain)"},"graylight":{"v":"#1b1a1b","t":"color","s":"css-var --color-background-graylight (.dark scope, resolved through its declared var() chain)"},"indigo":{"v":"#4252f1","t":"color","s":"css-var --color-background-indigo (dark; not redeclared under .dark)"},"indigolight":{"v":"#e6efff","t":"color","s":"css-var --color-background-indigolight (dark; not redeclared under .dark)"},"inverse":{"v":"#4b4649","t":"color","s":"css-var --color-background-inverse (.dark scope, resolved through its declared var() chain)"},"iris":{"v":"#9042e9","t":"color","s":"css-var --color-background-iris (.dark scope, resolved through its declared var() chain)"},"lemon":{"v":"#f2d63f","t":"color","s":"css-var --color-background-lemon (dark; not redeclared under .dark)"},"light":{"v":"#ffffff","t":"color","s":"css-var --color-background-light (dark; not redeclared under .dark)"},"lightfadehigh":{"v":"rgba(7, 6, 7, 0.1)","t":"color","s":"css-var --color-background-lightfadehigh (.dark scope, resolved through its declared var() chain)"},"lightfadelow":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --color-background-lightfadelow (dark; not redeclared under .dark)"},"lightfademid":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"css-var --color-background-lightfademid (.dark scope, resolved through its declared var() chain)"},"meadow":{"v":"#81ba6d","t":"color","s":"css-var --color-background-meadow (dark; not redeclared under .dark)"},"mid":{"v":"#b1acaf","t":"color","s":"css-var --color-background-mid (.dark scope, resolved through its declared var() chain)"},"olive":{"v":"#88c900","t":"color","s":"css-var --color-background-olive (.dark scope, resolved through its declared var() chain)"},"olivedark":{"v":"#526c03","t":"color","s":"css-var --color-background-olivedark (dark; not redeclared under .dark)"},"olivefadelow":{"v":"rgba(118, 169, 56, 0.1)","t":"color","s":"css-var --color-background-olivefadelow (dark; not redeclared under .dark)"},"olivefademid":{"v":"rgba(118, 169, 56, 0.2)","t":"color","s":"css-var --color-background-olivefademid (dark; not redeclared under .dark)"},"ondark":{"v":"#070607","t":"color","s":"css-var --color-background-ondark (.dark scope, resolved through its declared var() chain)"},"ondlight":{"v":"#070607","t":"color","s":"css-var --color-background-ondlight (dark; not redeclared under .dark)"},"passive":{"v":"rgba(7, 6, 7, 0.6)","t":"color","s":"css-var --color-background-passive (.dark scope, resolved through its declared var() chain)"},"pearllight":{"v":"#1b1a1b","t":"color","s":"css-var --color-background-pearllight (.dark scope, resolved through its declared var() chain)"},"primary":{"v":"#070607","t":"color","s":"css-var --color-background-primary (.dark scope, resolved through its declared var() chain)"},"quote":{"v":"#06120e","t":"color","s":"css-var --color-background-quote (dark; not redeclared under .dark)"},"rose":{"v":"#e895ad","t":"color","s":"css-var --color-background-rose (.dark scope, resolved through its declared var() chain)"},"royal":{"v":"#0076ba","t":"color","s":"css-var --color-background-royal (.dark scope, resolved through its declared var() chain)"},"royalfademid":{"v":"rgba(122, 195, 237, 0.2)","t":"color","s":"css-var --color-background-royalfademid (dark; not redeclared under .dark)"},"scarletfademid":{"v":"rgba(255, 160, 149, 0.2)","t":"color","s":"css-var --color-background-scarletfademid (dark; not redeclared under .dark)"},"secondary":{"v":"#1b1a1b","t":"color","s":"css-var --color-background-secondary (.dark scope, resolved through its declared var() chain)"},"sky":{"v":"#43a1d7","t":"color","s":"css-var --color-background-sky (dark; not redeclared under .dark)"},"success":{"v":"#76a938","t":"color","s":"css-var --color-background-success (.dark scope, resolved through its declared var() chain)"},"surfacehigh":{"v":"#4b4649","t":"color","s":"css-var --color-background-surfacehigh (.dark scope, resolved through its declared var() chain)"},"tertiary":{"v":"#4b4649","t":"color","s":"css-var --color-background-tertiary (.dark scope, resolved through its declared var() chain)"}},"border":{"amber":{"v":"#fac826","t":"color","s":"css-var --color-border-amber (.dark scope, resolved through its declared var() chain)"},"dark":{"v":"#f8f8f8","t":"color","s":"css-var --color-border-dark (.dark scope, resolved through its declared var() chain)"},"disabled":{"v":"#746e72","t":"color","s":"css-var --color-border-disabled (dark; not redeclared under .dark)"},"error":{"v":"#fc7676","t":"color","s":"css-var --color-border-error (.dark scope, resolved through its declared var() chain)"},"light":{"v":"#ffffff","t":"color","s":"css-var --color-border-light (dark; not redeclared under .dark)"},"mid":{"v":"#746e72","t":"color","s":"css-var --color-border-mid (dark; not redeclared under .dark)"},"olive":{"v":"#88c900","t":"color","s":"css-var --color-border-olive (.dark scope, resolved through its declared var() chain)"},"ondark":{"v":"#070607","t":"color","s":"css-var --color-border-ondark (.dark scope, resolved through its declared var() chain)"},"passive":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --color-border-passive (.dark scope, resolved through its declared var() chain)"},"primary":{"v":"#746e72","t":"color","s":"css-var --color-border-primary (.dark scope, resolved through its declared var() chain)"},"secondary":{"v":"#1b1a1b","t":"color","s":"css-var --color-border-secondary (.dark scope, resolved through its declared var() chain)"}},"focus":{"v":"#0076ba","t":"color","s":"css-var --color-focus (.dark scope, resolved through its declared var() chain)"},"line":{"passive":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --color-line-passive (.dark scope, resolved through its declared var() chain)"},"primary":{"v":"#746e72","t":"color","s":"css-var --color-line-primary (.dark scope, resolved through its declared var() chain)"}},"olive":{"v":"#88c900","t":"color","s":"css-var --color-olive (.dark scope, resolved through its declared var() chain)"},"primary":{"v":"#f8f8f8","t":"color","s":"css-var --color-primary (.dark scope, resolved through its declared var() chain)"},"secondary":{"v":"#b1acaf","t":"color","s":"css-var --color-secondary (.dark scope, resolved through its declared var() chain)"},"text":{"amber":{"v":"#f4d46f","t":"color","s":"css-var --color-text-amber (.dark scope, resolved through its declared var() chain)"},"dark":{"v":"#1b1a1b","t":"color","s":"css-var --color-text-dark (dark; not redeclared under .dark)"},"disabled":{"v":"#746e72","t":"color","s":"css-var --color-text-disabled (dark; not redeclared under .dark)"},"disabled2":{"v":"#4b4649","t":"color","s":"css-var --color-text-disabled2 (dark; not redeclared under .dark)"},"error":{"v":"#fc7676","t":"color","s":"css-var --color-text-error (.dark scope, resolved through its declared var() chain)"},"light":{"v":"#ffffff","t":"color","s":"css-var --color-text-light (dark; not redeclared under .dark)"},"mid":{"v":"#b1acaf","t":"color","s":"css-var --color-text-mid (.dark scope, resolved through its declared var() chain)"},"olive":{"v":"#88c900","t":"color","s":"css-var --color-text-olive (.dark scope, resolved through its declared var() chain)"},"ondark":{"v":"#ffffff","t":"color","s":"css-var --color-text-ondark (dark; not redeclared under .dark)"},"primary":{"v":"#f8f8f8","t":"color","s":"css-var --color-text-primary (.dark scope, resolved through its declared var() chain)"},"royal":{"v":"#7ac3ed","t":"color","s":"css-var --color-text-royal (.dark scope, resolved through its declared var() chain)"},"royalfixed":{"v":"#7ac3ed","t":"color","s":"css-var --color-text-royalfixed (dark; not redeclared under .dark)"},"secondary":{"v":"#b1acaf","t":"color","s":"css-var --color-text-secondary (.dark scope, resolved through its declared var() chain)"},"sub":{"v":"#b1acaf","t":"color","s":"css-var --color-text-sub (dark; not redeclared under .dark)"},"success":{"v":"#76a938","t":"color","s":"css-var --color-text-success (.dark scope, resolved through its declared var() chain)"}}},"text":{"discoverInk":{"v":"{color.pearl.extra.light}","t":"color","s":"computed color of disc-h1 default (raw/components-computed.json); matches declared color.pearl.extra.light","d":"The cream ink over the /discover cover wall (pearl-extra-light)."},"footerInk":{"v":"{color.white.default}","t":"color","s":"computed color of footer default (raw/components-computed.json); matches declared color.white.default","d":"The white footer ink (text-ondark)."}},"background":{"footer":{"v":"{color.black.default}","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json); matches the .dark scope's --color-background-primary (black-100); matches declared color.black.default","d":"The measured near-black footer — the same #070607 the .dark scope paints as background-primary."}}}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the scoped .dark surface — declared, not painted publicly)']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.border || {}).width || {}, 'border.width.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.animate || {}, 'animate.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
-  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  // Aliases are set-relative: {font.size.body} and the palette scales live
-  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
-  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
-    let node = root;
-    for (const k of m[1].split('.')) node = node && node[k];
-    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
-  }
-  return v;
-};
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fable</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
+  <p>
+    <button class="primary">Login with email</button>
+    <span class="chip">Fantasy</span>
+  </p>
+  <p class="note">One light theme. Focus on Get the app is a 2px outline in the link blue. The signed-in app was not reached.</p>
+</div>
 </body>
 </html>

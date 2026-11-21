@@ -2,7 +2,7 @@
 
 Computed styles read from frame.io on 2026-11-16 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the dark marketing pages (home, pricing, contact, contact/form, customers, the Ford case study, integrations and what's-new), the light sign-in surface at accounts.frame.io/welcome (a separate styled-components stack that shares none of the marketing site's custom properties), and the mobile nav overlay — with the cookie consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). frame.io exposes no signed-out theme switch; the marketing pages paint the one dark theme and the welcome page paints its own light theme. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
-States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
+States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into and left empty; `filled` is not captured, because nothing is typed; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
 ## Components
 
@@ -866,81 +866,81 @@ Crops: `form-panel-default.png`.
 
 #### form-name
 
-Name field. The underlined "Name" input; focused and typed into then cleared — never submitted.
+Name field. The underlined "Name" input; photographed empty; focus lands in the field; nothing is typed.
 
-Page: contactform. Selector: `contact Name input`. States: default, focused, filled.
+Page: contactform. Selector: `contact Name input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 431 x 48 | = | = |
-| Padding | 1px 2px | = | = |
-| Border | T: none; R: none; B: 1px solid #2e2f40; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | FrameGothic 15px/21.75px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #dedfee | = | = |
-| Transition | border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) | = | = |
-| Cursor | text | = | = |
-| Placeholder | #dedfee, opacity 1 | = | = |
-| Painted layers | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40 | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #fcfcfc | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #fcfcfc |
-| How | at rest | clicked into the field | typed "Example Name", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 431 x 48 | = |
+| Padding | 1px 2px | = |
+| Border | T: none; R: none; B: 1px solid #2e2f40; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | FrameGothic 15px/21.75px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #dedfee | = |
+| Transition | border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) | = |
+| Cursor | text | = |
+| Placeholder | #dedfee, opacity 1 | = |
+| Painted layers | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40 | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #fcfcfc |
+| How | at rest | clicked into the field |
 
-Crops: `form-name-default.png`, `form-name-focused.png`, `form-name-filled.png`.
+Crops: `form-name-default.png`, `form-name-focused.png`.
 
 #### form-email
 
-Email field. The underlined "Email" input; focused and typed into then cleared — never submitted.
+Email field. The underlined "Email" input; photographed empty; focus lands in the field; nothing is typed.
 
-Page: contactform. Selector: `contact Email input`. States: default, focused, filled.
+Page: contactform. Selector: `contact Email input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 431 x 48 | = | = |
-| Padding | 1px 2px | = | = |
-| Border | T: none; R: none; B: 1px solid #2e2f40; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | FrameGothic 15px/21.75px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #dedfee | = | = |
-| Transition | border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) | = | = |
-| Cursor | text | = | = |
-| Placeholder | #dedfee, opacity 1 | = | = |
-| Painted layers | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40 | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #fcfcfc | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #fcfcfc |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 431 x 48 | = |
+| Padding | 1px 2px | = |
+| Border | T: none; R: none; B: 1px solid #2e2f40; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | FrameGothic 15px/21.75px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #dedfee | = |
+| Transition | border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) | = |
+| Cursor | text | = |
+| Placeholder | #dedfee, opacity 1 | = |
+| Painted layers | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40 | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #fcfcfc |
+| How | at rest | clicked into the field |
 
-Crops: `form-email-default.png`, `form-email-focused.png`, `form-email-filled.png`.
+Crops: `form-email-default.png`, `form-email-focused.png`.
 
 #### form-message
 
-Message field. The underlined "Message" input; focused and typed into then cleared — never submitted.
+Message field. The underlined "Message" input; photographed empty; focus lands in the field; nothing is typed.
 
-Page: contactform. Selector: `contact Message input`. States: default, focused, filled.
+Page: contactform. Selector: `contact Message input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 886 x 48 | = | = |
-| Padding | 1px 2px | = | = |
-| Border | T: none; R: none; B: 1px solid #2e2f40; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | FrameGothic 15px/21.75px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #dedfee | = | = |
-| Transition | border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) | = | = |
-| Cursor | text | = | = |
-| Placeholder | #dedfee, opacity 1 | = | = |
-| Painted layers | input.TextInput_textInput__d8dTK.typography_body__vVxn5 886.0x48.0 border B:1px solid #2e2f40 | input.TextInput_textInput__d8dTK.typography_body__vVxn5 886.0x48.0 border B:1px solid #fcfcfc | input.TextInput_textInput__d8dTK.typography_body__vVxn5 886.0x48.0 border B:1px solid #fcfcfc |
-| How | at rest | clicked into the field | typed "Hello, this is a test.", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 886 x 48 | = |
+| Padding | 1px 2px | = |
+| Border | T: none; R: none; B: 1px solid #2e2f40; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | FrameGothic 15px/21.75px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #dedfee | = |
+| Transition | border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) | = |
+| Cursor | text | = |
+| Placeholder | #dedfee, opacity 1 | = |
+| Painted layers | input.TextInput_textInput__d8dTK.typography_body__vVxn5 886.0x48.0 border B:1px solid #2e2f40 | input.TextInput_textInput__d8dTK.typography_body__vVxn5 886.0x48.0 border B:1px solid #fcfcfc |
+| How | at rest | clicked into the field |
 
-Crops: `form-message-default.png`, `form-message-focused.png`, `form-message-filled.png`.
+Crops: `form-message-default.png`, `form-message-focused.png`.
 
 #### form-submit
 
@@ -1002,29 +1002,29 @@ Crops: `login-panel-default.png`.
 
 #### login-email
 
-Email field (sign-in). The "Email" input with placeholder "you@example.com"; focused and typed into then cleared — never submitted.
+Email field (sign-in). The "Email" input with placeholder "you@example.com"; photographed empty; focus lands in the field; nothing is typed.
 
-Page: welcome. Selector: `welcome input[type=email]`. States: default, focused, filled.
+Page: welcome. Selector: `welcome input[type=email]`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 346 x 40 | = | = |
-| Padding | 12px | = | = |
-| Border | 1px solid #e0475f | 1px solid #5b53ff | 1px solid #5b53ff |
-| Radius | 4px | = | = |
-| Background | #ffffff | = | = |
-| Box shadow | none | #5b53ff @ 0.1 0px 0px 8px 0px | #5b53ff @ 0.1 0px 0px 8px 0px |
-| Outline | none | = | = |
-| Font | Avenir Next 14px/21px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #20222b | = | = |
-| Transition | background-color 0.3s ease | = | = |
-| Cursor | text | = | = |
-| Placeholder | #7d829c, opacity 1 | = | = |
-| Painted layers | input.TextInput__Input-a3o9vm-1.irdNuq 346.0x40.0 bg #ffffff border T:1px solid #e0475f / R:1px solid #e0475f / B:1px solid #e0475f / L:1px solid #e0475f r 4px | input.TextInput__Input-a3o9vm-1.irdNuq 346.0x40.0 bg #ffffff border T:1px solid #5b53ff / R:1px solid #5b53ff / B:1px solid #5b53ff / L:1px solid #5b53ff r 4px shadow #5b53ff @ 0.1 0px 0px 8px 0px | input.TextInput__Input-a3o9vm-1.eelQya 346.0x40.0 bg #ffffff border T:1px solid #5b53ff / R:1px solid #5b53ff / B:1px solid #5b53ff / L:1px solid #5b53ff r 4px shadow #5b53ff @ 0.1 0px 0px 8px 0px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 346 x 40 | = |
+| Padding | 12px | = |
+| Border | 1px solid #e0475f | 1px solid #5b53ff |
+| Radius | 4px | = |
+| Background | #ffffff | = |
+| Box shadow | none | #5b53ff @ 0.1 0px 0px 8px 0px |
+| Outline | none | = |
+| Font | Avenir Next 14px/21px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #20222b | = |
+| Transition | background-color 0.3s ease | = |
+| Cursor | text | = |
+| Placeholder | #7d829c, opacity 1 | = |
+| Painted layers | input.TextInput__Input-a3o9vm-1.irdNuq 346.0x40.0 bg #ffffff border T:1px solid #e0475f / R:1px solid #e0475f / B:1px solid #e0475f / L:1px solid #e0475f r 4px | input.TextInput__Input-a3o9vm-1.irdNuq 346.0x40.0 bg #ffffff border T:1px solid #5b53ff / R:1px solid #5b53ff / B:1px solid #5b53ff / L:1px solid #5b53ff r 4px shadow #5b53ff @ 0.1 0px 0px 8px 0px |
+| How | at rest | clicked into the field |
 
-Crops: `login-email-default.png`, `login-email-focused.png`, `login-email-filled.png`.
+Crops: `login-email-default.png`, `login-email-focused.png`.
 
 #### login-submit
 

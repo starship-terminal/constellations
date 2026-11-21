@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T17:50:14.021Z",
+  "capturedAt": "2026-11-21T02:23:50.701Z",
   "screenshot": "free-trial-light-full.png",
   "sanitizedSourceUrl": "https://glossgenius.com/free-trial",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 7519
+      "height": 7516
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 7519
+    "height": 7516
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 7519
+      "height": 7516
     },
     "basis": "fullPage"
   },

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T18:15:34.703Z",
+  "capturedAt": "2026-11-21T02:25:14.186Z",
   "screenshot": "book-services-light-pro-menu.png",
-  "sanitizedSourceUrl": "https://honeyhivesalon.glossgenius.com/services",
+  "sanitizedSourceUrl": "https://bookings.glossgenius.com/services",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6057
+      "height": 12785
     },
     "scroll": {
       "x": 0,

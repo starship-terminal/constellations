@@ -3,13 +3,11 @@
 
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` (the marketing surface); each other surface set goes on its own scope class — `.ink` for the
-on-ink dark sections, `.catalog`/`.catalogDark` for the catalogue DS pair, `.signup` for the auth
-shell, `.docs`/`.docsDark` for Mintlify and `.help`/`.helpDark` for Docusaurus — matching how each
-host scopes its own theme. Aliases like {text.primary} become var(--text-primary).
+`:root`. Fourthwall publishes one light theme, so the dark toggle is unused. Aliases like
+{color.ink} become var(--color-ink).
 
 Placeholders in the template:
-  /*CORE*/ /*LIGHT*/ /*SET:name*/ CSS custom property blocks (one per non-core set)
+  /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
   /*TOKENS*/null                  a compact copy of the token tree for the JS tables
   <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
 
@@ -32,9 +30,7 @@ def flat(node, prefix=""):
 
 
 def cssname(path):
-    # Keep the product's own leading underscores (--_primitives-*/--_surface-*
-    # are the Webflow names); the template's var() reads this same scheme.
-    return "--" + re.sub(r"[^a-zA-Z0-9_-]", "-", path.replace(".", "-"))
+    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
 
 
 def alias(v):
@@ -43,8 +39,6 @@ def alias(v):
 
 def css_val(name, t):
     v, ty = t["$value"], t["$type"]
-    if ty in ("transition", "animation"):
-        return None   # composites with no single CSS value; the Motion section reads them from the token tree
     if ty == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
     if ty == "shadow":
@@ -59,8 +53,8 @@ def css_val(name, t):
     return alias(v)
 
 
-# Every set tokens.json ships becomes one scope class on the page.
-SETS = [s for s in T if not s.startswith("$")]
+# A light-only product has no dark set; every set that is missing renders as empty.
+SETS = [s for s in ("core", "light", "dark") if s in T]
 THEMES = [s for s in SETS if s != "core"]
 
 
@@ -68,7 +62,29 @@ def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
+    lines = [f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname])]
+    if setname == "light":
+        # The shared template was written for Claude's names. Map the roles it
+        # paints with onto Fourthwall's measured roles. Unmapped chrome stays
+        # on paper and ink rather than inventing a second theme.
+        lines += [
+            "  --surface-1: var(--color-paper);",
+            "  --surface-2: var(--color-paperSoft);",
+            "  --surface-3: var(--color-paperSunken);",
+            "  --text-secondary: var(--color-inkAlpha60);",
+            "  --text-muted: var(--color-muted);",
+            "  --border-strong: var(--color-ink);",
+            "  --fill-primary: var(--color-ink);",
+            "  --text-on-primary: var(--color-paper);",
+            "  --fill-ghost-hover: var(--color-inkAlpha06);",
+            "  --fill-ghost-selected: var(--color-inkAlpha11);",
+            "  --fill-secondary: var(--color-paperSoft);",
+            "  --fill-field: var(--color-paper);",
+            "  --radius-card: var(--radius-lg);",
+            "  --radius-row: var(--radius-sm);",
+            "  --radius-template-card: var(--radius-md);",
+        ]
+    return "\n".join(lines)
 
 
 # a core name and a themed name must not land on the same custom property
@@ -93,7 +109,7 @@ def slim(node):
 
 # Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
 # from ending the script early. JSON.parse and a JS literal read it back unchanged.
-data = json.dumps({k: slim(T[k]) for k in SETS},
+data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
                   ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
 
 _uid = [0]
@@ -115,16 +131,18 @@ def clean_svg(svg, size):
 
 
 def icon(m):
-    name, size = m.group(1), m.group(2)
-    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
-    return clean_svg(src, size)
+    # Brand artwork is not kept (docs/RIGHTS.md). A missing icon renders as nothing.
+    name = m.group(1)
+    src_path = HERE / "icons" / f"{name}.svg"
+    if not src_path.exists():
+        return ""
+    src = ICON_SRC.setdefault(name, src_path.read_text())
+    return clean_svg(src, m.group(2))
 
 
 tpl = (HERE / "tools" / "style-guide.template.html").read_text()
-html = tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light"))
-for _set in THEMES:
-    html = html.replace(f"/*SET:{_set}*/", block(_set))
-html = html.replace("/*TOKENS*/null", data)
+html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
+        .replace("/*TOKENS*/null", data))
 html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
 (HERE / "style-guide.html").write_text(html)
 print("style-guide.html:", len(html.encode()), "bytes;",

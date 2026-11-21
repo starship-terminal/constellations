@@ -1,0 +1,61 @@
+{
+  "product": "Cofounder",
+  "reviewedAt": "2026-11-21",
+  "requestedUrl": "https://app.cofounder.co/os/login",
+  "finalUrl": "https://app.cofounder.co/os/login",
+  "alsoReachedBy": [
+    "https://app.cofounder.co/os",
+    "https://app.cofounder.co/",
+    "https://app.cofounder.co/edu"
+  ],
+  "redirectNote": "https://app.cofounder.co/os redirects to https://app.cofounder.co/os/login?next=%2F. The bare login URL stays at https://app.cofounder.co/os/login.",
+  "viewport": {
+    "desktop": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 1 },
+    "phone": { "innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2 }
+  },
+  "theme": {
+    "htmlClass": "light",
+    "colorScheme": "light"
+  },
+  "title": "CofounderOS",
+  "visibleHeading": "CofounderOS",
+  "visibleSubheading": "Start autonomous companies",
+  "emailField": false,
+  "passwordField": false,
+  "inputs": [],
+  "providers": [
+    {
+      "label": "Continue with Google",
+      "clicked": false,
+      "note": "Identity provider. Not opened."
+    },
+    {
+      "label": "Continue with GitHub",
+      "clicked": false,
+      "note": "Identity provider. Not opened."
+    },
+    {
+      "label": "Continue with Email",
+      "clicked": false,
+      "note": "No email field is on the page. The button was not clicked, so the next step is Not captured."
+    }
+  ],
+  "otherControls": [
+    {
+      "label": "Privacy Policy",
+      "href": "https://cofounder.co/privacy-policy"
+    },
+    {
+      "label": "Terms of Service",
+      "href": "https://cofounder.co/terms"
+    }
+  ],
+  "legalLine": "By continuing you agree to our Privacy Policy and Terms of Service.",
+  "footerLine": "Made with a heart mark by The General Intelligence Company Of New York",
+  "screenshots": [
+    "screenshots/login-light-default.png",
+    "screenshots/mobile-login-light-default.png"
+  ],
+  "stopped": true,
+  "stopReason": "Login wall. Google, GitHub and Email were not clicked. No account was created. No form was submitted."
+}

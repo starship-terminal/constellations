@@ -1,99 +1,67 @@
-// Measures fable.co's public components in every state reachable without
-// signing in or submitting anything.
+// Measures Gauth's components on its public pages, in every state that can be
+// reached without signing in or submitting anything.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: home clubs book club signin support mobile.
-// Writes raw/components-computed.json (merged) and one crop per component and
-// state into components/crops/; raw/measurements.md is built by
-// build-measurements.mjs.
+// Pages: promo home academy create unit science math history atlas story news mobile.
+// Writes raw/components-computed.json (merged, so a subset of pages can be re-run)
+// and one crop per component and state into components/crops/. raw/measurements.md
+// is then built from the JSON by build-measurements.mjs.
 //
-// fable.co paints two skins on one light product. The marketing pages
-// (/, /signin, /support) are emotion-styled (hashed css-* classes): the cream
-// forest-green hero under a transparent fixed header, Heldane Display
-// mastheads, Inter body. The catalog pages (/clubs, /books, /book/*, /club/*)
-// are CSS-module styled with readable names — Header-module, HeaderNav-module,
-// HeaderLogo-module, Button-module, IconButton-module, Text-module,
-// Modal-module, SearchModal-module, ClubsIndexGenrePills-module,
-// ClubCard-module, BookCarouselItem-module, FaqAccordion-module — so specs
-// there select by the readable module name; marketing specs select by role,
-// aria-label and text. /discover is a whole-page dark cover wall. Nothing is
-// sent, bought, joined or signed into: the only presses are local UI toggles —
-// the /clubs "Search thousands of book and TV clubs" aria-haspopup="dialog"
-// trigger, the book page's "May contain spoilers!" disclosure, a "Read more"
-// ExpandableText toggle and one FAQ accordion question. The sign-in fields are
-// typed into and cleared, never submitted; "Want to read", "Download the app
-// to join", "Login with email", "Continue with Google/Apple", every nav and
-// store link and "Your Privacy Choices" are measured, never followed. The
-// Osano consent banner is hidden, never answered. The phone's off-canvas nav
-// drawer is opened through its div[aria-label="Open menu"] hamburger — a
-// local UI toggle — and measured in its opened state.
+// States:
+//   hover          real mouse hover, 450ms settle for transitions
+//   focus-visible  keyboard: focus, Shift+Tab, Tab, so the browser sees a keyboard focus
+//   pressed        CDP CSS.forcePseudoState [active, hover]; no mouse button is pressed,
+//                  so no link or submit button can fire
+//   focused        the field clicked into (a text field only)
+//   filled         sample text typed into a field, measured, then deleted; Enter is never pressed
+//   anything else  a resting state reached by the page itself or by a UI toggle (a tab,
+//                  a menu, "Show more", the lesson's own Pause and Settings); nothing that
+//                  sends a question, creates a course, signs in or uploads is ever pressed
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, BOOK_URL, CLUB_URL, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, M, launch, open, closePromo, openStory, styleOf, crop, centre, RAW } from './lib.mjs';
+import { safeUrl } from '../safe-url.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 out._meta ??= {};
+if (out._meta.storyUrl) out._meta.storyUrl = safeUrl(out._meta.storyUrl);   // an earlier run's, if story is not rerun
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
-const URLS = { home: '/', clubs: '/clubs', book: BOOK_URL, club: CLUB_URL, signin: '/signin', support: '/support', discover: '/discover', mobile: '/' };
-let page, cdp, current, context, run, liveCtx;
+
+const URLS = {
+  home: '/',
+  science: '/course/science',
+  math: '/course/math',
+  history: '/course/history',
+  my: '/course/my',
+  unit: '/course/math/algebra-1?unit=real-numbers-and-sets',
+  'lesson-science': '/course/science/how-things-work-1/learn?entry_source=start&from=science',
+  'lesson-math': '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail',
+  'lesson-history': '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history',
+  atlas: '/atlas',
+  story: '/atlas',
+  news: '/news',
+};
+
+let page, cdp, current, context, run;
 const touched = new Set();
-const listed = new Map();
-// Routes an edge block gates this run: components last measured on them keep
-// their earlier readings instead of being pruned below (a blocked pass must
-// never erase evidence).
-const failedPages = new Set();
+const listed = new Map(); // component -> the states this run's specs list for it
 
-async function blocked() {
-  return page.evaluate(() => {
-    const t = (document.body && document.body.innerText) || '';
-    return /performing security verification|verifying you are human|just a moment|access denied|unusual activity from your computer network|not a robot|you have been blocked|unable to access/i.test(t) || t.trim().length < 40;
-  }).catch(() => true);
-}
+// ---------- helpers ----------
 
-async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url = null } = {}) {
+async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {}) {
   current = key;
-  // Close the previous page's context before opening the next: leaving them
-  // alive keeps every captured page (and its animations) running in the
-  // background for the rest of the run.
-  if (liveCtx) { await liveCtx.close().catch(() => {}); liveCtx = null; }
-  const b = context.browser();
-  const ctx = liveCtx = await b.newContext(mobile
-    ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
-    : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
-  await patch(ctx);
-  page = await ctx.newPage();
-  cdp = await ctx.newCDPSession(page);
+  page = await context.newPage();
+  page.setDefaultTimeout(8000);
+  cdp = await context.newCDPSession(page);
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
-  page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  const loaded = await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
-  if (!loaded || await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
+  await open(page, BASE + URLS[key], { wait, promo });
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
-  return true;
-}
-
-// Fixed/sticky chrome with paint order: the z-index map of the page's bars and
-// overlays. Recorded per page into _meta.chrome.
-async function chrome(key) {
-  const z = await page.evaluate(() => {
-    const els = [...document.querySelectorAll('body *')];
-    const seen = [];
-    for (const el of els) {
-      const cs = getComputedStyle(el);
-      if (cs.position !== 'fixed' && cs.position !== 'sticky') continue;
-      const r = el.getBoundingClientRect();
-      if (r.width < 40 || r.height < 10) continue;
-      seen.push({ node: el.tagName.toLowerCase() + '.' + String(el.className).split(' ')[0].slice(0, 60), z: cs.zIndex, pos: cs.position, rect: `${r.width | 0}x${r.height | 0}@${r.x | 0},${r.y | 0}`, text: (el.innerText || '').slice(0, 40).replace(/\n/g, '|') });
-    }
-    return seen.sort((a, b) => (parseInt(b.z) || 0) - (parseInt(a.z) || 0)).slice(0, 20);
-  }).catch(() => []);
-  out._meta.chrome ??= {};
-  out._meta.chrome[key] = z;
 }
 
 async function reset() {
@@ -129,9 +97,19 @@ async function forcePseudo(loc, classes) {
   return async () => { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {}); };
 }
 
+// Clicks a UI toggle (tab, menu, show more). Refuses a submit button and any
+// control whose text names an action this kit must never take.
+const NEVER = /^(send|submit|sign in|log in|create|generate|upload|enable audio|explore now|share|export pdf|start free trial|upgrade|open)$/i;
+async function toggle(loc, { allowLink = false } = {}) {
+  const l = loc.filter({ visible: true }).first();
+  const t = await l.evaluate((el) => ({ tag: el.tagName, type: el.getAttribute('type'), text: (el.innerText || el.getAttribute('aria-label') || '').trim() }));
+  if (t.type === 'submit' || NEVER.test(t.text) || (t.tag === 'A' && !allowLink)) throw new Error(`toggle refused: ${t.tag} "${t.text}"`);
+  await l.click({ timeout: 4000 }).catch(() => l.evaluate((el) => el.click()));
+}
+
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
+  Object.assign(c, { page: current, run, url: URLS[current] && BASE + URLS[current] }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -148,38 +126,26 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via, run };
+    c.states[state] = { ...s, crop: file, via: opts.via };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    // A failed re-read must not erase an earlier successful one: keep the
-    // saved style and record the failed attempt beside it.
-    const prev = c.states[state];
-    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    c.states[state] = { error: String(e.message || e).slice(0, 200) };
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
 
+const FILL = 'What is the derivative of x squared?';
+
+// Records the listed states of one component. meta: title, group, desc, sel.
 async function S(key, target, list, meta = {}, opts = {}) {
-  const prev = out.components[key];
-  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
-  if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
+  if (opts.open) { await reset(); await opts.open(); }
   const loc = target.filter({ visible: true }).first();
-  if (!(await loc.count())) {
-    const has = Object.keys(out.components[key].states || {}).length > 0;
-    log('  ! missing', key, has ? '(earlier states kept)' : '');
-    // Keep earlier evidence under its own provenance: the states stay but the
-    // entry keeps its original page/run/url and records the miss, so a re-run
-    // never republishes old readings under a new date.
-    if (!has) out.components[key].missing = true;
-    else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
-    return;
-  }
+  if (!(await loc.count())) { log('  ! missing', key); out.components[key].missing = true; return; }
   for (const st of list) {
     let undo, via;
     try {
@@ -196,56 +162,32 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
-        const fld = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
+        await (opts.fieldLoc || loc).filter({ visible: true }).first().click({ timeout: 4000 });
         await page.waitForTimeout(400);
         via = 'clicked into the field';
       } else if (st === 'filled') {
         const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await f.click({ timeout: 4000 }).catch(() => f.evaluate((el) => el.focus()));
-        await page.keyboard.type(opts.fillText || 'name@example.com', { delay: 10 });
+        await f.click({ timeout: 4000 });
+        await page.keyboard.type(opts.fillText || FILL, { delay: 10 });
         await page.waitForTimeout(500);
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
-        via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
-      } else if (st === 'opened') {
-        if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
-      const prev = out.components[key].states[st];
-      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-      else out.components[key].states[st] = { error: String(e.message).slice(0, 200) };
+      out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
   }
-  // A listed state that failed its re-read kept the earlier evidence under
-  // rerunError (and its own earlier `run`); the entry then republishes under
-  // the earlier run's page/run/url and records the miss, so retained readings
-  // never carry the new run's date.
-  if (keep && list.some((st) => out.components[key].states[st]?.rerunError)) {
-    Object.assign(out.components[key], keep);
-    out.components[key].recaptureMissed = run;
-  }
   await reset();
-}
-
-// Clicks a UI toggle (dropdown, disclosure, accordion, dialog trigger).
-// Refuses a submit button and any control whose text names an action this kit
-// must never take.
-const NEVER = /^(send|send message|submit|sign in|log ?in|login|create|add|download|buy|purchase|pay|checkout|join|subscribe|save|apply|accept|reject|start|get started|claim|share|export|select|continue|continue with.*|want to read|reset it|sign up|get the app|shop|shop .*ebooks)$/i;
-async function toggle(loc, { allowLink = false } = {}) {
-  const l = loc.filter({ visible: true }).first();
-  const t = await l.evaluate((el) => ({ tag: el.tagName, type: el.getAttribute('type'), text: (el.innerText || el.getAttribute('aria-label') || '').trim() }));
-  if (t.type === 'submit' || NEVER.test(t.text) || (t.tag === 'A' && !allowLink)) throw new Error(`toggle refused: ${t.tag} "${t.text}"`);
-  await l.click({ timeout: 4000 }).catch(() => l.evaluate((el) => el.click()));
 }
 
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 
+// Transitions and animations declared in every readable sheet, by selector.
 async function sheetsFor(key) {
   const res = await page.evaluate(() => {
     const transitions = [];
@@ -255,305 +197,418 @@ async function sheetsFor(key) {
         if (!r.style) continue;
         const t = r.style.getPropertyValue('transition');
         const a = r.style.getPropertyValue('animation');
-        if (t || a) transitions.push({ selector: (r.selectorText || '').slice(0, 160), transition: t, animation: a });
+        if (t || a) transitions.push({ selector: (r.selectorText || '').replace(/__[A-Za-z0-9_-]{5,6}/g, '').slice(0, 160), transition: t, animation: a });
       }
     };
-    for (const ss of document.styleSheets) { try { walk(ss.cssRules); } catch { /* cross-origin */ } }
+    for (const ss of document.styleSheets) { try { walk(ss.cssRules); } catch { /* cross-origin, read by vars.mjs */ } }
     return transitions;
   });
   out._meta.sheets ??= {};
   out._meta.sheets[key] = res;
 }
 
-// Whether the page paints a different transition under prefers-reduced-motion:
-// the same component re-read in a context with reduce on.
-async function reducedMotion(key, sel) {
-  out._meta.reducedMotion ??= {};
-  try {
-    const b = context.browser();
-    const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', reducedMotion: 'reduce' });
-    await patch(ctx);
-    const p = await ctx.newPage();
-    await p.goto(URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key], { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await p.waitForTimeout(12000);
-    await closePromo(p);
-    const v = await p.evaluate((s) => {
-      const el = document.querySelector(s);
-      if (!el) return null;
-      const cs = getComputedStyle(el);
-      return { transition: cs.transition, animation: cs.animation, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
-    }, sel).catch(() => null);
-    out._meta.reducedMotion[key] = { selector: sel, reduce: v };
-    await ctx.close();
-  } catch (e) { out._meta.reducedMotion[key] = { selector: sel, error: String(e).slice(0, 120) }; }
-}
-
+// ---------- shell (read on the home page) ----------
 const G = {
-  shell: 'Site chrome', home: 'Home', clubs: 'Clubs index', book: 'Book detail',
-  club: 'Club detail', signin: 'Sign-in', support: 'Support', mobile: 'Mobile (390 wide)',
-  footer: 'Footer', modal: 'Club search modal', promo: 'App-install prompt',
-  discover: 'Discover (dark)',
+  shell: 'Shell and navigation', home: 'Homework home', academy: 'Academy catalogue', unit: 'Unit page',
+  science: 'Lesson player: science canvas', math: 'Lesson player: math', history: 'Lesson player: history',
+  atlas: 'Atlas', news: 'Insights', overlay: 'Dialogs and overlays', mobile: 'Mobile (390 wide)',
 };
 
-// Opens the /clubs search dialog: its trigger is an aria-haspopup="dialog"
-// button — a local UI toggle, never a submit. Click, then keyboard Enter as a
-// fallback; Escape closes afterwards.
-async function openSearchDialog() {
-  const btn = page.locator('button[aria-haspopup="dialog"]').filter({ hasText: /Search thousands/i }).first();
-  if (!(await btn.count())) return 'no search trigger';
-  // Osano mounts its own role="dialog" nodes, so count only a visible,
-  // non-consent dialog.
-  const open = () => page.evaluate(() => !![...document.querySelectorAll('[role="dialog"]')].find((x) => !/osano/i.test(x.className) && x.getBoundingClientRect().width > 100));
-  if (await open()) return 'the search dialog was already open';
-  for (let i = 0; i < 3; i++) {
-    if (i === 0) await btn.click({ timeout: 4000 }).catch(() => btn.evaluate((el) => el.click()));
-    else { await btn.focus(); await page.keyboard.press('Enter'); }
-    await page.waitForTimeout(900);
-    if (await open()) return 'clicked the "Search thousands of book and TV clubs" button to open the modal';
-  }
-  return 'activated the search trigger; the dialog did not report open';
-}
-
-// The catalog pages' header pieces, shared by /clubs, /book/* and /club/*.
-async function catalogShell(g) {
-  await S('cat-header', q('header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Catalog header', desc: 'The fixed 60px catalog top bar: the heldane "Fable" wordmark, nav links (Clubs / Books / Library / Blog) and the sign-in icon.', sel: 'header.Header-module' }, { noScroll: true });
-  await S('cat-logo', q(`a${M('HeaderLogo-module')}`).filter({ visible: true }).first(), ['default'], { group: g, title: 'Fable wordmark (catalog)', desc: 'The catalog header wordmark link — heldane bold type, "Fable home".', sel: 'a.HeaderLogo-module' }, { noScroll: true });
-  await S('cat-nav-link', q(`a${M('HeaderNav-module')}`).filter({ hasText: /^Clubs$/ }).first(), B4, { group: g, title: 'Catalog nav link', desc: 'A catalog header nav link (Clubs) — a 60px-tall cell; measured, never followed.', sel: 'a.HeaderNav-module__link Clubs' }, { noScroll: true });
-  await S('cat-signin', q(`a${M('HeaderUserMenu-module')}`).filter({ visible: true }).first(), B4, { group: g, title: 'Sign-in icon (catalog)', desc: 'The 36x36 "Sign up or log in" avatar icon linking to /signin; measured, never followed.', sel: 'a.HeaderUserMenu-module__signInIcon' }, { noScroll: true });
+async function promo() {
+  await newPage('home', { promo: 'keep' });
+  const dlg = q(M('atlas-intro-modal_aw-atlas-intro-modal'));
+  await S('promo-dialog', dlg, ['default'], { group: G.overlay, title: 'Promo dialog', desc: 'The announcement every page opens with ("Introducing Gauth Academy"): a 600px white card at radius 24 with a 0 8 20 shadow, a Playfair Display 24/31.2 800 title, a 14/19.6 grey subtitle, a media panel, a full-width black button and a round close button.', sel: M('atlas-intro-modal_aw-atlas-intro-modal') }, { noScroll: true });
+  await S('promo-title', q(M('atlas-intro-modal_aw-atlas-intro-modal-title')), ['default'], { group: G.overlay, title: 'Promo dialog title', sel: M('atlas-intro-modal_aw-atlas-intro-modal-title') }, { noScroll: true });
+  await S('promo-subtitle', q(M('atlas-intro-modal_aw-atlas-intro-modal-subtitle')), ['default'], { group: G.overlay, title: 'Promo dialog subtitle', sel: M('atlas-intro-modal_aw-atlas-intro-modal-subtitle') }, { noScroll: true });
+  await S('promo-confirm', q(M('atlas-intro-modal_aw-atlas-intro-modal-confirm')), B4, { group: G.overlay, title: 'Promo dialog button', desc: '"Explore now": black, radius 14, 48px tall, Playfair Display 18/27 600. Hover turns it #21252e; pressed scales it to 0.99. Measured, never pressed.', sel: M('atlas-intro-modal_aw-atlas-intro-modal-confirm') }, { noScroll: true });
+  await S('promo-close', q(M('atlas-intro-modal_aw-atlas-intro-modal-close')), B4, { group: G.overlay, title: 'Promo dialog close button', sel: M('atlas-intro-modal_aw-atlas-intro-modal-close') }, { noScroll: true });
+  out._meta.backdrop = await page.evaluate(() => {
+    const d = document.querySelector('[class*="atlas-intro-modal_aw-atlas-intro-modal__"]');
+    const res = [];
+    for (let n = d; n; n = n.parentElement) { const c = getComputedStyle(n); if (c.backgroundColor !== 'rgba(0, 0, 0, 0)' && n !== d) res.push({ node: n.className.toString().replace(/__[\w-]{5,6}/g, '').slice(0, 80), bg: c.backgroundColor, backdrop: c.backdropFilter }); }
+    for (const n of document.querySelectorAll('[class*="mask" i]')) { const c = getComputedStyle(n); const r = n.getBoundingClientRect(); if (r.width > 1000) res.push({ node: n.className.toString().replace(/__[\w-]{5,6}/g, '').slice(0, 80), bg: c.backgroundColor, backdrop: c.backdropFilter }); }
+    return res;
+  });
+  await page.close();
 }
 
 async function home() {
-  if (!(await newPage('home'))) return;
+  await newPage('home');
   await sheetsFor('home');
-  await chrome('home');
   const g = G.shell;
-  await S('mkt-header', q('header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Marketing header', desc: 'The fixed transparent top bar over the green hero: Fable wordmark, Clubs/Books/Library/Blog links, the "Sign up or log in" and cart icons.', sel: 'header[data-header]' }, { noScroll: true });
-  await S('mkt-logo', q('header a[aria-label="Home"], header a[href="/"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Fable logo (marketing)', desc: 'The Fable mark-and-wordmark svg in the marketing header — a dark-green rounded square of rainbow book spines with cream letterforms.', sel: 'header a[aria-label=Home]' }, { noScroll: true });
-  await S('mkt-nav-link', q('header a').filter({ hasText: /^Clubs$/ }).first(), B4, { group: g, title: 'Nav link (marketing)', desc: 'A marketing header nav link; measured, never followed.', sel: 'header a Clubs' }, { noScroll: true });
-  await S('mkt-signin', q('button[aria-label="Sign up or log in"]').filter({ visible: true }).first(), B4, { group: g, title: 'Sign-in icon (marketing)', desc: 'The 24px "Sign up or log in" icon button; its states were measured but it was never clicked — the sign-in flow is a gap, not a state.', sel: 'button[aria-label="Sign up or log in"]' }, { noScroll: true });
-  await S('mkt-cart', q('button[aria-label="Shopping cart"]').filter({ visible: true }).first(), B4, { group: g, title: 'Cart icon', desc: 'The 32px "Shopping cart" icon button; measured, never clicked.', sel: 'button[aria-label="Shopping cart"]' }, { noScroll: true });
+  await S('header', q(M('pc-header_header')), ['default'], { group: g, title: 'Top bar', desc: 'The 60px bar over the content column: white with a 1px bottom rule on Homework and Insights, transparent on Academy. Holds the question field on inner pages, Upgrade and Sign in.', sel: M('pc-header_header') }, { noScroll: true });
+  await S('upgrade-button', q(M('pc-header_accountActionWarm')), ['default', 'hover', 'pressed'], { group: g, title: 'Upgrade button', desc: 'The gold Upgrade pill: a warm gradient fill with brown text and a bolt icon. A div, so it takes no keyboard focus. Measured, never pressed.', sel: M('pc-header_accountActionWarm') }, { noScroll: true });
+  await S('sign-in-button', q(M('pc-header_loginEntry') + ' span').first(), ['default', 'hover', 'pressed'], { group: g, title: 'Sign in button', desc: 'The near-black primary button in the top bar. A span in a div, so it takes no keyboard focus. Measured, never pressed.', sel: M('pc-header_loginEntry') + ' span' }, { noScroll: true, hoverLoc: q(M('pc-header_loginEntry')) });
+  await S('side-menu', q(M('side-menu_side-menu')), ['default'], { group: g, title: 'Sidebar', desc: 'The 220px left rail: logo and collapse button, the four destinations, a rule, App, and the Gauth PLUS card pinned to the bottom.', sel: M('side-menu_side-menu') }, { noScroll: true });
+  const items = q(M('side-menu_side-menu-item'));
+  await S('side-menu-item-active', q(M('side-menu_side-menu-item-active')), ['default'], { group: g, title: 'Sidebar item, current (cool)', desc: 'The current destination on Homework and Insights: a #f5f5f7 pill with the label in 600.', sel: M('side-menu_side-menu-item-active') }, { noScroll: true });
+  await S('side-menu-item', items.filter({ hasText: 'Atlas' }), ['default', 'hover', 'pressed'], { group: g, title: 'Sidebar item', desc: 'A destination row: 40px tall, radius 10, 20px icon, 14/21 label.', sel: M('side-menu_side-menu-item') }, { noScroll: true });
+  await S('side-menu-link', q(M('side-menu_link')).filter({ hasText: 'Atlas' }), ['focus-visible'], { group: g, title: 'Sidebar link, keyboard focus', desc: 'The link inside a sidebar row, which is what takes keyboard focus.', sel: M('side-menu_link') }, { noScroll: true, cropLoc: items.filter({ hasText: 'Atlas' }) });
+  await S('side-menu-collapse', q(M('side-menu_sidebar-collapse')), B4, { group: g, title: 'Sidebar collapse button', sel: M('side-menu_sidebar-collapse') }, { noScroll: true });
+  await S('plus-card', q(M('side-menu-small-cards_upgrade-small-card')), ['default'], { group: g, title: 'Gauth PLUS card', desc: 'The upsell card at the foot of the sidebar: cream fill, radius 12, a gold rule under the title and a gold "Start Free Trial" button.', sel: M('side-menu-small-cards_upgrade-small-card') }, { noScroll: true });
+  await S('plus-card-button', q(M('side-menu-small-cards_btn')), ['default', 'hover', 'pressed'], { group: g, title: 'Gauth PLUS card button', desc: 'Measured, never pressed.', sel: M('side-menu-small-cards_btn') }, { noScroll: true });
+  await S('logo', q(M('side-menu_h-logo')), ['default'], { group: g, title: 'Logo', sel: M('side-menu_h-logo') }, { noScroll: true });
+
   const h = G.home;
-  await S('hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: '"The modern app for every reader" — the Heldane Display 72px cream masthead on the forest-green cover-wall hero.', sel: 'h1' }, { noScroll: true });
-  // Cover-wall tiles past ~x1300 sit outside the 1440 viewport, so pick one
-  // comfortably inside.
-  await S('hero-cover', q('a[href*="/discover"]').filter({ visible: true }).nth(6), ['default', 'hover'], { group: h, title: 'Hero book cover', desc: 'One book-cover tile in the hero cover wall, linking into the dark /discover app; measured, never followed.', sel: 'a[href*="/discover"]' });
-  await S('getapp-hero', q('button').filter({ hasText: /^Get the app$/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Get the app (hero)', desc: 'The white "Get the app" pill on the green hero (radius 60, white-on-green); measured, never clicked.', sel: 'hero Get the app' }, { noScroll: true });
-  await S('getapp-dark', q('button').filter({ hasText: /^Get the app$/ }).filter({ visible: true }).nth(1), B4, { group: h, title: 'Get the app (on light)', desc: 'The dark-ink "Get the app" pill used on the light feature sections; measured, never clicked.', sel: 'feature Get the app' });
-  await S('section-h2', q('h2').filter({ hasText: /Track your books|Visualize your reading/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Section headline', desc: 'A Heldane Display 80px marketing section heading ("Track your books in one place").', sel: 'h2 section' });
-  await S('feature-h', q('h2').filter({ hasText: /Build a habit with streaks|Import your goodreads/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Feature card heading', desc: 'A 24px Inter semibold feature-card heading inside a marketing section.', sel: 'feature card h2' });
-  await S('fortune-quote', await domFind(page, /more thoughtful|less toxic/i, { sel: 'blockquote, q, figure, p, div, span', tag: 'fq' }), ['default'], { group: h, title: 'Press quote', desc: 'The Fortune pull-quote — "A more thoughtful—and less toxic—social media app".', sel: 'press quote block' });
-  await S('club-card', q('[data-testid="club-card"], [data-testid="club-card"] a').filter({ visible: true }).first(), ['default', 'hover'], { group: h, title: 'Club card', desc: 'A "Popular clubs" card — hero image, club cover thumb, moderator line, member count.', sel: '[data-testid=club-card]' });
-  await S('getapp-cta', q('button').filter({ hasText: /^Get the app$/ }).filter({ visible: true }).last(), B4, { group: h, title: 'Get the app (closing CTA)', desc: 'The "Get the app" pill in the closing call-to-action band; measured, never clicked.', sel: 'closing Get the app' });
-  const f = G.footer;
-  await S('footer', q('footer').filter({ visible: true }).first(), ['default'], { group: f, title: 'Footer', desc: 'The near-black footer: sitemap columns, social icons, legal links, "Your Privacy Choices".', sel: 'footer' }, { noScroll: true });
-  await S('footer-link', q('footer a').filter({ hasText: /^Join a club$/ }).first(), B4, { group: f, title: 'Footer link', desc: 'A footer sitemap link; measured, never followed.', sel: 'footer a' }, { noScroll: true });
-  await S('privacy-btn', q('footer button').filter({ hasText: /Your Privacy Choices/ }).filter({ visible: true }).first(), ['default', 'hover'], { group: f, title: 'Your Privacy Choices', desc: 'The footer\'s Osano "Your Privacy Choices" control; measured at rest — clicking it would open the consent manager, so it was never pressed.', sel: 'footer button Your Privacy Choices' }, { noScroll: true });
-  save();
+  await S('home-hero', q(M('slogan_slogan')), ['default'], { group: h, title: 'Homework hero', desc: 'The first band of the home page: a pale lilac gradient ground, the two-line serif title, the question field, the upload panel and the subject chips.', sel: M('slogan_slogan') }, { noScroll: true });
+  await S('home-title', q(M('slogan_title')), ['default'], { group: h, title: 'Hero title', desc: '"Your AI Study Helper / Gauth it, Ace it!" in Gauth Home Libre Baskerville; the second line is filled with a gradient through background-clip.', sel: M('slogan_title') }, { noScroll: true });
+  const box = q(M('pc_search-input-container'));
+  await S('question-box', box, ['default', 'hover', 'focused', 'filled'], { group: h, title: 'Question field', desc: 'The 680 x 64 pill the home page is built around: a faint indigo tint, a 2px indigo-alpha border, radius 38, a round white submit button at the right end. Text was typed and deleted; nothing was sent.', sel: M('pc_search-input-container') }, { fieldLoc: q(M('pc_input')) });
+  await S('question-input', q(M('pc_input')), ['default', 'focus-visible'], { group: h, title: 'Question field input', sel: M('pc_input') }, { crop: false });
+  await S('question-submit', q(M('pc_search-submit-wrap')), ['default', 'hover'], { group: h, title: 'Question submit button', desc: 'The round white arrow button; measured, never pressed.', sel: M('pc_search-submit-wrap') });
+  await S('upload-panel', q(M('pc_uploadWrap')), ['default', 'hover'], { group: h, title: 'Upload panel', desc: 'The dashed drop zone under the field. Hovered only; no file was chosen.', sel: M('pc_uploadWrap') });
+  const chip = q(M('resources-list_resources-item')).first();
+  await S('subject-chip', chip, B4, { group: h, title: 'Subject chip', desc: 'Icon over label, 87 x 72, radius 10, in a muted grey-violet.', sel: M('resources-list_resources-item') });
+  await S('subject-more', q(M('resources-list_resources-more')), ['default', 'hover', 'pressed'], { group: h, title: 'More subjects chip', desc: 'The "MORE" pill at the end of the chip row.', sel: M('resources-list_resources-more') });
+  await S('atlas-band-title', q(M('atlas-intro_headline')), ['default'], { group: h, title: 'Section headline', desc: 'The marketing sections below the fold open with a 32/41.6 700 headline and a 16/24 500 grey line; a word can carry a gradient shine.', sel: M('atlas-intro_headline') });
+  await S('atlas-showcase', q(M('atlas-intro_showcase')), ['default'], { group: h, title: 'Atlas showcase', desc: 'A radius-48 panel with soft radial colour washes holding the copy, a CTA and a demo video.', sel: M('atlas-intro_showcase') });
+  await S('atlas-cta', q(M('atlas-intro_cta')), B4, { group: h, title: 'Start Exploring button', desc: 'A dark radius-14 link button. Measured, never followed.', sel: M('atlas-intro_cta') });
+  await S('feature-card', q(M('atlas-intro_feature')).first(), ['default', 'hover'], { group: h, title: 'Feature card', desc: 'White, 1px #5058651a border, radius 32: icon, 16/24 600 title, 14/21 grey line.', sel: M('atlas-intro_feature') });
+  await S('solution-option', q(M('ai-solution_option')).first(), ['default', 'hover'], { group: h, title: 'Solution option row', desc: 'A radius-20 row with an icon, a 16/22 600 title and a 14/22 description. The rows take turns being the active one, which turns Gauth red (#ff013e) with white text and a red-tinted shadow; the measured row was active.', sel: M('ai-solution_option') });
+  await S('live-tutor-band', q(M('live-tutor_live-tutor-content')), ['default'], { group: h, title: 'Live tutor band', desc: 'A pink block with one oversized corner radius (54 54 200 54).', sel: M('live-tutor_live-tutor-content') });
+  await S('footer', q(M('pc-footer-view_footer-wrap')), ['default'], { group: h, title: 'Footer', desc: 'White with a 1px #f5f5f7 top rule: brand line, email, socials and a language select, then Company, Legal and Download App columns.', sel: M('pc-footer-view_footer-wrap') });
+  await page.close();
 }
 
-async function clubs() {
-  if (!(await newPage('clubs'))) return;
-  await sheetsFor('clubs');
-  await chrome('clubs');
-  const g = G.shell;
-  await catalogShell(g);
-  const c = G.clubs;
-  await S('clubs-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: c, title: 'Clubs headline', desc: 'The /clubs masthead heading.', sel: 'clubs h1' }, { noScroll: true });
-  await S('search-trigger', q('button[aria-haspopup="dialog"]').filter({ hasText: /Search thousands/i }).first(), [...B4, 'opened'], { group: c, title: 'Club search trigger', desc: 'The 440x52 search field-styled button opening the "Find a club" modal — an aria-haspopup="dialog" local toggle; the opened state was measured after clicking it.', sel: 'button[aria-haspopup=dialog] Search thousands' }, { noScroll: true });
-  // Osano mounts its own hidden role="dialog" nodes earlier in document
-  // order, so every dialog selector is scoped to the Modal-module classes.
-  await S('search-modal', q(`[role="dialog"]${M('Modal-module')}`).filter({ visible: true }).first(), ['default'], { group: G.modal, title: 'Find a club modal', desc: 'The centered Modal-module sheet opened by the search trigger: drag handle, "Find a club" title, close button, search input and an empty results prompt.', sel: '[role=dialog].Modal-module__surface' }, { open: openSearchDialog, noScroll: true, noReset: true });
-  await S('search-input', q(`[role="dialog"]${M('Modal-module')} input[type="search"]`).filter({ visible: true }).first(), ['default', 'focused'], { group: G.modal, title: 'Search input', desc: 'The search field inside the Find a club modal; focused, never submitted.', sel: '[role=dialog].Modal-module input[type=search]' }, { open: openSearchDialog, noScroll: true, noReset: true });
-  await S('search-close', q(`[role="dialog"]${M('Modal-module')} button[aria-label*="Close" i]`).filter({ visible: true }).first(), B4, { group: G.modal, title: 'Modal close button', desc: 'The icon-only close button in the modal header.', sel: '[role=dialog].Modal-module button[aria-label^=Close]' }, { open: openSearchDialog, noScroll: true, noReset: true });
+async function academy() {
+  await newPage('science');
+  await sheetsFor('academy');
+  const g = G.academy;
+  await S('academy-ground', q(M('catalog_page')), ['default'], { group: g, title: 'Academy page', desc: 'The catalogue page: #faf9f5 ground under a transparent top bar, the warm sidebar, a 1025px column.', sel: M('catalog_page') }, { noScroll: true, crop: false });
+  await S('side-menu-warm', q(M('side-menu_side-menu-warm')), ['default'], { group: G.shell, title: 'Sidebar, warm', desc: 'On Academy the sidebar takes the page ground and the current item turns beige.', sel: M('side-menu_side-menu-warm') }, { noScroll: true });
+  await S('side-menu-item-warm-active', q(M('side-menu_side-menu-item-warm-active')), ['default'], { group: G.shell, title: 'Sidebar item, current (warm)', desc: 'The current destination on Academy: a #f4ebe5 pill (--lesson-primary-fill-2).', sel: M('side-menu_side-menu-item-warm-active') }, { noScroll: true });
+  await S('academy-title', q(M('catalog_hero') + ' h1'), ['default'], { group: g, title: 'Academy title', desc: '"Gauth Academy" in Playfair Display 700 at 36px.', sel: M('catalog_hero') + ' h1' }, { noScroll: true });
+  await S('create-course-button', q(M('catalog_createButton')), B4, { group: g, title: 'Create Course button', desc: 'A pale blue pill: an image fill of a soft blue-to-cream gradient, a 1px #d5e3f4 border, radius 12, a sparkle icon and SF Pro 14/21 500.', sel: M('catalog_createButton') }, { noScroll: true });
+  const tabs = q(M('catalog_categoryTab'));
+  await S('category-tab-active', q(M('catalog_categoryTabActive')), ['default', 'focus-visible'], { group: g, title: 'Category tab, current', desc: 'The current catalogue tab: #f4ebe5 fill, transparent border, 700 label.', sel: M('catalog_categoryTabActive') }, { noScroll: true });
+  await S('category-tab', tabs.filter({ hasText: 'Math Curriculum' }), B4, { group: g, title: 'Category tab', desc: 'A 36px tab with a 1px #5058651a border, radius 12, 14/19.6 grey label.', sel: M('catalog_categoryTab') }, { noScroll: true });
+  await S('section-heading', q(M('catalog_sectionHeading')).first(), ['default'], { group: g, title: 'Course section heading', desc: 'An 80px rounded cover beside a 22/28.6 600 title and a 16/22.4 grey line.', sel: M('catalog_sectionHeading') }, { noScroll: true });
+  await S('course-section', q(M('catalog_courseSection')).first(), ['default'], { group: g, title: 'Course section', desc: 'One course: its heading and a three-column card grid, closed by a 1px #e7e6e3 rule.', sel: M('catalog_courseSection') }, { noScroll: true, crop: false });
+  const card = q(M('catalog_premiumCard')).first();
+  await S('lesson-card', card, B4, { group: g, title: 'Lesson card (Science Labs, History Signature)', desc: 'A white card, 1px rgba(0,0,0,.08) border, radius 16, a 0 4 7 shadow at 4%: a 147px cover inset 9px at radius 12, a 700 category label, a 16/24 600 title, a 12/16.8 subtitle and a 6px progress track.', sel: M('catalog_premiumCard') });
+  await S('lesson-card-category', q(M('catalog_premiumCategory')).first(), ['default'], { group: g, title: 'Lesson card category', sel: M('catalog_premiumCategory') }, { crop: false });
+  await S('lesson-card-title', q(M('catalog_premiumInfo') + ' h2').first(), ['default'], { group: g, title: 'Lesson card title', sel: M('catalog_premiumInfo') + ' h2' }, { crop: false });
+  await S('lesson-card-subtitle', q(M('catalog_premiumSubtitle')).first(), ['default'], { group: g, title: 'Lesson card subtitle', sel: M('catalog_premiumSubtitle') }, { crop: false });
+  await S('lesson-card-progress', q(M('catalog_premiumProgressTrack')).first(), ['default'], { group: g, title: 'Lesson card progress track', sel: M('catalog_premiumProgressTrack') });
+  await page.close();
+
+  await newPage('math');
+  await S('unit-card', q(M('catalog_card')).first(), B4, { group: g, title: 'Unit card (Math Curriculum)', desc: 'A white card 326 x 178: an 80px cover tile at radius 12 beside an Inter 17/23.8 600 title, a "Unit 1 | 42 Topics" meta line and a 6px pill track.', sel: M('catalog_card') });
+  await S('unit-card-title', q(M('catalog_card') + ' h3').first(), ['default'], { group: g, title: 'Unit card title', sel: M('catalog_card') + ' h3' }, { crop: false });
+  await S('unit-card-meta', q(M('catalog_meta')).first(), ['default'], { group: g, title: 'Unit card meta line', sel: M('catalog_meta') });
+  await S('unit-card-progress', q(M('catalog_progressTrack')).first(), ['default'], { group: g, title: 'Unit card progress track', sel: M('catalog_progressTrack') }, { crop: false });
+  const more = q(M('catalog_expandButton')).first();
+  await S('show-more', more, [...B4, 'expanded'], { group: g, title: 'Show more button', desc: '"Show 14 more" with a chevron: 1px #e0e3e8 border, radius 12, 14/19.6 grey. Pressing it lists the remaining units as compact rows.', sel: M('catalog_expandButton') }, {
+    before: { expanded: async (l) => { await toggle(l); await page.waitForTimeout(1200); return 'clicked (a UI toggle)'; } },
+  });
+  const row = await page.evaluate(() => { const a = [...document.querySelectorAll('a[href*="?unit="]')].find((x) => /Unit\s*7/.test(x.innerText)); if (!a) return null; a.setAttribute('data-m', 'unit-row'); return true; });
+  if (row) await S('unit-row', q('[data-m="unit-row"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Unit card revealed by Show more', desc: 'Show more reveals the units past the sixth as the same cards.', sel: 'a[href*="?unit="] (7th and later)' });
+  await page.close();
+
+  await newPage('history');
+  await S('history-card', q(M('catalog_premiumCard')).first(), ['default', 'hover'], { group: g, title: 'History lesson card', desc: 'The same card as Science Labs with a full-bleed illustrated cover.', sel: M('catalog_premiumCard') });
+  await page.close();
+
+  await newPage('my');
+  await S('my-empty', q(M('catalog_emptyState')).first().or(q('main').locator('img').first().locator('xpath=../..')), ['default'], { group: g, title: 'My Course empty state', desc: 'A fan of three course cards, a 20px 600 title, a grey line and a dark Create button.', sel: M('catalog_emptyState') });
+  const create = page.getByRole('button', { name: 'Create', exact: true });
+  await S('create-button', create, B4, { group: g, title: 'Create button (empty state)', desc: 'The dark primary button: #21252e, radius 12, 44px, white 16/22.4 500. Hover lightens it to #333943; pressed also scales it to 0.98. Measured, never pressed.', sel: 'button "Create"' });
+  await page.close();
+}
+
+async function createDialog() {
+  await newPage('my');
+  const g = G.overlay;
+  await q(M('catalog_createButton')).first().click();
+  await page.waitForTimeout(2500);
+  const dlg = page.getByRole('dialog').filter({ hasText: 'Create a Course' }).first();
+  const dsel = 'role=dialog "Create a Course"';
+  await S('create-dialog', dlg, ['default'], { group: g, title: 'Create a Course dialog', desc: 'Opened from Create Course: a #faf9f5 sheet with radius 24, a greeting, three suggestion chips, Shuffle, and a prompt field over a blue-to-lilac glow. Nothing was typed into the prompt but sample text, then deleted; no suggestion was pressed.', sel: dsel }, { noScroll: true });
+  const chip = dlg.locator('button').filter({ hasText: /\w{4,}/ }).filter({ hasNotText: /Shuffle/ }).first();
+  await S('create-suggestion', chip, ['default', 'hover', 'focus-visible'], { group: g, title: 'Course suggestion chip', desc: 'A white chip with a 600 label and an arrow; pressing one would start a course, so it was only hovered and focused.', sel: dsel + ' button' }, { noScroll: true });
+  const field = dlg.locator('textarea, input').first();
+  await S('create-prompt', field.locator('xpath=ancestor::div[1]'), ['default', 'focused', 'filled'], { group: g, title: 'Course prompt field', desc: 'The white radius-16 prompt field at the foot of the dialog with a round send button that stays grey until there is text.', sel: dsel + ' textarea' }, { noScroll: true, fieldLoc: field, fillText: 'Photosynthesis' });
+  const close = dlg.locator('button[aria-label*="lose" i], button').filter({ hasText: /^$/ }).first();
+  await S('create-close', close, ['default', 'hover', 'focus-visible'], { group: g, title: 'Dialog close button', sel: dsel + ' close' }, { noScroll: true });
+  await page.close();
+}
+
+async function unit() {
+  await newPage('unit');
+  await sheetsFor('unit');
+  const g = G.unit;
+  await S('back-link', q(M('math-course-detail_backLink')), ['default', 'hover', 'focus-visible'], { group: g, title: 'Back link', desc: 'An arrow and the catalogue tab name, SF Pro 16/22.4 in #646a77.', sel: M('math-course-detail_backLink') }, { noScroll: true });
+  await S('course-banner', q(M('math-course-detail_courseBanner')), ['default'], { group: g, title: 'Course banner', desc: 'A radius-20 band tinted with the course colour (Algebra 1 is green #ecf4e5): an SF Pro 22/28.6 700 course title, a lessons and topics count, a 7px progress bar and the percent.', sel: M('math-course-detail_courseBanner') }, { noScroll: true });
+  await S('unit-rail', q(M('math-course-detail_unitRail')), ['default'], { group: g, title: 'Unit rail', desc: 'The 310px list of units: a 1px rgba(0,0,0,.04) border, radius 16; the current unit is marked by a 5px green bar on its ::before and green #3c6b26 text.', sel: M('math-course-detail_unitRail') }, { noScroll: true });
+  await S('unit-button-active', q(M('math-course-detail_unitButtonActive')), ['default', 'focus-visible'], { group: g, title: 'Unit rail item, current', sel: M('math-course-detail_unitButtonActive') }, { noScroll: true });
+  await S('unit-button', q(M('math-course-detail_unitButton')).nth(1), ['default', 'hover', 'pressed'], { group: g, title: 'Unit rail item', desc: 'A 62px row: 12/16.8 "Unit n" over a 14/21 700 title.', sel: M('math-course-detail_unitButton') }, { noScroll: true });
+  await S('unit-header', q(M('math-course-detail_unitHeader')).first(), ['default'], { group: g, title: 'Unit header', desc: 'A white-on-ground header card with radius 20 over the topic path.', sel: M('math-course-detail_unitHeader') }, { noScroll: true });
+  await S('topic-path', q(M('math-course-detail_topicPath')).first(), ['default'], { group: g, title: 'Topic path', desc: 'Topics as round coin buttons on a winding dotted connector, the label to the right; the current topic has a halo ring.', sel: M('math-course-detail_topicPath') });
+  await S('topic-node-current', q(M('math-course-detail_topicButtonInProgress')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Topic node, current', sel: M('math-course-detail_topicButtonInProgress') });
+  await S('topic-node', q(M('math-course-detail_topicButton')).nth(1), ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Topic node, not started', desc: 'A pale coin with a star and a grey label.', sel: M('math-course-detail_topicButton') });
+  await S('learning-panel', q(M('math-course-detail_learningPanel')).first(), ['default'], { group: g, title: 'Start panel', desc: 'The floating card under the current topic: white, a 1px #5058651a border, radius 28, a 0 12 14 shadow tinted navy at 14%, a 17/23.8 700 topic title and a full-width dark Start button.', sel: M('math-course-detail_learningPanel') });
+  await S('start-button', q(M('math-course-detail_lessonAction')).first(), B4, { group: g, title: 'Start button', desc: 'The primary button: #21252e, radius 12, 48px, white 16/24 700, with a moving light sheen drawn on ::after. Pressed scales it to 0.98.', sel: M('math-course-detail_lessonAction') });
+  await page.close();
+}
+
+async function science() {
+  await newPage('lesson-science', { wait: 7000 });
+  await sheetsFor('lesson-science');
+  const g = G.science, o = G.overlay;
+  const dlg = q('dialog' + M('canvas_dialog')).first();
+  await S('audio-dialog', dlg, ['default'], { group: o, title: 'Enable audio dialog', desc: 'Shown when a science lesson opens: a 400px white Astryx dialog at radius 20 with a 0 12 32 shadow at 16%, an Inter 24/32 600 title, a 14/20 grey line and two 48px buttons at radius 16.', sel: 'dialog' + M('canvas_dialog') }, { noScroll: true });
+  const notNow = page.getByRole('button', { name: 'Not now' });
+  const enable = page.getByRole('button', { name: 'Enable audio' });
+  await S('audio-not-now', notNow, ['default', 'hover', 'focus-visible', 'pressed'], { group: o, title: 'Secondary button (Not now)', desc: 'White, 1px #d0d5dd border, radius 16, Inter 15/20 500. Pressed scales it to 0.98. Its focus ring is Astryx\'s 2px #0064e0 outline.', sel: 'button "Not now"' }, { noScroll: true });
+  await S('audio-enable', enable, ['default', 'hover', 'focus-visible', 'pressed'], { group: o, title: 'Primary button (Enable audio)', desc: 'Near-black #1f232b, radius 16, white Inter 15/20 500. Measured, never pressed.', sel: 'button "Enable audio"' }, { noScroll: true });
+  await notNow.click();
+  await page.waitForTimeout(1500);
+  const pause = page.getByRole('button', { name: 'Pause' });
+  const header = q('header' + M('canvas_header'));
+  await S('canvas-header', header, ['default'], { group: g, title: 'Lesson header', desc: 'Exit button and the lesson title in Playfair Display 16/21 600 at the left; the transport (previous, play or pause, next), Reset view and Settings at the right, all 32px round ghost buttons.', sel: 'header' + M('canvas_header') }, { noScroll: true });
+  await S('canvas-exit', page.getByRole('button', { name: 'Exit lesson' }), B4, { group: g, title: 'Exit button', sel: 'button "Exit lesson"' }, { noScroll: true });
+  await S('canvas-control', page.getByRole('button', { name: 'Reset view' }), B4, { group: g, title: 'Transport and view buttons', desc: 'A 32px round ghost button holding a 32px icon. Hover lays a 5% ink film over it, pressed 10% and a 0.98 scale; keyboard focus draws Astryx\'s 2px #0064e0 ring 3px out.', sel: 'button "Reset view"' }, { noScroll: true });
+  await S('canvas-outline', q('nav' + M('canvas_outline')), ['default'], { group: g, title: 'Section rail', desc: 'The right-hand outline: right-aligned 14/20 section names beside a 2px track whose dark segment marks the current section.', sel: 'nav' + M('canvas_outline') }, { noScroll: true });
+  const items = page.locator('a.astryx-outline-item');
+  await S('outline-item-active', page.locator('a.astryx-outline-item.active'), ['default'], { group: g, title: 'Section rail item, current', sel: 'a.astryx-outline-item.active' }, { noScroll: true });
+  await S('outline-item', items.nth(2), ['default', 'hover', 'focus-visible'], { group: g, title: 'Section rail item', sel: 'a.astryx-outline-item' }, { noScroll: true });
+  await S('ask-tutor', q(M('canvas_shell')).first(), ['default', 'hover'], { group: g, title: 'Ask Tutor bar', desc: 'The compact pill docked at the bottom centre: white, 1px #e2e2e8 border, radius 9999, a two-layer soft shadow, the Gauth mascot, an "Ask Tutor" placeholder and a microphone button. It widens to 820px when opened (0.26s).', sel: M('canvas_shell') }, { noScroll: true });
+  await S('ask-tutor-mic', q(M('canvas_microphone')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Ask Tutor microphone button', desc: 'Measured, never pressed.', sel: M('canvas_microphone') }, { noScroll: true });
+  if (await pause.count()) await pause.click().catch(() => {});
+  await page.waitForTimeout(800);
+  await S('ask-tutor-open', q(M('canvas_shell')).first(), ['opened', 'filled'], { group: g, title: 'Ask Tutor bar, opened', desc: 'Clicking the bar widens it into a text field. Sample text was typed and deleted; no message was sent.', sel: M('canvas_shell') }, {
+    noScroll: true, noReset: true,
+    before: { opened: async () => { await q('[aria-label="Ask Tutor"]').first().click(); await page.waitForTimeout(1500); return 'clicked into the bar'; } },
+    fieldLoc: q('[aria-label="Ask Tutor"]'), fillText: 'Why does thin air reduce drag?',
+  });
   await page.keyboard.press('Escape').catch(() => {});
   await page.waitForTimeout(600);
-  await S('genre-pill', q(`a${M('ClubsIndexGenrePills-module')}`).filter({ visible: true }).first(), B4, { group: c, title: 'Genre pill', desc: 'A 46px genre pill link (Fantasy) in the scrollable genre strip; measured, never followed.', sel: 'a.ClubsIndexGenrePills-module__pill' });
-  await S('genre-scroll', q('button[aria-label*="genres" i]').filter({ visible: true }).first(), B4, { group: c, title: 'Genre scroll arrow', desc: 'The dark 40px arrow that scrolls the genre strip forward; measured, never clicked.', sel: 'button[aria-label="Scroll genres forward"]' });
-  await S('search-icon-btn', q('button[aria-label="Search clubs"], button[aria-label*="Search clubs" i]').filter({ visible: true }).first(), B4, { group: c, title: 'Search icon button', desc: 'The cream 44px circular search affordance at the head of the genre strip; measured, never clicked.', sel: 'button[aria-label="Search clubs"]' });
-  await S('icon-btn', q(`button${M('IconButton-module')}`).filter({ visible: true }).first(), B4, { group: c, title: 'Carousel arrow', desc: 'A 40px round bordered IconButton (Previous <shelf>) stepping a club/book carousel; measured, never clicked.', sel: 'button.IconButton-module Previous' });
-  await S('club-card-cat', q(`a${M('ClubCard-module')}, [data-testid="club-card"]`).filter({ visible: true }).first(), ['default', 'hover'], { group: c, title: 'Club card (catalog)', desc: 'A club card in a clubs-index shelf — image, moderator line, club name, member count; measured, never followed.', sel: 'a.ClubCard-module__card' });
-  // The off-canvas MobileMenu carries hidden h2s, so the shelf heading is
-  // scoped to main.
-  await S('clubs-section-h', q('main h2').filter({ hasText: /starting soon|Engaging|Inspiring|Popular/i }).filter({ visible: true }).first(), ['default'], { group: c, title: 'Shelf heading', desc: 'A clubs-index shelf heading (heldane) above a horizontal card rail.', sel: 'main h2 shelf' });
-  save();
-}
-
-async function book() {
-  if (!(await newPage('book', { wait: 9000 }))) return;
-  await sheetsFor('book');
-  await chrome('book');
-  const g = G.shell;
-  await catalogShell(g);
-  const p = G.promo;
-  await S('app-banner', q(`div${M('AppDownloadBanner-module')}`).filter({ has: page.locator('a[href*="apps.apple.com"]') }).filter({ visible: true }).first(), ['default'], { group: p, title: 'App download banner', desc: 'The app-install strip under the header with App Store and Play badges; the badge links are measured, never followed.', sel: 'div.AppDownloadBanner-module' }, { noScroll: true });
-  await S('store-badge', q('a[href*="apps.apple.com"]').filter({ visible: true }).first(), ['default', 'hover'], { group: p, title: 'Store badge', desc: 'The App Store badge inside the download banner; measured, never followed.', sel: 'a[href*=apps.apple.com]' }, { noScroll: true });
-  const b = G.book;
-  await S('book-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: b, title: 'Book title', desc: 'The book detail masthead title.', sel: 'book h1' }, { noScroll: true });
-  await S('author-link', q(`a${M('BookDetailHero-module')}`).filter({ visible: true }).first(), B4, { group: b, title: 'Author link', desc: 'The author byline link in the book hero; measured, never followed.', sel: 'a.BookDetailHero-module__authorLink' }, { noScroll: true });
-  await S('ratings-line', q(`a${M('BookDetailReviewLine-module')}`).filter({ visible: true }).first(), B4, { group: b, title: 'Ratings line', desc: 'The "66,098 Ratings" anchor linking to the reviews block; measured, never followed.', sel: 'a.BookDetailReviewLine-module__ratings' }, { noScroll: true });
-  await S('btn-primary', q(`button${M('Button-module')}`).filter({ hasText: /Want to read/i }).first(), B4, { group: b, title: 'Primary button', desc: 'The dark 52px "Want to read" pill (Button-module primary, radius 9999); its states were measured but it was never clicked — saving to a shelf is signed-in functionality.', sel: 'button.Button-module Want to read' });
-  await S('btn-secondary', q(`button${M('Button-module')}`).filter({ hasText: /Read or listen/i }).first(), B4, { group: b, title: 'Secondary button', desc: 'The outlined "Read or listen free today" pill below the primary; measured, never clicked.', sel: 'button.Button-module Read or listen' });
-  // Clicking the spoiler pill unmounts it (the review text expands), so its
-  // disclosure is measured as a resting state, not an opened one.
-  await S('spoiler-pill', q('button').filter({ hasText: /May contain spoilers/i }).first(), B4, { group: b, title: 'Spoiler disclosure', desc: 'The olive "May contain spoilers!" pill toggling the pre-published review text — a local disclosure; pressing it reveals the text, so it was measured at rest.', sel: 'button May contain spoilers' });
-  await S('read-more', q(`button${M('ExpandableText-module')}`).filter({ visible: true }).first(), [...B4, 'opened'], { group: b, title: 'Read more toggle', desc: 'The inline "Read more" disclosure expanding the book description — a local toggle; the opened state was measured after clicking it.', sel: 'button.ExpandableText-module Read more' });
-  await S('author-profile-btn', q(`a${M('Button-module')}`).filter({ hasText: /View author profile/i }).first(), B4, { group: b, title: 'Author profile button', desc: 'The outlined "View author profile" pill link; measured, never followed.', sel: 'a.Button-module View author profile' });
-  await S('book-card', q(`a${M('BookCarouselItem-module')}`).filter({ visible: true }).first(), ['default', 'hover'], { group: b, title: 'Book card', desc: 'A book carousel item — cover image, title, author — linking to another book page; measured, never followed.', sel: 'a.BookCarouselItem-module__item' });
-  await S('club-card-book', q(`a${M('ClubCard-module')}`).filter({ visible: true }).first(), ['default', 'hover'], { group: b, title: 'Club card (book page)', desc: 'A club card in the "clubs reading this" rail; measured, never followed.', sel: 'a.ClubCard-module__card' });
-  await S('icon-btn-book', q(`button${M('IconButton-module')}`).filter({ visible: true }).first(), B4, { group: b, title: 'Carousel arrow (book)', desc: 'A 40px round bordered IconButton stepping the "Other books by" carousel; measured, never clicked.', sel: 'button.IconButton-module' });
-  save();
-}
-
-async function club() {
-  if (!(await newPage('club', { wait: 9000 }))) return;
-  await sheetsFor('club');
-  await chrome('club');
-  const g = G.shell;
-  await catalogShell(g);
-  const c = G.club;
-  await S('club-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: c, title: 'Club name', desc: 'The club masthead — heldane 46px bold "The Cozy Chaos Book Club".', sel: 'club h1 Text-module v-header' }, { noScroll: true });
-  await S('club-sub', q('h3').filter({ visible: true }).first(), ['default'], { group: c, title: 'Moderator line', desc: 'The 14px Inter semibold moderator byline under the club name.', sel: 'club h3 Text-module v-subheader' }, { noScroll: true });
-  await S('join-cta', q(`a${M('Button-module')}`).filter({ hasText: /Download the app to join/i }).first(), B4, { group: c, title: 'Join CTA', desc: 'The dark "Download the app to join" pill — joining is app-only; measured, never followed.', sel: 'a.Button-module Download the app to join' });
-  await S('share-btn', q(`button${M('ShareButton-module')}`).filter({ visible: true }).first(), B4, { group: c, title: 'Share button', desc: 'The round share icon button ("Share The Cozy Chaos Book Club"); measured, never clicked.', sel: 'button.ShareButton-module' });
-  await S('club-h2', q('h2').filter({ hasText: /About this club|Club picks/i }).filter({ visible: true }).first(), ['default'], { group: c, title: 'Club section heading', desc: 'A heldane 36px club-page section heading ("About this club").', sel: 'club h2 Text-module' });
-  await S('faq-q', q(`button${M('FaqAccordion-module')}`).filter({ visible: true }).first(), [...B4, 'opened'], { group: c, title: 'FAQ question', desc: 'A FAQ accordion question ("Are Fable book clubs free to join?") — a local toggle; the opened state was measured after clicking it.', sel: 'button.FaqAccordion-module__faqQuestion' });
-  // The first carousel items sit left of the viewport; nth(2) is on-screen
-  // for a resting read (its hover keeps landing outside the viewport, so it
-  // is honestly not captured).
-  await S('book-card-club', q(`a${M('BookCarouselItem-module')}`).filter({ visible: true }).nth(2), ['default'], { group: c, title: 'Club pick card', desc: 'A "Club picks" book card (CURRENTLY READING badge, cover, title); measured, never followed.', sel: 'a.BookCarouselItem-module__item' });
-  save();
-}
-
-async function signin() {
-  if (!(await newPage('signin', { wait: 9000 }))) return;
-  await sheetsFor('signin');
-  await chrome('signin');
-  const g = G.signin;
-  await S('signin-h1', q('h1, h2').filter({ hasText: /log in|sign up|welcome/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-in headline', desc: '"Please log in" — the Heldane Display 26px heading over the sign-in card.', sel: 'signin h1' }, { noScroll: true });
-  await S('signin-panel', q('form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-in form', desc: 'The sign-in form: email and password fields, show-password, the email submit and SSO buttons. Shot and measured at rest — never submitted.', sel: 'signin form' }, { noScroll: true });
-  await S('field-email', q('input[type="email"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'The Email Address text input; focused and typed into then cleared — never submitted.', sel: 'input[type=email]' }, { noScroll: true, fillText: 'name@example.com' });
-  await S('field-password', q('input[type="password"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Password field', desc: 'The Password input with the inline Show button; focused and typed into then cleared — never submitted.', sel: 'input[type=password]' }, { noScroll: true, fillText: 'example-password-123' });
-  await S('show-btn', q('button[aria-label*="Show" i], button').filter({ hasText: /^Show$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Show password', desc: 'The inline "Show" reveal button in the password field; measured, never clicked.', sel: 'button Show password' }, { noScroll: true });
-  await S('submit-btn', q('button[type="submit"]').filter({ visible: true }).first(), B4, { group: g, title: 'Login with email', desc: 'The dark "Login with email" submit; its states were measured but the button was never clicked — nothing was submitted.', sel: 'button[type=submit] Login with email' }, { noScroll: true });
-  // The SSO buttons carry stable data-testids (their innerText is
-  // "Continue with\nGoogle" — a hidden "Login with" in textContent breaks
-  // every hasText regex). They mount late, after the identity SDKs land.
-  try { await q('button[data-testid="auth-provider-google-button"]').waitFor({ timeout: 15000 }); } catch { /* may never render */ }
-  await S('sso-google', q('button[data-testid="auth-provider-google-button"]'), B4, { group: g, title: 'Continue with Google', desc: 'The white Google SSO button; measured, never clicked.', sel: 'button[data-testid=auth-provider-google-button]' }, { noScroll: true });
-  await S('sso-apple', q('button[data-testid="auth-provider-apple-button"]'), B4, { group: g, title: 'Continue with Apple', desc: 'The white Apple SSO button; measured, never clicked.', sel: 'button[data-testid=auth-provider-apple-button]' }, { noScroll: true });
-  await S('reset-link', q('button, a').filter({ hasText: /^Reset it$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Reset link', desc: 'The "Reset it" password-reset link styled as a bold inline button; measured, never clicked.', sel: 'button Reset it' }, { noScroll: true });
-  await S('signup-link', q('button, a').filter({ hasText: /^Sign up$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Sign up link', desc: 'The "Sign up" link button under the SSO buttons; measured, never clicked.', sel: 'button Sign up' }, { noScroll: true });
-  save();
-}
-
-async function support() {
-  if (!(await newPage('support', { wait: 8000 }))) return;
-  await sheetsFor('support');
-  await chrome('support');
-  const g = G.support;
-  await S('support-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Support headline', desc: 'The /support masthead heading on the forest-green band.', sel: 'support h1' }, { noScroll: true });
-  await S('support-masthead', await domFind(page, /\S/, { sel: 'h1', tag: 'sm', up: 'section' }), ['default'], { group: g, title: 'Support masthead band', desc: 'The forest-green support masthead band (rgb(6, 76, 55)) carrying the heading and intro.', sel: 'support h1 closest section' }, { noScroll: true });
-  await S('help-card', q('a').filter({ hasText: /^FAQs|frequently asked/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Help card', desc: 'The "FAQs" help-card linking to help.fable.co; measured, never followed.', sel: 'support FAQs card' });
-  await S('email-card', q('a[href^="mailto"]').filter({ visible: true }).first(), B4, { group: g, title: 'Email card', desc: 'The "Email" help-card (mailto:support@fable.co); measured, never followed.', sel: 'support Email card' });
-  save();
-}
-
-async function discover() {
-  if (!(await newPage('discover', { wait: 12000 }))) return;
-  // The wall is a live "Gathering ten thousand covers" animation: image
-  // decodes saturate the main thread while it settles, so reads need a
-  // longer timeout and a settle wait before the first measurement.
-  page.setDefaultTimeout(25000);
-  await page.waitForFunction(() => !/Gathering/i.test(document.body.innerText || ''), { timeout: 30000 }).catch(() => {});
-  await page.waitForTimeout(8000);
-  await sheetsFor('discover');
-  await chrome('discover');
-  // Once the wall is settled, freeze the render loop: the live animation
-  // re-mounts the masthead every frame, which starves locator resolution
-  // (disc-h1 timed out at 25s twice). RAF is stopped only after the full
-  // wall has rendered; computed styles are unaffected.
-  await page.evaluate(() => { window.requestAnimationFrame = () => 0; }).catch(() => {});
-  await page.waitForTimeout(1500);
-  const g = G.discover;
-  // The wall paints a radial-gradient scrim over the cover grid, not a flat
-  // fill: the painted layer carries the dark field.
-  await S('disc-wall', q('main').filter({ visible: true }).first().locator('> div').first(), ['default'], { group: g, title: 'Cover wall', desc: 'The /discover cover wall under its dark-green radial scrim (rgba(12, 92, 66, 0.85)); a whole-page dark surface, not a .dark-scope paint.', sel: 'main.app-content > div' }, { noScroll: true });
-  await S('disc-h1', await domFind(page, /Find new books/i, { sel: 'h1, h2, [class*="title" i]', tag: 'dh' }), ['default'], { group: g, title: 'Discover headline', desc: '"Find new books by browsing similar covers" — the Heldane Display 64px pearl masthead on the dark wall.', sel: 'discover h1' }, { noScroll: true });
-  await S('disc-field', q('input[placeholder*="book you love" i]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Book search field', desc: 'The white 420x60 search pill ("Search for a book you love..."); focused and typed into then cleared — never submitted.', sel: 'input[placeholder*="book you love"]' }, { noScroll: true, fillText: 'project hail mary' });
-  await S('disc-random', q('button').filter({ hasText: /^\s*Random\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Random button', desc: 'The forest-400 "Random" pill shuffling the cover wall; measured, never clicked.', sel: 'button Random' }, { noScroll: true });
-  await S('disc-whatis', q('button').filter({ hasText: /What is this/i }).filter({ visible: true }).first(), B4, { group: g, title: 'What is this button', desc: 'The matching "What is this?" pill; measured, never clicked.', sel: 'button What is this' }, { noScroll: true });
-  await S('disc-wordmark', q('a[href="/"], a[aria-label*="able" i], header a').filter({ visible: true }).first(), ['default'], { group: g, title: 'Fable wordmark (discover)', desc: 'The fable wordmark link at the top of the dark wall; measured, never followed.', sel: 'discover wordmark' }, { noScroll: true });
-  save();
-}
-
-// The phone's hamburger is div[aria-label="Open menu"]; the nav sheet it
-// opens is the Clubs button's outermost on-screen ancestor inside the
-// header. Tags that sheet with data-m-nav so it can be located while open.
-async function openMobileNav() {
-  const probe = () => page.evaluate(() => {
-    const b = [...document.querySelectorAll('header button')].find((x) => x.innerText.trim() === 'Clubs');
-    if (!b) return false;
-    let sheet = null;
-    for (let n = b; n && n.tagName !== 'HEADER'; n = n.parentElement) {
-      const r = n.getBoundingClientRect();
-      if (r.width > 250 && r.left > -10) sheet = n;
-    }
-    if (!sheet) return false;
-    sheet.setAttribute('data-m-nav', '1');
-    return true;
+  await page.screenshot({ path: '/dev/null' }).catch(() => {});
+  // settings popover
+  await S('settings-popover', page.getByRole('dialog').filter({ hasText: 'Narration' }).first(), ['opened'], { group: g, title: 'Settings popover', desc: 'Speed, Narration and Captions switches, a Zoom stepper and Export PDF (not pressed): a white card with a 1px #f2f2f2 border, radius 24 and a 0 8 14 shadow at 9%.', sel: 'role=dialog (Settings)' }, {
+    noScroll: true, noReset: true,
+    open: async () => { await page.getByRole('button', { name: 'Settings' }).click(); await page.waitForTimeout(1000); },
+    before: { opened: async () => 'Settings pressed (opens a menu)' },
   });
-  if (await probe()) return 'nav sheet already open';
-  const btn = q('[aria-label="Open menu"]').first();
-  try { await btn.waitFor({ timeout: 15000 }); } catch { return 'menu trigger never mounted'; }
-  await btn.click().catch(() => btn.evaluate((el) => el.click()));
-  await page.waitForTimeout(1200);
-  return (await probe()) ? 'clicked the "Open menu" hamburger; the nav sheet slid in from x=-390' : 'clicked Open menu; the sheet did not report open';
+  const sw = page.getByRole('switch').first();
+  await S('switch', sw, ['default', 'hover', 'focus-visible'], { group: g, title: 'Switch', desc: 'A Settings row holding the Narration toggle, off: 44px, radius 12; hover fills it #f3f3f3 and keyboard focus draws a 2px #307aff ring inside. Not toggled.', sel: 'role=switch' }, {
+    noScroll: true, noReset: true,
+    open: async () => { if (!(await sw.isVisible().catch(() => false))) { await page.getByRole('button', { name: 'Settings' }).click(); await page.waitForTimeout(800); } },
+  });
+  await page.keyboard.press('Escape').catch(() => {});
+  await page.waitForTimeout(500);
+  // the canvas body: the first chapter as it stands at the start
+  await S('chapter-title', q('h2' + M('canvas_title')).first(), ['default'], { group: g, title: 'Chapter title', desc: '"Canvas Chapter", which is Libre Baskerville Bold, 24/30.', sel: 'h2' + M('canvas_title') }, { noScroll: true });
+  await S('note-heading', q('h3' + M('canvas_title')).first(), ['default'], { group: g, title: 'Note heading', desc: '"Canvas Heading" (Satoshi Medium) 18/26 600; the note being read is blue #2e70ed.', sel: 'h3' + M('canvas_title') }, { noScroll: true });
+  await S('note-text', q(M('canvas_text')).first(), ['default'], { group: g, title: 'Note body text', desc: '"Canvas Print" (Satoshi) 16/28 in a warm grey #45433f.', sel: M('canvas_text') }, { noScroll: true });
+  await S('canvas-ground', q(M('canvas_viewport')).first(), ['default'], { group: g, title: 'Canvas ground', desc: 'A #fcfcfc board with a dot grid, panned and zoomed by drag and Ctrl/Cmd + scroll.', sel: M('canvas_viewport') }, { noScroll: true, crop: false });
+  // play on and capture what the lesson draws next (figure, callout, list, quiz)
+  const play = page.getByRole('button', { name: 'Play' });
+  if (await play.count()) await play.click().catch(() => {});
+  const inView = (sel) => page.evaluate((sel) => { const e = document.querySelector(sel); if (!e) return false; const r = e.getBoundingClientRect(); return r.top > 60 && r.bottom < innerHeight - 20; }, sel);
+  for (let i = 0; i < 60 && !(await inView('ol' + M('canvas_list'))); i++) await page.waitForTimeout(1500);
+  const pauseNow = page.getByRole('button', { name: 'Pause' });
+  if (await pauseNow.count()) await pauseNow.click().catch(() => {});
+  await page.waitForTimeout(1500);
+  const body = { group: g };
+  await S('figure-card', q('figure' + M('canvas_image')).last(), ['default'], { ...body, title: 'Figure card', desc: 'An animated diagram in a white radius-20 frame.', sel: 'figure' + M('canvas_image') }, { noScroll: true, noReset: true });
+  await S('callout', q('blockquote' + M('canvas_callout')).last(), ['default'], { ...body, title: 'Takeaway callout', desc: 'A #e8fbef radius-14 box with a bulb icon for the one-line takeaway.', sel: 'blockquote' + M('canvas_callout') }, { noScroll: true, noReset: true });
+  await S('numbered-list', q('ol' + M('canvas_list')).last(), ['default'], { ...body, title: 'Numbered list', desc: 'Points with a small number in a pale blue disc and 16/24 text.', sel: 'ol' + M('canvas_list') }, { noScroll: true, noReset: true });
+  const play2 = page.getByRole('button', { name: 'Play' });
+  if (await play2.count()) await play2.click().catch(() => {});
+  let quiz = false;
+  for (let i = 0; i < 110 && !quiz; i++) {
+    await page.waitForTimeout(2000);
+    quiz = await page.locator('[aria-label="Close quiz and continue"]').count() > 0;
+  }
+  log('  quiz shown:', quiz);
+  const kinds = await page.evaluate(() => {
+    const mark = (el, n) => { if (el) el.setAttribute('data-m', n); return !!el; };
+    const vis = (e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.top > 40 && r.bottom < innerHeight - 10; };
+    const all = [...document.querySelectorAll('[class*="canvas_"]')].filter(vis);
+    const quizCard = document.querySelector('[aria-label="Close quiz and continue"]')?.closest('[class*="canvas_"]:not(button)');
+    let q2 = quizCard; while (q2 && q2.getBoundingClientRect().height < 200) q2 = q2.parentElement;
+    const ok = mark(q2, 'quiz');
+    document.querySelectorAll('[data-m="quiz"] input').forEach((inp, i) => { let n = inp.parentElement; while (n && n.getBoundingClientRect().height < 30) n = n.parentElement; if (n) n.setAttribute('data-m', 'opt' + i); });
+    return { all: all.length, quiz: ok };
+  });
+  log('  marked', JSON.stringify(kinds));
+  if (kinds.quiz) {
+    await S('quiz-card', q('[data-m="quiz"]'), ['default'], { group: g, title: 'Quiz card', desc: 'A check-in question docked over the canvas: white, 1px #e3e3e3 border, radius 20, a 0 6 24 shadow at 7%, an Inter 16/24 600 question, four outlined options and a small close button. No option was chosen.', sel: 'canvas quiz' }, { noScroll: true });
+    await S('quiz-option', q('[data-m="opt0"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Quiz option', desc: 'A 44px option, 1px #e6e6e7 border, radius 10, SF Pro 14/20, over a visually hidden radio. Hover fills it #f3f3f3; keyboard focus draws Astryx\'s 2px #0064e0 ring 3px out. Hovered and focused only.', sel: 'canvas quiz option' }, { noScroll: true, focusLoc: q('[data-m="quiz"] input').first() });
+  }
+  await page.close();
+}
+
+async function math() {
+  await newPage('lesson-math', { wait: 8000 });
+  await sheetsFor('lesson-math');
+  const g = G.math;
+  const gate = page.getByRole('button', { name: 'Continue', exact: true });
+  if (await gate.count()) {
+    await S('audio-gate', gate.locator('xpath=..'), ['default'], { group: G.overlay, title: 'Audio gate', desc: 'The math player asks for a tap instead of a dialog: a line of text and a dark Continue button over the blurred slide.', sel: 'button "Continue" parent' }, { noScroll: true });
+    await S('continue-button', gate, ['default', 'hover', 'focus-visible', 'pressed'], { group: G.overlay, title: 'Continue button', sel: 'button "Continue"' }, { noScroll: true });
+    await gate.click();
+    await page.waitForTimeout(4000);
+  }
+  await S('math-lesson-page', q(M('shared_lessonPage')).first(), ['default'], { group: g, title: 'Math lesson page', desc: 'Two columns on #faf9f5: a 360px tutor column at the left and the slide in a white radius-32 frame at the right, under a 66px header with the progress bar.', sel: M('shared_lessonPage') }, { noScroll: true, crop: false });
+  await S('tutor-panel', q('aside' + M('shared_tutorPanel')).first(), ['default'], { group: g, title: 'Tutor column', desc: 'The mascot, a status line ("Explaining ...") with a shimmer, the running transcript and the "Ask gauth" field at the foot.', sel: 'aside' + M('shared_tutorPanel') }, { noScroll: true });
+  await page.waitForSelector(M('shared_status'), { state: 'visible', timeout: 20000 }).catch(() => {});
+  await S('tutor-status', q(M('shared_status')).first(), ['default'], { group: g, title: 'Tutor status line', sel: M('shared_status') }, { noScroll: true });
+  const bar = q(M('tutor_inputBar')).first();
+  await S('tutor-input', bar, ['default', 'hover', 'focused', 'filled'], { group: g, title: 'Ask gauth field', desc: 'White, 1px #e4e6eb border, radius 16, 48px, Inter 16, a microphone at the right; it grows with the text. Sample text was typed and deleted; nothing was sent.', sel: M('tutor_inputBar') }, { noScroll: true, fieldLoc: bar.locator('textarea'), fillText: 'Why is the empty set a subset?' });
+  await S('progress-bar', q(M('shared_progressGroup')).first(), ['default'], { group: g, title: 'Lesson progress', desc: 'Previous and next page arrows around an 8px track (#edeade fill, #27220c value) and one 20px dot per later chapter.', sel: M('shared_progressGroup') }, { noScroll: true });
+  await S('page-nav', page.getByRole('button', { name: 'Next lesson page' }), B4, { group: g, title: 'Page arrow button', sel: 'button "Next lesson page"' }, { noScroll: true });
+  const pauseBtn = page.getByRole('button', { name: /Pause lesson|Play lesson/ });
+  await S('header-round-button', pauseBtn, B4, { group: g, title: 'Header round button', desc: 'Pause, speed ("1x") and chapters: 40px round ghost buttons.', sel: 'button "Pause lesson"' }, { noScroll: true });
+  await S('speed-button', page.getByRole('button', { name: /Playback speed/ }), ['default', 'hover'], { group: g, title: 'Speed button', sel: 'button "Playback speed"' }, { noScroll: true });
+  await S('player-frame', q(M('shared_playerFrame')).first(), ['default'], { group: g, title: 'Slide frame', desc: 'The white radius-32 frame the slide plays in, title in Playfair Display.', sel: M('shared_playerFrame') }, { noScroll: true });
+  await S('chapters-panel', q('aside' + M('pgc_panel')), ['opened'], { group: g, title: 'Chapters panel', desc: 'Opened from the list button at the top right: a white panel of chapter rows, the current one tinted.', sel: 'aside' + M('pgc_panel') }, {
+    noScroll: true, noReset: true,
+    open: async () => { await page.getByRole('button', { name: 'Open lesson chapters' }).click(); await page.waitForTimeout(1200); },
+    before: { opened: async () => 'Open lesson chapters pressed (opens a panel)' },
+  });
+  await S('chapter-option-active', q(M('pgc_activeOption')), ['default'], { group: g, title: 'Chapter row, current', sel: M('pgc_activeOption') }, { noScroll: true, noReset: true });
+  await S('chapter-option', q(M('pgc_chapterOption')).nth(1), ['default', 'hover', 'focus-visible'], { group: g, title: 'Chapter row', desc: 'A 37px row. Hovered and focused only.', sel: M('pgc_chapterOption') }, { noScroll: true, noReset: true });
+  await page.getByRole('button', { name: /Close lesson chapters|Open lesson chapters/ }).first().click().catch(() => {});
+  await page.keyboard.press('Escape').catch(() => {});
+  // let the tutor talk for a while, so the transcript has text
+  await page.waitForTimeout(25000);
+  await S('tutor-transcript', q(M('shared_tutorTranscript')).first(), ['default'], { group: g, title: 'Tutor transcript', desc: 'The column under the mascot. While the tutor narrates it holds the status line with a shimmer; no transcript text appeared in 25 seconds of playback.', sel: M('shared_tutorTranscript') }, { noScroll: true });
+  await page.close();
+}
+
+async function history() {
+  await newPage('lesson-history', { wait: 8000 });
+  const g = G.history;
+  await S('history-lesson-page', q(M('lesson_lessonPage')).first(), ['default'], { group: g, title: 'History lesson page', desc: 'An immersive player on #faf9f5: chapter pills centred in the header, the scene in the middle, a round play button and a caption line at the foot.', sel: M('lesson_lessonPage') }, { noScroll: true, crop: false });
+  await S('chapter-pills', q(M('lesson_chapterPills')), ['default'], { group: g, title: 'Chapter pills', desc: 'The current chapter as a grey pill with an icon and its name; later chapters as numbered pills joined by dashed lines; a chapters list button at the end.', sel: M('lesson_chapterPills') }, { noScroll: true });
+  await S('chapter-pill-active', q(M('lesson_chapterPillActive')), ['default'], { group: g, title: 'Chapter pill, current', sel: M('lesson_chapterPillActive') }, { noScroll: true });
+  await S('chapter-pill', q(M('lesson_chapterPillUpcoming')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Chapter pill, upcoming', desc: 'An upcoming chapter: a 32px pill at 4% ink with its number at 25% ink; hover doubles both.', sel: M('lesson_chapterPillUpcoming') }, { noScroll: true });
+  await S('play-button', q(M('lesson_mediaControlButton')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Play button', desc: 'A 60px disc, white at 82%, with a 0 8 28 navy shadow and a black play glyph. Not pressed.', sel: M('lesson_mediaControlButton') }, { noScroll: true });
+  await S('chapter-panel', q('aside' + M('lesson_chapterPanel')), ['opened'], { group: g, title: 'Chapter panel', desc: 'A 400px white panel from the right edge, radius 28 on the leading corners, a -8 0 40 shadow: each chapter with a number, a 600 name and a two-line description; the current chapter is pink #fff0f3 with red text.', sel: 'aside' + M('lesson_chapterPanel') }, {
+    noScroll: true, noReset: true,
+    open: async () => { await q(M('lesson_chapterMenuButton')).first().click(); await page.waitForTimeout(1200); },
+    before: { opened: async () => 'chapters button pressed (opens a panel)' },
+  });
+  await S('chapter-panel-item', q(M('lesson_chapterPanelItem')).nth(1), ['default', 'hover', 'focus-visible'], { group: g, title: 'Chapter panel row', sel: M('lesson_chapterPanelItem') }, { noScroll: true, noReset: true });
+  await q(M('lesson_panelClose')).first().click().catch(() => {});
+  await page.waitForTimeout(800);
+  const cap = await page.evaluate(() => { const e = [...document.querySelectorAll('body *')].find((n) => n.children.length === 0 && /\w/.test(n.textContent || '') && n.getBoundingClientRect().top > innerHeight - 100 && n.getBoundingClientRect().left > 300); if (e) e.setAttribute('data-m', 'caption'); return !!e; });
+  if (cap) await S('caption', q('[data-m="caption"]'), ['default'], { group: g, title: 'Caption line', desc: 'The narration as one centred grey line under the scene.', sel: 'caption' }, { noScroll: true });
+  await page.close();
+}
+
+async function atlas() {
+  await newPage('atlas');
+  await sheetsFor('atlas');
+  const g = G.atlas;
+  await S('atlas-header', q('header' + M('header_header')).first(), ['default'], { group: g, title: 'Atlas top bar', desc: 'Atlas has its own 56px shell: logo and a menu button at the left, Sign in at the right.', sel: 'header' + M('header_header') }, { noScroll: true });
+  await S('atlas-drawer', q(M('header_drawer')).first(), ['default'], { group: g, title: 'Atlas sidebar', desc: 'A 230px white drawer: New Topic, a search field and the topic list (empty when signed out).', sel: M('header_drawer') }, { noScroll: true });
+  await S('new-topic', q(M('header_addBtn')).first(), B4, { group: g, title: 'New Topic button', desc: 'A 44px row, radius 12, plus icon and Rubik 12px label.', sel: M('header_addBtn') }, { noScroll: true });
+  await S('atlas-search', q(M('header_searchBox')).first(), ['default', 'hover', 'focused', 'filled'], { group: g, title: 'Topic search field', sel: M('header_searchBox') }, { noScroll: true, fieldLoc: q(M('header_searchInput')), fillText: 'Moon' });
+  await S('atlas-title', q(M('atlas-landing_start-project-title')), ['default'], { group: g, title: 'Atlas title', desc: '"Turn any topic into a visual story" in Libre Baskerville 40/48 700, the first letter filled with a red gradient.', sel: M('atlas-landing_start-project-title') }, { noScroll: true });
+  await S('atlas-composer', q(M('atlas-landing_composer')).first(), ['default', 'hover', 'focused', 'filled'], { group: g, title: 'Atlas prompt box', desc: 'A 920 x 148 white box, 1px #e4e6eb border, radius 20, a peach glow (0 6 20 rgba(255,215,199,.4)) that deepens on focus, a Search toggle pill and a round send button. Sample text was typed and deleted; nothing was sent.', sel: M('atlas-landing_composer') }, { noScroll: true, fieldLoc: q(M('atlas-landing_input-container') + ' textarea'), fillText: 'The water cycle' });
+  await S('search-toggle', q(M('atlas-landing_search-toggle')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Search toggle pill', desc: 'The web-search switch, on: a near-black #171410 pill, radius 20, with a 0 5 12 shadow; hover lightens it to #2a2d34. Not toggled.', sel: M('atlas-landing_search-toggle') }, { noScroll: true });
+  await S('send-button', q(M('atlas-landing_send-button')).first(), ['default', 'hover'], { group: g, title: 'Send button', desc: 'Grey #eef0f3 disc while the box is empty. Never pressed.', sel: M('atlas-landing_send-button') }, { noScroll: true });
+  await S('recommendation-chip', q(M('atlas-landing_recommendation-chip')).first(), ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Recommendation chip', desc: 'A white chip, 1px #dcdcdc border, radius 10, SF Pro 13/19.5 black; hover lifts it 1px onto #f5f5f7 with a soft shadow. Pressing one would start a story, so it was only hovered, focused and forced.', sel: M('atlas-landing_recommendation-chip') }, { noScroll: true });
+  await S('stories-title', q(M('user-cases_title')).first(), ['default'], { group: g, title: 'Popular Stories heading', sel: M('user-cases_title') });
+  const card = q(M('user-cases_card')).filter({ has: q(M('user-cases_videoBadge')) }).first();
+  await S('story-card', card, ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Story card', desc: 'A 339px white card, 1px rgba(0,0,0,.08) border, radius 16, a 0 6 18 shadow at 4%: a radius-12 thumbnail (video or image) and a 16/24 600 title. Hover lifts it 4px with a 0 18 42 shadow at 10%.', sel: M('user-cases_card') });
+  await S('video-badge', q(M('user-cases_videoBadge')).first(), ['default'], { group: g, title: 'Video badge', desc: 'A dark translucent radius-8 label over the thumbnail.', sel: M('user-cases_videoBadge') });
+  await S('new-badge', q(M('user-cases_newBadge')).first(), ['default'], { group: g, title: 'New badge', desc: 'A red #ff013e radius-8 label.', sel: M('user-cases_newBadge') });
+  await S('play-icon', q(M('user-cases_playIcon')).first(), ['default'], { group: g, title: 'Play disc', desc: 'A 48px white-alpha disc over a video thumbnail.', sel: M('user-cases_playIcon') });
+  // the preview dialog a card opens
+  const apollo = q(M('user-cases_card')).filter({ hasText: 'Apollo 11' }).first();
+  await centre(apollo);
+  await apollo.click();
+  await page.waitForTimeout(3000);
+  await S('story-preview', q(M('user-cases_exploreButton')).locator('xpath=..'), ['default'], { group: G.overlay, title: 'Story preview', desc: 'A story card opens a video preview over a dark scrim, with a white Explore pill under it.', sel: M('user-cases_exploreButton') + ' parent' }, { noScroll: true });
+  await S('explore-button', q(M('user-cases_exploreButton')), ['default', 'hover', 'focus-visible'], { group: G.overlay, title: 'Explore button', sel: M('user-cases_exploreButton') }, { noScroll: true });
+  await page.close();
+}
+
+async function story() {
+  await newPage('story');
+  await openStory(page);
+  out._meta.storyUrl = safeUrl(page.url());
+  const g = G.atlas;
+  await S('story-stage', q(M('atlas_visualFrame')).first(), ['default'], { group: g, title: 'Story canvas', desc: 'The story image in a radius-20 frame, hotspot rings over places in it, a "Content generated by AI" note under it.', sel: M('atlas_visualFrame') }, { noScroll: true });
+  await S('share-button', q(M('atlas-share-button_button')).first(), ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Share button', desc: 'The dark #21252e radius-8 button, Rubik 12/20 600. It shows no hover, focus or pressed change. Measured, never pressed.', sel: M('atlas-share-button_button') }, { noScroll: true });
+  await page.evaluate(() => { const b = [...document.querySelectorAll('button')].filter((e) => /Generate Video/.test(e.innerText || '') && e.getBoundingClientRect().top < 40 && e.getBoundingClientRect().width > 0)[0]; if (b) b.setAttribute('data-m', 'gen'); });
+  const gen = q('[data-m="gen"]');
+  await S('generate-video-button', gen, ['default', 'hover', 'focus-visible'], { group: g, title: 'Generate Video button', desc: 'A white button, 1px #dfe3ea border, radius 8, Rubik 12/20 600, a red guide dot; hover greys it to #f9fafb. Never pressed.', sel: 'button "Generate Video"' }, { noScroll: true });
+  const pop = q(M('video_header')).locator('xpath=..');
+  await S('video-settings', pop, ['opened'], { group: g, title: 'Video Settings popover', desc: 'Source image tiles, a language select and a dark Generate Video button with an estimate line, in a white radius-16 popover with a 0 10 40 shadow that springs in (cubic-bezier(0.34, 1.56, 0.64, 1)). Nothing in it was pressed.', sel: M('video_header') + ' parent' }, {
+    noScroll: true, noReset: true,
+    open: async () => { await gen.hover(); await page.waitForTimeout(1500); },
+    before: { opened: async () => 'hovered Generate Video' },
+  });
+  await reset();
+  const rail = await page.evaluate(() => { const v = [...document.querySelectorAll('button, [role=tab]')].find((e) => (e.innerText || '').trim() === 'View'); if (!v) return false; let n = v.parentElement; while (n && n.getBoundingClientRect().height < 100) n = n.parentElement; n.setAttribute('data-m', 'rail'); v.setAttribute('data-m', 'view'); const d = [...document.querySelectorAll('button, [role=tab]')].find((e) => (e.innerText || '').trim() === 'Details'); if (d) d.setAttribute('data-m', 'details'); return true; });
+  if (rail) {
+    await S('view-rail', q('[data-m="rail"]'), ['default'], { group: g, title: 'View and Details rail', desc: 'A floating white radius-16 rail at the right edge of the canvas, 1px #eeeeee border, with View (current, a 3px black bar) and Details.', sel: 'View / Details rail' }, { noScroll: true });
+    await S('rail-item', q('[data-m="details"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Rail item', sel: 'button "Details"' }, { noScroll: true });
+  }
+  const strip = await page.evaluate(() => { const t = [...document.querySelectorAll('body *')].find((e) => e.children.length === 0 && (e.textContent || '').trim() === 'Apollo 11 Moon Mission Journey' && e.getBoundingClientRect().top > 600); if (!t) return false; let n = t; while (n && n.getBoundingClientRect().height < 50) n = n.parentElement; n.setAttribute('data-m', 'strip-item'); return true; });
+  if (strip) await S('story-strip-item', q('[data-m="strip-item"]'), ['default', 'hover'], { group: g, title: 'Story strip item', desc: 'The current story under the canvas: thumbnail and a 600 title on a #f5f6f9 radius-12 tile.', sel: 'story strip' }, { noScroll: true });
+  await page.close();
+}
+
+async function news() {
+  await newPage('news');
+  const g = G.news;
+  await S('header-question', q(M('pc-header_input')).first(), ['default', 'hover', 'focused', 'filled'], { group: G.shell, title: 'Top bar question field', desc: 'On inner pages the question field moves into the top bar: 640 x 40, white at 84%, a 1px #e4e6eb border, radius 30, image and send buttons. Sample text was typed and deleted.', sel: M('pc-header_input') }, { noScroll: true, fieldLoc: q(M('pc-header_input') + ' input, ' + M('pc-header_input') + ' textarea'), fillText: 'Solve 2x + 3 = 7' });
+  await S('breadcrumb', q(M('content-list_breadcrumb')).first(), ['default'], { group: g, title: 'Breadcrumb', sel: M('content-list_breadcrumb') }, { noScroll: true });
+  await S('pill-tab-active', q(M('media-center_tab-active')).first(), ['default', 'focus-visible'], { group: g, title: 'Pill tab, current', desc: 'News: pink #fff0f3 fill, 1px #ffe5ec border, red #f00039 label, radius 100. Keyboard focus draws a 2px red ring 2px out.', sel: M('media-center_tab-active') }, { noScroll: true });
+  await S('pill-tab', q(M('media-center_tab')).filter({ hasText: 'Blog' }).first(), B4, { group: g, title: 'Pill tab', desc: 'White, 1px #e4e6eb border, radius 100, 14/21 500; pressed fills it #f5f5f7.', sel: M('media-center_tab') }, { noScroll: true });
+  await S('featured-article', q(M('media-center_featured-card')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Featured article', desc: 'A 26/36 700 title and a 16/24 description beside a 333 x 200 radius-12 image.', sel: M('media-center_featured-card') }, { noScroll: true });
+  await S('article-row', q(M('media-center_list-item')).first(), ['default', 'hover'], { group: g, title: 'Article row', desc: 'A 171 x 96 radius-8 image beside an 18px title and a two-line grey summary, rows split by a 1px rule.', sel: M('media-center_list-item') });
+  await page.close();
 }
 
 async function mobile() {
-  if (!(await newPage('mobile', { mobile: true, url: BASE + '/' }))) return;
-  await chrome('mobile');
   const g = G.mobile;
-  await S('m-header', q('header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', desc: 'The phone top bar: Fable mark, "Sign up or log in" and cart icons. The off-canvas nav sheet is measured below in its opened state.', sel: 'mobile header' }, { noScroll: true });
-  await S('m-logo', q('header a[aria-label="Home"], header a[href="/"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile logo', desc: 'The Fable mark-and-wordmark svg at 390 wide.', sel: 'mobile header logo' }, { noScroll: true });
-  await S('m-hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero headline', desc: 'The masthead at 390 wide.', sel: 'mobile h1' });
-  await S('m-getapp', q('button').filter({ hasText: /^Get the app$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile Get the app', desc: 'The hero "Get the app" pill at 390 wide; measured, never clicked.', sel: 'mobile Get the app' });
-  await S('m-club-card', q('[data-testid="club-card"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile club card', desc: 'A Popular-clubs card at 390 wide.', sel: 'mobile club-card' });
-  await S('m-footer', q('footer').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile footer', desc: 'The near-black footer stacked at 390 wide.', sel: 'mobile footer' }, { noScroll: true });
-  // The off-canvas nav sheet, honestly opened through its div hamburger.
-  await S('m-menu-btn', q('[aria-label="Open menu"]').filter({ visible: true }).first(), B4, { group: g, title: 'Mobile menu button', desc: 'The hamburger div opening the off-canvas nav sheet; its rest states were measured and the sheet was opened once for the rows below.', sel: '[aria-label="Open menu"]' }, { noScroll: true });
-  await S('m-nav', q('[data-m-nav]'), ['default'], { group: g, title: 'Mobile nav sheet', desc: 'The full-screen cream nav sheet slid in from x=-390: pill links (Clubs / Books / Library / Blog / Log in), footer links and the copyright line. Opened by clicking the hamburger — a local UI toggle.', sel: 'header off-canvas nav sheet' }, { open: openMobileNav, noScroll: true, noReset: true });
-  await S('m-nav-link', q('header button').filter({ hasText: /^Clubs$/ }).first(), B4, { group: g, title: 'Nav sheet link', desc: 'A pill link inside the opened nav sheet; measured while the sheet was open, never followed.', sel: 'nav sheet button Clubs' }, { open: openMobileNav, noScroll: true, noReset: true });
-  save();
+  await newPage('home', { mobile: true, promo: 'keep' });
+  await S('m-promo-dialog', q(M('atlas-intro-modal_aw-atlas-intro-modal')), ['default'], { group: g, title: 'Promo dialog (mobile)', sel: M('atlas-intro-modal_aw-atlas-intro-modal') }, { noScroll: true });
+  await closePromo(page);
+  const top = await page.evaluate(() => { const h = [...document.querySelectorAll('header, [class*="header" i]')].find((e) => { const r = e.getBoundingClientRect(); return r.top <= 1 && r.width >= 380 && r.height >= 40 && r.height <= 80; }); if (h) h.setAttribute('data-m', 'm-header'); return h ? h.className.toString().replace(/__[\w-]{5,6}/g, '') : null; });
+  if (top) await S('m-header', q('[data-m="m-header"]'), ['default'], { group: g, title: 'Mobile top bar', desc: 'Logo and a menu button; the sidebar becomes a drawer.', sel: top }, { noScroll: true });
+  const menu = await page.evaluate(() => { const b = [...document.querySelectorAll('button, [role=button], div, span')].find((e) => { const r = e.getBoundingClientRect(); return r.top < 50 && r.left > 320 && r.width >= 20 && r.width <= 48 && e.querySelector('svg, img'); }); if (b) b.setAttribute('data-m', 'm-menu'); return !!b; });
+  if (menu) {
+    await S('m-menu-button', q('[data-m="m-menu"]'), ['default'], { group: g, title: 'Mobile menu button', sel: 'top bar menu button' }, { noScroll: true });
+  }
+  await S('m-question-box', q(M('m_search-input-container')).or(q(M('pc_search-input-container'))).or(q('textarea, input[type=text]').first()).first(), ['default'], { group: g, title: 'Mobile question field', sel: 'question field' });
+  const banner = await page.evaluate(() => { const o = [...document.querySelectorAll('a, button, div')].find((e) => (e.innerText || '').trim() === 'Open' && e.getBoundingClientRect().top > 700); if (!o) return false; let n = o; while (n && n.getBoundingClientRect().width < 380) n = n.parentElement; n.setAttribute('data-m', 'm-banner'); return true; });
+  if (banner) await S('m-app-banner', q('[data-m="m-banner"]'), ['default'], { group: g, title: 'App banner (mobile)', desc: 'A bottom banner with the app icon, rating and an Open pill. Open was not pressed.', sel: 'bottom app banner' }, { noScroll: true });
+  await page.close();
+  await newPage('math', { mobile: true });
+  await S('m-unit-card', q(M('catalog_card')).first(), ['default'], { group: g, title: 'Unit card (mobile)', desc: 'On a phone the unit card is a 112px row card at radius 20 with a 4px track.', sel: M('catalog_card') });
+  await S('m-category-tab', q(M('catalog_categoryTab')).first(), ['default'], { group: g, title: 'Category tab (mobile)', sel: M('catalog_categoryTab') }, { noScroll: true });
+  await S('m-create-button', q(M('catalog_createButton')).first(), ['default'], { group: g, title: 'Create button (mobile)', desc: 'On a phone Create Course shrinks to "+ Create" on a #f4f2e6 pill.', sel: M('catalog_createButton') }, { noScroll: true });
+  await page.close();
 }
 
-run = new Date().toISOString().slice(0, 10);
-out._meta.read = run;
-out._meta.viewport = '1440 x 900 (mobile group 390 x 844); marketing pages (/ /signin /support) paint emotion-styled light surfaces on a forest-green hero, catalog pages (/clubs /books /book/* /club/*) paint the CSS-module white skin; /discover paints dark';
-out._meta.tool = 'tools/capture/public/measure.mjs';
-const { browser, context: ctx0 } = await launch();
-context = ctx0;
-const pages = process.argv.slice(2);
-const plan = { home, clubs, book, club, signin, support, discover, mobile };
-const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
-const finishedPages = new Set();
-try {
-  for (const k of order) { if (k !== 'mobile') { await plan[k](); finishedPages.add(k); } }
-  if (!pages.length || pages.includes('mobile')) { await plan.mobile(); finishedPages.add('mobile'); }
-  // Reduced-motion check on an element that transitions (the primary button's
-  // hover), so the delta is meaningful.
-  if (!pages.length || pages.includes('book')) await reducedMotion('book', `button${M('Button-module')}`);
-} finally {
-  for (const [key, c] of Object.entries(out.components)) {
-    // An untouched entry is pruned only when its page finished this run: a
-    // page the run never reached, and an edge-blocked route, keeps its earlier
-    // readings under their original provenance instead of being erased and
-    // republished.
-    if (!touched.has(key) && !pages.length && finishedPages.has(c.page) && !failedPages.has(c.page)) { delete out.components[key]; continue; }
-    const want = listed.get(key);
-    if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
-  }
+const PAGES = { promo, home, academy, create: createDialog, unit, science, math, history, atlas, story, news, mobile };
+const want = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(PAGES);
+const done = new Set(); // pages whose capture ran to the end
+for (const k of want) {
+  const isMobile = k === 'mobile';
+  const l = await launch({ mobile: isMobile });
+  context = l.context;
+  run = k;
+  try { await PAGES[k](); done.add(k); } catch (e) { log('PAGE FAILED', k, String(e.message).split('\n')[0]); }
+  out._meta.read = new Date().toLocaleDateString('en-CA'); // the local date of the capture
   save();
-  await browser.close();
+  await l.browser.close();
 }
-console.log('components-computed.json:', Object.keys(out.components).length, 'components');
+// a component a page no longer produces is dropped, so a re-run cannot leave stale entries; a page that
+// failed partway keeps its earlier entries, since what it did not reach is not known to be gone
+for (const [key, c] of Object.entries(out.components)) if (done.has(c.run) && !touched.has(key)) { delete out.components[key]; log('dropped stale', key); }
+// the same for states: a state an earlier run recorded that this finished run's spec no longer lists goes
+for (const [key, c] of Object.entries(out.components)) {
+  if (!done.has(c.run) || !listed.has(key)) continue;
+  for (const st of Object.keys(c.states || {})) if (!listed.get(key).has(st)) { delete c.states[st]; log('dropped stale state', key, st); }
+}
+save();
+log('done ->', OUT);

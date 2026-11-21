@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from frame.io on 2026-11-16, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the contact form and the sign-in field were never sent; every link and CTA was measured, never followed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (52 components, 131 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (52 components, 127 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #fcfcfc`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (126 files, named `{component}-{state}.png`, shot at 2x device scale; a crop over about 1.2 megapixels is halved to 1x by the quantize step, so check a file's own dimensions before reading pixels off it). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (122 files, named `{component}-{state}.png`, shot at 2x device scale; a crop over about 1.2 megapixels is halved to 1x by the quantize step, so check a file's own dimensions before reading pixels off it). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -16,11 +16,11 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/` | [default](screenshots/home-dark-default.png), [full](screenshots/home-dark-full.png), [menu-enterprise](screenshots/home-dark-menu-enterprise.png), [menu-features](screenshots/home-dark-menu-features.png), [menu-resources](screenshots/home-dark-menu-resources.png) |
+| Home | `/` | [default](screenshots/home-dark-default.png), [full](screenshots/home-dark-full.png), [locale-open](screenshots/home-dark-locale-open.png), [menu-enterprise](screenshots/home-dark-menu-enterprise.png), [menu-features](screenshots/home-dark-menu-features.png), [menu-resources](screenshots/home-dark-menu-resources.png), [mobile-drawer](screenshots/home-dark-mobile-drawer.png) |
 | Workflow Management | `/features/workflow-management` | [default](screenshots/features-workflow-dark-default.png), [full](screenshots/features-workflow-dark-full.png) |
 | Review & Approval | `/features/review-and-approval` | [default](screenshots/features-review-dark-default.png), [full](screenshots/features-review-dark-full.png) |
 | Camera to Cloud | `/features/c2c` | [default](screenshots/features-c2c-dark-default.png), [full](screenshots/features-c2c-dark-full.png) |
-| Pricing | `/pricing` | [default](screenshots/pricing-dark-default.png), [full](screenshots/pricing-dark-full.png) |
+| Pricing | `/pricing` | [annual](screenshots/pricing-dark-annual.png), [default](screenshots/pricing-dark-default.png), [full](screenshots/pricing-dark-full.png) |
 | Enterprise | `/enterprise` | [default](screenshots/enterprise-dark-default.png), [full](screenshots/enterprise-dark-full.png) |
 | Media & Entertainment | `/enterprise/media-and-entertainment` | [default](screenshots/enterprise-me-dark-default.png), [full](screenshots/enterprise-me-dark-full.png) |
 | Customers | `/customers` | [default](screenshots/customers-dark-default.png), [full](screenshots/customers-dark-full.png) |
@@ -34,7 +34,7 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 | AI | `/ai` | [default](screenshots/ai-dark-default.png), [full](screenshots/ai-dark-full.png) |
 | Frame.io Drive | `/drive` | [default](screenshots/drive-dark-default.png), [full](screenshots/drive-dark-full.png) |
 | Transfer | `/transfer` | [default](screenshots/transfer-dark-default.png), [full](screenshots/transfer-dark-full.png) |
-| Sign in (accounts.frame.io) | `accounts.frame.io/welcome` | [default](screenshots/welcome-light-default.png), [full](screenshots/welcome-light-full.png) |
+| Sign in (accounts.frame.io) | `accounts.frame.io/welcome` | [default](screenshots/welcome-light-default.png), [empty-desktop](screenshots/welcome-light-empty-desktop.png), [empty-phone](screenshots/welcome-light-empty-phone.png), [full](screenshots/welcome-light-full.png) |
 | Home, phone | `/` | [default](screenshots/mobile-home-dark-default.png), [drawer](screenshots/mobile-home-dark-drawer.png), [full](screenshots/mobile-home-dark-full.png) |
 | Pricing, phone | `/pricing` | [default](screenshots/mobile-pricing-dark-default.png), [full](screenshots/mobile-pricing-dark-full.png) |
 | Contact form, phone | `/contact/form` | [default](screenshots/mobile-contact-form-dark-default.png), [full](screenshots/mobile-contact-form-dark-full.png) |
@@ -53,8 +53,8 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 | Billing toggle | /pricing | the Monthly/Annually switch was measured at rest — flipping re-prices the grid, so it was never switched | [price-toggle](#billing-toggle), [price-toggle-alt](#billing-toggle-annual) |
 | Comparison accordions | /pricing | clicked one comparison-row category — a local UI toggle | [ptable-acc](#feature-comparison-accordion) — the accordion-open screenshot was not captured this run (the accordion trigger did not open) |
 | Pricing FAQ | /pricing | clicked one FAQ row — a local UI toggle | [faq-acc](#faq-accordion) |
-| Contact form fields | /contact/form | typed into then cleared — nothing sent; Submit was never pressed | [form-name](#name-field), [form-email](#email-field), [form-message](#message-field) |
-| Sign-in field | accounts.frame.io/welcome | typed into then cleared — nothing sent; 'Let's go' was never pressed | [login-email](#email-field-sign-in) |
+| Contact form fields | /contact/form | empty — nothing typed; Submit was never pressed | [form-name](#name-field), [form-email](#email-field), [form-message](#message-field) |
+| Sign-in field | accounts.frame.io/welcome | empty — nothing typed; 'Let's go' was never pressed | [login-email](#email-field-sign-in) |
 | Schedule a Meeting | /contact | it mounts a Calendly scheduler — a vendor widget; the button was measured, never pressed | [schedule-btn](#schedule-a-meeting) |
 | Signed-in product | a Frame.io account | the app and every post-login surface needs an account | boundary; see Gaps |
 
@@ -427,7 +427,7 @@ The "Talk with Sales" text-link button on /contact (leads to /contact/form); mea
 
 ### Contact form
 
-The /contact/form card: 'Enter your info below. We'll get back to you shortly.' with underlined Name/Email/Message fields and the Submit pill — measured and typed into then cleared, never submitted.
+The /contact/form card: 'Enter your info below. We'll get back to you shortly.' with underlined Name/Email/Message fields and the Submit pill — photographed empty, never typed into, never submitted.
 
 #### Contact form card
 The dark form card on /contact/form — "Enter your info below. We'll get back to you shortly." with Name/Email/Message fields and a Submit pill; never submitted. Read as `form-panel` on the contact form page.
@@ -439,40 +439,40 @@ Child layers that carry the look: div 1440x1543.5 background #000000 `core.color
 ![Contact form card default](components/crops/form-panel-default.png)
 
 #### Name field
-The underlined "Name" input; focused and typed into then cleared — never submitted. Read as `form-name` on the contact form page.
+The underlined "Name" input; photographed empty; focus lands in the field; nothing is typed. Read as `form-name` on the contact form page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 431 x 48; padding 1px 2px; border B: 1px solid #2e2f40 `core.color.grey.20`; background transparent; text FrameGothic 15/21.75 400, #dedfee `core.color.grey.90`; transition border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); placeholder #dedfee `core.color.grey.90`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(46, 47, 64) |
-| focused, filled | border B: 1px solid #fcfcfc `dark.theme.fg.declared`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(252, 252, 252) |
+| focused | border B: 1px solid #fcfcfc `dark.theme.fg.declared`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(252, 252, 252) |
 
 Child layers that carry the look: input 431x48 border 1px solid #2e2f40 `core.color.grey.20`.
 
-![Name field default](components/crops/form-name-default.png) ![Name field focused](components/crops/form-name-focused.png) ![Name field filled](components/crops/form-name-filled.png)
+![Name field default](components/crops/form-name-default.png) ![Name field focused](components/crops/form-name-focused.png)
 
 #### Email field
-The underlined "Email" input; focused and typed into then cleared — never submitted. Read as `form-email` on the contact form page.
+The underlined "Email" input; photographed empty; focus lands in the field; nothing is typed. Read as `form-email` on the contact form page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 431 x 48; padding 1px 2px; border B: 1px solid #2e2f40 `core.color.grey.20`; background transparent; text FrameGothic 15/21.75 400, #dedfee `core.color.grey.90`; transition border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); placeholder #dedfee `core.color.grey.90`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(46, 47, 64) |
-| focused, filled | border B: 1px solid #fcfcfc `dark.theme.fg.declared`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(252, 252, 252) |
+| focused | border B: 1px solid #fcfcfc `dark.theme.fg.declared`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(252, 252, 252) |
 
 Child layers that carry the look: input 431x48 border 1px solid #2e2f40 `core.color.grey.20`.
 
-![Email field default](components/crops/form-email-default.png) ![Email field focused](components/crops/form-email-focused.png) ![Email field filled](components/crops/form-email-filled.png)
+![Email field default](components/crops/form-email-default.png) ![Email field focused](components/crops/form-email-focused.png)
 
 #### Message field
-The underlined "Message" input; focused and typed into then cleared — never submitted. Read as `form-message` on the contact form page.
+The underlined "Message" input; photographed empty; focus lands in the field; nothing is typed. Read as `form-message` on the contact form page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 886 x 48; padding 1px 2px; border B: 1px solid #2e2f40 `core.color.grey.20`; background transparent; text FrameGothic 15/21.75 400, #dedfee `core.color.grey.90`; transition border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); placeholder #dedfee `core.color.grey.90`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 886.0x48.0 B:1px solid rgb(46, 47, 64) |
-| focused, filled | border B: 1px solid #fcfcfc `dark.theme.fg.declared`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 886.0x48.0 B:1px solid rgb(252, 252, 252) |
+| focused | border B: 1px solid #fcfcfc `dark.theme.fg.declared`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 886.0x48.0 B:1px solid rgb(252, 252, 252) |
 
 Child layers that carry the look: input 886x48 border 1px solid #2e2f40 `core.color.grey.20`.
 
-![Message field default](components/crops/form-message-default.png) ![Message field focused](components/crops/form-message-focused.png) ![Message field filled](components/crops/form-message-filled.png)
+![Message field default](components/crops/form-message-default.png) ![Message field focused](components/crops/form-message-focused.png)
 
 #### Submit
 The form's pill "Submit" button; its states were measured but the button was never clicked — nothing was sent. Read as `form-submit` on the contact form page.
@@ -501,14 +501,14 @@ Child layers that carry the look: input 346x40 background #ffffff `core.componen
 ![Sign-in panel default](components/crops/login-panel-default.png)
 
 #### Email field (sign-in)
-The "Email" input with placeholder "you@example.com"; focused and typed into then cleared — never submitted. Read as `login-email` on the sign-in page.
+The "Email" input with placeholder "you@example.com"; photographed empty; focus lands in the field; nothing is typed. Read as `login-email` on the sign-in page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 346 x 40; padding 12px; border 1px solid #e0475f; radius 4px; background #ffffff `core.component.productShell.login-field-bg`; text Avenir Next 14/21 400, #20222b; transition background-color 0.3s ease; placeholder #7d829c |
-| focused, filled | border 1px solid #5b53ff `core.color.brand.cobalt.default`; shadow rgba(91, 83, 255, 0.1) 0px 0px 8px 0px |
+| focused | border 1px solid #5b53ff `core.color.brand.cobalt.default`; shadow rgba(91, 83, 255, 0.1) 0px 0px 8px 0px |
 
-![Email field (sign-in) default](components/crops/login-email-default.png) ![Email field (sign-in) focused](components/crops/login-email-focused.png) ![Email field (sign-in) filled](components/crops/login-email-filled.png)
+![Email field (sign-in) default](components/crops/login-email-default.png) ![Email field (sign-in) focused](components/crops/login-email-focused.png)
 
 #### Let's go submit
 The cobalt "Let's go" submit; its states were measured but the button was never clicked — nothing was submitted. Read as `login-submit` on the sign-in page.
@@ -667,7 +667,7 @@ Frame.io's product is the review-and-approval app: projects, the commenting play
 ### Pages
 
 - **The account.** The app and every post-login surface (projects, the player, uploads, admin, billing) was never reached; the accounts.frame.io/welcome sign-in was measured as a form and never submitted.
-- **Forms.** The /contact/form fields were measured at rest and typed into then cleared — nothing was sent; what a submission returns is unverified.
+- **Forms.** The /contact/form fields and the welcome email field were photographed empty — nothing was typed or sent; what a submission returns is unverified.
 - **The /lp/* campaign landings and the remaining sitemap routes** are the same templates with different copy; a representative set was captured, not all 60+ public URLs.
 - **Case studies, release notes, integration pages and blog posts** are index-level captures plus one case study; individual articles are the same templates, unmeasured.
 - **Schedule a Meeting** mounts a Calendly scheduler — a third-party widget; the button was measured at rest and never pressed, so the scheduler frame is uncaptured.

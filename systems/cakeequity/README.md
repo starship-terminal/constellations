@@ -16,6 +16,8 @@ Cake is worth a capture because a startup-equity product paints an unusually con
 | [screenshots/](screenshots) | 21 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (both mobile `-full`s are part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `pricing-light-quarterly` the toggled billing tab, `home-light-faq-open` the expanded accordion |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — cakeequity.com declares a real `--blackberry--*`/`--plum--*` token layer; the ~30 `<deleted\|variable-*>` names are vendored-library leftovers), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [site-tree.md](site-tree.md) | Every public control and the page or overlay it opens, mapped 2026-11-21 |
+| [login-review.json](login-review.json) | The empty login wall: what it asks for, and that the branch stopped |
 
 ## Brief
 

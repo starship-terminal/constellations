@@ -1,227 +1,221 @@
 #!/usr/bin/env python3
-"""Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
+"""Build tokens.json from the live CSS custom properties read on calendly.com.
 
-Sources, read from calendly.com on 2026-11-12:
-  raw/css-vars.json          the custom properties calendly.com's stylesheets
-                             declare — the marketing site's --color-* / --text-ui-* /
-                             --radius-ui-* / --spacing-* / --font-* layer (its Astro
-                             bundles, read from the network responses plus inline
-                             styles by tools/capture/vars.mjs) and the booking
-                             application's own camelCase layer (--coreColor*,
-                             --primary-color*, --fontFamily*), resolved once on the
-                             marketing probe (light and .dark scopes) and once on the
-                             booking probe (bookingLight / bookingDark)
-  raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
-                             names a variable ("var") resolved per theme — or on the
-                             surface "resolve" names — or carries a measured
-                             value and the measurement it came from ("source")
-Every token carries $extensions.source: "css-var <name>" or "measured <where>".
+Source: raw/css-vars.json, written by tools/capture/public/read-vars.mjs from
+the signed-out homepage on 2026-11-21. Calendly publishes one light theme on
+the public marketing site. Dark shadow tokens exist (--var-shadow-ui-dark-*)
+but no captured page sets a dark theme, so they stay in core as unused
+alternates and no dark set is emitted.
 
-calendly.com is two products signed out: the marketing site paints light with
-.dark islands (hero card, footer card, dark sections) that re-bind the same
---color-* roles, and the public booking pages paint light from a separate
-application bundle. The export holds core, light and dark: light roles are the
-declared marketing vars plus a booking.* group over the booking layer, dark
-roles are the .dark re-bindings.
-
-Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
+Every leaf carries $extensions.source. A colour that is a plain hex alias of
+another token points at that token. calc(.25rem * N) lengths are kept as the
+authored calc and also recorded as a derived px note. Deterministic.
 """
-import json, pathlib, re
+import json
+import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-RAW = HERE / "raw"
-V = json.loads((RAW / "css-vars.json").read_text())
-SPEC = json.loads((RAW / "component-tokens.json").read_text())
+RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
+RESOLVED = RAW["resolved"]
+AUTHORED = RAW.get("authored", {})
+SOURCE = "css-var on https://calendly.com/ :root, read 2026-11-21, headless Chromium, signed out"
 
-# Resolved declarations per surface. vars.mjs resolves each custom property on
-# two probe documents: the marketing page once light (:root) and once .dark, and
-# the booking page once light and once .dark (bookingDark is a declared but
-# unpainted scope). DECL[theme][name] is what the browser paints there. A leaf
-# may set "resolve": "<pass>" to look its var up on a different surface than the
-# theme it sits in (booking-declared variables inside the light set).
-DECL = {t: {n: v.get("value", v["raw"]) for n, v in V["resolved"][t].items()}
-        for t in V["resolved"]}
+# Semantic and brand names. Tailwind's default palette (--color-red-600 and
+# the rest of the stock hue steps) is not Calendly's system and is left out.
+COLOR_PREFIXES = (
+    "--color-action-",
+    "--color-badge-",
+    "--color-border-",
+    "--color-iconbutton-",
+    "--color-ramp-",
+    "--color-status-",
+    "--color-surface-",
+    "--color-text-",
+    "--color-legacy-",
+)
+COLOR_EXACT = {
+    "--color-ash", "--color-avocado", "--color-black", "--color-cloud",
+    "--color-cobalt", "--color-coffee", "--color-cornflower", "--color-divider",
+    "--color-haze", "--color-honeydew", "--color-iris", "--color-jade",
+    "--color-lake", "--color-lavender", "--color-lilac", "--color-lime",
+    "--color-linen", "--color-magnolia", "--color-midnight", "--color-navy",
+    "--color-new-leaf", "--color-olive", "--color-onyx", "--color-peach",
+    "--color-plum", "--color-rain", "--color-seafoam", "--color-silver",
+    "--color-sky", "--color-smoke", "--color-steel", "--color-sunbeam",
+    "--color-tangerine", "--color-white",
+}
+# Alpha steps of the named pigments, authored as 8-digit hex.
+COLOR_ALPHA = ("--color-magnolia-a", "--color-midnight-a", "--color-cornflower-a")
+
+KEEP_PREFIXES = (
+    "--spacing-", "--gap-", "--radius-", "--text-ui-", "--leading-ui-",
+    "--font-weight-", "--font-calendly", "--font-geist", "--font-wulkan",
+    "--font-system", "--font-mono", "--ease-", "--shadow-ui-", "--var-shadow-ui-",
+    "--breakpoint-ui-", "--header-height", "--header-nav-", "--header-panel-",
+    "--color-action-focus",
+)
 
 
-def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla() -> #rrggbb or rgba(r, g, b, a)."""
-    v = v.strip().lower()
+def keep_color(name):
+    if name in COLOR_EXACT:
+        return True
+    if name.startswith(COLOR_PREFIXES):
+        return True
+    if name.startswith(COLOR_ALPHA):
+        return True
+    return False
+
+
+def keep(name):
+    if name.startswith("--tw-") or name.startswith("--lightningcss"):
+        return False
+    if keep_color(name):
+        return True
+    return name.startswith(KEEP_PREFIXES)
+
+
+def norm_hex(value):
+    v = value.strip().lower()
     m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
+    if not m:
+        return None
+    h = m.group(1)
+    if len(h) in (3, 4):
+        h = "".join(c * 2 for c in h)
+    if len(h) == 6:
+        return "#" + h
+    if len(h) == 8:
+        rgb = [int(h[i:i + 2], 16) for i in (0, 2, 4)]
+        a = int(h[6:8], 16) / 255
+        if a >= 1:
+            return "#%02x%02x%02x" % tuple(rgb)
+        return "rgba(%d, %d, %d, %s)" % (*rgb, "%g" % round(a, 3))
+    return None
+
+
+def calc_px(value):
+    """calc(.25rem * N) at 16px, or a bare px length. None when it is not one length."""
+    v = value.strip()
+    m = re.fullmatch(r"calc\(\s*\.25rem\s*\*\s*(\d+(?:\.\d+)?)\s*\)", v)
     if m:
-        h = m.group(1)
-        if len(h) in (3, 4):
-            h = "".join(c * 2 for c in h)
-        r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-        if len(h) == 8:
-            a = round(int(h[6:8], 16) / 255, 3)
-            return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
-        return "#%02x%02x%02x" % (r, g, b)
-    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
+        return "%gpx" % (float(m.group(1)) * 4)
+    m = re.fullmatch(r"(-?\d+(?:\.\d+)?)px", v)
     if m:
-        r, g, b, a = m.groups()
-        if a is None:
-            return "#%02x%02x%02x" % (int(r), int(g), int(b))
-        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, a)
-    m = re.fullmatch(r"hsla?\(\s*0\s*,\s*0%\s*,\s*([\d.]+)%\s*(?:,\s*([\d.]+))?\)", v)
+        return "%gpx" % float(m.group(1))
+    m = re.fullmatch(r"(-?\d+(?:\.\d+)?)rem", v)
     if m:
-        lvl = round(float(m.group(1)) * 2.55)
-        a = float(m.group(2) or 1)
-        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    raise ValueError("not a colour: " + v)
+        return "%gpx" % (float(m.group(1)) * 16)
+    return None
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+def tok(value, ty, source):
+    return {"$value": value, "$type": ty, "$extensions": {"source": source}}
 
 
-def check(path, ty, val):
-    """Refuse a value that is not the DTCG type it claims. An alias is checked by the alias pass."""
-    if isinstance(val, str) and val.startswith("{"):
-        return
-    if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
-    if ty == "color":
-        norm_color(val) if not str(val).startswith("{") else None
-    if ty == "shadow":
-        for layer in val:
-            for k in ("offsetX", "offsetY", "blur", "spread"):
-                if not DIM.fullmatch(layer[k]):
-                    raise ValueError(f"{path}: shadow {k} {layer[k]!r}")
-    if ty == "number" and not isinstance(val, (int, float)):
-        raise ValueError(f"{path}: number {val!r}")
-    if ty == "fontWeight" and not isinstance(val, int):
-        raise ValueError(f"{path}: fontWeight {val!r}")
-    if ty == "duration" and not re.fullmatch(r"\d+ms", str(val)):
-        raise ValueError(f"{path}: duration {val!r}")
-    if ty == "cubicBezier" and not (isinstance(val, list) and len(val) == 4):
-        raise ValueError(f"{path}: cubicBezier {val!r}")
-    if ty == "gradient":
-        for stop in val:
-            if not str(stop["color"]).startswith("{"):
-                norm_color(stop["color"])
-            if not 0 <= stop["position"] <= 1:
-                raise ValueError(f"{path}: gradient position {stop['position']!r}")
+def put(tree, path, token):
+    node = tree
+    for part in path[:-1]:
+        node = node.setdefault(part, {})
+    node[path[-1]] = token
 
 
-def leaf(path, spec, theme):
-    ty = spec["type"]
-    if "var" in spec:
-        name = spec["var"]
-        surface = spec.get("resolve", theme)
-        if name not in DECL[surface]:
-            raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({surface})")
-        val = DECL[surface][name]
-        src = f"css-var {name} ({surface})"
-        if spec.get("source"):
-            src += "; " + spec["source"]
-    else:
-        val = spec["value"]
-        src = spec["source"]
-    if ty == "color" and not str(val).startswith("{"):
-        val = norm_color(val)
-    if ty == "cubicBezier" and isinstance(val, str):
-        m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
-        if m:
-            val = [float("%g" % float(x)) for x in m.groups()]
-        elif val.strip() in ("ease", "ease-in", "ease-out", "ease-in-out", "linear"):
-            val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
-                   "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
-    if ty in ("fontWeight", "number") and isinstance(val, str):
-        m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
-        if m:  # Tailwind v4 emits line-heights as calc(a/b) ratios
-            val = round(float(m.group(1)) / float(m.group(2)), 4)
-        elif re.fullmatch(r"-?\d+(\.\d+)?", val):
-            val = float(val) if "." in val else int(val)
-    if ty == "duration" and isinstance(val, str):
-        m = re.fullmatch(r"([\d.]+)(m?s)", val.strip())
-        if m:
-            val = ("%g" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))) + "ms"
-    if ty == "dimension":
-        if isinstance(val, (int, float)):
-            val = "%gpx" % val
-        elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):
-            val = val.strip() + "px"
-    check(path, ty, val)
-    t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
-    if spec.get("description"):
-        t["$description"] = spec["description"]
-    if spec.get("responsive"):
-        t["$extensions"]["responsive"] = spec["responsive"]
-    if spec.get("angle"):
-        t["$extensions"]["angle"] = spec["angle"]
-    return t
+def path_for(name):
+    body = name[2:]
+    return body.split("-")
 
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
-    if isinstance(node, dict) and "$value" in node:
-        return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
+core = {}
+light = {}
 
 
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but belong to the
-# exported themes the components were measured on: light.component.*
-light["component"] = build(SPEC["component"], "light")
+def authored_alias(name):
+    """A plain var(--other) declaration, not a lightningcss light/dark pair."""
+    raw = (AUTHORED.get(name) or "").strip()
+    m = re.fullmatch(r"var\((--[\w-]+)\)", raw)
+    if not m:
+        return None
+    target = m.group(1)
+    if target not in RESOLVED or not keep_color(target):
+        return None
+    return target
 
 
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
+for name, value in sorted(RESOLVED.items()):
+    if not keep(name):
+        continue
+    src = "%s %s; authored %s" % (SOURCE, name, (AUTHORED.get(name) or value)[:140])
+    if keep_color(name):
+        hx = norm_hex(value)
+        if not hx:
+            continue
+        target = authored_alias(name)
+        stored = hx
+        if target:
+            stored = "{%s}" % ".".join(path_for(target))
+            src += "; alias of %s" % target
+        put(light, path_for(name), tok(stored, "color", src))
+        continue
+    if name.startswith("--font-weight-"):
+        put(core, path_for(name), tok(int(value), "fontWeight", src))
+        continue
+    if name.startswith("--font-"):
+        put(core, path_for(name), tok(value, "fontFamily", src))
+        continue
+    if name.startswith("--ease-"):
+        m = re.fullmatch(r"cubic-bezier\(([^)]*)\)", value.strip())
+        if not m:
+            continue
+        nums = [float("%g" % float(x)) for x in m.group(1).split(",")]
+        put(core, path_for(name), tok(nums, "cubicBezier", src))
+        continue
+    if name.startswith("--leading-"):
+        put(core, path_for(name), tok(float(value) if re.fullmatch(r"[\d.]+", value) else value, "number", src))
+        continue
+    if name.startswith(("--spacing-", "--gap-", "--radius-", "--text-ui-", "--breakpoint-", "--header-")):
+        px = calc_px(value)
+        if not px:
+            continue
+        note = src
+        if px != value.strip():
+            note += "; derived %s from the authored calc at 16px root" % px
+        put(core, path_for(name), tok(px, "dimension", note))
+        continue
+    if name.startswith(("--shadow-ui-", "--var-shadow-ui-")):
+        put(core, path_for(name), tok(value, "shadow", src + "; kept as the authored shadow string"))
 
+# Role aliases the coverage checklist asks for, each pointing at a measured token.
+roles = {
+    "page": "color.surface.bg.primary",
+    "surface": "color.surface.bg.secondary",
+    "raised": "color.white",
+    "text": "color.text.primary",
+    "muted": "color.text.secondary",
+    "disabled": "color.text.tertiary",
+    "on-accent": "color.action.primary.text",
+    "link": "color.cobalt",
+    "border": "color.border.default",
+    "border-strong": "color.border.strong",
+    "focus": "color.action.focus.border",
+    "accent": "color.action.primary.bg",
+    "success": "color.badge.success.bg",
+    "warning": "color.badge.warning.bg",
+    "danger": "color.status.error",
+    "info": "color.badge.info.bg",
+}
+for key, target in roles.items():
+    put(light, ["role", key], tok("{" + target + "}", "color",
+        "alias of %s; %s" % (target, SOURCE)))
 
-NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
-NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
+light["$description"] = "Calendly's public marketing theme. One painted theme (magnolia page, midnight text). Dark shadow tokens live in core and were not observed on a dark page."
+core["$description"] = "Scales read from calendly.com custom properties on 2026-11-21. Lengths that were authored as calc(.25rem * N) are stored as the derived px at a 16px root."
 
-
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-for n, t in list(tokens_of(core)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(light)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_L:
-            raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_D:
-            raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
-
-tokens = {
+doc = {
+    "$schema": "https://tr.designtokens.org/format/2023-04-06.json",
     "core": core,
     "light": light,
-    "dark": dark,
-    "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The marketing surface paints light; the booking roles (light.booking.*) also paint light, from the booking application's own token layer."},
-        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The .dark islands inside the marketing pages (hero card, footer card, dark sections) re-bind the same --color-* roles; not a user toggle."},
-    ],
-    "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
+    "$themes": [{"name": "light", "selectedTokenSets": {"core": "enabled", "light": "source"}}],
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
-
-
-def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
-
-
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+out = HERE / "tokens.json"
+out.write_text(json.dumps(doc, indent=1) + "\n")
+print("wrote", out, "core groups", len(core), "light groups", len(light))

@@ -278,11 +278,11 @@ GROUP_INTRO = {
     "Home": "The light home page: the 'Scheduling, payments, and admin. Handled.' masthead, the 'Start free trial'/'Get a demo' pills and the feature cards.",
     "Pricing": "The /pricing page: the Monthly/Annual billing switch ('save up to 14%'), the Beauty & Wellness / Medspa & Aesthetics tier picker, the plan cards — Gold inverted dark as 'Most popular' — the compare table and the FAQ disclosures.",
     "Feature page": "The /online-booking product page: the display heading, the page CTA and capability cards.",
-    "Demo form": "The /get-demo form: text, e-mail and telephone fields, native selects and radio options, with the 'Book a demo' submit — measured at rest and typed into then cleared, never submitted.",
-    "App sign-in": "app.glossgenius.com/login — the signed-out sign-in card: e-mail and password fields, the primary 'Log in' submit and the forgot-password link. Measured as a form, never submitted.",
-    "App sign-up": "app.glossgenius.com/signup — the signed-out sign-up card: name, e-mail, password and phone fields, the professional checkbox, the promo-code button and the primary submit. Measured as a form, never submitted.",
-    "App restore": "app.glossgenius.com/forgot-password — the password-recovery card: one e-mail field and the 'Send reset link' button. Measured as a form, never submitted.",
-    "Published booking site": "honeyhivesalon.glossgenius.com — a real published booking website (every business gets a public <name>.glossgenius.com site): the nav, the 'Select a Professional' react-select, service cards with Select buttons, the 'BOOK n SERVICE' bar and the /book date-picker step (SELECT SERVICE / DATE & TIME / YOUR DETAILS) — browsed read-only, never booked.",
+    "Demo form": "The /get-demo step-1 team-size pills and Get a demo control, photographed empty. Step 2 (name, email, phone) was left hidden and was not typed into.",
+    "App sign-in": "app.glossgenius.com/login — the empty signed-out sign-in card: email and password fields, the primary Log in submit and the forgot-password link. Nothing was typed. The form was not submitted.",
+    "App sign-up": "app.glossgenius.com/signup — the empty signed-out sign-up card: name, email, password and phone fields, the professional checkbox, the promo-code button and the primary submit. Nothing was typed. No account was created.",
+    "App restore": "app.glossgenius.com/forgot-password — the empty password-recovery card: one email field and the Send reset link button. Nothing was typed. No reset was sent.",
+    "Published booking site": "bookings.glossgenius.com — a published booking website: the nav, the Select a Professional menu (opened, never chosen), service cards, and the empty /booking-flow date-picker (Select a Professional or Select a Service Category, both left closed). No service was selected and no appointment was booked.",
     "Mobile (390 wide)": "The phone surface at 390 wide: the header, the burger menu, the masthead and the hero CTA.",
     "Footer": "The marketing footer: closing CTA, link columns, legal links and social marks.",
 }
@@ -305,14 +305,15 @@ SHOTS = [
     ("login", "App sign-in", "app.glossgenius.com/login"),
     ("signup", "App sign-up", "app.glossgenius.com/signup"),
     ("forgot", "App password recovery", "app.glossgenius.com/forgot-password"),
-    ("book-home", "Booking site home", "honeyhivesalon.glossgenius.com/"),
-    ("book-services", "Booking services", "honeyhivesalon.glossgenius.com/services"),
+    ("book-home", "Booking site home", "bookings.glossgenius.com/"),
+    ("book-services", "Booking services", "bookings.glossgenius.com/services"),
+    ("book-flow", "Empty booking date-picker", "bookings.glossgenius.com/booking-flow"),
 ]
 MOBILE = [
     ("mobile-home", "Home, phone", "/"),
     ("mobile-pricing", "Pricing, phone", "/pricing"),
     ("mobile-signup", "App sign-up, phone", "app.glossgenius.com/signup"),
-    ("mobile-book-services", "Booking services, phone", "honeyhivesalon.glossgenius.com/services"),
+    ("mobile-book-services", "Booking services, phone", "bookings.glossgenius.com/services"),
 ]
 
 L = []
@@ -340,7 +341,7 @@ icons = []
 
 W("# GlossGenius components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from glossgenius.com, app.glossgenius.com and honeyhivesalon.glossgenius.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, booked or submitted; the sign-in, sign-up, restore and demo forms were never sent; every link and CTA was measured, never followed — the one exception is the booking site's 'BOOK 1 SERVICE' bar, clicked to reach the public /book date-picker step.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from glossgenius.com, app.glossgenius.com and bookings.glossgenius.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, booked or submitted. The sign-in, sign-up, restore and demo forms were photographed empty. No field was typed into. No service was selected and no day was chosen.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [patterns.md](patterns.md).")
 W()
@@ -372,9 +373,8 @@ OVER = [
     ("Pricing FAQ", "pricing", "clicked an accordion-item summary row", "[pricing-light-faq-open](screenshots/pricing-light-faq-open.png), [faq-item](#faq-accordion), [faq-answer](#accordion-content)"),
     ("Mobile menu", "home, phone width", "tapped the nav burger", "[mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-burger](#mobile-burger), [m-menu-link](#mobile-menu-link)"),
     ("Professional select", "booking services", "clicked 'Any Professional' to open the react-select .gg-dropdown__menu — an option never chosen", "[book-services-light-pro-menu](screenshots/book-services-light-pro-menu.png), [bk-pro-select](#professional-select), [bk-pro-option](#professional-option)"),
-    ("Service selected", "booking services", "clicked a service row's 'Select' — the row marks for booking and the header becomes 'BOOK 1 SERVICE'", "[book-services-light-selected](screenshots/book-services-light-selected.png), [bk-service-select](#service-select-button), [bk-book-btn](#book-bar-button)"),
-    ("Date-picker step", "booking /book", "clicked 'BOOK 1 SERVICE' — a public navigation to the read-only calendar step; no day/time confirmed, no details sent", "[book-services-light-book-calendar](screenshots/book-services-light-book-calendar.png), [book-services-light-book-slots](screenshots/book-services-light-book-slots.png), [bk-cal](#booking-calendar), [bk-next](#next-button)"),
-    ("Auth fields", "app.glossgenius.com", "typed into then cleared — nothing sent; the submits were measured in every state, never clicked", "[login-field](#email-field-sign-in), [login-submit](#sign-in-submit)"),
+    ("Empty date-picker", "bookings.glossgenius.com/booking-flow", "opened the public booking-flow URL directly. Both selects were left closed. No professional, category, or day was chosen.", "[book-flow-light-default](screenshots/book-flow-light-default.png)"),
+    ("Auth walls", "app.glossgenius.com", "photographed the empty login, signup and forgot-password forms. Nothing was typed. Log in, Sign up and Send reset link were never pressed.", "[login-light-default](screenshots/login-light-default.png), [signup-light-default](screenshots/signup-light-default.png), [forgot-light-default](screenshots/forgot-light-default.png)"),
     ("Signed-in product", "a GlossGenius account", "every post-login surface (the calendar, clients, payments, marketing tools) needs an account — app.glossgenius.com/ redirects to /calendar behind sign-in", "boundary; see Gaps"),
 ]
 for r in OVER:
@@ -535,22 +535,22 @@ W("## Gaps")
 W()
 W("### The signed-in product")
 W()
-W("GlossGenius's product is the business-management workspace: every post-login surface — the calendar, client records, payments, payroll, marketing tools, reports and settings — needs an account and was never reached (app.glossgenius.com/ redirects to /calendar behind sign-in). app.glossgenius.com/login, /signup and /forgot-password are the only auth surfaces a signed-out visitor sees, and they were measured as forms, never submitted. A real published booking website at honeyhivesalon.glossgenius.com is genuinely public — it is what a business's clients see — and was browsed read-only to its /book date-picker step; no appointment was ever booked and no personal details were entered. The product mocks inside the marketing pages are illustrations, not the product.")
+W("GlossGenius's product is the business-management workspace. Every post-login surface (the calendar, client records, payments, payroll, marketing tools, reports and settings) needs an account and was never reached. app.glossgenius.com/login, /signup and /forgot-password are the signed-out walls. They were photographed empty. Nothing was typed into them. bookings.glossgenius.com is a published booking site. Its /booking-flow page was photographed with both selects closed. No service was selected and no appointment was booked. The product mocks inside the marketing pages are illustrations, not the product.")
 W()
 W("### Pages")
 W()
-W("- **The account.** Every post-login surface was never reached; the sign-in, sign-up and password-recovery forms were measured and typed into then cleared — 'Log in', 'Sign up' and 'Send reset link' were never pressed, and what a submitted form returns is unverified.")
-W("- **The demo form.** Fields were focused and typed into then cleared; 'Book a demo' was never pressed — no request was sent and the post-submit state is uncaptured.")
-W("- **Purchase.** Plan CTAs ('Get started', 'Start free trial') were measured, never followed; no checkout or trial flow was started.")
-W("- **The booking.** On the published booking site a service was selected and 'BOOK 1 SERVICE' was followed to the public /book date-picker; a day cell was opened for its time-slot list, but no slot was confirmed past a screenshot, the 'Next' button was never pressed, and the 'YOUR DETAILS' form was never reached or submitted.")
-W("- **Feature/audience/customer routes** beyond the captured set (/calendar-scheduling-app, /client-management, /payroll, /reports-analytics, /point-of-sale, /marketing, /overview, /reception, /gift-cards, /invoices, the other industries and blog articles) are the same templates, unmeasured; one example of each family was captured.")
-W("- **Other booking sites.** honeyhivesalon.glossgenius.com is one real published booking site standing in for the <name>.glossgenius.com surface; other businesses' sites re-skin the same chrome with their own layout variants (Organic, Playful, Billboard, Canvas…) and palette picks.")
+W("- **The account.** Every post-login surface was never reached. The sign-in, sign-up and password-recovery forms were photographed empty. Log in, Sign up and Send reset link were never pressed. What a submitted form returns is unverified.")
+W("- **The demo form.** Step 1 was photographed. Step 2 (name, email, phone) was left hidden. Get a demo was never pressed. No request was sent.")
+W("- **Purchase.** Plan CTAs (Get started, Start free trial) were measured, never followed. No checkout or trial flow was started.")
+W("- **The booking.** The public /booking-flow page shows two closed selects (Select a Professional, Select a Service Category). Neither was opened. Select on a service row was not clicked. BOOK n SERVICE was not pressed. No day, time, details or payment step was reached.")
+W("- **Feature and audience routes** beyond the captured set share the marketing template. One example of each family was captured. The rest are mapped in site-tree.md and were not remeasured.")
+W("- **Other booking sites.** bookings.glossgenius.com is one published booking site. Other businesses re-skin the same chrome.")
 W()
 W("### States")
 W()
 W("- **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing.")
 W("- **Error, loading and validation states** were not seen on the public surface — the forms were never submitted.")
-W("- **The booking flow's later steps** (slot confirmation, your-details fields, payment) were never reached — they sit past a 'Next' that was never pressed.")
+W("- **The booking calendar, time slots, details and payment** were not reached. Opening them means choosing a professional or a service, which starts a booking.")
 W()
 W("### Themes")
 W()

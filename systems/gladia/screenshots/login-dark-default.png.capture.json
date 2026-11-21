@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T22:56:57.854Z",
+  "capturedAt": "2026-11-21T02:17:19.992Z",
   "screenshot": "login-dark-default.png",
-  "sanitizedSourceUrl": "https://app.gladia.io/",
+  "sanitizedSourceUrl": "https://app.gladia.io/signin",
   "requested": {
     "viewport": {
       "width": 1440,

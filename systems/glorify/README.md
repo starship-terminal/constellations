@@ -16,6 +16,8 @@ Glorify is worth a capture because it paints two distinct public surfaces signed
 | [screenshots/](screenshots) | 46 `{page}-{surface}-{state}.png` captures. Desktop 1440 x 900; `-light-*` marketing, `-app-*` the dark product surface, `mobile-*` 390 x 844 at 2x; `-full` whole pages stitched (bounded) |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 617 rules, 414 @font-faces, resolved per surface), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [site-tree.md](site-tree.md) | Public control map from the 2026-11-21 walk: which header, menu, footer, search, and dialog control opens which page. Login and signup branches stop at the empty wall. |
+| [login-review.json](login-review.json) | Empty login and signup walls only. Nothing was typed or submitted. Signed-in nav, settings, and create were not opened. |
 
 ## Brief
 
