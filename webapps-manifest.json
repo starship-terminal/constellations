@@ -62,7 +62,7 @@
       "description": "Make Your App Happen",
       "status": "captured",
       "package": "systems/aaply",
-      "notes": "public marketing surface only (Tilda site); the app host go.aaply.app returned Not found on every route, captured as the boundary https://go.aaply.app/login and /signup both returned Not found. The marketing site links there and offers no email field.",
+      "notes": "public marketing surface only (Tilda site); the app host go.aaply.app returned Not found on every route, captured as the boundary https://go.aaply.app/login and /signup both returned Not found. The marketing site links there and offers no email field. Public walk 2026-11-21: the desktop nav opens home, features, value, pricing, and reviews. The phone menu adds Figma Plugin, Story, Team, and Blog. Early program and manual are sitemap-only pages. Log in, Sign up, and demo leave for go.aaply.app. /login, /signup, /sign, and /workspace/demo still return Not found. The host root is a foreign document, so no app package was invented. No email was typed. No form was submitted. Signed-in product was not captured. Public package refresh in PR 1610 at 10ca58023b57. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 1
