@@ -42,13 +42,13 @@ colors:
 typography:
   display:
     fontFamily: "Basier Circle"
-    fontSize: "71.49px"
+    fontSize: "76.29px"
     fontWeight: 500
     lineHeight: 1
     letterSpacing: "-0.05em"
   h2:
     fontFamily: "Basier Circle"
-    fontSize: "46.42px"
+    fontSize: "48.83px"
     fontWeight: 500
     lineHeight: 1.04
     letterSpacing: "-0.032em"
@@ -151,7 +151,9 @@ Good for: Link-in-bio marketing with a navy display face on a gray page, dark pi
 
 Captured 2026-11-19, public marketing plus email-only signup. Wallet, card, and payment were not entered.. Themes: light, dark.
 
-Portrait (portrait.so) is a link-in-bio and wallet product. This package records the public marketing pages and the signed-out email sign-in, plus the editor shell that appears after an email-only signup. Captured 2026-11-19 from a live preview tab at 1169 by 731, light color scheme. No account name is stored. The preview browser did not produce screenshot frames.
+**Boundary:** the 2026-11-21 refresh is public only. The Sign in dialog and the editor wall were photographed empty and the branch stopped. `login-extracted` stays `not-started`. `catalog.json` was left alone, so the generated overview line below still quotes the 2026-11-19 access note.
+
+Portrait (portrait.so) is a link-in-bio and wallet product. Refreshed 2026-11-21 from the public site only, in headless Chrome at 1440 by 900 (devicePixelRatio 1) and 390 by 844 (devicePixelRatio 2). The page paints light (`#f7f7f7`, `data-mode="light"`). Surfaces: home, Pages, Wallet, Pay, Hosting, Blog, one blog post, Points, the missing-user page, the empty Sign in dialog, and the empty editor wall. No email, password, code, phone or address was typed. Identity providers were not clicked. `login-extracted` stays not-started. The control map is [site-tree.md](site-tree.md).
 
 <!-- brief:start -->
 
@@ -195,7 +197,7 @@ Corner radii from `core.radius`: `xs` 2px, `sm` 4px, `md` 6px, `lg` 8px, `xl` 12
 
 6 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
-Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -207,13 +209,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-There are no screenshots. The preview browser returned "The browser is not producing screenshot frames". Do not treat a missing image as a measured layout.
+Screenshots are 256-colour. Read colours from [raw/css-vars.json](raw/css-vars.json) and [tokens.json](tokens.json), not from the PNGs.
 
-Only the `--color-*` custom properties were saved, in [raw/css-vars.json](raw/css-vars.json). Every other value (type, radius, spacing, sizes, shadows, motion, the component values) and each role's mapping onto a colour step was typed into the builder from live readings that were not saved, so tokens.json labels them Reconstruction. A recapture should save those readings to raw/.
+Email field, confirmation code, editor menu, and editor canvas colours are the 2026-11-19 pass. This refresh stopped before Sign in with email and did not enter the editor. Those tokens say so in their source strings.
 
-The focused Log in button reported `outline-color` #e59700, Chromium's default focus-ring colour, with `outline-style: none`: no ring was painted, so the package publishes no focus token.
+The focused Log in button reported `outline-style: none` and `outline-color: rgb(0, 95, 204)`. No ring was painted, so the package publishes no focus token.
 
-Hover classes (`group-hocus/button:bg-gray-25`, `shadow-lg`) were read from the class list, not from a live `:hover`. The forced dark pass left the h1 navy. A live Dark appearance in the editor was not applied.
+Hover was not held on the primary face. The quiet-button hover class from 2026-11-19 stays labelled as a class read.
 
 Basier Circle, Switzer, JetBrains Mono, and Open Runde are the computed family names. The token stacks are those names plus a system fallback. The files are not in this package.
 
@@ -221,10 +223,7 @@ Privy and Reown custom properties (`--privy-*`, `--w3m-*`, `--wui-*`) were on th
 
 ### Do and don't (from README.md)
 
-**Use the navy heading on the gray page.** Headings are `#08304c` on `#f7f7f7`. Body text is `#353535`.
-
-**Primary actions are dark pills.** Create your Portrait is `#2c2c2c`, white text, 44px, full radius.
-
-**Sign up wears the rainbow ring.** The ring is the brand gradient, not a second fill. The face stays white.
-
-**Keep the editor dark.** The editor canvas is `#141414` even when the marketing page is light.
+- Use the navy heading on the gray page. Headings are `#08304c` on `#f7f7f7`. Body text is `#353535`. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- Primary actions are dark pills. Apply for early access is `#2c2c2c`, white text, 44px, full radius. See [components/crops/button-primary-default.png](components/crops/button-primary-default.png).
+- Sign up wears the rainbow ring. The ring is the brand gradient, not a second fill. The face stays white. See [components/crops/button-signup-default.png](components/crops/button-signup-default.png).
+- Stop at the Sign in dialog. Log in and Sign up open the same empty dialog. The first step has no email field. See [screenshots/login-light-default.png](screenshots/login-light-default.png).

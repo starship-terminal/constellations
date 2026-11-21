@@ -1,0 +1,72 @@
+{
+  "slug": "portrait",
+  "product": "Portrait",
+  "domain": "portrait.so",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "dialog-only",
+  "session": "Playwright headless Chrome, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://portrait.so/",
+    "title": "Portrait – Your forever space for everything you are.",
+    "asks": [
+      "Sign in with Portrait Wallet",
+      "Sign in with email",
+      "Sign in with other wallet"
+    ],
+    "email_field": false,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [],
+    "note": "Log in opens a dialog on the current page. The heading is Sign in. No email field is visible until Sign in with email is clicked. That button was not clicked."
+  },
+  "signup_wall": {
+    "url": "https://portrait.so/",
+    "lands_on": "the same Sign in dialog",
+    "asks": ["Sign in with Portrait Wallet", "Sign in with email", "Sign in with other wallet"],
+    "email_field": false,
+    "continued": false,
+    "note": "Sign up opens the same empty Sign in dialog. /signup is a username route and shows the missing-user page."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1,
+      "file": "screenshots/login-light-default.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/mobile-home-light-default.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Log in", "href": "dialog on /", "reached": "wall only"},
+      {"label": "Sign up", "href": "dialog on /", "reached": "wall only"},
+      {"label": "Login", "href": "/editor", "reached": "empty wall only"}
+    ]
+  },
+  "screens": [
+    {"name": "Sign-in dialog, desktop, empty", "file": "screenshots/login-light-default.png"},
+    {"name": "Sign-up opens the same empty dialog", "file": "screenshots/signup-light-default.png"},
+    {"name": "Editor signed-out wall", "file": "screenshots/editor-light-wall.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Sign in with Portrait Wallet was not clicked.",
+    "Sign in with email was not clicked. No email field was shown. No code was requested.",
+    "Sign in with other wallet was not clicked.",
+    "The editor Login button was not clicked. The editor was not entered."
+  ],
+  "not_submitted": [
+    "Sign in with Portrait Wallet",
+    "Sign in with email",
+    "Sign in with other wallet",
+    "Apply for early access",
+    "Sign up or log in",
+    "Log in to create links",
+    "editor Login"
+  ]
+}

@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Build tokens.json from readings taken on portrait.so on 2026-11-19.
+"""Build tokens.json from readings taken on portrait.so.
 
-Custom properties were read from the live documentElement. Component roles
-were read from computed styles on the same page. Dark page and text colours
-were read after setting data-mode="dark" on the document (the site's own
-selector is :where([data-mode="dark"], [data-mode="dark"] *)). That pass is
-a forced attribute, not a live theme switch.
+Colour ramps, radii, type clamps, breakpoints and motion come from computed
+custom properties on https://portrait.so/ at 1440x900, light, 2026-11-21
+(raw/css-vars.json). Component sizes come from computed styles on the same
+public pass (raw/refresh-2026-11-21.json). The 2026-11-19 notes in older
+source strings are the first capture. This refresh did not force
+data-mode="dark" and did not enter the editor, so dark and editor roles
+stay labelled as that earlier forced pass.
 
-No token is invented. A role the page did not show is left out.
+No token is invented. A role the public page did not show is left out.
 """
 
 import json
@@ -18,9 +20,9 @@ HERE = Path(__file__).resolve().parent.parent
 RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
 COLORS = RAW["colors"]
 
-VAR = "computed custom property on documentElement, https://portrait.so/, light, 1169px, 2026-11-19"
-COMP = "computed style on a live element, https://portrait.so/, light, 1169px, 2026-11-19"
-DARK = "computed style after documentElement data-mode=dark, same page, 2026-11-19. Forced attribute, not a live theme control."
+VAR = "computed custom property on documentElement, https://portrait.so/, light, 1440px, 2026-11-21"
+COMP = "computed style on a public element, https://portrait.so/, light, 1440px, 2026-11-21"
+DARK = "2026-11-19 forced data-mode=dark pass. Not re-measured on 2026-11-21. Not a live theme control."
 
 
 HAND = "Reconstruction: entered by hand at capture time from a live reading that raw/ does not hold (raw/css-vars.json keeps only the --color-* custom properties)"
@@ -130,8 +132,8 @@ def build():
             },
         },
         "typography": {
-            "display": typography("{font.family.display}", "71.49px", 500, 1, COMP + " h1.text-h1-lg-fluid computed 71.4924px / line-height 71.4924px / letter-spacing -3.57462px. Declared --text-h1-lg-fluid is clamp(2.2807rem, 1.3073rem + 4.3264vw, 4.7684rem).", "-0.05em"),
-            "h2": typography("{font.family.display}", "46.42px", 500, 1.04, COMP + " h2.text-h2-fluid computed 46.415px", "-0.032em"),
+            "display": typography("{font.family.display}", "76.29px", 500, 1, COMP + " h1 computed 76.2944px / line-height 76.2944px / letter-spacing -3.81472px. Declared --text-h1-lg-fluid is clamp(2.2807rem, 1.3073rem + 4.3264vw, 4.7684rem).", "-0.05em"),
+            "h2": typography("{font.family.display}", "48.83px", 500, 1.04, COMP + " h2 computed 48.8288px / line-height 50.782px / letter-spacing -1.56252px", "-0.032em"),
             "h3": typography("{font.family.display}", "37.44px", 500, 1.08, COMP + " h2.text-h3-fluid computed 37.4425px", "-0.0256em"),
             "h4": typography("{font.family.display}", "31.25px", 500, 1.1, VAR + " --text-h4 1.9531rem; h2.text-h4 computed 31.2496px", "-0.02048em"),
             "h6": typography("{font.family.display}", "20px", 500, 1.2, VAR + " --text-h6 1.25rem; h3.text-h6 computed 20px", "-0.0131em"),
@@ -150,8 +152,8 @@ def build():
             "3xl": dim("24px", VAR + " --radius-3xl 1.5rem"),
             "4xl": dim("32px", VAR + " --radius-4xl 2rem"),
             "full": dim("9999px", COMP + " button border-radius computed as a pill (16777215px)"),
-            "menu": dim("20px", COMP + " editor account menu computed 20px"),
-            "field": dim("25px", COMP + " email input computed 25px"),
+            "menu": dim("20px", "2026-11-19 editor account menu. Not re-measured. The 2026-11-21 public pass did not open an account menu."),
+            "field": dim("25px", "2026-11-19 email input. Not on the 2026-11-21 empty Sign in dialog. Sign in with email was not clicked."),
         },
         "spacing": {
             "1": dim("4px", VAR + " --spacing .25rem"),
@@ -165,11 +167,11 @@ def build():
             "button-sm": dim("36px", COMP + " header Log in and Sign up height 36px"),
             "button-md": dim("44px", COMP + " Create your Portrait, Apply, editor Account height 44px"),
             "button-lg": dim("56px", COMP + " hero Sign up height 56px"),
-            "field": dim("50px", COMP + " email input height 50px"),
-            "username": dim("80px", COMP + " username field wrapper height 80px"),
-            "code": dim("58px", COMP + " confirmation-code cell height 58px, width 46px"),
-            "icon-button": dim("44px", COMP + " editor trailing icon button 44px"),
-            "avatar": dim("28px", COMP + " editor Account avatar 28px"),
+            "field": dim("50px", "2026-11-19 email input height. Not re-measured on 2026-11-21."),
+            "username": dim("78px", COMP + " username input height 78px, padding 0 140px 0 210px, font 36px"),
+            "code": dim("58px", "2026-11-19 confirmation-code cell. Not shown on the 2026-11-21 empty wall."),
+            "icon-button": dim("44px", "2026-11-19 editor trailing icon button. Not re-measured."),
+            "avatar": dim("28px", "2026-11-19 editor Account avatar. Not re-measured."),
         },
         "border": {"width": dim("1px", COMP + " username field and email input border 1px")},
         "shadow": {
@@ -204,8 +206,8 @@ def build():
             "breakpoint-xl": dim("1280px", VAR + " --breakpoint-xl"),
             "breakpoint-2xl": dim("1536px", VAR + " --breakpoint-2xl"),
             "content": dim("1280px", VAR + " nav max-w-(--breakpoint-xl)"),
-            "dialog": dim("420px", COMP + " sign-in dialog width 420px"),
-            "menu": dim("272px", COMP + " editor account menu width 272px"),
+            "dialog": dim("420px", COMP + " sign-in dialog width 420px, height 277px, radius 16px"),
+            "menu": dim("272px", "2026-11-19 editor account menu width. Not re-measured."),
         },
     }
 
@@ -226,7 +228,7 @@ def build():
             },
             "border": {
                 "default": alias("{color.gray.50}", COMP + " username field border rgb(222, 222, 222)"),
-                "input": color_token("#ebebeb", COMP + " email input border rgb(235, 235, 235). Not a named gray step."),
+                "input": color_token("#ebebeb", "2026-11-19 email input border. Not on the 2026-11-21 empty dialog."),
             },
             "action": {
                 "fill": alias("{color.gray.700}", COMP + " Create your Portrait face background rgb(44, 44, 44)"),
@@ -254,7 +256,7 @@ def build():
             },
             "field": {
                 "bg": alias("{color.white}", COMP + " email input background"),
-                "text": color_token("#4d4d4d", COMP + " email input color rgb(77, 77, 77)"),
+                "text": color_token("#4d4d4d", "2026-11-19 email input color. Not re-measured."),
                 "radius": alias("{radius.field}", COMP + " email input 25px", "dimension"),
                 "height": alias("{size.field}", COMP + " email input 50px", "dimension"),
             },
@@ -269,8 +271,8 @@ def build():
                 "radius": alias("{radius.full}", COMP + " pill", "dimension"),
             },
             "menu": {
-                "bg": color_token("#000000cc", COMP + " editor menu background oklab(0 0 0 / 0.8)"),
-                "text": alias("{color.gray.100}", COMP + " menu item rgb(199, 199, 199)"),
+                "bg": color_token("#000000cc", "2026-11-19 editor menu background. Not re-measured."),
+                "text": alias("{color.gray.100}", "2026-11-19 editor menu item. Not re-measured."),
                 "radius": alias("{radius.menu}", COMP + " menu 20px", "dimension"),
             },
         },
