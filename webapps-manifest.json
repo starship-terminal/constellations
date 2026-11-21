@@ -130,9 +130,9 @@
       "description": "Crypto invoice & B2B payments",
       "status": "captured",
       "package": "systems/acctual",
-      "notes": "https://app.acctual.com/sign-in asks for email and password, or Google. No code was sent.",
+      "notes": "https://app.acctual.com/sign-in asks for email and password, or Google. No code was sent. Public walk 2026-11-21: the desktop nav opens Freelancer, Agency, Pricing, and Blog. Log in and Sign up open the app sign-in and stop. The phone menu keeps the same links. The footer opens privacy, terms, invoice templates, corridors, and posts. The homepage FAQ is a local accordion. The invoice mock does not open a menu. Blog and location pages also reach a guides host. Help returned HTTP 403. Google was not clicked. No email was typed. No form was submitted. Signed-in product was not captured. Public package refresh in PR 1612 at 5b2bdb8d5aff. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 1
     },
     {
