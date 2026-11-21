@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MERIT public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #000000;
+    --cream: #f9f8f5;
+    --promo: #5b2128;
+    --on-promo: #f9f8f5;
+    --muted: #62605e;
+    --atc: #62605e;
+    --shade: #f8f8f8;
+    --sans: "akzidenz-grotesk-std", "Avenir Next", "Segoe UI", sans-serif;
+    --serif: "adobe-caslon-pro", "Iowan Old Style", Palatino, serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--sans); }
+  .promo { height: 40px; display: flex; align-items: center; justify-content: center; background: var(--promo); color: var(--on-promo); font-size: 12px; letter-spacing: 0.48px; }
+  .bar { height: 73px; display: flex; align-items: center; justify-content: center; background: var(--cream); color: var(--promo); }
+  .word { font-size: 22px; letter-spacing: 0.18em; font-weight: 500; }
+  .nav { display: flex; gap: 24px; justify-content: center; padding: 0 32px 28px; background: var(--cream); color: var(--promo); font-size: 16px; }
+  main { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 460px; }
+  .hero { background: #8aa4b4; display: flex; align-items: flex-end; justify-content: flex-end; padding: 32px; }
+  .panel { background: var(--page); width: 446px; padding: 28px; box-sizing: border-box; }
+  h1 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 40px; line-height: 54.4px; margin: 0 0 12px; }
+  .deck { font-size: 12px; line-height: 16.8px; letter-spacing: 0.48px; color: var(--muted); margin: 0 0 16px; }
+  .shop { color: var(--ink); font-size: 13px; letter-spacing: 0.52px; text-decoration: none; }
+  .stage { padding: 48px 40px; }
+  .eyebrow { font-size: 11px; letter-spacing: 1.32px; text-transform: uppercase; margin: 0 0 12px; }
+  h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 40px; line-height: 48px; margin: 0 0 12px; }
+  .desc { font-size: 18px; line-height: 21.6px; color: var(--muted); max-width: 461px; }
+  .pill { display: flex; align-items: center; height: 32px; width: 355px; margin-top: 24px; padding: 0 16px; background: var(--shade); border-radius: 16px; font-size: 13px; letter-spacing: 0.52px; color: var(--muted); box-sizing: border-box; }
+  .add { display: flex; align-items: center; justify-content: center; width: 461px; height: 44px; margin-top: 20px; background: var(--atc); color: #ffffff; font-size: 11px; font-weight: 500; letter-spacing: 1.32px; text-transform: uppercase; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+  .swatch { width: 120px; font-size: 12px; }
+  .chip { height: 48px; border: 1px solid #d8d8d8; }
+</style>
+</head>
+<body>
+  <div class="promo">The Sale is coming soon. Sign up now for early access</div>
+  <header class="bar"><div class="word">MERIT</div></header>
+  <nav class="nav">
+    <span>Shop</span>
+    <span>Makeup</span>
+    <span>Skincare</span>
+    <span>Fragrance</span>
+    <span>Gift Guide</span>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="panel">
+        <h1>The Fragrance Collection</h1>
+        <p class="deck">Extraits de parfum the way they used to be made — rich, complex, and designed to evolve as you wear them.</p>
+        <a class="shop" href="#fragrance">Shop Now</a>
+      </div>
+    </section>
+    <section class="stage">
+      <p class="eyebrow">Perfecting complexion stick</p>
+      <h2>The Minimalist</h2>
+      <p class="desc">A lightweight, buildable formula that visibly blurs imperfections and evens skin tone.</p>
+      <div class="pill">Select your shade</div>
+      <div class="add">Select shade | $38</div>
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:#ffffff"></div>page #ffffff</div>
+        <div class="swatch"><div class="chip" style="background:#000000"></div>ink #000000</div>
+        <div class="swatch"><div class="chip" style="background:#f9f8f5"></div>cream #f9f8f5</div>
+        <div class="swatch"><div class="chip" style="background:#5b2128"></div>promo #5b2128</div>
+        <div class="swatch"><div class="chip" style="background:#62605e"></div>muted #62605e</div>
+        <div class="swatch"><div class="chip" style="background:#f8f8f8"></div>shade #f8f8f8</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
