@@ -1,8 +1,48 @@
 {
   "slug": "quizlet",
+  "product": "Quizlet",
+  "domain": "quizlet.com",
   "captured": "2026-11-21",
-  "signed_in": true,
-  "session": "T3 in-app preview, default profile. Title Your Sets on /latest, body class theme-night, library and settings loaded. No login wall and no robot check.",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "session": "Signed-out public site. Log in and Sign up dialogs were opened from the homepage and left empty. No identity provider was clicked. No form was submitted. No email, password, code, phone, or address was typed. A captcha was not solved.",
+  "wall": {
+    "url": "https://quizlet.com/",
+    "title": "Quizlet: Study Tools & Learning Resources for Students and Teachers | Quizlet",
+    "asks": [
+      "Log in with Google",
+      "Log in with Facebook",
+      "Log in with Apple",
+      "Log in with WhatsApp",
+      "username or email",
+      "password",
+      "Log in",
+      "Log in with magic link"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "code_field": false,
+    "inputs": [
+      {"type": "text", "autocomplete": "username", "filled": false},
+      {"type": "password", "autocomplete": "current-password", "filled": false}
+    ],
+    "note": "The Log in button opens a dialog. The URL stays on the homepage. Fields were empty. Identity providers were not clicked. Forgot password was not clicked."
+  },
+  "signup_wall": {
+    "url": "https://quizlet.com/",
+    "asks": [
+      "Continue with Google",
+      "Sign up with WhatsApp",
+      "Birthday",
+      "email",
+      "password",
+      "Sign up"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "continued": false,
+    "note": "Sign up for free opens a dialog. Birthday, email, and password were empty. The terms checkbox was unchecked. Identity providers were not clicked."
+  },
   "viewport": {
     "desktop": {
       "requested": "1440x900",
@@ -14,142 +54,114 @@
         "height": 900,
         "scale": 1
       },
-      "png": "2880x1800",
-      "toolReported": "1280x800"
+      "png": "2880x1800"
     },
     "phone": {
       "requested": "390x844",
-      "innerWidth": 430,
-      "innerHeight": 932,
+      "innerWidth": 390,
+      "innerHeight": 844,
       "devicePixelRatio": 2,
       "visualViewport": {
-        "width": 430,
-        "height": 932,
+        "width": 390,
+        "height": 844,
         "scale": 1
       },
-      "png": "860x1864",
-      "preset": "iphone-14-pro-max",
-      "toolReported": "1280x800"
+      "png": "780x1688"
     }
   },
   "offered": {
     "nav": {
       "items": [
-        "Home",
-        "Your library",
-        "Study groups",
-        "Notifications",
-        "Flashcards",
-        "Podcasts",
-        "Study Guides",
-        "Games",
-        "Practice Tests",
-        "Expert Solutions",
-        "New folder"
+        "Logo",
+        "Teachers",
+        "Study tools",
+        "Subjects",
+        "Create",
+        "Search",
+        "Log in",
+        "Sign up for free"
       ],
       "reached": [
-        "Home",
-        "Your library"
-      ]
-    },
-    "settings": {
-      "items": [
-        "Settings",
-        "Achievements",
-        "Light mode",
-        "Subscription",
-        "Personal information",
-        "Appearance",
-        "Notifications",
-        "Account and privacy",
-        "Log out",
-        "Upgrade"
-      ],
-      "reached": [
-        "Settings",
-        "Subscription",
-        "Personal information",
-        "Appearance",
-        "Notifications",
-        "Account and privacy"
+        "Logo",
+        "Study tools",
+        "Subjects",
+        "Create",
+        "Search",
+        "Log in",
+        "Sign up for free"
       ]
     },
     "create": {
       "items": [
-        "Lecture recording",
         "Flashcard set",
-        "Podcast",
-        "Study guide",
-        "Practice test",
         "Folder",
         "Study group"
       ],
+      "reached": []
+    },
+    "walls": {
+      "items": [
+        "Log in",
+        "Sign up for free",
+        "Log in with Google",
+        "Log in with Facebook",
+        "Log in with Apple",
+        "Log in with WhatsApp",
+        "Continue with Google",
+        "Sign up with WhatsApp",
+        "Forgot password",
+        "Log in with magic link"
+      ],
       "reached": [
-        "Flashcard set"
+        "Log in",
+        "Sign up for free"
       ]
     }
   },
   "screens": [
-    {
-      "name": "Your library, empty flashcard sets",
-      "file": "screenshots/library-night-empty.png"
-    },
-    {
-      "name": "Settings, profile",
-      "file": "screenshots/settings-night-profile.png"
-    },
-    {
-      "name": "Settings, notifications",
-      "file": "screenshots/settings-night-notifications.png"
-    },
-    {
-      "name": "Create a set, empty",
-      "file": "screenshots/create-set-night-empty.png"
-    },
-    {
-      "name": "Your Sets, phone",
-      "file": "screenshots/home-night-phone.png"
-    },
-    {
-      "name": "Nav, phone",
-      "file": "screenshots/nav-night-phone.png"
-    },
-    {
-      "name": "Settings, phone",
-      "file": "screenshots/settings-night-phone.png"
-    }
+    {"name": "Homepage", "file": "screenshots/home-light-default.png"},
+    {"name": "Footer", "file": "screenshots/home-light-footer.png"},
+    {"name": "Study tools menu", "file": "screenshots/nav-study-tools-menu.png"},
+    {"name": "Subjects menu", "file": "screenshots/nav-subjects-menu.png"},
+    {"name": "Create menu", "file": "screenshots/nav-create-menu.png"},
+    {"name": "Flashcards marketing", "file": "screenshots/flashcards-light-default.png"},
+    {"name": "Pricing", "file": "screenshots/pricing-light-default.png"},
+    {"name": "Login dialog, empty", "file": "screenshots/login-light-empty.png"},
+    {"name": "Signup dialog, empty", "file": "screenshots/signup-light-empty.png"},
+    {"name": "Search field, unsent", "file": "screenshots/search-light-open.png"},
+    {"name": "Homepage, phone", "file": "screenshots/home-light-phone.png"},
+    {"name": "Phone drawer", "file": "screenshots/nav-light-phone-menu.png"}
   ],
   "gaps": [
-    "Study groups, Notifications, Flashcards, Podcasts, Study Guides, Games, Practice Tests, Expert Solutions, and New folder were listed and not opened. Several of those start a create or upload flow.",
-    "Achievements, Light mode, Log out, and Upgrade were offered and not opened. Light mode would switch the theme. Upgrade is a paid path. Log out would end the session.",
-    "Create items other than Flashcard set were listed and not opened. The flashcard form was left empty. A Quizlet Plus modal on /create-set was closed and the trial was not started.",
-    "Library tabs other than Flashcard sets were not opened.",
-    "Light theme was not captured. Settings Theme was Auto and the page painted theme-night.",
-    "Phone width measured 430 by 932 after the iphone-14-pro-max preset. A freeform 390 by 844 request did not change the CSS viewport.",
-    "Hover, pressed, and focus-visible were not captured.",
-    "icons/ is missing. The site icon is the q-twilight PNG resized to 128 px. SVG icons were not exported.",
-    "catalog.json has no quizlet entry. make check fails on that, and the entry is deferred.",
-    "The home shot with both menus open, and the account-menu crop, were deleted because they still showed the account email. Settings shots had the email replaced in the page before capture. The timezone city was painted out of the notifications shot.",
-    "The account-and-privacy screenshot was deleted because the timezone city was still visible at the top. The section was opened. Create password, Link Facebook, privacy switches, and Delete account were not used."
+    "A public study set was not screenshotted. A later navigation to a public set URL hit Press and Hold. The captcha was not solved.",
+    "Teachers, Learn, explanations, and search results hit Press and Hold in a new browser context. Those shots were discarded.",
+    "A phone shot of the flashcards page was covered by a captcha and discarded. Phone coverage is the homepage and the drawer.",
+    "Create menu items were listed and not opened. They lead toward a login wall.",
+    "Pressed, disabled, loading, and error states were not captured. A painted focus ring was not observed.",
+    "emulateMedia dark did not switch theme-default. No public dark marketing theme was captured.",
+    "The prior signed-in night screenshots were removed from this refresh. login_extracted stays not-started. The night token set keeps the earlier ramp aliases.",
+    "catalog.json was left alone. This package does not rewrite it.",
+    "Subjects and Create screenshots still show the Study tools menu, because Escape did not close it."
   ],
   "not_submitted": [
-    "Create a set",
-    "Create and practice",
-    "New folder",
+    "Log in",
+    "Sign up",
+    "Log in with Google",
+    "Log in with Facebook",
+    "Log in with Apple",
+    "Log in with WhatsApp",
+    "Continue with Google",
+    "Sign up with WhatsApp",
+    "Forgot password",
+    "Log in with magic link",
+    "Search",
+    "Create a flashcard set",
+    "Folder",
     "Study group",
-    "Podcast generate",
-    "Study guide upload",
-    "Practice test generator",
-    "Record lecture",
-    "Upgrade",
-    "Try it for free",
-    "Log out",
-    "Delete account",
-    "Create password",
-    "Link Facebook",
-    "Edit profile",
-    "notification switches",
-    "privacy switches",
-    "theme switch"
+    "Start free trial",
+    "Teachers signup",
+    "Google one-tap Continue",
+    "Cookie consent",
+    "Press and Hold"
   ]
 }

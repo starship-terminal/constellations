@@ -1,42 +1,45 @@
 # Quizlet design reference
 
-A signed-in capture of Quizlet's night web app, read from quizlet.com on 2026-11-21 in the T3 in-app preview (default profile). The account was already signed in. The page title was Your Sets. The body class was `theme-night`. Desktop CSS viewport measured 1440 by 900 at device pixel ratio 2. Phone CSS viewport measured 430 by 932 after the iphone-14-pro-max preset. A requested 390 by 844 width did not stick.
+A public refresh of the Quizlet package, read from https://quizlet.com/ on 2026-11-21, signed out. origin/main already had `systems/quizlet/`. The slug stayed `quizlet`. This pass did not open the signed-in app and did not repeat the earlier night walk.
 
-The product paints a twilight page (`#0A092D`), gray text (`#F6F7FB`), a twilight-500 pill (`#4255FF`), and a sunset-400 trial pill (`#FFCD1F`). The face is Hurme Geometric Sans 2 (`hurme_no2-webfont`), then the system sans. Cross-origin stylesheets on assets.quizlet.com were CSSOM-blocked, so the ramps are computed custom properties, not parsed rules.
+The marketing page uses body class `theme-default`. Page background `{color.gray.200}` (`#F6F7FB`), body text `{color.gray.800}` (`#282E3E`), twilight-500 pills (`#4255FF`), and a sunset-400 trial pill (`#FFCD1F`) on the public upgrade page. The face is Hurme Geometric Sans 2 (`hurme_no2-webfont`), then the system sans. Desktop CSS viewport measured 1440 by 900 at device pixel ratio 2. Phone CSS viewport measured 390 by 844 at device pixel ratio 2.
+
+`login_extracted` is `not-started`. catalog.json was left alone.
 
 | File | What it is |
 |---|---|
-| [icon.png](icon.png) | Quizlet's q-twilight mark, fetched in the signed-in page and resized to 128 px |
-| [tokens.json](tokens.json) | W3C DTCG tokens: `core` colour ramps, type, radius, and space, plus a `night` semantic set. No light set. Every token carries `$extensions.source` |
-| [DESIGN.md](DESIGN.md) | Written by hand for this package. `make design-md` needs a catalog.json entry, and that entry is deferred |
-| [style-guide.html](style-guide.html) | One night page that renders the ramps and the two pills from tokens.json |
-| [components.md](components.md) | The signed-in inventory: search, primary button, create menu, account menu |
-| [patterns.md](patterns.md) | How the sidebar, library, settings, create form, and phone shell fit together |
-| [login-review.json](login-review.json) | The signed-in walk: nav, settings, and create that were offered, the screens, the gaps, and what was not submitted |
-| [components/crops/](components/crops) | 3 element screenshots. The account-menu crop was deleted because it showed the account email |
-| [screenshots/](screenshots) | 7 night captures: 4 desktop at 2880 by 1800, 3 phone at 860 by 1864. The desktop home-with-menus shot was deleted because it showed the account email. The privacy shot was deleted because it still showed a timezone city |
-| [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
-| [tools/](tools) | The kit copy, with the three builders rewritten for this product |
+| [icon.png](icon.png) | Quizlet's q-twilight mark, already in the package, resized to 128 px |
+| [tokens.json](tokens.json) | W3C DTCG tokens: `core` ramps, type, radius, and size, plus `light` and `night` semantic sets. Every token carries `$extensions.source` |
+| [DESIGN.md](DESIGN.md) | Written by hand from the public readings. `make design-md` was not run |
+| [style-guide.html](style-guide.html) | Light roles, ramps, and the prior night roles, rendered from tokens.json |
+| [components.md](components.md) | Public controls that were measured: Log in, Sign up, search, trial |
+| [patterns.md](patterns.md) | How the public header, menus, footer, pricing page, and phone drawer fit together |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login_extracted` is `not-started` |
+| [components/crops/](components/crops) | 3 element screenshots: Log in, Sign up, search field |
+| [screenshots/](screenshots) | 12 public captures. 10 desktop at 2880 by 1800, 2 phone at 780 by 1688 |
+| [raw/](raw) | Public custom properties, the prior night copy, and computed component styles |
+| [tools/](tools) | Builders rewritten for the public readings |
 
 ## Brief
 
 <!-- brief:start -->
-Brief is not generated. catalog.json has no quizlet entry, so `make brief` cannot write this section. The night roles are page `{color.twilight.900}`, text `{color.gray.200}`, accent `{color.twilight.500}`.
+Brief is not regenerated. catalog.json was left alone, so `make brief` was not run. The public light roles are page `{color.gray.200}`, text `{color.gray.800}`, accent `{color.twilight.500}`.
 <!-- brief:end -->
 
 ## Health
 
 <!-- health:start -->
-Health is not generated. There is no scorecard row for quizlet, and `make grade` needs a catalog entry. That entry is deferred.
+Health is not regenerated. catalog.json was left alone, so `make grade` was not run.
 <!-- health:end -->
 
 ## How the values were read
 
-Custom properties were read with `getComputedStyle(document.documentElement)` on the signed-in settings page. 107 names resolved. Product ramps are gray, error, lemon, lilac, mint, sherbert, sky, sunset, and twilight. Toastify names were dropped. Component sizes were read with `getComputedStyle` on the body, an h2, the search field, the primary button, the trial button, and the phone settings h1. Ad iframes were hidden with CSS. A promo banner was closed with its own Close control. Consent was not clicked. The account email was replaced in the settings DOM before those shots and painted out of the account-menu crop. The timezone city was painted out of the notifications shot.
+Custom properties were read with `getComputedStyle(document.documentElement)` on the signed-out homepage. 51 product ramp names resolved. Cross-origin stylesheets on assets.quizlet.com were CSSOM-blocked, so the ramps are computed custom properties. Component sizes were read with `getComputedStyle` on the body, the h1, the Log in pill, the Sign up pill, the teacher link, the search field, and the upgrade trial button. The cookie host was hidden with CSS. Consent was not clicked. Login and signup dialogs were opened and left empty. Identity providers were not clicked. Forms were not submitted.
 
 ## What to distrust
 
-Quantized screenshots are 256-colour. Read colours from tokens.json. The style guide falls back to the system sans because Hurme Geometric Sans 2 is not licensed for this package. Light mode was not measured. The phone shots are 430 by 932, not 390 by 844. The preview tool reported 1280 by 800 while CSS `innerWidth` was 1440 and 430. DESIGN.md was not produced by `make design-md`.
+Quantized screenshots are 256-colour. Read colours from tokens.json. The style guide falls back to the system sans because Hurme Geometric Sans 2 is not licensed for this package. The homepage h1 computed as `rgb(0, 0, 0)`, which is not a ramp step. `light.text-strong` aliases gray-900 as the nearest ramp and says so. The night set is the prior signed-in reading. This pass did not re-open that shell, and the night screenshots are not in this refresh. `emulateMedia` dark did not switch the public theme. Focus rings were not observed as painted outlines. DESIGN.md was not produced by `make design-md`.
 
 ## Fonts
 
@@ -46,29 +49,31 @@ Hurme Geometric Sans 2, served as `hurme_no2-webfont`. Fallbacks measured on the
 
 | Surface | Captured |
 |---|---|
-| Your Sets, desktop, menus open | deleted, the shot showed the account email |
-| Your library, empty flashcard sets | yes |
-| Settings profile, notifications | yes |
-| Settings account and privacy | opened, screenshot deleted |
-| Create a set, empty form | yes |
-| Phone home, nav, settings | yes, at 430 by 932 |
-| Light theme | no |
-| Study groups, games, explanations, achievements | no |
-| Hover, pressed, focus-visible | no |
-| SVG icons | no |
+| Homepage, desktop | yes, [home-light-default](screenshots/home-light-default.png) |
+| Nav menus | yes, Study tools clean. Subjects and Create still show the earlier menus |
+| Footer | yes |
+| Flashcards marketing | yes |
+| Pricing | yes, trial not started |
+| Login and signup walls, empty | yes |
+| Homepage, phone, and phone drawer | yes, 390 by 844 |
+| Public study set | no, a later navigation hit Press and Hold |
+| Teachers, Learn, explanations | no, captcha, shots discarded |
+| Phone inner page | no, captcha, shot discarded |
+| Signed-in app | not this pass. `login_extracted` is `not-started` |
+| Pressed, disabled, error, SVG icons | no |
 
 ## Do and don't
 
-- **Do use the twilight page.** The signed-in shell sits on `#0A092D`. See [library-night-empty](screenshots/library-night-empty.png).
-- **Do pill the actions.** The primary button and the trial button both use a 200px radius. See [button-primary](components/crops/button-primary.png).
-- **Do keep the trial pill sunset, not twilight.** The free-trial control is `#FFCD1F` with `#282E3E` text. See [home-night-phone](screenshots/home-night-phone.png).
-- **Don't invent a light theme from this package.** Light mode was offered and not switched.
-- **Don't treat the phone shots as 390 wide.** They were measured at 430.
+- **Do use the gray page on marketing.** The signed-out shell sits on `#F6F7FB`. See [home-light-default](screenshots/home-light-default.png).
+- **Do pill the actions.** Log in, Sign up, and the trial button all use a 200px radius. See [button-login-default](components/crops/button-login-default.png).
+- **Do keep the trial pill sunset, even on the dark upgrade page.** The control is `#FFCD1F` with `#282E3E` text. See [pricing-light-default](screenshots/pricing-light-default.png).
+- **Don't treat this refresh as a signed-in capture.** The walls were photographed empty and left there.
+- **Don't invent a public study-set screenshot.** That navigation hit a captcha and was stopped.
 
 ## Rebuild
 
 ```bash
-cd systems/quizlet && python3 tools/build_tokens.py && python3 tools/build_style_guide.py && python3 tools/build_components_md.py
+cd systems/quizlet && python3 tools/build_tokens.py && python3 tools/build_style_guide.py && python3 tools/build_components_md.py && python3 tools/test_quizlet.py
 ```
 
-`make check` fails until catalog.json has a quizlet entry. That entry is deferred and is not part of this package.
+`make design-md` and `make brief` were not run. catalog.json was left alone.

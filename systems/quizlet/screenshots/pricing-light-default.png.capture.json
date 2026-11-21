@@ -1,0 +1,19 @@
+{
+  "name": "pricing-light-default",
+  "capturedAt": "2026-11-21T15:20:00Z",
+  "url": "https://quizlet.com/upgrade",
+  "title": "Upgrade Your Account | Quizlet",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Opened from the footer Quizlet Plus link. Query source=footer was on the address bar and is omitted here. Trial was not started."
+}

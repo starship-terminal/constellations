@@ -1,0 +1,19 @@
+{
+  "name": "flashcards-light-default",
+  "capturedAt": "2026-11-21T15:20:00Z",
+  "url": "https://quizlet.com/features/flashcards",
+  "title": "Online Flashcard Maker & Flashcard App | Quizlet",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Opened from the Study tools menu. No captcha in this frame."
+}
