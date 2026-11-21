@@ -1,0 +1,262 @@
+{
+  "measured": "2026-11-22",
+  "signedOut": true,
+  "typed": false,
+  "cookieBanner": "visible, not accepted or rejected",
+  "prefersColorScheme": "dark",
+  "htmlColorScheme": "normal",
+  "htmlHasDarkClass": false,
+  "home": {
+    "url": "https://evernote.com/",
+    "title": "Best Note Taking App - Organize Your Notes with Evernote",
+    "viewport": [1169, 731],
+    "devicePixelRatio": 2,
+    "vars": {
+      "--color-bg-primary": "#F9F6F2",
+      "--color-bg-secondary": "#F4EEE5",
+      "--color-stroke-buttons": "#A1A1A1",
+      "--color-stroke-cards": "#E7E7E7",
+      "--color-text-primary": "#141414",
+      "--color-text-secondary": "#262626",
+      "--color-text-tertiary": "#4E4D4C",
+      "--font-figtree": "\"Figtree\",\"Figtree Fallback\"",
+      "--font-inter": "\"Inter\",\"Inter Fallback\""
+    },
+    "darkSelectorDeclared": {
+      "--color-bg-primary": "#141414",
+      "--color-bg-secondary": "#262626",
+      "--color-stroke-buttons": "#FFFFFF66",
+      "--color-stroke-cards": "#FFFFFF33",
+      "--color-text-primary": "#FFFFFF",
+      "--color-text-secondary": "#FDFCFC",
+      "--color-text-tertiary": "#F3F2F1"
+    },
+    "header": {
+      "backgroundColor": "rgb(249, 246, 242)",
+      "height": 81,
+      "class": "z-50 w-full bg-bg-primary fixed"
+    },
+    "h1": {
+      "text": "Your second brain",
+      "color": "rgb(20, 20, 20)",
+      "fontFamily": "Figtree, \"Figtree Fallback\"",
+      "fontSize": "72px",
+      "fontWeight": "600",
+      "lineHeight": "72px",
+      "letterSpacing": "-3.6px"
+    },
+    "h2": {
+      "text": "Make the most of your ideas—and your time",
+      "color": "rgb(20, 20, 20)",
+      "fontFamily": "Figtree, \"Figtree Fallback\"",
+      "fontSize": "50px",
+      "fontWeight": "600",
+      "lineHeight": "55px",
+      "letterSpacing": "-2.5px"
+    },
+    "heroCopy": {
+      "color": "rgb(38, 38, 38)",
+      "fontFamily": "Inter, \"Inter Fallback\"",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "lineHeight": "30px",
+      "letterSpacing": "-1px"
+    },
+    "startForFree": {
+      "backgroundColor": "rgb(20, 20, 20)",
+      "labelColor": "rgb(255, 255, 255)",
+      "borderRadius": "5px",
+      "padding": "10px 28px",
+      "height": 46,
+      "fontSize": "16px",
+      "labelWeight": "600"
+    },
+    "getEvernoteFree": {
+      "backgroundColor": "rgb(20, 20, 20)",
+      "labelColor": "rgb(255, 255, 255)",
+      "borderRadius": "5px",
+      "padding": "16px 40px",
+      "height": 59,
+      "minWidth": 250
+    },
+    "logIn": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "borderRadius": "5px",
+      "padding": "10px 24px",
+      "height": 39,
+      "fontSize": "16px"
+    },
+    "navLink": {
+      "text": "AI Features",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "Figtree, \"Figtree Fallback\"",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "borderRadius": "10px",
+      "padding": "8px 10px 10px"
+    },
+    "footer": {
+      "backgroundColor": "rgb(249, 246, 242)"
+    },
+    "heroCard": {
+      "backgroundColor": "rgb(244, 238, 229)",
+      "border": "1px solid rgb(231, 231, 231)",
+      "borderRadius": "16px"
+    },
+    "captureChip": {
+      "text": "Capture",
+      "backgroundColor": "rgb(148, 225, 48)",
+      "color": "rgb(20, 20, 20)",
+      "borderRadius": "52px",
+      "padding": "4px 12px",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "class": "bg-green-secondary"
+    },
+    "discoverMore": {
+      "backgroundColor": "rgb(148, 225, 48)",
+      "labelColor": "rgb(20, 20, 20)",
+      "labelSize": "20px",
+      "labelWeight": "600",
+      "borderRadius": "5px",
+      "height": 59,
+      "class": "bg-green-secondary"
+    },
+    "darkBand": {
+      "backgroundColor": "rgb(38, 38, 38)",
+      "class": "bg-bg-secondary background-image--v11-da"
+    },
+    "tertiary": {
+      "text": "Pay $79.90 / year",
+      "color": "rgb(78, 77, 76)",
+      "class": "text-text-tertiary"
+    },
+    "buttonMotion": {
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "stylesheetGreen": {
+      "bg-green": "rgb(0, 168, 45)",
+      "bg-green-secondary": "rgb(148, 225, 48)",
+      "note": "bg-green is the hover rule .hover:bg-green:hover. It was not hovered."
+    }
+  },
+  "plans": {
+    "url": "https://evernote.com/en-us/compare-plans",
+    "title": "Compare plans and get started for free | Evernote",
+    "headerBackground": "rgb(249, 246, 242)",
+    "h1": {
+      "text": "Which Evernote plan is right for you?",
+      "color": "rgb(20, 20, 20)",
+      "fontSize": "72px",
+      "fontWeight": "600",
+      "fontFamily": "Figtree, \"Figtree Fallback\""
+    },
+    "price": {
+      "text": "$6.65",
+      "color": "rgb(20, 20, 20)",
+      "fontSize": "50px",
+      "fontWeight": "600"
+    },
+    "chooseStarter": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "1px solid rgb(161, 161, 161)",
+      "borderRadius": "5px",
+      "height": 46,
+      "labelColor": "rgb(20, 20, 20)",
+      "notClicked": true
+    },
+    "starterChip": {
+      "backgroundColor": "rgb(148, 225, 48)",
+      "color": "rgb(38, 38, 38)",
+      "borderRadius": "52px",
+      "fontFamily": "Inter, \"Inter Fallback\"",
+      "fontWeight": "600"
+    }
+  },
+  "aiFeatures": {
+    "url": "https://evernote.com/en-us/features/ai-features",
+    "title": "Evernote - Work smarter with Evernote AI features",
+    "htmlHasDarkClass": false,
+    "mainClass": "bg-bg-primary pt-30 md:pt-10 dark",
+    "mainBackground": "rgb(20, 20, 20)",
+    "headerClass": "dark z-50 w-full bg-bg-primary fixed",
+    "headerBackground": "rgb(20, 20, 20)",
+    "headerVars": {
+      "--color-bg-primary": "#141414",
+      "--color-bg-secondary": "#262626",
+      "--color-text-primary": "#FFFFFF",
+      "--color-text-secondary": "#FDFCFC",
+      "--color-text-tertiary": "#F3F2F1",
+      "--color-stroke-buttons": "#FFFFFF66",
+      "--color-stroke-cards": "#FFFFFF33"
+    },
+    "navLabel": {
+      "text": "AI Features",
+      "color": "rgb(255, 255, 255)"
+    },
+    "logInLabel": {
+      "color": "rgb(255, 255, 255)",
+      "fontWeight": "600"
+    },
+    "startForFree": {
+      "backgroundColor": "rgb(148, 225, 48)",
+      "labelColor": "rgb(20, 20, 20)",
+      "borderRadius": "5px",
+      "height": 46,
+      "class": "dark:bg-green-secondary"
+    },
+    "h2": {
+      "text": "Focus on what matters",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Figtree, \"Figtree Fallback\"",
+      "fontSize": "50px",
+      "fontWeight": "600",
+      "lineHeight": "55px",
+      "letterSpacing": "-2.5px"
+    },
+    "footerBackground": "rgb(20, 20, 20)"
+  },
+  "loginWall": {
+    "url": "https://accounts.evernote.com/login",
+    "title": "Login to your Evernote account",
+    "typed": false,
+    "bodyBackground": "rgb(255, 255, 255)",
+    "bodyFont": "Inter, \"Inter Fallback\"",
+    "h1": {
+      "text": "Sign in",
+      "color": "rgb(38, 38, 38)",
+      "fontSize": "32px",
+      "fontWeight": "600",
+      "lineHeight": "44px",
+      "fontFamily": "Inter, \"Inter Fallback\""
+    },
+    "input": {
+      "placeholder": "Email address or Username",
+      "value": "",
+      "border": "1px solid rgb(204, 204, 204)",
+      "color": "rgb(38, 38, 38)",
+      "fontSize": "15px",
+      "borderRadius": "6px",
+      "height": 50,
+      "padding": "12px 8px 12px 12px"
+    },
+    "continue": {
+      "text": "Continue",
+      "backgroundColor": "rgb(204, 204, 204)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "8px",
+      "height": 50,
+      "disabled": true,
+      "notClicked": true
+    }
+  },
+  "favicon": {
+    "icon": "https://evernote.com/images/evernote-logo-icon.svg",
+    "svgFill": "#00A82D",
+    "appleTouch": "https://evernote.com/images/evernote-logo-ios.png",
+    "appleTouchSize": "800x800"
+  }
+}
