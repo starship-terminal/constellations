@@ -1,0 +1,123 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.gap.com/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "body": {
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "ui-sans-serif, system-ui, sans-serif"
+  },
+  "universalBar": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "height": "46px",
+    "linkColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Gap Sans v1\"",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "letterSpacing": "0.2px"
+  },
+  "promoBar": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "height": "48px",
+    "linkColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Gap Sans\", Helvetica, Arial, Roboto, sans-serif",
+    "fontSize": "14px",
+    "lineHeight": "18px",
+    "letterSpacing": "0.2px"
+  },
+  "departmentLink": {
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "\"Gap Sans v1\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "0.32px"
+  },
+  "search": {
+    "backgroundColor": "rgba(231, 231, 231, 0.3)",
+    "height": "32px",
+    "fontFamily": "\"Gap Sans v1\"",
+    "fontSize": "14px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "h2": {
+    "text": "More new arrivals.",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "\"Gap Sans\", Helvetica, Arial, Roboto, sans-serif",
+    "fontSize": "32px",
+    "fontWeight": "400",
+    "lineHeight": "25.6px"
+  },
+  "heroChip": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "\"Gap Sans v1\"",
+    "fontSize": "12px",
+    "height": "42px",
+    "borderRadius": "0px"
+  },
+  "product": {
+    "url": "https://www.gap.com/browse/product.do?pid=911448002",
+    "h1": {
+      "text": "High Rise Stride Wide-Leg Jeans",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Gap Sans v1\"",
+      "fontSize": "28px",
+      "fontWeight": "400"
+    },
+    "priceWas": { "color": "rgb(117, 117, 117)", "textDecoration": "line-through", "fontSize": "14px" },
+    "priceNow": { "color": "rgb(0, 0, 0)", "fontSize": "16px" },
+    "addToBag": {
+      "backgroundColor": "rgb(3, 27, 161)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Gap Sans v1\"",
+      "fontSize": "16px",
+      "height": "44px",
+      "borderRadius": "0px",
+      "clicked": false
+    }
+  },
+  "login": {
+    "url": "https://secure-www.gap.com/my-account/sign-in",
+    "heading": {
+      "text": "Enter Your Email Address",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Lato v1\", Lato, Helvetica, Arial, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "700"
+    },
+    "email": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(2, 2, 2)",
+      "border": "2px solid rgb(2, 2, 2)",
+      "borderRadius": "4px",
+      "height": "44px",
+      "fontFamily": "\"Lato v1\", Lato, Helvetica, Arial, sans-serif",
+      "fontSize": "14px",
+      "value": ""
+    },
+    "continue": {
+      "backgroundColor": "rgb(2, 2, 2)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "4px",
+      "height": "44px",
+      "fontFamily": "\"Lato v1\", Lato, Helvetica, Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "700",
+      "clicked": false
+    }
+  },
+  "footerSignup": {
+    "emailBackground": "rgba(231, 231, 231, 0.3)",
+    "buttonBackground": "rgb(0, 0, 0)",
+    "buttonColor": "rgb(255, 255, 255)",
+    "height": "44px",
+    "fontFamily": "\"Gap Sans v1\"",
+    "fontSize": "16px",
+    "letterSpacing": "0.32px",
+    "submitted": false
+  },
+  "logo": {
+    "src": "https://www.gap.com/Asset_Archive/GPWeb/content/0030/015/725/assets/logo/logo_gap--light.svg",
+    "darkSrc": "https://www.gap.com/Asset_Archive/GPWeb/content/0030/015/725/assets/logo/logo_gap--dark.svg"
+  }
+}

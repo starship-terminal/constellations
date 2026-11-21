@@ -1,0 +1,30 @@
+{
+  "product": "Gap",
+  "domain": "gap.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header account toggle, then the public sign-in URL",
+      "url": "https://secure-www.gap.com/my-account/sign-in",
+      "title": "Sign in | Gap",
+      "painted": true,
+      "headings": ["Enter Your Email Address"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Back", "Continue", "Feedback", "Chat with us"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "The email field was empty. Continue was not clicked. The account menu's Sign in or join now points at the same path. There is no separate public signup form. Create-account, sign-up, and register paths return 404 or redirect to PageNotFound. Joining continues only after an email is submitted, so that step was not taken."
+    }
+  ]
+}
