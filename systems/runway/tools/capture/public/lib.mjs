@@ -72,6 +72,18 @@ export function isWall(url) {
   return WALL.test(url) || /app\.runwayml\.com/.test(url);
 }
 
+// Login and signup stay on app.runwayml.com until a control opens auth.runwayml.com.
+// Follow only the in-page Sign up / Sign in link. Never type, never click Google, Apple, or SSO.
+export async function openAuthWall(page, kind) {
+  const name = kind === 'signup' ? /sign up/i : /sign in|log in/i;
+  const link = page.getByRole('link', { name }).first();
+  if (await link.count()) {
+    await link.click({ timeout: 4000 }).catch(() => {});
+    await page.waitForTimeout(2500);
+  }
+  return page.url();
+}
+
 export async function openPublic(page, url, { wait = 2200 } = {}) {
   const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   await page.waitForTimeout(wait);

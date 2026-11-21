@@ -1,6 +1,6 @@
 # Runway public site tree
 
-Mapped on 2026-11-21 from the main page before any screenshots. Playwright, headless Chromium, signed out. `https://runwayml.com/` returns 200 and lands on `https://runway.com/`. No form was submitted. No password, code, Google, or Apple control was used.
+Mapped again on 2026-11-21 from the main page, then photographed. Playwright, headless Chromium, signed out. `https://runwayml.com/` returns 200 and lands on `https://runway.com/`. No form was submitted. No password, code, Google, Apple, or SSO control was used. This is a refresh of the existing `systems/runway` package.
 
 The marketing site is light only (`html` class `bg-white`, `color-scheme: normal`, no `data-theme`). Dark mode is not a public toggle.
 
@@ -149,18 +149,20 @@ Phone (390). A **Menu** button (`aria-label` Menu, `aria-expanded` false) opens 
 
 `/pricing` has Individual, Team & Enterprise, and API audience tabs, plus Monthly and Yearly billing toggles. Get Started and similar CTAs go to `app.runwayml.com` (wall). No checkout was opened.
 
-## Login and app wall
+## Login and signup walls
 
-Reached by Login, Try Runway, Get Started, and in-product generate links.
+Reached by Login, Sign up, Try Runway, Get Started, and in-product generate links. The first paint of `app.runwayml.com/login` and `/signup` is a marketing split (feature tabs on the left, a short email step on the right). The empty auth wall is one in-page link further. That link was followed. Nothing was typed. Google, Apple, and SSO were not clicked. Continue was not clicked.
 
 | URL | What it shows | Action |
 |---|---|---|
-| `https://app.runwayml.com/login` | Redirects to auth | Stop |
-| `https://auth.runwayml.com/interaction/…` | Sign In. Fields: Username or Email, Password. Buttons: Log in, Continue with Google, Continue with Apple. Link: Sign up. | Stop. Password not typed. Google and Apple not clicked. No account created. |
+| `https://app.runwayml.com/login` | Marketing split, then the Sign in link | Followed the Sign in link only |
+| `https://auth.runwayml.com/interaction/…` | Welcome to Runway. Empty fields: Username or Email, Password. Buttons: Log in, Continue with Google, Continue with Apple, Continue with Single Sign-On (SSO). Links: Sign up for free, Forgot Password, Privacy Policy. | Stop. Fields left empty. |
+| `https://app.runwayml.com/signup` | Marketing split, then the Sign up link | Followed the Sign up link only |
+| `https://auth.runwayml.com/interaction/…/register` | Enter your email. Empty Email field. Buttons: Continue, Continue with Google, Continue with Apple, Continue with Single Sign-On (SSO). Link: Sign in. | Stop. Email not typed. Continue not clicked. |
 | `https://app.runwayml.com/` | App entry | Stop |
 | `https://app.runwayml.com/generate`, `/characters`, `/video-tools/ai-tools/agent`, `/ai-tools/generate` | Same app wall | Stop |
 
-`https://auth.runwayml.com/` with no path redirected back to `https://runway.com/` (200). The signed-in product (editor, projects, billing, onboarding) is behind this wall.
+Phone width shows the same empty walls without the left marketing panel. `https://auth.runwayml.com/` with no path redirected back to `https://runway.com/` (200). The signed-in product (editor, projects, billing, onboarding) is behind this wall. `login-extracted` stays not-started.
 
 ## Forms (not submitted)
 

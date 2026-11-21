@@ -13,7 +13,7 @@ A token set and component reference for Runway's public site. Read from **runway
 | [site-tree.md](site-tree.md) | Which control opens which page, menu, or wall |
 | [components/](components/) | Element crops |
 | [icons/](icons/) | Inline header SVGs and INDEX.tsv |
-| [screenshots/](screenshots/) | 65 page captures, 256-colour PNGs |
+| [screenshots/](screenshots/) | 67 page captures, 256-colour PNGs |
 | [raw/](raw/) | css-vars.json and components-computed.json |
 | [tools/](tools/) | Capture scripts and builders |
 
@@ -70,7 +70,7 @@ Headless Chromium, Playwright, signed out, on 2026-11-21.
 - **Screenshots.** [tools/capture/public/public.mjs](tools/capture/public/public.mjs) shot each planned public page at 1440x900 (1x) and the phone set at 390x844 (2x). Sidecars record `innerWidth` 1440 and 390. Hover menus were recaptured after the first pass, because the first hover did not expand. [tools/capture/quantize.py](tools/capture/quantize.py) wrote 256-colour PNGs.
 - **Consent.** The OneTrust banner was hidden with CSS. No consent button was clicked.
 
-Nothing was signed into, bought, or submitted. Login was opened only to record the wall. The password field was not filled. Google, Apple and SSO were not clicked.
+Nothing was signed into, bought, or submitted. Login and signup were opened only to record the empty walls. The password and email fields were not filled. Google, Apple and SSO were not clicked. Continue was not clicked. `login-extracted` stays not-started. catalog.json was not edited.
 
 ## What to distrust
 
@@ -118,7 +118,7 @@ Nothing was signed into, bought, or submitted. Login was opened only to record t
 - **Do open sections from a hover menu.** Creative opens a three-column panel without leaving the page. [screenshots/home-light-menu-creative.png](screenshots/home-light-menu-creative.png)
 - **Do put type on the media.** The hero title is white on the image, not on a solid band. [screenshots/home-light-default.png](screenshots/home-light-default.png)
 - **Don't treat the declared blue as the marketing accent.** `#2c22fa` lives on the developer stylesheets. The marketing CTA is near-black.
-- **Don't style the editor from this package.** [screenshots/login-light-default.png](screenshots/login-light-default.png) is the wall. The canvas was not opened.
+- **Don't style the editor from this package.** [screenshots/login-light-default.png](screenshots/login-light-default.png) and [screenshots/signup-light-default.png](screenshots/signup-light-default.png) are the empty walls. The canvas was not opened.
 - **Don't submit the sales form to see its error state.** The empty form is the captured state. [screenshots/enterprise-contact-light-default.png](screenshots/enterprise-contact-light-default.png)
 
 ## Rebuild
