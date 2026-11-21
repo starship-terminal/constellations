@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rhone style guide</title>
+<style>
+  :root {
+    --ink: #1c1519;
+    --page: #fbf9f9;
+    --courtesy: #efedea;
+    --line: #e3dfd9;
+    --olive: #617259;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-weight: 400; font-size: 56px; line-height: 58px; margin: 0 0 8px; }
+  h2 { font-weight: 400; font-size: 32px; margin: 40px 0 12px; }
+  p { line-height: 24px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 140px; }
+  .chip { height: 72px; border: 1px solid var(--line); }
+  .label { font-size: 12px; margin-top: 6px; }
+  .btn-ink, .btn-page {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    border-radius: 0;
+    text-decoration: none;
+    border: 1px solid var(--page);
+  }
+  .btn-ink { background: var(--ink); color: var(--page); padding: 13.5px 22.5px; }
+  .btn-page { background: var(--page); color: var(--ink); padding: 14.5px 22.5px; }
+  .size {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 53px;
+    height: 32px;
+    border: 1px solid var(--line);
+    background: var(--page);
+    margin-right: 6px;
+  }
+  .bar { background: var(--ink); color: var(--page); font-size: 12px; text-align: center; padding: 8px; }
+  .courtesy { background: var(--courtesy); font-size: 16px; padding: 8px 16px; }
+  .note { color: var(--olive); }
+</style>
+</head>
+<body>
+<main>
+  <p class="bar">Free shipping line, 12px on ink</p>
+  <p class="courtesy">Take 15% off is a signup trigger and is not opened here</p>
+  <h1>Keep showing up</h1>
+  <p>Measured from the public Rhone store on 22 November 2026. Denim falls back to Arial. Radius is 0.</p>
+  <h2>Color</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#fbf9f9"></div><div class="label">page #fbf9f9</div></div>
+    <div class="swatch"><div class="chip" style="background:#1c1519"></div><div class="label">ink #1c1519</div></div>
+    <div class="swatch"><div class="chip" style="background:#efedea"></div><div class="label">courtesy #efedea</div></div>
+    <div class="swatch"><div class="chip" style="background:#e3dfd9"></div><div class="label">line #e3dfd9</div></div>
+    <div class="swatch"><div class="chip" style="background:#617259"></div><div class="label">olive #617259</div></div>
+  </div>
+  <h2>Buttons</h2>
+  <p><span class="btn-page">Shop men's</span> <span class="btn-ink">Add to bag</span></p>
+  <p class="note">Bundle &amp; save uses olive. Add to bag was not clicked.</p>
+  <h2>Size chip</h2>
+  <p><span class="size">32</span><span class="size">34</span></p>
+</main>
+</body>
+</html>
