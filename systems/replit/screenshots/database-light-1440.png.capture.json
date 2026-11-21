@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "database-light-1440",
+  "url": "https://replit.com/products/database",
+  "title": "Serverless SQL Database for Apps | Replit",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "First viewport. Public marketing page. Nothing typed. Incognito preview tab, CSS 1440x900 at 2x."
+}
