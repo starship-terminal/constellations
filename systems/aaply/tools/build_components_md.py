@@ -201,7 +201,7 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
-PAGE_NAME = {"home": "home", "features": "features", "value": "value", "pricing": "pricing", "reviews": "reviews", "story": "our-story", "team": "team", "figma": "figma-plugin", "mobile": "home"}
+PAGE_NAME = {"home": "home", "features": "features", "value": "value", "pricing": "pricing", "reviews": "reviews", "story": "our-story", "team": "team", "figma": "figma-plugin", "early": "early-program", "manual": "manual", "mobile": "home"}
 
 GROUP_INTRO = {
     "Shell and navigation": "The chrome on the public pages: the floating white nav bar (aaply wordmark left, Features / Value / Pricing / Reviews links centre, Log in ghost pill and the black Sign up pill right), and the black footer band with the mail link, social icons and second nav list.",
@@ -213,7 +213,9 @@ GROUP_INTRO = {
     "Our story": "The our-story page: a single editorial column in the display face — \"Our story started with a wish!\" and long-form paragraphs.",
     "Team": "The team page: \"Our Team\" display and a grid of member cards (3D character avatar, name, role).",
     "Figma plugin": "The figma-plugin page: \"Aaply Figma Plugin\" display and numbered export-step cards (Design in aaply → Click export → Follow the link).",
-    "Mobile (390 wide)": "The same pages as a phone draws them, at 390 x 844 with an iPhone user agent: the burger menu, the hero and the full-width CTAs.",
+    "Early program": "The Early Users Program page (/early-program). In the sitemap, not linked from nav, footer, or the phone menu. Numbered steps and a lime Sign up for FREE pill that leaves for the app host.",
+    "Manual": "The manual page (/manual). Sitemap-only. A display heading over an embedded product video, and a Start new project pill that leaves for the app host.",
+    "Mobile (390 wide)": "The same pages as a phone draws them, at 390 x 844 with an iPhone user agent: the burger, the open overlay menu, the hero and the full-width CTAs.",
     "Sign-in boundary": "go.aaply.app — the app host the nav's Log in / Sign up / demo links point at. Every tested route (/login, /sign, /signup, /workspace/demo) returned the bare body \"Not found\" to this client, so no auth surface exists to measure: it is recorded as an unreachable boundary, not captured.",
 }
 
@@ -226,11 +228,20 @@ SHOTS = [
     ("our-story", "Our story. The editorial column; full page.", "/our-story"),
     ("team", "Team. Display heading, member grid; full page.", "/team"),
     ("figma-plugin", "Figma plugin. Display heading, export steps; full page.", "/figma_plugin"),
+    ("early-program", "Early Users Program. Sitemap-only. Numbered steps, lime Sign up pill; full page.", "/early-program"),
+    ("manual", "Manual. Sitemap-only. Display heading, embedded video; full page.", "/manual"),
 ]
 MOBILE = [
-    ("mobile-home", "Home at 390: burger, hero, CTAs; full page.", "/"),
+    ("mobile-home", "Home at 390: burger, hero, CTAs; full page and the open menu.", "/"),
     ("mobile-pricing", "Pricing at 390; full page.", "/pricing"),
     ("mobile-features", "Features at 390; full page.", "/features"),
+    ("mobile-value", "Value at 390; full page.", "/value"),
+    ("mobile-reviews", "Reviews at 390; full page.", "/reviews"),
+    ("mobile-our-story", "Our story at 390; full page.", "/our-story"),
+    ("mobile-team", "Team at 390; full page.", "/team"),
+    ("mobile-figma-plugin", "Figma plugin at 390; full page.", "/figma_plugin"),
+    ("mobile-early-program", "Early Users Program at 390; full page.", "/early-program"),
+    ("mobile-manual", "Manual at 390; full page.", "/manual"),
 ]
 
 L = []
@@ -272,7 +283,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-light-{state}.png` (the marketing site is light, with a black footer band). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x). The app host go.aaply.app returned \"Not found\" on /login, /sign, /signup and /workspace/demo, so the authenticated product is listed as an unreachable boundary, not captured.")
+W("Screenshots are named `{page}-light-{state}.png` (the marketing site is light, with a black footer band). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x). The app host go.aaply.app returned \"Not found\" on /login, /sign, /signup and /workspace/demo, so the authenticated product is listed as an unreachable boundary, not captured. Which control opens which page is in [site-tree.md](site-tree.md).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -285,6 +296,8 @@ W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
     ("Monthly billing", "pricing", "the Monthly segment pressed (client-side state, nothing sent)", "[billing-monthly-on](#monthly-option-selected), [plan-price-monthly](#plan-price-monthly)"),
+    ("Reviews slide 2", "/reviews", "carousel dot button[aria-label=\"2 of 6\"] clicked; stays on the page", "[reviews-light-slide-2.png](screenshots/reviews-light-slide-2.png)"),
+    ("Phone menu", "home at 390", "burger a[href=\"#open-nav\"] clicked; closed with #close-nav", "[mobile-home-light-menu-open.png](screenshots/mobile-home-light-menu-open.png)"),
     ("App host", "go.aaply.app", "nav Log in / Sign up / demo links followed to the app host", "every route returned \"Not found\" — an unreachable boundary, not captured"),
     ("Chat bubbles", "home / features / value", "static annotation bubbles baked into the marketing pages", "measured as elements ([chat-bubble](#chat-annotation-bubble)); no live widget was opened"),
 ]
@@ -407,8 +420,15 @@ for g in groups:
         if cl:
             W(f"Child layers that carry the look: {cl}.")
             W()
-        imgs = [f"![{c['title']} {st}](components/crops/{os.path.basename(c['states'][st]['crop'])})" for st in states if c["states"][st].get("crop")]
-        W(" ".join(imgs) if imgs else "No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
+        # A crop that is only a published contact address is not kept.
+        DROP_CROPS = {"footer-link"}
+        imgs = []
+        if k not in DROP_CROPS:
+            imgs = [f"![{c['title']} {st}](components/crops/{os.path.basename(c['states'][st]['crop'])})" for st in states if c["states"][st].get("crop") and os.path.exists(os.path.join("components", "crops", os.path.basename(c["states"][st]["crop"])))]
+        if k in DROP_CROPS:
+            W("No crop is kept: the element is the published contact address, which is not written into the package. The values above were read from computed styles.")
+        else:
+            W(" ".join(imgs) if imgs else "No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
 
 # ------------------------------------------------ icons
 if icons:
@@ -429,7 +449,8 @@ W("## Gaps")
 W()
 W("### Pages")
 W()
-W("- **The app and everything behind sign-in.** The product itself lives on go.aaply.app (Log in / Sign up / \"Try demo project\" all point there), and every tested route — /login, /sign, /signup, /workspace/demo — returned the bare body \"Not found\" to this client. Whether the app host is retired, region-gated or simply down, no authenticated surface exists to measure: the package covers the marketing site only and records the app as an unreachable boundary. The footer still reads ©2024 and the Figma plugin page still links an export flow, so the product may be in maintenance mode.")
+W("- **The app and everything behind sign-in.** The product itself lives on go.aaply.app (Log in / Sign up / \"Try demo project\" all point there). Probed again on 2026-11-21: /login, /sign, /signup and /workspace/demo each returned HTTP 404 with the body \"Not found\". The host root (https://go.aaply.app/) returned HTTP 200 but the document is not Aaply (a foreign title, no Aaply in the body), so it was not captured and no app package was invented from it. The marketing site is the only measured surface.")
+W("- **Sitemap drafts, not product pages.** /page28901772.html (\"Copy of Aaply\", contains a Tilda form that was not submitted), /page29112172.html (\"Blank page\") and /page37280974.html (\"test Pricing\") are in the sitemap and are not opened by any control on the live pages. They were not captured. /workflow is the same walkthrough as /features and was not shot a second time.")
 W("- **Anything that sends.** No form was submitted, nothing bought, nothing signed into; the auth-bound pills (Log in, Sign up, the demo CTAs) were hovered and focused but never pressed through.")
 W()
 W("### States")
@@ -437,7 +458,7 @@ W()
 W("- **Pressed** was forced with DevTools (`CSS.forcePseudoState` :active:hover), so a state a script adds on mousedown (if any) is missing.")
 W("- **The billing toggle's held segment** paints its lime fill on a sibling shape, not on the text atom itself — the segment atoms measure transparent in both positions; the swap is visible in [pricing-light-yearly.png](screenshots/pricing-light-yearly.png).")
 W("- **Monthly billing** was reached by pressing the Monthly segment (client-side state, nothing posted); Yearly was restored after.")
-W("- **The reviews carousel** was measured on its first slide only; the dots' other slides were not advanced.")
+W("- **The reviews carousel** was measured on slide 1. Slide 2 was opened by clicking the dot (`button[aria-label=\"2 of 6\"]`) and shot as [reviews-light-slide-2.png](screenshots/reviews-light-slide-2.png). Slides 3 to 6 use the same control and were not shot.")
 W()
 W("### Themes")
 W()

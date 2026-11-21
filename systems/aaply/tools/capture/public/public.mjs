@@ -74,10 +74,6 @@ const desktop = {
     await step('toggle', async () => { if (await clickToggle(p, 'Yearly')) await S.view('yearly'); });
     await S.full();
   } },
-  reviews: { path: '/reviews', run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
   'our-story': { path: '/our-story', run: async (p, S) => {
     await S.view('default');
     await S.full();
@@ -90,15 +86,55 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
+  // Sitemap-only public pages. No nav, footer, or phone-menu control points
+  // here (see site-tree.md). /workflow is the same walkthrough as /features.
+  'early-program': { path: '/early-program', run: async (p, S) => {
+    await S.view('default');
+    await S.full();
+  } },
+  manual: { path: '/manual', run: async (p, S) => {
+    await S.view('default');
+    await S.full();
+  } },
+};
+
+// Reviews carousel dots (aria-label "N of 6") select a slide in place.
+// Shot on its own so a refresh does not rewrite the existing default/full pair.
+const reviewsSlide = {
+  'reviews-slide': { path: '/reviews', run: async (p, S) => {
+    const dot = p.locator('button[aria-label="2 of 6"]').first();
+    if (!(await dot.count())) return;
+    await dot.click({ timeout: 5000 }).catch(() => dot.evaluate((el) => el.click()));
+    await wait(p, 900);
+    await S.view('slide-2');
+  } },
 };
 
 const mobile = {
   home: { path: '/', run: async (p, S) => {
     await S.view('default');
     await S.full();
+    // Burger opens an in-page overlay (href="#open-nav"). Close it after the shot.
+    await step('menu', async () => {
+      const burger = p.locator('a[href="#open-nav"]').first();
+      if (!(await burger.count())) return;
+      await burger.evaluate((el) => el.click());
+      await wait(p, 900);
+      await S.view('menu-open');
+      const close = p.locator('a[href="#close-nav"]').first();
+      if (await close.count()) await close.evaluate((el) => el.click());
+      await wait(p, 400);
+    });
   } },
   pricing: { path: '/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
   features: { path: '/features', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  value: { path: '/value', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  reviews: { path: '/reviews', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'our-story': { path: '/our-story', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  team: { path: '/team', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'figma-plugin': { path: '/figma_plugin', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'early-program': { path: '/early-program', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  manual: { path: '/manual', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 // Auth and demo live on the app host go.aaply.app, which returns a bare
@@ -111,11 +147,15 @@ const opportunistic = {
 
 const b = await chromium.launch();
 let total = 0;
-const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
-for (const { k, mob } of runs) {
+const runs = [
+  ...Object.keys(desktop).map((k) => ({ k, mob: false, table: desktop })),
+  ...Object.keys(reviewsSlide).map((k) => ({ k, mob: false, table: reviewsSlide })),
+  ...Object.keys(mobile).map((k) => ({ k, mob: true, table: mobile })),
+];
+for (const { k, mob, table } of runs) {
   const name = (mob ? 'mobile-' : '') + k;
-  if (pageArg.length && !pageArg.includes(name)) continue;
-  const spec = (mob ? mobile : desktop)[k];
+  if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
+  const spec = table[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
   await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });

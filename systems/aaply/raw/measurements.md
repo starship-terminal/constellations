@@ -139,7 +139,7 @@ Crops: `nav-signup-default.png`, `nav-signup-hover.png`, `nav-signup-focus-visib
 
 #### footer
 
-Footer. The black footer band: "Made remotely with love", the aaply@aaply.app mail link, social icons (Twitter, Medium, LinkedIn, Discord, YouTube, Instagram) and the second nav list.
+Footer. The black footer band: "Made remotely with love", the the published contact mail link, social icons (Twitter, Medium, LinkedIn, Discord, YouTube, Instagram) and the second nav list.
 
 Page: home. Selector: `footer band`. States: default.
 
@@ -163,7 +163,7 @@ Crops: `footer-default.png`.
 
 #### footer-link
 
-Footer mail link. The aaply@aaply.app contact link in the footer.
+Footer mail link. The the published contact contact link in the footer.
 
 Page: home. Selector: `footer mailto`. States: default, hover, focus-visible, pressed.
 
