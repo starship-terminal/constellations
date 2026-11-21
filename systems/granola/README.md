@@ -18,6 +18,7 @@ This is a new package. `origin/main` had no `systems/granola/` folder. The iOS a
 | [icon.png](icon.png) | 128 px site icon from the apple-touch icon |
 | [raw/](raw/) | CSS custom properties and computed component styles |
 | [tools/](tools/) | Builders. `python3 tools/build_tokens.py` rebuilds `tokens.json` |
+| [icons/](icons/) | Icon redraws |
 
 ## Brief
 

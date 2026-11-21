@@ -16,6 +16,7 @@ Target is the retail site at [target.com](https://www.target.com/). This package
 | [site-tree.md](site-tree.md) | Which control opens which page |
 | [login-review.json](login-review.json) | What the login wall asks for |
 | [tools/](tools/) | Token check and the style-guide writer |
+| [icons/](icons/) | Icon redraws |
 
 ## How the values were read
 

@@ -21,6 +21,7 @@ Public marketing pages, the header, the footer, pricing, the store, the Homebrew
 | [screenshots/](screenshots/) | Quantised page shots, desktop and phone. |
 | [raw/](raw/) | Computed custom properties from the homepage. |
 | [tools/](tools/) | `test_tokens.py`. |
+| [login-review.json](login-review.json) | Empty walls, and where the walk stopped |
 
 <!-- brief:start -->
 <!-- brief:end -->

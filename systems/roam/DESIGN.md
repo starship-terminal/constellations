@@ -3,15 +3,15 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Roam Research"
-description: "Networked-note marketing: dark slate header, white page, Inter headlines, one blue Sign Up, a lighter trial button, Times New Roman wordmark"
+description: "Productivity product: public pages captured signed out. Signed-in screens were not captured."
 omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#137cbd"
   neutral: "#ffffff"
-  surface: "#ffffff"
-  on-surface: "#444444"
+  surface: "#444444"
+  on-surface: "#182026"
   on-surface-variant: "#bfccd6"
   outline: "#ced9e0"
   color-page: "#ffffff"
@@ -102,9 +102,9 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Networked-note marketing: dark slate header, white page, Inter headlines, one blue Sign Up, a lighter trial button, Times New Roman wordmark.
+Good for: Productivity product: public pages captured signed out. Signed-in screens were not captured..
 
-Captured 2026-11-22, signed out (public marketing, empty login and signup walls, public help graph; no graph created). Themes: light.
+Captured 2026-11-22, signed out (public pages only; login, signup, checkout, and subscribe were not followed). Themes: light.
 
 Roam Research is a note-taking tool for networked thought. This package captures the public site at roamresearch.com, signed out, on 22 November 2026.
 
@@ -118,8 +118,8 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 - **primary (#137cbd):** `light.color.accent`
 - **neutral (#ffffff):** `light.color.page`
-- **surface (#ffffff):** `light.color.page`
-- **on-surface (#444444):** `light.color.ink`
+- **surface (#444444):** `light.color.ink`
+- **on-surface (#182026):** `light.color.auth-ink`
 - **on-surface-variant (#bfccd6):** `light.color.muted`
 - **outline (#ced9e0):** `light.color.plan-border`
 

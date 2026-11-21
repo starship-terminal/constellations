@@ -21,6 +21,7 @@ Public marketing pages, the header, the download dialog, the phone menu, and the
 | [screenshots/](screenshots/) | Quantised page shots, desktop and phone. |
 | [raw/](raw/) | Computed styles and the `.dark` custom-property block. |
 | [tools/](tools/) | `test_tokens.py`. |
+| [login-review.json](login-review.json) | Empty walls, and where the walk stopped |
 
 <!-- brief:start -->
 <!-- brief:end -->

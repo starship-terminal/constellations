@@ -20,6 +20,7 @@ Public marketing pages, the header, the footer, pricing, the phone homepage and 
 | [screenshots/](screenshots/) | Quantised page shots, desktop and phone. |
 | [raw/](raw/) | Computed styles from the homepage. |
 | [tools/](tools/) | `test_tokens.py`. |
+| [login-review.json](login-review.json) | Empty walls, and where the walk stopped |
 
 <!-- brief:start -->
 <!-- brief:end -->

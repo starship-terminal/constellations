@@ -18,6 +18,7 @@ Weekday is a public women's and men's clothing shop. This package is a signed-ou
 | [raw/](raw/) | Computed styles read on the live shop |
 | [site-tree.md](site-tree.md) | Header, footer, and the pages those controls open |
 | [tools/](tools/) | A check that the written tokens match the readings |
+| [login-review.json](login-review.json) | Empty walls, and where the walk stopped |
 
 ## How the values were read
 

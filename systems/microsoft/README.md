@@ -18,6 +18,7 @@ The homepage paints actions in Fluent blue, `#0078d4`, on Segoe UI Variable Text
 | [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 by 900 at 1x. `mobile-home` at 390 wide, 2x. |
 | [raw/](raw) | Computed styles, resolved `--ds-*` values, and viewport metadata |
 | [tools/](tools) | [build_tokens.py](tools/build_tokens.py) and [capture_public.mjs](tools/capture_public.mjs) |
+| [icons/](icons/) | Icon redraws |
 
 ## Brief
 

@@ -20,6 +20,7 @@ This folder is not in `catalog.json`. `DESIGN.md` is not generated, because that
 | [screenshots/](screenshots/) | Public page captures, 19 PNGs |
 | [raw/](raw/) | Stylesheet variables and computed styles |
 | [tools/](tools/) | Rebuild scripts |
+| [DESIGN.md](DESIGN.md) | Generated export of the tokens |
 
 ## Brief
 
