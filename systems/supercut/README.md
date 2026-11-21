@@ -2,6 +2,8 @@
 
 Supercut is a screen recorder for business communication (supercut.ai). This package captures the public signed-out marketing site on 2026-11-19. The site loads with `html.dark`. No account was created. Google, email, and SSO on signup and login were not followed. No card, phone, or company SSO was entered.
 
+A 2026-11-22 pass mapped the public site from the homepage into [site-tree.md](site-tree.md) and photographed the marketing pages plus the empty login and signup walls. Nothing was typed. Google, Email, and SSO were not clicked. `login-extracted` stays not-started. catalog.json was left alone.
+
 Computed styles were read in a T3 preview tab at 1169 by 731 CSS pixels, devicePixelRatio 2. `preview_snapshot` returned "The browser is not producing screenshot frames." Screenshots were then taken with headless Playwright on the same public pages, which loaded without a Cloudflare challenge, at 1169 by 900 and 390 by 844, devicePixelRatio 2. Login and signup were not opened in that headless session.
 
 | File | What it holds |
@@ -13,7 +15,9 @@ Computed styles were read in a T3 preview tab at 1169 by 731 CSS pixels, deviceP
 | [style-guide.html](style-guide.html) | Dark specimens of the measured roles |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Marketing shell, hero, pricing, auth choice |
-| [screenshots/](screenshots/) | 10 public page shots |
+| [site-tree.md](site-tree.md) | Which header and footer controls open which public page or wall, mapped 2026-11-22 |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login-extracted` is not-started |
+| [screenshots/](screenshots/) | 10 measured page shots, plus `public/` marketing pages and the empty walls from 2026-11-22 |
 | [raw/](raw/) | Computed-style readings |
 | [tools/](tools/) | Kit copy and a token test |
 

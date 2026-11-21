@@ -1,0 +1,40 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "Login and signup are empty choice walls. Google, Email, and SSO were not clicked. No password, code, phone number, or email was typed. No form was submitted. The signup terms box was left unchecked. Headless Chromium stopped on a Cloudflare check for these two URLs, so the shots are from the incognito preview tab that had already passed it. catalog.json was left alone.",
+  "walls": [
+    {
+      "url": "https://supercut.ai/login",
+      "opened_from": "header Log in",
+      "title": "Supercut – Login",
+      "heading": "Welcome back. Log in to Supercut.",
+      "desktop": "screenshots/public/login-wall-desktop.png",
+      "phone": "screenshots/public/login-wall-phone.png",
+      "controls_not_used": [
+        "Continue with Google",
+        "Continue with Email",
+        "Continue with SSO"
+      ],
+      "stopped": true
+    },
+    {
+      "url": "https://supercut.ai/signup",
+      "opened_from": "header Sign up, Get started free, and pricing Start your free trial",
+      "title": "Supercut – Signup",
+      "heading": "Let's get started. Sign up for Supercut.",
+      "desktop": "screenshots/public/signup-wall-desktop.png",
+      "phone": "screenshots/public/signup-wall-phone.png",
+      "controls_not_used": [
+        "Sign up with Google",
+        "Sign up with Email",
+        "Sign up with SSO",
+        "terms checkbox"
+      ],
+      "stopped": true
+    }
+  ]
+}

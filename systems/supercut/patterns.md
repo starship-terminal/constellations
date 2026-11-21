@@ -18,6 +18,8 @@ Two plans, Pro at $15 per seat/mo billed yearly, Enterprise custom. A yearly swi
 
 Signup and login are three stacked actions: Google, Email, SSO. Google and SSO were not followed. Email was not opened, because the rule for this capture allows an email-only form and this step is not that form. No card, phone, or company SSO was entered.
 
+The 2026-11-22 pass photographed both walls empty and stopped there. The map is [site-tree.md](site-tree.md). The shots are [screenshots/public/login-wall-desktop.png](screenshots/public/login-wall-desktop.png) and [screenshots/public/signup-wall-desktop.png](screenshots/public/signup-wall-desktop.png).
+
 ## Other public pages
 
 Customers, security, blog, capture, brand, and terms were screenshotted in the headless pass. Their component values were not re-measured one by one. They share the same header and page colour.
