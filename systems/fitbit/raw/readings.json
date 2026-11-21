@@ -1,0 +1,82 @@
+{
+  "captured": "2026-11-22",
+  "startUrl": "https://www.fitbit.com",
+  "landed": "https://store.google.com/sg/category/watches_trackers",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewportScale": 1
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "promo": {
+    "backgroundColor": "rgb(5, 5, 5)",
+    "color": "rgb(255, 255, 255)",
+    "height": "53px",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "signIn": {
+    "backgroundColor": "rgb(11, 87, 208)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "100px",
+    "height": "40px",
+    "width": "85px",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "padding": "10px 12px"
+  },
+  "buy": {
+    "afterBackgroundColor": "rgb(11, 87, 208)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "100px",
+    "height": "48px",
+    "fontSize": "16px",
+    "fontWeight": "500"
+  },
+  "productBuy": {
+    "backgroundColor": "rgb(11, 87, 208)",
+    "borderRadius": "100px",
+    "height": "56px",
+    "width": "77px"
+  },
+  "new": {
+    "backgroundColor": "rgb(211, 227, 253)",
+    "color": "rgb(8, 66, 160)",
+    "borderRadius": "100px",
+    "fontSize": "12px",
+    "fontWeight": "500"
+  },
+  "save": {
+    "backgroundColor": "rgb(190, 239, 187)",
+    "color": "rgb(0, 82, 44)",
+    "borderRadius": "8px"
+  },
+  "stage": {
+    "backgroundColor": "rgb(230, 235, 229)",
+    "borderRadius": "28px"
+  },
+  "page": {
+    "backgroundColor": "rgb(249, 249, 249)"
+  },
+  "productPage": {
+    "backgroundColor": "rgb(255, 255, 255)"
+  },
+  "ink": {
+    "color": "rgb(25, 28, 29)"
+  },
+  "hero": {
+    "fontSize": "76px",
+    "fontWeight": "500",
+    "letterSpacing": "-1px",
+    "lineHeight": "84px"
+  },
+  "productHero": {
+    "fontSize": "48px",
+    "fontWeight": "500",
+    "lineHeight": "56px"
+  }
+}

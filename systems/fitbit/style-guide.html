@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fitbit public tokens</title>
+<style>
+  :root {
+    --page: #f9f9f9;
+    --surface: #ffffff;
+    --ink: #191c1d;
+    --promo: #050505;
+    --on-promo: #ffffff;
+    --primary: #0b57d0;
+    --primary-ink: #0842a0;
+    --primary-soft: #d3e3fd;
+    --save: #beefbb;
+    --save-ink: #00522c;
+    --stage: #e6ebe5;
+    --chip: #eff1f2;
+    --font: "Google Sans Flex", "Google Sans", "Noto Sans", Arial, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); }
+  header { background: var(--surface); color: var(--ink); }
+  .promo { height: 53px; display: flex; align-items: center; justify-content: center; background: var(--promo); color: var(--on-promo); font-size: 16px; }
+  .promo a { color: var(--primary); }
+  .bar { height: 72px; display: flex; align-items: center; gap: 28px; padding: 0 44px; }
+  .nav { font-size: 14px; font-weight: 500; }
+  .sign-in { margin-left: auto; height: 40px; padding: 0 12px; border-radius: 100px; display: inline-flex; align-items: center; background: var(--primary); color: var(--on-promo); font-size: 14px; font-weight: 500; }
+  main { padding: 48px 44px; }
+  h1 { font-size: 76px; font-weight: 500; line-height: 84px; letter-spacing: -1px; margin: 16px 0; max-width: 920px; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .buy { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 20px; border-radius: 100px; background: var(--primary); color: var(--on-promo); font-size: 16px; font-weight: 500; }
+  .holiday { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 100px; background: var(--surface); color: var(--ink); font-size: 16px; font-weight: 500; border: 1px solid #e0e0e0; }
+  .new { display: inline-flex; align-items: center; height: 26px; padding: 0 8px; border-radius: 100px; background: var(--primary-soft); color: var(--primary-ink); font-size: 12px; font-weight: 500; }
+  .save { display: inline-flex; align-items: center; height: 26px; padding: 0 8px; border-radius: 8px; background: var(--save); color: var(--save-ink); font-size: 14px; }
+  .stage { background: var(--stage); border-radius: 28px; padding: 48px; margin-top: 24px; }
+  .stage h2 { font-size: 48px; font-weight: 500; line-height: 56px; margin: 8px 0 16px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+  .swatch { width: 120px; font-size: 14px; }
+  .chip { height: 48px; border-radius: 8px; border: 1px solid #ddd; }
+  .compare { text-decoration: line-through; font-size: 14px; }
+  p { max-width: 640px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="promo">Get an additional 15% off voucher at the <a>Pixel space pop-up</a></div>
+  <div class="bar">
+    <strong>G</strong>
+    <span class="nav">Watches &amp; Trackers</span>
+    <span class="nav">Earbuds</span>
+    <span class="sign-in">Sign in</span>
+  </div>
+</header>
+<main>
+  <span class="new">New</span>
+  <h1>Google Pixel and Fitbit. Healthier for everyone.</h1>
+  <div class="row">
+    <span class="buy">Buy</span>
+    <span class="holiday">Shop holiday deals</span>
+    <span class="save">Save SGD 60</span>
+    <span class="compare">SGD 569</span>
+  </div>
+  <div class="stage">
+    <div>Google Fitbit Edge</div>
+    <h2>Coaching, right when you need it.</h2>
+    <p>Product stage is #e6ebe5, radius 28px. Headline is 48px.</p>
+    <span class="buy">Buy</span>
+  </div>
+  <p>Tokens measured on 2026-11-22 from the public Singapore shop. Font files are not in this package, so Google Sans Flex falls back to Arial here.</p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#f9f9f9"></div><div>page #f9f9f9</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div>surface #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#191c1d"></div><div>ink #191c1d</div></div>
+    <div class="swatch"><div class="chip" style="background:#050505"></div><div>promo #050505</div></div>
+    <div class="swatch"><div class="chip" style="background:#0b57d0"></div><div>primary #0b57d0</div></div>
+    <div class="swatch"><div class="chip" style="background:#d3e3fd"></div><div>soft #d3e3fd</div></div>
+    <div class="swatch"><div class="chip" style="background:#beefbb"></div><div>save #beefbb</div></div>
+    <div class="swatch"><div class="chip" style="background:#e6ebe5"></div><div>stage #e6ebe5</div></div>
+    <div class="swatch"><div class="chip" style="background:#eff1f2"></div><div>chip #eff1f2</div></div>
+  </div>
+</main>
+</body>
+</html>
