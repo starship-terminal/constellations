@@ -148,14 +148,10 @@ await measure('hero-cta', 'hover', page.getByRole('link', { name: /shop bestsell
 const promo = page.locator('.cf-promobar, [class*="promobar"]').first();
 await measure('promo-bar', 'default', promo, { title: 'Announcement bar', group: 'badge', scroll: false });
 
-// type a query, do not submit
+// Focus only. Do not type a query and do not submit.
 const search = page.locator('input.marqo-header-search__input').first();
 await search.click();
-await search.fill('rug');
-await page.waitForTimeout(900);
-await measure('search', 'filled', search, { title: 'Search field', group: 'text field' });
-await search.fill('');
-await page.keyboard.press('Escape');
+await page.waitForTimeout(400);
 
 // account drawer (local toggle, not a sign-in)
 await page.locator('button.js-account-toggle').first().click();
@@ -221,12 +217,7 @@ const pass = page.locator('input[type="password"]').first();
 const submit = page.locator('button').filter({ hasText: /continue with shop/i }).first();
 await measure('login-email', 'default', email, { title: 'Login email', group: 'text field' });
 await measure('login-email', 'focus', email, { title: 'Login email', group: 'text field' });
-if (await email.count()) {
-  await email.fill('reader@example.com');
-  await page.waitForTimeout(200);
-  await measure('login-email', 'filled', email, { title: 'Login email', group: 'text field' });
-  await email.fill('');
-}
+// Photograph the email empty. Do not type, submit, or click Continue with shop.
 await measure('login-password', 'default', pass, { title: 'Login password', group: 'text field' });
 await measure('login-submit', 'default', submit, { title: 'Sign in button', group: 'button' });
 await measure('login-submit', 'hover', submit, { title: 'Sign in button', group: 'button' });

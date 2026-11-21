@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:21:24.355Z",
+  "capturedAt": "2026-11-21T14:35:58.054Z",
   "screenshot": "product-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 217
     },
     "documentSize": {
       "width": 1440,
-      "height": 4330
+      "height": 4318
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 217
     }
   },
   "capture": {
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 4330
+    "height": 4318
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 4330
+      "height": 4318
     },
     "basis": "fullPage"
   },

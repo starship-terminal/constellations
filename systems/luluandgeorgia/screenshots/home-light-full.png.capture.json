@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:20:39.496Z",
+  "capturedAt": "2026-11-21T14:38:17.819Z",
   "screenshot": "home-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,33 +30,39 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 25
     },
     "documentSize": {
       "width": 1440,
-      "height": 4163
+      "height": 4166
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 25
     }
   },
   "capture": {
-    "mode": "fullPage",
+    "mode": "clip",
     "scale": "device",
-    "clip": null
+    "clip": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 4166
+    }
   },
   "png": {
     "width": 1440,
-    "height": 4163
+    "height": 900
   },
   "dimensionCheck": {
-    "status": "pass",
+    "status": "fail",
     "expected": {
       "width": 1440,
-      "height": 4163
+      "height": 4166
     },
-    "basis": "fullPage"
+    "basis": "clip",
+    "error": "Screenshot dimension mismatch: PNG 1440x900, expected 1440x4166"
   },
   "visualReview": {
     "status": "pending",

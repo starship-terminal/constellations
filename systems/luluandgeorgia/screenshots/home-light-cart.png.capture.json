@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:20:37.645Z",
+  "capturedAt": "2026-11-21T14:39:45.114Z",
   "screenshot": "home-light-cart.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4163
+      "height": 4166
     },
     "scroll": {
       "x": 0,

@@ -73,10 +73,10 @@ const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILE
 
 // Local UI only. Never Add to cart, Sign In, checkout, or a form submit.
 async function openSearch(p) {
+  // Focus only. Do not type a query and do not submit.
   const input = p.locator('input.marqo-header-search__input, input[name="q"][type="search"]').first();
   await input.click({ timeout: 5000 });
-  await input.fill('dining table');
-  await wait(p, 1200);
+  await wait(p, 600);
 }
 
 async function openAccountDrawer(p) {
@@ -92,19 +92,52 @@ async function openCartDrawer(p) {
 }
 
 async function openNav(p) {
-  const link = p.locator('a, button').filter({ hasText: /^FURNITURE$/ }).first();
-  await link.hover({ timeout: 4000 }).catch(() => {});
-  await wait(p, 700);
+  // The class string is longer than a strict locator match, and hidden mobile
+  // copies share the word. Hover the visible desktop link by its box.
+  const box = await p.evaluate(() => {
+    const a = [...document.querySelectorAll('a')].find((el) => (el.innerText || '').trim() === 'FURNITURE' && el.getBoundingClientRect().width > 20);
+    if (!a) return null;
+    const r = a.getBoundingClientRect();
+    return { x: r.x, y: r.y, w: r.width, h: r.height };
+  });
+  if (!box) throw new Error('FURNITURE link has no box');
+  await p.mouse.move(box.x + box.w / 2, box.y + box.h / 2);
+  await wait(p, 800);
+  const open = await p.evaluate(() => [...document.querySelectorAll('.nav-dropdown')].some((d) => {
+    const s = getComputedStyle(d);
+    return s.visibility === 'visible' && d.getBoundingClientRect().height > 40 && /All Furniture/.test(d.innerText || '');
+  }));
+  if (!open) throw new Error('furniture mega-menu did not open');
 }
 
 const desktop = {
   home: { path: '/', run: async (p, S) => {
     await S.view('default');
     await step('nav', async () => { await openNav(p); await S.view('nav'); await p.mouse.move(10, 800); await wait(p, 300); });
+    await step('footer', async () => {
+      // Headless Chromium collapses .site-footer (inner column display:none,
+      // footer height 0). Set display on the elements themselves. A stylesheet
+      // injection did not stick. This does not click or submit.
+      await p.evaluate(() => {
+        const el = document.querySelector('.site-footer');
+        if (!el) return;
+        el.style.setProperty('display', 'block', 'important');
+        el.style.setProperty('height', 'auto', 'important');
+        const inner = el.querySelector('.max-w-screen-xl');
+        if (inner) inner.style.setProperty('display', 'block', 'important');
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        const h = el.getBoundingClientRect().height;
+        window.scrollTo(0, Math.max(0, top + h - window.innerHeight + 8));
+      });
+      await wait(p, 400);
+      await hideOverlays(p);
+      await S.view('footer');
+      await p.evaluate(() => scrollTo(0, 0));
+      await wait(p, 200);
+    });
     await step('search', async () => { await openSearch(p); await S.view('search'); await p.keyboard.press('Escape'); });
     await step('account', async () => { await openAccountDrawer(p); await S.view('account'); await p.keyboard.press('Escape'); });
     await step('cart', async () => { await openCartDrawer(p); await S.view('cart'); await p.keyboard.press('Escape'); });
-    await S.full();
   } },
   collection: { path: '/collections/furniture', run: async (p, S) => {
     await S.view('default');
@@ -126,19 +159,16 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
+  'search-empty': { path: '/search?q=zzznomatchlg999&type=product', run: async (p, S) => {
+    await S.view('default');
+  } },
   about: { path: '/pages/about-us', run: async (p, S) => { await S.view('default'); await S.full(); } },
   login: { path: '/account/login', run: async (p, S) => {
+    // Photograph the wall empty. Do not type, submit, or click an identity provider.
     await S.view('default');
-    await step('email-focus', async () => {
-      const email = p.locator('input[type="email"], input[name="customer[email]"]').first();
-      if (await email.count()) {
-        await email.click();
-        await email.fill('reader@example.com');
-        await wait(p, 300);
-        await S.view('filled');
-        await email.fill('');
-      }
-    });
+  } },
+  signup: { path: '/account/register', run: async (p, S) => {
+    await S.view('default');
   } },
 };
 
@@ -151,8 +181,7 @@ const mobile = {
     });
     await S.full();
   } },
-  collection: { path: '/collections/furniture', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  product: { path: '/products/sachs-dining-table', run: async (p, S) => { await S.view('default'); } },
+  collection: { path: '/collections/furniture', run: async (p, S) => { await S.view('default'); } },
 };
 
 const browser = await chromium.launch({ headless: true });

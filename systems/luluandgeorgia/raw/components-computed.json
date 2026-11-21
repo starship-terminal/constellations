@@ -2,7 +2,7 @@
  "_meta": {
   "product": "Lulu and Georgia",
   "site": "https://www.luluandgeorgia.com",
-  "captured": "2026-11-18",
+  "captured": "2026-11-21",
   "route": "public signed-out"
  },
  "components": {
@@ -13,7 +13,7 @@
      "text": "FURNITURE",
      "rect": {
       "x": 243,
-      "y": 182,
+      "y": 170,
       "w": 71,
       "h": 56
      },
@@ -42,7 +42,7 @@
      "text": "FURNITURE",
      "rect": {
       "x": 243,
-      "y": 182,
+      "y": 170,
       "w": 71,
       "h": 56
      },
@@ -86,7 +86,7 @@
      "text": "Search",
      "rect": {
       "x": 270,
-      "y": 60,
+      "y": 48,
       "w": 925,
       "h": 44
      },
@@ -115,7 +115,7 @@
      "text": "Search",
      "rect": {
       "x": 270,
-      "y": 60,
+      "y": 48,
       "w": 925,
       "h": 44
      },
@@ -137,36 +137,8 @@
      "outlineOffset": "2px",
      "opacity": "1",
      "textDecoration": "none",
-     "crop": "components/crops/search-focus.png"
-    },
-    "filled": {
-     "tag": "input",
-     "text": "Search",
-     "rect": {
-      "x": 270,
-      "y": 60,
-      "w": 883,
-      "h": 44
-     },
-     "fontFamily": "\"Soehne Leicht\", sans-serif",
-     "fontSize": "16px",
-     "fontWeight": "400",
-     "lineHeight": "24px",
-     "letterSpacing": "normal",
-     "textTransform": "none",
-     "color": "rgb(116, 116, 116)",
-     "backgroundColor": "rgb(235, 235, 235)",
-     "borderTopWidth": "0px",
-     "borderTopStyle": "none",
-     "borderTopColor": "rgb(116, 116, 116)",
-     "borderRadius": "0px",
-     "padding": "8px 12px",
-     "boxShadow": "none",
-     "outline": "rgb(116, 116, 116) none 0px",
-     "outlineOffset": "2px",
-     "opacity": "1",
-     "textDecoration": "none",
-     "crop": "components/crops/search-filled.png"
+     "crop": "components/crops/search-focus.png",
+     "via": "keyboard focus (Shift+Tab, Tab)"
     }
    },
    "title": "Search field",
@@ -179,7 +151,7 @@
      "text": "Sign In",
      "rect": {
       "x": 1261,
-      "y": 71,
+      "y": 59,
       "w": 22,
       "h": 22
      },
@@ -214,7 +186,7 @@
      "text": "cart",
      "rect": {
       "x": 1377,
-      "y": 72,
+      "y": 60,
       "w": 23,
       "h": 21
      },
@@ -258,30 +230,30 @@
    "states": {
     "default": {
      "tag": "a",
-     "text": "COMPLIMENTARY DESIGN SERVICES | LEARN MORE",
+     "text": "EARLY ACCESS: BLACK FRIDAY SALE | UP TO 30% OFF SITEWIDE",
      "rect": {
-      "x": 30,
+      "x": 0,
       "y": 0,
-      "w": 1380,
-      "h": 40
+      "w": 1440,
+      "h": 28
      },
-     "fontFamily": "\"Soehne Leicht\", sans-serif",
-     "fontSize": "16px",
+     "fontFamily": "\"Soehne Kraftig\", \"Soehne Buch\", sans-serif",
+     "fontSize": "11px",
      "fontWeight": "400",
-     "lineHeight": "24px",
-     "letterSpacing": "normal",
-     "textTransform": "none",
+     "lineHeight": "16px",
+     "letterSpacing": "1.2px",
+     "textTransform": "uppercase",
      "color": "rgb(255, 255, 255)",
-     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "backgroundColor": "rgb(177, 21, 21)",
      "borderTopWidth": "0px",
      "borderTopStyle": "solid",
      "borderTopColor": "rgb(229, 229, 229)",
      "borderRadius": "0px",
-     "padding": "0px",
+     "padding": "8px 0px",
      "boxShadow": "none",
      "outline": "rgb(255, 255, 255) none 0px",
      "outlineOffset": "0px",
-     "opacity": "0",
+     "opacity": "1",
      "textDecoration": "none",
      "crop": "components/crops/promo-bar-default.png"
     }
@@ -340,7 +312,7 @@
      "text": "EXCLUSIVE",
      "rect": {
       "x": 32,
-      "y": 254,
+      "y": 239,
       "w": 323,
       "h": 421
      },
@@ -410,7 +382,7 @@
      "text": "ALL FILTERS",
      "rect": {
       "x": 32,
-      "y": 426,
+      "y": 429,
       "w": 154,
       "h": 42
      },
@@ -552,9 +524,10 @@
      "boxShadow": "none",
      "outline": "rgb(255, 255, 255) none 0px",
      "outlineOffset": "0px",
-     "opacity": "0.8",
+     "opacity": "1",
      "textDecoration": "none",
-     "crop": "components/crops/atc-focus.png"
+     "crop": "components/crops/atc-focus.png",
+     "via": "keyboard focus (Shift+Tab, Tab)"
     }
    },
    "title": "Add to cart",
@@ -567,7 +540,7 @@
      "text": "Sachs Dining Table",
      "rect": {
       "x": 968,
-      "y": 280,
+      "y": 268,
       "w": 168,
       "h": 28
      },
@@ -706,36 +679,8 @@
      "outlineOffset": "0px",
      "opacity": "1",
      "textDecoration": "none",
-     "crop": "components/crops/login-email-focus.png"
-    },
-    "filled": {
-     "tag": "input",
-     "text": "Email",
-     "rect": {
-      "x": 532,
-      "y": 490,
-      "w": 337,
-      "h": 48
-     },
-     "fontFamily": "\"Libre Franklin\", sans-serif",
-     "fontSize": "14px",
-     "fontWeight": "400",
-     "lineHeight": "18.9px",
-     "letterSpacing": "normal",
-     "textTransform": "none",
-     "color": "rgb(0, 0, 0)",
-     "backgroundColor": "rgba(0, 0, 0, 0)",
-     "borderTopWidth": "0px",
-     "borderTopStyle": "none",
-     "borderTopColor": "rgb(0, 0, 0)",
-     "borderRadius": "12px 0px 0px 12px",
-     "padding": "22.05px 10px 6.05px",
-     "boxShadow": "none",
-     "outline": "rgba(0, 0, 0, 0) solid 0px",
-     "outlineOffset": "0px",
-     "opacity": "1",
-     "textDecoration": "none",
-     "crop": "components/crops/login-email-filled.png"
+     "crop": "components/crops/login-email-focus.png",
+     "via": "keyboard focus (Shift+Tab, Tab)"
     }
    },
    "title": "Login email",
@@ -753,10 +698,62 @@
   "login-submit": {
    "states": {
     "default": {
-     "error": "missing"
+     "tag": "button",
+     "text": "Continue with",
+     "rect": {
+      "x": 531,
+      "y": 392,
+      "w": 379,
+      "h": 50
+     },
+     "fontFamily": "GTStandard-M, sans-serif",
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "21px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(0, 0, 0)",
+     "backgroundColor": "rgb(84, 51, 235)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "none",
+     "borderTopColor": "rgb(0, 0, 0)",
+     "borderRadius": "12px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(0, 0, 0) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/login-submit-default.png"
     },
     "hover": {
-     "error": "missing"
+     "tag": "button",
+     "text": "Continue with",
+     "rect": {
+      "x": 531,
+      "y": 392,
+      "w": 379,
+      "h": 50
+     },
+     "fontFamily": "GTStandard-M, sans-serif",
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "21px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(0, 0, 0)",
+     "backgroundColor": "rgb(69, 36, 219)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "none",
+     "borderTopColor": "rgb(0, 0, 0)",
+     "borderRadius": "12px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(0, 0, 0) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/login-submit-hover.png"
     }
    },
    "title": "Sign in button",
@@ -781,7 +778,7 @@
    "borderRadius": "0px",
    "borderTop": "0px solid rgb(229, 229, 229)",
    "padding": "0px",
-   "height": 12098,
+   "height": 12297,
    "boxShadow": "none"
   },
   "htmlBg": "rgba(0, 0, 0, 0)",
@@ -816,18 +813,18 @@
    "boxShadow": "none"
   },
   "promo": {
-   "text": "COMPLIMENTARY DESIGN SERVICES | LEARN MORE",
-   "fontFamily": "\"Soehne Leicht\", sans-serif",
-   "fontSize": "16px",
+   "text": "EARLY ACCESS: BLACK FRIDAY SALE | UP TO 30% OFF SITEWIDE",
+   "fontFamily": "\"Soehne Kraftig\", \"Soehne Buch\", sans-serif",
+   "fontSize": "11px",
    "fontWeight": "400",
-   "lineHeight": "24px",
-   "letterSpacing": "normal",
+   "lineHeight": "16px",
+   "letterSpacing": "1.2px",
    "color": "rgb(255, 255, 255)",
-   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundColor": "rgb(177, 21, 21)",
    "borderRadius": "0px",
    "borderTop": "0px solid rgb(229, 229, 229)",
-   "padding": "0px",
-   "height": 40,
+   "padding": "8px 0px",
+   "height": 28,
    "boxShadow": "none"
   },
   "promoLink": null,
@@ -879,7 +876,7 @@
    "boxShadow": "none"
   },
   "price": {
-   "text": "From $4,648",
+   "text": "$398 $298.50",
    "fontFamily": "\"Soehne Buch\", sans-serif",
    "fontSize": "16px",
    "fontWeight": "400",
@@ -890,7 +887,7 @@
    "borderRadius": "0px",
    "borderTop": "0px solid rgb(229, 229, 229)",
    "padding": "0px",
-   "height": 32,
+   "height": 16,
    "boxShadow": "none"
   },
   "header": {
@@ -915,8 +912,8 @@
    "Soehne Kraftig normal",
    "Soehne Leicht normal",
    "Soehne Leicht 300",
-   "Söhne 400",
    "Iskry 400",
+   "Söhne 400",
    "custom_stylux_font_0 normal"
   ],
   "collection": {
@@ -927,7 +924,7 @@
   },
   "product": {
    "title": "Sachs Dining Table",
-   "priceText": "$2,798",
+   "priceText": "$2,798\n$1,958.60",
    "price": {
     "color": "rgb(26, 23, 19)",
     "fontSize": "16px",
@@ -944,7 +941,7 @@
    "title": "Sign in - Lulu and Georgia",
    "url": "/authentication/29928226915/login",
    "hasForm": true,
-   "text": "Sign In\n\nSign in or create an account\n\nor\nEmail me with news and offers\nUse email instead\nEmail\nSubmit\nPrivacy policy\nexternalNewWindow\nnewWindow\nexternal"
+   "text": "Sign In\n\nSign in or create an account\n\nor\nEmail\nEmail me with news and offers\nSubmit\n\nBy continuing, you agree to our \nTerms of service\n\nPrivacy policy\nexternalNewWindow\nnewWindow\nexternal"
   },
   "motion": [
    {
@@ -953,41 +950,6 @@
     "property": "all",
     "duration": "0.5s",
     "timing": "ease-in-out"
-   },
-   {
-    "tag": "BUTTON",
-    "text": "",
-    "property": "opacity",
-    "duration": "0.15s",
-    "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
-   },
-   {
-    "tag": "A",
-    "text": "COMPLIMENTARY DESIGN SERVICES ",
-    "property": "opacity",
-    "duration": "0.5s",
-    "timing": "ease-in-out"
-   },
-   {
-    "tag": "A",
-    "text": "THE MORE THE MERRIER |\nSHOP AL",
-    "property": "opacity",
-    "duration": "0.5s",
-    "timing": "ease-in-out"
-   },
-   {
-    "tag": "A",
-    "text": "100+ NEW STYLES ADDED |\nSHOP S",
-    "property": "opacity",
-    "duration": "0.5s",
-    "timing": "ease-in-out"
-   },
-   {
-    "tag": "BUTTON",
-    "text": "",
-    "property": "opacity",
-    "duration": "0.15s",
-    "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
    },
    {
     "tag": "A",

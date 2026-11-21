@@ -16,11 +16,11 @@ A lifestyle image, a studio image, then the title, price, quantity, a black Add 
 
 ## Search
 
-Typing in the header opens a suggestion panel. The query was typed and cleared. The results URL `/search?q=rug` was opened as a public page, which is a navigation, not a form post from this capture. See [home-light-search](screenshots/home-light-search.png) and [search-light-default](screenshots/search-light-default.png).
+The header field was focused and left empty. The results URL `/search?q=rug` was opened as a public page, which is a navigation, not a form post from this capture. A nonsense query still returned suggested products, so there is no empty results page on this visit. See [home-light-search](screenshots/home-light-search.png), [search-light-default](screenshots/search-light-default.png), and [search-empty-light-default](screenshots/search-empty-light-default.png).
 
 ## Account
 
-The account icon opens a drawer with Sign in / Create account, Trade login, My registry, and My wishlist. None of those links were followed from the drawer. `/account/login` redirects to a Shop sign-in page on shopify.com. Continue with shop was not clicked. The email field was filled with `reader@example.com` and cleared. See [home-light-account](screenshots/home-light-account.png) and [login-light-default](screenshots/login-light-default.png).
+The account icon opens a drawer with Sign in / Create account, Trade login, My registry, and My wishlist. None of those links were followed from the drawer. `/account/login` and `/account/register` both redirect to the same Shop sign-in page on shopify.com. Continue with shop was not clicked. The email field was left empty. See [home-light-account](screenshots/home-light-account.png), [login-light-default](screenshots/login-light-default.png), and [signup-light-default](screenshots/signup-light-default.png).
 
 ## Empty cart
 

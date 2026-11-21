@@ -78,7 +78,11 @@ class Builders(unittest.TestCase):
 
     def test_colours_with_no_reading_say_so(self):
         light = json.loads((PKG / "tokens.json").read_text())["light"]["color"]
-        for tok in (light["promo"], light["cream"], light["info"], light["border"]["strong"]):
+        # promo is the measured announcement-bar fill. cream, info, and the
+        # strong border still have no committed reading.
+        self.assertTrue(light["promo"]["$extensions"]["source"].startswith("Measured"), light["promo"])
+        self.assertEqual(light["promo"]["$value"], "#b11515")
+        for tok in (light["cream"], light["info"], light["border"]["strong"]):
             self.assertTrue(tok["$extensions"]["source"].startswith("Reconstruction"), tok)
 
     def test_a_missing_reading_fails_instead_of_a_literal(self):
@@ -94,7 +98,7 @@ class Builders(unittest.TestCase):
         proc = subprocess.run(["node", "-e", RENDER, str(PKG / "style-guide.html")], capture_output=True, text=True)
         self.assertEqual(proc.returncode, 0, proc.stderr)
         colours = sum(1 for v in json.loads((PKG / "tokens.json").read_text())["light"]["color"].values() for _ in ([v] if "$value" in v else v.values()))
-        self.assertEqual(int(proc.stdout), colours)
+        self.assertEqual(int(proc.stdout.strip().splitlines()[-1]), colours)
 
     def test_button_preview_uses_the_token(self):
         html = (PKG / "style-guide.html").read_text()

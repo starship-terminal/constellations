@@ -92,20 +92,22 @@ MUTED = reading("search", "color")
 SALE = reading("f:sale", "color")
 HAIRLINE = reading("f:body", "borderTop").split(" ", 2)[2]
 ON_ACCENT = reading("atc", "color")
-PROMO = "rgb(43, 48, 15)"       # colour probe, not committed
+# The announcement bar itself now paints this fill. The 2026-11-18 olive
+# #2b300f was a colour probe of a parent that is no longer on the page.
+PROMO = reading("promo-bar", "backgroundColor")
 CREAM = "rgb(243, 238, 232)"    # colour probe, not committed
 if reading("atc", "backgroundColor") != INK or reading("atc", "backgroundColor", "hover") != INK:
     raise SystemExit("add to cart no longer paints the body ink; revisit action and action-hover")
 
 SRC = {
-    "ink": f"Measured. Computed color on body ({FILE} foundations.body) and backgroundColor of the add-to-cart button (atc), 2026-11-18.",
-    "page": f"Measured. Computed backgroundColor on header ({FILE} foundations.header), 2026-11-18.",
-    "search": f"Measured. Computed backgroundColor on the header search field ({FILE} search), 2026-11-18.",
-    "muted": f"Measured. Computed color on the header search field placeholder ({FILE} search), 2026-11-18.",
-    "sale": f"Measured. Computed color on the SALE nav link ({FILE} foundations.sale), 2026-11-18.",
-    "promo": by_hand("a colour probe of the announcement bar's parent (the bar itself computes a transparent fill)"),
-    "hairline": f"Measured. Computed borderTopColor on body ({FILE} foundations.body), 2026-11-18.",
-    "on": f"Measured. Computed color on the add-to-cart button ({FILE} atc), 2026-11-18.",
+    "ink": f"Measured. Computed color on body ({FILE} foundations.body) and backgroundColor of the add-to-cart button (atc), 2026-11-21.",
+    "page": f"Measured. Computed backgroundColor on header ({FILE} foundations.header), 2026-11-21.",
+    "search": f"Measured. Computed backgroundColor on the header search field ({FILE} search), 2026-11-21.",
+    "muted": f"Measured. Computed color on the header search field placeholder ({FILE} search), 2026-11-21.",
+    "sale": f"Measured. Computed color on the SALE nav link ({FILE} foundations.sale), 2026-11-21.",
+    "promo": f"Measured. Computed backgroundColor on the announcement bar ({FILE} promo-bar), 2026-11-21. The bar is the red early-access sale strip, the same red as the SALE link.",
+    "hairline": f"Measured. Computed borderTopColor on body ({FILE} foundations.body), 2026-11-21.",
+    "on": f"Measured. Computed color on the add-to-cart button ({FILE} atc), 2026-11-21.",
     "cream": by_hand("a colour probe of the footer newsletter button .cf-ft-news-btn"),
 }
 
