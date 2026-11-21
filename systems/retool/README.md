@@ -13,10 +13,11 @@ Retool (retool.com) is a builder for internal software. This package covers the 
 | [style-guide.html](style-guide.html) | Renders the semantic colours and the two buttons. Saans and PX Grotesk are not loaded. |
 | [components.md](components.md) | Measured controls. No crops. |
 | [patterns.md](patterns.md) | Marketing shell, pricing grid, login, signup, docs. |
-| [components/](components/) | Empty of crops. The screenshot tool produced no frames. |
-| [icons/](icons/) | Not extracted. See the file table gap in the catalog. |
-| [screenshots/](screenshots/) | None. The preview browser did not produce frames. |
-| [raw/](raw/) | `measured.json`. |
+| [components/](components/) | Not created. No element crops were cut on either pass. |
+| [icons/](icons/) | Not created. No icon set was extracted. |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog or stopped branch, mapped from the homepage on 2026-11-20 before the screenshot pass |
+| [screenshots/](screenshots/) | 125 public-page captures from headless Playwright on 2026-11-20, desktop 1440 x 900 and phone 390 x 844, painted dark, quantised to 256 colours. Named `{page}-dark-{state}.png` |
+| [raw/](raw/) | `measured.json` from 2026-11-19, plus `css-vars.json` and `live-readings.json` from the 2026-11-20 stylesheet harvest |
 | [tools/](tools/) | `build_tokens.py`, `build_style_guide.py`, `test_measured.py`, and the copied kit. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
@@ -72,7 +73,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 Not graded yet: no scorecard snapshot reviews this package. Review it against [scorecard/criteria.json](../../scorecard/criteria.json) in the wording for its platform (`python3 tools/grade.py --criteria retool` prints it) and merge the grades with `python3 tools/grade.py --write --review retool=<grades.json>`.
 
-Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (preview_snapshot failed with 'The browser is not producing screenshot frames', so there are no element crops), `icons/` (No icon set was extracted. The wordmark was not saved), `screenshots/` (preview_snapshot failed with 'The browser is not producing screenshot frames', so no page captures were saved).
+Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (preview_snapshot failed with 'The browser is not producing screenshot frames', so there are no element crops), `icons/` (No icon set was extracted. The wordmark was not saved).
 
 <!-- health:end -->
 
@@ -84,7 +85,7 @@ Homepage `html` loaded with `class` containing `dark` and a payload `themeMode` 
 
 A class swap on the homepage, removing `dark` and adding `light`, changed `--surface-background-base` to `#e9ebdf` and the body background to rgb(233, 235, 223). The painted h1 stayed rgb(233, 235, 223). Those light tokens are labelled as a class probe.
 
-`preview_snapshot` failed with `The browser is not producing screenshot frames`. No screenshot was invented. Headless Playwright was not started.
+A later pass on 2026-11-20, in headless Playwright, captured the public marketing pages at 1440 x 900 and 390 x 844. Those frames are in [screenshots/](screenshots/). The site tree mapped before that pass is [site-tree.md](site-tree.md). The stylesheet harvest from that pass is [raw/css-vars.json](raw/css-vars.json). Login and signup were not opened in that pass. The 2026-11-19 readings in [raw/measured.json](raw/measured.json) still hold those.
 
 ## What to distrust
 
@@ -120,9 +121,10 @@ Marketing display is saansFont, with a saansFont Fallback. Docs call it SaansReg
 | Form validation | Not captured. Login and signup were not submitted |
 | Pricing | Captured as computed styles. No checkout |
 | Docs | Captured dark. Theme toggle not used. Search not opened |
-| Signed-in app | Not captured |
-| 390px width | Not captured. Viewport stayed 1169 |
-| Screenshots | Not captured. Preview frames failed |
+| Signed-in app | Not captured. https://login.retool.com/auth/login shows email, password, Google, or a login link. None was used on 2026-11-20. |
+| Public pages at 1440 and 390 | Captured 2026-11-20. [screenshots/home-dark-default.png](screenshots/home-dark-default.png), [screenshots/mobile-home-dark-menu.png](screenshots/mobile-home-dark-menu.png). Measured viewport 1440 x 900 and 390 x 844, `html` class `dark` |
+| 390px width | Captured 2026-11-20 on the phone pass. Viewport 390 x 844, devicePixelRatio 2. [screenshots/mobile-home-dark-default.png](screenshots/mobile-home-dark-default.png). The 2026-11-19 preview stayed at 1169. |
+| Screenshots | Captured 2026-11-20. 125 frames in [screenshots/](screenshots/). The 2026-11-19 preview produced no frames. |
 
 ## Do and don't
 
