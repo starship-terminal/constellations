@@ -1,0 +1,68 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "public Playwright, signed out. No email, password, zip, order number, or code was typed.",
+  "offered": {
+    "nav": {
+      "items": [],
+      "reached": [],
+      "note": "The signed-in account was not entered, so no account navigation was offered."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings screen was offered. The account was not entered."
+    },
+    "create": {
+      "items": [
+        "Continue with shop",
+        "Sign in with Google",
+        "Sign in with email"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/login-light-default.png",
+    "screenshots/returns-light-default.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-geo.png",
+    "screenshots/home-light-menu.png",
+    "screenshots/home-light-women-menu.png",
+    "screenshots/home-light-cart.png",
+    "screenshots/home-light-quick-add.png",
+    "screenshots/home-light-footer.png",
+    "screenshots/searchpage-light-default.png",
+    "screenshots/collection-light-default.png",
+    "screenshots/collection-light-filter.png",
+    "screenshots/product-light-default.png",
+    "screenshots/story-light-default.png",
+    "screenshots/materials-light-default.png",
+    "screenshots/help-light-default.png",
+    "screenshots/blog-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-home-light-menu-men.png",
+    "screenshots/mobile-product-light-default.png"
+  ],
+  "gaps": [
+    "Signed-in account, orders, saved payments, and settings were not entered.",
+    "https://www.allbirds.com/account/login redirects to accounts.allbirds.com. The wall offers Continue with shop, an empty email field, and a news-and-offers checkbox. Continue was not pressed.",
+    "https://www.allbirds.com/pages/returns-exchanges shows a Returns & Exchanges card with empty email, zip, and order fields, Search, Sign in with Google, and Sign in with email. None was pressed.",
+    "No Apple button was on either wall. The Google button was not clicked.",
+    "Checkout was not opened. Nothing was added to the cart on this pass.",
+    "Validation, error, and post-submit states were not seen because no form was submitted."
+  ],
+  "not_submitted": [
+    "login email",
+    "login password",
+    "continue with shop",
+    "sign in with google",
+    "sign in with email",
+    "returns email or zip",
+    "returns order number",
+    "newsletter email",
+    "checkout"
+  ]
+}

@@ -1,6 +1,6 @@
 # Allbirds design reference
 
-A token set and component reference for Allbirds' web storefront (allbirds.com, a Shopify store), for building in the style of a real sustainable-footwear retail product. It was read from www.allbirds.com on 2026-11-08, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page, the Men's collection grid with its filter sheet, a product page (Men's Tree Runner NZ) through Add to Cart into the session cart drawer, the cart, search and account-login pages, and the Our Story, Materials, Help and Blog content pages. Nothing was bought, checked out, signed into or submitted.
+A token set and component reference for Allbirds' web storefront (allbirds.com, a Shopify store), for building in the style of a real sustainable-footwear retail product. It was read from www.allbirds.com on 2026-11-08, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page, the Men's collection grid with its filter sheet, a product page (Men's Tree Runner NZ) through Add to Cart into the session cart drawer, the cart, search and account-login pages, and the Our Story, Materials, Help and Blog content pages. A public refresh on 2026-11-21 mapped the homepage controls in [site-tree.md](site-tree.md) and re-photographed those states. Nothing was bought, checked out, signed into or submitted.
 
 Allbirds is the first retail commerce capture in the library. Its design is a clean Shopify theme on a warm undyed-wool ground: a black announcement strip, a rounded white nav bar, serif Self Modern headlines over Geograph UI, pill-shaped everything (buttons, fields, chips), and near-black ink rather than pure black.
 
@@ -13,7 +13,9 @@ Allbirds is the first retail commerce capture in the library. Its design is a cl
 | [components.md](components.md) | The discovery list of every page and view, the overlays and transient states, one entry per component (48) written in tokens with crops of the real product, the shared values (focus, pressed, motion, card shapes), and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: storefront chrome, browse to product, filtering, selection states, the cart drawer, mega-menu, search, the mobile menu drawer, forms and content pages, each with its screenshots |
 | [components/crops/](components/crops) | 92 element screenshots, `{component}-{state}.png`, at 2x |
-| [screenshots/](screenshots) | 32 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x and `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages at the same width and scale |
+| [screenshots/](screenshots) | `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x and `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages at the same width and scale. The 2026-11-21 refresh adds the states named in [site-tree.md](site-tree.md) |
+| [site-tree.md](site-tree.md) | Which control on the homepage opens which page, menu, drawer, or wall, written before the 2026-11-21 screenshots |
+| [login-review.json](login-review.json) | The signed-out login wall. `offered.nav`, `offered.settings`, and `offered.create` are empty because the account was not entered |
 | [raw/](raw) | The unprocessed readings: every custom property resolved from the live CSSOM with font faces and the transition index (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the token tree the builder reads (`component-tokens.json`); the tour's full-colour PNGs in `full/` before quantize.py 256-colours them into screenshots/ |
 | [tools/](tools) | The three builders (`build_tokens.py`, `build_style_guide.py`, `build_components_md.py`), the style-guide template, and the capture kit under `capture/` (`public/` holds the tour, the measure runner and their library; `vars.mjs` resolves the CSSOM variables; `quantize.py` re-encodes screenshots to 256 colours). See Rebuild |
 
@@ -114,7 +116,8 @@ Three families, all Allbirds' own woff2 served from theme assets (`fonts` in [ra
 
 - **Desktop (1440 x 900):** home (nav bar, mega-menu flyout, search overlay, hero card, pill CTAs, subscribe field, footer), the Men's collection grid (title, Filter button and sheet, product cards), the PDP (title, price, swatches, size tabs, size grid with a sold-out chip, Fit Guide, Add to Cart, accordions, tooltip pill, the opened cart drawer with qty stepper, upsell card), cart, search and the account-login card.
 - **Mobile (390 x 844, iPhone UA):** the ink header bar, hamburger and menu drawer, the AI chip, and the product page's buy box and cart drawer.
-- **Not captured:** anything behind sign-in (account details, orders, saved payments), the checkout flow past the drawer, reviews/wishlist widgets below the buy box, and the geofencing dialog (removed before capture). See Gaps in [components.md](components.md).
+- **2026-11-21 refresh:** the control map is [site-tree.md](site-tree.md). New shots cover the shipping dialog, both mega-menus, the empty cart drawer, quick add, the footer, the filter sheet, the empty login wall, the returns sign-in card, and the phone menu. Continue with shop, Sign in with Google, and Sign in with email were not pressed. The earlier cart-drawer shots remain from 2026-11-08, when a session item was added and checkout was not started.
+- **Not captured:** anything behind sign-in (account details, orders, saved payments), the checkout flow, reviews/wishlist widgets below the buy box. See Gaps in [components.md](components.md) and [login-review.json](login-review.json).
 
 ## Do and don't
 
