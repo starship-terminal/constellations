@@ -33,3 +33,7 @@ The about page is a full-bleed still with a white headline and a short mission l
 ## Footer
 
 White, 64px padding, black links at 16/24. A subscribe field repeats the newsletter ask. It was not submitted.
+
+## Public site tree
+
+A 2026-11-22 walk listed every public link in the header and footer. The photographs sit in [screenshots/public/](screenshots/public). Login and signup are one empty wall. The walk stopped there. [site-tree.md](site-tree.md).
