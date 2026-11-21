@@ -1,0 +1,58 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public Playwright capture, signed out. Header Sign in opened https://app.frontapp.com/signin. The empty wall was photographed. The branch stopped. No email, password, phone, or code was typed. No identity provider was clicked. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "wall": "https://app.frontapp.com/signin",
+    "status": 200,
+    "themes": ["light", "dark"],
+    "fields": [
+      {"label": "Email address", "type": "email", "value": "empty"},
+      {"label": "Password", "type": "password", "value": "empty"}
+    ],
+    "actions": [
+      "Sign in",
+      "Forgot password?",
+      "Try for Free",
+      "Google",
+      "Office 365",
+      "SAML SSO"
+    ],
+    "legal": [
+      "Privacy Notice",
+      "Google User Data Privacy Notice"
+    ]
+  },
+  "screens": [
+    {"name": "Sign-in wall, empty, light, 1440", "file": "screenshots/signin-light-empty.png"},
+    {"name": "Sign-in wall, empty, dark, 1440", "file": "screenshots/signin-dark-empty.png"},
+    {"name": "Sign-in wall, empty, light, 390", "file": "screenshots/mobile-signin-light-empty.png"},
+    {"name": "Sign-in wall, empty, dark, 390", "file": "screenshots/mobile-signin-dark-empty.png"}
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Nav, settings, and create were not offered on a signed-in shell.",
+    "Forgot password? was visible and not followed.",
+    "Try for Free on the wall was visible and not followed.",
+    "Google, Office 365, and SAML SSO were visible and not clicked.",
+    "Marketing Request a demo and Try for free dialogs were photographed empty on front.com and are recorded in site-tree.md. They are not this wall."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "code",
+    "Sign in",
+    "Forgot password?",
+    "Try for Free",
+    "Google",
+    "Office 365",
+    "SAML SSO",
+    "Request a demo",
+    "Try Front for free",
+    "newsletter",
+    "profile, birthday, plan, survey, and onboarding fields"
+  ]
+}

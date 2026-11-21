@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T22:11:25.776Z",
+  "capturedAt": "2026-11-21T02:18:48.466Z",
   "screenshot": "home-light-menu-product.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://front.com/",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 12592
+      "height": 12952
     },
     "scroll": {
       "x": 0,
