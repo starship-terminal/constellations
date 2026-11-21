@@ -1,0 +1,26 @@
+{
+  "name": "analytics-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/manage/analytics",
+  "rawUrlHost": "www.wix.com",
+  "title": "Website Analytics | Track Your Site’s Performance | Wix.com",
+  "h1": [
+    "Grow your business with AI-powered Wix analytics"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:07.208Z"
+}

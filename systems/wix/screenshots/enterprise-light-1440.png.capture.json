@@ -1,0 +1,26 @@
+{
+  "name": "enterprise-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/studio/enterprise",
+  "rawUrlHost": "www.wix.com",
+  "title": "Enterprise web platform for teams that move fast | Wix Enterprise",
+  "h1": [
+    "The enterprise web platform for organizations that want to move fast"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:24.158Z"
+}

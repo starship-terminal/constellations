@@ -1,0 +1,27 @@
+{
+  "name": "ventures-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/wix-ventures",
+  "rawUrlHost": "www.wix.com",
+  "title": "Wix Ventures | Strategic Startup Investments & Global Acceleration",
+  "h1": [
+    "BACKING FOUNDERS. SHAPING THE WEB.",
+    "Backing founders. Shaping the web."
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:50:34.865Z"
+}

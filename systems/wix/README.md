@@ -15,6 +15,9 @@ Screenshots were not taken. The preview browser returned "The browser is not pro
 | [style-guide.html](style-guide.html) | Swatches and the three measured buttons |
 | [components.md](components.md) | Controls that were on the signed-out pages |
 | [patterns.md](patterns.md) | Header, hero, pricing columns, login |
+| [site-tree.md](site-tree.md) | Header, footer, and the public links they open, dated 2026-11-22 |
+| [login-review.json](login-review.json) | Empty login and signup walls. `loginExtracted` is not-started |
+| [screenshots/](screenshots) | First-viewport shots of the public pages and the empty walls |
 | [raw/](raw/) | The readings and the colour table notes |
 | [tools/](tools/) | Kit copy, the token builder, and [tools/test_build_tokens.py](tools/test_build_tokens.py) |
 
@@ -124,7 +127,7 @@ The marketing page computed `wix-madefor-display-v2` and `wix-madefor-text-v2`. 
 | Search | Domain field captured. No results |
 | Onboarding | Not entered |
 | Phone | Login measured at 390. Homepage not remeasured at 390 |
-| Screenshots | Not captured. Preview browser produced no frames |
+| Screenshots | Captured 2026-11-22. First viewport of the public pages and the empty walls. [site-tree.md](site-tree.md) |
 
 ## Do and don't
 

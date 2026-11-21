@@ -1,0 +1,99 @@
+{
+  "name": "updates-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/updates",
+  "rawUrlHost": "www.wix.com",
+  "title": "New Releases & Updates | Wix.com",
+  "h1": [
+    "New and upcoming releases"
+  ],
+  "inputs": [
+    {
+      "type": "text",
+      "name": "eta",
+      "placeholder": "All",
+      "valueLength": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    },
+    {
+      "type": "text",
+      "name": "functionality",
+      "placeholder": "All",
+      "valueLength": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 3
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:14.365Z"
+}

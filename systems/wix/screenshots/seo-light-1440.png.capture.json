@@ -1,0 +1,26 @@
+{
+  "name": "seo-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/seo",
+  "rawUrlHost": "www.wix.com",
+  "title": "Discover a Suite of Advanced SEO and Marketing Tools | Wix.com",
+  "h1": [
+    "Discover a complete suite of SEO tools from Wix"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:04.511Z"
+}

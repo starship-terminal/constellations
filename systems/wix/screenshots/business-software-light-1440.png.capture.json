@@ -1,0 +1,26 @@
+{
+  "name": "business-software-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/business-software",
+  "rawUrlHost": "www.wix.com",
+  "title": "Business Software and Management Tools | Wix.com",
+  "h1": [
+    "Business tools to power your every move"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:47.106Z"
+}

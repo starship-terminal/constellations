@@ -1,0 +1,26 @@
+{
+  "name": "pricing-light-390",
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "url": "https://www.wix.com/plans",
+  "rawUrlHost": "www.wix.com",
+  "title": "Wix Pricing Information | Upgrade to a Premium Plan | Wix.com",
+  "h1": [
+    "Find the right plan for you"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:21.590Z"
+}

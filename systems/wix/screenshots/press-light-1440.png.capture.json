@@ -1,0 +1,26 @@
+{
+  "name": "press-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/press-room/home",
+  "rawUrlHost": "www.wix.com",
+  "title": "Latest Updates and News from Wix.com | Newsroom",
+  "h1": [
+    "Newsroom"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:50:32.715Z"
+}

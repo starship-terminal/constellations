@@ -1,0 +1,26 @@
+{
+  "name": "about-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/about/us",
+  "rawUrlHost": "www.wix.com",
+  "title": "About Wix: Website Builder & Domain Registrar | Wix.com",
+  "h1": [
+    "Wix is a website builder & domain registrar to create limitlessly."
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:48:58.074Z"
+}

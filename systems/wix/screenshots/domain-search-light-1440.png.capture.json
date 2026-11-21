@@ -1,0 +1,39 @@
+{
+  "name": "domain-search-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/domains/domain-name-search",
+  "rawUrlHost": "www.wix.com",
+  "title": "Domain Name Search | Check Domain Name Availability",
+  "h1": [
+    "Domain name search: Check domain availability"
+  ],
+  "inputs": [
+    {
+      "type": "search",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    },
+    {
+      "type": "search",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:27.439Z"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "login-empty-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://users.wix.com/signin",
+  "rawUrlHost": "users.wix.com",
+  "title": "Log In to Your Wix Account - Wix.com",
+  "h1": [
+    "Log in"
+  ],
+  "inputs": [
+    {
+      "type": "text",
+      "name": "email",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "textarea",
+      "name": "g-recaptcha-response",
+      "placeholder": "",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:27.462Z"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "inspiration-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/explore/websites",
+  "rawUrlHost": "www.wix.com",
+  "title": "Website Ideas | Web Design Examples & Inspiration | Wix.com",
+  "h1": [
+    "Website design ideas, examples and inspiration"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:12.208Z"
+}

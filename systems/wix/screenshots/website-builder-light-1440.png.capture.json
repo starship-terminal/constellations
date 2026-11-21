@@ -1,0 +1,39 @@
+{
+  "name": "website-builder-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/website-builder",
+  "rawUrlHost": "www.wix.com",
+  "title": "Website Builder | Create a Free Website | Wix.com",
+  "h1": [
+    "The website builder that powers your entire business"
+  ],
+  "inputs": [
+    {
+      "type": "textarea",
+      "name": "textarea_comp-mumlxo1e",
+      "placeholder": "Describe the website you want ",
+      "valueLength": 0
+    },
+    {
+      "type": "text",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:02.702Z"
+}

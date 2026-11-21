@@ -1,0 +1,33 @@
+{
+  "name": "logo-maker-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/logo/maker",
+  "rawUrlHost": "www.wix.com",
+  "title": "Free Logo Maker | Create a professional logo design | Wixel",
+  "h1": [
+    "Free logo maker"
+  ],
+  "inputs": [
+    {
+      "type": "textarea",
+      "name": "textarea_comp-mkpjl8kb",
+      "placeholder": "Add a business name (or skip for now) ",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:50:02.203Z"
+}

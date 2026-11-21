@@ -1,0 +1,26 @@
+{
+  "name": "payments-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/payments",
+  "rawUrlHost": "www.wix.com",
+  "title": "Accept Payments Online, In Person and On The Go | Wix Payments",
+  "h1": [
+    "Accept payments with one powerful solution"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:50:52.298Z"
+}

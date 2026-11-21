@@ -1,0 +1,57 @@
+{
+  "name": "seo-learn-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/seo/learn",
+  "rawUrlHost": "www.wix.com",
+  "title": "Learn SEO | Wix SEO Hub",
+  "h1": [
+    "The Wix SEO Learning Hub"
+  ],
+  "inputs": [
+    {
+      "type": "search",
+      "name": "q",
+      "placeholder": "Search...",
+      "valueLength": 0
+    },
+    {
+      "type": "submit",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 9
+    },
+    {
+      "type": "email",
+      "name": "form-field-input-d5188d64-b750-4213-aa97",
+      "placeholder": "Enter your email here",
+      "valueLength": 0
+    },
+    {
+      "type": "search",
+      "name": "q",
+      "placeholder": "Search...",
+      "valueLength": 0
+    },
+    {
+      "type": "submit",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 9
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:50:12.448Z"
+}

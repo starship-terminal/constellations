@@ -1,0 +1,39 @@
+{
+  "name": "templates-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/website/templates",
+  "rawUrlHost": "www.wix.com",
+  "title": "Website Templates | 2000+ Free HTML5 Website Templates | Wix.com",
+  "h1": [
+    "Pick the Website Template You Love"
+  ],
+  "inputs": [
+    {
+      "type": "search",
+      "name": "criteria",
+      "placeholder": "Search all templates...",
+      "valueLength": 0
+    },
+    {
+      "type": "hidden",
+      "name": "page",
+      "placeholder": "",
+      "valueLength": 1
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:08.838Z"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "home-light-390",
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "url": "https://www.wix.com/",
+  "rawUrlHost": "www.wix.com",
+  "title": "Wix.com - The platform trusted by millions of businesses",
+  "h1": [
+    "Create your future on the leading website builder"
+  ],
+  "inputs": [
+    {
+      "type": "text",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:48:55.822Z"
+}
