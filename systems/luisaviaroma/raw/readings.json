@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-22",
+  "url": "https://www.luisaviaroma.com/en",
+  "title": "Luisaviaroma | Luxury Fashion, Designers & New Arrivals Online",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewportWidth": 1430,
+    "visualViewportHeight": 900,
+    "scale": 1
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "body": {
+    "backgroundColor": "#ffffff",
+    "color": "#000000",
+    "fontFamily": "Inter, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "300"
+  },
+  "promo": {
+    "selector": "header li.tickerHook",
+    "backgroundColor": "#3f1da0",
+    "color": "#ffffff",
+    "height": 24,
+    "fontSize": "12px",
+    "fontWeight": "400"
+  },
+  "header": {
+    "height": 64,
+    "backgroundColor": "#ffffff"
+  },
+  "logo": {
+    "width": 157,
+    "height": 17,
+    "alt": "LuisaViaRoma"
+  },
+  "nav": {
+    "text": "WOMEN",
+    "fontSize": "12px",
+    "fontWeight": "500",
+    "lineHeight": "16px",
+    "padding": "12px 10px",
+    "textTransform": "uppercase",
+    "height": 40,
+    "width": 68,
+    "radius": "0px"
+  },
+  "footer": {
+    "backgroundColor": "#000000",
+    "height": 608
+  },
+  "subscribe": {
+    "selector": ".footer_block_nl_button",
+    "height": 26,
+    "width": 280,
+    "fontSize": "12px",
+    "letterSpacing": "-0.24px",
+    "textTransform": "uppercase",
+    "padding": "3px 8px",
+    "border": "0.5px solid #000000",
+    "radius": "0px"
+  },
+  "product": {
+    "url": "https://www.luisaviaroma.com/en/khaite/women/clothing/coats/rolon-coat-237854.html",
+    "title": "Rolon coat",
+    "titleColor": "#7f7f7f",
+    "price": "S$ 5.006,00",
+    "priceSize": "14px",
+    "priceWeight": "500",
+    "addToBag": {
+      "backgroundColor": "#303030",
+      "color": "#ffffff",
+      "height": 44,
+      "width": 401,
+      "fontSize": "12px",
+      "padding": "16px",
+      "radius": "0px",
+      "textTransform": "uppercase"
+    }
+  },
+  "rootTokens": {
+    "--bs-primary": "#000",
+    "--bs-secondary": "#609e3e",
+    "--bs-cta": "#609e3e",
+    "--bs-basic": "#232323",
+    "--bs-highlight": "#cd1719",
+    "--bs-danger": "#cd1719",
+    "--bs-body-bg": "#fff",
+    "--bs-body-color": "#212529",
+    "--bs-body-font-family": "Arial, sans-serif",
+    "--bs-body-font-size": "0.875rem",
+    "--bs-border-radius": "4px",
+    "--border-color": "#d2d2d2",
+    "--gray": "#666",
+    "--lighter-gray": "#f4f4f4",
+    "--black": "#000"
+  },
+  "notes": "Computed body font is Inter. --bs-body-font-family is Arial and was not the painted body. Shipping country on this pass was Singapore (SG / EN). Footer copy names the Florence shop as LUISAVIAROMA, via Roma 1929. That line is the brand slogan, not a captured street address."
+}
