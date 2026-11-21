@@ -1,0 +1,201 @@
+{
+  "captured": "2026-11-21",
+  "product": "ManyChat",
+  "host": "app.manychat.com",
+  "harness": "T3 Code in-app preview, default profile",
+  "signedIn": true,
+  "account": "signed-in profile with no channel connected",
+  "theme": {
+    "observed": "light",
+    "colorScheme": "normal",
+    "htmlClass": "",
+    "bodyClass": "no-touch en-US manyui-root",
+    "dataTheme": null,
+    "dataMode": null,
+    "note": "No theme switch was offered. Dark was not captured. The body class manyui-root is the app root, not a theme."
+  },
+  "viewports": {
+    "desktop": {
+      "requested": [1440, 900],
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1440, "height": 900, "scale": 1, "offsetLeft": 0, "offsetTop": 0}
+    },
+    "phone": {
+      "requested": [390, 844],
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 390, "height": 844, "scale": 1}
+    }
+  },
+  "font": {
+    "body": "InterVariable, Helvetica, Arial, sans-serif",
+    "bodySize": "14px",
+    "bodyLineHeight": "20px",
+    "bodyWeight": "400",
+    "bodyColor": "rgb(41, 41, 41)",
+    "source": "getComputedStyle(document.body) on /profile/dashboard at 1440x900"
+  },
+  "page": {
+    "background": "rgb(245, 245, 245)",
+    "source": "getComputedStyle(document.body).backgroundColor"
+  },
+  "elements": {
+    "panel": {
+      "background": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(214, 214, 214)",
+      "radius": "8px",
+      "padding": "48px 0px",
+      "shadow": "none",
+      "width": 1144,
+      "height": 532,
+      "source": "white panel under the Accounts tab, 1440 CSS px"
+    },
+    "heading": {
+      "color": "rgb(41, 41, 41)",
+      "size": "24px",
+      "weight": "700",
+      "lineHeight": "36px",
+      "source": "h1 'You don't have a channel.'"
+    },
+    "muted": {
+      "color": "rgb(112, 112, 112)",
+      "size": "14px",
+      "weight": "400",
+      "lineHeight": "20px",
+      "source": "empty-state paragraph, and idle tab label"
+    },
+    "tabSelected": {
+      "color": "rgb(41, 41, 41)",
+      "size": "14px",
+      "weight": "500",
+      "lineHeight": "20px",
+      "padding": "10px 2px 8px 0px",
+      "height": "40px",
+      "borderBottom": "2px solid rgba(0, 0, 0, 0)",
+      "source": "[role=tab][aria-selected=true] Accounts. The blue underline is painted by a child, not this border."
+    },
+    "tabIdle": {
+      "color": "rgb(112, 112, 112)",
+      "size": "14px",
+      "weight": "500",
+      "padding": "10px 2px 8px",
+      "source": "[role=tab]:not([aria-selected=true])"
+    },
+    "primaryButton": {
+      "background": "rgb(0, 107, 226)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(0, 107, 226)",
+      "radius": "6px",
+      "padding": "7px 11px",
+      "height": "36px",
+      "size": "14px",
+      "weight": "500",
+      "lineHeight": "20px",
+      "shadow": "none",
+      "source": "a[href*='channelConnection'] '+ Add New Account', default state. Same fill on the Edit button in the profile card."
+    },
+    "ghostButton": {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(41, 41, 41)",
+      "border": "1px solid rgba(0, 0, 0, 0)",
+      "radius": "6px",
+      "padding": "7px 8px",
+      "height": "36px",
+      "size": "14px",
+      "weight": "500",
+      "source": "English language button, closed"
+    },
+    "textButton": {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 107, 226)",
+      "size": "14px",
+      "weight": "500",
+      "height": "36px",
+      "radius": "6px",
+      "source": "Manage Sign-In Options button"
+    },
+    "link": {
+      "color": "rgb(0, 107, 226)",
+      "size": "14px",
+      "weight": "400",
+      "source": "a[href*='blog'] on /profile/compliance-monitoring"
+    },
+    "logout": {
+      "color": "rgb(0, 107, 226)",
+      "size": "16px",
+      "weight": "600",
+      "lineHeight": "20px",
+      "source": "a[href='/logout'] in the profile card. Not clicked."
+    },
+    "fieldDisabled": {
+      "background": "rgb(245, 245, 245)",
+      "color": "rgb(41, 41, 41)",
+      "border": "1px solid rgb(214, 214, 214)",
+      "radius": "6px",
+      "padding": "8px 12px",
+      "height": "36px",
+      "size": "14px",
+      "weight": "400",
+      "source": "disabled Name and email inputs in the profile card"
+    },
+    "fieldLabel": {
+      "color": "rgb(41, 41, 41)",
+      "size": "12px",
+      "weight": "400",
+      "source": "Name label in the profile card"
+    },
+    "success": {
+      "color": "rgb(12, 129, 67)",
+      "size": "12px",
+      "weight": "400",
+      "lineHeight": "16px",
+      "source": "(Verified) badge next to Email"
+    },
+    "popover": {
+      "background": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(214, 214, 214)",
+      "radius": "6px",
+      "shadow": "rgba(132, 146, 166, 0.16) 0px 12px 24px 0px",
+      "width": 382,
+      "height": 465,
+      "source": "My Profile card"
+    },
+    "statusCard": {
+      "background": "rgb(255, 255, 255)",
+      "radius": "6px",
+      "padding": "48px",
+      "shadow": "rgba(132, 146, 166, 0.16) 0px 24px 36px 0px",
+      "width": 500,
+      "source": "Good news card on /profile/compliance-monitoring"
+    },
+    "avatar": {
+      "width": 24,
+      "height": 24,
+      "radius": "50%",
+      "source": "header avatar"
+    }
+  },
+  "customProperties": {
+    "note": "The only custom properties readable from same-origin sheets are --simui-*. They belong to the phone simulator used inside a connected bot, which this account never reached. They are not the dashboard chrome. The main stylesheet at https://mccdn.me/3546/assets/css/bundle.css is cross-origin and its cssRules threw SecurityError.",
+    "simui": {
+      "--simui-color-white": "#fff",
+      "--simui-color-secondary": "#8592a3",
+      "--simui-color-blue-primary": "#0084ff",
+      "--simui-color-blue-secondary": "#80c2ff",
+      "--simui-color-bg-level1": "#181e28",
+      "--simui-color-bg-level2": "#232b39",
+      "--simui-color-bg-level3": "#2d3645",
+      "--simui-color-bg-level4": "#414a59",
+      "--simui-border-radius": "6px",
+      "--simui-border-radius-md": "12px",
+      "--simui-space-xxs": "4px",
+      "--simui-space-xs": "6px",
+      "--simui-space-sm": "8px",
+      "--simui-space": "12px",
+      "--simui-space-md": "16px"
+    }
+  }
+}

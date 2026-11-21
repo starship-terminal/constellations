@@ -1,0 +1,69 @@
+{
+  "product": "ManyChat",
+  "slug": "manychat",
+  "captured": "2026-11-21",
+  "signed_in": true,
+  "session": "T3 in-app preview, default profile, app.manychat.com. The header showed the account name. No login wall and no robot check.",
+  "account_state": "Signed in, no channel connected. The dashboard is the empty Accounts state.",
+  "theme": "light only. No theme switch was offered.",
+  "viewports": {
+    "desktop": {
+      "requested": [1440, 900],
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+    },
+    "phone": {
+      "requested": [390, 844],
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 390, "height": 844, "scale": 1}
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": ["Accounts", "My Templates", "API Settings", "Message reports", "logo home", "English", "account menu", "Help"],
+      "reached": ["Accounts", "My Templates", "Message reports", "account menu", "English menu opened"]
+    },
+    "settings": {
+      "items": ["My Profile", "Log Out", "Name", "Email", "Edit", "Manage Sign-In Options", "English", "português", "español"],
+      "reached": ["My Profile card opened", "English menu opened"]
+    },
+    "create": {
+      "items": ["+ Add New Account", "New Template", "Create My First Template"],
+      "reached": []
+    }
+  },
+  "screens": [
+    {"name": "Accounts empty, desktop 1440x900", "file": "screenshots/accounts-light-desktop.png"},
+    {"name": "My Profile card, desktop", "file": "screenshots/profile-light-desktop.png"},
+    {"name": "My Templates empty, desktop", "file": "screenshots/templates-light-desktop.png"},
+    {"name": "Messaging Window Compliance Monitoring, desktop", "file": "screenshots/compliance-light-desktop.png"},
+    {"name": "Accounts empty, phone 390x844", "file": "screenshots/accounts-light-phone.png"}
+  ],
+  "gaps": [
+    "No channel is connected, so the bot builder, inbox, broadcasts and page settings were not reachable.",
+    "API Settings was not opened. It can show a key.",
+    "Add New Account, New Template and Create My First Template were not opened. Connecting a channel and creating a template were out of scope.",
+    "Edit, Manage Sign-In Options and Log Out were not clicked.",
+    "Help was clicked on the phone dashboard and did not open a panel.",
+    "English, português and español were listed. No language was selected.",
+    "Primary-button hover timed out in the preview. Focus-visible, pressed, loading and error were not measured.",
+    "Dark theme was not offered.",
+    "The main stylesheet at mccdn.me is cross-origin, so dashboard custom properties were not readable. --simui-* names belong to the phone simulator inside a connected bot and were not painted here.",
+    "catalog.json still describes the 2026-11-18 public marketing capture. Updating it is deferred."
+  ],
+  "not_submitted": [
+    "Add New Account",
+    "New Template",
+    "Create My First Template",
+    "Edit profile",
+    "Manage Sign-In Options",
+    "Log Out",
+    "language change",
+    "channel connection",
+    "paid plan"
+  ]
+}

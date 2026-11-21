@@ -14,8 +14,9 @@ ManyChat is worth a capture because a Next.js + Tailwind marketing site paints a
 | [patterns.md](patterns.md) | How the components combine: chrome, hero, pricing, footer, phone |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 14 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x. Phone viewport shots are 780 x 1688 (2x). `home-light-menu` is the Product menu. `pricing-light-monthly` is the Monthly label selected. |
-| [raw/](raw) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [measurements.md](raw/measurements.md) |
-| [tools/](tools) | The builders and the capture kit |
+| [raw/](raw) | Marketing readings ([css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [measurements.md](raw/measurements.md)) and the signed-in dashboard readings ([readings.json](raw/readings.json)) |
+| [login-review.json](login-review.json) | The 2026-11-21 signed-in walk: nav, settings and create that were offered, which were reached, the screens, the gaps, and what was not submitted |
+| [tools/](tools) | The builders and the capture kit. [build_login.py](tools/build_login.py) checks the signed-in notes against the screenshot files |
 
 ## Brief
 
@@ -30,7 +31,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 3. Do set the root to 10px.
 4. Do round the controls.
 5. Do pair the three voices.
-6. Don't style the bot builder from this package.
+6. Don't style the bot builder from the marketing tokens.
 7. Don't invent a dark theme.
 8. Don't follow a sign-up or checkout link from a reconstruction.
 
@@ -86,7 +87,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 3. **Do set the root to 10px.** Display sizes are rem against that root. A 7.2rem heading is 72px. See [hero-h1](components/crops/hero-h1-default.png).
 4. **Do round the controls.** Nav and price CTAs are 999px pills. The Free card is 24px. See [price-card](components/crops/price-card-default.png).
 5. **Do pair the three voices.** ManyChatGravity for display, Rooftop for UI, CoFo Sans Mono for nav labels and pill text. See [nav-link](components/crops/nav-link-default.png).
-6. **Don't style the bot builder from this package.** app.manychat.com was never entered.
+6. **Don't style the bot builder from the marketing tokens.** The 2026-11-21 signed-in walk reached an empty profile only. The builder still was not opened.
 7. **Don't invent a dark theme.** The black strip and the Annual pill are dark surfaces inside the one light theme.
 8. **Don't follow a sign-up or checkout link from a reconstruction.** Those destinations were measured, never opened.
 
@@ -109,7 +110,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Tooltip, dialog, toast, table, avatar, badge | Not present | They do not paint on the captured marketing pages. The yellow plan-picker widget was left on the pricing shot and not treated as a product dialog. |
 | Themes | Captured | Light only. No dark switch. |
 | Widths | Captured | Desktop 1440. Phone pricing 390. Phone home innerWidth 392. |
-| Sign-in | Not captured | Bot builder, sign-in and the in-app template library. `/templates` and `/template-gallery` returned 404 signed out. |
+| Sign-in | Partly captured, 2026-11-21 | Signed-in profile at app.manychat.com, no channel connected. Accounts, My Templates, the profile card, the English menu and compliance monitoring. See [login-review.json](login-review.json). The bot builder was still not reached. API Settings was not opened. |
 | Checkout | Not submitted | Monthly and Annual were toggled locally. No purchase. |
 
 ## Rebuild
@@ -122,6 +123,25 @@ python3 tools/build_style_guide.py
 python3 tools/build_components_md.py
 node tools/capture/public/build-measurements.mjs
 python3 tools/capture/quantize.py <raw-dir>
+python3 tools/build_login.py
 ```
 
 Then `make brief && make design-md && make grade` from the repo root refreshes the generated sections.
+
+## Signed-in profile, 2026-11-21
+
+A later walk used the T3 in-app preview, default profile, already signed in at `https://app.manychat.com/profile/dashboard`. The header showed the account name. There was no login wall and no robot check. The account has no channel connected, so the page is the empty Accounts state.
+
+Desktop measured `innerWidth` 1440, `innerHeight` 900, `devicePixelRatio` 2, `visualViewport` 1440 by 900 at scale 1. Phone measured 390 by 844 at the same ratio and scale. PNG pixels are 2880 by 1800 and 780 by 1688. Both were quantized to 256-colour sRGB.
+
+| Screen | File |
+|---|---|
+| Accounts empty, desktop | [screenshots/accounts-light-desktop.png](screenshots/accounts-light-desktop.png) |
+| My Profile card | [screenshots/profile-light-desktop.png](screenshots/profile-light-desktop.png) |
+| My Templates empty | [screenshots/templates-light-desktop.png](screenshots/templates-light-desktop.png) |
+| Compliance monitoring | [screenshots/compliance-light-desktop.png](screenshots/compliance-light-desktop.png) |
+| Accounts empty, phone | [screenshots/accounts-light-phone.png](screenshots/accounts-light-phone.png) |
+
+Computed styles on that dashboard, not merged into [tokens.json](tokens.json) because that file is the marketing system: page `#f5f5f5`, surface white, text `#292929`, muted `#707070`, primary button `#006be2` with white label, radius 6px, height 36px, border `#d6d6d6`, InterVariable. The success colour on (Verified) is `#0c8143`. The profile card shadow is `rgba(132, 146, 166, 0.16) 0px 12px 24px 0px`. Readings are in [raw/readings.json](raw/readings.json).
+
+Offered and not submitted: Add New Account, New Template, Create My First Template, Edit, Manage Sign-In Options, Log Out, and a language change. API Settings was not opened because it can show a key. Help did not open a panel. Dark was not offered. The catalog entry still describes the public capture. Updating it is deferred.
