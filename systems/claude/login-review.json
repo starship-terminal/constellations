@@ -1,0 +1,72 @@
+{
+  "slug": "claude",
+  "product": "Claude",
+  "domain": "claude.ai",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-then-identity-providers-on-the-same-wall",
+  "session": "Incognito preview tab, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed. No captcha was solved.",
+  "wall": {
+    "url": "https://claude.ai/login",
+    "title": "Sign in or create an account | Claude.ai",
+    "asks": [
+      "Continue with Google",
+      "Continue with Apple",
+      "Email",
+      "Continue with email",
+      "Continue with SSO"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "password_visible": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "text", "name": "", "placeholder": "Enter your email", "filled": false}
+    ],
+    "note": "https://claude.ai/ redirects here. The heading is Question what's next. The email field was empty. Continue with email was not clicked, so no password or code step appeared. Google and Apple were not clicked. Continue with SSO is in the DOM and was not clicked. There is no separate signup URL."
+  },
+  "signup_wall": {
+    "url": "https://claude.ai/login",
+    "lands_on": "https://claude.ai/login",
+    "title": "Sign in or create an account | Claude.ai",
+    "asks": [
+      "Continue with Google",
+      "Continue with Apple",
+      "Email",
+      "Continue with email"
+    ],
+    "email_field": true,
+    "continued": false,
+    "note": "Sign up and log in are the same empty wall. The page says Free to get started. Nothing was typed. Nothing was submitted."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2},
+      "file": "screenshots/public/login-wall-dark-desktop.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2},
+      "file": "screenshots/public/home-dark-phone.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Login", "href": "https://claude.ai/login", "reached": "wall only"},
+      {"label": "Try Claude", "href": "https://claude.ai/login", "reached": "not clicked"}
+    ],
+    "identity_providers": ["Google", "Apple"]
+  },
+  "screens": [
+    {"name": "Log-in wall, desktop, empty", "file": "screenshots/public/login-wall-dark-desktop.png"},
+    {"name": "Same wall as the homepage, phone", "file": "screenshots/public/home-dark-phone.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "The email field was left empty. Continue with email was not clicked. No password or code step was shown.",
+    "Google, Apple, and SSO were not clicked.",
+    "The claude.com Login link is a redirect URL with a tracking id. It was not opened."
+  ]
+}

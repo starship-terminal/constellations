@@ -17,6 +17,10 @@ The earlier references cover learning products (Duolingo, Brilliant, NotebookLM,
 | [screenshots/](screenshots) | 64 `{page}-{theme}-{state}.png` captures (22 from the refresh). Desktop shots are 1440 x 900 at 2x, `-full` shots whole pages for the dark Artifacts and Chats pages, `mobile-*` shots 390 x 844 at 2x. Every other state exists in both themes. |
 | [raw/](raw) | The unprocessed readings: every custom property the stylesheets declare, by selector and condition and sorted into Claude's own (`cds`, `app`), one-off utility overrides and Tailwind's internals, with each name resolved on a light, a dark and a compact root, and the font faces (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the measured values the token builder reads (`component-tokens.json`); page geometry (`layout.json`) and the layout notes written from it (`pages.md`); and from the refresh, the ordinary declarations under conditions and states: @media widths, reduced-motion rules, :active rules, border and outline widths, grid columns and link rules (`css-rules.json`). |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild. |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, drawer, or wall on the public site, mapped 2026-11-22 |
+| [login-review.json](login-review.json) | Empty login wall. Sign up is the same wall. `login_extracted` is `not-started` |
+| [screenshots/public/](screenshots/public) | Public logged-out captures from 2026-11-22. Desktop 1440×900 at 2x. Phone 390×844 at 2x. These do not replace the signed-in shots |
+| [raw/public-2026-11-22.json](raw/public-2026-11-22.json) | Computed styles and resolved custom properties from the public pages. Not merged into tokens.json |
 
 ## Brief
 
@@ -164,6 +168,8 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). Rows read o
 | Desktop and phone widths | Captured: 1440 everywhere; 390 for home, the drawer and a chat (2026-10-04 only) | `mobile-*` |
 
 Totals over 42 rows: 42 captured (the states and parts that were not reachable are named in their row).
+
+A public logged-out pass on 2026-11-22 added [site-tree.md](site-tree.md), the empty login wall, and [screenshots/public/](screenshots/public). `login_extracted` stays `not-started`. Nothing was typed. Google, Apple, and SSO were not clicked. No form was submitted. catalog.json was left alone, and tokens.json was not rewritten.
 
 ## Do and don't
 
