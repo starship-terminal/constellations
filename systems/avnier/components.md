@@ -1,8 +1,8 @@
 # Avnier components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from avnier.com on 2026-11-11, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was added to cart, signed into, created, sent or uploaded.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from avnier.com on 2026-11-21, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was added to cart, signed into, created, sent or uploaded.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (42 components, 80 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (42 components, 79 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
@@ -16,9 +16,9 @@ Screenshots are named `{page}-light-{state}.png`: the shop paints one light them
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/` | [consent](screenshots/home-light-consent.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png) |
-| Shop grid | `/collections/tous-les-produits` | [default](screenshots/shop-light-default.png), [full](screenshots/shop-light-full.png) |
-| Product page | `first product on the shop grid` | [default](screenshots/pdp-light-default.png), [full](screenshots/pdp-light-full.png), [variant-picked](screenshots/pdp-light-variant-picked.png) |
+| Home | `/` | [consent](screenshots/home-light-consent.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [megamenu](screenshots/home-light-megamenu.png), [promo](screenshots/home-light-promo.png), [search](screenshots/home-light-search.png) |
+| Shop grid | `/collections/tous-les-produits` | [default](screenshots/shop-light-default.png), [filter](screenshots/shop-light-filter.png), [full](screenshots/shop-light-full.png) |
+| Product page | `/products/doudoune-symphony` | [default](screenshots/pdp-light-default.png), [full](screenshots/pdp-light-full.png), [size-guide](screenshots/pdp-light-size-guide.png), [variant-picked](screenshots/pdp-light-variant-picked.png) |
 | Cart | `/cart` | [default](screenshots/cart-light-default.png), [full](screenshots/cart-light-full.png) |
 | Login gate | `/account/login` | [default](screenshots/login-light-default.png), [full](screenshots/login-light-full.png) |
 | Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu](screenshots/mobile-home-light-menu.png) |
@@ -253,8 +253,7 @@ A TAILLE size chip — the visible label of a visually hidden radio input. Read 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 73.2 x 40; border T: 1px solid #000000 `color.neutral.accent1`; B: 1px solid #000000 `color.neutral.accent1`; L: 1px solid #000000 `color.neutral.accent1`; background #000000 `color.neutral.accent1`; text Space Mono 14/14 400, #ffffff `color.neutral.background`; transition all 0.2s ease; icon 13 x 9.75, #ffffff `color.neutral.background` |
-| hover | shadow #000000 0px 0px 0px 1px inset; text Space Mono 14/14 700, #ffffff `color.neutral.background` |
+| default (same: hover) | size 73.2 x 40; border T: 1px solid #000000 `color.neutral.accent1`; B: 1px solid #000000 `color.neutral.accent1`; L: 1px solid #000000 `color.neutral.accent1`; background #000000 `color.neutral.accent1`; text Space Mono 14/14 400, #ffffff `color.neutral.background`; transition all 0.2s ease; icon 13 x 9.75, #ffffff `color.neutral.background` |
 
 ![Variant option default](components/crops/variant-radio-default.png) ![Variant option hover](components/crops/variant-radio-hover.png)
 
@@ -268,8 +267,7 @@ The AJOUTER AU PANIER buy button; measured in every state except a real press. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 440 x 48; padding 9px 30px 11px 30px; border 1px solid #000000 `color.neutral.accent1`; background #000000 `color.neutral.accent1`; text Space Mono 15/18 400, #f6f6f6 `measured.action-text`; transition box-shadow 0.1s ease; layers ::after rgb(244, 255, 122) 0px none 1 |
-| hover | text Space Mono 15/18 400, #dcdcdc |
+| default (same: hover, focus-visible) | size 440 x 48; padding 9px 30px 11px 30px; border 1px solid #000000 `color.neutral.accent1`; background #000000 `color.neutral.accent1`; text Space Mono 15/18 400, #f6f6f6 `measured.action-text`; transition box-shadow 0.1s ease; layers ::after rgb(244, 255, 122) 0px none 1 |
 | pressed | text Space Mono 15/18 400, #000000 `color.neutral.accent1` |
 
 ![Add to cart default](components/crops/add-to-cart-default.png) ![Add to cart hover](components/crops/add-to-cart-hover.png) ![Add to cart focus-visible](components/crops/add-to-cart-focus-visible.png) ![Add to cart pressed](components/crops/add-to-cart-pressed.png)
@@ -327,11 +325,12 @@ Read as `login-title` on the login gate page.
 ![Login title default](components/crops/login-title-default.png)
 
 #### Email field
-Text was typed and deleted; the form was never submitted. Read as `email-input` on the login gate page.
+The login email field. Nothing was typed. Nothing was submitted. Read as `email-input` on the login gate page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 448 x 45; padding 15px; border 1px solid transparent; background transparent; shadow rgba(0, 0, 0, 0.55) 0px 0px 0px 1px; text Space Mono 16/24 400, #000000 `color.neutral.accent1`; transition box-shadow 0.1s ease; placeholder #757575 |
+| default | size 448 x 45; padding 15px; border 1px solid transparent; background transparent; shadow rgba(0, 0, 0, 0.55) 0px 0px 0px 1px; text Space Mono 16/24 400, #000000 `color.neutral.accent1`; transition box-shadow 0.1s ease; placeholder #757575 |
+| focused | padding 16px; shadow rgba(0, 0, 0, 0.75) 0px 0px 0px 2px |
 
 ![Email field default](components/crops/email-input-default.png) ![Email field focused](components/crops/email-input-focused.png)
 
@@ -449,7 +448,7 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 ### Pages
 
 - **Checkout and anything behind sign-in.** No item was added to the cart, so checkout, delivery options, payment and account pages were never reached. The `/account/login` gate itself is public and is measured; it was never submitted. The cart page is public but empty for a signed-out visitor, and is recorded that way.
-- **Anything that buys, sends or joins.** No product was added to the bag, no form was submitted (the login email was typed into and cleared), no search was run, no account was created, no consent choice was made.
+- **Anything that buys, sends or joins.** No product was added to the bag, no form was submitted (the login email was not typed), no search was run, no account was created, no consent choice was made.
 - **The mega-menu columns, the account dropdown and the filter/sort panels** were opened or hovered but their innards were not measured beyond the first link.
 - **The home page's category nav** stays `display:none` on `/` — it is measured on the shop grid, where the row is visible, and the home screenshot records the nav-less layout as served.
 - **Headless access.** avnier.com serves headless Chrome (channel `chrome`) a 200, so the whole capture ran headless; a challenge page, had one appeared, was waited out, never bypassed.

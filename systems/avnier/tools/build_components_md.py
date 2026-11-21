@@ -236,7 +236,7 @@ GROUP_INTRO = {
 SHOTS = [
     ("home", "Home", "/"),
     ("shop", "Shop grid", "/collections/tous-les-produits"),
-    ("pdp", "Product page", "first product on the shop grid"),
+    ("pdp", "Product page", "/products/doudoune-symphony"),
     ("cart", "Cart", "/cart"),
     ("login", "Login gate", "/account/login"),
 ]
@@ -452,7 +452,7 @@ W()
 W("### Pages")
 W()
 W("- **Checkout and anything behind sign-in.** No item was added to the cart, so checkout, delivery options, payment and account pages were never reached. The `/account/login` gate itself is public and is measured; it was never submitted. The cart page is public but empty for a signed-out visitor, and is recorded that way.")
-W("- **Anything that buys, sends or joins.** No product was added to the bag, no form was submitted (the login email was typed into and cleared), no search was run, no account was created, no consent choice was made.")
+W("- **Anything that buys, sends or joins.** No product was added to the bag, no form was submitted (the login email was not typed), no search was run, no account was created, no consent choice was made.")
 W("- **The mega-menu columns, the account dropdown and the filter/sort panels** were opened or hovered but their innards were not measured beyond the first link.")
 W("- **The home page's category nav** stays `display:none` on `/` — it is measured on the shop grid, where the row is visible, and the home screenshot records the nav-less layout as served.")
 W("- **Headless access.** avnier.com serves headless Chrome (channel `chrome`) a 200, so the whole capture ran headless; a challenge page, had one appeared, was waited out, never bypassed.")

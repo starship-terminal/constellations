@@ -59,38 +59,128 @@ class Shooter {
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
-// Hover the SHOP mega-menu item: the Dawn theme opens its dropdown on hover;
-// the shot is skipped when nothing opens.
-const openMega = async (p) => {
-  const m = p.locator('header .mega-menu__list > .mega-menu__item, header li').filter({ hasText: /^SHOP\b/i }).filter({ visible: true }).first();
-  if (await m.count()) { await m.hover(); await wait(p, 1800); return true; }
-  return false;
+// Hover a top-level mega-menu item. The label is a text node on the <li>, not
+// an <a>, so hasText on a link misses it. The dropdown is a sibling panel.
+const openMega = async (p, index) => {
+  // The item's accessible text includes the hidden panel, so a /^SHOP/ filter misses it.
+  const item = p.locator('.mega-menu__list > .mega-menu__item').nth(index);
+  if (!(await item.count())) return false;
+  const box = await item.boundingBox();
+  if (!box) return false;
+  await item.hover({ force: true, position: { x: Math.min(box.width / 2, 36), y: 16 } }).catch(() => {});
+  await p.mouse.move(box.x + Math.min(box.width / 2, 36), Math.max(8, box.y + 16));
+  await p.evaluate((i) => {
+    const li = document.querySelectorAll('.mega-menu__list > .mega-menu__item')[i];
+    if (!li) return;
+    for (const type of ['mouseover', 'mouseenter']) li.dispatchEvent(new MouseEvent(type, { bubbles: type === 'mouseover', view: window }));
+  }, index);
+  await wait(p, 1100);
+  const open = await p.evaluate((i) => {
+    const drop = document.querySelector('.mega-menu__dropdown');
+    if (!drop) return false;
+    const r = drop.getBoundingClientRect();
+    if (getComputedStyle(drop).display === 'none' || r.height < 40) return false;
+    const panel = drop.querySelectorAll(':scope > .mega-menu__dropdown-item')[i];
+    if (!panel) return true;
+    const pr = panel.getBoundingClientRect();
+    return pr.height > 40 && getComputedStyle(panel).display !== 'none';
+  }, index);
+  return open;
+};
+
+// The first-order dialog is a cross-origin frame. Page script cannot see its
+// text, so the frame is removed through the browser session. Never filled.
+const dropPromoFrames = async (p) => {
+  // The first-order dialog is a Klaviyo form in the light DOM (form.klaviyo-form).
+  // Hide that form and its fixed shell. Never type into it and never submit it.
+  const n = await p.evaluate(() => {
+    let n = 0;
+    document.querySelectorAll('form.klaviyo-form, form.needsclick, [class*="klaviyo-form"]').forEach((el) => {
+      let host = el;
+      for (let i = 0; i < 6 && host && host !== document.body; i++) {
+        const cs = getComputedStyle(host);
+        if (cs.position === 'fixed' || host.className.toString().includes('kl-private')) {
+          host.style.setProperty('display', 'none', 'important');
+          n++;
+          return;
+        }
+        host = host.parentElement;
+      }
+      el.style.setProperty('display', 'none', 'important');
+      n++;
+    });
+    return n;
+  }).catch(() => 0);
+  if (n) log('  promo hidden', n);
+  await wait(p, 300);
+  return n;
+};
+
+const openSearch = async (p) => {
+  const opened = await p.evaluate(() => {
+    const s = [...document.querySelectorAll('summary[aria-label="Recherche"]')].find((el) => !el.closest('#menu-drawer, header-drawer'));
+    if (!s) return false;
+    s.click();
+    return true;
+  });
+  if (!opened) return false;
+  await wait(p, 700);
+  return true;
 };
 
 const desktop = {
   home: { path: '/', wait: 8000, run: async (p, S) => {
     await S.raw('consent');                       // the page as it arrives, consent layer included
+    await step('promo', async () => {
+      // The first-order code dialog arrives on its own, inside a closed shadow
+      // root. Record the page as it arrives, never fill the dialog.
+      await S.raw('promo');
+    });
     await S.view('default');
-    await step('megamenu', async () => { if (await openMega(p)) await S.view('megamenu'); await p.mouse.move(20, 400); await wait(p, 600); });
+    await step('megamenu', async () => { if (await openMega(p, 0)) await S.view('megamenu'); await p.mouse.move(700, 8); await wait(p, 500); });
+    await step('marque-menu', async () => { if (await openMega(p, 1)) await S.view('marque-menu'); await p.mouse.move(700, 8); await wait(p, 400); });
+    await step('search', async () => {
+      await dropPromoFrames(p);
+      await closePromo(p);
+      if (!(await openSearch(p))) return;
+      await dropPromoFrames(p);
+      await wait(p, 500);
+      await S.view('search');
+      await p.keyboard.press('Escape').catch(() => {});
+    });
     await S.full();
   } },
   shop: { path: '/collections/tous-les-produits', wait: 8000, run: async (p, S) => {
     await S.view('default');
+    await step('filter', async () => {
+      const facet = p.locator('.facets__disclosure summary, #FacetsWrapperDesktop summary').filter({ hasText: /COULEUR/i }).first();
+      if (await facet.count()) { await facet.click({ force: true }); await wait(p, 600); await S.view('filter'); }
+    });
     await S.full();
   } },
-  pdp: { path: '/collections/tous-les-produits', wait: 8000, run: async (p, S) => {
-    // The PDP URL is discovered at run time: first product on the shop grid.
-    const href = await p.evaluate(() => {
-      const a = [...document.querySelectorAll('a[href*="/products/"]')].find((x) => x.offsetParent && (x.innerText || '').trim().length > 3);
-      return a ? a.getAttribute('href') : null;
-    });
+  pdp: { path: '/products/doudoune-symphony', wait: 8000, run: async (p, S) => {
+    // A named public product so size, colour and the size-guide dialog are
+    // the same controls the site tree records. The grid's first card can be
+    // a different product on another day.
+    const href = await p.evaluate(() => location.pathname.startsWith('/products/') ? location.pathname : null);
     if (!href) { log('  no product link found'); return; }
     await p.goto(/^https?:/.test(href) ? href : BASE + href, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     await clearChallenge(p); await wait(p, 8000);
     await S.view('default');
     await step('variant-picked', async () => {
-      const r = p.locator('fieldset input[type="radio"], variant-radios input[type="radio"]').filter({ visible: true }).nth(1);
-      if (await r.count()) { await r.check().catch(() => r.evaluate((el) => el.click())); await wait(p, 700); await S.view('variant-picked'); }
+      const r = p.locator('fieldset input[type="radio"][name="taille"], variant-radios input[type="radio"]').nth(1);
+      if (await r.count()) { await r.check({ force: true }).catch(() => r.evaluate((el) => el.click())); await wait(p, 700); await S.view('variant-picked'); }
+    });
+    await step('size-guide', async () => {
+      await dropPromoFrames(p);
+      const b = p.locator('button.product-popup-modal__button').filter({ hasText: /taille/i }).first();
+      if (await b.count()) {
+        await b.click({ force: true });
+        await dropPromoFrames(p);
+        await wait(p, 800);
+        await S.view('size-guide');
+        await p.keyboard.press('Escape').catch(() => {});
+      }
     });
     await S.full();
   } },
@@ -103,9 +193,15 @@ const desktop = {
   } },
   login: { path: '/account/login', wait: 8000, run: async (p, S) => {
     // The customer login form: email + password + CONNEXION. Never submitted.
+    // No field is typed. No SSO control is clicked.
     await S.view('default');
     await S.full();
   } },
+  contact: { path: '/pages/contact', wait: 6000, run: async (p, S) => {
+    // Public contact page. The form is not filled and not submitted.
+    await S.view('default');
+  } },
+  story: { path: '/pages/histoire', wait: 6000, run: async (p, S) => { await S.view('default'); } },
 };
 
 const mobile = {
@@ -115,8 +211,8 @@ const mobile = {
     // home view, and full() hides consent/popup layers only.
     await S.full();
     await step('menu', async () => {
-      const m = p.locator('header details summary, header-drawer summary, .header__icon--menu, [class*="drawer" i] summary').filter({ visible: true }).first();
-      if (await m.count()) { await clickEl(m); await wait(p, 1600); await S.view('menu'); }
+      const m = p.locator('summary[aria-label="Menu"]').first();
+      if (await m.count()) { await m.click({ force: true }).catch(() => clickEl(m)); await wait(p, 1200); await S.view('menu'); }
     });
   } },
   'shop': { path: '/collections/tous-les-produits', wait: 8000, run: async (p, S) => { await S.view('default'); await S.full(); } },
