@@ -1,0 +1,23 @@
+{
+  "captured": "2026-11-21",
+  "redirect": "https://savee.it/ redirects to https://savee.com/",
+  "desktop": {
+    "requested": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "tool": "Playwright headless Chromium"
+  },
+  "phone": {
+    "requested": {
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 2
+    },
+    "tool": "Playwright headless Chromium for home and features; T3 preview for the menu and the login wall"
+  },
+  "loginWall": "T3 preview tab, incognito. Email field empty. Continue disabled. Google and Apple not clicked. /join/ redirects to /login/.",
+  "loginExtracted": "not-started",
+  "signedIn": false
+}

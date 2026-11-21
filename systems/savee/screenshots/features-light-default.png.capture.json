@@ -1,0 +1,25 @@
+{
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "url": "https://savee.com/features/",
+    "title": "Features – Savee",
+    "theme": "theme-light transition-colors duration-slide ease-in-out",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "h1": "Built for your taste"
+  },
+  "capturedAt": "2026-11-21T15:21:11.251Z",
+  "fullPage": false
+}

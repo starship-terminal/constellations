@@ -35,10 +35,10 @@ colors:
 typography:
   hero:
     fontFamily: "saveeFont"
-    fontSize: "77.7385px"
+    fontSize: "95.76px"
     fontWeight: 500
-    lineHeight: "77.7385px"
-    letterSpacing: "-2.72085px"
+    lineHeight: "95.76px"
+    letterSpacing: "-3.3516px"
   section:
     fontFamily: "saveeFont"
     fontSize: "52.605px"
@@ -47,10 +47,10 @@ typography:
     letterSpacing: "-1.31512px"
   authTitle:
     fontFamily: "saveeFont"
-    fontSize: "35.07px"
+    fontSize: "40px"
     fontWeight: 500
-    lineHeight: "43.8375px"
-    letterSpacing: "-0.87675px"
+    lineHeight: "50px"
+    letterSpacing: "-1px"
   body:
     fontFamily: "saveeFont"
     fontSize: "16px"
@@ -116,9 +116,7 @@ Good for: A warm off-white design-reference library: saveeFont throughout, black
 
 Captured 2026-11-19, Public marketing and signed-out login. The email field was filled, then cleared, and not submitted. Google and Apple were not followed. No card was entered.. Themes: light, dark.
 
-SAVEE (savee.it, which redirects to savee.com) is a visual reference library for designers. This package records the public marketing site and the signed-out login, measured on 2026-11-19 from a live T3 preview tab. The login field was filled with an email, then cleared. It was not submitted. Google and Apple were not followed. No card was entered.
-
-The live CSS viewport was 1169 by 731 at devicePixelRatio 2. Home, features, pricing and login ship `html` class `theme-light`. FAQ, contact and team ship `theme-dark`.
+Savee (savee.it, which redirects to savee.com) is a visual reference library for designers. This package records the public marketing site, public browse pages, and the empty login wall, refreshed on 2026-11-21. Desktop marketing frames are CSS 1440 by 900. Phone frames are CSS 390 by 844. The email field was left empty. `login-extracted` stays not-started.
 
 ## Colors
 
@@ -167,7 +165,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. Home shell `#f3f3f3` is a Tailwind arbitrary value, not a custom property. The nav scrim is `oklab` white at 80 percent plus a 24px blur, so a flat hex would be wrong. Pill radius computed as `16777200px`. `--nav-height` is 100px and the rendered bar is 64px. Dark social-button ring was not remeasured. `saveeFontItalic` was unloaded. Screenshot folders are empty on purpose.
+Home shell `#f3f3f3` is a Tailwind arbitrary value, not a custom property. Pill radius computed as `16777200px`. `--nav-height` is 100px and the rendered bar is 64px. The login wall PNG is 2880 by 1800 because the preview window devicePixelRatio is 2. The CSS viewport for that shot was 1440 by 900. Gray scale steps still cite the 2026-11-19 pass.
 
 ### Do and don't (from README.md)
 
@@ -175,4 +173,4 @@ The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as 
 - **Use black pills for the primary action in light, and white pills in dark.** "Join for free" is `#0a0a0a` with `#fdfdfd` text on marketing, and the reverse on FAQ. [components.md](components.md) lists the sizes.
 - **Keep login as an email field.** https://savee.com/login/ asks for an email or username and emails a link. Do not invent a password field or a signed-in library behind it. [components.md](components.md) records the gap.
 - **Use saveeFont for every role.** Headlines, nav, buttons and fields share one family. [tokens.json](tokens.json) keeps that stack.
-- **Do not invent a 1440 screenshot.** The preview browser produced no frames. [screenshots/](screenshots/) says so.
+- **Stop at the empty login wall.** Google, Apple, Continue and the signed-in library were not entered.

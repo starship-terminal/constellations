@@ -1,0 +1,25 @@
+{
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "url": "https://savee.com/terms/",
+    "title": "Terms of Service – Savee",
+    "theme": "theme-dark transition-colors duration-slide ease-in-out",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "h1": "Terms of Service"
+  },
+  "capturedAt": "2026-11-21T15:22:02.379Z",
+  "fullPage": true
+}

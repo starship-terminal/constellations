@@ -1,0 +1,14 @@
+{
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2,
+    "source": "t3-preview"
+  },
+  "note": "Empty login wall photographed in the T3 preview tab at CSS 1440x900. Preview PNG is 2880x1800 because the window devicePixelRatio is 2. Email field empty. Continue disabled. Google and Apple not clicked.",
+  "capturedAt": "2026-11-21T15:23:00Z",
+  "url": "https://savee.com/login/",
+  "fieldsTyped": false
+}

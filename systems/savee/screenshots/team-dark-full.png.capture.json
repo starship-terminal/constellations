@@ -1,0 +1,25 @@
+{
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "url": "https://savee.com/team/create/",
+    "title": "Team – Savee",
+    "theme": "theme-dark transition-colors duration-slide ease-in-out",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "h1": "Brands love it"
+  },
+  "capturedAt": "2026-11-21T15:21:26.682Z",
+  "fullPage": true
+}

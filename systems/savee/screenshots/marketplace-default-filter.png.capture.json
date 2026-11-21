@@ -1,0 +1,25 @@
+{
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "url": "https://marketplace.savee.com/",
+    "title": "Savee Marketplace",
+    "theme": "js",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "h1": null
+  },
+  "capturedAt": "2026-11-21T15:22:16.093Z",
+  "fullPage": false
+}

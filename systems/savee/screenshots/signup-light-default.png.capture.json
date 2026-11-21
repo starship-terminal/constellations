@@ -1,0 +1,14 @@
+{
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2,
+    "source": "t3-preview-copy-of-login"
+  },
+  "note": "/join/ redirects to /login/. Same empty wall. No second form. Copied from the login photograph so the file name records the redirect. Not a second session.",
+  "capturedAt": "2026-11-21T15:23:00Z",
+  "url": "https://savee.com/login/",
+  "fieldsTyped": false
+}
