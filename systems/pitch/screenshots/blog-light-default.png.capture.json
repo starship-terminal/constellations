@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-11-21T14:49:32.428Z",
+  "screenshot": "blog-light-default.png",
+  "sanitizedSourceUrl": "https://pitch.com/blog",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "title": "Blog | Pitch"
+  },
+  "note": null
+}

@@ -1,20 +1,18 @@
 {
-  "capturedAt": "2026-11-18T17:32:00.918Z",
-  "source": "https://auth.pitch.com/login",
-  "requested": {
-    "width": 1440,
-    "height": 900,
-    "dpr": 1
-  },
-  "measured": {
+  "capturedAt": "2026-11-21T14:49:43.189Z",
+  "screenshot": "login-light-default.png",
+  "sanitizedSourceUrl": "https://auth.pitch.com/login#/",
+  "actual": {
     "innerWidth": 1440,
     "innerHeight": 900,
-    "dpr": 1,
-    "vv": {
-      "w": 1440,
-      "h": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
       "scale": 1
-    }
+    },
+    "title": "Login to Pitch"
   },
-  "note": "headless public login, nothing submitted. T3 preview could not produce frames."
+  "note": "empty login wall, nothing typed"
 }

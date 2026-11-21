@@ -1,6 +1,6 @@
 # Pitch
 
-Pitch is a collaborative presentation product. This package records the public marketing site at pitch.com and the signed-out login at auth.pitch.com, measured on 19 November 2026. No account was created. The home, product, pricing and templates pages were read signed out, at 1440 CSS pixels and at 390. The login form was read at rest and focused. Nothing was typed into it and nothing was submitted.
+Pitch is a collaborative presentation product. This package records the public marketing site at pitch.com and the signed-out wall at auth.pitch.com. The first capture was 19 November 2026. It was refreshed on 21 November 2026: nav menus, the signup wall, a public error page, and extra marketing pages. No account was created. Nothing was typed. Nothing was submitted. Google, Apple and SSO were not clicked. `login-extracted` stays `not-started`.
 
 The marketing site is a Framer page with hashed colour tokens. The templates gallery and the login page are Pitch's own app chrome, in Lato and Mark Pro, with a named custom-property layer (`--action`, `--grey0` through `--grey9`, `--size-*`).
 
@@ -15,7 +15,8 @@ The marketing site is a Framer page with hashed colour tokens. The templates gal
 | [patterns.md](patterns.md) | How the marketing page and the login card are put together |
 | [components/](components/) | Crops of the nav buttons, the plan cards, the login card, the email field |
 | [icons/](icons/) | The login wordmark SVG and an index |
-| [screenshots/](screenshots/) | Home, product, pricing, templates, login, and two phone shots |
+| [screenshots/](screenshots/) | Home, product, pricing, templates, login, signup, nav menus, and phone shots |
+| [site-tree.md](site-tree.md) | Which public control opens which page, menu, or wall |
 | [raw/](raw/) | The stylesheet token dump and the computed-style readings |
 | [tools/](tools/) | test_tokens.py and the generic capture helpers copied from the kit. This capture was measured live and tokens.json written by hand; the unadapted kit builders and route folders were removed in the 2026-11 audit. |
 
@@ -76,13 +77,13 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-The T3 preview tab opened https://pitch.com/ and then https://app.pitch.com/, which redirected to auth.pitch.com. Computed styles, custom properties and font faces were read from that live page. The preview tab could not produce screenshot frames (`The browser is not producing screenshot frames`), so the screenshots and the 1440 and 390 readings were taken in headless Playwright against pages that had already loaded with no Cloudflare challenge. `app.pitch.com/login` is an S3 Access Denied page and was not used. The password form at `#/sign-in/email` was opened and measured, and not submitted.
+The 19 November pass read computed styles in the T3 preview tab. That tab could not produce screenshot frames, so the first PNGs were headless Playwright. The 21 November refresh used the same split: the preview tab mapped the nav, and headless Playwright took the frames after the preview tab again reported that it was not producing screenshot frames. `app.pitch.com/?login=true` and the Sign up control both land on auth.pitch.com. The address bar there carries an OAuth `state` query. Those URLs were not stored. Sidecars say `https://auth.pitch.com/login#/`. A direct open of auth.pitch.com/login with no client parameter is the public error page, not the wall. The password step was not opened on this refresh. Nothing was typed.
 
 Marketing colours come from the Framer `--token-*` declarations. Login colours come from the auth page's custom properties, checked against the computed style of the field and the buttons. Hover on Log in and Sign up was a real pointer hover in Playwright. Focus on the email field and the templates search field was a real focus.
 
 ## What to distrust
 
-The six login colours `core.color.login-ink-deep`, `login-muted`, `login-border`, `login-error`, `login-success` and `login-warning` were read from auth.pitch.com custom properties that raw/ does not hold. They are labelled Reconstruction, entered by hand at capture time.
+The six login colours `core.color.login-ink-deep`, `login-muted`, `login-border`, `login-error`, `login-success` and `login-warning` were labelled Reconstruction on 19 November because raw/ did not hold them. The 21 November reading in [raw/auth-vars-2026-11-21.json](raw/auth-vars-2026-11-21.json) confirms the same custom properties (`--grey8`, `--grey4`, `--border`, `--error`, `--success`, `--warning`). The token sources still say Reconstruction so the older label stays honest about when the value was first entered.
 
 The home hero is a collage and a gradient, not a flat fill. The violet and violet-deep tokens are the colours the type and the buttons use. They are not a single sampled pixel of the hero.
 
@@ -113,25 +114,26 @@ Mark Pro Bold and Mark Pro Regular, and Eina 03 Bold and Eina 03 Regular, are lo
 | Button | Captured. Log in, Sign up, Generate, Continue with email (disabled), Google, Apple, SSO. |
 | Button hover | Captured for Log in and Sign up only. |
 | Button focus | The home Log in focus ring is the browser default (`outline: rgb(0, 95, 204) auto 1px`). The login field focus is the violet ring. |
-| Button pressed, disabled, loading | Continue with email is disabled until a captcha and an address are present. Pressed and loading were not shown. |
+| Button pressed, disabled, loading | On 19 November Continue with email was disabled until a captcha and an address were present. On 21 November the empty signup wall painted it at full colour with the checkbox still empty. Pressed and loading were not shown. |
 | Link | Captured. Nav and footer links, and the violet text links on the login card. |
 | Text field | Captured at rest and focused. [components/crops/field-email-rest.png](components/crops/field-email-rest.png) |
 | Text area, select, checkbox, radio, switch | Not present on the public pages. |
 | Tabs | The pricing yearly/monthly control is a segmented pill, not a tab widget. |
-| Menu | Not opened. The nav dropdowns were not expanded. |
-| Tooltip, dialog, toast | Not present on the pages that were open. |
+| Menu | Captured. Product, Use Cases, Templates and Resources hover menus, and the phone menu. [screenshots/nav-product-menu.png](screenshots/nav-product-menu.png) [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) |
+| Tooltip | Captured. Pricing "Member limit" info tooltip. [screenshots/pricing-light-tooltip.png](screenshots/pricing-light-tooltip.png) |
+| Dialog, toast | Not present on the pages that were open. The more-features control is a popover, not a dialog. |
 | Card | Captured. Login card and the four plan cards. |
 | List row, table, avatar | Not present on the public pages. |
 | Badge | The 17% saving pill and the New badge on a template card. The New badge's computed background was transparent, so its fill is a gap. |
 | App shell | The product app is behind login. The marketing nav is the shell that was captured. |
 | Form error | Not shown. The empty submit stays disabled. Nothing was submitted, so no server error was produced. |
-| Empty, loading, error pages | Not captured. |
+| Empty, loading, error pages | The public error page is captured. [screenshots/error-light-default.png](screenshots/error-light-default.png) Loading and empty product states sit behind login. |
 | Destructive confirmation | Not present. |
 | Search | The templates search field and Search button were measured. A query was not submitted. |
 | Desktop 1440 | Captured. innerWidth 1440, innerHeight 900, devicePixelRatio 2 on the marketing shots. The login shot is 1440 by 900 at devicePixelRatio 1. |
 | Phone 390 | Captured for home and pricing. innerWidth 390, innerHeight 844, devicePixelRatio 2. |
 | Signed-in product | Not captured. The rule for this capture is public marketing plus signed-out login. |
-| Signup, Google, Apple, SSO | Not entered. SSO is company login. Google and Apple leave the site. |
+| Signup wall | Captured empty. [screenshots/signup-light-default.png](screenshots/signup-light-default.png) Google, Apple and SSO were not clicked. The captcha was not solved. |
 
 ## Do and don't
 
@@ -154,4 +156,11 @@ The tokens were written from the readings in [raw/](raw/), not from a builder. `
 | Pricing | https://pitch.com/pricing | Plan cards, seat picker, billing toggle |
 | Templates | https://pitch.com/templates | Search field, chips, Search button |
 | Login | https://auth.pitch.com/login | Email field, Continue, Google, Apple, SSO. Not submitted. |
-| Password form | https://auth.pitch.com/login#/sign-in/email | Email and password fields at rest. Not submitted. |
+| Password form | https://auth.pitch.com/login#/sign-in/email | Measured on 19 November and not submitted. Not reopened on 21 November. |
+| Signup wall | Sign up in the nav | Same card as login, empty, with the captcha checkbox unclicked. |
+| What's new | https://pitch.com/whats-new | Public product roundup. |
+| Customer stories | https://pitch.com/customer-stories | Public index. |
+| Blog | https://pitch.com/blog | Public index. |
+| Integrations | https://pitch.com/integrations | Public index. |
+| Download | https://pitch.com/download | Public download page. No installer was started. |
+| Error | https://pitch.com/error.html | Public error state. |

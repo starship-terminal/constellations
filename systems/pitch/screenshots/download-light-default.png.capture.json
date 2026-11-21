@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-11-21T14:49:35.678Z",
+  "screenshot": "download-light-default.png",
+  "sanitizedSourceUrl": "https://pitch.com/download",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "title": "Download desktop and mobile apps | Pitch"
+  },
+  "note": null
+}
