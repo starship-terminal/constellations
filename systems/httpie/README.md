@@ -15,10 +15,12 @@ httpie.io is worth a capture because it pairs a compact hand-written token layer
 | [patterns.md](patterns.md) | How the components combine: the marketing frame and `site-grid`, the docs shell's inner scroll panes, the /app rail-and-tabs shell, mobile, motion and focus, and the theme architecture. |
 | [components/crops/](components/crops) | Element crops at 2x, named `{component}-{state}.png`. |
 | [icons/](icons) | The 42 inline SVG icons collected from the live pages (including the /app icon rail and the ⌘K dialog), with `INDEX.tsv` naming each by role. |
-| [screenshots/](screenshots) | 61 quantised `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale bounded at eight chunks — the docs manuals scroll inside a ~76–96k px inner pane, so their full shots expand that pane and bound at three chunks (the truncation is in each sidecar); `mobile-*` at 390 x 844 @2x; `*-light-*` the repainted light surface; `app-dark-*` the incognito client: method menu, request tabs, environments, space panel, AI promo. |
+| [screenshots/](screenshots) | Quantised `{page}-{theme}-{state}.png` captures. The 2026-11-17 set is 61 files: desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale bounded at eight chunks — the docs manuals scroll inside a ~76–96k px inner pane, so their full shots expand that pane and bound at three chunks (the truncation is in each sidecar); `mobile-*` at 390 x 844 @2x; `*-light-*` the repainted light surface; `app-dark-*` the incognito client: method menu, request tabs, environments, space panel, AI promo. A 2026-11-21 public pass added 60 more (light and 390 widths the first set skipped, `/cli/run`, the open mobile menu, the import dialog, the Auth tab). |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — 806 rules, 16 @font-face, 40 light + 40 dark resolved custom properties, 152 palette literals), `layout.json` (multi-width geometry over 28 page/viewport pairs), `motion.json` (the animation probe), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
-| [capture.pr](capture.pr) | The pull request that shipped this capture. |
+| [capture.pr](capture.pr) | The pull request that shipped the 2026-11-17 capture. |
+| [site-tree.md](site-tree.md) | The public control map from 2026-11-21: which home control opens which page, and where the crawl stopped. |
+| [login-review.json](login-review.json) | The 2026-11-21 sign-in probe. No signed-in surface exists on the public site. |
 
 ## How the values were read
 
@@ -53,8 +55,8 @@ httpie.io is worth a capture because it pairs a compact hand-written token layer
 
 ## Coverage
 
-- **Captured**: home, /desktop, /cli, /ai, /docs, /docs/desktop, /docs/cli, /jobs, /blog, /blog/changelog-0027, /download, /about, /terms, /privacy, the /pricing 404, and /app (the incognito client with its overlays) at 1440x900 dark; light repaints on ten pages; 390x844 passes on home, cli, blog, docs-desktop, /app; component states (hover/focus/pressed/opened/light) per components.md.
-- **Not captured**: sign-in/account surfaces, named spaces, HTTPie AI generation, the response surface after a real send, native desktop/CLI binaries, external links (Discord, Twitter, GitHub), DocSearch query results (the dialog was never queried), the toast/mail flows that follow a newsletter submit.
+- **Captured**: home, /desktop, /cli, /ai, /docs, /docs/desktop, /docs/cli, /jobs, /blog, /blog/changelog-0027, /download, /about, /terms, /privacy, the /pricing 404, and /app (the incognito client with its overlays) at 1440x900 dark; light repaints on ten pages; 390x844 passes on home, cli, blog, docs-desktop, /app; component states (hover/focus/pressed/opened/light) per components.md. A 2026-11-21 public pass added [site-tree.md](site-tree.md) and [login-review.json](login-review.json), plus screenshots for the pages and widths that pass still lacked: light about, docs, docs/cli, privacy and terms; `/cli/run` in both themes; the open mobile menu; the import dialog; the Auth tab; and 390px passes across the public routes. The control map is in [site-tree.md](site-tree.md).
+- **Not captured**: sign-in/account surfaces (there is no public account form; `/login`, `/signin`, `/sign-in` and `/account` are the site 404), named spaces, HTTPie AI generation, the response surface after a real send, native desktop/CLI binaries, external links (Discord, Twitter, GitHub), DocSearch query results (the dialog was never queried), the toast/mail flows that follow a newsletter submit, docs leaves and older changelog posts, Ashby apply forms. The mobile sidebar Collapse control and a focused Send button were tried on 2026-11-21 and the shots did not show those states, so they are not in the package.
 
 ## Do and don't
 
