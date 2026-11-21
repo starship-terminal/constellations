@@ -1575,9 +1575,9 @@
       "description": "The new standard in website design",
       "status": "captured",
       "package": "systems/editorx",
-      "notes": "https://www.editorx.com/login redirects to Wix Studio. https://users.wix.com/signin said the email has no account, then signup asked for a password. The form was not submitted. No code was sent.",
+      "notes": "https://www.editorx.com/login redirects to Wix Studio. https://users.wix.com/signin said the email has no account, then signup asked for a password. The form was not submitted. No code was sent. Public walk 2026-11-21: the map starts at editorx.com, which redirects to wix.com/studio, and records which header, footer, and in-page control opens which page, menu, or login wall. Studio marketing pages and opened menus were photographed at desktop and phone. Pricing on editorx.com painted a load error. Login stops at users.wix.com/signin. Start Creating stops at the signup wall. Nothing was typed. Google, Facebook, and Apple were not clicked. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1655 at 2101d8590e58. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
