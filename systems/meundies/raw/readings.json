@@ -1,0 +1,163 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.meundies.com/",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "devicePixelRatio": 2
+  },
+  "ink": "rgb(30, 30, 29)",
+  "page": "rgb(255, 251, 241)",
+  "promoBar": {
+    "backgroundColor": "rgb(217, 255, 110)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "14px",
+    "fontWeight": "300",
+    "height": "44px",
+    "fontFamily": "headingNow"
+  },
+  "logoRow": {
+    "backgroundColor": "rgb(255, 251, 241)",
+    "height": "66px"
+  },
+  "navRow": {
+    "backgroundColor": "rgb(242, 239, 233)",
+    "height": "40px"
+  },
+  "nav": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "fontWeight": "300",
+    "height": "24px"
+  },
+  "main": {
+    "backgroundColor": "rgb(255, 251, 241)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "fontWeight": "300"
+  },
+  "footer": {
+    "backgroundColor": "rgb(228, 216, 193)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "height": "380px"
+  },
+  "wordmark": {
+    "fill": "rgb(0, 0, 0)",
+    "width": "180px",
+    "height": "34px",
+    "viewBox": "0 0 225 43"
+  },
+  "badge": {
+    "backgroundColor": "rgb(217, 255, 110)",
+    "color": "rgb(30, 30, 29)",
+    "fontSize": "14px",
+    "fontWeight": "300",
+    "height": "28px",
+    "borderRadius": "4px"
+  },
+  "loginButton": {
+    "backgroundColor": "rgb(30, 30, 29)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "height": "44px",
+    "width": "368px",
+    "borderRadius": "9999px",
+    "clicked": false
+  },
+  "google": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(30, 30, 29)",
+    "height": "48px",
+    "width": "176px",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "border": "1px solid rgb(30, 30, 29)",
+    "borderRadius": "9999px",
+    "clicked": false
+  },
+  "facebook": {
+    "clicked": false,
+    "height": "48px",
+    "width": "176px"
+  },
+  "loginEmail": {
+    "value": "",
+    "placeholder": "Email",
+    "height": "42px",
+    "width": "368px",
+    "border": "1px solid rgb(0, 0, 0)",
+    "borderRadius": "9999px",
+    "fontSize": "16px"
+  },
+  "loginPassword": {
+    "valueLength": 0,
+    "height": "42px",
+    "width": "368px",
+    "borderRadius": "9999px"
+  },
+  "loginTitle": {
+    "fontSize": "40px",
+    "fontWeight": "700",
+    "color": "rgb(0, 0, 0)",
+    "height": "44px"
+  },
+  "loginPanel": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "8px",
+    "width": "512px"
+  },
+  "cookieSettings": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(30, 30, 29)",
+    "border": "1px solid rgb(30, 30, 29)",
+    "height": "43px",
+    "borderRadius": "22.5px",
+    "fontSize": "12px",
+    "clicked": false
+  },
+  "signup": {
+    "placeholder": "Enter email to get updates",
+    "value": "",
+    "height": "42px",
+    "width": "200px",
+    "fontSize": "12px",
+    "submitted": false
+  },
+  "salePrice": {
+    "color": "rgb(210, 63, 90)",
+    "fontSize": "18px"
+  },
+  "membershipKicker": {
+    "color": "rgb(156, 109, 38)",
+    "fontSize": "16px",
+    "fontWeight": "300"
+  },
+  "selectASize": {
+    "clicked": false,
+    "backgroundColor": "rgb(30, 30, 29)",
+    "color": "rgb(255, 255, 255)",
+    "height": "44px",
+    "fontSize": "14px",
+    "fontWeight": "500"
+  },
+  "sizeChip": {
+    "backgroundColor": "rgb(242, 239, 233)",
+    "height": "38px",
+    "width": "61px",
+    "borderRadius": "4px",
+    "fontSize": "14px",
+    "fontWeight": "300"
+  },
+  "login": {
+    "emailEmpty": true,
+    "passwordEmpty": true,
+    "submitted": false,
+    "googleClicked": false,
+    "facebookClicked": false,
+    "url": "https://www.meundies.com/"
+  },
+  "cartOpened": false,
+  "getStartedClicked": false
+}
