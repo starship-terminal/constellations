@@ -1,0 +1,118 @@
+{
+  "captured": "2026-11-22",
+  "page": "https://www.google.com/?hl=en",
+  "viewport": "1440x900",
+  "deviceScaleFactor": 1,
+  "colorScheme": "normal",
+  "note": "Named custom properties read from :root on the signed-out homepage. Obfuscated names are Google's. Computed styles were read on the same page.",
+  "declared": {
+    "--xhUGwc": "#fff",
+    "--YLNNHc": "#16171a",
+    "--TMYS9": "#0b57d0",
+    "--TyVYld": "#0b57d0",
+    "--JKqx2": "#1a0dab",
+    "--XKMDxc": "#f3f5f6",
+    "--ywz01c": "#fbbc04",
+    "--IXoxUe": "#656773",
+    "--bbQxAb": "#4e5059",
+    "--BRLwE": "#d3e3fd",
+    "--gS5jXb": "#d2d2d2",
+    "--EpFNW": "#fff",
+    "--Xqboce": "#1f1f1f",
+    "--VuZXBd": "#001d35",
+    "--DEeStf": "#f5f8ff",
+    "--MV2sG": "#f1f3f4",
+    "--PBxOKe": "#22242a",
+    "--COEmY": "#1f1f1f"
+  },
+  "computed": {
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(22, 23, 26)",
+      "fontFamily": "Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    "navLink": {
+      "color": "rgb(22, 23, 26)",
+      "fontFamily": "Arial, sans-serif",
+      "fontSize": "14px",
+      "padding": "5px"
+    },
+    "signIn": {
+      "backgroundColor": "rgb(11, 87, 208)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Google Sans Text\", Roboto, Helvetica, Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "18px",
+      "borderRadius": "100px",
+      "padding": "10px 12px",
+      "height": "40px"
+    },
+    "searchField": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(218, 220, 224)",
+      "borderRadius": "26px",
+      "boxShadow": "rgba(31, 31, 31, 0.08) 0px 3px 10px 0px",
+      "height": "52px",
+      "width": "584px",
+      "inputFontSize": "16px",
+      "inputLineHeight": "22px",
+      "inputColor": "rgb(22, 23, 26)"
+    },
+    "searchFieldFocused": {
+      "borderRadius": "26px 26px 0px 0px",
+      "boxShadow": "rgba(64, 60, 67, 0.24) 0px 2px 8px 1px",
+      "backgroundColor": "rgb(255, 255, 255)"
+    },
+    "searchButton": {
+      "backgroundColor": "rgb(248, 249, 250)",
+      "color": "rgb(32, 33, 36)",
+      "border": "1px solid rgb(218, 220, 224)",
+      "borderRadius": "8px",
+      "fontFamily": "Arial, sans-serif",
+      "fontSize": "14px",
+      "padding": "0px 16px",
+      "height": "36px",
+      "boxShadow": "rgba(0, 0, 0, 0.1) 0px 1px 1px 0px",
+      "note": "Read while the visible Google Search button was hovered. Resting face is the same #f8f9fa fill."
+    },
+    "promoLink": {
+      "color": "rgb(26, 13, 171)",
+      "fontSize": "13px",
+      "fontFamily": "Arial, sans-serif",
+      "textDecoration": "none"
+    },
+    "footerBand": {
+      "sampled": "rgb(236, 236, 237)",
+      "note": "Flat pixel on the country row of the full-colour homepage PNG, before quantize."
+    }
+  },
+  "loginWall": {
+    "page": "https://accounts.google.com/ServiceLogin?hl=en",
+    "title": "Sign in - Google Accounts",
+    "bodyBackground": "rgb(255, 255, 255)",
+    "heading": {
+      "text": "Sign in",
+      "color": "rgb(32, 33, 36)",
+      "fontFamily": "arial, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": "400"
+    },
+    "next": {
+      "backgroundColor": "rgb(26, 115, 232)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "borderRadius": "4px",
+      "height": "36px",
+      "padding": "0px 24px"
+    },
+    "identifier": {
+      "name": "identifier",
+      "height": "56px",
+      "fontSize": "16px",
+      "empty": true
+    }
+  }
+}

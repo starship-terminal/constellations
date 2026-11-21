@@ -1,0 +1,21 @@
+{
+  "slug": "google",
+  "product": "Google",
+  "domain": "www.google.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-wall",
+  "session": "Headless Chromium opened the public sign-in and create-account URLs. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed. Next was not clicked.",
+  "wall": {
+    "url": "https://accounts.google.com/ServiceLogin?hl=en",
+    "title": "Sign in - Google Accounts",
+    "asks": ["Sign in", "Use your Google Account", "Email or phone", "Forgot email?", "Create account", "Next"],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": ["identifier"],
+    "note": "The email field was empty. A hidden password input exists in the DOM and was not shown as a filled field. The create-account URL opened an empty name step (first name, last name optional) and a captcha response field. Nothing was typed. Next was not clicked."
+  },
+  "stopped": "Login and signup were photographed empty. The branch stopped. The signed-in account was not opened."
+}

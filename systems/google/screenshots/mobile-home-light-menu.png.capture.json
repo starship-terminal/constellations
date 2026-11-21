@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-11-22",
+  "sanitizedSourceUrl": "https://www.google.com/",
+  "viewport": "390x844",
+  "deviceScaleFactor": 2,
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Quantised to 256 colours. Read colours from tokens.json."
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Google public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #16171a;
+    --blue: #0b57d0;
+    --link: #1a0dab;
+    --field-border: #dadce0;
+    --button: #f8f9fa;
+    --footer: #ececed;
+    --on-accent: #ffffff;
+    --accounts: #1a73e8;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 14px Arial, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-weight: 400; font-size: 24px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 120px; }
+  .chip { height: 48px; border-radius: 8px; border: 1px solid var(--field-border); }
+  .label { font-size: 12px; margin-top: 6px; }
+  .field {
+    margin-top: 28px; height: 52px; border: 1px solid var(--field-border); border-radius: 26px;
+    box-shadow: rgba(31, 31, 31, 0.08) 0px 3px 10px 0px; display: flex; align-items: center; padding: 0 20px; color: #9aa0a6;
+  }
+  .actions { display: flex; gap: 12px; margin-top: 18px; }
+  button, .pill {
+    font: 14px Arial, sans-serif; height: 36px; padding: 0 16px; border-radius: 8px;
+    background: var(--button); color: #202124; border: 1px solid var(--field-border);
+  }
+  .pill {
+    height: 40px; border-radius: 100px; background: var(--blue); color: var(--on-accent);
+    border: 0; font-family: "Google Sans Text", Roboto, Helvetica, Arial, sans-serif; font-weight: 500; padding: 0 12px;
+  }
+  a { color: var(--link); }
+  footer { margin-top: 40px; background: var(--footer); padding: 16px 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Google public surface</h1>
+  <p>Rendered from measured tokens. One light theme. Screenshots are 256-colour and are not a colour source.</p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#16171a"></div><div class="label">ink #16171a</div></div>
+    <div class="swatch"><div class="chip" style="background:#0b57d0"></div><div class="label">sign in #0b57d0</div></div>
+    <div class="swatch"><div class="chip" style="background:#1a73e8"></div><div class="label">accounts #1a73e8</div></div>
+    <div class="swatch"><div class="chip" style="background:#1a0dab"></div><div class="label">link #1a0dab</div></div>
+    <div class="swatch"><div class="chip" style="background:#f8f9fa"></div><div class="label">button #f8f9fa</div></div>
+    <div class="swatch"><div class="chip" style="background:#ececed"></div><div class="label">footer #ececed</div></div>
+  </div>
+  <div class="field">Search</div>
+  <div class="actions">
+    <button>Google Search</button>
+    <button>I'm Feeling Lucky</button>
+    <span class="pill">Sign in</span>
+  </div>
+  <p><a href="#">How Search works</a></p>
+</main>
+<footer>Singapore</footer>
+</body>
+</html>
