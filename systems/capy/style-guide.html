@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<title>Capy public style guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #000000;
+    --header: #000000;
+    --on-header: #ffffff;
+    --accent: #7699fb;
+    --link: #2a44af;
+    --muted: #6d6d6d;
+    --offset: #888888;
+    --auth: #121214;
+    --auth-accent: #4d6fe8;
+    --font-display: "Arial Narrow", Impact, sans-serif;
+    --font-body: ui-monospace, Menlo, Consolas, monospace;
+    --font-auth: Inter, ui-sans-serif, system-ui, sans-serif;
+  }
+  [data-mode="dark"] { --page: #121214; --ink: #efefef; }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.45 var(--font-body); }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--header); color: var(--on-header); }
+  header h1 { margin: 0; font: 400 28px/1 var(--font-display); letter-spacing: 0.04em; }
+  button { font: inherit; }
+  main { padding: 32px 24px 64px; max-width: 960px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border: 1px solid #000; }
+  .row { display: flex; gap: 12px; align-items: center; margin: 16px 0; }
+  .primary, .secondary, .header-btn { border-radius: 8px; padding: 8px 12px 9px; font: 16px/24px var(--font-body); }
+  .primary { background: #000; color: #fff; border: 1px solid #000; box-shadow: -2px 2px 0 #888; }
+  .secondary { background: #fff; color: #000; border: 1px solid #000; box-shadow: -2px 2px 0 #000; }
+  .header-btn { background: #fff; color: #000; border: 1px solid #fff; box-shadow: -2px 2px 0 #888; }
+  .auth { margin-top: 32px; background: var(--auth); color: #efefef; padding: 24px; border-radius: 12px; max-width: 336px; font-family: var(--font-auth); }
+  .auth h2 { font: 500 22px/1.2 var(--font-auth); }
+  .auth .field, .auth .go, .auth .ghost { display: block; width: 100%; box-sizing: border-box; height: 32px; border-radius: 6px; margin: 8px 0; font: 500 13px/32px var(--font-auth); }
+  .auth .field { background: #1c1c1e; border: 0.5px solid #ffffff1f; color: #888; padding: 0 10px; }
+  .auth .go { background: var(--auth-accent); color: #fff; border: 0; }
+  .auth .ghost { background: #1a1a1b; color: #efefef; border: 0.5px solid #ffffff1f; }
+  p.note { color: var(--muted); max-width: 62ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>CAPY</h1>
+  <button type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Theme</button>
+</header>
+<main>
+  <p class="note">Drawn from tokens.json. The marketing site is light with a black header. The auth walls follow the browser colour scheme. Screenshots are the evidence.</p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#fff"></div>page #ffffff</div>
+    <div class="swatch"><div class="chip" style="background:#000"></div>ink #000000</div>
+    <div class="swatch"><div class="chip" style="background:#7699fb"></div>primary token #7699fb</div>
+    <div class="swatch"><div class="chip" style="background:#2a44af"></div>link #2a44af</div>
+    <div class="swatch"><div class="chip" style="background:#ff4512"></div>orange #ff4512</div>
+    <div class="swatch"><div class="chip" style="background:#4d6fe8"></div>auth accent</div>
+  </div>
+  <h2 style="font: 400 64px/1 var(--font-display)">AGENT SWARMS</h2>
+  <div class="row">
+    <span class="primary">Download for macOS</span>
+    <span class="secondary">Continue in web</span>
+    <span class="header-btn">Download</span>
+  </div>
+  <div class="auth">
+    <h2>Sign in to Capy</h2>
+    <div class="ghost">Continue with Google</div>
+    <div class="field">Email</div>
+    <div class="go">Continue</div>
+  </div>
+</main>
+</body>
+</html>

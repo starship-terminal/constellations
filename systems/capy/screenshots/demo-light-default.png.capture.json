@@ -1,0 +1,61 @@
+{
+  "url": "https://capy.ai/demo",
+  "title": "Book a demo - Capy",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "values": [
+    {
+      "name": "cs_hp",
+      "value": "",
+      "placeholder": ""
+    },
+    {
+      "name": "workEmail",
+      "value": "",
+      "placeholder": "jane@acme.co"
+    },
+    {
+      "name": "name",
+      "value": "",
+      "placeholder": "Jane Doe"
+    },
+    {
+      "name": "companyName",
+      "value": "",
+      "placeholder": "Acme"
+    },
+    {
+      "name": "seatsRequested",
+      "value": "1-10",
+      "placeholder": ""
+    },
+    {
+      "name": "seatsRequested",
+      "value": "11-50",
+      "placeholder": ""
+    },
+    {
+      "name": "seatsRequested",
+      "value": "51-250",
+      "placeholder": ""
+    },
+    {
+      "name": "seatsRequested",
+      "value": "251+",
+      "placeholder": ""
+    },
+    {
+      "name": "note",
+      "value": "",
+      "placeholder": ""
+    }
+  ],
+  "file": "screenshots/demo-light-default.png",
+  "note": "Viewport was 1440 by 900. The PNG was scaled from a 2x frame to 1440 by 900 after placeholders were hidden so the empty fields do not look filled. Values were empty. Nothing was typed. The form was not submitted."
+}

@@ -1,0 +1,13 @@
+{
+  "url": "https://capy.ai/enterprise",
+  "title": "Enterprise AI coding agents: SSO, audit log, BYOK - Capy",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "file": "screenshots/enterprise-light-default.png"
+}
