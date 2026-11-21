@@ -15,7 +15,8 @@ ManyChat is worth a capture because a Next.js + Tailwind marketing site paints a
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 14 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x. Phone viewport shots are 780 x 1688 (2x). `home-light-menu` is the Product menu. `pricing-light-monthly` is the Monthly label selected. |
 | [raw/](raw) | Marketing readings ([css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [measurements.md](raw/measurements.md)) and the signed-in dashboard readings ([readings.json](raw/readings.json)) |
-| [login-review.json](login-review.json) | The 2026-11-21 signed-in walk: nav, settings and create that were offered, which were reached, the screens, the gaps, and what was not submitted |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22. Header, footer, photographed pages, and where the walk stopped. |
+| [login-review.json](login-review.json) | The 2026-11-21 signed-in walk, plus the 2026-11-22 empty login and signup walls. `loginExtracted` stays `not-started`. |
 | [tools/](tools) | The builders and the capture kit. [build_login.py](tools/build_login.py) checks the signed-in notes against the screenshot files |
 
 ## Brief
@@ -110,7 +111,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Tooltip, dialog, toast, table, avatar, badge | Not present | They do not paint on the captured marketing pages. The yellow plan-picker widget was left on the pricing shot and not treated as a product dialog. |
 | Themes | Captured | Light only. No dark switch. |
 | Widths | Captured | Desktop 1440. Phone pricing 390. Phone home innerWidth 392. |
-| Sign-in | Partly captured, 2026-11-21 | Signed-in profile at app.manychat.com, no channel connected. Accounts, My Templates, the profile card, the English menu and compliance monitoring. See [login-review.json](login-review.json). The bot builder was still not reached. API Settings was not opened. |
+| Sign-in | Partly captured | 2026-11-21 signed-in profile at app.manychat.com, no channel connected. 2026-11-22 empty login and signup walls, photographed and not submitted. See [login-review.json](login-review.json) and [site-tree.md](site-tree.md). The bot builder was still not reached. |
 | Checkout | Not submitted | Monthly and Annual were toggled locally. No purchase. |
 
 ## Rebuild

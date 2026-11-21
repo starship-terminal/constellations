@@ -43,6 +43,43 @@
     {"name": "Messaging Window Compliance Monitoring, desktop", "file": "screenshots/compliance-light-desktop.png"},
     {"name": "Accounts empty, phone 390x844", "file": "screenshots/accounts-light-phone.png"}
   ],
+  "publicWalk": {
+    "reviewedAt": "2026-11-22",
+    "method": "Incognito preview tab, signed out, 1440x900 CSS pixels, device pixel ratio 2",
+    "typed": false,
+    "submitted": false,
+    "identityProviderClicked": false,
+    "accountCreated": false,
+    "captchaSolved": false,
+    "loginExtracted": "not-started",
+    "siteTree": "site-tree.md",
+    "walls": [
+      {
+        "control": "header Log in",
+        "url": "https://app.manychat.com/signin",
+        "title": "Sign In",
+        "painted": true,
+        "headings": ["Welcome back", "Let's get you signed in"],
+        "asksFor": [{"label": "Email address", "name": "email", "type": "email", "valueLength": 0, "placeholder": "mrsmith@gmail.com"}],
+        "identityProvidersSeen": ["Google", "Facebook", "Telegram", "Apple"],
+        "stopped": true,
+        "screenshot": "screenshots/login-light-1440.png",
+        "note": "Empty login wall. Nothing was typed. Sign In was not clicked. Identity providers were not clicked."
+      },
+      {
+        "control": "header Get started",
+        "url": "https://app.manychat.com/signup",
+        "title": "Sign Up",
+        "painted": true,
+        "headings": ["Sign up for Manychat", "Here for the first time? Let's get you set up."],
+        "asksFor": [{"label": "Email address", "name": "email", "type": "email", "valueLength": 0, "placeholder": "mrsmith@gmail.com"}],
+        "identityProvidersSeen": ["Google"],
+        "stopped": true,
+        "screenshot": "screenshots/signup-light-1440.png",
+        "note": "Empty signup wall. Get started opens /signup/facebookAuth?channel=instagram and lands on /signup. Nothing was typed. Sign Up and Google were not clicked."
+      }
+    ]
+  },
   "gaps": [
     "No channel is connected, so the bot builder, inbox, broadcasts and page settings were not reachable.",
     "API Settings was not opened. It can show a key.",

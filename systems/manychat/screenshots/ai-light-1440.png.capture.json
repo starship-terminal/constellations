@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "ai",
+  "url": "https://manychat.com/product/ai",
+  "title": "Manychat AI",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "First viewport. The hero is a dark marketing surface inside the light site. The phone mock shows a public demo name, Mark Av, not a signed-in account. Get started was not clicked."
+}

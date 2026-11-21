@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "login",
+  "url": "https://app.manychat.com/signin",
+  "title": "Sign In",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "Empty login wall. The email field shows the site placeholder mrsmith@gmail.com. Nothing was typed. Sign In was not clicked. Google, Facebook, Telegram and Apple were not clicked. Get started free was not clicked."
+}
