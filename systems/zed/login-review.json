@@ -1,0 +1,29 @@
+{
+  "login-extracted": "not-started",
+  "captured": "2026-11-22",
+  "product": "Zed",
+  "url": "https://zed.dev/sign_in",
+  "signupUrl": "https://zed.dev/sign_up",
+  "wall": "Sign in leaves zed.dev and opens GitHub's login, empty, labelled 'Sign in to GitHub to continue to Zed Industries'. Sign up stays on zed.dev: 'Welcome to Zed', two unchecked boxes, a Cloudflare human check, and Sign Up with GitHub.",
+  "empty": true,
+  "typed": false,
+  "submitted": false,
+  "identityProvidersClicked": [],
+  "captchaSolved": false,
+  "controls": [
+    "GitHub username or email (empty, not typed)",
+    "GitHub password (empty, not typed)",
+    "Continue with Google (not clicked)",
+    "Continue with Apple (not clicked)",
+    "Sign in (not clicked)",
+    "Terms checkbox (unchecked, not clicked)",
+    "Release notes checkbox (unchecked, not clicked)",
+    "Verify you are human (not clicked)",
+    "Sign Up with GitHub (not clicked)"
+  ],
+  "stopped": "Photographed both walls empty. Did not type. Did not click Google, Apple, or GitHub. Did not check a box. Did not solve the captcha. Did not submit.",
+  "shots": [
+    "screenshots/sign-in-1440.png",
+    "screenshots/sign-up-1440.png"
+  ]
+}

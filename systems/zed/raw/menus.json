@@ -1,0 +1,290 @@
+{
+  "product": [
+    {
+      "text": "Extensions",
+      "href": "/extensions"
+    },
+    {
+      "text": "Docs",
+      "href": "/docs"
+    },
+    {
+      "text": "Pricing",
+      "href": "/pricing"
+    },
+    {
+      "text": "Sign up S",
+      "href": "/sign_up"
+    },
+    {
+      "text": "Download D",
+      "href": "/download"
+    },
+    {
+      "text": "View Roadmap",
+      "href": "/roadmap"
+    },
+    {
+      "text": "View Releases",
+      "href": "/releases/stable"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/parallel-agents"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/debugger"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/ai"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/git"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/edit-prediction"
+    },
+    {
+      "text": "Learn about AI in Zed",
+      "href": "/ai"
+    },
+    {
+      "text": "View All Extensions",
+      "href": "/extensions"
+    },
+    {
+      "text": "HTML 7.9M HTML support. Isaac Clayton",
+      "href": "/extensions/html"
+    },
+    {
+      "text": "Git Firefly 1.8M Provides Git Syntax Highlighting d1y, Peter Tripp",
+      "href": "/extensions/git-firefly"
+    },
+    {
+      "text": "TOML 1.6M TOML support. Max Brunsfeld, Ammar Arif",
+      "href": "/extensions/toml"
+    },
+    {
+      "text": "Java 1.5M Java support. Java Extension Contributors",
+      "href": "/extensions/java"
+    },
+    {
+      "text": "Catppuccin 1.2M 🦀 Soothing pastel theme for Zed Catppuccin",
+      "href": "/extensions/catppuccin"
+    },
+    {
+      "text": "Dockerfile 1.2M Dockerfile and Docker Compose support. d1y, joshmeads",
+      "href": "/extensions/dockerfile"
+    },
+    {
+      "text": "SQL 892k SQL language support. nervenes, notpeter, phileix, tammyxiong",
+      "href": "/extensions/sql"
+    },
+    {
+      "text": "PHP 874k PHP support. Piotr Osiewicz",
+      "href": "/extensions/php"
+    },
+    {
+      "text": "Vue 741k Vue support. Zed Industries",
+      "href": "/extensions/vue"
+    },
+    {
+      "text": "Ruby 648k Ruby support. Vitaly Slobodin",
+      "href": "/extensions/ruby"
+    },
+    {
+      "text": "Catppuccin Icons 641k 🦊 Soothing pastel icons for Zed Catppuccin",
+      "href": "/extensions/catppuccin-icons"
+    },
+    {
+      "text": "XML 553k XML syntax support. sweetppro, notpeter, moilolon",
+      "href": "/extensions/xml"
+    },
+    {
+      "text": "Material Icon Theme 539k Material Design icons. Zed Industries",
+      "href": "/extensions/material-icon-theme"
+    },
+    {
+      "text": "macOS Classic Theme 517k A macOS native style theme, let it same like native app in macOS. Jason Lee",
+      "href": "/extensions/macos-classic"
+    },
+    {
+      "text": "Emmet 508k Emmet support Piotr Osiewicz",
+      "href": "/extensions/emmet"
+    },
+    {
+      "text": "Tokyo Night Themes 496k Tokyo Night Themes ssaunderss",
+      "href": "/extensions/tokyo-night"
+    }
+  ],
+  "resources": [
+    {
+      "text": "Extensions",
+      "href": "/extensions"
+    },
+    {
+      "text": "Docs",
+      "href": "/docs"
+    },
+    {
+      "text": "Pricing",
+      "href": "/pricing"
+    },
+    {
+      "text": "Delta",
+      "href": "https://delta.dev"
+    },
+    {
+      "text": "Sign up S",
+      "href": "/sign_up"
+    },
+    {
+      "text": "Download D",
+      "href": "/download"
+    },
+    {
+      "text": "News: Delta is now in public beta. Try it today. →",
+      "href": "https://delta.dev"
+    },
+    {
+      "text": "Download now D",
+      "href": "/download"
+    },
+    {
+      "text": "Clone source C",
+      "href": "https://github.com/zed-industries/zed"
+    },
+    {
+      "text": "View Roadmap",
+      "href": "/roadmap"
+    },
+    {
+      "text": "View Releases",
+      "href": "/releases/stable"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/parallel-agents"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/debugger"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/ai"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/git"
+    },
+    {
+      "text": "Learn More →",
+      "href": "/edit-prediction"
+    },
+    {
+      "text": "Learn about AI in Zed",
+      "href": "/ai"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://zed.dev/ai"
+    },
+    {
+      "text": "Create Extension",
+      "href": "https://zed.dev/docs/extensions/developing-extensions"
+    },
+    {
+      "text": "View All Extensions",
+      "href": "/extensions"
+    },
+    {
+      "text": "HTML 7.9M HTML support. Isaac Clayton",
+      "href": "/extensions/html"
+    },
+    {
+      "text": "Git Firefly 1.8M Provides Git Syntax Highlighting d1y, Peter Tripp",
+      "href": "/extensions/git-firefly"
+    },
+    {
+      "text": "TOML 1.6M TOML support. Max Brunsfeld, Ammar Arif",
+      "href": "/extensions/toml"
+    },
+    {
+      "text": "Java 1.5M Java support. Java Extension Contributors",
+      "href": "/extensions/java"
+    },
+    {
+      "text": "Catppuccin 1.2M 🦀 Soothing pastel theme for Zed Catppuccin",
+      "href": "/extensions/catppuccin"
+    },
+    {
+      "text": "Dockerfile 1.2M Dockerfile and Docker Compose support. d1y, joshmeads",
+      "href": "/extensions/dockerfile"
+    },
+    {
+      "text": "SQL 892k SQL language support. nervenes, notpeter, phileix, tammyxiong",
+      "href": "/extensions/sql"
+    },
+    {
+      "text": "PHP 874k PHP support. Piotr Osiewicz",
+      "href": "/extensions/php"
+    },
+    {
+      "text": "Vue 741k Vue support. Zed Industries",
+      "href": "/extensions/vue"
+    },
+    {
+      "text": "Ruby 648k Ruby support. Vitaly Slobodin",
+      "href": "/extensions/ruby"
+    },
+    {
+      "text": "Catppuccin Icons 641k 🦊 Soothing pastel icons for Zed Catppuccin",
+      "href": "/extensions/catppuccin-icons"
+    },
+    {
+      "text": "XML 553k XML syntax support. sweetppro, notpeter, moilolon",
+      "href": "/extensions/xml"
+    },
+    {
+      "text": "Material Icon Theme 539k Material Design icons. Zed Industries",
+      "href": "/extensions/material-icon-theme"
+    },
+    {
+      "text": "macOS Classic Theme 517k A macOS native style theme, let it same like native app in macOS. Jason Lee",
+      "href": "/extensions/macos-classic"
+    },
+    {
+      "text": "Emmet 508k Emmet support Piotr Osiewicz",
+      "href": "/extensions/emmet"
+    },
+    {
+      "text": "Tokyo Night Themes 496k Tokyo Night Themes ssaunderss",
+      "href": "/extensions/tokyo-night"
+    },
+    {
+      "text": "C# 492k C# support. fminkowski, Fabian Freimueller",
+      "href": "/extensions/csharp"
+    },
+    {
+      "text": "SCSS & SASS 485k SCSS and SASS support Raunak Raj",
+      "href": "/extensions/scss"
+    },
+    {
+      "text": "Make 457k Makefile syntax highlighting Caius Durling, d1y, Marshall Bowers, Luke Naylor, Igor Támara, Michael Alexander,",
+      "href": "/extensions/make"
+    },
+    {
+      "text": "Lua 450k Lua support. Max Brunsfeld",
+      "href": "/extensions/lua"
+    }
+  ],
+  "palette": {
+    "dialog": "Global command menu Search and navigate the Zed website, switch themes, and copy brand assets Global command menu SWITCH THEME Turn light mode on Follow the System's settings ZED'S BRAND Copy logo as SVG Copy wordmark as SVG View brand guidelines NAVIGATION Home Download Extensions Docs Pricing CORE EDITOR Windows Debugger Git Support ARTIFICIAL INTELLIGENCE Parallel Agents Agent Client Protocol Agentic Editing Edit Prediction RESOURCES / COMPANY About Team Values Jobs Brand Merch RESOURCES / PR",
+    "placeholder": "Navigate…"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "dismissed": null,
+  "map": {
+    "title": "Zed — Your last next editor",
+    "h1": "Your last next editor",
+    "url": "https://zed.dev/",
+    "htmlClass": "dark c15t-dark",
+    "colorScheme": "dark",
+    "bg": "rgb(17, 18, 22)",
+    "color": "oklch(0.747396 0.0150116 262.882)",
+    "font": "writer, \"writer Fallback\"",
+    "buttons": [
+      "Product",
+      "Resources",
+      "P",
+      "Open navigation menu"
+    ],
+    "headerLinks": [
+      {
+        "text": "Go back to homepage",
+        "href": "/"
+      },
+      {
+        "text": "Extensions",
+        "href": "/extensions"
+      },
+      {
+        "text": "Docs",
+        "href": "/docs"
+      },
+      {
+        "text": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "text": "Delta",
+        "href": "https://delta.dev"
+      },
+      {
+        "text": "Sign up S",
+        "href": "/sign_up"
+      },
+      {
+        "text": "Download D",
+        "href": "/download"
+      }
+    ],
+    "footerLinks": [
+      {
+        "text": "Sign Up",
+        "href": "/sign_up"
+      },
+      {
+        "text": "Sign In",
+        "href": "/sign_in"
+      },
+      {
+        "text": "Terms of Service",
+        "href": "/terms"
+      },
+      {
+        "text": "Attributions",
+        "href": "/attributions"
+      },
+      {
+        "text": "Download",
+        "href": "/download"
+      },
+      {
+        "text": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "text": "Business",
+        "href": "/business"
+      },
+      {
+        "text": "Releases",
+        "href": "/releases/stable"
+      },
+      {
+        "text": "Extensions",
+        "href": "/extensions"
+      },
+      {
+        "text": "Roadmap",
+        "href": "/roadmap"
+      },
+      {
+        "text": "Docs",
+        "href": "/docs"
+      },
+      {
+        "text": "Compare",
+        "href": "/compare"
+      },
+      {
+        "text": "GitHub↗",
+        "href": "https://github.com/zed-industries/zed"
+      },
+      {
+        "text": "Status↗",
+        "href": "https://status.zed.dev"
+      },
+      {
+        "text": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "text": "CLA",
+        "href": "/cla"
+      },
+      {
+        "text": "Community",
+        "href": "/community"
+      },
+      {
+        "text": "Support",
+        "href": "/support"
+      },
+      {
+        "text": "Discussions↗",
+        "href": "https://github.com/zed-industries/zed/discussions"
+      },
+      {
+        "text": "Privacy",
+        "href": "/privacy"
+      },
+      {
+        "text": "Subscribe",
+        "href": "/subscribe"
+      },
+      {
+        "text": "Theme Builder",
+        "href": "/theme-builder"
+      },
+      {
+        "text": "Yearly Recaps",
+        "href": "/2025"
+      },
+      {
+        "text": "Blog",
+        "href": "/blog"
+      },
+      {
+        "text": "About",
+        "href": "/about"
+      },
+      {
+        "text": "Values",
+        "href": "/values"
+      },
+      {
+        "text": "Team",
+        "href": "/team"
+      },
+      {
+        "text": "Jobs",
+        "href": "/jobs"
+      },
+      {
+        "text": "Press",
+        "href": "/press"
+      },
+      {
+        "text": "Brand",
+        "href": "/brand"
+      },
+      {
+        "text": "Merch↗",
+        "href": "https://merch.zed.dev"
+      },
+      {
+        "text": "Twitter↗",
+        "href": "https://twitter.com/zeddotdev"
+      },
+      {
+        "text": "Bluesky↗",
+        "href": "https://bsky.app/profile/zed.dev"
+      },
+      {
+        "text": "Instagram↗",
+        "href": "https://www.instagram.com/zed.industries/"
+      },
+      {
+        "text": "YouTube↗",
+        "href": "https://www.youtube.com/@zeddotdev"
+      },
+      {
+        "text": "Discord↗",
+        "href": "https://discord.com/invite/zedindustries"
+      },
+      {
+        "text": "Reddit↗",
+        "href": "https://www.reddit.com/r/ZedEditor/"
+      }
+    ],
+    "footerText": "Zed Industries © 2026 Sign Up • Have an account? Sign In Terms of Service•Attributions Manage Site Cookies Product Download Pricing Business Releases Extensions Roadmap Docs Compare GitHub↗ Status↗ Resources FAQ CLA Community Support Discussions↗ Privacy Subscribe Theme Builder Yearly Recaps Company Blog About Values Team Jobs Press Brand Merch↗ Social Twitter↗ Bluesky↗ Instagram↗ YouTube↗ Discord↗ Reddit↗"
+  }
+}
