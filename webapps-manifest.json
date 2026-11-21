@@ -266,9 +266,9 @@
       "description": "Wellness Club",
       "status": "captured",
       "package": "systems/aloyoga",
-      "notes": "https://www.aloyoga.com/en-sg/account/login asks for email and password. No code was sent.",
+      "notes": "https://www.aloyoga.com/en-sg/account/login asks for email and password. No code was sent. Public walk 2026-11-21: the homepage redirected to /en-sg. Women, Men, Shoes, Atelier, and Gift Guide hover into mega-menus and also link. Search opens an in-page drawer. Cart opens the cart page. Account, wishlist, and Sign in stop at account/login. Phone uses a drawer, search, filter, and sort. The country dialog did not mount. Filter Apply was not clicked. Newsletter, phone, and birthday fields were not filled. No email was typed. No form was submitted. No dark theme. Signed-in account was not captured. Public package refresh in PR 1617 at cccefba9a89b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 1
     },
     {
@@ -334,9 +334,9 @@
       "description": "The supergraph: a new layer in your stack",
       "status": "captured",
       "package": "systems/apollographql",
-      "notes": "https://studio.apollographql.com/login asks for email and password, or GitHub or SSO. No code was sent.",
+      "notes": "https://studio.apollographql.com/login asks for email and password, or GitHub or SSO. No code was sent. Public walk 2026-11-21: Products, Solutions, Resources, and Company open mega-menus. Pricing, Contact us, and the footer open first-party pages. Search opens a dialog and was not typed into. Start for free and Get Started hit the Studio signup wall and stopped. GitHub and SSO were not clicked. No email was typed. No form was submitted. Cookie preference center was not opened. Signed-in Studio was not captured. Public package refresh in PR 1618 at 4a03dece0109. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 1
     },
     {
