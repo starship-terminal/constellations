@@ -1,0 +1,51 @@
+{
+  "slug": "ulysses",
+  "product": "Ulysses",
+  "domain": "ulysses.app",
+  "app": "license.ulysses.app",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Headless Chromium photographed the volume-licensing login and signup walls empty. Nothing was typed. No form was submitted. No identity provider was present to click.",
+  "marketing_login": {
+    "url": "https://ulysses.app/login/",
+    "result": "404 This page is missing",
+    "note": "The marketing host has no account login. /signin, /signup, /register, and /account also 404."
+  },
+  "wall": {
+    "url": "https://license.ulysses.app/users/sign_in",
+    "title": "Log In | Ulysses Volume Licensing",
+    "asks": [
+      "Log In",
+      "Please log in or sign up for a new Ulysses volume licensing account.",
+      "Email",
+      "Password",
+      "Forgot your password?"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "code_field": false,
+    "inputs": [
+      { "type": "email", "placeholder": "Email", "filled": false },
+      { "type": "password", "placeholder": "Password", "filled": false }
+    ],
+    "note": "Both fields were empty. Log In was not clicked. Forgot your password was not opened. Sign up was not followed from this page."
+  },
+  "signup_wall": {
+    "url": "https://license.ulysses.app/checkout",
+    "requested": "https://license.ulysses.app/",
+    "title": "Sign Up | Ulysses Volume Licensing",
+    "asks": [
+      "Businesses & Organizations",
+      "Email address",
+      "Country",
+      "Continue to Checkout"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "continued": false,
+    "note": "The volume-licensing root redirects to checkout. The email field was left empty. Continue to Checkout was not clicked. The country select was not opened. The terms checkbox was not checked. This is a purchase form, so the pass stopped at the empty first screen."
+  },
+  "stopped": "Photographed the empty walls and stopped. Did not type. Did not submit. Did not enter checkout. Did not open the password-reset page."
+}
