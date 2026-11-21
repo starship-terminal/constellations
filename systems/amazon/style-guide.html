@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Amazon tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --text: #0f1111;
+    --muted: #565959;
+    --accent: #ffd814;
+    --on-accent: #0f1111;
+    --brand: #ff6200;
+    --buy: #ffa41c;
+    --link: #2162a1;
+    --radius: 100px;
+    --sans: "Amazon Ember", Arial, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 14px/20px var(--sans); }
+  header { background: var(--brand); color: #fff; height: 60px; display: flex; align-items: center; padding: 0 16px; font-weight: 700; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-weight: 400; font-size: 28px; line-height: 36px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .swatch { background: var(--surface); border: 1px solid #e6e6e6; border-radius: 8px; padding: 12px; }
+  .swatch i { display: block; height: 48px; border-radius: 6px; border: 1px solid #e6e6e6; }
+  .swatch span, .swatch code { display: block; font-size: 13px; color: var(--muted); }
+  button { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); border-radius: var(--radius); height: 32px; padding: 0 16px; font: 14px/20px var(--sans); }
+  button.buy { background: var(--buy); border-color: var(--buy); }
+  a { color: var(--link); }
+  p.note { color: var(--muted); }
+</style>
+</head>
+<body>
+<header>amazon</header>
+<main>
+  <h1>Amazon</h1>
+  <p class="note">Public storefront tokens measured on amazon.com, 2026-11-22. Light theme only. Signed out.</p>
+  <p><button type="button">Add to cart</button> <button class="buy" type="button">Buy Now</button></p>
+  <p><a href="#tokens">Conditions of Use</a></p>
+  <div class="swatches" id="tokens">
+    <div class="swatch"><i style="background:#ffffff"></i><span>page</span><code>#ffffff</code></div>
+<div class="swatch"><i style="background:#ffffff"></i><span>surface</span><code>#ffffff</code></div>
+<div class="swatch"><i style="background:#0f1111"></i><span>text</span><code>#0f1111</code></div>
+<div class="swatch"><i style="background:#565959"></i><span>muted</span><code>#565959</code></div>
+<div class="swatch"><i style="background:#2162a1"></i><span>link</span><code>#2162a1</code></div>
+<div class="swatch"><i style="background:#ff6200"></i><span>brand</span><code>#ff6200</code></div>
+<div class="swatch"><i style="background:#ff9946"></i><span>brand soft</span><code>#ff9946</code></div>
+<div class="swatch"><i style="background:#ffd814"></i><span>accent</span><code>#ffd814</code></div>
+<div class="swatch"><i style="background:#ffce12"></i><span>accent hover</span><code>#ffce12</code></div>
+<div class="swatch"><i style="background:#ffa41c"></i><span>buy</span><code>#ffa41c</code></div>
+<div class="swatch"><i style="background:#e6e6e6"></i><span>search scope</span><code>#e6e6e6</code></div>
+<div class="swatch"><i style="background:#0f1111"></i><span>on accent</span><code>#0f1111</code></div>
+  </div>
+</main>
+</body>
+</html>
