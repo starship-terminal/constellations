@@ -1,0 +1,67 @@
+{
+  "slug": "superhuman",
+  "product": "Superhuman",
+  "domain": "superhuman.com",
+  "app": "id.superhuman.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Headless Chromium photographed the login and signup walls empty. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://id.superhuman.com/signin",
+    "requested": "https://go.superhuman.com/",
+    "also_reached_from": "https://docs.superhuman.com/",
+    "title": "Login",
+    "asks": [
+      "Welcome back",
+      "Google",
+      "Microsoft",
+      "Apple",
+      "Your work or school email",
+      "Continue with email"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      { "type": "text", "placeholder": null, "filled": false }
+    ],
+    "note": "The email field was empty. Continue with email was not clicked. Google, Microsoft, and Apple were not clicked."
+  },
+  "mail_admin_wall": {
+    "url": "https://superhuman.com/mail/admin",
+    "title": "Admin | Email Assistant",
+    "asks": [
+      "Please sign in to access your team's account.",
+      "Continue with Google",
+      "Continue with Microsoft"
+    ],
+    "email_field": false,
+    "password_field": false,
+    "note": "Neither identity provider was clicked."
+  },
+  "signup_wall": {
+    "url": "https://id.superhuman.com/signup",
+    "requested": "https://superhuman.com/auth/signup",
+    "title": "Login",
+    "asks": [
+      "Continue to Superhuman",
+      "Google",
+      "Microsoft",
+      "Apple",
+      "Your work or school email",
+      "Continue with email",
+      "ToS",
+      "Privacy Policy"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "continued": false,
+    "inputs": [
+      { "type": "text", "placeholder": null, "filled": false }
+    ],
+    "note": "The email field was empty. Continue with email was not clicked. Google, Microsoft, and Apple were not clicked. Terms and Privacy were not opened. A hidden reCAPTCHA textarea was present and left empty. The captcha was not solved."
+  },
+  "stopped": "Photographed the empty walls and stopped. Did not open an identity provider. Did not submit. Did not enter the signed-in app."
+}

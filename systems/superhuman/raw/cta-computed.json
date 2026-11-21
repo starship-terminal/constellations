@@ -1,0 +1,58 @@
+{
+  "tag": "A",
+  "cls": "hero-button_heroButton__LEsDD cta-button_ctaButton__5_uZN",
+  "bg": "rgba(0, 0, 0, 0)",
+  "color": "rgb(255, 255, 255)",
+  "radius": "12px",
+  "border": "1px solid color(srgb 1 1 1 / 0.12)",
+  "w": 212,
+  "h": 50,
+  "kids": [
+    {
+      "tag": "SPAN",
+      "cls": "hero-button_text__vQFmf",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "w": 124,
+      "h": 16,
+      "kids": []
+    },
+    {
+      "tag": "SPAN",
+      "cls": "hero-button_iconContainer__RNDuf",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "8px",
+      "border": "1px solid rgba(0, 0, 0, 0)",
+      "w": 48,
+      "h": 36,
+      "kids": [
+        {
+          "tag": "svg",
+          "cls": "[object SVGAnimatedString]",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "w": 16,
+          "h": 18,
+          "kids": [
+            {
+              "tag": "use",
+              "cls": "[object SVGAnimatedString]",
+              "bg": "rgba(0, 0, 0, 0)",
+              "color": "rgb(255, 255, 255)",
+              "radius": "0px",
+              "border": "0px none rgb(255, 255, 255)",
+              "w": 13,
+              "h": 11,
+              "kids": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "href": "https://id.superhuman.com/signup",
+  "body": {
+    "text": "Continue to Superhuman Google Microsoft Apple Your work or s",
+    "bg": "rgb(252, 250, 247)",
+    "color": "rgb(28, 28, 28)",
+    "font": "Times",
+    "size": "16px",
+    "weight": "400",
+    "radius": "0px",
+    "border": "0px rgb(28, 28, 28)",
+    "h": 900,
+    "pad": "0px"
+  },
+  "h1": {
+    "text": "Continue to Superhuman",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "font": "SuperSans, sans-serif",
+    "size": "24px",
+    "weight": "680",
+    "radius": "0px",
+    "border": "0px rgb(0, 0, 0)",
+    "h": 30,
+    "pad": "0px"
+  },
+  "emailBtn": {
+    "text": "Continue with email",
+    "bg": "rgb(113, 76, 182)",
+    "color": "rgb(255, 255, 255)",
+    "font": "SuperSans, sans-serif",
+    "size": "18px",
+    "weight": "680",
+    "radius": "12px",
+    "border": "0px rgb(255, 255, 255)",
+    "h": 48,
+    "pad": "3px 16px"
+  },
+  "google": {
+    "text": "Google",
+    "bg": "rgba(255, 255, 255, 0.8)",
+    "color": "rgb(115, 113, 109)",
+    "font": "SuperSans, sans-serif",
+    "size": "18px",
+    "weight": "400",
+    "radius": "12px",
+    "border": "1px rgb(222, 219, 213)",
+    "h": 51,
+    "pad": "12px 16px 10px"
+  },
+  "input": {
+    "text": "",
+    "bg": "rgba(255, 255, 255, 0.8)",
+    "color": "rgb(20, 20, 19)",
+    "font": "SuperSans, sans-serif",
+    "size": "18px",
+    "weight": "400",
+    "radius": "12px",
+    "border": "1px rgb(222, 219, 213)",
+    "h": 48,
+    "pad": "12px 16px"
+  }
+}

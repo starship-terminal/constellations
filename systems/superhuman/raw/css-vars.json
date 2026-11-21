@@ -1,0 +1,5 @@
+{
+  "note": "The public marketing site declared no custom properties on :root. vars count on the homepage was 0. Values in tokens.json come from computed style in home-computed.json, pricing-computed.json, biz-computed.json, and auth-computed.json. id.superhuman.com declared 892 custom properties. Those stay in signup-measure.json and were not copied into tokens except the computed button, field, and paper colours.",
+  "homeVarCount": 0,
+  "signupVarCount": 892
+}

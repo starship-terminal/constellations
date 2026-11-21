@@ -1,0 +1,147 @@
+{
+  "allFooters": [
+    {
+      "cls": "header_dialogFooter__XHlLz",
+      "h": 0,
+      "text": "Contact salesSign inGoAI that works where you do.MailThe most productive email app.DocsThe all-in-one AI workspace."
+    },
+    {
+      "cls": "footer_footer__yLXSJ",
+      "h": 852,
+      "text": "Builders of Superhuman Platform apps\nProducts\nSuperhuman Go\nAgents\nMail\nCalendar\nDocs\nDatabases\nSuperhuman Store\nCompany\nContact Us\nAbout\nWe Stand with Ukraine\nMission & Values\nCareers\nBlog\nSuperhuman"
+    }
+  ],
+  "burgundyTag": "FOOTER",
+  "burgundyCls": "footer_footer__yLXSJ",
+  "text": "Builders of Superhuman Platform apps\nProducts\nSuperhuman Go\nAgents\nMail\nCalendar\nDocs\nDatabases\nSuperhuman Store\nCompany\nContact Us\nAbout\nWe Stand with Ukraine\nMission & Values\nCareers\nBlog\nSuperhuman Academy\nHelp Center\nStatus\nPartners\nCommunity\nSuperhuman Platform\nGPTZero\nGrammarly\nLegal\nTerms\nPrivacy Policy\nTrust\nCustomer Business Agreement\nLegal Notices\nCookies Preferences Center\nConnect\nLinkedIn\nX\nTikTok\nInstagram\nThreads\nFacebook",
+  "links": [
+    {
+      "t": "Superhuman Go",
+      "h": "/go"
+    },
+    {
+      "t": "Agents",
+      "h": "/agents"
+    },
+    {
+      "t": "Mail",
+      "h": "/mail"
+    },
+    {
+      "t": "Calendar",
+      "h": "/mail/calendar"
+    },
+    {
+      "t": "Docs",
+      "h": "/docs"
+    },
+    {
+      "t": "Databases",
+      "h": "/databases"
+    },
+    {
+      "t": "Superhuman Store",
+      "h": "/store"
+    },
+    {
+      "t": "Contact Us",
+      "h": "/contact"
+    },
+    {
+      "t": "About",
+      "h": "/company/about"
+    },
+    {
+      "t": "We Stand with Ukraine",
+      "h": "/stand-with-ukraine"
+    },
+    {
+      "t": "Mission & Values",
+      "h": "/company/values"
+    },
+    {
+      "t": "Careers",
+      "h": "/company/careers"
+    },
+    {
+      "t": "Blog",
+      "h": "https://blog.superhuman.com"
+    },
+    {
+      "t": "Superhuman Academy",
+      "h": "https://academy.superhuman.com"
+    },
+    {
+      "t": "Help Center",
+      "h": "https://help.superhuman.com"
+    },
+    {
+      "t": "Status",
+      "h": "/status"
+    },
+    {
+      "t": "Partners",
+      "h": "/partners"
+    },
+    {
+      "t": "Community",
+      "h": "/community"
+    },
+    {
+      "t": "Superhuman Platform",
+      "h": "/superhuman-platform"
+    },
+    {
+      "t": "GPTZero",
+      "h": "https://gptzero.me/"
+    },
+    {
+      "t": "Grammarly",
+      "h": "https://www.grammarly.com/"
+    },
+    {
+      "t": "Terms",
+      "h": "/legal/terms"
+    },
+    {
+      "t": "Privacy Policy",
+      "h": "/legal/privacy-policy"
+    },
+    {
+      "t": "Trust",
+      "h": "/legal/trust"
+    },
+    {
+      "t": "Customer Business Agreement",
+      "h": "/legal/terms/customer-business-agreement"
+    },
+    {
+      "t": "Legal Notices",
+      "h": "/legal/notices"
+    },
+    {
+      "t": "LinkedIn",
+      "h": "https://www.linkedin.com/company/superhumanhq"
+    },
+    {
+      "t": "X",
+      "h": "https://x.com/Superhuman"
+    },
+    {
+      "t": "TikTok",
+      "h": "https://www.tiktok.com/@superhumanhq?lang=en"
+    },
+    {
+      "t": "Instagram",
+      "h": "https://www.instagram.com/superhuman__hq/?hl=en"
+    },
+    {
+      "t": "Threads",
+      "h": "https://www.threads.com/@superhuman__hq"
+    },
+    {
+      "t": "Facebook",
+      "h": "https://www.facebook.com/SuperhumanCo"
+    }
+  ]
+}

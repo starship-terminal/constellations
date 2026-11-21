@@ -1,0 +1,12 @@
+{
+  "text": "Get Superhuman Business",
+  "bg": "rgb(113, 76, 182)",
+  "color": "rgb(255, 255, 255)",
+  "radius": "12px",
+  "border": "0px none rgb(255, 255, 255)",
+  "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+  "size": "16px",
+  "weight": "500",
+  "h": 52,
+  "pad": "1px 12px"
+}
