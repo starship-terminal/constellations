@@ -1,0 +1,15 @@
+{
+  "url": "https://www.atlassian.com/",
+  "title": "Collaboration software for software, IT and business teams | Atlassian",
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2
+  },
+  "date": "2026-11-22",
+  "menu": "phone"
+}

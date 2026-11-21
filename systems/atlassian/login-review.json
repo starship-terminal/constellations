@@ -1,0 +1,31 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "Sign in asks for an email and was left empty. Signup asks for a work email and was left empty. Placeholders only. Continue and Sign up were not clicked. Passkey, Google, Microsoft, Apple, and Slack were not clicked. No email, password, code, phone, or address was typed. No form was submitted. No site was created. catalog.json was left alone.",
+  "walls": [
+    {
+      "url": "https://id.atlassian.com/login",
+      "opened_from": "header Sign in",
+      "title": "Log in to continue - Log in with Atlassian account",
+      "heading": "Log in to continue",
+      "desktop": "screenshots/signin-1440.png",
+      "phone": "screenshots/signin-390.png",
+      "controls_not_used": ["Continue", "Passkey", "Google", "Microsoft", "Apple", "Slack", "Create an account", "Can't log in?"],
+      "stopped": true
+    },
+    {
+      "url": "https://www.atlassian.com/try/cloud/signup",
+      "opened_from": "header Get Jira free, home Get started with Jira",
+      "title": "Sign up - Jira - Try Atlassian Cloud | Atlassian",
+      "heading": "Get started with Jira",
+      "desktop": "screenshots/signup-1440.png",
+      "phone": "screenshots/signup-390.png",
+      "controls_not_used": ["Sign up", "Google", "Microsoft", "Apple", "Slack", "Log in"],
+      "stopped": true
+    }
+  ]
+}
