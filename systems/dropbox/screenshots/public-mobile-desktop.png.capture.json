@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-mobile-desktop.png",
+  "sanitizedSourceUrl": "https://www.dropbox.com/mobile",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://www.dropbox.com/mobile",
+    "title": "Dropbox Mobile App",
+    "h1": "Keep work flowing\u2014on the go",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "note": "Mobile download page. Store badges were not clicked.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

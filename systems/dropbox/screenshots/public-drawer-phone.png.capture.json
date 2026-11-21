@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-drawer-phone.png",
+  "sanitizedSourceUrl": "https://www.dropbox.com/",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://www.dropbox.com/",
+    "title": "Dropbox: Secure cloud storage, file sharing, and more",
+    "h1": "One place to store, share, and collaborate",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "note": "Phone drawer opened. No destination clicked.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

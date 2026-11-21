@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-download-desktop.png",
+  "sanitizedSourceUrl": "https://www.dropbox.com/desktop",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://www.dropbox.com/desktop",
+    "title": "Dropbox Desktop Experience for macOS & Windows",
+    "h1": "The Dropbox desktop app",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "note": "Desktop download page. Download was not started.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

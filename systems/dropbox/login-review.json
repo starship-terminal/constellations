@@ -1,21 +1,22 @@
 {
   "pass": "signed-out walls only",
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "signed_in": false,
   "submitted": false,
   "typed": false,
-  "note": "The signed-in app is not in scope. Every wall below was opened empty and left empty. No password, code, captcha, or identity provider was used. No account was created. No profile, birthday, plan, survey, onboarding, or newsletter form was filled or submitted.",
-  "probe": "A known earlier probe found that https://www.dropbox.com/login accepted an email and the next signup step asked for a name and password. That form was not submitted and no code was sent. This pass did not type that email again.",
+  "login_extracted": "not-started",
+  "note": "The signed-in app is not in scope. Login and signup were opened empty and left empty. No password, code, captcha, phone, address, or identity provider was used. No account was created. No checkout, purchase, or sales form was submitted.",
   "walls": [
     {
       "url": "https://www.dropbox.com/login",
-      "opened_from": "header Log in, and the same link in the phone bar and footer-adjacent auth chrome",
+      "opened_from": "header Log in",
       "heading": "Log in or sign up for free",
-      "desktop": "screenshots/login-light-wall.png",
-      "phone": "screenshots/mobile-login-light-wall.png",
+      "desktop": "screenshots/login-wall-desktop.png",
+      "phone": "screenshots/login-wall-phone.png",
+      "email_value_length": 0,
       "controls_not_used": [
+        "Continue with Google",
         "Continue with Apple",
-        "Continue with Google (phone)",
         "Continue with Microsoft",
         "email field (left empty)",
         "Continue"
@@ -26,57 +27,41 @@
       "url": "https://www.dropbox.com/register",
       "opened_from": "header Sign up",
       "heading": "Get started with Dropbox",
-      "desktop": "screenshots/register-light-wall.png",
-      "phone": "screenshots/mobile-register-light-wall.png",
-      "controls_not_used": [
-        "Continue with Apple",
-        "Continue with Google (phone)",
-        "Continue with Microsoft",
-        "email field (left empty)",
-        "Continue"
-      ],
-      "stopped": true
-    },
-    {
-      "url": "https://www.dropbox.com/checkout?key=fss_plus",
-      "opened_from": "Plus Buy now on /plans",
-      "heading": "Get Dropbox Plus / Log in or sign up",
-      "desktop": "screenshots/checkout-light-wall.png",
+      "desktop": "screenshots/signup-wall-desktop.png",
+      "email_value_length": 0,
       "controls_not_used": [
         "Continue with Google",
         "Continue with Apple",
         "Continue with Microsoft",
         "email field (left empty)",
-        "Continue",
-        "Purchase"
+        "Continue"
       ],
       "stopped": true
-    },
-    {
-      "url": "https://app.reclaim.ai/signup",
-      "opened_from": "footer Reclaim.ai",
-      "heading": "Welcome to Reclaim",
-      "stopped": true,
-      "screenshot": "not saved; the page is a third-party signup wall and the branch stopped"
     }
+  ],
+  "not_opened": [
+    "https://www.dropbox.com/checkout",
+    "https://app.reclaim.ai/signup",
+    "https://dash.dropbox.com",
+    "https://www.dropbox.com/contact-sales"
   ],
   "not_submitted": [
     "login Continue",
     "register Continue",
-    "checkout Purchase",
-    "checkout auth Continue",
+    "plans Buy now",
+    "plans Try for free",
+    "desktop Install",
     "contact-sales form",
-    "Help me choose plan quiz",
     "cookie Decline and Accept All",
-    "newsletter and waitlist forms",
     "any identity provider"
   ],
   "cookie_dialog": {
     "photographed": [
-      "screenshots/home-light-language.png",
-      "screenshots/mobile-home-light-cookie.png"
+      "screenshots/public-menu-get-app-desktop.png",
+      "screenshots/public-menu-solutions-desktop.png",
+      "screenshots/login-wall-desktop.png",
+      "screenshots/signup-wall-desktop.png"
     ],
-    "action": "hidden with CSS after the photograph",
     "clicked": false
   }
 }

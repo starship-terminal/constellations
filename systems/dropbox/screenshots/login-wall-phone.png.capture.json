@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "login-wall-phone.png",
+  "sanitizedSourceUrl": "https://www.dropbox.com/login",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://www.dropbox.com/login",
+    "title": "Login or Sign Up",
+    "h1": "Log in or sign up for free",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "note": "Phone login wall, empty. No email typed. No identity provider clicked.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

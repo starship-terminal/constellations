@@ -1,0 +1,758 @@
+{
+  "capturedAt": "2026-11-22",
+  "source": "https://www.dropbox.com/",
+  "method": "headless Chromium, computed styles and CSS custom properties on the painted page",
+  "note": "login and register email valueLength is 0. Identity providers were not clicked. catalog.json was not edited.",
+  "pages": {
+    "home": {
+      "url": "https://www.dropbox.com/",
+      "title": "Dropbox: Secure cloud storage, file sharing, and more",
+      "h1": "Store, share, and get more done with a smarter Dropbox",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "Store, share, and get more done with a smarter Dropbox",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+        "fontSize": "66.24px",
+        "fontWeight": "500",
+        "lineHeight": "71.5392px",
+        "height": 143,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "inputs": [],
+      "varCount": 403
+    },
+    "public-product-desktop": {
+      "url": "https://www.dropbox.com/dropbox",
+      "title": "Organized, Secure, Always Accessible - Dropbox",
+      "h1": "Don\u2019t just store your files\u2014put them to work",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "Don\u2019t just store your files\u2014put them to work",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(247, 245, 242)",
+        "borderTopColor": "rgb(247, 245, 242)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Sharp Grotesk KR\", \"Sharp Grotesk Thai\", \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "48px",
+        "height": 144,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "inputs": [],
+      "varCount": 403
+    },
+    "public-plans-desktop": {
+      "url": "https://www.dropbox.com/plans",
+      "title": "Find Your Dropbox Plan | Get 30 Days Free Trial",
+      "h1": null,
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": null,
+      "field": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "height": 32,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "inputs": [
+        {
+          "tag": "INPUT",
+          "type": "radio",
+          "name": "dwg_plan_cards_rcs_plank-19164cafe0-billing-radio-group",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 7
+        },
+        {
+          "tag": "INPUT",
+          "type": "radio",
+          "name": "dwg_plan_cards_rcs_plank-19164cafe0-billing-radio-group",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 6
+        },
+        {
+          "tag": "INPUT",
+          "type": "radio",
+          "name": "dwg-plan-comparison-billing-radio--all-features",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 7
+        },
+        {
+          "tag": "INPUT",
+          "type": "radio",
+          "name": "dwg-plan-comparison-billing-radio--all-features",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 6
+        },
+        {
+          "tag": "SELECT",
+          "type": null,
+          "name": null,
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 4
+        },
+        {
+          "tag": "SELECT",
+          "type": null,
+          "name": null,
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 8
+        }
+      ],
+      "varCount": 403
+    },
+    "public-features-desktop": {
+      "url": "https://www.dropbox.com/features",
+      "title": "What is Dropbox? Secure Features Overview - Dropbox",
+      "h1": "What is Dropbox?",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "What is Dropbox?",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(247, 245, 242)",
+        "borderTopColor": "rgb(247, 245, 242)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Sharp Grotesk KR\", \"Sharp Grotesk Thai\", \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "48px",
+        "height": 48,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": {
+        "text": "What can Dropbox do?",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "height": 0,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "inputs": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "name": "warp-faq-dwg_faq_plank-1adc6baaf8-465686432",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 2
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "name": "warp-faq-dwg_faq_plank-1adc6baaf8-465686432",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 2
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "name": "warp-faq-dwg_faq_plank-1adc6baaf8-465686432",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 2
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "name": "warp-faq-dwg_faq_plank-1adc6baaf8-465686432",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 2
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "name": "warp-faq-dwg_faq_plank-1adc6baaf8-465686432",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 2
+        }
+      ],
+      "varCount": 403
+    },
+    "public-download-desktop": {
+      "url": "https://www.dropbox.com/desktop",
+      "title": "Dropbox Desktop Experience for macOS & Windows",
+      "h1": "The Dropbox desktop app",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "The Dropbox desktop app",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(30, 25, 25)",
+        "borderTopColor": "rgb(30, 25, 25)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Sharp Grotesk KR\", \"Sharp Grotesk Thai\", \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "48px",
+        "height": 96,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "inputs": [],
+      "varCount": 403
+    },
+    "public-mobile-desktop": {
+      "url": "https://www.dropbox.com/mobile",
+      "title": "Dropbox Mobile App",
+      "h1": "Keep work flowing\u2014on the go",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "Keep work flowing\u2014on the go",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(30, 25, 25)",
+        "borderTopColor": "rgb(30, 25, 25)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Sharp Grotesk KR\", \"Sharp Grotesk Thai\", \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "32px",
+        "fontWeight": "400",
+        "lineHeight": "38.4px",
+        "height": 38,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "inputs": [],
+      "varCount": 403
+    },
+    "public-enterprise-desktop": {
+      "url": "https://www.dropbox.com/enterprise",
+      "title": "Enterprise - Dropbox",
+      "h1": "Secure collaboration across your corporation",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "Secure collaboration across your corporation",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(30, 25, 25)",
+        "borderTopColor": "rgb(30, 25, 25)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Sharp Grotesk KR\", \"Sharp Grotesk Thai\", \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "48px",
+        "height": 192,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": {
+        "text": "Hyper-vigilance, not just surveillance",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(84, 84, 84)",
+        "borderTopColor": "rgb(84, 84, 84)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "height": 0,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "inputs": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "name": "warp-jtbd-dwg_jtbd_plank-0ccf6bff92-1665262737",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 2
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "name": "warp-jtbd-dwg_jtbd_plank-0ccf6bff92-1665262737",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 2
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "name": "warp-jtbd-dwg_jtbd_plank-0ccf6bff92-1665262737",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 2
+        }
+      ],
+      "varCount": 403
+    },
+    "public-early-access-desktop": {
+      "url": "https://www.dropbox.com/early-access",
+      "title": "Dropbox Early Access",
+      "h1": null,
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": null,
+      "field": null,
+      "inputs": [],
+      "varCount": 403
+    },
+    "missing": {
+      "url": "https://www.dropbox.com/this-page-is-not-a-dropbox-route-capture",
+      "title": "Dropbox - 404",
+      "h1": "Error (404)",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "Error (404)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgba(0, 0, 0, 0.75)",
+        "borderTopColor": "rgba(0, 0, 0, 0.75)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Open Sans\", \"lucida grande\", \"Segoe UI\", arial, verdana, \"lucida sans unicode\", tahoma, sans-serif",
+        "fontSize": "38px",
+        "fontWeight": "100",
+        "lineHeight": "47px",
+        "height": 47,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "inputs": [],
+      "varCount": 0
+    },
+    "login": {
+      "url": "https://www.dropbox.com/login",
+      "title": "Login or Sign Up",
+      "h1": "Log in or sign up for free",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "Log in or sign up for free",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(5, 5, 5)",
+        "borderTopColor": "rgb(5, 5, 5)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Sharp Grotesk KR\", \"Sharp Grotesk Thai\", \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "24px",
+        "fontWeight": "500",
+        "lineHeight": "30px",
+        "height": 30,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": {
+        "text": "",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(101, 105, 110)",
+        "borderTopColor": "rgb(176, 180, 186)",
+        "borderTopWidth": "1px",
+        "borderRadius": "0px",
+        "fontFamily": "\"lucida grande\", \"Segoe UI\", arial, verdana, \"lucida sans unicode\", tahoma, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "height": 48,
+        "padding": "16px",
+        "boxShadow": "none"
+      },
+      "inputs": [
+        {
+          "tag": "INPUT",
+          "type": "email",
+          "name": "susi_email",
+          "placeholder": "name@company.com",
+          "autocomplete": "username webauthn",
+          "valueLength": 0
+        },
+        {
+          "tag": "INPUT",
+          "type": "password",
+          "name": "autofill-password",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 0
+        }
+      ],
+      "varCount": 403
+    },
+    "register": {
+      "url": "https://www.dropbox.com/register",
+      "title": "Register for a Dropbox Account",
+      "h1": "Get started with Dropbox",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2,
+        "vv": {
+          "w": 1440,
+          "h": 900,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "Get started with Dropbox",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(5, 5, 5)",
+        "borderTopColor": "rgb(5, 5, 5)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Sharp Grotesk KR\", \"Sharp Grotesk Thai\", \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "24px",
+        "fontWeight": "500",
+        "lineHeight": "30px",
+        "height": 30,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": {
+        "text": "",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(101, 105, 110)",
+        "borderTopColor": "rgb(176, 180, 186)",
+        "borderTopWidth": "1px",
+        "borderRadius": "0px",
+        "fontFamily": "\"lucida grande\", \"Segoe UI\", arial, verdana, \"lucida sans unicode\", tahoma, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "height": 48,
+        "padding": "16px",
+        "boxShadow": "none"
+      },
+      "inputs": [
+        {
+          "tag": "INPUT",
+          "type": "email",
+          "name": "susi_email",
+          "placeholder": "name@company.com",
+          "autocomplete": "username webauthn",
+          "valueLength": 0
+        },
+        {
+          "tag": "INPUT",
+          "type": "password",
+          "name": "autofill-password",
+          "placeholder": null,
+          "autocomplete": null,
+          "valueLength": 0
+        }
+      ],
+      "varCount": 403
+    },
+    "phoneHome": {
+      "url": "https://www.dropbox.com/",
+      "title": "Dropbox: Secure cloud storage, file sharing, and more",
+      "h1": "One place to store, share, and collaborate",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "dpr": 2,
+        "vv": {
+          "w": 390,
+          "h": 844,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "One place to store, share, and collaborate",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(30, 25, 25)",
+        "borderTopColor": "rgb(30, 25, 25)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Sharp Grotesk KR\", \"Sharp Grotesk Thai\", \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "38.4px",
+        "height": 115,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "inputs": [],
+      "varCount": 403
+    },
+    "drawer": {
+      "url": "https://www.dropbox.com/",
+      "title": "Dropbox: Secure cloud storage, file sharing, and more",
+      "h1": "One place to store, share, and collaborate",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "dpr": 2,
+        "vv": {
+          "w": 390,
+          "h": 844,
+          "scale": 1
+        }
+      },
+      "h1Style": {
+        "text": "One place to store, share, and collaborate",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(30, 25, 25)",
+        "borderTopColor": "rgb(30, 25, 25)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "\"Sharp Grotesk\", SharpGrotesk, \"Sharp Grotesk KR\", \"Sharp Grotesk Thai\", \"Atlas Grotesk Web\", \"Atlas Grotesk\", AtlasGrotesk, -apple-system, \"system-ui\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "38.4px",
+        "height": 115,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "inputs": [],
+      "varCount": 403
+    }
+  },
+  "tokenSample": {
+    "--dig-color__primary-cta__base": "#0061fe",
+    "--dig-color__primary-cta__base--state-1": "#004dc7",
+    "--dig-color__primary-cta__base--state-2": "#003a97",
+    "--dig-color__primary-cta__on-base": "#f2f7ff",
+    "--dig-color__background__base": "#fff",
+    "--dig-color__background__overlay": "#ffffffd9",
+    "--dig-color__background__subtle": "#f7f5f2",
+    "--dig-color__background__raised": "#fff",
+    "--dig-color__background__sunken": "#f1f2f4",
+    "--dig-color__text__base": "#050505",
+    "--dig-color__text__subtle": "#65696e",
+    "--dig-color__border__base": "#b0b4ba",
+    "--dig-color__border__subtle": "#00000024",
+    "--dig-color__border__bold": "#7c8189",
+    "--dig-color__border__subtle--on-base": "#dbdbdb",
+    "--dig-color__warning__base": "#845909",
+    "--dig-color__warning__base--state-1": "#764f07",
+    "--dig-color__warning__base--state-2": "#593a03",
+    "--dig-color__warning__on-base": "#f9f6f0",
+    "--dig-color__warning__surface": "#fbe8ae",
+    "--dig-color__warning__surface--state-1": "#f5db84",
+    "--dig-color__warning__surface--state-2": "#eecc5d",
+    "--dig-color__warning__on-surface": "#755f1a",
+    "--dig-color__success__base": "#0f503c",
+    "--dig-color__success__base--state-1": "#206f54",
+    "--dig-color__success__base--state-2": "#2c8769",
+    "--dig-color__success__on-base": "#e2ece8",
+    "--dig-color__success__surface": "#e2ece8",
+    "--dig-color__success__surface--state-1": "#b8d6cc",
+    "--dig-color__success__surface--state-2": "#83c3ad",
+    "--dig-color__success__on-surface": "#206f54",
+    "--dig-color__alert__base": "#9b0032",
+    "--dig-color__alert__base--state-1": "#c0154c",
+    "--dig-color__alert__base--state-2": "#de346b",
+    "--dig-color__alert__on-base": "#f5e5eb",
+    "--dig-color__alert__surface": "#f5e5eb",
+    "--dig-color__alert__surface--state-1": "#ecc5d2",
+    "--dig-color__alert__surface--state-2": "#e5a3b9",
+    "--dig-color__alert__on-surface": "#c0154c",
+    "--dig-color__utility__focus-ring": "#3080ff",
+    "--dig-color__utility__overlay": "#0000008c",
+    "--dig-color__utility__overlay-blur": "#0000008c",
+    "--DWG__TEMP__color__utility__focusring": "#428bff",
+    "--DWG__TEMP__color__utility__overlay": "rgba(84,74,68,.5)",
+    "--dig-motion__duration__instant": "0.00s",
+    "--dig-motion__duration__xxfast": "0.10s",
+    "--dig-motion__duration__xfast": "0.20s",
+    "--dig-motion__duration__fast": "0.30s",
+    "--dig-motion__duration__medium": "0.40s",
+    "--dig-motion__duration__slow": "0.50s",
+    "--dig-motion__duration__xslow": "0.60s",
+    "--dig-motion__duration__xxslow": "0.70s",
+    "--dig-motion__duration__extended": "1.00s",
+    "--dig-spacing__dimension__0": "0",
+    "--dig-spacing__dimension__2": "2px",
+    "--dig-spacing__dimension__4": "4px",
+    "--dig-spacing__dimension__6": "6px",
+    "--dig-spacing__dimension__8": "8px",
+    "--dig-spacing__dimension__10": "10px",
+    "--dig-spacing__dimension__12": "12px",
+    "--dig-spacing__dimension__16": "16px",
+    "--dig-spacing__dimension__20": "20px",
+    "--dig-spacing__dimension__24": "24px",
+    "--dig-spacing__dimension__28": "28px",
+    "--dig-spacing__dimension__32": "32px",
+    "--dig-spacing__dimension__36": "36px",
+    "--dig-spacing__dimension__44": "44px",
+    "--dig-spacing__dimension__52": "52px",
+    "--dig-spacing__dimension__60": "60px",
+    "--dig-spacing__dimension__68": "68px",
+    "--dig-spacing__dimension__76": "76px",
+    "--dig-spacing__dimension__84": "84px",
+    "--dig-spacing__dimension__100": "100px",
+    "--dig-spacing__dimension__116": "116px",
+    "--dig-spacing__dimension__132": "132px",
+    "--dig-breakpoint__xsmall": "0",
+    "--dig-breakpoint__small": "600",
+    "--dig-breakpoint__medium": "1024",
+    "--dig-breakpoint__large": "1600",
+    "--dig-breakpoint__xlarge": "1920",
+    "--dig-radius__none": "0",
+    "--dig-radius__xsmall": "0",
+    "--dig-radius__small": "0",
+    "--dig-radius__medium": "0",
+    "--dig-radius__large": "0",
+    "--dig-radius__xlarge": "0",
+    "--dig-radius__xxlarge": "0",
+    "--dig-radius__circular": "999px",
+    "--dig-type__family__text": "Atlas Grotesk Web, Atlas Grotesk, AtlasGrotesk, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif,\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "--dig-type__family__title": "Sharp Grotesk, SharpGrotesk, Sharp Grotesk KR, Sharp Grotesk Thai,Atlas Grotesk Web, Atlas Grotesk, AtlasGrotesk, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif,\"Apple Color Emoji\", \"Segoe UI E",
+    "--dig-type__family__monospace": "ui-monospace, \"SFMono-Regular\", \"SF Mono\", Menlo, Monaco, \"Cascadia Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Oxygen Mono\", \"Ubuntu Mono\", \"Source Code Pro\", \"Fira Mono\", \"Droid Sans Mono\", \"Consolas\", \"Liberation Mono\", \"Courier New\", monosp",
+    "--dig-type__family__action": "Atlas Grotesk Web, Atlas Grotesk, AtlasGrotesk, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif,\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+  },
+  "measured": {
+    "getStarted": {
+      "href": "/plans",
+      "backgroundColor": "#0061fe",
+      "color": "#f7f5f2",
+      "borderRadius": "12px",
+      "height": 40
+    },
+    "promo": {
+      "text": "Tigris joins Dropbox: fast storage built for AI apps.",
+      "href": "https://blog.dropbox.com/topics/company/dropbox-completes-acquisition-of-tigris-data",
+      "color": "#0044af"
+    },
+    "loginEmail": {
+      "placeholder": "name@company.com",
+      "valueLength": 0,
+      "fontFamily": "lucida grande stack",
+      "fontSize": "16px",
+      "height": 48,
+      "border": "1px #b0b4ba",
+      "background": "#ffffff"
+    }
+  }
+}
