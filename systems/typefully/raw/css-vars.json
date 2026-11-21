@@ -1,0 +1,5618 @@
+{
+ "readAt": "2026-11-20",
+ "source": "stylesheet bodies from a live https://typefully.com/pricing load (network responses plus inline style blocks), re-parsed with CSSStyleSheet. Resolved on a probe at 1440x900, plain and with a dark class. The dark class is a reconstruction: the public site has no theme toggle.",
+ "sheets": [
+  [
+   "https://typefully.com/_next/static/immutable/chunks/0zbrj77q0yzu4.css",
+   2873
+  ],
+  [
+   "https://typefully.com/_next/static/immutable/chunks/14cvlblqyup3u.css",
+   861
+  ],
+  [
+   "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   623211
+  ],
+  [
+   "https://fonts.googleapis.com/css2",
+   17247
+  ],
+  [
+   "https://typefully.com/_next/static/immutable/chunks/24uedt65obfcx.css",
+   12594
+  ],
+  [
+   "inline-0",
+   996
+  ],
+  [
+   "inline-1",
+   99
+  ]
+ ],
+ "counts": {
+  "rules": 983,
+  "fonts": 41,
+  "app": 200,
+  "theme": 7,
+  "tailwind": 412
+ },
+ "errors": [],
+ "app": [
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".scroll-mask-horizontal",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-reduced-motion: no-preference)",
+    "@supports (animation-timeline:scroll())"
+   ],
+   "properties": {
+    "--mask-fade-distance": "1rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".scroll-mask-up",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-reduced-motion: no-preference)",
+    "@supports (animation-timeline:scroll())"
+   ],
+   "properties": {
+    "--mask-fade-distance": "1rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".scroll-mask-vertical",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-reduced-motion: no-preference)",
+    "@supports (animation-timeline:scroll())"
+   ],
+   "properties": {
+    "--mask-fade-distance": "1rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".scroll-mask-vertical-\\[2rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-reduced-motion: no-preference)",
+    "@supports (animation-timeline:scroll())"
+   ],
+   "properties": {
+    "--mask-fade-distance": "2rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--accounts-padding\\:theme\\(spacing\\.\\[3\\.5\\]\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--accounts-padding": ".875rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--backdrop-opacity\\:0\\.2\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--backdrop-opacity": ".2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--bubble-menu-active-bg\\:var\\(--color-typ-c7\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--bubble-menu-active-bg": "var(--color-typ-c7)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--bubble-menu-active-text\\:var\\(--color-typ-c1\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--bubble-menu-active-text": "var(--color-typ-c1)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--bubble-menu-padding\\:3px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--bubble-menu-padding": "3px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--bubble-menu-radius\\:10px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--bubble-menu-radius": "10px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--grow-platform-header-height\\:80px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--grow-platform-header-height": "80px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--layout-padding\\:12px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--layout-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--li-blue\\:\\#0a66c2\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--li-blue": "#0a66c2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--link-color\\:\\#0a66c2\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--link-color": "#0a66c2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--m-accent\\:\\#6364ff\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--m-accent": "#6364ff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--segmented-control-padding\\:2px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--segmented-control-padding": "2px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--segmented-control-radius\\:var\\(--radius-lg\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--segmented-control-radius": "var(--radius-lg)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--segmented-control-radius\\:var\\(--radius-xl\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--segmented-control-radius": "var(--radius-xl)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--selected-bg\\:var\\(--color-typ-c7\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--selected-bg": "var(--color-typ-c7)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--selected-text\\:var\\(--color-typ-c1\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--selected-text": "var(--color-typ-c1)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--text-2xs\\:0\\.72em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--text-2xs": ".72em"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--text-base\\:1em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--text-base": "1em"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--text-sm\\:0\\.9em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--text-sm": ".9em"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--text-xs\\:0\\.8em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--text-xs": ".8em"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-blockquote-margin-bottom\\:24px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-blockquote-margin-bottom": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-blockquote-margin-bottom\\:26px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-blockquote-margin-bottom": "26px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-body-leading\\:26px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-body-leading": "26px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-body-leading\\:28px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-body-leading": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-body-size\\:16px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-body-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-body-size\\:17px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-body-size": "17px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h1-leading\\:36px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h1-leading": "36px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h1-leading\\:40px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h1-leading": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h1-margin-y\\:24px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h1-margin-y": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h1-margin-y\\:28px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h1-margin-y": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h1-size\\:28px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h1-size": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h1-size\\:31px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h1-size": "31px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h2-leading\\:31px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h2-leading": "31px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h2-leading\\:36px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h2-leading": "36px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h2-margin-y\\:22px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h2-margin-y": "22px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h2-margin-y\\:24px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h2-margin-y": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h2-size\\:23px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h2-size": "23px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-h2-size\\:26px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-h2-size": "26px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-inline-media-margin-bottom\\:24px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-inline-media-margin-bottom": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-inline-media-margin-bottom\\:28px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-inline-media-margin-bottom": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-list-margin-bottom\\:24px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-list-margin-bottom": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-list-margin-bottom\\:28px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-list-margin-bottom": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-paragraph-margin-bottom\\:24px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-paragraph-margin-bottom": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-paragraph-margin-bottom\\:28px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-paragraph-margin-bottom": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-section-rule-margin-bottom\\:28px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-section-rule-margin-bottom": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-title-leading\\:40px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-title-leading": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-title-leading\\:44px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-title-leading": "44px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-title-margin-bottom\\:22px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-title-margin-bottom": "22px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-title-margin-bottom\\:24px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-title-margin-bottom": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-title-min-height\\:40px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-title-min-height": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-title-min-height\\:46px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-title-min-height": "46px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-title-size\\:31px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-title-size": "31px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-article-title-size\\:34px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-article-title-size": "34px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-post-body-leading-offset\\:62px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-post-body-leading-offset": "62px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-post-body-leading-offset\\:64px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-post-body-leading-offset": "64px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-post-wrapper-trailing-inset\\:8px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-post-wrapper-trailing-inset": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--x-post-wrapper-trailing-inset\\:16px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--x-post-wrapper-trailing-inset": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".group-\\[\\.dropdown-dark\\]\\:\\[--selected-bg\\:var\\(--color-typ-675\\)\\]:is(:where(.group).dropdown-dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--selected-bg": "var(--color-typ-675)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".group-\\[\\.dropdown-dark\\]\\:\\[--selected-text\\:white\\]:is(:where(.group).dropdown-dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--selected-text": "white"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".max-desktop\\:\\[--x-post-body-leading-offset\\:62px\\]",
+   "context": [
+    "@layer utilities",
+    "@media not all and (min-width: 680px)"
+   ],
+   "properties": {
+    "--x-post-body-leading-offset": "62px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".max-desktop\\:\\[--x-post-wrapper-trailing-inset\\:8px\\]",
+   "context": [
+    "@layer utilities",
+    "@media not all and (min-width: 680px)"
+   ],
+   "properties": {
+    "--x-post-wrapper-trailing-inset": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".desktop\\:\\[--grow-platform-header-height\\:40px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 680px)"
+   ],
+   "properties": {
+    "--grow-platform-header-height": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".smd\\:scroll-mask-horizontal",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 720px)",
+    "@media (prefers-reduced-motion: no-preference)",
+    "@supports (animation-timeline:scroll())"
+   ],
+   "properties": {
+    "--mask-fade-distance": "1rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\@min-\\[720px\\]\\/realistic-preview\\:scroll-mask-horizontal",
+   "context": [
+    "@layer utilities",
+    "@container realistic-preview (min-width: 720px)",
+    "@media (prefers-reduced-motion: no-preference)",
+    "@supports (animation-timeline:scroll())"
+   ],
+   "properties": {
+    "--mask-fade-distance": "1rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html:not(.light-mode) .dark\\:\\[--backdrop-opacity\\:0\\.7\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--backdrop-opacity": ".7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.dark-mode .dark\\:\\[--backdrop-opacity\\:0\\.7\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--backdrop-opacity": ".7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html:not(.light-mode) .dark\\:\\[--bubble-menu-active-bg\\:var\\(--color-typ-700\\)\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--bubble-menu-active-bg": "var(--color-typ-700)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.dark-mode .dark\\:\\[--bubble-menu-active-bg\\:var\\(--color-typ-700\\)\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--bubble-menu-active-bg": "var(--color-typ-700)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html:not(.light-mode) .dark\\:\\[--bubble-menu-active-text\\:white\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--bubble-menu-active-text": "white"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.dark-mode .dark\\:\\[--bubble-menu-active-text\\:white\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--bubble-menu-active-text": "white"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html:not(.light-mode) .dark\\:\\[--li-blue\\:\\#2b8cee\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--li-blue": "#2b8cee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.dark-mode .dark\\:\\[--li-blue\\:\\#2b8cee\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--li-blue": "#2b8cee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html:not(.light-mode) .dark\\:\\[--link-color\\:\\#2b8cee\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--link-color": "#2b8cee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.dark-mode .dark\\:\\[--link-color\\:\\#2b8cee\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--link-color": "#2b8cee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html:not(.light-mode) .dark\\:\\[--m-accent\\:\\#8c8dff\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--m-accent": "#8c8dff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.dark-mode .dark\\:\\[--m-accent\\:\\#8c8dff\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--m-accent": "#8c8dff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html:not(.light-mode) .dark\\:\\[--selected-bg\\:var\\(--color-typ-700\\)\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--selected-bg": "var(--color-typ-700)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.dark-mode .dark\\:\\[--selected-bg\\:var\\(--color-typ-700\\)\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--selected-bg": "var(--color-typ-700)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html:not(.light-mode) .dark\\:\\[--selected-text\\:white\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--selected-text": "white"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.dark-mode .dark\\:\\[--selected-text\\:white\\]:not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--selected-text": "white"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html:not(.light-mode) .group-\\[\\.dropdown-dark\\]\\:dark\\:\\[--selected-bg\\:var\\(--color-typ-700\\)\\]:is(:where(.group).dropdown-dark *):not(:where(.theme-light-scope, .theme-light-sco",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--selected-bg": "var(--color-typ-700)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.dark-mode .group-\\[\\.dropdown-dark\\]\\:dark\\:\\[--selected-bg\\:var\\(--color-typ-700\\)\\]:is(:where(.group).dropdown-dark *):not(:where(.theme-light-scope, .theme-light-scope *))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--selected-bg": "var(--color-typ-700)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--light-accentHsl": "205 92% 53%",
+    "--light-xSubscribeRgb": "201 54 204",
+    "--light-linkedInAccentHsl": "201 100% 35%",
+    "--light-mastodonAccentHsl": "246 80% 60.4%",
+    "--light-blueskyAccentHsl": "209 100% 50%",
+    "--light-linkedInBgHsl": "45 14% 95%",
+    "--light-mastodonBgHsl": "200 23% 95%",
+    "--light-threadsBgHsl": "0 0% 98%",
+    "--light-discordAccentHsl": "227 58% 65%",
+    "--light-blueskyBgHsl": "0 0% 100%",
+    "--light-substackAccentHsl": "24 100% 55%",
+    "--light-substackBgHsl": "0 0% 100%",
+    "--light-c1Hsl": "0 0% 0%",
+    "--light-c2Hsl": "207 20% 26%",
+    "--light-c3Hsl": "207 14% 42%",
+    "--light-c4Hsl": "207 12% 60%",
+    "--light-c5Hsl": "205 10% 80%",
+    "--light-c6Hsl": "207 8% 91%",
+    "--light-c7Hsl": "204 8% 94%",
+    "--light-bg0Hsl": "0 0% 100%",
+    "--light-bg1Hsl": "240 2% 99%",
+    "--light-bg2Hsl": "204 2% 97.5%",
+    "--light-bg3Hsl": "204 2% 96%",
+    "--light-bg4Hsl": "204 2% 94%",
+    "--light-bgTooltipHsl": "0 0% 100%",
+    "--light-successHsl": "130 55% 44%",
+    "--light-errorHsl": "360 90% 60%",
+    "--light-aiHsl": "250 85% 67%",
+    "--light-aiDarkHsl": "250 75% 58%",
+    "--light-aiLightHsl": "250 95% 75%",
+    "--light-orangeHsl": "29 100% 58%",
+    "--light-tag-1Hsl": "0 100% 73%",
+    "--light-tag-2Hsl": "29 100% 63%",
+    "--light-tag-3Hsl": "43 100% 63%",
+    "--light-tag-4Hsl": "90 69% 61%",
+    "--light-tag-5Hsl": "154 81% 52%",
+    "--light-tag-6Hsl": "194 100% 60%",
+    "--light-tag-7Hsl": "230 100% 72%",
+    "--light-tag-8Hsl": "274 100% 74%",
+    "--light-tag-9Hsl": "324 100% 84%",
+    "--light-tag-10Hsl": "0 0% 69%",
+    "--accentHsl": "var(--light-accentHsl)",
+    "--xSubscribeRgb": "var(--light-xSubscribeRgb)",
+    "--linkedInAccentHsl": "var(--light-linkedInAccentHsl)",
+    "--mastodonAccentHsl": "var(--light-mastodonAccentHsl)",
+    "--blueskyAccentHsl": "var(--light-blueskyAccentHsl)",
+    "--linkedInBgHsl": "var(--light-linkedInBgHsl)",
+    "--mastodonBgHsl": "var(--light-mastodonBgHsl)",
+    "--threadsBgHsl": "var(--light-threadsBgHsl)",
+    "--discordAccentHsl": "var(--light-discordAccentHsl)",
+    "--blueskyBgHsl": "var(--light-blueskyBgHsl)",
+    "--substackAccentHsl": "var(--light-substackAccentHsl)",
+    "--substackBgHsl": "var(--light-substackBgHsl)",
+    "--c1Hsl": "var(--light-c1Hsl)",
+    "--c2Hsl": "var(--light-c2Hsl)",
+    "--c3Hsl": "var(--light-c3Hsl)",
+    "--c4Hsl": "var(--light-c4Hsl)",
+    "--c5Hsl": "var(--light-c5Hsl)",
+    "--c6Hsl": "var(--light-c6Hsl)",
+    "--c7Hsl": "var(--light-c7Hsl)",
+    "--bg0Hsl": "var(--light-bg0Hsl)",
+    "--bg1Hsl": "var(--light-bg1Hsl)",
+    "--bg2Hsl": "var(--light-bg2Hsl)",
+    "--bg3Hsl": "var(--light-bg3Hsl)",
+    "--bg4Hsl": "var(--light-bg4Hsl)",
+    "--bgTooltipHsl": "var(--light-bgTooltipHsl)",
+    "--successHsl": "var(--light-successHsl)",
+    "--errorHsl": "var(--light-errorHsl)",
+    "--aiHsl": "var(--light-aiHsl)",
+    "--aiDarkHsl": "var(--light-aiDarkHsl)",
+    "--aiLightHsl": "var(--light-aiLightHsl)",
+    "--orangeHsl": "var(--light-orangeHsl)",
+    "--tag-1Hsl": "var(--light-tag-1Hsl)",
+    "--tag-2Hsl": "var(--light-tag-2Hsl)",
+    "--tag-3Hsl": "var(--light-tag-3Hsl)",
+    "--tag-4Hsl": "var(--light-tag-4Hsl)",
+    "--tag-5Hsl": "var(--light-tag-5Hsl)",
+    "--tag-6Hsl": "var(--light-tag-6Hsl)",
+    "--tag-7Hsl": "var(--light-tag-7Hsl)",
+    "--tag-8Hsl": "var(--light-tag-8Hsl)",
+    "--tag-9Hsl": "var(--light-tag-9Hsl)",
+    "--tag-10Hsl": "var(--light-tag-10Hsl)",
+    "--accent": "hsl(var(--accentHsl))",
+    "--xSubscribe": "rgb(var(--xSubscribeRgb))",
+    "--c1": "hsl(var(--c1Hsl))",
+    "--c2": "hsl(var(--c2Hsl))",
+    "--c3": "hsl(var(--c3Hsl))",
+    "--c4": "hsl(var(--c4Hsl))",
+    "--c5": "hsl(var(--c5Hsl))",
+    "--c6": "hsl(var(--c6Hsl))",
+    "--c7": "hsl(var(--c7Hsl))",
+    "--bg0": "hsl(var(--bg0Hsl))",
+    "--bg1": "hsl(var(--bg1Hsl))",
+    "--bg2": "hsl(var(--bg2Hsl))",
+    "--bg3": "hsl(var(--bg3Hsl))",
+    "--bg4": "hsl(var(--bg4Hsl))",
+    "--bgTooltip": "hsl(var(--bgTooltipHsl))",
+    "--bgTooltipTransparent": "hsl(var(--bgTooltipHsl)/.92)",
+    "--linkedInAccent": "hsl(var(--linkedInAccentHsl))",
+    "--mastodonAccent": "hsl(var(--mastodonAccentHsl))",
+    "--blueskyAccent": "hsl(var(--blueskyAccentHsl))",
+    "--discordAccent": "hsl(var(--discordAccentHsl))",
+    "--linkedInBg": "hsl(var(--linkedInBgHsl))",
+    "--mastodonBg": "hsl(var(--mastodonBgHsl))",
+    "--threadsBg": "hsl(var(--threadsBgHsl))",
+    "--blueskyBg": "hsl(var(--blueskyBgHsl))",
+    "--substackAccent": "hsl(var(--substackAccentHsl))",
+    "--substackBg": "hsl(var(--substackBgHsl))",
+    "--success": "hsl(var(--successHsl))",
+    "--error": "hsl(var(--errorHsl))",
+    "--light-toast-warning-background": "#fec",
+    "--toast-warning-background": "var(--light-toast-warning-background)",
+    "--ai": "hsl(var(--aiHsl))",
+    "--aiDark": "hsl(var(--aiDarkHsl))",
+    "--tooltipBorder": "var(--c7)",
+    "--light-icons": "#14171a",
+    "--light-selection": "#1da1f21a",
+    "--light-selectionHover": "#1da1f233",
+    "--icons": "var(--light-icons)",
+    "--selection": "var(--light-selection)",
+    "--selectionHover": "var(--light-selectionHover)",
+    "--linkedin": "#0a66c2",
+    "--orange": "hsl(var(--orangeHsl))",
+    "--dark-orange": "#f77c08",
+    "--light-shadowColor": "#143d520d",
+    "--light-verified-badge": "#1da1f2",
+    "--shadowColor": "var(--light-shadowColor)",
+    "--verified-badge": "var(--light-verified-badge)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".theme-light-scope",
+   "context": [],
+   "properties": {
+    "--lightningcss-light": "initial",
+    "--lightningcss-dark": "",
+    "--c1Hsl": "var(--light-c1Hsl)",
+    "--c2Hsl": "var(--light-c2Hsl)",
+    "--c3Hsl": "var(--light-c3Hsl)",
+    "--c4Hsl": "var(--light-c4Hsl)",
+    "--c5Hsl": "var(--light-c5Hsl)",
+    "--c6Hsl": "var(--light-c6Hsl)",
+    "--c7Hsl": "var(--light-c7Hsl)",
+    "--bg0Hsl": "var(--light-bg0Hsl)",
+    "--bg1Hsl": "var(--light-bg1Hsl)",
+    "--bg2Hsl": "var(--light-bg2Hsl)",
+    "--bg3Hsl": "var(--light-bg3Hsl)",
+    "--bg4Hsl": "var(--light-bg4Hsl)",
+    "--bgTooltipHsl": "var(--light-bgTooltipHsl)",
+    "--linkedInBgHsl": "var(--light-linkedInBgHsl)",
+    "--mastodonBgHsl": "var(--light-mastodonBgHsl)",
+    "--threadsBgHsl": "var(--light-threadsBgHsl)",
+    "--blueskyBgHsl": "var(--light-blueskyBgHsl)",
+    "--substackBgHsl": "var(--light-substackBgHsl)",
+    "--successHsl": "var(--light-successHsl)",
+    "--errorHsl": "var(--light-errorHsl)",
+    "--toast-warning-background": "var(--light-toast-warning-background)",
+    "--xSubscribeRgb": "var(--light-xSubscribeRgb)",
+    "--tooltipBorder": "var(--c7)",
+    "--icons": "var(--light-icons)",
+    "--selection": "var(--light-selection)",
+    "--selectionHover": "var(--light-selectionHover)",
+    "--shadowColor": "var(--light-shadowColor)",
+    "--verified-badge": "var(--light-verified-badge)",
+    "--color-typ-accent": "hsl(var(--light-accentHsl))",
+    "--color-typ-x-subscribe": "rgb(var(--light-xSubscribeRgb))",
+    "--color-typ-c1": "hsl(var(--light-c1Hsl))",
+    "--color-typ-c2": "hsl(var(--light-c2Hsl))",
+    "--color-typ-c3": "hsl(var(--light-c3Hsl))",
+    "--color-typ-c4": "hsl(var(--light-c4Hsl))",
+    "--color-typ-c5": "hsl(var(--light-c5Hsl))",
+    "--color-typ-c6": "hsl(var(--light-c6Hsl))",
+    "--color-typ-c7": "hsl(var(--light-c7Hsl))",
+    "--color-typ-bg0": "hsl(var(--light-bg0Hsl))",
+    "--color-typ-bg1": "hsl(var(--light-bg1Hsl))",
+    "--color-typ-bg2": "hsl(var(--light-bg2Hsl))",
+    "--color-typ-bg3": "hsl(var(--light-bg3Hsl))",
+    "--color-typ-bg4": "hsl(var(--light-bg4Hsl))",
+    "--color-typ-bgTooltip": "hsl(var(--light-bgTooltipHsl))",
+    "--color-typ-tooltipBorder": "var(--tooltipBorder)",
+    "--color-typ-success": "hsl(var(--light-successHsl))",
+    "--color-typ-error": "hsl(var(--light-errorHsl))",
+    "--color-typ-verified-badge": "var(--light-verified-badge)",
+    "--color-typ-linkedin": "hsl(var(--light-linkedInAccentHsl))",
+    "--accent": "hsl(var(--light-accentHsl))",
+    "--xSubscribe": "rgb(var(--light-xSubscribeRgb))",
+    "--linkedInAccent": "hsl(var(--light-linkedInAccentHsl))",
+    "--mastodonAccent": "hsl(var(--light-mastodonAccentHsl))",
+    "--blueskyAccent": "hsl(var(--light-blueskyAccentHsl))",
+    "--discordAccent": "hsl(var(--light-discordAccentHsl))",
+    "--linkedInBg": "hsl(var(--light-linkedInBgHsl))",
+    "--mastodonBg": "hsl(var(--light-mastodonBgHsl))",
+    "--threadsBg": "hsl(var(--light-threadsBgHsl))",
+    "--blueskyBg": "hsl(var(--light-blueskyBgHsl))",
+    "--substackAccent": "hsl(var(--light-substackAccentHsl))",
+    "--substackBg": "hsl(var(--light-substackBgHsl))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ":root.dark-mode",
+   "context": [],
+   "properties": {
+    "--c1Hsl": "0 16% 100%",
+    "--c2Hsl": "220 15% 80%",
+    "--c3Hsl": "220 14% 60%",
+    "--c4Hsl": "220 12% 40%",
+    "--c5Hsl": "220 10% 22%",
+    "--c6Hsl": "220 9% 16%",
+    "--c7Hsl": "215 8% 14%",
+    "--bg0Hsl": "215 16% 8%",
+    "--bg1Hsl": "215 14% 11%",
+    "--bg2Hsl": "215 18% 6%",
+    "--bg3Hsl": "215 14% 14%",
+    "--bg4Hsl": "215 12% 16%",
+    "--bgTooltipHsl": "215 12% 15.5%",
+    "--linkedInBgHsl": "215 16% 10%",
+    "--mastodonBgHsl": "227 15% 12%",
+    "--threadsBgHsl": "0 0% 4%",
+    "--blueskyBgHsl": "212 27.9% 12%",
+    "--substackBgHsl": "210 4% 9%",
+    "--successHsl": "130 63% 46%",
+    "--errorHsl": "360 90% 60%",
+    "--toast-warning-background": "#59400d",
+    "--tooltipBorder": "var(--c5)",
+    "--icons": "#e2e6e9",
+    "--selection": "#1da1f21a",
+    "--selectionHover": "#1da1f24d",
+    "--shadowColor": "#143d520d",
+    "--verified-badge": "white"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ":root:not(.light-mode)",
+   "context": [
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--c1Hsl": "0 16% 100%",
+    "--c2Hsl": "220 15% 80%",
+    "--c3Hsl": "220 14% 60%",
+    "--c4Hsl": "220 12% 40%",
+    "--c5Hsl": "220 10% 22%",
+    "--c6Hsl": "220 9% 16%",
+    "--c7Hsl": "215 8% 14%",
+    "--bg0Hsl": "215 16% 8%",
+    "--bg1Hsl": "215 14% 11%",
+    "--bg2Hsl": "215 18% 6%",
+    "--bg3Hsl": "215 14% 14%",
+    "--bg4Hsl": "215 12% 16%",
+    "--bgTooltipHsl": "215 12% 15.5%",
+    "--linkedInBgHsl": "215 16% 10%",
+    "--mastodonBgHsl": "227 15% 12%",
+    "--threadsBgHsl": "0 0% 4%",
+    "--blueskyBgHsl": "212 27.9% 12%",
+    "--substackBgHsl": "210 4% 9%",
+    "--successHsl": "130 63% 46%",
+    "--errorHsl": "360 90% 60%",
+    "--toast-warning-background": "#59400d",
+    "--tooltipBorder": "var(--c5)",
+    "--icons": "#e2e6e9",
+    "--selection": "#1da1f21a",
+    "--selectionHover": "#1da1f24d",
+    "--shadowColor": "#143d520d",
+    "--verified-badge": "white"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html",
+   "context": [],
+   "properties": {
+    "--header-height": "42px",
+    "--layout-padding": "16px",
+    "--big-radius": "16px",
+    "--small-radius": "10px",
+    "--tiny-radius": "6px",
+    "--big-padding": "22px",
+    "--small-padding": "16px",
+    "--toaster-top-offset": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html.todesktop",
+   "context": [],
+   "properties": {
+    "--header-height": "48px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html",
+   "context": [
+    "@media (max-width: 600px)"
+   ],
+   "properties": {
+    "--layout-padding": "14px",
+    "--big-radius": "18px",
+    "--small-radius": "13px",
+    "--tiny-radius": "8px",
+    "--toaster-top-offset": "4px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "html",
+   "context": [
+    "@media (hover: none)"
+   ],
+   "properties": {
+    "--header-height": "48px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "",
+   "context": [
+    "@keyframes mask-vertical-scroll"
+   ],
+   "properties": {
+    "--mask-up-fade": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "",
+   "context": [
+    "@keyframes mask-vertical-scroll"
+   ],
+   "properties": {
+    "--mask-up-fade": "var(--mask-fade-distance,1rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "",
+   "context": [
+    "@keyframes mask-vertical-scroll"
+   ],
+   "properties": {
+    "--mask-down-fade": "var(--mask-fade-distance,1rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "",
+   "context": [
+    "@keyframes mask-vertical-scroll"
+   ],
+   "properties": {
+    "--mask-down-fade": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "",
+   "context": [
+    "@keyframes mask-horizontal-scroll"
+   ],
+   "properties": {
+    "--mask-left-fade": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "",
+   "context": [
+    "@keyframes mask-horizontal-scroll"
+   ],
+   "properties": {
+    "--mask-left-fade": "var(--mask-fade-distance,1rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "",
+   "context": [
+    "@keyframes mask-horizontal-scroll"
+   ],
+   "properties": {
+    "--mask-right-fade": "var(--mask-fade-distance,1rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": "",
+   "context": [
+    "@keyframes mask-horizontal-scroll"
+   ],
+   "properties": {
+    "--mask-right-fade": "0"
+   },
+   "bin": "app"
+  }
+ ],
+ "theme": [
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--radius-2xl\\:1em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--radius-2xl": "1em"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--radius-lg\\:0\\.55em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--radius-lg": ".55em"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--radius-md\\:0\\.4em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--radius-md": ".4em"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--radius-sm\\:0\\.2em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--radius-sm": ".2em"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--radius-xl\\:0\\.75em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--radius-xl": ".75em"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--radius-xs\\:0\\.1em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--radius-xs": ".1em"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".\\[--spacing\\:0\\.2em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--spacing": ".2em"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/0j9sm45n2as0-.css",
+   "selector": ".sm\\:\\[--spacing\\:0\\.25em\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--spacing": ".25em"
+   },
+   "bin": "theme"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Roboto",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Roboto",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Roboto",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Roboto",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Roboto",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+302-303, U+305, U+307-308, U+310, U+312, U+315, U+31A, U+326-327, U+32C, U+32F-330, U+332-333, U+338, U+33A, U+346, U+34D, U+391-3A1, U+3A3-3A9, U+3B1-3C9, U+3D1, U+3D5-3D6, U+3F0-3F1, U+3F4-3F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-209F, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Roboto",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Roboto",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Roboto",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Roboto",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/24uedt65obfcx.css",
+   "font-family": "\"GT America\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "local(\"GT America Standard\"), local(\"GTAmericaStandard\"), url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/24uedt65obfcx.css",
+   "font-family": "\"GT America\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "local(\"GT America Standard Medium\"), local(\"GTAmericaStandardMedium\"), url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/24uedt65obfcx.css",
+   "font-family": "\"GT America\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "local(\"GT America Standard Bold\"), local(\"GTAmericaStandardBold\"), url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "https://typefully.com/_next/static/immutable/chunks/24uedt65obfcx.css",
+   "font-family": "inter-arrows-subset",
+   "src": "local(\"Inter\"), local(\"Inter-Regular\"), url(…) format(\"woff\")",
+   "unicode-range": "U+2190, U+2191, U+2192, U+2193"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--accent": {
+    "raw": "hsl(205 92% 53%)",
+    "kind": "color",
+    "value": "rgb(25, 154, 245)"
+   },
+   "--accentHsl": {
+    "raw": "205 92% 53%",
+    "kind": "other"
+   },
+   "--ai": {
+    "raw": "hsl(250 85% 67%)",
+    "kind": "color",
+    "value": "rgb(123, 99, 242)"
+   },
+   "--aiDark": {
+    "raw": "hsl(250 75% 58%)",
+    "kind": "color",
+    "value": "rgb(94, 68, 228)"
+   },
+   "--aiDarkHsl": {
+    "raw": "250 75% 58%",
+    "kind": "other"
+   },
+   "--aiHsl": {
+    "raw": "250 85% 67%",
+    "kind": "other"
+   },
+   "--aiLightHsl": {
+    "raw": "250 95% 75%",
+    "kind": "other"
+   },
+   "--animate-ios-spinner-fade": {
+    "raw": "ios-spinner-animation infinite",
+    "kind": "other"
+   },
+   "--animate-oauth-knock": {
+    "raw": "oauth-knock 2.6s ease-in-out infinite",
+    "kind": "other"
+   },
+   "--animate-ping": {
+    "raw": "ping 1s cubic-bezier(0,0,.2,1)infinite",
+    "kind": "other"
+   },
+   "--animate-pulse": {
+    "raw": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
+    "kind": "other"
+   },
+   "--animate-spin": {
+    "raw": "spin 1s linear infinite",
+    "kind": "other"
+   },
+   "--aspect-video": {
+    "raw": "16/9",
+    "kind": "other"
+   },
+   "--bg0": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--bg0Hsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--bg1": {
+    "raw": "hsl(240 2% 99%)",
+    "kind": "color",
+    "value": "rgb(252, 252, 253)"
+   },
+   "--bg1Hsl": {
+    "raw": "240 2% 99%",
+    "kind": "other"
+   },
+   "--bg2": {
+    "raw": "hsl(204 2% 97.5%)",
+    "kind": "color",
+    "value": "rgb(248, 249, 249)"
+   },
+   "--bg2Hsl": {
+    "raw": "204 2% 97.5%",
+    "kind": "other"
+   },
+   "--bg3": {
+    "raw": "hsl(204 2% 96%)",
+    "kind": "color",
+    "value": "rgb(245, 245, 245)"
+   },
+   "--bg3Hsl": {
+    "raw": "204 2% 96%",
+    "kind": "other"
+   },
+   "--bg4": {
+    "raw": "hsl(204 2% 94%)",
+    "kind": "color",
+    "value": "rgb(239, 240, 240)"
+   },
+   "--bg4Hsl": {
+    "raw": "204 2% 94%",
+    "kind": "other"
+   },
+   "--bgTooltip": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--bgTooltipHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--bgTooltipTransparent": {
+    "raw": "hsl(0 0% 100%/.92)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.92)"
+   },
+   "--big-padding": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--big-radius": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--blueskyAccent": {
+    "raw": "hsl(209 100% 50%)",
+    "kind": "color",
+    "value": "rgb(0, 132, 255)"
+   },
+   "--blueskyAccentHsl": {
+    "raw": "209 100% 50%",
+    "kind": "other"
+   },
+   "--blueskyBg": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--blueskyBgHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--blur-2xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--blur-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--blur-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--blur-sm": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--blur-xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--blur-xs": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--breakpoint-desktop": {
+    "raw": "680px",
+    "kind": "dimension",
+    "value": "680px"
+   },
+   "--c1": {
+    "raw": "hsl(0 0% 0%)",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--c1Hsl": {
+    "raw": "0 0% 0%",
+    "kind": "other"
+   },
+   "--c2": {
+    "raw": "hsl(207 20% 26%)",
+    "kind": "color",
+    "value": "rgb(53, 68, 80)"
+   },
+   "--c2Hsl": {
+    "raw": "207 20% 26%",
+    "kind": "other"
+   },
+   "--c3": {
+    "raw": "hsl(207 14% 42%)",
+    "kind": "color",
+    "value": "rgb(92, 109, 122)"
+   },
+   "--c3Hsl": {
+    "raw": "207 14% 42%",
+    "kind": "other"
+   },
+   "--c4": {
+    "raw": "hsl(207 12% 60%)",
+    "kind": "color",
+    "value": "rgb(141, 154, 165)"
+   },
+   "--c4Hsl": {
+    "raw": "207 12% 60%",
+    "kind": "other"
+   },
+   "--c5": {
+    "raw": "hsl(205 10% 80%)",
+    "kind": "color",
+    "value": "rgb(199, 205, 209)"
+   },
+   "--c5Hsl": {
+    "raw": "205 10% 80%",
+    "kind": "other"
+   },
+   "--c6": {
+    "raw": "hsl(207 8% 91%)",
+    "kind": "color",
+    "value": "rgb(230, 232, 234)"
+   },
+   "--c6Hsl": {
+    "raw": "207 8% 91%",
+    "kind": "other"
+   },
+   "--c7": {
+    "raw": "hsl(204 8% 94%)",
+    "kind": "color",
+    "value": "rgb(238, 240, 241)"
+   },
+   "--c7Hsl": {
+    "raw": "204 8% 94%",
+    "kind": "other"
+   },
+   "--color-amber-100": {
+    "raw": "lab(95.916% -1.21653 23.111)",
+    "kind": "color",
+    "value": "lab(95.916 -1.21653 23.111)"
+   },
+   "--color-amber-300": {
+    "raw": "lab(86.4156% 6.13147 78.3961)",
+    "kind": "color",
+    "value": "lab(86.4156 6.13147 78.3961)"
+   },
+   "--color-amber-400": {
+    "raw": "lab(80.1641% 16.6016 99.2089)",
+    "kind": "color",
+    "value": "lab(80.1641 16.6016 99.2089)"
+   },
+   "--color-amber-500": {
+    "raw": "lab(72.7183% 31.8672 97.9407)",
+    "kind": "color",
+    "value": "lab(72.7183 31.8672 97.9407)"
+   },
+   "--color-amber-600": {
+    "raw": "lab(60.3514% 40.5624 87.1228)",
+    "kind": "color",
+    "value": "lab(60.3514 40.5624 87.1228)"
+   },
+   "--color-amber-700": {
+    "raw": "lab(47.2709% 42.9082 69.2966)",
+    "kind": "color",
+    "value": "lab(47.2709 42.9082 69.2966)"
+   },
+   "--color-amber-900": {
+    "raw": "lab(31.2288% 30.2627 40.0378)",
+    "kind": "color",
+    "value": "lab(31.2288 30.2627 40.0378)"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--color-blue-100": {
+    "raw": "lab(92.0301% -2.24757 -11.6453)",
+    "kind": "color",
+    "value": "lab(92.0301 -2.24757 -11.6453)"
+   },
+   "--color-blue-200": {
+    "raw": "lab(86.15% -4.04379 -21.0797)",
+    "kind": "color",
+    "value": "lab(86.15 -4.04379 -21.0797)"
+   },
+   "--color-blue-300": {
+    "raw": "lab(77.5052% -6.4629 -36.42)",
+    "kind": "color",
+    "value": "lab(77.5052 -6.4629 -36.42)"
+   },
+   "--color-blue-400": {
+    "raw": "lab(65.0361% -1.42065 -56.9802)",
+    "kind": "color",
+    "value": "lab(65.0361 -1.42065 -56.9802)"
+   },
+   "--color-blue-500": {
+    "raw": "lab(54.1736% 13.3369 -74.6839)",
+    "kind": "color",
+    "value": "lab(54.1736 13.3369 -74.6839)"
+   },
+   "--color-blue-600": {
+    "raw": "lab(44.0605% 29.0279 -86.0352)",
+    "kind": "color",
+    "value": "lab(44.0605 29.0279 -86.0352)"
+   },
+   "--color-blue-700": {
+    "raw": "lab(36.9089% 35.0961 -85.6872)",
+    "kind": "color",
+    "value": "lab(36.9089 35.0961 -85.6872)"
+   },
+   "--color-blue-800": {
+    "raw": "lab(30.2514% 27.7853 -70.2699)",
+    "kind": "color",
+    "value": "lab(30.2514 27.7853 -70.2699)"
+   },
+   "--color-blue-900": {
+    "raw": "lab(26.1542% 15.7545 -51.5504)",
+    "kind": "color",
+    "value": "lab(26.1542 15.7545 -51.5504)"
+   },
+   "--color-blue-950": {
+    "raw": "lab(15.6723% 8.86232 -32.2945)",
+    "kind": "color",
+    "value": "lab(15.6723 8.86232 -32.2945)"
+   },
+   "--color-cyan-100": {
+    "raw": "lab(95.3146% -13.8285 -6.84732)",
+    "kind": "color",
+    "value": "lab(95.3146 -13.8285 -6.84732)"
+   },
+   "--color-cyan-300": {
+    "raw": "lab(85.3886% -36.7636 -21.5716)",
+    "kind": "color",
+    "value": "lab(85.3886 -36.7636 -21.5716)"
+   },
+   "--color-cyan-400": {
+    "raw": "lab(76.6045% -40.9406 -29.6231)",
+    "kind": "color",
+    "value": "lab(76.6045 -40.9406 -29.6231)"
+   },
+   "--color-cyan-500": {
+    "raw": "lab(67.805% -35.3952 -30.2018)",
+    "kind": "color",
+    "value": "lab(67.805 -35.3952 -30.2018)"
+   },
+   "--color-cyan-600": {
+    "raw": "lab(55.1767% -26.7496 -30.5139)",
+    "kind": "color",
+    "value": "lab(55.1767 -26.7496 -30.5139)"
+   },
+   "--color-cyan-700": {
+    "raw": "lab(44.7267% -21.5987 -26.118)",
+    "kind": "color",
+    "value": "lab(44.7267 -21.5987 -26.118)"
+   },
+   "--color-cyan-900": {
+    "raw": "lab(30.372% -13.1853 -18.7887)",
+    "kind": "color",
+    "value": "lab(30.372 -13.1853 -18.7887)"
+   },
+   "--color-emerald-100": {
+    "raw": "lab(94.9004% -17.0769 5.63836)",
+    "kind": "color",
+    "value": "lab(94.9004 -17.0769 5.63836)"
+   },
+   "--color-emerald-300": {
+    "raw": "lab(83.9203% -48.7124 13.8849)",
+    "kind": "color",
+    "value": "lab(83.9203 -48.7124 13.8849)"
+   },
+   "--color-emerald-400": {
+    "raw": "lab(75.0771% -60.7313 19.4147)",
+    "kind": "color",
+    "value": "lab(75.0771 -60.7313 19.4147)"
+   },
+   "--color-emerald-500": {
+    "raw": "lab(66.9756% -58.27 19.5419)",
+    "kind": "color",
+    "value": "lab(66.9756 -58.27 19.5419)"
+   },
+   "--color-emerald-600": {
+    "raw": "lab(55.0481% -49.9246 15.93)",
+    "kind": "color",
+    "value": "lab(55.0481 -49.9246 15.93)"
+   },
+   "--color-emerald-700": {
+    "raw": "lab(44.4871% -41.0396 11.0361)",
+    "kind": "color",
+    "value": "lab(44.4871 -41.0396 11.0361)"
+   },
+   "--color-emerald-900": {
+    "raw": "lab(28.8637% -26.9249 5.45986)",
+    "kind": "color",
+    "value": "lab(28.8637 -26.9249 5.45986)"
+   },
+   "--color-gray-100": {
+    "raw": "lab(96.1596% -.0823438 -1.13575)",
+    "kind": "color",
+    "value": "lab(96.1596 -0.0823438 -1.13575)"
+   },
+   "--color-gray-200": {
+    "raw": "lab(91.6229% -.159115 -2.26791)",
+    "kind": "color",
+    "value": "lab(91.6229 -0.159115 -2.26791)"
+   },
+   "--color-gray-400": {
+    "raw": "lab(65.9269% -.832707 -8.17473)",
+    "kind": "color",
+    "value": "lab(65.9269 -0.832707 -8.17473)"
+   },
+   "--color-gray-50": {
+    "raw": "lab(98.2596% -.247031 -.706708)",
+    "kind": "color",
+    "value": "lab(98.2596 -0.247031 -0.706708)"
+   },
+   "--color-gray-500": {
+    "raw": "lab(47.7841% -.393182 -10.0268)",
+    "kind": "color",
+    "value": "lab(47.7841 -0.393182 -10.0268)"
+   },
+   "--color-gray-600": {
+    "raw": "lab(35.6337% -1.58697 -10.8425)",
+    "kind": "color",
+    "value": "lab(35.6337 -1.58697 -10.8425)"
+   },
+   "--color-gray-800": {
+    "raw": "lab(16.1051% -1.18239 -11.7533)",
+    "kind": "color",
+    "value": "lab(16.1051 -1.18239 -11.7533)"
+   },
+   "--color-gray-900": {
+    "raw": "lab(8.11897% .811279 -12.254)",
+    "kind": "color",
+    "value": "lab(8.11897 0.811279 -12.254)"
+   },
+   "--color-green-100": {
+    "raw": "lab(96.1861% -13.8464 6.52365)",
+    "kind": "color",
+    "value": "lab(96.1861 -13.8464 6.52365)"
+   },
+   "--color-green-200": {
+    "raw": "lab(92.4222% -26.4702 12.9427)",
+    "kind": "color",
+    "value": "lab(92.4222 -26.4702 12.9427)"
+   },
+   "--color-green-400": {
+    "raw": "lab(78.503% -64.9265 39.7492)",
+    "kind": "color",
+    "value": "lab(78.503 -64.9265 39.7492)"
+   },
+   "--color-green-500": {
+    "raw": "lab(70.5521% -66.5147 45.8073)",
+    "kind": "color",
+    "value": "lab(70.5521 -66.5147 45.8073)"
+   },
+   "--color-green-900": {
+    "raw": "lab(30.797% -29.6927 17.382)",
+    "kind": "color",
+    "value": "lab(30.797 -29.6927 17.382)"
+   },
+   "--color-indigo-100": {
+    "raw": "lab(91.6577% 1.04591 -12.7199)",
+    "kind": "color",
+    "value": "lab(91.6577 1.04591 -12.7199)"
+   },
+   "--color-indigo-300": {
+    "raw": "lab(74.0235% 8.54138 -41.6075)",
+    "kind": "color",
+    "value": "lab(74.0235 8.54138 -41.6075)"
+   },
+   "--color-indigo-400": {
+    "raw": "lab(59.866% 22.4834 -64.4485)",
+    "kind": "color",
+    "value": "lab(59.866 22.4834 -64.4485)"
+   },
+   "--color-indigo-500": {
+    "raw": "lab(48.295% 38.3129 -81.9673)",
+    "kind": "color",
+    "value": "lab(48.295 38.3129 -81.9673)"
+   },
+   "--color-indigo-600": {
+    "raw": "lab(38.4009% 52.6132 -92.3857)",
+    "kind": "color",
+    "value": "lab(38.4009 52.6132 -92.3857)"
+   },
+   "--color-indigo-700": {
+    "raw": "lab(32.4486% 49.2217 -84.6695)",
+    "kind": "color",
+    "value": "lab(32.4486 49.2217 -84.6695)"
+   },
+   "--color-indigo-900": {
+    "raw": "lab(23.3911% 24.6978 -50.4718)",
+    "kind": "color",
+    "value": "lab(23.3911 24.6978 -50.4718)"
+   },
+   "--color-lime-100": {
+    "raw": "lab(96.8662% -11.7133 22.0854)",
+    "kind": "color",
+    "value": "lab(96.8662 -11.7133 22.0854)"
+   },
+   "--color-lime-300": {
+    "raw": "lab(89.9218% -35.6546 68.5254)",
+    "kind": "color",
+    "value": "lab(89.9218 -35.6546 68.5254)"
+   },
+   "--color-lime-400": {
+    "raw": "lab(83.7876% -45.0447 88.4738)",
+    "kind": "color",
+    "value": "lab(83.7876 -45.0447 88.4738)"
+   },
+   "--color-lime-500": {
+    "raw": "lab(75.3197% -46.6547 86.1778)",
+    "kind": "color",
+    "value": "lab(75.3197 -46.6547 86.1778)"
+   },
+   "--color-lime-700": {
+    "raw": "lab(47.246% -32.2589 55.8249)",
+    "kind": "color",
+    "value": "lab(47.246 -32.2589 55.8249)"
+   },
+   "--color-lime-900": {
+    "raw": "lab(31.9931% -20.7654 33.7379)",
+    "kind": "color",
+    "value": "lab(31.9931 -20.7654 33.7379)"
+   },
+   "--color-orange-100": {
+    "raw": "lab(94.7127% 3.58394 14.3151)",
+    "kind": "color",
+    "value": "lab(94.7127 3.58394 14.3151)"
+   },
+   "--color-orange-300": {
+    "raw": "lab(80.8059% 21.7313 50.4455)",
+    "kind": "color",
+    "value": "lab(80.8059 21.7313 50.4455)"
+   },
+   "--color-orange-400": {
+    "raw": "lab(70.0429% 42.5156 75.8207)",
+    "kind": "color",
+    "value": "lab(70.0429 42.5156 75.8207)"
+   },
+   "--color-orange-500": {
+    "raw": "lab(64.272% 57.1788 90.3583)",
+    "kind": "color",
+    "value": "lab(64.272 57.1788 90.3583)"
+   },
+   "--color-orange-600": {
+    "raw": "lab(57.1026% 64.2584 89.8886)",
+    "kind": "color",
+    "value": "lab(57.1026 64.2584 89.8886)"
+   },
+   "--color-orange-700": {
+    "raw": "lab(46.4615% 57.7275 70.8507)",
+    "kind": "color",
+    "value": "lab(46.4615 57.7275 70.8507)"
+   },
+   "--color-orange-900": {
+    "raw": "lab(30.2951% 36.0434 37.671)",
+    "kind": "color",
+    "value": "lab(30.2951 36.0434 37.671)"
+   },
+   "--color-pink-100": {
+    "raw": "lab(93.5864% 9.01193 -3.15079)",
+    "kind": "color",
+    "value": "lab(93.5864 9.01193 -3.15079)"
+   },
+   "--color-pink-200": {
+    "raw": "lab(87.4504% 19.6 -6.46662)",
+    "kind": "color",
+    "value": "lab(87.4504 19.6 -6.46662)"
+   },
+   "--color-pink-300": {
+    "raw": "lab(77.8308% 38.525 -10.5394)",
+    "kind": "color",
+    "value": "lab(77.8308 38.525 -10.5394)"
+   },
+   "--color-pink-400": {
+    "raw": "lab(64.5597% 64.3615 -12.7988)",
+    "kind": "color",
+    "value": "lab(64.5597 64.3615 -12.7988)"
+   },
+   "--color-pink-500": {
+    "raw": "lab(56.9303% 76.8162 -8.07021)",
+    "kind": "color",
+    "value": "lab(56.9303 76.8162 -8.07021)"
+   },
+   "--color-pink-600": {
+    "raw": "lab(49.5493% 79.8381 2.31768)",
+    "kind": "color",
+    "value": "lab(49.5493 79.8381 2.31768)"
+   },
+   "--color-pink-700": {
+    "raw": "lab(42.1737% 71.8009 7.42233)",
+    "kind": "color",
+    "value": "lab(42.1737 71.8009 7.42233)"
+   },
+   "--color-pink-900": {
+    "raw": "lab(29.4367% 49.3962 3.35757)",
+    "kind": "color",
+    "value": "lab(29.4367 49.3962 3.35757)"
+   },
+   "--color-purple-500": {
+    "raw": "lab(52.0183% 66.11 -78.2316)",
+    "kind": "color",
+    "value": "lab(52.0183 66.11 -78.2316)"
+   },
+   "--color-red-100": {
+    "raw": "lab(92.243% 10.2865 3.83865)",
+    "kind": "color",
+    "value": "lab(92.243 10.2865 3.83865)"
+   },
+   "--color-red-300": {
+    "raw": "lab(76.5514% 36.422 15.5335)",
+    "kind": "color",
+    "value": "lab(76.5514 36.422 15.5335)"
+   },
+   "--color-red-400": {
+    "raw": "lab(63.7053% 60.745 31.3109)",
+    "kind": "color",
+    "value": "lab(63.7053 60.745 31.3109)"
+   },
+   "--color-red-500": {
+    "raw": "lab(55.4814% 75.0732 48.8528)",
+    "kind": "color",
+    "value": "lab(55.4814 75.0732 48.8528)"
+   },
+   "--color-red-600": {
+    "raw": "lab(48.4493% 77.4328 61.5452)",
+    "kind": "color",
+    "value": "lab(48.4493 77.4328 61.5452)"
+   },
+   "--color-red-700": {
+    "raw": "lab(40.4273% 67.2623 53.7441)",
+    "kind": "color",
+    "value": "lab(40.4273 67.2623 53.7441)"
+   },
+   "--color-red-900": {
+    "raw": "lab(28.5139% 44.5539 29.0463)",
+    "kind": "color",
+    "value": "lab(28.5139 44.5539 29.0463)"
+   },
+   "--color-rose-100": {
+    "raw": "lab(92.8221% 9.86832 2.60075)",
+    "kind": "color",
+    "value": "lab(92.8221 9.86832 2.60075)"
+   },
+   "--color-rose-300": {
+    "raw": "lab(76.6339% 38.3549 9.68835)",
+    "kind": "color",
+    "value": "lab(76.6339 38.3549 9.68835)"
+   },
+   "--color-rose-400": {
+    "raw": "lab(64.4125% 63.0291 19.2068)",
+    "kind": "color",
+    "value": "lab(64.4125 63.0291 19.2068)"
+   },
+   "--color-rose-500": {
+    "raw": "lab(56.101% 79.4328 31.4532)",
+    "kind": "color",
+    "value": "lab(56.101 79.4328 31.4532)"
+   },
+   "--color-rose-600": {
+    "raw": "lab(49.1882% 81.577 36.0311)",
+    "kind": "color",
+    "value": "lab(49.1882 81.577 36.0311)"
+   },
+   "--color-rose-700": {
+    "raw": "lab(41.1651% 71.6251 30.3087)",
+    "kind": "color",
+    "value": "lab(41.1651 71.6251 30.3087)"
+   },
+   "--color-rose-900": {
+    "raw": "lab(29.7104% 51.514 12.6253)",
+    "kind": "color",
+    "value": "lab(29.7104 51.514 12.6253)"
+   },
+   "--color-sky-300": {
+    "raw": "lab(80.3307% -20.2945 -31.385)",
+    "kind": "color",
+    "value": "lab(80.3307 -20.2945 -31.385)"
+   },
+   "--color-sky-400": {
+    "raw": "lab(70.687% -23.6078 -45.9483)",
+    "kind": "color",
+    "value": "lab(70.687 -23.6078 -45.9483)"
+   },
+   "--color-sky-500": {
+    "raw": "lab(63.3038% -18.433 -51.0407)",
+    "kind": "color",
+    "value": "lab(63.3038 -18.433 -51.0407)"
+   },
+   "--color-sky-700": {
+    "raw": "lab(41.6013% -9.10804 -42.5647)",
+    "kind": "color",
+    "value": "lab(41.6013 -9.10804 -42.5647)"
+   },
+   "--color-slate-400": {
+    "raw": "lab(65.5349% -2.25151 -14.5072)",
+    "kind": "color",
+    "value": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   "--color-slate-50": {
+    "raw": "lab(98.1434% -.369519 -1.05966)",
+    "kind": "color",
+    "value": "lab(98.1434 -0.369519 -1.05966)"
+   },
+   "--color-slate-500": {
+    "raw": "lab(48.0876% -2.03595 -16.5814)",
+    "kind": "color",
+    "value": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   "--color-slate-950": {
+    "raw": "lab(1.76974% 1.32743 -9.28855)",
+    "kind": "color",
+    "value": "lab(1.76974 1.32743 -9.28855)"
+   },
+   "--color-stone-100": {
+    "raw": "lab(96.5286% -.0991821 .364268)",
+    "kind": "color",
+    "value": "lab(96.5286 -0.0991821 0.364268)"
+   },
+   "--color-typ-100": {
+    "raw": "#f5f6f8",
+    "kind": "color",
+    "value": "rgb(245, 246, 248)"
+   },
+   "--color-typ-150": {
+    "raw": "#edf0f2",
+    "kind": "color",
+    "value": "rgb(237, 240, 242)"
+   },
+   "--color-typ-200": {
+    "raw": "#e5e8eb",
+    "kind": "color",
+    "value": "rgb(229, 232, 235)"
+   },
+   "--color-typ-25": {
+    "raw": "#fefefe",
+    "kind": "color",
+    "value": "rgb(254, 254, 254)"
+   },
+   "--color-typ-250": {
+    "raw": "#dce0e4",
+    "kind": "color",
+    "value": "rgb(220, 224, 228)"
+   },
+   "--color-typ-300": {
+    "raw": "#ccd0d7",
+    "kind": "color",
+    "value": "rgb(204, 208, 215)"
+   },
+   "--color-typ-350": {
+    "raw": "#9fa7b2",
+    "kind": "color",
+    "value": "rgb(159, 167, 178)"
+   },
+   "--color-typ-400": {
+    "raw": "#717d8e",
+    "kind": "color",
+    "value": "rgb(113, 125, 142)"
+   },
+   "--color-typ-450": {
+    "raw": "#4d5460",
+    "kind": "color",
+    "value": "rgb(77, 84, 96)"
+   },
+   "--color-typ-50": {
+    "raw": "#fcfcfd",
+    "kind": "color",
+    "value": "rgb(252, 252, 253)"
+   },
+   "--color-typ-500": {
+    "raw": "#454a54",
+    "kind": "color",
+    "value": "rgb(69, 74, 84)"
+   },
+   "--color-typ-550": {
+    "raw": "#40454f",
+    "kind": "color",
+    "value": "rgb(64, 69, 79)"
+   },
+   "--color-typ-600": {
+    "raw": "#3c4049",
+    "kind": "color",
+    "value": "rgb(60, 64, 73)"
+   },
+   "--color-typ-650": {
+    "raw": "#32363e",
+    "kind": "color",
+    "value": "rgb(50, 54, 62)"
+   },
+   "--color-typ-675": {
+    "raw": "#2e3138",
+    "kind": "color",
+    "value": "rgb(46, 49, 56)"
+   },
+   "--color-typ-700": {
+    "raw": "#282b31",
+    "kind": "color",
+    "value": "rgb(40, 43, 49)"
+   },
+   "--color-typ-75": {
+    "raw": "#f9fafb",
+    "kind": "color",
+    "value": "rgb(249, 250, 251)"
+   },
+   "--color-typ-750": {
+    "raw": "#202327",
+    "kind": "color",
+    "value": "rgb(32, 35, 39)"
+   },
+   "--color-typ-800": {
+    "raw": "#1c1e21",
+    "kind": "color",
+    "value": "rgb(28, 30, 33)"
+   },
+   "--color-typ-825": {
+    "raw": "#17191c",
+    "kind": "color",
+    "value": "rgb(23, 25, 28)"
+   },
+   "--color-typ-850": {
+    "raw": "#151619",
+    "kind": "color",
+    "value": "rgb(21, 22, 25)"
+   },
+   "--color-typ-900": {
+    "raw": "#0e0f11",
+    "kind": "color",
+    "value": "rgb(14, 15, 17)"
+   },
+   "--color-typ-925": {
+    "raw": "#090a0b",
+    "kind": "color",
+    "value": "rgb(9, 10, 11)"
+   },
+   "--color-typ-950": {
+    "raw": "#050506",
+    "kind": "color",
+    "value": "rgb(5, 5, 6)"
+   },
+   "--color-typ-975": {
+    "raw": "#020203",
+    "kind": "color",
+    "value": "rgb(2, 2, 3)"
+   },
+   "--color-typ-accent": {
+    "raw": "hsl(205 92% 53%)",
+    "kind": "color",
+    "value": "rgb(25, 154, 245)"
+   },
+   "--color-typ-ai": {
+    "raw": "hsl(250 85% 67%)",
+    "kind": "color",
+    "value": "rgb(123, 99, 242)"
+   },
+   "--color-typ-ai-dark": {
+    "raw": "hsl(250 75% 58%)",
+    "kind": "color",
+    "value": "rgb(94, 68, 228)"
+   },
+   "--color-typ-ai-light": {
+    "raw": "hsl(250 95% 75%)",
+    "kind": "color",
+    "value": "rgb(151, 131, 252)"
+   },
+   "--color-typ-bg0": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--color-typ-bg1": {
+    "raw": "hsl(240 2% 99%)",
+    "kind": "color",
+    "value": "rgb(252, 252, 253)"
+   },
+   "--color-typ-bg2": {
+    "raw": "hsl(204 2% 97.5%)",
+    "kind": "color",
+    "value": "rgb(248, 249, 249)"
+   },
+   "--color-typ-bg3": {
+    "raw": "hsl(204 2% 96%)",
+    "kind": "color",
+    "value": "rgb(245, 245, 245)"
+   },
+   "--color-typ-bg4": {
+    "raw": "hsl(204 2% 94%)",
+    "kind": "color",
+    "value": "rgb(239, 240, 240)"
+   },
+   "--color-typ-bgTooltip": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--color-typ-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--color-typ-c1": {
+    "raw": "hsl(0 0% 0%)",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--color-typ-c2": {
+    "raw": "hsl(207 20% 26%)",
+    "kind": "color",
+    "value": "rgb(53, 68, 80)"
+   },
+   "--color-typ-c3": {
+    "raw": "hsl(207 14% 42%)",
+    "kind": "color",
+    "value": "rgb(92, 109, 122)"
+   },
+   "--color-typ-c4": {
+    "raw": "hsl(207 12% 60%)",
+    "kind": "color",
+    "value": "rgb(141, 154, 165)"
+   },
+   "--color-typ-c5": {
+    "raw": "hsl(205 10% 80%)",
+    "kind": "color",
+    "value": "rgb(199, 205, 209)"
+   },
+   "--color-typ-c6": {
+    "raw": "hsl(207 8% 91%)",
+    "kind": "color",
+    "value": "rgb(230, 232, 234)"
+   },
+   "--color-typ-c7": {
+    "raw": "hsl(204 8% 94%)",
+    "kind": "color",
+    "value": "rgb(238, 240, 241)"
+   },
+   "--color-typ-error": {
+    "raw": "hsl(360 90% 60%)",
+    "kind": "color",
+    "value": "rgb(245, 61, 61)"
+   },
+   "--color-typ-linkedin": {
+    "raw": "hsl(201 100% 35%)",
+    "kind": "color",
+    "value": "rgb(0, 116, 179)"
+   },
+   "--color-typ-orange": {
+    "raw": "hsl(29 100% 58%)",
+    "kind": "color",
+    "value": "rgb(255, 144, 41)"
+   },
+   "--color-typ-out-of-bounds": {
+    "raw": "#ff4c4c40",
+    "kind": "color",
+    "value": "rgba(255, 76, 76, 0.25)"
+   },
+   "--color-typ-success": {
+    "raw": "hsl(130 55% 44%)",
+    "kind": "color",
+    "value": "rgb(50, 174, 71)"
+   },
+   "--color-typ-tooltipBorder": {
+    "raw": "hsl(204 8% 94%)",
+    "kind": "color",
+    "value": "rgb(238, 240, 241)"
+   },
+   "--color-typ-verified-badge": {
+    "raw": "#1da1f2",
+    "kind": "color",
+    "value": "rgb(29, 161, 242)"
+   },
+   "--color-typ-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--color-typ-x-subscribe": {
+    "raw": "rgb(201 54 204)",
+    "kind": "color",
+    "value": "rgb(201, 54, 204)"
+   },
+   "--color-violet-100": {
+    "raw": "lab(93.0838% 4.35197 -9.88284)",
+    "kind": "color",
+    "value": "lab(93.0838 4.35197 -9.88284)"
+   },
+   "--color-violet-300": {
+    "raw": "lab(76.7419% 18.3911 -37.0706)",
+    "kind": "color",
+    "value": "lab(76.7419 18.3911 -37.0706)"
+   },
+   "--color-violet-400": {
+    "raw": "lab(62.8239% 34.9159 -60.0512)",
+    "kind": "color",
+    "value": "lab(62.8239 34.9159 -60.0512)"
+   },
+   "--color-violet-500": {
+    "raw": "lab(49.9355% 55.1776 -81.8963)",
+    "kind": "color",
+    "value": "lab(49.9355 55.1776 -81.8963)"
+   },
+   "--color-violet-600": {
+    "raw": "lab(41.088% 68.9966 -91.995)",
+    "kind": "color",
+    "value": "lab(41.088 68.9966 -91.995)"
+   },
+   "--color-violet-700": {
+    "raw": "lab(35.2783% 67.9912 -88.793)",
+    "kind": "color",
+    "value": "lab(35.2783 67.9912 -88.793)"
+   },
+   "--color-violet-900": {
+    "raw": "lab(24.3783% 45.7525 -61.4902)",
+    "kind": "color",
+    "value": "lab(24.3783 45.7525 -61.4902)"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--color-yellow-100": {
+    "raw": "lab(97.3564% -4.51407 27.344)",
+    "kind": "color",
+    "value": "lab(97.3564 -4.51407 27.344)"
+   },
+   "--color-yellow-200": {
+    "raw": "lab(94.3433% -5.00429 52.9663)",
+    "kind": "color",
+    "value": "lab(94.3433 -5.00429 52.9663)"
+   },
+   "--color-yellow-300": {
+    "raw": "lab(89.7033% -.480294 84.4917)",
+    "kind": "color",
+    "value": "lab(89.7033 -0.480294 84.4917)"
+   },
+   "--color-yellow-400": {
+    "raw": "lab(83.2664% 8.65132 106.895)",
+    "kind": "color",
+    "value": "lab(83.2664 8.65132 106.895)"
+   },
+   "--color-yellow-500": {
+    "raw": "lab(76.3898% 14.5258 98.4589)",
+    "kind": "color",
+    "value": "lab(76.3898 14.5258 98.4589)"
+   },
+   "--color-yellow-600": {
+    "raw": "lab(62.7799% 22.4197 86.1544)",
+    "kind": "color",
+    "value": "lab(62.7799 22.4197 86.1544)"
+   },
+   "--color-yellow-700": {
+    "raw": "lab(47.8202% 25.2426 66.5015)",
+    "kind": "color",
+    "value": "lab(47.8202 25.2426 66.5015)"
+   },
+   "--color-yellow-900": {
+    "raw": "lab(32.3865% 21.1273 38.5959)",
+    "kind": "color",
+    "value": "lab(32.3865 21.1273 38.5959)"
+   },
+   "--color-zinc-100": {
+    "raw": "lab(96.1634% .0993311 -.364041)",
+    "kind": "color",
+    "value": "lab(96.1634 0.0993311 -0.364041)"
+   },
+   "--color-zinc-700": {
+    "raw": "lab(26.8019% 1.35387 -4.68303)",
+    "kind": "color",
+    "value": "lab(26.8019 1.35387 -4.68303)"
+   },
+   "--color-zinc-800": {
+    "raw": "lab(15.7305% .613764 -2.16959)",
+    "kind": "color",
+    "value": "lab(15.7305 0.613764 -2.16959)"
+   },
+   "--color-zinc-900": {
+    "raw": "lab(8.30603% .618205 -2.16572)",
+    "kind": "color",
+    "value": "lab(8.30603 0.618205 -2.16572)"
+   },
+   "--container-2xl": {
+    "raw": "42rem",
+    "kind": "dimension",
+    "value": "672px"
+   },
+   "--container-3xl": {
+    "raw": "48rem",
+    "kind": "dimension",
+    "value": "768px"
+   },
+   "--container-6xl": {
+    "raw": "72rem",
+    "kind": "dimension",
+    "value": "1152px"
+   },
+   "--container-md": {
+    "raw": "28rem",
+    "kind": "dimension",
+    "value": "448px"
+   },
+   "--container-sm": {
+    "raw": "24rem",
+    "kind": "dimension",
+    "value": "384px"
+   },
+   "--container-xl": {
+    "raw": "36rem",
+    "kind": "dimension",
+    "value": "576px"
+   },
+   "--container-xs": {
+    "raw": "20rem",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--dark-orange": {
+    "raw": "#f77c08",
+    "kind": "color",
+    "value": "rgb(247, 124, 8)"
+   },
+   "--default-font-family": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "other"
+   },
+   "--default-mono-font-family": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "other"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "other"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "other"
+   },
+   "--discordAccent": {
+    "raw": "hsl(227 58% 65%)",
+    "kind": "color",
+    "value": "rgb(114, 136, 218)"
+   },
+   "--discordAccentHsl": {
+    "raw": "227 58% 65%",
+    "kind": "other"
+   },
+   "--ease-in": {
+    "raw": "cubic-bezier(.4,0,1,1)",
+    "kind": "other"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "other"
+   },
+   "--ease-out": {
+    "raw": "cubic-bezier(0,0,.2,1)",
+    "kind": "other"
+   },
+   "--error": {
+    "raw": "hsl(360 90% 60%)",
+    "kind": "color",
+    "value": "rgb(245, 61, 61)"
+   },
+   "--errorHsl": {
+    "raw": "360 90% 60%",
+    "kind": "other"
+   },
+   "--font-code": {
+    "raw": "Fira Code,JetBrains Mono,Consolas,Monaco,Courier New,monospace",
+    "kind": "other"
+   },
+   "--font-mastodon": {
+    "raw": "Roboto,Arial,Helvetica,system-ui,sans-serif",
+    "kind": "other"
+   },
+   "--font-mono": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "other"
+   },
+   "--font-sans": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "other"
+   },
+   "--font-serif": {
+    "raw": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
+    "kind": "other"
+   },
+   "--font-system": {
+    "raw": "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif",
+    "kind": "other"
+   },
+   "--font-twitter": {
+    "raw": "inter-arrows-subset,GT America,Helvetica Neue,Arial,system-ui,sans-serif",
+    "kind": "other"
+   },
+   "--font-weight-bold": {
+    "raw": "700",
+    "kind": "other"
+   },
+   "--font-weight-extrabold": {
+    "raw": "800",
+    "kind": "other"
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "other"
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "other"
+   },
+   "--font-weight-semibold": {
+    "raw": "600",
+    "kind": "other"
+   },
+   "--header-height": {
+    "raw": "42px",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--icons": {
+    "raw": "#14171a",
+    "kind": "color",
+    "value": "rgb(20, 23, 26)"
+   },
+   "--layout-padding": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--leading-loose": {
+    "raw": "1.8",
+    "kind": "other"
+   },
+   "--leading-normal": {
+    "raw": "1.5",
+    "kind": "other"
+   },
+   "--leading-relaxed": {
+    "raw": "1.6",
+    "kind": "other"
+   },
+   "--leading-snug": {
+    "raw": "1.45",
+    "kind": "other"
+   },
+   "--leading-tight": {
+    "raw": "1.4",
+    "kind": "other"
+   },
+   "--leading-tighter": {
+    "raw": "1.3",
+    "kind": "other"
+   },
+   "--light-accentHsl": {
+    "raw": "205 92% 53%",
+    "kind": "other"
+   },
+   "--light-aiDarkHsl": {
+    "raw": "250 75% 58%",
+    "kind": "other"
+   },
+   "--light-aiHsl": {
+    "raw": "250 85% 67%",
+    "kind": "other"
+   },
+   "--light-aiLightHsl": {
+    "raw": "250 95% 75%",
+    "kind": "other"
+   },
+   "--light-bg0Hsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--light-bg1Hsl": {
+    "raw": "240 2% 99%",
+    "kind": "other"
+   },
+   "--light-bg2Hsl": {
+    "raw": "204 2% 97.5%",
+    "kind": "other"
+   },
+   "--light-bg3Hsl": {
+    "raw": "204 2% 96%",
+    "kind": "other"
+   },
+   "--light-bg4Hsl": {
+    "raw": "204 2% 94%",
+    "kind": "other"
+   },
+   "--light-bgTooltipHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--light-blueskyAccentHsl": {
+    "raw": "209 100% 50%",
+    "kind": "other"
+   },
+   "--light-blueskyBgHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--light-c1Hsl": {
+    "raw": "0 0% 0%",
+    "kind": "other"
+   },
+   "--light-c2Hsl": {
+    "raw": "207 20% 26%",
+    "kind": "other"
+   },
+   "--light-c3Hsl": {
+    "raw": "207 14% 42%",
+    "kind": "other"
+   },
+   "--light-c4Hsl": {
+    "raw": "207 12% 60%",
+    "kind": "other"
+   },
+   "--light-c5Hsl": {
+    "raw": "205 10% 80%",
+    "kind": "other"
+   },
+   "--light-c6Hsl": {
+    "raw": "207 8% 91%",
+    "kind": "other"
+   },
+   "--light-c7Hsl": {
+    "raw": "204 8% 94%",
+    "kind": "other"
+   },
+   "--light-discordAccentHsl": {
+    "raw": "227 58% 65%",
+    "kind": "other"
+   },
+   "--light-errorHsl": {
+    "raw": "360 90% 60%",
+    "kind": "other"
+   },
+   "--light-icons": {
+    "raw": "#14171a",
+    "kind": "color",
+    "value": "rgb(20, 23, 26)"
+   },
+   "--light-linkedInAccentHsl": {
+    "raw": "201 100% 35%",
+    "kind": "other"
+   },
+   "--light-linkedInBgHsl": {
+    "raw": "45 14% 95%",
+    "kind": "other"
+   },
+   "--light-mastodonAccentHsl": {
+    "raw": "246 80% 60.4%",
+    "kind": "other"
+   },
+   "--light-mastodonBgHsl": {
+    "raw": "200 23% 95%",
+    "kind": "other"
+   },
+   "--light-orangeHsl": {
+    "raw": "29 100% 58%",
+    "kind": "other"
+   },
+   "--light-selection": {
+    "raw": "#1da1f21a",
+    "kind": "color",
+    "value": "rgba(29, 161, 242, 0.1)"
+   },
+   "--light-selectionHover": {
+    "raw": "#1da1f233",
+    "kind": "color",
+    "value": "rgba(29, 161, 242, 0.2)"
+   },
+   "--light-shadowColor": {
+    "raw": "#143d520d",
+    "kind": "color",
+    "value": "rgba(20, 61, 82, 0.05)"
+   },
+   "--light-substackAccentHsl": {
+    "raw": "24 100% 55%",
+    "kind": "other"
+   },
+   "--light-substackBgHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--light-successHsl": {
+    "raw": "130 55% 44%",
+    "kind": "other"
+   },
+   "--light-tag-10Hsl": {
+    "raw": "0 0% 69%",
+    "kind": "other"
+   },
+   "--light-tag-1Hsl": {
+    "raw": "0 100% 73%",
+    "kind": "other"
+   },
+   "--light-tag-2Hsl": {
+    "raw": "29 100% 63%",
+    "kind": "other"
+   },
+   "--light-tag-3Hsl": {
+    "raw": "43 100% 63%",
+    "kind": "other"
+   },
+   "--light-tag-4Hsl": {
+    "raw": "90 69% 61%",
+    "kind": "other"
+   },
+   "--light-tag-5Hsl": {
+    "raw": "154 81% 52%",
+    "kind": "other"
+   },
+   "--light-tag-6Hsl": {
+    "raw": "194 100% 60%",
+    "kind": "other"
+   },
+   "--light-tag-7Hsl": {
+    "raw": "230 100% 72%",
+    "kind": "other"
+   },
+   "--light-tag-8Hsl": {
+    "raw": "274 100% 74%",
+    "kind": "other"
+   },
+   "--light-tag-9Hsl": {
+    "raw": "324 100% 84%",
+    "kind": "other"
+   },
+   "--light-threadsBgHsl": {
+    "raw": "0 0% 98%",
+    "kind": "other"
+   },
+   "--light-toast-warning-background": {
+    "raw": "#fec",
+    "kind": "color",
+    "value": "rgb(255, 238, 204)"
+   },
+   "--light-verified-badge": {
+    "raw": "#1da1f2",
+    "kind": "color",
+    "value": "rgb(29, 161, 242)"
+   },
+   "--light-xSubscribeRgb": {
+    "raw": "201 54 204",
+    "kind": "other"
+   },
+   "--linkedInAccent": {
+    "raw": "hsl(201 100% 35%)",
+    "kind": "color",
+    "value": "rgb(0, 116, 179)"
+   },
+   "--linkedInAccentHsl": {
+    "raw": "201 100% 35%",
+    "kind": "other"
+   },
+   "--linkedInBg": {
+    "raw": "hsl(45 14% 95%)",
+    "kind": "color",
+    "value": "rgb(244, 243, 240)"
+   },
+   "--linkedInBgHsl": {
+    "raw": "45 14% 95%",
+    "kind": "other"
+   },
+   "--linkedin": {
+    "raw": "#0a66c2",
+    "kind": "color",
+    "value": "rgb(10, 102, 194)"
+   },
+   "--mask-down-fade": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--mask-left-fade": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--mask-right-fade": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--mask-up-fade": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--mastodonAccent": {
+    "raw": "hsl(246 80% 60.4%)",
+    "kind": "color",
+    "value": "rgb(89, 73, 235)"
+   },
+   "--mastodonAccentHsl": {
+    "raw": "246 80% 60.4%",
+    "kind": "other"
+   },
+   "--mastodonBg": {
+    "raw": "hsl(200 23% 95%)",
+    "kind": "color",
+    "value": "rgb(239, 243, 245)"
+   },
+   "--mastodonBgHsl": {
+    "raw": "200 23% 95%",
+    "kind": "other"
+   },
+   "--orange": {
+    "raw": "hsl(29 100% 58%)",
+    "kind": "color",
+    "value": "rgb(255, 144, 41)"
+   },
+   "--orangeHsl": {
+    "raw": "29 100% 58%",
+    "kind": "other"
+   },
+   "--perspective-midrange": {
+    "raw": "800px",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--radius-2xl": {
+    "raw": ".9rem",
+    "kind": "dimension",
+    "value": "14.3906px"
+   },
+   "--radius-big": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--radius-lg": {
+    "raw": ".6rem",
+    "kind": "dimension",
+    "value": "9.59375px"
+   },
+   "--radius-md": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "6.39062px"
+   },
+   "--radius-sm": {
+    "raw": ".2rem",
+    "kind": "dimension",
+    "value": "3.1875px"
+   },
+   "--radius-xl": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--radius-xs": {
+    "raw": ".1rem",
+    "kind": "dimension",
+    "value": "1.59375px"
+   },
+   "--selection": {
+    "raw": "#1da1f21a",
+    "kind": "color",
+    "value": "rgba(29, 161, 242, 0.1)"
+   },
+   "--selectionHover": {
+    "raw": "#1da1f233",
+    "kind": "color",
+    "value": "rgba(29, 161, 242, 0.2)"
+   },
+   "--shadow-dropdowns": {
+    "raw": "0 0 0 .5px #0000000d,0 2px 4px -1px #0000000f,0 6px 40px -2px #00000014",
+    "kind": "other"
+   },
+   "--shadow-dropdowns-dark": {
+    "raw": "inset 0 0 0 .5px #ffffff12,0 2px 4px -1px #0000000f,0 6px 40px -2px #00000014",
+    "kind": "other"
+   },
+   "--shadowColor": {
+    "raw": "#143d520d",
+    "kind": "color",
+    "value": "rgba(20, 61, 82, 0.05)"
+   },
+   "--small-padding": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--small-radius": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--spacing-big": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--spacing-layout": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--spacing-safe-area-inset-bottom": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--substackAccent": {
+    "raw": "hsl(24 100% 55%)",
+    "kind": "color",
+    "value": "rgb(255, 117, 26)"
+   },
+   "--substackAccentHsl": {
+    "raw": "24 100% 55%",
+    "kind": "other"
+   },
+   "--substackBg": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--substackBgHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--success": {
+    "raw": "hsl(130 55% 44%)",
+    "kind": "color",
+    "value": "rgb(50, 174, 71)"
+   },
+   "--successHsl": {
+    "raw": "130 55% 44%",
+    "kind": "other"
+   },
+   "--tag-10Hsl": {
+    "raw": "0 0% 69%",
+    "kind": "other"
+   },
+   "--tag-1Hsl": {
+    "raw": "0 100% 73%",
+    "kind": "other"
+   },
+   "--tag-2Hsl": {
+    "raw": "29 100% 63%",
+    "kind": "other"
+   },
+   "--tag-3Hsl": {
+    "raw": "43 100% 63%",
+    "kind": "other"
+   },
+   "--tag-4Hsl": {
+    "raw": "90 69% 61%",
+    "kind": "other"
+   },
+   "--tag-5Hsl": {
+    "raw": "154 81% 52%",
+    "kind": "other"
+   },
+   "--tag-6Hsl": {
+    "raw": "194 100% 60%",
+    "kind": "other"
+   },
+   "--tag-7Hsl": {
+    "raw": "230 100% 72%",
+    "kind": "other"
+   },
+   "--tag-8Hsl": {
+    "raw": "274 100% 74%",
+    "kind": "other"
+   },
+   "--tag-9Hsl": {
+    "raw": "324 100% 84%",
+    "kind": "other"
+   },
+   "--text-2xl": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--text-2xl--line-height": {
+    "raw": "calc(2/1.5)",
+    "kind": "other"
+   },
+   "--text-2xs": {
+    "raw": "12.5px",
+    "kind": "dimension",
+    "value": "12.5px"
+   },
+   "--text-3xl": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--text-3xl--line-height": {
+    "raw": "calc(2.25/1.875)",
+    "kind": "other"
+   },
+   "--text-3xs": {
+    "raw": "11.5px",
+    "kind": "dimension",
+    "value": "11.5px"
+   },
+   "--text-4xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-4xl--line-height": {
+    "raw": "calc(2.5/2.25)",
+    "kind": "other"
+   },
+   "--text-5xl": {
+    "raw": "30px",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--text-5xl--line-height": {
+    "raw": "1",
+    "kind": "other"
+   },
+   "--text-6xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--text-6xl--line-height": {
+    "raw": "1",
+    "kind": "other"
+   },
+   "--text-base": {
+    "raw": "14.5px",
+    "kind": "dimension",
+    "value": "14.5px"
+   },
+   "--text-base--line-height": {
+    "raw": "calc(1.5/1)",
+    "kind": "other"
+   },
+   "--text-lg": {
+    "raw": "17px",
+    "kind": "dimension",
+    "value": "17px"
+   },
+   "--text-lg--line-height": {
+    "raw": "calc(1.75/1.125)",
+    "kind": "other"
+   },
+   "--text-md": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-sm": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-sm--line-height": {
+    "raw": "calc(1.25/.875)",
+    "kind": "other"
+   },
+   "--text-xl": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-xl--line-height": {
+    "raw": "calc(1.75/1.25)",
+    "kind": "other"
+   },
+   "--text-xs": {
+    "raw": "13.5px",
+    "kind": "dimension",
+    "value": "13.5px"
+   },
+   "--text-xs--line-height": {
+    "raw": "calc(1/.75)",
+    "kind": "other"
+   },
+   "--threadsBg": {
+    "raw": "hsl(0 0% 98%)",
+    "kind": "color",
+    "value": "rgb(250, 250, 250)"
+   },
+   "--threadsBgHsl": {
+    "raw": "0 0% 98%",
+    "kind": "other"
+   },
+   "--tiny-radius": {
+    "raw": "6px",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--toast-warning-background": {
+    "raw": "#fec",
+    "kind": "color",
+    "value": "rgb(255, 238, 204)"
+   },
+   "--toaster-top-offset": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--tooltipBorder": {
+    "raw": "hsl(204 8% 94%)",
+    "kind": "color",
+    "value": "rgb(238, 240, 241)"
+   },
+   "--tracking-normal": {
+    "raw": "0em",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--tracking-tight": {
+    "raw": "-.025em",
+    "kind": "other"
+   },
+   "--tracking-tighter": {
+    "raw": "-.05em",
+    "kind": "other"
+   },
+   "--tracking-wide": {
+    "raw": ".025em",
+    "kind": "dimension",
+    "value": "0.390625px"
+   },
+   "--tracking-wider": {
+    "raw": ".05em",
+    "kind": "dimension",
+    "value": "0.796875px"
+   },
+   "--tracking-widest": {
+    "raw": ".1em",
+    "kind": "dimension",
+    "value": "1.59375px"
+   },
+   "--verified-badge": {
+    "raw": "#1da1f2",
+    "kind": "color",
+    "value": "rgb(29, 161, 242)"
+   },
+   "--xSubscribe": {
+    "raw": "rgb(201 54 204)",
+    "kind": "color",
+    "value": "rgb(201, 54, 204)"
+   },
+   "--xSubscribeRgb": {
+    "raw": "201 54 204",
+    "kind": "other"
+   }
+  },
+  "dark": {
+   "--accent": {
+    "raw": "hsl(205 92% 53%)",
+    "kind": "color",
+    "value": "rgb(25, 154, 245)"
+   },
+   "--accentHsl": {
+    "raw": "205 92% 53%",
+    "kind": "other"
+   },
+   "--ai": {
+    "raw": "hsl(250 85% 67%)",
+    "kind": "color",
+    "value": "rgb(123, 99, 242)"
+   },
+   "--aiDark": {
+    "raw": "hsl(250 75% 58%)",
+    "kind": "color",
+    "value": "rgb(94, 68, 228)"
+   },
+   "--aiDarkHsl": {
+    "raw": "250 75% 58%",
+    "kind": "other"
+   },
+   "--aiHsl": {
+    "raw": "250 85% 67%",
+    "kind": "other"
+   },
+   "--aiLightHsl": {
+    "raw": "250 95% 75%",
+    "kind": "other"
+   },
+   "--animate-ios-spinner-fade": {
+    "raw": "ios-spinner-animation infinite",
+    "kind": "other"
+   },
+   "--animate-oauth-knock": {
+    "raw": "oauth-knock 2.6s ease-in-out infinite",
+    "kind": "other"
+   },
+   "--animate-ping": {
+    "raw": "ping 1s cubic-bezier(0,0,.2,1)infinite",
+    "kind": "other"
+   },
+   "--animate-pulse": {
+    "raw": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
+    "kind": "other"
+   },
+   "--animate-spin": {
+    "raw": "spin 1s linear infinite",
+    "kind": "other"
+   },
+   "--aspect-video": {
+    "raw": "16/9",
+    "kind": "other"
+   },
+   "--bg0": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--bg0Hsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--bg1": {
+    "raw": "hsl(240 2% 99%)",
+    "kind": "color",
+    "value": "rgb(252, 252, 253)"
+   },
+   "--bg1Hsl": {
+    "raw": "240 2% 99%",
+    "kind": "other"
+   },
+   "--bg2": {
+    "raw": "hsl(204 2% 97.5%)",
+    "kind": "color",
+    "value": "rgb(248, 249, 249)"
+   },
+   "--bg2Hsl": {
+    "raw": "204 2% 97.5%",
+    "kind": "other"
+   },
+   "--bg3": {
+    "raw": "hsl(204 2% 96%)",
+    "kind": "color",
+    "value": "rgb(245, 245, 245)"
+   },
+   "--bg3Hsl": {
+    "raw": "204 2% 96%",
+    "kind": "other"
+   },
+   "--bg4": {
+    "raw": "hsl(204 2% 94%)",
+    "kind": "color",
+    "value": "rgb(239, 240, 240)"
+   },
+   "--bg4Hsl": {
+    "raw": "204 2% 94%",
+    "kind": "other"
+   },
+   "--bgTooltip": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--bgTooltipHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--bgTooltipTransparent": {
+    "raw": "hsl(0 0% 100%/.92)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.92)"
+   },
+   "--big-padding": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--big-radius": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--blueskyAccent": {
+    "raw": "hsl(209 100% 50%)",
+    "kind": "color",
+    "value": "rgb(0, 132, 255)"
+   },
+   "--blueskyAccentHsl": {
+    "raw": "209 100% 50%",
+    "kind": "other"
+   },
+   "--blueskyBg": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--blueskyBgHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--blur-2xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--blur-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--blur-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--blur-sm": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--blur-xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--blur-xs": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--breakpoint-desktop": {
+    "raw": "680px",
+    "kind": "dimension",
+    "value": "680px"
+   },
+   "--c1": {
+    "raw": "hsl(0 0% 0%)",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--c1Hsl": {
+    "raw": "0 0% 0%",
+    "kind": "other"
+   },
+   "--c2": {
+    "raw": "hsl(207 20% 26%)",
+    "kind": "color",
+    "value": "rgb(53, 68, 80)"
+   },
+   "--c2Hsl": {
+    "raw": "207 20% 26%",
+    "kind": "other"
+   },
+   "--c3": {
+    "raw": "hsl(207 14% 42%)",
+    "kind": "color",
+    "value": "rgb(92, 109, 122)"
+   },
+   "--c3Hsl": {
+    "raw": "207 14% 42%",
+    "kind": "other"
+   },
+   "--c4": {
+    "raw": "hsl(207 12% 60%)",
+    "kind": "color",
+    "value": "rgb(141, 154, 165)"
+   },
+   "--c4Hsl": {
+    "raw": "207 12% 60%",
+    "kind": "other"
+   },
+   "--c5": {
+    "raw": "hsl(205 10% 80%)",
+    "kind": "color",
+    "value": "rgb(199, 205, 209)"
+   },
+   "--c5Hsl": {
+    "raw": "205 10% 80%",
+    "kind": "other"
+   },
+   "--c6": {
+    "raw": "hsl(207 8% 91%)",
+    "kind": "color",
+    "value": "rgb(230, 232, 234)"
+   },
+   "--c6Hsl": {
+    "raw": "207 8% 91%",
+    "kind": "other"
+   },
+   "--c7": {
+    "raw": "hsl(204 8% 94%)",
+    "kind": "color",
+    "value": "rgb(238, 240, 241)"
+   },
+   "--c7Hsl": {
+    "raw": "204 8% 94%",
+    "kind": "other"
+   },
+   "--color-amber-100": {
+    "raw": "lab(95.916% -1.21653 23.111)",
+    "kind": "color",
+    "value": "lab(95.916 -1.21653 23.111)"
+   },
+   "--color-amber-300": {
+    "raw": "lab(86.4156% 6.13147 78.3961)",
+    "kind": "color",
+    "value": "lab(86.4156 6.13147 78.3961)"
+   },
+   "--color-amber-400": {
+    "raw": "lab(80.1641% 16.6016 99.2089)",
+    "kind": "color",
+    "value": "lab(80.1641 16.6016 99.2089)"
+   },
+   "--color-amber-500": {
+    "raw": "lab(72.7183% 31.8672 97.9407)",
+    "kind": "color",
+    "value": "lab(72.7183 31.8672 97.9407)"
+   },
+   "--color-amber-600": {
+    "raw": "lab(60.3514% 40.5624 87.1228)",
+    "kind": "color",
+    "value": "lab(60.3514 40.5624 87.1228)"
+   },
+   "--color-amber-700": {
+    "raw": "lab(47.2709% 42.9082 69.2966)",
+    "kind": "color",
+    "value": "lab(47.2709 42.9082 69.2966)"
+   },
+   "--color-amber-900": {
+    "raw": "lab(31.2288% 30.2627 40.0378)",
+    "kind": "color",
+    "value": "lab(31.2288 30.2627 40.0378)"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--color-blue-100": {
+    "raw": "lab(92.0301% -2.24757 -11.6453)",
+    "kind": "color",
+    "value": "lab(92.0301 -2.24757 -11.6453)"
+   },
+   "--color-blue-200": {
+    "raw": "lab(86.15% -4.04379 -21.0797)",
+    "kind": "color",
+    "value": "lab(86.15 -4.04379 -21.0797)"
+   },
+   "--color-blue-300": {
+    "raw": "lab(77.5052% -6.4629 -36.42)",
+    "kind": "color",
+    "value": "lab(77.5052 -6.4629 -36.42)"
+   },
+   "--color-blue-400": {
+    "raw": "lab(65.0361% -1.42065 -56.9802)",
+    "kind": "color",
+    "value": "lab(65.0361 -1.42065 -56.9802)"
+   },
+   "--color-blue-500": {
+    "raw": "lab(54.1736% 13.3369 -74.6839)",
+    "kind": "color",
+    "value": "lab(54.1736 13.3369 -74.6839)"
+   },
+   "--color-blue-600": {
+    "raw": "lab(44.0605% 29.0279 -86.0352)",
+    "kind": "color",
+    "value": "lab(44.0605 29.0279 -86.0352)"
+   },
+   "--color-blue-700": {
+    "raw": "lab(36.9089% 35.0961 -85.6872)",
+    "kind": "color",
+    "value": "lab(36.9089 35.0961 -85.6872)"
+   },
+   "--color-blue-800": {
+    "raw": "lab(30.2514% 27.7853 -70.2699)",
+    "kind": "color",
+    "value": "lab(30.2514 27.7853 -70.2699)"
+   },
+   "--color-blue-900": {
+    "raw": "lab(26.1542% 15.7545 -51.5504)",
+    "kind": "color",
+    "value": "lab(26.1542 15.7545 -51.5504)"
+   },
+   "--color-blue-950": {
+    "raw": "lab(15.6723% 8.86232 -32.2945)",
+    "kind": "color",
+    "value": "lab(15.6723 8.86232 -32.2945)"
+   },
+   "--color-cyan-100": {
+    "raw": "lab(95.3146% -13.8285 -6.84732)",
+    "kind": "color",
+    "value": "lab(95.3146 -13.8285 -6.84732)"
+   },
+   "--color-cyan-300": {
+    "raw": "lab(85.3886% -36.7636 -21.5716)",
+    "kind": "color",
+    "value": "lab(85.3886 -36.7636 -21.5716)"
+   },
+   "--color-cyan-400": {
+    "raw": "lab(76.6045% -40.9406 -29.6231)",
+    "kind": "color",
+    "value": "lab(76.6045 -40.9406 -29.6231)"
+   },
+   "--color-cyan-500": {
+    "raw": "lab(67.805% -35.3952 -30.2018)",
+    "kind": "color",
+    "value": "lab(67.805 -35.3952 -30.2018)"
+   },
+   "--color-cyan-600": {
+    "raw": "lab(55.1767% -26.7496 -30.5139)",
+    "kind": "color",
+    "value": "lab(55.1767 -26.7496 -30.5139)"
+   },
+   "--color-cyan-700": {
+    "raw": "lab(44.7267% -21.5987 -26.118)",
+    "kind": "color",
+    "value": "lab(44.7267 -21.5987 -26.118)"
+   },
+   "--color-cyan-900": {
+    "raw": "lab(30.372% -13.1853 -18.7887)",
+    "kind": "color",
+    "value": "lab(30.372 -13.1853 -18.7887)"
+   },
+   "--color-emerald-100": {
+    "raw": "lab(94.9004% -17.0769 5.63836)",
+    "kind": "color",
+    "value": "lab(94.9004 -17.0769 5.63836)"
+   },
+   "--color-emerald-300": {
+    "raw": "lab(83.9203% -48.7124 13.8849)",
+    "kind": "color",
+    "value": "lab(83.9203 -48.7124 13.8849)"
+   },
+   "--color-emerald-400": {
+    "raw": "lab(75.0771% -60.7313 19.4147)",
+    "kind": "color",
+    "value": "lab(75.0771 -60.7313 19.4147)"
+   },
+   "--color-emerald-500": {
+    "raw": "lab(66.9756% -58.27 19.5419)",
+    "kind": "color",
+    "value": "lab(66.9756 -58.27 19.5419)"
+   },
+   "--color-emerald-600": {
+    "raw": "lab(55.0481% -49.9246 15.93)",
+    "kind": "color",
+    "value": "lab(55.0481 -49.9246 15.93)"
+   },
+   "--color-emerald-700": {
+    "raw": "lab(44.4871% -41.0396 11.0361)",
+    "kind": "color",
+    "value": "lab(44.4871 -41.0396 11.0361)"
+   },
+   "--color-emerald-900": {
+    "raw": "lab(28.8637% -26.9249 5.45986)",
+    "kind": "color",
+    "value": "lab(28.8637 -26.9249 5.45986)"
+   },
+   "--color-gray-100": {
+    "raw": "lab(96.1596% -.0823438 -1.13575)",
+    "kind": "color",
+    "value": "lab(96.1596 -0.0823438 -1.13575)"
+   },
+   "--color-gray-200": {
+    "raw": "lab(91.6229% -.159115 -2.26791)",
+    "kind": "color",
+    "value": "lab(91.6229 -0.159115 -2.26791)"
+   },
+   "--color-gray-400": {
+    "raw": "lab(65.9269% -.832707 -8.17473)",
+    "kind": "color",
+    "value": "lab(65.9269 -0.832707 -8.17473)"
+   },
+   "--color-gray-50": {
+    "raw": "lab(98.2596% -.247031 -.706708)",
+    "kind": "color",
+    "value": "lab(98.2596 -0.247031 -0.706708)"
+   },
+   "--color-gray-500": {
+    "raw": "lab(47.7841% -.393182 -10.0268)",
+    "kind": "color",
+    "value": "lab(47.7841 -0.393182 -10.0268)"
+   },
+   "--color-gray-600": {
+    "raw": "lab(35.6337% -1.58697 -10.8425)",
+    "kind": "color",
+    "value": "lab(35.6337 -1.58697 -10.8425)"
+   },
+   "--color-gray-800": {
+    "raw": "lab(16.1051% -1.18239 -11.7533)",
+    "kind": "color",
+    "value": "lab(16.1051 -1.18239 -11.7533)"
+   },
+   "--color-gray-900": {
+    "raw": "lab(8.11897% .811279 -12.254)",
+    "kind": "color",
+    "value": "lab(8.11897 0.811279 -12.254)"
+   },
+   "--color-green-100": {
+    "raw": "lab(96.1861% -13.8464 6.52365)",
+    "kind": "color",
+    "value": "lab(96.1861 -13.8464 6.52365)"
+   },
+   "--color-green-200": {
+    "raw": "lab(92.4222% -26.4702 12.9427)",
+    "kind": "color",
+    "value": "lab(92.4222 -26.4702 12.9427)"
+   },
+   "--color-green-400": {
+    "raw": "lab(78.503% -64.9265 39.7492)",
+    "kind": "color",
+    "value": "lab(78.503 -64.9265 39.7492)"
+   },
+   "--color-green-500": {
+    "raw": "lab(70.5521% -66.5147 45.8073)",
+    "kind": "color",
+    "value": "lab(70.5521 -66.5147 45.8073)"
+   },
+   "--color-green-900": {
+    "raw": "lab(30.797% -29.6927 17.382)",
+    "kind": "color",
+    "value": "lab(30.797 -29.6927 17.382)"
+   },
+   "--color-indigo-100": {
+    "raw": "lab(91.6577% 1.04591 -12.7199)",
+    "kind": "color",
+    "value": "lab(91.6577 1.04591 -12.7199)"
+   },
+   "--color-indigo-300": {
+    "raw": "lab(74.0235% 8.54138 -41.6075)",
+    "kind": "color",
+    "value": "lab(74.0235 8.54138 -41.6075)"
+   },
+   "--color-indigo-400": {
+    "raw": "lab(59.866% 22.4834 -64.4485)",
+    "kind": "color",
+    "value": "lab(59.866 22.4834 -64.4485)"
+   },
+   "--color-indigo-500": {
+    "raw": "lab(48.295% 38.3129 -81.9673)",
+    "kind": "color",
+    "value": "lab(48.295 38.3129 -81.9673)"
+   },
+   "--color-indigo-600": {
+    "raw": "lab(38.4009% 52.6132 -92.3857)",
+    "kind": "color",
+    "value": "lab(38.4009 52.6132 -92.3857)"
+   },
+   "--color-indigo-700": {
+    "raw": "lab(32.4486% 49.2217 -84.6695)",
+    "kind": "color",
+    "value": "lab(32.4486 49.2217 -84.6695)"
+   },
+   "--color-indigo-900": {
+    "raw": "lab(23.3911% 24.6978 -50.4718)",
+    "kind": "color",
+    "value": "lab(23.3911 24.6978 -50.4718)"
+   },
+   "--color-lime-100": {
+    "raw": "lab(96.8662% -11.7133 22.0854)",
+    "kind": "color",
+    "value": "lab(96.8662 -11.7133 22.0854)"
+   },
+   "--color-lime-300": {
+    "raw": "lab(89.9218% -35.6546 68.5254)",
+    "kind": "color",
+    "value": "lab(89.9218 -35.6546 68.5254)"
+   },
+   "--color-lime-400": {
+    "raw": "lab(83.7876% -45.0447 88.4738)",
+    "kind": "color",
+    "value": "lab(83.7876 -45.0447 88.4738)"
+   },
+   "--color-lime-500": {
+    "raw": "lab(75.3197% -46.6547 86.1778)",
+    "kind": "color",
+    "value": "lab(75.3197 -46.6547 86.1778)"
+   },
+   "--color-lime-700": {
+    "raw": "lab(47.246% -32.2589 55.8249)",
+    "kind": "color",
+    "value": "lab(47.246 -32.2589 55.8249)"
+   },
+   "--color-lime-900": {
+    "raw": "lab(31.9931% -20.7654 33.7379)",
+    "kind": "color",
+    "value": "lab(31.9931 -20.7654 33.7379)"
+   },
+   "--color-orange-100": {
+    "raw": "lab(94.7127% 3.58394 14.3151)",
+    "kind": "color",
+    "value": "lab(94.7127 3.58394 14.3151)"
+   },
+   "--color-orange-300": {
+    "raw": "lab(80.8059% 21.7313 50.4455)",
+    "kind": "color",
+    "value": "lab(80.8059 21.7313 50.4455)"
+   },
+   "--color-orange-400": {
+    "raw": "lab(70.0429% 42.5156 75.8207)",
+    "kind": "color",
+    "value": "lab(70.0429 42.5156 75.8207)"
+   },
+   "--color-orange-500": {
+    "raw": "lab(64.272% 57.1788 90.3583)",
+    "kind": "color",
+    "value": "lab(64.272 57.1788 90.3583)"
+   },
+   "--color-orange-600": {
+    "raw": "lab(57.1026% 64.2584 89.8886)",
+    "kind": "color",
+    "value": "lab(57.1026 64.2584 89.8886)"
+   },
+   "--color-orange-700": {
+    "raw": "lab(46.4615% 57.7275 70.8507)",
+    "kind": "color",
+    "value": "lab(46.4615 57.7275 70.8507)"
+   },
+   "--color-orange-900": {
+    "raw": "lab(30.2951% 36.0434 37.671)",
+    "kind": "color",
+    "value": "lab(30.2951 36.0434 37.671)"
+   },
+   "--color-pink-100": {
+    "raw": "lab(93.5864% 9.01193 -3.15079)",
+    "kind": "color",
+    "value": "lab(93.5864 9.01193 -3.15079)"
+   },
+   "--color-pink-200": {
+    "raw": "lab(87.4504% 19.6 -6.46662)",
+    "kind": "color",
+    "value": "lab(87.4504 19.6 -6.46662)"
+   },
+   "--color-pink-300": {
+    "raw": "lab(77.8308% 38.525 -10.5394)",
+    "kind": "color",
+    "value": "lab(77.8308 38.525 -10.5394)"
+   },
+   "--color-pink-400": {
+    "raw": "lab(64.5597% 64.3615 -12.7988)",
+    "kind": "color",
+    "value": "lab(64.5597 64.3615 -12.7988)"
+   },
+   "--color-pink-500": {
+    "raw": "lab(56.9303% 76.8162 -8.07021)",
+    "kind": "color",
+    "value": "lab(56.9303 76.8162 -8.07021)"
+   },
+   "--color-pink-600": {
+    "raw": "lab(49.5493% 79.8381 2.31768)",
+    "kind": "color",
+    "value": "lab(49.5493 79.8381 2.31768)"
+   },
+   "--color-pink-700": {
+    "raw": "lab(42.1737% 71.8009 7.42233)",
+    "kind": "color",
+    "value": "lab(42.1737 71.8009 7.42233)"
+   },
+   "--color-pink-900": {
+    "raw": "lab(29.4367% 49.3962 3.35757)",
+    "kind": "color",
+    "value": "lab(29.4367 49.3962 3.35757)"
+   },
+   "--color-purple-500": {
+    "raw": "lab(52.0183% 66.11 -78.2316)",
+    "kind": "color",
+    "value": "lab(52.0183 66.11 -78.2316)"
+   },
+   "--color-red-100": {
+    "raw": "lab(92.243% 10.2865 3.83865)",
+    "kind": "color",
+    "value": "lab(92.243 10.2865 3.83865)"
+   },
+   "--color-red-300": {
+    "raw": "lab(76.5514% 36.422 15.5335)",
+    "kind": "color",
+    "value": "lab(76.5514 36.422 15.5335)"
+   },
+   "--color-red-400": {
+    "raw": "lab(63.7053% 60.745 31.3109)",
+    "kind": "color",
+    "value": "lab(63.7053 60.745 31.3109)"
+   },
+   "--color-red-500": {
+    "raw": "lab(55.4814% 75.0732 48.8528)",
+    "kind": "color",
+    "value": "lab(55.4814 75.0732 48.8528)"
+   },
+   "--color-red-600": {
+    "raw": "lab(48.4493% 77.4328 61.5452)",
+    "kind": "color",
+    "value": "lab(48.4493 77.4328 61.5452)"
+   },
+   "--color-red-700": {
+    "raw": "lab(40.4273% 67.2623 53.7441)",
+    "kind": "color",
+    "value": "lab(40.4273 67.2623 53.7441)"
+   },
+   "--color-red-900": {
+    "raw": "lab(28.5139% 44.5539 29.0463)",
+    "kind": "color",
+    "value": "lab(28.5139 44.5539 29.0463)"
+   },
+   "--color-rose-100": {
+    "raw": "lab(92.8221% 9.86832 2.60075)",
+    "kind": "color",
+    "value": "lab(92.8221 9.86832 2.60075)"
+   },
+   "--color-rose-300": {
+    "raw": "lab(76.6339% 38.3549 9.68835)",
+    "kind": "color",
+    "value": "lab(76.6339 38.3549 9.68835)"
+   },
+   "--color-rose-400": {
+    "raw": "lab(64.4125% 63.0291 19.2068)",
+    "kind": "color",
+    "value": "lab(64.4125 63.0291 19.2068)"
+   },
+   "--color-rose-500": {
+    "raw": "lab(56.101% 79.4328 31.4532)",
+    "kind": "color",
+    "value": "lab(56.101 79.4328 31.4532)"
+   },
+   "--color-rose-600": {
+    "raw": "lab(49.1882% 81.577 36.0311)",
+    "kind": "color",
+    "value": "lab(49.1882 81.577 36.0311)"
+   },
+   "--color-rose-700": {
+    "raw": "lab(41.1651% 71.6251 30.3087)",
+    "kind": "color",
+    "value": "lab(41.1651 71.6251 30.3087)"
+   },
+   "--color-rose-900": {
+    "raw": "lab(29.7104% 51.514 12.6253)",
+    "kind": "color",
+    "value": "lab(29.7104 51.514 12.6253)"
+   },
+   "--color-sky-300": {
+    "raw": "lab(80.3307% -20.2945 -31.385)",
+    "kind": "color",
+    "value": "lab(80.3307 -20.2945 -31.385)"
+   },
+   "--color-sky-400": {
+    "raw": "lab(70.687% -23.6078 -45.9483)",
+    "kind": "color",
+    "value": "lab(70.687 -23.6078 -45.9483)"
+   },
+   "--color-sky-500": {
+    "raw": "lab(63.3038% -18.433 -51.0407)",
+    "kind": "color",
+    "value": "lab(63.3038 -18.433 -51.0407)"
+   },
+   "--color-sky-700": {
+    "raw": "lab(41.6013% -9.10804 -42.5647)",
+    "kind": "color",
+    "value": "lab(41.6013 -9.10804 -42.5647)"
+   },
+   "--color-slate-400": {
+    "raw": "lab(65.5349% -2.25151 -14.5072)",
+    "kind": "color",
+    "value": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   "--color-slate-50": {
+    "raw": "lab(98.1434% -.369519 -1.05966)",
+    "kind": "color",
+    "value": "lab(98.1434 -0.369519 -1.05966)"
+   },
+   "--color-slate-500": {
+    "raw": "lab(48.0876% -2.03595 -16.5814)",
+    "kind": "color",
+    "value": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   "--color-slate-950": {
+    "raw": "lab(1.76974% 1.32743 -9.28855)",
+    "kind": "color",
+    "value": "lab(1.76974 1.32743 -9.28855)"
+   },
+   "--color-stone-100": {
+    "raw": "lab(96.5286% -.0991821 .364268)",
+    "kind": "color",
+    "value": "lab(96.5286 -0.0991821 0.364268)"
+   },
+   "--color-typ-100": {
+    "raw": "#f5f6f8",
+    "kind": "color",
+    "value": "rgb(245, 246, 248)"
+   },
+   "--color-typ-150": {
+    "raw": "#edf0f2",
+    "kind": "color",
+    "value": "rgb(237, 240, 242)"
+   },
+   "--color-typ-200": {
+    "raw": "#e5e8eb",
+    "kind": "color",
+    "value": "rgb(229, 232, 235)"
+   },
+   "--color-typ-25": {
+    "raw": "#fefefe",
+    "kind": "color",
+    "value": "rgb(254, 254, 254)"
+   },
+   "--color-typ-250": {
+    "raw": "#dce0e4",
+    "kind": "color",
+    "value": "rgb(220, 224, 228)"
+   },
+   "--color-typ-300": {
+    "raw": "#ccd0d7",
+    "kind": "color",
+    "value": "rgb(204, 208, 215)"
+   },
+   "--color-typ-350": {
+    "raw": "#9fa7b2",
+    "kind": "color",
+    "value": "rgb(159, 167, 178)"
+   },
+   "--color-typ-400": {
+    "raw": "#717d8e",
+    "kind": "color",
+    "value": "rgb(113, 125, 142)"
+   },
+   "--color-typ-450": {
+    "raw": "#4d5460",
+    "kind": "color",
+    "value": "rgb(77, 84, 96)"
+   },
+   "--color-typ-50": {
+    "raw": "#fcfcfd",
+    "kind": "color",
+    "value": "rgb(252, 252, 253)"
+   },
+   "--color-typ-500": {
+    "raw": "#454a54",
+    "kind": "color",
+    "value": "rgb(69, 74, 84)"
+   },
+   "--color-typ-550": {
+    "raw": "#40454f",
+    "kind": "color",
+    "value": "rgb(64, 69, 79)"
+   },
+   "--color-typ-600": {
+    "raw": "#3c4049",
+    "kind": "color",
+    "value": "rgb(60, 64, 73)"
+   },
+   "--color-typ-650": {
+    "raw": "#32363e",
+    "kind": "color",
+    "value": "rgb(50, 54, 62)"
+   },
+   "--color-typ-675": {
+    "raw": "#2e3138",
+    "kind": "color",
+    "value": "rgb(46, 49, 56)"
+   },
+   "--color-typ-700": {
+    "raw": "#282b31",
+    "kind": "color",
+    "value": "rgb(40, 43, 49)"
+   },
+   "--color-typ-75": {
+    "raw": "#f9fafb",
+    "kind": "color",
+    "value": "rgb(249, 250, 251)"
+   },
+   "--color-typ-750": {
+    "raw": "#202327",
+    "kind": "color",
+    "value": "rgb(32, 35, 39)"
+   },
+   "--color-typ-800": {
+    "raw": "#1c1e21",
+    "kind": "color",
+    "value": "rgb(28, 30, 33)"
+   },
+   "--color-typ-825": {
+    "raw": "#17191c",
+    "kind": "color",
+    "value": "rgb(23, 25, 28)"
+   },
+   "--color-typ-850": {
+    "raw": "#151619",
+    "kind": "color",
+    "value": "rgb(21, 22, 25)"
+   },
+   "--color-typ-900": {
+    "raw": "#0e0f11",
+    "kind": "color",
+    "value": "rgb(14, 15, 17)"
+   },
+   "--color-typ-925": {
+    "raw": "#090a0b",
+    "kind": "color",
+    "value": "rgb(9, 10, 11)"
+   },
+   "--color-typ-950": {
+    "raw": "#050506",
+    "kind": "color",
+    "value": "rgb(5, 5, 6)"
+   },
+   "--color-typ-975": {
+    "raw": "#020203",
+    "kind": "color",
+    "value": "rgb(2, 2, 3)"
+   },
+   "--color-typ-accent": {
+    "raw": "hsl(205 92% 53%)",
+    "kind": "color",
+    "value": "rgb(25, 154, 245)"
+   },
+   "--color-typ-ai": {
+    "raw": "hsl(250 85% 67%)",
+    "kind": "color",
+    "value": "rgb(123, 99, 242)"
+   },
+   "--color-typ-ai-dark": {
+    "raw": "hsl(250 75% 58%)",
+    "kind": "color",
+    "value": "rgb(94, 68, 228)"
+   },
+   "--color-typ-ai-light": {
+    "raw": "hsl(250 95% 75%)",
+    "kind": "color",
+    "value": "rgb(151, 131, 252)"
+   },
+   "--color-typ-bg0": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--color-typ-bg1": {
+    "raw": "hsl(240 2% 99%)",
+    "kind": "color",
+    "value": "rgb(252, 252, 253)"
+   },
+   "--color-typ-bg2": {
+    "raw": "hsl(204 2% 97.5%)",
+    "kind": "color",
+    "value": "rgb(248, 249, 249)"
+   },
+   "--color-typ-bg3": {
+    "raw": "hsl(204 2% 96%)",
+    "kind": "color",
+    "value": "rgb(245, 245, 245)"
+   },
+   "--color-typ-bg4": {
+    "raw": "hsl(204 2% 94%)",
+    "kind": "color",
+    "value": "rgb(239, 240, 240)"
+   },
+   "--color-typ-bgTooltip": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--color-typ-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--color-typ-c1": {
+    "raw": "hsl(0 0% 0%)",
+    "kind": "color",
+    "value": "rgb(0, 0, 0)"
+   },
+   "--color-typ-c2": {
+    "raw": "hsl(207 20% 26%)",
+    "kind": "color",
+    "value": "rgb(53, 68, 80)"
+   },
+   "--color-typ-c3": {
+    "raw": "hsl(207 14% 42%)",
+    "kind": "color",
+    "value": "rgb(92, 109, 122)"
+   },
+   "--color-typ-c4": {
+    "raw": "hsl(207 12% 60%)",
+    "kind": "color",
+    "value": "rgb(141, 154, 165)"
+   },
+   "--color-typ-c5": {
+    "raw": "hsl(205 10% 80%)",
+    "kind": "color",
+    "value": "rgb(199, 205, 209)"
+   },
+   "--color-typ-c6": {
+    "raw": "hsl(207 8% 91%)",
+    "kind": "color",
+    "value": "rgb(230, 232, 234)"
+   },
+   "--color-typ-c7": {
+    "raw": "hsl(204 8% 94%)",
+    "kind": "color",
+    "value": "rgb(238, 240, 241)"
+   },
+   "--color-typ-error": {
+    "raw": "hsl(360 90% 60%)",
+    "kind": "color",
+    "value": "rgb(245, 61, 61)"
+   },
+   "--color-typ-linkedin": {
+    "raw": "hsl(201 100% 35%)",
+    "kind": "color",
+    "value": "rgb(0, 116, 179)"
+   },
+   "--color-typ-orange": {
+    "raw": "hsl(29 100% 58%)",
+    "kind": "color",
+    "value": "rgb(255, 144, 41)"
+   },
+   "--color-typ-out-of-bounds": {
+    "raw": "#ff4c4c40",
+    "kind": "color",
+    "value": "rgba(255, 76, 76, 0.25)"
+   },
+   "--color-typ-success": {
+    "raw": "hsl(130 55% 44%)",
+    "kind": "color",
+    "value": "rgb(50, 174, 71)"
+   },
+   "--color-typ-tooltipBorder": {
+    "raw": "hsl(204 8% 94%)",
+    "kind": "color",
+    "value": "rgb(238, 240, 241)"
+   },
+   "--color-typ-verified-badge": {
+    "raw": "#1da1f2",
+    "kind": "color",
+    "value": "rgb(29, 161, 242)"
+   },
+   "--color-typ-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--color-typ-x-subscribe": {
+    "raw": "rgb(201 54 204)",
+    "kind": "color",
+    "value": "rgb(201, 54, 204)"
+   },
+   "--color-violet-100": {
+    "raw": "lab(93.0838% 4.35197 -9.88284)",
+    "kind": "color",
+    "value": "lab(93.0838 4.35197 -9.88284)"
+   },
+   "--color-violet-300": {
+    "raw": "lab(76.7419% 18.3911 -37.0706)",
+    "kind": "color",
+    "value": "lab(76.7419 18.3911 -37.0706)"
+   },
+   "--color-violet-400": {
+    "raw": "lab(62.8239% 34.9159 -60.0512)",
+    "kind": "color",
+    "value": "lab(62.8239 34.9159 -60.0512)"
+   },
+   "--color-violet-500": {
+    "raw": "lab(49.9355% 55.1776 -81.8963)",
+    "kind": "color",
+    "value": "lab(49.9355 55.1776 -81.8963)"
+   },
+   "--color-violet-600": {
+    "raw": "lab(41.088% 68.9966 -91.995)",
+    "kind": "color",
+    "value": "lab(41.088 68.9966 -91.995)"
+   },
+   "--color-violet-700": {
+    "raw": "lab(35.2783% 67.9912 -88.793)",
+    "kind": "color",
+    "value": "lab(35.2783 67.9912 -88.793)"
+   },
+   "--color-violet-900": {
+    "raw": "lab(24.3783% 45.7525 -61.4902)",
+    "kind": "color",
+    "value": "lab(24.3783 45.7525 -61.4902)"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--color-yellow-100": {
+    "raw": "lab(97.3564% -4.51407 27.344)",
+    "kind": "color",
+    "value": "lab(97.3564 -4.51407 27.344)"
+   },
+   "--color-yellow-200": {
+    "raw": "lab(94.3433% -5.00429 52.9663)",
+    "kind": "color",
+    "value": "lab(94.3433 -5.00429 52.9663)"
+   },
+   "--color-yellow-300": {
+    "raw": "lab(89.7033% -.480294 84.4917)",
+    "kind": "color",
+    "value": "lab(89.7033 -0.480294 84.4917)"
+   },
+   "--color-yellow-400": {
+    "raw": "lab(83.2664% 8.65132 106.895)",
+    "kind": "color",
+    "value": "lab(83.2664 8.65132 106.895)"
+   },
+   "--color-yellow-500": {
+    "raw": "lab(76.3898% 14.5258 98.4589)",
+    "kind": "color",
+    "value": "lab(76.3898 14.5258 98.4589)"
+   },
+   "--color-yellow-600": {
+    "raw": "lab(62.7799% 22.4197 86.1544)",
+    "kind": "color",
+    "value": "lab(62.7799 22.4197 86.1544)"
+   },
+   "--color-yellow-700": {
+    "raw": "lab(47.8202% 25.2426 66.5015)",
+    "kind": "color",
+    "value": "lab(47.8202 25.2426 66.5015)"
+   },
+   "--color-yellow-900": {
+    "raw": "lab(32.3865% 21.1273 38.5959)",
+    "kind": "color",
+    "value": "lab(32.3865 21.1273 38.5959)"
+   },
+   "--color-zinc-100": {
+    "raw": "lab(96.1634% .0993311 -.364041)",
+    "kind": "color",
+    "value": "lab(96.1634 0.0993311 -0.364041)"
+   },
+   "--color-zinc-700": {
+    "raw": "lab(26.8019% 1.35387 -4.68303)",
+    "kind": "color",
+    "value": "lab(26.8019 1.35387 -4.68303)"
+   },
+   "--color-zinc-800": {
+    "raw": "lab(15.7305% .613764 -2.16959)",
+    "kind": "color",
+    "value": "lab(15.7305 0.613764 -2.16959)"
+   },
+   "--color-zinc-900": {
+    "raw": "lab(8.30603% .618205 -2.16572)",
+    "kind": "color",
+    "value": "lab(8.30603 0.618205 -2.16572)"
+   },
+   "--container-2xl": {
+    "raw": "42rem",
+    "kind": "dimension",
+    "value": "672px"
+   },
+   "--container-3xl": {
+    "raw": "48rem",
+    "kind": "dimension",
+    "value": "768px"
+   },
+   "--container-6xl": {
+    "raw": "72rem",
+    "kind": "dimension",
+    "value": "1152px"
+   },
+   "--container-md": {
+    "raw": "28rem",
+    "kind": "dimension",
+    "value": "448px"
+   },
+   "--container-sm": {
+    "raw": "24rem",
+    "kind": "dimension",
+    "value": "384px"
+   },
+   "--container-xl": {
+    "raw": "36rem",
+    "kind": "dimension",
+    "value": "576px"
+   },
+   "--container-xs": {
+    "raw": "20rem",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--dark-orange": {
+    "raw": "#f77c08",
+    "kind": "color",
+    "value": "rgb(247, 124, 8)"
+   },
+   "--default-font-family": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "other"
+   },
+   "--default-mono-font-family": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "other"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "other"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "other"
+   },
+   "--discordAccent": {
+    "raw": "hsl(227 58% 65%)",
+    "kind": "color",
+    "value": "rgb(114, 136, 218)"
+   },
+   "--discordAccentHsl": {
+    "raw": "227 58% 65%",
+    "kind": "other"
+   },
+   "--ease-in": {
+    "raw": "cubic-bezier(.4,0,1,1)",
+    "kind": "other"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "other"
+   },
+   "--ease-out": {
+    "raw": "cubic-bezier(0,0,.2,1)",
+    "kind": "other"
+   },
+   "--error": {
+    "raw": "hsl(360 90% 60%)",
+    "kind": "color",
+    "value": "rgb(245, 61, 61)"
+   },
+   "--errorHsl": {
+    "raw": "360 90% 60%",
+    "kind": "other"
+   },
+   "--font-code": {
+    "raw": "Fira Code,JetBrains Mono,Consolas,Monaco,Courier New,monospace",
+    "kind": "other"
+   },
+   "--font-mastodon": {
+    "raw": "Roboto,Arial,Helvetica,system-ui,sans-serif",
+    "kind": "other"
+   },
+   "--font-mono": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "other"
+   },
+   "--font-sans": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "other"
+   },
+   "--font-serif": {
+    "raw": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
+    "kind": "other"
+   },
+   "--font-system": {
+    "raw": "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif",
+    "kind": "other"
+   },
+   "--font-twitter": {
+    "raw": "inter-arrows-subset,GT America,Helvetica Neue,Arial,system-ui,sans-serif",
+    "kind": "other"
+   },
+   "--font-weight-bold": {
+    "raw": "700",
+    "kind": "other"
+   },
+   "--font-weight-extrabold": {
+    "raw": "800",
+    "kind": "other"
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "other"
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "other"
+   },
+   "--font-weight-semibold": {
+    "raw": "600",
+    "kind": "other"
+   },
+   "--header-height": {
+    "raw": "42px",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--icons": {
+    "raw": "#14171a",
+    "kind": "color",
+    "value": "rgb(20, 23, 26)"
+   },
+   "--layout-padding": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--leading-loose": {
+    "raw": "1.8",
+    "kind": "other"
+   },
+   "--leading-normal": {
+    "raw": "1.5",
+    "kind": "other"
+   },
+   "--leading-relaxed": {
+    "raw": "1.6",
+    "kind": "other"
+   },
+   "--leading-snug": {
+    "raw": "1.45",
+    "kind": "other"
+   },
+   "--leading-tight": {
+    "raw": "1.4",
+    "kind": "other"
+   },
+   "--leading-tighter": {
+    "raw": "1.3",
+    "kind": "other"
+   },
+   "--light-accentHsl": {
+    "raw": "205 92% 53%",
+    "kind": "other"
+   },
+   "--light-aiDarkHsl": {
+    "raw": "250 75% 58%",
+    "kind": "other"
+   },
+   "--light-aiHsl": {
+    "raw": "250 85% 67%",
+    "kind": "other"
+   },
+   "--light-aiLightHsl": {
+    "raw": "250 95% 75%",
+    "kind": "other"
+   },
+   "--light-bg0Hsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--light-bg1Hsl": {
+    "raw": "240 2% 99%",
+    "kind": "other"
+   },
+   "--light-bg2Hsl": {
+    "raw": "204 2% 97.5%",
+    "kind": "other"
+   },
+   "--light-bg3Hsl": {
+    "raw": "204 2% 96%",
+    "kind": "other"
+   },
+   "--light-bg4Hsl": {
+    "raw": "204 2% 94%",
+    "kind": "other"
+   },
+   "--light-bgTooltipHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--light-blueskyAccentHsl": {
+    "raw": "209 100% 50%",
+    "kind": "other"
+   },
+   "--light-blueskyBgHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--light-c1Hsl": {
+    "raw": "0 0% 0%",
+    "kind": "other"
+   },
+   "--light-c2Hsl": {
+    "raw": "207 20% 26%",
+    "kind": "other"
+   },
+   "--light-c3Hsl": {
+    "raw": "207 14% 42%",
+    "kind": "other"
+   },
+   "--light-c4Hsl": {
+    "raw": "207 12% 60%",
+    "kind": "other"
+   },
+   "--light-c5Hsl": {
+    "raw": "205 10% 80%",
+    "kind": "other"
+   },
+   "--light-c6Hsl": {
+    "raw": "207 8% 91%",
+    "kind": "other"
+   },
+   "--light-c7Hsl": {
+    "raw": "204 8% 94%",
+    "kind": "other"
+   },
+   "--light-discordAccentHsl": {
+    "raw": "227 58% 65%",
+    "kind": "other"
+   },
+   "--light-errorHsl": {
+    "raw": "360 90% 60%",
+    "kind": "other"
+   },
+   "--light-icons": {
+    "raw": "#14171a",
+    "kind": "color",
+    "value": "rgb(20, 23, 26)"
+   },
+   "--light-linkedInAccentHsl": {
+    "raw": "201 100% 35%",
+    "kind": "other"
+   },
+   "--light-linkedInBgHsl": {
+    "raw": "45 14% 95%",
+    "kind": "other"
+   },
+   "--light-mastodonAccentHsl": {
+    "raw": "246 80% 60.4%",
+    "kind": "other"
+   },
+   "--light-mastodonBgHsl": {
+    "raw": "200 23% 95%",
+    "kind": "other"
+   },
+   "--light-orangeHsl": {
+    "raw": "29 100% 58%",
+    "kind": "other"
+   },
+   "--light-selection": {
+    "raw": "#1da1f21a",
+    "kind": "color",
+    "value": "rgba(29, 161, 242, 0.1)"
+   },
+   "--light-selectionHover": {
+    "raw": "#1da1f233",
+    "kind": "color",
+    "value": "rgba(29, 161, 242, 0.2)"
+   },
+   "--light-shadowColor": {
+    "raw": "#143d520d",
+    "kind": "color",
+    "value": "rgba(20, 61, 82, 0.05)"
+   },
+   "--light-substackAccentHsl": {
+    "raw": "24 100% 55%",
+    "kind": "other"
+   },
+   "--light-substackBgHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--light-successHsl": {
+    "raw": "130 55% 44%",
+    "kind": "other"
+   },
+   "--light-tag-10Hsl": {
+    "raw": "0 0% 69%",
+    "kind": "other"
+   },
+   "--light-tag-1Hsl": {
+    "raw": "0 100% 73%",
+    "kind": "other"
+   },
+   "--light-tag-2Hsl": {
+    "raw": "29 100% 63%",
+    "kind": "other"
+   },
+   "--light-tag-3Hsl": {
+    "raw": "43 100% 63%",
+    "kind": "other"
+   },
+   "--light-tag-4Hsl": {
+    "raw": "90 69% 61%",
+    "kind": "other"
+   },
+   "--light-tag-5Hsl": {
+    "raw": "154 81% 52%",
+    "kind": "other"
+   },
+   "--light-tag-6Hsl": {
+    "raw": "194 100% 60%",
+    "kind": "other"
+   },
+   "--light-tag-7Hsl": {
+    "raw": "230 100% 72%",
+    "kind": "other"
+   },
+   "--light-tag-8Hsl": {
+    "raw": "274 100% 74%",
+    "kind": "other"
+   },
+   "--light-tag-9Hsl": {
+    "raw": "324 100% 84%",
+    "kind": "other"
+   },
+   "--light-threadsBgHsl": {
+    "raw": "0 0% 98%",
+    "kind": "other"
+   },
+   "--light-toast-warning-background": {
+    "raw": "#fec",
+    "kind": "color",
+    "value": "rgb(255, 238, 204)"
+   },
+   "--light-verified-badge": {
+    "raw": "#1da1f2",
+    "kind": "color",
+    "value": "rgb(29, 161, 242)"
+   },
+   "--light-xSubscribeRgb": {
+    "raw": "201 54 204",
+    "kind": "other"
+   },
+   "--linkedInAccent": {
+    "raw": "hsl(201 100% 35%)",
+    "kind": "color",
+    "value": "rgb(0, 116, 179)"
+   },
+   "--linkedInAccentHsl": {
+    "raw": "201 100% 35%",
+    "kind": "other"
+   },
+   "--linkedInBg": {
+    "raw": "hsl(45 14% 95%)",
+    "kind": "color",
+    "value": "rgb(244, 243, 240)"
+   },
+   "--linkedInBgHsl": {
+    "raw": "45 14% 95%",
+    "kind": "other"
+   },
+   "--linkedin": {
+    "raw": "#0a66c2",
+    "kind": "color",
+    "value": "rgb(10, 102, 194)"
+   },
+   "--mask-down-fade": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--mask-left-fade": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--mask-right-fade": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--mask-up-fade": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--mastodonAccent": {
+    "raw": "hsl(246 80% 60.4%)",
+    "kind": "color",
+    "value": "rgb(89, 73, 235)"
+   },
+   "--mastodonAccentHsl": {
+    "raw": "246 80% 60.4%",
+    "kind": "other"
+   },
+   "--mastodonBg": {
+    "raw": "hsl(200 23% 95%)",
+    "kind": "color",
+    "value": "rgb(239, 243, 245)"
+   },
+   "--mastodonBgHsl": {
+    "raw": "200 23% 95%",
+    "kind": "other"
+   },
+   "--orange": {
+    "raw": "hsl(29 100% 58%)",
+    "kind": "color",
+    "value": "rgb(255, 144, 41)"
+   },
+   "--orangeHsl": {
+    "raw": "29 100% 58%",
+    "kind": "other"
+   },
+   "--perspective-midrange": {
+    "raw": "800px",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--radius-2xl": {
+    "raw": ".9rem",
+    "kind": "dimension",
+    "value": "14.3906px"
+   },
+   "--radius-big": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--radius-lg": {
+    "raw": ".6rem",
+    "kind": "dimension",
+    "value": "9.59375px"
+   },
+   "--radius-md": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "6.39062px"
+   },
+   "--radius-sm": {
+    "raw": ".2rem",
+    "kind": "dimension",
+    "value": "3.1875px"
+   },
+   "--radius-xl": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--radius-xs": {
+    "raw": ".1rem",
+    "kind": "dimension",
+    "value": "1.59375px"
+   },
+   "--selection": {
+    "raw": "#1da1f21a",
+    "kind": "color",
+    "value": "rgba(29, 161, 242, 0.1)"
+   },
+   "--selectionHover": {
+    "raw": "#1da1f233",
+    "kind": "color",
+    "value": "rgba(29, 161, 242, 0.2)"
+   },
+   "--shadow-dropdowns": {
+    "raw": "0 0 0 .5px #0000000d,0 2px 4px -1px #0000000f,0 6px 40px -2px #00000014",
+    "kind": "other"
+   },
+   "--shadow-dropdowns-dark": {
+    "raw": "inset 0 0 0 .5px #ffffff12,0 2px 4px -1px #0000000f,0 6px 40px -2px #00000014",
+    "kind": "other"
+   },
+   "--shadowColor": {
+    "raw": "#143d520d",
+    "kind": "color",
+    "value": "rgba(20, 61, 82, 0.05)"
+   },
+   "--small-padding": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--small-radius": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--spacing-big": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--spacing-layout": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--spacing-safe-area-inset-bottom": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--substackAccent": {
+    "raw": "hsl(24 100% 55%)",
+    "kind": "color",
+    "value": "rgb(255, 117, 26)"
+   },
+   "--substackAccentHsl": {
+    "raw": "24 100% 55%",
+    "kind": "other"
+   },
+   "--substackBg": {
+    "raw": "hsl(0 0% 100%)",
+    "kind": "color",
+    "value": "rgb(255, 255, 255)"
+   },
+   "--substackBgHsl": {
+    "raw": "0 0% 100%",
+    "kind": "other"
+   },
+   "--success": {
+    "raw": "hsl(130 55% 44%)",
+    "kind": "color",
+    "value": "rgb(50, 174, 71)"
+   },
+   "--successHsl": {
+    "raw": "130 55% 44%",
+    "kind": "other"
+   },
+   "--tag-10Hsl": {
+    "raw": "0 0% 69%",
+    "kind": "other"
+   },
+   "--tag-1Hsl": {
+    "raw": "0 100% 73%",
+    "kind": "other"
+   },
+   "--tag-2Hsl": {
+    "raw": "29 100% 63%",
+    "kind": "other"
+   },
+   "--tag-3Hsl": {
+    "raw": "43 100% 63%",
+    "kind": "other"
+   },
+   "--tag-4Hsl": {
+    "raw": "90 69% 61%",
+    "kind": "other"
+   },
+   "--tag-5Hsl": {
+    "raw": "154 81% 52%",
+    "kind": "other"
+   },
+   "--tag-6Hsl": {
+    "raw": "194 100% 60%",
+    "kind": "other"
+   },
+   "--tag-7Hsl": {
+    "raw": "230 100% 72%",
+    "kind": "other"
+   },
+   "--tag-8Hsl": {
+    "raw": "274 100% 74%",
+    "kind": "other"
+   },
+   "--tag-9Hsl": {
+    "raw": "324 100% 84%",
+    "kind": "other"
+   },
+   "--text-2xl": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--text-2xl--line-height": {
+    "raw": "calc(2/1.5)",
+    "kind": "other"
+   },
+   "--text-2xs": {
+    "raw": "12.5px",
+    "kind": "dimension",
+    "value": "12.5px"
+   },
+   "--text-3xl": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--text-3xl--line-height": {
+    "raw": "calc(2.25/1.875)",
+    "kind": "other"
+   },
+   "--text-3xs": {
+    "raw": "11.5px",
+    "kind": "dimension",
+    "value": "11.5px"
+   },
+   "--text-4xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-4xl--line-height": {
+    "raw": "calc(2.5/2.25)",
+    "kind": "other"
+   },
+   "--text-5xl": {
+    "raw": "30px",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--text-5xl--line-height": {
+    "raw": "1",
+    "kind": "other"
+   },
+   "--text-6xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--text-6xl--line-height": {
+    "raw": "1",
+    "kind": "other"
+   },
+   "--text-base": {
+    "raw": "14.5px",
+    "kind": "dimension",
+    "value": "14.5px"
+   },
+   "--text-base--line-height": {
+    "raw": "calc(1.5/1)",
+    "kind": "other"
+   },
+   "--text-lg": {
+    "raw": "17px",
+    "kind": "dimension",
+    "value": "17px"
+   },
+   "--text-lg--line-height": {
+    "raw": "calc(1.75/1.125)",
+    "kind": "other"
+   },
+   "--text-md": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-sm": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-sm--line-height": {
+    "raw": "calc(1.25/.875)",
+    "kind": "other"
+   },
+   "--text-xl": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-xl--line-height": {
+    "raw": "calc(1.75/1.25)",
+    "kind": "other"
+   },
+   "--text-xs": {
+    "raw": "13.5px",
+    "kind": "dimension",
+    "value": "13.5px"
+   },
+   "--text-xs--line-height": {
+    "raw": "calc(1/.75)",
+    "kind": "other"
+   },
+   "--threadsBg": {
+    "raw": "hsl(0 0% 98%)",
+    "kind": "color",
+    "value": "rgb(250, 250, 250)"
+   },
+   "--threadsBgHsl": {
+    "raw": "0 0% 98%",
+    "kind": "other"
+   },
+   "--tiny-radius": {
+    "raw": "6px",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--toast-warning-background": {
+    "raw": "#fec",
+    "kind": "color",
+    "value": "rgb(255, 238, 204)"
+   },
+   "--toaster-top-offset": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--tooltipBorder": {
+    "raw": "hsl(204 8% 94%)",
+    "kind": "color",
+    "value": "rgb(238, 240, 241)"
+   },
+   "--tracking-normal": {
+    "raw": "0em",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--tracking-tight": {
+    "raw": "-.025em",
+    "kind": "other"
+   },
+   "--tracking-tighter": {
+    "raw": "-.05em",
+    "kind": "other"
+   },
+   "--tracking-wide": {
+    "raw": ".025em",
+    "kind": "dimension",
+    "value": "0.390625px"
+   },
+   "--tracking-wider": {
+    "raw": ".05em",
+    "kind": "dimension",
+    "value": "0.796875px"
+   },
+   "--tracking-widest": {
+    "raw": ".1em",
+    "kind": "dimension",
+    "value": "1.59375px"
+   },
+   "--verified-badge": {
+    "raw": "#1da1f2",
+    "kind": "color",
+    "value": "rgb(29, 161, 242)"
+   },
+   "--xSubscribe": {
+    "raw": "rgb(201 54 204)",
+    "kind": "color",
+    "value": "rgb(201, 54, 204)"
+   },
+   "--xSubscribeRgb": {
+    "raw": "201 54 204",
+    "kind": "other"
+   }
+  }
+ },
+ "appNames": []
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Typefully style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #fcfcfd;
+    --text: #000000;
+    --secondary: #354450;
+    --muted: #5c6d7a;
+    --accent: #199af5;
+    --on-accent: #ffffff;
+    --border: #e6e8ea;
+    --field: #eef0f1;
+    --ai: #7b63f2;
+    --success: #32ae47;
+    --danger: #f53d3d;
+    --orange: #ff9029;
+    --linkedin: #0074b3;
+    --font: Inter, -apple-system, system-ui, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 20px;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 40px; line-height: 40px; font-weight: 700; margin: 0 0 12px; }
+  h2 { font-size: 20px; line-height: 28px; font-weight: 700; margin: 40px 0 12px; }
+  p { color: var(--secondary); max-width: 62ch; }
+  .note { font-size: 13px; color: var(--muted); }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 132px; }
+  .chip { height: 56px; border-radius: 9.6px; border: 1px solid var(--border); }
+  .swatch span, .swatch code { display: block; font-size: 12px; color: var(--muted); }
+  .swatch strong { display: block; font-size: 13px; margin-top: 6px; }
+  button, .pill, .quiet, .field {
+    font-family: var(--font);
+    cursor: default;
+  }
+  .pill, .quiet {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .pill {
+    background: var(--accent);
+    color: var(--on-accent);
+    border: 0;
+    border-radius: 9.6px;
+  }
+  .cta {
+    height: 26px;
+    padding: 0 16px;
+    border-radius: 9999px;
+    font-size: 13.5px;
+    font-weight: 600;
+    background: var(--accent);
+    color: var(--on-accent);
+    border: 0;
+  }
+  .quiet {
+    background: #fff;
+    color: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px -1px rgba(0,0,0,0.04), 0 1px 4px -1px rgba(0,0,0,0.04);
+  }
+  .auth {
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--secondary);
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .field {
+    height: 32px;
+    width: 280px;
+    padding: 0 12px;
+    border: 1px solid var(--field);
+    border-radius: 9.6px;
+    font-size: 14px;
+  }
+  .nav {
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 6.4px;
+    text-decoration: none;
+    font-family: system-ui, sans-serif;
+    font-size: 14.5px;
+  }
+  .ramp { display: flex; flex-wrap: wrap; gap: 4px; }
+  .ramp i {
+    width: 36px; height: 36px; display: block; border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 13px; }
+  th { color: var(--muted); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Typefully</h1>
+  <p>Public marketing style, light only. Values are the measured tokens in tokens.json. There is no theme toggle on the site, and a forced dark class changed no resolved variable, so this page has no dark switch.</p>
+  <p class="note">Captured 2026-11-21 from typefully.com, signed out. Hover on the primary button did not change its fill.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><strong>Page</strong><code>#ffffff</code></div>
+    <div class="swatch"><div class="chip" style="background:#fcfcfd"></div><strong>Surface</strong><code>#fcfcfd</code></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><strong>Text</strong><code>#000000</code></div>
+    <div class="swatch"><div class="chip" style="background:#354450"></div><strong>Secondary</strong><code>#354450</code></div>
+    <div class="swatch"><div class="chip" style="background:#5c6d7a"></div><strong>Muted</strong><code>#5c6d7a</code></div>
+    <div class="swatch"><div class="chip" style="background:#199af5"></div><strong>Accent</strong><code>#199af5</code></div>
+    <div class="swatch"><div class="chip" style="background:#7b63f2"></div><strong>AI</strong><code>#7b63f2</code></div>
+    <div class="swatch"><div class="chip" style="background:#32ae47"></div><strong>Success</strong><code>#32ae47</code></div>
+    <div class="swatch"><div class="chip" style="background:#f53d3d"></div><strong>Danger</strong><code>#f53d3d</code></div>
+    <div class="swatch"><div class="chip" style="background:#ff9029"></div><strong>Orange</strong><code>#ff9029</code></div>
+    <div class="swatch"><div class="chip" style="background:#0074b3"></div><strong>LinkedIn</strong><code>#0074b3</code></div>
+    <div class="swatch"><div class="chip" style="background:#e6e8ea"></div><strong>Border</strong><code>#e6e8ea</code></div>
+  </div>
+
+  <h2>Neutral ramp</h2>
+  <div class="ramp" id="ramp"></div>
+
+  <h2>Type</h2>
+  <p style="font-size:40px;line-height:40px;font-weight:700;color:#000">Pricing</p>
+  <p style="font-size:14px;line-height:20px;font-weight:400;color:#354450">Body at 14px Inter, the field size. Secondary copy uses #354450.</p>
+  <p style="font-family:system-ui,sans-serif;font-size:14.5px;line-height:21.75px;color:#199af5">Nav link uses the system stack, 14.5px, accent blue.</p>
+
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="pill">Get started</button>
+    <button class="quiet">Get started</button>
+    <button class="cta">Try Typefully now</button>
+    <button class="auth">Email</button>
+    <a class="nav" href="#colour">Pricing</a>
+  </div>
+  <p></p>
+  <input class="field" value="" placeholder="your@email.com" readonly>
+
+  <h2>Radius and space</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th><th>Where</th></tr>
+    <tr><td>radius.xs</td><td>1.59375px</td><td>--radius-xs at 1440</td></tr>
+    <tr><td>radius.sm</td><td>3.1875px</td><td>--radius-sm</td></tr>
+    <tr><td>radius.md</td><td>6.39062px</td><td>--radius-md</td></tr>
+    <tr><td>radius.lg</td><td>9.59375px</td><td>--radius-lg</td></tr>
+    <tr><td>radius.button</td><td>9.6px</td><td>primary button</td></tr>
+    <tr><td>radius.card</td><td>12px</td><td>secondary button</td></tr>
+    <tr><td>radius.pill</td><td>9999px</td><td>header CTA, derived from a full pill</td></tr>
+    <tr><td>space</td><td>4, 8, 12, 16, 18</td><td>nav, field, button, CTA, auth</td></tr>
+  </table>
+</main>
+<script>
+  const steps = ["#fefefe","#fcfcfd","#f9fafb","#f5f6f8","#edf0f2","#e5e8eb","#dce0e4","#ccd0d7","#9fa7b2","#717d8e","#4d5460","#454a54","#40454f","#3c4049","#32363e","#2e3138","#282b31","#202327","#1c1e21","#17191c","#151619","#0e0f11","#090a0b","#050506","#020203"];
+  const ramp = document.getElementById("ramp");
+  for (const c of steps) {
+    const i = document.createElement("i");
+    i.style.background = c;
+    i.title = c;
+    ramp.appendChild(i);
+  }
+</script>
+</body>
+</html>
