@@ -2765,7 +2765,7 @@
       "description": "Your 24/7 email assistant that drafts for you",
       "status": "captured",
       "package": "systems/jace",
-      "notes": "https://app.jace.ai/signin offers Google, Outlook, and an SSO portal only. No email field. No code was sent.",
+      "notes": "https://app.jace.ai/signin offers Google, Outlook, and an SSO portal only. No email field. No code was sent. Public walk 2026-11-21: the public site tree is in systems/jace/site-tree.md. Sign in still offers Google, Outlook, and SSO. No email field. Nothing was typed. No identity provider was clicked. No form was submitted. Impressum was opened and left out of the package because it prints a street address and a phone number. login-review.json has offered.nav, offered.settings, offered.create, screens, gaps, and not_submitted. Screen files were not checked on this branch. login-extracted stays not-started. Public package refresh in PR 1699 at 8d8528af464b. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "oauth-only",
       "batch": 9
@@ -6872,9 +6872,9 @@
         250
       ],
       "description": "Weather forecast",
-      "status": "pending",
-      "package": null,
-      "notes": "https://www.windy.com/ showed a Login control. Session was not present. Skipped.",
+      "status": "captured",
+      "package": "systems/windy",
+      "notes": "https://www.windy.com/ showed a Login control. Session was not present. Skipped. Public walk 2026-11-21: the public site tree is in systems/windy/site-tree.md. Login asks for an empty email and password. Register asks for an empty email, username, password, confirm password, a newsletter checkbox, and a captcha. Nothing was typed. No form was submitted. The captcha was not solved. login-review.json has screens, gaps, and not_submitted. offered does not answer settings and create. login-extracted stays not-started. Public package refresh in PR 1700 at f8fa0c6529b2. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 20
