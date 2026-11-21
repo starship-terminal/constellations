@@ -10,7 +10,10 @@ Public signed-out surfaces of [ssense.com](https://www.ssense.com/), captured on
 | [components.md](components.md) | Header, link, button, field, select, checkbox, card, list row, dialog |
 | [patterns.md](patterns.md) | Home, listing, product, search, login, customer care, editorial |
 | [raw/](raw/) | readings.json, the computed-style record |
-| [icon.png](icon.png) | 128px site icon, from the 152px apple-touch icon on img.ssensemedia.com. Also the catalog cover, because no page screenshot was produced |
+| [icon.png](icon.png) | 128px site icon, from the 152px apple-touch icon on img.ssensemedia.com |
+| [site-tree.md](site-tree.md) | Header and footer controls, and the public pages and walls they open. Dated 2026-11-22 |
+| [screenshots/](screenshots) | Quantised page shots from 2026-11-22, 1440 and 390 |
+| [login-review.json](login-review.json) | The empty login wall. `login-extracted` is not-started |
 | [tools/](tools/) | Kit copy plus the three builders |
 
 <!-- brief:start -->
@@ -74,7 +77,7 @@ The T3 preview browser opened `https://www.ssense.com/` with `reuseExistingTab` 
 
 The homepage and the account, FAQ, and editorial pages use Favorit SSENSE Inter and JHA Times Now. The listing, product page, and search results use `interFont` with an `interFont Fallback`. No custom properties were declared on the homepage. The listing declares Tailwind variables; the colour roles came from computed `color`, `background-color`, and `border-color`, not from those variables.
 
-`preview_snapshot` failed twice with "The browser is not producing screenshot frames". Measurements already read were kept. No screenshot was invented, and headless Playwright was not started.
+A later pass on 2026-11-22, still signed out, produced the screenshots in [screenshots/](screenshots). Desktop shots are 1440 by 900 CSS pixels at device pixel ratio 2. The phone homepage is 390 by 844 CSS pixels at device pixel ratio 2. The earlier measurements stay in [raw/readings.json](raw/readings.json). Those were read at 1169 by 731.
 
 ## What to distrust
 
@@ -103,9 +106,10 @@ Favorit SSENSE Inter, Favorit SSENSE Inter1, Favorit SSENSE Regular, and JHA Tim
 | Editorial article | Measured |
 | Dark theme | Not present on these pages |
 | 1440 and 390 widths | Not captured. Pane was 1169 by 731 |
-| Screenshots and crops | Not captured. Preview frames failed |
+| Screenshots | Captured 2026-11-22. Homepage, menswear, one editorial, empty login wall, phone homepage. [screenshots/](screenshots) |
+| Crops | Not captured |
 | Hover, pressed, loading, error | Not captured. Disabled button is a declared rule only |
-| Checkout, bag, account creation, payment | Not entered |
+| Checkout, bag add, account creation, payment | Not entered. The empty bag was read and not shot. Continue was not clicked |
 | Reduced motion | Not captured. `matchMedia` was false and no reduce rule was found on the editorial page |
 
 ## Do and don't
