@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "login-light-390",
+  "url": "https://app.datadoghq.com/account/login",
+  "requestedUrl": "https://app.datadoghq.com/account/login",
+  "title": "Datadog: Log In",
+  "h1": "Log in to Datadog",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}

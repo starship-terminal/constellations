@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "product-ai-bits-agent-builder-light-1440",
+  "url": "https://www.datadoghq.com/product/ai/bits-agent-builder/",
+  "requestedUrl": "https://www.datadoghq.com/product/ai/bits-agent-builder/",
+  "title": "Bits Agent Builder | Datadog",
+  "h1": "Bits Agent Builder",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}

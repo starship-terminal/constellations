@@ -1,0 +1,67 @@
+{
+  "product": "Datadog",
+  "domain": "www.datadoghq.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Login and the signup modal were opened empty. Nothing was typed.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "siteCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Login",
+      "url": "https://app.datadoghq.com/",
+      "paintedUrl": "https://app.datadoghq.com/account/login",
+      "title": "Datadog: Log In",
+      "heading": "Log in to Datadog",
+      "painted": true,
+      "asksFor": [
+        { "label": "Username/Email", "type": "text", "valueLength": 0 },
+        { "label": "Password", "type": "password", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": ["Google", "Single Sign-On"],
+      "otherControls": ["Log in", "Try for free", "Forgot password?", "US1 - East"],
+      "stopped": true,
+      "desktop": "screenshots/login-light-1440.png",
+      "phone": "screenshots/login-light-390.png",
+      "note": "Empty login wall. Log in was not clicked. Google and Single Sign-On were not clicked. The painted URL has no OAuth query and no session state."
+    },
+    {
+      "control": "header Get started free",
+      "url": "https://www.datadoghq.com/",
+      "paintedUrl": "https://www.datadoghq.com/",
+      "title": "Cloud Monitoring as a Service | Datadog",
+      "heading": "Start Your Free Datadog Trial Now",
+      "painted": true,
+      "asksFor": [
+        { "label": "Select a Region", "type": "select", "valueLength": 0 },
+        { "label": "Business Email", "type": "email", "valueLength": 0 },
+        { "label": "Full Name", "type": "text", "valueLength": 0 },
+        { "label": "Company", "type": "text", "valueLength": 0 },
+        { "label": "Password", "type": "password", "valueLength": 0 },
+        { "label": "Phone", "type": "tel", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": ["Google"],
+      "otherControls": ["Sign Up", "close"],
+      "stopped": true,
+      "desktop": "screenshots/signup-light-1440.png",
+      "phone": "screenshots/signup-light-390.png",
+      "note": "Empty signup modal. The form paints in an iframe from https://app.datadoghq.com/signup_corp. Nothing was typed. Sign up was not clicked. Google was not clicked. The page URL carries no OAuth query."
+    }
+  ],
+  "notOpened": [
+    "Log in, Sign up, Try for free, and Forgot password were not clicked.",
+    "Google and Single Sign-On were not clicked.",
+    "Search was not typed.",
+    "See the platform was not opened. It starts a product tour video.",
+    "Contact was opened and discarded because the page prints a phone number.",
+    "Careers, Investor Relations, Open Source, Security Labs, app stores, and social profiles were not entered.",
+    "Language switches to Japanese and Korean were not followed.",
+    "Your Privacy Choices was not clicked.",
+    "Checkout was not started. No subscribe control was submitted."
+  ]
+}

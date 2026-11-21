@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "solutions-kubernetes-light-1440",
+  "url": "https://www.datadoghq.com/solutions/kubernetes/",
+  "requestedUrl": "https://www.datadoghq.com/solutions/kubernetes/",
+  "title": "Kubernetes Monitoring | Datadog",
+  "h1": "Kubernetes Monitoring",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. lang_pref=en so the page stays on the English URL. Cookie banner hidden with CSS. No form submitted.",
+  "status": 200
+}

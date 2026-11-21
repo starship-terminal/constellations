@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "product-dynamic-instrumentation-light-1440",
+  "url": "https://www.datadoghq.com/product/dynamic-instrumentation/",
+  "requestedUrl": "https://www.datadoghq.com/product/dynamic-instrumentation/",
+  "title": "Dynamic Instrumentation | Datadog",
+  "h1": "Dynamic Instrumentation",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}

@@ -1,0 +1,22 @@
+{
+  "captured": "2026-11-22",
+  "name": "signup-light-1440",
+  "url": "https://www.datadoghq.com/",
+  "requestedUrl": "https://www.datadoghq.com/",
+  "title": "Cloud Monitoring as a Service | Datadog",
+  "h1": "Start Your Free Datadog Trial Now",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "Empty signup modal. The form paints in an iframe from app.datadoghq.com/signup_corp. Nothing was typed. The form was not submitted. No identity provider was clicked. The recorded URL is the marketing page, which carries no OAuth query.",
+  "status": 200,
+  "iframeSrcPath": "https://app.datadoghq.com/signup_corp"
+}

@@ -1,0 +1,82 @@
+{
+  "captured": "2026-11-22",
+  "source": "https://www.datadoghq.com/",
+  "colorScheme": "normal",
+  "copyright": "\u00a9 Datadog 2026",
+  "h1": {
+    "tag": "H1",
+    "text": "AI-Powered Observability and Security",
+    "color": "rgb(33, 37, 41)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "NationalWeb, Helvetica, Arial, sans-serif",
+    "size": "68px",
+    "weight": "600",
+    "line": "68px",
+    "radius": "0px",
+    "border": "0px solid rgb(33, 37, 41)",
+    "pad": "0px",
+    "height": 68
+  },
+  "freeTrial": {
+    "tag": "A",
+    "text": "FREE TRIAL",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(99, 44, 166)",
+    "font": "NationalWeb, Helvetica, Arial, sans-serif",
+    "size": "18px",
+    "weight": "700",
+    "line": "18px",
+    "radius": "4px",
+    "border": "1px solid rgba(0, 0, 0, 0)",
+    "pad": "16px 24px",
+    "height": 54
+  },
+  "seeThePlatform": {
+    "tag": "A",
+    "text": "SEE THE PLATFORM",
+    "color": "rgb(99, 44, 166)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "NationalWeb, Helvetica, Arial, sans-serif",
+    "size": "18px",
+    "weight": "700",
+    "line": "18px",
+    "radius": "4px",
+    "border": "1px solid rgb(99, 44, 166)",
+    "pad": "14px 24px 16px",
+    "height": 54
+  },
+  "login": {
+    "tag": "A",
+    "text": "LOGIN",
+    "color": "rgb(85, 85, 85)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "NationalWeb, Helvetica, Arial, sans-serif",
+    "size": "18px",
+    "weight": "600",
+    "line": "25.7143px",
+    "radius": "0px",
+    "border": "0px solid rgb(85, 85, 85)",
+    "pad": "8.5px 12px 9.5px",
+    "height": 44
+  },
+  "getStartedFree": {
+    "tag": "A",
+    "text": "GET STARTED FREE",
+    "color": "rgb(85, 85, 85)",
+    "bg": "rgb(255, 255, 255)",
+    "font": "NationalWeb, Helvetica, Arial, sans-serif",
+    "size": "18px",
+    "weight": "600",
+    "line": "25.7143px",
+    "radius": "4px",
+    "border": "0px solid rgba(0, 0, 0, 0)",
+    "pad": "8.5px 28px 9.5px",
+    "height": 44
+  },
+  "body": {
+    "color": "rgb(33, 37, 41)",
+    "bg": "rgb(255, 255, 255)",
+    "font": "NationalWeb, Helvetica, Arial, sans-serif",
+    "size": "22px"
+  }
+}

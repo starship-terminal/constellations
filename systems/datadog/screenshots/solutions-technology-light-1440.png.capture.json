@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "solutions-technology-light-1440",
+  "url": "https://www.datadoghq.com/solutions/technology/",
+  "requestedUrl": "https://www.datadoghq.com/solutions/technology/",
+  "title": "Monitoring Solutions for Technology Companies | Datadog",
+  "h1": "Stay competitive in a fast-moving market",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}
