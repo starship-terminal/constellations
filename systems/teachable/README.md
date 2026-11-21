@@ -1,5 +1,7 @@
 # Teachable
 
+Public site tree, dated 2026-11-22, is [site-tree.md](site-tree.md). That pass photographed the signed-out marketing pages and the empty login and signup walls. It did not replace the tokens, crops, or the 2026-11-19 screenshots below. `catalog.json` was left alone. `login-extracted` stays not-started.
+
 Teachable sells online courses, coaching, and downloads. This package covers the public marketing site at www.teachable.com and the signed-out Teachable Accounts sign-in chrome at sso.teachable.com. Captured 2026-11-19, signed out, light only, at 1440 and 390 CSS px.
 
 The marketing site is Webflow. The accounts page is a separate Rails stylesheet. They share the chartreuse `#e6ff32` and not the type or the button radius.
@@ -15,7 +17,8 @@ The marketing site is Webflow. The accounts page is a separate Rails stylesheet.
 | [patterns.md](patterns.md) | Page patterns |
 | [components/](components/) | Crops of the marketing controls |
 | [icons/](icons/) | Three SVGs and INDEX.tsv |
-| [screenshots/](screenshots/) | Seven public-page PNGs |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22. Nav, footer, photographed pages, and where the walk stopped |
+| [screenshots/](screenshots/) | Public-page PNGs. The 2026-11-22 walk added shots listed in [screenshots/README.md](screenshots/README.md) |
 | [raw/](raw/) | Computed readings |
 | [tools/](tools/) | Kit copy and the style-guide builder |
 
