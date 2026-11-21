@@ -1,0 +1,575 @@
+{
+  "captured": "2026-11-21",
+  "url": "https://www.flutterflow.io/",
+  "components": {
+    "nav-cta": {
+      "default": {
+        "state": "default",
+        "box": {
+          "x": 1280.875,
+          "y": 16,
+          "width": 111.125,
+          "height": 32
+        },
+        "style": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(26, 26, 26)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "13px",
+          "fontWeight": "510",
+          "lineHeight": "20.15px",
+          "letterSpacing": "normal",
+          "padding": "0px 14px",
+          "height": "32px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "outline": "rgb(255, 255, 255) none 0px",
+          "gap": "8px",
+          "display": "flex",
+          "text": "Start building",
+          "tag": "A"
+        },
+        "crop": "nav-cta-default.png"
+      },
+      "hover": {
+        "state": "hover",
+        "box": {
+          "x": 1280.875,
+          "y": 16,
+          "width": 111.125,
+          "height": 32
+        },
+        "style": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(26, 26, 26)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "13px",
+          "fontWeight": "510",
+          "lineHeight": "20.15px",
+          "letterSpacing": "normal",
+          "padding": "0px 14px",
+          "height": "32px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "outline": "rgb(255, 255, 255) none 0px",
+          "gap": "8px",
+          "display": "flex",
+          "text": "Start building",
+          "tag": "A"
+        },
+        "crop": "nav-cta-hover.png"
+      },
+      "focus": {
+        "state": "focus",
+        "box": {
+          "x": 1280.875,
+          "y": 16,
+          "width": 111.125,
+          "height": 32
+        },
+        "style": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(26, 26, 26)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "13px",
+          "fontWeight": "510",
+          "lineHeight": "20.15px",
+          "letterSpacing": "normal",
+          "padding": "0px 14px",
+          "height": "32px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "outline": "rgb(26, 26, 26) solid 2px",
+          "gap": "8px",
+          "display": "flex",
+          "text": "Start building",
+          "tag": "A"
+        },
+        "crop": "nav-cta-focus.png"
+      }
+    },
+    "nav-signin": {
+      "default": {
+        "state": "default",
+        "box": {
+          "x": 1206.03125,
+          "y": 13.15625,
+          "width": 68.84375,
+          "height": 37.6875
+        },
+        "style": {
+          "color": "rgb(107, 107, 107)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, \"Inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "8px 12px",
+          "height": "37.6875px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(107, 107, 107)",
+          "boxShadow": "none",
+          "outline": "rgb(107, 107, 107) none 0px",
+          "gap": "normal",
+          "display": "block",
+          "text": "Sign in",
+          "tag": "A"
+        },
+        "crop": "nav-signin-default.png"
+      },
+      "hover": {
+        "state": "hover",
+        "box": {
+          "x": 1206.03125,
+          "y": 13.15625,
+          "width": 68.84375,
+          "height": 37.6875
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, \"Inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "8px 12px",
+          "height": "37.6875px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(26, 26, 26) none 0px",
+          "gap": "normal",
+          "display": "block",
+          "text": "Sign in",
+          "tag": "A"
+        },
+        "crop": "nav-signin-hover.png"
+      },
+      "focus": {
+        "state": "focus",
+        "box": {
+          "x": 1206.03125,
+          "y": 13.15625,
+          "width": 68.84375,
+          "height": 37.6875
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, \"Inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "8px 12px",
+          "height": "37.6875px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(10, 104, 224) solid 2px",
+          "gap": "normal",
+          "display": "block",
+          "text": "Sign in",
+          "tag": "A"
+        },
+        "crop": "nav-signin-focus.png"
+      }
+    },
+    "nav-link": {
+      "default": {
+        "state": "default",
+        "box": {
+          "x": 405.96875,
+          "y": 13.15625,
+          "width": 70,
+          "height": 37.6875
+        },
+        "style": {
+          "color": "rgb(107, 107, 107)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, \"Inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "8px 12px",
+          "height": "37.6875px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(107, 107, 107)",
+          "boxShadow": "none",
+          "outline": "rgb(107, 107, 107) none 0px",
+          "gap": "normal",
+          "display": "block",
+          "text": "Pricing",
+          "tag": "A"
+        },
+        "crop": "nav-link-default.png"
+      },
+      "hover": {
+        "state": "hover",
+        "box": {
+          "x": 405.96875,
+          "y": 13.15625,
+          "width": 70,
+          "height": 37.6875
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, \"Inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "8px 12px",
+          "height": "37.6875px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(26, 26, 26) none 0px",
+          "gap": "normal",
+          "display": "block",
+          "text": "Pricing",
+          "tag": "A"
+        },
+        "crop": "nav-link-hover.png"
+      },
+      "focus": {
+        "state": "focus",
+        "box": {
+          "x": 405.96875,
+          "y": 13.15625,
+          "width": 70,
+          "height": 37.6875
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, \"Inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "8px 12px",
+          "height": "37.6875px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(10, 104, 224) solid 2px",
+          "gap": "normal",
+          "display": "block",
+          "text": "Pricing",
+          "tag": "A"
+        },
+        "crop": "nav-link-focus.png"
+      }
+    },
+    "nav-menu": {
+      "default": {
+        "state": "default",
+        "box": {
+          "x": 227.953125,
+          "y": 13.15625,
+          "width": 91.8125,
+          "height": 37.6875
+        },
+        "style": {
+          "color": "rgb(107, 107, 107)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, \"Inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "8px 10px 8px 12px",
+          "height": "37.6875px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(107, 107, 107)",
+          "boxShadow": "none",
+          "outline": "rgb(107, 107, 107) none 0px",
+          "gap": "4px",
+          "display": "inline-flex",
+          "text": "Product",
+          "tag": "BUTTON"
+        },
+        "crop": "nav-menu-default.png"
+      },
+      "hover": {
+        "state": "hover",
+        "box": {
+          "x": 227.953125,
+          "y": 13.15625,
+          "width": 91.8125,
+          "height": 37.6875
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, \"Inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "8px 10px 8px 12px",
+          "height": "37.6875px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(26, 26, 26) none 0px",
+          "gap": "4px",
+          "display": "inline-flex",
+          "text": "Product",
+          "tag": "BUTTON"
+        },
+        "crop": "nav-menu-hover.png"
+      },
+      "focus": {
+        "state": "focus",
+        "box": {
+          "x": 227.953125,
+          "y": 13.15625,
+          "width": 91.8125,
+          "height": 37.6875
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, \"Inter Fallback\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "8px 10px 8px 12px",
+          "height": "37.6875px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(26, 26, 26) solid 2px",
+          "gap": "4px",
+          "display": "inline-flex",
+          "text": "Product",
+          "tag": "BUTTON"
+        },
+        "crop": "nav-menu-focus.png"
+      }
+    },
+    "hero-title": {
+      "default": {
+        "state": "default",
+        "box": {
+          "x": 510.453125,
+          "y": 241.1875,
+          "width": 419.09375,
+          "height": 115.984375
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "66px",
+          "fontWeight": "600",
+          "lineHeight": "67.98px",
+          "letterSpacing": "-2.31px",
+          "padding": "0px",
+          "height": "115.984px",
+          "borderRadius": "0px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(26, 26, 26) none 0px",
+          "gap": "normal",
+          "display": "block",
+          "text": "Build an app by describing it",
+          "tag": "H1"
+        },
+        "crop": "hero-title-default.png"
+      },
+      "hover": {
+        "state": "hover",
+        "box": {
+          "x": 510.453125,
+          "y": 241.1875,
+          "width": 419.09375,
+          "height": 115.984375
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "66px",
+          "fontWeight": "600",
+          "lineHeight": "67.98px",
+          "letterSpacing": "-2.31px",
+          "padding": "0px",
+          "height": "115.984px",
+          "borderRadius": "0px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(26, 26, 26) none 0px",
+          "gap": "normal",
+          "display": "block",
+          "text": "Build an app by describing it",
+          "tag": "H1"
+        },
+        "crop": "hero-title-hover.png"
+      },
+      "focus": {
+        "state": "focus",
+        "box": {
+          "x": 510.453125,
+          "y": 241.1875,
+          "width": 419.09375,
+          "height": 115.984375
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "66px",
+          "fontWeight": "600",
+          "lineHeight": "67.98px",
+          "letterSpacing": "-2.31px",
+          "padding": "0px",
+          "height": "115.984px",
+          "borderRadius": "0px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(26, 26, 26) none 0px",
+          "gap": "normal",
+          "display": "block",
+          "text": "Build an app by describing it",
+          "tag": "H1"
+        },
+        "crop": "hero-title-focus.png"
+      }
+    },
+    "menu-link": {
+      "opened": {
+        "state": "opened",
+        "box": {
+          "x": 227.953125,
+          "y": 112.84375,
+          "width": 216,
+          "height": 32
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "padding": "0px 8px",
+          "height": "32px",
+          "borderRadius": "10px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "none",
+          "outline": "rgb(26, 26, 26) none 0px",
+          "gap": "6px",
+          "display": "flex",
+          "text": "Overview",
+          "tag": "A"
+        },
+        "crop": "menu-link-opened.png"
+      }
+    },
+    "theme-match-your-system": {
+      "default": {
+        "state": "default",
+        "box": {
+          "x": 1299,
+          "y": 9257.03125,
+          "width": 30,
+          "height": 24
+        },
+        "style": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "lineHeight": "20.15px",
+          "letterSpacing": "normal",
+          "padding": "0px",
+          "height": "24px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(26, 26, 26)",
+          "boxShadow": "rgba(0, 0, 0, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
+          "outline": "rgb(26, 26, 26) none 0px",
+          "gap": "normal",
+          "display": "grid",
+          "text": "Match your system",
+          "tag": "BUTTON"
+        },
+        "crop": "theme-match-your-system-default.png"
+      }
+    },
+    "theme-light": {
+      "default": {
+        "state": "default",
+        "box": {
+          "x": 1329,
+          "y": 9257.03125,
+          "width": 30,
+          "height": 24
+        },
+        "style": {
+          "color": "rgb(107, 107, 107)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "lineHeight": "20.15px",
+          "letterSpacing": "normal",
+          "padding": "0px",
+          "height": "24px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(107, 107, 107)",
+          "boxShadow": "none",
+          "outline": "rgb(107, 107, 107) none 0px",
+          "gap": "normal",
+          "display": "grid",
+          "text": "Light",
+          "tag": "BUTTON"
+        },
+        "crop": "theme-light-default.png"
+      }
+    },
+    "theme-dark": {
+      "default": {
+        "state": "default",
+        "box": {
+          "x": 1359,
+          "y": 9257.03125,
+          "width": 30,
+          "height": 24
+        },
+        "style": {
+          "color": "rgb(107, 107, 107)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "lineHeight": "20.15px",
+          "letterSpacing": "normal",
+          "padding": "0px",
+          "height": "24px",
+          "borderRadius": "999px",
+          "border": "0px none rgb(107, 107, 107)",
+          "boxShadow": "none",
+          "outline": "rgb(107, 107, 107) none 0px",
+          "gap": "normal",
+          "display": "grid",
+          "text": "Dark",
+          "tag": "BUTTON"
+        },
+        "crop": "theme-dark-default.png"
+      }
+    }
+  }
+}

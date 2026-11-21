@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlutterFlow style guide</title>
+<style>
+:root {
+  color-scheme: light;
+  --color-page: #fcfcfb;
+  --color-ink: #1a1a1a;
+  --color-muted: #6b6b6b;
+  --color-line: rgba(0,0,0,.08);
+  --color-accent: #0a68e0;
+  --color-btn: #1a1a1a;
+  --color-well: #f5f5f5;
+  --color-card: #ffffff;
+  --color-faint: #a3a3a3;
+  --color-focus: #1a1a1a;
+  --color-send: #0a68e0;
+  --color-success: #177245;
+  --color-danger: #c4320a;
+  --color-studio-tint: #ececfd;
+  --color-studio-ink: #4b39ef;
+  --color-contrast: #1a1a1a;
+  --color-statusbar-ink: #000;
+  --color-ui-card: #ffffff;
+  --color-ui-fill: #ebebeb;
+  --color-ui-line: #dedede;
+  --color-ui-frame: #efefef;
+  --color-sheen: rgba(255,255,255,.95);
+  --color-chrome-bar: #ececec;
+  --color-chrome-bg: #f7f7f7;
+  --color-chrome-ink: rgba(0,0,0,.55);
+  --color-chrome-line: rgba(0,0,0,.08);
+  --color-tile: #fff;
+  --radius-page: 16px;
+  --radius-card: 20px;
+  --radius-field: 26px;
+  --radius-icon: 10px;
+  --radius-pill: 999px;
+  --space-gutter: clamp(20px, 4vw, 48px);
+  --space-section: clamp(64px, 8.9vw, 128px);
+  --space-head: clamp(40px, 6.7vw, 96px);
+  --space-words: clamp(40px, 4.5vw, 64px);
+  --space-cell: 32px;
+  --space-column: 32px;
+  --space-tile: 28px;
+  --shadow-resting: 0 0 0 1px rgba(0,0,0,.08), 0 18px 40px -22px rgba(0,0,0,.22);
+  --shadow-field: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px -14px rgba(0,0,0,.14);
+  --shadow-floating: 0 0 0 1px rgba(0,0,0,.08), 0 24px 48px -20px rgba(0,0,0,.28);
+  --easing-ui: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --easing-out: cubic-bezier(0.2, 0.8, 0.2, 1.0);
+  --easing-spring: cubic-bezier(0.2, 0.8, 0.2, 1.0);
+  --fontFamily-sans: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --fontFamily-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --typography-display: {'fontWeight': 600, 'fontSize': 'clamp(44px, 4.6vw, 66px)', 'lineHeight': '1.03', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-heading: {'fontWeight': 510, 'fontSize': 'clamp(30px, 3.8vw, 48px)', 'lineHeight': '1.08', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-stat: {'fontWeight': 510, 'fontSize': 'clamp(34px, 4.2vw, 56px)', 'lineHeight': '1.0', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-lede: {'fontWeight': 400, 'fontSize': '19px', 'lineHeight': '30px', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-section-lede: {'fontWeight': 400, 'fontSize': 'clamp(17px, 1.4vw, 20px)', 'lineHeight': '1.45', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-quote: {'fontWeight': 400, 'fontSize': '19px', 'lineHeight': '28px', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-prompt: {'fontWeight': 400, 'fontSize': '18px', 'lineHeight': '26px', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-body: {'fontWeight': 400, 'fontSize': '16px', 'lineHeight': '1.55', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-card-title: {'fontWeight': 510, 'fontSize': '15px', 'lineHeight': '24px', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-card-body: {'fontWeight': 400, 'fontSize': '15px', 'lineHeight': '24px', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-nav: {'fontWeight': 400, 'fontSize': '14px', 'lineHeight': '1.55', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-kicker: {'fontWeight': 510, 'fontSize': '14px', 'lineHeight': '20px', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-small: {'fontWeight': 400, 'fontSize': '13px', 'lineHeight': '1.4', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-label: {'fontWeight': 500, 'fontSize': '11px', 'lineHeight': '16px', 'fontFamily': 'var(--ff-font-mono)'};
+  --typography-article-title: {'fontWeight': 510, 'fontSize': 'clamp(32px, 3.6vw, 48px)', 'lineHeight': '1.08', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-prose: {'fontWeight': 400, 'fontSize': '18px', 'lineHeight': '30px', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-testimonial: {'fontWeight': 510, 'fontSize': 'clamp(24px, 2.6vw, 34px)', 'lineHeight': '1.25', 'fontFamily': 'var(--ff-font-sans)'};
+  --typography-question: {'fontWeight': 510, 'fontSize': '17px', 'lineHeight': '26px', 'fontFamily': 'var(--ff-font-sans)'};
+  --sizing-content: 1344px;
+  --sizing-words: 440px;
+  --sizing-stage: 700px;
+  --sizing-bar: 64px;
+  --sizing-composer: 680px;
+  --sizing-border-hair: 1px;
+  --sizing-focus-width: 2px;
+  --sizing-focus-offset: 2px;
+  --z-z-dropdown: 5;
+  --z-z-sticky: 19;
+  --z-z-bar: 20;
+  --z-z-overlay: 50;
+  --z-z-skip: 60;
+  --page: #fcfcfb;
+  --surface: #ffffff;
+  --raised: #f0f0f0;
+  --well: #f5f5f5;
+  --text: #1a1a1a;
+  --textSecondary: #3d3d3d;
+  --muted: #6b6b6b;
+  --faint: #a3a3a3;
+  --border: rgba(0,0,0,.08);
+  --accent: #0a68e0;
+  --accentInk: #1b519f;
+  --onAccent: #ffffff;
+  --focus: #1a1a1a;
+  --success: #177245;
+  --danger: #c4320a;
+  --button: #1a1a1a;
+  --buttonInk: #ffffff;
+  --studio: #4b39ef;
+  --studioTint: #ececfd;
+  --sg-sans: var(--fontFamily-sans, Inter, system-ui, sans-serif);
+  --sg-mono: var(--fontFamily-mono, ui-monospace, monospace);
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #121212;
+  --surface: #1b1b1b;
+  --raised: #262626;
+  --well: #0b0b0b;
+  --text: #ededed;
+  --textSecondary: #c8c8c8;
+  --muted: #a0a0a0;
+  --faint: #6b6b6b;
+  --border: rgba(255,255,255,.08);
+  --accent: #5aa2f0;
+  --accentInk: #84b7f1;
+  --onAccent: #ffffff;
+  --focus: #ededed;
+  --success: #4fbd88;
+  --danger: #ff8a65;
+  --button: #ededed;
+  --buttonInk: #111111;
+  --studio: #b7adff;
+  --studioTint: #4b39ef38;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/1.5 var(--sg-sans); }
+header { display: flex; gap: 16px; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--page); }
+header h1 { font-size: 16px; font-weight: 600; margin: 0; }
+button.theme { margin-left: auto; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 6px 12px; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h2 { font-size: 22px; font-weight: 560; letter-spacing: -0.02em; margin: 40px 0 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--border); display: block; }
+.sw b { display: block; font: 600 12px/1.3 var(--sg-mono); }
+.sw span { color: var(--muted); font-size: 12px; }
+.ty { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: baseline; }
+.ty code { font: 12px var(--sg-mono); color: var(--muted); }
+.btn { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 999px; background: var(--button); color: var(--buttonInk); font-size: 13px; font-weight: 510; text-decoration: none; }
+.ghost { color: var(--muted); background: transparent; }
+.card { background: var(--surface); border-radius: 20px; padding: 20px; box-shadow: var(--shadow-resting, 0 0 0 1px var(--border)); max-width: 360px; }
+p.note { color: var(--muted); max-width: 68ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>FlutterFlow</h1>
+  <span>Public site tokens</span>
+  <button class="theme" type="button" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle theme</button>
+</header>
+<main>
+  <p class="note">Rendered from tokens.json. Values were read from www.flutterflow.io on 2026-11-21. Dark paints when data-theme is dark, the same switch the site uses. The signed-in app was not captured.</p>
+  <h2>Colour roles</h2>
+  <div class="grid"><div class="sw"><i style="background:#fcfcfb"></i><div><b>page</b><span>#fcfcfb</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>surface</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#f0f0f0"></i><div><b>raised</b><span>#f0f0f0</span></div></div>
+<div class="sw"><i style="background:#f5f5f5"></i><div><b>well</b><span>#f5f5f5</span></div></div>
+<div class="sw"><i style="background:#1a1a1a"></i><div><b>text</b><span>#1a1a1a</span></div></div>
+<div class="sw"><i style="background:#3d3d3d"></i><div><b>textSecondary</b><span>#3d3d3d</span></div></div>
+<div class="sw"><i style="background:#6b6b6b"></i><div><b>muted</b><span>#6b6b6b</span></div></div>
+<div class="sw"><i style="background:#a3a3a3"></i><div><b>faint</b><span>#a3a3a3</span></div></div>
+<div class="sw"><i style="background:rgba(0,0,0,.08)"></i><div><b>border</b><span>rgba(0,0,0,.08)</span></div></div>
+<div class="sw"><i style="background:#0a68e0"></i><div><b>accent</b><span>#0a68e0</span></div></div>
+<div class="sw"><i style="background:#1b519f"></i><div><b>accentInk</b><span>#1b519f</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>onAccent</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#1a1a1a"></i><div><b>focus</b><span>#1a1a1a</span></div></div>
+<div class="sw"><i style="background:#177245"></i><div><b>success</b><span>#177245</span></div></div>
+<div class="sw"><i style="background:#c4320a"></i><div><b>danger</b><span>#c4320a</span></div></div>
+<div class="sw"><i style="background:#1a1a1a"></i><div><b>button</b><span>#1a1a1a</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>buttonInk</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#4b39ef"></i><div><b>studio</b><span>#4b39ef</span></div></div>
+<div class="sw"><i style="background:#ececfd"></i><div><b>studioTint</b><span>#ececfd</span></div></div></div>
+  <h2>Type</h2>
+  <div class="ty"><code>typography-display</code><p style="font:{'fontWeight': 600, 'fontSize': 'clamp(44px, 4.6vw, 66px)', 'lineHeight': '1.03', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-heading</code><p style="font:{'fontWeight': 510, 'fontSize': 'clamp(30px, 3.8vw, 48px)', 'lineHeight': '1.08', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-stat</code><p style="font:{'fontWeight': 510, 'fontSize': 'clamp(34px, 4.2vw, 56px)', 'lineHeight': '1.0', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-lede</code><p style="font:{'fontWeight': 400, 'fontSize': '19px', 'lineHeight': '30px', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-section-lede</code><p style="font:{'fontWeight': 400, 'fontSize': 'clamp(17px, 1.4vw, 20px)', 'lineHeight': '1.45', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-quote</code><p style="font:{'fontWeight': 400, 'fontSize': '19px', 'lineHeight': '28px', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-prompt</code><p style="font:{'fontWeight': 400, 'fontSize': '18px', 'lineHeight': '26px', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-body</code><p style="font:{'fontWeight': 400, 'fontSize': '16px', 'lineHeight': '1.55', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-card-title</code><p style="font:{'fontWeight': 510, 'fontSize': '15px', 'lineHeight': '24px', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-card-body</code><p style="font:{'fontWeight': 400, 'fontSize': '15px', 'lineHeight': '24px', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-nav</code><p style="font:{'fontWeight': 400, 'fontSize': '14px', 'lineHeight': '1.55', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-kicker</code><p style="font:{'fontWeight': 510, 'fontSize': '14px', 'lineHeight': '20px', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-small</code><p style="font:{'fontWeight': 400, 'fontSize': '13px', 'lineHeight': '1.4', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-label</code><p style="font:{'fontWeight': 500, 'fontSize': '11px', 'lineHeight': '16px', 'fontFamily': 'var(--ff-font-mono)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-article-title</code><p style="font:{'fontWeight': 510, 'fontSize': 'clamp(32px, 3.6vw, 48px)', 'lineHeight': '1.08', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-prose</code><p style="font:{'fontWeight': 400, 'fontSize': '18px', 'lineHeight': '30px', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-testimonial</code><p style="font:{'fontWeight': 510, 'fontSize': 'clamp(24px, 2.6vw, 34px)', 'lineHeight': '1.25', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+<div class="ty"><code>typography-question</code><p style="font:{'fontWeight': 510, 'fontSize': '17px', 'lineHeight': '26px', 'fontFamily': 'var(--ff-font-sans)'};margin:0">Build an app by describing it</p></div>
+  <h2>Radius</h2>
+  <div class="grid"><div class="sw"><i style="border-radius:16px;background:var(--accent)"></i><div><b>radius-page</b><span>16px</span></div></div>
+<div class="sw"><i style="border-radius:20px;background:var(--accent)"></i><div><b>radius-card</b><span>20px</span></div></div>
+<div class="sw"><i style="border-radius:26px;background:var(--accent)"></i><div><b>radius-field</b><span>26px</span></div></div>
+<div class="sw"><i style="border-radius:10px;background:var(--accent)"></i><div><b>radius-icon</b><span>10px</span></div></div>
+<div class="sw"><i style="border-radius:999px;background:var(--accent)"></i><div><b>radius-pill</b><span>999px</span></div></div></div>
+  <h2>Controls</h2>
+  <p><a class="btn" href="#build">Start building</a></p>
+  <div class="card"><strong>Card</strong><p class="note">Surface is --ff-color-card. Accent is the blue used on send and links, not the near-black primary button.</p></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "product": "FlutterFlow",
+  "signed_in": false,
+  "captured": "2026-11-21",
+  "walls": [
+    {
+      "url": "https://build.flutterflow.io/signin",
+      "final_url": "https://build.flutterflow.io/signin",
+      "status": 200,
+      "kind": "html sign-in",
+      "asks": [
+        "Continue with Google",
+        "Continue with Apple",
+        "Continue with GitHub",
+        "Continue with Microsoft",
+        "Email",
+        "Password",
+        "Sign in",
+        "Forgot your password?",
+        "Create an account"
+      ],
+      "clicked": [],
+      "typed": false,
+      "screenshot": "screenshots/build-flutterflow-io-signin-wall-desktop.png",
+      "note": "Empty wall only. No email, password, code, or OAuth button was used."
+    },
+    {
+      "url": "https://app.flutterflow.io/login",
+      "final_url": "https://app.flutterflow.io/login",
+      "status": 200,
+      "kind": "Flutter canvas",
+      "title": "FlutterFlow Studio",
+      "asks": [
+        "Continue with Google",
+        "Continue with Apple",
+        "Continue with GitHub",
+        "Continue with Microsoft",
+        "Email",
+        "Password",
+        "Sign in",
+        "Forgot password?",
+        "Create an account"
+      ],
+      "dom_fields_before_paint": ["input type=text", "input type=password", "input type=submit", "flutter-view"],
+      "clicked": [],
+      "typed": false,
+      "screenshot": "screenshots/app-flutterflow-io-login-wall-desktop.png",
+      "note": "First paint was a splash logo on a dark canvas. After waiting, the sign-in card painted. Branch stopped there. No email, password, code, or OAuth button was used."
+    }
+  ],
+  "gaps": [
+    "Signed-in app was not captured.",
+    "Unread token values are Not captured.",
+    "Onboarding was not filled.",
+    "No account was created.",
+    "No form was submitted."
+  ]
+}
