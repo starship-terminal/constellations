@@ -1,12 +1,14 @@
 # Patterns
 
-Public pages only. Viewport 1169 by 731. No screenshots were saved.
+Public pages only. Desktop viewport 1440 by 900. Phone viewport 390 by 844. Screenshots are in [screenshots/](screenshots/). The control map is [site-tree.md](site-tree.md).
 
 ## Marketing home
 
 https://www.todoist.com/
 
-A 72px nav, padding 0 24px, transparent over the page. Links are quiet 39px pills. The page background is `light.background.page`. The visible heading is Graphik 55px weight 600, "The task system you'll actually stick with". The lede is Inter 20.5px at 66% ink. One red xl button, "Start for free".
+[screenshots/home-light-default.png](screenshots/home-light-default.png)
+
+A 72px nav, padding 0 24px, transparent over the page. Links are quiet 39px pills. The page background is `light.background.page`. The visible heading is Graphik 55px weight 600. The lede is Inter 20.5px at 66% ink. One red xl button, "Start for free". The Resources menu is [screenshots/home-light-resources-menu.png](screenshots/home-light-resources-menu.png). Phone width is [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png).
 
 A cookie dialog from Osano covered the corner on first load. "Reject Non-Essential" was clicked so the page underneath could be measured. Osano colours are not in the tokens.
 
@@ -18,11 +20,13 @@ Heading "Plans and pricing", same 55px Graphik. Three articles side by side: Beg
 
 ## Signed-out login
 
-https://app.todoist.com/auth/login?locale=en
+https://app.todoist.com/auth/login
 
-The marketing host redirects here. Page background rgb(252, 250, 248). Column width 376px. Heading "Welcome back!" at 32px weight 700, system font. Three SSO rows (Google, Facebook, Apple), each 48px with a 1px #e5e5e5 border and 6px radius. Email and password fields, then a red "Log in" button at rgb(211, 51, 34). Links underneath are the same red at 13px.
+[screenshots/login-light-empty.png](screenshots/login-light-empty.png)
 
-Nothing was submitted. SSO was not clicked.
+The marketing host redirects here. Page background rgb(252, 250, 248). Column width 376px. Heading "Welcome back!" at 32px weight 700, system font. Three identity-provider rows (Google, Facebook, Apple), each 48px with a 1px #e5e5e5 border and 6px radius. Email and password fields, then a red "Log in" button at rgb(211, 51, 34). Links underneath are the same red at 13px.
+
+Nothing was submitted. No identity provider was clicked. The branch stops here. See [login-review.json](login-review.json).
 
 ## Signup boundary
 

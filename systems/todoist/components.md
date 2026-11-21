@@ -1,6 +1,6 @@
 # Components
 
-Measured on the public marketing site and the signed-out login page on 2026-11-19. Viewport was 1169 by 731 at devicePixelRatio 2. No screenshots: the preview browser returned "The browser is not producing screenshot frames."
+Measured on the public marketing site and the empty login page. The 2026-11-19 readings are in [raw/readings.json](raw/readings.json). Crops from the 2026-11-21 Playwright pass are in [components/crops/](components/crops/).
 
 ## Button
 
@@ -13,11 +13,11 @@ Home hero "Start for free" (`_primary_` `_xl_`).
 
 Focus painted `box-shadow: oklch(0.9451 0.0168 215.46) 0px 0px 0px 4px, oklch(0.6772 0.1122 245.18) 0px 0px 0px 1px`. That matches `--shadow-focusvisible-default`. Outline was none.
 
-Hover and pressed were not forced. The declared hover fill is `--actionable-primary-background-onhover`, oklch(56.45% .1938 31.13), stored as `light.background.action-hover`.
+A real hover on 2026-11-21 did not change the computed fill. The declared hover fill is `--actionable-primary-background-onhover`, oklch(56.45% .1938 31.13), stored as `light.background.action-hover`. The crop is [components/crops/hero-cta-hover.png](components/crops/hero-cta-hover.png). Focus is [components/crops/hero-cta-focus-visible.png](components/crops/hero-cta-focus-visible.png).
 
 Nav "Log in" and pricing "Get started" are the quiet button: fill rgba(37, 34, 30, 0.07), text rgb(37, 34, 30), radius 8px, padding 9px 14px, height 39px. Font Inter 15.5px weight 600 on the pricing link, weight 500 on the nav link.
 
-Login "Log in" is a different control. Fill rgb(211, 51, 34), text white, radius 6px, height 48px, width 376px, font -apple-system 18px weight 700. It was not clicked.
+Login "Log in" is a different control. Fill rgb(211, 51, 34), text white, radius 6px, height 48px, width 376px, font -apple-system 18px weight 700. It was not clicked. A real hover on 2026-11-21 painted rgb(199, 56, 42). See [components/crops/login-submit-default.png](components/crops/login-submit-default.png) and [components/crops/login-submit-hover.png](components/crops/login-submit-hover.png).
 
 ## Link
 

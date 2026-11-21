@@ -1,8 +1,8 @@
 # Todoist
 
-Public marketing pages and the signed-out login for [todoist.com](https://www.todoist.com/), read on 2026-11-19. The marketing site and the app login are two visual systems on one product. Marketing uses Graphik and Inter on a warm off-white page with an oklch red. Login uses the system font on #fcfaf8 with a hex red, rgb(211, 51, 34).
+Public marketing pages and the empty login and signup walls for [todoist.com](https://www.todoist.com/), refreshed on 2026-11-21. The marketing site and the app login are two visual systems on one product. Marketing uses Graphik and Inter on a warm off-white page with an oklch red. Login uses the system font on #fcfaf8 with a hex red, rgb(211, 51, 34).
 
-Account type: signed out. Themes: light only. Width measured: 1169 CSS pixels, height 731, devicePixelRatio 2. Phone width was not captured. No screenshots: the preview browser returned "The browser is not producing screenshot frames."
+Account type: signed out. Themes: light only. Desktop viewport requested 1440 by 900. Phone viewport requested 390 by 844. The site tree is [site-tree.md](site-tree.md). The empty login wall is [login-review.json](login-review.json). Nothing was typed. No identity provider was clicked. No form was submitted.
 
 | File | What it is |
 |---|---|
@@ -13,6 +13,10 @@ Account type: signed out. Themes: light only. Width measured: 1169 CSS pixels, h
 | [style-guide.html](style-guide.html) | A single light page that paints the token colours and the two buttons. `tools/build_style_guide.py` refreshes its token table and button fill from tokens.json. |
 | [components.md](components.md) | Button, link, text field and card, with the states that were read. |
 | [patterns.md](patterns.md) | Home, pricing, login and the signup boundary. |
+| [site-tree.md](site-tree.md) | Which public control opens which page. Auth branches stop at the empty wall. |
+| [login-review.json](login-review.json) | What the empty login and signup walls ask for. No credentials. |
+| [screenshots/](screenshots/) | Public pages at 1440 and 390, plus the empty login and signup walls. 256-colour PNGs. |
+| [components/](components/) | Crops of the hero button, the quiet plan button, and the login wall controls. |
 | [raw/](raw/) | `readings.json`: computed styles and the custom properties the tokens came from. |
 | [tools/](tools/) | `build_tokens.py` rebuilds tokens.json from readings.json. The copied kit is the starting point and was not run. |
 
@@ -71,17 +75,17 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (no element 
 
 ## How the values were read
 
-Custom properties were resolved on `:root` with `getComputedStyle` in the T3 preview browser. Marketing tokens come from https://www.todoist.com/. App tokens come from https://app.todoist.com/auth/login. Component values are `getComputedStyle` on the elements named in [raw/readings.json](raw/readings.json). Focus on the home button is a real `element.focus()`. Focus on the login field is a real `input.focus()`. Hover was not forced. The cookie dialog was dismissed with "Reject Non-Essential" before the home controls were measured.
+Custom properties were resolved from the live stylesheets in headless Chromium on 2026-11-21, and checked against the 2026-11-19 readings in [raw/readings.json](raw/readings.json). Marketing tokens come from https://www.todoist.com/. App tokens come from https://app.todoist.com/auth/login. Component values are `getComputedStyle` on the elements named in readings.json. Focus on the home button is a real `element.focus()`. Focus on the login field is a real `input.focus()` with the field left empty. Login submit hover was a real pointer hover and painted rgb(199, 56, 42). The cookie overlay was hidden, not answered.
 
 ## What to distrust
 
-There are no screenshots. Do not invent a layout from the style guide. The style guide draws two buttons from tokens. It is not a capture of the page.
+Screenshots are 256-colour PNGs. Read colours from tokens.json. The style guide draws two buttons from tokens. It is not a capture of the page.
 
 The marketing roles are declared in oklch(). tokens.json stores each as its sRGB hex, a conversion labelled Derived, and its source keeps the declared oklch(). The conversion matches what the browser painted where a computed rgb() was read: the home body colour computed as rgb(37, 34, 30), #25221e, the converted `--greyopaque-900`.
 
 Login and marketing do not share one red. Home CTA fill is #e34432 (declared oklch(61.47% .1986 30.12)). Login submit fill is rgb(211, 51, 34). Both are in `light`. Use the one that matches the surface.
 
-`--color-td-cta-hover` and the app hover fills were declared, not painted on a hovered element.
+`--color-td-cta-hover` (#ee5244) is declared on the marketing page. A real hover on the home "Start for free" button did not change its computed fill, which stayed oklch(61.47% .1986 30.12). Login submit hover did paint: rgb(199, 56, 42), matching `--product-library-actionable-primary-hover-fill` #c3392c.
 
 The favicon was scaled from 32 px to 128 px. It is blocky.
 
@@ -100,16 +104,23 @@ Graphik is the marketing display face. Inter is the marketing body and button fa
 | Button, link, text field, card | Captured in components.md. |
 | Icon button, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, table, avatar, badge, text area, list row | Not present on the measured pages, or only inside the Osano cookie dialog. |
 | App shell, signed-in list, empty, loading, error, destructive confirm, search | Not captured. Signup was not submitted. Login was not submitted. |
-| Desktop 1440 and phone 390 | Not captured. The live viewport was 1169 by 731. |
-| Screenshots | Not captured. Preview snapshot failed: "The browser is not producing screenshot frames." |
+| Desktop 1440 | Captured. Requested viewport 1440 by 900. [screenshots/home-light-default.png](screenshots/home-light-default.png). |
+| Phone 390 | Captured. Requested viewport 390 by 844, devicePixelRatio 2. [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png). |
+| Screenshots | Captured in [screenshots/](screenshots/). |
+| Site tree | Captured in [site-tree.md](site-tree.md). |
+| Login and signup walls | Captured empty. [screenshots/login-light-empty.png](screenshots/login-light-empty.png), [screenshots/signup-light-empty.png](screenshots/signup-light-empty.png). |
 
 ## Do and don't
 
-- **Do use the marketing red only on marketing.** The home CTA is the converted oklch action fill, #e34432. The login button is rgb(211, 51, 34).
-- **Do keep marketing type on Graphik for headings and Inter for buttons.** Login stays on the system font.
-- **Do treat the quiet button as a tint, not a second brand.** Nav and "Get started" use 7% ink on a transparent fill.
-- **Don't infer the signed-in app.** The task list, sidebar and project colours in `--product-ui-*` are declared on the marketing page and were not seen in the app.
-- **Don't read a screenshot.** None were saved.
+- **Do use the marketing red only on marketing.** The home CTA is the converted oklch action fill, #e34432. The login button is rgb(211, 51, 34). See [components/crops/hero-cta-default.png](components/crops/hero-cta-default.png) and [components/crops/login-submit-default.png](components/crops/login-submit-default.png).
+- **Do keep marketing type on Graphik for headings and Inter for buttons.** Login stays on the system font. See [screenshots/home-light-default.png](screenshots/home-light-default.png) and [components/crops/login-title-default.png](components/crops/login-title-default.png).
+- **Do treat the quiet button as a tint, not a second brand.** "Get started" on pricing uses 7% ink. See [components/crops/plan-quiet-default.png](components/crops/plan-quiet-default.png).
+- **Don't infer the signed-in app.** The task list was not opened. Login and signup stopped at the empty wall.
+- **Don't read a colour off a screenshot.** The PNGs are quantised. Values are in [tokens.json](tokens.json).
+
+## Catalog
+
+[catalog.json](../../catalog.json) was not edited in this refresh. Its todoist row still says captured 2026-11-19, width 1169, and cover `icon.png`, and its `layoutGaps` still say screenshots and components are missing. Those files are in this package now. A later catalog edit has to point `preview.cover` at [screenshots/home-light-default.png](screenshots/home-light-default.png), set widths to 1440 and 390, and drop the screenshots and components gaps.
 
 ## Rebuild
 
