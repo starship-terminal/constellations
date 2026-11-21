@@ -1,0 +1,122 @@
+{
+  "product": "Pinterest",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "origin": "https://www.pinterest.com",
+  "landed": "https://www.pinterest.com/",
+  "offered": {
+    "nav": {
+      "header": [
+        "Pinterest home /",
+        "Explore /ideas/",
+        "Search combobox (focus opens the login dialog; query not submitted)",
+        "About (new tab, about.pinterest.com via /_/_/about/)",
+        "Businesses (new tab, business.pinterest.com via /_/_/business/)",
+        "Create (new tab, create.pinterest.com via /_/_/create/)",
+        "News (new tab, newsroom.pinterest.com via /_/_/blog/)",
+        "Log in (dialog on /)",
+        "Sign up (dialog on /)"
+      ],
+      "hero": [
+        "Join Pinterest for free (signup dialog)",
+        "I already have an account (login dialog)",
+        "Scroll up / Scroll down (in-page carousel)",
+        "View Previous / View Next (board carousel)",
+        "See more boards /pinterest/your-ultimate-holiday-starter-pack/",
+        "See what's new (in-page)"
+      ],
+      "footer": [
+        "Log in /login/",
+        "Explore /ideas/",
+        "Shop /shopping/",
+        "Help Center https://help.pinterest.com/en",
+        "Terms of Service policy.pinterest.com",
+        "Privacy Policy policy.pinterest.com",
+        "Notice at collection policy.pinterest.com",
+        "Non-user notice policy.pinterest.com",
+        "iOS App Store (exit)",
+        "Android Play Store (exit)"
+      ],
+      "explore": [
+        "Category tabs: All, Art, Womens Fashion, Beauty, Home Decor, Food And Drink, Quotes, Diy And Crafts, Animals, Design, Weddings, Travel, Mens Fashion, Tattoos",
+        "Art hub /ideas/art/961238559656/"
+      ],
+      "phone": [
+        "Explore dropdown",
+        "Log in",
+        "Sign up (clipped at 390)"
+      ]
+    },
+    "settings": {
+      "seen": false,
+      "reason": "An icon named Setting is on Explore. It was not opened. Account preferences sit behind the login dialog. Help lists Edit personalization settings as an article, not a signed-out settings page."
+    },
+    "create": {
+      "seen": false,
+      "reason": "Header Create opens create.pinterest.com, a public marketing site (geo path /en-sg/). Pin, board, and collage creation are behind the login and signup dialogs. Get started on that marketing site was not submitted."
+    }
+  },
+  "screens": [
+    "screenshots/about-light-default.png",
+    "screenshots/about-light-full.png",
+    "screenshots/board-light-auth-dialog.png",
+    "screenshots/board-light-page.png",
+    "screenshots/business-light-default.png",
+    "screenshots/business-light-full.png",
+    "screenshots/create-light-default.png",
+    "screenshots/create-light-full.png",
+    "screenshots/help-article-light-default.png",
+    "screenshots/help-article-light-full.png",
+    "screenshots/help-light-default.png",
+    "screenshots/help-light-full.png",
+    "screenshots/home-light-carousel-next.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-join-hover.png",
+    "screenshots/home-light-login-focus.png",
+    "screenshots/home-light-search-focused.png",
+    "screenshots/idea-light-page.png",
+    "screenshots/ideas-art-light-page.png",
+    "screenshots/ideas-light-auth-dialog.png",
+    "screenshots/ideas-light-page.png",
+    "screenshots/mobile-about-light-default.png",
+    "screenshots/mobile-board-light-page.png",
+    "screenshots/mobile-business-light-default.png",
+    "screenshots/mobile-create-light-default.png",
+    "screenshots/mobile-help-article-light-default.png",
+    "screenshots/mobile-help-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-idea-light-default.png",
+    "screenshots/mobile-ideas-art-light-default.png",
+    "screenshots/mobile-ideas-light-page.png",
+    "screenshots/mobile-newsroom-light-default.png",
+    "screenshots/mobile-policy-light-default.png",
+    "screenshots/mobile-shopping-light-page.png",
+    "screenshots/newsroom-light-default.png",
+    "screenshots/newsroom-light-full.png",
+    "screenshots/policy-light-default.png",
+    "screenshots/policy-light-full.png",
+    "screenshots/shopping-light-page.png"
+  ],
+  "gaps": [
+    "Search focus, header Log in, Sign up, Join, and I already have an account stop at the email and password dialog. Continue with Google and Continue with QR code were not clicked. Nothing typed.",
+    "https://www.pinterest.com/login/ paints a scannable QR code. That screenshot was not committed.",
+    "Home feed, pin close-up save, messages, and account settings are behind that wall.",
+    "The Setting icon on Explore was not opened.",
+    "About and Business hero video players failed in headless Chromium (Player error). The page chrome below the player is public.",
+    "Create and Newsroom loaded a geo path (/en-sg/) from this network.",
+    "Dark theme is declared in Gestalt tokens and not applied on the public site."
+  ],
+  "not_submitted": [
+    "login dialog Log in",
+    "signup dialog Continue",
+    "Continue with Google",
+    "Continue with QR code",
+    "Continue with Apple",
+    "Forgot your password",
+    "search submit",
+    "help search submit",
+    "create Get started",
+    "any form"
+  ]
+}

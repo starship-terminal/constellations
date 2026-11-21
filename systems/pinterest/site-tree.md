@@ -1,6 +1,6 @@
 # Pinterest public site tree
 
-Mapped on 2026-11-21 from [https://www.pinterest.com/](https://www.pinterest.com/) in headless Chromium, signed out, before any screenshot pass. Nothing was typed. No form was submitted. Google, Apple, Facebook, QR login, and account creation were not clicked.
+Mapped on 2026-11-21 from [https://www.pinterest.com/](https://www.pinterest.com/) in Chromium, signed out, before the screenshot pass. Rechecked the same day: the homepage still paints the signed-out marketing page (title Pinterest, HTTP 200). Nothing was typed. No form was submitted. Google, Apple, Facebook, QR login, and account creation were not clicked.
 
 The product surface is `www.pinterest.com`. Header links to About, Businesses, Create, and News leave that host. Policy links leave to `policy.pinterest.com`. Help leaves to `help.pinterest.com`. App-store links leave to Apple and Google. Those stores are recorded as exits, not as Pinterest UI.
 
@@ -12,12 +12,12 @@ Signed-out marketing page. Title: Pinterest. A signup form is mounted in the pag
 |---|---|
 | Pinterest home (logo) | [https://www.pinterest.com/](https://www.pinterest.com/) |
 | Explore | [https://www.pinterest.com/ideas/](https://www.pinterest.com/ideas/) |
-| Search combobox, focused, nothing typed | Stays on `/`. A dialog named `modal` mounts with a Close control. Submitting a query is not done. |
+| Search combobox, focused, nothing typed | Stays on `/`. A dialog named `modal` mounts. Copy: Welcome to Pinterest, email, password, Forgot password?, Continue with Google, Continue with QR code. **Wall. Branch stopped. Nothing typed. Google and QR not clicked.** Submitting a query is not done. |
 | About (new tab) | [https://about.pinterest.com/](https://about.pinterest.com/) via `/_/_/about/` |
 | Businesses (new tab) | [https://business.pinterest.com/](https://business.pinterest.com/) via `/_/_/business/` |
 | Create (new tab) | [https://create.pinterest.com/en-sg/](https://create.pinterest.com/en-sg/) via `/_/_/create/` (geo path from this network) |
 | News (new tab) | [https://newsroom.pinterest.com/en-sg/](https://newsroom.pinterest.com/en-sg/) via `/_/_/blog/` |
-| Log in (header button) | Dialog on `/`, URL stays `/`. Copy: Welcome to Pinterest, log in, email, password, Forgot your password?, Continue with Google. **Wall. Branch stopped. Nothing typed.** Same wall as [https://www.pinterest.com/login/](https://www.pinterest.com/login/). |
+| Log in (header button) | Dialog on `/`, URL stays `/`. Copy: Welcome to Pinterest, log in, email, password, Forgot your password?, Continue with Google. Recheck also shows "Or, log in instantly by scanning code with your phone". **Wall. Branch stopped. Nothing typed.** Same wall as [https://www.pinterest.com/login/](https://www.pinterest.com/login/). |
 | Sign up (header button) | Dialog on `/`. Copy: Join Pinterest for free, email, password, birthday. **Wall. Branch stopped.** |
 | Join Pinterest for free (hero) | Same signup dialog. **Wall. Branch stopped.** |
 | I already have an account (hero) | Login dialog, plus Continue with QR code. **Wall. Branch stopped. QR not opened.** |
@@ -104,4 +104,8 @@ Public legal pages. Terms of service, privacy policy, notice at collection, non-
 
 ## Phone width
 
-The same URLs are captured at 390×844. Phone may collapse the header into a menu. That menu is opened if it is not a login wall. If a control opens the login or signup dialog, the URL is recorded and that branch stops.
+The same URLs are captured at 390×844. At that width the header keeps Explore (a dropdown), Log in, and a clipped Sign up. Explore's dropdown was not opened: the same control on desktop is a link to `/ideas/`, and the phone Log in and Sign up are the login wall. If a control opens the login or signup dialog, the URL is recorded and that branch stops.
+
+## Refresh note (2026-11-21, same day)
+
+Homepage rechecked signed out. Title still Pinterest. Search focus now mounts the login dialog (email, password, Continue with Google, Continue with QR code), not an empty search modal. Header Log in does the same and also offers a phone scan. `/login/` paints a scannable QR code; that image is not in the package. Google, Apple, Facebook, and QR were not clicked. No field was filled. No form was submitted.
