@@ -1,0 +1,50 @@
+{
+  "product": "New Balance",
+  "domain": "www.newbalance.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header account icon, and the Log in tab",
+      "url": "https://www.newbalance.com/login/",
+      "title": "Log In - New Balance",
+      "painted": true,
+      "headings": ["Members get exclusive offers, free returns, & more."],
+      "asksFor": [
+        { "label": "Email or mobile number", "type": "text", "required": true },
+        { "label": "Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Remember me", "Forgot password", "Log in", "Create account"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Fields were empty. Log in was visible and was not clicked. Forgot password was not opened. Password visibility was not toggled. No identity provider was on the form. No form was submitted."
+    },
+    {
+      "control": "Create account tab on the same login URL",
+      "url": "https://www.newbalance.com/login/#register",
+      "title": "Log In - New Balance",
+      "painted": true,
+      "headings": ["Members get exclusive offers, free returns, & more."],
+      "asksFor": [
+        { "label": "First name", "type": "text", "required": true },
+        { "label": "Last name", "type": "text", "required": true },
+        { "label": "Email", "type": "text", "required": true },
+        { "label": "Password", "type": "password", "required": true },
+        { "label": "Mobile number (optional)", "type": "tel", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Sign up for email", "Terms checkbox", "Create account"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Fields were empty. Create account was disabled and was not clicked. Neither checkbox was checked. Password visibility was not toggled. No provider was clicked. No form was submitted."
+    }
+  ]
+}

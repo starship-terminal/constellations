@@ -1,0 +1,99 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.newbalance.com/",
+  "productUrl": "https://www.newbalance.com/pd/327/WS327V1-41747-PMG-NA.html",
+  "loginUrl": "https://www.newbalance.com/login/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "signedOut": true,
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Proxima Nova W01",
+    "fontSize": "14px",
+    "fontWeight": "300"
+  },
+  "utilityBar": {
+    "backgroundColor": "rgb(21, 20, 21)",
+    "color": "rgb(255, 255, 255)",
+    "height": "57px",
+    "fontSize": "14px"
+  },
+  "nav": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "14px",
+    "fontWeight": "300",
+    "lineHeight": "20.0004px",
+    "barHeight": "81px"
+  },
+  "blackFridayLabel": {
+    "color": "rgb(207, 10, 44)"
+  },
+  "logoFill": "#cf0a2c",
+  "heroTitle": {
+    "text": "Black Friday Preview.",
+    "fontFamily": "ITC Garamond W01",
+    "fontSize": "60px",
+    "fontWeight": "300",
+    "color": "rgb(0, 0, 0)"
+  },
+  "shopNow": {
+    "backgroundColor": "rgb(21, 20, 21)",
+    "color": "rgb(255, 255, 255)",
+    "height": "54px",
+    "borderRadius": "2px",
+    "fontSize": "14px",
+    "fontWeight": "300",
+    "padding": "16px 12px"
+  },
+  "productTitle": {
+    "text": "327",
+    "fontFamily": "Proxima Nova W01",
+    "fontSize": "32px",
+    "fontWeight": "500",
+    "color": "rgb(0, 0, 0)"
+  },
+  "productPrice": {
+    "text": "$104.99",
+    "color": "rgb(0, 0, 0)"
+  },
+  "mutedPrice": {
+    "color": "rgb(92, 98, 104)",
+    "textDecoration": "line-through"
+  },
+  "addToBag": {
+    "backgroundColor": "rgb(21, 20, 21)",
+    "color": "rgb(255, 255, 255)",
+    "height": "54px",
+    "borderRadius": "2px",
+    "fontSize": "14px",
+    "fontWeight": "300"
+  },
+  "sizeChip": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(190, 192, 195)",
+    "height": "43px"
+  },
+  "field": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(171, 176, 180)",
+    "height": "58px",
+    "borderRadius": "4px",
+    "fontSize": "16px"
+  },
+  "loginSubmit": {
+    "backgroundColor": "rgb(21, 20, 21)",
+    "color": "rgb(255, 255, 255)",
+    "height": "54px",
+    "borderRadius": "2px"
+  },
+  "createAccountDisabled": {
+    "backgroundColor": "rgb(229, 231, 232)",
+    "color": "rgb(124, 124, 124)",
+    "height": "54px",
+    "borderRadius": "2px"
+  },
+  "footer": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "height": "787px"
+  }
+}
