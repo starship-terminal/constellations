@@ -1,0 +1,137 @@
+{
+  "captured": "2026-11-22",
+  "startUrl": "https://www.stradivarius.com",
+  "storefront": "https://www.stradivarius.com/us/",
+  "region": "United States, English",
+  "regionNote": "The worldwide URL is a location picker titled Stradivarius - World Wide Page. It did not geo-redirect. United States was chosen from the picker. No second regional slug.",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal",
+    "previewResizeReported": "1280x800 while window.innerWidth measured 1440"
+  },
+  "storeId": "54009627",
+  "body": {
+    "fontFamily": "STRADIVARIUS WEB 2025",
+    "fontSize": "10px",
+    "fontWeight": "400",
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "transparent"
+  },
+  "category": {
+    "url": "https://www.stradivarius.com/us/women/clothing/dresses-n1995",
+    "h1": {
+      "text": "Dresses",
+      "fontSize": "32px",
+      "fontWeight": "400",
+      "lineHeight": "44px",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "STRADIVARIUS WEB 2025, sans-serif"
+    },
+    "price": {
+      "text": "$89.90",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "lineHeight": "14px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "filters": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "borderRadius": "2px",
+      "lineHeight": "18.4px"
+    }
+  },
+  "product": {
+    "url": "https://www.stradivarius.com/us/short-neckline-dress-l06306325",
+    "h1": {
+      "text": "SHORT NECKLINE DRESS",
+      "fontSize": "28px",
+      "fontWeight": "600",
+      "lineHeight": "38px",
+      "color": "rgb(29, 29, 29)",
+      "textTransform": "uppercase",
+      "fontFamily": "STRADIVARIUS WEB 2025, sans-serif"
+    },
+    "price": {
+      "text": "$45.90",
+      "fontSize": "22px",
+      "fontWeight": "600",
+      "color": "rgb(0, 0, 0)"
+    },
+    "sizeChip": {
+      "text": "XS",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "padding": "1px 6px",
+      "backgroundColor": "transparent",
+      "color": "rgb(0, 0, 0)"
+    },
+    "addClicked": false,
+    "sizeSelected": false
+  },
+  "menu": {
+    "label": {
+      "text": "NEW IN",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "textTransform": "uppercase"
+    },
+    "index": {
+      "text": "01",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "textTransform": "uppercase"
+    }
+  },
+  "searchPill": {
+    "backgroundColor": "rgba(245, 245, 245, 0.3)",
+    "borderRadius": "4px",
+    "color": "rgb(51, 51, 51)",
+    "padding": "5px 15px",
+    "textTransform": "uppercase"
+  },
+  "namedColors": {
+    "--colors-black": "#000000",
+    "--colors-white": "#ffffff",
+    "--colors-grey-dark": "#151515",
+    "--colors-grey-dim": "#707070",
+    "--colors-grey-medium": "#c4c4c4",
+    "--colors-grey-light": "#e7e7e7",
+    "--colors-grey-clear": "#f5f5f5",
+    "--colors-grey-photo": "#EBEBEB",
+    "--colors-red-dark": "#d0024c",
+    "--colors-red-clear": "#ffebf2",
+    "--colors-blue-dark": "#1879bf",
+    "--colors-blue-medium": "#a5d8fd",
+    "--colors-blue-clear": "#f0f9ff",
+    "--colors-green-dark": "#008020",
+    "--colors-green-clear": "#eafff0",
+    "--colors-orange-dark": "#cf4611",
+    "--colors-orange-clear": "#fdf2e3",
+    "--colors-yellow-dark": "#f4ff00",
+    "--indmaincolor": "#171d2d"
+  },
+  "radius": {
+    "square": "4px",
+    "rounded": "80px",
+    "filters": "2px"
+  },
+  "login": {
+    "opened": true,
+    "url": "https://www.stradivarius.com/us/login.html",
+    "redirectedToOAuth": true,
+    "submitted": false,
+    "discarded": true
+  },
+  "cart": {
+    "opened": false,
+    "addClicked": false
+  },
+  "newsletter": {
+    "submitted": false
+  }
+}

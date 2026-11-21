@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stradivarius public styles</title>
+<style>
+  :root {
+    --ink: #000000;
+    --product: #1d1d1d;
+    --page: #ffffff;
+    --muted: #707070;
+    --wash: #f5f5f5;
+    --sale: #d0024c;
+    --search: #333333;
+    --font: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 10px;
+    font-weight: 400;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .mark { font-size: 16px; letter-spacing: 0.12em; font-weight: 600; }
+  .search {
+    background: rgba(245, 245, 245, 0.3);
+    border: 0;
+    border-radius: 4px;
+    color: var(--search);
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font: 10px var(--font);
+    width: 220px;
+  }
+  main { padding: 32px 24px 64px; max-width: 880px; }
+  h1 { font-size: 32px; font-weight: 400; line-height: 44px; margin: 0 0 8px; }
+  h2 { font-size: 16px; font-weight: 600; text-transform: uppercase; margin: 32px 0 12px; }
+  .product-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: var(--product);
+    margin: 0;
+  }
+  .price { font-size: 22px; font-weight: 600; }
+  .sale { color: var(--sale); font-weight: 600; }
+  .filters {
+    background: #000;
+    color: #fff;
+    border: 0;
+    border-radius: 2px;
+    font: 16px/18.4px var(--font);
+    padding: 8px 16px;
+  }
+  .chip {
+    display: inline-block;
+    font-size: 14px;
+    padding: 1px 6px;
+    border: 1px solid #000;
+    margin-right: 4px;
+  }
+  .swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+  .swatch { width: 72px; }
+  .swatch i { display: block; height: 40px; border: 1px solid #e7e7e7; }
+  .note { color: var(--muted); font-size: 12px; max-width: 52em; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <header>
+    <span class="mark">STRADIVARIUS</span>
+    <input class="search" value="Search by product" readonly>
+    <button class="filters" type="button">Filters</button>
+  </header>
+  <main>
+    <p class="note">Public United States English shop, measured 2026-11-22. Avenir Next stands in for STRADIVARIUS WEB 2025. Read values from tokens.json.</p>
+    <h1>Dresses</h1>
+    <p class="product-title">Short neckline dress</p>
+    <p class="price">$45.90 <span class="sale">Special prices</span></p>
+    <p><span class="chip">XS</span><span class="chip">S</span><span class="chip">M</span><span class="chip">L</span></p>
+    <h2>Colours</h2>
+    <div class="swatches">
+      <div class="swatch"><i style="background:#000"></i>ink</div>
+      <div class="swatch"><i style="background:#fff"></i>page</div>
+      <div class="swatch"><i style="background:#1d1d1d"></i>product</div>
+      <div class="swatch"><i style="background:#707070"></i>muted</div>
+      <div class="swatch"><i style="background:#f5f5f5"></i>wash</div>
+      <div class="swatch"><i style="background:#d0024c"></i>sale</div>
+      <div class="swatch"><i style="background:#e7e7e7"></i>divider</div>
+    </div>
+  </main>
+</body>
+</html>
