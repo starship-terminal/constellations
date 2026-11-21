@@ -1,0 +1,144 @@
+{
+  "capturedAt": "2026-11-21T02:43:57Z",
+  "method": "headless Playwright, signed out, no form submit, no identity-provider click, no installer download",
+  "probeNote": "A prior note said https://app.me.sh/login?signin is a desktop download page with no web sign-in form. That did not match this capture.",
+  "requests": [
+    {
+      "requested": "https://clay.earth/login",
+      "status": 404,
+      "finalUrl": "https://me.sh/login",
+      "kind": "marketing-404",
+      "heading": "Not Found",
+      "signInForm": false,
+      "screenshot": "screenshots/notfound-light-default.png"
+    },
+    {
+      "requested": "https://me.sh/login",
+      "status": 404,
+      "finalUrl": "https://me.sh/login",
+      "kind": "marketing-404",
+      "heading": "Not Found",
+      "signInForm": false
+    },
+    {
+      "requested": "https://app.me.sh/login",
+      "status": 200,
+      "finalUrl": "https://app.me.sh/login",
+      "kind": "sign-in-wall",
+      "title": "Mesh",
+      "visibleText": "Sign in to Mesh. Welcome back! Sign in to continue. Sign in with Apple. Sign in with Google. OR. Sign in with email. Don't have a Mesh account? Create account. Sign in with SSO. Help. Terms. Privacy.",
+      "signInForm": true,
+      "emailField": {
+        "present": true,
+        "placeholder": "Enter your email",
+        "filled": false
+      },
+      "controls": [
+        {
+          "label": "Sign in with Apple",
+          "tag": "button",
+          "followed": false,
+          "reason": "identity provider"
+        },
+        {
+          "label": "Sign in with Google",
+          "tag": "button",
+          "followed": false,
+          "reason": "identity provider"
+        },
+        {
+          "label": "Enter your email",
+          "tag": "input",
+          "type": "text",
+          "followed": false,
+          "reason": "not filled"
+        },
+        {
+          "label": "Sign in with email",
+          "tag": "button",
+          "disabledUntilEmail": true,
+          "followed": false,
+          "reason": "would submit"
+        },
+        {
+          "label": "Create account",
+          "tag": "button",
+          "followed": true,
+          "result": "same URL, copy switches to sign-up. No account created"
+        },
+        {
+          "label": "Sign in with SSO",
+          "tag": "a",
+          "href": "https://accounts.me.sh/sign-in",
+          "followed": false,
+          "reason": "SSO"
+        },
+        {
+          "label": "Help",
+          "tag": "a",
+          "href": "https://library.me.sh/",
+          "followed": false
+        },
+        {
+          "label": "Terms",
+          "tag": "a",
+          "href": "https://me.sh/terms",
+          "followed": false,
+          "note": "direct load returned 403 at library.me.sh"
+        },
+        {
+          "label": "Privacy",
+          "tag": "a",
+          "href": "https://me.sh/security-and-privacy",
+          "followed": false,
+          "note": "direct load returned 403 at library.me.sh"
+        }
+      ],
+      "screenshot": "screenshots/login-light-signin.png"
+    },
+    {
+      "requested": "https://app.me.sh/login?signin",
+      "status": 200,
+      "finalUrl": "https://app.me.sh/login?signin",
+      "kind": "sign-in-wall",
+      "sameAs": "https://app.me.sh/login",
+      "signInForm": true,
+      "downloadPage": false,
+      "screenshot": "screenshots/login-light-signin.png"
+    },
+    {
+      "requested": "https://app.me.sh/",
+      "status": 200,
+      "finalUrl": "https://app.me.sh/login",
+      "kind": "sign-in-wall",
+      "sameAs": "https://app.me.sh/login"
+    }
+  ],
+  "createAccount": {
+    "trigger": "Create account button on the sign-in wall",
+    "urlAfter": "https://app.me.sh/login",
+    "visibleText": "Sign up for free. Create your Mesh account to continue. Continue with Apple. Continue with Google. OR. Continue with email. Already have a Mesh account? Sign in. Sign in with SSO.",
+    "emailField": {
+      "present": true,
+      "placeholder": "Enter your email",
+      "filled": false
+    },
+    "submitted": false,
+    "identityProvidersClicked": false
+  },
+  "ssoDirectLoad": {
+    "requested": "https://accounts.me.sh/sign-in",
+    "status": 200,
+    "finalUrl": "https://accounts.me.sh/sign-in",
+    "title": "My account | Mesh",
+    "heading": "Sign in to Mesh",
+    "visibleText": "Welcome back! Please sign in to continue. Email address. Continue.",
+    "emailFieldFilled": false,
+    "submitted": false,
+    "note": "Loaded to record the URL the SSO link names. Continue was not clicked."
+  },
+  "downloadsNotStarted": [
+    "https://me.sh/api/download/mac",
+    "https://me.sh/api/download/windows"
+  ]
+}

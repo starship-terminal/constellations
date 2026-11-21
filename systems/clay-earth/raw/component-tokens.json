@@ -1,0 +1,123 @@
+{
+  "_about": "Computed styles read from clay.earth (301 to me.sh) and app.me.sh/login?signin on 2026-11-21. The marketing stylesheets declare no custom properties (raw/readings.json varCount 0). Each leaf is a getComputedStyle reading. Home paints dark; pricing, integrations and the sign-in wall paint light. No dark variant of the light pages was found.",
+  "core": {
+    "font": {
+      "display": {
+        "value": "VerlagCondensed",
+        "type": "fontFamily",
+        "source": "measured home h1 fontFamily, me.sh 2026-11-21"
+      },
+      "ui": {
+        "value": "Verlag",
+        "type": "fontFamily",
+        "source": "measured body fontFamily, me.sh 2026-11-21"
+      },
+      "signIn": {
+        "value": "SFProText",
+        "type": "fontFamily",
+        "source": "measured app.me.sh/login body fontFamily, 2026-11-21"
+      }
+    },
+    "color": {
+      "ivory": {
+        "value": "rgb(254, 254, 247)",
+        "type": "color",
+        "source": "measured home h1 color, me.sh 2026-11-21"
+      },
+      "ink": {
+        "value": "rgb(31, 31, 31)",
+        "type": "color",
+        "source": "measured pricing body color, me.sh/pricing 2026-11-21"
+      },
+      "paper": {
+        "value": "rgb(249, 248, 246)",
+        "type": "color",
+        "source": "measured documentElement backgroundColor, me.sh/pricing 2026-11-21"
+      },
+      "bronze": {
+        "value": "rgb(242, 185, 139)",
+        "type": "color",
+        "source": "measured header GET STARTED color, me.sh 2026-11-21"
+      },
+      "orange": {
+        "value": "rgb(251, 114, 50)",
+        "type": "color",
+        "source": "measured POPULAR badge backgroundColor, me.sh/pricing 2026-11-21"
+      },
+      "orangeHot": {
+        "value": "rgb(255, 104, 33)",
+        "type": "color",
+        "source": "measured Sign in with email button backgroundColor, app.me.sh/login?signin 2026-11-21"
+      },
+      "black": {
+        "value": "rgb(0, 0, 0)",
+        "type": "color",
+        "source": "measured documentElement backgroundColor, me.sh 2026-11-21"
+      },
+      "white": {
+        "value": "rgb(255, 255, 255)",
+        "type": "color",
+        "source": "measured Releases button color, me.sh 2026-11-21"
+      }
+    }
+  },
+  "dark": {
+    "page": {
+      "value": "rgb(0, 0, 0)",
+      "type": "color",
+      "source": "measured documentElement backgroundColor, me.sh 2026-11-21"
+    },
+    "text": {
+      "value": "rgb(254, 254, 247)",
+      "type": "color",
+      "source": "measured home h1 color, me.sh 2026-11-21"
+    },
+    "muted": {
+      "value": "rgba(255, 255, 255, 0.7)",
+      "type": "color",
+      "source": "measured body color, me.sh 2026-11-21"
+    },
+    "accent": {
+      "value": "rgb(242, 185, 139)",
+      "type": "color",
+      "source": "measured header GET STARTED color, me.sh 2026-11-21"
+    },
+    "border": {
+      "value": "rgba(255, 255, 255, 0.24)",
+      "type": "color",
+      "source": "measured GET STARTED inset box-shadow color, me.sh 2026-11-21"
+    }
+  },
+  "light": {
+    "page": {
+      "value": "rgb(249, 248, 246)",
+      "type": "color",
+      "source": "measured documentElement backgroundColor, me.sh/pricing 2026-11-21"
+    },
+    "text": {
+      "value": "rgb(31, 31, 31)",
+      "type": "color",
+      "source": "measured pricing body color, me.sh/pricing 2026-11-21"
+    },
+    "muted": {
+      "value": "rgb(72, 73, 74)",
+      "type": "color",
+      "source": "measured sign-in card color, app.me.sh/login?signin 2026-11-21"
+    },
+    "accent": {
+      "value": "rgb(251, 114, 50)",
+      "type": "color",
+      "source": "measured POPULAR badge and Team plan border, me.sh/pricing 2026-11-21"
+    },
+    "border": {
+      "value": "rgb(236, 234, 232)",
+      "type": "color",
+      "source": "measured Pro plan card borderTopColor, me.sh/pricing 2026-11-21"
+    },
+    "surface": {
+      "value": "rgba(149, 149, 149, 0.06)",
+      "type": "color",
+      "source": "measured plan card and sign-in card backgroundColor, 2026-11-21"
+    }
+  }
+}
