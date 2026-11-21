@@ -73,18 +73,20 @@ async function openMenu(p) {
   await hideConsent(p);
 }
 
-async function hoverNav(p, name) {
+async function openNav(p, name, href) {
+  // Hover leaves the flyout closed in headless Chromium. Click, then wait for a link.
   const b = p.getByRole('button', { name, exact: true }).first();
-  await b.hover();
-  await wait(p, 500);
+  await b.click();
+  if (href) await p.locator(`a[href="${href}"]`).first().waitFor({ state: 'visible', timeout: 4000 });
+  await wait(p, 400);
   await hideConsent(p);
 }
 
 const desktop = {
   home: { path: '/', run: async (p, S) => {
     await S.view('default');
-    await step('sex-menu', async () => { await hoverNav(p, 'Sex'); await S.view('sex-menu'); await p.mouse.move(20, 400); await wait(p, 300); });
-    await step('learn-menu', async () => { await hoverNav(p, 'Learn'); await S.view('learn-menu'); await p.mouse.move(20, 400); await wait(p, 300); });
+    await step('sex-menu', async () => { await openNav(p, 'Sex', '/erectile-dysfunction'); await S.view('sex-menu'); await p.mouse.move(20, 500); await wait(p, 300); });
+    await step('learn-menu', async () => { await openNav(p, 'Learn', '/blog'); await S.view('learn-menu'); await p.mouse.move(20, 500); await wait(p, 300); });
     await step('menu', async () => { await openMenu(p); await S.view('menu'); await p.keyboard.press('Escape'); await wait(p, 400); });
     await step('cta-hover', async () => {
       const cta = p.getByRole('button', { name: 'Explore treatments' }).first();
@@ -105,17 +107,8 @@ const desktop = {
   reviews: { path: '/hims-reviews', run: async (p, S) => { await S.view('default'); } },
   purpose: { path: '/purpose', run: async (p, S) => { await S.view('default'); } },
   login: { path: '/customer/login', run: async (p, S) => {
+    // Empty wall only. Do not type an email, password, or code. Do not submit.
     await S.view('default');
-    await step('email-focus', async () => {
-      const email = p.locator('input[name="email"]').first();
-      await email.click();
-      await wait(p, 300);
-      await S.view('email-focus');
-      await email.fill('name@example.com');
-      await wait(p, 200);
-      await S.view('email-filled');
-      await email.fill('');
-    });
     await step('forgot', async () => {
       await p.getByRole('button', { name: 'Forgot your password?' }).click();
       await wait(p, 700);
@@ -133,7 +126,7 @@ const desktop = {
     });
   } },
   migration: { path: '/migration-privacy', run: async (p, S) => { await S.view('default'); } },
-  treatments: { path: '/c', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  // /c is a consultation start ("What are you looking to do?"). Not captured.
   terms: { path: '/terms-and-conditions', run: async (p, S) => { await S.view('default'); } },
   privacy: { path: '/privacy-policy', run: async (p, S) => { await S.view('default'); } },
 };

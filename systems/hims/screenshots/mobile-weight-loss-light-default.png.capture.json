@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:20:19.998Z",
+  "capturedAt": "2026-11-21T12:43:10.680Z",
   "screenshot": "mobile-weight-loss-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 6029
+      "height": 6019
     },
     "scroll": {
       "x": 0,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:19:23.031Z",
+  "capturedAt": "2026-11-21T12:41:52.605Z",
   "screenshot": "ed-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8540
+      "height": 8321
     },
     "scroll": {
       "x": 0,

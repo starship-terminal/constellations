@@ -83,10 +83,8 @@ await S('input', email, 'default');
 await email.focus();
 await page.waitForTimeout(200);
 await S('input', email, 'focus');
-await email.fill('name@example.com');
-await page.waitForTimeout(150);
+// Do not type an address. The filled crop is the empty field.
 await S('input', email, 'filled');
-await email.fill('');
 await email.blur();
 await page.waitForTimeout(250);
 const err = page.getByText('Your email is required');

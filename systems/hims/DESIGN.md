@@ -172,7 +172,7 @@ Good for: UK telehealth marketing: a warm canvas (#fbf8f5 page, #eee2d7 cards), 
 
 Captured 2026-11-19, signed out on the marketing routes; one account created at /customer/login (email and password only) so the care portal shell could be captured. Phone, birthday, payment edit, consultation and clinician chat were not entered. Ketch consent was hidden, never clicked. Themes: light.
 
-A token set and component reference for Hims' UK marketing site, www.forhims.co.uk. Read on 2026-11-19 in headless Chromium at 1440 x 900 and 390 x 844, signed out, plus the signed-in care portal (Treatments, Messaging, Profile) from an account created with the capture inbox. forhims.co.uk does not redirect to forhims.com. It is its own UK surface: `html.brand-hims.variant-care-sans`, Care Sans, a warm canvas, and a clay accent. The US host www.hims.com is a different domain and is not this package.
+A token set and component reference for Hims' UK marketing site, www.forhims.co.uk. Refreshed 2026-11-21 from the public site, signed out, at 1440 x 900 and 390 x 844. The homepage site tree is [site-tree.md](site-tree.md). forhims.co.uk does not redirect to forhims.com. It is its own UK surface: `html.brand-hims.variant-care-sans`, Care Sans, a warm canvas, and a clay accent. The US host www.hims.com is a different domain and is not this package. forhers.com is a different package.
 
 The site paints one light theme. A migration strip sits above the nav ("We're moving to a new platform"). Primary actions are black pills. Italic words in headlines take the clay accent `#cc835c`. Ketch consent ("About cookies on our site") was hidden and never clicked.
 
@@ -236,7 +236,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 4. **Do set type in Care Sans, with Ivar Soft only where the product uses a serif.** The declared stack is `CareSans, Helvetica, Arial, sans-serif` (`core.font.sans`). See [hero-title-default](components/crops/hero-title-default.png).
 5. **Don't invent a dark theme.** The public site and the care portal paint one light theme. No theme toggle was found. See [home-light-default](screenshots/home-light-default.png) and [portal-treatments-light-default](screenshots/portal-treatments-light-default.png).
 6. **Don't click the cookie banner.** Ketch's Customise and Accept all post consent. Hide the dialog. See [login-light-default](screenshots/login-light-default.png).
-7. **Don't start a consultation, add a card, or enter a phone number.** Account creation stopped at email and password. Profile Edit, payment Edit, and every treatment quiz were left closed. See [portal-profile-light-default](screenshots/portal-profile-light-default.png).
+7. **Don't start a consultation, add a card, or enter a phone number.** The 2026-11-21 public pass stopped at the login drawer and the empty register drawer. Get started on a treatment card opens `/c/*` and was not entered. See [login-light-default](screenshots/login-light-default.png).
 
 ### What to distrust (from README.md)
 

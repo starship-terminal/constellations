@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:20:24.905Z",
+  "capturedAt": "2026-11-21T12:43:15.707Z",
   "screenshot": "mobile-hair-loss-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 9857
+      "height": 8917
     },
     "scroll": {
       "x": 0,

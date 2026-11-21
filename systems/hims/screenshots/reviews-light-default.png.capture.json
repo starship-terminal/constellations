@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:19:51.743Z",
+  "capturedAt": "2026-11-21T12:42:36.744Z",
   "screenshot": "reviews-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4319
+      "height": 4260
     },
     "scroll": {
       "x": 0,

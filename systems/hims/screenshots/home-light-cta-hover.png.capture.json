@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:19:05.361Z",
+  "capturedAt": "2026-11-21T12:41:30.322Z",
   "screenshot": "home-light-cta-hover.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 7312
+      "height": 5029
     },
     "scroll": {
       "x": 0,
