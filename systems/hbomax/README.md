@@ -14,7 +14,9 @@ HBO Max is worth a capture because it is a current reference for the streaming-m
 | [patterns.md](patterns.md) | How the components combine: the gradient navbar, the hero carousel, plans, FAQ, rails and footer |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [icons/](icons) | The inline SVG icon set collected from the live pages, indexed in [icons/INDEX.tsv](icons/INDEX.tsv) |
-| [screenshots/](screenshots) | `{page}-dark-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-promo` the consent modal, `-carousel-next`/`-plan-yearly`/`-faq-open` the toggle states |
+| [screenshots/](screenshots) | `{page}-dark-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-promo` the consent modal, `-cookies` the manage-cookies step, `-language` the footer language list, `-carousel-next`/`-plan-yearly`/`-faq-open` the toggle states |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog, mapped 2026-11-21 before the refresh shots |
+| [login-review.json](login-review.json) | Signed-out nav, settings, and create-account offers, the screenshot list, gaps, and what was not submitted |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the token sheet and app bundles, resolved at 1440px), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [layout.json](raw/layout.json), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 | [capture.pr](capture.pr) | The pull request this capture shipped in |
@@ -96,7 +98,9 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 - **Layout.** [tools/capture/layout.mjs](tools/capture/layout.mjs) measures the shell geometry — sticky elements, grids, max-widths, inner scrollers — at 1440/1920/1024/390 into [raw/layout.json](raw/layout.json).
 - **Fonts.** The token sheet's `@font-face` is **Max Sans** (woff2, weights 300/400/600, `font-display: swap`), recorded in [raw/css-vars.json](raw/css-vars.json) `fonts` — proprietary to Warner Bros. Discovery and not committed; the body computes `Max Sans,Inter,sans-serif,-apple-system,…`.
 
-Nothing was signed into, bought, subscribed or submitted. The only presses were local UI toggles the page's own chrome provides: the hero carousel's Next arrow, the monthly/yearly billing toggle, an FAQ chevron, the language selector and the phone's menu button. "Sign In", "Start Subscription" and every plan "Choose" button point at `auth.hbomax.com` and were measured, never followed.
+Nothing was signed into, bought, subscribed or submitted. The only presses were local UI toggles the page's own chrome provides: the hero carousel's Next arrow, the monthly/yearly billing toggle, an FAQ chevron, the language selector and the phone's menu button. "Sign In", "Subscribe Now" and every plan "Select Plan" button point at `auth.hbomax.com` and were measured, never followed.
+
+A 2026-11-21 public refresh mapped the homepage before new shots ([site-tree.md](site-tree.md)). The host still geo-resolved to `/sg/en`. Viewport shots of home, the cookie dialog, the manage-cookies step, the language list, the yearly plan, movies, series, brands, a title page, the sitemap, corporate information, the privacy redirect, and the phone home were retaken. Full-page shots and the FAQ shot stay from 2026-11-17. [login-review.json](login-review.json) records the signed-out offers and the walls that were not entered.
 
 ## What to distrust
 

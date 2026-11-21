@@ -1,0 +1,84 @@
+{
+  "product": "HBO Max",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "origin": "https://www.hbomax.com",
+  "landed": "https://www.hbomax.com/sg/en",
+  "offered": {
+    "nav": {
+      "header": ["Sign In https://auth.hbomax.com/login", "Subscribe Now https://auth.hbomax.com/product"],
+      "hero": ["GET HBO MAX https://auth.hbomax.com/product"],
+      "plans": ["Bundle", "Monthly", "Yearly Save up to 25%", "Select Plan https://auth.hbomax.com/create-account"],
+      "footer": ["English", "Explore What's On /sg/en/sitemap", "Movies /sg/en/movies", "TV Shows /sg/en/shows", "Brands /sg/en/channel", "Kids and Family /sg/en/collections/genre/kids-family", "Accessibility /accessibility-statement", "Privacy Policy /privacy", "Children's Privacy Policy /privacy/children", "Terms of Use /terms-of-use", "Manage Cookies", "Join the Team", "Corporate Information /sg/en/corp-info", "Help"],
+      "mobile": ["Sign In", "Subscribe"]
+    },
+    "settings": {
+      "seen": false,
+      "reason": "No settings surface is offered signed out. English opens a language list on the homepage (English, Bahasa Melayu, 简体中文). A language was not chosen. Manage Cookies opens a preference dialog on the homepage. It was not saved."
+    },
+    "create": {
+      "seen": false,
+      "reason": "Subscribe Now, GET HBO MAX, and Select Plan leave for auth.hbomax.com. None were entered."
+    }
+  },
+  "screens": [
+    "screenshots/channel-dark-default.png",
+    "screenshots/channel-dark-full.png",
+    "screenshots/collection-dark-default.png",
+    "screenshots/collection-dark-full.png",
+    "screenshots/corp-info-dark-default.png",
+    "screenshots/corp-info-dark-full.png",
+    "screenshots/home-dark-carousel-next.png",
+    "screenshots/home-dark-cookies.png",
+    "screenshots/home-dark-default.png",
+    "screenshots/home-dark-faq-open.png",
+    "screenshots/home-dark-full.png",
+    "screenshots/home-dark-language.png",
+    "screenshots/home-dark-plan-yearly.png",
+    "screenshots/home-dark-promo.png",
+    "screenshots/mobile-home-dark-default.png",
+    "screenshots/mobile-home-dark-full.png",
+    "screenshots/mobile-home-dark-promo.png",
+    "screenshots/mobile-movies-dark-default.png",
+    "screenshots/mobile-movies-dark-full.png",
+    "screenshots/mobile-show-dark-default.png",
+    "screenshots/mobile-show-dark-full.png",
+    "screenshots/movie-dark-default.png",
+    "screenshots/movie-dark-full.png",
+    "screenshots/movies-dark-default.png",
+    "screenshots/movies-dark-full.png",
+    "screenshots/privacy-dark-default.png",
+    "screenshots/privacy-dark-full.png",
+    "screenshots/show-dark-default.png",
+    "screenshots/show-dark-full.png",
+    "screenshots/shows-dark-default.png",
+    "screenshots/shows-dark-full.png",
+    "screenshots/sitemap-dark-default.png",
+    "screenshots/sitemap-dark-full.png"
+  ],
+  "gaps": [
+    "Sign-in, subscribe, and create-account stop at auth.hbomax.com. Nothing typed. Google, Apple, and every identity provider not clicked.",
+    "Account, playback, and settings sit behind that wall. play.hbomax.com was not opened.",
+    "TV Shows in the footer redirects to /sg/en/series. The shot is screenshots/shows-dark-default.png.",
+    "Privacy Policy redirects to www.wbdprivacy.com. The viewport shot is the 2026-11-21 redirect. The older full-page shot remains.",
+    "GET THE BUNDLE redirected to /sg/en/bundle/viu and returned 404. That page was not kept.",
+    "The FAQ item opened, then the cookie dialog covered the answer. screenshots/home-dark-faq-open.png is the 2026-11-17 shot.",
+    "Full-page and mobile browse shots are the 2026-11-17 captures. This pass refreshed viewport states.",
+    "Phone header is Sign In and Subscribe only. No menu button.",
+    "Dark is the only painted theme (data-theme=max). No light theme was invented."
+  ],
+  "not_submitted": [
+    "Sign In",
+    "Subscribe Now",
+    "Subscribe",
+    "GET HBO MAX",
+    "Select Plan",
+    "Accept All",
+    "Save Preferences",
+    "language change",
+    "Google",
+    "Apple",
+    "any identity provider",
+    "any form"
+  ]
+}

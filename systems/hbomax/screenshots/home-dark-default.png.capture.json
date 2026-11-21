@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:46:14.625Z",
+  "capturedAt": "2026-11-21T12:36:59.405Z",
   "screenshot": "home-dark-default.png",
   "sanitizedSourceUrl": "https://www.hbomax.com/sg/en",
   "requested": {
@@ -24,7 +24,7 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,
@@ -33,8 +33,8 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1425,
-      "height": 9843
+      "width": 1440,
+      "height": 10015
     },
     "scroll": {
       "x": 0,
