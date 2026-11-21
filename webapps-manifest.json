@@ -1507,9 +1507,9 @@
       "description": "Mixology-crafted non-alcoholic cocktails to elevate your mood",
       "status": "captured",
       "package": "systems/drinkdouze",
-      "notes": "https://drinkdouze.com/en/account/login asks for email and password. No code was sent.",
+      "notes": "https://drinkdouze.com/en/account/login asks for email and password. No code was sent. Public walk 2026-11-21: the map starts at drinkdouze.com and records which header, footer, and in-page control opens which page, menu, or login wall. Storefront pages, menus, FAQs, and the empty cart were photographed at desktop and phone. Cookie banner was hidden, never accepted. Login, sign up, and account stop at /en/account/login. Nothing was typed. No form was submitted. Checkout was not started. Signed-in app was not captured. Public package refresh in PR 1649 at eb6971d976b4. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
