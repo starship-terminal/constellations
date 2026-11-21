@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epidemic Sound style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-display: "Georgia", "Times New Roman", serif;
+  --sg-sans: Inter, Arial, "Helvetica Neue", sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--light-background-page, #f1f0eb); color: var(--light-text-primary, #000); font: 400 16px/1.5 var(--sg-sans); }
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 96px; }
+h1 { font: 500 64px/1 var(--sg-display); margin: 0 0 8px; letter-spacing: -0.02em; }
+h2 { font: 600 14px/1 var(--sg-sans); margin: 48px 0 12px; }
+p { max-width: 62ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 120px; }
+.sw i { display: block; height: 64px; border-radius: 12px; border: 1px solid rgba(0,0,0,.08); }
+.sw span { display: block; font-size: 12px; margin-top: 6px; }
+.btn { display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border-radius: 10000px; background: #000; color: #fff; font-weight: 600; font-size: 14px; border: 0; }
+.btn.sec { background: rgba(61, 77, 116, 0.12); color: #000; height: 56px; padding: 0 24px; font-size: 16px; }
+.note { font-size: 13px; color: rgba(0,0,0,.6); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Epidemic Sound</h1>
+  <p>Public signed-out marketing site. One light theme. Values come from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background: var(--light-background-page)"></i><span>page</span></div>
+    <div class="sw"><i style="background: var(--light-background-surface)"></i><span>surface</span></div>
+    <div class="sw"><i style="background: var(--light-text-primary)"></i><span>text</span></div>
+    <div class="sw"><i style="background: var(--light-action-primary)"></i><span>primary</span></div>
+    <div class="sw"><i style="background: var(--core-color-yellow)"></i><span>brand yellow, declared</span></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="btn">Create free account</span>
+    <span class="btn sec">Contact sales</span>
+  </div>
+  <p class="note">Pill radius is 10000px on the public site. The product token --es-radius-button is 0 on body and is overridden by .radii-override.</p>
+  <h2>Type</h2>
+  <p style="font: 500 40px/1 var(--sg-display)">You bring the idea.</p>
+  <p>Body is Inter 16. Display is Sebenta, shown here as Georgia because Sebenta is not loaded.</p>
+</main>
+<script>const TOKENS = /*TOKENS*/null;</script>
+</body>
+</html>

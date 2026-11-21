@@ -1,0 +1,38 @@
+{
+  "readAt": "2026-11-21",
+  "source": "Live CSSOM on https://www.epidemicsound.com/ at 1440x900, signed out. Cookie banner #es-cookie-banner hidden, not accepted. Colour values are getComputedStyle on the document root. Type, radius and font tokens that are not on :root were read from the body rule in the same CSSOM.",
+  "themeObserved": "The public marketing site paints one light theme: page #f1f0eb, text #000. The --es-color-* set on :root is the product dark palette (base #121418, text #ffffff). It is declared, not the painted marketing theme. No public theme toggle was found.",
+  "fonts": [
+    {"family": "Sebenta", "weight": "500", "style": "normal", "display": "swap"},
+    {"family": "Sebenta", "weight": "500", "style": "italic", "display": "swap"},
+    {"family": "Inter", "weight": "400 700", "style": "normal", "display": "swap"}
+  ],
+  "resolved": {
+    "--color-brand-off-white": {"raw": "#F1F0EB", "value": "#f1f0eb"},
+    "--color-brand-black": {"raw": "#000", "value": "#000000"},
+    "--color-brand-white": {"raw": "#fff", "value": "#ffffff"},
+    "--es-color-brand-off-white": {"raw": "#F1F0EB", "value": "#f1f0eb"},
+    "--es-color-brand-off-black": {"raw": "#292C33", "value": "#292c33"},
+    "--es-color-brand-yellow": {"raw": "#FFDA40", "value": "#ffda40"},
+    "--es-color-background-base": {"raw": "#121418", "value": "#121418"},
+    "--es-color-background-surface": {"raw": "#CFD6E514", "value": "rgba(207, 214, 229, 0.08)"},
+    "--es-color-text-primary": {"raw": "#ffffff", "value": "#ffffff"},
+    "--es-color-text-secondary": {"raw": "#ffffffb8", "value": "rgba(255, 255, 255, 0.72)"},
+    "--es-color-action-primary": {"raw": "#ffffff", "value": "#ffffff"},
+    "--es-color-action-primary-hovered": {"raw": "#E7E7E7", "value": "#e7e7e7"},
+    "--es-color-action-accent": {"raw": "#FF82C2", "value": "#ff82c2"},
+    "--es-color-border-primary": {"raw": "#ffffff", "value": "#ffffff"},
+    "--es-color-misc-focused": {"raw": "#20AFFF", "value": "#20afff"},
+    "--es-color-background-brand-yellow": {"raw": "#FFDA40", "value": "#ffda40"},
+    "--es-i-header-font-family": {"raw": "Sebenta, Georgia, Times New Roman, Noto Serif", "value": "Sebenta, Georgia, \"Times New Roman\", \"Noto Serif\", serif"},
+    "--es-i-text-font-family": {"raw": "Inter, Arial, Helvetica Neue", "value": "Inter, Arial, \"Helvetica Neue\", sans-serif"},
+    "--es-heading-3xl-font-size": {"raw": "8rem", "value": "128px", "selector": "body"},
+    "--es-heading-xl-font-size": {"raw": "4rem", "value": "64px", "selector": "body"},
+    "--es-text-m-font-size": {"raw": "1rem", "value": "16px", "selector": "body"},
+    "--es-radius-button": {"raw": "0", "value": "0px", "selector": "body", "note": "Marketing pages override this to 10000px via .radii-override. Measured pill controls use 10000px."},
+    "--es-radius-large": {"raw": "8px on :root, 0 on body", "value": "8px"},
+    "--es-radius-medium": {"raw": "4px", "value": "4px"},
+    "--animation-duration": {"raw": "600ms", "value": "600ms"},
+    "--ease-out": {"raw": "cubic-bezier(0, 0, 0.2, 1)", "value": [0, 0, 0.2, 1]}
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "readAt": "2026-11-21",
+  "viewport": "1440x900",
+  "source": "getComputedStyle on www.epidemicsound.com, signed out. Cookie banner hidden, not accepted.",
+  "button-primary-default": {
+    "selector": "header a.Create free account",
+    "height": "44px",
+    "padding": "4px 16px",
+    "radius": "10000px",
+    "background": "#000000",
+    "color": "#ffffff",
+    "fontSize": "14px",
+    "fontWeight": 600,
+    "lineHeight": "24px",
+    "fontFamily": "Inter"
+  },
+  "button-primary-hover": {
+    "background": "#272727",
+    "color": "#ffffff"
+  },
+  "button-primary-focus": {
+    "outline": "rgb(255, 255, 255) solid 2px",
+    "background": "#272727"
+  },
+  "button-secondary-hero": {
+    "selector": "a Contact sales",
+    "height": "56px",
+    "padding": "9.6px 24px",
+    "radius": "10000px",
+    "background": "rgba(61, 77, 116, 0.12)",
+    "color": "#000000",
+    "fontSize": "16px",
+    "fontWeight": 600
+  },
+  "nav-button": {
+    "selector": "header button[data-testid=Music]",
+    "height": "44px",
+    "padding": "4px 16px",
+    "radius": "10000px",
+    "background": "rgba(61, 77, 116, 0)",
+    "color": "#000000",
+    "fontSize": "14px",
+    "fontWeight": 600,
+    "openBackground": "rgba(61, 77, 116, 0.08)"
+  },
+  "body": {
+    "background": "#f1f0eb",
+    "color": "#000000",
+    "fontSize": "16px",
+    "fontWeight": 400,
+    "lineHeight": "16px",
+    "fontFamily": "Inter"
+  },
+  "h1": {
+    "fontSize": "80px",
+    "fontWeight": 500,
+    "lineHeight": "80px",
+    "fontFamily": "Sebenta",
+    "color": "#000000"
+  },
+  "footer-link": {
+    "color": "rgba(0, 0, 0, 0.6)",
+    "fontSize": "16px",
+    "fontWeight": 500
+  },
+  "pricing-switch": {
+    "width": "40px",
+    "height": "24px",
+    "radius": "1000px",
+    "background": "#000000",
+    "note": "Yearly was the painted default. Clicking the switch is a local billing toggle, not a form submit."
+  },
+  "plan-cta": {
+    "text": "Get 30 days free",
+    "height": "56px",
+    "radius": "10000px",
+    "background": "#000000",
+    "color": "#ffffff",
+    "href": "/subscription/create",
+    "note": "Not followed. Checkout branch stopped."
+  },
+  "search": {
+    "page": "/music/",
+    "height": "56px",
+    "color": "#ffffff",
+    "fieldBackground": "rgba(207, 214, 229, 0.16)",
+    "note": "Text was typed and not submitted."
+  }
+}

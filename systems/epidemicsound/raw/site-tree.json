@@ -1,0 +1,765 @@
+{
+  "product": "Epidemic Sound",
+  "startUrl": "https://www.epidemicsound.com/",
+  "capturedAt": "2026-11-21",
+  "account": "signed out",
+  "cookieBanner": "Hidden via display:none on #es-cookie-banner. Accept and Change cookie settings were not clicked.",
+  "widths": [
+    1440,
+    390
+  ],
+  "theme": "one public light theme",
+  "header": {
+    "logo": {
+      "text": "Home",
+      "href": "/",
+      "opens": "home page"
+    },
+    "menus": [
+      {
+        "button": "Music",
+        "opens": "top-nav-panel-music",
+        "kind": "dropdown panel",
+        "links": [
+          {
+            "text": "Explore all music 55,000+ tracks, exclusively owned",
+            "href": "/music/"
+          },
+          {
+            "text": "Genres Hiphop, Cinematic, Lo-fi, Electronic",
+            "href": "/music/genres/"
+          },
+          {
+            "text": "Moods Epic, Calm, Quirky, Dark",
+            "href": "/music/moods/"
+          },
+          {
+            "text": "Themes Vlogs, Travel, Corporate, Sports",
+            "href": "/music/themes/"
+          },
+          {
+            "text": "All artists Real people behind the catalog",
+            "href": "/artists/"
+          },
+          {
+            "text": "Christoffer Moe Ditlevsen Classical",
+            "href": "/artists/christoffer-moe-ditlevsen/"
+          },
+          {
+            "text": "Adelyn Paik K-Pop",
+            "href": "/artists/adelyn-paik/"
+          },
+          {
+            "text": "Ooyy Electronic",
+            "href": "/artists/ooyy/"
+          },
+          {
+            "text": "Christmas 802 tracks",
+            "href": "/music/genres/christmas/"
+          },
+          {
+            "text": "Podcast Hooks 35 tracks",
+            "href": "/music/themes/podcast/podcast-hooks/"
+          },
+          {
+            "text": "Beats 4071 tracks",
+            "href": "/music/genres/beats/"
+          }
+        ]
+      },
+      {
+        "button": "Sound effects",
+        "opens": "top-nav-panel-sound-effects",
+        "kind": "dropdown panel",
+        "links": [
+          {
+            "text": "All sound effects 250,000+ effects and variations",
+            "href": "/sound-effects/"
+          },
+          {
+            "text": "Ambience 12,832 sounds",
+            "href": "/sound-effects/categories/ambience/"
+          },
+          {
+            "text": "Rain 712 sounds",
+            "href": "/sound-effects/categories/rain/"
+          },
+          {
+            "text": "Wind 1,165 sounds",
+            "href": "/sound-effects/categories/wind/"
+          }
+        ]
+      },
+      {
+        "button": "Tools",
+        "opens": "top-nav-panel-tools",
+        "kind": "dropdown panel",
+        "links": [
+          {
+            "text": "Explore all tools Everything in one workflow",
+            "href": "/tools/"
+          },
+          {
+            "text": "Studio Soundtrack your video, fast",
+            "href": "/tools/studio/"
+          },
+          {
+            "text": "Assistant Find music by prompt",
+            "href": "/tools/assistant/"
+          },
+          {
+            "text": "Voiceovers AI voiceovers, 70+ languages",
+            "href": "/voices/"
+          },
+          {
+            "text": "Adapt Reshape any track",
+            "href": "/tools/adapt/"
+          },
+          {
+            "text": "Labs New tools, in beta",
+            "href": "/tools/labs/"
+          },
+          {
+            "text": "MCP Prompt directly in your LLM",
+            "href": "/tools/mcp/"
+          },
+          {
+            "text": "API Cleared music for your app",
+            "href": "/tools/api/"
+          },
+          {
+            "text": "Adobe Creative Cloud Music inside Premiere and After Effects",
+            "href": "/plugins/adobe/"
+          },
+          {
+            "text": "DaVinci Resolve Studio Music inside DaVinci Resolve",
+            "href": "/plugins/davinci-resolve-studio/"
+          },
+          {
+            "text": "Mac",
+            "href": "/app/macos/"
+          },
+          {
+            "text": "Windows",
+            "href": "/app/windows/"
+          },
+          {
+            "text": "iOS",
+            "href": "/app/ios/"
+          },
+          {
+            "text": "Android",
+            "href": "/app/android/"
+          },
+          {
+            "text": "Studio Sync real music and sound effects to your video automatically. Read more",
+            "href": "/tools/studio/"
+          }
+        ]
+      },
+      {
+        "button": "License",
+        "opens": "top-nav-panel-license",
+        "kind": "dropdown panel",
+        "links": [
+          {
+            "text": "How it works Licensing, explained simply",
+            "href": "/how-it-works/"
+          },
+          {
+            "text": "For YouTube Music cleared for your channel",
+            "href": "/youtube/"
+          },
+          {
+            "text": "For filmmaking Scores and sound for film",
+            "href": "/filmmaking/"
+          },
+          {
+            "text": "For advertising Cleared music for paid campaigns",
+            "href": "/business/advertising/?plans=businesses"
+          },
+          {
+            "text": "Will I get a copyright claim? Epidemic Sound\u2019s direct license helps you avoid copyright claims. Learn how it works below. Learn more",
+            "href": "/how-it-works/"
+          }
+        ]
+      },
+      {
+        "button": "Resources",
+        "opens": "top-nav-panel-resources",
+        "kind": "dropdown panel",
+        "links": [
+          {
+            "text": "Blog Tips, trends, and creator stories",
+            "href": "https://www.epidemicsound.com/blog/"
+          },
+          {
+            "text": "Help center Answers and support",
+            "href": "https://www.epidemicsoundhelp.com/hc/en-us"
+          },
+          {
+            "text": "Refer a friend Join our community",
+            "href": "/community-program/"
+          },
+          {
+            "text": "For artists Get signed, get heard.",
+            "href": "/for-artists/"
+          },
+          {
+            "text": "About us This is Epidemic Sound",
+            "href": "/about-us/"
+          },
+          {
+            "text": "Try the Epidemic Sound API for free One music API with seamless integration, cleared for your users. Get started for free in minutes. Read m",
+            "href": "https://www.epidemicsound.com/blog/free-api/"
+          }
+        ]
+      },
+      {
+        "button": "For business",
+        "opens": "top-nav-panel-for-business",
+        "kind": "dropdown panel",
+        "links": [
+          {
+            "text": "Business Hub Soundtrack everything your business creates",
+            "href": "/business/"
+          },
+          {
+            "text": "For brands One brand sound, everywhere you publish",
+            "href": "/business/brands/"
+          },
+          {
+            "text": "For broadcasters Music cleared for broadcast and OTT",
+            "href": "/business/broadcasters/"
+          },
+          {
+            "text": "For production companies Cleared music, faster turnarounds",
+            "href": "/business/production-companies/"
+          },
+          {
+            "text": "For publishers Cleared music for publishing at scale",
+            "href": "/business/digital-publishers/"
+          },
+          {
+            "text": "For developers Music via API, cleared to publish",
+            "href": "https://developers.epidemicsound.com/"
+          },
+          {
+            "text": "For agencies One platform across every client",
+            "href": "/business/agencies/"
+          },
+          {
+            "text": "Enterprise plan Big brands. Many creators. Cleared by design.",
+            "href": "/enterprise/"
+          },
+          {
+            "text": "Business plan Cleared music for your whole team",
+            "href": "/our-plans/business-plan/"
+          },
+          {
+            "text": "In-store music Licensed music for physical spaces",
+            "href": "/instore/instore-music/"
+          },
+          {
+            "text": "Customer stories How brands use Epidemic Sound",
+            "href": "/enterprise/success-stories/"
+          },
+          {
+            "text": "Enterprise reseller network For partners reselling in local markets",
+            "href": "/enterprise/become-a-reseller/"
+          },
+          {
+            "text": "Soundproof Review your existing content for rights",
+            "href": "/business/soundproof/"
+          },
+          {
+            "text": "Business Hub One license for your team, channels and creators Explore Business Hub",
+            "href": "/business/"
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "text": "Pricing",
+        "href": "/pricing/",
+        "opens": "pricing page"
+      },
+      {
+        "text": "Log in",
+        "href": "/login/",
+        "opens": "stopped: login",
+        "stopped": true
+      },
+      {
+        "text": "Create free account",
+        "href": "/oauth_registration/",
+        "opens": "stopped: signup",
+        "stopped": true
+      }
+    ],
+    "mobile": {
+      "button": "Show navigation menu",
+      "opens": "drawer #top-nav-menu",
+      "close": "Hide navigation menu",
+      "items": [
+        "Music",
+        "Sound effects",
+        "Tools",
+        "License",
+        "Resources",
+        "For business",
+        "Pricing",
+        "Log in",
+        "Create free account"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "path": "/",
+      "url": "https://www.epidemicsound.com/",
+      "status": 200,
+      "title": "Bring your story to life | Music & SFX for videos | Epidemic Sound",
+      "h1": "You bring the idea. We bring the sound."
+    },
+    {
+      "path": "/music/",
+      "url": "https://www.epidemicsound.com/music",
+      "status": 200,
+      "title": "Royalty-Free Music for Videos | Download | Epidemic Sound",
+      "h1": "Discover our royalty-free music for videos"
+    },
+    {
+      "path": "/music/genres/",
+      "url": "https://www.epidemicsound.com/music/genres",
+      "status": 200,
+      "title": "Our Music Genres and Categories | Epidemic Sound",
+      "h1": "Browse our music by genre"
+    },
+    {
+      "path": "/music/moods/",
+      "url": "https://www.epidemicsound.com/music/moods",
+      "status": 200,
+      "title": "Our Music Moods - Songs for all emotions | Epidemic Sound",
+      "h1": "Browse our music by mood"
+    },
+    {
+      "path": "/music/themes/",
+      "url": "https://www.epidemicsound.com/music/themes",
+      "status": 200,
+      "title": "Music Themes - Our Themed Playlists | Epidemic Sound",
+      "h1": "Music Themes and playlists"
+    },
+    {
+      "path": "/artists/",
+      "url": "https://www.epidemicsound.com/artists",
+      "status": 200,
+      "title": "Our Artists - Meet the Musicians Behind the Music | Epidemic Sound",
+      "h1": "Meet our artists"
+    },
+    {
+      "path": "/artists/christoffer-moe-ditlevsen/",
+      "url": "https://www.epidemicsound.com/artists/christoffer-moe-ditlevsen",
+      "status": 200,
+      "title": "Music by Christoffer Moe Ditlevsen | Epidemic Sound",
+      "h1": "Christoffer Moe Ditlevsen"
+    },
+    {
+      "path": "/artists/adelyn-paik/",
+      "url": "https://www.epidemicsound.com/artists/adelyn-paik",
+      "status": 200,
+      "title": "Music by Adelyn Paik | Epidemic Sound",
+      "h1": "Adelyn Paik"
+    },
+    {
+      "path": "/artists/ooyy/",
+      "url": "https://www.epidemicsound.com/artists/ooyy",
+      "status": 200,
+      "title": "Music by Ooyy | Epidemic Sound",
+      "h1": "Ooyy"
+    },
+    {
+      "path": "/music/genres/christmas/",
+      "url": "https://www.epidemicsound.com/music/genres/christmas",
+      "status": 200,
+      "title": "Royalty-Free Christmas Music | Epidemic Sound",
+      "h1": "Christmas music"
+    },
+    {
+      "path": "/music/themes/podcast/podcast-hooks/",
+      "url": "https://www.epidemicsound.com/music/themes/podcast/podcast-hooks",
+      "status": 200,
+      "title": "Podcast Intro & Outro Music - Royalty Free | Epidemic Sound",
+      "h1": "Podcast hooks"
+    },
+    {
+      "path": "/music/genres/beats/",
+      "url": "https://www.epidemicsound.com/music/genres/beats",
+      "status": 200,
+      "title": "Royalty-Free Beats Music | Epidemic Sound",
+      "h1": "Beats music"
+    },
+    {
+      "path": "/sound-effects/",
+      "url": "https://www.epidemicsound.com/sound-effects",
+      "status": 200,
+      "title": "Sound Effects | Royalty-free download for video | Epidemic Sound",
+      "h1": "Sound Effects"
+    },
+    {
+      "path": "/sound-effects/categories/ambience/",
+      "url": "https://www.epidemicsound.com/sound-effects/categories/ambience",
+      "status": 200,
+      "title": "Ambience Sound Effects | Royalty-Free | Epidemic Sound",
+      "h1": "Ambience and Ambient Sounds"
+    },
+    {
+      "path": "/sound-effects/categories/rain/",
+      "url": "https://www.epidemicsound.com/sound-effects/categories/rain",
+      "status": 200,
+      "title": "Rain Sound Effects | Royalty-free download | Epidemic Sound",
+      "h1": "Rain sound effects and rain noises"
+    },
+    {
+      "path": "/sound-effects/categories/wind/",
+      "url": "https://www.epidemicsound.com/sound-effects/categories/wind",
+      "status": 200,
+      "title": "Wind Sound Effects | Royalty-free download | Epidemic Sound",
+      "h1": "Wind sound effects"
+    },
+    {
+      "path": "/tools/",
+      "url": "https://www.epidemicsound.com/tools",
+      "status": 200,
+      "title": "Our tools and features | Epidemic Sound",
+      "h1": "Your soundtrack toolbox, from start to finish"
+    },
+    {
+      "path": "/tools/studio/",
+      "url": "https://www.epidemicsound.com/tools/studio",
+      "status": 200,
+      "title": "Studio: AI-powered video-to-audio tool | Epidemic Sound",
+      "h1": "Better, faster, Studio"
+    },
+    {
+      "path": "/tools/assistant/",
+      "url": "https://www.epidemicsound.com/tools/assistant",
+      "status": 200,
+      "title": "Assistant: AI Search & Soundtrack Sidekick | Epidemic Sound",
+      "h1": "Assistant: Your AI-powered soundtracking sidekick"
+    },
+    {
+      "path": "/voices/",
+      "url": "https://www.epidemicsound.com/voices",
+      "status": 200,
+      "title": "AI Voiceover - Human Voices AI Generator | Epidemic Sound",
+      "h1": "Human voiceovers, enhanced by AI"
+    },
+    {
+      "path": "/tools/adapt/",
+      "url": "https://www.epidemicsound.com/tools/adapt",
+      "status": 200,
+      "title": "Adapt: Customize Music with our AI Editor | Epidemic Sound",
+      "h1": "Adapt: Shape songs with the power of AI"
+    },
+    {
+      "path": "/tools/labs/",
+      "url": "https://www.epidemicsound.com/tools/labs",
+      "status": 200,
+      "title": "Labs: New AI features | Epidemic Sound",
+      "h1": "Epidemic Sound Labs"
+    },
+    {
+      "path": "/tools/mcp/",
+      "url": "https://www.epidemicsound.com/tools/mcp",
+      "status": 200,
+      "title": "MCP for Claude, Cursor, ChatGPT, and more | Epidemic Sound",
+      "h1": "The Epidemic Sound MCP Server"
+    },
+    {
+      "path": "/tools/api/",
+      "url": "https://www.epidemicsound.com/tools/api",
+      "status": 200,
+      "title": "Music API for seamless platform integration | Epidemic Sound",
+      "h1": "The Epidemic Sound API"
+    },
+    {
+      "path": "/plugins/adobe/",
+      "url": "https://www.epidemicsound.com/plugins/adobe",
+      "status": 200,
+      "title": "Adobe Plugin | Premiere Pro, Audition & more | Epidemic Sound",
+      "h1": "Find the right sound directly in Adobe"
+    },
+    {
+      "path": "/plugins/davinci-resolve-studio/",
+      "url": "https://www.epidemicsound.com/plugins/davinci-resolve-studio",
+      "status": 200,
+      "title": "Soundtracking plugin for DaVinci Resolve Studio | Epidemic Sound",
+      "h1": "Soundtrack faster in DaVinci Resolve Studio"
+    },
+    {
+      "path": "/app/macos/",
+      "url": "https://www.epidemicsound.com/app/macos",
+      "status": 200,
+      "title": "MacOS App for Final Cut Pro, Avid & More | Epidemic Sound",
+      "h1": "The shortest path from search to timeline"
+    },
+    {
+      "path": "/app/windows/",
+      "url": "https://www.epidemicsound.com/app/windows",
+      "status": 200,
+      "title": "Windows App for Final Cut Pro, Avid & More | Epidemic Sound",
+      "h1": "The universal bridge to your perfect soundtrack"
+    },
+    {
+      "path": "/app/ios/",
+      "url": "https://www.epidemicsound.com/app/ios",
+      "status": 200,
+      "title": "Epidemic Sound music app on iOS | Epidemic Sound",
+      "h1": "The best music app for video creators on iOS"
+    },
+    {
+      "path": "/app/android/",
+      "url": "https://www.epidemicsound.com/app/android",
+      "status": 200,
+      "title": "Epidemic Sound music app on Android | Epidemic Sound",
+      "h1": "The best music app for video creators on Android"
+    },
+    {
+      "path": "/how-it-works/",
+      "url": "https://www.epidemicsound.com/how-it-works",
+      "status": 200,
+      "title": "How does Epidemic Sound work? | Epidemic Sound",
+      "h1": "How does Epidemic Sound work?"
+    },
+    {
+      "path": "/youtube/",
+      "url": "https://www.epidemicsound.com/youtube",
+      "status": 200,
+      "title": "Epidemic Sound for YouTube | Epidemic Sound",
+      "h1": "Epidemic Sound for YouTube"
+    },
+    {
+      "path": "/filmmaking/",
+      "url": "https://www.epidemicsound.com/filmmaking",
+      "status": 200,
+      "title": "Epidemic Sound for Filmmakers | Epidemic Sound",
+      "h1": "Epidemic Sound for filmmakers"
+    },
+    {
+      "path": "/business/advertising/",
+      "url": "https://www.epidemicsound.com/business/advertising/",
+      "status": 200,
+      "title": "Background Music for Advertising | Best Music for Ads | Epidemic Sound",
+      "h1": "Music for advertising, cleared for every market"
+    },
+    {
+      "path": "/blog/",
+      "url": "https://www.epidemicsound.com/blog",
+      "status": 200,
+      "title": "This is the Epidemic Sound blog | Epidemic Sound",
+      "h1": "Epidemic Sound Blog"
+    },
+    {
+      "path": "/community-program/",
+      "url": "https://www.epidemicsound.com/community-program",
+      "status": 200,
+      "title": "The Epidemic Sound Community program | Epidemic Sound",
+      "h1": "Welcome to our Community"
+    },
+    {
+      "path": "/for-artists/",
+      "url": "https://www.epidemicsound.com/for-artists",
+      "status": 200,
+      "title": "For artists: Why work with us? | Epidemic Sound",
+      "h1": "Thanks for your interest. Stay tuned"
+    },
+    {
+      "path": "/about-us/",
+      "url": "https://www.epidemicsound.com/about-us",
+      "status": 200,
+      "title": "About Us | Epidemic Sound",
+      "h1": "This is Epidemic Sound"
+    },
+    {
+      "path": "/blog/free-api/",
+      "url": "https://www.epidemicsound.com/blog/free-api",
+      "status": 200,
+      "title": "Try the Epidemic Sound API Free tier",
+      "h1": "Try the Epidemic Sound API for free"
+    },
+    {
+      "path": "/business/",
+      "url": "https://www.epidemicsound.com/business",
+      "status": 200,
+      "title": "Music for business - Soundtrack your brand | Epidemic Sound",
+      "h1": "Music your whole team can publish"
+    },
+    {
+      "path": "/business/brands/",
+      "url": "https://www.epidemicsound.com/business/brands",
+      "status": 200,
+      "title": "Music for brands: Soundtrack your branded content | Epidemic Sound",
+      "h1": "Amplify your brand identity with seamless soundtracking"
+    },
+    {
+      "path": "/business/broadcasters/",
+      "url": "https://www.epidemicsound.com/business/broadcasters",
+      "status": 200,
+      "title": "Music for broadcasters | Epidemic Sound",
+      "h1": "Soundtrack your broadcasts legally, globally & seamlessly"
+    },
+    {
+      "path": "/business/production-companies/",
+      "url": "https://www.epidemicsound.com/business/production-companies",
+      "status": 200,
+      "title": "Music for production companies | Epidemic Sound",
+      "h1": "Unlock seamless soundtracking for any production"
+    },
+    {
+      "path": "/business/digital-publishers/",
+      "url": "https://www.epidemicsound.com/business/digital-publishers",
+      "status": 200,
+      "title": "Music for digital publishers | Epidemic Sound",
+      "h1": "Easy music licensing for digital publishers"
+    },
+    {
+      "path": "/business/agencies/",
+      "url": "https://www.epidemicsound.com/business/agencies",
+      "status": 200,
+      "title": "Music for Agencies: Get Full Creative Control | Epidemic Sound",
+      "h1": "Soundtrack at agency speed"
+    },
+    {
+      "path": "/enterprise/",
+      "url": "https://www.epidemicsound.com/enterprise",
+      "status": 200,
+      "title": "Royalty-free music for Businesses and Enterprises | Epidemic Sound",
+      "h1": "Sound that moves your audience"
+    },
+    {
+      "path": "/our-plans/business-plan/",
+      "url": "https://www.epidemicsound.com/our-plans/business-plan",
+      "status": 200,
+      "title": "Our Business plan | Epidemic Sound",
+      "h1": "Business plans, built to grow with what you publish"
+    },
+    {
+      "path": "/instore/instore-music/",
+      "url": "https://www.epidemicsound.com/instore/instore-music",
+      "status": 200,
+      "title": "In-store Music - Background music for stores | Epidemic Sound",
+      "h1": "Create world-class experiences with in-store music"
+    },
+    {
+      "path": "/enterprise/success-stories/",
+      "url": "https://www.epidemicsound.com/enterprise/success-stories",
+      "status": 200,
+      "title": "Customer success stories | Epidemic Sound",
+      "h1": "Welcome backstage: Where our clients find their soundtrack success"
+    },
+    {
+      "path": "/enterprise/become-a-reseller/",
+      "url": "https://www.epidemicsound.com/enterprise/become-a-reseller",
+      "status": 200,
+      "title": "Enterprise reseller for music licensing | Epidemic Sound",
+      "h1": "Join our Enterprise reseller network"
+    },
+    {
+      "path": "/business/soundproof/",
+      "url": "https://www.epidemicsound.com/business/soundproof",
+      "status": 200,
+      "title": "Soundproof | Audit & Fix Unlicensed Music | Epidemic Sound",
+      "h1": "Find, fix, and prevent unlicensed music. Across everything you publish."
+    },
+    {
+      "path": "/pricing/",
+      "url": "https://www.epidemicsound.com/pricing",
+      "status": 200,
+      "title": "Pricing & Licensing | Epidemic Sound",
+      "h1": "Our subscriptions"
+    },
+    {
+      "path": "/music/tracks/6c0178b7-7c04-42d6-915e-0809526bc168/",
+      "url": "https://www.epidemicsound.com/music/tracks/6c0178b7-7c04-42d6-915e-0809526bc168",
+      "status": 200,
+      "title": "Roy Williams - Glory Bound | Epidemic Sound",
+      "h1": "Glory Bound"
+    },
+    {
+      "path": "/artists/roy-williams/",
+      "url": "https://www.epidemicsound.com/artists/roy-williams",
+      "status": 200,
+      "title": "Music by Roy Williams | Epidemic Sound",
+      "h1": "Roy Williams"
+    },
+    {
+      "path": "/music/tracks/111230ad-d08e-4d49-af44-1df611181e6c/",
+      "url": "https://www.epidemicsound.com/music/tracks/111230ad-d08e-4d49-af44-1df611181e6c",
+      "status": 200,
+      "title": "Ooyy - EAST WEST/WEST EAST | Epidemic Sound",
+      "h1": "EAST WEST/WEST EAST"
+    }
+  ],
+  "stopped": [
+    {
+      "path": "/login",
+      "reason": "auth-or-account",
+      "control": "Log in",
+      "note": "Recorded and not opened. No password, email, or identity provider was used."
+    },
+    {
+      "path": "/oauth_registration/",
+      "reason": "auth-or-account",
+      "control": "Create free account",
+      "note": "Recorded and not opened. No password, email, or identity provider was used."
+    },
+    {
+      "path": "/signup",
+      "reason": "auth-or-account",
+      "control": "",
+      "note": "Recorded and not opened. No password, email, or identity provider was used."
+    }
+  ],
+  "interactions": [
+    {
+      "control": "Music / Sound effects / Tools / License / Resources / For business",
+      "opens": "header dropdown panel",
+      "screenshot": "screenshots/home-light-nav-music.png"
+    },
+    {
+      "control": "Show navigation menu (390)",
+      "opens": "mobile drawer",
+      "screenshot": "screenshots/mobile-home-light-menu.png"
+    },
+    {
+      "control": "Individuals / Businesses on /pricing/",
+      "opens": "plan segment, same page",
+      "screenshot": "screenshots/pricing-light-businesses.png"
+    },
+    {
+      "control": "Monthly / Yearly switch",
+      "opens": "billing period toggle, same page",
+      "note": "Local toggle. Not a form submit."
+    },
+    {
+      "control": "Get 30 days free",
+      "href": "/subscription/create",
+      "opens": "stopped: checkout"
+    },
+    {
+      "control": "Contact sales",
+      "href": "https://go.epidemicsound.com/custom-license",
+      "opens": "external sales form, not submitted"
+    },
+    {
+      "control": "Search on /music/",
+      "opens": "text field. Text typed, not submitted."
+    },
+    {
+      "control": "Play on hero cards",
+      "opens": "inline preview on the home page. Not a new route."
+    }
+  ]
+}

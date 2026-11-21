@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epidemic Sound style guide</title>
+<style>
+:root {
+  --color-off-white: #f1f0eb;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-ink-soft: #272727;
+  --color-secondary-fill: rgba(61, 77, 116, 0.12);
+  --color-ghost-hover: rgba(61, 77, 116, 0.08);
+  --color-muted: rgba(0, 0, 0, 0.6);
+  --color-yellow: #ffda40;
+  --color-focus: #20afff;
+  --color-product-base: #121418;
+  --color-product-accent: #ff82c2;
+  --font-display: Sebenta, Georgia, "Times New Roman", "Noto Serif", serif;
+  --font-sans: Inter, Arial, "Helvetica Neue", sans-serif;
+  --typography-display: 500 80px/80px var(--core-font-display);
+  --typography-heading: 500 64px/64px var(--core-font-display);
+  --typography-body: 400 16px/16px var(--core-font-sans);
+  --typography-button-s: 600 14px/24px var(--core-font-sans);
+  --typography-button-m: 600 16px/24px var(--core-font-sans);
+  --typography-nav: 600 14px/24px var(--core-font-sans);
+  --radius-none: 0px;
+  --radius-medium: 4px;
+  --radius-large: 8px;
+  --radius-pill: 10000px;
+  --size-button-s: 44px;
+  --size-button-m: 56px;
+  --size-nav: 44px;
+  --size-header: 100px;
+  --size-switch: 40px;
+  --space-button-s-x: 16px;
+  --space-button-s-y: 4px;
+  --space-button-m-x: 24px;
+  --space-nav-x: 16px;
+  --motion-duration: 150ms;
+  --motion-easing: cubic-bezier(0, 0, 0.2, 1);
+  --focus-outline-width: 2px;
+  --focus-outline-color: #ffffff;
+  --background-page: var(--core-color-off-white);
+  --background-surface: #ffffff;
+  --background-header: rgba(0, 0, 0, 0);
+  --text-primary: var(--core-color-black);
+  --text-muted: var(--core-color-muted);
+  --text-on-accent: var(--core-color-white);
+  --border-default: var(--core-color-black);
+  --action-primary: var(--core-color-black);
+  --action-primary-hover: var(--core-color-ink-soft);
+  --action-secondary: var(--core-color-secondary-fill);
+  --action-ghost-hover: var(--core-color-ghost-hover);
+  --accent: var(--core-color-black);
+  color-scheme: light;
+  --sg-display: "Georgia", "Times New Roman", serif;
+  --sg-sans: Inter, Arial, "Helvetica Neue", sans-serif;
+}
+[data-mode="dark"] {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--light-background-page, #f1f0eb); color: var(--light-text-primary, #000); font: 400 16px/1.5 var(--sg-sans); }
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 96px; }
+h1 { font: 500 64px/1 var(--sg-display); margin: 0 0 8px; letter-spacing: -0.02em; }
+h2 { font: 600 14px/1 var(--sg-sans); margin: 48px 0 12px; }
+p { max-width: 62ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 120px; }
+.sw i { display: block; height: 64px; border-radius: 12px; border: 1px solid rgba(0,0,0,.08); }
+.sw span { display: block; font-size: 12px; margin-top: 6px; }
+.btn { display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border-radius: 10000px; background: #000; color: #fff; font-weight: 600; font-size: 14px; border: 0; }
+.btn.sec { background: rgba(61, 77, 116, 0.12); color: #000; height: 56px; padding: 0 24px; font-size: 16px; }
+.note { font-size: 13px; color: rgba(0,0,0,.6); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Epidemic Sound</h1>
+  <p>Public signed-out marketing site. One light theme. Values come from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background: var(--light-background-page)"></i><span>page</span></div>
+    <div class="sw"><i style="background: var(--light-background-surface)"></i><span>surface</span></div>
+    <div class="sw"><i style="background: var(--light-text-primary)"></i><span>text</span></div>
+    <div class="sw"><i style="background: var(--light-action-primary)"></i><span>primary</span></div>
+    <div class="sw"><i style="background: var(--core-color-yellow)"></i><span>brand yellow, declared</span></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="btn">Create free account</span>
+    <span class="btn sec">Contact sales</span>
+  </div>
+  <p class="note">Pill radius is 10000px on the public site. The product token --es-radius-button is 0 on body and is overridden by .radii-override.</p>
+  <h2>Type</h2>
+  <p style="font: 500 40px/1 var(--sg-display)">You bring the idea.</p>
+  <p>Body is Inter 16. Display is Sebenta, shown here as Georgia because Sebenta is not loaded.</p>
+</main>
+<script>const TOKENS = {"core":{"color":{"off-white":{"v":"#f1f0eb","t":"color","s":"css-var --es-color-brand-off-white; painted page background"},"black":{"v":"#000000","t":"color","s":"css-var --color-brand-black; painted text and primary fill"},"white":{"v":"#ffffff","t":"color","s":"css-var --color-brand-white; text on primary buttons"},"ink-soft":{"v":"#272727","t":"color","s":"measured header Create free account hover background, home 1440"},"secondary-fill":{"v":"rgba(61, 77, 116, 0.12)","t":"color","s":"measured Contact sales and Log in button background"},"ghost-hover":{"v":"rgba(61, 77, 116, 0.08)","t":"color","s":"measured Music nav button hover background"},"muted":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"measured footer link color"},"yellow":{"v":"#ffda40","t":"color","s":"css-var --es-color-brand-yellow; declared brand, not a painted marketing fill on the captured pages"},"focus":{"v":"#20afff","t":"color","s":"css-var --es-color-misc-focused; declared. Public buttons painted a white 2px outline on focus, not this blue"},"product-base":{"v":"#121418","t":"color","s":"css-var --es-color-background-base; product dark palette, not the painted marketing page"},"product-accent":{"v":"#ff82c2","t":"color","s":"css-var --es-color-action-accent; product dark palette"}},"font":{"display":{"v":"Sebenta, Georgia, \"Times New Roman\", \"Noto Serif\", serif","t":"fontFamily","s":"css-var --es-i-header-font-family; computed on h1"},"sans":{"v":"Inter, Arial, \"Helvetica Neue\", sans-serif","t":"fontFamily","s":"css-var --es-i-text-font-family; computed on body and buttons"}},"typography":{"display":{"v":{"fontFamily":"{core.font.display}","fontSize":"80px","fontWeight":500,"lineHeight":"80px"},"t":"typography","s":"measured h1 on / at 1440; family Sebenta weight 500"},"heading":{"v":{"fontFamily":"{core.font.display}","fontSize":"64px","fontWeight":500,"lineHeight":"64px"},"t":"typography","s":"css-var --es-heading-xl-font-size 4rem on body; weight from the display face"},"body":{"v":{"fontFamily":"{core.font.sans}","fontSize":"16px","fontWeight":400,"lineHeight":"16px"},"t":"typography","s":"measured body on / at 1440"},"button-s":{"v":{"fontFamily":"{core.font.sans}","fontSize":"14px","fontWeight":600,"lineHeight":"24px"},"t":"typography","s":"measured header Create free account, class es-text-button-s"},"button-m":{"v":{"fontFamily":"{core.font.sans}","fontSize":"16px","fontWeight":600,"lineHeight":"24px"},"t":"typography","s":"measured Contact sales, class es-text-button-m"},"nav":{"v":{"fontFamily":"{core.font.sans}","fontSize":"14px","fontWeight":600,"lineHeight":"24px"},"t":"typography","s":"measured header Music button"}},"radius":{"none":{"v":"0px","t":"dimension","s":"css-var --es-radius-button on body is 0; marketing controls override to a pill"},"medium":{"v":"4px","t":"dimension","s":"css-var --es-radius-medium"},"large":{"v":"8px","t":"dimension","s":"css-var --es-radius-large on :root"},"pill":{"v":"10000px","t":"dimension","s":"measured border-radius on primary, secondary and nav buttons; .radii-override sets --es-radius-button to 10000px"}},"size":{"button-s":{"v":"44px","t":"dimension","s":"measured header Create free account height"},"button-m":{"v":"56px","t":"dimension","s":"measured Contact sales height"},"nav":{"v":"44px","t":"dimension","s":"measured Music nav button height"},"header":{"v":"100px","t":"dimension","s":"measured header height at 1440"},"switch":{"v":"40px","t":"dimension","s":"measured pricing billing switch width; height 24px"}},"space":{"button-s-x":{"v":"16px","t":"dimension","s":"measured primary button padding-left"},"button-s-y":{"v":"4px","t":"dimension","s":"measured primary button padding-top"},"button-m-x":{"v":"24px","t":"dimension","s":"measured Contact sales padding-left"},"nav-x":{"v":"16px","t":"dimension","s":"measured Music button padding-left"}},"motion":{"duration":{"v":"150ms","t":"duration","s":"measured button class duration-150; declared --animation-duration is 600ms and was not the control transition"},"easing":{"v":[0,0,0.2,1],"t":"cubicBezier","s":"css-var --ease-out"}},"focus":{"outline-width":{"v":"2px","t":"dimension","s":"measured focus outline on header Create free account"},"outline-color":{"v":"#ffffff","t":"color","s":"measured focus outline color on the black primary button"}}},"light":{"background":{"page":{"v":"{core.color.off-white}","t":"color","s":"painted body background rgb(241, 240, 235)"},"surface":{"v":"#ffffff","t":"color","s":"measured nav panel and pricing card fill"},"header":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"measured header background; the bar reads as a white pill over the page"}},"text":{"primary":{"v":"{core.color.black}","t":"color","s":"measured body and h1 color"},"muted":{"v":"{core.color.muted}","t":"color","s":"measured footer link color"},"on-accent":{"v":"{core.color.white}","t":"color","s":"measured primary button text"}},"border":{"default":{"v":"{core.color.black}","t":"color","s":"computed border color on text; most controls use fill, not a stroke"}},"action":{"primary":{"v":"{core.color.black}","t":"color","s":"measured Create free account background"},"primary-hover":{"v":"{core.color.ink-soft}","t":"color","s":"measured Create free account hover background"},"secondary":{"v":"{core.color.secondary-fill}","t":"color","s":"measured Contact sales background"},"ghost-hover":{"v":"{core.color.ghost-hover}","t":"color","s":"measured Music button hover background"}},"accent":{"v":"{core.color.black}","t":"color","s":"the public site uses black as the only strong fill; brand yellow is declared and not used as a marketing accent on the captured pages"}},"dark":{}};</script>
+</body>
+</html>
