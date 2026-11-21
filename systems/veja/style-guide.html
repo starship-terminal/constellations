@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Veja style guide</title>
+  <style>
+    :root {
+      --ink: #212529;
+      --black: #000000;
+      --page: #ffffff;
+      --promo: #4d4d4d;
+      --gift: #065a21;
+      --muted: #888888;
+      --on-accent: #ffffff;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.15 Helvetica, sans-serif; }
+    main { max-width: 880px; margin: 0 auto; padding: 40px 24px 80px; }
+    h1 { font-size: 30px; line-height: 36px; font-weight: 700; letter-spacing: 0; text-transform: uppercase; }
+    h2 { font-size: 14px; font-weight: 400; text-transform: uppercase; margin: 36px 0 12px; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 120px; }
+    .chip { height: 64px; border: 1px solid #000; }
+    .label { font-size: 11px; margin-top: 6px; }
+    .promo { background: var(--promo); color: #fff; font-size: 14px; text-align: center; padding: 11px 20px; }
+    .nav { display: flex; gap: 0; align-items: center; border-bottom: 1px solid #000; padding: 16px 0; }
+    .nav span { font-size: 14px; text-transform: uppercase; padding: 5px 16px; }
+    .nav .gift { color: var(--gift); }
+    .mark { width: 40px; height: 40px; margin-right: 12px; }
+    .buy { margin-top: 24px; max-width: 420px; }
+    .price { font-size: 25px; margin: 8px 0 16px; }
+    .sizes { display: flex; flex-wrap: wrap; gap: 6px; }
+    .size { width: 100px; height: 30px; border: 1px solid #000; border-radius: 5px; background: #fff; font: 14px Helvetica, sans-serif; text-transform: uppercase; }
+    button.primary { display: block; width: 100%; height: 40px; margin-top: 16px; border: 1px solid #000; border-radius: 5px; background: #000; color: #fff; font: 18px/20.7px Helvetica, sans-serif; text-transform: uppercase; }
+    .note { color: var(--muted); font-size: 14px; margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <div class="promo">Returns and exchanges extended to 60 days.</div>
+  <main>
+    <h1>Veja</h1>
+    <p>Measured from the United States public shop on 22 November 2026. Helvetica. Values from tokens.json.</p>
+    <h2>Colour</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">page #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#212529"></div><div class="label">text #212529</div></div>
+      <div class="swatch"><div class="chip" style="background:#000000"></div><div class="label">accent #000000</div></div>
+      <div class="swatch"><div class="chip" style="background:#4d4d4d"></div><div class="label">promo #4d4d4d</div></div>
+      <div class="swatch"><div class="chip" style="background:#065a21"></div><div class="label">gift #065a21</div></div>
+      <div class="swatch"><div class="chip" style="background:#888888"></div><div class="label">muted #888888</div></div>
+    </div>
+    <h2>Header</h2>
+    <div class="nav">
+      <svg class="mark" viewBox="0 0 65 65" aria-hidden="true"><path fill="#000" d="M60.0343 0H4.9657L0 4.9657V60.0343L4.9657 65H60.0317L64.9974 60.0343V4.9657L60.0343 0ZM17.2462 54.3043L12.0155 44.1588H14.3544L17.2564 49.7793L20.1405 44.1588H22.4667L17.2462 54.3043ZM31.486 46.1945H26.4999V47.9958H29.6439V50.0316H26.4999V51.8201H31.486V53.8558H24.4234V44.1588H31.4885V46.1945H31.486ZM40.2989 50.1335C40.2989 50.9488 40.2403 51.6316 39.8479 52.3603C39.3231 53.2902 38.3804 53.8991 37.3459 54.0597C36.8313 54.1514 36.1994 54.0597C34.4109 53.7947 33.3357 52.4036 33.2771 50.6303H35.3408C35.3688 51.2545 35.6007 51.7335 36.1994 51.9959C36.7956 52.1972 37.3459 51.9959C38.1613 51.6749 38.2071 50.9921 38.2071 50.2379V44.1614H40.2989V50.1335ZM50.2226 53.8558L49.3946 52.2278H45.3079L44.4671 53.8558H42.1409L47.3461 43.7232L52.5641 53.8558H50.2226ZM39.3791 34.3752H25.2362L13.2436 15.9162H24.2476L32.4134 28.8031C40.7677 14.2296C42.9461 10.4333 46.0875 10.7008 47.3742 10.7008C52.9819 10.7008L39.3791 34.3752Z"/></svg>
+      <span>Women</span><span>Men</span><span>Kids</span><span class="gift">Gift card</span>
+    </div>
+    <h2>Buy box</h2>
+    <div class="buy">
+      <div style="font-size:30px;font-weight:700;line-height:36px;text-transform:uppercase">Cateyes suede eagle cashew</div>
+      <div class="price">$195</div>
+      <div class="sizes">
+        <button class="size" type="button">W8 / M6</button>
+        <button class="size" type="button">M10</button>
+        <button class="size" type="button">M11</button>
+      </div>
+      <button class="primary" type="button">Add to cart</button>
+    </div>
+    <p class="note">Add to cart was not clicked on the live shop. This button is a reconstruction of the measured face.</p>
+  </main>
+</body>
+</html>
