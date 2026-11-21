@@ -1,0 +1,92 @@
+{
+  "captured_at": "2026-11-21",
+  "product": "Cushion",
+  "route": "public-web",
+  "entry": "https://cushion.so/",
+  "stopped_at": {
+    "login": "https://app.cushion.so/login",
+    "signup": "https://app.cushion.so/sign-up"
+  },
+  "offered": {
+    "nav": {
+      "desktop": [
+        { "label": "Logo", "opens": "page", "target": "https://cushion.so/" },
+        { "label": "Pricing", "opens": "page", "target": "https://cushion.so/pricing" },
+        { "label": "Updates", "opens": "page", "target": "https://cushion.so/updates" },
+        { "label": "Blog", "opens": "page", "target": "https://cushion.so/blog" },
+        { "label": "Log in", "opens": "login-wall", "target": "https://app.cushion.so/login" },
+        { "label": "Sign up", "opens": "signup-wall", "target": "https://app.cushion.so/sign-up" }
+      ],
+      "phone": [
+        { "label": "Logo", "opens": "page", "target": "https://cushion.so/" },
+        { "label": "Open menu", "opens": "dialog", "items": ["Pricing", "Updates", "Blog", "Log in", "Sign up"] }
+      ],
+      "login_wall": [
+        { "label": "Continue with Google", "kind": "identity-provider", "clicked": false },
+        { "label": "Email", "kind": "field", "typed": false },
+        { "label": "Send me a login link", "kind": "submit", "clicked": false }
+      ],
+      "footer": [
+        { "label": "Follow us", "opens": "external", "target": "https://x.com/usecushion" },
+        { "label": "Toggle theme", "opens": "same-page", "target": "html.dark" },
+        { "label": "Pricing", "opens": "page", "target": "https://cushion.so/pricing" },
+        { "label": "Download", "opens": "page", "target": "https://cushion.so/download" },
+        { "label": "Integrations", "opens": "page", "target": "https://cushion.so/integrations" },
+        { "label": "Blog", "opens": "page", "target": "https://cushion.so/blog" },
+        { "label": "Updates", "opens": "page", "target": "https://cushion.so/updates" },
+        { "label": "Async slack alternative", "opens": "page", "target": "https://cushion.so/slack-alternative" },
+        { "label": "Discord alternative for teams", "opens": "page", "target": "https://cushion.so/discord-alternative" },
+        { "label": "Privacy", "opens": "page", "target": "https://cushion.so/privacy" },
+        { "label": "Terms", "opens": "page", "target": "https://cushion.so/terms" },
+        { "label": "Contact", "opens": "page", "target": "https://cushion.so/contact" },
+        { "label": "Status", "opens": "external", "target": "https://cushion.openstatus.dev/" }
+      ]
+    },
+    "settings": {
+      "reached": false,
+      "reason": "Settings sit behind the login wall at app.cushion.so. The public site has no settings control. Toggle theme is a public footer button that adds class dark on html. It was clicked. It is not an account setting."
+    },
+    "create": {
+      "reached": false,
+      "entry": "Sign up and Get started open https://app.cushion.so/sign-up. Photographed, then stopped.",
+      "offered_fields": ["Email"],
+      "offered_actions": ["Continue with Google", "Continue", "Log in"],
+      "submitted": false
+    }
+  },
+  "screens": [
+    "screenshots/tree/home-light-default.png",
+    "screenshots/tree/home-dark-default.png",
+    "screenshots/tree/home-dark-faq-open.png",
+    "screenshots/tree/pricing-light-default.png",
+    "screenshots/tree/updates-light-default.png",
+    "screenshots/tree/blog-light-default.png",
+    "screenshots/tree/blog-post-light-default.png",
+    "screenshots/tree/download-light-default.png",
+    "screenshots/tree/integrations-light-default.png",
+    "screenshots/tree/slack-alternative-light-default.png",
+    "screenshots/tree/contact-light-default.png",
+    "screenshots/tree/mobile-home-light-default.png",
+    "screenshots/tree/mobile-home-light-menu-open.png",
+    "screenshots/tree/login-wall-light-default.png",
+    "screenshots/tree/signup-wall-light-default.png"
+  ],
+  "gaps": [
+    "Signed-in app, settings, and create flows were not entered.",
+    "Talk to a human opens https://cal.com/cushion/30min and was not opened.",
+    "Follow us redirects to https://x.com/usecushion and was not photographed.",
+    "Status opens https://cushion.openstatus.dev/ and was not opened.",
+    "Discord alternative, privacy, terms, sub-processors, integration detail pages, blog categories, and the remaining blog posts were mapped and not photographed in this refresh.",
+    "Download for Apple Silicon was not clicked, so no file was saved.",
+    "The homepage demo (New post, Search, channels, Post) stays on the marketing page. It was not treated as the signed-in app.",
+    "The T3 preview tab could not paint frames (Preview automation snapshot failed: The browser is not producing screenshot frames). Shots were taken with Playwright instead."
+  ],
+  "not_submitted": [
+    "Contact form (name, work email, company, message, Submit)",
+    "Signup email Continue",
+    "Login email Send me a login link",
+    "Continue with Google",
+    "Download for Apple Silicon",
+    "Talk to a human"
+  ]
+}
