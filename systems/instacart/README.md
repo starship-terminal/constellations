@@ -16,6 +16,8 @@ An email account was created in the attached T3 preview browser and the storefro
 | [patterns.md](patterns.md) | How the components combine on the marketing, search, auth and help surfaces. |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png`, at 2x. |
 | [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900. Mobile shots are 390 CSS px at 2x, so the PNG is 780 wide, except the stitched mobile home full page. |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog, written before the 2026-11-21 screenshots |
+| [login-review.json](login-review.json) | The public walk: login and signup stop at an empty email card; Google, Facebook, and Phone were not clicked |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json). |
 | [tools/](tools) | The builders and the capture kit. |
 
@@ -100,7 +102,9 @@ Consent, location and promo dialogs were hidden in CSS. No consent control was c
 - The ZIP field and Shop button on `/grocery-delivery` were not found in the measure pass (the hero image loaded first). They are visible in [grocery-delivery-light-default](screenshots/grocery-delivery-light-default.png).
 - Add buttons on search were not cropped. The page uses an icon plus, not a text button named Add, in the measure pass. The search screenshot shows the green plus.
 - Mobile grocery-delivery was dropped because a Google one-tap sheet covered the page.
-- The mobile home menu click timed out, so there is no mobile drawer shot. The desktop departments drawer is [home-light-departments](screenshots/home-light-departments.png).
+- The phone menu is [mobile-home-light-menu](screenshots/mobile-home-light-menu.png). Departments, More ways to shop, and Help are collapsed. The desktop departments drawer is [home-light-departments](screenshots/home-light-departments.png).
+- The phone homepage viewport is covered on the lower half by the app sheet. Continue in browser was not a clickable control in the headless pass. See [mobile-home-light-default](screenshots/mobile-home-light-default.png).
+- The control map is [site-tree.md](site-tree.md). The stop at the empty login and signup cards is [login-review.json](login-review.json). Google, Facebook, and Phone were not clicked. Continue was not clicked.
 - Icon.png is a cropped wordmark, not a fetched apple-touch icon. Icon SVGs were not extracted.
 - Easings are the resolved `linear()` springs. The cubic-bezier fallback in the stylesheet is not what the page computed.
 - `--ids-typography-name` is a per-class name, empty or a style id on `:root`. It is not a size scale. Type sizes in `core.typography` are measured roles, not a published ramp.
@@ -131,7 +135,7 @@ Instacart Sans is the body face, a self-hosted variable woff2 (400 to 800, roman
 | Select | Not present as a native select on the captured pages. |
 | Checkbox, radio, switch | Not present on the captured pages. |
 | Tabs | Filter chips stand in. Captured as chip. |
-| Menu | Desktop departments drawer captured. Mobile drawer click timed out. |
+| Menu | Desktop departments drawer and the phone menu are captured. The phone Departments row is collapsed. |
 | Tooltip | Not present. |
 | Dialog | Location and promo dialogs were hidden, not captured as a state. |
 | Toast | Not present. |

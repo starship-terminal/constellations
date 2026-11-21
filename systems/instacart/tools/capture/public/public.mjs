@@ -112,16 +112,18 @@ const desktop = {
   search: { path: '/store/s?k=milk', run: async (p, S) => { await S.view('default'); await S.full(); } },
   help: { path: '/help', run: async (p, S) => { await S.view('default'); await S.full(); } },
   business: { path: '/business', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  gifts: { path: '/store/hub/gifts', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  plus: { path: '/instacart-plus', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  promos: { path: '/promos-and-coupons', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'gift-cards': { path: '/p/gift-cards', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  ebt: { path: '/ebt-snap', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  privacy: { path: '/privacy', run: async (p, S) => { await S.view('default'); } },
   login: { path: '/login', run: async (p, S) => {
     await S.view('default');
-    await step('email-focused', async () => {
-      const f = p.getByRole('textbox', { name: /email/i }).first();
-      if (await f.count()) { await f.click(); await wait(p, 400); await S.view('email-focused'); }
-    });
-    // Continue is not clicked: an empty submit opens a reCAPTCHA challenge.
-    // The empty-field error is recorded from the attached browser, not here.
+    // The email field is not focused and Continue is not clicked. An empty
+    // submit opens a reCAPTCHA, and this pass does not type an email.
   } },
-  signup: { path: '/signup', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  signup: { path: '/signup', run: async (p, S) => { await S.view('default'); } },
   terms: { path: '/terms', run: async (p, S) => { await S.view('default'); } },
 };
 
@@ -138,6 +140,8 @@ const mobile = {
   search: { path: '/store/s?k=milk', run: async (p, S) => { await S.view('default'); await S.full(); } },
   login: { path: '/login', run: async (p, S) => { await S.view('default'); } },
   help: { path: '/help', run: async (p, S) => { await S.view('default'); } },
+  plus: { path: '/instacart-plus', run: async (p, S) => { await S.view('default'); } },
+  promos: { path: '/promos-and-coupons', run: async (p, S) => { await S.view('default'); } },
 };
 
 // Automation is not hidden: no AutomationControlled flag, no webdriver mask.

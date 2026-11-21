@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:22:11.327Z",
+  "capturedAt": "2026-11-21T13:11:41.817Z",
   "screenshot": "home-light-search-focused.png",
   "sanitizedSourceUrl": "https://www.instacart.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4998
+      "height": 5018
     },
     "scroll": {
       "x": 0,
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Search popover with top searches. No consent banner."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

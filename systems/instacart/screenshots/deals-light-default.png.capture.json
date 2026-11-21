@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:22:27.033Z",
+  "capturedAt": "2026-11-21T13:11:54.965Z",
   "screenshot": "deals-light-default.png",
   "sanitizedSourceUrl": "https://www.instacart.com/store/hub/deals_tab",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6095
+      "height": 6123
     },
     "scroll": {
       "x": 0,
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Deals hub. Product photography, yellow deal chips."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

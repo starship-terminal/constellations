@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:24:19.628Z",
+  "capturedAt": "2026-11-21T13:14:43.574Z",
   "screenshot": "mobile-help-light-default.png",
   "sanitizedSourceUrl": "https://www.instacart.com/help",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 3392
+      "height": 3486
     },
     "scroll": {
       "x": 0,
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Mobile help."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

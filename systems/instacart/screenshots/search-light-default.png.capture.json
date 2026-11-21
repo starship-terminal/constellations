@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:22:44.091Z",
+  "capturedAt": "2026-11-21T13:12:08.498Z",
   "screenshot": "search-light-default.png",
   "sanitizedSourceUrl": "https://www.instacart.com/store/s",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 3067
+      "height": 3228
     },
     "scroll": {
       "x": 0,
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Signed-out search for milk with ZIP 94105 in the header. Promo banner visible."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

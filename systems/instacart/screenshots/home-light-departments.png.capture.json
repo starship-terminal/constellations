@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:22:10.224Z",
+  "capturedAt": "2026-11-21T13:15:41.959Z",
   "screenshot": "home-light-departments.png",
   "sanitizedSourceUrl": "https://www.instacart.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4998
+      "height": 5018
     },
     "scroll": {
       "x": 0,

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:23:07.732Z",
-  "screenshot": "login-light-email-focused.png",
-  "sanitizedSourceUrl": "https://www.instacart.com/login",
+  "capturedAt": "2026-11-21T13:12:53.970Z",
+  "screenshot": "promos-light-full.png",
+  "sanitizedSourceUrl": "https://www.instacart.com/promos-and-coupons",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 900
+      "height": 5122
     },
     "scroll": {
       "x": 0,
@@ -42,25 +42,25 @@
     }
   },
   "capture": {
-    "mode": "viewport",
-    "scale": "device",
+    "mode": "fullPage",
+    "scale": "css",
     "clip": null
   },
   "png": {
     "width": 1440,
-    "height": 900
+    "height": 5122
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 900
+      "height": 5122
     },
-    "basis": "configuredViewport"
+    "basis": "fullPage"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Email field focused. No code entered."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

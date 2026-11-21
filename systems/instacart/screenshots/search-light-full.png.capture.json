@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:22:45.690Z",
+  "capturedAt": "2026-11-21T13:12:10.097Z",
   "screenshot": "search-light-full.png",
   "sanitizedSourceUrl": "https://www.instacart.com/store/s",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 7093
+      "height": 5268
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 7093
+    "height": 5268
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 7093
+      "height": 5268
     },
     "basis": "fullPage"
   },

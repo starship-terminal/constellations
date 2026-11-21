@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:22:34.363Z",
+  "capturedAt": "2026-11-21T13:13:27.434Z",
   "screenshot": "food-light-default.png",
   "sanitizedSourceUrl": "https://www.instacart.com/categories/316-food",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6449
+      "height": 6441
     },
     "scroll": {
       "x": 0,
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Category page with store cards."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

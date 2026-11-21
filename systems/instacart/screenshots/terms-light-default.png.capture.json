@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:23:18.318Z",
+  "capturedAt": "2026-11-21T13:13:55.459Z",
   "screenshot": "terms-light-default.png",
   "sanitizedSourceUrl": "https://www.instacart.com/terms",
   "requested": {
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Terms page. Viewport only."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",
