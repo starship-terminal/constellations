@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:22:02.043Z",
+  "capturedAt": "2026-11-21T14:37:25.971Z",
   "screenshot": "mobile-collection-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 15261
+      "height": 14470
     },
     "scroll": {
       "x": 0,

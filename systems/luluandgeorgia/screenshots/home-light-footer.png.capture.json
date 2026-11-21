@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:44:51.129Z",
+  "screenshot": "home-light-footer.png",
+  "sanitizedSourceUrl": "https://www.luluandgeorgia.com/",
+  "note": "Element screenshot of .site-footer after setting display:block. The page scroll was capped in headless Chromium, so a viewport shot could not reach the footer. The inner column was display:none until that inline style.",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "dimensionCheck": {
+    "status": "element-screenshot",
+    "basis": "locator .site-footer"
+  },
+  "visualReview": {
+    "status": "pending"
+  }
+}

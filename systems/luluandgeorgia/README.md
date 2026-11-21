@@ -1,8 +1,8 @@
 # Lulu and Georgia design reference
 
-A token set and component reference for the Lulu and Georgia public storefront. Read from luluandgeorgia.com on 2026-11-18, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Surfaces: home, the furniture collection, the Sachs dining table product page, search for "rug", the about page, the account drawer, the empty bag drawer, the filter drawer, and the Shop sign-in page that `/account/login` redirects to.
+A token set and component reference for the Lulu and Georgia public storefront. Refreshed from luluandgeorgia.com on 2026-11-21, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Surfaces: home, the furniture mega-menu, the furniture collection, the Sachs dining table product page, search for "rug", the about page, the account drawer, the empty bag drawer, the filter drawer, the footer, and the Shop sign-in page that `/account/login` and `/account/register` both redirect to. `login-extracted` stays `not-started`. The map of which control opens which page is [site-tree.md](site-tree.md).
 
-The storefront is Shopify. It does not publish a design-token layer for colour and type. Values are computed styles. The page is white, the ink is `#1a1713`, the announcement bar is olive `#2b300f`, and Sale is `#b11515`. Type is Soehne for UI and Iskry for headings. Corners are square.
+The storefront is Shopify. It does not publish a design-token layer for colour and type. Values are computed styles. The page is white, the ink is `#1a1713`, and the announcement bar and Sale are both `#b11515`. Type is Soehne for UI and Iskry for headings. Corners are square.
 
 | File | What it is |
 |---|---|
@@ -12,6 +12,7 @@ The storefront is Shopify. It does not publish a design-token layer for colour a
 | [style-guide.html](style-guide.html) | Renders the tokens and the main controls |
 | [components.md](components.md) | Component inventory with crops |
 | [patterns.md](patterns.md) | How the shell, collection, product, search, and account drawer fit together |
+| [site-tree.md](site-tree.md) | Which header, drawer, footer, and dialog controls open which pages, and where the capture stopped |
 | [components/crops/](components/crops) | Element screenshots |
 | [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900 at 1x. `mobile-*` at 390 wide, 2x |
 | [raw/](raw) | [components-computed.json](raw/components-computed.json) |
@@ -22,7 +23,7 @@ The storefront is Shopify. It does not publish a design-token layer for colour a
 ## Do and don't
 
 1. **Do keep the page white and the ink near-black.** Header, cards, and the product column sit on white. Text and Add to cart are `#1a1713`. See [home-light-default](screenshots/home-light-default.png) and [atc-default](components/crops/atc-default.png).
-2. **Do put the only colour in the announcement bar and in Sale.** The bar is olive `#2b300f` with white type. Sale in the category row is `#b11515`. Everything else is ink, grey, or white. See [home-light-default](screenshots/home-light-default.png).
+2. **Do put the only colour in the announcement bar and in Sale.** Both are `#b11515` with white or ink type. Everything else is ink, grey, or white. See [home-light-default](screenshots/home-light-default.png).
 3. **Do keep corners square.** Search, buttons, cards, and the filter chips compute `border-radius: 0`. See [search-default](components/crops/search-default.png).
 4. **Do set UI in Soehne and headings in Iskry.** Category links are 11px uppercase with 1.2px tracking. Collection headings are Iskry at 26px. See [collection-light-default](screenshots/collection-light-default.png).
 5. **Don't treat the Shop sign-in button as a brand colour.** `/account/login` redirects to shopify.com and paints a purple "Continue with shop" pill. That purple is the Shop widget, not the storefront. See [login-light-default](screenshots/login-light-default.png).
@@ -53,7 +54,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | surface | #ebebeb `light.color.surface` |
 | text | #1a1713 `light.color.text.primary` |
 | muted | #747474 `light.color.text.secondary` |
-| accent | #2b300f `light.color.promo` |
+| accent | #b11515 `light.color.promo` |
 | border | #e5e5e5 `light.color.border.default` |
 
 Fonts: `core.font.family.sans` is Soehne Leicht, then 4 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 6 type styles (`core.typography`), 1 radius step (`core.radius`), 4 spacing steps (`core.spacing`).
@@ -84,7 +85,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Header icons are
 
 ## How the values were read
 
-- **Computed styles.** `tools/capture/public/measure.mjs` reads computed styles in headless Chromium at 1440 x 900, devicePixelRatio 2 for crops. Hover is a real pointer. Pressed is CDP `forcePseudoState` on Add to cart, so the button was not activated. The search field was typed into and cleared. The login email was filled with `reader@example.com` and cleared.
+- **Computed styles.** `tools/capture/public/measure.mjs` reads computed styles in headless Chromium at 1440 x 900, devicePixelRatio 2 for crops. Hover is a real pointer. Pressed is CDP `forcePseudoState` on Add to cart, so the button was not activated. The search field was focused and left empty. The login email was left empty. No identity provider was clicked.
 - **No token sheet.** The live CSSOM declares Tailwind `--tw-*` names, a few `--site-*` layout lengths, and vendor names (`--marqo-*`, `--jdgm-*`, `--dg-*`). Brand colour and type are class rules. `tokens.json` publishes the computed roles, not those vendor names, except `light.color.info`, which is Judge.me's `--jdgm-primary-color`.
 - **Consent.** The DataGrail banner (`.dg-consent-banner`) and the Klaviyo embed are hidden with CSS. No consent button was clicked.
 
@@ -93,9 +94,10 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Header icons are
 - Spacing steps are the paddings that were measured (8, 12, 16, 40). There is no declared spacing scale.
 - The display face on the home hero is painted over a photograph. The heading token is the collection h1, which was a real text node.
 - Add to cart hover and pressed did not change the computed fill. That is the measurement, not a missing hover style that was filled in.
-- Focus on Add to cart was a script `focus()` taken with the pointer still over the button, so `:focus-visible` was never produced. The reading cannot say whether a keyboard focus draws a ring, and there is no focus colour token. `add to cart` focus needs a recapture (the pk-k recapture tracking issue, 2026-11 audit); `tools/capture/public/measure.mjs` now resets the pointer and takes a keyboard focus, and was not rerun.
+- Focus on Add to cart is a keyboard focus (Shift+Tab, then Tab) taken after the pointer was moved away. The 2026-11-21 reading says `:focus-visible` matched. The computed fill did not change. There is still no focus colour token.
 - The `badge` reading and its crop are the whole product card: the badge selector matched the card, not the chip. Recapture needed (the pk-k recapture tracking issue, 2026-11 audit).
-- Three colours have no reading in `raw/`: `light.color.promo` (the announcement bar's parent), `light.color.cream` (the footer newsletter button) and `light.color.info` (Judge.me's `--jdgm-primary-color`) came from a colour probe that was not committed, and `light.color.border.strong` from a wishlist button the measure pass did not find. They are labelled Reconstruction.
+- `light.color.promo` is the announcement bar's computed fill, `#b11515`, the same red as Sale. The 2026-11-18 olive `#2b300f` was a colour probe of a parent that is no longer on the page.
+- `light.color.cream` (the footer newsletter button) and `light.color.info` (Judge.me's `--jdgm-primary-color`) still come from a colour probe that was not committed. `light.color.border.strong` comes from a wishlist button the measure pass did not find. Those three stay Reconstruction.
 - The add-to-cart type role is the measured 13px / 24px, weight 800, 2px tracking. Before the 2026-11 audit it said 16px and 0px, which no reading holds.
 - [components.md](components.md) is prose written at capture time; [tools/build_components_md.py](tools/build_components_md.py) fills every measured number in it from `raw/components-computed.json` and fails when one is missing.
 - `light.color.info` is the reviews widget, not a storefront status colour. Success, warning, and danger were not painted as their own roles. Sale red is the only red.
@@ -129,7 +131,7 @@ Soehne (Leicht, Buch) for UI, computed as `"Soehne Leicht"` and `"Soehne Buch"`.
 | Radio | not present | |
 | Switch | not present | |
 | Tabs | not present | |
-| Menu | captured | [home-light-account](screenshots/home-light-account.png) |
+| Menu | captured | [home-light-nav](screenshots/home-light-nav.png), [home-light-account](screenshots/home-light-account.png) |
 | Tooltip | not present | |
 | Dialog | captured | [collection-light-filter](screenshots/collection-light-filter.png) |
 | Toast | not present | |
@@ -138,13 +140,13 @@ Soehne (Leicht, Buch) for UI, computed as `"Soehne Leicht"` and `"Soehne Buch"`.
 | Table | not present | |
 | Avatar | not present | |
 | Badge | observed | Exclusive and New chips in [home-light-search](screenshots/home-light-search.png). The `badge` reading is the product card; recapture needed |
-| Hover, focus, pressed | partly captured | Add to cart. Hover and pressed did not change the fill. Focus was not a keyboard focus; recapture needed |
+| Hover, focus, pressed | captured | Add to cart. Hover and pressed did not change the fill. Focus is a keyboard focus and the fill stayed the same |
 | Disabled | not captured | No disabled control painted |
 | Loading | not captured | No loading state painted |
 | Error | not captured | Login was not submitted, so no validation error |
 | Empty | captured | Empty bag drawer, [home-light-cart](screenshots/home-light-cart.png) |
 | App shell | captured | [home-light-default](screenshots/home-light-default.png), [mobile-home-light-default](screenshots/mobile-home-light-default.png) |
-| Form | captured | Shop sign-in email, filled and cleared, never submitted |
+| Form | captured | Shop sign-in email, empty, never typed, never submitted. [login-light-default](screenshots/login-light-default.png) |
 | Destructive confirmation | not present | |
 | Feedback after an action | not captured | Requires add to cart or a sign-in |
 | Search and filtering | captured | [home-light-search](screenshots/home-light-search.png), [collection-light-filter](screenshots/collection-light-filter.png) |
