@@ -1,0 +1,130 @@
+{
+ "colors": {
+  "signup": {
+   "bg": "rgb(11, 92, 255)",
+   "color": "rgb(255, 255, 255)",
+   "radius": "12px",
+   "h": 46,
+   "size": "14px",
+   "weight": "600",
+   "font": "Inter",
+   "pad": "4px 20px"
+  },
+  "contact": {
+   "bg": "rgb(230, 240, 255)",
+   "color": "rgb(0, 5, 61)",
+   "radius": "12px",
+   "h": 46,
+   "size": "14px",
+   "weight": "600",
+   "font": "Inter",
+   "pad": "4px 20px"
+  },
+  "explore": {
+   "bg": "rgb(0, 5, 61)",
+   "color": "rgb(255, 255, 255)",
+   "radius": "12px",
+   "h": 46,
+   "size": "16px",
+   "weight": "600",
+   "font": "Inter",
+   "pad": "4px 20px"
+  },
+  "plan": {
+   "bg": "rgb(243, 248, 255)",
+   "color": "rgb(0, 5, 61)",
+   "radius": "12px",
+   "h": 46,
+   "size": "16px",
+   "weight": "600",
+   "font": "Inter",
+   "pad": "4px 20px"
+  },
+  "nav": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(255, 255, 255)",
+   "radius": "12px",
+   "h": 34,
+   "size": "14px",
+   "weight": "500",
+   "font": "Inter",
+   "pad": "10px"
+  },
+  "sections": [
+   {
+    "bg": "rgba(0, 0, 0, 0)",
+    "h": 0,
+    "cls": "nav-utils__more-section"
+   },
+   {
+    "bg": "rgba(0, 0, 0, 0)",
+    "h": 0,
+    "cls": "nav-utils__more-section"
+   },
+   {
+    "bg": "rgba(0, 0, 0, 0)",
+    "h": 0,
+    "cls": "nav-utils__more-section"
+   },
+   {
+    "bg": "rgba(0, 0, 0, 0)",
+    "h": 0,
+    "cls": "nav-utils__more-section"
+   },
+   {
+    "bg": "rgba(0, 0, 0, 0)",
+    "h": 0,
+    "cls": "nav-utils__more-section"
+   },
+   {
+    "bg": "rgba(0, 0, 0, 0)",
+    "h": 0,
+    "cls": "waffle-menu-section"
+   },
+   {
+    "bg": "rgba(0, 0, 0, 0)",
+    "h": 0,
+    "cls": "nav-main__panel"
+   },
+   {
+    "bg": "rgba(0, 0, 0, 0)",
+    "h": 0,
+    "cls": "nav-main__panel"
+   }
+  ],
+  "headerBg": "rgba(0, 0, 0, 0)"
+ },
+ "footerMeta": {
+  "bg": "rgb(0, 5, 61)",
+  "color": "rgb(255, 255, 255)",
+  "font": "Inter",
+  "headings": [
+   "Get in touch",
+   "+1.888.799.9666+65 6460 2744",
+   "Download on Apple Store",
+   "Zoom Workplace for Apple",
+   "Download on Google Play",
+   "Zoom Workplace for Android",
+   "Download Center",
+   "Get the most out of Zoom",
+   "English",
+   "Singapore Dollars $",
+   "US Dollar $",
+   "Singapore Dollars $",
+   "Get in touch",
+   "+1.888.799.9666 +65 6460 2744",
+   "English",
+   "Singapore Dollars $",
+   "US Dollar $",
+   "Singapore Dollars $"
+  ]
+ },
+ "about": {
+  "text": "The heart of human connection",
+  "color": "rgb(0, 3, 31)",
+  "font": "Newsreader",
+  "size": "50px",
+  "weight": "500",
+  "page": "rgba(0, 0, 0, 0)"
+ }
+}
