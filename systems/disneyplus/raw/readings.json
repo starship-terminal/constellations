@@ -1,0 +1,144 @@
+{
+  "capturedAt": "2026-11-22",
+  "product": "Disney+",
+  "home": {
+    "url": "https://www.disneyplus.com/en-sg",
+    "title": "Disney, Marvel, Pixar, Star Wars, Nat Geo and Hulu | Disney+ Singapore",
+    "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 1 },
+    "body": {
+      "backgroundColor": "rgb(4, 7, 20)",
+      "color": "rgb(192, 192, 192)",
+      "fontFamily": "Inspire, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "25.2px"
+    },
+    "h1": {
+      "text": "Stream all your favourites and more.",
+      "color": "rgb(250, 250, 250)",
+      "fontFamily": "Inspire, sans-serif",
+      "fontSize": "40px",
+      "fontWeight": "700",
+      "lineHeight": "48px",
+      "letterSpacing": "-0.16px"
+    },
+    "login": {
+      "text": "LOG IN",
+      "backgroundColor": "rgba(0, 0, 0, 0.8)",
+      "color": "rgb(250, 250, 250)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "letterSpacing": "0.35px",
+      "lineHeight": "14px",
+      "borderRadius": "1000px",
+      "border": "2px solid rgb(111, 113, 123)",
+      "height": "36px",
+      "padding": "8px 12px",
+      "boxShadow": "none"
+    },
+    "loginHover": {
+      "backgroundColor": "color(srgb 0.90896 0.90896 0.91024)",
+      "color": "rgb(23, 23, 28)",
+      "border": "2px solid rgba(0, 0, 0, 0)"
+    },
+    "loginFocus": {
+      "outline": "1px auto rgb(0, 95, 204)",
+      "boxShadow": "none"
+    },
+    "annual": {
+      "text": "DISNEY+ ANNUAL",
+      "backgroundColor": "rgb(51, 221, 255)",
+      "color": "rgb(23, 23, 28)",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "letterSpacing": "0.4px",
+      "lineHeight": "16px",
+      "borderRadius": "1000px",
+      "height": "48px",
+      "padding": "12px 16px",
+      "boxShadow": "none"
+    },
+    "annualHover": {
+      "backgroundColor": "color(srgb 0.19136 0.804693 0.92864)",
+      "color": "rgb(23, 23, 28)"
+    },
+    "planLink": {
+      "color": "rgb(249, 249, 249)",
+      "textDecoration": "underline",
+      "fontSize": "18px",
+      "fontWeight": "400"
+    },
+    "customProperties": {
+      "--_1h179ja": "#040714",
+      "--background-override": "var(--_1h179ja)"
+    }
+  },
+  "loginWall": {
+    "url": "https://www.disneyplus.com/identity/login/enter-email",
+    "title": "Login to Disney+ | Login or Signup",
+    "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+    "body": {
+      "backgroundColor": "rgb(23, 23, 28)",
+      "color": "rgb(250, 250, 250)",
+      "fontFamily": "Inspire-Regular, Helvetica",
+      "fontSize": "16px",
+      "lineHeight": "24px"
+    },
+    "h1": {
+      "text": "Enter your email address to continue",
+      "color": "rgb(37, 37, 38)",
+      "fontFamily": "Inspire, sans-serif",
+      "fontSize": "28px",
+      "fontWeight": "600",
+      "lineHeight": "40px"
+    },
+    "email": {
+      "valueLength": 0,
+      "color": "rgb(37, 37, 38)",
+      "fontSize": "16px",
+      "height": "60px",
+      "padding": "26px 16px 10px"
+    },
+    "continue": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "borderRadius": "26px",
+      "height": "52px",
+      "padding": "14px 24px"
+    }
+  },
+  "plansWall": {
+    "url": "https://www.disneyplus.com/en-gb/commerce/plans",
+    "title": "Select Plan | Disney+",
+    "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+    "body": {
+      "backgroundColor": "rgb(23, 23, 28)",
+      "color": "rgb(250, 250, 250)",
+      "fontFamily": "Inspire-Regular, Helvetica",
+      "fontSize": "16px",
+      "lineHeight": "24px"
+    },
+    "h1": {
+      "text": "Choose your plan",
+      "color": "rgb(250, 250, 250)",
+      "fontSize": "32px",
+      "fontWeight": "600",
+      "lineHeight": "40px"
+    },
+    "selectPlan": {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "15px",
+      "fontWeight": "900",
+      "borderRadius": "1000px",
+      "height": "48px",
+      "boxShadow": "none"
+    }
+  },
+  "phone": {
+    "url": "https://www.disneyplus.com/en-sg",
+    "viewport": { "width": 390, "height": 844, "devicePixelRatio": 2 }
+  }
+}
