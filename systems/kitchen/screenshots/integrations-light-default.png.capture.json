@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:48:18.422Z",
+  "capturedAt": "2026-11-21T13:21:02.931Z",
   "screenshot": "integrations-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 5530
+      "height": 5699
     },
     "scroll": {
       "x": 0,

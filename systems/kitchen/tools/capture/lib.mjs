@@ -26,12 +26,23 @@ export const PAGES = {
   tutorials: '/tutorials',
   integrations: '/integrations',
   'how-it-works': '/how-it-works',
+  benefits: '/benefits',
   about: '/about',
+  'our-story': '/our-story',
   blog: '/blog',
+  'affiliate-program': '/affiliate-program',
+  'for-creative-agencies': '/for-creative-agencies',
+  'for-accounting-agencies': '/for-accounting-agencies',
+  'for-law-firms': '/for-law-firms',
+  'for-freelancers': '/for-freelancers',
   login: '/login',
+  'login-find': '/login/find',
   'get-started': '/get-started',
   'get-demo': '/get-demo',
   'cookie-policy': '/legal/cookie-policy',
+  terms: '/legal/terms',
+  privacy: '/legal/privacy',
+  dpa: '/legal/dpa',
 };
 
 // Hide cookie/consent overlays. Never click a consent control (that POSTs).

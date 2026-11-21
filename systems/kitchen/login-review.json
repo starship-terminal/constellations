@@ -1,0 +1,136 @@
+{
+  "product": "Kitchen.co",
+  "slug": "kitchen",
+  "date": "2026-11-21",
+  "scope": "public signed-out",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "submitted": false,
+  "typed": false,
+  "identity_providers_clicked": false,
+  "captcha_solved": false,
+  "account_created": false,
+  "probe_note": "https://kitchen.co/ loaded signed out in an incognito T3 preview tab. Log in redirects to /login/workspace: a workspace slug field and Continue. No Google, Apple, or other identity provider is on that page. Find your workspace asks for an email and offers Continue with Email, which would send a magic code. Get started asks for an email. Get a demo asks for a name, company, email, and a Cloudflare Turnstile check. Nothing was typed. No form was submitted. No identity provider was clicked. The captcha was not solved. The T3 preview pane did not produce screenshot frames, so photographs came from the package's headless public capture.",
+  "offered": {
+    "nav": {
+      "items": [],
+      "reached": [],
+      "note": "No signed-in navigation was offered. The public header shows Features, Solutions, Pricing, Tutorials, Affiliate Program, Log in, and Try it FREE. The phone Menu opens those same links."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No account settings control was offered on the public pages. Cookie Settings reopens the cookie dialog. It is not an account setting."
+    },
+    "create": {
+      "items": [
+        "Try it FREE",
+        "Get Started—it's FREE",
+        "Get Started",
+        "Sign up—it's free",
+        "Continue",
+        "Continue with Email",
+        "Request a demo"
+      ],
+      "reached": [
+        "signup wall at /get-started, photographed at rest",
+        "demo form at /get-demo, photographed at rest"
+      ],
+      "note": "Get started offers an empty email field and Continue. Find your workspace offers an empty email field and Continue with Email. The demo form offers first name, last name, company, email, a Turnstile check, and Request a demo. None of those were used."
+    }
+  },
+  "screens": [
+    "screenshots/about-light-default.png",
+    "screenshots/about-light-full.png",
+    "screenshots/affiliate-program-light-default.png",
+    "screenshots/affiliate-program-light-full.png",
+    "screenshots/benefits-light-default.png",
+    "screenshots/benefits-light-full.png",
+    "screenshots/blog-light-default.png",
+    "screenshots/buy-light-default.png",
+    "screenshots/buy-light-full.png",
+    "screenshots/cookie-policy-light-default.png",
+    "screenshots/dpa-light-default.png",
+    "screenshots/features-light-default.png",
+    "screenshots/features-light-full.png",
+    "screenshots/for-accounting-agencies-light-default.png",
+    "screenshots/for-creative-agencies-light-default.png",
+    "screenshots/for-freelancers-light-default.png",
+    "screenshots/for-law-firms-light-default.png",
+    "screenshots/get-demo-light-default.png",
+    "screenshots/get-started-light-default.png",
+    "screenshots/home-light-cookie-more.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-hero-conversations.png",
+    "screenshots/home-light-solutions-menu.png",
+    "screenshots/how-it-works-light-default.png",
+    "screenshots/how-it-works-light-full.png",
+    "screenshots/integrations-light-default.png",
+    "screenshots/integrations-light-full.png",
+    "screenshots/login-find-light-default.png",
+    "screenshots/login-light-default.png",
+    "screenshots/login-light-field-focused.png",
+    "screenshots/mobile-features-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-home-light-menu-open.png",
+    "screenshots/mobile-login-light-default.png",
+    "screenshots/mobile-pricing-light-default.png",
+    "screenshots/mobile-pricing-light-full.png",
+    "screenshots/mobile-reviews-light-default.png",
+    "screenshots/our-story-light-default.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-faq-open.png",
+    "screenshots/pricing-light-full.png",
+    "screenshots/privacy-light-default.png",
+    "screenshots/reviews-light-default.png",
+    "screenshots/reviews-light-full.png",
+    "screenshots/terms-light-default.png",
+    "screenshots/tutorials-light-default.png"
+  ],
+  "walls": [
+    {
+      "url": "https://kitchen.co/login/workspace",
+      "from": "https://kitchen.co/login",
+      "kind": "login",
+      "asks": "workspace slug, then Continue"
+    },
+    {
+      "url": "https://kitchen.co/login/find",
+      "from": "footer Find your workspace",
+      "kind": "login",
+      "asks": "email, then Continue with Email (magic code)"
+    },
+    {
+      "url": "https://kitchen.co/get-started",
+      "from": "Try it FREE and Get Started",
+      "kind": "signup",
+      "asks": "email, then Continue"
+    },
+    {
+      "url": "https://kitchen.co/get-demo",
+      "from": "footer Get a Demo",
+      "kind": "demo-request",
+      "asks": "first name, last name, company, email, Cloudflare Turnstile, Request a demo"
+    }
+  ],
+  "gaps": [
+    "Signed-in workspace, settings, and create flows were not opened. The 2026-11-18 workspace screenshots remain in the package and are not part of this public walk.",
+    "Blog search was not photographed. The search icon is covered by the sticky header, so the field never became visible. It was not submitted.",
+    "Login field focus was photographed, and the product draws no extra ring on that field.",
+    "No identity provider is offered on the public login or signup walls.",
+    "developer.kitchen.co, 2create.io, Facebook, and YouTube were not opened.",
+    "The T3 preview pane did not produce screenshot frames. Photographs are headless Chromium at 1440 and 390."
+  ],
+  "not_submitted": [
+    "login workspace Continue",
+    "find-workspace Continue with Email",
+    "get-started Continue",
+    "get-demo Request a demo",
+    "cookie Accept all, Reject all, and Done",
+    "blog search",
+    "pricing Pay Now",
+    "mailto Email Us and Feedback"
+  ]
+}
