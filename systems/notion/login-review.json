@@ -1,0 +1,86 @@
+{
+  "slug": "notion",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public web only. Homepage mapped before screenshots. No email, password, or code was typed. No form was submitted. Google, Apple, Microsoft, ChatGPT, Passkey, and SSO were not clicked.",
+  "offered": {
+    "nav": {
+      "product": {
+        "label": "Product",
+        "opens": "click dropdown",
+        "items": ["Capture", "Find", "Automate", "See all features", "See what's new", "Download the Notion App"]
+      },
+      "resources": {
+        "label": "Resources",
+        "opens": "click dropdown",
+        "items": ["Enterprise", "Small businesses", "Startups", "Developers", "What's New", "Customer stories", "Webinars", "Templates", "Consultants", "Academy", "Product tours", "Help Center"]
+      },
+      "pricing": {"label": "Pricing", "href": "https://www.notion.com/pricing"},
+      "request_a_demo": {"label": "Request a demo", "href": "https://www.notion.com/contact-sales", "submitted": false},
+      "log_in": {"label": "Log in", "href": "https://app.notion.com/login", "wall": true},
+      "get_notion_free": {"label": "Get Notion free", "href": "https://app.notion.com/signup", "wall": true},
+      "phone_menu": {"label": "Open navigation", "opens": "phone drawer", "width": 390}
+    },
+    "settings": {},
+    "create": {}
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-banner.png",
+    "screenshots/home-light-cta-hover.png",
+    "screenshots/home-light-cta-focus.png",
+    "screenshots/home-light-scrolled.png",
+    "screenshots/home-light-mobile-default.png",
+    "screenshots/home-light-mobile-menu.png",
+    "screenshots/home-dark-scheme.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-mobile-default.png",
+    "screenshots/enterprise-light-default.png",
+    "screenshots/customers-light-default.png",
+    "screenshots/download-light-default.png",
+    "screenshots/product-ai-light-default.png",
+    "screenshots/releases-light-default.png",
+    "screenshots/help-light-default.png",
+    "screenshots/templates-light-default.png",
+    "screenshots/blog-light-default.png",
+    "screenshots/security-light-default.png",
+    "screenshots/about-light-default.png",
+    "screenshots/product-light-default.png",
+    "screenshots/how-to-light-default.png",
+    "screenshots/login-light-default.png",
+    "screenshots/signup-light-default.png",
+    "screenshots/contact-sales-light-default.png",
+    "screenshots/site-tree/desktop-menu-product.png",
+    "screenshots/site-tree/desktop-menu-resources.png",
+    "screenshots/site-tree/phone-nav-drawer.png"
+  ],
+  "gaps": [
+    "Public-web capture only. Signed-in nav, settings, and create were not reached.",
+    "offered.settings and offered.create are empty. No signed-in settings or create control was on the public pages.",
+    "Log in redirects to app.notion.com/login. The empty email wall was photographed. Continue was not clicked. Google, ChatGPT, Apple, Microsoft, Passkey, and SSO were not clicked.",
+    "Get Notion free and Try Notion redirect to app.notion.com/signup. The empty work-email wall was photographed. Continue was not clicked. Google, Microsoft, and ChatGPT were not clicked.",
+    "Request a demo opens the work-email step on www.notion.com/contact-sales. Next was not clicked. Nothing was typed.",
+    "No public theme switch. prefers-color-scheme dark still paints the light page. Dark tokens were not invented.",
+    "origin/main had no systems/notion folder. The task named a refresh. This capture started from the public site.",
+    "catalog.json and DESIGN.md were not edited. Generating DESIGN.md needs a catalog entry.",
+    "/product/all-features and /a-new-shape-for-work returned 404. Those shots are the error page, not product pages."
+  ],
+  "not_submitted": [
+    "Continue",
+    "Next",
+    "Get Notion free",
+    "Try Notion",
+    "Sign up",
+    "Get started",
+    "Contact Sales",
+    "Request a demo",
+    "Google",
+    "Apple",
+    "Microsoft",
+    "ChatGPT",
+    "Passkey",
+    "SSO",
+    "Cookie settings",
+    "Download report"
+  ]
+}

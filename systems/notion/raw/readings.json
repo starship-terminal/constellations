@@ -1,0 +1,347 @@
+{
+  "readings": {
+    "captured": "2026-11-21",
+    "page": "https://www.notion.com/",
+    "title": "The AI workspace that works for you. | Notion",
+    "viewport": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1
+    },
+    "colorScheme": "normal",
+    "htmlClass": "QPCBRq_theme -Qs3Ha_noXScroll",
+    "themeMeta": [],
+    "manifest": null,
+    "maskColor": null,
+    "computed": {
+      "body": {
+        "text": "Product Resources Pricing Request a demo Log in Get Notion f",
+        "color": "rgba(0, 0, 0, 0.95)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "NotionInter, Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "border": "0px none rgba(0, 0, 0, 0.95)",
+        "padding": "0px",
+        "height": "4687.06px",
+        "boxShadow": "none",
+        "outline": "rgba(0, 0, 0, 0.95) none 0px"
+      },
+      "h1": {
+        "text": "Where teams and agents Think together.",
+        "color": "rgba(0, 0, 0, 0.95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "NotionInter, Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "96px",
+        "fontWeight": "600",
+        "lineHeight": "100px",
+        "letterSpacing": "-4.6px",
+        "borderRadius": "0px",
+        "border": "0px none rgba(0, 0, 0, 0.95)",
+        "padding": "0px",
+        "height": "210.109px",
+        "boxShadow": "none",
+        "outline": "rgba(0, 0, 0, 0.95) none 0px"
+      },
+      "navCta": {
+        "text": "Get Notion free",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(0, 117, 222)",
+        "fontFamily": "NotionInter, Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "8px",
+        "border": "1px solid rgba(255, 255, 255, 0)",
+        "padding": "4px 14px",
+        "height": "36px",
+        "boxShadow": "none",
+        "outline": "rgba(255, 255, 255, 0) solid 2px"
+      },
+      "heroCta": {
+        "text": "Get Notion free",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(0, 117, 222)",
+        "fontFamily": "NotionInter, Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "8px",
+        "border": "1px solid rgba(255, 255, 255, 0)",
+        "padding": "6px 15px",
+        "height": "38px",
+        "boxShadow": "none",
+        "outline": "rgba(255, 255, 255, 0) solid 2px"
+      },
+      "requestDemo": {
+        "text": "Request a demo",
+        "color": "rgba(0, 0, 0, 0.898)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "NotionInter, Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "4px",
+        "border": "0px none rgba(0, 0, 0, 0.898)",
+        "padding": "5px 10px",
+        "height": "30px",
+        "boxShadow": "none",
+        "outline": "rgba(255, 255, 255, 0) solid 2px"
+      },
+      "product": {
+        "text": "Product",
+        "color": "rgba(0, 0, 0, 0.898)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "NotionInter, Inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "4px",
+        "border": "0px none rgba(0, 0, 0, 0.898)",
+        "padding": "5px 10px",
+        "height": "30px",
+        "boxShadow": "none",
+        "outline": "rgba(255, 255, 255, 0) solid 2px"
+      }
+    },
+    "cssVarCount": 1194,
+    "cssVarsSample": {
+      "--tatami-border-radius-0": "0",
+      "--tatami-border-radius-200": ".25rem",
+      "--tatami-border-radius-300": ".3125rem",
+      "--tatami-border-radius-400": ".375rem",
+      "--tatami-border-radius-500": ".5rem",
+      "--tatami-border-radius-600": ".625rem",
+      "--tatami-border-radius-700": ".75rem",
+      "--tatami-border-radius-800": ".875rem",
+      "--tatami-border-radius-900": "1rem",
+      "--tatami-border-radius-round": "624.938rem",
+      "--tatami-color-artwork-notetaker-charcoal": "#1b1616",
+      "--tatami-color-artwork-notetaker-blue": "#2383e2",
+      "--tatami-color-gray-100": "#f9f9f8",
+      "--tatami-color-gray-200": "#f6f5f4",
+      "--tatami-color-gray-300": "#dfdcd9",
+      "--tatami-color-gray-400": "#a39e98",
+      "--tatami-color-gray-500": "#78736f",
+      "--tatami-color-gray-600": "#615d59",
+      "--tatami-color-gray-700": "#494744",
+      "--tatami-color-gray-800": "#31302e",
+      "--tatami-color-gray-900": "#191918",
+      "--tatami-color-red-100": "#fef3f1",
+      "--tatami-color-red-200": "#fdd3cd",
+      "--tatami-color-red-300": "#ff8b7c",
+      "--tatami-color-red-400": "#f77463",
+      "--tatami-color-red-500": "#f64932",
+      "--tatami-color-red-600": "#e32d14",
+      "--tatami-color-red-700": "#b01601",
+      "--tatami-color-red-800": "#6f0d00",
+      "--tatami-color-red-900": "#4f0900",
+      "--tatami-color-orange-100": "#fff5ed",
+      "--tatami-color-orange-200": "#ffdec4",
+      "--tatami-color-orange-300": "#ffad71",
+      "--tatami-color-orange-400": "#ff8a33",
+      "--tatami-color-orange-500": "#ff6d00",
+      "--tatami-color-orange-600": "#dd5b00",
+      "--tatami-color-orange-700": "#ab4a00",
+      "--tatami-color-orange-800": "#793400",
+      "--tatami-color-orange-900": "#532200",
+      "--tatami-color-yellow-100": "#fff5e0"
+    }
+  },
+  "pricing": [
+    {
+      "text": "Get Notion free",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(0, 117, 222)",
+      "borderRadius": "8px",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "padding": "4px 14px",
+      "border": "1px solid rgba(255, 255, 255, 0)"
+    },
+    {
+      "text": "Get started",
+      "color": "rgb(0, 91, 171)",
+      "backgroundColor": "rgb(230, 243, 254)",
+      "borderRadius": "8px",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "padding": "4px 14px",
+      "border": "1px solid rgba(255, 255, 255, 0)"
+    },
+    {
+      "text": "Get started",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(0, 117, 222)",
+      "borderRadius": "8px",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "padding": "4px 14px",
+      "border": "1px solid rgba(255, 255, 255, 0)"
+    },
+    {
+      "text": "Contact Sales",
+      "color": "rgb(9, 127, 232)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "8px",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "padding": "4px 14px",
+      "border": "1px solid rgba(255, 255, 255, 0)"
+    },
+    {
+      "text": "Get started",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(0, 117, 222)",
+      "borderRadius": "8px",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "padding": "4px 11px",
+      "border": "1px solid rgba(255, 255, 255, 0)"
+    },
+    {
+      "text": "Get started",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(0, 117, 222)",
+      "borderRadius": "8px",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "padding": "4px 11px",
+      "border": "1px solid rgba(255, 255, 255, 0)"
+    },
+    {
+      "text": "Contact us\u2192",
+      "color": "rgba(0, 0, 0, 0.898)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "5px",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "padding": "0px",
+      "border": "0px none rgba(0, 0, 0, 0.898)"
+    },
+    {
+      "text": "Enterprise",
+      "color": "rgba(0, 0, 0, 0.95)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "8px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "padding": "3px 16px 3px 8px",
+      "border": "0px none rgba(0, 0, 0, 0.95)"
+    }
+  ],
+  "login": {
+    "urlPath": "/login",
+    "host": "app.notion.com",
+    "title": "Notion - Log in",
+    "input": {
+      "color": "rgb(4, 4, 4)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(4, 4, 4)",
+      "borderRadius": "0px",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "fontFamily": "inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "padding": "0px",
+      "height": "26px",
+      "outline": "rgb(4, 4, 4) none 0px"
+    },
+    "continue": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(35, 131, 226)",
+      "border": "0px none rgb(255, 255, 255)",
+      "borderRadius": "8px",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "fontFamily": "inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "padding": "0px 12px",
+      "height": "40px",
+      "outline": "rgb(255, 255, 255) none 0px"
+    },
+    "heading": "inter, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\" 22px rgb(4, 4, 4)",
+    "providers": [
+      "Google",
+      "ChatGPT",
+      "Apple",
+      "Microsoft",
+      "Passkey",
+      "SSO"
+    ],
+    "inputFocus": {
+      "outline": "rgb(4, 4, 4) none 0px",
+      "boxShadow": "none",
+      "border": "0px none rgb(4, 4, 4)"
+    }
+  },
+  "favicon": [
+    {
+      "rel": "icon",
+      "href": "https://www.notion.com/front-static/favicon.ico",
+      "sizes": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.notion.com/front-static/logo-ios.png",
+      "sizes": null
+    }
+  ],
+  "productMenu": {
+    "opens": "button.HWB10a_dropdownTrigger click, aria-expanded=true",
+    "items": [
+      {
+        "label": "Capture",
+        "href": "/product/features#capture"
+      },
+      {
+        "label": "Find",
+        "href": "/product/features#find"
+      },
+      {
+        "label": "Automate",
+        "href": "/product/features#automate"
+      },
+      {
+        "label": "See all features",
+        "href": "/product/features"
+      },
+      {
+        "label": "See what's new",
+        "href": "/releases"
+      },
+      {
+        "label": "Download the Notion App",
+        "href": "/download"
+      }
+    ]
+  },
+  "resourcesMenu": {
+    "opens": "button.HWB10a_dropdownTrigger click",
+    "groups": {
+      "Notion for": [
+        "/enterprise",
+        "/teams",
+        "/startups",
+        "/product/dev"
+      ],
+      "Discover": [
+        "/releases",
+        "/customers",
+        "/webinars",
+        "/templates",
+        "/explore-consultants"
+      ],
+      "Learn": [
+        "https://academy.notion.com",
+        "/product/demos",
+        "/help"
+      ]
+    }
+  }
+}
