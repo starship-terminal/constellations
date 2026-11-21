@@ -15,6 +15,7 @@ Glossier is a public beauty shop. This package is a signed-out capture of [https
 | [icons/](icons/) | Index for that icon |
 | [raw/](raw/) | Computed-style readings |
 | [tools/](tools/) | Token check |
+| [style-guide.html](style-guide.html) | Measured colours, type, and buttons |
 
 `catalog.json` was left alone. `webapps-manifest.json` was left alone. `login-extracted` was not flipped.
 
