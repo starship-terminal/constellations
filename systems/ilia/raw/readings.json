@@ -1,0 +1,170 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://iliabeauty.com/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "title": "ILIA Beauty | Clean Makeup, Cosmetics, & Skincare",
+  "parked": false,
+  "captcha": false,
+  "currencyShown": "$SG",
+  "typed": false,
+  "submitted": false,
+  "loginExtracted": "not-started",
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(94, 80, 71)",
+    "fontFamily": "Post Grotesk",
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "fontWeight": "400"
+  },
+  "promo": {
+    "backgroundColor": "rgb(162, 96, 91)",
+    "color": "rgb(255, 255, 255)",
+    "height": "48px",
+    "fontSize": "12px",
+    "fontWeight": "500",
+    "letterSpacing": "1.2px",
+    "textTransform": "uppercase",
+    "opened": false
+  },
+  "header": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(39, 31, 31)",
+    "height": "111px"
+  },
+  "nav": {
+    "color": "rgb(39, 31, 31)",
+    "fontSize": "12px",
+    "fontWeight": "500",
+    "letterSpacing": "1.2px",
+    "textTransform": "uppercase"
+  },
+  "messageBand": {
+    "backgroundColor": "rgb(136, 47, 51)",
+    "color": "rgb(255, 255, 255)",
+    "height": "64px",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "letterSpacing": "1.2px",
+    "linkWeight": "500"
+  },
+  "hero": {
+    "kicker": {
+      "text": "THE BLACK FRIDAY SALE",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "20px",
+      "fontWeight": "500",
+      "letterSpacing": "2px",
+      "lineHeight": "30px"
+    },
+    "title": {
+      "text": "20% Off Sitewide",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "80px",
+      "fontWeight": "300",
+      "letterSpacing": "-3.2px",
+      "lineHeight": "72px"
+    },
+    "support": {
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "20px",
+      "fontWeight": "300",
+      "letterSpacing": "-0.4px",
+      "lineHeight": "30px"
+    },
+    "cta": {
+      "text": "SHOP THE SALE",
+      "color": "rgb(255, 255, 255)",
+      "border": "1.5px solid rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "height": "49px",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "letterSpacing": "1.2px",
+      "padding": "14px 32px",
+      "radius": "0px",
+      "clicked": false
+    }
+  },
+  "footer": {
+    "backgroundColor": "rgb(239, 230, 225)",
+    "color": "rgb(39, 31, 31)",
+    "subscribeFilled": false
+  },
+  "category": {
+    "url": "https://iliabeauty.com/collections/best-sellers",
+    "title": {
+      "text": "Best Sellers",
+      "color": "rgb(39, 31, 31)",
+      "fontSize": "40px",
+      "fontWeight": "300",
+      "letterSpacing": "-1.6px",
+      "lineHeight": "36px"
+    },
+    "dek": {
+      "text": "Fill Your Bag With These Fan Favorites.",
+      "fontSize": "20px",
+      "fontWeight": "300",
+      "letterSpacing": "-0.4px"
+    },
+    "cardTitle": {
+      "fontSize": "24px",
+      "fontWeight": "300",
+      "letterSpacing": "-0.96px",
+      "lineHeight": "27px",
+      "color": "rgb(39, 31, 31)"
+    },
+    "badge": {
+      "text": "SAVINGS IN CART",
+      "backgroundColor": "rgb(193, 49, 38)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "radius": "4px",
+      "height": "24px"
+    }
+  },
+  "product": {
+    "url": "https://iliabeauty.com/products/limitless-lash-lengthening-mascara",
+    "title": {
+      "text": "Limitless Lash Mascara",
+      "color": "rgb(39, 31, 31)",
+      "fontSize": "32px",
+      "fontWeight": "300",
+      "letterSpacing": "-1.28px",
+      "lineHeight": "28.8px"
+    },
+    "price": {
+      "text": "$28",
+      "color": "rgb(39, 31, 31)",
+      "fontSize": "20px",
+      "fontWeight": "500",
+      "letterSpacing": "-0.4px"
+    },
+    "bag": {
+      "backgroundColor": "rgb(39, 31, 31)",
+      "color": "rgb(255, 255, 255)",
+      "height": "60px",
+      "width": "560px",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "letterSpacing": "1.2px",
+      "radius": "0px",
+      "border": "1.5px solid rgb(39, 31, 31)",
+      "clicked": false
+    },
+    "crumb": {
+      "color": "rgb(117, 110, 101)",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "letterSpacing": "1.2px"
+    },
+    "cssVars": {
+      "--color-background": "255,255,255",
+      "--color-foreground": "94,80,71",
+      "--color-button-primary-background": "94,80,71",
+      "--color-button-primary-foreground": "255,255,255",
+      "--color-button-primary-active-background": "39,31,31",
+      "--color-button-primary-active-foreground": "255,255,255"
+    }
+  }
+}
