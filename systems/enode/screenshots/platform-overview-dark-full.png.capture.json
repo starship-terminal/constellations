@@ -1,71 +1,71 @@
 {
- "schemaVersion": 1,
- "capturedAt": "2026-11-13T20:08:39.351Z",
- "screenshot": "platform-overview-dark-full.png",
- "sanitizedSourceUrl": "https://enode.com/platform/overview",
- "requested": {
-  "viewport": {
-   "width": 1440,
-   "height": 900
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T10:43:45.269Z",
+  "screenshot": "platform-overview-dark-full.png",
+  "sanitizedSourceUrl": "https://enode.com/platform/overview",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
   },
-  "deviceScaleFactor": 1
- },
- "configuredViewport": {
-  "width": 1440,
-  "height": 900
- },
- "actual": {
-  "innerWidth": 1440,
-  "innerHeight": 900,
-  "devicePixelRatio": 1,
-  "theme": {
-   "classes": [],
-   "attributes": {
-    "data-mode": "dark"
-   },
-   "colorScheme": "normal"
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
   },
-  "visualViewport": {
-   "width": 1440,
-   "height": 900,
-   "scale": 1,
-   "offsetLeft": 0,
-   "offsetTop": 0,
-   "pageLeft": 0,
-   "pageTop": 0
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {
+        "data-mode": "dark"
+      },
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 12882
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
   },
-  "documentSize": {
-   "width": 1440,
-   "height": 12972
+  "capture": {
+    "mode": "fullPage",
+    "scale": "css",
+    "clip": null
   },
-  "scroll": {
-   "x": 0,
-   "y": 0
+  "png": {
+    "width": 1440,
+    "height": 12882
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 1440,
+      "height": 12882
+    },
+    "basis": "fullPage"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
   }
- },
- "capture": {
-  "mode": "fullPage",
-  "scale": "css",
-  "clip": null
- },
- "png": {
-  "width": 1440,
-  "height": 12972
- },
- "dimensionCheck": {
-  "status": "pass",
-  "expected": {
-   "width": 1440,
-   "height": 12972
-  },
-  "basis": "fullPage"
- },
- "visualReview": {
-  "status": "pending",
-  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
- },
- "cropCoordinates": {
-  "status": "unverified",
-  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
- }
 }
