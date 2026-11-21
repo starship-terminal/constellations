@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-21",
+  "route": "public-web",
+  "harness": "Grok Build",
+  "model": "grok-4.7",
+  "note": "Computed colours and pencraft custom properties. Screenshots were quantised after these readings. Nothing was typed.",
+  "viewports": {
+    "desktop": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 1 },
+    "phone": { "innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 1 }
+  },
+  "stoppedAt": [
+    "https://substack.com/sign-in",
+    "https://substack.com/onboarding?flow=creator_signup",
+    "homepage Sign in dialog"
+  ]
+}
