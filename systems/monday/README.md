@@ -1,5 +1,7 @@
 # monday.com
 
+Public site tree, dated 2026-11-22 (November 2026), is [site-tree.md](site-tree.md). That pass photographed the signed-out marketing pages and the empty login and signup walls. `catalog.json` was left alone. `webapps-manifest.json` was left alone. `login-extracted` stays not-started. A later burst hit HTTP 429, and those frames were discarded.
+
 monday.com's public marketing site and the signed-out login and signup forms, measured on 2026-11-19. No account was created. The marketing home (`monday.com`) is a Webflow page in Poppins on white, with a purple pill as the primary action. Pricing (`monday.com/pricing`) is a Next.js page on the same chrome. Login and signup live on `auth.monday.com` and paint the product token layer (Figtree for UI, Poppins for headings, primary blue `#0073ea`, 4px controls). Desktop captures are 1440×900 at 1x. Mobile captures are 390×844 at 2x. The product declares a dark theme. No signed-out page painted it.
 
 | Path | What it holds |
@@ -12,6 +14,8 @@ monday.com's public marketing site and the signed-out login and signup forms, me
 | [patterns.md](patterns.md) | How the home, pricing, login and signup pages are put together |
 | [components/](components/) | Crops of the measured controls |
 | [screenshots/](screenshots/) | Viewport captures of the public and signed-out pages |
+| [site-tree.md](site-tree.md) | Header, footer, and the public pages those controls open. Mapped 2026-11-22 |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login-extracted` is not-started |
 | [icons/](icons/) | A reconstructed mark, labelled as a reconstruction |
 | [icon.png](icon.png) | The site's apple-touch icon, resized to 128 px |
 | [raw/](raw/) | Custom properties and computed styles the tokens were built from |
