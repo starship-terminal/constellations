@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:23:31.654Z",
+  "capturedAt": "2026-11-21T13:27:52.558Z",
   "screenshot": "mobile-profile-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 3756
+      "height": 4038
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 780,
-    "height": 7512
+    "height": 8076
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 780,
-      "height": 7512
+      "height": 8076
     },
     "basis": "fullPage"
   },

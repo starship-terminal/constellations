@@ -1,31 +1,31 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-18T09:23:10.308Z",
- "screenshot": "mobile-home-light-full.png",
+ "capturedAt": "2026-11-21T13:27:19.454Z",
+ "screenshot": "terms-light-full.png",
  "sanitizedSourceUrl": null,
  "requested": {
   "viewport": {
-   "width": 390,
-   "height": 844
+   "width": 1440,
+   "height": 900
   },
-  "deviceScaleFactor": 2
+  "deviceScaleFactor": 1
  },
  "configuredViewport": {
-  "width": 390,
-  "height": 844
+  "width": 1440,
+  "height": 900
  },
  "actual": {
-  "innerWidth": 390,
-  "innerHeight": 844,
-  "devicePixelRatio": 2,
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
   "theme": {
    "classes": [],
    "attributes": {},
    "colorScheme": "normal"
   },
   "visualViewport": {
-   "width": 390,
-   "height": 844,
+   "width": 1440,
+   "height": 900,
    "scale": 1,
    "offsetLeft": 0,
    "offsetTop": 0,
@@ -33,8 +33,8 @@
    "pageTop": 0
   },
   "documentSize": {
-   "width": 395,
-   "height": 10408
+   "width": 1440,
+   "height": 23918
   },
   "scroll": {
    "x": 0,
@@ -47,19 +47,19 @@
   "clip": {
    "x": 0,
    "y": 0,
-   "width": 390,
-   "height": 10408
+   "width": 1440,
+   "height": 23918
   }
  },
  "png": {
-  "width": 780,
-  "height": 20816
+  "width": 1440,
+  "height": 23918
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
-   "width": 780,
-   "height": 20816
+   "width": 1440,
+   "height": 23918
   },
   "basis": "stitchedParts"
  },
@@ -72,21 +72,21 @@
   "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
  },
  "stitchedFrom": [
-  "mobile-home-light-full.part0.png",
-  "mobile-home-light-full.part1.png"
+  "terms-light-full.part0.png",
+  "terms-light-full.part1.png"
  ],
  "partClip": [
   {
    "x": 0,
    "y": 0,
-   "width": 390,
-   "height": 7000
+   "width": 1440,
+   "height": 14000
   },
   {
    "x": 0,
-   "y": 7000,
-   "width": 390,
-   "height": 3408
+   "y": 14000,
+   "width": 1440,
+   "height": 9918
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:23:29.715Z",
+  "capturedAt": "2026-11-21T13:27:51.308Z",
   "screenshot": "mobile-profile-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 3756
+      "height": 4038
     },
     "scroll": {
       "x": 0,
