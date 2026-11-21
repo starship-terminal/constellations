@@ -2000,9 +2000,9 @@
       "description": "Create content at scale",
       "status": "captured",
       "package": "systems/feedhive",
-      "notes": "https://www.feedhive.com/login is 404. Login opens https://app.feedhive.com/signin with email and password, or Google. No code was sent.",
+      "notes": "https://www.feedhive.com/login is 404. Login opens https://app.feedhive.com/signin with email and password, or Google. No code was sent. Public walk 2026-11-21: the public site tree is in systems/feedhive/site-tree.md. https://www.feedhive.com/login is still a 404. Login stops at https://app.feedhive.com/signin with email, password, Sign in, and Sign in with Google. Sign up stops at https://app.feedhive.com/signup with name, email, password, and Sign up with Google. Nothing was typed. Google was not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1663 at f4836453f976. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 6
     },
     {
