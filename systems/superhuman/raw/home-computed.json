@@ -1,0 +1,79 @@
+{
+  "href": "https://superhuman.com/",
+  "colorScheme": "light",
+  "body": {
+    "text": "Products Solutions AI Resources Pricing Love Contact sales Sign in Looking for S",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(41, 40, 39)",
+    "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "16px",
+    "weight": "360",
+    "radius": "0px",
+    "pad": "0px",
+    "border": "0px none rgb(41, 40, 39)",
+    "lh": "19.2px",
+    "ls": "normal",
+    "h": 7846
+  },
+  "h1": {
+    "text": "Superpowers, everywhere you work",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "64px",
+    "weight": "440",
+    "radius": "0px",
+    "pad": "0px",
+    "border": "0px none rgb(255, 255, 255)",
+    "lh": "61.44px",
+    "ls": "normal",
+    "h": 123
+  },
+  "cta": {
+    "text": "Get Superhuman",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "16px",
+    "weight": "360",
+    "radius": "12px",
+    "pad": "6px 6px 6px 16px",
+    "border": "1px solid color(srgb 1 1 1 / 0.12)",
+    "lh": "19.2px",
+    "ls": "normal",
+    "h": 50
+  },
+  "contact": {
+    "text": "Contact sales",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(41, 40, 39)",
+    "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "16px",
+    "weight": "360",
+    "radius": "0px",
+    "pad": "0px",
+    "border": "0px none rgb(41, 40, 39)",
+    "lh": "19.2px",
+    "ls": "normal",
+    "h": 36
+  },
+  "header": {
+    "text": "Products Solutions AI Resources Pricing Love Contact sales Sign in",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(41, 40, 39)",
+    "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "16px",
+    "weight": "360",
+    "radius": "0px",
+    "pad": "0px",
+    "border": "",
+    "lh": "19.2px",
+    "ls": "normal",
+    "h": 67
+  },
+  "inner": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+  }
+}

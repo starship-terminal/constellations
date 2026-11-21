@@ -1,0 +1,127 @@
+{
+  "pageBg": "rgb(255, 255, 255)",
+  "mainBg": "rgba(0, 0, 0, 0)",
+  "h1": {
+    "text": "Your Superhuman suite",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(41, 40, 39)",
+    "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "61px",
+    "weight": "360",
+    "radius": "0px",
+    "border": "0px rgb(41, 40, 39)",
+    "lh": "67.1px",
+    "ls": "-1.6775px"
+  },
+  "prices": [
+    {
+      "text": "$0",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(41, 40, 39)",
+      "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "size": "32px",
+      "weight": "500",
+      "radius": "0px",
+      "border": "0px rgb(41, 40, 39)",
+      "lh": "48px",
+      "ls": "-0.88px"
+    },
+    {
+      "text": "$12",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(41, 40, 39)",
+      "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "size": "32px",
+      "weight": "500",
+      "radius": "0px",
+      "border": "0px rgb(41, 40, 39)",
+      "lh": "48px",
+      "ls": "-0.88px"
+    },
+    {
+      "text": "$15",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(41, 40, 39)",
+      "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "size": "12px",
+      "weight": "700",
+      "radius": "0px",
+      "border": "0px rgb(41, 40, 39)",
+      "lh": "18px",
+      "ls": "normal"
+    },
+    {
+      "text": "$33",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(41, 40, 39)",
+      "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "size": "32px",
+      "weight": "500",
+      "radius": "0px",
+      "border": "0px rgb(41, 40, 39)",
+      "lh": "48px",
+      "ls": "-0.88px"
+    },
+    {
+      "text": "$40",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(41, 40, 39)",
+      "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "size": "12px",
+      "weight": "700",
+      "radius": "0px",
+      "border": "0px rgb(41, 40, 39)",
+      "lh": "18px",
+      "ls": "normal"
+    },
+    {
+      "text": "$0",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(41, 40, 39)",
+      "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "size": "18px",
+      "weight": "440",
+      "radius": "0px",
+      "border": "0px rgb(41, 40, 39)",
+      "lh": "27px",
+      "ls": "-0.135px"
+    }
+  ],
+  "best": {
+    "text": "Best value",
+    "bg": "rgb(41, 40, 39)",
+    "color": "rgb(255, 255, 255)",
+    "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "14px",
+    "weight": "440",
+    "radius": "8px 8px 0px 0px",
+    "border": "1px rgb(41, 40, 39)",
+    "lh": "22px",
+    "ls": "normal"
+  },
+  "businessBtn": {
+    "text": "Get Superhuman Business",
+    "bg": "rgb(113, 76, 182)",
+    "color": "rgb(255, 255, 255)",
+    "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "16px",
+    "weight": "500",
+    "radius": "12px",
+    "border": "0px rgb(255, 255, 255)",
+    "lh": "16px",
+    "ls": "normal"
+  },
+  "freeBtn": {
+    "text": "Get Superhuman Free",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(113, 76, 182)",
+    "font": "\"Super Sans VF\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "16px",
+    "weight": "500",
+    "radius": "12px",
+    "border": "0px rgb(113, 76, 182)",
+    "lh": "16px",
+    "ls": "normal"
+  },
+  "scheme": "light"
+}
