@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from blog.blueapron.com on 2026-11-11 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme (the footer paints a dark-bold section theme), with any promo popup hidden (never answered; the cookie banner is disabled sitewide), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from blog.blueapron.com on 2026-11-21 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme (the footer paints a dark-bold section theme), with any promo popup hidden (never answered; the cookie banner is disabled sitewide), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -195,7 +195,7 @@ Page: home. Selector: `.sqs-block-search input`. States: default, focused, fille
 | Cursor | text | = | = |
 | Placeholder | #666666, opacity 1 | = | = |
 | Painted layers | input.search-input 434.3x43.0 border T:1px solid #aaaaaa / R:1px solid #aaaaaa / B:1px solid #aaaaaa / L:1px solid #aaaaaa | input.search-input 434.3x43.0 border T:1px solid #aaaaaa / R:1px solid #aaaaaa / B:1px solid #aaaaaa / L:1px solid #aaaaaa outline 2px solid #000000 offset 4px | input.search-input 434.3x43.0 border T:1px solid #aaaaaa / R:1px solid #aaaaaa / B:1px solid #aaaaaa / L:1px solid #aaaaaa outline 2px solid #000000 offset 4px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | typed "dinner ideas", then deleted; nothing sent |
 
 Crops: `search-field-default.png`, `search-field-focused.png`, `search-field-filled.png`.
 
@@ -455,7 +455,7 @@ Page: home. Selector: `.sqs-button-element--primary`. States: default, hover, fo
 | Cursor | pointer | - | = | = |
 | Painted layers | a.header-skip-link.sqs-button-element--primary 176.1x65.0 bg #2959e0 r 300px | - | a.header-skip-link.sqs-button-element--primary 176.1x65.0 bg #2959e0 r 300px outline 2px solid #000000 offset 4px | = |
 | How | at rest | - | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Error | - | locator.hover: Element is outside of the viewport Call log:   - waiting for locator('.sqs-button-element--primary, a.sqs-block-button-element--primary').filter({ visible: true }).first().filter({ visi | = | = |
+| Error | - | locator.hover: Element is outside of the viewport Call log: [2m  - waiting for locator('.sqs-button-element--primary, a.sqs-block-button-element--primary').filter({ visible: true }).first().filter({  | = | = |
 | Opacity | - | = | = | 0.8 |
 
 Crops: `button-primary-default.png`, `button-primary-focus-visible.png`, `button-primary-pressed.png`.
@@ -555,7 +555,7 @@ Page: category. Selector: `.blog-item on /guides/category`. States: default.
 | Text node | a.blog-categories: Almarai 16px/24px 400, #000000 |
 | Transition | opacity 1s ease |
 | Transform | matrix(1, 0, 0, 1, 933, 0) |
-| Opacity | 0.999394 |
+| Opacity | 0.999848 |
 | Painted layers | a::after.blog-more-link 68.0469pxx1px bg #2959e0 |
 | How | at rest |
 
@@ -1016,7 +1016,7 @@ Page: mobile. Selector: `.blog-item at 390`. States: default.
 | Text node | time.blog-date: Almarai 16px/24px 400, #000000 |
 | Transition | opacity 1s ease |
 | Transform | matrix(1, 0, 0, 1, 0, 0) |
-| Opacity | 0.575858 |
+| Opacity | 0.575844 |
 | Painted layers | a::after.blog-more-link 71.4375pxx1px bg #2959e0 |
 | How | at rest |
 

@@ -1,6 +1,6 @@
 # Blue Apron components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from blog.blueapron.com on 2026-11-11, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the search field was filled with sample text and cleared, never run. www.blueapron.com itself is edge-blocked for this client — see Gaps.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from blog.blueapron.com on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the search field was filled with sample text and cleared, never run. www.blueapron.com itself is edge-blocked for this client — see Gaps.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (43 components, 85 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -274,7 +274,7 @@ The Recipes category listing heading. Read as `cat-title` on the category list p
 #### Category card
 A post card on the category listing. Read as `cat-card` on the category list page.
 
-**Values (default).** size 392 x 733.75; background transparent; text Almarai 16/24 400, #000000 `color.neutral.ink`; transition opacity 1s ease; transform translate(933px, 0px); opacity 0.999394; layers a::after.blog-more-link 68.0469pxx1px rgb(41, 89, 224).
+**Values (default).** size 392 x 733.75; background transparent; text Almarai 16/24 400, #000000 `color.neutral.ink`; transition opacity 1s ease; transform translate(933px, 0px); opacity 0.999848; layers a::after.blog-more-link 68.0469pxx1px rgb(41, 89, 224).
 
 Child layers that carry the look: a::after 68.0469pxx1px background #2959e0 `color.brand.accent`.
 
@@ -454,7 +454,7 @@ A nav link inside the opened menu overlay. Read as `m-nav-item` on the blog home
 #### Mobile blog card
 Read as `m-blog-card` on the blog home page at 390 wide.
 
-**Values (default).** size 343 x 679.47; background transparent; text Almarai 16/24 400, #000000 `color.neutral.ink`; transition opacity 1s ease; opacity 0.575858; layers a::after.blog-more-link 71.4375pxx1px rgb(41, 89, 224).
+**Values (default).** size 343 x 679.47; background transparent; text Almarai 16/24 400, #000000 `color.neutral.ink`; transition opacity 1s ease; opacity 0.575844; layers a::after.blog-more-link 71.4375pxx1px rgb(41, 89, 224).
 
 Child layers that carry the look: a::after 71.4375pxx1px background #2959e0 `color.brand.accent`.
 
