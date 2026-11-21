@@ -1,0 +1,46 @@
+{
+  "slug": "patternbrands",
+  "reviewedAt": "2026-11-21",
+  "productUrl": "https://www.patternbrands.com/",
+  "signedInSurface": false,
+  "loginWall": false,
+  "note": "No signed-in surface. The public site has no sign-in form, no account link and no OAuth button. /login, /signin, /sign-in, /account and /auth return the Webflow Page Not Found page. Nothing was typed into a form.",
+  "probes": [
+    {
+      "url": "https://www.patternbrands.com/login",
+      "status": 404,
+      "title": "Not Found",
+      "visibleText": "Page Not Found. The page you are looking for doesn't exist or has been moved. Go Home."
+    },
+    {
+      "url": "https://www.patternbrands.com/signin",
+      "status": 404,
+      "title": "Not Found",
+      "visibleText": "Page Not Found. The page you are looking for doesn't exist or has been moved. Go Home."
+    },
+    {
+      "url": "https://www.patternbrands.com/sign-in",
+      "status": 404,
+      "title": "Not Found",
+      "visibleText": "Page Not Found. The page you are looking for doesn't exist or has been moved. Go Home."
+    },
+    {
+      "url": "https://www.patternbrands.com/account",
+      "status": 404,
+      "title": "Not Found",
+      "visibleText": "Page Not Found. The page you are looking for doesn't exist or has been moved. Go Home."
+    },
+    {
+      "url": "https://www.patternbrands.com/auth",
+      "status": 404,
+      "title": "Not Found",
+      "visibleText": "Page Not Found. The page you are looking for doesn't exist or has been moved. Go Home."
+    }
+  ],
+  "publicScreensReached": [
+    "https://www.patternbrands.com/",
+    "https://www.patternbrands.com/terms-of-service",
+    "https://www.patternbrands.com/privacy-policy",
+    "https://www.patternbrands.com/login (404 Page Not Found, not a login wall)"
+  ]
+}
