@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>District style guide</title>
+<style>
+  body { margin: 0; font: 16px/24px sans-serif; background: #fff; color: #131316; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-size: 32px; line-height: 40px; }
+  table { border-collapse: collapse; width: 100%; }
+  td { border-bottom: 1px solid #f1f1f2; padding: 8px 12px; font-size: 14px; }
+  i { display: inline-block; width: 28px; height: 28px; border-radius: 6px; border: 1px solid #f1f1f2; }
+  .pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 9999px; border: 1px solid #bfbfc4; font-weight: 600; }
+  .primary { display: inline-flex; align-items: center; height: 48px; padding: 0 16px; border-radius: 12px; background: #6444e4; color: #fff; font-weight: 600; }
+  .nav { color: #5815fd; font-weight: 600; border-bottom: 3px solid #5815fd; }
+</style>
+</head>
+<body>
+<main>
+  <h1>District</h1>
+  <p>Rendered from tokens.json. Public pages are light.</p>
+  <p><span class="nav">For you</span> <span class="pill">Login</span> <span class="primary">Send message</span></p>
+  <table>
+<tr><td><i style="background:var(--color-grey-900)"></i></td><td>light.color.text.primary</td><td>{color.grey.900}</td></tr>
+<tr><td><i style="background:var(--color-grey-500)"></i></td><td>light.color.text.secondary</td><td>{color.grey.500}</td></tr>
+<tr><td><i style="background:var(--color-grey-400)"></i></td><td>light.color.text.tertiary</td><td>{color.grey.400}</td></tr>
+<tr><td><i style="background:var(--color-grey-200)"></i></td><td>light.color.text.disabled</td><td>{color.grey.200}</td></tr>
+<tr><td><i style="background:var(--color-grey-50)"></i></td><td>light.color.text.inverse</td><td>{color.grey.50}</td></tr>
+<tr><td><i style="background:var(--color-brand-purple)"></i></td><td>light.color.text.brand</td><td>{color.brand.purple}</td></tr>
+<tr><td><i style="background:var(--color-purple-400)"></i></td><td>light.color.text.offer</td><td>{color.purple.400}</td></tr>
+<tr><td><i style="background:var(--color-green-700)"></i></td><td>light.color.text.success</td><td>{color.green.700}</td></tr>
+<tr><td><i style="background:var(--color-yellow-600)"></i></td><td>light.color.text.warning</td><td>{color.yellow.600}</td></tr>
+<tr><td><i style="background:var(--color-ember-600)"></i></td><td>light.color.text.error</td><td>{color.ember.600}</td></tr>
+<tr><td><i style="background:var(--color-brand-white)"></i></td><td>light.color.surface.page</td><td>{color.brand.white}</td></tr>
+<tr><td><i style="background:var(--color-grey-100)"></i></td><td>light.color.surface.secondary</td><td>{color.grey.100}</td></tr>
+<tr><td><i style="background:var(--color-grey-900)"></i></td><td>light.color.surface.inverse</td><td>{color.grey.900}</td></tr>
+<tr><td><i style="background:var(--color-brand-purple)"></i></td><td>light.color.border.brand</td><td>{color.brand.purple}</td></tr>
+<tr><td><i style="background:var(--color-green-700)"></i></td><td>light.color.border.success</td><td>{color.green.700}</td></tr>
+<tr><td><i style="background:var(--color-yellow-600)"></i></td><td>light.color.border.warning</td><td>{color.yellow.600}</td></tr>
+<tr><td><i style="background:var(--color-brand-purple)"></i></td><td>light.color.icon.brand</td><td>{color.brand.purple}</td></tr>
+<tr><td><i style="background:var(--color-grey-800)"></i></td><td>light.color.icon.primary</td><td>{color.grey.800}</td></tr>
+<tr><td><i style="background:var(--color-brand-purple)"></i></td><td>light.color.accent.default</td><td>{color.brand.purple}</td></tr>
+<tr><td><i style="background:var(--color-purple-400)"></i></td><td>light.color.accent.offer</td><td>{color.purple.400}</td></tr>
+<tr><td><i style="background:#2c2c2e"></i></td><td>light.color.control.loginText</td><td>#2c2c2e</td></tr>
+<tr><td><i style="background:#bfbfc4"></i></td><td>light.color.control.loginBorder</td><td>#bfbfc4</td></tr>
+<tr><td><i style="background:#f7f7f7"></i></td><td>light.color.control.loginHover</td><td>#f7f7f7</td></tr>
+<tr><td><i style="background:rgba(0, 0, 0, 0.239)"></i></td><td>light.color.control.chipBorder</td><td>rgba(0, 0, 0, 0.239)</td></tr>
+<tr><td><i style="background:#77777e"></i></td><td>light.color.control.disabledText</td><td>#77777e</td></tr>
+<tr><td><i style="background:#bfbfc4"></i></td><td>light.color.control.disabledFill</td><td>#bfbfc4</td></tr>
+<tr><td><i style="background:#131316"></i></td><td>light.color.control.selectedFill</td><td>#131316</td></tr>
+<tr><td><i style="background:#ffffff"></i></td><td>light.color.control.onSelected</td><td>#ffffff</td></tr>
+<tr><td><i style="background:#5815fd"></i></td><td>light.color.control.navSelected</td><td>#5815fd</td></tr>
+<tr><td><i style="background:#f1f1f2"></i></td><td>light.color.control.headerBorder</td><td>#f1f1f2</td></tr>
+<tr><td><i style="background:rgba(0, 0, 0, 0.25)"></i></td><td>light.color.control.scrim</td><td>rgba(0, 0, 0, 0.25)</td></tr>
+  </table>
+</main>
+</body>
+</html>
