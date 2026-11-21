@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:21.350Z",
+  "screenshot": "apps-light-default.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/apps",
+  "actual": {
+    "href": "https://www.producthunt.com/apps",
+    "title": "Apps",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 2045
+  },
+  "note": null
+}

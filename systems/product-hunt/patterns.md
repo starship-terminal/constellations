@@ -1,6 +1,6 @@
 # Patterns
 
-Public signed-out pages. No screenshots.
+Public signed-out pages. Screenshots are in [screenshots/](screenshots/). The control map is [site-tree.md](site-tree.md).
 
 ## Home
 
@@ -24,11 +24,11 @@ The footer is `#101828` with category columns.
 
 ## Login
 
-`/login` renders a signup card. Copy says the community discovers and shares products. Six OAuth buttons. No email field, so AgentMail signup was not possible.
+`/login` renders a signup card. Copy says the community discovers and shares products. Six OAuth buttons. No email field. Photographed empty on 2026-11-21 and not entered. [screenshots/login-light-default.png](screenshots/login-light-default.png)
 
 ## Newsletter
 
-`/newsletters`. An email field and a coral Subscribe button. Submitting a filled address replaced the form with "Check kaichen@agentmail.to to confirm your subscription." The confirmation link from the mail did not stay on the URL, and the page did not show a confirmed state.
+`/newsletters`. An email field and a coral Subscribe button. The field was left empty on this pass. Nothing was typed and the form was not submitted. [screenshots/newsletters-light-default.png](screenshots/newsletters-light-default.png)
 
 ## Stories, about, apps
 

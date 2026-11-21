@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:25.698Z",
+  "screenshot": "stories-light-default.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/stories",
+  "actual": {
+    "href": "https://www.producthunt.com/stories",
+    "title": "Stories | Product Hunt",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 4654
+  },
+  "note": null
+}

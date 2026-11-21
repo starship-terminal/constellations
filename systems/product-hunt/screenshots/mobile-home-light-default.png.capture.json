@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:34.984Z",
+  "screenshot": "mobile-home-light-default.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/",
+  "actual": {
+    "href": "https://www.producthunt.com/",
+    "title": "Product Hunt – The best new products in tech.",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "scrollHeight": 7783
+  },
+  "note": null
+}

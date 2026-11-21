@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:16.924Z",
+  "screenshot": "newsletters-light-default.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/newsletters",
+  "actual": {
+    "href": "https://www.producthunt.com/newsletters",
+    "title": "The best products in your inbox",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 2013
+  },
+  "note": null
+}

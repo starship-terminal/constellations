@@ -1,0 +1,56 @@
+{
+  "capturedAt": "2026-11-21",
+  "route": "public-web",
+  "browser": "headed Chromium via CDP, devicePixelRatio 1",
+  "widths": [
+    {"innerWidth": 1440, "innerHeight": 900, "pages": "desktop"},
+    {"innerWidth": 390, "innerHeight": 844, "pages": "mobile home and product"}
+  ],
+  "theme": "light painted. colorScheme computed to normal. dark custom properties were not painted.",
+  "computed": {
+    "signIn": {
+      "background": "rgb(255, 97, 84)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "24px",
+      "borderRadius": "9999px",
+      "height": 40,
+      "padding": "0px 16px"
+    },
+    "search": {
+      "background": "rgb(242, 244, 247)",
+      "color": "rgb(75, 88, 124)",
+      "fontSize": "16px",
+      "borderRadius": "9999px",
+      "height": 40,
+      "padding": "0px 40px"
+    },
+    "h1": {
+      "color": "rgb(16, 24, 40)",
+      "fontSize": "24px",
+      "fontWeight": "600",
+      "lineHeight": "32px"
+    },
+    "nav": {
+      "color": "rgb(52, 64, 84)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "24px"
+    },
+    "page": "rgb(255, 255, 255)",
+    "fontFamily": "-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif"
+  },
+  "declared": {
+    "--text-primary": "#101828",
+    "--text-secondary": "#344054",
+    "--text-tertiary": "#475467",
+    "--background-primary": "#fff",
+    "--background-secondary": "#f9fafb",
+    "--background-tertiary": "#f2f4f7",
+    "--border-primary": "#eaecf0",
+    "--nav-menu-highlight-bg": "#f5f8ff",
+    "--nav-icon-color": "#667085"
+  },
+  "stoppedAt": "https://www.producthunt.com/login empty OAuth wall. No identity provider clicked. No form submitted."
+}
