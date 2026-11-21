@@ -1,0 +1,83 @@
+{
+  "product": "Slite",
+  "domain": "slite.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Incognito preview tab, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in",
+      "url": "https://slite.com/organization/select",
+      "title": "Sign in to your workspace | Slite",
+      "painted": true,
+      "headings": ["Sign in"],
+      "asksFor": [
+        {
+          "label": "Find your workspaces",
+          "name": "email",
+          "type": "email",
+          "placeholder": "name@company.com",
+          "valueLength": 0
+        },
+        {
+          "label": "Use your workspace URL",
+          "name": "domain",
+          "type": "text",
+          "placeholder": "subdomain",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "Email me my workspaces (disabled while the email field is empty)",
+        "Create a new workspace"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-empty-light-1440.png",
+      "note": "Empty sign-in wall. The email field and the subdomain field were empty. The email button was not clicked. No identity provider was shown."
+    },
+    {
+      "control": "header Start for free",
+      "url": "https://slite.com/organization/create",
+      "title": "Get started | Slite",
+      "painted": true,
+      "headings": ["Create your account"],
+      "asksFor": [
+        {
+          "label": "Your work email",
+          "type": "email",
+          "placeholder": "Your work email",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [
+        "Continue with Google",
+        "Continue with Apple",
+        "Continue with Slack"
+      ],
+      "otherControls": [
+        "Continue with email",
+        "terms",
+        "privacy policy",
+        "join an existing workspace"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/signup-empty-light-1440.png",
+      "note": "Empty signup wall. The email field was empty. Continue with email was not clicked. Google, Apple, and Slack were visible and were not clicked."
+    }
+  ],
+  "notOpened": [
+    "Continue with Google, Continue with Apple, and Continue with Slack were not clicked.",
+    "Continue with email, Email me my workspaces, and the workspace URL field were not submitted.",
+    "Pricing Get started and Contact Sales were not clicked. Those are signup and sales walls.",
+    "Book demo and newsletter forms were photographed empty and not submitted.",
+    "The Knowledge Framework Playbook Get access form was photographed empty and not submitted.",
+    "Checkout and subscribe were not opened."
+  ]
+}
