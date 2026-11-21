@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>StockX style guide</title>
+  <style>
+    :root {
+      --page: #121212;
+      --surface: #242424;
+      --footer: #393939;
+      --text: #fafafa;
+      --secondary: #cfcfcf;
+      --inverse: #0f0f0f;
+      --brand: #95c0a4;
+      --border: #5f5f5f;
+      --image: #ffffff;
+      --deals: #ef6958;
+      --success: #4fc58c;
+      --warning: #f5ba1a;
+      --about-ink: #242424;
+      --ui: "Suisse Intl", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --display: "Gestura Reg", "Times New Roman", Times, serif;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: var(--ui);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+    header.bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      height: 91px;
+      padding: 0 24px;
+      background: var(--page);
+    }
+    .mark {
+      color: var(--brand);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      font-size: 22px;
+    }
+    .search {
+      flex: 1;
+      height: 42px;
+      box-sizing: border-box;
+      padding: 0 40px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--secondary);
+      font: 400 16px/22px var(--ui);
+    }
+    .signup {
+      height: 36px;
+      box-sizing: border-box;
+      padding: 8px 16px;
+      border: 0;
+      border-radius: 100px;
+      background: var(--text);
+      color: var(--inverse);
+      font: 600 14px/17.5px var(--ui);
+    }
+    nav.cats {
+      display: flex;
+      gap: 8px;
+      height: 48px;
+      align-items: center;
+      padding: 0 24px;
+      font-size: 16px;
+    }
+    nav.cats .deals { color: var(--deals); font-weight: 500; }
+    main { padding: 32px 24px 48px; }
+    h1 {
+      font-family: var(--display);
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 65px;
+      letter-spacing: -0.64px;
+      margin: 0;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+      margin: 32px 0 12px;
+    }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 96px; }
+    .chip { height: 48px; border-radius: 8px; }
+    .label {
+      margin-top: 6px;
+      font-size: 12px;
+      line-height: 16px;
+      color: var(--secondary);
+    }
+    .hero {
+      margin-top: 24px;
+      padding: 32px;
+      background: #000;
+      color: #fff;
+    }
+    .hero p { max-width: 36em; font-size: 16px; }
+    .row { display: flex; gap: 12px; margin-top: 16px; }
+    .buy, .process {
+      height: 44px;
+      box-sizing: border-box;
+      padding: 10px 32px;
+      border: 0;
+      border-radius: 100px;
+      background: var(--brand);
+      color: var(--inverse);
+      font: 600 16px/24px var(--ui);
+    }
+    .sell {
+      height: 43px;
+      padding: 12px 0;
+      border: 0;
+      background: transparent;
+      color: var(--brand);
+      font: 600 14px/18px var(--ui);
+    }
+    .card {
+      margin-top: 24px;
+      width: 191px;
+      color: var(--text);
+    }
+    .well {
+      height: 191px;
+      background: var(--image);
+      border-radius: 12px;
+    }
+    .price { font-size: 20px; font-weight: 500; line-height: 26px; margin: 8px 0 0; }
+    .muted { color: var(--secondary); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="mark">StockX</div>
+    <div class="search">Search for brand, color, etc.</div>
+    <button class="signup" type="button">Sign Up | Login</button>
+  </header>
+  <nav class="cats">
+    <span>Sneakers</span>
+    <span>Shoes</span>
+    <span class="deals">Deals</span>
+    <span>Apparel</span>
+  </nav>
+  <main>
+    <h2>Colors</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#121212;border:1px solid #393939"></div><div class="label">page #121212</div></div>
+      <div class="swatch"><div class="chip" style="background:#242424"></div><div class="label">surface #242424</div></div>
+      <div class="swatch"><div class="chip" style="background:#393939"></div><div class="label">footer #393939</div></div>
+      <div class="swatch"><div class="chip" style="background:#fafafa"></div><div class="label">text #fafafa</div></div>
+      <div class="swatch"><div class="chip" style="background:#95c0a4"></div><div class="label">brand #95c0a4</div></div>
+      <div class="swatch"><div class="chip" style="background:#ef6958"></div><div class="label">deals #ef6958</div></div>
+      <div class="swatch"><div class="chip" style="background:#4fc58c"></div><div class="label">success #4fc58c</div></div>
+      <div class="swatch"><div class="chip" style="background:#f5ba1a"></div><div class="label">warning #f5ba1a</div></div>
+    </div>
+    <h2>Buy bar</h2>
+    <div class="row">
+      <button class="buy" type="button">Buy Now</button>
+      <button class="sell" type="button">Sell Now for more</button>
+    </div>
+    <div class="card">
+      <div class="well"></div>
+      <p class="muted">New and verified</p>
+      <p class="price">$159</p>
+    </div>
+    <section class="hero">
+      <h1>The Current Culture Marketplace</h1>
+      <p>How It Works uses Gestura Reg at 60px on a black hero. The shop stays Suisse Intl on #121212.</p>
+      <div class="row">
+        <button class="process" type="button">Our Process</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
