@@ -1,0 +1,26 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "Account, Become a member, and Sign up open one empty wall at https://auth.on.com/ui/flow-executor/solidus-authentication-flow/. The heading is Log in or create an account. The email field was left empty. Continue was not clicked. Log in with Google and Log in with Apple were not clicked. The OAuth query string on the storefront redirect was discarded. No password, code, phone number, or address was typed. The bag was not opened. Add to bag was not clicked. Checkout was not opened. Subscribe was not clicked.",
+  "walls": [
+    {
+      "url": "https://auth.on.com/ui/flow-executor/solidus-authentication-flow/",
+      "opened_from": "header Account, footer Become a member, /en-sg/login Sign up",
+      "heading": "Log in or create an account",
+      "subheading": "Enter your email to sign up or log in.",
+      "desktop": "screenshots/public/public-login-wall-desktop.png",
+      "phone": "screenshots/public/public-login-wall-phone.png",
+      "controls_not_used": [
+        "Email",
+        "Continue",
+        "Log in with Google",
+        "Log in with Apple"
+      ],
+      "stopped": true
+    }
+  ]
+}

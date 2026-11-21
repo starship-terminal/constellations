@@ -2,6 +2,8 @@
 
 A token set and component reference for On's public storefront (on.com, the Swiss running brand), for building in the style of a signed-out retail marketing site. It was read from www.on.com/en-sg/ on 2026-11-19, signed out, at 1440 x 900 and 390 x 844. The pages are the home page, women's shoes, a Cloudtilt product page, the about page, the size list, and the added-to-bag card. Nothing was bought, checked out, or signed into. The newsletter form was not submitted.
 
+A 2026-11-22 pass mapped the public site from https://www.on.com/ into [site-tree.md](site-tree.md) and photographed the marketing pages, one Cloudtilt product page, and the empty login and signup wall. Account, Become a member, and Sign up open the same wall. Google and Apple were not clicked. The email field was not typed. `login-extracted` stays not-started. catalog.json was left alone.
+
 On's public site is a white page with black type, pill buttons, and a transparent header that turns white over photography. Headlines are On Diatype, tight and bold. Prices, breadcrumbs, and small labels are On Mono. There is no dark theme on the public storefront. Dark fills are local: a primary button, the added-to-bag card, and type sitting on a photograph.
 
 | File | What it is |
@@ -12,6 +14,8 @@ On's public site is a white page with black type, pill buttons, and a transparen
 | [style-guide.html](style-guide.html) | One page that renders the measured colours, type, and the storefront controls |
 | [components.md](components.md) | The component inventory, with crops, and the Gaps |
 | [patterns.md](patterns.md) | How the home, shop, product, and phone chrome fit together |
+| [site-tree.md](site-tree.md) | Which header and footer controls open which public page or wall |
+| [login-review.json](login-review.json) | Empty login and signup wall. `login-extracted` is not-started |
 | [components/crops/](components/crops) | Element crops from the page screenshots |
 | [screenshots/](screenshots) | Page captures, 256-colour PNGs. Desktop is 1440 x 900 at 2x. Phone is 390 x 844 at 2x |
 | [raw/](raw) | `readings.json` and the screenshot sidecars |
