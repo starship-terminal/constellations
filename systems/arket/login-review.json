@@ -1,0 +1,93 @@
+{
+  "offered": {
+    "nav": {
+      "women_menu": true,
+      "men_menu": true,
+      "children_menu": true,
+      "homeware_menu": true,
+      "gift_shop": true,
+      "cafe": true,
+      "customer_service": true,
+      "search": true,
+      "wishlist": true,
+      "cart_drawer": true,
+      "mobile_menu": true
+    },
+    "settings": {
+      "location_language_dialog": true,
+      "cookie_consent": true,
+      "cookie_settings": true,
+      "locale_button": true
+    },
+    "create": {
+      "create_account": true,
+      "sign_in": true,
+      "newsletter": true
+    }
+  },
+  "screens": [
+    "about-light-default.png",
+    "account-light-default.png",
+    "account-light-full.png",
+    "cafe-light-default.png",
+    "children-light-default.png",
+    "clothing-light-default.png",
+    "clothing-light-filter.png",
+    "clothing-light-full.png",
+    "customer-service-light-default.png",
+    "customer-service-light-full.png",
+    "editorial-light-default.png",
+    "editorial-light-full.png",
+    "gift-shop-light-default.png",
+    "gift-shop-light-full.png",
+    "home-light-account-menu.png",
+    "home-light-consent.png",
+    "home-light-default.png",
+    "home-light-location.png",
+    "home-light-menu-children.png",
+    "home-light-menu-homeware.png",
+    "home-light-menu-men.png",
+    "home-light-menu-women.png",
+    "home-light-search.png",
+    "homeware-light-default.png",
+    "men-clothing-light-default.png",
+    "men-clothing-light-full.png",
+    "men-light-default.png",
+    "mobile-clothing-light-default.png",
+    "mobile-clothing-light-full.png",
+    "mobile-home-light-default.png",
+    "mobile-home-light-menu.png",
+    "new-arrivals-light-default.png",
+    "new-arrivals-light-full.png",
+    "previous-collections-light-default.png",
+    "previous-collections-light-full.png",
+    "store-locator-light-default.png",
+    "travel-light-default.png",
+    "wishlist-light-default.png",
+    "women-light-default.png",
+    "women-light-full.png"
+  ],
+  "gaps": [
+    "Sign in and Create account leave the shop for an identity-provider wall. Google, Facebook, and Continue with email were not clicked. No email, password, or code was typed.",
+    "Account page /en-ww/account/ redirects to that same wall. Not captured.",
+    "Checkout was not opened. The empty shopping-bag drawer was seen, then covered by the location dialog; a clean cart screenshot was not saved. The bag crop in components/crops/cart-drawer-default.png is the earlier capture.",
+    "Homepage root /en-ww/ returned Access Denied on later passes. Homepage states after the first pass were photographed on /en-ww/women/, which carries the same header.",
+    "Phone homepage root was Access Denied. The phone menu was opened on /en-ww/women/.",
+    "Newsletter, country confirm, and cookie accept were not submitted.",
+    "Product pages remain an Akamai boundary from the earlier capture."
+  ],
+  "not_submitted": [
+    "cookie Accept all",
+    "cookie Only required cookies",
+    "cookie Confirm my choices",
+    "location Continue to country",
+    "location Stay in country",
+    "Sign in",
+    "Create account",
+    "Continue with email",
+    "Google",
+    "Facebook",
+    "Proceed to checkout",
+    "newsletter signup"
+  ]
+}
