@@ -6787,9 +6787,9 @@
         425
       ],
       "description": "Weekrise is simple yet packed with useful features to boost your productivity",
-      "status": "pending",
-      "package": null,
-      "notes": "Email probe: https://weekrise.com/auth/login said the capture inbox is not signed up. Sign up not opened. Google did not open an account chooser.",
+      "status": "captured",
+      "package": "systems/weekrise",
+      "notes": "Email probe: https://weekrise.com/auth/login said the capture inbox is not signed up. Sign up not opened. Google did not open an account chooser. Public walk 2026-11-21: the public site tree is in systems/weekrise/site-tree.md. Login asks for an empty email, then Continue, and also offers Google. Signup asks for an empty name and email. Nothing was typed. Google was not clicked. No form was submitted. login-review.json is a stop note and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1705 at adee5158ddf3. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 20
