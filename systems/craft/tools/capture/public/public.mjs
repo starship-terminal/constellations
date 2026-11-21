@@ -58,9 +58,37 @@ class Shooter {
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
+async function openHeaderMenu(p, controls) {
+  await p.evaluate(() => scrollTo(0, 0));
+  await p.keyboard.press('Escape').catch(() => {});
+  const btn = p.locator(`header button[aria-controls="${controls}"]`).first();
+  if (await btn.count()) await clickEl(btn);
+  await wait(p, 700);
+}
+
 const desktop = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.view('default');
+    await step('product-menu', async () => {
+      await openHeaderMenu(p, 'header-product-menu');
+      await S.view('menu-product');
+      await p.keyboard.press('Escape');
+    });
+    await step('community-menu', async () => {
+      await openHeaderMenu(p, 'header-community-menu');
+      await S.view('menu-community');
+      await p.keyboard.press('Escape');
+    });
+    await step('language', async () => {
+      const lang = p.locator('button').filter({ hasText: /^English$/ }).last();
+      if (await lang.count()) {
+        await lang.scrollIntoViewIfNeeded();
+        await clickEl(lang);
+        await wait(p, 700);
+        await S.view('language');
+        await p.keyboard.press('Escape');
+      }
+    });
     await S.full();
   } },
   pricing: { path: '/pricing', wait: 9000, run: async (p, S) => {
@@ -92,6 +120,19 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
+  plan: { path: '/plan', wait: 7000, run: async (p, S) => { await S.view('default'); } },
+  organize: { path: '/organize', wait: 7000, run: async (p, S) => { await S.view('default'); } },
+  customize: { path: '/customize', wait: 7000, run: async (p, S) => { await S.view('default'); } },
+  pricingfaq: { path: '/pricing', wait: 7000, run: async (p, S) => {
+    await step('faq', async () => {
+      const row = p.locator('button').filter({ hasText: /\?|what |how |can /i }).filter({ visible: true }).first();
+      if (await row.count()) { await row.scrollIntoViewIfNeeded(); await clickEl(row); await wait(p, 600); await S.view('faq'); }
+    });
+  } },
+  login: { url: 'https://docs.craft.do/', wait: 8000, run: async (p, S) => {
+    // Empty wall only. Do not type, do not click an identity provider, do not submit.
+    await S.view('empty');
+  } },
 };
 
 const mobile = {
@@ -107,6 +148,9 @@ const mobile = {
   pricing: { path: '/pricing', wait: 9000, run: async (p, S) => {
     await S.view('default');
     await S.full();
+  } },
+  login: { url: 'https://docs.craft.do/', wait: 8000, run: async (p, S) => {
+    await S.view('empty');
   } },
 };
 

@@ -1,6 +1,6 @@
 # Craft (craft.do)
 
-Craft's public signed-out surface — the home page, pricing, download, imagine, learn, write and the blog index — captured 2026-11-12 in headless Chromium at 1440 x 900, plus the home and pricing pages at 390 x 844. The editors live in the apps and were never reached; www.craft.do has no auth card.
+Craft's public signed-out surface — the home page, pricing, download, imagine, learn, write, plan, organize, customize and the blog index — refreshed 2026-11-21 in headless Chromium at 1440 x 900, plus the home and pricing pages at 390 x 844. The empty docs login wall was photographed and not entered. The editors were never reached.
 
 ## Brief
 
@@ -99,7 +99,8 @@ A Next.js app on Tailwind v4 with a shadcn-style semantic layer on `:root`: `--c
 - **The TEAM plan card was read from the wrong element; it needs a recapture.** `team-card` caught the first element carrying `.shadow-block`, the 1400 x 1546 pricing section, so its size, crop and values in [components.md](components.md) describe that section. `core.shadow.block` is that utility's real computed shadow, read on the section; its source says so. The selector now asks for the TEAM card (edited, not rerun).
 - `core.border.hairline.width` (1px) was entered by hand: `--border` declares only the colour.
 - **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
-- There is no auth surface on www.craft.do: Log in links out to docs.craft.do and was never followed; Try Craft Free and the platform buttons lead to /download and were never used.
+- Log in leaves www.craft.do for https://docs.craft.do/. The empty wall (email field, Continue, Google, Apple, Microsoft, reCAPTCHA notice) was photographed on 2026-11-21 and not used. No email, password, or code was typed. No identity provider was clicked. See [login-review.json](login-review.json) and [site-tree.md](site-tree.md).
+- Try Craft Free and the platform buttons lead to /download or a store listing and were not used as downloads.
 - Prices render in the served region's currency (SGD) — regional, not a universal figure.
 - The billing toggle was flipped for one screenshot and flipped back; nothing was purchased.
 - No dark theme exists in the sheets; the black footer is a painted section.
