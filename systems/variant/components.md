@@ -1,6 +1,6 @@
 # Variant components
 
-Signed-out surfaces only, read on 2026-11-19 from `https://variant.com/`. Values are computed styles. There are no crops: the preview browser did not produce screenshot frames.
+Signed-out surfaces only, read on 2026-11-19 from `https://variant.com/`. Values are computed styles. Page shots from 2026-11-22 are in [screenshots/](screenshots/). There are no element crops.
 
 ## Homepage
 
@@ -86,7 +86,7 @@ The Privacy Policy tab was clicked. It replaces the article. No other control on
 
 ## Gaps
 
-- No crops and no screenshots. `preview_snapshot` returned "The browser is not producing screenshot frames".
+- No element crops. Page shots are in [screenshots/](screenshots/).
 - Pressed, loading and error states of the email button. Capturing them means submitting.
 - Google button hover, focus was read, hover was not, click was not.
 - Homepage chip hover, composer focus, Submit hover and pressed, Add image, Select style.

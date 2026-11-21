@@ -276,7 +276,7 @@
       "borderBottom": "0px",
       "note": "Privacy Policy tab was clicked. It swaps the article. No underline or fill distinguishes the active tab beyond the text colour."
     },
-    "company": "Variant Design, Inc. Contact named on the page: help@variant.ai. Not written into tokens."
+    "company": "Variant Design, Inc. A public contact address is on the legal page. It is not written into tokens or screenshots."
   },
   "motion": {
     "computedOnVisibleCards": "opacity 0.5s ease, delay 0.3s",

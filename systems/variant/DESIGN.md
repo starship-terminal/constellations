@@ -149,11 +149,11 @@ Good for: Signed-out design-tool chrome: a near-black page, off-white Variant Ne
 
 Captured 2026-11-19, signed out. Homepage, /authentication and /terms-and-privacy measured. Email field typed only to read the enabled button, then cleared. Not submitted. Google sign-in not clicked. No payment.. Themes: dark.
 
-A token set for Variant's signed-out web surfaces. Read live from [variant.com](https://variant.com/) on 2026-11-19. The host is Variant Design, Inc., the product the constellations manifest describes as "Endless designs for your ideas, just scroll."
+A token set for Variant's signed-out web surfaces. Read live from [variant.com](https://variant.com/) on 2026-11-19 and photographed on 2026-11-22. The host is Variant Design, Inc. The title is "Variant – Endless designs for your ideas, just scroll."
 
-The signed-out product is one dark screen, not a marketing site. `/` is a 408px column (headline, two chips, a composer) beside a scrolling grid of design widgets. "Sign up / Sign in" opens `/authentication` (Google, or an email field). Terms and privacy share `/terms-and-privacy`. There is no light theme: forcing `prefers-color-scheme: light` left the page on `rgb(34, 34, 34)`.
+The signed-out product is one dark screen, not a marketing site. `/` is a 408px column (headline, two chips, a composer) beside a scrolling grid of design widgets. "Sign up / Sign in" opens `/authentication`, one wall for login and signup. Terms and privacy share `/terms-and-privacy`. There is no light theme: forcing `prefers-color-scheme: light` left the page on `rgb(34, 34, 34)`.
 
-Measured in the T3 preview browser at CSS 1440×900 and 390×844, both at devicePixelRatio 2. `preview_snapshot` failed with "The browser is not producing screenshot frames", so this package has no screenshots. Every colour, length and font string was read with `getComputedStyle` or from an authored custom property. Nothing was submitted. The email field was typed only to read the enabled button, then cleared. Google sign-in was not clicked.
+Measured in the T3 preview browser at CSS 1440×900 and 390×844, both at devicePixelRatio 2. Page shots are in `screenshots/`. Every colour, length and font string was read with `getComputedStyle` or from an authored custom property. Nothing was submitted on the 2026-11-22 pass. Google sign-in was not clicked. `login-extracted` stays not-started. `catalog.json` was left alone. This file was updated by hand. `make design-md` was not run.
 
 ## Colors
 
@@ -206,7 +206,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- There are no screenshots. The preview browser did not produce frames. Do not treat a missing image as a layout.
+- Screenshots from 2026-11-22 are 256-colour PNGs. Flat fills survive. The widget photographs band. Read colours from tokens.json, not from a pixel.
+- The legal shot is a crop of the tabs and the heading. The rest of the article prints a contact email, a street address, and a phone line, so it was not committed.
+- The phone auth card is 400px wide inside a 390 frame. The overflow in screenshots/auth-dark-390.png is what the page painted.
 - The user-agent focus outline `rgb(229, 151, 0)` is the browser default (`accent-color: auto`). It is recorded because it was painted. It is not a Variant token.
 - Blues, coral, billing past-due colours, and the gray HSL ramps are declared in CSS. They were not painted on the signed-out pages. `core.palette` keeps the declarations and says so.
 - `--border-radius` resolves to 12px. The controls on screen were 6px, 8px and 10px. Use the measured radii.
@@ -222,4 +224,4 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 3. **Use a 6px radius on chips and auth controls, 8px on grid cards, 10px on the composer.** The declared `--border-radius` is 12px and was not the radius of these controls.
 4. **Fill actions with white at 10% opacity, not a blue.** "Continue with Google" and the enabled email button are `rgba(255, 255, 255, 0.1)`. Hover on the enabled button moves to `0.15`. The empty email button keeps the same fill and drops the label to `0.5`.
 5. **Hairline borders are 0.5px at white 10%.** Chips, the email field, and the composer ring all use that. Do not add a drop shadow. None was painted.
-6. **Do not invent a light theme, a screenshot, or a signed-in shell from this package.** Light preference did not change the paint. Frames were not captured. Sidebar and billing CSS was not on screen.
+6. **Do not invent a light theme or a signed-in shell from this package.** Light preference did not change the paint. Sidebar and billing CSS was not on screen. The shots are in screenshots/.

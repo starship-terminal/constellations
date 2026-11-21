@@ -1,0 +1,16 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://variant.com/",
+  "cssViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "devicePixelRatio": 2,
+  "quantized": 256,
+  "note": "Signed-out homepage. Public widget demos in the grid.",
+  "login-extracted": "not-started"
+}

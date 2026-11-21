@@ -8,7 +8,7 @@ Host confirmed: `location.host` was `variant.com`. No Cloudflare challenge. The 
 
 T3 preview tab `tab_6x_b476fa69-d865-4d9c-9974-6281ced1c8e8`, opened with `reuseExistingTab: false` at `https://variant.com/`.
 
-`preview_snapshot` failed twice with: "The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again." No screenshots were invented. Values below were read with `preview_evaluate` from the attached page (computed styles and authored CSS custom properties).
+On 2026-11-19 `preview_snapshot` failed twice with: "The browser is not producing screenshot frames." Values below were read with `preview_evaluate`. The 2026-11-22 pass photographed the same pages. Those shots are in `screenshots/`. See [public-2026-11-22.md](public-2026-11-22.md).
 
 Viewport after `preview_resize` freeform 1440×900: `window.innerWidth` 1440, `window.innerHeight` 900, `devicePixelRatio` 2, `visualViewport` 1440×900 scale 1. The tool's reported viewport object said 1280×800; the page's `innerWidth` is the measurement used.
 

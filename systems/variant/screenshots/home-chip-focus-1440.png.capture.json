@@ -1,0 +1,16 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://variant.com/",
+  "cssViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "devicePixelRatio": 2,
+  "quantized": 256,
+  "note": "Sign up / Sign in focused. Hover did not change the chip fill. Outline is the browser default.",
+  "login-extracted": "not-started"
+}
