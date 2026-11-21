@@ -1,6 +1,8 @@
 # Sentry design reference
 
-Live Sentry web-app capture from the owner's 10xswe organization on 2026-10-31, plus a separately labelled public landing-page capture. The app supplied a populated trace explorer, span attributes and waterfall, but no issues across all statuses over 30 days. No trial was activated. The later billing overview showed the Developer plan.
+Public marketing refresh on 2026-11-21. `https://sentry.io/` redirects to `/welcome/` and is a live marketing site, not a parked page. This pass adds the public site tree, public screenshots at 1440 and 390, and a separate public token file. It does not replace the 2026-10-31 signed-in app tokens in [tokens.json](tokens.json). `login-extracted` stays not-started. The signed-in app was not entered. catalog.json was not edited.
+
+Live Sentry web-app capture from the owner's organization on 2026-10-31, plus a separately labelled public landing-page capture. The app supplied a populated trace explorer, span attributes and waterfall, but no issues across all statuses over 30 days. No trial was activated. The later billing overview showed the Developer plan.
 
 The initial app captures measure 1065 CSS pixels wide and about 959 high. The browser reported two scale groups: DPR 1.8 with a 1065.56-wide visual viewport, and DPR 2 with a 1065-wide visual viewport. Native JPEG screenshots are 1065 or 1066 pixels wide; each dimension sidecar records its own measurements. Requested 1440/390 overrides had no effect during that initial app capture. A later breadth pass successfully measured 1440 × 1000 CSS pixels at DPR 1 in dark appearance. Public landing evidence measures 1440 and 390 CSS pixels. The continuation captured real app trace, issue/filter and navigation states at 390 × 844 in light and dark, plus desktop light states at 1440 × 1000. The final restoration image measures the reset browser viewport at 679 × 959, DPR 2. Both live app themes were captured; the approved temporary light setting was restored and verified as Default to system after navigation.
 
@@ -15,6 +17,9 @@ The initial app captures measure 1065 CSS pixels wide and about 959 high. The br
 | [screenshots/](screenshots/) | 225 captures: 211 real app, 9 app-with-demo, 5 public; [breadth](raw/breadth/README.md) and [continuation](raw/breadth2/README.md) indexes and dimension sidecars |
 | [raw/](raw/) | App/public readings, separate public tokens, coverage and [breadth inventory](raw/breadth/inventory.json) and [continuation inventory](raw/breadth2/inventory.json) |
 | [tools/](tools/) | Adapted builders and PR 134 capture kit |
+| [site-tree.md](site-tree.md) | Which public control opens which page, menu, drawer or wall. Mapped 2026-11-21 |
+| [login-review.json](login-review.json) | Empty login and signup walls. Probe stopped there. login-extracted is not-started |
+| [screenshots/public-2026-11-21/](screenshots/public-2026-11-21/) | Public refresh shots. Git LFS |
 
 ## Brief
 
@@ -110,6 +115,8 @@ A captured row means the linked observation exists, not that every possible stat
 
 | Checklist item | Status | Evidence or gap |
 |---|---|---|
+| Public site tree | captured | [site-tree.md](site-tree.md), mapped 2026-11-21 from the live homepage |
+| Public login wall | captured, not entered | [screenshots/public-2026-11-21/login-light-desktop.png](screenshots/public-2026-11-21/login-light-desktop.png). Fields left empty. Identity providers not clicked |
 | Colour foundations | captured | tokens.json: observed page/text/border/selected-tab and syntax values in both themes; full status palette and ramps missing |
 | Typography | captured | tokens.json: body/button/caption; display and complete scale missing |
 | Spacing | not captured | No authoritative app spacing scale read |

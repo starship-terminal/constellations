@@ -1,0 +1,24 @@
+{
+  "file": "screenshots/public-2026-11-21/integrations-dark-desktop.png",
+  "captured": "2026-11-21",
+  "href": "https://sentry.io/integrations/",
+  "title": "Integrations | Sentry",
+  "h1": "Integrations",
+  "htmlClass": "",
+  "colorScheme": "normal",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollHeight": 7302,
+  "png": {
+    "width": 1440,
+    "height": 900,
+    "bytes": 407443
+  },
+  "fullPage": false
+}

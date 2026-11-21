@@ -1,0 +1,24 @@
+{
+  "file": "screenshots/public-2026-11-21/docs-light-desktop.png",
+  "captured": "2026-11-21",
+  "href": "https://docs.sentry.io/",
+  "title": "Sentry Docs | Application Performance Monitoring & Error Tracking Software",
+  "h1": "Get started with Sentry",
+  "htmlClass": "light",
+  "colorScheme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollHeight": 2468,
+  "png": {
+    "width": 1440,
+    "height": 900,
+    "bytes": 94330
+  },
+  "fullPage": false
+}

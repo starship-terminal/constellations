@@ -1,0 +1,24 @@
+{
+  "file": "screenshots/public-2026-11-21/home-dark-mobile-menu.png",
+  "captured": "2026-11-21",
+  "href": "https://sentry.io/welcome/",
+  "title": "Application Performance Monitoring & Error Tracking Software | Sentry",
+  "h1": "Code breaks, fix it faster",
+  "htmlClass": "dark",
+  "colorScheme": "normal",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "dpr": 2,
+  "visualViewport": {
+    "width": 390,
+    "height": 844,
+    "scale": 1
+  },
+  "scrollHeight": 11070,
+  "png": {
+    "width": 780,
+    "height": 1688,
+    "bytes": 361073
+  },
+  "fullPage": false
+}

@@ -1,0 +1,24 @@
+{
+  "file": "screenshots/public-2026-11-21/signup-light-desktop.png",
+  "captured": "2026-11-21",
+  "href": "https://sentry.io/signup/",
+  "title": "Start your free trial | Unlimited events 14 days | Sentry",
+  "h1": "Start fixing",
+  "htmlClass": "dark",
+  "colorScheme": "normal",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollHeight": 2269,
+  "png": {
+    "width": 1440,
+    "height": 900,
+    "bytes": 227985
+  },
+  "fullPage": false
+}

@@ -1,0 +1,317 @@
+{
+  "menus": [
+    {
+      "name": "Platform",
+      "expanded": "true",
+      "items": {
+        "id": "dropdown-platform",
+        "role": null,
+        "hidden": false,
+        "className": "block xl:absolute xl:top-12 xl:left-0 bg-rich-black xl:bg-white xl:shadow-lg rounded-xl overflow-hidden xl:rounded-xl xl",
+        "display": "block",
+        "links": [
+          {
+            "text": "ERROR MONITORING",
+            "href": "https://sentry.io/product/error-monitoring/"
+          },
+          {
+            "text": "LOGS",
+            "href": "https://sentry.io/product/logs/"
+          },
+          {
+            "text": "SESSION REPLAY",
+            "href": "https://sentry.io/product/session-replay/"
+          },
+          {
+            "text": "METRICS NEW",
+            "href": "https://sentry.io/product/metrics/"
+          },
+          {
+            "text": "TRACING",
+            "href": "https://sentry.io/product/tracing/"
+          },
+          {
+            "text": "AGENT TRACING",
+            "href": "https://sentry.io/product/tracing/ai-agent/"
+          },
+          {
+            "text": "PROFILING",
+            "href": "https://sentry.io/product/profiling/"
+          },
+          {
+            "text": "SIZE ANALYSIS",
+            "href": "https://sentry.io/product/size-analysis/"
+          },
+          {
+            "text": "CRON MONITORING",
+            "href": "https://sentry.io/product/cron-monitoring/"
+          },
+          {
+            "text": "UPTIME MONITORING",
+            "href": "https://sentry.io/product/uptime-monitoring/"
+          },
+          {
+            "text": "LABS NEW",
+            "href": "https://labs.sentry.dev/"
+          },
+          {
+            "text": "SEER NEW",
+            "href": "https://sentry.io/product/seer/"
+          },
+          {
+            "text": "AGENT",
+            "href": "https://sentry.io/product/seer/agent/"
+          },
+          {
+            "text": "AUTOFIX",
+            "href": "https://sentry.io/product/seer/autofix/"
+          },
+          {
+            "text": "GITHUB",
+            "href": "https://sentry.io/integrations/github/"
+          },
+          {
+            "text": "SLACK",
+            "href": "https://sentry.io/integrations/slack/"
+          },
+          {
+            "text": "SENTRY CLI",
+            "href": "https://cli.sentry.dev/"
+          },
+          {
+            "text": "SENTRY MCP",
+            "href": "https://mcp.sentry.dev/"
+          },
+          {
+            "text": "ALL INTEGRATIONS",
+            "href": "https://sentry.io/integrations/"
+          }
+        ],
+        "buttons": [],
+        "groups": [
+          "Products",
+          "AI Debugging",
+          "Integrations"
+        ]
+      }
+    },
+    {
+      "name": "Solutions",
+      "expanded": "true",
+      "items": {
+        "id": "dropdown-solutions",
+        "role": null,
+        "hidden": false,
+        "className": "block xl:absolute xl:top-12 xl:left-0 bg-rich-black xl:bg-white xl:shadow-lg rounded-xl overflow-hidden xl:rounded-xl xl",
+        "display": "block",
+        "links": [
+          {
+            "text": "WEB / FULL STACK DEVELOPMENT",
+            "href": "https://sentry.io/for/full-stack/"
+          },
+          {
+            "text": "MOBILE CRASH REPORTING",
+            "href": "https://sentry.io/solutions/mobile-developers/"
+          },
+          {
+            "text": "GAME CRASH REPORTING",
+            "href": "https://sentry.io/solutions/game-developers/"
+          },
+          {
+            "text": "AI OBSERVABILITY",
+            "href": "https://sentry.io/solutions/ai-observability/"
+          },
+          {
+            "text": "APPLICATION PERFORMANCE MONITORING",
+            "href": "https://sentry.io/solutions/application-performance-monitoring/"
+          },
+          {
+            "text": "APPLICATION OBSERVABILITY",
+            "href": "https://sentry.io/solutions/application-observability/"
+          },
+          {
+            "text": "REAL USER MONITORING",
+            "href": "https://sentry.io/solutions/real-user-monitoring-rum/"
+          },
+          {
+            "text": "ECOMMERCE",
+            "href": "https://sentry.io/solutions/ecommerce/"
+          },
+          {
+            "text": "OPENTELEMETRY",
+            "href": "https://sentry.io/solutions/opentelemetry/"
+          },
+          {
+            "text": "ENTERPRISE",
+            "href": "https://sentry.io/for/enterprise/"
+          },
+          {
+            "text": "STARTUPS",
+            "href": "https://sentry.io/for/startups/"
+          },
+          {
+            "text": "ALL SDKS",
+            "href": "https://sentry.io/platforms/"
+          }
+        ],
+        "buttons": [],
+        "groups": []
+      }
+    },
+    {
+      "name": "Resources",
+      "expanded": "true",
+      "items": {
+        "id": "dropdown-resources",
+        "role": null,
+        "hidden": false,
+        "className": "block xl:absolute xl:top-12 xl:left-0 bg-rich-black xl:bg-white xl:shadow-lg rounded-xl overflow-hidden xl:rounded-xl xl",
+        "display": "block",
+        "links": [
+          {
+            "text": "BLOG",
+            "href": "https://blog.sentry.io/"
+          },
+          {
+            "text": "CHANGELOG",
+            "href": "https://sentry.io/changelog/"
+          },
+          {
+            "text": "SANDBOX",
+            "href": "https://sandbox.sentry.io/"
+          },
+          {
+            "text": "RESOURCES",
+            "href": "https://sentry.io/resources/"
+          },
+          {
+            "text": "SYNTAX",
+            "href": "https://syntax.fm/"
+          },
+          {
+            "text": "CUSTOMERS",
+            "href": "https://sentry.io/customers/"
+          },
+          {
+            "text": "COOKBOOK",
+            "href": "https://sentry.io/cookbook/"
+          },
+          {
+            "text": "CONTACT US",
+            "href": "https://sentry.io/contact/enterprise/"
+          },
+          {
+            "text": "HELP CENTER",
+            "href": "https://help.sentry.io/"
+          },
+          {
+            "text": "STATUS",
+            "href": "https://status.sentry.io/"
+          },
+          {
+            "text": "COMMUNITY",
+            "href": "https://sentry.io/community/"
+          },
+          {
+            "text": "EVENTS",
+            "href": "https://sentry.io/events/"
+          },
+          {
+            "text": "MERCH",
+            "href": "https://sentry.shop/"
+          },
+          {
+            "text": "AUTOMATE YOUR DEBUGGING",
+            "href": "https://sentry.io/resources/automated-debugging/"
+          }
+        ],
+        "buttons": [],
+        "groups": [
+          "Learn",
+          "Support",
+          "Hang out with us",
+          "Automated Debugging Hub",
+          "Guides, recipes, and videos on how Sentry gives your agents the context to find "
+        ]
+      }
+    }
+  ],
+  "mobileHeader": [
+    {
+      "tag": "A",
+      "text": "Welcome Page",
+      "href": "https://sentry.io/welcome/",
+      "aria": "Welcome Page",
+      "expanded": null,
+      "controls": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "MENU",
+      "href": null,
+      "aria": null,
+      "expanded": "false",
+      "controls": "mobileMenu"
+    }
+  ],
+  "mobileOpen": {
+    "href": "https://sentry.io/welcome/",
+    "vw": 390,
+    "links": [
+      {
+        "tag": "BUTTON",
+        "text": "PLATFORM",
+        "href": null,
+        "expanded": "false"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "SOLUTIONS",
+        "href": null,
+        "expanded": "false"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "RESOURCES",
+        "href": null,
+        "expanded": "false"
+      },
+      {
+        "tag": "A",
+        "text": "DOCS",
+        "href": "https://docs.sentry.io/",
+        "expanded": null
+      },
+      {
+        "tag": "A",
+        "text": "PRICING",
+        "href": "https://sentry.io/pricing/",
+        "expanded": null
+      },
+      {
+        "tag": "A",
+        "text": "SIGN IN",
+        "href": "https://sentry.io/auth/login/",
+        "expanded": null
+      },
+      {
+        "tag": "A",
+        "text": "GET DEMO",
+        "href": "https://sentry.io/demo/",
+        "expanded": null
+      },
+      {
+        "tag": "A",
+        "text": "GET STARTED",
+        "href": "https://sentry.io/signup/",
+        "expanded": null
+      },
+      {
+        "tag": "A",
+        "text": "Sentry MCP: fix production issues right from your LLM ➔",
+        "href": "https://mcp.sentry.dev",
+        "expanded": null
+      }
+    ]
+  }
+}

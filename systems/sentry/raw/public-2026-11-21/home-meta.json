@@ -1,0 +1,305 @@
+{
+  "href": "https://sentry.io/welcome/",
+  "title": "Application Performance Monitoring & Error Tracking Software | Sentry",
+  "h1": "Code breaks, fix it faster",
+  "htmlClass": "dark",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(31, 22, 51)",
+  "vw": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1
+  },
+  "headerItems": [
+    {
+      "tag": "A",
+      "text": "Welcome Page",
+      "href": "https://sentry.io/welcome/",
+      "expanded": null,
+      "aria": "Welcome Page",
+      "controls": null,
+      "y": 20,
+      "x": 176
+    },
+    {
+      "tag": "BUTTON",
+      "text": "PLATFORM",
+      "href": null,
+      "expanded": "false",
+      "aria": null,
+      "controls": "dropdown-platform",
+      "y": 16,
+      "x": 330
+    },
+    {
+      "tag": "BUTTON",
+      "text": "SOLUTIONS",
+      "href": null,
+      "expanded": "false",
+      "aria": null,
+      "controls": "dropdown-solutions",
+      "y": 16,
+      "x": 462
+    },
+    {
+      "tag": "BUTTON",
+      "text": "RESOURCES",
+      "href": null,
+      "expanded": "false",
+      "aria": null,
+      "controls": "dropdown-resources",
+      "y": 16,
+      "x": 599
+    },
+    {
+      "tag": "A",
+      "text": "DOCS",
+      "href": "https://docs.sentry.io/",
+      "expanded": null,
+      "aria": null,
+      "controls": null,
+      "y": 16,
+      "x": 741
+    },
+    {
+      "tag": "A",
+      "text": "PRICING",
+      "href": "https://sentry.io/pricing/",
+      "expanded": null,
+      "aria": null,
+      "controls": null,
+      "y": 16,
+      "x": 825
+    },
+    {
+      "tag": "A",
+      "text": "SIGN IN",
+      "href": "https://sentry.io/auth/login/",
+      "expanded": null,
+      "aria": null,
+      "controls": null,
+      "y": 16,
+      "x": 927
+    },
+    {
+      "tag": "A",
+      "text": "GET DEMO",
+      "href": "https://sentry.io/demo/",
+      "expanded": null,
+      "aria": null,
+      "controls": null,
+      "y": 16,
+      "x": 1023
+    },
+    {
+      "tag": "A",
+      "text": "GET STARTED",
+      "href": "https://sentry.io/signup/",
+      "expanded": null,
+      "aria": null,
+      "controls": null,
+      "y": 16,
+      "x": 1134
+    }
+  ],
+  "footerLinks": [
+    {
+      "text": "ABOUT",
+      "href": "https://sentry.io/about/",
+      "visible": true
+    },
+    {
+      "text": "BLOG",
+      "href": "https://blog.sentry.io/",
+      "visible": true
+    },
+    {
+      "text": "CAREERS",
+      "href": "https://sentry.io/careers/",
+      "visible": true
+    },
+    {
+      "text": "CONTACT US",
+      "href": "https://sentry.io/contact/enterprise/",
+      "visible": true
+    },
+    {
+      "text": "TRUST",
+      "href": "https://sentry.io/trust/",
+      "visible": true
+    },
+    {
+      "text": "ERROR MONITORING",
+      "href": "https://sentry.io/product/error-monitoring/",
+      "visible": true
+    },
+    {
+      "text": "LOGS",
+      "href": "https://sentry.io/product/logs/",
+      "visible": true
+    },
+    {
+      "text": "SEER",
+      "href": "https://sentry.io/product/seer/",
+      "visible": true
+    },
+    {
+      "text": "SESSION REPLAY",
+      "href": "https://sentry.io/product/session-replay/",
+      "visible": true
+    },
+    {
+      "text": "METRICS",
+      "href": "https://sentry.io/product/metrics/",
+      "visible": true
+    },
+    {
+      "text": "TRACING",
+      "href": "https://sentry.io/product/tracing/",
+      "visible": true
+    },
+    {
+      "text": "UPTIME MONITORING",
+      "href": "https://sentry.io/product/uptime-monitoring/",
+      "visible": true
+    },
+    {
+      "text": "PROFILING",
+      "href": "https://sentry.io/product/profiling/",
+      "visible": true
+    },
+    {
+      "text": "CRON MONITORING",
+      "href": "https://sentry.io/product/cron-monitoring/",
+      "visible": true
+    },
+    {
+      "text": "INTEGRATIONS",
+      "href": "https://sentry.io/integrations/",
+      "visible": true
+    },
+    {
+      "text": "WEB / FULL STACK DEVELOPMENT",
+      "href": "https://sentry.io/for/full-stack/",
+      "visible": true
+    },
+    {
+      "text": "MOBILE CRASH REPORTING",
+      "href": "https://sentry.io/solutions/mobile-developers/",
+      "visible": true
+    },
+    {
+      "text": "GAME CRASH REPORTING",
+      "href": "https://sentry.io/solutions/game-developers/",
+      "visible": true
+    },
+    {
+      "text": "AI OBSERVABILITY",
+      "href": "https://sentry.io/solutions/ai-observability/",
+      "visible": true
+    },
+    {
+      "text": "APPLICATION PERFORMANCE MONITORING",
+      "href": "https://sentry.io/solutions/application-performance-monitoring/",
+      "visible": true
+    },
+    {
+      "text": "APPLICATION OBSERVABILITY",
+      "href": "https://sentry.io/solutions/application-observability/",
+      "visible": true
+    },
+    {
+      "text": "REAL USER MONITORING",
+      "href": "https://sentry.io/solutions/real-user-monitoring-rum/",
+      "visible": true
+    },
+    {
+      "text": "ECOMMERCE",
+      "href": "https://sentry.io/solutions/ecommerce/",
+      "visible": true
+    },
+    {
+      "text": "ENTERPRISE",
+      "href": "https://sentry.io/for/enterprise/",
+      "visible": true
+    },
+    {
+      "text": "STARTUPS",
+      "href": "https://sentry.io/for/startups/",
+      "visible": true
+    },
+    {
+      "text": "DOCS",
+      "href": "https://docs.sentry.io/",
+      "visible": true
+    },
+    {
+      "text": "HELP CENTER",
+      "href": "https://help.sentry.io/",
+      "visible": true
+    },
+    {
+      "text": "STATUS",
+      "href": "https://status.sentry.io/",
+      "visible": true
+    },
+    {
+      "text": "COOKBOOK",
+      "href": "https://sentry.io/cookbook/",
+      "visible": true
+    },
+    {
+      "text": "DEV RESOURCES",
+      "href": "https://develop.sentry.dev/getting-started/",
+      "visible": true
+    },
+    {
+      "text": "TERMS",
+      "href": "https://sentry.io/terms/",
+      "visible": true
+    },
+    {
+      "text": "SECURITY & COMPLIANCE",
+      "href": "https://sentry.io/security/",
+      "visible": true
+    },
+    {
+      "text": "PRIVACY",
+      "href": "https://sentry.io/privacy/",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://sentry.io/",
+      "visible": true
+    },
+    {
+      "text": "",
+      "href": "https://opensourcepledge.com/members/sentry/",
+      "visible": true
+    },
+    {
+      "text": "Twitter Menu Button",
+      "href": "https://x.com/sentry/",
+      "visible": true
+    },
+    {
+      "text": "Github Social Menu Button",
+      "href": "https://github.com/getsentry/",
+      "visible": true
+    },
+    {
+      "text": "LinkedIn Menu Button",
+      "href": "https://www.linkedin.com/company/getsentry/",
+      "visible": true
+    },
+    {
+      "text": "Discord Menu Button",
+      "href": "https://discord.gg/sentry",
+      "visible": true
+    }
+  ],
+  "dialogs": [],
+  "cookieish": [],
+  "themeToggles": []
+}

@@ -1,0 +1,24 @@
+{
+  "file": "screenshots/public-2026-11-21/login-light-desktop.png",
+  "captured": "2026-11-21",
+  "href": "https://sentry.io/auth/login/",
+  "title": "Sentry",
+  "h1": "Sign in to Sentry",
+  "htmlClass": "",
+  "colorScheme": "normal",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollHeight": 900,
+  "png": {
+    "width": 1440,
+    "height": 900,
+    "bytes": 870751
+  },
+  "fullPage": false
+}
