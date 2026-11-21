@@ -1,6 +1,6 @@
 # Cosmos (cosmos.so)
 
-Cosmos's public signed-out surface — the home page, the explore/search/brand/profile discovery surfaces, sequence, shop, careers, the sign-up start and the public login card — captured 2026-11-12 in headless Chromium at 1440 x 900, plus the home and explore pages at 390 x 844. The product behind the login card was never reached.
+Cosmos's public signed-out surface, refreshed 2026-11-21 in headless Chromium at 1440 x 900 and 390 x 844. The map of which control opens which page is [site-tree.md](site-tree.md). The product behind the login card was never reached.
 
 ## Brief
 
@@ -90,16 +90,17 @@ A Next.js/Tailwind product with a real dual semantic layer: the sheets declare `
 | [DESIGN.md](DESIGN.md) | the generated one-theme export |
 | [icon.png](icon.png) | the Cosmos app icon, 128px (Git LFS) |
 | [components/](components) | `crops/` — 87 quantized state crops at 2x |
-| [screenshots/](screenshots) | 24 quantized captures (desktop 1440, mobile 390@2x, full-page bounded at 8 chunks) |
+| [screenshots/](screenshots) | 40 quantized captures (desktop 1440, phone 390 at 2x, full-page bounded at 8 chunks). The 2026-11-21 pass adds the colour and visual search dialogs, the AI tabs, the search Products tab, the product page, the reset-password wall, the help center, and the phone menu, shop, sequence and login wall |
+| [site-tree.md](site-tree.md) | which button, link, menu or control opens which page or in-page interaction, mapped 2026-11-21 |
 | [raw/](raw) | `css-vars.json` (436 rules, the full var harvest), `components-computed.json`, `component-tokens.json`, `measurements.md` |
 | [tools/](tools) | the builders and capture scripts that produced this package |
 
 ## Boundaries
 
 - **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
-- The signed-in product (feed, boards, clusters, settings) was never reached; only the public `/login` card was measured and Next was never pressed.
+- The signed-in product (feed, boards, clusters, settings) was never reached. Desktop `/login` asks for username or email and a password. Nothing was typed and Next was never pressed. Phone `/login` is an app-download wall; Download app was not pressed. `/forgot-password` and `/start` were opened and not submitted.
 - Dark mode is declared, not painted: `data-theme="light"` under forced dark emulation. The dark token set is the declared `--dark-*` values.
 - Search and profile pages run to ~23-24k px (infinite feeds); `-full` shots truncate at the 8-chunk bound.
-- The explore tab-bar toggle state was never shot (selector miss); `cat-tab`'s measured states stand in.
+- The explore Fashion tab is shot as [explore-light-tab.png](screenshots/explore-light-tab.png). The 2026-11-12 selector miss is superseded by that shot.
 - No standalone icon set was lifted; the mark, glyphs and imagery in shots are the product's artwork.
 - **Three entries were read from the wrong element; they need a recapture.** `hero-search` is the header's Log in / Sign up group (204 x 58), not the hero search pill, so `light.component.hero-search-height` says so in its source. `element-tile` is the whole 1376 x 3500 grid, not one tile, and `seq-card` is a 32 x 32 empty icon link, not a sequence card; no token uses those two.

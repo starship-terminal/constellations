@@ -8,9 +8,11 @@
 // Desktop shots are 1440x900 at 1x, mobile 390x844 at 2x, `*-full` shots 1x. A page taller than one
 // GPU texture is saved as name.partN.png tiles, which quantize.py stitches back together; an
 // unbounded page truncates at 8 chunks and the log records the boundary. Nothing is sent, bought or
-// signed into: the only presses are local UI toggles — the /explore feed tabs, the mobile nav
-// button, and focusing the login form's first field (never submitted). No consent banner exists;
-// the hiding stays as defence-in-depth. Search, save, follow and every auth action are never used.
+// signed into. Presses are local UI only: color and visual search dialogs (opened, then Escape),
+// the AI Show/Blur/Hide tabs, the explore Fashion tab, the search Products tab, the mobile Menu
+// button, and focusing the login form's first field (never submitted, never typed). No consent
+// banner exists; the hiding stays as defence-in-depth. Save, follow, subscribe, Download app and
+// every auth action are never used.
 import fs from 'fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -62,15 +64,45 @@ const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).cat
 const desktop = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.view('default');
+    // Color search opens a dialog (hex field + canvas). Nothing is typed or submitted.
+    await step('color-search', async () => {
+      const b = p.getByRole('button', { name: /color search/i }).first();
+      if (await b.count()) { await clickEl(b); await wait(p, 900); await S.view('color-search'); await p.keyboard.press('Escape'); await wait(p, 400); }
+    });
+    // Search combobox focus only. The field stays empty; no query is sent.
+    await step('search-focus', async () => {
+      const s = p.locator('input[name="search"]').first();
+      if (await s.count()) { await s.click(); await wait(p, 700); await S.view('search-focus'); await p.keyboard.press('Escape'); await wait(p, 300); }
+    });
+    // AI filter tabs are in-page. Show is the default; Blur and Hide are the other two.
+    await step('ai-blur', async () => {
+      const t = p.getByRole('tab', { name: /^Blur$/ }).first();
+      if (await t.count()) { await clickEl(t); await wait(p, 700); await S.view('ai-blur'); }
+    });
+    await step('ai-hide', async () => {
+      const t = p.getByRole('tab', { name: /^Hide$/ }).first();
+      if (await t.count()) { await clickEl(t); await wait(p, 700); await S.view('ai-hide'); }
+      const show = p.getByRole('tab', { name: /^Show$/ }).first();
+      if (await show.count()) await clickEl(show);
+    });
     await S.full();
   } },
   explore: { path: '/explore', wait: 9000, run: async (p, S) => {
     await S.view('default');
+    // Category tabs are links. Fashion is the first non-selected tab.
     await step('tab', async () => {
-      // The feed's segmented tabs (Featured / following feeds): a local UI
-      // switch between public lists.
-      const tabs = p.locator('button').filter({ hasText: /For you|Featured|Recent/i }).filter({ visible: true });
-      if (await tabs.count() > 1) { await clickEl(tabs.nth(1)); await wait(p, 1500); await S.view('tab'); }
+      const tab = p.getByRole('tab', { name: /^Fashion$/ }).first();
+      if (await tab.count()) { await clickEl(tab); await wait(p, 1500); await S.view('tab'); }
+    });
+    await p.goto(BASE + '/explore', { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
+    await wait(p, 2500);
+    await step('visual-search', async () => {
+      const b = p.getByRole('button', { name: /visual search/i }).first();
+      if (await b.count()) { await clickEl(b); await wait(p, 900); await S.view('visual-search'); await p.keyboard.press('Escape'); await wait(p, 400); }
+    });
+    await step('color-search', async () => {
+      const b = p.getByRole('button', { name: /color search/i }).first();
+      if (await b.count()) { await clickEl(b); await wait(p, 900); await S.view('color-search'); await p.keyboard.press('Escape'); await wait(p, 400); }
     });
     await S.full();
   } },
@@ -84,6 +116,11 @@ const desktop = {
   } },
   search: { path: '/search/elements/lamps', wait: 9000, run: async (p, S) => {
     await S.view('default');
+    // Products is an in-page tab that changes the path. Nothing is typed.
+    await step('products', async () => {
+      const t = p.getByRole('tab', { name: /^Products$/ }).first();
+      if (await t.count()) { await clickEl(t); await wait(p, 1400); await S.view('products'); }
+    });
     await S.full();
   } },
   brand: { path: '/brand/lie-studio', wait: 9000, run: async (p, S) => {
@@ -109,21 +146,48 @@ const desktop = {
   start: { path: '/start', wait: 9000, run: async (p, S) => {
     await S.view('default');
   } },
+  // Reset asks for a username or email and a send button. Recorded, never filled.
+  forgot: { path: '/forgot-password', wait: 5000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  // One public product page, opened from a shop tile. No purchase control is used.
+  product: { path: '/product/artemide/534905610', wait: 7000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  legal: { path: '/legal/terms-conditions', wait: 5000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  help: { url: 'https://help.cosmos.so/en/', wait: 7000, run: async (p, S) => {
+    await S.view('default');
+  } },
 };
 
 const mobile = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.view('default');
     await step('menu', async () => {
-      // The mobile header's menu button (xl:hidden): a local overlay toggle.
-      const m = p.locator('button.xl\\:hidden, header button').filter({ visible: true }).first();
-      if (await m.count()) { await clickEl(m); await wait(p, 1600); await S.view('menu'); await p.keyboard.press('Escape'); }
+      const m = p.getByRole('button', { name: /^Menu$/ }).first();
+      if (await m.count()) { await clickEl(m); await wait(p, 1200); await S.view('menu'); await p.keyboard.press('Escape'); await wait(p, 400); }
+    });
+    await step('color-search', async () => {
+      const b = p.getByRole('button', { name: /color search/i }).first();
+      if (await b.count()) { await clickEl(b); await wait(p, 800); await S.view('color-search'); await p.keyboard.press('Escape'); }
     });
     await S.full();
   } },
   explore: { path: '/explore', wait: 9000, run: async (p, S) => {
     await S.view('default');
     await S.full();
+  } },
+  login: { path: '/login', wait: 5000, run: async (p, S) => {
+    // Phone /login is an app-download wall. The Download control is not pressed.
+    await S.view('default');
+  } },
+  shop: { path: '/explore/shop', wait: 7000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  sequence: { path: '/sequence', wait: 7000, run: async (p, S) => {
+    await S.view('default');
   } },
 };
 

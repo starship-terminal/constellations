@@ -28,6 +28,10 @@ Captured signed out on 2026-11-12. Heights are the painted `scrollHeight` of eac
 
 - Infinite feeds: the painted scrollHeight is a boundary, not the whole page. `-full` shots truncate at the 8-chunk cap and the boundary is recorded in each sidecar.
 
+## Site tree
+
+[site-tree.md](site-tree.md) lists every public control mapped on 2026-11-21 and the page or dialog it opens.
+
 ## Login (`/login`)
 
 - A centred 344px card: username-or-email + password fields (~310px rows, 15px 400), a password visibility toggle, Forgot password in 14px 500 secondary gray, and the 56px radius-full Next pill. Disabled: elevation fill + tertiary text, `cursor: default`. Enabled (both fields typed, never submitted): ink fill + white text, `cursor: pointer`. Sign-up link below in ink.
