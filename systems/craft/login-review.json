@@ -1,0 +1,117 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public Playwright capture, signed out. https://docs.craft.do/ was opened directly after the homepage tree was written. The empty wall was photographed at 1440 and 390. The branch stopped. No email, password, phone, or code was typed. Google, Apple, and Microsoft were not clicked. Continue and continue with SSO were not pressed. No form was submitted. The reCAPTCHA was not solved.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": "innerWidth 1440, innerHeight 900, devicePixelRatio 1, visualViewport 1440x900 scale 1",
+      "png": "1440x900",
+      "file": "screenshots/login-light-empty.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": "innerWidth 390, innerHeight 844, devicePixelRatio 2, visualViewport 390x844 scale 1",
+      "png": "780x1688",
+      "file": "screenshots/mobile-login-light-empty.png"
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "no signed-in navigation"
+      ],
+      "reached": [
+        "no signed-in navigation"
+      ],
+      "note": "Signed out. The public header offers Product, Imagine, Community, Pricing, Learn, Download, Log in, and Try Craft Free. Product and Community open menus on the homepage. Log in leaves www.craft.do for the docs wall."
+    },
+    "settings": {
+      "items": [
+        "no settings area"
+      ],
+      "reached": [
+        "no settings area"
+      ],
+      "note": "No signed-in settings surface was offered. The footer English control opens a locale dialog and was not followed."
+    },
+    "create": {
+      "items": [
+        "no create flow"
+      ],
+      "reached": [
+        "no create flow"
+      ],
+      "note": "Try Craft Free, Get Started, and Upgrade to Plus were not submitted. Nothing was downloaded or purchased."
+    },
+    "wall": "https://docs.craft.do/",
+    "status": 200,
+    "title": "Craft — A fresh take on documents",
+    "themes": [
+      "light"
+    ],
+    "fields": [
+      {
+        "label": "Your Email",
+        "placeholder": "Your Email",
+        "type": "email",
+        "value": "empty"
+      }
+    ],
+    "actions": [
+      "continue with SSO",
+      "Continue",
+      "Continue with Google",
+      "Continue with Apple",
+      "Continue with Microsoft"
+    ],
+    "legal": [
+      "Terms and Conditions",
+      "Privacy Policy"
+    ],
+    "captcha": "reCAPTCHA notice is visible. Not solved."
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-menu-product.png",
+    "screenshots/home-light-menu-community.png",
+    "screenshots/home-light-language.png",
+    "screenshots/plan-light-default.png",
+    "screenshots/organize-light-default.png",
+    "screenshots/customize-light-default.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-billing.png",
+    "screenshots/pricingfaq-light-faq.png",
+    "screenshots/login-light-empty.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-login-light-empty.png"
+  ],
+  "gaps": [
+    "The signed-in docs editor was not entered. Nav, settings, and create were not offered on a signed-in shell.",
+    "Continue was not pressed. No password or code step appeared.",
+    "continue with SSO was visible and not pressed.",
+    "Google, Apple, and Microsoft were visible and not clicked.",
+    "The reCAPTCHA was not solved.",
+    "Upgrade to Plus was not followed. It points at the same docs host with a checkout query.",
+    "Try Craft Free and the store and installer links were not followed.",
+    "T3 preview_snapshot could not paint frames. Screenshots are from headless Playwright."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "code",
+    "Continue",
+    "continue with SSO",
+    "Continue with Google",
+    "Continue with Apple",
+    "Continue with Microsoft",
+    "captcha",
+    "Upgrade to Plus",
+    "Try Craft Free",
+    "Get Started",
+    "Contact Support",
+    "newsletter",
+    "locale change"
+  ]
+}
