@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "login-empty",
+  "url": "https://www.nytimes.com/athletic/login2/?login_source=site_nav&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Fathletic%2F",
+  "title": "The Athletic",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "First viewport from the T3 incognito preview tab on 2026-11-22. Empty login and create-account wall. Email field empty. Continue, Google, and Apple were not clicked. Read colours from tokens.json, not from this PNG. No form was submitted."
+}

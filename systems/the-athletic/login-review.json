@@ -1,0 +1,68 @@
+{
+  "product": "The Athletic",
+  "domain": "nytimes.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Incognito preview tab, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log In",
+      "url": "https://www.nytimes.com/athletic/login2/?login_source=site_nav&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Fathletic%2F",
+      "title": "The Athletic",
+      "painted": true,
+      "headings": ["Log in or create an account."],
+      "asksFor": [
+        {
+          "label": "Email address",
+          "type": "email",
+          "placeholder": "",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [
+        "Continue with Google",
+        "Continue with Apple"
+      ],
+      "otherControls": [
+        "Continue",
+        "Terms of Sale",
+        "Terms of Service",
+        "Privacy Policy"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-empty-light-1440.png",
+      "note": "Empty login and signup wall in one NYT account iframe. The email field was empty. Continue was not clicked. Google and Apple were visible and were not clicked. There is no separate signup URL."
+    },
+    {
+      "control": "header Start a free trial",
+      "url": "https://www.nytimes.com/subscription/athletic?source=athletic-bar1&onboarded=false",
+      "title": "Subscribe to The Athletic from The New York Times",
+      "painted": true,
+      "headings": ["Score all of The New York Times."],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "Continue to checkout",
+        "Subscribe now",
+        "annual plan radio",
+        "monthly plan radio"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/subscribe-light-1440.png",
+      "note": "Subscribe wall. Continue to checkout and Subscribe now point at myaccount.nytimes.com and were not followed. No card, email, or address was entered."
+    }
+  ],
+  "notOpened": [
+    "Continue, Continue with Google, and Continue with Apple were not clicked.",
+    "Continue to checkout, Subscribe now, Buy a Gift, and Group Subscriptions were not followed.",
+    "Forgot Password was not opened.",
+    "Newsletter forms were not submitted.",
+    "Search was photographed empty and no query was typed."
+  ]
+}
