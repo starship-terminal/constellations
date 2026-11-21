@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>REI public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #f4f2ed;
+    --header: #292929;
+    --text: #000000;
+    --muted: #4b4a48;
+    --accent: #c7370f;
+    --on-accent: #ffffff;
+    --border: #958e83;
+    --link: #406eb5;
+    --on-dark: #fafafa;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --serif: Georgia, "Times New Roman", serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/24px var(--sans); }
+  header { background: var(--header); color: var(--on-dark); padding: 12px 24px; font-size: 14px; }
+  main { padding: 24px; max-width: 880px; }
+  h1 { font: 600 24px/30px var(--serif); margin: 0 0 8px; }
+  p { color: var(--muted); }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 4px; border: 1px solid var(--border); }
+  .name { font-size: 14px; margin-top: 6px; }
+  .bar { background: var(--surface); padding: 16px; border-radius: 4px; display: flex; gap: 12px; align-items: center; }
+  input { height: 46px; border: 0; box-shadow: inset 0 0 0 1px var(--border); border-radius: 4px; padding: 0 12px; font: 16px var(--sans); background: rgba(255,255,255,.85); width: 280px; }
+  button { height: 38px; padding: 8px 16px; border: 0; border-radius: 4px; background: var(--accent); color: var(--on-accent); font: 500 16px/22px var(--sans); }
+  a { color: var(--link); }
+</style>
+</head>
+<body>
+<header>Shop REI</header>
+<main>
+  <h1>Shop</h1>
+  <p>Measured from rei.com on 2026-11-22. Graphik and Stuart are not in this file. Helvetica Neue and Georgia stand in.</p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#292929"></div><div class="name">header #292929</div></div>
+    <div class="swatch"><div class="chip" style="background:#f4f2ed"></div><div class="name">surface #f4f2ed</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#c7370f"></div><div class="name">accent #c7370f</div></div>
+    <div class="swatch"><div class="chip" style="background:#4b4a48"></div><div class="name">muted #4b4a48</div></div>
+    <div class="swatch"><div class="chip" style="background:#958e83"></div><div class="name">border #958e83</div></div>
+    <div class="swatch"><div class="chip" style="background:#406eb5"></div><div class="name">link #406eb5</div></div>
+  </div>
+  <div class="bar">
+    <input placeholder="Search for great gear and clothing" aria-label="Search">
+    <button type="button">Shop the sale</button>
+  </div>
+  <p><a href="site-tree.md">Site tree</a></p>
+</main>
+</body>
+</html>
