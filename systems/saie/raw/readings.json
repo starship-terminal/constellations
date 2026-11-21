@@ -1,0 +1,1244 @@
+{
+  "capturedAt": "2026-11-21T22:47:43.970Z",
+  "pages": {
+    "home": {
+      "href": "https://saiehello.com/",
+      "title": "Saie | Clean Makeup You'll Love",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      },
+      "body": {
+        "text": "Press Option+1 for screen-reader mode, Option+0 to cancel Accessibility Screen-R",
+        "bg": "rgb(242, 242, 242)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20.8px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "none",
+        "h": 4257,
+        "w": 1440
+      },
+      "bar": {
+        "text": "Saie x rocky's matcha | Shop Now NEW! SuperSuede™ Eyeshadow | Shop Now Internati",
+        "bg": "rgb(27, 33, 33)",
+        "color": "rgb(192, 192, 218)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20.8px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(192, 192, 218)",
+        "tt": "none",
+        "h": 34,
+        "w": 1440
+      },
+      "header": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "h": 91,
+        "pos": "fixed"
+      },
+      "logo": {
+        "w": 186,
+        "h": 40,
+        "color": "rgb(27, 33, 33)"
+      },
+      "shop": {
+        "text": "SHOP",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "13px",
+        "weight": "500",
+        "lh": "16.9px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "uppercase",
+        "h": 17,
+        "w": 36
+      },
+      "add": {
+        "text": "ADD TO MAKEUP BAG - $24",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "13px",
+        "weight": "500",
+        "lh": "19.5px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "12px",
+        "border": "1px solid rgb(0, 0, 0)",
+        "tt": "uppercase",
+        "h": 46,
+        "w": 317
+      },
+      "heading": {
+        "text": "SIGN IN",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "25px",
+        "weight": "500",
+        "lh": "26.25px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "uppercase",
+        "h": 26,
+        "w": 418
+      },
+      "price": {
+        "text": "$0.00",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "13px",
+        "weight": "500",
+        "lh": "16.9px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "none",
+        "h": 0,
+        "w": 0
+      },
+      "productTitle": null,
+      "vars": {
+        "black": "#1b2121",
+        "bg": "#f2f2f2",
+        "purple": "#c0c0da",
+        "headerH": "91px"
+      },
+      "fonts": [
+        "Ordinary-Text 400 unloaded",
+        "Ordinary-Display 400 loaded",
+        "Ordinary-Display 300 unloaded",
+        "Ordinary-Display 500 loaded",
+        "Ordinary-Display 700 unloaded",
+        "Ordinary-Display 900 unloaded",
+        "VictorSerif 400 unloaded",
+        "unionbold 400 unloaded",
+        "OrdinaryDisplayRegular 400 unloaded",
+        "Ordinary 300 unloaded",
+        "Ordinary 400 loaded",
+        "OrdinaryMedium 500 unloaded",
+        "swiper-icons 400 unloaded"
+      ]
+    },
+    "homeLinks": {
+      "header": [
+        {
+          "text": "Saie x rocky's matcha | Shop Now",
+          "href": "https://saiehello.com/pages/rockys-matcha-x-saie"
+        },
+        {
+          "text": "NEW! SuperSuede™ Eyeshadow | Shop Now",
+          "href": "https://saiehello.com/pages/supersuede-eyeshadow"
+        },
+        {
+          "text": "International Shipping: Saie Now Ships Worldwide | Shop Now",
+          "href": "https://saiehello.com/collections/bestsellers"
+        },
+        {
+          "text": "Our Roadmap to Carbon Net Zero by 2039 | Download 2025 Impact Report",
+          "href": "https://saiehello.com/pages/impact-report"
+        },
+        {
+          "text": "REWARDS",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "LOG IN",
+          "href": "https://saiehello.com/account"
+        },
+        {
+          "text": "SHOP",
+          "href": "https://saiehello.com/collections/all-products"
+        },
+        {
+          "text": "New",
+          "href": "https://saiehello.com/collections/new"
+        },
+        {
+          "text": "Best Sellers",
+          "href": "https://saiehello.com/collections/bestsellers"
+        },
+        {
+          "text": "The Vanity Case",
+          "href": "https://saiehello.com/pages/vanity-case"
+        },
+        {
+          "text": "Travel Size",
+          "href": "https://saiehello.com/collections/minis-travel-sizes"
+        },
+        {
+          "text": "Sets",
+          "href": "https://saiehello.com/collections/sets"
+        },
+        {
+          "text": "TYPE",
+          "href": "https://saiehello.com/collections/all"
+        },
+        {
+          "text": "Complexion",
+          "href": "https://saiehello.com/collections/complexion"
+        },
+        {
+          "text": "Lip",
+          "href": "https://saiehello.com/collections/lip"
+        },
+        {
+          "text": "Eye",
+          "href": "https://saiehello.com/collections/eye"
+        },
+        {
+          "text": "Cheek",
+          "href": "https://saiehello.com/collections/cheek"
+        },
+        {
+          "text": "Brushes",
+          "href": "https://saiehello.com/collections/brushes"
+        },
+        {
+          "text": "COLLECTIONS",
+          "href": "https://saiehello.com/collections/all-products"
+        },
+        {
+          "text": "Saie x Karen Wazen",
+          "href": "https://saiehello.com/pages/saie-x-karen-wazen"
+        },
+        {
+          "text": "Baked by Saie",
+          "href": "https://saiehello.com/collections/baked-by-saie"
+        },
+        {
+          "text": "Slip Tint™",
+          "href": "https://saiehello.com/collections/slip-tint-collection"
+        },
+        {
+          "text": "101™",
+          "href": "https://saiehello.com/collections/101%E2%84%A2"
+        },
+        {
+          "text": "Allure's Best of Beauty",
+          "href": "https://saiehello.com/collections/allures-best-of-beauty"
+        },
+        {
+          "text": "GLOWY SUPER GEL™",
+          "href": "https://saiehello.com/products/glowy-super-gel-luminizer"
+        },
+        {
+          "text": "DEW BLUSH™",
+          "href": "https://saiehello.com/products/dew-blush"
+        },
+        {
+          "text": "HOLIDAY BOUTIQUE",
+          "href": "https://saiehello.com/pages/holiday-boutique"
+        },
+        {
+          "text": "NEW! SUPERSUEDE™ EYESHADOW",
+          "href": "https://saiehello.com/pages/supersuede-eyeshadow"
+        },
+        {
+          "text": "SHADE FINDER",
+          "href": "https://saiehello.com/pages/find-your-shade"
+        },
+        {
+          "text": "Homepage",
+          "href": "https://saiehello.com/"
+        },
+        {
+          "text": "THE MAKEUP CLASS",
+          "href": "https://saiehello.com/pages/saie-masterclass"
+        },
+        {
+          "text": "LEARN",
+          "href": "https://saiehello.com/pages/founding-story"
+        },
+        {
+          "text": "ABOUT",
+          "href": "https://saiehello.com/pages/founding-story"
+        },
+        {
+          "text": "Our Story",
+          "href": "https://saiehello.com/pages/founding-story"
+        },
+        {
+          "text": "Standards",
+          "href": "https://saiehello.com/pages/saie-standards"
+        },
+        {
+          "text": "Recycling",
+          "href": "https://saiehello.com/pages/saie-recycling-program"
+        },
+        {
+          "text": "DISCOVER",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "Saie Culture & Arts Program",
+          "href": "https://saiehello.com/pages/saie-culture-and-arts"
+        },
+        {
+          "text": "Clean Beauty Crew",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "SAIE TYB - STACK POINTS AND EARN REWARDS",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "CLIMATE INITIATIVE",
+          "href": "https://saiehello.com/pages/the-saie-climate-initiative"
+        },
+        {
+          "text": "Climate Initiative",
+          "href": "https://saiehello.com/pages/the-saie-climate-initiative"
+        },
+        {
+          "text": "The Saie Way",
+          "href": "https://saiehello.com/pages/the-saie-way"
+        },
+        {
+          "text": "Saie Impact Report",
+          "href": "https://saiehello.com/pages/impact-report"
+        },
+        {
+          "text": "2025 IMPACT REPORT",
+          "href": "https://saiehello.com/pages/impact-report"
+        },
+        {
+          "text": "BAG 0",
+          "href": "https://saiehello.com/cart"
+        },
+        {
+          "text": "Holiday Boutique",
+          "href": "https://saiehello.com/pages/holiday-boutique"
+        },
+        {
+          "text": "Supersuede™ Eyeshadow",
+          "href": "https://saiehello.com/pages/supersuede-eyeshadow"
+        },
+        {
+          "text": "The Makeup Class",
+          "href": "https://saiehello.com/pages/the-makeup-class"
+        },
+        {
+          "text": "All",
+          "href": "https://saiehello.com/collections/all-products"
+        },
+        {
+          "text": "Type + -",
+          "href": "https://saiehello.com/"
+        },
+        {
+          "text": "Face",
+          "href": "https://saiehello.com/collections/complexion"
+        },
+        {
+          "text": "Merch",
+          "href": "https://saiehello.com/collections/merch"
+        },
+        {
+          "text": "Now Trending + -",
+          "href": "https://saiehello.com/"
+        },
+        {
+          "text": "Saie Summer",
+          "href": "https://saiehello.com/collections/saie-summer"
+        },
+        {
+          "text": "The Vanity Case",
+          "href": "https://saiehello.com/collections/vanity-cases"
+        },
+        {
+          "text": "Learn + -",
+          "href": "https://saiehello.com/"
+        },
+        {
+          "text": "Saie Standards",
+          "href": "https://saiehello.com/pages/saie-standards"
+        },
+        {
+          "text": "Saie Recycles",
+          "href": "https://saiehello.com/pages/saie-recycling-program"
+        },
+        {
+          "text": "Find Your Shade",
+          "href": "https://saiehello.com/pages/find-your-shade"
+        },
+        {
+          "text": "Account",
+          "href": "https://saiehello.com/account"
+        }
+      ],
+      "footer": [
+        {
+          "text": "instagram page",
+          "href": "https://www.instagram.com/saiebeauty"
+        },
+        {
+          "text": "facebook page",
+          "href": "https://www.facebook.com/saiebeauty/"
+        },
+        {
+          "text": "youtube page",
+          "href": "https://www.youtube.com/c/Saiehello"
+        },
+        {
+          "text": "pinterest page",
+          "href": "https://www.pinterest.com/saiebeauty/"
+        },
+        {
+          "text": "tiktok page",
+          "href": "https://www.tiktok.com/@saiebeauty"
+        },
+        {
+          "text": "SHOP ALL",
+          "href": "https://saiehello.com/collections/all"
+        },
+        {
+          "text": "SETS",
+          "href": "https://saiehello.com/collections/bundles"
+        },
+        {
+          "text": "EVERY BODY",
+          "href": "https://www.everybodycampaign.com/"
+        },
+        {
+          "text": "FOUNDING STORY",
+          "href": "https://saiehello.com/pages/founding-story"
+        },
+        {
+          "text": "SAIE STANDARDS",
+          "href": "https://saiehello.com/pages/saie-standards"
+        },
+        {
+          "text": "SAIE RECYCLING",
+          "href": "https://saiehello.com/pages/saie-recycling-program"
+        },
+        {
+          "text": "SAIE REWARDS",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "FAQ",
+          "href": "https://saiehello.com/pages/faqs"
+        },
+        {
+          "text": "CONTACT",
+          "href": "https://saiehello.com/pages/contact"
+        },
+        {
+          "text": "FIND A STORE",
+          "href": "https://saiehello.com/pages/find-a-store"
+        },
+        {
+          "text": "ACCOUNT",
+          "href": "https://saiehello.com/account"
+        },
+        {
+          "text": "CLEAN BEAUTY CREW",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "MANAGE SUBSCRIPTION",
+          "href": "https://saiehello.com/apps/retextion"
+        },
+        {
+          "text": "EU WITHDRAWAL CONTRACT FORM",
+          "href": "https://fzb8gyqpbiq.typeform.com/to/Vs1AFYvR"
+        },
+        {
+          "text": "TERMS",
+          "href": "https://saiehello.com/pages/terms-of-service"
+        },
+        {
+          "text": "PRIVACY",
+          "href": "https://privacy.saiehello.com/privacy-policy"
+        },
+        {
+          "text": "CALIFORNIA PRIVACY",
+          "href": "https://privacy.saiehello.com/privacy-policy"
+        },
+        {
+          "text": "California Privacy Notice",
+          "href": "https://privacy.saiehello.com/privacy-policy"
+        }
+      ],
+      "mainProducts": [
+        {
+          "text": "GLOWY SUPER GEL™",
+          "href": "https://saiehello.com/products/glowy-super-gel-luminizer"
+        },
+        {
+          "text": "DEW BLUSH™",
+          "href": "https://saiehello.com/products/dew-blush"
+        },
+        {
+          "text": "Mini Dew Bronze™",
+          "href": "https://saiehello.com/products/mini-dew-bronze"
+        },
+        {
+          "text": "Mini Dew Blush™",
+          "href": "https://saiehello.com/products/mini-dew-blush"
+        },
+        {
+          "text": "Essential Brush Kit",
+          "href": "https://saiehello.com/products/essential-brush-kit-2026"
+        },
+        {
+          "text": "Best of Saie Vault",
+          "href": "https://saiehello.com/products/best-of-saie-vault-2026"
+        },
+        {
+          "text": "SuperSuede Baked Eyeshadow",
+          "href": "https://saiehello.com/products/supersuede-baked-eyeshadow"
+        },
+        {
+          "text": "The Double-Ended Eyeshadow Brush",
+          "href": "https://saiehello.com/products/double-ended-eye-shadow-brush"
+        },
+        {
+          "text": "Mini Dew Blush™ Trio",
+          "href": "https://saiehello.com/products/mini-dew-blush-trio-2026-gift-set"
+        },
+        {
+          "text": "Glowy Super™ Gel Duo",
+          "href": "https://saiehello.com/products/glowy-super-gel-2026-gift-set"
+        },
+        {
+          "text": "Prep & Set Duo",
+          "href": "https://saiehello.com/products/glowy-super-gel-cityset-2026-gift-set"
+        },
+        {
+          "text": "Saie x Karen Wazen Sunglasses",
+          "href": "https://saiehello.com/products/saie-karen-wazen-sunglasses"
+        },
+        {
+          "text": "Slip Tint™ Tinted Moisturizer",
+          "href": "https://saiehello.com/products/slip-tint-tinted-moisturizer"
+        },
+        {
+          "text": "SuperSuede™ Baked Powder Blush",
+          "href": "https://saiehello.com/products/supersuede"
+        },
+        {
+          "text": "Dew Bronze™",
+          "href": "https://saiehello.com/products/dew-bronze"
+        },
+        {
+          "text": "CitySet™ Lightweight Setting Spray",
+          "href": "https://saiehello.com/products/cityset-lightweight-setting-spray"
+        },
+        {
+          "text": "Glossybounce™",
+          "href": "https://saiehello.com/products/glossybounce"
+        },
+        {
+          "text": "SuperSuede™ Radiant Baked Bronzer",
+          "href": "https://saiehello.com/products/supersuede-radiant-baked-bronzer"
+        }
+      ]
+    },
+    "category": {
+      "href": "https://saiehello.com/collections/lip",
+      "title": "Lip – Saie",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      },
+      "body": {
+        "text": "Press Option+1 for screen-reader mode, Option+0 to cancel Accessibility Screen-R",
+        "bg": "rgb(242, 242, 242)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20.8px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "none",
+        "h": 2315,
+        "w": 1440
+      },
+      "bar": {
+        "text": "Saie x rocky's matcha | Shop Now NEW! SuperSuede™ Eyeshadow | Shop Now Internati",
+        "bg": "rgb(27, 33, 33)",
+        "color": "rgb(192, 192, 218)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20.8px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(192, 192, 218)",
+        "tt": "none",
+        "h": 34,
+        "w": 1440
+      },
+      "header": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "h": 91,
+        "pos": "fixed"
+      },
+      "logo": {
+        "w": 186,
+        "h": 40,
+        "color": "rgb(27, 33, 33)"
+      },
+      "shop": {
+        "text": "SHOP",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "13px",
+        "weight": "500",
+        "lh": "16.9px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "uppercase",
+        "h": 17,
+        "w": 36
+      },
+      "add": {
+        "text": "ADD TO MAKEUP BAG - $32",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "13px",
+        "weight": "500",
+        "lh": "19.5px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "12px",
+        "border": "1px solid rgb(0, 0, 0)",
+        "tt": "uppercase",
+        "h": 46,
+        "w": 340
+      },
+      "heading": {
+        "text": "LIP",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "25px",
+        "weight": "500",
+        "lh": "26.25px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "uppercase",
+        "h": 26,
+        "w": 1320
+      },
+      "price": {
+        "text": "$0.00",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "13px",
+        "weight": "500",
+        "lh": "16.9px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "none",
+        "h": 0,
+        "w": 0
+      },
+      "productTitle": {
+        "text": "LIP",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "25px",
+        "weight": "500",
+        "lh": "26.25px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "uppercase",
+        "h": 26,
+        "w": 1320
+      },
+      "vars": {
+        "black": "#1b2121",
+        "bg": "#f2f2f2",
+        "purple": "#c0c0da",
+        "headerH": "91px"
+      },
+      "fonts": [
+        "Ordinary-Text 400 unloaded",
+        "Ordinary-Display 400 loaded",
+        "Ordinary-Display 300 unloaded",
+        "Ordinary-Display 500 loaded",
+        "Ordinary-Display 700 unloaded",
+        "Ordinary-Display 900 unloaded",
+        "VictorSerif 400 unloaded",
+        "unionbold 400 unloaded",
+        "OrdinaryDisplayRegular 400 unloaded",
+        "Ordinary 300 unloaded",
+        "Ordinary 400 loaded",
+        "OrdinaryMedium 500 unloaded",
+        "swiper-icons 400 unloaded"
+      ]
+    },
+    "categoryLinks": {
+      "header": [
+        {
+          "text": "Saie x rocky's matcha | Shop Now",
+          "href": "https://saiehello.com/pages/rockys-matcha-x-saie"
+        },
+        {
+          "text": "NEW! SuperSuede™ Eyeshadow | Shop Now",
+          "href": "https://saiehello.com/pages/supersuede-eyeshadow"
+        },
+        {
+          "text": "International Shipping: Saie Now Ships Worldwide | Shop Now",
+          "href": "https://saiehello.com/collections/bestsellers"
+        },
+        {
+          "text": "Our Roadmap to Carbon Net Zero by 2039 | Download 2025 Impact Report",
+          "href": "https://saiehello.com/pages/impact-report"
+        },
+        {
+          "text": "REWARDS",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "LOG IN",
+          "href": "https://saiehello.com/account"
+        },
+        {
+          "text": "SHOP",
+          "href": "https://saiehello.com/collections/all-products"
+        },
+        {
+          "text": "New",
+          "href": "https://saiehello.com/collections/new"
+        },
+        {
+          "text": "Best Sellers",
+          "href": "https://saiehello.com/collections/bestsellers"
+        },
+        {
+          "text": "The Vanity Case",
+          "href": "https://saiehello.com/pages/vanity-case"
+        },
+        {
+          "text": "Travel Size",
+          "href": "https://saiehello.com/collections/minis-travel-sizes"
+        },
+        {
+          "text": "Sets",
+          "href": "https://saiehello.com/collections/sets"
+        },
+        {
+          "text": "TYPE",
+          "href": "https://saiehello.com/collections/all"
+        },
+        {
+          "text": "Complexion",
+          "href": "https://saiehello.com/collections/complexion"
+        },
+        {
+          "text": "Lip",
+          "href": "https://saiehello.com/collections/lip"
+        },
+        {
+          "text": "Eye",
+          "href": "https://saiehello.com/collections/eye"
+        },
+        {
+          "text": "Cheek",
+          "href": "https://saiehello.com/collections/cheek"
+        },
+        {
+          "text": "Brushes",
+          "href": "https://saiehello.com/collections/brushes"
+        },
+        {
+          "text": "COLLECTIONS",
+          "href": "https://saiehello.com/collections/all-products"
+        },
+        {
+          "text": "Saie x Karen Wazen",
+          "href": "https://saiehello.com/pages/saie-x-karen-wazen"
+        },
+        {
+          "text": "Baked by Saie",
+          "href": "https://saiehello.com/collections/baked-by-saie"
+        },
+        {
+          "text": "Slip Tint™",
+          "href": "https://saiehello.com/collections/slip-tint-collection"
+        },
+        {
+          "text": "101™",
+          "href": "https://saiehello.com/collections/101%E2%84%A2"
+        },
+        {
+          "text": "Allure's Best of Beauty",
+          "href": "https://saiehello.com/collections/allures-best-of-beauty"
+        },
+        {
+          "text": "GLOWY SUPER GEL™",
+          "href": "https://saiehello.com/products/glowy-super-gel-luminizer"
+        },
+        {
+          "text": "DEW BLUSH™",
+          "href": "https://saiehello.com/products/dew-blush"
+        },
+        {
+          "text": "HOLIDAY BOUTIQUE",
+          "href": "https://saiehello.com/pages/holiday-boutique"
+        },
+        {
+          "text": "NEW! SUPERSUEDE™ EYESHADOW",
+          "href": "https://saiehello.com/pages/supersuede-eyeshadow"
+        },
+        {
+          "text": "SHADE FINDER",
+          "href": "https://saiehello.com/pages/find-your-shade"
+        },
+        {
+          "text": "Homepage",
+          "href": "https://saiehello.com/"
+        },
+        {
+          "text": "THE MAKEUP CLASS",
+          "href": "https://saiehello.com/pages/saie-masterclass"
+        },
+        {
+          "text": "LEARN",
+          "href": "https://saiehello.com/pages/founding-story"
+        },
+        {
+          "text": "ABOUT",
+          "href": "https://saiehello.com/pages/founding-story"
+        },
+        {
+          "text": "Our Story",
+          "href": "https://saiehello.com/pages/founding-story"
+        },
+        {
+          "text": "Standards",
+          "href": "https://saiehello.com/pages/saie-standards"
+        },
+        {
+          "text": "Recycling",
+          "href": "https://saiehello.com/pages/saie-recycling-program"
+        },
+        {
+          "text": "DISCOVER",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "Saie Culture & Arts Program",
+          "href": "https://saiehello.com/pages/saie-culture-and-arts"
+        },
+        {
+          "text": "Clean Beauty Crew",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "SAIE TYB - STACK POINTS AND EARN REWARDS",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "CLIMATE INITIATIVE",
+          "href": "https://saiehello.com/pages/the-saie-climate-initiative"
+        },
+        {
+          "text": "Climate Initiative",
+          "href": "https://saiehello.com/pages/the-saie-climate-initiative"
+        },
+        {
+          "text": "The Saie Way",
+          "href": "https://saiehello.com/pages/the-saie-way"
+        },
+        {
+          "text": "Saie Impact Report",
+          "href": "https://saiehello.com/pages/impact-report"
+        },
+        {
+          "text": "2025 IMPACT REPORT",
+          "href": "https://saiehello.com/pages/impact-report"
+        },
+        {
+          "text": "BAG 0",
+          "href": "https://saiehello.com/cart"
+        },
+        {
+          "text": "Holiday Boutique",
+          "href": "https://saiehello.com/pages/holiday-boutique"
+        },
+        {
+          "text": "Supersuede™ Eyeshadow",
+          "href": "https://saiehello.com/pages/supersuede-eyeshadow"
+        },
+        {
+          "text": "The Makeup Class",
+          "href": "https://saiehello.com/pages/the-makeup-class"
+        },
+        {
+          "text": "All",
+          "href": "https://saiehello.com/collections/all-products"
+        },
+        {
+          "text": "Type + -",
+          "href": "https://saiehello.com/collections/lip"
+        },
+        {
+          "text": "Face",
+          "href": "https://saiehello.com/collections/complexion"
+        },
+        {
+          "text": "Merch",
+          "href": "https://saiehello.com/collections/merch"
+        },
+        {
+          "text": "Now Trending + -",
+          "href": "https://saiehello.com/collections/lip"
+        },
+        {
+          "text": "Saie Summer",
+          "href": "https://saiehello.com/collections/saie-summer"
+        },
+        {
+          "text": "The Vanity Case",
+          "href": "https://saiehello.com/collections/vanity-cases"
+        },
+        {
+          "text": "Learn + -",
+          "href": "https://saiehello.com/collections/lip"
+        },
+        {
+          "text": "Saie Standards",
+          "href": "https://saiehello.com/pages/saie-standards"
+        },
+        {
+          "text": "Saie Recycles",
+          "href": "https://saiehello.com/pages/saie-recycling-program"
+        },
+        {
+          "text": "Find Your Shade",
+          "href": "https://saiehello.com/pages/find-your-shade"
+        },
+        {
+          "text": "Account",
+          "href": "https://saiehello.com/account"
+        }
+      ],
+      "footer": [
+        {
+          "text": "instagram page",
+          "href": "https://www.instagram.com/saiebeauty"
+        },
+        {
+          "text": "facebook page",
+          "href": "https://www.facebook.com/saiebeauty/"
+        },
+        {
+          "text": "youtube page",
+          "href": "https://www.youtube.com/c/Saiehello"
+        },
+        {
+          "text": "pinterest page",
+          "href": "https://www.pinterest.com/saiebeauty/"
+        },
+        {
+          "text": "tiktok page",
+          "href": "https://www.tiktok.com/@saiebeauty"
+        },
+        {
+          "text": "SHOP ALL",
+          "href": "https://saiehello.com/collections/all"
+        },
+        {
+          "text": "SETS",
+          "href": "https://saiehello.com/collections/bundles"
+        },
+        {
+          "text": "EVERY BODY",
+          "href": "https://www.everybodycampaign.com/"
+        },
+        {
+          "text": "FOUNDING STORY",
+          "href": "https://saiehello.com/pages/founding-story"
+        },
+        {
+          "text": "SAIE STANDARDS",
+          "href": "https://saiehello.com/pages/saie-standards"
+        },
+        {
+          "text": "SAIE RECYCLING",
+          "href": "https://saiehello.com/pages/saie-recycling-program"
+        },
+        {
+          "text": "SAIE REWARDS",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "FAQ",
+          "href": "https://saiehello.com/pages/faqs"
+        },
+        {
+          "text": "CONTACT",
+          "href": "https://saiehello.com/pages/contact"
+        },
+        {
+          "text": "FIND A STORE",
+          "href": "https://saiehello.com/pages/find-a-store"
+        },
+        {
+          "text": "ACCOUNT",
+          "href": "https://saiehello.com/account"
+        },
+        {
+          "text": "CLEAN BEAUTY CREW",
+          "href": "https://saiehello.com/pages/tyb"
+        },
+        {
+          "text": "MANAGE SUBSCRIPTION",
+          "href": "https://saiehello.com/apps/retextion"
+        },
+        {
+          "text": "EU WITHDRAWAL CONTRACT FORM",
+          "href": "https://fzb8gyqpbiq.typeform.com/to/Vs1AFYvR"
+        },
+        {
+          "text": "TERMS",
+          "href": "https://saiehello.com/pages/terms-of-service"
+        },
+        {
+          "text": "PRIVACY",
+          "href": "https://privacy.saiehello.com/privacy-policy"
+        },
+        {
+          "text": "CALIFORNIA PRIVACY",
+          "href": "https://privacy.saiehello.com/privacy-policy"
+        },
+        {
+          "text": "California Privacy Notice",
+          "href": "https://privacy.saiehello.com/privacy-policy"
+        }
+      ],
+      "mainProducts": [
+        {
+          "text": "GLOWY SUPER GEL™",
+          "href": "https://saiehello.com/products/glowy-super-gel-luminizer"
+        },
+        {
+          "text": "DEW BLUSH™",
+          "href": "https://saiehello.com/products/dew-blush"
+        },
+        {
+          "text": "Glossybounce™ in Burst",
+          "href": "https://saiehello.com/products/glossybounce"
+        },
+        {
+          "text": "Lip Liner 101™ in Bite",
+          "href": "https://saiehello.com/products/lip-liner-101"
+        },
+        {
+          "text": "Lip Combo",
+          "href": "https://saiehello.com/products/lip-combo"
+        },
+        {
+          "text": "Glossybounce™ Duo",
+          "href": "https://saiehello.com/products/glossybounce-duo"
+        }
+      ]
+    },
+    "product": {
+      "href": "https://saiehello.com/products/glossybounce",
+      "title": "Glossybounce™ | High-Shine Hydrating Lip Gloss Oil – Saie",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      },
+      "body": {
+        "text": "Press Option+1 for screen-reader mode, Option+0 to cancel Accessibility Screen-R",
+        "bg": "rgb(242, 242, 242)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20.8px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "none",
+        "h": 5339,
+        "w": 1440
+      },
+      "bar": {
+        "text": "Saie x rocky's matcha | Shop Now NEW! SuperSuede™ Eyeshadow | Shop Now Internati",
+        "bg": "rgb(27, 33, 33)",
+        "color": "rgb(192, 192, 218)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "16px",
+        "weight": "400",
+        "lh": "20.8px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(192, 192, 218)",
+        "tt": "none",
+        "h": 34,
+        "w": 1440
+      },
+      "header": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "h": 91,
+        "pos": "fixed"
+      },
+      "logo": {
+        "w": 186,
+        "h": 40,
+        "color": "rgb(27, 33, 33)"
+      },
+      "shop": {
+        "text": "SHOP",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "13px",
+        "weight": "500",
+        "lh": "16.9px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "uppercase",
+        "h": 17,
+        "w": 36
+      },
+      "add": {
+        "text": "ADD TO MAKEUP BAG - $32",
+        "bg": "rgb(27, 33, 33)",
+        "color": "rgb(255, 255, 255)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "13px",
+        "weight": "500",
+        "lh": "19.5px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "20px 40px",
+        "border": "2px solid rgb(27, 33, 33)",
+        "tt": "uppercase",
+        "h": 64,
+        "w": 600
+      },
+      "heading": {
+        "text": "GLOSSYBOUNCE™",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "25px",
+        "weight": "500",
+        "lh": "26.25px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "uppercase",
+        "h": 26,
+        "w": 600
+      },
+      "price": {
+        "text": "$0.00",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "13px",
+        "weight": "500",
+        "lh": "16.9px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "none",
+        "h": 0,
+        "w": 0
+      },
+      "productTitle": {
+        "text": "GLOSSYBOUNCE™",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(27, 33, 33)",
+        "font": "Ordinary-Display, Arial, sans-serif",
+        "size": "25px",
+        "weight": "500",
+        "lh": "26.25px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none rgb(27, 33, 33)",
+        "tt": "uppercase",
+        "h": 26,
+        "w": 600
+      },
+      "vars": {
+        "black": "#1b2121",
+        "bg": "#f2f2f2",
+        "purple": "#c0c0da",
+        "headerH": "91px"
+      },
+      "fonts": [
+        "Ordinary-Text 400 unloaded",
+        "Ordinary-Display 400 loaded",
+        "Ordinary-Display 300 unloaded",
+        "Ordinary-Display 500 loaded",
+        "Ordinary-Display 700 loaded",
+        "Ordinary-Display 900 unloaded",
+        "VictorSerif 400 unloaded",
+        "unionbold 400 unloaded",
+        "OrdinaryDisplayRegular 400 unloaded",
+        "Nunito Sans 700 unloaded",
+        "Nunito Sans 400 unloaded",
+        "Ordinary 300 unloaded",
+        "Ordinary 400 loaded",
+        "OrdinaryMedium 500 unloaded",
+        "swiper-icons 400 unloaded"
+      ]
+    }
+  }
+}
