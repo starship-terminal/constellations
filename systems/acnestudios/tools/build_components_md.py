@@ -249,8 +249,8 @@ GROUP_INTRO = {
     "Category page (PLP)": "A category page such as WOMEN'S NEW ARRIVALS: the under-header subnav (New Arrivals, Gifts for Her, Winter Dressing), the FILTER & SORTING rail trigger, then the product grid — 4-span tiles, photo, caps name, price. Prices on the PLP are Helvetica Now Text, not the PDP's monospace.",
     "Product page (PDP)": "A product detail page: sticky breadcrumbs over a two-column canvas (gallery left, purchase column right) — caps title, colourway in muted grey, monospace price, the Fit Predictor line, the size grid, the electric-blue ADD TO BAG bar beside the white wishlist button, then expandable service rows and the spec list.",
     "Panels and overlays": "The right-side drawers, each 360 wide on opaque white with a 45px head and a black 1px top or bottom keyline: SEARCH (a SEARCH HERE field, SUGGESTIONS in blue caps, SUGGESTED PRODUCTS), FILTER & SORTING (radio rows with 10px dots, the black SHOW N ITEMS apply bar), and the WOMAN mega-menu (a 391 tall panel under the header, alternating 30px white/grey rows).",
-    "Sign in": "The account gate: Sign in or register, the member-benefit list, the grey EMAIL field, the black CONTINUE bar and the bordered GOOGLE row, then the Singapore change-location line. Captured, never submitted.",
-    "Footer": "The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call, Email), four link columns in blue caps, two-letter social links (IG FB TW YT PT WB), the SHIPPING TO SINGAPORE (ENGLISH) region selector and the cookie-settings link — all under a 1px hairline rule.",
+    "Sign in": "The account gate: Sign in or register, the member-benefit list, the grey EMAIL field, the black CONTINUE bar and the bordered GOOGLE row, then a change-location line. The place name is painted out. Captured, never submitted.",
+    "Footer": "The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call, Email), four link columns in blue caps, two-letter social links (IG FB TW YT PT WB), the shipping-region selector and the cookie-settings link — all under a 1px hairline rule.",
     "Mobile (390 wide)": "The same storefront at 390: the header collapses to Menu, wordmark and bag; the Menu button opens a flat drawer of 45px rows (CONTACT US, HELP, CLIENT SERVICES, COMPANY, the social links) each separated by a 1px hairline drawn as a background gradient.",
 }
 
@@ -296,7 +296,7 @@ n_states = sum(len(c["states"]) for c in C.values())
 
 W("# Acne Studios components")
 W()
-W(f"The discovery list of every page and state captured, then one entry per component with crops of the real site, the shared values and the Gaps. Captured from acnestudios.com on 2026-11-09 — the Singapore storefront the site serves headless Chromium (`/sg/en/`, prices in S$) — as static pages rendered at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the live DOM. Nothing was submitted, bought or signed into; the only presses were local UI toggles (the SEARCH panel, the WOMAN mega-menu, the FILTER rail, the mobile Menu) and one PDP size cell's own toggle. The OneTrust consent SDK was blocked at the network layer — its banner was never mounted, and no consent button was ever pressed.")
+W("The discovery list of every page and state captured, then one entry per component with crops of the real site, the shared values and the Gaps. Recaptured from acnestudios.com on 2026-11-21 at 1440x900 and 390x844, signed out. The control map is site-tree.md. Nothing was submitted. Contact lines in screenshots and crops are painted out.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states).")
 W()

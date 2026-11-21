@@ -7,7 +7,7 @@ How the measured components combine on each surface, in the order a page compose
 Every page hangs from the same two rails.
 
 - **Header** — a 60px white rail (`size.header.height`, 45px under `breakpoint.mediumDown`), boxed top and bottom by 1px `#f2f2f2` hairlines drawn as inset shadows. Left: section triggers WOMAN MAN BAGS SCARVES GIFTS as full-height caps labels (`typography.microCaps` on a 60px hit row, hover → `text.muted`). Centre: the wordmark, a plain ~15px "Acne Studios" line, not a logo asset. Right: SEARCH HELP ACCOUNT plus the bag count "00" in muted grey, divided from the left zone by a hairline. Under 991px the left zone collapses to a single Menu button.
-- **Footer** — a 572px block under a 1px hairline: NEWSLETTER with its 430x60 grey email rail, contact methods, four link columns of `typography.link` blue lines on 24px leading, the two-letter social links, and the `SHIPPING TO SINGAPORE (ENGLISH)` geo selector in caps blue.
+- **Footer** — a 572px block under a 1px hairline: NEWSLETTER with its 430x60 grey email rail, contact methods, four link columns of `typography.link` blue lines on 24px leading, the two-letter social links, and the shipping-region selector in caps blue. The place name is painted out of the screenshots.
 
 ## The hero
 
@@ -40,7 +40,7 @@ Pressing a section trigger drops a 391px panel under the header, framed top and 
 
 ## The sign-in gate
 
-A centred ~520px column: "Sign in or register" in `typography.title` (18/20, the rare larger line), the Singapore change-location link in blue, a member-benefit list (en-dash bullets at `space.indent`), the grey 60px EMAIL rail (`typography.field`), the black CONTINUE bar and the white-bordered GOOGLE row — both 60px, `action.primary` and the outline-button pattern. Never submitted; states were forced, not pressed.
+A centred ~520px column: "Sign in or register" in `typography.title` (18/20, the rare larger line), a change-location link in blue, a member-benefit list (en-dash bullets at `space.indent`), the grey 60px EMAIL rail (`typography.field`), the black CONTINUE bar and the white-bordered GOOGLE row. Both bars are 60px. Never submitted. The place name is painted out.
 
 ## Mobile (390)
 

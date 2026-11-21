@@ -96,9 +96,9 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: Fashion storefront: near-pure monochrome with one electric-blue accent, 12px Helvetica caps labels, hairline rules, 60px rails, 360px side drawers, mono price numerals.
 
-Captured 2026-11-09, signed out (every captured surface is public); Singapore storefront /sg/en, OneTrust consent SDK network-blocked. Themes: light.
+Captured 2026-11-21, signed out (every captured surface is public); locale storefront /sg/en, OneTrust consent SDK network-blocked. Themes: light. The catalog entry still names the older capture date because this PR does not edit catalog.json.
 
-A token set and component reference for Acne Studios, the fashion house — for building storefront, campaign and editorial surfaces in the style of the real thing. Captured from the public Singapore storefront (`acnestudios.com/sg/en`) on 2026-11-09, signed out, in headless Chromium at 1440 wide and 390 wide: the home page with its full-bleed campaign hero, the WOMEN'S NEW ARRIVALS and BAGS category pages, one product page (Leather Funnel Neck Jacket), About, FAQ, Contact, the store directory, the empty-cart route and the account sign-in gate, plus the search panel, filter rail, WOMAN mega-menu and the mobile Menu drawer opened through the page's own toggles.
+A token set and component reference for Acne Studios, the fashion house — for building storefront, campaign and editorial surfaces in the style of the real thing. Recaptured from the public storefront (`acnestudios.com`, served as `/sg/en/home`) on 2026-11-21, signed out, in headless Chromium at 1440×900 and 390×844. The site tree is [site-tree.md](site-tree.md). Screenshots cover the home page, the category menus, women's and men's new arrivals, bags, scarves, gifts, jeans, objects, a campaign, two editorials, About, sustainability, legal, FAQ, the size-guide article, a gift card, one product page, the empty bag drawer, and the sign-in wall. Search, help, filter, size, size-guide, delivery, gift-wrap and pick-up panels were opened and not submitted. Contact, store-directory and client-services pages were mapped and then left out of the screenshots because they print a phone, an email or a street address.
 
 The reason Acne is worth a capture at all: it is one of the most disciplined e-commerce systems on the public web — near-pure monochrome with a single electric blue (#0018a8) doing every link, accent action and selected state; 12px Helvetica Now Text uppercase at a uniform 0.3px tracking for almost every word on the site; zero radius, zero shadow and zero transition on controls; and hairline 1px rules (some drawn as background gradients) separating everything. Prices on the PDP and the size grid flip to Helvetica Monospaced Pro — small numeric flourishes in an otherwise strictly single-voice page.
 
@@ -149,7 +149,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- The capture is of the Singapore storefront (`/sg/en/`): prices are SGD, the nav and promo copy are the region's. Other regions may serve different campaigns and layouts.
+- The capture is of the locale the site served this client (`/sg/en/`): prices are in that region's currency. Other regions may serve different campaigns and layouts. Place names, the published client email and the published phone number are painted out of the screenshots and are not written here.
 - Mobile `m-*` readings cover layout and the menu drawer only; a phone has no hover/focus to measure, and the 390 capture took one drawer open.
 - Several components were re-measured after selector fixes (logo, hero wordmark, menu drawer); components whose `run` predates that fix carry their original capture time, and any component the selectors still miss is marked `missing` in `raw/components-computed.json` rather than re-dated.
 - Nothing was bought, bagged or signed into: ADD TO BAG, CHECKOUT, GOOGLE and the newsletter submit were never pressed; their states come from CDP-forced pseudo-classes.

@@ -8,7 +8,7 @@
 // Nothing is sent, bought or signed into: the only presses are local UI toggles — the Menu drawer,
 // the SEARCH panel, the PLP FILTER rail, a PDP size swatch and LOAD MORE. The OneTrust cookie
 // banner is hidden remove-only (its buttons are never clicked). The geo check serves the
-// Singapore store (data-sid=acne_sg, /sg/en/...): the capture is of the served variant.
+// locale store (/sg/en/...): the capture is of the served variant.
 import fs from 'fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { M, closePromo, killGeo, clearChallenge, chromium, patch, UA, UA_MOBILE, BASE } from './lib.mjs';
