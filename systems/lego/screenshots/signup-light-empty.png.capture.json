@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:15:40.381Z",
+  "screenshot": "signup-light-empty.png",
+  "sanitizedSourceUrl": "https://identity.lego.com/en-US/register",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "title": "LEGO.com Create your adult LEGO® account",
+    "path": "/en-US/register",
+    "host": "identity.lego.com"
+  },
+  "capture": {
+    "mode": "viewport"
+  }
+}

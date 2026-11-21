@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:18:06.655Z",
+  "screenshot": "search-light-empty.png",
+  "sanitizedSourceUrl": "https://www.lego.com/en-us/search",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "title": "",
+    "path": "/en-us/search",
+    "snippet": "Skip to main content Report an accessibility issue Go to our accessibility page Get 2x loyalty points* Shop now Shop Discover Help LEGO® Insiders Weekend Sign Up (0) Oops, we couldn’t find anything for \"\"\"\", but don’t give up! - Try a short"
+  },
+  "capture": {
+    "mode": "viewport"
+  }
+}

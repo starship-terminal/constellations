@@ -1,0 +1,97 @@
+{
+  "product": "LEGO",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "Public Chromium, signed out, Official LEGO Shop US at lego.com/en-us. No email, password, phone, code, or address was typed. No identity provider was clicked. No form was submitted. Add to Bag was not pressed. Checkout was not opened.",
+  "origin": "https://www.lego.com/en-us",
+  "landed": "https://www.lego.com/en-us",
+  "offered": {
+    "nav": {
+      "items": [
+        "Shop opens a panel of theme and listing links",
+        "Discover opens a panel of brand and app links",
+        "Help opens Contact us, building instructions, stores, order status",
+        "Sign Up and Wish List open the Insiders dialog",
+        "Bag opens /cart",
+        "Phone drawer Sign In and Join LEGO Insiders open the account wall"
+      ],
+      "reached": [
+        "Shop panel",
+        "Discover panel",
+        "Help panel",
+        "Insiders dialog",
+        "Search focus, nothing typed",
+        "City theme",
+        "Tower Bridge product",
+        "Customer service",
+        "Search results and the empty search state",
+        "Login wall, then stopped",
+        "Signup wall, then stopped"
+      ],
+      "note": "The signed-in account was not entered, so no account navigation was offered."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings screen was offered. Cookie Settings and the region picker were not opened."
+    },
+    "create": {
+      "items": [
+        "Become a member",
+        "Sign In",
+        "Join LEGO Insiders",
+        "Continue on the identity walls",
+        "Apple, Facebook, Google, Epic"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-shop-menu.png",
+    "screenshots/home-light-discover-menu.png",
+    "screenshots/home-light-help-menu.png",
+    "screenshots/home-light-account-drawer.png",
+    "screenshots/home-light-search.png",
+    "screenshots/home-light-footer.png",
+    "screenshots/home-light-mobile.png",
+    "screenshots/home-light-mobile-menu.png",
+    "screenshots/category-light-default.png",
+    "screenshots/category-light-mobile.png",
+    "screenshots/product-light-default.png",
+    "screenshots/help-light-default.png",
+    "screenshots/search-light-results.png",
+    "screenshots/search-light-empty.png",
+    "screenshots/login-light-empty.png",
+    "screenshots/signup-light-empty.png"
+  ],
+  "gaps": [
+    "Signed-in account, orders, wish list contents, bag, and settings were not entered.",
+    "https://www.lego.com/identity/login redirects to identity.lego.com/en-US/login. The email field was empty. Nothing was typed. Apple, Facebook, Google, and Epic were not clicked.",
+    "https://www.lego.com/identity/register redirects to identity.lego.com/en-US/register. Birthdate fields were empty. The country control was left on the site's prefill. Nothing was typed.",
+    "Bag at /cart was not opened. Add to Bag was photographed and not pressed. Checkout was not opened.",
+    "The footer email field was not filled. Subscribe was not pressed.",
+    "The United States region button was not used to pick another country.",
+    "Guest order status was not opened.",
+    "Validation and post-submit states were not seen because no form was submitted."
+  ],
+  "not_submitted": [
+    "login email",
+    "login password",
+    "signup country",
+    "signup birthdate",
+    "continue",
+    "identity providers",
+    "become a member",
+    "sign in",
+    "join lego insiders",
+    "search",
+    "help search",
+    "footer email",
+    "subscribe",
+    "add to bag",
+    "wish list",
+    "checkout"
+  ]
+}

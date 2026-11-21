@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:15:44.818Z",
+  "screenshot": "home-light-mobile.png",
+  "sanitizedSourceUrl": "https://www.lego.com/en-us",
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "title": "Home | Official LEGO® Shop US",
+    "path": "/en-us",
+    "host": "www.lego.com"
+  },
+  "capture": {
+    "mode": "viewport"
+  }
+}

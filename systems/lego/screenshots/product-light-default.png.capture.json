@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:16:48.593Z",
+  "screenshot": "product-light-default.png",
+  "sanitizedSourceUrl": "https://www.lego.com/en-us/product/tower-bridge-21067",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "title": "Tower Bridge 21067 | Architecture | Buy online at the Official LEGO® Shop US",
+    "path": "/en-us/product/tower-bridge-21067",
+    "host": "www.lego.com"
+  },
+  "capture": {
+    "mode": "viewport"
+  }
+}
