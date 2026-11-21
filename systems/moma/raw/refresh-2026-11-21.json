@@ -1,0 +1,1135 @@
+{
+  "tree": {
+    "capturedAt": "2026-11-21T14:40:49.271Z",
+    "pages": {
+      "home": {
+        "title": "The Museum of Modern Art, New York City | MoMA",
+        "status": 200
+      },
+      "visit": {
+        "title": "Locations and hours | MoMA",
+        "status": 200,
+        "href": "https://www.moma.org/visit/"
+      },
+      "exhibitions": {
+        "title": "Galleries and exhibitions | MoMA",
+        "status": 200,
+        "href": "https://www.moma.org/calendar/exhibitions"
+      },
+      "exhibition": {
+        "title": "Brancusi: The Artist and His Studio | MoMA",
+        "status": 200,
+        "href": "https://www.moma.org/calendar/exhibitions/5910"
+      },
+      "collection": {
+        "title": "The Collection | MoMA",
+        "status": 200,
+        "href": "https://www.moma.org/collection/"
+      },
+      "calendar": {
+        "title": "Events | MoMA",
+        "status": 200,
+        "href": "https://www.moma.org/calendar/"
+      },
+      "store": {
+        "title": "MoMA Design Store | Modern and Contemporary Home Décor, Art and Access",
+        "status": 200,
+        "href": "https://store.moma.org/en-sg"
+      },
+      "storeListing": {
+        "title": "New Arrivals | 2026 Unique Home Decor, Furniture & Design Finds – MoMA Design Store",
+        "status": 200,
+        "href": "https://store.moma.org/collections/new"
+      },
+      "storeEmpty": {
+        "title": "Search: 0 results found for \"zzzznotaproduct999\" – MoMA Design Store",
+        "status": 200
+      },
+      "members404": {
+        "title": "Page not found | MoMA",
+        "status": 404,
+        "text": "Skip to main content\n\nVisit\nExhibitions and events\nArt and artists\nStore\nMembership\n\nDonate\n\nTickets\n\nEdward Ruscha. OOF. 1962 (reworked 1963)\n\nPage not found\n\n"
+      },
+      "login": {
+        "title": "Sign in to MoMA",
+        "status": 200,
+        "host": "auth.moma.org",
+        "path": "openid-connect auth, query stripped",
+        "stopped": "login wall photographed empty; nothing typed; Continue not pressed"
+      },
+      "mobileHome": {
+        "title": "The Museum of Modern Art, New York City | MoMA",
+        "vw": {
+          "w": 390,
+          "h": 844,
+          "dpr": 2
+        }
+      },
+      "mobileVisit": {
+        "title": "Locations and hours | MoMA"
+      }
+    }
+  },
+  "readings": {
+    "pages": [
+      "home",
+      "visit",
+      "exhibitions",
+      "exhibition",
+      "collection",
+      "calendar"
+    ],
+    "components": {
+      "home": {
+        "page": "home",
+        "path": "/",
+        "components": {
+          "h1": {
+            "text": "Welcome",
+            "className": "$typography/size:extra-extra-large typography",
+            "tag": "H1",
+            "box": {
+              "x": 124,
+              "y": 698,
+              "w": 334,
+              "h": 45
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "60px",
+            "fontWeight": "900",
+            "lineHeight": "60px",
+            "letterSpacing": "-1.2px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "tickets": {
+            "text": "Tickets",
+            "className": "$color/background:brand:10 link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1214,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "donate": {
+            "text": "Donate",
+            "className": "$color/background:gray:eee link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1109,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "visit": {
+            "text": "Visit",
+            "className": "link/focus",
+            "tag": "BUTTON",
+            "box": {
+              "x": 120,
+              "y": 109,
+              "w": 63,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "store": {
+            "text": "Store",
+            "className": "link/focus",
+            "tag": "A",
+            "box": {
+              "x": 701,
+              "y": 109,
+              "w": 73,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "header": {
+            "text": "Visit Exhibitions and events Art and artists Store Membership Donate T",
+            "className": "layout/relative layout/z-index:9 headroom header--not-bottom header--top header--full",
+            "tag": "HEADER",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 166
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "footer": {
+            "text": "About us Support Research Teaching Magazine Log in MoMA 11 West 53 Str",
+            "className": "footer has-dark-background",
+            "tag": "FOOTER",
+            "box": {
+              "x": 0,
+              "y": 7383,
+              "w": 1440,
+              "h": 760
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(68, 68, 68)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "64px 0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "search": null
+        }
+      },
+      "visit": {
+        "page": "visit",
+        "path": "/visit/",
+        "components": {
+          "h1": {
+            "text": "Locations, hours, and admission",
+            "className": "$typography/size:extra-extra-large typography",
+            "tag": "H1",
+            "box": {
+              "x": 124,
+              "y": 230,
+              "w": 511,
+              "h": 105
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "60px",
+            "fontWeight": "900",
+            "lineHeight": "60px",
+            "letterSpacing": "-1.2px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "tickets": {
+            "text": "Tickets",
+            "className": "$color/background:brand:10 link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1214,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "donate": {
+            "text": "Donate",
+            "className": "$color/background:gray:eee link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1109,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "visit": {
+            "text": "Visit",
+            "className": "link/focus",
+            "tag": "BUTTON",
+            "box": {
+              "x": 120,
+              "y": 109,
+              "w": 63,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "store": {
+            "text": "Store",
+            "className": "link/focus",
+            "tag": "A",
+            "box": {
+              "x": 701,
+              "y": 109,
+              "w": 73,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "header": {
+            "text": "Visit Exhibitions and events Art and artists Store Membership Donate T",
+            "className": "layout/relative layout/z-index:9 headroom header--top header--not-bottom header--full",
+            "tag": "HEADER",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 166
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "footer": {
+            "text": "About us Support Research Teaching Magazine Log in MoMA 11 West 53 Str",
+            "className": "footer--abutting has-dark-background",
+            "tag": "FOOTER",
+            "box": {
+              "x": 0,
+              "y": 5415,
+              "w": 1440,
+              "h": 760
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(68, 68, 68)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "64px 0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "search": null
+        }
+      },
+      "exhibitions": {
+        "page": "exhibitions",
+        "path": "/calendar/exhibitions",
+        "components": {
+          "h1": {
+            "text": "In the galleries",
+            "className": "$typography/size:extra-extra-large typography",
+            "tag": "H1",
+            "box": {
+              "x": 124,
+              "y": 230,
+              "w": 429,
+              "h": 45
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "60px",
+            "fontWeight": "900",
+            "lineHeight": "60px",
+            "letterSpacing": "-1.2px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "tickets": {
+            "text": "Tickets",
+            "className": "$color/background:brand:10 link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1214,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "donate": {
+            "text": "Donate",
+            "className": "$color/background:gray:eee link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1109,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "visit": {
+            "text": "Visit",
+            "className": "link/focus",
+            "tag": "BUTTON",
+            "box": {
+              "x": 120,
+              "y": 109,
+              "w": 63,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "store": {
+            "text": "Store",
+            "className": "link/focus",
+            "tag": "A",
+            "box": {
+              "x": 701,
+              "y": 109,
+              "w": 73,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "header": {
+            "text": "Visit Exhibitions and events Art and artists Store Membership Donate T",
+            "className": "layout/relative layout/z-index:9 headroom header--not-bottom header--top header--full",
+            "tag": "HEADER",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 166
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "footer": {
+            "text": "About us Support Research Teaching Magazine Log in MoMA 11 West 53 Str",
+            "className": "footer has-dark-background",
+            "tag": "FOOTER",
+            "box": {
+              "x": 0,
+              "y": 7260,
+              "w": 1440,
+              "h": 760
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(68, 68, 68)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "64px 0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "search": null
+        }
+      },
+      "exhibition": {
+        "page": "exhibition",
+        "path": "/calendar/exhibitions/5910",
+        "components": {
+          "h1": {
+            "text": "Brancusi The Artist and His Studio",
+            "className": "",
+            "tag": "H1",
+            "box": {
+              "x": 128,
+              "y": 230,
+              "w": 1184,
+              "h": 110
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "tickets": {
+            "text": "Tickets",
+            "className": "$color/background:brand:10 link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1214,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "donate": {
+            "text": "Donate",
+            "className": "$color/background:gray:eee link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1109,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "visit": {
+            "text": "Visit",
+            "className": "link/focus",
+            "tag": "BUTTON",
+            "box": {
+              "x": 120,
+              "y": 109,
+              "w": 63,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "store": {
+            "text": "Store",
+            "className": "link/focus",
+            "tag": "A",
+            "box": {
+              "x": 701,
+              "y": 109,
+              "w": 73,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "header": {
+            "text": "Visit Exhibitions and events Art and artists Store Membership Donate T",
+            "className": "layout/relative layout/z-index:9 headroom header--not-bottom header--top header--full",
+            "tag": "HEADER",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 166
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "footer": {
+            "text": "About us Support Research Teaching Magazine Log in MoMA 11 West 53 Str",
+            "className": "footer has-dark-background",
+            "tag": "FOOTER",
+            "box": {
+              "x": 0,
+              "y": 9317,
+              "w": 1440,
+              "h": 760
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(68, 68, 68)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "64px 0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "search": null
+        }
+      },
+      "collection": {
+        "page": "collection",
+        "path": "/collection/",
+        "components": {
+          "h1": {
+            "text": "The Collection",
+            "className": "text-xl-md md:text-2xl font-bold leading-none tracking-tight",
+            "tag": "H1",
+            "box": {
+              "x": 128,
+              "y": 197,
+              "w": 576,
+              "h": 60
+            },
+            "fontFamily": "\"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "60px",
+            "fontWeight": "700",
+            "lineHeight": "60px",
+            "letterSpacing": "-1.5px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "tickets": {
+            "text": "Tickets",
+            "className": "relative z-20 flex items-center justify-center py-3 px-2.5 p-3 bg-brand-light-blue text-black text-sm md:text-md font-bold leading-none trac",
+            "tag": "A",
+            "box": {
+              "x": 1228,
+              "y": 32,
+              "w": 84,
+              "h": 42
+            },
+            "fontFamily": "\"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": "700",
+            "lineHeight": "18px",
+            "letterSpacing": "-0.45px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(0, 183, 242)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "12px 10px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "donate": {
+            "text": "Donate",
+            "className": "relative z-20 hidden md:flex items-center justify-center p-3 bg-gray-eee text-black text-md font-bold leading-none tracking-tight no-underli",
+            "tag": "A",
+            "box": {
+              "x": 1123,
+              "y": 32,
+              "w": 88,
+              "h": 42
+            },
+            "fontFamily": "\"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": "700",
+            "lineHeight": "18px",
+            "letterSpacing": "-0.45px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(238, 238, 238)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "visit": {
+            "text": "Visit",
+            "className": "nav-trigger",
+            "tag": "BUTTON",
+            "box": {
+              "x": 128,
+              "y": 116,
+              "w": 48,
+              "h": 22
+            },
+            "fontFamily": "\"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "22px",
+            "fontWeight": "700",
+            "lineHeight": "22px",
+            "letterSpacing": "-0.55px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "store": {
+            "text": "Store",
+            "className": "text-lg leading-none nav-text link-reset",
+            "tag": "A",
+            "box": {
+              "x": 712,
+              "y": 114,
+              "w": 59,
+              "h": 27
+            },
+            "fontFamily": "\"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "22px",
+            "fontWeight": "700",
+            "lineHeight": "22px",
+            "letterSpacing": "-0.55px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "header": {
+            "text": "Visit Exhibitions and events Art and artists Store Membership Donate T",
+            "className": "group/header relative z-50 bg-white w-full max-w-page py-4 px-6 md:px-12 md:pt-(--spacing-header-pt) md:pb-8 header-scrolled-transition outl",
+            "tag": "HEADER",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 173
+            },
+            "fontFamily": "\"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "32px 48px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "footer": {
+            "text": "About us Support Research Teaching Magazine Log in MoMA 11 West 53 Str",
+            "className": "w-full bg-gray-444 text-white",
+            "tag": "FOOTER",
+            "box": {
+              "x": 0,
+              "y": 5083,
+              "w": 1440,
+              "h": 815
+            },
+            "fontFamily": "\"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgb(68, 68, 68)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "search": null
+        }
+      },
+      "calendar": {
+        "page": "calendar",
+        "path": "/calendar/",
+        "components": {
+          "h1": {
+            "text": "Events",
+            "className": "$typography/size:extra-extra-large typography",
+            "tag": "H1",
+            "box": {
+              "x": 124,
+              "y": 230,
+              "w": 198,
+              "h": 45
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "60px",
+            "fontWeight": "900",
+            "lineHeight": "60px",
+            "letterSpacing": "-1.2px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "tickets": {
+            "text": "Tickets",
+            "className": "$color/background:brand:10 link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1214,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "donate": {
+            "text": "Donate",
+            "className": "$color/background:gray:eee link/focus",
+            "tag": "A",
+            "box": {
+              "x": 1109,
+              "y": 14,
+              "w": 106,
+              "h": 55
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "visit": {
+            "text": "Visit",
+            "className": "link/focus",
+            "tag": "BUTTON",
+            "box": {
+              "x": 120,
+              "y": 109,
+              "w": 63,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "store": {
+            "text": "Store",
+            "className": "link/focus",
+            "tag": "A",
+            "box": {
+              "x": 701,
+              "y": 109,
+              "w": 73,
+              "h": 33
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "header": {
+            "text": "Visit Exhibitions and events Art and artists Store Membership Donate T",
+            "className": "layout/relative layout/z-index:9 headroom header--not-bottom header--top header--full",
+            "tag": "HEADER",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 166
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "footer": {
+            "text": "About us Support Research Teaching Magazine Log in MoMA 11 West 53 Str",
+            "className": "footer--abutting has-dark-background",
+            "tag": "FOOTER",
+            "box": {
+              "x": 0,
+              "y": 8620,
+              "w": 1440,
+              "h": 760
+            },
+            "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": "400",
+            "lineHeight": "10px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(68, 68, 68)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "padding": "64px 0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "search": null
+        }
+      }
+    }
+  }
+}
