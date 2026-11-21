@@ -1,6 +1,6 @@
 # Shop patterns
 
-Measured on 2026-11-19 from a signed-out T3 preview tab. Viewport 1169 by 731, devicePixelRatio 2. No screenshots: preview frames failed.
+Measured on 2026-11-19 from a signed-out T3 preview tab. Viewport 1169 by 731, devicePixelRatio 2. Photographed on 2026-11-22 at 1440 and 390. The public control map is [site-tree.md](site-tree.md).
 
 ## Home
 
@@ -24,6 +24,10 @@ The form column is 344px wide inside a 400px centered stack. The page background
 
 This is the signup wall. No email was entered. Continue was not submitted. Passkey was not used. No card, phone or checkout followed.
 
+## Public pages opened on 2026-11-22
+
+Explore, Deals, the empty cart, the Korean Beauty edit, Beauty, one product, one store, What is Shop, Why trust Shop, Why use Shop Pay, the download page, terms, language, and the footer. Add to cart, Buy now, and Follow were visible and not clicked. Orders redirected to an OAuth login URL and was not photographed.
+
 ## Not entered
 
-Cart, orders, saved items, deals and product pages can be linked while signed out. They were not treated as the signed-in app. Checkout and Shop Pay were not opened. No account was created.
+Checkout and Shop Pay checkout were not opened. No account was created.

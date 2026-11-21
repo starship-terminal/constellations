@@ -1,8 +1,8 @@
 # Shop
 
-Shop is Shopify's consumer shopping app. This package records the public signed-out home at https://shop.com/ and the signup wall at https://shop.app/accounts/login, measured on 2026-11-19 from a live T3 preview tab. https://shop.app/ follows redirects to https://shop.com/ for the public home. No account was created. The email field was not filled. Continue was not submitted. No card, phone or checkout was entered.
+Shop is Shopify's consumer shopping app. Tokens were read on 2026-11-19 from the signed-out home at https://shop.com/ and the empty wall at https://shop.app/accounts/login. A 2026-11-22 pass mapped the public control tree into [site-tree.md](site-tree.md) and photographed the homepage, Explore, Deals, the empty cart, one edit, one category, one product, one store, the footer marketing pages, the terms page, the language page, and the empty login wall. https://shop.app/ follows redirects to https://shop.com/ for the public home. No account was created. The email field was not filled. Continue was not submitted. No card, phone, or checkout was entered. `login-extracted` stays not-started. catalog.json was left alone.
 
-The live CSS viewport was 1169 by 731 at devicePixelRatio 2. Both pages computed light backgrounds. `prefers-color-scheme: dark` matched, and the pages did not switch.
+Desktop shots are 1440 by 900 CSS pixels. Phone shots are 390 by 844. The 2026-11-19 readings used a 1169 by 731 viewport. Both pages computed light backgrounds. `prefers-color-scheme: dark` matched, and the pages did not switch.
 
 | File | What it holds |
 |---|---|
@@ -12,10 +12,12 @@ The live CSS viewport was 1169 by 731 at devicePixelRatio 2. Both pages computed
 | [tokens.json](tokens.json) | Measured colour, type, radius, spacing and motion tokens |
 | [style-guide.html](style-guide.html) | Swatches and the measured button, field, card and banner |
 | [components.md](components.md) | Component inventory and gaps |
-| [patterns.md](patterns.md) | Home shell and the signup wall |
-| [components/](components/) | Crop folder, empty because screenshot frames failed |
+| [patterns.md](patterns.md) | Home shell, public pages, and the signup wall |
+| [site-tree.md](site-tree.md) | Which header and footer controls open which public page or wall |
+| [login-review.json](login-review.json) | Empty login wall. `login-extracted` is not-started |
+| [components/](components/) | Crop folder from the 2026-11-19 pass |
 | [icons/](icons/) | Index pointing at the site icon |
-| [screenshots/](screenshots/) | Note that no frames were produced |
+| [screenshots/](screenshots/) | Public pages at 1440 and 390, plus the empty login wall |
 | [raw/](raw/) | Computed-style readings and custom properties |
 | [tools/](tools/) | Builders and the copied capture kit |
 
@@ -31,7 +33,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 2. Use the purple pill for the primary action.
 3. Keep the signup wall as a gap.
 4. Use GT Standard Web at 64px for the hero and 16px for body.
-5. Leave screenshots empty when frames fail.
+5. Photograph public pages and leave the login wall empty.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -76,11 +78,11 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 Custom properties were read with `getComputedStyle(document.documentElement)` on https://shop.com/ and on https://shop.app/accounts/login. Component colour, type, radius, padding and size were read with `getComputedStyle` on the live elements. Cross-origin stylesheets blocked `cssRules`, so declared rules were not copied from those sheets. Computed custom properties were.
 
-The preview browser returned "The browser is not producing screenshot frames" on `preview_snapshot`. No screenshots were invented. The catalog cover is [icon.png](icon.png), the site icon, because no page frame exists. Headless Playwright was not launched.
+The 2026-11-19 pass got no screenshot frames. The 2026-11-22 pass photographed the public tree in the preview browser. Screenshots are quantised to 256 colours. Read colours from [tokens.json](tokens.json), not from the PNGs. The catalog cover stays [icon.png](icon.png). catalog.json was not edited.
 
 ## What to distrust
 
-The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. `prefers-color-scheme: dark` was true and both pages stayed light. There is no dark token set. Login primary hover is a declared custom property, `--buttons--primary-background-hover` (`rgb(127, 104, 233)`), and the hover was not shown. Home body background computed as `oklch(0.98809 0 0)`. The page token uses the declared `--bg` (`#fcfcfc`). Rail icon colours stayed in oklch in [components.md](components.md) and were not converted. The catalog cover is the site icon, not a page capture.
+Token readings are from a 1169 by 731 viewport. The 2026-11-22 screenshots are 1440 and 390. Do not treat the older readings as a 1440 or 390 measurement. `prefers-color-scheme: dark` was true and both pages stayed light. There is no dark token set. Login primary hover is a declared custom property, `--buttons--primary-background-hover` (`rgb(127, 104, 233)`), and the hover was not shown. Home body background computed as `oklch(0.98809 0 0)`. The page token uses the declared `--bg` (`#fcfcfc`). Rail icon colours stayed in oklch in [components.md](components.md) and were not converted. The catalog cover is the site icon.
 
 ## Fonts
 
@@ -107,8 +109,8 @@ GT Standard Web is the home face, computed on `body` and declared as `--default-
 | App shell | Left rail and search, described in [patterns.md](patterns.md) |
 | Signup wall | Opened. Not submitted. Recorded as a gap |
 | Signed-in app, card, checkout, Shop Pay | Not entered |
-| Screenshots | Not captured. Preview frames failed |
-| Phone 390 and desktop 1440 | Not applied. Live width was 1169 |
+| Screenshots | Captured on 2026-11-22 in [screenshots/](screenshots/). Quantised to 256 colours |
+| Phone 390 and desktop 1440 | Photographed. Token readings remain from the 1169 viewport |
 
 ## Do and don't
 
@@ -116,7 +118,7 @@ GT Standard Web is the home face, computed on `body` and declared as `--default-
 - **Use the purple pill for the primary action.** Continue is white text on `#5433eb`, 52px tall, radius 999px. [components.md](components.md) lists the size.
 - **Keep the signup wall as a gap.** https://shop.app/accounts/login asks for an email, then Continue or a passkey. A signed-in feed and a checkout stay out of this package. [components.md](components.md) records the gap.
 - **Use GT Standard Web at 64px for the hero and 16px for body.** The hero is weight 800, line-height 58px, letter-spacing -1px. [tokens.json](tokens.json) keeps that style.
-- **Leave screenshots empty when frames fail.** The preview browser produced no frames. [screenshots/](screenshots/) says so.
+- **Photograph the public tree and stop at the wall.** [site-tree.md](site-tree.md) lists the header and footer. [screenshots/login-wall-desktop.png](screenshots/login-wall-desktop.png) is the empty form.
 
 ## Rebuild
 
