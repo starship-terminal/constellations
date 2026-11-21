@@ -1,0 +1,15 @@
+{
+  "slug": "template-ecommerce-desktop",
+  "requested": "https://mixpanel.com/template-gallery/ecommerce",
+  "final": "https://mixpanel.com/template-gallery/ecommerce",
+  "title": "Ecommerce Analytics Template - Mixpanel: Product Analytics for Mobile, Web & More",
+  "h1": [
+    "Ecommerce Analytics Template"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "template-ecommerce-desktop.png"
+}

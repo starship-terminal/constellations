@@ -1,0 +1,15 @@
+{
+  "slug": "privacy-contact-desktop",
+  "requested": "https://mixpanel.com/legal/contact-us",
+  "final": "https://mixpanel.com/legal/contact-us/",
+  "title": "Contact us | Legal | Mobile & Web User Analytics | Mixpanel",
+  "h1": [
+    "Legal"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "privacy-contact-desktop.png"
+}

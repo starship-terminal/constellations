@@ -1,0 +1,15 @@
+{
+  "slug": "template-feature-launch-desktop",
+  "requested": "https://mixpanel.com/template-gallery/feature-launch",
+  "final": "https://mixpanel.com/template-gallery/feature-launch",
+  "title": "Feature Launch Analytics Template - Mixpanel: Product Analytics for Mobile, Web & More",
+  "h1": [
+    "Feature Launch Analytics Template"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "template-feature-launch-desktop.png"
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "signup-phone",
+  "requested": "https://mixpanel.com/register/",
+  "final": "https://mixpanel.com/register/",
+  "title": "Sign up - Mixpanel: Product Analytics for Mobile, Web, & More",
+  "h1": [
+    "Discover your next big idea"
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "capturedAt": "2026-11-22",
+  "file": "signup-phone.png"
+}

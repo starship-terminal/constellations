@@ -1,0 +1,15 @@
+{
+  "slug": "support-desktop",
+  "requested": "https://mixpanel.com/contact-us/support/",
+  "final": "https://mixpanel.com/contact-us/support/",
+  "title": "Contact Support | Mobile & Web User Analytics",
+  "h1": [
+    "How can we help?"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "support-desktop.png"
+}

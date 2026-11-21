@@ -1,0 +1,18 @@
+{
+  "slug": "benchmarks-desktop",
+  "requested": "https://mixpanel.com/content/benchmarks-2026",
+  "final": "https://mixpanel.com/content/benchmarks-2026",
+  "title": "Mixpanel | State of Digital Analytics 2026",
+  "h1": [
+    "State of Digital Analytics",
+    "3.7T",
+    "12K+",
+    "22B"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "benchmarks-desktop.png"
+}

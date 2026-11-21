@@ -1,0 +1,15 @@
+{
+  "slug": "customers-desktop",
+  "requested": "https://mixpanel.com/customers/",
+  "final": "https://mixpanel.com/customers/",
+  "title": "Customers | Mixpanel",
+  "h1": [
+    "Teams like yours are building from their product data"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "customers-desktop.png"
+}

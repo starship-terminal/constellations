@@ -1,0 +1,15 @@
+{
+  "slug": "home-desktop",
+  "requested": "https://mixpanel.com/home/",
+  "final": "https://mixpanel.com/home/",
+  "title": "Product Intelligence Platform for the AI Era | Mixpanel",
+  "h1": [
+    "Build like your customers are right beside you"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "home-desktop.png"
+}

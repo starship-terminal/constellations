@@ -1,0 +1,15 @@
+{
+  "slug": "mcp-desktop",
+  "requested": "https://mixpanel.com/ai/mcp",
+  "final": "https://mixpanel.com/ai/mcp",
+  "title": "Mixpanel MCP Server | AI-Powered Product Analytics",
+  "h1": [
+    "Product intelligence, wherever you work"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "mcp-desktop.png"
+}

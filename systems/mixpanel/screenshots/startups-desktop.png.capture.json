@@ -1,0 +1,17 @@
+{
+  "slug": "startups-desktop",
+  "requested": "https://mixpanel.com/startups/",
+  "final": "https://mixpanel.com/startups",
+  "title": "Mixpanel for Startups | Free Analytics",
+  "h1": [
+    "Founder mode:",
+    "OFF",
+    "ON"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "startups-desktop.png"
+}

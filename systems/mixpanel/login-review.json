@@ -1,0 +1,78 @@
+{
+  "product": "Mixpanel",
+  "domain": "mixpanel.com",
+  "reviewed_at": "2026-11-22",
+  "method": "public Playwright, signed out, 1440x900 and 390x844",
+  "typed": false,
+  "submitted": false,
+  "identity_provider_clicked": false,
+  "account_created": false,
+  "captcha_solved": false,
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log In",
+      "url": "https://mixpanel.com/login/",
+      "title": "Login - Mixpanel",
+      "painted": true,
+      "headings": ["Log in to your account"],
+      "asks_for": [
+        {
+          "label": "Email",
+          "type": "email",
+          "placeholder": "e.g. eleanor@mixpanel.com",
+          "value_length": 0
+        }
+      ],
+      "identity_providers_seen": ["Google"],
+      "other_controls": ["Log in with a Passkey", "Continue", "Sign up", "Reset Password", "Use a recovery code"],
+      "stopped": true,
+      "screenshot": "screenshots/login-desktop.png",
+      "note": "The email field was empty. Continue, Google, and Passkey were not clicked. Reset Password and recovery code were not opened."
+    },
+    {
+      "control": "header Get Started Free",
+      "url": "https://mixpanel.com/register/",
+      "title": "Sign up - Mixpanel: Product Analytics for Mobile, Web, & More",
+      "painted": true,
+      "headings": ["Discover your next big idea"],
+      "asks_for": [
+        {
+          "label": "Email",
+          "type": "email",
+          "placeholder": "e.g. eleanor@mixpanel.com",
+          "value_length": 0
+        }
+      ],
+      "identity_providers_seen": ["Google"],
+      "other_controls": ["Sign Up", "terms checkbox"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-desktop.png",
+      "note": "The email field was empty. The terms box was unchecked. Google was not clicked. Sign Up was not clicked."
+    },
+    {
+      "control": "header Contact Sales",
+      "url": "https://mixpanel.com/contact-us/sales/",
+      "title": "Contact Mixpanel Sales",
+      "painted": true,
+      "asks_for": ["First Name", "Last Name", "Company Email", "Phone Number", "Company Size", "Topic"],
+      "identity_providers_seen": [],
+      "stopped": true,
+      "screenshot": "screenshots/contact-sales-desktop.png",
+      "note": "Every visible field was empty. The form was not submitted."
+    },
+    {
+      "control": "header Book a Demo",
+      "url": "https://mixpanel.com/contact-us/demo/",
+      "title": "Get a Mixpanel Demo",
+      "painted": true,
+      "asks_for": ["First Name", "Last Name", "Company Email", "Company Size", "Phone Number"],
+      "identity_providers_seen": [],
+      "stopped": true,
+      "screenshot": "screenshots/demo-desktop.png",
+      "note": "Every visible field was empty. Book Demo was not clicked."
+    }
+  ]
+}

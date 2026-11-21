@@ -1,0 +1,107 @@
+{
+  "capturedAt": "2026-11-22",
+  "home": {
+    "url": "https://mixpanel.com/home/",
+    "title": "Product Intelligence Platform for the AI Era | Mixpanel",
+    "bodyBg": "rgb(250, 250, 250)",
+    "h1": {
+      "text": "Build like your customers are right beside you",
+      "fontFamily": "\"Garnett Medium\", \"Garnett Medium Placeholder\", sans-serif",
+      "fontSize": "48px",
+      "fontWeight": "400",
+      "lineHeight": "57.6px",
+      "letterSpacing": "-0.96px",
+      "color": "rgb(31, 32, 35)"
+    },
+    "lead": {
+      "text": "Know exactly what user behavior is trying to tell you.",
+      "fontFamily": "\"Garnett Regular\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "25.6px",
+      "color": "rgba(0, 0, 0, 0.7)"
+    },
+    "nav": {
+      "text": "Platform",
+      "fontFamily": "\"Garnett Medium\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "16.8px",
+      "letterSpacing": "0.28px",
+      "color": "rgb(31, 32, 35)"
+    },
+    "loginLabel": {
+      "text": "Log In",
+      "fontFamily": "\"Garnett Medium\", sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "20.16px",
+      "letterSpacing": "0.24px",
+      "color": "rgb(121, 121, 121)"
+    },
+    "contactSales": {
+      "text": "Contact Sales",
+      "labelColor": "rgb(31, 32, 35)",
+      "labelSize": "12px",
+      "labelWeight": "500",
+      "pillBackground": "rgba(0, 0, 0, 0.07)",
+      "radius": "100px",
+      "height": 28
+    },
+    "getStarted": {
+      "text": "Get Started Free",
+      "labelColor": "rgb(255, 255, 255)",
+      "labelSize": "12px",
+      "labelWeight": "500",
+      "pillBackground": "rgb(31, 32, 35)",
+      "radius": "100px",
+      "height": 28
+    }
+  },
+  "login": {
+    "url": "https://mixpanel.com/login/",
+    "title": "Login - Mixpanel",
+    "h1": {
+      "text": "Log in to your account",
+      "fontFamily": "Garnett, Helvetica, \"Segoe UI\", Arial, sans-serif",
+      "fontSize": "28px",
+      "fontWeight": "500",
+      "lineHeight": "33.6px",
+      "color": "rgb(27, 11, 59)"
+    },
+    "email": {
+      "placeholder": "e.g. eleanor@mixpanel.com",
+      "valueLength": 0,
+      "fontFamily": "Garnett, Helvetica, \"Segoe UI\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "background": "rgb(255, 255, 255)",
+      "border": "2px solid rgb(120, 86, 255)",
+      "radius": "96px",
+      "height": 52
+    },
+    "continue": {
+      "text": "Continue",
+      "background": "rgb(120, 86, 255)",
+      "color": "rgb(255, 255, 255)",
+      "fontWeight": "500",
+      "radius": "96px",
+      "height": 46,
+      "width": 420
+    },
+    "link": {
+      "color": "rgb(80, 40, 192)"
+    },
+    "identityProvidersSeen": ["Google"],
+    "otherControls": ["Log in with a Passkey", "Continue", "Sign up", "Reset Password", "Use a recovery code"]
+  },
+  "signup": {
+    "url": "https://mixpanel.com/register/",
+    "title": "Sign up - Mixpanel: Product Analytics for Mobile, Web, & More",
+    "h1": "Discover your next big idea",
+    "emailPlaceholder": "e.g. eleanor@mixpanel.com",
+    "emailValueLength": 0,
+    "termsChecked": false,
+    "identityProvidersSeen": ["Google"]
+  }
+}

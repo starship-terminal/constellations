@@ -1,0 +1,15 @@
+{
+  "slug": "faqs-desktop",
+  "requested": "https://docs.mixpanel.com/troubleshooting/faqs",
+  "final": "https://docs.mixpanel.com/troubleshooting/faqs",
+  "title": "Frequently Asked Questions - Mixpanel",
+  "h1": [
+    "Frequently Asked Questions"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "faqs-desktop.png"
+}

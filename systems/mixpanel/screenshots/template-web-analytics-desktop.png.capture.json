@@ -1,0 +1,15 @@
+{
+  "slug": "template-web-analytics-desktop",
+  "requested": "https://mixpanel.com/template-gallery/web-analytics",
+  "final": "https://mixpanel.com/template-gallery/web-analytics",
+  "title": "Web Analytics Template - Mixpanel: Product Analytics for Mobile, Web & More",
+  "h1": [
+    "Web Analytics Template"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "template-web-analytics-desktop.png"
+}

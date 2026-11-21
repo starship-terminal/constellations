@@ -1,0 +1,15 @@
+{
+  "slug": "compare-amplitude-desktop",
+  "requested": "https://mixpanel.com/compare/amplitude/",
+  "final": "https://mixpanel.com/compare/amplitude/",
+  "title": "Mixpanel vs Amplitude: Feature Comparison",
+  "h1": [
+    "Mixpanel vs. Amplitude"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "compare-amplitude-desktop.png"
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "finance-desktop",
+  "requested": "https://mixpanel.com/industries/finance-analytics/",
+  "final": "https://mixpanel.com/industries/finance-analytics/",
+  "title": "Mixpanel: Financial Services Product & Digital Analytics Platform",
+  "h1": [
+    "Invest in your product experience"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "finance-desktop.png"
+}

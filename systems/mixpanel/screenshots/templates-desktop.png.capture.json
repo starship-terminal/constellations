@@ -1,0 +1,15 @@
+{
+  "slug": "templates-desktop",
+  "requested": "https://mixpanel.com/template-gallery",
+  "final": "https://mixpanel.com/template-gallery",
+  "title": "Template Gallery - Mixpanel: Product Analytics for Mobile, Web & More",
+  "h1": [
+    "Template Gallery"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "templates-desktop.png"
+}

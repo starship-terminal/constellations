@@ -1,0 +1,15 @@
+{
+  "slug": "ai-governance-desktop",
+  "requested": "https://mixpanel.com/ai/governance",
+  "final": "https://mixpanel.com/ai/governance",
+  "title": "Mixpanel Context Engine | Trusted AI Analytics",
+  "h1": [
+    "AI that understands your business and delivers answers you trust"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "ai-governance-desktop.png"
+}

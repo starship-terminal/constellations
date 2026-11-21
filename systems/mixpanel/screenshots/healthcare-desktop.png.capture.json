@@ -1,0 +1,15 @@
+{
+  "slug": "healthcare-desktop",
+  "requested": "https://mixpanel.com/industries/healthcare-analytics/",
+  "final": "https://mixpanel.com/industries/healthcare-analytics/",
+  "title": "Mixpanel: Healthcare Product & Digital Analytics Platform",
+  "h1": [
+    "Simplify digital experiences for patients"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "healthcare-desktop.png"
+}

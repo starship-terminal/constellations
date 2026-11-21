@@ -1,0 +1,13 @@
+{
+  "slug": "contact-sales-desktop",
+  "requested": "https://mixpanel.com/contact-us/sales/",
+  "final": "https://mixpanel.com/contact-us/sales/",
+  "title": "Contact Mixpanel Sales",
+  "h1": [],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "contact-sales-desktop.png"
+}

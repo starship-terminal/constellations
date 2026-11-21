@@ -1,0 +1,15 @@
+{
+  "slug": "compare-fullstory-desktop",
+  "requested": "https://mixpanel.com/compare/fullstory/",
+  "final": "https://mixpanel.com/compare/fullstory/",
+  "title": "Mixpanel vs Fullstory: Get More Than Just Replays With Us.",
+  "h1": [
+    "Mixpanel vs. Fullstory"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "compare-fullstory-desktop.png"
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "pricing-desktop",
+  "requested": "https://mixpanel.com/pricing/",
+  "final": "https://mixpanel.com/pricing/",
+  "title": "Mixpanel Pricing: Find Your Plan & Get Started | Mixpanel",
+  "h1": [
+    "Plans that grow with you"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "pricing-desktop.png"
+}

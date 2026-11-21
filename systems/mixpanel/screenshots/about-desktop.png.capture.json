@@ -1,0 +1,15 @@
+{
+  "slug": "about-desktop",
+  "requested": "https://mixpanel.com/about",
+  "final": "https://mixpanel.com/about",
+  "title": "About Mixpanel | Company Overview",
+  "h1": [
+    "Learn customer behavior. Build what they\u2019ll love."
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "about-desktop.png"
+}
