@@ -1,0 +1,118 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://theordinary.com/en-sg",
+  "productUrl": "https://theordinary.com/en-sg/niacinamide-10-zinc-1-serum-100436.html",
+  "loginUrl": "https://theordinary.com/en-sg/login",
+  "signupUrl": "https://theordinary.com/en-sg/welcome-signup",
+  "viewport": { "cssWidth": 1440, "cssHeight": 900, "devicePixelRatio": 2 },
+  "region": "Singapore storefront, prices in USD",
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(33, 37, 41)",
+    "fontFamily": "Raleway",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px"
+  },
+  "promoBar": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "Raleway",
+    "height": "37px"
+  },
+  "brandTab": {
+    "backgroundColor": "rgba(117, 117, 117, 0.2)",
+    "color": "rgb(34, 30, 31)",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontSize": "10px",
+    "height": "37px"
+  },
+  "nav": {
+    "linkColor": "rgb(0, 0, 0)",
+    "fontFamily": "Raleway",
+    "fontSize": "16px",
+    "fontWeight": "600",
+    "height": "55px"
+  },
+  "hero": {
+    "headingColor": "rgb(33, 37, 41)",
+    "fontFamily": "Raleway",
+    "fontSize": "36px",
+    "fontWeight": "700",
+    "lineHeight": "43.2px"
+  },
+  "explore": {
+    "text": "Explore New In",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(34, 18, 31)",
+    "fontFamily": "Raleway",
+    "fontSize": "16px",
+    "fontWeight": "600",
+    "height": "42px",
+    "borderRadius": "20px",
+    "border": "1px solid rgb(51, 51, 51)"
+  },
+  "regimen": {
+    "text": "Build My Regimen",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Raleway",
+    "fontSize": "16px",
+    "fontWeight": "600",
+    "height": "37px",
+    "borderRadius": "110px",
+    "border": "1px solid rgb(0, 0, 0)"
+  },
+  "product": {
+    "title": "Niacinamide 10% + Zinc 1%",
+    "titleColor": "rgb(51, 51, 51)",
+    "titleFontFamily": "Raleway, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "titleFontSize": "28px",
+    "titleFontWeight": "700",
+    "titleLineHeight": "33.6px",
+    "price": "$7.20 USD",
+    "priceColor": "rgb(33, 37, 41)",
+    "priceFontSize": "16px",
+    "priceFontWeight": "700"
+  },
+  "addToCart": {
+    "text": "Add To Cart",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(51, 51, 51)",
+    "fontFamily": "Raleway",
+    "fontSize": "15px",
+    "fontWeight": "600",
+    "height": "48px",
+    "borderRadius": "0px",
+    "border": "1px solid rgb(0, 0, 0)",
+    "clicked": false
+  },
+  "sizeChip": {
+    "text": "30ml",
+    "backgroundColor": "rgb(51, 51, 51)",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "Raleway",
+    "fontSize": "14px",
+    "fontWeight": "600",
+    "height": "33px",
+    "borderRadius": "100px",
+    "border": "1px solid rgb(225, 222, 217)"
+  },
+  "login": {
+    "heading": "SIGN IN TO YOUR ACCOUNT",
+    "email": { "type": "email", "valueLength": 0, "height": "40px", "fontFamily": "Geologica, \"Helvetica Neue\", Helvetica, Arial, sans-serif", "fontSize": "16px" },
+    "password": { "type": "password", "valueLength": 0, "height": "40px" },
+    "signIn": { "backgroundColor": "rgb(255, 255, 255)", "color": "rgb(117, 117, 117)", "height": "48px", "borderRadius": "0px", "fontFamily": "Geologica", "fontSize": "12px", "fontWeight": "700", "clicked": false },
+    "providersSeen": ["Continue With Google", "Continue With Apple", "Continue With Facebook"],
+    "providersClicked": false
+  },
+  "signup": {
+    "heading": "CREATE ACCOUNT",
+    "fieldsEmpty": ["First name", "Last name", "Phone (optional)", "Email", "Confirm Email", "Password", "Confirm Password"],
+    "fieldHeight": "40px",
+    "fieldBorder": "1px rgb(0, 0, 0)",
+    "fieldFontFamily": "Geologica, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "joinNow": { "backgroundColor": "rgb(0, 0, 0)", "color": "rgb(255, 255, 255)", "height": "48px", "borderRadius": "0px", "fontFamily": "Geologica", "fontSize": "12px", "fontWeight": "700", "clicked": false },
+    "providersClicked": false
+  }
+}

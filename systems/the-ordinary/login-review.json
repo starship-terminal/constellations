@@ -1,0 +1,81 @@
+{
+  "product": "The Ordinary",
+  "domain": "theordinary.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "region": "Singapore storefront redirected from https://theordinary.com. Prices shown in USD.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Login, and footer Sign In",
+      "url": "https://theordinary.com/en-sg/login",
+      "title": "Login | The Ordinary",
+      "painted": true,
+      "headings": ["SIGN IN TO YOUR ACCOUNT", "DISCOVER THE BENEFITS OF MEMBERSHIP"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": ["Continue With Google", "Continue With Apple", "Continue With Facebook"],
+      "otherControls": ["Keep me logged in", "Reset Password", "Sign In", "Create Account"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email and password were empty. Sign In was not clicked. No identity provider was clicked. Reset Password was not opened. No form was submitted."
+    },
+    {
+      "control": "login wall Create Account, and header Create Account",
+      "url": "https://theordinary.com/en-sg/welcome-signup",
+      "title": "Create Account | The Ordinary",
+      "painted": true,
+      "headings": ["CREATE ACCOUNT", "SIGN IN WITH YOUR EMAIL", "OR QUICK REGISTER"],
+      "asksFor": [
+        { "label": "First name", "type": "text", "required": true },
+        { "label": "Last name", "type": "text", "required": true },
+        { "label": "Phone (optional)", "type": "tel", "required": false },
+        { "label": "Email", "type": "email", "required": true },
+        { "label": "Confirm Email", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true },
+        { "label": "Confirm Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": ["Continue With Google", "Continue With Apple", "Continue With Facebook"],
+      "otherControls": ["Keep me updated (optional)", "Join Now", "Sign in"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Every field was empty. Join Now was not clicked. No identity provider was clicked. The optional email checkbox was not checked. No form was submitted."
+    },
+    {
+      "control": "footer Stay In Touch subscribe",
+      "url": "https://theordinary.com/en-sg",
+      "title": "The Ordinary | Clinical Formulations with Integrity",
+      "painted": true,
+      "headings": ["Stay In Touch."],
+      "asksFor": [
+        { "label": "Email Address", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Subscribe"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Subscribe was not clicked. Nothing was typed. A hidden recaptcha field is on the form. No captcha was solved."
+    },
+    {
+      "control": "header Cart",
+      "url": "https://theordinary.com/en-sg/cart",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Cart 0 Items"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Cart is a checkout wall. It was not opened. Add To Cart was not clicked."
+    }
+  ]
+}
