@@ -1,0 +1,17 @@
+{
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "url": "https://www.nytimes.com/saved",
+  "theme": "light",
+  "captured": "2026-11-21",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

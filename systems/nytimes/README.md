@@ -1,0 +1,111 @@
+# The New York Times
+
+A token set and component reference for the signed-in New York Times account and masthead. Read on **www.nytimes.com** on **2026-11-21**, from a registered account that is signed in and does not have a news subscription. Light theme only. Desktop 1440 x 900 CSS and phone 390 x 844 CSS, both at devicePixelRatio 2.
+
+The account greeting, the email-and-settings page, the empty reading list, the masthead search and the section drawer are the surfaces. Article pages, subscriber settings and the dark counterparts declared in the stylesheets were not reached.
+
+| File | What it is |
+|---|---|
+| [icon.png](icon.png) | The Times T mark, 128 px PNG, resized from the static T logo |
+| [tokens.json](tokens.json) | W3C DTCG tokens, Tokens Studio multi-set: `core` (color, Franklin/Cheltenham/Imperial/Karnak, three type styles, spacing, radius) and `light` (page, surface, text, muted, accent, border, component). No dark set. Every token has `$extensions.source` |
+| [style-guide.html](style-guide.html) | One page that renders the tokens and the main account controls. Light only |
+| [components.md](components.md) | Component inventory with crops and token names, shared values, and gaps |
+| [patterns.md](patterns.md) | How the account shell, empty list, search and section drawer combine |
+| [components/](components/) | `crops/`, 2x cuts of the controls that were on screen |
+| [icons/](icons/) | Four traced chrome marks and [INDEX.tsv](icons/INDEX.tsv). Not the product SVG files |
+| [screenshots/](screenshots/) | Seven 256-colour captures, each with a `.png.capture.json` sidecar |
+| [raw/](raw/) | [component-tokens.json](raw/component-tokens.json), the readings `build_tokens.py` uses, and full-colour originals in `raw/screens/` |
+| [tools/](tools/) | The kit copy and the NYT builders. See [Rebuild](#rebuild) |
+| [login-review.json](login-review.json) | What the signed-in walk offered, what it reached, the screens, the gaps, and what was not submitted |
+
+`DESIGN.md` is not in this folder. `make design-md` writes it from a catalog entry, and [catalog.json](../../catalog.json) does not list this package yet. That entry is deferred.
+
+## Brief
+
+<!-- brief:start -->
+
+Not generated. `make brief` reads the catalog entry, and this package has none yet.
+
+<!-- brief:end -->
+
+## Health
+
+<!-- health:start -->
+
+Not generated. `make grade` reads the catalog entry and the scorecard snapshot. Neither lists this package yet. `make check` will fail until the catalog entry lands. That failure is expected.
+
+<!-- health:end -->
+
+## How the values were read
+
+The signed-in preview browser, default profile, on 2026-11-21.
+
+- **Tokens.** Computed custom properties on `/account`: `--tpl-color-*`, `--tpl-font-family-*`, `--tpl-size-spacing-*`, `--tpl-theme-*`, plus `--color-signal-*`. Written to [raw/component-tokens.json](raw/component-tokens.json). [tools/build_tokens.py](tools/build_tokens.py) turns that file into [tokens.json](tokens.json).
+- **Search Go.** Background and border of the enabled Go button after a query was typed on `/saved`. The query was not submitted.
+- **Section drawer.** Width from `getBoundingClientRect` while the drawer was open.
+- **Screenshots.** Viewport shots at the measured sizes in each `.png.capture.json`. [tools/capture/quantize.py](tools/capture/quantize.py) writes the 256-colour copies in [screenshots/](screenshots/). Full-colour originals stay in [raw/screens/](raw/screens/).
+
+Nothing was subscribed, gifted, commented, saved, deleted, or submitted. Profile fields were not filled. Log out was not clicked.
+
+## What to distrust
+
+- **Light only.** The sheets declare `--tpl-pvt-dark` counterparts. This account had no theme switch, and the live page stayed light. There is no dark set.
+- **Registered, not subscribed.** The account drawer said access was limited. Article body, home delivery and subscriber settings are absent.
+- **Quantised screenshots.** Read exact colours from [tokens.json](tokens.json) or [raw/component-tokens.json](raw/component-tokens.json).
+- **Icon traces.** [icons/](icons/) are redrawn marks of the hamburger, search, close and chevron. They are not the files the site ships.
+- **Phone focus ring.** [account-nav-phone](screenshots/account-nav-phone.png) shows a blue ring on the close control. That ring is the preview tool's focus, not a product style.
+- **Section drawer clip.** Opening the drawer left the search field partly behind it. The screenshot shows that clip.
+- **Owner identity in the shots.** The account page shows the owner's name and email. Those are not copied into this README.
+- **No catalog entry.** Brief, Health and DESIGN.md cannot be generated until [catalog.json](../../catalog.json) lists the package.
+
+## Fonts
+
+**nyt-franklin** is the UI face: nav, greetings, buttons, row labels. The token falls back to Helvetica, Arial, sans-serif. **nyt-cheltenham-small** is the editorial serif, falling back to Georgia. **nyt-imperial** and **nyt-karnak** are declared the same way and were not the account chrome. None of the four is distributed here. The masthead blackletter is the product wordmark, not a UI face.
+
+## Coverage
+
+| Checklist | Status |
+|---|---|
+| Colour roles, light | Captured in [tokens.json](tokens.json) |
+| Colour roles, dark | Not present on this account |
+| Type roles | Franklin measured on the greeting, nav and row links. Cheltenham, Imperial and Karnak declared, not used in the account chrome |
+| Spacing | `--tpl-size-spacing-1` through `8` (no 7) |
+| Radii | Dialog 3px, tile 0px, search 3px |
+| Elevation | Dialog shadow `0 0 5px #00000026`. No open dialog |
+| Button default | [button-emphasis](components/crops/button-emphasis-default.png), [button-outline](components/crops/button-outline-default.png), [search Go](components/crops/search-go-enabled.png) |
+| Button hover, focus, pressed, disabled | Not captured |
+| Text field | [search filled](components/crops/search-field-filled.png). Empty open field in [search-empty-light](screenshots/search-empty-light.png) |
+| Link | [Update](components/crops/link-update-default.png), [Learn More](components/crops/link-inline-default.png) |
+| Menu | [section drawer](screenshots/section-nav-light.png), [account nav phone](screenshots/account-nav-phone.png) |
+| Empty state | [saved-empty-light](screenshots/saved-empty-light.png) |
+| Avatar | [avatar](components/crops/avatar-default.png), default mark, no photo |
+| Desktop 1440 | Measured 1440 x 900, devicePixelRatio 2 |
+| Phone 390 | Measured 390 x 844, devicePixelRatio 2, account page only |
+| Article, subscriber settings, gift, checkout | Not captured. Subscription and gift were not started |
+| Text area, select, checkbox, radio, switch, tabs, tooltip, toast, table, badge | Not present on the pages walked |
+
+## Do and don't
+
+- **Do keep the page white and the type near-black.** Account and saved pages sit on `core.color.paper` with `core.color.ink` headings. [account settings](screenshots/account-settings-light.png).
+- **Do use Franklin for chrome and leave Cheltenham for editorial text.** The greeting, nav and buttons are Franklin. [account phone](screenshots/account-phone.png).
+- **Do mark the selected account item with a short ink rule.** [selected nav](components/crops/account-nav-selected.png).
+- **Do keep corners at 3px.** Search, Go and the dialog token share that radius. [search field](components/crops/search-field-filled.png).
+- **Don't invent a dark theme.** This account had no switch. The dark custom properties were not measured live.
+- **Don't follow Subscribe, Gift, Connect, Create or Delete as if they were chrome.** They start a purchase, a login change, or deletion. They were left alone. [subscribe pill](components/crops/subscribe-nav-default.png).
+- **Don't treat the phone close-button ring as a focus style.** It is a preview-tool artifact. [account nav phone](screenshots/account-nav-phone.png).
+- **Don't read colours off the quantised screenshots.** Use the tokens.
+
+## Rebuild
+
+From this folder:
+
+```bash
+python3 tools/build_tokens.py
+python3 tools/build_style_guide.py
+python3 tools/capture/quantize.py raw/screens
+python3 tools/test_build_tokens.py
+```
+
+`build_components_md.py` in the kit expects a ChatGPT-shaped `components-computed.json`. This package writes [components.md](components.md) from the walk, so that script is not the rebuild path.
+
+`make brief`, `make design-md` and `make check` need a catalog entry. That entry is deferred.

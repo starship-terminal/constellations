@@ -1,0 +1,130 @@
+{
+  "product": "The New York Times",
+  "slug": "nytimes",
+  "host": "https://www.nytimes.com",
+  "signed_in": true,
+  "subscription": "registered account, no news subscription",
+  "theme": "light",
+  "captured": "2026-11-21",
+  "viewports": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewportScale": 1}
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Home",
+        "U.S.",
+        "World",
+        "Business",
+        "Arts",
+        "Lifestyle",
+        "Opinion",
+        "Video",
+        "Shows",
+        "Games",
+        "Cooking",
+        "Wirecutter",
+        "The Athletic",
+        "Edition: U.S.",
+        "Edition: International",
+        "Edition: Canada",
+        "Edition: Espanol",
+        "Edition: Chinese",
+        "Account drawer: Edit your profile",
+        "Account drawer: Account settings",
+        "Account drawer: Saved articles",
+        "Account drawer: Newsletters",
+        "Account drawer: Help Center",
+        "Account drawer: Log out",
+        "Account drawer: Subscribe for more access",
+        "Account drawer: Try a different email"
+      ],
+      "reached": [
+        "Home",
+        "section drawer on /saved",
+        "Account drawer",
+        "Account settings",
+        "Saved articles"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Account",
+        "Email and settings",
+        "Help",
+        "Account number",
+        "Email address",
+        "Password",
+        "Connected accounts",
+        "Profile icon",
+        "Name",
+        "Username",
+        "Saved places",
+        "Become a subscriber",
+        "Share The Times",
+        "Newsletters",
+        "Saved articles",
+        "Privacy",
+        "Delete your account",
+        "Google connected",
+        "Apple",
+        "Work or School",
+        "Newsletter subscriptions",
+        "Marketing emails"
+      ],
+      "reached": [
+        "/account",
+        "/account/settings"
+      ]
+    },
+    "create": {
+      "items": [
+        "Password Create",
+        "Connect Apple",
+        "Connect Work or School",
+        "Profile Update",
+        "Gift subscriptions",
+        "Subscribe"
+      ],
+      "reached": false
+    }
+  },
+  "screens": [
+    {"name": "Email and settings", "file": "screenshots/account-settings-light.png"},
+    {"name": "Saved articles, empty", "file": "screenshots/saved-empty-light.png"},
+    {"name": "Masthead search, empty", "file": "screenshots/search-empty-light.png"},
+    {"name": "Masthead search, query typed", "file": "screenshots/search-typed-light.png"},
+    {"name": "Section drawer", "file": "screenshots/section-nav-light.png"},
+    {"name": "Account, phone", "file": "screenshots/account-phone.png"},
+    {"name": "Account nav, phone", "file": "screenshots/account-nav-phone.png"}
+  ],
+  "gaps": [
+    "No news subscription, so article body, subscriber settings and home delivery were not reached.",
+    "No theme switch on this account. Sheets declare dark counterparts; only light was measured.",
+    "Homepage was viewed. It was not saved as a screenshot.",
+    "Newsletters index was not opened as its own page. The settings page lists the subscribed newsletters.",
+    "Games, Cooking, Wirecutter and The Athletic were not entered.",
+    "Help Center was not entered.",
+    "Phone capture is the account page and its nav. The phone homepage and section drawer were not captured.",
+    "The phone account-nav close control shows a blue focus ring from the preview tool.",
+    "catalog.json is deferred, so DESIGN.md, Brief and Health are not generated and make check cannot pass.",
+    "icon.png is the static T logo resized to 128 px. The homepage blocked an unauthenticated icon fetch.",
+    "icons/ holds traces of chrome marks, not the product SVG set. Hover, focus-visible and pressed states were not captured."
+  ],
+  "not_submitted": [
+    "subscribe",
+    "gift",
+    "checkout",
+    "password create",
+    "connect or disconnect accounts",
+    "newsletter remove",
+    "marketing opt-in",
+    "profile field edits",
+    "delete account",
+    "log out",
+    "comment",
+    "save article",
+    "search submit"
+  ]
+}
