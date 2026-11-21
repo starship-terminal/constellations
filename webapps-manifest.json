@@ -725,9 +725,9 @@
       "description": "Create a textile from scratch",
       "status": "captured",
       "package": "systems/byborre",
-      "notes": "https://byborre.com/?redirectTo=/dashboard Login/Sign-up asks for email and password. No code was sent.",
+      "notes": "https://byborre.com/?redirectTo=/dashboard Login/Sign-up asks for email and password. No code was sent. Public walk 2026-11-21: the public site tree is in systems/byborre/site-tree.md. Log in opens a dialog that asks for an empty email and password. Sign up and Forgot password stay on the same URL and were not submitted. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1685 at c18e2486ccf9. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 3
     },
     {
@@ -742,9 +742,9 @@
       "description": "The intuitive equity platform for fast-growing startups",
       "status": "captured",
       "package": "systems/cakeequity",
-      "notes": "https://app.cakeequity.com/login accepted the email, then asked for a password. Google and LinkedIn are also offered. No code was sent.",
+      "notes": "https://app.cakeequity.com/login accepted the email, then asked for a password. Google and LinkedIn are also offered. No code was sent. Public walk 2026-11-21: the public site tree is in systems/cakeequity/site-tree.md. Sign in stops at an empty email field, then Continue. Google and LinkedIn are offered and were not clicked. No password field was reached. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1684 at 0f80e059af1f. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 3
     },
     {
@@ -776,9 +776,9 @@
       "description": "Meeting Scheduling Software and AI Meeting Tools",
       "status": "captured",
       "package": "systems/calendly",
-      "notes": "https://calendly.com/login said no account exists for the capture inbox. Signup at https://calendly.com/app/signup asks for a name and password. The form was not submitted. No code was sent.",
+      "notes": "https://calendly.com/login said no account exists for the capture inbox. Signup at https://calendly.com/app/signup asks for a name and password. The form was not submitted. No code was sent. Public walk 2026-11-21: the public site tree is in systems/calendly/site-tree.md. https://calendly.com/login and https://calendly.com/signup each stop at an empty email field. Continue with email was not clicked. Google and Microsoft were not opened. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1686 at 0884419d35ac. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 3
     },
     {
@@ -929,7 +929,7 @@
       "description": "Online video editor by Microsoft ",
       "status": "captured",
       "package": "systems/clipchamp",
-      "notes": "https://app.clipchamp.com/login redirected to https://clipchamp.com/en/unsupported-browser/. This browser cannot open the editor. No email field was reached.",
+      "notes": "https://app.clipchamp.com/login redirected to https://clipchamp.com/en/unsupported-browser/. This browser cannot open the editor. No email field was reached. Public walk 2026-11-21: the worker reached the marketing site and the consumer login page, then died on a usage limit before writing the package. No pull request. No package invented. login-probe stays no-form. login-extracted stays not-started. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 3
@@ -1405,9 +1405,9 @@
       "description": "Your Personal AI Doctor",
       "status": "captured",
       "package": "systems/doctronic",
-      "notes": "https://www.doctronic.ai/?modal=signin offers a login code by email. Get Login Code did not advance after the capture inbox was entered. No code was sent.",
+      "notes": "https://www.doctronic.ai/?modal=signin offers a login code by email. Get Login Code did not advance after the capture inbox was entered. No code was sent. Public walk 2026-11-21: the public site tree is in systems/doctronic/site-tree.md. Login and signup dialogs were photographed empty. Get Login Code and Get Sign up Code were not clicked. Google, Apple, and Facebook were not clicked. Health record and Appointments stop at the login wall. Nothing was typed. No form was submitted. login-review.json has offered.nav, offered.settings, and offered.create, and the screen files were not checked on this branch. login-extracted stays not-started. Public package refresh in PR 1690 at d78a9fb0afc5. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 5
     },
     {
@@ -1643,9 +1643,9 @@
       "description": "AI Music Generator — Create & Stream Music",
       "status": "captured",
       "package": "systems/elevenmusic",
-      "notes": "https://elevenmusic.io/login offers Google and Apple. Continue with Email stayed disabled after the capture inbox was entered. No code was sent.",
+      "notes": "https://elevenmusic.io/login offers Google and Apple. Continue with Email stayed disabled after the capture inbox was entered. No code was sent. Public walk 2026-11-21: the public site tree is in systems/elevenmusic/site-tree.md. Sign in, studio, library, and download controls stop at a login dialog or https://elevenmusic.io/login. Google and Apple are offered. Continue with Email stayed disabled on the empty field and was not pressed. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1687 at d9e59ee3981a. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 5
     },
     {
@@ -1898,9 +1898,9 @@
       "description": "Share the joy of reading with online book clubs",
       "status": "captured",
       "package": "systems/fable",
-      "notes": "https://fable.co/login is a missing page. The homepage offers Get the app and has no email sign-in form. No code was sent.",
+      "notes": "https://fable.co/login is a missing page. The homepage offers Get the app and has no email sign-in form. No code was sent. Public walk 2026-11-21: the public site tree is in systems/fable/site-tree.md. https://fable.co/login is still a missing page. The person icon opens a Create your account dialog that asks for a display name, email, and password. Library stops at https://fable.co/signin. Nothing was typed. Google and Apple were not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1688 at 7bf3c1db23bb. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 6
     },
     {
@@ -1915,9 +1915,9 @@
       "description": "Build faster with AI coding agents",
       "status": "captured",
       "package": "systems/factory",
-      "notes": "https://factory.ai/login redirects to https://factory.com/login, a Vercel login page with an email field and Google, GitHub, ChatGPT, SAML, and passkey. Continue with Email did not advance after the capture inbox was entered. No code was sent.",
+      "notes": "https://factory.ai/login redirects to https://factory.com/login, a Vercel login page with an email field and Google, GitHub, ChatGPT, SAML, and passkey. Continue with Email did not advance after the capture inbox was entered. No code was sent. Public walk 2026-11-21: the public site tree is in systems/factory/site-tree.md. Sign in stops at the empty Vercel wall and an empty Factory auth page. Continue with Email was not pressed. Google, GitHub, ChatGPT, SAML, and passkey were not clicked. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1689 at 25f0c6de5e5f. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 6
     },
     {
@@ -1949,7 +1949,7 @@
       "description": "Easiest & most cost-effective way to use Gen AI",
       "status": "captured",
       "package": "systems/fal",
-      "notes": "https://fal.ai/login offers GitHub, Google, Microsoft, and SSO only. No email field. No code was sent.",
+      "notes": "https://fal.ai/login offers GitHub, Google, Microsoft, and SSO only. No email field. No code was sent. Public walk 2026-11-21: the public site tree is in systems/fal/site-tree.md. Get Started, /dashboard, and /signup stop at the same login wall. GitHub, Google, Microsoft, and SSO were not clicked. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1692 at b65eb311c7e2. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "oauth-only",
       "batch": 6
@@ -2153,7 +2153,7 @@
       "description": "Nutrition Tracker",
       "status": "captured",
       "package": "systems/foodnoms",
-      "notes": "https://foodnoms.com/login is a 404. The site only offers Get the App for the iOS app. No web sign-in form.",
+      "notes": "https://foodnoms.com/login is a 404. The site only offers Get the App for the iOS app. No web sign-in form. Public walk 2026-11-21: the public site tree is in systems/foodnoms/site-tree.md. https://foodnoms.com/login is still a 404. Open in Foodnoms is an in-app deep link, not a web form. The newsletter field on /news was left empty. No identity provider was present. Nothing was typed into an account form. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1691 at e744210f7f0e. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 7
