@@ -1694,9 +1694,9 @@
       "description": "Infinite Tools, One Place",
       "status": "captured",
       "package": "systems/endless",
-      "notes": "https://endless.io/login redirects to https://endless.app/. Sign in asks for email and password, or Apple, Google, or Microsoft. No code was sent.",
+      "notes": "https://endless.io/login redirects to https://endless.app/. Sign in asks for email and password, or Apple, Google, or Microsoft. No code was sent. Public walk 2026-11-21: the map starts at endless.io, which redirects to endless.app, and records which header, footer, and in-page control opens which page or menu. Marketing pages, pricing, and opened menus were photographed at desktop and phone. Cookie banners were hidden, never accepted. Sign in stops at endless.app/sign-in, which asks for email and password, or Google or Microsoft. Nothing was typed. Google, Microsoft, and passkey were not used. No form was submitted. Signed-in app was not captured. The PR has no login-review.json. Public package refresh in PR 1657 at 25e50d805e1b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
