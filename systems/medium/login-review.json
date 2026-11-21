@@ -1,0 +1,88 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public capture, signed out. https://medium.com/m/signin was opened from the homepage Sign in link. The empty card was photographed. The branch stopped. No email, password, phone, or code was typed. No identity provider was clicked. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Our story opens /about",
+        "Membership opens /membership",
+        "Write opens /m/signin with a register operation. Signup wall. Stopped.",
+        "Sign in opens /m/signin. Login wall. Stopped.",
+        "Get started (link) opens /m/signin with a register operation. Signup wall. Stopped.",
+        "Get started (button) and Start reading open a Join Medium dialog on /. Signup wall. Not photographed.",
+        "Footer: Help, Status, About, Careers, Press (mailto, not sent), Blog, Store, Privacy, Rules, Terms, Text to speech"
+      ],
+      "reached": [
+        "Our story opens /about",
+        "Membership opens /membership",
+        "Help opens help.medium.com",
+        "Plans opens /plans from membership Get started and View plans",
+        "Sign in card opened empty and photographed"
+      ]
+    },
+    "settings": {
+      "items": [
+        "No settings area on the public homepage",
+        "Remember me is a checkbox on the sign-in card. Left as the page showed it. Not changed."
+      ],
+      "reached": [
+        "No settings area on the public homepage"
+      ]
+    },
+    "create": {
+      "items": [
+        "Write, Get started, and Start reading stop at /m/signin or the Join Medium dialog",
+        "Create one is on the sign-in card and was not pressed",
+        "Select on /plans starts a subscription and was not pressed"
+      ],
+      "reached": [
+        "No editor was opened. Write and Get started were not followed past the wall."
+      ]
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-dark-default.png",
+    "screenshots/home-light-phone.png",
+    "screenshots/home-dark-phone.png",
+    "screenshots/membership-light-default.png",
+    "screenshots/about-light-default.png",
+    "screenshots/plans-light-default.png",
+    "screenshots/signin-light-empty.png",
+    "screenshots/help-light-default.png"
+  ],
+  "gaps": [
+    "The signed-in home, editor, library, and settings were not entered.",
+    "No Google, Apple, or other identity provider was on the empty sign-in card. None was clicked.",
+    "Sign in with email was not pressed. The email field was not opened and nothing was typed.",
+    "Create one was not pressed.",
+    "The Join Medium dialog on the homepage was opened and closed. It was not photographed and nothing was typed.",
+    "Select on /plans was not pressed. No subscription was started.",
+    "Blog and careers pages loaded but were not saved. They show member avatars and a staff photograph.",
+    "Search loaded empty and was not saved. The shell includes a generic account glyph.",
+    "A later pass measured Start reading hover and focus, and re-read the colour pairs. Two stored pairs differ and were left as recorded. See raw/refresh-2026-11-21.md.",
+    "The about page video kept painting after pause. The shot still shows mid-transition caption bars."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "phone",
+    "code",
+    "Sign in",
+    "Sign up",
+    "Create one",
+    "Sign in with email",
+    "Continue with Google",
+    "Continue with Apple",
+    "Select",
+    "Subscribe",
+    "Get help request",
+    "Press mailto",
+    "search"
+  ]
+}

@@ -1,6 +1,6 @@
 # Medium design reference
 
-A token set and component reference for Medium's public signed-out surface. It was read on **2026-11-19** from medium.com in the T3 preview browser, signed out, at a measured **1440 x 900** (devicePixelRatio 2) and **390 x 844**. Captured: the marketing home, membership, about, the blog home, one public staff story, the plans page, the sign-in card including the email step at rest, and the help center. Nothing was submitted. Google, LinkedIn, Facebook, Apple, X, Continue, Create one, Select, and checkout were not pressed.
+A token set and component reference for Medium's public signed-out surface. Refreshed on **2026-11-21** from medium.com, signed out. Live screenshots were taken with headless Chrome at a measured **1440 x 900** (devicePixelRatio 2) and **390 x 844**. Captured: the marketing home in light and dark, the phone home, membership, about, plans, the empty sign-in card, and the help center. Nothing was submitted. Google, Apple, and every other identity provider were not clicked. Create one, Select, and checkout were not pressed.
 
 Medium is worth a capture because the marketing site declares a real token layer. `:root` sets about 77 `--color-*` custom properties as `light-dark()` pairs, and `html[data-color-scheme]` plus `prefers-color-scheme` pick a side. Display type is **gt-super**. UI type is **sohne**. Story body is **source-serif-pro** at 20px / 32px in a 680px column. The primary action is a near-black pill in light (`#191919`, radius 1386px) and a white pill in dark. Accent green is `#1a8917` in light and `#6ab668` in dark. **Boundary:** the signed-in home, the editor, settings, and checkout sit behind sign-in and were not entered.
 
@@ -13,9 +13,11 @@ Medium is worth a capture because the marketing site declares a real token layer
 | [components.md](components.md) | The inventory, with measured values and reconstruction crops |
 | [patterns.md](patterns.md) | How the home, membership, story, plans, and sign-in card are built |
 | [components/crops/](components/crops) | Element crops. These are reconstructions drawn from computed boxes, not live pixels |
-| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` reconstructions at the measured viewports |
+| [screenshots/](screenshots) | Live `{page}-{theme}-{state}.png` at the measured viewports |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog |
+| [login-review.json](login-review.json) | What sign-in offered, and what was not submitted |
 | [icons/](icons) | The wordmark SVG and [INDEX.tsv](icons/INDEX.tsv) |
-| [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
+| [raw/](raw) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), and [refresh-2026-11-21.md](raw/refresh-2026-11-21.md) |
 | [tools/](tools) | The capture kit and a package test |
 
 ## Brief
@@ -77,15 +79,17 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-The T3 preview browser loaded medium.com signed out. `preview_evaluate` read `getComputedStyle` and the stylesheets. Colour tokens were declared as `light-dark()` and stayed unresolved on the custom property itself. Each name was painted onto a probe under `html[data-color-scheme=light]` and `html[data-color-scheme=dark]`, and the probe's computed background was recorded. Component boxes were read on the live elements at 1440 x 900 and 390 x 844.
+The 2026-11-21 refresh loaded medium.com signed out in headless Chrome (Playwright, `channel: chrome`). The T3 preview tab returned HTTP 200 and the title "Medium: Read and write stories." but `preview_snapshot` failed twice with "The browser is not producing screenshot frames." Bundled Chromium returned HTTP 403 and "Just a moment..." on `/about`, `/plans`, and `/m/signin`. Installed Chrome returned HTTP 200 on those pages.
 
-`preview_snapshot` failed twice: "The browser is not producing screenshot frames." Headless Playwright returned HTTP 403 and the title "Just a moment..." (Cloudflare). That launch was stopped. The PNGs in this package are reconstructions drawn from the measured boxes and colours. They are not live screenshots.
+Colour tokens in [raw/css-vars.json](raw/css-vars.json) were read on 2026-11-19 by painting each `--color-*` custom property onto a probe under `html[data-color-scheme=light]` and `html[data-color-scheme=dark]`. `getComputedStyle` of the property itself still returned `light-dark()`. This refresh confirmed the live pair: light page `rgb(255, 255, 255)`, dark page `rgb(23, 23, 23)`, dark text `rgb(229, 229, 229)`, at measured `innerWidth` 1440 and 390, `devicePixelRatio` 2. A second CSS-var pass did not finish: Chrome could not create a profile because the disk was full ("No space left on device"). Those tokens were not rewritten.
 
 Two stylesheets were cross-origin and unreadable: `accounts.google.com/gsi/style` and `glyph.medium.com/css/unbound.css`.
 
 ## What to distrust
 
-The screenshots and crops are reconstructions. Positions and colours come from computed styles. The wordmark in those PNGs is the word "Medium" in Helvetica, not the SVG. The style guide uses Georgia for gt-super and Helvetica for sohne. Those families are proprietary and are not in the package.
+The screenshots in [screenshots/](screenshots) from 2026-11-21 are live viewport captures, then quantised to 256 colours. Read colours from [raw/css-vars.json](raw/css-vars.json), not from the PNGs. The crops in [components/crops/](components/crops) are still the 2026-11-19 reconstructions. The style guide uses Georgia for gt-super and Helvetica for sohne. Those families are proprietary and are not in the package.
+
+[about-light-default](screenshots/about-light-default.png) was taken while the page's background video was still painting. A few caption bars are mid-transition. A retake after pause did not run: the disk was full.
 
 The home hero at 1440 was measured in light (`120px`, line-height `100px`, letter-spacing `-6.6px`, colour `#000000`). The 390 hero was measured in dark (`80px` / `72px` / `-4.4px`, colour `#ffffff`). A 1440 dark hero size was not remeasured.
 
@@ -116,10 +120,10 @@ Help center colours are a separate Zendesk layer (`--bg-base`, `--text-primary`)
 | Elevation | `--color-shadow-elevated` is `#242424` in light and `transparent` in dark. No box-shadow on the measured pills |
 | Motion | Get started transitions background and colour over `300ms linear`. No `@keyframes` in the readable sheets. `prefers-reduced-motion` rules were not in those sheets. Help and unbound.css were not probed |
 | Button | Get started, Start reading, Sign in, Sign up, View plans, Select, Continue, OAuth rows |
-| Button hover | Get started: light `#080808`, dark `#f2f2f2` |
-| Button focus | Dark Get started outline `#99c8ff`. Email field focus showed no extra ring |
+| Button hover | Prior reading: Get started light `#080808`, dark `#f2f2f2`. Not remeasured on 2026-11-21. Disk full before the hover pass. |
+| Button focus | Prior reading: dark Get started outline `#99c8ff`. Not remeasured on 2026-11-21. |
 | Link | Nav and footer links, 14px and 16px sohne or the content sans stack |
-| Text field | Email field on `/m/signin`, focused, empty, not submitted |
+| Text field | Email step on `/m/signin` was not opened this pass. The empty card is [signin-light-empty](screenshots/signin-light-empty.png). |
 | Text area, select, checkbox, radio, switch | Not present as native controls on the captured pages. "Remember me" is a custom control with a 0x0 input. Billing is two labels, not a switch |
 | Tabs, menu, tooltip, dialog, toast | Not opened. Reach menu and tabs custom properties are set to `1` on `:root`, and the menus were not opened |
 | Card | Membership story titles and blog titles |
@@ -131,8 +135,8 @@ Help center colours are a separate Zendesk layer (`--bg-base`, `--text-primary`)
 | Destructive confirmation | Not present |
 | Search | Help center search field, not submitted |
 | Themes | Light and dark, via `prefers-color-scheme` and `data-color-scheme` |
-| Widths | 1440 x 900 and 390 x 844, both measured `innerWidth` |
-| Signed-in home, editor, settings, checkout | Not captured. Sign-in is the boundary. Select on `/plans` was not pressed. No payment, phone, or KYC step was reached |
+| Widths | 1440 x 900 and 390 x 844, both measured `innerWidth` on 2026-11-21, light and dark |
+| Signed-in home, editor, settings, checkout | Not captured. Sign-in is the boundary. Select on `/plans` was not pressed. No payment, phone, or KYC step was reached. |
 
 ## Do and don't
 
@@ -141,8 +145,8 @@ Help center colours are a separate Zendesk layer (`--bg-base`, `--text-primary`)
 3. **Do make the primary action a pill.** Get started is `#191919` on light and `#ffffff` on dark, radius 1386px, padding 8px 16px, height 38px. See [button-primary-light-default](components/crops/button-primary-light-default.png).
 4. **Do keep story body in a 680px column.** source-serif-pro 20px / 32px, letter-spacing -0.06px. See [story-body-light-default](components/crops/story-body-light-default.png).
 5. **Do use the green only as accent.** `#1a8917` light, `#6ab668` dark. It was not the fill of any measured marketing button.
-6. **Don't treat the PNGs as live screenshots.** They were drawn from computed styles after the preview frame capture failed and headless Playwright hit Cloudflare.
-7. **Don't style the signed-in app from this package.** The editor, library, and settings were not opened. See [signin-light-default](screenshots/signin-light-default.png).
+6. **Don't sample colours from the PNGs.** The 2026-11-21 shots are live, then quantised to 256 colours. See [home-light-default](screenshots/home-light-default.png).
+7. **Don't style the signed-in app from this package.** The editor, library, and settings were not opened. See [home-light-default](screenshots/home-light-default.png).
 8. **Don't submit from this package.** Continue, Select, and the OAuth rows were measured and not pressed.
 
 ## Rebuild
