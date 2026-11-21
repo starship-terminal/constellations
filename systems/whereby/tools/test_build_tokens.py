@@ -50,6 +50,8 @@ class TokenFileTest(unittest.TestCase):
                     self.assertRegex(value, r"#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?")
                 if token["$type"] == "dimension":
                     self.assertRegex(value, r"-?\d+(\.\d+)?px")
+                if token["$type"] == "shadow":
+                    self.assertIsInstance(value, str)
 
 
 if __name__ == "__main__":

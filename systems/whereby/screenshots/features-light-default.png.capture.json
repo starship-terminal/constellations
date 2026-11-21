@@ -1,0 +1,10 @@
+{
+  "name": "features-light-default",
+  "url": "https://whereby.com/information/features",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "pngWidth": 1440,
+  "pngHeight": 900,
+  "note": "Captured 2026-11-21 in headless Playwright. Cookie card hidden with CSS. Quantised to 256 colours after values were read."
+}

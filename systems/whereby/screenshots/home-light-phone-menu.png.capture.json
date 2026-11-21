@@ -1,8 +1,0 @@
-{
-  "note_missing_sidecar": "/tmp/whereby-shots/home-light-phone-menu.json",
-  "png": {
-    "width": 780,
-    "height": 1688
-  },
-  "note": "Headless Playwright after the T3 preview browser returned 'The browser is not producing screenshot frames'. Public marketing page only. Login was not screenshotted."
-}
