@@ -1,0 +1,9 @@
+{
+  "colorScheme": "normal",
+  "bodyBg": "rgb(3, 0, 20)",
+  "bodyColor": "rgb(255, 255, 255)",
+  "h1Color": "rgb(255, 255, 255)",
+  "h1Size": "72px",
+  "buttonBg": "rgba(0, 0, 0, 0)",
+  "buttonColor": "rgb(244, 240, 255)"
+}

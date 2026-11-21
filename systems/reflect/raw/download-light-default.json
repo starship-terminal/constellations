@@ -1,0 +1,149 @@
+{
+  "url": "https://reflect.app/download",
+  "title": "Reflect - Download",
+  "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 2
+  },
+  "colorScheme": "normal",
+  "body": {
+    "backgroundColor": "rgb(249, 250, 251)",
+    "color": "rgb(2, 8, 23)",
+    "fontFamily": "__inter_5b82ff, __inter_Fallback_5b82ff, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "16px",
+    "lineHeight": "24px"
+  },
+  "h1": {
+    "text": "Download Reflect Open",
+    "tag": "H1",
+    "rect": {
+      "x": 432,
+      "y": 304,
+      "w": 576,
+      "h": 36
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "__inter_5b82ff, __inter_Fallback_5b82ff, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "30px",
+    "fontWeight": "400",
+    "lineHeight": "36px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "solid",
+    "borderTopColor": "rgb(243, 244, 246)",
+    "padding": "0px",
+    "height": "36px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(255, 255, 255) none 0px",
+    "outlineOffset": "0px"
+  },
+  "h2": {
+    "text": "Reflect Classic",
+    "tag": "H2",
+    "rect": {
+      "x": 432,
+      "y": 1105,
+      "w": 576,
+      "h": 28
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "__inter_5b82ff, __inter_Fallback_5b82ff, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "18px",
+    "fontWeight": "500",
+    "lineHeight": "28px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "solid",
+    "borderTopColor": "rgb(243, 244, 246)",
+    "padding": "0px",
+    "height": "28px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(255, 255, 255) none 0px",
+    "outlineOffset": "0px"
+  },
+  "navLinks": [
+    {
+      "text": "Mac (Apple Silicon)",
+      "href": "/api/download?type=darwin-arm64"
+    },
+    {
+      "text": "Mac (Intel)",
+      "href": "/api/download?type=darwin-universal"
+    },
+    {
+      "text": "iPhone",
+      "href": "/appstore"
+    },
+    {
+      "text": "Chrome extension",
+      "href": "/chrome-extension"
+    },
+    {
+      "text": "Safari extension",
+      "href": "/safari-extension"
+    }
+  ],
+  "allUnique": [
+    {
+      "text": "Open source on GitHub",
+      "href": "https://github.com/team-reflect/reflect-open"
+    },
+    {
+      "text": "macOS Apple Silicon",
+      "href": "https://github.com/team-reflect/reflect-open/releases/latest/download/Reflect_aarch64.dmg"
+    },
+    {
+      "text": "macOS Universal",
+      "href": "https://github.com/team-reflect/reflect-open/releases/latest/download/Reflect_universal.dmg"
+    },
+    {
+      "text": "Windows",
+      "href": "https://github.com/team-reflect/reflect-open/releases/latest"
+    },
+    {
+      "text": "Linux",
+      "href": "https://github.com/team-reflect/reflect-open/releases/latest"
+    },
+    {
+      "text": "iPhone & iPad App",
+      "href": "https://apps.apple.com/us/app/reflect-open/id6787385615"
+    },
+    {
+      "text": "Chrome extension",
+      "href": "https://chromewebstore.google.com/detail/reflect-capture/ccabifmooehighoonjeiololjfofkhkd"
+    },
+    {
+      "text": "Mac (Apple Silicon)",
+      "href": "/api/download?type=darwin-arm64"
+    },
+    {
+      "text": "Mac (Intel)",
+      "href": "/api/download?type=darwin-universal"
+    },
+    {
+      "text": "iPhone",
+      "href": "/appstore"
+    },
+    {
+      "text": "Chrome extension",
+      "href": "/chrome-extension"
+    },
+    {
+      "text": "Safari extension",
+      "href": "/safari-extension"
+    }
+  ],
+  "buttons": [],
+  "download": null,
+  "login": null,
+  "email": null,
+  "subscribe": null,
+  "bodyText": "Download Reflect Open\n\nPlain Markdown notes on Mac, Windows, Linux, iPhone, and iPad. Open source on GitHub.\n\nmacOS Apple Silicon\n\nDownload for macOS Apple Silicon processor (M series).\n\nmacOS Universal\n\nDownload for macOS Intel and Apple Silicon processors.\n\nWindows\n\nDownload for Windows x64 or ARM64.\n\nLinux\n\nDownload the AppImage or .deb for x64 or ARM64.\n\niPhone & iPad App\n\nInstall our iPhone and iPad app.\n\nChrome extension\n\nInstall Reflect Capture to clip web content into your notes.\n\nReflect Classic\n\nStill maintained. Use these if you use Reflect Classic.\n\nMac (Apple Silicon)\nMac (Intel)\niPhone\nChrome extension\nSafari extension"
+}

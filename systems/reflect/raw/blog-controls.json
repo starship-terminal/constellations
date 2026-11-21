@@ -1,0 +1,77 @@
+{
+  "h1": {
+    "text": "Reflect Blog",
+    "rect": {
+      "w": 768,
+      "h": 48
+    },
+    "color": "rgb(249, 250, 251)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Inter",
+    "fontSize": "48px",
+    "fontWeight": "700",
+    "lineHeight": "48px",
+    "borderRadius": "0px",
+    "padding": "0px"
+  },
+  "trial": {
+    "text": "Start Free Trial",
+    "rect": {
+      "w": 131,
+      "h": 40
+    },
+    "color": "rgb(236, 229, 255)",
+    "backgroundColor": "rgb(168, 85, 247)",
+    "fontFamily": "Inter",
+    "fontSize": "14px",
+    "fontWeight": "600",
+    "lineHeight": "20px",
+    "borderRadius": "8px",
+    "padding": "6px 16px"
+  },
+  "login": {
+    "text": "Login",
+    "rect": {
+      "w": 53,
+      "h": 40
+    },
+    "color": "rgb(236, 229, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Inter",
+    "fontSize": "14px",
+    "fontWeight": "600",
+    "lineHeight": "20px",
+    "borderRadius": "8px",
+    "padding": "6px 8px"
+  },
+  "tag": {
+    "text": "All Tags",
+    "rect": {
+      "w": 95,
+      "h": 42
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(30, 58, 138)",
+    "fontFamily": "Inter",
+    "fontSize": "16px",
+    "fontWeight": "600",
+    "lineHeight": "24px",
+    "borderRadius": "9999px",
+    "padding": "8px 16px"
+  },
+  "cardTitle": {
+    "text": "Learn how to think better by taking note",
+    "rect": {
+      "w": 768,
+      "h": 84
+    },
+    "color": "rgb(208, 213, 221)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Inter",
+    "fontSize": "20px",
+    "fontWeight": "400",
+    "lineHeight": "28px",
+    "borderRadius": "0px",
+    "padding": "0px"
+  }
+}

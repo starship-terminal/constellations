@@ -1,0 +1,325 @@
+{
+  "url": "https://reflect.app/blog",
+  "title": "Reflect Blog",
+  "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 2
+  },
+  "colorScheme": "normal",
+  "body": {
+    "backgroundColor": "rgb(8, 6, 36)",
+    "color": "rgb(249, 250, 251)",
+    "fontFamily": "Inter, sans-serif, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "16px",
+    "lineHeight": "24px"
+  },
+  "h1": {
+    "text": "Reflect Blog",
+    "tag": "H1",
+    "rect": {
+      "x": 112,
+      "y": 160,
+      "w": 768,
+      "h": 48
+    },
+    "color": "rgb(249, 250, 251)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Inter, sans-serif, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "48px",
+    "fontWeight": "700",
+    "lineHeight": "48px",
+    "letterSpacing": "-1.2px",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "solid",
+    "borderTopColor": "rgb(229, 231, 235)",
+    "padding": "0px",
+    "height": "48px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(249, 250, 251) none 0px",
+    "outlineOffset": "0px"
+  },
+  "h2": {
+    "text": "Learn how to think better by taking notes. Improve your note-taking with AI, learn new wor",
+    "tag": "H2",
+    "rect": {
+      "x": 112,
+      "y": 224,
+      "w": 768,
+      "h": 84
+    },
+    "color": "rgb(208, 213, 221)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Inter, sans-serif, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "20px",
+    "fontWeight": "400",
+    "lineHeight": "28px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "solid",
+    "borderTopColor": "rgb(229, 231, 235)",
+    "padding": "0px",
+    "height": "84px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(208, 213, 221) none 0px",
+    "outlineOffset": "0px"
+  },
+  "navLinks": [
+    {
+      "text": "Reflect",
+      "href": "https://reflect.app/"
+    },
+    {
+      "text": "Product",
+      "href": "https://reflect.app/home#product"
+    },
+    {
+      "text": "Pricing",
+      "href": "https://reflect.app/home#pricing"
+    },
+    {
+      "text": "Company",
+      "href": "https://reflect.app/home#company"
+    },
+    {
+      "text": "Blog",
+      "href": "/blog/all"
+    },
+    {
+      "text": "Changelog",
+      "href": "https://reflect.app/changelog"
+    },
+    {
+      "text": "Login",
+      "href": "https://reflect.app/auth"
+    },
+    {
+      "text": "Start Free Trial",
+      "href": "https://reflect.app/checkout?confirm=true"
+    },
+    {
+      "text": "",
+      "href": "/blog/reflect-open"
+    },
+    {
+      "text": "🏗️ Product Updates",
+      "href": "/blog/tags/product-updates"
+    },
+    {
+      "text": "Reflect Open - a new chapter for Reflect",
+      "href": "/blog/reflect-open"
+    },
+    {
+      "text": "",
+      "href": "/blog/edit-notes-with-coding-agents"
+    },
+    {
+      "text": "Reflect Update: Edit your notes with coding agents",
+      "href": "/blog/edit-notes-with-coding-agents"
+    },
+    {
+      "text": "",
+      "href": "/blog/mcp-support-for-coding-agents"
+    },
+    {
+      "text": "Reflect Update: MCP support for coding agents",
+      "href": "/blog/mcp-support-for-coding-agents"
+    },
+    {
+      "text": "",
+      "href": "/blog/ai-summaries-for-links"
+    },
+    {
+      "text": "Reflect Update: AI summaries for saved links",
+      "href": "/blog/ai-summaries-for-links"
+    },
+    {
+      "text": "",
+      "href": "/blog/advancede-search-on-mobile"
+    },
+    {
+      "text": "Reflect Update: Advanced Search on Mobile",
+      "href": "/blog/advancede-search-on-mobile"
+    },
+    {
+      "text": "",
+      "href": "/blog/reflect-update-custom-prompt-editor"
+    },
+    {
+      "text": "Reflect Update: Custom prompt editor and more",
+      "href": "/blog/reflect-update-custom-prompt-editor"
+    },
+    {
+      "text": "",
+      "href": "https://reflect.app/"
+    }
+  ],
+  "allUnique": [
+    {
+      "text": "Reflect",
+      "href": "https://reflect.app/"
+    },
+    {
+      "text": "Product",
+      "href": "https://reflect.app/home#product"
+    },
+    {
+      "text": "Pricing",
+      "href": "https://reflect.app/home#pricing"
+    },
+    {
+      "text": "Company",
+      "href": "https://reflect.app/home#company"
+    },
+    {
+      "text": "Blog",
+      "href": "/blog/all"
+    },
+    {
+      "text": "Changelog",
+      "href": "https://reflect.app/changelog"
+    },
+    {
+      "text": "Login",
+      "href": "https://reflect.app/auth"
+    },
+    {
+      "text": "Start Free Trial",
+      "href": "https://reflect.app/checkout?confirm=true"
+    },
+    {
+      "text": "",
+      "href": "/blog/reflect-open"
+    },
+    {
+      "text": "🏗️ Product Updates",
+      "href": "/blog/tags/product-updates"
+    },
+    {
+      "text": "Reflect Open - a new chapter for Reflect",
+      "href": "/blog/reflect-open"
+    },
+    {
+      "text": "",
+      "href": "/blog/edit-notes-with-coding-agents"
+    },
+    {
+      "text": "Reflect Update: Edit your notes with coding agents",
+      "href": "/blog/edit-notes-with-coding-agents"
+    },
+    {
+      "text": "",
+      "href": "/blog/mcp-support-for-coding-agents"
+    },
+    {
+      "text": "Reflect Update: MCP support for coding agents",
+      "href": "/blog/mcp-support-for-coding-agents"
+    },
+    {
+      "text": "",
+      "href": "/blog/ai-summaries-for-links"
+    },
+    {
+      "text": "Reflect Update: AI summaries for saved links",
+      "href": "/blog/ai-summaries-for-links"
+    },
+    {
+      "text": "",
+      "href": "/blog/advancede-search-on-mobile"
+    },
+    {
+      "text": "Reflect Update: Advanced Search on Mobile",
+      "href": "/blog/advancede-search-on-mobile"
+    },
+    {
+      "text": "",
+      "href": "/blog/reflect-update-custom-prompt-editor"
+    },
+    {
+      "text": "Reflect Update: Custom prompt editor and more",
+      "href": "/blog/reflect-update-custom-prompt-editor"
+    },
+    {
+      "text": "",
+      "href": "https://reflect.app/"
+    },
+    {
+      "text": "Twitter",
+      "href": "https://twitter.com/reflectnotes"
+    },
+    {
+      "text": "YouTube",
+      "href": "https://www.youtube.com/@reflect-notes"
+    }
+  ],
+  "buttons": [
+    "All Tags",
+    "🛠️ Toolshed Interviews",
+    "🧠 Reflect Workflows",
+    "💡 Articles",
+    "🏗️ Product Updates",
+    "Load More",
+    "Subscribe"
+  ],
+  "download": null,
+  "login": null,
+  "email": {
+    "text": "Email",
+    "tag": "INPUT",
+    "rect": {
+      "x": 384,
+      "y": 1483,
+      "w": 531,
+      "h": 50
+    },
+    "color": "rgb(249, 250, 251)",
+    "backgroundColor": "rgb(8, 6, 36)",
+    "fontFamily": "Inter, sans-serif, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "letterSpacing": "normal",
+    "borderRadius": "8px",
+    "borderTopWidth": "1px",
+    "borderTopStyle": "solid",
+    "borderTopColor": "rgb(71, 84, 103)",
+    "padding": "12px 16px",
+    "height": "50px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(249, 250, 251) none 0px",
+    "outlineOffset": "0px"
+  },
+  "subscribe": {
+    "text": "Subscribe",
+    "tag": "BUTTON",
+    "rect": {
+      "x": 931,
+      "y": 1486,
+      "w": 125,
+      "h": 44
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(168, 85, 247)",
+    "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "14px",
+    "fontWeight": "600",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "8px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "solid",
+    "borderTopColor": "rgb(229, 231, 235)",
+    "padding": "12px 16px",
+    "height": "44px",
+    "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset",
+    "textDecoration": "none",
+    "outline": "rgb(255, 255, 255) none 0px",
+    "outlineOffset": "0px"
+  },
+  "bodyText": "Reflect\nProduct\nPricing\nCompany\nBlog\nChangelog\nLogin\nStart Free Trial\nReflect Blog\nLearn how to think better by taking notes. Improve your note-taking with AI, learn new workflows, and see how notable founders and builders setup their work environments. \nAll Tags\n🛠️ Toolshed Interviews\n🧠 Reflect Workflows\n💡 Articles\n🏗️ Product Updates\n🏗️ Product Updates\n•\nJul 14, 2026\nReflect Open - a new chapter for Reflect\n🏗️ Product Updates\n•\nApr 28, 2026\nReflect Update:  Edit your notes with coding agents\n🏗️ Product Updates\n•\nMar 10, 2026\nReflect Update:  MCP support for coding agents\n🏗️ Product Updates\n•\nSep 23, 2025\nReflect Update: AI summaries for saved links\n🏗️ Product Updates\n•\nAug 19, 2025\nReflect Update: Advanced Search on Mobile\n🏗️ Product Updates\n•\nJul 8, 2025\nReflect Update: Custom prompt editor and more\nLoad More\n\nJoin our newsletter\nEmail\nSubscribe\n\nUnsubscribe at any time.\n\nTwitter\nYouTube\n\nReflect App, LLC. All rights reserved."
+}

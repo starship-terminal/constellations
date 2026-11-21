@@ -1,0 +1,27 @@
+{
+  "url": "https://reflect.app/auth",
+  "title": "Reflect",
+  "text": "Sign in with\n\nor continue with\nContinue\nDiscord\nTwitter\nTerms\nPrivacy\nReflect App, LLC. All rights reserved.",
+  "buttons": [
+    "Continue",
+    "Discord",
+    "Twitter",
+    "Terms",
+    "Privacy"
+  ],
+  "bodyBg": "rgb(249, 250, 251)",
+  "bodyColor": "rgb(2, 8, 23)",
+  "bodyFont": "__inter_5b82ff, __inter_Fallback_5b82ff, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+  "email": {
+    "placeholder": "your@email.com",
+    "value": "",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(15, 23, 42, 0.5)",
+    "border": "1px solid rgb(30, 41, 59)",
+    "radius": "8px",
+    "fontSize": "16px",
+    "fontFamily": "__inter_5b82ff, __inter_Fallback_5b82ff, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "height": "50px",
+    "padding": "12px 16px"
+  }
+}

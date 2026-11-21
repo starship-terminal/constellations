@@ -1,0 +1,165 @@
+{
+  "url": "https://reflect.app/privacy",
+  "title": "Reflect",
+  "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 2
+  },
+  "colorScheme": "normal",
+  "body": {
+    "backgroundColor": "rgb(249, 250, 251)",
+    "color": "rgb(2, 8, 23)",
+    "fontFamily": "__inter_5b82ff, __inter_Fallback_5b82ff, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "16px",
+    "lineHeight": "24px"
+  },
+  "h1": {
+    "text": "Privacy Policy",
+    "tag": "H1",
+    "rect": {
+      "x": 40,
+      "y": 40,
+      "w": 574,
+      "h": 36
+    },
+    "color": "rgb(17, 24, 39)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "__inter_5b82ff, __inter_Fallback_5b82ff, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "30px",
+    "fontWeight": "800",
+    "lineHeight": "36px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "solid",
+    "borderTopColor": "rgb(243, 244, 246)",
+    "padding": "0px",
+    "height": "36px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(17, 24, 39) none 0px",
+    "outlineOffset": "0px"
+  },
+  "h2": {
+    "text": "Interpretation",
+    "tag": "H2",
+    "rect": {
+      "x": 40,
+      "y": 788,
+      "w": 574,
+      "h": 28
+    },
+    "color": "rgb(17, 24, 39)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "__inter_5b82ff, __inter_Fallback_5b82ff, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "20px",
+    "fontWeight": "700",
+    "lineHeight": "28px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "solid",
+    "borderTopColor": "rgb(243, 244, 246)",
+    "padding": "0px",
+    "height": "28px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(17, 24, 39) none 0px",
+    "outlineOffset": "0px"
+  },
+  "navLinks": [
+    {
+      "text": "https://reflect.app",
+      "href": "https://reflect.app"
+    }
+  ],
+  "allUnique": [
+    {
+      "text": "https://reflect.app",
+      "href": "https://reflect.app"
+    },
+    {
+      "text": "Google API Services User Data Policy",
+      "href": "https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes"
+    },
+    {
+      "text": "What Are Cookies?",
+      "href": "https://www.privacypolicies.com/blog/cookies/"
+    },
+    {
+      "text": "https://policies.google.com/privacy",
+      "href": "https://policies.google.com/privacy"
+    },
+    {
+      "text": "https://support.google.com/analytics/answer/6004245",
+      "href": "https://support.google.com/analytics/answer/6004245"
+    },
+    {
+      "text": "https://policies.google.com/technologies/partner-sites",
+      "href": "https://policies.google.com/technologies/partner-sites"
+    },
+    {
+      "text": "https://firebase.google.com/support/privacy",
+      "href": "https://firebase.google.com/support/privacy"
+    },
+    {
+      "text": "openai.com/privacy",
+      "href": "https://openai.com/privacy/"
+    },
+    {
+      "text": "anthropic.com/privacy",
+      "href": "https://anthropic.com/privacy"
+    },
+    {
+      "text": "https://www.apple.com/legal/privacy/en-ww/",
+      "href": "https://www.apple.com/legal/privacy/en-ww/"
+    },
+    {
+      "text": "https://stripe.com/us/privacy",
+      "href": "https://stripe.com/us/privacy"
+    },
+    {
+      "text": "http://www.networkadvertising.org/choices/",
+      "href": "http://www.networkadvertising.org/choices/"
+    },
+    {
+      "text": "http://www.youronlinechoices.com/",
+      "href": "http://www.youronlinechoices.com/"
+    },
+    {
+      "text": "http://optout.aboutads.info/?c=2&lang=EN",
+      "href": "http://optout.aboutads.info/?c=2&lang=EN"
+    },
+    {
+      "text": "https://www.facebook.com/help/164968693837950",
+      "href": "https://www.facebook.com/help/164968693837950"
+    },
+    {
+      "text": "https://www.facebook.com/help/568137493302217",
+      "href": "https://www.facebook.com/help/568137493302217"
+    },
+    {
+      "text": "http://www.aboutads.info/choices/",
+      "href": "http://www.aboutads.info/choices/"
+    },
+    {
+      "text": "http://youradchoices.ca/",
+      "href": "http://youradchoices.ca/"
+    },
+    {
+      "text": "http://www.youronlinechoices.eu/",
+      "href": "http://www.youronlinechoices.eu/"
+    },
+    {
+      "text": "https://www.facebook.com/privacy/explanation",
+      "href": "https://www.facebook.com/privacy/explanation"
+    }
+  ],
+  "buttons": [],
+  "download": null,
+  "login": null,
+  "email": null,
+  "subscribe": null,
+  "bodyText": "Privacy Policy\n\nLast updated: March 20, 2025.\n\nTLDR: We don't do anything nefarious with your data. We never share your notes or read them. In fact the contents of your notes are end-to-end encrypted so no plaintext ever reaches our servers. The only exception to this is:\n\nIf you use the AI feature than we will send text you explicitly select and transform, or search results you explicitly select to OpenAI's API, Anthropic's API, or Google's API. This is also not associated with your account.\nAudio recordings will also be uploaded to OpenAPIs API. Again, this is not associated with your account. As soon as the transcription is complete it is synced to your note and the audio file is deleted. OpenAPIs TOS state they will delete logs and data around API requests every 30 days.\n\nWe will never share your contacts or other plaintext data that we store on our servers (unless the US government forces us).\n\nThis Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.\n\nWe use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.\n\nInterpretation and Definitions\nInterpretation\n\nThe words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.\n\nDefinitions\n\nFor the purposes of this Privacy Policy:\n\nAccount means a unique account created for You to access our Service or parts of our Service.\n\nBusiness, for the purpose of the CCPA (California Consumer Privacy Act), refers "
+}

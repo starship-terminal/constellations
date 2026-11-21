@@ -1,0 +1,52 @@
+{
+  "download": {
+    "tag": "A",
+    "cls": "button button-primary header-actions-download",
+    "text": "",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImg": "none",
+    "radius": "8px",
+    "border": "0px rgb(244, 240, 255)",
+    "w": 99,
+    "h": 36,
+    "kids": [
+      {
+        "tag": "DIV",
+        "cls": "button-border",
+        "text": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImg": "none",
+        "radius": "8px",
+        "border": "0px rgb(244, 240, 255)",
+        "w": 99,
+        "h": 36,
+        "kids": []
+      }
+    ]
+  },
+  "mac": {
+    "tag": "A",
+    "cls": "button button-primary",
+    "text": "",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImg": "none",
+    "radius": "8px",
+    "border": "0px rgb(244, 240, 255)",
+    "w": 153,
+    "h": 36,
+    "kids": [
+      {
+        "tag": "DIV",
+        "cls": "button-border",
+        "text": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImg": "none",
+        "radius": "8px",
+        "border": "0px rgb(244, 240, 255)",
+        "w": 153,
+        "h": 36,
+        "kids": []
+      }
+    ]
+  }
+}

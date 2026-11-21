@@ -1,0 +1,20 @@
+{
+  "bg": "rgb(249, 250, 251)",
+  "color": "rgb(2, 8, 23)",
+  "font": "__inter_5b82ff",
+  "buttons": [
+    {
+      "text": "Continue",
+      "w": 288,
+      "h": 44,
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(124, 58, 237)",
+      "radius": "8px",
+      "font": "__inter_5b82ff",
+      "size": "18px",
+      "weight": "600",
+      "border": "0px none rgb(17, 24, 39)",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"
+    }
+  ]
+}
