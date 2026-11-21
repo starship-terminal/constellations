@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-11-22",
+  "home": {
+    "url": "https://chatgpt.com/",
+    "title": "ChatGPT: Chat, Work, Create & Code with AI",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "h1": "What are you working on?"
+  },
+  "images": {
+    "url": "https://chatgpt.com/images/",
+    "title": "AI Image Generator - ChatGPT Images",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "h1": "Images",
+    "composerPlaceholder": "Describe a new image",
+    "imageSuggestions": 502
+  },
+  "drawer": {
+    "role": "dialog",
+    "name": "Sidebar",
+    "width": 310,
+    "usernameVisible": false
+  }
+}

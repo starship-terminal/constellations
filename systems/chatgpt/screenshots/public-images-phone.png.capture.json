@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22",
+  "screenshot": "public-images-phone.png",
+  "sanitizedSourceUrl": "https://chatgpt.com/images/",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://chatgpt.com/images/",
+    "title": "AI Image Generator - ChatGPT Images",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "theme": null
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Public empty Images page at phone width. Nothing typed."
+}

@@ -1,0 +1,48 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://chatgpt.com/",
+  "title": "ChatGPT: Chat, Work, Create & Code with AI",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "dpr": 2 },
+  "dataTheme": null,
+  "colorScheme": "light dark",
+  "body": { "backgroundColor": "rgb(0, 0, 0)", "color": "rgb(255, 255, 255)" },
+  "fontFamily": "-apple-system-body, ui-sans-serif, -apple-system, system-ui, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol",
+  "h1": {
+    "text": "Where should we begin?",
+    "fontSize": "24px",
+    "lineHeight": "28px",
+    "fontWeight": "400",
+    "color": "rgb(255, 255, 255)",
+    "letterSpacing": "0.07px"
+  },
+  "logInButton": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "oklch(0.159066 0 none)",
+    "fontSize": "14px",
+    "lineHeight": "20px",
+    "fontWeight": "600",
+    "borderRadius": "999px",
+    "height": 44,
+    "padding": "0 12px"
+  },
+  "signUpButton": {
+    "backgroundColor": "oklch(0.247759 0 none)",
+    "border": "1px solid rgba(255, 255, 255, 0.2)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px",
+    "lineHeight": "20px",
+    "fontWeight": "600",
+    "borderRadius": "999px",
+    "height": 44
+  },
+  "composer": {
+    "placeholder": "Ask ChatGPT",
+    "fontSize": "17px",
+    "lineHeight": "24px",
+    "fontWeight": "400",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "transparent"
+  },
+  "sidebarWidth": 259,
+  "note": "Logged out. Nothing typed. App-shell custom properties on :root are hashed (--x..., --d-button, --d-field), not the semantic --color* names in tokens.json. Those names belong to the signed-in reading already in tokens.json. This file does not replace it."
+}

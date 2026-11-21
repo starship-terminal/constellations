@@ -1,0 +1,44 @@
+{
+  "product": "ChatGPT",
+  "slug": "chatgpt",
+  "date": "2026-11-22",
+  "scope": "public signed-out",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "submitted": false,
+  "typed": false,
+  "identity_providers_clicked": false,
+  "captcha_solved": false,
+  "account_created": false,
+  "viewport": {
+    "desktop": "1440x900 at 2x",
+    "phone": "390x844 at 2x"
+  },
+  "walls": [
+    {
+      "name": "login",
+      "url": "https://chatgpt.com/auth/login",
+      "opened": true,
+      "file": "screenshots/login-wall-desktop.png",
+      "asks_for": "email, or Google, Apple, or phone",
+      "controls_seen": ["Continue with Google", "Continue with Apple", "Continue with phone", "Email address", "Continue", "Terms of use", "Privacy policy", "Cookie preferences"],
+      "typed": false,
+      "submitted": false,
+      "identity_provider_clicked": false,
+      "stopped": true
+    },
+    {
+      "name": "signup",
+      "url": "https://chatgpt.com/auth/login",
+      "opened": true,
+      "file": "screenshots/signup-wall-desktop.png",
+      "asks_for": "the same empty wall as login",
+      "controls_seen": ["Continue with Google", "Continue with Apple", "Continue with phone", "Email address", "Continue"],
+      "typed": false,
+      "submitted": false,
+      "identity_provider_clicked": false,
+      "stopped": true,
+      "note": "Log in and Sign up for free open the same page. The two screenshots are the same image."
+    }
+  ]
+}
