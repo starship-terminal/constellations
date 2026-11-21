@@ -1,0 +1,74 @@
+{
+  "product": "Away",
+  "domain": "awaytravel.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "region": "Store selector read United States. A shipping notice said the shop does not ship to Singapore and currently ships to the US, UK, and CA. Prices on the product page read USD.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in",
+      "url": "https://accounts.awaytravel.com/authentication/login",
+      "title": "Sign in - Away: Built for modern travel",
+      "painted": true,
+      "headings": ["Sign in", "Sign in or create an account"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": ["Continue with shop"],
+      "otherControls": ["Continue", "Email me with news and offers", "Submit", "Terms of service", "Privacy policy"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "The header Log in control opens Shopify customer authentication. The address bar carried OAuth query parameters. Those were not copied into this file. The email field was empty. Continue was not clicked. Continue with shop was not clicked. Submit was not clicked. No form was submitted."
+    },
+    {
+      "control": "same sign-in wall, create account",
+      "url": "https://accounts.awaytravel.com/authentication/login",
+      "title": "Sign in - Away: Built for modern travel",
+      "painted": true,
+      "headings": ["Sign in", "Sign in or create an account"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": ["Continue with shop"],
+      "otherControls": ["Continue"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Away has no separate public signup page. Create an account is the same empty email wall. /account/register and /account/login both returned to this wall. Nothing was typed. Continue was not clicked."
+    },
+    {
+      "control": "footer Stay in the know subscribe",
+      "url": "https://www.awaytravel.com/",
+      "title": "Away: Built for modern travel",
+      "painted": true,
+      "headings": ["Stay in the know"],
+      "asksFor": [
+        { "label": "Email address", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Subscribe"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Subscribe was not clicked. The email field was empty. Nothing was typed. No form was submitted."
+    },
+    {
+      "control": "header Cart",
+      "url": "https://www.awaytravel.com/cart",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Cart 0"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Cart is a checkout wall. It was not opened. Add To Cart was not clicked. Add Both was not clicked. Wishlist was not opened."
+    }
+  ]
+}
