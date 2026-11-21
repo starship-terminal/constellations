@@ -1,0 +1,108 @@
+{
+  "items": [
+    {
+      "text": "OFFERS",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+      "size": "13.3333px",
+      "weight": "400",
+      "ls": "normal",
+      "h": 57.5,
+      "w": 82.6,
+      "y": 61,
+      "tt": "none",
+      "radius": "0px"
+    },
+    {
+      "text": "WOMEN'S",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+      "size": "13.3333px",
+      "weight": "400",
+      "ls": "normal",
+      "h": 57.5,
+      "w": 98,
+      "y": 61,
+      "tt": "none",
+      "radius": "0px"
+    },
+    {
+      "text": "MEN'S",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+      "size": "13.3333px",
+      "weight": "400",
+      "ls": "normal",
+      "h": 57.5,
+      "w": 71.8,
+      "y": 61,
+      "tt": "none",
+      "radius": "0px"
+    },
+    {
+      "text": "SETS",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+      "size": "13.3333px",
+      "weight": "400",
+      "ls": "normal",
+      "h": 57.5,
+      "w": 60.9,
+      "y": 61,
+      "tt": "none",
+      "radius": "0px"
+    },
+    {
+      "text": "BEST SELLERS",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+      "size": "13.3333px",
+      "weight": "400",
+      "ls": "normal",
+      "h": 57.5,
+      "w": 129.5,
+      "y": 61,
+      "tt": "none",
+      "radius": "0px"
+    },
+    {
+      "text": "SALE",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+      "size": "13.3333px",
+      "weight": "400",
+      "ls": "normal",
+      "h": 57.5,
+      "w": 61.9,
+      "y": 61,
+      "tt": "none",
+      "radius": "0px"
+    }
+  ],
+  "searchBox": {
+    "text": "",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(244, 244, 244)",
+    "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+    "size": "14px",
+    "weight": "400",
+    "ls": "normal",
+    "h": 38,
+    "w": 166,
+    "y": 70,
+    "tt": "none",
+    "radius": "0px"
+  },
+  "word": {
+    "w": 275,
+    "h": 23,
+    "y": 21,
+    "tag": "svg"
+  }
+}

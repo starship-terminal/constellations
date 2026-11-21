@@ -1,0 +1,40 @@
+{
+  "offer": {
+    "text": "NEW MEMBER OFFER - 70% OFF: $14.98 or 2 FOR $29 Non-Member: $49.95",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "radius": "0px",
+    "h": 95,
+    "w": 424,
+    "border": "0px none rgb(0, 0, 0)"
+  },
+  "offerBar": null,
+  "chip": null,
+  "bag": {
+    "text": "MEMBER ADD TO BAG",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(197, 180, 227)",
+    "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "radius": "4px",
+    "h": 48,
+    "w": 392,
+    "border": "1px solid rgb(197, 180, 227)"
+  },
+  "non": {
+    "text": "Non-Member: $49.95",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+    "size": "14px",
+    "weight": "400",
+    "radius": "0px",
+    "h": 18,
+    "w": 424,
+    "border": "0px none rgb(0, 0, 0)"
+  }
+}

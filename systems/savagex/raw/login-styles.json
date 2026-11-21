@@ -1,0 +1,41 @@
+{
+  "submit": {
+    "text": "SIGN IN",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(27, 31, 36)",
+    "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "radius": "4px",
+    "h": 42,
+    "w": 350,
+    "border": "1px solid rgb(27, 31, 36)",
+    "y": 524
+  },
+  "email": {
+    "text": "",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+    "size": "14px",
+    "weight": "400",
+    "radius": "0px",
+    "h": 26,
+    "w": 330,
+    "border": "0px none rgb(0, 0, 0)",
+    "y": 421
+  },
+  "heading": {
+    "text": "Welcome back!",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Arizona, Plain, sans-serif",
+    "size": "24px",
+    "weight": "700",
+    "radius": "0px",
+    "h": 48,
+    "w": 158,
+    "border": "0px none rgb(0, 0, 0)",
+    "y": 305
+  }
+}
