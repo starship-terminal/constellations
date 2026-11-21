@@ -1,6 +1,8 @@
 # Cloudflare
 
-Measured Cloudflare dashboard and public marketing reference, captured on 2026-10-31 in Codex's visible in-app browser. The signed-in free account exposed security rules, an unsaved custom-rule editor, security analytics, filters and security settings. Dashboard samples cover dark and light at 1440 × 1000, with settings and configuration dialogs at 390 × 844. Public marketing is a separate dark-looking surface, not a dashboard theme.
+Measured Cloudflare dashboard and public marketing reference. The dashboard was captured on 2026-10-31 in Codex's visible in-app browser. The signed-in free account exposed security rules, an unsaved custom-rule editor, security analytics, filters and security settings. Dashboard samples cover dark and light at 1440 × 1000, with settings and configuration dialogs at 390 × 844.
+
+The public marketing site was refreshed on 2026-11-22, signed out, in headless Chromium. Desktop shots are 1440 × 900 at 1x. Phone shots are 390 × 844 CSS pixels at 2x (780 × 1688 PNG pixels). The control map is [site-tree.md](site-tree.md). Login and signup were photographed empty and not filled. The dashboard was not entered on this pass.
 
 | File | Contents |
 |---|---|
@@ -11,7 +13,8 @@ Measured Cloudflare dashboard and public marketing reference, captured on 2026-1
 | [interaction-inventory.json](interaction-inventory.json) | Sanitized machine-readable interaction inventory |
 | [patterns.md](patterns.md) | Rule builder, analytics, settings and public navigation patterns |
 | [components/](components/) | Verified crops, kept at native screenshot pixel scale |
-| [screenshots/](screenshots/) | 213 accepted viewport screenshots (initial package plus ongoing dashboard exploration) |
+| [screenshots/](screenshots/) | Accepted viewport screenshots: the 2026-10-31 dashboard set plus the 2026-11-22 public marketing refresh |
+| [site-tree.md](site-tree.md) | Which public control opens which page, menu, drawer, dialog, or wall |
 | [raw/](raw/) | Sanitized measured styles, capture manifest and per-value element counts |
 | [tools/](tools/) | Import allowlist, crop coordinates and deterministic builders |
 | [icon.png](icon.png) | Official site identification icon; private catalogue use only |
@@ -108,7 +111,7 @@ The initial account appearance was System, which rendered dark. The owner approv
 
 ## What to distrust
 
-This is sampled coverage, not full component or theme parity. Raw declarations include legacy Cloudflare and Kumo colors; a declared primitive does not prove it was used on that page. Component tokens use actual computed CSS, while named role tokens retain their declared CSS variable evidence. Functional colors remain in their measured syntax. The public hero and its decorative demonstrations do not prove signed-in dashboard behavior.
+This is sampled coverage, not full component or theme parity. Raw declarations include legacy Cloudflare and Kumo colors; a declared primitive does not prove it was used on that page. Component tokens use actual computed CSS, while named role tokens retain their declared CSS variable evidence. Functional colors remain in their measured syntax. The public hero and its decorative demonstrations do not prove signed-in dashboard behavior. The 2026-11-22 public shots replace the earlier public home, search, and phone menu. Login and signup walls are empty. The contact-sales page was opened and then discarded because a published phone number was on screen. `login-extracted` stays not-started.
 
 The public full-page attempt had blank scroll-triggered sections and was rejected outside Git. Viewport screenshots intentionally show portions of longer pages, not an entire document. The field dropdown is an internally scrolling list; the crop shows only its visible options. Appearance-menu imagery proves the visible user menu, not an open appearance submenu. Rejected intermediate mobile animation frames are not retained.
 
@@ -166,8 +169,11 @@ Captured means at least one verified visual or measured example, not exhaustive 
 | Onboarding | Not captured | Existing account used; no new account or setup flow |
 | Light theme | Captured | Rules, analytics, empty form/footer, settings search and dialog |
 | Dark theme | Captured | Rules, full sampled builder states, analytics filters, settings and dialog |
-| Desktop width | Captured | 1440 × 1000 actual CSS and image pixels |
-| Mobile width | Captured | Settings search and configuration dialog in both themes; public hero/menu at 390 × 844 |
+| Desktop width | Captured | Dashboard 1440 × 1000; public marketing 1440 × 900 |
+| Mobile width | Captured | Settings search and configuration dialog in both themes; public home and pricing at 390 × 844 CSS (2x PNG) |
+| Site tree | Captured | [site-tree.md](site-tree.md), mapped 2026-11-22 before the public screenshot pass |
+| Login wall | Captured empty | [login-wall-desktop.png](screenshots/login-wall-desktop.png). Fields left empty. Identity providers not clicked |
+| Signup wall | Captured empty | [signup-wall-desktop.png](screenshots/signup-wall-desktop.png). Fields left empty. Identity providers not clicked |
 | Published principles | Not captured | No official principles source inspected; optional scorecard item not applicable |
 | Published voice | Not captured | No official voice guide inspected; optional scorecard item not applicable |
 | Published component behavior | Not captured | No official component behavior source inspected; optional scorecard item not applicable |

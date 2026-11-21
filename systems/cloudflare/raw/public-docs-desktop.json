@@ -1,0 +1,465 @@
+{
+  "name": "public-docs-desktop",
+  "url": "https://developers.cloudflare.com/",
+  "title": "Cloudflare Developer Docs | Cloudflare Docs",
+  "h1": "Cloudflare Developer Docs",
+  "time": "2026-11-21T16:07:16.570Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1
+  },
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "originalScreenshotFormat": "PNG",
+  "evidence": "Measured: public marketing page, signed out, 2026-11-22",
+  "variables": {
+    "--shiki-light": "#B31D28",
+    "--shiki-dark": "#FDAEB7",
+    "--shiki-light-font-weight": "bold",
+    "--shiki-dark-font-weight": "bold",
+    "--shiki-light-text-decoration": "underline",
+    "--shiki-dark-text-decoration": "underline",
+    "--shiki-light-font-style": "italic",
+    "--shiki-dark-font-style": "italic",
+    "--shiki-light-bg": "#fff",
+    "--shiki-dark-bg": "#24292e",
+    "--ot-font-sans": "var(--nb-font-sans)",
+    "--ot-bg": "#fff",
+    "--ot-bg-elevated": "#f8f8f8",
+    "--ot-fg": "#262626",
+    "--ot-fg-muted": "#26262699",
+    "--ot-border": "#f0f0f0",
+    "--ot-accent": "var(--nb-primary)",
+    "--ot-accent-hover": "var(--nb-primary-hover)",
+    "--ot-light-fg": "#fff",
+    "--ot-overlay": "#00000080",
+    "--ot-radius": "12px",
+    "--ot-radius-sm": "8px",
+    "--ot-radius-btn": "9999px",
+    "--ot-shadow": "0 16px 48px -8px #0000001f, 0 4px 16px -2px #00000014",
+    "--ot-toggle-on": "var(--nb-primary)",
+    "--ot-toggle-off": "#26262633",
+    "--nb-background": "oklch(19.2% 0 0)",
+    "--nb-foreground": "oklch(92.5% .016 42.4)",
+    "--nb-card": "oklch(16.8% 0 0)",
+    "--nb-card-foreground": "var(--nb-foreground)",
+    "--nb-muted": "oklch(26.4% 0 0)",
+    "--nb-muted-foreground": "oklch(70.8% 0 0)",
+    "--nb-accent": "oklch(26.9% 0 0)",
+    "--nb-accent-foreground": "var(--nb-foreground)",
+    "--nb-surface-sunken": "oklch(13% 0 0)",
+    "--nb-primary": "oklch(68.7% .208 38.8)",
+    "--nb-primary-foreground": "oklch(99% .009 78.3)",
+    "--nb-primary-hover": "oklch(71.1% .188 40.4)",
+    "--nb-link": "var(--nb-primary)",
+    "--nb-border": "oklch(28.5% 0 0)",
+    "--nb-border-strong": "oklch(37.1% 0 0)",
+    "--nb-selected": "var(--nb-border)",
+    "--nb-ring": "oklch(90% 0 0/.35)",
+    "--nb-selection-background": "oklch(27.4455% .054378 45.496)",
+    "--nb-selection-foreground": "oklch(71.1408% .187682 40.376)",
+    "--nb-info": "oklch(75% .12 255)",
+    "--nb-info-muted": "oklch(17% .03 260)",
+    "--nb-success": "oklch(72% .12 150)",
+    "--nb-success-muted": "oklch(17% .025 153)",
+    "--nb-warning": "oklch(78% .11 80)",
+    "--nb-warning-muted": "oklch(19% .03 70)",
+    "--nb-danger": "oklch(72% .14 25)",
+    "--nb-danger-muted": "oklch(17% .03 25)",
+    "--nb-cyan": "oklch(77% .09 210)",
+    "--nb-cyan-muted": "oklch(18% .03 210)",
+    "--nb-orange": "oklch(78% .12 55)",
+    "--nb-orange-muted": "oklch(19% .035 50)",
+    "--nb-steel": "oklch(74% .045 250)",
+    "--nb-steel-muted": "oklch(20% .02 250)",
+    "--nb-sidebar-width": "18.75rem",
+    "--nb-toc-width": "18rem",
+    "--nb-content-max": "43.5rem",
+    "--nb-grid-line": "oklch(100% 0 0/.1)",
+    "--nb-grid-line-accent": "oklch(100% 0 0/.16)",
+    "--nb-accent-100": "#ff5e1f",
+    "--nb-background-100": "#151414",
+    "--nb-foreground-100": "#f0e3de",
+    "--nb-foreground-200": "#f0e3de",
+    "--nb-text-tertiary": "#9a9390",
+    "--nb-font-sans": "\"Inter Variable\", \"Inter\", system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+    "--nb-font-mono": "\"JetBrains Mono Variable\", \"JetBrains Mono\", ui-monospace, \"Cascadia Code\", \"Source Code Pro\", Menlo, Consolas, monospace",
+    "--nb-h1-size": "2.1875rem",
+    "--nb-h1-weight": "600",
+    "--nb-h1-tracking": "-.025em",
+    "--nb-h2-size": "1.3rem",
+    "--nb-h2-weight": "600",
+    "--nb-h2-tracking": "-.015em",
+    "--nb-h3-size": "1.1rem",
+    "--nb-h3-weight": "600",
+    "--nb-h3-tracking": "-.01em",
+    "--nb-h4-weight": "600",
+    "--nb-shadow-sm": "0 1px 2px oklch(0% 0 0/.2)",
+    "--nb-shadow": "0 1px 3px oklch(0% 0 0/.3), 0 1px 2px oklch(0% 0 0/.2)",
+    "--nb-shadow-lg": "0 4px 12px oklch(0% 0 0/.4), 0 2px 4px oklch(0% 0 0/.2)",
+    "--diagram-accent": "oklch(48.8% .243 264.4)",
+    "--search-snippet-font-family": "var(--nb-font-sans)",
+    "--search-snippet-background": "var(--nb-background)",
+    "--search-snippet-surface": "var(--nb-card)",
+    "--search-snippet-hover-background": "var(--nb-accent)",
+    "--search-snippet-border-color": "var(--nb-border)",
+    "--search-snippet-text-color": "var(--nb-foreground)",
+    "--search-snippet-text-secondary": "var(--nb-muted-foreground)",
+    "--search-snippet-text-description": "var(--nb-muted-foreground)",
+    "--search-snippet-primary-color": "var(--nb-primary)",
+    "--search-snippet-primary-hover": "var(--nb-primary-hover)",
+    "--search-snippet-focus-ring": "color-mix(in oklch, var(--nb-primary) 20%, transparent)",
+    "--search-snippet-result-icon-size": "20px",
+    "--search-snippet-result-icon-color": "var(--nb-muted-foreground)",
+    "--search-snippet-result-icon-active-color": "var(--nb-primary)",
+    "--_start": "var(--steps-start,1)",
+    "--color-foreground": "oklch(21% 0 0)",
+    "--color-border": "oklch(92% 0 0)",
+    "--color-accent": "oklch(96.7% 0 0)"
+  },
+  "roots": [
+    {
+      "selector": "body",
+      "background": "oklch(0.99 0 0)",
+      "color": "oklch(0.21 0 0)",
+      "fontFamily": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif"
+    }
+  ],
+  "components": [
+    {
+      "tag": "HEADER",
+      "label": "DOCS Directory API SDKs Changelog Search \u2318 K Log in",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 57
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.21 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "24px",
+        "letter-spacing": "normal",
+        "border-radius": "0px",
+        "border-width": "0px 0px 1px",
+        "border-color": "oklch(0.92 0 0)",
+        "padding": "0px",
+        "gap": "normal",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "H1",
+      "label": "Cloudflare Developer Docs",
+      "rect": {
+        "x": 357.59375,
+        "y": 138.59375,
+        "width": 1024.8125,
+        "height": 61.59375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.21 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "56px",
+        "font-weight": "500",
+        "line-height": "61.6px",
+        "letter-spacing": "-1.4px",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "border-color": "oklch(0.21 0 0)",
+        "padding": "0px",
+        "gap": "normal",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "BODY",
+      "label": "Skip to content DOCS Directory API SDKs Changelog Search \u2318 K Log in / GET STARTE",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 5150.1875
+      },
+      "styles": {
+        "background-color": "oklch(0.99 0 0)",
+        "color": "oklch(0.21 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "24px",
+        "letter-spacing": "normal",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "border-color": "oklch(0.21 0 0)",
+        "padding": "0px",
+        "gap": "normal",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "Contact sales",
+      "rect": {
+        "x": 284.21875,
+        "y": 4383.8125,
+        "width": 250.296875,
+        "height": 32.625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "rgb(38, 38, 38)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "15px",
+        "font-weight": "400",
+        "line-height": "20.625px",
+        "letter-spacing": "normal",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "border-color": "rgb(38, 38, 38)",
+        "padding": "6px 0px",
+        "gap": "normal",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "Start Building",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "rgb(38, 38, 38)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "20px",
+        "letter-spacing": "normal",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "border-color": "rgb(38, 38, 38)",
+        "padding": "0px",
+        "gap": "0px",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "Skip to content",
+      "rect": {
+        "x": -1,
+        "y": -1,
+        "width": 1,
+        "height": 1
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.21 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "24px",
+        "letter-spacing": "normal",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "border-color": "oklch(0.21 0 0)",
+        "padding": "0px",
+        "gap": "normal",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "DOCS",
+      "rect": {
+        "x": 24,
+        "y": 18,
+        "width": 247,
+        "height": 20
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.21 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "line-height": "24px",
+        "letter-spacing": "normal",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "border-color": "oklch(0.21 0 0)",
+        "padding": "0px",
+        "gap": "8px",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "Directory",
+      "rect": {
+        "x": 316,
+        "y": 14.25,
+        "width": 73.4375,
+        "height": 27.5
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.556 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "line-height": "19.5px",
+        "letter-spacing": "normal",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "border-color": "oklch(0.556 0 0)",
+        "padding": "4px 8px",
+        "gap": "normal",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "API",
+      "rect": {
+        "x": 393.4375,
+        "y": 14.25,
+        "width": 37.109375,
+        "height": 27.5
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.556 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "line-height": "19.5px",
+        "letter-spacing": "normal",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "border-color": "oklch(0.556 0 0)",
+        "padding": "4px 8px",
+        "gap": "normal",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "SDKs",
+      "rect": {
+        "x": 434.546875,
+        "y": 14.25,
+        "width": 49.734375,
+        "height": 27.5
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.556 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "line-height": "19.5px",
+        "letter-spacing": "normal",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "border-color": "oklch(0.556 0 0)",
+        "padding": "4px 8px",
+        "gap": "normal",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "Changelog",
+      "rect": {
+        "x": 488.28125,
+        "y": 14.25,
+        "width": 83.4375,
+        "height": 27.5
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.556 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "line-height": "19.5px",
+        "letter-spacing": "normal",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "border-color": "oklch(0.556 0 0)",
+        "padding": "4px 8px",
+        "gap": "normal",
+        "box-shadow": "none"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "GitHub",
+      "rect": {
+        "x": 1246.265625,
+        "y": 10,
+        "width": 36,
+        "height": 36
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.556 0 0)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "line-height": "24px",
+        "letter-spacing": "normal",
+        "border-radius": "8px",
+        "border-width": "0px",
+        "border-color": "oklch(0.556 0 0)",
+        "padding": "0px",
+        "gap": "normal",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      }
+    },
+    {
+      "tag": "A",
+      "label": "Log in",
+      "rect": {
+        "x": 1351.265625,
+        "y": 10,
+        "width": 64.734375,
+        "height": 36
+      },
+      "styles": {
+        "background-color": "oklch(0.687 0.208 38.8)",
+        "color": "oklch(0.99 0.009 78.3)",
+        "font-family": "\"Inter Variable\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "line-height": "20px",
+        "letter-spacing": "normal",
+        "border-radius": "3.35544e+07px",
+        "border-width": "0px",
+        "border-color": "oklch(0.99 0.009 78.3)",
+        "padding": "0px 12px",
+        "gap": "6px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"
+      }
+    }
+  ]
+}

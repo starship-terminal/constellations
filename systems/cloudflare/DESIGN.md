@@ -233,7 +233,9 @@ Good for: Security dashboards, condition builders, configuration tables, analyti
 
 Captured 2026-10-31, Signed-in owner free-plan dashboard; public landing page separately labelled. Themes: light, dark.
 
-Measured Cloudflare dashboard and public marketing reference, captured on 2026-10-31 in Codex's visible in-app browser. The signed-in free account exposed security rules, an unsaved custom-rule editor, security analytics, filters and security settings. Dashboard samples cover dark and light at 1440 × 1000, with settings and configuration dialogs at 390 × 844. Public marketing is a separate dark-looking surface, not a dashboard theme.
+Measured Cloudflare dashboard and public marketing reference. The dashboard was captured on 2026-10-31 in Codex's visible in-app browser. The signed-in free account exposed security rules, an unsaved custom-rule editor, security analytics, filters and security settings. Dashboard samples cover dark and light at 1440 × 1000, with settings and configuration dialogs at 390 × 844.
+
+The public marketing site was refreshed on 2026-11-22, signed out, in headless Chromium. Desktop shots are 1440 × 900 at 1x. Phone shots are 390 × 844 CSS pixels at 2x (780 × 1688 PNG pixels). The control map is [site-tree.md](site-tree.md). Login and signup were photographed empty and not filled. The dashboard was not entered on this pass.
 
 ## Colors
 

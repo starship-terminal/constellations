@@ -1,5 +1,7 @@
 # Cloudflare patterns
 
+The public control map is [site-tree.md](site-tree.md). The 2026-11-22 refresh photographs the marketing site signed out. Login and signup stop at empty walls.
+
 ## Security-rule editing
 
 The [empty form](screenshots/custom-rule-empty-dark-desktop.png) separates the rule name, matching criteria, expression preview and resulting action into bounded sections. [Field choices](screenshots/custom-field-menu-dark-desktop.png) group request properties; [operators](screenshots/custom-operator-menu-dark-desktop.png) depend on that field. An [And clause](screenshots/custom-condition-and-dark-desktop.png) adds another row. The [expression editor](screenshots/custom-expression-dark-desktop.png) is a separate editable representation. This capture cancelled the draft and never deployed it.
