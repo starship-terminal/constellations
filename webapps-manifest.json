@@ -2272,9 +2272,9 @@
       "description": "Audio Transcription API",
       "status": "captured",
       "package": "systems/gladia",
-      "notes": "https://app.gladia.io/signin asks for email and password, or Google. No code was sent.",
+      "notes": "https://app.gladia.io/signin asks for email and password, or Google. No code was sent. Public walk 2026-11-21: the public site tree is in systems/gladia/site-tree.md. https://www.gladia.io/ loaded. Sign in stops at https://app.gladia.io/signin with email and password, or Google. Forgot password stops at https://app.gladia.io/passwordReset. Sign up stops at https://app.gladia.io/signup. Nothing was typed. Google was not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1668 at 8e68cd438d8e. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
