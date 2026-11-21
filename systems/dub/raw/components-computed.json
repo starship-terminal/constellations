@@ -8604,7 +8604,7 @@
     "default": {
      "tag": "input",
      "classes": "relative z-10 block w-full",
-     "text": "panic@thedis.co",
+     "text": "",
      "rect": {
       "x": 345,
       "y": 397,
@@ -8701,7 +8701,7 @@
     "focused": {
      "tag": "input",
      "classes": "relative z-10 block w-full",
-     "text": "panic@thedis.co",
+     "text": "",
      "rect": {
       "x": 345,
       "y": 397,
@@ -8800,7 +8800,7 @@
     "filled": {
      "tag": "input",
      "classes": "relative z-10 block w-full",
-     "text": "panic@thedis.co",
+     "text": "",
      "rect": {
       "x": 345,
       "y": 397,
@@ -10097,7 +10097,7 @@
     "default": {
      "tag": "input",
      "classes": "block w-full min-w-0 appearance-none",
-     "text": "panic@thedis.co",
+     "text": "",
      "rect": {
       "x": 234.5,
       "y": 255,
@@ -10195,7 +10195,7 @@
     "focused": {
      "tag": "input",
      "classes": "block w-full min-w-0 appearance-none",
-     "text": "panic@thedis.co",
+     "text": "",
      "rect": {
       "x": 234.5,
       "y": 255,
@@ -10294,7 +10294,7 @@
     "filled": {
      "tag": "input",
      "classes": "block w-full min-w-0 appearance-none",
-     "text": "panic@thedis.co",
+     "text": "",
      "rect": {
       "x": 234.5,
       "y": 255,
@@ -12723,7 +12723,7 @@
     "default": {
      "tag": "input",
      "classes": "w-full max-w-md rounded-md border",
-     "text": "panic@thedis.co",
+     "text": "",
      "rect": {
       "x": 234.5,
       "y": 281,
@@ -12820,7 +12820,7 @@
     "focused": {
      "tag": "input",
      "classes": "w-full max-w-md rounded-md border",
-     "text": "panic@thedis.co",
+     "text": "",
      "rect": {
       "x": 234.5,
       "y": 281,
