@@ -1,0 +1,47 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.tuftandneedle.com/",
+  "title": "Tuft & Needle Mattress Company - Wake Up Awake",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "png": { "width": 2880, "height": 1800 },
+  "cssVariables": {
+    "--color-background": "255,255,255",
+    "--color-foreground": "58,58,58",
+    "--color-button": "96,237,179",
+    "--color-button-text": "43,40,35",
+    "--color-link": "43,40,35",
+    "--font-body-family": "Inter, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+    "--font-heading-family": "fields, Tiempos Headline, Georgia, Times New Roman, serif",
+    "--font-body-weight": "400",
+    "--font-body-weight-bold": "700"
+  },
+  "computed": {
+    "body": { "backgroundColor": "#ffffff", "color": "#3a3a3a", "fontFamily": "Inter", "fontSize": "16px", "fontWeight": "400", "lineHeight": "28.8px", "letterSpacing": "0.6px" },
+    "toolbar": { "backgroundColor": "#062d31", "color": "#f6f6f6", "height": 55, "fontSize": "14px" },
+    "header": { "backgroundColor": "#ffffff", "height": 61, "borderBottom": true },
+    "navSummary": { "color": "#3a3a3a", "fontSize": "14px", "fontWeight": "500", "height": 42 },
+    "saleNav": { "color": "#d20000", "fontSize": "14px", "fontWeight": "500" },
+    "announcement": { "backgroundColor": "#062d31", "color": "#f6f6f6", "fontSize": "14px", "fontWeight": "600", "height": 44 },
+    "heroEyebrow": { "color": "#60edb3", "fontSize": "15px", "letterSpacing": "1.6px", "textTransform": "uppercase" },
+    "heroH1": { "color": "#60edb3", "fontFamily": "fields", "fontSize": "44px", "fontWeight": "700", "lineHeight": "57.2px" },
+    "startSaving": { "backgroundColor": "#f5f1ea", "color": "#000000", "height": 49, "borderRadius": "42px", "fontSize": "15px", "fontWeight": "600", "padding": "0 30px" },
+    "dealsSection": { "backgroundColor": "#062d31", "color": "#f6f6f6" },
+    "dealsH2": { "color": "#f6f6f6", "fontFamily": "Inter", "fontSize": "32px", "fontWeight": "400", "lineHeight": "39px" },
+    "shopNow": { "color": "#f6f6f6", "fontSize": "14px", "fontWeight": "600", "textDecoration": "underline" },
+    "footer": { "backgroundColor": "#062d31", "color": "#f6f6f6", "padding": "48px 0 16px" },
+    "productH1": { "color": "#3a3a3a", "fontFamily": "fields", "fontSize": "56px", "fontWeight": "800" },
+    "salePrice": { "color": "#ab2210", "fontFamily": "fields", "fontSize": "40px", "fontWeight": "700" },
+    "comparePrice": { "color": "#3a3a3a", "fontSize": "16px", "textDecoration": "line-through" },
+    "saleBadge": { "backgroundColor": "#ab2210", "color": "#f6f6f6", "height": 25 },
+    "saleNote": { "backgroundColor": "#def1e8", "color": "#2b2823" },
+    "sizeChipSelected": { "backgroundColor": "#ffffff", "border": "2px solid #3a3a3a", "borderRadius": "40px", "height": 57 },
+    "sizeChip": { "backgroundColor": "#ffffff", "border": "1px solid rgba(58,58,58,0.35)", "borderRadius": "40px", "height": 57 },
+    "addToCart": { "backgroundColor": "#60edb3", "color": "#2b2823", "height": 49, "width": 440, "borderRadius": "42px", "fontSize": "15px", "fontWeight": "500" },
+    "aboutHeroH2": { "color": "#ffffff", "fontFamily": "fields", "fontSize": "44px", "fontWeight": "700", "lineHeight": "46px" }
+  }
+}
