@@ -1,0 +1,16 @@
+{
+  "slug": "home-desktop",
+  "requested": "https://segment.com/",
+  "final": "https://www.twilio.com/en-us/segment",
+  "title": "Twilio Segment Customer Data Platform | Twilio",
+  "h1": [
+    "Segment \u2764\ufe0f Twilio. We're finally moving in together on Twilio.com!"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "home-desktop.png",
+  "status": 200
+}

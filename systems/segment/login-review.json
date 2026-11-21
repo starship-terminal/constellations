@@ -1,0 +1,61 @@
+{
+  "product": "Segment",
+  "domain": "segment.com",
+  "reviewed_at": "2026-11-22",
+  "method": "public Playwright, signed out, 1440x900 and 390x844",
+  "typed": false,
+  "submitted": false,
+  "identity_provider_clicked": false,
+  "account_created": false,
+  "captcha_solved": false,
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Login",
+      "url": "https://app.segment.com/login",
+      "title": "Sign In - Segment",
+      "painted": true,
+      "headings": ["Sign In to Segment"],
+      "asks_for": [
+        {
+          "label": "Email Address",
+          "type": "email",
+          "placeholder": "you@company.com",
+          "value_length": 0
+        }
+      ],
+      "identity_providers_seen": [],
+      "other_controls": ["Next", "Sign Up", "Reset your password", "Login to Twilio", "Login to Twilio SendGrid"],
+      "stopped": true,
+      "screenshot": "screenshots/login-desktop.png",
+      "note": "The email field was empty. Next was not clicked. Sign Up, Reset your password, Login to Twilio, and Login to Twilio SendGrid were not opened. The page mentions reCAPTCHA. No captcha was solved."
+    },
+    {
+      "control": "header Start for free",
+      "url": "https://app.segment.com/signup",
+      "title": "Twilio | Try Twilio Free",
+      "painted": true,
+      "headings": ["Sign up for free"],
+      "asks_for": ["First name", "Last name", "Email address", "Password"],
+      "identity_providers_seen": ["Google"],
+      "other_controls": ["Continue", "Verify you are human", "terms checkbox"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-desktop.png",
+      "note": "Every visible field was empty. The terms box was unchecked. The human check was not solved. Google was not clicked. Continue was not clicked. The live hop carried a state parameter. That URL was not stored."
+    },
+    {
+      "control": "header Contact sales",
+      "url": "https://www.twilio.com/en-us/help/sales",
+      "title": "Talk to Sales | Twilio",
+      "painted": true,
+      "headings": ["Get expert answers, and tailored product guidance, fast."],
+      "asks_for": [],
+      "identity_providers_seen": [],
+      "stopped": true,
+      "screenshot": "screenshots/contact-sales-desktop.png",
+      "note": "The sales form sits below the fold. Nothing was typed. The form was not submitted."
+    }
+  ]
+}

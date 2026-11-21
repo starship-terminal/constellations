@@ -1,0 +1,16 @@
+{
+  "slug": "events-desktop",
+  "requested": "https://www.twilio.com/en-us/events",
+  "final": "https://www.twilio.com/en-us/events",
+  "title": "Events | Twilio",
+  "h1": [
+    "Join us for events where ideas turn into innovation"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "events-desktop.png",
+  "status": 200
+}

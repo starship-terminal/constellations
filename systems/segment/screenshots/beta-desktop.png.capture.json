@@ -1,0 +1,17 @@
+{
+  "slug": "beta-desktop",
+  "requested": "https://www.twilio.com/en-us/products/beta",
+  "final": "https://www.twilio.com/en-us/products/beta",
+  "title": "Beta products and features | Twilio",
+  "h1": [
+    "Explore what\u2019s new and exciting at Twilio",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "beta-desktop.png",
+  "status": 200
+}

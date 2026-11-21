@@ -1,0 +1,17 @@
+{
+  "slug": "ai-desktop",
+  "requested": "https://www.twilio.com/en-us/ai",
+  "final": "https://www.twilio.com/en-us/ai",
+  "title": "AI for personalized customer engagement | Twilio",
+  "h1": [
+    "Personalized engagement, powered by AI",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "ai-desktop.png",
+  "status": 200
+}

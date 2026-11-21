@@ -1,0 +1,16 @@
+{
+  "slug": "twilio-home-desktop",
+  "requested": "https://www.twilio.com/en-us",
+  "final": "https://www.twilio.com/en-us",
+  "title": "Conversational AI and APIs for SMS, Email, Voice | Twilio",
+  "h1": [
+    "The platform for conversations in the AI era"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "twilio-home-desktop.png",
+  "status": 200
+}

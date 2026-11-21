@@ -1,0 +1,16 @@
+{
+  "slug": "catalog-desktop",
+  "requested": "https://www.twilio.com/en-us/catalog",
+  "final": "https://www.twilio.com/en-us/catalog",
+  "title": "Catalog | Twilio",
+  "h1": [
+    "Hundreds of Customer Data Platform integrations"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "catalog-desktop.png",
+  "status": 200
+}

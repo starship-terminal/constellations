@@ -1,0 +1,17 @@
+{
+  "slug": "contact-center-desktop",
+  "requested": "https://www.twilio.com/en-us/flex/use-cases/contact-center",
+  "final": "https://www.twilio.com/en-us/flex/use-cases/contact-center",
+  "title": "Contact Center Software | Twilio",
+  "h1": [
+    "The contact center for frictionless engagement",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "contact-center-desktop.png",
+  "status": 200
+}

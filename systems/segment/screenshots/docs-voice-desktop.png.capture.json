@@ -1,0 +1,16 @@
+{
+  "slug": "docs-voice-desktop",
+  "requested": "https://www.twilio.com/docs/voice",
+  "final": "https://www.twilio.com/docs/voice",
+  "title": "Programmable Voice | Twilio",
+  "h1": [
+    "Programmable Voice"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "docs-voice-desktop.png",
+  "status": 200
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "ivr-desktop",
+  "requested": "https://www.twilio.com/en-us/use-cases/ivr",
+  "final": "https://www.twilio.com/en-us/use-cases/ivr",
+  "title": "Interactive voice response (IVR) solutions | Twilio",
+  "h1": [
+    "Interactive voice response (IVR) solution",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "ivr-desktop.png",
+  "status": 200
+}

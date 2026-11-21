@@ -1,0 +1,17 @@
+{
+  "slug": "company-desktop",
+  "requested": "https://www.twilio.com/en-us/company",
+  "final": "https://www.twilio.com/en-us/company",
+  "title": "Twilio - About the Cloud Communications Company | Twilio",
+  "h1": [
+    "We are builders",
+    "We are builders"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "company-desktop.png",
+  "status": 200
+}

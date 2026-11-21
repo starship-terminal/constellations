@@ -1,0 +1,17 @@
+{
+  "slug": "signup-desktop",
+  "requested": "https://app.segment.com/signup",
+  "final": "https://app.segment.com/signup",
+  "title": "Twilio | Try Twilio Free",
+  "h1": [
+    "Sign up for free"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "signup-desktop.png",
+  "status": 200,
+  "note": "Empty signup form. The live hop landed on a Twilio login URL that carried a state parameter. That URL was not stored."
+}

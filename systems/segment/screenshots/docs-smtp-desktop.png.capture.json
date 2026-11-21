@@ -1,0 +1,16 @@
+{
+  "slug": "docs-smtp-desktop",
+  "requested": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/getting-started-smtp",
+  "final": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/getting-started-smtp",
+  "title": "How to send an Email with SMTP | SendGrid Docs | Twilio",
+  "h1": [
+    "How to send an Email with SMTP"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "docs-smtp-desktop.png",
+  "status": 200
+}

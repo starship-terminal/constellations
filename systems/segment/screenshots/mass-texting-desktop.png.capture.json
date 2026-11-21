@@ -1,0 +1,17 @@
+{
+  "slug": "mass-texting-desktop",
+  "requested": "https://www.twilio.com/en-us/use-cases/mass-texting",
+  "final": "https://www.twilio.com/en-us/use-cases/mass-texting",
+  "title": "Mass texting service | Twilio",
+  "h1": [
+    "Mass texting",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "mass-texting-desktop.png",
+  "status": 200
+}

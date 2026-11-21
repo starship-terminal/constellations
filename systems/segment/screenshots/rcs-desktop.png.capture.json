@@ -1,0 +1,17 @@
+{
+  "slug": "rcs-desktop",
+  "requested": "https://www.twilio.com/en-us/messaging/channels/rcs",
+  "final": "https://www.twilio.com/en-us/messaging/channels/rcs",
+  "title": "RCS Business Messaging | Twilio",
+  "h1": [
+    "Give them a reason to click with Rich Communication Services (RCS)",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "rcs-desktop.png",
+  "status": 200
+}

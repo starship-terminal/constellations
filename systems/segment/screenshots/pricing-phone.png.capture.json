@@ -1,0 +1,17 @@
+{
+  "slug": "pricing-phone",
+  "requested": "https://www.twilio.com/en-us/pricing/customer-data",
+  "final": "https://www.twilio.com/en-us/pricing/customer-data",
+  "title": "Customer Data Platform Pricing | Twilio",
+  "h1": [
+    "Customer Data pricing",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "capturedAt": "2026-11-22",
+  "file": "pricing-phone.png",
+  "status": 200
+}

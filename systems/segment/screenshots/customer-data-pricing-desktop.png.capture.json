@@ -1,0 +1,17 @@
+{
+  "slug": "customer-data-pricing-desktop",
+  "requested": "https://www.twilio.com/en-us/pricing/customer-data",
+  "final": "https://www.twilio.com/en-us/pricing/customer-data",
+  "title": "Customer Data Platform Pricing | Twilio",
+  "h1": [
+    "Customer Data pricing",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "customer-data-pricing-desktop.png",
+  "status": 200
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "cdp-desktop",
+  "requested": "https://www.twilio.com/en-us/customer-data-platform",
+  "final": "https://www.twilio.com/en-us/customer-data-platform",
+  "title": "Twilio Customer data platform (CDP) | Twilio",
+  "h1": [
+    "Unified data. Smarter AI. Exceptional experiences.",
+    "Generating Toolkit... See your toolkit"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "cdp-desktop.png",
+  "status": 200
+}

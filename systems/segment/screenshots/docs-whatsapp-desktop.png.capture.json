@@ -1,0 +1,16 @@
+{
+  "slug": "docs-whatsapp-desktop",
+  "requested": "https://www.twilio.com/docs/whatsapp",
+  "final": "https://www.twilio.com/docs/whatsapp",
+  "title": "WhatsApp Business Platform with Twilio | Twilio",
+  "h1": [
+    "WhatsApp Business Platform with Twilio"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "docs-whatsapp-desktop.png",
+  "status": 200
+}

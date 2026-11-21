@@ -1,0 +1,16 @@
+{
+  "slug": "legal-desktop",
+  "requested": "https://www.twilio.com/en-us/legal/tos",
+  "final": "https://www.twilio.com/en-us/legal/tos",
+  "title": "Twilio Terms of Service | Twilio",
+  "h1": [
+    "Twilio Terms of Service"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "legal-desktop.png",
+  "status": 200
+}

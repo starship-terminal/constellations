@@ -1,0 +1,16 @@
+{
+  "slug": "docs-segment-desktop",
+  "requested": "https://www.twilio.com/docs/segment",
+  "final": "https://www.twilio.com/docs/segment",
+  "title": "Twilio Segment | Twilio",
+  "h1": [
+    "Twilio Segment"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "docs-segment-desktop.png",
+  "status": 200
+}

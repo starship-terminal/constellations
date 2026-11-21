@@ -1,0 +1,16 @@
+{
+  "slug": "docs-conversations-desktop",
+  "requested": "https://www.twilio.com/docs/conversations",
+  "final": "https://www.twilio.com/docs/conversations",
+  "title": "Twilio Conversations | Twilio",
+  "h1": [
+    "Twilio Conversations"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "docs-conversations-desktop.png",
+  "status": 200
+}
