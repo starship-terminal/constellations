@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Makersite style guide</title>
+<style>
+body { font: 16px/1.5 Georgia, serif; margin: 32px; color: #404040; background: #ffffff; }
+h1 { font-weight: 500; color: #003c4f; }
+.swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.swatch { display: flex; gap: 8px; align-items: center; }
+.swatch i { width: 48px; height: 48px; border: 1px solid #ccc; display: block; }
+code { font-family: ui-monospace, monospace; font-size: 12px; }
+.btn { display: inline-block; padding: 16px 32px; border: 1px solid #003c4f; background: #f0f3f4; color: #003c4f; font-weight: 700; text-decoration: none; }
+.hero { background: #003c4f; color: white; padding: 32px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<h1>Makersite</h1>
+<p>Public marketing site, light only. Values from tokens.json, measured 2026-11-21 on makersite.io. Arboria is not loaded here.</p>
+<div class="swatches"><div class="swatch"><i style="background:#ffffff"></i><span>page<br><code>#ffffff</code></span></div>
+<div class="swatch"><i style="background:#003c4f"></i><span>surface<br><code>#003c4f</code></span></div>
+<div class="swatch"><i style="background:#404040"></i><span>text<br><code>#404040</code></span></div>
+<div class="swatch"><i style="background:#ffffff"></i><span>text on accent<br><code>#ffffff</code></span></div>
+<div class="swatch"><i style="background:#003c4f"></i><span>accent<br><code>#003c4f</code></span></div>
+<div class="swatch"><i style="background:#deff00"></i><span>announce<br><code>#deff00</code></span></div>
+<div class="swatch"><i style="background:#f0f3f4"></i><span>button fill<br><code>#f0f3f4</code></span></div>
+<div class="swatch"><i style="background:#e2e9eb"></i><span>focus<br><code>#e2e9eb</code></span></div></div>
+<p class="hero">Hero surface #003c4f. <a class="btn" href="#book">Book a Demo</a></p>
+</body>
+</html>
