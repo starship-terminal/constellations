@@ -436,9 +436,9 @@
       "description": "Manage your team's work, projects, & tasks online",
       "status": "captured",
       "package": "systems/asana",
-      "notes": "app behind sign-in; public marketing surface captured; declared-but-unbound --darkmode-* roles recorded as declared evidence https://app.asana.com/-/login accepted the email, then signup offered Google, Microsoft, or a stuck Signing Up state. No code was sent. The form was not submitted.",
+      "notes": "app behind sign-in; public marketing surface captured; declared-but-unbound --darkmode-* roles recorded as declared evidence https://app.asana.com/-/login accepted the email, then signup offered Google, Microsoft, or a stuck Signing Up state. No code was sent. The form was not submitted. Public walk 2026-11-21: header controls are Products, Solutions, Learning and support, and Pricing. Products and Solutions open mega menus. Log in opens app.asana.com/-/login and that branch stopped. Get started opens /create-account and was not submitted. The English sitemap has 2861 paths. Indexes were captured. Child resources, apps, blog posts, and templates were not walked one by one. Google and Microsoft were not clicked. No email was typed. No form was submitted. Dark theme is declared and was not painted. Signed-in workspace was not captured. Public package refresh in PR 1624 at 270844192b06. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "oauth-only",
+      "login-probe": "closed",
       "batch": 2
     },
     {
