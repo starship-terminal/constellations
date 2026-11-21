@@ -1,0 +1,91 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.uniqlo.com/sg/en/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "png": { "width": 2880, "height": 1800 },
+  "body": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "\"Twemoji Country Flags\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, -apple-system, system-ui, sans-serif",
+    "fontSize": "16px"
+  },
+  "header": {
+    "class": "navigation-header navigation-header--transparent",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "height": "64px"
+  },
+  "logoFill": "red",
+  "search": {
+    "backgroundColor": "rgba(255, 255, 255, 0.95)",
+    "color": "rgb(118, 118, 118)",
+    "borderColor": "rgb(218, 218, 218)",
+    "borderRadius": "999px",
+    "height": "38px"
+  },
+  "departmentTab": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "promoBar": {
+    "backgroundColor": "rgb(238, 0, 0)",
+    "class": "card ito-red500-bg",
+    "height": "44px",
+    "source": "Create-account page promo strip, same Thank You Festival copy as the homepage toast."
+  },
+  "sale": {
+    "color": "rgb(238, 0, 0)",
+    "fontSize": "14px",
+    "source": "Product page Sale label and promotional price, Mini T (Long Sleeve)."
+  },
+  "price": {
+    "color": "rgb(238, 0, 0)",
+    "class": "fr-ec-price-text--color-promotional"
+  },
+  "notifyMe": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "borderRadius": "999px",
+    "height": "52px"
+  },
+  "loginButton": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "999px",
+    "height": "52px"
+  },
+  "loginField": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(27, 27, 27)",
+    "borderColor": "rgb(27, 27, 27)",
+    "borderRadius": "0px",
+    "height": "44px"
+  },
+  "registerButton": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "height": "52px",
+    "class": "fr-ec-button--variant-primary"
+  },
+  "tokens": {
+    "--textPrimaryDefault": "#000",
+    "--errorDefaultTextColor": "#e00",
+    "--border-lines-color": "#dadada",
+    "--border-focus-color": "#005db5",
+    "--border-primary-outline-color": "#000",
+    "--fill-background-color": "#f4f4f4",
+    "--textTertiaryDefault": "#767676",
+    "--animate-duration-standard": "300ms",
+    "--animate-ease-out": "cubic-bezier(0.0,0,0.2,1)",
+    "--min-target-size": "44px",
+    "--mq-small-screen-max-width-limit": "599px",
+    "--mq-medium-screen-min-width-limit": "600px",
+    "--mq-large-screen-min-width-limit": "960px"
+  }
+}
