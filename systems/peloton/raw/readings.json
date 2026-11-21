@@ -1,0 +1,83 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.onepeloton.com/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2, "visualViewportScale": 1 },
+  "note": "devicePixelRatio was 2 on the first walk and 1 on a later measure script. PNG pixel size is 2880 by 1800, so the saved shots are the 2x captures. CSS viewport was 1440 by 900.",
+  "home": {
+    "href": "https://www.onepeloton.com/",
+    "title": "Peloton: Innovative exercise equipment and personalized workout plans",
+    "promo": {
+      "bg": "rgb(223, 28, 47)",
+      "color": "rgb(255, 255, 255)",
+      "h": 66,
+      "w": 1440,
+      "copySize": "14px",
+      "copyWeight": "400",
+      "shopNowWeight": "600"
+    },
+    "nav": {
+      "bg": "rgb(24, 26, 29)",
+      "h": 72,
+      "w": 1440,
+      "y": 66
+    },
+    "deals": { "color": "rgb(255, 90, 90)", "size": "16px" },
+    "navLabel": { "color": "rgb(255, 255, 255)", "size": "16px", "weight": "400", "sample": "Bikes" },
+    "h1": {
+      "text": "Up to $1,300 off Peloton equipment*",
+      "color": "rgb(255, 255, 255)",
+      "size": "48px",
+      "weight": "600",
+      "letter": "-0.2px",
+      "line": "62.4px",
+      "font": "Inter, sans-serif"
+    },
+    "shopDeals": {
+      "text": "Shop deals",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(24, 26, 29)",
+      "size": "16px",
+      "weight": "500",
+      "radius": "28px",
+      "h": 56,
+      "w": 132,
+      "border": "2px solid rgb(255, 255, 255)"
+    },
+    "body": {
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "300",
+      "color": "rgb(24, 26, 29)"
+    },
+    "logo": { "w": 116, "h": 16, "fill": "#FFFFFF" }
+  },
+  "bike": {
+    "href": "https://www.onepeloton.com/bike",
+    "title": "Peloton Bike: Motivating stationary bike workouts and more",
+    "h1": {
+      "text": "Your essential partner for a well-rounded routine",
+      "color": "rgb(24, 26, 29)",
+      "size": "48px",
+      "weight": "600",
+      "font": "Inter, sans-serif"
+    },
+    "shopNow": {
+      "text": "Shop now",
+      "bg": "rgb(223, 28, 47)",
+      "color": "rgb(255, 255, 255)",
+      "size": "16px",
+      "weight": "500",
+      "radius": "28px",
+      "h": 56,
+      "w": 124,
+      "border": "2px solid rgb(223, 28, 47)",
+      "pad": "0px 22px"
+    },
+    "shopNowSticky": {
+      "radius": "20px",
+      "h": 40,
+      "w": 124,
+      "bg": "rgb(223, 28, 47)"
+    }
+  }
+}
