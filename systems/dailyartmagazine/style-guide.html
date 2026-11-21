@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DailyArt Magazine style guide</title>
+<style>
+:root {
+  --color-crimson: #c6002f;
+  --color-ink: #000000;
+  --color-header: #19191c;
+  --color-paper: #ffffff;
+  --color-slate: #4d5761;
+  --color-muted: #606a73;
+  --color-fieldBorder: #989da7;
+  --color-searchBorder: #c9cfdf;
+  --color-onDark: #ffffff;
+  --color-scrim: rgba(0, 0, 0, 0.9);
+  --color-donateFill: rgba(198, 0, 47, 0.5);
+  --font-sans: Basier, sans-serif;
+  --font-display: RoslindaleCondensed, sans-serif;
+  --font-narrow: RoslindaleNarrow, sans-serif;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --typography-display: var(--fontWeight-medium) 56px/60px var(--font-display);
+  --typography-heading: var(--fontWeight-medium) 32px/40px var(--font-display);
+  --typography-cardTitle: var(--fontWeight-semibold) 16px/18px var(--font-narrow);
+  --typography-heroTitle: var(--fontWeight-medium) 40px/48px var(--font-display);
+  --typography-body: var(--fontWeight-regular) 18px/24px var(--font-sans);
+  --typography-lead: var(--fontWeight-semibold) 18px/24px var(--font-sans);
+  --typography-ui: var(--fontWeight-semibold) 14px/17px var(--font-sans);
+  --typography-label: var(--fontWeight-bold) 12px/14px var(--font-sans);
+  --typography-caption: var(--fontWeight-regular) 12px/16.2px var(--font-sans);
+  --typography-badge: var(--fontWeight-bold) 10px/12px var(--font-sans);
+  --space-2: 4px;
+  --space-3: 10px;
+  --space-4: 13px;
+  --space-5: 20px;
+  --radius-none: 0px;
+  --radius-field: 2px;
+  --radius-control: 3px;
+  --size-header: 65px;
+  --size-button: 40px;
+  --size-search: 48px;
+  --size-badge: 20px;
+  --size-content: 1152px;
+  --size-column: 648px;
+  --size-hamburger: 20px;
+  --border-hairline: 1px;
+  --page: var(--color-paper);
+  --surface: var(--color-paper);
+  --header: var(--color-header);
+  --text: var(--color-ink);
+  --textMuted: var(--color-slate);
+  --textSecondary: var(--color-muted);
+  --textOnDark: var(--color-onDark);
+  --link: var(--color-crimson);
+  --accent: var(--color-crimson);
+  --border: var(--color-fieldBorder);
+  --button: var(--color-ink);
+  --buttonText: var(--color-onDark);
+  --scrim: var(--color-scrim);
+  --focus: var(--color-ink);
+  color-scheme: light;
+  --sg-sans: "Basier", ui-sans-serif, system-ui, sans-serif;
+  --sg-display: "RoslindaleCondensed", "Iowan Old Style", Palatino, serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+header { background: var(--header); color: var(--text-on-dark); padding: 16px 24px; display: flex; gap: 24px; align-items: center; }
+header strong { font-family: var(--sg-display); font-weight: 500; font-size: 22px; letter-spacing: 0; }
+header span { font-size: 14px; font-weight: 600; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h2 { font: 500 32px/40px var(--sg-display); margin: 32px 0 12px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border: 1px solid var(--border); }
+.swatch code { font-size: 11px; color: var(--text-secondary); }
+.btn { display: inline-block; background: var(--button); color: var(--button-text); font: 600 14px/17px var(--sg-sans); padding: 10.5px 20px; border-radius: var(--radius-control); border: 0; }
+.btn.ghost { background: transparent; color: var(--text); box-shadow: inset 0 0 0 1px var(--text); }
+.badge { display: inline-block; background: var(--accent); color: var(--text-on-dark); font: 700 10px/12px var(--sg-sans); padding: 4px; border-radius: var(--radius-control); letter-spacing: 0.04em; text-transform: uppercase; }
+a.sample { color: var(--link); font-weight: 700; font-size: 12px; text-decoration: none; }
+input, textarea { font: 400 14px/18px var(--sg-sans); border: 1px solid var(--border); border-radius: var(--radius-field); padding: 10px; width: 320px; }
+.card { background: var(--header); color: var(--text-on-dark); padding: 24px; margin-top: 16px; }
+.card h3 { font: 500 40px/48px var(--sg-display); margin: 8px 0; }
+.note { color: var(--text-muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <strong>DailyArt Magazine</strong>
+  <span>Stories</span><span>Shop</span><span>Courses</span>
+  <span style="margin-left:auto;box-shadow:inset 0 0 0 1px #fff;padding:8px 16px;border-radius:3px">Search</span>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:var(--page)"></i><code>page</code></div>
+    <div class="swatch"><i style="background:var(--header)"></i><code>header</code></div>
+    <div class="swatch"><i style="background:var(--accent)"></i><code>accent</code></div>
+    <div class="swatch"><i style="background:var(--text)"></i><code>text</code></div>
+    <div class="swatch"><i style="background:var(--text-muted)"></i><code>text muted</code></div>
+    <div class="swatch"><i style="background:var(--border)"></i><code>border</code></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font:var(--typography-display);font:500 56px/60px var(--sg-display)">Article title</p>
+  <p style="font:500 32px/40px var(--sg-display)">Section heading</p>
+  <p style="font:400 18px/24px var(--sg-sans);color:var(--text-muted)">Article body in Basier, 18 on 24, slate.</p>
+  <h2>Controls</h2>
+  <p><span class="badge">Renaissance</span></p>
+  <p><span class="btn">Search</span> <span class="btn ghost">Subscribe</span></p>
+  <p><a class="sample" href="#">About Us</a></p>
+  <p><input placeholder="Your name" readonly></p>
+  <div class="card">
+    <span class="badge">Featured story</span>
+    <h3>African Art Highlights</h3>
+    <p style="color:#fff;opacity:.8">Featured band on the header ink.</p>
+  </div>
+  <p class="note">One light theme. Basier and Roslindale are licensed and are not loaded here. Values come from tokens.json.</p>
+</main>
+</body>
+</html>

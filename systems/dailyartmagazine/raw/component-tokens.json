@@ -1,0 +1,84 @@
+{
+  "captured": "2026-11-21",
+  "product": "DailyArt Magazine",
+  "url": "https://www.dailyartmagazine.com",
+  "theme": "light only",
+  "note": "WordPress 7.1.5, theme idvetmp-child. Almost no design-system custom properties. Values are computed styles from raw/readings.json and raw/extra-readings.json.",
+  "core": {
+    "color": {
+      "crimson": { "type": "color", "value": "#c6002f", "source": "meta theme-color #C6002F; computed color of footer link and author byline, backgroundColor of .category badge (raw/readings.json, raw/extra-readings.json)" },
+      "ink": { "type": "color", "value": "#000000", "source": "computed color of article h1 and primary button backgroundColor (raw/readings.json article h1, home primaryButton)" },
+      "header": { "type": "color", "value": "#19191c", "source": "computed backgroundColor of #top-header and the home featured section (raw/readings.json header, extra home section)" },
+      "paper": { "type": "color", "value": "#ffffff", "source": "computed backgroundColor of newsletter field, contact field, search field, and the menu panel as photographed" },
+      "slate": { "type": "color", "value": "#4d5761", "source": "computed color of body and article caption (raw/readings.json page, extra-readings paragraphs)" },
+      "muted": { "type": "color", "value": "#606a73", "source": "computed color of image caption and 6 MIN READ meta (raw/extra-readings.json)" },
+      "fieldBorder": { "type": "color", "value": "#989da7", "source": "computed borderTopColor of contact text field and textarea (raw/extra-readings.json contact)" },
+      "searchBorder": { "type": "color", "value": "#c9cfdf", "source": "computed borderTopColor of input.input-search on /?s= (raw/extra-readings.json)" },
+      "onDark": { "type": "color", "value": "#ffffff", "source": "computed color of header nav link and featured h1 (raw/readings.json navLink, h1 on home)" },
+      "scrim": { "type": "color", "value": "rgba(0, 0, 0, 0.9)", "source": "computed backgroundColor of .modal-r.modal-r--show (raw capture 2026-11-21)" },
+      "donateFill": { "type": "color", "value": "rgba(198, 0, 47, 0.5)", "source": "computed backgroundColor of button.donate (raw/readings.json donateButton)" }
+    },
+    "font": {
+      "sans": { "type": "fontFamily", "value": "Basier, sans-serif", "source": "computed fontFamily of body, nav, buttons, fields (document.fonts: Basier loaded)" },
+      "display": { "type": "fontFamily", "value": "RoslindaleCondensed, sans-serif", "source": "computed fontFamily of h1 and featured titles (document.fonts: RoslindaleCondensed 500 loaded)" },
+      "narrow": { "type": "fontFamily", "value": "RoslindaleNarrow, sans-serif", "source": "computed fontFamily of card titles on the home featured row (document.fonts: RoslindaleNarrow 600 loaded)" }
+    },
+    "fontWeight": {
+      "regular": { "type": "fontWeight", "value": 400, "source": "computed fontWeight of body" },
+      "medium": { "type": "fontWeight", "value": 500, "source": "computed fontWeight of h1 (RoslindaleCondensed)" },
+      "semibold": { "type": "fontWeight", "value": 600, "source": "computed fontWeight of nav links and primary buttons" },
+      "bold": { "type": "fontWeight", "value": 700, "source": "computed fontWeight of category badge and author byline" }
+    },
+    "typography": {
+      "display": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontWeight": "{fontWeight.medium}", "fontSize": "56px", "lineHeight": "60px", "letterSpacing": "0.56px" }, "source": "computed style of h1 on article, contact, search and the 404 (raw/readings.json)" },
+      "heading": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontWeight": "{fontWeight.medium}", "fontSize": "32px", "lineHeight": "40px" }, "source": "computed style of article h2 (raw/extra-readings.json)" },
+      "cardTitle": { "type": "typography", "value": { "fontFamily": "{font.narrow}", "fontWeight": "{fontWeight.semibold}", "fontSize": "16px", "lineHeight": "18px" }, "source": "computed style of featured card title link (raw/readings.json bodyLink on home)" },
+      "heroTitle": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontWeight": "{fontWeight.medium}", "fontSize": "40px", "lineHeight": "48px" }, "source": "computed style of home featured card title (raw/readings.json cardTitle)" },
+      "body": { "type": "typography", "value": { "fontFamily": "{font.sans}", "fontWeight": "{fontWeight.regular}", "fontSize": "18px", "lineHeight": "24px" }, "source": "computed style of article paragraph (raw/extra-readings.json)" },
+      "lead": { "type": "typography", "value": { "fontFamily": "{font.sans}", "fontWeight": "{fontWeight.semibold}", "fontSize": "18px", "lineHeight": "24px" }, "source": "computed style of article lead paragraph (raw/extra-readings.json)" },
+      "ui": { "type": "typography", "value": { "fontFamily": "{font.sans}", "fontWeight": "{fontWeight.semibold}", "fontSize": "14px", "lineHeight": "17px" }, "source": "computed style of header nav link and primary button (raw/readings.json)" },
+      "label": { "type": "typography", "value": { "fontFamily": "{font.sans}", "fontWeight": "{fontWeight.bold}", "fontSize": "12px", "lineHeight": "14px" }, "source": "computed style of category link and author byline (raw/extra-readings.json)" },
+      "caption": { "type": "typography", "value": { "fontFamily": "{font.sans}", "fontWeight": "{fontWeight.regular}", "fontSize": "12px", "lineHeight": "16.2px" }, "source": "computed style of image caption (raw/extra-readings.json)" },
+      "badge": { "type": "typography", "value": { "fontFamily": "{font.sans}", "fontWeight": "{fontWeight.bold}", "fontSize": "10px", "lineHeight": "12px" }, "source": "computed fontSize 10px and fontWeight 700 of .category.center; line height derived from the 20px badge box minus 8px padding" }
+    },
+    "space": {
+      "2": { "type": "dimension", "value": "4px", "source": "computed padding of .category badge (4px)" },
+      "3": { "type": "dimension", "value": "10px", "source": "computed padding of contact field (10px)" },
+      "4": { "type": "dimension", "value": "13px", "source": "computed paddingTop of search field and header wrapper" },
+      "5": { "type": "dimension", "value": "20px", "source": "computed paddingLeft/Right of primary button and header wrapper" }
+    },
+    "radius": {
+      "none": { "type": "dimension", "value": "0px", "source": "computed borderRadius of search field and headings" },
+      "field": { "type": "dimension", "value": "2px", "source": "computed borderRadius of contact text field and textarea" },
+      "control": { "type": "dimension", "value": "3px", "source": "computed borderRadius of primary button, badge, newsletter field" }
+    },
+    "size": {
+      "header": { "type": "dimension", "value": "65px", "source": "measured height of #top-header" },
+      "button": { "type": "dimension", "value": "40px", "source": "measured height of donate amount button and newsletter field" },
+      "search": { "type": "dimension", "value": "48px", "source": "measured height of input.input-search" },
+      "badge": { "type": "dimension", "value": "20px", "source": "measured height of .category badge" },
+      "content": { "type": "dimension", "value": "1152px", "source": "measured width of article h1 and search section" },
+      "column": { "type": "dimension", "value": "648px", "source": "measured width of article paragraph" },
+      "hamburger": { "type": "dimension", "value": "20px", "source": "measured width of #hamburger (height 15px)" }
+    },
+    "border": {
+      "hairline": { "type": "dimension", "value": "1px", "source": "computed borderTopWidth of contact field and search field" }
+    }
+  },
+  "light": {
+    "page": { "type": "color", "value": "{color.paper}", "source": "interior pages photograph as white; body backgroundColor is transparent" },
+    "surface": { "type": "color", "value": "{color.paper}", "source": "field and menu panel fill" },
+    "header": { "type": "color", "value": "{color.header}", "source": "alias of measured header fill" },
+    "text": { "type": "color", "value": "{color.ink}", "source": "article h1 and body titles" },
+    "textMuted": { "type": "color", "value": "{color.slate}", "source": "body and caption slate" },
+    "textSecondary": { "type": "color", "value": "{color.muted}", "source": "caption and read-time meta" },
+    "textOnDark": { "type": "color", "value": "{color.onDark}", "source": "header and featured type" },
+    "link": { "type": "color", "value": "{color.crimson}", "source": "footer and byline links" },
+    "accent": { "type": "color", "value": "{color.crimson}", "source": "theme-color and badge fill" },
+    "border": { "type": "color", "value": "{color.fieldBorder}", "source": "contact field border" },
+    "button": { "type": "color", "value": "{color.ink}", "source": "primary button fill" },
+    "buttonText": { "type": "color", "value": "{color.onDark}", "source": "primary button label" },
+    "scrim": { "type": "color", "value": "{color.scrim}", "source": "donate modal overlay" },
+    "focus": { "type": "color", "value": "{color.ink}", "source": "computed outlineColor of focused search field; outline style is none 0px, so no ring paints" }
+  }
+}

@@ -1,0 +1,2004 @@
+{
+  "capturedAt": "2026-11-21T02:37:37.444Z",
+  "pages": {
+    "home": {
+      "out": {
+        "page": {
+          "sel": "body",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 10149
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "header": {
+          "sel": "#top-header",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 65
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgb(25, 25, 28)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "logo": {
+          "sel": "a.logo",
+          "text": "",
+          "rect": {
+            "w": 111,
+            "h": 30
+          },
+          "color": "rgb(0, 0, 238)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 238)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "navLink": {
+          "sel": "#primary-top-menu a",
+          "text": "Stories",
+          "rect": {
+            "w": 46,
+            "h": 18
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "hamburger": {
+          "sel": "#hamburger",
+          "text": "",
+          "rect": {
+            "w": 20,
+            "h": 15
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "searchButton": {
+          "missing": "zero box",
+          "sel": "button.primary.btn"
+        },
+        "primaryButton": {
+          "sel": "button.primary.btn.long, a.btn, .primary.btn.long",
+          "text": "$5",
+          "rect": {
+            "w": 100,
+            "h": 40
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "10.5px 20px 10.5px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "cardTitle": {
+          "sel": "h2 a, h3 a, .post-title a, article h2",
+          "text": "Hassan Hajjaj: Mixing London’s Street Culture with Moroccan ",
+          "rect": {
+            "w": 549,
+            "h": 96
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleCondensed, sans-serif",
+          "fontSize": "40px",
+          "fontWeight": "500",
+          "lineHeight": "48px",
+          "letterSpacing": "0.4px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "h1": {
+          "sel": "h1",
+          "text": "African Art Highlights",
+          "rect": {
+            "w": 900,
+            "h": 60
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleCondensed, sans-serif",
+          "fontSize": "56px",
+          "fontWeight": "500",
+          "lineHeight": "60px",
+          "letterSpacing": "0.56px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "bodyLink": {
+          "sel": ".entry-content a, article a, .post-content a",
+          "text": "6 Contemporary African Artists You Should Know",
+          "rect": {
+            "w": 242,
+            "h": 39
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleNarrow, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "lineHeight": "18px",
+          "letterSpacing": "0.2px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footer": {
+          "sel": "footer",
+          "text": "DAILYART About Us Our Team Contribute Advertise Contact Us C",
+          "rect": {
+            "w": 1440,
+            "h": 842
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 20px 50px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footerLink": {
+          "sel": "footer a",
+          "text": "About Us",
+          "rect": {
+            "w": 59,
+            "h": 18
+          },
+          "color": "rgb(198, 0, 47)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "-0.21px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterField": {
+          "sel": "input.email-newsletter",
+          "text": "",
+          "rect": {
+            "w": 368,
+            "h": 40
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopColor": "rgb(152, 157, 167)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "10px 10px 10px 10px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterButton": {
+          "sel": "button.newsletter-send",
+          "text": "Subscribe",
+          "rect": {
+            "w": 368,
+            "h": 38
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "9px 20px 9px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "donateButton": {
+          "sel": "button.donate, .donate.btn",
+          "text": "Donate",
+          "rect": {
+            "w": 368,
+            "h": 40
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(198, 0, 47, 0.5)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "9px 20px 9px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "checkbox": {
+          "sel": "input[type=\"checkbox\"]",
+          "text": "",
+          "rect": {
+            "w": 13,
+            "h": 13
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        }
+      },
+      "themeColor": "#C6002F",
+      "vars": {
+        "--fsAddBuffer": "22px",
+        "--height": "600px",
+        "--childHeight": "16px"
+      },
+      "fonts": [
+        "lg normal unloaded",
+        "Basier normal loaded",
+        "Basier 600 loaded",
+        "Basier 700 loaded",
+        "RoslindaleCondensed 500 loaded",
+        "RoslindaleCondensed 600 unloaded",
+        "RoslindaleNarrow 600 loaded",
+        "RoslindaleNarrow 700 loaded"
+      ]
+    },
+    "home-menu": {
+      "out": {
+        "page": {
+          "sel": "body",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 10149
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "header": {
+          "sel": "#top-header",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 65
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgb(25, 25, 28)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "logo": {
+          "sel": "a.logo",
+          "text": "",
+          "rect": {
+            "w": 111,
+            "h": 30
+          },
+          "color": "rgb(0, 0, 238)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 238)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "navLink": {
+          "sel": "#primary-top-menu a",
+          "text": "Stories",
+          "rect": {
+            "w": 46,
+            "h": 18
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "hamburger": {
+          "sel": "#hamburger",
+          "text": "",
+          "rect": {
+            "w": 20,
+            "h": 15
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "searchButton": {
+          "missing": "zero box",
+          "sel": "button.primary.btn"
+        },
+        "primaryButton": {
+          "sel": "button.primary.btn.long, a.btn, .primary.btn.long",
+          "text": "$5",
+          "rect": {
+            "w": 100,
+            "h": 40
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "10.5px 20px 10.5px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "cardTitle": {
+          "sel": "h2 a, h3 a, .post-title a, article h2",
+          "text": "Hassan Hajjaj: Mixing London’s Street Culture with Moroccan ",
+          "rect": {
+            "w": 549,
+            "h": 96
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleCondensed, sans-serif",
+          "fontSize": "40px",
+          "fontWeight": "500",
+          "lineHeight": "48px",
+          "letterSpacing": "0.4px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "h1": {
+          "sel": "h1",
+          "text": "African Art Highlights",
+          "rect": {
+            "w": 900,
+            "h": 60
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleCondensed, sans-serif",
+          "fontSize": "56px",
+          "fontWeight": "500",
+          "lineHeight": "60px",
+          "letterSpacing": "0.56px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "bodyLink": {
+          "sel": ".entry-content a, article a, .post-content a",
+          "text": "6 Contemporary African Artists You Should Know",
+          "rect": {
+            "w": 242,
+            "h": 39
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleNarrow, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "lineHeight": "18px",
+          "letterSpacing": "0.2px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footer": {
+          "sel": "footer",
+          "text": "DAILYART About Us Our Team Contribute Advertise Contact Us C",
+          "rect": {
+            "w": 1440,
+            "h": 842
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 20px 50px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footerLink": {
+          "sel": "footer a",
+          "text": "About Us",
+          "rect": {
+            "w": 59,
+            "h": 18
+          },
+          "color": "rgb(198, 0, 47)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "-0.21px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterField": {
+          "sel": "input.email-newsletter",
+          "text": "",
+          "rect": {
+            "w": 368,
+            "h": 40
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopColor": "rgb(152, 157, 167)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "10px 10px 10px 10px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterButton": {
+          "sel": "button.newsletter-send",
+          "text": "Subscribe",
+          "rect": {
+            "w": 368,
+            "h": 38
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "9px 20px 9px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "donateButton": {
+          "sel": "button.donate, .donate.btn",
+          "text": "Donate",
+          "rect": {
+            "w": 368,
+            "h": 40
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(198, 0, 47, 0.5)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "9px 20px 9px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "checkbox": {
+          "sel": "input[type=\"checkbox\"]",
+          "text": "",
+          "rect": {
+            "w": 13,
+            "h": 13
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        }
+      },
+      "themeColor": "#C6002F",
+      "vars": {
+        "--fsAddBuffer": "22px",
+        "--height": "600px",
+        "--childHeight": "16px"
+      },
+      "fonts": [
+        "lg normal unloaded",
+        "Basier normal loaded",
+        "Basier 600 loaded",
+        "Basier 700 loaded",
+        "RoslindaleCondensed 500 loaded",
+        "RoslindaleCondensed 600 unloaded",
+        "RoslindaleNarrow 600 loaded",
+        "RoslindaleNarrow 700 loaded"
+      ]
+    },
+    "article": {
+      "out": {
+        "page": {
+          "sel": "body",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 15296
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "header": {
+          "sel": "#top-header",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 67
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "logo": {
+          "sel": "a.logo",
+          "text": "",
+          "rect": {
+            "w": 111,
+            "h": 30
+          },
+          "color": "rgb(0, 0, 238)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 238)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "navLink": {
+          "sel": "#primary-top-menu a",
+          "text": "Stories",
+          "rect": {
+            "w": 46,
+            "h": 18
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "hamburger": {
+          "sel": "#hamburger",
+          "text": "",
+          "rect": {
+            "w": 20,
+            "h": 15
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "searchButton": {
+          "missing": "zero box",
+          "sel": "button.primary.btn"
+        },
+        "primaryButton": {
+          "sel": "button.primary.btn.long, a.btn, .primary.btn.long",
+          "text": "$5",
+          "rect": {
+            "w": 100,
+            "h": 40
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "10.5px 20px 10.5px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "cardTitle": {
+          "sel": "h2 a, h3 a, .post-title a, article h2",
+          "text": "Donatello: The Real Father of the Renaissance",
+          "rect": {
+            "w": 197,
+            "h": 37
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleNarrow, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "lineHeight": "18px",
+          "letterSpacing": "0.16px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "h1": {
+          "sel": "h1",
+          "text": "Step Aside, Florence! Inside Siena: The Art of Bronze Exhibi",
+          "rect": {
+            "w": 1152,
+            "h": 120
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleCondensed, sans-serif",
+          "fontSize": "56px",
+          "fontWeight": "500",
+          "lineHeight": "60px",
+          "letterSpacing": "0.56px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "bodyLink": {
+          "sel": ".entry-content a, article a, .post-content a",
+          "text": "EUROPEAN ART",
+          "rect": {
+            "w": 89,
+            "h": 15
+          },
+          "color": "rgb(198, 0, 47)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "700",
+          "lineHeight": "14px",
+          "letterSpacing": "-0.24px",
+          "textTransform": "uppercase",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footer": {
+          "sel": "footer",
+          "text": "DAILYART About Us Our Team Contribute Advertise Contact Us C",
+          "rect": {
+            "w": 1440,
+            "h": 842
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 20px 50px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footerLink": {
+          "sel": "footer a",
+          "text": "About Us",
+          "rect": {
+            "w": 59,
+            "h": 18
+          },
+          "color": "rgb(198, 0, 47)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "-0.21px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterField": {
+          "sel": "input.email-newsletter",
+          "text": "",
+          "rect": {
+            "w": 561,
+            "h": 40
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopColor": "rgb(152, 157, 167)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "10px 10px 10px 10px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterButton": {
+          "sel": "button.newsletter-send",
+          "text": "Subscribe",
+          "rect": {
+            "w": 561,
+            "h": 38
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "9px 20px 9px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "donateButton": null,
+        "checkbox": {
+          "sel": "input[type=\"checkbox\"]",
+          "text": "",
+          "rect": {
+            "w": 13,
+            "h": 13
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        }
+      },
+      "themeColor": "#C6002F",
+      "vars": {
+        "--fsAddBuffer": "22px",
+        "--height": "600px",
+        "--childHeight": "16px"
+      },
+      "fonts": [
+        "lg normal unloaded",
+        "Basier normal loaded",
+        "Basier 600 loaded",
+        "Basier 700 loaded",
+        "RoslindaleCondensed 500 loaded",
+        "RoslindaleCondensed 600 loaded",
+        "RoslindaleNarrow 600 loaded",
+        "RoslindaleNarrow 700 loaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 loaded"
+      ]
+    },
+    "contact": {
+      "out": {
+        "page": {
+          "sel": "body",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 2121
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "header": {
+          "sel": "#top-header",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 67
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "logo": {
+          "sel": "a.logo",
+          "text": "",
+          "rect": {
+            "w": 111,
+            "h": 30
+          },
+          "color": "rgb(0, 0, 238)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 238)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "navLink": {
+          "sel": "#primary-top-menu a",
+          "text": "Stories",
+          "rect": {
+            "w": 46,
+            "h": 18
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "hamburger": {
+          "sel": "#hamburger",
+          "text": "",
+          "rect": {
+            "w": 20,
+            "h": 15
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "searchButton": {
+          "missing": "zero box",
+          "sel": "button.primary.btn"
+        },
+        "primaryButton": {
+          "sel": "button.primary.btn.long, a.btn, .primary.btn.long",
+          "text": "$5",
+          "rect": {
+            "w": 100,
+            "h": 40
+          },
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "10.5px 20px 10.5px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "cardTitle": null,
+        "h1": {
+          "sel": "h1",
+          "text": "Contact",
+          "rect": {
+            "w": 750,
+            "h": 60
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleCondensed, sans-serif",
+          "fontSize": "56px",
+          "fontWeight": "500",
+          "lineHeight": "60px",
+          "letterSpacing": "0.56px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "bodyLink": null,
+        "footer": {
+          "sel": "footer",
+          "text": "DAILYART About Us Our Team Contribute Advertise Contact Us C",
+          "rect": {
+            "w": 1440,
+            "h": 842
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 20px 50px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footerLink": {
+          "sel": "footer a",
+          "text": "About Us",
+          "rect": {
+            "w": 59,
+            "h": 18
+          },
+          "color": "rgb(198, 0, 47)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "-0.21px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterField": {
+          "sel": "input.email-newsletter",
+          "text": "",
+          "rect": {
+            "w": 561,
+            "h": 40
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopColor": "rgb(152, 157, 167)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "10px 10px 10px 10px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterButton": {
+          "sel": "button.newsletter-send",
+          "text": "Subscribe",
+          "rect": {
+            "w": 561,
+            "h": 38
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "9px 20px 9px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "donateButton": null,
+        "checkbox": {
+          "sel": "input[type=\"checkbox\"]",
+          "text": "",
+          "rect": {
+            "w": 30,
+            "h": 30
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        }
+      },
+      "themeColor": "#C6002F",
+      "vars": {
+        "--fsAddBuffer": "22px",
+        "--height": "600px",
+        "--childHeight": "16px"
+      },
+      "fonts": [
+        "lg normal unloaded",
+        "Basier normal loaded",
+        "Basier 600 loaded",
+        "Basier 700 loaded",
+        "RoslindaleCondensed 500 loaded",
+        "RoslindaleCondensed 600 unloaded",
+        "RoslindaleNarrow 600 loaded",
+        "RoslindaleNarrow 700 unloaded"
+      ]
+    },
+    "login": {
+      "out": {
+        "page": {
+          "sel": "body",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 1869
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 40px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "header": {
+          "sel": "#top-header",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 67
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "logo": {
+          "sel": "a.logo",
+          "text": "",
+          "rect": {
+            "w": 111,
+            "h": 30
+          },
+          "color": "rgb(0, 0, 238)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 238)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "navLink": {
+          "sel": "#primary-top-menu a",
+          "text": "Stories",
+          "rect": {
+            "w": 46,
+            "h": 18
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "hamburger": {
+          "sel": "#hamburger",
+          "text": "",
+          "rect": {
+            "w": 20,
+            "h": 15
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "searchButton": {
+          "missing": "zero box",
+          "sel": "button.primary.btn"
+        },
+        "primaryButton": null,
+        "cardTitle": null,
+        "h1": {
+          "sel": "h1",
+          "text": "Oooops! Page not Found",
+          "rect": {
+            "w": 750,
+            "h": 60
+          },
+          "color": "rgb(198, 0, 47)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleCondensed, sans-serif",
+          "fontSize": "56px",
+          "fontWeight": "500",
+          "lineHeight": "60px",
+          "letterSpacing": "0.56px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "bodyLink": {
+          "sel": ".entry-content a, article a, .post-content a",
+          "text": "Some Light: Dan Flavin’s Poetry of Industrial Light",
+          "rect": {
+            "w": 212,
+            "h": 48
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleNarrow, sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "600",
+          "lineHeight": "24px",
+          "letterSpacing": "0.2px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footer": {
+          "sel": "footer",
+          "text": "DAILYART About Us Our Team Contribute Advertise Contact Us C",
+          "rect": {
+            "w": 1440,
+            "h": 842
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 20px 50px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footerLink": {
+          "sel": "footer a",
+          "text": "About Us",
+          "rect": {
+            "w": 59,
+            "h": 18
+          },
+          "color": "rgb(198, 0, 47)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "-0.21px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterField": {
+          "sel": "input.email-newsletter",
+          "text": "",
+          "rect": {
+            "w": 561,
+            "h": 40
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopColor": "rgb(152, 157, 167)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "10px 10px 10px 10px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterButton": {
+          "sel": "button.newsletter-send",
+          "text": "Subscribe",
+          "rect": {
+            "w": 561,
+            "h": 38
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "9px 20px 9px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "donateButton": null,
+        "checkbox": {
+          "sel": "input[type=\"checkbox\"]",
+          "text": "",
+          "rect": {
+            "w": 13,
+            "h": 13
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        }
+      },
+      "themeColor": "#C6002F",
+      "vars": {
+        "--fsAddBuffer": "22px",
+        "--height": "600px",
+        "--childHeight": "16px"
+      },
+      "fonts": [
+        "lg normal unloaded",
+        "Basier normal loaded",
+        "Basier 600 loaded",
+        "Basier 700 loaded",
+        "RoslindaleCondensed 500 loaded",
+        "RoslindaleCondensed 600 unloaded",
+        "RoslindaleNarrow 600 loaded",
+        "RoslindaleNarrow 700 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 loaded"
+      ]
+    },
+    "search": {
+      "out": {
+        "page": {
+          "sel": "body",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 3480
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 40px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "header": {
+          "sel": "#top-header",
+          "text": "Stories Shop Courses Search Art Movements Prehistoric Art An",
+          "rect": {
+            "w": 1440,
+            "h": 67
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "logo": {
+          "sel": "a.logo",
+          "text": "",
+          "rect": {
+            "w": 111,
+            "h": 30
+          },
+          "color": "rgb(0, 0, 238)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 238)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "navLink": {
+          "sel": "#primary-top-menu a",
+          "text": "Stories",
+          "rect": {
+            "w": 46,
+            "h": 18
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "17px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "hamburger": {
+          "sel": "#hamburger",
+          "text": "",
+          "rect": {
+            "w": 20,
+            "h": 15
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "searchButton": {
+          "missing": "zero box",
+          "sel": "button.primary.btn"
+        },
+        "primaryButton": {
+          "sel": "button.primary.btn.long, a.btn, .primary.btn.long",
+          "text": "Load More",
+          "rect": {
+            "w": 760,
+            "h": 38
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "9px 20px 9px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "cardTitle": null,
+        "h1": {
+          "sel": "h1",
+          "text": "Search",
+          "rect": {
+            "w": 750,
+            "h": 60
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "RoslindaleCondensed, sans-serif",
+          "fontSize": "56px",
+          "fontWeight": "500",
+          "lineHeight": "60px",
+          "letterSpacing": "0.56px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "bodyLink": {
+          "sel": ".entry-content a, article a, .post-content a",
+          "text": "",
+          "rect": {
+            "w": 260,
+            "h": 20
+          },
+          "color": "rgb(0, 0, 238)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 238)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footer": {
+          "sel": "footer",
+          "text": "DAILYART About Us Our Team Contribute Advertise Contact Us C",
+          "rect": {
+            "w": 1440,
+            "h": 842
+          },
+          "color": "rgb(77, 87, 97)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(77, 87, 97)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "16px",
+          "letterSpacing": "-0.288px",
+          "textTransform": "none",
+          "padding": "0px 20px 50px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "footerLink": {
+          "sel": "footer a",
+          "text": "About Us",
+          "rect": {
+            "w": 59,
+            "h": 18
+          },
+          "color": "rgb(198, 0, 47)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "-0.21px",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterField": {
+          "sel": "input.email-newsletter",
+          "text": "",
+          "rect": {
+            "w": 561,
+            "h": 40
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopColor": "rgb(152, 157, 167)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "10px 10px 10px 10px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "newsletterButton": {
+          "sel": "button.newsletter-send",
+          "text": "Subscribe",
+          "rect": {
+            "w": 561,
+            "h": 38
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(198, 0, 47)",
+          "borderTopWidth": "1px",
+          "borderRadius": "3px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "9px 20px 9px 20px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        },
+        "donateButton": null,
+        "checkbox": {
+          "sel": "input[type=\"checkbox\"]",
+          "text": "",
+          "rect": {
+            "w": 13,
+            "h": 13
+          },
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "Basier, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "letterSpacing": "normal",
+          "textTransform": "none",
+          "padding": "0px 0px 0px 0px",
+          "boxShadow": "none",
+          "textDecorationLine": "none"
+        }
+      },
+      "themeColor": "#C6002F",
+      "vars": {
+        "--fsAddBuffer": "22px",
+        "--height": "600px",
+        "--childHeight": "16px"
+      },
+      "fonts": [
+        "lg normal unloaded",
+        "Basier normal loaded",
+        "Basier 600 loaded",
+        "Basier 700 loaded",
+        "RoslindaleCondensed 500 loaded",
+        "RoslindaleCondensed 600 unloaded",
+        "RoslindaleNarrow 600 loaded",
+        "RoslindaleNarrow 700 loaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 unloaded",
+        "Roboto 400 loaded"
+      ]
+    }
+  },
+  "brand": {
+    "themeColor": [
+      {
+        "content": "#C6002F",
+        "media": null
+      }
+    ],
+    "maskIcon": null,
+    "icons": [
+      {
+        "rel": "icon",
+        "href": "https://www.dailyartmagazine.com/wp-content/themes/idvetmp-child/images/fv/android-chrome-192x192.png",
+        "sizes": "192x192"
+      },
+      {
+        "rel": "icon",
+        "href": "https://www.dailyartmagazine.com/wp-content/themes/idvetmp-child/images/fv/android-chrome-512x512.png",
+        "sizes": "192x192"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "https://www.dailyartmagazine.com/wp-content/themes/idvetmp-child/images/fv/apple-touch-icon.png",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "icon",
+        "href": "https://www.dailyartmagazine.com/wp-content/themes/idvetmp-child/images/fv/favicon-16x16.png",
+        "sizes": "16x16"
+      },
+      {
+        "rel": "icon",
+        "href": "https://www.dailyartmagazine.com/wp-content/themes/idvetmp-child/images/fv/favicon-32x32.png",
+        "sizes": "32x32"
+      }
+    ],
+    "manifest": null
+  }
+}

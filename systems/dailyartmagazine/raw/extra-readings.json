@@ -1,0 +1,136 @@
+{
+  "searchField": {
+    "placeholder": "Search articles, artist, museums or art stuff",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(255, 255, 255)",
+    "border": "1px rgb(201, 207, 223)",
+    "radius": "0px",
+    "font": "Basier, sans-serif",
+    "size": "14px",
+    "weight": "400",
+    "h": 48,
+    "w": 600,
+    "pad": "13px 50px"
+  },
+  "focused": {
+    "tag": "INPUT",
+    "outline": "rgb(0, 0, 0) none 0px",
+    "outlineColor": "rgb(0, 0, 0)",
+    "boxShadow": "none",
+    "border": "1px rgb(201, 207, 223)"
+  },
+  "article": [
+    {
+      "cls": "",
+      "text": "Vecchietta, Resurrection of Christ, 1472",
+      "color": "rgb(77, 87, 97)",
+      "font": "Basier",
+      "size": "12px",
+      "weight": "400",
+      "lh": "16.2px",
+      "w": 648
+    },
+    {
+      "cls": "",
+      "text": "Art history has given Siena a narrow job",
+      "color": "rgb(0, 0, 0)",
+      "font": "Basier",
+      "size": "18px",
+      "weight": "600",
+      "lh": "24px",
+      "w": 648
+    },
+    {
+      "cls": "",
+      "text": "Gallery view of Siena: The Art of Bronze",
+      "color": "rgb(96, 106, 115)",
+      "font": "Basier",
+      "size": "12px",
+      "weight": "400",
+      "lh": "16.2px",
+      "w": 648
+    },
+    {
+      "cls": "",
+      "text": "Almost every surviving Sienese 15th-cent",
+      "color": "rgb(77, 87, 97)",
+      "font": "Basier",
+      "size": "18px",
+      "weight": "400",
+      "lh": "24px",
+      "w": 648
+    }
+  ],
+  "badge": [
+    {
+      "text": "RENAISSANCE",
+      "cls": "category center",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(198, 0, 47)",
+      "size": "10px",
+      "weight": "700",
+      "radius": "3px",
+      "pad": "4px 4px",
+      "h": 20
+    },
+    {
+      "text": "MJ RIVERA",
+      "cls": "author",
+      "color": "rgb(198, 0, 47)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "12px",
+      "weight": "700",
+      "radius": "0px",
+      "pad": "0px 0px",
+      "h": 15
+    },
+    {
+      "text": "MJ RIVERA",
+      "cls": "",
+      "color": "rgb(198, 0, 47)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "12px",
+      "weight": "700",
+      "radius": "0px",
+      "pad": "0px 0px",
+      "h": 15
+    },
+    {
+      "text": "6 MIN READ",
+      "cls": "desc time-read",
+      "color": "rgb(96, 106, 115)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "12px",
+      "weight": "700",
+      "radius": "0px",
+      "pad": "0px 0px",
+      "h": 14
+    },
+    {
+      "text": "EUROPEAN ART",
+      "cls": "",
+      "color": "rgb(198, 0, 47)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "12px",
+      "weight": "700",
+      "radius": "0px",
+      "pad": "0px 0px",
+      "h": 15
+    },
+    {
+      "text": "ARCHITECTURE",
+      "cls": "",
+      "color": "rgb(198, 0, 47)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "12px",
+      "weight": "700",
+      "radius": "0px",
+      "pad": "0px 0px",
+      "h": 15
+    }
+  ],
+  "hover": {
+    "color": "rgb(198, 0, 47)",
+    "deco": "none"
+  }
+}
