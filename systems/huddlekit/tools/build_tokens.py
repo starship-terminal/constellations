@@ -309,9 +309,9 @@ tokens = {
     "dark": dark,
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The painted default: huddlekit.com is light-only and the app login boots light under a light OS preference — a white ground, #111827 ink, the #ea580d orange primary on a #f6f3f2 warm page wash."},
+         "$description": "The painted default: huddlekit.com is light-only and the app login boots light under a light OS preference — a white ground, #181715 ink (oklch(20.5% .004 70) on 2026-11-21), the #ea580d orange primary on a #f5f3f2 warm page wash."},
         {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The re-pointed dark set: app.huddlekit.com paints html.dark + data-theme=\"dark\" under prefers-color-scheme, and the marketing site's nested .dark panels (footer, testimonials, MCP card) paint the same roles — #0e0b0d ground, #e3e0df ink, the #ea580d primary kept, borders switching to white-alpha."},
+         "$description": "The re-pointed dark set: app.huddlekit.com paints html.dark + data-theme=\"dark\" under prefers-color-scheme, and the marketing site's nested .dark panels (footer, testimonials, MCP card) paint the same roles — resolved --background #0d0c0a (oklch(15.43% .004 70) on 2026-11-21; the footer computed fill is still #0e0b0d), #eeeceb ink, the #ea580d primary kept, borders switching to white-alpha."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }

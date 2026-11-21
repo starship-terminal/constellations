@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:49:12.774Z",
+  "capturedAt": "2026-11-21T13:03:32.888Z",
   "screenshot": "contact-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/contact",
   "requested": {
@@ -44,7 +44,10 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 1816,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,

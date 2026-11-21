@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:48:45.634Z",
+  "capturedAt": "2026-11-21T13:03:17.229Z",
   "screenshot": "mcp-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/mcp",
   "requested": {
@@ -44,7 +44,10 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 6674,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,

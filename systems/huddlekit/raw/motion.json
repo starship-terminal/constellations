@@ -1,15 +1,15 @@
 {
  "_meta": {
-  "readAt": "2026-11-18",
+  "readAt": "2026-11-21",
   "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
   "source": "public pages, headless Chromium, read at rest",
   "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
  },
  "summary": {
-  "moving": 209,
+  "moving": 211,
   "removed": 10,
   "reduced": 0,
-  "kept": 197,
+  "kept": 199,
   "partial": 2,
   "increased": 0,
   "added": 0,
@@ -27,7 +27,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 1031,
+   "scanned": 1029,
    "capped": false,
    "unreadableSheets": 0,
    "sheetsTruncated": {
@@ -4219,7 +4219,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 826,
+   "scanned": 831,
    "capped": false,
    "unreadableSheets": 0,
    "sheetsTruncated": {
@@ -5904,7 +5904,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 807,
+   "scanned": 814,
    "capped": false,
    "unreadableSheets": 0,
    "sheetsTruncated": {
@@ -5913,10 +5913,10 @@
     "customProperties": false
    },
    "summary": {
-    "moving": 46,
+    "moving": 48,
     "removed": 0,
     "reduced": 0,
-    "kept": 45,
+    "kept": 47,
     "partial": 1,
     "increased": 0,
     "added": 0,
@@ -5959,7 +5959,7 @@
        "to": 150
       }
      ],
-     "count": 12,
+     "count": 14,
      "nodes": [
       "a.inline-flex.items-center.justify-center",
       "button.inline-flex.items-center.justify-center",
@@ -7706,7 +7706,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 102,
+   "scanned": 107,
    "capped": false,
    "unreadableSheets": 0,
    "sheetsTruncated": {
@@ -9409,7 +9409,7 @@
      ]
     },
     {
-     "selector": ".group-hover\\:duration-200:is(:where(.group):hover *)",
+     "selector": ".group-hover\\:duration-200:is(:where(.group):hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"])) *)",
      "context": [
       "@layer utilities",
       "@media (hover: hover)"
@@ -9423,7 +9423,7 @@
      "animations": []
     },
     {
-     "selector": ".hover\\:duration-200:hover",
+     "selector": ".hover\\:duration-200:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
      "context": [
       "@layer utilities",
       "@media (hover: hover)"

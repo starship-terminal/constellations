@@ -1,16 +1,16 @@
 # Huddlekit components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Read from huddlekit.com and app.huddlekit.com on 2026-11-18, signed out, in headless Chromium at 1440 x 900 (the mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, searched or submitted; the only presses were local UI toggles the pages' own chrome provides — the consent banner's Decline, the nav's hover-open menus, FAQ accordions, the billing switch, the feature tabs, the testimonials 'Show more', the login's 'Continue with email' reveal and the phone's menu button; every link was measured, never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Read from huddlekit.com and app.huddlekit.com on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, searched or submitted. Cookie Decline and Accept were not pressed. The banner was hidden in the stylesheet for later shots, which is not a consent answer. The presses that did happen were local UI toggles: the nav's hover-open menus, the billing switch, the feature tabs, the testimonials 'Show more', the login's 'Continue with email' reveal (the field stayed empty and Continue was not submitted) and the phone's menu button. Homepage FAQ rows are summary elements. The accordion opener looked for main button[aria-expanded] and did not find one, so the open FAQ state was not re-shot on this pass. Every link was measured, never followed.
 
 **Where this was read.** Two public surfaces carry the system: huddlekit.com itself — the signed-out marketing site (home, features, solutions, pricing, integrations, compare, MCP, manifesto, blog, support, tools, contact, legal) — and app.huddlekit.com/login, the one surface the app serves anonymously. The marketing site paints light only; its `.dark` rules re-point the same custom properties inside nested dark panels (the footer, the dark testimonials, the MCP card), measured as their own components. The app paints `html.dark` under prefers-color-scheme — the login's `dark` states are measured on that painted dark surface. Everything past /login redirects an anonymous visitor back to it; try./demo./status./docs./help. hosts and app.huddlekit.io do not resolve. All of those are boundaries listed under Gaps, not captures.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (48 components, 105 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (48 components, 111 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (105 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (111 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -48,9 +48,9 @@ Screenshots are named `{page}-{theme}-{state}.png` where `{theme}` is the surfac
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| Consent banner | home, app login, phone home | the first-visit banner's own presence; 'Decline' pressed once to dismiss it, 'Accept' never pressed | [home-light-consent](screenshots/home-light-consent.png), [app-login-light-consent](screenshots/app-login-light-consent.png), [mobile-home-light-consent](screenshots/mobile-home-light-consent.png) |
+| Consent banner | home, app login, phone home | the first-visit banner's own presence; Decline and Accept were not pressed. Later shots hide the banner in the stylesheet | [home-light-consent](screenshots/home-light-consent.png), [app-login-light-consent](screenshots/app-login-light-consent.png), [mobile-home-light-consent](screenshots/mobile-home-light-consent.png) |
 | Nav menus | home header | hovering the header's own 'Solutions' / 'Resources' buttons — the menu surface opened, captured, left | [home-light-menu-solutions](screenshots/home-light-menu-solutions.png), [home-light-menu-resources](screenshots/home-light-menu-resources.png) |
-| FAQ accordion | home, pricing | a question row's own press — the answer expanded | [home-light-faq-open](screenshots/home-light-faq-open.png), [pricing-light-faq-open](screenshots/pricing-light-faq-open.png) |
+| FAQ accordion | home, pricing | not re-opened on 2026-11-21. Homepage rows are summary elements; the opener looked for main button[aria-expanded]. The files below are the 2026-11-17 shots | [home-light-faq-open](screenshots/home-light-faq-open.png), [pricing-light-faq-open](screenshots/pricing-light-faq-open.png) |
 | Feature tabs | home | a tab's own activation — a local UI toggle | [home-light-feature-tab](screenshots/home-light-feature-tab.png) |
 | Testimonials 'Show more' | home | the toggle's own press — the hidden testimonial cards expanded | [home-light-testimonials-open](screenshots/home-light-testimonials-open.png) |
 | Billing switch | pricing | the monthly/annual switch's own press — a local UI toggle | [pricing-light-billing-toggle](screenshots/pricing-light-billing-toggle.png) |
@@ -64,7 +64,7 @@ Screenshots are named `{page}-{theme}-{state}.png` where `{theme}` is the surfac
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 18 components were given a real keyboard focus. 2 draw an outline ring: `nav-link` (1px auto rgba(255, 105, 0, 0.5), offset 1px), `tool-color-input` (1px auto rgba(255, 105, 0, 0.5), offset 0px). 15 draw a focus ring as a shadow instead: `consent-decline`, `consent-accept`, `cta-primary`, `cta-secondary`, `cta-outline`, `testimonial-card-dark`, `show-more`, `billing-switch`, `plan-cta`, `support-search`, `tool-text-input`, `contact-copy`, `app-google-button`, `app-email-button`, `m-menu-button`. The other 1 show no measured change: `app-continue-button`.
+**Focus.** 19 components were given a real keyboard focus. 3 draw an outline ring: `nav-link` (1px auto rgba(255, 105, 0, 0.5), offset 1px), `tool-color-input` (1px auto rgba(255, 105, 0, 0.5), offset 0px), `prose-link` (1px auto rgba(255, 105, 0, 0.5), offset 1px). 15 draw a focus ring as a shadow instead: `consent-decline`, `consent-accept`, `cta-primary`, `cta-secondary`, `cta-outline`, `testimonial-card-dark`, `show-more`, `billing-switch`, `plan-cta`, `support-search`, `tool-text-input`, `contact-copy`, `app-google-button`, `app-email-button`, `m-menu-button`. The other 1 show no measured change: `app-continue-button`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -80,8 +80,9 @@ Values that apply across entries, from the measurement files.
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Site header](#site-header) | 976 x 64 | - | - | transparent | none | 0 |
-| [Nav popover (open)](#nav-popover-open) | 194 x 154 | 1px solid #e4e4e7 `light.border.default` | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px | 0 |
-| [Cookie consent banner](#cookie-consent-banner) | 352 x 174 | 1px solid #e4e4e7 `light.border.default` | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px | 8px |
+| [Nav popover (open)](#nav-popover-open) | 194 x 154 | 1px solid #e4e4e7 | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px | 0 |
+| [Cookie consent banner](#cookie-consent-banner) | 352 x 134 | 1px solid #e4e4e7 | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px | 8px |
+| [Plan card](#plan-card) | 314.66 x 426 | - | - | transparent | none | 4px |
 | [Integration card](#integration-card) | 314.66 x 196 | - | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 24px |
 | [Integration page card](#integration-page-card) | 314.66 x 196 | - | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 24px |
 | [Dark testimonial card](#dark-testimonial-card) | 645.33 x 384 | - | 16px | #0e0b0d `core.component.component.footer.bg` | rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 24px |
@@ -94,38 +95,38 @@ Values that apply across entries, from the measurement files.
 
 ### Consent
 
-The cookie-consent banner every first visit paints: the banner card and its Decline / Accept buttons — Decline was pressed once to dismiss it, Accept measured but never pressed.
+The cookie-consent banner every first visit paints: the banner card and its Decline / Accept buttons. Neither button was pressed on 2026-11-21. Later shots hide the banner in the stylesheet, which is not a consent answer.
 
 #### Cookie consent banner
 The fixed bottom consent banner ("We'd like to use cookies…"): bg-background rounded-2xl border shadow-lg with Decline / Accept. Read as `consent-banner` on the home page.
-Read on 2026-11-17T15:06:44.253Z.
+Read on 2026-11-21T13:13:43.681Z.
 
-**Values (default).** size 352 x 174; padding 8px; border 1px solid #e4e4e7 `light.border.default`; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px; text Inter 14/20 400, #747170 `light.muted.foreground`.
+**Values (default).** size 352 x 134; padding 8px; border 1px solid #e4e4e7; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px; text Inter 14/20 400, #747170.
 
 ![Cookie consent banner default](components/crops/consent-banner-default.png)
 
 #### Consent "Decline" button
 The decline control in the consent banner (secondary style). Read as `consent-decline` on the home page.
-States read on 2026-11-17T15:06:45.591Z (default); 2026-11-17T15:06:48.541Z (hover); 2026-11-17T15:06:50.449Z (focus-visible).
+States read on 2026-11-21T13:13:44.516Z (default); 2026-11-21T13:13:46.296Z (hover); 2026-11-21T13:13:47.548Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 163 x 36; padding 8px 12px; border 1px solid #e4e4e7 `light.border.default`; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827 `light.root.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background #f6f3f2 `light.color.page`; text Inter 14/20 500, #18181b `light.accent.foreground` |
+| default | size 163 x 36; padding 8px 12px; border 1px solid #e4e4e7; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #f6f3f2; text Inter 14/20 500, #18181b |
 | focus-visible | border 1px solid rgba(17, 24, 39, 0.2); shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
 
 ![Consent "Decline" button default](components/crops/consent-decline-default.png) ![Consent "Decline" button hover](components/crops/consent-decline-hover.png) ![Consent "Decline" button focus-visible](components/crops/consent-decline-focus-visible.png)
 
 #### Consent "Accept" button
 The accept control in the consent banner (bg-primary). Read as `consent-accept` on the home page.
-States read on 2026-11-17T15:06:54.590Z (default); 2026-11-17T15:06:57.124Z (hover); 2026-11-17T15:06:58.597Z (focus-visible); 2026-11-17T15:07:01.913Z (pressed).
+States read on 2026-11-21T13:13:48.601Z (default); 2026-11-21T13:13:50.475Z (hover); 2026-11-21T13:13:51.701Z (focus-visible); 2026-11-21T13:13:52.894Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 163 x 36; padding 8px 12px; border 1px solid #e4e4e7 `light.border.default`; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827 `light.root.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background #f6f3f2 `light.color.page`; text Inter 14/20 500, #18181b `light.accent.foreground` |
+| default | size 163 x 36; padding 8px 12px; border 1px solid #e4e4e7; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #f6f3f2; text Inter 14/20 500, #18181b |
 | focus-visible | border 1px solid rgba(17, 24, 39, 0.2); shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
-| pressed | background #f6f3f2 `light.color.page`; text Inter 14/20 500, #18181b `light.accent.foreground` |
+| pressed | background #f6f3f2; text Inter 14/20 500, #18181b |
 
 ![Consent "Accept" button default](components/crops/consent-accept-default.png) ![Consent "Accept" button hover](components/crops/consent-accept-hover.png) ![Consent "Accept" button focus-visible](components/crops/consent-accept-focus-visible.png) ![Consent "Accept" button pressed](components/crops/consent-accept-pressed.png)
 
@@ -135,11 +136,11 @@ The marketing chrome every huddlekit.com page carries: the announcement bar, the
 
 #### Announcement bar
 The top "New: hand feedback to your AI agent over MCP" announcement link — border-b over the header. Read as `announce-bar` on the home page.
-States read on 2026-11-17T16:28:54.758Z (default); 2026-11-17T16:28:56.683Z (hover).
+States read on 2026-11-21T13:14:03.466Z (default); 2026-11-21T13:14:05.259Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 1440 x 40; padding 8px 16px; border B: 1px solid #e4e4e7 `light.border.default`; background transparent; text Inter 14/20 500, #111827 `light.root.foreground`; icon 16 x 16, #111827 `light.root.foreground`; layers a.group.text-foreground 1440.0x40.0 B:1px solid |
+| default (same: hover) | size 1440 x 40; padding 8px 16px; border B: 1px solid #e4e4e7; background transparent; text Inter 14/20 500, #111827; icon 16 x 16, #111827; layers a.group.text-foreground 1440.0x40.0 B:1px solid |
 
 Child layers that carry the look: a 1440x40 border 1px solid.
 
@@ -147,63 +148,63 @@ Child layers that carry the look: a 1440x40 border 1px solid.
 
 #### Site header
 The header holding the logo, the Features / Solutions / Resources / Pricing / Sign in nav and the "Get started" button. Read as `nav-header` on the home page.
-Read on 2026-11-17T16:28:57.644Z.
+Read on 2026-11-21T13:14:06.096Z.
 
-**Values (default).** size 976 x 64; background transparent; text Inter 14/20 500, #111827 `light.root.foreground`; icon 104 x 28, #111827 `light.root.foreground`; layers a.inline-flex.items-center 104.0x32.0 #ede9e7 T:1px solid / R:1px solid / B:1px solid / L:1px solid transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px 12px; butto.
+**Values (default).** size 976 x 64; background transparent; text Inter 14/20 500, #111827; icon 104 x 28, #111827; layers a.inline-flex.items-center 96.7x32.0 #ede9e7 T:1px solid / R:1px solid / B:1px solid / L:1px solid transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px 12px; button.
 
-Child layers that carry the look: a 104x32 background #ede9e7 `light.secondary.default` border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; button 0x0 background #ffffff `light.card.default` border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px.
+Child layers that carry the look: a 96.7x32 background #ede9e7 border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; button 0x0 background #ffffff `light.card.default` border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px.
 
 ![Site header default](components/crops/nav-header-default.png)
 
 #### Nav link
 A plain nav link ("Features"), text-foreground with hover:text-foreground/70. Read as `nav-link` on the home page.
-States read on 2026-11-17T16:28:58.635Z (default); 2026-11-17T16:29:00.478Z (hover); 2026-11-17T16:29:02.464Z (focus-visible).
+States read on 2026-11-21T13:14:06.889Z (default); 2026-11-21T13:14:08.615Z (hover); 2026-11-21T13:14:09.802Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 62 x 20; background transparent; text Inter 14/20 500, #111827 `light.root.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 58.16 x 20; background transparent; text Inter 14/20 500, #111827; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | text Inter 14/20 500, rgba(17, 24, 39, 0.7) `core.component.type.linkHover.color` |
-| focus-visible | outline 1px auto rgba(255, 105, 0, 0.5), offset 1px; layers a.hover:text-foreground/70.text-foreground 62.0x20.0 1px auto rgba(255, 105, 0, 0.5) offset 1px |
+| focus-visible | outline 1px auto rgba(255, 105, 0, 0.5), offset 1px; layers a.hover:text-foreground/70.text-foreground 58.2x20.0 1px auto rgba(255, 105, 0, 0.5) offset 1px |
 
 ![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png)
 
 #### Nav menu trigger
 The "Solutions" button that opens a nav-surface popover on hover. "opened" is after the real hover that opened it. Read as `nav-menu-button` on the home page.
-States read on 2026-11-17T16:29:03.334Z (default); 2026-11-17T16:29:05.155Z (hover); 2026-11-17T16:29:08.802Z (opened).
+States read on 2026-11-21T13:14:10.588Z (default); 2026-11-21T13:14:12.635Z (hover); 2026-11-21T13:14:14.506Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 85 x 20; background transparent; text Inter 14/20 500, #111827 `light.root.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #111827 `light.root.foreground` |
+| default | size 80.17 x 20; background transparent; text Inter 14/20 500, #111827; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #111827 |
 | hover, opened | text Inter 14/20 500, rgba(17, 24, 39, 0.7) `core.component.type.linkHover.color`; icon 14 x 14, rgba(17, 24, 39, 0.7) `core.component.type.linkHover.color` |
 
 ![Nav menu trigger default](components/crops/nav-menu-button-default.png) ![Nav menu trigger hover](components/crops/nav-menu-button-hover.png) ![Nav menu trigger opened](components/crops/nav-menu-button-opened.png)
 
 #### Nav popover (open)
 The open nav-surface popover under the header — the Solutions menu the hover shows. Read as `nav-menu-surface` on the home page.
-Read on 2026-11-17T16:29:12.607Z.
+Read on 2026-11-21T13:14:17.238Z.
 
-**Values (opened).** size 194 x 154; border 1px solid #e4e4e7 `light.border.default`; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px; text Inter 14/20 500, #111827 `light.root.foreground`; transition translate 0.2s cubic-bezier(0.22, 1, 0.36, 1), width 0.2s cubic-bezier(0.22, 1, 0.36, 1), height 0.2s cubic-bezier(0.22, 1, 0.36, 1); icon 16 x 16, #747170 `light.muted.foreground`.
+**Values (opened).** size 194 x 154; border 1px solid #e4e4e7; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px; text Inter 14/20 500, #111827; transition translate 0.2s cubic-bezier(0.22, 1, 0.36, 1), width 0.2s cubic-bezier(0.22, 1, 0.36, 1), height 0.2s cubic-bezier(0.22, 1, 0.36, 1); icon 16 x 16, #747170.
 
 ![Nav popover (open) opened](components/crops/nav-menu-surface-opened.png)
 
 #### "Sign in" link
 The header sign-in link — measured, never followed (it leads to app.huddlekit.com, which was captured separately). Read as `nav-signin` on the home page.
-States read on 2026-11-17T16:29:14.014Z (default); 2026-11-17T16:29:15.866Z (hover).
+States read on 2026-11-21T13:14:17.994Z (default); 2026-11-21T13:14:19.767Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 48 x 20; background transparent; text Inter 14/20 500, #111827 `light.root.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 45.36 x 20; background transparent; text Inter 14/20 500, #111827; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | text Inter 14/20 500, rgba(17, 24, 39, 0.7) `core.component.type.linkHover.color` |
 
 !["Sign in" link default](components/crops/nav-signin-default.png) !["Sign in" link hover](components/crops/nav-signin-hover.png)
 
 #### Primary CTA button
 The solid "Get started for free" call-to-action (bg-primary text-primary-foreground, the inner-shadow stack) — links to the app, measured never followed. Read as `cta-primary` on the home page.
-States read on 2026-11-17T16:29:17.171Z (default); 2026-11-17T16:29:19.360Z (hover); 2026-11-17T16:29:20.830Z (focus-visible); 2026-11-17T16:29:22.151Z (pressed).
+States read on 2026-11-21T13:14:20.529Z (default); 2026-11-21T13:14:22.315Z (hover); 2026-11-21T13:14:23.600Z (focus-visible); 2026-11-21T13:14:24.810Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 169 x 40; padding 0px 14px; radius 12px; background #ea580d `light.primary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; text Inter 14/20 500, #fff7ed `light.primary.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 155.86 x 40; padding 0px 14px; radius 12px; background #ea580d `light.primary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; text Inter 14/20 500, #fff7ed `light.primary.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background rgba(234, 88, 13, 0.9) |
 | focus-visible | shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px |
 | pressed | background rgba(234, 88, 13, 0.9) |
@@ -212,11 +213,11 @@ States read on 2026-11-17T16:29:17.171Z (default); 2026-11-17T16:29:19.360Z (hov
 
 #### Secondary button
 The header's "Get started" button (bg-secondary with the same inner-shadow stack). Read as `cta-secondary` on the home page.
-States read on 2026-11-17T16:29:23.050Z (default); 2026-11-17T16:29:25.076Z (hover); 2026-11-17T16:29:27.530Z (focus-visible); 2026-11-17T16:29:28.803Z (pressed).
+States read on 2026-11-21T13:14:25.598Z (default); 2026-11-21T13:14:27.331Z (hover); 2026-11-21T13:14:28.522Z (focus-visible); 2026-11-21T13:14:29.689Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 104 x 32; padding 0px 10px; border 1px solid transparent; radius 12px; background #ede9e7 `light.secondary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; text Inter 14/20 500, #18181b `light.accent.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 96.67 x 32; padding 0px 10px; border 1px solid transparent; radius 12px; background #ede9e7; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; text Inter 14/20 500, #18181b; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background rgba(237, 233, 231, 0.8) |
 | focus-visible | border 1px solid rgba(17, 24, 39, 0.2); shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px |
 | pressed | background rgba(237, 233, 231, 0.8) |
@@ -225,11 +226,11 @@ States read on 2026-11-17T16:29:23.050Z (default); 2026-11-17T16:29:25.076Z (hov
 
 #### Outline button
 A bordered ghost action in the hero ("5-star reviews"): border + transparent fill, hover:bg-accent. Read as `cta-outline` on the home page.
-States read on 2026-11-17T16:29:29.715Z (default); 2026-11-17T16:29:31.563Z (hover); 2026-11-17T16:29:32.868Z (focus-visible).
+States read on 2026-11-21T13:14:30.460Z (default); 2026-11-21T13:14:32.226Z (hover); 2026-11-21T13:14:33.438Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 152 x 40; padding 0px 14px; border 1px solid transparent; radius 12px; background transparent; text Inter 14/20 500, transparent; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #ea580d `light.primary.default` |
+| default | size 146.2 x 40; padding 0px 14px; border 1px solid transparent; radius 12px; background transparent; text Inter 14/20 500, transparent; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #ea580d `light.primary.default` |
 | hover | background rgba(17, 24, 39, 0.05) |
 | focus-visible | border 1px solid rgba(17, 24, 39, 0.2); shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px |
 
@@ -237,7 +238,7 @@ States read on 2026-11-17T16:29:29.715Z (default); 2026-11-17T16:29:31.563Z (hov
 
 #### Site footer (dark)
 The .dark footer (bg-background text-foreground inside .dark): Product / Solutions / Resources columns, "Cookie settings" button and the social links. Read as `footer` on the home page.
-Read on 2026-11-17T16:30:04.949Z.
+Read on 2026-11-21T13:14:54.545Z.
 
 **Values (default).** size 1440 x 860.02; border T: 1px solid rgba(255, 255, 255, 0.08); background #0e0b0d `core.component.component.footer.bg`; text Inter 14/20 600, #e3e0df; icon 16 x 16, #e3e0df.
 
@@ -245,22 +246,22 @@ Read on 2026-11-17T16:30:04.949Z.
 
 #### Footer link
 A muted footer link (text-muted-foreground) inside the dark footer. Read as `footer-link` on the home page.
-States read on 2026-11-17T16:30:05.798Z (default); 2026-11-17T16:30:07.586Z (hover).
+States read on 2026-11-21T13:14:55.465Z (default); 2026-11-21T13:14:57.227Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 62 x 17; background transparent; text Inter 14/20 500, #a3a09f |
+| default | size 58.16 x 17; background transparent; text Inter 14/20 500, #a3a09f |
 | hover | text Inter 14/20 500, #e3e0df |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png)
 
 #### "Cookie settings" button
 The footer control that re-shows the consent banner — a local UI toggle. Read as `cookie-settings` on the home page.
-States read on 2026-11-17T16:30:08.424Z (default); 2026-11-17T16:30:10.229Z (hover); 2026-11-17T16:30:12.286Z (opened).
+States read on 2026-11-21T13:14:57.990Z (default); 2026-11-21T13:15:01.719Z (hover); 2026-11-21T13:15:03.721Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 112 x 20; background transparent; text Inter 14/20 500, #a3a09f |
+| default | size 103.91 x 20; background transparent; text Inter 14/20 500, #a3a09f |
 | hover, opened | text Inter 14/20 500, #e3e0df |
 
 !["Cookie settings" button default](components/crops/cookie-settings-default.png) !["Cookie settings" button hover](components/crops/cookie-settings-hover.png) !["Cookie settings" button opened](components/crops/cookie-settings-opened.png)
@@ -271,13 +272,13 @@ The landing page's own layer: the feature tablist, the integration cards, the da
 
 #### Feature tab (vertical)
 One row of the vertical feature tabs ("Draw on the page"): role=tab, muted until selected. "selected" is the tab's own activation. Read as `feature-tab` on the home page.
-States read on 2026-11-17T16:29:33.718Z (default); 2026-11-17T16:29:35.559Z (hover); 2026-11-17T16:29:37.497Z (selected).
+States read on 2026-11-21T13:14:34.233Z (default); 2026-11-21T13:14:36.000Z (hover); 2026-11-21T13:14:37.781Z (selected).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 282.67 x 57; padding 16px 0px; border B: 1px solid #e4e4e7 `light.border.default`; background transparent; text Inter 16/24 500, #747170 `light.muted.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers button.group.text-muted-foreground 282.7x57.0 B:1px solid |
-| hover | text Inter 16/24 500, #111827 `light.root.foreground` |
-| selected | size 282.67 x 111; text Inter 16/24 500, #111827 `light.root.foreground`; layers button.group.text-muted-foreground 282.7x111.0 B:1px solid |
+| default | size 282.67 x 57; padding 16px 0px; border B: 1px solid #e4e4e7; background transparent; text Inter 16/24 500, #747170; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers button.group.text-muted-foreground 282.7x57.0 B:1px solid |
+| hover | text Inter 16/24 500, #111827 |
+| selected | size 282.67 x 111; text Inter 16/24 500, #111827; layers button.group.text-muted-foreground 282.7x111.0 B:1px solid |
 
 Child layers that carry the look: button 282.7x57 border 1px solid.
 
@@ -285,17 +286,17 @@ Child layers that carry the look: button 282.7x57 border 1px solid.
 
 #### Integration card
 An integration card on the home grid ("Linear" — icon, name, one line): bg-background rounded-xl shadow-xs. Read as `integration-card` on the home page.
-States read on 2026-11-17T16:29:38.568Z (default); 2026-11-17T16:29:41.467Z (hover).
+States read on 2026-11-21T13:14:38.654Z (default); 2026-11-21T13:14:40.433Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 314.66 x 196; padding 24px; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 20/28 500, #111827 `light.root.foreground`; icon 20 x 20, #111827 `light.root.foreground` |
+| default (same: hover) | size 314.66 x 196; padding 24px; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 20/28 500, #111827; icon 20 x 20, #111827 |
 
 ![Integration card default](components/crops/integration-card-default.png) ![Integration card hover](components/crops/integration-card-hover.png)
 
 #### Dark MCP panel
 The .dark "Let your AI agent fix comments over MCP" card — the marketing page's painted-dark surface evidence: bg-background/text-foreground inside .dark re-point to the dark palette. Read as `mcp-card-dark` on the home page.
-States read on 2026-11-17T16:29:42.933Z (default); 2026-11-17T16:29:44.850Z (hover).
+States read on 2026-11-21T13:14:41.257Z (default); 2026-11-21T13:14:43.057Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -305,7 +306,7 @@ States read on 2026-11-17T16:29:42.933Z (default); 2026-11-17T16:29:44.850Z (hov
 
 #### Dark testimonial card
 A large .dark testimonial card (quote + attribution) in the testimonials grid. Read as `testimonial-card-dark` on the home page.
-States read on 2026-11-17T16:29:46.320Z (default); 2026-11-17T16:29:49.067Z (hover); 2026-11-17T16:29:51.322Z (focus-visible).
+States read on 2026-11-21T13:14:44.191Z (default); 2026-11-21T13:14:46.264Z (hover); 2026-11-21T13:14:47.865Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -316,14 +317,14 @@ States read on 2026-11-17T16:29:46.320Z (default); 2026-11-17T16:29:49.067Z (hov
 
 #### "Show more testimonials" button
 The ghost expander under the testimonial grid. "opened" is its own press (the grid grows). Read as `show-more` on the home page.
-States read on 2026-11-17T16:29:52.186Z (default); 2026-11-17T16:29:54.019Z (hover); 2026-11-17T16:29:55.353Z (focus-visible); 2026-11-17T16:29:57.172Z (opened).
+States read on 2026-11-21T13:14:48.670Z (default); 2026-11-21T13:14:50.421Z (hover); 2026-11-21T13:14:51.648Z (focus-visible); 2026-11-21T13:14:53.435Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 218 x 36; padding 8px 12px; border 1px solid transparent; radius 12px; background transparent; text Inter 14/20 500, #111827 `light.root.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #111827 `light.root.foreground` |
-| hover | background rgba(17, 24, 39, 0.05); text Inter 14/20 500, #18181b `light.accent.foreground`; icon 16 x 16, #18181b `light.accent.foreground` |
+| default | size 207.58 x 36; padding 8px 12px; border 1px solid transparent; radius 12px; background transparent; text Inter 14/20 500, #111827; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #111827 |
+| hover | background rgba(17, 24, 39, 0.05); text Inter 14/20 500, #18181b; icon 16 x 16, #18181b |
 | focus-visible | border 1px solid rgba(17, 24, 39, 0.2); shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px |
-| opened | size 120 x 36 |
+| opened | size 115.88 x 36 |
 
 !["Show more testimonials" button default](components/crops/show-more-default.png) !["Show more testimonials" button hover](components/crops/show-more-hover.png) !["Show more testimonials" button focus-visible](components/crops/show-more-focus-visible.png) !["Show more testimonials" button opened](components/crops/show-more-opened.png)
 
@@ -338,41 +339,47 @@ The /pricing page: the plan cards, the monthly/annual billing switch, the per-pl
 
 #### Plan card
 A pricing plan card on /pricing (name, price, feature list, CTA). Read as `plan-card` on the pricing page.
+Read on 2026-11-21T13:15:14.163Z.
 
-The saved state reads the "Free forever" label (274.66x16), not a plan card. The picker now requires a price, a call to action, several lines and height of at least 160. Not remeasured: no live recapture.
+**Values (default).** size 314.66 x 426; padding 4px; background transparent; text Inter 16/24 600, #111827; icon 16 x 16, #111827; layers div.bg-muted.w-full 306.7x134.0 #f6f3f2 12px; a.inline-flex.items-center 306.7x36.0 #ea580d transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px 12px.
+
+Child layers that carry the look: div 306.7x134 background #f6f3f2 radius 12px; a 306.7x36 background #ea580d `light.primary.default` radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px.
+
+![Plan card default](components/crops/plan-card-default.png)
 
 #### Billing switch
 A monthly/annual switch on the plan cards (role=switch, data-state=checked, bg-primary on). "off" is its own press — then pressed back. Read as `billing-switch` on the pricing page.
-States read on 2026-11-17T15:10:11.658Z (default); 2026-11-17T15:10:13.727Z (hover); 2026-11-17T15:10:19.407Z (focus-visible); 2026-11-17T15:10:21.584Z (off).
+States read on 2026-11-21T13:15:14.951Z (default); 2026-11-21T13:15:16.686Z (hover); 2026-11-21T13:15:17.892Z (focus-visible); 2026-11-21T13:15:19.491Z (off).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 32 x 18.39; border 1px solid transparent; radius 3.35544e+07px; background #ea580d `light.primary.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 16/24 400, #111827 `light.root.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| focus-visible | border 1px solid #ff6900 `light.border.ring`; shadow rgba(255, 105, 0, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
-| off | background #e4e4e7 `light.border.default` |
+| default (same: hover) | size 32 x 18.39; border 1px solid transparent; radius 3.35544e+07px; background #ea580d `light.primary.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 16/24 400, #111827; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| focus-visible | border 1px solid #ff6900; shadow rgba(255, 105, 0, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+| off | background #e4e4e7 |
 
 ![Billing switch default](components/crops/billing-switch-default.png) ![Billing switch hover](components/crops/billing-switch-hover.png) ![Billing switch focus-visible](components/crops/billing-switch-focus-visible.png) ![Billing switch off](components/crops/billing-switch-off.png)
 
 #### "Sign up free" button
 A plan call-to-action — links to the app sign-up, measured never followed. Read as `plan-cta` on the pricing page.
-States read on 2026-11-17T15:10:40.751Z (default); 2026-11-17T15:10:42.657Z (hover); 2026-11-17T15:10:44.030Z (focus-visible); 2026-11-17T15:10:45.548Z (pressed).
+States read on 2026-11-21T13:15:21.061Z (default); 2026-11-21T13:15:22.817Z (hover); 2026-11-21T13:15:23.993Z (focus-visible); 2026-11-21T13:15:25.186Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 306.66 x 36; padding 8px 12px; radius 12px; background #ea580d `light.primary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; text Inter 14/20 500, #fff7ed `light.primary.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 306.66 x 36; padding 8px 12px; radius 12px; background #ea580d `light.primary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; text Inter 14/20 500, #fff7ed `light.primary.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background rgba(234, 88, 13, 0.9) |
 | focus-visible | shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px |
+| pressed | background rgba(234, 88, 13, 0.9) |
 
 !["Sign up free" button default](components/crops/plan-cta-default.png) !["Sign up free" button hover](components/crops/plan-cta-hover.png) !["Sign up free" button focus-visible](components/crops/plan-cta-focus-visible.png) !["Sign up free" button pressed](components/crops/plan-cta-pressed.png)
 
 #### Alternative-comparison card
 A "… alternative" card under the pricing grid, same card grammar as the integration cards. Read as `compare-link-card` on the pricing page.
-States read on 2026-11-17T15:10:54.438Z (default); 2026-11-17T15:10:56.761Z (hover).
+States read on 2026-11-21T13:15:25.995Z (default); 2026-11-21T13:15:27.765Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 314.66 x 56; padding 16px; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 16/24 500, #111827 `light.root.foreground`; icon 16 x 16, #747170 `light.muted.foreground` |
-| hover | icon 16 x 16, #111827 `light.root.foreground` |
+| default | size 314.66 x 56; padding 16px; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 16/24 500, #111827; icon 16 x 16, #747170 |
+| hover | icon 16 x 16, #111827 |
 
 ![Alternative-comparison card default](components/crops/compare-link-card-default.png) ![Alternative-comparison card hover](components/crops/compare-link-card-hover.png)
 
@@ -382,22 +389,22 @@ The /support centre's search field (focused, never typed into) and the category 
 
 #### Support search input
 The "Search…" field at the top of /support. "focused" is the field clicked into — nothing is typed. Read as `support-search` on the support page.
-States read on 2026-11-17T15:11:08.608Z (default); 2026-11-17T15:11:11.236Z (focused); 2026-11-17T15:11:18.291Z (focus-visible).
+States read on 2026-11-21T13:15:38.166Z (default); 2026-11-21T13:15:39.421Z (focused); 2026-11-21T13:15:40.618Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 976 x 48; padding 4px 12px 4px 40px; border 1px solid #e4e4e7 `light.border.default`; radius 3.35544e+07px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827 `light.root.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #747170 `light.muted.foreground` |
-| focused, focus-visible | border 1px solid #ff6900 `light.border.ring`; shadow rgba(255, 105, 0, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+| default | size 976 x 48; padding 4px 12px 4px 40px; border 1px solid #e4e4e7; radius 3.35544e+07px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #747170 |
+| focused, focus-visible | border 1px solid #ff6900; shadow rgba(255, 105, 0, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
 
 ![Support search input default](components/crops/support-search-default.png) ![Support search input focused](components/crops/support-search-focused.png) ![Support search input focus-visible](components/crops/support-search-focus-visible.png)
 
 #### Support category card
 A category card on the support index ("Getting started" — heading + one line). Read as `support-category` on the support page.
-States read on 2026-11-17T15:11:34.808Z (default); 2026-11-17T15:11:37.472Z (hover).
+States read on 2026-11-21T13:15:41.396Z (default); 2026-11-21T13:15:43.147Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 480 x 172; padding 24px; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 20/28 500, #111827 `light.root.foreground`; icon 20 x 20, #111827 `light.root.foreground` |
+| default (same: hover) | size 480 x 172; padding 24px; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 20/28 500, #111827; icon 20 x 20, #111827 |
 
 ![Support category card default](components/crops/support-category-default.png) ![Support category card hover](components/crops/support-category-hover.png)
 
@@ -407,23 +414,23 @@ The free-tools layer, read on /tools/color-contrast-checker: the colour input (w
 
 #### Colour input
 The native colour swatch input on the contrast checker (input[type=color]) — measured at rest. Read as `tool-color-input` on the contrast-checker tool page.
-States read on 2026-11-17T16:34:08.514Z (default); 2026-11-17T16:34:09.907Z (focus-visible).
+States read on 2026-11-21T13:15:53.507Z (default); 2026-11-21T13:15:54.702Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; border 1px solid #e4e4e7 `light.border.default`; radius 10px; background #ffffff `light.card.default`; text Inter 16/24 400, #111827 `light.root.foreground`; placeholder #111827 `light.root.foreground` |
+| default | size 36 x 36; border 1px solid #e4e4e7; radius 10px; background #ffffff `light.card.default`; text Inter 16/24 400, #111827; placeholder #111827 |
 | focus-visible | outline 1px auto rgba(255, 105, 0, 0.5), offset 0px |
 
 ![Colour input default](components/crops/tool-color-input-default.png) ![Colour input focus-visible](components/crops/tool-color-input-focus-visible.png)
 
 #### Hex text input
 The hex value text field beside the colour input (#000000) — measured at rest; nothing is typed. Read as `tool-text-input` on the contrast-checker tool page.
-States read on 2026-11-17T16:34:10.846Z (default); 2026-11-17T16:34:12.356Z (focus-visible).
+States read on 2026-11-21T13:15:55.490Z (default); 2026-11-21T13:15:56.698Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 282 x 36; padding 4px 12px; border 1px solid #e4e4e7 `light.border.default`; radius 10px; background transparent; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text ui-monospace 14/20 400, #111827 `light.root.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #747170 `light.muted.foreground` |
-| focus-visible | border 1px solid #ff6900 `light.border.ring`; shadow rgba(255, 105, 0, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+| default | size 282 x 36; padding 4px 12px; border 1px solid #e4e4e7; radius 10px; background transparent; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text ui-monospace 14/20 400, #111827; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #747170 |
+| focus-visible | border 1px solid #ff6900; shadow rgba(255, 105, 0, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
 
 ![Hex text input default](components/crops/tool-text-input-default.png) ![Hex text input focus-visible](components/crops/tool-text-input-focus-visible.png)
 
@@ -433,21 +440,24 @@ The /contact page's email rows and copy-to-clipboard buttons — measured, never
 
 #### "Copy" icon button
 The copy button beside a published contact email — measured, never pressed (it writes to the clipboard). Read as `contact-copy` on the contact page.
-States read on 2026-11-17T15:12:08.753Z (default); 2026-11-17T15:12:10.724Z (hover); 2026-11-17T15:12:12.913Z (focus-visible); 2026-11-17T15:12:14.143Z (pressed).
+States read on 2026-11-21T13:16:07.059Z (default); 2026-11-21T13:16:08.855Z (hover); 2026-11-21T13:16:10.026Z (focus-visible); 2026-11-21T13:16:11.213Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 84 x 36; padding 8px 12px; border 1px solid #e4e4e7 `light.border.default`; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827 `light.root.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #111827 `light.root.foreground` |
-| hover | background #f6f3f2 `light.color.page`; text Inter 14/20 500, #18181b `light.accent.foreground`; icon 16 x 16, #18181b `light.accent.foreground` |
+| default | size 83.17 x 36; padding 8px 12px; border 1px solid #e4e4e7; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #111827 |
+| hover | background #f6f3f2; text Inter 14/20 500, #18181b; icon 16 x 16, #18181b |
 | focus-visible | border 1px solid rgba(17, 24, 39, 0.2); shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
-| pressed | background #f6f3f2 `light.color.page`; text Inter 14/20 500, #18181b `light.accent.foreground`; icon 16 x 16, #18181b `light.accent.foreground` |
+| pressed | background #f6f3f2; text Inter 14/20 500, #18181b; icon 16 x 16, #18181b |
 
 !["Copy" icon button default](components/crops/contact-copy-default.png) !["Copy" icon button hover](components/crops/contact-copy-hover.png) !["Copy" icon button focus-visible](components/crops/contact-copy-focus-visible.png) !["Copy" icon button pressed](components/crops/contact-copy-pressed.png)
 
 #### Contact channel row
 A contact row on /contact ("Sales, inquiries & partnerships" + the published hello@huddlekit.com). Read as `contact-row` on the contact page.
+Read on 2026-11-21T13:16:12.004Z.
 
-The saved state reads only hello@huddlekit.com (179x28), not the channel row. The picker now requires the channel name and the address together. Not remeasured: no live recapture.
+**Values (default).** size 672 x 62; padding 12px; border 1px solid rgba(228, 228, 231, 0.5); radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px; text Inter 18/28 500, #111827; icon 16 x 16, #111827.
+
+![Contact channel row default](components/crops/contact-row-default.png)
 
 ### Prose
 
@@ -455,38 +465,45 @@ The blog article layer on /blog/introducing-huddlekit: the h1, the meta row, bod
 
 #### Article title (h1)
 The post title on a blog article. Read as `prose-h1` on the blog article page.
-Read on 2026-11-17T15:12:26.102Z.
+Read on 2026-11-21T13:16:22.406Z.
 
-**Values (default).** size 634.66 x 48.39; background transparent; text Inter 44/48.4 500, #111827 `light.root.foreground`.
+**Values (default).** size 634.66 x 48.39; background transparent; text Inter 44/48.4 500, #111827.
 
 ![Article title (h1) default](components/crops/prose-h1-default.png)
 
 #### Article meta line
 The date / updated / read-time / author line under the title. Read as `prose-meta` on the blog article page.
-Read on 2026-11-17T15:12:28.311Z.
+Read on 2026-11-21T13:16:23.179Z.
 
-**Values (default).** size 274.66 x 20; background transparent; text Inter 14/20 500, #747170 `light.muted.foreground`.
+**Values (default).** size 274.66 x 20; background transparent; text Inter 14/20 500, #747170.
 
 ![Article meta line default](components/crops/prose-meta-default.png)
 
 #### Body paragraph
 A paragraph of article prose. Read as `prose-p` on the blog article page.
-Read on 2026-11-17T15:12:33.572Z.
+Read on 2026-11-21T13:16:23.972Z.
 
-**Values (default).** size 634.66 x 72; background transparent; text Inter 16/24 400, #747170 `light.muted.foreground`.
+**Values (default).** size 634.66 x 72; background transparent; text Inter 16/24 400, #747170.
 
 ![Body paragraph default](components/crops/prose-p-default.png)
 
 #### Prose link
 A body-text link inside the article. Read as `prose-link` on the blog article page.
+States read on 2026-11-21T13:16:24.734Z (default); 2026-11-21T13:16:26.451Z (hover); 2026-11-21T13:16:27.619Z (focus-visible).
 
-The saved states read the breadcrumb "Home" (40x20), not a link in the article. The selector is now article :is(p, li) a. Not remeasured: no live recapture.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 62.16 x 20; background transparent; text Inter 16/24 400, #111827; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | text Inter 16/24 400, rgba(234, 88, 13, 0.8) |
+| focus-visible | outline 1px auto rgba(255, 105, 0, 0.5), offset 1px; layers a.text-foreground.hover:text-primary/80 62.2x20.0 1px auto rgba(255, 105, 0, 0.5) offset 1px |
+
+![Prose link default](components/crops/prose-link-default.png) ![Prose link hover](components/crops/prose-link-hover.png) ![Prose link focus-visible](components/crops/prose-link-focus-visible.png)
 
 #### Breadcrumb
 The Home / Blog / … breadcrumb above the article. Read as `breadcrumb` on the blog article page.
-Read on 2026-11-17T15:12:47.390Z.
+Read on 2026-11-21T13:16:28.396Z.
 
-**Values (default).** size 634.66 x 20; background transparent; text Inter 14/20 500, #747170 `light.muted.foreground`; icon 14 x 14, #747170 `light.muted.foreground`.
+**Values (default).** size 634.66 x 20; background transparent; text Inter 14/20 500, #747170; icon 14 x 14, #747170.
 
 ![Breadcrumb default](components/crops/breadcrumb-default.png)
 
@@ -496,11 +513,11 @@ The /integrations grid's cards — measured, never followed.
 
 #### Integration page card
 A card on the /integrations index (Slack — icon, name, description). Read as `integration-grid-card` on the integrations page.
-States read on 2026-11-17T15:13:02.473Z (default); 2026-11-17T15:13:04.465Z (hover).
+States read on 2026-11-21T13:16:38.773Z (default); 2026-11-21T13:16:40.515Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 314.66 x 196; padding 24px; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 20/28 500, #111827 `light.root.foreground`; icon 20 x 20, #111827 `light.root.foreground` |
+| default (same: hover) | size 314.66 x 196; padding 24px; radius 16px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 20/28 500, #111827; icon 20 x 20, #111827 |
 
 ![Integration page card default](components/crops/integration-grid-card-default.png) ![Integration page card hover](components/crops/integration-grid-card-hover.png)
 
@@ -510,9 +527,9 @@ The /compare/pastel-alternative page's table-of-contents rail and checklist rows
 
 #### "Contents" rail
 The Contents navigation on a comparison page. Read as `compare-toc` on the compare page page.
-Read on 2026-11-17T15:13:23.572Z.
+Read on 2026-11-21T13:16:51.354Z.
 
-**Values (default).** size 293.33 x 12086.48; background transparent; text Inter 16/24 500, #111827 `light.root.foreground`; icon 16 x 16, #fff7ed `light.primary.foreground`; layers div.bg-card.rounded-md 293.3x304.0 #ffffff 10px; div.bg-card.rounded-lg 293.3x156.0 #ffffff transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px 12px; button.inline-flex.items-center 261.3x36.0 #ea580d transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, trans.
+**Values (default).** size 293.33 x 12038.11; background transparent; text Inter 16/24 500, #111827; icon 16 x 16, #fff7ed `light.primary.foreground`; layers div.bg-card.rounded-md 293.3x304.0 #ffffff 10px; div.bg-card.rounded-lg 293.3x156.0 #ffffff transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px 12px; button.inline-flex.items-center 261.3x36.0 #ea580d transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, trans.
 
 Child layers that carry the look: div 293.3x304 background #ffffff `light.card.default` radius 10px; div 293.3x156 background #ffffff `light.card.default` radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px; button 261.3x36 background #ea580d `light.primary.default` radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px.
 
@@ -520,8 +537,13 @@ Child layers that carry the look: div 293.3x304 background #ffffff `light.card.d
 
 #### Feature-check list row
 A checklist row in the comparison (a lucide check / badge icon + capability line). Read as `compare-check-item` on the compare page page.
+Read on 2026-11-21T13:16:52.338Z.
 
-The saved state reads the breadcrumb "Home", not a checklist row. The selector now requires a list item that holds an svg and a longer label. Not remeasured: no live recapture.
+**Values (default).** size 314.66 x 56; background transparent; text Inter 16/24 500, #111827; icon 16 x 16, #747170; layers a.group.bg-background 314.7x56.0 #ffffff transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px 16px.
+
+Child layers that carry the look: a 314.7x56 background #ffffff `light.card.default` radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px.
+
+![Feature-check list row default](components/crops/compare-check-item-default.png)
 
 ### App login
 
@@ -529,74 +551,74 @@ app.huddlekit.com/login — the only surface the app serves anonymously: the log
 
 #### Sign-in panel
 The centred "Sign in to Huddlekit" panel: wordmark, heading, the Google and email buttons, and the privacy/terms line. Read as `app-login-card` on the app login page.
-States read on 2026-11-17T16:30:38.411Z (default); 2026-11-17T16:30:46.279Z (dark).
+States read on 2026-11-21T13:17:04.109Z (default); 2026-11-21T13:17:10.716Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 320 x 168; background transparent; text inter 18/28 600, #111827 `light.root.foreground`; icon 16 x 16, #fff7ed `light.primary.foreground`; layers button.inline-flex.items-center 320.0x40.0 #ea580d transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px 12px; button.inline-flex.items-center 320.0x40.0 #ede9e7 T:1 |
-| dark | text inter 18/28 600, #e3e0df; layers button.inline-flex.items-center 320.0x40.0 #ea580d transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px 12px; button.inline-flex.items-center 320.0x40.0 #2a2625 T:1 |
+| default | size 320 x 168; background transparent; text inter 18/28 500, #181715 `light.root.foreground`; icon 16 x 16, #fff7ed `light.primary.foreground`; layers button.inline-flex.items-center 320.0x40.0 #ea580d transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px 12px; button.inline-flex.items-center 320.0x40.0 #eceae7 T:1 |
+| dark | text inter 18/28 500, #eeeceb; layers button.inline-flex.items-center 320.0x40.0 #ea580d transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px 12px; button.inline-flex.items-center 320.0x40.0 #292724 T:1 |
 
-Child layers that carry the look: button 320x40 background #ea580d `light.primary.default` radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; button 320x40 background #ede9e7 `light.secondary.default` border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px.
+Child layers that carry the look: button 320x40 background #ea580d `light.primary.default` radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px; button 320x40 background #eceae7 `light.secondary.default` border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px.
 
 ![Sign-in panel default](components/crops/app-login-card-default.png) ![Sign-in panel dark](components/crops/app-login-card-dark.png)
 
 #### "Continue with Google" button
 The primary OAuth button (bg-primary). Never pressed — it would leave for Google sign-in. Read as `app-google-button` on the app login page.
-States read on 2026-11-17T16:30:52.663Z (default); 2026-11-17T16:30:54.479Z (hover); 2026-11-17T16:30:55.725Z (focus-visible); 2026-11-17T16:30:56.964Z (pressed); 2026-11-17T16:31:03.284Z (dark).
+States read on 2026-11-21T13:17:17.546Z (default); 2026-11-21T13:17:19.412Z (hover); 2026-11-21T13:17:20.768Z (focus-visible); 2026-11-21T13:17:22.029Z (pressed); 2026-11-21T13:17:28.791Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: dark) | size 320 x 40; padding 0px 16px; radius 12px; background #ea580d `light.primary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; text inter 14/20 500, #fff7ed `light.primary.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #fff7ed `light.primary.foreground` |
+| default (same: dark) | size 320 x 40; padding 0px 16px; radius 12px; background #ea580d `light.primary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px; text inter 14/20 500, #fff7ed `light.primary.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #fff7ed `light.primary.foreground` |
 | hover | background rgba(234, 88, 13, 0.9) |
-| focus-visible | shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px |
+| focus-visible | shadow rgba(234, 88, 13, 0.5) 0px 0px 0px 3px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px |
 | pressed | background rgba(234, 88, 13, 0.9) |
 
 !["Continue with Google" button default](components/crops/app-google-button-default.png) !["Continue with Google" button hover](components/crops/app-google-button-hover.png) !["Continue with Google" button focus-visible](components/crops/app-google-button-focus-visible.png) !["Continue with Google" button pressed](components/crops/app-google-button-pressed.png) !["Continue with Google" button dark](components/crops/app-google-button-dark.png)
 
 #### "Continue with email" button
 The secondary sign-in button (bg-secondary). "pressed" is the CDP-forced pseudo-state only; the real press is the email-reveal spec below. Read as `app-email-button` on the app login page.
-States read on 2026-11-17T16:31:09.632Z (default); 2026-11-17T16:31:11.570Z (hover); 2026-11-17T16:31:12.842Z (focus-visible); 2026-11-17T16:31:14.100Z (pressed); 2026-11-17T16:31:20.412Z (dark).
+States read on 2026-11-21T13:17:35.434Z (default); 2026-11-21T13:17:37.302Z (hover); 2026-11-21T13:17:38.472Z (focus-visible); 2026-11-21T13:17:39.632Z (pressed); 2026-11-21T13:17:46.436Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 320 x 40; padding 0px 16px; border 1px solid transparent; radius 12px; background #ede9e7 `light.secondary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; text inter 14/20 500, #18181b `light.accent.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #18181b `light.accent.foreground` |
-| hover | background rgba(237, 233, 231, 0.8) |
-| focus-visible | border 1px solid rgba(17, 24, 39, 0.2); shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px |
-| pressed | background rgba(237, 233, 231, 0.8) |
-| dark | background #2a2625; text inter 14/20 500, #fafafa; icon 16 x 16, #fafafa |
+| default | size 320 x 40; padding 0px 16px; border 1px solid transparent; radius 12px; background #eceae7 `light.secondary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px; text inter 14/20 500, #181715 `light.root.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #181715 `light.root.foreground` |
+| hover | background rgba(236, 234, 231, 0.8) |
+| focus-visible | border 1px solid #ea580d `light.primary.default`; shadow rgba(234, 88, 13, 0.5) 0px 0px 0px 3px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px |
+| pressed | background rgba(236, 234, 231, 0.8) |
+| dark | background #292724; shadow rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px; text inter 14/20 500, #eeeceb; icon 16 x 16, #eeeceb |
 
 !["Continue with email" button default](components/crops/app-email-button-default.png) !["Continue with email" button hover](components/crops/app-email-button-hover.png) !["Continue with email" button focus-visible](components/crops/app-email-button-focus-visible.png) !["Continue with email" button pressed](components/crops/app-email-button-pressed.png) !["Continue with email" button dark](components/crops/app-email-button-dark.png)
 
 #### Email input
 The "Enter your email" field the Continue-with-email press reveals — a local state change; nothing is typed and Continue is never pressed. Read as `app-email-input` on the app login page.
-States read on 2026-11-17T16:31:28.305Z (default); 2026-11-17T16:31:29.952Z (focused); 2026-11-17T16:31:37.839Z (dark).
+States read on 2026-11-21T13:17:55.408Z (default); 2026-11-21T13:17:56.584Z (focused); 2026-11-21T13:18:04.449Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 320 x 36; padding 4px 12px; border 1px solid #e4e4e7 `light.border.default`; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text inter 14/20 400, #111827 `light.root.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #747170 `light.muted.foreground` |
-| focused | border 1px solid #ff6900 `light.border.ring`; shadow rgba(255, 105, 0, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
-| dark | border 1px solid rgba(255, 255, 255, 0.16); background rgba(255, 255, 255, 0.048); text inter 14/20 400, #e3e0df; placeholder #a3a09f |
+| default | size 320 x 36; padding 4px 12px; border 1px solid #e6e4e2 `light.border.default`; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 1px 0px; text inter 14/20 400, #181715 `light.root.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #74716e `light.muted.foreground` |
+| focused | border 1px solid #ea580d `light.primary.default`; shadow rgba(234, 88, 13, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px |
+| dark | border 1px solid rgba(255, 255, 255, 0.16); background rgba(255, 255, 255, 0.048); text inter 14/20 400, #eeeceb; placeholder #a3a09e |
 
 ![Email input default](components/crops/app-email-input-default.png) ![Email input focused](components/crops/app-email-input-focused.png) ![Email input dark](components/crops/app-email-input-dark.png)
 
 #### Email "Continue" submit
 The primary submit under the email field — measured, never pressed (it would send a sign-in code). Read as `app-continue-button` on the app login page.
-States read on 2026-11-17T16:31:46.471Z (default); 2026-11-17T16:31:48.244Z (hover); 2026-11-17T16:31:49.495Z (focus-visible).
+States read on 2026-11-21T13:18:12.202Z (default); 2026-11-21T13:18:13.945Z (hover); 2026-11-21T13:18:15.242Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 320 x 40; padding 0px 24px; radius 12px; background #ea580d `light.primary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; text inter 14/20 500, #fff7ed `light.primary.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.5 |
+| default (same: hover, focus-visible) | size 320 x 40; padding 0px 24px; radius 12px; background #ea580d `light.primary.default`; shadow rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px; text inter 14/20 500, #fff7ed `light.primary.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.5 |
 
 ![Email "Continue" submit default](components/crops/app-continue-button-default.png) ![Email "Continue" submit hover](components/crops/app-continue-button-hover.png) ![Email "Continue" submit focus-visible](components/crops/app-continue-button-focus-visible.png)
 
 #### "Back to login" button
 The ghost return control under the email form. Read as `app-back-button` on the app login page.
-States read on 2026-11-17T16:31:55.549Z (default); 2026-11-17T16:31:57.338Z (hover).
+States read on 2026-11-21T13:18:21.199Z (default); 2026-11-21T13:18:22.916Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 320 x 40; padding 0px 16px; border 1px solid transparent; radius 12px; background transparent; text inter 14/20 500, #111827 `light.root.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #111827 `light.root.foreground` |
-| hover | background #f6f3f2 `light.color.page`; text inter 14/20 500, #18181b `light.accent.foreground`; icon 16 x 16, #18181b `light.accent.foreground` |
+| default | size 320 x 40; padding 0px 16px; border 1px solid transparent; radius 12px; background transparent; text inter 14/20 500, #181715 `light.root.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #181715 `light.root.foreground` |
+| hover | background #f5f3f2 `light.color.page` |
 
 !["Back to login" button default](components/crops/app-back-button-default.png) !["Back to login" button hover](components/crops/app-back-button-hover.png)
 
@@ -606,21 +628,21 @@ The 390px chrome: the compact header, the 'Toggle menu' button and the nav drawe
 
 #### Mobile header
 The header at 390px: logo, the "Toggle menu" button and the "Get started" link. Read as `m-header` on the home page.
-Read on 2026-11-17T16:34:23.406Z.
+Read on 2026-11-21T13:18:33.510Z.
 
-**Values (default).** size 358 x 64; background transparent; text Inter 16/24 400, #111827 `light.root.foreground`; icon 104 x 28, #111827 `light.root.foreground`; layers a.inline-flex.items-center 0.0x0.0 #ede9e7 T:1px solid / R:1px solid / B:1px solid / L:1px solid transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px 12px; button.i.
+**Values (default).** size 358 x 64; background transparent; text Inter 16/24 400, #111827; icon 104 x 28, #111827; layers a.inline-flex.items-center 0.0x0.0 #ede9e7 T:1px solid / R:1px solid / B:1px solid / L:1px solid transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px 12px; button.i.
 
-Child layers that carry the look: a 0x0 background #ede9e7 `light.secondary.default` border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; button 36x36 background #ffffff `light.card.default` border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px.
+Child layers that carry the look: a 0x0 background #ede9e7 border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px; button 36x36 background #ffffff `light.card.default` border 1px solid radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px.
 
 ![Mobile header default](components/crops/m-header-default.png)
 
 #### "Toggle menu" button
 The hamburger that opens the phone nav. Read as `m-menu-button` on the home page.
-States read on 2026-11-17T16:34:24.451Z (default); 2026-11-17T16:34:26.497Z (hover); 2026-11-17T16:34:27.877Z (focus-visible).
+States read on 2026-11-21T13:18:34.283Z (default); 2026-11-21T13:18:35.998Z (hover); 2026-11-21T13:18:37.186Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 36 x 36; border 1px solid #e4e4e7 `light.border.default`; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827 `light.root.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #111827 `light.root.foreground` |
+| default (same: hover) | size 36 x 36; border 1px solid #e4e4e7; radius 12px; background #ffffff `light.card.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 500, #111827; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #111827 |
 | focus-visible | border 1px solid rgba(17, 24, 39, 0.2); shadow rgba(17, 24, 39, 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
 
 !["Toggle menu" button default](components/crops/m-menu-button-default.png) !["Toggle menu" button hover](components/crops/m-menu-button-hover.png) !["Toggle menu" button focus-visible](components/crops/m-menu-button-focus-visible.png)
@@ -740,7 +762,7 @@ The signed-in product was never entered: everything on **app.huddlekit.com** pas
 - **The fields were never typed into** — the support search, the contrast checker's inputs and the login's email field were focused for their focus look; nothing was entered, so validation and suggestion states are uncaptured.
 - **The login's 'Continue' and 'Continue with Google'** were never pressed (they submit); the email form's resting open state is captured, its submit states are not.
 - **Copy-to-clipboard and 'Get started'** — measured, never pressed (clipboard and sign-up flows).
-- **The consent banner's 'Accept'** was never pressed; 'Decline' was pressed once to dismiss the banner for the remaining shots.
+- **The consent banner's Decline and Accept** were not pressed on 2026-11-21. Later shots hide the banner in the stylesheet, which is not a consent answer.
 
 ### Themes
 

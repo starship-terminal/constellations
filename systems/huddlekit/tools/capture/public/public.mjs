@@ -14,12 +14,14 @@
 // page taller than one GPU texture is saved as name.partN.png tiles, which
 // quantize.py stitches back together; an unbounded page truncates at 8 chunks
 // and the log records the boundary. Nothing is sent, typed, searched or
-// signed into: the only presses are dialog dismissals and local UI toggles —
-// the consent banner's Decline, the nav's hover-open Solutions/Resources
-// menus, a FAQ accordion, the home feature tabs, the pricing billing
-// switches, "Show more testimonials", the phone's "Toggle menu" button and
-// the login's "Continue with email" (the reveal itself is local; the email
-// field is never filled and Continue is never pressed).
+// signed into. Cookie Decline and Accept are not pressed. hideConsent() hides
+// the banner in the stylesheet, which is not a consent answer. The presses
+// that do happen are local UI toggles: the nav's hover-open Solutions/Resources
+// menus, the home feature tabs, the pricing billing switches, "Show more
+// testimonials", the phone's "Toggle menu" button and the login's "Continue
+// with email" (the reveal itself is local; the email field is never filled
+// and Continue is never pressed). Homepage FAQ rows are summary elements.
+// The accordion opener looks for main button[aria-expanded] and misses them.
 import fs from 'fs';
 import os from 'os';
 import path from 'path';

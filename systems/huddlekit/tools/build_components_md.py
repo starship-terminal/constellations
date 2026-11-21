@@ -300,7 +300,7 @@ PAGE_NAME = {"/": "home", "/pricing": "pricing", "/support": "support",
              "/login": "app login"}
 
 GROUP_INTRO = {
-    "Consent": "The cookie-consent banner every first visit paints: the banner card and its Decline / Accept buttons — Decline was pressed once to dismiss it, Accept measured but never pressed.",
+    "Consent": "The cookie-consent banner every first visit paints: the banner card and its Decline / Accept buttons. Neither button was pressed on 2026-11-21. Later shots hide the banner in the stylesheet, which is not a consent answer.",
     "Chrome": "The marketing chrome every huddlekit.com page carries: the announcement bar, the sticky header (wordmark, Features / Solutions / Resources / Pricing links, Sign in and 'Get started'), the hover-open nav menus and their surface, the call-to-action buttons, the footer and the cookie-settings control that re-opens the banner.",
     "Home": "The landing page's own layer: the feature tablist, the integration cards, the dark MCP and testimonial panels (the site's nested .dark surfaces, measured at rest), the 'Show more' testimonials toggle and the FAQ accordion.",
     "Pricing": "The /pricing page: the plan cards, the monthly/annual billing switch, the per-plan call-to-action buttons and the compare-alternatives link cards.",
@@ -384,7 +384,7 @@ if idx.exists():
 
 W("# Huddlekit components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Read from huddlekit.com and app.huddlekit.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, searched or submitted; the only presses were local UI toggles the pages' own chrome provides — the consent banner's Decline, the nav's hover-open menus, FAQ accordions, the billing switch, the feature tabs, the testimonials 'Show more', the login's 'Continue with email' reveal and the phone's menu button; every link was measured, never followed.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Read from huddlekit.com and app.huddlekit.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, searched or submitted. Cookie Decline and Accept were not pressed. The banner was hidden in the stylesheet for later shots, which is not a consent answer. The presses that did happen were local UI toggles: the nav's hover-open menus, the billing switch, the feature tabs, the testimonials 'Show more', the login's 'Continue with email' reveal (the field stayed empty and Continue was not submitted) and the phone's menu button. Homepage FAQ rows are summary elements. The accordion opener looked for main button[aria-expanded] and did not find one, so the open FAQ state was not re-shot on this pass. Every link was measured, never followed.")
 W()
 W("**Where this was read.** Two public surfaces carry the system: huddlekit.com itself — the signed-out marketing site (home, features, solutions, pricing, integrations, compare, MCP, manifesto, blog, support, tools, contact, legal) — and app.huddlekit.com/login, the one surface the app serves anonymously. The marketing site paints light only; its `.dark` rules re-point the same custom properties inside nested dark panels (the footer, the dark testimonials, the MCP card), measured as their own components. The app paints `html.dark` under prefers-color-scheme — the login's `dark` states are measured on that painted dark surface. Everything past /login redirects an anonymous visitor back to it; try./demo./status./docs./help. hosts and app.huddlekit.io do not resolve. All of those are boundaries listed under Gaps, not captures.")
 W()
@@ -410,9 +410,9 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Consent banner", "home, app login, phone home", "the first-visit banner's own presence; 'Decline' pressed once to dismiss it, 'Accept' never pressed", "[home-light-consent](screenshots/home-light-consent.png), [app-login-light-consent](screenshots/app-login-light-consent.png), [mobile-home-light-consent](screenshots/mobile-home-light-consent.png)"),
+    ("Consent banner", "home, app login, phone home", "the first-visit banner's own presence; Decline and Accept were not pressed. Later shots hide the banner in the stylesheet", "[home-light-consent](screenshots/home-light-consent.png), [app-login-light-consent](screenshots/app-login-light-consent.png), [mobile-home-light-consent](screenshots/mobile-home-light-consent.png)"),
     ("Nav menus", "home header", "hovering the header's own 'Solutions' / 'Resources' buttons — the menu surface opened, captured, left", "[home-light-menu-solutions](screenshots/home-light-menu-solutions.png), [home-light-menu-resources](screenshots/home-light-menu-resources.png)"),
-    ("FAQ accordion", "home, pricing", "a question row's own press — the answer expanded", "[home-light-faq-open](screenshots/home-light-faq-open.png), [pricing-light-faq-open](screenshots/pricing-light-faq-open.png)"),
+    ("FAQ accordion", "home, pricing", "not re-opened on 2026-11-21. Homepage rows are summary elements; the opener looked for main button[aria-expanded]. The files below are the 2026-11-17 shots", "[home-light-faq-open](screenshots/home-light-faq-open.png), [pricing-light-faq-open](screenshots/pricing-light-faq-open.png)"),
     ("Feature tabs", "home", "a tab's own activation — a local UI toggle", "[home-light-feature-tab](screenshots/home-light-feature-tab.png)"),
     ("Testimonials 'Show more'", "home", "the toggle's own press — the hidden testimonial cards expanded", "[home-light-testimonials-open](screenshots/home-light-testimonials-open.png)"),
     ("Billing switch", "pricing", "the monthly/annual switch's own press — a local UI toggle", "[pricing-light-billing-toggle](screenshots/pricing-light-billing-toggle.png)"),
@@ -621,7 +621,7 @@ W("- **These lookups matched the wrong node and are marked missing, not republis
 W("- **The fields were never typed into** — the support search, the contrast checker's inputs and the login's email field were focused for their focus look; nothing was entered, so validation and suggestion states are uncaptured.")
 W("- **The login's 'Continue' and 'Continue with Google'** were never pressed (they submit); the email form's resting open state is captured, its submit states are not.")
 W("- **Copy-to-clipboard and 'Get started'** — measured, never pressed (clipboard and sign-up flows).")
-W("- **The consent banner's 'Accept'** was never pressed; 'Decline' was pressed once to dismiss the banner for the remaining shots.")
+W("- **The consent banner's Decline and Accept** were not pressed on 2026-11-21. Later shots hide the banner in the stylesheet, which is not a consent answer.")
 W()
 W("### Themes")
 W()

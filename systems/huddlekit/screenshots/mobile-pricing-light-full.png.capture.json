@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-17T14:50:46.139Z",
+ "capturedAt": "2026-11-21T13:04:40.314Z",
  "screenshot": "mobile-pricing-light-full.png",
  "sanitizedSourceUrl": "https://huddlekit.com/pricing",
  "requested": {
@@ -34,7 +34,7 @@
   },
   "documentSize": {
    "width": 390,
-   "height": 7713
+   "height": 7689
   },
   "scroll": {
    "x": 0,
@@ -48,18 +48,19 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 7713
-  }
+   "height": 7689
+  },
+  "intendedHeight": 7689
  },
  "png": {
   "width": 390,
-  "height": 7713
+  "height": 7689
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 390,
-   "height": 7713
+   "height": 7689
   },
   "basis": "stitchedParts"
  },
@@ -71,6 +72,7 @@
   "status": "unverified",
   "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
  },
+ "intendedHeight": 7689,
  "stitchedFrom": [
   "mobile-pricing-light-full.part0.png",
   "mobile-pricing-light-full.part1.png"
@@ -86,7 +88,7 @@
    "x": 0,
    "y": 7000,
    "width": 390,
-   "height": 713
+   "height": 689
   }
  ]
 }

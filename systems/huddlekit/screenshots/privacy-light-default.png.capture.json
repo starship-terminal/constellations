@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:49:24.064Z",
+  "capturedAt": "2026-11-21T13:03:43.401Z",
   "screenshot": "privacy-light-default.png",
   "sanitizedSourceUrl": "https://huddlekit.com/privacy",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 7448
+      "height": 7280
     },
     "scroll": {
       "x": 0,

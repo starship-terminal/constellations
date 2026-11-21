@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:50:09.845Z",
+  "capturedAt": "2026-11-21T12:50:29.356Z",
   "screenshot": "mobile-home-light-consent.png",
   "sanitizedSourceUrl": "https://huddlekit.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 12546
+      "height": 12550
     },
     "scroll": {
       "x": 0,

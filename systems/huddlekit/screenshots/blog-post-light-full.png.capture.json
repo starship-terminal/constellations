@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:44:58.582Z",
+  "capturedAt": "2026-11-21T13:05:31.599Z",
   "screenshot": "blog-post-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/blog/introducing-huddlekit",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 3057
+      "height": 3033
     },
     "scroll": {
       "x": 0,
@@ -44,17 +44,20 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 3033,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,
-    "height": 3057
+    "height": 3033
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 3057
+      "height": 3033
     },
     "basis": "fullPage"
   },

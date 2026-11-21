@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-21T12:49:07.711Z",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1,
+    "url": "https://app.huddlekit.com/login",
+    "state": "login wall, stopped"
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "url": "https://app.huddlekit.com/login",
+    "title": "Huddlekit"
+  },
+  "note": "site-tree state, signed out, no form submitted"
+}

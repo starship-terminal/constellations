@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:46:03.519Z",
+  "capturedAt": "2026-11-21T13:06:34.339Z",
   "screenshot": "tool-contrast-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/tools/color-contrast-checker",
   "requested": {
@@ -44,7 +44,10 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 3648,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,

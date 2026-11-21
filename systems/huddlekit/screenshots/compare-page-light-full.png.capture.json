@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:47:16.480Z",
+  "capturedAt": "2026-11-21T13:01:52.898Z",
   "screenshot": "compare-page-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/compare/pastel-alternative",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 13913
+      "height": 13865
     },
     "scroll": {
       "x": 0,
@@ -44,17 +44,20 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 13865,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,
-    "height": 13913
+    "height": 13865
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 13913
+      "height": 13865
     },
     "basis": "fullPage"
   },

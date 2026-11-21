@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:50:38.935Z",
+  "capturedAt": "2026-11-21T13:04:33.385Z",
   "screenshot": "mobile-pricing-light-default.png",
   "sanitizedSourceUrl": "https://huddlekit.com/pricing",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 7713
+      "height": 7689
     },
     "scroll": {
       "x": 0,

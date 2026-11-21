@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:47:44.387Z",
+  "capturedAt": "2026-11-21T13:02:19.332Z",
   "screenshot": "case-study-light-default.png",
   "sanitizedSourceUrl": "https://huddlekit.com/customers/leadfront",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4415
+      "height": 4391
     },
     "scroll": {
       "x": 0,

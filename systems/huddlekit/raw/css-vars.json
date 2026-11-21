@@ -1,26 +1,26 @@
 {
- "readAt": "2026-11-17",
+ "readAt": "2026-11-21",
  "source": "the stylesheet bodies read during live signed-out loads of huddlekit.com / and app.huddlekit.com /login (the linked /_next/static/css/*.css bundles from network responses plus any inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets and the live pages' own html/body classes (the next/font loader scopes its --font-* variables to generated classes) under <html> (the painted light default) and again under <html class=\"dark\"> — the .dark class the app applies under prefers-color-scheme and the marketing site's nested dark panels carry — each name applied to a real typed property so the oklch() declarations and var()/oklch-from-var() chains resolve the way a component consumes them, at 1440 x 900",
  "sheets": [
   "https://huddlekit.com/_next/static/css/d4f5b001c4d13393.css (95802 bytes)",
   "https://app.huddlekit.com/_next/static/css/d878b2f752a2173c.css (2862 bytes)",
-  "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css (186597 bytes)",
+  "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css (194309 bytes)",
   "inline-0 (16719 bytes)"
  ],
  "counts": {
-  "rules": 558,
+  "rules": 553,
   "fonts": 25,
   "names": {
-   "theme": 153,
-   "app": 10,
-   "skins": 36,
+   "theme": 143,
+   "app": 51,
+   "skins": 40,
    "vendor": 44,
    "utility": 4,
    "tailwind": 98
   },
   "bySelector": {
    "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) *, ::backdrop, ::after, ::before": 170,
-   "[theme] @layer theme :host, :root": 152,
+   "[theme] @layer theme :host, :root": 144,
    "[tailwind] @layer utilities .-translate-y-1\\/2": 2,
    "[tailwind] @layer utilities .-translate-y-\\[0\\.5px\\]": 1,
    "[tailwind] @layer utilities .translate-y-\\[calc\\(-50\\%_-_2px\\)\\]": 2,
@@ -31,7 +31,7 @@
    "[tailwind] @layer utilities :where(.space-y-3 > :not(:last-child))": 2,
    "[tailwind] @layer utilities :where(.space-y-4 > :not(:last-child))": 2,
    "[tailwind] @layer utilities :where(.space-y-6 > :not(:last-child))": 2,
-   "[tailwind] @layer utilities :where(.space-y-8 > :not(:last-child))": 2,
+   "[tailwind] @layer utilities :where(.space-y-8 > :not(:last-child))": 1,
    "[tailwind] @layer utilities :where(.-space-x-2 > :not(:last-child))": 1,
    "[tailwind] @layer utilities :where(.space-x-1 > :not(:last-child))": 2,
    "[tailwind] @layer utilities :where(.space-x-2 > :not(:last-child))": 2,
@@ -71,7 +71,7 @@
    "[tailwind] @layer utilities .heading-3": 3,
    "[tailwind] @layer utilities .heading-4": 2,
    "[tailwind] @layer utilities .display-1": 3,
-   "[tailwind] @layer utilities .leading-5": 1,
+   "[tailwind] @layer utilities .leading-5": 2,
    "[tailwind] @layer utilities .leading-\\[1\\.2\\]": 1,
    "[tailwind] @layer utilities .leading-none": 2,
    "[tailwind] @layer utilities .leading-relaxed": 1,
@@ -86,7 +86,7 @@
    "[tailwind] @layer utilities .tracking-widest": 2,
    "[tailwind] @layer utilities .tabular-nums": 2,
    "[tailwind] @layer utilities .shadow": 2,
-   "[tailwind] @layer utilities .shadow-\\[inset_0_1px_0_0_\\#ffffff40\\,inset_0_6px_9px_-7px_\\#ffffff30\\,0_1px_2px_0_\\#0000001f\\,0_2px_5px_-1px_\\#00000017\\]": 2,
+   "[tailwind] @layer utilities .shadow-\\[inset_0_1px_0_0_\\#ffffff40\\,inset_0_6px_9px_-7px_\\#ffffff30\\,0_1px_2px_0_\\#0000001f\\,0_2px_5px_-1px_\\#00000017\\]": 1,
    "[tailwind] @layer utilities .shadow-lg": 2,
    "[tailwind] @layer utilities .shadow-md": 2,
    "[tailwind] @layer utilities .shadow-sm": 2,
@@ -127,12 +127,12 @@
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .group-data-\\[focused\\=true\\]\\/day\\:ring-ring\\/50:is(:where(.group\\/day)[data-focused=\"true\"] *)": 2,
    "[tailwind] @layer utilities .file\\:font-medium::file-selector-button": 2,
    "[tailwind] @layer utilities @media (hover: hover) .hover\\:ring-4:hover": 1,
-   "[tailwind] @layer utilities .focus\\:ring-2:focus": 2,
+   "[tailwind] @layer utilities .focus\\:ring-2:focus": 1,
    "[tailwind] @layer utilities .focus\\:ring-primary:focus": 1,
-   "[tailwind] @layer utilities .focus\\:ring-offset-2:focus": 4,
+   "[tailwind] @layer utilities .focus\\:ring-offset-2:focus": 2,
    "[tailwind] @layer utilities .focus\\:outline-none:focus": 2,
    "[tailwind] @layer utilities .focus-visible\\:ring-4:focus-visible": 1,
-   "[tailwind] @layer utilities .focus-visible\\:ring-\\[1px\\]:focus-visible": 2,
+   "[tailwind] @layer utilities .focus-visible\\:ring-\\[1px\\]:focus-visible": 1,
    "[tailwind] @layer utilities .focus-visible\\:ring-\\[3px\\]:focus-visible": 2,
    "[tailwind] @layer utilities .focus-visible\\:ring-destructive\\/20:focus-visible": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .focus-visible\\:ring-destructive\\/20:focus-visible": 2,
@@ -173,9 +173,9 @@
    "[tailwind] @layer utilities .dark\\:aria-invalid\\:ring-destructive\\/40:is(.dark *)[aria-invalid=\"true\"]": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:aria-invalid\\:ring-destructive\\/40:is(.dark *)[aria-invalid=\"true\"]": 2,
    "[tailwind] @layer utilities .\\[\\&\\>p\\]\\:font-medium > p": 1,
-   "[theme] :root": 75,
+   "[theme] :root": 38,
    "[theme] @media (min-width: 48rem) :root": 1,
-   "[skins] .dark": 70,
+   "[skins] .dark": 69,
    "[theme] .__variable_f4a8f8": 1,
    "[theme] .__variable_8c25df": 1,
    "[tailwind] @layer utilities .-translate-x-1\\/2": 1,
@@ -227,8 +227,8 @@
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .from-foreground\\/50": 1,
    "[tailwind] @layer utilities .from-indigo-400\\/30": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .from-indigo-400\\/30": 1,
-   "[tailwind] @layer utilities .from-indigo-500\\/12": 2,
-   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .from-indigo-500\\/12": 1,
+   "[tailwind] @layer utilities .from-inspect\\/12": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .from-inspect\\/12": 1,
    "[tailwind] @layer utilities .from-primary\\/5": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .from-primary\\/5": 1,
    "[tailwind] @layer utilities .from-primary\\/12": 2,
@@ -242,8 +242,8 @@
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .to-amber-400\\/30": 1,
    "[tailwind] @layer utilities .to-foreground\\/4": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .to-foreground\\/4": 1,
-   "[tailwind] @layer utilities .to-indigo-500\\/8": 2,
-   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .to-indigo-500\\/8": 1,
+   "[tailwind] @layer utilities .to-inspect\\/8": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .to-inspect\\/8": 1,
    "[tailwind] @layer utilities .to-primary\\/8": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .to-primary\\/8": 1,
    "[tailwind] @layer utilities .to-primary\\/30": 2,
@@ -262,26 +262,28 @@
    "[tailwind] @layer utilities .proportional-nums": 1,
    "[tailwind] @layer utilities .slashed-zero": 1,
    "[tailwind] @layer utilities .stacked-fractions": 1,
-   "[tailwind] @layer utilities .shadow-\\[0_0_0_1px_hsl\\(var\\(--sidebar-border\\)\\)\\]": 1,
    "[tailwind] @layer utilities .shadow-\\[0_0_0_1px_rgb\\(0_0_0\\/0\\.3\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_0_0_1px_var\\(--border\\)\\]": 1,
    "[tailwind] @layer utilities .shadow-\\[0_0_0_2px_white\\]": 1,
    "[tailwind] @layer utilities .shadow-\\[0_0_0_4px_white\\,0_0_20px_rgba\\(255\\,138\\,76\\,0\\.6\\)\\]": 1,
    "[tailwind] @layer utilities .shadow-\\[0px_4px_12px_rgba\\(0\\,0\\,0\\,0\\.1\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[inset_0_1px_0_0_\\#ffffff40\\,inset_0_6px_9px_-7px_\\#ffffff30\\,0_1px_1px_0_\\#0000001f\\,0_1px_3px_-1px_\\#00000017\\]": 1,
    "[tailwind] @layer utilities .shadow-none": 1,
    "[tailwind] @layer utilities .shadow-xl": 1,
    "[tailwind] @layer utilities .ring-1": 1,
+   "[tailwind] @layer utilities .ring-\\[1\\.5px\\]": 1,
    "[tailwind] @layer utilities .shadow-primary\\/40": 1,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .shadow-primary\\/40": 1,
    "[tailwind] @layer utilities .ring-border": 1,
    "[tailwind] @layer utilities .ring-current": 1,
    "[tailwind] @layer utilities .ring-foreground, .ring-foreground\\/20": 1,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .ring-foreground\\/20": 1,
-   "[tailwind] @layer utilities .ring-muted": 1,
    "[tailwind] @layer utilities .ring-primary, .ring-primary\\/15": 1,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .ring-primary\\/15": 1,
    "[tailwind] @layer utilities .ring-primary\\/20": 1,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .ring-primary\\/20": 1,
-   "[tailwind] @layer utilities .ring-sidebar-ring": 1,
+   "[tailwind] @layer utilities .ring-sidebar-ring\\/50": 1,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .ring-sidebar-ring\\/50": 1,
    "[tailwind] @layer utilities .ring-white\\/50": 1,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .ring-white\\/50": 1,
    "[tailwind] @layer utilities .ring-offset-2": 2,
@@ -313,52 +315,47 @@
    "[tailwind] @layer utilities :where(.divide-x-reverse > :not(:last-child))": 1,
    "[tailwind] @layer utilities .fade-out": 1,
    "[tailwind] @layer utilities .ring-inset": 1,
-   "[tailwind] @layer utilities .slide-in-from-bottom-2": 1,
    "[tailwind] @layer utilities .slide-in-from-top-2": 1,
    "[tailwind] @layer utilities .zoom-in": 1,
    "[tailwind] @layer utilities .zoom-out": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:-translate-x-5:is(:where(.group):hover *)": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:translate-x-5:is(:where(.group):hover *)": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:-translate-y-0\\.5:is(:where(.group):hover *)": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:duration-200:is(:where(.group):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:-translate-x-5:is(:where(.group):hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"])) *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:translate-x-5:is(:where(.group):hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"])) *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:-translate-y-0\\.5:is(:where(.group):hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"])) *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:duration-200:is(:where(.group):hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"])) *)": 1,
    "[tailwind] @layer utilities .group-data-\\[collapsible\\=offcanvas\\]\\:translate-x-0:is(:where(.group)[data-collapsible=\"offcanvas\"] *)": 1,
    "[tailwind] @layer utilities .group-data-\\[variant\\=floating\\]\\:shadow-sm:is(:where(.group)[data-variant=\"floating\"] *)": 1,
    "[tailwind] @layer utilities .group-data-\\[variant\\=inset\\]\\:border-none:is(:where(.group)[data-variant=\"inset\"] *)": 1,
    "[tailwind] @layer utilities .group-data-\\[variant\\=inset\\]\\:shadow-sm:is(:where(.group)[data-variant=\"inset\"] *)": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:scale-110:hover": 3,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:scale-125:hover": 3,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:scale-150:hover": 3,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:from-foreground\\/10:hover": 2,
-   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:from-foreground\\/10:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:from-indigo-400\\/80:hover": 2,
-   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:from-indigo-400\\/80:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:via-primary\\/25:hover": 3,
-   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:via-primary\\/25:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:to-amber-400\\/30:hover": 2,
-   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:to-amber-400\\/30:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:to-foreground\\/6:hover": 2,
-   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:to-foreground\\/6:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:shadow-\\[0_0_0_1px_hsl\\(var\\(--sidebar-accent\\)\\)\\]:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:shadow-\\[0_0_0_2px_white\\,0_2px_6px_rgba\\(0\\,0\\,0\\,0\\.15\\)\\]:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:shadow-md:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:ring-2:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:ring-indigo-500\\/50:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:ring-indigo-500\\/50:hover": 1,
-   "[tailwind] @layer utilities @media (hover: hover) .hover\\:duration-200:hover": 1,
-   "[tailwind] @layer utilities .focus\\:ring-ring:focus": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:scale-110:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 3,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:scale-125:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 3,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:scale-150:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 3,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:from-foreground\\/10:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 2,
+   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:from-foreground\\/10:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:from-indigo-400\\/80:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 2,
+   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:from-indigo-400\\/80:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:via-primary\\/25:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 3,
+   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:via-primary\\/25:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:to-amber-400\\/30:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 2,
+   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:to-amber-400\\/30:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:to-foreground\\/6:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 2,
+   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:to-foreground\\/6:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:shadow-\\[0_0_0_1px_var\\(--sidebar-accent\\)\\]:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:shadow-\\[0_0_0_2px_white\\,0_2px_6px_rgba\\(0\\,0\\,0\\,0\\.15\\)\\]:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:shadow-md:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:ring-2:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:ring-inspect\\/50:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab,red,red)) .hover\\:ring-inspect\\/50:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:duration-200:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))": 1,
    "[tailwind] @layer utilities .focus\\:outline-hidden:focus": 1,
    "[tailwind] @layer utilities .focus-visible\\:ring-0:focus-visible": 1,
-   "[tailwind] @layer utilities .focus-visible\\:ring-1:focus-visible": 1,
-   "[tailwind] @layer utilities .focus-visible\\:ring-2:focus-visible": 1,
-   "[tailwind] @layer utilities .focus-visible\\:ring-amber-600\\/50:focus-visible": 1,
-   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .focus-visible\\:ring-amber-600\\/50:focus-visible": 1,
+   "[tailwind] @layer utilities .focus-visible\\:ring-1:focus-visible, .focus-visible\\:ring-\\[1px\\]:focus-visible": 1,
    "[tailwind] @layer utilities .focus-visible\\:ring-destructive\\/50:focus-visible": 1,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .focus-visible\\:ring-destructive\\/50:focus-visible": 1,
-   "[tailwind] @layer utilities .focus-visible\\:ring-foreground\\/50:focus-visible": 1,
-   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .focus-visible\\:ring-foreground\\/50:focus-visible": 1,
    "[tailwind] @layer utilities .focus-visible\\:ring-ring:focus-visible, .focus-visible\\:ring-ring\\/50:focus-visible": 1,
    "[tailwind] @layer utilities .focus-visible\\:ring-upgrade\\/50:focus-visible": 1,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .focus-visible\\:ring-upgrade\\/50:focus-visible": 1,
+   "[tailwind] @layer utilities .focus-visible\\:ring-warning\\/50:focus-visible": 1,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .focus-visible\\:ring-warning\\/50:focus-visible": 1,
    "[tailwind] @layer utilities .focus-visible\\:ring-offset-0:focus-visible": 2,
    "[tailwind] @layer utilities .focus-visible\\:ring-offset-1:focus-visible": 2,
    "[tailwind] @layer utilities .focus-visible\\:ring-offset-2:focus-visible": 2,
@@ -387,6 +384,7 @@
    "[tailwind] @layer utilities .data-\\[state\\=open\\]\\:slide-in-from-left[data-state=\"open\"]": 1,
    "[tailwind] @layer utilities .data-\\[state\\=open\\]\\:slide-in-from-right[data-state=\"open\"]": 1,
    "[tailwind] @layer utilities .data-\\[state\\=open\\]\\:slide-in-from-top[data-state=\"open\"]": 1,
+   "[tailwind] @layer utilities @media (min-width: 40rem) .sm\\:leading-none": 1,
    "[tailwind] @layer utilities @media (min-width: 48rem) .md\\:peer-data-\\[variant\\=inset\\]\\:shadow-sm:is(:where(.peer)[data-variant=\"inset\"] ~ *)": 1,
    "[tailwind] @layer utilities .dark\\:scale-0:is(.dark *)": 3,
    "[tailwind] @layer utilities .dark\\:scale-100:is(.dark *)": 3,
@@ -394,8 +392,8 @@
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:from-foreground\\/9:is(.dark *)": 1,
    "[tailwind] @layer utilities .dark\\:from-indigo-400\\/20:is(.dark *)": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:from-indigo-400\\/20:is(.dark *)": 1,
-   "[tailwind] @layer utilities .dark\\:from-indigo-500\\/15:is(.dark *)": 2,
-   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:from-indigo-500\\/15:is(.dark *)": 1,
+   "[tailwind] @layer utilities .dark\\:from-inspect\\/15:is(.dark *)": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:from-inspect\\/15:is(.dark *)": 1,
    "[tailwind] @layer utilities .dark\\:from-muted:is(.dark *)": 2,
    "[tailwind] @layer utilities .dark\\:from-primary\\/15:is(.dark *)": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:from-primary\\/15:is(.dark *)": 1,
@@ -405,16 +403,17 @@
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:to-amber-400\\/15:is(.dark *)": 1,
    "[tailwind] @layer utilities .dark\\:to-foreground\\/3:is(.dark *)": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:to-foreground\\/3:is(.dark *)": 1,
-   "[tailwind] @layer utilities .dark\\:to-indigo-500\\/5:is(.dark *)": 2,
-   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:to-indigo-500\\/5:is(.dark *)": 1,
+   "[tailwind] @layer utilities .dark\\:to-inspect\\/5:is(.dark *)": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:to-inspect\\/5:is(.dark *)": 1,
    "[tailwind] @layer utilities .dark\\:to-primary\\/5:is(.dark *)": 2,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:to-primary\\/5:is(.dark *)": 1,
    "[tailwind] @layer utilities .dark\\:shadow-\\[inset_0_1px_0_0_\\#ffffff1a\\,0_1px_3px_-1px_\\#00000047\\,0_2px_6px_-2px_\\#0000002e\\]:is(.dark *)": 1,
+   "[tailwind] @layer utilities .dark\\:shadow-\\[inset_0_1px_0_0_\\#ffffff1a\\,inset_0_6px_9px_-7px_\\#ffffff14\\,0_1px_1px_0_\\#0000001f\\,0_1px_3px_-1px_\\#00000017\\]:is(.dark *)": 1,
    "[tailwind] @layer utilities .dark\\:inset-shadow-sm:is(.dark *)": 1,
    "[tailwind] @layer utilities .dark\\:inset-shadow-foreground\\/8:is(.dark *)": 1,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:inset-shadow-foreground\\/8:is(.dark *)": 1,
-   "[tailwind] @layer utilities .dark\\:inset-shadow-indigo-500\\/15:is(.dark *)": 1,
-   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:inset-shadow-indigo-500\\/15:is(.dark *)": 1,
+   "[tailwind] @layer utilities .dark\\:inset-shadow-inspect\\/15:is(.dark *)": 1,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:inset-shadow-inspect\\/15:is(.dark *)": 1,
    "[tailwind] @layer utilities .dark\\:inset-shadow-primary\\/15:is(.dark *)": 1,
    "[tailwind] @layer utilities @supports (color:color-mix(in lab,red,red)) .dark\\:inset-shadow-primary\\/15:is(.dark *)": 1,
    "[tailwind] @layer utilities .dark\\:has-\\[\\[data-slot\\]\\[aria-invalid\\=true\\]\\]\\:ring-destructive\\/40:is(.dark *):has([data-slot][aria-invalid=\"true\"])": 1,
@@ -426,6 +425,7 @@
    "[tailwind] @layer utilities .\\[\\&_p\\]\\:leading-relaxed p": 1,
    "[tailwind] @layer utilities .\\[\\&\\>\\[role\\=checkbox\\]\\]\\:translate-y-\\[2px\\] > [role=\"checkbox\"]": 1,
    "[tailwind] @layer utilities .\\[\\&\\>svg\\]\\:translate-y-0\\.5 > svg": 1,
+   "[app] :root": 41,
    "[theme] .mode-glow": 1,
    "[theme] .mode-glow[data-mode=\"inspect\"]": 1,
    "[app] @keyframes scroll-mask-y-scroll ": 4,
@@ -604,7 +604,7 @@
    "bin": "theme"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":host, :root",
    "context": [
     "@layer theme"
@@ -616,14 +616,8 @@
     "--color-orange-400": "oklch(75% .183 55.934)",
     "--color-orange-500": "oklch(70.5% .213 47.604)",
     "--color-orange-700": "oklch(55.3% .195 38.402)",
-    "--color-amber-200": "oklch(92.4% .12 95.746)",
-    "--color-amber-300": "oklch(87.9% .169 91.605)",
     "--color-amber-400": "oklch(82.8% .189 84.429)",
     "--color-amber-500": "oklch(76.9% .188 70.08)",
-    "--color-amber-600": "oklch(66.6% .179 58.318)",
-    "--color-amber-700": "oklch(55.5% .163 48.998)",
-    "--color-amber-800": "oklch(47.3% .137 46.201)",
-    "--color-amber-900": "oklch(41.4% .112 45.904)",
     "--color-yellow-400": "oklch(85.2% .199 91.936)",
     "--color-yellow-500": "oklch(79.5% .184 86.047)",
     "--color-yellow-600": "oklch(68.1% .162 75.834)",
@@ -633,10 +627,7 @@
     "--color-green-500": "oklch(72.3% .219 149.579)",
     "--color-green-600": "oklch(62.7% .194 149.214)",
     "--color-green-700": "oklch(52.7% .154 150.069)",
-    "--color-emerald-400": "oklch(76.5% .177 163.223)",
     "--color-emerald-500": "oklch(69.6% .17 162.48)",
-    "--color-emerald-600": "oklch(59.6% .145 163.225)",
-    "--color-emerald-700": "oklch(50.8% .118 165.612)",
     "--color-teal-500": "oklch(70.4% .14 182.503)",
     "--color-cyan-500": "oklch(71.5% .143 215.221)",
     "--color-blue-400": "oklch(70.7% .165 254.624)",
@@ -645,13 +636,11 @@
     "--color-indigo-400": "oklch(67.3% .182 276.935)",
     "--color-indigo-500": "oklch(58.5% .233 277.117)",
     "--color-indigo-600": "oklch(51.1% .262 276.966)",
-    "--color-indigo-700": "oklch(45.7% .24 277.023)",
     "--color-purple-500": "oklch(62.7% .265 303.9)",
     "--color-fuchsia-500": "oklch(66.7% .295 322.15)",
     "--color-pink-500": "oklch(65.6% .241 354.308)",
     "--color-rose-500": "oklch(64.5% .246 16.439)",
     "--color-gray-400": "oklch(70.7% .022 261.325)",
-    "--color-gray-500": "oklch(55.1% .027 264.364)",
     "--color-neutral-200": "oklch(92.2% 0 0)",
     "--color-black": "#000",
     "--color-white": "#fff",
@@ -664,6 +653,7 @@
     "--container-2xl": "42rem",
     "--container-4xl": "56rem",
     "--container-5xl": "64rem",
+    "--container-6xl": "72rem",
     "--text-xs": ".75rem",
     "--text-xs--line-height": "calc(1/.75)",
     "--text-sm": ".875rem",
@@ -672,6 +662,8 @@
     "--text-base--line-height": "calc(1.5/1)",
     "--text-lg": "1.125rem",
     "--text-lg--line-height": "calc(1.75/1.125)",
+    "--text-xl": "1.25rem",
+    "--text-xl--line-height": "calc(1.75/1.25)",
     "--text-2xl": "1.5rem",
     "--text-2xl--line-height": "calc(2/1.5)",
     "--font-weight-normal": "400",
@@ -708,52 +700,7 @@
    "bin": "theme"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--radius": ".75rem",
-    "--background": "oklch(100% 0 0)",
-    "--canvas": "oklch(94.5% .003 39.48)",
-    "--mode-glow-strength": ".75",
-    "--foreground": "oklch(21.01% .032 264.66)",
-    "--card": "oklch(100% 0 0)",
-    "--card-foreground": "oklch(21.01% .032 264.66)",
-    "--popover": "oklch(100% 0 0)",
-    "--popover-foreground": "oklch(14.1% .005 285.823)",
-    "--primary": "oklch(64.61% .194 41.12)",
-    "--primary-foreground": "oklch(98% .016 73.684)",
-    "--upgrade": "oklch(60% .26 282)",
-    "--upgrade-foreground": "oklch(100% 0 0)",
-    "--upgrade-muted-foreground": "oklch(52% .25 282)",
-    "--secondary": "oklch(93.66% .005 48.68)",
-    "--secondary-foreground": "oklch(21% .006 285.885)",
-    "--muted": "oklch(96.62% .003 39.48)",
-    "--muted-foreground": "oklch(55.1% .004 39.46)",
-    "--accent": "oklch(96.62% .003 39.48)",
-    "--accent-foreground": "oklch(21% .006 285.885)",
-    "--destructive": "oklch(57.7% .245 27.325)",
-    "--border": "oklch(92% .004 286.32)",
-    "--input": "oklch(92% .004 286.32)",
-    "--ring": "oklch(70.5% .213 47.604)",
-    "--chart-1": "oklch(64.6% .222 41.116)",
-    "--chart-2": "oklch(60% .118 184.704)",
-    "--chart-3": "oklch(39.8% .07 227.392)",
-    "--chart-4": "oklch(82.8% .189 84.429)",
-    "--chart-5": "oklch(82.93% .1105 64.86)",
-    "--sidebar": "oklch(96.62% .003 39.48)",
-    "--sidebar-foreground": "oklch(14.1% .005 285.823)",
-    "--sidebar-primary": "oklch(70.5% .213 47.604)",
-    "--sidebar-primary-foreground": "oklch(98% .016 73.684)",
-    "--sidebar-accent": "oklch(96.62% .003 39.48)",
-    "--sidebar-accent-foreground": "oklch(21% .006 285.885)",
-    "--sidebar-border": "oklch(92% .004 286.32)",
-    "--sidebar-ring": "oklch(70.5% .213 47.604)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".mode-glow",
    "context": [],
    "properties": {
@@ -762,18 +709,18 @@
    "bin": "theme"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".mode-glow[data-mode=\"inspect\"]",
    "context": [],
    "properties": {
-    "--mode-glow-color": "oklch(58.5% .233 277.117)"
+    "--mode-glow-color": "var(--inspect)"
    },
    "bin": "theme"
   }
  ],
  "app": [
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scroll-mask-y",
    "context": [
     "@layer utilities"
@@ -785,7 +732,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scroll-mask-y-from-90\\%",
    "context": [
     "@layer utilities"
@@ -797,7 +744,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scroll-mask-y-from-92",
    "context": [
     "@layer utilities"
@@ -809,7 +756,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scroll-mask-y-from-92\\%",
    "context": [
     "@layer utilities"
@@ -821,7 +768,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scroll-mask-y-from-95\\%",
    "context": [
     "@layer utilities"
@@ -833,7 +780,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scroll-mask-y-from-\\[40px\\]",
    "context": [
     "@layer utilities"
@@ -845,7 +792,56 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--radius": ".75rem",
+    "--background": "oklch(100% 0 0)",
+    "--canvas": "oklch(94.5% .004 70)",
+    "--mode-glow-strength": ".75",
+    "--foreground": "oklch(20.5% .004 70)",
+    "--card": "oklch(100% 0 0)",
+    "--card-foreground": "oklch(20.5% .004 70)",
+    "--popover": "oklch(100% 0 0)",
+    "--popover-foreground": "oklch(20.5% .004 70)",
+    "--primary": "oklch(64.61% .194 41.12)",
+    "--primary-foreground": "oklch(98% .016 73.684)",
+    "--upgrade": "oklch(57% .24 298)",
+    "--upgrade-foreground": "oklch(100% 0 0)",
+    "--upgrade-muted-foreground": "oklch(50% .22 298)",
+    "--success": "oklch(60% .15 150)",
+    "--success-foreground": "oklch(100% 0 0)",
+    "--success-muted-foreground": "oklch(50% .12 150)",
+    "--warning": "oklch(77% .155 72)",
+    "--warning-muted-foreground": "oklch(52% .115 62)",
+    "--inspect": "oklch(58.34% .2305 277.07)",
+    "--inspect-foreground": "oklch(100% 0 0)",
+    "--inspect-muted-foreground": "oklch(51% .23 277)",
+    "--secondary": "oklch(93.66% .004 70)",
+    "--secondary-foreground": "oklch(20.5% .004 70)",
+    "--muted": "oklch(96.62% .003 70)",
+    "--muted-foreground": "oklch(55.1% .006 70)",
+    "--accent": "oklch(96.62% .003 70)",
+    "--accent-foreground": "oklch(20.5% .004 70)",
+    "--destructive": "oklch(57.7% .22 25)",
+    "--border": "oklch(92% .004 70)",
+    "--input": "oklch(92% .004 70)",
+    "--ring": "var(--primary)",
+    "--avatar": "oklch(82.93% .1105 64.86)",
+    "--sidebar": "oklch(96.62% .003 70)",
+    "--sidebar-foreground": "oklch(20.5% .004 70)",
+    "--sidebar-primary": "var(--primary)",
+    "--sidebar-primary-foreground": "oklch(98% .016 73.684)",
+    "--sidebar-accent": "oklch(96.62% .003 70)",
+    "--sidebar-accent-foreground": "oklch(20.5% .004 70)",
+    "--sidebar-border": "oklch(92% .004 70)",
+    "--sidebar-ring": "var(--primary)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": "",
    "context": [
     "@keyframes scroll-mask-y-scroll"
@@ -856,7 +852,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": "",
    "context": [
     "@keyframes scroll-mask-y-scroll"
@@ -867,7 +863,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": "",
    "context": [
     "@keyframes scroll-mask-y-scroll"
@@ -878,7 +874,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": "",
    "context": [
     "@keyframes scroll-mask-y-scroll"
@@ -889,7 +885,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": "",
    "context": [
     "@keyframes scroll-mask-x-scroll"
@@ -900,7 +896,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": "",
    "context": [
     "@keyframes scroll-mask-x-scroll"
@@ -911,7 +907,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": "",
    "context": [
     "@keyframes scroll-mask-x-scroll"
@@ -922,7 +918,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": "",
    "context": [
     "@keyframes scroll-mask-x-scroll"
@@ -933,7 +929,7 @@
    "bin": "app"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where([class^=\"scroll-mask-\"], [class*=\" scroll-mask-\"])",
    "context": [
     "@supports (animation-timeline:scroll())"
@@ -991,46 +987,45 @@
    "bin": "skins"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark",
    "context": [],
    "properties": {
-    "--background": "oklch(15.43% .007 338.1)",
-    "--canvas": "oklch(20% .006 345.57)",
+    "--background": "oklch(15.43% .004 70)",
+    "--canvas": "oklch(20% .004 70)",
     "--mode-glow-strength": "1",
-    "--foreground": "oklch(90.88% .004 39.48)",
-    "--card": "oklch(20.85% .005 355.29)",
-    "--card-foreground": "oklch(98.5% 0 0)",
-    "--popover": "oklch(20.85% .005 355.29)",
-    "--popover-foreground": "oklch(98.5% 0 0)",
+    "--foreground": "oklch(94.5% .003 70)",
+    "--card": "oklch(20.85% .004 70)",
+    "--card-foreground": "oklch(94.5% .003 70)",
+    "--popover": "oklch(20.85% .004 70)",
+    "--popover-foreground": "oklch(94.5% .003 70)",
     "--primary": "oklch(64.61% .194 41.12)",
     "--primary-foreground": "oklch(98% .016 73.684)",
-    "--upgrade": "oklch(60% .26 282)",
+    "--upgrade": "oklch(57% .24 298)",
     "--upgrade-foreground": "oklch(100% 0 0)",
-    "--upgrade-muted-foreground": "oklch(80% .13 282)",
-    "--secondary": "oklch(27.26% .006 34.3)",
-    "--secondary-foreground": "oklch(98.5% 0 0)",
-    "--muted": "oklch(27.26% .006 34.3)",
-    "--muted-foreground": "oklch(70.8% .004 39.47)",
-    "--accent": "oklch(27.26% .006 34.3)",
-    "--accent-foreground": "oklch(98.5% 0 0)",
-    "--destructive": "oklch(70.4% .191 22.216)",
+    "--upgrade-muted-foreground": "oklch(80% .11 298)",
+    "--success-muted-foreground": "oklch(80% .13 152)",
+    "--warning-muted-foreground": "oklch(84% .12 80)",
+    "--inspect-muted-foreground": "oklch(74% .13 277)",
+    "--secondary": "oklch(27.26% .005 70)",
+    "--secondary-foreground": "oklch(94.5% .003 70)",
+    "--muted": "oklch(27.26% .005 70)",
+    "--muted-foreground": "oklch(70.8% .005 70)",
+    "--accent": "oklch(27.26% .005 70)",
+    "--accent-foreground": "oklch(94.5% .003 70)",
+    "--destructive": "oklch(70% .17 24)",
     "--border": "oklch(100% 0 0/.08)",
     "--input": "oklch(100% 0 0/.16)",
-    "--ring": "oklch(64.6% .222 41.116)",
-    "--chart-1": "oklch(48.8% .243 264.376)",
-    "--chart-2": "oklch(69.6% .17 162.48)",
-    "--chart-3": "oklch(76.9% .188 70.08)",
-    "--chart-4": "oklch(62.7% .265 303.9)",
-    "--chart-5": "oklch(46.9866% .143 37.0633)",
-    "--sidebar": "oklch(20.85% .005 355.29)",
-    "--sidebar-foreground": "oklch(90.88% .004 39.48)",
-    "--sidebar-primary": "oklch(64.61% .194 41.12)",
+    "--ring": "var(--primary)",
+    "--avatar": "oklch(46.99% .143 37.06)",
+    "--sidebar": "oklch(20.85% .004 70)",
+    "--sidebar-foreground": "oklch(94.5% .003 70)",
+    "--sidebar-primary": "var(--primary)",
     "--sidebar-primary-foreground": "oklch(98% .016 73.684)",
-    "--sidebar-accent": "oklch(20.85% .005 355.29)",
-    "--sidebar-accent-foreground": "oklch(98.5% 0 0)",
+    "--sidebar-accent": "oklch(20.85% .004 70)",
+    "--sidebar-accent-foreground": "oklch(94.5% .003 70)",
     "--sidebar-border": "oklch(100% 0 0/.1)",
-    "--sidebar-ring": "oklch(64.6% .222 41.116)"
+    "--sidebar-ring": "var(--primary)"
    },
    "bin": "skins"
   }
@@ -1409,7 +1404,7 @@
    "bin": "utility"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".\\[--cell-radius\\:var\\(--radius-md\\)\\]",
    "context": [
     "@layer utilities"
@@ -1420,7 +1415,7 @@
    "bin": "utility"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".\\[--cell-size\\:--spacing\\(7\\)\\]",
    "context": [
     "@layer utilities"
@@ -3183,7 +3178,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": "*, ::backdrop, ::after, ::before",
    "context": [
     "@layer properties",
@@ -3275,7 +3270,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".-translate-x-1\\/2",
    "context": [
     "@layer utilities"
@@ -3286,7 +3281,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".-translate-x-\\[calc\\(100\\%\\+16px\\)\\]",
    "context": [
     "@layer utilities"
@@ -3297,7 +3292,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".-translate-x-px",
    "context": [
     "@layer utilities"
@@ -3308,7 +3303,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-x-0",
    "context": [
     "@layer utilities"
@@ -3319,7 +3314,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-x-\\[-50\\%\\]",
    "context": [
     "@layer utilities"
@@ -3330,7 +3325,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-x-\\[calc\\(100\\%\\+16px\\)\\]",
    "context": [
     "@layer utilities"
@@ -3341,7 +3336,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-x-px",
    "context": [
     "@layer utilities"
@@ -3352,7 +3347,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".-translate-y-1\\/2",
    "context": [
     "@layer utilities"
@@ -3363,7 +3358,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".-translate-y-2",
    "context": [
     "@layer utilities"
@@ -3374,7 +3369,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".-translate-y-6",
    "context": [
     "@layer utilities"
@@ -3385,7 +3380,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".-translate-y-20",
    "context": [
     "@layer utilities"
@@ -3396,7 +3391,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".-translate-y-full",
    "context": [
     "@layer utilities"
@@ -3407,7 +3402,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-y-0",
    "context": [
     "@layer utilities"
@@ -3418,7 +3413,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-y-2",
    "context": [
     "@layer utilities"
@@ -3429,7 +3424,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-y-\\[-50\\%\\]",
    "context": [
     "@layer utilities"
@@ -3440,7 +3435,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-y-\\[-100\\%\\]",
    "context": [
     "@layer utilities"
@@ -3451,7 +3446,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-y-\\[calc\\(-50\\%_-_2px\\)\\]",
    "context": [
     "@layer utilities"
@@ -3462,7 +3457,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-y-\\[calc\\(-100\\%-16px\\)\\]",
    "context": [
     "@layer utilities"
@@ -3473,7 +3468,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-y-\\[calc\\(100\\%\\+16px\\)\\]",
    "context": [
     "@layer utilities"
@@ -3484,7 +3479,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".translate-y-full",
    "context": [
     "@layer utilities"
@@ -3495,7 +3490,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scale-0",
    "context": [
     "@layer utilities"
@@ -3508,7 +3503,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scale-50",
    "context": [
     "@layer utilities"
@@ -3521,7 +3516,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scale-95",
    "context": [
     "@layer utilities"
@@ -3534,7 +3529,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scale-100",
    "context": [
     "@layer utilities"
@@ -3547,7 +3542,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".scale-125",
    "context": [
     "@layer utilities"
@@ -3560,7 +3555,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".touch-pinch-zoom",
    "context": [
     "@layer utilities"
@@ -3571,7 +3566,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".snap-proximity",
    "context": [
     "@layer utilities"
@@ -3582,7 +3577,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-0 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3593,7 +3588,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-0\\.5 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3604,7 +3599,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-1 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3615,7 +3610,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-1\\.5 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3626,7 +3621,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-2 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3637,7 +3632,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-3 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3648,7 +3643,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-4 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3659,7 +3654,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-5 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3670,7 +3665,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-6 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3681,18 +3676,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ":where(.space-y-8 > :not(:last-child))",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-px > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3703,7 +3687,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-y-reverse > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3714,7 +3698,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.-space-x-1\\.5 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3725,7 +3709,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.-space-x-3 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3736,7 +3720,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.-space-x-4 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3747,7 +3731,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-x-1 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3758,7 +3742,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-x-2 > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3769,7 +3753,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-x-\\[-0\\.5\\] > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3780,7 +3764,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.space-x-reverse > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3791,7 +3775,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.divide-x > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3802,7 +3786,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.divide-y > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3813,7 +3797,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.divide-y-reverse > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -3824,7 +3808,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".border-dashed",
    "context": [
     "@layer utilities"
@@ -3835,7 +3819,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".border-none",
    "context": [
     "@layer utilities"
@@ -3846,7 +3830,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".border-solid",
    "context": [
     "@layer utilities"
@@ -3857,7 +3841,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".bg-gradient-to-b",
    "context": [
     "@layer utilities"
@@ -3868,7 +3852,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".bg-gradient-to-tl",
    "context": [
     "@layer utilities"
@@ -3879,7 +3863,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".bg-gradient-to-tr",
    "context": [
     "@layer utilities"
@@ -3890,7 +3874,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-background",
    "context": [
     "@layer utilities"
@@ -3902,7 +3886,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-foreground\\/7",
    "context": [
     "@layer utilities"
@@ -3913,7 +3897,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-foreground\\/7",
    "context": [
     "@layer utilities",
@@ -3925,7 +3909,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-foreground\\/7",
    "context": [
     "@layer utilities"
@@ -3936,7 +3920,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-foreground\\/50",
    "context": [
     "@layer utilities"
@@ -3947,7 +3931,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-foreground\\/50",
    "context": [
     "@layer utilities",
@@ -3959,7 +3943,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-foreground\\/50",
    "context": [
     "@layer utilities"
@@ -3970,7 +3954,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-indigo-400\\/30",
    "context": [
     "@layer utilities"
@@ -3981,7 +3965,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-indigo-400\\/30",
    "context": [
     "@layer utilities",
@@ -3993,7 +3977,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-indigo-400\\/30",
    "context": [
     "@layer utilities"
@@ -4004,31 +3988,31 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".from-indigo-500\\/12",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".from-inspect\\/12",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-gradient-from": "#625fff1f"
+    "--tw-gradient-from": "var(--inspect)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".from-indigo-500\\/12",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".from-inspect\\/12",
    "context": [
     "@layer utilities",
     "@supports (color:color-mix(in lab,red,red))"
    ],
    "properties": {
-    "--tw-gradient-from": "color-mix(in oklab,var(--color-indigo-500)12%,transparent)"
+    "--tw-gradient-from": "color-mix(in oklab,var(--inspect)12%,transparent)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".from-indigo-500\\/12",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".from-inspect\\/12",
    "context": [
     "@layer utilities"
    ],
@@ -4038,7 +4022,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-primary\\/5",
    "context": [
     "@layer utilities"
@@ -4049,7 +4033,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-primary\\/5",
    "context": [
     "@layer utilities",
@@ -4061,7 +4045,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-primary\\/5",
    "context": [
     "@layer utilities"
@@ -4072,7 +4056,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-primary\\/12",
    "context": [
     "@layer utilities"
@@ -4083,7 +4067,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-primary\\/12",
    "context": [
     "@layer utilities",
@@ -4095,7 +4079,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-primary\\/12",
    "context": [
     "@layer utilities"
@@ -4106,7 +4090,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".from-95\\%",
    "context": [
     "@layer utilities"
@@ -4117,7 +4101,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".via-primary\\/15",
    "context": [
     "@layer utilities"
@@ -4128,7 +4112,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".via-primary\\/15",
    "context": [
     "@layer utilities",
@@ -4140,7 +4124,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".via-primary\\/15",
    "context": [
     "@layer utilities"
@@ -4152,7 +4136,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-amber-400\\/25",
    "context": [
     "@layer utilities"
@@ -4163,7 +4147,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-amber-400\\/25",
    "context": [
     "@layer utilities",
@@ -4175,7 +4159,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-amber-400\\/25",
    "context": [
     "@layer utilities"
@@ -4186,7 +4170,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-amber-400\\/30",
    "context": [
     "@layer utilities"
@@ -4197,7 +4181,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-amber-400\\/30",
    "context": [
     "@layer utilities",
@@ -4209,7 +4193,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-amber-400\\/30",
    "context": [
     "@layer utilities"
@@ -4220,7 +4204,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-background",
    "context": [
     "@layer utilities"
@@ -4232,7 +4216,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-foreground\\/4",
    "context": [
     "@layer utilities"
@@ -4243,7 +4227,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-foreground\\/4",
    "context": [
     "@layer utilities",
@@ -4255,7 +4239,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-foreground\\/4",
    "context": [
     "@layer utilities"
@@ -4266,31 +4250,31 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".to-indigo-500\\/8",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".to-inspect\\/8",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-gradient-to": "#625fff14"
+    "--tw-gradient-to": "var(--inspect)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".to-indigo-500\\/8",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".to-inspect\\/8",
    "context": [
     "@layer utilities",
     "@supports (color:color-mix(in lab,red,red))"
    ],
    "properties": {
-    "--tw-gradient-to": "color-mix(in oklab,var(--color-indigo-500)8%,transparent)"
+    "--tw-gradient-to": "color-mix(in oklab,var(--inspect)8%,transparent)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".to-indigo-500\\/8",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".to-inspect\\/8",
    "context": [
     "@layer utilities"
    ],
@@ -4300,7 +4284,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-primary\\/8",
    "context": [
     "@layer utilities"
@@ -4311,7 +4295,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-primary\\/8",
    "context": [
     "@layer utilities",
@@ -4323,7 +4307,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-primary\\/8",
    "context": [
     "@layer utilities"
@@ -4334,7 +4318,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-primary\\/30",
    "context": [
     "@layer utilities"
@@ -4345,7 +4329,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-primary\\/30",
    "context": [
     "@layer utilities",
@@ -4357,7 +4341,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-primary\\/30",
    "context": [
     "@layer utilities"
@@ -4368,7 +4352,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-primary\\/50",
    "context": [
     "@layer utilities"
@@ -4379,7 +4363,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-primary\\/50",
    "context": [
     "@layer utilities",
@@ -4391,7 +4375,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-primary\\/50",
    "context": [
     "@layer utilities"
@@ -4402,7 +4386,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".to-transparent",
    "context": [
     "@layer utilities"
@@ -4414,7 +4398,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".leading-4",
    "context": [
     "@layer utilities"
@@ -4425,7 +4409,18 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".leading-5",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "calc(var(--spacing)*5)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".leading-6",
    "context": [
     "@layer utilities"
@@ -4436,7 +4431,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".leading-none",
    "context": [
     "@layer utilities"
@@ -4447,7 +4442,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".leading-normal",
    "context": [
     "@layer utilities"
@@ -4458,7 +4453,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".leading-snug",
    "context": [
     "@layer utilities"
@@ -4469,7 +4464,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".leading-tight",
    "context": [
     "@layer utilities"
@@ -4480,7 +4475,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".font-bold",
    "context": [
     "@layer utilities"
@@ -4491,7 +4486,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".font-medium",
    "context": [
     "@layer utilities"
@@ -4502,7 +4497,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".font-normal",
    "context": [
     "@layer utilities"
@@ -4513,7 +4508,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".font-semibold",
    "context": [
     "@layer utilities"
@@ -4524,7 +4519,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".tracking-normal",
    "context": [
     "@layer utilities"
@@ -4535,7 +4530,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".tracking-tight",
    "context": [
     "@layer utilities"
@@ -4546,7 +4541,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".tracking-wider",
    "context": [
     "@layer utilities"
@@ -4557,7 +4552,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".tracking-widest",
    "context": [
     "@layer utilities"
@@ -4568,7 +4563,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".diagonal-fractions",
    "context": [
     "@layer utilities"
@@ -4579,7 +4574,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".lining-nums",
    "context": [
     "@layer utilities"
@@ -4590,7 +4585,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".oldstyle-nums",
    "context": [
     "@layer utilities"
@@ -4601,7 +4596,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ordinal",
    "context": [
     "@layer utilities"
@@ -4612,7 +4607,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".proportional-nums",
    "context": [
     "@layer utilities"
@@ -4623,7 +4618,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".slashed-zero",
    "context": [
     "@layer utilities"
@@ -4634,7 +4629,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".stacked-fractions",
    "context": [
     "@layer utilities"
@@ -4645,7 +4640,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".tabular-nums",
    "context": [
     "@layer utilities"
@@ -4656,7 +4651,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow",
    "context": [
     "@layer utilities"
@@ -4667,18 +4662,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".shadow-\\[0_0_0_1px_hsl\\(var\\(--sidebar-border\\)\\)\\]",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-shadow": "0 0 0 1px var(--tw-shadow-color,hsl(var(--sidebar-border)))"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-\\[0_0_0_1px_rgb\\(0_0_0\\/0\\.3\\)\\]",
    "context": [
     "@layer utilities"
@@ -4689,7 +4673,18 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".shadow-\\[0_0_0_1px_var\\(--border\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 0 1px var(--tw-shadow-color,var(--border))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-\\[0_0_0_2px_white\\]",
    "context": [
     "@layer utilities"
@@ -4700,7 +4695,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-\\[0_0_0_4px_white\\,0_0_20px_rgba\\(255\\,138\\,76\\,0\\.6\\)\\]",
    "context": [
     "@layer utilities"
@@ -4711,7 +4706,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-\\[0px_4px_12px_rgba\\(0\\,0\\,0\\,0\\.1\\)\\]",
    "context": [
     "@layer utilities"
@@ -4722,40 +4717,40 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".shadow-\\[inset_0_1px_0_0_\\#ffffff40\\,inset_0_6px_9px_-7px_\\#ffffff30\\,0_1px_2px_0_\\#0000001f\\,0_2px_5px_-1px_\\#00000017\\]",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".shadow-\\[inset_0_1px_0_0_\\#ffffff40\\,inset_0_6px_9px_-7px_\\#ffffff30\\,0_1px_1px_0_\\#0000001f\\,0_1px_3px_-1px_\\#00000017\\]",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-shadow": "inset 0 1px 0 0 var(--tw-shadow-color,#ffffff40),inset 0 6px 9px -7px var(--tw-shadow-color,#ffffff30),0 1px 2px 0 var(--tw-shadow-color,#0000001f),0 2px 5px -1px var(--tw-shadow-color,#00000017)"
+    "--tw-shadow": "inset 0 1px 0 0 var(--tw-shadow-color,#ffffff40),inset 0 6px 9px -7px var(--tw-shadow-color,#ffffff30),0 1px 1px 0 var(--tw-shadow-color,#0000001f),0 1px 3px -1px var(--tw-shadow-color,#00000017)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-lg",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-shadow": "0 10px 15px -3px var(--tw-shadow-color,#0000001a),0 4px 6px -4px var(--tw-shadow-color,#0000001a)"
+    "--tw-shadow": "0 4px 8px -2px var(--tw-shadow-color,#00000014),0 2px 4px -2px var(--tw-shadow-color,#0000000f)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-md",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-shadow": "0 4px 6px -1px var(--tw-shadow-color,#0000001a),0 2px 4px -2px var(--tw-shadow-color,#0000001a)"
+    "--tw-shadow": "0 2px 4px -1px var(--tw-shadow-color,#00000014),0 1px 2px -1px var(--tw-shadow-color,#0000000f)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-none",
    "context": [
     "@layer utilities"
@@ -4766,40 +4761,40 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-sm",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a),0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+    "--tw-shadow": "0 1px 2px 0 var(--tw-shadow-color,#00000014),0 1px 1px -1px var(--tw-shadow-color,#00000014)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-xl",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-shadow": "0 20px 25px -5px var(--tw-shadow-color,#0000001a),0 8px 10px -6px var(--tw-shadow-color,#0000001a)"
+    "--tw-shadow": "0 8px 16px -4px var(--tw-shadow-color,#0000001a),0 2px 6px -2px var(--tw-shadow-color,#0000000f)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-xs",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-shadow": "0 1px 2px 0 var(--tw-shadow-color,#0000000d)"
+    "--tw-shadow": "0 1px 1px 0 var(--tw-shadow-color,#0000000d)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring",
    "context": [
     "@layer utilities"
@@ -4810,7 +4805,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-0",
    "context": [
     "@layer utilities"
@@ -4821,7 +4816,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-1",
    "context": [
     "@layer utilities"
@@ -4832,7 +4827,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-2",
    "context": [
     "@layer utilities"
@@ -4843,7 +4838,18 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".ring-\\[1\\.5px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(1.5px + var(--tw-ring-offset-width))var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-primary\\/40",
    "context": [
     "@layer utilities"
@@ -4854,7 +4860,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".shadow-primary\\/40",
    "context": [
     "@layer utilities",
@@ -4866,7 +4872,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-background",
    "context": [
     "@layer utilities"
@@ -4877,7 +4883,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-border",
    "context": [
     "@layer utilities"
@@ -4888,7 +4894,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-current",
    "context": [
     "@layer utilities"
@@ -4899,7 +4905,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-foreground, .ring-foreground\\/20",
    "context": [
     "@layer utilities"
@@ -4910,7 +4916,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-foreground\\/20",
    "context": [
     "@layer utilities",
@@ -4922,18 +4928,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".ring-muted",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-ring-color": "var(--muted)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-primary, .ring-primary\\/15",
    "context": [
     "@layer utilities"
@@ -4944,7 +4939,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-primary\\/15",
    "context": [
     "@layer utilities",
@@ -4956,7 +4951,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-primary\\/20",
    "context": [
     "@layer utilities"
@@ -4967,7 +4962,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-primary\\/20",
    "context": [
     "@layer utilities",
@@ -4979,7 +4974,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-primary\\/30",
    "context": [
     "@layer utilities"
@@ -4990,7 +4985,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-primary\\/30",
    "context": [
     "@layer utilities",
@@ -5002,8 +4997,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".ring-sidebar-ring",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".ring-sidebar-ring\\/50",
    "context": [
     "@layer utilities"
    ],
@@ -5013,7 +5008,19 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".ring-sidebar-ring\\/50",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab,red,red))"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab,var(--sidebar-ring)50%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-white\\/50",
    "context": [
     "@layer utilities"
@@ -5024,7 +5031,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-white\\/50",
    "context": [
     "@layer utilities",
@@ -5036,7 +5043,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-offset-2",
    "context": [
     "@layer utilities"
@@ -5048,7 +5055,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-offset-background",
    "context": [
     "@layer utilities"
@@ -5059,7 +5066,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".outline-hidden",
    "context": [
     "@layer utilities"
@@ -5070,7 +5077,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".blur",
    "context": [
     "@layer utilities"
@@ -5081,7 +5088,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".drop-shadow",
    "context": [
     "@layer utilities"
@@ -5093,7 +5100,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".grayscale",
    "context": [
     "@layer utilities"
@@ -5104,7 +5111,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".invert",
    "context": [
     "@layer utilities"
@@ -5115,7 +5122,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".sepia",
    "context": [
     "@layer utilities"
@@ -5126,7 +5133,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".backdrop-blur",
    "context": [
     "@layer utilities"
@@ -5137,7 +5144,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".backdrop-blur-md",
    "context": [
     "@layer utilities"
@@ -5148,7 +5155,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".backdrop-blur-sm",
    "context": [
     "@layer utilities"
@@ -5159,7 +5166,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".backdrop-grayscale",
    "context": [
     "@layer utilities"
@@ -5170,7 +5177,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".backdrop-invert",
    "context": [
     "@layer utilities"
@@ -5181,7 +5188,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".backdrop-sepia",
    "context": [
     "@layer utilities"
@@ -5192,7 +5199,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".duration-0",
    "context": [
     "@layer utilities"
@@ -5203,7 +5210,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".duration-150",
    "context": [
     "@layer utilities"
@@ -5214,7 +5221,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".duration-200",
    "context": [
     "@layer utilities"
@@ -5225,7 +5232,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".duration-250",
    "context": [
     "@layer utilities"
@@ -5236,7 +5243,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".duration-300",
    "context": [
     "@layer utilities"
@@ -5247,7 +5254,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".duration-500",
    "context": [
     "@layer utilities"
@@ -5258,7 +5265,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".duration-1000",
    "context": [
     "@layer utilities"
@@ -5269,7 +5276,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".duration-\\[400ms\\]",
    "context": [
     "@layer utilities"
@@ -5280,7 +5287,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ease-in",
    "context": [
     "@layer utilities"
@@ -5291,7 +5298,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ease-in-out",
    "context": [
     "@layer utilities"
@@ -5302,7 +5309,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ease-linear",
    "context": [
     "@layer utilities"
@@ -5313,7 +5320,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ease-out",
    "context": [
     "@layer utilities"
@@ -5324,7 +5331,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".fade-in-0",
    "context": [
     "@layer utilities"
@@ -5335,7 +5342,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".outline-none",
    "context": [
     "@layer utilities"
@@ -5346,7 +5353,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".zoom-in-95",
    "context": [
     "@layer utilities"
@@ -5357,7 +5364,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ":where(.divide-x-reverse > :not(:last-child))",
    "context": [
     "@layer utilities"
@@ -5368,7 +5375,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".fade-in",
    "context": [
     "@layer utilities"
@@ -5379,7 +5386,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".fade-out",
    "context": [
     "@layer utilities"
@@ -5390,7 +5397,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".ring-inset",
    "context": [
     "@layer utilities"
@@ -5401,18 +5408,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".slide-in-from-bottom-2",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-enter-translate-y": "calc(2*var(--spacing))"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".slide-in-from-top-2",
    "context": [
     "@layer utilities"
@@ -5423,7 +5419,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".zoom-in",
    "context": [
     "@layer utilities"
@@ -5434,7 +5430,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".zoom-out",
    "context": [
     "@layer utilities"
@@ -5445,8 +5441,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".group-hover\\:-translate-x-5:is(:where(.group):hover *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".group-hover\\:-translate-x-5:is(:where(.group):hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"])) *)",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5457,8 +5453,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".group-hover\\:translate-x-5:is(:where(.group):hover *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".group-hover\\:translate-x-5:is(:where(.group):hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"])) *)",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5469,8 +5465,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".group-hover\\:-translate-y-0\\.5:is(:where(.group):hover *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".group-hover\\:-translate-y-0\\.5:is(:where(.group):hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"])) *)",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5481,8 +5477,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".group-hover\\:duration-200:is(:where(.group):hover *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".group-hover\\:duration-200:is(:where(.group):hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"])) *)",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5493,7 +5489,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".group-data-\\[collapsible\\=offcanvas\\]\\:translate-x-0:is(:where(.group)[data-collapsible=\"offcanvas\"] *)",
    "context": [
     "@layer utilities"
@@ -5504,7 +5500,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".group-data-\\[focused\\=true\\]\\/day\\:ring-\\[3px\\]:is(:where(.group\\/day)[data-focused=\"true\"] *)",
    "context": [
     "@layer utilities"
@@ -5515,7 +5511,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".group-data-\\[focused\\=true\\]\\/day\\:ring-ring\\/50:is(:where(.group\\/day)[data-focused=\"true\"] *)",
    "context": [
     "@layer utilities"
@@ -5526,7 +5522,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".group-data-\\[focused\\=true\\]\\/day\\:ring-ring\\/50:is(:where(.group\\/day)[data-focused=\"true\"] *)",
    "context": [
     "@layer utilities",
@@ -5538,18 +5534,18 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".group-data-\\[variant\\=floating\\]\\:shadow-sm:is(:where(.group)[data-variant=\"floating\"] *)",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a),0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+    "--tw-shadow": "0 1px 2px 0 var(--tw-shadow-color,#00000014),0 1px 1px -1px var(--tw-shadow-color,#00000014)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".group-data-\\[variant\\=inset\\]\\:border-none:is(:where(.group)[data-variant=\"inset\"] *)",
    "context": [
     "@layer utilities"
@@ -5560,18 +5556,18 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".group-data-\\[variant\\=inset\\]\\:shadow-sm:is(:where(.group)[data-variant=\"inset\"] *)",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a),0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+    "--tw-shadow": "0 1px 2px 0 var(--tw-shadow-color,#00000014),0 1px 1px -1px var(--tw-shadow-color,#00000014)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".file\\:font-medium::file-selector-button",
    "context": [
     "@layer utilities"
@@ -5582,8 +5578,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:scale-110:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:scale-110:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5596,8 +5592,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:scale-125:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:scale-125:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5610,8 +5606,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:scale-150:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:scale-150:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5624,8 +5620,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:from-foreground\\/10:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:from-foreground\\/10:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5636,8 +5632,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:from-foreground\\/10:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:from-foreground\\/10:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)",
@@ -5649,8 +5645,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:from-foreground\\/10:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:from-foreground\\/10:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5661,8 +5657,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:from-indigo-400\\/80:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:from-indigo-400\\/80:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5673,8 +5669,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:from-indigo-400\\/80:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:from-indigo-400\\/80:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)",
@@ -5686,8 +5682,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:from-indigo-400\\/80:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:from-indigo-400\\/80:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5698,8 +5694,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:via-primary\\/25:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:via-primary\\/25:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5710,8 +5706,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:via-primary\\/25:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:via-primary\\/25:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)",
@@ -5723,8 +5719,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:via-primary\\/25:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:via-primary\\/25:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5736,8 +5732,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:to-amber-400\\/30:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:to-amber-400\\/30:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5748,8 +5744,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:to-amber-400\\/30:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:to-amber-400\\/30:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)",
@@ -5761,8 +5757,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:to-amber-400\\/30:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:to-amber-400\\/30:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5773,8 +5769,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:to-foreground\\/6:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:to-foreground\\/6:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5785,8 +5781,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:to-foreground\\/6:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:to-foreground\\/6:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)",
@@ -5798,8 +5794,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:to-foreground\\/6:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:to-foreground\\/6:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5810,20 +5806,20 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:shadow-\\[0_0_0_1px_hsl\\(var\\(--sidebar-accent\\)\\)\\]:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:shadow-\\[0_0_0_1px_var\\(--sidebar-accent\\)\\]:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
    ],
    "properties": {
-    "--tw-shadow": "0 0 0 1px var(--tw-shadow-color,hsl(var(--sidebar-accent)))"
+    "--tw-shadow": "0 0 0 1px var(--tw-shadow-color,var(--sidebar-accent))"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:shadow-\\[0_0_0_2px_white\\,0_2px_6px_rgba\\(0\\,0\\,0\\,0\\.15\\)\\]:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:shadow-\\[0_0_0_2px_white\\,0_2px_6px_rgba\\(0\\,0\\,0\\,0\\.15\\)\\]:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5834,20 +5830,20 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:shadow-md:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:shadow-md:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
    ],
    "properties": {
-    "--tw-shadow": "0 4px 6px -1px var(--tw-shadow-color,#0000001a),0 2px 4px -2px var(--tw-shadow-color,#0000001a)"
+    "--tw-shadow": "0 2px 4px -1px var(--tw-shadow-color,#00000014),0 1px 2px -1px var(--tw-shadow-color,#0000000f)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:ring-2:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:ring-2:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5858,33 +5854,33 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:ring-indigo-500\\/50:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:ring-inspect\\/50:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
    ],
    "properties": {
-    "--tw-ring-color": "#625fff80"
+    "--tw-ring-color": "var(--inspect)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:ring-indigo-500\\/50:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:ring-inspect\\/50:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)",
     "@supports (color:color-mix(in lab,red,red))"
    ],
    "properties": {
-    "--tw-ring-color": "color-mix(in oklab,var(--color-indigo-500)50%,transparent)"
+    "--tw-ring-color": "color-mix(in oklab,var(--inspect)50%,transparent)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".hover\\:duration-200:hover",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".hover\\:duration-200:hover:not(:disabled, [aria-disabled=\"true\"], [data-disabled]:not([data-disabled=\"false\"]))",
    "context": [
     "@layer utilities",
     "@media (hover: hover)"
@@ -5895,41 +5891,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus\\:ring-2:focus",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(2px + var(--tw-ring-offset-width))var(--tw-ring-color,currentcolor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus\\:ring-ring:focus",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-ring-color": "var(--ring)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus\\:ring-offset-2:focus",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-ring-offset-width": "2px",
-    "--tw-ring-offset-shadow": "var(--tw-ring-inset,)0 0 0 var(--tw-ring-offset-width)var(--tw-ring-offset-color)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus\\:outline-hidden:focus",
    "context": [
     "@layer utilities"
@@ -5940,7 +5902,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus\\:outline-none:focus",
    "context": [
     "@layer utilities"
@@ -5951,7 +5913,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-0:focus-visible",
    "context": [
     "@layer utilities"
@@ -5962,8 +5924,8 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus-visible\\:ring-1:focus-visible",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".focus-visible\\:ring-1:focus-visible, .focus-visible\\:ring-\\[1px\\]:focus-visible",
    "context": [
     "@layer utilities"
    ],
@@ -5973,29 +5935,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus-visible\\:ring-2:focus-visible",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(2px + var(--tw-ring-offset-width))var(--tw-ring-color,currentcolor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus-visible\\:ring-\\[1px\\]:focus-visible",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(1px + var(--tw-ring-offset-width))var(--tw-ring-color,currentcolor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-\\[3px\\]:focus-visible",
    "context": [
     "@layer utilities"
@@ -6006,30 +5946,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus-visible\\:ring-amber-600\\/50:focus-visible",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-ring-color": "#dd740080"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus-visible\\:ring-amber-600\\/50:focus-visible",
-   "context": [
-    "@layer utilities",
-    "@supports (color:color-mix(in lab,red,red))"
-   ],
-   "properties": {
-    "--tw-ring-color": "color-mix(in oklab,var(--color-amber-600)50%,transparent)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-destructive\\/20:focus-visible",
    "context": [
     "@layer utilities"
@@ -6040,7 +5957,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-destructive\\/20:focus-visible",
    "context": [
     "@layer utilities",
@@ -6052,7 +5969,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-destructive\\/50:focus-visible",
    "context": [
     "@layer utilities"
@@ -6063,7 +5980,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-destructive\\/50:focus-visible",
    "context": [
     "@layer utilities",
@@ -6075,7 +5992,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-foreground\\/20:focus-visible",
    "context": [
     "@layer utilities"
@@ -6086,7 +6003,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-foreground\\/20:focus-visible",
    "context": [
     "@layer utilities",
@@ -6098,30 +6015,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus-visible\\:ring-foreground\\/50:focus-visible",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--tw-ring-color": "var(--foreground)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".focus-visible\\:ring-foreground\\/50:focus-visible",
-   "context": [
-    "@layer utilities",
-    "@supports (color:color-mix(in lab,red,red))"
-   ],
-   "properties": {
-    "--tw-ring-color": "color-mix(in oklab,var(--foreground)50%,transparent)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-ring:focus-visible, .focus-visible\\:ring-ring\\/50:focus-visible",
    "context": [
     "@layer utilities"
@@ -6132,7 +6026,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-ring\\/50:focus-visible",
    "context": [
     "@layer utilities",
@@ -6144,7 +6038,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-upgrade\\/50:focus-visible",
    "context": [
     "@layer utilities"
@@ -6155,7 +6049,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-upgrade\\/50:focus-visible",
    "context": [
     "@layer utilities",
@@ -6167,7 +6061,30 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".focus-visible\\:ring-warning\\/50:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--warning)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".focus-visible\\:ring-warning\\/50:focus-visible",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab,red,red))"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab,var(--warning)50%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-offset-0:focus-visible",
    "context": [
     "@layer utilities"
@@ -6179,7 +6096,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-offset-1:focus-visible",
    "context": [
     "@layer utilities"
@@ -6191,7 +6108,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:ring-offset-2:focus-visible",
    "context": [
     "@layer utilities"
@@ -6203,7 +6120,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".focus-visible\\:outline-none:focus-visible",
    "context": [
     "@layer utilities"
@@ -6214,7 +6131,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".active\\:shadow-none:active",
    "context": [
     "@layer utilities"
@@ -6225,7 +6142,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".has-\\[\\[data-slot\\=input-group-control\\]\\:focus-visible\\]\\:ring-\\[3px\\]:has([data-slot=\"input-group-control\"]:focus-visible)",
    "context": [
     "@layer utilities"
@@ -6236,7 +6153,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".has-\\[\\[data-slot\\=input-group-control\\]\\:focus-visible\\]\\:ring-ring\\/50:has([data-slot=\"input-group-control\"]:focus-visible)",
    "context": [
     "@layer utilities"
@@ -6247,7 +6164,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".has-\\[\\[data-slot\\=input-group-control\\]\\:focus-visible\\]\\:ring-ring\\/50:has([data-slot=\"input-group-control\"]:focus-visible)",
    "context": [
     "@layer utilities",
@@ -6259,7 +6176,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".has-\\[\\[data-slot\\]\\[aria-invalid\\=true\\]\\]\\:ring-destructive\\/20:has([data-slot][aria-invalid=\"true\"])",
    "context": [
     "@layer utilities"
@@ -6270,7 +6187,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".has-\\[\\[data-slot\\]\\[aria-invalid\\=true\\]\\]\\:ring-destructive\\/20:has([data-slot][aria-invalid=\"true\"])",
    "context": [
     "@layer utilities",
@@ -6282,7 +6199,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".aria-invalid\\:ring-destructive\\/20[aria-invalid=\"true\"]",
    "context": [
     "@layer utilities"
@@ -6293,7 +6210,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".aria-invalid\\:ring-destructive\\/20[aria-invalid=\"true\"]",
    "context": [
     "@layer utilities",
@@ -6305,7 +6222,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[active\\=true\\]\\:font-medium[data-active=\"true\"]",
    "context": [
     "@layer utilities"
@@ -6316,7 +6233,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[active\\=true\\]\\:ring-\\[3px\\][data-active=\"true\"]",
    "context": [
     "@layer utilities"
@@ -6327,7 +6244,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[active\\=true\\]\\:ring-ring\\/50[data-active=\"true\"]",
    "context": [
     "@layer utilities"
@@ -6338,7 +6255,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[active\\=true\\]\\:ring-ring\\/50[data-active=\"true\"]",
    "context": [
     "@layer utilities",
@@ -6350,7 +6267,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[active\\=true\\]\\:aria-invalid\\:ring-destructive\\/20[data-active=\"true\"][aria-invalid=\"true\"]",
    "context": [
     "@layer utilities"
@@ -6361,7 +6278,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[active\\=true\\]\\:aria-invalid\\:ring-destructive\\/20[data-active=\"true\"][aria-invalid=\"true\"]",
    "context": [
     "@layer utilities",
@@ -6373,7 +6290,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[side\\=bottom\\]\\:translate-y-1[data-side=\"bottom\"]",
    "context": [
     "@layer utilities"
@@ -6384,7 +6301,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[side\\=bottom\\]\\:slide-in-from-top-2[data-side=\"bottom\"]",
    "context": [
     "@layer utilities"
@@ -6395,7 +6312,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[side\\=left\\]\\:-translate-x-1[data-side=\"left\"]",
    "context": [
     "@layer utilities"
@@ -6406,7 +6323,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[side\\=left\\]\\:slide-in-from-right-2[data-side=\"left\"]",
    "context": [
     "@layer utilities"
@@ -6417,7 +6334,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[side\\=right\\]\\:translate-x-1[data-side=\"right\"]",
    "context": [
     "@layer utilities"
@@ -6428,7 +6345,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[side\\=right\\]\\:slide-in-from-left-2[data-side=\"right\"]",
    "context": [
     "@layer utilities"
@@ -6439,7 +6356,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[side\\=top\\]\\:-translate-y-1[data-side=\"top\"]",
    "context": [
     "@layer utilities"
@@ -6450,7 +6367,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[side\\=top\\]\\:slide-in-from-bottom-2[data-side=\"top\"]",
    "context": [
     "@layer utilities"
@@ -6461,7 +6378,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=active\\]\\:shadow-none[data-state=\"active\"]",
    "context": [
     "@layer utilities"
@@ -6472,18 +6389,18 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=active\\]\\:shadow-sm[data-state=\"active\"]",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a),0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+    "--tw-shadow": "0 1px 2px 0 var(--tw-shadow-color,#00000014),0 1px 1px -1px var(--tw-shadow-color,#00000014)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=checked\\]\\:translate-x-\\[calc\\(100\\%-2px\\)\\][data-state=\"checked\"]",
    "context": [
     "@layer utilities"
@@ -6494,7 +6411,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=closed\\]\\:duration-300[data-state=\"closed\"]",
    "context": [
     "@layer utilities"
@@ -6505,7 +6422,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=closed\\]\\:fade-out-0[data-state=\"closed\"]",
    "context": [
     "@layer utilities"
@@ -6516,7 +6433,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=closed\\]\\:zoom-out-95[data-state=\"closed\"]",
    "context": [
     "@layer utilities"
@@ -6527,7 +6444,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=closed\\]\\:slide-out-to-bottom[data-state=\"closed\"]",
    "context": [
     "@layer utilities"
@@ -6538,7 +6455,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=closed\\]\\:slide-out-to-left[data-state=\"closed\"]",
    "context": [
     "@layer utilities"
@@ -6549,7 +6466,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=closed\\]\\:slide-out-to-right[data-state=\"closed\"]",
    "context": [
     "@layer utilities"
@@ -6560,7 +6477,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=closed\\]\\:slide-out-to-top[data-state=\"closed\"]",
    "context": [
     "@layer utilities"
@@ -6571,7 +6488,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=open\\]\\:duration-500[data-state=\"open\"]",
    "context": [
     "@layer utilities"
@@ -6582,7 +6499,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=open\\]\\:fade-in-0[data-state=\"open\"]",
    "context": [
     "@layer utilities"
@@ -6593,7 +6510,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=open\\]\\:zoom-in-95[data-state=\"open\"]",
    "context": [
     "@layer utilities"
@@ -6604,7 +6521,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=open\\]\\:slide-in-from-bottom[data-state=\"open\"]",
    "context": [
     "@layer utilities"
@@ -6615,7 +6532,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=open\\]\\:slide-in-from-left[data-state=\"open\"]",
    "context": [
     "@layer utilities"
@@ -6626,7 +6543,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=open\\]\\:slide-in-from-right[data-state=\"open\"]",
    "context": [
     "@layer utilities"
@@ -6637,7 +6554,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=open\\]\\:slide-in-from-top[data-state=\"open\"]",
    "context": [
     "@layer utilities"
@@ -6648,7 +6565,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".data-\\[state\\=unchecked\\]\\:translate-x-0[data-state=\"unchecked\"]",
    "context": [
     "@layer utilities"
@@ -6659,19 +6576,31 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".sm\\:leading-none",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 40rem)"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".md\\:peer-data-\\[variant\\=inset\\]\\:shadow-sm:is(:where(.peer)[data-variant=\"inset\"] ~ *)",
    "context": [
     "@layer utilities",
     "@media (min-width: 48rem)"
    ],
    "properties": {
-    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a),0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+    "--tw-shadow": "0 1px 2px 0 var(--tw-shadow-color,#00000014),0 1px 1px -1px var(--tw-shadow-color,#00000014)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:scale-0:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6684,7 +6613,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:scale-100:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6697,7 +6626,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-foreground\\/9:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6708,7 +6637,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-foreground\\/9:is(.dark *)",
    "context": [
     "@layer utilities",
@@ -6720,7 +6649,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-foreground\\/9:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6731,7 +6660,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-indigo-400\\/20:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6742,7 +6671,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-indigo-400\\/20:is(.dark *)",
    "context": [
     "@layer utilities",
@@ -6754,7 +6683,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-indigo-400\\/20:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6765,31 +6694,31 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".dark\\:from-indigo-500\\/15:is(.dark *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".dark\\:from-inspect\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-gradient-from": "#625fff26"
+    "--tw-gradient-from": "var(--inspect)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".dark\\:from-indigo-500\\/15:is(.dark *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".dark\\:from-inspect\\/15:is(.dark *)",
    "context": [
     "@layer utilities",
     "@supports (color:color-mix(in lab,red,red))"
    ],
    "properties": {
-    "--tw-gradient-from": "color-mix(in oklab,var(--color-indigo-500)15%,transparent)"
+    "--tw-gradient-from": "color-mix(in oklab,var(--inspect)15%,transparent)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".dark\\:from-indigo-500\\/15:is(.dark *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".dark\\:from-inspect\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
    ],
@@ -6799,7 +6728,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-muted:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6811,7 +6740,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-primary\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6822,7 +6751,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-primary\\/15:is(.dark *)",
    "context": [
     "@layer utilities",
@@ -6834,7 +6763,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:from-primary\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6845,7 +6774,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:via-primary\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6856,7 +6785,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:via-primary\\/15:is(.dark *)",
    "context": [
     "@layer utilities",
@@ -6868,7 +6797,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:via-primary\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6880,7 +6809,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:to-amber-400\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6891,7 +6820,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:to-amber-400\\/15:is(.dark *)",
    "context": [
     "@layer utilities",
@@ -6903,7 +6832,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:to-amber-400\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6914,7 +6843,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:to-foreground\\/3:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6925,7 +6854,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:to-foreground\\/3:is(.dark *)",
    "context": [
     "@layer utilities",
@@ -6937,7 +6866,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:to-foreground\\/3:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6948,31 +6877,31 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".dark\\:to-indigo-500\\/5:is(.dark *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".dark\\:to-inspect\\/5:is(.dark *)",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-gradient-to": "#625fff0d"
+    "--tw-gradient-to": "var(--inspect)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".dark\\:to-indigo-500\\/5:is(.dark *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".dark\\:to-inspect\\/5:is(.dark *)",
    "context": [
     "@layer utilities",
     "@supports (color:color-mix(in lab,red,red))"
    ],
    "properties": {
-    "--tw-gradient-to": "color-mix(in oklab,var(--color-indigo-500)5%,transparent)"
+    "--tw-gradient-to": "color-mix(in oklab,var(--inspect)5%,transparent)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".dark\\:to-indigo-500\\/5:is(.dark *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".dark\\:to-inspect\\/5:is(.dark *)",
    "context": [
     "@layer utilities"
    ],
@@ -6982,7 +6911,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:to-primary\\/5:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -6993,7 +6922,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:to-primary\\/5:is(.dark *)",
    "context": [
     "@layer utilities",
@@ -7005,7 +6934,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:to-primary\\/5:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -7016,7 +6945,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:shadow-\\[inset_0_1px_0_0_\\#ffffff1a\\,0_1px_3px_-1px_\\#00000047\\,0_2px_6px_-2px_\\#0000002e\\]:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -7027,7 +6956,18 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".dark\\:shadow-\\[inset_0_1px_0_0_\\#ffffff1a\\,inset_0_6px_9px_-7px_\\#ffffff14\\,0_1px_1px_0_\\#0000001f\\,0_1px_3px_-1px_\\#00000017\\]:is(.dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "inset 0 1px 0 0 var(--tw-shadow-color,#ffffff1a),inset 0 6px 9px -7px var(--tw-shadow-color,#ffffff14),0 1px 1px 0 var(--tw-shadow-color,#0000001f),0 1px 3px -1px var(--tw-shadow-color,#00000017)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:inset-shadow-sm:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -7038,7 +6978,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:inset-shadow-foreground\\/8:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -7049,7 +6989,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:inset-shadow-foreground\\/8:is(.dark *)",
    "context": [
     "@layer utilities",
@@ -7061,30 +7001,30 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".dark\\:inset-shadow-indigo-500\\/15:is(.dark *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".dark\\:inset-shadow-inspect\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
    ],
    "properties": {
-    "--tw-inset-shadow-color": "#625fff26"
+    "--tw-inset-shadow-color": "var(--inspect)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
-   "selector": ".dark\\:inset-shadow-indigo-500\\/15:is(.dark *)",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
+   "selector": ".dark\\:inset-shadow-inspect\\/15:is(.dark *)",
    "context": [
     "@layer utilities",
     "@supports (color:color-mix(in lab,red,red))"
    ],
    "properties": {
-    "--tw-inset-shadow-color": "color-mix(in oklab,color-mix(in oklab,var(--color-indigo-500)15%,transparent)var(--tw-inset-shadow-alpha),transparent)"
+    "--tw-inset-shadow-color": "color-mix(in oklab,color-mix(in oklab,var(--inspect)15%,transparent)var(--tw-inset-shadow-alpha),transparent)"
    },
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:inset-shadow-primary\\/15:is(.dark *)",
    "context": [
     "@layer utilities"
@@ -7095,7 +7035,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:inset-shadow-primary\\/15:is(.dark *)",
    "context": [
     "@layer utilities",
@@ -7107,7 +7047,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:focus-visible\\:ring-destructive\\/40:is(.dark *):focus-visible",
    "context": [
     "@layer utilities"
@@ -7118,7 +7058,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:focus-visible\\:ring-destructive\\/40:is(.dark *):focus-visible",
    "context": [
     "@layer utilities",
@@ -7130,7 +7070,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:has-\\[\\[data-slot\\]\\[aria-invalid\\=true\\]\\]\\:ring-destructive\\/40:is(.dark *):has([data-slot][aria-invalid=\"true\"])",
    "context": [
     "@layer utilities"
@@ -7141,7 +7081,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:has-\\[\\[data-slot\\]\\[aria-invalid\\=true\\]\\]\\:ring-destructive\\/40:is(.dark *):has([data-slot][aria-invalid=\"true\"])",
    "context": [
     "@layer utilities",
@@ -7153,7 +7093,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:aria-invalid\\:ring-destructive\\/40:is(.dark *)[aria-invalid=\"true\"]",
    "context": [
     "@layer utilities"
@@ -7164,7 +7104,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:aria-invalid\\:ring-destructive\\/40:is(.dark *)[aria-invalid=\"true\"]",
    "context": [
     "@layer utilities",
@@ -7176,7 +7116,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:data-\\[active\\=true\\]\\:aria-invalid\\:ring-destructive\\/40:is(.dark *)[data-active=\"true\"][aria-invalid=\"true\"]",
    "context": [
     "@layer utilities"
@@ -7187,7 +7127,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".dark\\:data-\\[active\\=true\\]\\:aria-invalid\\:ring-destructive\\/40:is(.dark *)[data-active=\"true\"][aria-invalid=\"true\"]",
    "context": [
     "@layer utilities",
@@ -7199,7 +7139,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".\\[\\&_\\[cmdk-group-heading\\]\\]\\:font-medium [cmdk-group-heading]",
    "context": [
     "@layer utilities"
@@ -7210,7 +7150,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".\\[\\&_\\[cmdk-group-heading\\]\\]\\:font-normal [cmdk-group-heading]",
    "context": [
     "@layer utilities"
@@ -7221,7 +7161,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".\\[\\&_p\\]\\:leading-relaxed p",
    "context": [
     "@layer utilities"
@@ -7232,7 +7172,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".\\[\\&\\>\\[role\\=checkbox\\]\\]\\:translate-y-\\[2px\\] > [role=\"checkbox\"]",
    "context": [
     "@layer utilities"
@@ -7243,7 +7183,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "selector": ".\\[\\&\\>svg\\]\\:translate-y-0\\.5 > svg",
    "context": [
     "@layer utilities"
@@ -7444,7 +7384,7 @@
    "size-adjust": "134.59%"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "font-family": "Inter",
    "src": "url(…) format(\"woff2\")",
    "font-weight": "400",
@@ -7452,7 +7392,7 @@
    "font-display": "swap"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "font-family": "Inter",
    "src": "url(…) format(\"woff2\")",
    "font-weight": "500",
@@ -7460,7 +7400,7 @@
    "font-display": "swap"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "font-family": "Inter",
    "src": "url(…) format(\"woff2\")",
    "font-weight": "600",
@@ -7468,7 +7408,7 @@
    "font-display": "swap"
   },
   {
-   "file": "https://app.huddlekit.com/_next/static/css/d7c5b6029886ff10.css",
+   "file": "https://app.huddlekit.com/_next/static/css/aca00b2d90b05e55.css",
    "font-family": "Inter",
    "src": "url(…) format(\"woff2\")",
    "font-weight": "700",
@@ -7479,14 +7419,14 @@
  "resolved": {
   "light": {
    "--accent": {
-    "raw": "oklch(96.62% .003 39.48)",
+    "raw": "oklch(96.62% .003 70)",
     "kind": "color",
-    "value": "#f6f3f2"
+    "value": "#f5f3f2"
    },
    "--accent-foreground": {
-    "raw": "oklch(21% .006 285.885)",
+    "raw": "oklch(20.5% .004 70)",
     "kind": "color",
-    "value": "#18181b"
+    "value": "#181715"
    },
    "--animate-ping": {
     "raw": "ping 1s cubic-bezier(0,0,.2,1)infinite",
@@ -7504,6 +7444,11 @@
     "raw": "16/9",
     "kind": "other"
    },
+   "--avatar": {
+    "raw": "oklch(82.93% .1105 64.86)",
+    "kind": "color",
+    "value": "#f9b878"
+   },
    "--background": {
     "raw": "oklch(100% 0 0)",
     "kind": "color",
@@ -7520,14 +7465,14 @@
     "value": "8px"
    },
    "--border": {
-    "raw": "oklch(92% .004 286.32)",
+    "raw": "oklch(92% .004 70)",
     "kind": "color",
-    "value": "#e4e4e7"
+    "value": "#e6e4e2"
    },
    "--canvas": {
-    "raw": "oklch(94.5% .003 39.48)",
+    "raw": "oklch(94.5% .004 70)",
     "kind": "color",
-    "value": "#efeceb"
+    "value": "#eeecea"
    },
    "--card": {
     "raw": "oklch(100% 0 0)",
@@ -7535,9 +7480,9 @@
     "value": "#ffffff"
    },
    "--card-foreground": {
-    "raw": "oklch(21.01% .032 264.66)",
+    "raw": "oklch(20.5% .004 70)",
     "kind": "color",
-    "value": "#111827"
+    "value": "#181715"
    },
    "--card-gap": {
     "raw": "1rem",
@@ -7569,16 +7514,6 @@
     "kind": "color",
     "value": "#f9b878"
    },
-   "--color-amber-200": {
-    "raw": "oklch(92.4% .12 95.746)",
-    "kind": "color",
-    "value": "#fee685"
-   },
-   "--color-amber-300": {
-    "raw": "oklch(87.9% .169 91.605)",
-    "kind": "color",
-    "value": "#ffd230"
-   },
    "--color-amber-400": {
     "raw": "oklch(82.8% .189 84.429)",
     "kind": "color",
@@ -7588,26 +7523,6 @@
     "raw": "oklch(76.9% .188 70.08)",
     "kind": "color",
     "value": "#fe9a00"
-   },
-   "--color-amber-600": {
-    "raw": "oklch(66.6% .179 58.318)",
-    "kind": "color",
-    "value": "#e17100"
-   },
-   "--color-amber-700": {
-    "raw": "oklch(55.5% .163 48.998)",
-    "kind": "color",
-    "value": "#bb4d00"
-   },
-   "--color-amber-800": {
-    "raw": "oklch(47.3% .137 46.201)",
-    "kind": "color",
-    "value": "#973c00"
-   },
-   "--color-amber-900": {
-    "raw": "oklch(41.4% .112 45.904)",
-    "kind": "color",
-    "value": "#7b3306"
    },
    "--color-black": {
     "raw": "#000",
@@ -7649,11 +7564,6 @@
     "kind": "color",
     "value": "#009966"
    },
-   "--color-emerald-700": {
-    "raw": "oklch(50.8% .118 165.612)",
-    "kind": "color",
-    "value": "#007a55"
-   },
    "--color-fuchsia-500": {
     "raw": "oklch(66.7% .295 322.15)",
     "kind": "color",
@@ -7663,11 +7573,6 @@
     "raw": "oklch(70.7% .022 261.325)",
     "kind": "color",
     "value": "#99a1af"
-   },
-   "--color-gray-500": {
-    "raw": "oklch(55.1% .027 264.364)",
-    "kind": "color",
-    "value": "#6a7282"
    },
    "--color-green-400": {
     "raw": "oklch(79.2% .209 151.711)",
@@ -7704,11 +7609,6 @@
     "kind": "color",
     "value": "#4f39f6"
    },
-   "--color-indigo-700": {
-    "raw": "oklch(45.7% .24 277.023)",
-    "kind": "color",
-    "value": "#432dd7"
-   },
    "--color-lime-500": {
     "raw": "oklch(76.8% .233 130.85)",
     "kind": "color",
@@ -7735,9 +7635,9 @@
     "value": "#ca3500"
    },
    "--color-page": {
-    "raw": "oklch(96.62% .003 39.48)",
+    "raw": "oklch(96.62% .003 70)",
     "kind": "color",
-    "value": "#f6f3f2"
+    "value": "#f5f3f2"
    },
    "--color-pink-500": {
     "raw": "oklch(65.6% .241 354.308)",
@@ -7824,6 +7724,11 @@
     "kind": "other",
     "note": "font-relative length; resolves per element"
    },
+   "--container-6xl": {
+    "raw": "72rem",
+    "kind": "other",
+    "note": "font-relative length; resolves per element"
+   },
    "--container-lg": {
     "raw": "32rem",
     "kind": "other",
@@ -7860,9 +7765,9 @@
     "value": "cubic-bezier(.4,0,.2,1)"
    },
    "--destructive": {
-    "raw": "oklch(57.7% .245 27.325)",
+    "raw": "oklch(57.7% .22 25)",
     "kind": "color",
-    "value": "#e7000b"
+    "value": "#de1f2d"
    },
    "--ease-in": {
     "raw": "cubic-bezier(.4,0,1,1)",
@@ -7920,14 +7825,29 @@
     "value": 600
    },
    "--foreground": {
-    "raw": "oklch(21.01% .032 264.66)",
+    "raw": "oklch(20.5% .004 70)",
     "kind": "color",
-    "value": "#111827"
+    "value": "#181715"
    },
    "--input": {
-    "raw": "oklch(92% .004 286.32)",
+    "raw": "oklch(92% .004 70)",
     "kind": "color",
-    "value": "#e4e4e7"
+    "value": "#e6e4e2"
+   },
+   "--inspect": {
+    "raw": "oklch(58.34% .2305 277.07)",
+    "kind": "color",
+    "value": "#615fff"
+   },
+   "--inspect-foreground": {
+    "raw": "oklch(100% 0 0)",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--inspect-muted-foreground": {
+    "raw": "oklch(51% .23 277)",
+    "kind": "color",
+    "value": "#4f46e5"
    },
    "--leading-normal": {
     "raw": "1.5",
@@ -7955,14 +7875,14 @@
     "value": 0.75
    },
    "--muted": {
-    "raw": "oklch(96.62% .003 39.48)",
+    "raw": "oklch(96.62% .003 70)",
     "kind": "color",
-    "value": "#f6f3f2"
+    "value": "#f5f3f2"
    },
    "--muted-foreground": {
-    "raw": "oklch(55.1% .004 39.46)",
+    "raw": "oklch(55.1% .006 70)",
     "kind": "color",
-    "value": "#747170"
+    "value": "#74716e"
    },
    "--popover": {
     "raw": "oklch(100% 0 0)",
@@ -7970,9 +7890,9 @@
     "value": "#ffffff"
    },
    "--popover-foreground": {
-    "raw": "oklch(14.1% .005 285.823)",
+    "raw": "oklch(20.5% .004 70)",
     "kind": "color",
-    "value": "#09090b"
+    "value": "#181715"
    },
    "--primary": {
     "raw": "oklch(64.61% .194 41.12)",
@@ -8015,9 +7935,9 @@
     "note": "font-relative length; resolves per element"
    },
    "--ring": {
-    "raw": "oklch(70.5% .213 47.604)",
+    "raw": "oklch(64.61% .194 41.12)",
     "kind": "color",
-    "value": "#ff6900"
+    "value": "#ea580d"
    },
    "--scroll-mask-b-from": {
     "raw": "100%",
@@ -8036,14 +7956,14 @@
     "kind": "other"
    },
    "--secondary": {
-    "raw": "oklch(93.66% .005 48.68)",
+    "raw": "oklch(93.66% .004 70)",
     "kind": "color",
-    "value": "#ede9e7"
+    "value": "#eceae7"
    },
    "--secondary-foreground": {
-    "raw": "oklch(21% .006 285.885)",
+    "raw": "oklch(20.5% .004 70)",
     "kind": "color",
-    "value": "#18181b"
+    "value": "#181715"
    },
    "--section-gap": {
     "raw": "3rem",
@@ -8056,34 +7976,34 @@
     "note": "font-relative length; resolves per element"
    },
    "--sidebar": {
-    "raw": "oklch(96.62% .003 39.48)",
+    "raw": "oklch(96.62% .003 70)",
     "kind": "color",
-    "value": "#f6f3f2"
+    "value": "#f5f3f2"
    },
    "--sidebar-accent": {
-    "raw": "oklch(96.62% .003 39.48)",
+    "raw": "oklch(96.62% .003 70)",
     "kind": "color",
-    "value": "#f6f3f2"
+    "value": "#f5f3f2"
    },
    "--sidebar-accent-foreground": {
-    "raw": "oklch(21% .006 285.885)",
+    "raw": "oklch(20.5% .004 70)",
     "kind": "color",
-    "value": "#18181b"
+    "value": "#181715"
    },
    "--sidebar-border": {
-    "raw": "oklch(92% .004 286.32)",
+    "raw": "oklch(92% .004 70)",
     "kind": "color",
-    "value": "#e4e4e7"
+    "value": "#e6e4e2"
    },
    "--sidebar-foreground": {
-    "raw": "oklch(14.1% .005 285.823)",
+    "raw": "oklch(20.5% .004 70)",
     "kind": "color",
-    "value": "#09090b"
+    "value": "#181715"
    },
    "--sidebar-primary": {
-    "raw": "oklch(70.5% .213 47.604)",
+    "raw": "oklch(64.61% .194 41.12)",
     "kind": "color",
-    "value": "#ff6900"
+    "value": "#ea580d"
    },
    "--sidebar-primary-foreground": {
     "raw": "oklch(98% .016 73.684)",
@@ -8091,14 +8011,29 @@
     "value": "#fff7ed"
    },
    "--sidebar-ring": {
-    "raw": "oklch(70.5% .213 47.604)",
+    "raw": "oklch(64.61% .194 41.12)",
     "kind": "color",
-    "value": "#ff6900"
+    "value": "#ea580d"
    },
    "--spacing": {
     "raw": ".25rem",
     "kind": "other",
     "note": "font-relative length; resolves per element"
+   },
+   "--success": {
+    "raw": "oklch(60% .15 150)",
+    "kind": "color",
+    "value": "#25984d"
+   },
+   "--success-foreground": {
+    "raw": "oklch(100% 0 0)",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--success-muted-foreground": {
+    "raw": "oklch(50% .12 150)",
+    "kind": "color",
+    "value": "#21763c"
    },
    "--text-2xl": {
     "raw": "1.5rem",
@@ -8216,9 +8151,9 @@
     "note": "font-relative length; resolves per element"
    },
    "--upgrade": {
-    "raw": "oklch(60% .26 282)",
+    "raw": "oklch(57% .24 298)",
     "kind": "color",
-    "value": "#7357ff"
+    "value": "#8d43ee"
    },
    "--upgrade-foreground": {
     "raw": "oklch(100% 0 0)",
@@ -8226,21 +8161,31 @@
     "value": "#ffffff"
    },
    "--upgrade-muted-foreground": {
-    "raw": "oklch(52% .25 282)",
+    "raw": "oklch(50% .22 298)",
     "kind": "color",
-    "value": "#5e3cf0"
+    "value": "#7732cd"
+   },
+   "--warning": {
+    "raw": "oklch(77% .155 72)",
+    "kind": "color",
+    "value": "#f0a226"
+   },
+   "--warning-muted-foreground": {
+    "raw": "oklch(52% .115 62)",
+    "kind": "color",
+    "value": "#97570d"
    }
   },
   "dark": {
    "--accent": {
-    "raw": "oklch(27.26% .006 34.3)",
+    "raw": "oklch(27.26% .005 70)",
     "kind": "color",
-    "value": "#2a2625"
+    "value": "#292724"
    },
    "--accent-foreground": {
-    "raw": "oklch(98.5% 0 0)",
+    "raw": "oklch(94.5% .003 70)",
     "kind": "color",
-    "value": "#fafafa"
+    "value": "#eeeceb"
    },
    "--animate-ping": {
     "raw": "ping 1s cubic-bezier(0,0,.2,1)infinite",
@@ -8258,10 +8203,15 @@
     "raw": "16/9",
     "kind": "other"
    },
-   "--background": {
-    "raw": "oklch(15.43% .007 338.1)",
+   "--avatar": {
+    "raw": "oklch(46.99% .143 37.06)",
     "kind": "color",
-    "value": "#0e0b0d"
+    "value": "#9a3413"
+   },
+   "--background": {
+    "raw": "oklch(15.43% .004 70)",
+    "kind": "color",
+    "value": "#0d0c0a"
    },
    "--blur-md": {
     "raw": "12px",
@@ -8279,19 +8229,19 @@
     "value": "rgba(255, 255, 255, 0.08)"
    },
    "--canvas": {
-    "raw": "oklch(20% .006 345.57)",
+    "raw": "oklch(20% .004 70)",
     "kind": "color",
-    "value": "#181517"
+    "value": "#171614"
    },
    "--card": {
-    "raw": "oklch(20.85% .005 355.29)",
+    "raw": "oklch(20.85% .004 70)",
     "kind": "color",
-    "value": "#1a1718"
+    "value": "#191816"
    },
    "--card-foreground": {
-    "raw": "oklch(98.5% 0 0)",
+    "raw": "oklch(94.5% .003 70)",
     "kind": "color",
-    "value": "#fafafa"
+    "value": "#eeeceb"
    },
    "--card-gap": {
     "raw": "1rem",
@@ -8323,16 +8273,6 @@
     "kind": "color",
     "value": "#9a3413"
    },
-   "--color-amber-200": {
-    "raw": "oklch(92.4% .12 95.746)",
-    "kind": "color",
-    "value": "#fee685"
-   },
-   "--color-amber-300": {
-    "raw": "oklch(87.9% .169 91.605)",
-    "kind": "color",
-    "value": "#ffd230"
-   },
    "--color-amber-400": {
     "raw": "oklch(82.8% .189 84.429)",
     "kind": "color",
@@ -8342,26 +8282,6 @@
     "raw": "oklch(76.9% .188 70.08)",
     "kind": "color",
     "value": "#fe9a00"
-   },
-   "--color-amber-600": {
-    "raw": "oklch(66.6% .179 58.318)",
-    "kind": "color",
-    "value": "#e17100"
-   },
-   "--color-amber-700": {
-    "raw": "oklch(55.5% .163 48.998)",
-    "kind": "color",
-    "value": "#bb4d00"
-   },
-   "--color-amber-800": {
-    "raw": "oklch(47.3% .137 46.201)",
-    "kind": "color",
-    "value": "#973c00"
-   },
-   "--color-amber-900": {
-    "raw": "oklch(41.4% .112 45.904)",
-    "kind": "color",
-    "value": "#7b3306"
    },
    "--color-black": {
     "raw": "#000",
@@ -8403,11 +8323,6 @@
     "kind": "color",
     "value": "#009966"
    },
-   "--color-emerald-700": {
-    "raw": "oklch(50.8% .118 165.612)",
-    "kind": "color",
-    "value": "#007a55"
-   },
    "--color-fuchsia-500": {
     "raw": "oklch(66.7% .295 322.15)",
     "kind": "color",
@@ -8417,11 +8332,6 @@
     "raw": "oklch(70.7% .022 261.325)",
     "kind": "color",
     "value": "#99a1af"
-   },
-   "--color-gray-500": {
-    "raw": "oklch(55.1% .027 264.364)",
-    "kind": "color",
-    "value": "#6a7282"
    },
    "--color-green-400": {
     "raw": "oklch(79.2% .209 151.711)",
@@ -8458,11 +8368,6 @@
     "kind": "color",
     "value": "#4f39f6"
    },
-   "--color-indigo-700": {
-    "raw": "oklch(45.7% .24 277.023)",
-    "kind": "color",
-    "value": "#432dd7"
-   },
    "--color-lime-500": {
     "raw": "oklch(76.8% .233 130.85)",
     "kind": "color",
@@ -8489,9 +8394,9 @@
     "value": "#ca3500"
    },
    "--color-page": {
-    "raw": "oklch(27.26% .006 34.3)",
+    "raw": "oklch(27.26% .005 70)",
     "kind": "color",
-    "value": "#2a2625"
+    "value": "#292724"
    },
    "--color-pink-500": {
     "raw": "oklch(65.6% .241 354.308)",
@@ -8578,6 +8483,11 @@
     "kind": "other",
     "note": "font-relative length; resolves per element"
    },
+   "--container-6xl": {
+    "raw": "72rem",
+    "kind": "other",
+    "note": "font-relative length; resolves per element"
+   },
    "--container-lg": {
     "raw": "32rem",
     "kind": "other",
@@ -8614,9 +8524,9 @@
     "value": "cubic-bezier(.4,0,.2,1)"
    },
    "--destructive": {
-    "raw": "oklch(70.4% .191 22.216)",
+    "raw": "oklch(70% .17 24)",
     "kind": "color",
-    "value": "#ff6467"
+    "value": "#f66c69"
    },
    "--ease-in": {
     "raw": "cubic-bezier(.4,0,1,1)",
@@ -8674,14 +8584,29 @@
     "value": 600
    },
    "--foreground": {
-    "raw": "oklch(90.88% .004 39.48)",
+    "raw": "oklch(94.5% .003 70)",
     "kind": "color",
-    "value": "#e3e0df"
+    "value": "#eeeceb"
    },
    "--input": {
     "raw": "oklch(100% 0 0/.16)",
     "kind": "color",
     "value": "rgba(255, 255, 255, 0.16)"
+   },
+   "--inspect": {
+    "raw": "oklch(58.34% .2305 277.07)",
+    "kind": "color",
+    "value": "#615fff"
+   },
+   "--inspect-foreground": {
+    "raw": "oklch(100% 0 0)",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--inspect-muted-foreground": {
+    "raw": "oklch(74% .13 277)",
+    "kind": "color",
+    "value": "#96a2fc"
    },
    "--leading-normal": {
     "raw": "1.5",
@@ -8709,24 +8634,24 @@
     "value": 1
    },
    "--muted": {
-    "raw": "oklch(27.26% .006 34.3)",
+    "raw": "oklch(27.26% .005 70)",
     "kind": "color",
-    "value": "#2a2625"
+    "value": "#292724"
    },
    "--muted-foreground": {
-    "raw": "oklch(70.8% .004 39.47)",
+    "raw": "oklch(70.8% .005 70)",
     "kind": "color",
-    "value": "#a3a09f"
+    "value": "#a3a09e"
    },
    "--popover": {
-    "raw": "oklch(20.85% .005 355.29)",
+    "raw": "oklch(20.85% .004 70)",
     "kind": "color",
-    "value": "#1a1718"
+    "value": "#191816"
    },
    "--popover-foreground": {
-    "raw": "oklch(98.5% 0 0)",
+    "raw": "oklch(94.5% .003 70)",
     "kind": "color",
-    "value": "#fafafa"
+    "value": "#eeeceb"
    },
    "--primary": {
     "raw": "oklch(64.61% .194 41.12)",
@@ -8769,9 +8694,9 @@
     "note": "font-relative length; resolves per element"
    },
    "--ring": {
-    "raw": "oklch(64.6% .222 41.116)",
+    "raw": "oklch(64.61% .194 41.12)",
     "kind": "color",
-    "value": "#f54900"
+    "value": "#ea580d"
    },
    "--scroll-mask-b-from": {
     "raw": "100%",
@@ -8790,14 +8715,14 @@
     "kind": "other"
    },
    "--secondary": {
-    "raw": "oklch(27.26% .006 34.3)",
+    "raw": "oklch(27.26% .005 70)",
     "kind": "color",
-    "value": "#2a2625"
+    "value": "#292724"
    },
    "--secondary-foreground": {
-    "raw": "oklch(98.5% 0 0)",
+    "raw": "oklch(94.5% .003 70)",
     "kind": "color",
-    "value": "#fafafa"
+    "value": "#eeeceb"
    },
    "--section-gap": {
     "raw": "3rem",
@@ -8810,19 +8735,19 @@
     "note": "font-relative length; resolves per element"
    },
    "--sidebar": {
-    "raw": "oklch(20.85% .005 355.29)",
+    "raw": "oklch(20.85% .004 70)",
     "kind": "color",
-    "value": "#1a1718"
+    "value": "#191816"
    },
    "--sidebar-accent": {
-    "raw": "oklch(20.85% .005 355.29)",
+    "raw": "oklch(20.85% .004 70)",
     "kind": "color",
-    "value": "#1a1718"
+    "value": "#191816"
    },
    "--sidebar-accent-foreground": {
-    "raw": "oklch(98.5% 0 0)",
+    "raw": "oklch(94.5% .003 70)",
     "kind": "color",
-    "value": "#fafafa"
+    "value": "#eeeceb"
    },
    "--sidebar-border": {
     "raw": "oklch(100% 0 0/.1)",
@@ -8830,9 +8755,9 @@
     "value": "rgba(255, 255, 255, 0.1)"
    },
    "--sidebar-foreground": {
-    "raw": "oklch(90.88% .004 39.48)",
+    "raw": "oklch(94.5% .003 70)",
     "kind": "color",
-    "value": "#e3e0df"
+    "value": "#eeeceb"
    },
    "--sidebar-primary": {
     "raw": "oklch(64.61% .194 41.12)",
@@ -8845,14 +8770,29 @@
     "value": "#fff7ed"
    },
    "--sidebar-ring": {
-    "raw": "oklch(64.6% .222 41.116)",
+    "raw": "oklch(64.61% .194 41.12)",
     "kind": "color",
-    "value": "#f54900"
+    "value": "#ea580d"
    },
    "--spacing": {
     "raw": ".25rem",
     "kind": "other",
     "note": "font-relative length; resolves per element"
+   },
+   "--success": {
+    "raw": "oklch(60% .15 150)",
+    "kind": "color",
+    "value": "#25984d"
+   },
+   "--success-foreground": {
+    "raw": "oklch(100% 0 0)",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--success-muted-foreground": {
+    "raw": "oklch(80% .13 152)",
+    "kind": "color",
+    "value": "#78d694"
    },
    "--text-2xl": {
     "raw": "1.5rem",
@@ -8970,9 +8910,9 @@
     "note": "font-relative length; resolves per element"
    },
    "--upgrade": {
-    "raw": "oklch(60% .26 282)",
+    "raw": "oklch(57% .24 298)",
     "kind": "color",
-    "value": "#7357ff"
+    "value": "#8d43ee"
    },
    "--upgrade-foreground": {
     "raw": "oklch(100% 0 0)",
@@ -8980,9 +8920,19 @@
     "value": "#ffffff"
    },
    "--upgrade-muted-foreground": {
-    "raw": "oklch(80% .13 282)",
+    "raw": "oklch(80% .11 298)",
     "kind": "color",
-    "value": "#b1b3ff"
+    "value": "#c6aefc"
+   },
+   "--warning": {
+    "raw": "oklch(77% .155 72)",
+    "kind": "color",
+    "value": "#f0a226"
+   },
+   "--warning-muted-foreground": {
+    "raw": "oklch(84% .12 80)",
+    "kind": "color",
+    "value": "#f4c26a"
    }
   }
  }

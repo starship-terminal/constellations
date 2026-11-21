@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-21T12:48:46.972Z",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1,
+    "url": "https://huddlekit.com/",
+    "state": "Solutions menu"
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "url": "https://huddlekit.com/",
+    "title": "Huddlekit | Visual annotation tool for website feedback"
+  },
+  "note": "site-tree state, signed out, no form submitted"
+}

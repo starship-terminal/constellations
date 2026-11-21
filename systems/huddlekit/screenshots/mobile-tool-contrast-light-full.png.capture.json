@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:51:03.641Z",
+  "capturedAt": "2026-11-21T13:04:56.787Z",
   "screenshot": "mobile-tool-contrast-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/tools/color-contrast-checker",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 4784
+      "height": 4768
     },
     "scroll": {
       "x": 0,
@@ -44,17 +44,20 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 4768,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 390,
-    "height": 4784
+    "height": 4768
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 390,
-      "height": 4784
+      "height": 4768
     },
     "basis": "fullPage"
   },

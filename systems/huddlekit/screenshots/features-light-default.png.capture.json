@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:43:51.438Z",
+  "capturedAt": "2026-11-21T12:51:32.160Z",
   "screenshot": "features-light-default.png",
   "sanitizedSourceUrl": "https://huddlekit.com/features",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8710
+      "height": 8614
     },
     "scroll": {
       "x": 0,

@@ -1,0 +1,58 @@
+{
+  "offered": {
+    "nav": {
+      "items": [
+        "No signed-in navigation. The login wall stopped the walk."
+      ],
+      "reached": [
+        "No signed-in navigation. The login wall stopped the walk."
+      ]
+    },
+    "settings": {
+      "items": [
+        "No settings area. The login wall stopped the walk."
+      ],
+      "reached": [
+        "No settings area. The login wall stopped the walk."
+      ]
+    },
+    "create": {
+      "items": [
+        "No create flow. The login wall stopped the walk."
+      ],
+      "reached": [
+        "No create flow. The login wall stopped the walk."
+      ]
+    }
+  },
+  "screens": [
+    "screenshots/site-tree/desktop-login-wall.png",
+    "screenshots/app-login-light-default.png",
+    "screenshots/app-login-light-consent.png",
+    "screenshots/app-login-light-email-open.png",
+    "screenshots/app-login-dark-default.png",
+    "screenshots/app-login-dark-email-open.png",
+    "screenshots/mobile-app-login-light-default.png"
+  ],
+  "gaps": [
+    "Public-web capture only. Sign in on huddlekit.com opens https://app.huddlekit.com/login. That page is a login wall: Continue with Google and Continue with email. The signed-in app was not entered.",
+    "offered.nav, offered.settings, and offered.create name the stop. No signed-in navigation, settings area, or create flow was visible.",
+    "Continue with Google was not clicked. No identity provider was opened.",
+    "Continue with email was clicked only to reveal an empty email field. Nothing was typed. Continue was not submitted. No 6-digit code was requested or entered.",
+    "Cookie Decline and Accept were not pressed. The banner was hidden in the stylesheet for later shots, which is not a consent answer.",
+    "The marketing site has no theme switch. Dark shots are the app login under an emulated prefers-color-scheme, plus nested dark panels on the marketing pages.",
+    "Homepage FAQ rows are summary elements, not buttons. The accordion opener looked for main button[aria-expanded] and did not find one, so the open FAQ state was not re-shot on this pass."
+  ],
+  "not_submitted": [
+    "Continue with Google",
+    "Continue with email",
+    "Email address",
+    "6-digit sign-in code",
+    "Cookie Decline",
+    "Cookie Accept",
+    "Get started",
+    "Sign in",
+    "Contact form",
+    "Support search"
+  ]
+}
