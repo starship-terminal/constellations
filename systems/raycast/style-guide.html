@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Raycast public tokens</title>
+  <style>
+    :root {
+      --page: #07080a;
+      --surface: #101111;
+      --raised: #18191a;
+      --text: #f4f4f6;
+      --muted: #9c9c9d;
+      --border: #242728;
+      --accent: #ff6161;
+      --info: #57c1ff;
+      --success: #59d499;
+      --warning: #ffc533;
+      --button: #e6e6e6;
+      --on-button: #2f3031;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font: 16px/1.4 ui-sans-serif, system-ui, sans-serif;
+    }
+    main { max-width: 760px; margin: 48px auto; padding: 0 24px; }
+    h1 { font-size: 40px; line-height: 1.1; font-weight: 600; }
+    p.lead { color: var(--text); letter-spacing: 0.2px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+    .swatch { width: 120px; }
+    .chip { height: 64px; border-radius: 8px; border: 1px solid var(--border); }
+    .name { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    a.button {
+      display: inline-block;
+      background: var(--button);
+      color: var(--on-button);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      text-decoration: none;
+    }
+    nav.bar {
+      display: flex;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px;
+      margin: 24px 0;
+    }
+    nav.bar span { color: var(--muted); font-size: 14px; font-weight: 500; padding: 8px; }
+    .field {
+      margin-top: 16px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 280px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Your shortcut to everything.</h1>
+    <p class="lead">Public marketing tokens from raycast.com, 2026-11-22. Inter is not loaded.</p>
+    <nav class="bar">
+      <span>Store</span>
+      <span>Pro</span>
+      <span>AI</span>
+      <span>Pricing</span>
+      <a class="button" href="#download">Download</a>
+    </nav>
+    <div class="row">
+      <div class="swatch"><div class="chip" style="background:#07080a"></div><div class="name">page #07080a</div></div>
+      <div class="swatch"><div class="chip" style="background:#101111"></div><div class="name">surface #101111</div></div>
+      <div class="swatch"><div class="chip" style="background:#18191a"></div><div class="name">raised #18191a</div></div>
+      <div class="swatch"><div class="chip" style="background:#f4f4f6"></div><div class="name">text #f4f4f6</div></div>
+      <div class="swatch"><div class="chip" style="background:#9c9c9d"></div><div class="name">muted #9c9c9d</div></div>
+      <div class="swatch"><div class="chip" style="background:#ff6161"></div><div class="name">red #ff6161</div></div>
+      <div class="swatch"><div class="chip" style="background:#57c1ff"></div><div class="name">blue #57c1ff</div></div>
+      <div class="swatch"><div class="chip" style="background:#59d499"></div><div class="name">green #59d499</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffc533"></div><div class="name">yellow #ffc533</div></div>
+      <div class="swatch"><div class="chip" style="background:#e6e6e6"></div><div class="name">button #e6e6e6</div></div>
+    </div>
+    <div class="field">Email address</div>
+  </main>
+</body>
+</html>
