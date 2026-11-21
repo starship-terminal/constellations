@@ -1,6 +1,6 @@
 # Voicenotes patterns
 
-Public pages only. Viewport 1169 by 731. No screenshots: the preview browser did not produce frames.
+Public pages only. Photographed 21 November 2026 at 1440 by 900 and 390 by 844. The control map is [site-tree.md](site-tree.md).
 
 ## Marketing home
 
@@ -30,6 +30,10 @@ Log in opens a modal on the marketing origin. First step: Welcome back, Continue
 
 `https://voicenotes.com/reviews`. Inter SemiBold 24px / 32px heading, "Loved by 850,000+ note-takers." Log in and Sign up are 14px, 8px radius, and also open in place (`javascript:void(null)`).
 
+## Phone
+
+At 390 the header is the wordmark and an Open menu control. The sheet lists Download, Enterprise, Pricing, Resources and Login, with Book a demo and Start for free pinned at the bottom. See [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
+
 ## Not captured
 
-Signed-in app shell, empty, loading and error states, destructive confirmation, search, onboarding, and any payment or checkout. Phone layout was not measured.
+Signed-in app shell, empty, loading and error states, destructive confirmation, a search result, onboarding, and any payment or checkout. Login and signup walls were photographed and not submitted.

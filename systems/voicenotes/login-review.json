@@ -1,0 +1,72 @@
+{
+  "product": "Voicenotes",
+  "domain": "voicenotes.com",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "session": "absent",
+  "loginExtracted": "not-started",
+  "submitted": false,
+  "identityProvidersClicked": [],
+  "typed": [],
+  "walls": [
+    {
+      "kind": "login-modal",
+      "openedBy": "Header Log in on https://voicenotes.com/",
+      "url": "https://voicenotes.com/",
+      "screenshot": "screenshots/home-light-login-modal.png",
+      "asksFor": [
+        "Continue with Google",
+        "Continue with Microsoft",
+        "Continue with Apple",
+        "Continue with Email",
+        "Continue with Twitter",
+        "Continue with SSO"
+      ],
+      "inputsVisible": [],
+      "alsoLinks": "Sign up to /signup",
+      "stopped": true,
+      "note": "Email was not expanded. No field was typed. No provider was clicked."
+    },
+    {
+      "kind": "login-page",
+      "openedBy": "Direct navigation, and blog Log in",
+      "url": "https://voicenotes.com/login",
+      "screenshot": "screenshots/login-light-default.png",
+      "asksFor": [
+        "Continue with Google",
+        "Continue with Microsoft",
+        "Continue with SSO",
+        "Other ways to login (collapsed)"
+      ],
+      "inputsVisible": [],
+      "alsoLinks": "Sign up",
+      "stopped": true,
+      "note": "Other ways to login was not expanded. No field was typed. No provider was clicked."
+    },
+    {
+      "kind": "signup-page",
+      "openedBy": "Header Start for free, and direct navigation",
+      "url": "https://voicenotes.com/signup",
+      "screenshot": "screenshots/signup-light-default.png",
+      "asksFor": [
+        "Continue with Google",
+        "Continue with Microsoft",
+        "Other ways to sign up (collapsed)"
+      ],
+      "inputsVisible": [],
+      "alsoLinks": "Login to /login",
+      "stopped": true,
+      "note": "Other ways to sign up was not expanded. No account was created."
+    }
+  ],
+  "notFollowed": [
+    "https://voicenotes.com/app (prior probe redirected to login; session absent)",
+    "Google",
+    "Microsoft",
+    "Apple",
+    "Twitter",
+    "SSO",
+    "Continue with Email",
+    "enterprise Typeform Next"
+  ]
+}

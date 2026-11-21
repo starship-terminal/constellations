@@ -1,6 +1,6 @@
 # Voicenotes components
 
-Measured on the public site on 19 November 2026, viewport 1169 by 731. No crops: the preview browser did not produce screenshot frames.
+Measured on the public site on 19 November 2026 (viewport 1169 by 731) and photographed on 21 November 2026 at 1440 by 900 and 390 by 844. No component crops: the public walk saved full pages in [screenshots/](screenshots/).
 
 ## Button
 
@@ -14,7 +14,7 @@ Pricing quiet, "Get started" and "Talk to sales": background `#E6E5E0`, text `#0
 
 Pricing primary: `#0D0D0D` fill, white text, height 44px.
 
-Hover on login provider buttons is declared as `rgba(13, 13, 13, 0.03)` in `.tw-grey-bordered-btn:hover`. Pressed, disabled and loading were not on the page.
+On 21 November, a forced `:hover` on the nav filled button computed `rgba(13, 13, 13, 0.85)`. The quiet nav button hover computed `rgba(13, 13, 13, 0.05)`. Forced `:focus` and `:active` matched default. Disabled and loading were not on the page. See [home-light-default](screenshots/home-light-default.png).
 
 ## Link
 
@@ -28,7 +28,7 @@ Blog post links compute to `#0088FF` with an underline.
 
 Login email and password fields: height 48px, width 306px, radius 16px, padding 0 16px, background `rgba(13, 13, 13, 0.05)`, 2px transparent border, Inter Regular 14px, colour `#0D0D0D`. Placeholder "Email Address" and "Password".
 
-Focus, from `.tw-input-common-v2:focus`: border colour `#0D0D0D`. Hover, from the same rule: background `rgba(13, 13, 13, 0.1)`. Error and disabled were not shown. Nothing was typed or submitted.
+Focus, from `.tw-input-common-v2:focus`: border colour `#0D0D0D`. Hover, from the same rule: background `rgba(13, 13, 13, 0.1)`. Error and disabled were not shown. Nothing was typed or submitted. The 21 November walk did not expand Continue with Email, so those fields are not in the new screenshots. The pricing compare search field computed to 32px, Inter Regular 16px, transparent background.
 
 ## Card
 
@@ -56,10 +56,12 @@ The login close control is 32 by 32, radius 9999px. Its icon SVG was not extract
 
 ## Gaps
 
-Text area, select, checkbox, radio, switch, menu, tooltip, toast, list row, table, avatar: not present on the public pages that were opened.
+Text area, select, checkbox, radio, switch, tooltip, toast: not present on the public pages that were opened.
+
+Menu exists as the Download and Resources dropdowns and the phone Open menu sheet. Table exists as the pricing compare grid. List rows exist in the phone menu.
 
 Dialog exists as the login modal. Toast, empty, loading and error states were not shown.
 
 Dark theme classes exist in the stylesheet (`.dark`, `dark:bg-darkTheme2` `#272829`) and were not applied on the live public pages.
 
-Phone width (390) was not measured. The only viewport read was 1169 by 731 at devicePixelRatio 2.
+Phone width 390 was photographed on 21 November 2026. The 19 November viewport was 1169 by 731. The 21 November desktop viewport was 1440 by 900.

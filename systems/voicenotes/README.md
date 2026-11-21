@@ -1,18 +1,21 @@
 # Voicenotes
 
-Voicenotes is an AI meeting-notes product. This package records the public marketing site and the signed-out login modal on voicenotes.com, measured on 19 November 2026. No account was created. Themes seen live: light only. Viewport read: 1169 by 731, devicePixelRatio 2.
+Voicenotes is an AI meeting-notes product. This package records the public marketing site and the signed-out login and signup walls on voicenotes.com. Styles were first read on 19 November 2026. On 21 November 2026 a headless Playwright pass photographed the public pages at a measured 1440 by 900 (devicePixelRatio 1) and 390 by 844 (devicePixelRatio 2), and re-read the home heading at that desktop width. No account was created. Themes seen live: light only.
 
 | File | What it holds |
 |---|---|
 | [README.md](README.md) | This entry file |
-| [icon.png](icon.png) | Site favicon, resized to 128 px from `https://voicenotes.com/favicon.png`. Also the catalog cover, because no page screenshot exists |
+| [icon.png](icon.png) | Site favicon, resized to 128 px from `https://voicenotes.com/favicon.png` |
 | [DESIGN.md](DESIGN.md) | Generated from tokens.json |
 | [tokens.json](tokens.json) | Measured colour, type, radius and spacing tokens |
 | [style-guide.html](style-guide.html) | Specimens drawn from the measured values |
 | [components.md](components.md) | Components that were on the public pages |
 | [patterns.md](patterns.md) | How the public pages are put together |
-| [raw/](raw/) | The computed-style readings |
-| [tools/](tools/) | The kit copy and `build_tokens.py` |
+| [site-tree.md](site-tree.md) | Which public control opens which page, and where a wall stopped the walk |
+| [login-review.json](login-review.json) | What the login and signup walls ask for. Nothing was typed or submitted |
+| [screenshots/](screenshots/) | 19 public captures, 256-colour PNGs. Desktop 1440 by 900, phone 390 by 844 at 2x |
+| [raw/](raw/) | The computed-style readings, including the 21 November Playwright pass |
+| [tools/](tools/) | The kit copy, `build_tokens.py`, and the public walk script |
 
 ## Brief
 
@@ -22,7 +25,12 @@ Read this before designing in this style. Take every value from [tokens.json](to
 
 ### Principles
 
-The README's [Do and don't](#do-and-dont) section lists no rules.
+1. Ink on warm paper.
+2. Serif for the promise, Inter for the control.
+3. Pills for actions, 4px for a price card.
+4. Stop at the wall.
+
+Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
 ### Using tokens
 
@@ -57,21 +65,21 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 Not graded yet: no scorecard snapshot reviews this package. Review it against [scorecard/criteria.json](../../scorecard/criteria.json) in the wording for its platform (`python3 tools/grade.py --criteria voicenotes` prints it) and merge the grades with `python3 tools/grade.py --write --review voicenotes=<grades.json>`.
 
-Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (no crops, because there are no screenshots to crop), `icons/` (inline SVGs were not extracted; the site icon is icon.png), `screenshots/` (preview_snapshot returned 'The browser is not producing screenshot frames' twice, so no PNG was saved).
+Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (no crops, because there are no screenshots to crop), `icons/` (inline SVGs were not extracted; the site icon is icon.png).
 
 <!-- health:end -->
 
 ## How the values were read
 
-The T3 preview browser opened `https://voicenotes.com/` with `reuseExistingTab` false. `preview_evaluate` read `getComputedStyle` on the live elements and the page's own stylesheet rules. Custom properties on `:root` were empty. Colours come from Tailwind utilities compiled into the Nuxt CSS (`text-dark` is `rgb(13, 13, 13)`, `bg-[#FAF9F5]` is the page).
+The 19 November readings came from `getComputedStyle` on the live marketing pages and from stylesheet rule text. Custom properties on `:root` were empty. Colours come from Tailwind utilities compiled into the Nuxt CSS (`text-dark` is `rgb(13, 13, 13)`, `bg-[#FAF9F5]` is the page). That pass used a 1169 by 731 preview tab. It produced no screenshots.
 
-Pages read: home, the login modal, pricing, enterprise, brand assets, the blog index, one blog post, and reviews. `prefers-color-scheme: dark` was set on the tab. The marketing page stayed on `landing-bg` and `#FAF9F5`.
+On 21 November 2026, headless Playwright opened the same public pages. [tools/capture/public/walk.mjs](tools/capture/public/walk.mjs) photographed each reachable state and wrote viewport metrics. [tools/capture/quantize.py](tools/capture/quantize.py) stored 256-colour copies in [screenshots/](screenshots/). A second script wrote hover, focus and active readings for the nav controls to [raw/states-2026-11-21.json](raw/states-2026-11-21.json). The home h1 at 1440 computes to 60px / 68px / -1.8px, which matches its class. The 48px figure in the tokens is the 1169px reading and is labelled as such.
 
-`preview_snapshot` failed twice with "The browser is not producing screenshot frames". No PNG was invented. Headless Playwright was not started.
+Pages photographed: home (default, download menu, resources menu, login modal, full page), pricing (plans and the compare table), enterprise (empty Typeform, not submitted), brand assets, reviews (both tabs), blog index, one blog post, What's new, login, signup, and the phone home, phone menu and phone pricing. `prefers-color-scheme` was left at the browser default. The marketing page stayed on `landing-bg` and `#FAF9F5`.
 
 ## What to distrust
 
-The home h1 class asks for 60px. At 1169px the computed size is 48px / 56px / -1.4px. Use the computed size for this width.
+The home h1 class asks for 60px. At 1169px the computed size was 48px / 56px / -1.4px. At the 1440 capture it computes to 60px / 68px / -1.8px. The token still records the 1169px reading. Use the width you are designing for.
 
 Inter on the marketing site is a set of separate families (`Inter Regular`, `Inter Medium`, `Inter SemiBold`), each with computed `font-weight: 400`. The blog uses a single `Inter` family and a real weight of 500 on post titles. The tokens keep both.
 
@@ -81,7 +89,7 @@ A demo-card box-shadow was truncated in the reading and is not a token.
 
 The login Continue button computed to `rgba(13, 13, 13, 0.85)` while the rule `.tw-dark-btn-rounded-2xl` sets `#0D0D0D` and the hover rule sets the 85% value. The token uses the declared default.
 
-There are no screenshots. Layout claims that need a picture are gaps.
+Screenshots are 256-colour PNGs. Read colours from the tokens and the raw JSON, not from the images. The hero illustration is a public marketing demo, not the signed-in app.
 
 ## Fonts
 
@@ -93,42 +101,43 @@ The blog names `"P22 Mackinac Pro"` with a Georgia fallback, and `Inter` with a 
 
 | Item | Status |
 |---|---|
-| Colour, light | Captured. [raw/computed.json](raw/computed.json) |
-| Colour, dark | Not captured. Stylesheet rules exist. The live public page did not apply `.dark` |
-| Type | Captured for the roles on the pages above |
+| Colour, light | Captured. [raw/computed.json](raw/computed.json). Page is `#FAF9F5` in [home-light-default](screenshots/home-light-default.png) |
+| Colour, dark | Not captured. Stylesheet rules exist. The live public pages did not apply `.dark` |
+| Type | Captured for the roles on the pages above. Home h1 is 60px at 1440 and 40px at 390 |
 | Spacing, radii, borders | Captured from computed styles and utility classes |
-| Elevation | Partial. One demo shadow was truncated and left out |
-| Motion | Partial. Button transition 150ms, standard easing. Reduced-motion rules in the landing CSS stop several animations |
-| Sizing | Captured for header, nav, hero, field and pricing controls at 1169px |
-| Layout breakpoints | Named from stylesheets (768px, 1024px). Phone 390 was not measured |
-| Button | Captured default. Hover is a stylesheet rule. Pressed, disabled, loading not shown |
-| Link | Captured |
-| Text field | Captured default, hover rule, focus rule. Not submitted |
+| Elevation | Partial. One demo shadow was truncated and left out. The download menu paints a white card over the hero |
+| Motion | Partial. Nav filled hover is `rgba(13, 13, 13, 0.85)`. Header transition is 0.2s. Reduced-motion duration on the filled button was 0.15s, not zero |
+| Sizing | Captured for the 70px header, nav, hero and pricing controls at 1440, and for the phone header |
+| Layout breakpoints | Named from stylesheets (768px, 1024px). Phone 390 was photographed |
+| Button | Captured default and hover (forced `:hover` on the nav filled and quiet buttons). Focus and active computed the same as default. Disabled and loading were not shown |
+| Link | Captured. Nav link hover fills `rgba(13, 13, 13, 0.06)`. Blog links are `#0088FF` |
+| Text field | The 19 November login fields were measured and not submitted. This pass did not expand Continue with Email. The enterprise Typeform shows an empty email placeholder and was not filled. Pricing compare has a search field. Nothing was typed |
 | Text area, select, checkbox, radio, switch | Not present on the pages opened |
-| Tabs | Pricing billing pill |
-| Menu, tooltip, toast | Not present |
-| Dialog | Login modal |
-| Card | Login card and pricing card |
-| List row, table, avatar | Not present |
+| Tabs | Pricing Monthly / Annual pill. Reviews Wall of love / Use cases |
+| Menu | Download and Resources menus, and the phone Open menu sheet |
+| Tooltip, toast | Not present |
+| Dialog | Login modal on the marketing origin |
+| Card | Pricing plan cards. The login page is a split wall, not the 16px modal card |
+| List row | Phone menu rows. Review cards on `/reviews` |
+| Table | Pricing compare table in [pricing-light-compare](screenshots/pricing-light-compare.png) |
+| Avatar | Not present as a product component. Review cards show published account photos |
 | Badge | Pricing "2 months free" |
-| Icon button | Close control size only. SVG not extracted |
+| Icon button | Phone Open menu, and the login modal close control. SVGs were not extracted |
 | App shell | Not captured. Signed-in app was not entered |
-| Form validation | Not captured. The login form was not submitted |
-| Empty, loading, error | Not captured |
-| Search, onboarding | Not present on the public pages |
-| Desktop 1440 | Not captured. Viewport was 1169 |
-| Phone 390 | Not captured |
-| Screenshots | Not captured. Preview returned no screenshot frames |
+| Form validation | Not captured. No form was submitted |
+| Empty, loading, error | Not captured. The enterprise embed showed a progress bar, then the first empty question |
+| Search | Pricing compare search is visible. Nothing was typed, so no result state |
+| Onboarding | Not captured. `/signup`, `/login` and the login modal are walls. Stopped |
+| Desktop 1440 | Captured. Measured `innerWidth` 1440 |
+| Phone 390 | Captured. Measured `innerWidth` 390, devicePixelRatio 2 |
+| Screenshots | Captured. 19 files in [screenshots/](screenshots/) |
 
 ## Do and don't
 
-**Ink on warm paper.** The page is `#FAF9F5` and the text and the filled button are the same `#0D0D0D`. See the home readings in [raw/computed.json](raw/computed.json).
-
-**Serif for the promise, Inter for the control.** Headings use P22 Mackinac or Instrument Serif. Buttons, fields and nav use Inter. See [components.md](components.md).
-
-**Pills for actions, 16px for the login card, 4px for a price card.** Do not give the pricing cards the login radius. See [patterns.md](patterns.md).
-
-**Stop at the password field.** The email step asks for a password. Do not submit it, and do not continue into Google, Apple, Microsoft, Twitter or SSO.
+- **Ink on warm paper.** The page is `#FAF9F5` and the text and the filled button are the same `#0D0D0D`. See [home-light-default](screenshots/home-light-default.png).
+- **Serif for the promise, Inter for the control.** Headings use P22 Mackinac or Instrument Serif. Buttons, fields and nav use Inter. See [home-light-default](screenshots/home-light-default.png).
+- **Pills for actions, 4px for a price card.** Do not give the pricing cards the login-card radius. See [pricing-light-default](screenshots/pricing-light-default.png).
+- **Stop at the wall.** Log in and Start for free ask for Google, Microsoft, Apple, Twitter, SSO or email. Do not click a provider, and do not type into the field. See [login-light-default](screenshots/login-light-default.png).
 
 ## Rebuild
 
@@ -136,6 +145,10 @@ The blog names `"P22 Mackinac Pro"` with a Georgia fallback, and `Inter` with a 
 cd systems/voicenotes && python3 tools/build_tokens.py
 python3 tools/catalog.py design-md voicenotes
 python3 tools/package_tests.py voicenotes
+PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
+  RAW=~/.design-systems/voicenotes/raw-shots \
+  node tools/capture/public/walk.mjs
+python3 tools/capture/quantize.py ~/.design-systems/voicenotes/raw-shots
 ```
 
 Fonts are not loaded by the rebuild. `style-guide.html` is hand-written from the same readings. It is not generated by `build_style_guide.py`.
