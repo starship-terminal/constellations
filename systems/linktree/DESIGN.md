@@ -66,7 +66,7 @@ Good for: Link-in-bio marketing: chartreuse hero band, forest-green 80px/800 Lin
 
 Captured 2026-11-18, signed out (marketing pages and the official public profile load without an account; the login wall was measured and not submitted). Themes: light.
 
-A token set and component reference for Linktree's public site. It was read from **linktr.ee** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the marketing home, About, Features, public pricing, the official public profile at `/linktr.ee`, and the signed-out login wall. The login form was measured and not submitted.
+A token set and component reference for Linktree's public site. Refreshed from **linktr.ee** on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Surfaces: the marketing home and its Solutions menu, the claim field focused and empty, one open FAQ, About, Features, Link in Bio, public pricing, the official public profile at `/linktr.ee`, musicians, the audience index, solutions, grow-followers, marketplace, templates, blog, help, enterprise, terms, and trust. The control map is [site-tree.md](site-tree.md). Login and signup redirect to the universal login wall. Nothing was typed, and Google and Apple were not clicked. The wall was not photographed.
 
 Linktree is a current reference for a link-in-bio marketing surface: a chartreuse hero band, a forest-green 80px/800 hero, an ink `#1e2330` pill at a 9999px radius, and a dahlia `#502274` footer. The public profile is a second surface, set in Link Sans Product, with a 40px share button, Links and Shop tabs, and a Verified badge.
 
@@ -132,8 +132,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 1. **Do paint the hero band chartreuse and the title forest.** The home hero band is `#d2e823`. The title is `#254f1a` at 80px/800. Pricing and the profile sit on other grounds. See [home-light-default](screenshots/home-light-default.png) and [hero-title-default](components/crops/hero-title-default.png).
 2. **Do use one ink pill for the primary action.** Sign up free is `#1e2330` with white text and a 9999px radius. See [nav-signup-default](components/crops/nav-signup-default.png).
 3. **Do set marketing type in Linksans.** Nav, hero, and footer measure as Linksans. The public profile title measures as Link Sans Product. See [profile-title-default](components/crops/profile-title-default.png).
-4. **Do keep the footer a dahlia band.** The footer fills `#502274`. See [home-light-full](screenshots/home-light-full.png).
+4. **Do keep the footer a dahlia band.** The footer fills `#502274`. See [about-light-full](screenshots/about-light-full.png).
 5. **Don't invent a dark theme.** The captured routes paint light, and a dark class on the probe did not change the resolved variables.
 6. **Don't follow a plan button into checkout.** Try free for 7 days and Get started were measured. They were not clicked. See [plan-select-default](components/crops/plan-select-default.png).
-7. **Don't treat the login wall as a signed-in app.** `/login` redirects to the universal login wall. Continue, Google, and Sign up were measured and not submitted. See the Sign-in wall group in [components.md](components.md).
+7. **Don't treat the login wall as a signed-in app.** `/login` redirects to the universal login wall. Continue, Google, and Apple were seen and not used. The wall was not photographed on 2026-11-21. See [site-tree.md](site-tree.md) and the Sign-in wall group in [components.md](components.md).
 8. **Don't submit the claim field.** The field was filled with a throwaway string and cleared. See [claim-field-filled](components/crops/claim-field-filled.png).

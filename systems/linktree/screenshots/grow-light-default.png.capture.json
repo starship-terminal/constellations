@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:22:17.542Z",
-  "screenshot": "home-light-full.png",
+  "capturedAt": "2026-11-21T13:26:20.499Z",
+  "screenshot": "grow-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 10307
+      "height": 9991
     },
     "scroll": {
       "x": 0,
@@ -42,21 +42,21 @@
     }
   },
   "capture": {
-    "mode": "fullPage",
+    "mode": "viewport",
     "scale": "device",
     "clip": null
   },
   "png": {
     "width": 1440,
-    "height": 10307
+    "height": 900
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 10307
+      "height": 900
     },
-    "basis": "fullPage"
+    "basis": "configuredViewport"
   },
   "visualReview": {
     "status": "pending",

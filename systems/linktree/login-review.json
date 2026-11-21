@@ -1,0 +1,170 @@
+{
+  "product": "Linktree",
+  "slug": "linktree",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "signed_in": false,
+  "origin": "https://linktr.ee",
+  "landed": "https://linktr.ee/",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1
+    },
+    "phone": {
+      "requested": "390x844",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Wordmark /",
+        "Solutions panel, stays on /",
+        "Features panel, stays on /",
+        "Integrations panel, stays on /",
+        "Resources panel, stays on /",
+        "Pricing /s/pricing",
+        "Log in /login, redirects to /universal-login#/login",
+        "Sign up free /register, redirects to /universal-login#/register",
+        "Musicians /for/musicians",
+        "See all audiences /for",
+        "Grow your audience /solutions/grow-followers",
+        "See all use cases /solutions",
+        "Link in Bio /features/link-in-bio",
+        "All Features /features",
+        "Browse all integrations /marketplace",
+        "Templates /s/templates",
+        "Blog /blog",
+        "Help Center /help",
+        "About /about",
+        "Linktree for Enterprise /enterprise",
+        "Terms & Conditions /s/terms",
+        "Trust Center /trust",
+        "Official profile /linktr.ee",
+        "Phone hamburger, stays on /"
+      ],
+      "reached": [
+        "Wordmark /",
+        "Solutions panel, stays on /",
+        "Features panel, stays on /",
+        "Integrations panel, stays on /",
+        "Resources panel, stays on /",
+        "Pricing /s/pricing",
+        "Log in /login, redirects to /universal-login#/login",
+        "Sign up free /register, redirects to /universal-login#/register",
+        "Musicians /for/musicians",
+        "See all audiences /for",
+        "Grow your audience /solutions/grow-followers",
+        "See all use cases /solutions",
+        "Link in Bio /features/link-in-bio",
+        "All Features /features",
+        "Browse all integrations /marketplace",
+        "Templates /s/templates",
+        "Blog /blog",
+        "Help Center /help",
+        "About /about",
+        "Linktree for Enterprise /enterprise",
+        "Terms & Conditions /s/terms",
+        "Trust Center /trust",
+        "Official profile /linktr.ee",
+        "Phone hamburger, stays on /"
+      ]
+    },
+    "settings": {
+      "items": [
+        "No settings surface is offered signed out"
+      ],
+      "reached": [
+        "No settings surface is offered signed out"
+      ]
+    },
+    "create": {
+      "items": [
+        "Get started for free, submit, not clicked",
+        "Claim your Linktree, submit, not clicked",
+        "Sign up free /register, wall"
+      ],
+      "reached": [
+        "Get started for free, submit, not clicked",
+        "Claim your Linktree, submit, not clicked",
+        "Sign up free /register, wall"
+      ]
+    }
+  },
+  "screens": [
+    "screenshots/about-light-default.png",
+    "screenshots/about-light-full.png",
+    "screenshots/blog-light-default.png",
+    "screenshots/blog-light-full.png",
+    "screenshots/enterprise-light-default.png",
+    "screenshots/enterprise-light-full.png",
+    "screenshots/features-light-default.png",
+    "screenshots/features-light-full.png",
+    "screenshots/for-light-default.png",
+    "screenshots/for-light-full.png",
+    "screenshots/for-musicians-light-default.png",
+    "screenshots/for-musicians-light-full.png",
+    "screenshots/grow-light-default.png",
+    "screenshots/grow-light-full.png",
+    "screenshots/help-light-default.png",
+    "screenshots/help-light-full.png",
+    "screenshots/home-light-claim-focused.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-faq-open.png",
+    "screenshots/home-light-solutions-menu.png",
+    "screenshots/link-in-bio-light-default.png",
+    "screenshots/link-in-bio-light-full.png",
+    "screenshots/marketplace-light-default.png",
+    "screenshots/marketplace-light-full.png",
+    "screenshots/mobile-features-light-default.png",
+    "screenshots/mobile-features-light-full.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu-open.png",
+    "screenshots/mobile-pricing-light-default.png",
+    "screenshots/mobile-pricing-light-full.png",
+    "screenshots/mobile-profile-light-default.png",
+    "screenshots/mobile-profile-light-full.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-full.png",
+    "screenshots/profile-light-default.png",
+    "screenshots/profile-light-full.png",
+    "screenshots/solutions-light-default.png",
+    "screenshots/solutions-light-full.png",
+    "screenshots/templates-light-default.png",
+    "screenshots/templates-light-full.png",
+    "screenshots/terms-light-default.png",
+    "screenshots/terms-light-full.png",
+    "screenshots/trust-light-default.png",
+    "screenshots/trust-light-full.png"
+  ],
+  "gaps": [
+    "Log in stops at /universal-login#/login: email or username, Continue, Continue with Google, Continue with Apple. Nothing typed. Google and Apple were not clicked. The wall was not photographed.",
+    "Sign up stops at /universal-login#/register: email, Continue, Continue with Google, Continue with Apple. Nothing typed. No form was submitted.",
+    "Settings, the editor, analytics, and billing are behind that wall.",
+    "Feature, audience, and integration links other than the ones opened were read from the homepage menus and not each photographed.",
+    "Public profile cards and the creator directory list usernames, so they were not photographed. The official /linktr.ee page was photographed.",
+    "Plan buttons (Get started, Try free for 7 days) were not clicked.",
+    "No dark theme switch was found. The public site paints light.",
+    "The homepage full-page shot was not committed. It includes a row of public profile cards that show usernames. Viewport shots of the hero, Solutions menu, claim focus, and FAQ were kept."
+  ],
+  "not_submitted": [
+    "login Continue",
+    "Continue with Google",
+    "Continue with Apple",
+    "signup Continue",
+    "claim username",
+    "Get started for free",
+    "Claim your Linktree",
+    "Try free for 7 days",
+    "plan Get started",
+    "contact form",
+    "report a violation",
+    "cookie preferences",
+    "any form"
+  ]
+}

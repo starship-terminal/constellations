@@ -6,7 +6,7 @@ How the measured components combine on linktr.ee's public surface, read from the
 
 The marketing nav is a `nav` that measures 1440 x 138, including the promo strip above the bar ([home-light-default](screenshots/home-light-default.png)). The visible bar is a child layer: 1296 x 90, white, 1px `rgba(0,0,0,0.08)` border, 9999px radius, and a `0 24px 60px` shadow. Inside it: text links (Pricing, 86 x 48, Linksans 16/400, `#1e2330`), Log in (102 x 62), and Sign up free (152 x 62, fill `#1e2330`, white text, 9999px radius). Solutions opens a menu; the Musicians item measured 319 x 48 once the menu was open ([nav-menu-panel-opened](components/crops/nav-menu-panel-opened.png)).
 
-At 390 the bar is 390 x 89. A 48px Toggle menu button opens a panel; Pricing in that panel measured 390 x 64 ([mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png)). Sign up free shrinks to 110 x 46.
+At 390 the bar is 390 x 89. A 48px Toggle menu button opens a panel. Opening Solutions in that panel shows the audience list ([mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png)). Sign up free shrinks to 110 x 46. The phone homepage full-page shot was not committed: a row of public profile cards shows usernames.
 
 ## The hero and claim field
 
@@ -22,7 +22,7 @@ The home hero sits on chartreuse `#d2e823` (`light.hero`). The title "A link in 
 
 ## The login wall
 
-`/login` redirects to the universal login wall. The title, email field, Continue, Google, and Sign up were measured. The field was focused and not typed. Continue was not pressed. This is a signed-out wall, not the product.
+`/login` redirects to `/universal-login#/login`. On 2026-11-21 the wall offered an email or username field, Continue, Continue with Google, Continue with Apple, Forgot password, and Forgot username. Nothing was typed. Google and Apple were not clicked. The wall was not photographed. `/register` lands on the signup half of the same wall. This is a signed-out wall, not the product. The control map is [site-tree.md](site-tree.md).
 
 ## The footer
 

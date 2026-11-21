@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:23:00.211Z",
+  "capturedAt": "2026-11-21T13:25:49.642Z",
   "screenshot": "profile-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4644
+      "height": 5017
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 4644
+    "height": 5017
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 4644
+      "height": 5017
     },
     "basis": "fullPage"
   },

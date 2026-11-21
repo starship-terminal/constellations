@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-18T09:23:21.698Z",
+ "capturedAt": "2026-11-21T13:27:44.434Z",
  "screenshot": "mobile-pricing-light-full.png",
  "sanitizedSourceUrl": null,
  "requested": {
@@ -30,7 +30,7 @@
    "offsetLeft": 0,
    "offsetTop": 0,
    "pageLeft": 0,
-   "pageTop": 0
+   "pageTop": 1871
   },
   "documentSize": {
    "width": 395,
@@ -38,7 +38,7 @@
   },
   "scroll": {
    "x": 0,
-   "y": 0
+   "y": 1871
   }
  },
  "capture": {

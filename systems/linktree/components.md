@@ -16,12 +16,12 @@ Screenshots are named `{page}-light-{state}.png`: the site paints one light them
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png) |
+| Home | `/` | [default](screenshots/home-light-default.png), [solutions menu](screenshots/home-light-solutions-menu.png), [claim focused](screenshots/home-light-claim-focused.png), [FAQ open](screenshots/home-light-faq-open.png). The full-page shot was not committed: it shows public profile usernames. |
 | About | `/about` | [default](screenshots/about-light-default.png), [full](screenshots/about-light-full.png) |
 | Features | `/features` | [default](screenshots/features-light-default.png), [full](screenshots/features-light-full.png) |
 | Pricing | `/s/pricing` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png) |
 | Public profile | `/linktr.ee` | [default](screenshots/profile-light-default.png), [full](screenshots/profile-light-full.png) |
-| Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu-open](screenshots/mobile-home-light-menu-open.png) |
+| Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [menu-open](screenshots/mobile-home-light-menu-open.png). The full-page shot was not committed: it shows public profile usernames. |
 | Pricing, phone | `/s/pricing` | [default](screenshots/mobile-pricing-light-default.png), [full](screenshots/mobile-pricing-light-full.png) |
 | Profile, phone | `/linktr.ee` | [default](screenshots/mobile-profile-light-default.png), [full](screenshots/mobile-profile-light-full.png) |
 
