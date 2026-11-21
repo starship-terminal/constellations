@@ -1,0 +1,68 @@
+{
+  "slug": "deel",
+  "signed_in": false,
+  "account": "signed-out",
+  "when": "2026-11-21",
+  "host": "headless Chrome via Playwright, channel chrome. T3 preview was not used.",
+  "stopped_at": "login wall",
+  "login_wall": "https://app.deel.com/login",
+  "note": "The marketing Log in link goes to https://app.deel.com/login?lang=en. The wall asks for email and password, or the Deel app, SSO, or Google. No email was typed. No password was typed. No form was submitted. Google, Apple, the Deel app, SSO, and Create account were not clicked.",
+  "viewports": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": "innerWidth 1440, innerHeight 900, devicePixelRatio 1",
+      "png": "1440x900"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": "innerWidth 390, innerHeight 844, devicePixelRatio 2",
+      "png": "780x1688"
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": ["Log in (marketing header)", "Create account (login wall)", "Deel app", "SSO", "Google"],
+      "reached": ["Log in opened the login wall and stopped"]
+    },
+    "settings": {
+      "items": ["no settings area: signed-out"],
+      "reached": ["no settings area: signed-out"]
+    },
+    "create": {
+      "items": ["Create account on the login wall", "Book a demo dialog", "request-a-demo page"],
+      "reached": ["Book a demo dialog opened and not submitted", "request-a-demo page opened and not submitted"]
+    }
+  },
+  "screens": [
+    {
+      "name": "Login wall, desktop, light, signed-out",
+      "url": "https://app.deel.com/login",
+      "file": "screenshots/login-wall-light-default.png"
+    },
+    {
+      "name": "Login wall, phone, light, signed-out",
+      "url": "https://app.deel.com/login",
+      "file": "screenshots/mobile-login-wall-light-default.png"
+    }
+  ],
+  "gaps": [
+    "Signed-in app was not entered. The branch stopped at the login wall.",
+    "Create account, forgot password, SSO, Google, and the Deel app were visible and not used.",
+    "Demo and newsletter fields were visible and not filled.",
+    "Dark theme: a dark class on a probe document resolved the same CSS variables as light. No dark page was painted.",
+    "catalog.json and webapps-manifest.json were not edited."
+  ],
+  "not_submitted": [
+    "Login",
+    "Create account",
+    "SSO",
+    "Google",
+    "Deel app",
+    "Forgot password",
+    "Book a demo",
+    "Choose a date and time",
+    "Email subscribe",
+    "AI readiness score",
+    "Cookie consent"
+  ]
+}

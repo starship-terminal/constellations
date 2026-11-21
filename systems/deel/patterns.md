@@ -18,6 +18,10 @@ Below the hero the page returns to white: the global-people-platform grid holds 
 
 A ~1015px footer (`component.footer-height`) on `#1b1b1b` (`light.text.ink`/`color.surface.dark`): `#faf4ee` cream column headings (`light.text.cream`, 16px BagossCondensed 500) over link lists painted as 14px/23.8px Inter 560 in `#faf4ee` (the link's text child, not the wrap's inherited ink), with 32px social icon buttons.
 
+## Login wall
+
+Header Log in leaves the marketing host and opens the login wall. The 2026-11-21 refresh photographed it at 1440x900 and 390x844 and stopped. See [login-wall-light-default](screenshots/login-wall-light-default.png) and [mobile-login-wall-light-default](screenshots/mobile-login-wall-light-default.png). The wall offers the Deel app, SSO, Google, an email field, and a password field. Nothing was typed. Nothing was submitted. Which control opens which page is in [site-tree.md](site-tree.md).
+
 ## Mobile
 
 At 390px the promo strip drops, the nav shrinks to 64px with a circular hamburger, the hero heading drops to 38px, and the drawer carries the menu; the pricing page keeps its tier cards stacked.
