@@ -1,0 +1,47 @@
+{
+  "product": "Grafana",
+  "domain": "grafana.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright, signed out",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in",
+      "url": "https://grafana.com/auth/sign-in/",
+      "title": "Grafana Cloud",
+      "painted": true,
+      "headings": ["Log in to Grafana Cloud"],
+      "asksFor": [
+        { "label": "Email or username", "type": "text", "required": false }
+      ],
+      "identityProvidersSeen": ["Google", "GitHub", "Microsoft", "Amazon"],
+      "otherControls": ["Sign In", "Register"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "Email field was empty. No password field was on the first screen. No provider was clicked. No form was submitted."
+    },
+    {
+      "control": "header Sign up and hero Get started free",
+      "url": "https://grafana.com/auth/sign-up/create-user/",
+      "title": "Grafana Cloud - Sign Up - Create User",
+      "painted": true,
+      "headings": ["The (actually useful) free forever plan", "Create your free account"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false },
+        { "label": "Password", "type": "password", "required": false }
+      ],
+      "identityProvidersSeen": ["Google", "GitHub", "Microsoft", "Amazon"],
+      "otherControls": ["Send me news and feature updates", "Create my account", "Log in"],
+      "captcha": "Cloudflare Turnstile was on the page. It was not solved. The widget is painted over in the screenshot.",
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-default.png",
+      "note": "Fields were empty. No provider was clicked. No form was submitted. No account was created."
+    }
+  ]
+}

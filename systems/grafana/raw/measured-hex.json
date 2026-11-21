@@ -1,0 +1,92 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://grafana.com/",
+  "method": "getComputedStyle on the live homepage, plus stylesheet custom properties",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "body": {
+    "backgroundColor": "rgb(244, 244, 246)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Inter, \"Inter Fallback\"",
+    "fontSize": "16px",
+    "lineHeight": "24px"
+  },
+  "h1": {
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Poppins, \"Poppins Fallback\"",
+    "fontSize": "60px",
+    "fontWeight": "600",
+    "lineHeight": "75px",
+    "letterSpacing": "-1.5px"
+  },
+  "header": {
+    "height": 78,
+    "backgroundColor": "rgba(0, 0, 0, 0)"
+  },
+  "signup": {
+    "text": "Sign up",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(27, 85, 245)",
+    "hoverBackgroundColor": "rgb(20, 64, 225)",
+    "border": "1px solid rgb(27, 85, 245)",
+    "borderRadius": "8px",
+    "height": 36,
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "padding": "7px 14px 9px"
+  },
+  "signin": {
+    "text": "Sign in",
+    "color": "rgb(103, 103, 126)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "8px",
+    "height": 36,
+    "fontSize": "14px",
+    "fontWeight": "500"
+  },
+  "pricingLink": {
+    "text": "Pricing",
+    "color": "rgb(103, 103, 126)",
+    "fontSize": "13px",
+    "fontWeight": "500",
+    "lineHeight": "19.5px",
+    "letterSpacing": "-0.13px"
+  },
+  "customProperties": {
+    "--gmui-color-blue-600": "#1b55f5",
+    "--gmui-color-blue-700": "#1440e1",
+    "--gmui-color-blue-800": "#1734b6",
+    "--gmui-color-gray-100": "#f4f4f6",
+    "--gmui-color-gray-200": "#e6e6ea",
+    "--gmui-color-gray-500": "#aeaebc",
+    "--gmui-color-gray-600": "#67677e",
+    "--gmui-color-gray-900": "#2e2e38",
+    "--gmui-color-gray-950": "#17171c",
+    "--gmui-color-orange-600": "#f04306",
+    "--gmui-color-green-500": "#17b26a",
+    "--gmui-color-red-500": "#d92d20",
+    "--gmui-color-amber-600": "#ff8200",
+    "--gmui-color-white": "#fff",
+    "--gmui-color-black": "#000",
+    "--gmui-surface-background": "var(--gmui-color-gray-100)",
+    "--gmui-text-foreground": "var(--gmui-color-black)",
+    "--gmui-text-muted": "var(--gmui-color-gray-600)",
+    "--gmui-text-link": "var(--gmui-color-blue-600)",
+    "--gmui-text-link-hover": "var(--gmui-color-blue-800)",
+    "--gmui-text-foreground-brand": "var(--gmui-color-orange-600)",
+    "--gmui-button-background": "var(--gmui-color-blue-600)",
+    "--gmui-radius": ".5rem",
+    "--gmui-radius-2xl": "1rem",
+    "--gmui-spacing": ".25rem",
+    "--gmui-default-transition-duration": ".15s",
+    "--gmui-ease-out": "cubic-bezier(0,0,.2,1)",
+    "--gmui-container-7xl": "80rem",
+    "--font-sans": "\"Inter\",\"Inter Fallback\"",
+    "--font-heading": "\"Poppins\",\"Poppins Fallback\"",
+    "--font-mono": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+  }
+}
