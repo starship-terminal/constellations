@@ -175,11 +175,7 @@ try {
 
   await page.close();
   await newPage(BASE + '/login');
-  await states('email-field', page.locator('#email'), ['default', 'focused'], { role: 'text field', where: 'login wall' });
-  await page.locator('#email').fill('capture@example.com');
-  await page.waitForTimeout(150);
-  await record('email-field', 'filled', page.locator('#email'), { role: 'text field', where: 'login wall' }, 'typed a placeholder address; Continue was not pressed');
-  await page.locator('#email').fill('');
+  await states('email-field', page.locator('#email'), ['default', 'focused'], { role: 'text field', where: 'login wall; left empty' });
   await states('sso-google', page.getByRole('button', { name: 'Log in with Google' }).first(), ['default', 'hover', 'focus-visible'], { role: 'button', where: 'login wall; not pressed' });
   await states('continue-button', page.getByRole('button', { name: 'Continue', exact: true }).first(), ['default', 'hover', 'focus-visible', 'pressed'], { role: 'button', where: 'login wall; pressed is forced :active, not a click' });
   save();

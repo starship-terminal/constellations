@@ -78,13 +78,24 @@ const desktop = {
     await S.view('default');
     await step('apps-menu', async () => {
       const btn = p.locator('header button, nav button').filter({ hasText: /^Apps$/ }).first();
-      const open = await btn.getAttribute('aria-expanded', { timeout: 4000 }).catch(() => null);
-      if (open !== 'true') await btn.click({ timeout: 4000 });
-      await wait(p, 400);
+      await btn.hover({ timeout: 4000 });
+      await wait(p, 500);
       await S.view('apps-menu');
-      await p.keyboard.press('Escape');
-      await wait(p, 250);
     });
+    await step('solutions-menu', async () => {
+      const btn = p.locator('header button, nav button').filter({ hasText: /^Solutions$/ }).first();
+      await btn.hover({ timeout: 4000 });
+      await wait(p, 500);
+      await S.view('solutions-menu');
+    });
+    await step('resources-menu', async () => {
+      const btn = p.locator('header button, nav button').filter({ hasText: /^Resources$/ }).first();
+      await btn.hover({ timeout: 4000 });
+      await wait(p, 500);
+      await S.view('resources-menu');
+    });
+    await p.mouse.move(10, 400);
+    await wait(p, 300);
     await S.full();
   } },
   pricing: { path: '/pricing', run: async (p, S) => {
@@ -111,17 +122,15 @@ const desktop = {
     await S.full();
   } },
   login: { path: '/login', run: async (p, S) => {
-    await S.view('default');
-    await step('email-focused', async () => {
-      const field = p.locator('input[type="email"], input[name="email"], input[type="text"]').first();
-      await field.click({ timeout: 4000 });
-      await wait(p, 250);
-      await S.view('email-focused');
-      await field.fill('capture@example.com');
-      await wait(p, 200);
-      await S.view('email-filled');
-      await field.fill('');
-    });
+    // Empty wall only. Do not focus, type, or submit. Do not click an identity provider.
+    await S.view('empty');
+  } },
+  signup: { path: '/signup', run: async (p, S) => {
+    // Empty wall only. Stop if the page is a captcha or an identity-provider redirect.
+    const url = p.url();
+    const wall = /captcha|challenge|accounts\.google|appleid\.apple|login\.microsoftonline/i.test(url);
+    if (wall) { log('  signup stopped: wall', url.split('?')[0]); return; }
+    await S.view('empty');
   } },
   enterprise: { path: '/enterprise', run: async (p, S) => { await S.view('default'); await S.full(); } },
   ai: { path: '/ai', run: async (p, S) => { await S.view('default'); await S.full(); } },
@@ -129,6 +138,9 @@ const desktop = {
   'use-case': { path: '/use-case', run: async (p, S) => { await S.view('default'); } },
   desktop: { path: '/desktop', run: async (p, S) => { await S.view('default'); } },
   customers: { path: '/customers', run: async (p, S) => { await S.view('default'); } },
+  download: { path: '/download', run: async (p, S) => { await S.view('default'); } },
+  screenshot: { path: '/screenshot', run: async (p, S) => { await S.view('default'); } },
+  sdk: { path: '/sdk', run: async (p, S) => { await S.view('default'); } },
   legal: { path: '/legal', run: async (p, S) => { await S.view('default'); } },
   notfound: { path: '/this-route-does-not-exist-loom-capture', run: async (p, S) => { await S.view('default'); } },
   share: { url: SHARE, run: async (p, S) => {
@@ -146,22 +158,53 @@ const desktop = {
   } },
 };
 
+async function dismissGoogleSheet(p) {
+  // Hide the Google One Tap sheet and the iOS app-install sheet. Never press Continue or Download.
+  await p.evaluate(() => {
+    document.querySelectorAll('#credential_picker_container, iframe[src*="accounts.google.com"]').forEach((el) => {
+      el.style.setProperty('display', 'none', 'important');
+    });
+    document.querySelectorAll('a').forEach((a) => {
+      if (!/apps\.apple\.com|play\.google\.com/.test(a.href || '')) return;
+      const card = a.closest('.fixed') || a.closest('[class*="fixed"]');
+      if (card) card.style.setProperty('display', 'none', 'important');
+    });
+  }).catch(() => {});
+}
+
 const mobile = {
   home: { path: '/', run: async (p, S) => {
+    await dismissGoogleSheet(p);
     await S.view('default');
     await step('menu', async () => {
       const btn = p.getByRole('button', { name: /menu|navigation|open/i }).first();
       if (await btn.count()) {
         await btn.click();
-        await wait(p, 500);
+        await wait(p, 700);
+        await dismissGoogleSheet(p);
         await S.view('menu');
+        const opened = await p.evaluate(() => {
+          const names = ['Apps', 'Solutions', 'Resources'];
+          const found = [];
+          for (const name of names) {
+            const el = [...document.querySelectorAll('button, [role="button"]')].find((n) => (n.innerText || '').replace(/\s+/g, ' ').trim() === name);
+            if (!el) continue;
+            el.click();
+            found.push(name);
+          }
+          return found;
+        });
+        log('  phone sections', opened.join(',') || 'none');
+        await wait(p, 400);
+        if (opened.includes('Apps')) await S.view('menu-apps');
         await p.keyboard.press('Escape').catch(() => {});
       }
     });
+    await dismissGoogleSheet(p);
     await S.full();
   } },
   pricing: { path: '/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  login: { path: '/login', run: async (p, S) => { await S.view('default'); } },
+  login: { path: '/login', run: async (p, S) => { await S.view('empty'); } },
   share: { url: SHARE, run: async (p, S) => { await S.view('default'); } },
   ai: { path: '/ai', run: async (p, S) => { await S.view('default'); } },
 };
@@ -179,7 +222,7 @@ for (const { k, mob } of runs) {
     userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US',
   });
   await ctx.addInitScript(() => {
-    const hide = () => document.querySelectorAll('#onetrust-consent-sdk, #onetrust-banner-sdk, .onetrust-pc-dark-filter').forEach((el) => {
+    const hide = () => document.querySelectorAll('#onetrust-consent-sdk, #onetrust-banner-sdk, .onetrust-pc-dark-filter, #credential_picker_container, [class*="smartbanner" i], .smartbanner').forEach((el) => {
       el.style.setProperty('display', 'none', 'important');
     });
     const start = () => new MutationObserver(hide).observe(document.documentElement, { childList: true, subtree: true });

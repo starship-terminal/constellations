@@ -1,6 +1,6 @@
 # Loom design reference
 
-Tokens and component notes for Loom (loom.com), captured **2026-11-18**. Desktop is 1440×900. Phone is 390×844. The painted theme is light. Public routes: `/`, `/pricing`, `/enterprise`, `/ai`, `/security`, `/use-case`, `/desktop`, `/customers`, `/legal`, the 404, `/login` (the wall), and one public share page. Signed-out only. SSO, signup Continue, Contact Sales, checkout, and recording were not pressed. The OneTrust banner was hidden and never clicked.
+Tokens and component notes for Loom (loom.com), captured **2026-11-18**, public site tree refreshed **2026-11-21**. Desktop is 1440×900. Phone is 390×844. The painted theme is light. Public routes: `/`, `/pricing`, `/enterprise`, `/ai`, `/security`, `/screenshot`, `/sdk`, `/download`, `/use-case`, `/desktop`, `/customers`, `/legal`, the 404, `/login` and `/signup` (empty walls), and one public share page. Signed-out only. SSO, signup Continue, Contact Sales, checkout, and recording were not pressed. The OneTrust banner was rejected on the live walk and hidden in the screenshot script.
 
 Loom marketing declares a Lens scale on the html element (`--lns-*`) and paints Atlassian blurple `#1868db` as the one filled action. Charlie Display and Charlie Text are the measured families. The dark Lens tokens are declared and were not painted.
 
@@ -13,6 +13,8 @@ Loom marketing declares a Lens scale on the html element (`--lns-*`) and paints 
 | [style-guide.html](style-guide.html) | Renders the tokens. Charlie is not loaded; the page uses the system sans. |
 | [components.md](components.md) | Measured controls, with crops. |
 | [patterns.md](patterns.md) | How the public pages are built, and where they stop. |
+| [site-tree.md](site-tree.md) | Which public control opens which page, menu, or wall. |
+| [login-review.json](login-review.json) | What the empty login wall offered, and what was not submitted. |
 | [components/crops/](components/crops) | Element crops. |
 | [icons/](icons) | Inline SVGs from the public pages, with [INDEX.tsv](icons/INDEX.tsv). |
 | [screenshots/](screenshots) | Quantised page shots, desktop and phone. |

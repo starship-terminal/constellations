@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:23:44.909Z",
-  "screenshot": "login-light-email-focused.png",
+  "capturedAt": "2026-11-21T13:27:58.180Z",
+  "screenshot": "download-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 900
+      "height": 1007
     },
     "scroll": {
       "x": 0,
