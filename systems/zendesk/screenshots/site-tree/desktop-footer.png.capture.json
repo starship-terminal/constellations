@@ -1,0 +1,26 @@
+{
+  "capturedAt": "2026-11-21T15:57:52.363Z",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "theme": "light",
+  "sanitizedSourceUrl": "https://www.zendesk.com/sg/"
+}

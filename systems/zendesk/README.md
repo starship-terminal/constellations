@@ -1,12 +1,12 @@
 # Zendesk design reference
 
-A token set and component reference for Zendesk's public signed-out surfaces. It was read from **www.zendesk.com** (geo-redirected to **/sg/**), **support.zendesk.com/hc/en-us**, and the first step of **/register/** and **/demo/** on **2026-11-19**, in headless Chromium at 1440×900 and 390×844.
+A token set and component reference for Zendesk's public signed-out surfaces. It was read from **www.zendesk.com** (geo-redirected to **/sg/**), **support.zendesk.com/hc/en-us**, and the first step of **/demo/** on **2026-11-19**, then refreshed on **2026-11-21** with a public site tree. Desktop is 1440×900. Phone is 390×844.
 
 The marketing site is a styled-components build. Colour is not a custom-property ramp. Spacing, radius and content width are `:root` variables that change by breakpoint. The brand face is Vanilla Sans, with Arial as the declared fallback. The primary control is a lime pill, rgb(209, 244, 112), on ink text rgb(17, 17, 13). The hero is a dark panel, rgb(17, 17, 13), with cream display type rgb(245, 245, 242).
 
 The site paints one light theme. No dark class and no `prefers-color-scheme` repaint was found. Garden (garden.zendesk.com) is a separate site and is not in the tokens.
 
-The agent workspace, checkout, and any step that asks for a card, a phone, or company SSO were not entered. The register form and the contact form were not submitted. The hero email and the login subdomain were focused and not typed.
+The agent workspace, checkout, and any step that asks for a card, a phone, or company SSO were not entered. The contact form and the demo step were not submitted. The hero email and the login subdomain were not typed. The 2026-11-21 pass stopped at the empty login wall. `login-extracted` stays not-started.
 
 | File | What it is |
 |---|---|
@@ -16,6 +16,7 @@ The agent workspace, checkout, and any step that asks for a card, a phone, or co
 | [style-guide.html](style-guide.html) | Renders the hero, the lime button, the field and the plan card from the tokens |
 | [components.md](components.md) | Measured public controls and their states, plus the gaps |
 | [patterns.md](patterns.md) | How the home, login, pricing, register, contact and help pages are put together |
+| [site-tree.md](site-tree.md) | Which homepage controls open which pages, menus, the cookie dialog, and the empty login wall |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | Page captures at 1440 and 390, each with a `.capture.json` sidecar |
 | [icons/](icons) | Three inline UI SVGs and [INDEX.tsv](icons/INDEX.tsv). The wordmark is not kept |
@@ -82,7 +83,7 @@ Custom properties were read from the live stylesheets on the homepage. The sheet
 
 Screenshots were taken at a measured 1440×900 (1x) and 390×844 (2x), then quantized to 256-colour sRGB PNGs. Read colours from the tokens, not the PNGs.
 
-The T3 preview browser was still connecting when this capture started, so the readings come from headless Chromium on public pages that loaded without a Cloudflare challenge.
+The 2026-11-19 readings come from headless Chromium on public pages that loaded without a Cloudflare challenge. The 2026-11-21 refresh used the same path: the T3 preview tab loaded the homepage, and a cookie dialog blocked pointer hovers, so the site tree and the new screenshots were taken in headless Chromium.
 
 ## What to distrust
 
@@ -131,7 +132,7 @@ Vanilla Sans is proprietary. The tokens name it and fall back to Arial, which is
 | Radio | Present on the demo step. Not measured. No option chosen. |
 | Switch | Not present on the captured pages. |
 | Tabs | Pricing suite switch was visible. Not measured. The locator missed it. |
-| Menu | Not captured. The Platform control did not open from a script click. |
+| Menu | Captured 2026-11-21. Platform, Products, Solutions, Resources, and Language. See [site-tree.md](site-tree.md). Desktop panels were forced visible after a pointer hover failed. The phone drawer opened from a tap. |
 | Tooltip | Not present on the captured pages. |
 | Dialog | Captured. Trial dialog measured. Cookie dialog screenshotted. |
 | Toast | Not present. |
