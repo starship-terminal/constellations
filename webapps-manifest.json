@@ -147,9 +147,9 @@
       "description": "Shop the official site",
       "status": "captured",
       "package": "systems/acnestudios",
-      "notes": "https://www.acnestudios.com/sg/en/lookup accepted the email, then registration asked for a password, a date of birth, and a phone. No code was sent. The form was not submitted.",
+      "notes": "https://www.acnestudios.com/sg/en/lookup accepted the email, then registration asked for a password, a date of birth, and a phone. No code was sent. The form was not submitted. Public walk 2026-11-21: home redirects to /sg/en/home. Desktop header buttons open WOMAN, MAN, BAGS, SCARVES, and GIFTS mega-menus, search, a help drawer, and an empty bag drawer. Phone Menu opens the same destinations in a full-screen drawer. Listings, campaign, editorial, paper, about, sustainability, legal, FAQ, size guide, and gift card are public pages. Product pages open size, size guide, delivery, gift wrap, and pickup. Account, register, wishlist, order status, and return lookup are walls and were not filled. The country selector click fired and the panel did not mount. Consent buttons were not clicked. Newsletter, gift card, appointment, and lookup forms were not submitted. No email was typed. No form was submitted. No dark theme. Signed-in account was not captured. Public package refresh in PR 1619 at 5bc03cd1b829. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 1
     },
     {
