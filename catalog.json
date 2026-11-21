@@ -35453,6 +35453,775 @@
         "durationMin": 90,
         "durationNote": "one session: sparse clone, live measurement, screenshots, token build"
       }
+    },
+    {
+      "slug": "forhims",
+      "name": "Hims UK",
+      "url": "https://www.forhims.co.uk/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Telehealth storefront: warm stone page, black filled actions, brand copper type, and a sage utility palette",
+      "tags": [
+        "web",
+        "health",
+        "e-commerce",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/forhims/README.md",
+      "tokens": "systems/forhims/tokens.json",
+      "styleGuide": "systems/forhims/style-guide.html",
+      "preview": {
+        "cover": "systems/forhims/screenshots/home-light-default.png",
+        "icon": "systems/forhims/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "core.color.black",
+            "muted": "core.color.himsPrimary.500",
+            "accent": "core.color.brand",
+            "border": "core.color.himsSecondary.700"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.serif"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; marks are visible in the crops"
+      }
+    },
+    {
+      "slug": "grow-google",
+      "name": "Grow with Google",
+      "url": "https://grow.google/",
+      "category": "learning",
+      "platform": "web",
+      "goodFor": "Learning-program marketing: white page, Google blue links, Product Sans display, and a raised grey surface",
+      "tags": [
+        "web",
+        "learning",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/grow-google/README.md",
+      "tokens": "systems/grow-google/tokens.json",
+      "styleGuide": "systems/grow-google/style-guide.html",
+      "preview": {
+        "cover": "systems/grow-google/screenshots/apac-ai-pro-light-default.png",
+        "icon": "systems/grow-google/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      }
+    },
+    {
+      "slug": "missiveapp",
+      "name": "Missive",
+      "url": "https://missiveapp.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Shared-inbox marketing: white page, blue accent, and a grey surface behind the product frame",
+      "tags": [
+        "web",
+        "productivity",
+        "email",
+        "saas",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/missiveapp/README.md",
+      "tokens": "systems/missiveapp/tokens.json",
+      "styleGuide": "systems/missiveapp/style-guide.html",
+      "preview": {
+        "cover": "systems/missiveapp/screenshots/home-light-default.png",
+        "icon": "systems/missiveapp/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; marks are visible in the crops"
+      }
+    },
+    {
+      "slug": "monarchmoney",
+      "name": "Monarch Money",
+      "url": "https://www.monarchmoney.com/",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Personal-finance marketing: wheat page, evergreen ink, and a monarch-orange action",
+      "tags": [
+        "web",
+        "finance",
+        "saas",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/monarchmoney/README.md",
+      "tokens": "systems/monarchmoney/tokens.json",
+      "styleGuide": "systems/monarchmoney/style-guide.html",
+      "preview": {
+        "cover": "systems/monarchmoney/screenshots/home-light-default.png",
+        "icon": "systems/monarchmoney/icon.png",
+        "swatches": {
+          "light": {
+            "page": "core.color.brand.wheat.base",
+            "surface": "core.color.brand.wheat.light",
+            "text": "core.color.brand.evergreen.base",
+            "muted": "core.color.brand.grey.base",
+            "accent": "core.color.brand.monarch-orange.base",
+            "border": "core.color.brand.grey.lighter"
+          }
+        },
+        "fonts": []
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      },
+      "layoutGaps": {
+        "components/": "component crops were not written for this capture",
+        "icons/": "the icon extraction pass was not run"
+      }
+    },
+    {
+      "slug": "nomadgoods",
+      "name": "Nomad Goods",
+      "url": "https://nomadgoods.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Accessory storefront: warm grey page, black ink, and a hairline product grid",
+      "tags": [
+        "web",
+        "e-commerce",
+        "retail",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/nomadgoods/README.md",
+      "tokens": "systems/nomadgoods/tokens.json",
+      "styleGuide": "systems/nomadgoods/style-guide.html",
+      "preview": {
+        "cover": "systems/nomadgoods/screenshots/home-light-default.png",
+        "icon": "systems/nomadgoods/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "core.color.info",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.body",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      },
+      "layoutGaps": {
+        "components/": "component crops were not written for this capture",
+        "icons/": "the icon extraction pass was not run"
+      }
+    },
+    {
+      "slug": "nytimes",
+      "name": "The New York Times",
+      "url": "https://www.nytimes.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "News homepage: white page, black ink, a blue section accent, and a hairline rule",
+      "tags": [
+        "web",
+        "media",
+        "news",
+        "editorial",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/nytimes/README.md",
+      "tokens": "systems/nytimes/tokens.json",
+      "styleGuide": "systems/nytimes/style-guide.html",
+      "preview": {
+        "cover": "systems/nytimes/screenshots/section-nav-light.png",
+        "icon": "systems/nytimes/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": []
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      }
+    },
+    {
+      "slug": "onmarathon",
+      "name": "On Marathon",
+      "url": "https://onmarathon.com/",
+      "category": "fitness",
+      "platform": "web",
+      "goodFor": "Race-archive marketing: white page, near-black ink, and a lime accent on a thin border",
+      "tags": [
+        "web",
+        "fitness",
+        "sport",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/onmarathon/README.md",
+      "tokens": "systems/onmarathon/tokens.json",
+      "styleGuide": "systems/onmarathon/style-guide.html",
+      "preview": {
+        "cover": "systems/onmarathon/screenshots/home-light-default.png",
+        "icon": "systems/onmarathon/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": []
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run"
+      }
+    },
+    {
+      "slug": "patternbrands",
+      "name": "Pattern Brands",
+      "url": "https://patternbrands.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Brand-studio marketing: white page, forest-green actions, and black display type",
+      "tags": [
+        "web",
+        "e-commerce",
+        "brand",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/patternbrands/README.md",
+      "tokens": "systems/patternbrands/tokens.json",
+      "styleGuide": "systems/patternbrands/style-guide.html",
+      "preview": {
+        "cover": "systems/patternbrands/screenshots/home-light-default.png",
+        "icon": "systems/patternbrands/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "core.palette.starter.neutral",
+            "accent": "light.action.primary",
+            "border": "core.palette.starter.neutralLighter"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.footer"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      }
+    },
+    {
+      "slug": "pop",
+      "name": "Pop Site",
+      "url": "https://pop.site/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Site-builder marketing: white page, blue action, and a cool grey surface",
+      "tags": [
+        "web",
+        "builder",
+        "saas",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/pop/README.md",
+      "tokens": "systems/pop/tokens.json",
+      "styleGuide": "systems/pop/style-guide.html",
+      "preview": {
+        "cover": "systems/pop/screenshots/home-light-default.png",
+        "icon": "systems/pop/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": []
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      }
+    },
+    {
+      "slug": "primevideo",
+      "name": "Prime Video",
+      "url": "https://www.primevideo.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Streaming storefront: near-black page, white type, a blue accent, and a grey card border",
+      "tags": [
+        "web",
+        "media",
+        "streaming",
+        "marketing",
+        "signed-out",
+        "dark"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/primevideo/README.md",
+      "tokens": "systems/primevideo/tokens.json",
+      "styleGuide": "systems/primevideo/style-guide.html",
+      "preview": {
+        "cover": "systems/primevideo/screenshots/home-dark-default.png",
+        "icon": "systems/primevideo/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.search",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.muted",
+            "accent": "dark.color.accent.hover",
+            "border": "dark.color.border.card"
+          }
+        },
+        "fonts": [
+          "core.font.family.base"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run"
+      }
+    },
+    {
+      "slug": "scale",
+      "name": "Scale",
+      "url": "https://scale.com/",
+      "category": "ai-research",
+      "platform": "web",
+      "goodFor": "AI-lab marketing: white page, black actions, and a grey secondary surface",
+      "tags": [
+        "web",
+        "ai",
+        "research",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/scale/README.md",
+      "tokens": "systems/scale/tokens.json",
+      "styleGuide": "systems/scale/style-guide.html",
+      "preview": {
+        "cover": "systems/scale/screenshots/home-light-default.png",
+        "icon": "systems/scale/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": []
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run"
+      }
+    },
+    {
+      "slug": "wandb",
+      "name": "Weights & Biases",
+      "url": "https://wandb.ai/",
+      "category": "ai-research",
+      "platform": "web",
+      "goodFor": "Experiment-tracking marketing: paper page, cobalt action, and a teal accent on a dark ink ground",
+      "tags": [
+        "web",
+        "ai",
+        "research",
+        "saas",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/wandb/README.md",
+      "tokens": "systems/wandb/tokens.json",
+      "styleGuide": "systems/wandb/style-guide.html",
+      "preview": {
+        "cover": "systems/wandb/screenshots/home-dark-default.png",
+        "icon": "systems/wandb/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.action.primary",
+            "border": "light.color.border.default"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.raised",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.action.primary",
+            "border": "dark.color.border.default"
+          }
+        },
+        "fonts": []
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      }
+    },
+    {
+      "slug": "washington-post",
+      "name": "The Washington Post",
+      "url": "https://www.washingtonpost.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "News homepage: white page, near-black ink, a blue accent, and a grey surface",
+      "tags": [
+        "web",
+        "media",
+        "news",
+        "editorial",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/washington-post/README.md",
+      "tokens": "systems/washington-post/tokens.json",
+      "styleGuide": "systems/washington-post/style-guide.html",
+      "preview": {
+        "cover": "systems/washington-post/screenshots/home-light-default.png",
+        "icon": "systems/washington-post/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.borderStrong"
+          }
+        },
+        "fonts": []
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      }
+    },
+    {
+      "slug": "westelm",
+      "name": "West Elm",
+      "url": "https://www.westelm.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Home-goods storefront: white page, charcoal ink, and a hairline product grid",
+      "tags": [
+        "web",
+        "e-commerce",
+        "retail",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-21",
+      "access": "signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/westelm/README.md",
+      "tokens": "systems/westelm/tokens.json",
+      "styleGuide": "systems/westelm/style-guide.html",
+      "preview": {
+        "cover": "systems/westelm/screenshots/home-light-default.png",
+        "icon": "systems/westelm/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.text.link",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": []
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/1715",
+        "durationNote": "wall-clock duration was not recorded for this restack"
+      },
+      "layoutGaps": {
+        "components/": "component crops were not written for this capture",
+        "icons/": "the icon extraction pass was not run"
+      }
     }
   ]
 }

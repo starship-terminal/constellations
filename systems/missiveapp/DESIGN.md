@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Missive"
-description: "Team-inbox marketing: white page, ink #34363a, blue #2266ed primary, Inter UI, Tiempos Headline display, 4px spacing base, one light theme"
+description: "Shared-inbox marketing: white page, blue accent, and a grey surface behind the product frame"
 omitted:
   - section: "typography"
     reason: "tokens.json has no typography tokens under `core.typography`"
@@ -65,9 +65,9 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Team-inbox marketing: white page, ink #34363a, blue #2266ed primary, Inter UI, Tiempos Headline display, 4px spacing base, one light theme.
+Good for: Shared-inbox marketing: white page, blue accent, and a grey surface behind the product frame.
 
-Captured 2026-11-21, signed out (public marketing only; mail.missiveapp.com login and signup were not entered). Themes: light.
+Captured 2026-11-21, signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted). Themes: light.
 
 A token set and component reference for Missive's public marketing site (https://missiveapp.com), a Webflow site for a team inbox product. Use it to build a marketing surface that borrows its look: a white page, ink `#34363a`, muted `#646c76`, hairline `#e4e6e9`, surface `#f5f6f6`, a blue `#2266ed` primary action that darkens to `#1c42b1`, Inter for UI, and Tiempos Headline for the display line. The site ships its own token layer as CSS custom properties: `--swatch--*` ramps, `--color--*` roles, and a 4px-base `--spacing--*` scale. It was captured signed out, in headless Chromium at 1440 x 900 (phone at 390 x 844) on 2026-11-21.
 
@@ -79,12 +79,12 @@ This package contains no Missive code, and none of its artwork has been redrawn.
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#2266ed):** `light.accent`
-- **neutral (#ffffff):** `light.page`
-- **surface (#f5f6f6):** `light.surface`
-- **on-surface (#34363a):** `light.text`
-- **on-surface-variant (#646c76):** `light.muted`
-- **outline (#cdd0d4):** `light.border`
+- **primary (#2266ed):** `light.color.accent`
+- **neutral (#ffffff):** `light.color.page`
+- **surface (#f5f6f6):** `light.color.surface`
+- **on-surface (#34363a):** `light.color.text`
+- **on-surface-variant (#646c76):** `light.color.muted`
+- **outline (#cdd0d4):** `light.color.border`
 
 ## Typography
 
