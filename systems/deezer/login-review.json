@@ -1,0 +1,23 @@
+{
+  "product": "Deezer",
+  "reviewed": "2026-11-21",
+  "account": "signed-out",
+  "url": "https://account.deezer.com/en-us/login/",
+  "alsoLinkedFrom": [
+    "https://www.deezer.com/en/",
+    "https://account.deezer.com/en/login/"
+  ],
+  "loaded": true,
+  "status": 200,
+  "title": "Log in",
+  "asksFor": ["email", "password"],
+  "codeSent": false,
+  "typedEmail": false,
+  "typedPassword": false,
+  "submitted": false,
+  "oauthClicked": false,
+  "oauthVisible": ["Facebook", "Google", "Apple"],
+  "otherControls": ["Show password", "Forgotten password?", "Sign up"],
+  "stopped": "login wall",
+  "notes": "The page asks for email and password. No code was sent. No field was filled. No OAuth button was clicked. Keyboard focus was moved onto the empty email field for a focus screenshot only."
+}

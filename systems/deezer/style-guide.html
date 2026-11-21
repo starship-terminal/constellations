@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deezer style guide</title>
+<style>
+:root {
+  --color-purple-500: #a238ff;
+  --color-neutralPurple-00: #ffffff;
+  --color-neutralPurple-190: #141216;
+  --color-neutralPurple-200: #000000;
+  --fontFamily-body: Inter, Arial, sans-serif;
+  --fontFamily-heading: Deezer Product, Tahoma, Arial, sans-serif;
+  --fontFamily-headline: Deezer Headline VF, Tahoma, Arial, sans-serif;
+  --fontFamily-brand: Deezer Brand, Tahoma, sans-serif;
+  --fontFamily-mono: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --fontWeight-extrabold: 800;
+  --fontWeight-black: 900;
+  --fontSize-caption: 12px;
+  --fontSize-bodyS: 14px;
+  --fontSize-bodyM: 14px;
+  --fontSize-bodyL: 16px;
+  --fontSize-headingS: 18px;
+  --fontSize-headingM: 20px;
+  --fontSize-headingL: 32px;
+  --fontSize-headingXl: 40px;
+  --fontSize-displayS: 48px;
+  --fontSize-titleScreenDesktop: 56px;
+  --fontSize-marketingHero: 140px;
+  --lineHeight-caption: 16px;
+  --lineHeight-bodyS: 20px;
+  --lineHeight-bodyL: 24px;
+  --lineHeight-headingM: 24px;
+  --lineHeight-headingL: 32px;
+  --lineHeight-marketingHero: 126px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --radius-none: 0;
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+  --radius-marketingButton: 12px;
+  --radius-field: 16px;
+  --borderWidth-s: 0.0625rem;
+  --borderWidth-m: 0.125rem;
+  --size-iconS: 1rem;
+  --size-iconM: 1.5rem;
+  --size-iconL: 2rem;
+  --size-controlS: 37px;
+  --size-field: 48px;
+  --size-loginSubmit: 48px;
+  --duration-ultraFast: 50ms;
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --easing-easeOut: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --easing-easeInOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --background-page: #ffffff;
+  --background-header: #000000;
+  --background-accent: #a238ff;
+  --background-inkButton: #121216;
+  --text-primary: #0f0d13;
+  --text-onHeader: #fdfcfe;
+  --text-onAccent: #ffffff;
+  --border-login: #555257;
+  color-scheme: light;
+  --sg-sans: Inter, Arial, sans-serif;
+  --sg-display: "Deezer Brand", Tahoma, sans-serif;
+}
+[data-mode="dark"] {
+  --background-page: #000000;
+  --background-surface: #141216;
+  --background-raised: #242326;
+  --background-accent: #ad47ff;
+  --background-accentHover: #bb73ff;
+  --background-accentPressed: #ca97ff;
+  --background-accentDisabled: #2e2c30;
+  --background-inverse: #ffffff;
+  --background-success: #00b23d;
+  --background-warning: #fe9935;
+  --background-danger: #f44336;
+  --text-primary: #ffffff;
+  --text-secondary: #a19fa4;
+  --text-disabled: #706e73;
+  --text-onAccent: #ffffff;
+  --text-link: #bb73ff;
+  --text-linkHover: #ca97ff;
+  --text-success: #00b23d;
+  --text-warning: #fe9935;
+  --text-danger: #f44336;
+  --border-default: #4e4c51;
+  --border-strong: #59575c;
+  --border-focus: #ad47ff;
+  --border-accent: #ad47ff;
+  --border-danger: #f44336;
+  --icon-primary: #ffffff;
+  --icon-secondary: #a19fa4;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page, #fff); color: var(--text-primary, #111); font: 400 14px/20px var(--sg-sans); }
+header { display: flex; gap: 16px; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-default, #ccc); }
+header h1 { font: 700 18px/24px var(--sg-display); margin: 0; letter-spacing: -0.03em; }
+button.toggle { margin-left: auto; border-radius: var(--radius-marketingButton); padding: 8px 14px; border: 1px solid var(--border-default, #555); background: transparent; color: inherit; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h2 { font: 700 20px/24px var(--sg-display); margin: 32px 0 12px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+.swatch { border-radius: 12px; overflow: hidden; border: 1px solid var(--border-default, #444); }
+.swatch i { display: block; height: 56px; }
+.swatch span { display: block; padding: 6px 8px; font-size: 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-flex; align-items: center; height: 37px; padding: 0 20px; border-radius: 12px; font: 700 14px/1 var(--sg-sans); text-decoration: none; }
+.btn.primary { background: #a238ff; color: #fff; border: 0; }
+.btn.ghost { background: transparent; color: #fdfcfe; border: 1px solid #555257; }
+.btn.player { height: 48px; padding: 0 24px; border-radius: 16px; background: var(--background-accent); color: var(--text-onAccent); border: 0; }
+.field { height: 48px; width: 320px; border-radius: 16px; border: 0; background: var(--background-raised); color: var(--text-primary); padding: 0 16px; font: 400 15px/1 var(--sg-sans); }
+.hero { font: 800 64px/58px var(--sg-display); letter-spacing: -0.02em; text-transform: uppercase; margin: 12px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Deezer</h1>
+  <span>Public capture, 2026-11-21. Signed out.</span>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle theme</button>
+</header>
+<main>
+  <p>Dark tokens are Tempo semantic roles from the signed-out player. Light tokens are computed styles from the marketing homepage. The toggle swaps which set is applied to the page background and text.</p>
+  <h2>Dark roles</h2>
+  <div class="swatches" id="dark"></div>
+  <h2>Light roles</h2>
+  <div class="swatches" id="light"></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn ghost" href="#">Log in</a>
+    <a class="btn primary" href="#">Sign up</a>
+    <button class="btn player" type="button">Log in</button>
+    <input class="field" placeholder="Artists, tracks, podcasts..." readonly>
+  </div>
+  <p class="hero">Where music comes to life</p>
+</main>
+<script>
+const tokens = {"dark": {"background": {"page": {"$value": "#000000", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-neutral-primary-default"}, "$description": "Player page, black"}, "surface": {"$value": "#141216", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-neutral-secondary-default"}, "$description": "Raised panels such as the sidebar and channel cards"}, "raised": {"$value": "#242326", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-neutral-tertiary-default"}, "$description": "Fields and search"}, "accent": {"$value": "#ad47ff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-accent-primary-default"}, "$description": "Primary button fill in the player and on the login wall"}, "accentHover": {"$value": "#bb73ff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-accent-primary-hovered"}}, "accentPressed": {"$value": "#ca97ff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-accent-primary-pressed"}}, "accentDisabled": {"$value": "#2e2c30", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-accent-primary-disabled"}}, "inverse": {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-neutral-inverse-default"}}, "success": {"$value": "#00b23d", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-feedback-success-default"}}, "warning": {"$value": "#fe9935", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-feedback-warning-default"}}, "danger": {"$value": "#f44336", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-background-feedback-error-default"}}}, "text": {"primary": {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-text-neutral-primary-default"}}, "secondary": {"$value": "#a19fa4", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-text-neutral-secondary-default"}}, "disabled": {"$value": "#706e73", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-text-neutral-primary-disabled"}}, "onAccent": {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-text-accent-onAccent-default"}}, "link": {"$value": "#bb73ff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-text-accent-primary-default"}}, "linkHover": {"$value": "#ca97ff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-text-accent-primary-hovered"}}, "success": {"$value": "#00b23d", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-text-feedback-success-default"}}, "warning": {"$value": "#fe9935", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-text-feedback-warning-default"}}, "danger": {"$value": "#f44336", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-text-feedback-error-default"}}}, "border": {"default": {"$value": "#4e4c51", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-border-neutral-primary-default"}}, "strong": {"$value": "#59575c", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-border-neutral-primary-hovered"}}, "focus": {"$value": "#ad47ff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-border-neutral-primary-focused"}}, "accent": {"$value": "#ad47ff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-border-accent-primary-default"}}, "danger": {"$value": "#f44336", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-border-feedback-error-default"}}}, "icon": {"primary": {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-icon-neutral-primary-default"}}, "secondary": {"$value": "#a19fa4", "$type": "color", "$extensions": {"source": "css-var --tempo-colors-icon-neutral-secondary-default"}}}}, "light": {"background": {"page": {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "observed page fill on https://www.deezer.com/en/; body computed background was transparent"}, "$description": "Marketing page is white. The computed body background was transparent."}, "header": {"$value": "#000000", "$type": "color", "$extensions": {"source": "observed header bar on https://www.deezer.com/en/"}}, "accent": {"$value": "#a238ff", "$type": "color", "$extensions": {"source": "computed Sign up background-color rgb(162, 56, 255) on https://www.deezer.com/en/"}, "$description": "Marketing purple. Darker than the player accent #ad47ff."}, "inkButton": {"$value": "#121216", "$type": "color", "$extensions": {"source": "computed Try for free background-color rgb(18, 18, 22)"}}}, "text": {"primary": {"$value": "#0f0d13", "$type": "color", "$extensions": {"source": "computed h1 color rgb(15, 13, 19) on https://www.deezer.com/en/"}}, "onHeader": {"$value": "#fdfcfe", "$type": "color", "$extensions": {"source": "computed Plans link color rgb(253, 252, 254)"}}, "onAccent": {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "computed Sign up color rgb(255, 255, 255)"}}}, "border": {"login": {"$value": "#555257", "$type": "color", "$extensions": {"source": "computed Log in border-top-color rgb(85, 82, 87)"}}}}};
+function paint(id, group) {
+  const root = document.getElementById(id);
+  for (const [role, items] of Object.entries(group)) {
+    for (const [name, token] of Object.entries(items)) {
+      const el = document.createElement("div");
+      el.className = "swatch";
+      el.innerHTML = "<i></i><span></span>";
+      el.querySelector("i").style.background = token.$value;
+      el.querySelector("span").textContent = role + "." + name + " " + token.$value;
+      root.appendChild(el);
+    }
+  }
+}
+paint("dark", tokens.dark);
+paint("light", tokens.light);
+</script>
+</body>
+</html>
