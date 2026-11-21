@@ -14,9 +14,11 @@ Fourmula is an AI product-photography product for e-commerce brands, and its pub
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (77, 175 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the marketing chrome and inverted theme toggle, the hero and logo strips, the FAQ accordion, the legal pages, the app's floating header, the sign-in boundary, the create-PDP generator, mobile, motion and focus. |
 | [components/crops/](components/crops) | 168 element crops at 2x, named `{component}-{state}.png`. |
-| [screenshots/](screenshots) | 29 quantised `{page}-{theme}-{state}.png` captures. `light` is the marketing light paint (`.body.dark`), `dark` the site's dark paint or the dark-only app; desktop 1440 x 900 at 1x; `-full` whole pages stitched at 1x; `mobile-*` shots at 390 x 844 @2x. |
+| [screenshots/](screenshots) | 41 quantised `{page}-{theme}-{state}.png` captures. `light` is the marketing light paint (`.body.dark`), `dark` the site's dark paint or the dark-only app; desktop 1440 x 900 at 1x; `-full` whole pages stitched at 1x; `mobile-*` shots at 390 x 844 @2x. The 2026-11-21 walk added the open auth menu, the empty sign-in wall, phone privacy, terms, and 404, and the phone cookie and FAQ states. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the marketing stylesheet harvest — resolved custom properties plus @font-face), `css-vars-app.json` (the app's @theme harvest), `motion.json` (the two-pass reduced-motion probe), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
+| [site-tree.md](site-tree.md) | The public site tree from the 2026-11-21 walk: which header, footer, and in-page control opens which page, menu, or dialog. |
+| [login-review.json](login-review.json) | The empty auth wall. `signed_in` is false. No field was filled. |
 
 ## Brief
 
@@ -115,6 +117,10 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **"Sf Pro Display", Arial** — the marketing face: hero, section and step headings, buttons, nav overlay links.
 - **sfProFont, "sfProFont Fallback"** — the app's local next/font SF Pro build, every app control.
 - Neither is bundled here; the style guide falls back to system faces. Declared in the stylesheets' `@font-face` rules (harvested in `raw/css-vars.json` and `raw/css-vars-app.json`).
+
+## Site tree
+
+The 2026-11-21 walk is [site-tree.md](site-tree.md). It maps the public pages and every header, footer, and in-page control. The walk stopped at the auth wall. [login-review.json](login-review.json) records that wall. `signed_in` is false. The signed-in app was not captured. Unread token values are Not captured.
 
 ## Coverage
 
