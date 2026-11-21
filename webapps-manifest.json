@@ -2119,9 +2119,9 @@
       "description": "UX planning platform",
       "status": "captured",
       "package": "systems/flowmapp",
-      "notes": "https://flowmapp.com/login is a missing page. Sign in is https://app.flowmapp.com/signin with email and password, or Google. No code was sent.",
+      "notes": "https://flowmapp.com/login is a missing page. Sign in is https://app.flowmapp.com/signin with email and password, or Google. No code was sent. Public walk 2026-11-21: the public site tree is in systems/flowmapp/site-tree.md. https://www.flowmapp.com/login is still a 404. Log in and Sign in stop at https://app.flowmapp.com/signin with Google, email, and password. Try for free and Sign up stop at https://app.flowmapp.com/signup. Nothing was typed. Google was not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1665 at 853a9b906b2f. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
