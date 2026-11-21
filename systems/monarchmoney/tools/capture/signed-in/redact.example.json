@@ -1,0 +1,7 @@
+{
+ "replace": [
+  ["Account Holder", "gi", "Learner"],
+  ["account\\.holder(@|%40)example\\.invalid", "gi", "learner@example.invalid"]
+ ],
+ "badges": []
+}
