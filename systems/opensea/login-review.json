@@ -1,0 +1,91 @@
+{
+  "slug": "opensea",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "wall": "Connect with OpenSea",
+  "session": "Public capture, signed out, from https://opensea.io/. Sign in opened a dialog on the same URL. The dialog was photographed and closed with Escape. No email, password, or code was typed. Continue with Google, Continue with Apple, MetaMask, WalletConnect, Robinhood Wallet, and More Wallet Options were not clicked. Continue with email was not used. No form was submitted. No wallet was connected. No message was signed.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "no signed-in nav. The connect dialog stopped the branch before an account shell."
+      ],
+      "reached": [],
+      "note": "Marketing and marketplace nav is in site-tree.md. Header links that loaded signed out: Home, Explore, collections, tokens, activity, drops, tools, a collection, discover/art, terms."
+    },
+    "settings": {
+      "items": [
+        "no signed-in settings. More > Settings listed Profile, Wallets, Agents, Notifications, Customize, Developer, Verification, Shortcuts, and Cookie preferences. The routes were not opened."
+      ],
+      "reached": [],
+      "note": "Shortcuts opened as a public dialog on / and was closed. Cookie preferences was not opened."
+    },
+    "create": {
+      "items": [
+        "no signed-in create flow. The connect dialog is the gate."
+      ],
+      "reached": [],
+      "note": "Register a tool on /tools was visible and not clicked. Buy Floor and Make Collection Offer on a collection page were visible and not clicked."
+    }
+  },
+  "screens": [
+    "screenshots/home-dark-default.png",
+    "screenshots/home-dark-explore.png",
+    "screenshots/home-dark-more.png",
+    "screenshots/home-dark-settings-menu.png",
+    "screenshots/home-dark-resources.png",
+    "screenshots/home-dark-search.png",
+    "screenshots/home-dark-search-focus.png",
+    "screenshots/home-dark-chains.png",
+    "screenshots/home-dark-timerange.png",
+    "screenshots/home-dark-shortcuts.png",
+    "screenshots/home-dark-tokens.png",
+    "screenshots/home-dark-signin-hover.png",
+    "screenshots/home-light-default.png",
+    "screenshots/signin-dark-dialog.png",
+    "screenshots/collections-dark-default.png",
+    "screenshots/activity-dark-default.png",
+    "screenshots/drops-dark-default.png",
+    "screenshots/tools-dark-default.png",
+    "screenshots/collection-dark-default.png",
+    "screenshots/terms-dark-default.png",
+    "screenshots/discover-art-dark-default.png",
+    "screenshots/tokens-dark-default.png",
+    "screenshots/mobile-home-dark-default.png",
+    "screenshots/mobile-home-dark-menu.png"
+  ],
+  "gaps": [
+    "Signed-in shell was not entered. Profile, portfolio, listings, offers, watchlist, favorites, and settings routes were not opened.",
+    "offered.nav, offered.settings, and offered.create have no reached items because the connect dialog stopped the branch.",
+    "Rewards (/rewards) was linked and not opened. A prior capture recorded it bouncing to the connect dialog.",
+    "Continue with email, Google, Apple, and every wallet row were visible and not used.",
+    "Cookie preferences and Your Privacy Choices were visible and not opened. No consent was posted.",
+    "Register a tool, Buy Floor, Make Collection Offer, and Sell were visible and not clicked.",
+    "Swap (/swap) and Studio (/studio) were linked from the phone menu and not opened.",
+    "No account email, phone, location, wallet address, or signing parameters were on screen."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "code",
+    "Continue with email",
+    "Continue with Google",
+    "Continue with Apple",
+    "MetaMask",
+    "WalletConnect",
+    "Robinhood Wallet",
+    "More Wallet Options",
+    "search form (azuki was typed and not submitted)",
+    "Cookie preferences",
+    "Your Privacy Choices",
+    "Register a tool",
+    "Buy Floor",
+    "Make Collection Offer",
+    "Sell",
+    "wallet connect",
+    "message signing"
+  ]
+}

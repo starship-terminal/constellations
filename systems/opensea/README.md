@@ -12,8 +12,10 @@ OpenSea declares a real token layer. `:root, .dark` and `.light` set `--color-*`
 | [style-guide.html](style-guide.html) | One page that renders the tokens and the main controls. The system sans stands in for gtAmerica. |
 | [components.md](components.md) | The inventory, with measured values and reconstruction crops |
 | [patterns.md](patterns.md) | How the home, collection, connect dialog, and drops page are built |
-| [components/crops/](components/crops) | Element crops. These are reconstructions drawn from computed boxes, not live pixels |
-| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` reconstructions at the measured viewports, drawn with Pillow by `build_package.py --drawings`. Not live captures; the catalog's gallery cover is one of these drawings |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog, walked signed out on 2026-11-21 |
+| [login-review.json](login-review.json) | The connect wall: what was offered, which files exist, what was not opened, and what was not submitted |
+| [components/crops/](components/crops) | Element crops from the 2026-11-19 pass. Those crops are reconstructions drawn from computed boxes, not live pixels |
+| [screenshots/](screenshots) | Live public captures from 2026-11-21, `{page}-{theme}-{state}.png`, desktop 1440 and phone 390. The 2026-11-19 Pillow reconstructions were replaced |
 | [icons/](icons) | The wordmark SVG and [INDEX.tsv](icons/INDEX.tsv) |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
 | [tools/](tools) | [build_package.py](tools/build_package.py) (tokens.json and style-guide.html; `--drawings` also redraws the reconstruction PNGs) and a package test. `capture/signed-in/` holds only the kit's page-copy privacy guards |
@@ -31,7 +33,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 3. Do make nav, filters, and Sign in pills.
 4. Do use `#0086ff` for the brand action.
 5. Do keep the connect dialog at 480px, radius 12px, on a 60% black overlay.
-6. Don't treat the PNGs as live screenshots.
+6. Don't treat the component crops as live screenshots.
 7. Don't style a connected wallet, a buy, or settings from this package.
 8. Don't submit from this package.
 
@@ -76,15 +78,15 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-The T3 preview browser loaded opensea.io signed out. `preview_evaluate` read `getComputedStyle` and the stylesheets. Colour tokens are channel triplets, so each name was painted onto a probe as `rgb(r, g, b)` or as the declared `rgb()` form, under `.dark` and under `.light`, and the probe's computed background was recorded. Component boxes were read on the live elements at 1440 x 900 and 390 x 844.
+The 2026-11-19 pass loaded opensea.io signed out and read `getComputedStyle` and the stylesheets. Colour tokens are channel triplets, so each name was painted onto a probe as `rgb(r, g, b)` or as the declared `rgb()` form, under `.dark` and under `.light`, and the probe's computed background was recorded. Component boxes were read on the live elements at 1440 x 900 and 390 x 844. That pass could not take frames: `preview_snapshot` returned "The browser is not producing screenshot frames."
 
-`preview_snapshot` failed twice: "The browser is not producing screenshot frames." The PNGs in this package are reconstructions drawn from the measured boxes and colours. They are not live screenshots.
+The 2026-11-21 refresh photographed the public pages with headless Playwright (Chromium, 1440 x 900 and 390 x 844) after the same preview error. Those PNGs replace the Pillow reconstructions. A fresh probe on the live dark page confirmed `--color-bg-app` `rgb(8, 8, 8)`, `--color-bg-primary` `rgb(12, 12, 12)`, `--color-text-primary` `rgb(255, 255, 255)`, `--color-text-secondary` `rgb(172, 172, 172)`, `--color-blue-3` `rgb(0, 134, 255)`, `--color-border-1` `rgb(32, 32, 32)`, and `--color-link` `rgb(131, 195, 255)`. The readings are in [raw/live-2026-11-21.json](raw/live-2026-11-21.json). Tokens were not rebuilt, because a catalog edit is out of scope for this refresh and `DESIGN.md` is generated from the catalog.
 
-The live theme was dark. Light values come from the `.light` rule in the same stylesheet, resolved on the probe. Settings and rewards both redirected to the connect dialog, so a live light theme was not switched on.
+The live theme was dark. The footer Light control was clicked, the page gained the `light` class, and [screenshots/home-light-default.png](screenshots/home-light-default.png) is that live theme. Dark was restored after the shot. Settings routes and rewards were not opened. Sign in opened the connect dialog on `/` and was closed with Escape.
 
 ## What to distrust
 
-The screenshots and crops are reconstructions, drawn with Pillow from the measured boxes, including [screenshots/home-dark-default.png](screenshots/home-dark-default.png), which the gallery shows as this package's cover. Positions and colours come from computed styles. The wordmark in those PNGs is a blue circle, not the SVG paths. The style guide uses the system sans for gtAmerica. That family is proprietary and is not in the package.
+The screenshots from 2026-11-21 are live frames. The crops in [components/crops/](components/crops) are still the 2026-11-19 reconstructions, drawn with Pillow from measured boxes. The wordmark in those crops is a blue circle, not the SVG paths. The style guide uses the system sans for gtAmerica. That family is proprietary and is not in the package. The gallery cover path is still [screenshots/home-dark-default.png](screenshots/home-dark-default.png), which is now a live frame. The catalog note that calls the cover a reconstruction was not edited.
 
 Desktop Sign in was a transparent pill. Phone Sign in, at 390, was a filled `#0086ff` pill. Both readings are live. Do not treat one as the other's hover.
 
@@ -137,7 +139,7 @@ Cookiebot (`--cc-*`) and Sonner (`--gray1` through `--gray12`, toast colours) ar
 | Search and filtering | Collection search field and status pills. Not submitted |
 | Onboarding | Not present signed out |
 | Widths | 1440 x 900 and 390 x 844, both measured |
-| Screenshots | Not captured live. `preview_snapshot` failed. Reconstructions are labelled as such |
+| Screenshots | Captured live on 2026-11-21. [screenshots/](screenshots). See [site-tree.md](site-tree.md) |
 
 ## Do and don't
 
@@ -146,7 +148,7 @@ Cookiebot (`--cc-*`) and Sonner (`--gray1` through `--gray12`, toast colours) ar
 - **Do make nav, filters, and Sign in pills.** Computed radius was `1.67772e7px`. Selected pills are `#161616` with a `#2c2c2c` border on filters. [components/crops/button-nav-selected.png](components/crops/button-nav-selected.png)
 - **Do use `#0086ff` for the brand action.** Phone Sign in and Buy Now both computed to `--color-blue-3`. The wordmark circle is the same blue. [components/crops/button-signin-phone.png](components/crops/button-signin-phone.png)
 - **Do keep the connect dialog at 480px, radius 12px, on a 60% black overlay.** [screenshots/signin-dark-dialog.png](screenshots/signin-dark-dialog.png)
-- **Don't treat the PNGs as live screenshots.** The preview browser did not produce frames. Read values from [tokens.json](tokens.json).
+- **Don't treat the component crops as live screenshots.** The 2026-11-19 crops are drawings. The 2026-11-21 screenshots are live frames. Read values from [tokens.json](tokens.json).
 - **Don't style a connected wallet, a buy, or settings from this package.** Those routes bounced to the connect dialog or were not entered.
 - **Don't submit from this package.** Email, OAuth, and wallet rows were measured at rest or hover only.
 
