@@ -19,7 +19,9 @@ The 2026-10-17 refresh re-read the app from its own CSS, in both themes, from re
 | [components/](components) | 30 SVG redraws from the first capture (reconstructions) with `manifest.json`, written by `tools/build_library.py`; `crops/` holds 178 crops of the measured app components per state and theme, at 2x |
 | [boards/](boards) | Five SVG reference sheets (colours, type and geometry, controls, components, icons) for importing into a vector editor. Reconstructions, written by `tools/build_library.py` |
 | [icons/](icons) | `reference/`: 39 SVG extracts from visible buttons in Linear's public homepage demos (see Icons) |
-| [screenshots/](screenshots) | 35 full-page public captures (2026-09-23); `app-2026-10/`: 22 renders of the redacted app copies (256 colours); `app/`: 47 anonymised accessibility snapshots from the first capture, with no images (three of them are settings pages that redirected or did not load, which the style guide leaves out); `desktop/login-dark.png`: the login screen in the macOS desktop app (Linear 1.32.4, Electron), 1280 by 800 at 2x, 256 colours, 2026-10-25 |
+| [screenshots/](screenshots) | 35 full-page public captures (2026-09-23); `public-2026-11-21/`: 60 public-site PNGs from the 2026-11-21 refresh (desktop 1440 and phone 390, plus the Product and Resources menus, a nav hover and focus, and the login and signup walls); `app-2026-10/`: 22 renders of the redacted app copies (256 colours); `app/`: 47 anonymised accessibility snapshots from the first capture, with no images (three of them are settings pages that redirected or did not load, which the style guide leaves out); `desktop/login-dark.png`: the login screen in the macOS desktop app (Linear 1.32.4, Electron), 1280 by 800 at 2x, 256 colours, 2026-10-25 |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog, mapped 2026-11-21 before the new screenshots |
+| [login-review.json](login-review.json) | What the login and signup walls offered, which new screens exist, and what was not submitted |
 | [previews/](previews) | PNG renders of the five boards, `all-boards.png`, `aligned-buttons.png` and a public contact sheet |
 | [thumbnails/](thumbnails) | JPEG thumbnails of the public screenshots for the style guide, written by `tools/build_guide.py` |
 | [preview.html](preview.html) | Every board on one page, for checking the SVGs in a browser. Written by `tools/build_guide.py` |
@@ -98,6 +100,14 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `patterns.md` (no patterns
 
 <!-- health:end -->
 
+## Public refresh, 2026-11-21
+
+Signed-out pages only. [site-tree.md](site-tree.md) was written from the homepage before the new screenshots. [login-review.json](login-review.json) records the login and signup walls. The new PNGs are in [screenshots/public-2026-11-21/](screenshots/public-2026-11-21/). Homepage custom properties are in [raw/public-2026-11-21/css-vars.json](raw/public-2026-11-21/css-vars.json): page `#08090a` (`--color-bg-primary`, also `<meta name="theme-color" content="#08090a">`), text `#f7f8f8`, tertiary `#8a8f98`, brand `#5e6ad2` (`--color-brand-bg`), marketing accent `#7170ff` (`--color-accent`).
+
+`tokens.json` was not rebuilt. `catalog.json` was not edited, so `DESIGN.md` was not regenerated. Google, email, SAML, and passkey were not clicked. No form was submitted. Contact sales was not filled. Signed-in nav, settings, and create remain the 2026-10-17 capture.
+
+Public marketing pages paint dark only. `color-scheme: light` still produced a dark homepage. The login wall exposes light fallbacks (`--bg-base-color-light` `#f9f9fa`, `--bg-sidebar-light` `#efeff0`) that this signed-out session never painted.
+
 ## How the values were read
 
 | Label | Meaning |
@@ -137,7 +147,9 @@ Status colours depend on the team's workflow; feedback.warning is the "At risk" 
 
 Some crops do not show the state their name gives. Keyboard focus reached the board card, the sub-issue row and the description editor, but nothing changed in the copies: `raw/components-computed.json` reads outline none, and `card-focus-visible`, `list-row-focus-visible` and `text-area-focus-visible` (both themes) are byte-identical to their default crops. Whether the live app marks focus on these some other way is not known. The hover crops of the card and the toast are also identical to their defaults, with no computed change.
 
-The public `screenshots/login.png` (2026-09-23) is blank: it was taken before the page drew. Use `screenshots/desktop/login-dark.png` for the login layout; the page's CSS is still in `raw/styles/login-styles.json`.
+The public `screenshots/login.png` (2026-09-23) is blank: it was taken before the page drew. The 2026-11-21 refresh replaced that view with [screenshots/public-2026-11-21/desktop-login.png](screenshots/public-2026-11-21/desktop-login.png) and [screenshots/public-2026-11-21/phone-login.png](screenshots/public-2026-11-21/phone-login.png). Both are the signed-out identity wall (Google, email, SAML, passkey). Nothing on those buttons was clicked. The desktop app shot remains [screenshots/desktop/login-dark.png](screenshots/desktop/login-dark.png).
+
+Public marketing pages on 2026-11-21 paint dark only. `color-scheme: light` still produced a dark page. Homepage custom properties were read into [raw/public-2026-11-21/css-vars.json](raw/public-2026-11-21/css-vars.json): page `#08090a` (`--color-bg-primary`, also `<meta name="theme-color">`), text `#f7f8f8`, tertiary `#8a8f98`, brand `#5e6ad2` (`--color-brand-bg`), marketing accent `#7170ff` (`--color-accent`). The signed-in tokens in `tokens.json` were not rebuilt from this pass. The login wall also exposes light fallbacks (`--bg-base-color-light` `#f9f9fa`, `--bg-sidebar-light` `#efeff0`) that this signed-out session never painted.
 
 No disabled control appeared, so `text.quaternary` is the faintest text colour, not a confirmed disabled colour. The focus offset differs by control (see Do and don't 6), so `core.focusRing.offset-button` (2px) fits primary buttons and the switch only; the secondary and destructive buttons measured 0. The redraws `button-primary-disabled.svg` and `field-error.svg` show states this capture never reached.
 
@@ -353,6 +365,8 @@ Graded against [docs/DESIGN-SYSTEM.md](../../docs/DESIGN-SYSTEM.md). App items w
 Totals over 38 rows: 32 captured (states that were not reachable are named in their row), 1 reconstruction, 1 not present, 4 not captured.
 
 Also not captured: an issue list in list layout (this workspace's views are boards, and switching layout saves a view preference), the command menu (Cmd+K did not open in the browser pane), cycles and triage (disabled for the team), security, API and billing pages (left alone on purpose), and nested marketing pages.
+
+The 2026-11-21 public refresh did not re-enter the signed-in app. It added [site-tree.md](site-tree.md), [login-review.json](login-review.json), and the files under [screenshots/public-2026-11-21/](screenshots/public-2026-11-21/). Login and signup stopped at the identity wall. Google, email, SAML, and passkey were not used. No form was submitted. Contact sales and newsletter fields were not filled. Signed-in nav, settings, and create remain the 2026-10-17 capture.
 
 ## Do and don't
 
