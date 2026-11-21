@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:55:48.122Z",
+  "capturedAt": "2026-11-21T04:22:08.729Z",
   "screenshot": "home-light-default.png",
   "sanitizedSourceUrl": "https://equals.com/",
   "requested": {
@@ -8,7 +8,7 @@
       "width": 1440,
       "height": 900
     },
-    "deviceScaleFactor": 1
+    "deviceScaleFactor": 2
   },
   "configuredViewport": {
     "width": 1440,
@@ -17,7 +17,7 @@
   "actual": {
     "innerWidth": 1440,
     "innerHeight": 900,
-    "devicePixelRatio": 1,
+    "devicePixelRatio": 2,
     "theme": {
       "classes": [],
       "attributes": {},
@@ -47,14 +47,14 @@
     "clip": null
   },
   "png": {
-    "width": 1440,
-    "height": 900
+    "width": 2880,
+    "height": 1800
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1440,
-      "height": 900
+      "width": 2880,
+      "height": 1800
     },
     "basis": "configuredViewport"
   },

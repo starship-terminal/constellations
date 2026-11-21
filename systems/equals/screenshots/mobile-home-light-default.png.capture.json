@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T20:02:07.367Z",
+  "capturedAt": "2026-11-21T04:19:45.949Z",
   "screenshot": "mobile-home-light-default.png",
   "sanitizedSourceUrl": "https://equals.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 10889
+      "height": 10839
     },
     "scroll": {
       "x": 0,

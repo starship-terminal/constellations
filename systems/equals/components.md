@@ -1,6 +1,6 @@
 # Equals components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from equals.com, go.equals.com and docs.equals.com on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the sign-in and demo e-mail fields were focused and filled for measurement, then cleared, and never sent; the Get-a-demo and plan actions were never followed. The spreadsheet workspace behind login was never reached — the 'workbook' entries below are the marketing page's own demo mockup.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from equals.com, go.equals.com and docs.equals.com on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted. The 2026-11-21 walk did not type into the sign-in or demo email fields. Get-a-demo and plan actions were not followed. The spreadsheet workspace behind login was never reached — the 'workbook' entries below are the marketing page's own demo mockup.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (60 components, 140 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -44,7 +44,7 @@ Screenshots are named `{page}-{theme}-{state}.png`: marketing and sign-in surfac
 | Pricing FAQ accordion | /pricing/ | the question row's own toggle | [pricing-light-faq-open](screenshots/pricing-light-faq-open.png), [faq](#faq-item) |
 | Guide splash gate | /guides/arr/ | the 'Start reading' button's own toggle | [guide-light-splash](screenshots/guide-light-splash.png) |
 | Mobile nav drawer | home, phone width | the hamburger's own toggle | [mobile-home-light-drawer](screenshots/mobile-home-light-drawer.png), [m-drawer](#mobile-nav-drawer) |
-| E-mail fields | home, use-case, sign-in and phone | focused and filled with a test address, then cleared — never submitted | [hero-email](#demo-email-field), [signin-email](#sign-in-email-field), [m-email](#demo-email-field-mobile) |
+| E-mail fields | home, use-case, sign-in and phone | photographed empty; filled state not captured | [hero-email](#demo-email-field), [signin-email](#sign-in-email-field), [m-email](#demo-email-field-mobile) |
 | Docs theme | docs.equals.com | html.dark applied by the capture context, not a menu click | the `d-docs-*` entries and `docs-dark`/`docs-spreadsheet-dark` shots |
 | Signed-in product | app.equals.com / post-login | every post-login surface needs an account | boundary; see Gaps |
 
@@ -170,7 +170,7 @@ The "Enter your work email" capture under the hero copy; focused and typed into 
 |---|---|
 | default (same: focused, filled) | size 380 x 56; padding 18px 150px 18px 28px; background transparent; text Unica77 16/20 400, #000000 `color.brand.black`; placeholder rgba(0, 0, 0, 0.6) `color.brand.grey-5` |
 
-![Demo email field default](components/crops/hero-email-default.png) ![Demo email field focused](components/crops/hero-email-focused.png) ![Demo email field filled](components/crops/hero-email-filled.png)
+![Demo email field default](components/crops/hero-email-default.png) ![Demo email field focused](components/crops/hero-email-focused.png)
 
 #### Get-a-demo button
 The black "Get a demo" pill on the email capture; measured never pressed (it submits the capture). Read as `hero-cta` on the marketing home page.
@@ -232,7 +232,7 @@ The same email capture on a use-case page; focused and typed into then cleared �
 |---|---|
 | default (same: focused, filled) | size 380 x 56; padding 18px 150px 18px 28px; background transparent; text Unica77 16/20 400, #000000 `color.brand.black`; placeholder rgba(0, 0, 0, 0.6) `color.brand.grey-5` |
 
-![Demo email field (use-case) default](components/crops/uc-email-default.png) ![Demo email field (use-case) focused](components/crops/uc-email-focused.png) ![Demo email field (use-case) filled](components/crops/uc-email-filled.png)
+![Demo email field (use-case) default](components/crops/uc-email-default.png) ![Demo email field (use-case) focused](components/crops/uc-email-focused.png)
 
 ### Workbook mockup
 
@@ -383,7 +383,7 @@ The "Enter your email" input; focused and typed into then cleared — never subm
 | default | size 300 x 30; padding 6px 8px; border 1px solid transparent; radius 8px; background #f5f5f5 `color.app.grey.100`; text neue-haas-unica 12/16 400, #262626 `color.app.grey.800`; placeholder #a3a3a3 `color.app.grey.400` |
 | focused, filled | border 1px solid #7c3aed `color.app.purple.600` |
 
-![Sign-in email field default](components/crops/signin-email-default.png) ![Sign-in email field focused](components/crops/signin-email-focused.png) ![Sign-in email field filled](components/crops/signin-email-filled.png)
+![Sign-in email field default](components/crops/signin-email-default.png) ![Sign-in email field focused](components/crops/signin-email-focused.png)
 
 #### Continue button
 The form’s "Continue" submit; its states were measured but it was never clicked — nothing was submitted. Read as `signin-continue` on the go.equals.com sign-in page.
@@ -654,7 +654,7 @@ The email capture at 390; focused and typed into then cleared — never submitte
 |---|---|
 | default (same: focused, filled) | size 358 x 52; padding 16px 28px; background transparent; text Unica77 16/20 400, #000000 `color.brand.black`; placeholder rgba(0, 0, 0, 0.6) `color.brand.grey-5` |
 
-![Demo email field (mobile) default](components/crops/m-email-default.png) ![Demo email field (mobile) focused](components/crops/m-email-focused.png) ![Demo email field (mobile) filled](components/crops/m-email-filled.png)
+![Demo email field (mobile) default](components/crops/m-email-default.png) ![Demo email field (mobile) focused](components/crops/m-email-focused.png)
 
 ## Icons
 

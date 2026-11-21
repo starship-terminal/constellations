@@ -193,12 +193,9 @@ async function S(key, target, list, meta = {}, opts = {}) {
         await page.waitForTimeout(400);
         via = 'clicked into the field';
       } else if (st === 'filled') {
-        const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await f.click({ timeout: 4000 });
-        await page.keyboard.type(opts.fillText || 'name@example.com', { delay: 10 });
-        await page.waitForTimeout(500);
-        undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
-        via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
+        via = 'filled state not captured: this pass does not type into fields';
+        log('  !', key, st, via);
+        continue;
       } else if (st === 'opened') {
         if (opts.noToggle) via = via || 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
@@ -369,7 +366,7 @@ async function home() {
   await S('hero-sub', q('p, [class*="sub" i]').filter({ hasText: /first new spreadsheet/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero sub', desc: 'The lede under the headline.', sel: 'hero sub' }, { noScroll: true });
   // The first input/button in the page is a 0x0 mobile-only header clone;
   // the hero capture is the one inside .home__hero-cta.
-  await S('hero-email', q('.home__hero-cta input.email-capture-group__input').first(), FIELD, { group: h, title: 'Demo email field', desc: 'The "Enter your work email" capture under the hero copy; focused and typed into then cleared — never submitted.', sel: '.home__hero-cta .email-capture-group__input' }, { fillText: 'name@example.com' });
+  await S('hero-email', q('.home__hero-cta input.email-capture-group__input').first(), FIELD, { group: h, title: 'Demo email field', desc: 'The "Enter your work email" capture under the hero copy; focused and typed into then cleared — never submitted.', sel: '.home__hero-cta .email-capture-group__input' }, { fill: false });
   await S('hero-cta', q('.home__hero-cta button.email-capture-group__button').first(), B4, { group: h, title: 'Get-a-demo button', desc: 'The black "Get a demo" pill on the email capture; measured never pressed (it submits the capture).', sel: '.home__hero-cta .email-capture-group__button' });
   await S('section-label', q('p.section__label').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section label', desc: 'The numbered eyebrow label over a marketing section ("1. TRUST"), coloured by the page’s label-- theme.', sel: 'p.section__label' });
   await S('section-h2', q('h2.section__h2').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: 'A marketing section heading ("A single source of truth…").', sel: 'h2.section__h2' });
@@ -411,7 +408,7 @@ async function usecase() {
   await S('uc-lede', q('main p, article p, .use-case p').filter({ visible: true }).first(), ['default'], { group: g, title: 'Use-case lede', desc: 'The first paragraph under the use-case hero.', sel: 'use-case first paragraph' });
   // Scoped to main: the header also carries a 0x0 mobile-only clone of the
   // capture that checkVisibility counts as visible.
-  await S('uc-email', q('main input.email-capture-group__input').first(), FIELD, { group: g, title: 'Demo email field (use-case)', desc: 'The same email capture on a use-case page; focused and typed into then cleared — never submitted.', sel: 'main .email-capture-group__input' }, { fillText: 'name@example.com' });
+  await S('uc-email', q('main input.email-capture-group__input').first(), FIELD, { group: g, title: 'Demo email field (use-case)', desc: 'The same email capture on a use-case page; focused and typed into then cleared — never submitted.', sel: 'main .email-capture-group__input' }, { fill: false });
   save();
 }
 
@@ -423,7 +420,7 @@ async function signin() {
   await S('signin-card', q('.SignIn').filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-in card', desc: 'The whole "Sign in to Equals" card — heading, subheading, the email form and the footer line.', sel: '.SignIn' }, { noScroll: true });
   await S('signin-heading', q('.SignIn__Heading, .SignIn h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-in heading', desc: '"Sign in to Equals".', sel: '.SignIn__Heading' }, { noScroll: true });
   await S('signin-sub', q('.SignIn__Subheading').filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-in subheading', desc: '"Enter your email below to login to your account".', sel: '.SignIn__Subheading' }, { noScroll: true });
-  await S('signin-email', q('input.SignIn__Input, .SignIn input[type="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Sign-in email field', desc: 'The "Enter your email" input; focused and typed into then cleared — never submitted.', sel: '.SignIn__Input' }, { noScroll: true, fillText: 'name@example.com' });
+  await S('signin-email', q('input.SignIn__Input, .SignIn input[type="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Sign-in email field', desc: 'The empty email input on the sign-in wall. Nothing is typed.', sel: '.SignIn__Input' }, { noScroll: true, fill: false });
   await S('signin-continue', q('input.SignIn__Button, .SignIn input[type="submit"]').filter({ visible: true }).first(), B4, { group: g, title: 'Continue button', desc: 'The form’s "Continue" submit; its states were measured but it was never clicked — nothing was submitted.', sel: '.SignIn__Button' }, { noScroll: true });
   await S('signin-footer', q('.SignIn__Footer, .SignIn__Footer a').filter({ visible: true }).first(), B4, { group: g, title: 'Sign-in footer link', desc: '"Don’t have an account? Request a demo" — the footer copy and link; measured, never followed.', sel: '.SignIn__Footer' }, { noScroll: true });
   save();
@@ -460,7 +457,7 @@ async function mobile() {
   await openMobileNav();
   await S('m-drawer', await domFind(page, /Use cases[\s\S]*Pricing/, { sel: 'nav, div, ul', tag: 'mdrawer', minH: 200 }), ['default'], { group: g, title: 'Mobile nav drawer', desc: 'The nav the hamburger opens.', sel: 'mobile nav' }, { open: openMobileNav, noScroll: true, noReset: true });
   await S('m-hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Hero headline (mobile)', desc: '"What’s after Excel?" at 390 wide.', sel: 'h1' }, { noScroll: true });
-  await S('m-email', q('input.email-capture-group__input').filter({ visible: true }).first(), FIELD, { group: g, title: 'Demo email field (mobile)', desc: 'The email capture at 390; focused and typed into then cleared — never submitted.', sel: '.email-capture-group__input' }, { fillText: 'name@example.com' });
+  await S('m-email', q('input.email-capture-group__input').filter({ visible: true }).first(), FIELD, { group: g, title: 'Demo email field (mobile)', desc: 'The email capture at 390; focused and typed into then cleared — never submitted.', sel: '.email-capture-group__input' }, { fill: false });
   save();
 }
 

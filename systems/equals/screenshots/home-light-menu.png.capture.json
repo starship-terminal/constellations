@@ -1,31 +1,31 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:55:55.510Z",
+  "capturedAt": "2026-11-21T04:20:23.474Z",
   "screenshot": "home-light-menu.png",
   "sanitizedSourceUrl": "https://equals.com/",
   "requested": {
     "viewport": {
-      "width": 1440,
-      "height": 900
+      "width": 1600,
+      "height": 1000
     },
-    "deviceScaleFactor": 1
+    "deviceScaleFactor": 2
   },
   "configuredViewport": {
-    "width": 1440,
-    "height": 900
+    "width": 1600,
+    "height": 1000
   },
   "actual": {
-    "innerWidth": 1440,
-    "innerHeight": 900,
-    "devicePixelRatio": 1,
+    "innerWidth": 1600,
+    "innerHeight": 1000,
+    "devicePixelRatio": 2,
     "theme": {
       "classes": [],
       "attributes": {},
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1440,
-      "height": 900,
+      "width": 1600,
+      "height": 1000,
       "scale": 1,
       "offsetLeft": 0,
       "offsetTop": 0,
@@ -33,7 +33,7 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1920,
+      "width": 2000,
       "height": 9616
     },
     "scroll": {
@@ -47,14 +47,14 @@
     "clip": null
   },
   "png": {
-    "width": 1440,
-    "height": 900
+    "width": 3200,
+    "height": 2000
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1440,
-      "height": 900
+      "width": 3200,
+      "height": 2000
     },
     "basis": "configuredViewport"
   },

@@ -1,6 +1,6 @@
 # Equals design reference
 
-A token set and component reference for Equals' public surfaces — for building spreadsheet-analytics marketing pages, auth cards and Mintlify docs in the style of the real thing. It was read from **equals.com** (equals.app redirects there), **go.equals.com** and **docs.equals.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the marketing home, /pricing/, /about/, /customers/, /launches/, /use-cases/ and /use-cases/arr-dashboard/, the /guides/arr/ splash, the signed-out sign-in card, the docs in light and dark, plus 390px passes on home, pricing, the use-case page, sign-in and docs dark.
+A token set and component reference for Equals' public surfaces — for building spreadsheet-analytics marketing pages, auth cards and Mintlify docs in the style of the real thing. It was read from **equals.com** (equals.app redirects there), **go.equals.com** and **docs.equals.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. A public walk on **2026-11-21** refreshed the site tree and the empty sign-in wall. That walk typed nothing. Captured: the marketing home, /pricing/, /about/, /customers/, /launches/, /use-cases/ and /use-cases/arr-dashboard/, the /guides/arr/ splash, the signed-out sign-in card, the docs in light and dark, plus 390px passes on home, pricing, the use-case page, sign-in and docs dark.
 
 Equals is worth a capture because its three public surfaces run three different stacks openly: the marketing site declares a **--brand-\*** palette (the `#faf9f5` cream, black and greys plus nine accent hues) with **.accent--\*/.label--\*** body classes that retheme each page, in Unica77 and Serrif Condensed with Aeonik Fono eyebrows; the sign-in card exposes the app's Tailwind-style **--color-\*** layer (`#fcfcfc` canvas, `#7c3aed` purple-600 action) in neue-haas-unica; and the docs are a Mintlify app whose **--primary/--gray-\*/--twoslash-\*** layer genuinely flips on `html.dark` (`#7839e5` primary, `#0b0a0f` canvas). The marketing CTAs are 60px pills, the docs controls 6-9999px, the app fields 8px. **Boundary:** the spreadsheet workspace, dashboards and every post-login surface were never reached — `app.equals.com` did not answer and the sign-in form was measured as a form, never submitted. The animated "workbook" on the marketing pages is Equals' own demo mockup, not the authenticated app.
 
@@ -16,6 +16,8 @@ Equals is worth a capture because its three public surfaces run three different 
 | [screenshots/](screenshots) | 40 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at DPR 2; `-full` whole pages, chunked and stitched; `mobile-*` shots are 780 wide (390 at 2x); menu/faq-open/splash/drawer are locally toggled states |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 226 resolved custom properties per theme plus the resolved accent classes), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [site-tree.md](site-tree.md) | Public control map from the 2026-11-21 walk: which header, footer, and in-page control opens which page, and where the walk stopped |
+| [login-review.json](login-review.json) | The empty sign-in wall at go.equals.com/auth/new, the equals.app/login 404, and the stop. Nothing was typed |
 
 ## Brief
 
@@ -97,13 +99,13 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 5. **Do use the pill for marketing controls.** CTAs and the email capture share the 60px radius at 44-56px tall; the app's own controls are 8px and the docs search goes 9999px. See [hero-email](components/crops/hero-email-default.png).
 6. **Do treat docs dark as the only dark.** The docs flip on `html.dark` to `#0b0a0f` with grey-400 body and white-wash chips; marketing and sign-in have no dark theme, so the dark set is docs-only. See [docs-dark-dark-default](screenshots/docs-dark-dark-default.png).
 7. **Don't style the spreadsheet from this package.** The animated workbook on the marketing pages is a demo mockup; the authenticated product was never reached. See [wb-mockup](components/crops/wb-mockup-default.png) for the mockup only.
-8. **Don't submit from this package.** The sign-in and demo e-mail fields were focused and filled for measurement, then cleared — never sent; the Get-a-demo and plan actions were measured, never followed. See [signin-email](components/crops/signin-email-filled.png).
+8. **Don't submit from this package.** The sign-in wall and the demo email fields were photographed empty. Nothing was typed and nothing was sent. See [signin-wall-light-default](screenshots/signin-wall-light-default.png).
 
 ## How the values were read
 
 | Step | What ran |
 |---|---|
-| Screenshots | `tools/capture/public/public.mjs` — 14 desktop pages at 1440 x 900 (default + stitched `-full`, capped at 8 tiles) and 5 mobile passes at 390 x 844, with the mega-menu, FAQ, splash and drawer toggled by their own controls |
+| Screenshots | 2026-11-13: `tools/capture/public/public.mjs` at 1440 x 900 and 390 x 844. 2026-11-21: a Playwright walk refreshed the public index shots, the Use cases menu, the phone drawer, the login 404, and the empty sign-in wall. The walk did not type. See [site-tree.md](site-tree.md). |
 | CSS harvest | `tools/capture/vars.mjs` — every custom property on the three surfaces' stylesheets, resolved in light, `html.dark` and per-`.accent--*`/`.label--*` probes |
 | Measurements | `tools/capture/public/measure.mjs` — 60 components on public routes only; hover/focus-visible/pressed/focused/filled/open states; nothing signed into, submitted or followed |
 | Tokens | `tools/build_component_tokens.py` → `raw/component-tokens.json` → `tools/build_tokens.py` → `tokens.json` |
@@ -116,7 +118,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Tokens with per-value provenance | yes — every token carries `$extensions.source` (declared `css-var` or measured computed style) |
 | Light and dark themes | yes for the docs (`html.dark`); marketing and sign-in are light-only surfaces, which the dark set states |
 | Components measured, not inferred | yes — 60 components, hover/focus-visible/pressed/focused/filled/open states |
-| Boundaries declared | yes — auth, demo, trial and purchase actions measured, never followed; the app workspace is a documented boundary |
+| Boundaries declared | yes — the 2026-11-21 walk stopped at the empty email wall ([login-review.json](login-review.json)); the app workspace is still an authenticated boundary |
 | Mobile pass | yes — 390 x 844 on home, pricing, the use-case page, sign-in and docs dark |
 | Icons | layout gap — no standalone SVG set lifted; product glyphs visible in crops/screenshots |
 | Fonts | declared and measured; served faces (Unica77, Serrif Condensed, Aeonik Fono/Pro, neue-haas-unica, JetBrains Mono, Paper Mono) not redistributed |
@@ -127,4 +129,5 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - `m-drawer` (Mobile nav drawer): the reading is the 390 x 52 header nav, not the drawer the hamburger opens; the selector's `.header__nav, …, nav` first match caught it. Needs a recapture; `measure.mjs` now finds the tall panel holding the drawer links after opening it (edited, not run).
 - `wb-toolbar-button`, `wb-sheet-tab`, `signin-footer` and `m-hamburger`: keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md leaves them out and `raw/measurements.md` shows them as Skipped. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
 - Left out on purpose, listed under `_gaps` in `raw/component-tokens.json`: `light.signin.card` (the card computes a transparent background; `light.signin.canvas` is the surface behind it) and `light.marketing.focus` (the marketing links draw the browser's default `auto` focus ring in #101010, not a product colour).
-- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
+- **Automation was masked during the 2026-11-13 capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so the older readings were taken with that mask. The 2026-11-21 public walk did not mask it. Those pages loaded.
+- **Filled email states from 2026-11-13 are withdrawn.** The earlier measure script typed into demo and sign-in fields. This pass did not. Those filled crops are removed. The empty wall is [signin-wall-light-default](screenshots/signin-wall-light-default.png). A filled-field token is Not captured.

@@ -2,7 +2,7 @@
 
 Computed styles read from Equals' public surface on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the three public sites — the equals.com marketing pages (home, pricing, a use-case page), the go.equals.com sign-in card and the docs.equals.com Mintlify docs in both its themes (dark from a prefers-color-scheme context, never the theme menu) — and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
-States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened` is the resting state after the component's own local toggle (the "Use cases" mega-menu, a pricing FAQ label, the mobile hamburger).
+States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` was not captured on this pass (nothing was typed); `opened` is the resting state after the component's own local toggle (the "Use cases" mega-menu, a pricing FAQ label, the mobile hamburger).
 
 ## Components
 
@@ -257,7 +257,7 @@ Page: home. Selector: `.home__hero-cta .email-capture-group__input`. States: def
 | Cursor | text | = | = |
 | Placeholder | #000000 @ 0.6, opacity 1 | = | = |
 | Ancestor paint | 1 up form.email-capture-group.get-a-demo bg #ffffff shadow #000000 @ 0.1 0px 0px 0px 0.5px, #000000 @ 0.05 0px 2px 8px -2px, #000000 @ 0.14 0px 2px 10px -4px | 1 up form.email-capture-group.get-a-demo bg #ffffff shadow #b074ce 0px 0px 0px 1px, #b074ce @ 0.1 0px 0px 0px 3px, #000000 @ 0.05 0px 2px 8px -2px, #000000 @ 0.14 0px 2px 10px -4px | 1 up form.email-capture-group.get-a-demo bg #ffffff shadow #b074ce 0px 0px 0px 1px, #b074ce @ 0.1 0px 0px 0px 3px, #000000 @ 0.05 0px 2px 8px -2px, #000000 @ 0.14 0px 2px 10px -4px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | filled state not captured: this pass does not type into fields |
 
 Crops: `hero-email-default.png`, `hero-email-focused.png`, `hero-email-filled.png`.
 
@@ -432,7 +432,7 @@ Page: usecase. Selector: `main .email-capture-group__input`. States: default, fo
 | Cursor | text | = | = |
 | Placeholder | #000000 @ 0.6, opacity 1 | = | = |
 | Ancestor paint | 1 up form.email-capture-group.get-a-demo bg #ffffff shadow #000000 @ 0.1 0px 0px 0px 0.5px, #000000 @ 0.05 0px 2px 8px -2px, #000000 @ 0.14 0px 2px 10px -4px | 1 up form.email-capture-group.get-a-demo bg #ffffff shadow #b074ce 0px 0px 0px 1px, #b074ce @ 0.1 0px 0px 0px 3px, #000000 @ 0.05 0px 2px 8px -2px, #000000 @ 0.14 0px 2px 10px -4px | 1 up form.email-capture-group.get-a-demo bg #ffffff shadow #b074ce 0px 0px 0px 1px, #b074ce @ 0.1 0px 0px 0px 3px, #000000 @ 0.05 0px 2px 8px -2px, #000000 @ 0.14 0px 2px 10px -4px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | filled state not captured: this pass does not type into fields |
 
 Crops: `uc-email-default.png`, `uc-email-focused.png`, `uc-email-filled.png`.
 
@@ -853,7 +853,7 @@ Page: signin. Selector: `.SignIn__Input`. States: default, focused, filled.
 | Cursor | text | = | = |
 | Placeholder | #a3a3a3, opacity 1 | = | = |
 | Painted layers | input.SignIn__Input 300.0x30.0 bg #f5f5f5 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | input.SignIn__Input 300.0x30.0 bg #f5f5f5 border T:1px solid #7c3aed / R:1px solid #7c3aed / B:1px solid #7c3aed / L:1px solid #7c3aed r 8px | input.SignIn__Input 300.0x30.0 bg #f5f5f5 border T:1px solid #7c3aed / R:1px solid #7c3aed / B:1px solid #7c3aed / L:1px solid #7c3aed r 8px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | filled state not captured: this pass does not type into fields |
 
 Crops: `signin-email-default.png`, `signin-email-focused.png`, `signin-email-filled.png`.
 
@@ -1547,7 +1547,7 @@ Page: mobile. Selector: `.email-capture-group__input`. States: default, focused,
 | Cursor | text | = | = |
 | Placeholder | #000000 @ 0.6, opacity 1 | = | = |
 | Ancestor paint | 1 up form.email-capture-group.get-a-demo bg #ffffff shadow #000000 @ 0.1 0px 0px 0px 0.5px, #000000 @ 0.05 0px 2px 8px -2px, #000000 @ 0.14 0px 2px 10px -4px | 1 up form.email-capture-group.get-a-demo bg #ffffff shadow #b074ce 0px 0px 0px 1px, #b074ce @ 0.1 0px 0px 0px 3px, #000000 @ 0.05 0px 2px 8px -2px, #000000 @ 0.14 0px 2px 10px -4px | 1 up form.email-capture-group.get-a-demo bg #ffffff shadow #b074ce 0px 0px 0px 1px, #b074ce @ 0.1 0px 0px 0px 3px, #000000 @ 0.05 0px 2px 8px -2px, #000000 @ 0.14 0px 2px 10px -4px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | filled state not captured: this pass does not type into fields |
 
 Crops: `m-email-default.png`, `m-email-focused.png`, `m-email-filled.png`.
 

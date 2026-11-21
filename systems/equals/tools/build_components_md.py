@@ -289,7 +289,7 @@ icons = []
 
 W("# Equals components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from equals.com, go.equals.com and docs.equals.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the sign-in and demo e-mail fields were focused and filled for measurement, then cleared, and never sent; the Get-a-demo and plan actions were never followed. The spreadsheet workspace behind login was never reached — the 'workbook' entries below are the marketing page's own demo mockup.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from equals.com, go.equals.com and docs.equals.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted. The 2026-11-21 walk did not type into the sign-in or demo email fields. Get-a-demo and plan actions were not followed. The spreadsheet workspace behind login was never reached — the 'workbook' entries below are the marketing page's own demo mockup.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [patterns.md](patterns.md).")
 W()
@@ -317,7 +317,7 @@ OVER = [
     ("Pricing FAQ accordion", "/pricing/", "the question row's own toggle", "[pricing-light-faq-open](screenshots/pricing-light-faq-open.png), [faq](#faq-item)"),
     ("Guide splash gate", "/guides/arr/", "the 'Start reading' button's own toggle", "[guide-light-splash](screenshots/guide-light-splash.png)"),
     ("Mobile nav drawer", "home, phone width", "the hamburger's own toggle", "[mobile-home-light-drawer](screenshots/mobile-home-light-drawer.png), [m-drawer](#mobile-nav-drawer)"),
-    ("E-mail fields", "home, use-case, sign-in and phone", "focused and filled with a test address, then cleared — never submitted", "[hero-email](#demo-email-field), [signin-email](#sign-in-email-field), [m-email](#demo-email-field-mobile)"),
+    ("E-mail fields", "home, use-case, sign-in and phone", "photographed empty; filled state not captured", "[hero-email](#demo-email-field), [signin-email](#sign-in-email-field), [m-email](#demo-email-field-mobile)"),
     ("Docs theme", "docs.equals.com", "html.dark applied by the capture context, not a menu click", "the `d-docs-*` entries and `docs-dark`/`docs-spreadsheet-dark` shots"),
     ("Signed-in product", "app.equals.com / post-login", "every post-login surface needs an account", "boundary; see Gaps"),
 ]
