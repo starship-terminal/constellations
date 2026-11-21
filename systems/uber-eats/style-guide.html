@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Uber Eats public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #111111;
+    --muted: #4b4b4b;
+    --pill: #f6f6f6;
+    --on-ink: #fcfcfc;
+    --accent: #276ef1;
+    --peach: #fa9269;
+    --line: #f3f3f3;
+    --focus: #1175dd;
+    --body: UberMoveText, UberMove, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --display: UberMove, UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.25; }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 64px; }
+  h1 { font-family: var(--display); font-size: 52px; line-height: 64px; font-weight: 700; margin: 0 0 24px; }
+  h2 { font-family: var(--display); font-size: 32px; line-height: 40px; font-weight: 700; margin: 40px 0 12px; }
+  p { color: var(--muted); max-width: 62ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .swatch { width: 96px; height: 64px; border-radius: 12px; border: 1px solid var(--line); }
+  .label { font-size: 12px; font-weight: 500; margin-top: 4px; }
+  button, .pill { font-family: var(--body); font-weight: 500; border: 0; }
+  .primary { background: #111111; color: #fcfcfc; border-radius: 500px; padding: 10px 12px; font-size: 14px; }
+  .secondary { background: #f6f6f6; color: #111111; border-radius: 500px; padding: 14px 16px; font-size: 16px; }
+  .find { background: #111111; color: #fcfcfc; border-radius: 8px; padding: 12px 16px; font-size: 18px; height: 56px; }
+  .search {
+    display: flex; align-items: center; width: 540px; max-width: 100%; height: 48px;
+    background: #fff; border-radius: 32px; border: 3px solid transparent; padding-left: 16px;
+  }
+  .search input { border: 0; flex: 1; font-size: 16px; font-family: Arial, sans-serif; outline: none; }
+  .circle { width: 48px; height: 48px; border-radius: 50%; background: #111111; color: #fcfcfc; }
+  .band { background: #fa9269; padding: 24px; border-radius: 12px; }
+  .field { background: #fff; border-radius: 8px; height: 56px; display: flex; align-items: center; padding: 0 16px; box-shadow: inset 0 -1px 0 #f3f3f3; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #1175dd; outline-offset: 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+  .note { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Order delivery near you</h1>
+  <p>Specimens use the colours and sizes measured on the signed-out Uber Eats pages. UberMove is not bundled, so the stack falls back. There is no dark theme in this package.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div><div class="swatch" style="background:#ffffff"></div><div class="label">page #ffffff</div></div>
+    <div><div class="swatch" style="background:#f3f3f3"></div><div class="label">surface #f3f3f3</div></div>
+    <div><div class="swatch" style="background:#111111"></div><div class="label">ink #111111</div></div>
+    <div><div class="swatch" style="background:#f6f6f6"></div><div class="label">pill #f6f6f6</div></div>
+    <div><div class="swatch" style="background:#276ef1"></div><div class="label">brand #276ef1</div></div>
+    <div><div class="swatch" style="background:#fa9269"></div><div class="label">location #fa9269</div></div>
+    <div><div class="swatch" style="background:#1175dd"></div><div class="label">focus #1175dd</div></div>
+  </div>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary" type="button">Sign up</button>
+    <button class="secondary" type="button">Find restaurants</button>
+    <button class="circle" type="button" aria-label="Search">→</button>
+  </div>
+
+  <h2>Address</h2>
+  <div class="search">
+    <input type="text" placeholder="Enter your address to find local favorites" aria-label="Address" readonly>
+    <button class="circle" type="button" aria-label="Search">→</button>
+  </div>
+  <p class="note">The live input computed Arial. The shell is 540 by 48, radius 32 px.</p>
+
+  <h2>Location band</h2>
+  <div class="band">
+    <div class="row">
+      <div class="field" style="flex:1">Enter delivery address</div>
+      <button class="find" type="button">Find Food</button>
+    </div>
+  </div>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Weight</th><th>Line height</th></tr>
+    <tr><td>Hero</td><td>52 px</td><td>700</td><td>64 px</td></tr>
+    <tr><td>Section</td><td>32 px</td><td>700</td><td>40 px</td></tr>
+    <tr><td>Page heading</td><td>36 px</td><td>700</td><td>44 px</td></tr>
+    <tr><td>Body</td><td>16 px</td><td>400</td><td>20 px</td></tr>
+    <tr><td>Button</td><td>14 px</td><td>500</td><td>16 px</td></tr>
+  </table>
+</main>
+</body>
+</html>
