@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Pop Site"
-description: "Personal-site marketing: a white page, tight Satoshi display type, and one 40px claim button painted as a 110-degree blue gradient"
+description: "Site-builder marketing: white page, blue action, and a cool grey surface"
 colors:
   primary: "#3b82f6"
   neutral: "#ffffff"
@@ -93,9 +93,9 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Personal-site marketing: a white page, tight Satoshi display type, and one 40px claim button painted as a 110-degree blue gradient.
+Good for: Site-builder marketing: white page, blue action, and a cool grey surface.
 
-Captured 2026-11-21, signed out (public marketing pages only; signup and the editor on app.pop.site were not entered). Themes: light.
+Captured 2026-11-21, signed out (public pages photographed; account, checkout, and identity-provider controls were not submitted). Themes: light.
 
 A token set and component reference for Pop Site's public marketing site. It was read from **https://pop.site/** on **2026-11-21**, signed out, in headless Chromium. Desktop shots are 1440 x 900 at 1x. Phone shots are 390 x 844 at 2x. The site is a Framer publish (`Framer fb64017`, published 17 Nov 2026). One light theme. No dark toggle.
 

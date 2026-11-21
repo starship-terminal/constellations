@@ -17,6 +17,7 @@ Headless Chromium and HTTP/2 both failed to load the site (`ERR_HTTP2_PROTOCOL_E
 | [screenshots/](screenshots) | `{page}-light-{state}.png` and `mobile-` prefixed phone shots, 256-colour |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
 | [tools/](tools) | Builders and the headed-Chrome capture scripts |
+| [icons/](icons) | Traced chrome marks and [INDEX.tsv](icons/INDEX.tsv) |
 
 ## Brief
 
