@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T20:15:40.369Z",
+  "capturedAt": "2026-11-21T10:44:33.106Z",
   "screenshot": "mobile-home-light-full.png",
   "sanitizedSourceUrl": "https://enode.com/",
   "requested": {
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 6051
+      "height": 6023
     },
     "scroll": {
       "x": 0,
@@ -50,13 +50,13 @@
   },
   "png": {
     "width": 390,
-    "height": 6051
+    "height": 6023
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 390,
-      "height": 6051
+      "height": 6023
     },
     "basis": "fullPage"
   },

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T20:15:29.085Z",
+  "capturedAt": "2026-11-21T10:44:22.724Z",
   "screenshot": "mobile-home-light-default.png",
   "sanitizedSourceUrl": "https://enode.com/",
   "requested": {
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 6051
+      "height": 6023
     },
     "scroll": {
       "x": 0,

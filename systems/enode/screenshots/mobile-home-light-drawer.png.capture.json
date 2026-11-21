@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T20:15:33.637Z",
+  "capturedAt": "2026-11-21T10:44:55.975Z",
   "screenshot": "mobile-home-light-drawer.png",
   "sanitizedSourceUrl": "https://enode.com/",
   "requested": {
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 6051
+      "height": 6023
     },
     "scroll": {
       "x": 0,
