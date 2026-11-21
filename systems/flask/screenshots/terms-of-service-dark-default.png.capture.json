@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:52:06.329Z",
+  "capturedAt": "2026-11-21T10:47:47.457Z",
   "screenshot": "terms-of-service-dark-default.png",
   "sanitizedSourceUrl": "https://flask.do/terms-of-service",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 9814
+      "height": 9718
     },
     "scroll": {
       "x": 0,

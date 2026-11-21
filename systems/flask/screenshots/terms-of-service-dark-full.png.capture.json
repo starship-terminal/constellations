@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:52:13.694Z",
+  "capturedAt": "2026-11-21T10:47:54.307Z",
   "screenshot": "terms-of-service-dark-full.png",
   "sanitizedSourceUrl": "https://flask.do/terms-of-service",
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 3916
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
-      "height": 9814
+      "height": 9718
     },
     "scroll": {
       "x": 0,
-      "y": 3916
+      "y": 0
     }
   },
   "capture": {
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 9814
+    "height": 9718
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 9814
+      "height": 9718
     },
     "basis": "fullPage"
   },
