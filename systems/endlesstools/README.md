@@ -13,7 +13,9 @@ Endless Tools ("a visual exploration tool for graphic designers") is worth a cap
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (54, 117 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the header, the hero, the asset strips, the pricing block, the testimonial carousel, the newsletter band, the login card, the legal pages, the mobile layout |
 | [components/crops/](components/crops) | 116 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 12 `{page}-dark-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages at 1x, `mobile-*` phone shots at 2x; `home-dark-monthly` the flipped billing toggle, `login-dark-password` the password form |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog. Written 2026-11-21 before the refresh screenshots |
+| [login-review.json](login-review.json) | The signed-out walk: offered nav, settings, and create, the screenshot files, the gaps, and what was not submitted |
+| [screenshots/](screenshots) | 13 `{page}-dark-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Refreshed 2026-11-21. Desktop 1440 x 900 at 1x, `-full` whole pages at 1x, `mobile-*` phone shots at 2x; `home-dark-monthly` the flipped billing toggle, `login-dark-password` the password form, `mobile-privacy-dark-default` the legal page at 390 |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — the Tailwind v4 and v3 @theme layers, the Inter and Flow Rounded @font-face faces), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
