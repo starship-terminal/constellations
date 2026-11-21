@@ -1,0 +1,82 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://shop.lululemon.com/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "body": {
+    "backgroundColor": "rgb(250, 250, 250)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Calibre, Helvetica, \"Helvetica Neue\", Roboto, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "nav": {
+    "shellBackground": "rgba(239, 238, 236, 0.8)",
+    "shellHeight": "48px",
+    "linkColor": "rgb(20, 15, 15)",
+    "linkSize": "14px",
+    "linkWeight": "500",
+    "fontFamily": "Saans, \"Helvetica Neue\", Helvetica, Roboto, sans-serif"
+  },
+  "logoColor": "rgb(20, 15, 15)",
+  "hero": {
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "72px",
+    "fontWeight": "400",
+    "lineHeight": "79.2px",
+    "fontFamily": "Saans, \"Helvetica Neue\", Helvetica, Roboto, sans-serif"
+  },
+  "shopButton": {
+    "backgroundColor": "rgb(244, 243, 242)",
+    "color": "rgb(20, 15, 15)",
+    "height": "44px",
+    "borderRadius": "1000px",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "text": "Shop Women's What's New"
+  },
+  "product": {
+    "url": "https://shop.lululemon.com/p/wunder-train-hr-tight-28/v5c9j9nykh",
+    "title": "Wunder Train High-Rise Tight 28\"",
+    "titleSize": "28px",
+    "titleWeight": "400",
+    "titleColor": "rgb(20, 15, 15)",
+    "salePrice": "$59",
+    "saleColor": "rgb(20, 15, 15)",
+    "regularPrice": "$98",
+    "regularColor": "rgb(117, 117, 117)",
+    "pageBackground": "rgb(250, 250, 250)"
+  },
+  "addToBag": {
+    "backgroundColor": "rgb(20, 15, 15)",
+    "color": "rgb(255, 255, 255)",
+    "height": "44px",
+    "width": "392px",
+    "borderRadius": "1000px",
+    "fontSize": "14px",
+    "fontWeight": "500"
+  },
+  "login": {
+    "url": "https://shop.lululemon.com/account/login",
+    "heading": "Sign in or create an account",
+    "headingSize": "40px",
+    "headingWeight": "400",
+    "headingColor": "rgb(20, 15, 15)",
+    "headingLineHeight": "48px",
+    "fieldBorder": "1px solid rgb(117, 117, 117)",
+    "fieldHeight": "44px",
+    "fieldWidth": "400px",
+    "fieldRadius": "4.8px",
+    "continueBackground": "rgb(20, 15, 15)",
+    "continueColor": "rgb(255, 255, 255)",
+    "continueHeight": "44px",
+    "continueWidth": "400px",
+    "continueRadius": "1000px",
+    "passkeyBackground": "rgb(244, 243, 242)",
+    "passkeyColor": "rgb(20, 15, 15)",
+    "pageBackground": "rgb(255, 255, 255)"
+  },
+  "signup": {
+    "url": "https://shop.lululemon.com/account/login",
+    "note": "Same empty email wall as login. /account/register is a public miss page, not a form."
+  }
+}

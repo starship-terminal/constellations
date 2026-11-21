@@ -1,0 +1,60 @@
+{
+  "product": "Lululemon",
+  "domain": "shop.lululemon.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign In, and footer Sign In, Register, and My Account",
+      "url": "https://shop.lululemon.com/account/login",
+      "title": "lululemon account",
+      "painted": true,
+      "headings": ["Sign in or create an account"],
+      "asksFor": [
+        { "label": "Email address", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "Use a passkey", "What is a passkey?", "Privacy Policy"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email field was empty. Continue was visible and was not clicked. Use a passkey was not clicked. No provider was on the form. No form was submitted."
+    },
+    {
+      "control": "footer Register, same wall as Sign In",
+      "url": "https://shop.lululemon.com/account/login",
+      "title": "lululemon account",
+      "painted": true,
+      "headings": ["Sign in or create an account"],
+      "asksFor": [
+        { "label": "Email address", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "Use a passkey"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "There is no separate register form. /account/register is a public miss page, not a signup wall, and was not photographed. The signup screenshot is the same empty email wall. Nothing was typed. Continue was not clicked."
+    },
+    {
+      "control": "homepage email modal",
+      "url": "https://shop.lululemon.com/",
+      "title": "technical apparel + athletic shoes | lululemon",
+      "painted": true,
+      "headings": ["New here? Stretch the possibilities", "Get 15% off*"],
+      "asksFor": [
+        { "label": "Email Address", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Email Me 15% Off", "Close"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Closed so the homepage could be photographed. Email Me 15% Off was not clicked. Not photographed as its own page."
+    }
+  ]
+}
