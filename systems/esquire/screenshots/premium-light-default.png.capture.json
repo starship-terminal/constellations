@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:46:52.085Z",
+  "capturedAt": "2026-11-21T10:44:45.068Z",
   "screenshot": "premium-light-default.png",
   "sanitizedSourceUrl": "https://www.esquire.com/esq-premium-exclusive/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 10523
+      "height": 10453
     },
     "scroll": {
       "x": 0,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:41:39.367Z",
+  "capturedAt": "2026-11-21T10:43:00.957Z",
   "screenshot": "entertainment-light-default.png",
   "sanitizedSourceUrl": "https://www.esquire.com/entertainment/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 10450
+      "height": 10452
     },
     "scroll": {
       "x": 0,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:46:33.118Z",
+  "capturedAt": "2026-11-21T10:44:20.292Z",
   "screenshot": "offers-light-default.png",
   "sanitizedSourceUrl": "https://www.esquire.com/offers/premium-membership/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 3256
+      "height": 3536
     },
     "scroll": {
       "x": 0,

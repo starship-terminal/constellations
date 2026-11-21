@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:47:00.338Z",
+  "capturedAt": "2026-11-21T10:44:52.153Z",
   "screenshot": "premium-light-full.png",
   "sanitizedSourceUrl": "https://www.esquire.com/esq-premium-exclusive/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 11826
+      "height": 11138
     },
     "scroll": {
       "x": 0,
@@ -49,13 +49,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 11826
+    "height": 11138
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 11826
+      "height": 11138
     },
     "basis": "fullPage"
   },
