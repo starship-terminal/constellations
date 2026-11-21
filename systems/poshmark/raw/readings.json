@@ -1,0 +1,152 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://poshmark.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "computed": {
+    "bodyBackground": "rgb(251, 251, 251)",
+    "bodyColor": "rgb(18, 18, 18)",
+    "bodyFont": "Graphik, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "bodyFontSize": "14px",
+    "bodyLetterSpacing": "0.15px",
+    "bodyLineHeight": "20px",
+    "header": {
+      "background": "rgb(255, 255, 255)",
+      "height": 116,
+      "utilityRow": 73,
+      "departmentRow": 44
+    },
+    "logo": {
+      "width": 134,
+      "height": 22,
+      "fill": "#610722",
+      "src": "https://d2gjrq7hs8he14.cloudfront.net/webpack5/poshmark-redesign-logo-web-f1ede28ace9f3a27a84da7254b1fe4ec0e1d24551ddc1ed6c0cce120e0a5b31b.svg"
+    },
+    "navLink": {
+      "fontFamily": "Graphik, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "letterSpacing": "0.15px",
+      "lineHeight": "20px",
+      "color": "rgb(18, 18, 18)",
+      "text": "Women"
+    },
+    "search": {
+      "placeholder": "What are you looking for?",
+      "fontSize": "15px",
+      "width": 530,
+      "height": 42,
+      "pill": {
+        "width": 706,
+        "height": 44,
+        "background": "rgb(255, 255, 255)",
+        "border": "1px solid rgb(18, 18, 18)",
+        "borderRadius": "60px"
+      },
+      "submitted": false
+    },
+    "login": {
+      "text": "Log in / Sign up",
+      "background": "rgb(18, 18, 18)",
+      "color": "rgb(255, 255, 255)",
+      "height": 36,
+      "width": 134,
+      "borderRadius": "4px",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "letterSpacing": "0.15px",
+      "clicked": false
+    },
+    "sellNow": {
+      "color": "rgb(18, 18, 18)",
+      "fontSize": "14px",
+      "clicked": false
+    },
+    "poshLive": {
+      "color": "rgb(186, 78, 65)"
+    },
+    "hero": {
+      "text": "FREE SHIPPING",
+      "fontFamily": "NantesWeb, Nantes, Georgia, serif",
+      "fontSize": "52px",
+      "fontWeight": "600",
+      "lineHeight": "62px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "signUp": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(18, 18, 18)",
+      "height": 46,
+      "width": 95,
+      "borderRadius": "3px",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "clicked": false
+    },
+    "sectionTitle": {
+      "text": "Not new. Never boring.",
+      "fontFamily": "NantesWeb, Nantes, Georgia, serif",
+      "note": "The matching heading node collapsed to 1px. The painted line was read from the homepage photograph."
+    },
+    "price": {
+      "fontFamily": "Graphik, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "600",
+      "color": "rgb(18, 18, 18)",
+      "text": "$149"
+    },
+    "categoryTitle": {
+      "text": "Women's Clothing, Accessories & Shoes",
+      "fontFamily": "NantesWeb, Nantes, Georgia, serif",
+      "fontSize": "26px",
+      "fontWeight": "600",
+      "color": "rgb(18, 18, 18)"
+    },
+    "filterChip": {
+      "note": "Pill chips on the Women category page. Not submitted."
+    },
+    "startSelling": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(18, 18, 18)",
+      "height": 47,
+      "width": 232,
+      "borderRadius": "14px",
+      "fontSize": "24px",
+      "fontWeight": "700",
+      "clicked": false
+    },
+    "sidebarMuted": "rgb(113, 113, 113)",
+    "sidebarHeading": {
+      "fontSize": "24px",
+      "fontWeight": "300",
+      "color": "rgb(153, 153, 153)"
+    },
+    "footer": {
+      "background": "rgb(18, 18, 18)",
+      "height": 608,
+      "heading": {
+        "fontFamily": "NantesWeb",
+        "fontSize": "40px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "text": "Real finds, real inspiration, every day"
+      },
+      "link": {
+        "color": "rgb(153, 153, 153)",
+        "fontSize": "14px"
+      }
+    },
+    "cookieOk": {
+      "clicked": true,
+      "note": "Cookie notice Ok was clicked so the homepage photograph was not covered. No form was submitted."
+    }
+  },
+  "customProperties": {
+    "count": 0,
+    "note": "No :root custom properties were readable from the stylesheets on 2026-11-22."
+  }
+}
