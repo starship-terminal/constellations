@@ -1,0 +1,49 @@
+{
+  "product": "Cake Equity",
+  "capturedAt": "2026-11-21",
+  "requestedUrl": "https://app.cakeequity.com/login",
+  "landedHost": "https://authentication.cakeequity.com/auth/cx/",
+  "landedPathNote": "The login host appends a session id to the path. The session id is not recorded.",
+  "title": "Sign in | Cake Equity",
+  "stopped": true,
+  "reason": "The empty wall asks for an email, then Continue. Google and LinkedIn are also offered. No email was typed. No password field was reached. Google and LinkedIn were not clicked. Create one was not clicked.",
+  "asksFor": [
+    "Email",
+    "Continue",
+    "Continue with Google",
+    "Continue with LinkedIn",
+    "Create one"
+  ],
+  "passwordFieldVisible": false,
+  "codeFieldVisible": false,
+  "identityProvidersOffered": ["Google", "LinkedIn"],
+  "identityProvidersClicked": [],
+  "screenshot": "screenshots/login-light-empty.png",
+  "measured": {
+    "pageBackground": "rgb(255, 255, 255)",
+    "heading": {
+      "text": "Welcome back",
+      "fontFamily": "Inter, system-ui, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": "500",
+      "color": "rgb(15, 15, 15)"
+    },
+    "continue": {
+      "background": "rgb(90, 56, 253)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "8px",
+      "height": "48px",
+      "width": "400px",
+      "fontWeight": "500"
+    },
+    "google": {
+      "background": "rgb(245, 245, 245)",
+      "color": "rgb(15, 15, 15)",
+      "radius": "8px",
+      "height": "48px",
+      "width": "400px"
+    },
+    "note": "The Continue purple on the auth host (rgb(90, 56, 253)) is not the marketing CTA plum (rgb(72, 35, 255))."
+  },
+  "tokens": "Not captured. Hidden form tokens were unread and are not stored."
+}
