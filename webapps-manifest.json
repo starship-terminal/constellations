@@ -6755,9 +6755,9 @@
       "description": "AI-Powered Design Workflows, Built for Creative Pros",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://app.weavy.ai/signin offers Figma, Google, and Microsoft. Continue with Google did not open an account chooser.",
+      "notes": "Email probe: https://app.weavy.ai/signin offers Figma, Google, and Microsoft. Continue with Google did not open an account chooser. Public walk 2026-11-21: the marketing site redirects to weave.figma.com. Collective, Enterprise, and Pricing open their pages. Sign in and Start Now open app sign-in and stop. Request a demo opens a Figma contact page and was not followed. Phone keeps Pricing, Sign in, and Start Now. Figma, Google, and Microsoft were not clicked. No email was typed. No form was submitted. Signed-in editor was not captured. Public package refresh in PR 1607 at c450b64f3eae. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "oauth-only",
+      "login-probe": "closed",
       "batch": 20
     },
     {
