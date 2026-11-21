@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replit style guide</title>
+<style>
+  :root {
+    --page: #f6f5f4;
+    --ink: #18191b;
+    --accent: #ff3c00;
+    --on-action: #ffffff;
+    --header: #faf6f1;
+    --footer: #faf5f0;
+    --composer: #f5f5f3;
+    --upgrade: #1b8dff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 400 14px/1.6 "Replit Diatype", "Segoe UI", sans-serif;
+  }
+  header {
+    background: var(--header);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header strong { font-weight: 500; letter-spacing: -0.28px; }
+  .signup {
+    background: var(--accent);
+    color: var(--on-action);
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font: 500 14px/20px "Replit Diatype", "Segoe UI", sans-serif;
+    letter-spacing: -0.28px;
+  }
+  main { padding: 32px; max-width: 1100px; }
+  h1 {
+    margin: 0 0 8px;
+    font: 400 64px/64px "Replit Diatype", "Segoe UI", sans-serif;
+    letter-spacing: -3.84px;
+    color: #37383c;
+  }
+  h2 { font: 460 32px/40px "Replit Diatype", "Segoe UI", sans-serif; margin: 32px 0 12px; }
+  .composer {
+    background: var(--composer);
+    border-radius: 20px;
+    padding: 16px;
+    max-width: 640px;
+    box-shadow: inset 0 0 0 1px #d3d1c9;
+  }
+  .start {
+    background: var(--accent);
+    color: #ffffffe6;
+    border: 0;
+    border-radius: 9999px;
+    padding: 8px 16px;
+  }
+  .upgrade {
+    background: var(--upgrade);
+    color: #fcfcfc;
+    border: 0;
+    border-radius: 6px;
+    padding: 0 8px;
+    height: 32px;
+  }
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .sw {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d2d4d6;
+  }
+  .sw i { display: block; height: 56px; }
+  .sw span, .sw small { display: block; padding: 8px 10px 0; }
+  .sw small { color: #5c5f66; padding-bottom: 10px; }
+  footer {
+    background: var(--footer);
+    padding: 24px 32px;
+    margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <strong>Replit</strong>
+  <button class="signup">Sign up</button>
+</header>
+<main>
+  <h1>What will you build?</h1>
+  <p>Measured from the signed-out public site on 22 November 2026. One light theme.</p>
+  <div class="composer">
+    <p>Start</p>
+    <button class="start">Start</button>
+  </div>
+  <p><button class="upgrade">Upgrade to Pro</button></p>
+  <h2>Roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#f6f5f4"></i><span>light.background.page<br>#f6f5f4</span><small>body on the homepage, pricing, and the login wall</small></div><div class="sw"><i style="background:#faf6f1"></i><span>light.background.header<br>#faf6f1</span><small>homepage header</small></div><div class="sw"><i style="background:#faf5f0"></i><span>light.background.footer<br>#faf5f0</span><small>homepage footer</small></div><div class="sw"><i style="background:#fcfcfc"></i><span>light.background.surface<br>#fcfcfc</span><small>--background-default. The product surface token. The marketing page paints page instead.</small></div><div class="sw"><i style="background:#f5f5f3"></i><span>light.background.composer<br>#f5f5f3</span><small>home composer card</small></div><div class="sw"><i style="background:#ff3c00"></i><span>light.background.action<br>#ff3c00</span><small>header Sign up</small></div><div class="sw"><i style="background:#1b8dff"></i><span>light.background.upgrade<br>#1b8dff</span><small>Upgrade to Pro on pricing</small></div><div class="sw"><i style="background:#18191b"></i><span>light.text.primary<br>#18191b</span><small>body text</small></div><div class="sw"><i style="background:#37383c"></i><span>light.text.heading<br>#37383c</span><small>home h1</small></div><div class="sw"><i style="background:#5c5f66"></i><span>light.text.muted<br>#5c5f66</span><small>--foreground-dimmest. Declared. Footer links computed #4b5563.</small></div><div class="sw"><i style="background:#ffffff"></i><span>light.text.on-action<br>#ffffff</span><small>Sign up label</small></div><div class="sw"><i style="background:#2492ff"></i><span>light.text.link<br>#2492ff</span><small>login Home link</small></div><div class="sw"><i style="background:#afb1b3"></i><span>light.border.default<br>#afb1b3</span><small>--outline-default</small></div><div class="sw"><i style="background:#c0c3c4"></i><span>light.border.dimmer<br>#c0c3c4</span><small>--outline-dimmer</small></div><div class="sw"><i style="background:#cfc9c3"></i><span>light.border.brand<br>#cfc9c3</span><small>--brand-border</small></div><div class="sw"><i style="background:#ff3c00"></i><span>light.accent<br>#ff3c00</span><small>the orange painted on Sign up, Start, and the word Replit in the Meet Replit heading</small></div>
+  </div>
+  <h2>Core colours</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#0f87ff"></i><span>accent-blue-default<br>#0f87ff</span><small>--accent-blue-default</small></div><div class="sw"><i style="background:#8e78ff"></i><span>accent-blurple-default<br>#8e78ff</span><small>--accent-blurple-default</small></div><div class="sw"><i style="background:#b07f63"></i><span>accent-brown-default<br>#b07f63</span><small>--accent-brown-default</small></div><div class="sw"><i style="background:#00a11b"></i><span>accent-green-default<br>#00a11b</span><small>--accent-green-default</small></div><div class="sw"><i style="background:#898989"></i><span>accent-grey-default<br>#898989</span><small>--accent-grey-default</small></div><div class="sw"><i style="background:#639400"></i><span>accent-lime-default<br>#639400</span><small>--accent-lime-default</small></div><div class="sw"><i style="background:#eb3beb"></i><span>accent-magenta-default<br>#eb3beb</span><small>--accent-magenta-default</small></div><div class="sw"><i style="background:#fa4b4b"></i><span>accent-negative-default<br>#fa4b4b</span><small>--accent-negative-default</small></div><div class="sw"><i style="background:#d96d00"></i><span>accent-orange-default<br>#d96d00</span><small>--accent-orange-default</small></div><div class="sw"><i style="background:#f545ba"></i><span>accent-pink-default<br>#f545ba</span><small>--accent-pink-default</small></div><div class="sw"><i style="background:#00a11b"></i><span>accent-positive-default<br>#00a11b</span><small>--accent-positive-default</small></div><div class="sw"><i style="background:#0f87ff"></i><span>accent-primary-default<br>#0f87ff</span><small>--accent-primary-default</small></div><div class="sw"><i style="background:#b266ff"></i><span>accent-purple-default<br>#b266ff</span><small>--accent-purple-default</small></div><div class="sw"><i style="background:#fa4b4b"></i><span>accent-red-default<br>#fa4b4b</span><small>--accent-red-default</small></div><div class="sw"><i style="background:#0093b0"></i><span>accent-teal-default<br>#0093b0</span><small>--accent-teal-default</small></div><div class="sw"><i style="background:#a68a00"></i><span>accent-yellow-default<br>#a68a00</span><small>--accent-yellow-default</small></div><div class="sw"><i style="background:#fcfcfc"></i><span>background-default<br>#fcfcfc</span><small>--background-default</small></div><div class="sw"><i style="background:#f0f1f2"></i><span>background-higher<br>#f0f1f2</span><small>--background-higher</small></div><div class="sw"><i style="background:#e4e5e6"></i><span>background-highest<br>#e4e5e6</span><small>--background-highest</small></div><div class="sw"><i style="background:#f0f1f2a0"></i><span>background-overlay<br>#f0f1f2a0</span><small>--background-overlay</small></div><div class="sw"><i style="background:#ebeced"></i><span>background-root<br>#ebeced</span><small>--background-root</small></div><div class="sw"><i style="background:#07080a"></i><span>foreground-default<br>#07080a</span><small>--foreground-default</small></div><div class="sw"><i style="background:#3d4047"></i><span>foreground-dimmer<br>#3d4047</span><small>--foreground-dimmer</small></div><div class="sw"><i style="background:#5c5f66"></i><span>foreground-dimmest<br>#5c5f66</span><small>--foreground-dimmest</small></div><div class="sw"><i style="background:#afb1b3"></i><span>outline-default<br>#afb1b3</span><small>--outline-default</small></div><div class="sw"><i style="background:#c0c3c4"></i><span>outline-dimmer<br>#c0c3c4</span><small>--outline-dimmer</small></div><div class="sw"><i style="background:#d2d4d6"></i><span>outline-dimmest<br>#d2d4d6</span><small>--outline-dimmest</small></div><div class="sw"><i style="background:#98999c"></i><span>outline-stronger<br>#98999c</span><small>--outline-stronger</small></div><div class="sw"><i style="background:#74767a"></i><span>outline-strongest<br>#74767a</span><small>--outline-strongest</small></div><div class="sw"><i style="background:#f3f3f3"></i><span>brand-background<br>#f3f3f3</span><small>--brand-background</small></div><div class="sw"><i style="background:#e5e5e5"></i><span>brand-background-darker<br>#e5e5e5</span><small>--brand-background-darker</small></div><div class="sw"><i style="background:#000000"></i><span>brand-black<br>#000000</span><small>--brand-black</small></div><div class="sw"><i style="background:#cfc9c3"></i><span>brand-border<br>#cfc9c3</span><small>--brand-border</small></div><div class="sw"><i style="background:#1b252b"></i><span>brand-text<br>#1b252b</span><small>--brand-text</small></div><div class="sw"><i style="background:#f5f9fc"></i><span>brand-text-light<br>#f5f9fc</span><small>--brand-text-light</small></div><div class="sw"><i style="background:#5c6062"></i><span>brand-secondary-text<br>#5c6062</span><small>--brand-secondary-text</small></div><div class="sw"><i style="background:#0e1525"></i><span>black<br>#0e1525</span><small>--black</small></div><div class="sw"><i style="background:#fcfcfc"></i><span>white<br>#fcfcfc</span><small>--white</small></div><div class="sw"><i style="background:#fcfcfc"></i><span>interactive-background<br>#fcfcfc</span><small>--interactive-background</small></div><div class="sw"><i style="background:#f0f1f2"></i><span>interactive-background-active<br>#f0f1f2</span><small>--interactive-background--active</small></div><div class="sw"><i style="background:#c0c3c4"></i><span>interactive-border<br>#c0c3c4</span><small>--interactive-border</small></div><div class="sw"><i style="background:#afb1b3"></i><span>interactive-border-hover<br>#afb1b3</span><small>--interactive-border--hover</small></div><div class="sw"><i style="background:#ebeced"></i><span>surface-background<br>#ebeced</span><small>--surface-background</small></div><div class="sw"><i style="background:#f6f5f4"></i><span>page<br>#f6f5f4</span><small>computed backgroundColor of body on https://replit</small></div><div class="sw"><i style="background:#18191b"></i><span>ink<br>#18191b</span><small>computed color of body on https://replit</small></div><div class="sw"><i style="background:#faf6f1"></i><span>header<br>#faf6f1</span><small>computed backgroundColor of header on https://replit</small></div><div class="sw"><i style="background:#faf5f0"></i><span>footer<br>#faf5f0</span><small>computed backgroundColor of footer on https://replit</small></div><div class="sw"><i style="background:#37383c"></i><span>heading<br>#37383c</span><small>computed color of the home h1, What will you build?</small></div><div class="sw"><i style="background:#ff3c00"></i><span>signup<br>#ff3c00</span><small>computed backgroundColor of the header Sign up button on https://replit</small></div><div class="sw"><i style="background:#ffffff"></i><span>on-signup<br>#ffffff</span><small>computed color of the header Sign up button</small></div><div class="sw"><i style="background:#f5f5f3"></i><span>composer<br>#f5f5f3</span><small>computed backgroundColor of the home composer card</small></div><div class="sw"><i style="background:#fefefd"></i><span>field<br>#fefefd</span><small>computed backgroundColor of the empty email field on https://replit</small></div><div class="sw"><i style="background:#edece8"></i><span>provider<br>#edece8</span><small>computed backgroundColor of Continue with Google on the empty login wall</small></div><div class="sw"><i style="background:#2492ff"></i><span>link<br>#2492ff</span><small>computed color of the Home link on https://replit</small></div><div class="sw"><i style="background:#1b8dff"></i><span>upgrade<br>#1b8dff</span><small>computed backgroundColor of Upgrade to Pro on https://replit</small></div><div class="sw"><i style="background:#f03800"></i><span>try-now<br>#f03800</span><small>computed backgroundColor of Try now on https://replit</small></div>
+  </div>
+</main>
+<footer>Footer surface, hsl(33 47% 96%), computed #faf5f0.</footer>
+</body>
+</html>
