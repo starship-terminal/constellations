@@ -1,0 +1,30 @@
+{
+  "captured": "2026-11-22",
+  "name": "ai-index-light-1440",
+  "url": "https://www.atlassian.com/blog/ai-sdlc-index",
+  "requestedUrl": "https://www.atlassian.com/blog/ai-sdlc-index",
+  "title": "The Atlassian AI SDLC Index - Inside Atlassian",
+  "h1": "The Atlassian AI SDLC Index",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "status": 200
+}

@@ -1,0 +1,30 @@
+{
+  "captured": "2026-11-22",
+  "name": "home-light-390",
+  "url": "https://www.atlassian.com/software/opsgenie/migration",
+  "requestedUrl": "https://www.atlassian.com/software/opsgenie",
+  "title": "Migrate Opsgenie with no downtime",
+  "h1": "Migrate Opsgenie with no downtime",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport at 390. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "status": 200
+}

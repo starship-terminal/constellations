@@ -1,0 +1,28 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-products-light-1440",
+  "url": "https://www.atlassian.com/software/opsgenie/migration",
+  "requestedUrl": "https://www.atlassian.com/software/opsgenie",
+  "title": "Migrate Opsgenie with no downtime",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "Header menu Products opened by hover. Cookie banner hidden with CSS. Nothing clicked inside the menu.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

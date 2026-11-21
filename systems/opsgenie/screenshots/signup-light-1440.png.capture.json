@@ -1,0 +1,43 @@
+{
+  "captured": "2026-11-22",
+  "name": "signup-light-1440",
+  "url": "https://www.atlassian.com/try/cloud/signup?bundle=service-collection&primaryCollectionProduct=jira-servicedesk.ondemand",
+  "requestedUrl": "https://www.atlassian.com/try/cloud/signup?bundle=opsgenie",
+  "title": "Sign up - Try Atlassian Cloud | Atlassian",
+  "h1": "Get Service Collection to start using Jira Service Management",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "status": 200,
+  "note": "Empty signup wall. The opsgenie bundle query redirected to the Service Collection signup. Nothing typed. Sign up not clicked. No identity provider clicked. Cookie banner hidden with CSS.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "inputs": [
+    {
+      "type": "email",
+      "placeholder": "you@company.com",
+      "valueLength": 0
+    }
+  ],
+  "identityProvidersSeen": [
+    "Google",
+    "Microsoft",
+    "Apple",
+    "Slack"
+  ]
+}

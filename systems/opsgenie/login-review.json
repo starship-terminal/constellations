@@ -1,0 +1,79 @@
+{
+  "product": "Opsgenie",
+  "domain": "www.atlassian.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Sign in, the product login, and the signup redirect were opened empty. Nothing was typed.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "siteCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in",
+      "url": "https://id.atlassian.com/login",
+      "paintedUrl": "https://id.atlassian.com/login",
+      "title": "Log in to continue - Log in with Atlassian account",
+      "heading": "Log in to continue",
+      "painted": true,
+      "asksFor": [
+        { "label": "Email", "type": "email", "valueLength": 0 },
+        { "label": "Password", "type": "password", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": ["Passkey", "Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Continue", "Remember me", "Can't log in?", "Create an account"],
+      "stopped": true,
+      "desktop": "screenshots/signin-light-1440.png",
+      "phone": "screenshots/signin-light-390.png",
+      "note": "Empty sign-in wall. Continue was not clicked. No identity provider was clicked. The painted URL is https://id.atlassian.com/login with no OAuth query."
+    },
+    {
+      "control": "product bar Log in to Opsgenie",
+      "url": "https://app.opsgenie.com/auth/login",
+      "paintedUrl": "https://app.opsgenie.com/auth/login",
+      "title": "Opsgenie - Login",
+      "heading": "Welcome to Opsgenie",
+      "painted": true,
+      "asksFor": [
+        { "label": "E-mail address", "type": "email", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Next", "Forgot your password?", "Sign up now!"],
+      "stopped": true,
+      "desktop": "screenshots/login-app-light-1440.png",
+      "phone": "screenshots/login-app-light-390.png",
+      "note": "Empty product login. Next was not clicked. The painted URL has no OAuth query and no session state."
+    },
+    {
+      "control": "opsgenie signup bundle",
+      "url": "https://www.atlassian.com/try/cloud/signup?bundle=opsgenie",
+      "paintedUrl": "https://www.atlassian.com/try/cloud/signup?bundle=service-collection&primaryCollectionProduct=jira-servicedesk.ondemand",
+      "title": "Sign up - Try Atlassian Cloud | Atlassian",
+      "heading": "Get Service Collection to start using Jira Service Management",
+      "painted": true,
+      "asksFor": [
+        { "label": "Work email", "type": "email", "placeholder": "you@company.com", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": ["Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Sign up"],
+      "stopped": true,
+      "desktop": "screenshots/signup-light-1440.png",
+      "phone": "screenshots/signup-light-390.png",
+      "note": "Empty signup wall. The opsgenie bundle query redirected to the Service Collection signup. Sign up was not clicked. No identity provider was clicked. The painted URL does not carry OAuth or session state."
+    }
+  ],
+  "notOpened": [
+    "Continue, Next, and Sign up were not clicked.",
+    "Passkey, Google, Microsoft, Apple, and Slack were not clicked.",
+    "Can't log in?, Create an account, Forgot your password?, and Sign up now! were not clicked.",
+    "Contact sales, general inquiries, product advice, and billing forms were not submitted.",
+    "The blog Subscribe control was not clicked.",
+    "Search was not typed.",
+    "Impressum was not opened because it prints a street address and a phone number.",
+    "Investor Relations, the Atlassian Foundation, Trello, support.atlassian.com, community.atlassian.com, marketplace.atlassian.com, my.atlassian.com, developer.atlassian.com, confluence.atlassian.com, and ace.atlassian.com were not entered.",
+    "Social profiles were not followed."
+  ]
+}
