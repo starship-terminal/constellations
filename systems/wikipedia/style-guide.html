@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wikipedia public tokens</title>
+<style>
+  body { margin: 0; padding: 32px; background: #f8f9fa; color: #202122; font: 16px/26px sans-serif; }
+  h1 { font: 400 28.8px/39.6px "Linux Libertine", Georgia, Times, "Source Serif 4", serif; color: #101418; margin: 0 0 8px; }
+  p { max-width: 42rem; }
+  a { color: #36c; border-radius: 2px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+  .swatch { width: 140px; }
+  .chip { height: 72px; border-radius: 2px; border: 1px solid #72777d; }
+  .label { font: 12px/1.4 sans-serif; margin-top: 6px; color: #54595d; }
+  .search { display: flex; width: 360px; }
+  .search input { flex: 1; height: 32px; box-sizing: border-box; padding: 4px 8px 4px 32px; border: 1px solid #72777d; border-radius: 2px 0 0 2px; font: 14px/22px sans-serif; color: #202122; background: #fff; }
+  .search button { height: 32px; padding: 1px 11px; border: 1px solid #72777d; border-left: 0; border-radius: 0 2px 2px 0; background: #f8f9fa; color: #404244; font: 700 14px/normal sans-serif; }
+</style>
+</head>
+<body>
+  <h1>Talking to Yourself</h1>
+  <p>Public English Wikipedia tokens, read from en.wikipedia.org on 2026-11-22. Light is the default. <a href="#article">Article link</a>.</p>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#f8f9fa"></div><div class="label">canvas</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">content</div></div>
+    <div class="swatch"><div class="chip" style="background:#202122"></div><div class="label">ink</div></div>
+    <div class="swatch"><div class="chip" style="background:#101418"></div><div class="label">title</div></div>
+    <div class="swatch"><div class="chip" style="background:#3366cc"></div><div class="label">progressive</div></div>
+    <div class="swatch"><div class="chip" style="background:#6a60b0"></div><div class="label">visited</div></div>
+    <div class="swatch"><div class="chip" style="background:#eaecf0"></div><div class="label">night ink</div></div>
+    <div class="swatch"><div class="chip" style="background:#88a3e8"></div><div class="label">night link</div></div>
+  </div>
+  <form class="search" action="#">
+    <input type="text" placeholder="Search Wikipedia" readonly>
+    <button type="button">Search</button>
+  </form>
+</body>
+</html>
