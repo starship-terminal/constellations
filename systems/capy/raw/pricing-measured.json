@@ -1,0 +1,51 @@
+{
+  "h1": {
+    "text": "PRICING",
+    "font": "\"bebasNeue Inline\", bebasNeue, \"bebasNeue Fallback DIN\", \"bebasNeue Fallback Impact\", \"bebasNeue Fallback Narrow\", \"bebasNeue Fallback Arial\", \"bebasNeue Fallback Roboto\", \"bebasNeue Fallback DejaVu\", sans-serif",
+    "size": "56px",
+    "weight": "400",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "border": "0px solid rgb(0, 0, 0)",
+    "h": "37.5312px",
+    "shadow": "none"
+  },
+  "price": {
+    "text": "$0",
+    "font": "\"bebasNeue Inline\", bebasNeue, \"bebasNeue Fallback DIN\", \"bebasNeue Fallback Impact\", \"bebasNeue Fallback Narrow\", \"bebasNeue Fallback Arial\", \"bebasNeue Fallback Roboto\", \"bebasNeue Fallback DejaVu\", sans-serif",
+    "size": "56px",
+    "weight": "400",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "border": "0px solid rgb(0, 0, 0)",
+    "h": "50.4062px",
+    "shadow": "none"
+  },
+  "start": {
+    "text": "Start free",
+    "font": "abcSocialMono, \"abcSocialMono Fallback Menlo\", \"abcSocialMono Fallback Consolas\", \"abcSocialMono Fallback Courier\", monospace",
+    "size": "16px",
+    "weight": "400",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(255, 255, 255)",
+    "radius": "8px",
+    "border": "1px solid rgb(0, 0, 0)",
+    "h": "40px",
+    "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(0, 0, 0) -2px 2px 0p"
+  },
+  "monthly": {
+    "text": "Monthly",
+    "font": "abcSocialMono, \"abcSocialMono Fallback Menlo\", \"abcSocialMono Fallback Consolas\", \"abcSocialMono Fallback Courier\", monospace",
+    "size": "14px",
+    "weight": "400",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "3.35544e+07px",
+    "border": "0px solid rgb(255, 255, 255)",
+    "h": "36px",
+    "shadow": "none"
+  },
+  "body": "PRODUCT\nRESOURCES\nPRICING\nENTERPRISE\nBOOK A DEMO\nSIGN IN\nDownload\nPRICING\n\nFree on your own computers. Paid plans are one subscription per organization, with unlimited members and no per-seat charge, and include machine minutes, review credits and model usage every month.\n\nMonthly\nAnnual\n,\nSAVE 20%\nFREE\n\nFor your own computers\n\n$0\n\nAgents on your own computers\nYour own subscriptions and keys\n100 review credits a month\nCaptains and integrations\nUnlimited members\nStart free\nCAPY LITE\n\nFor getting started\n\n$1\nfirst week, then $20/mo\n\nBilled monthly\n\n30,000 machine minutes\n250 review credits\n$20 of model usage\nMachines up to 4 CPU / 16 GB\nStart for $1\nCAPY PRO\n\nFor daily shipping\n\n$100\n/mo\n\nBilled monthly\n\n150,000 machine minutes\n1,250 review credits\n$100 of model usage\nMachines up to 8 CPU / 32 GB\nMobile builds and devices\nGet Capy Pro\nCAPY MAX\n\nFor teams running parallel\n\n$200\n/mo\n\nBilled "
+}

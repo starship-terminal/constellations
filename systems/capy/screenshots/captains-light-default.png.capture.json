@@ -1,0 +1,13 @@
+{
+  "url": "https://capy.ai/features/captains",
+  "title": "Captains: orchestrate agent swarms for coding | Capy",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "file": "screenshots/captains-light-default.png"
+}

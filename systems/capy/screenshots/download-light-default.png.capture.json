@@ -1,0 +1,13 @@
+{
+  "url": "https://capy.ai/download",
+  "title": "Capy desktop app: coding agents on macOS, Windows and Linux",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "file": "screenshots/download-light-default.png"
+}

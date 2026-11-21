@@ -1,0 +1,76 @@
+{
+  "slug": "capy",
+  "product": "Capy",
+  "domain": "capy.ai",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-google-github-passkey",
+  "session": "T3 preview browser, incognito, for the first look. Headless Chromium for the committed frames. No identity provider was clicked. No passkey prompt was accepted. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://capy.ai/sign-in",
+    "title": "Sign in | Capy",
+    "asks": [
+      "Continue with Google",
+      "Continue with GitHub",
+      "Continue with a passkey",
+      "Email",
+      "Continue",
+      "Sign up"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "email", "name": "email", "placeholder": "capy@scrapybara.com", "filled": false}
+    ],
+    "note": "The heading is Sign in to Capy. The email field was empty. Continue was not clicked. Google, GitHub, and the passkey button were not clicked."
+  },
+  "signup_wall": {
+    "url": "https://capy.ai/sign-up",
+    "title": "Sign up | Capy",
+    "asks": [
+      "Continue with Google",
+      "Continue with GitHub",
+      "Email",
+      "Password",
+      "Continue",
+      "Terms of service",
+      "Privacy policy",
+      "Sign in"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "continued": false,
+    "note": "The heading is Create your Capy account. Email and password were empty. Continue was not clicked. Google and GitHub were not clicked."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1,
+      "login": "screenshots/login-light-default.png",
+      "signup": "screenshots/signup-light-default.png",
+      "loginDark": "screenshots/login-dark-probe.png",
+      "signupDark": "screenshots/signup-dark-probe.png"
+    }
+  },
+  "screens": [
+    {"name": "Sign-in wall, light, empty", "file": "screenshots/login-light-default.png"},
+    {"name": "Sign-in wall, dark scheme, empty", "file": "screenshots/login-dark-probe.png"},
+    {"name": "Signup wall, light, empty", "file": "screenshots/signup-light-default.png"},
+    {"name": "Signup wall, dark scheme, empty", "file": "screenshots/signup-dark-probe.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Continue with Google, Continue with GitHub, and Continue with a passkey were not clicked.",
+    "The email and password fields were left empty. Continue was not clicked.",
+    "The signed-in app was not reached."
+  ],
+  "not_submitted": [
+    "Continue",
+    "Continue with Google",
+    "Continue with GitHub",
+    "Continue with a passkey",
+    "Book a demo"
+  ]
+}
