@@ -1,5 +1,7 @@
 # Rork
 
+Public site tree, dated 2026-11-22, is [site-tree.md](site-tree.md). That pass photographed the signed-out marketing pages and the empty auth wall. It did not replace the 19 November tokens, crops, or screenshots below. `catalog.json` was left alone. `login-extracted` stays not-started.
+
 Rork is an AI app builder for iOS, Android, and web (rork.com). This package captures the public marketing site and the signed-out sign-in dialog. No account was created.
 
 Surfaces: home, pricing dialog, FAQ, blog, Max, founders, and reviews, plus the sign-in dialog opened from the home page. Theme: dark only. Widths: 1440 and 390 CSS pixels. Captured 19 November 2026.
@@ -14,7 +16,9 @@ Surfaces: home, pricing dialog, FAQ, blog, Max, founders, and reviews, plus the 
 | [components.md](components.md) | Controls that painted on the public pages |
 | [patterns.md](patterns.md) | The captured pages |
 | [components/](components/) | Nine crops |
-| [screenshots/](screenshots/) | Eleven page screenshots |
+| [screenshots/](screenshots/) | Page screenshots, including the 2026-11-22 public tree |
+| [site-tree.md](site-tree.md) | Header, footer, and the public pages those controls open. Mapped 2026-11-22 |
+| [login-review.json](login-review.json) | Empty auth wall. `login-extracted` is not-started |
 | [raw/](raw/) | Computed-style dumps |
 | [tools/](tools/) | Checker, tests, and the unused kit copy. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
