@@ -1,0 +1,16 @@
+{
+  "name": "mobile-signal-00-light-default",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "dpr": 1,
+  "vv": {
+    "width": 390,
+    "height": 844,
+    "scale": 1
+  },
+  "scrollH": 844,
+  "url": "https://37signals.com/00",
+  "theme": "139, 119, 255",
+  "capturedAt": "2026-11-21T15:41:53.421Z",
+  "themePinned": "--rgb-theme-3"
+}

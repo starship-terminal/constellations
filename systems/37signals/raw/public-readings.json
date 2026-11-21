@@ -1,0 +1,4360 @@
+{
+  "capturedAt": "2026-11-21T15:38:48.583Z",
+  "hover": {
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "decoration": "underline rgb(255, 255, 255)",
+    "opacity": "1"
+  },
+  "focus": {
+    "tag": "A",
+    "text": "",
+    "outline": "rgb(255, 255, 255) none 0px",
+    "boxShadow": "none",
+    "color": "rgb(255, 255, 255)"
+  },
+  "pages": {
+    "home": {
+      "url": "https://37signals.com/",
+      "status": 200,
+      "title": "37signals",
+      "htmlStyle": "--rgb-theme: 244, 103, 199;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 2299,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\n00.\nStart here\n01.\nAn obligation to independence",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(244, 103, 199)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 2299,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": null,
+        "p": null,
+        "button": null,
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "00.\nStart here",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 1388,
+          "shadow": "none",
+          "transition": "color 0.2s"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": {
+        "--rgb-black": "0, 0, 0",
+        "--rgb-error": "255, 1, 1",
+        "--rgb-white": "255, 255, 255",
+        "--rgb-theme": "var(--rgb-black)",
+        "--rgb-theme-1": "244, 103, 199",
+        "--rgb-theme-2": "190, 82, 255",
+        "--rgb-theme-3": "139, 119, 255",
+        "--rgb-theme-4": "0, 170, 194",
+        "--rgb-theme-5": "154, 162, 0",
+        "--rgb-theme-6": "248, 121, 23",
+        "--rgb-theme-7": "240, 177, 3",
+        "--rgb-theme-8": "204, 61, 51",
+        "--rgb-theme-9": "41, 152, 80",
+        "--rgb-theme-10": "0, 100, 230",
+        "--rgb-theme-11": "236, 67, 67",
+        "--rgb-theme-12": "207, 111, 182",
+        "--color-black": "rgb(var(--rgb-black))",
+        "--color-error": "rgb(var(--rgb-error))",
+        "--color-white": "rgb(var(--rgb-white))",
+        "--color-theme": "rgb(var(--rgb-theme))",
+        "--color-theme-1": "rgb(var(--rgb-theme-1))",
+        "--color-theme-2": "rgb(var(--rgb-theme-2))",
+        "--color-theme-3": "rgb(var(--rgb-theme-3))",
+        "--color-theme-4": "rgb(var(--rgb-theme-4))",
+        "--color-theme-5": "rgb(var(--rgb-theme-5))",
+        "--color-theme-6": "rgb(var(--rgb-theme-6))",
+        "--color-theme-7": "rgb(var(--rgb-theme-7))",
+        "--color-theme-8": "rgb(var(--rgb-theme-8))",
+        "--color-theme-9": "rgb(var(--rgb-theme-9))",
+        "--color-theme-10": "rgb(var(--rgb-theme-10))",
+        "--color-theme-11": "rgb(var(--rgb-theme-11))",
+        "--color-theme-12": "rgb(var(--rgb-theme-12))",
+        "--font-family": "'Lab Grotesque', Sans-Serif",
+        "--font-family-mono": "'Lab Grotesque Mono', Monospace",
+        "--font-size": "calc(1em + 1vw)",
+        "--font-size-x-small": "60%",
+        "--font-size-small": "80%",
+        "--font-size-large": "105%",
+        "--font-size-x-large": "110%",
+        "--font-size-xx-large": "115%",
+        "--font-size-xxx-large": "125%",
+        "--font-size-xxxx-large": "140%",
+        "--line-height": "calc(1.3em + 1vw)",
+        "--spacing": "0.75em",
+        "--transition": "0.2s ease",
+        "--flow-space": "calc(var(--line-height) * 1.2)"
+      },
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        },
+        {
+          "text": "00. Start here",
+          "href": "https://37signals.com/00"
+        },
+        {
+          "text": "01. An obligation to independence",
+          "href": "https://37signals.com/01"
+        },
+        {
+          "text": "02. Work isn\u2019t war",
+          "href": "https://37signals.com/02"
+        },
+        {
+          "text": "03. Small teams",
+          "href": "https://37signals.com/03"
+        },
+        {
+          "text": "04. Profit motive",
+          "href": "https://37signals.com/04"
+        },
+        {
+          "text": "05. Err on the side of do",
+          "href": "https://37signals.com/05"
+        },
+        {
+          "text": "06. Shape Up every six",
+          "href": "https://37signals.com/06"
+        },
+        {
+          "text": "07. We don\u2019t sell you",
+          "href": "https://37signals.com/07"
+        },
+        {
+          "text": "08. 8/8/8",
+          "href": "https://37signals.com/08"
+        },
+        {
+          "text": "09. NOTASAP",
+          "href": "https://37signals.com/09"
+        },
+        {
+          "text": "10. The Fortune 5,000,000",
+          "href": "https://37signals.com/10"
+        },
+        {
+          "text": "11. Don\u2019t emulate the office",
+          "href": "https://37signals.com/11"
+        },
+        {
+          "text": "12. Hours aren\u2019t equal",
+          "href": "https://37signals.com/12"
+        },
+        {
+          "text": "13. On repeat",
+          "href": "https://37signals.com/13"
+        },
+        {
+          "text": "14. Meetings aren\u2019t free",
+          "href": "https://37signals.com/14"
+        },
+        {
+          "text": "15. Bury the hustle",
+          "href": "https://37signals.com/15"
+        },
+        {
+          "text": "16. The trap of marginal thinking",
+          "href": "https://37signals.com/16"
+        },
+        {
+          "text": "17. Politicking",
+          "href": "https://37signals.com/17"
+        },
+        {
+          "text": "18. Two tokens of customer service",
+          "href": "https://37signals.com/18"
+        },
+        {
+          "text": "19. Pay people, not addresses",
+          "href": "https://37signals.com/19"
+        },
+        {
+          "text": "20. Small tech",
+          "href": "https://37signals.com/20"
+        },
+        {
+          "text": "21. Know no",
+          "href": "https://37signals.com/21"
+        },
+        {
+          "text": "22. Stayups",
+          "href": "https://37signals.com/22"
+        },
+        {
+          "text": "23. Thoughting vs. thinking",
+          "href": "https://37signals.com/23"
+        },
+        {
+          "text": "24. Fixed",
+          "href": "https://37signals.com/24"
+        },
+        {
+          "text": "25. Disagree and commit",
+          "href": "https://37signals.com/25"
+        },
+        {
+          "text": "26. Kick in the face, kick in the ass",
+          "href": "https://37signals.com/26"
+        },
+        {
+          "text": "27. Broadly speaking",
+          "href": "https://37signals.com/27"
+        },
+        {
+          "text": "28. Shots on goals",
+          "href": "https://37signals.com/28"
+        },
+        {
+          "text": "29. JOMO not FOMO",
+          "href": "https://37signals.com/29"
+        },
+        {
+          "text": "30. Miscommunication problems",
+          "href": "https://37signals.com/30"
+        },
+        {
+          "text": "31. Easy?",
+          "href": "https://37signals.com/31"
+        },
+        {
+          "text": "32. Ruby on Rails",
+          "href": "https://37signals.com/32"
+        },
+        {
+          "text": "33. Planning is guessing",
+          "href": "https://37signals.com/33"
+        },
+        {
+          "text": "34. Sleep on it",
+          "href": "https://37signals.com/34"
+        },
+        {
+          "text": "35. Companies aren\u2019t families",
+          "href": "https://37signals.com/35"
+        },
+        {
+          "text": "36. Context > consistency",
+          "href": "https://37signals.com/36"
+        },
+        {
+          "text": "37. What\u2019s in a name?",
+          "href": "https://37signals.com/37"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\n00.\nStart here\n01.\nAn obligation to independence\n02.\nWork isn\u2019t war\n03.\nSmall teams\n04.\nProfit motive\n05.\nErr on the side of do\n06.\nShape Up every six\n07.\nWe don\u2019t sell you\n08.\n8/8/8\n09.\nNOTASAP\n10.\nThe Fortune 5,000,000\n11.\nDon\u2019t emulate the offic"
+    },
+    "signal-00": {
+      "url": "https://37signals.com/00",
+      "status": 200,
+      "title": "37signals \u2014 Start here",
+      "htmlStyle": "--rgb-theme: 207, 111, 182;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 2646,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\n00.\nStart here\n\nWelcome. This site is a catalog ",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(207, 111, 182)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 2646,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": {
+          "tag": "H2",
+          "text": "00.\nStart here",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 1388,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "p": {
+          "tag": "P",
+          "text": "Welcome. This site is a catalog of ideas \u2014 signals \u2014 that drive us. We\u2019re best k",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 313,
+          "w": 1015,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": null,
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "Basecamp",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 41,
+          "w": 167,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        },
+        {
+          "text": "01. An obligation to independence",
+          "href": "https://37signals.com/01"
+        },
+        {
+          "text": "02. Work isn\u2019t war",
+          "href": "https://37signals.com/02"
+        },
+        {
+          "text": "03. Small teams",
+          "href": "https://37signals.com/03"
+        },
+        {
+          "text": "04. Profit motive",
+          "href": "https://37signals.com/04"
+        },
+        {
+          "text": "05. Err on the side of do",
+          "href": "https://37signals.com/05"
+        },
+        {
+          "text": "06. Shape Up every six",
+          "href": "https://37signals.com/06"
+        },
+        {
+          "text": "07. We don\u2019t sell you",
+          "href": "https://37signals.com/07"
+        },
+        {
+          "text": "08. 8/8/8",
+          "href": "https://37signals.com/08"
+        },
+        {
+          "text": "09. NOTASAP",
+          "href": "https://37signals.com/09"
+        },
+        {
+          "text": "10. The Fortune 5,000,000",
+          "href": "https://37signals.com/10"
+        },
+        {
+          "text": "11. Don\u2019t emulate the office",
+          "href": "https://37signals.com/11"
+        },
+        {
+          "text": "12. Hours aren\u2019t equal",
+          "href": "https://37signals.com/12"
+        },
+        {
+          "text": "13. On repeat",
+          "href": "https://37signals.com/13"
+        },
+        {
+          "text": "14. Meetings aren\u2019t free",
+          "href": "https://37signals.com/14"
+        },
+        {
+          "text": "15. Bury the hustle",
+          "href": "https://37signals.com/15"
+        },
+        {
+          "text": "16. The trap of marginal thinking",
+          "href": "https://37signals.com/16"
+        },
+        {
+          "text": "17. Politicking",
+          "href": "https://37signals.com/17"
+        },
+        {
+          "text": "18. Two tokens of customer service",
+          "href": "https://37signals.com/18"
+        },
+        {
+          "text": "19. Pay people, not addresses",
+          "href": "https://37signals.com/19"
+        },
+        {
+          "text": "20. Small tech",
+          "href": "https://37signals.com/20"
+        },
+        {
+          "text": "21. Know no",
+          "href": "https://37signals.com/21"
+        },
+        {
+          "text": "22. Stayups",
+          "href": "https://37signals.com/22"
+        },
+        {
+          "text": "23. Thoughting vs. thinking",
+          "href": "https://37signals.com/23"
+        },
+        {
+          "text": "24. Fixed",
+          "href": "https://37signals.com/24"
+        },
+        {
+          "text": "25. Disagree and commit",
+          "href": "https://37signals.com/25"
+        },
+        {
+          "text": "26. Kick in the face, kick in the ass",
+          "href": "https://37signals.com/26"
+        },
+        {
+          "text": "27. Broadly speaking",
+          "href": "https://37signals.com/27"
+        },
+        {
+          "text": "28. Shots on goals",
+          "href": "https://37signals.com/28"
+        },
+        {
+          "text": "29. JOMO not FOMO",
+          "href": "https://37signals.com/29"
+        },
+        {
+          "text": "30. Miscommunication problems",
+          "href": "https://37signals.com/30"
+        },
+        {
+          "text": "31. Easy?",
+          "href": "https://37signals.com/31"
+        },
+        {
+          "text": "32. Ruby on Rails",
+          "href": "https://37signals.com/32"
+        },
+        {
+          "text": "33. Planning is guessing",
+          "href": "https://37signals.com/33"
+        },
+        {
+          "text": "34. Sleep on it",
+          "href": "https://37signals.com/34"
+        },
+        {
+          "text": "35. Companies aren\u2019t families",
+          "href": "https://37signals.com/35"
+        },
+        {
+          "text": "36. Context > consistency",
+          "href": "https://37signals.com/36"
+        },
+        {
+          "text": "37. What\u2019s in a name?",
+          "href": "https://37signals.com/37"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\n00.\nStart here\n\nWelcome. This site is a catalog of ideas \u2014 signals \u2014 that drive us. We\u2019re best known for making Basecamp, HEY, Omarchy Linux, ONCE, writing business and software books (Getting Real, REWORK, REMOTE, It Doesn\u2019t Have to Be Crazy at Wo"
+    },
+    "signal-37": {
+      "url": "https://37signals.com/37",
+      "status": 200,
+      "title": "37signals \u2014 What\u2019s in a name?",
+      "htmlStyle": "--rgb-theme: 0, 170, 194;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 2555,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\n00.\nStart here\n01.\nAn obligation to independence",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(0, 170, 194)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 2555,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": {
+          "tag": "H2",
+          "text": "37.\nWhat\u2019s in a name?",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 1388,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "p": {
+          "tag": "P",
+          "text": "Mankind constantly analyzes radio waves from outer space in the search for extra",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 179,
+          "w": 1015,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": null,
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "00.\nStart here",
+          "color": "rgba(255, 255, 255, 0.44)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.44)",
+          "pad": "0px",
+          "h": 45,
+          "w": 1388,
+          "shadow": "none",
+          "transition": "color 0.2s"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        },
+        {
+          "text": "00. Start here",
+          "href": "https://37signals.com/00"
+        },
+        {
+          "text": "01. An obligation to independence",
+          "href": "https://37signals.com/01"
+        },
+        {
+          "text": "02. Work isn\u2019t war",
+          "href": "https://37signals.com/02"
+        },
+        {
+          "text": "03. Small teams",
+          "href": "https://37signals.com/03"
+        },
+        {
+          "text": "04. Profit motive",
+          "href": "https://37signals.com/04"
+        },
+        {
+          "text": "05. Err on the side of do",
+          "href": "https://37signals.com/05"
+        },
+        {
+          "text": "06. Shape Up every six",
+          "href": "https://37signals.com/06"
+        },
+        {
+          "text": "07. We don\u2019t sell you",
+          "href": "https://37signals.com/07"
+        },
+        {
+          "text": "08. 8/8/8",
+          "href": "https://37signals.com/08"
+        },
+        {
+          "text": "09. NOTASAP",
+          "href": "https://37signals.com/09"
+        },
+        {
+          "text": "10. The Fortune 5,000,000",
+          "href": "https://37signals.com/10"
+        },
+        {
+          "text": "11. Don\u2019t emulate the office",
+          "href": "https://37signals.com/11"
+        },
+        {
+          "text": "12. Hours aren\u2019t equal",
+          "href": "https://37signals.com/12"
+        },
+        {
+          "text": "13. On repeat",
+          "href": "https://37signals.com/13"
+        },
+        {
+          "text": "14. Meetings aren\u2019t free",
+          "href": "https://37signals.com/14"
+        },
+        {
+          "text": "15. Bury the hustle",
+          "href": "https://37signals.com/15"
+        },
+        {
+          "text": "16. The trap of marginal thinking",
+          "href": "https://37signals.com/16"
+        },
+        {
+          "text": "17. Politicking",
+          "href": "https://37signals.com/17"
+        },
+        {
+          "text": "18. Two tokens of customer service",
+          "href": "https://37signals.com/18"
+        },
+        {
+          "text": "19. Pay people, not addresses",
+          "href": "https://37signals.com/19"
+        },
+        {
+          "text": "20. Small tech",
+          "href": "https://37signals.com/20"
+        },
+        {
+          "text": "21. Know no",
+          "href": "https://37signals.com/21"
+        },
+        {
+          "text": "22. Stayups",
+          "href": "https://37signals.com/22"
+        },
+        {
+          "text": "23. Thoughting vs. thinking",
+          "href": "https://37signals.com/23"
+        },
+        {
+          "text": "24. Fixed",
+          "href": "https://37signals.com/24"
+        },
+        {
+          "text": "25. Disagree and commit",
+          "href": "https://37signals.com/25"
+        },
+        {
+          "text": "26. Kick in the face, kick in the ass",
+          "href": "https://37signals.com/26"
+        },
+        {
+          "text": "27. Broadly speaking",
+          "href": "https://37signals.com/27"
+        },
+        {
+          "text": "28. Shots on goals",
+          "href": "https://37signals.com/28"
+        },
+        {
+          "text": "29. JOMO not FOMO",
+          "href": "https://37signals.com/29"
+        },
+        {
+          "text": "30. Miscommunication problems",
+          "href": "https://37signals.com/30"
+        },
+        {
+          "text": "31. Easy?",
+          "href": "https://37signals.com/31"
+        },
+        {
+          "text": "32. Ruby on Rails",
+          "href": "https://37signals.com/32"
+        },
+        {
+          "text": "33. Planning is guessing",
+          "href": "https://37signals.com/33"
+        },
+        {
+          "text": "34. Sleep on it",
+          "href": "https://37signals.com/34"
+        },
+        {
+          "text": "35. Companies aren\u2019t families",
+          "href": "https://37signals.com/35"
+        },
+        {
+          "text": "36. Context > consistency",
+          "href": "https://37signals.com/36"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\n00.\nStart here\n01.\nAn obligation to independence\n02.\nWork isn\u2019t war\n03.\nSmall teams\n04.\nProfit motive\n05.\nErr on the side of do\n06.\nShape Up every six\n07.\nWe don\u2019t sell you\n08.\n8/8/8\n09.\nNOTASAP\n10.\nThe Fortune 5,000,000\n11.\nDon\u2019t emulate the offic"
+    },
+    "books": {
+      "url": "https://37signals.com/books",
+      "status": 200,
+      "title": "37signals \u2014 Books by 37signals",
+      "htmlStyle": "--rgb-theme: 236, 67, 67;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 2803,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nBooks by 37signals\n\nOn top of making Basecamp an",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(236, 67, 67)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 2803,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": null,
+        "p": {
+          "tag": "P",
+          "text": "On top of making Basecamp and HEY, we write books about what we\u2019ve learned runni",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 134,
+          "w": 995,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": null,
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "Basecamp",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 41,
+          "w": 167,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nBooks by 37signals\n\nOn top of making Basecamp and HEY, we write books about what we\u2019ve learned running our own business. They\u2019re filled with practical advice you won\u2019t find elsewhere.\n\nShape Up\n\nShape Up is for product development teams who struggl"
+    },
+    "thoughts": {
+      "url": "https://37signals.com/thoughts",
+      "status": 200,
+      "title": "37signals \u2014 Long Thoughts",
+      "htmlStyle": "--rgb-theme: 190, 82, 255;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 1784,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nLong Thoughts\n\nA tight collection of complete id",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(190, 82, 255)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 1784,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": null,
+        "p": {
+          "tag": "P",
+          "text": "A tight collection of complete ideas, thoughts, articles, and writings from the ",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 89,
+          "w": 995,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": null,
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "Seven Shipping Principles",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "33.54px",
+          "weight": "700",
+          "lh": "40.248px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 41,
+          "w": 401,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        },
+        {
+          "text": "Seven Shipping Principles",
+          "href": "https://37signals.com/seven-shipping-principles"
+        },
+        {
+          "text": "The 37signals Guide to Making Decisions",
+          "href": "https://37signals.com/how-we-make-decisions"
+        },
+        {
+          "text": "Why We Choose Profit at 37signals",
+          "href": "https://37signals.com/why-we-choose-profit"
+        },
+        {
+          "text": "What Influenced Us",
+          "href": "https://37signals.com/what-influenced-us"
+        },
+        {
+          "text": "The 37signals Guide to Internal Communication",
+          "href": "https://37signals.com/how-we-communicate"
+        },
+        {
+          "text": "Group Chat: The Best Way to Totally Stress Out Your Team",
+          "href": "https://37signals.com/group-chat-problems"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nLong Thoughts\n\nA tight collection of complete ideas, thoughts, articles, and writings from the founders of 37signals.\n\nSeven Shipping Principles\n\nCore fundamentals that inform how we go about building \u2014 and shipping \u2014 great software at a sustainabl"
+    },
+    "jobs": {
+      "url": "https://37signals.com/jobs",
+      "status": 200,
+      "title": "37signals \u2014 Working at 37signals",
+      "htmlStyle": "--rgb-theme: 240, 177, 3;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 3008,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nWorking at 37signals\n\nTake a look at our current",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(240, 177, 3)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 3008,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": {
+          "tag": "H2",
+          "text": "Who we are",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "33.54px",
+          "weight": "700",
+          "lh": "40.248px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 40,
+          "w": 792,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "p": {
+          "tag": "P",
+          "text": "Take a look at our current job openings, sign up to be notified about future ope",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 89,
+          "w": 995,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": {
+          "tag": "BUTTON",
+          "text": "Sign up",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(240, 177, 3)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "14.534px",
+          "weight": "500",
+          "lh": "18.8942px",
+          "ls": "normal",
+          "radius": "18.8942px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "8.7204px 15.9874px 7.9937px",
+          "h": 36,
+          "w": 81,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "grab the RSS feed",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "29.068px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 56,
+          "w": 750,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "FORM",
+          "type": null,
+          "role": null,
+          "name": "mc-embedded-subscribe-form",
+          "placeholder": null,
+          "text": "Sign up",
+          "popup": null,
+          "action": "https://basecamp.us2.list-manage.com/subscribe/post-json?u=2a145c60b16248b65e46a799a&id=b8c4a58b9b&c=?"
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "name": "b_2a145c60b16248b65e46a799a_b8c4a58b9b",
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "INPUT",
+          "type": "email",
+          "role": null,
+          "name": "EMAIL",
+          "placeholder": "julie.young@hey.com",
+          "text": "",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "BUTTON",
+          "type": "submit",
+          "role": null,
+          "name": "subscribe",
+          "placeholder": null,
+          "text": "Sign up",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        },
+        {
+          "text": "grab the RSS feed",
+          "href": "https://37signals.com/feed/jobs.xml"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nWorking at 37signals\n\nTake a look at our current job openings, sign up to be notified about future openings, and learn about what it\u2019s like to work here.\n\nSorry, we don\u2019t have any job openings right now.\n\nSign up to be notified\n\nIf you\u2019d like to be"
+    },
+    "podcast": {
+      "url": "https://37signals.com/podcast/",
+      "status": 200,
+      "title": "The REWORK Podcast",
+      "htmlStyle": null,
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 8482,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "SKIP TO CONTENT\nTHE REWORK PODCAST\n\nA podcast about a better way to work and run",
+          "color": "rgb(17, 17, 17)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "\"Crimson Pro\", Garamond, Baskerville, \"Baskerville Old Face\", \"Hoefler Text\", \"Times New Roman\", \"Apple Color Emoji\", serif",
+          "size": "20.8px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(17, 17, 17)",
+          "pad": "0px",
+          "h": 8482,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": null,
+        "footerLink": null,
+        "h1": {
+          "tag": "H1",
+          "text": "THE REWORK PODCAST",
+          "color": "rgb(17, 17, 17)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "Jost, Futura, \"Century Gothic\", CenturyGothic, AppleGothic, \"Trebuchet MS\", \"Apple Color Emoji\", sans-serif",
+          "size": "45.6976px",
+          "weight": "600",
+          "lh": "45.6976px",
+          "ls": "-0.913952px",
+          "radius": "0px",
+          "border": "0px none rgb(17, 17, 17)",
+          "pad": "0px",
+          "h": 91,
+          "w": 289,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": {
+          "tag": "H2",
+          "text": "One-way Doors",
+          "color": "rgb(17, 17, 17)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "Jost, Futura, \"Century Gothic\", CenturyGothic, AppleGothic, \"Trebuchet MS\", \"Apple Color Emoji\", sans-serif",
+          "size": "45.6976px",
+          "weight": "600",
+          "lh": "60.3208px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(17, 17, 17)",
+          "pad": "0px",
+          "h": 60,
+          "w": 902,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "p": {
+          "tag": "P",
+          "text": "A podcast about a better way to work and run your business, from 37signals.",
+          "color": "rgb(17, 17, 17)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "Jost, Futura, \"Century Gothic\", CenturyGothic, AppleGothic, \"Trebuchet MS\", \"Apple Color Emoji\", sans-serif",
+          "size": "20.8px",
+          "weight": "400",
+          "lh": "27.456px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(17, 17, 17)",
+          "pad": "0px",
+          "h": 82,
+          "w": 289,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": {
+          "tag": "BUTTON",
+          "text": "skip 30 seconds back",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "Arial",
+          "size": "13.3333px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "input": null,
+        "mainLink": {
+          "tag": "A",
+          "text": "SKIP TO CONTENT",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(231, 19, 26)",
+          "font": "Jost, Futura, \"Century Gothic\", CenturyGothic, AppleGothic, \"Trebuchet MS\", \"Apple Color Emoji\", sans-serif",
+          "size": "20.8px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "radius": "104px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "10.4px 20.8px",
+          "h": 21,
+          "w": 42,
+          "shadow": "none",
+          "transition": "text-decoration-thickness 0.1s cubic-bezier(0.33, 1, 0.68, 1)"
+        }
+      },
+      "controls": [
+        {
+          "tag": "DETAILS",
+          "type": null,
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "Subscribe to REWORK Apple Podcasts Spotify Overcast Pocket Casts Radio Public RS",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "SUMMARY",
+          "type": null,
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "Subscribe to REWORK",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "DETAILS",
+          "type": null,
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "Explore the archive",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "SUMMARY",
+          "type": null,
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "Explore the archive",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "DETAILS",
+          "type": null,
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "About the show",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "SUMMARY",
+          "type": null,
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "About the show",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "DETAILS",
+          "type": null,
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "Get in touch",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "SUMMARY",
+          "type": null,
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "Get in touch",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "BUTTON",
+          "type": "button",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "skip 30 seconds back",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "BUTTON",
+          "type": "button",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "play",
+          "popup": null,
+          "action": null
+        },
+        {
+          "tag": "BUTTON",
+          "type": "button",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "skip 30 seconds forward",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "SKIP TO CONTENT",
+          "href": "https://37signals.com/podcast/#content"
+        },
+        {
+          "text": "THE REWORK PODCAST",
+          "href": "https://37signals.com/podcast/"
+        },
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/basecamp-behind-the-scenes"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/big-tech"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/customer-support"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/dhh-and-jason-fried"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/greatest-hits"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/hey"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/just-for-fun"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/mailbags"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/privacy"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/rework-revisited"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/remote-work"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/running-a-calm-company"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/shape-up"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/tag/small-business"
+        },
+        {
+          "text": "Buy REWORK merch",
+          "href": "https://37signals.com/podcast/shop/"
+        },
+        {
+          "text": "",
+          "href": "mailto:rework@37signals.com"
+        },
+        {
+          "text": "",
+          "href": "https://37signals.com/podcast/questions/"
+        },
+        {
+          "text": "One-way Doors",
+          "href": "https://37signals.com/podcast/one-way-doors/"
+        },
+        {
+          "text": "Competing with giants, the end of SaaS & other listener questions",
+          "href": "https://37signals.com/podcast/competing-with-giants/"
+        },
+        {
+          "text": "Rapid Fire Q&A",
+          "href": "https://37signals.com/podcast/rapid-fire-q-and-a/"
+        },
+        {
+          "text": "We\u2019ll do it live",
+          "href": "https://37signals.com/podcast/do-it-live/"
+        },
+        {
+          "text": "What\u2019s the worst that could happen?",
+          "href": "https://37signals.com/podcast/whats-the-worst-that-could-happen/"
+        },
+        {
+          "text": "Start Here: Building a better onboarding experience",
+          "href": "https://37signals.com/podcast/start-here-onboarding/"
+        },
+        {
+          "text": "Don't write it down",
+          "href": "https://37signals.com/podcast/dont-write-it-down/"
+        },
+        {
+          "text": "AI challenges in software development",
+          "href": "https://37signals.com/podcast/ai-challenges-in-software/"
+        },
+        {
+          "text": "Launch details & decisions",
+          "href": "https://37signals.com/podcast/launch-details-and-decisions/"
+        },
+        {
+          "text": "Clearing the decks for launch",
+          "href": "https://37signals.com/podcast/clearing-the-decks/"
+        },
+        {
+          "text": "Easy to leave",
+          "href": "https://37signals.com/podcast/easy-to-leave/"
+        },
+        {
+          "text": "Pencils down",
+          "href": "https://37signals.com/podcast/pencils-down/"
+        },
+        {
+          "text": "Bring your AI agents to Basecamp",
+          "href": "https://37signals.com/podcast/bring-your-ai-agents/"
+        },
+        {
+          "text": "Business beyond profit",
+          "href": "https://37signals.com/podcast/business-beyond-profit/"
+        },
+        {
+          "text": "Built on Intuition",
+          "href": "https://37signals.com/podcast/built-on-intuition/"
+        },
+        {
+          "text": "AI Revisited - Part 2",
+          "href": "https://37signals.com/podcast/ai-revisited-part-2/"
+        },
+        {
+          "text": "Talk directly to your customers",
+          "href": "https://37signals.com/podcast/talk-directly-to-your-customers/"
+        },
+        {
+          "text": "Move fast when you can",
+          "href": "https://37signals.com/podcast/move-fast-when-you-can/"
+        },
+        {
+          "text": "You've launched... now what?",
+          "href": "https://37signals.com/podcast/you-launched-now-what/"
+        },
+        {
+          "text": "Product walkthroughs, the next open source product & other listener questions",
+          "href": "https://37signals.com/podcast/product-walkthroughs-listener-questions/"
+        },
+        {
+          "text": "Give it a name",
+          "href": "https://37signals.com/podcast/give-it-a-name/"
+        },
+        {
+          "text": "AI Revisited",
+          "href": "https://37signals.com/podcast/ai-revisited/"
+        },
+        {
+          "text": "Making things that multiply",
+          "href": "https://37signals.com/podcast/making-things-that-multiply/"
+        },
+        {
+          "text": "Launch day \u2014 a little logistics, a lot of luck",
+          "href": "https://37signals.com/podcast/launch-day/"
+        },
+        {
+          "text": "Open source outside the box",
+          "href": "https://37signals.com/podcast/open-source-outside-the-box/"
+        },
+        {
+          "text": "When is enough, enough?",
+          "href": "https://37signals.com/podcast/enough-is-enough/"
+        },
+        {
+          "text": "Picking pricing",
+          "href": "https://37signals.com/podcast/picking-pricing/"
+        },
+        {
+          "text": "Out of office, together",
+          "href": "https://37signals.com/podcast/out-of-office-together/"
+        },
+        {
+          "text": "Soft openings aren't just for restaurants",
+          "href": "https://37signals.com/podcast/soft-openings/"
+        },
+        {
+          "text": "The itch for a new version",
+          "href": "https://37signals.com/podcast/itch-for-a-new-version/"
+        },
+        {
+          "text": "Fizzy Q's and A's",
+          "href": "https://37signals.com/podcast/fizzy-qs-and-as/"
+        },
+        {
+          "text": "Revisiting the good old days",
+          "href": "https://37signals.com/podcast/revisiting-the-good-old-days/"
+        },
+        {
+          "text": "Traditional marketing doesn't work for us",
+          "href": "https://37signals.com/podcast/traditional-marketing/"
+        },
+        {
+          "text": "Built on trust",
+          "href": "https://37signals.com/podcast/built-on-trust/"
+        },
+        {
+          "text": "Refining before release",
+          "href": "https://37signals.com/podcast/refining-before-release/"
+        },
+        {
+          "text": "Escaping Workaholism",
+          "href": "https://37signals.com/podcast/escaping-workaholism/"
+        },
+        {
+          "text": "Finding focus",
+          "href": "https://37signals.com/podcast/finding-focus/"
+        },
+        {
+          "text": "Total transparency",
+          "href": "https://37signals.com/podcast/total-transparency/"
+        },
+        {
+          "text": "It started with a blog",
+          "href": "https://37signals.com/podcast/it-started-with-a-blog/"
+        },
+        {
+          "text": "Building with LLMs, finding a co-founder & other listener questions",
+          "href": "https://37signals.com/podcast/building-with-llms-listener-qs/"
+        },
+        {
+          "text": "Titles, tenure, and paths don't matter",
+          "href": "https://37signals.com/podcast/titles-tenure-dont-matter/"
+        },
+        {
+          "text": "BONUS EPISODE: 37signals is moving to Omarchy",
+          "href": "https://37signals.com/podcast/moving-to-omarchy/"
+        },
+        {
+          "text": "Software as art",
+          "href": "https://37signals.com/podcast/software-as-art/"
+        },
+        {
+          "text": "Balancing it all",
+          "href": "https://37signals.com/podcast/balancing-it-all/"
+        },
+        {
+          "text": "Managing chaos, feature bloat, and other listener questions",
+          "href": "https://37signals.com/podcast/managing-chaos-listener-qs/"
+        },
+        {
+          "text": "Building in public",
+          "href": "https://37signals.com/podcast/building-in-public/"
+        },
+        {
+          "text": "The Case for Cover Letters",
+          "href": "https://37signals.com/podcast/the-case-for-cover-letters/"
+        },
+        {
+          "text": "Ignoring the competition, the next wave of CEOs & other listener questions",
+          "href": "https://37signals.com/podcast/ignore-the-competition-listener-qs/"
+        },
+        {
+          "text": "By the Numbers",
+          "href": "https://37signals.com/podcast/by-the-numbers/"
+        },
+        {
+          "text": "Rapid Fire Questions with Jason Fried & David Heinemeier Hansson",
+          "href": "https://37signals.com/podcast/rapid-fire-questions/"
+        },
+        {
+          "text": "2",
+          "href": "https://37signals.com/podcast/episodes/2/"
+        },
+        {
+          "text": "3",
+          "href": "https://37signals.com/podcast/episodes/3/"
+        },
+        {
+          "text": "4",
+          "href": "https://37signals.com/podcast/episodes/4/"
+        },
+        {
+          "text": "5",
+          "href": "https://37signals.com/podcast/episodes/5/"
+        },
+        {
+          "text": "6",
+          "href": "https://37signals.com/podcast/episodes/6/"
+        },
+        {
+          "text": "7",
+          "href": "https://37signals.com/podcast/episodes/7/"
+        },
+        {
+          "text": "8",
+          "href": "https://37signals.com/podcast/episodes/8/"
+        }
+      ],
+      "textStart": "SKIP TO CONTENT\nTHE REWORK PODCAST\n\nA podcast about a better way to work and run your business, from 37signals.\n\nSubscribe to\nREWORK\nApple Podcasts\nSpotify\nOvercast\nPocket Casts\nRadio Public\nRSS\nExplore the archive\nBuy\nREWORK\nmerch\nAbout the show\nGet in touch\n\nTHE LATEST EPISODE\n"
+    },
+    "policies": {
+      "url": "https://37signals.com/policies",
+      "status": 200,
+      "title": "37signals \u2014 Policies, Terms, and General Service Information",
+      "htmlStyle": "--rgb-theme: 154, 162, 0;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 1246,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPolicies, Terms, and General Service Information",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(154, 162, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 1246,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": null,
+        "p": {
+          "tag": "P",
+          "text": "We make our policies as clear, fair, and readable as possible.",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 995,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": null,
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "Trust Center",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "29.068px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 27,
+          "w": 129,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        },
+        {
+          "text": "Trust Center",
+          "href": "https://37signals.com/trust"
+        },
+        {
+          "text": "Terms of Service",
+          "href": "https://37signals.com/policies/terms"
+        },
+        {
+          "text": "Privacy Policy",
+          "href": "https://37signals.com/policies/privacy"
+        },
+        {
+          "text": "California Resident Notice at Collection",
+          "href": "https://37signals.com/policies/privacy/regulations/ccpa"
+        },
+        {
+          "text": "FERPA (US Schools)",
+          "href": "https://37signals.com/policies/privacy/regulations/ferpa"
+        },
+        {
+          "text": "Cancellation Policy",
+          "href": "https://37signals.com/policies/cancellation"
+        },
+        {
+          "text": "Refund Policy",
+          "href": "https://37signals.com/policies/refund"
+        },
+        {
+          "text": "Security Overview",
+          "href": "https://37signals.com/policies/security"
+        },
+        {
+          "text": "Basecamp Accessibility",
+          "href": "https://37signals.com/policies/accessibility"
+        },
+        {
+          "text": "Until the End of the Internet",
+          "href": "https://37signals.com/policies/until-the-end-of-the-internet"
+        },
+        {
+          "text": "Taxes on Services",
+          "href": "https://37signals.com/policies/taxes"
+        },
+        {
+          "text": "Account Ownership Policy",
+          "href": "https://37signals.com/policies/ownership"
+        },
+        {
+          "text": "policy updates",
+          "href": "https://37signals.com/privacy-updates"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPolicies, Terms, and General Service Information\n\nWe make our policies as clear, fair, and readable as possible.\n\nTrust Center\nTerms of Service\nPrivacy Policy\nCalifornia Resident Notice at Collection\nFERPA (US Schools)\nCancellation Policy\nRefund Po"
+    },
+    "signup": {
+      "url": "https://37signals.com/signup",
+      "status": 404,
+      "title": "37signals \u2014 Page not found",
+      "htmlStyle": "--rgb-theme: 244, 103, 199;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 900,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPage not found\n\nSorry, the page you\u2019re looking f",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(244, 103, 199)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 900,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": null,
+        "p": {
+          "tag": "P",
+          "text": "Sorry, the page you\u2019re looking for could not be found.",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 995,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": {
+          "tag": "A",
+          "text": "\u2190\nGo home",
+          "color": "rgb(244, 103, 199)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "14.534px",
+          "weight": "500",
+          "lh": "18.8942px",
+          "ls": "normal",
+          "radius": "18.8942px",
+          "border": "0px none rgb(244, 103, 199)",
+          "pad": "8.7204px 15.9874px 7.9937px",
+          "h": 36,
+          "w": 110,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "\u2190\nGo home",
+          "color": "rgb(244, 103, 199)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "14.534px",
+          "weight": "500",
+          "lh": "18.8942px",
+          "ls": "normal",
+          "radius": "18.8942px",
+          "border": "0px none rgb(244, 103, 199)",
+          "pad": "8.7204px 15.9874px 7.9937px",
+          "h": 36,
+          "w": 110,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPage not found\n\nSorry, the page you\u2019re looking for could not be found.\n\n\u2190\nGo home\n1999\nBooks\nThoughts\nJobs\nUpdates\nPodcast\nSupply\nDev\nPolicies"
+    },
+    "login": {
+      "url": "https://37signals.com/login",
+      "status": 404,
+      "title": "37signals \u2014 Page not found",
+      "htmlStyle": "--rgb-theme: 0, 100, 230;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 900,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPage not found\n\nSorry, the page you\u2019re looking f",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(0, 100, 230)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 900,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": null,
+        "p": {
+          "tag": "P",
+          "text": "Sorry, the page you\u2019re looking for could not be found.",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 995,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": {
+          "tag": "A",
+          "text": "\u2190\nGo home",
+          "color": "rgb(0, 100, 230)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "14.534px",
+          "weight": "500",
+          "lh": "18.8942px",
+          "ls": "normal",
+          "radius": "18.8942px",
+          "border": "0px none rgb(0, 100, 230)",
+          "pad": "8.7204px 15.9874px 7.9937px",
+          "h": 36,
+          "w": 110,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "\u2190\nGo home",
+          "color": "rgb(0, 100, 230)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "14.534px",
+          "weight": "500",
+          "lh": "18.8942px",
+          "ls": "normal",
+          "radius": "18.8942px",
+          "border": "0px none rgb(0, 100, 230)",
+          "pad": "8.7204px 15.9874px 7.9937px",
+          "h": 36,
+          "w": 110,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPage not found\n\nSorry, the page you\u2019re looking for could not be found.\n\n\u2190\nGo home\n1999\nBooks\nThoughts\nJobs\nUpdates\nPodcast\nSupply\nDev\nPolicies"
+    },
+    "sign-in": {
+      "url": "https://37signals.com/sign-in",
+      "status": 404,
+      "title": "37signals \u2014 Page not found",
+      "htmlStyle": "--rgb-theme: 240, 177, 3;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 900,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPage not found\n\nSorry, the page you\u2019re looking f",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(240, 177, 3)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 900,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": null,
+        "p": {
+          "tag": "P",
+          "text": "Sorry, the page you\u2019re looking for could not be found.",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 995,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": {
+          "tag": "A",
+          "text": "\u2190\nGo home",
+          "color": "rgb(240, 177, 3)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "14.534px",
+          "weight": "500",
+          "lh": "18.8942px",
+          "ls": "normal",
+          "radius": "18.8942px",
+          "border": "0px none rgb(240, 177, 3)",
+          "pad": "8.7204px 15.9874px 7.9937px",
+          "h": 36,
+          "w": 110,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "\u2190\nGo home",
+          "color": "rgb(240, 177, 3)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "14.534px",
+          "weight": "500",
+          "lh": "18.8942px",
+          "ls": "normal",
+          "radius": "18.8942px",
+          "border": "0px none rgb(240, 177, 3)",
+          "pad": "8.7204px 15.9874px 7.9937px",
+          "h": 36,
+          "w": 110,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPage not found\n\nSorry, the page you\u2019re looking for could not be found.\n\n\u2190\nGo home\n1999\nBooks\nThoughts\nJobs\nUpdates\nPodcast\nSupply\nDev\nPolicies"
+    },
+    "account": {
+      "url": "https://37signals.com/account",
+      "status": 404,
+      "title": "37signals \u2014 Page not found",
+      "htmlStyle": "--rgb-theme: 236, 67, 67;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 900,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPage not found\n\nSorry, the page you\u2019re looking f",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(236, 67, 67)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 900,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": null,
+        "p": {
+          "tag": "P",
+          "text": "Sorry, the page you\u2019re looking for could not be found.",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 995,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": {
+          "tag": "A",
+          "text": "\u2190\nGo home",
+          "color": "rgb(236, 67, 67)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "14.534px",
+          "weight": "500",
+          "lh": "18.8942px",
+          "ls": "normal",
+          "radius": "18.8942px",
+          "border": "0px none rgb(236, 67, 67)",
+          "pad": "8.7204px 15.9874px 7.9937px",
+          "h": 36,
+          "w": 110,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "\u2190\nGo home",
+          "color": "rgb(236, 67, 67)",
+          "bg": "rgb(255, 255, 255)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "14.534px",
+          "weight": "500",
+          "lh": "18.8942px",
+          "ls": "normal",
+          "radius": "18.8942px",
+          "border": "0px none rgb(236, 67, 67)",
+          "pad": "8.7204px 15.9874px 7.9937px",
+          "h": 36,
+          "w": 110,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nPage not found\n\nSorry, the page you\u2019re looking for could not be found.\n\n\u2190\nGo home\n1999\nBooks\nThoughts\nJobs\nUpdates\nPodcast\nSupply\nDev\nPolicies"
+    },
+    "auth-37signals-com-policies-ownership": {
+      "url": "https://37signals.com/policies/ownership",
+      "status": 200,
+      "title": "37signals \u2014 Account Ownership Policy",
+      "htmlStyle": "--rgb-theme: 41, 152, 80;",
+      "vw": 1440,
+      "vh": 900,
+      "dpr": 1,
+      "scrollH": 901,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nAccount Ownership Policy\nBasecamp and HEY for Do",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(41, 152, 80)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 901,
+          "w": 1440,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 158,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 11.18px",
+          "h": 27,
+          "w": 72,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "700",
+          "lh": "44.72px",
+          "ls": "-0.344px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 71,
+          "w": 184,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": {
+          "tag": "H2",
+          "text": "Basecamp and HEY for Domains",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "33.54px",
+          "weight": "700",
+          "lh": "40.248px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 40,
+          "w": 792,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "p": {
+          "tag": "P",
+          "text": "Accounts are owned by the organization detailed during signup, if this is a lega",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "400",
+          "lh": "29.068px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 87,
+          "w": 792,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": null,
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "34.4px",
+          "weight": "400",
+          "lh": "44.72px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "Help guide",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "22.36px",
+          "weight": "700",
+          "lh": "29.068px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 27,
+          "w": 110,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        }
+      ],
+      "textStart": "Signals\nBasecamp\nHEY\nFizzy\nONCE\nAccount Ownership Policy\nBasecamp and HEY for Domains\n\nAccounts are owned by the organization detailed during signup, if this is a legal entity. If the organization is unincorporated, the account is owned by the individual who signed up for the acc"
+    },
+    "mobile-home": {
+      "url": "https://37signals.com/",
+      "status": null,
+      "title": "37signals",
+      "htmlStyle": "--rgb-theme: 0, 100, 230;",
+      "vw": 390,
+      "vh": 844,
+      "dpr": 1,
+      "scrollH": 1505,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Menu\n00.\nStart here\n01.\nAn obligation to independence\n02.\nWork isn\u2019t war\n03.\nSma",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(0, 100, 230)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "400",
+          "lh": "25.87px",
+          "ls": "-0.199px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 1505,
+          "w": 390,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "700",
+          "lh": "25.87px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 30,
+          "w": 105,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "15.92px",
+          "weight": "700",
+          "lh": "29.77px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 7.96px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "700",
+          "lh": "25.87px",
+          "ls": "-0.199px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 120,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": null,
+        "p": null,
+        "button": null,
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "400",
+          "lh": "25.87px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "00.\nStart here",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "700",
+          "lh": "25.87px",
+          "ls": "-0.199px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 32,
+          "w": 360,
+          "shadow": "none",
+          "transition": "color 0.2s"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        },
+        {
+          "text": "00. Start here",
+          "href": "https://37signals.com/00"
+        },
+        {
+          "text": "01. An obligation to independence",
+          "href": "https://37signals.com/01"
+        },
+        {
+          "text": "02. Work isn\u2019t war",
+          "href": "https://37signals.com/02"
+        },
+        {
+          "text": "03. Small teams",
+          "href": "https://37signals.com/03"
+        },
+        {
+          "text": "04. Profit motive",
+          "href": "https://37signals.com/04"
+        },
+        {
+          "text": "05. Err on the side of do",
+          "href": "https://37signals.com/05"
+        },
+        {
+          "text": "06. Shape Up every six",
+          "href": "https://37signals.com/06"
+        },
+        {
+          "text": "07. We don\u2019t sell you",
+          "href": "https://37signals.com/07"
+        },
+        {
+          "text": "08. 8/8/8",
+          "href": "https://37signals.com/08"
+        },
+        {
+          "text": "09. NOTASAP",
+          "href": "https://37signals.com/09"
+        },
+        {
+          "text": "10. The Fortune 5,000,000",
+          "href": "https://37signals.com/10"
+        },
+        {
+          "text": "11. Don\u2019t emulate the office",
+          "href": "https://37signals.com/11"
+        },
+        {
+          "text": "12. Hours aren\u2019t equal",
+          "href": "https://37signals.com/12"
+        },
+        {
+          "text": "13. On repeat",
+          "href": "https://37signals.com/13"
+        },
+        {
+          "text": "14. Meetings aren\u2019t free",
+          "href": "https://37signals.com/14"
+        },
+        {
+          "text": "15. Bury the hustle",
+          "href": "https://37signals.com/15"
+        },
+        {
+          "text": "16. The trap of marginal thinking",
+          "href": "https://37signals.com/16"
+        },
+        {
+          "text": "17. Politicking",
+          "href": "https://37signals.com/17"
+        },
+        {
+          "text": "18. Two tokens of customer service",
+          "href": "https://37signals.com/18"
+        },
+        {
+          "text": "19. Pay people, not addresses",
+          "href": "https://37signals.com/19"
+        },
+        {
+          "text": "20. Small tech",
+          "href": "https://37signals.com/20"
+        },
+        {
+          "text": "21. Know no",
+          "href": "https://37signals.com/21"
+        },
+        {
+          "text": "22. Stayups",
+          "href": "https://37signals.com/22"
+        },
+        {
+          "text": "23. Thoughting vs. thinking",
+          "href": "https://37signals.com/23"
+        },
+        {
+          "text": "24. Fixed",
+          "href": "https://37signals.com/24"
+        },
+        {
+          "text": "25. Disagree and commit",
+          "href": "https://37signals.com/25"
+        },
+        {
+          "text": "26. Kick in the face, kick in the ass",
+          "href": "https://37signals.com/26"
+        },
+        {
+          "text": "27. Broadly speaking",
+          "href": "https://37signals.com/27"
+        },
+        {
+          "text": "28. Shots on goals",
+          "href": "https://37signals.com/28"
+        },
+        {
+          "text": "29. JOMO not FOMO",
+          "href": "https://37signals.com/29"
+        },
+        {
+          "text": "30. Miscommunication problems",
+          "href": "https://37signals.com/30"
+        },
+        {
+          "text": "31. Easy?",
+          "href": "https://37signals.com/31"
+        },
+        {
+          "text": "32. Ruby on Rails",
+          "href": "https://37signals.com/32"
+        },
+        {
+          "text": "33. Planning is guessing",
+          "href": "https://37signals.com/33"
+        },
+        {
+          "text": "34. Sleep on it",
+          "href": "https://37signals.com/34"
+        },
+        {
+          "text": "35. Companies aren\u2019t families",
+          "href": "https://37signals.com/35"
+        },
+        {
+          "text": "36. Context > consistency",
+          "href": "https://37signals.com/36"
+        },
+        {
+          "text": "37. What\u2019s in a name?",
+          "href": "https://37signals.com/37"
+        }
+      ],
+      "textStart": "Menu\n00.\nStart here\n01.\nAn obligation to independence\n02.\nWork isn\u2019t war\n03.\nSmall teams\n04.\nProfit motive\n05.\nErr on the side of do\n06.\nShape Up every six\n07.\nWe don\u2019t sell you\n08.\n8/8/8\n09.\nNOTASAP\n10.\nThe Fortune 5,000,000\n11.\nDon\u2019t emulate the office\n12.\nHours aren\u2019t equal\n13"
+    },
+    "mobile-signal-00": {
+      "url": "https://37signals.com/00",
+      "status": null,
+      "title": "37signals \u2014 Start here",
+      "htmlStyle": "--rgb-theme: 41, 152, 80;",
+      "vw": 390,
+      "vh": 844,
+      "dpr": 1,
+      "scrollH": 844,
+      "samples": {
+        "body": {
+          "tag": "BODY",
+          "text": "Menu\n00.\nStart here\n\nWelcome. This site is a catalog of ideas \u2014 signals \u2014 that d",
+          "color": "rgba(255, 255, 255, 0.85)",
+          "bg": "rgb(41, 152, 80)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "400",
+          "lh": "25.87px",
+          "ls": "-0.199px",
+          "radius": "0px",
+          "border": "0px none rgba(255, 255, 255, 0.85)",
+          "pad": "0px",
+          "h": 844,
+          "w": 390,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "headerLink": {
+          "tag": "A",
+          "text": "37signals",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "700",
+          "lh": "25.87px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 30,
+          "w": 105,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "footerLink": {
+          "tag": "A",
+          "text": "1999",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "15.92px",
+          "weight": "700",
+          "lh": "29.77px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px 7.96px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h1": {
+          "tag": "H1",
+          "text": "",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "700",
+          "lh": "25.87px",
+          "ls": "-0.199px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 45,
+          "w": 120,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "h2": {
+          "tag": "H2",
+          "text": "00.\nStart here",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "700",
+          "lh": "25.87px",
+          "ls": "-0.199px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "2.985px 0px",
+          "h": 32,
+          "w": 360,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "p": {
+          "tag": "P",
+          "text": "Welcome. This site is a catalog of ideas \u2014 signals \u2014 that drive us. We\u2019re best k",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "400",
+          "lh": "25.87px",
+          "ls": "-0.199px",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 311,
+          "w": 327,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "button": null,
+        "input": {
+          "tag": "INPUT",
+          "text": "",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "400",
+          "lh": "25.87px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px",
+          "h": 0,
+          "w": 0,
+          "shadow": "none",
+          "transition": "all"
+        },
+        "mainLink": {
+          "tag": "A",
+          "text": "Basecamp",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Lab Grotesque\", sans-serif",
+          "size": "19.9px",
+          "weight": "700",
+          "lh": "25.87px",
+          "ls": "normal",
+          "radius": "0px",
+          "border": "0px none rgb(255, 255, 255)",
+          "pad": "0px",
+          "h": 24,
+          "w": 97,
+          "shadow": "none",
+          "transition": "all"
+        }
+      },
+      "controls": [
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": null,
+          "placeholder": null,
+          "text": "",
+          "popup": null,
+          "action": null
+        }
+      ],
+      "vars": null,
+      "onDomainLinks": [
+        {
+          "text": "37signals",
+          "href": "https://37signals.com/"
+        },
+        {
+          "text": "1999",
+          "href": "https://1999.37signals.com/"
+        },
+        {
+          "text": "Books",
+          "href": "https://37signals.com/books"
+        },
+        {
+          "text": "Thoughts",
+          "href": "https://37signals.com/thoughts"
+        },
+        {
+          "text": "Jobs",
+          "href": "https://37signals.com/jobs"
+        },
+        {
+          "text": "Updates",
+          "href": "https://updates.37signals.com/"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://37signals.com/podcast"
+        },
+        {
+          "text": "Supply",
+          "href": "https://supply.37signals.com/"
+        },
+        {
+          "text": "Dev",
+          "href": "https://dev.37signals.com/"
+        },
+        {
+          "text": "Policies",
+          "href": "https://37signals.com/policies"
+        },
+        {
+          "text": "01. An obligation to independence",
+          "href": "https://37signals.com/01"
+        },
+        {
+          "text": "02. Work isn\u2019t war",
+          "href": "https://37signals.com/02"
+        },
+        {
+          "text": "03. Small teams",
+          "href": "https://37signals.com/03"
+        },
+        {
+          "text": "04. Profit motive",
+          "href": "https://37signals.com/04"
+        },
+        {
+          "text": "05. Err on the side of do",
+          "href": "https://37signals.com/05"
+        },
+        {
+          "text": "06. Shape Up every six",
+          "href": "https://37signals.com/06"
+        },
+        {
+          "text": "07. We don\u2019t sell you",
+          "href": "https://37signals.com/07"
+        },
+        {
+          "text": "08. 8/8/8",
+          "href": "https://37signals.com/08"
+        },
+        {
+          "text": "09. NOTASAP",
+          "href": "https://37signals.com/09"
+        },
+        {
+          "text": "10. The Fortune 5,000,000",
+          "href": "https://37signals.com/10"
+        },
+        {
+          "text": "11. Don\u2019t emulate the office",
+          "href": "https://37signals.com/11"
+        },
+        {
+          "text": "12. Hours aren\u2019t equal",
+          "href": "https://37signals.com/12"
+        },
+        {
+          "text": "13. On repeat",
+          "href": "https://37signals.com/13"
+        },
+        {
+          "text": "14. Meetings aren\u2019t free",
+          "href": "https://37signals.com/14"
+        },
+        {
+          "text": "15. Bury the hustle",
+          "href": "https://37signals.com/15"
+        },
+        {
+          "text": "16. The trap of marginal thinking",
+          "href": "https://37signals.com/16"
+        },
+        {
+          "text": "17. Politicking",
+          "href": "https://37signals.com/17"
+        },
+        {
+          "text": "18. Two tokens of customer service",
+          "href": "https://37signals.com/18"
+        },
+        {
+          "text": "19. Pay people, not addresses",
+          "href": "https://37signals.com/19"
+        },
+        {
+          "text": "20. Small tech",
+          "href": "https://37signals.com/20"
+        },
+        {
+          "text": "21. Know no",
+          "href": "https://37signals.com/21"
+        },
+        {
+          "text": "22. Stayups",
+          "href": "https://37signals.com/22"
+        },
+        {
+          "text": "23. Thoughting vs. thinking",
+          "href": "https://37signals.com/23"
+        },
+        {
+          "text": "24. Fixed",
+          "href": "https://37signals.com/24"
+        },
+        {
+          "text": "25. Disagree and commit",
+          "href": "https://37signals.com/25"
+        },
+        {
+          "text": "26. Kick in the face, kick in the ass",
+          "href": "https://37signals.com/26"
+        },
+        {
+          "text": "27. Broadly speaking",
+          "href": "https://37signals.com/27"
+        },
+        {
+          "text": "28. Shots on goals",
+          "href": "https://37signals.com/28"
+        },
+        {
+          "text": "29. JOMO not FOMO",
+          "href": "https://37signals.com/29"
+        },
+        {
+          "text": "30. Miscommunication problems",
+          "href": "https://37signals.com/30"
+        },
+        {
+          "text": "31. Easy?",
+          "href": "https://37signals.com/31"
+        },
+        {
+          "text": "32. Ruby on Rails",
+          "href": "https://37signals.com/32"
+        },
+        {
+          "text": "33. Planning is guessing",
+          "href": "https://37signals.com/33"
+        },
+        {
+          "text": "34. Sleep on it",
+          "href": "https://37signals.com/34"
+        },
+        {
+          "text": "35. Companies aren\u2019t families",
+          "href": "https://37signals.com/35"
+        },
+        {
+          "text": "36. Context > consistency",
+          "href": "https://37signals.com/36"
+        },
+        {
+          "text": "37. What\u2019s in a name?",
+          "href": "https://37signals.com/37"
+        }
+      ],
+      "textStart": "Menu\n00.\nStart here\n\nWelcome. This site is a catalog of ideas \u2014 signals \u2014 that drive us. We\u2019re best known for making Basecamp, HEY, Omarchy Linux, ONCE, writing business and software books (Getting Real, REWORK, REMOTE, It Doesn\u2019t Have to Be Crazy at Work, and Shape Up), and inve"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "thought-light-default",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollH": 6374,
+  "url": "https://37signals.com/seven-shipping-principles",
+  "theme": "139, 119, 255",
+  "capturedAt": "2026-11-21T15:41:46.547Z",
+  "themePinned": "--rgb-theme-3"
+}
