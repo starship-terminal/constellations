@@ -1,0 +1,142 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.dagnedover.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewportScale": 1
+  },
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(102, 102, 102)",
+    "fontFamily": "nimbus-sans, \"Trebuchet MS\", sans-serif",
+    "fontSize": "12px",
+    "lineHeight": "18px",
+    "fontWeight": "400"
+  },
+  "promoHome": {
+    "backgroundColor": "rgb(255, 54, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "12px",
+    "fontWeight": "700",
+    "height": "38px"
+  },
+  "promoProduct": {
+    "backgroundColor": "rgb(51, 51, 51)",
+    "color": "rgb(255, 255, 255)",
+    "height": "38px"
+  },
+  "nav": {
+    "height": "71px",
+    "homeLinkColor": "rgb(255, 255, 255)",
+    "productLinkColor": "rgb(51, 51, 51)",
+    "fontFamily": "nimbus-sans-condensed, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "900",
+    "textTransform": "uppercase"
+  },
+  "logo": {
+    "fillOnHero": "rgb(255, 255, 255)",
+    "width": "192px",
+    "height": "20px"
+  },
+  "heroPill": {
+    "backgroundColor": "rgb(237, 255, 44)",
+    "color": "rgb(51, 51, 51)",
+    "borderRadius": "25px",
+    "height": "42px",
+    "fontSize": "14px",
+    "fontWeight": "700",
+    "letterSpacing": "2px",
+    "padding": "14px 50px"
+  },
+  "shopAllTitle": {
+    "color": "rgb(51, 51, 51)",
+    "fontFamily": "nimbus-sans-condensed, Times, serif",
+    "fontSize": "40px",
+    "fontWeight": "900"
+  },
+  "productTitle": {
+    "color": "rgb(51, 51, 51)",
+    "fontFamily": "nimbus-sans-condensed, Times, serif",
+    "fontSize": "28px",
+    "fontWeight": "900",
+    "textTransform": "uppercase"
+  },
+  "productPrice": {
+    "color": "rgb(51, 51, 51)",
+    "fontSize": "28px",
+    "fontWeight": "900"
+  },
+  "addToBag": {
+    "backgroundColor": "rgb(51, 51, 51)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "9999px",
+    "height": "46px",
+    "fontSize": "14px",
+    "fontWeight": "700",
+    "letterSpacing": "0.462px"
+  },
+  "sizeSelected": {
+    "backgroundColor": "rgb(51, 51, 51)",
+    "color": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(51, 51, 51)",
+    "borderRadius": "2px",
+    "height": "32px",
+    "padding": "8px 12px"
+  },
+  "sizeIdle": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(51, 51, 51)",
+    "border": "1px solid rgb(51, 51, 51)",
+    "borderRadius": "2px",
+    "height": "32px"
+  },
+  "badge": {
+    "backgroundColor": "rgb(255, 54, 0)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "0px 5px 5px 0px",
+    "padding": "5px 8px",
+    "fontSize": "12px"
+  },
+  "cardTitle": {
+    "color": "rgb(51, 51, 51)",
+    "fontFamily": "nimbus-sans, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "textTransform": "uppercase"
+  },
+  "cardPrice": {
+    "color": "rgb(51, 51, 51)",
+    "fontSize": "14px"
+  },
+  "struckPrice": {
+    "color": "rgb(51, 51, 51)",
+    "textDecoration": "line-through",
+    "fontSize": "12px"
+  },
+  "aboutDisplay": {
+    "color": "rgb(51, 51, 51)",
+    "fontFamily": "nimbus-sans-condensed, sans-serif",
+    "fontSize": "80.7px",
+    "fontWeight": "900"
+  },
+  "aboutBody": {
+    "color": "rgb(51, 51, 51)",
+    "fontFamily": "nimbus-sans, sans-serif",
+    "fontSize": "15px",
+    "fontWeight": "500",
+    "lineHeight": "28px"
+  },
+  "footerLink": {
+    "color": "rgb(102, 102, 102)",
+    "fontSize": "14px",
+    "fontWeight": "400"
+  },
+  "breadcrumb": {
+    "color": "rgb(153, 153, 153)",
+    "fontSize": "14px"
+  },
+  "quiet": "rgb(246, 246, 246)"
+}

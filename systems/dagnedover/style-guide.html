@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dagne Dover style guide</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #333333;
+      --text: #666666;
+      --on-ink: #ffffff;
+      --muted: #999999;
+      --orange: #ff3600;
+      --lime: #edff2c;
+      --quiet: #f6f6f6;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    header.promo {
+      height: 38px;
+      background: var(--orange);
+      color: var(--on-ink);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.04em;
+    }
+    main { padding: 32px 40px 64px; max-width: 960px; }
+    h1 {
+      font-family: "Arial Narrow", "Trebuchet MS", sans-serif;
+      font-weight: 900;
+      font-size: 40px;
+      color: var(--ink);
+      letter-spacing: 0;
+      margin: 0 0 8px;
+    }
+    p.note { color: var(--muted); margin: 0 0 28px; }
+    h2 {
+      font-size: 14px;
+      color: var(--ink);
+      margin: 28px 0 12px;
+    }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 120px; }
+    .chip { height: 48px; border: 1px solid var(--quiet); }
+    .name { margin-top: 6px; color: var(--ink); }
+    .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 46px;
+      padding: 0 28px;
+      border-radius: 9999px;
+      background: var(--ink);
+      color: var(--on-ink);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.462px;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      height: 42px;
+      padding: 0 50px;
+      border-radius: 25px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .size {
+      display: inline-flex;
+      align-items: center;
+      height: 32px;
+      padding: 0 12px;
+      border-radius: 2px;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .size.on { background: var(--ink); color: var(--on-ink); }
+    .badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--on-ink);
+      border-radius: 0 5px 5px 0;
+      padding: 5px 8px;
+      font-size: 12px;
+    }
+    .title {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--ink);
+      font-family: "Arial Narrow", "Trebuchet MS", sans-serif;
+    }
+    .struck { color: var(--ink); text-decoration: line-through; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header class="promo">THE GOOD GIFT GUIDE IS HERE. SHOP NOW</header>
+  <main>
+    <h1>DAGNE DOVER</h1>
+    <p class="note">Measured 2026-11-22. Trebuchet MS and Arial Narrow stand in for nimbus-sans. Font files are not in this package.</p>
+    <h2>Colour</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">Page #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#333333"></div><div class="name">Ink #333333</div></div>
+      <div class="swatch"><div class="chip" style="background:#666666"></div><div class="name">Text #666666</div></div>
+      <div class="swatch"><div class="chip" style="background:#999999"></div><div class="name">Muted #999999</div></div>
+      <div class="swatch"><div class="chip" style="background:#ff3600"></div><div class="name">Orange #ff3600</div></div>
+      <div class="swatch"><div class="chip" style="background:#edff2c"></div><div class="name">Lime #edff2c</div></div>
+      <div class="swatch"><div class="chip" style="background:#f6f6f6"></div><div class="name">Quiet #f6f6f6</div></div>
+    </div>
+    <h2>Controls</h2>
+    <div class="row">
+      <span class="pill">ADD TO BAG</span>
+      <span class="hero-pill">SHOP NOW</span>
+      <span class="size on">Small</span>
+      <span class="size">Medium</span>
+      <span class="badge">NEW</span>
+    </div>
+    <h2>Type</h2>
+    <p class="title">LANDON NEOPRENE CARRYALL BAG <span style="float:right">$315</span></p>
+    <p>Body copy is 12px #666666. A struck compare price is <span class="struck">$105</span> in the same ink.</p>
+  </main>
+</body>
+</html>
