@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-11-21",
+  "sourceUrl": "https://www.forhers.com/",
+  "note": "Homepage, signed out, 390 CSS px at devicePixelRatio 2. Menu closed.",
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "devicePixelRatio": 2
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "theme": "light",
+  "signedIn": false
+}
