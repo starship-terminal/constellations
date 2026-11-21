@@ -2952,9 +2952,9 @@
       "description": "Bitcoin & Cryptocurrency Exchange",
       "status": "captured",
       "package": "systems/kraken",
-      "notes": "https://www.kraken.com/sign-in asks for email or username and password, or Google or Apple. No code was sent.",
+      "notes": "https://www.kraken.com/sign-in asks for email or username and password, or Google or Apple. No code was sent. Public walk 2026-11-21: the public site tree is in systems/kraken/site-tree.md. https://www.kraken.com/ loaded. Sign in still stops at https://www.kraken.com/sign-in with an empty email or username and password, or Google, Apple, or passkey. Sign up stops at https://www.kraken.com/sign-up. Nothing was typed. No identity provider was clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1675 at e0f8af8339a6. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 9
     },
     {
