@@ -1,0 +1,208 @@
+{
+  "light": {
+    "scheme": "light",
+    "data": {
+      "spans": [
+        {
+          "text": "Track Nutrition with Foodnoms",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "sans-serif",
+          "size": "24px",
+          "weight": "700",
+          "lh": "normal",
+          "ls": "normal",
+          "radius": "0px",
+          "pad": "0px 0px 0px 0px",
+          "h": 172,
+          "w": 1200,
+          "display": "block"
+        }
+      ],
+      "ctaBits": [
+        {
+          "text": "Get the App ↗",
+          "color": "rgb(0, 0, 238)",
+          "bg": "color(display-p3 0.972549 0.384 0.18)",
+          "font": "sans-serif",
+          "size": "12px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "radius": "20px",
+          "pad": "12px 18px 12px 18px",
+          "h": 40,
+          "w": 144,
+          "display": "flex"
+        },
+        {
+          "text": "Get the App ↗",
+          "color": "rgb(0, 0, 238)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "sans-serif",
+          "size": "12px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "radius": "0px",
+          "pad": "0px 0px 0px 0px",
+          "h": 16,
+          "w": 108,
+          "display": "flex"
+        },
+        {
+          "text": "Get the App ↗",
+          "color": "color(display-p3 1 1 1)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Aquawax Pro DemiBold\", \"Aquawax Pro DemiBold Placeholder\", sans-serif",
+          "size": "16px",
+          "weight": "600",
+          "lh": "16px",
+          "ls": "normal",
+          "radius": "0px",
+          "pad": "0px 0px 0px 0px",
+          "h": 16,
+          "w": 108,
+          "display": "block"
+        }
+      ],
+      "allColored": [],
+      "title": "Foodnoms | Simple Food & Nutrition Tracker App"
+    },
+    "hover": [
+      {
+        "tag": "A",
+        "text": "Get the App ↗",
+        "color": "rgb(0, 0, 238)",
+        "bg": "color(display-p3 0.984314 0.631373 0.509804)",
+        "font": "sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "radius": "20px"
+      },
+      {
+        "tag": "DIV",
+        "text": "Get the App ↗",
+        "color": "rgb(0, 0, 238)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "radius": "0px"
+      },
+      {
+        "tag": "P",
+        "text": "Get the App ↗",
+        "color": "color(display-p3 1 1 1)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Aquawax Pro DemiBold\", \"Aquawax Pro DemiBold Placeholder\", sans-serif",
+        "size": "16px",
+        "weight": "600",
+        "radius": "0px"
+      }
+    ]
+  },
+  "dark": {
+    "scheme": "dark",
+    "data": {
+      "spans": [
+        {
+          "text": "Track Nutrition with Foodnoms",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "sans-serif",
+          "size": "24px",
+          "weight": "700",
+          "lh": "normal",
+          "ls": "normal",
+          "radius": "0px",
+          "pad": "0px 0px 0px 0px",
+          "h": 172,
+          "w": 1200,
+          "display": "block"
+        }
+      ],
+      "ctaBits": [
+        {
+          "text": "Get the App ↗",
+          "color": "rgb(0, 0, 238)",
+          "bg": "color(display-p3 0.972549 0.384 0.18)",
+          "font": "sans-serif",
+          "size": "12px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "radius": "20px",
+          "pad": "12px 18px 12px 18px",
+          "h": 40,
+          "w": 144,
+          "display": "flex"
+        },
+        {
+          "text": "Get the App ↗",
+          "color": "rgb(0, 0, 238)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "sans-serif",
+          "size": "12px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "radius": "0px",
+          "pad": "0px 0px 0px 0px",
+          "h": 16,
+          "w": 108,
+          "display": "flex"
+        },
+        {
+          "text": "Get the App ↗",
+          "color": "color(display-p3 1 1 1)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "font": "\"Aquawax Pro DemiBold\", \"Aquawax Pro DemiBold Placeholder\", sans-serif",
+          "size": "16px",
+          "weight": "600",
+          "lh": "16px",
+          "ls": "normal",
+          "radius": "0px",
+          "pad": "0px 0px 0px 0px",
+          "h": 16,
+          "w": 108,
+          "display": "block"
+        }
+      ],
+      "allColored": [],
+      "title": "Foodnoms | Simple Food & Nutrition Tracker App"
+    },
+    "hover": [
+      {
+        "tag": "A",
+        "text": "Get the App ↗",
+        "color": "rgb(0, 0, 238)",
+        "bg": "color(display-p3 0.584314 0.231373 0.109804)",
+        "font": "sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "radius": "20px"
+      },
+      {
+        "tag": "DIV",
+        "text": "Get the App ↗",
+        "color": "rgb(0, 0, 238)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "radius": "0px"
+      },
+      {
+        "tag": "P",
+        "text": "Get the App ↗",
+        "color": "color(display-p3 1 1 1)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Aquawax Pro DemiBold\", \"Aquawax Pro DemiBold Placeholder\", sans-serif",
+        "size": "16px",
+        "weight": "600",
+        "radius": "0px"
+      }
+    ]
+  }
+}
