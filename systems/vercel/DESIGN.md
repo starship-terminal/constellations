@@ -158,7 +158,7 @@ Corner radii from `core.radius`: `sm` 6px, `md` 8px, `pill` 9999px.
 
 2 components from the `component` tokens of the `dark` set, keeping only the properties DESIGN.md defines.
 
-Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -170,7 +170,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. Light theme exists as a Geist theme switcher at https://vercel.com/geist/theme-switcher and was not opened, so there is no light token set. Primary buttons on marketing and login are light gray (`#ededed`) on black, not the blue `--geist-success` (`#0070f3`). Link and focus are `--ds-blue-900` (`#47a8ff`). The email field's own radius is 0. The 8px radius is on the wrap, whose ring is `rgba(255, 255, 255, 0.14)`. `--ds-gray-alpha-400` (`#ffffff24`) is the nearest named step, and the token stores that named step. Pricing `h1` weight computed as 450, which is not one of the `--font-weight-*` steps. Screenshot folders are empty on purpose.
+The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. Light theme exists as a Geist theme switcher at https://vercel.com/geist/theme-switcher and was not opened, so there is no light token set. Primary buttons on marketing and login are light gray (`#ededed`) on black, not the blue `--geist-success` (`#0070f3`). Link and focus are `--ds-blue-900` (`#47a8ff`). The email field's own radius is 0. The 8px radius is on the wrap, whose ring is `rgba(255, 255, 255, 0.14)`. `--ds-gray-alpha-400` (`#ffffff24`) is the nearest named step, and the token stores that named step. Pricing `h1` weight computed as 450, which is not one of the `--font-weight-*` steps. The 2026-11-19 public pass has no frames. The 2026-11-21 dashboard frames are quantized, so read colours from tokens.json, not from those PNGs. The preview tool reported a 1280 x 800 pane after the 1440 x 900 resize. `window.innerWidth` then measured 1440 and `window.innerHeight` measured 900. Phone PNGs are 780 x 1688. The accessibility tree reported a 390 x 878 box. Trust the `window` measurement and the PNG size.
 
 ### Do and don't (from README.md)
 
@@ -178,4 +178,5 @@ The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as 
 - **Use the 1px gray ring for secondary actions.** "Log In" and "Continue with Google" sit on `#0a0a0a` with a `rgb(46, 46, 46)` ring, which matches `--ds-gray-400`. [components.md](components.md) records that ring.
 - **Keep login signed out.** https://vercel.com/login offers email, Google, GitHub, ChatGPT, SAML SSO, and Passkey. Do not invent a dashboard behind it. [patterns.md](patterns.md) records what was not entered.
 - **Use GeistSans for UI and Geist Mono for code.** The marketing `h1` is 64px weight 400 with letter-spacing `-3.84px`. [tokens.json](tokens.json) keeps both faces.
-- **Do not invent a 1440 screenshot.** The preview browser produced no frames. [screenshots/](screenshots/) says so.
+- **Do not invent a 1440 marketing screenshot.** The 2026-11-19 pass produced no public frames. The 1440 and 390 frames in [screenshots/](screenshots/) are the signed-in dashboard.
+- **Do not treat the signed-in walk as a finished dashboard capture.** Most sidebar and settings destinations were listed and not opened. Create, Buy, Upgrade, and Save were not submitted. [login-review.json](login-review.json) lists them.

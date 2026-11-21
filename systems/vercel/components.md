@@ -50,4 +50,5 @@ Docs `pre` on https://vercel.com/docs computes Geist Mono at 16px, background `r
 - The login email field was not filled. Signup was not submitted.
 - Google, GitHub, ChatGPT, SAML SSO, and Passkey were not followed.
 - No card, paid team, or org SSO was entered.
-- No screenshots or crops. `preview_snapshot` returned "The browser is not producing screenshot frames".
+- No public screenshots or crops. `preview_snapshot` returned "The browser is not producing screenshot frames" on 2026-11-19.
+- The 2026-11-21 dashboard frames are viewport shots, not crops. Save on Team Settings matches the light 32px face. The domains search field is 36px on `rgb(26, 26, 26)`. Those values are recorded in [login-review.json](login-review.json) and were not written into tokens.json.
