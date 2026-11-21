@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:13:25.473Z",
+  "capturedAt": "2026-11-21T12:42:06.929Z",
   "screenshot": "org-home-light-full.png",
   "sanitizedSourceUrl": "https://organizations.headspace.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8699
+      "height": 8678
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 8699
+    "height": 8678
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 8699
+      "height": 8678
     },
     "basis": "fullPage"
   },

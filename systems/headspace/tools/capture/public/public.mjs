@@ -88,6 +88,23 @@ async function megaMenu(p, S) {
   await wait(p, 600);
 }
 
+// Footer language buttons sit in a collapsed chooser (0x0 until opened).
+// Scroll the footer into the viewport and photograph the control. Do not
+// click: a click would choose a language.
+async function languageDialog(p, S) {
+  const footer = p.locator('footer');
+  if (!(await footer.count())) { log('  ! footer missing'); return; }
+  await p.evaluate(() => {
+    const footer = document.querySelector('footer');
+    if (footer) footer.scrollIntoView({ block: 'end' });
+  });
+  await p.mouse.move(8, 8);
+  await wait(p, 500);
+  await S.view('language');
+  await p.evaluate(() => scrollTo(0, 0));
+  await wait(p, 200);
+}
+
 const BOTH = async (p, S) => { await S.view('default'); await S.full(); };
 
 const desktop = {
@@ -95,6 +112,7 @@ const desktop = {
     await S.view('default');
     await step('menu', () => megaMenu(p, S));
     await S.full();
+    await step('language', () => languageDialog(p, S));
   } },
   app: { url: BASE + '/app', wait: 8000, run: BOTH },
   meditation: { url: BASE + '/meditation', wait: 7000, run: BOTH },
