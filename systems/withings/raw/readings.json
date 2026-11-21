@@ -1,0 +1,73 @@
+{
+  "captured": "2026-11-22",
+  "href": "https://www.withings.com/en-us",
+  "landedFrom": "https://www.withings.com",
+  "region": "United States storefront, en-us, prices USD. Geo modal said the visit was from Singapore. The modal was closed. Country was not changed.",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(15, 15, 15)",
+    "fontFamily": "Aeonik, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400"
+  },
+  "header": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(15, 15, 15)",
+    "height": 70,
+    "navSize": "16px",
+    "navWeight": "400"
+  },
+  "announcement": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "borderRadius": "6px",
+    "height": 36,
+    "text": "Black Friday : Get $30 off for every $300 spent on eligible products with code BLACKFRIDAY26, up to a maximum discount of $120 per order.*"
+  },
+  "shopNow": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "fontWeight": "500",
+    "borderRadius": "16px",
+    "width": 121,
+    "height": 51,
+    "label": "Shop now"
+  },
+  "product": {
+    "href": "https://www.withings.com/en-us/products/bodyscan-2-black",
+    "title": "BodyScan 2 Black",
+    "price": {
+      "text": "$599.95 USD",
+      "color": "rgb(15, 15, 15)",
+      "fontSize": "20px",
+      "fontWeight": "500"
+    },
+    "bag": {
+      "label": "Add to cart",
+      "backgroundColor": "rgb(103, 132, 254)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "borderRadius": "16px",
+      "width": 430,
+      "height": 56
+    }
+  },
+  "declared": {
+    "--color-primary": "rgb(103 132 254 / 1.0)",
+    "--color-primary-button-background": "rgb(103 132 254 / 1.0)",
+    "--color-primary-hover": "rgb(85 112 224 / 1.0)",
+    "--color-black": "#0f0f0f",
+    "--color-white": "#ffffff",
+    "--color-sand": "#f2eeea",
+    "--color-violet": "#6784fe",
+    "--color-compare-at-price": "#d93421",
+    "--color-neutral": "#c9c9c9",
+    "--style-border-radius-buttons-primary": "16px",
+    "--font-body--family": "'Aeonik', sans-serif"
+  }
+}
