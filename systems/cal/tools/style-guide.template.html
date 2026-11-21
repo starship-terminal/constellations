@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cal.com style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: calSans, "calSans Fallback", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #242424); background: var(--page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 700 40px/1.1 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 600 13px/1 var(--sg-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted, #676b75); margin: 48px 0 12px; border-bottom: 1px solid var(--border, #e5e7eb); padding-bottom: 8px; }
+p { max-width: 68ch; }
+.note { font-size: 13px; color: var(--muted, #676b75); }
+.nav { display: flex; align-items: center; gap: 8px; height: 64px; padding: 0 16px; border: 1px solid var(--border, #e5e7eb); border-radius: 16px; background: var(--page, #fff); }
+.nav .wm { font-weight: 700; font-size: 18px; margin-right: 8px; }
+.nav .sp { flex: 1; }
+.pill { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 10px; font-size: 14px; font-weight: 500; color: var(--text, #242424); }
+.cta { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 12px; background: var(--accent, #242424); color: var(--on-accent, #fff); font-size: 14px; font-weight: 500; border: 1px solid var(--accent, #242424); }
+.hero { padding: 48px 8px 16px; font: 700 64px/1.08 var(--sg-sans); letter-spacing: -0.02em; }
+.hero small { display: block; margin-top: 12px; font: 500 20px/1.4 var(--sg-sans); color: var(--muted, #676b75); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 132px; }
+.sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border, #e5e7eb); }
+.sw b, .sw span { display: block; font: 500 11px/1.3 var(--sg-mono); }
+.sw span { color: var(--muted, #676b75); font-weight: 400; }
+.card { border: 1px solid var(--border, #e5e7eb); border-radius: 16px; padding: 16px; background: var(--surface, #fff); }
+.field { height: 36px; border-radius: 10px; border: 1px solid var(--border, #e5e7eb); background: var(--field, #f3f4f6); padding: 0 12px; display: flex; align-items: center; color: var(--muted, #676b75); font-size: 14px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cal.com style guide</h1>
+  <p class="note">Generated from tokens.json. Swatches are the declared tokens. The boxed nav is a reconstruction drawn with those tokens, not a screenshot. The public site paints light only.</p>
+
+  <h2>Colour roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>var(--page)</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>var(--text)</span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><b>muted</b><span>var(--muted)</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>var(--border)</span></div>
+    <div class="sw"><i style="background:var(--accent-brand)"></i><b>accent-brand</b><span>var(--accent-brand)</span></div>
+    <div class="sw"><i style="background:var(--success)"></i><b>success</b><span>var(--success)</span></div>
+    <div class="sw"><i style="background:var(--warning)"></i><b>warning</b><span>var(--warning)</span></div>
+    <div class="sw"><i style="background:var(--danger)"></i><b>danger</b><span>var(--danger)</span></div>
+    <div class="sw"><i style="background:var(--info)"></i><b>info</b><span>var(--info)</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <p>A white sticky bar, 64px tall, with a Cal Sans wordmark, text triggers, a quiet Sign in link and one ink pill. The orange brand accent is reserved for status chips such as Booked, not the primary action.</p>
+  <div class="nav"><span class="wm">Cal.com</span><span class="pill">Products</span><span class="pill">Pricing</span><span class="sp"></span><span class="pill">Sign in</span><span class="cta">Get started</span></div>
+  <div class="hero">Where people meet<small>Scheduling software for online bookings.</small></div>
+
+  <h2>Field</h2>
+  <div class="row">
+    <div class="card" style="width:320px">
+      <div class="field">Email</div>
+      <p class="note">The login field was measured, not filled. Radius 10px, height 30px on the auth card.</p>
+    </div>
+  </div>
+  <p class="note">Token data for scripts: /*TOKENS*/null</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cal.com style guide</title>
+<style>
+:root {
+  --color-cal-bg: #ffffff;
+  --color-cal-border: #d1d5db;
+  --color-cal-brand: #111827;
+  --color-cal-text: #3c3e44;
+  --color-hp-accent: #cc4510;
+  --color-hp-accent-ink: #a83a0c;
+  --color-hp-body: #374151;
+  --color-hp-chip: #f3f4f6;
+  --color-hp-field: #f3f4f6;
+  --color-hp-hairline: rgba(15, 35, 75, 0.071);
+  --color-hp-highlight: #ffffff;
+  --color-hp-ink: #242424;
+  --color-hp-ink-2: #292929;
+  --color-hp-line: #e5e7eb;
+  --color-hp-line-2: #dee1e6;
+  --color-hp-mac-close: #ff5f57;
+  --color-hp-mac-minimize: #febc2e;
+  --color-hp-mac-zoom: #28c840;
+  --color-hp-muted: #6a6e78;
+  --color-hp-on-ink: #ffffff;
+  --color-hp-page: #ffffff;
+  --color-hp-paper: #e3dccd;
+  --color-hp-plate: #f3f4f6;
+  --color-hp-plate-line: rgba(15, 35, 75, 0.059);
+  --color-hp-print-ink: #292929;
+  --color-hp-print-label: #292929;
+  --color-hp-print-paper: #fbfaf7;
+  --color-hp-quiet: #858993;
+  --color-hp-raised: #ffffff;
+  --color-hp-slot: #dee1e6;
+  --color-hp-slot-selected: #242424;
+  --color-hp-subtle: #5f6570;
+  --color-hp-surface: #ffffff;
+  --color-hp-surface-2: #f9fafb;
+  --color-hp-text: #111111;
+  --color-hp-tint: #0f234b;
+  --color-hp-well: #e5e7eb;
+  --color-ramp-gray-100: #f3f4f6;
+  --color-ramp-gray-200: #e5e7eb;
+  --color-ramp-gray-300: #d1d5dc;
+  --color-ramp-gray-400: #99a1af;
+  --color-ramp-gray-50: #f9fafb;
+  --color-ramp-gray-500: #6a7282;
+  --color-ramp-gray-600: #4a5565;
+  --color-ramp-gray-700: #364153;
+  --color-ramp-gray-800: #1e2939;
+  --color-ramp-gray-900: #101828;
+  --color-ramp-neutral-100: #f5f5f5;
+  --color-ramp-neutral-200: #e5e5e5;
+  --color-ramp-neutral-400: #a1a1a1;
+  --color-ramp-neutral-50: #fafafa;
+  --color-ramp-neutral-500: #737373;
+  --color-ramp-neutral-600: #525252;
+  --color-ramp-neutral-800: #262626;
+  --color-ramp-neutral-900: #171717;
+  --color-ramp-neutral-950: #0a0a0a;
+  --color-ramp-emerald-100: #d0fae5;
+  --color-ramp-emerald-200: #a4f4cf;
+  --color-ramp-emerald-300: #5ee9b5;
+  --color-ramp-emerald-400: #00d294;
+  --color-ramp-emerald-50: #ecfdf5;
+  --color-ramp-emerald-500: #00bb7f;
+  --color-ramp-emerald-600: #009767;
+  --color-ramp-emerald-700: #007956;
+  --color-ramp-emerald-800: #005f46;
+  --color-ramp-emerald-900: #004e3b;
+  --color-ramp-emerald-950: #002c22;
+  --color-ramp-red-100: #ffe2e2;
+  --color-ramp-red-200: #ffcaca;
+  --color-ramp-red-300: #ffa3a3;
+  --color-ramp-red-400: #ff6568;
+  --color-ramp-red-50: #fef2f2;
+  --color-ramp-red-500: #fb2c36;
+  --color-ramp-red-600: #e40014;
+  --color-ramp-red-700: #bf000f;
+  --color-ramp-red-800: #9f0712;
+  --color-ramp-red-900: #82181a;
+  --color-ramp-amber-100: #fef3c6;
+  --color-ramp-amber-200: #fee685;
+  --color-ramp-amber-300: #ffd236;
+  --color-ramp-amber-400: #fcbb00;
+  --color-ramp-amber-500: #f99c00;
+  --color-ramp-amber-600: #dd7400;
+  --color-ramp-amber-700: #b75000;
+  --color-ramp-amber-800: #953d00;
+  --color-ramp-amber-950: #461901;
+  --color-ramp-blue-100: #dbeafe;
+  --color-ramp-blue-200: #bedbff;
+  --color-ramp-blue-300: #90c5ff;
+  --color-ramp-blue-400: #54a2ff;
+  --color-ramp-blue-500: #3080ff;
+  --color-ramp-blue-600: #155dfc;
+  --color-ramp-blue-700: #1447e6;
+  --color-ramp-blue-800: #193cb8;
+  --color-ramp-blue-950: #162456;
+  --color-ramp-orange-200: #ffd7a8;
+  --color-ramp-orange-400: #ff8b1a;
+  --color-ramp-orange-50: #fff7ed;
+  --color-ramp-orange-500: #fe6e00;
+  --color-ramp-orange-600: #f05100;
+  --color-ramp-orange-700: #c53c00;
+  --color-ramp-orange-800: #9f2d00;
+  --color-ramp-orange-900: #7e2a0c;
+  --font-family-sans: calSans, "calSans Fallback", system-ui, sans-serif;
+  --font-family-display: calSans, "calSans Fallback", system-ui, sans-serif;
+  --font-family-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --radius-xs: 0.125rem;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 0.625rem;
+  --radius-xl: 14px;
+  --radius-2xl: 18px;
+  --radius-3xl: 22px;
+  --radius-nav-pill: 10px;
+  --radius-cta: 12px;
+  --radius-field: 10px;
+  --space-unit: .25rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-9: 2.25rem;
+  --space-10: 2.5rem;
+  --shadow-md: 0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a;
+  --shadow-lg: 0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a;
+  --motion-ease-hp: cubic-bezier(0.19, 1, 0.22, 1);
+  --motion-ease-hp-fly: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-menu: 200ms;
+  --typography-xs: var(--font-weight-normal) .75rem/1.5 var(--font-family-sans);
+  --typography-sm: var(--font-weight-normal) .875rem/1.5 var(--font-family-sans);
+  --typography-base: var(--font-weight-normal) 1rem/1.5 var(--font-family-sans);
+  --typography-lg: var(--font-weight-normal) 1.125rem/1.5 var(--font-family-sans);
+  --typography-xl: var(--font-weight-normal) 1.25rem/1.5 var(--font-family-sans);
+  --typography-2xl: var(--font-weight-normal) 1.5rem/1.5 var(--font-family-sans);
+  --typography-3xl: var(--font-weight-normal) 1.875rem/1.5 var(--font-family-sans);
+  --typography-4xl: var(--font-weight-normal) 2.25rem/1.5 var(--font-family-sans);
+  --typography-5xl: var(--font-weight-normal) 3rem/1.5 var(--font-family-sans);
+  --typography-6xl: var(--font-weight-normal) 3.75rem/1.5 var(--font-family-sans);
+  --typography-7xl: var(--font-weight-normal) 4.5rem/1.5 var(--font-family-sans);
+  --typography-display: var(--font-weight-bold) 80px/86.4px var(--font-family-sans);
+  --page: #ffffff;
+  --surface: #ffffff;
+  --raised: #ffffff;
+  --text: #242424;
+  --muted: #676b75;
+  --accent: #242424;
+  --on-accent: #ffffff;
+  --link: #242424;
+  --border: #e5e7eb;
+  --border-strong: #9ca3b0;
+  --focus: #9ca3af;
+  --field: #f3f4f6;
+  --accent-brand: #cc4510;
+  --scrim: #070a0d;
+  --success: #00bb7f;
+  --warning: #f99c00;
+  --danger: #e40014;
+  --info: #3080ff;
+  --success-subtle: #e4fbed;
+  --warning-subtle: #ffedd6;
+  --danger-subtle: #f9e3e1;
+  --info-subtle: #dde7fd;
+  --disabled: #9ca3b0;
+  --sg-sans: calSans, "calSans Fallback", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #242424); background: var(--page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 700 40px/1.1 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 600 13px/1 var(--sg-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted, #676b75); margin: 48px 0 12px; border-bottom: 1px solid var(--border, #e5e7eb); padding-bottom: 8px; }
+p { max-width: 68ch; }
+.note { font-size: 13px; color: var(--muted, #676b75); }
+.nav { display: flex; align-items: center; gap: 8px; height: 64px; padding: 0 16px; border: 1px solid var(--border, #e5e7eb); border-radius: 16px; background: var(--page, #fff); }
+.nav .wm { font-weight: 700; font-size: 18px; margin-right: 8px; }
+.nav .sp { flex: 1; }
+.pill { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 10px; font-size: 14px; font-weight: 500; color: var(--text, #242424); }
+.cta { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 12px; background: var(--accent, #242424); color: var(--on-accent, #fff); font-size: 14px; font-weight: 500; border: 1px solid var(--accent, #242424); }
+.hero { padding: 48px 8px 16px; font: 700 64px/1.08 var(--sg-sans); letter-spacing: -0.02em; }
+.hero small { display: block; margin-top: 12px; font: 500 20px/1.4 var(--sg-sans); color: var(--muted, #676b75); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 132px; }
+.sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border, #e5e7eb); }
+.sw b, .sw span { display: block; font: 500 11px/1.3 var(--sg-mono); }
+.sw span { color: var(--muted, #676b75); font-weight: 400; }
+.card { border: 1px solid var(--border, #e5e7eb); border-radius: 16px; padding: 16px; background: var(--surface, #fff); }
+.field { height: 36px; border-radius: 10px; border: 1px solid var(--border, #e5e7eb); background: var(--field, #f3f4f6); padding: 0 12px; display: flex; align-items: center; color: var(--muted, #676b75); font-size: 14px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cal.com style guide</h1>
+  <p class="note">Generated from tokens.json. Swatches are the declared tokens. The boxed nav is a reconstruction drawn with those tokens, not a screenshot. The public site paints light only.</p>
+
+  <h2>Colour roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>var(--page)</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>var(--text)</span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><b>muted</b><span>var(--muted)</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>var(--border)</span></div>
+    <div class="sw"><i style="background:var(--accent-brand)"></i><b>accent-brand</b><span>var(--accent-brand)</span></div>
+    <div class="sw"><i style="background:var(--success)"></i><b>success</b><span>var(--success)</span></div>
+    <div class="sw"><i style="background:var(--warning)"></i><b>warning</b><span>var(--warning)</span></div>
+    <div class="sw"><i style="background:var(--danger)"></i><b>danger</b><span>var(--danger)</span></div>
+    <div class="sw"><i style="background:var(--info)"></i><b>info</b><span>var(--info)</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <p>A white sticky bar, 64px tall, with a Cal Sans wordmark, text triggers, a quiet Sign in link and one ink pill. The orange brand accent is reserved for status chips such as Booked, not the primary action.</p>
+  <div class="nav"><span class="wm">Cal.com</span><span class="pill">Products</span><span class="pill">Pricing</span><span class="sp"></span><span class="pill">Sign in</span><span class="cta">Get started</span></div>
+  <div class="hero">Where people meet<small>Scheduling software for online bookings.</small></div>
+
+  <h2>Field</h2>
+  <div class="row">
+    <div class="card" style="width:320px">
+      <div class="field">Email</div>
+      <p class="note">The login field was measured, not filled. Radius 10px, height 30px on the auth card.</p>
+    </div>
+  </div>
+  <p class="note">Token data for scripts: {"core":{"color":{"cal":{"bg":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg)"},"border":{"v":"#d1d5db","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-border)"},"brand":{"v":"#111827","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-brand)"},"text":{"v":"#3c3e44","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-text)"}},"hp":{"accent":{"v":"#cc4510","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-accent)"},"accent.ink":{"v":"#a83a0c","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-accent-ink)"},"body":{"v":"#374151","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-body)"},"chip":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-chip)"},"field":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-field)"},"hairline":{"v":"rgba(15, 35, 75, 0.071)","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-hairline)"},"highlight":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-highlight)"},"ink":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-ink)"},"ink.2":{"v":"#292929","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-ink-2)"},"line":{"v":"#e5e7eb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-line)"},"line.2":{"v":"#dee1e6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-line-2)"},"mac.close":{"v":"#ff5f57","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-mac-close)"},"mac.minimize":{"v":"#febc2e","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-mac-minimize)"},"mac.zoom":{"v":"#28c840","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-mac-zoom)"},"muted":{"v":"#6a6e78","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-muted)"},"on.ink":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-on-ink)"},"page":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-page)"},"paper":{"v":"#e3dccd","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-paper)"},"plate":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-plate)"},"plate.line":{"v":"rgba(15, 35, 75, 0.059)","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-plate-line)"},"print.ink":{"v":"#292929","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-print-ink)"},"print.label":{"v":"#292929","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-print-label)"},"print.paper":{"v":"#fbfaf7","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-print-paper)"},"quiet":{"v":"#858993","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-quiet)"},"raised":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-raised)"},"slot":{"v":"#dee1e6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-slot)"},"slot.selected":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-slot-selected)"},"subtle":{"v":"#5f6570","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-subtle)"},"surface":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-surface)"},"surface.2":{"v":"#f9fafb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-surface-2)"},"text":{"v":"#111111","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-text)"},"tint":{"v":"#0f234b","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-tint)"},"well":{"v":"#e5e7eb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-well)"}},"ramp":{"gray":{"100":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-100)"},"200":{"v":"#e5e7eb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-200)"},"300":{"v":"#d1d5dc","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-300)"},"400":{"v":"#99a1af","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-400)"},"50":{"v":"#f9fafb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-50)"},"500":{"v":"#6a7282","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-500)"},"600":{"v":"#4a5565","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-600)"},"700":{"v":"#364153","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-700)"},"800":{"v":"#1e2939","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-800)"},"900":{"v":"#101828","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-900)"}},"neutral":{"100":{"v":"#f5f5f5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-100)"},"200":{"v":"#e5e5e5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-200)"},"400":{"v":"#a1a1a1","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-400)"},"50":{"v":"#fafafa","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-50)"},"500":{"v":"#737373","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-500)"},"600":{"v":"#525252","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-600)"},"800":{"v":"#262626","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-800)"},"900":{"v":"#171717","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-900)"},"950":{"v":"#0a0a0a","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-950)"}},"emerald":{"100":{"v":"#d0fae5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-100)"},"200":{"v":"#a4f4cf","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-200)"},"300":{"v":"#5ee9b5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-300)"},"400":{"v":"#00d294","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-400)"},"50":{"v":"#ecfdf5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-50)"},"500":{"v":"#00bb7f","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-500)"},"600":{"v":"#009767","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-600)"},"700":{"v":"#007956","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-700)"},"800":{"v":"#005f46","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-800)"},"900":{"v":"#004e3b","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-900)"},"950":{"v":"#002c22","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-950)"}},"red":{"100":{"v":"#ffe2e2","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-100)"},"200":{"v":"#ffcaca","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-200)"},"300":{"v":"#ffa3a3","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-300)"},"400":{"v":"#ff6568","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-400)"},"50":{"v":"#fef2f2","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-50)"},"500":{"v":"#fb2c36","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-500)"},"600":{"v":"#e40014","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-600)"},"700":{"v":"#bf000f","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-700)"},"800":{"v":"#9f0712","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-800)"},"900":{"v":"#82181a","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-900)"}},"amber":{"100":{"v":"#fef3c6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-100)"},"200":{"v":"#fee685","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-200)"},"300":{"v":"#ffd236","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-300)"},"400":{"v":"#fcbb00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-400)"},"500":{"v":"#f99c00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-500)"},"600":{"v":"#dd7400","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-600)"},"700":{"v":"#b75000","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-700)"},"800":{"v":"#953d00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-800)"},"950":{"v":"#461901","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-950)"}},"blue":{"100":{"v":"#dbeafe","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-100)"},"200":{"v":"#bedbff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-200)"},"300":{"v":"#90c5ff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-300)"},"400":{"v":"#54a2ff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-400)"},"500":{"v":"#3080ff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-500)"},"600":{"v":"#155dfc","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-600)"},"700":{"v":"#1447e6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-700)"},"800":{"v":"#193cb8","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-800)"},"950":{"v":"#162456","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-950)"}},"orange":{"200":{"v":"#ffd7a8","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-200)"},"400":{"v":"#ff8b1a","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-400)"},"50":{"v":"#fff7ed","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-50)"},"500":{"v":"#fe6e00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-500)"},"600":{"v":"#f05100","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-600)"},"700":{"v":"#c53c00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-700)"},"800":{"v":"#9f2d00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-800)"},"900":{"v":"#7e2a0c","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-900)"}}}},"font":{"family":{"sans":{"v":"calSans, \"calSans Fallback\", system-ui, sans-serif","t":"fontFamily","s":"raw/components-computed.json, computed style, 1440x900, signed out; computed fontFamily on body and h1. Declared --font-sans is var(--font-cal-sans), system-ui, sans-serif."},"display":{"v":"calSans, \"calSans Fallback\", system-ui, sans-serif","t":"fontFamily","s":"raw/components-computed.json, computed style, 1440x900, signed out; h1 computed fontFamily. Declared --font-display aliases --font-cal-sans."},"mono":{"v":"ui-monospace, \"SF Mono\", Menlo, Consolas, monospace","t":"fontFamily","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-mono)"},"serif":{"v":"ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif","t":"fontFamily","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-serif)"}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-weight-normal = 400)"},"medium":{"v":500,"t":"fontWeight","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-weight-medium = 500)"},"semibold":{"v":600,"t":"fontWeight","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-weight-semibold = 600)"},"bold":{"v":700,"t":"fontWeight","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-weight-bold = 700)"}}},"radius":{"xs":{"v":"0.125rem","t":"dimension","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-xs)"},"sm":{"v":"6px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-sm calc(var(--radius) - 4px))"},"md":{"v":"8px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-md calc(var(--radius) * .8))"},"lg":{"v":"0.625rem","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-lg var(--radius))"},"xl":{"v":"14px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-xl calc(var(--radius) * 1.4))"},"2xl":{"v":"18px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-2xl calc(var(--radius) * 1.8))"},"3xl":{"v":"22px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-3xl calc(var(--radius) * 2.2))"},"nav-pill":{"v":"10px","t":"dimension","s":"raw/components-computed.json, computed style, 1440x900, signed out; nav-link borderRadius"},"cta":{"v":"12px","t":"dimension","s":"raw/components-computed.json, computed style, 1440x900, signed out; nav-cta borderRadius"},"field":{"v":"10px","t":"dimension","s":"raw/components-computed.json, computed style, 1440x900, signed out; login-email borderRadius, look-only"}},"space":{"unit":{"v":".25rem","t":"dimension","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--spacing)"},"1":{"v":"0.25rem","t":"dimension","s":"Derived from --spacing 0.25rem x 1, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"2":{"v":"0.5rem","t":"dimension","s":"Derived from --spacing 0.25rem x 2, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"3":{"v":"0.75rem","t":"dimension","s":"Derived from --spacing 0.25rem x 3, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"4":{"v":"1rem","t":"dimension","s":"Derived from --spacing 0.25rem x 4, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"5":{"v":"1.25rem","t":"dimension","s":"Derived from --spacing 0.25rem x 5, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"6":{"v":"1.5rem","t":"dimension","s":"Derived from --spacing 0.25rem x 6, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"7":{"v":"1.75rem","t":"dimension","s":"Derived from --spacing 0.25rem x 7, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"8":{"v":"2rem","t":"dimension","s":"Derived from --spacing 0.25rem x 8, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"9":{"v":"2.25rem","t":"dimension","s":"Derived from --spacing 0.25rem x 9, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"10":{"v":"2.5rem","t":"dimension","s":"Derived from --spacing 0.25rem x 10, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"}},"shadow":{"md":{"v":"0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a","t":"shadow","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--shadow-md)"},"lg":{"v":"0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a","t":"shadow","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--shadow-lg)"}},"motion":{"ease-hp":{"v":[0.19,1,0.22,1],"t":"cubicBezier","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--ease-hp cubic-bezier(.19, 1, .22, 1))"},"ease-hp-fly":{"v":[0.22,1,0.36,1],"t":"cubicBezier","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--ease-hp-fly)"},"ease-out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--ease-out)"},"menu":{"v":"200ms","t":"duration","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out; mega-menu transition duration-200 on the dialog class"}},"typography":{"xs":{"v":{"fontFamily":"{font.family.sans}","fontSize":".75rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-xs + --text-xs--line-height)"},"sm":{"v":{"fontFamily":"{font.family.sans}","fontSize":".875rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-sm + --text-sm--line-height)"},"base":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-base + --text-base--line-height)"},"lg":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1.125rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-lg + --text-lg--line-height)"},"xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1.25rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-xl + --text-xl--line-height)"},"2xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1.5rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-2xl + --text-2xl--line-height)"},"3xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1.875rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-3xl + --text-3xl--line-height)"},"4xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"2.25rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-4xl + --text-4xl--line-height)"},"5xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"3rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-5xl + --text-5xl--line-height)"},"6xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"3.75rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-6xl + --text-6xl--line-height)"},"7xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"4.5rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-7xl + --text-7xl--line-height)"},"display":{"v":{"fontFamily":"{font.family.sans}","fontSize":"80px","fontWeight":"{font.weight.bold}","lineHeight":"86.4px","letterSpacing":"-0.8px"},"t":"typography","s":"raw/components-computed.json, computed style, 1440x900, signed out; h1 on https://cal.com/"}}},"light":{"page":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--background)"},"surface":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--card)"},"raised":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-raised)"},"text":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--foreground)"},"muted":{"v":"#676b75","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--muted-foreground)"},"accent":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--primary)"},"on-accent":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-brand-text)"},"link":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--foreground)"},"border":{"v":"#e5e7eb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--border)"},"border-strong":{"v":"#9ca3b0","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-border-emphasis)"},"focus":{"v":"#9ca3af","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--ring)"},"field":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-field)"},"accent-brand":{"v":"#cc4510","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-accent)"},"scrim":{"v":"#070a0d","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-inverted)"},"success":{"v":"#00bb7f","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out; alias --success -> --color-emerald-500 (--success)"},"warning":{"v":"#f99c00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out; alias --warning -> --color-amber-500 (--warning)"},"danger":{"v":"#e40014","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--destructive)"},"info":{"v":"#3080ff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out; alias --info -> --color-blue-500 (--info)"},"success-subtle":{"v":"#e4fbed","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-success)"},"warning-subtle":{"v":"#ffedd6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-attention)"},"danger-subtle":{"v":"#f9e3e1","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-error)"},"info-subtle":{"v":"#dde7fd","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-info)"},"disabled":{"v":"#9ca3b0","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-text-muted, the muted ink used for quiet labels; no separate disabled token was declared)"}},"dark":{}}</p>
+</main>
+</body>
+</html>

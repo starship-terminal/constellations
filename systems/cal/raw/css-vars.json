@@ -1,0 +1,5172 @@
+{
+ "capturedAt": "2026-11-21T00:47:03.613Z",
+ "source": "https://cal.com/ live stylesheets, signed out, 1440x900",
+ "brand": {
+  "themeColor": [],
+  "maskIcon": null,
+  "colorScheme": "light",
+  "htmlClass": "font-sans calsans_6837c036-module__uW_Brq__variable",
+  "fonts": [
+   "calSans",
+   "calSans Fallback"
+  ]
+ },
+ "sheetCount": 8,
+ "ruleCount": 2072,
+ "nameCount": 743,
+ "errors": [],
+ "fonts": [
+  {
+   "file": "https://cal.com/_site/_next/static/chunks/0--5ty8efiu93.css",
+   "font-family": "calSans",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400 700"
+  },
+  {
+   "file": "https://cal.com/_site/_next/static/chunks/0--5ty8efiu93.css",
+   "font-family": "\"calSans Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "83.88%",
+   "descent-override": "22.83%",
+   "line-gap-override": "0%",
+   "size-adjust": "107.3%"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/0jrf661upfaxz.css",
+   "font-family": "fontHeading",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "block",
+   "font-weight": "400 700",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/0jrf661upfaxz.css",
+   "font-family": "\"fontHeading Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "83.85%",
+   "descent-override": "22.83%",
+   "line-gap-override": "0%",
+   "size-adjust": "107.33%"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1ks5jpwez5bwl.css",
+   "font-family": "fontSans",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400 700",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1ks5jpwez5bwl.css",
+   "font-family": "\"fontSans Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "83.85%",
+   "descent-override": "22.83%",
+   "line-gap-override": "0%",
+   "size-adjust": "107.33%"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1b1oamgsqupy_.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1b1oamgsqupy_.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1b1oamgsqupy_.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1b1oamgsqupy_.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1b1oamgsqupy_.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1b1oamgsqupy_.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1b1oamgsqupy_.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://cal.com/_next/static/chunks/1b1oamgsqupy_.css",
+   "font-family": "\"Inter Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "90.44%",
+   "descent-override": "22.52%",
+   "line-gap-override": "0%",
+   "size-adjust": "107.12%"
+  }
+ ],
+ "bins": {
+  "theme": 389,
+  "app": 203,
+  "tailwind": 151,
+  "utility": 0
+ },
+ "theme": [
+  {
+   "name": "--accent",
+   "value": "#f3f4f6",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--accent-foreground",
+   "value": "#242424",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--animate-bounce",
+   "value": "bounce 1s infinite",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--animate-hp-ring",
+   "value": "hp-ring 8s linear forwards",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--animate-hp-shimmer",
+   "value": "hp-shimmer 1.2s linear infinite",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--animate-hp-slot-in",
+   "value": "hp-slot-in .4s cubic-bezier(.19, 1, .22, 1) backwards",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--animate-hp-swap",
+   "value": "hp-swap .2s ease-out both",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--animate-ping",
+   "value": "ping 1s cubic-bezier(0, 0, .2, 1) infinite",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--animate-pulse",
+   "value": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--animate-spin",
+   "value": "spin 1s linear infinite",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--background",
+   "value": "#fff",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--border",
+   "value": "#e5e7eb",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg",
+   "value": "#fff",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-attention",
+   "value": "#ffedd6",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-brand",
+   "value": "#1d2735",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-brand-emphasis",
+   "value": "#3c3e44",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-brand-muted",
+   "value": "#eeeff2",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-dark-error",
+   "value": "#772522",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-emphasis",
+   "value": "#e5e7eb",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-error",
+   "value": "#f9e3e1",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-info",
+   "value": "#dde7fd",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-inverted",
+   "value": "#070a0d",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-launch-dark",
+   "value": "#0d0c27",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-muted",
+   "value": "#f6f7f9",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-primary",
+   "value": "#1d2735",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-primary-emphasis",
+   "value": "#3c3e44",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-primary-muted",
+   "value": "#eeeff2",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-semantic-attention-emphasis",
+   "value": "#9b3412",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-semantic-attention-subtle",
+   "value": "#ffedd6",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-semantic-error-emphasis",
+   "value": "#641717",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-semantic-error-subtle",
+   "value": "#fee1e1",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-semantic-info-emphasis",
+   "value": "#0d1473",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-semantic-info-subtle",
+   "value": "#f1f7fe",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-semantic-success-emphasis",
+   "value": "#19a974",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-semantic-success-subtle",
+   "value": "#e4f7f3",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-subtle",
+   "value": "#eeeff2",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-success",
+   "value": "#e4fbed",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-1-emphasis",
+   "value": "#ec4699",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-1-subtle",
+   "value": "#fce8f4",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-2-emphasis",
+   "value": "#6634ef",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-2-subtle",
+   "value": "#dfd4fc",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-3-emphasis",
+   "value": "#4252ff",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-3-subtle",
+   "value": "#d4e3fc",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-4-emphasis",
+   "value": "#19a974",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-4-subtle",
+   "value": "#e4f7f3",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-5-emphasis",
+   "value": "#e7b008",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-5-subtle",
+   "value": "#fef9c3",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-6-emphasis",
+   "value": "#f97415",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-6-subtle",
+   "value": "#ffedd6",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-7-emphasis",
+   "value": "#ef4343",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-bg-visualization-7-subtle",
+   "value": "#fec8c8",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-border",
+   "value": "#d1d5db",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-border-booker",
+   "value": "var(--cal-border-subtle)",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-border-emphasis",
+   "value": "#9ca3b0",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-border-error",
+   "value": "#fec8c8",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-border-muted",
+   "value": "#eeeff2",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-border-semantic-attention-subtle",
+   "value": "#fed6a9",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-border-semantic-error",
+   "value": "#fec8c8",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-border-semantic-error-subtle",
+   "value": "#fec8c8",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-border-subtle",
+   "value": "#e5e7eb",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-brand",
+   "value": "#111827",
+   "selector": ".\\[--cal-brand\\:\\#111827\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--cal-brand-emphasis",
+   "value": "#101010",
+   "selector": ".\\[--cal-brand-emphasis\\:\\#101010\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--cal-brand-subtle",
+   "value": "#9ca3af",
+   "selector": ".\\[--cal-brand-subtle\\:\\#9CA3AF\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--cal-brand-text",
+   "value": "#fff",
+   "selector": ".\\[--cal-brand-text\\:\\#FFFFFF\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--cal-text",
+   "value": "#3c3e44",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-attention",
+   "value": "#74331b",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-emphasis",
+   "value": "#070a0d",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-error",
+   "value": "#811d1d",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-info",
+   "value": "#243c84",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-inverted",
+   "value": "#fff",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-muted",
+   "value": "#9ca3b0",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-semantic-attention",
+   "value": "#9b3412",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-semantic-attention-emphasis",
+   "value": "#7c3403",
+   "selector": ".dark",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-semantic-error",
+   "value": "#641717",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-semantic-error-emphasis",
+   "value": "#750a0a",
+   "selector": ".dark",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-semantic-info",
+   "value": "#0d1473",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-semantic-info-emphasis",
+   "value": "#06327a",
+   "selector": ".dark",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-semantic-success",
+   "value": "#096738",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-semantic-success-emphasis",
+   "value": "#126d34",
+   "selector": ".dark",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-subtle",
+   "value": "#6b7280",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-success",
+   "value": "#285239",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-visualization-1",
+   "value": "#720d3c",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-visualization-2",
+   "value": "#40067a",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-visualization-3",
+   "value": "#06327a",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-visualization-4",
+   "value": "#126d34",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-visualization-5",
+   "value": "#7b5d04",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-visualization-6",
+   "value": "#7c3403",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--cal-text-visualization-7",
+   "value": "#750a0a",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--card",
+   "value": "#fff",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--card-foreground",
+   "value": "#242424",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--card-radius",
+   "value": "calc(var(--card-size)/2)",
+   "selector": ".\\[--card-radius\\:calc\\(var\\(--card-size\\)\\/2\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--card-size",
+   "value": "4rem",
+   "selector": ".\\[--card-size\\:4rem\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--color",
+   "value": "var(--muted-foreground)",
+   "selector": ".\\[--color\\:var\\(--muted-foreground\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--color-amber-100",
+   "value": "#fef3c6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-amber-200",
+   "value": "#fee685",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-amber-300",
+   "value": "#ffd236",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-amber-400",
+   "value": "#fcbb00",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-amber-500",
+   "value": "#f99c00",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-amber-600",
+   "value": "#dd7400",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-amber-700",
+   "value": "#b75000",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-amber-800",
+   "value": "#953d00",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-amber-950",
+   "value": "#461901",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-background",
+   "value": "var(--background)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-black",
+   "value": "#000",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-blue-100",
+   "value": "#dbeafe",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-blue-200",
+   "value": "#bedbff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-blue-300",
+   "value": "#90c5ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-blue-400",
+   "value": "#54a2ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-blue-500",
+   "value": "#3080ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-blue-600",
+   "value": "#155dfc",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-blue-700",
+   "value": "#1447e6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-blue-800",
+   "value": "#193cb8",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-blue-950",
+   "value": "#162456",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-border",
+   "value": "var(--border)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-cyan-900",
+   "value": "#104e64",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-100",
+   "value": "#d0fae5",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-200",
+   "value": "#a4f4cf",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-300",
+   "value": "#5ee9b5",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-400",
+   "value": "#00d294",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-50",
+   "value": "#ecfdf5",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-500",
+   "value": "#00bb7f",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-600",
+   "value": "#009767",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-700",
+   "value": "#007956",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-800",
+   "value": "#005f46",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-900",
+   "value": "#004e3b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-emerald-950",
+   "value": "#002c22",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-foreground",
+   "value": "var(--foreground)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-100",
+   "value": "#f3f4f6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-200",
+   "value": "#e5e7eb",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-300",
+   "value": "#d1d5dc",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-400",
+   "value": "#99a1af",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-50",
+   "value": "#f9fafb",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-500",
+   "value": "#6a7282",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-600",
+   "value": "#4a5565",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-700",
+   "value": "#364153",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-800",
+   "value": "#1e2939",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-gray-900",
+   "value": "#101828",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-200",
+   "value": "#b9f8cf",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-300",
+   "value": "#7bf1a8",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-400",
+   "value": "#05df72",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-50",
+   "value": "#f0fdf4",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-500",
+   "value": "#00c758",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-600",
+   "value": "#00a544",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-700",
+   "value": "#008138",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-800",
+   "value": "#016630",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-900",
+   "value": "#0d542b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-green-950",
+   "value": "#032e15",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-accent",
+   "value": "#cc4510",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-accent-ink",
+   "value": "#a83a0c",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-body",
+   "value": "#374151",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-chip",
+   "value": "#f3f4f6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-field",
+   "value": "#f3f4f6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-hairline",
+   "value": "#0f234b12",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-highlight",
+   "value": "#fff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-ink",
+   "value": "#242424",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-ink-2",
+   "value": "#292929",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-line",
+   "value": "#e5e7eb",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-line-2",
+   "value": "#dee1e6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-mac-close",
+   "value": "#ff5f57",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-mac-minimize",
+   "value": "#febc2e",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-mac-zoom",
+   "value": "#28c840",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-muted",
+   "value": "#6a6e78",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-on-ink",
+   "value": "#fff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-page",
+   "value": "#fff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-paper",
+   "value": "#e3dccd",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-plate",
+   "value": "#f3f4f6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-plate-line",
+   "value": "#0f234b0f",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-print-ink",
+   "value": "#292929",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-print-label",
+   "value": "#292929",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-print-paper",
+   "value": "#fbfaf7",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-quiet",
+   "value": "#858993",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-raised",
+   "value": "#fff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-slot",
+   "value": "#dee1e6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-slot-selected",
+   "value": "#242424",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-subtle",
+   "value": "#5f6570",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-surface",
+   "value": "#fff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-surface-2",
+   "value": "#f9fafb",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-text",
+   "value": "#111",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-tint",
+   "value": "#0f234b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-hp-well",
+   "value": "#e5e7eb",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-indigo-200",
+   "value": "#c7d2ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-indigo-300",
+   "value": "#a4b3ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-indigo-400",
+   "value": "#7d87ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-indigo-50",
+   "value": "#eef2ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-indigo-500",
+   "value": "#625fff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-indigo-600",
+   "value": "#4f39f6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-indigo-900",
+   "value": "#312c85",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-indigo-950",
+   "value": "#1e1a4d",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-info-foreground",
+   "value": "var(--info-foreground)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-muted",
+   "value": "var(--muted)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-muted-foreground",
+   "value": "var(--muted-foreground)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-neutral-100",
+   "value": "#f5f5f5",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-neutral-200",
+   "value": "#e5e5e5",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-neutral-400",
+   "value": "#a1a1a1",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-neutral-50",
+   "value": "#fafafa",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-neutral-500",
+   "value": "#737373",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-neutral-600",
+   "value": "#525252",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-neutral-800",
+   "value": "#262626",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-neutral-900",
+   "value": "#171717",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-neutral-950",
+   "value": "#0a0a0a",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-orange-200",
+   "value": "#ffd7a8",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-orange-400",
+   "value": "#ff8b1a",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-orange-50",
+   "value": "#fff7ed",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-orange-500",
+   "value": "#fe6e00",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-orange-600",
+   "value": "#f05100",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-orange-700",
+   "value": "#c53c00",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-orange-800",
+   "value": "#9f2d00",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-orange-900",
+   "value": "#7e2a0c",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-pink-500",
+   "value": "#f6339a",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-purple-200",
+   "value": "#e9d5ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-purple-50",
+   "value": "#faf5ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-purple-500",
+   "value": "#ac4bff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-purple-800",
+   "value": "#6e11b0",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-purple-900",
+   "value": "#59168b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-100",
+   "value": "#ffe2e2",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-200",
+   "value": "#ffcaca",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-300",
+   "value": "#ffa3a3",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-400",
+   "value": "#ff6568",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-50",
+   "value": "#fef2f2",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-500",
+   "value": "#fb2c36",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-600",
+   "value": "#e40014",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-700",
+   "value": "#bf000f",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-800",
+   "value": "#9f0712",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-red-900",
+   "value": "#82181a",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-100",
+   "value": "#ffe4e6",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-200",
+   "value": "#ffccd3",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-300",
+   "value": "#ffa2ae",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-400",
+   "value": "#ff667f",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-50",
+   "value": "#fff1f2",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-500",
+   "value": "#ff2357",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-600",
+   "value": "#e70044",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-700",
+   "value": "#c20039",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-800",
+   "value": "#a30037",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-900",
+   "value": "#8b0836",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-rose-950",
+   "value": "#4d0218",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-sky-100",
+   "value": "#dff2fe",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-sky-200",
+   "value": "#b8e6fe",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-sky-300",
+   "value": "#77d4ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-sky-400",
+   "value": "#00bcfe",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-sky-600",
+   "value": "#0084cc",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-slate-100",
+   "value": "#f1f5f9",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-slate-400",
+   "value": "#90a1b9",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-slate-500",
+   "value": "#62748e",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-slate-900",
+   "value": "#0f172b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-slate-950",
+   "value": "#020618",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-stone-200",
+   "value": "#e7e5e4",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-stone-400",
+   "value": "#a6a09b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-stone-50",
+   "value": "#fafaf9",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-stone-500",
+   "value": "#79716b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-stone-700",
+   "value": "#44403b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-stone-800",
+   "value": "#292524",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-stone-900",
+   "value": "#1c1917",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-stone-950",
+   "value": "#0c0a09",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-success",
+   "value": "var(--success)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-teal-600",
+   "value": "#009588",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-100",
+   "value": "#ede9fe",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-200",
+   "value": "#ddd6ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-300",
+   "value": "#c4b4ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-400",
+   "value": "#a685ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-50",
+   "value": "#f5f3ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-500",
+   "value": "#8d54ff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-600",
+   "value": "#7f22fe",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-800",
+   "value": "#5d0ec0",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-900",
+   "value": "#4d179a",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-violet-950",
+   "value": "#2f0d68",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-white",
+   "value": "#fff",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-yellow-200",
+   "value": "#fff085",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-yellow-300",
+   "value": "#ffe02a",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-yellow-400",
+   "value": "#fac800",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-yellow-50",
+   "value": "#fefce8",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-yellow-500",
+   "value": "#edb200",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-yellow-800",
+   "value": "#874b00",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-yellow-950",
+   "value": "#432004",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-zinc-100",
+   "value": "#f4f4f5",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-zinc-500",
+   "value": "#71717b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--color-zinc-900",
+   "value": "#18181b",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--destructive",
+   "value": "#e40014",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--destructive-foreground",
+   "value": "var(--color-red-700)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--ease-hp",
+   "value": "cubic-bezier(.19, 1, .22, 1)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--ease-hp-fly",
+   "value": "cubic-bezier(.22, 1, .36, 1)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--ease-hp-quad",
+   "value": "cubic-bezier(.25, .46, .45, .94)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--ease-in",
+   "value": "cubic-bezier(.4, 0, 1, 1)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--ease-in-out",
+   "value": "cubic-bezier(.4, 0, .2, 1)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--ease-out",
+   "value": "cubic-bezier(0, 0, .2, 1)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-cal-sans",
+   "value": "\"calSans\", \"calSans Fallback\"",
+   "selector": ".calsans_6837c036-module__uW_Brq__variable",
+   "file": "https://cal.com/_site/_next/static/chunks/0--5ty8efiu93.css",
+   "context": []
+  },
+  {
+   "name": "--font-demo",
+   "value": "var(--font-cal-sans-demo), ui-sans-serif, system-ui, sans-serif",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-display",
+   "value": "var(--font-cal-sans), system-ui, sans-serif",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-glyphs",
+   "value": "var(--font-cal-sans-full), var(--font-cal-sans-demo), ui-sans-serif, sans-serif",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-heading",
+   "value": "var(--font-sans)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-hp-display",
+   "value": "var(--font-cal-sans), system-ui, sans-serif",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-hp-mac",
+   "value": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"SF Pro\", system-ui, sans-serif",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-hp-win",
+   "value": "\"Segoe UI Variable Text\", \"Segoe UI Variable\", \"Segoe UI\", system-ui, sans-serif",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-mono",
+   "value": "ui-monospace, \"SF Mono\", Menlo, Consolas, monospace",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-sans",
+   "value": "var(--font-cal-sans), system-ui, sans-serif",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-serif",
+   "value": "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-weight-bold",
+   "value": "700",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-weight-light",
+   "value": "300",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-weight-medium",
+   "value": "500",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-weight-normal",
+   "value": "400",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--font-weight-semibold",
+   "value": "600",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--foreground",
+   "value": "#242424",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-bar",
+   "value": "#ffffff85",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-drop-lift",
+   "value": "drop-shadow(0 10px 14px #0000001f)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-material",
+   "value": "#f3f4f6bd",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-mica",
+   "value": "#f3f4f6e0",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-shadow-float",
+   "value": "0 0 0 1px #0f234b0f, 0 2px 6px -2px #0f234b14",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-shadow-lift",
+   "value": "0 0 0 1px #0f234b0f, 0 1px 2px #0f234b0a",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-shadow-plate",
+   "value": "inset 0 0 0 1px #0f234b0d",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-shadow-print",
+   "value": "0 1px 2px #0000000f, 0 10px 18px -10px #00000038",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-shadow-print-lift",
+   "value": "0 14px 22px -12px #0003",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-shadow-raised",
+   "value": "inset 0 1px 0 #fff, 0 0 0 1px #0f234b12, 0 1px 2px #0f234b0a",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-shadow-well",
+   "value": "inset 0 1px 3px #0f234b29, inset 0 0 0 1px #0f234b0d, 0 1px 0 #fff",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-shadow-window",
+   "value": "0 0 0 .5px #00000029, 0 1px 2px #0000000f, 0 24px 64px -8px #0f1e3252",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--hp-white-mark-invert",
+   "value": "1",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--muted",
+   "value": "#f3f4f6",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--muted-foreground",
+   "value": "#676b75",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--popover",
+   "value": "#fff",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--popover-foreground",
+   "value": "#242424",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--primary",
+   "value": "#242424",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--primary-foreground",
+   "value": "#fff",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--radius",
+   "value": ".625rem",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--radius-2xl",
+   "value": "calc(var(--radius) * 1.8)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--radius-3xl",
+   "value": "calc(var(--radius) * 2.2)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--radius-lg",
+   "value": "var(--radius)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--radius-md",
+   "value": "calc(var(--radius) * .8)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--radius-none",
+   "value": "0px",
+   "selector": ":root, :host, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--radius-sm",
+   "value": "calc(var(--radius) - 4px)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--radius-xl",
+   "value": "calc(var(--radius) * 1.4)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--radius-xs",
+   "value": ".125rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--ring",
+   "value": "#9ca3af",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--ring-gap",
+   "value": "2rem",
+   "selector": ".\\[--ring-gap\\:2rem\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--shadow-button-outline-red-focused",
+   "value": "var(--shadow-button-outline-red-focused)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-button-solid-brand-active",
+   "value": "var(--shadow-button-solid-brand-active)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-button-solid-brand-default",
+   "value": "var(--shadow-button-solid-brand-default)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-button-solid-brand-focused",
+   "value": "var(--shadow-button-solid-brand-focused)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-button-solid-brand-hover",
+   "value": "var(--shadow-button-solid-brand-hover)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-dropdown",
+   "value": "var(--shadow-dropdown)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-elevation-low",
+   "value": "var(--shadow-elevation-low)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-hp-float",
+   "value": "var(--hp-shadow-float)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-hp-lift",
+   "value": "var(--hp-shadow-lift)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-hp-plate",
+   "value": "var(--hp-shadow-plate)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-hp-print",
+   "value": "var(--hp-shadow-print)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-hp-raised",
+   "value": "var(--hp-shadow-raised)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-hp-well",
+   "value": "var(--hp-shadow-well)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-lg",
+   "value": "0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-md",
+   "value": "0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-outline-gray-active",
+   "value": "var(--shadow-outline-gray-active)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-outline-gray-focused",
+   "value": "var(--shadow-outline-gray-focused)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-outline-gray-hover",
+   "value": "var(--shadow-outline-gray-hover)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-outline-gray-rested",
+   "value": "var(--shadow-outline-gray-rested)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-outline-red-active",
+   "value": "var(--shadow-outline-red-active)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-outline-red-hover",
+   "value": "var(--shadow-outline-red-hover)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-outline-red-rested",
+   "value": "var(--shadow-outline-red-rested)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-solid-gray-active",
+   "value": "var(--shadow-solid-gray-active)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-solid-gray-hover",
+   "value": "var(--shadow-solid-gray-hover)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-solid-gray-rested",
+   "value": "var(--shadow-solid-gray-rested)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--shadow-switch-thumb",
+   "value": "var(--shadow-switch-thumb)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--sidebar",
+   "value": "#fafafa",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--sidebar-accent",
+   "value": "#f5f5f5",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--sidebar-accent-foreground",
+   "value": "#171717",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--sidebar-border",
+   "value": "#e5e5e5",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--sidebar-foreground",
+   "value": "#0a0a0a",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--sidebar-primary",
+   "value": "#171717",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--sidebar-primary-foreground",
+   "value": "#fafafa",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--sidebar-ring",
+   "value": "#a1a1a1",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--sidebar-width",
+   "value": "4rem",
+   "selector": ".\\[--sidebar-width\\:4rem\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--spacing",
+   "value": ".25rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-2xl",
+   "value": "1.5rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-2xl--line-height",
+   "value": "calc(2 / 1.5)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-3xl",
+   "value": "1.875rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-3xl--line-height",
+   "value": "calc(2.25 / 1.875)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-4xl",
+   "value": "2.25rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-4xl--line-height",
+   "value": "calc(2.5 / 2.25)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-5xl",
+   "value": "3rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-5xl--line-height",
+   "value": "1",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-6xl",
+   "value": "3.75rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-6xl--line-height",
+   "value": "1",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-7xl",
+   "value": "4.5rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-7xl--line-height",
+   "value": "1",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-base",
+   "value": "1rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-base--line-height",
+   "value": "calc(1.5 / 1)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-lg",
+   "value": "1.125rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-lg--line-height",
+   "value": "calc(1.75 / 1.125)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-sm",
+   "value": ".875rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-sm--line-height",
+   "value": "calc(1.25 / .875)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-xl",
+   "value": "1.25rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-xl--line-height",
+   "value": "calc(1.75 / 1.25)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-xs",
+   "value": ".75rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--text-xs--line-height",
+   "value": "calc(1 / .75)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  }
+ ],
+ "app": [
+  {
+   "name": "--_base",
+   "value": "currentColor",
+   "selector": ".shimmer",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--_highlight",
+   "value": "var(--shimmer-color,oklch(from currentColor l c h / calc(alpha* .2)))",
+   "selector": ".shimmer",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--_spread",
+   "value": "var(--shimmer-spread,calc(3ch + 40px))",
+   "selector": ".shimmer",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--ask-card",
+   "value": "var(--color-hp-raised)",
+   "selector": ".\\[--ask-card\\:var\\(--color-hp-raised\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--aspect-video",
+   "value": "16 / 9",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--avatar-group-cut-end",
+   "value": "calc(var(--avatar-group-size)*1.5 - var(--avatar-group-overlap))",
+   "selector": ".\\[--avatar-group-cut-end\\:calc\\(var\\(--avatar-group-size\\)\\*1\\.5-var\\(--avatar-group-overlap\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-cut-radius",
+   "value": "calc(var(--avatar-group-size)/2 + var(--avatar-group-gap))",
+   "selector": ".\\[--avatar-group-cut-radius\\:calc\\(var\\(--avatar-group-size\\)\\/2\\+var\\(--avatar-group-gap\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-cut-start",
+   "value": "calc(var(--avatar-group-overlap) - var(--avatar-group-size)/2)",
+   "selector": ".\\[--avatar-group-cut-start\\:calc\\(var\\(--avatar-group-overlap\\)-var\\(--avatar-group-size\\)\\/2\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-cut-x",
+   "value": "var(--avatar-group-cut-end)",
+   "selector": ".\\[--avatar-group-cut-x\\:var\\(--avatar-group-cut-end\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-gap",
+   "value": "var(--avatar-gap,calc(var(--avatar-group-size)/16))",
+   "selector": ".\\[--avatar-group-gap\\:var\\(--avatar-gap\\,calc\\(var\\(--avatar-group-size\\)\\/16\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-mask",
+   "value": "none",
+   "selector": ".\\[--avatar-group-mask\\:none\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-mask-position",
+   "value": "0 0,calc(var(--avatar-group-cut-x) - var(--avatar-group-cut-radius))50%",
+   "selector": ".\\[--avatar-group-mask-position\\:0_0\\,calc\\(var\\(--avatar-group-cut-x\\)-var\\(--avatar-group-cut-radius\\)\\)_50\\%\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-mask-size",
+   "value": "100% 100%,calc(var(--avatar-group-cut-radius)*2)calc(var(--avatar-group-cut-radius)*2)",
+   "selector": ".\\[--avatar-group-mask-size\\:100\\%_100\\%\\,calc\\(var\\(--avatar-group-cut-radius\\)\\*2\\)_calc\\(var\\(--avatar-group-cut-radius\\)\\*2\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-nudge",
+   "value": "var(--avatar-nudge,calc((var(--avatar-group-overlap) + var(--avatar-group-gap))*.3))",
+   "selector": ".\\[--avatar-group-nudge\\:var\\(--avatar-nudge\\,calc\\(\\(var\\(--avatar-group-overlap\\)\\+var\\(--avatar-group-gap\\)\\)\\*0\\.3\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-overlap",
+   "value": "var(--avatar-overlap,calc(var(--avatar-group-size)*.3))",
+   "selector": ".\\[--avatar-group-overlap\\:var\\(--avatar-overlap\\,calc\\(var\\(--avatar-group-size\\)\\*0\\.3\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-group-size",
+   "value": "var(--avatar-size,calc(var(--spacing)*8))",
+   "selector": ".\\[--avatar-group-size\\:var\\(--avatar-size\\,--spacing\\(8\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-overlap",
+   "value": "calc(var(--spacing)*1)",
+   "selector": ".\\[--avatar-overlap\\:--spacing\\(1\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--avatar-size",
+   "value": "calc(var(--spacing)*3)",
+   "selector": ".\\[--avatar-size\\:--spacing\\(3\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--bend",
+   "value": "0px",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--bleed",
+   "value": "40px",
+   "selector": ".\\[--bleed\\:40px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--blur",
+   "value": "6px",
+   "selector": ".\\[--blur\\:6px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--blur-2xl",
+   "value": "40px",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--blur-lg",
+   "value": "16px",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--blur-md",
+   "value": "12px",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--blur-sm",
+   "value": "8px",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--blur-xs",
+   "value": "4px",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--booker-main-width",
+   "value": "420px",
+   "selector": ".\\[--booker-main-width\\:420px\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--booker-meta-width",
+   "value": "0px",
+   "selector": ".\\[--booker-meta-width\\:0px\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--booker-side",
+   "value": "calc(var(--spacing) * 56)",
+   "selector": ".\\[--booker-side\\:--spacing\\(56\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--booker-timeslots-width",
+   "value": "240px",
+   "selector": ".\\[--booker-timeslots-width\\:240px\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--breakpoint-desktop",
+   "value": "1200px",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--breakpoint-lg",
+   "value": "64rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--breakpoint-tablet",
+   "value": "810px",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--calendar-dates-sticky-offset",
+   "value": "0px",
+   "selector": ".\\[--calendar-dates-sticky-offset\\:0px\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--calendar-offset-top",
+   "value": "28px",
+   "selector": ".scheduler-wrapper",
+   "file": "https://cal.com/_next/static/chunks/29d2nrz6qbbi_.css",
+   "context": []
+  },
+  {
+   "name": "--cell-size",
+   "value": "calc(var(--spacing) * 10)",
+   "selector": ".\\[--cell-size\\:--spacing\\(10\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--chart-1",
+   "value": "#203835",
+   "selector": ".\\[--chart-1\\:oklch\\(0\\.32_0\\.03_186\\.385\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--chart-2",
+   "value": "#6db5ab",
+   "selector": ".\\[--chart-2\\:oklch\\(0\\.722_0\\.074_184\\.698\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--chart-3",
+   "value": "#e68150",
+   "selector": ".\\[--chart-3\\:oklch\\(0\\.704_0\\.14_45\\.128\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--chart-4",
+   "value": "#cacacc",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-5",
+   "value": "#d73436",
+   "selector": ".\\[--chart-5\\:oklch\\(0\\.58_0\\.2_25\\.291\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--chart-background",
+   "value": "var(--color-hp-plate)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-brush-border",
+   "value": "var(--chart-grid)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-crosshair",
+   "value": "#2424244d",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-foreground",
+   "value": "var(--color-hp-ink)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-foreground-muted",
+   "value": "var(--color-hp-muted)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-grid",
+   "value": "#2424241a",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-indicator-color",
+   "value": "var(--color-hp-ink)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-indicator-secondary-color",
+   "value": "var(--color-hp-plate)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-label",
+   "value": "var(--color-hp-muted)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-line-primary",
+   "value": "var(--color-hp-ink)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-line-secondary",
+   "value": "var(--color-hp-muted)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-marker-background",
+   "value": "var(--color-hp-raised)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-marker-badge-background",
+   "value": "var(--color-hp-ink)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-marker-badge-foreground",
+   "value": "var(--color-hp-plate)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-marker-border",
+   "value": "var(--color-hp-hairline)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-marker-foreground",
+   "value": "var(--color-hp-ink)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-scale-01",
+   "value": "var(--foreground)",
+   "selector": ":root, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--chart-scale-02",
+   "value": "var(--foreground)",
+   "selector": ":root, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--chart-scale-03",
+   "value": "var(--foreground)",
+   "selector": ":root, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--chart-scale-04",
+   "value": "var(--foreground)",
+   "selector": ":root, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--chart-scale-05",
+   "value": "var(--foreground)",
+   "selector": ":root, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--chart-scale-pattern-color",
+   "value": "var(--border)",
+   "selector": ":root, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--chart-segment-background",
+   "value": "#2424240a",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-segment-line",
+   "value": "#24242440",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-tooltip-background",
+   "value": "var(--color-hp-raised)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-tooltip-foreground",
+   "value": "var(--color-hp-ink)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--chart-tooltip-muted",
+   "value": "var(--color-hp-muted)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--clip-bottom",
+   "value": "-1rem",
+   "selector": ".\\[--clip-bottom\\:-1rem\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--clip-top",
+   "value": "-1rem",
+   "selector": ".\\[--clip-top\\:-1rem\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--code",
+   "value": "var(--color-white)",
+   "selector": ":root, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--code-foreground",
+   "value": "var(--foreground)",
+   "selector": ":root, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--code-highlight",
+   "value": "#1111110a",
+   "selector": ":root, .light",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": []
+  },
+  {
+   "name": "--composer-max-height",
+   "value": "12rem",
+   "selector": ".\\[--composer-max-height\\:12rem\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--composer-max-rows",
+   "value": "4",
+   "selector": ".\\[--composer-max-rows\\:4\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--composer-min-rows",
+   "value": "1",
+   "selector": ":is(.\\*\\*\\:data-\\[slot\\=composer-input\\]\\:\\[--composer-min-rows\\:1\\] *)[data-slot=\"composer-input\"]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--composer-padding",
+   "value": "calc(var(--spacing)*2)",
+   "selector": ".\\[--composer-padding\\:--spacing\\(2\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--composer-radius",
+   "value": "999px",
+   "selector": ".\\[--composer-radius\\:999px\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--composer-scroll-padding",
+   "value": "var(--composer-padding)",
+   "selector": ".\\[--composer-scroll-padding\\:var\\(--composer-padding\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--container-2xl",
+   "value": "42rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-3xl",
+   "value": "48rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-4xl",
+   "value": "56rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-5xl",
+   "value": "64rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-6xl",
+   "value": "72rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-7xl",
+   "value": "80rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-lg",
+   "value": "32rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-md",
+   "value": "28rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-sm",
+   "value": "24rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-xl",
+   "value": "36rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--container-xs",
+   "value": "20rem",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--cover-fit-width",
+   "value": "360px",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--default-font-family",
+   "value": "var(--font-sans)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--default-mono-font-family",
+   "value": "var(--font-mono)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--default-transition-duration",
+   "value": ".15s",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--default-transition-timing-function",
+   "value": "cubic-bezier(.4, 0, .2, 1)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--disabled-gradient-background",
+   "value": "#f8f9fb",
+   "selector": ".\\[--disabled-gradient-background\\:\\#F8F9FB\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--disabled-gradient-foreground",
+   "value": "#e6e7eb",
+   "selector": ".\\[--disabled-gradient-foreground\\:\\#E6E7EB\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--discover-card-right",
+   "value": "calc(clamp(85px, 6vw, 110px) - 41px)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--discover-footer-background",
+   "value": "#161616",
+   "selector": ".dark\\:\\[--discover-footer-background\\:\\#161616\\]:is(.dark *):not(:where(.dark .light, .dark .light *))",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--drawer-height",
+   "value": "92dvh",
+   "selector": ".\\[--drawer-height\\:92dvh\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--drop-shadow-md",
+   "value": "0 3px 3px #0000001f",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--enterprise-icon",
+   "value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='11' x='3' y='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E\")",
+   "selector": ".enterprise-icon-lock",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--events-card-left",
+   "value": "calc((52% - 440px) / 2 + 20px)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--fade-size",
+   "value": "1.5rem",
+   "selector": ".\\[--fade-size\\:1\\.5rem\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--faq-row",
+   "value": "var(--color-hp-field)",
+   "selector": ".\\[--faq-row\\:var\\(--color-hp-field\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--faq-toggle",
+   "value": "var(--color-hp-raised)",
+   "selector": ".\\[--faq-toggle\\:var\\(--color-hp-raised\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--fill-attention",
+   "value": "var(--fill-attention)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--fill-brand",
+   "value": "var(--fill-brand)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--fill-default",
+   "value": "var(--fill-default)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--fill-emphasis",
+   "value": "var(--fill-emphasis)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--fill-error",
+   "value": "var(--fill-error)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--fill-info",
+   "value": "var(--fill-info)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--fill-inverted",
+   "value": "var(--fill-inverted)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--fill-muted",
+   "value": "var(--fill-muted)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--fill-subtle",
+   "value": "var(--fill-subtle)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--fill-success",
+   "value": "var(--fill-success)",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--first-ring",
+   "value": "calc(var(--card-radius) + var(--ring-gap))",
+   "selector": ".\\[--first-ring\\:calc\\(var\\(--card-radius\\)\\+var\\(--ring-gap\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--fs-label",
+   "value": "9px",
+   "selector": ".\\[--fs-label\\:9px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--fs-layout",
+   "value": "35px",
+   "selector": ".\\[--fs-layout\\:35px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--fs-set",
+   "value": "20px",
+   "selector": ".\\[--fs-set\\:20px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--gridDefaultSize",
+   "value": "1.75rem",
+   "selector": ".scheduler-wrapper",
+   "file": "https://cal.com/_next/static/chunks/29d2nrz6qbbi_.css",
+   "context": []
+  },
+  {
+   "name": "--gridMobileSize",
+   "value": "100vw",
+   "selector": ".scheduler-wrapper",
+   "file": "https://cal.com/_next/static/chunks/29d2nrz6qbbi_.css",
+   "context": []
+  },
+  {
+   "name": "--height",
+   "value": "max(0px,calc(var(--drawer-frontmost-height,var(--drawer-height))))",
+   "selector": ".\\[--height\\:max\\(0px\\,calc\\(var\\(--drawer-frontmost-height\\,var\\(--drawer-height\\)\\)\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--hoursInDay",
+   "value": "24",
+   "selector": ".scheduler-wrapper",
+   "file": "https://cal.com/_next/static/chunks/29d2nrz6qbbi_.css",
+   "context": []
+  },
+  {
+   "name": "--icon-size",
+   "value": "1.5rem",
+   "selector": ".\\[--icon-size\\:1\\.5rem\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--info",
+   "value": "var(--color-blue-500)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--info-foreground",
+   "value": "var(--color-blue-700)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--input",
+   "value": "#e5e7eb",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--inset",
+   "value": "0px",
+   "selector": ".\\[--inset\\:0px\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--k",
+   "value": "1",
+   "selector": ".\\[--k\\:1\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--keyboard-snap-offset",
+   "value": "max(0px,calc(var(--drawer-snap-point-offset,0px) - var(--drawer-keyboard-inset,0px)))",
+   "selector": ".\\[--keyboard-snap-offset\\:max\\(0px\\,calc\\(var\\(--drawer-snap-point-offset\\,0px\\)-var\\(--drawer-keyboard-inset\\,0px\\)\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--kloq-event-ink",
+   "value": "var(--color-amber-950)",
+   "selector": ".\\[--kloq-event-ink\\:var\\(--color-amber-950\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--kr",
+   "value": "var(--k)",
+   "selector": ".\\[--kr\\:var\\(--k\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--leading-normal",
+   "value": "1.5",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--leading-relaxed",
+   "value": "1.625",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--leading-snug",
+   "value": "1.375",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--leading-tight",
+   "value": "1.25",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--lightningcss-dark",
+   "value": "initial",
+   "selector": ".dark\\:scheme-dark:is(.dark *):not(:where(.dark .light, .dark .light *))",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--lightningcss-light",
+   "value": "",
+   "selector": ".dark\\:scheme-dark:is(.dark *):not(:where(.dark .light, .dark .light *))",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--line",
+   "value": "2px",
+   "selector": ".\\[--line\\:2px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--logo",
+   "value": "1.9",
+   "selector": ".\\[--logo\\:1\\.9\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--mask-distance",
+   "value": "72%",
+   "selector": ".\\[--mask-distance\\:72\\%\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--mask-peak",
+   "value": ".7",
+   "selector": ".\\[--mask-peak\\:0\\.7\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--minuteInHour",
+   "value": "60",
+   "selector": ".scheduler-wrapper",
+   "file": "https://cal.com/_next/static/chunks/29d2nrz6qbbi_.css",
+   "context": []
+  },
+  {
+   "name": "--number-flow-char-height",
+   "value": ".85em",
+   "selector": ".\\[--number-flow-char-height\\:0\\.85em\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--pad",
+   "value": "calc(var(--spacing) * 2)",
+   "selector": ".\\[--pad\\:--spacing\\(2\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--page-gutter",
+   "value": "14px",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--page-margin",
+   "value": "24px",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--page-max",
+   "value": "1320px",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--page-surface",
+   "value": "var(--background)",
+   "selector": "body",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--peek",
+   "value": "calc(calc(var(--spacing)*6) - 1px)",
+   "selector": ".\\[--peek\\:calc\\(--spacing\\(6\\)-1px\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--r",
+   "value": "14px",
+   "selector": ".story-neck",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--rail-bleed",
+   "value": "max(var(--rail-gutter),(100cqw - 1280px)/2 + var(--rail-gutter))",
+   "selector": ".\\[--rail-bleed\\:max\\(var\\(--rail-gutter\\)\\,\\(100cqw-1280px\\)\\/2\\+var\\(--rail-gutter\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--rail-gutter",
+   "value": "1rem",
+   "selector": ".\\[--rail-gutter\\:1rem\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--routing-availability-meta-width",
+   "value": "0px",
+   "selector": ".\\[--routing-availability-meta-width\\:0px\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--row",
+   "value": "60px",
+   "selector": ".\\[--row\\:60px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--rows",
+   "value": "5",
+   "selector": ".\\[--rows\\:5\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--s",
+   "value": "24px",
+   "selector": ".\\[--s\\:24px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--scale",
+   "value": "clamp(0,calc(var(--scale-base) + (var(--stack-step)*var(--stack-progress))),1)",
+   "selector": ".\\[--scale\\:clamp\\(0\\,calc\\(var\\(--scale-base\\)\\+\\(var\\(--stack-step\\)\\*var\\(--stack-progress\\)\\)\\)\\,1\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--scale-base",
+   "value": "calc(max(0,1 - (var(--nested-drawers)*var(--stack-step))))",
+   "selector": ".\\[--scale-base\\:calc\\(max\\(0\\,1-\\(var\\(--nested-drawers\\)\\*var\\(--stack-step\\)\\)\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--scroll-fade-b",
+   "value": "0px",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--scroll-fade-e",
+   "value": "0px",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--scroll-fade-mask",
+   "value": "initial",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--scroll-fade-s",
+   "value": "0px",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--scroll-fade-t",
+   "value": "0px",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--scrollbar-thumb",
+   "value": "#d1d5dc",
+   "selector": ".scroll-bar",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer components"
+   ]
+  },
+  {
+   "name": "--scrollbar-thumb-radius",
+   "value": "calc(var(--radius) - 2px)",
+   "selector": ".scroll-bar",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer components"
+   ]
+  },
+  {
+   "name": "--scrollbar-track",
+   "value": "transparent",
+   "selector": ".scroll-bar",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer components"
+   ]
+  },
+  {
+   "name": "--seam-x",
+   "value": "calc(100% - 5.5rem)",
+   "selector": ".\\[--seam-x\\:calc\\(100\\%-5\\.5rem\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--secondary",
+   "value": "#f3f4f6",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--secondary-foreground",
+   "value": "#242424",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--shift",
+   "value": "-90px",
+   "selector": ".\\[--shift\\:-90px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--shimmer-angle",
+   "value": "20deg",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--shimmer-image",
+   "value": "initial",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--shimmer-text-fill",
+   "value": "initial",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from re"
+   ]
+  },
+  {
+   "name": "--shimmering-color",
+   "value": "var(--foreground)",
+   "selector": ".\\[--shimmering-color\\:var\\(--foreground\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--shrink",
+   "value": "calc(1 - var(--scale))",
+   "selector": ".\\[--shrink\\:calc\\(1-var\\(--scale\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--skeleton-highlight",
+   "value": "#ffffffa3",
+   "selector": ".\\[--skeleton-highlight\\:--alpha\\(var\\(--color-white\\)\\/64\\%\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--stack-peek-offset",
+   "value": "max(0px,calc((var(--nested-drawers) - var(--stack-progress))*var(--peek)))",
+   "selector": ".\\[--stack-peek-offset\\:max\\(0px\\,calc\\(\\(var\\(--nested-drawers\\)-var\\(--stack-progress\\)\\)\\*var\\(--peek\\)\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--stack-progress",
+   "value": "clamp(0,var(--drawer-swipe-progress),1)",
+   "selector": ".\\[--stack-progress\\:clamp\\(0\\,var\\(--drawer-swipe-progress\\)\\,1\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--stack-step",
+   "value": ".05",
+   "selector": ".\\[--stack-step\\:0\\.05\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--stroke",
+   "value": "#d2d3d4",
+   "selector": ".\\[--stroke\\:color-mix\\(in_oklab\\,var\\(--color-hp-ink\\)_16\\%\\,var\\(--color-hp-field\\)\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--success",
+   "value": "var(--color-emerald-500)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--success-foreground",
+   "value": "var(--color-emerald-700)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--thumb-size",
+   "value": "calc(var(--spacing) * 4)",
+   "selector": ".\\[--thumb-size\\:--spacing\\(4\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--tilt",
+   "value": "58deg",
+   "selector": ".\\[--tilt\\:58deg\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--toast-calc-height",
+   "value": "var(--toast-frontmost-height,var(--toast-height))",
+   "selector": ".\\[--toast-calc-height\\:var\\(--toast-frontmost-height\\,var\\(--toast-height\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--toast-calc-offset-y",
+   "value": "calc(var(--toast-offset-y)*-1 + var(--toast-index)*var(--toast-gap)*-1 + var(--toast-swipe-movement-y))",
+   "selector": ".data-\\[position\\*\\=bottom\\]\\:\\[--toast-calc-offset-y\\:calc\\(var\\(--toast-offset-y\\)\\*-1\\+var\\(--toast-index\\)\\*var\\(--toast-gap\\)\\*-1\\+var\\(--toast-swipe-movement-y\\)\\)\\][data-position*=\"bottom\"]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--toast-gap",
+   "value": "calc(var(--spacing)*3)",
+   "selector": ".\\[--toast-gap\\:--spacing\\(3\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--toast-inset",
+   "value": "calc(var(--spacing)*4)",
+   "selector": ".\\[--toast-inset\\:--spacing\\(4\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--toast-peek",
+   "value": "calc(var(--spacing)*3)",
+   "selector": ".\\[--toast-peek\\:--spacing\\(3\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--toast-scale",
+   "value": "calc(max(0,1 - (var(--toast-index)*.1)))",
+   "selector": ".\\[--toast-scale\\:calc\\(max\\(0\\,1-\\(var\\(--toast-index\\)\\*\\.1\\)\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--toast-shrink",
+   "value": "calc(1 - var(--toast-scale))",
+   "selector": ".\\[--toast-shrink\\:calc\\(1-var\\(--toast-scale\\)\\)\\]",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--tracking-normal",
+   "value": "0em",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--tracking-tight",
+   "value": "-.025em",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--tracking-tighter",
+   "value": "-.05em",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--tracking-wide",
+   "value": ".025em",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--tracking-wider",
+   "value": ".05em",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_next/static/chunks/0ch38go4wzvum.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--tracking-widest",
+   "value": ".1em",
+   "selector": ":root, :host",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer theme"
+   ]
+  },
+  {
+   "name": "--viewport-inline-padding",
+   "value": "var(--spacing)",
+   "selector": ".\\[--viewport-inline-padding\\:--spacing\\(1\\)\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--w",
+   "value": "150px",
+   "selector": ".\\[--w\\:150px\\]",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": [
+    "@layer utilities"
+   ]
+  },
+  {
+   "name": "--warning",
+   "value": "var(--color-amber-500)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  },
+  {
+   "name": "--warning-foreground",
+   "value": "var(--color-amber-700)",
+   "selector": ":root",
+   "file": "https://cal.com/_site/_next/static/chunks/3yblsl251yodd.css",
+   "context": []
+  }
+ ],
+ "computedOnRoot": {
+  "custom": {},
+  "body": {
+   "color": "rgb(36, 36, 36)",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "fontFamily": "calSans, \"calSans Fallback\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "lineHeight": "24px"
+  }
+ }
+}
