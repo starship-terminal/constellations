@@ -29,13 +29,27 @@
 // and on the response, where the browser enforces it.
 import { contentSecurityPolicy, needsCsp, newNonce } from "@/lib/csp";
 import { tooLargeResponse } from "@/lib/mcp-batch";
-import { mediaBase } from "@/lib/media-base";
+import { loadReferoIndex } from "@/lib/refero";
+import { mediaBase } from "@/lib/repo";
 import { refusal } from "@/lib/request-guard";
 import { NextResponse, type NextRequest } from "next/server";
 // Loads the repo-root .env, where DESIGN_SYSTEMS_ALLOWED_HOSTS may live.
 import "@/lib/env";
 
-export function proxy(request: NextRequest) {
+/** Every base URL a page may load refero media from: the server's setting
+    and the one the refero data was built with (the pages use the latter). */
+async function mediaBases(): Promise<string[]> {
+  const bases = [mediaBase()];
+  try {
+    const index = await loadReferoIndex();
+    bases.push(index.mediaBase, index.cdn);
+  } catch {
+    // no refero data built yet: the pages that would use it show nothing
+  }
+  return bases;
+}
+
+export async function proxy(request: NextRequest) {
   const h = request.headers;
   const refused = refusal(
     {
@@ -52,7 +66,7 @@ export function proxy(request: NextRequest) {
   if (!refused) {
     if (!needsCsp(request.nextUrl.pathname)) return NextResponse.next();
     const nonce = newNonce();
-    const csp = contentSecurityPolicy({ nonce, dev: process.env.NODE_ENV === "development", mediaBase: mediaBase() });
+    const csp = contentSecurityPolicy({ nonce, dev: process.env.NODE_ENV === "development", mediaBases: await mediaBases() });
     const forward = new Headers(h);
     forward.set("x-nonce", nonce);
     forward.set("content-security-policy", csp);

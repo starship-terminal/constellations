@@ -17,11 +17,14 @@
 // sanitizeHtml drops style attributes from package Markdown, and a style
 // attribute can load nothing from a host img-src and font-src do not list.
 //
-// Images and video: this origin's /media/, plus the two hosts the refero pages
-// fall back to when a file is not mirrored locally: the media bucket
-// (DESIGN_SYSTEMS_MEDIA_BASE, lib/repo.ts mediaBase) and refero's CDN
-// (REFERO_CDN in tools/catalog.py). Package and docs Markdown use no remote
-// images today.
+// Images and video: this origin's /media/, plus the hosts the refero pages
+// load from when a file is not mirrored locally: the media bucket and
+// refero's CDN. proxy.ts passes every base URL those pages can use: the
+// running server's mediaBase() (DESIGN_SYSTEMS_MEDIA_BASE) and the
+// mediaBase and cdn the refero data was built with, which can differ when
+// the variable changed between `make build` and the server start. refero's
+// CDN (REFERO_CDN in tools/catalog.py) is always listed. Package and docs
+// Markdown use no remote images today.
 //
 // No upgrade-insecure-requests: the app is served over plain http on loopback
 // and the tailnet, where upgrading its own requests to https would break them.
@@ -53,12 +56,14 @@ export interface CspOptions {
   nonce: string;
   /** `next dev`: adds what React's dev build and hot reload need. */
   dev?: boolean;
-  /** Base URL of mirrored refero media (mediaBase()); empty serves it from /media/. */
-  mediaBase?: string;
+  /** Base URLs refero media is loaded from (media bucket, CDN); an empty or
+      relative one means this origin and adds nothing. */
+  mediaBases?: (string | null | undefined)[];
 }
 
-export function contentSecurityPolicy({ nonce, dev = false, mediaBase = "" }: CspOptions): string {
-  const media = ["'self'", ...new Set([originOf(mediaBase), REFERO_CDN_ORIGIN].filter((o): o is string => !!o))].join(" ");
+export function contentSecurityPolicy({ nonce, dev = false, mediaBases = [] }: CspOptions): string {
+  const hosts = [...mediaBases.map((b) => originOf(b ?? "")), REFERO_CDN_ORIGIN];
+  const media = ["'self'", ...new Set(hosts.filter((o): o is string => !!o))].join(" ");
   const directives = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${dev ? " 'unsafe-eval'" : ""}`,

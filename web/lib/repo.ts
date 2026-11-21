@@ -126,7 +126,9 @@ export function mediaRoot(): string {
   );
 }
 
-export { mediaBase } from "./media-base.ts";
+export function mediaBase(): string {
+  return process.env.DESIGN_SYSTEMS_MEDIA_BASE ?? "https://pub-b22e019453104cc8b3c214b1009a6c42.r2.dev";
+}
 
 export function referoMediaFile(urlPath: string): string | null {
   const clean = decodeURIComponent(urlPath.split("?")[0].split("#")[0]);
