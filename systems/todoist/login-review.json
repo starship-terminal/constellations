@@ -1,0 +1,61 @@
+{
+  "product": "Todoist",
+  "capturedAt": "2026-11-21",
+  "requestedUrl": "https://app.todoist.com/auth/login",
+  "landedUrl": "https://app.todoist.com/auth/login",
+  "title": "Log in to Todoist",
+  "stopped": true,
+  "reason": "The empty wall asks for an email and a password, then Log in. Google, Facebook, and Apple are also offered. No email was typed. No password was typed. No identity provider was clicked. Log in was not clicked. Sign up was not clicked. Forgot your password was not opened.",
+  "asksFor": [
+    "Email",
+    "Password",
+    "Log in",
+    "Continue with Google",
+    "Continue with Facebook",
+    "Continue with Apple",
+    "Forgot your password?",
+    "Sign up"
+  ],
+  "passwordFieldVisible": true,
+  "codeFieldVisible": false,
+  "identityProvidersOffered": ["Google", "Facebook", "Apple"],
+  "identityProvidersClicked": [],
+  "screenshot": "screenshots/login-light-empty.png",
+  "signup": {
+    "requestedUrl": "https://app.todoist.com/auth/signup",
+    "landedUrl": "https://app.todoist.com/auth/signup",
+    "title": "Sign up for a free Todoist account",
+    "heading": "Sign up",
+    "asksFor": [
+      "Email",
+      "Password",
+      "Sign up with Email",
+      "Continue with Google",
+      "Continue with Facebook",
+      "Continue with Apple",
+      "Go to login"
+    ],
+    "stopped": true,
+    "screenshot": "screenshots/signup-light-empty.png"
+  },
+  "measured": {
+    "pageBackground": "rgb(252, 250, 248)",
+    "heading": {
+      "text": "Welcome back!",
+      "fontFamily": "-apple-system, system-ui, Segoe UI, Noto Sans, sans-serif",
+      "fontSize": "32px",
+      "fontWeight": "700",
+      "color": "rgb(32, 32, 32)"
+    },
+    "logIn": {
+      "background": "rgb(211, 51, 34)",
+      "backgroundHover": "rgb(199, 56, 42)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "6px",
+      "fontSize": "18px",
+      "fontWeight": "700"
+    },
+    "note": "The login button fill rgb(211, 51, 34) matches --product-library-actionable-primary-idle-fill #d33322. Hover painted rgb(199, 56, 42), which matches --product-library-actionable-primary-hover-fill #c3392c. The marketing CTA is a different red."
+  },
+  "tokens": "Not captured. Hidden form tokens were unread and are not stored."
+}
