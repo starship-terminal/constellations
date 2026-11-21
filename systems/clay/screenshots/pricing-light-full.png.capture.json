@@ -1,39 +1,70 @@
 {
-  "capturedAt": "2026-11-18T21:15:39.974Z",
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T16:12:14.024Z",
   "screenshot": "pricing-light-full.png",
-  "sourceUrl": "https://me.sh/pricing",
-  "title": "Pricing - Mesh",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
       "width": 1440,
       "height": 900
-    }
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
   },
   "actual": {
-    "href": "https://me.sh/pricing",
-    "title": "Pricing - Mesh",
     "innerWidth": 1440,
     "innerHeight": 900,
-    "dpr": 1,
+    "devicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
     "visualViewport": {
       "width": 1440,
       "height": 900,
-      "scale": 1
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
     },
-    "colorScheme": "normal",
-    "htmlBg": "rgb(249, 248, 246)",
-    "bodyBg": "rgba(0, 0, 0, 0)",
-    "bodyColor": "rgb(31, 31, 31)",
-    "bodyFont": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-    "bodySize": "18px",
-    "bodyWeight": "400",
-    "bodyLine": "27px",
-    "scrollHeight": 2640
+    "documentSize": {
+      "width": 1440,
+      "height": 5134
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "fullPage",
+    "scale": "device",
+    "clip": null
   },
   "png": {
-    "width": 1440,
-    "height": 2640
+    "pixelWidth": 1440,
+    "pixelHeight": 5134
   },
-  "fullPage": true,
-  "note": "Live headless Chromium. Preview browser could not navigate off a stuck tab and returned \"The browser is not producing screenshot frames\"."
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 1440,
+      "height": 5134
+    },
+    "basis": "fullPage"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  },
+  "quantized": true
 }

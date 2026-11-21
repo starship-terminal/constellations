@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-11-22T00:20:00Z",
+  "source": "T3 preview browser",
+  "url": "https://www.clay.com/",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "devicePixelRatio": 2,
+  "note": "Preview browser frame. Search field was empty. Nothing typed.",
+  "png": {
+    "pixelWidth": 780,
+    "pixelHeight": 1688
+  },
+  "quantized": true
+}

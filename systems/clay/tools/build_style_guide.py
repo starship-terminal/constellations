@@ -1,115 +1,102 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json. Specimens use only measured tokens."""
+"""Render systems/clay/style-guide.html from tokens.json.
+
+ADAPTED_FOR = "Clay"
+Hand-written guide. Does not touch catalog.json or DESIGN.md.
+"""
+ADAPTED_FOR = "Clay"
+
 import json
 import pathlib
-import re
 
-HERE = pathlib.Path(__file__).resolve().parent.parent
-T = json.loads((HERE / "tokens.json").read_text())
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+tokens = json.loads((ROOT / "tokens.json").read_text())
 
+def hex_of(node):
+    value = node["$value"]
+    if isinstance(value, str) and value.startswith("{") and value.endswith("}"):
+        parts = value.strip("{}").split(".")
+        cur = tokens
+        for part in parts:
+            cur = cur[part]
+        return hex_of(cur)
+    return value
 
-def flat(node, prefix=""):
-    for k, v in node.items():
-        if k.startswith("$"):
-            continue
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from flat(v, prefix + k + "-")
-
-
-def cssname(path):
-    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
-
-
-def css_val(t):
-    v, ty = t["$value"], t["$type"]
-    if ty == "cubicBezier":
-        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
-    return str(v)
-
-
-def block(setname):
-    return "\n".join(f"  {cssname(n)}: {css_val(t)};" for n, t in flat(T[setname]))
-
-
-rows = []
-for name, token in flat(T["dark"]):
-    if token["$type"] != "color":
+swatches = []
+for family, steps in tokens["core"]["color"].items():
+    if "$value" in steps:
+        swatches.append((family, hex_of(steps)))
         continue
-    rows.append(f'<div class="sw"><i style="background:{token["$value"]}"></i><div><b>{name}</b><small>{token["$value"]}</small></div></div>')
-light_rows = []
-for name, token in flat(T["light"]):
-    if token["$type"] != "color":
-        continue
-    light_rows.append(f'<div class="sw"><i style="background:{token["$value"]}"></i><div><b>{name}</b><small>{token["$value"]}</small></div></div>')
+    for step, node in steps.items():
+        swatches.append((f"{family}-{step}", hex_of(node)))
+
+chips = "\n".join(
+    f'<div class="chip"><i style="background:{value}"></i><span>{name}</span><code>{value}</code></div>'
+    for name, value in swatches
+)
+paper = hex_of(tokens["light"]["color"]["bg"]["page"])
+ink = hex_of(tokens["light"]["color"]["text"]["primary"])
+fill = hex_of(tokens["light"]["color"]["action"]["fill"])
+demo = hex_of(tokens["light"]["color"]["action"]["demo"])
+accent = hex_of(tokens["light"]["color"]["action"]["accent"])
+hero = hex_of(tokens["light"]["color"]["bg"]["hero"])
+on_hero = hex_of(tokens["light"]["color"]["text"]["onHero"])
+auth = hex_of(tokens["light"]["color"]["action"]["auth"])
 
 html = f"""<!doctype html>
-<html lang="en" data-mode="dark">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clay public surface style guide</title>
+<title>Clay public tokens</title>
 <style>
-:root {{
-{block("core")}
-{block("light")}
-  color-scheme: light;
-}}
-[data-mode="dark"] {{
-{block("dark")}
-  color-scheme: dark;
-}}
-* {{ box-sizing: border-box; }}
-body {{ margin: 0; background: var(--color-bg-page); color: var(--color-text-body, var(--color-text-primary)); font: 400 16px/1.5 var(--font-family-ui); }}
-.wrap {{ max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }}
-h1 {{ font-family: var(--font-family-display); font-weight: 700; letter-spacing: 0.5px; }}
-h2 {{ font-family: var(--font-family-display); font-size: 32px; margin: 40px 0 12px; }}
-p.note {{ max-width: 72ch; opacity: 0.8; }}
-.swatches {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }}
-.sw {{ display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }}
-.sw i {{ width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(127,127,127,.35); }}
-.sw small {{ display: block; opacity: 0.7; }}
-.row {{ display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin: 16px 0; }}
-.hero-cta {{ display: inline-flex; align-items: center; justify-content: center; width: var(--component-heroCta-innerWidth); height: var(--component-heroCta-innerHeight); border-radius: var(--component-heroCta-innerRadius); background: var(--component-heroCta-innerBg); color: #000; font-weight: 600; letter-spacing: 1px; box-shadow: 0 0 0 1px #32c5ff, 0 0 4px 1px rgba(255,255,255,.98); }}
-.nav-cta {{ display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: var(--radius-nav-control); color: var(--color-text-accent, #f2b98b); box-shadow: inset 0 0 0 1px rgba(255,255,255,.24); }}
-.plan {{ width: var(--component-planCard-width); border-radius: var(--component-planCard-radius); border: 1px solid var(--color-border-card, #eceae8); background: var(--color-bg-card, rgba(149,149,149,.06)); padding: 22px var(--component-planCard-paddingX); color: var(--color-text-primary, #1f1f1f); }}
-.plan button {{ width: 100%; height: 44px; border-radius: var(--radius-plan); border: 1px solid var(--color-border-control, rgba(31,31,31,.4)); background: transparent; color: inherit; font-weight: 600; letter-spacing: 1px; }}
-.field {{ width: 272px; height: var(--component-field-height); border-radius: var(--component-field-radius); border: 1px solid var(--color-border-field, rgba(72,73,74,.1)); background: var(--color-bg-field, rgba(72,73,74,.04)); padding: 0 12px; color: var(--color-text-muted, #48494a); }}
-.toggle {{ margin-left: auto; }}
+  :root {{ color-scheme: light; }}
+  body {{ margin: 0; background: {paper}; color: {ink}; font: 16px/1.4 Arial, sans-serif; }}
+  main {{ max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }}
+  h1 {{ font-size: 48px; line-height: 1; letter-spacing: -0.04em; font-weight: 575; margin: 0 0 12px; }}
+  p {{ max-width: 62ch; }}
+  .hero {{ background: {hero}; color: {on_hero}; border-radius: 24px; padding: 32px; margin: 24px 0; }}
+  .row {{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }}
+  .btn {{ display: inline-flex; align-items: center; height: 39px; padding: 0 16px; border-radius: 12px; text-decoration: none; font-weight: 500; }}
+  .fill {{ background: {fill}; color: #fff; }}
+  .demo {{ background: {demo}; color: {ink}; height: 47px; }}
+  .auth {{ background: {auth}; color: #fff; }}
+  .ghost {{ background: #fff; color: {ink}; border: 1px solid #e6e8ec; }}
+  .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 24px; }}
+  .chip {{ background: #fff; border-radius: 12px; padding: 10px; }}
+  .chip i {{ display: block; height: 48px; border-radius: 8px; border: 1px solid #e6e8ec; }}
+  .chip span, .chip code {{ display: block; margin-top: 6px; font-size: 13px; }}
+  .card {{ background: #fff; border-radius: 16px; padding: 16px; }}
+  .card .head {{ background: {accent}; color: #fff; border-radius: 12px; padding: 16px; margin: -4px -4px 12px; }}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header style="display:flex;align-items:center;gap:16px">
-  <h1>Clay public surface</h1>
-  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle theme</button>
-</header>
-<p class="note">Values are the computed styles read on 2026-11-19 from me.sh, the 301 target of clay.earth, and from the signed-out app.me.sh sign-in card. Verlag and Chronicle are named but not loaded here.</p>
-<h2>Dark roles</h2>
-<div class="swatches">{''.join(rows)}</div>
-<h2>Light roles</h2>
-<div class="swatches">{''.join(light_rows)}</div>
-<h2>Type</h2>
-<p style="font-family:var(--font-family-display);font-size:var(--font-size-display);font-weight:700;line-height:64px;letter-spacing:0.88px;margin:0">Every relationship, remembered.</p>
-<p style="font-size:var(--font-size-body);line-height:27px">Body copy at the measured 18px / 27px Verlag stack.</p>
-<h2>Controls</h2>
-<div class="row">
-  <span class="hero-cta">GET MESH FREE</span>
-  <span class="nav-cta">GET STARTED</span>
-</div>
-<div class="plan">
-  <div style="font-size:12px;letter-spacing:1px;font-weight:700">PERSONAL</div>
-  <div style="font-family:var(--font-family-display);font-size:32px;margin:8px 0">Free</div>
-  <button type="button">GET STARTED</button>
-</div>
-<p class="note">The plan card uses the light tokens. Switch the theme toggle to see them on the cream page ground.</p>
-<h2>Sign-in field</h2>
-<input class="field" placeholder="Enter your email" readonly>
-<p class="note">Measured on the signed-out card. Nothing was typed into the live field.</p>
-</div>
+<main>
+  <h1>Clay public tokens</h1>
+  <p>Measured from the public marketing site at clay.com on 2026-11-22. One light theme. Login and signup stay empty walls.</p>
+  <section class="hero">
+    <h2 style="margin:0 0 8px;font-size:32px;letter-spacing:-0.03em">Build systems to grow revenue</h2>
+    <div class="row">
+      <a class="btn fill" href="#buttons">Start free trial</a>
+      <a class="btn demo" href="#buttons">Get a demo</a>
+    </div>
+  </section>
+  <h2>Swatches</h2>
+  <div class="grid">{chips}</div>
+  <h2 id="buttons">Buttons</h2>
+  <div class="row">
+    <a class="btn fill">Start free trial</a>
+    <a class="btn ghost">Get a demo</a>
+    <a class="btn demo">Get a demo</a>
+    <a class="btn auth">Continue</a>
+  </div>
+  <h2>Pricing card</h2>
+  <div class="card" style="max-width:280px">
+    <div class="head"><strong>Free</strong><div>Start building in Clay for free.</div></div>
+    <div>Includes 6,000 actions/year</div>
+  </div>
+</main>
 </body>
 </html>
 """
-(HERE / "style-guide.html").write_text(html)
-print("style-guide.html", len(html))
+(ROOT / "style-guide.html").write_text(html)
+print("wrote style-guide.html")
