@@ -1,0 +1,146 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.mrporter.com/en-sg/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1
+  },
+  "promoBar": {
+    "background": "rgb(203, 203, 203)",
+    "height": 32,
+    "font": "Georgia",
+    "size": "14px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "header": {
+    "background": "rgb(255, 255, 255)",
+    "height": 183
+  },
+  "nav": {
+    "font": "Georgia",
+    "size": "14px",
+    "weight": 400,
+    "lineHeight": "18px",
+    "letterSpacing": "0.2px",
+    "color": "rgb(0, 0, 0)",
+    "padding": "16px 0px",
+    "height": 52
+  },
+  "heroTitle": {
+    "font": "SackersGothicStd, sans-serif",
+    "size": "32px",
+    "weight": 500,
+    "lineHeight": "40px",
+    "color": "rgb(255, 255, 255)",
+    "textTransform": "uppercase"
+  },
+  "heroCta": {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "font": "Georgia, sans-serif",
+    "size": "14px",
+    "height": 42,
+    "radius": "2px",
+    "border": "1px solid rgb(255, 255, 255)"
+  },
+  "categoryTitle": {
+    "font": "Georgia",
+    "size": "32px",
+    "weight": 400,
+    "lineHeight": "40px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "categoryChip": {
+    "font": "SackersGothicStd",
+    "size": "10px",
+    "weight": 900,
+    "color": "rgb(101, 101, 101)",
+    "letterSpacing": "0.1px",
+    "textTransform": "uppercase"
+  },
+  "designer": {
+    "font": "Georgia",
+    "size": "32px",
+    "weight": 400,
+    "lineHeight": "40px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "productName": {
+    "font": "Georgia",
+    "size": "14px",
+    "weight": 400,
+    "lineHeight": "18px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "price": {
+    "font": "Georgia",
+    "size": "16px",
+    "weight": 400,
+    "lineHeight": "24px",
+    "letterSpacing": "0.2px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "addToBag": {
+    "background": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "font": "Georgia",
+    "size": "14px",
+    "height": 40,
+    "radius": "2px",
+    "border": "1px solid rgb(0, 0, 0)"
+  },
+  "wish": {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "font": "Georgia",
+    "size": "14px",
+    "height": 40,
+    "radius": "2px",
+    "border": "1px solid rgb(0, 0, 0)"
+  },
+  "size": {
+    "color": "rgb(0, 0, 0)",
+    "font": "Georgia",
+    "size": "14px",
+    "height": 40,
+    "radius": "2px",
+    "border": "1px solid rgb(229, 229, 229)"
+  },
+  "sizeUnavailable": {
+    "color": "rgb(131, 131, 131)",
+    "border": "1px solid rgb(229, 229, 229)"
+  },
+  "footerHeading": {
+    "font": "SackersGothicStd",
+    "size": "10px",
+    "weight": 400,
+    "lineHeight": "16px",
+    "textTransform": "uppercase",
+    "color": "rgb(0, 0, 0)"
+  },
+  "footerLink": {
+    "font": "Georgia",
+    "size": "12px",
+    "color": "rgb(101, 101, 101)",
+    "lineHeight": "18px"
+  },
+  "email": {
+    "background": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(203, 203, 203)",
+    "radius": "2px",
+    "height": 40,
+    "font": "Georgia",
+    "size": "14px"
+  },
+  "signup": {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border": "1px solid rgb(0, 0, 0)",
+    "radius": "2px",
+    "height": 40,
+    "font": "Georgia",
+    "size": "14px"
+  },
+  "note": "Add to Bag was measured and not clicked. Sign Up was not submitted."
+}

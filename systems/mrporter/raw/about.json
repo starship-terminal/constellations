@@ -1,0 +1,33 @@
+{
+  "kicker": {
+    "text": "ABOUT US",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "SackersGothicStd, sans-serif, \"MSung PRC Medium\"",
+    "size": "10px",
+    "weight": "1000",
+    "line": "16px",
+    "ls": "normal",
+    "transform": "uppercase",
+    "h": 16,
+    "cls": "app-ch app-ci app-cj app-ck app-cl app-id app-cn app-co app-cp app-cq"
+  },
+  "title": {
+    "text": "ABOUT US Discover MR PORTER",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Times",
+    "size": "16px",
+    "weight": "400",
+    "line": "18.4px",
+    "ls": "normal",
+    "transform": "none",
+    "h": 74,
+    "cls": ""
+  },
+  "vp": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+  }
+}

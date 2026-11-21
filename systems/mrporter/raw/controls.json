@@ -1,0 +1,62 @@
+{
+  "add": {
+    "text": "Add to Bag",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(0, 0, 0)",
+    "font": "Georgia",
+    "size": "14px",
+    "weight": "400",
+    "line": "22px",
+    "ls": "normal",
+    "radius": "2px",
+    "border": "1px solid rgb(0, 0, 0)",
+    "h": 40,
+    "w": 391,
+    "cls": "Button10 Button10--primary AsyncButton10 CTAButtons89__addToBag CTAButtons89__addToBag--stickyCta primaryButton"
+  },
+  "wish": {
+    "text": "Add to Wish List",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(255, 255, 255)",
+    "font": "Georgia",
+    "size": "14px",
+    "weight": "400",
+    "line": "18px",
+    "ls": "normal",
+    "radius": "2px",
+    "border": "1px solid rgb(0, 0, 0)",
+    "h": 40,
+    "w": 391,
+    "cls": "Button10 Button10--secondary AsyncButton10 CTAButtons89__addToWishlist primaryButton"
+  },
+  "name": {
+    "text": "",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Times",
+    "size": "32px",
+    "weight": "700",
+    "line": "36.8px",
+    "ls": "normal",
+    "radius": "0px",
+    "border": "0px none rgb(0, 0, 0)",
+    "h": 0,
+    "w": 391,
+    "cls": ""
+  },
+  "designer": {
+    "text": "BRUNELLO CUCINELLI",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Georgia",
+    "size": "32px",
+    "weight": "400",
+    "line": "40px",
+    "ls": "normal",
+    "radius": "0px",
+    "border": "0px none rgb(0, 0, 0)",
+    "h": 40,
+    "w": 391,
+    "cls": "ProductInformation89__designer"
+  }
+}

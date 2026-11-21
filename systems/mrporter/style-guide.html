@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MR PORTER style guide</title>
+<style>
+  :root {
+    --ink: #000000;
+    --page: #ffffff;
+    --promo: #cbcbcb;
+    --muted: #656565;
+    --line: #cbcbcb;
+    --line-soft: #e5e5e5;
+    --unavailable: #838383;
+    --on: #ffffff;
+    --serif: Georgia, sans-serif;
+    --display: "SackersGothicStd", Georgia, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 14px/18px var(--serif); }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  .ribbon { background: var(--promo); color: var(--ink); height: 32px; display: flex; align-items: center; justify-content: center; font: 14px/18px var(--serif); letter-spacing: 0.2px; }
+  .ribbon a { color: rgb(43, 43, 43); }
+  h1 { font: 500 32px/40px var(--display); text-transform: uppercase; margin: 28px 0 8px; }
+  h2 { font: 400 10px/16px var(--display); text-transform: uppercase; letter-spacing: 0.1px; margin: 36px 0 12px; }
+  p { max-width: 62ch; color: var(--muted); font: 12px/18px var(--serif); }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 72px; border: 1px solid var(--line); }
+  .name { font: 12px/16px var(--serif); margin-top: 6px; color: var(--ink); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; min-width: 240px; padding: 0 16px; background: var(--ink); color: var(--on); font: 14px/22px var(--serif); border: 1px solid var(--ink); border-radius: 2px; }
+  .wish { display: inline-flex; align-items: center; justify-content: center; height: 40px; min-width: 240px; padding: 0 16px; background: var(--page); color: var(--ink); font: 14px/18px var(--serif); border: 1px solid var(--ink); border-radius: 2px; }
+  .shop { display: inline-flex; align-items: center; justify-content: center; height: 42px; width: 240px; background: var(--page); color: var(--ink); font: 14px/18px var(--serif); border: 1px solid var(--page); border-radius: 2px; }
+  .size { display: inline-flex; align-items: center; justify-content: center; width: 90px; height: 40px; border: 1px solid var(--line-soft); border-radius: 2px; font: 14px/18px var(--serif); }
+  .size.off { color: var(--unavailable); }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .hero-sample { background: #1a1a1a; color: var(--on); padding: 32px; }
+  .hero-sample p { color: var(--on); font: 14px/18px var(--serif); }
+</style>
+</head>
+<body>
+<main>
+  <div class="ribbon">Style for all seasons. <a>Shop now</a></div>
+  <div class="hero-sample">
+    <h1>Exclusive: Thom Browne</h1>
+    <p>Only at MR PORTER, a new collection</p>
+    <span class="shop">Shop now</span>
+  </div>
+  <p>Measured from mrporter.com/en-sg on 2026-11-22. SackersGothicStd is not in this package. This page falls back to Georgia.</p>
+  <h2>Color</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div class="name">ink #000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#cbcbcb"></div><div class="name">promo #cbcbcb</div></div>
+    <div class="swatch"><div class="chip" style="background:#656565"></div><div class="name">muted #656565</div></div>
+    <div class="swatch"><div class="chip" style="background:#e5e5e5"></div><div class="name">line-soft #e5e5e5</div></div>
+    <div class="swatch"><div class="chip" style="background:#838383"></div><div class="name">unavailable #838383</div></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="btn">Add to Bag</span>
+    <span class="wish">Add to Wish List</span>
+    <span class="size">IT 46</span>
+    <span class="size off">IT 48</span>
+  </div>
+</main>
+</body>
+</html>

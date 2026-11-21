@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "text": "EXCLUSIVE: THOM BROWNE",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "SackersGothicStd, sans-serif",
+    "size": "32px",
+    "weight": "500",
+    "line": "40px",
+    "ls": "normal",
+    "transform": "uppercase",
+    "radius": "0px",
+    "border": "0px none rgb(255, 255, 255)",
+    "h": 80,
+    "w": 550,
+    "cls": "app-ct app-cu app-cv app-cw app-cx app-cy app-cz app-da app-db app-dc app-dd app"
+  },
+  "cta": {
+    "text": "Shop now",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(255, 255, 255)",
+    "font": "Georgia, sans-serif, \"MSung PRC Medium\"",
+    "size": "14px",
+    "weight": "400",
+    "line": "18px",
+    "ls": "0.14px",
+    "transform": "none",
+    "radius": "2px",
+    "border": "1px solid rgb(255, 255, 255)",
+    "h": 42,
+    "w": 240,
+    "cls": "app-dj app-dr app-ds app-dt app-dl app-du app-ai app-dv app-dw app-u app-dx app-"
+  },
+  "vp": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+  }
+}
