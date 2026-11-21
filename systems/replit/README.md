@@ -17,6 +17,20 @@ Nothing was typed. Login, signup, checkout, and subscribe were not followed. Ide
 | [raw/](raw) | [readings.json](raw/readings.json), the computed-style dump the builders read | 1 |
 | [tools/](tools) | [build_tokens.py](tools/build_tokens.py) and [build_style_guide.py](tools/build_style_guide.py) | 2 scripts |
 
+
+## Files
+
+| File | What it holds |
+|---|---|
+| [DESIGN.md](DESIGN.md) | Generated export of the tokens |
+| [icon.png](icon.png) | Product icon, 128 px |
+| [raw/](raw/) | Readings the tokens were measured from |
+| [screenshots/](screenshots/) | Public page screenshots |
+| [site-tree.md](site-tree.md) | Public pages and where the walk stopped |
+| [style-guide.html](style-guide.html) | Renders the tokens |
+| [tokens.json](tokens.json) | Measured colours, type, and sizes |
+| [tools/](tools/) | Builders for this package |
+
 ## Brief
 
 The Brief is written by `tools/brief.py` after a catalog entry exists. This package has no catalog entry yet. catalog.json was left alone.

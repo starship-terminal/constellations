@@ -19,6 +19,22 @@ The homepage and the plans page paint a cream light theme. The AI Features page 
 
 `catalog.json` and `webapps-manifest.json` were left alone. DESIGN.md was not written.
 
+
+## Files
+
+| File | What it holds |
+|---|---|
+| [DESIGN.md](DESIGN.md) | Generated export of the tokens |
+| [components.md](components.md) | Public components named from the capture |
+| [icon.png](icon.png) | Product icon, 128 px |
+| [patterns.md](patterns.md) | Public patterns named from the capture |
+| [raw/](raw/) | Readings the tokens were measured from |
+| [screenshots/](screenshots/) | Public page screenshots |
+| [site-tree.md](site-tree.md) | Public pages and where the walk stopped |
+| [style-guide.html](style-guide.html) | Renders the tokens |
+| [tokens.json](tokens.json) | Measured colours, type, and sizes |
+| [tools/](tools/) | Builders for this package |
+
 ## How the values were read
 
 An incognito preview tab opened [https://evernote.com/](https://evernote.com/), then [https://evernote.com/en-us/compare-plans](https://evernote.com/en-us/compare-plans), then the empty wall at [https://accounts.evernote.com/login](https://accounts.evernote.com/login), then [https://evernote.com/en-us/features/ai-features](https://evernote.com/en-us/features/ai-features). Colours are `getComputedStyle` values, written as hex. Custom properties were read from `:root` and from the `.dark` header. The cookie banner was on screen and was not accepted or rejected. No button that starts login, signup, or a plan was clicked.

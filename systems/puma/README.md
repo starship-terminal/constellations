@@ -10,6 +10,12 @@ Puma is a public sportswear shop. This package is a signed-out capture of [https
 | [login-review.json](login-review.json) | Empty walls, and where the walk stopped |
 | [DESIGN.md](DESIGN.md) | Handwritten, because generation needs a catalog entry |
 | [style-guide.html](style-guide.html) | Measured colours, type, and buttons |
+| [components.md](components.md) | Public components named from the capture |
+| [icon.png](icon.png) | Product icon, 128 px |
+| [icons/](icons/) | Icon redraws |
+| [patterns.md](patterns.md) | Public patterns named from the capture |
+| [raw/](raw/) | Readings the tokens were measured from |
+| [tools/](tools/) | Builders for this package |
 
 `catalog.json` was left alone. `webapps-manifest.json` was left alone. `login-extracted` was not flipped.
 

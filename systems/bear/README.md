@@ -14,6 +14,7 @@ This is the public site only. Tokens were measured from the live public site on 
 | [screenshots/](screenshots/) | Page shots. Git LFS. Existing photographs were kept. No page was recaptured. |
 | [raw/](raw/) | Computed-style readings the tokens were built from: [elements.json](raw/elements.json). |
 | [tools/](tools/) | [build_tokens.py](tools/build_tokens.py) and [build_style_guide.py](tools/build_style_guide.py). See [tools/README.md](tools/README.md). |
+| [DESIGN.md](DESIGN.md) | Generated export of the tokens |
 
 The homepage has no login. Download goes to the App Store. Pricing is an anchor on the homepage: Free, and Bear Pro at $2.99/month or $29.99/year after a 7 day trial. The community login and signup walls, and the Bear Web "Sign in with Apple" wall, were photographed empty and not submitted.
 
