@@ -167,9 +167,9 @@ Good for: Supplement retail: seed green on snow, 1000px pills, 32px glass menus,
 
 Captured 2026-11-19, signed out (every captured surface is public marketing). Themes: light.
 
-Public marketing site at seed.com, captured signed out on 2026-11-19. Probiotic and supplement retail. Light theme only. Desktop innerWidth 1169 and phone innerWidth 390. No account, no bag, no checkout.
+Public marketing site at seed.com, captured signed out. Probiotic and supplement retail. Light theme only. No account was created and no checkout was started.
 
-Computed styles were read in the T3 preview tab. The preview browser did not produce screenshot frames. Headless Playwright received a Cloudflare challenge, so this package has no screenshots and no crops.
+Computed styles were read in the T3 preview tab on 2026-11-19 at innerWidth 1169 and phone innerWidth 390. Those readings are the token values. On 2026-11-21 headless Playwright loaded the public pages at desktop 1440x900 and phone 390x844 (phone PNGs are 780x1688 at 2x). The site tree was mapped before those screenshots. OneTrust and a Freshchat promo lightbox were hidden, never clicked. No email, password, code, or profile field was typed. No form was submitted.
 
 <!-- health:start -->
 <!-- health:end -->
@@ -215,7 +215,7 @@ Corner radii from `core.radius`: `xs` 0.25rem, `sm` 0.5rem, `md` 1rem, `lg` 1.5r
 
 6 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
-Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -227,9 +227,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-There are no page screenshots. `preview_snapshot` failed with "The browser is not producing screenshot frames." Headless Playwright returned HTTP 403 and the title "Just a moment..." on every public URL, so that route was stopped. The catalog cover is [icon.png](icon.png), a favicon, not a page capture.
+The catalog cover is [icon.png](icon.png), a favicon, not a page capture. Token values are the 2026-11-19 readings at innerWidth 1169. The 2026-11-21 screenshots are 1440 and 390. A few computed sizes from the later pass disagree with the tokens: the hero quiz pill measured 51px tall against a 52px token, and the cart dialog measured radius 16px against the menu token of 32px. Read the tokens, then the later dump, and do not average them.
 
-Desktop readings are at innerWidth 1169, not 1440. The preview tab was in fill mode. Phone readings are at innerWidth 390 after a freeform resize.
+The 2026-11-19 quiz note says `/is-ds01-right-for-you` redirected to `/lp/ds01-quiz-baseline` and showed step 1 of 13. The 2026-11-21 Playwright pass stayed on `/is-ds01-right-for-you` and showed step 1 of 11. Both observations are kept. Neither pass answered the quiz.
 
 Button height is 52px on the homepage quiz link and 48px on Start Now. Both use radius 1000px and padding 16px 24px. The token records both.
 
@@ -243,10 +243,10 @@ Weight 350 is Seed Sans Regular. The same woff2 is also declared at weight 400. 
 
 ### Do and don't (from README.md)
 
-- **Use seed green on snow.** Text is #1c3a13. Page fill is #fcfcf7. The html background on the dark hero is the same green, #1c3a13. See [raw/measurements.md](raw/measurements.md).
-- **Set display type in Seed Sans at 350, with tight tracking.** The hero is 48px / 52.8px / -1.2px. Science display is 64px at weight 300 and -2%. Eyebrows are 12px, weight 500, uppercase.
-- **Make the action a pill.** Radius 1000px, padding 16px 24px, height 48px or 52px. Filled buttons are seed green with snow text. Inverse buttons are snow with seed-green text.
-- **Put menus on frosted glass.** The shop menu and the sign-in panel are rgba(87, 94, 85, 0.35), radius 32px, padding 16px, backdrop blur 19px.
-- **Keep the quiz option a 72px card.** Radius 16px, 1px border #d2d8d0, snow fill, 18px label.
-- **Do not invent a dark theme.** The stylesheet has no dark palette. Product colours (AM-02, DM-02, PM-02, VS-01) are accents, not a second theme.
-- **Do not treat icon.png as a page capture.** It is the site favicon, a green circle, and it is also the catalog cover because there is no screenshot.
+- **Use seed green on snow.** Text is #1c3a13. Page fill is #fcfcf7. The html background on the dark hero is the same green, #1c3a13. See [home-light-default.png](screenshots/home-light-default.png) and [synbiotic-light-default.png](screenshots/synbiotic-light-default.png).
+- **Set display type in Seed Sans at 350, with tight tracking.** The hero is 48px / 52.8px / -1.2px. Science display is 64px at weight 300 and -2%. Eyebrows are 12px, weight 500, uppercase. See [home-light-default.png](screenshots/home-light-default.png).
+- **Make the action a pill.** Radius 1000px, padding 16px 24px, height 48px or 52px. Filled buttons are seed green with snow text. Inverse buttons are snow with seed-green text. See [components/crops/start-now-default.png](components/crops/start-now-default.png) and [components/crops/hero-quiz-default.png](components/crops/hero-quiz-default.png).
+- **Put menus on frosted glass.** The shop menu and the sign-in panel are rgba(87, 94, 85, 0.35), radius 32px, padding 16px, backdrop blur 19px. See [home-light-shop-menu.png](screenshots/home-light-shop-menu.png) and [home-light-signin-email.png](screenshots/home-light-signin-email.png).
+- **Keep the quiz option a 72px card.** Radius 16px, 1px border #d2d8d0, snow fill, 18px label. See [quiz-light-default.png](screenshots/quiz-light-default.png).
+- **Do not invent a dark theme.** The stylesheet has no dark palette. Product colours (AM-02, DM-02, PM-02, VS-01) are accents, not a second theme. See [home-light-default.png](screenshots/home-light-default.png).
+- **Do not treat icon.png as a page capture.** It is the site favicon, a green circle, and it is also the catalog cover. Page layout is in [screenshots/](screenshots/).

@@ -1,8 +1,8 @@
 # Seed
 
-Public marketing site at seed.com, captured signed out on 2026-11-19. Probiotic and supplement retail. Light theme only. Desktop innerWidth 1169 and phone innerWidth 390. No account, no bag, no checkout.
+Public marketing site at seed.com, captured signed out. Probiotic and supplement retail. Light theme only. No account was created and no checkout was started.
 
-Computed styles were read in the T3 preview tab. The preview browser did not produce screenshot frames. Headless Playwright received a Cloudflare challenge, so this package has no screenshots and no crops.
+Computed styles were read in the T3 preview tab on 2026-11-19 at innerWidth 1169 and phone innerWidth 390. Those readings are the token values. On 2026-11-21 headless Playwright loaded the public pages at desktop 1440x900 and phone 390x844 (phone PNGs are 780x1688 at 2x). The site tree was mapped before those screenshots. OneTrust and a Freshchat promo lightbox were hidden, never clicked. No email, password, code, or profile field was typed. No form was submitted.
 
 | File | What it holds |
 |---|---|
@@ -13,8 +13,11 @@ Computed styles were read in the T3 preview tab. The preview browser did not pro
 | [style-guide.html](style-guide.html) | Light specimens drawn from the measured values. Seed Sans is not loaded |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Page patterns from the pages that were opened |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or wall |
+| [screenshots/](screenshots/) | 45 public page captures, 256-colour PNGs, desktop 1440 and phone 390 |
+| [components/](components/) | 58 element crops at 2x. The cart crop was dropped because a promo overlay covered it |
 | [icons/](icons/) | 4 inline SVGs from the homepage, plus INDEX.tsv |
-| [raw/](raw/) | measurements.md |
+| [raw/](raw/) | measurements.md from the 2026-11-19 readings, plus css-vars.json and components-computed.json from the 2026-11-21 Playwright pass |
 | [tools/](tools/) | Kit copy. The public builders were not adapted, because tokens.json was written from the live readings |
 
 <!-- health:start -->
@@ -53,7 +56,7 @@ Fonts: `core.font.family.sans` is Seed Sans, then 2 fallbacks; `core.font.family
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; no components/ (The preview browser did not produce screenshot frames, and headless Playwright was stopped at a Cloudflare challenge, so there are no component crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 58 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -77,15 +80,17 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (The preview
 
 ## How the values were read
 
-Custom properties were read with `getComputedStyle(document.documentElement)` on https://seed.com/ at innerWidth 1169, innerHeight 731, devicePixelRatio 2. 216 of 244 declared names resolved. Component values were read with `getComputedStyle` on the live elements listed in [raw/measurements.md](raw/measurements.md).
+Custom properties were read with `getComputedStyle(document.documentElement)` on https://seed.com/ at innerWidth 1169, innerHeight 731, devicePixelRatio 2, on 2026-11-19. 216 of 244 declared names resolved. Component values were read with `getComputedStyle` on the live elements listed in [raw/measurements.md](raw/measurements.md). Token paths were not rewritten on 2026-11-21.
 
-Pages opened, signed out: `/`, `/products`, `/daily-synbiotic`, `/approach`, and the quiz at `/is-ds01-right-for-you` (it redirected to `/lp/ds01-quiz-baseline`). The Shop menu and the Sign in panel were opened. No email was typed. No quiz answer was chosen. The cart was not opened.
+The 2026-11-21 pass used headless Chromium through Playwright (`PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs`). Desktop viewport 1440x900 at 1x. Phone viewport 390x844 at 2x. Custom properties from that pass are in [raw/css-vars.json](raw/css-vars.json). Element styles from that pass are in [raw/components-computed.json](raw/components-computed.json). Screenshots were quantized to 256-colour sRGB PNGs. Values come from CSS, not from those PNGs.
+
+Pages opened, signed out: `/`, `/products`, `/daily-synbiotic`, `/daily-multivitamin`, `/daily-essentials-duo`, `/energy-focus`, `/sleep-restore`, `/pds08-daily-kids-probiotic`, `/vaginal-synbiotic`, `/approach`, `/seedlabs`, `/sustainability`, `/reference/syn-wk`, `/practitioners`, `/press`, `/join-us`, `/entire-world`, `/terms-conditions`, `/privacy-policy`, `/accessibility`, `/subscription-terms`, `/consumer-health-data`, `/cultured`, `/cultured/microbiome-101`, `/is-ds01-right-for-you`, `/find-your-routine`, and `/login`. Shop, Science, and Learn menus open on hover. The phone Open menu opens the Shop panel. Sign in opens an email overlay on the current URL. Cart is a dialog. The country listbox was opened on `/login` and not changed. No email was typed. No quiz answer was chosen. Checkout was not pressed.
 
 ## What to distrust
 
-There are no page screenshots. `preview_snapshot` failed with "The browser is not producing screenshot frames." Headless Playwright returned HTTP 403 and the title "Just a moment..." on every public URL, so that route was stopped. The catalog cover is [icon.png](icon.png), a favicon, not a page capture.
+The catalog cover is [icon.png](icon.png), a favicon, not a page capture. Token values are the 2026-11-19 readings at innerWidth 1169. The 2026-11-21 screenshots are 1440 and 390. A few computed sizes from the later pass disagree with the tokens: the hero quiz pill measured 51px tall against a 52px token, and the cart dialog measured radius 16px against the menu token of 32px. Read the tokens, then the later dump, and do not average them.
 
-Desktop readings are at innerWidth 1169, not 1440. The preview tab was in fill mode. Phone readings are at innerWidth 390 after a freeform resize.
+The 2026-11-19 quiz note says `/is-ds01-right-for-you` redirected to `/lp/ds01-quiz-baseline` and showed step 1 of 13. The 2026-11-21 Playwright pass stayed on `/is-ds01-right-for-you` and showed step 1 of 11. Both observations are kept. Neither pass answered the quiz.
 
 Button height is 52px on the homepage quiz link and 48px on Start Now. Both use radius 1000px and padding 16px 24px. The token records both.
 
@@ -107,29 +112,34 @@ The hero heading stack also names system-ui, "Helvetic Neue", Helvetica, and Ari
 
 | Surface | Captured |
 |---|---|
-| Home, shop index, DS-01 product, science, quiz first step | Computed styles, no screenshots |
-| Shop menu, sign-in email panel | Computed styles. Email not submitted |
-| Sustainability, other product pages | Linked, not opened |
-| Cart, checkout, payment, card, phone | Not entered |
-| Account after sign-in | Not entered |
-| Dark theme | Not present. `color-scheme` was `normal`. `prefers-color-scheme: dark` matched the OS and the page stayed on snow and seed green |
-| Hover, pressed, error, loading, disabled | Not captured |
-| 1169 and 390 | Measured. No PNGs |
+| Home, shop index, product pages, science, sustainability, cultured, legal, quiz first step | [screenshots/](screenshots/) at 1440 and a phone subset at 390 |
+| Shop, Science, Learn menus | [home-light-shop-menu.png](screenshots/home-light-shop-menu.png), [home-light-science-menu.png](screenshots/home-light-science-menu.png), [home-light-learn-menu.png](screenshots/home-light-learn-menu.png). Phone Shop panel: [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) |
+| Sign-in email step | [home-light-signin-email.png](screenshots/home-light-signin-email.png) and [login-light-default.png](screenshots/login-light-default.png). Email not typed. Continue not pressed |
+| Empty cart dialog | [products-light-cart.png](screenshots/products-light-cart.png). Checkout not pressed. `/cart` redirects to `/products` |
+| Country listbox | [login-light-locale.png](screenshots/login-light-locale.png). Opened, not changed. Homepage locale was covered by a promo and was not kept |
+| Hover and pressed crops | [components/crops/](components/crops/). Several pairs are identical |
+| Account after sign-in, password, Google, Facebook | Not entered. Wall recorded in [site-tree.md](site-tree.md) |
+| Checkout, payment, card, phone, profile, birthday, plan, survey, onboarding | Not entered |
+| Newsletter, practitioner connect, waitlist, contact, Superfiliate, Impact partner | Forms visible. Not typed, not submitted |
+| Dark theme | Not present. `color-scheme` was `normal` |
+| Error, loading, disabled | Not on the public pages that were opened. Error and warning colours exist as custom properties |
+| Focus ring | 2026-11-19 header link: 3px solid #1c3a13, offset 2.5px. Sign-in email computed outline none. The 2026-11-21 pass did not remeasure header-link focus |
 | Motion | Declared rules recorded. Not timed on screen |
+| Reference pages other than `/reference/syn-wk`, CCPA notices, Seed University, cultured categories | Linked in the site tree. Not screenshotted |
 
 ## Do and don't
 
-- **Use seed green on snow.** Text is #1c3a13. Page fill is #fcfcf7. The html background on the dark hero is the same green, #1c3a13. See [raw/measurements.md](raw/measurements.md).
-- **Set display type in Seed Sans at 350, with tight tracking.** The hero is 48px / 52.8px / -1.2px. Science display is 64px at weight 300 and -2%. Eyebrows are 12px, weight 500, uppercase.
-- **Make the action a pill.** Radius 1000px, padding 16px 24px, height 48px or 52px. Filled buttons are seed green with snow text. Inverse buttons are snow with seed-green text.
-- **Put menus on frosted glass.** The shop menu and the sign-in panel are rgba(87, 94, 85, 0.35), radius 32px, padding 16px, backdrop blur 19px.
-- **Keep the quiz option a 72px card.** Radius 16px, 1px border #d2d8d0, snow fill, 18px label.
-- **Do not invent a dark theme.** The stylesheet has no dark palette. Product colours (AM-02, DM-02, PM-02, VS-01) are accents, not a second theme.
-- **Do not treat icon.png as a page capture.** It is the site favicon, a green circle, and it is also the catalog cover because there is no screenshot.
+- **Use seed green on snow.** Text is #1c3a13. Page fill is #fcfcf7. The html background on the dark hero is the same green, #1c3a13. See [home-light-default.png](screenshots/home-light-default.png) and [synbiotic-light-default.png](screenshots/synbiotic-light-default.png).
+- **Set display type in Seed Sans at 350, with tight tracking.** The hero is 48px / 52.8px / -1.2px. Science display is 64px at weight 300 and -2%. Eyebrows are 12px, weight 500, uppercase. See [home-light-default.png](screenshots/home-light-default.png).
+- **Make the action a pill.** Radius 1000px, padding 16px 24px, height 48px or 52px. Filled buttons are seed green with snow text. Inverse buttons are snow with seed-green text. See [components/crops/start-now-default.png](components/crops/start-now-default.png) and [components/crops/hero-quiz-default.png](components/crops/hero-quiz-default.png).
+- **Put menus on frosted glass.** The shop menu and the sign-in panel are rgba(87, 94, 85, 0.35), radius 32px, padding 16px, backdrop blur 19px. See [home-light-shop-menu.png](screenshots/home-light-shop-menu.png) and [home-light-signin-email.png](screenshots/home-light-signin-email.png).
+- **Keep the quiz option a 72px card.** Radius 16px, 1px border #d2d8d0, snow fill, 18px label. See [quiz-light-default.png](screenshots/quiz-light-default.png).
+- **Do not invent a dark theme.** The stylesheet has no dark palette. Product colours (AM-02, DM-02, PM-02, VS-01) are accents, not a second theme. See [home-light-default.png](screenshots/home-light-default.png).
+- **Do not treat icon.png as a page capture.** It is the site favicon, a green circle, and it is also the catalog cover. Page layout is in [screenshots/](screenshots/).
 
 ## Rebuild
 
-Tokens were written from the readings, not from `tools/build_tokens.py`. That script is still the kit's Claude mapping and will not rebuild this file. Regenerate [DESIGN.md](DESIGN.md) from the repo root:
+Tokens were written from the 2026-11-19 readings, not from `tools/build_tokens.py`. That script is still the kit's Claude mapping and will not rebuild this file. The 2026-11-21 pass added screenshots, crops, and raw dumps. It did not rewrite token paths, because [catalog.json](../../catalog.json) preview aliases already point at them. This capture was told not to edit catalog.json. Until a later commit clears `layoutGaps` for `screenshots/` and `components/`, `make check` reports those folders as declared missing. Regenerate [DESIGN.md](DESIGN.md) from the repo root:
 
 ```bash
 python3 tools/catalog.py design-md seed
