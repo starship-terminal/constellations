@@ -1,0 +1,705 @@
+{
+  "home": {
+    "href": "https://ridewithgps.com/",
+    "title": "Ride with GPS: The Most Trusted Platform for Cycling Routes and GPS Navigation",
+    "metrics": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1440,
+        "height": 900,
+        "scale": 1
+      }
+    },
+    "vars": {
+      "--font-sans": "\"__heading_5a6bc3\",\"__heading_Fallback_5a6bc3\"",
+      "--color-text": "#0b1c1c",
+      "--color-gray": "#1a2627",
+      "--color-white": "#fff",
+      "--color-purple": "#96aaff",
+      "--color-dark-purple": "#6982ff",
+      "--color-orange": "#fa6400",
+      "--color-pistachio": "#ebeed7",
+      "--color-yellow": "#ffd771",
+      "--color-border": "#cdcdcd",
+      "--font-body": "\"aktiv-grotesk\",sans-serif",
+      "--font-size-h1": "clamp(3.375rem,1rem + 7vw,8.75rem)",
+      "--font-size-h1--hero": "clamp(4.5rem,1rem + 10vw,13.25rem)",
+      "--font-size-h2": "4.8rem",
+      "--font-size-h3": "3.2rem",
+      "--font-size-h4": "1.9rem",
+      "--font-size-h5": "1.4rem",
+      "--font-size-h5-alt": "1.25rem",
+      "--font-size-h6": "1.1rem",
+      "--font-size-body": "1rem",
+      "--font-size-medium": "0.875rem",
+      "--font-size-small": "0.625rem",
+      "--color-border-light": "#f5f6f6"
+    },
+    "nav": {
+      "text": "Plans Route Planner Organizations Explore Stories Ride Reports Journal News & Press Case Studies Log In English Get Started",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(11, 28, 28, 0.8)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 1440,
+      "height": 56,
+      "textTransform": "none"
+    },
+    "h1": {
+      "text": "The Ultimate Planning & Navigation App Just For Cyclists",
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "__heading_5a6bc3, __heading_Fallback_5a6bc3",
+      "fontSize": "116px",
+      "fontWeight": "400",
+      "lineHeight": "104.4px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 758,
+      "height": 418,
+      "textTransform": "none",
+      "note": "color is transparent because the fill is a background image, bg-topo-white"
+    },
+    "lede": {
+      "text": "Join the community of over 3 million riders that trust Ride with GPS for worldwide route discovery, planning, and navigation on the go.",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 616,
+      "height": 48,
+      "textTransform": "none"
+    },
+    "plans": {
+      "text": "Plans",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "700",
+      "lineHeight": "18px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 39,
+      "height": 18,
+      "textTransform": "none"
+    },
+    "getStarted": {
+      "text": "Get Started",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(250, 100, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "borderRadius": "3px",
+      "padding": "12px 32px",
+      "width": 148,
+      "height": 48,
+      "textTransform": "none"
+    },
+    "join": {
+      "text": "Join for free",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(250, 100, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "700",
+      "lineHeight": "19.2px",
+      "letterSpacing": "normal",
+      "borderRadius": "3px",
+      "padding": "12px 32px",
+      "width": 159,
+      "height": 43,
+      "textTransform": "none"
+    },
+    "login": {
+      "text": "Log In",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 70,
+      "height": 24,
+      "textTransform": "none"
+    },
+    "footer": {
+      "text": "\u00a9 2026 Ride With GPS Terms of Service Privacy Policy Product Updates Integrations Mobile App Best of Routes Global Ambassadors For Businesse",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 1440,
+      "height": 327,
+      "textTransform": "none"
+    },
+    "h2": {
+      "text": "Used by professionals",
+      "color": "rgb(11, 28, 28)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "__heading_5a6bc3, __heading_Fallback_5a6bc3",
+      "fontSize": "51.2px",
+      "fontWeight": "400",
+      "lineHeight": "51.2px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 380,
+      "height": 51,
+      "textTransform": "none"
+    },
+    "capture": {
+      "date": "2026-11-22",
+      "screenshot": "2880x1800",
+      "viewport": "1440x900",
+      "dpr": 2
+    },
+    "links": [
+      {
+        "text": "Plans",
+        "href": "/pricing"
+      },
+      {
+        "text": "Route Planner",
+        "href": "/route_planner"
+      },
+      {
+        "text": "Organizations",
+        "href": "/organizations"
+      },
+      {
+        "text": "Explore",
+        "href": "/explore"
+      },
+      {
+        "text": "Ride Reports",
+        "href": "/ride_reports"
+      },
+      {
+        "text": "Journal",
+        "href": "/journal"
+      },
+      {
+        "text": "News & Press",
+        "href": "/news"
+      },
+      {
+        "text": "Case Studies",
+        "href": "/casestudies"
+      },
+      {
+        "text": "Log In",
+        "href": "/login"
+      },
+      {
+        "text": "Get Started",
+        "href": "/signup"
+      },
+      {
+        "text": "App Store link",
+        "href": "https://itunes.apple.com/us/app/ride-with-gps-bike-computer/id893687399?ls=1&mt=8"
+      },
+      {
+        "text": "Google Play Store link",
+        "href": "https://play.google.com/store/apps/details?id=com.ridewithgps.mobile&utm_campaign=android_app&utm_source=site&utm_medium=android_page"
+      },
+      {
+        "text": "Join for free",
+        "href": "/signup"
+      },
+      {
+        "text": "Start planning now",
+        "href": "https://www.ridewithgps.com/routes/new?show_signup=1"
+      },
+      {
+        "text": "Sign up now",
+        "href": "https://ridewithgps.com/signup"
+      },
+      {
+        "text": "App Store link",
+        "href": "https://itunes.apple.com/us/app/ride-with-gps-bike-computer/id893687399?ls=1&mt=8"
+      },
+      {
+        "text": "Google Play Store link",
+        "href": "https://play.google.com/store/apps/details?id=com.ridewithgps.mobile&utm_campaign=android_app&utm_source=site&utm_medium=android_page"
+      },
+      {
+        "text": "Sign Up Now",
+        "href": "https://www.ridewithgps.com/signup"
+      },
+      {
+        "text": "Terms of Service",
+        "href": "/terms-of-service"
+      },
+      {
+        "text": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "text": "Product Updates",
+        "href": "https://changelog.ridewithgps.com/"
+      },
+      {
+        "text": "Integrations",
+        "href": "/integrations"
+      },
+      {
+        "text": "Mobile App",
+        "href": "/app"
+      },
+      {
+        "text": "Best of Routes",
+        "href": "/regions"
+      },
+      {
+        "text": "Global Ambassadors",
+        "href": "/global_ambassadors"
+      },
+      {
+        "text": "For Businesses",
+        "href": "https://ridewithgps.com/organizations/"
+      },
+      {
+        "text": "Cycling Clubs",
+        "href": "/cycling-clubs"
+      },
+      {
+        "text": "Event Organizers",
+        "href": "https://ridewithgps.com/cycling-events"
+      },
+      {
+        "text": "Tour Operators",
+        "href": "https://ridewithgps.com/tours"
+      },
+      {
+        "text": "Digital Itineraries",
+        "href": "/experiences"
+      },
+      {
+        "text": "About Us",
+        "href": "/about-us"
+      },
+      {
+        "text": "Careers",
+        "href": "/careers"
+      },
+      {
+        "text": "Help Center",
+        "href": "https://support.ridewithgps.com"
+      },
+      {
+        "text": "Contact Us",
+        "href": "/contact"
+      },
+      {
+        "text": "Developers",
+        "href": "https://ridewithgps.com/api/v1/doc"
+      },
+      {
+        "text": "App Store link",
+        "href": "https://itunes.apple.com/us/app/ride-with-gps-bike-computer/id893687399?ls=1&mt=8"
+      },
+      {
+        "text": "Google Play Store link",
+        "href": "https://play.google.com/store/apps/details?id=com.ridewithgps.mobile&utm_campaign=android_app&utm_source=site&utm_medium=android_page"
+      },
+      {
+        "text": "Facebook",
+        "href": "https://www.facebook.com/ridewithgps"
+      },
+      {
+        "text": "X",
+        "href": "https://www.twitter.com/ridewithgps"
+      },
+      {
+        "text": "Instagram",
+        "href": "https://www.instagram.com/ridewithgps"
+      },
+      {
+        "text": "YouTube",
+        "href": "https://www.youtube.com/ridewithgps"
+      },
+      {
+        "text": "Terms of Service",
+        "href": "/terms-of-service"
+      },
+      {
+        "text": "Privacy Policy",
+        "href": "/privacy-policy"
+      }
+    ]
+  },
+  "planner": {
+    "href": "https://ridewithgps.com/route-planner",
+    "title": "Cycling Route Planner | Elevation, Surface Types & GPS Sync | Ride with GPS",
+    "metrics": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1440,
+        "height": 900,
+        "scale": 1
+      }
+    },
+    "vars": {
+      "--font-sans": "\"__heading_5a6bc3\",\"__heading_Fallback_5a6bc3\"",
+      "--color-text": "#0b1c1c",
+      "--color-gray": "#1a2627",
+      "--color-white": "#fff",
+      "--color-purple": "#96aaff",
+      "--color-dark-purple": "#6982ff",
+      "--color-orange": "#fa6400",
+      "--color-pistachio": "#ebeed7",
+      "--color-yellow": "#ffd771",
+      "--color-border": "#cdcdcd",
+      "--font-body": "\"aktiv-grotesk\",sans-serif",
+      "--font-size-h1": "clamp(3.375rem,1rem + 7vw,8.75rem)",
+      "--font-size-h1--hero": "clamp(4.5rem,1rem + 10vw,13.25rem)",
+      "--font-size-h2": "4.8rem",
+      "--font-size-h3": "3.2rem",
+      "--font-size-h4": "1.9rem",
+      "--font-size-h5": "1.4rem",
+      "--font-size-h5-alt": "1.25rem",
+      "--font-size-h6": "1.1rem",
+      "--font-size-body": "1rem",
+      "--font-size-medium": "0.875rem",
+      "--font-size-small": "0.625rem",
+      "--color-border-light": "#f5f6f6"
+    },
+    "nav": {
+      "text": "Plans Route Planner Organizations Explore Stories Ride Reports Journal News & Press Case Studies Log In English Get Started",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(11, 28, 28, 0.8)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 1440,
+      "height": 56,
+      "textTransform": "none"
+    },
+    "h1": {
+      "text": "The Bike Route Planner Built for Every Ride",
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "__heading_5a6bc3, __heading_Fallback_5a6bc3",
+      "fontSize": "116px",
+      "fontWeight": "400",
+      "lineHeight": "104.4px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 1344,
+      "height": 209,
+      "textTransform": "none",
+      "webkitTextFillColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "url(\"https://ridewithgps.com/homepage_images/bg-topo-white.jpg\")"
+    },
+    "lede": null,
+    "plans": {
+      "text": "Plans",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "700",
+      "lineHeight": "18px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 39,
+      "height": 18,
+      "textTransform": "none"
+    },
+    "getStarted": {
+      "text": "Get Started",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(250, 100, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "borderRadius": "3px",
+      "padding": "12px 32px",
+      "width": 148,
+      "height": 48,
+      "textTransform": "none"
+    },
+    "join": null,
+    "login": {
+      "text": "Log In",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 70,
+      "height": 24,
+      "textTransform": "none"
+    },
+    "footer": {
+      "text": "\u00a9 2026 Ride With GPS Terms of Service Privacy Policy Product Updates Integrations Mobile App Best of Routes Global Ambassadors For Businesse",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 1440,
+      "height": 327,
+      "textTransform": "none"
+    },
+    "h2": {
+      "text": "Safe Rides Start with Good Planning",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "__heading_5a6bc3, __heading_Fallback_5a6bc3",
+      "fontSize": "51.2px",
+      "fontWeight": "400",
+      "lineHeight": "51.2px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "width": 616,
+      "height": 51,
+      "textTransform": "none"
+    },
+    "plan": {
+      "text": "Plan a Route",
+      "href": "https://ridewithgps.com/routes/new",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(250, 100, 0)",
+      "radius": "3px",
+      "pad": "12px 32px",
+      "fs": "16px",
+      "fw": "700",
+      "ff": "aktiv-grotesk, sans-serif",
+      "w": 159,
+      "h": 43
+    },
+    "see": {
+      "text": "See How It Works",
+      "href": "https://ridewithgps.com/routes/new",
+      "color": "rgb(255, 215, 113)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "fs": "16px",
+      "fw": "400",
+      "ff": "aktiv-grotesk, sans-serif",
+      "w": 134,
+      "h": 21
+    },
+    "links": [
+      {
+        "text": "Plans",
+        "href": "/pricing"
+      },
+      {
+        "text": "Route Planner",
+        "href": "/route_planner"
+      },
+      {
+        "text": "Organizations",
+        "href": "/organizations"
+      },
+      {
+        "text": "Explore",
+        "href": "/explore"
+      },
+      {
+        "text": "Ride Reports",
+        "href": "/ride_reports"
+      },
+      {
+        "text": "Journal",
+        "href": "/journal"
+      },
+      {
+        "text": "News & Press",
+        "href": "/news"
+      },
+      {
+        "text": "Case Studies",
+        "href": "/casestudies"
+      },
+      {
+        "text": "Log In",
+        "href": "/login"
+      },
+      {
+        "text": "Get Started",
+        "href": "/signup"
+      },
+      {
+        "text": "Plan a Route",
+        "href": "https://ridewithgps.com/routes/new"
+      },
+      {
+        "text": "See How It Works",
+        "href": "https://ridewithgps.com/routes/new"
+      },
+      {
+        "text": "See the Map",
+        "href": "https://ridewithgps.com/routes/new"
+      },
+      {
+        "text": "Get the App",
+        "href": "https://ridewithgps.com/app_store_redirect"
+      },
+      {
+        "text": "Plan a Route",
+        "href": "https://ridewithgps.com/routes/new"
+      },
+      {
+        "text": "Plan a Route",
+        "href": "https://ridewithgps.com/routes/new"
+      },
+      {
+        "text": "Download the App",
+        "href": "https://ridewithgps.com/app_store_redirect"
+      },
+      {
+        "text": "Plan a Route",
+        "href": "https://ridewithgps.com/routes/new"
+      },
+      {
+        "text": "Terms of Service",
+        "href": "/terms-of-service"
+      },
+      {
+        "text": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "text": "Product Updates",
+        "href": "https://changelog.ridewithgps.com/"
+      },
+      {
+        "text": "Integrations",
+        "href": "/integrations"
+      },
+      {
+        "text": "Mobile App",
+        "href": "/app"
+      },
+      {
+        "text": "Best of Routes",
+        "href": "/regions"
+      },
+      {
+        "text": "Global Ambassadors",
+        "href": "/global_ambassadors"
+      },
+      {
+        "text": "For Businesses",
+        "href": "https://ridewithgps.com/organizations/"
+      },
+      {
+        "text": "Cycling Clubs",
+        "href": "/cycling-clubs"
+      },
+      {
+        "text": "Event Organizers",
+        "href": "https://ridewithgps.com/cycling-events"
+      },
+      {
+        "text": "Tour Operators",
+        "href": "https://ridewithgps.com/tours"
+      },
+      {
+        "text": "Digital Itineraries",
+        "href": "/experiences"
+      },
+      {
+        "text": "About Us",
+        "href": "/about-us"
+      },
+      {
+        "text": "Careers",
+        "href": "/careers"
+      },
+      {
+        "text": "Help Center",
+        "href": "https://support.ridewithgps.com"
+      },
+      {
+        "text": "Contact Us",
+        "href": "/contact"
+      },
+      {
+        "text": "Developers",
+        "href": "https://ridewithgps.com/api/v1/doc"
+      },
+      {
+        "text": "App Store link",
+        "href": "https://itunes.apple.com/us/app/ride-with-gps-bike-computer/id893687399?ls=1&mt=8"
+      },
+      {
+        "text": "Google Play Store link",
+        "href": "https://play.google.com/store/apps/details?id=com.ridewithgps.mobile&utm_campaign=android_app&utm_source=site&utm_medium=android_page"
+      },
+      {
+        "text": "Facebook",
+        "href": "https://www.facebook.com/ridewithgps"
+      },
+      {
+        "text": "X",
+        "href": "https://www.twitter.com/ridewithgps"
+      },
+      {
+        "text": "Instagram",
+        "href": "https://www.instagram.com/ridewithgps"
+      },
+      {
+        "text": "YouTube",
+        "href": "https://www.youtube.com/ridewithgps"
+      },
+      {
+        "text": "Terms of Service",
+        "href": "/terms-of-service"
+      },
+      {
+        "text": "Privacy Policy",
+        "href": "/privacy-policy"
+      }
+    ]
+  }
+}

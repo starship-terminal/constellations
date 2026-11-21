@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ride with GPS public tokens</title>
+  <style>
+    :root {
+      --ink: #0b1c1c;
+      --white: #ffffff;
+      --orange: #fa6400;
+      --nav: rgba(11, 28, 28, 0.8);
+      --yellow: #ffd771;
+      --pistachio: #ebeed7;
+      --purple: #96aaff;
+      --body: aktiv-grotesk, system-ui, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 24px;
+    }
+    main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1 { font-weight: 400; font-size: 48px; line-height: 1.05; margin: 0 0 8px; }
+    h2 { font-weight: 400; font-size: 28px; margin: 40px 0 12px; }
+    p { margin: 0 0 16px; }
+    .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+    .swatch { width: 140px; }
+    .chip { height: 64px; border-radius: 3px; }
+    .label { font-size: 13px; margin-top: 6px; }
+    .bar {
+      background: var(--nav);
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      margin: 16px 0 24px;
+    }
+    .nav a { color: var(--white); font-size: 15px; font-weight: 700; text-decoration: none; margin-right: 16px; }
+    button, .btn {
+      background: var(--orange);
+      color: var(--white);
+      border: 0;
+      border-radius: 3px;
+      padding: 12px 32px;
+      font: 700 15px/24px var(--body);
+      height: 48px;
+    }
+    .link { color: var(--yellow); }
+    .note { color: var(--pistachio); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ride with GPS</h1>
+    <p>Public tokens measured on 2026-11-22. The display face is not bundled, so this page uses the body stack.</p>
+    <div class="bar">
+      <div class="nav"><a>Plans</a><a>Route Planner</a><a>Explore</a></div>
+      <button type="button">Get Started</button>
+    </div>
+    <h2>Colour</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#0b1c1c;border:1px solid #fff"></div><div class="label">ink #0b1c1c</div></div>
+      <div class="swatch"><div class="chip" style="background:#fa6400"></div><div class="label">orange #fa6400</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">white #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffd771"></div><div class="label">yellow #ffd771</div></div>
+      <div class="swatch"><div class="chip" style="background:#ebeed7"></div><div class="label">pistachio #ebeed7</div></div>
+      <div class="swatch"><div class="chip" style="background:#96aaff"></div><div class="label">purple #96aaff</div></div>
+    </div>
+    <h2>Type and link</h2>
+    <p>Body is 16px aktiv-grotesk. Nav is 15px, weight 700.</p>
+    <p><a class="link">See How It Works</a></p>
+    <p class="note">Pistachio and purple were measured below the fold and are not in the screenshots.</p>
+  </main>
+</body>
+</html>
