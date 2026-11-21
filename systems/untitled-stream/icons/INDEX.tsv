@@ -1,0 +1,3 @@
+name	source	note
+favicon.svg	https://untitled.stream/favicon.svg	Embedded PNG, not a path icon. Not exported as a UI glyph.
+apple-touch-icon-180	https://untitled.stream/apple-touch-icon-180x180.png	Product icon. icon.png is resized from this.

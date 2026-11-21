@@ -1,0 +1,21 @@
+{
+  "slug": "untitled-stream",
+  "product": "untitled",
+  "domain": "untitled.stream",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-wall",
+  "session": "Incognito Chromium opened /login, which redirected to /welcome. Create account opened /sign-up. I have an account opened /sign-in. No identity provider was clicked. No form was submitted. No email, password, code, phone, address, or recovery phrase was typed.",
+  "wall": {
+    "url": "https://untitled.stream/welcome",
+    "title": "[untitled]",
+    "asks": ["Create account", "I have an account"],
+    "email_field": false,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [],
+    "note": "The welcome gate has two buttons and no fields. /sign-up lists Apple, Google, Email, and device only, with no fields. /sign-in lists QR Code, Apple, Google, Email, Phone, and Recovery Phrase, with no fields. Those provider buttons were not clicked."
+  },
+  "stopped": "Login and signup were photographed empty. The branch stopped. The signed-in app was not opened."
+}

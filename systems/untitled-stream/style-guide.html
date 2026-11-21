@@ -1,388 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[untitled] style guide</title>
-<meta name="description" content="[untitled] (untitled.stream) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<title>untitled tokens</title>
 <style>
-:root {
-  --palette-black: #191919;
-  --palette-white: #ffffff;
-  --palette-gray: #7e7e7e;
-  --palette-light-gray: #b6b6b6;
-  --palette-tertiary-gray: #a6a6a6;
-  --palette-blue: #0056fc;
-  --palette-untitled-blue: #5a8ff7;
-  --palette-untitled-pink: #e699ab;
-  --palette-untitled-pink-bg: #ffe7f1;
-  --palette-green: #178f51;
-  --palette-orange: #f79822;
-  --palette-pink: #ff91e7;
-  --palette-red: #ff0d16;
-  --palette-unwrap-red: #f34d4d;
-  --palette-yellow: #f9e749;
-  --palette-yellow-warn: #c58e00;
-  --palette-accent-green: #2ee565;
-  --palette-accent-pink: #ff2d55;
-  --palette-accent-purple: #962dff;
-  --palette-daw-black: rgba(36, 36, 36, 0.9);
-  --palette-daw-gray: #343434;
-  --palette-daw-blue: #0056fc;
-  --palette-daw-red: #ff0d16;
-  --palette-daw-yellow: #f9e749;
-  --palette-daw-light-yellow: #f9e8ba;
-  --palette-shading-DEFAULT: rgba(26, 26, 26, 0.05);
-  --palette-shading-dark: rgba(26, 26, 26, 0.2);
-  --palette-shading-light: rgba(255, 255, 255, 0.5);
-  --palette-hover: rgba(26, 26, 26, 0.02);
-  --palette-border: rgba(26, 26, 26, 0.1);
-  --palette-surface-frost: rgba(38, 38, 38, 0.9);
-  --palette-tape-background: rgba(255, 255, 255, 0.5);
-  --palette-tape-text: rgba(26, 26, 26, 0.5);
-  --font-family-untitled-sans: "Untitled Sans", sans-serif;
-  --font-family-plex-mono: "IBM Plex Mono", monospace;
-  --font-size-footnote: 12px;
-  --font-size-subhead: 13px;
-  --font-size-body: 15px;
-  --font-size-title: 18px;
-  --font-size-large-title: 22px;
-  --font-size-super-title: 26px;
-  --font-size-note-mono: 12px;
-  --font-size-text-4xl: 28px;
-  --font-leading-footnote: 16px;
-  --font-leading-subhead: 16px;
-  --font-leading-body: 20px;
-  --font-leading-title: 22px;
-  --font-leading-large-title: 26px;
-  --font-leading-super-title: 32px;
-  --font-leading-note-mono: 18px;
-  --font-leading-4xl: 34px;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-tracking-footnote: -0.41px;
-  --font-tracking-subhead: -0.39px;
-  --font-tracking-body: -0.45px;
-  --font-tracking-title: -0.54px;
-  --font-tracking-large-title: -0.66px;
-  --font-tracking-super-title: -0.78px;
-  --font-tracking-mobile-display: -1.64px;
-  --radius-card: 20px;
-  --radius-consent: 16px;
-  --radius-pill: 33554400px;
-  --blur-xs: 4px;
-  --blur-sm: 8px;
-  --blur-md: 12px;
-  --blur-xl: 24px;
-  --easing-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --easing-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
-  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
-  --easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --duration-default: 150ms;
-  --duration-slow: 300ms;
-  --layout-header-height: 152px;
-  --layout-perspective: 1200px;
-  --typography-super-title: 500 26px/32px var(--font-family-untitled-sans);
-  --typography-mobile-display: 500 28px/34px var(--font-family-untitled-sans);
-  --typography-title: 500 18px/22px var(--font-family-untitled-sans);
-  --typography-body: 400 15px/20px var(--font-family-untitled-sans);
-  --typography-body-semibold: 500 15px/20px var(--font-family-untitled-sans);
-  --typography-subhead: 400 13px/16px var(--font-family-untitled-sans);
-  --typography-subhead-medium: 500 13px/16px var(--font-family-untitled-sans);
-  --typography-footnote: 500 12px/16px var(--font-family-untitled-sans);
-  --component-button-primary-bg: linear-gradient(180deg, #242424 0%, #101010 100%);
-  --component-button-primary-text: #ffffff;
-  --component-button-primary-radius: 33554400px;
-  --component-button-primary-height: 44px;
-  --component-button-primary-label: var(--typography-subhead-medium);
-  --component-button-secondary-bg: rgba(26, 26, 26, 0.05);
-  --component-button-secondary-text: #191919;
-  --component-button-secondary-radius: 33554400px;
-  --component-button-secondary-height: 52px;
-  --component-button-consent-accept-bg: #ffffff;
-  --component-button-consent-accept-text: #000000;
-  --component-button-consent-accept-radius: 33554400px;
-  --component-button-consent-accept-height: 40px;
-  --component-button-consent-reject-bg: rgba(255, 255, 255, 0.05);
-  --component-button-consent-reject-text: #ffffff;
-  --component-button-consent-reject-radius: 33554400px;
-  --component-button-consent-reject-height: 40px;
-  --component-header-height: 88px;
-  --component-header-text: #191919;
-  --component-pill-bar-height: 92px;
-  --component-pill-bar-pill-bg: rgba(26, 26, 26, 0.05);
-  --component-pill-bar-pill-height: 44px;
-  --component-plan-card-bg: #eeeeee;
-  --component-plan-card-radius: 20px;
-  --component-plan-card-width: 350px;
-  --component-plan-card-height: 536px;
-  --component-billing-toggle-selected-bg: rgba(26, 26, 26, 0.05);
-  --component-billing-toggle-selected-radius: 20px;
-  --component-billing-toggle-option-height: 44px;
-  --component-consent-card-bg: rgba(38, 38, 38, 0.9);
-  --component-consent-card-text: #ffffff;
-  --component-consent-card-radius: 16px;
-  --component-consent-card-width: 500px;
-  --component-disc-size: 656px;
-  --component-disc-radius: var(--radius-pill);
-  --component-login-card-width: 342px;
-  --component-login-card-oauth-height: 52px;
-  --component-login-card-icon-size: 220px;
-  --background-page: var(--palette-white);
-  --background-surface: #f2f2f2;
-  --background-surface-raised: #eeeeee;
-  --background-tertiary: #808080;
-  --background-frost: var(--palette-surface-frost);
-  --background-action: linear-gradient(180deg, #242424 0%, #101010 100%);
-  --background-action-secondary: #f2f2f2;
-  --background-shading: var(--palette-shading-DEFAULT);
-  --background-hover: var(--palette-hover);
-  --text-primary: #191919;
-  --text-secondary: #7e7e7e;
-  --text-tertiary: #a6a6a6;
-  --text-inverse: var(--palette-white);
-  --text-disabled: #cccccc;
-  --text-on-action: #ffffff;
-  --border-stroke: var(--palette-border);
-  --tape-background: var(--palette-tape-background);
-  --tape-text: var(--palette-tape-text);
-  --sg-sans: "Untitled Sans", system-ui, sans-serif;
-  --sg-mono: "IBM Plex Mono", ui-monospace, monospace;
-}
-/* The light block is repeated under [data-mode="light"] so a sample scoped to
-   the light theme keeps its values while the page itself is toggled dark. */
-[data-mode="light"] {
-  --background-page: var(--palette-white);
-  --background-surface: #f2f2f2;
-  --background-surface-raised: #eeeeee;
-  --background-tertiary: #808080;
-  --background-frost: var(--palette-surface-frost);
-  --background-action: linear-gradient(180deg, #242424 0%, #101010 100%);
-  --background-action-secondary: #f2f2f2;
-  --background-shading: var(--palette-shading-DEFAULT);
-  --background-hover: var(--palette-hover);
-  --text-primary: #191919;
-  --text-secondary: #7e7e7e;
-  --text-tertiary: #a6a6a6;
-  --text-inverse: var(--palette-white);
-  --text-disabled: #cccccc;
-  --text-on-action: #ffffff;
-  --border-stroke: var(--palette-border);
-  --tape-background: var(--palette-tape-background);
-  --tape-text: var(--palette-tape-text);
-}
-[data-mode="dark"] {
-  --background-page: #191919;
-  --background-surface: #202020;
-  --background-surface-raised: #252525;
-  --background-tertiary: #282828;
-  --background-gradient: linear-gradient(180deg, #545454 0.0%, #464646 100.0%);
-  --background-elevated: linear-gradient(180deg, #3c3c3c 0.0%, #1f1f1f 100.0%);
-  --background-action: #ffffff;
-  --background-action-secondary: #464646;
-  --background-shading: rgba(255, 255, 255, 0.05);
-  --background-shading-dark: rgba(255, 255, 255, 0.2);
-  --background-hover: rgba(255, 255, 255, 0.02);
-  --text-primary: #ffffff;
-  --text-secondary: #7e7e7e;
-  --text-tertiary: #a6a6a6;
-  --text-inverse: var(--palette-black);
-  --text-disabled: #4c4c4c;
-  --text-on-action: #191919;
-  --border-stroke: rgba(255, 255, 255, 0.1);
-  --tape-background: rgba(26, 26, 26, 0.4);
-  --tape-text: rgba(255, 255, 255, 0.7);
-  --accent-yellow: #f9e749;
-  --accent-red: #ff0d16;
-  --accent-blue: #0056fc;
-}
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 15px/1.5 var(--sg-sans); letter-spacing: var(--font-tracking-body); color: var(--text-primary); background: var(--background-page); transition: background .2s, color .2s; }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 500 var(--font-size-super-title)/var(--font-leading-super-title) var(--sg-sans); letter-spacing: var(--font-tracking-super-title); margin: 0 0 4px; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-stroke); }
-.lead { max-width: 62ch; color: var(--text-secondary); }
-.note { font-size: 13px; color: var(--text-secondary); max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.modebtn { position: fixed; top: 18px; right: 24px; z-index: 10; font: 500 13px/1 var(--sg-sans); letter-spacing: var(--font-tracking-subhead); padding: 12px 20px; border: 0; border-radius: var(--component-button-primary-radius); background: var(--background-action); color: var(--text-on-action); cursor: pointer; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary); margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-stroke); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-secondary); }
-.typerow { display: grid; grid-template-columns: 210px 1fr; gap: 16px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--border-stroke); }
-.typerow .k { font: 500 12px/1.5 var(--sg-mono); }
-.typerow .k small { display: block; color: var(--text-secondary); font-weight: 400; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-stroke); background: var(--background-surface); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--text-secondary); }
-/* ---- site mock ---- */
-.mock { border: 1px solid var(--border-stroke); border-radius: 12px; overflow: hidden; background: var(--background-page); position: relative; }
-.navbar { display: flex; align-items: center; gap: 18px; height: 72px; padding: 0 20px; font: 500 15px/20px var(--sg-sans); letter-spacing: var(--font-tracking-body); }
-.navbar .wm { font: 500 15px/20px var(--sg-sans); }
-.navbar .tag { font: 500 var(--font-size-super-title)/var(--font-leading-super-title) var(--sg-sans); letter-spacing: var(--font-tracking-super-title); max-width: 300px; }
-.navbar .sp { flex: 1; }
-.navbar .mbr { font: 500 15px/20px var(--sg-sans); }
-.pill { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--component-button-primary-radius); font: 500 13px/16px var(--sg-sans); letter-spacing: var(--font-tracking-subhead); padding: 12px 22px; border: 0; }
-.pill.primary { background: var(--background-action); color: var(--text-on-action); }
-.pill.ghost { background: var(--background-shading); color: var(--text-primary); }
-.discs { display: flex; gap: 0; justify-content: center; padding: 8px 0 56px; overflow: hidden; }
-.disc { width: 200px; height: 200px; border-radius: 50%; flex: 0 0 auto; margin: 0 -28px; }
-.disc.a { background: conic-gradient(#bcd7ff, #e8f4ff, #f2b8d0, #8fc7ff, #d8e6f7, #bcd7ff); }
-.disc.b { background: conic-gradient(#3d3a34, #6e6a5e, #1d6d41, #8d7a5a, #2b2b2b, #3d3a34); }
-.disc.c { background: conic-gradient(#e26ca3, #f4a7c9, #7a1e4e, #c0397a, #f2bfd8, #e26ca3); }
-.disc .hole { width: 34%; height: 34%; border-radius: 50%; background: var(--background-page); margin: 33% auto; box-shadow: inset 0 0 0 6px rgba(255,255,255,.5), 0 0 0 2px rgba(0,0,0,.12); }
-.pillbar { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px; border-top: 1px solid var(--border-stroke); font-size: 13px; flex-wrap: wrap; }
-.pillbar .pill { font-size: 15px; }
-.pillbar .dark { background: var(--text-primary); color: var(--background-page); }
-.plans { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 16px; padding: 20px; align-items: start; }
-.rail { display: flex; flex-direction: column; gap: 12px; font: 500 15px/20px var(--sg-sans); }
-.rail b { display: block; padding: 12px 18px; border-radius: 20px; font-weight: 500; text-align: center; }
-.rail b.on { background: var(--background-shading); }
-.plan { background: var(--background-surface-raised); border-radius: 20px; padding: 22px; }
-.plan .nm { font: 500 var(--font-size-super-title)/var(--font-leading-super-title) var(--sg-sans); letter-spacing: var(--font-tracking-super-title); }
-.plan .pr { font: 500 15px/20px var(--sg-sans); margin: 12px 0; }
-.plan ul { margin: 14px 0 0; padding: 0; list-style: none; }
-.plan li { font: 400 15px/20px var(--sg-sans); padding: 8px 0; border-top: 1px solid var(--border-stroke); }
-.plan li b { font-weight: 500; display: block; }
-.plan li span { color: var(--text-secondary); font-size: 13px; }
-.frost { background: var(--background-frost); color: #fff; border-radius: 16px; padding: 18px 20px; font-size: 13px; max-width: 420px; margin: 20px; }
-.frost h4 { margin: 0 0 6px; font: 500 15px/20px var(--sg-sans); }
-.frost .row { display: flex; gap: 10px; align-items: center; margin-top: 14px; }
-.frost .fpill { border-radius: var(--component-button-consent-accept-radius); padding: 10px 18px; font: 500 12px/16px var(--sg-sans); }
-.frost .yes { background: #fff; color: #000; }
-.frost .no { background: rgba(255,255,255,.05); color: #fff; }
-.frost .lnk { color: rgba(255,255,255,.7); font-size: 12px; margin-right: auto; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--border-stroke); padding: 6px 14px; text-align: left; }
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #191919; color: #fff; font: 15px/20px "Untitled Sans", "Avenir Next", system-ui, sans-serif; letter-spacing: -0.45px; }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 26px; line-height: 32px; font-weight: 500; letter-spacing: -0.78px; }
+  p { color: #7e7e7e; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+  .swatch { width: 96px; }
+  .swatch i { display: block; height: 48px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); }
+  .swatch span { display: block; margin-top: 6px; font-size: 12px; color: #a6a6a6; }
+  .pill { display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border-radius: 999px; background: #fff; color: #191919; font-size: 13px; font-weight: 500; letter-spacing: -0.39px; }
+  .quiet { display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: rgba(255,255,255,.05); color: #fff; font-weight: 500; }
+  .card { width: 280px; padding: 24px; border-radius: 20px; background: #202020; }
+  .card strong { display: block; font-size: 22px; font-weight: 500; margin-bottom: 8px; }
 </style>
 </head>
 <body>
-<button class="modebtn" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">light / dark</button>
 <main>
-  <h1>[untitled] style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
-
-  <h2 class="sh">[untitled], measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's own semantic set (<code>--color-primary-label</code>, <code>--color-shading</code>, the <code>super-title / body / footnote / subhead</code> type scale, the <code>--daw-*</code> production colours) plus the values measured on the live marketing site — the black gradient pill, the frosted bottom bar, the #eee plan cards, the dark consent card. <b>Two themes ship:</b> light (the marketing site) and the app's dark remap; use the toggle top-right. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from untitled.stream on 2026-11-09, signed out, in headless Chromium. Untitled Sans and IBM Plex Mono are the site's own faces and are not loaded here: they fall back to the system sans/mono. The signed-in app was never introspected; /terms, /privacy and /cookie-policy stayed behind Cloudflare's waiting room.</p>
-
-  <h2 class="sh">The site chrome</h2>
-  <p class="lead">A transparent top band — tagline instead of a wordmark on home, <code>[membership]</code> and the black <code>background-action</code> Enter App pill on the right. Below: the signature strip of iridescent CD renders, then the floating pill bar pinned to the viewport bottom (social pills, the inverted We're hiring pill, the platform pills).</p>
-  <div class="mock">
-    <div class="navbar"><span class="tag">A sacred place for your<br>work-in-progress music</span><span class="sp"></span><span class="mbr">[membership]</span><span class="pill primary">Enter App</span></div>
-    <div class="discs"><div class="disc a"><div class="hole"></div></div><div class="disc b"><div class="hole"></div></div><div class="disc c"><div class="hole"></div></div></div>
-    <div class="pillbar"><span class="pill ghost">[untitled broadcast network]&nbsp;&nbsp;IG&nbsp;&nbsp;X</span><span class="pill dark">We're hiring</span><span class="pill ghost">Learn more &#8964;</span><span class="pill ghost">&#63743; iOS</span><span class="pill ghost">&#9654; Android</span><span class="pill ghost">&#128187; MacOS</span></div>
+  <h1>[untitled]</h1>
+  <p>Hand-built from the 2026-11-22 public capture. Values match tokens.json.</p>
+  <div class="row">
+    <div class="swatch"><i style="background:#191919"></i><span>page #191919</span></div>
+    <div class="swatch"><i style="background:#202020"></i><span>surface #202020</span></div>
+    <div class="swatch"><i style="background:#ffffff"></i><span>action #ffffff</span></div>
+    <div class="swatch"><i style="background:#7e7e7e"></i><span>muted #7e7e7e</span></div>
+    <div class="swatch"><i style="background:#5a8ff7"></i><span>blue #5a8ff7</span></div>
+    <div class="swatch"><i style="background:#e699ab"></i><span>pink #e699ab</span></div>
   </div>
-
-  <h2 class="sh">Pricing</h2>
-  <p class="lead">The Yearly/Monthly rail sits left of the plan grid; the selected segment takes a <code>background-shading</code> rounded-20 fill. Plan cards paint <code>background-surface-raised</code> (#eee) at radius 20 with bracketed names — <code>[starter]</code> free, <code>[membership]</code> $49.99/yr.</p>
-  <div class="mock">
-    <div class="plans">
-      <div class="rail"><b class="on">Yearly</b><b>Monthly</b></div>
-      <div class="plan"><span class="nm">[starter]</span><div class="pr">Free</div><ul><li><b>Unlimited listening</b><span>Listen, save, and organize</span></li><li><b>Share and collaborate</b><span>Links to your music</span></li><li><b>Stay connected on desktop</b><span>Drop files from your desktop</span></li></ul></div>
-      <div class="plan"><span class="nm">[membership]</span><div class="pr">$49.99 / year</div><ul><li><b>Unlimited storage</b><span>Upload, listen, share</span></li><li><b>Premium editing suite</b><span>Stem splitting, pitch shifting</span></li><li><b>Advanced control</b><span>Passwords on shareable links</span></li></ul></div>
-    </div>
+  <div class="row">
+    <span class="pill">Enter App</span>
+    <span class="quiet">[membership]</span>
+    <span class="quiet">iOS</span>
   </div>
-
-  <h2 class="sh">The consent card</h2>
-  <p class="lead">The "We value privacy" card is always dark — <code>surface-frost</code> frosted glass at radius 16 — even on the light site: it is the app's dark theme leaking into the marketing page. Accept is a solid white capsule, Reject a white/5 ghost, Customize a text link.</p>
-  <div class="mock"><div class="frost"><h4>We value privacy</h4>We and our partners use cookies and other similar tracking technologies&hellip;<div class="row"><span class="lnk">Customize</span><span class="fpill no">Reject all</span><span class="fpill yes">Accept all</span></div></div></div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The palette is roles, not ramps: <code>primary-label</code> near-black on <code>primary-background</code> white, <code>secondary-label</code> grey, hairline <code>shading</code>/<code>border</code> fills, then the accents — action <code>blue</code>, the untitled brand <code>pink</code>/<code>blue</code>, and the DAW production set (red, yellow, the tape-label pair). Dark mode remaps the same roles.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">One voice: <b>Untitled Sans</b> for everything, at a signature tight tracking (−0.39px subheads to −1.64px the mobile display). The type scale is named like a DAW: super-title 26/32, large-title 22/26, title 18/22, body 15/20, subhead 13/16, footnote 12/16, note-mono 12/18 in IBM Plex Mono.</p>
-  <div id="type-out"></div>
-
-  <h2 class="sh">Radius and geometry</h2>
-  <p class="lead">Two shapes: <code>radius.card</code> 20px (plan cards, the selected segment) and <code>radius.pill</code> — <code>rounded-full</code> resolving to CSS infinity, so every pill is a full capsule. The consent card rounds at 16px.</p>
-  <div id="radius-out"></div>
-
-  <h2 class="sh">Motion and layout</h2>
-  <p class="lead">Motion is quiet: the hovers are <code>transition-opacity</code> at 150–300ms on the standard ease curve; a 1200px perspective backs the disc tilts.</p>
-  <div id="motion-out" class="kv"></div>
-  <div id="z-out" class="kv" style="margin-top:12px"></div>
-
-  <h2 class="sh">How the values were read</h2>
-  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live CSSOM and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr><tr><td>Consent banner dismissed</td><td>Measured, then hidden — its buttons POST a gated action the page's own error boundary turns into an error card</td></tr></table>
+  <div class="card">
+    <strong>[starter]</strong>
+    <p>Suite of tools to get you started with [untitled]...</p>
+    <p style="color:#fff">Free</p>
+  </div>
 </main>
-<script>
-const TOK = {"core":{"palette":{"black":{"v":"#191919","t":"color","s":"css-var --color-black","d":"#191919, the product's near-black: primary label, inverted pills, the button gradient's top"},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white","d":"#fff: page background and inverted-pill text"},"gray":{"v":"#7e7e7e","t":"color","s":"css-var --color-gray","d":"#7e7e7e, the secondary label grey"},"light-gray":{"v":"#b6b6b6","t":"color","s":"css-var --color-light-gray"},"tertiary-gray":{"v":"#a6a6a6","t":"color","s":"css-var --color-tertiary-label","d":"#a6a6a6 placeholder/disabled-adjacent grey"},"blue":{"v":"#0056fc","t":"color","s":"css-var --color-blue","d":"#0056fc, the link/action blue"},"untitled-blue":{"v":"#5a8ff7","t":"color","s":"css-var --color-untitled-blue","d":"#5a8ff7, the softer brand blue"},"untitled-pink":{"v":"#e699ab","t":"color","s":"css-var --color-untitled-pink","d":"#e699ab, the brand pink"},"untitled-pink-bg":{"v":"#ffe7f1","t":"color","s":"css-var --color-untitled-pink-background","d":"#ffe7f1, the pink tint surface"},"green":{"v":"#178f51","t":"color","s":"css-var --color-green"},"orange":{"v":"#f79822","t":"color","s":"css-var --color-orange"},"pink":{"v":"#ff91e7","t":"color","s":"css-var --color-pink","d":"#ff91e7 hot pink accent"},"red":{"v":"#ff0d16","t":"color","s":"css-var --color-red","d":"#ff0d16 signal red"},"unwrap-red":{"v":"#f34d4d","t":"color","s":"css-var --color-unwrap-red","d":"#f34d4d, the unwrap/share red"},"yellow":{"v":"#f9e749","t":"color","s":"css-var --color-yellow","d":"#f9e749, the DAW marker yellow"},"yellow-warn":{"v":"#c58e00","t":"color","s":"css-var --color-yellow-warn"},"accent-green":{"v":"#2ee565","t":"color","s":"css-var --color-accent-green"},"accent-pink":{"v":"#ff2d55","t":"color","s":"css-var --color-accent-pink"},"accent-purple":{"v":"#962dff","t":"color","s":"css-var --color-accent-purple"},"daw":{"black":{"v":"rgba(36, 36, 36, 0.9)","t":"color","s":"css-var --color-daw-black"},"gray":{"v":"#343434","t":"color","s":"css-var --color-daw-gray"},"blue":{"v":"#0056fc","t":"color","s":"css-var --color-daw-blue"},"red":{"v":"#ff0d16","t":"color","s":"css-var --color-daw-red"},"yellow":{"v":"#f9e749","t":"color","s":"css-var --color-daw-yellow"},"light-yellow":{"v":"#f9e8ba","t":"color","s":"css-var --color-daw-light-yellow"}},"shading":{"DEFAULT":{"v":"rgba(26, 26, 26, 0.05)","t":"color","s":"css-var --color-shading","d":"rgba(26,26,26,.05), the frosted fill of every ghost pill"},"dark":{"v":"rgba(26, 26, 26, 0.2)","t":"color","s":"css-var --color-shading-dark"},"light":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"css-var --color-shading-light"}},"hover":{"v":"rgba(26, 26, 26, 0.02)","t":"color","s":"css-var --color-hover","d":"rgba(26,26,26,.02), the hairline hover wash"},"border":{"v":"rgba(26, 26, 26, 0.1)","t":"color","s":"css-var --color-border","d":"rgba(26,26,26,.1), the 10% keyline"},"surface-frost":{"v":"rgba(38, 38, 38, 0.9)","t":"color","s":"css-var --color-surface-frost-always-on-dark","d":"rgba(38,38,38,.9), the frosted dark glass the consent card paints even on the light site"},"tape":{"background":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"css-var --color-tape-background","d":"rgba(255,255,255,.5), the cassette-tape label surface"},"text":{"v":"rgba(26, 26, 26, 0.5)","t":"color","s":"css-var --color-tape-text","d":"rgba(26,26,26,.5) on the tape label"}}},"font":{"family":{"untitled-sans":{"v":"\"Untitled Sans\", sans-serif","t":"fontFamily","s":"hero-title default fontFamily; css-vars.json fonts: UntitledSans-Regular @font-face","d":"Untitled Sans, the brand's own grotesque, everywhere on the site"},"plex-mono":{"v":"\"IBM Plex Mono\", monospace","t":"fontFamily","s":"css-vars.json fonts: IBMPlexMono-Regular @font-face","d":"IBM Plex Mono, the note-mono face used for code and metadata"}},"size":{"footnote":{"v":"12px","t":"dimension","s":"css-var --footnote-size","d":"12px, the consent/button micro copy"},"subhead":{"v":"13px","t":"dimension","s":"css-var --subhead-size","d":"13px, nav links, pill labels, legal"},"body":{"v":"15px","t":"dimension","s":"css-var --body-size","d":"15px, the base text"},"title":{"v":"18px","t":"dimension","s":"css-var --title-size","d":"18px"},"large-title":{"v":"22px","t":"dimension","s":"css-var --large-title-size","d":"22px"},"super-title":{"v":"26px","t":"dimension","s":"css-var --super-title-size","d":"26px, the display size: hero, pricing and plan names"},"note-mono":{"v":"12px","t":"dimension","s":"css-var --note-mono-size","d":"12px Plex Mono metadata"},"text-4xl":{"v":"28px","t":"dimension","s":"css-var --text-4xl","d":"28px, the mobile display size (measured m-hero-title)"}},"leading":{"footnote":{"v":"16px","t":"dimension","s":"css-var --footnote-height"},"subhead":{"v":"16px","t":"dimension","s":"css-var --subhead-height"},"body":{"v":"20px","t":"dimension","s":"css-var --body-height"},"title":{"v":"22px","t":"dimension","s":"css-var --title-height"},"large-title":{"v":"26px","t":"dimension","s":"css-var --large-title-height"},"super-title":{"v":"32px","t":"dimension","s":"css-var --super-title-height"},"note-mono":{"v":"18px","t":"dimension","s":"css-var --note-mono-height"},"4xl":{"v":"34px","t":"dimension","s":"css-var --leading-4xl","d":"34px, paired with the 28px mobile display"}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal"},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold","d":"600 everywhere a *-semibold utility is applied; measured components paint at 500/600"},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold"}},"tracking":{"footnote":{"v":"-0.41px","t":"dimension","s":"css-var --footnote-tracking","d":"-0.41px"},"subhead":{"v":"-0.39px","t":"dimension","s":"css-var --subhead-tracking","d":"-0.39px"},"body":{"v":"-0.45px","t":"dimension","s":"css-var --body-tracking","d":"-0.45px, the signature tight tracking"},"title":{"v":"-0.54px","t":"dimension","s":"css-var --title-tracking","d":"-0.54px"},"large-title":{"v":"-0.66px","t":"dimension","s":"css-var --large-title-tracking","d":"-0.66px"},"super-title":{"v":"-0.78px","t":"dimension","s":"css-var --super-title-tracking","d":"-0.78px"},"mobile-display":{"v":"-1.64px","t":"dimension","s":"css-var --tracking-tight-4","d":"-1.64px, the tightest tracking; measured on the 28px mobile hero"}}},"radius":{"card":{"v":"20px","t":"dimension","s":"plan-card default (rounded-20); billing-yearly selected span.rounded-20","d":"The card/segment radius"},"consent":{"v":"16px","t":"dimension","s":"consent-card default borderTopLeftRadius","d":"The frosted consent card"},"pill":{"v":"33554400px","t":"dimension","s":"cta-enter-app default borderTopLeftRadius (rounded-full resolves to CSS infinity)","d":"rounded-full: every pill is a full capsule"}},"blur":{"xs":{"v":"4px","t":"dimension","s":"css-var --blur-xs"},"sm":{"v":"8px","t":"dimension","s":"css-var --blur-sm"},"md":{"v":"12px","t":"dimension","s":"css-var --blur-md","d":"12px, the frosted-pill backdrop blur"},"xl":{"v":"24px","t":"dimension","s":"css-var --blur-xl"}},"easing":{"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function"},"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in"},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out"},"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out"}},"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (.15s)","d":"The opacity hovers run transition-opacity duration-150/300"},"slow":{"v":"300ms","t":"duration","s":"a.transition-opacity.duration-300 throughout the footer and pills"}},"layout":{"header-height":{"v":"152px","t":"dimension","s":"css-var --header-height","d":"152px, the app's declared header budget"},"perspective":{"v":"1200px","t":"dimension","s":"css-var --perspective-distant","d":"1200px, the 3D perspective for disc tilts"}},"typography":{"super-title":{"v":{"fontFamily":"{font.family.untitled-sans}","fontWeight":500,"fontSize":"26px","lineHeight":"32px","letterSpacing":"-0.78px"},"t":"typography","s":"measured raw/measurements.md#hero-title, #pricing-title, #plan-name","d":"The display cut: hero tagline, page titles, plan names"},"mobile-display":{"v":{"fontFamily":"{font.family.untitled-sans}","fontWeight":500,"fontSize":"28px","lineHeight":"34px","letterSpacing":"-1.64px"},"t":"typography","s":"measured raw/measurements.md#m-hero-title","d":"The mobile hero sets 28/34 at the tightest tracking"},"title":{"v":{"fontFamily":"{font.family.untitled-sans}","fontWeight":500,"fontSize":"18px","lineHeight":"22px","letterSpacing":"-0.54px"},"t":"typography","s":"measured raw/measurements.md#trust-section-title","d":"Section headings inside the text pages"},"body":{"v":{"fontFamily":"{font.family.untitled-sans}","fontWeight":400,"fontSize":"15px","lineHeight":"20px","letterSpacing":"-0.45px"},"t":"typography","s":"measured raw/measurements.md#feature-row, #footer","d":"Site body"},"body-semibold":{"v":{"fontFamily":"{font.family.untitled-sans}","fontWeight":500,"fontSize":"15px","lineHeight":"20px","letterSpacing":"-0.45px"},"t":"typography","s":"measured raw/measurements.md#pill-social, #cta-hiring, #nav-membership","d":"The pill-label and heading weight — nearly every label is semibold"},"subhead":{"v":{"fontFamily":"{font.family.untitled-sans}","fontWeight":400,"fontSize":"13px","lineHeight":"16px","letterSpacing":"-0.39px"},"t":"typography","s":"measured raw/measurements.md#footer-link, #read-more, #cookie-settings","d":"Small labels: legal links, Read more, cookie settings"},"subhead-medium":{"v":{"fontFamily":"{font.family.untitled-sans}","fontWeight":500,"fontSize":"13px","lineHeight":"16px","letterSpacing":"-0.39px"},"t":"typography","s":"measured raw/measurements.md#cta-enter-app, #cta-subscribe","d":"The pill-label cut: Enter App, Subscribe (the same 13/16 as subhead at weight 500)"},"footnote":{"v":{"fontFamily":"{font.family.untitled-sans}","fontWeight":500,"fontSize":"12px","lineHeight":"16px","letterSpacing":"-0.41px"},"t":"typography","s":"measured raw/measurements.md#consent-accept, #consent-reject","d":"The consent card's button micro copy"}},"component":{"button":{"primary":{"bg":{"v":[{"color":"#242424","position":0},{"color":"#101010","position":1}],"t":"gradient","s":"cta-enter-app paint: a.clean-btn bgImage linear-gradient(#242424,#101010)","d":"Enter App / Subscribe: the black pill is a 180deg gradient"},"text":{"v":"#ffffff","t":"color","s":"cta-enter-app default color"},"radius":{"v":"33554400px","t":"dimension","s":"cta-enter-app default (rounded-full / CSS infinity)"},"height":{"v":"44px","t":"dimension","s":"cta-enter-app default rect height"},"label":{"v":"{typography.subhead-medium}","t":"typography","s":"cta-enter-app default: 13/16 500 (medium)"}},"secondary":{"bg":{"v":"rgba(26, 26, 26, 0.05)","t":"color","s":"oauth-google default backgroundColor (bg-shading)"},"text":{"v":"#191919","t":"color","s":"oauth-google default color"},"radius":{"v":"33554400px","t":"dimension","s":"oauth-google default (rounded-full)"},"height":{"v":"52px","t":"dimension","s":"oauth-google default rect height"}},"consent-accept":{"bg":{"v":"#ffffff","t":"color","s":"consent-accept default backgroundColor"},"text":{"v":"#000000","t":"color","s":"consent-accept default color"},"radius":{"v":"33554400px","t":"dimension","s":"consent-accept default"},"height":{"v":"40px","t":"dimension","s":"consent-accept default rect height"}},"consent-reject":{"bg":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"consent-reject default backgroundColor (bg-white/5)"},"text":{"v":"#ffffff","t":"color","s":"consent-reject default color"},"radius":{"v":"33554400px","t":"dimension","s":"consent-reject default"},"height":{"v":"40px","t":"dimension","s":"consent-reject default rect height"}}},"header":{"height":{"v":"88px","t":"dimension","s":"header default rect height (the marketing band)"},"text":{"v":"#191919","t":"color","s":"nav-membership default color"}},"pill-bar":{"height":{"v":"92px","t":"dimension","s":"pill-bar default rect height (fixed bottom band)"},"pill-bg":{"v":"rgba(26, 26, 26, 0.05)","t":"color","s":"pill-platform default backgroundColor"},"pill-height":{"v":"44px","t":"dimension","s":"pill-platform default rect height"}},"plan-card":{"bg":{"v":"#eeeeee","t":"color","s":"plan-card default backgroundColor (bg-secondary-background-dark)"},"radius":{"v":"20px","t":"dimension","s":"plan-card default borderTopLeftRadius (rounded-20)"},"width":{"v":"350px","t":"dimension","s":"plan-card default rect width"},"height":{"v":"536px","t":"dimension","s":"plan-card default rect height"}},"billing-toggle":{"selected-bg":{"v":"rgba(26, 26, 26, 0.05)","t":"color","s":"billing-yearly paint: span.bg-shading (the selected segment)"},"selected-radius":{"v":"20px","t":"dimension","s":"billing-yearly paint: span.rounded-20"},"option-height":{"v":"44px","t":"dimension","s":"billing-yearly default rect height"}},"consent-card":{"bg":{"v":"rgba(38, 38, 38, 0.9)","t":"color","s":"consent-card default backgroundColor (frost-background, surface-frost-always-on-dark)"},"text":{"v":"#ffffff","t":"color","s":"consent-card default color"},"radius":{"v":"16px","t":"dimension","s":"consent-card default borderTopLeftRadius"},"width":{"v":"500px","t":"dimension","s":"consent-card default rect width"}},"disc":{"size":{"v":"656px","t":"dimension","s":"disc default rect (the hero CD renders, background-image webp)"},"radius":{"v":"{radius.pill}","t":"dimension","s":"div.rounded-full"}},"login-card":{"width":{"v":"342px","t":"dimension","s":"oauth-google default rect width (the pill column)"},"oauth-height":{"v":"52px","t":"dimension","s":"oauth-google default rect height"},"icon-size":{"v":"220px","t":"dimension","s":"login-icon default rect (the 220px .amulet-clip-mask disc mark; its 189px inset ring is inside it)"}}}},"light":{"background":{"page":{"v":"{palette.white}","t":"color","s":"css-var --color-primary-background (#fff)"},"surface":{"v":"#f2f2f2","t":"color","s":"css-var --color-secondary-background","d":"#f2f2f2 raised panels"},"surface-raised":{"v":"#eeeeee","t":"color","s":"css-var --color-secondary-background-dark","d":"#eee, the plan cards"},"tertiary":{"v":"#808080","t":"color","s":"css-var --color-tertiary-background"},"frost":{"v":"{palette.surface-frost}","t":"color","s":"consent-card default backgroundColor","d":"The dark frosted glass of the consent card, always dark even on light"},"action":{"v":[{"color":"#242424","position":0},{"color":"#101010","position":1}],"t":"gradient","s":"css-var --color-button-background-primary (linear-gradient 180deg); cta-enter-app paint bgImage","d":"The black pill is a vertical 242424→101010 gradient, not a flat fill"},"action-secondary":{"v":"#f2f2f2","t":"color","s":"css-var --color-button-background-secondary","d":"#f2f2f2"},"shading":{"v":"{palette.shading.DEFAULT}","t":"color","s":"semantic of core.palette.shading","d":"The ghost-pill fill"},"hover":{"v":"{palette.hover}","t":"color","s":"semantic of core.palette.hover"}},"text":{"primary":{"v":"#191919","t":"color","s":"css-var --color-primary-label","d":"#191919"},"secondary":{"v":"#7e7e7e","t":"color","s":"css-var --color-secondary-label","d":"#7e7e7e, footer/legal links"},"tertiary":{"v":"#a6a6a6","t":"color","s":"css-var --color-tertiary-label"},"inverse":{"v":"{palette.white}","t":"color","s":"cta-enter-app default color"},"disabled":{"v":"#cccccc","t":"color","s":"css-var --color-disabled","d":"#ccc"},"on-action":{"v":"#ffffff","t":"color","s":"css-var --color-button-label-primary","d":"#fff on the black gradient pill"}},"border":{"stroke":{"v":"{palette.border}","t":"color","s":"css-var --color-border"}},"tape":{"background":{"v":"{palette.tape.background}","t":"color","s":"semantic of core.palette.tape"},"text":{"v":"{palette.tape.text}","t":"color","s":"semantic of core.palette.tape"}}},"dark":{"background":{"page":{"v":"#191919","t":"color","s":"css-var --color-primary-background [data-theme=dark]","d":"var(--color-black) → #191919"},"surface":{"v":"#202020","t":"color","s":"css-var --color-secondary-background [data-theme=dark]","d":"#202020"},"surface-raised":{"v":"#252525","t":"color","s":"css-var --color-secondary-background-dark [data-theme=dark]","d":"#252525"},"tertiary":{"v":"#282828","t":"color","s":"css-var --color-tertiary-background [data-theme=dark]","d":"#282828"},"gradient":{"v":[{"color":"#545454","position":0.0},{"color":"#464646","position":1.0}],"t":"gradient","s":"css-var --color-background-gradient [data-theme=dark]","d":"#545454→#464646 hero gradient"},"elevated":{"v":[{"color":"#3c3c3c","position":0.0},{"color":"#1f1f1f","position":1.0}],"t":"gradient","s":"css-var --color-elevated-background-gradient [data-theme=dark]","d":"#3c3c3c→#1f1f1f"},"action":{"v":"#ffffff","t":"color","s":"css-var --color-button-background-primary [data-theme=dark]","d":"var(--color-white) → #fff: the primary pill inverts to white on dark"},"action-secondary":{"v":"#464646","t":"color","s":"css-var --color-button-background-secondary [data-theme=dark]","d":"#464646"},"shading":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"css-var --color-shading [data-theme=dark]","d":"hsla(white,.05)"},"shading-dark":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --color-shading-dark [data-theme=dark]"},"hover":{"v":"rgba(255, 255, 255, 0.02)","t":"color","s":"css-var --color-hover [data-theme=dark]","d":"hsla(white,.02)"}},"text":{"primary":{"v":"#ffffff","t":"color","s":"css-var --color-primary-label [data-theme=dark]","d":"var(--color-white) → #fff"},"secondary":{"v":"#7e7e7e","t":"color","s":"css-var --color-secondary-label [data-theme=dark]","d":"var(--color-gray) → #7e7e7e"},"tertiary":{"v":"#a6a6a6","t":"color","s":"css-var --color-tertiary-label [data-theme=dark]","d":"#a6a6a6"},"inverse":{"v":"{palette.black}","t":"color","s":"dark inverse of primary"},"disabled":{"v":"#4c4c4c","t":"color","s":"css-var --color-disabled [data-theme=dark]","d":"#4c4c4c"},"on-action":{"v":"#191919","t":"color","s":"css-var --color-button-label-primary [data-theme=dark]","d":"var(--color-black) → #191919 on the white pill"}},"border":{"stroke":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --color-border [data-theme=dark]","d":"hsla(white,.1)"}},"tape":{"background":{"v":"rgba(26, 26, 26, 0.4)","t":"color","s":"css-var --color-tape-background [data-theme=dark]","d":"hsla(black,.4)"},"text":{"v":"rgba(255, 255, 255, 0.7)","t":"color","s":"css-var --color-tape-text [data-theme=dark]","d":"hsla(white,.7)"}},"accent":{"yellow":{"v":"#f9e749","t":"color","s":"css-var --color-yellow [data-theme=dark]","d":"→ daw-yellow #f9e749"},"red":{"v":"#ff0d16","t":"color","s":"css-var --color-red [data-theme=dark]","d":"→ daw-red #ff0d16"},"blue":{"v":"#0056fc","t":"color","s":"css-var --color-blue [data-theme=dark]","d":"→ daw-blue #0056fc"}}}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  const sw = (n, t) => `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-  for (const [g, grp] of Object.entries(TOK.core.palette)) {
-    // A leaf (black, untitled-blue, untitled-pink) is already a colour token:
-    // flat() on it returns nothing, so it is handled directly.
-    const items = grp && grp.t ? [[`palette.${g}`, grp]].filter(([, t]) => t.t === 'color')
-      : flat(grp, 'palette.' + g + '.').filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += sw(n, t);
-    h += '</div>';
-  }
-  for (const g of ['background', 'text', 'border', 'tape', 'accent']) {
-    const items = flat(TOK.light[g] || {}, g + '.').filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    // data-mode scopes the row to its own theme: the light and dark sets share
-    // var names, so an unscoped swatch always paints the page's current mode.
-    h += `<div class="pal-h">light.${esc(g)}</div><div class="pal" data-mode="light">`;
-    for (const [n, t] of items) h += sw(n, t);
-    h += '</div>';
-  }
-  for (const g of ['background', 'text', 'border', 'tape', 'accent']) {
-    const items = flat(TOK.dark[g] || {}, g + '.').filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">dark.${esc(g)}</div><div class="pal" data-mode="dark">`;
-    for (const [n, t] of items) h += sw(n, t);
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function type() {
-  let h = '';
-  // Aliases ({font.tracking.subhead}) resolve to their emitted var, literals pass through.
-  const cssv = (x) => String(x).replace(/\{([^{}]+)\}/g, (m, p) => `var(${cssname(p)})`);
-  const ref = (x) => String(x).replace(/[{}]/g, '');
-  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
-    const v = t.v;
-    const fam = /mono|plex/.test(ref(v.fontFamily)) ? 'var(--sg-mono)' : 'var(--sg-sans)';
-    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}${v.letterSpacing !== undefined ? ' · ' + esc(ref(v.letterSpacing)) : ''}</small></div><div class="sample" style="font-family:${fam};font-size:${cssv(v.fontSize)};line-height:${cssv(v.lineHeight)};font-weight:${cssv(v.fontWeight)};letter-spacing:${v.letterSpacing !== undefined ? cssv(v.letterSpacing) : 'normal'}">The quick brown fox jumps over the lazy dog</div></div>`;
-  }
-  $('#type-out').innerHTML = h;
-})();
-
-(function radius() {
-  let r = '';
-  for (const [n, t] of flat(TOK.core.radius, 'radius.')) r += `<div class="bx" style="border-radius:min(var(${cssname(n)}), 24px)">${esc(n.replace('radius.', ''))}<br>${esc(t.v)}</div>`;
-  $('#radius-out').innerHTML = r;
-})();
-
-(function misc() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(',') + ')' : t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#motion-out').innerHTML = m;
-  let z = '';
-  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.').sort((a, b) => a[1].v - b[1].v)) z += `<div><b>${esc(n.replace('zIndex.', ''))}</b> <span>${esc(t.v)}</span></div>`;
-  $('#z-out').innerHTML = z;
-})();
-</script>
 </body>
 </html>

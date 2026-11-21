@@ -1,57 +1,25 @@
-# untitled.stream patterns
+# Patterns
 
-How the measured components combine into the marketing site's screens. Every value named here is a token in [tokens.json](tokens.json); the component entries are in [components.md](components.md) and the screens in [screenshots/](screenshots).
+## Marketing chrome
 
-## Site chrome
+The homepage header is a tagline on the left and `[shop]` `[membership]` Enter App on the right. There is no separate logo on the homepage. The wordmark `[untitled]` appears as an h1 with no visible width on that page, and as a real link on pricing, trust, and the welcome gate.
 
-Every marketing page hangs from a transparent top band with no wordmark (on home) or a small 112 px wordmark (on pricing): `body-semibold` nav links in `text.primary`, a `[membership]` link, and the one painted element — the `component.button.primary` black-gradient Enter App pill at 44 px, fully rounded. The header is a fixed `component.header` (88 px measured under a 152 px `layout.header-height` reservation) over `background.page` white.
+## Hero and pill bar
 
-- Desktop: [home-light-default](screenshots/home-light-default.png), [pricing-light-default](screenshots/pricing-light-default.png)
-- Mobile: [mobile-home-light-default](screenshots/mobile-home-light-default.png) — no nav links render at 390 px; the header is tagline plus nothing
+A disc carousel fills the first screen. A frosted pill bar sits on top of it: social links, We're hiring, Learn more, and the three store pills. Learn more replaces the discs with a product demo. That demo is public marketing, not a signed-in session.
 
-## Hero and the disc strip
+## Pricing rail
 
-The home hero is a centred `typography.super-title` statement ("A sacred place for your work-in-progress music") over the signature artwork: a horizontally overflowing strip of iridescent CD renders — `div.rounded-full` elements with webp `background-image`s, not image tags — nominally `component.disc` size 656 px on `background.shading` underlay (the strip animates them, so individual renders measure anywhere ~650–790 px). The discs are the only saturated colour on the page.
+Two plan cards, `[starter]` free and `[membership]` at $49.99 / year, with a Yearly / Monthly radio. Subscribe goes to the login wall and was not followed.
 
-- [home-light-default](screenshots/home-light-default.png), [home-light-full](screenshots/home-light-full.png)
-- [disc-carousel](components/crops/disc-carousel-default.png) (a single disc sits partly off-viewport, so its crop was not saved)
+## Shop
 
-## Bottom pill bar
+A two-up grid, then a product page with a photo, a size label, a quantity stepper, and Add to Cart. The cart drawer opens empty. Nothing was added.
 
-Home pins a frosted `component.pill-bar` (92 px) to the viewport bottom: `component.pill-bar.pill-bg` pills at 44 px for socials (a campaign link — "[untitled broadcast network]", earlier "Texting Interviews" — then IG, X), the inverted We're hiring pill (solid `text.primary` #191919 fill, white text — not the `background.action` gradient), a Learn more control, and the iOS/Android/macOS platform pills with `text.primary` glyphs. It scrolls with nothing and blurs over content via `blur.*`.
+## Auth
 
-- [home-light-default](screenshots/home-light-default.png)
-- [pill-bar](components/crops/pill-bar-default.png), [cta-hiring](components/crops/cta-hiring-default.png)
+`/login` redirects to `/welcome`. Two buttons, no fields. Create account and I have an account each open a provider list. The branch stopped there.
 
-## Feature sections
+## Phone
 
-Below the strip, the page alternates `body-semibold` section heads (15/20 500) with `feature-video` panels (muted `background.surface` rounds playing UI loops) and `read-more`/`learn-more` subhead controls in `text.primary` (#191919). The footer closes with a `footnote` legal row and a cookie-settings control that re-mounts the consent card.
-
-- [home-light-full](screenshots/home-light-full.png)
-- [feature-video](components/crops/feature-video-default.png)
-
-## Pricing rail and plan cards
-
-Pricing is a two-part composition: a left `billing-toggle` rail (a full-height 122 x 536 column holding the Yearly/Monthly segment pills at `component.billing-toggle.option-height` 44 px; the held segment washes `component.billing-toggle.selected-bg` at `component.billing-toggle.selected-radius` 20 px) beside `component.plan-card` cards — `background.surface-raised` (#eee) rounds at `component.plan-card.radius` 20 px, 350 x 536, headed by bracketed names `[starter]`/`[membership]`, the price, and feature rows. The toggle is a local state swap; nothing submits.
-
-- [pricing-light-default](screenshots/pricing-light-default.png), [pricing-light-full](screenshots/pricing-light-full.png)
-- [billing-toggle](components/crops/billing-toggle-default.png), [plan-card-paid](components/crops/plan-card-paid-default.png), [billing-monthly-on](components/crops/billing-monthly-on-open.png)
-
-## Consent card
-
-On first load a `dialog-scrim` mounts the "We value privacy" card — `component.consent-card` (500 px, 16 px radius, `surface-frost` 90% over white text) with pill buttons: Reject all (`consent-reject` 5% white fill), Customise, Accept all (`consent-accept` white fill, black text). It is the only dark-painted element on the light site. Its buttons are measured but intentionally never pressed — the consent endpoint 403s this client (see README, What to distrust), so page shots hide the card instead.
-
-- [consent-card](components/crops/consent-card-default.png), [consent-reject](components/crops/consent-reject-default.png)
-
-## Trust page
-
-A text page: `super-title` title, `title` section heads, a `body` list, and outbound links in `text.primary` (Latacora, plus a `security@untitled.stream` mailto) that lighten to 80% on hover. The whole page is typography plus `text.secondary` copy — no cards.
-
-- [trust-light-default](screenshots/trust-light-default.png), [trust-light-full](screenshots/trust-light-full.png)
-
-## Login card
-
-`/login` centres a `component.login-card` (342 px controls): the 220 px Untitled mark, the `super-title` tagline ("A sacred place for your work-in-progress music", 26/32), then three full-width pill controls at `login-card.oauth-height` 52 px — Continue with Google, Continue with Apple, Sign in with phone — over `footnote` legal links. The card was measured and screenshotted; the controls were never activated and no credential was entered. Everything past it — the onboarding disc picker, the workspace — is uncaptured; the `dark` token set holds the app's declared palette only.
-
-- [login-light-default](screenshots/login-light-default.png), [login-light-full](screenshots/login-light-full.png)
-- [login-card](components/crops/login-card-default.png), [oauth-google](components/crops/oauth-google-default.png)
+At 390 the homepage centers the tagline, swaps Enter App for an App Store badge, and drops the shop and membership links. Pricing stacks the cards.
