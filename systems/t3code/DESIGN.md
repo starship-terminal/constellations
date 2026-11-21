@@ -56,7 +56,7 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: A dense coding-agent workspace: black page, quiet sidebar, centred composer, settings as a dialog.
 
-Captured 2026-11-22, paired on the owner's tailnet, preview browser. Themes: dark, light.
+Captured 2026-11-22, paired on the owner's tailnet, preview browser; Mac app window for the connected environments and project picker. Themes: dark, light.
 
 A design reference for T3 Code, the hosted coding-agent app, version 0.1.8. Captured on 22 Nov 2026 from the owner's tailnet deployment at `kai-home-server`, paired in the preview browser. The app was in dark, then switched to light and restored to dark. Desktop width was 1440 by 900 CSS pixels, device pixel ratio 2. Phone width was not captured.
 
@@ -111,7 +111,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Hex values marked Derived are browser resolutions of `oklch()` and `color-mix()` tokens. The source token is named in each `$extensions.source.from`. Status colours in light were not re-sampled from a painted control. Focus-visible, pressed, and disabled rings were not held. The slash-command hover shot did not change the menu. Phone width (390) was not captured. Screenshots include the owner's thread titles.
+Hex values marked Derived are browser resolutions of `oklch()` and `color-mix()` tokens. The source token is named in each `$extensions.source.from`. Status colours in light were not re-sampled from a painted control. Focus-visible, pressed, and disabled rings were not held. The slash-command hover shot did not change the menu. Phone width (390) was not captured. Screenshots include the owner's thread titles and project paths. The Mac Add Environment dialog shows the product's own placeholders (`backend.example.com`, `PAIRCODE`, username `root`, port `22`). No pairing code was entered. General dropdowns were not opened.
 
 ### Do and don't (from README.md)
 
