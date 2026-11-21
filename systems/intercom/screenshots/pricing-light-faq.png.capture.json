@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:42:04.829Z",
+  "capturedAt": "2026-11-21T13:02:27.695Z",
   "screenshot": "pricing-light-faq.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -21,7 +21,14 @@
     "theme": {
       "classes": [],
       "attributes": {},
-      "colorScheme": "normal"
+      "colorScheme": "normal",
+      "body": {
+        "classes": [
+          "theme-light"
+        ],
+        "attributes": {},
+        "colorScheme": "normal"
+      }
     },
     "visualViewport": {
       "width": 1440,
@@ -30,15 +37,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 5182
+      "pageTop": 4340
     },
     "documentSize": {
       "width": 1440,
-      "height": 7096
+      "height": 6095
     },
     "scroll": {
       "x": 0,
-      "y": 5182
+      "y": 4340
     }
   },
   "capture": {
@@ -59,8 +66,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pending",
-    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+    "status": "passed",
+    "note": "Looked at the PNG this pass, or it is the same capture as one I looked at. Public marketing or the empty sign-in wall. No account name, email, or username."
   },
   "cropCoordinates": {
     "status": "unverified",
