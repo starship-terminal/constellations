@@ -1,24 +1,24 @@
 # Components
 
-Measured on the public marketing site and the signed-out login on 19 November 2026. Crops are from the 2x screenshots.
+Public controls on whereby.com, 2026-11-21. Crops are 1x cuts from the 1440 captures.
 
-| Component | State | Values | Crop |
-|---|---|---|---|
-| Button, primary | Default | Fill `#2B189B`, label `#FFFFFF`, Inter 16 / 500, height 48px, radius 12px | [button-primary.png](components/crops/button-primary.png) |
-| Button, primary | Hover | Fill `#221479` on Sign up. Label stays white. | Not cropped. Reading is in [raw/deep.json](raw/deep.json). |
-| Button, secondary | Default | 1px stroke `#2B189B`, label `#2B189B`, height 48px, radius 12px. Computed `border` was `none`; the stroke was sampled from the screenshot. | [button-secondary.png](components/crops/button-secondary.png) |
-| Link | Default | Login "Sign up for free" is `#2B189B`, 18px, underlined. | Not cropped. |
-| Text field | Rest | White fill, `1px solid rgba(0, 0, 0, 0.12)`, radius 12px, padding 15px 16px, height 58px, input 18px Inter var. Placeholder `name@email.com`. | Not cropped. Login was not screenshotted. |
-| Text field | Focus | Border and inset shadow `rgb(43, 24, 155)`. Email was focused and not submitted. | Not cropped. |
-| OAuth button | Default | Transparent fill, `1px solid rgb(0, 0, 0)`, radius 12px, height 56px, padding 5px 40px, 18px. Google and Apple were not clicked. | Not cropped. |
-| Billing switch | Monthly selected | Track white, radius 80px, shadow `rgba(0, 0, 0, 0.08) 0px 1px 4px`. Active label `#2B189B` 16 / 500. Inactive `rgba(0, 0, 0, 0.56)`. | Visible in [screenshots/meetings-pricing-light-default.png](screenshots/meetings-pricing-light-default.png). |
-| Card, plan | Default | 384 by 644, white, radius 12px, shadow `rgba(0, 0, 0, 0.16) 0px 1px 4px, rgba(0, 0, 0, 0.16) 0px 8px 16px`. | [card-plan.png](components/crops/card-plan.png) |
-| Accordion | Closed and open | Question Inter 18 / 27, row padding 16px 0, row height 72px. One answer was opened on the pricing index. | [raw/faq-open.json](raw/faq-open.json) |
-| Nav | Desktop | Height 96px, padding 0 24px, labels Inter 18 / 400. | [logo.png](components/crops/logo.png) |
-| Nav | Phone | Hamburger opens a white sheet. Login and Try for free sit at the bottom. | [screenshots/home-light-phone-menu.png](screenshots/home-light-phone-menu.png) |
+| Control | State | Evidence |
+|---|---|---|
+| Sign up | Default, indigo fill `#2B189B`, white Inter-Medium 16/500, 48px, radius 12 | [components/crops/button-signup.png](components/crops/button-signup.png) |
+| Log in | Default, indigo label, 48px, radius 12. The named `blue-outline` node computed a transparent background and no border. | [components/crops/button-secondary.png](components/crops/button-secondary.png) |
+| Get started | Default, same indigo fill as Sign up | [components/crops/button-primary.png](components/crops/button-primary.png) |
+| Login submit | Default, indigo fill, white 16/500, 48px, radius 12, width 400 | [components/crops/button-login-submit.png](components/crops/button-login-submit.png) |
+| Continue | Disabled on the empty signup wall. Fill `rgba(0, 0, 0, 0.12)`, label `rgba(0, 0, 0, 0.56)`, 48px, radius 12. Not clicked. | [screenshots/signup-light-default.png](screenshots/signup-light-default.png) |
+| Google / Apple | Default outline buttons on the auth walls. Not clicked. | [screenshots/login-light-default.png](screenshots/login-light-default.png) |
+| Work email | Empty, placeholder `name@email.com`. Field 58px, radius 12, 1px `rgba(0, 0, 0, 0.12)`. Not typed. | [components/crops/text-field-email.png](components/crops/text-field-email.png) |
+| Full name | Empty on signup, placeholder `Full Name`. Not typed. | [screenshots/signup-light-default.png](screenshots/signup-light-default.png) |
+| Monthly / Annual | Monthly selected. Track 240 by 48, radius 80, white, shadow `0 1px 4 rgba(0,0,0,0.08)`. | [components/crops/tabs-monthly.png](components/crops/tabs-monthly.png) |
+| Save 17% | Badge, indigo fill, white 14px, radius 4. | [components/crops/badge-save.png](components/crops/badge-save.png) |
+| Plan card | White, radius 12, shadow `0 1px 4 rgba(0,0,0,0.16), 0 8px 16 rgba(0,0,0,0.16)`. Price 56px display. | [components/crops/price.png](components/crops/price.png) |
+| Signup link | Indigo, 18px, underlined. Not followed. | [screenshots/login-light-default.png](screenshots/login-light-default.png) |
+| Checkbox | Present on signup (terms, offers) and as the captcha box. Not checked. | [screenshots/signup-light-default.png](screenshots/signup-light-default.png) |
+| Cookie dialog | "This website uses cookies", Cookie settings, Accept all cookies. Accept was not clicked. | [screenshots/home-light-cookie.png](screenshots/home-light-cookie.png) |
+| Nav dropdown | Products, Pricing, Developers, Resources. White panel. | [screenshots/home-light-products-menu.png](screenshots/home-light-products-menu.png) |
+| Phone drawer | Full-screen menu. Login outline and Try for free fill. | [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) |
 
-## Gaps
-
-- Checkbox, radio, switch (on/off), select, tabs (beyond the billing pill), menu (desktop dropdown was not isolated), tooltip, dialog, toast, table, avatar, badge (the Save 17% mark was not isolated as a painted box), icon button, text area, loading, disabled, pressed, and error states were not on the signed-out pages that were measured.
-- The desktop Products menu click did not isolate a dropdown panel in the reading.
-- Marketing button focus-visible was the browser outline `rgb(0, 95, 204) auto 1px` on the logo link after Tab. A designed focus ring was measured only on the login field.
+Hover, pressed, and a keyboard focus ring were not isolated. Text area, select, radio, switch, tooltip, toast, avatar, and table were not present on the pages that were opened. The captcha is a third-party checkbox and was not solved.
