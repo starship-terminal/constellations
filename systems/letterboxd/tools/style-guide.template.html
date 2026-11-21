@@ -1,0 +1,76 @@
+<!-- ADAPTED_FOR: letterboxd | Public site. One dark field, exported as the light set. -->
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Letterboxd style guide</title>
+<meta name="description" content="Letterboxd public site tokens, rendered from tokens.json. One dark field.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: dark;
+  --sg-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sg-serif: Georgia, "Times New Roman", serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/22px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 32px/40px var(--sg-serif); color: var(--heading); margin: 0 0 8px; }
+h2 { font: 700 22px/28px var(--sg-serif); color: var(--heading); margin: 40px 0 8px; }
+p { max-width: 72ch; color: var(--text); }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: flex; gap: 10px; align-items: center; background: var(--surface); border-radius: 8px; padding: 8px 10px; }
+.sw i { width: 36px; height: 36px; border-radius: 6px; display: block; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.nm { color: var(--heading); font-size: 13px; }
+.vl { color: var(--muted); font-size: 12px; }
+.row { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); padding: 8px 0; }
+.btn { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 6px; background: var(--primary-button); color: var(--primary-button-text); font-weight: 700; }
+.btn.quiet { background: var(--button); color: var(--button-text); }
+a.sample { color: var(--link); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Letterboxd</h1>
+  <p>Public site tokens read from letterboxd.com on 2026-11-21, signed out. The product paints one dark field. This page names that set <code>light</code> because the catalog expects one. Graphik and Tiempos are not loaded here.</p>
+  <p><span class="btn">Get started</span> <span class="btn quiet">Sign in</span> <a class="sample" href="#colour">A film link</a></p>
+  <h2 id="colour">Colour</h2>
+  <div class="pal" id="roles"></div>
+  <h2>Type sizes</h2>
+  <div id="type"></div>
+  <h2>Space</h2>
+  <div id="space"></div>
+  <h2>Radius</h2>
+  <div id="radius"></div>
+  <h2>Motion</h2>
+  <div id="motion"></div>
+</div>
+<script>
+const TOK = /*TOKENS*/null;
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.v !== undefined ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+const roles = document.getElementById('roles');
+for (const [n, t] of flat(TOK.light)) {
+  if (t.t !== 'color') continue;
+  roles.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:var(${cssname(n)})"></i><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`);
+}
+function list(id, node) {
+  const el = document.getElementById(id);
+  for (const [n, t] of flat(node)) {
+    el.insertAdjacentHTML('beforeend', `<div class="row"><span>${esc(n)}</span><code>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</code></div>`);
+  }
+}
+list('type', TOK.core.font.size);
+list('space', TOK.core.space);
+list('radius', TOK.core.radius);
+list('motion', { ...TOK.core.duration, ...TOK.core.easing });
+</script>
+</body>
+</html>
