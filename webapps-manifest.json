@@ -1762,9 +1762,9 @@
       "description": "Bring your story to life | Music & SFX for videos",
       "status": "captured",
       "package": "systems/epidemicsound",
-      "notes": "https://www.epidemicsound.com/login/ opens a Keycloak form at login.epidemicsound.com with email and password, or Google, Apple, or SSO. No code was sent.",
+      "notes": "https://www.epidemicsound.com/login/ opens a Keycloak form at login.epidemicsound.com with email and password, or Google, Apple, or SSO. No code was sent. Public walk 2026-11-21: the map starts at epidemicsound.com and records which header, footer, and in-page control opens which page or menu. Music, sound effects, pricing, and opened menus were photographed at desktop and phone. Cookie banner was hidden, never accepted. Log in and Create free account were recorded and not opened. Nothing was typed. Google, Apple, and SSO were not clicked. No form was submitted. Signed-in app was not captured. The PR has no login-review.json. Public package refresh in PR 1656 at 2b8ca14642d4. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 6
     },
     {
