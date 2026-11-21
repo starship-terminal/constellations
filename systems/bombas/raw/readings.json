@@ -1,0 +1,138 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://bombas.com/",
+  "title": "Bombas. Socks, Underwear, T-Shirts, Slippers designed for comfort, quality, and impact",
+  "categoryUrl": "https://bombas.com/collections/womens",
+  "categoryTitle": "Women's Essential Clothing: Socks, Underwear, Bralettes, and T-Shirts – Bombas",
+  "productUrl": "https://bombas.com/products/women-s-solid-ankle-four-pack",
+  "productTitle": "Women's Solids Ankle Sock 4-Pack - Bombas",
+  "aboutUrl": "https://bombas.com/pages/about-us",
+  "aboutTitle": "About Us - Bombas",
+  "loginUrl": "https://bombas.com/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2, "visualViewportScale": 1 },
+  "region": "Signed-out incognito preview. Promo bar shows Singapore. Prices read SGD.",
+  "body": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Times",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "header": {
+    "backgroundColor": "rgb(253, 252, 246)",
+    "height": "64px"
+  },
+  "promoBar": {
+    "backgroundColor": "rgb(34, 56, 89)",
+    "height": "48px",
+    "linkFontFamily": "bombasFont",
+    "linkFontSize": "14px",
+    "linkFontWeight": "400",
+    "linkColor": "rgb(255, 255, 255)"
+  },
+  "nav": {
+    "fontFamily": "bombasFont",
+    "fontSize": "14px",
+    "fontWeight": "800",
+    "color": "rgb(3, 3, 2)",
+    "lineHeight": "16.1px"
+  },
+  "logo": {
+    "fontFamily": "iconFont",
+    "fontSize": "22px",
+    "color": "rgb(3, 3, 2)",
+    "width": "107px",
+    "height": "22px"
+  },
+  "hero": {
+    "fontFamily": "displayFont",
+    "fontSize": "96.48px",
+    "fontWeight": "700",
+    "color": "rgb(255, 255, 255)",
+    "lineHeight": "77.184px",
+    "kickerFontFamily": "accentFont",
+    "kickerFontSize": "27.36px"
+  },
+  "shopWomen": {
+    "fontFamily": "bombasFont",
+    "fontSize": "16px",
+    "fontWeight": "800",
+    "color": "rgb(3, 3, 2)",
+    "backgroundColor": "color(srgb 1 1 1 / 0.95)",
+    "borderRadius": "12px",
+    "height": "40px"
+  },
+  "product": {
+    "titleFontFamily": "accentFont",
+    "titleFontSize": "32px",
+    "titleFontWeight": "300",
+    "titleColor": "rgb(3, 3, 2)",
+    "saleColor": "rgb(30, 75, 135)",
+    "compareColor": "rgb(92, 88, 81)"
+  },
+  "addToBag": {
+    "fontFamily": "bombasFont",
+    "fontSize": "18px",
+    "fontWeight": "800",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(34, 56, 89)",
+    "borderRadius": "14px",
+    "height": "56px",
+    "width": "424px",
+    "clicked": false
+  },
+  "sizeChip": {
+    "backgroundColor": "rgb(248, 248, 244)",
+    "border": "2px solid rgb(49, 43, 43)",
+    "borderRadius": "8px",
+    "height": "56px",
+    "fontFamily": "bombasFont",
+    "fontWeight": "800"
+  },
+  "footer": {
+    "backgroundColor": "rgb(27, 27, 27)",
+    "color": "rgb(248, 248, 244)",
+    "signupBackground": "rgb(160, 199, 255)",
+    "signupColor": "rgb(3, 3, 2)",
+    "signupHeight": "48px",
+    "signupFontWeight": "800",
+    "headingFontFamily": "accentFont"
+  },
+  "login": {
+    "headingFontSize": "20px",
+    "headingFontWeight": "800",
+    "headingColor": "rgb(3, 3, 2)",
+    "fieldHeight": "44px",
+    "fieldRadius": "12px",
+    "fieldBorder": "1px rgb(148, 142, 130)",
+    "fieldBackground": "rgb(255, 255, 255)",
+    "buttonBackground": "rgb(34, 56, 89)",
+    "buttonHeight": "48px",
+    "buttonRadius": "12px",
+    "emailEmpty": true,
+    "passwordEmpty": true,
+    "submitted": false,
+    "identityProviderClicked": false
+  },
+  "cssVars": {
+    "--brand-bombas-blue": "#192335",
+    "--blue-60": "#223859",
+    "--black": "#030302",
+    "--offwhite": "#f8f8f4",
+    "--grey-50": "#948e82",
+    "--grey-60": "#5c5851",
+    "--blue-50": "#1e4b87",
+    "--brand-soft-blue": "#a0c7ff",
+    "--off-black": "#1b1b1b",
+    "--radius-mega": "12px",
+    "--radius-regular": "8px",
+    "--focus": "var(--legacy-blue-40)"
+  },
+  "fonts": {
+    "bombasFont": "Conforto (Regular 400, Medium filed as 700, Bold filed as 800)",
+    "displayFont": "Cabrio Poster, weight 800",
+    "accentFont": "Decoy Light, weight 300",
+    "iconFont": "BombasIcon",
+    "filesInPackage": false
+  }
+}
