@@ -1,0 +1,710 @@
+{
+  "varCount": 349,
+  "vars": [
+    {
+      "name": "--font-neoris",
+      "value": "\"neoris\", \"neoris Fallback\"",
+      "sel": ".neoris_7aa51325-module__cdxR_a__variable",
+      "ctx": ""
+    },
+    {
+      "name": "--font-departure",
+      "value": "\"departureMono\", \"departureMono Fallback\"",
+      "sel": ".departuremono_18b5c7d9-module__QohopG__variable",
+      "ctx": ""
+    },
+    {
+      "name": "--font-mono",
+      "value": "\"IBM Plex Mono\", \"IBM Plex Mono Fallback\"",
+      "sel": ".ibm_plex_mono_1056f34-module__sJl92a__variable",
+      "ctx": ""
+    },
+    {
+      "name": "--font-inter",
+      "value": "\"Inter\", \"Inter Fallback\"",
+      "sel": ".inter_3b580775-module__zj7OgG__variable",
+      "ctx": ""
+    },
+    {
+      "name": "--tw-translate-x",
+      "value": "0",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-translate-y",
+      "value": "0",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-translate-z",
+      "value": "0",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-scale-x",
+      "value": "1",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-scale-y",
+      "value": "1",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-scale-z",
+      "value": "1",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-rotate-x",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-rotate-y",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-rotate-z",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-skew-x",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-skew-y",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-space-y-reverse",
+      "value": "0",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-divide-y-reverse",
+      "value": "0",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-border-style",
+      "value": "solid",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-gradient-position",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-gradient-from",
+      "value": "#0000",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-gradient-via",
+      "value": "#0000",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-gradient-to",
+      "value": "#0000",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-gradient-stops",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-gradient-via-stops",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-gradient-from-position",
+      "value": "0%",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-gradient-via-position",
+      "value": "50%",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-gradient-to-position",
+      "value": "100%",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-leading",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-font-weight",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-tracking",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-ordinal",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-slashed-zero",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-numeric-figure",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-numeric-spacing",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-numeric-fraction",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-shadow",
+      "value": "0 0 #0000",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-shadow-color",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-shadow-alpha",
+      "value": "100%",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-inset-shadow",
+      "value": "0 0 #0000",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-inset-shadow-color",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-inset-shadow-alpha",
+      "value": "100%",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-ring-color",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-ring-shadow",
+      "value": "0 0 #0000",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-inset-ring-color",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-inset-ring-shadow",
+      "value": "0 0 #0000",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-ring-inset",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-ring-offset-width",
+      "value": "0px",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-ring-offset-color",
+      "value": "#fff",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-ring-offset-shadow",
+      "value": "0 0 #0000",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-outline-style",
+      "value": "solid",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-blur",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-brightness",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-contrast",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-grayscale",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-hue-rotate",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-invert",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-opacity",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-saturate",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-sepia",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-drop-shadow",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-drop-shadow-color",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-drop-shadow-alpha",
+      "value": "100%",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-drop-shadow-size",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-backdrop-blur",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-backdrop-brightness",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-backdrop-contrast",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-backdrop-grayscale",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-backdrop-hue-rotate",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-backdrop-invert",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-backdrop-opacity",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-backdrop-saturate",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-backdrop-sepia",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-duration",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-ease",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-text-shadow-color",
+      "value": "initial",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--tw-text-shadow-alpha",
+      "value": "100%",
+      "sel": "*, ::before, ::after, ::backdrop",
+      "ctx": "@layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+    },
+    {
+      "name": "--font-sans",
+      "value": "var(--font-neoris), sans-serif",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--font-mono",
+      "value": "var(--font-mono)",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--color-lime-200",
+      "value": "#d8f999",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--color-lime-300",
+      "value": "#bbf451",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--color-black",
+      "value": "#000",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--color-white",
+      "value": "#fff",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--spacing",
+      "value": ".25rem",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--text-xs",
+      "value": ".75rem",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--text-xs--line-height",
+      "value": "calc(1 / .75)",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--text-sm",
+      "value": ".875rem",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--text-sm--line-height",
+      "value": "calc(1.25 / .875)",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--font-weight-normal",
+      "value": "400",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--font-weight-medium",
+      "value": "500",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--font-weight-semibold",
+      "value": "600",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--tracking-normal",
+      "value": "0em",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--leading-snug",
+      "value": "1.375",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--radius-md",
+      "value": ".375rem",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--radius-lg",
+      "value": ".5rem",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--radius-xl",
+      "value": ".75rem",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--radius-2xl",
+      "value": "1rem",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--ease-in",
+      "value": "cubic-bezier(.4, 0, 1, 1)",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--ease-out",
+      "value": "cubic-bezier(0, 0, .2, 1)",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--ease-in-out",
+      "value": "cubic-bezier(.4, 0, .2, 1)",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    },
+    {
+      "name": "--blur-sm",
+      "value": "8px",
+      "sel": ":root, :host",
+      "ctx": "@layer theme"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "neoris",
+      "weight": "",
+      "style": ""
+    },
+    {
+      "family": "\"neoris Fallback\"",
+      "weight": "",
+      "style": ""
+    },
+    {
+      "family": "departureMono",
+      "weight": "",
+      "style": ""
+    },
+    {
+      "family": "\"departureMono Fallback\"",
+      "weight": "",
+      "style": ""
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "500",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "500",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "500",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "500",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "500",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono\"",
+      "weight": "500",
+      "style": "normal"
+    },
+    {
+      "family": "\"IBM Plex Mono Fallback\"",
+      "weight": "",
+      "style": ""
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal"
+    }
+  ],
+  "themes": [
+    "@layer theme"
+  ]
+}

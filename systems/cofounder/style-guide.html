@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cofounder style guide</title>
+<style>
+  :root {
+    --page: #f5f5f2;
+    --text: #171717;
+    --surface: #ffffff;
+    --nav: #fbfbf8;
+    --focus: #005fcc;
+    --dialog: rgba(247, 247, 243, 0.68);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-weight: 400; font-size: 32px; line-height: 1.1; margin: 0 0 8px; }
+  h2 { font-weight: 400; font-size: 22px; margin: 36px 0 8px; }
+  p { margin: 0 0 12px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(23,23,23,0.12); }
+  .name { font-size: 12px; line-height: 16px; margin-top: 6px; }
+  .pill { display: inline-flex; align-items: center; height: 41px; padding: 0 12px; border-radius: 8px; background: #fff; color: #171717; text-decoration: none; }
+  .ghost { display: inline-flex; align-items: center; height: 41px; padding: 0 12px; border-radius: 8px; color: #fff; background: rgba(255,255,255,0.16); }
+  .row { display: flex; gap: 12px; align-items: center; padding: 16px; border-radius: 12px; background: #3d8fd4; }
+  .note { font-size: 13px; line-height: 18px; max-width: 70ch; }
+  code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cofounder</h1>
+  <p class="note">Rendered from measured values in <a href="tokens.json">tokens.json</a>. The marketing site paints one light theme. Neoris is not loaded here, so type falls back to the system face. The login wall's primary button colour was sampled from a screenshot and is marked as such in the token file.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#f5f5f2"></div><div class="name">page #f5f5f2</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">surface #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#171717"></div><div class="name">text #171717</div></div>
+    <div class="swatch"><div class="chip" style="background:#fbfbf8"></div><div class="name">nav on hero #fbfbf8</div></div>
+    <div class="swatch"><div class="chip" style="background:#005fcc"></div><div class="name">focus #005fcc</div></div>
+    <div class="swatch"><div class="chip" style="background:#d8f999"></div><div class="name">declared lime-200 #d8f999</div></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="pill" href="https://app.cofounder.co/os">Run a company</a>
+    <span class="ghost">Copy Setup Prompt</span>
+  </div>
+  <p class="note">The white pill is the header CTA (41px, 8px radius). The ghost control matches Copy Setup Prompt on the hero: transparent fill, white text, 8px radius. Both open or sit beside the login wall. Do not follow the pill from this file.</p>
+  <h2>Type</h2>
+  <p style="font-size:46px;line-height:1.08;font-weight:400;margin:0 0 8px">Cofounder lets you run an entire company with AI</p>
+  <p class="note">Hero is 46px Neoris at weight 400 on the live site. This page cannot load Neoris.</p>
+</main>
+</body>
+</html>
