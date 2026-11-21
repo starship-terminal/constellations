@@ -1,0 +1,1020 @@
+{
+  "captured": "2026-11-21",
+  "product": "doctronic.ai",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "body": {
+    "backgroundColor": "rgb(253, 253, 248)",
+    "color": "rgb(12, 14, 18)",
+    "fontFamily": "Geist, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", sans-serif",
+    "fontSize": "16px"
+  },
+  "components": {
+    "button-login": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "32px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "34.7969px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1134.25,
+            "y": 18.59375,
+            "w": 59.109375,
+            "h": 34.796875
+          },
+          "crop": "button-login-default.png"
+        },
+        "hover": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "32px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "34.7969px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1134.25,
+            "y": 18.59375,
+            "w": 59.109375,
+            "h": 34.796875
+          },
+          "crop": "button-login-hover.png"
+        },
+        "focus": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "32px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "34.7969px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(60, 131, 246) solid 2px",
+            "outlineOffset": "2px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1134.25,
+            "y": 18.59375,
+            "w": 59.109375,
+            "h": 34.796875
+          },
+          "via": "focus()",
+          "crop": "button-login-focus.png"
+        },
+        "pressed": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "32px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "34.7969px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1134.25,
+            "y": 18.59375,
+            "w": 59.109375,
+            "h": 34.796875
+          },
+          "via": "CDP :active",
+          "crop": "button-login-pressed.png"
+        }
+      }
+    },
+    "button-signup": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "32px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "34.7969px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1201.359375,
+            "y": 18.59375,
+            "w": 65.640625,
+            "h": 34.796875
+          },
+          "crop": "button-signup-default.png"
+        },
+        "hover": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "32px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "34.7969px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1201.359375,
+            "y": 18.59375,
+            "w": 65.640625,
+            "h": 34.796875
+          },
+          "crop": "button-signup-hover.png"
+        },
+        "focus": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "32px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "34.7969px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(60, 131, 246) solid 2px",
+            "outlineOffset": "2px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1201.359375,
+            "y": 18.59375,
+            "w": 65.640625,
+            "h": 34.796875
+          },
+          "via": "focus()",
+          "crop": "button-signup-focus.png"
+        },
+        "pressed": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "32px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "34.7969px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1201.359375,
+            "y": 18.59375,
+            "w": 65.640625,
+            "h": 34.796875
+          },
+          "via": "CDP :active",
+          "crop": "button-signup-pressed.png"
+        }
+      }
+    },
+    "button-start-chat": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "52px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "43.5938px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 840.640625,
+            "y": 608.15625,
+            "w": 136.359375,
+            "h": 43.59375
+          },
+          "crop": "button-start-chat-default.png"
+        },
+        "hover": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "52px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "43.5938px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 840.640625,
+            "y": 608.15625,
+            "w": 136.359375,
+            "h": 43.59375
+          },
+          "crop": "button-start-chat-hover.png"
+        },
+        "focus": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "52px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "43.5938px",
+            "minHeight": "auto",
+            "boxShadow": "color(srgb 0.141176 0.388235 0.921569 / 0.39) 0px 4px 7px 0px",
+            "outline": "rgb(60, 131, 246) solid 2px",
+            "outlineOffset": "2px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 840.640625,
+            "y": 608.15625,
+            "w": 136.359375,
+            "h": 43.59375
+          },
+          "via": "focus()",
+          "crop": "button-start-chat-focus.png"
+        },
+        "pressed": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "52px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "43.5938px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 840.640625,
+            "y": 608.15625,
+            "w": 136.359375,
+            "h": 43.59375
+          },
+          "via": "CDP :active",
+          "crop": "button-start-chat-pressed.png"
+        }
+      }
+    },
+    "field-hero": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "0px",
+            "fontFamily": "geist, system-ui, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "19.6px",
+            "letterSpacing": "-0.28px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "58.7812px",
+            "minHeight": "48px",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 463,
+            "y": 538.375,
+            "w": 514,
+            "h": 58.78125
+          },
+          "crop": "field-hero-default.png"
+        },
+        "focus": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "0px",
+            "fontFamily": "geist, system-ui, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "19.6px",
+            "letterSpacing": "-0.28px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "58.7812px",
+            "minHeight": "48px",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 463,
+            "y": 538.375,
+            "w": 514,
+            "h": 58.78125
+          },
+          "via": "focus()",
+          "crop": "field-hero-focus.png"
+        }
+      }
+    },
+    "chip-anonymous": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "color(srgb 0.105882 0.105882 0.0941176 / 0.08)",
+            "borderTopWidth": "1px",
+            "borderTopStyle": "dashed",
+            "borderRadius": "34px",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "3px",
+            "paddingRight": "8px",
+            "paddingBottom": "3px",
+            "paddingLeft": "8px",
+            "height": "32px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "4px"
+          },
+          "box": {
+            "x": 463,
+            "y": 619.75,
+            "w": 105.5625,
+            "h": 32
+          },
+          "crop": "chip-anonymous-default.png"
+        }
+      }
+    },
+    "heading-display": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "0px",
+            "fontFamily": "fraunces, Georgia, \"Times New Roman\", serif",
+            "fontSize": "48px",
+            "fontWeight": "400",
+            "lineHeight": "56.16px",
+            "letterSpacing": "-0.48px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "56.1562px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 530.71875,
+            "y": 275.25,
+            "w": 378.5625,
+            "h": 56.15625
+          },
+          "crop": "heading-display-default.png"
+        }
+      }
+    },
+    "icon-button-sidebar": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "100px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "40px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1300,
+            "y": 16,
+            "w": 40,
+            "h": 40
+          },
+          "crop": "icon-button-sidebar-default.png"
+        },
+        "hover": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "100px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "40px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1300,
+            "y": 16,
+            "w": 40,
+            "h": 40
+          },
+          "crop": "icon-button-sidebar-hover.png"
+        }
+      }
+    },
+    "button-login-email": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "52px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "43.5938px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 555.5,
+            "y": 465.734375,
+            "w": 329,
+            "h": 43.59375
+          },
+          "crop": "button-login-email-default.png"
+        },
+        "hover": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "52px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "43.5938px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 555.5,
+            "y": 465.734375,
+            "w": 329,
+            "h": 43.59375
+          },
+          "crop": "button-login-email-hover.png"
+        },
+        "focus": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "52px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "43.5938px",
+            "minHeight": "auto",
+            "boxShadow": "color(srgb 0.141176 0.388235 0.921569 / 0.39) 0px 4px 7px 0px",
+            "outline": "rgb(60, 131, 246) solid 2px",
+            "outlineOffset": "2px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 555.5,
+            "y": 465.734375,
+            "w": 329,
+            "h": 43.59375
+          },
+          "via": "focus()",
+          "crop": "button-login-email-focus.png"
+        }
+      }
+    },
+    "button-google": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "40px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "44px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 555.5,
+            "y": 517.328125,
+            "w": 329,
+            "h": 44
+          },
+          "crop": "button-google-default.png"
+        }
+      }
+    },
+    "dialog-login": {
+      "page": "https://www.doctronic.ai/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "583.453px",
+            "minHeight": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 523.5,
+            "y": 158.265625,
+            "w": 393,
+            "h": 583.453125
+          },
+          "crop": "dialog-login-default.png"
+        }
+      }
+    },
+    "field-chat": {
+      "page": "https://www.doctronic.ai/chat/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "0px",
+            "fontFamily": "geist, system-ui, Arial, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "22.4px",
+            "letterSpacing": "-0.32px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "52px",
+            "minHeight": "52px",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 448,
+            "y": 365,
+            "w": 618,
+            "h": 52
+          },
+          "crop": "field-chat-default.png"
+        },
+        "focus": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "0px",
+            "fontFamily": "geist, system-ui, Arial, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "22.4px",
+            "letterSpacing": "-0.32px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "52px",
+            "minHeight": "52px",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 448,
+            "y": 365,
+            "w": 618,
+            "h": 52
+          },
+          "via": "focus()",
+          "crop": "field-chat-focus.png"
+        }
+      }
+    },
+    "button-send": {
+      "page": "https://www.doctronic.ai/chat/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "52px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "height": "32px",
+            "minHeight": "auto",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 1034,
+            "y": 425,
+            "w": 32,
+            "h": 32
+          },
+          "crop": "button-send-default.png"
+        }
+      }
+    },
+    "chip-suggestion": {
+      "page": "https://www.doctronic.ai/chat/",
+      "states": {
+        "default": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgb(245, 245, 240)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "8px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "8px",
+            "paddingRight": "16px",
+            "paddingBottom": "8px",
+            "paddingLeft": "16px",
+            "height": "20.5938px",
+            "minHeight": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 488.984375,
+            "y": 520,
+            "w": 164.109375,
+            "h": 36.59375
+          },
+          "crop": "chip-suggestion-default.png"
+        },
+        "hover": {
+          "style": {
+            "color": "rgb(27, 27, 24)",
+            "backgroundColor": "rgb(228, 228, 220)",
+            "borderTopColor": "rgb(27, 27, 24)",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderRadius": "8px",
+            "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "paddingTop": "8px",
+            "paddingRight": "16px",
+            "paddingBottom": "8px",
+            "paddingLeft": "16px",
+            "height": "20.5938px",
+            "minHeight": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(27, 27, 24) none 0px",
+            "outlineOffset": "0px",
+            "textDecorationLine": "none",
+            "gap": "normal"
+          },
+          "box": {
+            "x": 488.984375,
+            "y": 520,
+            "w": 164.109375,
+            "h": 36.59375
+          },
+          "crop": "chip-suggestion-hover.png"
+        }
+      }
+    },
+    "link-nav": {
+      "page": "https://www.doctronic.ai/our-philosophy/",
+      "states": {},
+      "missing": true
+    }
+  }
+}

@@ -1,0 +1,1838 @@
+{
+  "product": "doctronic.ai",
+  "captured": "2026-11-21",
+  "route": "public-web live stylesheets",
+  "brand": {
+    "themeColor": "",
+    "maskIcon": "",
+    "colorScheme": "normal"
+  },
+  "fonts": [
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "500",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geistMono",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geistMono",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "italic"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "italic"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "500",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geistMono",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geistMono",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "italic"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "italic"
+    }
+  ],
+  "ruleCount": 172,
+  "extra": [
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/0xag2nkn69pf1.css",
+      "added": 0
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/45bby630pfxoe.css",
+      "added": 0
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "added": 4
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/3yue-gqhp6-_6.css",
+      "added": 44
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "added": 3
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/0cv7i0b-ks02b.css",
+      "added": 4
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/1xo2g1rsq8yby.css",
+      "added": 0
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/0fgo_0lnb37j5.css",
+      "added": 28
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/2_9xz08fdu5jd.css",
+      "added": 0
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/3d2w8vx_v4--h.css",
+      "added": 6
+    }
+  ],
+  "rules": [
+    {
+      "selector": ":root",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-white": "#fff",
+        "--color-blue-50": "#f0f6ff",
+        "--color-blue-100": "#dcebfe",
+        "--color-blue-200": "#bedbfe",
+        "--color-blue-300": "#91c3fd",
+        "--color-blue-400": "#61a6fa",
+        "--color-blue-500": "#3c83f6",
+        "--color-blue-600": "#2463eb",
+        "--color-blue-700": "#1d4fd7",
+        "--color-blue-800": "#1e3fae",
+        "--color-blue-900": "#1e3b8a",
+        "--color-blue-950": "#172554",
+        "--color-neutral-50": "#fdfdf7",
+        "--color-neutral-100": "#f5f5f0",
+        "--color-neutral-200": "#e4e4dc",
+        "--color-neutral-300": "#cecec5",
+        "--color-neutral-400": "#a7a7a0",
+        "--color-neutral-500": "#797972",
+        "--color-neutral-600": "#53544f",
+        "--color-neutral-700": "#3c3c39",
+        "--color-neutral-800": "#272725",
+        "--color-neutral-900": "#1b1b18",
+        "--color-neutral-950": "#0b0b0a",
+        "--color-sage-50": "#f1f8f2",
+        "--color-sage-100": "#e1efe3",
+        "--color-sage-200": "#c9e3cc",
+        "--color-sage-300": "#b9dabd",
+        "--color-sage-400": "#8dbf93",
+        "--color-sage-500": "#5e9c65",
+        "--color-sage-600": "#45824d",
+        "--color-sage-700": "#34653a",
+        "--color-sage-800": "#264b2c",
+        "--color-sage-900": "#16311a",
+        "--color-sage-950": "#0a190c",
+        "--color-lime-50": "#f7ffe6",
+        "--color-lime-100": "#efffcc",
+        "--color-lime-200": "#e4ff9e",
+        "--color-lime-300": "#d9ff80",
+        "--color-lime-400": "#beec4b",
+        "--color-lime-500": "#a3ce2c",
+        "--color-lime-600": "#82a91e",
+        "--color-lime-700": "#66841a",
+        "--color-lime-800": "#4d641b",
+        "--color-lime-900": "#33421a",
+        "--color-lime-950": "#1a230b",
+        "--color-success-50": "#f1f8f2",
+        "--color-success-100": "#ddeedf",
+        "--color-success-200": "#bad9be",
+        "--color-success-300": "#8ebe95",
+        "--color-success-400": "#5ea168",
+        "--color-success-500": "#438448",
+        "--color-success-600": "#2f6a36",
+        "--color-success-700": "#235328",
+        "--color-success-800": "#193e1e",
+        "--color-success-900": "#112c15",
+        "--color-success-950": "#061309",
+        "--color-warning-50": "#fef9e7",
+        "--color-warning-100": "#fcefc0",
+        "--color-warning-200": "#f8de82",
+        "--color-warning-300": "#f1c946",
+        "--color-warning-400": "#e0ab1a",
+        "--color-warning-500": "#c28d0f",
+        "--color-warning-600": "#9d6f0b",
+        "--color-warning-700": "#7b550a",
+        "--color-warning-800": "#59410d",
+        "--color-warning-900": "#3c2d0b",
+        "--color-warning-950": "#1f1605",
+        "--color-error-50": "#fdedee",
+        "--color-error-100": "#fbd5d9",
+        "--color-error-200": "#f5a8b1",
+        "--color-error-300": "#ed7383",
+        "--color-error-400": "#de3f57",
+        "--color-error-500": "#c52640",
+        "--color-error-600": "#a61c31",
+        "--color-error-700": "#841527",
+        "--color-error-800": "#610f1d",
+        "--color-error-900": "#3e0914",
+        "--color-error-950": "#20030a"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [
+        "@layer tokens"
+      ],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-surface-canvas": "var(--color-neutral-50)",
+        "--color-surface-raised": "var(--color-white)",
+        "--color-surface-sunken": "var(--color-neutral-100)",
+        "--color-surface-muted-blue": "#dbe2eb",
+        "--color-surface-muted-sage": "#dbe6dc",
+        "--color-surface-muted-warm": "#e4e1d8",
+        "--color-surface-muted-rose": "#e6dbe6",
+        "--color-wash-lavender-soft": "#efecf9",
+        "--color-wash-lavender-deep": "#e5e1f4",
+        "--color-wash-sky": "#e7eef3",
+        "--color-wash-sage": "#ebf4ec",
+        "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-200) 43.67%, var(--color-neutral-100) 75.79%, var(--color-neutral-200) 100%)",
+        "--chat-sheet-accent-stop-1": "var(--color-blue-600)",
+        "--chat-sheet-accent-stop-2": "#0ea5e9",
+        "--chat-sheet-accent-stop-3": "#22c55e",
+        "--chat-sheet-accent-stop-4": "#84cc16",
+        "--chat-sheet-accent-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-stop-1) 0%, var(--chat-sheet-accent-stop-2) 20%, var(--chat-sheet-accent-stop-3) 40%, var(--chat-sheet-accent-stop-4) 60%, var(--chat-sheet-accent-stop-2) 80%, var(--chat-sheet-accent-stop-1) 100%)",
+        "--chat-sheet-accent-still-stop-1": "var(--chat-sheet-accent-stop-1)",
+        "--chat-sheet-accent-still-stop-2": "#0369a1",
+        "--chat-sheet-accent-still-stop-3": "#047857",
+        "--chat-sheet-accent-still-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-still-stop-1), var(--chat-sheet-accent-still-stop-2), var(--chat-sheet-accent-still-stop-3))",
+        "--chat-sheet-tag-neutral-fill-hovered": "#efefe6",
+        "--tap-target-min": "2.75rem",
+        "--color-graphic-blue-subtle": "var(--color-blue-50)",
+        "--color-graphic-blue-soft": "var(--color-blue-100)",
+        "--color-graphic-blue-muted": "var(--color-blue-200)",
+        "--color-graphic-blue-moderate": "var(--color-blue-300)",
+        "--color-graphic-blue-strong": "var(--color-blue-400)",
+        "--color-graphic-blue-bold": "var(--color-blue-500)",
+        "--color-fg-default": "var(--color-neutral-900)",
+        "--color-fg-muted": "hsl(from var(--color-neutral-900) h s l / .73)",
+        "--color-fg-subtle": "hsl(from var(--color-neutral-900) h s l / .6)",
+        "--color-fg-disabled": "hsl(from var(--color-neutral-900) h s l / .3)",
+        "--color-border-default": "hsl(from var(--color-neutral-900) h s l / .08)",
+        "--color-border-light": "hsl(from var(--color-neutral-900) h s l / .04)",
+        "--color-border-strong": "hsl(from var(--color-neutral-900) h s l / .2)",
+        "--color-border-disabled": "var(--color-neutral-300)",
+        "--color-border-subtle": "var(--color-neutral-100)",
+        "--color-divider": "var(--color-neutral-200)",
+        "--color-divider-strong": "var(--color-neutral-300)",
+        "--color-solid-bg": "var(--color-neutral-950)",
+        "--color-solid-bg-hover": "var(--color-neutral-800)",
+        "--color-solid-bg-pressed": "var(--color-neutral-900)",
+        "--color-solid-bg-disabled": "var(--color-neutral-200)",
+        "--color-solid-fg": "var(--color-neutral-50)",
+        "--color-solid-fg-disabled": "var(--color-neutral-500)",
+        "--color-link-default": "var(--color-accent-bg)",
+        "--color-link-hover": "var(--color-blue-700)",
+        "--color-link-disabled": "var(--color-neutral-500)",
+        "--color-link-visited": "var(--color-blue-800)",
+        "--color-accent-bg": "var(--color-blue-600)",
+        "--color-accent-bg-hover": "var(--color-blue-700)",
+        "--color-accent-fg": "var(--color-white)",
+        "--color-accent-bg-pressed": "var(--color-blue-800)",
+        "--color-accent-bg-disabled": "var(--color-neutral-200)",
+        "--color-accent-fg-disabled": "var(--color-neutral-500)",
+        "--color-accent-focus-ring": "var(--color-blue-500)",
+        "--color-accent-focus-ring-black": "var(--color-neutral-950)",
+        "--focus-ring-width": "2px",
+        "--focus-ring-offset": "2px",
+        "--color-success-bg": "var(--color-success-50)",
+        "--color-success-border": "var(--color-success-200)",
+        "--color-success-fg": "var(--color-success-800)",
+        "--color-warning-bg": "var(--color-warning-50)",
+        "--color-warning-border": "var(--color-warning-200)",
+        "--color-warning-fg": "var(--color-warning-800)",
+        "--color-error-bg": "var(--color-error-50)",
+        "--color-error-border": "var(--color-error-200)",
+        "--color-error-fg": "var(--color-error-800)",
+        "--color-info-bg": "var(--color-blue-50)",
+        "--color-info-border": "var(--color-blue-200)",
+        "--color-info-fg": "var(--color-blue-800)",
+        "--color-icon-default": "var(--color-neutral-950)",
+        "--tracking-display": "-.01em",
+        "--tracking-tight": "-.02em",
+        "--text-display-24": "400 1.5rem/1.17 var(--font-display)",
+        "--text-display-32": "400 2rem/1.17 var(--font-display)",
+        "--text-display-40": "400 2.5rem/1.17 var(--font-display)",
+        "--text-display-48": "400 3rem/1.17 var(--font-display)",
+        "--text-display-56": "400 3.5rem/1.17 var(--font-display)",
+        "--text-display-64": "400 4rem/1.17 var(--font-display)",
+        "--text-display-72": "400 4.5rem/1.17 var(--font-display)",
+        "--text-italic-14": "italic 400 .875rem/1.25 var(--font-display)",
+        "--text-italic-18": "italic 400 1.125rem/1.25 var(--font-display)",
+        "--text-italic-24": "italic 400 1.5rem/1.25 var(--font-display)",
+        "--text-italic-32": "italic 400 2rem/1.25 var(--font-display)",
+        "--text-italic-40": "italic 400 2.5rem/1.25 var(--font-display)",
+        "--text-italic-48": "italic 400 3rem/1.25 var(--font-display)",
+        "--text-italic-56": "italic 400 3.5rem/1.25 var(--font-display)",
+        "--text-italic-64": "italic 400 4rem/1.25 var(--font-display)",
+        "--text-italic-72": "italic 400 4.5rem/1.25 var(--font-display)",
+        "--text-heading-10": "600 .625rem/1.4 var(--font-sans)",
+        "--text-heading-12": "600 .75rem/1.4 var(--font-sans)",
+        "--text-heading-14": "600 .875rem/1.4 var(--font-sans)",
+        "--text-heading-16": "600 1rem/1.4 var(--font-sans)",
+        "--text-heading-18": "600 1.125rem/1.4 var(--font-sans)",
+        "--text-heading-20": "600 1.25rem/1.4 var(--font-sans)",
+        "--text-heading-24": "600 1.5rem/1.4 var(--font-sans)",
+        "--text-heading-28": "600 1.75rem/1.4 var(--font-sans)",
+        "--text-heading-32": "600 2rem/1.4 var(--font-sans)",
+        "--text-heading-italic-10": "italic 600 .625rem/1.4 var(--font-sans)",
+        "--text-heading-italic-12": "italic 600 .75rem/1.4 var(--font-sans)",
+        "--text-heading-italic-14": "italic 600 .875rem/1.4 var(--font-sans)",
+        "--text-heading-italic-16": "italic 600 1rem/1.4 var(--font-sans)",
+        "--text-heading-italic-18": "italic 600 1.125rem/1.4 var(--font-sans)",
+        "--text-heading-italic-20": "italic 600 1.25rem/1.4 var(--font-sans)",
+        "--text-heading-italic-24": "italic 600 1.5rem/1.4 var(--font-sans)",
+        "--text-heading-italic-28": "italic 600 1.75rem/1.4 var(--font-sans)",
+        "--text-heading-italic-32": "italic 600 2rem/1.4 var(--font-sans)",
+        "--text-body-10": "400 .625rem/1.4 var(--font-sans)",
+        "--text-body-12": "400 .75rem/1.4 var(--font-sans)",
+        "--text-body-14": "400 .875rem/1.4 var(--font-sans)",
+        "--text-body-16": "400 1rem/1.4 var(--font-sans)",
+        "--text-body-18": "400 1.125rem/1.4 var(--font-sans)",
+        "--text-body-20": "400 1.25rem/1.4 var(--font-sans)",
+        "--text-body-24": "400 1.5rem/1.4 var(--font-sans)",
+        "--text-body-28": "400 1.75rem/1.4 var(--font-sans)",
+        "--text-body-32": "400 2rem/1.4 var(--font-sans)",
+        "--text-label-10": "500 .625rem/1.4 var(--font-sans)",
+        "--text-label-12": "500 .75rem/1.4 var(--font-sans)",
+        "--text-label-14": "500 .875rem/1.4 var(--font-sans)",
+        "--text-label-16": "500 1rem/1.4 var(--font-sans)",
+        "--text-label-18": "500 1.125rem/1.4 var(--font-sans)",
+        "--text-label-20": "500 1.25rem/1.4 var(--font-sans)",
+        "--text-label-24": "500 1.5rem/1.4 var(--font-sans)",
+        "--text-label-28": "500 1.75rem/1.4 var(--font-sans)",
+        "--text-label-32": "500 2rem/1.4 var(--font-sans)",
+        "--text-mono-10": "400 .625rem/1.4 var(--font-mono)",
+        "--text-mono-12": "400 .75rem/1.4 var(--font-mono)",
+        "--text-mono-14": "400 .875rem/1.4 var(--font-mono)",
+        "--text-mono-16": "400 1rem/1.4 var(--font-mono)",
+        "--text-mono-18": "400 1.125rem/1.4 var(--font-mono)",
+        "--text-mono-20": "400 1.25rem/1.4 var(--font-mono)",
+        "--text-mono-24": "400 1.5rem/1.4 var(--font-mono)",
+        "--text-mono-28": "400 1.75rem/1.4 var(--font-mono)",
+        "--text-mono-32": "400 2rem/1.4 var(--font-mono)",
+        "--text-mono-bold-10": "600 .625rem/1.4 var(--font-mono)",
+        "--text-mono-bold-12": "600 .75rem/1.4 var(--font-mono)",
+        "--text-mono-bold-14": "600 .875rem/1.4 var(--font-mono)",
+        "--text-mono-bold-16": "600 1rem/1.4 var(--font-mono)",
+        "--text-mono-bold-18": "600 1.125rem/1.4 var(--font-mono)",
+        "--text-mono-bold-20": "600 1.25rem/1.4 var(--font-mono)",
+        "--text-mono-bold-24": "600 1.5rem/1.4 var(--font-mono)",
+        "--text-mono-bold-28": "600 1.75rem/1.4 var(--font-mono)",
+        "--text-mono-bold-32": "600 2rem/1.4 var(--font-mono)",
+        "--shadow-xs": "0 1px 2px #0000000f",
+        "--shadow-sm": "0 1px 12px #0000000d",
+        "--shadow-md": "0 2px 12px #0000000f",
+        "--shadow-lg": "0 2px 24px #0000000f",
+        "--shadow-xl": "0 5px 32px #0000001a",
+        "--shadow-focus-ring": "0 0 0 2px var(--color-accent-bg)",
+        "--shadow-brand-glow": "0 4px 14px #0961e463",
+        "--shadow-brand-glow-hover": "0 6px 20px #0961e480"
+      }
+    },
+    {
+      "selector": "[data-theme=\"dark\"]",
+      "ctx": [
+        "@layer tokens"
+      ],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-surface-canvas": "#0d0e0b",
+        "--color-surface-raised": "var(--color-neutral-900)",
+        "--color-surface-sunken": "#080907",
+        "--color-surface-muted-blue": "#162136",
+        "--color-surface-muted-sage": "#18251c",
+        "--color-surface-muted-warm": "#262421",
+        "--color-surface-muted-rose": "#2c2131",
+        "--chat-sheet-tag-neutral-fill-hovered": "#0f110d",
+        "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-800) 43.67%, var(--color-neutral-700) 75.79%, var(--color-neutral-800) 100%)",
+        "--color-fg-default": "var(--color-neutral-50)",
+        "--color-fg-muted": "hsl(from var(--color-neutral-50) h s l / .73)",
+        "--color-fg-subtle": "hsl(from var(--color-neutral-50) h s l / .6)",
+        "--color-fg-disabled": "hsl(from var(--color-neutral-50) h s l / .3)",
+        "--color-border-light": "hsl(from var(--color-neutral-50) h s l / .04)",
+        "--color-border-default": "hsl(from var(--color-neutral-50) h s l / .08)",
+        "--color-border-strong": "hsl(from var(--color-neutral-50) h s l / .2)",
+        "--color-border-disabled": "var(--color-neutral-800)",
+        "--color-border-subtle": "var(--color-neutral-800)",
+        "--color-divider": "var(--color-neutral-700)",
+        "--color-divider-strong": "var(--color-neutral-600)",
+        "--color-link-default": "var(--color-blue-400)",
+        "--color-link-hover": "var(--color-blue-300)",
+        "--color-link-disabled": "var(--color-neutral-700)",
+        "--color-link-visited": "var(--color-blue-200)",
+        "--color-solid-bg": "var(--color-neutral-50)",
+        "--color-solid-bg-hover": "var(--color-neutral-200)",
+        "--color-solid-bg-pressed": "var(--color-neutral-100)",
+        "--color-solid-bg-disabled": "var(--color-neutral-800)",
+        "--color-solid-fg": "var(--color-neutral-950)",
+        "--color-solid-fg-disabled": "var(--color-neutral-700)",
+        "--color-accent-bg": "var(--color-blue-400)",
+        "--color-accent-bg-hover": "var(--color-blue-300)",
+        "--color-accent-fg": "var(--color-blue-950)",
+        "--color-accent-bg-pressed": "var(--color-blue-500)",
+        "--color-accent-bg-disabled": "var(--color-neutral-800)",
+        "--color-accent-fg-disabled": "var(--color-neutral-700)",
+        "--color-accent-focus-ring": "var(--color-blue-400)",
+        "--color-accent-focus-ring-black": "var(--color-neutral-50)",
+        "--color-success-bg": "var(--color-success-900)",
+        "--color-success-border": "var(--color-success-700)",
+        "--color-success-fg": "var(--color-success-200)",
+        "--color-warning-bg": "var(--color-warning-900)",
+        "--color-warning-border": "var(--color-warning-700)",
+        "--color-warning-fg": "var(--color-warning-200)",
+        "--color-error-bg": "var(--color-error-900)",
+        "--color-error-border": "var(--color-error-700)",
+        "--color-error-fg": "var(--color-error-200)",
+        "--color-info-bg": "var(--color-blue-900)",
+        "--color-info-border": "var(--color-blue-700)",
+        "--color-info-fg": "var(--color-blue-200)",
+        "--color-icon-default": "var(--color-neutral-50)"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--font-body": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+        "--header-height": "4.5rem"
+      }
+    },
+    {
+      "selector": ".Ijxoba_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-sans": "\"geist\", system-ui, Arial, sans-serif"
+      }
+    },
+    {
+      "selector": ".A3W5cG_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-mono": "\"geistMono\", ui-monospace, Courier New, monospace"
+      }
+    },
+    {
+      "selector": ".AGcgpq_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-display": "\"fraunces\", Georgia, Times New Roman, serif"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-white": "#fff",
+        "--color-blue-50": "#f0f6ff",
+        "--color-blue-100": "#dcebfe",
+        "--color-blue-200": "#bedbfe",
+        "--color-blue-300": "#91c3fd",
+        "--color-blue-400": "#61a6fa",
+        "--color-blue-500": "#3c83f6",
+        "--color-blue-600": "#2463eb",
+        "--color-blue-700": "#1d4fd7",
+        "--color-blue-800": "#1e3fae",
+        "--color-blue-900": "#1e3b8a",
+        "--color-blue-950": "#172554",
+        "--color-neutral-50": "#fdfdf7",
+        "--color-neutral-100": "#f5f5f0",
+        "--color-neutral-200": "#e4e4dc",
+        "--color-neutral-300": "#cecec5",
+        "--color-neutral-400": "#a7a7a0",
+        "--color-neutral-500": "#797972",
+        "--color-neutral-600": "#53544f",
+        "--color-neutral-700": "#3c3c39",
+        "--color-neutral-800": "#272725",
+        "--color-neutral-900": "#1b1b18",
+        "--color-neutral-950": "#0b0b0a",
+        "--color-sage-50": "#f1f8f2",
+        "--color-sage-100": "#e1efe3",
+        "--color-sage-200": "#c9e3cc",
+        "--color-sage-300": "#b9dabd",
+        "--color-sage-400": "#8dbf93",
+        "--color-sage-500": "#5e9c65",
+        "--color-sage-600": "#45824d",
+        "--color-sage-700": "#34653a",
+        "--color-sage-800": "#264b2c",
+        "--color-sage-900": "#16311a",
+        "--color-sage-950": "#0a190c",
+        "--color-lime-50": "#f7ffe6",
+        "--color-lime-100": "#efffcc",
+        "--color-lime-200": "#e4ff9e",
+        "--color-lime-300": "#d9ff80",
+        "--color-lime-400": "#beec4b",
+        "--color-lime-500": "#a3ce2c",
+        "--color-lime-600": "#82a91e",
+        "--color-lime-700": "#66841a",
+        "--color-lime-800": "#4d641b",
+        "--color-lime-900": "#33421a",
+        "--color-lime-950": "#1a230b",
+        "--color-success-50": "#f1f8f2",
+        "--color-success-100": "#ddeedf",
+        "--color-success-200": "#bad9be",
+        "--color-success-300": "#8ebe95",
+        "--color-success-400": "#5ea168",
+        "--color-success-500": "#438448",
+        "--color-success-600": "#2f6a36",
+        "--color-success-700": "#235328",
+        "--color-success-800": "#193e1e",
+        "--color-success-900": "#112c15",
+        "--color-success-950": "#061309",
+        "--color-warning-50": "#fef9e7",
+        "--color-warning-100": "#fcefc0",
+        "--color-warning-200": "#f8de82",
+        "--color-warning-300": "#f1c946",
+        "--color-warning-400": "#e0ab1a",
+        "--color-warning-500": "#c28d0f",
+        "--color-warning-600": "#9d6f0b",
+        "--color-warning-700": "#7b550a",
+        "--color-warning-800": "#59410d",
+        "--color-warning-900": "#3c2d0b",
+        "--color-warning-950": "#1f1605",
+        "--color-error-50": "#fdedee",
+        "--color-error-100": "#fbd5d9",
+        "--color-error-200": "#f5a8b1",
+        "--color-error-300": "#ed7383",
+        "--color-error-400": "#de3f57",
+        "--color-error-500": "#c52640",
+        "--color-error-600": "#a61c31",
+        "--color-error-700": "#841527",
+        "--color-error-800": "#610f1d",
+        "--color-error-900": "#3e0914",
+        "--color-error-950": "#20030a"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [
+        "@layer tokens"
+      ],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-surface-canvas": "var(--color-neutral-50)",
+        "--color-surface-raised": "var(--color-white)",
+        "--color-surface-sunken": "var(--color-neutral-100)",
+        "--color-surface-muted-blue": "#dbe2eb",
+        "--color-surface-muted-sage": "#dbe6dc",
+        "--color-surface-muted-warm": "#e4e1d8",
+        "--color-surface-muted-rose": "#e6dbe6",
+        "--color-wash-lavender-soft": "#efecf9",
+        "--color-wash-lavender-deep": "#e5e1f4",
+        "--color-wash-sky": "#e7eef3",
+        "--color-wash-sage": "#ebf4ec",
+        "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-200) 43.67%, var(--color-neutral-100) 75.79%, var(--color-neutral-200) 100%)",
+        "--chat-sheet-accent-stop-1": "var(--color-blue-600)",
+        "--chat-sheet-accent-stop-2": "#0ea5e9",
+        "--chat-sheet-accent-stop-3": "#22c55e",
+        "--chat-sheet-accent-stop-4": "#84cc16",
+        "--chat-sheet-accent-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-stop-1) 0%, var(--chat-sheet-accent-stop-2) 20%, var(--chat-sheet-accent-stop-3) 40%, var(--chat-sheet-accent-stop-4) 60%, var(--chat-sheet-accent-stop-2) 80%, var(--chat-sheet-accent-stop-1) 100%)",
+        "--chat-sheet-accent-still-stop-1": "var(--chat-sheet-accent-stop-1)",
+        "--chat-sheet-accent-still-stop-2": "#0369a1",
+        "--chat-sheet-accent-still-stop-3": "#047857",
+        "--chat-sheet-accent-still-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-still-stop-1), var(--chat-sheet-accent-still-stop-2), var(--chat-sheet-accent-still-stop-3))",
+        "--chat-sheet-tag-neutral-fill-hovered": "#efefe6",
+        "--tap-target-min": "2.75rem",
+        "--color-graphic-blue-subtle": "var(--color-blue-50)",
+        "--color-graphic-blue-soft": "var(--color-blue-100)",
+        "--color-graphic-blue-muted": "var(--color-blue-200)",
+        "--color-graphic-blue-moderate": "var(--color-blue-300)",
+        "--color-graphic-blue-strong": "var(--color-blue-400)",
+        "--color-graphic-blue-bold": "var(--color-blue-500)",
+        "--color-fg-default": "var(--color-neutral-900)",
+        "--color-fg-muted": "hsl(from var(--color-neutral-900) h s l / .73)",
+        "--color-fg-subtle": "hsl(from var(--color-neutral-900) h s l / .6)",
+        "--color-fg-disabled": "hsl(from var(--color-neutral-900) h s l / .3)",
+        "--color-border-default": "hsl(from var(--color-neutral-900) h s l / .08)",
+        "--color-border-light": "hsl(from var(--color-neutral-900) h s l / .04)",
+        "--color-border-strong": "hsl(from var(--color-neutral-900) h s l / .2)",
+        "--color-border-disabled": "var(--color-neutral-300)",
+        "--color-border-subtle": "var(--color-neutral-100)",
+        "--color-divider": "var(--color-neutral-200)",
+        "--color-divider-strong": "var(--color-neutral-300)",
+        "--color-solid-bg": "var(--color-neutral-950)",
+        "--color-solid-bg-hover": "var(--color-neutral-800)",
+        "--color-solid-bg-pressed": "var(--color-neutral-900)",
+        "--color-solid-bg-disabled": "var(--color-neutral-200)",
+        "--color-solid-fg": "var(--color-neutral-50)",
+        "--color-solid-fg-disabled": "var(--color-neutral-500)",
+        "--color-link-default": "var(--color-accent-bg)",
+        "--color-link-hover": "var(--color-blue-700)",
+        "--color-link-disabled": "var(--color-neutral-500)",
+        "--color-link-visited": "var(--color-blue-800)",
+        "--color-accent-bg": "var(--color-blue-600)",
+        "--color-accent-bg-hover": "var(--color-blue-700)",
+        "--color-accent-fg": "var(--color-white)",
+        "--color-accent-bg-pressed": "var(--color-blue-800)",
+        "--color-accent-bg-disabled": "var(--color-neutral-200)",
+        "--color-accent-fg-disabled": "var(--color-neutral-500)",
+        "--color-accent-focus-ring": "var(--color-blue-500)",
+        "--color-accent-focus-ring-black": "var(--color-neutral-950)",
+        "--focus-ring-width": "2px",
+        "--focus-ring-offset": "2px",
+        "--color-success-bg": "var(--color-success-50)",
+        "--color-success-border": "var(--color-success-200)",
+        "--color-success-fg": "var(--color-success-800)",
+        "--color-warning-bg": "var(--color-warning-50)",
+        "--color-warning-border": "var(--color-warning-200)",
+        "--color-warning-fg": "var(--color-warning-800)",
+        "--color-error-bg": "var(--color-error-50)",
+        "--color-error-border": "var(--color-error-200)",
+        "--color-error-fg": "var(--color-error-800)",
+        "--color-info-bg": "var(--color-blue-50)",
+        "--color-info-border": "var(--color-blue-200)",
+        "--color-info-fg": "var(--color-blue-800)",
+        "--color-icon-default": "var(--color-neutral-950)",
+        "--tracking-display": "-.01em",
+        "--tracking-tight": "-.02em",
+        "--text-display-24": "400 1.5rem/1.17 var(--font-display)",
+        "--text-display-32": "400 2rem/1.17 var(--font-display)",
+        "--text-display-40": "400 2.5rem/1.17 var(--font-display)",
+        "--text-display-48": "400 3rem/1.17 var(--font-display)",
+        "--text-display-56": "400 3.5rem/1.17 var(--font-display)",
+        "--text-display-64": "400 4rem/1.17 var(--font-display)",
+        "--text-display-72": "400 4.5rem/1.17 var(--font-display)",
+        "--text-italic-14": "italic 400 .875rem/1.25 var(--font-display)",
+        "--text-italic-18": "italic 400 1.125rem/1.25 var(--font-display)",
+        "--text-italic-24": "italic 400 1.5rem/1.25 var(--font-display)",
+        "--text-italic-32": "italic 400 2rem/1.25 var(--font-display)",
+        "--text-italic-40": "italic 400 2.5rem/1.25 var(--font-display)",
+        "--text-italic-48": "italic 400 3rem/1.25 var(--font-display)",
+        "--text-italic-56": "italic 400 3.5rem/1.25 var(--font-display)",
+        "--text-italic-64": "italic 400 4rem/1.25 var(--font-display)",
+        "--text-italic-72": "italic 400 4.5rem/1.25 var(--font-display)",
+        "--text-heading-10": "600 .625rem/1.4 var(--font-sans)",
+        "--text-heading-12": "600 .75rem/1.4 var(--font-sans)",
+        "--text-heading-14": "600 .875rem/1.4 var(--font-sans)",
+        "--text-heading-16": "600 1rem/1.4 var(--font-sans)",
+        "--text-heading-18": "600 1.125rem/1.4 var(--font-sans)",
+        "--text-heading-20": "600 1.25rem/1.4 var(--font-sans)",
+        "--text-heading-24": "600 1.5rem/1.4 var(--font-sans)",
+        "--text-heading-28": "600 1.75rem/1.4 var(--font-sans)",
+        "--text-heading-32": "600 2rem/1.4 var(--font-sans)",
+        "--text-heading-italic-10": "italic 600 .625rem/1.4 var(--font-sans)",
+        "--text-heading-italic-12": "italic 600 .75rem/1.4 var(--font-sans)",
+        "--text-heading-italic-14": "italic 600 .875rem/1.4 var(--font-sans)",
+        "--text-heading-italic-16": "italic 600 1rem/1.4 var(--font-sans)",
+        "--text-heading-italic-18": "italic 600 1.125rem/1.4 var(--font-sans)",
+        "--text-heading-italic-20": "italic 600 1.25rem/1.4 var(--font-sans)",
+        "--text-heading-italic-24": "italic 600 1.5rem/1.4 var(--font-sans)",
+        "--text-heading-italic-28": "italic 600 1.75rem/1.4 var(--font-sans)",
+        "--text-heading-italic-32": "italic 600 2rem/1.4 var(--font-sans)",
+        "--text-body-10": "400 .625rem/1.4 var(--font-sans)",
+        "--text-body-12": "400 .75rem/1.4 var(--font-sans)",
+        "--text-body-14": "400 .875rem/1.4 var(--font-sans)",
+        "--text-body-16": "400 1rem/1.4 var(--font-sans)",
+        "--text-body-18": "400 1.125rem/1.4 var(--font-sans)",
+        "--text-body-20": "400 1.25rem/1.4 var(--font-sans)",
+        "--text-body-24": "400 1.5rem/1.4 var(--font-sans)",
+        "--text-body-28": "400 1.75rem/1.4 var(--font-sans)",
+        "--text-body-32": "400 2rem/1.4 var(--font-sans)",
+        "--text-label-10": "500 .625rem/1.4 var(--font-sans)",
+        "--text-label-12": "500 .75rem/1.4 var(--font-sans)",
+        "--text-label-14": "500 .875rem/1.4 var(--font-sans)",
+        "--text-label-16": "500 1rem/1.4 var(--font-sans)",
+        "--text-label-18": "500 1.125rem/1.4 var(--font-sans)",
+        "--text-label-20": "500 1.25rem/1.4 var(--font-sans)",
+        "--text-label-24": "500 1.5rem/1.4 var(--font-sans)",
+        "--text-label-28": "500 1.75rem/1.4 var(--font-sans)",
+        "--text-label-32": "500 2rem/1.4 var(--font-sans)",
+        "--text-mono-10": "400 .625rem/1.4 var(--font-mono)",
+        "--text-mono-12": "400 .75rem/1.4 var(--font-mono)",
+        "--text-mono-14": "400 .875rem/1.4 var(--font-mono)",
+        "--text-mono-16": "400 1rem/1.4 var(--font-mono)",
+        "--text-mono-18": "400 1.125rem/1.4 var(--font-mono)",
+        "--text-mono-20": "400 1.25rem/1.4 var(--font-mono)",
+        "--text-mono-24": "400 1.5rem/1.4 var(--font-mono)",
+        "--text-mono-28": "400 1.75rem/1.4 var(--font-mono)",
+        "--text-mono-32": "400 2rem/1.4 var(--font-mono)",
+        "--text-mono-bold-10": "600 .625rem/1.4 var(--font-mono)",
+        "--text-mono-bold-12": "600 .75rem/1.4 var(--font-mono)",
+        "--text-mono-bold-14": "600 .875rem/1.4 var(--font-mono)",
+        "--text-mono-bold-16": "600 1rem/1.4 var(--font-mono)",
+        "--text-mono-bold-18": "600 1.125rem/1.4 var(--font-mono)",
+        "--text-mono-bold-20": "600 1.25rem/1.4 var(--font-mono)",
+        "--text-mono-bold-24": "600 1.5rem/1.4 var(--font-mono)",
+        "--text-mono-bold-28": "600 1.75rem/1.4 var(--font-mono)",
+        "--text-mono-bold-32": "600 2rem/1.4 var(--font-mono)",
+        "--shadow-xs": "0 1px 2px #0000000f",
+        "--shadow-sm": "0 1px 12px #0000000d",
+        "--shadow-md": "0 2px 12px #0000000f",
+        "--shadow-lg": "0 2px 24px #0000000f",
+        "--shadow-xl": "0 5px 32px #0000001a",
+        "--shadow-focus-ring": "0 0 0 2px var(--color-accent-bg)",
+        "--shadow-brand-glow": "0 4px 14px #0961e463",
+        "--shadow-brand-glow-hover": "0 6px 20px #0961e480"
+      }
+    },
+    {
+      "selector": "[data-theme=\"dark\"]",
+      "ctx": [
+        "@layer tokens"
+      ],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-surface-canvas": "#0d0e0b",
+        "--color-surface-raised": "var(--color-neutral-900)",
+        "--color-surface-sunken": "#080907",
+        "--color-surface-muted-blue": "#162136",
+        "--color-surface-muted-sage": "#18251c",
+        "--color-surface-muted-warm": "#262421",
+        "--color-surface-muted-rose": "#2c2131",
+        "--chat-sheet-tag-neutral-fill-hovered": "#0f110d",
+        "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-800) 43.67%, var(--color-neutral-700) 75.79%, var(--color-neutral-800) 100%)",
+        "--color-fg-default": "var(--color-neutral-50)",
+        "--color-fg-muted": "hsl(from var(--color-neutral-50) h s l / .73)",
+        "--color-fg-subtle": "hsl(from var(--color-neutral-50) h s l / .6)",
+        "--color-fg-disabled": "hsl(from var(--color-neutral-50) h s l / .3)",
+        "--color-border-light": "hsl(from var(--color-neutral-50) h s l / .04)",
+        "--color-border-default": "hsl(from var(--color-neutral-50) h s l / .08)",
+        "--color-border-strong": "hsl(from var(--color-neutral-50) h s l / .2)",
+        "--color-border-disabled": "var(--color-neutral-800)",
+        "--color-border-subtle": "var(--color-neutral-800)",
+        "--color-divider": "var(--color-neutral-700)",
+        "--color-divider-strong": "var(--color-neutral-600)",
+        "--color-link-default": "var(--color-blue-400)",
+        "--color-link-hover": "var(--color-blue-300)",
+        "--color-link-disabled": "var(--color-neutral-700)",
+        "--color-link-visited": "var(--color-blue-200)",
+        "--color-solid-bg": "var(--color-neutral-50)",
+        "--color-solid-bg-hover": "var(--color-neutral-200)",
+        "--color-solid-bg-pressed": "var(--color-neutral-100)",
+        "--color-solid-bg-disabled": "var(--color-neutral-800)",
+        "--color-solid-fg": "var(--color-neutral-950)",
+        "--color-solid-fg-disabled": "var(--color-neutral-700)",
+        "--color-accent-bg": "var(--color-blue-400)",
+        "--color-accent-bg-hover": "var(--color-blue-300)",
+        "--color-accent-fg": "var(--color-blue-950)",
+        "--color-accent-bg-pressed": "var(--color-blue-500)",
+        "--color-accent-bg-disabled": "var(--color-neutral-800)",
+        "--color-accent-fg-disabled": "var(--color-neutral-700)",
+        "--color-accent-focus-ring": "var(--color-blue-400)",
+        "--color-accent-focus-ring-black": "var(--color-neutral-50)",
+        "--color-success-bg": "var(--color-success-900)",
+        "--color-success-border": "var(--color-success-700)",
+        "--color-success-fg": "var(--color-success-200)",
+        "--color-warning-bg": "var(--color-warning-900)",
+        "--color-warning-border": "var(--color-warning-700)",
+        "--color-warning-fg": "var(--color-warning-200)",
+        "--color-error-bg": "var(--color-error-900)",
+        "--color-error-border": "var(--color-error-700)",
+        "--color-error-fg": "var(--color-error-200)",
+        "--color-info-bg": "var(--color-blue-900)",
+        "--color-info-border": "var(--color-blue-700)",
+        "--color-info-fg": "var(--color-blue-200)",
+        "--color-icon-default": "var(--color-neutral-50)"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--font-body": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+        "--header-height": "4.5rem"
+      }
+    },
+    {
+      "selector": ".Ijxoba_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-sans": "\"geist\", system-ui, Arial, sans-serif"
+      }
+    },
+    {
+      "selector": ".A3W5cG_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-mono": "\"geistMono\", ui-monospace, Courier New, monospace"
+      }
+    },
+    {
+      "selector": ".AGcgpq_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-display": "\"fraunces\", Georgia, Times New Roman, serif"
+      }
+    }
+  ],
+  "resolved": {
+    "light": {
+      "--color-white": {
+        "raw": "#fff",
+        "value": "#fff"
+      },
+      "--color-blue-50": {
+        "raw": "#f0f6ff",
+        "value": "#f0f6ff"
+      },
+      "--color-blue-100": {
+        "raw": "#dcebfe",
+        "value": "#dcebfe"
+      },
+      "--color-blue-200": {
+        "raw": "#bedbfe",
+        "value": "#bedbfe"
+      },
+      "--color-blue-300": {
+        "raw": "#91c3fd",
+        "value": "#91c3fd"
+      },
+      "--color-blue-400": {
+        "raw": "#61a6fa",
+        "value": "#61a6fa"
+      },
+      "--color-blue-500": {
+        "raw": "#3c83f6",
+        "value": "#3c83f6"
+      },
+      "--color-blue-600": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--color-blue-700": {
+        "raw": "#1d4fd7",
+        "value": "#1d4fd7"
+      },
+      "--color-blue-800": {
+        "raw": "#1e3fae",
+        "value": "#1e3fae"
+      },
+      "--color-blue-900": {
+        "raw": "#1e3b8a",
+        "value": "#1e3b8a"
+      },
+      "--color-blue-950": {
+        "raw": "#172554",
+        "value": "#172554"
+      },
+      "--color-neutral-50": {
+        "raw": "#fdfdf7",
+        "value": "#fdfdf7"
+      },
+      "--color-neutral-100": {
+        "raw": "#f5f5f0",
+        "value": "#f5f5f0"
+      },
+      "--color-neutral-200": {
+        "raw": "#e4e4dc",
+        "value": "#e4e4dc"
+      },
+      "--color-neutral-300": {
+        "raw": "#cecec5",
+        "value": "#cecec5"
+      },
+      "--color-neutral-400": {
+        "raw": "#a7a7a0",
+        "value": "#a7a7a0"
+      },
+      "--color-neutral-500": {
+        "raw": "#797972",
+        "value": "#797972"
+      },
+      "--color-neutral-600": {
+        "raw": "#53544f",
+        "value": "#53544f"
+      },
+      "--color-neutral-700": {
+        "raw": "#3c3c39",
+        "value": "#3c3c39"
+      },
+      "--color-neutral-800": {
+        "raw": "#272725",
+        "value": "#272725"
+      },
+      "--color-neutral-900": {
+        "raw": "#1b1b18",
+        "value": "#1b1b18"
+      },
+      "--color-neutral-950": {
+        "raw": "#0b0b0a",
+        "value": "#0b0b0a"
+      },
+      "--color-sage-50": {
+        "raw": "#f1f8f2",
+        "value": "#f1f8f2"
+      },
+      "--color-sage-100": {
+        "raw": "#e1efe3",
+        "value": "#e1efe3"
+      },
+      "--color-sage-200": {
+        "raw": "#c9e3cc",
+        "value": "#c9e3cc"
+      },
+      "--color-sage-300": {
+        "raw": "#b9dabd",
+        "value": "#b9dabd"
+      },
+      "--color-sage-400": {
+        "raw": "#8dbf93",
+        "value": "#8dbf93"
+      },
+      "--color-sage-500": {
+        "raw": "#5e9c65",
+        "value": "#5e9c65"
+      },
+      "--color-sage-600": {
+        "raw": "#45824d",
+        "value": "#45824d"
+      },
+      "--color-sage-700": {
+        "raw": "#34653a",
+        "value": "#34653a"
+      },
+      "--color-sage-800": {
+        "raw": "#264b2c",
+        "value": "#264b2c"
+      },
+      "--color-sage-900": {
+        "raw": "#16311a",
+        "value": "#16311a"
+      },
+      "--color-sage-950": {
+        "raw": "#0a190c",
+        "value": "#0a190c"
+      },
+      "--color-lime-50": {
+        "raw": "#f7ffe6",
+        "value": "#f7ffe6"
+      },
+      "--color-lime-100": {
+        "raw": "#efffcc",
+        "value": "#efffcc"
+      },
+      "--color-lime-200": {
+        "raw": "#e4ff9e",
+        "value": "#e4ff9e"
+      },
+      "--color-lime-300": {
+        "raw": "#d9ff80",
+        "value": "#d9ff80"
+      },
+      "--color-lime-400": {
+        "raw": "#beec4b",
+        "value": "#beec4b"
+      },
+      "--color-lime-500": {
+        "raw": "#a3ce2c",
+        "value": "#a3ce2c"
+      },
+      "--color-lime-600": {
+        "raw": "#82a91e",
+        "value": "#82a91e"
+      },
+      "--color-lime-700": {
+        "raw": "#66841a",
+        "value": "#66841a"
+      },
+      "--color-lime-800": {
+        "raw": "#4d641b",
+        "value": "#4d641b"
+      },
+      "--color-lime-900": {
+        "raw": "#33421a",
+        "value": "#33421a"
+      },
+      "--color-lime-950": {
+        "raw": "#1a230b",
+        "value": "#1a230b"
+      },
+      "--color-success-50": {
+        "raw": "#f1f8f2",
+        "value": "#f1f8f2"
+      },
+      "--color-success-100": {
+        "raw": "#ddeedf",
+        "value": "#ddeedf"
+      },
+      "--color-success-200": {
+        "raw": "#bad9be",
+        "value": "#bad9be"
+      },
+      "--color-success-300": {
+        "raw": "#8ebe95",
+        "value": "#8ebe95"
+      },
+      "--color-success-400": {
+        "raw": "#5ea168",
+        "value": "#5ea168"
+      },
+      "--color-success-500": {
+        "raw": "#438448",
+        "value": "#438448"
+      },
+      "--color-success-600": {
+        "raw": "#2f6a36",
+        "value": "#2f6a36"
+      },
+      "--color-success-700": {
+        "raw": "#235328",
+        "value": "#235328"
+      },
+      "--color-success-800": {
+        "raw": "#193e1e",
+        "value": "#193e1e"
+      },
+      "--color-success-900": {
+        "raw": "#112c15",
+        "value": "#112c15"
+      },
+      "--color-success-950": {
+        "raw": "#061309",
+        "value": "#061309"
+      },
+      "--color-warning-50": {
+        "raw": "#fef9e7",
+        "value": "#fef9e7"
+      },
+      "--color-warning-100": {
+        "raw": "#fcefc0",
+        "value": "#fcefc0"
+      },
+      "--color-warning-200": {
+        "raw": "#f8de82",
+        "value": "#f8de82"
+      },
+      "--color-warning-300": {
+        "raw": "#f1c946",
+        "value": "#f1c946"
+      },
+      "--color-warning-400": {
+        "raw": "#e0ab1a",
+        "value": "#e0ab1a"
+      },
+      "--color-warning-500": {
+        "raw": "#c28d0f",
+        "value": "#c28d0f"
+      },
+      "--color-warning-600": {
+        "raw": "#9d6f0b",
+        "value": "#9d6f0b"
+      },
+      "--color-warning-700": {
+        "raw": "#7b550a",
+        "value": "#7b550a"
+      },
+      "--color-warning-800": {
+        "raw": "#59410d",
+        "value": "#59410d"
+      },
+      "--color-warning-900": {
+        "raw": "#3c2d0b",
+        "value": "#3c2d0b"
+      },
+      "--color-warning-950": {
+        "raw": "#1f1605",
+        "value": "#1f1605"
+      },
+      "--color-error-50": {
+        "raw": "#fdedee",
+        "value": "#fdedee"
+      },
+      "--color-error-100": {
+        "raw": "#fbd5d9",
+        "value": "#fbd5d9"
+      },
+      "--color-error-200": {
+        "raw": "#f5a8b1",
+        "value": "#f5a8b1"
+      },
+      "--color-error-300": {
+        "raw": "#ed7383",
+        "value": "#ed7383"
+      },
+      "--color-error-400": {
+        "raw": "#de3f57",
+        "value": "#de3f57"
+      },
+      "--color-error-500": {
+        "raw": "#c52640",
+        "value": "#c52640"
+      },
+      "--color-error-600": {
+        "raw": "#a61c31",
+        "value": "#a61c31"
+      },
+      "--color-error-700": {
+        "raw": "#841527",
+        "value": "#841527"
+      },
+      "--color-error-800": {
+        "raw": "#610f1d",
+        "value": "#610f1d"
+      },
+      "--color-error-900": {
+        "raw": "#3e0914",
+        "value": "#3e0914"
+      },
+      "--color-error-950": {
+        "raw": "#20030a",
+        "value": "#20030a"
+      },
+      "--color-surface-canvas": {
+        "raw": "#fdfdf7",
+        "value": "#fdfdf7"
+      },
+      "--color-surface-raised": {
+        "raw": "#fff",
+        "value": "#fff"
+      },
+      "--color-surface-sunken": {
+        "raw": "#f5f5f0",
+        "value": "#f5f5f0"
+      },
+      "--color-surface-muted-blue": {
+        "raw": "#dbe2eb",
+        "value": "#dbe2eb"
+      },
+      "--color-surface-muted-sage": {
+        "raw": "#dbe6dc",
+        "value": "#dbe6dc"
+      },
+      "--color-surface-muted-warm": {
+        "raw": "#e4e1d8",
+        "value": "#e4e1d8"
+      },
+      "--color-surface-muted-rose": {
+        "raw": "#e6dbe6",
+        "value": "#e6dbe6"
+      },
+      "--color-wash-lavender-soft": {
+        "raw": "#efecf9",
+        "value": "#efecf9"
+      },
+      "--color-wash-lavender-deep": {
+        "raw": "#e5e1f4",
+        "value": "#e5e1f4"
+      },
+      "--color-wash-sky": {
+        "raw": "#e7eef3",
+        "value": "#e7eef3"
+      },
+      "--color-wash-sage": {
+        "raw": "#ebf4ec",
+        "value": "#ebf4ec"
+      },
+      "--skeleton-loader-gradient": {
+        "raw": "linear-gradient(90deg, #e4e4dc 43.67%, #f5f5f0 75.79%, #e4e4dc 100%)",
+        "value": "linear-gradient(90deg, #e4e4dc 43.67%, #f5f5f0 75.79%, #e4e4dc 100%)"
+      },
+      "--chat-sheet-accent-stop-1": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--chat-sheet-accent-stop-2": {
+        "raw": "#0ea5e9",
+        "value": "#0ea5e9"
+      },
+      "--chat-sheet-accent-stop-3": {
+        "raw": "#22c55e",
+        "value": "#22c55e"
+      },
+      "--chat-sheet-accent-stop-4": {
+        "raw": "#84cc16",
+        "value": "#84cc16"
+      },
+      "--chat-sheet-accent-gradient": {
+        "raw": "linear-gradient(90deg, #2463eb 0%, #0ea5e9 20%, #22c55e 40%, #84cc16 60%, #0ea5e9 80%, #2463eb 100%)",
+        "value": "linear-gradient(90deg, #2463eb 0%, #0ea5e9 20%, #22c55e 40%, #84cc16 60%, #0ea5e9 80%, #2463eb 100%)"
+      },
+      "--chat-sheet-accent-still-stop-1": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--chat-sheet-accent-still-stop-2": {
+        "raw": "#0369a1",
+        "value": "#0369a1"
+      },
+      "--chat-sheet-accent-still-stop-3": {
+        "raw": "#047857",
+        "value": "#047857"
+      },
+      "--chat-sheet-accent-still-gradient": {
+        "raw": "linear-gradient(90deg, #2463eb, #0369a1, #047857)",
+        "value": "linear-gradient(90deg, #2463eb, #0369a1, #047857)"
+      },
+      "--chat-sheet-tag-neutral-fill-hovered": {
+        "raw": "#efefe6",
+        "value": "#efefe6"
+      },
+      "--tap-target-min": {
+        "raw": "2.75rem",
+        "value": "2.75rem"
+      },
+      "--color-graphic-blue-subtle": {
+        "raw": "#f0f6ff",
+        "value": "#f0f6ff"
+      },
+      "--color-graphic-blue-soft": {
+        "raw": "#dcebfe",
+        "value": "#dcebfe"
+      },
+      "--color-graphic-blue-muted": {
+        "raw": "#bedbfe",
+        "value": "#bedbfe"
+      },
+      "--color-graphic-blue-moderate": {
+        "raw": "#91c3fd",
+        "value": "#91c3fd"
+      },
+      "--color-graphic-blue-strong": {
+        "raw": "#61a6fa",
+        "value": "#61a6fa"
+      },
+      "--color-graphic-blue-bold": {
+        "raw": "#3c83f6",
+        "value": "#3c83f6"
+      },
+      "--color-fg-default": {
+        "raw": "#1b1b18",
+        "value": "#1b1b18"
+      },
+      "--color-fg-muted": {
+        "raw": "hsl(from #1b1b18 h s l / .73)",
+        "value": "hsl(from #1b1b18 h s l / .73)"
+      },
+      "--color-fg-subtle": {
+        "raw": "hsl(from #1b1b18 h s l / .6)",
+        "value": "hsl(from #1b1b18 h s l / .6)"
+      },
+      "--color-fg-disabled": {
+        "raw": "hsl(from #1b1b18 h s l / .3)",
+        "value": "hsl(from #1b1b18 h s l / .3)"
+      },
+      "--color-border-default": {
+        "raw": "hsl(from #1b1b18 h s l / .08)",
+        "value": "hsl(from #1b1b18 h s l / .08)"
+      },
+      "--color-border-light": {
+        "raw": "hsl(from #1b1b18 h s l / .04)",
+        "value": "hsl(from #1b1b18 h s l / .04)"
+      },
+      "--color-border-strong": {
+        "raw": "hsl(from #1b1b18 h s l / .2)",
+        "value": "hsl(from #1b1b18 h s l / .2)"
+      },
+      "--color-border-disabled": {
+        "raw": "#cecec5",
+        "value": "#cecec5"
+      },
+      "--color-border-subtle": {
+        "raw": "#f5f5f0",
+        "value": "#f5f5f0"
+      },
+      "--color-divider": {
+        "raw": "#e4e4dc",
+        "value": "#e4e4dc"
+      },
+      "--color-divider-strong": {
+        "raw": "#cecec5",
+        "value": "#cecec5"
+      },
+      "--color-solid-bg": {
+        "raw": "#0b0b0a",
+        "value": "#0b0b0a"
+      },
+      "--color-solid-bg-hover": {
+        "raw": "#272725",
+        "value": "#272725"
+      },
+      "--color-solid-bg-pressed": {
+        "raw": "#1b1b18",
+        "value": "#1b1b18"
+      },
+      "--color-solid-bg-disabled": {
+        "raw": "#e4e4dc",
+        "value": "#e4e4dc"
+      },
+      "--color-solid-fg": {
+        "raw": "#fdfdf7",
+        "value": "#fdfdf7"
+      },
+      "--color-solid-fg-disabled": {
+        "raw": "#797972",
+        "value": "#797972"
+      },
+      "--color-link-default": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--color-link-hover": {
+        "raw": "#1d4fd7",
+        "value": "#1d4fd7"
+      },
+      "--color-link-disabled": {
+        "raw": "#797972",
+        "value": "#797972"
+      },
+      "--color-link-visited": {
+        "raw": "#1e3fae",
+        "value": "#1e3fae"
+      },
+      "--color-accent-bg": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--color-accent-bg-hover": {
+        "raw": "#1d4fd7",
+        "value": "#1d4fd7"
+      },
+      "--color-accent-fg": {
+        "raw": "#fff",
+        "value": "#fff"
+      },
+      "--color-accent-bg-pressed": {
+        "raw": "#1e3fae",
+        "value": "#1e3fae"
+      },
+      "--color-accent-bg-disabled": {
+        "raw": "#e4e4dc",
+        "value": "#e4e4dc"
+      },
+      "--color-accent-fg-disabled": {
+        "raw": "#797972",
+        "value": "#797972"
+      },
+      "--color-accent-focus-ring": {
+        "raw": "#3c83f6",
+        "value": "#3c83f6"
+      },
+      "--color-accent-focus-ring-black": {
+        "raw": "#0b0b0a",
+        "value": "#0b0b0a"
+      },
+      "--focus-ring-width": {
+        "raw": "2px",
+        "value": "2px"
+      },
+      "--focus-ring-offset": {
+        "raw": "2px",
+        "value": "2px"
+      },
+      "--color-success-bg": {
+        "raw": "#f1f8f2",
+        "value": "#f1f8f2"
+      },
+      "--color-success-border": {
+        "raw": "#bad9be",
+        "value": "#bad9be"
+      },
+      "--color-success-fg": {
+        "raw": "#193e1e",
+        "value": "#193e1e"
+      },
+      "--color-warning-bg": {
+        "raw": "#fef9e7",
+        "value": "#fef9e7"
+      },
+      "--color-warning-border": {
+        "raw": "#f8de82",
+        "value": "#f8de82"
+      },
+      "--color-warning-fg": {
+        "raw": "#59410d",
+        "value": "#59410d"
+      },
+      "--color-error-bg": {
+        "raw": "#fdedee",
+        "value": "#fdedee"
+      },
+      "--color-error-border": {
+        "raw": "#f5a8b1",
+        "value": "#f5a8b1"
+      },
+      "--color-error-fg": {
+        "raw": "#610f1d",
+        "value": "#610f1d"
+      },
+      "--color-info-bg": {
+        "raw": "#f0f6ff",
+        "value": "#f0f6ff"
+      },
+      "--color-info-border": {
+        "raw": "#bedbfe",
+        "value": "#bedbfe"
+      },
+      "--color-info-fg": {
+        "raw": "#1e3fae",
+        "value": "#1e3fae"
+      },
+      "--color-icon-default": {
+        "raw": "#0b0b0a",
+        "value": "#0b0b0a"
+      },
+      "--tracking-display": {
+        "raw": "-.01em",
+        "value": "-.01em"
+      },
+      "--tracking-tight": {
+        "raw": "-.02em",
+        "value": "-.02em"
+      },
+      "--text-display-24": {
+        "raw": "400 1.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 1.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-32": {
+        "raw": "400 2rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 2rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-40": {
+        "raw": "400 2.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 2.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-48": {
+        "raw": "400 3rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 3rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-56": {
+        "raw": "400 3.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 3.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-64": {
+        "raw": "400 4rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 4rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-72": {
+        "raw": "400 4.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 4.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-14": {
+        "raw": "italic 400 .875rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 .875rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-18": {
+        "raw": "italic 400 1.125rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 1.125rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-24": {
+        "raw": "italic 400 1.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 1.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-32": {
+        "raw": "italic 400 2rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 2rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-40": {
+        "raw": "italic 400 2.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 2.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-48": {
+        "raw": "italic 400 3rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 3rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-56": {
+        "raw": "italic 400 3.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 3.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-64": {
+        "raw": "italic 400 4rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 4rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-72": {
+        "raw": "italic 400 4.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 4.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-heading-10": {
+        "raw": "600 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-12": {
+        "raw": "600 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-14": {
+        "raw": "600 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-16": {
+        "raw": "600 1rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-18": {
+        "raw": "600 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-20": {
+        "raw": "600 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-24": {
+        "raw": "600 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-28": {
+        "raw": "600 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-32": {
+        "raw": "600 2rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 2rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-10": {
+        "raw": "italic 600 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-12": {
+        "raw": "italic 600 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-14": {
+        "raw": "italic 600 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-16": {
+        "raw": "italic 600 1rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-18": {
+        "raw": "italic 600 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-20": {
+        "raw": "italic 600 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-24": {
+        "raw": "italic 600 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-28": {
+        "raw": "italic 600 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-32": {
+        "raw": "italic 600 2rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 2rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-10": {
+        "raw": "400 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-12": {
+        "raw": "400 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-14": {
+        "raw": "400 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-16": {
+        "raw": "400 1rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-18": {
+        "raw": "400 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-20": {
+        "raw": "400 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-24": {
+        "raw": "400 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-28": {
+        "raw": "400 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-32": {
+        "raw": "400 2rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 2rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-10": {
+        "raw": "500 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-12": {
+        "raw": "500 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-14": {
+        "raw": "500 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-16": {
+        "raw": "500 1rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-18": {
+        "raw": "500 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-20": {
+        "raw": "500 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-24": {
+        "raw": "500 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-28": {
+        "raw": "500 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-32": {
+        "raw": "500 2rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 2rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-mono-10": {
+        "raw": "400 .625rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 .625rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-12": {
+        "raw": "400 .75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 .75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-14": {
+        "raw": "400 .875rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 .875rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-16": {
+        "raw": "400 1rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-18": {
+        "raw": "400 1.125rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1.125rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-20": {
+        "raw": "400 1.25rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1.25rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-24": {
+        "raw": "400 1.5rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1.5rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-28": {
+        "raw": "400 1.75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1.75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-32": {
+        "raw": "400 2rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 2rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-10": {
+        "raw": "600 .625rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 .625rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-12": {
+        "raw": "600 .75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 .75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-14": {
+        "raw": "600 .875rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 .875rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-16": {
+        "raw": "600 1rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-18": {
+        "raw": "600 1.125rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1.125rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-20": {
+        "raw": "600 1.25rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1.25rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-24": {
+        "raw": "600 1.5rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1.5rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-28": {
+        "raw": "600 1.75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1.75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-32": {
+        "raw": "600 2rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 2rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--shadow-xs": {
+        "raw": "0 1px 2px #0000000f",
+        "value": "0 1px 2px #0000000f"
+      },
+      "--shadow-sm": {
+        "raw": "0 1px 12px #0000000d",
+        "value": "0 1px 12px #0000000d"
+      },
+      "--shadow-md": {
+        "raw": "0 2px 12px #0000000f",
+        "value": "0 2px 12px #0000000f"
+      },
+      "--shadow-lg": {
+        "raw": "0 2px 24px #0000000f",
+        "value": "0 2px 24px #0000000f"
+      },
+      "--shadow-xl": {
+        "raw": "0 5px 32px #0000001a",
+        "value": "0 5px 32px #0000001a"
+      },
+      "--shadow-focus-ring": {
+        "raw": "0 0 0 2px #2463eb",
+        "value": "0 0 0 2px #2463eb"
+      },
+      "--shadow-brand-glow": {
+        "raw": "0 4px 14px #0961e463",
+        "value": "0 4px 14px #0961e463"
+      },
+      "--shadow-brand-glow-hover": {
+        "raw": "0 6px 20px #0961e480",
+        "value": "0 6px 20px #0961e480"
+      },
+      "--font-body": {
+        "raw": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+        "value": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif"
+      },
+      "--header-height": {
+        "raw": "4.5rem",
+        "value": "4.5rem"
+      },
+      "--border-tracer-angle": {
+        "raw": "0deg",
+        "value": "0deg"
+      },
+      "--font-sans": {
+        "raw": "\"geist\", system-ui, Arial, sans-serif",
+        "value": "\"geist\", system-ui, Arial, sans-serif"
+      },
+      "--font-mono": {
+        "raw": "\"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "\"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--font-display": {
+        "raw": "\"fraunces\", Georgia, Times New Roman, serif",
+        "value": "\"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--chat-sheet-mobile-sink": {
+        "raw": "0px",
+        "value": "0px"
+      }
+    },
+    "dark": {}
+  }
+}

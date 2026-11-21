@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctronic AI style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "geist", system-ui, sans-serif;
+  --sg-display: "fraunces", Georgia, serif;
+  --sg-mono: "geistMono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.4 var(--sg-sans); color: var(--text, #1b1b18); background: var(--page, #fdfdf7); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 400 48px/1.17 var(--sg-display); margin: 0 0 8px; letter-spacing: -0.01em; }
+h2 { font: 600 20px/1.4 var(--sg-sans); margin: 48px 0 12px; }
+.note { color: var(--muted, #6a6a6a); max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, rgba(27,27,24,.12)); display: block; }
+.sw b { font: 500 12px/1.3 var(--sg-mono); display: block; }
+.sw span { font: 400 11px/1.3 var(--sg-mono); color: var(--muted); }
+.mock { border: 1px solid var(--border, rgba(27,27,24,.08)); border-radius: 24px; background: var(--page); padding: 28px; max-width: 720px; }
+.bar { display: flex; align-items: center; gap: 12px; margin-bottom: 36px; }
+.mark { width: 22px; height: 22px; border-radius: 50%; background: var(--accent, #2463eb); }
+.word { font: 600 16px/1 var(--sg-sans); margin-right: auto; }
+.pill { display: inline-flex; align-items: center; height: 35px; padding: 0 14px; border-radius: 32px; font: 400 16px/1 var(--sg-sans); border: 1px solid var(--borderStrong, rgba(27,27,24,.2)); background: transparent; color: var(--text); }
+.pill.solid { background: var(--solid, #0b0b0a); color: var(--solidText, #fdfdf7); border-color: transparent; }
+.hero { font: 400 48px/1.17 var(--sg-display); margin: 0 0 8px; }
+.lede { max-width: 46ch; color: var(--text); }
+.composer { margin-top: 24px; background: var(--surface, #fff); border-radius: 20px; padding: 16px; box-shadow: var(--shadow-sm, 0 1px 12px rgba(0,0,0,.05)); }
+.composer .ph { color: var(--subtle, #6a6a6a); font-size: 14px; }
+.composer .actions { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 34px; border: 1px solid var(--border); font-size: 13px; }
+.cta { display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 52px; background: var(--accent); color: var(--onAccent, #fff); font: 500 16px/1 var(--sg-sans); }
+.suggest { display: inline-flex; margin: 8px 8px 0 0; height: 36px; padding: 0 12px; border-radius: 8px; background: var(--sunken, #f5f5f0); align-items: center; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Doctronic AI</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Values are the custom properties declared on doctronic.ai. The site paints one light theme.</p>
+
+  <h2>Roles</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><div><b>page</b><span>var(--page)</span></div></div>
+    <div class="sw"><i style="background:var(--surface)"></i><div><b>surface</b><span>var(--surface)</span></div></div>
+    <div class="sw"><i style="background:var(--text)"></i><div><b>text</b><span>var(--text)</span></div></div>
+    <div class="sw"><i style="background:var(--accent)"></i><div><b>accent</b><span>var(--accent)</span></div></div>
+    <div class="sw"><i style="background:var(--solid)"></i><div><b>solid</b><span>var(--solid)</span></div></div>
+    <div class="sw"><i style="background:var(--successBg)"></i><div><b>success</b><span>var(--successBg)</span></div></div>
+    <div class="sw"><i style="background:var(--warningBg)"></i><div><b>warning</b><span>var(--warningBg)</span></div></div>
+    <div class="sw"><i style="background:var(--dangerBg)"></i><div><b>danger</b><span>var(--dangerBg)</span></div></div>
+  </div>
+
+  <h2>Home composer</h2>
+  <div class="mock">
+    <div class="bar">
+      <i class="mark"></i>
+      <span class="word">doctronic</span>
+      <span class="pill">Log in</span>
+      <span class="pill solid">Sign up</span>
+    </div>
+    <p class="hero">Hi, I’m Doctronic</p>
+    <p class="lede">Describe your symptoms and I’ll provide a treatment plan, based on peer-reviewed medical research.</p>
+    <div class="composer">
+      <div class="ph">Describe symptom or ask any health questions...</div>
+      <div class="actions">
+        <span class="chip">Anonymous</span>
+        <span class="cta">Start chat</span>
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <span class="suggest">Check my symptoms</span>
+      <span class="suggest">Get treatment advice</span>
+    </div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font:var(--typography-display-48)">Display 48, Fraunces</p>
+  <p style="font:var(--typography-heading-20)">Heading 20, Geist 600</p>
+  <p style="font:var(--typography-body-16)">Body 16, Geist 400. The chat and the marketing copy sit on this step.</p>
+  <p style="font:var(--typography-label-14)">Label 14, Geist 500</p>
+  <p style="font:var(--typography-mono-14)">Mono 14, Geist Mono</p>
+</main>
+</body>
+</html>

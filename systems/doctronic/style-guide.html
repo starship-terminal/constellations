@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctronic AI style guide</title>
+<style>
+:root {
+  --color-white: #ffffff;
+  --color-blue-50: #f0f6ff;
+  --color-blue-100: #dcebfe;
+  --color-blue-200: #bedbfe;
+  --color-blue-300: #91c3fd;
+  --color-blue-400: #61a6fa;
+  --color-blue-500: #3c83f6;
+  --color-blue-600: #2463eb;
+  --color-blue-700: #1d4fd7;
+  --color-blue-800: #1e3fae;
+  --color-blue-900: #1e3b8a;
+  --color-blue-950: #172554;
+  --color-neutral-50: #fdfdf7;
+  --color-neutral-100: #f5f5f0;
+  --color-neutral-200: #e4e4dc;
+  --color-neutral-300: #cecec5;
+  --color-neutral-400: #a7a7a0;
+  --color-neutral-500: #797972;
+  --color-neutral-600: #53544f;
+  --color-neutral-700: #3c3c39;
+  --color-neutral-800: #272725;
+  --color-neutral-900: #1b1b18;
+  --color-neutral-950: #0b0b0a;
+  --color-sage-50: #f1f8f2;
+  --color-sage-100: #e1efe3;
+  --color-sage-200: #c9e3cc;
+  --color-sage-300: #b9dabd;
+  --color-sage-400: #8dbf93;
+  --color-sage-500: #5e9c65;
+  --color-sage-600: #45824d;
+  --color-sage-700: #34653a;
+  --color-sage-800: #264b2c;
+  --color-sage-900: #16311a;
+  --color-sage-950: #0a190c;
+  --color-lime-50: #f7ffe6;
+  --color-lime-100: #efffcc;
+  --color-lime-200: #e4ff9e;
+  --color-lime-300: #d9ff80;
+  --color-lime-400: #beec4b;
+  --color-lime-500: #a3ce2c;
+  --color-lime-600: #82a91e;
+  --color-lime-700: #66841a;
+  --color-lime-800: #4d641b;
+  --color-lime-900: #33421a;
+  --color-lime-950: #1a230b;
+  --color-error-50: #fdedee;
+  --color-error-100: #fbd5d9;
+  --color-error-200: #f5a8b1;
+  --color-error-300: #ed7383;
+  --color-error-400: #de3f57;
+  --color-error-500: #c52640;
+  --color-error-600: #a61c31;
+  --color-error-700: #841527;
+  --color-error-800: #610f1d;
+  --color-error-900: #3e0914;
+  --color-error-950: #20030a;
+  --color-success-50: #f1f8f2;
+  --color-success-100: #ddeedf;
+  --color-success-200: #bad9be;
+  --color-success-300: #8ebe95;
+  --color-success-400: #5ea168;
+  --color-success-500: #438448;
+  --color-success-600: #2f6a36;
+  --color-success-700: #235328;
+  --color-success-800: #193e1e;
+  --color-success-900: #112c15;
+  --color-success-950: #061309;
+  --color-warning-50: #fef9e7;
+  --color-warning-100: #fcefc0;
+  --color-warning-200: #f8de82;
+  --color-warning-300: #f1c946;
+  --color-warning-400: #e0ab1a;
+  --color-warning-500: #c28d0f;
+  --color-warning-600: #9d6f0b;
+  --color-warning-700: #7b550a;
+  --color-warning-800: #59410d;
+  --color-warning-900: #3c2d0b;
+  --color-warning-950: #1f1605;
+  --color-graphic-blue-bold: #3c83f6;
+  --color-graphic-blue-strong: #61a6fa;
+  --color-graphic-blue-moderate: #91c3fd;
+  --color-graphic-blue-muted: #bedbfe;
+  --color-graphic-blue-soft: #dcebfe;
+  --color-graphic-blue-subtle: #f0f6ff;
+  --color-wash-lavenderDeep: #e5e1f4;
+  --color-wash-lavenderSoft: #efecf9;
+  --color-wash-sage: #ebf4ec;
+  --color-wash-sky: #e7eef3;
+  --color-chat-stop1: #2463eb;
+  --color-chat-stop2: #0ea5e9;
+  --color-chat-stop3: #22c55e;
+  --color-chat-stop4: #84cc16;
+  --font-display: "fraunces", Georgia, Times New Roman, serif;
+  --font-sans: "geist", system-ui, Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --font-mono: "geistMono", ui-monospace, Courier New, monospace;
+  --typography-body-10: 400 10px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-12: 400 12px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-14: 400 14px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-16: 400 16px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-18: 400 18px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-20: 400 20px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-24: 400 24px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-28: 400 28px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-body-32: 400 32px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-display-24: 400 24px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-32: 400 32px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-40: 400 40px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-48: 400 48px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-56: 400 56px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-64: 400 64px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-display-72: 400 72px/1.17 "fraunces", Georgia, Times New Roman, serif;
+  --typography-heading-10: 600 10px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-12: 600 12px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-14: 600 14px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-16: 600 16px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-18: 600 18px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-20: 600 20px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-24: 600 24px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-28: 600 28px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-32: 600 32px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-10: italic 600 10px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-12: italic 600 12px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-14: italic 600 14px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-16: italic 600 16px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-18: italic 600 18px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-20: italic 600 20px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-24: italic 600 24px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-28: italic 600 28px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-heading-italic-32: italic 600 32px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-italic-14: italic 400 14px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-18: italic 400 18px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-24: italic 400 24px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-32: italic 400 32px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-40: italic 400 40px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-48: italic 400 48px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-56: italic 400 56px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-64: italic 400 64px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-italic-72: italic 400 72px/1.25 "fraunces", Georgia, Times New Roman, serif;
+  --typography-label-10: 500 10px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-12: 500 12px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-14: 500 14px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-16: 500 16px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-18: 500 18px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-20: 500 20px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-24: 500 24px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-28: 500 28px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-label-32: 500 32px/1.4 "geist", system-ui, Arial, sans-serif;
+  --typography-mono-10: 400 10px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-12: 400 12px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-14: 400 14px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-16: 400 16px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-18: 400 18px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-20: 400 20px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-24: 400 24px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-28: 400 28px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-32: 400 32px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-10: 600 10px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-12: 600 12px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-14: 600 14px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-16: 600 16px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-18: 600 18px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-20: 600 20px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-24: 600 24px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-28: 600 28px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --typography-mono-bold-32: 600 32px/1.4 "geistMono", ui-monospace, Courier New, monospace;
+  --shadow-xs: 0px 1px 2px 0px rgba(0, 0, 0, 0.059);
+  --shadow-sm: 0px 1px 12px 0px rgba(0, 0, 0, 0.051);
+  --shadow-md: 0px 2px 12px 0px rgba(0, 0, 0, 0.059);
+  --shadow-lg: 0px 2px 24px 0px rgba(0, 0, 0, 0.059);
+  --shadow-xl: 0px 5px 32px 0px rgba(0, 0, 0, 0.102);
+  --shadow-brandGlow: 0px 4px 14px 0px rgba(9, 97, 228, 0.388);
+  --shadow-brandGlowHover: 0px 6px 20px 0px rgba(9, 97, 228, 0.502);
+  --shadow-focusRing: 0px 2px 0px 0px #2463eb;
+  --size-header: 72px;
+  --size-tapTarget: 44px;
+  --size-focusRingWidth: 2px;
+  --size-focusRingOffset: 2px;
+  --measured-controlRadiusPill: 32px;
+  --measured-controlRadiusCta: 52px;
+  --measured-controlHeightLogin: 35px;
+  --measured-controlHeightCta: 44px;
+  --measured-displaySize: 48px;
+  --page: #fdfdf7;
+  --surface: #ffffff;
+  --sunken: #f5f5f0;
+  --text: #1b1b18;
+  --muted: hsl(from #1b1b18 h s l / .73);
+  --subtle: hsl(from #1b1b18 h s l / .6);
+  --disabled: hsl(from #1b1b18 h s l / .3);
+  --onAccent: #ffffff;
+  --link: #2463eb;
+  --border: hsl(from #1b1b18 h s l / .08);
+  --borderStrong: hsl(from #1b1b18 h s l / .2);
+  --accent: #2463eb;
+  --accentHover: #1d4fd7;
+  --accentPressed: #1e3fae;
+  --focus: #3c83f6;
+  --success: #193e1e;
+  --successBg: #f1f8f2;
+  --warning: #59410d;
+  --warningBg: #fef9e7;
+  --danger: #610f1d;
+  --dangerBg: #fdedee;
+  --info: #1e3fae;
+  --infoBg: #f0f6ff;
+  --solid: #0b0b0a;
+  --solidText: #fdfdf7;
+  --sg-sans: "geist", system-ui, sans-serif;
+  --sg-display: "fraunces", Georgia, serif;
+  --sg-mono: "geistMono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.4 var(--sg-sans); color: var(--text, #1b1b18); background: var(--page, #fdfdf7); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 400 48px/1.17 var(--sg-display); margin: 0 0 8px; letter-spacing: -0.01em; }
+h2 { font: 600 20px/1.4 var(--sg-sans); margin: 48px 0 12px; }
+.note { color: var(--muted, #6a6a6a); max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, rgba(27,27,24,.12)); display: block; }
+.sw b { font: 500 12px/1.3 var(--sg-mono); display: block; }
+.sw span { font: 400 11px/1.3 var(--sg-mono); color: var(--muted); }
+.mock { border: 1px solid var(--border, rgba(27,27,24,.08)); border-radius: 24px; background: var(--page); padding: 28px; max-width: 720px; }
+.bar { display: flex; align-items: center; gap: 12px; margin-bottom: 36px; }
+.mark { width: 22px; height: 22px; border-radius: 50%; background: var(--accent, #2463eb); }
+.word { font: 600 16px/1 var(--sg-sans); margin-right: auto; }
+.pill { display: inline-flex; align-items: center; height: 35px; padding: 0 14px; border-radius: 32px; font: 400 16px/1 var(--sg-sans); border: 1px solid var(--borderStrong, rgba(27,27,24,.2)); background: transparent; color: var(--text); }
+.pill.solid { background: var(--solid, #0b0b0a); color: var(--solidText, #fdfdf7); border-color: transparent; }
+.hero { font: 400 48px/1.17 var(--sg-display); margin: 0 0 8px; }
+.lede { max-width: 46ch; color: var(--text); }
+.composer { margin-top: 24px; background: var(--surface, #fff); border-radius: 20px; padding: 16px; box-shadow: var(--shadow-sm, 0 1px 12px rgba(0,0,0,.05)); }
+.composer .ph { color: var(--subtle, #6a6a6a); font-size: 14px; }
+.composer .actions { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 34px; border: 1px solid var(--border); font-size: 13px; }
+.cta { display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 52px; background: var(--accent); color: var(--onAccent, #fff); font: 500 16px/1 var(--sg-sans); }
+.suggest { display: inline-flex; margin: 8px 8px 0 0; height: 36px; padding: 0 12px; border-radius: 8px; background: var(--sunken, #f5f5f0); align-items: center; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Doctronic AI</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Values are the custom properties declared on doctronic.ai. The site paints one light theme.</p>
+
+  <h2>Roles</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><div><b>page</b><span>var(--page)</span></div></div>
+    <div class="sw"><i style="background:var(--surface)"></i><div><b>surface</b><span>var(--surface)</span></div></div>
+    <div class="sw"><i style="background:var(--text)"></i><div><b>text</b><span>var(--text)</span></div></div>
+    <div class="sw"><i style="background:var(--accent)"></i><div><b>accent</b><span>var(--accent)</span></div></div>
+    <div class="sw"><i style="background:var(--solid)"></i><div><b>solid</b><span>var(--solid)</span></div></div>
+    <div class="sw"><i style="background:var(--successBg)"></i><div><b>success</b><span>var(--successBg)</span></div></div>
+    <div class="sw"><i style="background:var(--warningBg)"></i><div><b>warning</b><span>var(--warningBg)</span></div></div>
+    <div class="sw"><i style="background:var(--dangerBg)"></i><div><b>danger</b><span>var(--dangerBg)</span></div></div>
+  </div>
+
+  <h2>Home composer</h2>
+  <div class="mock">
+    <div class="bar">
+      <i class="mark"></i>
+      <span class="word">doctronic</span>
+      <span class="pill">Log in</span>
+      <span class="pill solid">Sign up</span>
+    </div>
+    <p class="hero">Hi, I’m Doctronic</p>
+    <p class="lede">Describe your symptoms and I’ll provide a treatment plan, based on peer-reviewed medical research.</p>
+    <div class="composer">
+      <div class="ph">Describe symptom or ask any health questions...</div>
+      <div class="actions">
+        <span class="chip">Anonymous</span>
+        <span class="cta">Start chat</span>
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <span class="suggest">Check my symptoms</span>
+      <span class="suggest">Get treatment advice</span>
+    </div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font:var(--typography-display-48)">Display 48, Fraunces</p>
+  <p style="font:var(--typography-heading-20)">Heading 20, Geist 600</p>
+  <p style="font:var(--typography-body-16)">Body 16, Geist 400. The chat and the marketing copy sit on this step.</p>
+  <p style="font:var(--typography-label-14)">Label 14, Geist 500</p>
+  <p style="font:var(--typography-mono-14)">Mono 14, Geist Mono</p>
+</main>
+</body>
+</html>
