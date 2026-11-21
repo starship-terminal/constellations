@@ -310,6 +310,10 @@ async function cart() {
 }
 
 async function account() {
+  // Login wall. This run does not open the form, type, or submit.
+  // https://www.aloyoga.com/en-sg/account/login asks for email and password.
+  log('skip account: login wall, not typed');
+  return;
   if (!(await newPage('account'))) return;
   const g = G.account;
   // Scope to the login form: a page-wide heading match caught the footer's

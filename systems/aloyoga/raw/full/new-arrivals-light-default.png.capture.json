@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:49:34.913Z",
+  "capturedAt": "2026-11-21T00:15:34.617Z",
   "screenshot": "new-arrivals-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 3477
+      "height": 3978
     },
     "scroll": {
       "x": 0,

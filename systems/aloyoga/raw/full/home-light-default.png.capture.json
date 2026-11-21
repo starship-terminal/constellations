@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:48:39.995Z",
+  "capturedAt": "2026-11-21T00:14:36.523Z",
   "screenshot": "home-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4069
+      "height": 5383
     },
     "scroll": {
       "x": 0,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:50:41.228Z",
+  "capturedAt": "2026-11-21T00:16:38.651Z",
   "screenshot": "cart-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 1528
+      "height": 1706
     },
     "scroll": {
       "x": 0,
@@ -49,13 +49,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 1528
+    "height": 1706
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 1528
+      "height": 1706
     },
     "basis": "fullPage"
   },

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:51:14.798Z",
+  "capturedAt": "2026-11-21T00:19:02.463Z",
   "screenshot": "mobile-home-light-menu.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 2990
+      "height": 5467
     },
     "scroll": {
       "x": 0,

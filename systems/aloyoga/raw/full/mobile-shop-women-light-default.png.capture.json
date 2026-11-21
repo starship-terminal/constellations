@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:51:59.065Z",
+  "capturedAt": "2026-11-21T00:19:32.034Z",
   "screenshot": "mobile-shop-women-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 5736
+      "height": 5608
     },
     "scroll": {
       "x": 0,

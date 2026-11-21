@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:48:44.105Z",
+  "capturedAt": "2026-11-21T00:14:40.729Z",
   "screenshot": "home-light-megamenu.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4069
+      "height": 5401
     },
     "scroll": {
       "x": 0,

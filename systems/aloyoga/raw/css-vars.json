@@ -1,18 +1,16 @@
 {
- "readAt": "2026-11-11",
+ "readAt": "2026-11-21",
  "source": "the stylesheet bodies fetched during a live home load on www.aloyoga.com/en-sg (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
  "sheets": [
-  "https://www.aloyoga.com/cdn/shop/t/5564/assets/layout.theme.4e3070a2.chunk.css (478596 bytes)",
-  "https://www.aloyoga.com/cdn/shop/t/5564/assets/template.index.e900e613.chunk.css (46077 bytes)",
-  "https://www.aloyoga.com/cdn/shop/t/5564/assets/collection-swatches.css (5806 bytes)",
-  "https://www.aloyoga.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css (13728 bytes)",
-  "https://www.aloyoga.com/cdn/shop/t/5564/assets/97.d3e84b9a.chunk.css (4747 bytes)",
-  "https://www.aloyoga.com/cdn/shop/t/5564/assets/4.754be4df.chunk.css (5098 bytes)",
-  "https://www.aloyoga.com/cdn/shop/t/5564/assets/vendors-CompleteYourC-5e3c7845.72112472.chunk.css (1981 bytes)",
-  "https://www.aloyoga.com/cdn/shop/t/5564/assets/themeLazy.42549e37.chunk.css (147732 bytes)",
-  "https://www.aloyoga.com/cdn/shop/t/5564/assets/default-CompleteYourC-862ebd53.6b4e4602.chunk.css (21869 bytes)",
-  "https://www.aloyoga.com/cdn/shop/t/5564/assets/HomepageReactCollectionCarouselRenderLazy.14b446e9.chunk.css (3015 bytes)",
-  "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css (426141 bytes)",
+  "https://www.aloyoga.com/cdn/shop/t/5591/assets/layout.theme.4e3070a2.chunk.css (478596 bytes)",
+  "https://www.aloyoga.com/cdn/shop/t/5591/assets/template.index.e900e613.chunk.css (46077 bytes)",
+  "https://www.aloyoga.com/cdn/shop/t/5591/assets/collection-swatches.css (5806 bytes)",
+  "https://www.aloyoga.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css (13812 bytes)",
+  "https://www.aloyoga.com/cdn/shop/t/5591/assets/97.d3e84b9a.chunk.css (4747 bytes)",
+  "https://www.aloyoga.com/cdn/shop/t/5591/assets/4.754be4df.chunk.css (5098 bytes)",
+  "https://www.aloyoga.com/cdn/shop/t/5591/assets/vendors-CompleteYourC-5e3c7845.72112472.chunk.css (1981 bytes)",
+  "https://www.aloyoga.com/cdn/shop/t/5591/assets/themeLazy.42549e37.chunk.css (147732 bytes)",
+  "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css (434061 bytes)",
   "inline-0 (53630 bytes)",
   "inline-1 (70 bytes)",
   "inline-2 (345 bytes)",
@@ -70,118 +68,106 @@
   "inline-54 (0 bytes)",
   "inline-55 (0 bytes)",
   "inline-56 (0 bytes)",
-  "inline-57 (0 bytes)",
-  "inline-58 (338 bytes)",
-  "inline-59 (182 bytes)",
-  "inline-60 (0 bytes)",
-  "inline-61 (86 bytes)",
-  "inline-62 (0 bytes)",
-  "inline-63 (245 bytes)",
-  "inline-64 (321 bytes)",
-  "inline-65 (0 bytes)",
-  "inline-66 (450 bytes)",
-  "inline-67 (216 bytes)",
-  "inline-68 (338 bytes)",
-  "inline-69 (410 bytes)",
-  "inline-70 (83 bytes)",
-  "inline-71 (190 bytes)",
-  "inline-72 (358 bytes)",
-  "inline-73 (448 bytes)",
-  "inline-74 (298 bytes)",
-  "inline-75 (313 bytes)",
-  "inline-76 (0 bytes)",
-  "inline-77 (0 bytes)",
-  "inline-78 (0 bytes)",
-  "inline-79 (0 bytes)",
-  "inline-80 (0 bytes)",
-  "inline-81 (0 bytes)",
-  "inline-82 (0 bytes)",
-  "inline-83 (0 bytes)",
-  "inline-84 (0 bytes)",
-  "inline-85 (0 bytes)",
-  "inline-86 (0 bytes)",
-  "inline-87 (0 bytes)",
-  "inline-88 (0 bytes)",
-  "inline-89 (0 bytes)",
-  "inline-90 (0 bytes)",
-  "inline-91 (0 bytes)",
-  "inline-92 (0 bytes)",
-  "inline-93 (0 bytes)",
-  "inline-94 (0 bytes)",
-  "inline-95 (0 bytes)",
-  "inline-96 (0 bytes)",
-  "inline-97 (12128 bytes)",
-  "inline-98 (431 bytes)",
-  "inline-99 (198 bytes)",
-  "inline-100 (350 bytes)",
-  "inline-101 (31 bytes)",
-  "inline-102 (265 bytes)",
-  "inline-103 (198 bytes)",
-  "inline-104 (198 bytes)",
-  "inline-105 (198 bytes)",
-  "inline-106 (198 bytes)",
-  "inline-107 (198 bytes)",
-  "inline-108 (198 bytes)",
-  "inline-109 (198 bytes)",
-  "inline-110 (198 bytes)",
-  "inline-111 (198 bytes)",
-  "inline-112 (198 bytes)",
-  "inline-113 (198 bytes)",
-  "inline-114 (198 bytes)",
-  "inline-115 (198 bytes)",
-  "inline-116 (198 bytes)",
-  "inline-117 (198 bytes)",
-  "inline-118 (198 bytes)",
+  "inline-57 (139 bytes)",
+  "inline-58 (19936 bytes)",
+  "inline-59 (697 bytes)",
+  "inline-60 (1339 bytes)",
+  "inline-61 (430 bytes)",
+  "inline-62 (198 bytes)",
+  "inline-63 (198 bytes)",
+  "inline-64 (350 bytes)",
+  "inline-65 (31 bytes)",
+  "inline-66 (265 bytes)",
+  "inline-67 (198 bytes)",
+  "inline-68 (198 bytes)",
+  "inline-69 (198 bytes)",
+  "inline-70 (198 bytes)",
+  "inline-71 (198 bytes)",
+  "inline-72 (198 bytes)",
+  "inline-73 (198 bytes)",
+  "inline-74 (198 bytes)",
+  "inline-75 (198 bytes)",
+  "inline-76 (210 bytes)",
+  "inline-77 (209 bytes)",
+  "inline-78 (198 bytes)",
+  "inline-79 (198 bytes)",
+  "inline-80 (198 bytes)",
+  "inline-81 (198 bytes)",
+  "inline-82 (198 bytes)",
+  "inline-83 (198 bytes)",
+  "inline-84 (198 bytes)",
+  "inline-85 (198 bytes)",
+  "inline-86 (198 bytes)",
+  "inline-87 (198 bytes)",
+  "inline-88 (198 bytes)",
+  "inline-89 (198 bytes)",
+  "inline-90 (198 bytes)",
+  "inline-91 (64 bytes)",
+  "inline-92 (637 bytes)",
+  "inline-93 (210 bytes)",
+  "inline-94 (637 bytes)",
+  "inline-95 (204 bytes)",
+  "inline-96 (71 bytes)",
+  "inline-97 (237 bytes)",
+  "inline-98 (608 bytes)",
+  "inline-99 (210 bytes)",
+  "inline-100 (611 bytes)",
+  "inline-101 (210 bytes)",
+  "inline-102 (140 bytes)",
+  "inline-103 (165 bytes)",
+  "inline-104 (208 bytes)",
+  "inline-105 (210 bytes)",
+  "inline-106 (208 bytes)",
+  "inline-107 (208 bytes)",
+  "inline-108 (140 bytes)",
+  "inline-109 (165 bytes)",
+  "inline-110 (208 bytes)",
+  "inline-111 (210 bytes)",
+  "inline-112 (208 bytes)",
+  "inline-113 (208 bytes)",
+  "inline-114 (64 bytes)",
+  "inline-115 (633 bytes)",
+  "inline-116 (204 bytes)",
+  "inline-117 (237 bytes)",
+  "inline-118 (611 bytes)",
   "inline-119 (198 bytes)",
-  "inline-120 (198 bytes)",
-  "inline-121 (198 bytes)",
-  "inline-122 (198 bytes)",
-  "inline-123 (198 bytes)",
-  "inline-124 (198 bytes)",
-  "inline-125 (198 bytes)",
-  "inline-126 (198 bytes)",
-  "inline-127 (1182 bytes)",
-  "inline-128 (931 bytes)",
-  "inline-129 (64 bytes)",
-  "inline-130 (237 bytes)",
-  "inline-131 (140 bytes)",
-  "inline-132 (165 bytes)",
-  "inline-133 (208 bytes)",
-  "inline-134 (208 bytes)",
-  "inline-135 (208 bytes)",
-  "inline-136 (208 bytes)",
-  "inline-137 (140 bytes)",
-  "inline-138 (165 bytes)",
-  "inline-139 (208 bytes)",
-  "inline-140 (208 bytes)",
-  "inline-141 (208 bytes)",
-  "inline-142 (208 bytes)",
-  "inline-143 (87 bytes)",
-  "inline-144 (71 bytes)",
-  "inline-145 (237 bytes)",
-  "inline-146 (284 bytes)",
+  "inline-120 (91 bytes)",
+  "inline-121 (64 bytes)",
+  "inline-122 (721 bytes)",
+  "inline-123 (0 bytes)",
+  "inline-124 (647 bytes)",
+  "inline-125 (71 bytes)",
+  "inline-126 (237 bytes)",
+  "inline-127 (284 bytes)",
+  "inline-128 (0 bytes)",
+  "inline-129 (647 bytes)",
+  "inline-130 (64 bytes)",
+  "inline-131 (721 bytes)",
+  "inline-132 (0 bytes)",
+  "inline-133 (71 bytes)",
+  "inline-134 (237 bytes)",
+  "inline-135 (284 bytes)",
+  "inline-136 (0 bytes)",
+  "inline-137 (64 bytes)",
+  "inline-138 (721 bytes)",
+  "inline-139 (0 bytes)",
+  "inline-140 (0 bytes)",
+  "inline-141 (71 bytes)",
+  "inline-142 (237 bytes)",
+  "inline-143 (284 bytes)",
+  "inline-144 (0 bytes)",
+  "inline-145 (0 bytes)",
+  "inline-146 (264 bytes)",
   "inline-147 (0 bytes)",
-  "inline-148 (647 bytes)",
-  "inline-149 (64 bytes)",
-  "inline-150 (721 bytes)",
-  "inline-151 (0 bytes)",
-  "inline-152 (647 bytes)",
-  "inline-153 (87 bytes)",
-  "inline-154 (64 bytes)",
-  "inline-155 (721 bytes)",
-  "inline-156 (0 bytes)",
-  "inline-157 (0 bytes)",
-  "inline-158 (71 bytes)",
-  "inline-159 (237 bytes)",
-  "inline-160 (284 bytes)",
-  "inline-161 (0 bytes)",
-  "inline-162 (0 bytes)",
-  "inline-163 (72 bytes)",
-  "inline-164 (524 bytes)",
-  "inline-165 (85 bytes)"
+  "inline-148 (747 bytes)",
+  "inline-149 (0 bytes)",
+  "inline-150 (747 bytes)",
+  "inline-151 (72 bytes)",
+  "inline-152 (524 bytes)",
+  "inline-153 (0 bytes)"
  ],
  "counts": {
-  "rules": 365,
+  "rules": 375,
   "fonts": 276,
   "names": {
    "theme": 0,
@@ -189,11 +175,11 @@
    "skins": 0,
    "vendor": 185,
    "utility": 3,
-   "tailwind": 73
+   "tailwind": 74
   },
   "bySelector": {
    "[app] main": 1,
-   "[app] :root": 313,
+   "[app] :root": 270,
    "[app] .swiper-button-next.swiper-button-white, .swiper-button-prev.swiper-button-white": 1,
    "[app] .swiper-button-next.swiper-button-black, .swiper-button-prev.swiper-button-black": 1,
    "[app] html button.sc-modal-trigger": 1,
@@ -236,6 +222,7 @@
    "[tailwind] .translate-y-1\\/2": 1,
    "[tailwind] .translate-y-\\[-100\\%\\]": 1,
    "[tailwind] .translate-y-\\[-50\\%\\]": 1,
+   "[tailwind] .translate-y-full": 1,
    "[tailwind] .translate-y-px": 1,
    "[tailwind] .-rotate-\\[15deg\\]": 1,
    "[tailwind] .rotate-0": 1,
@@ -324,6 +311,7 @@
    "[tailwind] .shadow": 2,
    "[tailwind] .shadow-0": 2,
    "[tailwind] .shadow-1": 2,
+   "[tailwind] .shadow-2xl": 2,
    "[tailwind] .shadow-\\[0_2px_10px\\]": 2,
    "[tailwind] .shadow-\\[0px_10px_38px_-10px_rgba\\(22\\,_23\\,_24\\,_0\\.35\\)\\,_0px_10px_20px_-15px_rgba\\(22\\,_23\\,_24\\,_0\\.2\\)\\]": 2,
    "[tailwind] .shadow-chat": 2,
@@ -361,6 +349,7 @@
    "[tailwind] .ring-accentYellow-400": 1,
    "[tailwind] .ring-accentYellow-500": 1,
    "[tailwind] .ring-accentYellow-600": 1,
+   "[tailwind] .ring-black\\/5": 1,
    "[tailwind] .ring-border": 1,
    "[tailwind] .ring-chatTitleBar": 1,
    "[tailwind] .ring-chatTitleBarText": 1,
@@ -368,13 +357,16 @@
    "[tailwind] .ring-current": 1,
    "[tailwind] .ring-textPrimary": 1,
    "[tailwind] .ring-transparent": 1,
+   "[tailwind] .ring-white": 2,
    "[tailwind] .blur": 1,
    "[tailwind] .brightness-110": 1,
    "[tailwind] .brightness-125": 1,
+   "[tailwind] .brightness-90": 1,
    "[tailwind] .brightness-95": 1,
    "[tailwind] .drop-shadow-\\[0_1px_2px_rgba\\(0\\,0\\,0\\,0\\.3\\)\\]": 1,
    "[tailwind] .grayscale": 1,
    "[tailwind] .invert": 1,
+   "[tailwind] .backdrop-blur": 1,
    "[tailwind] .backdrop-blur-\\[6px\\]": 1,
    "[tailwind] .animate-in": 5,
    "[tailwind] .fade-in": 1,
@@ -411,6 +403,7 @@
    "[tailwind] .focus-within\\:ring-accentGreen:focus-within": 1,
    "[tailwind] .focus-within\\:ring-accentRed-600:focus-within": 1,
    "[tailwind] .focus-within\\:ring-accentYellow-800:focus-within": 1,
+   "[tailwind] .hover\\:scale-\\[1\\.04\\]:hover": 2,
    "[tailwind] .hover\\:bg-blue-500:hover": 1,
    "[tailwind] .hover\\:bg-gray-100:hover": 1,
    "[tailwind] .hover\\:text-blue-700:hover": 1,
@@ -435,6 +428,7 @@
    "[tailwind] .focus\\:ring-offset-chatBackground:focus": 1,
    "[tailwind] .focus-visible\\:ring-2:focus-visible": 2,
    "[tailwind] .focus-visible\\:ring-inset:focus-visible": 1,
+   "[tailwind] .focus-visible\\:ring-accentBlue:focus-visible": 1,
    "[tailwind] .focus-visible\\:ring-accentBlue-300:focus-visible": 1,
    "[tailwind] .focus-visible\\:ring-accentGreen:focus-visible": 1,
    "[tailwind] .focus-visible\\:ring-accentGreen-500:focus-visible": 1,
@@ -443,6 +437,7 @@
    "[tailwind] .focus-visible\\:ring-current:focus-visible": 1,
    "[tailwind] .focus-visible\\:ring-foreground-3:focus-visible": 1,
    "[tailwind] .focus-visible\\:ring-textSecondary:focus-visible": 1,
+   "[tailwind] .focus-visible\\:ring-white\\/60:focus-visible": 1,
    "[tailwind] .focus-visible\\:ring-white\\/70:focus-visible": 1,
    "[tailwind] .focus-visible\\:ring-offset-1:focus-visible": 1,
    "[tailwind] .focus-visible\\:ring-offset-2:focus-visible": 1,
@@ -454,6 +449,7 @@
    "[tailwind] .enabled\\:active\\:brightness-95:active:enabled": 1,
    "[tailwind] .group:hover .group-hover\\:rotate-0": 1,
    "[tailwind] .group\\/change-row:hover .group-hover\\/change-row\\:shadow-\\[inset_0_0_0_1px_color-mix\\(in_srgb\\,currentColor_8\\%\\,transparent\\)\\]": 2,
+   "[tailwind] .group\\/card:hover .group-hover\\/card\\:brightness-100": 1,
    "[tailwind] .group:hover .group-hover\\:brightness-110": 1,
    "[tailwind] .group:focus-visible .group-focus-visible\\:ring-2": 2,
    "[tailwind] .group:focus-visible .group-focus-visible\\:ring-chatUserBubble": 1,
@@ -512,6 +508,7 @@
    "[tailwind] .dark\\:text-red-200:is(.s-mode-dark *)": 1,
    "[tailwind] .dark\\:text-teal-200:is(.s-mode-dark *)": 1,
    "[tailwind] .dark\\:text-yellow-200:is(.s-mode-dark *)": 1,
+   "[tailwind] .dark\\:ring-white\\/10:is(.s-mode-dark *)": 1,
    "[tailwind] .dark\\:hover\\:text-blue-300:hover:is(.s-mode-dark *)": 1,
    "[utility] @media (min-width: 1024px) .lg\\:\\[--dialog-promoted-base-width\\:60rem\\]": 1,
    "[tailwind] .\\[\\&_thead_th\\:not\\(\\:last-child\\)\\]\\:after\\:from-transparent thead th:not(:last-child)::after": 3,
@@ -552,7 +549,7 @@
  "theme": [],
  "app": [
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/layout.theme.4e3070a2.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/layout.theme.4e3070a2.chunk.css",
    "selector": "main",
    "context": [],
    "properties": {
@@ -561,7 +558,7 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/layout.theme.4e3070a2.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/layout.theme.4e3070a2.chunk.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -612,7 +609,7 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/layout.theme.4e3070a2.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/layout.theme.4e3070a2.chunk.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -621,7 +618,7 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/template.index.e900e613.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/template.index.e900e613.chunk.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -672,7 +669,7 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/4.754be4df.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/4.754be4df.chunk.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -681,7 +678,7 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/vendors-CompleteYourC-5e3c7845.72112472.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/vendors-CompleteYourC-5e3c7845.72112472.chunk.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -690,7 +687,7 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/vendors-CompleteYourC-5e3c7845.72112472.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/vendors-CompleteYourC-5e3c7845.72112472.chunk.css",
    "selector": ".swiper-button-next.swiper-button-white, .swiper-button-prev.swiper-button-white",
    "context": [],
    "properties": {
@@ -699,7 +696,7 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/vendors-CompleteYourC-5e3c7845.72112472.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/vendors-CompleteYourC-5e3c7845.72112472.chunk.css",
    "selector": ".swiper-button-next.swiper-button-black, .swiper-button-prev.swiper-button-black",
    "context": [],
    "properties": {
@@ -708,7 +705,7 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/themeLazy.42549e37.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/themeLazy.42549e37.chunk.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -759,7 +756,7 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/themeLazy.42549e37.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/themeLazy.42549e37.chunk.css",
    "selector": "html button.sc-modal-trigger",
    "context": [],
    "properties": {
@@ -768,62 +765,11 @@
    "bin": "app"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/themeLazy.42549e37.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/themeLazy.42549e37.chunk.css",
    "selector": "html footer .sc-modal-trigger",
    "context": [],
    "properties": {
     "--arrow-color": "var(--white)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/default-CompleteYourC-862ebd53.6b4e4602.chunk.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--primary-font": "\"proxima-nova\",Helvetica,sans-serif",
-    "--primary": "#000",
-    "--charcoal": "#242424",
-    "--mine": "#3b3b3b",
-    "--chicago": "#636363",
-    "--dawn": "#a3a3a3",
-    "--alto": "#ccc",
-    "--mercury": "#e1e1e1",
-    "--smoke": "#f2f2f2",
-    "--white": "#fff",
-    "--highlight-light": "#f1e8dd",
-    "--highlight-medium": "#ceb18f",
-    "--highlight-dark": "#826646",
-    "--alert-light": "#fdecea",
-    "--alert-medium": "#b00020",
-    "--alert-dark": "#740031",
-    "--success-light": "#d8e1d5",
-    "--success-medium": "#758e6d",
-    "--success-dark": "#3c4b37",
-    "--accent-light": "#d7ddeb",
-    "--accent-medium": "#7183b0",
-    "--accent-dark": "#384669",
-    "--sand": "#e0d7d1",
-    "--spacing-0": "0",
-    "--spacing-xs": "4px",
-    "--spacing-sm": "8px",
-    "--spacing-m-sm": "12px",
-    "--spacing-md": "16px",
-    "--spacing-m-lg": "20px",
-    "--spacing-lg": "24px",
-    "--spacing-xl": "32px",
-    "--spacing-2xl": "40px",
-    "--spacing-3xl": "48px",
-    "--spacing-4xl": "56px",
-    "--spacing-5xl": "64px",
-    "--spacing-6xl": "72px",
-    "--spacing-7xl": "80px",
-    "--spacing-8xl": "96px",
-    "--spacing-9xl": "120px",
-    "--shadow-level-1": "0 2px 6px 0 rgb(0 0 0/0.06),0 4px 12px 0 rgb(35 41 54/0.08)",
-    "--shadow-level-2": "0 1px 4px 0 rgb(0 0 0/0.06),0 8px 16px 0 rgb(35 41 54/0.08)",
-    "--shadow-level-3": "0 4px 8px 0 rgb(0 0 0/0.06),0 12px 32px 0 rgb(35 41 54/0.14)",
-    "--shadow-level-4": "0 4px 16px 0 rgb(0 0 0/0.06),0 16px 64px 0 rgb(35 41 54/0.2)"
    },
    "bin": "app"
   },
@@ -3788,6 +3734,15 @@
   },
   {
    "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".translate-y-full",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
    "selector": ".translate-y-px",
    "context": [],
    "properties": {
@@ -4585,6 +4540,16 @@
   },
   {
    "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".shadow-2xl",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 25px 50px -12px rgb(0 0 0 / .25)",
+    "--tw-shadow-colored": "0 25px 50px -12px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
    "selector": ".shadow-\\[0_2px_10px\\]",
    "context": [],
    "properties": {
@@ -4932,6 +4897,15 @@
   },
   {
    "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".ring-black\\/5",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgb(0 0 0 / .05)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
    "selector": ".ring-border",
    "context": [],
    "properties": {
@@ -4995,6 +4969,16 @@
   },
   {
    "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".ring-white",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(255 255 255 / var(--tw-ring-opacity, 1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
    "selector": ".blur",
    "context": [],
    "properties": {
@@ -5017,6 +5001,15 @@
    "context": [],
    "properties": {
     "--tw-brightness": "brightness(1.25)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".brightness-90",
+   "context": [],
+   "properties": {
+    "--tw-brightness": "brightness(.9)"
    },
    "bin": "tailwind"
   },
@@ -5053,6 +5046,15 @@
    "context": [],
    "properties": {
     "--tw-invert": "invert(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".backdrop-blur",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(8px)"
    },
    "bin": "tailwind"
   },
@@ -5322,6 +5324,16 @@
   },
   {
    "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".hover\\:scale-\\[1\\.04\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1.04",
+    "--tw-scale-y": "1.04"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
    "selector": ".hover\\:bg-blue-500:hover",
    "context": [],
    "properties": {
@@ -5532,6 +5544,15 @@
   },
   {
    "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".focus-visible\\:ring-accentBlue:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "var(--color-accentBlue)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
    "selector": ".focus-visible\\:ring-accentBlue-300:focus-visible",
    "context": [],
    "properties": {
@@ -5599,6 +5620,15 @@
    "context": [],
    "properties": {
     "--tw-ring-color": "var(--color-foreground-2)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".focus-visible\\:ring-white\\/60:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgb(255 255 255 / .6)"
    },
    "bin": "tailwind"
   },
@@ -5690,6 +5720,15 @@
    "properties": {
     "--tw-shadow": "inset 0 0 0 1px color-mix(in srgb,currentColor 8%,transparent)",
     "--tw-shadow-colored": "inset 0 0 0 1px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".group\\/card:hover .group-hover\\/card\\:brightness-100",
+   "context": [],
+   "properties": {
+    "--tw-brightness": "brightness(1)"
    },
    "bin": "tailwind"
   },
@@ -6240,6 +6279,15 @@
   },
   {
    "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
+   "selector": ".dark\\:ring-white\\/10:is(.s-mode-dark *)",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgb(255 255 255 / .1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://sierra.chat/agent/fnA9hmIBluksjw0Bluksj0Q-AMHHKQkoq3XckGJTJuQ/embed-css",
    "selector": ".dark\\:hover\\:text-blue-300:hover:is(.s-mode-dark *)",
    "context": [],
    "properties": {
@@ -6288,14 +6336,14 @@
  ],
  "fonts": [
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/4.754be4df.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/4.754be4df.chunk.css",
    "font-family": "swiper-icons",
    "src": "url(\"data:application/font-woff;charset=utf-8;base64, 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\") format(\"woff\")",
    "font-weight": "400",
    "font-style": "normal"
   },
   {
-   "file": "https://www.aloyoga.com/cdn/shop/t/5564/assets/themeLazy.42549e37.chunk.css",
+   "file": "https://www.aloyoga.com/cdn/shop/t/5591/assets/themeLazy.42549e37.chunk.css",
    "font-family": "Dropdown",
    "src": "url(\"data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAVgAA8AAAAACFAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABWAAAABwAAAAchGgaq0dERUYAAAF0AAAAHAAAAB4AJwAPT1MvMgAAAZAAAABDAAAAVnW4TJdjbWFwAAAB1AAAAEsAAAFS8CcaqmN2dCAAAAIgAAAABAAAAAQAEQFEZ2FzcAAAAiQAAAAIAAAACP//AANnbHlmAAACLAAAAQoAAAGkrRHP9WhlYWQAAAM4AAAAMAAAADYPK8YyaGhlYQAAA2gAAAAdAAAAJANCAb1obXR4AAADiAAAACIAAAAiCBkAOGxvY2EAAAOsAAAAFAAAABQBnAIybWF4cAAAA8AAAAAfAAAAIAEVAF5uYW1lAAAD4AAAATAAAAKMFGlj5HBvc3QAAAUQAAAARgAAAHJoedjqd2ViZgAABVgAAAAGAAAABrO7W5UAAAABAAAAANXulPUAAAAA1r4hgAAAAADXu2Q1eNpjYGRgYOABYjEgZmJgBEIOIGYB8xgAA/YAN3jaY2BktGOcwMDKwMI4jTGNgYHBHUp/ZZBkaGFgYGJgZWbACgLSXFMYHFT/fLjFeOD/AQY9xjMMbkBhRpAcAN48DQYAeNpjYGBgZoBgGQZGBhDwAfIYwXwWBgMgzQGETAwMqn8+8H649f8/lHX9//9b7Pzf+fWgusCAkY0BzmUE6gHpQwGMDMMeAACbxg7SAAARAUQAAAAB//8AAnjadZBPSsNAGMXfS+yMqYgOhpSuSlKadmUhiVEhEMQzFF22m17BbbvzCh5BXCUn6EG8gjeQ4DepwYo4i+/ffL95j4EDA+CFC7jQuKyIeVHrI3wkleq9F7XrSInKteOeHdda8bOoaeepSc00NWPz/LRec9G8GabyGtEdF7h19z033GAMTK7zbM42xNEZpzYof0RtQ5CUHAQJ73OtVyutc+3b7Ou//b8XNlsPx3jgjUifABdhEohKJJL5iM5p39uqc7X1+sRQSqmGrUVhlsJ4lpmEUVwyT8SUYtg0P9DyNzPADDs+tjrGV6KRCRfsui3eHcL4/p8ZXvfMlcnEU+CLv7hDykOP+AKTPTxbAAB42mNgZGBgAGKuf5KP4vltvjLIMzGAwLV9ig0g+vruFFMQzdjACOJzMIClARh0CTJ42mNgZGBgPPD/AJD8wgAEjA0MjAyogAMAbOQEAQAAAAC7ABEAAAAAAKoAAAH0AAABgAAAAUAACAFAAAgAwAAXAAAAAAAAACoAKgAqADIAbACGAKAAugDSeNpjYGRgYOBkUGFgYgABEMkFhAwM/xn0QAIADdUBdAB42qWQvUoDQRSFv3GjaISUQaymSmGxJoGAsRC0iPYLsU50Y6IxrvlRtPCJJKUPIBb+PIHv4EN4djKuKAqCDHfmu+feOdwZoMCUAJNbAlYUMzaUlM14jjxbngOq7HnOia89z1Pk1vMCa9x7ztPkzfMyJbPj+ZGi6Xp+omxuPD+zaD7meaFg7mb8GrBqHmhwxoAxlm0uiRkpP9X5m26pKRoMxTGR1D49Dv/Yb/91o6l8qL6eu5n2hZQzn68utR9m3FU2cB4t9cdSLG2utI+44Eh/P9bqKO+oJ/WxmXssj77YkrjasZQD6SFddythk3Wtzrf+UF2p076Udla1VNzsERP3kkjVRKel7mp1udXYcHtZSlV7RfmJe1GiFWveluaeKD5/MuJcSk8Tpm/vvwPIbmJleNpjYGKAAFYG7ICTgYGRiZGZkYWRlZGNkZ2Rg5GTLT2nsiDDEEIZsZfmZRqZujmDaDcDAxcI7WIOpS2gtCWUdgQAZkcSmQAAAAFblbO6AAA=\") format(\"woff\")",
    "font-weight": "400",
@@ -10208,22 +10256,22 @@
     "value": "#e0d7d1"
    },
    "--shadow-level-1": {
-    "raw": "0 2px 6px 0 rgb(0 0 0/0.06),0 4px 12px 0 rgb(35 41 54/0.08)",
+    "raw": "0 2px 6px 0 rgb(0 0 0/.06),0 4px 12px 0 rgb(35 41 54/.08)",
     "kind": "shadow",
     "value": "rgba(0, 0, 0, 0.06) 0px 2px 6px 0px, rgba(35, 41, 54, 0.08) 0px 4px 12px 0px"
    },
    "--shadow-level-2": {
-    "raw": "0 1px 4px 0 rgb(0 0 0/0.06),0 8px 16px 0 rgb(35 41 54/0.08)",
+    "raw": "0 1px 4px 0 rgb(0 0 0/.06),0 8px 16px 0 rgb(35 41 54/.08)",
     "kind": "shadow",
     "value": "rgba(0, 0, 0, 0.06) 0px 1px 4px 0px, rgba(35, 41, 54, 0.08) 0px 8px 16px 0px"
    },
    "--shadow-level-3": {
-    "raw": "0 4px 8px 0 rgb(0 0 0/0.06),0 12px 32px 0 rgb(35 41 54/0.14)",
+    "raw": "0 4px 8px 0 rgb(0 0 0/.06),0 12px 32px 0 rgb(35 41 54/.14)",
     "kind": "shadow",
     "value": "rgba(0, 0, 0, 0.06) 0px 4px 8px 0px, rgba(35, 41, 54, 0.14) 0px 12px 32px 0px"
    },
    "--shadow-level-4": {
-    "raw": "0 4px 16px 0 rgb(0 0 0/0.06),0 16px 64px 0 rgb(35 41 54/0.2)",
+    "raw": "0 4px 16px 0 rgb(0 0 0/.06),0 16px 64px 0 rgb(35 41 54/.2)",
     "kind": "shadow",
     "value": "rgba(0, 0, 0, 0.06) 0px 4px 16px 0px, rgba(35, 41, 54, 0.2) 0px 16px 64px 0px"
    },
@@ -11765,22 +11813,22 @@
     "value": "#e0d7d1"
    },
    "--shadow-level-1": {
-    "raw": "0 2px 6px 0 rgb(0 0 0/0.06),0 4px 12px 0 rgb(35 41 54/0.08)",
+    "raw": "0 2px 6px 0 rgb(0 0 0/.06),0 4px 12px 0 rgb(35 41 54/.08)",
     "kind": "shadow",
     "value": "rgba(0, 0, 0, 0.06) 0px 2px 6px 0px, rgba(35, 41, 54, 0.08) 0px 4px 12px 0px"
    },
    "--shadow-level-2": {
-    "raw": "0 1px 4px 0 rgb(0 0 0/0.06),0 8px 16px 0 rgb(35 41 54/0.08)",
+    "raw": "0 1px 4px 0 rgb(0 0 0/.06),0 8px 16px 0 rgb(35 41 54/.08)",
     "kind": "shadow",
     "value": "rgba(0, 0, 0, 0.06) 0px 1px 4px 0px, rgba(35, 41, 54, 0.08) 0px 8px 16px 0px"
    },
    "--shadow-level-3": {
-    "raw": "0 4px 8px 0 rgb(0 0 0/0.06),0 12px 32px 0 rgb(35 41 54/0.14)",
+    "raw": "0 4px 8px 0 rgb(0 0 0/.06),0 12px 32px 0 rgb(35 41 54/.14)",
     "kind": "shadow",
     "value": "rgba(0, 0, 0, 0.06) 0px 4px 8px 0px, rgba(35, 41, 54, 0.14) 0px 12px 32px 0px"
    },
    "--shadow-level-4": {
-    "raw": "0 4px 16px 0 rgb(0 0 0/0.06),0 16px 64px 0 rgb(35 41 54/0.2)",
+    "raw": "0 4px 16px 0 rgb(0 0 0/.06),0 16px 64px 0 rgb(35 41 54/.2)",
     "kind": "shadow",
     "value": "rgba(0, 0, 0, 0.06) 0px 4px 16px 0px, rgba(35, 41, 54, 0.2) 0px 16px 64px 0px"
    },

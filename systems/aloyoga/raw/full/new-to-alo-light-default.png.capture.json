@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:50:19.194Z",
+  "capturedAt": "2026-11-21T00:16:17.464Z",
   "screenshot": "new-to-alo-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 7113
+      "height": 6864
     },
     "scroll": {
       "x": 0,

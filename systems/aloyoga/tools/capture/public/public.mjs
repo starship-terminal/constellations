@@ -60,6 +60,26 @@ const openMega = async (p) => {
   return false;
 };
 
+// Search icon opens an in-page drawer. Never type into it and never submit.
+const openSearch = async (p) => {
+  const s = p.locator('#main-navbar-search-icon, button.mobile-search-button').filter({ visible: true }).first();
+  if (!(await s.count())) return false;
+  await clickEl(s);
+  await wait(p, 1200);
+  return true;
+};
+
+// Sort / filter triggers are local menus. Open and close; do not apply a filter
+// and do not submit. A missing control is a gap, not a failure of the page.
+const openSort = async (p) => {
+  const s = p.locator('button').filter({ hasText: /^sort$/i }).filter({ visible: true }).first();
+  if (!(await s.count())) return false;
+  await s.scrollIntoViewIfNeeded().catch(() => {});
+  await clickEl(s);
+  await wait(p, 900);
+  return true;
+};
+
 // A PDP colour swatch is a local selection toggle, never an add-to-bag.
 const pickSwatch = async (p) => {
   const s = p.locator('button.SwatchUI.swatch:not(.active)').filter({ visible: true }).first();
@@ -72,10 +92,14 @@ const desktop = {
     await S.raw('consent');                       // the Osano dialog as it arrives
     await S.view('default');
     await step('megamenu', async () => { if (await openMega(p)) await S.view('megamenu'); await p.mouse.move(20, 400); await wait(p, 600); });
+    await step('search', async () => {
+      if (await openSearch(p)) { await S.view('search'); await p.keyboard.press('Escape').catch(() => {}); await wait(p, 400); }
+    });
     await S.full();
   } },
   'shop-women': { path: '/collections/womens-shop-all', run: async (p, S) => {
     await S.view('default');
+    await step('sort', async () => { if (await openSort(p)) { await S.view('sort'); await p.keyboard.press('Escape').catch(() => {}); await wait(p, 400); } });
     await S.full();
   } },
   'shop-men': { path: '/collections/mens-shop-all', run: async (p, S) => {
@@ -107,22 +131,48 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
-  account: { path: '/account', run: async (p, S) => {
+  // Login wall only. The server redirects /account to /account/login. Never
+  // type, never click Google or Apple, never submit.
+  account: { path: '/account/login', run: async (p, S) => {
     await S.view('default');
     await S.full();
   } },
+  shoes: { path: '/collections/shoes', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  atelier: { path: '/collections/summer-atelier', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'gift-guide': { path: '/pages/gift-guide', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  help: { path: '/pages/help-center', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'size-guide': { path: '/pages/size-chart', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  stores: { path: '/pages/stores', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'we-are-alo': { path: '/pages/we-are-alo', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const mobile = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.view('default');
     await step('menu', async () => {
-      const m = p.locator('button[aria-label*="menu" i], .hamburger, [class*="hamburger" i], header button:has(svg), .mobile-menu-button, [class*="menu" i][role="button"]').filter({ visible: true }).first();
-      if (await m.count()) { await clickEl(m); await wait(p, 1500); await S.view('menu'); }
+      const m = p.locator('button.hamburger, button.navbar__toggler.hamburger').filter({ visible: true }).first();
+      if (await m.count()) { await clickEl(m); await wait(p, 1500); await S.view('menu'); await p.keyboard.press('Escape').catch(() => {}); await wait(p, 500); }
+    });
+    await step('search', async () => {
+      if (await openSearch(p)) { await S.view('search'); await p.keyboard.press('Escape').catch(() => {}); await wait(p, 400); }
     });
     await S.full();
   } },
   'shop-women': { path: '/collections/womens-shop-all', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  cart: { path: '/cart', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  pdp: { path: '/collections/womens-shop-all', run: async (p, S) => {
+    const href = await p.evaluate(() => {
+      const a = [...document.querySelectorAll('a[href*="/products/"]')].find((x) => x.offsetParent && (x.innerText || '').trim().length > 3);
+      return a ? a.getAttribute('href') : null;
+    });
+    if (!href) { log('  no product link found'); return; }
+    await p.goto(new URL(href, 'https://www.aloyoga.com').toString(), { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await clearChallenge(p); await wait(p, 7000);
+    await S.view('default');
+    await S.full();
+  } },
+  'gift-guide': { path: '/pages/gift-guide', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  help: { path: '/pages/help-center', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const b = await chromium.launch();

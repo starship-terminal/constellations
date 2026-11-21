@@ -198,7 +198,7 @@ comp = SPEC["component"]
 for key, cname, state, prop, desc in [
     ("control.height", "add-to-bag", "default", "height", "The buy button is 52px."),
     ("control.heightSmall", "size-button", "default", "height", "Size chips are 40px."),
-    ("control.fieldHeight", "email-input", "default", "height", "The login field height."),
+    ("control.fieldHeight", "newsletter-input", "default", "height", "The footer newsletter field height. The login form was not measured."),
     ("control.radius", "hero-button", "default", "borderTopLeftRadius", "The hero/buy button corner."),
     ("swatch.size", "pdp-swatch", "default", "width", "The PDP colour tile is square."),
     ("header.height", "header", "default", "height", "The desktop header height at 1440px."),

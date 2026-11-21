@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:49:01.602Z",
+  "capturedAt": "2026-11-21T00:15:02.254Z",
   "screenshot": "shop-women-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4111
+      "height": 3941
     },
     "scroll": {
       "x": 0,

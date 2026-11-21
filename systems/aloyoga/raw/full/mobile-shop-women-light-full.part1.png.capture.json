@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:52:05.948Z",
+  "capturedAt": "2026-11-21T00:19:38.366Z",
   "screenshot": "mobile-shop-women-light-full.part1.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 9577
+      "height": 9469
     },
     "scroll": {
       "x": 0,
@@ -49,18 +49,18 @@
       "x": 0,
       "y": 7000,
       "width": 390,
-      "height": 2577
+      "height": 2469
     }
   },
   "png": {
     "width": 780,
-    "height": 5154
+    "height": 4938
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 780,
-      "height": 5154
+      "height": 4938
     },
     "basis": "clip"
   },

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:49:18.567Z",
+  "capturedAt": "2026-11-21T00:15:18.694Z",
   "screenshot": "shop-men-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 3445
+      "height": 3941
     },
     "scroll": {
       "x": 0,
