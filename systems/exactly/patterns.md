@@ -34,6 +34,10 @@ Headline plus the embedded scheduler at rest inside its iframe: a bordered panel
 
 A 56px top bar carries the wordmark, a white Join pill and the hamburger (`light.focus.ring-mobile` #e59700 focus ring — the colour Chrome's phone emulation uses for its own `auto` ring, as #101010 is on the desktop pass; the site sets no focus colour). The hamburger toggles a nav overlay of drawer links; the hero display drops to 27px/36px over the same photograph recipe.
 
+## Onboarding shell (signed in, 2026-11-21)
+
+The only signed-in screen this pass could open. A `#f0f0f0` page (`--color-background-tertiary`) holds a white 360 x 480 card at 32px radius, centered at 1440. A 4px accent bar (`#fb411f`, aria value 14) runs across the top. Log out is a white 36px pill at the top left. The title is Exactly Display at 22.5px / 28px. Four choices sit on `#7c7c7c` at 6% opacity, 20px radius, 80px tall. At 390 the card docks to the bottom, radius `32px 32px 0 0`, and the last choice is clipped. The help and chat circles are desktop only. No option was selected. See [onboarding-light-default.png](screenshots/onboarding-light-default.png).
+
 ## Footer
 
 Every page ends in the near-black footer (`light.footer.bg` #000): white column heads and `light.footer.muted` 60% links, with the watermark wordmark set beneath — the only near-dark surface the public site paints.

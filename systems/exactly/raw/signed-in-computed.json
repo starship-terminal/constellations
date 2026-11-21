@@ -1,0 +1,105 @@
+{
+  "capturedAt": "2026-11-21",
+  "url": "https://threads.exactly.ai/onboarding",
+  "width": 1440,
+  "height": 900,
+  "devicePixelRatio": 2,
+  "note": "Computed styles of the elements painted on the unanswered onboarding step. Phone differences are listed under phone. Hover, focus-visible and pressed were not forced.",
+  "page": {
+    "selector": ".onboarding-overlay_page",
+    "backgroundColor": "rgb(240, 240, 240)",
+    "color": "rgb(30, 30, 30)",
+    "fontFamily": "font_exactly_text",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "-0.15px",
+    "token": "--color-background-tertiary #f0f0f0"
+  },
+  "progressTrack": {
+    "role": "progressbar",
+    "ariaValueNow": "14",
+    "backgroundColor": "rgba(124, 124, 124, 0.12)",
+    "height": "4px",
+    "borderRadius": "100px",
+    "token": "near --color-fill-secondary-m, not an exact match"
+  },
+  "progressFill": {
+    "className": "Progress_filler",
+    "backgroundColor": "rgb(251, 65, 31)",
+    "width": "202px",
+    "height": "4px",
+    "token": "--color-cadmium #fb411f"
+  },
+  "card": {
+    "className": "OnboardingFrame_card",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "32px",
+    "boxShadow": "none",
+    "width": "360px",
+    "height": "480px",
+    "token": "--color-titanium #fff; --dialog-radius 32px"
+  },
+  "title": {
+    "text": "Who will you use exactly.ai for?",
+    "fontFamily": "font_exactly_display",
+    "fontSize": "22.5px",
+    "fontWeight": "400",
+    "lineHeight": "28px",
+    "letterSpacing": "0.225px",
+    "color": "rgb(30, 30, 30)",
+    "textAlign": "center"
+  },
+  "subtitle": {
+    "text": "Choose the closest match",
+    "fontFamily": "font_exactly_text",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "-0.15px",
+    "color": "rgb(30, 30, 30)"
+  },
+  "choice": {
+    "backgroundColor": "rgba(124, 124, 124, 0.06)",
+    "color": "rgb(30, 30, 30)",
+    "fontFamily": "font_exactly_text",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "-0.15px",
+    "borderRadius": "20px",
+    "padding": "20px",
+    "height": "80px",
+    "width": "328px",
+    "border": "0px",
+    "boxShadow": "none",
+    "token": "--color-fill-secondary-l #7c7c7c0f"
+  },
+  "logout": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(30, 30, 30)",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "borderRadius": "100px",
+    "padding": "4px",
+    "height": "36px",
+    "width": "79px"
+  },
+  "helpCluster": {
+    "note": "Desktop only. Two 36px white circles, radius 999px, at the bottom right. One is a link to https://exactly.ai/help-center. The other is an unlabeled button.",
+    "size": "36px",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "999px"
+  },
+  "phone": {
+    "width": 390,
+    "height": 844,
+    "devicePixelRatio": 2,
+    "htmlClass": "mobile",
+    "card": {"width": "390px", "height": "478px", "borderRadius": "32px 32px 0px 0px", "x": 0, "y": 366},
+    "title": {"fontSize": "21px", "lineHeight": "26px"},
+    "choice": {"width": "358px", "fontSize": "15px"},
+    "logout": {"fontSize": "15px", "x": 12, "y": 4},
+    "helpCluster": "display none (0x0)"
+  }
+}

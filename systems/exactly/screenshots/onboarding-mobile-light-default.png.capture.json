@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-20T19:04:16Z",
+  "screenshot": "onboarding-mobile-light-default.png",
+  "sanitizedSourceUrl": "https://threads.exactly.ai/onboarding",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "theme": {
+      "classes": [
+        "mobile"
+      ],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "documentSize": {
+      "width": 390,
+      "height": 844
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "css-downsampled-from-device",
+    "clip": null
+  },
+  "png": {
+    "width": 390,
+    "height": 844
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 390,
+      "height": 844
+    },
+    "basis": "measured window.innerWidth and window.innerHeight; PNG downsampled from device pixels"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Preview screenshot is 780x1688 (device pixels, dpr 2). Committed PNG is downsampled to the measured CSS viewport, then quantized to 256 colours."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop boxes from this PNG. Values were read from computed styles before quantizing."
+  }
+}
