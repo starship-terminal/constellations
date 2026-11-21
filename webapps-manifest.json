@@ -3037,9 +3037,9 @@
       "description": "Payments, tax & subscriptions for software companies",
       "status": "captured",
       "package": "systems/lemonsqueezy",
-      "notes": "https://auth.lemonsqueezy.com/login asks for email and password, or Google or Twitter. No code was sent.",
+      "notes": "https://auth.lemonsqueezy.com/login asks for email and password, or Google or Twitter. No code was sent. Public walk 2026-11-21: the public site tree is in systems/lemonsqueezy/site-tree.md. https://www.lemonsqueezy.com/ loaded. Sign in still stops at https://auth.lemonsqueezy.com/login with an empty email and password, or Google or Twitter. Forgot password stops at https://auth.lemonsqueezy.com/password/reset. Sign up stops at https://auth.lemonsqueezy.com/register. Nothing was typed. Google and Twitter were not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1676 at 57ba89588b7a. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 9
     },
     {
