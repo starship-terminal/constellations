@@ -1,0 +1,23 @@
+{
+  "note": "dona.ai does not publish a CSS custom-property token layer. Colour roles come from the styled-components theme object read off a React fiber on https://dona.ai/ on 2026-11-21 (raw/readings.json home.theme). Computed styles of the painted controls are in the same file. Status colours exist on the theme object and were not seen painted on the public marketing pages.",
+  "capturedAt": "2026-11-21",
+  "url": "https://dona.ai/",
+  "theme": {
+    "id": "light",
+    "name": "Light",
+    "foreground": "#19191B",
+    "background": "#FFFFFF",
+    "body": "#F2F4F6",
+    "primary": { "background": "#008FFD", "foreground": "#FFFFFF" },
+    "secondary": { "background": "#616870", "foreground": "#FFFFFF" },
+    "success": { "background": "#4ACF4A", "foreground": "#FFFFFF" },
+    "warning": { "background": "#F5D03D", "foreground": "#FFFFFF" },
+    "danger": { "background": "#EB5757", "foreground": "#FFFFFF" }
+  },
+  "resolved": {
+    "light": {},
+    "dark": {}
+  },
+  "app": [],
+  "vendor": []
+}

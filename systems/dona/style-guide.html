@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dona style guide</title>
+<style>
+  :root {
+    --ink: #19191b;
+    --paper: #ffffff;
+    --body: #f2f4f6;
+    --blue: #008ffd;
+    --quiet: #eceff2;
+    --muted: #a8b0b8;
+  }
+  body { margin: 0; font: 400 16px/1.45 Inter, sans-serif; color: var(--ink); background: var(--paper); }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; }
+  h2 { margin-top: 40px; font-size: 20px; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .sw { width: 72px; height: 72px; border-radius: 12px; border: 1px solid var(--quiet); }
+  .pill { border: 0; border-radius: 32px; font: 500 16px/24px Inter, sans-serif; padding: 14px 26px; }
+  .primary { background: var(--blue); color: #fff; }
+  .quiet { background: var(--quiet); color: var(--ink); }
+  .ink { background: var(--ink); color: #fff; }
+  p.note { color: #616870; max-width: 62ch; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Dona</h1>
+  <p class="note">Public marketing tokens, light only. Values from the styled-components theme object and computed styles on dona.ai, 2026-11-21. Dark is not a theme of this site.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw" style="background:#ffffff"></div>
+    <div class="sw" style="background:#f2f4f6"></div>
+    <div class="sw" style="background:#19191b"></div>
+    <div class="sw" style="background:#008ffd"></div>
+    <div class="sw" style="background:#eceff2"></div>
+    <div class="sw" style="background:#a8b0b8"></div>
+  </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="pill quiet">Watch video</button>
+    <button class="pill primary">Try for free</button>
+    <button class="pill ink">Join our newsletter</button>
+  </div>
+  <h2>Type</h2>
+  <p style="font-size:64px;font-weight:700;line-height:1.05;letter-spacing:-0.03em;margin:0"><span style="color:#a8b0b8">A more humane</span><br>to-do list</p>
+</main>
+</body>
+</html>

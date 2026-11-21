@@ -1,0 +1,16 @@
+{
+  "note": "Spec the Dona builder reads. Values are the styled-components theme object or getComputedStyle readings in readings.json. Nothing here is recalled.",
+  "color": {
+    "ink": { "value": "#19191b", "source": "theme.foreground on https://dona.ai/" },
+    "paper": { "value": "#ffffff", "source": "theme.background" },
+    "body": { "value": "#f2f4f6", "source": "theme.body" },
+    "blue": { "value": "#008ffd", "source": "theme.primary.background" },
+    "on-accent": { "value": "#ffffff", "source": "theme.primary.foreground" },
+    "secondary": { "value": "#616870", "source": "theme.secondary.background" },
+    "success": { "value": "#4acf4a", "source": "theme.success.background" },
+    "warning": { "value": "#f5d03d", "source": "theme.warning.background" },
+    "danger": { "value": "#eb5757", "source": "theme.danger.background" },
+    "quiet": { "value": "#eceff2", "source": "computed Login and Watch video backgroundColor rgb(236, 239, 242)" },
+    "muted": { "value": "#a8b0b8", "source": "computed hero muted span color rgb(168, 176, 184) on home" }
+  }
+}
