@@ -1,0 +1,109 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.suunto.com/",
+  "productUrl": "https://www.suunto.com/Products/sports-watches/suunto-race-3s/suunto-race-3s-titanium-black/",
+  "title": "Suunto sports watches, dive products, compasses and accessories",
+  "region": "Global (EN). Region dialog named Singapore, currency SGD, shipping only to Singapore. The dialog was not continued.",
+  "viewport": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1},
+  "ship": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "height": "48px",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "fontFamily": "ProximaNova, sans-serif"
+  },
+  "header": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "height": "96px",
+    "fontFamily": "ProximaNova, sans-serif"
+  },
+  "ink": "rgb(0, 0, 0)",
+  "page": "rgb(255, 255, 255)",
+  "nav": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "20px",
+    "fontWeight": "700",
+    "lineHeight": "18px",
+    "height": "20px"
+  },
+  "logo": {"width": "100px", "height": "37px", "triangle": "#F03241", "word": "#000000"},
+  "hero": {
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "75px",
+    "fontWeight": "800",
+    "lineHeight": "67.5px",
+    "letterSpacing": "-1.5px",
+    "fontFamily": "ProximaNova, sans-serif",
+    "text": "Black Friday"
+  },
+  "subhead": {
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "30px",
+    "fontWeight": "400",
+    "lineHeight": "42.8571px",
+    "text": "Up to 45% off"
+  },
+  "shop": {
+    "backgroundColor": "rgb(239, 51, 64)",
+    "color": "rgb(255, 255, 255)",
+    "width": "150px",
+    "height": "50px",
+    "fontSize": "16px",
+    "fontWeight": "800",
+    "borderRadius": "4px",
+    "padding": "13px 25px",
+    "lineHeight": "22.4px"
+  },
+  "buy": {
+    "backgroundColor": "rgb(239, 51, 64)",
+    "color": "rgb(255, 255, 255)",
+    "width": "350px",
+    "height": "50px",
+    "fontSize": "16px",
+    "fontWeight": "800",
+    "borderRadius": "4px",
+    "padding": "13px 25px"
+  },
+  "new": {
+    "color": "rgb(239, 51, 64)",
+    "fontSize": "30px",
+    "fontWeight": "700",
+    "letterSpacing": "-0.25px"
+  },
+  "productTitle": {
+    "color": "rgb(48, 48, 48)",
+    "fontSize": "30px",
+    "fontWeight": "800",
+    "lineHeight": "27px",
+    "letterSpacing": "-1.5px",
+    "text": "SUUNTO RACE 3S"
+  },
+  "card": {
+    "border": "1px solid rgb(216, 219, 221)",
+    "borderRadius": "8px",
+    "padding": "16px",
+    "width": "384px"
+  },
+  "swatch": {
+    "width": "36px",
+    "height": "36px",
+    "borderRadius": "50%",
+    "selected": "rgb(0, 0, 0)",
+    "second": "rgb(162, 94, 156)"
+  },
+  "footer": {
+    "backgroundColor": "rgb(32, 32, 32)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px"
+  },
+  "body": {
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "ProximaNova, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px"
+  }
+}

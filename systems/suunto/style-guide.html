@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Suunto public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #000000;
+    --ship: #000000;
+    --on-ink: #ffffff;
+    --brand: #ef3340;
+    --graphite: #303030;
+    --card-rule: #d8dbdd;
+    --footer: #202020;
+    --body: ProximaNova, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--body); font-size: 14px; line-height: 20px; }
+  .ship { height: 48px; display: flex; align-items: center; justify-content: center; background: var(--ship); color: var(--on-ink); font-size: 14px; }
+  .ship span { text-decoration: underline; }
+  header { height: 96px; display: flex; align-items: center; gap: 28px; padding: 0 64px; background: var(--page); color: var(--ink); }
+  .logo { font-weight: 800; letter-spacing: 0.4px; }
+  .logo i { color: var(--brand); font-style: normal; }
+  nav { display: flex; gap: 28px; font-size: 20px; font-weight: 700; }
+  .tools { margin-left: auto; font-size: 20px; font-weight: 700; }
+  .hero { background: #2a2a2a; color: var(--on-ink); padding: 180px 64px 64px; }
+  h1 { font-size: 75px; font-weight: 800; line-height: 67.5px; letter-spacing: -1.5px; margin: 0 0 12px; }
+  .sub { font-size: 30px; font-weight: 400; line-height: 42.8px; margin: 0 0 24px; }
+  .shop { display: inline-flex; align-items: center; justify-content: center; width: 150px; height: 50px; background: var(--brand); color: var(--on-ink); font-size: 16px; font-weight: 800; border-radius: 4px; }
+  main { display: grid; grid-template-columns: 1fr 384px; gap: 48px; padding: 48px 64px 64px; }
+  h2 { font-size: 30px; font-weight: 800; line-height: 27px; letter-spacing: -1.5px; color: var(--graphite); margin: 0 0 12px; }
+  .card { border: 1px solid var(--card-rule); border-radius: 8px; padding: 16px; }
+  .swatches { display: flex; gap: 8px; }
+  .dot { width: 36px; height: 36px; border-radius: 50%; }
+  .buy { display: flex; align-items: center; justify-content: center; width: 350px; height: 50px; margin-top: 16px; background: var(--brand); color: var(--on-ink); font-size: 16px; font-weight: 800; border-radius: 4px; }
+  .chips { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .chip { width: 120px; font-size: 12px; }
+  .color { height: 48px; border: 1px solid var(--card-rule); }
+  footer { background: var(--footer); color: var(--on-ink); padding: 24px 64px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="ship">WE SHIP TO 75+ DESTINATIONS OVER THE WORLD: <span>CLICK HERE TO SELECT YOURS</span></div>
+<header>
+  <strong class="logo"><i>▲</i> SUUNTO</strong>
+  <nav>
+    <span>Products</span>
+    <span>Apps &amp; partners</span>
+    <span>About Suunto</span>
+  </nav>
+  <span class="tools">Support</span>
+</header>
+<section class="hero">
+  <h1>Black Friday</h1>
+  <p class="sub">Up to 45% off</p>
+  <span class="shop">Shop now</span>
+</section>
+<main>
+  <div>
+    <h2>SUUNTO RACE 3S</h2>
+    <p>The next-generation performance watch for smarter training and trail running.</p>
+    <div class="chips">
+      <div class="chip"><div class="color" style="background:#ffffff"></div>page #ffffff</div>
+      <div class="chip"><div class="color" style="background:#000000"></div>ink #000000</div>
+      <div class="chip"><div class="color" style="background:#ef3340"></div>brand #ef3340</div>
+      <div class="chip"><div class="color" style="background:#303030"></div>graphite #303030</div>
+      <div class="chip"><div class="color" style="background:#d8dbdd"></div>card #d8dbdd</div>
+      <div class="chip"><div class="color" style="background:#202020"></div>footer #202020</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="swatches">
+      <span class="dot" style="background:#000000"></span>
+      <span class="dot" style="background:#a25e9c"></span>
+      <span class="dot" style="background:#bdbdbd"></span>
+    </div>
+    <p style="font-size:20px;font-weight:800;letter-spacing:-1px;margin:12px 0 0">Black</p>
+    <p>SS051645000</p>
+    <div class="buy">Buy now</div>
+  </div>
+</main>
+<footer>Terms of use · Privacy Policy · Cookies</footer>
+</body>
+</html>
