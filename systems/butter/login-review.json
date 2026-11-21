@@ -1,0 +1,67 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public Playwright capture, signed out. https://www.butter.video/login was opened from the header and from a subscription redirect. The empty wall was photographed. The branch stopped. No email, password, name, or code was typed. No identity provider was clicked. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "wall": "https://www.butter.video/login",
+    "status": 200,
+    "themes": ["light"],
+    "fields": [
+      {"label": "Email Address", "type": "email", "name": "emailAddress", "value": "empty"},
+      {"label": "Password", "type": "password", "name": "password", "value": "empty"}
+    ],
+    "actions": [
+      "Continue with Google",
+      "Log In",
+      "Show password",
+      "Don't have an account? Sign up",
+      "Forgot password?"
+    ],
+    "legal": []
+  },
+  "screens": [
+    {"name": "Login wall, empty, light, 1440", "file": "screenshots/login-light-empty.png"},
+    {"name": "Login wall, empty, light, 390", "file": "screenshots/mobile-login-light-empty.png"}
+  ],
+  "adjacent_walls_stopped": [
+    {
+      "url": "https://www.butter.video/register",
+      "how": "Sign up on the login wall, and https://app.butter.video/register, which redirects here.",
+      "fields_empty": ["Name", "Work Email", "Password"],
+      "actions_not_used": ["Continue with Google", "Sign Up", "Already have an account? Login"],
+      "file": "screenshots/register-light-empty.png"
+    },
+    {
+      "url": "https://www.butter.video/forgot",
+      "how": "Forgot password? on the login wall.",
+      "fields_empty": ["Email Address"],
+      "actions_not_used": ["Email me a recovery link", "Back to login"],
+      "file": "screenshots/forgot-light-empty.png"
+    }
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Editor, projects, exports, billing, and settings were not offered on a signed-in shell.",
+    "No dark theme was offered on the login wall.",
+    "Continue with Google was visible and not clicked.",
+    "Sign up and Forgot password? were opened only far enough to see the empty fields, then stopped.",
+    "Create on the explore shell opens the same signup fields in a dialog. That dialog was not saved. Nothing was typed."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "Log In",
+    "Sign Up",
+    "Continue with Google",
+    "Forgot password?",
+    "Email me a recovery link",
+    "contact form",
+    "newsletter",
+    "profile, birthday, plan, survey, and onboarding fields"
+  ]
+}

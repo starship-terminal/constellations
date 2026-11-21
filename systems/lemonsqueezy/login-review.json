@@ -1,0 +1,42 @@
+{
+  "slug": "lemonsqueezy",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Headless Playwright, signed out. Sign in on the marketing site opens the auth host. The page was photographed and left. No field was filled. No identity provider was clicked. No form was submitted.",
+  "entry": {
+    "from": "https://www.lemonsqueezy.com/ Sign in",
+    "requested": "https://app.lemonsqueezy.com/login",
+    "landed": "https://auth.lemonsqueezy.com/login",
+    "title": "Lemon Squeezy",
+    "heading": "Sign in to Lemon Squeezy"
+  },
+  "asks_for": [
+    "Email address (input type email, autocomplete email). Empty. Not typed.",
+    "Password (input type password, autocomplete current-password). Empty. Not typed.",
+    "Remember me (checkbox, name remember). Left unchecked.",
+    "Sign in (submit button). Not clicked.",
+    "Sign in with Google (link to the auth host Google path). Not clicked.",
+    "Sign in with Twitter (link to the auth host Twitter path). Not clicked."
+  ],
+  "also_offered": [
+    {"label": "Forgot your password?", "opens": "https://auth.lemonsqueezy.com/password/reset", "reached": true, "note": "Photographed. Heading Reset your password. Asks for an email and shows a reCAPTCHA. Send reset instructions was not clicked. The email field was not typed."},
+    {"label": "Sign up", "opens": "https://auth.lemonsqueezy.com/register", "reached": true, "note": "Photographed. Heading Tell us about your business. Fields: Business name, Website URL, a country select defaulting to United States, Continue. Nothing was typed or selected. Continue was not clicked. The banner on the marketing site says new sign-ups are closed."},
+    {"label": "Customer Dashboard", "opens": "https://app.lemonsqueezy.com/my-orders", "reached": true, "note": "Redirects to the my-orders login. Heading My Orders, then Sign In. Asks for an email and says a sign-in link will be sent. Sign In was not clicked. The email field was not typed."},
+    {"label": "Logo", "opens": "https://www.lemonsqueezy.com/", "reached": false, "note": "Returns to the public marketing site. Not needed."}
+  ],
+  "screens": [
+    {"name": "login-light-default", "file": "screenshots/login-light-default.png", "url": "https://auth.lemonsqueezy.com/login"},
+    {"name": "register-light-default", "file": "screenshots/register-light-default.png", "url": "https://auth.lemonsqueezy.com/register"},
+    {"name": "reset-light-default", "file": "screenshots/reset-light-default.png", "url": "https://auth.lemonsqueezy.com/password/reset"},
+    {"name": "my-orders-login-light-default", "file": "screenshots/my-orders-login-light-default.png", "url": "https://app.lemonsqueezy.com/my-orders/login"}
+  ],
+  "stopped": [
+    "Google and Twitter were not clicked.",
+    "No email, password, business name, website, country, or code was typed.",
+    "No form was submitted.",
+    "The reCAPTCHA was not solved.",
+    "Checkout on the creators guide was not opened.",
+    "Stripe registration was not started.",
+    "Store settings, including the migration settings URL named in a blog post, were not opened."
+  ]
+}

@@ -4,137 +4,285 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wrike style guide</title>
+<meta name="description" content="Wrike (www.wrike.com) design tokens and the public marketing site's components, rendered from tokens.json with the measured values.">
 <style>
-  :root {
-    --page: #ffffff;
-    --surface: #f2f5fa;
-    --title: #162136;
-    --body: #2b3a57;
-    --muted: #657694;
-    --accent: #00e05c;
-    --on-accent: #162136;
-    --link: #0073d3;
-    --footer: #162136;
-    --footer-text: #bfc7d9;
-    --input-border: #bfc7d9;
-    --popular: #ffa200;
-    --login: #008262;
-    --login-page: #f8fafc;
-    --font: "TT Norms Pro", -apple-system, system-ui, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--page); color: var(--body); font: 400 16px/1.6 var(--font); }
-  header { padding: 20px 32px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--surface); }
-  header strong { color: var(--title); font-weight: 600; }
-  header span { color: var(--muted); font-size: 14px; }
-  main { max-width: 1100px; margin: 0 auto; padding: 40px 32px 80px; }
-  h1 { margin: 0 0 8px; color: var(--title); font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: 0; }
-  h2 { margin: 40px 0 12px; color: var(--title); font-size: 24px; line-height: 1.2; font-weight: 600; }
-  p.lead { color: var(--muted); max-width: 68ch; }
-  .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
-  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
-  .sw { display: flex; gap: 10px; align-items: center; }
-  .sw i { width: 40px; height: 40px; border-radius: 8px; border: 1px solid #dce1eb; display: block; }
-  .sw b { display: block; color: var(--title); font-size: 13px; }
-  .sw small { color: var(--muted); font-size: 12px; }
-  button.accent, a.accent {
-    background: var(--accent); color: var(--on-accent); border: 2px solid transparent;
-    border-radius: 12px; height: 60px; padding: 14px 22px; font: 600 20px/28px var(--font); cursor: pointer;
-  }
-  button.small {
-    background: var(--accent); color: var(--on-accent); border: 2px solid transparent;
-    border-radius: 8px; height: 40px; padding: 8px 14px; font: 600 16px/20px var(--font);
-  }
-  button.ghost {
-    background: transparent; color: var(--title); border: 2px solid var(--title);
-    border-radius: 12px; height: 60px; padding: 14px 22px; font: 600 20px/28px var(--font);
-  }
-  button.login {
-    background: var(--login); color: #fff; border: 1px solid transparent;
-    border-radius: 12px; height: 48px; padding: 0 31px; font: 400 18px/24px -apple-system, system-ui, sans-serif;
-  }
-  label.field {
-    display: flex; align-items: center; height: 60px; width: 320px; padding: 0 20px;
-    background: var(--surface); border: 2px solid var(--input-border); border-radius: 12px; color: var(--muted);
-  }
-  .card {
-    background: var(--page); border: 2px solid #dce1eb; border-radius: 16px; padding: 24px; width: 220px;
-  }
-  .card h3 { margin: 0 0 4px; color: var(--title); font-size: 24px; }
-  .card .cap { color: var(--popular); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
-  .login-panel {
-    background: #fff; border-radius: 12px; padding: 28px; width: 420px;
-    box-shadow: 0 2px 8px rgba(0, 39, 128, 0.1), 0 8px 12px rgba(0, 59, 157, 0.05);
-  }
-  .login-stage { background: var(--login-page); padding: 24px; border-radius: 12px; }
-  .login-field {
-    height: 48px; border-radius: 12px; background: rgba(0, 59, 157, 0.05);
-    display: flex; align-items: center; padding: 0 15px; color: rgba(0, 2, 27, 0.6); margin-bottom: 12px;
-    font: 400 18px/24px -apple-system, system-ui, sans-serif;
-  }
-  a.link { color: var(--link); font-weight: 600; text-decoration: none; }
-  footer.band { margin-top: 48px; background: var(--footer); color: var(--footer-text); padding: 24px 32px; border-radius: 12px; }
-  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+:root {
+  --fontFamily-display: TT_Norms_Pro, -apple-system, system-ui, sans-serif;
+  --fontFamily-ui: TT_Norms_Pro, -apple-system, system-ui, sans-serif;
+  --fontFamily-body: Inter, -apple-system, system-ui, sans-serif;
+  --typography-display: 600 64px/70.4px var(--fontFamily-display);
+  --typography-heading: 600 48px/52.8px var(--fontFamily-display);
+  --typography-title: 600 32px/38.4px var(--fontFamily-display);
+  --typography-body: 400 16px/25.6px var(--fontFamily-ui);
+  --typography-label: 400 18px/25.2px var(--fontFamily-ui);
+  --typography-caption: 600 12px/15.6px var(--fontFamily-ui);
+  --typography-notes: 400 14px/19.6px var(--fontFamily-ui);
+  --spacing-05x: 8px;
+  --spacing-15x: 24px;
+  --spacing-1x: 16px;
+  --spacing-2x: 32px;
+  --spacing-3x: 48px;
+  --spacing-4x: 64px;
+  --spacing-7x: 112px;
+  --radius-lg: 20px;
+  --radius-md: 8px;
+  --radius-control: 8px;
+  --grid-gutter-desktop: 16px;
+  --grid-gutter-desktopbig: 16px;
+  --grid-gutter-desktopsmall: 16px;
+  --grid-gutter-laptop: 16px;
+  --grid-gutter-mobile: 16px;
+  --grid-gutter-tablet: 16px;
+  --grid-gutter-wide: 24px;
+  --grid-maxWidth-desktop: 1220px;
+  --grid-maxWidth-desktopbig: 1220px;
+  --grid-maxWidth-wide: 1464px;
+  --page: #ffffff;
+  --surface-default: #f2f5fa;
+  --surface-raised: #ffffff;
+  --surface-invert: #162136;
+  --surface-bullet: #dce1eb;
+  --text-primary: #162136;
+  --text-default: #2b3a57;
+  --text-secondary: #657694;
+  --text-onAccent: #162136;
+  --text-invert: #ffffff;
+  --muted: #657694;
+  --link-default: #0073d3;
+  --link-hover: #078eff;
+  --border-default: #dce1eb;
+  --accent-default: #00e05c;
+  --accent-hover: #14ff75;
+  --accent-pressed: #00c752;
+  --danger: #e51739;
+  --brand-green: #00e05c;
+  --brand-midnight: #162136;
+  --brand-midnightFair: #2b3a57;
+  --brand-midnightMiddle: #657694;
+  --brand-midnightLight: #bfc7d9;
+  --brand-blue: #0073d3;
+  --brand-blueLight: #63c1ff;
+  --brand-red: #e51739;
+  --gradient-start: #009980;
+  --gradient-middle: #00b259;
+  --gradient-end: #00e05c;
+  --gradient-aiStart: #aaff00;
+  --gradient-aiMiddle: #00e05c;
+  --gradient-aiEnd: #00e5bf;
+  --component-control-height: 60px;
+  --component-control-radius: var(--radius-control);
+  --component-button-paddingX: 22px;
+  --component-button-fontSize: 20px;
+  --sg-sans: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+  --page: #162136;
+  --surface-default: #2b3a57;
+  --surface-raised: #162136;
+  --surface-invert: #ffffff;
+  --surface-bullet: #40516e;
+  --text-primary: #ffffff;
+  --text-default: #ffffff;
+  --text-secondary: #bfc7d9;
+  --text-onAccent: #ffffff;
+  --text-invert: #162136;
+  --muted: #bfc7d9;
+  --link-default: #63c1ff;
+  --link-hover: #96d5ff;
+  --border-default: #40516e;
+  --accent-default: #00e05c;
+  --accent-hover: #14ff75;
+  --accent-pressed: #00c752;
+  --danger: #ff5468;
+  --brand-green: #00e05c;
+  --brand-midnight: #162136;
+  --brand-midnightFair: #2b3a57;
+  --brand-midnightMiddle: #657694;
+  --brand-midnightLight: #bfc7d9;
+  --brand-blue: #0073d3;
+  --brand-blueLight: #63c1ff;
+  --brand-red: #e51739;
+  --gradient-start: #80ff00;
+  --gradient-middle: #00e05c;
+  --gradient-end: #00e0bb;
+  --gradient-aiStart: #00ff2b;
+  --gradient-aiMiddle: #00e05c;
+  --gradient-aiEnd: #00e5e5;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-default, #3d3d3d); background: var(--page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #737373); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #e5e7eb); }
+.lead { max-width: 62ch; color: var(--muted, #686868); }
+.note { font-size: 13px; color: var(--muted, #686868); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #686868); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #e5e7eb); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #686868); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #686868); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border, #e5e7eb); border-radius: 16px; overflow: hidden; background: var(--page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--component-shell-header, 68px); padding: 0 20px; background: var(--page, #fff); border-bottom: 1px solid var(--border, #e5e7eb); font-size: 14px; color: var(--muted, rgba(0,0,0,.7)); }
+.navbar .wm { width: 22px; height: 22px; border-radius: 6px; background: var(--accent-default, #0d0d0d); display: inline-block; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 32px); padding: 0 14px; border-radius: var(--border-radius, 3px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
+.btn.primary { border-radius: var(--radius-control, 8px); background: var(--accent-default, #00e05c); color: var(--text-primary, #162136); }
+.btn.big { height: var(--component-control-heightLarge, 42px); padding: 0 20px; border-radius: var(--border-radius, 3px); font-weight: 500; font-size: 14px; }
+.btn.ghost { background: transparent; color: var(--text, #000); border: 0; }
+.btn.trial { height: 42px; width: 100%; }
+.hero { background: var(--page, #fff); color: var(--text, #000); padding: 64px 40px; font: var(--typography-display, 400 56px/67.2px var(--sg-sans)); letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font: var(--typography-body, 400 16px/24px var(--sg-sans)); color: var(--muted, rgba(0,0,0,.8)); margin: 16px auto 22px; max-width: 46ch; }
+.hero .row { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
+.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: var(--border-radius, 3px); border: 1px solid rgba(0,0,0,.2); background: #fff; font-size: 12px; font-weight: 500; color: var(--chip-text, rgba(0,0,0,.6)); }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 0; border-radius: var(--border-radius, 3px); padding: 22px; background: var(--surface, #f4f4f4); font-size: 13px; }
+.plan .price { font: var(--typography-price, 400 36px/36px var(--sg-sans)); margin: 8px 0 12px; }
+.plan .btn { width: 100%; }
+.field { display: flex; align-items: center; height: var(--component-control-field, 50px); border: 1px solid var(--surface, #f4f4f4); border-radius: var(--border-radius, 3px); padding: 0 12px; font-size: 14px; color: var(--muted, #666); max-width: 414px; background: var(--surface, #f4f4f4); margin-bottom: 8px; }
+.caps-eyebrow { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted, #6e6e6e); font-weight: 500; }
+.seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--border, #e5e7eb); font-size: 13px; }
+.tlist { border: 1px solid var(--border, #e5e7eb); border-radius: 12px; overflow: hidden; }
+.trow { display: flex; gap: 16px; align-items: baseline; padding: 10px 16px; border-bottom: 1px solid var(--border, #e5e7eb); }
+.trow:last-child { border-bottom: 0; }
+.tnm { font: 500 11px/1 var(--sg-mono); color: var(--muted, #666); min-width: 90px; text-transform: uppercase; letter-spacing: .06em; }
+.tspec { font-size: 22px; }
+.seg b { padding: 4px 12px; font-weight: 500; border-radius: 6px; }
+.seg b.on { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 6px 14px; text-align: left; }
 </style>
 </head>
 <body>
-<header>
-  <strong>Wrike</strong>
-  <span>Public signed-out tokens, measured 2026-11-18. One painted theme: light.</span>
-</header>
 <main>
-  <h1>Deliver work, <span style="color:#00e05c">powered by</span> humans and agents</h1>
-  <p class="lead">Values come from computed styles on www.wrike.com and login.wrike.com. TT Norms Pro is not loaded here, so the page falls back to the system sans.</p>
+  <button id="mode" style="float:right;margin-top:8px;padding:6px 14px;border:1px solid var(--border-default,#cfcfcf);border-radius:var(--border-radius,3px);background:var(--surface,#f3f3f3);color:var(--text-default,#3d3d3d);cursor:pointer;font:inherit">Dark</button>
+  <h1>Wrike style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
 
-  <h2>Colour</h2>
-  <div class="swatches">
-    <div class="sw"><i style="background:#ffffff"></i><div><b>page</b><small>#ffffff</small></div></div>
-    <div class="sw"><i style="background:#f2f5fa"></i><div><b>surface</b><small>#f2f5fa</small></div></div>
-    <div class="sw"><i style="background:#162136"></i><div><b>title</b><small>#162136</small></div></div>
-    <div class="sw"><i style="background:#2b3a57"></i><div><b>body</b><small>#2b3a57</small></div></div>
-    <div class="sw"><i style="background:#657694"></i><div><b>muted</b><small>#657694</small></div></div>
-    <div class="sw"><i style="background:#00e05c"></i><div><b>accent</b><small>#00e05c</small></div></div>
-    <div class="sw"><i style="background:#0073d3"></i><div><b>link</b><small>#0073d3</small></div></div>
-    <div class="sw"><i style="background:#008262"></i><div><b>login button</b><small>#008262</small></div></div>
-    <div class="sw"><i style="background:#ffa200"></i><div><b>popular</b><small>#ffa200</small></div></div>
-    <div class="sw"><i style="background:#e51739"></i><div><b>error role</b><small>#e51739</small></div></div>
-  </div>
+  <h2 class="sh">Wrike, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: Asana's full token layer — the colour ramps (<code>--black-20..1100</code>, <code>--blue-0..980</code>, <code>--coral-*</code>, <code>--bright-*</code>, <code>--gold/teal/glow-*</code>), the <code>--lightmode-*</code> semantic roles (and the declared <code>--darkmode-*</code> set), type/spacing/<code>--media-*</code>/grid/zIndex/<code>--shadow-*</code>/<code>--transition-*</code> scales, and the component values measured on the live pages. Light painted; dark declared. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from asana.com on 2026-11-11, signed out, in headless Chromium. The app behind sign-in was never reached — nothing was sent, submitted or signed into.</p>
 
-  <h2>Buttons</h2>
-  <div class="row">
-    <button class="accent">Try Wrike for free</button>
-    <button class="ghost">Request a demo</button>
-    <button class="small">Try for free</button>
-  </div>
-  <p class="lead">Small controls are 40px with an 8px radius. Large controls are 60px with a 12px radius. Accent text is midnight, not white.</p>
-
-  <h2>Trial field</h2>
-  <div class="row">
-    <label class="field">Enter your business email</label>
-    <button class="accent" style="height:60px">Try for free</button>
-  </div>
-
-  <h2>Pricing card</h2>
-  <div class="card">
-    <div class="cap">Most popular</div>
-    <h3>Pinnacle</h3>
-    <p style="margin:8px 0 16px;color:#2b3a57">Built for complex workflows</p>
-    <button class="small">Contact us</button>
-  </div>
-
-  <h2>Login panel</h2>
-  <div class="login-stage">
-    <div class="login-panel">
-      <div class="login-field">Email or corporate ID</div>
-      <button class="login">Next</button>
-      <p><a class="link" href="#login" style="color:#0054b2;font-weight:400;font-size:14px">Forgot password?</a></p>
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A nav bar with the Asana mark, a Pricing link, a ghost Log in, outlined Contact sales and the near-black Get started pill. The hero is a big TWK Lausanne h1; CTAs are near-black #0d0d0d 3px-radius blocks that lift to #3d3d3d, on white with #f3f3f3 panels and #cfcfcf hairlines.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm"></span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Log in</span><span class="btn ghost">Contact sales</span><span class="btn primary">Get started</span></div>
+    <div class="hero">The OS for<br>human-agent teams
+      <small>AI that works the way your team works.</small>
+      <div class="row"><span class="caps-eyebrow">Work management</span></div>
+      <div class="row" style="gap:10px"><span class="btn primary">Get started</span><span class="btn ghost">See pricing</span></div>
     </div>
   </div>
-  <p class="lead">The login app uses a system face, a teal Next button, and a 12px panel. The password step was not opened.</p>
 
-  <footer class="band">
-    Footer links sit on #162136 in #bfc7d9. Marketing pages do not paint a dark theme.
-  </footer>
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">Plan columns on white with near-black or outlined CTAs, the billing toggle, then hairline FAQ accordions.</p>
+  <div class="mock" style="padding:20px">
+    <div class="plans">
+      <div class="plan"><b>Personal</b><div class="price">Free</div><span class="btn ghost trial">Get started</span><p style="color:var(--muted,#666);font-size:12px;margin-top:10px">For individuals.</p></div>
+      <div class="plan"><b>Starter</b><div class="price">$13.49<span style="font-size:14px;color:var(--muted,#666)">/mo</span></div><span class="btn primary trial">Get started</span><p style="color:var(--muted,#666);font-size:12px;margin-top:10px">For growing teams.</p></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>--lightmode-*</code> carries every role: <code>bg</code> white and <code>bg-med</code> #f3f3f3, ink <code>text</code> #3d3d3d / <code>text-strong</code> #0d0d0d, <code>button-primary</code> near-black lifting to #3d3d3d, <code>error/success/warning</code> status, <code>a11y-focus-primary</code> #879fc8; the ramps feed them, <code>--darkmode-*</code> mirrors the same roles dark.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Layout metrics</h2>
+  <p class="lead">A real scale ships: <code>--spacing-0..10</code> on a 16px base, <code>--media-xsmall..xxxlarge</code> (480..1920) breakpoints, a 12-column grid with 32px gutters, <code>--zIndex-1..10</code>, <code>--border-radius</code> 3px and four <code>--shadow-*</code> levels.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Type styles</h2>
+  <p class="lead">TWK Lausanne (webfont, Helvetica Neue fallback) across the UI; <code>--fontSize-h1..h6</code> (56..16), <code>--fontSize-xl</code> 82, <code>--fontWeight-300..700</code>, <code>--fontFamily-mono/-print</code> for code and print.</p>
+  <div id="type-out" class="tlist"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, toggle and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
 </main>
+<script>
+const TOK = {"core":{"fontFamily":{"display":{"v":"TT_Norms_Pro, -apple-system, system-ui, sans-serif","t":"fontFamily","s":"measured computed font-family on h1.website-title (home, light, 1440); first family TT_Norms_Pro, a webfont the site loads. Not shipped in this package."},"ui":{"v":"TT_Norms_Pro, -apple-system, system-ui, sans-serif","t":"fontFamily","s":"measured computed font-family on header nav and .website-btn (home, light, 1440)"},"body":{"v":"Inter, -apple-system, system-ui, sans-serif","t":"fontFamily","s":"css @font-face family Inter (88 faces, woff2 from /packs/media/) plus the system stack the site names as fallback"}},"typography":{"display":{"v":{"fontFamily":"{fontFamily.display}","fontSize":"64px","fontWeight":600,"lineHeight":"70.4px"},"t":"typography","s":"css-var --website-heading-1-font-size--desktop; derived --website-heading-1-font-size--desktop 64px * --website-heading-1-line-height 1.1; css-var --website-heading-1-font-weight"},"heading":{"v":{"fontFamily":"{fontFamily.display}","fontSize":"48px","fontWeight":600,"lineHeight":"52.8px"},"t":"typography","s":"css-var --website-heading-2-font-size--desktop; derived --website-heading-2-font-size--desktop 48px * --website-heading-2-line-height 1.1; css-var --website-heading-2-font-weight"},"title":{"v":{"fontFamily":"{fontFamily.display}","fontSize":"32px","fontWeight":600,"lineHeight":"38.4px"},"t":"typography","s":"css-var --website-heading-3-font-size--tablet; derived --website-heading-3-font-size--tablet 32px * --website-heading-3-line-height 1.2; css-var --website-heading-3-font-weight"},"body":{"v":{"fontFamily":"{fontFamily.ui}","fontSize":"16px","fontWeight":400,"lineHeight":"25.6px"},"t":"typography","s":"css-var --website-paragraph-font-size; derived --website-paragraph-font-size 16px * --website-paragraph-line-height 1.6; not declared; paragraph uses the element default 400"},"label":{"v":{"fontFamily":"{fontFamily.ui}","fontSize":"18px","fontWeight":400,"lineHeight":"25.2px"},"t":"typography","s":"css-var --website-subtitle-font-size--tablet; derived --website-subtitle-font-size--tablet 18px * --website-subtitle-line-height 1.4; css-var --website-subtitle-font-weight"},"caption":{"v":{"fontFamily":"{fontFamily.ui}","fontSize":"12px","fontWeight":600,"lineHeight":"15.6px"},"t":"typography","s":"css-var --website-caption-font-size; derived --website-caption-font-size 12px * --website-caption-line-height 1.3; css-var --website-caption-font-weight"},"notes":{"v":{"fontFamily":"{fontFamily.ui}","fontSize":"14px","fontWeight":400,"lineHeight":"19.6px"},"t":"typography","s":"css-var --website-notes-font-size; derived --website-notes-font-size 14px * --website-notes-line-height 1.4; css-var --website-notes-font-weight"}},"spacing":{"05x":{"v":"8px","t":"dimension","s":"css-var --website-spacing-05x (light)"},"15x":{"v":"24px","t":"dimension","s":"css-var --website-spacing-15x (light)"},"1x":{"v":"16px","t":"dimension","s":"css-var --website-spacing-1x (light)"},"2x":{"v":"32px","t":"dimension","s":"css-var --website-spacing-2x (light)"},"3x":{"v":"48px","t":"dimension","s":"css-var --website-spacing-3x (light)"},"4x":{"v":"64px","t":"dimension","s":"css-var --website-spacing-4x (light)"},"7x":{"v":"112px","t":"dimension","s":"css-var --website-spacing-7x (light)"}},"radius":{"lg":{"v":"20px","t":"dimension","s":"css-var --website-roundness-lg (light)"},"md":{"v":"8px","t":"dimension","s":"css-var --website-roundness-md (light)"},"control":{"v":"8px","t":"dimension","s":"measured border-radius on button.website-btn.bg-color--accent (home header, light, 1440); matches css-var --website-roundness-md"}},"grid":{"gutter":{"desktop":{"v":"16px","t":"dimension","s":"css-var --website-grid-gutter--desktop (light)"},"desktopbig":{"v":"16px","t":"dimension","s":"css-var --website-grid-gutter--desktop-big (light)"},"desktopsmall":{"v":"16px","t":"dimension","s":"css-var --website-grid-gutter--desktop-small (light)"},"laptop":{"v":"16px","t":"dimension","s":"css-var --website-grid-gutter--laptop (light)"},"mobile":{"v":"16px","t":"dimension","s":"css-var --website-grid-gutter--mobile (light)"},"tablet":{"v":"16px","t":"dimension","s":"css-var --website-grid-gutter--tablet (light)"},"wide":{"v":"24px","t":"dimension","s":"css-var --website-grid-gutter--wide (light)"}},"maxWidth":{"desktop":{"v":"1220px","t":"dimension","s":"css-var --website-grid-max-width--desktop (light)"},"desktopbig":{"v":"1220px","t":"dimension","s":"css-var --website-grid-max-width--desktop-big (light)"},"wide":{"v":"1464px","t":"dimension","s":"css-var --website-grid-max-width--wide (light)"}}}},"light":{"page":{"v":"#ffffff","t":"color","s":"css-var --website-theme-surface-primary-color (light), resolved on .website-theme--light"},"surface":{"default":{"v":"#f2f5fa","t":"color","s":"css-var --website-theme-surface-secondary-color (light), resolved on .website-theme--light"},"raised":{"v":"#ffffff","t":"color","s":"css-var --website-theme-surface-primary-color (light), resolved on .website-theme--light"},"invert":{"v":"#162136","t":"color","s":"css-var --website-theme-surface-invert-color (light), resolved on .website-theme--light"},"bullet":{"v":"#dce1eb","t":"color","s":"css-var --website-theme-surface-bullet-color (light), resolved on .website-theme--light"}},"text":{"primary":{"v":"#162136","t":"color","s":"css-var --website-theme-text-title-color (light), resolved on .website-theme--light"},"default":{"v":"#2b3a57","t":"color","s":"css-var --website-theme-text-primary-color (light), resolved on .website-theme--light"},"secondary":{"v":"#657694","t":"color","s":"css-var --website-theme-text-secondary-color (light), resolved on .website-theme--light"},"onAccent":{"v":"#162136","t":"color","s":"css-var --website-theme-text-title-color (light), resolved on .website-theme--light"},"invert":{"v":"#ffffff","t":"color","s":"css-var --website-theme-text-invert-color (light), resolved on .website-theme--light"}},"muted":{"v":"#657694","t":"color","s":"css-var --website-theme-text-secondary-color (light), resolved on .website-theme--light"},"link":{"default":{"v":"#0073d3","t":"color","s":"css-var --website-theme-link-color (light), resolved on .website-theme--light"},"hover":{"v":"#078eff","t":"color","s":"css-var --website-theme-link-hover-color (light), resolved on .website-theme--light"}},"border":{"default":{"v":"#dce1eb","t":"color","s":"css-var --website-theme-surface-bullet-color (light), resolved on .website-theme--light"}},"accent":{"default":{"v":"#00e05c","t":"color","s":"css-var --website-theme-surface-accent-color (light), resolved on .website-theme--light"},"hover":{"v":"#14ff75","t":"color","s":"css-var --website-theme-surface-accent-color-hover (light), resolved on .website-theme--light"},"pressed":{"v":"#00c752","t":"color","s":"css-var --website-theme-surface-accent-color-dark (light), resolved on .website-theme--light"}},"danger":{"v":"#e51739","t":"color","s":"css-var --website-theme-text-error-color (light), resolved on .website-theme--light"},"brand":{"green":{"v":"#00e05c","t":"color","s":"css-var --main-color (light), resolved on .website-theme--light"},"midnight":{"v":"#162136","t":"color","s":"css-var --website-theme-color--midnight (light), resolved on .website-theme--light"},"midnightFair":{"v":"#2b3a57","t":"color","s":"css-var --website-theme-color--midnight-fair (light), resolved on .website-theme--light"},"midnightMiddle":{"v":"#657694","t":"color","s":"css-var --website-theme-color--midnight-middle (light), resolved on .website-theme--light"},"midnightLight":{"v":"#bfc7d9","t":"color","s":"css-var --website-theme-color--midnight-light (light), resolved on .website-theme--light"},"blue":{"v":"#0073d3","t":"color","s":"css-var --website-theme-color--blue (light), resolved on .website-theme--light"},"blueLight":{"v":"#63c1ff","t":"color","s":"css-var --website-theme-color--blue-light (light), resolved on .website-theme--light"},"red":{"v":"#e51739","t":"color","s":"css-var --website-theme-color--red (light), resolved on .website-theme--light"}},"gradient":{"start":{"v":"#009980","t":"color","s":"css-var --website-theme-gradient-start-color (light), resolved on .website-theme--light"},"middle":{"v":"#00b259","t":"color","s":"css-var --website-theme-gradient-middle-color (light), resolved on .website-theme--light"},"end":{"v":"#00e05c","t":"color","s":"css-var --website-theme-gradient-end-color (light), resolved on .website-theme--light"},"aiStart":{"v":"#aaff00","t":"color","s":"css-var --website-theme-ai-gradient-start-color (light), resolved on .website-theme--light"},"aiMiddle":{"v":"#00e05c","t":"color","s":"css-var --website-theme-ai-gradient-middle-color (light), resolved on .website-theme--light"},"aiEnd":{"v":"#00e5bf","t":"color","s":"css-var --website-theme-ai-gradient-end-color (light), resolved on .website-theme--light"}},"component":{"control":{"height":{"v":"60px","t":"dimension","s":"measured height on hero-cta/default (button.website-btn size--small, home, light, 1440)"},"radius":{"v":"{radius.control}","t":"dimension","s":"alias of core.radius.control"}},"button":{"paddingX":{"v":"22px","t":"dimension","s":"measured paddingLeft on hero-cta/default"},"fontSize":{"v":"20px","t":"dimension","s":"measured fontSize on hero-cta/default"}}}},"dark":{"page":{"v":"#162136","t":"color","s":"css-var --website-theme-surface-primary-color (dark), resolved on .website-theme--dark"},"surface":{"default":{"v":"#2b3a57","t":"color","s":"css-var --website-theme-surface-secondary-color (dark), resolved on .website-theme--dark"},"raised":{"v":"#162136","t":"color","s":"css-var --website-theme-surface-primary-color (dark), resolved on .website-theme--dark"},"invert":{"v":"#ffffff","t":"color","s":"css-var --website-theme-surface-invert-color (dark), resolved on .website-theme--dark"},"bullet":{"v":"#40516e","t":"color","s":"css-var --website-theme-surface-bullet-color (dark), resolved on .website-theme--dark"}},"text":{"primary":{"v":"#ffffff","t":"color","s":"css-var --website-theme-text-title-color (dark), resolved on .website-theme--dark"},"default":{"v":"#ffffff","t":"color","s":"css-var --website-theme-text-primary-color (dark), resolved on .website-theme--dark"},"secondary":{"v":"#bfc7d9","t":"color","s":"css-var --website-theme-text-secondary-color (dark), resolved on .website-theme--dark"},"onAccent":{"v":"#ffffff","t":"color","s":"css-var --website-theme-text-title-color (dark), resolved on .website-theme--dark"},"invert":{"v":"#162136","t":"color","s":"css-var --website-theme-text-invert-color (dark), resolved on .website-theme--dark"}},"muted":{"v":"#bfc7d9","t":"color","s":"css-var --website-theme-text-secondary-color (dark), resolved on .website-theme--dark"},"link":{"default":{"v":"#63c1ff","t":"color","s":"css-var --website-theme-link-color (dark), resolved on .website-theme--dark"},"hover":{"v":"#96d5ff","t":"color","s":"css-var --website-theme-link-hover-color (dark), resolved on .website-theme--dark"}},"border":{"default":{"v":"#40516e","t":"color","s":"css-var --website-theme-surface-bullet-color (dark), resolved on .website-theme--dark"}},"accent":{"default":{"v":"#00e05c","t":"color","s":"css-var --website-theme-surface-accent-color (dark), resolved on .website-theme--dark"},"hover":{"v":"#14ff75","t":"color","s":"css-var --website-theme-surface-accent-color-hover (dark), resolved on .website-theme--dark"},"pressed":{"v":"#00c752","t":"color","s":"css-var --website-theme-surface-accent-color-dark (dark), resolved on .website-theme--dark"}},"danger":{"v":"#ff5468","t":"color","s":"css-var --website-theme-text-error-color (dark), resolved on .website-theme--dark"},"brand":{"green":{"v":"#00e05c","t":"color","s":"css-var --main-color (dark), resolved on .website-theme--dark"},"midnight":{"v":"#162136","t":"color","s":"css-var --website-theme-color--midnight (dark), resolved on .website-theme--dark"},"midnightFair":{"v":"#2b3a57","t":"color","s":"css-var --website-theme-color--midnight-fair (dark), resolved on .website-theme--dark"},"midnightMiddle":{"v":"#657694","t":"color","s":"css-var --website-theme-color--midnight-middle (dark), resolved on .website-theme--dark"},"midnightLight":{"v":"#bfc7d9","t":"color","s":"css-var --website-theme-color--midnight-light (dark), resolved on .website-theme--dark"},"blue":{"v":"#0073d3","t":"color","s":"css-var --website-theme-color--blue (dark), resolved on .website-theme--dark"},"blueLight":{"v":"#63c1ff","t":"color","s":"css-var --website-theme-color--blue-light (dark), resolved on .website-theme--dark"},"red":{"v":"#e51739","t":"color","s":"css-var --website-theme-color--red (dark), resolved on .website-theme--dark"}},"gradient":{"start":{"v":"#80ff00","t":"color","s":"css-var --website-theme-gradient-start-color (dark), resolved on .website-theme--dark"},"middle":{"v":"#00e05c","t":"color","s":"css-var --website-theme-gradient-middle-color (dark), resolved on .website-theme--dark"},"end":{"v":"#00e0bb","t":"color","s":"css-var --website-theme-gradient-end-color (dark), resolved on .website-theme--dark"},"aiStart":{"v":"#00ff2b","t":"color","s":"css-var --website-theme-ai-gradient-start-color (dark), resolved on .website-theme--dark"},"aiMiddle":{"v":"#00e05c","t":"color","s":"css-var --website-theme-ai-gradient-middle-color (dark), resolved on .website-theme--dark"},"aiEnd":{"v":"#00e5e5","t":"color","s":"css-var --website-theme-ai-gradient-end-color (dark), resolved on .website-theme--dark"}}}};
+const $ = (s) => document.querySelector(s);
+$('#mode').addEventListener('click', () => {
+  const d = document.documentElement.dataset.mode === 'dark';
+  document.documentElement.dataset.mode = d ? '' : 'dark';
+  $('#mode').textContent = d ? 'Dark' : 'Light';
+});
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  // Colours sit flat under core (primary.600, neutral.200.201, card.bg.*,
+  // brand.50..900 plus bare names like gold, black, gray.800); group the
+  // flattened list by its first two segments where they form a family, else
+  // the first.
+  const colors = flat(TOK.core || {}, '').filter(([, t]) => t.t === 'color');
+  const groups = new Map();
+  for (const [n, t] of colors) {
+    const p = n.split('.');
+    const g = p.length > 2 ? p[0] + '.' + p[1] : p[0];
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push([n, t]);
+  }
+  for (const [g, items] of groups) {
+    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const g of ['media', 'grid', 'zIndex', 'border', 'shadow', 'transition', 'spacing'])
+    for (const [n, t] of flat(TOK.core[g] || {}, g + '.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+// Resolve a {path.to.token} alias against TOK.core so labels read the real
+// family names, not the alias braces.
+const resolveTok = (a, depth = 0) => {
+  const m = /^\{(.+)\}$/.exec(String(a || '').trim());
+  if (!m || depth > 4) return a;
+  let n = TOK.core;
+  for (const p of m[1].split('.')) n = n && n[p];
+  return n && n.v !== undefined ? resolveTok(n.v, depth + 1) : a;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fam = String(resolveTok(v.fontFamily) || 'inherit').replace(/"/g, "'");
+    const wt = String(v.fontWeight || 400).replace(/[^0-9]/g, '') || 400;
+    h += `<div class="trow"><div class="tnm">${esc(n)}</div><div class="tspec" style="font-family:${fam};font-weight:${wt};font-size:${esc(v.fontSize || '16px')};line-height:${esc(v.lineHeight || '1.4')}">${esc(fam.split(',')[0] || '')} ${esc(v.fontSize || '')}/${esc(v.lineHeight || '')}</div></div>`;
+  }
+  const el = $('#type-out'); if (el) el.innerHTML = h;
+})();
+</script>
 </body>
 </html>

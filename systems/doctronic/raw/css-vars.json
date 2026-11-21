@@ -1,3085 +1,1838 @@
 {
- "readAt": "2026-11-13",
- "source": "the stylesheet bodies read during a live home load on www.doctronic.ai (the Next.js chunks from /_next/static/chunks/ captured as network responses plus the inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, with data-theme=\"light\" and data-theme=\"dark\" on <html> — the site's own persisted-preference mechanism — at 1440 x 900",
- "sheets": [
-  "https://www.doctronic.ai/_next/static/chunks/2elxkv_1x_ybc.css (64 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/1rdqgsbo0q8vz.css (69716 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/0xag2nkn69pf1.css (258 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css (19854 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/1xo2g1rsq8yby.css (1180 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css (117881 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css (116598 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/3ebektxn-pp0s.css (472 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/1dhoibqashg2m.css (582 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/2me0wsggkfcfs.css (241 bytes)",
-  "https://www.doctronic.ai/_next/static/chunks/2fr07zi1hnwcp.css (4529 bytes)",
-  "https://www.gstatic.com/recaptcha/releases/0lEGiwO4Qwx5R9ArxUy0mBpf/styles__ltr.css (75062 bytes)",
-  "inline-0 (82 bytes)"
- ],
- "counts": {
-  "rules": 87,
-  "fonts": 9,
-  "names": {
-   "theme": 240,
-   "app": 67,
-   "vendor": 1,
-   "utility": 0,
-   "tailwind": 0
+  "product": "doctronic.ai",
+  "captured": "2026-11-21",
+  "route": "public-web live stylesheets",
+  "brand": {
+    "themeColor": "",
+    "maskIcon": "",
+    "colorScheme": "normal"
   },
-  "bySelector": {
-   "[app] @layer components.composite .f-84Za_removePromoButton": 1,
-   "[app] @layer components.composite .ZQc4qG_copyButton": 1,
-   "[app] @layer components.composite .fh7Xba_card": 2,
-   "[vendor] @layer components.composite .dEt_Wa_rating": 1,
-   "[app] .wl4fjW_circularSend": 1,
-   "[app] .F10haa_checkoutForm": 1,
-   "[app] @media (min-width: 768px) .F10haa_checkoutForm": 1,
-   "[app] @layer components.composite .JEFeiW_stage": 2,
-   "[theme] :root": 80,
-   "[theme] @layer tokens :root": 151,
-   "[theme] @layer tokens [data-theme=\"dark\"]": 51,
-   "[theme] .Ijxoba_variable": 1,
-   "[theme] .P2jE_a_variable": 1,
-   "[theme] .AGcgpq_variable": 1,
-   "[app] @layer components.primitives .kDsQ5q_backButton": 1,
-   "[app] @layer components.primitives .PYkdMW_widgetChip": 2,
-   "[app] @layer components.composite .VrH0IW_container[data-rising] .VrH0IW_reports > :nth-child(2)": 1,
-   "[app] @layer components.composite .VrH0IW_container[data-rising] .VrH0IW_reports > :nth-child(n+3), .VrH0IW_container[data-rising] .VrH0IW_timeline > :first-child": 1,
-   "[app] @layer components.composite .VrH0IW_container[data-rising] .VrH0IW_timeline > :nth-child(2)": 1,
-   "[app] @layer components.composite .VrH0IW_container[data-rising] .VrH0IW_timeline > :nth-child(3)": 1,
-   "[app] @layer components.composite .VrH0IW_container[data-rising] .VrH0IW_timeline > :nth-child(n+4)": 1,
-   "[app] @layer components.composite .VrH0IW_container[data-rising] .VrH0IW_footer": 1,
-   "[app] @layer components.composite html:has(.VrH0IW_nextStepBar:not(:empty))": 1,
-   "[app] @layer components.composite @media (min-width: 768px) html:has(.VrH0IW_nextStepBar:not(:empty))": 1,
-   "[theme] @layer components.primitives .kzefeW_tag[data-likelihood=\"most_likely\"]": 1,
-   "[theme] @layer components.primitives .kzefeW_tag[data-likelihood=\"possible\"]": 1,
-   "[theme] @layer components.primitives .kzefeW_tag[data-likelihood=\"less_likely\"]": 1,
-   "[app] @layer components.primitives .lgAi_W_scrollArea": 2,
-   "[app] @layer components.primitives .lgAi_W_scrollArea[data-can-scroll-up]": 1,
-   "[app] @layer components.primitives .lgAi_W_scrollArea[data-can-scroll-down]": 1,
-   "[theme] @layer components.composite ._kqGBW_card": 1,
-   "[theme] @layer components.composite ._kqGBW_card:where(details):not([open]):hover": 1,
-   "[theme] @layer components.composite [data-theme=\"dark\"] ._kqGBW_card": 1,
-   "[theme] @layer components.composite .YEKCSq_active .YEKCSq_wrapper [data-chat-composer]": 1,
-   "[app] @layer components.composite .YEKCSq_active .YEKCSq_wrapperOpen[data-full-height] [data-chat-composer], .YEKCSq_active .YEKCSq_wrapperOpen[data-full-height] .YEKCSq_footer": 1,
-   "[app] @layer components.composite .YEKCSq_toggle .YEKCSq_title": 1,
-   "[app] @layer components.composite .YEKCSq_bodyContent": 2,
-   "[app] ._5a150W_container": 1,
-   "[app] ._5a150W_containerScrollsWithPage": 1,
-   "[app] @layer components.composite .XdfZRa_readyJoinDot": 1,
-   "[app] ._45Qx_W_container": 1,
-   "[app] ._45Qx_W_containerWithFloatingBar": 1,
-   "[theme] ._45Qx_W_chatInput": 2,
-   "[app] @media (min-width: 768px) ._45Qx_W_container": 1,
-   "[app] @media (min-width: 1024px) ._45Qx_W_page": 1,
-   "[app] @media (min-width: 1280px) ._45Qx_W_container": 1,
-   "[app] @layer components.composite ._2UlJwa_back": 1,
-   "[app] @layer components.composite .Pl-NOq_chips": 1,
-   "[app] @layer components.composite .i_knra_area": 2,
-   "[app] @layer components.composite .i_knra_fadeStart": 1,
-   "[app] @layer components.composite .i_knra_fadeEnd": 1,
-   "[app] .QZDcuG_tooltip": 1,
-   "[app] @layer components.primitives .j7r8tq_removeButton": 1,
-   "[app] @layer components.primitives .-qoqIW_container": 11,
-   "[app] @layer components.composite .V3hGJG_closeButton": 1,
-   "[app] @layer components.primitives .Eoxc2q_trigger": 1,
-   "[app] @layer components.primitives .Q7Qita_wrapper": 1,
-   "[app] .gUBszG_tooltip": 2,
-   "[app] @layer components.primitives .d2-k9q_control": 1,
-   "[app] @layer components.composite .yAxMJq_tilt": 7,
-   "[app] @layer components.composite @supports (color:lab(0% 0 0)) .yAxMJq_tilt": 4,
-   "[app] @layer components.composite @media (min-width: 576px) .T3zeqa_content": 4,
-   "[app] @layer components.composite @media (min-width: 576px) .T3zeqa_content[data-fade-top]": 2,
-   "[app] @layer components.composite @media (min-width: 576px) .T3zeqa_content[data-fade-bottom]": 2,
-   "[app] @layer components.composite ._8RmYUW_card": 2,
-   "[app] .ucfd_W_sidebar": 2,
-   "[app] @layer components.primitives .wHY5dW_arrow": 1,
-   "[app] @layer components.composite .IAMzyW_button > svg": 1,
-   "[app] @layer base .PhlhIa_pulseActiveDot": 1,
-   "[app] @layer components.composite .UaPYYW_wrapper": 2,
-   "[app] @layer components.composite @media (min-width: 768px) .UaPYYW_wrapper": 1,
-   "[app] @layer components.composite @media (min-width: 768px) .UaPYYW_blob": 1,
-   "[app] @layer components.composite ._1ezn5q_wrapper": 1,
-   "[app] @layer components.composite @media (min-width: 768px) ._1ezn5q_placeholderContent": 1,
-   "[app] .xQMwQq_send": 1,
-   "[app] @layer base .eLaFQq_root": 3,
-   "[app] @layer base @media (prefers-reduced-motion: reduce) .eLaFQq_wrapper, .eLaFQq_wrapper[data-active=\"true\"]": 7,
-   "[app] @layer base [data-animations-paused] .eLaFQq_wrapper, [data-animations-paused] .eLaFQq_wrapper[data-active=\"true\"]": 7,
-   "[app] @layer components.composite ._7_3ViG_cardWrapper": 1,
-   "[app] @layer components.composite .d8D_Ia_calendarButton": 1,
-   "[app] @layer patterns @keyframes FlaGyG_borderTracerOrbit ": 2,
-   "[app] ._0kkZOG_containerWithFloatingBar": 1,
-   "[theme] ._0kkZOG_chatInput": 2,
-   "[app] @media (min-width: 1024px) ._0kkZOG_page": 1,
-   "[app] @layer components.composite @media (min-width: 768px) .H3ziZa_arrowsWrapper": 1
+  "fonts": [
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "500",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geistMono",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geistMono",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "italic"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "italic"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "500",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geist",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geistMono",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "geistMono",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "normal"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "400",
+      "font-style": "italic"
+    },
+    {
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "font-family": "fraunces",
+      "src": "url(…) format(\"woff2\")",
+      "font-display": "swap",
+      "font-weight": "600",
+      "font-style": "italic"
+    }
+  ],
+  "ruleCount": 172,
+  "extra": [
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/0xag2nkn69pf1.css",
+      "added": 0
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/45bby630pfxoe.css",
+      "added": 0
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "added": 4
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/3yue-gqhp6-_6.css",
+      "added": 44
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "added": 3
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/0cv7i0b-ks02b.css",
+      "added": 4
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/1xo2g1rsq8yby.css",
+      "added": 0
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/0fgo_0lnb37j5.css",
+      "added": 28
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/2_9xz08fdu5jd.css",
+      "added": 0
+    },
+    {
+      "url": "https://www.doctronic.ai/_next/static/chunks/3d2w8vx_v4--h.css",
+      "added": 6
+    }
+  ],
+  "rules": [
+    {
+      "selector": ":root",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-white": "#fff",
+        "--color-blue-50": "#f0f6ff",
+        "--color-blue-100": "#dcebfe",
+        "--color-blue-200": "#bedbfe",
+        "--color-blue-300": "#91c3fd",
+        "--color-blue-400": "#61a6fa",
+        "--color-blue-500": "#3c83f6",
+        "--color-blue-600": "#2463eb",
+        "--color-blue-700": "#1d4fd7",
+        "--color-blue-800": "#1e3fae",
+        "--color-blue-900": "#1e3b8a",
+        "--color-blue-950": "#172554",
+        "--color-neutral-50": "#fdfdf7",
+        "--color-neutral-100": "#f5f5f0",
+        "--color-neutral-200": "#e4e4dc",
+        "--color-neutral-300": "#cecec5",
+        "--color-neutral-400": "#a7a7a0",
+        "--color-neutral-500": "#797972",
+        "--color-neutral-600": "#53544f",
+        "--color-neutral-700": "#3c3c39",
+        "--color-neutral-800": "#272725",
+        "--color-neutral-900": "#1b1b18",
+        "--color-neutral-950": "#0b0b0a",
+        "--color-sage-50": "#f1f8f2",
+        "--color-sage-100": "#e1efe3",
+        "--color-sage-200": "#c9e3cc",
+        "--color-sage-300": "#b9dabd",
+        "--color-sage-400": "#8dbf93",
+        "--color-sage-500": "#5e9c65",
+        "--color-sage-600": "#45824d",
+        "--color-sage-700": "#34653a",
+        "--color-sage-800": "#264b2c",
+        "--color-sage-900": "#16311a",
+        "--color-sage-950": "#0a190c",
+        "--color-lime-50": "#f7ffe6",
+        "--color-lime-100": "#efffcc",
+        "--color-lime-200": "#e4ff9e",
+        "--color-lime-300": "#d9ff80",
+        "--color-lime-400": "#beec4b",
+        "--color-lime-500": "#a3ce2c",
+        "--color-lime-600": "#82a91e",
+        "--color-lime-700": "#66841a",
+        "--color-lime-800": "#4d641b",
+        "--color-lime-900": "#33421a",
+        "--color-lime-950": "#1a230b",
+        "--color-success-50": "#f1f8f2",
+        "--color-success-100": "#ddeedf",
+        "--color-success-200": "#bad9be",
+        "--color-success-300": "#8ebe95",
+        "--color-success-400": "#5ea168",
+        "--color-success-500": "#438448",
+        "--color-success-600": "#2f6a36",
+        "--color-success-700": "#235328",
+        "--color-success-800": "#193e1e",
+        "--color-success-900": "#112c15",
+        "--color-success-950": "#061309",
+        "--color-warning-50": "#fef9e7",
+        "--color-warning-100": "#fcefc0",
+        "--color-warning-200": "#f8de82",
+        "--color-warning-300": "#f1c946",
+        "--color-warning-400": "#e0ab1a",
+        "--color-warning-500": "#c28d0f",
+        "--color-warning-600": "#9d6f0b",
+        "--color-warning-700": "#7b550a",
+        "--color-warning-800": "#59410d",
+        "--color-warning-900": "#3c2d0b",
+        "--color-warning-950": "#1f1605",
+        "--color-error-50": "#fdedee",
+        "--color-error-100": "#fbd5d9",
+        "--color-error-200": "#f5a8b1",
+        "--color-error-300": "#ed7383",
+        "--color-error-400": "#de3f57",
+        "--color-error-500": "#c52640",
+        "--color-error-600": "#a61c31",
+        "--color-error-700": "#841527",
+        "--color-error-800": "#610f1d",
+        "--color-error-900": "#3e0914",
+        "--color-error-950": "#20030a"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [
+        "@layer tokens"
+      ],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-surface-canvas": "var(--color-neutral-50)",
+        "--color-surface-raised": "var(--color-white)",
+        "--color-surface-sunken": "var(--color-neutral-100)",
+        "--color-surface-muted-blue": "#dbe2eb",
+        "--color-surface-muted-sage": "#dbe6dc",
+        "--color-surface-muted-warm": "#e4e1d8",
+        "--color-surface-muted-rose": "#e6dbe6",
+        "--color-wash-lavender-soft": "#efecf9",
+        "--color-wash-lavender-deep": "#e5e1f4",
+        "--color-wash-sky": "#e7eef3",
+        "--color-wash-sage": "#ebf4ec",
+        "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-200) 43.67%, var(--color-neutral-100) 75.79%, var(--color-neutral-200) 100%)",
+        "--chat-sheet-accent-stop-1": "var(--color-blue-600)",
+        "--chat-sheet-accent-stop-2": "#0ea5e9",
+        "--chat-sheet-accent-stop-3": "#22c55e",
+        "--chat-sheet-accent-stop-4": "#84cc16",
+        "--chat-sheet-accent-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-stop-1) 0%, var(--chat-sheet-accent-stop-2) 20%, var(--chat-sheet-accent-stop-3) 40%, var(--chat-sheet-accent-stop-4) 60%, var(--chat-sheet-accent-stop-2) 80%, var(--chat-sheet-accent-stop-1) 100%)",
+        "--chat-sheet-accent-still-stop-1": "var(--chat-sheet-accent-stop-1)",
+        "--chat-sheet-accent-still-stop-2": "#0369a1",
+        "--chat-sheet-accent-still-stop-3": "#047857",
+        "--chat-sheet-accent-still-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-still-stop-1), var(--chat-sheet-accent-still-stop-2), var(--chat-sheet-accent-still-stop-3))",
+        "--chat-sheet-tag-neutral-fill-hovered": "#efefe6",
+        "--tap-target-min": "2.75rem",
+        "--color-graphic-blue-subtle": "var(--color-blue-50)",
+        "--color-graphic-blue-soft": "var(--color-blue-100)",
+        "--color-graphic-blue-muted": "var(--color-blue-200)",
+        "--color-graphic-blue-moderate": "var(--color-blue-300)",
+        "--color-graphic-blue-strong": "var(--color-blue-400)",
+        "--color-graphic-blue-bold": "var(--color-blue-500)",
+        "--color-fg-default": "var(--color-neutral-900)",
+        "--color-fg-muted": "hsl(from var(--color-neutral-900) h s l / .73)",
+        "--color-fg-subtle": "hsl(from var(--color-neutral-900) h s l / .6)",
+        "--color-fg-disabled": "hsl(from var(--color-neutral-900) h s l / .3)",
+        "--color-border-default": "hsl(from var(--color-neutral-900) h s l / .08)",
+        "--color-border-light": "hsl(from var(--color-neutral-900) h s l / .04)",
+        "--color-border-strong": "hsl(from var(--color-neutral-900) h s l / .2)",
+        "--color-border-disabled": "var(--color-neutral-300)",
+        "--color-border-subtle": "var(--color-neutral-100)",
+        "--color-divider": "var(--color-neutral-200)",
+        "--color-divider-strong": "var(--color-neutral-300)",
+        "--color-solid-bg": "var(--color-neutral-950)",
+        "--color-solid-bg-hover": "var(--color-neutral-800)",
+        "--color-solid-bg-pressed": "var(--color-neutral-900)",
+        "--color-solid-bg-disabled": "var(--color-neutral-200)",
+        "--color-solid-fg": "var(--color-neutral-50)",
+        "--color-solid-fg-disabled": "var(--color-neutral-500)",
+        "--color-link-default": "var(--color-accent-bg)",
+        "--color-link-hover": "var(--color-blue-700)",
+        "--color-link-disabled": "var(--color-neutral-500)",
+        "--color-link-visited": "var(--color-blue-800)",
+        "--color-accent-bg": "var(--color-blue-600)",
+        "--color-accent-bg-hover": "var(--color-blue-700)",
+        "--color-accent-fg": "var(--color-white)",
+        "--color-accent-bg-pressed": "var(--color-blue-800)",
+        "--color-accent-bg-disabled": "var(--color-neutral-200)",
+        "--color-accent-fg-disabled": "var(--color-neutral-500)",
+        "--color-accent-focus-ring": "var(--color-blue-500)",
+        "--color-accent-focus-ring-black": "var(--color-neutral-950)",
+        "--focus-ring-width": "2px",
+        "--focus-ring-offset": "2px",
+        "--color-success-bg": "var(--color-success-50)",
+        "--color-success-border": "var(--color-success-200)",
+        "--color-success-fg": "var(--color-success-800)",
+        "--color-warning-bg": "var(--color-warning-50)",
+        "--color-warning-border": "var(--color-warning-200)",
+        "--color-warning-fg": "var(--color-warning-800)",
+        "--color-error-bg": "var(--color-error-50)",
+        "--color-error-border": "var(--color-error-200)",
+        "--color-error-fg": "var(--color-error-800)",
+        "--color-info-bg": "var(--color-blue-50)",
+        "--color-info-border": "var(--color-blue-200)",
+        "--color-info-fg": "var(--color-blue-800)",
+        "--color-icon-default": "var(--color-neutral-950)",
+        "--tracking-display": "-.01em",
+        "--tracking-tight": "-.02em",
+        "--text-display-24": "400 1.5rem/1.17 var(--font-display)",
+        "--text-display-32": "400 2rem/1.17 var(--font-display)",
+        "--text-display-40": "400 2.5rem/1.17 var(--font-display)",
+        "--text-display-48": "400 3rem/1.17 var(--font-display)",
+        "--text-display-56": "400 3.5rem/1.17 var(--font-display)",
+        "--text-display-64": "400 4rem/1.17 var(--font-display)",
+        "--text-display-72": "400 4.5rem/1.17 var(--font-display)",
+        "--text-italic-14": "italic 400 .875rem/1.25 var(--font-display)",
+        "--text-italic-18": "italic 400 1.125rem/1.25 var(--font-display)",
+        "--text-italic-24": "italic 400 1.5rem/1.25 var(--font-display)",
+        "--text-italic-32": "italic 400 2rem/1.25 var(--font-display)",
+        "--text-italic-40": "italic 400 2.5rem/1.25 var(--font-display)",
+        "--text-italic-48": "italic 400 3rem/1.25 var(--font-display)",
+        "--text-italic-56": "italic 400 3.5rem/1.25 var(--font-display)",
+        "--text-italic-64": "italic 400 4rem/1.25 var(--font-display)",
+        "--text-italic-72": "italic 400 4.5rem/1.25 var(--font-display)",
+        "--text-heading-10": "600 .625rem/1.4 var(--font-sans)",
+        "--text-heading-12": "600 .75rem/1.4 var(--font-sans)",
+        "--text-heading-14": "600 .875rem/1.4 var(--font-sans)",
+        "--text-heading-16": "600 1rem/1.4 var(--font-sans)",
+        "--text-heading-18": "600 1.125rem/1.4 var(--font-sans)",
+        "--text-heading-20": "600 1.25rem/1.4 var(--font-sans)",
+        "--text-heading-24": "600 1.5rem/1.4 var(--font-sans)",
+        "--text-heading-28": "600 1.75rem/1.4 var(--font-sans)",
+        "--text-heading-32": "600 2rem/1.4 var(--font-sans)",
+        "--text-heading-italic-10": "italic 600 .625rem/1.4 var(--font-sans)",
+        "--text-heading-italic-12": "italic 600 .75rem/1.4 var(--font-sans)",
+        "--text-heading-italic-14": "italic 600 .875rem/1.4 var(--font-sans)",
+        "--text-heading-italic-16": "italic 600 1rem/1.4 var(--font-sans)",
+        "--text-heading-italic-18": "italic 600 1.125rem/1.4 var(--font-sans)",
+        "--text-heading-italic-20": "italic 600 1.25rem/1.4 var(--font-sans)",
+        "--text-heading-italic-24": "italic 600 1.5rem/1.4 var(--font-sans)",
+        "--text-heading-italic-28": "italic 600 1.75rem/1.4 var(--font-sans)",
+        "--text-heading-italic-32": "italic 600 2rem/1.4 var(--font-sans)",
+        "--text-body-10": "400 .625rem/1.4 var(--font-sans)",
+        "--text-body-12": "400 .75rem/1.4 var(--font-sans)",
+        "--text-body-14": "400 .875rem/1.4 var(--font-sans)",
+        "--text-body-16": "400 1rem/1.4 var(--font-sans)",
+        "--text-body-18": "400 1.125rem/1.4 var(--font-sans)",
+        "--text-body-20": "400 1.25rem/1.4 var(--font-sans)",
+        "--text-body-24": "400 1.5rem/1.4 var(--font-sans)",
+        "--text-body-28": "400 1.75rem/1.4 var(--font-sans)",
+        "--text-body-32": "400 2rem/1.4 var(--font-sans)",
+        "--text-label-10": "500 .625rem/1.4 var(--font-sans)",
+        "--text-label-12": "500 .75rem/1.4 var(--font-sans)",
+        "--text-label-14": "500 .875rem/1.4 var(--font-sans)",
+        "--text-label-16": "500 1rem/1.4 var(--font-sans)",
+        "--text-label-18": "500 1.125rem/1.4 var(--font-sans)",
+        "--text-label-20": "500 1.25rem/1.4 var(--font-sans)",
+        "--text-label-24": "500 1.5rem/1.4 var(--font-sans)",
+        "--text-label-28": "500 1.75rem/1.4 var(--font-sans)",
+        "--text-label-32": "500 2rem/1.4 var(--font-sans)",
+        "--text-mono-10": "400 .625rem/1.4 var(--font-mono)",
+        "--text-mono-12": "400 .75rem/1.4 var(--font-mono)",
+        "--text-mono-14": "400 .875rem/1.4 var(--font-mono)",
+        "--text-mono-16": "400 1rem/1.4 var(--font-mono)",
+        "--text-mono-18": "400 1.125rem/1.4 var(--font-mono)",
+        "--text-mono-20": "400 1.25rem/1.4 var(--font-mono)",
+        "--text-mono-24": "400 1.5rem/1.4 var(--font-mono)",
+        "--text-mono-28": "400 1.75rem/1.4 var(--font-mono)",
+        "--text-mono-32": "400 2rem/1.4 var(--font-mono)",
+        "--text-mono-bold-10": "600 .625rem/1.4 var(--font-mono)",
+        "--text-mono-bold-12": "600 .75rem/1.4 var(--font-mono)",
+        "--text-mono-bold-14": "600 .875rem/1.4 var(--font-mono)",
+        "--text-mono-bold-16": "600 1rem/1.4 var(--font-mono)",
+        "--text-mono-bold-18": "600 1.125rem/1.4 var(--font-mono)",
+        "--text-mono-bold-20": "600 1.25rem/1.4 var(--font-mono)",
+        "--text-mono-bold-24": "600 1.5rem/1.4 var(--font-mono)",
+        "--text-mono-bold-28": "600 1.75rem/1.4 var(--font-mono)",
+        "--text-mono-bold-32": "600 2rem/1.4 var(--font-mono)",
+        "--shadow-xs": "0 1px 2px #0000000f",
+        "--shadow-sm": "0 1px 12px #0000000d",
+        "--shadow-md": "0 2px 12px #0000000f",
+        "--shadow-lg": "0 2px 24px #0000000f",
+        "--shadow-xl": "0 5px 32px #0000001a",
+        "--shadow-focus-ring": "0 0 0 2px var(--color-accent-bg)",
+        "--shadow-brand-glow": "0 4px 14px #0961e463",
+        "--shadow-brand-glow-hover": "0 6px 20px #0961e480"
+      }
+    },
+    {
+      "selector": "[data-theme=\"dark\"]",
+      "ctx": [
+        "@layer tokens"
+      ],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-surface-canvas": "#0d0e0b",
+        "--color-surface-raised": "var(--color-neutral-900)",
+        "--color-surface-sunken": "#080907",
+        "--color-surface-muted-blue": "#162136",
+        "--color-surface-muted-sage": "#18251c",
+        "--color-surface-muted-warm": "#262421",
+        "--color-surface-muted-rose": "#2c2131",
+        "--chat-sheet-tag-neutral-fill-hovered": "#0f110d",
+        "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-800) 43.67%, var(--color-neutral-700) 75.79%, var(--color-neutral-800) 100%)",
+        "--color-fg-default": "var(--color-neutral-50)",
+        "--color-fg-muted": "hsl(from var(--color-neutral-50) h s l / .73)",
+        "--color-fg-subtle": "hsl(from var(--color-neutral-50) h s l / .6)",
+        "--color-fg-disabled": "hsl(from var(--color-neutral-50) h s l / .3)",
+        "--color-border-light": "hsl(from var(--color-neutral-50) h s l / .04)",
+        "--color-border-default": "hsl(from var(--color-neutral-50) h s l / .08)",
+        "--color-border-strong": "hsl(from var(--color-neutral-50) h s l / .2)",
+        "--color-border-disabled": "var(--color-neutral-800)",
+        "--color-border-subtle": "var(--color-neutral-800)",
+        "--color-divider": "var(--color-neutral-700)",
+        "--color-divider-strong": "var(--color-neutral-600)",
+        "--color-link-default": "var(--color-blue-400)",
+        "--color-link-hover": "var(--color-blue-300)",
+        "--color-link-disabled": "var(--color-neutral-700)",
+        "--color-link-visited": "var(--color-blue-200)",
+        "--color-solid-bg": "var(--color-neutral-50)",
+        "--color-solid-bg-hover": "var(--color-neutral-200)",
+        "--color-solid-bg-pressed": "var(--color-neutral-100)",
+        "--color-solid-bg-disabled": "var(--color-neutral-800)",
+        "--color-solid-fg": "var(--color-neutral-950)",
+        "--color-solid-fg-disabled": "var(--color-neutral-700)",
+        "--color-accent-bg": "var(--color-blue-400)",
+        "--color-accent-bg-hover": "var(--color-blue-300)",
+        "--color-accent-fg": "var(--color-blue-950)",
+        "--color-accent-bg-pressed": "var(--color-blue-500)",
+        "--color-accent-bg-disabled": "var(--color-neutral-800)",
+        "--color-accent-fg-disabled": "var(--color-neutral-700)",
+        "--color-accent-focus-ring": "var(--color-blue-400)",
+        "--color-accent-focus-ring-black": "var(--color-neutral-50)",
+        "--color-success-bg": "var(--color-success-900)",
+        "--color-success-border": "var(--color-success-700)",
+        "--color-success-fg": "var(--color-success-200)",
+        "--color-warning-bg": "var(--color-warning-900)",
+        "--color-warning-border": "var(--color-warning-700)",
+        "--color-warning-fg": "var(--color-warning-200)",
+        "--color-error-bg": "var(--color-error-900)",
+        "--color-error-border": "var(--color-error-700)",
+        "--color-error-fg": "var(--color-error-200)",
+        "--color-info-bg": "var(--color-blue-900)",
+        "--color-info-border": "var(--color-blue-700)",
+        "--color-info-fg": "var(--color-blue-200)",
+        "--color-icon-default": "var(--color-neutral-50)"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--font-body": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+        "--header-height": "4.5rem"
+      }
+    },
+    {
+      "selector": ".Ijxoba_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-sans": "\"geist\", system-ui, Arial, sans-serif"
+      }
+    },
+    {
+      "selector": ".A3W5cG_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-mono": "\"geistMono\", ui-monospace, Courier New, monospace"
+      }
+    },
+    {
+      "selector": ".AGcgpq_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-display": "\"fraunces\", Georgia, Times New Roman, serif"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-white": "#fff",
+        "--color-blue-50": "#f0f6ff",
+        "--color-blue-100": "#dcebfe",
+        "--color-blue-200": "#bedbfe",
+        "--color-blue-300": "#91c3fd",
+        "--color-blue-400": "#61a6fa",
+        "--color-blue-500": "#3c83f6",
+        "--color-blue-600": "#2463eb",
+        "--color-blue-700": "#1d4fd7",
+        "--color-blue-800": "#1e3fae",
+        "--color-blue-900": "#1e3b8a",
+        "--color-blue-950": "#172554",
+        "--color-neutral-50": "#fdfdf7",
+        "--color-neutral-100": "#f5f5f0",
+        "--color-neutral-200": "#e4e4dc",
+        "--color-neutral-300": "#cecec5",
+        "--color-neutral-400": "#a7a7a0",
+        "--color-neutral-500": "#797972",
+        "--color-neutral-600": "#53544f",
+        "--color-neutral-700": "#3c3c39",
+        "--color-neutral-800": "#272725",
+        "--color-neutral-900": "#1b1b18",
+        "--color-neutral-950": "#0b0b0a",
+        "--color-sage-50": "#f1f8f2",
+        "--color-sage-100": "#e1efe3",
+        "--color-sage-200": "#c9e3cc",
+        "--color-sage-300": "#b9dabd",
+        "--color-sage-400": "#8dbf93",
+        "--color-sage-500": "#5e9c65",
+        "--color-sage-600": "#45824d",
+        "--color-sage-700": "#34653a",
+        "--color-sage-800": "#264b2c",
+        "--color-sage-900": "#16311a",
+        "--color-sage-950": "#0a190c",
+        "--color-lime-50": "#f7ffe6",
+        "--color-lime-100": "#efffcc",
+        "--color-lime-200": "#e4ff9e",
+        "--color-lime-300": "#d9ff80",
+        "--color-lime-400": "#beec4b",
+        "--color-lime-500": "#a3ce2c",
+        "--color-lime-600": "#82a91e",
+        "--color-lime-700": "#66841a",
+        "--color-lime-800": "#4d641b",
+        "--color-lime-900": "#33421a",
+        "--color-lime-950": "#1a230b",
+        "--color-success-50": "#f1f8f2",
+        "--color-success-100": "#ddeedf",
+        "--color-success-200": "#bad9be",
+        "--color-success-300": "#8ebe95",
+        "--color-success-400": "#5ea168",
+        "--color-success-500": "#438448",
+        "--color-success-600": "#2f6a36",
+        "--color-success-700": "#235328",
+        "--color-success-800": "#193e1e",
+        "--color-success-900": "#112c15",
+        "--color-success-950": "#061309",
+        "--color-warning-50": "#fef9e7",
+        "--color-warning-100": "#fcefc0",
+        "--color-warning-200": "#f8de82",
+        "--color-warning-300": "#f1c946",
+        "--color-warning-400": "#e0ab1a",
+        "--color-warning-500": "#c28d0f",
+        "--color-warning-600": "#9d6f0b",
+        "--color-warning-700": "#7b550a",
+        "--color-warning-800": "#59410d",
+        "--color-warning-900": "#3c2d0b",
+        "--color-warning-950": "#1f1605",
+        "--color-error-50": "#fdedee",
+        "--color-error-100": "#fbd5d9",
+        "--color-error-200": "#f5a8b1",
+        "--color-error-300": "#ed7383",
+        "--color-error-400": "#de3f57",
+        "--color-error-500": "#c52640",
+        "--color-error-600": "#a61c31",
+        "--color-error-700": "#841527",
+        "--color-error-800": "#610f1d",
+        "--color-error-900": "#3e0914",
+        "--color-error-950": "#20030a"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [
+        "@layer tokens"
+      ],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-surface-canvas": "var(--color-neutral-50)",
+        "--color-surface-raised": "var(--color-white)",
+        "--color-surface-sunken": "var(--color-neutral-100)",
+        "--color-surface-muted-blue": "#dbe2eb",
+        "--color-surface-muted-sage": "#dbe6dc",
+        "--color-surface-muted-warm": "#e4e1d8",
+        "--color-surface-muted-rose": "#e6dbe6",
+        "--color-wash-lavender-soft": "#efecf9",
+        "--color-wash-lavender-deep": "#e5e1f4",
+        "--color-wash-sky": "#e7eef3",
+        "--color-wash-sage": "#ebf4ec",
+        "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-200) 43.67%, var(--color-neutral-100) 75.79%, var(--color-neutral-200) 100%)",
+        "--chat-sheet-accent-stop-1": "var(--color-blue-600)",
+        "--chat-sheet-accent-stop-2": "#0ea5e9",
+        "--chat-sheet-accent-stop-3": "#22c55e",
+        "--chat-sheet-accent-stop-4": "#84cc16",
+        "--chat-sheet-accent-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-stop-1) 0%, var(--chat-sheet-accent-stop-2) 20%, var(--chat-sheet-accent-stop-3) 40%, var(--chat-sheet-accent-stop-4) 60%, var(--chat-sheet-accent-stop-2) 80%, var(--chat-sheet-accent-stop-1) 100%)",
+        "--chat-sheet-accent-still-stop-1": "var(--chat-sheet-accent-stop-1)",
+        "--chat-sheet-accent-still-stop-2": "#0369a1",
+        "--chat-sheet-accent-still-stop-3": "#047857",
+        "--chat-sheet-accent-still-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-still-stop-1), var(--chat-sheet-accent-still-stop-2), var(--chat-sheet-accent-still-stop-3))",
+        "--chat-sheet-tag-neutral-fill-hovered": "#efefe6",
+        "--tap-target-min": "2.75rem",
+        "--color-graphic-blue-subtle": "var(--color-blue-50)",
+        "--color-graphic-blue-soft": "var(--color-blue-100)",
+        "--color-graphic-blue-muted": "var(--color-blue-200)",
+        "--color-graphic-blue-moderate": "var(--color-blue-300)",
+        "--color-graphic-blue-strong": "var(--color-blue-400)",
+        "--color-graphic-blue-bold": "var(--color-blue-500)",
+        "--color-fg-default": "var(--color-neutral-900)",
+        "--color-fg-muted": "hsl(from var(--color-neutral-900) h s l / .73)",
+        "--color-fg-subtle": "hsl(from var(--color-neutral-900) h s l / .6)",
+        "--color-fg-disabled": "hsl(from var(--color-neutral-900) h s l / .3)",
+        "--color-border-default": "hsl(from var(--color-neutral-900) h s l / .08)",
+        "--color-border-light": "hsl(from var(--color-neutral-900) h s l / .04)",
+        "--color-border-strong": "hsl(from var(--color-neutral-900) h s l / .2)",
+        "--color-border-disabled": "var(--color-neutral-300)",
+        "--color-border-subtle": "var(--color-neutral-100)",
+        "--color-divider": "var(--color-neutral-200)",
+        "--color-divider-strong": "var(--color-neutral-300)",
+        "--color-solid-bg": "var(--color-neutral-950)",
+        "--color-solid-bg-hover": "var(--color-neutral-800)",
+        "--color-solid-bg-pressed": "var(--color-neutral-900)",
+        "--color-solid-bg-disabled": "var(--color-neutral-200)",
+        "--color-solid-fg": "var(--color-neutral-50)",
+        "--color-solid-fg-disabled": "var(--color-neutral-500)",
+        "--color-link-default": "var(--color-accent-bg)",
+        "--color-link-hover": "var(--color-blue-700)",
+        "--color-link-disabled": "var(--color-neutral-500)",
+        "--color-link-visited": "var(--color-blue-800)",
+        "--color-accent-bg": "var(--color-blue-600)",
+        "--color-accent-bg-hover": "var(--color-blue-700)",
+        "--color-accent-fg": "var(--color-white)",
+        "--color-accent-bg-pressed": "var(--color-blue-800)",
+        "--color-accent-bg-disabled": "var(--color-neutral-200)",
+        "--color-accent-fg-disabled": "var(--color-neutral-500)",
+        "--color-accent-focus-ring": "var(--color-blue-500)",
+        "--color-accent-focus-ring-black": "var(--color-neutral-950)",
+        "--focus-ring-width": "2px",
+        "--focus-ring-offset": "2px",
+        "--color-success-bg": "var(--color-success-50)",
+        "--color-success-border": "var(--color-success-200)",
+        "--color-success-fg": "var(--color-success-800)",
+        "--color-warning-bg": "var(--color-warning-50)",
+        "--color-warning-border": "var(--color-warning-200)",
+        "--color-warning-fg": "var(--color-warning-800)",
+        "--color-error-bg": "var(--color-error-50)",
+        "--color-error-border": "var(--color-error-200)",
+        "--color-error-fg": "var(--color-error-800)",
+        "--color-info-bg": "var(--color-blue-50)",
+        "--color-info-border": "var(--color-blue-200)",
+        "--color-info-fg": "var(--color-blue-800)",
+        "--color-icon-default": "var(--color-neutral-950)",
+        "--tracking-display": "-.01em",
+        "--tracking-tight": "-.02em",
+        "--text-display-24": "400 1.5rem/1.17 var(--font-display)",
+        "--text-display-32": "400 2rem/1.17 var(--font-display)",
+        "--text-display-40": "400 2.5rem/1.17 var(--font-display)",
+        "--text-display-48": "400 3rem/1.17 var(--font-display)",
+        "--text-display-56": "400 3.5rem/1.17 var(--font-display)",
+        "--text-display-64": "400 4rem/1.17 var(--font-display)",
+        "--text-display-72": "400 4.5rem/1.17 var(--font-display)",
+        "--text-italic-14": "italic 400 .875rem/1.25 var(--font-display)",
+        "--text-italic-18": "italic 400 1.125rem/1.25 var(--font-display)",
+        "--text-italic-24": "italic 400 1.5rem/1.25 var(--font-display)",
+        "--text-italic-32": "italic 400 2rem/1.25 var(--font-display)",
+        "--text-italic-40": "italic 400 2.5rem/1.25 var(--font-display)",
+        "--text-italic-48": "italic 400 3rem/1.25 var(--font-display)",
+        "--text-italic-56": "italic 400 3.5rem/1.25 var(--font-display)",
+        "--text-italic-64": "italic 400 4rem/1.25 var(--font-display)",
+        "--text-italic-72": "italic 400 4.5rem/1.25 var(--font-display)",
+        "--text-heading-10": "600 .625rem/1.4 var(--font-sans)",
+        "--text-heading-12": "600 .75rem/1.4 var(--font-sans)",
+        "--text-heading-14": "600 .875rem/1.4 var(--font-sans)",
+        "--text-heading-16": "600 1rem/1.4 var(--font-sans)",
+        "--text-heading-18": "600 1.125rem/1.4 var(--font-sans)",
+        "--text-heading-20": "600 1.25rem/1.4 var(--font-sans)",
+        "--text-heading-24": "600 1.5rem/1.4 var(--font-sans)",
+        "--text-heading-28": "600 1.75rem/1.4 var(--font-sans)",
+        "--text-heading-32": "600 2rem/1.4 var(--font-sans)",
+        "--text-heading-italic-10": "italic 600 .625rem/1.4 var(--font-sans)",
+        "--text-heading-italic-12": "italic 600 .75rem/1.4 var(--font-sans)",
+        "--text-heading-italic-14": "italic 600 .875rem/1.4 var(--font-sans)",
+        "--text-heading-italic-16": "italic 600 1rem/1.4 var(--font-sans)",
+        "--text-heading-italic-18": "italic 600 1.125rem/1.4 var(--font-sans)",
+        "--text-heading-italic-20": "italic 600 1.25rem/1.4 var(--font-sans)",
+        "--text-heading-italic-24": "italic 600 1.5rem/1.4 var(--font-sans)",
+        "--text-heading-italic-28": "italic 600 1.75rem/1.4 var(--font-sans)",
+        "--text-heading-italic-32": "italic 600 2rem/1.4 var(--font-sans)",
+        "--text-body-10": "400 .625rem/1.4 var(--font-sans)",
+        "--text-body-12": "400 .75rem/1.4 var(--font-sans)",
+        "--text-body-14": "400 .875rem/1.4 var(--font-sans)",
+        "--text-body-16": "400 1rem/1.4 var(--font-sans)",
+        "--text-body-18": "400 1.125rem/1.4 var(--font-sans)",
+        "--text-body-20": "400 1.25rem/1.4 var(--font-sans)",
+        "--text-body-24": "400 1.5rem/1.4 var(--font-sans)",
+        "--text-body-28": "400 1.75rem/1.4 var(--font-sans)",
+        "--text-body-32": "400 2rem/1.4 var(--font-sans)",
+        "--text-label-10": "500 .625rem/1.4 var(--font-sans)",
+        "--text-label-12": "500 .75rem/1.4 var(--font-sans)",
+        "--text-label-14": "500 .875rem/1.4 var(--font-sans)",
+        "--text-label-16": "500 1rem/1.4 var(--font-sans)",
+        "--text-label-18": "500 1.125rem/1.4 var(--font-sans)",
+        "--text-label-20": "500 1.25rem/1.4 var(--font-sans)",
+        "--text-label-24": "500 1.5rem/1.4 var(--font-sans)",
+        "--text-label-28": "500 1.75rem/1.4 var(--font-sans)",
+        "--text-label-32": "500 2rem/1.4 var(--font-sans)",
+        "--text-mono-10": "400 .625rem/1.4 var(--font-mono)",
+        "--text-mono-12": "400 .75rem/1.4 var(--font-mono)",
+        "--text-mono-14": "400 .875rem/1.4 var(--font-mono)",
+        "--text-mono-16": "400 1rem/1.4 var(--font-mono)",
+        "--text-mono-18": "400 1.125rem/1.4 var(--font-mono)",
+        "--text-mono-20": "400 1.25rem/1.4 var(--font-mono)",
+        "--text-mono-24": "400 1.5rem/1.4 var(--font-mono)",
+        "--text-mono-28": "400 1.75rem/1.4 var(--font-mono)",
+        "--text-mono-32": "400 2rem/1.4 var(--font-mono)",
+        "--text-mono-bold-10": "600 .625rem/1.4 var(--font-mono)",
+        "--text-mono-bold-12": "600 .75rem/1.4 var(--font-mono)",
+        "--text-mono-bold-14": "600 .875rem/1.4 var(--font-mono)",
+        "--text-mono-bold-16": "600 1rem/1.4 var(--font-mono)",
+        "--text-mono-bold-18": "600 1.125rem/1.4 var(--font-mono)",
+        "--text-mono-bold-20": "600 1.25rem/1.4 var(--font-mono)",
+        "--text-mono-bold-24": "600 1.5rem/1.4 var(--font-mono)",
+        "--text-mono-bold-28": "600 1.75rem/1.4 var(--font-mono)",
+        "--text-mono-bold-32": "600 2rem/1.4 var(--font-mono)",
+        "--shadow-xs": "0 1px 2px #0000000f",
+        "--shadow-sm": "0 1px 12px #0000000d",
+        "--shadow-md": "0 2px 12px #0000000f",
+        "--shadow-lg": "0 2px 24px #0000000f",
+        "--shadow-xl": "0 5px 32px #0000001a",
+        "--shadow-focus-ring": "0 0 0 2px var(--color-accent-bg)",
+        "--shadow-brand-glow": "0 4px 14px #0961e463",
+        "--shadow-brand-glow-hover": "0 6px 20px #0961e480"
+      }
+    },
+    {
+      "selector": "[data-theme=\"dark\"]",
+      "ctx": [
+        "@layer tokens"
+      ],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--color-surface-canvas": "#0d0e0b",
+        "--color-surface-raised": "var(--color-neutral-900)",
+        "--color-surface-sunken": "#080907",
+        "--color-surface-muted-blue": "#162136",
+        "--color-surface-muted-sage": "#18251c",
+        "--color-surface-muted-warm": "#262421",
+        "--color-surface-muted-rose": "#2c2131",
+        "--chat-sheet-tag-neutral-fill-hovered": "#0f110d",
+        "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-800) 43.67%, var(--color-neutral-700) 75.79%, var(--color-neutral-800) 100%)",
+        "--color-fg-default": "var(--color-neutral-50)",
+        "--color-fg-muted": "hsl(from var(--color-neutral-50) h s l / .73)",
+        "--color-fg-subtle": "hsl(from var(--color-neutral-50) h s l / .6)",
+        "--color-fg-disabled": "hsl(from var(--color-neutral-50) h s l / .3)",
+        "--color-border-light": "hsl(from var(--color-neutral-50) h s l / .04)",
+        "--color-border-default": "hsl(from var(--color-neutral-50) h s l / .08)",
+        "--color-border-strong": "hsl(from var(--color-neutral-50) h s l / .2)",
+        "--color-border-disabled": "var(--color-neutral-800)",
+        "--color-border-subtle": "var(--color-neutral-800)",
+        "--color-divider": "var(--color-neutral-700)",
+        "--color-divider-strong": "var(--color-neutral-600)",
+        "--color-link-default": "var(--color-blue-400)",
+        "--color-link-hover": "var(--color-blue-300)",
+        "--color-link-disabled": "var(--color-neutral-700)",
+        "--color-link-visited": "var(--color-blue-200)",
+        "--color-solid-bg": "var(--color-neutral-50)",
+        "--color-solid-bg-hover": "var(--color-neutral-200)",
+        "--color-solid-bg-pressed": "var(--color-neutral-100)",
+        "--color-solid-bg-disabled": "var(--color-neutral-800)",
+        "--color-solid-fg": "var(--color-neutral-950)",
+        "--color-solid-fg-disabled": "var(--color-neutral-700)",
+        "--color-accent-bg": "var(--color-blue-400)",
+        "--color-accent-bg-hover": "var(--color-blue-300)",
+        "--color-accent-fg": "var(--color-blue-950)",
+        "--color-accent-bg-pressed": "var(--color-blue-500)",
+        "--color-accent-bg-disabled": "var(--color-neutral-800)",
+        "--color-accent-fg-disabled": "var(--color-neutral-700)",
+        "--color-accent-focus-ring": "var(--color-blue-400)",
+        "--color-accent-focus-ring-black": "var(--color-neutral-50)",
+        "--color-success-bg": "var(--color-success-900)",
+        "--color-success-border": "var(--color-success-700)",
+        "--color-success-fg": "var(--color-success-200)",
+        "--color-warning-bg": "var(--color-warning-900)",
+        "--color-warning-border": "var(--color-warning-700)",
+        "--color-warning-fg": "var(--color-warning-200)",
+        "--color-error-bg": "var(--color-error-900)",
+        "--color-error-border": "var(--color-error-700)",
+        "--color-error-fg": "var(--color-error-200)",
+        "--color-info-bg": "var(--color-blue-900)",
+        "--color-info-border": "var(--color-blue-700)",
+        "--color-info-fg": "var(--color-blue-200)",
+        "--color-icon-default": "var(--color-neutral-50)"
+      }
+    },
+    {
+      "selector": ":root",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/1zlpaky4o9ti9.css",
+      "props": {
+        "--font-body": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+        "--header-height": "4.5rem"
+      }
+    },
+    {
+      "selector": ".Ijxoba_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-sans": "\"geist\", system-ui, Arial, sans-serif"
+      }
+    },
+    {
+      "selector": ".A3W5cG_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-mono": "\"geistMono\", ui-monospace, Courier New, monospace"
+      }
+    },
+    {
+      "selector": ".AGcgpq_variable",
+      "ctx": [],
+      "file": "https://www.doctronic.ai/_next/static/chunks/34b27_lp2pwhh.css",
+      "props": {
+        "--font-display": "\"fraunces\", Georgia, Times New Roman, serif"
+      }
+    }
+  ],
+  "resolved": {
+    "light": {
+      "--color-white": {
+        "raw": "#fff",
+        "value": "#fff"
+      },
+      "--color-blue-50": {
+        "raw": "#f0f6ff",
+        "value": "#f0f6ff"
+      },
+      "--color-blue-100": {
+        "raw": "#dcebfe",
+        "value": "#dcebfe"
+      },
+      "--color-blue-200": {
+        "raw": "#bedbfe",
+        "value": "#bedbfe"
+      },
+      "--color-blue-300": {
+        "raw": "#91c3fd",
+        "value": "#91c3fd"
+      },
+      "--color-blue-400": {
+        "raw": "#61a6fa",
+        "value": "#61a6fa"
+      },
+      "--color-blue-500": {
+        "raw": "#3c83f6",
+        "value": "#3c83f6"
+      },
+      "--color-blue-600": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--color-blue-700": {
+        "raw": "#1d4fd7",
+        "value": "#1d4fd7"
+      },
+      "--color-blue-800": {
+        "raw": "#1e3fae",
+        "value": "#1e3fae"
+      },
+      "--color-blue-900": {
+        "raw": "#1e3b8a",
+        "value": "#1e3b8a"
+      },
+      "--color-blue-950": {
+        "raw": "#172554",
+        "value": "#172554"
+      },
+      "--color-neutral-50": {
+        "raw": "#fdfdf7",
+        "value": "#fdfdf7"
+      },
+      "--color-neutral-100": {
+        "raw": "#f5f5f0",
+        "value": "#f5f5f0"
+      },
+      "--color-neutral-200": {
+        "raw": "#e4e4dc",
+        "value": "#e4e4dc"
+      },
+      "--color-neutral-300": {
+        "raw": "#cecec5",
+        "value": "#cecec5"
+      },
+      "--color-neutral-400": {
+        "raw": "#a7a7a0",
+        "value": "#a7a7a0"
+      },
+      "--color-neutral-500": {
+        "raw": "#797972",
+        "value": "#797972"
+      },
+      "--color-neutral-600": {
+        "raw": "#53544f",
+        "value": "#53544f"
+      },
+      "--color-neutral-700": {
+        "raw": "#3c3c39",
+        "value": "#3c3c39"
+      },
+      "--color-neutral-800": {
+        "raw": "#272725",
+        "value": "#272725"
+      },
+      "--color-neutral-900": {
+        "raw": "#1b1b18",
+        "value": "#1b1b18"
+      },
+      "--color-neutral-950": {
+        "raw": "#0b0b0a",
+        "value": "#0b0b0a"
+      },
+      "--color-sage-50": {
+        "raw": "#f1f8f2",
+        "value": "#f1f8f2"
+      },
+      "--color-sage-100": {
+        "raw": "#e1efe3",
+        "value": "#e1efe3"
+      },
+      "--color-sage-200": {
+        "raw": "#c9e3cc",
+        "value": "#c9e3cc"
+      },
+      "--color-sage-300": {
+        "raw": "#b9dabd",
+        "value": "#b9dabd"
+      },
+      "--color-sage-400": {
+        "raw": "#8dbf93",
+        "value": "#8dbf93"
+      },
+      "--color-sage-500": {
+        "raw": "#5e9c65",
+        "value": "#5e9c65"
+      },
+      "--color-sage-600": {
+        "raw": "#45824d",
+        "value": "#45824d"
+      },
+      "--color-sage-700": {
+        "raw": "#34653a",
+        "value": "#34653a"
+      },
+      "--color-sage-800": {
+        "raw": "#264b2c",
+        "value": "#264b2c"
+      },
+      "--color-sage-900": {
+        "raw": "#16311a",
+        "value": "#16311a"
+      },
+      "--color-sage-950": {
+        "raw": "#0a190c",
+        "value": "#0a190c"
+      },
+      "--color-lime-50": {
+        "raw": "#f7ffe6",
+        "value": "#f7ffe6"
+      },
+      "--color-lime-100": {
+        "raw": "#efffcc",
+        "value": "#efffcc"
+      },
+      "--color-lime-200": {
+        "raw": "#e4ff9e",
+        "value": "#e4ff9e"
+      },
+      "--color-lime-300": {
+        "raw": "#d9ff80",
+        "value": "#d9ff80"
+      },
+      "--color-lime-400": {
+        "raw": "#beec4b",
+        "value": "#beec4b"
+      },
+      "--color-lime-500": {
+        "raw": "#a3ce2c",
+        "value": "#a3ce2c"
+      },
+      "--color-lime-600": {
+        "raw": "#82a91e",
+        "value": "#82a91e"
+      },
+      "--color-lime-700": {
+        "raw": "#66841a",
+        "value": "#66841a"
+      },
+      "--color-lime-800": {
+        "raw": "#4d641b",
+        "value": "#4d641b"
+      },
+      "--color-lime-900": {
+        "raw": "#33421a",
+        "value": "#33421a"
+      },
+      "--color-lime-950": {
+        "raw": "#1a230b",
+        "value": "#1a230b"
+      },
+      "--color-success-50": {
+        "raw": "#f1f8f2",
+        "value": "#f1f8f2"
+      },
+      "--color-success-100": {
+        "raw": "#ddeedf",
+        "value": "#ddeedf"
+      },
+      "--color-success-200": {
+        "raw": "#bad9be",
+        "value": "#bad9be"
+      },
+      "--color-success-300": {
+        "raw": "#8ebe95",
+        "value": "#8ebe95"
+      },
+      "--color-success-400": {
+        "raw": "#5ea168",
+        "value": "#5ea168"
+      },
+      "--color-success-500": {
+        "raw": "#438448",
+        "value": "#438448"
+      },
+      "--color-success-600": {
+        "raw": "#2f6a36",
+        "value": "#2f6a36"
+      },
+      "--color-success-700": {
+        "raw": "#235328",
+        "value": "#235328"
+      },
+      "--color-success-800": {
+        "raw": "#193e1e",
+        "value": "#193e1e"
+      },
+      "--color-success-900": {
+        "raw": "#112c15",
+        "value": "#112c15"
+      },
+      "--color-success-950": {
+        "raw": "#061309",
+        "value": "#061309"
+      },
+      "--color-warning-50": {
+        "raw": "#fef9e7",
+        "value": "#fef9e7"
+      },
+      "--color-warning-100": {
+        "raw": "#fcefc0",
+        "value": "#fcefc0"
+      },
+      "--color-warning-200": {
+        "raw": "#f8de82",
+        "value": "#f8de82"
+      },
+      "--color-warning-300": {
+        "raw": "#f1c946",
+        "value": "#f1c946"
+      },
+      "--color-warning-400": {
+        "raw": "#e0ab1a",
+        "value": "#e0ab1a"
+      },
+      "--color-warning-500": {
+        "raw": "#c28d0f",
+        "value": "#c28d0f"
+      },
+      "--color-warning-600": {
+        "raw": "#9d6f0b",
+        "value": "#9d6f0b"
+      },
+      "--color-warning-700": {
+        "raw": "#7b550a",
+        "value": "#7b550a"
+      },
+      "--color-warning-800": {
+        "raw": "#59410d",
+        "value": "#59410d"
+      },
+      "--color-warning-900": {
+        "raw": "#3c2d0b",
+        "value": "#3c2d0b"
+      },
+      "--color-warning-950": {
+        "raw": "#1f1605",
+        "value": "#1f1605"
+      },
+      "--color-error-50": {
+        "raw": "#fdedee",
+        "value": "#fdedee"
+      },
+      "--color-error-100": {
+        "raw": "#fbd5d9",
+        "value": "#fbd5d9"
+      },
+      "--color-error-200": {
+        "raw": "#f5a8b1",
+        "value": "#f5a8b1"
+      },
+      "--color-error-300": {
+        "raw": "#ed7383",
+        "value": "#ed7383"
+      },
+      "--color-error-400": {
+        "raw": "#de3f57",
+        "value": "#de3f57"
+      },
+      "--color-error-500": {
+        "raw": "#c52640",
+        "value": "#c52640"
+      },
+      "--color-error-600": {
+        "raw": "#a61c31",
+        "value": "#a61c31"
+      },
+      "--color-error-700": {
+        "raw": "#841527",
+        "value": "#841527"
+      },
+      "--color-error-800": {
+        "raw": "#610f1d",
+        "value": "#610f1d"
+      },
+      "--color-error-900": {
+        "raw": "#3e0914",
+        "value": "#3e0914"
+      },
+      "--color-error-950": {
+        "raw": "#20030a",
+        "value": "#20030a"
+      },
+      "--color-surface-canvas": {
+        "raw": "#fdfdf7",
+        "value": "#fdfdf7"
+      },
+      "--color-surface-raised": {
+        "raw": "#fff",
+        "value": "#fff"
+      },
+      "--color-surface-sunken": {
+        "raw": "#f5f5f0",
+        "value": "#f5f5f0"
+      },
+      "--color-surface-muted-blue": {
+        "raw": "#dbe2eb",
+        "value": "#dbe2eb"
+      },
+      "--color-surface-muted-sage": {
+        "raw": "#dbe6dc",
+        "value": "#dbe6dc"
+      },
+      "--color-surface-muted-warm": {
+        "raw": "#e4e1d8",
+        "value": "#e4e1d8"
+      },
+      "--color-surface-muted-rose": {
+        "raw": "#e6dbe6",
+        "value": "#e6dbe6"
+      },
+      "--color-wash-lavender-soft": {
+        "raw": "#efecf9",
+        "value": "#efecf9"
+      },
+      "--color-wash-lavender-deep": {
+        "raw": "#e5e1f4",
+        "value": "#e5e1f4"
+      },
+      "--color-wash-sky": {
+        "raw": "#e7eef3",
+        "value": "#e7eef3"
+      },
+      "--color-wash-sage": {
+        "raw": "#ebf4ec",
+        "value": "#ebf4ec"
+      },
+      "--skeleton-loader-gradient": {
+        "raw": "linear-gradient(90deg, #e4e4dc 43.67%, #f5f5f0 75.79%, #e4e4dc 100%)",
+        "value": "linear-gradient(90deg, #e4e4dc 43.67%, #f5f5f0 75.79%, #e4e4dc 100%)"
+      },
+      "--chat-sheet-accent-stop-1": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--chat-sheet-accent-stop-2": {
+        "raw": "#0ea5e9",
+        "value": "#0ea5e9"
+      },
+      "--chat-sheet-accent-stop-3": {
+        "raw": "#22c55e",
+        "value": "#22c55e"
+      },
+      "--chat-sheet-accent-stop-4": {
+        "raw": "#84cc16",
+        "value": "#84cc16"
+      },
+      "--chat-sheet-accent-gradient": {
+        "raw": "linear-gradient(90deg, #2463eb 0%, #0ea5e9 20%, #22c55e 40%, #84cc16 60%, #0ea5e9 80%, #2463eb 100%)",
+        "value": "linear-gradient(90deg, #2463eb 0%, #0ea5e9 20%, #22c55e 40%, #84cc16 60%, #0ea5e9 80%, #2463eb 100%)"
+      },
+      "--chat-sheet-accent-still-stop-1": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--chat-sheet-accent-still-stop-2": {
+        "raw": "#0369a1",
+        "value": "#0369a1"
+      },
+      "--chat-sheet-accent-still-stop-3": {
+        "raw": "#047857",
+        "value": "#047857"
+      },
+      "--chat-sheet-accent-still-gradient": {
+        "raw": "linear-gradient(90deg, #2463eb, #0369a1, #047857)",
+        "value": "linear-gradient(90deg, #2463eb, #0369a1, #047857)"
+      },
+      "--chat-sheet-tag-neutral-fill-hovered": {
+        "raw": "#efefe6",
+        "value": "#efefe6"
+      },
+      "--tap-target-min": {
+        "raw": "2.75rem",
+        "value": "2.75rem"
+      },
+      "--color-graphic-blue-subtle": {
+        "raw": "#f0f6ff",
+        "value": "#f0f6ff"
+      },
+      "--color-graphic-blue-soft": {
+        "raw": "#dcebfe",
+        "value": "#dcebfe"
+      },
+      "--color-graphic-blue-muted": {
+        "raw": "#bedbfe",
+        "value": "#bedbfe"
+      },
+      "--color-graphic-blue-moderate": {
+        "raw": "#91c3fd",
+        "value": "#91c3fd"
+      },
+      "--color-graphic-blue-strong": {
+        "raw": "#61a6fa",
+        "value": "#61a6fa"
+      },
+      "--color-graphic-blue-bold": {
+        "raw": "#3c83f6",
+        "value": "#3c83f6"
+      },
+      "--color-fg-default": {
+        "raw": "#1b1b18",
+        "value": "#1b1b18"
+      },
+      "--color-fg-muted": {
+        "raw": "hsl(from #1b1b18 h s l / .73)",
+        "value": "hsl(from #1b1b18 h s l / .73)"
+      },
+      "--color-fg-subtle": {
+        "raw": "hsl(from #1b1b18 h s l / .6)",
+        "value": "hsl(from #1b1b18 h s l / .6)"
+      },
+      "--color-fg-disabled": {
+        "raw": "hsl(from #1b1b18 h s l / .3)",
+        "value": "hsl(from #1b1b18 h s l / .3)"
+      },
+      "--color-border-default": {
+        "raw": "hsl(from #1b1b18 h s l / .08)",
+        "value": "hsl(from #1b1b18 h s l / .08)"
+      },
+      "--color-border-light": {
+        "raw": "hsl(from #1b1b18 h s l / .04)",
+        "value": "hsl(from #1b1b18 h s l / .04)"
+      },
+      "--color-border-strong": {
+        "raw": "hsl(from #1b1b18 h s l / .2)",
+        "value": "hsl(from #1b1b18 h s l / .2)"
+      },
+      "--color-border-disabled": {
+        "raw": "#cecec5",
+        "value": "#cecec5"
+      },
+      "--color-border-subtle": {
+        "raw": "#f5f5f0",
+        "value": "#f5f5f0"
+      },
+      "--color-divider": {
+        "raw": "#e4e4dc",
+        "value": "#e4e4dc"
+      },
+      "--color-divider-strong": {
+        "raw": "#cecec5",
+        "value": "#cecec5"
+      },
+      "--color-solid-bg": {
+        "raw": "#0b0b0a",
+        "value": "#0b0b0a"
+      },
+      "--color-solid-bg-hover": {
+        "raw": "#272725",
+        "value": "#272725"
+      },
+      "--color-solid-bg-pressed": {
+        "raw": "#1b1b18",
+        "value": "#1b1b18"
+      },
+      "--color-solid-bg-disabled": {
+        "raw": "#e4e4dc",
+        "value": "#e4e4dc"
+      },
+      "--color-solid-fg": {
+        "raw": "#fdfdf7",
+        "value": "#fdfdf7"
+      },
+      "--color-solid-fg-disabled": {
+        "raw": "#797972",
+        "value": "#797972"
+      },
+      "--color-link-default": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--color-link-hover": {
+        "raw": "#1d4fd7",
+        "value": "#1d4fd7"
+      },
+      "--color-link-disabled": {
+        "raw": "#797972",
+        "value": "#797972"
+      },
+      "--color-link-visited": {
+        "raw": "#1e3fae",
+        "value": "#1e3fae"
+      },
+      "--color-accent-bg": {
+        "raw": "#2463eb",
+        "value": "#2463eb"
+      },
+      "--color-accent-bg-hover": {
+        "raw": "#1d4fd7",
+        "value": "#1d4fd7"
+      },
+      "--color-accent-fg": {
+        "raw": "#fff",
+        "value": "#fff"
+      },
+      "--color-accent-bg-pressed": {
+        "raw": "#1e3fae",
+        "value": "#1e3fae"
+      },
+      "--color-accent-bg-disabled": {
+        "raw": "#e4e4dc",
+        "value": "#e4e4dc"
+      },
+      "--color-accent-fg-disabled": {
+        "raw": "#797972",
+        "value": "#797972"
+      },
+      "--color-accent-focus-ring": {
+        "raw": "#3c83f6",
+        "value": "#3c83f6"
+      },
+      "--color-accent-focus-ring-black": {
+        "raw": "#0b0b0a",
+        "value": "#0b0b0a"
+      },
+      "--focus-ring-width": {
+        "raw": "2px",
+        "value": "2px"
+      },
+      "--focus-ring-offset": {
+        "raw": "2px",
+        "value": "2px"
+      },
+      "--color-success-bg": {
+        "raw": "#f1f8f2",
+        "value": "#f1f8f2"
+      },
+      "--color-success-border": {
+        "raw": "#bad9be",
+        "value": "#bad9be"
+      },
+      "--color-success-fg": {
+        "raw": "#193e1e",
+        "value": "#193e1e"
+      },
+      "--color-warning-bg": {
+        "raw": "#fef9e7",
+        "value": "#fef9e7"
+      },
+      "--color-warning-border": {
+        "raw": "#f8de82",
+        "value": "#f8de82"
+      },
+      "--color-warning-fg": {
+        "raw": "#59410d",
+        "value": "#59410d"
+      },
+      "--color-error-bg": {
+        "raw": "#fdedee",
+        "value": "#fdedee"
+      },
+      "--color-error-border": {
+        "raw": "#f5a8b1",
+        "value": "#f5a8b1"
+      },
+      "--color-error-fg": {
+        "raw": "#610f1d",
+        "value": "#610f1d"
+      },
+      "--color-info-bg": {
+        "raw": "#f0f6ff",
+        "value": "#f0f6ff"
+      },
+      "--color-info-border": {
+        "raw": "#bedbfe",
+        "value": "#bedbfe"
+      },
+      "--color-info-fg": {
+        "raw": "#1e3fae",
+        "value": "#1e3fae"
+      },
+      "--color-icon-default": {
+        "raw": "#0b0b0a",
+        "value": "#0b0b0a"
+      },
+      "--tracking-display": {
+        "raw": "-.01em",
+        "value": "-.01em"
+      },
+      "--tracking-tight": {
+        "raw": "-.02em",
+        "value": "-.02em"
+      },
+      "--text-display-24": {
+        "raw": "400 1.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 1.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-32": {
+        "raw": "400 2rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 2rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-40": {
+        "raw": "400 2.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 2.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-48": {
+        "raw": "400 3rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 3rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-56": {
+        "raw": "400 3.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 3.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-64": {
+        "raw": "400 4rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 4rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-display-72": {
+        "raw": "400 4.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "400 4.5rem/1.17 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-14": {
+        "raw": "italic 400 .875rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 .875rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-18": {
+        "raw": "italic 400 1.125rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 1.125rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-24": {
+        "raw": "italic 400 1.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 1.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-32": {
+        "raw": "italic 400 2rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 2rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-40": {
+        "raw": "italic 400 2.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 2.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-48": {
+        "raw": "italic 400 3rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 3rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-56": {
+        "raw": "italic 400 3.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 3.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-64": {
+        "raw": "italic 400 4rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 4rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-italic-72": {
+        "raw": "italic 400 4.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif",
+        "value": "italic 400 4.5rem/1.25 \"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--text-heading-10": {
+        "raw": "600 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-12": {
+        "raw": "600 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-14": {
+        "raw": "600 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-16": {
+        "raw": "600 1rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-18": {
+        "raw": "600 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-20": {
+        "raw": "600 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-24": {
+        "raw": "600 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-28": {
+        "raw": "600 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-32": {
+        "raw": "600 2rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "600 2rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-10": {
+        "raw": "italic 600 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-12": {
+        "raw": "italic 600 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-14": {
+        "raw": "italic 600 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-16": {
+        "raw": "italic 600 1rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-18": {
+        "raw": "italic 600 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-20": {
+        "raw": "italic 600 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-24": {
+        "raw": "italic 600 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-28": {
+        "raw": "italic 600 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-heading-italic-32": {
+        "raw": "italic 600 2rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "italic 600 2rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-10": {
+        "raw": "400 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-12": {
+        "raw": "400 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-14": {
+        "raw": "400 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-16": {
+        "raw": "400 1rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-18": {
+        "raw": "400 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-20": {
+        "raw": "400 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-24": {
+        "raw": "400 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-28": {
+        "raw": "400 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-body-32": {
+        "raw": "400 2rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "400 2rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-10": {
+        "raw": "500 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 .625rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-12": {
+        "raw": "500 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 .75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-14": {
+        "raw": "500 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 .875rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-16": {
+        "raw": "500 1rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-18": {
+        "raw": "500 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1.125rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-20": {
+        "raw": "500 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1.25rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-24": {
+        "raw": "500 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1.5rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-28": {
+        "raw": "500 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 1.75rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-label-32": {
+        "raw": "500 2rem/1.4 \"geist\", system-ui, Arial, sans-serif",
+        "value": "500 2rem/1.4 \"geist\", system-ui, Arial, sans-serif"
+      },
+      "--text-mono-10": {
+        "raw": "400 .625rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 .625rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-12": {
+        "raw": "400 .75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 .75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-14": {
+        "raw": "400 .875rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 .875rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-16": {
+        "raw": "400 1rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-18": {
+        "raw": "400 1.125rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1.125rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-20": {
+        "raw": "400 1.25rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1.25rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-24": {
+        "raw": "400 1.5rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1.5rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-28": {
+        "raw": "400 1.75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 1.75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-32": {
+        "raw": "400 2rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "400 2rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-10": {
+        "raw": "600 .625rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 .625rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-12": {
+        "raw": "600 .75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 .75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-14": {
+        "raw": "600 .875rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 .875rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-16": {
+        "raw": "600 1rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-18": {
+        "raw": "600 1.125rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1.125rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-20": {
+        "raw": "600 1.25rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1.25rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-24": {
+        "raw": "600 1.5rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1.5rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-28": {
+        "raw": "600 1.75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 1.75rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--text-mono-bold-32": {
+        "raw": "600 2rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "600 2rem/1.4 \"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--shadow-xs": {
+        "raw": "0 1px 2px #0000000f",
+        "value": "0 1px 2px #0000000f"
+      },
+      "--shadow-sm": {
+        "raw": "0 1px 12px #0000000d",
+        "value": "0 1px 12px #0000000d"
+      },
+      "--shadow-md": {
+        "raw": "0 2px 12px #0000000f",
+        "value": "0 2px 12px #0000000f"
+      },
+      "--shadow-lg": {
+        "raw": "0 2px 24px #0000000f",
+        "value": "0 2px 24px #0000000f"
+      },
+      "--shadow-xl": {
+        "raw": "0 5px 32px #0000001a",
+        "value": "0 5px 32px #0000001a"
+      },
+      "--shadow-focus-ring": {
+        "raw": "0 0 0 2px #2463eb",
+        "value": "0 0 0 2px #2463eb"
+      },
+      "--shadow-brand-glow": {
+        "raw": "0 4px 14px #0961e463",
+        "value": "0 4px 14px #0961e463"
+      },
+      "--shadow-brand-glow-hover": {
+        "raw": "0 6px 20px #0961e480",
+        "value": "0 6px 20px #0961e480"
+      },
+      "--font-body": {
+        "raw": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+        "value": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif"
+      },
+      "--header-height": {
+        "raw": "4.5rem",
+        "value": "4.5rem"
+      },
+      "--border-tracer-angle": {
+        "raw": "0deg",
+        "value": "0deg"
+      },
+      "--font-sans": {
+        "raw": "\"geist\", system-ui, Arial, sans-serif",
+        "value": "\"geist\", system-ui, Arial, sans-serif"
+      },
+      "--font-mono": {
+        "raw": "\"geistMono\", ui-monospace, Courier New, monospace",
+        "value": "\"geistMono\", ui-monospace, Courier New, monospace"
+      },
+      "--font-display": {
+        "raw": "\"fraunces\", Georgia, Times New Roman, serif",
+        "value": "\"fraunces\", Georgia, Times New Roman, serif"
+      },
+      "--chat-sheet-mobile-sink": {
+        "raw": "0px",
+        "value": "0px"
+      }
+    },
+    "dark": {}
   }
- },
- "errors": [],
- "theme": [
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--color-white": "#fff",
-    "--color-blue-50": "#f0f6ff",
-    "--color-blue-100": "#dcebfe",
-    "--color-blue-200": "#bedbfe",
-    "--color-blue-300": "#91c3fd",
-    "--color-blue-400": "#61a6fa",
-    "--color-blue-500": "#3c83f6",
-    "--color-blue-600": "#2463eb",
-    "--color-blue-700": "#1d4fd7",
-    "--color-blue-800": "#1e3fae",
-    "--color-blue-900": "#1e3b8a",
-    "--color-blue-950": "#172554",
-    "--color-neutral-50": "#fdfdf7",
-    "--color-neutral-100": "#f5f5f0",
-    "--color-neutral-200": "#e4e4dc",
-    "--color-neutral-300": "#cecec5",
-    "--color-neutral-400": "#a7a7a0",
-    "--color-neutral-500": "#797972",
-    "--color-neutral-600": "#53544f",
-    "--color-neutral-700": "#3c3c39",
-    "--color-neutral-800": "#272725",
-    "--color-neutral-900": "#1b1b18",
-    "--color-neutral-950": "#0b0b0a",
-    "--color-sage-50": "#f1f8f2",
-    "--color-sage-100": "#e1efe3",
-    "--color-sage-200": "#c9e3cc",
-    "--color-sage-300": "#b9dabd",
-    "--color-sage-400": "#8dbf93",
-    "--color-sage-500": "#5e9c65",
-    "--color-sage-600": "#45824d",
-    "--color-sage-700": "#34653a",
-    "--color-sage-800": "#264b2c",
-    "--color-sage-900": "#16311a",
-    "--color-sage-950": "#0a190c",
-    "--color-lime-50": "#f7ffe6",
-    "--color-lime-100": "#efffcc",
-    "--color-lime-200": "#e4ff9e",
-    "--color-lime-300": "#d9ff80",
-    "--color-lime-400": "#beec4b",
-    "--color-lime-500": "#a3ce2c",
-    "--color-lime-600": "#82a91e",
-    "--color-lime-700": "#66841a",
-    "--color-lime-800": "#4d641b",
-    "--color-lime-900": "#33421a",
-    "--color-lime-950": "#1a230b",
-    "--color-success-50": "#f1f8f2",
-    "--color-success-100": "#ddeedf",
-    "--color-success-200": "#bad9be",
-    "--color-success-300": "#8ebe95",
-    "--color-success-400": "#5ea168",
-    "--color-success-500": "#438448",
-    "--color-success-600": "#2f6a36",
-    "--color-success-700": "#235328",
-    "--color-success-800": "#193e1e",
-    "--color-success-900": "#112c15",
-    "--color-success-950": "#061309",
-    "--color-warning-50": "#fef9e7",
-    "--color-warning-100": "#fcefc0",
-    "--color-warning-200": "#f8de82",
-    "--color-warning-300": "#f1c946",
-    "--color-warning-400": "#e0ab1a",
-    "--color-warning-500": "#c28d0f",
-    "--color-warning-600": "#9d6f0b",
-    "--color-warning-700": "#7b550a",
-    "--color-warning-800": "#59410d",
-    "--color-warning-900": "#3c2d0b",
-    "--color-warning-950": "#1f1605",
-    "--color-error-50": "#fdedee",
-    "--color-error-100": "#fbd5d9",
-    "--color-error-200": "#f5a8b1",
-    "--color-error-300": "#ed7383",
-    "--color-error-400": "#de3f57",
-    "--color-error-500": "#c52640",
-    "--color-error-600": "#a61c31",
-    "--color-error-700": "#841527",
-    "--color-error-800": "#610f1d",
-    "--color-error-900": "#3e0914",
-    "--color-error-950": "#20030a"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "selector": ":root",
-   "context": [
-    "@layer tokens"
-   ],
-   "properties": {
-    "--color-surface-canvas": "var(--color-neutral-50)",
-    "--color-surface-raised": "var(--color-white)",
-    "--color-surface-sunken": "var(--color-neutral-100)",
-    "--color-surface-muted-blue": "#dbe2eb",
-    "--color-surface-muted-sage": "#dbe6dc",
-    "--color-surface-muted-warm": "#e4e1d8",
-    "--color-surface-muted-rose": "#e6dbe6",
-    "--color-wash-lavender-soft": "#efecf9",
-    "--color-wash-lavender-deep": "#e5e1f4",
-    "--color-wash-sky": "#e7eef3",
-    "--color-wash-sage": "#ebf4ec",
-    "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-200) 43.67%, var(--color-neutral-100) 75.79%, var(--color-neutral-200) 100%)",
-    "--chat-sheet-accent-stop-1": "var(--color-blue-600)",
-    "--chat-sheet-accent-stop-2": "#0ea5e9",
-    "--chat-sheet-accent-stop-3": "#22c55e",
-    "--chat-sheet-accent-stop-4": "#84cc16",
-    "--chat-sheet-accent-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-stop-1) 0%, var(--chat-sheet-accent-stop-2) 20%, var(--chat-sheet-accent-stop-3) 40%, var(--chat-sheet-accent-stop-4) 60%, var(--chat-sheet-accent-stop-2) 80%, var(--chat-sheet-accent-stop-1) 100%)",
-    "--chat-sheet-accent-still-stop-1": "var(--chat-sheet-accent-stop-1)",
-    "--chat-sheet-accent-still-stop-2": "#0369a1",
-    "--chat-sheet-accent-still-stop-3": "#047857",
-    "--chat-sheet-accent-still-gradient": "linear-gradient(90deg, var(--chat-sheet-accent-still-stop-1), var(--chat-sheet-accent-still-stop-2), var(--chat-sheet-accent-still-stop-3))",
-    "--chat-sheet-tag-neutral-fill-hovered": "#efefe6",
-    "--tap-target-min": "2.75rem",
-    "--color-graphic-blue-subtle": "var(--color-blue-50)",
-    "--color-graphic-blue-soft": "var(--color-blue-100)",
-    "--color-graphic-blue-muted": "var(--color-blue-200)",
-    "--color-graphic-blue-moderate": "var(--color-blue-300)",
-    "--color-graphic-blue-strong": "var(--color-blue-400)",
-    "--color-graphic-blue-bold": "var(--color-blue-500)",
-    "--color-fg-default": "var(--color-neutral-900)",
-    "--color-fg-muted": "hsl(from var(--color-neutral-900) h s l / .73)",
-    "--color-fg-subtle": "hsl(from var(--color-neutral-900) h s l / .6)",
-    "--color-fg-disabled": "hsl(from var(--color-neutral-900) h s l / .3)",
-    "--color-border-default": "hsl(from var(--color-neutral-900) h s l / .08)",
-    "--color-border-light": "hsl(from var(--color-neutral-900) h s l / .04)",
-    "--color-border-strong": "hsl(from var(--color-neutral-900) h s l / .2)",
-    "--color-border-disabled": "var(--color-neutral-300)",
-    "--color-border-subtle": "var(--color-neutral-100)",
-    "--color-divider": "var(--color-neutral-200)",
-    "--color-divider-strong": "var(--color-neutral-300)",
-    "--color-solid-bg": "var(--color-neutral-950)",
-    "--color-solid-bg-hover": "var(--color-neutral-800)",
-    "--color-solid-bg-pressed": "var(--color-neutral-900)",
-    "--color-solid-bg-disabled": "var(--color-neutral-200)",
-    "--color-solid-fg": "var(--color-neutral-50)",
-    "--color-solid-fg-disabled": "var(--color-neutral-500)",
-    "--color-link-default": "var(--color-accent-bg)",
-    "--color-link-hover": "var(--color-blue-700)",
-    "--color-link-disabled": "var(--color-neutral-500)",
-    "--color-link-visited": "var(--color-blue-800)",
-    "--color-accent-bg": "var(--color-blue-600)",
-    "--color-accent-bg-hover": "var(--color-blue-700)",
-    "--color-accent-fg": "var(--color-white)",
-    "--color-accent-bg-pressed": "var(--color-blue-800)",
-    "--color-accent-bg-disabled": "var(--color-neutral-200)",
-    "--color-accent-fg-disabled": "var(--color-neutral-500)",
-    "--color-accent-focus-ring": "var(--color-blue-500)",
-    "--color-accent-focus-ring-black": "var(--color-neutral-950)",
-    "--color-success-bg": "var(--color-success-50)",
-    "--color-success-border": "var(--color-success-200)",
-    "--color-success-fg": "var(--color-success-800)",
-    "--color-warning-bg": "var(--color-warning-50)",
-    "--color-warning-border": "var(--color-warning-200)",
-    "--color-warning-fg": "var(--color-warning-800)",
-    "--color-error-bg": "var(--color-error-50)",
-    "--color-error-border": "var(--color-error-200)",
-    "--color-error-fg": "var(--color-error-800)",
-    "--color-info-bg": "var(--color-blue-50)",
-    "--color-info-border": "var(--color-blue-200)",
-    "--color-info-fg": "var(--color-blue-800)",
-    "--color-icon-default": "var(--color-neutral-950)",
-    "--tracking-display": "-.01em",
-    "--tracking-tight": "-.02em",
-    "--text-display-24": "400 1.5rem/1.17 var(--font-display)",
-    "--text-display-32": "400 2rem/1.17 var(--font-display)",
-    "--text-display-40": "400 2.5rem/1.17 var(--font-display)",
-    "--text-display-48": "400 3rem/1.17 var(--font-display)",
-    "--text-display-56": "400 3.5rem/1.17 var(--font-display)",
-    "--text-display-64": "400 4rem/1.17 var(--font-display)",
-    "--text-display-72": "400 4.5rem/1.17 var(--font-display)",
-    "--text-italic-14": "italic 400 .875rem/1.25 var(--font-display)",
-    "--text-italic-18": "italic 400 1.125rem/1.25 var(--font-display)",
-    "--text-italic-24": "italic 400 1.5rem/1.25 var(--font-display)",
-    "--text-italic-32": "italic 400 2rem/1.25 var(--font-display)",
-    "--text-italic-40": "italic 400 2.5rem/1.25 var(--font-display)",
-    "--text-italic-48": "italic 400 3rem/1.25 var(--font-display)",
-    "--text-italic-56": "italic 400 3.5rem/1.25 var(--font-display)",
-    "--text-italic-64": "italic 400 4rem/1.25 var(--font-display)",
-    "--text-italic-72": "italic 400 4.5rem/1.25 var(--font-display)",
-    "--text-heading-10": "600 .625rem/1.4 var(--font-sans)",
-    "--text-heading-12": "600 .75rem/1.4 var(--font-sans)",
-    "--text-heading-14": "600 .875rem/1.4 var(--font-sans)",
-    "--text-heading-16": "600 1rem/1.4 var(--font-sans)",
-    "--text-heading-18": "600 1.125rem/1.4 var(--font-sans)",
-    "--text-heading-20": "600 1.25rem/1.4 var(--font-sans)",
-    "--text-heading-24": "600 1.5rem/1.4 var(--font-sans)",
-    "--text-heading-28": "600 1.75rem/1.4 var(--font-sans)",
-    "--text-heading-32": "600 2rem/1.4 var(--font-sans)",
-    "--text-heading-italic-10": "italic 600 .625rem/1.4 var(--font-sans)",
-    "--text-heading-italic-12": "italic 600 .75rem/1.4 var(--font-sans)",
-    "--text-heading-italic-14": "italic 600 .875rem/1.4 var(--font-sans)",
-    "--text-heading-italic-16": "italic 600 1rem/1.4 var(--font-sans)",
-    "--text-heading-italic-18": "italic 600 1.125rem/1.4 var(--font-sans)",
-    "--text-heading-italic-20": "italic 600 1.25rem/1.4 var(--font-sans)",
-    "--text-heading-italic-24": "italic 600 1.5rem/1.4 var(--font-sans)",
-    "--text-heading-italic-28": "italic 600 1.75rem/1.4 var(--font-sans)",
-    "--text-heading-italic-32": "italic 600 2rem/1.4 var(--font-sans)",
-    "--text-body-10": "400 .625rem/1.4 var(--font-sans)",
-    "--text-body-12": "400 .75rem/1.4 var(--font-sans)",
-    "--text-body-14": "400 .875rem/1.4 var(--font-sans)",
-    "--text-body-16": "400 1rem/1.4 var(--font-sans)",
-    "--text-body-18": "400 1.125rem/1.4 var(--font-sans)",
-    "--text-body-20": "400 1.25rem/1.4 var(--font-sans)",
-    "--text-body-24": "400 1.5rem/1.4 var(--font-sans)",
-    "--text-body-28": "400 1.75rem/1.4 var(--font-sans)",
-    "--text-body-32": "400 2rem/1.4 var(--font-sans)",
-    "--text-label-10": "500 .625rem/1.4 var(--font-sans)",
-    "--text-label-12": "500 .75rem/1.4 var(--font-sans)",
-    "--text-label-14": "500 .875rem/1.4 var(--font-sans)",
-    "--text-label-16": "500 1rem/1.4 var(--font-sans)",
-    "--text-label-18": "500 1.125rem/1.4 var(--font-sans)",
-    "--text-label-20": "500 1.25rem/1.4 var(--font-sans)",
-    "--text-label-24": "500 1.5rem/1.4 var(--font-sans)",
-    "--text-label-28": "500 1.75rem/1.4 var(--font-sans)",
-    "--text-label-32": "500 2rem/1.4 var(--font-sans)",
-    "--text-mono-10": "400 .625rem/1.4 var(--font-mono)",
-    "--text-mono-12": "400 .75rem/1.4 var(--font-mono)",
-    "--text-mono-14": "400 .875rem/1.4 var(--font-mono)",
-    "--text-mono-16": "400 1rem/1.4 var(--font-mono)",
-    "--text-mono-18": "400 1.125rem/1.4 var(--font-mono)",
-    "--text-mono-20": "400 1.25rem/1.4 var(--font-mono)",
-    "--text-mono-24": "400 1.5rem/1.4 var(--font-mono)",
-    "--text-mono-28": "400 1.75rem/1.4 var(--font-mono)",
-    "--text-mono-32": "400 2rem/1.4 var(--font-mono)",
-    "--text-mono-bold-10": "600 .625rem/1.4 var(--font-mono)",
-    "--text-mono-bold-12": "600 .75rem/1.4 var(--font-mono)",
-    "--text-mono-bold-14": "600 .875rem/1.4 var(--font-mono)",
-    "--text-mono-bold-16": "600 1rem/1.4 var(--font-mono)",
-    "--text-mono-bold-18": "600 1.125rem/1.4 var(--font-mono)",
-    "--text-mono-bold-20": "600 1.25rem/1.4 var(--font-mono)",
-    "--text-mono-bold-24": "600 1.5rem/1.4 var(--font-mono)",
-    "--text-mono-bold-28": "600 1.75rem/1.4 var(--font-mono)",
-    "--text-mono-bold-32": "600 2rem/1.4 var(--font-mono)",
-    "--shadow-xs": "0 1px 2px #0000000f",
-    "--shadow-sm": "0 1px 12px #0000000d",
-    "--shadow-md": "0 2px 12px #0000000f",
-    "--shadow-lg": "0 2px 24px #0000000f",
-    "--shadow-xl": "0 5px 32px #0000001a",
-    "--shadow-focus-ring": "0 0 0 2px var(--color-accent-bg)",
-    "--shadow-brand-glow": "0 4px 14px #0961e463",
-    "--shadow-brand-glow-hover": "0 6px 20px #0961e480"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "selector": "[data-theme=\"dark\"]",
-   "context": [
-    "@layer tokens"
-   ],
-   "properties": {
-    "--color-surface-canvas": "#0d0e0b",
-    "--color-surface-raised": "var(--color-neutral-900)",
-    "--color-surface-sunken": "#080907",
-    "--color-surface-muted-blue": "#162136",
-    "--color-surface-muted-sage": "#18251c",
-    "--color-surface-muted-warm": "#262421",
-    "--color-surface-muted-rose": "#2c2131",
-    "--chat-sheet-tag-neutral-fill-hovered": "#0f110d",
-    "--skeleton-loader-gradient": "linear-gradient(90deg, var(--color-neutral-800) 43.67%, var(--color-neutral-700) 75.79%, var(--color-neutral-800) 100%)",
-    "--color-fg-default": "var(--color-neutral-50)",
-    "--color-fg-muted": "hsl(from var(--color-neutral-50) h s l / .73)",
-    "--color-fg-subtle": "hsl(from var(--color-neutral-50) h s l / .6)",
-    "--color-fg-disabled": "hsl(from var(--color-neutral-50) h s l / .3)",
-    "--color-border-light": "hsl(from var(--color-neutral-50) h s l / .04)",
-    "--color-border-default": "hsl(from var(--color-neutral-50) h s l / .08)",
-    "--color-border-strong": "hsl(from var(--color-neutral-50) h s l / .2)",
-    "--color-border-disabled": "var(--color-neutral-800)",
-    "--color-border-subtle": "var(--color-neutral-800)",
-    "--color-divider": "var(--color-neutral-700)",
-    "--color-divider-strong": "var(--color-neutral-600)",
-    "--color-link-default": "var(--color-blue-400)",
-    "--color-link-hover": "var(--color-blue-300)",
-    "--color-link-disabled": "var(--color-neutral-700)",
-    "--color-link-visited": "var(--color-blue-200)",
-    "--color-solid-bg": "var(--color-neutral-50)",
-    "--color-solid-bg-hover": "var(--color-neutral-200)",
-    "--color-solid-bg-pressed": "var(--color-neutral-100)",
-    "--color-solid-bg-disabled": "var(--color-neutral-800)",
-    "--color-solid-fg": "var(--color-neutral-950)",
-    "--color-solid-fg-disabled": "var(--color-neutral-700)",
-    "--color-accent-bg": "var(--color-blue-400)",
-    "--color-accent-bg-hover": "var(--color-blue-300)",
-    "--color-accent-fg": "var(--color-blue-950)",
-    "--color-accent-bg-pressed": "var(--color-blue-500)",
-    "--color-accent-bg-disabled": "var(--color-neutral-800)",
-    "--color-accent-fg-disabled": "var(--color-neutral-700)",
-    "--color-accent-focus-ring": "var(--color-blue-400)",
-    "--color-accent-focus-ring-black": "var(--color-neutral-50)",
-    "--color-success-bg": "var(--color-success-900)",
-    "--color-success-border": "var(--color-success-700)",
-    "--color-success-fg": "var(--color-success-200)",
-    "--color-warning-bg": "var(--color-warning-900)",
-    "--color-warning-border": "var(--color-warning-700)",
-    "--color-warning-fg": "var(--color-warning-200)",
-    "--color-error-bg": "var(--color-error-900)",
-    "--color-error-border": "var(--color-error-700)",
-    "--color-error-fg": "var(--color-error-200)",
-    "--color-info-bg": "var(--color-blue-900)",
-    "--color-info-border": "var(--color-blue-700)",
-    "--color-info-fg": "var(--color-blue-200)",
-    "--color-icon-default": "var(--color-neutral-50)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--font-body": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
-    "--header-height": "4.5rem"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "selector": ".Ijxoba_variable",
-   "context": [],
-   "properties": {
-    "--font-sans": "\"geist\", system-ui, Arial, sans-serif"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "selector": ".P2jE_a_variable",
-   "context": [],
-   "properties": {
-    "--font-mono": "\"geistMono\", ui-monospace, Courier New, monospace"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "selector": ".AGcgpq_variable",
-   "context": [],
-   "properties": {
-    "--font-display": "\"fraunces\", Georgia, Times New Roman, serif"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".kzefeW_tag[data-likelihood=\"most_likely\"]",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--chat-sheet-tag-ring": "var(--color-sage-500)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".kzefeW_tag[data-likelihood=\"possible\"]",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--chat-sheet-tag-ring": "var(--color-neutral-400)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".kzefeW_tag[data-likelihood=\"less_likely\"]",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--chat-sheet-tag-ring": "var(--color-neutral-600)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._kqGBW_card",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--chat-sheet-card-pulse-fill": "var(--color-surface-sunken)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._kqGBW_card:where(details):not([open]):hover",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--chat-sheet-tag-neutral-fill": "var(--chat-sheet-tag-neutral-fill-hovered)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "[data-theme=\"dark\"] ._kqGBW_card",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--chat-sheet-card-pulse-fill": "var(--color-surface-raised)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".YEKCSq_active .YEKCSq_wrapper [data-chat-composer]",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--input-hero-chat-takeover-radius": "1rem"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._45Qx_W_chatInput",
-   "context": [],
-   "properties": {
-    "--input-hero-chat-background": "var(--color-surface-raised)",
-    "--input-hero-chat-shadow": "var(--shadow-md)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "._0kkZOG_chatInput",
-   "context": [],
-   "properties": {
-    "--input-hero-chat-background": "var(--color-surface-raised)",
-    "--input-hero-chat-shadow": "var(--shadow-md)"
-   },
-   "bin": "theme"
-  }
- ],
- "app": [
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1rdqgsbo0q8vz.css",
-   "selector": ".f-84Za_removePromoButton",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--icon-button-padding": "0"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1rdqgsbo0q8vz.css",
-   "selector": ".ZQc4qG_copyButton",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--icon-button-padding": "0"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1rdqgsbo0q8vz.css",
-   "selector": ".fh7Xba_card",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--pointer-x": "50%",
-    "--pointer-y": "50%"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1rdqgsbo0q8vz.css",
-   "selector": ".wl4fjW_circularSend",
-   "context": [],
-   "properties": {
-    "--icon-button-padding": ".75rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1rdqgsbo0q8vz.css",
-   "selector": ".F10haa_checkoutForm",
-   "context": [],
-   "properties": {
-    "--floating-button-max-width": "100%"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1rdqgsbo0q8vz.css",
-   "selector": ".F10haa_checkoutForm",
-   "context": [
-    "@media (min-width: 768px)"
-   ],
-   "properties": {
-    "--floating-button-max-width": "41.75rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1rdqgsbo0q8vz.css",
-   "selector": ".JEFeiW_stage",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--badge-size": "134px",
-    "--icon-size": "134px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".kDsQ5q_backButton",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--icon-button-padding": "0"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".PYkdMW_widgetChip",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--chip-padding-y": ".5rem",
-    "--chip-padding-x": "1rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".VrH0IW_container[data-rising] .VrH0IW_reports > :nth-child(2)",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--rise-order": "1"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".VrH0IW_container[data-rising] .VrH0IW_reports > :nth-child(n+3), .VrH0IW_container[data-rising] .VrH0IW_timeline > :first-child",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--rise-order": "2"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".VrH0IW_container[data-rising] .VrH0IW_timeline > :nth-child(2)",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--rise-order": "3"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".VrH0IW_container[data-rising] .VrH0IW_timeline > :nth-child(3)",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--rise-order": "4"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".VrH0IW_container[data-rising] .VrH0IW_timeline > :nth-child(n+4)",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--rise-order": "5"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".VrH0IW_container[data-rising] .VrH0IW_footer",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--rise-order": "6"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "html:has(.VrH0IW_nextStepBar:not(:empty))",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--next-step-bar-clearance": "calc(5.5rem + env(safe-area-inset-bottom))"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "html:has(.VrH0IW_nextStepBar:not(:empty))",
-   "context": [
-    "@layer components.composite",
-    "@media (min-width: 768px)"
-   ],
-   "properties": {
-    "--next-step-bar-clearance": "initial"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".lgAi_W_scrollArea",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--fade-top": "#000",
-    "--fade-bottom": "#000"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".lgAi_W_scrollArea[data-can-scroll-up]",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--fade-top": "transparent"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".lgAi_W_scrollArea[data-can-scroll-down]",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--fade-bottom": "transparent"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".YEKCSq_active .YEKCSq_wrapperOpen[data-full-height] [data-chat-composer], .YEKCSq_active .YEKCSq_wrapperOpen[data-full-height] .YEKCSq_footer",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--chat-sheet-mobile-sink": "1rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".YEKCSq_toggle .YEKCSq_title",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--chat-sheet-title-ramp-width": "calc(4 * (100cqw - 5.25rem))"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".YEKCSq_bodyContent",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--chat-sheet-mobile-content-inline": ".5rem",
-    "--chat-sheet-mobile-content-bottom": ".625rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._5a150W_container",
-   "context": [],
-   "properties": {
-    "--report-column-top": "-1rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._5a150W_containerScrollsWithPage",
-   "context": [],
-   "properties": {
-    "--report-column-top": "3.5rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".XdfZRa_readyJoinDot",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--pulse-dot-color": "var(--color-lime-400)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._45Qx_W_container",
-   "context": [],
-   "properties": {
-    "--back-button-room": "3.5rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._45Qx_W_containerWithFloatingBar",
-   "context": [],
-   "properties": {
-    "--floating-bar-space": "calc(7.5rem + env(safe-area-inset-bottom))"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._45Qx_W_container",
-   "context": [
-    "@media (min-width: 768px)"
-   ],
-   "properties": {
-    "--back-button-room": "4rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._45Qx_W_page",
-   "context": [
-    "@media (min-width: 1024px)"
-   ],
-   "properties": {
-    "--chat-sheet-rail-bottom": "3.375rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._45Qx_W_container",
-   "context": [
-    "@media (min-width: 1280px)"
-   ],
-   "properties": {
-    "--back-button-room": "2rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": "._2UlJwa_back",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--icon-button-padding": ".375rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".Pl-NOq_chips",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--row-chip-inset": "8px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".i_knra_area",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--fade-left": "#000",
-    "--fade-right": "#000"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".i_knra_fadeStart",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--fade-left": "transparent"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".i_knra_fadeEnd",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--fade-right": "transparent"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".QZDcuG_tooltip",
-   "context": [],
-   "properties": {
-    "--tooltip-max-width": "min(17.5625rem, calc(100vw - 2rem))"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".j7r8tq_removeButton",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--icon-button-padding": ".375rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".-qoqIW_container",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--corner-radius-tl": "1rem",
-    "--corner-radius-tr": "1.125rem",
-    "--corner-radius-br": "1.125rem",
-    "--corner-radius-bl": ".125rem",
-    "--base-strength": "1rem",
-    "--extra-blur": ".125rem",
-    "--softness": "1rem",
-    "--total-strength": "calc(var(--base-strength) + var(--extra-blur))",
-    "--edge-width": "calc(.3px + (var(--softness) * .1))",
-    "--emboss-width": "calc(var(--softness) * .38)",
-    "--refraction-width": "calc(var(--softness) * .3)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".V3hGJG_closeButton",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--icon-button-padding": ".375rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".Eoxc2q_trigger",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--icon-button-padding": "0"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".Q7Qita_wrapper",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--circle-size": "1.75rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/22non2iok-y39.css",
-   "selector": ".gUBszG_tooltip",
-   "context": [],
-   "properties": {
-    "--tooltip-max-width": "min(25.9375rem, calc(100vw - 2.5rem))",
-    "--tooltip-border-radius": "1.5rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".d2-k9q_control",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--icon-button-padding": ".3125rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".yAxMJq_tilt",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--tilt-ease": "cubic-bezier(.2, 0, 0, 1)",
-    "--tilt-highlight": "#ffffff8c",
-    "--tilt-highlight-end": "#fff0",
-    "--tilt-blue": "#a2daf61f",
-    "--tilt-green": "#ade3c51f",
-    "--tilt-yellow": "#f0dda91f",
-    "--tilt-violet": "#ddc7ef1a"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".yAxMJq_tilt",
-   "context": [
-    "@layer components.composite",
-    "@supports (color:lab(0% 0 0))"
-   ],
-   "properties": {
-    "--tilt-blue": "lab(83.9834% -13.8001 -19.9768/.12)",
-    "--tilt-green": "lab(85.8609% -22.6893 8.98829/.12)",
-    "--tilt-yellow": "lab(88.6813% 1.23838 27.9331/.12)",
-    "--tilt-violet": "lab(82.9877% 13.6087 -17.0351/.1)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".T3zeqa_content",
-   "context": [
-    "@layer components.composite",
-    "@media (min-width: 576px)"
-   ],
-   "properties": {
-    "--fade-top-clear": "0rem",
-    "--fade-top-solid": "0rem",
-    "--fade-bottom-clear": "0rem",
-    "--fade-bottom-solid": "0rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".T3zeqa_content[data-fade-top]",
-   "context": [
-    "@layer components.composite",
-    "@media (min-width: 576px)"
-   ],
-   "properties": {
-    "--fade-top-clear": "2.5rem",
-    "--fade-top-solid": "5.5rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".T3zeqa_content[data-fade-bottom]",
-   "context": [
-    "@layer components.composite",
-    "@media (min-width: 576px)"
-   ],
-   "properties": {
-    "--fade-bottom-clear": "2rem",
-    "--fade-bottom-solid": "5.5rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "._8RmYUW_card",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--spring-soft": "linear(0, .0527, .1801, .3433, .5136, .6718, .8066, .913, .9904, 1.0416, 1.0706, 1.0825, 1.0821, 1.0737, 1.0611, 1.0468, 1.033, 1.0208, 1.0109, 1.0034, .9982, .995, .9934, .993, .9935, .9944, .9956, .9967, .9978, .9988, .9995, 1)",
-    "--spring-lively": "linear(0, .0708, .246, .4723, .7048, .9105, 1.0695, 1.1739, 1.2251, 1.2315, 1.2051, 1.1587, 1.1042, 1.0513, 1.0067, .9739, .9539, .9458, .9473, .9555, .9672, .9801, .9919, 1.0014, 1.0081, 1.0117, 1.0128, 1.0118, 1.0095, 1.0066, 1.0037, 1.0011, .9991, .9977, .9971, .9971, .9974, .998, .9987, .9994, 1)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".ucfd_W_sidebar",
-   "context": [],
-   "properties": {
-    "--slide-from": "-100%",
-    "--peek-offset": "1.625rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".wHY5dW_arrow",
-   "context": [
-    "@layer components.primitives"
-   ],
-   "properties": {
-    "--icon-button-padding": ".25rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".IAMzyW_button > svg",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--icon-fill": "var(--color-blue-400)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".PhlhIa_pulseActiveDot",
-   "context": [
-    "@layer base"
-   ],
-   "properties": {
-    "--pulse-dot-color": "var(--color-blue-500)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".UaPYYW_wrapper",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--badge-size": "137px",
-    "--blob-size": "130px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".UaPYYW_wrapper",
-   "context": [
-    "@layer components.composite",
-    "@media (min-width: 768px)"
-   ],
-   "properties": {
-    "--badge-size": "160px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".UaPYYW_blob",
-   "context": [
-    "@layer components.composite",
-    "@media (min-width: 768px)"
-   ],
-   "properties": {
-    "--blob-size": "150px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "._1ezn5q_wrapper",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--badge-size": "137px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "._1ezn5q_placeholderContent",
-   "context": [
-    "@layer components.composite",
-    "@media (min-width: 768px)"
-   ],
-   "properties": {
-    "--badge-size": "160px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".xQMwQq_send",
-   "context": [],
-   "properties": {
-    "--icon-button-padding": ".75rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".eLaFQq_root",
-   "context": [
-    "@layer base"
-   ],
-   "properties": {
-    "--holo-ease": ".6s cubic-bezier(.23, 1, .32, 1)",
-    "--holo-gradient": "linear-gradient(115deg, #fff0 0%, #fff0 25%, #ff9ad14d 35%, #80d0ff4d 45%, #ffe4994d 55%, #d8b4fe4d 65%, #fff0 75%, #fff0 100%)",
-    "--holo-noise-svg": "url(\"data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(…)' opacity='0.2'/%3E%3C/svg%3E\")"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".eLaFQq_wrapper, .eLaFQq_wrapper[data-active=\"true\"]",
-   "context": [
-    "@layer base",
-    "@media (prefers-reduced-motion: reduce)"
-   ],
-   "properties": {
-    "--holo-rx": "0deg",
-    "--holo-ry": "0deg",
-    "--holo-scale": "1",
-    "--holo-shadow-x": "0px",
-    "--holo-shadow-y": "15px",
-    "--holo-inset-x": "0px",
-    "--holo-inset-y": "0px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "[data-animations-paused] .eLaFQq_wrapper, [data-animations-paused] .eLaFQq_wrapper[data-active=\"true\"]",
-   "context": [
-    "@layer base"
-   ],
-   "properties": {
-    "--holo-rx": "0deg",
-    "--holo-ry": "0deg",
-    "--holo-scale": "1",
-    "--holo-shadow-x": "0px",
-    "--holo-shadow-y": "15px",
-    "--holo-inset-x": "0px",
-    "--holo-inset-y": "0px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "._7_3ViG_cardWrapper",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--holo-radius": "24px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".d8D_Ia_calendarButton",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--icon-button-padding": "0"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "",
-   "context": [
-    "@layer patterns",
-    "@keyframes FlaGyG_borderTracerOrbit"
-   ],
-   "properties": {
-    "--border-tracer-angle": "0deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "",
-   "context": [
-    "@layer patterns",
-    "@keyframes FlaGyG_borderTracerOrbit"
-   ],
-   "properties": {
-    "--border-tracer-angle": "360deg"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "._0kkZOG_containerWithFloatingBar",
-   "context": [],
-   "properties": {
-    "--floating-bar-space": "calc(7.5rem + env(safe-area-inset-bottom))"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": "._0kkZOG_page",
-   "context": [
-    "@media (min-width: 1024px)"
-   ],
-   "properties": {
-    "--chat-sheet-rail-bottom": "3.375rem"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1dbyhvfo_19ts.css",
-   "selector": ".H3ziZa_arrowsWrapper",
-   "context": [
-    "@layer components.composite",
-    "@media (min-width: 768px)"
-   ],
-   "properties": {
-    "--icon-button-padding": ".25rem"
-   },
-   "bin": "app"
-  }
- ],
- "vendor": [
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/1rdqgsbo0q8vz.css",
-   "selector": ".dEt_Wa_rating",
-   "context": [
-    "@layer components.composite"
-   ],
-   "properties": {
-    "--trustpilot-green": "#219653"
-   },
-   "bin": "vendor"
-  }
- ],
- "utility": [],
- "tailwind": [],
- "fonts": [
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "font-family": "geist",
-   "src": "url(\"../media/geist_latin.p.0wgildi0cnwt9.woff2\") format(\"woff2\")",
-   "font-display": "swap",
-   "font-weight": "400",
-   "font-style": "normal"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "font-family": "geist",
-   "src": "url(\"../media/geist_latin.p.0wgildi0cnwt9.woff2\") format(\"woff2\")",
-   "font-display": "swap",
-   "font-weight": "500",
-   "font-style": "normal"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "font-family": "geist",
-   "src": "url(\"../media/geist_latin.p.0wgildi0cnwt9.woff2\") format(\"woff2\")",
-   "font-display": "swap",
-   "font-weight": "600",
-   "font-style": "normal"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "font-family": "geistMono",
-   "src": "url(\"../media/geist_mono_latin.p.0r6juujl39pe6.woff2\") format(\"woff2\")",
-   "font-display": "swap",
-   "font-weight": "400",
-   "font-style": "normal"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "font-family": "geistMono",
-   "src": "url(\"../media/geist_mono_latin.p.0r6juujl39pe6.woff2\") format(\"woff2\")",
-   "font-display": "swap",
-   "font-weight": "600",
-   "font-style": "normal"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "font-family": "fraunces",
-   "src": "url(\"../media/fraunces_latin.p.32sris142tqlb.woff2\") format(\"woff2\")",
-   "font-display": "swap",
-   "font-weight": "400",
-   "font-style": "normal"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "font-family": "fraunces",
-   "src": "url(\"../media/fraunces_latin.p.32sris142tqlb.woff2\") format(\"woff2\")",
-   "font-display": "swap",
-   "font-weight": "600",
-   "font-style": "normal"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "font-family": "fraunces",
-   "src": "url(\"../media/fraunces_italic_latin.p.16u3vygyjnhr0.woff2\") format(\"woff2\")",
-   "font-display": "swap",
-   "font-weight": "400",
-   "font-style": "italic"
-  },
-  {
-   "file": "https://www.doctronic.ai/_next/static/chunks/2h7jifis3-4ms.css",
-   "font-family": "fraunces",
-   "src": "url(\"../media/fraunces_italic_latin.p.16u3vygyjnhr0.woff2\") format(\"woff2\")",
-   "font-display": "swap",
-   "font-weight": "600",
-   "font-style": "italic"
-  }
- ],
- "resolved": {
-  "light": {
-   "--border-tracer-angle": {
-    "raw": "0deg",
-    "kind": "other"
-   },
-   "--chat-sheet-accent-gradient": {
-    "raw": "linear-gradient(90deg, #2463eb 0%, #0ea5e9 20%, #22c55e 40%, #84cc16 60%, #0ea5e9 80%, #2463eb 100%)",
-    "kind": "other"
-   },
-   "--chat-sheet-accent-still-gradient": {
-    "raw": "linear-gradient(90deg, #2463eb, #0369a1, #047857)",
-    "kind": "other"
-   },
-   "--chat-sheet-accent-still-stop-1": {
-    "raw": "#2463eb",
-    "kind": "color",
-    "value": "#2463eb"
-   },
-   "--chat-sheet-accent-still-stop-2": {
-    "raw": "#0369a1",
-    "kind": "color",
-    "value": "#0369a1"
-   },
-   "--chat-sheet-accent-still-stop-3": {
-    "raw": "#047857",
-    "kind": "color",
-    "value": "#047857"
-   },
-   "--chat-sheet-accent-stop-1": {
-    "raw": "#2463eb",
-    "kind": "color",
-    "value": "#2463eb"
-   },
-   "--chat-sheet-accent-stop-2": {
-    "raw": "#0ea5e9",
-    "kind": "color",
-    "value": "#0ea5e9"
-   },
-   "--chat-sheet-accent-stop-3": {
-    "raw": "#22c55e",
-    "kind": "color",
-    "value": "#22c55e"
-   },
-   "--chat-sheet-accent-stop-4": {
-    "raw": "#84cc16",
-    "kind": "color",
-    "value": "#84cc16"
-   },
-   "--chat-sheet-mobile-sink": {
-    "raw": "0px",
-    "kind": "dimension",
-    "value": "0px"
-   },
-   "--chat-sheet-tag-neutral-fill-hovered": {
-    "raw": "#efefe6",
-    "kind": "color",
-    "value": "#efefe6"
-   },
-   "--color-accent-bg": {
-    "raw": "#2463eb",
-    "kind": "color",
-    "value": "#2463eb"
-   },
-   "--color-accent-bg-disabled": {
-    "raw": "#e4e4dc",
-    "kind": "color",
-    "value": "#e4e4dc"
-   },
-   "--color-accent-bg-hover": {
-    "raw": "#1d4fd7",
-    "kind": "color",
-    "value": "#1d4fd7"
-   },
-   "--color-accent-bg-pressed": {
-    "raw": "#1e3fae",
-    "kind": "color",
-    "value": "#1e3fae"
-   },
-   "--color-accent-fg": {
-    "raw": "#fff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-accent-fg-disabled": {
-    "raw": "#797972",
-    "kind": "color",
-    "value": "#797972"
-   },
-   "--color-accent-focus-ring": {
-    "raw": "#3c83f6",
-    "kind": "color",
-    "value": "#3c83f6"
-   },
-   "--color-accent-focus-ring-black": {
-    "raw": "#0b0b0a",
-    "kind": "color",
-    "value": "#0b0b0a"
-   },
-   "--color-blue-100": {
-    "raw": "#dcebfe",
-    "kind": "color",
-    "value": "#dcebfe"
-   },
-   "--color-blue-200": {
-    "raw": "#bedbfe",
-    "kind": "color",
-    "value": "#bedbfe"
-   },
-   "--color-blue-300": {
-    "raw": "#91c3fd",
-    "kind": "color",
-    "value": "#91c3fd"
-   },
-   "--color-blue-400": {
-    "raw": "#61a6fa",
-    "kind": "color",
-    "value": "#61a6fa"
-   },
-   "--color-blue-50": {
-    "raw": "#f0f6ff",
-    "kind": "color",
-    "value": "#f0f6ff"
-   },
-   "--color-blue-500": {
-    "raw": "#3c83f6",
-    "kind": "color",
-    "value": "#3c83f6"
-   },
-   "--color-blue-600": {
-    "raw": "#2463eb",
-    "kind": "color",
-    "value": "#2463eb"
-   },
-   "--color-blue-700": {
-    "raw": "#1d4fd7",
-    "kind": "color",
-    "value": "#1d4fd7"
-   },
-   "--color-blue-800": {
-    "raw": "#1e3fae",
-    "kind": "color",
-    "value": "#1e3fae"
-   },
-   "--color-blue-900": {
-    "raw": "#1e3b8a",
-    "kind": "color",
-    "value": "#1e3b8a"
-   },
-   "--color-blue-950": {
-    "raw": "#172554",
-    "kind": "color",
-    "value": "#172554"
-   },
-   "--color-border-default": {
-    "raw": "hsl(from #1b1b18 h s l / .08)",
-    "kind": "color",
-    "value": "rgba(27, 27, 24, 0.08)"
-   },
-   "--color-border-disabled": {
-    "raw": "#cecec5",
-    "kind": "color",
-    "value": "#cecec5"
-   },
-   "--color-border-light": {
-    "raw": "hsl(from #1b1b18 h s l / .04)",
-    "kind": "color",
-    "value": "rgba(27, 27, 24, 0.04)"
-   },
-   "--color-border-strong": {
-    "raw": "hsl(from #1b1b18 h s l / .2)",
-    "kind": "color",
-    "value": "rgba(27, 27, 24, 0.2)"
-   },
-   "--color-border-subtle": {
-    "raw": "#f5f5f0",
-    "kind": "color",
-    "value": "#f5f5f0"
-   },
-   "--color-divider": {
-    "raw": "#e4e4dc",
-    "kind": "color",
-    "value": "#e4e4dc"
-   },
-   "--color-divider-strong": {
-    "raw": "#cecec5",
-    "kind": "color",
-    "value": "#cecec5"
-   },
-   "--color-error-100": {
-    "raw": "#fbd5d9",
-    "kind": "color",
-    "value": "#fbd5d9"
-   },
-   "--color-error-200": {
-    "raw": "#f5a8b1",
-    "kind": "color",
-    "value": "#f5a8b1"
-   },
-   "--color-error-300": {
-    "raw": "#ed7383",
-    "kind": "color",
-    "value": "#ed7383"
-   },
-   "--color-error-400": {
-    "raw": "#de3f57",
-    "kind": "color",
-    "value": "#de3f57"
-   },
-   "--color-error-50": {
-    "raw": "#fdedee",
-    "kind": "color",
-    "value": "#fdedee"
-   },
-   "--color-error-500": {
-    "raw": "#c52640",
-    "kind": "color",
-    "value": "#c52640"
-   },
-   "--color-error-600": {
-    "raw": "#a61c31",
-    "kind": "color",
-    "value": "#a61c31"
-   },
-   "--color-error-700": {
-    "raw": "#841527",
-    "kind": "color",
-    "value": "#841527"
-   },
-   "--color-error-800": {
-    "raw": "#610f1d",
-    "kind": "color",
-    "value": "#610f1d"
-   },
-   "--color-error-900": {
-    "raw": "#3e0914",
-    "kind": "color",
-    "value": "#3e0914"
-   },
-   "--color-error-950": {
-    "raw": "#20030a",
-    "kind": "color",
-    "value": "#20030a"
-   },
-   "--color-error-bg": {
-    "raw": "#fdedee",
-    "kind": "color",
-    "value": "#fdedee"
-   },
-   "--color-error-border": {
-    "raw": "#f5a8b1",
-    "kind": "color",
-    "value": "#f5a8b1"
-   },
-   "--color-error-fg": {
-    "raw": "#610f1d",
-    "kind": "color",
-    "value": "#610f1d"
-   },
-   "--color-fg-default": {
-    "raw": "#1b1b18",
-    "kind": "color",
-    "value": "#1b1b18"
-   },
-   "--color-fg-disabled": {
-    "raw": "hsl(from #1b1b18 h s l / .3)",
-    "kind": "color",
-    "value": "rgba(27, 27, 24, 0.3)"
-   },
-   "--color-fg-muted": {
-    "raw": "hsl(from #1b1b18 h s l / .73)",
-    "kind": "color",
-    "value": "rgba(27, 27, 24, 0.73)"
-   },
-   "--color-fg-subtle": {
-    "raw": "hsl(from #1b1b18 h s l / .6)",
-    "kind": "color",
-    "value": "rgba(27, 27, 24, 0.6)"
-   },
-   "--color-graphic-blue-bold": {
-    "raw": "#3c83f6",
-    "kind": "color",
-    "value": "#3c83f6"
-   },
-   "--color-graphic-blue-moderate": {
-    "raw": "#91c3fd",
-    "kind": "color",
-    "value": "#91c3fd"
-   },
-   "--color-graphic-blue-muted": {
-    "raw": "#bedbfe",
-    "kind": "color",
-    "value": "#bedbfe"
-   },
-   "--color-graphic-blue-soft": {
-    "raw": "#dcebfe",
-    "kind": "color",
-    "value": "#dcebfe"
-   },
-   "--color-graphic-blue-strong": {
-    "raw": "#61a6fa",
-    "kind": "color",
-    "value": "#61a6fa"
-   },
-   "--color-graphic-blue-subtle": {
-    "raw": "#f0f6ff",
-    "kind": "color",
-    "value": "#f0f6ff"
-   },
-   "--color-icon-default": {
-    "raw": "#0b0b0a",
-    "kind": "color",
-    "value": "#0b0b0a"
-   },
-   "--color-info-bg": {
-    "raw": "#f0f6ff",
-    "kind": "color",
-    "value": "#f0f6ff"
-   },
-   "--color-info-border": {
-    "raw": "#bedbfe",
-    "kind": "color",
-    "value": "#bedbfe"
-   },
-   "--color-info-fg": {
-    "raw": "#1e3fae",
-    "kind": "color",
-    "value": "#1e3fae"
-   },
-   "--color-lime-100": {
-    "raw": "#efffcc",
-    "kind": "color",
-    "value": "#efffcc"
-   },
-   "--color-lime-200": {
-    "raw": "#e4ff9e",
-    "kind": "color",
-    "value": "#e4ff9e"
-   },
-   "--color-lime-300": {
-    "raw": "#d9ff80",
-    "kind": "color",
-    "value": "#d9ff80"
-   },
-   "--color-lime-400": {
-    "raw": "#beec4b",
-    "kind": "color",
-    "value": "#beec4b"
-   },
-   "--color-lime-50": {
-    "raw": "#f7ffe6",
-    "kind": "color",
-    "value": "#f7ffe6"
-   },
-   "--color-lime-500": {
-    "raw": "#a3ce2c",
-    "kind": "color",
-    "value": "#a3ce2c"
-   },
-   "--color-lime-600": {
-    "raw": "#82a91e",
-    "kind": "color",
-    "value": "#82a91e"
-   },
-   "--color-lime-700": {
-    "raw": "#66841a",
-    "kind": "color",
-    "value": "#66841a"
-   },
-   "--color-lime-800": {
-    "raw": "#4d641b",
-    "kind": "color",
-    "value": "#4d641b"
-   },
-   "--color-lime-900": {
-    "raw": "#33421a",
-    "kind": "color",
-    "value": "#33421a"
-   },
-   "--color-lime-950": {
-    "raw": "#1a230b",
-    "kind": "color",
-    "value": "#1a230b"
-   },
-   "--color-link-default": {
-    "raw": "#2463eb",
-    "kind": "color",
-    "value": "#2463eb"
-   },
-   "--color-link-disabled": {
-    "raw": "#797972",
-    "kind": "color",
-    "value": "#797972"
-   },
-   "--color-link-hover": {
-    "raw": "#1d4fd7",
-    "kind": "color",
-    "value": "#1d4fd7"
-   },
-   "--color-link-visited": {
-    "raw": "#1e3fae",
-    "kind": "color",
-    "value": "#1e3fae"
-   },
-   "--color-neutral-100": {
-    "raw": "#f5f5f0",
-    "kind": "color",
-    "value": "#f5f5f0"
-   },
-   "--color-neutral-200": {
-    "raw": "#e4e4dc",
-    "kind": "color",
-    "value": "#e4e4dc"
-   },
-   "--color-neutral-300": {
-    "raw": "#cecec5",
-    "kind": "color",
-    "value": "#cecec5"
-   },
-   "--color-neutral-400": {
-    "raw": "#a7a7a0",
-    "kind": "color",
-    "value": "#a7a7a0"
-   },
-   "--color-neutral-50": {
-    "raw": "#fdfdf7",
-    "kind": "color",
-    "value": "#fdfdf7"
-   },
-   "--color-neutral-500": {
-    "raw": "#797972",
-    "kind": "color",
-    "value": "#797972"
-   },
-   "--color-neutral-600": {
-    "raw": "#53544f",
-    "kind": "color",
-    "value": "#53544f"
-   },
-   "--color-neutral-700": {
-    "raw": "#3c3c39",
-    "kind": "color",
-    "value": "#3c3c39"
-   },
-   "--color-neutral-800": {
-    "raw": "#272725",
-    "kind": "color",
-    "value": "#272725"
-   },
-   "--color-neutral-900": {
-    "raw": "#1b1b18",
-    "kind": "color",
-    "value": "#1b1b18"
-   },
-   "--color-neutral-950": {
-    "raw": "#0b0b0a",
-    "kind": "color",
-    "value": "#0b0b0a"
-   },
-   "--color-sage-100": {
-    "raw": "#e1efe3",
-    "kind": "color",
-    "value": "#e1efe3"
-   },
-   "--color-sage-200": {
-    "raw": "#c9e3cc",
-    "kind": "color",
-    "value": "#c9e3cc"
-   },
-   "--color-sage-300": {
-    "raw": "#b9dabd",
-    "kind": "color",
-    "value": "#b9dabd"
-   },
-   "--color-sage-400": {
-    "raw": "#8dbf93",
-    "kind": "color",
-    "value": "#8dbf93"
-   },
-   "--color-sage-50": {
-    "raw": "#f1f8f2",
-    "kind": "color",
-    "value": "#f1f8f2"
-   },
-   "--color-sage-500": {
-    "raw": "#5e9c65",
-    "kind": "color",
-    "value": "#5e9c65"
-   },
-   "--color-sage-600": {
-    "raw": "#45824d",
-    "kind": "color",
-    "value": "#45824d"
-   },
-   "--color-sage-700": {
-    "raw": "#34653a",
-    "kind": "color",
-    "value": "#34653a"
-   },
-   "--color-sage-800": {
-    "raw": "#264b2c",
-    "kind": "color",
-    "value": "#264b2c"
-   },
-   "--color-sage-900": {
-    "raw": "#16311a",
-    "kind": "color",
-    "value": "#16311a"
-   },
-   "--color-sage-950": {
-    "raw": "#0a190c",
-    "kind": "color",
-    "value": "#0a190c"
-   },
-   "--color-solid-bg": {
-    "raw": "#0b0b0a",
-    "kind": "color",
-    "value": "#0b0b0a"
-   },
-   "--color-solid-bg-disabled": {
-    "raw": "#e4e4dc",
-    "kind": "color",
-    "value": "#e4e4dc"
-   },
-   "--color-solid-bg-hover": {
-    "raw": "#272725",
-    "kind": "color",
-    "value": "#272725"
-   },
-   "--color-solid-bg-pressed": {
-    "raw": "#1b1b18",
-    "kind": "color",
-    "value": "#1b1b18"
-   },
-   "--color-solid-fg": {
-    "raw": "#fdfdf7",
-    "kind": "color",
-    "value": "#fdfdf7"
-   },
-   "--color-solid-fg-disabled": {
-    "raw": "#797972",
-    "kind": "color",
-    "value": "#797972"
-   },
-   "--color-success-100": {
-    "raw": "#ddeedf",
-    "kind": "color",
-    "value": "#ddeedf"
-   },
-   "--color-success-200": {
-    "raw": "#bad9be",
-    "kind": "color",
-    "value": "#bad9be"
-   },
-   "--color-success-300": {
-    "raw": "#8ebe95",
-    "kind": "color",
-    "value": "#8ebe95"
-   },
-   "--color-success-400": {
-    "raw": "#5ea168",
-    "kind": "color",
-    "value": "#5ea168"
-   },
-   "--color-success-50": {
-    "raw": "#f1f8f2",
-    "kind": "color",
-    "value": "#f1f8f2"
-   },
-   "--color-success-500": {
-    "raw": "#438448",
-    "kind": "color",
-    "value": "#438448"
-   },
-   "--color-success-600": {
-    "raw": "#2f6a36",
-    "kind": "color",
-    "value": "#2f6a36"
-   },
-   "--color-success-700": {
-    "raw": "#235328",
-    "kind": "color",
-    "value": "#235328"
-   },
-   "--color-success-800": {
-    "raw": "#193e1e",
-    "kind": "color",
-    "value": "#193e1e"
-   },
-   "--color-success-900": {
-    "raw": "#112c15",
-    "kind": "color",
-    "value": "#112c15"
-   },
-   "--color-success-950": {
-    "raw": "#061309",
-    "kind": "color",
-    "value": "#061309"
-   },
-   "--color-success-bg": {
-    "raw": "#f1f8f2",
-    "kind": "color",
-    "value": "#f1f8f2"
-   },
-   "--color-success-border": {
-    "raw": "#bad9be",
-    "kind": "color",
-    "value": "#bad9be"
-   },
-   "--color-success-fg": {
-    "raw": "#193e1e",
-    "kind": "color",
-    "value": "#193e1e"
-   },
-   "--color-surface-canvas": {
-    "raw": "#fdfdf7",
-    "kind": "color",
-    "value": "#fdfdf7"
-   },
-   "--color-surface-muted-blue": {
-    "raw": "#dbe2eb",
-    "kind": "color",
-    "value": "#dbe2eb"
-   },
-   "--color-surface-muted-rose": {
-    "raw": "#e6dbe6",
-    "kind": "color",
-    "value": "#e6dbe6"
-   },
-   "--color-surface-muted-sage": {
-    "raw": "#dbe6dc",
-    "kind": "color",
-    "value": "#dbe6dc"
-   },
-   "--color-surface-muted-warm": {
-    "raw": "#e4e1d8",
-    "kind": "color",
-    "value": "#e4e1d8"
-   },
-   "--color-surface-raised": {
-    "raw": "#fff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-surface-sunken": {
-    "raw": "#f5f5f0",
-    "kind": "color",
-    "value": "#f5f5f0"
-   },
-   "--color-warning-100": {
-    "raw": "#fcefc0",
-    "kind": "color",
-    "value": "#fcefc0"
-   },
-   "--color-warning-200": {
-    "raw": "#f8de82",
-    "kind": "color",
-    "value": "#f8de82"
-   },
-   "--color-warning-300": {
-    "raw": "#f1c946",
-    "kind": "color",
-    "value": "#f1c946"
-   },
-   "--color-warning-400": {
-    "raw": "#e0ab1a",
-    "kind": "color",
-    "value": "#e0ab1a"
-   },
-   "--color-warning-50": {
-    "raw": "#fef9e7",
-    "kind": "color",
-    "value": "#fef9e7"
-   },
-   "--color-warning-500": {
-    "raw": "#c28d0f",
-    "kind": "color",
-    "value": "#c28d0f"
-   },
-   "--color-warning-600": {
-    "raw": "#9d6f0b",
-    "kind": "color",
-    "value": "#9d6f0b"
-   },
-   "--color-warning-700": {
-    "raw": "#7b550a",
-    "kind": "color",
-    "value": "#7b550a"
-   },
-   "--color-warning-800": {
-    "raw": "#59410d",
-    "kind": "color",
-    "value": "#59410d"
-   },
-   "--color-warning-900": {
-    "raw": "#3c2d0b",
-    "kind": "color",
-    "value": "#3c2d0b"
-   },
-   "--color-warning-950": {
-    "raw": "#1f1605",
-    "kind": "color",
-    "value": "#1f1605"
-   },
-   "--color-warning-bg": {
-    "raw": "#fef9e7",
-    "kind": "color",
-    "value": "#fef9e7"
-   },
-   "--color-warning-border": {
-    "raw": "#f8de82",
-    "kind": "color",
-    "value": "#f8de82"
-   },
-   "--color-warning-fg": {
-    "raw": "#59410d",
-    "kind": "color",
-    "value": "#59410d"
-   },
-   "--color-wash-lavender-deep": {
-    "raw": "#e5e1f4",
-    "kind": "color",
-    "value": "#e5e1f4"
-   },
-   "--color-wash-lavender-soft": {
-    "raw": "#efecf9",
-    "kind": "color",
-    "value": "#efecf9"
-   },
-   "--color-wash-sage": {
-    "raw": "#ebf4ec",
-    "kind": "color",
-    "value": "#ebf4ec"
-   },
-   "--color-wash-sky": {
-    "raw": "#e7eef3",
-    "kind": "color",
-    "value": "#e7eef3"
-   },
-   "--color-white": {
-    "raw": "#fff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--font-body": {
-    "raw": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
-    "kind": "fontFamily",
-    "value": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif"
-   },
-   "--header-height": {
-    "raw": "4.5rem",
-    "kind": "dimension",
-    "value": "72px"
-   },
-   "--shadow-brand-glow": {
-    "raw": "0 4px 14px #0961e463",
-    "kind": "shadow",
-    "value": "rgba(9, 97, 228, 0.39) 0px 4px 14px 0px"
-   },
-   "--shadow-brand-glow-hover": {
-    "raw": "0 6px 20px #0961e480",
-    "kind": "shadow",
-    "value": "rgba(9, 97, 228, 0.5) 0px 6px 20px 0px"
-   },
-   "--shadow-focus-ring": {
-    "raw": "0 0 0 2px #2463eb",
-    "kind": "shadow",
-    "value": "rgb(36, 99, 235) 0px 0px 0px 2px"
-   },
-   "--shadow-lg": {
-    "raw": "0 2px 24px #0000000f",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.06) 0px 2px 24px 0px"
-   },
-   "--shadow-md": {
-    "raw": "0 2px 12px #0000000f",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.06) 0px 2px 12px 0px"
-   },
-   "--shadow-sm": {
-    "raw": "0 1px 12px #0000000d",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.05) 0px 1px 12px 0px"
-   },
-   "--shadow-xl": {
-    "raw": "0 5px 32px #0000001a",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.1) 0px 5px 32px 0px"
-   },
-   "--shadow-xs": {
-    "raw": "0 1px 2px #0000000f",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.06) 0px 1px 2px 0px"
-   },
-   "--skeleton-loader-gradient": {
-    "raw": "linear-gradient(90deg, #e4e4dc 43.67%, #f5f5f0 75.79%, #e4e4dc 100%)",
-    "kind": "other"
-   },
-   "--tap-target-min": {
-    "raw": "2.75rem",
-    "kind": "dimension",
-    "value": "44px"
-   },
-   "--tracking-display": {
-    "raw": "-.01em",
-    "kind": "other"
-   },
-   "--tracking-tight": {
-    "raw": "-.02em",
-    "kind": "other"
-   }
-  },
-  "dark": {
-   "--border-tracer-angle": {
-    "raw": "0deg",
-    "kind": "other"
-   },
-   "--chat-sheet-accent-gradient": {
-    "raw": "linear-gradient(90deg, #2463eb 0%, #0ea5e9 20%, #22c55e 40%, #84cc16 60%, #0ea5e9 80%, #2463eb 100%)",
-    "kind": "other"
-   },
-   "--chat-sheet-accent-still-gradient": {
-    "raw": "linear-gradient(90deg, #2463eb, #0369a1, #047857)",
-    "kind": "other"
-   },
-   "--chat-sheet-accent-still-stop-1": {
-    "raw": "#2463eb",
-    "kind": "color",
-    "value": "#2463eb"
-   },
-   "--chat-sheet-accent-still-stop-2": {
-    "raw": "#0369a1",
-    "kind": "color",
-    "value": "#0369a1"
-   },
-   "--chat-sheet-accent-still-stop-3": {
-    "raw": "#047857",
-    "kind": "color",
-    "value": "#047857"
-   },
-   "--chat-sheet-accent-stop-1": {
-    "raw": "#2463eb",
-    "kind": "color",
-    "value": "#2463eb"
-   },
-   "--chat-sheet-accent-stop-2": {
-    "raw": "#0ea5e9",
-    "kind": "color",
-    "value": "#0ea5e9"
-   },
-   "--chat-sheet-accent-stop-3": {
-    "raw": "#22c55e",
-    "kind": "color",
-    "value": "#22c55e"
-   },
-   "--chat-sheet-accent-stop-4": {
-    "raw": "#84cc16",
-    "kind": "color",
-    "value": "#84cc16"
-   },
-   "--chat-sheet-mobile-sink": {
-    "raw": "0px",
-    "kind": "dimension",
-    "value": "0px"
-   },
-   "--chat-sheet-tag-neutral-fill-hovered": {
-    "raw": "#0f110d",
-    "kind": "color",
-    "value": "#0f110d"
-   },
-   "--color-accent-bg": {
-    "raw": "#61a6fa",
-    "kind": "color",
-    "value": "#61a6fa"
-   },
-   "--color-accent-bg-disabled": {
-    "raw": "#272725",
-    "kind": "color",
-    "value": "#272725"
-   },
-   "--color-accent-bg-hover": {
-    "raw": "#91c3fd",
-    "kind": "color",
-    "value": "#91c3fd"
-   },
-   "--color-accent-bg-pressed": {
-    "raw": "#3c83f6",
-    "kind": "color",
-    "value": "#3c83f6"
-   },
-   "--color-accent-fg": {
-    "raw": "#172554",
-    "kind": "color",
-    "value": "#172554"
-   },
-   "--color-accent-fg-disabled": {
-    "raw": "#3c3c39",
-    "kind": "color",
-    "value": "#3c3c39"
-   },
-   "--color-accent-focus-ring": {
-    "raw": "#61a6fa",
-    "kind": "color",
-    "value": "#61a6fa"
-   },
-   "--color-accent-focus-ring-black": {
-    "raw": "#fdfdf7",
-    "kind": "color",
-    "value": "#fdfdf7"
-   },
-   "--color-blue-100": {
-    "raw": "#dcebfe",
-    "kind": "color",
-    "value": "#dcebfe"
-   },
-   "--color-blue-200": {
-    "raw": "#bedbfe",
-    "kind": "color",
-    "value": "#bedbfe"
-   },
-   "--color-blue-300": {
-    "raw": "#91c3fd",
-    "kind": "color",
-    "value": "#91c3fd"
-   },
-   "--color-blue-400": {
-    "raw": "#61a6fa",
-    "kind": "color",
-    "value": "#61a6fa"
-   },
-   "--color-blue-50": {
-    "raw": "#f0f6ff",
-    "kind": "color",
-    "value": "#f0f6ff"
-   },
-   "--color-blue-500": {
-    "raw": "#3c83f6",
-    "kind": "color",
-    "value": "#3c83f6"
-   },
-   "--color-blue-600": {
-    "raw": "#2463eb",
-    "kind": "color",
-    "value": "#2463eb"
-   },
-   "--color-blue-700": {
-    "raw": "#1d4fd7",
-    "kind": "color",
-    "value": "#1d4fd7"
-   },
-   "--color-blue-800": {
-    "raw": "#1e3fae",
-    "kind": "color",
-    "value": "#1e3fae"
-   },
-   "--color-blue-900": {
-    "raw": "#1e3b8a",
-    "kind": "color",
-    "value": "#1e3b8a"
-   },
-   "--color-blue-950": {
-    "raw": "#172554",
-    "kind": "color",
-    "value": "#172554"
-   },
-   "--color-border-default": {
-    "raw": "hsl(from #fdfdf7 h s l / .08)",
-    "kind": "color",
-    "value": "rgba(253, 253, 247, 0.08)"
-   },
-   "--color-border-disabled": {
-    "raw": "#272725",
-    "kind": "color",
-    "value": "#272725"
-   },
-   "--color-border-light": {
-    "raw": "hsl(from #fdfdf7 h s l / .04)",
-    "kind": "color",
-    "value": "rgba(253, 253, 247, 0.04)"
-   },
-   "--color-border-strong": {
-    "raw": "hsl(from #fdfdf7 h s l / .2)",
-    "kind": "color",
-    "value": "rgba(253, 253, 247, 0.2)"
-   },
-   "--color-border-subtle": {
-    "raw": "#272725",
-    "kind": "color",
-    "value": "#272725"
-   },
-   "--color-divider": {
-    "raw": "#3c3c39",
-    "kind": "color",
-    "value": "#3c3c39"
-   },
-   "--color-divider-strong": {
-    "raw": "#53544f",
-    "kind": "color",
-    "value": "#53544f"
-   },
-   "--color-error-100": {
-    "raw": "#fbd5d9",
-    "kind": "color",
-    "value": "#fbd5d9"
-   },
-   "--color-error-200": {
-    "raw": "#f5a8b1",
-    "kind": "color",
-    "value": "#f5a8b1"
-   },
-   "--color-error-300": {
-    "raw": "#ed7383",
-    "kind": "color",
-    "value": "#ed7383"
-   },
-   "--color-error-400": {
-    "raw": "#de3f57",
-    "kind": "color",
-    "value": "#de3f57"
-   },
-   "--color-error-50": {
-    "raw": "#fdedee",
-    "kind": "color",
-    "value": "#fdedee"
-   },
-   "--color-error-500": {
-    "raw": "#c52640",
-    "kind": "color",
-    "value": "#c52640"
-   },
-   "--color-error-600": {
-    "raw": "#a61c31",
-    "kind": "color",
-    "value": "#a61c31"
-   },
-   "--color-error-700": {
-    "raw": "#841527",
-    "kind": "color",
-    "value": "#841527"
-   },
-   "--color-error-800": {
-    "raw": "#610f1d",
-    "kind": "color",
-    "value": "#610f1d"
-   },
-   "--color-error-900": {
-    "raw": "#3e0914",
-    "kind": "color",
-    "value": "#3e0914"
-   },
-   "--color-error-950": {
-    "raw": "#20030a",
-    "kind": "color",
-    "value": "#20030a"
-   },
-   "--color-error-bg": {
-    "raw": "#3e0914",
-    "kind": "color",
-    "value": "#3e0914"
-   },
-   "--color-error-border": {
-    "raw": "#841527",
-    "kind": "color",
-    "value": "#841527"
-   },
-   "--color-error-fg": {
-    "raw": "#f5a8b1",
-    "kind": "color",
-    "value": "#f5a8b1"
-   },
-   "--color-fg-default": {
-    "raw": "#fdfdf7",
-    "kind": "color",
-    "value": "#fdfdf7"
-   },
-   "--color-fg-disabled": {
-    "raw": "hsl(from #fdfdf7 h s l / .3)",
-    "kind": "color",
-    "value": "rgba(253, 253, 247, 0.3)"
-   },
-   "--color-fg-muted": {
-    "raw": "hsl(from #fdfdf7 h s l / .73)",
-    "kind": "color",
-    "value": "rgba(253, 253, 247, 0.73)"
-   },
-   "--color-fg-subtle": {
-    "raw": "hsl(from #fdfdf7 h s l / .6)",
-    "kind": "color",
-    "value": "rgba(253, 253, 247, 0.6)"
-   },
-   "--color-graphic-blue-bold": {
-    "raw": "#3c83f6",
-    "kind": "color",
-    "value": "#3c83f6"
-   },
-   "--color-graphic-blue-moderate": {
-    "raw": "#91c3fd",
-    "kind": "color",
-    "value": "#91c3fd"
-   },
-   "--color-graphic-blue-muted": {
-    "raw": "#bedbfe",
-    "kind": "color",
-    "value": "#bedbfe"
-   },
-   "--color-graphic-blue-soft": {
-    "raw": "#dcebfe",
-    "kind": "color",
-    "value": "#dcebfe"
-   },
-   "--color-graphic-blue-strong": {
-    "raw": "#61a6fa",
-    "kind": "color",
-    "value": "#61a6fa"
-   },
-   "--color-graphic-blue-subtle": {
-    "raw": "#f0f6ff",
-    "kind": "color",
-    "value": "#f0f6ff"
-   },
-   "--color-icon-default": {
-    "raw": "#fdfdf7",
-    "kind": "color",
-    "value": "#fdfdf7"
-   },
-   "--color-info-bg": {
-    "raw": "#1e3b8a",
-    "kind": "color",
-    "value": "#1e3b8a"
-   },
-   "--color-info-border": {
-    "raw": "#1d4fd7",
-    "kind": "color",
-    "value": "#1d4fd7"
-   },
-   "--color-info-fg": {
-    "raw": "#bedbfe",
-    "kind": "color",
-    "value": "#bedbfe"
-   },
-   "--color-lime-100": {
-    "raw": "#efffcc",
-    "kind": "color",
-    "value": "#efffcc"
-   },
-   "--color-lime-200": {
-    "raw": "#e4ff9e",
-    "kind": "color",
-    "value": "#e4ff9e"
-   },
-   "--color-lime-300": {
-    "raw": "#d9ff80",
-    "kind": "color",
-    "value": "#d9ff80"
-   },
-   "--color-lime-400": {
-    "raw": "#beec4b",
-    "kind": "color",
-    "value": "#beec4b"
-   },
-   "--color-lime-50": {
-    "raw": "#f7ffe6",
-    "kind": "color",
-    "value": "#f7ffe6"
-   },
-   "--color-lime-500": {
-    "raw": "#a3ce2c",
-    "kind": "color",
-    "value": "#a3ce2c"
-   },
-   "--color-lime-600": {
-    "raw": "#82a91e",
-    "kind": "color",
-    "value": "#82a91e"
-   },
-   "--color-lime-700": {
-    "raw": "#66841a",
-    "kind": "color",
-    "value": "#66841a"
-   },
-   "--color-lime-800": {
-    "raw": "#4d641b",
-    "kind": "color",
-    "value": "#4d641b"
-   },
-   "--color-lime-900": {
-    "raw": "#33421a",
-    "kind": "color",
-    "value": "#33421a"
-   },
-   "--color-lime-950": {
-    "raw": "#1a230b",
-    "kind": "color",
-    "value": "#1a230b"
-   },
-   "--color-link-default": {
-    "raw": "#61a6fa",
-    "kind": "color",
-    "value": "#61a6fa"
-   },
-   "--color-link-disabled": {
-    "raw": "#3c3c39",
-    "kind": "color",
-    "value": "#3c3c39"
-   },
-   "--color-link-hover": {
-    "raw": "#91c3fd",
-    "kind": "color",
-    "value": "#91c3fd"
-   },
-   "--color-link-visited": {
-    "raw": "#bedbfe",
-    "kind": "color",
-    "value": "#bedbfe"
-   },
-   "--color-neutral-100": {
-    "raw": "#f5f5f0",
-    "kind": "color",
-    "value": "#f5f5f0"
-   },
-   "--color-neutral-200": {
-    "raw": "#e4e4dc",
-    "kind": "color",
-    "value": "#e4e4dc"
-   },
-   "--color-neutral-300": {
-    "raw": "#cecec5",
-    "kind": "color",
-    "value": "#cecec5"
-   },
-   "--color-neutral-400": {
-    "raw": "#a7a7a0",
-    "kind": "color",
-    "value": "#a7a7a0"
-   },
-   "--color-neutral-50": {
-    "raw": "#fdfdf7",
-    "kind": "color",
-    "value": "#fdfdf7"
-   },
-   "--color-neutral-500": {
-    "raw": "#797972",
-    "kind": "color",
-    "value": "#797972"
-   },
-   "--color-neutral-600": {
-    "raw": "#53544f",
-    "kind": "color",
-    "value": "#53544f"
-   },
-   "--color-neutral-700": {
-    "raw": "#3c3c39",
-    "kind": "color",
-    "value": "#3c3c39"
-   },
-   "--color-neutral-800": {
-    "raw": "#272725",
-    "kind": "color",
-    "value": "#272725"
-   },
-   "--color-neutral-900": {
-    "raw": "#1b1b18",
-    "kind": "color",
-    "value": "#1b1b18"
-   },
-   "--color-neutral-950": {
-    "raw": "#0b0b0a",
-    "kind": "color",
-    "value": "#0b0b0a"
-   },
-   "--color-sage-100": {
-    "raw": "#e1efe3",
-    "kind": "color",
-    "value": "#e1efe3"
-   },
-   "--color-sage-200": {
-    "raw": "#c9e3cc",
-    "kind": "color",
-    "value": "#c9e3cc"
-   },
-   "--color-sage-300": {
-    "raw": "#b9dabd",
-    "kind": "color",
-    "value": "#b9dabd"
-   },
-   "--color-sage-400": {
-    "raw": "#8dbf93",
-    "kind": "color",
-    "value": "#8dbf93"
-   },
-   "--color-sage-50": {
-    "raw": "#f1f8f2",
-    "kind": "color",
-    "value": "#f1f8f2"
-   },
-   "--color-sage-500": {
-    "raw": "#5e9c65",
-    "kind": "color",
-    "value": "#5e9c65"
-   },
-   "--color-sage-600": {
-    "raw": "#45824d",
-    "kind": "color",
-    "value": "#45824d"
-   },
-   "--color-sage-700": {
-    "raw": "#34653a",
-    "kind": "color",
-    "value": "#34653a"
-   },
-   "--color-sage-800": {
-    "raw": "#264b2c",
-    "kind": "color",
-    "value": "#264b2c"
-   },
-   "--color-sage-900": {
-    "raw": "#16311a",
-    "kind": "color",
-    "value": "#16311a"
-   },
-   "--color-sage-950": {
-    "raw": "#0a190c",
-    "kind": "color",
-    "value": "#0a190c"
-   },
-   "--color-solid-bg": {
-    "raw": "#fdfdf7",
-    "kind": "color",
-    "value": "#fdfdf7"
-   },
-   "--color-solid-bg-disabled": {
-    "raw": "#272725",
-    "kind": "color",
-    "value": "#272725"
-   },
-   "--color-solid-bg-hover": {
-    "raw": "#e4e4dc",
-    "kind": "color",
-    "value": "#e4e4dc"
-   },
-   "--color-solid-bg-pressed": {
-    "raw": "#f5f5f0",
-    "kind": "color",
-    "value": "#f5f5f0"
-   },
-   "--color-solid-fg": {
-    "raw": "#0b0b0a",
-    "kind": "color",
-    "value": "#0b0b0a"
-   },
-   "--color-solid-fg-disabled": {
-    "raw": "#3c3c39",
-    "kind": "color",
-    "value": "#3c3c39"
-   },
-   "--color-success-100": {
-    "raw": "#ddeedf",
-    "kind": "color",
-    "value": "#ddeedf"
-   },
-   "--color-success-200": {
-    "raw": "#bad9be",
-    "kind": "color",
-    "value": "#bad9be"
-   },
-   "--color-success-300": {
-    "raw": "#8ebe95",
-    "kind": "color",
-    "value": "#8ebe95"
-   },
-   "--color-success-400": {
-    "raw": "#5ea168",
-    "kind": "color",
-    "value": "#5ea168"
-   },
-   "--color-success-50": {
-    "raw": "#f1f8f2",
-    "kind": "color",
-    "value": "#f1f8f2"
-   },
-   "--color-success-500": {
-    "raw": "#438448",
-    "kind": "color",
-    "value": "#438448"
-   },
-   "--color-success-600": {
-    "raw": "#2f6a36",
-    "kind": "color",
-    "value": "#2f6a36"
-   },
-   "--color-success-700": {
-    "raw": "#235328",
-    "kind": "color",
-    "value": "#235328"
-   },
-   "--color-success-800": {
-    "raw": "#193e1e",
-    "kind": "color",
-    "value": "#193e1e"
-   },
-   "--color-success-900": {
-    "raw": "#112c15",
-    "kind": "color",
-    "value": "#112c15"
-   },
-   "--color-success-950": {
-    "raw": "#061309",
-    "kind": "color",
-    "value": "#061309"
-   },
-   "--color-success-bg": {
-    "raw": "#112c15",
-    "kind": "color",
-    "value": "#112c15"
-   },
-   "--color-success-border": {
-    "raw": "#235328",
-    "kind": "color",
-    "value": "#235328"
-   },
-   "--color-success-fg": {
-    "raw": "#bad9be",
-    "kind": "color",
-    "value": "#bad9be"
-   },
-   "--color-surface-canvas": {
-    "raw": "#0d0e0b",
-    "kind": "color",
-    "value": "#0d0e0b"
-   },
-   "--color-surface-muted-blue": {
-    "raw": "#162136",
-    "kind": "color",
-    "value": "#162136"
-   },
-   "--color-surface-muted-rose": {
-    "raw": "#2c2131",
-    "kind": "color",
-    "value": "#2c2131"
-   },
-   "--color-surface-muted-sage": {
-    "raw": "#18251c",
-    "kind": "color",
-    "value": "#18251c"
-   },
-   "--color-surface-muted-warm": {
-    "raw": "#262421",
-    "kind": "color",
-    "value": "#262421"
-   },
-   "--color-surface-raised": {
-    "raw": "#1b1b18",
-    "kind": "color",
-    "value": "#1b1b18"
-   },
-   "--color-surface-sunken": {
-    "raw": "#080907",
-    "kind": "color",
-    "value": "#080907"
-   },
-   "--color-warning-100": {
-    "raw": "#fcefc0",
-    "kind": "color",
-    "value": "#fcefc0"
-   },
-   "--color-warning-200": {
-    "raw": "#f8de82",
-    "kind": "color",
-    "value": "#f8de82"
-   },
-   "--color-warning-300": {
-    "raw": "#f1c946",
-    "kind": "color",
-    "value": "#f1c946"
-   },
-   "--color-warning-400": {
-    "raw": "#e0ab1a",
-    "kind": "color",
-    "value": "#e0ab1a"
-   },
-   "--color-warning-50": {
-    "raw": "#fef9e7",
-    "kind": "color",
-    "value": "#fef9e7"
-   },
-   "--color-warning-500": {
-    "raw": "#c28d0f",
-    "kind": "color",
-    "value": "#c28d0f"
-   },
-   "--color-warning-600": {
-    "raw": "#9d6f0b",
-    "kind": "color",
-    "value": "#9d6f0b"
-   },
-   "--color-warning-700": {
-    "raw": "#7b550a",
-    "kind": "color",
-    "value": "#7b550a"
-   },
-   "--color-warning-800": {
-    "raw": "#59410d",
-    "kind": "color",
-    "value": "#59410d"
-   },
-   "--color-warning-900": {
-    "raw": "#3c2d0b",
-    "kind": "color",
-    "value": "#3c2d0b"
-   },
-   "--color-warning-950": {
-    "raw": "#1f1605",
-    "kind": "color",
-    "value": "#1f1605"
-   },
-   "--color-warning-bg": {
-    "raw": "#3c2d0b",
-    "kind": "color",
-    "value": "#3c2d0b"
-   },
-   "--color-warning-border": {
-    "raw": "#7b550a",
-    "kind": "color",
-    "value": "#7b550a"
-   },
-   "--color-warning-fg": {
-    "raw": "#f8de82",
-    "kind": "color",
-    "value": "#f8de82"
-   },
-   "--color-wash-lavender-deep": {
-    "raw": "#e5e1f4",
-    "kind": "color",
-    "value": "#e5e1f4"
-   },
-   "--color-wash-lavender-soft": {
-    "raw": "#efecf9",
-    "kind": "color",
-    "value": "#efecf9"
-   },
-   "--color-wash-sage": {
-    "raw": "#ebf4ec",
-    "kind": "color",
-    "value": "#ebf4ec"
-   },
-   "--color-wash-sky": {
-    "raw": "#e7eef3",
-    "kind": "color",
-    "value": "#e7eef3"
-   },
-   "--color-white": {
-    "raw": "#fff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--font-body": {
-    "raw": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
-    "kind": "fontFamily",
-    "value": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif"
-   },
-   "--header-height": {
-    "raw": "4.5rem",
-    "kind": "dimension",
-    "value": "72px"
-   },
-   "--shadow-brand-glow": {
-    "raw": "0 4px 14px #0961e463",
-    "kind": "shadow",
-    "value": "rgba(9, 97, 228, 0.39) 0px 4px 14px 0px"
-   },
-   "--shadow-brand-glow-hover": {
-    "raw": "0 6px 20px #0961e480",
-    "kind": "shadow",
-    "value": "rgba(9, 97, 228, 0.5) 0px 6px 20px 0px"
-   },
-   "--shadow-focus-ring": {
-    "raw": "0 0 0 2px #61a6fa",
-    "kind": "shadow",
-    "value": "rgb(97, 166, 250) 0px 0px 0px 2px"
-   },
-   "--shadow-lg": {
-    "raw": "0 2px 24px #0000000f",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.06) 0px 2px 24px 0px"
-   },
-   "--shadow-md": {
-    "raw": "0 2px 12px #0000000f",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.06) 0px 2px 12px 0px"
-   },
-   "--shadow-sm": {
-    "raw": "0 1px 12px #0000000d",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.05) 0px 1px 12px 0px"
-   },
-   "--shadow-xl": {
-    "raw": "0 5px 32px #0000001a",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.1) 0px 5px 32px 0px"
-   },
-   "--shadow-xs": {
-    "raw": "0 1px 2px #0000000f",
-    "kind": "shadow",
-    "value": "rgba(0, 0, 0, 0.06) 0px 1px 2px 0px"
-   },
-   "--skeleton-loader-gradient": {
-    "raw": "linear-gradient(90deg, #272725 43.67%, #3c3c39 75.79%, #272725 100%)",
-    "kind": "other"
-   },
-   "--tap-target-min": {
-    "raw": "2.75rem",
-    "kind": "dimension",
-    "value": "44px"
-   },
-   "--tracking-display": {
-    "raw": "-.01em",
-    "kind": "other"
-   },
-   "--tracking-tight": {
-    "raw": "-.02em",
-    "kind": "other"
-   }
-  }
- }
 }

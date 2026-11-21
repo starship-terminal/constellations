@@ -1,201 +1,152 @@
-// Captures byborre.com's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
+// Captures byborre.com public pages. Cookie banner is hidden, never accepted.
+// Login and sign-up dialogs are photographed and not filled. Nothing is submitted.
 //
-//   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
-//
-// Names are {page}-{theme}-{state}.png; mobile ones get a `mobile-` prefix. The site paints one
-// light surface signed out; the Design Studio (the signed-in tool at /dashboard) redirects to
-// /?redirectTo=/dashboard and opens a login dialog, which is itself a public surface. Desktop
-// shots are 1440x900 at 1x, mobile 390x844 at 2x, `*-full` shots 1x. A page taller than one GPU
-// texture is saved as name.partN.png tiles, which quantize.py stitches back together; an unbounded
-// page truncates at 8 chunks and the log records the boundary. Nothing is sent, bought or signed
-// into: the only presses are local UI toggles — the About nav flyout, the cart drawer, a FAQ
-// question, a colour filter and a textile view toggle. The cookie consent bar is hidden, never
-// answered.
-import fs from 'fs';
+//   PLAYWRIGHT=... node public.mjs
+import fs from 'node:fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { chromium, patch, closePromo, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/byborre/raw-shots`;
 fs.mkdirSync(RAW, { recursive: true });
-const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
 
-async function lazyScroll(p) {
-  const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
-  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
-}
-
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr }; this.count = 0; }
-  async view(name) { await closePromo(this.p); await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
+  constructor(p, prefix, vw, vh, dpr) {
+    this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr;
+    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr };
+  }
+  async view(name) {
+    await closePromo(this.p);
+    await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested);
+    log('  shot', this.prefix, name);
+  }
   async full(name = 'full') {
-    const p = this.p;
-    await closePromo(p);
-    await lazyScroll(p);
-    const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
+    await closePromo(this.p);
+    const H = await this.p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
+    const hCap = Math.min(H, 8 * chunk);
     const f = `${RAW}/${this.prefix}-${name}`;
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    const MAXH = 8 * chunk;
-    const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
-    this.count++; log('  shot', name, 'H=' + H);
-    await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
+    if (hCap <= chunk) await screenshotWithMetadata(this.p, { path: f + '.png', fullPage: true }, this.requested);
+    else {
+      for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+        await screenshotWithMetadata(this.p, { path: `${f}.part${i}.png`, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+      }
+    }
+    log('  shot', this.prefix, name, 'H=' + H);
+    await this.p.evaluate(() => scrollTo(0, 0));
   }
 }
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
-const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
-// The About / Collaborations header buttons open flyout panels (hover on
-// desktop; a click also opens them). Local UI only.
-async function openFlyout(p, S) {
-  const t = p.locator('header button').filter({ hasText: /^\s*About\s*$/ }).filter({ visible: true }).first();
-  if (!(await t.count())) return;
-  await t.hover({ timeout: 5000 }).catch(() => {});
-  await wait(p, 900);
-  const open = await p.evaluate(() => [...document.querySelectorAll('header a')].some((a) => /Knit Innovation|Responsibility|Creative Control/.test(a.innerText || '') && a.getBoundingClientRect().height > 0));
-  if (!open) await clickEl(t).catch(() => {});
-  await wait(p, 1200);
-  await S.view('menu');
-  await p.keyboard.press('Escape');
+async function goto(page, path) {
+  const url = path.startsWith('http') ? path : BASE + path;
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await wait(page, 1800);
+  await closePromo(page);
+  log('  ->', page.url());
 }
 
-const desktop = {
-  home: { path: '/', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await step('flyout', async () => { await openFlyout(p, S); });
-    await step('cart', async () => {
-      const c = p.locator('header button[aria-label="Cart"]').filter({ visible: true }).first();
-      if (await c.count()) { await clickEl(c); await wait(p, 1400); await S.view('cart'); await p.keyboard.press('Escape'); }
-    });
-    await S.full();
-  } },
-  collection: { path: '/collection', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await step('filtered', async () => {
-      const f = p.locator('input[name="color-select-Blue"], label:has-text("BLUE")').filter({ visible: true }).first();
-      if (await f.count()) { await clickEl(f); await wait(p, 1500); await S.view('filtered'); }
-    });
-    await S.full();
-  } },
-  textile: { path: '/collection/blink', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await step('render', async () => {
-      // The textile viewer's own PHOTO/RENDER toggle — a local UI state, no
-      // submit or navigation.
-      const t = p.locator('button').filter({ hasText: /^\s*RENDER\s*$/i }).filter({ visible: true }).first();
-      if (await t.count()) { await clickEl(t); await wait(p, 1400); await S.view('render'); }
-    });
-    await S.full();
-  } },
-  'creative-control': { path: '/creative-control', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  'knit-innovation': { path: '/knit-innovation', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  projects: { path: '/projects', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  brands: { path: '/brands', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  designers: { path: '/designers', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  'founders-story': { path: '/founders-story', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  responsibility: { path: '/responsibility', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  'ways-of-working': { path: '/ways-of-working', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  team: { path: '/team', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  faq: { path: '/faq', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await step('open', async () => {
-      const qq = p.locator('button.w-full, button').filter({ hasText: /\?/ }).filter({ visible: true }).first();
-      if (await qq.count()) { await clickEl(qq); await wait(p, 1200); await S.view('open'); }
-    });
-    await S.full();
-  } },
-  contact: { path: '/contact', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  'popup-store': { path: '/popup-store', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  login: { path: '/?redirectTo=/dashboard', wait: 10000, run: async (p, S) => {
-    await S.view('default');
-  } },
-  terms: { path: '/terms-and-conditions', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-  } },
-  privacy: { path: '/privacy-policy', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-  } },
-};
+const browser = await chromium.launch({ headless: true });
 
-const mobile = {
-  home: { path: '/', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await step('menu', async () => {
-      const m = p.locator('header button[aria-label="Open menu"], header button').filter({ hasText: /menu/i }).filter({ visible: true }).first();
-      const alt = p.locator('header button[aria-label="Open menu"]').first();
-      const t = (await m.count()) ? m : alt;
-      if (await t.count()) { await clickEl(t); await wait(p, 1600); await S.view('menu'); }
-    });
-    await S.full();
-  } },
-  collection: { path: '/collection', wait: 9000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-};
-
-const b = await chromium.launch();
-let total = 0;
-const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
-for (const { k, mob } of runs) {
-  const name = (mob ? 'mobile-' : '') + k;
-  if (pageArg.length && !pageArg.includes(name)) continue;
-  const spec = (mob ? mobile : desktop)[k];
-  const theme = 'light';
-  const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
-  const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
+async function desk(name, fn) {
+  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
   await patch(ctx);
-  const p = await ctx.newPage();
-  log(name);
-  const S = new Shooter(p, `${name}-${theme}`, vw, vh, dpr);
-  try {
-    if (spec.path) {
-      await p.goto(BASE + spec.path, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-      if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.path); await ctx.close(); continue; }
-      await wait(p, spec.wait || 7000);
-    }
-    await spec.run(p, S);
-  } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
-  total += S.count;
+  const page = await ctx.newPage();
+  const S = new Shooter(page, `${name}-light`, 1440, 900, 1);
+  try { await fn(page, S); } catch (e) { log('  FAILED', name, e.message.split('\n')[0]); }
   await ctx.close();
 }
-log('done', total, 'screenshots ->', RAW);
-await b.close();
+
+async function phone(name, fn) {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' });
+  await patch(ctx);
+  const page = await ctx.newPage();
+  const S = new Shooter(page, `mobile-${name}-light`, 390, 844, 2);
+  try { await fn(page, S); } catch (e) { log('  FAILED', name, e.message.split('\n')[0]); }
+  await ctx.close();
+}
+
+log('home');
+await desk('home', async (page, S) => {
+  await goto(page, '/');
+  await S.view('default');
+  await page.getByRole('button', { name: 'Collaborations', exact: true }).click();
+  await wait(page, 700);
+  await S.view('collaborations');
+  await page.keyboard.press('Escape');
+  await page.getByRole('button', { name: 'About', exact: true }).click();
+  await wait(page, 700);
+  await S.view('about');
+  await page.keyboard.press('Escape');
+  await page.getByRole('button', { name: 'Cart' }).first().click();
+  await wait(page, 700);
+  await S.view('cart');
+  await page.getByRole('button', { name: 'Close', exact: true }).click().catch(() => page.keyboard.press('Escape'));
+  await wait(page, 400);
+  await page.locator('header button:visible').last().click();
+  await wait(page, 900);
+  await S.view('login');
+  await page.keyboard.press('Escape');
+  await S.full();
+});
+
+log('collection');
+await desk('collection', async (page, S) => {
+  await goto(page, '/collection');
+  await S.view('default');
+  await page.getByRole('button', { name: 'Pattern' }).first().click();
+  await wait(page, 600);
+  await S.view('pattern');
+  await page.keyboard.press('Escape');
+  await S.full();
+});
+
+log('textile');
+await desk('textile', async (page, S) => {
+  await goto(page, '/collection/blink?color=orange&shade=balance');
+  await S.view('default');
+  await page.getByRole('button', { name: 'Material' }).first().click().catch(() => {});
+  await wait(page, 500);
+  await S.view('accordion');
+  await S.full();
+});
+
+for (const [name, path] of [['contact', '/contact'], ['faq', '/faq'], ['popup', '/popup-store'], ['creative', '/creative-control'], ['responsibility', '/responsibility'], ['projects', '/projects'], ['notfound', '/this-page-is-not-real']]) {
+  log(name);
+  await desk(name, async (page, S) => {
+    await goto(page, path);
+    await S.view('default');
+    await S.full();
+  });
+}
+
+log('login wall');
+await desk('login', async (page, S) => {
+  await goto(page, '/?redirectTo=/dashboard');
+  await wait(page, 800);
+  await S.view('default');
+  const dialog = page.locator('div').filter({ has: page.locator('input[type="email"]') }).filter({ hasText: 'Log in to continue' }).last();
+  await dialog.getByRole('button', { name: 'Sign up', exact: true }).click();
+  await wait(page, 800);
+  await S.view('signup');
+  await page.keyboard.press('Escape');
+  await page.goto(BASE + '/?redirectTo=/dashboard', { waitUntil: 'domcontentloaded', timeout: 45000 });
+  await wait(page, 1200);
+  await closePromo(page);
+  await page.getByRole('button', { name: /forgot password/i }).click();
+  await wait(page, 700);
+  await S.view('forgot');
+});
+
+log('mobile');
+await phone('home', async (page, S) => {
+  await goto(page, '/');
+  await S.view('default');
+  await page.getByRole('button', { name: 'Open menu' }).click();
+  await wait(page, 700);
+  await S.view('menu');
+  await S.full('full');
+});
+
+await browser.close();
+log('done', RAW);

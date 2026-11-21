@@ -1,0 +1,57 @@
+{
+  "slug": "fable",
+  "probe": "no-form",
+  "login-extracted": "not-started",
+  "signed_in": false,
+  "when": "2026-11-21",
+  "host": "headless Chromium via Playwright",
+  "note": "https://fable.co/login is a missing page (illustrated 404). The homepage has Get the app and no email form. The person icon opens a Create your account dialog. Library redirects to /signin.",
+  "offered": {
+    "homepage": {
+      "items": ["Get the app", "Sign up or log in (person icon)", "Shopping cart"],
+      "email_form": false
+    },
+    "signup_dialog": {
+      "url": "https://fable.co/ (dialog, not a navigation)",
+      "asks": ["Display Name", "Email Address", "Password", "Show password", "terms checkbox", "Sign up with Email", "Continue with Google", "Continue with Apple", "Log in"],
+      "followed": false
+    },
+    "signin_wall": {
+      "url": "https://fable.co/signin?next=%2Flibrary",
+      "asks": ["Email Address", "Password", "Show", "Login with email", "Reset it", "Continue with Google", "Continue with Apple", "Sign up"],
+      "followed": false
+    },
+    "missing_login": {
+      "url": "https://fable.co/login",
+      "asks": [],
+      "result": "404 Oops page with Go back"
+    }
+  },
+  "screens": [
+    {"name": "Create your account dialog", "url": "https://fable.co/", "file": "screenshots/home-light-signup.png"},
+    {"name": "Please log in", "url": "https://fable.co/signin?next=%2Flibrary", "file": "screenshots/signin-light-default.png"},
+    {"name": "Missing /login", "url": "https://fable.co/login", "file": "screenshots/notfound-light-default.png"}
+  ],
+  "gaps": [
+    "Signed-in library, shelves, streaks, and club chat were not opened. Library stops at the signin wall.",
+    "Continue with Google and Continue with Apple were not clicked.",
+    "Reset password was not opened.",
+    "Sign up was not submitted and no account was created.",
+    "App Store and Google Play badges were recorded and not followed into a store.",
+    "No code was sent. Unread token values are Not captured."
+  ],
+  "not_submitted": [
+    "Display Name",
+    "Email Address",
+    "Password",
+    "Sign up with Email",
+    "Login with email",
+    "Reset it",
+    "Continue with Google",
+    "Continue with Apple",
+    "Sign up",
+    "terms checkbox",
+    "Osano Accept All",
+    "Osano Save Preferences"
+  ]
+}

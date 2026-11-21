@@ -1,0 +1,47 @@
+{
+  "offered": {
+    "login": {
+      "url": "https://auth.glassnode.com/u/login",
+      "fields": ["email address", "password"],
+      "actions": ["Continue", "Reset password", "Show password"],
+      "providers": ["Google"],
+      "other": ["Sign up link", "reCAPTCHA (I'm not a robot)"],
+      "typed": false,
+      "submitted": false
+    },
+    "signup": {
+      "url": "https://auth.glassnode.com/u/signup",
+      "fields": ["email address", "password", "first name", "last name"],
+      "actions": ["Continue"],
+      "providers": ["Google"],
+      "other": ["Terms of Service", "Privacy Policy", "Log in link", "reCAPTCHA (I'm not a robot)"],
+      "typed": false,
+      "submitted": false
+    }
+  },
+  "screens": [
+    "screenshots/login-light-empty.png",
+    "screenshots/login-light-empty-full.png",
+    "screenshots/signup-light-empty.png",
+    "screenshots/signup-light-empty-full.png"
+  ],
+  "gaps": [
+    "Signed-in Studio was not entered.",
+    "Google was not clicked.",
+    "reCAPTCHA was not solved.",
+    "No code was sent.",
+    "Reset password was not opened.",
+    "https://studio.glassnode.com/login returned 404 Page Not Found."
+  ],
+  "not_submitted": [
+    "login email",
+    "login password",
+    "signup email",
+    "signup password",
+    "signup first name",
+    "signup last name",
+    "newsletter email",
+    "contact form",
+    "lead form on the data page"
+  ]
+}

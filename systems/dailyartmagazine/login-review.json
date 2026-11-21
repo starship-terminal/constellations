@@ -1,0 +1,17 @@
+{
+  "product": "DailyArt Magazine",
+  "reviewedAt": "2026-11-21",
+  "url": "https://www.dailyartmagazine.com/login",
+  "httpStatus": 404,
+  "title": "Page not found | DailyArt Magazine",
+  "h1": "Oooops! Page not Found",
+  "signInFormFound": false,
+  "passwordFields": 0,
+  "identityProviders": [],
+  "note": "The URL renders the magazine's missing-page template: a crimson heading, a short error line, and recommended story cards. The only forms on the page are the header search (a hidden query field plus a Search button that navigates to /?s=) and the newsletter forms in the footer and a closed modal. None is a sign-in form. No Google, Apple, Facebook, Microsoft, or other identity-provider button was present. No account was created. No field was filled.",
+  "screenshots": [
+    "screenshots/login-light-default.png",
+    "screenshots/mobile-login-light-default.png"
+  ],
+  "widths": [1440, 390]
+}

@@ -1,0 +1,58 @@
+{
+  "product": "FoodNoms",
+  "domain": "foodnoms.com",
+  "reviewed": "2026-11-21",
+  "probe": "no-form",
+  "login_extracted": "not-started",
+  "offered": [
+    "Get the App, which opens the Apple App Store listing for id 1479461686",
+    "Open in Foodnoms, on /open/settings/sign-up and /open/settings/account, which is an in-app deep link page and not a web form",
+    "Email Us, a mailto link to the published support address",
+    "A newsletter email field and Sign Up button on /news, left empty and not submitted"
+  ],
+  "screens": [
+    {
+      "url": "https://foodnoms.com/login",
+      "status": 404,
+      "title": "Page Not Found",
+      "asks_for": [],
+      "screenshot": "screenshots/login-404-light-default.png",
+      "stopped": "404 template. No email, password, code, or SSO control. Branch stopped."
+    },
+    {
+      "url": "https://foodnoms.com/open/settings/sign-up",
+      "status": 200,
+      "title": "Open in Foodnoms",
+      "asks_for": [],
+      "screenshot": "screenshots/open-signup-light-default.png",
+      "stopped": "Deep-link page. The Open in Foodnoms control has href ../../ and showed no credential fields. Branch stopped. Not a signup wall."
+    },
+    {
+      "url": "https://foodnoms.com/open/settings/account",
+      "status": 200,
+      "title": "Open in Foodnoms",
+      "asks_for": [],
+      "screenshot": "screenshots/open-signup-light-default.png",
+      "stopped": "Same deep-link template as sign-up. No credential fields. Branch stopped."
+    },
+    {
+      "url": "https://foodnoms.com/download",
+      "status": 200,
+      "title": null,
+      "asks_for": [],
+      "screenshot": null,
+      "stopped": "200, then a document navigation to the App Store. That navigation was aborted. Store checkout not followed."
+    }
+  ],
+  "gaps": [
+    "No web sign-in form exists on the public site.",
+    "No Google, Apple, Microsoft, Facebook, GitHub, or other SSO button was present to stop on.",
+    "Signed-in product UI is the iOS app. Not captured. No signed-in package was invented.",
+    "Newsletter Sign Up was not submitted, so its success and error states are not captured.",
+    "Token values in unread fields are Not captured."
+  ],
+  "not_submitted": [
+    "https://foodnoms.com/news newsletter form (email field focused, empty, Sign Up not clicked)",
+    "https://foodnoms.com/help search field (query widgets typed to reveal result links; not an account form)"
+  ]
+}

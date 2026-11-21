@@ -3,9 +3,8 @@
 
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-theme="dark"]`, mirroring the mechanism doctronic.ai itself
-uses (localStorage.theme=dark applies data-theme="dark" to <html>): the guide's theme toggle sets
-the same attribute. Aliases like {text.primary} become var(--text-primary).
+`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
+theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
 
 Placeholders in the template:
   /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
@@ -47,8 +46,8 @@ def css_val(name, t):
             return alias(v)
         return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
     if ty == "typography":
-        style = (v.get("fontStyle") or "").strip()
-        return f'{style + " " if style else ""}{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
+        style = "italic " if v.get("fontStyle") == "italic" else ""
+        return f'{style}{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
     if ty == "gradient":
         angle = t["$extensions"].get("angle", "180deg")
         return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
@@ -112,7 +111,10 @@ def clean_svg(svg, size):
 
 def icon(m):
     name, size = m.group(1), m.group(2)
-    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
+    file = HERE / "icons" / f"{name}.svg"
+    if not file.exists():
+        return ""
+    src = ICON_SRC.setdefault(name, file.read_text())
     return clean_svg(src, size)
 
 

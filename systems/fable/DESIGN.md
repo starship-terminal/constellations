@@ -3,203 +3,133 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Fable"
-description: "book-club and reading-product design: a full declared Tailwind-style token layer (graphite/pearl/forest/olive/royal palette scales, dark/white and per-hue alpha fades, a 12-colour quote-theme reader set, a semantic --color-background/text/border/line layer with a scoped .dark redeclare, radius/shadow/breakpoint scales and reader list fonts) painting two skins signed out - an Emotion marketing skin (cream and deep-forest bands, Heldane Display mastheads, 60px pill controls, #161015 ink, #116ecd focus) and a CSS-module catalog skin (white field, heldane mastheads, 9999px pills and chips, #0064c3 focus) over clubs/books/genre/detail pages, a sign-in panel, support, a blog, and a dark /discover cover wall"
+description: "Reading-community marketing: forest hero, cream page, Heldane titles, Inter UI, pill actions"
 omitted:
-  - section: "typography"
-    reason: "tokens.json has no typography tokens under `core.typography`"
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#064c37"
-  neutral: "#ffffff"
-  surface: "#f7f4eb"
+  neutral: "#f7f4ee"
+  surface: "#ffffff"
   on-surface: "#1b1a1b"
-  on-surface-variant: "#4b4649"
+  on-surface-variant: "#161015"
   outline: "#b1acaf"
-  color-background-amber: "#fac826"
-  color-background-amberfademid: "rgba(244, 212, 111, 0.2)"
-  color-background-coral: "#f25b0e"
-  color-background-dark: "#1b1a1b"
-  color-background-darkfadefixed: "rgba(7, 6, 7, 0.6)"
-  color-background-darkfadehigh: "rgba(7, 6, 7, 0.4)"
-  color-background-darkfadelow: "rgba(7, 6, 7, 0.1)"
-  color-background-darkfadelowest: "rgba(7, 6, 7, 0.05)"
-  color-background-darkfademid: "rgba(7, 6, 7, 0.2)"
-  color-background-darkhover: "#4b4649"
-  color-background-disabled: "#746e72"
-  color-background-disabled2: "#b1acaf"
-  color-background-error: "#d12e2e"
-  color-background-fern: "#6e9a36"
-  color-background-fernlight: "#e8f9e6"
-  color-background-forest: "#064c37"
-  color-background-gray: "#e1e0e1"
-  color-background-graylight: "#f8f8f8"
-  color-background-indigo: "#4252f1"
-  color-background-indigolight: "#e6efff"
-  color-background-inverse: "#1b1a1b"
-  color-background-iris: "#4d0c98"
-  color-background-lemon: "#f2d63f"
-  color-background-light: "#ffffff"
-  color-background-lightfadehigh: "rgba(255, 255, 255, 0.7)"
-  color-background-lightfadelow: "rgba(255, 255, 255, 0.2)"
-  color-background-lightfademid: "rgba(255, 255, 255, 0.5)"
-  color-background-meadow: "#81ba6d"
-  color-background-mid: "#746e72"
-  color-background-olive: "#76a938"
-  color-background-olivedark: "#526c03"
-  color-background-olivefadelow: "rgba(118, 169, 56, 0.1)"
-  color-background-olivefademid: "rgba(118, 169, 56, 0.2)"
-  color-background-ondark: "#ffffff"
-  color-background-ondlight: "#070607"
-  color-background-passive: "rgba(7, 6, 7, 0.1)"
-  color-background-pearllight: "#fcf9f5"
-  color-background-primary: "#ffffff"
-  color-background-quote: "#06120e"
-  color-background-rose: "#cd5786"
-  color-background-royal: "#0064c3"
-  color-background-royalfademid: "rgba(122, 195, 237, 0.2)"
-  color-background-scarletfademid: "rgba(255, 160, 149, 0.2)"
-  color-background-secondary: "#f7f4eb"
-  color-background-sky: "#43a1d7"
-  color-background-success: "#526c03"
-  color-background-surfacehigh: "#ffffff"
-  color-background-tertiary: "#ebe7d9"
-  color-border-amber: "#c2970d"
-  color-border-dark: "#1b1a1b"
-  color-border-disabled: "#746e72"
-  color-border-error: "#d12e2e"
-  color-border-light: "#ffffff"
-  color-border-mid: "#746e72"
-  color-border-olive: "#76a938"
-  color-border-ondark: "#ffffff"
-  color-border-passive: "rgba(7, 6, 7, 0.1)"
-  color-border-primary: "#b1acaf"
-  color-border-secondary: "#f7f4eb"
-  color-focus: "#0064c3"
-  color-line-passive: "rgba(7, 6, 7, 0.1)"
-  color-line-primary: "#b1acaf"
-  color-olive: "#526c03"
-  color-primary: "#1b1a1b"
-  color-secondary: "#4b4649"
-  color-text-amber: "#c2970d"
-  color-text-dark: "#1b1a1b"
-  color-text-disabled: "#746e72"
-  color-text-disabled2: "#4b4649"
-  color-text-error: "#d12e2e"
-  color-text-light: "#ffffff"
-  color-text-mid: "#746e72"
-  color-text-olive: "#76a938"
-  color-text-ondark: "#ffffff"
-  color-text-primary: "#1b1a1b"
-  color-text-royal: "#0064c3"
-  color-text-royalfixed: "#7ac3ed"
-  color-text-secondary: "#4b4649"
-  color-text-sub: "#b1acaf"
-  color-text-success: "#526c03"
-  text-ink: "#1b1a1b"
-  text-emotionInk: "#161015"
-  text-onDark: "#f7f4ee"
-  text-muted: "#4b4649"
-  text-footerMuted: "#847f7c"
-  action-ctaFill: "#1b1a1b"
-  action-ctaInk: "#ffffff"
-  action-emotionCtaFill: "#292229"
-  action-emotionCtaInk: "#ffffff"
-  border-focusRing: "#0064c3"
-  border-emotionFocusRing: "#116ecd"
-  border-hairline: "#b1acaf"
-  background-page: "#ffffff"
-  background-surface: "#f7f4eb"
-  background-surfaceHover: "#ebe7d9"
-  background-band: "#064c37"
-  background-appBanner: "#053829"
-  background-footer: "#070607"
+  background-page: "#f7f4ee"
+  background-hero: "#064c37"
+  background-surface: "#ffffff"
+  background-book: "#f7f4eb"
+  background-inverse: "#070607"
+  text-primary: "#1b1a1b"
+  text-onHero: "#f7f4ee"
+  text-onInverse: "#ffffff"
+  text-link: "#116ecd"
+  text-muted: "#161015"
+  border-default: "#b1acaf"
+  border-strong: "#1b1a1b"
+  action-primary: "#292229"
+  action-onPrimary: "#ffffff"
+  action-quiet: "#ffffff"
+  action-onQuiet: "#161015"
+  focus-ring: "#116ecd"
+typography:
+  display:
+    fontFamily: "Heldane Display"
+    fontSize: "72px"
+    fontWeight: 500
+    lineHeight: "62px"
+  title:
+    fontFamily: "Heldane Display"
+    fontSize: "46px"
+    fontWeight: 700
+    lineHeight: "48px"
+  clubsTitle:
+    fontFamily: "Heldane Display"
+    fontSize: "58px"
+    fontWeight: 700
+    lineHeight: "60px"
+  dialogTitle:
+    fontFamily: "Inter"
+    fontSize: "22px"
+    fontWeight: 500
+    lineHeight: "28px"
+  lede:
+    fontFamily: "Inter"
+    fontSize: "24px"
+    fontWeight: 500
+    lineHeight: "34px"
+  body:
+    fontFamily: "Inter"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "24px"
+  label:
+    fontFamily: "Inter"
+    fontSize: "14px"
+    fontWeight: 600
+    lineHeight: "20px"
+  caption:
+    fontFamily: "Inter"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: "15px"
 rounded:
-  "0": "0px"
-  "12": "12px"
-  "16": "16px"
-  "2": "2px"
-  "20": "20px"
-  "24": "24px"
-  "32": "32px"
-  "4": "4px"
-  "40": "40px"
-  "6": "6px"
-  "8": "8px"
-  full: "9999px"
-  pill: "9999px"
-  emotionPill: "60px"
-  fieldShell: "44px"
-  modal: "24px"
-  input: "12px"
-  cover: "8px"
+  none: "0px"
+  dialog: "12px"
+  pill: "60px"
+  chip: "9999px"
 spacing:
-  base: "1px"
+  chipX: "20px"
+  chipY: "10px"
+  footer: "100px"
+  footerX: "52px"
 ---
 
 # Fable
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: book-club and reading-product design: a full declared Tailwind-style token layer (graphite/pearl/forest/olive/royal palette scales, dark/white and per-hue alpha fades, a 12-colour quote-theme reader set, a semantic --color-background/text/border/line layer with a scoped .dark redeclare, radius/shadow/breakpoint scales and reader list fonts) painting two skins signed out - an Emotion marketing skin (cream and deep-forest bands, Heldane Display mastheads, 60px pill controls, #161015 ink, #116ecd focus) and a CSS-module catalog skin (white field, heldane mastheads, 9999px pills and chips, #0064c3 focus) over clubs/books/genre/detail pages, a sign-in panel, support, a blog, and a dark /discover cover wall.
+Good for: Reading-community marketing: forest hero, cream page, Heldane titles, Inter UI, pill actions.
 
-Captured 2026-11-14, read-only (the marketing pages, /clubs, /books, genre/club/book detail pages, /discover, /signin, /signup, /support, /blog and /community-guidelines are fully public signed out; joined clubs, discussions, the reader, lists, streaks, cart and checkout need an account - an authenticated boundary never reached; the sign-in form and SSO buttons, Join, Want to read, store badges and every CTA were measured, never submitted, pressed or followed; the Osano consent layer was hidden, never answered). Themes: light, dark.
+Captured 2026-11-21, signed out (library redirects to /signin; /login is a 404). Themes: light.
 
-A token set and component reference for Fable's public surface — for building book-club marketing pages, catalog pages (clubs/books/genres/detail), sign-in and support panels and a dark cover-wall surface in the style of the real thing. It was read from **fable.co** on **2026-11-14**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the home page, /clubs, /books, one genre shelf (/club/fantasy), one club detail (/club/the-cozy-chaos-book-club-with-summer-england-372871533779), one book detail (/book/heated-rivalry-by-rachel-reid-9780369748898) with its spoiler disclosure opened, /discover (the dark cover wall), /signin, /signup, /support, /blog plus one article, /community-guidelines, a 404, and 390px passes on home, clubs, book and discover.
+A token set and component reference for Fable's public site (fable.co), the social reading app. Captured 2026-11-21, signed out, in headless Chromium at a measured 1440×900 (devicePixelRatio 1) and 390×844 (devicePixelRatio 2). The homepage has Get the app and no email form. `/login` is a 404. Library redirects to `/signin`. Nothing was typed, submitted, or sent to Google or Apple.
 
-Fable is worth a capture because it ships a complete Tailwind-style token layer to the browser: `--color-graphite/pearl/forest/olive/royal/iris/coral/rose/scarlet/amber-*` palette scales, `--color-dark-fade-*`/`--color-white-fade-*` and per-hue alpha ramps, a 12-step `--color-quote-theme-*` set for the reader's quote cards, a semantic `--color-background-*`/`--color-text-*`/`--color-border-*`/`--color-line-*` layer with `--color-focus`, redeclared under a scoped `.dark` class for the app's dark reading/detail surfaces (never painted on a captured public page — the dark set resolves the declared `.dark` var() chains), `--font-body`/`--font-heading`/`--font-note`/`--font-script` plus seven `--font-list-*` reader faces, `--radius-0..40` + `--radius-full`, `--shadow-above/below-1..4`, `--border-width-*`, `--breakpoint-*`, `--spacing` and `--animate-flicker`. Two skins paint over it signed out: the **emotion marketing skin** (Emotion styled-components, cream/pearl sections and deep forest-green bands, Heldane Display mastheads, literal 60px pill controls, ink `#161015` quote-theme-6, `#116ecd` focus outlines) and the **catalog skin** (CSS modules on a white field, `heldane` mastheads, 9999px pills and chips, `--color-focus` `#0064c3` rings). **Boundary:** everything behind an account was never reached — joined clubs, discussions, the reader, lists, cart and checkout; the sign-in form and SSO buttons were measured, never submitted or pressed; every link and CTA was measured, never followed; the Osano consent layer was hidden, never answered.
+The public look is a forest hero (`#064c37`) with cream type (`#f7f4ee`), Heldane Display for titles, Inter for UI, and pill buttons. The page cream in the theme-color meta tag is `#F7F4EE`. Book pages sit on a close cream (`#f7f4eb`).
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#064c37):** `light.background.band`
-- **neutral (#ffffff):** `light.background.page`
-- **surface (#f7f4eb):** `light.background.surface`
-- **on-surface (#1b1a1b):** `light.text.ink`
-- **on-surface-variant (#4b4649):** `light.text.muted`
-- **outline (#b1acaf):** `light.border.hairline`
+- **primary (#064c37):** `light.background.hero`
+- **neutral (#f7f4ee):** `light.background.page`
+- **surface (#ffffff):** `light.background.surface`
+- **on-surface (#1b1a1b):** `light.text.primary`
+- **on-surface-variant (#161015):** `light.text.muted`
+- **outline (#b1acaf):** `light.border.default`
 
 ## Typography
 
-No composite type styles in tokens.json; the README text below names the faces and sizes.
+8 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Heldane Display, Inter.
 
 ### Fonts (from README.md)
 
-- **Heldane Display** — the display voice, served as `heldane` woff2 (400/500/700) on the catalog skin and `"Heldane Display"` on the emotion pages; carries every masthead from the 72px hero (46px at 390px) to the 26px sign-in title.
-- **Inter** — every control, body and caption (`--font-body`, variable 100–900).
-- **PalmerLakePrint** (`--font-note`) and **DesMontilles** (`--font-script`) — the hand-drawn and script accents.
-- **Reader list faces** — Work Sans, Cormorant Garamond, New Rocker, Pirata One, Savate, Special Elite and Trade Winds ship as `--font-list-*` for the signed-in reader's list/quote theming.
-- None is bundled here; the style guide falls back to system faces. Declared in the stylesheet's `@font-face` rules (harvested in `raw/css-vars.json`).
+Heldane Display (400, 500, 700) is served from fablecdn.net and is proprietary. The guide falls back to Source Serif 4. Inter (variable, Google Fonts) is the UI face. A grab bag of display faces (Anton, Bokor, and others) is loaded on the marketing page and was not used for roles.
 
 ## Layout
 
-Spacing from `core.spacing`: `base` 1px.
+Spacing from `core.space`: `chipX` 20px, `chipY` 10px, `footer` 100px, `footerX` 52px.
 
 ## Elevation & Depth
 
-Shadows, resolved to CSS:
-
-| Token | box-shadow |
-|---|---|
-| `core.shadow.above.1` | `rgba(0, 0, 0, 0.4) 0px -4px 6px -2px` |
-| `core.shadow.above.2` | `rgba(0, 0, 0, 0.12) 0px -6px 16px 0px` |
-| `core.shadow.above.3` | `rgba(0, 0, 0, 0.17) 0px -8px 36px 0px` |
-| `core.shadow.above.4` | `rgba(0, 0, 0, 0.28) 0px -20px 56px 0px` |
-| `core.shadow.below.1` | `rgba(0, 0, 0, 0.4) 0px 4px 6px -2px` |
-| `core.shadow.below.2` | `rgba(0, 0, 0, 0.12) 0px 6px 16px 0px` |
-| `core.shadow.below.3` | `rgba(0, 0, 0, 0.17) 0px 8px 36px 0px` |
-| `core.shadow.below.4` | `rgba(0, 0, 0, 0.28) 0px 20px 56px 0px` |
-| `core.component.skin.catalog.modalShadow` | `rgba(0, 0, 0, 0.12) 0px -6px 16px 0px` |
-| `core.component.skin.discover.fieldShadow` | `rgba(12, 12, 12, 0.45) 0px 10px 34px 0px` |
+No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
 
 ## Shapes
 
-Corner radii from `core.radius`: `0` 0px, `12` 12px, `16` 16px, `2` 2px, `20` 20px, `24` 24px, `32` 32px, `4` 4px, `40` 40px, `6` 6px, `8` 8px, `full` 9999px, `pill` 9999px, `emotionPill` 60px, `fieldShell` 44px, `modal` 24px, `input` 12px, `cover` 8px.
+Corner radii from `core.radius`: `none` 0px, `dialog` 12px, `pill` 60px, `chip` 9999px.
 
 ## Components
 
@@ -217,19 +147,17 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **The signed-in product.** Nothing behind a Fable account was reached; joined clubs, discussion threads, the reader, lists, streaks, cart and checkout are all behind sign-in. The `.dark` token layer is declared for those app surfaces — resolved honestly from the stylesheet, not painted on a captured page.
-- **The discover wall.** /discover animates constantly; it was measured after the "Gathering ten thousand covers" state cleared and `requestAnimationFrame` was frozen. A screenshot freezes one frame; the wall's exact cover positions are incidental.
-- **The forms.** The sign-in and sign-up fields were measured at rest and typed into then cleared — validation, error, loading and success states are unverified because nothing was submitted; 'Continue with Google/Apple' was never pressed.
-- **Two near-identical blues.** The catalog focus ring is the declared `--color-focus` `#0064c3`; the emotion pages draw a lighter `#116ecd` outline that is a styled-component literal, not a declared var — both are recorded, not conflated.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
+- Clubs title line-height and dialog-title line-height are derived from the measured size, not a separate computed line-height.
+- Get the app hover was measured after the pointer moved. Pressed was not held.
+- Screenshots are 256-colour PNGs. Read colours from tokens.json.
+- Heldane Display is not in the style guide. Display samples use Source Serif 4.
+- The signed-in app, dark theme, and store checkout were not captured.
 
 ### Do and don't (from README.md)
 
-1. **Do let the declared layer carry the design.** Fable ships its tokens: use the `color.<palette>.*` scales and the `light.color.<role>` semantics rather than restating hex. See [tokens.json](tokens.json) and [clubs-light-default](screenshots/clubs-light-default.png).
-2. **Do spend forest green on bands.** `forest-200`/`forest-300` paint the hero, support masthead and app banner — never a button fill; catalog CTAs stay graphite. See [support-masthead](components/crops/support-masthead-default.png).
-3. **Do keep the two skins honest.** Emotion pages: cream/forest bands, 60px pills, `#116ecd` focus. Catalog: white field, 9999px pills, `#0064c3` focus. See [getapp-hero](components/crops/getapp-hero-default.png) and [btn-primary](components/crops/btn-primary-default.png).
-4. **Do use the full pill for actions.** Catalog CTAs, chips and the search trigger are `radius.full`; emotion pills run a literal 60px; fields sit in 44px shells; cards round to 24px and covers to 8px. See [search-trigger](components/crops/search-trigger-default.png).
-5. **Do pair the voices.** Heldane Display owns every masthead; Inter owns controls and body; the note/script accents and the seven list faces stay for reader surfaces. See [hero-h1](components/crops/hero-h1-default.png) and [clubs-h1](components/crops/clubs-h1-default.png).
-6. **Don't style the signed-in product from this package.** Clubs, the reader, lists and checkout were never reached; the `.dark` set is a declared app scope, not a painted page theme — the only painted dark surface is /discover. See [discover-dark-default](screenshots/discover-dark-default.png).
-7. **Don't fabricate form outcomes.** 'Login with email', 'Join the club' and the SSO pills were measured, never pressed; what a submission returns is unverified. See [submit-btn](components/crops/submit-btn-default.png).
-8. **Don't copy the brand.** The wordmark, the book-spine mark, cover art and club photography are Fable's published artwork; borrow structure and proportion, not identity. See [mkt-logo](components/crops/mkt-logo-default.png).
+- **Do set titles in Heldane on forest or ink.** The home hero is cream on `#064c37`. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- **Do use a pill for the main action.** Get the app is a white pill on forest. Login with email is an ink pill on cream. See [screenshots/signin-light-default.png](screenshots/signin-light-default.png).
+- **Do keep the header quiet.** Word links, a person icon, a cart. No filled nav button. See [screenshots/clubs-light-default.png](screenshots/clubs-light-default.png).
+- **Don't treat /login as the sign-in page.** It is a 404. The wall is `/signin`. See [screenshots/notfound-light-default.png](screenshots/notfound-light-default.png).
+- **Don't invent a signed-in library from the marketing phone mock.** The phone in the hero is an illustration. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- **Don't sample colour from the screenshots.** They are quantised. The tokens name the computed values.

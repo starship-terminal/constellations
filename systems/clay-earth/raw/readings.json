@@ -1,0 +1,623 @@
+{
+  "capturedAt": "2026-11-21T02:43:26.724Z",
+  "pages": {
+    "home": {
+      "status": 200,
+      "url": "https://me.sh/",
+      "title": "Mesh - Be more thoughtful with the people in your network.",
+      "themeColor": "#000000",
+      "maskIconColor": null,
+      "htmlClass": "",
+      "colorScheme": "normal",
+      "background": "rgb(0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.7)",
+      "fontFamily": "Times",
+      "sheets": [
+        {
+          "href": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+          "rules": 306,
+          "blocked": false
+        },
+        {
+          "href": "https://me.sh/_next/static/chunks/2g8sjl-hunn74.css",
+          "rules": 958,
+          "blocked": false
+        },
+        {
+          "href": "https://me.sh/_next/static/chunks/296mf4y6_fa9f.css",
+          "rules": 238,
+          "blocked": false
+        },
+        {
+          "href": "https://me.sh/_next/static/chunks/10w2bmjobjds4.css",
+          "rules": 29,
+          "blocked": false
+        },
+        {
+          "href": "https://me.sh/_next/static/chunks/01ymzq5uuezyp.css",
+          "rules": 94,
+          "blocked": false
+        }
+      ],
+      "varCount": 0,
+      "vars": {}
+    },
+    "pricing": {
+      "status": 200,
+      "url": "https://me.sh/pricing",
+      "vars": {},
+      "themeColor": "#f5f5f5"
+    },
+    "integrations": {
+      "status": 200,
+      "url": "https://me.sh/integrations"
+    },
+    "nexus": {
+      "status": 200,
+      "url": "https://me.sh/nexus",
+      "title": "Nexus - Mesh"
+    },
+    "teams": {
+      "status": 200,
+      "url": "https://me.sh/teams",
+      "title": "Introducing Mesh 2.0"
+    },
+    "start": {
+      "status": 200,
+      "url": "https://me.sh/start",
+      "title": "Get started with Mesh"
+    },
+    "stories": {
+      "status": 200,
+      "url": "https://me.sh/stories",
+      "title": "Stories - Mesh"
+    },
+    "about": {
+      "status": 200,
+      "url": "https://me.sh/about",
+      "title": "About Us - Mesh"
+    },
+    "contact": {
+      "status": 200,
+      "url": "https://me.sh/contact",
+      "title": "Contact Us - Mesh"
+    },
+    "notfound": {
+      "status": 404,
+      "url": "https://me.sh/login",
+      "title": "Mesh"
+    },
+    "loginWall": {
+      "status": 200,
+      "url": "https://app.me.sh/login?signin",
+      "title": "Mesh",
+      "text": "Sign in to Mesh Welcome back! Sign in to continue. Sign in with Apple Sign in with Google OR Sign in with email Don't have a Mesh account? Create account Sign in with SSO Help • Terms • Privacy RELATIONSHIPS ENTRUSTED TO MESH USED BY PEOPLE & TEAMS AT 20 26 The Best CRM Apps BUSINESS CATEGORY",
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "type": "button",
+          "text": "Sign in with Apple",
+          "href": null,
+          "disabled": false
+        },
+        {
+          "tag": "BUTTON",
+          "type": "button",
+          "text": "Sign in with Google",
+          "href": null,
+          "disabled": false
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "text": "Enter your email",
+          "href": null,
+          "disabled": false
+        },
+        {
+          "tag": "BUTTON",
+          "type": "button",
+          "text": "Sign in with email",
+          "href": null,
+          "disabled": true
+        },
+        {
+          "tag": "BUTTON",
+          "type": "button",
+          "text": "Create account",
+          "href": null,
+          "disabled": false
+        },
+        {
+          "tag": "A",
+          "type": null,
+          "text": "Sign in with SSO",
+          "href": "https://accounts.me.sh/sign-in#/?sign_in_force_redirect_url=https%3A%2F%2Fapp.me.sh%2F&redirect_url=https%3A%2F%2Fapp.me.sh%2Flogin%3Fsignin",
+          "disabled": false
+        },
+        {
+          "tag": "A",
+          "type": null,
+          "text": "Help",
+          "href": "https://library.me.sh/",
+          "disabled": false
+        },
+        {
+          "tag": "A",
+          "type": null,
+          "text": "Terms",
+          "href": "https://me.sh/terms",
+          "disabled": false
+        },
+        {
+          "tag": "A",
+          "type": null,
+          "text": "Privacy",
+          "href": "https://me.sh/security-and-privacy",
+          "disabled": false
+        }
+      ]
+    },
+    "mobileHome": {
+      "url": "https://me.sh/",
+      "header": [
+        {
+          "tag": "A",
+          "text": "",
+          "href": "/"
+        },
+        {
+          "tag": "A",
+          "text": "GET STARTED",
+          "href": "https://app.me.sh/login"
+        }
+      ],
+      "innerWidth": 390
+    }
+  },
+  "components": {
+    "logo": {
+      "label": "logo",
+      "box": {
+        "x": 140,
+        "y": 36,
+        "width": 40,
+        "height": 24
+      },
+      "tag": "A",
+      "text": "",
+      "style": {
+        "color": "rgb(242, 185, 139)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(242, 185, 139)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "lineHeight": "27px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "height": "24px",
+        "boxShadow": "none",
+        "outline": "rgb(242, 185, 139) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    },
+    "signIn": {
+      "label": "sign-in",
+      "box": {
+        "x": 1080.53125,
+        "y": 32,
+        "width": 82.59375,
+        "height": 34
+      },
+      "tag": "A",
+      "text": "SIGN IN",
+      "style": {
+        "color": "rgba(255, 255, 255, 0.64)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgba(255, 255, 255, 0.64)",
+        "borderTopWidth": "0px",
+        "borderRadius": "8px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "700",
+        "lineHeight": "0px",
+        "letterSpacing": "1px",
+        "paddingTop": "0px",
+        "paddingRight": "16px",
+        "paddingBottom": "0px",
+        "paddingLeft": "16px",
+        "height": "34px",
+        "boxShadow": "none",
+        "outline": "rgba(255, 255, 255, 0.64) none 0px",
+        "textTransform": "uppercase",
+        "opacity": "1"
+      }
+    },
+    "getStarted": {
+      "label": "get-started",
+      "box": null,
+      "tag": "A",
+      "text": "Get Started For Free →",
+      "style": {
+        "color": "rgb(242, 185, 139)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(242, 185, 139)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "lineHeight": "27px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "height": "auto",
+        "boxShadow": "none",
+        "outline": "rgb(242, 185, 139) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    },
+    "signInHover": {
+      "label": "sign-in-hover",
+      "box": {
+        "x": 1080.53125,
+        "y": 32,
+        "width": 82.59375,
+        "height": 34
+      },
+      "tag": "A",
+      "text": "SIGN IN",
+      "style": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(255, 255, 255, 0.08)",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "borderTopWidth": "0px",
+        "borderRadius": "8px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "700",
+        "lineHeight": "0px",
+        "letterSpacing": "1px",
+        "paddingTop": "0px",
+        "paddingRight": "16px",
+        "paddingBottom": "0px",
+        "paddingLeft": "16px",
+        "height": "34px",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 0px",
+        "textTransform": "uppercase",
+        "opacity": "1"
+      }
+    },
+    "releasesMenu": {
+      "label": "releases-menu",
+      "box": {
+        "x": 441.9921875,
+        "y": 74,
+        "width": 556,
+        "height": 214.359375
+      },
+      "tag": "DIV",
+      "text": "INTEGRATIONS Connect all your favorite tools NEXUS AI navigator for your network",
+      "style": {
+        "color": "rgba(255, 255, 255, 0.7)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgba(255, 255, 255, 0.7)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "lineHeight": "27px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "24px",
+        "paddingBottom": "0px",
+        "paddingLeft": "24px",
+        "height": "214.359px",
+        "boxShadow": "none",
+        "outline": "rgba(255, 255, 255, 0.7) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    },
+    "filterBirthdays": {
+      "label": "filter-birthdays-selected",
+      "box": {
+        "x": 250,
+        "y": 426,
+        "width": 480,
+        "height": 48
+      },
+      "tag": "BUTTON",
+      "text": "Birthdays",
+      "style": {
+        "color": "rgb(29, 29, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(29, 29, 31)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "400",
+        "lineHeight": "27px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "height": "48px",
+        "boxShadow": "none",
+        "outline": "rgb(29, 29, 31) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    },
+    "payAnnual": {
+      "label": "pay-annually",
+      "box": {
+        "x": 718.140625,
+        "y": 362,
+        "width": 109.203125,
+        "height": 28
+      },
+      "tag": "BUTTON",
+      "text": "PAY ANNUALLY",
+      "style": {
+        "color": "rgb(31, 31, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(31, 31, 31)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "600",
+        "lineHeight": "27px",
+        "letterSpacing": "1px",
+        "paddingTop": "0px",
+        "paddingRight": "12px",
+        "paddingBottom": "0px",
+        "paddingLeft": "12px",
+        "height": "28px",
+        "boxShadow": "none",
+        "outline": "rgb(31, 31, 31) none 0px",
+        "textTransform": "uppercase",
+        "opacity": "1"
+      }
+    },
+    "payMonthly": {
+      "label": "pay-monthly-selected",
+      "box": {
+        "x": 612.640625,
+        "y": 362,
+        "width": 105.5,
+        "height": 28
+      },
+      "tag": "BUTTON",
+      "text": "PAY MONTHLY",
+      "style": {
+        "color": "rgb(31, 31, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "rgb(31, 31, 31)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "600",
+        "lineHeight": "27px",
+        "letterSpacing": "1px",
+        "paddingTop": "0px",
+        "paddingRight": "12px",
+        "paddingBottom": "0px",
+        "paddingLeft": "12px",
+        "height": "28px",
+        "boxShadow": "none",
+        "outline": "rgb(31, 31, 31) none 0px",
+        "textTransform": "uppercase",
+        "opacity": "1"
+      }
+    },
+    "planCta": {
+      "label": "plan-cta",
+      "box": {
+        "x": 96,
+        "y": 428,
+        "width": 288,
+        "height": 196
+      },
+      "tag": "A",
+      "text": "PERSONAL Free WITH CREDIT CARD GET STARTED",
+      "style": {
+        "color": "rgb(31, 31, 31)",
+        "backgroundColor": "rgba(149, 149, 149, 0.06)",
+        "borderTopColor": "rgb(236, 234, 232)",
+        "borderTopWidth": "1px",
+        "borderRadius": "16px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "lineHeight": "27px",
+        "letterSpacing": "normal",
+        "paddingTop": "22px",
+        "paddingRight": "24px",
+        "paddingBottom": "24px",
+        "paddingLeft": "24px",
+        "height": "196px",
+        "boxShadow": "none",
+        "outline": "rgb(31, 31, 31) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    },
+    "search": {
+      "label": "search-default",
+      "box": {
+        "x": 1078,
+        "y": 679.703125,
+        "width": 222,
+        "height": 42
+      },
+      "tag": "INPUT",
+      "text": "",
+      "style": {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderTopColor": "rgba(0, 0, 0, 0.06)",
+        "borderTopWidth": "1px",
+        "borderRadius": "8px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "40px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "8px",
+        "paddingBottom": "0px",
+        "paddingLeft": "40px",
+        "height": "42px",
+        "boxShadow": "none",
+        "outline": "rgb(0, 0, 0) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    },
+    "searchFocused": {
+      "label": "search-focused",
+      "box": {
+        "x": 1078,
+        "y": 679.703125,
+        "width": 222,
+        "height": 42
+      },
+      "tag": "INPUT",
+      "text": "",
+      "style": {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderTopColor": "rgba(0, 0, 0, 0.06)",
+        "borderTopWidth": "1px",
+        "borderRadius": "8px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "40px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "8px",
+        "paddingBottom": "0px",
+        "paddingLeft": "40px",
+        "height": "42px",
+        "boxShadow": "none",
+        "outline": "rgb(0, 0, 0) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    },
+    "searchFilled": {
+      "label": "search-filled",
+      "box": {
+        "x": 1078,
+        "y": 679.703125,
+        "width": 222,
+        "height": 42
+      },
+      "tag": "INPUT",
+      "text": "",
+      "style": {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderTopColor": "rgba(0, 0, 0, 0.06)",
+        "borderTopWidth": "1px",
+        "borderRadius": "8px",
+        "fontFamily": "Verlag, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "40px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "8px",
+        "paddingBottom": "0px",
+        "paddingLeft": "40px",
+        "height": "42px",
+        "boxShadow": "none",
+        "outline": "rgb(0, 0, 0) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    },
+    "loginEmail": {
+      "label": "login-email",
+      "box": {
+        "x": 224,
+        "y": 492.5,
+        "width": 272,
+        "height": 40
+      },
+      "tag": "INPUT",
+      "text": "",
+      "style": {
+        "color": "rgb(72, 73, 74)",
+        "backgroundColor": "rgba(72, 73, 74, 0.04)",
+        "borderTopColor": "rgba(72, 73, 74, 0.1)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "SFProText, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "21px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "12px",
+        "paddingBottom": "0px",
+        "paddingLeft": "12px",
+        "height": "40px",
+        "boxShadow": "none",
+        "outline": "rgb(72, 73, 74) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    },
+    "idpApple": {
+      "label": "idp-apple",
+      "box": {
+        "x": 224,
+        "y": 328.5,
+        "width": 272,
+        "height": 44
+      },
+      "tag": "BUTTON",
+      "text": "Sign in with Apple",
+      "style": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(31, 31, 30)",
+        "borderTopColor": "rgb(255, 255, 255)",
+        "borderTopWidth": "0px",
+        "borderRadius": "12px",
+        "fontFamily": "\"SF Pro Text\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "21px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "height": "44px",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 0px",
+        "textTransform": "none",
+        "opacity": "1"
+      }
+    }
+  }
+}

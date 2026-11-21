@@ -1,0 +1,120 @@
+{
+  "product": "ElevenMusic",
+  "domain": "elevenmusic.io",
+  "captured": "2026-11-21",
+  "probe": "no-form",
+  "login_extracted": "not-started",
+  "not_submitted": [
+    "No email, name, password, or code was typed.",
+    "Continue with Email was not pressed. It stayed disabled on the empty email field.",
+    "Continue with Google was not clicked.",
+    "Continue with Apple was not clicked.",
+    "No Microsoft, Facebook, GitHub, or SSO control was present, and none was clicked.",
+    "No account was created.",
+    "No form was submitted.",
+    "No captcha was solved.",
+    "The Cookiebot consent wall was hidden with CSS. Accept was not clicked."
+  ],
+  "offered": [
+    "Continue with Google",
+    "Continue with Apple",
+    "Show other options, which reveals an email field, a terms checkbox, and Continue with Email",
+    "Terms of Service (https://elevenmusic.io/terms-of-use)",
+    "Privacy Policy (https://elevenlabs.io/privacy-policy)",
+    "Try it first, on the /login page only, linking back to https://elevenmusic.io/"
+  ],
+  "screens": [
+    {
+      "id": "dialog-default",
+      "where": "dialog on the current page, and the full page at /login",
+      "screenshot": "screenshots/login-dialog-dark.png",
+      "page_screenshot": "screenshots/login-dark-default.png",
+      "asks": [
+        "Continue with Google",
+        "Continue with Apple",
+        "Show other options"
+      ],
+      "copy": "Log in or sign up. Save your library, generations, and playlists across devices."
+    },
+    {
+      "id": "dialog-email",
+      "where": "same dialog after Show other options",
+      "screenshot": "screenshots/login-dialog-email-dark.png",
+      "asks": [
+        "Enter email address",
+        "Checkbox: I agree to the Terms of Service, and acknowledge ElevenLabs' Privacy Policy",
+        "Continue with Email, disabled while the email field is empty",
+        "We'll send you a magic link to sign in."
+      ],
+      "stopped": "Field left empty. Continue with Email stayed disabled. No magic link was requested."
+    }
+  ],
+  "gaps": [
+    "Magic-link confirmation was not reached.",
+    "Signed-in studio, library, composer, chat, and billing were not entered.",
+    "Token and session values were not read. Unread token values are Not captured."
+  ],
+  "branches_stopped": [
+    {
+      "control": "Sign in, Start free, Search, sidebar Create, Library, Composer, Chat, Publish your music, New playlist",
+      "opens": "dialog",
+      "url": "https://elevenmusic.io/",
+      "stopped": "Log in or sign up dialog. Did not continue."
+    },
+    {
+      "control": "Attach, then From your library, Upload a file, or Record",
+      "opens": "dialog",
+      "url": "https://elevenmusic.io/",
+      "stopped": "Log in to upload dialog. Did not continue."
+    },
+    {
+      "control": "Make this beat, Edit a song, Sign up, Start free link, Get Pro",
+      "opens": "page",
+      "url": "https://elevenmusic.io/login?redirect=%2Fstudio",
+      "stopped": "Full-page login. billing=true is dropped. Did not continue."
+    },
+    {
+      "control": "Styles Sign up, and /styles",
+      "opens": "page",
+      "url": "https://elevenmusic.io/login?redirect=%2Fstyles",
+      "stopped": "Full-page login. Did not continue."
+    },
+    {
+      "control": "Library link and /library",
+      "opens": "page",
+      "url": "https://elevenmusic.io/login?redirect=%2Flibrary",
+      "stopped": "Full-page login. Did not continue."
+    },
+    {
+      "control": "Composer link on Explore",
+      "opens": "page",
+      "url": "https://elevenmusic.io/login?redirect=%2Fcompositions",
+      "stopped": "Full-page login. Did not continue."
+    },
+    {
+      "control": "Remix on Explore",
+      "opens": "page",
+      "url": "https://elevenmusic.io/login?redirect=%2Fstudio",
+      "stopped": "Full-page login. Did not continue."
+    },
+    {
+      "control": "Like on a track or playlist, Follow on an artist",
+      "opens": "dialog",
+      "url": "stays on the public page",
+      "stopped": "Log in or sign up dialog. Did not continue."
+    },
+    {
+      "control": "Download on a sound",
+      "opens": "dialog",
+      "url": "https://elevenmusic.io/sounds",
+      "screenshot": "screenshots/sounds-download-wall-dark.png",
+      "stopped": "Log in to download this Sound for free. Did not continue."
+    },
+    {
+      "control": "Turn into full song",
+      "opens": "dialog",
+      "url": "https://elevenmusic.io/sounds",
+      "stopped": "Log in to continue. Sign in to use this loop as a Studio reference. Did not continue."
+    }
+  ]
+}

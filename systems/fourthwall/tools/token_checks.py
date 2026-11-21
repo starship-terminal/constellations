@@ -22,19 +22,18 @@ def aliases(v):
     return []
 
 
-def alias_errors(core, **sets):
-    """Each surface set resolves against core and itself only (the $themes
-    pair core with one surface set), so a light alias that only dark holds
-    points at nothing in the light theme."""
+def alias_errors(core, light, dark):
+    """Each set resolves against core and itself only (the $themes pair core with one of light or
+    dark), so a light alias that only dark holds points at nothing in the light theme."""
     core_names = {n for n, _ in tokens_of(core)}
-    checks = {"core": (core, core_names)}
-    checks.update({s: (t, core_names | {n for n, _ in tokens_of(t)}) for s, t in sets.items()})
+    sets = {"core": (core, core_names), "light": (light, core_names | {n for n, _ in tokens_of(light)}),
+            "dark": (dark, core_names | {n for n, _ in tokens_of(dark)})}
     return [f"{s}.{n}: alias {{{a}}} points at nothing in core or {s}"
-            for s, (tree, names) in checks.items() for n, tok in tokens_of(tree)
+            for s, (tree, names) in sets.items() for n, tok in tokens_of(tree)
             for a in aliases(tok["$value"]) if a not in names]
 
 
-def parity_gap(a, b):
-    """The roles only the first set names and the ones only the second names."""
-    an, bn = {n for n, _ in tokens_of(a)}, {n for n, _ in tokens_of(b)}
-    return sorted(an - bn), sorted(bn - an)
+def parity_gap(light, dark):
+    """The roles only light names and the ones only dark names."""
+    lt, dk = {n for n, _ in tokens_of(light)}, {n for n, _ in tokens_of(dark)}
+    return sorted(lt - dk), sorted(dk - lt)

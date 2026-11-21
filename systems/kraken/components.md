@@ -1,79 +1,64 @@
 # Kraken components
 
-Measured on kraken.com on 2026-11-18, signed out, at 1440 and 390. Values are computed styles. Crops are in [components/crops/](components/crops).
+Public marketing site only, signed out, 2026-11-21. Values are computed styles or declared `--colors-ds-*` tokens. Crops were not cut: the screenshots in [screenshots/](screenshots/) show the controls in place.
 
-## Shell
+## Button
 
-### Top bar
+The header Sign up link is the primary button. Computed on the homepage: background `#7132f5` (`light.accent`), text `#ffffff` (`light.onAccent`), radius 12px (`core.radius.5`), height 36px, padding 8px 12px, Kraken-Product 14px weight 500.
 
-The marketing header is 64px tall and transparent over the page. It holds the wordmark, product links (Kraken, Pro, Wallet, Prime, VIP, Markets, About), a language pill, search, Log in and Sign up. Crop: [header-default.png](components/crops/header-default.png).
+Hover is declared as `--colors-ds-semantic-action-primary-background-hover` `#5b1ecf`. Pressed, disabled, and loading were not captured: no disabled primary was on the public header, and a press would start signup.
 
-### Sign up
+Secondary actions (Log in) are text links, not filled buttons.
 
-Primary button. Fill `#7132f5` (`light.accent.default`), text white, radius 12px, 36px in the nav and 48px on the hero. Hover and pressed both resolve to `#5b1ecf`. Focus-visible is a 2px solid `#7132f5` outline. Crops: [nav-signup-default.png](components/crops/nav-signup-default.png), [nav-signup-hover.png](components/crops/nav-signup-hover.png), [nav-signup-focus-visible.png](components/crops/nav-signup-focus-visible.png), [nav-signup-pressed.png](components/crops/nav-signup-pressed.png), [hero-cta-default.png](components/crops/hero-cta-default.png).
+## Link
 
-### Log in
+Nav items (Kraken, Pro, Wallet, Prime, VIP) are text links that also open menus. Footer links are quiet text. The brand link colour is `light.link` `#7132f5`.
 
-Secondary wash. Fill `rgba(133, 91, 251, 0.16)`, text `#7132f5`, radius 12px. Hover doubles the wash to `0.32`. Focus-visible is the same 2px purple outline. Crops: [nav-login-default.png](components/crops/nav-login-default.png), [nav-login-hover.png](components/crops/nav-login-hover.png).
+## Text field
 
-### Search
+The homepage hero has an email field with placeholder `satoshi@email.com`. It was not filled. The sign-in wall has Email or username and Password. The sign-up wall has Email and Invite Code. None were typed into. Focus, error, and disabled field states were not captured.
 
-Icon button labelled Search in the header. Opening it is a local overlay; the trigger was not separately cropped on this pass. The open state is [home-light-search-open.png](screenshots/home-light-search-open.png).
+## Search
 
-## Type
+The header Search button opens an overlay with placeholder "Find your next trade" and a list of markets. See [screenshots/home-light-search.png](screenshots/home-light-search.png). A query was not typed.
 
-### Hero title
+## Menu
 
-`h1` on the home page: Kraken-Brand, 48px / 56px, weight 400, colour `#101114`. Crop: [hero-title-default.png](components/crops/hero-title-default.png).
+Header menus open on hover. Kraken, Pro, Wallet, Prime, Markets, and About are recorded in [site-tree.md](site-tree.md). Screenshots: `home-light-menu-kraken.png`, `home-light-menu-pro.png`, `home-light-menu-markets.png`.
 
-On /pro the same role is white, 58px / 66px, on the magic-dark ground. Crop: [pro-title-default.png](components/crops/pro-title-default.png).
+## Dialog
 
-## Pro
+The language control opens "Change language and country/region" with Language and Country comboboxes and Continue. Continue was not clicked. Screenshot: [screenshots/home-light-language.png](screenshots/home-light-language.png).
 
-### Create free account
+The cookie banner is a OneTrust dialog. It was hidden, not accepted.
 
-On the dark Pro page the high-emphasis control is near-white `#f7f7fa` with near-black text, radius 12px. Hover is `#e5e6ec`. Focus-visible is a 2px `#9d82fe` outline. Crops: [pro-cta-default.png](components/crops/pro-cta-default.png), [pro-cta-hover.png](components/crops/pro-cta-hover.png), [pro-cta-focus-visible.png](components/crops/pro-cta-focus-visible.png).
+## Tabs
 
-## Account boundary
+The homepage market block has tabs: Crypto, Spot / Margin, Futures, xStocks. They filter the public price table. Selected state was not measured separately.
 
-These sit on the sign-up and sign-in cards. Nothing was typed and nothing was submitted.
+## Table
 
-### Email field
+`/prices` is a public price table (asset, price, 24h change, market cap). Screenshot: [screenshots/prices-light-default.png](screenshots/prices-light-default.png).
 
-528px by 48px on /sign-up, 12px radius, 1px `#e5e7eb` border at rest. Focus was applied; the ring lives on the field wrapper more than on the input's own outline. Crop: [signup-email-default.png](components/crops/signup-email-default.png), [signup-email-focused.png](components/crops/signup-email-focused.png).
+## Card
 
-The id.kraken.com field is 426px by 48px. Crop: [signin-email-default.png](components/crops/signin-email-default.png).
+Homepage product cards link to Pro, the Kraken app, Wallet, and Krak. They are marketing cards, not app list rows.
 
-### Password field
+## Badge
 
-At rest only. Crop: [signin-password-default.png](components/crops/signin-password-default.png).
-
-### Continue
-
-Purple `#7132f5`, 46 to 52px tall, radius 12px, white label. Pressed (forced `:active`) is `#5b1ecf`. Crops: [signup-continue-default.png](components/crops/signup-continue-default.png), [signin-continue-default.png](components/crops/signin-continue-default.png), [signin-continue-hover.png](components/crops/signin-continue-hover.png).
-
-## Prices
-
-### Search field
-
-A text input on /prices, focused and not filled. Crop: [prices-search-default.png](components/crops/prices-search-default.png).
-
-### Price table
-
-The home and /prices pages paint a market table: asset, price, 24h change, market cap. Positive change uses the positive solid green; negative uses `#d11d45`. The row itself was not cropped as its own element on this pass. See [prices-light-default.png](screenshots/prices-light-default.png).
-
-## Mobile
-
-The 390 header is 64px. The hero title wraps to 80px. Crops: [m-header-default.png](components/crops/m-header-default.png), [m-hero-default.png](components/crops/m-hero-default.png). The open nav menu is [mobile-home-light-menu-open.png](screenshots/mobile-home-light-menu-open.png). The Search button opens a trade overlay instead.
-
-## Footer
-
-White band, 1440 by 943 on the desktop home, primary text `#101114`. Crop: [footer-default.png](components/crops/footer-default.png).
+Price rows show a signed percent change. Positive text is `light.success` `#08844f`. Negative text is `light.danger` `#d11d45`.
 
 ## Gaps
 
-- Select, checkbox, radio, switch, tooltip, toast, avatar and badge were not mounted as their own controls on the public pages. Status colour is painted as price-change text, not as a badge component.
-- Text area, toast, tooltip, avatar, badge, checkbox, radio, switch and a destructive confirmation do not appear as their own controls signed out. The search overlay is [home-light-search-open.png](screenshots/home-light-search-open.png). The phone nav menu is [mobile-home-light-menu-open.png](screenshots/mobile-home-light-menu-open.png).
-- Disabled, loading and error states were not offered. The sign-up form was not submitted, so validation never appeared.
-- Pressed states are DevTools-forced (`CSS.forcePseudoState`). A script-applied mousedown style, if any, was not captured.
-- The search icon button, market tabs and price row selectors missed on the measurement pass. Those states are in the page screenshots.
+| Component | Status |
+|---|---|
+| Icon button | Search is an icon button. Other icon buttons were not inventoried |
+| Text area | Not present on the public pages opened |
+| Select | Language and Country comboboxes on the language overlay. Options were not opened |
+| Checkbox, radio, switch | Declared in `--spacing-ds-checkbox-*` and `--spacing-ds-radio-*`. Not shown on the pages opened |
+| Tooltip | Not captured |
+| Toast | Not present on the public pages opened |
+| List row | Price rows stand in. No app list |
+| Avatar | Not present signed out |
+| Button pressed, disabled, loading | Not captured |
+| Field error | Not captured. Submitting a form was out of scope |

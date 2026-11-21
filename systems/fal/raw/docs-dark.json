@@ -1,0 +1,26 @@
+{
+  "html": "dark",
+  "scheme": "dark",
+  "bg": "rgba(0, 0, 0, 0)",
+  "color": "rgb(255, 255, 255)",
+  "want": {
+    "--color-surface": "",
+    "--color-content-base": "",
+    "--color-content-strong": "",
+    "--color-content-lighter": "",
+    "--color-stroke-base": "",
+    "--color-stroke-focus-brand": "",
+    "--surface": "",
+    "--surface-page": "",
+    "--content-base": "",
+    "--content-strong": "",
+    "--content-lighter": "",
+    "--content-muted": "",
+    "--color-primary-500": "",
+    "--color-error-500": "",
+    "--color-success-500": "",
+    "--color-warning-500": "",
+    "--color-info-500": "",
+    "--color-surface-inverse": ""
+  }
+}

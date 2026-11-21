@@ -3,215 +3,155 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Wrike"
-description: "Work-management marketing design on a white page with midnight ink and a green action fill: the www.wrike.com home, /price/ plan cards, /free-trial/ email field, /features/, a 404, and the signed-out login.wrike.com email step. TT Norms Pro on the marketing site, a system face on login."
+description: "Work-management marketing: white page, midnight #162136 ink, TT Norms Pro, 8px controls, green #00e05c primary that lifts on hover, blue #0073d3 links, full-width nav panels"
 colors:
   primary: "#00e05c"
   neutral: "#ffffff"
   surface: "#f2f5fa"
-  on-surface: "#162136"
+  on-surface: "#2b3a57"
   on-surface-variant: "#657694"
-  outline: "#bfc7d9"
-  color-bg-page: "#ffffff"
-  color-bg-surface: "#f2f5fa"
-  color-bg-footer: "#162136"
-  color-bg-login-page: "#f8fafc"
-  color-bg-login-panel: "#ffffff"
-  color-text-title: "#162136"
-  color-text-body: "#2b3a57"
-  color-text-muted: "#657694"
-  color-text-on-accent: "#162136"
-  color-text-on-footer: "#bfc7d9"
-  color-text-link: "#0073d3"
-  color-text-link-hover: "#078eff"
-  color-text-error: "#e51739"
-  color-text-popular: "#ffa200"
-  color-text-login: "#00021b"
-  color-text-login-link: "#0054b2"
-  color-text-on-login-button: "#ffffff"
-  color-action-fill: "#00e05c"
-  color-action-fill-hover-declared: "#14ff75"
-  color-action-fill-pressed-declared: "#00c652"
-  color-action-outline: "#162136"
-  color-action-login-fill: "#008262"
-  color-border-input: "#bfc7d9"
-  color-border-card: "#dce1eb"
-  color-border-login-field: "#003b9d0d"
-  color-border-login-invalid: "#d2223e"
-  color-brand-green: "#00e05c"
-  color-brand-blue: "#0073d3"
-  color-brand-midnight: "#162136"
-  color-brand-midnight-fair: "#2b3a57"
-  color-brand-midnight-middle: "#657694"
-  color-brand-red: "#e51739"
-  color-brand-ai-start: "#aaff00"
-  color-brand-ai-middle: "#00e05c"
-  color-brand-ai-end: "#00e5bf"
-  component-button-background: "#00e05c"
-  component-button-text: "#162136"
-  component-button-large-background: "#00e05c"
-  component-button-large-text: "#162136"
-  component-field-background: "#f2f5fa"
-  component-field-text: "#162136"
-  component-card-background: "#ffffff"
-  component-login-button-background: "#008262"
-  component-login-button-text: "#ffffff"
+  outline: "#dce1eb"
+  page: "#ffffff"
+  surface-default: "#f2f5fa"
+  surface-raised: "#ffffff"
+  surface-invert: "#162136"
+  surface-bullet: "#dce1eb"
+  text-primary: "#162136"
+  text-default: "#2b3a57"
+  text-secondary: "#657694"
+  text-onAccent: "#162136"
+  text-invert: "#ffffff"
+  muted: "#657694"
+  link-default: "#0073d3"
+  link-hover: "#078eff"
+  border-default: "#dce1eb"
+  accent-default: "#00e05c"
+  accent-hover: "#14ff75"
+  accent-pressed: "#00c752"
+  danger: "#e51739"
+  brand-green: "#00e05c"
+  brand-midnight: "#162136"
+  brand-midnightFair: "#2b3a57"
+  brand-midnightMiddle: "#657694"
+  brand-midnightLight: "#bfc7d9"
+  brand-blue: "#0073d3"
+  brand-blueLight: "#63c1ff"
+  brand-red: "#e51739"
+  gradient-start: "#009980"
+  gradient-middle: "#00b259"
+  gradient-end: "#00e05c"
+  gradient-aiStart: "#aaff00"
+  gradient-aiMiddle: "#00e05c"
+  gradient-aiEnd: "#00e5bf"
 typography:
   display:
     fontFamily: "TT_Norms_Pro"
     fontSize: "64px"
     fontWeight: 600
-    lineHeight: 1.1
-    letterSpacing: "0px"
-  heading-2:
+    lineHeight: "70.4px"
+  heading:
     fontFamily: "TT_Norms_Pro"
     fontSize: "48px"
     fontWeight: 600
-    lineHeight: 1.1
-  heading-4:
+    lineHeight: "52.8px"
+  title:
     fontFamily: "TT_Norms_Pro"
-    fontSize: "24px"
+    fontSize: "32px"
     fontWeight: 600
-    lineHeight: 1.2
+    lineHeight: "38.4px"
   body:
     fontFamily: "TT_Norms_Pro"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.6
-  button:
+    lineHeight: "25.6px"
+  label:
     fontFamily: "TT_Norms_Pro"
-    fontSize: "16px"
-    fontWeight: 600
-    lineHeight: "20px"
-  button-large:
-    fontFamily: "TT_Norms_Pro"
-    fontSize: "20px"
-    fontWeight: 600
-    lineHeight: "28px"
-  nav:
-    fontFamily: "TT_Norms_Pro"
-    fontSize: "16px"
-    fontWeight: 600
-    lineHeight: "24px"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "25.2px"
   caption:
     fontFamily: "TT_Norms_Pro"
     fontSize: "12px"
     fontWeight: 600
-    lineHeight: 1.3
-    letterSpacing: "1.5px"
+    lineHeight: "15.6px"
   notes:
     fontFamily: "TT_Norms_Pro"
     fontSize: "14px"
     fontWeight: 400
-    lineHeight: 1.4
-  display-mobile:
-    fontFamily: "TT_Norms_Pro"
-    fontSize: "40px"
-    fontWeight: 600
-    lineHeight: "44px"
-  login-field:
-    fontFamily: "-apple-system"
-    fontSize: "18px"
-    fontWeight: 400
-    lineHeight: "24px"
+    lineHeight: "19.6px"
 rounded:
-  sm: "4px"
+  lg: "20px"
   md: "8px"
-  lg: "12px"
-  xl: "20px"
-  pill: "40px"
+  control: "8px"
 spacing:
   "05x": "8px"
-  "1x": "16px"
   "15x": "24px"
+  "1x": "16px"
   "2x": "32px"
   "3x": "48px"
   "4x": "64px"
   "7x": "112px"
 components:
-  button:
-    backgroundColor: "{colors.component-button-background}"
-    textColor: "{colors.component-button-text}"
+  control:
+    height: "60px"
     rounded: "8px"
-    height: "40px"
-  button-large:
-    backgroundColor: "{colors.component-button-large-background}"
-    textColor: "{colors.component-button-large-text}"
-    rounded: "12px"
-    height: "60px"
-  field:
-    backgroundColor: "{colors.component-field-background}"
-    textColor: "{colors.component-field-text}"
-    rounded: "12px"
-    height: "60px"
-  card:
-    backgroundColor: "{colors.component-card-background}"
-    rounded: "16px"
-  login-button:
-    backgroundColor: "{colors.component-login-button-background}"
-    textColor: "{colors.component-login-button-text}"
-    rounded: "12px"
-    height: "48px"
 ---
 
 # Wrike
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 14 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 4 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Work-management marketing design on a white page with midnight ink and a green action fill: the www.wrike.com home, /price/ plan cards, /free-trial/ email field, /features/, a 404, and the signed-out login.wrike.com email step. TT Norms Pro on the marketing site, a system face on login..
+Good for: Work-management marketing: white page, midnight #162136 ink, TT Norms Pro, 8px controls, green #00e05c primary that lifts on hover, blue #0073d3 links, full-width nav panels.
 
-Captured 2026-11-18, signed out. Public marketing pages and the login email step were measured. Nothing was typed or submitted. Next, Google, Apple, Office, OTP, company SSO, demo, and Contact us were not entered.. Themes: light.
+Captured 2026-11-21, signed out (public marketing site; login.wrike.com was opened only to the email step and not submitted). Themes: light, dark.
 
-A token set for Wrike's public marketing site and the signed-out login screen. It was read on 2026-11-18 from www.wrike.com and login.wrike.com, signed out. Marketing pages were measured in the T3 preview browser and again in headless Chromium at 1440 x 900 and 390 x 844. The login screen was measured in the preview browser only. The painted theme is light. The class on the marketing root is `website-theme--light website-theme--white website-theme--wrike`.
+A token set and component reference for Wrike's public marketing site (https://www.wrike.com), captured signed out on 2026-11-21. Use it to build a marketing surface that borrows its look: a white page, midnight ink `#162136`, TT Norms Pro for display and UI, Inter as a loaded webfont, an 8px control radius, and a green accent `#00e05c` that lifts to `#14ff75` on hover and presses to `#00c752`. Links are `#0073d3`. A secondary surface is `#f2f5fa`. The site also ships a dark theme class (`.website-theme--dark` / `.website-theme--midnight`) whose roles were read from CSS. The home page paints light.
 
-Wrike's marketing system is a white page, midnight ink (`#162136`), a green action fill (`#00e05c`) with midnight text on it, and a blue link (`#0073d3`). The face on the marketing site is TT Norms Pro, weights 400 and 600. The login app is a different surface: system font, a teal Next button (`#008262`), and a 12px white panel on `#f8fafc`.
+The product app sits behind https://login.wrike.com/login/. That wall was opened only far enough to see that it asks for an email or corporate ID. No password was typed. No identity provider was clicked. No form was submitted. Nothing here describes the signed-in product.
 
-Nothing was typed, submitted, or signed into. The trial email field and the login email field were measured empty. Next was not clicked, so the password step was not opened. Google, Apple, Office, OTP, company SSO, demo requests, and Contact us were not entered. No card or phone number was requested on the pages that were opened, and none was entered.
+This package contains no Wrike code, and none of its artwork has been redrawn. The screenshots and the visual system they show belong to Wrike ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the logo, artwork or brand assets.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#00e05c):** `light.color.action.fill`
-- **neutral (#ffffff):** `light.color.bg.page`
-- **surface (#f2f5fa):** `light.color.bg.surface`
-- **on-surface (#162136):** `light.color.text.title`
-- **on-surface-variant (#657694):** `light.color.text.muted`
-- **outline (#bfc7d9):** `light.color.border.input`
+- **primary (#00e05c):** `light.accent.default`
+- **neutral (#ffffff):** `light.page`
+- **surface (#f2f5fa):** `light.surface.default`
+- **on-surface (#2b3a57):** `light.text.default`
+- **on-surface-variant (#657694):** `light.muted`
+- **outline (#dce1eb):** `light.border.default`
 
 ## Typography
 
-11 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: -apple-system, TT_Norms_Pro.
+7 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: TT_Norms_Pro.
 
 ### Fonts (from README.md)
 
-TT Norms Pro is the marketing face, weights 400 and 600, served by the site. It is proprietary and not shipped. The token stack falls back to `-apple-system, system-ui, Helvetica Neue, Segoe UI, Roboto, Arial, sans-serif`. The login app uses `-apple-system` and does not load TT Norms Pro.
+- **TT Norms Pro** is the painted display and UI face, measured on the h1 and the primary button. It is a commercial webfont. It is not shipped here. The style guide falls back to the system stack.
+- **Inter** is loaded as `@font-face` from the site's own `/packs/media/` files (weights 100 to 800, roman and italic). It is not copied into this package.
 
 ## Layout
 
-Spacing from `core.spacing`: `05x` 8px, `1x` 16px, `15x` 24px, `2x` 32px, `3x` 48px, `4x` 64px, `7x` 112px.
+Spacing from `core.spacing`: `05x` 8px, `15x` 24px, `1x` 16px, `2x` 32px, `3x` 48px, `4x` 64px, `7x` 112px.
 
 ## Elevation & Depth
 
-Shadows, resolved to CSS:
-
-| Token | box-shadow |
-|---|---|
-| `light.shadow.login-panel` | `0px 2px 8px 0px rgba(0, 39, 128, 0.1), 0px 8px 12px 0px rgba(0, 59, 157, 0.05)` |
-| `light.shadow.card-declared` | `0px 10px 22px rgba(22, 41, 54, 0.021), 0px 20px 64px rgba(22, 41, 54, 0.021)` |
+No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
 
 ## Shapes
 
-Corner radii from `core.radius`: `sm` 4px, `md` 8px, `lg` 12px, `xl` 20px, `pill` 40px.
+Corner radii from `core.radius`: `lg` 20px, `md` 8px, `control` 8px.
 
 ## Components
 
-5 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+1 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
-Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -223,19 +163,18 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- Accent hover and pressed colours are declared tokens (`#14ff75`, `#00c652`). A mouse move did not paint the hover fill.
-- The error colour `#e51739` and the login invalid border `#d2223e` were not painted on a submitted form.
-- Pricing card radius is 16px at 1169px and 0px on the first card at 1440px. Both readings are in the raw file.
-- Login focus produced no visible ring in the one `focus()` call.
-- TT Norms Pro is not in the style guide. The guide falls back to the system sans.
-- Screenshots are quantised to 256 colours. Do not sample tokens from them.
-- The spacing scale resolves to different pixel values at different widths. The tokens use the 1440px resolution (8, 16, 24, 32, 48, 64, 112). At 1169px the same names resolved to 7, 14, 21, 28, 42, 56, 98.
+- **The product is absent.** login.wrike.com asked for an email. The password step a later probe saw was not reached. Google, Apple and Office were visible and not clicked.
+- **Dark is declared, and painted only where a section uses the dark class.** The home page paints light. `dark` in tokens.json is the resolved `.website-theme--dark` custom properties, not a full dark homepage screenshot.
+- **The icon is upscaled.** The site served a 48px favicon. icon.png is that frame at 128px.
+- **Focus rings were not isolated.** Focus-visible on the green button changed the fill to the hover colour. A separate ring width was not measured.
+- **Screenshots are 256-colour PNGs.** Read colours from tokens.json.
+- **One menu link returned 429.** Product lifecycle is a real href. That visit was rate-limited.
 
 ### Do and don't (from README.md)
 
-1. **Do paint the action green with midnight text.** "Try Wrike for free" is `#00e05c` with `#162136` type, not white type ([home](screenshots/home-light-default.png)).
-2. **Do use midnight for headlines and outline buttons.** Titles are `#162136`. Secondary buttons are a 2px midnight stroke on white ([features](screenshots/features-light-default.png)).
-3. **Do keep links blue.** Inline actions such as "Read the report" and "Go to Homepage" are `#0073d3` ([404](screenshots/notfound-light-default.png)).
-4. **Do round controls on an 8 / 12 / 20 scale.** Small buttons are 8px, large buttons and fields are 12px, bento cards are 20px ([trial](screenshots/free-trial-light-default.png)).
-5. **Don't style the signed-in product from this package.** The password step, SSO, and the app were not entered ([pricing](screenshots/price-light-default.png)).
-6. **Don't treat the login teal as the marketing green.** Next on login.wrike.com is `#008262`. The marketing accent is `#00e05c`.
+- **Do keep the page white and the ink midnight.** Headings are `#162136` on `#ffffff`. See [home-light-default.png](screenshots/home-light-default.png).
+- **Do use the green accent for the one primary action.** `#00e05c`, ink `#162136`, 8px radius. See [hero-cta-default.png](components/crops/hero-cta-default.png).
+- **Do lift that green on hover.** The measured hover fill is `#14ff75`, and pressed is `#00c752`. See [hero-cta-hover.png](components/crops/hero-cta-hover.png).
+- **Do set links in blue, not green.** `#0073d3`, lifting to `#078eff`. See [banner-link-default.png](components/crops/banner-link-default.png).
+- **Do open the nav as a full-width panel.** Products, Solutions and Resources each replace the hero. See [home-light-products-menu.png](screenshots/home-light-products-menu.png).
+- **Don't ship the marketing style as the app.** The signed-in product was not captured.

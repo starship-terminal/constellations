@@ -1,0 +1,53 @@
+{
+  "h1": {
+    "text": "Documentation",
+    "color": "rgb(225, 223, 228)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Focal, -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif, -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+    "size": "36px",
+    "weight": "600",
+    "radius": "4px",
+    "border": "rgb(39, 38, 43) 0px",
+    "shadow": "none",
+    "box": {
+      "w": 0,
+      "h": 0
+    }
+  },
+  "link": {
+    "text": "/docs/llms.txt",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "\"Public Sans\", -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif, -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "radius": "4px",
+    "border": "rgb(39, 38, 43) 0px",
+    "shadow": "none",
+    "box": {
+      "w": 103,
+      "h": 19
+    }
+  },
+  "bodyBg": "rgba(0, 0, 0, 0)",
+  "htmlBg": "rgb(13, 12, 16)",
+  "main": {
+    "text": "Build with fal\n\nThe generative media pla",
+    "color": "rgb(161, 159, 164)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "\"Public Sans\", -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif, -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "radius": "4px",
+    "border": "rgb(39, 38, 43) 0px",
+    "shadow": "none",
+    "box": {
+      "w": 1090,
+      "h": 5855
+    }
+  },
+  "aside": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(161, 159, 164)"
+  }
+}

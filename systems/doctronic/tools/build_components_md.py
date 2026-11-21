@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build components.md for the Doctronic design reference.
+"""Build components.md for the Gauth design reference.
 
 Reads raw/components-computed.json (every component and state, measured), raw/layout.json,
 tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to them. Every value
@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
-LAYOUT = {}
+LAYOUT = json.load(open("raw/layout.json"))
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens
@@ -35,7 +35,7 @@ def flat(node, prefix=""):
 
 
 BY_COLOR = {}
-for n, t in flat(T["core"]):
+for n, t in flat(T["core"]["palette"]):
     if t["$type"] == "color":
         BY_COLOR.setdefault(t["$value"], n)
 
@@ -142,52 +142,14 @@ def props(v):
         o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"])
-    # Painted layers that carry a state but not the root box: the element's own
-    # ::before/::after always, and descendant paint only when the root paints
-    # nothing (the case "Child layers" reports). A nav underline that goes
-    # transparent -> black on hover lives in a::after, so it diffs here.
-    bits = []
-    for pe in ("::before", "::after"):
-        if v.get(pe):
-            p = v[pe]
-            bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
-    # A root box-shadow (e.g. the 1px focus ring gained on focus-visible) does
-    # not remove the painted children: keep reporting their layers, which is
-    # where a state-carrying child outline (the 3px cyan CTA ring) shows up.
-    if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
-        for p in v.get("paint", [])[:6]:
-            bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
-    if bits:
-        o["layers"] = "; ".join(bits)[:400]
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
-
-
-def focus_not_captured(v):
-    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
-    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
-    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
-    of every table and tally and listed as "focus could not be captured"."""
-    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
-
-
-def measured(v):
-    return "style" in v and not focus_not_captured(v)
-
-
-def visible(colour_value):
-    """False for a fully transparent colour: a `2px solid transparent` outline draws nothing."""
-    return not re.search(r"rgba\(\d+, \d+, \d+, 0\)|transparent|/ 0\)", colour_value)
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
-    # A state whose capture failed (e.g. via: "focus failed" — the element would
-    # not hold a real keyboard focus) is not a captured state: it is reported
-    # separately so a failed attempt can never read as a measured absence of a
-    # focus ring.
-    states = [s for s in c["states"] if measured(c["states"][s])]
+    states = [s for s in c["states"] if "style" in c["states"][s]]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -216,7 +178,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if measured(s)), None)
+    st = next((s for s in c["states"].values() if "style" in s), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -224,7 +186,7 @@ def child_layers(c):
         return None
     out = []
     for p in st["paint"][:3]:
-        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], re.sub(r"\.0+(?=x|px|$)", "", p["size"])]
+        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
         if p.get("bg"):
             bits.append("background " + colour(p["bg"]))
         if p.get("bgImage"):
@@ -241,58 +203,44 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
-PAGE_NAME = {"home": "home", "chat": "/chat/", "signin": "home (the ?modal=signin URL)", "symptom": "symptom checker",
-             "blog": "blog", "telehealth": "telehealth", "authors": "authors", "resource": "resource center",
-             "wall": "Wall of Love", "dark": "home in dark theme", "mobile": "home"}
+PAGE_NAME = {"home": "Homework home", "science": "Academy (Science Labs)", "math": "Academy (Math Curriculum)", "history": "Academy (History Signature)",
+             "my": "Academy (My Course)", "unit": "unit", "lesson-science": "science lesson", "lesson-math": "math lesson",
+             "lesson-history": "history lesson", "atlas": "Atlas", "story": "Atlas story", "news": "Insights"}
 
 GROUP_INTRO = {
-    "Shell and navigation": "The 72px marketing top bar over the home page: the wordmark, Log in, the solid Sign up pill and the button that opens the site-menu drawer, plus the drawer itself. (The content pages carry a different, shorter sage bar with pill links and the dark Try Doctronic For Free CTA — see the Marketing and content pages group.)",
-    "Home: hero and marketing": "The home hero with the Fraunces display greeting, the raised chat input card with its animated accent border and the accent Start chat button, the suggestion chips, then the marketing sections — feature cards, pricing, testimonials, the Hippocratic oath band and the footer.",
-    "Chat surface": "The signed-out /chat/ surface: the collapsible left rail (New chat highlighted, Sign up for free and Log in pinned at the bottom), the centered empty-state greeting, the large input card with the Send control and the starter chips. Nothing was sent.",
-    "Symptom checker": "The /symptom-checker/ entry point: the Fraunces headline, the symptoms textarea card and the Check My Symptoms action. Measured, never submitted.",
-    "Marketing and content pages": "The Tailwind-utility content surface — the same pill-link top bar and dark CTA on /blog/, /telehealth/, /authors/, /resource-center/ and /wall-of-love/ — with its own literal hex values alongside the token layer.",
-    "Dialogs and overlays": "The sign-in card reached by the public ?modal=signin URL: a centered raised dialog over a dimmed page with email and OAuth actions. Everything inside was measured, never pressed.",
-    'Dark theme (data-theme="dark")': "The home surface re-measured under the site's real dark theme — localStorage.theme=dark sets data-theme on <html>, which redeclares the semantic colour roles and the focus ring.",
-    "Mobile (390 wide)": "The same surface at phone width: the top bar shrinks to wordmark + actions + menu, and the chat rail collapses into a mobile header.",
+    "Shell and navigation": "The app shell shared by Homework, Academy and Insights: a fixed 220px sidebar and a 60px top bar over the content. The sidebar is white with a cool grey current item on Homework and Insights, and takes the warm `#faf9f5` ground with a beige current item on Academy. Atlas and the lesson players have shells of their own (their groups below).",
+    "Homework home": "The question-first home page: a serif hero over a lilac gradient, the question field, an upload panel and subject chips, then marketing sections. Nothing was ever sent or uploaded.",
+    "Academy catalogue": "The course catalogue: the Playfair title and Create Course, four category tabs, then course sections of card grids. Science Labs and History Signature use cover cards with a progress track; Math Curriculum uses unit cards with an 80px cover tile.",
+    "Unit page": "A math course's page: a back link, a tinted course banner, the unit rail at the left and the topic path at the right, with a floating Start panel.",
+    "Lesson player: science canvas": "The science player is built in Astryx, a separate design system (`astryx-*` classes, StyleX variables, the \"stone\" theme): a narrated canvas that pans by itself, a section rail, transport controls and a docked Ask Tutor bar. Its focus ring is the only blue one on the site.",
+    "Lesson player: math": "The math player puts a tutor column at the left and the slide in a white frame at the right, on the warm ground.",
+    "Lesson player: history": "The history player is immersive: chapter pills at the top, the scene in the middle, a play disc and a caption line.",
+    "Atlas": "Atlas has its own shell (a 56px header and a 230px drawer), a prompt box, recommendation chips and a grid of story cards. A story opens as a video preview, then a story page.",
+    "Insights": "The news and blog list in the app shell.",
+    "Dialogs and overlays": "The promo dialog every page opens with, the Create a Course dialog, the science player's audio dialog, the math player's audio gate and the Atlas story preview. The promo's overlay is `rgba(15, 17, 20, 0.45)`.",
+    "Mobile (390 wide)": "A few components as a phone draws them, at 390 x 844 with an iPhone user agent.",
 }
 
 SHOTS = [
-    ("home", "Home", "/"),
-    ("chat", "Chat (signed out)", "/chat/"),
-    ("chat-signin", "Sign-in dialog", "/?modal=signin"),
-    ("symptom-checker", "Symptom checker", "/symptom-checker/"),
-    ("resource-center", "Resource center", "/resource-center/"),
-    ("blog", "Blog", "/blog/"),
-    ("telehealth", "Telehealth", "/telehealth/"),
-    ("urology", "Urology (condition page)", "/urology/"),
-    ("our-philosophy", "Our philosophy", "/our-philosophy/"),
-    ("authors", "Authors", "/authors/"),
-    ("careers", "Careers", "/careers/"),
-    ("online-treatment", "Online treatment", "/online-treatment/"),
-    ("prescription-glp-1", "GLP-1 prescriptions", "/prescription-glp-1/"),
-    ("wall-of-love", "Wall of Love", "/wall-of-love/"),
-    ("about", "About", "/about/"),
-    ("privacy-policy", "Privacy policy", "/privacy-policy/"),
-    ("partnerships", "Partnerships article", "/strategic-partnerships-driving-healthcare-innovation/"),
+    ("home", "Homework home. Serif hero, question field, upload panel, subject chips, then the Atlas, AI solution and live tutor bands, comments and the footer. The promo dialog, the field focused and the folded sidebar captured.", "/"),
+    ("academy-science", "Academy, Science Labs. Title, Create Course, tabs, course sections of lesson cards.", "/course/science"),
+    ("academy-math", "Academy, Math Curriculum. Unit cards, six per course, and Show more expanded (the toolbar sticks with Create Course in it).", "/course/math"),
+    ("academy-history", "Academy, History Signature. Illustrated lesson cards.", "/course/history"),
+    ("academy-my", "Academy, My Course. The signed-out empty state, and the Create a Course dialog.", "/course/my"),
+    ("unit", "Unit page (Algebra 1). Banner, unit rail, topic path, Start panel; scrolled down the path; Unit 2 chosen in the rail.", "/course/math/algebra-1?unit=real-numbers-and-sets"),
+    ("lesson-science", "Science lesson. The audio dialog, the first chapter, Settings open, Ask Tutor opened, a figure with its callout and list, and a quiz.", "/course/science/how-things-work-1/learn"),
+    ("lesson-math", "Math lesson. The audio gate, the playing slide with the tutor column, the chapters panel.", "/course/math/algebra-1/fundamentals-of-set-theory/learn"),
+    ("lesson-history", "History lesson. The opening scene, the chapter panel.", "/course/history/crossing-the-ocean-wall/learn"),
+    ("atlas", "Atlas. Landing, prompt box, chips, Popular Stories, FAQ; a story card's video preview; the Apollo 11 story page, and its Video Settings popover.", "/atlas"),
+    ("news", "Insights. Breadcrumb, News and Blog tabs, featured article, article rows.", "/news"),
 ]
 MOBILE = [
-    ("mobile-home", "Home, phone", "/"),
-    ("mobile-chat", "Chat, phone", "/chat/"),
-    ("mobile-symptom-checker", "Symptom checker, phone", "/symptom-checker/"),
-    ("mobile-blog", "Blog, phone", "/blog/"),
+    ("mobile-home", "Homework home at 390: the promo dialog, the hero, the full page with the app banner.", "/"),
+    ("mobile-academy", "Academy at 390: Math Curriculum (Science Labs is not offered on a phone).", "/course/math"),
+    ("mobile-unit", "Unit page at 390, and scrolled down the path.", "/course/math/algebra-1?unit=real-numbers-and-sets"),
+    ("mobile-lesson-math", "Math lesson at 390: the audio gate and the slide.", "/course/math/algebra-1/fundamentals-of-set-theory/learn"),
+    ("mobile-atlas", "Atlas at 390, and a story page (Artemis II).", "/atlas"),
 ]
-
-# Entries whose committed reading is not the component the name says: the capture's `.or()`
-# fallbacks are unions resolved in DOM order, so an earlier node won (README: What to distrust).
-WRONG = {
-    "nav-link": "The reading is the highlighted \"New chat\" row, the same node as `nav-link-current`, not a resting sidebar link.",
-    "input-card": "The reading is the transparent 652 x 148 `.wrapper.chatInput`, not the painted `form` card.",
-    "chat-hero": "The reading is the whole 1440 x 900 `main`, not the centred empty state.",
-    "logo": "The reading is the 620 x 25 logo wrapper `div`, not the wordmark link.",
-    "feature-card": "The reading is the testimonial `article` (the same card as `quote-card`), not a feature card.",
-    "signin-dialog": "The reading is the transparent inner `section`, not the painted `div.modal` card.",
-    "menu-item": "The reading is the \"About Chat\" expandable row, the same node as `menu-item-expand`, not a link row.",
-}
 
 L = []
 
@@ -307,7 +255,7 @@ shots = sorted(p.name for p in Path("screenshots").glob("*.png"))
 def links(prefix):
     out = []
     for f in shots:
-        m = re.fullmatch(re.escape(prefix) + r"-(?:light|dark)-(.+)\.png", f)
+        m = re.fullmatch(re.escape(prefix) + r"-light-(.+)\.png", f)
         if m:
             out.append(f"[{m.group(1)}](screenshots/{f})")
     return ", ".join(out)
@@ -315,13 +263,13 @@ def links(prefix):
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
-icons = []
+icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n")[1:]]
 
-W("# Doctronic components")
+W("# Gauth components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from www.doctronic.ai on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844, the Dark group on the site's real data-theme=\"dark\" theme), with computed styles read from the running page. Nothing was signed into, created, submitted or sent: the chat composer was given sample text that was deleted again, Send/Start chat and every sign-in action were never pressed.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from www.gauth.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
 W()
-W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [patterns.md](patterns.md).")
+W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
 W()
 W("How to read an entry:")
 W()
@@ -331,7 +279,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-{theme}-state.png`: the app surfaces (home, /chat/, the symptom checker, the resource center, the blog, telehealth and our-philosophy) were captured in both `light` and `dark`; the rest paint `light` only. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-light-{state}.png` (Gauth has one theme). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -343,13 +291,19 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Site-menu drawer", "home, the menu button", "the header menu button's own toggle, closed with Escape", "[home-light-menu](screenshots/home-light-menu.png)"),
-    ("Chat sidebar, expanded", "/chat/", "the rail's own Expand sidebar button", "[chat-light-sidebar](screenshots/chat-light-sidebar.png), [chat-sidebar-open](#chat-sidebar-expanded)"),
-    ("Filled composer", "/chat/", "sample text typed into the textarea and deleted again; Send never pressed", "[chat-light-filled](screenshots/chat-light-filled.png), [chat-textarea](#chat-textarea)"),
-    ("Sign-in dialog", "the ?modal=signin URL", "the public modal URL alone; nothing inside it was pressed", "[chat-signin-light-signin](screenshots/chat-signin-light-signin.png), [signin-dialog](#sign-in-dialog)"),
-    ("Blog search", "/blog/", "sample text typed into the search field; search never submitted", "[blog-light-search](screenshots/blog-light-search.png)"),
-    ("Cookie/consent and reCAPTCHA chrome", "every page", "hidden, never answered — the reCAPTCHA badge is Google's chrome, not the product's", "hidden before every shot and reading"),
-    ("Everything behind Log in / Sign up", "the chat product, health record, prescriptions, appointments", "behind sign-in; the sign-in card was measured, never used", "boundary; see Gaps"),
+    ("Promo dialog (\"Introducing Gauth Academy\")", "every page, on load", "at rest; then dismissed with its own close button for every other capture", "[home-light-promo](screenshots/home-light-promo.png), [promo-dialog](#promo-dialog)"),
+    ("Create a Course dialog", "Academy", "Create Course pressed (opens the dialog); a prompt typed and deleted, no suggestion pressed", "[academy-my-light-create-dialog](screenshots/academy-my-light-create-dialog.png), [create-a-course-dialog](#create-a-course-dialog)"),
+    ("Enable audio dialog", "science lesson", "on load; Not now pressed, Enable audio never pressed", "[lesson-science-light-audio-dialog](screenshots/lesson-science-light-audio-dialog.png)"),
+    ("Audio gate", "math lesson", "on load; Continue pressed to start playback", "[lesson-math-light-audio-gate](screenshots/lesson-math-light-audio-gate.png)"),
+    ("Settings popover", "science lesson", "the lesson's Settings button", "[lesson-science-light-settings](screenshots/lesson-science-light-settings.png)"),
+    ("Ask Tutor, opened", "science lesson", "clicked into the bar; sample text typed and deleted, nothing sent", "[lesson-science-light-ask-tutor](screenshots/lesson-science-light-ask-tutor.png)"),
+    ("Quiz", "science lesson", "reached by letting the lesson play about three minutes; no option chosen", "[lesson-science-light-quiz](screenshots/lesson-science-light-quiz.png)"),
+    ("Chapters panel", "math and history lessons", "the chapters button", "[lesson-math-light-chapters](screenshots/lesson-math-light-chapters.png), [lesson-history-light-chapters](screenshots/lesson-history-light-chapters.png)"),
+    ("Show more", "Math Curriculum", "the Show 14 more button", "[academy-math-light-show-more](screenshots/academy-math-light-show-more.png)"),
+    ("Folded sidebar", "Homework home", "the sidebar's collapse button", "[home-light-sidebar-folded](screenshots/home-light-sidebar-folded.png)"),
+    ("Story preview", "Atlas", "a story card pressed (opens a video preview)", "[atlas-light-story-preview](screenshots/atlas-light-story-preview.png)"),
+    ("Story page", "Atlas", "Explore in the preview (opens the published story)", "[atlas-light-story](screenshots/atlas-light-story.png), [mobile-atlas-light-story](screenshots/mobile-atlas-light-story.png)"),
+    ("Video Settings popover", "Atlas story", "hovering Generate Video; nothing in it pressed", "[atlas-light-story-video-settings](screenshots/atlas-light-story-video-settings.png)"),
 ]
 for r in OVER:
     W("| " + " | ".join(r) + " |")
@@ -360,45 +314,19 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc, unfocused = [], []
+foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if st and focus_not_captured(st):
-        unfocused.append(f"`{k}`")
-    if not st or not measured(st):
+    if not st or "style" not in st:
         continue
     s = st["style"]
-    base = next((v["style"] for v in c["states"].values() if measured(v)), s)
-    # A fully transparent outline paints nothing: a transparent outline must
-    # not count as a painted ring.
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and s["outlineColor"] != "rgba(0, 0, 0, 0)"
-    # A ring painted on a child layer instead of the wrapper counts as ringed
-    # too — unless that outline is also transparent.
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline") and "rgba(0, 0, 0, 0)" not in n["outline"]), None)
-    shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
-    border = any(
-        s[f"border{d}{p}"] != base[f"border{d}{p}"]
-        for d in ("Top", "Right", "Bottom", "Left")
-        for p in ("Color", "Width", "Style")
-    )
-    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
-parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
-if with_shadow:
-    parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
-if with_border:
-    parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
-if without:
-    parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
-if unfocused:
-    parts.append(f"Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}.")
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
+    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
+with_ring = [f"`{k}` ({r})" for k, r in foc if r]
+without = [f"`{k}`" for k, r in foc if not r]
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
 W()
-W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.")
+W("**Pressed.** Gauth's primary buttons shrink when pressed instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -407,7 +335,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if not measured(st):
+        if "style" not in st:
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -433,36 +361,58 @@ def dur_ms(d):
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
     W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
+W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
+W()
+W("| Page | 1440 | 1920 | 1024 | 390 |")
+W("|---|---|---|---|---|")
+
+
+def grid_of(key):
+    v = LAYOUT.get(key)
+    if not v:
+        return "-"
+    g = v["grids"][0] if v["grids"] else None
+    cols = re.sub(r"(\d+\.\d)\d*px", r"\1", g["cols"]).replace("px", "") if g else ""
+    main = f"content x {v['main']['x']}, {v['main']['w']} wide" if v["main"]["w"] else "content full width"
+    return f"{main}; grid {cols} gap {g['colGap']}" if g else main
+
+
+for page in ["home", "academy-science", "academy-math", "unit", "lesson-math", "atlas"]:
+    W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390)) + " |")
+W()
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # PRODUCT (adapt): the card-like components to compare in one table.
-for k in ["input-card", "hero-input-card", "feature-card", "pricing-card", "signin-dialog", "article-card", "author-card"]:
+for k in ["lesson-card", "unit-card", "story-card", "feature-card", "solution-option", "create-suggestion", "quiz-card", "quiz-option", "learning-panel", "settings-popover", "chapters-panel", "video-settings", "view-rail", "m-unit-card"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if measured(s)), None)
+    st = next((s for s in c["states"].values() if "style" in s), None)
     if st is None:
         continue
     p = props(st)
+    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
+        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
+        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
 # ------------------------------------------------ entries
 W("## Components")
-groups = [g for g in GROUP_INTRO if any(c.get("group") == g for c in C.values())]
+groups = [g for g in GROUP_INTRO if any(c["group"] == g for c in C.values())]
 for c in C.values():
-    if c.get("group") not in groups:
-        groups.append(c.get("group") or "Other")
+    if c["group"] not in groups:
+        groups.append(c["group"])
 for g in groups:
     W()
     W(f"### {g}")
     W()
     W(GROUP_INTRO.get(g, ""))
     for k, c in C.items():
-        if c.get("group") != g:
+        if c["group"] != g:
             continue
         W()
         W(f"#### {c['title']}")
@@ -471,14 +421,10 @@ for g in groups:
             desc += "."
         where = PAGE_NAME.get(c["page"], c["page"])
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
-        if k in WRONG:
-            W()
-            W(f"**Known wrong; recapture needed.** {WRONG[k]}")
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        failed = [s for s, v in c["states"].items() if focus_not_captured(v)]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -488,9 +434,6 @@ for g in groups:
             W("|---|---|")
             for lab, d in rows:
                 W(f"| {lab} | {fmt(d)} |")
-            W()
-        if failed:
-            W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.")
             W()
         cl = child_layers(c)
         if cl:
@@ -503,7 +446,7 @@ for g in groups:
 W()
 W("## Icons")
 W()
-W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots (the Doctronic wordmark, the arrow/spark glyphs in buttons and chips, the Trustpilot stars and the testimonial artwork) are the product's artwork. Declared under layoutGaps in the catalog entry.")
+W(f"{len(icons)} SVGs were lifted from the pages into [icons/](icons), named by role, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. Lesson content (the canvas, slides and formulas) was left out; these are the interface icons. The SVGs are Gauth's property, kept for reference only.")
 W()
 W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
 W("|---|---|---|---|---|---|")
@@ -515,41 +458,41 @@ W()
 # ------------------------------------------------ gaps
 W("## Gaps")
 W()
-W("### The signed-in product")
-W()
-W("Everything behind Log in and Sign up — the chat product's real threads, the health record, prescriptions, appointments, account and billing — was never reached. The sign-in card was rendered from the public ?modal=signin URL and measured, and nothing inside it (email login, the OAuth buttons, Create an account) was pressed. What the authenticated app looks like or how it behaves is not documented here; the marketing pages' claims about it were never verified.")
-W()
 W("### Pages")
 W()
-W("- **Chat actions.** Start chat, Send message, Check My Symptoms, the suggestion chips, View recent chats and the Anonymous badge were measured, never pressed — each would start a session or submit text.")
-W("- **Auth and sign-up actions.** Sign up, Sign up for free, Try Doctronic For Free, Log in, Log in with email, the OAuth buttons and Create an account were measured, never followed; no account was created.")
-W("- **Medical record / prescription links** in the site-menu drawer and footers were left unfollowed where they lead to account surfaces.")
-W("- **The mobile app's Open/App Store banner**, where it appears, was left untouched.")
+W("- **Signed-in pages.** Nothing behind sign-in was captured: a learner's own My Course list, course progress, history, the homework answer page, Atlas topics a learner made, account settings and the subscription checkout. The kit never signs in.")
+W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, no quiz option was chosen.")
+W("- **Study Resources.** `/study-resources/*` redirects to gauthmath.com, which answers a headless browser with Access Denied.")
+W("- **The science lesson's Completed screen** (a cover, a laurel \"Completed\" title, Share and View Canvas) was seen while exploring, after a lesson played to its end, but the kit does not wait the several minutes it takes, so there is no crop or measurement.")
+W("- **Mobile science lessons.** A phone is redirected from `/course/science` to `/course/math`; Science Labs is not offered on a phone.")
+W("- **Other lesson kinds.** Math lessons carry interactive steps (matching, drag, number lines, flashcards, graphs; their CSS is in the stylesheets) that only appear as a lesson plays on; the capture saw the first slides only.")
 W()
 W("### States")
 W()
-W("- **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing.")
-W("- **Disabled, error and loading states** were only seen where the page paints them at rest (the declared *-disabled tokens are in the token file); no form was submitted to provoke an error.")
-W("- **The chat rail's signed-in content** (recent chats, history) only fills for a signed-in visitor; the rail was measured expanded in its signed-out state.")
+W("- **Pressed** was forced with DevTools on every control except toggles, so a state a script adds on mousedown (if any) is missing.")
+W("- **Hover on the feature cards, the article rows, the Share button and the play disc** changed nothing measurable; their entries read 'same'.")
+W("- **The tutor transcript** held only the status line during the 25 seconds of playback the kit waits; transcript text was not captured.")
+W("- **Disabled states** were not seen on any public control.")
 W()
 W("### Themes")
 W()
-W("doctronic.ai ships a real user-selectable dark theme: `localStorage.theme` is `light`, `dark` or `system`, an init script sets `data-theme` on `<html>` and the stylesheets redeclare the semantic `--color-*` roles and the focus ring under `[data-theme=\"dark\"]` (harvested in [raw/css-vars.json](raw/css-vars.json)). The app surfaces (home, /chat/, the symptom checker, resource center, blog, telehealth, our-philosophy) were captured in both themes; the darker content pages keep their light Tailwind paint under `data-theme=\"dark\"` — the utility classes carry literal hex, not theme vars — which the token file records honestly as a dark set scoped to the token-driven surfaces.")
+W("Gauth shows one light theme. Its stylesheets do declare dark values: TikTok's TUX theme under `[data-theme=\"dark\"]` and `.twv-container` with `prefers-color-scheme: dark`, the lesson palette under `[data-lesson-style=\"dark\"]`, and Astryx's stone theme as `light-dark()` pairs. None of them is applied on any page captured: no page sets a dark attribute, the science player pins `data-theme=\"light\"`, and every page painted the same under `prefers-color-scheme: dark` (`themeChecks` in [raw/css-vars.json](raw/css-vars.json)). There is no theme switch in the sidebar, the lesson Settings or the footer. The token file therefore ships no dark set, and the dark declarations stay in the raw file for reference.")
 W()
 W("### Fonts")
 W()
-W("- **fraunces** (400/600, plus italics), **geist** (400/500/600) and **geistMono** (400/600) are self-hosted woff2 files declared in @font-face blocks in the Next.js chunks (the src list is in [raw/css-vars.json](raw/css-vars.json)). The style guide does not load them — they are the product's licensed faces — so its samples fall back to Georgia and the system sans.")
-W("- **The plain body font** (`--font-body`) is the Apple system stack (SF Pro Text → Segoe UI → Roboto…), not a webfont.")
+W("- **SF Pro** is Apple's system face; Gauth declares an \"SF Pro\" family over `local()` only, so it renders as SF Pro on Apple devices and falls back elsewhere.")
+W("- **Satoshi** (the science canvas's \"Canvas Print\" and \"Canvas Heading\") is from Fontshare and is not on Google Fonts; the style guide falls back to the system font.")
+W("- **Rubik**, named on small Atlas labels, has no `@font-face` on the page and rendered as a fallback in the capture.")
 W()
 W("### Screenshots")
 W()
-W("- The hero illustration, the testimonial photos, the condition-page imagery and the Doctronic wordmark in the screenshots are the product's published content; only frames and components were measured.")
-W("- The invisible-reCAPTCHA badge is Google's chrome mounted over the page; it was hidden, never answered.")
+W("- Covers, illustrations, videos and story images are Gauth's content and appear only inside screenshots and crops. The lesson canvas and the Atlas story keep moving, so two captures of the same view can differ in what the narration has drawn.")
 W("- Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.")
 W()
 W("### Content left out")
 W()
-W("- Article copy, condition guidance, testimonials, the Hippocratic-oath text and the privacy/terms text are the product's content; only frames and components were measured.")
+W("- Lesson content (slides, canvas drawings, formulas, narration) was not transcribed; only the frames around it were measured.")
+W("- No personal data was captured: the pages were read signed out, and the Atlas drawer was empty.")
 
 Path("components.md").write_text("\n".join(L) + "\n")
-print("components.md:", len(L), "lines")
+print("components.md:", len(L), "lines,", len(C), "entries,", n_crops, "crops,", len(icons), "icons")

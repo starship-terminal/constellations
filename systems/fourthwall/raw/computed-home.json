@@ -1,0 +1,233 @@
+{
+  "body": {
+    "selector": "body",
+    "text": "Features CREATE PRODUCTS Product catalog Product designer So",
+    "rect": {
+      "w": 1440,
+      "h": 14167
+    },
+    "color": "rgb(10, 10, 10)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderTopColor": "rgb(10, 10, 10)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
+    "fontSize": "16.9995px",
+    "fontWeight": "400",
+    "lineHeight": "28.0492px",
+    "letterSpacing": "normal",
+    "padding": "0px 0px 0px 0px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  },
+  "nav": {
+    "selector": ".nav-bar",
+    "text": "Features CREATE PRODUCTS Product catalog Product designer So",
+    "rect": {
+      "w": 1440,
+      "h": 71
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderTopColor": "rgb(255, 255, 255)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
+    "fontSize": "16.9995px",
+    "fontWeight": "400",
+    "lineHeight": "28.0492px",
+    "letterSpacing": "normal",
+    "padding": "14px 40px 14px 40px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  },
+  "navLink": {
+    "selector": ".nav-link",
+    "text": "Features",
+    "rect": {
+      "w": 90,
+      "h": 36
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderTopColor": "rgb(255, 255, 255)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
+    "fontSize": "16.9995px",
+    "fontWeight": "450",
+    "lineHeight": "28.0492px",
+    "letterSpacing": "normal",
+    "padding": "4px 0px 4px 0px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  },
+  "login": {
+    "selector": ".nav-login",
+    "text": "Log in",
+    "rect": {
+      "w": 49,
+      "h": 36
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderTopColor": "rgb(255, 255, 255)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
+    "fontSize": "16.9995px",
+    "fontWeight": "450",
+    "lineHeight": "28.0492px",
+    "letterSpacing": "normal",
+    "padding": "4px 0px 4px 0px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  },
+  "cta": {
+    "selector": ".btn-primary",
+    "text": "Start now Start now",
+    "rect": {
+      "w": 117,
+      "h": 43
+    },
+    "color": "rgb(10, 10, 10)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderTopColor": "rgb(10, 10, 10)",
+    "borderTopWidth": "0px",
+    "borderRadius": "12px",
+    "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
+    "fontSize": "16.9995px",
+    "fontWeight": "450",
+    "lineHeight": "28.0492px",
+    "letterSpacing": "normal",
+    "padding": "12px 20px 12px 20px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  },
+  "footer": {
+    "selector": "footer",
+    "text": "Features Product catalog Shops Homepages Memberships Pricing",
+    "rect": {
+      "w": 1440,
+      "h": 362
+    },
+    "color": "rgba(255, 255, 255, 0.5)",
+    "backgroundColor": "rgb(10, 10, 10)",
+    "borderTopColor": "rgba(255, 255, 255, 0.5)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
+    "fontSize": "16.9995px",
+    "fontWeight": "400",
+    "lineHeight": "28.0492px",
+    "letterSpacing": "normal",
+    "padding": "56px 40px 32px 40px",
+    "boxShadow": "rgb(10, 10, 10) 0px 4px 0px 0px",
+    "textDecoration": "none"
+  },
+  "footerLink": {
+    "selector": "footer a",
+    "text": "Product catalog",
+    "rect": {
+      "w": 126,
+      "h": 28
+    },
+    "color": "rgba(255, 255, 255, 0.5)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderTopColor": "rgba(255, 255, 255, 0.5)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
+    "fontSize": "16.9995px",
+    "fontWeight": "400",
+    "lineHeight": "28.0492px",
+    "letterSpacing": "normal",
+    "padding": "0px 0px 0px 0px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  },
+  "heading": {
+    "selector": "h1",
+    "text": "One platform for premium products and branded shops. Easy to",
+    "rect": {
+      "w": 1028,
+      "h": 181
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderTopColor": "rgb(255, 255, 255)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "Saans, sans-serif",
+    "fontSize": "57.6px",
+    "fontWeight": "420",
+    "lineHeight": "60.48px",
+    "letterSpacing": "-1.152px",
+    "padding": "0px 0px 0px 0px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  },
+  "h2": {
+    "selector": "h2",
+    "text": "Create high-quality products. No experience required.",
+    "rect": {
+      "w": 721,
+      "h": 97
+    },
+    "color": "rgb(10, 10, 10)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderTopColor": "rgb(10, 10, 10)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "Saans, sans-serif",
+    "fontSize": "43.2px",
+    "fontWeight": "435",
+    "lineHeight": "48.384px",
+    "letterSpacing": "-0.432px",
+    "padding": "0px 0px 0px 0px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  },
+  "paragraph": {
+    "selector": "main p, .hero p, p",
+    "text": "Introducing Eli, your personal 24/7 e‑commerce assistant",
+    "rect": {
+      "w": 300,
+      "h": 49
+    },
+    "color": "rgba(255, 255, 255, 0.5)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderTopColor": "rgba(255, 255, 255, 0.5)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
+    "fontSize": "16.9995px",
+    "fontWeight": "400",
+    "lineHeight": "24.6493px",
+    "letterSpacing": "normal",
+    "padding": "0px 0px 0px 0px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  },
+  "mega": {
+    "selector": ".nav-dropdown .mega-link",
+    "text": "Product catalog",
+    "rect": {
+      "w": 126,
+      "h": 28
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderTopColor": "rgb(255, 255, 255)",
+    "borderTopWidth": "0px",
+    "borderRadius": "0px",
+    "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
+    "fontSize": "16.9995px",
+    "fontWeight": "400",
+    "lineHeight": "28.0492px",
+    "letterSpacing": "normal",
+    "padding": "0px 0px 0px 0px",
+    "boxShadow": "none",
+    "textDecoration": "none"
+  }
+}

@@ -3,8 +3,8 @@
 
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-mode="dark"]`/`.dark` — the same class Fable uses to scope
-its dark reading/detail surfaces. Aliases like {color.graphite.600} become var(--color-graphite-600).
+`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
+theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
 
 Placeholders in the template:
   /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
@@ -117,7 +117,8 @@ def icon(m):
 tpl = (HERE / "tools" / "style-guide.template.html").read_text()
 html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
         .replace("/*TOKENS*/null", data))
-html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
+if "<!--icon:" in html:
+    html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
 (HERE / "style-guide.html").write_text(html)
 print("style-guide.html:", len(html.encode()), "bytes;",
       " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")

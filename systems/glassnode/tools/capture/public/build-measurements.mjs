@@ -13,13 +13,6 @@ const sides = (t, r, b, l) => (t === r && r === b && b === l ? t : t === b && r 
 const fam = (f) => (f || '').split(',')[0].replace(/"/g, '');
 const esc = (s) => String(s ?? '').replace(/\|/g, '/').replace(/\n/g, ' ');
 
-// A state whose reading is not what its name says, kept out of the tables and the crop list (the
-// same rule as focus_not_captured in tools/build_components_md.py): a skipped one, or a focus-visible
-// reading taken where keyboard focus never landed (older runs saved the element at rest) or where the
-// element took focus without matching :focus-visible.
-const focusNotCaptured = (v) => Boolean(v.skipped) || v.via === 'focus failed' || v.focus?.matches === false;
-const notCapturedWhy = (v) => v.skipped || (v.via === 'focus failed' ? 'focus failed: keyboard focus did not reach the element' : 'focused without matching :focus-visible, so no keyboard-focus reading');
-
 function props(v) {
   const s = v.style || {};
   const o = {};
@@ -53,9 +46,10 @@ function props(v) {
 
 const L = [];
 const W = (s = '') => L.push(s);
-W('# Glassnode component measurements');
+W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
-W(`Computed styles read from glassnode.com and its public subdomains on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headed Chromium under Xvfb at 1440 x 900 (the Mobile group at 390 x 844) across the surfaces' painted themes — the marketing site's light :root pages (home, /pricing/vector, /contact), the studio product shell at studio.glassnode.com /pricing (painted light; its html[data-theme="dark-theme"] layer is declared but has no public theme control, so it is captured as declared-not-painted tokens only), the Auth0 universal login at auth.glassnode.com/u/login reached through the studio's real "Log in" button (the volatile ?state= is never recorded), the Ghost publication at research.glassnode.com, the GitBook docs at docs.glassnode.com and the dark-by-default registry at tokenization.glassnode.com — and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+// PRODUCT (adapt): describe this product's capture.
+W(`Computed styles read from www.gauth.com on ${J._meta.read} by \`tools/capture/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
@@ -69,10 +63,6 @@ for (const g of groups) {
     W('');
     W(`#### ${k}`);
     W('');
-    if (!c.states) { // a page marker (e.g. __auth: the login origin was reached) carries no states
-      W(`${c.title || k} — page marker, no component states.`);
-      continue;
-    }
     W(`${c.title}.${c.desc ? ' ' + c.desc : ''}`);
     W('');
     const states = Object.keys(c.states);
@@ -83,11 +73,6 @@ for (const g of groups) {
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
-      if (focusNotCaptured(v)) { (rows.Skipped ||= {})[st] = notCapturedWhy(v); continue; }
-      if (!v.style || !v.rect) { // a note entry (e.g. pdp_url) carries no computed style
-        (rows.Note ||= {})[st] = v.text || v.via || '';
-        continue;
-      }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }
     W(`| Property | ${states.join(' | ')} |`);
@@ -96,7 +81,7 @@ for (const g of groups) {
       const first = vals[states[0]];
       W(`| ${p} | ${states.map((st, i) => (i && vals[st] === first && p !== 'How' ? '=' : esc(vals[st] ?? '-'))).join(' | ')} |`);
     }
-    const crops = states.filter((st) => !focusNotCaptured(c.states[st])).map((st) => c.states[st].crop).filter(Boolean).map((f) => '`' + path.basename(f) + '`');
+    const crops = states.map((st) => c.states[st].crop).filter(Boolean).map((f) => '`' + path.basename(f) + '`');
     W('');
     W(crops.length ? `Crops: ${crops.join(', ')}.` : 'Crops: none.');
   }
@@ -105,26 +90,19 @@ if (J._meta.backdrop) {
   W('');
   W('## Dialog backdrop');
   W('');
-  W('The layers behind the consent dialog that paint a fill, from the dialog outwards. The first is the overlay that dims the page.');
+  W('The layers behind the promo dialog that paint a fill, from the dialog outwards. The first is the overlay that dims the page.');
   W('');
   for (const b of J._meta.backdrop) W(`- \`${b.node || 'overlay (hashed class names only)'}\`:${hex(b.bg)}${b.backdrop && b.backdrop !== 'none' ? ', backdrop-filter ' + b.backdrop : ''}`);
 }
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('glassnode.com serves its CSS as Next.js chunks plus SCSS-module blocks; studio.glassnode.com ships a large Ant Design + --gds-* layer; the Ghost, GitBook and registry surfaces ship their own sheets. This list holds the transitions the readable sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.');
+// PRODUCT (adapt): describe this product's capture.
+W('Gauth\'s own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd\'s CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth\'s own rules.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');
   W(`- ${pg}: ${uniq.map((t) => `\`${esc(t.transition)}\``).join(', ') || 'none'}`);
-}
-if (J._meta.reducedMotion) {
-  W('');
-  W('## Reduced motion');
-  for (const [pg, rm] of Object.entries(J._meta.reducedMotion)) {
-    W('');
-    W(`- ${pg} (\`${rm.selector}\` under prefers-reduced-motion): ${rm.reduce ? `transition \`${esc(rm.reduce.transition)}\`, animation \`${esc(rm.reduce.animation)}\`, html scroll-behavior \`${rm.reduce.scrollBehavior}\`` : (rm.error || 'element not found')}`);
-  }
 }
 fs.writeFileSync(path.join(REF, 'raw', 'measurements.md'), L.join('\n') + '\n');
 console.log('raw/measurements.md', L.length, 'lines');
