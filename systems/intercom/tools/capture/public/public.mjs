@@ -119,6 +119,31 @@ const desktop = {
     });
   } },
   changes: { path: '/changes/en', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  // Pages the 2026-11-21 site-tree walk found from the home nav and footer.
+  // Already-captured routes stay above. Login, signup and form submit stay out.
+  tickets: { path: '/helpdesk/tickets', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  outbound: { path: '/helpdesk/outbound', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  omnichannel: { path: '/helpdesk/omnichannel', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'help-center': { path: '/helpdesk/help-center', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  reporting: { path: '/helpdesk/reporting', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'knowledge-hub': { path: '/helpdesk/knowledge-hub', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'early-stage': { path: '/early-stage', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'small-business': { path: '/small-business', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'live-chat': { path: '/live-chat', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'app-store': { path: '/app-store', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'learning-center': { path: '/learning-center', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  calculator: { path: '/pricing/calculator', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  privacy: { path: '/legal/privacy', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  terms: { path: '/legal/terms-and-policies', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'solution-technology': { path: '/solutions/technology', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'solution-ecommerce': { path: '/solutions/ecommerce', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'solution-fintech': { path: '/solutions/fintech', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'solution-gaming': { path: '/solutions/gaming', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'solution-partner': { path: '/solution-partner-program', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'technology-partner': { path: '/technology-partner-program', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'customers-menu': { path: '/', run: async (p, S) => { await step('customers-menu', async () => { await openNavMenu(p, 'Customers'); await S.view('customers-menu'); await p.keyboard.press('Escape'); }); } },
+  'resources-menu': { path: '/', run: async (p, S) => { await step('resources-menu', async () => { await openNavMenu(p, 'Resources'); await S.view('resources-menu'); await p.keyboard.press('Escape'); }); } },
+  'fin-video': { path: '/', run: async (p, S) => { await step('fin-video', async () => { const b = p.getByRole('button', { name: /Introducing Fin 4/i }).first(); if (await b.count()) { await b.click(); await wait(p, 1200); await S.view('dialog'); await p.keyboard.press('Escape'); } }); } },
 };
 
 const mobile = {
@@ -134,6 +159,11 @@ const mobile = {
   helpdesk: { path: '/helpdesk', run: async (p, S) => { await S.view('default'); await S.full(); } },
   help: { path: '/help/en/', run: async (p, S) => { await S.view('default'); await S.full(); } },
   'contact-sales': { path: '/contact-sales', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  tickets: { path: '/helpdesk/tickets', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'early-stage': { path: '/early-stage', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'live-chat': { path: '/live-chat', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  blog: { path: '/blog', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  customers: { path: '/customers', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const b = await chromium.launch();

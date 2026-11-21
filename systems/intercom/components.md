@@ -588,7 +588,8 @@ The saved reading is a demo form, not the navigation sheet. No correct overlay r
 
 ### Pages
 
-- **Signed-in pages.** Nothing behind sign-in was captured: the Intercom app itself (app.intercom.com inbox, tickets, reports), trial onboarding at /signup, and any account surface. The kit never signs in and never follows a Log in or Start free trial link.
+- **Signed-in pages.** Nothing behind sign-in was captured: the Intercom app itself (app.intercom.com inbox, tickets, reports), trial onboarding at /signup, and any account surface. The kit never signs in and never follows a Log in or Start free trial link. The 2026-11-21 site tree records the same walls: `https://app.intercom.com/admins/sign_in` and `https://www.intercom.com/signup`.
+- **Not captured on the 2026-11-21 pass.** Locale routes (`/fr-fr`, `/es-la`, `/de-de`, `/pt-br`). Individual customer stories (they redirect to fin.ai). Sister hosts (`fin.ai`, `academy.fin.ai`, `webinars.fin.ai`, `community.intercom.com`, `developers.intercom.com`, `trust.intercom.com`) were confirmed to load and were not packaged. The help center's article tree beyond the pages already in the package. Footer accordion groups were mapped, not each expanded as its own shot. The Fin 4 video's played frame. Dark theme: the public site still has none.
 - **Anything that sends or creates.** No form was submitted: the contact-sales form was never advanced past its first step (Next was measured with forced pseudo states, never pressed), no demo was booked, no search was run, no option was chosen in the company-size select, the marketing checkbox was never ticked, and no trial was started.
 - **Careers and docs.** `/careers` and `developers.intercom.com` were left out of scope; the capture covers the marketing site, the help center and the changelog.
 
