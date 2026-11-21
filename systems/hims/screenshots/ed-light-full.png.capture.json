@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:19:25.693Z",
+  "capturedAt": "2026-11-21T12:41:55.264Z",
   "screenshot": "ed-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 11273
+      "height": 11149
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 11273
+    "height": 11149
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 11273
+      "height": 11149
     },
     "basis": "fullPage"
   },

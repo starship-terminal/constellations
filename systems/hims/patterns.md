@@ -10,11 +10,11 @@ Sex and Learn open menus without leaving the page: [home-light-sex-menu](screens
 
 Weight, hair, ED and PE each have a long marketing page on the same chrome. [weight-loss-light-default](screenshots/weight-loss-light-default.png), [hair-loss-light-default](screenshots/hair-loss-light-default.png), [ed-light-default](screenshots/ed-light-default.png), [pe-light-default](screenshots/pe-light-default.png). About and how-it-works use the same shell: [about-light-default](screenshots/about-light-default.png), [how-it-works-light-default](screenshots/how-it-works-light-default.png).
 
-`/c` is a short chooser, not the care portal: [treatments-light-default](screenshots/treatments-light-default.png). The three options were not followed. Following one starts a consultation.
+`/c` is a consultation start ("What are you looking to do?"). The 2026-11-21 public pass opened it and then removed the shot. Following an option starts a consultation.
 
 ## Login and register
 
-`/customer/login` is a split card: product photo, Welcome back, email, password, Forgot your password, a disabled Login, and Create an account. See [login-light-default](screenshots/login-light-default.png). Empty email shows "Your email is required": [login-light-email-focus](screenshots/login-light-email-focus.png). Create an account opens a right drawer with email, password, a terms checkbox, a marketing opt-out, and a disabled Create account: [login-light-register](screenshots/login-light-register.png). Forgot password opens its own drawer: [login-light-forgot](screenshots/login-light-forgot.png). Nothing in the measurement run was submitted.
+`/customer/login` is a split card: product photo, Welcome back, email, password, Forgot your password, a disabled Login, and Create an account. See [login-light-default](screenshots/login-light-default.png). Opening Forgot your password on an empty email shows "Your email is required": [login-light-forgot](screenshots/login-light-forgot.png). Create an account opens a right drawer with empty fields, a terms checkbox, a marketing opt-out, and a disabled Create account: [login-light-register](screenshots/login-light-register.png). Nothing was typed or submitted on the 2026-11-21 pass.
 
 ## Care portal
 

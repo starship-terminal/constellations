@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:19:19.990Z",
+  "capturedAt": "2026-11-21T12:41:47.074Z",
   "screenshot": "hair-loss-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 10016
+      "height": 9108
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 10016
+    "height": 9108
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 10016
+      "height": 9108
     },
     "basis": "fullPage"
   },

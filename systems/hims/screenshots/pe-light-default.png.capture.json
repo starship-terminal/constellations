@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:19:29.279Z",
+  "capturedAt": "2026-11-21T12:41:59.826Z",
   "screenshot": "pe-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6289
+      "height": 6279
     },
     "scroll": {
       "x": 0,

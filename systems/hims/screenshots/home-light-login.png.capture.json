@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:20:05.001Z",
-  "screenshot": "treatments-light-full.png",
-  "sanitizedSourceUrl": null,
+  "capturedAt": "2026-11-21T12:44:57.172Z",
+  "screenshot": "home-light-login.png",
+  "sanitizedSourceUrl": "https://www.forhims.co.uk/",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -42,7 +42,7 @@
     }
   },
   "capture": {
-    "mode": "fullPage",
+    "mode": "viewport",
     "scale": "device",
     "clip": null
   },
@@ -56,7 +56,7 @@
       "width": 1440,
       "height": 900
     },
-    "basis": "fullPage"
+    "basis": "configuredViewport"
   },
   "visualReview": {
     "status": "pending",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:20:22.467Z",
+  "capturedAt": "2026-11-21T12:43:35.042Z",
   "screenshot": "mobile-login-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 2406
+      "height": 1591
     },
     "scroll": {
       "x": 0,

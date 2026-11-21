@@ -34,7 +34,7 @@ White, 12px radius, about 60px tall, 16px Care Sans. Error copy is `#ce2f24` (`l
 | filled | [input-filled](components/crops/input-filled.png) |
 | error | [input-error-default](components/crops/input-error-default.png) |
 
-The filled crop used `name@example.com` and was cleared. It is not an account.
+The filled crop is an empty field. It is not an account.
 
 ## Checkbox
 

@@ -1,6 +1,6 @@
 # Hims UK design reference
 
-A token set and component reference for Hims' UK marketing site, www.forhims.co.uk. Read on 2026-11-19 in headless Chromium at 1440 x 900 and 390 x 844, signed out, plus the signed-in care portal (Treatments, Messaging, Profile) from an account created with the capture inbox. forhims.co.uk does not redirect to forhims.com. It is its own UK surface: `html.brand-hims.variant-care-sans`, Care Sans, a warm canvas, and a clay accent. The US host www.hims.com is a different domain and is not this package.
+A token set and component reference for Hims' UK marketing site, www.forhims.co.uk. Refreshed 2026-11-21 from the public site, signed out, at 1440 x 900 and 390 x 844. The homepage site tree is [site-tree.md](site-tree.md). forhims.co.uk does not redirect to forhims.com. It is its own UK surface: `html.brand-hims.variant-care-sans`, Care Sans, a warm canvas, and a clay accent. The US host www.hims.com is a different domain and is not this package. forhers.com is a different package.
 
 The site paints one light theme. A migration strip sits above the nav ("We're moving to a new platform"). Primary actions are black pills. Italic words in headlines take the clay accent `#cc835c`. Ketch consent ("About cookies on our site") was hidden and never clicked.
 
@@ -14,7 +14,9 @@ The site paints one light theme. A migration strip sits above the nav ("We're mo
 | [patterns.md](patterns.md) | How the marketing chrome, category pages, login drawer and care portal fit together |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [icons/](icons) | Inline SVGs from the homepage, named in [icons/INDEX.tsv](icons/INDEX.tsv) |
-| [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900 at 1x. `mobile-*` at 390 wide, 2x |
+| [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900 at 1x. `mobile-*` at 390 wide, 2x. Public refresh 2026-11-21. |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog |
+| [login-review.json](login-review.json) | Public nav, settings, and create stops. Screens list files that exist. |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json) |
 | [tools/](tools) | Builders and the adapted capture kit |
 
@@ -26,7 +28,7 @@ The site paints one light theme. A migration strip sits above the nav ("We're mo
 4. **Do set type in Care Sans, with Ivar Soft only where the product uses a serif.** The declared stack is `CareSans, Helvetica, Arial, sans-serif` (`core.font.sans`). See [hero-title-default](components/crops/hero-title-default.png).
 5. **Don't invent a dark theme.** The public site and the care portal paint one light theme. No theme toggle was found. See [home-light-default](screenshots/home-light-default.png) and [portal-treatments-light-default](screenshots/portal-treatments-light-default.png).
 6. **Don't click the cookie banner.** Ketch's Customise and Accept all post consent. Hide the dialog. See [login-light-default](screenshots/login-light-default.png).
-7. **Don't start a consultation, add a card, or enter a phone number.** Account creation stopped at email and password. Profile Edit, payment Edit, and every treatment quiz were left closed. See [portal-profile-light-default](screenshots/portal-profile-light-default.png).
+7. **Don't start a consultation, add a card, or enter a phone number.** The 2026-11-21 public pass stopped at the login drawer and the empty register drawer. Get started on a treatment card opens `/c/*` and was not entered. See [login-light-default](screenshots/login-light-default.png).
 
 ## Brief
 
@@ -113,7 +115,7 @@ Care Sans (variable, roman and italic) is loaded from www.hims.com and is propri
 | Checkbox | Captured, default and focus, on the register drawer. Not ticked, so the account was not submitted from the measurement run. [checkbox-default](components/crops/checkbox-default.png) |
 | Radio, switch | Not present on the captured surfaces |
 | Tabs | Captured as the care-portal nav (Treatments, Messaging, Profile) with an underline on the current item. [portal-treatments-light-default](screenshots/portal-treatments-light-default.png) |
-| Menu | Captured. [home-light-menu](screenshots/home-light-menu.png), [home-light-sex-menu](screenshots/home-light-sex-menu.png) |
+| Menu | Captured 2026-11-21. [home-light-menu](screenshots/home-light-menu.png), [home-light-sex-menu](screenshots/home-light-sex-menu.png), [home-light-learn-menu](screenshots/home-light-learn-menu.png) |
 | Tooltip | Not present |
 | Dialog | Captured as the register drawer. [drawer-register](components/crops/drawer-register.png), [login-light-register](screenshots/login-light-register.png) |
 | Toast | Not present |
@@ -121,13 +123,13 @@ Care Sans (variable, roman and italic) is loaded from www.hims.com and is propri
 | List row, table | Not present. Support uses pill buttons. [portal-support-light-default](screenshots/portal-support-light-default.png) |
 | Avatar, badge | Not present on these surfaces |
 | App shell | Captured, marketing nav and care-portal nav |
-| Form with validation | Captured. Empty email shows "Your email is required". [login-light-email-focus](screenshots/login-light-email-focus.png) |
+| Form with validation | Captured on the login card when Forgot your password was opened on an empty email. "Your email is required". [login-light-forgot](screenshots/login-light-forgot.png) |
 | Empty state | Captured. A new account's Treatments page is the welcome card, not a treatment list. [portal-treatments-light-default](screenshots/portal-treatments-light-default.png) |
 | Loading, error page | Not captured. A signed-out hit on `/customer/treatments` shows "Oops / There was a problem loading the page" and was not kept |
 | Destructive confirmation | Not present. Cancel my treatment was not opened |
 | Search | Not present on the marketing nav |
 | Desktop 1440 and phone 390 | Captured. `mobile-home`, `mobile-weight-loss`, `mobile-login`, `mobile-hair-loss` |
-| Signed-in product | Captured at the shell: Treatments, Messaging (`/customer/support`), Profile. Medical intake, phone, birthday, payment edit, and clinician chat were not entered |
+| Signed-in product | Not captured on the 2026-11-21 public pass. LOGIN opens a drawer and stops. Older portal screenshots remain from 2026-11-19 and were not re-walked. |
 | Motion reduce | Not captured as a probe file. Declared durations and easings are in `core.motion` |
 
 ## Rebuild

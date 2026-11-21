@@ -1,0 +1,106 @@
+{
+  "product": "Hims UK",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "signed_in": false,
+  "origin": "https://www.forhims.co.uk",
+  "landed": "https://www.forhims.co.uk/",
+  "offered": {
+    "nav": {
+      "items": [
+        "Logo /",
+        "Weight /weight-loss",
+        "Hair /hair-loss",
+        "Sex flyout",
+        "Learn flyout",
+        "Treatments /customer/treatments",
+        "Messaging /customer/support",
+        "Profile /customer/profile",
+        "LOGIN",
+        "Menu drawer"
+      ],
+      "reached": [
+        "Logo /",
+        "Weight /weight-loss",
+        "Hair /hair-loss",
+        "Sex flyout",
+        "Learn flyout",
+        "Menu drawer"
+      ],
+      "note": "Signed out. Sex and Learn are buttons that open flyouts on /. The menu drawer lists Get started, Log in, Forgot password, Weight, Hair, ED, and Early Climax. Treatments, Messaging, and Profile are login walls and were not entered."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings surface is offered signed out. No theme switch was found. Profile is a login wall."
+    },
+    "create": {
+      "items": [
+        "Create an account",
+        "Get started",
+        "Sign up"
+      ],
+      "reached": [
+        "Create an account"
+      ],
+      "note": "Create an account opens an empty register drawer. It was not submitted. Get started on a treatment card opens a consultation and was not entered. Sign up on the full-page login form was not opened."
+    }
+  },
+  "screens": [
+    "screenshots/about-light-default.png",
+    "screenshots/about-light-full.png",
+    "screenshots/blog-light-default.png",
+    "screenshots/conditions-light-default.png",
+    "screenshots/ed-light-default.png",
+    "screenshots/ed-light-full.png",
+    "screenshots/hair-loss-light-default.png",
+    "screenshots/hair-loss-light-full.png",
+    "screenshots/home-light-cta-hover.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-learn-menu.png",
+    "screenshots/home-light-login.png",
+    "screenshots/home-light-menu.png",
+    "screenshots/home-light-sex-menu.png",
+    "screenshots/how-it-works-light-default.png",
+    "screenshots/how-it-works-light-full.png",
+    "screenshots/login-light-default.png",
+    "screenshots/login-light-forgot.png",
+    "screenshots/login-light-register.png",
+    "screenshots/migration-light-default.png",
+    "screenshots/mobile-hair-loss-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-login-light-default.png",
+    "screenshots/mobile-weight-loss-light-default.png",
+    "screenshots/pe-light-default.png",
+    "screenshots/privacy-light-default.png",
+    "screenshots/purpose-light-default.png",
+    "screenshots/reviews-light-default.png",
+    "screenshots/terms-light-default.png",
+    "screenshots/weight-loss-light-default.png",
+    "screenshots/weight-loss-light-full.png"
+  ],
+  "gaps": [
+    "Signed-in treatments, messaging, profile, and settings were not entered.",
+    "LOGIN on the homepage left the marketing page for a full-page Log into Hims form in this session. Nothing was typed. No identity provider was on that form.",
+    "/customer/login shows an empty Welcome back card. Create an account opens an empty register drawer. Forgot your password on an empty email shows Your email is required. None was submitted.",
+    "Get started on a treatment card opens /c/wl, /c/e, /c/hl, or /c/p. Those consultations were not entered. /c was opened, photographed, and then removed because it is a consultation start.",
+    "The cookie banner was hidden and not clicked.",
+    "Dark theme is not present.",
+    "Older portal screenshots from 2026-11-19 stay in the package and were not re-walked on this public pass."
+  ],
+  "not_submitted": [
+    "login",
+    "create account",
+    "forgot password",
+    "sign up",
+    "consultation",
+    "checkout",
+    "cookie consent",
+    "Google",
+    "Apple",
+    "any form"
+  ]
+}
