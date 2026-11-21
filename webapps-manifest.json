@@ -1065,9 +1065,9 @@
       "description": "Curate your universe",
       "status": "captured",
       "package": "systems/cosmos",
-      "notes": "https://www.cosmos.so/login asks for username or email and a password. No code was sent.",
+      "notes": "https://www.cosmos.so/login asks for username or email and a password. No code was sent. Public walk 2026-11-21: the map starts at www.cosmos.so and records which button, link, menu, or control opens which page or in-page interaction, including dialogs, search focus, and the phone menu. Colour dialog, visual search, phone menu, and help center were photographed. Desktop login asks for username or email and a password. Nothing was typed or submitted and that branch stopped. Phone login is an app-download wall. The app was not downloaded. Signed-in app was not captured. Public package refresh in PR 1632 at 901cc72e3cb1. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 4
     },
     {
