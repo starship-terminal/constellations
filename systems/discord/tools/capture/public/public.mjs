@@ -1,24 +1,24 @@
-// Captures discord.com's public surfaces into RAW (full-colour PNGs);
+// Captures discord.com's public signed-out pages into RAW (full-colour PNGs).
 // quantize.py turns them into screenshots/.
 //
-//   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
+//   RAW=~/.design-systems/discord/raw-shots PLAYWRIGHT=... node public.mjs [page,...]
 //
-// Names are {page}-{state}.png; mobile ones get a `mobile-` prefix. Two
-// products paint signed out: the marketing site (/, /download, /nitro) and
-// the app surfaces (/servers discovery, a /servers/<slug> detail page,
-// /login, /register). There is no theme toggle signed out: app surfaces
-// paint their dark theme (light exists only as a declared .theme-light
-// sheet — a documented boundary). Desktop shots are 1440x900 at 1x, mobile
-// 390x844 at 2x, `*-full` shots 1x. A page taller than one GPU texture is
-// saved as name.partN.png tiles, which quantize.py stitches back together;
-// an unbounded page truncates at 8 chunks and the log records the boundary.
-// Nothing is sent or signed into: auth fields are never filled and no
-// submit button is pressed. Promo overlays are hidden, never answered.
+// Desktop shots are 1440x900 at 1x. Phone shots are 390x844 at 2x, named
+// mobile-*. A page taller than one GPU texture is tiled; an unbounded page
+// truncates at 8 chunks.
+//
+// Nothing is submitted. Login, register, identity providers, download
+// installers and Cookie Settings are never clicked. The only presses are
+// local UI: hover a nav dropdown, open the language list, open the phone menu.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, HIDE_LOGIN_QR } from './lib.mjs';
+import { closePromo, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'discord', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -26,156 +26,180 @@ const wait = (p, ms) => p.waitForTimeout(ms);
 
 async function lazyScroll(p) {
   const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
-  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
+  const cap = Math.min(h, 8 * 14000);
+  for (let y = 0; y < cap; y += 700) {
+    await p.evaluate((y) => scrollTo(0, y), y);
+    await wait(p, 160);
+  }
+  await p.evaluate(() => scrollTo(0, 0));
+  await wait(p, 700);
 }
 
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr, sourceUrl) { this.p = p; this.prefix = prefix; this.vw = vw; this.vh = vh; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: sourceUrl }; this.count = 0; }
-  async view(name) { await closePromo(this.p); await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
+  constructor(p, prefix, vw, vh, dpr) {
+    this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr;
+    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: null };
+    this.count = 0;
+  }
+  async view(name) {
+    await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested);
+    this.count++;
+    log('  shot', this.prefix, name);
+  }
   async full(name = 'full') {
     const p = this.p;
     await closePromo(p);
-    // Some pages scroll inside one fixed-viewport div, not the document:
-    // document.scrollHeight reports the viewport height while the inner
-    // scroller holds the whole page. Detect the dominant scroller and tile it
-    // by scrollTop steps into partN.png; otherwise fall back to the document
-    // fullPage path.
-    const inner = await p.evaluate(() => {
-      const doc = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
-      let best = null;
-      for (const e of document.querySelectorAll('body *')) {
-        const cs = getComputedStyle(e);
-        if (!/(auto|scroll)/.test(cs.overflowY)) continue;
-        if (e.scrollHeight > Math.max(e.clientHeight + 200, doc + 200) && (!best || e.scrollHeight > best.h))
-          best = { sel: null, h: e.scrollHeight, el: e };
-      }
-      if (!best) return null;
-      best.el.setAttribute('data-capture-scroller', '1');
-      return { h: best.h };
-    });
-    const f = `${RAW}/${this.prefix}-${name}`;
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    if (inner) {
-      const chunk = this.vh;
-      const MAXH = 8 * chunk;
-      const hCap = Math.min(inner.h, MAXH);
-      if (inner.h > MAXH) log(`  ! ${name}: inner scroller is ${inner.h}px tall, capturing first ${hCap}px only (inner-scroller boundary)`);
-      const scroller = p.locator('[data-capture-scroller="1"]').first();
-      // wheel-scroll to lazy-load, then re-read the height and tile by scrollTop
-      for (let y = 0; y < hCap; y += chunk) { await scroller.evaluate((e, y) => e.scrollTo(0, y), y).catch(() => {}); await wait(p, 200); }
-      const H = await scroller.evaluate((e) => e.scrollHeight).catch(() => inner.h);
-      const hReal = Math.min(H, MAXH);
-      for (let i = 0, y = 0; y < hReal; i++, y += chunk) {
-        await scroller.evaluate((e, y) => e.scrollTo(0, y), y);
-        await wait(p, 350);
-        // scrollTo clamps at the bottom: read the real offset and clip the
-        // tile to the unshown remainder so stitching never repeats content.
-        const top = await scroller.evaluate((e) => e.scrollTop).catch(() => y);
-        const off = y - top;              // where the wanted region starts inside the viewport
-        const vis = Math.min(chunk, Math.max(0, hReal - y));
-        if (off < 0 || vis <= 0) break;
-        try { await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, scale: 'css', clip: { x: 0, y: off, width: this.vw, height: vis } }, this.requested); }
-        catch (e) { log('  ! part' + i, String(e.message).split('\n')[0]); }
-      }
-      await scroller.evaluate((e) => e.scrollTo(0, 0));
-      this.count++; log('  shot', name, 'inner H=' + H);
-      await wait(p, 400);
-      return;
-    }
     await lazyScroll(p);
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
+    const f = `${RAW}/${this.prefix}-${name}`;
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    const opts = (extra) => ({ path: extra, scale: 'css' });
-    if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
-    this.count++; log('  shot', name, 'H=' + H);
-    await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
+    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
+    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    else {
+      for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+        await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+      }
+    }
+    this.count++;
+    log('  shot', this.prefix, name, 'H=' + H);
+    await p.evaluate(() => scrollTo(0, 0));
+    await wait(p, 400);
   }
 }
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
-const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
-const SERVER = '/servers/midjourney-662267976984297473';
+const step = async (label, fn) => {
+  try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); }
+};
+
+async function openPage(p, urlPath, waitMs = 2500) {
+  await p.goto(BASE + urlPath, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await wait(p, waitMs);
+  await closePromo(p);
+}
+
+async function hoverMenu(p, title) {
+  // The phone burger duplicates these toggles at 0x0. Hover only a visible one.
+  const toggles = p.locator('.nav_dd_trigger').filter({ hasText: title });
+  const n = await toggles.count();
+  for (let i = 0; i < n; i++) {
+    const box = await toggles.nth(i).boundingBox();
+    if (box && box.width > 20 && box.height > 10 && box.y < 120) {
+      await toggles.nth(i).hover();
+      await wait(p, 700);
+      return;
+    }
+  }
+  throw new Error('no visible nav toggle for ' + title);
+}
 
 const desktop = {
-  home: { url: BASE + '/', wait: 9000, shot: 'home', run: async (p, S) => {
+  home: { path: '/', theme: 'light', run: async (p, S) => {
     await S.view('default');
+    await step('menu-discover', async () => { await hoverMenu(p, 'Discover'); await S.view('menu-discover'); await p.mouse.move(10, 400); await wait(p, 300); });
+    await step('menu-safety', async () => { await hoverMenu(p, 'Safety'); await S.view('menu-safety'); await p.mouse.move(10, 400); await wait(p, 300); });
+    await step('menu-developers', async () => { await hoverMenu(p, 'Developers'); await S.view('menu-developers'); await p.mouse.move(10, 400); await wait(p, 300); });
+    await step('language', async () => {
+      await p.evaluate(() => scrollTo(0, document.body.scrollHeight));
+      await wait(p, 500);
+      const lang = p.locator('.dropdown-language .w-dropdown-toggle, [class*="dropdown-language"] .w-dropdown-toggle').first();
+      if (await lang.count()) {
+        await lang.click();
+        await wait(p, 700);
+        await S.view('language-menu');
+        await p.keyboard.press('Escape');
+      }
+    });
     await S.full();
   } },
-  download: { url: BASE + '/download', wait: 8000, shot: 'download', run: async (p, S) => {
+  download: { path: '/download', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  nitro: { path: '/nitro', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  servers: { path: '/servers', theme: 'light', run: async (p, S) => {
     await S.view('default');
+    await step('search-focused', async () => {
+      const field = p.locator('input[type="search"], input[name="search"]').first();
+      await field.click();
+      await wait(p, 400);
+      await S.view('search-focused');
+      await field.fill('games');
+      await wait(p, 800);
+      await S.view('search-typed');
+      // Do not submit. Clear by selecting and deleting, not by pressing Enter.
+      await field.fill('');
+    });
     await S.full();
   } },
-  nitro: { url: BASE + '/nitro', wait: 9000, shot: 'nitro', run: async (p, S) => {
+  safety: { path: '/safety', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  blog: { path: '/blog', theme: 'light', run: async (p, S) => {
     await S.view('default');
-    await S.full();
+    await step('search-focused', async () => {
+      const field = p.locator('input[type="search"]').first();
+      if (await field.count()) {
+        await field.click();
+        await wait(p, 400);
+        await S.view('search-focused');
+      }
+    });
   } },
-  servers: { url: BASE + '/servers', wait: 9000, shot: 'servers', run: async (p, S) => {
-    await S.view('default');
-    // The category pills are real links; shot a filtered view by navigating,
-    // never by clicking through.
-    await S.full();
+  careers: { path: '/careers', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  quests: { path: '/ads/quests', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  developers: { path: '/developers', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  company: { path: '/company', theme: 'light', run: async (p, S) => { await S.view('default'); } },
+  branding: { path: '/branding', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  newsroom: { path: '/newsroom', theme: 'light', run: async (p, S) => { await S.view('default'); } },
+  terms: { path: '/terms', theme: 'light', run: async (p, S) => { await S.view('default'); } },
+  creators: { path: '/creators', theme: 'light', run: async (p, S) => { await S.view('default'); } },
+  login: { path: '/login', theme: 'dark', run: async (p, S) => {
+    // Wall only. Do not type, do not click identity providers, QR or passkey.
+    await S.view('wall');
   } },
-  serversGaming: { url: BASE + '/servers/gaming', wait: 8000, shot: 'servers-gaming', run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  server: { url: BASE + SERVER, wait: 9000, shot: 'server', run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  login: { url: BASE + '/login', wait: 9000, shot: 'login', run: async (p, S) => {
-    // The sign-in card is shot at rest; fields are never filled and Log In
-    // is never pressed. The QR code encodes a sign-in token: patch() hides it
-    // from the first paint, and this re-adds the mask right before the shots.
-    await p.addStyleTag({ content: HIDE_LOGIN_QR });
-    await S.view('default');
-    await S.full();
-  } },
-  register: { url: BASE + '/register', wait: 9000, shot: 'register', run: async (p, S) => {
-    await S.view('default');
-    await S.full();
+  register: { path: '/register', theme: 'dark', run: async (p, S) => {
+    await S.view('wall');
   } },
 };
 
 const mobile = {
-  home: { url: BASE + '/', wait: 9000, shot: 'home', run: async (p, S) => {
+  home: { path: '/', theme: 'light', run: async (p, S) => {
     await S.view('default');
+    await step('menu', async () => {
+      const btn = p.locator('button[aria-label="Menu"], a[aria-label="Menu"]').first();
+      await btn.click();
+      await wait(p, 800);
+      await S.view('menu');
+    });
     await S.full();
   } },
-  servers: { url: BASE + '/servers', wait: 9000, shot: 'servers', run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
+  nitro: { path: '/nitro', theme: 'light', run: async (p, S) => { await S.view('default'); } },
+  servers: { path: '/servers', theme: 'light', run: async (p, S) => { await S.view('default'); } },
+  download: { path: '/download', theme: 'light', run: async (p, S) => { await S.view('default'); } },
+  login: { path: '/login', theme: 'dark', run: async (p, S) => { await S.view('wall'); } },
 };
 
-const b = await chromium.launch();
-let total = 0;
-const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
+const browser = await chromium.launch({ headless: true });
+const runs = [
+  ...Object.keys(desktop).map((k) => ({ k, mob: false })),
+  ...Object.keys(mobile).map((k) => ({ k, mob: true })),
+];
 for (const { k, mob } of runs) {
   const name = (mob ? 'mobile-' : '') + k;
-  if (pageArg.length && !pageArg.includes(name)) continue;
+  if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
   const spec = (mob ? mobile : desktop)[k];
-  const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
-  const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
-  await patch(ctx);
-  const p = await ctx.newPage();
-  log(name);
-  const S = new Shooter(p, `${mob ? 'mobile-' : ''}${spec.shot}`, vw, vh, dpr, spec.url);
+  const context = await browser.newContext(mob
+    ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, userAgent: UA_MOBILE, locale: 'en-US' }
+    : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
+  const p = await context.newPage();
+  log('open', name, spec.path);
   try {
-    // 'commit': the document commits fast while domcontentloaded can hang on
-    // the stream; clearChallenge + wait cover readiness.
-    await p.goto(spec.url, { waitUntil: 'commit', timeout: 90000 }).catch(() => {});
-    if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.url); await ctx.close(); continue; }
-    await wait(p, spec.wait || 7000);
+    await openPage(p, spec.path);
+    const theme = spec.theme || 'light';
+    const S = new Shooter(p, name + '-' + theme, mob ? 390 : 1440, mob ? 844 : 900, mob ? 2 : 1);
     await spec.run(p, S);
-  } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
-  total += S.count;
-  await ctx.close();
+    log('  done', name, S.count);
+  } catch (e) {
+    log('  FAILED page', name, String(e.message).split('\n')[0]);
+  }
+  await context.close();
 }
-log('done', total, 'screenshots ->', RAW);
-await b.close();
+await browser.close();
+log('raw', RAW);
