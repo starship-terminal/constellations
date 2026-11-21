@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>fal style guide</title>
+<style>
+body { margin: 0; font: 16px/1.4 Arial, sans-serif; background: #fff; color: #111; }
+header { padding: 24px; background: #403700; color: #99edff; }
+main { padding: 24px; display: grid; gap: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.sw { display: flex; gap: 8px; align-items: center; border: 1px solid #eee; padding: 8px; }
+.sw i { width: 36px; height: 36px; border-radius: 4px; border: 1px solid #ddd; }
+code { font-size: 12px; color: #444; }
+.btn { display: inline-block; padding: 10px 16px; border-radius: 4px; margin-right: 8px; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>fal public tokens</h1>
+  <p>Marketing bronze and neon, plus the signed-out app shell. Values from tokens.json.</p>
+</header>
+<main>
+  <section>
+    <a class="btn" style="background:#adff00;color:#000">Get Started</a>
+    <a class="btn" style="background:#e5ece7;color:#000">Contact Sales</a>
+    <a class="btn" style="background:#000;color:#fff">Header start</a>
+  </section>
+  <section class="grid">
+    <div class="sw"><i style="background:#403700"></i><span>brand.bronze</span><code>#403700</code></div>
+<div class="sw"><i style="background:#adff00"></i><span>brand.neon</span><code>#adff00</code></div>
+<div class="sw"><i style="background:#99edff"></i><span>brand.cyan</span><code>#99edff</code></div>
+<div class="sw"><i style="background:#e5ece7"></i><span>brand.grey</span><code>#e5ece7</code></div>
+<div class="sw"><i style="background:#ffc4d8"></i><span>brand.pink</span><code>#ffc4d8</code></div>
+<div class="sw"><i style="background:#fff000"></i><span>brand.yellow</span><code>#fff000</code></div>
+<div class="sw"><i style="background:#ec0648"></i><span>brand.red</span><code>#ec0648</code></div>
+<div class="sw"><i style="background:#115ef3"></i><span>brand.blue</span><code>#115ef3</code></div>
+<div class="sw"><i style="background:#000000"></i><span>brand.black</span><code>#000000</code></div>
+<div class="sw"><i style="background:#ffffff"></i><span>brand.white</span><code>#ffffff</code></div>
+<div class="sw"><i style="background:#000000"></i><span>neutral.ink</span><code>#000000</code></div>
+<div class="sw"><i style="background:#222222"></i><span>neutral.secondary</span><code>#222222</code></div>
+<div class="sw"><i style="background:#ffffff"></i><span>neutral.paper</span><code>#ffffff</code></div>
+<div class="sw"><i style="background:#eeeeee"></i><span>neutral.lightest</span><code>#eeeeee</code></div>
+<div class="sw"><i style="background:#f8e4e4"></i><span>status.error-fill</span><code>#f8e4e4</code></div>
+<div class="sw"><i style="background:#3b0b0b"></i><span>status.error-text</span><code>#3b0b0b</code></div>
+<div class="sw"><i style="background:#fcf8d8"></i><span>status.warning-fill</span><code>#fcf8d8</code></div>
+<div class="sw"><i style="background:#5e5515"></i><span>status.warning-text</span><code>#5e5515</code></div>
+<div class="sw"><i style="background:rgb(32, 32, 34)"></i><span>app.content</span><code>rgb(32, 32, 34)</code></div>
+<div class="sw"><i style="background:rgb(25, 25, 26)"></i><span>app.content-strong</span><code>rgb(25, 25, 26)</code></div>
+<div class="sw"><i style="background:#161618b3"></i><span>app.content-lighter</span><code>#161618b3</code></div>
+<div class="sw"><i style="background:#16161899"></i><span>app.content-muted</span><code>#16161899</code></div>
+<div class="sw"><i style="background:#a6a6ae"></i><span>app.content-disabled</span><code>#a6a6ae</code></div>
+<div class="sw"><i style="background:rgb(250, 250, 250)"></i><span>app.content-inverse</span><code>rgb(250, 250, 250)</code></div>
+<div class="sw"><i style="background:rgb(255, 255, 255)"></i><span>app.surface</span><code>rgb(255, 255, 255)</code></div>
+<div class="sw"><i style="background:rgb(244, 244, 245)"></i><span>app.surface-muted</span><code>rgb(244, 244, 245)</code></div>
+<div class="sw"><i style="background:rgb(250, 250, 250)"></i><span>app.surface-sunken</span><code>rgb(250, 250, 250)</code></div>
+<div class="sw"><i style="background:rgb(18, 18, 22, 0.05)"></i><span>app.surface-alpha</span><code>rgb(18, 18, 22, 0.05)</code></div>
+<div class="sw"><i style="background:rgb(18, 18, 22, 0.1)"></i><span>app.stroke</span><code>rgb(18, 18, 22, 0.1)</code></div>
+<div class="sw"><i style="background:rgb(18, 18, 22, 0.15)"></i><span>app.stroke-strong</span><code>rgb(18, 18, 22, 0.15)</code></div>
+<div class="sw"><i style="background:rgb(133, 83, 255)"></i><span>app.focus-brand</span><code>rgb(133, 83, 255)</code></div>
+<div class="sw"><i style="background:hsl(259.275, 96.02%, 60.59%)"></i><span>app.primary</span><code>hsl(259.275, 96.02%, 60.59%)</code></div>
+<div class="sw"><i style="background:hsl(342.783, 95.04%, 47.45%)"></i><span>app.error</span><code>hsl(342.783, 95.04%, 47.45%)</code></div>
+<div class="sw"><i style="background:hsl(95.077, 52.85%, 48.24%)"></i><span>app.success</span><code>hsl(95.077, 52.85%, 48.24%)</code></div>
+<div class="sw"><i style="background:hsl(33.937, 95.67%, 54.71%)"></i><span>app.warning</span><code>hsl(33.937, 95.67%, 54.71%)</code></div>
+<div class="sw"><i style="background:hsl(215.468, 99.02%, 59.80%)"></i><span>app.info</span><code>hsl(215.468, 99.02%, 59.80%)</code></div>
+<div class="sw"><i style="background:#99edff"></i><span>app.cyan</span><code>#99edff</code></div>
+<div class="sw"><i style="background:rgb(13, 12, 16)"></i><span>docs-dark.page</span><code>rgb(13, 12, 16)</code></div>
+<div class="sw"><i style="background:rgb(225, 223, 228)"></i><span>docs-dark.text</span><code>rgb(225, 223, 228)</code></div>
+<div class="sw"><i style="background:rgb(161, 159, 164)"></i><span>docs-dark.muted</span><code>rgb(161, 159, 164)</code></div>
+<div class="sw"><i style="background:rgb(39, 38, 43)"></i><span>docs-dark.border</span><code>rgb(39, 38, 43)</code></div>
+  </section>
+</main>
+</body>
+</html>
