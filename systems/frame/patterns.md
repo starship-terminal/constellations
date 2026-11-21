@@ -16,11 +16,11 @@ The home page paints the dark roles on the near-black `theme.bg` field (`color.g
 
 ## Contact
 
-/contact pairs the 80px "Hello, how can we help you?" masthead (`contact-h1`, 712 x 166.38) with route cards: the 186.53 x 39.75 "Schedule a Meeting" pill (`schedule-btn` — it mounts a Calendly widget and was never pressed) and the 132 x 32 "Talk with Sales" link (`sales-link`, underlined text not a pill). /contact/form is the form: 431px-wide, 48px-tall text and e-mail fields (`component.field-height`, `theme.form.field.*` — `color.grey.90` ink on `color.grey.20` hairline) plus an 886px message field (`form-message`), all typed into then cleared, and the 97.84 x 39.75 "Submit" pill (`component.submit-width`, `theme.form.submit.*` — an outlined ghost, not the white CTA) measured in every state, never pressed.
+/contact pairs the 80px "Hello, how can we help you?" masthead (`contact-h1`, 712 x 166.38) with route cards: the 186.53 x 39.75 "Schedule a Meeting" pill (`schedule-btn` — it mounts a Calendly widget and was never pressed) and the 132 x 32 "Talk with Sales" link (`sales-link`, underlined text not a pill). /contact/form is the form: 431px-wide, 48px-tall text and e-mail fields (`component.field-height`, `theme.form.field.*` — `color.grey.90` ink on `color.grey.20` hairline) plus an 886px message field (`form-message`), photographed empty, and the 97.84 x 39.75 "Submit" pill (`component.submit-width`, `theme.form.submit.*` — an outlined ghost, not the white CTA) measured at rest, never pressed.
 
 ## The sign-in surface
 
-accounts.frame.io/welcome is a different stack — a light styled-components page sharing none of the marketing `--*` layer. Its measured values live under `component.productShell.*`: a 346 x 346 centred card (`productShell.login-panel-width`, "Welcome / Enter your email to get started."), a 346 x 40 e-mail field (`productShell.login-field-height`, white fill, 4px radius) and a 346 x 40 "Let's go" submit (`productShell.login-submit-fill` — the accounts stack's own cobalt #5b53ff, white ink, 6px radius). The field was typed into then cleared; the submit was measured in every state, never pressed.
+accounts.frame.io/welcome is a different stack — a light styled-components page sharing none of the marketing `--*` layer. Its measured values live under `component.productShell.*`: a 346 x 346 centred card (`productShell.login-panel-width`, "Welcome / Enter your email to get started."), a 346 x 40 e-mail field (`productShell.login-field-height`, white fill, 4px radius) and a 346 x 40 "Let's go" submit (`productShell.login-submit-fill` — the accounts stack's own cobalt #5b53ff, white ink, 6px radius). The field was photographed empty; the submit was measured at rest, never pressed.
 
 ## Mobile (390px)
 

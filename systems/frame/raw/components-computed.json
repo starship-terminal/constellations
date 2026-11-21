@@ -1,7 +1,7 @@
 {
  "_meta": {
   "read": "2026-11-16",
-  "viewport": "1440 x 900 (mobile group 390 x 844); every public frame.io page paints the one dark theme (ink #fcfcfc on near-black — the site ships no theme switch); accounts.frame.io/welcome is the sign-in surface, a light styled-components page on a different stack",
+  "viewport": "1440 x 900 (mobile group 390 x 844); every public frame.io page paints the one dark theme (ink #fcfcfc on near-black \u2014 the site ships no theme switch); accounts.frame.io/welcome is the sign-in surface, a light styled-components page on a different stack",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
    "home": [
@@ -6546,7 +6546,7 @@
     "default": {
      "tag": "html",
      "classes": "__variable_9d88cd __variable_5c99cd __variable_3586d7",
-     "text": "Put your creative context to work with new AI-powered capabilities → Features Fe",
+     "text": "Put your creative context to work with new AI-powered capabilities \u2192 Features Fe",
      "rect": {
       "x": 0,
       "y": 0,
@@ -6781,7 +6781,7 @@
     "default": {
      "tag": "div",
      "classes": "AnnouncementBanner_announcementBanner__g9QLM Navigation_navigationBannerEl__zSvOh",
-     "text": "Put your creative context to work with new AI-powered capabilities →",
+     "text": "Put your creative context to work with new AI-powered capabilities \u2192",
      "rect": {
       "x": 0,
       "y": 0,
@@ -6895,7 +6895,7 @@
    "url": "https://frame.io/",
    "title": "Announcement banner",
    "group": "Site chrome (header, announcement, nav, footer)",
-   "desc": "The site-wide promo strip above the header (\"Put your creative context to work with new AI-powered capabilities →\") — real chrome, never hidden.",
+   "desc": "The site-wide promo strip above the header (\"Put your creative context to work with new AI-powered capabilities \u2192\") \u2014 real chrome, never hidden.",
    "selector": "[class*=AnnouncementBanner]"
   },
   "nav-trigger": {
@@ -7508,7 +7508,7 @@
    "url": "https://frame.io/",
    "title": "Mega-menu trigger",
    "group": "Site chrome (header, announcement, nav, footer)",
-   "desc": "The \"Features\" header button — click opens the mega-menu (the group gains NavGroup_open__ and the nav Navigation_subNavOpen__; hovering does not open it). The opened state was measured after its own toggle click.",
+   "desc": "The \"Features\" header button \u2014 click opens the mega-menu (the group gains NavGroup_open__ and the nav Navigation_subNavOpen__; hovering does not open it). The opened state was measured after its own toggle click.",
    "selector": "button[class*=navigationMainItem] Features"
   },
   "nav-panel": {
@@ -9920,7 +9920,7 @@
    "url": "https://frame.io/",
    "title": "Hero headline",
    "group": "Home",
-   "desc": "\"One platform for all your creative work.\" — the frame.io hero display heading in FrameGothic 80px.",
+   "desc": "\"One platform for all your creative work.\" \u2014 the frame.io hero display heading in FrameGothic 80px.",
    "selector": "h1"
   },
   "hero-cta": {
@@ -11129,7 +11129,7 @@
     "default": {
      "tag": "h2",
      "classes": "PortableText_title2__uOViD typography_title2__Ry8_z allLockup_title2__8_3c_ allLockup_titles__HX0yK",
-     "text": "Whatever you create,​ ​Frame.io helps you deliver it faster.",
+     "text": "Whatever you create,\u200b \u200bFrame.io helps you deliver it faster.",
      "rect": {
       "x": 180,
       "y": 468.4,
@@ -11208,7 +11208,7 @@
      },
      "textStyle": {
       "node": "span",
-      "text": "Whatever you create,​",
+      "text": "Whatever you create,\u200b",
       "fontFamily": "FrameGothic, \"FrameGothic Fallback\"",
       "fontSize": "48px",
       "lineHeight": "48.96px",
@@ -12838,7 +12838,7 @@
    "url": "https://frame.io/pricing",
    "title": "Billing toggle",
    "group": "Pricing",
-   "desc": "The \"Monthly\" side of the Monthly/Annually billing switch — a pair of round radio controls (a 24px circle ringed grey-60, a 10px turquoise-triumph dot on the selected side), not a segmented pill; a local UI toggle, measured at rest — the alternate price state was not toggled.",
+   "desc": "The \"Monthly\" side of the Monthly/Annually billing switch \u2014 a pair of round radio controls (a 24px circle ringed grey-60, a 10px turquoise-triumph dot on the selected side), not a segmented pill; a local UI toggle, measured at rest \u2014 the alternate price state was not toggled.",
    "selector": "billing Monthly control"
   },
   "price-toggle-alt": {
@@ -13298,7 +13298,7 @@
    "url": "https://frame.io/pricing",
    "title": "Billing toggle (annual)",
    "group": "Pricing",
-   "desc": "The \"Annually — SAVE 13%\" side of the billing switch — the same round radio control, measured at rest, never toggled.",
+   "desc": "The \"Annually \u2014 SAVE 13%\" side of the billing switch \u2014 the same round radio control, measured at rest, never toggled.",
    "selector": "billing Annually control"
   },
   "plan-card": {
@@ -13434,7 +13434,7 @@
    "url": "https://frame.io/pricing",
    "title": "Plan card",
    "group": "Pricing",
-   "desc": "A pricing plan card (Free / Pro / Team / Enterprise, $0–$25 monthly); the card wrapping a \"Sign Up Now\" CTA.",
+   "desc": "A pricing plan card (Free / Pro / Team / Enterprise, $0\u2013$25 monthly); the card wrapping a \"Sign Up Now\" CTA.",
    "selector": "[class*=PricingCard_pricingCard__]"
   },
   "plan-signup": {
@@ -15343,7 +15343,7 @@
    "url": "https://frame.io/pricing",
    "title": "Feature-comparison accordion",
    "group": "Pricing",
-   "desc": "A category row in the feature-comparison table (Users, Storage, Projects & workspaces, Feedback & collaboration, … — the rows mount expanded); the closed state was measured after clicking the row — a local UI toggle.",
+   "desc": "A category row in the feature-comparison table (Users, Storage, Projects & workspaces, Feedback & collaboration, \u2026 \u2014 the rows mount expanded); the closed state was measured after clicking the row \u2014 a local UI toggle.",
    "selector": "comparison category accordion"
   },
   "faq-acc": {
@@ -15536,7 +15536,7 @@
    "url": "https://frame.io/pricing",
    "title": "FAQ accordion",
    "group": "Pricing",
-   "desc": "A question row in the pricing FAQ; the opened state was measured after clicking it — a local UI toggle.",
+   "desc": "A question row in the pricing FAQ; the opened state was measured after clicking it \u2014 a local UI toggle.",
    "selector": "pricing FAQ accordion"
   },
   "contact-h1": {
@@ -15631,7 +15631,7 @@
    "url": "https://frame.io/contact",
    "title": "Contact headline",
    "group": "Contact",
-   "desc": "\"Hello, how can we help you?\" — the /contact hub.",
+   "desc": "\"Hello, how can we help you?\" \u2014 the /contact hub.",
    "selector": "h1"
   },
   "schedule-btn": {
@@ -16201,7 +16201,7 @@
    "url": "https://frame.io/contact",
    "title": "Schedule a Meeting",
    "group": "Contact",
-   "desc": "The white \"Schedule a Meeting\" button on /contact (it mounts a Calendly scheduler — a vendor widget, never opened); measured, never pressed.",
+   "desc": "The white \"Schedule a Meeting\" button on /contact (it mounts a Calendly scheduler \u2014 a vendor widget, never opened); measured, never pressed.",
    "selector": "contact Schedule a Meeting"
   },
   "sales-link": {
@@ -16675,7 +16675,7 @@
     "default": {
      "tag": "main",
      "classes": "page_pageWrapper__HqQJ_",
-     "text": "Have questions? We’re here to help. Enter your info below. We’ll get back to you",
+     "text": "Have questions? We\u2019re here to help. Enter your info below. We\u2019ll get back to you",
      "rect": {
       "x": 0,
       "y": -254,
@@ -16806,7 +16806,7 @@
      ],
      "textStyle": {
       "node": "h1.PortableText_title1__NfBJS.typography_title1__Na5gU",
-      "text": "Have questions? We’re here to help.",
+      "text": "Have questions? We\u2019re here to help.",
       "fontFamily": "FrameGothic, \"FrameGothic Fallback\"",
       "fontSize": "80px",
       "lineHeight": "83.2px",
@@ -16826,7 +16826,7 @@
    "url": "https://frame.io/contact/form",
    "title": "Contact form card",
    "group": "Contact form",
-   "desc": "The dark form card on /contact/form — \"Enter your info below. We'll get back to you shortly.\" with Name/Email/Message fields and a Submit pill; never submitted.",
+   "desc": "The dark form card on /contact/form \u2014 \"Enter your info below. We'll get back to you shortly.\" with Name/Email/Message fields and a Submit pill; never submitted.",
    "selector": "contact form"
   },
   "form-name": {
@@ -17022,102 +17022,6 @@
      "crop": "components/crops/form-name-focused.png",
      "via": "clicked into the field",
      "run": "2026-11-16"
-    },
-    "filled": {
-     "tag": "input",
-     "classes": "TextInput_textInput__d8dTK typography_body__vVxn5",
-     "text": "",
-     "rect": {
-      "x": 277,
-      "y": 493.4,
-      "w": 431,
-      "h": 48
-     },
-     "style": {
-      "display": "block",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "431px",
-      "height": "48px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "1px",
-      "paddingRight": "2px",
-      "paddingBottom": "1px",
-      "paddingLeft": "2px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(222, 223, 238)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(222, 223, 238)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(252, 252, 252)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(222, 223, 238)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(222, 223, 238)",
-      "outlineOffset": "0px",
-      "fontFamily": "FrameGothic, \"FrameGothic Fallback\"",
-      "fontSize": "15px",
-      "fontWeight": "400",
-      "lineHeight": "21.75px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(222, 223, 238)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(222, 223, 238)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "border-color",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "input.TextInput_textInput__d8dTK.typography_body__vVxn5",
-       "size": "431.0x48.0",
-       "border": "B:1px solid rgb(252, 252, 252)"
-      }
-     ],
-     "placeholder": {
-      "color": "rgb(222, 223, 238)",
-      "opacity": "1",
-      "fontSize": "15px"
-     },
-     "crop": "components/crops/form-name-filled.png",
-     "via": "typed \"Example Name\", then deleted; nothing sent",
-     "run": "2026-11-16"
     }
    },
    "page": "contactform",
@@ -17125,7 +17029,7 @@
    "url": "https://frame.io/contact/form",
    "title": "Name field",
    "group": "Contact form",
-   "desc": "The underlined \"Name\" input; focused and typed into then cleared — never submitted.",
+   "desc": "The underlined \"Name\" input; photographed empty; focus lands in the field; nothing is typed.",
    "selector": "contact Name input"
   },
   "form-email": {
@@ -17321,102 +17225,6 @@
      "crop": "components/crops/form-email-focused.png",
      "via": "clicked into the field",
      "run": "2026-11-16"
-    },
-    "filled": {
-     "tag": "input",
-     "classes": "TextInput_textInput__d8dTK typography_body__vVxn5",
-     "text": "",
-     "rect": {
-      "x": 732,
-      "y": 493.4,
-      "w": 431,
-      "h": 48
-     },
-     "style": {
-      "display": "block",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "431px",
-      "height": "48px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "1px",
-      "paddingRight": "2px",
-      "paddingBottom": "1px",
-      "paddingLeft": "2px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(222, 223, 238)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(222, 223, 238)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(252, 252, 252)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(222, 223, 238)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(222, 223, 238)",
-      "outlineOffset": "0px",
-      "fontFamily": "FrameGothic, \"FrameGothic Fallback\"",
-      "fontSize": "15px",
-      "fontWeight": "400",
-      "lineHeight": "21.75px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(222, 223, 238)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(222, 223, 238)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "border-color",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "input.TextInput_textInput__d8dTK.typography_body__vVxn5",
-       "size": "431.0x48.0",
-       "border": "B:1px solid rgb(252, 252, 252)"
-      }
-     ],
-     "placeholder": {
-      "color": "rgb(222, 223, 238)",
-      "opacity": "1",
-      "fontSize": "15px"
-     },
-     "crop": "components/crops/form-email-filled.png",
-     "via": "typed \"name@example.com\", then deleted; nothing sent",
-     "run": "2026-11-16"
     }
    },
    "page": "contactform",
@@ -17424,7 +17232,7 @@
    "url": "https://frame.io/contact/form",
    "title": "Email field",
    "group": "Contact form",
-   "desc": "The underlined \"Email\" input; focused and typed into then cleared — never submitted.",
+   "desc": "The underlined \"Email\" input; photographed empty; focus lands in the field; nothing is typed.",
    "selector": "contact Email input"
   },
   "form-message": {
@@ -17620,102 +17428,6 @@
      "crop": "components/crops/form-message-focused.png",
      "via": "clicked into the field",
      "run": "2026-11-16"
-    },
-    "filled": {
-     "tag": "input",
-     "classes": "TextInput_textInput__d8dTK typography_body__vVxn5",
-     "text": "",
-     "rect": {
-      "x": 277,
-      "y": 493.4,
-      "w": 886,
-      "h": 48
-     },
-     "style": {
-      "display": "block",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "886px",
-      "height": "48px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "1px",
-      "paddingRight": "2px",
-      "paddingBottom": "1px",
-      "paddingLeft": "2px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(222, 223, 238)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(222, 223, 238)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(252, 252, 252)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(222, 223, 238)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(222, 223, 238)",
-      "outlineOffset": "0px",
-      "fontFamily": "FrameGothic, \"FrameGothic Fallback\"",
-      "fontSize": "15px",
-      "fontWeight": "400",
-      "lineHeight": "21.75px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(222, 223, 238)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(222, 223, 238)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "border-color",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "input.TextInput_textInput__d8dTK.typography_body__vVxn5",
-       "size": "886.0x48.0",
-       "border": "B:1px solid rgb(252, 252, 252)"
-      }
-     ],
-     "placeholder": {
-      "color": "rgb(222, 223, 238)",
-      "opacity": "1",
-      "fontSize": "15px"
-     },
-     "crop": "components/crops/form-message-filled.png",
-     "via": "typed \"Hello, this is a test.\", then deleted; nothing sent",
-     "run": "2026-11-16"
     }
    },
    "page": "contactform",
@@ -17723,7 +17435,7 @@
    "url": "https://frame.io/contact/form",
    "title": "Message field",
    "group": "Contact form",
-   "desc": "The underlined \"Message\" input; focused and typed into then cleared — never submitted.",
+   "desc": "The underlined \"Message\" input; photographed empty; focus lands in the field; nothing is typed.",
    "selector": "contact Message input"
   },
   "form-submit": {
@@ -18306,7 +18018,7 @@
    "url": "https://frame.io/contact/form",
    "title": "Submit",
    "group": "Contact form",
-   "desc": "The form's pill \"Submit\" button; its states were measured but the button was never clicked — nothing was sent.",
+   "desc": "The form's pill \"Submit\" button; its states were measured but the button was never clicked \u2014 nothing was sent.",
    "selector": "contact Submit"
   },
   "login-panel": {
@@ -18435,8 +18147,8 @@
    "run": "2026-11-16",
    "url": "https://accounts.frame.io/welcome",
    "title": "Sign-in panel",
-   "group": "Sign-in surface (accounts.frame.io — a different stack)",
-   "desc": "The accounts.frame.io/welcome sign-in card — the Frame.io mark, \"Welcome / Enter your email to get started.\", an e-mail field and a \"Let's go\" submit on a light page (styled-components — a different stack from the marketing site); never submitted.",
+   "group": "Sign-in surface (accounts.frame.io \u2014 a different stack)",
+   "desc": "The accounts.frame.io/welcome sign-in card \u2014 the Frame.io mark, \"Welcome / Enter your email to get started.\", an e-mail field and a \"Let's go\" submit on a light page (styled-components \u2014 a different stack from the marketing site); never submitted.",
    "selector": "welcome form"
   },
   "login-email": {
@@ -18637,113 +18349,14 @@
      "crop": "components/crops/login-email-focused.png",
      "via": "clicked into the field",
      "run": "2026-11-16"
-    },
-    "filled": {
-     "tag": "input",
-     "classes": "TextInput__Input-a3o9vm-1 eelQya TextInput-a3o9vm-4 StyledTextInput__StyledInput-jqh106-0",
-     "text": "you@example.com",
-     "rect": {
-      "x": 784.6,
-      "y": 508,
-      "w": 346,
-      "h": 40
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "346px",
-      "height": "40px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "12px",
-      "paddingRight": "12px",
-      "paddingBottom": "12px",
-      "paddingLeft": "12px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(91, 83, 255)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(91, 83, 255)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(91, 83, 255)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(91, 83, 255)",
-      "borderTopLeftRadius": "4px",
-      "borderTopRightRadius": "4px",
-      "borderBottomRightRadius": "4px",
-      "borderBottomLeftRadius": "4px",
-      "backgroundColor": "rgb(255, 255, 255)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(91, 83, 255, 0.1) 0px 0px 8px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(32, 34, 43)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"Avenir Next\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(32, 34, 43)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(32, 34, 43)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "background-color",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "input.TextInput__Input-a3o9vm-1.eelQya",
-       "size": "346.0x40.0",
-       "border": "T:1px solid rgb(91, 83, 255) | R:1px solid rgb(91, 83, 255) | B:1px solid rgb(91, 83, 255) | L:1px solid rgb(91, 83, 255)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(91, 83, 255, 0.1) 0px 0px 8px 0px",
-       "radius": "4px"
-      }
-     ],
-     "placeholder": {
-      "color": "rgb(125, 130, 156)",
-      "opacity": "1",
-      "fontSize": "14px"
-     },
-     "crop": "components/crops/login-email-filled.png",
-     "via": "typed \"name@example.com\", then deleted; nothing sent",
-     "run": "2026-11-16"
     }
    },
    "page": "welcome",
    "run": "2026-11-16",
    "url": "https://accounts.frame.io/welcome",
    "title": "Email field (sign-in)",
-   "group": "Sign-in surface (accounts.frame.io — a different stack)",
-   "desc": "The \"Email\" input with placeholder \"you@example.com\"; focused and typed into then cleared — never submitted.",
+   "group": "Sign-in surface (accounts.frame.io \u2014 a different stack)",
+   "desc": "The \"Email\" input with placeholder \"you@example.com\"; photographed empty; focus lands in the field; nothing is typed.",
    "selector": "welcome input[type=email]"
   },
   "login-submit": {
@@ -19173,8 +18786,8 @@
    "run": "2026-11-16",
    "url": "https://accounts.frame.io/welcome",
    "title": "Let's go submit",
-   "group": "Sign-in surface (accounts.frame.io — a different stack)",
-   "desc": "The cobalt \"Let's go\" submit; its states were measured but the button was never clicked — nothing was submitted.",
+   "group": "Sign-in surface (accounts.frame.io \u2014 a different stack)",
+   "desc": "The cobalt \"Let's go\" submit; its states were measured but the button was never clicked \u2014 nothing was submitted.",
    "selector": "welcome Lets go"
   },
   "cust-h1": {
@@ -20347,7 +19960,7 @@
     "default": {
      "tag": "div",
      "classes": "Navigation_navigationWrapper__rCBDL",
-     "text": "Put your creative context to work with new AI-powered capabilities → Sign In",
+     "text": "Put your creative context to work with new AI-powered capabilities \u2192 Sign In",
      "rect": {
       "x": 0,
       "y": 0,
@@ -20856,7 +20469,7 @@
    "url": "https://frame.io/",
    "title": "Drawer CTA",
    "group": "Mobile (390 wide)",
-   "desc": "The nav overlay's white \"Start Free Trial\" pill at 390 wide — the closed top bar carries none (mark, Sign In and the menu button only); measured with the drawer open, never followed.",
+   "desc": "The nav overlay's white \"Start Free Trial\" pill at 390 wide \u2014 the closed top bar carries none (mark, Sign In and the menu button only); measured with the drawer open, never followed.",
    "selector": "mobile drawer Start Free Trial"
   },
   "m-menu-btn": {
@@ -21422,7 +21035,7 @@
    "url": "https://frame.io/",
    "title": "Mobile menu button",
    "group": "Mobile (390 wide)",
-   "desc": "The \"Toggle mobile navigation\" button — a local UI toggle; the opened state was measured after activating it.",
+   "desc": "The \"Toggle mobile navigation\" button \u2014 a local UI toggle; the opened state was measured after activating it.",
    "selector": "mobile nav toggle"
   },
   "m-drawer": {
