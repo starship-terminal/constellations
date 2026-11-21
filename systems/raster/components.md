@@ -1,6 +1,6 @@
 # Components
 
-Measured on raster.app, signed out, 2026-11-19. Marketing values are from `html.dark`. Docs values are from `html.light`.
+Measured on raster.app, signed out, 2026-11-19, and checked again on 2026-11-21. Marketing values are from `html.dark`. Docs loads dark and can be switched to `html.light`.
 
 ## Button
 
@@ -20,7 +20,7 @@ Crop: [link-nav-default](components/crops/link-nav-default.png).
 
 ## Text field
 
-`.input` on `/design` is height 37px, radius 5.25px, padding 7px 10.5px, background `rgb(39, 39, 42)`, border `oklab(white / 0.1)`, text white, placeholder "Type here...". A disabled field uses the same chrome. The sign-in email field is the same size with `dark:bg-black/20` (`oklab(0 0 0 / 0.2)`). The pricing "Work email" field was on the page and was not submitted.
+`.input` on `/design` is height 37px, radius 5.25px, padding 7px 10.5px, background `rgb(39, 39, 42)`, border `oklab(white / 0.1)`, text white, weight 300. A disabled field uses the same chrome. On 2026-11-21 the sign-in email field was in the DOM, empty, and hidden until Email link to sign in. That button was not clicked. No email was typed.
 
 Crop: [field-default](components/crops/field-default.png).
 
