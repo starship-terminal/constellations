@@ -1,0 +1,172 @@
+{
+  "capturedAt": "2026-11-22",
+  "product": "Outdoor Voices",
+  "url": "https://www.outdoorvoices.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "pngPixels": { "width": 2880, "height": 1800 },
+  "typed": false,
+  "submitted": false,
+  "homepage": {
+    "title": "Outdoor Voices | Activewear & Athletic Apparel for Recreation",
+    "promo": {
+      "backgroundColor": "rgb(43, 84, 171)",
+      "sampledPng": "#3553a5",
+      "textColor": "rgb(255, 255, 255)",
+      "fontFamily": "TTCommonsPro",
+      "fontSize": "16px",
+      "height": 42,
+      "slides": [
+        { "text": "Enjoy 30% off sitewide.", "href": "/collections/shop-women" },
+        { "text": "Free Shipping on orders $100+", "href": null }
+      ]
+    },
+    "header": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "height": 75,
+      "nav": {
+        "fontFamily": "TTCommonsPro",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "color": "rgb(32, 32, 32)",
+        "letterSpacing": "normal",
+        "height": 42
+      }
+    },
+    "wordmark": {
+      "width": 200,
+      "height": 23,
+      "color": "rgb(32, 32, 32)",
+      "pathFillAttribute": "#FFFFFF",
+      "viewBox": "0 0 2154 248"
+    },
+    "heroHeading": {
+      "text": "It's officially Black Friday, y'all.",
+      "fontFamily": "NordiquePro",
+      "fontSize": "60px",
+      "fontWeight": "400",
+      "letterSpacing": "0.6px",
+      "color": "rgb(32, 32, 32)"
+    },
+    "heroCopy": {
+      "text": "30% off sitewide. Yup, the entire site.",
+      "fontFamily": "TTCommonsPro",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "color": "rgb(32, 32, 32)"
+    },
+    "shopButton": {
+      "text": "Shop — Women",
+      "backgroundColor": "rgb(32, 32, 32)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "TTCommonsPro",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "letterSpacing": "0.2px",
+      "borderRadius": "100px",
+      "height": 47,
+      "clicked": false
+    },
+    "tokens": {
+      "--color-black": "#202020",
+      "--color-blue": "#2B54AB",
+      "--color-white": "#fff",
+      "--color-error": "#b72121",
+      "--color-final-sale": "#dd000d",
+      "--color-light-grey": "#efefef",
+      "--color-dark-grey": "#737373",
+      "--color-focus": "#2B54AB",
+      "--color-extra-light-grey": "#f8f8f8",
+      "--font-heading-1-family": "TTCommonsPro",
+      "--font-heading-1-size": "48px"
+    }
+  },
+  "productPage": {
+    "url": "https://www.outdoorvoices.com/products/w-doing-things-bra-darkbay-polka-dot",
+    "title": "Doing Things Bra",
+    "h1": {
+      "fontFamily": "NordiquePro",
+      "fontSize": "36px",
+      "fontWeight": "400",
+      "letterSpacing": "0.6px",
+      "colorComputed": "rgb(32, 32, 32)",
+      "sampledOnBlackPanel": "#202020"
+    },
+    "panelSampled": "#000000",
+    "badge": {
+      "text": "Extra 30% off in Cart",
+      "backgroundColor": "rgb(108, 41, 50)",
+      "sampledPng": "#642d33",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "TTCommonsPro, sans-serif",
+      "fontSize": "12px",
+      "borderRadius": "0px"
+    },
+    "addToBag": {
+      "text": "Add to Bag",
+      "price": "$88",
+      "backgroundColor": "rgb(32, 32, 32)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "100px",
+      "height": 47,
+      "clicked": false
+    }
+  },
+  "loginWall": {
+    "host": "shopify.com",
+    "path": "/authentication/1901390/login",
+    "title": "Sign in - Outdoor Voices",
+    "heading": "Sign in",
+    "subheading": "Sign in or create an account",
+    "emailValue": "",
+    "continueClicked": false,
+    "shopButton": {
+      "text": "Continue with Shop",
+      "backgroundColor": "rgb(84, 51, 235)",
+      "sampledPng": "#5035e2",
+      "borderRadius": "12px",
+      "fontFamily": "GTStandard-M, sans-serif",
+      "fontSize": "14px",
+      "clicked": false
+    },
+    "email": {
+      "borderRadius": "12px 0px 0px 12px",
+      "height": 47,
+      "fontSize": "14px"
+    },
+    "pageBackground": "rgb(255, 255, 255)",
+    "queryCopied": false
+  },
+  "footer": {
+    "title": {
+      "text": "Join the Team",
+      "fontFamily": "NordiquePro",
+      "fontSize": "80px",
+      "fontWeight": "400",
+      "letterSpacing": "0.6px",
+      "color": "rgb(32, 32, 32)"
+    },
+    "email": {
+      "backgroundColor": "rgb(239, 239, 239)",
+      "borderColor": "rgb(239, 239, 239)",
+      "borderRadius": "0px 4px 4px 0px",
+      "height": 54,
+      "fontFamily": "TTCommonsPro",
+      "fontSize": "16px",
+      "value": "",
+      "submitted": false
+    },
+    "signup": {
+      "text": "Sign Up Now",
+      "backgroundColor": "rgb(32, 32, 32)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "100px",
+      "height": 47,
+      "clicked": false
+    }
+  }
+}

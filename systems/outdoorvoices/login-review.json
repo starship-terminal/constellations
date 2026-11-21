@@ -1,0 +1,30 @@
+{
+  "product": "Outdoor Voices",
+  "domain": "outdoorvoices.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Account, footer My Account, and the mobile menu Log In link",
+      "url": "https://shopify.com/authentication/1901390/login",
+      "title": "Sign in - Outdoor Voices",
+      "painted": true,
+      "headings": ["Sign in", "Sign in or create an account"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false, "value": "" }
+      ],
+      "identityProvidersSeen": ["Continue with Shop"],
+      "otherControls": ["Continue", "Email me with news and offers", "Terms of service", "Privacy policy"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "The email field was empty. Continue was not clicked. Continue with Shop was not clicked. The query string carries OAuth state, a nonce, a client id, and a buyer flag, and is not copied here. Signup is the same wall. There is no separate empty signup form. screenshots/signup-light-1440.png is the same photograph. The footer Sign Up Now is the newsletter wall and was not clicked."
+    }
+  ]
+}
