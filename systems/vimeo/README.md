@@ -1,20 +1,22 @@
 # Vimeo
 
-Public signed-out surfaces of Vimeo (vimeo.com), captured 2026-11-19. The pages are the marketing solution page, the signed-out watch feed, the pricing page, and the signed-out login dialog. No account was created. Themes observed: light only. Widths measured: 1440 and 390 on marketing, 1169 on the first watch read, 390 on login and the phone watch shell.
+Public signed-out surfaces of Vimeo (vimeo.com). Tokens were read on 2026-11-19 from the marketing page, the signed-out watch feed, pricing, and the login wall. A 2026-11-22 refresh mapped the public control tree into [site-tree.md](site-tree.md) and photographed the homepage, four header menus, the footer, pricing, features, what's new, about, solutions, enterprise, the video player page, customer stories, the blog, the signed-out watch feed, one public video, the phone homepage and menu drawer, and the empty login and signup walls. No account was created. Themes observed: light on the marketing home, and a dark features index. Widths measured: 1440 and 390. `login-extracted` stays not-started. catalog.json was left alone.
 
 | Path | What it holds |
 |---|---|
 | [README.md](README.md) | This file |
 | [DESIGN.md](DESIGN.md) | Generated token export |
-| [tokens.json](tokens.json) | DTCG tokens from the measured custom properties |
+| [tokens.json](tokens.json) | DTCG tokens from the 2026-11-19 measured custom properties |
 | [style-guide.html](style-guide.html) | Light specimens rendered from the tokens |
 | [components.md](components.md) | Controls that were on the signed-out pages |
 | [patterns.md](patterns.md) | How the public pages are assembled |
+| [site-tree.md](site-tree.md) | Which controls open which public pages, menus, and the phone drawer |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login-extracted` is not-started |
 | [icon.png](icon.png) | Site favicon, 128 px |
 | [icons/](icons/) | Wordmark and the legacy V mark, 2 SVGs |
-| [screenshots/](screenshots/) | Marketing page at 1440 and 390 |
+| [screenshots/](screenshots/) | Public pages at 1440 and 390, plus the earlier marketing shots |
 | [components/crops/](components/crops/) | Hero and button crops, 3 files |
-| [raw/](raw/) | Computed custom properties and control readings |
+| [raw/](raw/) | Computed custom properties, control readings, and the 2026-11-22 shot notes |
 | [tools/](tools/) | Builders that regenerate tokens.json and style-guide.html, plus the token test |
 
 ## Brief
@@ -80,11 +82,13 @@ One Next.js chunk and `player.css` were cross-origin, so `cssRules` could not be
 
 ## What to distrust
 
-The preview browser returned "The browser is not producing screenshot frames" on every snapshot. Watch, pricing, and login have computed-style evidence and no preview screenshot. The marketing screenshots were taken later in headless Playwright on the same public URL, which had already loaded without a Cloudflare challenge. They are 256-colour PNGs. Read colours from the tokens.
+The 2026-11-19 pass could not screenshot watch, pricing, or login in the preview browser. Those pages were photographed on 2026-11-22. The new shots are full-colour PNGs at 2×. Older marketing shots under `screenshots/marketing-light-*` are 256-colour PNGs. Read colours from the tokens.
 
-Pricing figures on `/upgrade-plan` were shown in Singapore dollars. Those amounts are geo-priced and are not tokens. The plan card radius computed as `36.8px`, while `--vimeo-radii-3xl` is `36px`. The card token keeps the computed value.
+Pricing figures on `/upgrade-plan` were shown in Singapore dollars on both passes. Those amounts are geo-priced and are not tokens. The plan card radius computed as `36.8px`, while `--vimeo-radii-3xl` is `36px`. The card token keeps the computed value.
 
-`--vimeo-fontWeights-regular` computed as `350`. Several buttons computed `font-weight: 400` on `ABCRepro-Medium`. Both readings are kept. Dark mode was not present on these signed-out pages.
+`--vimeo-fontWeights-regular` computed as `350`. Several buttons computed `font-weight: 400` on `ABCRepro-Medium`. Both readings are kept. The marketing home stayed light. The features index painted a dark page. That dark page was photographed and was not turned into a dark token set.
+
+A public video URL loaded in the preview browser and hit a Cloudflare verify wall in headless Chromium. The wall shot was discarded. The checkbox was not clicked.
 
 ## Fonts
 
@@ -101,7 +105,8 @@ ABC Repro, ABC Repro Medium, and ABC Repro Mono are proprietary. The tokens name
 | Icon button, text area, select, checkbox, radio, tabs, menu, tooltip, toast, table, avatar | Not captured. Not shown on the signed-out pages that were opened |
 | Hover, pressed, disabled, loading, error | Not captured. Resting styles only, plus one focused marketing Join link |
 | Signed-in app, upload, checkout | Not captured. Login is social plus email. No email was submitted, no card was entered |
-| Screenshots of watch, pricing, login | Not captured. Preview screenshot frames failed |
+| Public site tree, menus, footer, pricing, watch, one public video, phone home and drawer | Captured 2026-11-22. See [site-tree.md](site-tree.md) |
+| Login and signup walls | Photographed empty. Stopped. `login-extracted` stays not-started |
 
 ## Do and don't
 

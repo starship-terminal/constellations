@@ -1,0 +1,67 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "The signed-in app is not in scope. Login and signup were opened empty and left empty. No password, code, captcha, phone, address, or identity provider was used. No account was created. No checkout, purchase, upload, or sales form was submitted.",
+  "walls": [
+    {
+      "url": "https://vimeo.com/log_in",
+      "opened_from": "header Log in",
+      "heading": "Sign up or log in to continue",
+      "desktop": "screenshots/login-wall-desktop.png",
+      "phone": "screenshots/login-wall-phone.png",
+      "email_value_length": 0,
+      "controls_not_used": [
+        "Continue with Google",
+        "Continue with Facebook",
+        "Continue with Apple",
+        "email field (left empty)",
+        "Continue with email"
+      ],
+      "stopped": true
+    },
+    {
+      "url": "https://vimeo.com/join",
+      "opened_from": "header Join",
+      "heading": "Sign up or log in to continue",
+      "desktop": "screenshots/signup-wall-desktop.png",
+      "phone": "screenshots/signup-wall-phone.png",
+      "email_value_length": 0,
+      "controls_not_used": [
+        "Continue with Google",
+        "Continue with Facebook",
+        "Continue with Apple",
+        "email field (left empty)",
+        "Continue with email"
+      ],
+      "stopped": true
+    }
+  ],
+  "not_opened": [
+    "https://vimeo.com/video-uploader",
+    "https://vimeo.com/enterprise/contact-us",
+    "checkout from Start free trial or purchase now"
+  ],
+  "not_submitted": [
+    "login Continue with email",
+    "join Continue with email",
+    "pricing Start free trial",
+    "pricing purchase now",
+    "contact-sales form",
+    "cookie Yes and No",
+    "any identity provider",
+    "Cloudflare verify checkbox"
+  ],
+  "cookie_dialog": {
+    "photographed": [
+      "screenshots/public-menu-features-desktop.png",
+      "screenshots/public-menu-use-cases-desktop.png",
+      "screenshots/public-features-desktop.png",
+      "screenshots/public-drawer-phone.png"
+    ],
+    "clicked": false
+  }
+}
