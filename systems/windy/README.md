@@ -1,6 +1,6 @@
 # Windy
 
-Windy is a public wind and weather map at [windy.com](https://www.windy.com/). This package records the signed-out desktop map, the menu, search, the place detail strip, and the login popup. Captured on 2026-11-19 from product build `51.4.4.ind.c444`, signed out, no account. The live page was the T3 preview tab at 1169 by 731 CSS pixels, device pixel ratio 2. Screenshots were taken headless at 1440 by 900 and at 390 by 844 because the preview pane would not paint frames.
+Windy is a public wind and weather map at [windy.com](https://www.windy.com/). This package records the signed-out map, the menu, search, a place detail strip, the empty favorites and alerts panes, the plugin list, the uploader, and the empty login and register popups. Refreshed on 2026-11-21 from product build `51.4.4.ind.c444`, signed out, no account. Headless Playwright at 1440 by 900 and 390 by 844, device pixel ratio 2. No session was present. Login and register were opened only far enough to see the empty fields, then that branch stopped.
 
 The product declares `color-scheme: light only` on `:root` and rebinds the same colour names under `.dark-content`. The map chrome, the menu, and the login popup all carry `dark-content`. There is no light theme of the map.
 
@@ -13,6 +13,8 @@ The product declares `color-scheme: light only` on `:root` and rebinds the same 
 | [style-guide.html](style-guide.html) | Tokens and the main controls, rendered from the token file |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | How the map, menu, search, and login sit together |
+| [site-tree.md](site-tree.md) | Which public control opens which pane or wall |
+| [login-review.json](login-review.json) | The signed-out walk: what was offered, what stopped at a wall, what was not submitted |
 | [components/](components/) | Crops of the controls, named `{component}-{state}.png` |
 | [icons/](icons/) | Not kept. See the file table note in Health, and `layoutGaps` |
 | [screenshots/](screenshots/) | Full-page captures of the public map |
@@ -78,9 +80,9 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Windy's marks ar
 
 ## How the values were read
 
-Custom properties were read twice. `getComputedStyle(document.documentElement)` on the signed-out map returned the `:root` bindings, because `.dark-content` is not on the root. The same names were then read from the stylesheet `https://www.windy.com/v/51.4.4.ind.c444/index.css`, which declares both `:root` and `.dark-content`. The colour blocks are in [raw/css-vars.json](raw/css-vars.json). The rules this package cites are in [raw/rules-excerpt.css](raw/rules-excerpt.css). Computed styles of the search field, chips, menu, login form, and detail strip were read with `getComputedStyle` on the attached page and saved in [raw/computed.json](raw/computed.json).
+Custom properties were read from the stylesheet `https://www.windy.com/v/51.4.4.ind.c444/index.css`, which declares both `:root` and `.dark-content`. The 2026-11-21 fetch of that sheet matches the colour literals already in [raw/css-vars.json](raw/css-vars.json). The rules this package cites are in [raw/rules-excerpt.css](raw/rules-excerpt.css). Computed styles of the search field, the Login chip, and Go Premium were read again with `getComputedStyle` on the headless page. The earlier component dump is still [raw/computed.json](raw/computed.json).
 
-The T3 preview pane returned "The browser is not producing screenshot frames" on `preview_snapshot`. Measurements already taken on that tab were kept. Screenshots were taken afterwards with headless Playwright against the same public URLs, which had loaded with no Cloudflare challenge. Login was opened and measured, then closed. Nothing was typed into the email or password fields.
+Screenshots on 2026-11-21 are headless Playwright at the measured viewport, device pixel ratio 2. Login and register were photographed empty and closed. Nothing was typed into an email, username, or password field. Google, Apple, and Facebook were not clicked. The register captcha was not solved.
 
 ## What to distrust
 
@@ -96,7 +98,7 @@ Bariol is a commercial face used for the big temperature. It is not in this pack
 
 Map colours (the wind overlay, the particle field, the temperature raster) are drawn on a canvas. They are not CSS tokens and are not in `tokens.json`.
 
-Screenshots are 256-colour PNGs. Read colours from the tokens, not from the images. The preview pane never produced a frame, so the screenshots are a second load of the public page, not the same pixels the measurements came from.
+Screenshots are 256-colour PNGs. Read colours from the tokens, not from the images. The 2026-11-21 shots are a fresh load of the public page. The map query string is the client camera, so it is not stored in the package. The startup card on the default map named a place the product picked. That label is the product's own overlay, not an account.
 
 ## Fonts
 
@@ -137,11 +139,14 @@ Bariol Medium (`bariolnumbers`, `bariolmedium`) is loaded from `https://www.wind
 | Form with a validation error | Not captured. Submitting the empty login form was not attempted |
 | Empty, loading, error | Search loading gif is in the stylesheet. Not captured |
 | Destructive confirmation | Not present on the public map |
-| Search | Captured with the query "Oslo", then a city result was opened |
+| Search | Captured. A public place name was typed. The result list and the detail strip are in screenshots |
 | Light theme of the map | Not present. `color-scheme: light only` plus a dark chrome |
-| Desktop width | Live measurements at 1169. Screenshots at 1440 |
-| Phone width | Screenshot at 390. Computed styles at 390 were not read |
-| Signed-in app, favourites, alerts, settings | Not captured. Login asks for email and password, and offers Google, Apple, and Facebook. No email-only form, so nothing was entered |
+| Desktop width | Screenshots and computed styles at 1440 by 900, device pixel ratio 2 |
+| Phone width | Screenshot at 390 by 844, device pixel ratio 2. Computed styles at 390 were not read |
+| Favorites and alerts, signed out | Captured as empty public panes. See [screenshots/favorites-dark-empty.png](screenshots/favorites-dark-empty.png) and [screenshots/alerts-dark-empty.png](screenshots/alerts-dark-empty.png) |
+| Settings | Not captured. Signed out, the menu row does not open a pane or a login wall |
+| Login and register walls | Photographed empty, then stopped. See [login-review.json](login-review.json) |
+| Signed-in app | Not captured. No session. `login-extracted` is not-started |
 | Payment, Premium checkout | Not entered. The Go Premium chip was measured and not clicked |
 
 ## Do and don't
@@ -151,7 +156,7 @@ Bariol Medium (`bariolnumbers`, `bariolmedium`) is loaded from `https://www.wind
 - **Use orange for the selected forecast chip and Premium.** `#d49500` is the selected model chip, the hour marker, and Go Premium. See [components/crops/chip-selected.png](components/crops/chip-selected.png).
 - **Put the big temperature in Bariol, with Arial as the fallback.** The desktop "now" figure is 67px `bariolnumbers`. The rest of the UI is the system sans at 14px. See [screenshots/map-dark-default.png](screenshots/map-dark-default.png).
 - **Give search a white pill and the login fields a charcoal field.** Search is a 33px white pill, radius 18px, shadow `0 0 4px #000`. Login fields are `#4d4d4d` on the charcoal popup, radius 3.6px. See [screenshots/search-dark-results.png](screenshots/search-dark-results.png).
-- **Do not invent a light map theme.** The stylesheet sets `color-scheme: light only` and still paints the map dark. The light semantic set is the detail table and the unbound `:root` names. See [screenshots/detail-dark-oslo.png](screenshots/detail-dark-oslo.png).
+- **Do not invent a light map theme.** The stylesheet sets `color-scheme: light only` and still paints the map dark. The light semantic set is the detail table and the unbound `:root` names. See [screenshots/detail-dark-place.png](screenshots/detail-dark-place.png).
 - **Do not sample the wind overlay.** Those colours are a canvas, not tokens. See [screenshots/map-dark-default.png](screenshots/map-dark-default.png).
 - **Do not ship the icon font or Bariol.** Both are the product's files. Use the system stack and Arial. See [icon.png](icon.png).
 
@@ -166,4 +171,4 @@ Run both from the repository root for the catalog command, and from `systems/win
 
 ## Map chrome
 
-The signed-out page is the map. Search sits top left, 382px at rest and 480px when focused. The right rail holds Menu, the layer list, and Altitude. The bottom bar holds the overlay chips, the model chips (ECMWF 9km selected on this load), zoom, 3D, and the legend. A startup weather card and an article card sit under the logo until a search or a detail opens. The detail strip, opened for Oslo, is a white table over a red footer.
+The signed-out page is the map. Search sits top left, 372px at rest. The right rail holds Menu, the layer list, and Altitude. The bottom bar holds the overlay chips, the model chips (ECMWF 9km selected on this load), zoom, 3D, and the legend. A startup weather card and an article card sit under the logo until a search or a detail opens. The detail strip is a white table over a red footer. Which control opens which pane is in [site-tree.md](site-tree.md).

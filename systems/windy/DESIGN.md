@@ -152,7 +152,7 @@ Good for: A dark weather map: charcoal right rail, white search pill, red primar
 
 Captured 2026-11-19, signed out (login asks for email and password plus Google, Apple, and Facebook; nothing was entered). Themes: light, dark.
 
-Windy is a public wind and weather map at [windy.com](https://www.windy.com/). This package records the signed-out desktop map, the menu, search, the place detail strip, and the login popup. Captured on 2026-11-19 from product build `51.4.4.ind.c444`, signed out, no account. The live page was the T3 preview tab at 1169 by 731 CSS pixels, device pixel ratio 2. Screenshots were taken headless at 1440 by 900 and at 390 by 844 because the preview pane would not paint frames.
+Windy is a public wind and weather map at [windy.com](https://www.windy.com/). This package records the signed-out map, the menu, search, a place detail strip, the empty favorites and alerts panes, the plugin list, the uploader, and the empty login and register popups. Refreshed on 2026-11-21 from product build `51.4.4.ind.c444`, signed out, no account. Headless Playwright at 1440 by 900 and 390 by 844, device pixel ratio 2. No session was present. Login and register were opened only far enough to see the empty fields, then that branch stopped.
 
 The product declares `color-scheme: light only` on `:root` and rebinds the same colour names under `.dark-content`. The map chrome, the menu, and the login popup all carry `dark-content`. There is no light theme of the map.
 
@@ -226,7 +226,7 @@ Bariol is a commercial face used for the big temperature. It is not in this pack
 
 Map colours (the wind overlay, the particle field, the temperature raster) are drawn on a canvas. They are not CSS tokens and are not in `tokens.json`.
 
-Screenshots are 256-colour PNGs. Read colours from the tokens, not from the images. The preview pane never produced a frame, so the screenshots are a second load of the public page, not the same pixels the measurements came from.
+Screenshots are 256-colour PNGs. Read colours from the tokens, not from the images. The 2026-11-21 shots are a fresh load of the public page. The map query string is the client camera, so it is not stored in the package. The startup card on the default map named a place the product picked. That label is the product's own overlay, not an account.
 
 ### Do and don't (from README.md)
 
@@ -235,6 +235,6 @@ Screenshots are 256-colour PNGs. Read colours from the tokens, not from the imag
 - **Use orange for the selected forecast chip and Premium.** `#d49500` is the selected model chip, the hour marker, and Go Premium. See [components/crops/chip-selected.png](components/crops/chip-selected.png).
 - **Put the big temperature in Bariol, with Arial as the fallback.** The desktop "now" figure is 67px `bariolnumbers`. The rest of the UI is the system sans at 14px. See [screenshots/map-dark-default.png](screenshots/map-dark-default.png).
 - **Give search a white pill and the login fields a charcoal field.** Search is a 33px white pill, radius 18px, shadow `0 0 4px #000`. Login fields are `#4d4d4d` on the charcoal popup, radius 3.6px. See [screenshots/search-dark-results.png](screenshots/search-dark-results.png).
-- **Do not invent a light map theme.** The stylesheet sets `color-scheme: light only` and still paints the map dark. The light semantic set is the detail table and the unbound `:root` names. See [screenshots/detail-dark-oslo.png](screenshots/detail-dark-oslo.png).
+- **Do not invent a light map theme.** The stylesheet sets `color-scheme: light only` and still paints the map dark. The light semantic set is the detail table and the unbound `:root` names. See [screenshots/detail-dark-place.png](screenshots/detail-dark-place.png).
 - **Do not sample the wind overlay.** Those colours are a canvas, not tokens. See [screenshots/map-dark-default.png](screenshots/map-dark-default.png).
 - **Do not ship the icon font or Bariol.** Both are the product's files. Use the system stack and Arial. See [icon.png](icon.png).
