@@ -1,0 +1,123 @@
+{
+  "captured": "2026-11-22",
+  "page": "https://coda.io/",
+  "method": "getComputedStyle in an incognito preview tab at 1440 CSS px",
+  "body": {
+    "background": "#ffffff",
+    "color": "#141413",
+    "fontFamily": "Super Sans VF, system-ui, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px"
+  },
+  "h1": {
+    "color": "#292827",
+    "fontFamily": "Calibre-R, sans-serif",
+    "fontSize": "72px",
+    "fontWeight": "700",
+    "lineHeight": "72px",
+    "text": "Your all-in-one collaborative workspace."
+  },
+  "h2": {
+    "color": "#292827",
+    "fontFamily": "Calibre-R, sans-serif",
+    "fontSize": "38px",
+    "fontWeight": "700",
+    "lineHeight": "41.8px"
+  },
+  "banner": {
+    "background": "#ee5a29",
+    "height": "36px",
+    "color": "#292827",
+    "fontFamily": "Inter, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "600"
+  },
+  "header": {
+    "background": "#fcfaf7"
+  },
+  "footer": {
+    "background": "#fff6ec",
+    "padding": "60px 0px"
+  },
+  "buttonPrimary": {
+    "background": "#141413",
+    "color": "#ffffff",
+    "radius": "8px",
+    "padding": "8px 12px",
+    "fontSize": "16px",
+    "fontWeight": "600",
+    "height": "40px",
+    "fontFamily": "Inter, sans-serif",
+    "sample": "Get started"
+  },
+  "buttonHero": {
+    "background": "#141413",
+    "color": "#ffffff",
+    "radius": "12px",
+    "padding": "16px 28px",
+    "fontSize": "20px",
+    "fontWeight": "600",
+    "height": "62px",
+    "sample": "Get started for free"
+  },
+  "buttonSecondary": {
+    "background": "rgba(255, 255, 255, 0.85)",
+    "color": "#474543",
+    "radius": "12px",
+    "padding": "16px 28px",
+    "fontSize": "20px",
+    "fontWeight": "600",
+    "height": "62px",
+    "sample": "Contact sales"
+  },
+  "buttonDemo": {
+    "background": "#ffffff",
+    "color": "#292827",
+    "radius": "8px",
+    "padding": "8px 12px",
+    "fontSize": "16px",
+    "fontWeight": "600",
+    "height": "40px",
+    "sample": "Request a demo"
+  },
+  "login": {
+    "url": "https://coda.io/signin",
+    "heading": {
+      "text": "Welcome back",
+      "fontFamily": "Super Sans VF, system-ui, sans-serif",
+      "fontSize": "30px",
+      "fontWeight": "600",
+      "color": "#141413"
+    },
+    "field": {
+      "background": "#fcfaf7",
+      "color": "#141413",
+      "radius": "4px",
+      "height": "36px",
+      "padding": "8px 15px 8px 45px",
+      "fontSize": "16px",
+      "placeholder": "Work email",
+      "valueLength": 0
+    },
+    "continue": {
+      "background": "#714cb6",
+      "color": "#ffffff",
+      "radius": "8px",
+      "height": "40px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "border": "1px solid #714cb6"
+    }
+  },
+  "chartVars": {
+    "blue": "#0f58bd",
+    "green": "#187b34",
+    "orange": "#c45b1c",
+    "pink": "#a12b86",
+    "purple": "#6e21ba",
+    "red": "#a91e1e",
+    "yellow": "#8b6c1d",
+    "gray": "#666666"
+  }
+}

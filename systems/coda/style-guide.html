@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Coda public style</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --header: #fcfaf7;
+    --footer: #fff6ec;
+    --banner: #ee5a29;
+    --ink: #141413;
+    --heading: #292827;
+    --muted: #474543;
+    --primary: #141413;
+    --on-primary: #ffffff;
+    --continue: #714cb6;
+    --field: #fcfaf7;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-size: 38px; line-height: 42px; font-weight: 700; color: var(--heading); margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 32px 0 12px; color: var(--heading); }
+  p { color: var(--muted); }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 56px; border-radius: 8px; border: 1px solid rgba(20,20,19,0.08); }
+  .label { font-size: 12px; margin-top: 6px; }
+  .banner {
+    background: var(--banner);
+    color: var(--heading);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+  .bar {
+    background: var(--header);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+  button.primary, a.primary {
+    background: var(--primary);
+    color: var(--on-primary);
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    line-height: 20px;
+  }
+  button.hero {
+    background: var(--primary);
+    color: var(--on-primary);
+    border: 0;
+    border-radius: 12px;
+    padding: 16px 28px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: inherit;
+  }
+  button.secondary {
+    background: rgba(255,255,255,0.85);
+    color: var(--muted);
+    border: 0;
+    border-radius: 12px;
+    padding: 16px 28px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: inherit;
+  }
+  button.continue {
+    background: var(--continue);
+    color: var(--on-primary);
+    border: 1px solid var(--continue);
+    border-radius: 8px;
+    padding: 0 20px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+  }
+  input.field {
+    background: var(--field);
+    color: var(--ink);
+    border: 0;
+    border-radius: 4px;
+    height: 36px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-family: inherit;
+    width: 280px;
+  }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  footer.note { background: var(--footer); padding: 16px; border-radius: 8px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Coda public style</h1>
+  <p>Measured on coda.io, 22 November 2026. Light marketing site. No dark theme was captured.</p>
+  <div class="banner">Coda is now Superhuman Docs</div>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#fcfaf7"></div><div class="label">header #fcfaf7</div></div>
+    <div class="swatch"><div class="chip" style="background:#fff6ec"></div><div class="label">footer #fff6ec</div></div>
+    <div class="swatch"><div class="chip" style="background:#ee5a29"></div><div class="label">banner #ee5a29</div></div>
+    <div class="swatch"><div class="chip" style="background:#141413"></div><div class="label">ink #141413</div></div>
+    <div class="swatch"><div class="chip" style="background:#714cb6"></div><div class="label">continue #714cb6</div></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="bar">
+    <span>Gallery</span>
+    <button class="secondary" type="button">Request a demo</button>
+    <button class="primary" type="button">Get started</button>
+  </div>
+  <div class="row" style="margin-top:16px">
+    <button class="hero" type="button">Get started for free</button>
+    <button class="secondary" type="button">Contact sales</button>
+  </div>
+  <h2>Login wall</h2>
+  <div class="row">
+    <input class="field" type="email" placeholder="Work email" readonly>
+    <button class="continue" type="button">Continue</button>
+  </div>
+  <footer class="note">Footer fill is #fff6ec. Copyright line: Copyright © 2026 Superhuman Docs.</footer>
+</main>
+</body>
+</html>
