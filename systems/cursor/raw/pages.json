@@ -1,0 +1,468 @@
+{
+  "readings": [
+    {
+      "slug": "home",
+      "url": "https://cursor.com/",
+      "status": 200,
+      "finalUrl": "https://cursor.com/",
+      "png": {
+        "width": 1440,
+        "height": 8199
+      },
+      "sample": {
+        "title": "AI Coding Agent for Building Ambitious Software | Cursor",
+        "h1": "Cursor is your coding agent for building ambitious software.",
+        "h1Style": {
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "26px",
+          "weight": "400",
+          "lh": "32.5px",
+          "color": "rgb(237, 236, 236)"
+        },
+        "body": {
+          "bg": "rgb(20, 18, 11)",
+          "color": "rgb(237, 236, 236)",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "lh": "24px"
+        },
+        "scheme": "dark",
+        "themeClass": "Sj65MG_variable aDRXRq_variable -Zg_XW_variable _8qwdia_variable",
+        "varCount": 642,
+        "primary": {
+          "text": "Download",
+          "bg": "rgb(237, 236, 236)",
+          "color": "rgb(20, 18, 11)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "ghost": {
+          "text": "Contact sales",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(237, 236, 236)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "inner": {
+          "w": 1440,
+          "h": 900,
+          "dpr": 1
+        }
+      },
+      "varCount": 642
+    },
+    {
+      "slug": "pricing",
+      "url": "https://cursor.com/pricing",
+      "status": 200,
+      "finalUrl": "https://cursor.com/pricing",
+      "png": {
+        "width": 1440,
+        "height": 5993
+      },
+      "sample": {
+        "title": "Cursor · Pricing",
+        "h1": "Pricing",
+        "h1Style": {
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "52px",
+          "weight": "400",
+          "lh": "59.8px",
+          "color": "rgb(237, 236, 236)"
+        },
+        "body": {
+          "bg": "rgb(20, 18, 11)",
+          "color": "rgb(237, 236, 236)",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "lh": "24px"
+        },
+        "scheme": "dark",
+        "themeClass": "Sj65MG_variable aDRXRq_variable -Zg_XW_variable _8qwdia_variable",
+        "varCount": 477,
+        "primary": {
+          "text": "Download",
+          "bg": "rgb(237, 236, 236)",
+          "color": "rgb(20, 18, 11)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "ghost": {
+          "text": "Contact sales",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(237, 236, 236)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "inner": {
+          "w": 1440,
+          "h": 900,
+          "dpr": 1
+        }
+      },
+      "varCount": 477
+    },
+    {
+      "slug": "download",
+      "url": "https://cursor.com/download",
+      "status": 200,
+      "finalUrl": "https://cursor.com/download",
+      "png": {
+        "width": 1440,
+        "height": 2597
+      },
+      "sample": {
+        "title": "Cursor · Download",
+        "h1": "Use Cursor everywhere you work",
+        "h1Style": {
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "22px",
+          "weight": "400",
+          "lh": "28.6px",
+          "color": "rgb(237, 236, 236)"
+        },
+        "body": {
+          "bg": "rgb(20, 18, 11)",
+          "color": "rgb(237, 236, 236)",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "lh": "24px"
+        },
+        "scheme": "dark",
+        "themeClass": "Sj65MG_variable aDRXRq_variable -Zg_XW_variable _8qwdia_variable",
+        "varCount": 477,
+        "primary": {
+          "text": "Download",
+          "bg": "rgb(237, 236, 236)",
+          "color": "rgb(20, 18, 11)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "ghost": {
+          "text": "Contact sales",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(237, 236, 236)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "inner": {
+          "w": 1440,
+          "h": 900,
+          "dpr": 1
+        }
+      },
+      "varCount": 477
+    },
+    {
+      "slug": "product",
+      "url": "https://cursor.com/product",
+      "status": 200,
+      "finalUrl": "https://cursor.com/product",
+      "png": {
+        "width": 1440,
+        "height": 8219
+      },
+      "sample": {
+        "title": "Cursor — Build Software with AI Agents",
+        "h1": "Turn ideas into code",
+        "h1Style": {
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "36px",
+          "weight": "400",
+          "lh": "43.2px",
+          "color": "rgb(237, 236, 236)"
+        },
+        "body": {
+          "bg": "rgb(20, 18, 11)",
+          "color": "rgb(237, 236, 236)",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "lh": "24px"
+        },
+        "scheme": "dark",
+        "themeClass": "Sj65MG_variable aDRXRq_variable -Zg_XW_variable _8qwdia_variable",
+        "varCount": 575,
+        "primary": {
+          "text": "Download",
+          "bg": "rgb(237, 236, 236)",
+          "color": "rgb(20, 18, 11)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "ghost": {
+          "text": "Contact sales",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(237, 236, 236)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "inner": {
+          "w": 1440,
+          "h": 900,
+          "dpr": 1
+        }
+      },
+      "varCount": 575
+    },
+    {
+      "slug": "enterprise",
+      "url": "https://cursor.com/enterprise",
+      "status": 200,
+      "finalUrl": "https://cursor.com/enterprise",
+      "png": {
+        "width": 1440,
+        "height": 8060
+      },
+      "sample": {
+        "title": "Cursor for Enterprise — Trusted by 64% of Fortune 500 companies",
+        "h1": "Develop enduring software at scale",
+        "h1Style": {
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "36px",
+          "weight": "400",
+          "lh": "43.2px",
+          "color": "rgb(237, 236, 236)"
+        },
+        "body": {
+          "bg": "rgb(20, 18, 11)",
+          "color": "rgb(237, 236, 236)",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "lh": "24px"
+        },
+        "scheme": "dark",
+        "themeClass": "Sj65MG_variable aDRXRq_variable -Zg_XW_variable _8qwdia_variable",
+        "varCount": 573,
+        "primary": {
+          "text": "Download",
+          "bg": "rgb(237, 236, 236)",
+          "color": "rgb(20, 18, 11)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "ghost": {
+          "text": "Contact sales",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(237, 236, 236)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "inner": {
+          "w": 1440,
+          "h": 900,
+          "dpr": 1
+        }
+      },
+      "varCount": 573
+    },
+    {
+      "slug": "changelog",
+      "url": "https://cursor.com/changelog",
+      "status": 200,
+      "finalUrl": "https://cursor.com/changelog",
+      "png": {
+        "width": 1440,
+        "height": 10138
+      },
+      "sample": {
+        "title": "What's New in Cursor — Latest Updates & Release Notes",
+        "h1": "Voice Chat with Agents",
+        "h1Style": {
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "36px",
+          "weight": "400",
+          "lh": "43.2px",
+          "color": "rgb(237, 236, 236)"
+        },
+        "body": {
+          "bg": "rgb(20, 18, 11)",
+          "color": "rgb(237, 236, 236)",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "lh": "24px"
+        },
+        "scheme": "dark",
+        "themeClass": "Sj65MG_variable aDRXRq_variable -Zg_XW_variable _8qwdia_variable",
+        "varCount": 573,
+        "primary": {
+          "text": "Download",
+          "bg": "rgb(237, 236, 236)",
+          "color": "rgb(20, 18, 11)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "ghost": {
+          "text": "Contact sales",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(237, 236, 236)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "inner": {
+          "w": 1440,
+          "h": 900,
+          "dpr": 1
+        }
+      },
+      "varCount": 573
+    },
+    {
+      "slug": "blog",
+      "url": "https://cursor.com/blog",
+      "status": 200,
+      "finalUrl": "https://cursor.com/blog",
+      "png": {
+        "width": 1440,
+        "height": 5007
+      },
+      "sample": {
+        "title": "Blog · Cursor",
+        "h1": "Blog",
+        "h1Style": {
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "lh": "24px",
+          "color": "rgb(237, 236, 236)"
+        },
+        "body": {
+          "bg": "rgb(20, 18, 11)",
+          "color": "rgb(237, 236, 236)",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "16px",
+          "weight": "400",
+          "lh": "24px"
+        },
+        "scheme": "dark",
+        "themeClass": "Sj65MG_variable aDRXRq_variable -Zg_XW_variable _8qwdia_variable",
+        "varCount": 573,
+        "primary": {
+          "text": "Download",
+          "bg": "rgb(237, 236, 236)",
+          "color": "rgb(20, 18, 11)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "ghost": {
+          "text": "Contact sales",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(237, 236, 236)",
+          "radius": "3.35544e+07px",
+          "font": "CursorGothic, \"CursorGothic Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+          "size": "14px",
+          "weight": "400",
+          "pad": "5.6px 10.5px 5.88px",
+          "height": "27.4688px"
+        },
+        "inner": {
+          "w": 1440,
+          "h": 900,
+          "dpr": 1
+        }
+      },
+      "varCount": 573
+    },
+    {
+      "slug": "not-found",
+      "url": "https://cursor.com/this-page-does-not-exist",
+      "status": 200,
+      "finalUrl": "https://cursor.com/this-page-does-not-exist",
+      "png": {
+        "width": 1440,
+        "height": 1108
+      },
+      "sample": {
+        "title": "Cursor - The best way to code with AI | Cursor - The best way to code with AI",
+        "h1": null,
+        "h1Style": null,
+        "body": {
+          "bg": "rgb(20, 20, 20)",
+          "color": "rgb(245, 245, 245)",
+          "font": "\"X VF Mark\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+          "size": "16px",
+          "weight": "400",
+          "lh": "24px"
+        },
+        "scheme": "dark",
+        "themeClass": "dark",
+        "varCount": 1926,
+        "primary": null,
+        "ghost": null,
+        "inner": {
+          "w": 1440,
+          "h": 900,
+          "dpr": 1
+        }
+      },
+      "varCount": 1926
+    }
+  ],
+  "mobileMeta": {
+    "inner": {
+      "w": 390,
+      "h": 844,
+      "dpr": 2
+    },
+    "title": "AI Coding Agent for Building Ambitious Software | Cursor",
+    "menu": true
+  },
+  "capturedAt": "2026-11-21T16:54:20.663Z"
+}

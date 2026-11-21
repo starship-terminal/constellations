@@ -1,0 +1,47 @@
+{
+  "slug": "cursor",
+  "product": "Cursor",
+  "domain": "cursor.com",
+  "app": "authenticator.cursor.sh",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "The preview browser photographed the login wall empty. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed. The signup link was followed once and stopped on a Cloudflare verification page. The checkbox was not clicked.",
+  "wall": {
+    "url": "https://authenticator.cursor.sh/",
+    "title": "Sign in",
+    "asks": [
+      "Welcome to Cursor",
+      "Continue with Google",
+      "Continue with GitHub",
+      "Continue with Apple",
+      "Continue with Grok",
+      "Continue with X",
+      "Email",
+      "Continue with email",
+      "Sign up"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      { "type": "email", "placeholder": "Your email address", "filled": false }
+    ],
+    "note": "The email field was empty. Continue with email was not clicked. No identity provider was clicked."
+  },
+  "signup_wall": {
+    "url": "https://authenticator.cursor.sh/sign-up",
+    "title": "Just a moment...",
+    "asks": [
+      "Performing security verification",
+      "Verify you are human"
+    ],
+    "email_field": false,
+    "password_field": false,
+    "continued": false,
+    "inputs": [],
+    "note": "Cloudflare verification. The checkbox was not clicked. The captcha was not solved. The signup form was not shown."
+  },
+  "stopped": "Photographed the empty login wall and stopped at the signup captcha. Did not open an identity provider. Did not submit. Did not enter the signed-in app."
+}
