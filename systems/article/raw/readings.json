@@ -1,0 +1,146 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.article.com/",
+  "productUrl": "https://www.article.com/product/30331/timber-90-leather-sofa-charme-chocolat",
+  "loginUrl": "https://www.article.com/login",
+  "accountUrl": "https://www.article.com/account",
+  "signupUrl": null,
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "title": "Contemporary, Mid Century & Modern Furniture | Article",
+  "productTitle": "Timber Charme Chocolat Leather & Honey Oak 3 Seater Sofa | Article",
+  "currency": "USD",
+  "region": "United States storefront. Country control showed USA ($ USD).",
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(46, 46, 46)",
+    "fontFamily": "proxima_nova_regular, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "banner": {
+    "backgroundColor": "rgb(20, 20, 20)",
+    "color": "rgb(255, 255, 255)",
+    "height": "42px",
+    "fontFamily": "proxima_nova_regular, sans-serif",
+    "fontSize": "16px",
+    "text": "Get up to 40% off styles for every room. Shop Black Friday"
+  },
+  "nav": {
+    "color": "rgb(46, 46, 46)",
+    "fontFamily": "proxima_nova_regular, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "height": "45px"
+  },
+  "search": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(46, 46, 46)",
+    "height": "40px",
+    "borderRadius": "4px",
+    "borderColor": "rgb(194, 194, 194)",
+    "placeholder": "Search products & help ...",
+    "typed": false
+  },
+  "hero": {
+    "kickerColor": "rgb(202, 202, 202)",
+    "kickerFontSize": "48px",
+    "kickerLetterSpacing": "4.8px",
+    "displayColor": "rgb(255, 255, 255)",
+    "displayFontSize": "110px",
+    "displayLetterSpacing": "11px",
+    "fontFamily": "proxima_nova_regular, sans-serif"
+  },
+  "shopSale": {
+    "backgroundColor": "rgb(255, 100, 88)",
+    "color": "rgb(0, 0, 0)",
+    "height": "44px",
+    "width": "193px",
+    "borderRadius": "100px",
+    "fontFamily": "proxima_nova_bold, sans-serif",
+    "fontSize": "16px",
+    "clicked": false
+  },
+  "saleHeading": {
+    "color": "rgb(46, 46, 46)",
+    "fontFamily": "proxima_nova_bold, sans-serif",
+    "fontSize": "32px",
+    "text": "Sale by Room"
+  },
+  "product": {
+    "title": "Timber 90\" Leather Sofa - Charme Chocolat",
+    "titleColor": "rgb(46, 46, 46)",
+    "titleFontSize": "24px",
+    "titleFontFamily": "proxima_nova_bold, sans-serif",
+    "titleLetterSpacing": "-0.24px",
+    "priceText": "$1529",
+    "priceColor": "rgb(255, 100, 88)",
+    "priceFontSize": "20px",
+    "compareText": "$1799",
+    "compareColor": "rgb(46, 46, 46)",
+    "saveText": "Save $270"
+  },
+  "addToCart": {
+    "backgroundColor": "rgb(255, 100, 88)",
+    "color": "rgb(255, 255, 255)",
+    "height": "42px",
+    "width": "372px",
+    "borderRadius": "9999px",
+    "fontFamily": "proxima_nova_bold, sans-serif",
+    "fontSize": "16px",
+    "letterSpacing": "1.6px",
+    "clicked": false
+  },
+  "subscribe": {
+    "backgroundColor": "rgb(255, 100, 88)",
+    "color": "rgb(255, 255, 255)",
+    "height": "42px",
+    "borderRadius": "9999px",
+    "clicked": false
+  },
+  "email": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(46, 46, 46)",
+    "height": "40px",
+    "width": "352px",
+    "borderRadius": "4px",
+    "borderColor": "rgb(194, 194, 194)",
+    "placeholder": "Your email",
+    "valueLength": 0
+  },
+  "footer": {
+    "backgroundColor": "rgb(46, 46, 46)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "16px"
+  },
+  "tokensDeclared": {
+    "greyUltraDark": "#2e2e2e",
+    "greyLight": "#c2c2c2",
+    "greyUltraLight": "#f2f2f2",
+    "white": "#ffffff",
+    "black": "#000000",
+    "coral": "#ff6458",
+    "coralDark": "#cc5046",
+    "green": "#3cb064",
+    "amber": "#e6b94f",
+    "accent": "var(--coral)",
+    "error": "var(--coral-dark)",
+    "success": "var(--green)",
+    "warning": "var(--amber)",
+    "background": "var(--grey-ultra-light)"
+  },
+  "login": {
+    "reached": false,
+    "wall": "captcha",
+    "title": "Let's confirm you are human",
+    "submitted": false,
+    "providersClicked": false,
+    "emailValueLength": 0,
+    "passwordValueLength": 0,
+    "note": "Opening https://www.article.com/login and a later homepage load in the same incognito preview replaced the shop with a captcha wall. Begin was not clicked. No email, password, code, or phone was typed."
+  },
+  "signup": {
+    "reached": false,
+    "submitted": false,
+    "note": "No separate signup URL was opened. Footer Login/Register points at /login. The captcha wall appeared before any signup form."
+  }
+}
