@@ -6,7 +6,7 @@ A white page in light, `#171717` in dark. The wordmark sits at x=124, y=26 at 14
 
 At 390 the nav links drop. Get started stays in the header. The hero drops to 80px and the inset is 24px.
 
-See [home-light-default](screenshots/home-light-default.png) and [home-dark-phone](screenshots/home-dark-phone.png).
+See [home-light-default](screenshots/home-light-default.png) and [home-dark-default](screenshots/home-dark-default.png). Phone: [home-light-phone](screenshots/home-light-phone.png).
 
 ## Membership and about
 
