@@ -1,0 +1,61 @@
+{
+  "slug": "descript",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "wall": "empty",
+  "session": "Public Playwright capture, signed out. https://web.descript.com/ redirected to https://web.descript.com/authenticate. The empty wall was photographed. The branch stopped. No email, password, name, or code was typed. Continue with Google was not clicked. Use single sign-on stayed on descript.com and was not continued. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [],
+      "reached": [],
+      "note": "The signed-in app shell was not entered. Marketing nav is recorded in site-tree.md."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No account settings were offered before the wall."
+    },
+    "create": {
+      "items": [],
+      "reached": [],
+      "note": "No create flow was offered before the wall. Marketing Sign up and Get started point at the same authenticate wall."
+    }
+  },
+  "screens": [
+    "screenshots/login-light-empty.png",
+    "screenshots/login-light-password.png",
+    "screenshots/login-light-sso.png",
+    "screenshots/mobile-login-light-empty.png"
+  ],
+  "gaps": [
+    "The signed-in editor was not entered. Projects, timeline, export, billing, and settings were not offered on a signed-in shell.",
+    "offered.nav, offered.settings, and offered.create are empty because the wall stopped the branch.",
+    "No dark theme was offered on the login wall.",
+    "Continue with Google was visible and not clicked.",
+    "Use single sign-on opened an empty email step on the same URL. Continue was not clicked, so no identity provider loaded.",
+    "Use a password instead opened empty email and password fields. Continue and Show were not clicked.",
+    "Sign up or reset password was visible on the password step and not clicked.",
+    "The contact form at /contact was photographed empty and not submitted."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "Continue with Google",
+    "Use single sign-on",
+    "Continue",
+    "Continue with email",
+    "Show",
+    "Sign up or reset password",
+    "Sign up",
+    "Get started",
+    "contact form",
+    "newsletter",
+    "profile, birthday, plan, survey, and onboarding fields"
+  ]
+}
