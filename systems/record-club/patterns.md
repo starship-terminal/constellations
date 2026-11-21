@@ -1,6 +1,6 @@
 # Patterns
 
-No page screenshots. Each row is what the live DOM showed on 2026-11-19.
+Page screenshots from 2026-11-21 are in [screenshots/](screenshots/). The rows below are what the live DOM showed on 2026-11-19, checked again against the public pages on 2026-11-21.
 
 ## Logged-out shell
 
@@ -34,4 +34,8 @@ Footer class `site-footer`, fill `#f5f5f5`, padding `45px 0 22.5px`, 13px type. 
 
 ## Theme
 
-`data-theme="system"` follows the OS. The capture session was dark, so `/browse` and `/login` were read dark first, then `data-theme` was set to `light` and the same pages were read again. Some controls (explore card border, login fields) did not repaint. Those are called out in [README.md](README.md).
+`data-theme="system"` follows the OS. The 2026-11-19 session was dark, so `/browse` and `/login` were read dark first, then `data-theme` was set to `light` and the same pages were read again. Some controls (explore card border, login fields) did not repaint. Those are called out in [README.md](README.md).
+
+## 2026-11-21 frames
+
+The refresh left `data-theme` on `system` and did not flip it. Homepage and about painted light. Browse, the album page, lists, search, help, supporter, the 404, and both auth walls painted dark. Frames: [home-light-default](screenshots/home-light-default.png), [home-light-more](screenshots/home-light-more.png), [home-light-footer](screenshots/home-light-footer.png), [home-light-mobile](screenshots/home-light-mobile.png), [home-light-mobile-menu](screenshots/home-light-mobile-menu.png), [browse-dark-default](screenshots/browse-dark-default.png), [album-dark-default](screenshots/album-dark-default.png), [album-dark-mobile](screenshots/album-dark-mobile.png), [lists-dark-default](screenshots/lists-dark-default.png), [search-dark-empty](screenshots/search-dark-empty.png), [about-light-default](screenshots/about-light-default.png), [help-dark-default](screenshots/help-dark-default.png), [supporter-dark-default](screenshots/supporter-dark-default.png), [notfound-dark-default](screenshots/notfound-dark-default.png), [login-dark-default](screenshots/login-dark-default.png), [signup-dark-default](screenshots/signup-dark-default.png). Community and the blog were read and not photographed. Login and signup were photographed empty and not submitted.

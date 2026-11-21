@@ -1,0 +1,76 @@
+{
+  "captured": "2026-11-21",
+  "harness": "T3 preview tab, incognito",
+  "signedIn": false,
+  "home": {
+    "url": "https://record.club/",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "dataTheme": "system",
+    "dataSystemTheme": "dark",
+    "colorScheme": "light",
+    "htmlFontSize": "10px",
+    "headerHeight": "76px",
+    "h1": {
+      "fontFamily": "GTFAdieu, -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      "fontSize": "50px",
+      "fontWeight": "700",
+      "lineHeight": "55px",
+      "letterSpacing": "-0.5px",
+      "color": "rgb(20, 20, 20)"
+    },
+    "lede": {
+      "fontFamily": "GT America, -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      "fontSize": "20px",
+      "lineHeight": "28.88px",
+      "color": "rgba(55, 53, 47, 0.7)"
+    },
+    "navBrowse": {
+      "fontSize": "15px",
+      "height": "33px",
+      "padding": "7.5px 10px",
+      "borderRadius": "7px",
+      "color": "rgb(44, 42, 37)"
+    },
+    "joinForFree": {
+      "backgroundColor": "rgb(18, 18, 18)",
+      "color": "rgb(252, 252, 252)",
+      "borderRadius": "8px",
+      "height": "32px"
+    },
+    "createFreeAccount": {
+      "backgroundColor": "rgb(18, 18, 18)",
+      "color": "rgb(252, 252, 252)",
+      "borderRadius": "8px",
+      "height": "50px",
+      "width": "198px",
+      "fontSize": "17px",
+      "padding": "0px 24px"
+    },
+    "getTheApp": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "height": "50px",
+      "borderRadius": "8px"
+    }
+  },
+  "customProperties": {
+    "--bg": "light-dark(#fff,#171717)",
+    "--fg": "light-dark(rgb(44,42,37),rgb(238,238,238))",
+    "--color-brand": "light-dark(#6e36ff,#ab68ff)",
+    "--color-text": "light-dark(#2c2a25,#fff)",
+    "--color-line-default": "light-dark(#e5e5e5,#2d2d2d)",
+    "--focus-ring-color": "#71a2f3",
+    "--modal-bg": "light-dark(#fff,#1f1f1f)",
+    "--context-menu-bg": "light-dark(#fff,#262626)",
+    "--color-star-rated": "light-dark(#fcbf49,#f4b12f)"
+  },
+  "phone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "header": "hamburger and wordmark",
+    "drawer": "Browse, Community, About, Help, Blog, Contact support, Become a supporter, Register, Log in"
+  },
+  "note": "Tokens in tokens.json were not rewritten. The 2026-11-21 readings match the 2026-11-19 token values on the controls that were measured again."
+}

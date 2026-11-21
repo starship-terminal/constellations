@@ -1,23 +1,27 @@
 # Record Club
 
-Public signed-out surfaces of [record.club](https://record.club/), a social music network, captured on 2026-11-19. Readings came from a T3 preview tab at 1440×900 and 390×844, both at devicePixelRatio 2. The product's theme switch is `data-theme` on `<html>` (`light`, `dark`, or `system` plus `data-system-theme`). The attached session resolved `prefers-color-scheme: dark`, so system mode painted dark until `data-theme` was set to `light` in the page. No account setting was changed. Nothing was signed in, typed, or purchased.
+Public signed-out surfaces of [record.club](https://record.club/), a social music network, refreshed on 2026-11-21. The first capture on 2026-11-19 read computed styles and took no screenshots. This refresh photographs the public pages and the empty login and signup walls.
 
-Screenshots were not taken. `preview_snapshot` failed with "The browser is not producing screenshot frames." Headless Chromium received HTTP 403 and a Cloudflare interstitial, so it was not used.
+Readings and frames came from a T3 preview tab, incognito, at 1440×900 and 390×844, both at devicePixelRatio 2. The product's theme switch is `data-theme` on `<html>` (`light`, `dark`, or `system` plus `data-system-theme`). The attached session had `data-theme` `system`. The homepage and the about page painted light. Browse, the album page, lists, search, help, supporter, the 404, and both auth walls painted dark. No account setting was changed. Nothing was signed in, typed, or purchased.
+
+`login-extracted` is `not-started` ([login-review.json](login-review.json)). Apple and Google were not clicked. Continue was not clicked. The control map is [site-tree.md](site-tree.md).
 
 | File | What it holds |
 |---|---|
 | [README.md](README.md) | This file |
 | [icon.png](icon.png) | 128 px site icon, from the apple-touch-icon at `/assets/images/icons/512x512.png` |
-| [DESIGN.md](DESIGN.md) | Generated from [tokens.json](tokens.json) |
-| [tokens.json](tokens.json) | DTCG tokens, `core` plus `light` and `dark` |
+| [DESIGN.md](DESIGN.md) | Generated from [tokens.json](tokens.json) and this README |
+| [tokens.json](tokens.json) | DTCG tokens, `core` plus `light` and `dark`. Not rewritten on this refresh |
 | [style-guide.html](style-guide.html) | Swatches, type, radii and the buttons that were measured |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Page patterns from the routes that were read |
-| [raw/](raw/) | [computed.json](raw/computed.json), the readings |
-| [screenshots/](screenshots/) | Empty. Snapshot frames never arrived |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, drawer, or wall |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login_extracted` is `not-started` |
+| [raw/](raw/) | [computed.json](raw/computed.json) from 2026-11-19, and [refresh-2026-11-21.json](raw/refresh-2026-11-21.json) |
+| [screenshots/](screenshots/) | Viewport captures. Desktop 1440×900 at 2x (PNG 2880×1800). Phone 390×844 at 2x (PNG 780×1688) |
 | [components/](components/) | Empty `crops/`. No element screenshots |
 | [icons/](icons/) | Empty. Inline SVGs were counted, not exported |
-| [tools/](tools/) | The kit copy used for this capture. `tokens.json` has no builder: it was written from the readings in [raw/computed.json](raw/computed.json). The kit's unadapted `build/` builders were removed in the 2026-11 audit; the capture helpers remain |
+| [tools/](tools/) | The kit copy used for this capture. `tokens.json` has no builder |
 
 ## Brief
 
@@ -74,17 +78,23 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-Computed styles and stylesheet rules were read in the T3 preview tab on 2026-11-19. Custom properties were read with `getComputedStyle(document.documentElement)`. Component values were read on the live elements named in [raw/computed.json](raw/computed.json). The html font-size is 10px, so a declared `1.2rem` is 12px.
+Computed styles and stylesheet rules were read in the T3 preview tab on 2026-11-19, and confirmed on the homepage on 2026-11-21. Custom properties were read with `getComputedStyle(document.documentElement)`. Component values were read on the live elements named in [raw/computed.json](raw/computed.json) and [raw/refresh-2026-11-21.json](raw/refresh-2026-11-21.json). The html font-size is 10px, so a declared `1.2rem` is 12px.
 
-Routes read, all signed out: `/`, `/about`, `/browse`, `/help`, `/releases`, `/releases/albums/2hollis-pirouette`, `/login`, `/register`, `/supporter` (at 390px), and a missing route that rendered the product's 404. Login and register were not submitted. Apple and Google buttons were not pressed. The supporter price was read and the checkout was not opened.
+Screenshots are viewport captures from the same preview tab. Desktop shots are 1440×900 CSS pixels at devicePixelRatio 2, so the PNG is 2880×1800. Phone shots are 390×844 CSS pixels at devicePixelRatio 2, so the PNG is 780×1688. Headless Chromium received HTTP 403 and a Cloudflare interstitial, so it was not used.
+
+Routes read, all signed out: `/`, `/about`, `/browse`, `/community`, `/search`, `/lists`, `/help`, `/blog`, `/supporter`, `/releases/albums/2hollis-pirouette`, `/login`, `/register`, and a missing route that rendered the product's 404. Login and register were not submitted. Apple and Google buttons were not pressed. The supporter price was read and the checkout was not opened.
 
 ## What to distrust
 
-Dark footer, bento and placeholder colours in [tokens.json](tokens.json) are copies of a measured neighbour so the light and dark sets share keys. Each of those tokens says Derived in `$extensions.source`. The browse explore card kept a dark border after `data-theme` was set to light, so that border is not the light card colour. Email and password fields on `/login` kept dark fills (`#484848`, `#333333`) after the same flip. The light field fill is the focused register field, `#f2f2f2`.
+Dark footer, bento and placeholder colours in [tokens.json](tokens.json) are copies of a measured neighbour so the light and dark sets share keys. Each of those tokens says Derived in `$extensions.source`. The browse explore card kept a dark border after `data-theme` was set to light on 2026-11-19, so that border is not the light card colour. Email and password fields on `/login` kept dark fills (`#484848`, `#333333`) after the same flip. The light field fill is the focused register field, `#f2f2f2`.
 
 `--color-brand` has a losing stylesheet value of `#9b56ef`. The computed value, after the oklab query, is `light-dark(#6e36ff, #ab68ff)`. Tokens use the computed value. Shadow alphas live in `$extensions.alpha` because the DTCG colour is the opaque ink.
 
-There are no screenshots. Do not treat the style guide as a picture of the product.
+`data-theme` stayed `system` on this refresh. Which pages painted light and which painted dark is what the frames show. It is not a second theme the product offers as a toggle on these pages.
+
+The phone album page is [album-dark-mobile.png](screenshots/album-dark-mobile.png). Community and the blog were read and not photographed.
+
+Public display names appear on browse, lists, community, and the album page. They are the product's public names. No account of this capture is in the frames.
 
 ## Fonts
 
@@ -94,35 +104,37 @@ GT America (400, 500, 600, 900, plus italics at 400 and 500) is the UI face. The
 
 | Item | Status |
 |---|---|
-| Colour roles, light | Captured. [raw/computed.json](raw/computed.json) |
-| Colour roles, dark | Captured on `/browse` and `/login` while `data-theme` was `system` and `data-system-theme` was `dark` |
-| Type roles | Captured on home, about, releases and the release page |
+| Colour roles, light | Captured. Homepage and about. [raw/computed.json](raw/computed.json) |
+| Colour roles, dark | Captured on browse, the album page, lists, search, help, supporter, the 404, and both auth walls |
+| Type roles | Captured on home, about, and the release page |
 | Spacing and radii | Captured on header, buttons, fields, artwork, bento, chips |
-| Elevation | `--shadow-elevated` declared. No measured element on these pages used a shadow except the like badge ring |
+| Elevation | `--shadow-elevated` declared. The Show more menu uses it. No other measured element on these pages used a shadow except the like badge ring |
 | Motion | Button transition 180ms, `cubic-bezier(0.59, 0.01, 0.28, 1)`. Reduced motion sets `*` to 0.01ms. Honours |
 | Button, link, text field | Captured. See [components.md](components.md) |
 | Icon button | Show more, 38px, radius 100% |
-| Checkbox, radio, switch, select, textarea | Not present on the signed-out pages that were read |
+| Checkbox, radio, switch, select, textarea | Not present on the signed-out pages that were read, except the album star radios and the lists Year control, which were not measured |
 | Tabs | Release nav (Overview and the rest) and release-type chips on `/releases` |
-| Menu, tooltip, dialog, toast | Not opened. `--modal-bg`, `--context-menu-bg` and `--modal-radius` are declared |
-| Card, list row, avatar, badge | Card and badge measured. Avatar box is 24px. List row values were not read past the track-table header |
-| Table | Track listing is on the release page. Row padding was not read |
-| Hover, pressed, disabled | Primary hover, active and disabled come from stylesheet rules. Disabled Continue was also computed on `/login` |
-| Focus | `:focus-visible` outline colour is declared. A programmatic `focus()` landed on `body`, so the ring was not computed on a control |
-| App shell | Logged-out header, 76px at 1440 and 56px at 390 |
+| Menu | Show more opens Blog, About, Become a supporter, Changelog. Photographed |
+| Dialog, toast, tooltip | Not opened. `--modal-bg` and `--context-menu-bg` are declared |
+| Card, list row, avatar, badge | Card and badge measured. Avatar box is 24px. Public list rows are in the lists screenshot |
+| Table | Track listing is on the release page |
+| Hover, pressed, disabled | Primary hover, active and disabled come from stylesheet rules. Disabled Continue was computed on `/login` and is in the login screenshot |
+| Focus | `:focus-visible` outline colour is declared. A programmatic `focus()` landed on `body` on 2026-11-19, so the ring was not computed on a control |
+| App shell | Logged-out header, 76px at 1440. Phone header is the wordmark and a hamburger |
 | Form error | Not captured. The form was not submitted |
-| Empty, loading, error | 404 heading and copy were read. Empty and loading states were not |
-| Search | The search field is in the header. Its box was 0×0 until opened, so its open state was not read |
+| Empty | Search with an empty field. 404 heading and copy |
+| Loading | Not captured |
+| Search | Empty search page photographed. A query was not typed |
 | Pricing | `/supporter` shows Monthly, Yearly, and $4 per month. Checkout was not entered |
-| Widths | 1440×900 and 390×844, both measured. No screenshots |
+| Widths | Homepage at 1440 and 390, both photographed. Album page photographed at 1440 and 390 |
 | Signed-in app | Not entered |
 
 ## Do and don't
 
-- **Use the black pill for the primary action in light, and the white pill in dark.** Home "Create free account" is `#121212` on `#fcfcfc` at 8px radius. The same class in dark is white on `#111111`.
-- **Set display headings in GTFAdieu at 700 with a tight track.** About and help compute 44px, line 48.4px, tracking -0.44px, colour `#141414` in light.
-- **Keep body copy in GT America at 15px / 22.5px.** The ink is `#2c2a25` in light and `#eeeeee` in dark.
-- **Do not invent a screenshot.** This capture has computed styles and no frames. The preview browser did not produce screenshot frames, and headless Chromium hit Cloudflare.
+- **Use the black pill for the primary action in light, and the white pill in dark.** Home "Create free account" is `#121212` on `#fcfcfc` at 8px radius. The same class in dark is white on `#111111`. See [home-light-default](screenshots/home-light-default.png) and [login-dark-default](screenshots/login-dark-default.png).
+- **Set display headings in GTFAdieu at 700 with a tight track.** About and help compute 44px, line 48.4px, tracking -0.44px. The homepage hero is 50px / 55px. See [about-light-default](screenshots/about-light-default.png).
+- **Keep body copy in GT America at 15px / 22.5px.** The ink is `#2c2a25` in light and `#eeeeee` in dark. See [home-light-default](screenshots/home-light-default.png).
+- **Photograph the wall and stop.** Login and signup offer Apple, Google, and an empty email field. Continue stays disabled until an address is entered. See [login-dark-default](screenshots/login-dark-default.png) and [signup-dark-default](screenshots/signup-dark-default.png).
 
 ## Rebuild
 
@@ -131,8 +143,8 @@ python3 tools/catalog.py design-md record-club
 python3 tools/package_tests.py record-club
 ```
 
-`style-guide.html` is written from the token values by hand for this capture. The kit's `build/` builders (`build_tokens.py`, `build_style_guide.py`, its template, both components builders and `motion.py`) expect Claude's readings and token names, were never run, and were removed in the 2026-11 audit.
+`style-guide.html` is written from the token values by hand for this capture. The kit's `build/` builders expect Claude's readings and token names, were never run, and were removed in the 2026-11 audit. `catalog.json` was not edited on this refresh.
 
 ## Signed-out note
 
-`/login` and `/register` offer Apple, Google, and email plus password. That is not an email-only form, so no address was typed and no account was created. `/supporter` is a public plan page. Its checkout was not opened.
+`/login` and `/register` offer Apple, Google, and email. That is not an email-only form, so no address was typed and no account was created. `/supporter` is a public plan page. Its checkout was not opened.
