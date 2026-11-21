@@ -1,0 +1,46 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.pagerduty.com/",
+  "method": "getComputedStyle on the signed-out homepage. Not sampled from a screenshot.",
+  "colorScheme": "light",
+  "body": {
+    "backgroundColor": "rgb(250, 250, 250)",
+    "color": "rgb(29, 29, 29)",
+    "fontFamily": "plainFont, \"plainFont Fallback\", \"Helvetica Neue\", \"Arial Nova\", \"Nimbus Sans\", Arial, sans-serif",
+    "fontSize": "16px"
+  },
+  "h1": {
+    "text": "See PagerDuty at AWS re:Invent",
+    "fontFamily": "plainFont, \"plainFont Fallback\", \"Helvetica Neue\", \"Arial Nova\", \"Nimbus Sans\", Arial, sans-serif",
+    "fontSize": "60px",
+    "fontWeight": "300",
+    "lineHeight": "75px",
+    "color": "rgb(255, 255, 255)",
+    "note": "White because it sits on the dark green hero. It is not the page text colour."
+  },
+  "startForFree": {
+    "text": "Start for Free",
+    "backgroundColor": "rgb(4, 138, 36)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "100px",
+    "height": "48px",
+    "padding": "12px 16px",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "border": "0px solid rgb(255, 255, 255)"
+  },
+  "logIn": {
+    "text": "Log In",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(29, 29, 29)",
+    "border": "2px solid rgb(29, 29, 29)",
+    "borderRadius": "100px",
+    "height": "48px",
+    "padding": "10px 24px"
+  },
+  "pricingLink": {
+    "color": "rgb(29, 29, 29)",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  }
+}

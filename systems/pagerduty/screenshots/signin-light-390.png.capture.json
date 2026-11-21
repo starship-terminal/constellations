@@ -1,0 +1,18 @@
+{
+  "captured": "2026-11-22",
+  "name": "signin-light-390",
+  "url": "https://identity.pagerduty.com/global/authn/authentication/PagerDutyGlobalLogin/enter_email",
+  "title": "PagerDuty Sign In",
+  "h1": "",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "Empty login wall at 390. Not submitted.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

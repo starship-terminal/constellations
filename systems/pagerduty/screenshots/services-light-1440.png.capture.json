@@ -1,0 +1,18 @@
+{
+  "captured": "2026-11-22",
+  "name": "services-light-1440",
+  "url": "https://www.pagerduty.com/services/",
+  "title": "PagerDuty Services | Expert Guidance for Digital Operations",
+  "h1": "PagerDuty Services",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

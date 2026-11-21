@@ -1,0 +1,18 @@
+{
+  "captured": "2026-11-22",
+  "name": "pricing-light-390",
+  "url": "https://www.pagerduty.com/pricing/",
+  "title": "Plans & Pricing | PagerDuty",
+  "h1": "Plans & Pricing",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport at 390. Signed out. Cookie banner hidden with CSS. No form submitted.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

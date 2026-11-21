@@ -1,0 +1,64 @@
+{
+  "product": "PagerDuty",
+  "domain": "www.pagerduty.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Log In and Start for Free were opened empty. Nothing was typed.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "trialStarted": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log In and phone drawer Log In",
+      "url": "https://app.pagerduty.com/",
+      "paintedUrl": "https://identity.pagerduty.com/global/authn/authentication/PagerDutyGlobalLogin/enter_email",
+      "title": "PagerDuty Sign In",
+      "heading": "Sign in to your account",
+      "painted": true,
+      "asksFor": [
+        { "label": "Email", "type": "email", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Next", "Sign up"],
+      "stopped": true,
+      "desktop": "screenshots/signin-light-1440.png",
+      "phone": "screenshots/signin-light-390.png",
+      "note": "Empty email wall. Next was not clicked. Sign up on this wall was not clicked. No identity provider was shown on this step. The painted path has no OAuth query."
+    },
+    {
+      "control": "header Start for Free",
+      "url": "https://www.pagerduty.com/sign-up/",
+      "paintedUrl": "https://www.pagerduty.com/sign-up/",
+      "title": "PD Reliability Platform",
+      "heading": "PD Reliability Platform",
+      "painted": true,
+      "asksFor": [
+        { "label": "Work Email", "type": "email", "placeholder": "Enter your work email", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "Log in", "terms checkbox", "marketing checkbox"],
+      "stopped": true,
+      "desktop": "screenshots/signup-light-1440.png",
+      "phone": "screenshots/signup-light-390.png",
+      "note": "Empty trial wall, step 1 of 4. Continue was not clicked. Later steps that ask for a name, company, country, and password were not opened. No identity provider was clicked."
+    }
+  ],
+  "notOpened": [
+    "Next on the sign-in wall was not clicked.",
+    "Continue on the trial wall was not clicked.",
+    "No identity provider was clicked.",
+    "Request a demo was opened and discarded. It is a contact form with empty name, email, company, and phone fields. Country was prefilled by the site. Nothing was typed.",
+    "Contact Us was opened and discarded. The page prints a sales phone number.",
+    "Privacy policy was opened and discarded. The page prints a street address.",
+    "Pricing Start Free Trial was not clicked.",
+    "Search was not typed.",
+    "Investor Relations stopped on a Cloudflare verification page. The check was not solved.",
+    "PagerDuty University returned 403. It was not photographed.",
+    "Subscribe to Updates on the status page was not clicked.",
+    "Social profile links were not followed."
+  ]
+}

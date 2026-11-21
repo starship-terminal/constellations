@@ -1,0 +1,18 @@
+{
+  "captured": "2026-11-22",
+  "name": "incident-management-light-1440",
+  "url": "https://www.pagerduty.com/platform/incident-management/",
+  "title": "Incident Management | PagerDuty",
+  "h1": "Enterprise-grade Incident Management",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

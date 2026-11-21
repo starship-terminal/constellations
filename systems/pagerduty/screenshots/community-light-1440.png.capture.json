@@ -1,0 +1,19 @@
+{
+  "captured": "2026-11-22",
+  "name": "community-light-1440",
+  "url": "https://community.pagerduty.com/",
+  "title": "PagerDuty Commons | Community",
+  "h1": "Welcome to PagerDuty Commons",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. Login and Start new topic not clicked. Search not typed.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

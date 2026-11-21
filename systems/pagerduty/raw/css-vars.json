@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.pagerduty.com/",
+  "method": "getComputedStyle on :root after the public homepage stylesheets loaded. Not sampled from a screenshot.",
+  "colorScheme": "light",
+  "vars": {
+    "--background": "#fafafa",
+    "--foreground": "#1d1d1d",
+    "--color-gray-50": "#fafafa",
+    "--color-gray-100": "#f5f5f5",
+    "--color-gray-200": "#e5e5e5",
+    "--color-gray-900": "#171717",
+    "--color-gray-950": "#0a0a0a",
+    "--color-green-600": "#048a24",
+    "--color-green-dark": "#005a24",
+    "--color-green-xlight": "#e6f3ea",
+    "--color-text-primary-light": "#171717",
+    "--radius-md": ".375rem"
+  },
+  "note": "The homepage paints with Tailwind-style custom properties. Brand green used by Start for Free is --color-green-600. A Marketo form stylesheet also declares --color-accent as #06ac38. That accent was not the header button."
+}
