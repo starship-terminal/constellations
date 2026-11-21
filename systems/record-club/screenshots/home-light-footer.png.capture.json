@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T15:10:00.000Z",
+  "screenshot": "home-light-footer.png",
+  "sanitizedSourceUrl": "https://record.club/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": null,
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {
+        "data-theme": "system"
+      },
+      "colorScheme": "light"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 5043
+    },
+    "scroll": {
+      "x": 0,
+      "y": 5043
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null,
+    "harness": "T3 preview tab, incognito, signed out"
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 2880,
+      "height": 1800
+    },
+    "basis": "measured innerWidth and devicePixelRatio, PNG checked with sips"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop boxes from requested size."
+  }
+}

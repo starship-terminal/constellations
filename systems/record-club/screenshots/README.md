@@ -1,5 +1,9 @@
 # Screenshots
 
-No page PNG was captured.
+Viewport captures from the T3 preview tab on 2026-11-21, signed out, incognito.
 
-`preview_snapshot` failed twice with "The browser is not producing screenshot frames." Headless Playwright against `https://record.club/` returned HTTP 403 and a Cloudflare interstitial, so it was not used. Viewport sizes that were measured are in [../raw/computed.json](../raw/computed.json): 1440×900 and 390×844, both at devicePixelRatio 2.
+Desktop frames are 1440×900 CSS pixels at devicePixelRatio 2, so each PNG is 2880×1800. Phone frames are 390×844 CSS pixels at devicePixelRatio 2, so each PNG is 780×1688.
+
+`data-theme` was `system`. The homepage and about painted light. Browse, the album page, lists, search, help, supporter, the 404, and both auth walls painted dark. Filenames use that painted theme.
+
+The phone album page is [album-dark-mobile.png](album-dark-mobile.png). Community and the blog were read and not photographed.

@@ -54,7 +54,7 @@ Home `details.toggle-section` has a 1px `rgba(0, 0, 0, 0.1)` border, height 58px
 
 ## Gaps
 
-- No crops and no screenshots. The preview browser did not produce screenshot frames.
+- No crops. Page screenshots from 2026-11-21 are in [screenshots/](../screenshots/).
 - Checkbox, radio, switch, select and textarea were not on the signed-out pages that were read.
 - Menu, tooltip, dialog and toast were not opened. `--modal-bg`, `--context-menu-bg` and `--modal-radius` (1.2rem, 12px at the 10px root) are declared only.
 - Focus ring was not computed on a control. `:focus-visible` declares outline colour `light-dark(rgb(196, 196, 196), rgb(84, 84, 84))`. `--focus-ring-color` is `#71a2f3`.

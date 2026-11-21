@@ -1,0 +1,75 @@
+{
+  "slug": "record-club",
+  "product": "Record Club",
+  "domain": "record.club",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-and-password-plus-identity-providers",
+  "session": "T3 preview tab, incognito, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://record.club/login",
+    "title": "Record Club",
+    "asks": [
+      "Continue with Apple",
+      "Continue with Google",
+      "Email",
+      "Continue"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "password_visible": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "email", "name": "email", "placeholder": "Enter your email address", "filled": false},
+      {"type": "password", "name": "password", "placeholder": "Enter your password", "filled": false, "visible": false}
+    ],
+    "note": "Heading is Welcome back. The email field was empty. Continue was disabled. The password input is in the DOM and was not shown. Apple and Google were not clicked."
+  },
+  "signup_wall": {
+    "url": "https://record.club/register",
+    "lands_on": "https://record.club/register",
+    "title": "Join the community – Record Club",
+    "asks": [
+      "Continue with Apple",
+      "Continue with Google",
+      "Email",
+      "Continue"
+    ],
+    "email_field": true,
+    "continued": false,
+    "note": "Heading is Join the community. The email field was empty. Continue was not clicked. Apple and Google were not clicked. There is no separate second step in this capture."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/login-dark-default.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Log in", "href": "https://record.club/login", "reached": "wall only"},
+      {"label": "Join for free", "href": "https://record.club/register", "reached": "wall only"}
+    ],
+    "identity_providers": ["Apple", "Google"]
+  },
+  "screens": [
+    {"name": "Log-in wall, desktop, empty", "file": "screenshots/login-dark-default.png"},
+    {"name": "Signup wall, desktop, empty", "file": "screenshots/signup-dark-default.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "The email field was left empty. Continue was not clicked. No code was requested.",
+    "Apple and Google were offered and not clicked.",
+    "The password field was in the DOM and not shown. It was not filled.",
+    "The signed-in app was not reached."
+  ],
+  "not_submitted": [
+    "Continue",
+    "Continue with Apple",
+    "Continue with Google",
+    "Submit rating",
+    "Supporter checkout"
+  ]
+}
