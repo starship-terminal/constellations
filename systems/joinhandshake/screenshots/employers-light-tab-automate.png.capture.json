@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:55:51.769Z",
+  "capturedAt": "2026-11-21T13:14:46.057Z",
   "screenshot": "employers-light-tab-automate.png",
   "sanitizedSourceUrl": "https://joinhandshake.com/employers/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6534
+      "height": 6509
     },
     "scroll": {
       "x": 0,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T04:00:16.917Z",
+  "capturedAt": "2026-11-21T13:15:20.647Z",
   "screenshot": "about-light-default.png",
   "sanitizedSourceUrl": "https://joinhandshake.com/about/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8414
+      "height": 8252
     },
     "scroll": {
       "x": 0,

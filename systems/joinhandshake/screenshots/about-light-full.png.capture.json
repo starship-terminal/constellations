@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T04:00:46.309Z",
+  "capturedAt": "2026-11-21T13:15:27.682Z",
   "screenshot": "about-light-full.png",
   "sanitizedSourceUrl": "https://joinhandshake.com/about/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8414
+      "height": 8252
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 8414
+    "height": 8252
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 8414
+      "height": 8252
     },
     "basis": "fullPage"
   },

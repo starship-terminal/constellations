@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:55:46.488Z",
+  "capturedAt": "2026-11-21T13:14:44.644Z",
   "screenshot": "employers-light-default.png",
   "sanitizedSourceUrl": "https://joinhandshake.com/employers/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6534
+      "height": 6509
     },
     "scroll": {
       "x": 0,

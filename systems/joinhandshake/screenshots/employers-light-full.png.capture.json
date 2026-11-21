@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:56:01.782Z",
+  "capturedAt": "2026-11-21T13:14:55.124Z",
   "screenshot": "employers-light-full.png",
   "sanitizedSourceUrl": "https://joinhandshake.com/employers/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6534
+      "height": 6509
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 6534
+    "height": 6509
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 6534
+      "height": 6509
     },
     "basis": "fullPage"
   },

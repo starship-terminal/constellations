@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:23:17.490Z",
+  "capturedAt": "2026-11-21T13:16:22.778Z",
   "screenshot": "mobile-home-light-full.png",
   "sanitizedSourceUrl": "https://joinhandshake.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 5870
+      "height": 5864
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 390,
-    "height": 5870
+    "height": 5864
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 390,
-      "height": 5870
+      "height": 5864
     },
     "basis": "fullPage"
   },
