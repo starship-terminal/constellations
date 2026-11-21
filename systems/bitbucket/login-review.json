@@ -1,0 +1,140 @@
+{
+  "product": "Bitbucket",
+  "domain": "bitbucket.org",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Login and signup were opened and discarded because the painted URL carried OAuth and session state.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "repositoryCreated": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "https://bitbucket.org/account/signin/",
+      "url": "https://bitbucket.org/account/signin/",
+      "paintedUrlHost": "id.atlassian.com",
+      "paintedUrlPath": "/login",
+      "title": "Log in to continue - Log in with Atlassian account",
+      "painted": true,
+      "headings": ["Log in to continue"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "name": "username",
+          "placeholder": "Enter your email",
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "name": "password",
+          "placeholder": "Enter password",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Passkey", "Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Continue", "Remember me"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Empty login wall. Continue was not clicked. No identity provider was clicked. The painted URL is an Atlassian login URL with continue and application state, so the screenshot was discarded."
+    },
+    {
+      "control": "https://bitbucket.org/account/signup/",
+      "url": "https://bitbucket.org/account/signup/",
+      "paintedUrlHost": "id.atlassian.com",
+      "paintedUrlPath": "/login",
+      "title": "Log in to continue - Log in with Atlassian account",
+      "painted": true,
+      "headings": ["Log in to continue"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "name": "username",
+          "placeholder": "Enter your email",
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "name": "password",
+          "placeholder": "Enter password",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Passkey", "Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Continue", "Remember me"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Signup URL lands on the same empty login wall. The screenshot was discarded."
+    },
+    {
+      "control": "header Sign in",
+      "url": "https://bitbucket.org/",
+      "paintedUrlHost": "id.atlassian.com",
+      "paintedUrlPath": "/login",
+      "title": "Log in to continue",
+      "painted": true,
+      "headings": ["Log in to continue"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "name": "username",
+          "placeholder": "Enter your email",
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "name": "password",
+          "placeholder": "Enter password",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Continue", "Remember me"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Header Sign in opens an Atlassian login URL with continue and application query state. The screenshot was discarded."
+    },
+    {
+      "control": "header Get it Free and homepage Try it now",
+      "url": "https://www.atlassian.com/try/cloud/signup?bundle=bitbucket&edition=free",
+      "paintedUrlHost": "id.atlassian.com",
+      "paintedUrlPath": "/login",
+      "title": "Log in with Atlassian account",
+      "painted": true,
+      "headings": ["Log in to continue"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "name": "username",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Passkey", "Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Continue"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Get it Free and Try it now redirect to id.atlassian.com. The screenshot was discarded. No identity provider was clicked."
+    }
+  ],
+  "notOpened": [
+    "Continue was not clicked.",
+    "Google, Microsoft, Apple, Slack, and Passkey were not clicked.",
+    "Get it now and Start free trial on the pricing page were not clicked.",
+    "Subscribe to Updates on the status page was not clicked.",
+    "Blog Subscribe was not clicked.",
+    "Join Community Authors was not clicked.",
+    "Watch demo was not followed.",
+    "No repository was created.",
+    "Social profiles were not followed.",
+    "Cookie Accept all and Preferences were not clicked. The banner was hidden with CSS."
+  ]
+}

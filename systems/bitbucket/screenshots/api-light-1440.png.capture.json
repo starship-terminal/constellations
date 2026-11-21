@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "api-light-1440",
+  "url": "https://developer.atlassian.com/cloud/bitbucket/",
+  "requestedUrl": "https://developer.atlassian.com/bitbucket",
+  "title": "Integrating with Bitbucket Cloud",
+  "h1": "Bitbucket Cloud",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted. No identity provider clicked.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}
