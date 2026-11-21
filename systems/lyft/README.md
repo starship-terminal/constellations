@@ -19,6 +19,23 @@ The header Sign up control is an app deep link. It was not opened. Log in redire
 | [raw/](raw/) | Stylesheet custom properties and computed control styles |
 | [tools/](tools/) | The style-guide builder, the quantizer, and the token test |
 
+
+## Files
+
+| File | What it holds |
+|---|---|
+| [DESIGN.md](DESIGN.md) | Generated export of the tokens |
+| [components.md](components.md) | Public components named from the capture |
+| [icon.png](icon.png) | Product icon, 128 px |
+| [icons/](icons/) | Icon redraws |
+| [patterns.md](patterns.md) | Public patterns named from the capture |
+| [raw/](raw/) | Readings the tokens were measured from |
+| [screenshots/](screenshots/) | Public page screenshots |
+| [site-tree.md](site-tree.md) | Public pages and where the walk stopped |
+| [style-guide.html](style-guide.html) | Renders the tokens |
+| [tokens.json](tokens.json) | Measured colours, type, and sizes |
+| [tools/](tools/) | Builders for this package |
+
 ## Brief
 
 Not generated. This package is not in [catalog.json](../../catalog.json). The capture task left the catalog alone, and `make brief` reads the catalog entry.

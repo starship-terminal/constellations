@@ -14,6 +14,7 @@ Fitbit's public shop now lives on the Google Store. This package is a signed-out
 | [screenshots/](screenshots) | Category page and Google Fitbit Edge |
 | [raw/](raw/) | The readings the tokens were checked against |
 | [tools/](tools/) | `build_tokens.py` |
+| [icons/](icons/) | Icon redraws |
 
 `catalog.json` and `webapps-manifest.json` were left alone. `login-extracted` stays `not-started`.
 

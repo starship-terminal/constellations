@@ -9,6 +9,13 @@ The Ordinary is a public clinical skincare shop. This package is a signed-out ca
 | [tokens.json](tokens.json) | Measured colours, type, and sizes |
 | [login-review.json](login-review.json) | Empty walls, and where the walk stopped |
 | [DESIGN.md](DESIGN.md) | Handwritten, because generation needs a catalog entry |
+| [components.md](components.md) | Public components named from the capture |
+| [icon.png](icon.png) | Product icon, 128 px |
+| [icons/](icons/) | Icon redraws |
+| [patterns.md](patterns.md) | Public patterns named from the capture |
+| [raw/](raw/) | Readings the tokens were measured from |
+| [style-guide.html](style-guide.html) | Renders the tokens |
+| [tools/](tools/) | Builders for this package |
 
 `catalog.json` was left alone. `webapps-manifest.json` was left alone. `login-extracted` was not flipped.
 

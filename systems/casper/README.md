@@ -6,6 +6,23 @@ Photographed the homepage, The One mattress, and the empty login and signup wall
 
 Stopped at the login wall, the signup wall, the footer subscribe form, and the cart. Nothing was typed. No form was submitted. No identity provider was clicked. No captcha was solved. Add to cart was not clicked. Cart was not opened.
 
+
+## Files
+
+| File | What it holds |
+|---|---|
+| [DESIGN.md](DESIGN.md) | Generated export of the tokens |
+| [components.md](components.md) | Public components named from the capture |
+| [icon.png](icon.png) | Product icon, 128 px |
+| [login-review.json](login-review.json) | Empty walls, and where the walk stopped |
+| [patterns.md](patterns.md) | Public patterns named from the capture |
+| [raw/](raw/) | Readings the tokens were measured from |
+| [screenshots/](screenshots/) | Public page screenshots |
+| [site-tree.md](site-tree.md) | Public pages and where the walk stopped |
+| [style-guide.html](style-guide.html) | Renders the tokens |
+| [tokens.json](tokens.json) | Measured colours, type, and sizes |
+| [tools/](tools/) | Builders for this package |
+
 ## Coverage
 
 | Item | Status | Evidence |

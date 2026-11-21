@@ -6,6 +6,23 @@ Photographed the homepage and the Timber 90" leather sofa. Header, footer, and t
 
 Stopped at login, signup, the footer subscribe form, and the cart. Opening [https://www.article.com/login](https://www.article.com/login) painted a captcha wall titled "Let's confirm you are human". Begin was not clicked. Nothing was typed. No form was submitted. No identity provider was clicked. No captcha was solved. Add to cart was not clicked. Cart was not opened.
 
+
+## Files
+
+| File | What it holds |
+|---|---|
+| [DESIGN.md](DESIGN.md) | Generated export of the tokens |
+| [components.md](components.md) | Public components named from the capture |
+| [icon.png](icon.png) | Product icon, 128 px |
+| [login-review.json](login-review.json) | Empty walls, and where the walk stopped |
+| [patterns.md](patterns.md) | Public patterns named from the capture |
+| [raw/](raw/) | Readings the tokens were measured from |
+| [screenshots/](screenshots/) | Public page screenshots |
+| [site-tree.md](site-tree.md) | Public pages and where the walk stopped |
+| [style-guide.html](style-guide.html) | Renders the tokens |
+| [tokens.json](tokens.json) | Measured colours, type, and sizes |
+| [tools/](tools/) | Builders for this package |
+
 ## Coverage
 
 | Item | Status | Evidence |

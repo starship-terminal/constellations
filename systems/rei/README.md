@@ -17,6 +17,7 @@ REI is a public outdoor co-op shop. This package is a signed-out capture of [htt
 | [raw/](raw/) | Computed styles, and the header and footer link dumps |
 | [site-tree.md](site-tree.md) | Header, footer, and the pages those controls open |
 | [tools/](tools/) | A check that the promo, cream, and charcoal tokens match the readings |
+| [login-review.json](login-review.json) | Empty walls, and where the walk stopped |
 
 <!-- brief:start -->
 ## Brief

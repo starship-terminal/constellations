@@ -18,6 +18,7 @@ This is a new package. `origin/main` had no `systems/makersite/` folder. The tas
 | [icon.png](icon.png) | 128 px raster of the site SVG icon |
 | [raw/](raw/) | Computed style readings |
 | [tools/](tools/) | Builders. `python3 tools/build_tokens.py` rebuilds `tokens.json` |
+| [icons/](icons/) | Icon redraws |
 
 ## Brief
 

@@ -17,6 +17,7 @@ Buffer is a social media scheduler. This package is the public marketing site at
 | [icons/](icons) | A drawn mark and [INDEX.tsv](icons/INDEX.tsv) |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
 | [tools/](tools) | The capture kit and a package test |
+| [icon.png](icon.png) | Product icon, 128 px |
 
 ## Brief
 

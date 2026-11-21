@@ -4,6 +4,23 @@ Public capture of [https://www.aritzia.com](https://www.aritzia.com), resolved t
 
 The shop is black and camel on the homepage, white and ink on a product page. Type is Non-Seasonal Geo. The wordmark is an inline SVG.
 
+
+## Files
+
+| File | What it holds |
+|---|---|
+| [DESIGN.md](DESIGN.md) | Generated export of the tokens |
+| [components.md](components.md) | Public components named from the capture |
+| [icon.png](icon.png) | Product icon, 128 px |
+| [icons/](icons/) | Icon redraws |
+| [patterns.md](patterns.md) | Public patterns named from the capture |
+| [raw/](raw/) | Readings the tokens were measured from |
+| [screenshots/](screenshots/) | Public page screenshots |
+| [site-tree.md](site-tree.md) | Public pages and where the walk stopped |
+| [style-guide.html](style-guide.html) | Renders the tokens |
+| [tokens.json](tokens.json) | Measured colours, type, and sizes |
+| [tools/](tools/) | Builders for this package |
+
 ## What's here
 
 - [site-tree.md](site-tree.md) maps the header, the department menus, the footer, and the pages this pass opened.

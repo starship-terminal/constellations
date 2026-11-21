@@ -12,6 +12,9 @@ Béis is a public luggage and bags shop. This package is a signed-out capture of
 | [style-guide.html](style-guide.html) | The measured tokens painted locally |
 | [icon.png](icon.png) | Wordmark on the cream header colour |
 | [screenshots/](screenshots/) | Homepage, product, collection, about |
+| [icons/](icons/) | Icon redraws |
+| [raw/](raw/) | Readings the tokens were measured from |
+| [tools/](tools/) | Builders for this package |
 
 `catalog.json` and `webapps-manifest.json` were left alone. `login-extracted` stays `not-started`.
 
