@@ -1,0 +1,83 @@
+{
+  "product": "Article",
+  "domain": "article.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "region": "United States storefront at https://www.article.com/. Prices shown in USD.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "footer Login/Register",
+      "url": "https://www.article.com/login",
+      "title": "Let's confirm you are human",
+      "painted": false,
+      "headings": ["Let's confirm you are human"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Begin", "Select language", "Apply"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "The login URL painted a captcha wall, not an empty email form. Begin was not clicked. No email, password, code, or phone was typed. The screenshot was discarded because it is a captcha wall, not the account form."
+    },
+    {
+      "control": "header account icon",
+      "url": "https://www.article.com/account",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Account"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Not opened. A later homepage load in the same preview also hit the captcha wall, so the account page was not retried."
+    },
+    {
+      "control": "signup",
+      "url": "https://www.article.com/login",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Login/Register"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Footer Login/Register is the only signup control found. No separate register URL was opened. The captcha wall appeared before any signup fields."
+    },
+    {
+      "control": "footer subscribe",
+      "url": "https://www.article.com/",
+      "title": "Contemporary, Mid Century & Modern Furniture | Article",
+      "painted": true,
+      "headings": ["Get new products and promotions in your inbox."],
+      "asksFor": [
+        { "label": "Your email", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Subscribe"],
+      "stopped": true,
+      "screenshot": "screenshots/home-light-1440.png",
+      "note": "The email field was empty. Subscribe was not clicked. The homepage screenshot is cropped above the footer, so the field is recorded from the DOM, not from that crop."
+    },
+    {
+      "control": "header cart",
+      "url": "https://www.article.com/cart",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Cart"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Cart is a checkout wall. It was not opened. Add to cart on the Timber sofa was not clicked."
+    }
+  ]
+}
