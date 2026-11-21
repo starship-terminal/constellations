@@ -1,0 +1,144 @@
+{
+  "captured": "2026-11-22",
+  "route": "public web, incognito preview tab, signed out",
+  "note": "Computed styles and resolved custom properties from the live page. Flat fills that computed as transparent were not sampled from the quantised screenshots. The signed-in tokens.json was not rewritten.",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}}
+  },
+  "claudeAi": {
+    "url": "https://claude.ai/login",
+    "redirectFrom": "https://claude.ai/",
+    "title": "Sign in or create an account | Claude.ai",
+    "dataMode": "system",
+    "dataTheme": "claude",
+    "colorScheme": "dark",
+    "htmlClass": "cds-root h-screen antialiased motion-safe:scroll-smooth signin-desktop-download signin-download-mac signin-sections-ready",
+    "bodyBackground": "rgb(21, 21, 21)",
+    "bodyColor": "rgb(240, 239, 236)",
+    "resolved": {
+      "--clay": "#d97757",
+      "--clay-emphasized": "#ba5b3c",
+      "--page-bg": "#0b0b0b",
+      "--surface-0": "#0b0b0b",
+      "--surface-3": "#1f1f1f",
+      "--text-primary": "rgb(255 255 255 / 1)",
+      "--text-secondary": "rgb(255 255 255 / .9)",
+      "--text-muted": "rgb(255 255 255 / .68)",
+      "--text-disabled": "hsl(from #ffffff h s l / 35%)",
+      "--fill-accent": "#6aabf1",
+      "--bg-accent": "color-mix(in srgb, #257de0 12%, transparent)",
+      "--border": "rgb(255 255 255 / .04)",
+      "--border-strong": "hsl(from #ffffff h s l / 20%)",
+      "--gray-0": "#ffffff",
+      "--gray-50": "#efefef",
+      "--gray-900": "#0b0b0b",
+      "--radius": "calc(.5rem * 1)",
+      "--font-size-body": "calc(.875rem * 1)",
+      "--dur-fast": "60ms",
+      "--dur-snap": ".12s",
+      "--dur-slow": ".45s",
+      "--ease-out": "cubic-bezier(.165, .84, .44, 1)",
+      "--ease-snap": "cubic-bezier(.32, .72, 0, 1)",
+      "--focus-shadow": "inset 0 0 0 1px #0b0b0b, 0 0 0 1px #6aabf1, 0 0 6px 1px hsl(from #1757ac h s l / 60%)",
+      "--shadow-sm": "0 1px 2px 0 hsl(from #0b0b0b h s l / 6%), 0 2px 8px 0 rgba(0, 0, 0, .24)"
+    },
+    "h1": {
+      "text": "Question what’s next",
+      "font": "anthropic-serif-first",
+      "size": "56px",
+      "weight": "300",
+      "lineHeight": "64.4px",
+      "color": "rgb(255, 255, 255)",
+      "phoneSize": "51.2px"
+    },
+    "email": {
+      "placeholder": "Enter your email",
+      "valueLength": 0,
+      "height": 40,
+      "radius": "10px",
+      "size": "15px",
+      "weight": "400",
+      "color": "rgb(255, 255, 255)",
+      "wrapBackground": "rgba(255, 255, 255, 0.05)",
+      "wrapRadius": "10px"
+    },
+    "continueWithEmail": {
+      "text": "Continue with email",
+      "height": 40,
+      "radius": "10px",
+      "size": "15px",
+      "weight": "435",
+      "color": "rgb(25, 25, 25)",
+      "computedBackground": "transparent",
+      "note": "The button element computed transparent. The visible face is white. Not sampled from the quantised PNG."
+    },
+    "continueWithGoogle": {
+      "height": 40,
+      "radius": "10px",
+      "color": "rgb(255, 255, 255)",
+      "computedBackground": "transparent"
+    }
+  },
+  "claudeCom": {
+    "url": "https://claude.com/pricing",
+    "title": "Plans & pricing | Claude by Anthropic",
+    "colorScheme": "normal",
+    "bodyBackground": "rgb(20, 20, 19)",
+    "bodyColor": "rgb(250, 249, 245)",
+    "bodyFont": "anthropicSans",
+    "bodySize": "15px",
+    "headerBackground": "rgb(20, 20, 19)",
+    "h1": {
+      "text": "Pricing",
+      "font": "anthropicSerif",
+      "size": "64px",
+      "weight": "500",
+      "lineHeight": "70.4px",
+      "color": "rgb(250, 249, 245)"
+    },
+    "tryClaude": {
+      "background": "rgb(250, 249, 245)",
+      "color": "rgb(20, 20, 19)",
+      "radius": "8px",
+      "height": 36,
+      "size": "15px",
+      "weight": "500",
+      "padding": "8px 16px",
+      "font": "anthropicSans"
+    },
+    "login": {
+      "color": "rgb(176, 174, 165)",
+      "size": "15px",
+      "note": "The visible Login href is a claude.ai redirect that carries a tracking id. It was not opened."
+    },
+    "rootColors": {
+      "--color-gray-000": "#fff",
+      "--color-gray-050": "#faf9f5",
+      "--color-gray-100": "#f5f4ed",
+      "--color-gray-950": "#141413",
+      "--color-gray-1000": "#000",
+      "--color-clay": "#d97757",
+      "--color-clay-hover": "#c6613f",
+      "--color-clay-dark": "#c46849",
+      "--color-cactus": "#bcd1ca",
+      "--color-sky": "#6a9bcc",
+      "--color-heather": "#cbcadb",
+      "--color-plum": "#827dbd",
+      "--color-mineral": "#629987",
+      "--color-peach": "#ebc9b7"
+    }
+  },
+  "productOverview": {
+    "url": "https://claude.com/product/overview",
+    "title": "Claude | The AI assistant for work",
+    "h1": {"text": "Give Claude more", "size": "72px", "weight": "500", "font": "anthropicSerif", "color": "rgb(250, 249, 245)"},
+    "bodyBackground": "rgb(20, 20, 19)"
+  },
+  "download": {
+    "url": "https://claude.com/download",
+    "title": "Download Claude | Claude by Anthropic",
+    "h1": "Download Claude",
+    "note": "Download for macOS and the Windows buttons were not clicked."
+  }
+}
