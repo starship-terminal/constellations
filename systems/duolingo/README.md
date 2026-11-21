@@ -1,5 +1,69 @@
 # Duolingo design reference
 
+A public refresh of the Duolingo package, read from https://www.duolingo.com/ on 2026-11-22, signed out. origin/main already had `systems/duolingo/`. The slug stayed `duolingo`. This pass did not open the signed-in app and did not repeat the 2026-10 lesson walk.
+
+The marketing homepage uses `data-duo-theme="light"`. The page is snow `#FFFFFF`. Headlines are eel `#4B4B4B`. Get started is owl `#58CC02`. The account button and the login submit are macaw `#1CB0F6`. The footer is owl green. UI text is duolingo-sans. Section headlines are feather. Desktop CSS viewport measured 1440 by 900 at device pixel ratio 2. Phone CSS viewport measured 390 by 844 at device pixel ratio 2.
+
+`login_extracted` is `not-started`. catalog.json was left alone.
+
+| File | What it is |
+|---|---|
+| [site-tree.md](site-tree.md) | Which homepage control opens which page |
+| [login-review.json](login-review.json) | Empty login overlay and empty age step. `login_extracted` is `not-started` |
+| [DESIGN.public-2026-11.md](DESIGN.public-2026-11.md) | Written by hand from the public readings. [DESIGN.md](DESIGN.md) was not regenerated |
+| [tokens.public-2026-11.json](tokens.public-2026-11.json) | Public light roles. The earlier [tokens.json](tokens.json) was not rebuilt |
+| [screenshots/public-2026-11/](screenshots/public-2026-11) | 13 public captures. 10 desktop at 2880 by 1800, 3 phone at 780 by 1688 |
+| [raw/public-2026-11-22.json](raw/public-2026-11-22.json) | Viewport and component readings for this pass |
+
+The 2026-09 and 2026-10 signed-in crops, screenshots, and notes stay in this package. This refresh adds the public site tree and the public shots. It does not claim those older shots were retaken.
+
+## Brief
+
+<!-- brief:start -->
+Brief is not regenerated for this refresh. catalog.json was left alone, so `make brief` was not run. The public light roles are page `#FFFFFF`, text `#4B4B4B`, Get started `#58CC02`, login `#1CB0F6`.
+<!-- brief:end -->
+
+## Health
+
+<!-- health:start -->
+Health is not regenerated. catalog.json was left alone, so `make grade` was not run.
+<!-- health:end -->
+
+## How the values were read
+
+Custom properties were read from the `style` attribute on `<html>` on the signed-out homepage. 302 `--color-*` names resolved. Component sizes were read with `getComputedStyle` on the h1, the feather h2, Get started, the account button, the login field shell, and the Log in button. Login and the age step were opened and left empty. Identity providers were not clicked. Forms were not submitted. No course card was chosen. No lesson was started.
+
+## What to distrust
+
+The public PNGs are the browser captures. Read colours from [tokens.public-2026-11.json](tokens.public-2026-11.json) for this pass, and from [tokens.json](tokens.json) for the earlier signed-in set. The Get started lip is named from the tree-frog palette entry because the button is 50px and its painted `::before` is 46px. That lip colour was not sampled from a pixel. [DESIGN.public-2026-11.md](DESIGN.public-2026-11.md) was written by hand. [DESIGN.md](DESIGN.md) was not regenerated. The signed-in token file was not remeasured. `?isLoggingIn=true` is the public overlay flag. It is not a session.
+
+## Fonts
+
+duolingo-sans for UI text. feather for display headlines such as "free. fun. effective." Both are proprietary and are not in this package. The stacks the page declares are `duolingo-sans, sans-serif` and `feather, sans-serif`.
+
+## Coverage
+
+| Surface | Captured |
+|---|---|
+| Homepage, desktop | yes, [home-light-default](screenshots/public-2026-11/home-light-default.png) |
+| Footer | yes, [home-light-footer](screenshots/public-2026-11/home-light-footer.png) |
+| Courses catalog | yes |
+| Schools, Efficacy, Help, Chess | yes |
+| Register course picker | yes, no course chosen |
+| Login overlay and age step, empty | yes |
+| Homepage, phone | yes, 390 by 844 |
+| Courses, phone, and its menu | yes, 390 by 844 |
+| Signed-in app | not this pass. `login_extracted` is `not-started` |
+| Pressed, focus, error | no |
+
+## Do and don't
+
+- **Do paint the primary action owl green.** Get started is `#58CC02` with white uppercase type. See [home-light-default](screenshots/public-2026-11/home-light-default.png).
+- **Do keep the account action quiet.** "I already have an account" is a white face with a macaw label.
+- **Do use macaw for login and for the courses header.** Log in is `#1CB0F6`. See [login-light-empty](screenshots/public-2026-11/login-light-empty.png) and [courses-light-default](screenshots/public-2026-11/courses-light-default.png).
+- **Don't treat this refresh as a signed-in capture.** The walls were photographed empty and left there.
+- **Don't choose a course and call it a lesson.** `/register` stops on the course cards. None were clicked.
+
 A token set and component reference for Duolingo's web app, for building mockups in Figma or Paper that match the product. It was extracted from www.duolingo.com on 2026-09-25, signed in to a free account on the Japanese course, in both of the app's themes, at desktop width and at a 570px mobile width. It was refreshed on 2026-10-17 against the library scorecard: the same free account, both themes, at 1440, 1000 and 390px, plus the logged-out onboarding flow, the Guidebook table, a live keyboard-focus pass, and new tokens for ramps, overlay surfaces, accent hover and pressed, status borders, icon sizes, the focus ring, layout columns and reduced motion.
 
 | File | What it is |
