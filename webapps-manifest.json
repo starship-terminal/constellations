@@ -96,7 +96,7 @@
       "description": "AI-powered data management platform",
       "status": "captured",
       "package": "systems/aboard",
-      "notes": "https://aboard.com/ is a consulting site. No sign-in link and no email field.",
+      "notes": "https://aboard.com/ is a consulting site. No sign-in link and no email field. Public walk 2026-11-21: desktop nav has Perspectives (Newsletter, Podcast, Events, Media, Whitepaper) and About (About, FAQ, Careers). Phone uses one menu. Get in Touch scrolls to the contact section. CookieYes is a banner. The preferences dialog was not opened. Newsletter, event, and contact forms were not submitted. sign.aboard.com was linked and not opened. No sign-in on the public site. Signed-in product was not captured. Public package refresh in PR 1614 at 497958211206. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 1
