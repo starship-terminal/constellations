@@ -2,7 +2,7 @@
 
 Measured on the public marketing site on 2026-11-19. Values are token names. The computed readings are in [raw/components-computed.json](raw/components-computed.json).
 
-`preview_snapshot` returned "The browser is not producing screenshot frames." Crops were not invented. The Gaps section records that.
+The 2026-11-19 preview browser produced no frames. Playwright screenshots from 2026-11-21 are in [screenshots/](evidence/screenshots/). Crops were still not cut.
 
 ## Button
 
@@ -18,7 +18,7 @@ Header links are Akkurat 400 at 14px/20px. On the home hero they computed to whi
 
 The enquire field shell is a 70px column: 12px 16px padding, 1px `light.border.field`, 2px radius, transparent background. The label is `core.typography.label` in `light.text.primary`. The input is `core.typography.body` in `light.text.primary`. Placeholder copy uses the `placeholder:text-neutral-400` class. The input node itself computed an 8px radius. The shell is the painted edge.
 
-The phone field is on this form. It was not filled. See Gaps.
+The contact field is on this form. It was not filled. See Gaps.
 
 ## Text area
 
@@ -70,10 +70,35 @@ Listing type labels (EXCLUSIVE, HOUSE) are 12px/16px Akkurat 700, uppercase. Exc
 
 ## Gaps
 
-- No component crops. The preview browser did not produce screenshot frames.
-- Hover, pressed, disabled, loading and error states were not painted.
+- No component crops. Whole-page screenshots exist. Element crops were not cut.
+- Hover, pressed, disabled, loading and error states were not painted in 2026-11-19. A 2026-11-21 computed read saw Inquire Now hover flip to black and a 2px focus ring. Those states are in [raw/measurements.json](raw/measurements.json), not in tokens.json.
 - The enquire form was not submitted, so validation and error styles are a gap.
-- Phone, country and postal fields were not filled.
-- Menus, the date popover, the guest popover and the filter dialog were not opened.
-- Checkbox, radio and switch product states are a gap. The native checkbox size is recorded. Its checked colour is not.
+- Contact, country and postal fields were not filled.
+- Menus, the date popover, the guest popover, the filter dialog, and the listing gallery were opened on 2026-11-21. See [site-tree.md](site-tree.md) and the screenshot names below. The 2026-11-19 measurement pass did not open them.
+- Checkbox, radio and switch product states are a gap. The native checkbox size is recorded. Its checked colour is not. OneTrust checkboxes were not opened.
 - Dark theme: no `prefers-color-scheme` rule was declared on the marketing sheets.
+- Search sort was not shot as its own state. The closed sort control is in [search-light-default.png](evidence/screenshots/search-light-default.png).
+
+## Screenshots
+
+Playwright, 2026-11-21, signed out, cookie banner not accepted. Desktop 1440x900. Phone 390x844, files prefixed `mobile-`.
+
+- [home-light-cookie.png](evidence/screenshots/home-light-cookie.png), [home-light-default.png](evidence/screenshots/home-light-default.png), [home-light-destinations.png](evidence/screenshots/home-light-destinations.png), [home-light-inspiration.png](evidence/screenshots/home-light-inspiration.png), [home-light-account-wall.png](evidence/screenshots/home-light-account-wall.png), [home-light-dates.png](evidence/screenshots/home-light-dates.png), [home-light-guests.png](evidence/screenshots/home-light-guests.png), [home-light-full.png](evidence/screenshots/home-light-full.png)
+- [destination-light-default.png](evidence/screenshots/destination-light-default.png), [destination-light-faq.png](evidence/screenshots/destination-light-faq.png), [destination-light-full.png](evidence/screenshots/destination-light-full.png)
+- [search-light-default.png](evidence/screenshots/search-light-default.png), [search-light-filters.png](evidence/screenshots/search-light-filters.png), [search-light-full.png](evidence/screenshots/search-light-full.png)
+- [listing-light-default.png](evidence/screenshots/listing-light-default.png), [listing-light-gallery.png](evidence/screenshots/listing-light-gallery.png), [listing-light-full.png](evidence/screenshots/listing-light-full.png)
+- [enquire-light-default.png](evidence/screenshots/enquire-light-default.png), [enquire-light-full.png](evidence/screenshots/enquire-light-full.png), [wishlist-light-default.png](evidence/screenshots/wishlist-light-default.png), [wishlist-light-full.png](evidence/screenshots/wishlist-light-full.png)
+- [list-your-home-light-default.png](evidence/screenshots/list-your-home-light-default.png), [list-your-home-light-faq.png](evidence/screenshots/list-your-home-light-faq.png), [list-your-home-light-full.png](evidence/screenshots/list-your-home-light-full.png)
+- [journal-light-default.png](evidence/screenshots/journal-light-default.png), [journal-light-full.png](evidence/screenshots/journal-light-full.png), [about-light-default.png](evidence/screenshots/about-light-default.png), [about-light-full.png](evidence/screenshots/about-light-full.png)
+- [services-light-default.png](evidence/screenshots/services-light-default.png), [services-light-full.png](evidence/screenshots/services-light-full.png), [reviews-light-default.png](evidence/screenshots/reviews-light-default.png), [reviews-light-full.png](evidence/screenshots/reviews-light-full.png)
+- [contact-light-default.png](evidence/screenshots/contact-light-default.png), [contact-light-full.png](evidence/screenshots/contact-light-full.png)
+- [promo-light-default.png](evidence/screenshots/promo-light-default.png), [promo-light-full.png](evidence/screenshots/promo-light-full.png), [collection-light-default.png](evidence/screenshots/collection-light-default.png), [collection-light-full.png](evidence/screenshots/collection-light-full.png)
+- [category-light-default.png](evidence/screenshots/category-light-default.png), [category-light-full.png](evidence/screenshots/category-light-full.png), [legal-light-default.png](evidence/screenshots/legal-light-default.png), [legal-light-full.png](evidence/screenshots/legal-light-full.png)
+- [team-light-default.png](evidence/screenshots/team-light-default.png), [accessibility-light-default.png](evidence/screenshots/accessibility-light-default.png)
+- [login-light-wall.png](evidence/screenshots/login-light-wall.png), [signup-light-wall.png](evidence/screenshots/signup-light-wall.png), [forgot-password-light-wall.png](evidence/screenshots/forgot-password-light-wall.png)
+- [mobile-home-light-cookie.png](evidence/screenshots/mobile-home-light-cookie.png), [mobile-home-light-default.png](evidence/screenshots/mobile-home-light-default.png), [mobile-home-light-menu.png](evidence/screenshots/mobile-home-light-menu.png), [mobile-home-light-full.png](evidence/screenshots/mobile-home-light-full.png)
+- [mobile-destination-light-default.png](evidence/screenshots/mobile-destination-light-default.png), [mobile-destination-light-full.png](evidence/screenshots/mobile-destination-light-full.png)
+- [mobile-search-light-default.png](evidence/screenshots/mobile-search-light-default.png), [mobile-search-light-full.png](evidence/screenshots/mobile-search-light-full.png)
+- [mobile-listing-light-default.png](evidence/screenshots/mobile-listing-light-default.png), [mobile-listing-light-full.png](evidence/screenshots/mobile-listing-light-full.png)
+- [mobile-enquire-light-default.png](evidence/screenshots/mobile-enquire-light-default.png), [mobile-wishlist-light-default.png](evidence/screenshots/mobile-wishlist-light-default.png)
+- [mobile-about-light-default.png](evidence/screenshots/mobile-about-light-default.png), [mobile-journal-light-default.png](evidence/screenshots/mobile-journal-light-default.png), [mobile-login-light-wall.png](evidence/screenshots/mobile-login-light-wall.png)

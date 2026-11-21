@@ -158,7 +158,7 @@ Good for: Luxury vacation-rental marketing: a transparent header over a photo he
 
 Captured 2026-11-19, signed out (public marketing only; enquire was measured empty and not submitted; no booking, card, or account). Themes: light.
 
-onefinestay's public marketing site, measured on 2026-11-19 while signed out. Pages: home, list your home, enquire, London destination, one listing, journal, and London search. No account was created. No booking, enquiry, or card was submitted. The preview tab reported innerWidth 1440 and innerHeight 900 at devicePixelRatio 2 after a 1440 by 900 request, and innerWidth 390 and innerHeight 844 at devicePixelRatio 2 after a 390 by 844 request. The product painted light only.
+onefinestay's public marketing site, measured on 2026-11-19 while signed out, then recaptured with Playwright on 2026-11-21. Desktop shots are 1440x900 at 1x. Phone shots are 390x844 at 2x. The product painted light only. No account was created. No booking, enquiry, or card was submitted. The cookie banner was not accepted. Login, signup, and forgot-password were recorded as walls and not filled. Which control opens which page is in [site-tree.md](site-tree.md).
 
 <!-- brief:start -->
 
@@ -218,7 +218,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-There are no screenshots in this package. The coverage table names the pages that were measured. It cannot show them.
+Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the files. Published contact numbers and the contact email were painted out of the contact and footer shots before quantization, because this package must not store an email or a phone number. The company registration number in the copyright line was left. Destination names in [site-tree.md](site-tree.md) are public menu labels.
 
 `--accent` resolves to `#f5f5f5`. The painted coral is `--brand-500` (`#ff8065`). The catalog swatch uses brand 500. A reader who follows the shadcn `--accent` name will paint a grey page.
 

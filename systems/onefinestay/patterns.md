@@ -32,13 +32,13 @@ Filter controls sit in a row: 50px select buttons at 2px radius, and 38px chips 
 
 [https://www.onefinestay.com/list-your-home](https://www.onefinestay.com/list-your-home)
 
-A hero heading at `core.typography.display` in white, then a ghost button ("Submit your home") with a 1px white border, 2px radius, Akkurat 700. The form behind that button was not opened, because the enquire form already asked for a phone number and this flow is a host application.
+A hero heading at `core.typography.display` in white, then a ghost button ("Submit your home") with a 1px white border, 2px radius, Akkurat 700. The host application form was not opened. The enquire form already asks for contact details, and that flow was not filled.
 
 ## Enquire
 
 [https://www.onefinestay.com/enquire](https://www.onefinestay.com/enquire)
 
-A centred column at `--container-narrow` (890px). A two-column grid of field shells (one column at the phone width, not remeasured). Submit is the filled neutral-900 button. The form asks for a phone number. It was not filled and not submitted.
+A centred column at `--container-narrow` (890px). A two-column grid of field shells (one column at 390px, not remeasured). Submit is the filled neutral-900 button. The form asks for contact details. It was not filled and not submitted. See [enquire-light-default.png](evidence/screenshots/enquire-light-default.png).
 
 ## Journal
 

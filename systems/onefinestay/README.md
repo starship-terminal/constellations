@@ -1,21 +1,22 @@
 # onefinestay
 
-onefinestay's public marketing site, measured on 2026-11-19 while signed out. Pages: home, list your home, enquire, London destination, one listing, journal, and London search. No account was created. No booking, enquiry, or card was submitted. The preview tab reported innerWidth 1440 and innerHeight 900 at devicePixelRatio 2 after a 1440 by 900 request, and innerWidth 390 and innerHeight 844 at devicePixelRatio 2 after a 390 by 844 request. The product painted light only.
+onefinestay's public marketing site, measured on 2026-11-19 while signed out, then recaptured with Playwright on 2026-11-21. Desktop shots are 1440x900 at 1x. Phone shots are 390x844 at 2x. The product painted light only. No account was created. No booking, enquiry, or card was submitted. The cookie banner was not accepted. Login, signup, and forgot-password were recorded as walls and not filled. Which control opens which page is in [site-tree.md](site-tree.md).
 
 | Path | What it holds |
 |---|---|
 | [README.md](README.md) | This file |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or wall, mapped before screenshots |
 | [tokens.json](tokens.json) | DTCG tokens from resolved custom properties and computed controls |
 | [DESIGN.md](DESIGN.md) | Generated export of the tokens |
 | [style-guide.html](style-guide.html) | The same tokens rendered |
-| [components.md](components.md) | Controls measured on the signed-out pages |
+| [components.md](components.md) | Controls measured on the signed-out pages, plus the 2026-11-21 screenshot list |
 | [patterns.md](patterns.md) | How the public pages are put together |
-| [components/](components/) | Crop folder. Empty: the preview browser produced no screenshot frames |
-| [screenshots/](screenshots/) | Screenshot folder. Empty for the same reason |
+| [components/](components/) | Crop folder. Still absent. Element crops were not cut from the new screenshots. |
+| [screenshots/](evidence/screenshots/) | 62 public captures, `{page}-light-{state}.png`. `mobile-` is the phone width. 256-colour PNGs. |
 | [icons/](icons/) | The site favicon SVG and the header menu icon, with [icons/INDEX.tsv](icons/INDEX.tsv) |
 | [icon.png](icon.png) | The site favicon rasterised to 128 px |
-| [raw/](raw/) | Custom properties and computed styles the tokens were built from |
-| [tools/](tools/) | The builders (`build_tokens.py`, `build_style_guide.py`) and a test that compares the token file with an in-memory build. `kit/capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`) |
+| [raw/](raw/) | Custom properties, computed styles, and the 2026-11-21 Playwright measurements |
+| [tools/](tools/) | The builders (`build_tokens.py`, `build_style_guide.py`, `build_components_md.py`) and the Playwright capture scripts under `capture/`. `kit/capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`) |
 
 <!-- brief:start -->
 ## Brief
@@ -66,21 +67,21 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 Not graded yet: no scorecard snapshot reviews this package. Review it against [scorecard/criteria.json](../../scorecard/criteria.json) in the wording for its platform (`python3 tools/grade.py --criteria onefinestay` prints it) and merge the grades with `python3 tools/grade.py --write --review onefinestay=<grades.json>`.
 
-Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops, for the same screenshot-frame failure. Component values are in components.md and raw/components-computed.json), `screenshots/` (preview_snapshot returned 'The browser is not producing screenshot frames' on 2026-11-19. Computed styles were kept. No screenshot was invented).
+Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops, for the same screenshot-frame failure. Component values are in components.md and raw/components-computed.json), `evidence/screenshots/` (preview_snapshot returned 'The browser is not producing screenshot frames' on 2026-11-19. Computed styles were kept. No screenshot was invented).
 
 <!-- health:end -->
 
 ## How the values were read
 
-The T3 preview browser opened `https://www.onefinestay.com/` with `reuseExistingTab` false. The page loaded signed out. The title was "Luxury Vacation Rentals, Luxury Villa & Home Rentals | onefinestay". No Cloudflare challenge appeared. Computed styles and custom properties were read with `preview_evaluate` on the live page. Lab colours were rasterised to sRGB through a 1 by 1 canvas with `colorSpace: srgb`. Those hex values are in [raw/css-vars.json](raw/css-vars.json). Element readings are in [raw/components-computed.json](raw/components-computed.json).
+Token values in [tokens.json](tokens.json) still come from the 2026-11-19 readings in [raw/css-vars.json](raw/css-vars.json) and [raw/components-computed.json](raw/components-computed.json). Lab colours in that file were rasterised to sRGB through a 1 by 1 canvas. Those hex values were not re-derived in this recapture, because the catalog swatch paths depend on them and this capture was told not to edit catalog.json.
 
-`preview_snapshot` returned "The browser is not producing screenshot frames." Measurements already read were kept. No screenshot was invented. The cookie banner was hidden in the DOM after a close click left it on screen. Accept was not clicked.
+Screenshots were taken on 2026-11-21 with headless Chromium through Playwright, not the T3 preview browser. Each route used a fresh browser context. Same-context navigation often returns a 403 security-verification interstitial. The cookie banner is in [home-light-cookie.png](evidence/screenshots/home-light-cookie.png) and [mobile-home-light-cookie.png](evidence/screenshots/mobile-home-light-cookie.png). Accept, Continue, and Cookies Settings were not clicked. Later shots hide `#onetrust-consent-sdk` with `display: none` so menus can open. That is a remove-only hide, not a consent choice. A second Playwright reading is in [raw/measurements.json](raw/measurements.json). It confirms the same brand ramp. It is not what `build_tokens.py` writes.
 
-The enquire form was opened and measured empty. It asks for a phone number. Nothing was typed into it. The listing Check Availability button was not pressed. Search filters were not applied.
+The enquire form was opened empty and not filled. The listing Check Availability button was not pressed. Search filters were opened and not applied. Login, signup, and forgot-password were recorded as walls and not filled.
 
 ## What to distrust
 
-There are no screenshots in this package. The coverage table names the pages that were measured. It cannot show them.
+Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the files. Published contact numbers and the contact email were painted out of the contact and footer shots before quantization, because this package must not store an email or a phone number. The company registration number in the copyright line was left. Destination names in [site-tree.md](site-tree.md) are public menu labels.
 
 `--accent` resolves to `#f5f5f5`. The painted coral is `--brand-500` (`#ff8065`). The catalog swatch uses brand 500. A reader who follows the shadcn `--accent` name will paint a grey page.
 
@@ -109,7 +110,7 @@ Akkurat's computed generic family was `serif`. The font files are Akkurat Std. T
 
 | Checklist item | Status |
 |---|---|
-| Colour, light | Captured from resolved custom properties and computed controls. No screenshot. |
+| Colour, light | Captured from resolved custom properties and computed controls. Screenshots are in [screenshots/](evidence/screenshots/). |
 | Colour, dark | Not present. No `prefers-color-scheme` rule on the marketing sheets. |
 | Type | Captured. Tiempos for headings, Akkurat for UI. Phone heading size captured at 390. |
 | Spacing, radius, border, elevation | Captured from computed padding, radius, border and the search bar shadow. |
@@ -122,8 +123,9 @@ Akkurat's computed generic family was `serif`. The font files are Akkurat Std. T
 | Checkbox | Size captured. Not toggled. |
 | Radio, switch | Not present as product controls on the measured pages. |
 | Tabs | Journal category links measured. Not a tab widget. |
-| Menu | Desktop disclosure controls and the phone menu button were seen. Neither menu was opened. |
-| Tooltip, dialog, toast | Not opened. |
+| Menu | Destinations, Inspiration, account, and the phone drawer are open in the 2026-11-21 screenshots. See [site-tree.md](site-tree.md). |
+| Tooltip | Not present. |
+| Dialog | Cookie, dates, guests, login wall, and listing gallery are in the 2026-11-21 screenshots. Toast was not opened. |
 | Card | Home listing card type and title measured. No crop. |
 | List row | Search count measured. Result rows were not measured one by one. |
 | Table | Not present. |
@@ -135,8 +137,8 @@ Akkurat's computed generic family was `serif`. The font files are Akkurat Std. T
 | Destructive confirmation | Not present on the measured pages. |
 | Search and filtering | The search page and its closed filters were measured. No filter was applied. |
 | Onboarding | Not present signed out. |
-| Phone width | Home and search header measured at innerWidth 390. Full phone screenshots were not taken. |
-| Screenshots | Not captured. `preview_snapshot` returned "The browser is not producing screenshot frames." |
+| Phone width | Home, destination, search, listing, enquire, wishlist, about, journal, and the login wall were shot at 390x844. |
+| Screenshots | 62 public captures on 2026-11-21. The 2026-11-19 preview browser produced no frames. Those frames are not in this package. |
 
 ## Do and don't
 
@@ -150,7 +152,15 @@ Akkurat's computed generic family was `serif`. The font files are Akkurat Std. T
 cd systems/onefinestay
 python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
-python3 tools/catalog.py design-md onefinestay
+python3 tools/build_components_md.py
 ```
 
-The second command is run from the repository root as `python3 tools/catalog.py design-md onefinestay`.
+From the repository root, `python3 tools/catalog.py design-md onefinestay` rewrites DESIGN.md. This capture does not edit catalog.json, so that command is not part of the recapture commit.
+
+Playwright recapture, from the repository root:
+
+```bash
+PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
+  node systems/onefinestay/tools/capture/public/public.mjs
+python3 systems/onefinestay/tools/capture/quantize.py ~/.design-systems/onefinestay/raw-shots
+```
