@@ -1,0 +1,113 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.brooklinen.com/",
+  "title": "Luxury Bedding, Sheets & Comforters Online | Brooklinen",
+  "productUrl": "https://www.brooklinen.com/products/luxe-core-sheet-set",
+  "productTitle": "Luxe Sateen Sheet Set | Softest 100% Cotton Sheets | Brooklinen",
+  "loginUrl": "https://account.brooklinen.com/authentication/login",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "region": "Signed-out preview. Account host locale en-SG. Prices on the product page read USD.",
+  "body": {
+    "backgroundColor": "rgb(253, 250, 248)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Times",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "promoBar": {
+    "backgroundColor": "rgb(40, 52, 85)",
+    "height": "40px",
+    "linkFontFamily": "BrandonTextWeb-Bold",
+    "linkFontSize": "14px",
+    "linkColor": "rgb(255, 255, 255)"
+  },
+  "header": {
+    "backgroundColor": "rgb(253, 250, 248)",
+    "height": "90px"
+  },
+  "nav": {
+    "fontFamily": "BrandonTextWeb-Regular",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "color": "rgb(40, 52, 85)",
+    "letterSpacing": "-0.18px"
+  },
+  "hero": {
+    "fontFamily": "ToledoTS-Bold",
+    "fontSize": "45px",
+    "fontWeight": "400",
+    "color": "rgb(255, 255, 255)"
+  },
+  "shopSale": {
+    "fontFamily": "BrandonTextWeb-Bold",
+    "fontSize": "14px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(40, 52, 85)",
+    "height": "56px",
+    "borderRadius": "20px"
+  },
+  "mystery": {
+    "backgroundColor": "rgb(116, 1, 3)",
+    "height": "104px",
+    "color": "rgb(255, 255, 255)"
+  },
+  "product": {
+    "titleFontFamily": "BrandonTextWeb-Bold",
+    "titleFontSize": "20px",
+    "titleColor": "rgb(40, 52, 85)",
+    "compareColor": "rgb(110, 110, 110)",
+    "saleFontFamily": "BrandonTextWeb-Bold",
+    "saleFontSize": "18px",
+    "saleColor": "rgb(40, 52, 85)"
+  },
+  "addToCart": {
+    "text": "Add to Cart",
+    "fontFamily": "BrandonTextWeb-Bold",
+    "fontSize": "14px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(40, 52, 85)",
+    "height": "56px",
+    "borderRadius": "20px",
+    "border": "1px solid rgb(40, 52, 85)",
+    "clicked": false
+  },
+  "sizeChip": {
+    "selectedText": "Twin",
+    "fontFamily": "BrandonTextWeb-Bold",
+    "fontSize": "14px",
+    "selectedColor": "rgb(255, 255, 255)",
+    "selectedBackground": "rgb(40, 52, 85)",
+    "unselectedColor": "rgb(40, 52, 85)",
+    "unselectedBackground": "rgba(0, 0, 0, 0)",
+    "height": "40px",
+    "borderRadius": "16px",
+    "border": "1px solid rgb(40, 52, 85)"
+  },
+  "nudge": {
+    "backgroundColor": "rgb(170, 63, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "8px",
+    "height": "16px",
+    "borderRadius": "8px",
+    "note": "Account icon count bubble. Not an inbox and not a username."
+  },
+  "login": {
+    "backgroundColor": "rgb(253, 250, 248)",
+    "heading": "Sign in",
+    "headingColor": "rgb(9, 15, 26)",
+    "headingFontFamily": "\"1wJ9VNCD\", sans-serif",
+    "headingFontSize": "15px",
+    "headingFontWeight": "600",
+    "subColor": "rgba(9, 15, 26, 0.56)",
+    "fieldHeight": "53px",
+    "fieldBorderRadius": "20px",
+    "fieldBorder": "1px solid rgb(40, 52, 85)",
+    "fieldBackground": "rgb(255, 255, 255)",
+    "shopButtonBackground": "rgb(84, 51, 235)",
+    "shopButtonHeight": "52px",
+    "shopButtonRadius": "20px",
+    "shopButtonFontFamily": "GTStandard-M, sans-serif",
+    "emailEmpty": true,
+    "submitted": false
+  }
+}
