@@ -23,10 +23,12 @@ class TokenSourceTest(unittest.TestCase):
         missing = [path for path, node in walk(data) if not (node.get("$extensions") or {}).get("source")]
         self.assertEqual(missing, [])
 
-    def test_dark_page_is_black(self):
+    def test_both_themes_have_a_page(self):
         data = json.loads(TOKENS.read_text())
         self.assertEqual(data["dark"]["surface"]["page"]["$value"], "#000000")
         self.assertEqual(data["dark"]["text"]["primary"]["$value"], "#ededed")
+        self.assertEqual(data["light"]["surface"]["page"]["$value"], "#fafafa")
+        self.assertEqual(data["light"]["text"]["primary"]["$value"], "#171717")
 
 
 if __name__ == "__main__":

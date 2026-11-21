@@ -1,54 +1,72 @@
 # Vercel components
 
-Measured on 2026-11-19 from a T3 preview tab at CSS viewport 1169 by 731, devicePixelRatio 2. Pages: https://vercel.com/, https://vercel.com/login, https://vercel.com/pricing, https://vercel.com/geist/button, and https://vercel.com/docs. No screenshot frames were produced, so there are no crops.
+Measured on 2026-11-21 with headless Playwright, signed out. Desktop is
+1440 by 900 at devicePixelRatio 1. Phone is 390 by 844 at devicePixelRatio 2.
+Light is the default. Dark was set with the footer `dark` label.
 
 ## Button
 
-Header "Sign Up" on https://vercel.com/ is an anchor. Background `rgb(237, 237, 237)`, text `rgb(10, 10, 10)`, height 32px, padding `0 6px`, radius 6px, font GeistSans 14px weight 500, line-height 21px, shadow none.
+Header "Sign Up" is an anchor.
 
-Header "Log In" and "Get a Demo" use background `rgb(10, 10, 10)`, text `rgb(237, 237, 237)`, the same 32px height and 6px radius, and a 1px ring `rgb(46, 46, 46)`.
+| Theme | Background | Text | Height | Radius | Type |
+|---|---|---|---|---|---|
+| Light | `rgb(23, 23, 23)` | `rgb(255, 255, 255)` | 32px | 6px | GeistSans 14px weight 500, padding `0px 6px` |
+| Dark | `rgb(237, 237, 237)` | `rgb(10, 10, 10)` | 32px | 6px | same size |
 
-Hero "Deploy now" is the light face at 40px height, padding `0 12px`, 16px type, and a pill radius (`1.67772e+07px`). "Talk to sales" is the dark ringed face at the same size.
+Header "Log In" swaps those fills: white on light, `rgb(10, 10, 10)` with
+`rgb(237, 237, 237)` text in dark.
 
-Login "Continue with Email" is a button, 40px height, padding `0 14px`, radius 8px, background `rgb(237, 237, 237)`, text `rgb(10, 10, 10)`. "Continue with Google", GitHub, ChatGPT, SAML SSO, and Passkey share the dark face, 8px radius, and the `rgb(46, 46, 46)` ring.
+Login "Continue with Email" is a button, 40px, padding `0px 14px`, radius
+8px, background `rgb(23, 23, 23)`, text `rgb(255, 255, 255)`. Crop:
+[components/crops/button-primary-default.png](components/crops/button-primary-default.png).
 
-Geist docs at https://vercel.com/geist/button show three sizes of "Upload": 32px (padding `0 6px`, radius 6px), 36px (padding `0 10px`, radius 6px), and 40px (padding `0 14px`, radius 8px). Default is the light face. Error is `oklch(0.5801 0.227 25.12)` with white text, canvas sRGB `#e2162a`. Warning is `oklch(0.7721 0.1991 64.28)` with `rgb(10, 10, 10)` text, canvas sRGB `#ff9300`. Secondary is the dark ringed face. Tertiary is transparent with `rgb(237, 237, 237)` text.
+"Continue with Google" is a white button, 40px, radius 8px, text
+`rgb(23, 23, 23)`. Crop:
+[components/crops/button-secondary-default.png](components/crops/button-secondary-default.png).
+It was not clicked. GitHub, ChatGPT, SAML SSO, Passkey, and Apple were not clicked.
 
-Disabled and loading "Upload" on that page compute background `rgb(26, 26, 26)`, text `rgb(143, 143, 143)`, opacity 1, cursor `not-allowed`. Hover, focus-visible, and pressed were not shown.
+Hover, pressed, disabled, and loading were not forced.
 
 ## Link
 
-Login "Sign Up" under the form is `oklch(0.717 0.1648 250.794)`, canvas sRGB `#47a8ff`, 16px, weight 400. Footer "Terms" and "Privacy Policy" are `rgb(135, 135, 135)` at 12px. Skip-to-content uses the same link colour.
+Login "Sign Up" is a blue text link under the form. Its colour was not
+isolated from the link custom property. `--geist-link-color` is
+`hsla(212, 100%, 48%, 1)` in light and `hsla(210, 100%, 66%, 1)` in dark.
 
 ## Text field
 
-Login email input is `input[name=email]`, placeholder "Email Address", 320 by 40 CSS pixels, background `rgb(10, 10, 10)`, color `rgb(255, 255, 255)`, 16px weight 400. The input itself has radius 0. The wrap has radius 8px and a 1px shadow `rgba(255, 255, 255, 0.14)`. The wrap class includes `duration-150`. The field was not filled and the form was not submitted. Focus, error, and disabled field states were not shown.
+Login email input, empty, placeholder "Email Address". 40px height, padding
+`0px 12px`, radius 0 on the input, background `rgb(255, 255, 255)`, color
+`rgb(0, 0, 0)`. Focus did not change those computed colours. The field was
+not filled. The form was not submitted.
+
+Crops: [text-field-default.png](components/crops/text-field-default.png),
+[text-field-focus.png](components/crops/text-field-focus.png).
 
 ## Text area, select, checkbox, radio, switch
 
-Not present on the public pages that were opened. Geist lists Checkbox in its nav. That page was not opened, so those controls are not captured.
+Not present on the pages that were opened.
 
-## Tabs, menu, tooltip, dialog, toast
+## Menu and dialog
 
-Not opened. Login "Show other options" is a button and was not clicked. Docs search is a button labelled "Search Docs", 264 by 36, radius 6px, 14px, color `rgb(161, 161, 161)`. The search dialog was not opened.
+Products and Resources open one dialog, "Navigation menu". Phone "Open menu"
+opens a full-screen dialog. Screenshots:
+[products-menu-light-desktop.png](screenshots/products-menu-light-desktop.png),
+[products-menu-dark-desktop.png](screenshots/products-menu-dark-desktop.png),
+[menu-light-phone.png](screenshots/menu-light-phone.png),
+[menu-dark-phone.png](screenshots/menu-dark-phone.png).
 
-## Card
+Tooltip, toast, and a search dialog were not opened.
 
-Pricing plan columns on https://vercel.com/pricing were not given a separate card measurement. Plan actions were measured: "Start deploying" is a dark pill, 36px, 14px weight 500. "Start a free trial" and "Start a free Pro trial" are light pills at the same size. "Contact Sales" is a dark pill. Those links were not followed. "Popular" on the Pro plan was visible in the page text. Its box was not isolated.
+## Card, table, list row, avatar, badge
 
-## Table, list row, avatar, badge
-
-Pricing comparison text is on the page. Individual table cells were not measured. No avatar or badge component was isolated. Geist lists Avatar and Badge. Those pages were not opened.
+Pricing plan columns are visible in
+[pricing-light-desktop.png](screenshots/pricing-light-desktop.png). Their
+boxes were not isolated. Table, list row, avatar, and badge were not captured
+as components.
 
 ## Code
 
-Docs `pre` on https://vercel.com/docs computes Geist Mono at 16px, background `rgb(10, 10, 10)`, color `rgb(237, 237, 237)`, bottom radius 8px. A code sample on https://vercel.com/geist/button computes Geist Mono at 13.7143px, background `rgb(26, 26, 26)`, color `rgb(161, 161, 161)`.
-
-## Gaps
-
-- Hover, focus-visible, and pressed were not shown.
-- The login email field was not filled. Signup was not submitted.
-- Google, GitHub, ChatGPT, SAML SSO, and Passkey were not followed.
-- No card, paid team, or org SSO was entered.
-- No public screenshots or crops. `preview_snapshot` returned "The browser is not producing screenshot frames" on 2026-11-19.
-- The 2026-11-21 dashboard frames are viewport shots, not crops. Save on Team Settings matches the light 32px face. The domains search field is 36px on `rgb(26, 26, 26)`. Those values are recorded in [login-review.json](login-review.json) and were not written into tokens.json.
+Docs `pre` on the light docs landing is Geist Mono 16px weight 400,
+background `rgb(255, 255, 255)`, color `rgb(23, 23, 23)`, radius
+`0px 0px 8px 8px`, padding `16px 0px`.
