@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-22",
+  "name": "industry-media-light-1440",
+  "url": "https://newrelic.com/solutions/industry/digital-media-monitoring",
+  "requestedUrl": "https://newrelic.com/solutions/industry/digital-media-monitoring",
+  "title": "Media and entertainment observability and monitoring | New Relic",
+  "h1": "New Relic for Media and Entertainment",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(229, 228, 216)",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

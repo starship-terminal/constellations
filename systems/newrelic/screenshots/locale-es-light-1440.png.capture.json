@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-22",
+  "name": "locale-es-light-1440",
+  "url": "https://newrelic.com/es",
+  "requestedUrl": "https://newrelic.com/es",
+  "title": "Observabilidad impulsada por IA",
+  "h1": "",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(229, 228, 216)",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}
