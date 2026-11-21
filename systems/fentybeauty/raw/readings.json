@@ -1,0 +1,342 @@
+{
+  "capturedAt": "2026-11-22",
+  "region": "Singapore",
+  "requestedUrl": "https://fentybeauty.com",
+  "landedUrl": "https://fentybeauty.com/en-sg",
+  "title": "Fenty Beauty by Rihanna | Beauty for All",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "png": {
+      "width": 2880,
+      "height": 1800
+    }
+  },
+  "body": {
+    "text": "Skip to content New Holiday Windows Collection. Make your wish list a reality. | PEEK INSI",
+    "color": "rgb(45, 41, 41)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Brown, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "normal",
+    "lineHeight": "24px",
+    "textTransform": "none",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "textDecoration": "none",
+    "width": 1440,
+    "height": 6039
+  },
+  "promo": {
+    "text": "New Holiday Windows Collection. Make your wish list a reality. | PEEK INSIDE Create an acc",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(0, 0, 0)",
+    "fontFamily": "Brown, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "normal",
+    "lineHeight": "24px",
+    "textTransform": "none",
+    "borderRadius": "0px",
+    "padding": "10px",
+    "textDecoration": "none",
+    "width": 1440,
+    "height": 37
+  },
+  "signIn": {
+    "text": "Sign In",
+    "color": "rgb(45, 41, 41)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Brown",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "letterSpacing": "normal",
+    "lineHeight": "15.96px",
+    "textTransform": "none",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "textDecoration": "none",
+    "width": 64,
+    "height": 18
+  },
+  "eyebrow": {
+    "text": "GIFT GUIDE",
+    "color": "rgb(45, 41, 41)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Brown",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "letterSpacing": "0.36px",
+    "lineHeight": "15.96px",
+    "textTransform": "uppercase",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "textDecoration": "none",
+    "width": 67,
+    "height": 16
+  },
+  "headline": {
+    "text": "GIFTS SO GOOD YOU\u2019LL WANT \u2018EM TOO",
+    "color": "rgb(45, 41, 41)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Brown",
+    "fontSize": "48px",
+    "fontWeight": "700",
+    "letterSpacing": "0.48px",
+    "lineHeight": "48px",
+    "textTransform": "none",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "textDecoration": "none",
+    "width": 600,
+    "height": 96
+  },
+  "deck": {
+    "text": "Peek through the Holiday Windows Collection + find something for everyone on your list.",
+    "color": "rgb(45, 41, 41)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Brown",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "normal",
+    "lineHeight": "22.08px",
+    "textTransform": "none",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "textDecoration": "none",
+    "width": 600,
+    "height": 44
+  },
+  "cta": {
+    "text": "GET GIFTIN\u2019",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Brown Optical\", Brown",
+    "fontSize": "12px",
+    "fontWeight": "700",
+    "letterSpacing": "0.3px",
+    "lineHeight": "15.96px",
+    "textTransform": "uppercase",
+    "borderRadius": "0px",
+    "padding": "15px 20px",
+    "textDecoration": "none",
+    "width": 113,
+    "height": 40
+  },
+  "hero": {
+    "backgroundColor": "rgb(253, 203, 212)",
+    "width": 720,
+    "height": 650
+  },
+  "nav": [
+    {
+      "text": "The Holiday Windows Collection",
+      "href": "/en-sg/collections/holiday"
+    },
+    {
+      "text": "New + Bestsellers",
+      "href": "/en-sg/collections/new-best-sellers"
+    },
+    {
+      "text": "Makeup",
+      "href": "/en-sg/collections/makeup-shop-all"
+    },
+    {
+      "text": "Skincare",
+      "href": "/en-sg/collections/skincare-shop-all"
+    },
+    {
+      "text": "Body",
+      "href": "/en-sg/collections/body-shop-all"
+    },
+    {
+      "text": "Hair",
+      "href": "/en-sg/collections/hair-shop-all"
+    },
+    {
+      "text": "Fragrance",
+      "href": "/en-sg/collections/fragrance-shop-all"
+    },
+    {
+      "text": "Sale",
+      "href": "/en-sg/collections/sale"
+    },
+    {
+      "text": "Discover",
+      "href": "#"
+    }
+  ],
+  "category": {
+    "href": "https://fentybeauty.com/en-sg/collections/makeup-shop-all",
+    "title": "Makeup Products | All Makeup | Fenty Beauty",
+    "heading": {
+      "text": "ALL MAKEUP",
+      "color": "rgb(45, 41, 41)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Brown",
+      "fontSize": "24px",
+      "fontWeight": "700",
+      "letterSpacing": "0.24px",
+      "lineHeight": "24px",
+      "textTransform": "uppercase",
+      "width": 150,
+      "height": 24
+    }
+  },
+  "product": {
+    "href": "https://fentybeauty.com/en-sg/products/glossy-posse-ix-4-piece-lip-set",
+    "title": "Glossy Posse IX 4-Piece Lip Set",
+    "heading": {
+      "text": "GLOSSY POSSE IX 4-PIECE LIP SET",
+      "color": "rgb(45, 41, 41)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Brown",
+      "fontSize": "24px",
+      "fontWeight": "700",
+      "letterSpacing": "0.24px",
+      "lineHeight": "24px",
+      "textTransform": "uppercase",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "textDecoration": "none",
+      "width": 388,
+      "height": 24,
+      "y": 245
+    },
+    "prices": [
+      {
+        "text": "$85.00 SGD",
+        "color": "rgb(102, 102, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Brown",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "lineHeight": "22.08px",
+        "textTransform": "none",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "textDecoration": "none",
+        "width": 90,
+        "height": 15,
+        "y": 287
+      },
+      {
+        "text": "$150.00 SGD",
+        "color": "rgb(102, 102, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Brown",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "lineHeight": "22.08px",
+        "textTransform": "none",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "textDecoration": "none",
+        "width": 93,
+        "height": 15,
+        "y": 287
+      },
+      {
+        "text": "$150.00 SGD",
+        "color": "rgb(189, 1, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Brown",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "letterSpacing": "normal",
+        "lineHeight": "22.08px",
+        "textTransform": "none",
+        "borderRadius": "0px",
+        "padding": "0px",
+        "textDecoration": "line-through",
+        "width": 93,
+        "height": 15,
+        "y": 287
+      }
+    ],
+    "add": {
+      "text": "ADD TO BAG",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "fontFamily": "\"Brown Optical\", Brown",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "letterSpacing": "0.3px",
+      "lineHeight": "15.96px",
+      "textTransform": "uppercase",
+      "borderRadius": "0px",
+      "padding": "15px 20px",
+      "textDecoration": "none",
+      "width": 428,
+      "height": 40,
+      "y": 469
+    },
+    "sale": {
+      "text": "$150.00 SGD",
+      "color": "rgb(189, 1, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Brown",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "lineHeight": "22.08px",
+      "textTransform": "none",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "textDecoration": "line-through",
+      "width": 93,
+      "height": 15,
+      "y": 287
+    },
+    "badge": {
+      "text": "New",
+      "color": "rgb(45, 41, 41)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Brown, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "lineHeight": "24px",
+      "textTransform": "none",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "textDecoration": "none",
+      "width": 518,
+      "height": 38,
+      "y": 192
+    },
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2
+  },
+  "cssTokensFromPreview": {
+    "--color-background": "#ffffff",
+    "--color-background-secondary": "#efefef",
+    "--color-foreground": "#2d2929",
+    "--color-foreground-secondary": "#666666",
+    "--color-accent-01": "#e0beb1",
+    "--color-accent-02": "#ebdad3",
+    "--color-accent-03": "#f2eae8",
+    "--color-accent-04": "#684537",
+    "--color-border-01": "#d8d8d8",
+    "--color-border-02": "#efefef",
+    "--color-disabled": "#a8a8a8",
+    "--color-link": "#000000",
+    "--color-danger": "#bd0100",
+    "--button-primary-color": "#ffffff",
+    "--button-primary-bg": "#000000",
+    "--button-primary-hover-color": "#000000",
+    "--button-primary-hover-bg": "#ffffff",
+    "--button-primary-disabled-bg": "#a8a8a8"
+  },
+  "note": "Shared preview of https://fentybeauty.com redirected to /en-sg and showed Singapore | English. Screenshot frames from that tab then failed twice. These PNGs are a later headless Chromium pass of the same public Singapore URLs, signed out. Cookie Reject was clicked so the banner would not cover the fold. No account, cart, subscribe, or identity form was submitted."
+}
