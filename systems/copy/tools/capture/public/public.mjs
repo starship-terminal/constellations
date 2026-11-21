@@ -62,14 +62,14 @@ const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).cat
 
 // The Platform/Use cases/Resources/GTM AI mega-menus are Webflow dropdowns:
 // hover opens them on desktop, click is the fallback. Local UI only.
-async function openMegaMenu(p, S) {
-  const t = p.locator('.mega--nav_dd_toggle').filter({ hasText: /Platform/ }).filter({ visible: true }).first();
+async function openMegaMenu(p, S, label, shot) {
+  const t = p.locator('.mega--nav_dd_toggle').filter({ hasText: new RegExp(label) }).filter({ visible: true }).first();
   if (!(await t.count())) return;
   await t.hover({ timeout: 5000 }).catch(() => {});
   await wait(p, 1200);
   const list = p.locator('.mega--nav_dd_list:visible, .w-dropdown-list.w--open:visible').first();
   if (!(await list.count())) { await clickEl(t); await wait(p, 1200); }
-  await S.view('menu');
+  await S.view(shot);
   await p.keyboard.press('Escape');
   await p.mouse.move(700, 500);
   await wait(p, 800);
@@ -78,7 +78,10 @@ async function openMegaMenu(p, S) {
 const desktop = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.view('default');
-    await step('menu', async () => { await openMegaMenu(p, S); });
+    await step('menu-platform', async () => { await openMegaMenu(p, S, 'Platform', 'menu'); });
+    await step('menu-use-cases', async () => { await openMegaMenu(p, S, 'Use cases', 'menu-use-cases'); });
+    await step('menu-resources', async () => { await openMegaMenu(p, S, 'Resources', 'menu-resources'); });
+    await step('menu-gtm', async () => { await openMegaMenu(p, S, 'GTM AI', 'menu-gtm'); });
     await S.full();
   } },
   pricing: { path: '/prices', wait: 9000, run: async (p, S) => {
@@ -119,8 +122,30 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
-  // The public auth surface on its own host (app.copy.ai/login redirects to
-  // login.copy.ai): captured as a surface, never submitted.
+  // Public pages named by the homepage site tree. Forms are not submitted.
+  demo: { path: '/request-a-demo', wait: 9000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  chat: { path: '/chat', wait: 9000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  infobase: { path: '/features/infobase', wait: 9000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  tools: { path: '/tools', wait: 9000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  gtm: { path: '/gtm-ai', wait: 9000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  privacy: { path: '/privacy-notice', wait: 9000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  webinars: { path: '/webinars', wait: 9000, run: async (p, S) => {
+    await S.view('default');
+  } },
+  // Auth wall only. Opened to confirm the stop, never submitted, no identity
+  // provider clicked. The email field is left empty.
   login: { url: 'https://app.copy.ai/login', wait: 12000, run: async (p, S) => {
     await S.view('default');
   } },

@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from copy.ai on 2026-11-12 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the home page, /prices, /contact-us and the public login.copy.ai auth card — with the HubSpot cookie banner and chat widget hidden (never answered) — and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from copy.ai on 2026-11-21 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the home page, /prices, /contact-us and the public login.copy.ai auth card — with the HubSpot cookie banner and chat widget hidden (never answered) — and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -97,7 +97,7 @@ Page: home. Selector: `.mega--nav_dd_toggle`. States: default, hover, focus-visi
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
-| Box shadow | none | #171717 0px -1px 0px 0px inset | = | #171717 0px -1px 0px 0px inset |
+| Box shadow | none | #171717 0px -1px 0px 0px inset | = | #171717 0px -0.999058px 0px 0px inset |
 | Outline | none | = | 2px solid #4d65ff offset 2px | = |
 | Font | Inter 16px/24px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
@@ -107,7 +107,7 @@ Page: home. Selector: `.mega--nav_dd_toggle`. States: default, hover, focus-visi
 | Cursor | pointer | = | = | = |
 | Icon | 20 x 20, colour #222222 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 shadow #171717 0px -1px 0px 0px inset | div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 outline 2px solid #4d65ff offset 2px | div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 shadow #171717 0px -1px 0px 0px inset |
+| Painted layers | - | div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 shadow #171717 0px -1px 0px 0px inset | div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 outline 2px solid #4d65ff offset 2px | div.mega--nav_dd_toggle.w-dropdown-toggle 132.3x88.0 shadow #171717 0px -0.999058px 0px 0px inset |
 
 Crops: `nav-dd-toggle-default.png`, `nav-dd-toggle-hover.png`, `nav-dd-toggle-focus-visible.png`, `nav-dd-toggle-pressed.png`.
 
@@ -170,7 +170,7 @@ Page: home. Selector: `opened Platform dropdown`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 389 |
+| Size (w x h) | 1440 x 365 |
 | Padding | 40px |
 | Border | T: 1px solid #e0e0e0; R: none; B: none; L: none |
 | Radius | 0px |
@@ -183,7 +183,7 @@ Page: home. Selector: `opened Platform dropdown`. States: default.
 | Text node | div: Inter 12px/24px 500, #171717 |
 | Transition | none |
 | Icon | 16 x 16, colour #171717 |
-| Painted layers | nav.mega--nav_dd_list.w-dropdown-list 1440.0x389.0 bg #ffffff border T:1px solid #e0e0e0 shadow #000000 @ 0.03 0px 40px 34px 0px; div.dd_group_heading-wr 277.3x41.0 border B:1px solid #e0e0e0; div.dd-link_icon-wr 32.0x32.0 bg #fbfbfc border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px; div.dd-link_icon-wr 32.0x32.0 bg #fbfbfc border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px; div.dd-link_icon-wr 32.0x32.0 bg #fbfbfc border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px; div.dd_group_heading-wr 277.3x41.0 border B:1px solid #e0e0e0 |
+| Painted layers | nav.mega--nav_dd_list.w-dropdown-list 1440.0x365.0 bg #ffffff border T:1px solid #e0e0e0 shadow #000000 @ 0.03 0px 40px 34px 0px; div.dd_group_heading-wr 277.3x41.0 border B:1px solid #e0e0e0; div.dd-link_icon-wr 32.0x32.0 bg #fbfbfc border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px; div.dd-link_icon-wr 32.0x32.0 bg #fbfbfc border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px; div.dd-link_icon-wr 32.0x32.0 bg #fbfbfc border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px; div.dd_group_heading-wr 277.3x41.0 border B:1px solid #e0e0e0 |
 | How | at rest |
 
 Crops: `nav-dd-panel-default.png`.
@@ -432,7 +432,7 @@ Page: home. Selector: `a.blog-slider_card`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 360 x 462.78 | = | = | = |
+| Size (w x h) | 360 x 510.78 | = | = | = |
 | Padding | 0px 8px | = | = | = |
 | Border | 1px solid #e0e0e0 | = | = | 1px solid #171717 |
 | Radius | 0px | = | = | = |
@@ -445,7 +445,7 @@ Page: home. Selector: `a.blog-slider_card`. States: default, hover, focus-visibl
 | Text node | h3.heading--h5: ABC Normal 24px/33.6px 500, #000b0f | = | = | = |
 | Transition | border-color 0.3s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.blog-slider_card.w-inline-block 360.0x462.8 bg #ffffff border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 | = | a.blog-slider_card.w-inline-block 360.0x462.8 bg #ffffff border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 outline 1px auto #005fcc offset 1px | a.blog-slider_card.w-inline-block 360.0x462.8 bg #ffffff border T:1px solid #171717 / R:1px solid #171717 / B:1px solid #171717 / L:1px solid #171717 |
+| Painted layers | a.blog-slider_card.w-inline-block 360.0x510.8 bg #ffffff border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 | = | a.blog-slider_card.w-inline-block 360.0x510.8 bg #ffffff border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 outline 1px auto #005fcc offset 1px | a.blog-slider_card.w-inline-block 360.0x510.8 bg #ffffff border T:1px solid #171717 / R:1px solid #171717 / B:1px solid #171717 / L:1px solid #171717 |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `blog-card-default.png`, `blog-card-hover.png`, `blog-card-focus-visible.png`, `blog-card-pressed.png`.
@@ -1042,7 +1042,7 @@ Page: mobile. Selector: `.mega--nav_burger_trigger`. States: default, hover, foc
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Outline | none | = | 1px auto #e59700 offset 1px | = |
 | Font | Inter 14px/20px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #171717 | = | = | = |
@@ -1050,7 +1050,7 @@ Page: mobile. Selector: `.mega--nav_burger_trigger`. States: default, hover, foc
 | Cursor | pointer | = | = | = |
 | Icon | 17.59 x 17.59, colour #171717, fill #000000 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.mega--nav_burger_trigger.w-inline-block 46.0x46.0 outline 1px auto #005fcc offset 1px | = |
+| Painted layers | - | = | a.mega--nav_burger_trigger.w-inline-block 46.0x46.0 outline 1px auto #e59700 offset 1px | = |
 
 Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-focus-visible.png`, `m-menu-button-pressed.png`.
 
@@ -1093,7 +1093,7 @@ Page: mobile. Selector: `mobile menu row`. States: default, hover, focus-visible
 | Border | T: none; R: none; B: 1px solid #e0e0e0; L: none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
-| Box shadow | none | #171717 0px -1px 0px 0px inset | = | #171717 0px -1px 0px 0px inset |
+| Box shadow | none | #171717 0px -1px 0px 0px inset | = | #171717 0px -0.999046px 0px 0px inset |
 | Outline | none | = | 2px solid #4d65ff offset 2px | = |
 | Font | Inter 16px/24px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
@@ -1102,7 +1102,7 @@ Page: mobile. Selector: `mobile menu row`. States: default, hover, focus-visible
 | Transition | all, box-shadow 0.2s, 0.4s ease, ease delay 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 20 x 20, colour #222222 | = | = | = |
-| Painted layers | div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 border B:1px solid #e0e0e0 | div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 border B:1px solid #e0e0e0 shadow #171717 0px -1px 0px 0px inset | div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 border B:1px solid #e0e0e0 outline 2px solid #4d65ff offset 2px | div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 border B:1px solid #e0e0e0 shadow #171717 0px -1px 0px 0px inset |
+| Painted layers | div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 border B:1px solid #e0e0e0 | div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 border B:1px solid #e0e0e0 shadow #171717 0px -1px 0px 0px inset | div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 border B:1px solid #e0e0e0 outline 2px solid #4d65ff offset 2px | div.mega--nav_dd_toggle.w-dropdown-toggle 350.0x89.0 border B:1px solid #e0e0e0 shadow #171717 0px -0.999046px 0px 0px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visible.png`, `m-nav-item-pressed.png`.
@@ -1121,13 +1121,13 @@ Page: mobile. Selector: `mobile menu Login`. States: default, hover, focus-visib
 | Radius | 8px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Outline | none | = | 1px auto #e59700 offset 1px | = |
 | Font | Inter 16px/24px 700 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #171717 | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.mega--nav_login-link 118.0x50.0 border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px | = | a.mega--nav_login-link 118.0x50.0 border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px outline 1px auto #005fcc offset 1px | = |
+| Painted layers | a.mega--nav_login-link 118.0x50.0 border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px | = | a.mega--nav_login-link 118.0x50.0 border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 8px outline 1px auto #e59700 offset 1px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `m-login-default.png`, `m-login-hover.png`, `m-login-focus-visible.png`, `m-login-pressed.png`.
@@ -1146,14 +1146,14 @@ Page: mobile. Selector: `mobile menu Contact Sales`. States: default, hover, foc
 | Radius | 4px | = | = | = |
 | Background | #693edf | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Outline | none | = | 1px auto #e59700 offset 1px | = |
 | Font | Inter 14px/20px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #171717 | = | = | = |
 | Text node | div.btn--primary_text.text-color-white: Inter 16px/24px 700, #ffffff | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn_nav.w-inline-block 208.0x50.0 bg #693edf r 4px | = | a.btn_nav.w-inline-block 208.0x50.0 bg #693edf r 4px outline 1px auto #005fcc offset 1px | = |
+| Painted layers | a.btn_nav.w-inline-block 208.0x50.0 bg #693edf r 4px | = | a.btn_nav.w-inline-block 208.0x50.0 bg #693edf r 4px outline 1px auto #e59700 offset 1px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `m-sales-default.png`, `m-sales-hover.png`, `m-sales-focus-visible.png`, `m-sales-pressed.png`.
@@ -1185,9 +1185,9 @@ Crops: `m-hero-default.png`.
 
 copy.ai serves its Webflow sheets cross-origin from cdn.prod.website-files.com, so the readable CSSOM holds only the inline styles; this list covers the transition rules the page itself exposes, and the per-state Transition rows above are the computed values the page paints.
 
-- contact: `inherit`, `unset`, `background-color 0.1s, color 0.1s`, `0.3s`, `border-color 0.3s, background-color 0.3s`, `background-color 0.15s`, `color 0.4s`, `background-color 0.3s`, `border-color 0.35s`, `color 0.2s, transform 0.2s`, `box-shadow 0.4s`, `opacity 0.2s, transform 0.2s`
+- contact: `unset`, `background-color 0.1s, color 0.1s`, `0.3s`, `border-color 0.3s, background-color 0.3s`, `background-color 0.15s`, `color 0.4s`, `background-color 0.3s`, `border-color 0.35s`, `color 0.2s, transform 0.2s`, `box-shadow 0.4s`, `opacity 0.2s, transform 0.2s`, `color 0.2s, box-shadow 0.2s, border-color 0.2s`
 
-- home: `inherit`, `unset`, `background-color 0.1s, color 0.1s`, `0.3s`, `border-color 0.3s, background-color 0.3s`, `color 0.1s`, `color 0.4s`, `background-color 0.3s`, `color 0.2s, transform 0.2s`, `opacity 0.3s`, `box-shadow 0.4s`, `opacity 0.2s, transform 0.2s`
+- home: `unset`, `background-color 0.1s, color 0.1s`, `0.3s`, `border-color 0.3s, background-color 0.3s`, `color 0.1s`, `color 0.4s`, `background-color 0.3s`, `color 0.2s, transform 0.2s`, `opacity 0.3s`, `box-shadow 0.4s`, `opacity 0.2s, transform 0.2s`, `0.2s`
 
 - login: `unset`, `inherit`, `box-shadow 0.12s`, `box-shadow 0.12s, background-color 0.12s`, `transform 0.12s`, `background-color 0.1s`, `background-position linear, background-color ease-in-out, box-shadow ease-in-out, filter ease-in-out`, `transform 0.14s cubic-bezier(0.45, 0.05, 0.55, 0.95), box-shadow 0.14s ease-in-out`, `none`, `box-shadow 0.18s`, `inline-size 0.3s cubic-bezier(0.22, 1, 0.36, 1)`, `opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0.15s`
 

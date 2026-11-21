@@ -770,7 +770,7 @@
   "megapanel": {
    "height": {
     "type": "dimension",
-    "value": "389px",
+    "value": "365px",
     "source": "computed height of nav-dd-panel default (raw/components-computed.json)",
     "description": "The 389px mega-menu panel."
    }

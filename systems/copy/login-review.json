@@ -1,0 +1,89 @@
+{
+  "offered": {
+    "nav": {
+      "items": [
+        "Platform menu: How it Works, Platform Components, Powering GTM AI, What are Workflows?, Building Workflows, Copy Agents, Tables, Actions, Brand Voice, plus three blog links",
+        "Use cases menu: Prospecting Cockpit, Inbound Lead Processing, Deal Coaching and Forecasting, Account Based Marketing, Content Creation, Translation and Localization, Lead and Account Intelligence, CRM Enrichment, GTM Systems Integrations, plus three blog links",
+        "Resources menu: Marketing, Sales, Operations, Blog, For The Enterprise, Trust Center, Webinars, Help Center, Contact Support, Changelog, plus three blog links",
+        "Pricing opens /prices",
+        "GTM AI menu: Marketing, Sales, Operations, Sales Development, Why GTM AI, Goodbye Copilots, The Problem with AI SDRs, plus three blog links",
+        "Login opens https://app.copy.ai/login",
+        "Get a Demo opens /request-a-demo",
+        "Phone burger menu: the same four menus, Pricing, Login, Contact Sales"
+      ],
+      "reached": [
+        "Platform menu: How it Works, Platform Components, Powering GTM AI, What are Workflows?, Building Workflows, Copy Agents, Tables, Actions, Brand Voice, plus three blog links",
+        "Use cases menu: Prospecting Cockpit, Inbound Lead Processing, Deal Coaching and Forecasting, Account Based Marketing, Content Creation, Translation and Localization, Lead and Account Intelligence, CRM Enrichment, GTM Systems Integrations, plus three blog links",
+        "Resources menu: Marketing, Sales, Operations, Blog, For The Enterprise, Trust Center, Webinars, Help Center, Contact Support, Changelog, plus three blog links",
+        "Pricing opens /prices",
+        "GTM AI menu: Marketing, Sales, Operations, Sales Development, Why GTM AI, Goodbye Copilots, The Problem with AI SDRs, plus three blog links",
+        "Get a Demo opens /request-a-demo",
+        "Phone burger menu: the same four menus, Pricing, Login, Contact Sales"
+      ]
+    },
+    "settings": {
+      "items": [
+        "no settings area on the public site",
+        "HubSpot cookie script is present and did not paint a banner in this session"
+      ],
+      "reached": [
+        "no settings area on the public site"
+      ]
+    },
+    "create": {
+      "items": [
+        "Sign up on the login card",
+        "Sign up with email on /chat",
+        "Get started on /prices",
+        "Continue with email, Continue with Google, and Continue with Microsoft on the login card"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    { "name": "Home", "file": "screenshots/home-light-default.png" },
+    { "name": "Home, full page", "file": "screenshots/home-light-full.png" },
+    { "name": "Platform menu", "file": "screenshots/home-light-menu.png" },
+    { "name": "Use cases menu", "file": "screenshots/home-light-menu-use-cases.png" },
+    { "name": "Resources menu", "file": "screenshots/home-light-menu-resources.png" },
+    { "name": "GTM AI menu", "file": "screenshots/home-light-menu-gtm.png" },
+    { "name": "Pricing", "file": "screenshots/pricing-light-default.png" },
+    { "name": "Pricing FAQ", "file": "screenshots/pricing-light-faq.png" },
+    { "name": "Pricing, full page", "file": "screenshots/pricing-light-full.png" },
+    { "name": "How it Works", "file": "screenshots/platform-light-default.png" },
+    { "name": "Prospecting Cockpit", "file": "screenshots/use-case-light-default.png" },
+    { "name": "Enterprise", "file": "screenshots/enterprise-light-default.png" },
+    { "name": "Blog", "file": "screenshots/blog-light-default.png" },
+    { "name": "Contact", "file": "screenshots/contact-light-default.png" },
+    { "name": "Contact, field focused", "file": "screenshots/contact-light-form-focus.png" },
+    { "name": "Changelog", "file": "screenshots/changelog-light-default.png" },
+    { "name": "Request a demo", "file": "screenshots/demo-light-default.png" },
+    { "name": "Chat marketing page", "file": "screenshots/chat-light-default.png" },
+    { "name": "Infobase", "file": "screenshots/infobase-light-default.png" },
+    { "name": "Free tools", "file": "screenshots/tools-light-default.png" },
+    { "name": "Why GTM AI", "file": "screenshots/gtm-light-default.png" },
+    { "name": "Privacy notice", "file": "screenshots/privacy-light-default.png" },
+    { "name": "Webinars", "file": "screenshots/webinars-light-default.png" },
+    { "name": "Login wall, stop", "file": "screenshots/login-light-default.png" },
+    { "name": "Home at 390", "file": "screenshots/mobile-home-light-default.png" },
+    { "name": "Phone menu", "file": "screenshots/mobile-home-light-menu.png" },
+    { "name": "Pricing at 390", "file": "screenshots/mobile-pricing-light-default.png" }
+  ],
+  "gaps": [
+    "app.copy.ai product was not entered. Login redirects to the sign-in card and the branch stopped there.",
+    "Sign up was not opened. It sits on the login card and on /chat.",
+    "Continue with Google and Continue with Microsoft were not clicked.",
+    "No account settings exist on the public site.",
+    "The homepage email form and the demo request form were not submitted.",
+    "Free Tools search was not submitted.",
+    "Trust Center, Help Center, Status, Careers, and social profiles leave this host and were not captured.",
+    "Individual blog posts named in the menus were not walked.",
+    "The phone menu rows were photographed closed. Desktop menus were opened."
+  ],
+  "not_submitted": [
+    "No email, password, phone, or code was typed.",
+    "No identity provider was clicked.",
+    "No form was submitted, including the homepage email field, the demo request, contact, and search.",
+    "No account was created and nothing was bought."
+  ]
+}
