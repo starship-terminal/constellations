@@ -18,6 +18,7 @@ Julienne is a recipe cookbook. The public site is a Vite and Tailwind app: a gla
 | [icons/](icons) | Inline SVGs and [icons/INDEX.tsv](icons/INDEX.tsv) |
 | [tools/](tools) | Capture runners and builders |
 | [capture.pr](capture.pr) | Pull request for this package |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or wall. Mapped 2026-11-21 from the live home page, before any new screenshots |
 
 ## Brief
 
@@ -168,7 +169,12 @@ Screenshots are 256-colour PNGs. Read colours from tokens.json. The home hero ph
 | Search and filtering | Captured. Discover chips and `/search?ingredients=apple` |
 | Onboarding | Not captured. Signup is the boundary, not a completed flow |
 | Phone 390 | Captured. [mobile-home-light-default](screenshots/mobile-home-light-default.png) |
-| Dark theme | Captured via Toggle theme |
+| Dark theme | Captured via Toggle theme on the app shell. Team, roadmap, shop, and the signed-out cookbook have no toggle. A 2026-11-21 re-map left those pages light. Dark shots of them in this package, if the page did not change class, are the light page |
+| Site tree | Captured as [site-tree.md](site-tree.md) on 2026-11-21. `/login` still redirects home. Log in still opens an email and password dialog. Nothing was typed |
+| Auth dialog, full page | Captured 2026-11-21, not typed into. [home-light-auth-dialog](screenshots/home-light-auth-dialog.png), [home-dark-auth-dialog](screenshots/home-dark-auth-dialog.png), [mobile-home-light-auth-dialog](screenshots/mobile-home-light-auth-dialog.png), [mobile-home-dark-auth-dialog](screenshots/mobile-home-dark-auth-dialog.png). The placeholder address is painted out |
+| Missing recipe | Captured 2026-11-21. [recipe-missing-light-default](screenshots/recipe-missing-light-default.png). The page says the recipe does not exist |
+| Ingredient search, phone | Captured 2026-11-21. [search-ingredient-light-default](screenshots/search-ingredient-light-default.png), [mobile-search-light-default](screenshots/mobile-search-light-default.png) |
+| Portion stepper | Captured 2026-11-21, one increase, not submitted. [recipe-light-portions](screenshots/recipe-light-portions.png) |
 
 ## Do and don't
 
