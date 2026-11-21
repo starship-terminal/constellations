@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-11-20T20:29:35.917Z",
+  "capturedAt": "2026-11-21T16:42:11.335Z",
   "pages": [
     {
       "id": "login",
@@ -20,6 +20,24 @@
       "url": "https://www.instagram.com/accounts/login/"
     },
     {
+      "id": "signup",
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "status": 200,
+      "url": "https://www.instagram.com/accounts/emailsignup/"
+    },
+    {
+      "id": "password-reset",
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "status": 403,
+      "url": "https://www.instagram.com/accounts/password/reset/"
+    },
+    {
       "id": "locations",
       "theme": "light",
       "width": 1440,
@@ -92,6 +110,24 @@
       "url": "https://www.instagram.com/accounts/login/"
     },
     {
+      "id": "signup",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "dpr": 2,
+      "status": 200,
+      "url": "https://www.instagram.com/accounts/signup/phone/"
+    },
+    {
+      "id": "password-reset",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "dpr": 2,
+      "status": 403,
+      "url": "https://www.instagram.com/accounts/password/reset/"
+    },
+    {
       "id": "locations",
       "theme": "light",
       "width": 390,
@@ -164,6 +200,24 @@
       "url": "https://www.instagram.com/accounts/login/"
     },
     {
+      "id": "signup",
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "status": 200,
+      "url": "https://www.instagram.com/accounts/emailsignup/"
+    },
+    {
+      "id": "password-reset",
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "status": 403,
+      "url": "https://www.instagram.com/accounts/password/reset/"
+    },
+    {
       "id": "locations",
       "theme": "dark",
       "width": 1440,
@@ -234,6 +288,24 @@
       "dpr": 2,
       "status": 200,
       "url": "https://www.instagram.com/accounts/login/"
+    },
+    {
+      "id": "signup",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "dpr": 2,
+      "status": 200,
+      "url": "https://www.instagram.com/accounts/signup/phone/"
+    },
+    {
+      "id": "password-reset",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "dpr": 2,
+      "status": 403,
+      "url": "https://www.instagram.com/accounts/password/reset/"
     },
     {
       "id": "locations",
@@ -640,7 +712,7 @@
       },
       "forgot": {
         "selector": "a[href*=\"password/reset\"]",
-        "text": "Forgot password",
+        "text": "Forgot password?",
         "box": {
           "x": 842,
           "y": 429,
@@ -722,7 +794,7 @@
       },
       "forgot": {
         "selector": "a[href*=\"password/reset\"]",
-        "text": "Forgot password",
+        "text": "Forgot password?",
         "box": {
           "x": 842,
           "y": 431,
@@ -761,5 +833,6 @@
         "height": "38px"
       }
     }
-  }
+  },
+  "recapturedAt": "2026-11-21T16:45:02.625Z"
 }

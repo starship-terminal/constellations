@@ -104,11 +104,11 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: Public signed-out Instagram: white or near-black page, one blue pill for the enabled action, 12px fields, directory lists.
 
-Captured 2026-11-21, signed out. Themes: light, dark.
+Captured 2026-11-22, signed out. Themes: light, dark.
 
-A token set and component reference for Instagram on the web, captured signed out from `https://www.instagram.com/` on 2026-11-21. Headless Chromium, desktop 1440x900 at 1x and phone 390x844 at 2x, light and dark. Dark is `color-scheme: dark`, which sets `html.__fb-dark-mode`. Light sets `html.__fb-light-mode`. There is no public theme switch.
+A token set and component reference for Instagram on the web, captured signed out from `https://www.instagram.com/` on 2026-11-22. Headless Chromium, desktop 1440x900 at 1x and phone 390x844 at 2x, light and dark. Dark is `color-scheme: dark`, which sets `html.__fb-dark-mode`. Light sets `html.__fb-light-mode`. There is no public theme switch.
 
-The homepage is a login wall. Public pages that loaded are the locations directory, one country page, Popular, Instagram Lite, the official profile `instagram`, and the 404 page. Login, signup, password reset, Facebook, and Meta Verified were recorded and not entered. No form was submitted.
+The homepage is a login wall. Public pages that loaded are the locations directory, one country page, Popular, Instagram Lite, the official profile `instagram`, and the 404 page. Login, signup, and password reset were photographed empty and not submitted. Facebook and Meta Verified were recorded and not entered.
 
 ## Colors
 

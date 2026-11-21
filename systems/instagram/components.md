@@ -1,6 +1,6 @@
 # Components
 
-Public signed-out Instagram, measured on 2026-11-21. Crops are from the desktop captures at 1440x900. Dark crops use the same boxes on the dark captures. Values are token names from [tokens.json](tokens.json).
+Public signed-out Instagram, measured on 2026-11-22. Crops are from the desktop captures at 1440x900. Dark crops use the same boxes on the dark captures. Values are token names from [tokens.json](tokens.json).
 
 ## Button
 

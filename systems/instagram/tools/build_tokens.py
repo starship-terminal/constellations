@@ -2,7 +2,7 @@
 """Build tokens.json from Instagram's public --ig-* custom properties.
 
 Reads raw/capture.json, written by tools/capture/public/capture.mjs on
-www.instagram.com on 2026-11-21. Light and dark are the values the page
+www.instagram.com on 2026-11-22. Light and dark are the values the page
 resolves under color-scheme light and dark (html.__fb-light-mode and
 html.__fb-dark-mode). A value that is not a colour, a length, a duration,
 a cubic bezier, a font stack, or a number is listed under
@@ -14,7 +14,7 @@ import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
-SRC = "raw/capture.json vars.{theme}, computed on https://www.instagram.com/ (signed out, 2026-11-21)"
+SRC = "raw/capture.json vars.{theme}, computed on https://www.instagram.com/ (signed out, 2026-11-22)"
 
 TRIPLET = re.compile(r"^(\d+)\s*,\s*(\d+)\s*,\s*(\d+)$")
 TRIPLET_A = re.compile(r"^(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(\.?\d+)$")
