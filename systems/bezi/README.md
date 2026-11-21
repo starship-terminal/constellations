@@ -1,6 +1,6 @@
 # Bezi design reference
 
-A token set and component reference for Bezi's public site — for building dark, game-tools marketing and pricing surfaces in the style of the real thing. It was read from **www.bezi.com** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page (with the mobile menu opened), pricing and about, plus the mobile captures of home and pricing.
+A token set and component reference for Bezi's public site — for building dark, game-tools marketing and pricing surfaces in the style of the real thing. It was read from **www.bezi.com** on **2026-11-11** and refreshed on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The 2026-11-21 pass maps the public tree from the home page (see [site-tree.md](site-tree.md)) and photographs each reachable public page, the phone drawer, the pricing download menu, the product tabs, and the Unreal FAQ. Login and signup walls were recorded and not entered. No form was filled. The desktop app was not downloaded.
 
 Bezi is worth a capture because it is a current reference for the dark AI-dev-tools surface: a `#0d0d0d` starfield ground, a floating translucent pill header (`rgba(31,31,31,0.84)`, 144px radius), one orange CTA recipe (`#f84503`, pill) repeated from the nav to the pricing page, an orange "NEW" chip in the announcement strip, corner-tick index chips instead of boxed cards for the feature sections, a pastel sky Free band on the pricing page, and the Framer `--token-*` palette declared on `body` — the product's own orange, ink, alpha and pastel values.
 
@@ -13,7 +13,8 @@ Bezi is worth a capture because it is a current reference for the dark AI-dev-to
 | [components.md](components.md) | The discovery list of every measured component with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the floating shell, the CTA vocabulary, the starfield hero, pricing, footer |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | `{page}-dark-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-menu-open` the opened mobile menu |
+| [screenshots/](screenshots) | `{page}-dark-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x. The 2026-11-11 set keeps `-full` whole pages. The 2026-11-21 set adds one viewport shot per public page, plus opened menus and overlays. |
+| [site-tree.md](site-tree.md) | Which control on the public site opens which page, menu, overlay, or stopped login wall. Mapped 2026-11-21 from the home page. |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the Framer bundle, binned token/app/framer, resolved in a probe, plus the 314 @font-face declarations), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
@@ -149,7 +150,8 @@ Declared in `raw/css-vars.json` (`fonts`, 314 faces): **Inter** (131) — body a
 | Empty, loading, error states | not present | none on the public surface |
 | Feedback after an action | partly | hover/focus/press measured; post-action states need the product |
 | Search and filtering | not present | none on the public surface |
-| Onboarding, the product itself | not captured | Bezi is a desktop download; no app surface was reached |
+| Onboarding, the product itself | not captured | Bezi is a desktop download. Phone Sign up and pricing Select plan open https://app.bezi.com/start. That login wall was recorded in [site-tree.md](site-tree.md) and not entered. |
+| Public site tree | captured | [site-tree.md](site-tree.md): nav, footer, phone drawer, pricing download menu, product tabs, blog index, careers, legal, partnerships |
 | Themes: light, dark | partly | dark painted everywhere; no light variant declared |
 | Widths: 1440, 390 | captured | desktop + `mobile-*` shots and the Mobile group |
 
