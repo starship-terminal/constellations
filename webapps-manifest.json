@@ -1558,9 +1558,9 @@
       "description": "Link Management for Modern Marketing Teams",
       "status": "captured",
       "package": "systems/dub",
-      "notes": "https://app.dub.co/login said no account exists. Signup at https://app.dub.co/register asks for a password. The form was not submitted. No code was sent.",
+      "notes": "https://app.dub.co/login said no account exists. Signup at https://app.dub.co/register asks for a password. The form was not submitted. No code was sent. Public walk 2026-11-21: the map starts at dub.co and records which header, footer, and in-page control opens which page, menu, or login wall. Marketing pages, docs, pricing, and opened menus were photographed at desktop and phone. Login stops at https://app.dub.co/login. Sign up stops at https://app.dub.co/register. Nothing was typed. Google, GitHub, and SAML SSO were not clicked. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1651 at a438f80b3638. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
@@ -1660,9 +1660,9 @@
       "description": "Free Text Read Aloud App",
       "status": "captured",
       "package": "systems/elevenreader",
-      "notes": "https://elevenreader.io/reader/sign-in asks for email and password, or Google or Apple. No code was sent.",
+      "notes": "https://elevenreader.io/reader/sign-in asks for email and password, or Google or Apple. No code was sent. Public walk 2026-11-21: the map starts at elevenreader.io and records which header, footer, and in-page control opens which page, menu, or login wall. Marketing pages, explore, genres, pricing, and opened menus were photographed at desktop and phone. Cookie settings were photographed and not accepted. Login stops at /reader/sign-in. Sign up stops at /reader/sign-up. Forgot password was opened and left empty. Nothing was typed. Google and Apple were not clicked. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1652 at dccce7ab9df1. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
