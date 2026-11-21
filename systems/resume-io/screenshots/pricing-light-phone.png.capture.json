@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:18:32Z",
+  "source": "t3-preview-incognito",
+  "url": "https://resume.io/pricing",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "available": true
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Pricing at 390. Menu closed. Build Resume not clicked. Cookie panel hidden, not accepted or rejected. Nothing typed. No form submitted."
+}
