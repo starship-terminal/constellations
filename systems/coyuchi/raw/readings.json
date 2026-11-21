@@ -1,0 +1,123 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.coyuchi.com/",
+  "title": "Coyuchi | Organic Bedding, Organic Cotton Sheets & Organic Towels",
+  "productUrl": "https://www.coyuchi.com/products/organic-relaxed-linen-sheet-set-doe",
+  "productTitle": "Organic Relaxed Linen Sheet Set – Coyuchi",
+  "aboutUrl": "https://www.coyuchi.com/pages/about-us",
+  "aboutTitle": "About Us – Coyuchi",
+  "loginHost": "account.coyuchi.com",
+  "loginPath": "/authentication/login",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "region": "Signed-out incognito preview. Prices on the product page read USD. Country selector showed United States (USD $).",
+  "body": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(51, 51, 51)",
+    "fontFamily": "Tiempos Text, serif",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "promoBar": {
+    "backgroundColor": "rgb(99, 120, 104)",
+    "height": "50px",
+    "linkFontFamily": "TT Norms Pro, sans-serif",
+    "linkFontSize": "14px",
+    "linkColor": "rgb(255, 255, 255)",
+    "linkLetterSpacing": "0.256px"
+  },
+  "header": {
+    "height": "105px",
+    "color": "rgb(51, 51, 51)"
+  },
+  "wordmark": {
+    "fill": "#333333",
+    "width": "162px",
+    "height": "24px",
+    "letterSpacing": "0.8px",
+    "fontWeight": "700"
+  },
+  "nav": {
+    "fontFamily": "TT Norms Pro, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "color": "rgb(51, 51, 51)",
+    "letterSpacing": "0.256px",
+    "textTransform": "uppercase",
+    "height": "58px"
+  },
+  "shopSale": {
+    "text": "SHOP 25% OFF",
+    "fontFamily": "TT Norms Pro, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "color": "rgb(51, 51, 51)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "height": "60px",
+    "borderRadius": "0px",
+    "letterSpacing": "0.256px"
+  },
+  "product": {
+    "titleFontFamily": "Tiempos Headline, serif",
+    "titleFontSize": "32px",
+    "titleColor": "rgb(51, 51, 51)",
+    "titleLetterSpacing": "0.256px",
+    "compareColor": "rgb(137, 137, 137)",
+    "saleColor": "rgb(131, 43, 26)",
+    "saleFontFamily": "Tiempos Headline, serif",
+    "saleFontSize": "20px"
+  },
+  "addToCart": {
+    "text": "ADD TO CART",
+    "fontFamily": "TT Norms Pro, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(51, 51, 51)",
+    "height": "58px",
+    "borderRadius": "0px",
+    "letterSpacing": "0.256px",
+    "clicked": false
+  },
+  "sizeChip": {
+    "selectedText": "Queen",
+    "fontFamily": "TT Norms Pro, sans-serif",
+    "fontSize": "14px",
+    "selectedColor": "rgb(255, 255, 255)",
+    "selectedBackground": "rgb(51, 51, 51)",
+    "unselectedColor": "rgb(51, 51, 51)",
+    "unselectedBackground": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(214, 210, 206)",
+    "height": "36px",
+    "borderRadius": "0px"
+  },
+  "footer": {
+    "backgroundColor": "rgb(51, 51, 51)",
+    "headingColor": "rgb(255, 255, 255)",
+    "headingFontFamily": "TT Norms Pro, sans-serif",
+    "headingFontSize": "16px",
+    "headingFontWeight": "700",
+    "linkColor": "rgb(255, 255, 255)",
+    "linkFontSize": "14px"
+  },
+  "login": {
+    "host": "account.coyuchi.com",
+    "path": "/authentication/login",
+    "title": "Sign in - Coyuchi",
+    "pageBackground": "rgb(240, 236, 227)",
+    "heading": "Sign in",
+    "headingFontFamily": "Roboto, sans-serif",
+    "headingFontSize": "20px",
+    "headingFontWeight": "700",
+    "headingColor": "rgb(0, 0, 0)",
+    "fieldHeight": "49px",
+    "fieldBackground": "rgb(255, 255, 255)",
+    "fieldBorder": "1px solid rgb(222, 222, 222)",
+    "fieldRadius": "12px",
+    "emailEmpty": true,
+    "submitted": false,
+    "identityProvidersSeen": [],
+    "screenshotKept": false
+  },
+  "bronze": "rgb(161, 119, 80)",
+  "stone": "rgb(214, 210, 206)"
+}
