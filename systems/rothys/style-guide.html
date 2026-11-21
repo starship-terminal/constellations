@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rothy's style guide</title>
+<style>
+  :root {
+    --midnight: #03143b;
+    --page: #ffffff;
+    --roth: #9a1b2c;
+    --sale: #da3522;
+    --line: #dcdbdd;
+    --sandstone: #f4f2ef;
+    --reflex: #092dc5;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--midnight);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 24px 80px; }
+  .bar {
+    box-sizing: border-box;
+    height: 37px;
+    background: var(--roth);
+    color: var(--page);
+    font-size: 12px;
+    line-height: 37px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  .word {
+    color: var(--roth);
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin: 28px 0 8px;
+  }
+  h1 {
+    font-family: Georgia, serif;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 40px;
+    margin: 8px 0 16px;
+  }
+  h2 { font-weight: 500; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; margin: 36px 0 12px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 128px; }
+  .chip { height: 72px; border: 1px solid var(--line); }
+  .label { font-size: 12px; margin-top: 6px; }
+  .nav { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+  .price s { color: var(--midnight); font-weight: 100; margin-right: 8px; }
+  .price b { color: var(--sale); font-weight: 400; }
+  .btn {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    height: 48px;
+    min-width: 241px;
+    padding: 0 28px;
+    border: 1px solid var(--midnight);
+    background: var(--page);
+    color: var(--midnight);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 0;
+  }
+  .note { color: #666666; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="bar">Up to 40% off everything online and in stores. Shop the sale</p>
+  <p class="word">ROTHY'S</p>
+  <p class="nav">Women &nbsp; Bags &nbsp; Men &nbsp; Kids</p>
+  <h1>The Casual Clog</h1>
+  <p class="price"><s>$160</s> <b>$119</b></p>
+  <p><span class="btn">Select a size</span></p>
+  <p class="note">Select a size was not clicked. Add to bag was not reached. Maison Neue and Grifo fall back to Arial and Georgia.</p>
+  <h2>Color</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#03143b"></div><div class="label">midnight #03143b</div></div>
+    <div class="swatch"><div class="chip" style="background:#9a1b2c"></div><div class="label">roth #9a1b2c</div></div>
+    <div class="swatch"><div class="chip" style="background:#da3522"></div><div class="label">sale #da3522</div></div>
+    <div class="swatch"><div class="chip" style="background:#dcdbdd"></div><div class="label">line #dcdbdd</div></div>
+    <div class="swatch"><div class="chip" style="background:#f4f2ef"></div><div class="label">sandstone #f4f2ef</div></div>
+    <div class="swatch"><div class="chip" style="background:#092dc5"></div><div class="label">reflex #092dc5</div></div>
+  </div>
+</main>
+</body>
+</html>

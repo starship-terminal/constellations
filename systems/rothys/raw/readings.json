@@ -1,0 +1,122 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://rothys.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "title": "Rothy's | Washable Shoes & Bags For Women, Men & Kids",
+  "fontsLoaded": ["Maison Neue Book", "Maison Neue Medium", "Grifo S Light", "Canela 500"],
+  "computed": {
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(3, 20, 59)",
+      "fontFamily": "\"Maison Neue Book\", sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "letterSpacing": "0.5px"
+    },
+    "announcementBar": {
+      "selector": ".announcement-bar",
+      "backgroundColor": "rgb(154, 27, 44)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "height": 37
+    },
+    "header": {
+      "selector": "header.header",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(3, 20, 59)",
+      "height": 71,
+      "borderBottom": "1px solid rgb(220, 219, 221)"
+    },
+    "navLabel": {
+      "selector": ".desktop-nav__link",
+      "fontFamily": "\"Maison Neue Medium\", sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "2px",
+      "textTransform": "uppercase",
+      "color": "rgb(3, 20, 59)"
+    },
+    "wordmark": {
+      "viewBox": "0 0 223 32",
+      "box": { "width": 140, "height": 20, "x": 40, "y": 61 },
+      "fill": "#9A1B2C"
+    },
+    "collectionTitle": {
+      "url": "https://rothys.com/collections/womens-shoes",
+      "text": "Women's Shoes",
+      "fontFamily": "\"Grifo S Light\"",
+      "fontSize": "40px",
+      "fontWeight": "300",
+      "lineHeight": "40px",
+      "color": "rgb(3, 20, 59)"
+    },
+    "productTitle": {
+      "url": "https://rothys.com/products/womens-casual-clog-dove",
+      "text": "The Casual Clog",
+      "fontFamily": "\"Grifo S Light\"",
+      "fontSize": "40px",
+      "fontWeight": "300",
+      "lineHeight": "40px",
+      "color": "rgb(3, 20, 59)"
+    },
+    "salePrice": {
+      "text": "$119",
+      "color": "rgb(218, 53, 34)",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "textDecoration": "none"
+    },
+    "comparePrice": {
+      "text": "$160",
+      "color": "rgb(3, 20, 59)",
+      "fontSize": "16px",
+      "fontWeight": "100",
+      "textDecoration": "line-through"
+    },
+    "selectSize": {
+      "text": "Select a size",
+      "clicked": false,
+      "note": "Docked control measured as a 48px outline button, radius 0, border 1px rgb(3, 20, 59). The on-page control in the screenshot is the same label."
+    },
+    "addToBag": { "clicked": false }
+  },
+  "cssVariables": {
+    "--dna-color-sandstone": "#F4F2EF",
+    "--dna-color-midnight": "#03143B",
+    "--dna-color-reflex-blue": "#092DC5",
+    "--dna-color-brass": "#DFA711",
+    "--dna-color-light-grey": "#DCDBDD",
+    "--dna-brand-ink": "#000000",
+    "--dna-brand-light": "#f6f6f6",
+    "--dna-brand-neutral": "#b8b8b8",
+    "--dna-brand-reverse": "#ffffff",
+    "--dna-brand-subdued": "#666666",
+    "--dna-color-subdued": "#666666",
+    "--dna-color-dark-midnight": "#0b163b",
+    "--dna-font-sans": "Maison Neue Book, sans-serif",
+    "--dna-font-sans-medium": "Maison Neue Medium, sans-serif",
+    "--dna-font-serif": "Grifo S Light, Georgia, Times New Roman, serif",
+    "--dna-h1-font": "300 56px/56px var(--dna-font-serif)",
+    "--dna-h2-font": "300 40px/40px var(--dna-font-serif)",
+    "--dna-body-p1-font": "400 16px/24px var(--dna-font-sans)",
+    "--dna-body-p2-font": "400 14px/20px var(--dna-font-sans)",
+    "--dna-label-s-font": "400 12px/12px var(--dna-font-sans-medium)",
+    "--dna-border-radius-s": "4px",
+    "--dna-button-height": "50px",
+    "--dna-button-height-s": "40px",
+    "--dna-space-1": "4px",
+    "--dna-space-2": "8px",
+    "--dna-space-3": "12px",
+    "--dna-space-4": "16px",
+    "--dna-space-6": "24px",
+    "--dna-space-8": "32px"
+  }
+}
