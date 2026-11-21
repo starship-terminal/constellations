@@ -1,6 +1,6 @@
 # Limitless patterns
 
-Public pages plus the Sign Up Unavailable dialog, 2026-11-18. Lifelogs, settings and account were not reached. Recorded in [components.md](components.md) Gaps and in the catalog `capture.gaps`.
+Public pages, refreshed 2026-11-21. The control map is [site-tree.md](site-tree.md). Lifelogs, settings and account were not reached. Nothing was typed or submitted.
 
 ## Marketing frame
 
@@ -8,7 +8,7 @@ A white page, a sticky bar (wordmark, Home, Solutions, Privacy, Developers, Abou
 
 ## Solutions menu
 
-Solutions is a local menu, not a page. It groups links by use case, role, job and condition ([open](screenshots/home-light-solutions.png)). A solution page is a headline, a short deck, and a card carousel ([voice recorder](screenshots/for-voice-light-default.png)).
+Solutions is a local menu, not a page. It groups links by use case, role, job and condition ([open](screenshots/home-light-solutions.png)). A solution page is a headline, a short deck, and a card carousel ([voice recorder](screenshots/for-voice-light-default.png), [students](screenshots/for-students-light-default.png), [parents](screenshots/for-parents-light-default.png)). `/for/dementia` is the same shape ([shot](screenshots/for-dementia-light-default.png)).
 
 ## Developer docs
 
@@ -24,15 +24,15 @@ Solutions is a local menu, not a page. It groups links by use case, role, job an
 
 ## Sign-in wall
 
-`app.limitless.ai` redirects to `/signin`: a centered card, Continue with Google, an email field, a Privacy Policy link ([desktop](screenshots/signin-light-default.png), [phone](screenshots/mobile-signin-light-default.png)). Google is OAuth and was not pressed.
+`app.limitless.ai` redirects to `/signin`: a centered card, Continue with Google, an empty email field, a Privacy Policy link ([desktop](screenshots/signin-light-default.png), [focused, still empty](screenshots/signin-light-email-focused.png), [phone](screenshots/mobile-signin-light-default.png)). Google was not pressed. The field was not filled. The form was not submitted.
 
-## Sign Up Unavailable
+## Signup path
 
-Submitting the email field (never Google) opens a Radix dialog on a 30% black scrim: title "Sign Up Unavailable", body that Limitless is no longer accepting new users, a mailto to support@limitless.ai for Pendant owners, and an OK control ([desktop](screenshots/signin-light-signup-unavailable.png), [phone](screenshots/mobile-signin-light-signup-unavailable.png), [crop](components/crops/signup-unavailable-dialog-default.png)). OK was not pressed. No CAPTCHA, phone or payment appeared. A Google One Tap chip can appear on phone; it was not used.
+`https://app.limitless.ai/signup` is a public "Page not found" card with a Home button ([shot](screenshots/signup-light-default.png)). There is no separate signup form. `/signup` on the marketing host is the same 404 as `/pricing`.
 
 ## What is not on the captured surface
 
-Lifelogs, settings, account, empty/loading/error of the app, form validation, destructive confirmation, and onboarding all sit behind an account this capture could not create. The 404 at `/pricing` is the marketing site's not-found page ([shot](screenshots/notfound-light-default.png)), not an app error state.
+Lifelogs, settings, account, form validation, destructive confirmation, and onboarding sit behind the empty wall. `login-extracted` stays `not-started`. The 404 at `/pricing` is the marketing site's not-found page ([shot](screenshots/notfound-light-default.png)). Phone width for an inner page is [privacy](screenshots/mobile-privacy-light-default.png).
 
 ## Motion
 

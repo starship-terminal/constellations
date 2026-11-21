@@ -60,12 +60,14 @@ Measured on the public site on 2026-11-18, light theme, 1440 CSS pixels. Crops a
 
 **Continue with Google** ([default](components/crops/google-button-default.png), [hover](components/crops/google-button-hover.png), [focus](components/crops/google-button-focus-visible.png)). White, 8px radius, 48px tall, zinc 800 label, hairline shadow. Hover fills `#fafafa`. Focus adds a purple 700 ring. The button starts OAuth. It was not pressed.
 
-**Sign Up Unavailable** ([desktop](screenshots/signin-light-signup-unavailable.png), [phone](screenshots/mobile-signin-light-signup-unavailable.png), [crop](components/crops/signup-unavailable-dialog-default.png)). Radix `role=dialog`, max-width 448px, white card 12px radius `core.radius.dialog`, scrim `light.overlay` rgba(0,0,0,0.3). Title 20px / 600 zinc 950 `light.appInk`. Body 16px zinc 700. Caption 14px zinc 600 with a purple 700 mailto `light.appLink`. OK is 32px, 6px radius, white label on `linear-gradient(#8436e2 33%, #6515c5)` `light.appAccentFrom` / `light.appAccentTo`. Close is a 20px zinc 500 X. OK was not pressed.
+**Email field, empty.** Focused on 2026-11-21 with nothing typed ([shot](screenshots/signin-light-email-focused.png)). The submit arrow was not clicked.
+
+**Sign Up Unavailable** is a 2026-11-18 reading only. Those screenshots were removed on this refresh. The crop [signup-unavailable-dialog-default](components/crops/signup-unavailable-dialog-default.png) remains from that earlier submit. Do not treat it as a state this pass displayed.
 
 ## Gaps
 
 - Select, checkbox, radio, switch, tabs, tooltip, toast, table, avatar and badge do not appear on the signed-out marketing surface or on this dialog. The help cards show staff avatars; those are Intercom artwork, not a Limitless avatar component.
-- Disabled, loading, error and validation states were not reached. The email submit opened a product gate, not a field error.
+- Disabled, loading, error and validation states were not reached. Nothing was submitted on 2026-11-21.
 - The support chat widget on `/support` is a third-party embed. It was not opened or typed into.
 - Lifelogs, settings, billing and account deletion were not reached. Limitless is no longer accepting new users.
 - Checkout and Pendant purchase were not opened. The dialog tells Pendant owners to email support@limitless.ai.

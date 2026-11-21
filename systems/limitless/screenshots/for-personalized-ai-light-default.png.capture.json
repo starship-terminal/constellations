@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T03:38:03.980Z",
-  "screenshot": "signin-light-signup-unavailable.png",
-  "sanitizedSourceUrl": "https://app.limitless.ai/signin",
+  "capturedAt": "2026-11-21T14:40:03.399Z",
+  "screenshot": "for-personalized-ai-light-default.png",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 900
+      "height": 2183
     },
     "scroll": {
       "x": 0,
