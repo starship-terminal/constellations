@@ -1,0 +1,108 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://credobeauty.com/",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgba(18, 18, 18, 0.75)",
+    "fontFamily": "urw-din",
+    "fontSize": "10px"
+  },
+  "cssVars": {
+    "--color-background": "255,255,255",
+    "--color-foreground": "18,18,18",
+    "--color-button": "#023E55",
+    "--color-button-text": "255,255,255",
+    "--font-body-family": "urw-din",
+    "--font-heading-family": "Mercury Display",
+    "--gradient-background": "#ffffff"
+  },
+  "utility": {
+    "backgroundColor": "rgb(0, 25, 34)",
+    "linkColor": "rgb(255, 255, 255)",
+    "linkSize": "12px",
+    "linkWeight": "500",
+    "height": 30
+  },
+  "countdown": {
+    "labelColor": "rgb(0, 25, 34)",
+    "labelSize": "14px",
+    "labelWeight": "500",
+    "timerColor": "rgb(203, 75, 16)",
+    "detailsColor": "rgb(11, 120, 142)",
+    "barBackground": "rgb(255, 255, 255)",
+    "barHeight": 40
+  },
+  "nav": {
+    "color": "rgb(0, 25, 34)",
+    "fontFamily": "urw-din",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "letterSpacing": "0.7px",
+    "textTransform": "uppercase",
+    "height": 35
+  },
+  "search": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(0, 25, 30)",
+    "borderRadius": "4px",
+    "height": 40,
+    "width": 431,
+    "placeholderColor": "rgb(127, 128, 127)"
+  },
+  "hero": {
+    "kickerColor": "rgb(246, 247, 244)",
+    "kickerSize": "14px",
+    "title": "20% off",
+    "titleColor": "rgb(246, 247, 244)",
+    "titleFont": "Mercury Display",
+    "titleSize": "58px",
+    "titleWeight": "700",
+    "titleLetterSpacing": "-0.58px",
+    "shopNowColor": "rgb(255, 255, 255)",
+    "shopNowSize": "14px",
+    "shopNowWeight": "500"
+  },
+  "collectionTitle": {
+    "text": "Collection: Clean Makeup",
+    "color": "rgb(2, 62, 85)",
+    "fontFamily": "Mercury Display",
+    "fontSize": "38px",
+    "fontWeight": "700",
+    "letterSpacing": "-0.38px"
+  },
+  "product": {
+    "url": "https://credobeauty.com/products/jell-o-x-tower-28-lil-pudding-snack-set",
+    "titleColor": "rgb(2, 62, 85)",
+    "titleSize": "38px",
+    "titleFont": "Mercury Display",
+    "titleWeight": "700",
+    "priceColor": "rgb(0, 25, 34)",
+    "priceSize": "14px",
+    "priceWeight": "600",
+    "saleColor": "rgb(192, 57, 43)",
+    "saleSize": "12px",
+    "saleWeight": "600",
+    "bag": {
+      "text": "ADD TO BAG",
+      "backgroundColor": "rgb(2, 62, 85)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "borderRadius": "4px",
+      "height": 38,
+      "width": 280,
+      "clicked": false
+    }
+  },
+  "logo": {
+    "src": "https://credobeauty.com/cdn/shop/files/Credo_Beauty_Logo_Lockup_XL.svg?v=1709685768",
+    "fill": "#023E55",
+    "renderedWidth": 93,
+    "renderedHeight": 42
+  },
+  "icon": {
+    "src": "https://credobeauty.com/cdn/shop/files/Credo_Flower_Icon_Deep_Teal_180x180.svg?v=1694912314",
+    "fill": "#0F4154"
+  }
+}
