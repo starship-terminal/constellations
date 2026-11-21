@@ -1,0 +1,133 @@
+{
+  "slug": "loom",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "Public Playwright capture, signed out. https://www.loom.com/login and https://www.loom.com/signup were opened once each. The empty walls were photographed. The branch stopped. No email, password, or code was typed. No identity provider was clicked. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Logo to /",
+        "Apps menu: Screen Recorder, Screenshot, Loom AI, Security, loomSDK, Video Library",
+        "Solutions menu: Sales, Engineering, Design, Marketing, Product Management, Support, Presentation",
+        "Resources menu: Download, The Replay, Help Center, Webinars, Customer Stories, Community",
+        "Enterprise",
+        "Pricing",
+        "Sign In",
+        "Get Loom for free",
+        "Contact Sales"
+      ],
+      "reached": [
+        "/",
+        "/pricing",
+        "/enterprise",
+        "/ai",
+        "/security",
+        "/screenshot",
+        "/sdk",
+        "/download",
+        "/customers",
+        "/login",
+        "/signup",
+        "Apps menu",
+        "Solutions menu",
+        "Resources menu",
+        "phone menu",
+        "phone Apps section"
+      ]
+    },
+    "settings": {
+      "items": [
+        "No account settings on the public site. No theme switch. OneTrust offered Reject all cookies, Accept all cookies, and Manage preferences."
+      ],
+      "reached": [
+        "Reject all cookies on the live walk"
+      ]
+    },
+    "create": {
+      "items": [
+        "Get Loom for free",
+        "Try Loom for free",
+        "Sign up for free",
+        "Sign up",
+        "Try for free",
+        "Get Started",
+        "Sign up with Google",
+        "Work email",
+        "Continue"
+      ],
+      "reached": [
+        "/signup empty wall"
+      ]
+    }
+  },
+  "screens": [
+    "screenshots/ai-light-default.png",
+    "screenshots/ai-light-full.png",
+    "screenshots/customers-light-default.png",
+    "screenshots/desktop-light-default.png",
+    "screenshots/download-light-default.png",
+    "screenshots/enterprise-light-default.png",
+    "screenshots/enterprise-light-full.png",
+    "screenshots/home-light-apps-menu.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-resources-menu.png",
+    "screenshots/home-light-solutions-menu.png",
+    "screenshots/legal-light-default.png",
+    "screenshots/login-light-default.png",
+    "screenshots/login-light-empty.png",
+    "screenshots/mobile-ai-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-home-light-menu-apps.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-login-light-default.png",
+    "screenshots/mobile-login-light-empty.png",
+    "screenshots/mobile-pricing-light-default.png",
+    "screenshots/mobile-pricing-light-full.png",
+    "screenshots/mobile-share-light-default.png",
+    "screenshots/notfound-light-default.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-faq.png",
+    "screenshots/screenshot-light-default.png",
+    "screenshots/sdk-light-default.png",
+    "screenshots/security-light-default.png",
+    "screenshots/security-light-full.png",
+    "screenshots/share-light-default.png",
+    "screenshots/signup-light-empty.png",
+    "screenshots/use-case-light-default.png"
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Library, recorder, billing, and settings were not offered on a signed-in shell.",
+    "Log in with Google, Slack, Apple, Outlook, and SSO were visible and not clicked.",
+    "Sign up with Google was visible and not clicked.",
+    "The work email field was empty. Continue stayed disabled and was not pressed. No code was sent.",
+    "No dark theme was offered as a switch. /screenshot paints a dark hero on the same light chrome.",
+    "Contact Sales, Download, and Install were not pressed.",
+    "Atlassian blog, Help Center, Chrome Web Store, status, and social links were linked and not opened.",
+    "Token values were not re-read on this pass. They stay the 2026-11-18 measurements.",
+    "The pricing full-page shot from this pass was dropped. The page reported a 2160 CSS width inside a 1440 viewport."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "Continue",
+    "Log in with Google",
+    "Log in with Slack",
+    "Log in with Apple",
+    "Log in with Outlook",
+    "Log in with SSO",
+    "Sign up with Google",
+    "Contact Sales",
+    "Download",
+    "Install",
+    "captcha"
+  ]
+}
