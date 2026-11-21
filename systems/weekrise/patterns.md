@@ -30,16 +30,16 @@ See [screenshots/academy-light-default.png](screenshots/academy-light-default.pn
 
 ## Legal
 
-`/privacy` and `/terms` drop the gradient. A 40px / 600 title sits on white, body 16px / 400, section headings 24px / 700. Links inside the prose paint the brand blue.
+`/privacy`, `/terms` and `/payments` drop the gradient. A 40px / 600 title sits on white, body 16px / 400, section headings 24px / 700. Links inside the prose paint the brand blue.
 
-See [screenshots/privacy-light-default.png](screenshots/privacy-light-default.png).
+See [screenshots/privacy-light-default.png](screenshots/privacy-light-default.png) and [screenshots/payments-light-default.png](screenshots/payments-light-default.png).
 
 ## Auth
 
 `/auth/login` and `/auth/signup` are a split page at 1440. The left half is white, padding 100px 60px, with a 480px form. The right half is a panel with `background-image: url(https://weekrise.com/auth/bg.svg)` and white type: "Welcome to Weekrise" at 60px / 800. At 390px the right panel is `display: none` and the form is 360px wide.
 
-Login asks for email, then Continue, then Sign in with Google. Signup asks for name and email, then the same two buttons. Neither form was submitted. Google was not used.
+Login asks for email, then Continue, then Sign in with Google. Signup asks for name and email, then the same two buttons. Neither form was submitted. Google was not used. The empty walls are [screenshots/login-light-empty.png](screenshots/login-light-empty.png) and [screenshots/signup-light-empty.png](screenshots/signup-light-empty.png).
 
 ## Not on these pages
 
-No empty state, no error toast, no destructive confirm, no search, no onboarding, no signed-in shell. The mobile menu did not open.
+No empty state, no error toast, no destructive confirm, no search, no onboarding, no signed-in shell. The phone menu opens from Open Navigation. See [screenshots/home-light-phone-menu.png](screenshots/home-light-phone-menu.png).
