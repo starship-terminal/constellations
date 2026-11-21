@@ -1,0 +1,12 @@
+{
+  "url": "https://www.atlassian.com/software/bitbucket",
+  "requested": "https://www.atlassian.com/software/bitbucket",
+  "finalUrl": "https://www.atlassian.com/software/bitbucket",
+  "title": "Bitbucket Home Page",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "captured": "2026-11-22",
+  "file": "bitbucket-light-1440.png"
+}

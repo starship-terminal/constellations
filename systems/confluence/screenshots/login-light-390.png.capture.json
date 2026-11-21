@@ -1,0 +1,12 @@
+{
+  "url": "https://id.atlassian.com/login",
+  "requested": "https://id.atlassian.com/login",
+  "finalUrl": "https://id.atlassian.com/login",
+  "title": "Log in to continue - Log in with Atlassian account",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "captured": "2026-11-22",
+  "file": "login-light-390.png"
+}
