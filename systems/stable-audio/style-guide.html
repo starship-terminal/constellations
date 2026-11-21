@@ -1,109 +1,195 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stable Audio style guide</title>
+<meta name="description" content="Stable Audio public-site tokens, rendered from tokens.json.">
 <style>
-  :root {
-    --page: #000000;
-    --card: #0B0B0B;
-    --text: #FFFFFF;
-    --muted: #CFCDC6;
-    --faint: #8E8E8E;
-    --accent: #D27929;
-    --primary: #ABA185;
-    --home: #BC6C25;
-    --on: #000000;
-    --line: rgba(255,255,255,0.22);
-    --line-faint: rgba(255,255,255,0.10);
-    --focus: #FFB703;
-    --paper: #F3F0EA;
-    --ink: #0B0B0A;
-    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--sans); }
-  main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
-  h1 { font-size: 46px; line-height: 1.06; letter-spacing: -1.38px; font-weight: 600; margin: 0 0 8px; }
-  h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; margin: 40px 0 12px; }
-  p { color: var(--muted); max-width: 68ch; }
-  .row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .swatch { width: 140px; }
-  .chip { height: 64px; border: 1px solid var(--line-faint); }
-  .name { font: 500 11px/1.2 var(--mono); letter-spacing: 0.44px; color: var(--faint); margin-top: 6px; }
-  .val { font-size: 12px; color: var(--muted); }
-  button, .btn { font: 600 15px/1 var(--sans); height: 44px; padding: 0 20px; border-radius: 0; border: 1px solid transparent; background: var(--primary); color: var(--on); }
-  button.home { background: var(--home); border-color: var(--home); }
-  button.secondary { background: transparent; color: #E8E8E8; border-color: var(--line); font-weight: 500; }
-  button.outline { background: transparent; color: var(--text); border-color: var(--text); font-weight: 500; height: 32px; padding: 0 14px; font-size: 13px; }
-  button:focus-visible { outline: 2px solid var(--focus); }
-  .card { background: var(--card); border: 1px solid var(--line-faint); border-radius: 4px; padding: 24px; width: 240px; }
-  .card strong { display: block; font-size: 20px; }
-  .price { font-size: 37.52px; font-weight: 600; letter-spacing: -1.13px; margin: 8px 0; }
-  .badge { font: 500 10px/10px var(--mono); letter-spacing: 0.2px; color: var(--primary); border: 1px solid var(--primary); padding: 4px 6px; }
-  .paper { background: var(--paper); color: var(--ink); padding: 16px; }
-  table { border-collapse: collapse; width: 100%; font-size: 14px; }
-  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line-faint); }
-  th { color: var(--faint); font-weight: 500; }
-  a { color: var(--accent); }
+:root {
+  --color-paper-accent: #ea4125;
+  --color-paper-danger: #b51a0e;
+  --color-paper-info: #1f5aa8;
+  --color-paper-ink-400: #a8a79b;
+  --color-paper-ink-500: #84847a;
+  --color-paper-ink-600: #5c5b53;
+  --color-paper-ink-700: #3a3a36;
+  --color-paper-ink-800: #1c1c1a;
+  --color-paper-ink-900: #0b0b0a;
+  --color-paper-ok: #2f7a3d;
+  --color-paper-p-000: #f2efe6;
+  --color-paper-p-050: #f6f3ea;
+  --color-paper-p-100: #faf7ee;
+  --color-paper-p-200: #edeadf;
+  --color-paper-p-300: #e0dcce;
+  --color-paper-p-400: #c7c2b1;
+  --color-paper-paper: #f3f0ea;
+  --color-paper-primary: #f9a916;
+  --color-paper-warn: #c48a00;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --motion-1: 100ms;
+  --motion-2: 180ms;
+  --motion-3: 280ms;
+  --motion-4: 420ms;
+  --motion-5: 600ms;
+  --motion-pop: 120ms;
+  --motion-wipe: 240ms;
+  --motion-stagger: 60ms;
+  --motion-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1.0);
+  --motion-ease-in: cubic-bezier(0.32, 0.0, 0.67, 0.0);
+  --motion-ease-in-out: cubic-bezier(0.42, 0.0, 0.58, 1.0);
+  --font-ui: "Neue Haas Grotesk Text Pro", "SX Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Neue Haas Grotesk Text Pro", "SX Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SX Plex Mono","IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sizing-tap-min: 44px;
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --radius-menu: 0px;
+  --radius-pill: 999px;
+
+  --sg-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {
+  --color-accent: #ea4125;
+  --color-app-generate: #ae99b3;
+  --color-app-live: #8faa92;
+  --color-app-packs: #bb988e;
+  --color-app-plugin: #9ca2a9;
+  --color-app-seed: #ba96a1;
+  --color-app-sessions: #92a2be;
+  --color-app-video: #81aaaf;
+  --color-attach: #8ee3ec;
+  --color-brand: #aba185;
+  --color-danger: #ff5a45;
+  --color-facet-genre: #7fb0ff;
+  --color-facet-instr: #9ed77f;
+  --color-facet-purpose: #f59ab0;
+  --color-facet-vibe: #5fd3c6;
+  --color-fingerprint: #e0ae4f;
+  --color-info: #6aa3ff;
+  --color-ink-400: #4d4d4d;
+  --color-ink-500: #6a6a6a;
+  --color-ink-600: #8e8e8e;
+  --color-ink-700: #cfcdc6;
+  --color-ink-800: #e8e8e8;
+  --color-ink-900: #ffffff;
+  --color-inpaint: #f8a815;
+  --color-loop-marker: #a381ff;
+  --color-mode-active: #c0afd9;
+  --color-mode-bar: #a381ff;
+  --color-nav-foot-bg: #3c3c3c;
+  --color-nav-ground: #121212;
+  --color-nav-selected: color-mix(in srgb,var(--sx-brand) 20%,transparent);
+  --color-ok: #3fb96b;
+  --color-p-000: #000000;
+  --color-p-050: #0b0b0b;
+  --color-p-100: #141414;
+  --color-p-200: #1f1f1f;
+  --color-p-300: #2b2b2b;
+  --color-p-400: #333333;
+  --color-paper: #f3f0ea;
+  --color-primary: #aba185;
+  --color-range-marker: #c0afd9;
+  --color-rule: #ffffff;
+  --color-selection: #c0afd9;
+  --color-solo: #3fc8d6;
+  --color-warn: #e0ae4f;
+  --color-wash: color-mix(in srgb,var(--sx-primary) 12%,transparent);
+  --color-wave-ink: #bbb29a;
+  --page: #000000;
+  --surface: #0b0b0b;
+  --text-muted: #cfcdc6;
+  --text-strong: #ffffff;
+  --accent: #9d4edd;
+  --border: rgba(255, 255, 255, 0.22);
+  --overlay: #141414;
+  --component-button-primary-background: #9d4edd;
+  --component-button-primary-color: #000000;
+  --component-button-primary-height: 36px;
+  --component-button-primary-font-size: 13px;
+  --component-button-secondary-color: #e8e8e8;
+  --component-button-secondary-height: 36px;
+  --component-control-radius: 0px;
+  --component-dialog-radius: 6px;
+  --component-dialog-background: #141414;
+  --component-menu-background: rgba(31, 31, 31, 0.8);
+  --component-card-radius: 4px;
+  --typography-display-size: 72px;
+  --typography-display-weight: 600;
+  --typography-display-line-height: 73.44px;
+  --typography-nav-size: 13px;
+  --typography-body-size: 16px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-strong, #fff); background: var(--page, #000); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 600 40px/1.05 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.03em; }
+h2 { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text, #cfcdc6); margin: 48px 0 12px; }
+.lead, .note { max-width: 68ch; color: var(--text, #cfcdc6); }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 200px; }
+.sw i { width: 28px; height: 28px; border: 1px solid rgba(255,255,255,.22); display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text, #cfcdc6); }
+.mock { border: 1px solid rgba(255,255,255,.22); background: var(--page, #000); padding: 28px; }
+.nav { display: flex; align-items: center; gap: 18px; font-size: 13px; color: var(--text, #cfcdc6); }
+.nav b { color: var(--text-strong, #fff); letter-spacing: .08em; }
+.nav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; height: var(--component-button-primary-height, 36px); padding: 0 16px; border: 1px solid transparent; font: 600 13px/1 var(--sg-sans); background: transparent; color: var(--component-button-secondary-color, #e8e8e8); }
+.btn.primary { background: var(--component-button-primary-background, #9d4edd); color: var(--component-button-primary-color, #000); border-color: var(--component-button-primary-background, #9d4edd); }
+.btn.secondary { border-color: var(--border, rgba(255,255,255,.22)); }
+.hero { font: 600 48px/1.02 var(--sg-sans); letter-spacing: -0.03em; margin: 36px 0 12px; max-width: 12ch; }
+.hero small { display: block; margin-top: 12px; font: 400 16px/1.45 var(--sg-sans); color: var(--text, #cfcdc6); letter-spacing: 0; max-width: 42ch; }
+.word { display: inline-block; border-bottom: 2px solid #fff; box-shadow: inset 0 -2px 0 rgba(255,255,255,.34); }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.card { background: var(--surface, #0b0b0b); border: 1px solid rgba(255,255,255,.1); border-radius: var(--component-card-radius, 4px); padding: 16px; font-size: 14px; }
+.dialog { width: 320px; background: var(--component-dialog-background, #141414); border-radius: var(--component-dialog-radius, 6px); padding: 20px; margin-top: 20px; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 16px; font: 400 12px/1.7 var(--sg-mono); }
+.kv span { color: var(--text, #cfcdc6); }
 </style>
 </head>
 <body>
 <main>
-  <p class="name">STABLE AUDIO · PUBLIC SIGNED-OUT · DARK</p>
-  <h1>Style guide</h1>
-  <p>Values are the computed styles and custom properties read on 19 November 2026. The preview browser did not produce screenshot frames, so this page is the specimen. Neue Haas Grotesk Text Pro is proprietary and is not loaded here. The fallback is Helvetica Neue.</p>
+  <h1>Stable Audio</h1>
+  <p class="lead">Public site, one dark surface. Values come from <code>tokens.json</code>. The homepage primary fill is the colour measured on this capture; it changes between loads.</p>
+
+  <h2>Page</h2>
+  <div class="mock">
+    <div class="nav"><b>STABLE AUDIO</b><span>How it works</span><span>Plugin</span><span>Pricing</span><span class="sp"></span><span class="btn secondary">Sign in</span><span class="btn primary">Start free</span></div>
+    <div class="hero">Shape the sound you’re after.<small>An <span class="word">explosive</span> jazz track. Square corners, white rules, one accent on the primary button.</small></div>
+    <div class="cards">
+      <div class="card"><b>Free</b><p>$0/mo. Commercial license.</p><span class="btn primary">Start free</span></div>
+      <div class="card"><b>Session</b><p>More credits. Same square button.</p><span class="btn secondary">Get Session</span></div>
+    </div>
+    <div class="dialog"><b>Sign up to make it yours</b><p class="note">The dialog is the only rounded surface on the homepage. Sign up free was not followed.</p><span class="btn primary">Sign up free</span></div>
+  </div>
 
   <h2>Colour</h2>
-  <div class="row">
-    <div class="swatch"><div class="chip" style="background:#000"></div><div class="name">PAGE</div><div class="val">#000000</div></div>
-    <div class="swatch"><div class="chip" style="background:#0B0B0B"></div><div class="name">CARD</div><div class="val">#0B0B0B</div></div>
-    <div class="swatch"><div class="chip" style="background:#FFFFFF"></div><div class="name">TEXT</div><div class="val">#FFFFFF</div></div>
-    <div class="swatch"><div class="chip" style="background:#CFCDC6"></div><div class="name">MUTED</div><div class="val">#CFCDC6</div></div>
-    <div class="swatch"><div class="chip" style="background:#D27929"></div><div class="name">ACCENT</div><div class="val">#D27929</div></div>
-    <div class="swatch"><div class="chip" style="background:#ABA185"></div><div class="name">PRIMARY</div><div class="val">#ABA185</div></div>
-    <div class="swatch"><div class="chip" style="background:#BC6C25"></div><div class="name">HOME PRIMARY</div><div class="val">#BC6C25</div></div>
-    <div class="swatch"><div class="chip" style="background:#FFB703"></div><div class="name">FOCUS</div><div class="val">#FFB703</div></div>
-  </div>
+  <div id="roles" class="pal"></div>
 
-  <h2>Buttons</h2>
-  <div class="row">
-    <button class="home">Start free</button>
-    <button>Get Session</button>
-    <button class="secondary">Sign in</button>
-    <button class="outline">Contact us</button>
-  </div>
-  <p>Home primary is the amber fill. Pricing, plugin and the 404 Go home button use the quartz fill. Corners are square. Large controls are 44px tall.</p>
-
-  <h2>Pricing card</h2>
-  <div class="card">
-    <span class="badge">RECOMMENDED</span>
-    <strong>Session</strong>
-    <div class="price">$30/mo</div>
-    <p style="color:#CFCDC6">For regular sessions and creative iteration.</p>
-  </div>
-
-  <h2>Type</h2>
-  <p style="font-size:72px;line-height:73.44px;letter-spacing:-2.52px;font-weight:600;color:#fff;margin:0">Shape the <span style="color:#D27929">sound</span></p>
-  <p style="font:500 11px/13.2px var(--mono);letter-spacing:0.44px;color:#8E8E8E">NOW PLAYING</p>
-  <p>Pick a genre, instruments and mood for your starting point.</p>
-
-  <h2>Declared paper ramp</h2>
-  <div class="paper">
-    <strong>:root paper, not painted on the marketing pages.</strong>
-    <p style="color:#5C5B53">--sx-paper #F3F0EA, --sx-ink-900 #0B0B0A, --sx-primary #F9A916. The captured pages stayed on the dark scope.</p>
-  </div>
-
-  <h2>Space and radius</h2>
-  <table>
-    <tr><th>Token</th><th>Value</th><th>Where</th></tr>
-    <tr><td>space 1 to 16</td><td>4, 8, 12, 16, 20, 24, 32, 40, 48, 64 px</td><td>--sx-sp-*</td></tr>
-    <tr><td>control radius</td><td>0</td><td>--sx-r-control and computed buttons</td></tr>
-    <tr><td>pricing card</td><td>4px</td><td>.PricingNext_card</td></tr>
-    <tr><td>pill token</td><td>999px</td><td>declared, not painted on these pages</td></tr>
-  </table>
+  <h2>Components</h2>
+  <div id="comp" class="kv"></div>
 </main>
+<script>
+const TOK = {"core":{"color":{"paper":{"accent":{"v":"#ea4125","t":"color","s":"css-var --sx-accent declared on :root, stableaudio.com 2026-11-21"},"danger":{"v":"#b51a0e","t":"color","s":"css-var --sx-danger declared on :root, stableaudio.com 2026-11-21"},"info":{"v":"#1f5aa8","t":"color","s":"css-var --sx-info declared on :root, stableaudio.com 2026-11-21"},"ink":{"400":{"v":"#a8a79b","t":"color","s":"css-var --sx-ink-400 declared on :root, stableaudio.com 2026-11-21"},"500":{"v":"#84847a","t":"color","s":"css-var --sx-ink-500 declared on :root, stableaudio.com 2026-11-21"},"600":{"v":"#5c5b53","t":"color","s":"css-var --sx-ink-600 declared on :root, stableaudio.com 2026-11-21"},"700":{"v":"#3a3a36","t":"color","s":"css-var --sx-ink-700 declared on :root, stableaudio.com 2026-11-21"},"800":{"v":"#1c1c1a","t":"color","s":"css-var --sx-ink-800 declared on :root, stableaudio.com 2026-11-21"},"900":{"v":"#0b0b0a","t":"color","s":"css-var --sx-ink-900 declared on :root, stableaudio.com 2026-11-21"}},"ok":{"v":"#2f7a3d","t":"color","s":"css-var --sx-ok declared on :root, stableaudio.com 2026-11-21"},"p":{"000":{"v":"#f2efe6","t":"color","s":"css-var --sx-p-000 declared on :root, stableaudio.com 2026-11-21"},"050":{"v":"#f6f3ea","t":"color","s":"css-var --sx-p-050 declared on :root, stableaudio.com 2026-11-21"},"100":{"v":"#faf7ee","t":"color","s":"css-var --sx-p-100 declared on :root, stableaudio.com 2026-11-21"},"200":{"v":"#edeadf","t":"color","s":"css-var --sx-p-200 declared on :root, stableaudio.com 2026-11-21"},"300":{"v":"#e0dcce","t":"color","s":"css-var --sx-p-300 declared on :root, stableaudio.com 2026-11-21"},"400":{"v":"#c7c2b1","t":"color","s":"css-var --sx-p-400 declared on :root, stableaudio.com 2026-11-21"}},"paper":{"v":"#f3f0ea","t":"color","s":"css-var --sx-paper declared on :root, stableaudio.com 2026-11-21"},"primary":{"v":"#f9a916","t":"color","s":"css-var --sx-primary declared on :root, stableaudio.com 2026-11-21"},"warn":{"v":"#c48a00","t":"color","s":"css-var --sx-warn declared on :root, stableaudio.com 2026-11-21"}}},"spacing":{"1":{"v":"4px","t":"dimension","s":"css-var --sx-sp-1 declared on :root, stableaudio.com 2026-11-21"},"2":{"v":"8px","t":"dimension","s":"css-var --sx-sp-2 declared on :root, stableaudio.com 2026-11-21"},"3":{"v":"12px","t":"dimension","s":"css-var --sx-sp-3 declared on :root, stableaudio.com 2026-11-21"},"4":{"v":"16px","t":"dimension","s":"css-var --sx-sp-4 declared on :root, stableaudio.com 2026-11-21"},"5":{"v":"20px","t":"dimension","s":"css-var --sx-sp-5 declared on :root, stableaudio.com 2026-11-21"},"6":{"v":"24px","t":"dimension","s":"css-var --sx-sp-6 declared on :root, stableaudio.com 2026-11-21"},"8":{"v":"32px","t":"dimension","s":"css-var --sx-sp-8 declared on :root, stableaudio.com 2026-11-21"},"10":{"v":"40px","t":"dimension","s":"css-var --sx-sp-10 declared on :root, stableaudio.com 2026-11-21"},"12":{"v":"48px","t":"dimension","s":"css-var --sx-sp-12 declared on :root, stableaudio.com 2026-11-21"},"16":{"v":"64px","t":"dimension","s":"css-var --sx-sp-16 declared on :root, stableaudio.com 2026-11-21"}},"motion":{"1":{"v":"100ms","t":"duration","s":"css-var --sx-dur-1 declared on :root, stableaudio.com 2026-11-21"},"2":{"v":"180ms","t":"duration","s":"css-var --sx-dur-2 declared on :root, stableaudio.com 2026-11-21"},"3":{"v":"280ms","t":"duration","s":"css-var --sx-dur-3 declared on :root, stableaudio.com 2026-11-21"},"4":{"v":"420ms","t":"duration","s":"css-var --sx-dur-4 declared on :root, stableaudio.com 2026-11-21"},"5":{"v":"600ms","t":"duration","s":"css-var --sx-dur-5 declared on :root, stableaudio.com 2026-11-21"},"pop":{"v":"120ms","t":"duration","s":"css-var --sx-dur-pop declared on :root, stableaudio.com 2026-11-21"},"wipe":{"v":"240ms","t":"duration","s":"css-var --sx-dur-wipe declared on :root, stableaudio.com 2026-11-21"},"stagger":{"v":"60ms","t":"duration","s":"css-var --sx-dur-stagger declared on :root, stableaudio.com 2026-11-21"},"ease-out":{"v":[0.2,0.7,0.2,1.0],"t":"cubicBezier","s":"css-var --sx-ease-out declared on :root, stableaudio.com 2026-11-21"},"ease-in":{"v":[0.32,0.0,0.67,0.0],"t":"cubicBezier","s":"css-var --sx-ease-in declared on :root, stableaudio.com 2026-11-21"},"ease-in-out":{"v":[0.42,0.0,0.58,1.0],"t":"cubicBezier","s":"css-var --sx-ease-in-out declared on :root, stableaudio.com 2026-11-21"}},"font":{"ui":{"v":"\"Neue Haas Grotesk Text Pro\", \"SX Inter\", \"Helvetica Neue\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"computed font-family on .homePage_page__pMG82, 2026-11-21. --sx-ff-ui on :root names Suisse Int'l first; the painted page substitutes Neue Haas Grotesk Text Pro."},"display":{"v":"\"Neue Haas Grotesk Text Pro\", \"SX Inter\", \"Helvetica Neue\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"computed font-family on h1, homepage, 2026-11-21"},"mono":{"v":"\"SX Plex Mono\",\"IBM Plex Mono\",ui-monospace,SFMono-Regular,Menlo,monospace","t":"fontFamily","s":"css-var --sx-ff-mono declared on :root, resolved on the marketing scope, stableaudio.com 2026-11-21"}},"sizing":{"tap-min":{"v":"44px","t":"dimension","s":"css-var --sx-tap-min declared on :root, stableaudio.com 2026-11-21"}},"radius":{"control":{"v":"0px","t":"dimension","s":"css-var --sx-r-control declared on .sx-scope.sx-platform (value 0, stored as 0px), stableaudio.com 2026-11-21"},"card":{"v":"0px","t":"dimension","s":"css-var --sx-r-card declared on .sx-scope.sx-platform (value 0, stored as 0px), stableaudio.com 2026-11-21"},"menu":{"v":"0px","t":"dimension","s":"css-var --sx-r-menu declared on .sx-scope.sx-platform (value 0, stored as 0px), stableaudio.com 2026-11-21"},"pill":{"v":"999px","t":"dimension","s":"css-var --sx-r-pill declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}}},"light":{},"dark":{"color":{"accent":{"v":"#ea4125","t":"color","s":"css-var --sx-accent declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"app":{"generate":{"v":"#ae99b3","t":"color","s":"css-var --sx-app-generate declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"live":{"v":"#8faa92","t":"color","s":"css-var --sx-app-live declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"packs":{"v":"#bb988e","t":"color","s":"css-var --sx-app-packs declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"plugin":{"v":"#9ca2a9","t":"color","s":"css-var --sx-app-plugin declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"seed":{"v":"#ba96a1","t":"color","s":"css-var --sx-app-seed declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"sessions":{"v":"#92a2be","t":"color","s":"css-var --sx-app-sessions declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"video":{"v":"#81aaaf","t":"color","s":"css-var --sx-app-video declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}},"attach":{"v":"#8ee3ec","t":"color","s":"css-var --sx-attach declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"brand":{"v":"#aba185","t":"color","s":"css-var --sx-brand declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"danger":{"v":"#ff5a45","t":"color","s":"css-var --sx-danger declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"facet":{"genre":{"v":"#7fb0ff","t":"color","s":"css-var --sx-facet-genre declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"instr":{"v":"#9ed77f","t":"color","s":"css-var --sx-facet-instr declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"purpose":{"v":"#f59ab0","t":"color","s":"css-var --sx-facet-purpose declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"vibe":{"v":"#5fd3c6","t":"color","s":"css-var --sx-facet-vibe declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}},"fingerprint":{"v":"#e0ae4f","t":"color","s":"css-var --sx-fingerprint declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"info":{"v":"#6aa3ff","t":"color","s":"css-var --sx-info declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"ink":{"400":{"v":"#4d4d4d","t":"color","s":"css-var --sx-ink-400 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"500":{"v":"#6a6a6a","t":"color","s":"css-var --sx-ink-500 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"600":{"v":"#8e8e8e","t":"color","s":"css-var --sx-ink-600 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"700":{"v":"#cfcdc6","t":"color","s":"css-var --sx-ink-700 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"800":{"v":"#e8e8e8","t":"color","s":"css-var --sx-ink-800 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"900":{"v":"#ffffff","t":"color","s":"css-var --sx-ink-900 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}},"inpaint":{"v":"#f8a815","t":"color","s":"css-var --sx-inpaint declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"loop":{"marker":{"v":"#a381ff","t":"color","s":"css-var --sx-loop-marker declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}},"mode":{"active":{"v":"#c0afd9","t":"color","s":"css-var --sx-mode-active declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"bar":{"v":"#a381ff","t":"color","s":"css-var --sx-mode-bar declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}},"nav":{"foot":{"bg":{"v":"#3c3c3c","t":"color","s":"css-var --sx-nav-foot-bg declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}},"ground":{"v":"#121212","t":"color","s":"css-var --sx-nav-ground declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"selected":{"v":"color-mix(in srgb,var(--sx-brand) 20%,transparent)","t":"color","s":"css-var --sx-nav-selected declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}},"ok":{"v":"#3fb96b","t":"color","s":"css-var --sx-ok declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"p":{"000":{"v":"#000000","t":"color","s":"css-var --sx-p-000 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"050":{"v":"#0b0b0b","t":"color","s":"css-var --sx-p-050 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"100":{"v":"#141414","t":"color","s":"css-var --sx-p-100 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"200":{"v":"#1f1f1f","t":"color","s":"css-var --sx-p-200 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"300":{"v":"#2b2b2b","t":"color","s":"css-var --sx-p-300 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"400":{"v":"#333333","t":"color","s":"css-var --sx-p-400 declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}},"paper":{"v":"#f3f0ea","t":"color","s":"css-var --sx-paper declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"primary":{"v":"#aba185","t":"color","s":"css-var --sx-primary declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"range":{"marker":{"v":"#c0afd9","t":"color","s":"css-var --sx-range-marker declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}},"rule":{"v":"#ffffff","t":"color","s":"css-var --sx-rule declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"selection":{"v":"#c0afd9","t":"color","s":"css-var --sx-selection declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"solo":{"v":"#3fc8d6","t":"color","s":"css-var --sx-solo declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"warn":{"v":"#e0ae4f","t":"color","s":"css-var --sx-warn declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"wash":{"v":"color-mix(in srgb,var(--sx-primary) 12%,transparent)","t":"color","s":"css-var --sx-wash declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"wave":{"ink":{"v":"#bbb29a","t":"color","s":"css-var --sx-wave-ink declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"}}},"page":{"v":"#000000","t":"color","s":"computed background-color on html.bg-[#000], homepage, 2026-11-21"},"surface":{"v":"#0b0b0b","t":"color","s":"measured pricing card .PricingNext_card background, stableaudio.com 2026-11-21, raw/components-computed.json"},"text":{"muted":{"v":"#cfcdc6","t":"color","s":"measured nav link Pricing color, default, stableaudio.com 2026-11-21, raw/components-computed.json"},"strong":{"v":"#ffffff","t":"color","s":"css-var --sx-ink-900 declared on .sx-scope.sx-platform, resolved #ffffff on the homepage scope, stableaudio.com 2026-11-21"}},"accent":{"v":"#9d4edd","t":"color","s":"measured homepage Start free button background, this load. The fill changes between loads; see What to distrust, stableaudio.com 2026-11-21, raw/components-computed.json"},"border":{"v":"rgba(255, 255, 255, 0.22)","t":"color","s":"css-var --sx-rule-soft declared on .sx-scope.sx-platform, stableaudio.com 2026-11-21"},"overlay":{"v":"#141414","t":"color","s":"measured signup dialog background, stableaudio.com 2026-11-21, raw/components-computed.json"},"component":{"button":{"primary":{"background":{"v":"#9d4edd","t":"color","s":"measured button.Button_primary Start free, default, stableaudio.com 2026-11-21, raw/components-computed.json"},"color":{"v":"#000000","t":"color","s":"measured button.Button_primary Start free, default, stableaudio.com 2026-11-21, raw/components-computed.json"},"height":{"v":"36px","t":"dimension","s":"measured button.Button_primary Start free, default, stableaudio.com 2026-11-21, raw/components-computed.json"},"font-size":{"v":"13px","t":"dimension","s":"measured button.Button_primary Start free, default, stableaudio.com 2026-11-21, raw/components-computed.json"}},"secondary":{"color":{"v":"#e8e8e8","t":"color","s":"measured button.Button_secondary Sign in, default, stableaudio.com 2026-11-21, raw/components-computed.json"},"height":{"v":"36px","t":"dimension","s":"measured button.Button_secondary Sign in, default, stableaudio.com 2026-11-21, raw/components-computed.json"}}},"control":{"radius":{"v":"0px","t":"dimension","s":"measured button border-radius, homepage, stableaudio.com 2026-11-21, raw/components-computed.json"}},"dialog":{"radius":{"v":"6px","t":"dimension","s":"measured signup dialog border-radius, stableaudio.com 2026-11-21, raw/components-computed.json"},"background":{"v":"#141414","t":"color","s":"measured signup dialog background, stableaudio.com 2026-11-21, raw/components-computed.json"}},"menu":{"background":{"v":"rgba(31, 31, 31, 0.8)","t":"color","s":"measured Presets menu background, color(srgb 0.121569 0.121569 0.121569 / 0.8), stableaudio.com 2026-11-21, raw/components-computed.json"}},"card":{"radius":{"v":"4px","t":"dimension","s":"measured pricing card border-radius, stableaudio.com 2026-11-21, raw/components-computed.json"}}},"typography":{"display":{"size":{"v":"72px","t":"dimension","s":"computed font-size on homepage h1, 2026-11-21"},"weight":{"v":"600","t":"fontWeight","s":"computed font-weight on homepage h1, 2026-11-21"},"line-height":{"v":"73.44px","t":"dimension","s":"computed line-height on homepage h1, 2026-11-21"}},"nav":{"size":{"v":"13px","t":"dimension","s":"measured nav link Pricing font-size, stableaudio.com 2026-11-21, raw/components-computed.json"}},"body":{"size":{"v":"16px","t":"dimension","s":"computed font-size on body, homepage, 2026-11-21"}}}}};
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const roles = flat(TOK.dark, '').filter(([, t]) => t.t === 'color');
+document.getElementById('roles').innerHTML = roles.map(([n, t]) => `<div class="sw"><i style="background:${esc(t.v)}"></i><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`).join('');
+document.getElementById('comp').innerHTML = flat(TOK.dark.component, 'component.').map(([n, t]) => `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`).join('');
+</script>
 </body>
 </html>

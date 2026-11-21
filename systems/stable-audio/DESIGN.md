@@ -3,162 +3,159 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Stable Audio"
-description: "Generative-audio marketing on a black square-corner system: a 56px glass bar, a 72px hero with an amber accent word, quartz and amber primary buttons, 4px pricing cards, and a separate AuthKit sign-in card"
+description: "Dark generative-audio marketing: black page, square controls, white hairline rules, Neue Haas Grotesk, a sand platform primary on pricing and a homepage accent that changes between loads"
 omitted:
-  - section: "components"
-    reason: "tokens.json has no components tokens under the colour set's `component` group"
+  - section: "typography"
+    reason: "tokens.json has no typography tokens under `core.typography`"
 colors:
-  primary: "#D27929"
+  primary: "#aba185"
   neutral: "#000000"
-  surface: "#0B0B0B"
-  on-surface: "#FFFFFF"
-  on-surface-variant: "#CFCDC6"
-  outline: "#FFFFFF38"
-  background-page: "#000000"
-  background-bar: "#0000009E"
-  background-card: "#0B0B0B"
-  background-menu: "#0B0B0B"
-  background-navGround: "#121212"
-  background-chatPanel: "#121212"
-  background-deckPanel: "#262626"
-  background-bowl: "#0D0D0C"
-  background-authPage: "#000000"
-  background-primary: "#ABA185"
-  background-primaryHome: "#BC6C25"
-  background-primaryHover: "#BCB296"
-  text-primary: "#FFFFFF"
-  text-secondary: "#CFCDC6"
-  text-muted: "#8E8E8E"
-  text-accent: "#D27929"
-  text-onPrimary: "#000000"
-  text-kicker: "#8E8E8E"
-  text-link: "#D27929"
-  text-authHeading: "#EEEEEE"
-  text-authLink: "#B1A9FF"
-  text-authMuted: "#FFFFFF9E"
-  border-faint: "#FFFFFF1A"
-  border-soft: "#FFFFFF38"
-  border-strong: "#FFFFFF"
-  border-badge: "#ABA185"
-  border-recommended: "#FFFFFF38"
-  border-focus: "#FFB703"
-  status-ok: "#2F7A3D"
-  status-warn: "#C48A00"
-  status-danger: "#B51A0E"
-  status-info: "#1F5AA8"
-  status-accentToken: "#EA4125"
-typography:
-  display:
-    fontFamily: "Neue Haas Grotesk Text Pro"
-    fontSize: "72px"
-    fontWeight: 600
-    lineHeight: 1.02
-    letterSpacing: "-2.52px"
-  section:
-    fontFamily: "Neue Haas Grotesk Text Pro"
-    fontSize: "46px"
-    fontWeight: 600
-    lineHeight: 1.02
-    letterSpacing: "-2.52px"
-  nav:
-    fontFamily: "Neue Haas Grotesk Text Pro"
-    fontSize: "13px"
-    fontWeight: 500
-    lineHeight: 1
-    letterSpacing: "0px"
-  body:
-    fontFamily: "Neue Haas Grotesk Text Pro"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "0px"
-  kicker:
-    fontFamily: "SX Plex Mono"
-    fontSize: "11px"
-    fontWeight: 500
-    lineHeight: 1.2
-    letterSpacing: "0.44px"
+  surface: "#0b0b0b"
+  on-surface: "#ffffff"
+  on-surface-variant: "#cfcdc6"
+  outline: "rgba(255, 255, 255, 0.22)"
+  color-accent: "#ea4125"
+  color-app-generate: "#ae99b3"
+  color-app-live: "#8faa92"
+  color-app-packs: "#bb988e"
+  color-app-plugin: "#9ca2a9"
+  color-app-seed: "#ba96a1"
+  color-app-sessions: "#92a2be"
+  color-app-video: "#81aaaf"
+  color-attach: "#8ee3ec"
+  color-brand: "#aba185"
+  color-danger: "#ff5a45"
+  color-facet-genre: "#7fb0ff"
+  color-facet-instr: "#9ed77f"
+  color-facet-purpose: "#f59ab0"
+  color-facet-vibe: "#5fd3c6"
+  color-fingerprint: "#e0ae4f"
+  color-info: "#6aa3ff"
+  color-ink-400: "#4d4d4d"
+  color-ink-500: "#6a6a6a"
+  color-ink-600: "#8e8e8e"
+  color-ink-700: "#cfcdc6"
+  color-ink-800: "#e8e8e8"
+  color-ink-900: "#ffffff"
+  color-inpaint: "#f8a815"
+  color-loop-marker: "#a381ff"
+  color-mode-active: "#c0afd9"
+  color-mode-bar: "#a381ff"
+  color-nav-foot-bg: "#3c3c3c"
+  color-nav-ground: "#121212"
+  color-nav-selected: "color-mix(in srgb,var(--sx-brand) 20%,transparent)"
+  color-ok: "#3fb96b"
+  color-p-000: "#000000"
+  color-p-050: "#0b0b0b"
+  color-p-100: "#141414"
+  color-p-200: "#1f1f1f"
+  color-p-300: "#2b2b2b"
+  color-p-400: "#333333"
+  color-paper: "#f3f0ea"
+  color-primary: "#aba185"
+  color-range-marker: "#c0afd9"
+  color-rule: "#ffffff"
+  color-selection: "#c0afd9"
+  color-solo: "#3fc8d6"
+  color-warn: "#e0ae4f"
+  color-wash: "color-mix(in srgb,var(--sx-primary) 12%,transparent)"
+  color-wave-ink: "#bbb29a"
+  page: "#000000"
+  text-muted: "#cfcdc6"
+  text-strong: "#ffffff"
+  accent: "#9d4edd"
+  border: "rgba(255, 255, 255, 0.22)"
+  overlay: "#141414"
+  component-button-primary-background: "#9d4edd"
+  component-button-primary-color: "#000000"
+  component-button-secondary-color: "#e8e8e8"
+  component-dialog-background: "#141414"
+  component-menu-background: "rgba(31, 31, 31, 0.8)"
 rounded:
   control: "0px"
   card: "0px"
-  chip: "0px"
   menu: "0px"
-  dialog: "0px"
-  large: "0px"
   pill: "999px"
-  pricingCard: "4px"
-  authCard: "4px"
-  authField: "3.5px"
-  authButton: "4.5px"
 spacing:
-  sp1: "4px"
-  sp2: "8px"
-  sp3: "12px"
-  sp4: "16px"
-  sp5: "20px"
-  sp6: "24px"
-  sp8: "32px"
-  sp10: "40px"
-  sp12: "48px"
-  sp16: "64px"
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "10": "40px"
+  "12": "48px"
+  "16": "64px"
+components:
+  button-primary:
+    backgroundColor: "{colors.component-button-primary-background}"
+    height: "36px"
+  dialog:
+    backgroundColor: "{colors.component-dialog-background}"
+    rounded: "6px"
+  menu:
+    backgroundColor: "{colors.component-menu-background}"
+  button-primary-font:
+    size: "13px"
+  button-secondary:
+    height: "36px"
+  control:
+    rounded: "0px"
+  card:
+    rounded: "4px"
 ---
 
 # Stable Audio
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `dark` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 0 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `dark` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 11 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Generative-audio marketing on a black square-corner system: a 56px glass bar, a 72px hero with an amber accent word, quartz and amber primary buttons, 4px pricing cards, and a separate AuthKit sign-in card.
+Good for: Dark generative-audio marketing: black page, square controls, white hairline rules, Neue Haas Grotesk, a sand platform primary on pricing and a homepage accent that changes between loads.
 
-Captured 2026-11-19, signed out (public marketing home, pricing, plugin, terms and a 404 were measured; nav Sign in opened the AuthKit email form, which was focused and not submitted; no signup, Google continue, card, phone, plan checkout, newsletter submit or plugin download). Themes: dark.
+Captured 2026-11-21, signed out (public pages only; workspace, sampler, labs, generate, checkout and account settings sit behind AuthKit and were not opened). Themes: dark.
 
-Public marketing site and the signed-out sign-in page, captured on 19 November 2026 from stableaudio.com. No account was created. The painted theme is dark. Desktop readings are from a 1440 by 900 viewport. Phone readings are from 390 by 844. Both ran at devicePixelRatio 2.
+A token set and component reference for Stable Audio's public site. Read from **stableaudio.com** on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 (devicePixelRatio 1) and 390 x 844 (devicePixelRatio 2). Captured: home, plugin, pricing, guide, manual, terms, the signed-out account wall, the not-found page, and the homepage states that stay on the page (presets menu, dice roll, help bar, FAQ, signup dialog, phone menu).
+
+Stable Audio paints one dark marketing surface. The page is black. Type is Neue Haas Grotesk Text Pro, falling back to Helvetica. Buttons are square. Rules are white at low opacity. The accent on a given load is not stable: the homepage Start free button measured `#9d4edd` on the style harvest and painted blue, then coral, on later screenshots. The platform token `--sx-primary` on `.sx-scope.sx-platform` is `#aba185`, and that is what the pricing featured button paints. **Boundary:** the workspace, sampler, labs, generate, checkout and account settings sit behind WorkOS AuthKit at `generous-milk-49.authkit.app`. That URL was recorded. No email was typed. No password was submitted.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `dark` theme. The front matter then lists every colour token under `dark`, named by its path with dots turned into hyphens.
 
-- **primary (#D27929):** `dark.text.accent`
-- **neutral (#000000):** `dark.background.page`
-- **surface (#0B0B0B):** `dark.background.card`
-- **on-surface (#FFFFFF):** `dark.text.primary`
-- **on-surface-variant (#CFCDC6):** `dark.text.secondary`
-- **outline (#FFFFFF38):** `dark.border.soft`
+- **primary (#aba185):** `dark.color.primary`
+- **neutral (#000000):** `dark.page`
+- **surface (#0b0b0b):** `dark.surface`
+- **on-surface (#ffffff):** `dark.text.strong`
+- **on-surface-variant (#cfcdc6):** `dark.text.muted`
+- **outline (rgba(255, 255, 255, 0.22)):** `dark.border`
 
 ## Typography
 
-5 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Neue Haas Grotesk Text Pro, SX Plex Mono.
+No composite type styles in tokens.json; the README text below names the faces and sizes.
 
 ### Fonts (from README.md)
 
-Neue Haas Grotesk Text Pro is the computed UI face. It is proprietary. The tokens name it and fall back to Helvetica Neue, Helvetica, Arial, sans-serif. SX Inter loaded as the webfont in that stack. SX Plex Mono 500 loaded for kickers and the RECOMMENDED chip. Inter 400 loaded on the body element before the scope face. AuthKit computed `interFont` and declares Untitled Sans on body. None of these files are vendored.
+The painted page uses **Neue Haas Grotesk Text Pro**, then SX Inter, Helvetica Neue, Helvetica, Arial. That is the computed `font-family` on the homepage scope and on `h1`. `:root` `--sx-ff-ui` names Suisse Int'l first; the public page substitutes. Inter and SX Plex Mono are served from `/fonts/` on the site (woff2). None of those files are in this package. The style guide falls back to Helvetica Neue.
 
 ## Layout
 
-Spacing from `core.space`: `sp1` 4px, `sp2` 8px, `sp3` 12px, `sp4` 16px, `sp5` 20px, `sp6` 24px, `sp8` 32px, `sp10` 40px, `sp12` 48px, `sp16` 64px.
+Spacing from `core.spacing`: `1` 4px, `2` 8px, `3` 12px, `4` 16px, `5` 20px, `6` 24px, `8` 32px, `10` 40px, `12` 48px, `16` 64px.
 
 ## Elevation & Depth
 
-Shadows, resolved to CSS:
-
-| Token | box-shadow |
-|---|---|
-| `core.elevation.nav` | `0 0 0 0 transparent` |
-| `core.elevation.wordUnderline` | `0 -2px 0 0 #BC6C25` |
-| `core.elevation.authCard` | `0 0 0 1px #FFFFFF29` |
-| `core.elevation.authPrimary` | `0 0 0 1px #00000000` |
-| `core.elevation.focus` | `0 0 0 2px #FFB703` |
+No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
 
 ## Shapes
 
-Corner radii from `core.radius`: `control` 0px, `card` 0px, `chip` 0px, `menu` 0px, `dialog` 0px, `large` 0px, `pill` 999px, `pricingCard` 4px, `authCard` 4px, `authField` 3.5px, `authButton` 4.5px.
+Corner radii from `core.radius`: `control` 0px, `card` 0px, `menu` 0px, `pill` 999px.
 
 ## Components
 
-No component tokens map onto DESIGN.md's component properties.
+7 components from the `component` tokens of the `dark` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
 
@@ -172,22 +169,18 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The nav bar fill is an oklab colour at 0.62 alpha, stored as #0000009E. That is a conversion, not a declared hex. AuthKit muted text is display-p3 white at 0.6196, stored as #FFFFFF9E.
-
-`:root` declares a paper ramp and a gold `--sx-primary` (#F9A916). The marketing pages did not paint them. Painted primary buttons are #ABA185, except the home hero, where they are #BC6C25.
-
-`--sx-r-card` computed 0. Pricing cards computed 4px. Both are recorded. The 4px value is the one on the page.
-
-Neue Haas Grotesk Text Pro is the computed face. Suisse Int'l and Söhne are only in the declared stack. SX Inter and SX Plex Mono are the webfonts `document.fonts` reported as loaded. Those faces are proprietary and are not in this package.
-
-Hover is a stylesheet rule. No element was measured in :hover. Disabled, pressed, loading and error were not on the page.
-
-The sign-in card is WorkOS AuthKit, not the `--sx-*` system. Its radius and type should not be copied onto the marketing buttons.
+- **The primary button colour changes between loads.** The harvest recorded Start free as `#9d4edd`. Screenshots of the same control later showed blue and coral. `--sx-primary` on the platform scope is `#aba185`, and pricing uses that. Treat a single accent hex as a sample of one load, not as the brand colour.
+- **`:root` is a paper palette the public page does not paint.** `--sx-p-000` on `:root` is `#f2efe6` and `--sx-primary` there is `#f9a916`. The homepage scope overrides both (`#000000` and `#aba185`). `core.color.paper` is the unused declaration. `dark` is what the page paints.
+- **`--sx-r-control` is `0`, not `0px`.** The token stores `0px` so it is a dimension. The dialog's 6px radius is measured, and it is the exception.
+- **This is the public site, not the workspace.** Sampler, labs, generate, projects and billing were not opened. AuthKit was recorded as a URL and left.
+- **Quantised screenshots.** Read colours from [tokens.json](tokens.json) or [raw/](raw/).
+- **Focus ring.** `--sx-ring` is declared. The buttons measured here kept `outline-width: 0`. Focus-visible is not a captured state.
 
 ### Do and don't (from README.md)
 
-- **Use square controls.** Marketing buttons computed radius 0. The pill token is declared and was not painted.
-- **Use the quartz primary on pricing and plugin, and the amber primary on the home hero.** They are different fills. Do not pick the declared gold `--sx-primary` for either.
-- **Keep the page black and the cards #0B0B0B.** The paper ramp is a declared theme that these pages did not show.
-- **Set focus to a 2px #FFB703 outline.** That is what `focus()` produced on Start free and a nav link.
-- **Do not treat AuthKit as the product system.** Its 4px card and Inter face belong to the sign-in host.
+- **Do keep controls square.** Buttons, chips and the presets menu use radius 0. The signup dialog is the exception at 6px. [home-dark-default.png](screenshots/home-dark-default.png), [home-dark-signup-dialog.png](screenshots/home-dark-signup-dialog.png)
+- **Do put the page on black and the type in white.** The paper palette on `:root` is not the public page. [home-dark-default.png](screenshots/home-dark-default.png)
+- **Do invert a button on hover.** Primary, secondary and ghost fill white and the label goes black. [home-dark-presets.png](screenshots/home-dark-presets.png)
+- **Don't treat one accent hex as the brand.** Start free changed colour between loads. Use the sand `#aba185` platform primary for pricing, and say when a button colour is one load's sample. [pricing-dark-default.png](screenshots/pricing-dark-default.png)
+- **Don't style the workspace from this package.** Sampler, labs and generate were not opened. [account-dark-default.png](screenshots/account-dark-default.png)
+- **Don't follow Sign up free or Sign in in a capture.** Both leave for AuthKit. [site-tree.md](site-tree.md)

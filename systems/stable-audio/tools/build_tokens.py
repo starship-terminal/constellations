@@ -1,320 +1,202 @@
 #!/usr/bin/env python3
-"""Build tokens.json from raw/readings.json for the Stable Audio public capture.
+"""Build tokens.json from raw/css-vars.json and raw/components-computed.json.
 
-PRODUCT (adapt): core() and semantic() map the readings. Helpers, check() and
-build() stay generic. The public marketing site paints one dark theme
-(html.bg-[#000], .sx-scope.sx-dark). The paper --sx-p-* ramp is declared on
-:root and was not the painted page, so it stays in core.palette and is not a
-light semantic set.
+Sources, read from https://stableaudio.com/ on 2026-11-21, signed out:
+  raw/css-vars.json              every --sx-* and --hn-* declaration in the same-origin
+                                 stylesheets, plus resolved.marketing (computed on
+                                 .homePage_page__pMG82, which carries sx-scope sx-platform sx-dark)
+  raw/components-computed.json   getComputedStyle on the public controls
 
-    python3 tools/build_tokens.py
+The public marketing page paints the platform-dark set. :root still declares a paper
+palette that the homepage does not use; those values are core.color.paper and are
+labelled as the :root declaration, not as the painted page. There is no light theme
+on the public site, so tokens.json has core and dark only.
 
-Every token carries $extensions.source.evidence and .capture. Colours are
-#RRGGBB or #RRGGBBAA. Dimensions are one px length. A light set is omitted
-because no light theme was painted on the captured surfaces.
+Deterministic: same inputs, same bytes.
 """
-import json
-import pathlib
-import re
+import json, pathlib, re
 
-PKG = pathlib.Path(__file__).resolve().parent.parent
-RAW = PKG / "raw" / "readings.json"
-READ = json.loads(RAW.read_text())
+HERE = pathlib.Path(__file__).resolve().parent.parent
+RAW = HERE / "raw"
+V = json.loads((RAW / "css-vars.json").read_text())
+C = json.loads((RAW / "components-computed.json").read_text())
 
-
-class CheckError(AssertionError):
-    pass
-
-
-def require(ok, message):
-    if not ok:
-        raise CheckError(message)
-
-
-def tok(value, typ, desc, evidence, capture):
-    return {
-        "$value": value,
-        "$type": typ,
-        "$description": desc,
-        "$extensions": {"source": {"evidence": evidence, "capture": capture}},
-    }
+ROOT = {}
+PLATFORM = {}
+for rule in V["rules"]:
+    sel = rule["selector"]
+    if sel == ":root" and "--sx-p-000" in rule["properties"] and rule["properties"]["--sx-p-000"] == "#f2efe6":
+        ROOT.update(rule["properties"])
+    if sel == ".sx-scope.sx-platform, :root.sx-platform .sx-scope":
+        PLATFORM.update(rule["properties"])
+RESOLVED = V["resolved"]["marketing"]
 
 
-def color(rid):
-    r = READ["colors"][rid]
-    return tok(r["value"], "color", r["desc"], r["evidence"], r["capture"])
+def src_var(name, where):
+    return {"source": f"css-var {name} declared on {where}, stableaudio.com 2026-11-21"}
 
 
-def dim(rid):
-    r = READ["dimensions"][rid]
-    return tok(r["value"], "dimension", r["desc"], r["evidence"], r["capture"])
+def src_measured(where):
+    return {"source": f"measured {where}, stableaudio.com 2026-11-21, raw/components-computed.json"}
 
 
-def font(rid):
-    r = READ["fonts"][rid]
-    return tok(r["value"], "fontFamily", r["desc"], r["evidence"], r["capture"])
+def color(value):
+    return {"$type": "color", "$value": value}
 
 
-def weight(rid):
-    r = READ["weights"][rid]
-    return tok(r["value"], "fontWeight", r["desc"], r["evidence"], r["capture"])
+def dim(value):
+    return {"$type": "dimension", "$value": value}
 
 
-def number(rid):
-    r = READ["numbers"][rid]
-    return tok(r["value"], "number", r["desc"], r["evidence"], r["capture"])
+def token(value, ty, source):
+    return {"$type": ty, "$value": value, "$extensions": source}
 
 
-def cubic(rid):
-    r = READ["easings"][rid]
-    return tok(r["value"], "cubicBezier", r["desc"], r["evidence"], r["capture"])
+def norm_color(value):
+    value = value.strip()
+    m = re.fullmatch(r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+))?\s*\)", value)
+    if not m:
+        return value
+    r, g, b, a = m.groups()
+    if a is None or float(a) == 1:
+        return "#%02x%02x%02x" % (int(r), int(g), int(b))
+    return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
 
 
-def duration(rid):
-    r = READ["durations"][rid]
-    return tok(r["value"], "duration", r["desc"], r["evidence"], r["capture"])
+def comp(label):
+    for item in C["components"]:
+        if item.get("label") == label:
+            return item
+    raise KeyError(label)
 
 
-def shadow(rid):
-    r = READ["shadows"][rid]
-    return tok(r["value"], "shadow", r["desc"], r["evidence"], r["capture"])
+def put(tree, path, node):
+    cur = tree
+    parts = path.split(".")
+    for part in parts[:-1]:
+        cur = cur.setdefault(part, {})
+    cur[parts[-1]] = node
 
 
-def other(rid, typ):
-    r = READ["other"][rid]
-    return tok(r["value"], typ, r["desc"], r["evidence"], r["capture"])
+core = {}
+# Paper :root palette. Not what the public page paints.
+for name, value in sorted(ROOT.items()):
+    if name.startswith("--sx-p-") or name in ("--sx-paper", "--sx-ink-900", "--sx-ink-800", "--sx-ink-700", "--sx-ink-600", "--sx-ink-500", "--sx-ink-400", "--sx-accent", "--sx-primary", "--sx-ok", "--sx-warn", "--sx-danger", "--sx-info"):
+        key = name.removeprefix("--sx-").replace("-", ".")
+        put(core, "color.paper." + key, token(value, "color", src_var(name, ":root")))
 
+for name in ("--sx-sp-1", "--sx-sp-2", "--sx-sp-3", "--sx-sp-4", "--sx-sp-5", "--sx-sp-6", "--sx-sp-8", "--sx-sp-10", "--sx-sp-12", "--sx-sp-16"):
+    put(core, "spacing." + name.removeprefix("--sx-sp-"), token(ROOT[name], "dimension", src_var(name, ":root")))
 
-def type_style(family, weight, size, line, tracking, desc, capture):
-    """Composite type style. Arguments are token names under font.*."""
-    value = {
-        "fontFamily": "{font.family." + family + "}",
-        "fontWeight": "{font.weight." + weight + "}",
-        "fontSize": "{font.size." + size + "}",
-        "lineHeight": "{font.lineHeight." + line + "}",
-        "letterSpacing": "{font.tracking." + tracking + "}",
-    }
-    return tok(value, "typography", desc, "Derived", capture)
+for name in ("--sx-dur-1", "--sx-dur-2", "--sx-dur-3", "--sx-dur-4", "--sx-dur-5", "--sx-dur-pop", "--sx-dur-wipe", "--sx-dur-stagger"):
+    put(core, "motion." + name.removeprefix("--sx-dur-"), token(ROOT[name], "duration", src_var(name, ":root")))
 
+for name, key in (("--sx-ease-out", "out"), ("--sx-ease-in", "in"), ("--sx-ease-in-out", "in-out")):
+    nums = [float(x) for x in re.findall(r"-?\d*\.?\d+", ROOT[name])]
+    put(core, "motion.ease-" + key, token(nums, "cubicBezier", src_var(name, ":root")))
 
-def core():
-    c = READ["colors"]
-    d = READ["dimensions"]
-    return {
-        "palette": {k: color(k) for k in c if k.startswith("sx") or k.startswith("hn") or k.startswith("app")},
-        "font": {
-            "family": {
-                "ui": font("uiComputed"),
-                "uiDeclared": font("uiDeclared"),
-                "displayDeclared": font("displayDeclared"),
-                "monoDeclared": font("monoDeclared"),
-                "monoKicker": font("monoKicker"),
-                "bodyFallback": font("bodyFallback"),
-                "auth": font("auth"),
-            },
-            "weight": {k: weight(k) for k in READ["weights"]},
-            "size": {
-                "kicker": dim("fsKicker"),
-                "nav": dim("fsNav"),
-                "body": dim("fsBody"),
-                "lede": dim("fsLede"),
-                "section": dim("fsSection"),
-                "display": dim("fsDisplay"),
-                "price": dim("fsPrice"),
-                "authHeading": dim("fsAuthHeading"),
-            },
-            "lineHeight": {
-                "kicker": number("lhKicker"),
-                "nav": number("lhNav"),
-                "body": number("lhBody"),
-                "display": number("lhDisplay"),
-                "textToken": number("lhTextToken"),
-            },
-            "tracking": {
-                "kicker": dim("lsKicker"),
-                "display": dim("lsDisplay"),
-                "snug": dim("lsSnug"),
-                "wide": dim("lsWide"),
-                "none": dim("lsNone"),
-            },
-        },
-        "typography": {
-            "display": type_style(
-                "ui", "semibold", "display", "display", "display",
-                "Hero h1 at 1440: 72px, weight 600, line 73.44px, tracking -2.52px.",
-                "h1.MixHero_title computed at 1440",
-            ),
-            "section": type_style(
-                "ui", "semibold", "section", "display", "display",
-                "Section title is 46px weight 600. Tracking is the display step (-2.52px). The computed section tracking was -1.38px, which is not its own token.",
-                ".HomeSection_title computed 46px at 1440",
-            ),
-            "nav": type_style(
-                "ui", "medium", "nav", "nav", "none",
-                "Nav link and medium button: 13px, weight 500, line equal to the size.",
-                ".HomeTopNav_link computed 13px",
-            ),
-            "body": type_style(
-                "ui", "regular", "body", "body", "none",
-                "Body: 16px, weight 400, line 24px.",
-                "body computed 16px/24px",
-            ),
-            "kicker": type_style(
-                "monoKicker", "medium", "kicker", "kicker", "kicker",
-                "Mono kicker: 11px SX Plex Mono, weight 500, tracking 0.44px.",
-                ".MixHero_kicker computed 11px",
-            ),
-        },
-        "space": {k: dim(k) for k in d if k.startswith("sp")},
-        "radius": {
-            "control": dim("rControl"),
-            "card": dim("rCard"),
-            "chip": dim("rChip"),
-            "menu": dim("rMenu"),
-            "dialog": dim("rDialog"),
-            "large": dim("rLarge"),
-            "pill": dim("rPill"),
-            "pricingCard": dim("rPricingCard"),
-            "authCard": dim("rAuthCard"),
-            "authField": dim("rAuthField"),
-            "authButton": dim("rAuthButton"),
-        },
-        "size": {
-            "navBar": dim("navBarH"),
-            "buttonMd": dim("buttonMdH"),
-            "buttonLg": dim("buttonLgH"),
-            "iconButton": dim("iconButton"),
-            "tapMin": dim("tapMin"),
-            "badge": dim("badgeH"),
-            "field": dim("fieldH"),
-            "faqQuestion": dim("faqQuestionH"),
-            "menuLink": dim("menuLinkH"),
-            "authCard": dim("authCardW"),
-        },
-        "motion": {
-            "duration": {k: duration(k) for k in READ["durations"]},
-            "easing": {k: cubic(k) for k in READ["easings"]},
-        },
-        "elevation": {
-            "nav": shadow("nav"),
-            "wordUnderline": shadow("wordUnderline"),
-            "authCard": shadow("authCard"),
-            "authPrimary": shadow("authPrimary"),
-            "focus": other("focusRing", "shadow"),
-        },
-    }
+put(core, "font.ui", token(
+    '"Neue Haas Grotesk Text Pro", "SX Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+    "fontFamily",
+    {"source": "computed font-family on .homePage_page__pMG82, 2026-11-21. --sx-ff-ui on :root names Suisse Int'l first; the painted page substitutes Neue Haas Grotesk Text Pro."},
+))
+put(core, "font.display", token(
+    '"Neue Haas Grotesk Text Pro", "SX Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+    "fontFamily",
+    {"source": "computed font-family on h1, homepage, 2026-11-21"},
+))
+put(core, "font.mono", token(
+    RESOLVED.get("--sx-ff-mono", ROOT.get("--sx-ff-mono")),
+    "fontFamily",
+    src_var("--sx-ff-mono", ":root, resolved on the marketing scope"),
+))
+put(core, "sizing.tap-min", token("44px", "dimension", src_var("--sx-tap-min", ":root")))
+put(core, "radius.control", token("0px", "dimension", src_var("--sx-r-control", ".sx-scope.sx-platform (value 0, stored as 0px)")))
+put(core, "radius.card", token("0px", "dimension", src_var("--sx-r-card", ".sx-scope.sx-platform (value 0, stored as 0px)")))
+put(core, "radius.menu", token("0px", "dimension", src_var("--sx-r-menu", ".sx-scope.sx-platform (value 0, stored as 0px)")))
+put(core, "radius.pill", token("999px", "dimension", src_var("--sx-r-pill", ".sx-scope.sx-platform")))
 
+# Painted platform colours, the public page.
+dark = {}
+for name, value in sorted(PLATFORM.items()):
+    if not name.startswith("--sx-"):
+        continue
+    if name.startswith("--sx-grain") or "gradient" in value or value.startswith("url(") or "clamp(" in value or value.startswith("min("):
+        continue
+    if name.startswith("--sx-r-") or name.startswith("--sx-dur") or name.startswith("--sx-ease") or name.startswith("--sx-ff") or name.startswith("--sx-fs") or name.startswith("--sx-sp") or name.startswith("--sx-deck") or name.startswith("--sx-hub") or name.startswith("--sx-zoom") or name.startswith("--sx-rail") or name.startswith("--sx-tracking") or name.startswith("--sx-fw"):
+        continue
+    key = name.removeprefix("--sx-").replace("-", ".")
+    ty = "color" if value.startswith("#") or value.startswith("rgb") or value.startswith("color-mix") else "other"
+    if ty != "color":
+        continue
+    put(dark, "color." + key, token(value, "color", src_var(name, ".sx-scope.sx-platform")))
 
-def semantic():
-    """The painted dark marketing theme, plus the AuthKit sign-in card."""
-    return {
-        "background": {
-            "page": color("page"),
-            "bar": color("bar"),
-            "card": color("card"),
-            "menu": color("menu"),
-            "navGround": color("navGround"),
-            "chatPanel": color("chatPanel"),
-            "deckPanel": color("deckPanel"),
-            "bowl": color("bowl"),
-            "authPage": color("authPage"),
-            "primary": color("primaryPainted"),
-            "primaryHome": color("primaryHome"),
-            "primaryHover": color("primaryHover"),
-        },
-        "text": {
-            "primary": color("textPrimary"),
-            "secondary": color("textSecondary"),
-            "muted": color("textMuted"),
-            "accent": color("textAccent"),
-            "onPrimary": color("onPrimary"),
-            "kicker": color("textKicker"),
-            "link": color("textLink"),
-            "authHeading": color("authHeading"),
-            "authLink": color("authLink"),
-            "authMuted": color("authMuted"),
-        },
-        "border": {
-            "faint": color("ruleFaint"),
-            "soft": color("ruleSoft"),
-            "strong": color("rule"),
-            "badge": color("badgeBorder"),
-            "recommended": color("recommendedBorder"),
-            "focus": color("focus"),
-        },
-        "status": {
-            "ok": color("ok"),
-            "warn": color("warn"),
-            "danger": color("danger"),
-            "info": color("info"),
-            "accentToken": color("accentToken"),
-        },
-    }
+# Semantic roles from the painted page, measured where the CSS variable is not the paint.
+primary = comp("button-primary")["states"]["default"]
+secondary = comp("button-secondary")["states"]["default"]
+nav = comp("link-pricing")["states"]["default"]
+dialog = comp("dialog-signup")["dialog"]
+menu = comp("menu-presets")["menu"]
+card = comp("pricing")["card"]
+put(dark, "page", token("#000000", "color", {"source": "computed background-color on html.bg-[#000], homepage, 2026-11-21"}))
+put(dark, "surface", token(norm_color(card["backgroundColor"]), "color", src_measured("pricing card .PricingNext_card background")))
+put(dark, "text.muted", token(norm_color(nav["color"]), "color", src_measured("nav link Pricing color, default")))
+put(dark, "text.strong", token("#ffffff", "color", src_var("--sx-ink-900", ".sx-scope.sx-platform, resolved #ffffff on the homepage scope")))
+put(dark, "accent", token(norm_color(primary["backgroundColor"]), "color", src_measured("homepage Start free button background, this load. The fill changes between loads; see What to distrust")))
+put(dark, "border", token("rgba(255, 255, 255, 0.22)", "color", src_var("--sx-rule-soft", ".sx-scope.sx-platform") | {"note": "also the Sign in button border"}))
+put(dark, "overlay", token(norm_color(dialog["backgroundColor"]), "color", src_measured("signup dialog background")))
+put(dark, "component.button.primary.background", token(norm_color(primary["backgroundColor"]), "color", src_measured("button.Button_primary Start free, default")))
+put(dark, "component.button.primary.color", token(norm_color(primary["color"]), "color", src_measured("button.Button_primary Start free, default")))
+put(dark, "component.button.primary.height", token(primary["height"], "dimension", src_measured("button.Button_primary Start free, default")))
+put(dark, "component.button.primary.font-size", token(primary["fontSize"], "dimension", src_measured("button.Button_primary Start free, default")))
+put(dark, "component.button.secondary.color", token(norm_color(secondary["color"]), "color", src_measured("button.Button_secondary Sign in, default")))
+put(dark, "component.button.secondary.height", token(secondary["height"], "dimension", src_measured("button.Button_secondary Sign in, default")))
+put(dark, "component.control.radius", token("0px", "dimension", src_measured("button border-radius, homepage")))
+put(dark, "component.dialog.radius", token(dialog["borderRadius"], "dimension", src_measured("signup dialog border-radius")))
+put(dark, "component.dialog.background", token(norm_color(dialog["backgroundColor"]), "color", src_measured("signup dialog background")))
+put(dark, "component.menu.background", token("rgba(31, 31, 31, 0.8)", "color", src_measured("Presets menu background, color(srgb 0.121569 0.121569 0.121569 / 0.8)")))
+put(dark, "component.card.radius", token(card["borderRadius"], "dimension", src_measured("pricing card border-radius")))
+put(dark, "typography.display.size", token("72px", "dimension", {"source": "computed font-size on homepage h1, 2026-11-21"}))
+put(dark, "typography.display.weight", token("600", "fontWeight", {"source": "computed font-weight on homepage h1, 2026-11-21"}))
+put(dark, "typography.display.line-height", token("73.44px", "dimension", {"source": "computed line-height on homepage h1, 2026-11-21"}))
+put(dark, "typography.nav.size", token(nav["fontSize"], "dimension", src_measured("nav link Pricing font-size")))
+put(dark, "typography.body.size", token("16px", "dimension", {"source": "computed font-size on body, homepage, 2026-11-21"}))
 
+doc = {
+    "$description": "Stable Audio public site, measured 2026-11-21. core holds the :root paper palette and shared scales. dark holds the platform set the public pages paint. No light theme was offered.",
+    "core": core,
+    "dark": dark,
+    "$themes": [{"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}}],
+}
 
-def walk(node, prefix=()):
+# Checks
+DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+def walk(node, path=""):
+    for k, v in node.items():
+        if k.startswith("$"):
+            continue
+        p = f"{path}.{k}" if path else k
+        if isinstance(v, dict) and "$value" in v:
+            if "source" not in v.get("$extensions", {}):
+                raise SystemExit("missing source " + p)
+            if v["$type"] == "dimension" and not DIM.fullmatch(str(v["$value"])):
+                raise SystemExit(f"{p}: bad dimension {v['$value']!r}")
+            if v["$type"] == "color" and not re.match(r"^(#|rgb|rgba|color-mix)", str(v["$value"])):
+                raise SystemExit(f"{p}: bad color {v['$value']!r}")
+        elif isinstance(v, dict):
+            walk(v, p)
+walk(core)
+walk(dark)
+(HERE / "tokens.json").write_text(json.dumps(doc, indent=1) + "\n")
+
+def count(node):
+    n = 0
     for k, v in node.items():
         if k.startswith("$"):
             continue
         if isinstance(v, dict) and "$value" in v:
-            yield prefix + (k,), v
+            n += 1
         elif isinstance(v, dict):
-            yield from walk(v, prefix + (k,))
-
-
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-def check(doc):
-    sets = [s for s in ("core", "light", "dark") if s in doc]
-    paths = {".".join(p) for name in sets for p, _ in walk(doc[name])}
-    for name in sets:
-        for p, t in walk(doc[name]):
-            where = name + "." + ".".join(p)
-            src = t.get("$extensions", {}).get("source", {})
-            require(src.get("evidence") and src.get("capture"), f"{where}: no source")
-            v = t["$value"]
-            for a in aliases(v):
-                require(a in paths, f"{where}: alias {{{a}}} points at nothing")
-            if isinstance(v, str) and v.startswith("{"):
-                continue
-            if t["$type"] == "color":
-                require(re.fullmatch(r"#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?", v), f"{where}: bad colour {v}")
-            elif t["$type"] == "dimension":
-                require(re.fullmatch(r"-?\d+(\.\d+)?px", v), f"{where}: bad dimension {v}")
-            elif t["$type"] == "duration":
-                require(re.fullmatch(r"\d+(\.\d+)?ms", v), f"{where}: bad duration {v}")
-            elif t["$type"] == "cubicBezier":
-                require(isinstance(v, list) and len(v) == 4, f"{where}: bad easing")
-    if "light" in doc and "dark" in doc:
-        keys = lambda s: sorted(".".join(p) for p, _ in walk(doc[s]))
-        require(keys("light") == keys("dark"), "light and dark keys differ")
-
-
-def build():
-    doc = {
-        "core": core(),
-        "dark": semantic(),
-        "$themes": [{
-            "id": "dark",
-            "name": "Dark",
-            "selectedTokenSets": {"core": "source", "dark": "enabled"},
-            "$description": "The public marketing site paints html.bg-[#000] and .sx-scope.sx-dark. No light theme was switched on the captured pages.",
-        }],
-        "$metadata": {"tokenSetOrder": ["core", "dark"]},
-    }
-    check(doc)
-    out = PKG / "tokens.json"
-    out.write_text(json.dumps(doc, indent=2) + "\n")
-    print(f"wrote {out} ({sum(1 for _ in walk(doc['core']))} core, {sum(1 for _ in walk(doc['dark']))} dark)")
-
-
-if __name__ == "__main__":
-    build()
+            n += count(v)
+    return n
+print("core", count(core), "dark", count(dark))

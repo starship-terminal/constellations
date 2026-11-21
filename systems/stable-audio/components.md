@@ -1,84 +1,37 @@
 # Components
 
-Public signed-out surfaces of Stable Audio, measured on 19 November 2026 from computed styles in the T3 preview browser. The browser did not produce screenshot frames, so this inventory has no crops. A value with no crop is still a measured value when the capture column names the element.
+Public controls on stableaudio.com, measured 2026-11-21 in headless Chromium at 1440x900. Values are token names where [tokens.json](tokens.json) has them. Crops were not cut; the states are in [screenshots/](screenshots/).
 
-## Button
+| Component | Present | States seen | Where |
+|---|---|---|---|
+| Button | yes | default, hover (fill flips to white) | Start free, Sign in, Make my mix, pricing plan buttons. [home-dark-default.png](screenshots/home-dark-default.png) |
+| Icon button | yes | default | Help (`aria-label="Help"`), Open menu, play bowl. [home-dark-help.png](screenshots/home-dark-help.png) |
+| Link | yes | default, hover (8% white wash) | Nav Pricing, Plugin, API. [home-dark-default.png](screenshots/home-dark-default.png) |
+| Text field | not present | | No public field except the newsletter input, which was not focused or filled |
+| Text area | not present | | |
+| Select | not present | | Presets is a menu, not a select |
+| Checkbox | not present | | |
+| Radio | not present | | |
+| Switch | not present | | |
+| Tabs | yes | selected | Plugin Mac / Windows. [plugin-dark-windows.png](screenshots/plugin-dark-windows.png) |
+| Menu | yes | open | Presets menu, phone nav. [home-dark-presets.png](screenshots/home-dark-presets.png), [mobile-home-dark-menu.png](screenshots/mobile-home-dark-menu.png) |
+| Tooltip | not captured | | Help mode mounts `?` marks. Their tooltip text was not read |
+| Dialog | yes | open | Signup dialog from Make my mix. Not submitted. [home-dark-signup-dialog.png](screenshots/home-dark-signup-dialog.png) |
+| Toast | not present | | |
+| Card | yes | default | Pricing plan cards, 4px radius, `#0b0b0b`. [pricing-dark-default.png](screenshots/pricing-dark-default.png) |
+| List row | yes | default | Presets menu rows, FAQ summaries. [home-dark-faq-open.png](screenshots/home-dark-faq-open.png) |
+| Table | not present | | |
+| Avatar | not present | | |
+| Badge | not present | | |
 
-| State | Fill | Text | Border | Radius | Size | Where |
-|---|---|---|---|---|---|---|
-| Primary, home | #BC6C25 | #000000, 600 | 1px solid #BC6C25 | 0 | 13px / 36px nav, 15px / 44px hero | Start free, Make my mix |
-| Primary, pricing and plugin | #ABA185 | #000000, 600 | 1px solid #ABA185 | 0 | 15px / 44px, padding 0 20px | Get Session, Download for Mac, 404 Go home |
-| Secondary | transparent | #E8E8E8, 500 | 1px solid rgba(255,255,255,0.22) | 0 | 13px / 36px or 15px / 44px | Sign in, Roll the dice |
-| Ghost | transparent | #E8E8E8, 500 | 1px solid transparent | 0 | 15px / 44px, padding 0 20px | Download, Save |
-| Outline | transparent | #FFFFFF, 500 | 1px solid #FFFFFF | 0 | 13px / 32px, padding 0 14px | Contact us |
-| Focus-visible | unchanged | unchanged | unchanged | 0 | outline 2px solid #FFB703 | Start free and a nav link after focus() |
-| Hover, declared | not a fill change | var(--sx-primary-hover-ink, var(--sx-p-100)) | declared on .sx-btn-primary:hover | 0 | stylesheet rule, not a hovered element | .sx-btn-primary:hover |
-| Disabled, declared | unchanged | var(--sx-ink-500) | stylesheet | 0 | opacity 0.5, cursor not-allowed | .sx-btn:disabled. No disabled control was on the pages |
+## Shared values
 
-## Icon button
+Buttons are square (`--sx-r-control: 0`). The homepage primary button on the harvest load was `#9d4edd` with black text, 36px tall, 13px / 600. A later screenshot painted the same button blue. Pricing paints the featured plan button `#aba185` (`--sx-primary` on `.sx-scope.sx-platform`). Sign in is a ghost: transparent, `#e8e8e8` text, `rgba(255, 255, 255, 0.22)` border. Hover on these buttons fills them white and turns the label black.
 
-Help and the phone menu button are 36 by 36, transparent, 1px solid rgba(255,255,255,0.22), radius 0. The menu icon is an inline SVG, viewBox 0 0 12 12, painted at 16px. The API link icon is 11px. The help icon is 14px.
+The signup dialog is the exception to the square rule: 440x238, background `#141414`, radius 6px.
 
-## Link
-
-Nav links are 13px, weight 500, colour #CFCDC6, padding 0 10px, height 32, radius 0. Ecosystem links are 14px, weight 500, colour #D27929. The word "here" in body copy is 12.5px, colour #8E8E8E. Terms links inside the legal page are white and underlined.
-
-## Text field
-
-The footer newsletter field is 30px tall, padding 0 10px, radius 0, fill #0B0B0B, border 1px solid color(srgb 1 1 1 / 0.16), text 13px white, placeholder "Email address". It was not filled and Subscribe was not pressed.
-
-The AuthKit email field is 38px tall, 342px wide, radius 3.5px, transparent fill, colour #EEEEEE, placeholder "Your email address". Focusing it produced no extra outline on the input itself. Nothing was typed.
-
-## Text area, select, checkbox, radio, switch
-
-Not present on the captured public pages.
-
-## Tabs
-
-Not present. Pricing has no monthly or yearly switch.
-
-## Menu
-
-At 390 the hamburger opens a drawer. The drawer computed display block, fill #0B0B0B, width 390, height 333, padding 8px 16px 20px. Links are 16px, weight 400, white, row height 48. Sign in and Start free sit in a grid under the links. A second header in the DOM (the signed-in shell, height 0) was not the painted bar.
-
-## Tooltip
-
-Not present.
-
-## Dialog
-
-No product dialog was opened. OneTrust cookie UI was dismissed with Reject All before measuring. AuthKit is a full page, not a dialog: a 440px card, padding 48px, radius 4px, inset shadow rgba(255,255,255,0.16).
-
-## Toast
-
-Not present.
-
-## Card
-
-Pricing cards are fill #0B0B0B, padding 24px, radius 4px, border 1px solid rgba(255,255,255,0.1). The Session card uses rgba(255,255,255,0.22). The enterprise card uses padding 40px. Home teaser cards match the pricing fill and use padding 28px.
-
-## List row
-
-FAQ summaries are 17px, weight 600, white, padding 16px 0, row height 64. The open chevron is #FFB703. The open answer is 16px, line-height 24px, colour #CFCDC6.
-
-## Table
-
-Not present.
-
-## Avatar
-
-Not present. Signed out, so no account avatar.
-
-## Badge
-
-RECOMMENDED is a chip: font SX Plex Mono 10px, weight 500, letter-spacing 0.2px, colour and border #ABA185, padding 0 6px, height 18, radius 0.
+The Presets menu is 281x486, background `rgba(31, 31, 31, 0.8)`, square, with a stacked shadow recorded in [raw/components-computed.json](raw/components-computed.json).
 
 ## Gaps
 
-- No crops. The preview browser returned "The browser is not producing screenshot frames."
-- Hover, pressed and loading were not computed on a live element. Hover is a stylesheet rule only.
-- Disabled, error, empty and loading states were not on the public pages.
-- Checkbox, radio, switch, select, textarea, tabs, tooltip, toast, table and avatar were not on the public pages.
-- The signed-in studio, sampler, Sessions and the plugin download were not entered.
-- AuthKit error and verification states were not opened. The email form was not submitted.
-- Google continue was not followed.
+Signed-in workspace, sampler, labs, generate, checkout and account settings were not opened. Text fields, selects, checkboxes, radios, switches, toasts, tables, avatars and badges do not appear on the public pages. Focus-visible was requested in the harvest and the outline width stayed 0 on the buttons read. Disabled, loading and error states were not shown.
