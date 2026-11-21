@@ -1779,7 +1779,7 @@
       "description": "The fastest way for startups to do any analysis",
       "status": "captured",
       "package": "systems/equals",
-      "notes": "https://equals.app/login redirects to a Netlify 404 on equals.com. Sign in opens https://go.equals.com/auth/new. The capture inbox was entered and the page said \"We couldn't find an account for that email.\" New accounts are a demo request, not a signup form. No code was sent.",
+      "notes": "https://equals.app/login redirects to a Netlify 404 on equals.com. Sign in opens https://go.equals.com/auth/new. The capture inbox was entered and the page said \"We couldn't find an account for that email.\" New accounts are a demo request, not a signup form. No code was sent. Public walk 2026-11-21: the public site tree is in systems/equals/site-tree.md. equals.app redirects to equals.com. Sign in stops at an empty email field and Continue. Nothing was typed. No identity provider was clicked. No form was submitted. Filled-email crops from the older capture were removed. login-review.json is a stop note and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1712 at cdd72b8edf2a. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 6
