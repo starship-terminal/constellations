@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-09T03:52:48.875Z",
+  "capturedAt": "2026-11-21T00:01:07.983Z",
   "screenshot": "perspectives-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6456
+      "height": 6425
     },
     "scroll": {
       "x": 0,

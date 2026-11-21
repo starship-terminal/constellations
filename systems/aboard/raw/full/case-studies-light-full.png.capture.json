@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-09T03:52:10.948Z",
+  "capturedAt": "2026-11-21T00:00:43.361Z",
   "screenshot": "case-studies-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 590
     },
     "documentSize": {
       "width": 1440,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 590
     }
   },
   "capture": {

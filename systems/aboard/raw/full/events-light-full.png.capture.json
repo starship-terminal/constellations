@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-09T03:53:40.749Z",
+  "capturedAt": "2026-11-21T00:01:46.968Z",
   "screenshot": "events-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 708
     },
     "documentSize": {
       "width": 1440,
-      "height": 8095
+      "height": 8039
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 708
     }
   },
   "capture": {
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 8095
+    "height": 8039
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 8095
+      "height": 8039
     },
     "basis": "fullPage"
   },

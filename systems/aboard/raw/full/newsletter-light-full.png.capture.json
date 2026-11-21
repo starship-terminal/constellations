@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-09T03:53:04.178Z",
+  "capturedAt": "2026-11-21T00:01:21.925Z",
   "screenshot": "newsletter-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 519
     },
     "documentSize": {
       "width": 1440,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 519
     }
   },
   "capture": {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-09T03:55:22.006Z",
+  "capturedAt": "2026-11-21T00:02:54.983Z",
   "screenshot": "mobile-how-we-work-light-full.part0.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 1599
     },
     "documentSize": {
       "width": 390,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 1599
     }
   },
   "capture": {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-09T03:53:52.951Z",
+  "capturedAt": "2026-11-21T00:01:53.043Z",
   "screenshot": "media-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 713
     },
     "documentSize": {
       "width": 1440,
-      "height": 6441
+      "height": 6860
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 713
     }
   },
   "capture": {
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 6441
+    "height": 6860
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 6441
+      "height": 6860
     },
     "basis": "fullPage"
   },

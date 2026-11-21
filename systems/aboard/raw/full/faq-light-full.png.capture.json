@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-09T03:54:17.292Z",
+  "capturedAt": "2026-11-21T00:02:03.261Z",
   "screenshot": "faq-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 918
     },
     "documentSize": {
       "width": 1440,
-      "height": 6713
+      "height": 7098
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 918
     }
   },
   "capture": {
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 6713
+    "height": 7098
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 6713
+      "height": 7098
     },
     "basis": "fullPage"
   },

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-09T03:55:36.288Z",
+  "capturedAt": "2026-11-21T00:03:01.408Z",
   "screenshot": "mobile-case-studies-light-full.part1.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 172
     },
     "documentSize": {
       "width": 390,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 172
     }
   },
   "capture": {
