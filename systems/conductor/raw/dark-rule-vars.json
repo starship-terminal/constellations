@@ -1,0 +1,87 @@
+{
+  ".dark\\:block:where(.dark, .dark *)": {},
+  ".dark\\:hidden:where(.dark, .dark *)": {},
+  ":where(.dark\\:divide-neutral-800:where(.dark, .dark *) > :not(:last-child)), .dark\\:border-neutral-800:where(.dark, .dark *)": {},
+  ".dark\\:bg-\\(--shiki-dark-bg\\):where(.dark, .dark *)": {},
+  ".dark\\:bg-\\[\\#0a0a0a\\]:where(.dark, .dark *)": {},
+  ".dark\\:text-neutral-100:where(.dark, .dark *)": {},
+  ".dark\\:text-neutral-400:where(.dark, .dark *)": {},
+  ".dark\\:text-neutral-600:where(.dark, .dark *)": {},
+  ".dark\\:decoration-neutral-600:where(.dark, .dark *)": {},
+  ".dark\\:mix-blend-screen:where(.dark, .dark *)": {},
+  ".dark\\:ring-white\\/10:where(.dark, .dark *)": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-white) 10%, transparent)"
+  },
+  ".dark\\:hue-rotate-180:where(.dark, .dark *)": {
+    "--tw-hue-rotate": "hue-rotate(180deg)"
+  },
+  ".dark\\:invert:where(.dark, .dark *)": {
+    "--tw-invert": "invert(100%)"
+  },
+  ".dark\\:\\[--perforation\\:\\#333333\\]:where(.dark, .dark *)": {
+    "--perforation": "#333"
+  },
+  ".dark\\:\\[--sheet-bg\\:\\#161616\\]:where(.dark, .dark *)": {
+    "--sheet-bg": "#161616"
+  },
+  ".dark\\:\\[--sheet-edge\\:\\#222222\\]:where(.dark, .dark *)": {
+    "--sheet-edge": "#222"
+  },
+  ".dark\\:hover\\:decoration-neutral-100:where(.dark, .dark *):hover": {},
+  "html.dark .\\[html\\.dark_\\&\\]\\:block": {},
+  "html.dark .\\[html\\.dark_\\&\\]\\:text-white\\/70": {},
+  ".dark": {
+    "--color-fd-background": "#121212",
+    "--color-fd-foreground": "#ebebeb",
+    "--color-fd-muted": "#212121",
+    "--color-fd-muted-foreground": "#b3b3b3cc",
+    "--color-fd-popover": "#1e1e1e",
+    "--color-fd-popover-foreground": "#dedede",
+    "--color-fd-card": "#191919",
+    "--color-fd-card-foreground": "#fafafa",
+    "--color-fd-border": "#6663",
+    "--color-fd-primary": "#fafafa",
+    "--color-fd-primary-foreground": "#171717",
+    "--color-fd-secondary": "#212121",
+    "--color-fd-secondary-foreground": "#ebebeb",
+    "--color-fd-accent": "#6868684d",
+    "--color-fd-accent-foreground": "#e6e6e6",
+    "--color-fd-ring": "#8c8c8c",
+    "--color-fd-overlay": "#0003",
+    "--background": "#141110",
+    "--foreground": "#eae8e6",
+    "--muted": "#211e1c",
+    "--muted-foreground": "#a5a09c",
+    "--border": "#ffffff1a",
+    "--primary": "#f3f2f1",
+    "--primary-foreground": "#2c2826",
+    "--secondary": "#211e1c",
+    "--secondary-foreground": "#f3f2f1",
+    "--highlight": "#2a1e1d",
+    "--highlight-foreground": "#f3ece7",
+    "--positive": "#16a249",
+    "--tip-secondary": "#795f5d",
+    "--tip-secondary-border": "#a4847f",
+    "--tip-muted": "#f0edea",
+    "--docs-table-shell": "#1c1917",
+    "--docs-table-header": "#24211e",
+    "--docs-table-border": "#37322f",
+    "--docs-callout-surface": "#221e1c",
+    "--docs-callout-border": "#453c36",
+    "--docs-callout-content": "#eae8e6",
+    "--docs-callout-accent": "#ded6cf",
+    "--docs-asset-max-height": "24rem",
+    "--docs-asset-frame-max-width": "46rem",
+    "--docs-asset-frame-radius": "1.25rem",
+    "--docs-asset-frame-padding": ".5rem"
+  },
+  ".dark #nd-sidebar": {
+    "--color-fd-muted": "#292929",
+    "--color-fd-secondary": "#2e2e2e",
+    "--color-fd-muted-foreground": "#b8b8b8"
+  },
+  ".dark .shiki:not(.not-fumadocs-codeblock *) code span": {},
+  ".dark code.shiki span": {},
+  ".docs-asset-media.docs-theme-image-dark, .dark .docs-asset-media.docs-theme-image-light": {},
+  ".dark .docs-asset-media.docs-theme-image-dark": {}
+}
