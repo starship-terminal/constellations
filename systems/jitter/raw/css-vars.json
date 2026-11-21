@@ -3,14 +3,14 @@
  "source": "jitter.video stylesheets read through the CSSOM on the live home page (same-origin modules) and re-parsed in a probe document. One light theme. Foundation tokens are declared on body.",
  "sheets": [
   {
-   "name": "/assets/style-BiOxPZDq.css",
+   "name": "/assets/style-B6qTFFhX.css",
    "media": "",
-   "bytes": 3129090
+   "bytes": 3117447
   },
   {
    "name": "inline-1",
    "media": "",
-   "bytes": 89559
+   "bytes": 92563
   },
   {
    "name": "inline-2",
@@ -26,17 +26,17 @@
  "counts": {
   "rules": 197,
   "fonts": 27,
-  "fontFacesRaw": 10520,
+  "fontFacesRaw": 10466,
   "names": {
    "foundation": 9,
-   "app": 183,
+   "app": 182,
    "utility": 0
   }
  },
  "errors": [],
  "foundation": [
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "html",
    "context": [],
    "properties": {
@@ -45,7 +45,7 @@
    "bin": "foundation"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "body",
    "context": [],
    "properties": {
@@ -60,7 +60,7 @@
    "bin": "foundation"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "body",
    "context": [
     "@media screen and (width >= 1025px)"
@@ -72,7 +72,7 @@
    "bin": "foundation"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -83,7 +83,7 @@
  ],
  "app": [
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._button_1dcw9_65",
    "context": [],
    "properties": {
@@ -94,7 +94,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._small_1dcw9_96",
    "context": [],
    "properties": {
@@ -104,7 +104,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._small_1dcw9_96:has(._icon_1dcw9_103:first-child)",
    "context": [],
    "properties": {
@@ -113,7 +113,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._medium_1dcw9_107",
    "context": [],
    "properties": {
@@ -123,7 +123,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._medium_1dcw9_107:has(._icon_1dcw9_103:first-child)",
    "context": [],
    "properties": {
@@ -132,7 +132,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._large_1dcw9_116",
    "context": [],
    "properties": {
@@ -142,7 +142,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._large_1dcw9_116:has(._icon_1dcw9_103:first-child)",
    "context": [],
    "properties": {
@@ -151,7 +151,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._primary_1dcw9_139",
    "context": [],
    "properties": {
@@ -162,7 +162,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._secondary_1dcw9_145",
    "context": [],
    "properties": {
@@ -173,7 +173,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._danger_1dcw9_151",
    "context": [],
    "properties": {
@@ -184,7 +184,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._tertiary_1dcw9_157",
    "context": [],
    "properties": {
@@ -194,7 +194,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._primary_1dcw9_139:disabled, ._secondary_1dcw9_145:disabled, ._danger_1dcw9_151:disabled, ._tertiary_1dcw9_157:disabled",
    "context": [],
    "properties": {
@@ -204,7 +204,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._outline_1dcw9_170",
    "context": [],
    "properties": {
@@ -214,7 +214,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._ghost_1dcw9_175",
    "context": [],
    "properties": {
@@ -223,7 +223,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._ghostDanger_1dcw9_179",
    "context": [],
    "properties": {
@@ -233,7 +233,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._outline_1dcw9_170:disabled, ._ghost_1dcw9_175:disabled, ._ghostDanger_1dcw9_179:disabled",
    "context": [],
    "properties": {
@@ -242,8 +242,8 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._darkDropdown_bsun9_169",
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._darkDropdown_a7jre_169",
    "context": [],
    "properties": {
     "--content-background": "#2d2933",
@@ -255,8 +255,8 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._destructiveItem_bsun9_177",
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._destructiveItem_a7jre_177",
    "context": [],
    "properties": {
     "--item-color": "#fd3456"
@@ -264,7 +264,28 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._lightDropdown_a7jre_187",
+   "context": [],
+   "properties": {
+    "--content-background": "#fbfbfb",
+    "--item-color": "#6e6e73",
+    "--item-highlighted-background": "#f2f1f3",
+    "--separator-color": "#e5e4e7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._lightDropdown_a7jre_187 ._destructiveItem_a7jre_177",
+   "context": [],
+   "properties": {
+    "--item-color": "#dd4153"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._content_1ebl6_71:is([role=\"menu\"], [role=\"listbox\"])",
    "context": [],
    "properties": {
@@ -277,7 +298,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._inlineTrigger_18uc9_65",
    "context": [],
    "properties": {
@@ -287,7 +308,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._muted_18uc9_94",
    "context": [],
    "properties": {
@@ -297,7 +318,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._strong_18uc9_99",
    "context": [],
    "properties": {
@@ -307,7 +328,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._darkSelect_wsrsw_120",
    "context": [],
    "properties": {
@@ -320,7 +341,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._darkCombobox_wxzok_127",
    "context": [],
    "properties": {
@@ -333,8 +354,8 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._darkContextMenu_1l1w3_159",
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._darkContextMenu_jto9u_159",
    "context": [],
    "properties": {
     "--content-background": "#2d2933",
@@ -346,8 +367,8 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._destructiveItem_1l1w3_167",
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._destructiveItem_jto9u_167",
    "context": [],
    "properties": {
     "--item-color": "#fd3456"
@@ -355,7 +376,28 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._lightContextMenu_jto9u_177",
+   "context": [],
+   "properties": {
+    "--content-background": "#fbfbfb",
+    "--item-color": "#6e6e73",
+    "--item-highlighted-background": "#f2f1f3",
+    "--separator-color": "#e5e4e7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._lightContextMenu_jto9u_177 ._destructiveItem_jto9u_167",
+   "context": [],
+   "properties": {
+    "--item-color": "#dd4153"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._defaultVariant_d270o_119._big_d270o_132",
    "context": [],
    "properties": {
@@ -365,7 +407,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._defaultVariant_d270o_119._medium_d270o_136",
    "context": [],
    "properties": {
@@ -375,7 +417,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._tabVariant_d270o_221",
    "context": [],
    "properties": {
@@ -387,7 +429,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._leftPart_xgi8l_129._dark_xgi8l_144",
    "context": [],
    "properties": {
@@ -396,7 +438,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._white_1gji2_129",
    "context": [],
    "properties": {
@@ -405,7 +447,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._blue_1gji2_150",
    "context": [],
    "properties": {
@@ -414,7 +456,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._purple_1gji2_171",
    "context": [],
    "properties": {
@@ -423,7 +465,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._neutral_1gji2_192",
    "context": [],
    "properties": {
@@ -432,7 +474,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._warning_1gji2_214",
    "context": [],
    "properties": {
@@ -441,7 +483,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._card_zyqdh_97",
    "context": [],
    "properties": {
@@ -454,7 +496,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._card_zyqdh_97._blueTheme_zyqdh_120",
    "context": [],
    "properties": {
@@ -467,7 +509,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._card_zyqdh_97._purpleTheme_zyqdh_127",
    "context": [],
    "properties": {
@@ -480,7 +522,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._card_zyqdh_97._yellowTheme_zyqdh_134",
    "context": [],
    "properties": {
@@ -493,7 +535,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._card_zyqdh_97._orangeTheme_zyqdh_141",
    "context": [],
    "properties": {
@@ -506,7 +548,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._card_zyqdh_97._blackTheme_zyqdh_148",
    "context": [],
    "properties": {
@@ -519,7 +561,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._white_57fx4_403",
    "context": [],
    "properties": {
@@ -531,7 +573,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._purple_57fx4_411, ._blue_57fx4_412, ._darkPurple_57fx4_413, ._darkBlue_57fx4_414",
    "context": [],
    "properties": {
@@ -543,40 +585,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._content_1aetx_71",
-   "context": [],
-   "properties": {
-    "--content-background": "#fbfbfb",
-    "--item-color": "#6e6e73",
-    "--item-highlighted-background": "#f2f1f3",
-    "--separator-color": "#e5e4e7"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._content_1aetx_71 ._destructive_1aetx_141",
-   "context": [],
-   "properties": {
-    "--item-color": "#dd4153"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._sendExit_osp3a_65",
-   "context": [],
-   "properties": {
-    "--dialog-panel-exit-y": "-96px",
-    "--dialog-panel-exit-scale-x": ".88",
-    "--dialog-panel-exit-scale-y": "1",
-    "--dialog-panel-exit-duration": ".16s"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._heroAvatarList_12ave_134",
    "context": [],
    "properties": {
@@ -586,7 +595,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._heroAvatarList_12ave_134",
    "context": [
     "@media (width >= 1441px)"
@@ -598,7 +607,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._container_12ave_65._drawer_12ave_408 ._heroAvatarList_12ave_134",
    "context": [],
    "properties": {
@@ -608,7 +617,19 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._sendExit_osp3a_65",
+   "context": [],
+   "properties": {
+    "--dialog-panel-exit-y": "-96px",
+    "--dialog-panel-exit-scale-x": ".88",
+    "--dialog-panel-exit-scale-y": "1",
+    "--dialog-panel-exit-duration": ".16s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._sidebarNavItemGroup_1ikh0_134._transparent_1ikh0_139",
    "context": [],
    "properties": {
@@ -618,7 +639,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._sidebarNavItemGroup_1ikh0_134._opaque_1ikh0_143",
    "context": [],
    "properties": {
@@ -628,7 +649,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._sidebarItem_1ikh0_148._noHoverColor_1ikh0_171",
    "context": [],
    "properties": {
@@ -638,7 +659,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._content_1bi0m_91._content_1bi0m_91",
    "context": [],
    "properties": {
@@ -651,7 +672,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._easingDialogContent_u9b9l_128",
    "context": [],
    "properties": {
@@ -660,7 +681,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._easingDialogContent_u9b9l_128:has(._easingDialogHeader_u9b9l_139)",
    "context": [],
    "properties": {
@@ -669,7 +690,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._pngScaleIndicator_1dpjk_97",
    "context": [],
    "properties": {
@@ -678,7 +699,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._stepsList_11r5q_113",
    "context": [],
    "properties": {
@@ -688,7 +709,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._actionsMenu_pu0fc_350[role=\"menu\"]",
    "context": [],
    "properties": {
@@ -697,7 +718,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._iconContainer_offe9_76",
    "context": [],
    "properties": {
@@ -707,7 +728,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._tabBar_jkxh7_134",
    "context": [],
    "properties": {
@@ -718,7 +739,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._contentBlock_jkxh7_144",
    "context": [],
    "properties": {
@@ -727,7 +748,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._contentBlock_jkxh7_144[data-transition-direction=\"left\"]",
    "context": [],
    "properties": {
@@ -736,7 +757,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._contentBlock_jkxh7_144[data-transition-direction=\"right\"]",
    "context": [],
    "properties": {
@@ -745,7 +766,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._editorPage_1iyrx_65",
    "context": [],
    "properties": {
@@ -754,7 +775,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._threadPopover_1p39x_101",
    "context": [],
    "properties": {
@@ -763,7 +784,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._threadPopover_1cnt1_100",
    "context": [],
    "properties": {
@@ -772,7 +793,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._overlayCanvasWrapper_j6s5j_65",
    "context": [],
    "properties": {
@@ -784,7 +805,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._connection_16qfe_1",
    "context": [],
    "properties": {
@@ -797,7 +818,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._sharePopover_16qfe_9",
    "context": [],
    "properties": {
@@ -810,7 +831,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._connection_7mqpf_277",
    "context": [],
    "properties": {
@@ -822,7 +843,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._menu_1duvw_7._menu_1duvw_7",
    "context": [],
    "properties": {
@@ -836,7 +857,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._selectContent_1dvdc_2",
    "context": [],
    "properties": {
@@ -849,7 +870,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._fontPopover_1dvdc_3",
    "context": [],
    "properties": {
@@ -862,7 +883,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._selectContent_1dvdc_2[data-side=\"top\"], ._fontPopover_1dvdc_3[data-side=\"top\"], ._morePopover_1dvdc_4[data-side=\"top\"]",
    "context": [],
    "properties": {
@@ -871,7 +892,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._scope_18gys_1",
    "context": [],
    "properties": {
@@ -902,7 +923,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "",
    "context": [
     "@keyframes _fadeTop_1fhvq_1"
@@ -913,7 +934,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "",
    "context": [
     "@keyframes _fadeBottom_1fhvq_1"
@@ -924,7 +945,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._workspace_1ngza_121",
    "context": [],
    "properties": {
@@ -933,7 +954,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._group_16l8w_65 > :last-child",
    "context": [],
    "properties": {
@@ -943,7 +964,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._content_qtzfq_77",
    "context": [],
    "properties": {
@@ -952,7 +973,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._content_qtzfq_77 ._dangerItem_qtzfq_83",
    "context": [],
    "properties": {
@@ -961,7 +982,18 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
+   "selector": "._resetPasswordPage_i1vje_178",
+   "context": [],
+   "properties": {
+    "--bg-color": "#29a9ff",
+    "--primary-color": "#fff",
+    "--secondary-color": "#6e6e73"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "html:has(._exportPage_1ddc6_65)",
    "context": [],
    "properties": {
@@ -973,7 +1005,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._exportPage_1ddc6_65",
    "context": [],
    "properties": {
@@ -985,7 +1017,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._videoControlsContainer_iy7ky_249._videoControlsWithDownload_iy7ky_254",
    "context": [],
    "properties": {
@@ -996,18 +1028,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._resetPasswordPage_i1vje_178",
-   "context": [],
-   "properties": {
-    "--bg-color": "#29a9ff",
-    "--primary-color": "#fff",
-    "--secondary-color": "#6e6e73"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._tokenPathBreadcrumb_1ips9_165",
    "context": [],
    "properties": {
@@ -1016,25 +1037,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._row_bnq6g_97",
-   "context": [],
-   "properties": {
-    "--token-gap": "12px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "/assets/style-BiOxPZDq.css",
-   "selector": "._colors_bnq6g_134",
-   "context": [],
-   "properties": {
-    "--token-gap": "16px"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._selectContent_91jey_158",
    "context": [],
    "properties": {
@@ -1044,7 +1047,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._heroAvatarList_liw25_136",
    "context": [],
    "properties": {
@@ -1054,7 +1057,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._heroAvatarList_liw25_136",
    "context": [
     "@media (width >= 1441px)"
@@ -1066,7 +1069,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._upgradeHoverCard_1t9gc_163 ._upgradeHoverCardLink_1t9gc_170:hover",
    "context": [],
    "properties": {
@@ -1076,7 +1079,7 @@
    "bin": "app"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "selector": "._categoriesSection_v1748_160",
    "context": [],
    "properties": {
@@ -2137,220 +2140,220 @@
  "utility": [],
  "fonts": [
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "100",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "100",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "200",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "200",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "300",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "300",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "500",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "500",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "600",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "600",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "700",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "700",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "800",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "800",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "900",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "900",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "\"Euclid Circular B\"",
-   "src": "url(…)",
+   "src": "url(...)",
    "font-weight": "500",
    "font-style": "normal",
    "font-display": "swap"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "\"TWK Lausanne\"",
    "font-weight": "600",
    "font-style": "normal",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "\"TWK Lausanne\"",
    "font-weight": "600",
    "font-style": "italic",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "\"TWK Lausanne\"",
    "font-weight": "700",
    "font-style": "normal",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "\"TWK Lausanne\"",
    "font-weight": "700",
    "font-style": "italic",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "\"TWK Lausanne\"",
    "font-weight": "750",
    "font-style": "normal",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "\"TWK Lausanne\"",
    "font-weight": "750",
    "font-style": "italic",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "\"TWK Lausanne\"",
    "font-weight": "800",
    "font-style": "normal",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   },
   {
-   "file": "/assets/style-BiOxPZDq.css",
+   "file": "/assets/style-B6qTFFhX.css",
    "font-family": "\"TWK Lausanne\"",
    "font-weight": "800",
    "font-style": "italic",
    "font-display": "swap",
-   "src": "url(…)"
+   "src": "url(...)"
   }
  ],
  "body": {
@@ -2359,8 +2362,8 @@
    "--bg-color": "#fff",
    "--fade-top": "0px",
    "--fade-bottom": "0px",
-   "--primary-color-alt": "#fba6ec",
    "--secondary-color": "#6e6e73",
+   "--primary-color-alt": "#fba6ec",
    "--ease-overshoot-linear": "linear(0, .255, .4449, .6018, .7355, .8513, .9525, 1.0413, 1.1195, 1.1881, 1.2484, 1.3011, 1.3468, 1.3862, 1.4198, 1.4479, 1.4709, 1.4892, 1.503, 1.5126, 1.5182, 1.52, 1.5189, 1.5156, 1.5101, 1.5025, ",
    "--top-banner-height": "0px",
    "--top-bar-offset": "48px",
