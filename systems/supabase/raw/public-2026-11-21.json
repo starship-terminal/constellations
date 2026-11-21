@@ -1,0 +1,53 @@
+{
+  "capturedAt": "2026-11-21",
+  "product": "Supabase",
+  "url": "https://supabase.com/",
+  "route": "public marketing site, signed out. Login and signup photographed empty. No form submitted. No identity provider clicked.",
+  "loginExtracted": "not-started",
+  "viewport": {
+    "desktop": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 1 },
+    "mobile": { "innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2 }
+  },
+  "themes": {
+    "note": "The homepage follows the OS color scheme. Playwright colorScheme dark painted the marketing pages dark. The footer theme menu offers System, Dark and Light. Light was selected, photographed, then System was restored.",
+    "light": {
+      "page": "#fdfdfd",
+      "text": "#030303",
+      "muted": "#696969",
+      "accent": "#0e7e4e",
+      "onAccent": "#fafcfb",
+      "signInSurface": "#ffffff"
+    },
+    "dark": {
+      "page": "#131413",
+      "text": "#edefee",
+      "muted": "#989a99",
+      "accent": "#006338",
+      "accentText": "#4acd8b",
+      "onAccent": "#edefee"
+    }
+  },
+  "components": {
+    "hero": { "font": "Manrope", "size": "46px", "weight": "500", "lineHeight": "46px" },
+    "navLink": { "size": "14px", "weight": "500", "padding": "8px 10px" },
+    "headerCta": { "height": "26px", "radius": "8px", "fontSize": "12px", "weight": "500", "padding": "4px 10px" },
+    "pricingCta": { "height": "42px", "radius": "9.72px", "fontSize": "15px", "weight": "500" },
+    "authSubmit": { "height": "42px", "radius": "9.72px", "fontSize": "15px", "weight": "500", "bg": "oklch(0.525 0.12 157.5)" },
+    "body": { "font": "Inter", "size": "16px", "lineHeight": "24px", "weight": "450" }
+  },
+  "declared": {
+    "fontSans": "Inter, Helvetica Neue, Helvetica, ui-sans-serif, system-ui, sans-serif",
+    "fontMono": "Source Code Pro, ui-monospace, Menlo, monospace",
+    "fontWeightNormal": "450",
+    "radiusMd": "0.5rem",
+    "radiusLg": "0.666667rem"
+  },
+  "authWall": {
+    "loginUrl": "https://supabase.com/dashboard/sign-in",
+    "signupUrl": "https://supabase.com/dashboard/sign-up",
+    "fieldsEmpty": true,
+    "passwordPlaceholder": "dots, not a typed value",
+    "emailPlaceholder": "you@example.com",
+    "identityProvidersNotClicked": ["GitHub", "ChatGPT", "SSO"]
+  }
+}
