@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:43:39.505Z",
+  "capturedAt": "2026-11-21T12:50:19.201Z",
   "screenshot": "home-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/",
   "requested": {
@@ -44,7 +44,10 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 9457,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,

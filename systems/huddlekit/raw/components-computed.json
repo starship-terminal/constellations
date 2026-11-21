@@ -1,7 +1,7 @@
 {
  "_meta": {
-  "read": "2026-11-18",
-  "viewport": "1440 x 900 (mobile group 390 x 844); huddlekit.com paints light only \u2014 its .dark rules re-point the tokens inside nested dark panels, measured as their own components \u2014 while app.huddlekit.com paints html.dark + data-theme=\"dark\" under prefers-color-scheme (emulated + reloaded), so `dark` states on app-login are measured on the painted dark surface",
+  "read": "2026-11-21",
+  "viewport": "1440 x 900 (mobile group 390 x 844); huddlekit.com paints light only — its .dark rules re-point the tokens inside nested dark panels, measured as their own components — while app.huddlekit.com paints html.dark + data-theme=\"dark\" under prefers-color-scheme (emulated + reloaded), so `dark` states on app-login are measured on the painted dark surface",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
    "/": [],
@@ -44,28 +44,28 @@
   "consent-banner": {
    "group": "Consent",
    "title": "Cookie consent banner",
-   "desc": "The fixed bottom consent banner (\"We'd like to use cookies\u2026\"): bg-background rounded-2xl border shadow-lg with Decline / Accept.",
+   "desc": "The fixed bottom consent banner (\"We'd like to use cookies…\"): bg-background rounded-2xl border shadow-lg with Decline / Accept.",
    "selector": "section.fixed",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T15:06:36.995Z",
+   "run": "2026-11-21T13:13:41.578Z",
    "states": {
     "default": {
      "tag": "section",
      "classes": "bg-background fixed right-4 bottom-4",
-     "text": "We'd like to use cookies to understand how Huddlekit is used, on huddlekit.com a",
+     "text": "We'd like to use analytics cookies on huddlekit.com and in the app. In the app, ",
      "rect": {
       "x": 16,
-      "y": 710,
+      "y": 750,
       "w": 352,
-      "h": 174
+      "h": 134
      },
      "style": {
       "display": "block",
       "position": "fixed",
       "boxSizing": "border-box",
       "width": "352px",
-      "height": "174px",
+      "height": "134px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -128,12 +128,12 @@
       "transform": "none",
       "overflow": "visible",
       "zIndex": "50",
-      "top": "710px"
+      "top": "750px"
      },
      "paint": [
       {
        "node": "section.bg-background.fixed",
-       "size": "352.0x174.0",
+       "size": "352.0x134.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(1 0 0)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
@@ -166,7 +166,7 @@
      ],
      "textStyle": {
       "node": "p.text-muted-foreground.px-2",
-      "text": "We'd like to use cookies to understand h",
+      "text": "We'd like to use analytics cookies on hu",
       "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
       "fontSize": "14px",
       "lineHeight": "20px",
@@ -178,7 +178,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/consent-banner-default.png",
-     "run": "2026-11-17T15:06:44.253Z"
+     "run": "2026-11-21T13:13:43.681Z"
     }
    }
   },
@@ -189,7 +189,7 @@
    "selector": "button (text Decline)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T15:06:44.254Z",
+   "run": "2026-11-21T13:13:43.698Z",
    "states": {
     "default": {
      "tag": "button",
@@ -292,7 +292,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/consent-decline-default.png",
-     "run": "2026-11-17T15:06:45.591Z"
+     "run": "2026-11-21T13:13:44.516Z"
     },
     "hover": {
      "tag": "button",
@@ -395,7 +395,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/consent-decline-hover.png",
-     "run": "2026-11-17T15:06:48.541Z"
+     "run": "2026-11-21T13:13:46.296Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -498,7 +498,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/consent-decline-focus-visible.png",
-     "run": "2026-11-17T15:06:50.449Z"
+     "run": "2026-11-21T13:13:47.548Z"
     }
    }
   },
@@ -509,7 +509,7 @@
    "selector": "button (text Accept)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T15:06:53.689Z",
+   "run": "2026-11-21T13:13:47.567Z",
    "states": {
     "default": {
      "tag": "button",
@@ -612,7 +612,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/consent-accept-default.png",
-     "run": "2026-11-17T15:06:54.590Z"
+     "run": "2026-11-21T13:13:48.601Z"
     },
     "hover": {
      "tag": "button",
@@ -715,7 +715,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/consent-accept-hover.png",
-     "run": "2026-11-17T15:06:57.124Z"
+     "run": "2026-11-21T13:13:50.475Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -818,7 +818,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/consent-accept-focus-visible.png",
-     "run": "2026-11-17T15:06:58.597Z"
+     "run": "2026-11-21T13:13:51.701Z"
     },
     "pressed": {
      "tag": "button",
@@ -919,20 +919,20 @@
        "bg": "oklch(1 0 0)"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/consent-accept-pressed.png",
-     "run": "2026-11-17T15:07:01.913Z"
+     "run": "2026-11-21T13:13:52.894Z"
     }
    }
   },
   "announce-bar": {
    "group": "Chrome",
    "title": "Announcement bar",
-   "desc": "The top \"New: hand feedback to your AI agent over MCP\" announcement link \u2014 border-b over the header.",
+   "desc": "The top \"New: hand feedback to your AI agent over MCP\" announcement link — border-b over the header.",
    "selector": "a (announcement)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:28:52.853Z",
+   "run": "2026-11-21T13:14:02.442Z",
    "states": {
     "default": {
      "tag": "a",
@@ -1030,7 +1030,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/announce-bar-default.png",
-     "run": "2026-11-17T16:28:54.758Z"
+     "run": "2026-11-21T13:14:03.466Z"
     },
     "hover": {
      "tag": "a",
@@ -1128,7 +1128,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/announce-bar-hover.png",
-     "run": "2026-11-17T16:28:56.683Z"
+     "run": "2026-11-21T13:14:05.259Z"
     }
    }
   },
@@ -1139,7 +1139,7 @@
    "selector": "header",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:28:56.694Z",
+   "run": "2026-11-21T13:14:05.268Z",
    "states": {
     "default": {
      "tag": "header",
@@ -1224,7 +1224,7 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "104.0x32.0",
+       "size": "96.7x32.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(0.9366 0.005 48.68)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
@@ -1260,7 +1260,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/nav-header-default.png",
-     "run": "2026-11-17T16:28:57.644Z"
+     "run": "2026-11-21T13:14:06.096Z"
     }
    }
   },
@@ -1271,23 +1271,23 @@
    "selector": "nav a, header a",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:28:57.726Z",
+   "run": "2026-11-21T13:14:06.098Z",
    "states": {
     "default": {
      "tag": "a",
      "classes": "hover:text-foreground/70 text-foreground text-sm font-medium",
      "text": "Features",
      "rect": {
-      "x": 552.5,
+      "x": 559.2,
       "y": 62,
-      "w": 62,
+      "w": 58.16,
       "h": 20
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "62px",
+      "width": "58.1562px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -1355,23 +1355,23 @@
      },
      "via": "resting state",
      "crop": "components/crops/nav-link-default.png",
-     "run": "2026-11-17T16:28:58.635Z"
+     "run": "2026-11-21T13:14:06.889Z"
     },
     "hover": {
      "tag": "a",
      "classes": "hover:text-foreground/70 text-foreground text-sm font-medium",
      "text": "Features",
      "rect": {
-      "x": 552.5,
+      "x": 559.2,
       "y": 62,
-      "w": 62,
+      "w": 58.16,
       "h": 20
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "62px",
+      "width": "58.1562px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -1439,23 +1439,23 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-link-hover.png",
-     "run": "2026-11-17T16:29:00.478Z"
+     "run": "2026-11-21T13:14:08.615Z"
     },
     "focus-visible": {
      "tag": "a",
      "classes": "hover:text-foreground/70 text-foreground text-sm font-medium",
      "text": "Features",
      "rect": {
-      "x": 552.5,
+      "x": 559.2,
       "y": 62,
-      "w": 62,
+      "w": 58.16,
       "h": 20
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "62px",
+      "width": "58.1562px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -1524,13 +1524,13 @@
      "paint": [
       {
        "node": "a.hover:text-foreground/70.text-foreground",
-       "size": "62.0x20.0",
+       "size": "58.2x20.0",
        "outline": "1px auto oklab(0.705 0.143615 0.157301 / 0.5) offset 1px"
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/nav-link-focus-visible.png",
-     "run": "2026-11-17T16:29:02.464Z"
+     "run": "2026-11-21T13:14:09.802Z"
     }
    }
   },
@@ -1541,23 +1541,23 @@
    "selector": "button (text Solutions)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:02.470Z",
+   "run": "2026-11-21T13:14:09.804Z",
    "states": {
     "default": {
      "tag": "button",
      "classes": "group text-foreground hover:text-foreground/70 data-[state=open]:text-foreground/70",
      "text": "Solutions",
      "rect": {
-      "x": 630.5,
+      "x": 633.4,
       "y": 62,
-      "w": 85,
+      "w": 80.17,
       "h": 20
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "85px",
+      "width": "80.1719px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -1632,23 +1632,23 @@
      },
      "via": "resting state",
      "crop": "components/crops/nav-menu-button-default.png",
-     "run": "2026-11-17T16:29:03.334Z"
+     "run": "2026-11-21T13:14:10.588Z"
     },
     "hover": {
      "tag": "button",
      "classes": "group text-foreground hover:text-foreground/70 data-[state=open]:text-foreground/70",
      "text": "Solutions",
      "rect": {
-      "x": 630.5,
+      "x": 633.4,
       "y": 62,
-      "w": 85,
+      "w": 80.17,
       "h": 20
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "85px",
+      "width": "80.1719px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -1723,23 +1723,23 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-menu-button-hover.png",
-     "run": "2026-11-17T16:29:05.155Z"
+     "run": "2026-11-21T13:14:12.635Z"
     },
     "opened": {
      "tag": "button",
      "classes": "group text-foreground hover:text-foreground/70 data-[state=open]:text-foreground/70",
      "text": "Solutions",
      "rect": {
-      "x": 630.5,
+      "x": 633.4,
       "y": 62,
-      "w": 85,
+      "w": 80.17,
       "h": 20
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "85px",
+      "width": "80.1719px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -1814,25 +1814,25 @@
      },
      "via": "the trigger's own hover (the nav-surface popover open; the pointer is then moved away)",
      "crop": "components/crops/nav-menu-button-opened.png",
-     "run": "2026-11-17T16:29:08.802Z"
+     "run": "2026-11-21T13:14:14.506Z"
     }
    }
   },
   "nav-menu-surface": {
    "group": "Chrome",
    "title": "Nav popover (open)",
-   "desc": "The open nav-surface popover under the header \u2014 the Solutions menu the hover shows.",
+   "desc": "The open nav-surface popover under the header — the Solutions menu the hover shows.",
    "selector": ".nav-surface",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:09.025Z",
+   "run": "2026-11-21T13:14:14.509Z",
    "states": {
     "opened": {
      "tag": "div",
      "classes": "nav-surface bg-popover text-popover-foreground absolute",
      "text": "Agencies Product teams Freelancers QA teams",
      "rect": {
-      "x": 613.5,
+      "x": 616.4,
       "y": 90,
       "w": 194,
       "h": 154
@@ -1938,34 +1938,34 @@
      },
      "via": "the Solutions trigger's own hover; the popover itself is read while open",
      "crop": "components/crops/nav-menu-surface-opened.png",
-     "run": "2026-11-17T16:29:12.607Z"
+     "run": "2026-11-21T13:14:17.238Z"
     }
    }
   },
   "nav-signin": {
    "group": "Chrome",
    "title": "\"Sign in\" link",
-   "desc": "The header sign-in link \u2014 measured, never followed (it leads to app.huddlekit.com, which was captured separately).",
+   "desc": "The header sign-in link — measured, never followed (it leads to app.huddlekit.com, which was captured separately).",
    "selector": "a (text Sign in)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:12.691Z",
+   "run": "2026-11-21T13:14:17.240Z",
    "states": {
     "default": {
      "tag": "a",
      "classes": "hover:text-foreground/70 text-foreground text-sm font-medium",
      "text": "Sign in",
      "rect": {
-      "x": 1040,
+      "x": 1050,
       "y": 62,
-      "w": 48,
+      "w": 45.36,
       "h": 20
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "48px",
+      "width": "45.3594px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2033,23 +2033,23 @@
      },
      "via": "resting state",
      "crop": "components/crops/nav-signin-default.png",
-     "run": "2026-11-17T16:29:14.014Z"
+     "run": "2026-11-21T13:14:17.994Z"
     },
     "hover": {
      "tag": "a",
      "classes": "hover:text-foreground/70 text-foreground text-sm font-medium",
      "text": "Sign in",
      "rect": {
-      "x": 1040,
+      "x": 1050,
       "y": 62,
-      "w": 48,
+      "w": 45.36,
       "h": 20
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "48px",
+      "width": "45.3594px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2117,18 +2117,18 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-signin-hover.png",
-     "run": "2026-11-17T16:29:15.866Z"
+     "run": "2026-11-21T13:14:19.767Z"
     }
    }
   },
   "cta-primary": {
    "group": "Chrome",
    "title": "Primary CTA button",
-   "desc": "The solid \"Get started for free\" call-to-action (bg-primary text-primary-foreground, the inner-shadow stack) \u2014 links to the app, measured never followed.",
+   "desc": "The solid \"Get started for free\" call-to-action (bg-primary text-primary-foreground, the inner-shadow stack) — links to the app, measured never followed.",
    "selector": "a (text Get started for free)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:16.067Z",
+   "run": "2026-11-21T13:14:19.768Z",
    "states": {
     "default": {
      "tag": "a",
@@ -2137,14 +2137,14 @@
      "rect": {
       "x": 232,
       "y": 369.8,
-      "w": 169,
+      "w": 155.86,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "169px",
+      "width": "155.859px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2213,7 +2213,7 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "169.0x40.0",
+       "size": "155.9x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
        "radius": "12px"
@@ -2221,7 +2221,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/cta-primary-default.png",
-     "run": "2026-11-17T16:29:17.171Z"
+     "run": "2026-11-21T13:14:20.529Z"
     },
     "hover": {
      "tag": "a",
@@ -2230,14 +2230,14 @@
      "rect": {
       "x": 232,
       "y": 369.8,
-      "w": 169,
+      "w": 155.86,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "169px",
+      "width": "155.859px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2306,7 +2306,7 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "169.0x40.0",
+       "size": "155.9x40.0",
        "bg": "oklab(0.6461 0.146147 0.127582 / 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
        "radius": "12px"
@@ -2314,7 +2314,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/cta-primary-hover.png",
-     "run": "2026-11-17T16:29:19.360Z"
+     "run": "2026-11-21T13:14:22.315Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -2323,14 +2323,14 @@
      "rect": {
       "x": 232,
       "y": 369.8,
-      "w": 169,
+      "w": 155.86,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "169px",
+      "width": "155.859px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2399,7 +2399,7 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "169.0x40.0",
+       "size": "155.9x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.2101 -0.00297811 -0.0318611 / 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
        "radius": "12px"
@@ -2407,7 +2407,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/cta-primary-focus-visible.png",
-     "run": "2026-11-17T16:29:20.830Z"
+     "run": "2026-11-21T13:14:23.600Z"
     },
     "pressed": {
      "tag": "a",
@@ -2416,14 +2416,14 @@
      "rect": {
       "x": 232,
       "y": 369.8,
-      "w": 169,
+      "w": 155.86,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "169px",
+      "width": "155.859px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2492,15 +2492,15 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "169.0x40.0",
+       "size": "155.9x40.0",
        "bg": "oklab(0.6461 0.146147 0.127582 / 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
        "radius": "12px"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/cta-primary-pressed.png",
-     "run": "2026-11-17T16:29:22.151Z"
+     "run": "2026-11-21T13:14:24.810Z"
     }
    }
   },
@@ -2511,23 +2511,23 @@
    "selector": "a (text Get started)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:22.172Z",
+   "run": "2026-11-21T13:14:24.812Z",
    "states": {
     "default": {
      "tag": "a",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Get started",
      "rect": {
-      "x": 1104,
+      "x": 1111.3,
       "y": 56,
-      "w": 104,
+      "w": 96.67,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "104px",
+      "width": "96.6719px",
       "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2596,7 +2596,7 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "104.0x32.0",
+       "size": "96.7x32.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(0.9366 0.005 48.68)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
@@ -2605,23 +2605,23 @@
      ],
      "via": "resting state",
      "crop": "components/crops/cta-secondary-default.png",
-     "run": "2026-11-17T16:29:23.050Z"
+     "run": "2026-11-21T13:14:25.598Z"
     },
     "hover": {
      "tag": "a",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Get started",
      "rect": {
-      "x": 1104,
+      "x": 1111.3,
       "y": 56,
-      "w": 104,
+      "w": 96.67,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "104px",
+      "width": "96.6719px",
       "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2690,7 +2690,7 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "104.0x32.0",
+       "size": "96.7x32.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklab(0.9366 0.00330132 0.00375517 / 0.8)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
@@ -2699,23 +2699,23 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/cta-secondary-hover.png",
-     "run": "2026-11-17T16:29:25.076Z"
+     "run": "2026-11-21T13:14:27.331Z"
     },
     "focus-visible": {
      "tag": "a",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Get started",
      "rect": {
-      "x": 1104,
+      "x": 1111.3,
       "y": 56,
-      "w": 104,
+      "w": 96.67,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "104px",
+      "width": "96.6719px",
       "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2784,7 +2784,7 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "104.0x32.0",
+       "size": "96.7x32.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(0.9366 0.005 48.68)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.2101 -0.00297811 -0.0318611 / 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
@@ -2793,23 +2793,23 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/cta-secondary-focus-visible.png",
-     "run": "2026-11-17T16:29:27.530Z"
+     "run": "2026-11-21T13:14:28.522Z"
     },
     "pressed": {
      "tag": "a",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Get started",
      "rect": {
-      "x": 1104,
+      "x": 1111.3,
       "y": 56,
-      "w": 104,
+      "w": 96.67,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "104px",
+      "width": "96.6719px",
       "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2878,16 +2878,16 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "104.0x32.0",
+       "size": "96.7x32.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklab(0.9366 0.00330132 0.00375517 / 0.8)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
        "radius": "12px"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/cta-secondary-pressed.png",
-     "run": "2026-11-17T16:29:28.803Z"
+     "run": "2026-11-21T13:14:29.689Z"
     }
    }
   },
@@ -2898,23 +2898,23 @@
    "selector": "a (text 5-star reviews)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:28.816Z",
+   "run": "2026-11-21T13:14:29.693Z",
    "states": {
     "default": {
      "tag": "a",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "5-star reviews",
      "rect": {
-      "x": 409,
+      "x": 395.9,
       "y": 369.8,
-      "w": 152,
+      "w": 146.2,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "152px",
+      "width": "146.203px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2983,13 +2983,13 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "152.0x40.0",
+       "size": "146.2x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "radius": "12px"
       },
       {
        "node": "span.from-primary.to-foreground",
-       "size": "102.0x20.0",
+       "size": "96.2x20.0",
        "bgImage": "linear-gradient(to right, oklch(0.6461 0.194 41.12) 0px, oklch(0.2101 0.032 264.66) 100%)"
       }
      ],
@@ -3014,23 +3014,23 @@
      },
      "via": "resting state",
      "crop": "components/crops/cta-outline-default.png",
-     "run": "2026-11-17T16:29:29.715Z"
+     "run": "2026-11-21T13:14:30.460Z"
     },
     "hover": {
      "tag": "a",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "5-star reviews",
      "rect": {
-      "x": 409,
+      "x": 395.9,
       "y": 369.8,
-      "w": 152,
+      "w": 146.2,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "152px",
+      "width": "146.203px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -3099,14 +3099,14 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "152.0x40.0",
+       "size": "146.2x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklab(0.2101 -0.00297811 -0.0318611 / 0.05)",
        "radius": "12px"
       },
       {
        "node": "span.from-primary.to-foreground",
-       "size": "102.0x20.0",
+       "size": "96.2x20.0",
        "bgImage": "linear-gradient(to right, oklch(0.6461 0.194 41.12) 0px, oklch(0.2101 0.032 264.66) 100%)"
       }
      ],
@@ -3131,23 +3131,23 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/cta-outline-hover.png",
-     "run": "2026-11-17T16:29:31.563Z"
+     "run": "2026-11-21T13:14:32.226Z"
     },
     "focus-visible": {
      "tag": "a",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "5-star reviews",
      "rect": {
-      "x": 409,
+      "x": 395.9,
       "y": 369.8,
-      "w": 152,
+      "w": 146.2,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "152px",
+      "width": "146.203px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -3216,14 +3216,14 @@
      "paint": [
       {
        "node": "a.inline-flex.items-center",
-       "size": "152.0x40.0",
+       "size": "146.2x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.2101 -0.00297811 -0.0318611 / 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "12px"
       },
       {
        "node": "span.from-primary.to-foreground",
-       "size": "102.0x20.0",
+       "size": "96.2x20.0",
        "bgImage": "linear-gradient(to right, oklch(0.6461 0.194 41.12) 0px, oklch(0.2101 0.032 264.66) 100%)"
       }
      ],
@@ -3248,7 +3248,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/cta-outline-focus-visible.png",
-     "run": "2026-11-17T16:29:32.868Z"
+     "run": "2026-11-21T13:14:33.438Z"
     }
    }
   },
@@ -3259,12 +3259,12 @@
    "selector": "[role=\"tab\"]",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:32.872Z",
+   "run": "2026-11-21T13:14:33.439Z",
    "states": {
     "default": {
      "tag": "button",
      "classes": "group text-muted-foreground hover:text-foreground data-[state=active]:text-foreground",
-     "text": "Draw on the page Box, circle or arrow anything. It\u2019s saved into the screenshot.",
+     "text": "Draw on the page Box, circle or arrow anything. It’s saved into the screenshot.",
      "rect": {
       "x": 925.3,
       "y": 422,
@@ -3292,7 +3292,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "column",
-      "alignItems": "flex-start",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -3362,12 +3362,12 @@
      },
      "via": "resting state",
      "crop": "components/crops/feature-tab-default.png",
-     "run": "2026-11-17T16:29:33.718Z"
+     "run": "2026-11-21T13:14:34.233Z"
     },
     "hover": {
      "tag": "button",
      "classes": "group text-muted-foreground hover:text-foreground data-[state=active]:text-foreground",
-     "text": "Draw on the page Box, circle or arrow anything. It\u2019s saved into the screenshot.",
+     "text": "Draw on the page Box, circle or arrow anything. It’s saved into the screenshot.",
      "rect": {
       "x": 925.3,
       "y": 422,
@@ -3395,7 +3395,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "column",
-      "alignItems": "flex-start",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -3465,12 +3465,12 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/feature-tab-hover.png",
-     "run": "2026-11-17T16:29:35.559Z"
+     "run": "2026-11-21T13:14:36.000Z"
     },
     "selected": {
      "tag": "button",
      "classes": "group text-muted-foreground hover:text-foreground data-[state=active]:text-foreground",
-     "text": "Draw on the page Box, circle or arrow anything. It\u2019s saved into the screenshot.",
+     "text": "Draw on the page Box, circle or arrow anything. It’s saved into the screenshot.",
      "rect": {
       "x": 925.3,
       "y": 395,
@@ -3498,7 +3498,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "column",
-      "alignItems": "flex-start",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -3568,18 +3568,18 @@
      },
      "via": "the tab's own activation (aria-selected switches the demo panel)",
      "crop": "components/crops/feature-tab-selected.png",
-     "run": "2026-11-17T16:29:37.497Z"
+     "run": "2026-11-21T13:14:37.781Z"
     }
    }
   },
   "integration-card": {
    "group": "Home",
    "title": "Integration card",
-   "desc": "An integration card on the home grid (\"Linear\" \u2014 icon, name, one line): bg-background rounded-xl shadow-xs.",
+   "desc": "An integration card on the home grid (\"Linear\" — icon, name, one line): bg-background rounded-xl shadow-xs.",
    "selector": "a (text Linear)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:37.513Z",
+   "run": "2026-11-21T13:14:37.782Z",
    "states": {
     "default": {
      "tag": "a",
@@ -3587,7 +3587,7 @@
      "text": "Linear Turn comments into Linear issues and keep status in sync.",
      "rect": {
       "x": 232,
-      "y": 352.6,
+      "y": 351.6,
       "w": 314.66,
       "h": 196
      },
@@ -3699,7 +3699,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/integration-card-default.png",
-     "run": "2026-11-17T16:29:38.568Z"
+     "run": "2026-11-21T13:14:38.654Z"
     },
     "hover": {
      "tag": "a",
@@ -3707,7 +3707,7 @@
      "text": "Linear Turn comments into Linear issues and keep status in sync.",
      "rect": {
       "x": 232,
-      "y": 352.6,
+      "y": 351.6,
       "w": 314.66,
       "h": 196
      },
@@ -3819,18 +3819,18 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/integration-card-hover.png",
-     "run": "2026-11-17T16:29:41.467Z"
+     "run": "2026-11-21T13:14:40.433Z"
     }
    }
   },
   "mcp-card-dark": {
    "group": "Home",
    "title": "Dark MCP panel",
-   "desc": "The .dark \"Let your AI agent fix comments over MCP\" card \u2014 the marketing page's painted-dark surface evidence: bg-background/text-foreground inside .dark re-point to the dark palette.",
+   "desc": "The .dark \"Let your AI agent fix comments over MCP\" card — the marketing page's painted-dark surface evidence: bg-background/text-foreground inside .dark re-point to the dark palette.",
    "selector": ".dark a, a.dark",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:41.511Z",
+   "run": "2026-11-21T13:14:40.434Z",
    "states": {
     "default": {
      "tag": "a",
@@ -3838,7 +3838,7 @@
      "text": "Let your AI agent fix comments over MCP",
      "rect": {
       "x": 232,
-      "y": 406.6,
+      "y": 405.6,
       "w": 976,
       "h": 88
      },
@@ -3963,7 +3963,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/mcp-card-dark-default.png",
-     "run": "2026-11-17T16:29:42.933Z"
+     "run": "2026-11-21T13:14:41.257Z"
     },
     "hover": {
      "tag": "a",
@@ -3971,7 +3971,7 @@
      "text": "Let your AI agent fix comments over MCP",
      "rect": {
       "x": 232,
-      "y": 406.6,
+      "y": 405.6,
       "w": 976,
       "h": 88
      },
@@ -4096,7 +4096,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/mcp-card-dark-hover.png",
-     "run": "2026-11-17T16:29:44.850Z"
+     "run": "2026-11-21T13:14:43.057Z"
     }
    }
   },
@@ -4107,15 +4107,15 @@
    "selector": "a.dark",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:44.854Z",
+   "run": "2026-11-21T13:14:43.060Z",
    "states": {
     "default": {
      "tag": "a",
      "classes": "dark focus-visible:ring-ring/50 bg-background text-foreground",
-     "text": "\u201cWe tried Markup, Ruttl, and a handful of other tools. Huddlekit was the first o",
+     "text": "“We tried Markup, Ruttl, and a handful of other tools. Huddlekit was the first o",
      "rect": {
       "x": 232,
-      "y": 258.8,
+      "y": 257.8,
       "w": 645.33,
       "h": 384
      },
@@ -4205,7 +4205,7 @@
      ],
      "textStyle": {
       "node": "blockquote.heading-3.-indent-[0.4em]",
-      "text": "\u201c",
+      "text": "“",
       "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
       "fontSize": "26px",
       "lineHeight": "31.2px",
@@ -4217,15 +4217,15 @@
      },
      "via": "resting state",
      "crop": "components/crops/testimonial-card-dark-default.png",
-     "run": "2026-11-17T16:29:46.320Z"
+     "run": "2026-11-21T13:14:44.191Z"
     },
     "hover": {
      "tag": "a",
      "classes": "dark focus-visible:ring-ring/50 bg-background text-foreground",
-     "text": "\u201cWe tried Markup, Ruttl, and a handful of other tools. Huddlekit was the first o",
+     "text": "“We tried Markup, Ruttl, and a handful of other tools. Huddlekit was the first o",
      "rect": {
       "x": 232,
-      "y": 258.8,
+      "y": 257.8,
       "w": 645.33,
       "h": 384
      },
@@ -4315,7 +4315,7 @@
      ],
      "textStyle": {
       "node": "blockquote.heading-3.-indent-[0.4em]",
-      "text": "\u201c",
+      "text": "“",
       "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
       "fontSize": "26px",
       "lineHeight": "31.2px",
@@ -4327,15 +4327,15 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/testimonial-card-dark-hover.png",
-     "run": "2026-11-17T16:29:49.067Z"
+     "run": "2026-11-21T13:14:46.264Z"
     },
     "focus-visible": {
      "tag": "a",
      "classes": "dark focus-visible:ring-ring/50 bg-background text-foreground",
-     "text": "\u201cWe tried Markup, Ruttl, and a handful of other tools. Huddlekit was the first o",
+     "text": "“We tried Markup, Ruttl, and a handful of other tools. Huddlekit was the first o",
      "rect": {
       "x": 232,
-      "y": 258.8,
+      "y": 257.8,
       "w": 645.33,
       "h": 384
      },
@@ -4425,7 +4425,7 @@
      ],
      "textStyle": {
       "node": "blockquote.heading-3.-indent-[0.4em]",
-      "text": "\u201c",
+      "text": "“",
       "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
       "fontSize": "26px",
       "lineHeight": "31.2px",
@@ -4437,7 +4437,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/testimonial-card-dark-focus-visible.png",
-     "run": "2026-11-17T16:29:51.322Z"
+     "run": "2026-11-21T13:14:47.865Z"
     }
    }
   },
@@ -4448,23 +4448,23 @@
    "selector": "button (text Show more testimonials)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:51.330Z",
+   "run": "2026-11-21T13:14:47.869Z",
    "states": {
     "default": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Show more testimonials",
      "rect": {
-      "x": 611,
+      "x": 616.2,
       "y": 432.2,
-      "w": 218,
+      "w": 207.58,
       "h": 36
      },
      "style": {
       "display": "inline-flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "218px",
+      "width": "207.578px",
       "height": "36px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -4533,7 +4533,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "218.0x36.0",
+       "size": "207.6x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "radius": "12px"
       }
@@ -4547,23 +4547,23 @@
      },
      "via": "resting state",
      "crop": "components/crops/show-more-default.png",
-     "run": "2026-11-17T16:29:52.186Z"
+     "run": "2026-11-21T13:14:48.670Z"
     },
     "hover": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Show more testimonials",
      "rect": {
-      "x": 611,
+      "x": 616.2,
       "y": 432.2,
-      "w": 218,
+      "w": 207.58,
       "h": 36
      },
      "style": {
       "display": "inline-flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "218px",
+      "width": "207.578px",
       "height": "36px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -4632,7 +4632,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "218.0x36.0",
+       "size": "207.6x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklab(0.2101 -0.00297811 -0.0318611 / 0.05)",
        "radius": "12px"
@@ -4647,23 +4647,23 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/show-more-hover.png",
-     "run": "2026-11-17T16:29:54.019Z"
+     "run": "2026-11-21T13:14:50.421Z"
     },
     "focus-visible": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Show more testimonials",
      "rect": {
-      "x": 611,
-      "y": 517.2,
-      "w": 218,
+      "x": 616.2,
+      "y": 456.2,
+      "w": 207.58,
       "h": 36
      },
      "style": {
       "display": "inline-flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "218px",
+      "width": "207.578px",
       "height": "36px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -4732,7 +4732,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "218.0x36.0",
+       "size": "207.6x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.2101 -0.00297811 -0.0318611 / 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "12px"
@@ -4747,23 +4747,23 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/show-more-focus-visible.png",
-     "run": "2026-11-17T16:29:55.353Z"
+     "run": "2026-11-21T13:14:51.648Z"
     },
     "opened": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Show less",
      "rect": {
-      "x": 660,
+      "x": 662.1,
       "y": 432.2,
-      "w": 120,
+      "w": 115.88,
       "h": 36
      },
      "style": {
       "display": "inline-flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "120px",
+      "width": "115.875px",
       "height": "36px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -4832,7 +4832,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "120.0x36.0",
+       "size": "115.9x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "radius": "12px"
       }
@@ -4846,7 +4846,7 @@
      },
      "via": "the button's own press (testimonial grid expanded)",
      "crop": "components/crops/show-more-opened.png",
-     "run": "2026-11-17T16:29:57.172Z"
+     "run": "2026-11-21T13:14:53.435Z"
     }
    }
   },
@@ -4854,10 +4854,10 @@
    "group": "Home",
    "title": "FAQ accordion question",
    "desc": "A question row in the page FAQ accordion. \"opened\" is its own press revealing the answer.",
-   "selector": "button[aria-expanded]",
+   "selector": "main button[aria-expanded] (question text)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:29:57.200Z",
+   "run": "2026-11-21T13:14:53.436Z",
    "states": {},
    "missing": true,
    "missingReason": "The saved states read the header Solutions trigger (85x20), not a question row. Selectors are scoped to main button[aria-expanded] whose label contains \"?\". Not remeasured: no live recapture."
@@ -4869,7 +4869,7 @@
    "selector": "footer.dark, footer",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:30:03.389Z",
+   "run": "2026-11-21T13:14:53.438Z",
    "states": {
     "default": {
      "tag": "footer",
@@ -4975,13 +4975,13 @@
       },
       {
        "node": "a.bg-foreground/5.hover:bg-foreground/10",
-       "size": "129.0x28.0",
+       "size": "121.2x28.0",
        "bg": "oklab(0.9088 0.00308739 0.00254324 / 0.05)",
        "radius": "3.35544e+07px"
       },
       {
        "node": "span.absolute.inline-flex",
-       "size": "16.0x16.0",
+       "size": "10.2x10.2",
        "bg": "oklch(0.696 0.17 162.48)",
        "radius": "3.35544e+07px"
       },
@@ -5042,7 +5042,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/footer-default.png",
-     "run": "2026-11-17T16:30:04.949Z"
+     "run": "2026-11-21T13:14:54.545Z"
     }
    }
   },
@@ -5053,7 +5053,7 @@
    "selector": "footer a",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:30:04.960Z",
+   "run": "2026-11-21T13:14:54.546Z",
    "states": {
     "default": {
      "tag": "a",
@@ -5061,8 +5061,8 @@
      "text": "Features",
      "rect": {
       "x": 233,
-      "y": 442,
-      "w": 62,
+      "y": 441,
+      "w": 58.16,
       "h": 17
      },
      "style": {
@@ -5137,7 +5137,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/footer-link-default.png",
-     "run": "2026-11-17T16:30:05.798Z"
+     "run": "2026-11-21T13:14:55.465Z"
     },
     "hover": {
      "tag": "a",
@@ -5145,8 +5145,8 @@
      "text": "Features",
      "rect": {
       "x": 233,
-      "y": 442,
-      "w": 62,
+      "y": 441,
+      "w": 58.16,
       "h": 17
      },
      "style": {
@@ -5221,18 +5221,18 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/footer-link-hover.png",
-     "run": "2026-11-17T16:30:07.586Z"
+     "run": "2026-11-21T13:14:57.227Z"
     }
    }
   },
   "cookie-settings": {
    "group": "Chrome",
    "title": "\"Cookie settings\" button",
-   "desc": "The footer control that re-shows the consent banner \u2014 a local UI toggle.",
+   "desc": "The footer control that re-shows the consent banner — a local UI toggle.",
    "selector": "button (text Cookie settings)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:30:07.592Z",
+   "run": "2026-11-21T13:14:57.229Z",
    "states": {
     "default": {
      "tag": "button",
@@ -5241,14 +5241,14 @@
      "rect": {
       "x": 565.7,
       "y": 469,
-      "w": 112,
+      "w": 103.91,
       "h": 20
      },
      "style": {
       "display": "inline-block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "112px",
+      "width": "103.906px",
       "height": "20px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -5265,7 +5265,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "flex-start",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -5316,7 +5316,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/cookie-settings-default.png",
-     "run": "2026-11-17T16:30:08.424Z"
+     "run": "2026-11-21T13:14:57.990Z"
     },
     "hover": {
      "tag": "button",
@@ -5325,14 +5325,14 @@
      "rect": {
       "x": 565.7,
       "y": 469,
-      "w": 112,
+      "w": 103.91,
       "h": 20
      },
      "style": {
       "display": "inline-block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "112px",
+      "width": "103.906px",
       "height": "20px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -5349,7 +5349,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "flex-start",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -5400,7 +5400,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/cookie-settings-hover.png",
-     "run": "2026-11-17T16:30:10.229Z"
+     "run": "2026-11-21T13:15:01.719Z"
     },
     "opened": {
      "tag": "button",
@@ -5409,14 +5409,14 @@
      "rect": {
       "x": 565.7,
       "y": 469,
-      "w": 112,
+      "w": 103.91,
       "h": 20
      },
      "style": {
       "display": "inline-block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "112px",
+      "width": "103.906px",
       "height": "20px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -5433,7 +5433,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "flex-start",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -5484,7 +5484,7 @@
      },
      "via": "the button's own press (the consent banner returns; Decline dismisses it again)",
      "crop": "components/crops/cookie-settings-opened.png",
-     "run": "2026-11-17T16:30:12.286Z"
+     "run": "2026-11-21T13:15:03.721Z"
     }
    }
   },
@@ -5495,26 +5495,153 @@
    "selector": "main box (priced plan)",
    "page": "/pricing",
    "url": "https://huddlekit.com/pricing",
-   "run": "2026-11-17T15:10:05.746Z",
-   "states": {},
-   "missing": true,
+   "run": "2026-11-21T13:15:13.307Z",
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "flex h-full flex-col justify-start",
+     "text": "Free $0 Free forever 3 team members 1 project Unlimited guests 100 MB storage Si",
+     "rect": {
+      "x": 232,
+      "y": 237.4,
+      "w": 314.66,
+      "h": 426
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "314.656px",
+      "height": "426px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "4px",
+      "paddingRight": "4px",
+      "paddingBottom": "4px",
+      "paddingLeft": "4px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "4px",
+      "rowGap": "4px",
+      "columnGap": "4px",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "flex-start",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineOffset": "0px",
+      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "oklch(0.2101 0.032 264.66)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "oklch(0.2101 0.032 264.66)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.bg-muted.w-full",
+       "size": "306.7x134.0",
+       "bg": "oklch(0.9662 0.003 39.48)",
+       "radius": "12px"
+      },
+      {
+       "node": "a.inline-flex.items-center",
+       "size": "306.7x36.0",
+       "bg": "oklch(0.6461 0.194 41.12)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "radius": "12px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "div.bg-background.rounded-xl",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+       "radius": "16px",
+       "bg": "oklch(1 0 0)"
+      }
+     ],
+     "textStyle": {
+      "node": "span.text-foreground.text-base",
+      "text": "Free",
+      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": "600",
+      "letterSpacing": "normal",
+      "color": "oklch(0.2101 0.032 264.66)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 16,
+      "h": 16,
+      "fill": "none",
+      "stroke": "oklch(0.2101 0.032 264.66)",
+      "color": "oklch(0.2101 0.032 264.66)"
+     },
+     "via": "resting state",
+     "crop": "components/crops/plan-card-default.png",
+     "run": "2026-11-21T13:15:14.163Z"
+    }
+   },
    "missingReason": "The saved state reads the \"Free forever\" label (274.66x16), not a plan card. The picker now requires a price, a call to action, several lines and height of at least 160. Not remeasured: no live recapture."
   },
   "billing-switch": {
    "group": "Pricing",
    "title": "Billing switch",
-   "desc": "A monthly/annual switch on the plan cards (role=switch, data-state=checked, bg-primary on). \"off\" is its own press \u2014 then pressed back.",
+   "desc": "A monthly/annual switch on the plan cards (role=switch, data-state=checked, bg-primary on). \"off\" is its own press — then pressed back.",
    "selector": "button[role=\"switch\"]",
    "page": "/pricing",
    "url": "https://huddlekit.com/pricing",
-   "run": "2026-11-17T15:10:10.828Z",
+   "run": "2026-11-21T13:15:14.167Z",
    "states": {
     "default": {
      "tag": "button",
      "classes": "peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring",
      "text": "Toggle yearly billing",
      "rect": {
-      "x": 302,
+      "x": 298.5,
       "y": 398.2,
       "w": 32,
       "h": 18.39
@@ -5608,14 +5735,14 @@
      ],
      "via": "resting state",
      "crop": "components/crops/billing-switch-default.png",
-     "run": "2026-11-17T15:10:11.658Z"
+     "run": "2026-11-21T13:15:14.951Z"
     },
     "hover": {
      "tag": "button",
      "classes": "peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring",
      "text": "Toggle yearly billing",
      "rect": {
-      "x": 302,
+      "x": 298.5,
       "y": 398.2,
       "w": 32,
       "h": 18.39
@@ -5709,14 +5836,14 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/billing-switch-hover.png",
-     "run": "2026-11-17T15:10:13.727Z"
+     "run": "2026-11-21T13:15:16.686Z"
     },
     "focus-visible": {
      "tag": "button",
      "classes": "peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring",
      "text": "Toggle yearly billing",
      "rect": {
-      "x": 302,
+      "x": 298.5,
       "y": 398.2,
       "w": 32,
       "h": 18.39
@@ -5810,14 +5937,14 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/billing-switch-focus-visible.png",
-     "run": "2026-11-17T15:10:19.407Z"
+     "run": "2026-11-21T13:15:17.892Z"
     },
     "off": {
      "tag": "button",
      "classes": "peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring",
      "text": "Toggle yearly billing",
      "rect": {
-      "x": 302,
+      "x": 298.5,
       "y": 398.2,
       "w": 32,
       "h": 18.39
@@ -5911,18 +6038,18 @@
      ],
      "via": "the switch's own press (aria-checked flips; pressed again to restore)",
      "crop": "components/crops/billing-switch-off.png",
-     "run": "2026-11-17T15:10:21.584Z"
+     "run": "2026-11-21T13:15:19.491Z"
     }
    }
   },
   "plan-cta": {
    "group": "Pricing",
    "title": "\"Sign up free\" button",
-   "desc": "A plan call-to-action \u2014 links to the app sign-up, measured never followed.",
+   "desc": "A plan call-to-action — links to the app sign-up, measured never followed.",
    "selector": "a (text Sign up free)",
    "page": "/pricing",
    "url": "https://huddlekit.com/pricing",
-   "run": "2026-11-17T15:10:21.832Z",
+   "run": "2026-11-21T13:15:20.240Z",
    "states": {
     "default": {
      "tag": "a",
@@ -6024,7 +6151,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/plan-cta-default.png",
-     "run": "2026-11-17T15:10:40.751Z"
+     "run": "2026-11-21T13:15:21.061Z"
     },
     "hover": {
      "tag": "a",
@@ -6126,7 +6253,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/plan-cta-hover.png",
-     "run": "2026-11-17T15:10:42.657Z"
+     "run": "2026-11-21T13:15:22.817Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -6228,7 +6355,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/plan-cta-focus-visible.png",
-     "run": "2026-11-17T15:10:44.030Z"
+     "run": "2026-11-21T13:15:23.993Z"
     },
     "pressed": {
      "tag": "a",
@@ -6280,7 +6407,7 @@
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklch(0.6461 0.194 41.12)",
+      "backgroundColor": "oklab(0.6461 0.146147 0.127582 / 0.9)",
       "backgroundImage": "none",
       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
       "backdropFilter": "none",
@@ -6314,7 +6441,7 @@
       {
        "node": "a.inline-flex.items-center",
        "size": "306.7x36.0",
-       "bg": "oklch(0.6461 0.194 41.12)",
+       "bg": "oklab(0.6461 0.146147 0.127582 / 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
        "radius": "12px"
       }
@@ -6328,20 +6455,20 @@
        "bg": "oklch(1 0 0)"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/plan-cta-pressed.png",
-     "run": "2026-11-17T15:10:45.548Z"
+     "run": "2026-11-21T13:15:25.186Z"
     }
    }
   },
   "compare-link-card": {
    "group": "Pricing",
    "title": "Alternative-comparison card",
-   "desc": "A \"\u2026 alternative\" card under the pricing grid, same card grammar as the integration cards.",
+   "desc": "A \"… alternative\" card under the pricing grid, same card grammar as the integration cards.",
    "selector": "a (text alternative)",
    "page": "/pricing",
    "url": "https://huddlekit.com/pricing",
-   "run": "2026-11-17T15:10:46.371Z",
+   "run": "2026-11-21T13:15:25.192Z",
    "states": {
     "default": {
      "tag": "a",
@@ -6349,7 +6476,7 @@
      "text": "Feedbucket alternative",
      "rect": {
       "x": 232,
-      "y": 422.6,
+      "y": 421.6,
       "w": 314.66,
       "h": 56
      },
@@ -6453,7 +6580,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/compare-link-card-default.png",
-     "run": "2026-11-17T15:10:54.438Z"
+     "run": "2026-11-21T13:15:25.995Z"
     },
     "hover": {
      "tag": "a",
@@ -6461,7 +6588,7 @@
      "text": "Feedbucket alternative",
      "rect": {
       "x": 232,
-      "y": 422.6,
+      "y": 421.6,
       "w": 314.66,
       "h": 56
      },
@@ -6565,18 +6692,18 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/compare-link-card-hover.png",
-     "run": "2026-11-17T15:10:56.761Z"
+     "run": "2026-11-21T13:15:27.765Z"
     }
    }
   },
   "support-search": {
    "group": "Support",
    "title": "Support search input",
-   "desc": "The \"Search\u2026\" field at the top of /support. \"focused\" is the field clicked into \u2014 nothing is typed.",
+   "desc": "The \"Search…\" field at the top of /support. \"focused\" is the field clicked into — nothing is typed.",
    "selector": "input",
    "page": "/support",
    "url": "https://huddlekit.com/support",
-   "run": "2026-11-17T15:11:06.639Z",
+   "run": "2026-11-21T13:15:37.298Z",
    "states": {
     "default": {
      "tag": "input",
@@ -6675,7 +6802,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/support-search-default.png",
-     "run": "2026-11-17T15:11:08.608Z"
+     "run": "2026-11-21T13:15:38.166Z"
     },
     "focused": {
      "tag": "input",
@@ -6774,7 +6901,7 @@
      },
      "via": "the field clicked into",
      "crop": "components/crops/support-search-focused.png",
-     "run": "2026-11-17T15:11:11.236Z"
+     "run": "2026-11-21T13:15:39.421Z"
     },
     "focus-visible": {
      "tag": "input",
@@ -6873,18 +7000,18 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/support-search-focus-visible.png",
-     "run": "2026-11-17T15:11:18.291Z"
+     "run": "2026-11-21T13:15:40.618Z"
     }
    }
   },
   "support-category": {
    "group": "Support",
    "title": "Support category card",
-   "desc": "A category card on the support index (\"Getting started\" \u2014 heading + one line).",
+   "desc": "A category card on the support index (\"Getting started\" — heading + one line).",
    "selector": "a (text Getting started)",
    "page": "/support",
    "url": "https://huddlekit.com/support",
-   "run": "2026-11-17T15:11:18.445Z",
+   "run": "2026-11-21T13:15:40.620Z",
    "states": {
     "default": {
      "tag": "a",
@@ -7002,7 +7129,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/support-category-default.png",
-     "run": "2026-11-17T15:11:34.808Z"
+     "run": "2026-11-21T13:15:41.396Z"
     },
     "hover": {
      "tag": "a",
@@ -7120,18 +7247,18 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/support-category-hover.png",
-     "run": "2026-11-17T15:11:37.472Z"
+     "run": "2026-11-21T13:15:43.147Z"
     }
    }
   },
   "tool-color-input": {
    "group": "Tools",
    "title": "Colour input",
-   "desc": "The native colour swatch input on the contrast checker (input[type=color]) \u2014 measured at rest.",
+   "desc": "The native colour swatch input on the contrast checker (input[type=color]) — measured at rest.",
    "selector": "input[type=\"color\"]",
    "page": "/tools/color-contrast-checker",
    "url": "https://huddlekit.com/tools/<id>",
-   "run": "2026-11-17T16:34:06.831Z",
+   "run": "2026-11-21T13:15:52.714Z",
    "states": {
     "default": {
      "tag": "input",
@@ -7229,7 +7356,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/tool-color-input-default.png",
-     "run": "2026-11-17T16:34:08.514Z"
+     "run": "2026-11-21T13:15:53.507Z"
     },
     "focus-visible": {
      "tag": "input",
@@ -7328,18 +7455,18 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/tool-color-input-focus-visible.png",
-     "run": "2026-11-17T16:34:09.907Z"
+     "run": "2026-11-21T13:15:54.702Z"
     }
    }
   },
   "tool-text-input": {
    "group": "Tools",
    "title": "Hex text input",
-   "desc": "The hex value text field beside the colour input (#000000) \u2014 measured at rest; nothing is typed.",
+   "desc": "The hex value text field beside the colour input (#000000) — measured at rest; nothing is typed.",
    "selector": "input (no type attr; .type reads text)",
    "page": "/tools/color-contrast-checker",
    "url": "https://huddlekit.com/tools/<id>",
-   "run": "2026-11-17T16:34:09.920Z",
+   "run": "2026-11-21T13:15:54.704Z",
    "states": {
     "default": {
      "tag": "input",
@@ -7437,7 +7564,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/tool-text-input-default.png",
-     "run": "2026-11-17T16:34:10.846Z"
+     "run": "2026-11-21T13:15:55.490Z"
     },
     "focus-visible": {
      "tag": "input",
@@ -7535,34 +7662,34 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/tool-text-input-focus-visible.png",
-     "run": "2026-11-17T16:34:12.356Z"
+     "run": "2026-11-21T13:15:56.698Z"
     }
    }
   },
   "contact-copy": {
    "group": "Contact",
    "title": "\"Copy\" icon button",
-   "desc": "The copy button beside a published contact email \u2014 measured, never pressed (it writes to the clipboard).",
+   "desc": "The copy button beside a published contact email — measured, never pressed (it writes to the clipboard).",
    "selector": "button (text Copy)",
    "page": "/contact",
    "url": "https://huddlekit.com/contact",
-   "run": "2026-11-17T15:12:07.859Z",
+   "run": "2026-11-21T13:16:06.265Z",
    "states": {
     "default": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Copy",
      "rect": {
-      "x": 959,
+      "x": 959.8,
       "y": 432.4,
-      "w": 84,
+      "w": 83.17,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "84px",
+      "width": "83.1719px",
       "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -7631,7 +7758,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "84.0x36.0",
+       "size": "83.2x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(1 0 0)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
@@ -7656,23 +7783,23 @@
      },
      "via": "resting state",
      "crop": "components/crops/contact-copy-default.png",
-     "run": "2026-11-17T15:12:08.753Z"
+     "run": "2026-11-21T13:16:07.059Z"
     },
     "hover": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Copy",
      "rect": {
-      "x": 959,
+      "x": 959.8,
       "y": 432.4,
-      "w": 84,
+      "w": 83.17,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "84px",
+      "width": "83.1719px",
       "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -7741,7 +7868,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "84.0x36.0",
+       "size": "83.2x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(0.9662 0.003 39.48)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
@@ -7766,23 +7893,23 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/contact-copy-hover.png",
-     "run": "2026-11-17T15:12:10.724Z"
+     "run": "2026-11-21T13:16:08.855Z"
     },
     "focus-visible": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Copy",
      "rect": {
-      "x": 959,
+      "x": 959.8,
       "y": 432.4,
-      "w": 84,
+      "w": 83.17,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "84px",
+      "width": "83.1719px",
       "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -7851,7 +7978,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "84.0x36.0",
+       "size": "83.2x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(1 0 0)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.2101 -0.00297811 -0.0318611 / 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
@@ -7876,23 +8003,23 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/contact-copy-focus-visible.png",
-     "run": "2026-11-17T15:12:12.913Z"
+     "run": "2026-11-21T13:16:10.026Z"
     },
     "pressed": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center cursor-pointer",
      "text": "Copy",
      "rect": {
-      "x": 959,
+      "x": 959.8,
       "y": 432.4,
-      "w": 84,
+      "w": 83.17,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "84px",
+      "width": "83.1719px",
       "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -7961,7 +8088,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "84.0x36.0",
+       "size": "83.2x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(0.9662 0.003 39.48)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
@@ -7984,9 +8111,9 @@
       "stroke": "oklch(0.21 0.006 285.885)",
       "color": "oklch(0.21 0.006 285.885)"
      },
-     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/contact-copy-pressed.png",
-     "run": "2026-11-17T15:12:14.143Z"
+     "run": "2026-11-21T13:16:11.213Z"
     }
    }
   },
@@ -7997,9 +8124,130 @@
    "selector": "main box (contact row)",
    "page": "/contact",
    "url": "https://huddlekit.com/contact",
-   "run": "2026-11-17T15:12:14.167Z",
-   "states": {},
-   "missing": true,
+   "run": "2026-11-21T13:16:11.215Z",
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "bg-card border-border/50 rounded-xl border",
+     "text": "hello@huddlekit.com Copy",
+     "rect": {
+      "x": 384,
+      "y": 419.4,
+      "w": 672,
+      "h": 62
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "672px",
+      "height": "62px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "12px",
+      "paddingRight": "12px",
+      "paddingBottom": "12px",
+      "paddingLeft": "12px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "oklab(0.92 0.00112401 -0.00383883 / 0.5)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "oklab(0.92 0.00112401 -0.00383883 / 0.5)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "oklab(0.92 0.00112401 -0.00383883 / 0.5)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "oklab(0.92 0.00112401 -0.00383883 / 0.5)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "oklch(1 0 0)",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineOffset": "0px",
+      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "oklch(0.2101 0.032 264.66)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "oklch(0.2101 0.032 264.66)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.bg-card.border-border/50",
+       "size": "672.0x62.0",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
+       "bg": "oklch(1 0 0)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+       "radius": "16px"
+      },
+      {
+       "node": "button.inline-flex.items-center",
+       "size": "83.2x36.0",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
+       "bg": "oklch(1 0 0)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+       "radius": "12px"
+      }
+     ],
+     "textStyle": {
+      "node": "a.focus:ring-primary.text-lg",
+      "text": "hello@huddlekit.com",
+      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+      "fontSize": "18px",
+      "lineHeight": "28px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "oklch(0.2101 0.032 264.66)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 16,
+      "h": 16,
+      "fill": "none",
+      "stroke": "oklch(0.2101 0.032 264.66)",
+      "color": "oklch(0.2101 0.032 264.66)"
+     },
+     "via": "resting state",
+     "crop": "components/crops/contact-row-default.png",
+     "run": "2026-11-21T13:16:12.004Z"
+    }
+   },
    "missingReason": "The saved state reads only hello@huddlekit.com (179x28), not the channel row. The picker now requires the channel name and the address together. Not remeasured: no live recapture."
   },
   "prose-h1": {
@@ -8009,7 +8257,7 @@
    "selector": "main h1, h1",
    "page": "/blog/introducing-huddlekit",
    "url": "https://huddlekit.com/blog/<id>",
-   "run": "2026-11-17T15:12:24.678Z",
+   "run": "2026-11-21T13:16:21.581Z",
    "states": {
     "default": {
      "tag": "h1",
@@ -8093,7 +8341,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/prose-h1-default.png",
-     "run": "2026-11-17T15:12:26.102Z"
+     "run": "2026-11-21T13:16:22.406Z"
     }
    }
   },
@@ -8104,12 +8352,12 @@
    "selector": "main p, main time",
    "page": "/blog/introducing-huddlekit",
    "url": "https://huddlekit.com/blog/<id>",
-   "run": "2026-11-17T15:12:26.234Z",
+   "run": "2026-11-21T13:16:22.409Z",
    "states": {
     "default": {
      "tag": "div",
      "classes": "text-muted-foreground flex items-center gap-2",
-     "text": "2026-01-05 \u2022 18 min read",
+     "text": "2026-11-20 • 13 min read",
      "rect": {
       "x": 252,
       "y": 440.4,
@@ -8197,7 +8445,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "2026-01-05",
+      "text": "2026-11-20",
       "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
       "fontSize": "14px",
       "lineHeight": "20px",
@@ -8209,7 +8457,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/prose-meta-default.png",
-     "run": "2026-11-17T15:12:28.311Z"
+     "run": "2026-11-21T13:16:23.179Z"
     }
    }
   },
@@ -8220,7 +8468,7 @@
    "selector": "main p (sentence)",
    "page": "/blog/introducing-huddlekit",
    "url": "https://huddlekit.com/blog/<id>",
-   "run": "2026-11-17T15:12:28.451Z",
+   "run": "2026-11-21T13:16:23.181Z",
    "states": {
     "default": {
      "tag": "p",
@@ -8228,7 +8476,7 @@
      "text": "Update, September 2026: Huddlekit is no longer in beta. This post is kept as a r",
      "rect": {
       "x": 232,
-      "y": 414.9,
+      "y": 413.9,
       "w": 634.66,
       "h": 72
      },
@@ -8316,7 +8564,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/prose-p-default.png",
-     "run": "2026-11-17T15:12:33.572Z"
+     "run": "2026-11-21T13:16:23.972Z"
     }
    }
   },
@@ -8324,22 +8572,281 @@
    "group": "Prose",
    "title": "Prose link",
    "desc": "A body-text link inside the article.",
-   "selector": "main :is(p,li) a",
+   "selector": "article :is(p, li) a",
    "page": "/blog/introducing-huddlekit",
    "url": "https://huddlekit.com/blog/<id>",
-   "run": "2026-11-17T15:12:38.729Z",
-   "states": {},
-   "missing": true,
+   "run": "2026-11-21T13:16:23.974Z",
+   "states": {
+    "default": {
+     "tag": "a",
+     "classes": "text-foreground hover:text-primary/80 decoration-primary underline",
+     "text": "features",
+     "rect": {
+      "x": 485,
+      "y": 439.9,
+      "w": 62.16,
+      "h": 20
+     },
+     "style": {
+      "display": "inline",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "auto",
+      "height": "auto",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineOffset": "0px",
+      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "oklch(0.2101 0.032 264.66)",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "oklch(0.6461 0.194 41.12)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "3px",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "via": "resting state",
+     "crop": "components/crops/prose-link-default.png",
+     "run": "2026-11-21T13:16:24.734Z"
+    },
+    "hover": {
+     "tag": "a",
+     "classes": "text-foreground hover:text-primary/80 decoration-primary underline",
+     "text": "features",
+     "rect": {
+      "x": 485,
+      "y": 439.9,
+      "w": 62.16,
+      "h": 20
+     },
+     "style": {
+      "display": "inline",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "auto",
+      "height": "auto",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineOffset": "0px",
+      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "oklab(0.6461 0.146147 0.127582 / 0.8)",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "oklch(0.6461 0.194 41.12)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "3px",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "via": "mouse hover over the element",
+     "crop": "components/crops/prose-link-hover.png",
+     "run": "2026-11-21T13:16:26.451Z"
+    },
+    "focus-visible": {
+     "tag": "a",
+     "classes": "text-foreground hover:text-primary/80 decoration-primary underline",
+     "text": "features",
+     "rect": {
+      "x": 485,
+      "y": 439.9,
+      "w": 62.16,
+      "h": 20
+     },
+     "style": {
+      "display": "inline",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "auto",
+      "height": "auto",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "auto",
+      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineOffset": "1px",
+      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "oklch(0.2101 0.032 264.66)",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "oklch(0.6461 0.194 41.12)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "3px",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "a.text-foreground.hover:text-primary/80",
+       "size": "62.2x20.0",
+       "outline": "1px auto oklab(0.705 0.143615 0.157301 / 0.5) offset 1px"
+      }
+     ],
+     "via": "keyboard focus (Shift+Tab, Tab)",
+     "crop": "components/crops/prose-link-focus-visible.png",
+     "run": "2026-11-21T13:16:27.619Z"
+    }
+   },
    "missingReason": "The saved states read the breadcrumb \"Home\" (40x20), not a link in the article. The selector is now article :is(p, li) a. Not remeasured: no live recapture."
   },
   "breadcrumb": {
    "group": "Prose",
    "title": "Breadcrumb",
-   "desc": "The Home / Blog / \u2026 breadcrumb above the article.",
+   "desc": "The Home / Blog / … breadcrumb above the article.",
    "selector": "nav[aria-label*=\"breadcrumb\" i], nav",
    "page": "/blog/introducing-huddlekit",
    "url": "https://huddlekit.com/blog/<id>",
-   "run": "2026-11-17T15:12:46.235Z",
+   "run": "2026-11-21T13:16:27.620Z",
    "states": {
     "default": {
      "tag": "nav",
@@ -8442,18 +8949,18 @@
      },
      "via": "resting state",
      "crop": "components/crops/breadcrumb-default.png",
-     "run": "2026-11-17T15:12:47.390Z"
+     "run": "2026-11-21T13:16:28.396Z"
     }
    }
   },
   "integration-grid-card": {
    "group": "Integrations",
    "title": "Integration page card",
-   "desc": "A card on the /integrations index (Slack \u2014 icon, name, description).",
+   "desc": "A card on the /integrations index (Slack — icon, name, description).",
    "selector": "a (text Slack)",
    "page": "/integrations",
    "url": "https://huddlekit.com/integrations",
-   "run": "2026-11-17T15:13:01.230Z",
+   "run": "2026-11-21T13:16:37.971Z",
    "states": {
     "default": {
      "tag": "a",
@@ -8573,7 +9080,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/integration-grid-card-default.png",
-     "run": "2026-11-17T15:13:02.473Z"
+     "run": "2026-11-21T13:16:38.773Z"
     },
     "hover": {
      "tag": "a",
@@ -8693,7 +9200,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/integration-grid-card-hover.png",
-     "run": "2026-11-17T15:13:04.465Z"
+     "run": "2026-11-21T13:16:40.515Z"
     }
    }
   },
@@ -8704,24 +9211,24 @@
    "selector": "nav, aside",
    "page": "/compare/pastel-alternative",
    "url": "https://huddlekit.com/compare/pastel-alternative",
-   "run": "2026-11-17T15:13:14.375Z",
+   "run": "2026-11-21T13:16:50.081Z",
    "states": {
     "default": {
      "tag": "aside",
      "classes": "hidden lg:col-span-4 lg:block",
-     "text": "Contents \u2192 Why teams look for Pastel alternatives \u2192 What to look for in a Pastel",
+     "text": "Contents → Why teams look for Pastel alternatives → What to look for in a Pastel",
      "rect": {
       "x": 914.7,
-      "y": -5593,
+      "y": -5569,
       "w": 293.33,
-      "h": 12086.48
+      "h": 12038.11
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "293.328px",
-      "height": "12086.5px",
+      "height": "12038.1px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -8829,7 +9336,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/compare-toc-default.png",
-     "run": "2026-11-17T15:13:23.572Z"
+     "run": "2026-11-21T13:16:51.354Z"
     }
    }
   },
@@ -8837,39 +9344,27 @@
    "group": "Compare",
    "title": "Feature-check list row",
    "desc": "A checklist row in the comparison (a lucide check / badge icon + capability line).",
-   "selector": "li",
+   "selector": "main li:has(svg)",
    "page": "/compare/pastel-alternative",
    "url": "https://huddlekit.com/compare/pastel-alternative",
-   "run": "2026-11-17T15:13:23.580Z",
-   "states": {},
-   "missing": true,
-   "missingReason": "The saved state reads the breadcrumb \"Home\", not a checklist row. The selector now requires a list item that holds an svg and a longer label. Not remeasured: no live recapture."
-  },
-  "app-login-card": {
-   "group": "App login",
-   "title": "Sign-in panel",
-   "desc": "The centred \"Sign in to Huddlekit\" panel: wordmark, heading, the Google and email buttons, and the privacy/terms line.",
-   "selector": "main, main [class*=\"card\"], div[class*=\"bg-\"]",
-   "page": "/login",
-   "url": "https://app.huddlekit.com/login",
-   "run": "2026-11-17T16:30:36.082Z",
+   "run": "2026-11-21T13:16:51.357Z",
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "flex flex-col gap-6",
-     "text": "Sign in to Huddlekit Continue to sign in to your account. Continue with Google C",
+     "tag": "li",
+     "classes": "",
+     "text": "Ruttl alternative",
      "rect": {
-      "x": 560,
-      "y": 372,
-      "w": 320,
-      "h": 168
+      "x": 232,
+      "y": 421.7,
+      "w": 314.66,
+      "h": 56
      },
      "style": {
-      "display": "flex",
+      "display": "list-item",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "320px",
-      "height": "168px",
+      "width": "314.656px",
+      "height": "56px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -8881,10 +9376,10 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "24px",
-      "rowGap": "24px",
-      "columnGap": "24px",
-      "flexDirection": "column",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -8912,7 +9407,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "inter, \"inter Fallback\"",
+      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
       "fontSize": "16px",
       "fontWeight": "400",
       "lineHeight": "24px",
@@ -8936,30 +9431,154 @@
      },
      "paint": [
       {
+       "node": "a.group.bg-background",
+       "size": "314.7x56.0",
+       "bg": "oklch(1 0 0)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+       "radius": "16px"
+      }
+     ],
+     "textStyle": {
+      "node": "span.text-base.font-medium",
+      "text": "Ruttl alternative",
+      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "oklch(0.2101 0.032 264.66)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 16,
+      "h": 16,
+      "fill": "none",
+      "stroke": "oklch(0.551 0.004 39.46)",
+      "color": "oklch(0.551 0.004 39.46)"
+     },
+     "via": "resting state",
+     "crop": "components/crops/compare-check-item-default.png",
+     "run": "2026-11-21T13:16:52.338Z"
+    }
+   },
+   "missingReason": "The saved state reads the breadcrumb \"Home\", not a checklist row. The selector now requires a list item that holds an svg and a longer label. Not remeasured: no live recapture."
+  },
+  "app-login-card": {
+   "group": "App login",
+   "title": "Sign-in panel",
+   "desc": "The centred \"Sign in to Huddlekit\" panel: wordmark, heading, the Google and email buttons, and the privacy/terms line.",
+   "selector": "main, main [class*=\"card\"], div[class*=\"bg-\"]",
+   "page": "/login",
+   "url": "https://app.huddlekit.com/login",
+   "run": "2026-11-21T13:17:03.293Z",
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "flex flex-col gap-6",
+     "text": "Sign in to Huddlekit Continue to sign in to your account. Continue with Google C",
+     "rect": {
+      "x": 560,
+      "y": 372,
+      "w": 320,
+      "h": 168
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "320px",
+      "height": "168px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "24px",
+      "rowGap": "24px",
+      "columnGap": "24px",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "oklch(0.92 0.004 70)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "oklch(0.92 0.004 70)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "oklch(0.92 0.004 70)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "oklch(0.92 0.004 70)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
+      "outlineOffset": "0px",
+      "fontFamily": "inter, \"inter Fallback\"",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "oklch(0.205 0.004 70)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "oklch(0.205 0.004 70)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       },
       {
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklch(0.9366 0.005 48.68)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "bg": "oklch(0.9366 0.004 70)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
      "textStyle": {
-      "node": "h1.text-lg.font-semibold",
+      "node": "h1.text-section-title.mb-1",
       "text": "Sign in to Huddlekit",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "18px",
       "lineHeight": "28px",
-      "fontWeight": "600",
+      "fontWeight": "500",
       "letterSpacing": "normal",
-      "color": "oklch(0.2101 0.032 264.66)",
+      "color": "oklch(0.205 0.004 70)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -8972,7 +9591,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-login-card-default.png",
-     "run": "2026-11-17T16:30:38.411Z"
+     "run": "2026-11-21T13:17:04.109Z"
     },
     "dark": {
      "tag": "div",
@@ -9030,7 +9649,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.646 0.16725 0.145984 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "16px",
@@ -9038,9 +9657,9 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.9088 0.004 39.48)",
+      "color": "oklch(0.945 0.003 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.9088 0.004 39.48)",
+      "textDecorationColor": "oklch(0.945 0.003 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -9059,27 +9678,27 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       },
       {
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklch(0.2726 0.006 34.3)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "bg": "oklch(0.2726 0.005 70)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
      "textStyle": {
-      "node": "h1.text-lg.font-semibold",
+      "node": "h1.text-section-title.mb-1",
       "text": "Sign in to Huddlekit",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "18px",
       "lineHeight": "28px",
-      "fontWeight": "600",
+      "fontWeight": "500",
       "letterSpacing": "normal",
-      "color": "oklch(0.9088 0.004 39.48)",
+      "color": "oklch(0.945 0.003 70)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -9092,18 +9711,18 @@
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the app honours; the login has no theme control of its own)",
      "crop": "components/crops/app-login-card-dark.png",
-     "run": "2026-11-17T16:30:46.279Z"
+     "run": "2026-11-21T13:17:10.716Z"
     }
    }
   },
   "app-google-button": {
    "group": "App login",
    "title": "\"Continue with Google\" button",
-   "desc": "The primary OAuth button (bg-primary). Never pressed \u2014 it would leave for Google sign-in.",
+   "desc": "The primary OAuth button (bg-primary). Never pressed — it would leave for Google sign-in.",
    "selector": "button (text Continue with Google)",
    "page": "/login",
    "url": "https://app.huddlekit.com/login",
-   "run": "2026-11-17T16:30:51.767Z",
+   "run": "2026-11-21T13:17:16.452Z",
    "states": {
     "default": {
      "tag": "button",
@@ -9141,27 +9760,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderTopColor": "oklch(0.92 0.004 70)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderRightColor": "oklch(0.92 0.004 70)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomColor": "oklch(0.92 0.004 70)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftColor": "oklch(0.92 0.004 70)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklch(0.6461 0.194 41.12)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -9190,7 +9809,7 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -9203,7 +9822,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-google-button-default.png",
-     "run": "2026-11-17T16:30:52.663Z"
+     "run": "2026-11-21T13:17:17.546Z"
     },
     "hover": {
      "tag": "button",
@@ -9241,27 +9860,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderTopColor": "oklch(0.92 0.004 70)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderRightColor": "oklch(0.92 0.004 70)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomColor": "oklch(0.92 0.004 70)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftColor": "oklch(0.92 0.004 70)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklab(0.6461 0.146147 0.127582 / 0.9)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -9290,7 +9909,7 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklab(0.6461 0.146147 0.127582 / 0.9)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -9303,7 +9922,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-google-button-hover.png",
-     "run": "2026-11-17T16:30:54.479Z"
+     "run": "2026-11-21T13:17:19.412Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -9341,27 +9960,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklab(0.2101 -0.00297811 -0.0318611 / 0.2)",
+      "borderTopColor": "oklch(0.6461 0.194 41.12)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklab(0.2101 -0.00297811 -0.0318611 / 0.2)",
+      "borderRightColor": "oklch(0.6461 0.194 41.12)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklab(0.2101 -0.00297811 -0.0318611 / 0.2)",
+      "borderBottomColor": "oklch(0.6461 0.194 41.12)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklab(0.2101 -0.00297811 -0.0318611 / 0.2)",
+      "borderLeftColor": "oklch(0.6461 0.194 41.12)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklch(0.6461 0.194 41.12)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.2101 -0.00297811 -0.0318611 / 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.6461 0.146147 0.127582 / 0.5) 0px 0px 0px 3px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -9390,7 +10009,7 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.2101 -0.00297811 -0.0318611 / 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.6461 0.146147 0.127582 / 0.5) 0px 0px 0px 3px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -9403,7 +10022,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/app-google-button-focus-visible.png",
-     "run": "2026-11-17T16:30:55.725Z"
+     "run": "2026-11-21T13:17:20.768Z"
     },
     "pressed": {
      "tag": "button",
@@ -9441,27 +10060,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderTopColor": "oklch(0.92 0.004 70)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderRightColor": "oklch(0.92 0.004 70)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomColor": "oklch(0.92 0.004 70)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftColor": "oklch(0.92 0.004 70)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklab(0.6461 0.146147 0.127582 / 0.9)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -9490,7 +10109,7 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklab(0.6461 0.146147 0.127582 / 0.9)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -9501,9 +10120,9 @@
       "stroke": "none",
       "color": "oklch(0.98 0.016 73.684)"
      },
-     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/app-google-button-pressed.png",
-     "run": "2026-11-17T16:30:56.964Z"
+     "run": "2026-11-21T13:17:22.029Z"
     },
     "dark": {
      "tag": "button",
@@ -9557,11 +10176,11 @@
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklch(0.6461 0.194 41.12)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.646 0.16725 0.145984 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -9590,7 +10209,7 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -9603,7 +10222,7 @@
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the app honours; the login has no theme control of its own)",
      "crop": "components/crops/app-google-button-dark.png",
-     "run": "2026-11-17T16:31:03.284Z"
+     "run": "2026-11-21T13:17:28.791Z"
     }
    }
   },
@@ -9614,7 +10233,7 @@
    "selector": "button (text Continue with email)",
    "page": "/login",
    "url": "https://app.huddlekit.com/login",
-   "run": "2026-11-17T16:31:08.740Z",
+   "run": "2026-11-21T13:17:34.497Z",
    "states": {
     "default": {
      "tag": "button",
@@ -9666,13 +10285,13 @@
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklch(0.9366 0.005 48.68)",
+      "backgroundColor": "oklch(0.9366 0.004 70)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -9680,9 +10299,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.21 0.006 285.885)",
+      "color": "oklch(0.205 0.004 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.21 0.006 285.885)",
+      "textDecorationColor": "oklch(0.205 0.004 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -9701,8 +10320,8 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklch(0.9366 0.005 48.68)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "bg": "oklch(0.9366 0.004 70)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -9710,12 +10329,12 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "oklch(0.21 0.006 285.885)",
-      "color": "oklch(0.21 0.006 285.885)"
+      "stroke": "oklch(0.205 0.004 70)",
+      "color": "oklch(0.205 0.004 70)"
      },
      "via": "resting state",
      "crop": "components/crops/app-email-button-default.png",
-     "run": "2026-11-17T16:31:09.632Z"
+     "run": "2026-11-21T13:17:35.434Z"
     },
     "hover": {
      "tag": "button",
@@ -9767,13 +10386,13 @@
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklab(0.9366 0.00330132 0.00375517 / 0.8)",
+      "backgroundColor": "oklab(0.9366 0.00136808 0.00375877 / 0.8)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -9781,9 +10400,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.21 0.006 285.885)",
+      "color": "oklch(0.205 0.004 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.21 0.006 285.885)",
+      "textDecorationColor": "oklch(0.205 0.004 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -9802,8 +10421,8 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklab(0.9366 0.00330132 0.00375517 / 0.8)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "bg": "oklab(0.9366 0.00136808 0.00375877 / 0.8)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -9811,12 +10430,12 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "oklch(0.21 0.006 285.885)",
-      "color": "oklch(0.21 0.006 285.885)"
+      "stroke": "oklch(0.205 0.004 70)",
+      "color": "oklch(0.205 0.004 70)"
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-email-button-hover.png",
-     "run": "2026-11-17T16:31:11.570Z"
+     "run": "2026-11-21T13:17:37.302Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -9854,27 +10473,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklab(0.2101 -0.00297811 -0.0318611 / 0.2)",
+      "borderTopColor": "oklch(0.6461 0.194 41.12)",
       "borderRightWidth": "1px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklab(0.2101 -0.00297811 -0.0318611 / 0.2)",
+      "borderRightColor": "oklch(0.6461 0.194 41.12)",
       "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklab(0.2101 -0.00297811 -0.0318611 / 0.2)",
+      "borderBottomColor": "oklch(0.6461 0.194 41.12)",
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklab(0.2101 -0.00297811 -0.0318611 / 0.2)",
+      "borderLeftColor": "oklch(0.6461 0.194 41.12)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklch(0.9366 0.005 48.68)",
+      "backgroundColor": "oklch(0.9366 0.004 70)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.2101 -0.00297811 -0.0318611 / 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.6461 0.146147 0.127582 / 0.5) 0px 0px 0px 3px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -9882,9 +10501,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.21 0.006 285.885)",
+      "color": "oklch(0.205 0.004 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.21 0.006 285.885)",
+      "textDecorationColor": "oklch(0.205 0.004 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -9903,8 +10522,8 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklch(0.9366 0.005 48.68)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.2101 -0.00297811 -0.0318611 / 0.2) 0px 0px 0px 1px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "bg": "oklch(0.9366 0.004 70)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.6461 0.146147 0.127582 / 0.5) 0px 0px 0px 3px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -9912,12 +10531,12 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "oklch(0.21 0.006 285.885)",
-      "color": "oklch(0.21 0.006 285.885)"
+      "stroke": "oklch(0.205 0.004 70)",
+      "color": "oklch(0.205 0.004 70)"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/app-email-button-focus-visible.png",
-     "run": "2026-11-17T16:31:12.842Z"
+     "run": "2026-11-21T13:17:38.472Z"
     },
     "pressed": {
      "tag": "button",
@@ -9969,13 +10588,13 @@
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklab(0.9366 0.00330132 0.00375517 / 0.8)",
+      "backgroundColor": "oklab(0.9366 0.00136808 0.00375877 / 0.8)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -9983,9 +10602,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.21 0.006 285.885)",
+      "color": "oklch(0.205 0.004 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.21 0.006 285.885)",
+      "textDecorationColor": "oklch(0.205 0.004 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -10004,8 +10623,8 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklab(0.9366 0.00330132 0.00375517 / 0.8)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "bg": "oklab(0.9366 0.00136808 0.00375877 / 0.8)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -10013,12 +10632,12 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "oklch(0.21 0.006 285.885)",
-      "color": "oklch(0.21 0.006 285.885)"
+      "stroke": "oklch(0.205 0.004 70)",
+      "color": "oklch(0.205 0.004 70)"
      },
-     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/app-email-button-pressed.png",
-     "run": "2026-11-17T16:31:14.100Z"
+     "run": "2026-11-21T13:17:39.632Z"
     },
     "dark": {
      "tag": "button",
@@ -10070,13 +10689,13 @@
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklch(0.2726 0.006 34.3)",
+      "backgroundColor": "oklch(0.2726 0.005 70)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.646 0.16725 0.145984 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -10084,9 +10703,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.985 0 0)",
+      "color": "oklch(0.945 0.003 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.985 0 0)",
+      "textDecorationColor": "oklch(0.945 0.003 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -10105,8 +10724,8 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklch(0.2726 0.006 34.3)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "bg": "oklch(0.2726 0.005 70)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
@@ -10114,23 +10733,23 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "oklch(0.985 0 0)",
-      "color": "oklch(0.985 0 0)"
+      "stroke": "oklch(0.945 0.003 70)",
+      "color": "oklch(0.945 0.003 70)"
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the app honours; the login has no theme control of its own)",
      "crop": "components/crops/app-email-button-dark.png",
-     "run": "2026-11-17T16:31:20.412Z"
+     "run": "2026-11-21T13:17:46.436Z"
     }
    }
   },
   "app-email-input": {
    "group": "App login",
    "title": "Email input",
-   "desc": "The \"Enter your email\" field the Continue-with-email press reveals \u2014 a local state change; nothing is typed and Continue is never pressed.",
+   "desc": "The \"Enter your email\" field the Continue-with-email press reveals — a local state change; nothing is typed and Continue is never pressed.",
    "selector": "input[type=\"email\"]",
    "page": "/login",
    "url": "https://app.huddlekit.com/login",
-   "run": "2026-11-17T16:31:26.128Z",
+   "run": "2026-11-21T13:17:52.137Z",
    "states": {
     "default": {
      "tag": "input",
@@ -10168,27 +10787,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderTopColor": "oklch(0.92 0.004 70)",
       "borderRightWidth": "1px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderRightColor": "oklch(0.92 0.004 70)",
       "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomColor": "oklch(0.92 0.004 70)",
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftColor": "oklch(0.92 0.004 70)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklch(1 0 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -10196,9 +10815,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.2101 0.032 264.66)",
+      "color": "oklch(0.205 0.004 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.2101 0.032 264.66)",
+      "textDecorationColor": "oklch(0.205 0.004 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, box-shadow",
@@ -10218,18 +10837,18 @@
        "size": "320.0x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(1 0 0)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px",
        "radius": "12px"
       }
      ],
      "placeholder": {
-      "color": "oklch(0.551 0.004 39.46)",
+      "color": "oklch(0.551 0.006 70)",
       "opacity": "1",
       "fontSize": "14px"
      },
      "via": "resting state",
      "crop": "components/crops/app-email-input-default.png",
-     "run": "2026-11-17T16:31:28.305Z"
+     "run": "2026-11-21T13:17:55.408Z"
     },
     "focused": {
      "tag": "input",
@@ -10267,27 +10886,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklch(0.705 0.213 47.604)",
+      "borderTopColor": "oklch(0.6461 0.194 41.12)",
       "borderRightWidth": "1px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklch(0.705 0.213 47.604)",
+      "borderRightColor": "oklch(0.6461 0.194 41.12)",
       "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklch(0.705 0.213 47.604)",
+      "borderBottomColor": "oklch(0.6461 0.194 41.12)",
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklch(0.705 0.213 47.604)",
+      "borderLeftColor": "oklch(0.6461 0.194 41.12)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklch(1 0 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.705 0.143615 0.157301 / 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.6461 0.146147 0.127582 / 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -10295,9 +10914,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.2101 0.032 264.66)",
+      "color": "oklch(0.205 0.004 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.2101 0.032 264.66)",
+      "textDecorationColor": "oklch(0.205 0.004 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, box-shadow",
@@ -10317,18 +10936,18 @@
        "size": "320.0x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklch(1 0 0)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.705 0.143615 0.157301 / 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.6461 0.146147 0.127582 / 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px",
        "radius": "12px"
       }
      ],
      "placeholder": {
-      "color": "oklch(0.551 0.004 39.46)",
+      "color": "oklch(0.551 0.006 70)",
       "opacity": "1",
       "fontSize": "14px"
      },
      "via": "the field clicked into",
      "crop": "components/crops/app-email-input-focused.png",
-     "run": "2026-11-17T16:31:29.952Z"
+     "run": "2026-11-21T13:17:56.584Z"
     },
     "dark": {
      "tag": "input",
@@ -10382,11 +11001,11 @@
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklab(1 0 0 / 0.048)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.646 0.16725 0.145984 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -10394,9 +11013,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.9088 0.004 39.48)",
+      "color": "oklch(0.945 0.003 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.9088 0.004 39.48)",
+      "textDecorationColor": "oklch(0.945 0.003 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, box-shadow",
@@ -10416,29 +11035,29 @@
        "size": "320.0x36.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "oklab(1 0 0 / 0.048)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px",
        "radius": "12px"
       }
      ],
      "placeholder": {
-      "color": "oklch(0.708 0.004 39.47)",
+      "color": "oklch(0.708 0.005 70)",
       "opacity": "1",
       "fontSize": "14px"
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the app honours; the login has no theme control of its own)",
      "crop": "components/crops/app-email-input-dark.png",
-     "run": "2026-11-17T16:31:37.839Z"
+     "run": "2026-11-21T13:18:04.449Z"
     }
    }
   },
   "app-continue-button": {
    "group": "App login",
    "title": "Email \"Continue\" submit",
-   "desc": "The primary submit under the email field \u2014 measured, never pressed (it would send a sign-in code).",
+   "desc": "The primary submit under the email field — measured, never pressed (it would send a sign-in code).",
    "selector": "button (text Continue with email)",
    "page": "/login",
    "url": "https://app.huddlekit.com/login",
-   "run": "2026-11-17T16:31:43.445Z",
+   "run": "2026-11-21T13:18:10.174Z",
    "states": {
     "default": {
      "tag": "button",
@@ -10476,27 +11095,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderTopColor": "oklch(0.92 0.004 70)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderRightColor": "oklch(0.92 0.004 70)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomColor": "oklch(0.92 0.004 70)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftColor": "oklch(0.92 0.004 70)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklch(0.6461 0.194 41.12)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -10513,7 +11132,7 @@
       "transitionDuration": "0.15s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "not-allowed",
       "opacity": "0.5",
       "transform": "none",
       "overflow": "visible",
@@ -10525,13 +11144,13 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
      "via": "resting state",
      "crop": "components/crops/app-continue-button-default.png",
-     "run": "2026-11-17T16:31:46.471Z"
+     "run": "2026-11-21T13:18:12.202Z"
     },
     "hover": {
      "tag": "button",
@@ -10569,27 +11188,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderTopColor": "oklch(0.92 0.004 70)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderRightColor": "oklch(0.92 0.004 70)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomColor": "oklch(0.92 0.004 70)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftColor": "oklch(0.92 0.004 70)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklch(0.6461 0.194 41.12)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -10606,7 +11225,7 @@
       "transitionDuration": "0.15s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "not-allowed",
       "opacity": "0.5",
       "transform": "none",
       "overflow": "visible",
@@ -10618,13 +11237,13 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/app-continue-button-hover.png",
-     "run": "2026-11-17T16:31:48.244Z"
+     "run": "2026-11-21T13:18:13.945Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -10662,27 +11281,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklch(0.92 0.004 286.32)",
+      "borderTopColor": "oklch(0.92 0.004 70)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklch(0.92 0.004 286.32)",
+      "borderRightColor": "oklch(0.92 0.004 70)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklch(0.92 0.004 286.32)",
+      "borderBottomColor": "oklch(0.92 0.004 70)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklch(0.92 0.004 286.32)",
+      "borderLeftColor": "oklch(0.92 0.004 70)",
       "borderTopLeftRadius": "12px",
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
       "backgroundColor": "oklch(0.6461 0.194 41.12)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -10699,7 +11318,7 @@
       "transitionDuration": "0.15s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "not-allowed",
       "opacity": "0.5",
       "transform": "none",
       "overflow": "visible",
@@ -10711,13 +11330,13 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "bg": "oklch(0.6461 0.194 41.12)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px, rgba(0, 0, 0, 0.09) 0px 2px 5px -1px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.19) 0px 6px 9px -7px inset, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09) 0px 1px 3px -1px",
        "radius": "12px"
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/app-continue-button-focus-visible.png",
-     "run": "2026-11-17T16:31:49.495Z"
+     "run": "2026-11-21T13:18:15.242Z"
     }
    }
   },
@@ -10728,7 +11347,7 @@
    "selector": "button (text Back to login)",
    "page": "/login",
    "url": "https://app.huddlekit.com/login",
-   "run": "2026-11-17T16:31:49.499Z",
+   "run": "2026-11-21T13:18:15.245Z",
    "states": {
     "default": {
      "tag": "button",
@@ -10786,7 +11405,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -10794,9 +11413,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.2101 0.032 264.66)",
+      "color": "oklch(0.205 0.004 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.2101 0.032 264.66)",
+      "textDecorationColor": "oklch(0.205 0.004 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -10822,12 +11441,12 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "oklch(0.2101 0.032 264.66)",
-      "color": "oklch(0.2101 0.032 264.66)"
+      "stroke": "oklch(0.205 0.004 70)",
+      "color": "oklch(0.205 0.004 70)"
      },
      "via": "resting state",
      "crop": "components/crops/app-back-button-default.png",
-     "run": "2026-11-17T16:31:55.549Z"
+     "run": "2026-11-21T13:18:21.199Z"
     },
     "hover": {
      "tag": "button",
@@ -10879,13 +11498,13 @@
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklch(0.9662 0.003 39.48)",
+      "backgroundColor": "oklch(0.9662 0.003 70)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.705 0.143615 0.157301 / 0.5)",
+      "outlineColor": "oklab(0.6461 0.146147 0.127582 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "14px",
@@ -10893,9 +11512,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.21 0.006 285.885)",
+      "color": "oklch(0.205 0.004 70)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.21 0.006 285.885)",
+      "textDecorationColor": "oklch(0.205 0.004 70)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -10914,7 +11533,7 @@
        "node": "button.inline-flex.items-center",
        "size": "320.0x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklch(0.9662 0.003 39.48)",
+       "bg": "oklch(0.9662 0.003 70)",
        "radius": "12px"
       }
      ],
@@ -10922,12 +11541,12 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "oklch(0.21 0.006 285.885)",
-      "color": "oklch(0.21 0.006 285.885)"
+      "stroke": "oklch(0.205 0.004 70)",
+      "color": "oklch(0.205 0.004 70)"
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-back-button-hover.png",
-     "run": "2026-11-17T16:31:57.338Z"
+     "run": "2026-11-21T13:18:22.916Z"
     }
    }
   },
@@ -10938,7 +11557,7 @@
    "selector": "header",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:34:22.341Z",
+   "run": "2026-11-21T13:18:32.657Z",
    "states": {
     "default": {
      "tag": "header",
@@ -11047,7 +11666,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/m-header-default.png",
-     "run": "2026-11-17T16:34:23.406Z"
+     "run": "2026-11-21T13:18:33.510Z"
     }
    }
   },
@@ -11058,7 +11677,7 @@
    "selector": "button (aria-label Toggle menu)",
    "page": "/",
    "url": "https://huddlekit.com/",
-   "run": "2026-11-17T16:34:23.418Z",
+   "run": "2026-11-21T13:18:33.513Z",
    "states": {
     "default": {
      "tag": "button",
@@ -11159,7 +11778,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/m-menu-button-default.png",
-     "run": "2026-11-17T16:34:24.451Z"
+     "run": "2026-11-21T13:18:34.283Z"
     },
     "hover": {
      "tag": "button",
@@ -11260,7 +11879,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/m-menu-button-hover.png",
-     "run": "2026-11-17T16:34:26.497Z"
+     "run": "2026-11-21T13:18:35.998Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -11361,14 +11980,14 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/m-menu-button-focus-visible.png",
-     "run": "2026-11-17T16:34:27.877Z"
+     "run": "2026-11-21T13:18:37.186Z"
     }
    }
   },
   "m-nav-drawer": {
    "group": "Chrome (mobile)",
    "title": "Nav sheet (open)",
-   "desc": "The opened navigation panel \u2014 the \"Toggle menu\" press drops an absolute rounded-md sheet under the sticky header; the press happens in find().",
+   "desc": "The opened navigation panel — the \"Toggle menu\" press drops an absolute rounded-md sheet under the sticky header; the press happens in find().",
    "selector": "header div[class*=\"absolute\"]",
    "page": "/",
    "url": "https://huddlekit.com/",

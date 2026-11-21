@@ -45,11 +45,15 @@ class TokensTest(unittest.TestCase):
         dv = {n: t["$value"] for n, t in token_checks.tokens_of(T["dark"])}
         lv = {n: t["$value"] for n, t in token_checks.tokens_of(T["light"])}
         self.assertEqual(lv["root.background"], "#ffffff")
-        self.assertEqual(lv["root.foreground"], "#111827")
+        # 2026-11-21 reading of oklch(20.5% .004 70). The Nov 17 harvest
+        # resolved the same declaration to #111827.
+        self.assertEqual(lv["root.foreground"], "#181715")
         self.assertEqual(lv["primary.default"], "#ea580d")
-        self.assertEqual(lv["color.page"], "#f6f3f2")
-        self.assertEqual(dv["root.background"], "#0e0b0d")
-        self.assertEqual(dv["root.foreground"], "#e3e0df")
+        self.assertEqual(lv["color.page"], "#f5f3f2")
+        # 2026-11-21 reading of oklch(15.43% .004 70). The footer computed
+        # fill is still #0e0b0d (core.component.footer.bg).
+        self.assertEqual(dv["root.background"], "#0d0c0a")
+        self.assertEqual(dv["root.foreground"], "#eeeceb")
         # the orange primary is kept in the dark set; borders go white-alpha
         self.assertEqual(dv["primary.default"], "#ea580d")
         self.assertEqual(dv["border.default"], "rgba(255, 255, 255, 0.08)")

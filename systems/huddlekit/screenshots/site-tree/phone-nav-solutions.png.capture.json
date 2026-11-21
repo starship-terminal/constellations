@@ -1,0 +1,73 @@
+{
+  "capturedAt": "2026-11-21T12:51:19.988Z",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2
+  },
+  "state": "Solutions inside phone drawer",
+  "links": [
+    {
+      "text": "",
+      "href": "/",
+      "top": 56
+    },
+    {
+      "text": "Features",
+      "href": "/features",
+      "top": 129
+    },
+    {
+      "text": "Agencies",
+      "href": "/agencies",
+      "top": 217
+    },
+    {
+      "text": "Product teams",
+      "href": "/product-teams",
+      "top": 253
+    },
+    {
+      "text": "Freelancers",
+      "href": "/freelancers",
+      "top": 289
+    },
+    {
+      "text": "QA teams",
+      "href": "/qa-teams",
+      "top": 325
+    },
+    {
+      "text": "Pricing",
+      "href": "/pricing",
+      "top": 409
+    },
+    {
+      "text": "Sign in",
+      "href": "https://app.huddlekit.com/login?utm_source=huddlekit&utm_medium=cta&utm_campaign=navbar&utm_content=login",
+      "top": 465
+    },
+    {
+      "text": "Get started",
+      "href": "https://app.huddlekit.com/login?utm_source=huddlekit&utm_medium=cta&utm_campaign=navbar&utm_content=signup",
+      "top": 509
+    },
+    {
+      "text": "Get started for free",
+      "href": "https://app.huddlekit.com/login?utm_source=huddlekit&utm_medium=cta&utm_campaign=homepage&utm_content=hero",
+      "top": 335
+    },
+    {
+      "text": "5-star reviews",
+      "href": "https://www.trustpilot.com/review/huddlekit.com",
+      "top": 335
+    }
+  ]
+}

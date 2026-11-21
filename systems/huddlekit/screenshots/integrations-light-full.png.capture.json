@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:46:21.201Z",
+  "capturedAt": "2026-11-21T13:06:51.336Z",
   "screenshot": "integrations-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/integrations",
   "requested": {
@@ -44,7 +44,10 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 5249,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:45:15.343Z",
+  "capturedAt": "2026-11-21T13:05:47.123Z",
   "screenshot": "support-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/support",
   "requested": {
@@ -44,7 +44,10 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 2404,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,

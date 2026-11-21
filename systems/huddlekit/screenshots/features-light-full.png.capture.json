@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:43:58.894Z",
+  "capturedAt": "2026-11-21T12:51:39.626Z",
   "screenshot": "features-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/features",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8710
+      "height": 8614
     },
     "scroll": {
       "x": 0,
@@ -44,17 +44,20 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 8614,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,
-    "height": 8710
+    "height": 8614
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 8710
+      "height": 8614
     },
     "basis": "fullPage"
   },

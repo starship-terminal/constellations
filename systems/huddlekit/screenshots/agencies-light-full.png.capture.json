@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:48:09.326Z",
+  "capturedAt": "2026-11-21T13:02:43.341Z",
   "screenshot": "agencies-light-full.png",
   "sanitizedSourceUrl": "https://huddlekit.com/agencies",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 9538
+      "height": 9514
     },
     "scroll": {
       "x": 0,
@@ -44,17 +44,20 @@
   "capture": {
     "mode": "fullPage",
     "scale": "css",
-    "clip": null
+    "clip": null,
+    "capturedHeight": 9514,
+    "partCount": 1,
+    "partIndex": 0
   },
   "png": {
     "width": 1440,
-    "height": 9538
+    "height": 9514
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 9538
+      "height": 9514
     },
     "basis": "fullPage"
   },

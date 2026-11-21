@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from huddlekit.com and app.huddlekit.com on 2026-11-18 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from huddlekit.com and app.huddlekit.com on 2026-11-21 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a field clicked into (nothing typed); `dark` is the same element after an emulated prefers-color-scheme repaint — the signal app.huddlekit.com honours (its login has no theme control of its own; the marketing site paints light only, its dark evidence the nested `.dark` panels measured as their own components); `opened`, `selected` and `off` are resting states reached by a component's own UI toggle. Nothing was typed, sent or signed into.
 
@@ -16,7 +16,7 @@ Page: /. Selector: `section.fixed`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 352 x 174 |
+| Size (w x h) | 352 x 134 |
 | Padding | 8px |
 | Border | 1px solid #e4e4e7 |
 | Radius | 16px |
@@ -28,7 +28,7 @@ Page: /. Selector: `section.fixed`. States: default.
 | Colour | #111827 |
 | Text node | p.text-muted-foreground.px-2: Inter 14px/20px 400, #747170 |
 | Transition | none |
-| Painted layers | section.bg-background.fixed 352.0x174.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px; button.inline-flex.items-center 163.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px; button.inline-flex.items-center 163.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
+| Painted layers | section.bg-background.fixed 352.0x134.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px; button.inline-flex.items-center 163.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px; button.inline-flex.items-center 163.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
 | Ancestor paint | 1 up body.font-sans.antialiased bg #f6f3f2 |
 | How | resting state |
 
@@ -139,7 +139,7 @@ Page: /. Selector: `header`. States: default.
 | Text node | a.hover:text-foreground/70.text-foreground: Inter 14px/20px 500, #111827 |
 | Transition | none |
 | Icon | 104 x 28, colour #111827 |
-| Painted layers | a.inline-flex.items-center 104.0x32.0 bg #ede9e7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px; button.inline-flex.items-center 0.0x0.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
+| Painted layers | a.inline-flex.items-center 96.7x32.0 bg #ede9e7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px; button.inline-flex.items-center 0.0x0.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
 | How | resting state |
 
 Crops: `nav-header-default.png`.
@@ -152,7 +152,7 @@ Page: /. Selector: `nav a, header a`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 62 x 20 | = | = |
+| Size (w x h) | 58.16 x 20 | = | = |
 | Padding | 0px | = | = |
 | Border | none | = | = |
 | Radius | 0px | = | = |
@@ -165,7 +165,7 @@ Page: /. Selector: `nav a, header a`. States: default, hover, focus-visible.
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Cursor | pointer | = | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
-| Painted layers | - | = | a.hover:text-foreground/70.text-foreground 62.0x20.0 outline 1px auto #ff6900 @ 0.5 offset 1px |
+| Painted layers | - | = | a.hover:text-foreground/70.text-foreground 58.2x20.0 outline 1px auto #ff6900 @ 0.5 offset 1px |
 
 Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`.
 
@@ -177,7 +177,7 @@ Page: /. Selector: `button (text Solutions)`. States: default, hover, opened.
 
 | Property | default | hover | opened |
 |---|---|---|---|
-| Size (w x h) | 85 x 20 | = | = |
+| Size (w x h) | 80.17 x 20 | = | = |
 | Padding | 0px | = | = |
 | Gap | 4px | = | = |
 | Border | none | = | = |
@@ -229,7 +229,7 @@ Page: /. Selector: `a (text Sign in)`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 48 x 20 | = |
+| Size (w x h) | 45.36 x 20 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
@@ -253,7 +253,7 @@ Page: /. Selector: `a (text Get started for free)`. States: default, hover, focu
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 169 x 40 | = | = | = |
+| Size (w x h) | 155.86 x 40 | = | = | = |
 | Padding | 0px 14px | = | = | = |
 | Gap | 6px | = | = | = |
 | Border | none | = | = | = |
@@ -266,7 +266,7 @@ Page: /. Selector: `a (text Get started for free)`. States: default, hover, focu
 | Colour | #fff7ed | = | = | = |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.inline-flex.items-center 169.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 169.0x40.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 169.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 169.0x40.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px |
+| Painted layers | a.inline-flex.items-center 155.9x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 155.9x40.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 155.9x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 155.9x40.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
 Crops: `cta-primary-default.png`, `cta-primary-hover.png`, `cta-primary-focus-visible.png`, `cta-primary-pressed.png`.
@@ -279,7 +279,7 @@ Page: /. Selector: `a (text Get started)`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 104 x 32 | = | = | = |
+| Size (w x h) | 96.67 x 32 | = | = | = |
 | Padding | 0px 10px | = | = | = |
 | Gap | 4px | = | = | = |
 | Border | 1px solid #000000 @ 0 | = | 1px solid #111827 @ 0.2 | = |
@@ -292,7 +292,7 @@ Page: /. Selector: `a (text Get started)`. States: default, hover, focus-visible
 | Colour | #18181b | = | = | = |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.inline-flex.items-center 104.0x32.0 bg #ede9e7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 104.0x32.0 bg #ede9e7 @ 0.8 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 104.0x32.0 bg #ede9e7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 104.0x32.0 bg #ede9e7 @ 0.8 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px |
+| Painted layers | a.inline-flex.items-center 96.7x32.0 bg #ede9e7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 96.7x32.0 bg #ede9e7 @ 0.8 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 96.7x32.0 bg #ede9e7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 96.7x32.0 bg #ede9e7 @ 0.8 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
 Crops: `cta-secondary-default.png`, `cta-secondary-hover.png`, `cta-secondary-focus-visible.png`, `cta-secondary-pressed.png`.
@@ -305,7 +305,7 @@ Page: /. Selector: `a (text 5-star reviews)`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 152 x 40 | = | = |
+| Size (w x h) | 146.2 x 40 | = | = |
 | Padding | 0px 14px | = | = |
 | Gap | 6px | = | = |
 | Border | 1px solid #000000 @ 0 | = | 1px solid #111827 @ 0.2 |
@@ -320,7 +320,7 @@ Page: /. Selector: `a (text 5-star reviews)`. States: default, hover, focus-visi
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Cursor | pointer | = | = |
 | Icon | 14 x 14, colour #ea580d | = | = |
-| Painted layers | a.inline-flex.items-center 152.0x40.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px; span.from-primary.to-foreground 102.0x20.0 image linear-gradient(to right, #ea580d 0px, #111827 100%) | a.inline-flex.items-center 152.0x40.0 bg #111827 @ 0.05 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px; span.from-primary.to-foreground 102.0x20.0 image linear-gradient(to right, #ea580d 0px, #111827 100%) | a.inline-flex.items-center 152.0x40.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px; span.from-primary.to-foreground 102.0x20.0 image linear-gradient(to right, #ea580d 0px, #111827 100%) |
+| Painted layers | a.inline-flex.items-center 146.2x40.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px; span.from-primary.to-foreground 96.2x20.0 image linear-gradient(to right, #ea580d 0px, #111827 100%) | a.inline-flex.items-center 146.2x40.0 bg #111827 @ 0.05 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px; span.from-primary.to-foreground 96.2x20.0 image linear-gradient(to right, #ea580d 0px, #111827 100%) | a.inline-flex.items-center 146.2x40.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px; span.from-primary.to-foreground 96.2x20.0 image linear-gradient(to right, #ea580d 0px, #111827 100%) |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 
 Crops: `cta-outline-default.png`, `cta-outline-hover.png`, `cta-outline-focus-visible.png`.
@@ -346,7 +346,7 @@ Page: /. Selector: `footer.dark, footer`. States: default.
 | Text node | h3.mb-3.text-sm: Inter 14px/20px 600, #e3e0df |
 | Transition | none |
 | Icon | 16 x 16, colour #e3e0df |
-| Painted layers | footer.dark.bg-background 1440.0x860.0 bg #0e0b0d border T:1px solid; div.mx-auto.max-w-5xl 1024.0x516.0 border R:1px solid / L:1px solid; div.mx-auto.max-w-5xl 1024.0x343.0 border R:1px solid / L:1px solid; div.border-border.flex 1022.0x85.0 border T:1px solid; a.bg-foreground/5.hover:bg-foreground/10 129.0x28.0 bg #e3e0df @ 0.05 r 3.35544e+07px; span.absolute.inline-flex 16.0x16.0 bg #00bc7d r 3.35544e+07px |
+| Painted layers | footer.dark.bg-background 1440.0x860.0 bg #0e0b0d border T:1px solid; div.mx-auto.max-w-5xl 1024.0x516.0 border R:1px solid / L:1px solid; div.mx-auto.max-w-5xl 1024.0x343.0 border R:1px solid / L:1px solid; div.border-border.flex 1022.0x85.0 border T:1px solid; a.bg-foreground/5.hover:bg-foreground/10 121.2x28.0 bg #e3e0df @ 0.05 r 3.35544e+07px; span.absolute.inline-flex 10.2x10.2 bg #00bc7d r 3.35544e+07px |
 | How | resting state |
 
 Crops: `footer-default.png`.
@@ -359,7 +359,7 @@ Page: /. Selector: `footer a`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 62 x 17 | = |
+| Size (w x h) | 58.16 x 17 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
@@ -383,7 +383,7 @@ Page: /. Selector: `button (text Cookie settings)`. States: default, hover, open
 
 | Property | default | hover | opened |
 |---|---|---|---|
-| Size (w x h) | 112 x 20 | = | = |
+| Size (w x h) | 103.91 x 20 | = | = |
 | Padding | 0px | = | = |
 | Border | none | = | = |
 | Radius | 0px | = | = |
@@ -518,7 +518,7 @@ Page: /. Selector: `button (text Show more testimonials)`. States: default, hove
 
 | Property | default | hover | focus-visible | opened |
 |---|---|---|---|---|
-| Size (w x h) | 218 x 36 | = | = | 120 x 36 |
+| Size (w x h) | 207.58 x 36 | = | = | 115.88 x 36 |
 | Padding | 8px 12px | = | = | = |
 | Gap | 6px | = | = | = |
 | Border | 1px solid #000000 @ 0 | = | 1px solid #111827 @ 0.2 | = |
@@ -532,7 +532,7 @@ Page: /. Selector: `button (text Show more testimonials)`. States: default, hove
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 16 x 16, colour #111827 | 16 x 16, colour #18181b | = | = |
-| Painted layers | button.inline-flex.items-center 218.0x36.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px | button.inline-flex.items-center 218.0x36.0 bg #111827 @ 0.05 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px | button.inline-flex.items-center 218.0x36.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px | button.inline-flex.items-center 120.0x36.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px |
+| Painted layers | button.inline-flex.items-center 207.6x36.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px | button.inline-flex.items-center 207.6x36.0 bg #111827 @ 0.05 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px | button.inline-flex.items-center 207.6x36.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px | button.inline-flex.items-center 115.9x36.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | the button's own press (testimonial grid expanded) |
 
 Crops: `show-more-default.png`, `show-more-hover.png`, `show-more-focus-visible.png`, `show-more-opened.png`.
@@ -541,7 +541,7 @@ Crops: `show-more-default.png`, `show-more-hover.png`, `show-more-focus-visible.
 
 FAQ accordion question. A question row in the page FAQ accordion. "opened" is its own press revealing the answer.
 
-Page: /. Selector: `button[aria-expanded]`. States: .
+Page: /. Selector: `main button[aria-expanded] (question text)`. States: .
 
 The saved states read the header Solutions trigger (85x20), not a question row. Selectors are scoped to main button[aria-expanded] whose label contains "?". Not remeasured: no live recapture.
 
@@ -551,9 +551,29 @@ The saved states read the header Solutions trigger (85x20), not a question row. 
 
 Plan card. A pricing plan card on /pricing (name, price, feature list, CTA).
 
-Page: /pricing. Selector: `main box (priced plan)`. States: .
+Page: /pricing. Selector: `main box (priced plan)`. States: default.
 
-The saved state reads the "Free forever" label (274.66x16), not a plan card. The picker now requires a price, a call to action, several lines and height of at least 160. Not remeasured: no live recapture.
+| Property | default |
+|---|---|
+| Size (w x h) | 314.66 x 426 |
+| Padding | 4px |
+| Gap | 4px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Inter 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #111827 |
+| Text node | span.text-foreground.text-base: Inter 16px/24px 600, #111827 |
+| Transition | none |
+| Icon | 16 x 16, colour #111827 |
+| Painted layers | div.bg-muted.w-full 306.7x134.0 bg #f6f3f2 r 12px; a.inline-flex.items-center 306.7x36.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px |
+| Ancestor paint | 1 up div.bg-background.rounded-xl bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
+| How | resting state |
+
+Crops: `plan-card-default.png`.
 
 #### billing-switch
 
@@ -593,7 +613,7 @@ Page: /pricing. Selector: `a (text Sign up free)`. States: default, hover, focus
 | Gap | 6px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 12px | = | = | = |
-| Background | #ea580d | #ea580d @ 0.9 | = | = |
+| Background | #ea580d | #ea580d @ 0.9 | = | #ea580d @ 0.9 |
 | Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = |
 | Outline | none | = | = | = |
 | Font | Inter 14px/20px 500 | = | = | = |
@@ -601,7 +621,7 @@ Page: /pricing. Selector: `a (text Sign up free)`. States: default, hover, focus
 | Colour | #fff7ed | = | = | = |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.inline-flex.items-center 306.7x36.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 306.7x36.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 306.7x36.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = |
+| Painted layers | a.inline-flex.items-center 306.7x36.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 306.7x36.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 306.7x36.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | a.inline-flex.items-center 306.7x36.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px |
 | Ancestor paint | 3 up div.bg-background.rounded-xl bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px | = | = | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
@@ -755,7 +775,7 @@ Page: /contact. Selector: `button (text Copy)`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 84 x 36 | = | = | = |
+| Size (w x h) | 83.17 x 36 | = | = | = |
 | Padding | 8px 12px | = | = | = |
 | Gap | 6px | = | = | = |
 | Border | 1px solid #e4e4e7 | = | 1px solid #111827 @ 0.2 | = |
@@ -769,7 +789,7 @@ Page: /contact. Selector: `button (text Copy)`. States: default, hover, focus-vi
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 16 x 16, colour #111827 | 16 x 16, colour #18181b | = | 16 x 16, colour #18181b |
-| Painted layers | button.inline-flex.items-center 84.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px | button.inline-flex.items-center 84.0x36.0 bg #f6f3f2 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px | button.inline-flex.items-center 84.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #000000 @ 0.05 0px 1px 2px 0px | button.inline-flex.items-center 84.0x36.0 bg #f6f3f2 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
+| Painted layers | button.inline-flex.items-center 83.2x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px | button.inline-flex.items-center 83.2x36.0 bg #f6f3f2 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px | button.inline-flex.items-center 83.2x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #000000 @ 0.05 0px 1px 2px 0px | button.inline-flex.items-center 83.2x36.0 bg #f6f3f2 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
 | Ancestor paint | 2 up div.bg-card.border-border/50 bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px | = | = | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
@@ -779,9 +799,27 @@ Crops: `contact-copy-default.png`, `contact-copy-hover.png`, `contact-copy-focus
 
 Contact channel row. A contact row on /contact ("Sales, inquiries & partnerships" + the published hello@huddlekit.com).
 
-Page: /contact. Selector: `main box (contact row)`. States: .
+Page: /contact. Selector: `main box (contact row)`. States: default.
 
-The saved state reads only hello@huddlekit.com (179x28), not the channel row. The picker now requires the channel name and the address together. Not remeasured: no live recapture.
+| Property | default |
+|---|---|
+| Size (w x h) | 672 x 62 |
+| Padding | 12px |
+| Border | 1px solid #e4e4e7 @ 0.5 |
+| Radius | 16px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px |
+| Outline | none |
+| Font | Inter 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #111827 |
+| Text node | a.focus:ring-primary.text-lg: Inter 18px/28px 500, #111827 |
+| Transition | none |
+| Icon | 16 x 16, colour #111827 |
+| Painted layers | div.bg-card.border-border/50 672.0x62.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px; button.inline-flex.items-center 83.2x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
+| How | resting state |
+
+Crops: `contact-row-default.png`.
 
 ### Prose
 
@@ -863,9 +901,26 @@ Crops: `prose-p-default.png`.
 
 Prose link. A body-text link inside the article.
 
-Page: /blog/introducing-huddlekit. Selector: `main :is(p,li) a`. States: .
+Page: /blog/introducing-huddlekit. Selector: `article :is(p, li) a`. States: default, hover, focus-visible.
 
-The saved states read the breadcrumb "Home" (40x20), not a link in the article. The selector is now article :is(p, li) a. Not remeasured: no live recapture.
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 62.16 x 20 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | 1px auto #ff6900 @ 0.5 offset 1px |
+| Font | Inter 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #111827 | #ea580d @ 0.8 | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
+| Painted layers | - | = | a.text-foreground.hover:text-primary/80 62.2x20.0 outline 1px auto #ff6900 @ 0.5 offset 1px |
+
+Crops: `prose-link-default.png`, `prose-link-hover.png`, `prose-link-focus-visible.png`.
 
 #### breadcrumb
 
@@ -932,7 +987,7 @@ Page: /compare/pastel-alternative. Selector: `nav, aside`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 293.33 x 12086.48 |
+| Size (w x h) | 293.33 x 12038.11 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -954,9 +1009,27 @@ Crops: `compare-toc-default.png`.
 
 Feature-check list row. A checklist row in the comparison (a lucide check / badge icon + capability line).
 
-Page: /compare/pastel-alternative. Selector: `li`. States: .
+Page: /compare/pastel-alternative. Selector: `main li:has(svg)`. States: default.
 
-The saved state reads the breadcrumb "Home", not a checklist row. The selector now requires a list item that holds an svg and a longer label. Not remeasured: no live recapture.
+| Property | default |
+|---|---|
+| Size (w x h) | 314.66 x 56 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Inter 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #111827 |
+| Text node | span.text-base.font-medium: Inter 16px/24px 500, #111827 |
+| Transition | none |
+| Icon | 16 x 16, colour #747170 |
+| Painted layers | a.group.bg-background 314.7x56.0 bg #ffffff r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
+| How | resting state |
+
+Crops: `compare-check-item-default.png`.
 
 ### App login
 
@@ -978,11 +1051,11 @@ Page: /login. Selector: `main, main [class*="card"], div[class*="bg-"]`. States:
 | Outline | none | = |
 | Font | inter 16px/24px 400 | = |
 | Letter spacing | normal | = |
-| Colour | #111827 | #e3e0df |
-| Text node | h1.text-lg.font-semibold: inter 18px/28px 600, #111827 | h1.text-lg.font-semibold: inter 18px/28px 600, #e3e0df |
+| Colour | #181715 | #eeeceb |
+| Text node | h1.text-section-title.mb-1: inter 18px/28px 500, #181715 | h1.text-section-title.mb-1: inter 18px/28px 500, #eeeceb |
 | Transition | none | = |
 | Icon | 16 x 16, colour #fff7ed, fill #000000 | = |
-| Painted layers | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px; button.inline-flex.items-center 320.0x40.0 bg #ede9e7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px; button.inline-flex.items-center 320.0x40.0 bg #2a2625 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px |
+| Painted layers | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px; button.inline-flex.items-center 320.0x40.0 bg #eceae7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px; button.inline-flex.items-center 320.0x40.0 bg #292724 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 1px 0px 0px inset, #ffffff @ 0.08 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px |
 | How | resting state | same element after prefers-color-scheme repaints html.dark (the signal the app honours; the login has no theme control of its own) |
 
 Crops: `app-login-card-default.png`, `app-login-card-dark.png`.
@@ -1001,7 +1074,7 @@ Page: /login. Selector: `button (text Continue with Google)`. States: default, h
 | Border | none | = | = | = | = |
 | Radius | 12px | = | = | = | = |
 | Background | #ea580d | #ea580d @ 0.9 | = | #ea580d @ 0.9 | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ea580d @ 0.5 0px 0px 0px 3px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | = | = |
 | Outline | none | = | = | = | = |
 | Font | inter 14px/20px 500 | = | = | = | = |
 | Letter spacing | normal | = | = | = | = |
@@ -1009,7 +1082,7 @@ Page: /login. Selector: `button (text Continue with Google)`. States: default, h
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
 | Icon | 16 x 16, colour #fff7ed, fill #000000 | = | = | = | = |
-| Painted layers | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | button.inline-flex.items-center 320.0x40.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | button.inline-flex.items-center 320.0x40.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = |
+| Painted layers | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | button.inline-flex.items-center 320.0x40.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ea580d @ 0.5 0px 0px 0px 3px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | button.inline-flex.items-center 320.0x40.0 bg #ea580d @ 0.9 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press | same element after prefers-color-scheme repaints html.dark (the signal the app honours; the login has no theme control of its own) |
 
 Crops: `app-google-button-default.png`, `app-google-button-hover.png`, `app-google-button-focus-visible.png`, `app-google-button-pressed.png`, `app-google-button-dark.png`.
@@ -1025,18 +1098,18 @@ Page: /login. Selector: `button (text Continue with email)`. States: default, ho
 | Size (w x h) | 320 x 40 | = | = | = | = |
 | Padding | 0px 16px | = | = | = | = |
 | Gap | 6px | = | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | 1px solid #111827 @ 0.2 | = | = |
+| Border | 1px solid #000000 @ 0 | = | 1px solid #ea580d | = | = |
 | Radius | 12px | = | = | = | = |
-| Background | #ede9e7 | #ede9e7 @ 0.8 | = | #ede9e7 @ 0.8 | #2a2625 |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = | = |
+| Background | #eceae7 | #eceae7 @ 0.8 | = | #eceae7 @ 0.8 | #292724 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ea580d @ 0.5 0px 0px 0px 3px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 1px 0px 0px inset, #ffffff @ 0.08 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px |
 | Outline | none | = | = | = | = |
 | Font | inter 14px/20px 500 | = | = | = | = |
 | Letter spacing | normal | = | = | = | = |
-| Colour | #18181b | = | = | = | #fafafa |
+| Colour | #181715 | = | = | = | #eeeceb |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
-| Icon | 16 x 16, colour #18181b | = | = | = | 16 x 16, colour #fafafa |
-| Painted layers | button.inline-flex.items-center 320.0x40.0 bg #ede9e7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | button.inline-flex.items-center 320.0x40.0 bg #ede9e7 @ 0.8 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | button.inline-flex.items-center 320.0x40.0 bg #ede9e7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #111827 @ 0.2 0px 0px 0px 1px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | button.inline-flex.items-center 320.0x40.0 bg #ede9e7 @ 0.8 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | button.inline-flex.items-center 320.0x40.0 bg #2a2625 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px |
+| Icon | 16 x 16, colour #181715 | = | = | = | 16 x 16, colour #eeeceb |
+| Painted layers | button.inline-flex.items-center 320.0x40.0 bg #eceae7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | button.inline-flex.items-center 320.0x40.0 bg #eceae7 @ 0.8 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | button.inline-flex.items-center 320.0x40.0 bg #eceae7 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ea580d @ 0.5 0px 0px 0px 3px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | button.inline-flex.items-center 320.0x40.0 bg #eceae7 @ 0.8 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | button.inline-flex.items-center 320.0x40.0 bg #292724 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 1px 0px 0px inset, #ffffff @ 0.08 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press | same element after prefers-color-scheme repaints html.dark (the signal the app honours; the login has no theme control of its own) |
 
 Crops: `app-email-button-default.png`, `app-email-button-hover.png`, `app-email-button-focus-visible.png`, `app-email-button-pressed.png`, `app-email-button-dark.png`.
@@ -1051,18 +1124,18 @@ Page: /login. Selector: `input[type="email"]`. States: default, focused, dark.
 |---|---|---|---|
 | Size (w x h) | 320 x 36 | = | = |
 | Padding | 4px 12px | = | = |
-| Border | 1px solid #e4e4e7 | 1px solid #ff6900 | 1px solid #ffffff @ 0.16 |
+| Border | 1px solid #e6e4e2 | 1px solid #ea580d | 1px solid #ffffff @ 0.16 |
 | Radius | 12px | = | = |
 | Background | #ffffff | = | #ffffff @ 0.048 |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ff6900 @ 0.5 0px 0px 0px 3px, #000000 @ 0.05 0px 1px 2px 0px | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 1px 0px | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ea580d @ 0.5 0px 0px 0px 3px, #000000 @ 0.05 0px 1px 1px 0px | = |
 | Outline | none | = | = |
 | Font | inter 14px/20px 400 | = | = |
 | Letter spacing | normal | = | = |
-| Colour | #111827 | = | #e3e0df |
+| Colour | #181715 | = | #eeeceb |
 | Transition | color, box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Cursor | text | = | = |
-| Placeholder | #747170, opacity 1 | = | #a3a09f, opacity 1 |
-| Painted layers | input.file:text-foreground.placeholder:text-muted-foreground 320.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px | input.file:text-foreground.placeholder:text-muted-foreground 320.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ff6900 @ 0.5 0px 0px 0px 3px, #000000 @ 0.05 0px 1px 2px 0px | input.file:text-foreground.placeholder:text-muted-foreground 320.0x36.0 bg #ffffff @ 0.048 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px |
+| Placeholder | #74716e, opacity 1 | = | #a3a09e, opacity 1 |
+| Painted layers | input.file:text-foreground.placeholder:text-muted-foreground 320.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 1px 0px | input.file:text-foreground.placeholder:text-muted-foreground 320.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ea580d @ 0.5 0px 0px 0px 3px, #000000 @ 0.05 0px 1px 1px 0px | input.file:text-foreground.placeholder:text-muted-foreground 320.0x36.0 bg #ffffff @ 0.048 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 1px 0px |
 | How | resting state | the field clicked into | same element after prefers-color-scheme repaints html.dark (the signal the app honours; the login has no theme control of its own) |
 
 Crops: `app-email-input-default.png`, `app-email-input-focused.png`, `app-email-input-dark.png`.
@@ -1081,15 +1154,15 @@ Page: /login. Selector: `button (text Continue with email)`. States: default, ho
 | Border | none | = | = |
 | Radius | 12px | = | = |
 | Background | #ea580d | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | = | = |
 | Outline | none | = | = |
 | Font | inter 14px/20px 500 | = | = |
 | Letter spacing | normal | = | = |
 | Colour | #fff7ed | = | = |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Opacity | 0.5 | = | = |
-| Cursor | pointer | = | = |
-| Painted layers | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 2px 0px, #000000 @ 0.09 0px 2px 5px -1px | = | = |
+| Cursor | not-allowed | = | = |
+| Painted layers | button.inline-flex.items-center 320.0x40.0 bg #ea580d r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.25 0px 1px 0px 0px inset, #ffffff @ 0.19 0px 6px 9px -7px inset, #000000 @ 0.12 0px 1px 1px 0px, #000000 @ 0.09 0px 1px 3px -1px | = | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 
 Crops: `app-continue-button-default.png`, `app-continue-button-hover.png`, `app-continue-button-focus-visible.png`.
@@ -1107,16 +1180,16 @@ Page: /login. Selector: `button (text Back to login)`. States: default, hover.
 | Gap | 6px | = |
 | Border | 1px solid #000000 @ 0 | = |
 | Radius | 12px | = |
-| Background | transparent | #f6f3f2 |
+| Background | transparent | #f5f3f2 |
 | Box shadow | none | = |
 | Outline | none | = |
 | Font | inter 14px/20px 500 | = |
 | Letter spacing | normal | = |
-| Colour | #111827 | #18181b |
+| Colour | #181715 | = |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = |
 | Cursor | pointer | = |
-| Icon | 16 x 16, colour #111827 | 16 x 16, colour #18181b |
-| Painted layers | button.inline-flex.items-center 320.0x40.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px | button.inline-flex.items-center 320.0x40.0 bg #f6f3f2 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px |
+| Icon | 16 x 16, colour #181715 | = |
+| Painted layers | button.inline-flex.items-center 320.0x40.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px | button.inline-flex.items-center 320.0x40.0 bg #f5f3f2 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px |
 | How | resting state | mouse hover over the element |
 
 Crops: `app-back-button-default.png`, `app-back-button-hover.png`.

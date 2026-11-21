@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T14:44:36.226Z",
+  "capturedAt": "2026-11-21T12:52:12.557Z",
   "screenshot": "blog-light-default.png",
   "sanitizedSourceUrl": "https://huddlekit.com/blog",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 3294
+      "height": 3666
     },
     "scroll": {
       "x": 0,
