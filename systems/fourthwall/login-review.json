@@ -1,0 +1,71 @@
+{
+  "signed_in": false,
+  "capturedAt": "2026-11-21",
+  "product": "Fourthwall",
+  "catalogName": "Fourthwall",
+  "nothingSubmitted": true,
+  "nothingTyped": true,
+  "ssoNotClicked": true,
+  "walls": [
+    {
+      "openedBy": "Header Log in",
+      "from": "https://fourthwall.com/",
+      "href": "https://my-shop.fourthwall.com/admin/dashboard?redirect",
+      "landsOn": "https://auth.fourthwall.com/auth/realms/Fourthwall/protocol/openid-connect/auth",
+      "title": "Log into Fourthwall | Fourthwall",
+      "host": "auth.fourthwall.com",
+      "kind": "Keycloak login",
+      "asksFor": [
+        "Sign in with Google",
+        "Sign in with Apple",
+        "Show more methods",
+        "Email (username field, empty)",
+        "Password (empty)",
+        "Show password",
+        "Forgot password?",
+        "Log in",
+        "Sign up"
+      ],
+      "stopped": "Empty wall photographed at 1440x900 and 390x844. No email, password, code, Google, Apple, or other SSO was used. The form was not submitted.",
+      "screenshots": [
+        "screenshots/auth-login-desktop.png",
+        "screenshots/auth-login-mobile.png"
+      ]
+    },
+    {
+      "openedBy": "Header and in-page Start now",
+      "from": "https://fourthwall.com/get-started",
+      "landsOn": "https://auth.fourthwall.com/auth/realms/Fourthwall/protocol/openid-connect/registrations",
+      "title": "Start now | Fourthwall",
+      "host": "auth.fourthwall.com",
+      "kind": "Keycloak registration",
+      "asksFor": [
+        "Sign up with Google",
+        "Sign up with Apple",
+        "Sign up with email",
+        "Login",
+        "Terms",
+        "Privacy Policy"
+      ],
+      "stopped": "Empty registration wall photographed. Sign up with email was not opened. No account was created. No field was filled.",
+      "screenshots": [
+        "screenshots/get-started-default.png"
+      ]
+    },
+    {
+      "openedBy": "Direct visit to /login",
+      "from": "https://fourthwall.com/login",
+      "landsOn": null,
+      "kind": "download",
+      "stopped": "Playwright reported 'Download is starting' and the page did not paint. No file was saved. The branch stopped.",
+      "screenshots": []
+    }
+  ],
+  "gaps": [
+    "signed-in app was not captured",
+    "Unread token values are Not captured",
+    "onboarding was not filled",
+    "checkout was not started",
+    "newsletter, plan, survey and profile fields were not filled"
+  ]
+}
