@@ -1,0 +1,53 @@
+{
+  "product": "Uniqlo",
+  "domain": "uniqlo.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900, devicePixelRatio 2",
+  "region": "Singapore. https://www.uniqlo.com redirected to https://www.uniqlo.com/sg/en/",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Membership",
+      "url": "https://www.uniqlo.com/sg/auth/v1/login",
+      "title": "Login | UNIQLO SG",
+      "painted": true,
+      "headings": ["Login"],
+      "asksFor": [
+        { "label": "Email address", "type": "email", "name": "login_id", "value": "" },
+        { "label": "Password", "type": "password", "name": "password", "value": "" }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["LOG IN", "CREATE AN ACCOUNT", "GUEST LOG IN", "Forgot your password?"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Both fields were empty. LOG IN was not clicked. No Google, Apple, Facebook, or LINE button was on the wall. The address carried a flow query. The screenshot shows no flow id and no typed value. The flow id is not recorded."
+    },
+    {
+      "control": "CREATE AN ACCOUNT",
+      "url": "https://www.uniqlo.com/sg/en/account/registry",
+      "title": "Create an account | UNIQLO SG",
+      "painted": true,
+      "headings": ["Create an account", "Profile details"],
+      "asksFor": [
+        { "label": "Email address", "type": "email", "required": true, "value": "" },
+        { "label": "Password", "type": "password", "required": true, "value": "" },
+        { "label": "Birthday", "type": "tel", "placeholder": "DD/MM/YYYY", "value": "" },
+        { "label": "Gender", "type": "radio", "options": ["Female", "Male", "Other"] },
+        { "label": "newsletter", "type": "checkbox", "checked": false },
+        { "label": "personalised product suggestions", "type": "checkbox", "checked": false },
+        { "label": "personalised advertisements", "type": "checkbox", "checked": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["REGISTER ACCOUNT"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "No field was typed. No radio or checkbox was toggled. REGISTER ACCOUNT was not clicked. No identity provider was on the page."
+    }
+  ]
+}

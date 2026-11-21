@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Uniqlo style guide</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --text: #000000;
+      --muted: #767676;
+      --red: #ee0000;
+      --ink: #000000;
+      --on-ink: #ffffff;
+      --line: #dadada;
+      --field-border: #1b1b1b;
+      --wash: #f4f4f4;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font: 16px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+    h1 { font-size: 28px; font-weight: 400; margin: 0 0 8px; }
+    p { color: var(--muted); }
+    .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
+    .swatch { border: 1px solid var(--line); }
+    .swatch i { display: block; height: 64px; }
+    .swatch span { display: block; padding: 8px; font-size: 13px; }
+    .search {
+      display: flex;
+      align-items: center;
+      height: 38px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+      padding: 0 28px;
+      margin-top: 16px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--on-ink);
+      font-size: 15px;
+    }
+    .promo { margin-top: 24px; background: var(--red); color: #fff; height: 44px; display: flex; align-items: center; padding: 0 16px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Uniqlo</h1>
+    <p>Signed-out Singapore store, 2026-11-22. Values from tokens.json.</p>
+    <div class="swatches">
+      <div class="swatch"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+      <div class="swatch"><i style="background:#000000"></i><span>text #000000</span></div>
+      <div class="swatch"><i style="background:#ee0000"></i><span>red #ee0000</span></div>
+      <div class="swatch"><i style="background:#767676"></i><span>muted #767676</span></div>
+      <div class="swatch"><i style="background:#1b1b1b"></i><span>field border #1b1b1b</span></div>
+      <div class="swatch"><i style="background:#dadada"></i><span>line #dadada</span></div>
+      <div class="swatch"><i style="background:#f4f4f4"></i><span>wash #f4f4f4</span></div>
+      <div class="swatch"><i style="background:#005db5"></i><span>focus #005db5</span></div>
+    </div>
+    <div class="search">What are you looking for?</div>
+    <div class="pill">LOG IN</div>
+    <div class="promo">Thank You Festival</div>
+  </main>
+</body>
+</html>
