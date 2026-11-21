@@ -1,0 +1,15 @@
+{
+  "capturedAt": "2026-11-21T16:00:00Z",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 1
+  },
+  "png": {
+    "width": 390,
+    "height": 844
+  },
+  "sanitizedSourceUrl": "https://www.walmart.com/",
+  "theme": "light",
+  "note": "Public signed-out capture. No account, no typed secret, no checkout."
+}
