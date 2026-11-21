@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:38:06.990Z",
+  "source": "playwright-headless-incognito",
+  "url": "https://evernote.com/en-us/features/document-scanning",
+  "finalUrl": "https://evernote.com/en-us/features/document-scanning",
+  "title": "Free Document Scanner | Evernote",
+  "httpStatus": 200,
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Public page. Cookie banner hidden, not accepted. Nothing typed. No form submitted. No identity provider clicked."
+}
