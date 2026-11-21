@@ -79,7 +79,7 @@ export function Rail() {
         </nav>
       </div>
       <span className="bar-foot">
-        <button className="icon-btn" type="button" onClick={() => chat.open()} aria-label="Open the librarian chat" title="Ask the librarian">
+        <button className="icon-btn" type="button" data-chat-open onClick={() => chat.open()} aria-label="Open the librarian chat" title="Ask the librarian">
           {icons.chat}
           <span className="lbl">Chat</span>
         </button>
