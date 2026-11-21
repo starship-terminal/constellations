@@ -963,9 +963,9 @@
       "description": "The World's Leading AI Platform for Enterprise",
       "status": "captured",
       "package": "systems/cohere",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/636: public marketing surface and sign-in boundary. Manifest row was left pending after merge. https://dashboard.cohere.com/welcome/login asks for email and password, or Google or GitHub. No code was sent.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/636: public marketing surface and sign-in boundary. Manifest row was left pending after merge. https://dashboard.cohere.com/welcome/login asks for email and password, or Google or GitHub. No code was sent. Public walk 2026-11-21: the map starts at cohere.com and records which header, footer, menu, drawer, dialog, and docs control opens which page or in-page state, including desktop mega menus, the phone drawer, footer accordions, the cookie dialog, pricing tabs, blog and docs search, and the docs Theme menu. The dashboard login wall asks for email and password, or Google or GitHub. Nothing was typed or submitted and that branch stopped. Signed-in app was not captured. Public package refresh in PR 1633 at e1812c76d673. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 3
     },
     {
@@ -997,9 +997,9 @@
       "description": "The developer infrastructure bank",
       "status": "captured",
       "package": "systems/column",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/638: public marketing surface and dashboard.column.com/login sign-in boundary. Manifest row was left pending after merge. https://dashboard.column.com/login accepted the email, then asked for a password. No code was sent.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/638: public marketing surface and dashboard.column.com/login sign-in boundary. Manifest row was left pending after merge. https://dashboard.column.com/login accepted the email, then asked for a password. No code was sent. Public walk 2026-11-21: the map starts at column.com and records which header, footer, and in-page control opens which page, menu, or wall. Marketing pages, docs, and the phone menu were photographed. Sign-in stops at the login wall. Nothing was typed or submitted. A later screenshot hit a captcha. It was not solved and those images were not kept. Signed-in app was not captured. Public package refresh in PR 1634 at 394480d7809b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 3
     },
     {
