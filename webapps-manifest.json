@@ -6260,9 +6260,9 @@
         44
       ],
       "description": "Organize Your Work & Life",
-      "status": "pending",
-      "package": null,
-      "notes": "https://app.todoist.com/app redirected to the login page. Session was not present. Skipped.",
+      "status": "captured",
+      "package": "systems/todoist",
+      "notes": "https://app.todoist.com/app redirected to the login page. Session was not present. Skipped. Public walk 2026-11-21: the public site tree is in systems/todoist/site-tree.md. Log in and Start for free stop at empty walls that ask for an email and a password. Google, Facebook, and Apple were not clicked. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1693 at f356d8e13d45. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 19
