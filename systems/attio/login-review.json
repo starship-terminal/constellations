@@ -1,0 +1,60 @@
+{
+  "product": "Attio",
+  "capturedAt": "2026-11-21",
+  "pass": "public",
+  "requestedUrl": "https://attio.com/go/",
+  "landedUrl": "https://app.attio.com/onboarding/welcome",
+  "title": "Attio",
+  "heading": "Let's get started.",
+  "stopped": true,
+  "reason": "Sign in and Start for free both land on an empty welcome wall. It offers Sign in with Google and an empty work-email field with a Continue control. Google was not clicked. Nothing was typed. Continue was not clicked. No account was created.",
+  "asksFor": [
+    "Sign in with Google",
+    "Sign in with email",
+    "Work email address",
+    "Continue"
+  ],
+  "passwordFieldVisible": false,
+  "codeFieldVisible": false,
+  "identityProvidersOffered": ["Google"],
+  "identityProvidersClicked": [],
+  "screenshot": "screenshots/login-light-empty.png",
+  "signup": {
+    "requestedUrl": "https://attio.com/go/welcome/sign-in",
+    "landedUrl": "https://app.attio.com/onboarding/welcome",
+    "title": "Attio",
+    "heading": "Let's get started.",
+    "asksFor": [
+      "Sign in with Google",
+      "Sign in with email",
+      "Work email address",
+      "Continue"
+    ],
+    "passwordFieldVisible": false,
+    "codeFieldVisible": false,
+    "identityProvidersClicked": [],
+    "stopped": true,
+    "screenshot": "screenshots/signup-light-empty.png",
+    "note": "Same wall as Sign in. Nothing was typed. Continue was not clicked."
+  },
+  "measured": {
+    "pageBackground": "#ffffff",
+    "googleButton": {
+      "background": "#266df0",
+      "labelColor": "#ffffff",
+      "radius": "10px",
+      "height": "36px",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "note": "The button element's own computed color is #000000. The visible label is #ffffff. Not clicked."
+    },
+    "emailField": {
+      "radius": "10px",
+      "height": "36px",
+      "focusRing": "rgb(38, 109, 240) 0px 0px 0px 1px inset",
+      "placeholder": "Enter your work email address...",
+      "note": "Empty. The wrapper background is transparent, so the fill was not read as a colour token."
+    }
+  },
+  "tokens": "Not captured. Hidden form tokens were unread and are not stored."
+}

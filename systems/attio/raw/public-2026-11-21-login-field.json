@@ -1,0 +1,77 @@
+{
+  "seen": [
+    {
+      "tag": "DIV",
+      "h": 36,
+      "bg": "#000000/0",
+      "border": "0px #000000/161",
+      "radius": "10px",
+      "shadow": "rgb(38, 109, 240) 0px 0px 0px 1px inset"
+    },
+    {
+      "tag": "DIV",
+      "h": 36,
+      "bg": "#000000/0",
+      "border": "0px #000000/255",
+      "radius": "0px",
+      "shadow": "none"
+    },
+    {
+      "tag": "FORM",
+      "h": 36,
+      "bg": "#000000/0",
+      "border": "0px #000000/255",
+      "radius": "0px",
+      "shadow": "none"
+    },
+    {
+      "tag": "DIV",
+      "h": 60,
+      "bg": "#000000/0",
+      "border": "0px #000000/255",
+      "radius": "0px",
+      "shadow": "none"
+    },
+    {
+      "tag": "DIV",
+      "h": 144,
+      "bg": "#000000/0",
+      "border": "0px #000000/255",
+      "radius": "0px",
+      "shadow": "none"
+    },
+    {
+      "tag": "DIV",
+      "h": 348,
+      "bg": "#000000/0",
+      "border": "0px #000000/255",
+      "radius": "0px",
+      "shadow": "none"
+    },
+    {
+      "tag": "DIV",
+      "h": 654,
+      "bg": "#000000/0",
+      "border": "0px #000000/255",
+      "radius": "0px",
+      "shadow": "none"
+    },
+    {
+      "tag": "DIV",
+      "h": 654,
+      "bg": "#000000/0",
+      "border": "0px #000000/255",
+      "radius": "0px",
+      "shadow": "none"
+    }
+  ],
+  "google": {
+    "bg": "#266df0",
+    "color": "#000000",
+    "labelColor": "#ffffff",
+    "fontSize": "14px",
+    "weight": "500",
+    "radius": "10px",
+    "h": 36
+  }
+}

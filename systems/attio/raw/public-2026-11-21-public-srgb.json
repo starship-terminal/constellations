@@ -1,0 +1,240 @@
+{
+  "home": {
+    "page": "#ffffff",
+    "text": "#1c1d1f",
+    "h1": {
+      "text": "Welcome to agentic revenue.",
+      "fontFamily": "interDisplay, \"interDisplay Fallback\"",
+      "fontSize": "64px",
+      "fontWeight": "600",
+      "lineHeight": "60.8px",
+      "letterSpacing": "-1.28px",
+      "color": "#1c1d1f",
+      "backgroundColor": "#000000/0.000",
+      "borderTopColor": "#d3d8df",
+      "borderTopWidth": "0px",
+      "borderRadius": "0px",
+      "height": 70,
+      "padding": "0px 0px 9.6px 0px",
+      "outline": "lab(10.7201 -0.0959039 -1.54182) none 0px",
+      "boxShadow": "none"
+    },
+    "signIn": {
+      "text": "Sign in",
+      "fontFamily": "inter, \"inter Fallback\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "letterSpacing": "-0.07px",
+      "color": "#2e3238",
+      "backgroundColor": "#ffffff",
+      "borderTopColor": "#cad0d9",
+      "borderTopWidth": "1px",
+      "borderRadius": "10px",
+      "height": 36,
+      "padding": "0px 12px 0px 12px",
+      "outline": "lab(20.5697 -0.638425 -4.44436) none 0px",
+      "boxShadow": "none"
+    },
+    "start": {
+      "text": "Start for free",
+      "fontFamily": "inter, \"inter Fallback\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "letterSpacing": "-0.07px",
+      "color": "#f3f4f6",
+      "backgroundColor": "#202124",
+      "borderTopColor": "#505967",
+      "borderTopWidth": "1px",
+      "borderRadius": "10px",
+      "height": 36,
+      "padding": "0px 12px 0px 12px",
+      "outline": "lab(96.1596 -0.0828803 -1.13571) none 0px",
+      "boxShadow": "none"
+    },
+    "banner": {
+      "text": "The new architecture for agentic revenue is here",
+      "fontFamily": "inter, \"inter Fallback\"",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "22px",
+      "letterSpacing": "-0.16px",
+      "color": "#ffffff",
+      "backgroundColor": "#000000/0.000",
+      "borderTopColor": "#d3d8df",
+      "borderTopWidth": "0px",
+      "borderRadius": "0px",
+      "height": 48,
+      "padding": "0px 0px 0px 0px",
+      "outline": "lab(99.9987 0.0337958 0.000309944) none 0px",
+      "boxShadow": "none"
+    },
+    "painted": {
+      "--color-overscroll-top": "#000000",
+      "--color-overscroll-bottom": "#101010",
+      "--color-page-background": "#ffffff",
+      "--color-banner-background": "#000000",
+      "--color-blue-100": "#e8f0ff",
+      "--color-blue-200": "#c8dcff",
+      "--color-blue-300": "#94b9ff",
+      "--color-blue-400": "#709ff5",
+      "--color-blue-450": "#538bf3",
+      "--color-blue-500": "#266df0",
+      "--color-blue-600": "#245bc2",
+      "--color-blue-800": "#1a2233",
+      "--color-black-0": "#000000",
+      "--color-black-50": "#101010",
+      "--color-black-100": "#1c1d1f",
+      "--color-black-200": "#202124",
+      "--color-black-300": "#232529",
+      "--color-black-400": "#2e3238",
+      "--color-black-500": "#383e47",
+      "--color-black-600": "#505967",
+      "--color-black-700": "#6f7988",
+      "--color-black-800": "#8f99a8",
+      "--color-black-900": "#a4adba",
+      "--color-white-100": "#ffffff",
+      "--color-white-200": "#fafafb",
+      "--color-white-300": "#f3f4f6",
+      "--color-white-400": "#edeff3",
+      "--color-white-500": "#e4e7ec",
+      "--color-white-600": "#dee2e7",
+      "--color-white-700": "#d3d8df",
+      "--color-white-800": "#cad0d9",
+      "--color-white-900": "#b5bdc9",
+      "--color-green-500": "#0fc27b",
+      "--color-green-600": "#0db472",
+      "--color-red-500": "#ff5b59",
+      "--color-red-600": "#f65351",
+      "--color-red-700": "#ce2e4b",
+      "--color-yellow-500": "#f5b900",
+      "--color-yellow-600": "#dba601",
+      "--color-yellow-700": "#ad7c00",
+      "--color-changelog-tag-design": "#00b5e6",
+      "--color-changelog-tag-feature": "#72a4fb",
+      "--color-changelog-tag-enhancement": "#ab92f1",
+      "--color-primary-background": "#ffffff",
+      "--color-secondary-background": "#fafafb",
+      "--color-surface": "#edeff3",
+      "--color-weak-stroke": "#edeff3",
+      "--color-subtle-stroke": "#e4e7ec",
+      "--color-default-stroke": "#d3d8df",
+      "--color-strong-stroke": "#cad0d9",
+      "--color-accent-stroke": "#709ff5",
+      "--color-primary-foreground": "#1c1d1f",
+      "--color-secondary-foreground": "#232529",
+      "--color-tertiary-foreground": "#505967",
+      "--color-accent-foreground": "#6f7988",
+      "--color-caption-foreground": "#a4adba",
+      "--color-disabled-foreground": "#d3d8df",
+      "--color-warning-foreground": "#ad7c00"
+    },
+    "themeToggle": false,
+    "htmlClass": "light"
+  },
+  "focus": {
+    "tag": "A",
+    "text": "Sign in",
+    "outline": "rgb(0, 95, 202) none 0px",
+    "outlineColor": "#005fca",
+    "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.569989 -0.0314532 -0.207309 / 0.3) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+    "border": "1px #707a89"
+  },
+  "pricingButtons": [
+    {
+      "href": "/go/welcome/sign-in",
+      "bg": "#202124",
+      "color": "#f3f4f6",
+      "radius": "10px",
+      "height": 36
+    },
+    {
+      "href": "/go/welcome/sign-in?ref=free_plan_cta",
+      "bg": "#ffffff",
+      "color": "#2e3238",
+      "radius": "10px",
+      "height": 36
+    },
+    {
+      "href": "/go/welcome/sign-in?ref=plus_plan_cta",
+      "bg": "#ffffff",
+      "color": "#2e3238",
+      "radius": "10px",
+      "height": 36
+    },
+    {
+      "href": "/go/welcome/sign-in?ref=pro_plan_cta",
+      "bg": "#266df0",
+      "color": "#ffffff",
+      "radius": "10px",
+      "height": 36
+    },
+    {
+      "href": "/go/welcome/sign-in?ref=ultra_plan_cta",
+      "bg": "#202124",
+      "color": "#f3f4f6",
+      "radius": "10px",
+      "height": 36
+    },
+    {
+      "href": "/go/welcome/sign-in?ref=free_plan_cta",
+      "bg": "#ffffff",
+      "color": "#2e3238",
+      "radius": "10px",
+      "height": 36
+    }
+  ],
+  "wall": {
+    "url": "https://app.attio.com/onboarding/welcome",
+    "title": "Attio",
+    "google": {
+      "text": "Sign in with Google",
+      "bg": "#266df0",
+      "color": "#000000",
+      "radius": "10px",
+      "height": 36,
+      "font": "Inter, sans-serif",
+      "fontSize": "10px",
+      "border": "0px #000000"
+    },
+    "email": {
+      "text": "Enter your work email address...",
+      "bg": "#000000",
+      "color": "#101112",
+      "radius": "0px",
+      "height": 17,
+      "font": "Inter",
+      "fontSize": "14px",
+      "border": "0px #767676"
+    },
+    "continueBtn": {
+      "text": "",
+      "bg": "#266df0",
+      "color": "#000000",
+      "radius": "8px",
+      "height": 28,
+      "font": "Inter",
+      "fontSize": "11px",
+      "border": "0px #000000"
+    },
+    "page": "#ffffff"
+  },
+  "signup": {
+    "url": "https://app.attio.com/onboarding/welcome",
+    "title": "Attio",
+    "text": "Let’s get started. Attio is the agentic CRM that meets you where you work, compounds every customer signal into context, then acts across your pipeline to let you move at unmatched speed and scale. From here, you'll always know your next move. Sign in with Google OR Sign in with email By inserting your email you confirm you agree to Attio contacting you about our product and services. You can opt out at any time by clicking unsubscribe in our emails. Find out more about how we use data in our pr",
+    "buttons": [
+      "Sign in with Google",
+      "Continue",
+      "privacy policy"
+    ],
+    "inputs": [
+      {
+        "type": "email",
+        "placeholder": "Enter your work email address...",
+        "name": "email"
+      }
+    ]
+  }
+}
