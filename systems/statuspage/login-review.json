@@ -1,0 +1,62 @@
+{
+  "product": "Statuspage",
+  "domain": "www.atlassian.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Sign in and signup were opened empty. Nothing was typed.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "siteCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in and phone drawer Sign in",
+      "url": "https://id.atlassian.com/login",
+      "paintedUrl": "https://id.atlassian.com/login",
+      "title": "Log in to continue - Log in with Atlassian account",
+      "heading": "Log in to continue",
+      "painted": true,
+      "asksFor": [
+        { "label": "Email", "type": "email", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": ["Passkey", "Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Continue", "Remember me", "Can't log in?", "Create an account"],
+      "stopped": true,
+      "desktop": "screenshots/signin-light-1440.png",
+      "phone": "screenshots/signin-light-390.png",
+      "note": "Empty sign-in wall. Continue was not clicked. No identity provider was clicked. The painted URL is https://id.atlassian.com/login with no OAuth query."
+    },
+    {
+      "control": "header Get it Free",
+      "url": "https://www.atlassian.com/try/cloud/signup?bundle=statuspage",
+      "paintedUrl": "https://www.atlassian.com/try/cloud/signup?bundle=statuspage",
+      "title": "Sign up - Try Atlassian Cloud | Atlassian",
+      "heading": "Get started",
+      "painted": true,
+      "asksFor": [
+        { "label": "Work email", "type": "email", "placeholder": "you@company.com", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": ["Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Sign up"],
+      "stopped": true,
+      "desktop": "screenshots/signup-light-1440.png",
+      "phone": "screenshots/signup-light-390.png",
+      "note": "Empty signup wall. Sign up was not clicked. No identity provider was clicked. No page was created. The cookie banner was hidden with CSS and not accepted. The query string names the Statuspage bundle. It does not carry OAuth or session state."
+    }
+  ],
+  "notOpened": [
+    "Continue and Sign up were not clicked.",
+    "Passkey, Google, Microsoft, Apple, and Slack were not clicked.",
+    "Can't log in? and Create an account were not clicked.",
+    "Pricing Get started today was not clicked.",
+    "The blog Subscribe control was not clicked.",
+    "Search was not typed.",
+    "Contact us was opened and discarded because it prints a street address.",
+    "Impressum was not opened.",
+    "Investor Relations, the Atlassian Foundation, Trello, support.atlassian.com, community.atlassian.com, marketplace.atlassian.com, my.atlassian.com, confluence.atlassian.com, and the community learning hub were not entered.",
+    "Customer status pages (DigitalOcean, Dropbox) and the See how YouTube video were not followed."
+  ]
+}

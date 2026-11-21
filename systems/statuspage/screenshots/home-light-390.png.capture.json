@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "home-light-390",
+  "url": "https://www.atlassian.com/software/statuspage",
+  "requestedUrl": "https://www.atlassian.com/software/statuspage",
+  "title": "Statuspage | Incident Communication Tool | Atlassian",
+  "h1": "Build trust with every incident",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}
