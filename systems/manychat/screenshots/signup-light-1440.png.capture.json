@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "signup",
+  "url": "https://app.manychat.com/signup",
+  "title": "Sign Up",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "Empty signup wall. Header Get started opens https://app.manychat.com/signup/facebookAuth?channel=instagram and lands here with no query string. The email field shows the site placeholder mrsmith@gmail.com. Nothing was typed. Sign Up was not clicked. Google was not clicked. A first attempt at /signup redirected through a refId query and was discarded."
+}

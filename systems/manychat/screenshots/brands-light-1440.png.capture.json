@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "brands",
+  "url": "https://manychat.com/brands",
+  "title": "DM Automation for Influencer Marketing | Manychat For Brands",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "First viewport. Book a demo and get started were not clicked."
+}

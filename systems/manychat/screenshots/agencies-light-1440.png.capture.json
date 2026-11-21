@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "agencies",
+  "url": "https://manychat.com/product/for-agencies",
+  "title": "Manychat for Agencies",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "First viewport. Get started and partner forms were not submitted."
+}

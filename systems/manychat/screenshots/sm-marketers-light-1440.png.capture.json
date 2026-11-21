@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "sm-marketers",
+  "url": "https://manychat.com/sm-marketers",
+  "title": "The #1 Tool for Social Media Marketers to Grow Faster",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "First viewport. Get started was not clicked."
+}
