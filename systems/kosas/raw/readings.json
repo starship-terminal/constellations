@@ -1,0 +1,31 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://kosas.com/",
+  "locale": "https://kosas.com/ with country control Singapore $SGD. Promo and product prices still read $.",
+  "viewport": {"css": "1440x900", "devicePixelRatio": 2, "screenshot": "2880x1800"},
+  "colors": {
+    "page": "#ffffff",
+    "ink": "#000000",
+    "promo": "#eeeec8",
+    "chip": "#eeeec8",
+    "note": "#f8f7f3",
+    "button": "#000000",
+    "on-button": "#ffffff",
+    "accent": "#D33167",
+    "accent-25": "#f4ccd9",
+    "ink-55": "rgba(0, 0, 0, 0.55)"
+  },
+  "notes": [
+    "body backgroundColor rgb(255, 255, 255), color rgb(0, 0, 0), font Founders Grotesk 16px weight 400.",
+    "Hello bar .hello-bar__item.color-scheme-2 backgroundColor rgb(238, 238, 200), height 32. Text 12px Founders Grotesk Mono weight 500 uppercase.",
+    ".color-scheme-2 sets --color-scheme-background #eeeec8.",
+    "Shop Now is an outline link: border 2px solid rgb(0, 0, 0), background transparent, 139 by 44, padding 8px 28px, radius 0, Founders Grotesk Mono 16px weight 500 uppercase.",
+    "Add to Bag on Cloud Set Mist is a solid button: background rgb(0, 0, 0), color rgb(255, 255, 255), 462 by 46, padding 12px 30px, radius 0, Founders Grotesk Mono 14px weight 500 uppercase.",
+    "Footer Sign Up is .btn.btn-solid background rgb(0, 0, 0), color rgb(255, 255, 255), 114 by 42. It was not clicked.",
+    "25% Off Applied at Checkout note background rgb(248, 247, 243), radius 6px, padding 12px 16px.",
+    "Product 25% Off chip background rgb(238, 238, 200), radius 4px. Card sale chip is the same fill, radius pill.",
+    ":root --color-accent #D33167 and --color-accent-25 #f4ccd9. Neither was painted on the photographed fold.",
+    "Nav border-top 1px solid oklab(0 0 0 / 0.1).",
+    "Wordmark SVG viewBox 0 0 160 42, painted 120 by 31.5."
+  ]
+}
