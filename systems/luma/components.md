@@ -1,14 +1,14 @@
 # Luma components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from luma.com on 2026-11-18, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Marketing pages paint html.theme-root.light. The public event page paints html.theme-root.dark on its own. Nothing was signed into, registered or submitted. Follow, Create, Get Luma Plus and the sign-in actions were measured and never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from luma.com on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Marketing pages paint html.theme-root.light. The public event page paints html.theme-root.dark on its own. Nothing was signed into, registered or submitted. Follow, Create, Get Luma Plus and the sign-in actions were measured and never followed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (36 components, 90 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (36 components, 91 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (90 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (91 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -16,13 +16,13 @@ Screenshots are named `{page}-{theme}-state.png`. Marketing pages paint `light`.
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `https://luma.com/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png) |
+| Home | `https://luma.com/` | [city-menu](screenshots/home-light-city-menu.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png) |
 | Pricing | `https://luma.com/pricing` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png), [monthly](screenshots/pricing-light-monthly.png) |
 | Discover | `https://luma.com/discover` | [default](screenshots/discover-light-default.png), [full](screenshots/discover-light-full.png) |
 | Public event | `https://luma.com/july4-brooklyn` | [default](screenshots/event-dark-default.png), [full](screenshots/event-dark-full.png) |
 | Sign in | `https://luma.com/signin` | [default](screenshots/signin-light-default.png) |
 | Home, phone | `https://luma.com/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png) |
-| Public event, phone | `https://luma.com/july4-brooklyn` | [default](screenshots/mobile-event-dark-default.png), [full](screenshots/mobile-event-dark-full.png) |
+| Public event, phone | `https://luma.com/july4-brooklyn` |  |
 | Sign in, phone | `https://luma.com/signin` | [default](screenshots/mobile-signin-light-default.png) |
 
 ### Overlays and transient states
@@ -345,9 +345,9 @@ The email input (8px radius). Sample text was typed and deleted. Continue was ne
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 320 x 38; padding 10px 14px; border 1px solid rgba(21, 21, 21, 0.08); radius 8px; background #ffffff `color.white`; image -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)); text -apple-system 16/16 400, #151515 `color.ink`; transition all 0.3s cubic-bezier(0.4, 0, 0.2, 1); placeholder rgba(21, 21, 21, 0.32) |
-| focused | border 1px solid #151515 `color.ink` |
+| focused, filled | border 1px solid #151515 `color.ink` |
 
-![Email field default](components/crops/email-field-default.png) ![Email field focused](components/crops/email-field-focused.png)
+![Email field default](components/crops/email-field-default.png) ![Email field focused](components/crops/email-field-focused.png) ![Email field filled](components/crops/email-field-filled.png)
 
 #### Use Phone Number
 The link-styled toggle that swaps the email field for a phone field. Measured, never pressed. Read as `phone-toggle` on the sign in page.
@@ -467,13 +467,13 @@ No standalone SVG icon set was lifted on this pass. The spark, the luma wordmark
 
 ### The signed-in product
 
-Luma's host product sits behind sign-in and was never reached: the host dashboard, the event editor, the guest list, check-in, blasts, billing and Luma Plus checkout. /home redirects to /signin signed out. /create paints a sign-in dialog over the composer and was never opened. Registration, ticket purchase and access-code entry were not submitted. Follow and Create Event require sign-in and were never pressed. Get Luma Plus links to /calendar/manage/plus, which is checkout and was never opened.
+Luma's host product sits behind sign-in and was not entered on 2026-11-21: the host dashboard, the event editor, the guest list, check-in, blasts, billing and Luma Plus checkout. /create paints a sign-in card over the composer. That card was photographed and not submitted. Registration, ticket purchase and access-code entry were not submitted. Follow was measured and never pressed. Get Luma Plus links to /calendar/manage/plus, which is checkout and was never opened.
 
 ### Pages
 
 - **The host workspace.** Dashboard, editor, guest list, check-in, blasts and billing need an account and were never reached.
 - **Sign-in.** /signin was captured as a card and never submitted. Continue with Email, Google and Passkey were measured, never pressed.
-- **Create.** The landing Create Your First Event pill links to /create, which opens a sign-in dialog. The pill was measured, never followed.
+- **Create.** The landing Create Your First Event pill links to /create. The page paints a composer and a sign-in card. The card was photographed and not submitted.
 - **Checkout.** Get Luma Plus links to /calendar/manage/plus?cadence=yearly. That checkout was never opened.
 - **Registration.** The public event page has no public tickets. Access-code entry was not submitted. Follow and Contact the Host were not pressed.
 

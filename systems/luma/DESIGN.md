@@ -84,11 +84,11 @@ Good for: Event-product marketing plus one public event page: a declared gray ra
 
 Captured 2026-11-18, signed out (marketing pages, Discover, one public event page and the sign-in card are public; the host dashboard, event editor, guest list, check-in, blasts and billing sit behind sign-in and were never reached; registration, ticket purchase and access-code entry were not submitted). Themes: light, dark.
 
-A token set and component reference for Luma's public surface and the signed-in host shell, for building event marketing pages, a public event page, and the empty host screens in the style of the real thing. The public pages were read from **luma.com** (lu.ma redirects there) on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured then: the home, pricing and discover marketing pages, one public event page (`/july4-brooklyn`), the sign-in card (measured, never submitted), and a 390px pass of home, the event and sign-in.
+A token set and component reference for Luma's public site. Read from **luma.com** (lu.ma redirects there) on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home (including the city menu), discover, pricing (Annual and Monthly), the app page, terms, one category page (`/ai`), one public event (`/july4-brooklyn`), the empty sign-in card, and the create page stopped at its sign-in card. A 390px pass covers home, discover, pricing, and sign-in.
 
-A signed-in pass on **2026-11-20** reached the empty host shell with an email code. Captured: Events (upcoming and past), Calendars, the calendar welcome tour, Create Calendar, Create Event, Notifications, Preferences, and Payment. Desktop shots are 1280. The later pages were taken at 492 because the capture pane had narrowed. The account is an empty trial, so there is no event, guest list, or check-in to capture. No event, calendar, or payment was submitted.
+This pass did not enter the host shell. Older signed-in screenshots were removed. No password, email, or code was typed. No form was submitted. Google and Passkey were not clicked.
 
-Luma declares a real token layer on `html.theme-root`: a 10-step gray ramp, semantic text and background roles, brand `#f31a7c`, status hues, a system font stack, radii and a five-step shadow scale. Marketing pages paint `theme-root.light`. The public event page and the signed-in shell paint `theme-root.dark` and rebind the same roles (white ink, `#151515` page, brand `#f98dbe`). **Boundary:** guest list, check-in, blasts, and a published event editor were not reached. Registration, ticket purchase, and access-code entry were not submitted. Luma Plus checkout was not opened.
+Luma declares a real token layer on `html.theme-root`: a 10-step gray ramp, semantic text and background roles, brand `#f31a7c`, status hues, a system font stack, radii and a five-step shadow scale. Marketing pages paint `theme-root.light`. The public event page paints `theme-root.dark` and rebinds the same roles (white ink, `#151515` page, brand `#f98dbe`). **Boundary:** the host dashboard, guest list, check-in, blasts, and a published event editor sit behind sign-in. Registration, ticket purchase, and access-code entry were not submitted. Luma Plus checkout was not opened.
 
 ## Colors
 
@@ -147,9 +147,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **The signed-in shots are an empty trial.** Events, Calendars, Create, Notifications, Preferences, and Payment are the empty states. Guest list, check-in, blasts, and a published editor were not reached.
+- **The host shell was not entered.** Events, Calendars, Create, Notifications, Preferences, and Payment sit behind the login card. Guest list, check-in, blasts, and a published editor were not reached. Older signed-in screenshots were removed on 2026-11-21.
 - **Dark is a live event theme, not a reconstruction.** Marketing pages stay light. The dark set is what `/july4-brooklyn` paints. There is no theme toggle on the captured pages.
-- **Create is a sign-in dialog.** The landing pill links to `/create`, which asks you to sign in before the composer is usable. That dialog was never opened.
+- **Create stops at a sign-in card.** `/create` paints a composer and a Welcome to Luma card over it. The card was photographed and not submitted.
 - **Get Luma Plus is checkout.** It links to `/calendar/manage/plus`. That page was never opened.
 - **Discover is localized.** Popular events follow the capture egress. Treat those titles as sample content.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read exact colours from tokens or the raw files.
@@ -165,7 +165,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 4. **Do flip roles on an event page.** A public event paints `theme-root.dark`: `#151515` page, white ink, brand `#f98dbe`. See [event-dark-default](screenshots/event-dark-default.png).
 5. **Do set the landing title at 80px and weight 500.** Pricing titles drop to 60px. Event titles use Google Sans Flex near 38px and weight 575. See [hero-title](components/crops/hero-title-default.png).
 6. **Do round plan cards to 24px.** That is the card-squircle radius, on the small shadow. Fields stay at 8px and 38px tall. See [plan-card](components/crops/plan-card-default.png).
-7. **Don't invent a guest list from these shots.** The signed-in shell is an empty trial. See [signed-in-home-dark-desktop](screenshots/signed-in-home-dark-desktop.png).
-8. **Don't follow Create or Plus.** Create opens a sign-in dialog. Plus is checkout. Both were measured and never opened. See [cta-create](components/crops/cta-create-default.png) and [plan-cta-brand](components/crops/plan-cta-brand-default.png).
+7. **Don't invent a guest list from these shots.** The host shell was not entered. See [signin-light-default](screenshots/signin-light-default.png).
+8. **Don't follow Create or Plus.** Create stops at a sign-in card. Plus is checkout and was not opened. See [create-light-default](screenshots/create-light-default.png) and [plan-cta-brand](components/crops/plan-cta-brand-default.png).
 9. **Don't submit the sign-in card.** The email field was typed and cleared. Continue, Google and Passkey were never pressed. See [email-field](components/crops/email-field-default.png).
 10. **Don't treat Discover titles as a fixed catalog.** The directory is localized to the capture egress. See [discover-light-default](screenshots/discover-light-default.png).
