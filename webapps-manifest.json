@@ -1592,9 +1592,9 @@
       "description": "Swedish developer and manufacturer of musical instruments",
       "status": "captured",
       "package": "systems/elektron",
-      "notes": "https://www.elektron.se/login asks for email and password. A code path is also offered and was not used. No code was sent.",
+      "notes": "https://www.elektron.se/login asks for email and password. A code path is also offered and was not used. No code was sent. Public walk 2026-11-21: the map starts at elektron.se and records which header, footer, and in-page control opens which page, menu, search, or login wall. Shop, catalog, support, and opened menus were photographed at desktop and phone. Cookie banner was photographed and hidden, never accepted. Login and account stop at /login. The code path was not used. Nothing was typed. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1653 at 807b02ed7682. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
@@ -1626,9 +1626,9 @@
       "description": "Free AI Voice Generator & Voice Agents Platform",
       "status": "captured",
       "package": "systems/elevenlabs",
-      "notes": "https://elevenlabs.io/app/sign-in asks for email and password, or Google, Apple, or SSO. No code was sent.",
+      "notes": "https://elevenlabs.io/app/sign-in asks for email and password, or Google, Apple, or SSO. No code was sent. Public walk 2026-11-21: the map starts at elevenlabs.io and records which header, footer, and in-page control opens which page, menu, or login wall. Marketing pages, docs, pricing, and opened menus were photographed at desktop and phone. Cookie settings were opened and not accepted. Login stops at /app/sign-in. Sign up stops at /app/sign-up. Nothing was typed. Google, Apple, and SSO were not clicked. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1654 at a2c9359bb03e. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
@@ -1983,7 +1983,7 @@
       "description": "The Global Destination For Modern Luxury",
       "status": "captured",
       "package": "systems/farfetch",
-      "notes": "https://www.farfetch.com/sg/ Sign in dialog asks for email and password, or a one-time code, Google, Apple, or Facebook. The one-time code path was not used. No code was sent.",
+      "notes": "https://www.farfetch.com/sg/ Sign in dialog asks for email and password, or a one-time code, Google, Apple, or Facebook. The one-time code path was not used. No code was sent. Public walk 2026-11-21: www.farfetch.com and /sg/ returned Akamai Access Denied (HTTP 403) before any page rendered, from headless Chromium, headed Chrome, and curl. No controls were readable. No package was written. Session not checked. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "password",
       "batch": 6
