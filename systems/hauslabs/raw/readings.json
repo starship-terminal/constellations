@@ -1,0 +1,103 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.hauslabs.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "title": "Haus Labs - Clean, Skincare-Infused Makeup - HAUS LABS BY LADY GAGA",
+  "body": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(255, 255, 255)",
+    "font": "SuisseIntl, NeueHelvetica55Roman, sans-serif",
+    "size": "16px",
+    "weight": "200",
+    "lineHeight": "18.4px"
+  },
+  "promo": {
+    "bg": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "height": "48px",
+    "size": "13px",
+    "weight": "500",
+    "letterSpacing": "0.13px",
+    "lineHeight": "14.82px",
+    "font": "SuisseIntl, NeueHelvetica55Roman, sans-serif",
+    "text": "Free Shipping to Singapore on Orders Over S$160.00",
+    "pngSample": "#000000"
+  },
+  "header": {
+    "bg": "rgb(255, 255, 255)",
+    "height": "56px",
+    "pngSample": "#ffffff"
+  },
+  "nav": {
+    "color": "rgb(0, 0, 0)",
+    "size": "13px",
+    "weight": "500",
+    "letterSpacing": "0.65px",
+    "textTransform": "uppercase",
+    "font": "SuisseIntl, NeueHelvetica55Roman, sans-serif"
+  },
+  "logo": {
+    "width": 192,
+    "height": 27,
+    "source": "CSS sprite .icon--logo-header"
+  },
+  "hero": {
+    "bgSample": "#f1f1f1",
+    "titleSample": "#686868"
+  },
+  "category": {
+    "title": "Shop all",
+    "titleSample": "#686868",
+    "heroBgSample": "#f0f0f0",
+    "url": "https://www.hauslabs.com/collections/shop-all"
+  },
+  "product": {
+    "url": "https://www.hauslabs.com/products/triclone-skin-tech-medium-coverage-foundation",
+    "title": "Triclone\u2122 Skin Tech Foundation",
+    "titleSize": "40px",
+    "titleWeight": "500",
+    "titleLineHeight": "42px",
+    "titleWidth": 359,
+    "titleHeight": 84,
+    "price": "$77 SGD",
+    "priceSize": "16px",
+    "priceWeight": "400",
+    "addToBag": {
+      "text": "ADD TO BAG",
+      "w": 299,
+      "h": 40,
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(0, 0, 0)",
+      "font": "SuisseIntl-Medium, NeueHelvetica55Roman, sans-serif",
+      "size": "14px",
+      "weight": "700",
+      "letterSpacing": "1px",
+      "lineHeight": "16px",
+      "radius": "0px",
+      "border": "1px solid rgb(66, 67, 68)",
+      "textTransform": "uppercase",
+      "pngSample": "#000000"
+    }
+  },
+  "notify": {
+    "text": "NOTIFY ME",
+    "w": 299,
+    "h": 40,
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(66, 67, 68)",
+    "size": "14px",
+    "weight": "400",
+    "letterSpacing": "1px",
+    "radius": "0px",
+    "page": "https://www.hauslabs.com/products/rice-water-glow-priming-elixir"
+  }
+}
