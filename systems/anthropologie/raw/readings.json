@@ -1,0 +1,134 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.anthropologie.com/",
+  "cssViewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "visualViewport": { "width": 1440, "height": 900, "scale": 1 },
+  "body": { "backgroundColor": "rgb(253, 253, 249)", "color": "rgb(0, 0, 0)" },
+  "nav": {
+    "color": "rgb(38, 38, 44)",
+    "fontFamily": "Avenir Medium, sans-serif",
+    "fontSize": "12px",
+    "letterSpacing": "0.6px",
+    "height": "60px"
+  },
+  "utility": {
+    "color": "rgb(22, 122, 146)",
+    "fontFamily": "Avenir Book, sans-serif",
+    "fontSize": "12px",
+    "letterSpacing": "0.6px"
+  },
+  "holiday": { "color": "rgb(195, 61, 61)" },
+  "search": {
+    "border": "1px solid rgb(147, 147, 149)",
+    "borderRadius": "4px",
+    "height": "45px",
+    "width": "299px",
+    "fontFamily": "Avenir Book, sans-serif",
+    "fontSize": "12px"
+  },
+  "promo": {
+    "height": "60px",
+    "sampledFill": "rgb(49, 67, 100)",
+    "shopFill": "rgb(74, 144, 109)"
+  },
+  "categoryTiles": {
+    "dresses": "rgb(46, 66, 102)",
+    "tops": "rgb(156, 31, 25)",
+    "shoes": "rgb(53, 119, 103)",
+    "jewelry": "rgb(22, 48, 23)",
+    "height": "60px"
+  },
+  "wordmark": { "width": "170px", "height": "10px", "asset": "197 by 12", "underline": "rgb(57, 120, 144)" },
+  "dressesHeading": {
+    "text": "Dresses",
+    "color": "rgb(38, 38, 44)",
+    "fontFamily": "Avenir Medium, sans-serif",
+    "fontSize": "22px",
+    "letterSpacing": "1.2px"
+  },
+  "cardTitle": {
+    "color": "rgb(38, 38, 44)",
+    "fontFamily": "Avenir Medium, sans-serif",
+    "fontSize": "13px"
+  },
+  "cardPrice": {
+    "text": "$228.00",
+    "color": "rgb(38, 38, 44)",
+    "fontFamily": "Avenir Book, sans-serif",
+    "fontSize": "13px"
+  },
+  "productTitle": {
+    "text": "Maeve Turtleneck Sequined Twofer Midi Dress",
+    "color": "rgb(38, 38, 44)",
+    "fontFamily": "Avenir Medium, sans-serif",
+    "fontSize": "22px",
+    "letterSpacing": "1.2px"
+  },
+  "productPrice": {
+    "text": "$228.00",
+    "color": "rgb(38, 38, 44)",
+    "fontFamily": "Avenir Book, sans-serif",
+    "fontSize": "16px"
+  },
+  "addToBasket": {
+    "text": "ADD TO BASKET",
+    "backgroundColor": "rgb(75, 86, 102)",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "Avenir Medium, sans-serif",
+    "fontSize": "13px",
+    "letterSpacing": "2.4px",
+    "height": "45px",
+    "width": "520px",
+    "borderRadius": "0px",
+    "clicked": false
+  },
+  "sizeChip": {
+    "backgroundColor": "rgb(247, 246, 242)",
+    "color": "rgb(38, 38, 44)",
+    "border": "1px solid rgb(247, 246, 242)",
+    "height": "38px",
+    "fontSize": "13px",
+    "borderRadius": "0px"
+  },
+  "brandLink": { "color": "rgb(22, 122, 146)", "fontSize": "13px", "fontFamily": "Avenir Book, sans-serif" },
+  "aboutHeading": {
+    "color": "rgb(38, 38, 44)",
+    "fontFamily": "Avenir Medium, sans-serif",
+    "fontSize": "18px",
+    "letterSpacing": "0.6px"
+  },
+  "aboutBody": {
+    "color": "rgb(92, 92, 95)",
+    "fontFamily": "Avenir Book, sans-serif",
+    "fontSize": "13px",
+    "lineHeight": "23.4px"
+  },
+  "footerLink": {
+    "color": "rgb(38, 38, 44)",
+    "fontFamily": "Avenir Book, sans-serif",
+    "fontSize": "12px",
+    "letterSpacing": "0.6px"
+  },
+  "emailField": {
+    "height": "45px",
+    "border": "1px solid rgb(147, 147, 149)",
+    "backgroundColor": "rgb(253, 253, 249)",
+    "typed": false
+  },
+  "vars": {
+    "--ivory": "253, 253, 249",
+    "--grey-dark": "38, 38, 44",
+    "--red": "195, 61, 61",
+    "--informational": "rgb(92, 92, 95)",
+    "--font-body": "Avenir Book, sans-serif",
+    "--font-body-bold": "Avenir Medium, sans-serif",
+    "--font-heading": "Spectral Extra Light, serif",
+    "--button-primary-background": "rgb(75, 86, 102)",
+    "--button-primary-text": "rgb(255, 255, 255)",
+    "--price-sale": "rgb(195, 61, 61)",
+    "--link-navigation-utility-text": "rgb(22, 122, 146)",
+    "--input-border": "rgb(147, 147, 149)",
+    "--utility-bar-background": "rgb(247, 246, 242)",
+    "--header-tab-bar": "rgb(22, 122, 146)"
+  }
+}

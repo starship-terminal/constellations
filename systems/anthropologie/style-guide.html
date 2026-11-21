@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Anthropologie style guide</title>
+  <style>
+    :root {
+      --page: #fdfdf9;
+      --ink: #26262c;
+      --text: #5c5c5f;
+      --on-ink: #ffffff;
+      --teal: #167a92;
+      --red: #c33d3d;
+      --slate: #4b5666;
+      --navy: #314364;
+      --quiet: #f7f6f2;
+      --line: #939395;
+      --shop: #4a906d;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: "Avenir Next", "Avenir", "Trebuchet MS", sans-serif;
+      font-size: 13px;
+      line-height: 23.4px;
+    }
+    header.promo {
+      height: 60px;
+      background: var(--navy);
+      color: var(--on-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      letter-spacing: 0.18em;
+      font-size: 14px;
+    }
+    .shop {
+      background: var(--shop);
+      color: var(--on-ink);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      padding: 6px 12px;
+    }
+    main { padding: 32px 40px 64px; max-width: 960px; }
+    h1 {
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: 1.2px;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    p.note { color: var(--text); margin: 0 0 28px; }
+    h2 { font-size: 14px; color: var(--ink); margin: 28px 0 12px; font-weight: 500; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 120px; }
+    .chip { height: 48px; border: 1px solid var(--line); }
+    .name { margin-top: 6px; color: var(--ink); font-size: 12px; }
+    .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .basket {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 45px;
+      padding: 0 28px;
+      background: var(--slate);
+      color: var(--on-ink);
+      font-size: 13px;
+      letter-spacing: 2.4px;
+    }
+    .size {
+      display: inline-flex;
+      align-items: center;
+      height: 38px;
+      padding: 0 12px;
+      background: var(--quiet);
+      color: var(--ink);
+      border: 1px solid var(--quiet);
+      font-size: 13px;
+    }
+    .search {
+      height: 45px;
+      width: 260px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--page);
+      color: var(--ink);
+      padding: 0 12px;
+      font: inherit;
+    }
+    .nav {
+      color: var(--ink);
+      font-size: 12px;
+      letter-spacing: 0.6px;
+    }
+    .nav .hot { color: var(--red); margin-left: 16px; }
+    .title { font-size: 22px; letter-spacing: 1.2px; color: var(--ink); }
+    .price { font-size: 16px; color: var(--ink); }
+    .brand { color: var(--teal); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header class="promo">EXTRA 40% OFF SALE <span class="shop">SHOP</span></header>
+  <main>
+    <h1>ANTHROPOLOGIE</h1>
+    <p class="note">Measured 2026-11-22. Avenir Next stands in for Avenir Book and Avenir Medium. Font files are not in this package.</p>
+    <h2>Colour</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#fdfdf9"></div><div class="name">Page #fdfdf9</div></div>
+      <div class="swatch"><div class="chip" style="background:#26262c"></div><div class="name">Ink #26262c</div></div>
+      <div class="swatch"><div class="chip" style="background:#5c5c5f"></div><div class="name">Text #5c5c5f</div></div>
+      <div class="swatch"><div class="chip" style="background:#167a92"></div><div class="name">Teal #167a92</div></div>
+      <div class="swatch"><div class="chip" style="background:#c33d3d"></div><div class="name">Red #c33d3d</div></div>
+      <div class="swatch"><div class="chip" style="background:#4b5666"></div><div class="name">Slate #4b5666</div></div>
+      <div class="swatch"><div class="chip" style="background:#314364"></div><div class="name">Navy #314364</div></div>
+      <div class="swatch"><div class="chip" style="background:#f7f6f2"></div><div class="name">Quiet #f7f6f2</div></div>
+    </div>
+    <h2>Controls</h2>
+    <p class="nav">New! <span class="hot">Gifts</span> <span class="hot">Holiday</span> Dresses Clothing <span class="hot">Sale</span></p>
+    <div class="row">
+      <span class="basket">ADD TO BASKET</span>
+      <span class="size">S</span>
+      <span class="size">M</span>
+      <input class="search" placeholder="What are you looking for?" readonly>
+    </div>
+    <h2>Type</h2>
+    <p class="brand">Maeve</p>
+    <p class="title">Maeve Turtleneck Sequined Twofer Midi Dress</p>
+    <p class="price">$228.00</p>
+    <p>About body is 13px #5c5c5f, line-height 23.4px. Footer links are 12px ink.</p>
+  </main>
+</body>
+</html>
