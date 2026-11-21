@@ -1,0 +1,129 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "public Playwright. No session was present. A prior signed-in walk was skipped.",
+  "probe": {
+    "url": "https://www.tiktok.com/",
+    "result": "Showed Log in. Session was not present. Probe closed. This pass did not reopen a signed-in URL."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measuredInnerWidth": 1440,
+      "measuredInnerHeight": 900,
+      "deviceScaleFactor": 2
+    },
+    "phone": {
+      "requested": "390x844",
+      "measuredInnerWidth": 390,
+      "measuredInnerHeight": 844,
+      "deviceScaleFactor": 2
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "For You",
+        "Explore",
+        "Following",
+        "LIVE",
+        "Upload",
+        "Profile",
+        "More",
+        "Search",
+        "Log in",
+        "Get Coins",
+        "Get App",
+        "Category chips"
+      ],
+      "reached": [
+        "Explore",
+        "For You",
+        "Following",
+        "LIVE",
+        "More",
+        "Company footer",
+        "About",
+        "Log in dialog",
+        "Upload login page"
+      ]
+    },
+    "settings": {
+      "items": [
+        "English (US)",
+        "Dark mode"
+      ],
+      "reached": [
+        "Dark mode control visible. Click did not change data-tux-color-scheme. Language row not opened."
+      ]
+    },
+    "create": {
+      "items": [
+        "Upload",
+        "Sign up",
+        "Use QR code",
+        "Use phone or email",
+        "Continue with Facebook",
+        "Continue with Google",
+        "Continue with LINE",
+        "Continue with KakaoTalk",
+        "Continue with Apple"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    {"name": "Explore, light, 1440", "file": "screenshots/explore-light-default.png"},
+    {"name": "Explore footer, light", "file": "screenshots/explore-light-footer.png"},
+    {"name": "More panel", "file": "screenshots/explore-light-more.png"},
+    {"name": "More panel, earlier open", "file": "screenshots/explore-light-more-open.png"},
+    {"name": "Explore, phone, 390", "file": "screenshots/explore-light-phone.png"},
+    {"name": "For You player error", "file": "screenshots/foryou-dark-error.png"},
+    {"name": "LIVE empty", "file": "screenshots/live-light-empty.png"},
+    {"name": "Following suggestions", "file": "screenshots/following-light-default.png"},
+    {"name": "About", "file": "screenshots/about-light-default.png"},
+    {"name": "Log in dialog", "file": "screenshots/login-light-dialog.png"},
+    {"name": "Log in page from Upload", "file": "screenshots/login-light-page.png"}
+  ],
+  "walls": [
+    {
+      "control": "Log in",
+      "url": "https://www.tiktok.com/explore",
+      "asks": "Use QR code, Use phone or email, Continue with Facebook, Continue with Google, Continue with LINE, Continue with KakaoTalk, Continue with Apple, Sign up",
+      "stopped": true
+    },
+    {
+      "control": "Upload",
+      "url": "https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2Ftiktokstudio%2Fupload%3Ffrom%3Dwebapp%26tab%3Dvideo",
+      "asks": "Use QR code, Use phone / email / username, Continue with Facebook, Continue with Google, Continue with LINE, Continue with KakaoTalk, Sign up",
+      "stopped": true
+    },
+    {
+      "control": "TikTok Studio",
+      "url": "https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2Ftiktokstudio",
+      "asks": "Same login page as Upload. Photographed once.",
+      "stopped": true
+    }
+  ],
+  "gaps": [
+    "Signed-in feed, comments, inbox, and settings were not opened. No session was present.",
+    "Identity providers were not clicked.",
+    "QR, phone, email, and username fields were not opened.",
+    "Sign up was not clicked.",
+    "Search was not submitted.",
+    "Follow on a suggested account was not clicked.",
+    "Get Coins and Get App did not open a dialog from the click that landed.",
+    "Dark mode did not switch data-tux-color-scheme.",
+    "Language, LIVE tools, Effect House, TikTok Shop, and the legal hosts were not opened.",
+    "The phone width did not paint a Log in label. The filled button is the desktop control."
+  ],
+  "not_submitted": [
+    "No email, name, phone, password, or code typed",
+    "No identity provider clicked",
+    "No form submitted",
+    "No account created",
+    "No captcha solved",
+    "No onboarding filled"
+  ]
+}

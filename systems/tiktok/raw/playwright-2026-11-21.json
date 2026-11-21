@@ -1,0 +1,444 @@
+{
+  "captured": "2026-11-21",
+  "reader": "headless Playwright getComputedStyle on the live signed-out page",
+  "url": "https://www.tiktok.com/ redirected to /explore",
+  "desktop": {
+    "url": "https://www.tiktok.com/explore",
+    "title": "Explore - Find your favorite videos on TikTok",
+    "inner": {
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vvW": 1440,
+      "vvH": 900,
+      "vvScale": 1
+    },
+    "tux": "light",
+    "theme": "light",
+    "body": {
+      "text": "TikTok Search For You Explore Following LIVE Upload Profile More Log i",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(22, 24, 35)",
+      "font": "TikTokFont, Arial, Tahoma, PingFangSC, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "21px",
+      "ls": "normal",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px",
+      "border": "0px none rgb(22, 24, 35)",
+      "w": 1440,
+      "h": 1713,
+      "x": 0,
+      "y": 0
+    },
+    "login": {
+      "text": "Log in",
+      "bg": "rgb(254, 44, 85)",
+      "color": "rgb(255, 255, 255)",
+      "font": "TikTokFont, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "size": "16px",
+      "weight": "500",
+      "lh": "21px",
+      "ls": "0.15px",
+      "radius": "6px",
+      "shadow": "none",
+      "pad": "1px 16px",
+      "border": "0px none rgb(255, 255, 255)",
+      "w": 200,
+      "h": 40,
+      "x": 20,
+      "y": 436
+    },
+    "loginHover": {
+      "bg": "rgb(234, 40, 78)",
+      "transform": "none",
+      "opacity": "1"
+    },
+    "loginPressed": {
+      "bg": "rgb(224, 39, 75)",
+      "transform": "none",
+      "opacity": "1"
+    },
+    "searchInput": {
+      "text": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(22, 24, 35)",
+      "font": "TikTokFont, Arial, Tahoma, PingFangSC, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "21px",
+      "ls": "normal",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px",
+      "border": "0px none rgb(22, 24, 35)",
+      "w": 0,
+      "h": 0,
+      "x": 0,
+      "y": 0,
+      "placeholder": "Search"
+    },
+    "explore": {
+      "text": "Explore",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(254, 44, 85)",
+      "font": "TikTokFont, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "size": "16px",
+      "weight": "500",
+      "lh": "21px",
+      "ls": "0.15px",
+      "radius": "6px",
+      "shadow": "none",
+      "pad": "0px",
+      "border": "0px none rgb(254, 44, 85)",
+      "w": 208,
+      "h": 40,
+      "x": 16,
+      "y": 160
+    },
+    "vars": {
+      "--brand-tiktok-razzmatazz": "#fe2c55",
+      "--brand-tiktok-splash": "#25f4ee",
+      "--tux-colorPrimary": "#fe2c55",
+      "--tux-colorLink": "#fe2c55",
+      "--tux-colorBGPrimary": "#fff",
+      "--ui-page-flat-1": "#fff",
+      "--ui-text-1": "#000",
+      "--ui-shape-neutral": "#000",
+      "--side-nav-width": "15rem",
+      "--tux-colorTextPrimary": "#161823",
+      "--tux-colorBGView": "rgba(22,24,35,.03)"
+    },
+    "afterTheme": {
+      "tux": "light",
+      "theme": "light",
+      "body": "rgb(255, 255, 255)"
+    },
+    "loginDialog": {
+      "url": "https://www.tiktok.com/explore",
+      "title": "Log in | TikTok",
+      "asks": "Log in to TikTok Use QR code Use phone or email Continue with Facebook Continue with Google Continue with LINE Continue with KakaoTalk Continue with Apple By continuing, you agree to our Terms of Service and acknowledge that you have read our Privacy Policy. Don\u2019t have an account? Sign up",
+      "dialog": {
+        "text": "Log in to TikTok Use QR code Use phone or email Continue with Facebook Continue with Googl",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(22, 24, 35)",
+        "font": "TikTokFont, Arial, Tahoma, PingFangSC, sans-serif",
+        "size": "14px",
+        "weight": "400",
+        "lh": "21px",
+        "radius": "0px",
+        "shadow": "none",
+        "w": 428,
+        "h": 562
+      },
+      "painted": null,
+      "h2": {
+        "text": "For You",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(22, 24, 35)",
+        "font": "TikTokFont, Arial, Tahoma, PingFangSC, sans-serif",
+        "size": "21px",
+        "weight": "700",
+        "lh": "31.5px",
+        "radius": "0px",
+        "shadow": "none",
+        "w": 208,
+        "h": 40
+      },
+      "channels": [
+        {
+          "text": "Use QR code",
+          "href": "",
+          "bg": "rgba(0, 0, 0, 0.05)",
+          "color": "rgb(22, 24, 35)",
+          "font": "TikTokFont",
+          "size": "16px",
+          "weight": "600",
+          "lh": "24px",
+          "radius": "24px",
+          "shadow": "none",
+          "w": 300,
+          "h": 48
+        },
+        {
+          "text": "Use phone or email",
+          "href": "",
+          "bg": "rgba(0, 0, 0, 0.05)",
+          "color": "rgb(22, 24, 35)",
+          "font": "TikTokFont",
+          "size": "16px",
+          "weight": "600",
+          "lh": "24px",
+          "radius": "24px",
+          "shadow": "none",
+          "w": 300,
+          "h": 48
+        },
+        {
+          "text": "Continue with Facebook",
+          "href": "",
+          "bg": "rgba(0, 0, 0, 0.05)",
+          "color": "rgb(22, 24, 35)",
+          "font": "TikTokFont",
+          "size": "16px",
+          "weight": "600",
+          "lh": "24px",
+          "radius": "24px",
+          "shadow": "none",
+          "w": 300,
+          "h": 48
+        },
+        {
+          "text": "Continue with Google",
+          "href": "",
+          "bg": "rgba(0, 0, 0, 0.05)",
+          "color": "rgb(22, 24, 35)",
+          "font": "TikTokFont",
+          "size": "16px",
+          "weight": "600",
+          "lh": "24px",
+          "radius": "24px",
+          "shadow": "none",
+          "w": 300,
+          "h": 48
+        },
+        {
+          "text": "Continue with LINE",
+          "href": "",
+          "bg": "rgba(0, 0, 0, 0.05)",
+          "color": "rgb(22, 24, 35)",
+          "font": "TikTokFont",
+          "size": "16px",
+          "weight": "600",
+          "lh": "24px",
+          "radius": "24px",
+          "shadow": "none",
+          "w": 300,
+          "h": 48
+        },
+        {
+          "text": "Continue with KakaoTalk",
+          "href": "",
+          "bg": "rgba(0, 0, 0, 0.05)",
+          "color": "rgb(22, 24, 35)",
+          "font": "TikTokFont",
+          "size": "16px",
+          "weight": "600",
+          "lh": "24px",
+          "radius": "24px",
+          "shadow": "none",
+          "w": 300,
+          "h": 48
+        },
+        {
+          "text": "Continue with Apple",
+          "href": "",
+          "bg": "rgba(0, 0, 0, 0.05)",
+          "color": "rgb(22, 24, 35)",
+          "font": "TikTokFont",
+          "size": "16px",
+          "weight": "600",
+          "lh": "24px",
+          "radius": "24px",
+          "shadow": "none",
+          "w": 300,
+          "h": 48
+        }
+      ],
+      "signup": {
+        "text": "Sign up",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(254, 44, 85)",
+        "font": "TikTokFont, Arial, Tahoma, PingFangSC, sans-serif",
+        "size": "11px",
+        "weight": "600",
+        "lh": "18px",
+        "radius": "0px",
+        "shadow": "none",
+        "w": 58,
+        "h": 19
+      },
+      "close": {
+        "text": "",
+        "bg": "rgba(22, 24, 35, 0.03)",
+        "color": "rgb(22, 24, 35)",
+        "font": "TikTokFont, Arial, Tahoma, PingFangSC, sans-serif",
+        "size": "14px",
+        "weight": "400",
+        "lh": "21px",
+        "radius": "50%",
+        "shadow": "none",
+        "w": 32,
+        "h": 32
+      }
+    }
+  },
+  "footerLinks": [
+    {
+      "text": "Help",
+      "href": "https://www.tiktok.com/support?entrance=vertical_footer"
+    },
+    {
+      "text": "Safety",
+      "href": "https://www.tiktok.com/safety?lang=en"
+    },
+    {
+      "text": "Terms",
+      "href": "https://www.tiktok.com/legal/terms-of-service?lang=en"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.tiktok.com/legal/privacy-policy?lang=en"
+    },
+    {
+      "text": "Accessibility",
+      "href": "https://www.tiktok.com/accessibility/en"
+    },
+    {
+      "text": "Privacy Center",
+      "href": "https://www.tiktok.com/privacy/overview/en"
+    },
+    {
+      "text": "Creator Academy",
+      "href": "https://www.tiktok.com/creator-academy"
+    },
+    {
+      "text": "Community Guidelines",
+      "href": "https://www.tiktok.com/community-guidelines?lang=en"
+    },
+    {
+      "text": "Copyright",
+      "href": "https://www.tiktok.com/legal/page/global/copyright-policy/en"
+    },
+    {
+      "text": "Law Enforcement Guidelines",
+      "href": "https://www.tiktok.com/legal/law-enforcement?lang=en"
+    }
+  ],
+  "moreLinks": [
+    {
+      "text": "TikTok Studio",
+      "href": "https://www.tiktok.com/tiktokstudio"
+    },
+    {
+      "text": "Create TikTok effects",
+      "href": "https://effecthouse.tiktok.com/download?utm_campaign=ttweb_entrance_v1&utm_source=tiktok_webapp_main"
+    },
+    {
+      "text": "Sell on TikTok Shop",
+      "href": "https://seller-sg.tiktok.com/account/register?channel=ttcom_more"
+    },
+    {
+      "text": "Help Center",
+      "href": "https://www.tiktok.com/support"
+    }
+  ],
+  "phone": {
+    "url": "https://www.tiktok.com/explore",
+    "inner": {
+      "w": 390,
+      "h": 844,
+      "dpr": 2,
+      "vvW": 390,
+      "vvH": 844,
+      "vvScale": 1
+    },
+    "tux": "light",
+    "theme": "light",
+    "body": {
+      "text": "TikTok All Shows Daily Life Singing & Dancing Games Anime & Comics Com",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(22, 24, 35)",
+      "font": "TikTokFont, Arial, Tahoma, PingFangSC, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "21px",
+      "ls": "normal",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px",
+      "border": "0px none rgb(22, 24, 35)",
+      "w": 390,
+      "h": 2367,
+      "x": 0,
+      "y": 0
+    },
+    "explore": {
+      "text": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(254, 44, 85)",
+      "font": "TikTokFont, system-ui, -apple-system, \"Segoe UI\", Roboto, Ubuntu, Cantarell, \"Noto Sans\", sans-serif, Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "size": "16px",
+      "weight": "500",
+      "lh": "21px",
+      "ls": "0.15px",
+      "radius": "6px",
+      "shadow": "none",
+      "pad": "0px",
+      "border": "0px none rgb(254, 44, 85)",
+      "w": 40,
+      "h": 40,
+      "x": 16,
+      "y": 160
+    },
+    "vars": {
+      "--brand-tiktok-razzmatazz": "#fe2c55",
+      "--brand-tiktok-splash": "#25f4ee",
+      "--tux-colorPrimary": "#fe2c55",
+      "--tux-colorLink": "#fe2c55",
+      "--tux-colorBGPrimary": "#fff",
+      "--ui-page-flat-1": "#fff",
+      "--ui-text-1": "#000",
+      "--ui-shape-neutral": "#000",
+      "--side-nav-width": "4.5rem",
+      "--tux-colorTextPrimary": "#161823",
+      "--tux-colorBGView": "rgba(22,24,35,.03)"
+    }
+  },
+  "publicPages": {
+    "about": {
+      "status": 200,
+      "url": "https://www.tiktok.com/about?lang=en",
+      "title": "About | TikTok",
+      "note": "Public marketing page. Body copy is not stored."
+    },
+    "contact": {
+      "status": 200,
+      "url": "https://www.tiktok.com/contact?lang=en",
+      "title": "Contact | TikTok",
+      "body": "About Newsroom Careers Contact Watch TikTok Get in Touch with TikTok Whether you\u2019ve got a question, need support, or just want to say hi \u2014 we\u2019re here to help. Help Center Explore tips, guides, and support for everything from account setting"
+    },
+    "upload": {
+      "status": 200,
+      "url": "https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2Ftiktokstudio%2Fupload%3Ffrom%3Dwebapp%26tab%3Dvideo&enter_method=redirect&enter_from=tiktokstudio",
+      "title": "Log in | TikTok",
+      "body": "TikTok Feedback and help Log in to TikTok Manage your account, check notifications, comment on videos, and more. Use QR code Use phone / email / username Continue with Facebook Continue with Google Continue with LINE Continue with KakaoTalk"
+    },
+    "profile": {
+      "status": 200,
+      "url": "https://www.tiktok.com/foryou?lang=en",
+      "title": "TikTok - Make Your Day",
+      "body": "We're having trouble playing this video. Please refresh and try again."
+    },
+    "studio": {
+      "status": 200,
+      "url": "https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2Ftiktokstudio&enter_method=redirect&enter_from=tiktokstudio",
+      "title": "Log in | TikTok",
+      "body": "TikTok Feedback and help Log in to TikTok Manage your account, check notifications, comment on videos, and more. Use QR code Use phone / email / username Continue with Facebook Continue with Google Continue with LINE Continue with KakaoTalk"
+    },
+    "foryou": {
+      "status": 200,
+      "url": "https://www.tiktok.com/foryou",
+      "title": "TikTok - Make Your Day",
+      "body": "We're having trouble playing this video. Please refresh and try again."
+    },
+    "live": {
+      "status": 200,
+      "url": "https://www.tiktok.com/live",
+      "title": "",
+      "body": "TikTok Back Discover LIVE Go LIVE Creator tools More Log in Company Program Terms & Policies \u00a9 2026 TikTok For You Following Gaming No LIVE streams for you yet Go back to explore more videos Go back"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json.
 
-The page is dark only. TikTok's signed-out chrome did not expose a light theme.
+The page defaults to the dark token set from the 2026-11-19 readings. The light set is the 2026-11-21 Explore page.
 Colours, radii, and type come from tokens.json. Proprietary TikTok fonts are not loaded.
 """
 from __future__ import annotations
@@ -97,7 +97,7 @@ html = f"""<!doctype html>
 <body>
 <main>
   <h1>TikTok</h1>
-  <p>Signed-out chrome, dark only. Values come from tokens.json. TikTokFont and TikTokDisplayFont are not loaded here.</p>
+  <p>Signed-out chrome. This page renders the dark token set from the 2026-11-19 readings. The light set in tokens.json is the 2026-11-21 Explore page. TikTokFont and TikTokDisplayFont are not loaded here.</p>
   <h2>Colour</h2>
   <div class="row">
     <div class="swatch"><i style="background:{C['page']}"></i><span>page {C['page']}</span></div>

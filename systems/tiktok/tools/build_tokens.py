@@ -16,16 +16,17 @@ RAW = HERE / "raw"
 
 EVIDENCE = "Measured"
 CAPTURE = "https://www.tiktok.com/ 2026-11-19, signed out, T3 preview_evaluate"
+CAPTURE_LIGHT = "https://www.tiktok.com/explore 2026-11-21, signed out, headless Playwright, innerWidth 1440"
 
 
-def src(note: str) -> dict:
-    return {"$extensions": {"source": {"evidence": EVIDENCE, "capture": CAPTURE, "note": note}}}
+def src(note: str, capture: str = CAPTURE, evidence: str = EVIDENCE) -> dict:
+    return {"$extensions": {"source": {"evidence": evidence, "capture": capture, "note": note}}}
 
 
-def color_token(value: str, note: str) -> dict:
+def color_token(value: str, note: str, capture: str = CAPTURE) -> dict:
     # Written as hex (#rrggbbaa when translucent); the note keeps the computed text.
     value = value if value.startswith("{") else as_color(value)
-    return {"$type": "color", "$value": value, **src(note)}
+    return {"$type": "color", "$value": value, **src(note, capture)}
 
 
 def dim(value: str, note: str) -> dict:
@@ -150,7 +151,8 @@ def build() -> dict:
         return as_color(tux[name])
 
     page = as_color(computed["body"]["backgroundColor"])
-    assert page == "#000000"
+    # 2026-11-19 body was black. The 2026-11-21 Playwright pass loaded a light page.
+    assert page == "#000000", page
     text = as_color(computed["body"]["color"])
     assert text == "#ffffffe6", text  # rgba(255, 255, 255, 0.9)
     action = as_color(computed["loginButtonDesktop"]["backgroundColor"])
@@ -350,18 +352,55 @@ def build() -> dict:
         },
     }
 
+    light = light_set()
     doc = {
         "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
         "core": core,
         "dark": dark,
-        "$themes": [{
-            "id": "dark",
-            "name": "dark",
-            "selectedTokenSets": {"core": "source", "dark": "enabled"},
-        }],
+        "light": light,
+        "$themes": [
+            {
+                "id": "dark",
+                "name": "dark",
+                "selectedTokenSets": {"core": "source", "dark": "enabled"},
+            },
+            {
+                "id": "light",
+                "name": "light",
+                "selectedTokenSets": {"core": "source", "light": "enabled"},
+            },
+        ],
     }
     check(doc)
     return doc
+
+
+def L(value: str, note: str, evidence: str = EVIDENCE) -> dict:
+    value = value if value.startswith("{") else as_color(value)
+    return {"$type": "color", "$value": value, **src(note, CAPTURE_LIGHT, evidence)}
+
+
+def light_set() -> dict:
+    """Light roles read on the signed-out Explore page, 2026-11-21.
+
+    The 2026-11-19 dark set stays. This set does not invent a dark sheet.
+    Hover and pressed are the filled Log in button only.
+    """
+    return {
+        "background": {
+            "page": L("#ffffff", "computed background-color on body, data-tux-color-scheme light"),
+            "surface": L("#ffffff", "login dialog painted white on the light Explore page"),
+            "raised": L("rgba(0, 0, 0, 0.05)", "computed background-color on a login channel row"),
+            "action": L("#fe2c55", "computed background-color on the desktop Log in button"),
+            "action-hover": L("#ea284e", "computed background-color on Log in while the pointer was over it"),
+            "action-pressed": L("#e0274b", "computed background-color on Log in while the pointer was down"),
+        },
+        "text": {
+            "primary": L("#161823", "computed color on body, --tux-colorTextPrimary"),
+            "on-accent": L("#ffffff", "computed color on the desktop Log in label"),
+            "link": L("#fe2c55", "computed color on Sign up and on the selected Explore nav"),
+        },
+    }
 
 
 def main() -> None:
