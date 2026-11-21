@@ -272,7 +272,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Preview frames failed.** The T3 preview snapshot returned "The browser is not producing screenshot frames". Screenshots are from a later headless Chromium pass on public URLs only. Login and signup have measurements and no images.
+- **Preview frames failed.** The T3 preview snapshot returned "The browser is not producing screenshot frames". Screenshots are from headless Chromium. The 2026-11-21 refresh photographed the empty login and signup walls and did not type into them.
 - **One theme.** No `prefers-color-scheme` rule and no dark custom properties were in the readable sheets. The OS dark preference was on and the page stayed light.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour. Crops were scaled 2x with nearest-neighbour from 1x captures. Read colours from [tokens.json](tokens.json).
 - **Auth link blue is a second blue.** Login and signup links paint #417ff7. Marketing links and the hero button paint `--vapor-primary` (#2481ff). The Continue button on the auth form also paints #417ff7, not `--vapor-primary`.

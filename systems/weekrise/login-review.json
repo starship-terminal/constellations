@@ -1,0 +1,77 @@
+{
+  "product": "Weekrise",
+  "capturedAt": "2026-11-21",
+  "requestedUrl": "https://weekrise.com/auth/login",
+  "landedHost": "https://weekrise.com",
+  "landedPath": "/auth/login",
+  "title": "Weekrise - A beautiful weekly task planner and to-do list.",
+  "heading": "Welcome back to Weekrise!",
+  "status": 200,
+  "loginExtracted": "not-started",
+  "stopped": true,
+  "reason": "The empty wall asks for an email, then Continue. Sign in with Google is also offered. No email was typed. No password field was reached. Google was not clicked. Sign up instead was not used to create an account. A known earlier probe said the capture inbox is not signed up. That probe is closed.",
+  "asksFor": [
+    "Email",
+    "Continue",
+    "Sign in with Google",
+    "Sign up instead"
+  ],
+  "passwordFieldVisible": false,
+  "codeFieldVisible": false,
+  "identityProvidersOffered": ["Google"],
+  "identityProvidersClicked": [],
+  "screenshot": "screenshots/login-light-empty.png",
+  "signupWall": {
+    "requestedUrl": "https://weekrise.com/auth/signup",
+    "landedPath": "/auth/signup",
+    "heading": "Welcome to Weekrise!",
+    "stopped": true,
+    "asksFor": [
+      "Name",
+      "Email",
+      "Continue",
+      "Sign in with Google",
+      "Log in instead"
+    ],
+    "passwordFieldVisible": false,
+    "screenshot": "screenshots/signup-light-empty.png",
+    "note": "Continue on the empty signup wall is an outline until the page settles, then a filled button. It was not clicked."
+  },
+  "measured": {
+    "pageBackground": "rgb(255, 255, 255)",
+    "heading": {
+      "text": "Welcome back to Weekrise!",
+      "fontFamily": "Inter, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif",
+      "fontSize": "28px",
+      "fontWeight": "600",
+      "color": "rgb(0, 0, 0)"
+    },
+    "emailField": {
+      "placeholder": "Enter your email",
+      "border": "1px solid rgb(232, 232, 232)",
+      "radius": "7px",
+      "height": "36px",
+      "width": "480px",
+      "fontSize": "14px"
+    },
+    "continue": {
+      "background": "rgb(65, 127, 247)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(65, 127, 247)",
+      "radius": "8px",
+      "height": "36px",
+      "width": "480px",
+      "fontWeight": "400"
+    },
+    "google": {
+      "text": "Sign in with Google",
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(51, 51, 51)",
+      "radius": "8px",
+      "height": "36px",
+      "width": "480px"
+    },
+    "note": "The Continue blue on the auth wall (rgb(65, 127, 247)) is not the marketing primary (rgb(36, 129, 255))."
+  },
+  "tokens": "Not captured. Hidden form tokens were unread and are not stored."
+}

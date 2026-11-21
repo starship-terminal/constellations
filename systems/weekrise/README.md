@@ -13,7 +13,9 @@ Weekrise is a weekly task planner. The marketing site is a light page on `--vapo
 | [components.md](components.md) | Component inventory, crops, and gaps |
 | [patterns.md](patterns.md) | How the public pages are put together |
 | [components/crops/](components/crops) | Element crops cut from the full-colour public screenshots, scaled 2x nearest-neighbour |
-| [screenshots/](screenshots) | Public page captures, 256-colour. Desktop 1440 x 900, phone 390 x 844, all at devicePixelRatio 1 |
+| [screenshots/](screenshots) | Public page captures, 256-colour. Desktop 1440 x 900, phone 390 x 844, all at devicePixelRatio 1. The 2026-11-21 refresh adds the empty auth walls, the phone menu, payments, and one academy article |
+| [site-tree.md](site-tree.md) | Which public control opens which page or in-page section, mapped 2026-11-21 |
+| [login-review.json](login-review.json) | The empty login wall: what it asks for, and where that branch stopped |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), the custom properties read from the `html` rule |
 | [tools/](tools) | The capture kit copy and [build_tokens.py](tools/build_tokens.py), which checks [tokens.json](tokens.json) against [raw/css-vars.json](raw/css-vars.json) |
 
@@ -81,7 +83,7 @@ The vapor custom properties are declared on `html`. Component sizes, colours and
 
 ## What to distrust
 
-- **Preview frames failed.** The T3 preview snapshot returned "The browser is not producing screenshot frames". Screenshots are from a later headless Chromium pass on public URLs only. Login and signup have measurements and no images.
+- **Preview frames failed.** The T3 preview snapshot returned "The browser is not producing screenshot frames". Screenshots are from headless Chromium. The 2026-11-21 refresh photographed the empty login and signup walls and did not type into them.
 - **One theme.** No `prefers-color-scheme` rule and no dark custom properties were in the readable sheets. The OS dark preference was on and the page stayed light.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour. Crops were scaled 2x with nearest-neighbour from 1x captures. Read colours from [tokens.json](tokens.json).
 - **Auth link blue is a second blue.** Login and signup links paint #417ff7. Marketing links and the hero button paint `--vapor-primary` (#2481ff). The Continue button on the auth form also paints #417ff7, not `--vapor-primary`.
@@ -112,14 +114,14 @@ The vapor custom properties are declared on `html`. Component sizes, colours and
 | Button | captured | [components/crops/button-primary-default.png](components/crops/button-primary-default.png), secondary, signup chip |
 | Icon button | captured | [components/crops/icon-button-menu-default.png](components/crops/icon-button-menu-default.png) at 390 |
 | Link | captured | nav Login and footer links, colour `--vapor-primary` |
-| Text field | measured, not cropped | `/auth/login` email field, 36px, radius 7px, border #e8e8e8. No screenshot |
+| Text field | captured, not cropped | `/auth/login` email field, 36px, radius 7px, border #e8e8e8. See [screenshots/login-light-empty.png](screenshots/login-light-empty.png). No value was typed |
 | Text area | not present | not on the captured public or auth surfaces |
 | Select | not present | not on the captured surfaces |
 | Checkbox | not present | not on the captured surfaces |
 | Radio | not present | not on the captured surfaces |
 | Switch | not present | not on the captured surfaces |
 | Tabs | not present | not on the captured surfaces |
-| Menu | not captured | mobile overlay stayed `hidden` after click |
+| Menu | captured | [screenshots/home-light-phone-menu.png](screenshots/home-light-phone-menu.png). Open Navigation shows Pricing, Academy, Login, Signup |
 | Tooltip | not present | not on the captured surfaces |
 | Dialog | not present | Pricing is an in-page section, not a dialog |
 | Toast | not present | not on the captured surfaces |
@@ -158,4 +160,4 @@ python3 tools/package_tests.py weekrise
 
 ## Surfaces
 
-Public pages captured: `/`, `/academy`, `/privacy`, `/terms`. `/payments` was linked from the footer and not opened as its own shot. Auth pages measured and not submitted: `/auth/login`, `/auth/signup`. Signup asks for a name and an email, plus a "Sign in with Google" button. No account was created. Google sign-in was not used. No card, phone number or calendar OAuth was entered.
+Public pages captured: `/`, `/academy`, `/academy/pomodoro`, `/privacy`, `/terms`, `/payments`. The 2026-11-21 map is [site-tree.md](site-tree.md). Auth walls photographed empty and not submitted: `/auth/login`, `/auth/signup`. Login asks for an email, then Continue, and offers Sign in with Google. Signup asks for a name and an email, then the same two buttons. No account was created. Google sign-in was not used. No card, phone number or calendar OAuth was entered. The signed-in planner was not entered. `login-extracted` is not-started.
