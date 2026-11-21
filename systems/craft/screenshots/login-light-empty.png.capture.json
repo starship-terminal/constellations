@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.craft.do/",
+  "title": "Craft \u2014 A fresh take on documents",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "vv": {
+    "w": 1440,
+    "h": 900,
+    "scale": 1
+  },
+  "colorScheme": "light",
+  "htmlClass": "",
+  "full": false,
+  "quantized": true,
+  "colors": 256
+}

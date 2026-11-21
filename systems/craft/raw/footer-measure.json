@@ -1,0 +1,18 @@
+{
+  "btnCount": 1,
+  "btns": [
+    {
+      "text": "English",
+      "aria": null,
+      "expanded": "false"
+    }
+  ],
+  "footerBg": "rgb(3, 3, 2)",
+  "footerColor": "rgb(3, 3, 2)",
+  "footerRadius": "24px",
+  "panelBg": "rgb(255, 255, 255)",
+  "panelColor": "rgb(3, 3, 2)",
+  "panelRadius": "0px",
+  "panelH": 1,
+  "panelW": 160
+}
