@@ -1,0 +1,53 @@
+{
+  "slug": "devin",
+  "product": "Devin",
+  "domain": "devin.ai",
+  "app": "app.devin.ai",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Headless Chromium photographed the login and signup walls empty. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://app.devin.ai/auth/login",
+    "requested": "https://app.devin.ai/login",
+    "title": "Log in - Devin",
+    "asks": [
+      "Log in",
+      "Don't have an account? Sign up",
+      "Continue with GitHub",
+      "Continue with ChatGPT",
+      "Continue with Google",
+      "Email address"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      { "type": "email", "placeholder": "Email address", "filled": false }
+    ],
+    "note": "The email field was empty. Log in was not clicked. GitHub, ChatGPT, and Google were not clicked. The page also paints a hidden command-search input that was left empty."
+  },
+  "signup_wall": {
+    "url": "https://app.devin.ai/auth/signup",
+    "title": "Sign up - Devin",
+    "asks": [
+      "Sign up",
+      "Already have an account? Log in",
+      "Continue with GitHub",
+      "Continue with ChatGPT",
+      "Continue with Google",
+      "Email address",
+      "Terms of Service",
+      "Privacy Policy"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "continued": false,
+    "inputs": [
+      { "type": "email", "placeholder": "Email address", "filled": false }
+    ],
+    "note": "The email field was empty. Sign up was not clicked. GitHub, ChatGPT, and Google were not clicked. Terms and Privacy were not opened."
+  },
+  "stopped": "Photographed the empty walls and stopped. Did not open an identity provider. Did not submit. Did not enter the signed-in app."
+}
