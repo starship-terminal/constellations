@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roam Research style guide</title>
+<style>
+:root {
+  --page: #ffffff;
+  --ink: #444444;
+  --header: #343a40;
+  --on-header: #ffffff;
+  --accent: #137cbd;
+  --on-accent: #ffffff;
+  --trial: #48aff0;
+  --desktop: #1c1c1e;
+  --muted: #bfccd6;
+  --plan-border: #ced9e0;
+  --auth-button: #f5f8fa;
+  --auth-ink: #182026;
+  --font: Inter, sans-serif;
+  --wordmark: "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); font-size: 14px; line-height: 20px; }
+header { background: var(--header); color: var(--on-header); height: 51px; display: flex; align-items: center; padding: 0 24px; gap: 16px; }
+.word { font-family: var(--wordmark); font-size: 24px; line-height: 21px; }
+nav a { color: var(--on-header); text-decoration: none; padding: 5px 10px; border-radius: 3px; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-size: 44px; line-height: 52.8px; font-weight: 700; letter-spacing: 0.028px; margin: 0 0 8px; }
+.sub { font-size: 18px; line-height: 27px; margin: 0 0 20px; }
+h2 { font-size: 36px; line-height: 39.6px; font-weight: 500; margin: 36px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.signup { background: var(--accent); color: var(--on-accent); border: 0; border-radius: 8px; padding: 12px 18px; font-weight: 700; letter-spacing: 0.56px; font-size: 14px; }
+.trial { background: var(--trial); color: var(--on-accent); border: 0; border-radius: 4px; padding: 8px 16px; font-size: 14px; }
+.desktop { background: var(--desktop); color: var(--on-accent); border: 0; border-radius: 8px; padding: 10px 21px 8px; }
+.muted { color: var(--muted); font-weight: 700; }
+.swatch { width: 140px; }
+.chip { height: 56px; border: 1px solid var(--plan-border); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; }
+.plan { border: 2px solid var(--plan-border); padding: 16px; width: 280px; background: #fff; }
+.plan h3 { font-size: 24px; font-weight: 500; line-height: 26.4px; margin: 0 0 8px; }
+.price { font-size: 32px; line-height: 48px; }
+.auth { background: var(--auth-button); color: var(--auth-ink); border-radius: 3px; box-shadow: rgba(16, 22, 26, 0.2) 0 0 0 1px inset; padding: 5px 10px; width: 220px; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <span class="word">Roam</span>
+  <nav><a>Docs</a><a>Pricing</a><a>Sign In</a></nav>
+</header>
+<main>
+  <h1>A note-taking tool for networked thought.</h1>
+  <p class="sub">As easy to use as a document. As powerful as a graph database.</p>
+  <div class="row">
+    <button class="signup">Sign Up</button>
+    <button class="trial">Start Free Trial</button>
+    <button class="desktop">macOS Desktop App</button>
+    <span class="muted">Other platforms</span>
+  </div>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><span>page #ffffff</span></div>
+    <div class="swatch"><div class="chip" style="background:#444444"></div><span>ink #444444</span></div>
+    <div class="swatch"><div class="chip" style="background:#343a40"></div><span>header #343a40</span></div>
+    <div class="swatch"><div class="chip" style="background:#137cbd"></div><span>accent #137cbd</span></div>
+    <div class="swatch"><div class="chip" style="background:#48aff0"></div><span>trial #48aff0</span></div>
+    <div class="swatch"><div class="chip" style="background:#1c1c1e"></div><span>desktop #1c1c1e</span></div>
+    <div class="swatch"><div class="chip" style="background:#bfccd6"></div><span>muted #bfccd6</span></div>
+    <div class="swatch"><div class="chip" style="background:#ced9e0"></div><span>plan border #ced9e0</span></div>
+  </div>
+  <h2>Plan card</h2>
+  <div class="plan">
+    <h3>Pro</h3>
+    <div class="price">$15</div>
+    <p>Unlimited graphs. The figure is the public price on the homepage, not a token.</p>
+    <button class="trial">Start Free Trial</button>
+  </div>
+  <h2>Auth wall</h2>
+  <div class="auth">Sign In</div>
+  <p>Empty fields. Nothing was typed.</p>
+</main>
+</body>
+</html>

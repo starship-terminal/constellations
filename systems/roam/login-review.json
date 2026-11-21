@@ -1,0 +1,94 @@
+{
+  "capturedAt": "2026-11-22",
+  "signed_in": false,
+  "method": "Signed out. T3 preview (incognito) mapped the homepage click handlers. Headless Chromium photographed the marketing page, the empty sign-in and sign-up walls, and the public help graph at 1440x900, plus the phone homepage and sign-in wall at 390x844. No email, password, name, phone, address, or code was typed. No identity provider was clicked. No form was submitted. No graph was created.",
+  "offered": {
+    "nav": {
+      "items": ["no signed-in navigation"],
+      "reached": ["no signed-in navigation"],
+      "note": "Signed out. The public header showed Docs, Community, Pricing, Downloads, What's New, and Sign In. Docs opened the public help graph. Pricing and Downloads scroll the homepage. Community opens a Slack invite and was not followed."
+    },
+    "settings": {
+      "items": ["no settings area"],
+      "reached": ["no settings area"],
+      "note": "No signed-in settings surface was offered."
+    },
+    "create": {
+      "items": ["no create flow"],
+      "reached": ["no create flow"],
+      "note": "Sign Up, Start Free Trial, and Join were not submitted. Find or Create Page on the help graph was not used."
+    }
+  },
+  "screens": [
+    { "name": "Homepage, signed out, light, 1440", "file": "screenshots/home-light-default.png" },
+    { "name": "Homepage, full page, light, 1440", "file": "screenshots/home-light-full.png" },
+    { "name": "Pricing section, light, 1440", "file": "screenshots/pricing-light-default.png" },
+    { "name": "Downloads section, light, 1440", "file": "screenshots/downloads-light-default.png" },
+    { "name": "Sign in wall, empty, light, 1440", "file": "screenshots/signin-light-default.png" },
+    { "name": "Sign up wall, empty, light, 1440", "file": "screenshots/signup-light-default.png" },
+    { "name": "Public help graph, Welcome, light, 1440", "file": "screenshots/docs-light-default.png" },
+    { "name": "Public help graph, sidebar open, light, 1440", "file": "screenshots/docs-light-sidebar.png" },
+    { "name": "Change Log, light, 1440", "file": "screenshots/whats-new-light-default.png" },
+    { "name": "Install Roam, light, 1440", "file": "screenshots/install-light-default.png" },
+    { "name": "FAQ, light, 1440", "file": "screenshots/faq-light-default.png" },
+    { "name": "White Paper, light, 1440", "file": "screenshots/whitepaper-light-default.png" },
+    { "name": "Privacy Policy, light, 1440", "file": "screenshots/privacy-light-default.png" },
+    { "name": "Terms and Conditions, light, 1440", "file": "screenshots/terms-light-default.png" },
+    { "name": "Demo videos, light, 1440", "file": "screenshots/videos-light-default.png" },
+    { "name": "Articles, light, 1440", "file": "screenshots/articles-light-default.png" },
+    { "name": "Homepage, light, 390", "file": "screenshots/mobile-home-light-default.png" },
+    { "name": "Homepage menu open, light, 390", "file": "screenshots/mobile-home-light-menu.png" },
+    { "name": "Sign in wall, empty, light, 390", "file": "screenshots/mobile-signin-light-default.png" }
+  ],
+  "walls": [
+    {
+      "control": "Sign In",
+      "where": "Header link href=#/signin on https://roamresearch.com/",
+      "stopped": true,
+      "reason": "Empty email and password fields photographed. Not submitted. Google and Apple were not clicked."
+    },
+    {
+      "control": "Sign Up",
+      "where": "Hero button, sets location.hash to #/signup",
+      "stopped": true,
+      "reason": "Empty email, password, and confirm-password fields photographed. Not submitted."
+    },
+    {
+      "control": "Start Free Trial",
+      "where": "Pro plan button on https://roamresearch.com/#pricing",
+      "stopped": true,
+      "reason": "Not clicked. Would start checkout or signup."
+    },
+    {
+      "control": "Join",
+      "where": "Believer plan on the homepage. Copy says you'll be charged $500 today.",
+      "stopped": true,
+      "reason": "Not clicked."
+    }
+  ],
+  "gaps": [
+    "The signed-in graph was not entered. Daily notes, a user graph, settings, and billing were not offered.",
+    "Start Free Trial and Join were not submitted.",
+    "Google and Apple were visible on the walls and were not clicked.",
+    "Slack, Twitter, the Chrome Web Store, the App Store, and Play were not followed.",
+    "Desktop installers were not downloaded.",
+    "Support (Intercom) was not opened.",
+    "No dark theme toggle was offered on the marketing page."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "phone",
+    "address",
+    "Sign In",
+    "Sign Up",
+    "Start Free Trial",
+    "Join",
+    "Google",
+    "Apple",
+    "Forgot/Change your password",
+    "Find or Create Page"
+  ]
+}
