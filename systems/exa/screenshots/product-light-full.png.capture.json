@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:32:23.270Z",
+  "capturedAt": "2026-11-21T10:44:01.508Z",
   "screenshot": "product-light-full.png",
   "sanitizedSourceUrl": "https://exa.ai/products/search",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 11921
+      "height": 12116
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 11921
+    "height": 12116
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 11921
+      "height": 12116
     },
     "basis": "fullPage"
   },

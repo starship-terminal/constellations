@@ -1,131 +1,468 @@
 {
-  "signed_in": true,
-  "account": "owner Personal team",
-  "when": "2026-11-20",
+  "signed_in": false,
+  "route": "public-web",
+  "when": "2026-11-21",
+  "entry": "https://exa.ai/",
+  "site_tree": "site-tree.md",
+  "stopped_at": "https://auth.exa.ai/ (dashboard.exa.ai redirected here). Title: Exa Login.",
   "viewport": {
-    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}, "png": "2880x1800"},
-    "narrow": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}, "png": "780x1688"}
+    "desktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "png": "1440x900"
+    },
+    "phone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "png": "780x1688"
+    }
   },
-  "theme": "System, which painted dark in this browser. Light was opened from the command palette and captured on home, then System was restored.",
   "offered": {
     "nav": {
       "items": [
-        "Home",
-        "Search",
-        "Agent",
-        "Contents",
-        "Answer",
-        "Websets",
-        "Monitors",
-        "Usage",
-        "Requests",
-        "Billing",
-        "API Keys",
-        "Team Settings",
-        "Exa in Slack",
-        "Websets Settings",
+        "Wordmark",
+        "Products menu",
+        "Solutions menu",
+        "Resources menu",
         "Docs",
-        "Exa MCP",
-        "Templates",
-        "Find",
-        "Give us feedback"
+        "Pricing",
+        "Sign in",
+        "Contact sales",
+        "Sign up",
+        "Phone drawer",
+        "Announcement",
+        "Footer"
       ],
       "reached": [
-        "Home",
-        "Search",
-        "Agent",
-        "Contents",
-        "Answer",
-        "Websets",
-        "Monitors",
-        "Usage",
-        "Requests",
-        "Billing",
-        "API Keys",
-        "Team Settings",
-        "Exa in Slack",
-        "Websets Settings",
+        "Wordmark",
+        "Products menu",
+        "Solutions menu",
+        "Resources menu",
         "Docs",
-        "Exa MCP",
-        "Templates",
-        "Find",
-        "Give us feedback"
+        "Pricing",
+        "Sign in",
+        "Contact sales",
+        "Sign up",
+        "Phone drawer",
+        "Announcement",
+        "Footer"
       ]
     },
     "settings": {
       "items": [
-        "Team Settings",
-        "Billing",
-        "API Keys",
-        "Websets Settings",
-        "Exa in Slack",
-        "account menu"
+        "no public settings control"
       ],
       "reached": [
-        "Team Settings",
-        "Billing",
-        "API Keys",
-        "Websets Settings",
-        "Exa in Slack",
-        "account menu"
+        "no public settings control"
       ]
     },
     "create": {
       "items": [
-        "Create Key",
-        "Invite team member",
-        "Create Webset",
-        "Create monitor",
-        "home composer"
+        "Sign up wall",
+        "Contact sales form",
+        "Home demo"
       ],
       "reached": [
-        "Create Key",
-        "Invite team member",
-        "Create Webset",
-        "Create monitor",
-        "home composer"
+        "Sign up wall",
+        "Contact sales form",
+        "Home demo"
       ]
     }
   },
   "screens": [
-    {"name": "Home, dark, desktop", "file": "screenshots/signed-in-home-dark-desktop.png"},
-    {"name": "Home, light, desktop", "file": "screenshots/signed-in-home-light-desktop.png"},
-    {"name": "Home, dark, phone", "file": "screenshots/signed-in-home-dark-narrow.png"},
-    {"name": "Navigation drawer, dark, phone", "file": "screenshots/signed-in-nav-dark-narrow.png"},
-    {"name": "Search playground, dark, desktop", "file": "screenshots/signed-in-search-dark-desktop.png"},
-    {"name": "Agent playground, dark, desktop", "file": "screenshots/signed-in-agent-dark-desktop.png"},
-    {"name": "Contents playground, dark, desktop", "file": "screenshots/signed-in-contents-dark-desktop.png"},
-    {"name": "Answer playground, dark, desktop", "file": "screenshots/signed-in-answer-dark-desktop.png"},
-    {"name": "Create webset, dark, desktop", "file": "screenshots/signed-in-websets-create-dark-desktop.png"},
-    {"name": "Create monitor, dark, desktop", "file": "screenshots/signed-in-monitors-dark-desktop.png"},
-    {"name": "Usage, dark, desktop", "file": "screenshots/signed-in-usage-dark-desktop.png"},
-    {"name": "Request history, dark, desktop", "file": "screenshots/signed-in-requests-dark-desktop.png"},
-    {"name": "Billing, dark, desktop", "file": "screenshots/signed-in-billing-dark-desktop.png"},
-    {"name": "Billing, dark, phone", "file": "screenshots/signed-in-billing-dark-narrow.png"},
-    {"name": "API keys, dark, desktop", "file": "screenshots/signed-in-api-keys-dark-desktop.png"},
-    {"name": "Create API key dialog, dark, desktop", "file": "screenshots/signed-in-create-key-dark-desktop.png"},
-    {"name": "Create API key dialog, dark, phone", "file": "screenshots/signed-in-create-key-dark-narrow.png"},
-    {"name": "Team settings, dark, desktop", "file": "screenshots/signed-in-team-settings-dark-desktop.png"},
-    {"name": "Invite dialog, dark, desktop", "file": "screenshots/signed-in-invite-dark-desktop.png"},
-    {"name": "Exa in Slack, dark, desktop", "file": "screenshots/signed-in-slack-dark-desktop.png"}
+    {
+      "name": "Home, light, desktop",
+      "file": "screenshots/home-light-default.png"
+    },
+    {
+      "name": "Products menu, light, desktop",
+      "file": "screenshots/home-light-menu.png"
+    },
+    {
+      "name": "Solutions menu, light, desktop",
+      "file": "screenshots/home-light-solutions-menu.png"
+    },
+    {
+      "name": "Resources menu, light, desktop",
+      "file": "screenshots/home-light-resources-menu.png"
+    },
+    {
+      "name": "Home demo pills, light, desktop",
+      "file": "screenshots/home-light-demo-tabs.png"
+    },
+    {
+      "name": "Home, light, phone",
+      "file": "screenshots/mobile-home-light-default.png"
+    },
+    {
+      "name": "Phone drawer, collapsed, light",
+      "file": "screenshots/mobile-home-light-drawer.png"
+    },
+    {
+      "name": "Phone drawer, Products open, light",
+      "file": "screenshots/mobile-home-light-products-open.png"
+    },
+    {
+      "name": "Pricing, light, desktop",
+      "file": "screenshots/pricing-light-default.png"
+    },
+    {
+      "name": "Pricing use-case Chatbots, light, desktop",
+      "file": "screenshots/pricing-light-usecase-chatbots.png"
+    },
+    {
+      "name": "Pricing, light, phone",
+      "file": "screenshots/mobile-pricing-light-default.png"
+    },
+    {
+      "name": "Search product, light, desktop",
+      "file": "screenshots/product-light-default.png"
+    },
+    {
+      "name": "Contents product, light, desktop",
+      "file": "screenshots/product-contents-light-default.png"
+    },
+    {
+      "name": "Agent product, light, desktop",
+      "file": "screenshots/product-agent-light-default.png"
+    },
+    {
+      "name": "Library, light, desktop",
+      "file": "screenshots/library-light-default.png"
+    },
+    {
+      "name": "Connect, light, desktop",
+      "file": "screenshots/connect-light-default.png"
+    },
+    {
+      "name": "Enterprise, light, desktop",
+      "file": "screenshots/enterprise-light-default.png"
+    },
+    {
+      "name": "Coding use case, light, desktop",
+      "file": "screenshots/usecase-coding-light-default.png"
+    },
+    {
+      "name": "Websets marketing, light, desktop",
+      "file": "screenshots/websets-light-default.png"
+    },
+    {
+      "name": "Docs, light, desktop",
+      "file": "screenshots/docs-light-default.png"
+    },
+    {
+      "name": "Docs, dark, desktop",
+      "file": "screenshots/docs-dark-dark-default.png"
+    },
+    {
+      "name": "Docs, dark, phone",
+      "file": "screenshots/mobile-docs-dark-dark-default.png"
+    },
+    {
+      "name": "Docs quickstart, light, desktop",
+      "file": "screenshots/docs-ref-light-default.png"
+    },
+    {
+      "name": "About, light, desktop",
+      "file": "screenshots/about-light-default.png"
+    },
+    {
+      "name": "Why Exa, light, desktop",
+      "file": "screenshots/why-light-default.png"
+    },
+    {
+      "name": "Blog, light, desktop",
+      "file": "screenshots/blog-light-default.png"
+    },
+    {
+      "name": "Careers, light, desktop",
+      "file": "screenshots/careers-light-default.png"
+    },
+    {
+      "name": "Customers, light, desktop",
+      "file": "screenshots/customers-light-default.png"
+    },
+    {
+      "name": "Demos, light, desktop",
+      "file": "screenshots/demos-light-default.png"
+    },
+    {
+      "name": "Evals, light, desktop",
+      "file": "screenshots/evals-light-default.png"
+    },
+    {
+      "name": "Brand, light, desktop",
+      "file": "screenshots/brand-light-default.png"
+    },
+    {
+      "name": "Compare, light, desktop",
+      "file": "screenshots/versus-light-default.png"
+    },
+    {
+      "name": "Webinars, light, desktop",
+      "file": "screenshots/webinars-light-default.png"
+    },
+    {
+      "name": "Partners, light, desktop",
+      "file": "screenshots/partners-light-default.png"
+    },
+    {
+      "name": "Startups, light, desktop",
+      "file": "screenshots/startups-light-default.png"
+    },
+    {
+      "name": "MCP, light, desktop",
+      "file": "screenshots/mcp-light-default.png"
+    },
+    {
+      "name": "Integrations, light, desktop",
+      "file": "screenshots/integrations-light-default.png"
+    },
+    {
+      "name": "EU data residency, light, desktop",
+      "file": "screenshots/eu-data-residency-light-default.png"
+    },
+    {
+      "name": "Security, light, desktop",
+      "file": "screenshots/security-light-default.png"
+    },
+    {
+      "name": "Contact, light, desktop",
+      "file": "screenshots/contact-light-default.png"
+    },
+    {
+      "name": "Contact sales form, empty, light, desktop",
+      "file": "screenshots/contact-sales-light-default.png"
+    },
+    {
+      "name": "Privacy policy, light, desktop",
+      "file": "screenshots/privacy-light-default.png"
+    },
+    {
+      "name": "Sign-in wall, light, desktop",
+      "file": "screenshots/signin-light-default.png"
+    },
+    {
+      "name": "Sign-in wall, light, phone",
+      "file": "screenshots/mobile-signin-light-default.png"
+    }
   ],
   "gaps": [
-    "Docs and Exa MCP leave the dashboard for the public docs site. They were not recaptured; the public package already holds the docs.",
-    "Templates was opened and read. It was not screenshotted.",
-    "Find was opened (command palette: page list plus Light, Dark and System theme). The palette itself was not screenshotted.",
-    "Give us feedback was not opened. It is a feedback form.",
-    "Account menu offers Contact us and Log out. Contact us was not followed. Log out was not clicked.",
-    "Websets Settings is a paid-plan gate (Upgrade to a paid plan). The Websets API was not reached.",
-    "Enterprise upgrade, add credits, payment method, auto recharge and Slack install were not followed.",
-    "Playground runs (Search, Agent, Contents, Answer, Create Webset, Create monitor) were not executed. A confirm or credit spend was not started.",
-    "No light-theme shot except home. Phone shots are home, the nav drawer, billing and the create-key dialog.",
-    "Reduced motion was not probed on the signed-in app."
+    "Signed-in dashboard, settings, and create flows were not entered. Sign in and Sign up both land on the auth.exa.ai wall.",
+    "Continue with Google, Continue with email, and Sign in with SSO were offered and not used.",
+    "The Cloudflare Verify you are human checkbox was offered and not clicked.",
+    "Contact sales form (first name, last name, email, how did you hear about us, how can we help, Talk to Exa) was photographed empty and not submitted.",
+    "Docs Ctrl-K palette and the docs assistant composer were not opened.",
+    "API Status (status.exa.ai) and Trust Center (trust.exa.ai) are other hosts and were not opened.",
+    "Customer story pages, blog posts, event pages, and the terms PDF were mapped in site-tree.md and not photographed.",
+    "Phone Solutions and Resources accordions were read from the DOM. The photographed phone accordion is Products open.",
+    "Marketing pages are light only. Dark was photographed on the docs.",
+    "A prior signed-in walk from 2026-11-20 is recorded under prior_signed_in. This public pass did not reopen those screens."
   ],
   "not_submitted": [
-    "Create a Key was opened and cancelled. No key was created.",
-    "Invite team member was opened and closed. No invite was sent and no invite link was copied.",
-    "No search, agent, contents, answer, webset or monitor run was started.",
-    "No credit purchase, payment method, auto recharge, upgrade or Slack install was submitted.",
-    "Log out was not clicked. Feedback was not sent."
-  ]
+    "Continue with Google",
+    "Continue with email",
+    "Sign in with SSO",
+    "Cloudflare Verify you are human",
+    "Talk to Exa (contact sales form). No name or email was typed.",
+    "Get started, Start building for free, Get an API key, Upgrade now",
+    "Try Websets, Start search",
+    "Run preview on the home demo",
+    "Try API for free"
+  ],
+  "prior_signed_in": {
+    "when": "2026-11-20",
+    "account": "owner Personal team",
+    "note": "A previous signed-in walk. This public refresh did not repeat it and did not type credentials.",
+    "screens": [
+      {
+        "name": "Home, dark, desktop",
+        "file": "screenshots/signed-in-home-dark-desktop.png"
+      },
+      {
+        "name": "Home, light, desktop",
+        "file": "screenshots/signed-in-home-light-desktop.png"
+      },
+      {
+        "name": "Home, dark, phone",
+        "file": "screenshots/signed-in-home-dark-narrow.png"
+      },
+      {
+        "name": "Navigation drawer, dark, phone",
+        "file": "screenshots/signed-in-nav-dark-narrow.png"
+      },
+      {
+        "name": "Search playground, dark, desktop",
+        "file": "screenshots/signed-in-search-dark-desktop.png"
+      },
+      {
+        "name": "Agent playground, dark, desktop",
+        "file": "screenshots/signed-in-agent-dark-desktop.png"
+      },
+      {
+        "name": "Contents playground, dark, desktop",
+        "file": "screenshots/signed-in-contents-dark-desktop.png"
+      },
+      {
+        "name": "Answer playground, dark, desktop",
+        "file": "screenshots/signed-in-answer-dark-desktop.png"
+      },
+      {
+        "name": "Create webset, dark, desktop",
+        "file": "screenshots/signed-in-websets-create-dark-desktop.png"
+      },
+      {
+        "name": "Create monitor, dark, desktop",
+        "file": "screenshots/signed-in-monitors-dark-desktop.png"
+      },
+      {
+        "name": "Usage, dark, desktop",
+        "file": "screenshots/signed-in-usage-dark-desktop.png"
+      },
+      {
+        "name": "Request history, dark, desktop",
+        "file": "screenshots/signed-in-requests-dark-desktop.png"
+      },
+      {
+        "name": "Billing, dark, desktop",
+        "file": "screenshots/signed-in-billing-dark-desktop.png"
+      },
+      {
+        "name": "Billing, dark, phone",
+        "file": "screenshots/signed-in-billing-dark-narrow.png"
+      },
+      {
+        "name": "API keys, dark, desktop",
+        "file": "screenshots/signed-in-api-keys-dark-desktop.png"
+      },
+      {
+        "name": "Create API key dialog, dark, desktop",
+        "file": "screenshots/signed-in-create-key-dark-desktop.png"
+      },
+      {
+        "name": "Create API key dialog, dark, phone",
+        "file": "screenshots/signed-in-create-key-dark-narrow.png"
+      },
+      {
+        "name": "Team settings, dark, desktop",
+        "file": "screenshots/signed-in-team-settings-dark-desktop.png"
+      },
+      {
+        "name": "Invite dialog, dark, desktop",
+        "file": "screenshots/signed-in-invite-dark-desktop.png"
+      },
+      {
+        "name": "Exa in Slack, dark, desktop",
+        "file": "screenshots/signed-in-slack-dark-desktop.png"
+      }
+    ],
+    "offered": {
+      "nav": {
+        "items": [
+          "Home",
+          "Search",
+          "Agent",
+          "Contents",
+          "Answer",
+          "Websets",
+          "Monitors",
+          "Usage",
+          "Requests",
+          "Billing",
+          "API Keys",
+          "Team Settings",
+          "Exa in Slack",
+          "Websets Settings",
+          "Docs",
+          "Exa MCP",
+          "Templates",
+          "Find",
+          "Give us feedback"
+        ],
+        "reached": [
+          "Home",
+          "Search",
+          "Agent",
+          "Contents",
+          "Answer",
+          "Websets",
+          "Monitors",
+          "Usage",
+          "Requests",
+          "Billing",
+          "API Keys",
+          "Team Settings",
+          "Exa in Slack",
+          "Websets Settings",
+          "Docs",
+          "Exa MCP",
+          "Templates",
+          "Find",
+          "Give us feedback"
+        ]
+      },
+      "settings": {
+        "items": [
+          "Team Settings",
+          "Billing",
+          "API Keys",
+          "Websets Settings",
+          "Exa in Slack",
+          "account menu"
+        ],
+        "reached": [
+          "Team Settings",
+          "Billing",
+          "API Keys",
+          "Websets Settings",
+          "Exa in Slack",
+          "account menu"
+        ]
+      },
+      "create": {
+        "items": [
+          "Create Key",
+          "Invite team member",
+          "Create Webset",
+          "Create monitor",
+          "home composer"
+        ],
+        "reached": [
+          "Create Key",
+          "Invite team member",
+          "Create Webset",
+          "Create monitor",
+          "home composer"
+        ]
+      }
+    },
+    "gaps": [
+      "Docs and Exa MCP leave the dashboard for the public docs site. They were not recaptured; the public package already holds the docs.",
+      "Templates was opened and read. It was not screenshotted.",
+      "Find was opened (command palette: page list plus Light, Dark and System theme). The palette itself was not screenshotted.",
+      "Give us feedback was not opened. It is a feedback form.",
+      "Account menu offers Contact us and Log out. Contact us was not followed. Log out was not clicked.",
+      "Websets Settings is a paid-plan gate (Upgrade to a paid plan). The Websets API was not reached.",
+      "Enterprise upgrade, add credits, payment method, auto recharge and Slack install were not followed.",
+      "Playground runs (Search, Agent, Contents, Answer, Create Webset, Create monitor) were not executed. A confirm or credit spend was not started.",
+      "No light-theme shot except home. Phone shots are home, the nav drawer, billing and the create-key dialog.",
+      "Reduced motion was not probed on the signed-in app.",
+      "Contact sales form was photographed empty and not submitted.",
+      "Docs Ctrl-K palette and the docs assistant were not opened.",
+      "API Status (status.exa.ai) and Trust Center (trust.exa.ai) are other hosts and were not opened.",
+      "Customer story pages, blog posts, event pages, and the terms PDF were mapped in site-tree.md and not photographed.",
+      "Phone Solutions and Resources accordions were read from the DOM and not separately photographed. Products open is the phone accordion shot."
+    ],
+    "not_submitted": [
+      "Create a Key was opened and cancelled. No key was created.",
+      "Invite team member was opened and closed. No invite was sent and no invite link was copied.",
+      "No search, agent, contents, answer, webset or monitor run was started.",
+      "No credit purchase, payment method, auto recharge, upgrade or Slack install was submitted.",
+      "Log out was not clicked. Feedback was not sent.",
+      "Get started, Start building for free, Get an API key, Upgrade now, Try Websets, and Start search were not clicked.",
+      "Run preview on the home demo was not pressed."
+    ]
+  }
 }

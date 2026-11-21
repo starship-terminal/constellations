@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:31:57.110Z",
+  "capturedAt": "2026-11-21T10:43:35.929Z",
   "screenshot": "pricing-light-usecase-chatbots.png",
   "sanitizedSourceUrl": "https://exa.ai/pricing",
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 2471
+      "pageTop": 2754
     },
     "documentSize": {
       "width": 1440,
-      "height": 6585
+      "height": 7161
     },
     "scroll": {
       "x": 0,
-      "y": 2471
+      "y": 2754
     }
   },
   "capture": {

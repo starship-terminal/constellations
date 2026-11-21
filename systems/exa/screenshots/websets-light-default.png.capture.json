@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:34:53.049Z",
+  "capturedAt": "2026-11-21T10:46:27.974Z",
   "screenshot": "websets-light-default.png",
   "sanitizedSourceUrl": "https://websets.exa.ai/websets",
   "requested": {
@@ -20,9 +20,7 @@
     "devicePixelRatio": 1,
     "theme": {
       "classes": [],
-      "attributes": {
-        "data-theme": "light"
-      },
+      "attributes": {},
       "colorScheme": "normal"
     },
     "visualViewport": {
@@ -36,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 900
+      "height": 7916
     },
     "scroll": {
       "x": 0,

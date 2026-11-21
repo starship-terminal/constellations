@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:33:52.442Z",
+  "capturedAt": "2026-11-21T10:45:29.526Z",
   "screenshot": "brand-light-full.png",
   "sanitizedSourceUrl": "https://exa.ai/brand",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8658
+      "height": 7787
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 8658
+    "height": 7787
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 8658
+      "height": 7787
     },
     "basis": "fullPage"
   },

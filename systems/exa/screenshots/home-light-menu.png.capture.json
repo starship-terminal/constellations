@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:31:26.936Z",
+  "capturedAt": "2026-11-21T10:43:07.109Z",
   "screenshot": "home-light-menu.png",
   "sanitizedSourceUrl": "https://exa.ai/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8024
+      "height": 8670
     },
     "scroll": {
       "x": 0,

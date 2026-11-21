@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:31:40.651Z",
+  "capturedAt": "2026-11-21T10:43:20.478Z",
   "screenshot": "home-light-full.png",
   "sanitizedSourceUrl": "https://exa.ai/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8024
+      "height": 8670
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 8024
+    "height": 8670
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 8024
+      "height": 8670
     },
     "basis": "fullPage"
   },

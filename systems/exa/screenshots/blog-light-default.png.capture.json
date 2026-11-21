@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:32:52.586Z",
+  "capturedAt": "2026-11-21T10:44:29.955Z",
   "screenshot": "blog-light-default.png",
   "sanitizedSourceUrl": "https://exa.ai/blog",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 9054
+      "height": 9110
     },
     "scroll": {
       "x": 0,

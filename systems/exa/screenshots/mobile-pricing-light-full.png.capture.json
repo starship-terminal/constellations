@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-13T21:36:28.352Z",
+ "capturedAt": "2026-11-21T10:48:03.747Z",
  "screenshot": "mobile-pricing-light-full.png",
  "sanitizedSourceUrl": "https://exa.ai/pricing",
  "requested": {
@@ -34,7 +34,7 @@
   },
   "documentSize": {
    "width": 390,
-   "height": 10216
+   "height": 11137
   },
   "scroll": {
    "x": 0,
@@ -48,18 +48,18 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 10216
+   "height": 11137
   }
  },
  "png": {
   "width": 390,
-  "height": 10216
+  "height": 11137
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 390,
-   "height": 10216
+   "height": 11137
   },
   "basis": "stitchedParts"
  },
@@ -86,7 +86,8 @@
    "x": 0,
    "y": 7000,
    "width": 390,
-   "height": 3216
+   "height": 4137
   }
- ]
+ ],
+ "intendedHeight": 11137
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:34:08.897Z",
+  "capturedAt": "2026-11-21T10:45:46.072Z",
   "screenshot": "customers-light-full.png",
   "sanitizedSourceUrl": "https://exa.ai/customers",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4770
+      "height": 5217
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 4770
+    "height": 5217
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 4770
+      "height": 5217
     },
     "basis": "fullPage"
   },
