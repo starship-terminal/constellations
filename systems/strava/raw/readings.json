@@ -1,0 +1,118 @@
+{
+  "captured": "2026-11-22",
+  "product": "https://www.strava.com",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "home": {
+    "url": "https://www.strava.com/",
+    "title": "Strava | Running, Cycling & Hiking App - Train, Track & Share",
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "Boathouse, \"Segoe UI\", \"Helvetica Neue\", -apple-system, system-ui, \"system-ui\", Roboto, Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    "h1": {
+      "text": "Community-Powered Motivation",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "32px",
+      "fontWeight": "600",
+      "lineHeight": "32px",
+      "width": 404,
+      "height": 64
+    },
+    "loginButton": {
+      "text": "Log In",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(33, 33, 31)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "borderRadius": "4px",
+      "border": "1px solid rgb(224, 224, 222)",
+      "width": 88,
+      "height": 40
+    },
+    "loginLink": {
+      "text": "Log In",
+      "color": "rgb(252, 82, 0)",
+      "fontSize": "16px",
+      "fontWeight": "600"
+    },
+    "emailButton": {
+      "text": "Sign Up With Email",
+      "backgroundColor": "rgb(252, 82, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "borderRadius": "4px",
+      "border": "1px solid rgb(252, 82, 0)",
+      "width": 404,
+      "height": 44
+    },
+    "googleButton": {
+      "text": "Sign Up With Google",
+      "backgroundColor": "rgb(250, 250, 250)",
+      "color": "rgb(33, 33, 31)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "borderRadius": "4px",
+      "border": "1px solid rgb(100, 99, 94)",
+      "width": 404,
+      "height": 44
+    },
+    "navLink": {
+      "text": "Features",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": 73
+    },
+    "footer": {
+      "backgroundColor": "rgb(249, 248, 245)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "14px"
+    },
+    "customProperties": {
+      "--color-coreo3": "#fc5200",
+      "--color-coreasphalt": "#000000",
+      "--color-corewhite": "#ffffff",
+      "--color-coren7": "#FAFAFA",
+      "--color-coren6": "#F2F2F0"
+    }
+  },
+  "features": {
+    "url": "https://www.strava.com/features",
+    "title": "Strava Subscription",
+    "h1": {
+      "text": "The best of Strava. Built for your goals.",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "BoathouseExtended, \"Helvetica Neue\", helvetica, arial, sans-serif",
+      "fontSize": "72px",
+      "fontWeight": "600",
+      "width": 811,
+      "height": 144
+    },
+    "cta": {
+      "text": "Dive into your Subscription",
+      "backgroundColor": "rgb(252, 82, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Boathouse, \"Helvetica Neue\", helvetica, arial, sans-serif",
+      "fontSize": "22px",
+      "fontWeight": "600",
+      "borderRadius": "4px",
+      "width": 316,
+      "height": 64
+    },
+    "bodyColor": "rgb(102, 102, 102)",
+    "pageFill": "rgb(255, 255, 255)"
+  },
+  "screenshots": {
+    "home-light-1440.png": { "css": "1440x900", "png": "2880x1800", "devicePixelRatio": 2 },
+    "features-light-1440.png": { "css": "1440x900", "png": "2880x1800", "devicePixelRatio": 2 }
+  }
+}
