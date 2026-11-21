@@ -2085,9 +2085,9 @@
       "description": "Freelance Services Marketplace",
       "status": "captured",
       "package": "systems/fiverr",
-      "notes": "https://www.fiverr.com/login Continue with email asks for email or username and password, or Google, Apple, or Facebook. A headless load earlier hit a human-check page. The interactive form loaded. No code was sent.",
+      "notes": "https://www.fiverr.com/login Continue with email asks for email or username and password, or Google, Apple, or Facebook. A headless load earlier hit a human-check page. The interactive form loaded. No code was sent. Public walk 2026-11-21: the public site tree is in systems/fiverr/site-tree.md. The homepage painted once. Sign in was read as https://www.fiverr.com/login and not clicked. A direct load of that URL painted Continue with email/username, Google, Apple, Facebook, and Join. Nothing was typed. Google, Apple, and Facebook were not clicked. No form was submitted. Later loads of the homepage and login painted a PerimeterX human-check (HTTP 403) before the site. The check was not solved. Phone width, menus, search, filters, and footer destinations were not opened. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1660 at 31af840b7e50. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "captcha",
       "batch": 7
     },
     {
