@@ -1,0 +1,634 @@
+{
+  "core": {
+    "font": {
+      "family": {
+        "sans": {
+          "$value": "Roboto, Arial, sans-serif",
+          "$type": "fontFamily",
+          "$description": "Computed font-family on the search field, Sign in, and the watch title.",
+          "$extensions": {
+            "source": {
+              "evidence": "Measured",
+              "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+            }
+          }
+        },
+        "player": {
+          "$value": "\"YouTube Noto\", Roboto, Arial, Helvetica, sans-serif",
+          "$type": "fontFamily",
+          "$description": "Computed font-family on #movie_player.",
+          "$extensions": {
+            "source": {
+              "evidence": "Measured",
+              "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+            }
+          }
+        },
+        "accounts": {
+          "$value": "\"Google Sans\", roboto, arial, sans-serif",
+          "$type": "fontFamily",
+          "$description": "Computed font-family on the accounts.google.com sign-in body.",
+          "$extensions": {
+            "source": {
+              "evidence": "Measured",
+              "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+            }
+          }
+        }
+      }
+    },
+    "typography": {
+      "empty-title": {
+        "$value": {
+          "fontFamily": "{core.font.family.sans}",
+          "fontSize": "18px",
+          "fontWeight": "900",
+          "lineHeight": "26px"
+        },
+        "$type": "typography",
+        "$description": "ytd-feed-nudge-renderer h2, dark home.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "watch-title": {
+        "$value": {
+          "fontFamily": "{core.font.family.sans}",
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "lineHeight": "28px"
+        },
+        "$type": "typography",
+        "$description": "Watch page h1.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "result-title": {
+        "$value": {
+          "fontFamily": "{core.font.family.sans}",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "26px"
+        },
+        "$type": "typography",
+        "$description": "Search result a#video-title.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "search": {
+        "$value": {
+          "fontFamily": "{core.font.family.sans}",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "22px"
+        },
+        "$type": "typography",
+        "$description": "input#search.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "button": {
+        "$value": {
+          "fontFamily": "{core.font.family.sans}",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "lineHeight": "40px"
+        },
+        "$type": "typography",
+        "$description": "Sign in and Subscribe.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "meta": {
+        "$value": {
+          "fontFamily": "{core.font.family.sans}",
+          "fontSize": "12px",
+          "fontWeight": "400"
+        },
+        "$type": "typography",
+        "$description": "Search result metadata line.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "account-heading": {
+        "$value": {
+          "fontFamily": "{core.font.family.accounts}",
+          "fontSize": "36px",
+          "fontWeight": "400"
+        },
+        "$type": "typography",
+        "$description": "accounts.google.com h1, light sign-in.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      }
+    },
+    "radius": {
+      "pill": {
+        "$value": "20px",
+        "$type": "dimension",
+        "$description": "Sign in and Subscribe border-radius.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "guide": {
+        "$value": "10px",
+        "$type": "dimension",
+        "$description": "Selected guide row border-radius.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "card": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$description": "Empty-state card and settings menu border-radius.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "field": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$description": "accounts.google.com identifier field border-radius.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      }
+    },
+    "size": {
+      "masthead": {
+        "$value": "56px",
+        "$type": "dimension",
+        "$description": "ytd-masthead height at 1440.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "mini-guide": {
+        "$value": "72px",
+        "$type": "dimension",
+        "$description": "ytd-mini-guide-renderer width.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "guide": {
+        "$value": "240px",
+        "$type": "dimension",
+        "$description": "Open guide drawer width.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "guide-row": {
+        "$value": "40px",
+        "$type": "dimension",
+        "$description": "Guide entry height.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "control": {
+        "$value": "40px",
+        "$type": "dimension",
+        "$description": "Sign in and Subscribe height.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "chip": {
+        "$value": "32px",
+        "$type": "dimension",
+        "$description": "Search chip height.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "menu": {
+        "$value": "300px",
+        "$type": "dimension",
+        "$description": "Settings menu width.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      }
+    },
+    "space": {
+      "page": {
+        "$value": "16px",
+        "$type": "dimension",
+        "$description": "Watch player inset from the viewport edge.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "control-x": {
+        "$value": "16px",
+        "$type": "dimension",
+        "$description": "Subscribe horizontal padding.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      }
+    },
+    "color": {
+      "brand-red": {
+        "$value": "#FF0033",
+        "$type": "color",
+        "$description": "Computed fill of the wordmark path, #logo-icon svg path.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "page": {
+        "$value": "#0F0F0F",
+        "$type": "color",
+        "$description": "Computed background of ytd-app / html.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "text": {
+        "$value": "#F1F1F1",
+        "$type": "color",
+        "$description": "Computed color of the empty-state h2 and the watch title.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "muted": {
+        "$value": "#AAAAAA",
+        "$type": "color",
+        "$description": "Computed color of the search result metadata line.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "accent": {
+        "$value": "#3EA6FF",
+        "$type": "color",
+        "$description": "Computed color of the Sign in link.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "surface": {
+        "$value": "#212121",
+        "$type": "color",
+        "$description": "Computed background of the empty-state #content-wrapper.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "border": {
+        "$value": "rgba(255, 255, 255, 0.2)",
+        "$type": "color",
+        "$description": "Computed border-top-color of the Sign in outline.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "search-bg": {
+        "$value": "hsl(0, 0%, 7%)",
+        "$type": "color",
+        "$description": "Custom property --ytd-searchbox-background.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "search-text": {
+        "$value": "hsla(0, 100%, 100%, 0.88)",
+        "$type": "color",
+        "$description": "Custom property --ytd-searchbox-text-color.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "subscribe-bg": {
+        "$value": "#F1F1F1",
+        "$type": "color",
+        "$description": "Computed background of the Subscribe button in this theme. Dark reading reused for light where the light button was not separately measured.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "subscribe-text": {
+        "$value": "#0F0F0F",
+        "$type": "color",
+        "$description": "Computed color of the Subscribe label.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "menu": {
+        "$value": "#282828",
+        "$type": "color",
+        "$description": "Computed background of ytd-multi-page-menu-renderer in dark. Light menu was not separately measured.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "chip-selected": {
+        "$value": "rgba(255, 255, 255, 0.1)",
+        "$type": "color",
+        "$description": "Computed background of the selected guide row.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "brand-red": {
+        "$value": "{core.color.brand-red}",
+        "$type": "color",
+        "$description": "Alias of the wordmark fill.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "page": {
+        "$value": "#FFFFFF",
+        "$type": "color",
+        "$description": "Computed background of ytd-app / html.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "text": {
+        "$value": "#111111",
+        "$type": "color",
+        "$description": "Derived from --ytd-searchbox-text-color hsl(0, 0%, 6.7%) on the light home. The empty-state heading paints the same near-black.",
+        "$extensions": {
+          "source": {
+            "evidence": "Derived",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "muted": {
+        "$value": "#606060",
+        "$type": "color",
+        "$description": "Not read from a light metadata element in this pass. Left as a placeholder grey so the light set has the same keys as dark. Do not treat it as a measured token.",
+        "$extensions": {
+          "source": {
+            "evidence": "Not captured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "accent": {
+        "$value": "#065FD4",
+        "$type": "color",
+        "$description": "The dark stylesheet's paired value for --t2d807bb79e75606d, which resolves to #3ea6ff in dark and #065fd4 in light.",
+        "$extensions": {
+          "source": {
+            "evidence": "Derived",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "surface": {
+        "$value": "#FFFFFF",
+        "$type": "color",
+        "$description": "Computed background of the empty-state #content-wrapper.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "border": {
+        "$value": "rgba(0, 0, 0, 0.1)",
+        "$type": "color",
+        "$description": "Paired value of the dark Sign in border rgba(255, 255, 255, 0.2) in the same custom property.",
+        "$extensions": {
+          "source": {
+            "evidence": "Derived",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "search-bg": {
+        "$value": "hsl(0, 0%, 100%)",
+        "$type": "color",
+        "$description": "Custom property --ytd-searchbox-background.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "search-text": {
+        "$value": "hsl(0, 0%, 6.7%)",
+        "$type": "color",
+        "$description": "Custom property --ytd-searchbox-text-color.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "subscribe-bg": {
+        "$value": "#0F0F0F",
+        "$type": "color",
+        "$description": "Not measured on a light Subscribe button in this pass. The dark button inverts page and text, so the light button is recorded as the inverse of the light page.",
+        "$extensions": {
+          "source": {
+            "evidence": "Derived",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "subscribe-text": {
+        "$value": "#FFFFFF",
+        "$type": "color",
+        "$description": "Inverse of the derived light Subscribe fill.",
+        "$extensions": {
+          "source": {
+            "evidence": "Derived",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "menu": {
+        "$value": "#FFFFFF",
+        "$type": "color",
+        "$description": "Light settings menu was not opened. The light page fill is used.",
+        "$extensions": {
+          "source": {
+            "evidence": "Not captured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "chip-selected": {
+        "$value": "rgba(0, 0, 0, 0.05)",
+        "$type": "color",
+        "$description": "Computed background of the selected guide row.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      },
+      "brand-red": {
+        "$value": "{core.color.brand-red}",
+        "$type": "color",
+        "$description": "Alias of the wordmark fill.",
+        "$extensions": {
+          "source": {
+            "evidence": "Measured",
+            "capture": "raw/public-readings.json and raw/public-measured.json, signed-out Chromium, 2026-11-21"
+          }
+        }
+      }
+    }
+  },
+  "$themes": [
+    {
+      "id": "dark",
+      "name": "Dark",
+      "selectedTokenSets": {
+        "core": "source",
+        "dark": "enabled"
+      }
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "selectedTokenSets": {
+        "core": "source",
+        "light": "enabled"
+      }
+    }
+  ],
+  "$metadata": {
+    "tokenSetOrder": [
+      "core",
+      "dark",
+      "light"
+    ]
+  }
+}

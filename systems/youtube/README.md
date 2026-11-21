@@ -6,6 +6,8 @@ It holds 31 captures: 18 in dark (Premium interstitial, home with an ad and the 
 
 This package contains no YouTube code, and none of its artwork has been redrawn. The screenshots and the visual system they show are Google's ([docs/RIGHTS.md](../../docs/RIGHTS.md)); the thumbnails, Shorts and ads in them are other creators' and advertisers' work and are kept only to show layout. Borrow structure and proportions, not the logo, icons or YouTube red.
 
+A public web pass was added on 2026-11-21 from https://www.youtube.com, signed out, in headless Chromium. Desktop shots are 1440 x 900 at 1x. Phone shots were requested at 390 x 844 and saved at 780 x 1688 because the mobile page reports a 2x device pixel ratio. The control map is [site-tree.md](site-tree.md). Captured: the empty home, the guide, the settings menu, the voice dialog, search results and the filter dialog, a public watch page, the save sign-in prompt, subscriptions, library and history empty states, /premium, https://about.youtube/, and the empty Google sign-in and create-account walls, in dark and light where the page honours the color scheme. Login and signup were photographed empty and the branch stopped. No email, password, code, phone or address was typed. Next was not clicked. Identity providers were not clicked. Like, subscribe, comment and playlist save were not used. `login-extracted` stays `not-started`. Web values are in [tokens.public.json](tokens.public.json). The iOS tokens.json above is unchanged.
+
 | File | What it is |
 |---|---|
 | [icon.png](icon.png) | The product's app or site icon (128 px PNG), fetched from its site (`tools/fetch_icon.py`); the gallery cards and the root README's catalog table show it so the package is identifiable at a glance |
@@ -17,7 +19,10 @@ This package contains no YouTube code, and none of its artwork has been redrawn.
 | [components/crops/](components/crops) | 56 element crops, `{component}-{state}.png` and `-light.png`, cut from the screenshots by `tools/crops.py` |
 | [screenshots/](screenshots) | `dark/` (18) and `light/` (13) captures, `01-premium-upsell-interstitial.png` to `18-floating-mini-player.png`, quantised to 256 colours with alpha |
 | [raw/](raw) | `readings.json`: every value read from the full-colour captures (175 readings of 109 ids), with its file, box, method and evidence label. `youtube-measured.md`: the same as tables |
-| [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, `test_build_tokens.py` and `test_measure.py`, and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or wall. Mapped 2026-11-21 from the signed-out site |
+| [tokens.public.json](tokens.public.json) | Web tokens from the 2026-11-21 signed-out capture. The iOS tokens.json is the file the catalog still points at |
+| [screenshots/public/](screenshots/public) | 24 signed-out web captures, quantised to 256 colours |
+| [tools/](tools) | `measure.py` (iOS readings), `build_tokens.py`, `build_public_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, the iOS tests, and `capture/` (`native/` plus `public/capture.mjs`) |
 
 ## Brief
 
@@ -187,6 +192,16 @@ Type roles, in points: the Premium headline 35 bold; My Ad Centre's title 25; na
 5. **Don't draw dividers between rows.** Settings, search and menu rows are separated by space alone, on a 50 pt or 56 pt pitch. See [10-settings-icon-list](screenshots/dark/10-settings-icon-list.png), [04-search-focused-history-rows](screenshots/dark/04-search-focused-history-rows.png) and [15-video-overflow-menu](screenshots/dark/15-video-overflow-menu.png).
 6. **Do keep blue for links, new-content dots and switches that are on.** The accent never fills a button. See [13-subscriptions-avatars-chips](screenshots/dark/13-subscriptions-avatars-chips.png) and [11-general-switches-on-off](screenshots/dark/11-general-switches-on-off.png).
 
+## Public web, 2026-11-21
+
+The signed-out site paints `html[dark]` when the browser color scheme is dark, and a white page when it is light. `ytd-app` is `#0F0F0F` in dark and `#FFFFFF` in light. Body text on the app shell is Roboto. The wordmark path fills `#FF0033`. Sign in is an outline pill, `#3EA6FF` in dark, 40px tall, 20px radius. Subscribe inverts: `#F1F1F1` on `#0F0F0F` in dark. The empty home card is `#212121` inside a 12px radius and a `rgba(255, 255, 255, 0.2)` hairline. The settings menu is `#282828` at 300px wide and 12px radius. The selected guide row is `rgba(255, 255, 255, 0.1)` in dark and `rgba(0, 0, 0, 0.05)` in light, at a 10px radius. Search metadata is `#AAAAAA` at 12px.
+
+The guide drawer does not open from a click in headless Chromium. [home-dark-guide](screenshots/public/home-dark-guide.png) and [home-light-guide](screenshots/public/home-light-guide.png) were taken after setting the drawer `opened` attribute so the already-rendered guide could be photographed. The item list matches the live guide. Treat those two shots as a revealed drawer, not as proof the click animation ran.
+
+The Google sign-in and create-account walls are accounts.google.com, not youtube.com. They were photographed empty. The light wall uses Google Sans, a 36px heading, and a blue Next pill. The dark wall is the same card on `#0E0E0E`.
+
+`tokens.public.json` holds these readings. Several light roles are Derived or Not captured, and the file says which. It is not the catalog tokens file. `make design-md` still reads `tokens.json`, the iOS set.
+
 ## Rebuild
 
 From this folder. `measure.py` needs the full-colour captures, which live outside the repo in `~/.design-systems/youtube/raw-shots/`; the other builders run from the committed files.
@@ -194,11 +209,14 @@ From this folder. `measure.py` needs the full-colour captures, which live outsid
 ```bash
 python3 tools/measure.py ~/.design-systems/youtube/raw-shots
 python3 tools/build_tokens.py
+python3 tools/build_public_tokens.py
 python3 tools/build_style_guide.py
 python3 tools/build_components_md.py
 python3 -m unittest discover -s tools
 git status --short .
 ```
+
+The public web shots are rewritten by `node tools/capture/public/capture.mjs` with `PLAYWRIGHT` pointing at a Playwright install. Full-colour frames stay in `~/.design-systems/youtube/raw-shots/`.
 
 `tools/capture/quantize.py <raw-shots>` and `tools/crops.py` (both need Pillow) rewrite `screenshots/` and `components/crops/`. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
