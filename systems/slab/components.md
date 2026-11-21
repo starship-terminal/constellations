@@ -47,11 +47,11 @@ Pricing Annually / Monthly is a 36px pill. Track `#ebecec`, radius 18px. Selecte
 
 ## Menu, tooltip, dialog, toast
 
-Nav menus exist in the DOM and were not opened. Toastify rules are in the home stylesheet, including a Slab override for success (`#ffffff` face, 2px `#50c5dc` border, text `#455360`). No toast was shown. No dialog was shown.
+Nav menus were opened on 2026-11-22. Destinations are in [site-tree.md](site-tree.md). Toastify rules are in the home stylesheet, including a Slab override for success (`#ffffff` face, 2px `#50c5dc` border, text `#455360`). No toast was shown. No dialog was shown.
 
 ## Card
 
-Login card: background `#ffffff`, border `1px solid rgba(125, 106, 104, 0.2)`, radius 4px, shadow `rgba(106, 52, 33, 0.06) 0px 0px 23px`, padding 48px, width 430px. No screenshot of this card: the login page was not opened in the headless browser.
+Login card: background `#ffffff`, border `1px solid rgba(125, 106, 104, 0.2)`, radius 4px, shadow `rgba(106, 52, 33, 0.06) 0px 0px 23px`, padding 48px, width 430px. The 2026-11-22 pass photographed the empty card in [screenshots/login-wall-desktop.png](screenshots/login-wall-desktop.png).
 
 Pricing columns are in [pricing-light-default.png](screenshots/pricing-light-default.png).
 

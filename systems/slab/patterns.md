@@ -14,11 +14,15 @@ https://slab.com/pricing/ switches the nav to white with slate text. The h1 is S
 
 ## Login
 
-https://slab.com/login/ is a signed-out account card on `#fcf9f8`. The card is white, 430px wide, padding 48px, radius 4px. Heading "Welcome back!" is Untitled Sans 25px / 500. The form asks for a subdomain, then Continue (`#7e0048`). A link offers "Sign up for Slab". Nothing was submitted. No screenshot.
+https://slab.com/login/ is a signed-out account card on `#fcf9f8`. The card is white, 430px wide, padding 48px, radius 4px. Heading "Welcome back!" is Untitled Sans 25px / 500. The form asks for a subdomain, then Continue (`#7e0048`). A link offers "Sign up for Slab". The subdomain was empty. Continue was not clicked. [screenshots/login-wall-desktop.png](screenshots/login-wall-desktop.png) and [screenshots/login-wall-phone.png](screenshots/login-wall-phone.png).
 
 ## Register
 
-https://slab.com/register/ uses the same account page colour. It asks for email, full name and password, plus "Sign up with Google" and "Create my account". That is not an email-only form, so it was not filled. Google was not clicked. No screenshot.
+https://slab.com/register/ uses the same account page colour. It asks for email, full name and password, plus "Sign up with Google" and "Create my account". That is not an email-only form, so it was not filled. Google was not clicked. [screenshots/signup-wall-desktop.png](screenshots/signup-wall-desktop.png) and [screenshots/signup-wall-phone.png](screenshots/signup-wall-phone.png).
+
+## Public pages, 2026-11-22
+
+Header and footer destinations are listed in [site-tree.md](site-tree.md). Each photographed page is a viewport shot in [screenshots/](screenshots/), named `public-<page>-desktop.png`. Home, pricing, and library also have phone shots. Plan buttons, Contact Sales, Contact Support, and download buttons were not clicked.
 
 ## Help center
 
