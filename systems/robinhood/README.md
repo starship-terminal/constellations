@@ -16,7 +16,9 @@ Marketing paints a black nav, a lime banner (`#CCFF00`), white and black section
 | [patterns.md](patterns.md) | How the nav, hero, login, and signup wall combine |
 | [components/crops/](components/crops) | 6 element screenshots |
 | [icons/](icons) | Wordmark and feather, with [INDEX.tsv](icons/INDEX.tsv) |
-| [screenshots/](screenshots) | Home, login, and signup at desktop 1440 and phone 390 |
+| [screenshots/](screenshots) | Home, login, and signup from 2026-11-19, plus the 2026-11-22 public marketing pages at 1440 |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22. Nav, footer, photographed pages, and where the walk stopped |
+| [login-review.json](login-review.json) | Empty login and signup walls. `loginExtracted` is not-started. The 2026-11-22 retry got HTTP 429 |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), the resolved `--rh__*` set and the boundary notes |
 | [tools/](tools) | The capture kit, plus the style-guide builder. The unadapted kit builder copies beside the style-guide builder, the `native/` builders and `capture/signed-in/build-measurements.mjs` were removed in the 2026-11 audit; the capture helpers remain. |
 
@@ -106,7 +108,8 @@ Capsule Sans Text, Capsule Sans Display, and Capsule Sans Book Cover are Robinho
 | Card, list row | Marketing sections only. No app list |
 | Themes | Marketing light sections plus app dark. No app light theme was painted |
 | Widths | 1440 and 390 screenshots. Token reads were at 1169 |
-| Signup, KYC, funding | Gap. Stopped at the region wall. No account, card, bank, or SSN |
+| Signup, KYC, funding | Gap. Stopped at the region wall on 2026-11-19. The 2026-11-22 retry of `/login` and `/signup` got HTTP 429, so the walls were not re-photographed. No account, card, bank, or SSN |
+| Public site tree | Mapped 2026-11-22 in [site-tree.md](site-tree.md). Marketing pages photographed. Phone width, docs, newsroom, Snacks, investor relations, and the merch shop were not |
 
 ## Do and don't
 
