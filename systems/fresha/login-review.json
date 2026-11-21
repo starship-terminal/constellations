@@ -1,0 +1,93 @@
+{
+  "product": "Fresha",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "origin": "https://www.fresha.com",
+  "landed": "https://www.fresha.com/",
+  "offered": {
+    "nav": {
+      "header": ["Log in /user-flow", "For businesses /for-business", "Menu"],
+      "menu": ["Log in or sign up /user-flow", "Download the app /download-app", "Help and support /help-center/get-support", "English (US)", "For businesses /for-business"],
+      "search": ["All treatments", "Current location", "Any time", "Search"],
+      "footer": ["Careers /careers", "Help and support /help-center/get-support", "Blog /blog", "Sitemap /sitemap", "For partners /for-business", "Pricing /pricing", "Payments /for-business/features/payments", "Support /help-center", "Status", "Privacy Policy", "Terms of service", "Terms of use", "Cookie policy /cookies"],
+      "mobile": ["Menu"]
+    },
+    "settings": {
+      "seen": false,
+      "reason": "No settings surface is offered signed out. English (US) opens a Change language dialog on the homepage. A language was not chosen."
+    },
+    "create": {
+      "seen": false,
+      "reason": "For businesses and Pricing are public marketing pages. Sign up, Get started now, and the partner chooser were not submitted."
+    }
+  },
+  "screens": [
+    "screenshots/auth-light-default.png",
+    "screenshots/auth-light-filled.png",
+    "screenshots/blog-light-default.png",
+    "screenshots/blog-light-full.png",
+    "screenshots/booking-light-default.png",
+    "screenshots/booking-light-ticked.png",
+    "screenshots/careers-light-default.png",
+    "screenshots/careers-light-full.png",
+    "screenshots/cookies-light-default.png",
+    "screenshots/download-app-light-default.png",
+    "screenshots/download-app-light-full.png",
+    "screenshots/for-business-light-default.png",
+    "screenshots/for-business-light-flyout.png",
+    "screenshots/for-business-light-full.png",
+    "screenshots/help-light-default.png",
+    "screenshots/help-light-full.png",
+    "screenshots/home-light-card-hover.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-language.png",
+    "screenshots/home-light-menu.png",
+    "screenshots/home-light-search-focus.png",
+    "screenshots/home-light-time.png",
+    "screenshots/lp-browse-light-default.png",
+    "screenshots/lp-browse-light-full.png",
+    "screenshots/lp-category-light-default.png",
+    "screenshots/lp-category-light-full.png",
+    "screenshots/mobile-auth-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-lp-browse-light-default.png",
+    "screenshots/mobile-lp-browse-light-full.png",
+    "screenshots/mobile-venue-light-default.png",
+    "screenshots/mobile-venue-light-full.png",
+    "screenshots/partner-signin-dark-default.png",
+    "screenshots/partner-signin-light-default.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-faq-open.png",
+    "screenshots/pricing-light-full.png",
+    "screenshots/user-flow-light-default.png",
+    "screenshots/venue-light-default.png",
+    "screenshots/venue-light-full.png",
+    "screenshots/venue-light-services.png"
+  ],
+  "gaps": [
+    "Login stops at /user-flow, a chooser: Fresha for customers, Fresha for professionals. Nothing typed. Google, Apple, and every identity provider not clicked.",
+    "Account, bookings, favorites, and settings sit behind that wall.",
+    "Search was not submitted. Favorite hearts were not clicked. Book now was not clicked.",
+    "The phone menu is a full-screen sheet, photographed at 1x because the disk filled at 2x.",
+    "Full-page refreshes from this pass were dropped when the disk filled. Older full-page shots from 2026-11-15 remain.",
+    "The venue hero refresh painted a blank image, so the 2026-11-15 venue shot was kept.",
+    "Dark theme is painted only on the partner sign-in. Consumer pages stayed light."
+  ],
+  "not_submitted": [
+    "user-flow chooser",
+    "Log in or sign up",
+    "Sign up",
+    "Get started now",
+    "Search",
+    "favorite heart",
+    "Book now",
+    "language change",
+    "Google",
+    "Apple",
+    "any identity provider",
+    "any form"
+  ]
+}
