@@ -1,0 +1,56 @@
+[
+  {
+    "aria": null,
+    "text": "Products",
+    "w": 64,
+    "h": 44,
+    "x": 150,
+    "y": 10,
+    "controls": "mega-menu-business_products"
+  },
+  {
+    "aria": null,
+    "text": "Solutions",
+    "w": 66,
+    "h": 44,
+    "x": 234,
+    "y": 10,
+    "controls": "mega-menu-business_solutions_header"
+  },
+  {
+    "aria": null,
+    "text": "Pricing",
+    "w": 51,
+    "h": 44,
+    "x": 320,
+    "y": 10,
+    "controls": "mega-menu-pricing"
+  },
+  {
+    "aria": null,
+    "text": "Resources",
+    "w": 74,
+    "h": 44,
+    "x": 488,
+    "y": 10,
+    "controls": "mega-menu-company"
+  },
+  {
+    "aria": "Europe-English",
+    "text": "EN",
+    "w": 101,
+    "h": 40,
+    "x": 578,
+    "y": 12,
+    "controls": null
+  },
+  {
+    "aria": null,
+    "text": "Get started",
+    "w": 128,
+    "h": 48,
+    "x": 795,
+    "y": 8,
+    "controls": null
+  }
+]

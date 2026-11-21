@@ -1,5 +1,8 @@
 {
-  "capturedAt": "2026-11-18T20:23:01.789Z",
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T16:08:55.665Z",
+  "screenshot": "home-light-desktop.png",
+  "sanitizedSourceUrl": "https://vivid.money/en-eu/",
   "requested": {
     "width": 1440,
     "height": 900,
@@ -16,6 +19,12 @@
       "height": 900,
       "scale": 1
     },
-    "theme": "light"
-  }
+    "theme": "light",
+    "scrollHeight": 13917
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Cookie dialog hidden with CSS. No consent button pressed. No form submitted."
 }

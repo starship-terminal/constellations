@@ -1,0 +1,29 @@
+{
+  "buttons": [
+    "en",
+    "",
+    "English",
+    "De",
+    "It",
+    "Fr",
+    "Es",
+    "Nl",
+    "",
+    "Phone",
+    "Email",
+    "Continue",
+    "Accept",
+    "Reject non-essential",
+    "CUSTOMIZE"
+  ],
+  "continue": {
+    "bg": "rgb(106, 38, 217)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "16px",
+    "font": "inter, \"inter Fallback\", Roboto, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "height": 56
+  },
+  "heading": null
+}

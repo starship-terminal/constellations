@@ -1,111 +1,62 @@
 {
-  "heading": {
-    "tag": "H2",
-    "type": null,
-    "text": "Open a business account",
-    "bg": "rgba(0, 0, 0, 0)",
-    "color": "rgb(51, 51, 51)",
-    "border": "0px rgb(51, 51, 51)",
-    "radius": "0px",
-    "size": "52px",
-    "weight": "500",
-    "h": 52,
-    "w": 564,
-    "pad": "0px"
-  },
-  "boxes": [
+  "title": "Business accounts, expenses and cash management | Vivid Europe",
+  "href": "https://vivid.money/en-eu/#open-account",
+  "inputs": [
     {
-      "tag": "DIV",
-      "type": null,
-      "text": "Country",
-      "bg": "rgb(245, 245, 244)",
-      "color": "rgb(51, 51, 51)",
-      "border": "1px rgb(245, 245, 244)",
-      "radius": "10px",
-      "size": "15px",
-      "weight": "400",
-      "h": 56,
-      "w": 480,
-      "pad": "0px 12px 0px 13px"
+      "tag": "INPUT",
+      "type": "checkbox",
+      "name": null,
+      "placeholder": null,
+      "aria": null,
+      "autocomplete": null
     },
     {
-      "tag": "DIV",
+      "tag": "INPUT",
       "type": null,
-      "text": "Business type\nRegistered Company",
-      "bg": "rgb(245, 245, 244)",
-      "color": "rgb(51, 51, 51)",
-      "border": "1px rgb(245, 245, 244)",
-      "radius": "10px",
-      "size": "16px",
-      "weight": "400",
-      "h": 56,
-      "w": 480,
-      "pad": "0px"
+      "name": "cc",
+      "placeholder": null,
+      "aria": null,
+      "autocomplete": "vivid-search-select"
     },
     {
-      "tag": "DIV",
-      "type": null,
-      "text": "Legal entity type\nGmbH",
-      "bg": "rgb(245, 245, 244)",
-      "color": "rgb(51, 51, 51)",
-      "border": "1px rgb(245, 245, 244)",
-      "radius": "10px",
-      "size": "16px",
-      "weight": "400",
-      "h": 56,
-      "w": 480,
-      "pad": "0px"
+      "tag": "INPUT",
+      "type": "search",
+      "name": null,
+      "placeholder": null,
+      "aria": null,
+      "autocomplete": "off"
     },
     {
-      "tag": "DIV",
-      "type": null,
-      "text": "Company name",
-      "bg": "rgb(245, 245, 244)",
-      "color": "rgb(51, 51, 51)",
-      "border": "1px rgb(245, 245, 244)",
-      "radius": "10px",
-      "size": "15px",
-      "weight": "400",
-      "h": 56,
-      "w": 480,
-      "pad": "6px 12px"
+      "tag": "INPUT",
+      "type": "search",
+      "name": null,
+      "placeholder": null,
+      "aria": null,
+      "autocomplete": "off"
     },
     {
-      "tag": "DIV",
-      "type": null,
-      "text": "Phone number",
-      "bg": "rgb(245, 245, 244)",
-      "color": "rgb(51, 51, 51)",
-      "border": "1px rgb(245, 245, 244)",
-      "radius": "10px",
-      "size": "15px",
-      "weight": "400",
-      "h": 56,
-      "w": 480,
-      "pad": "10px 12px"
+      "tag": "INPUT",
+      "type": "text",
+      "name": "organization",
+      "placeholder": null,
+      "aria": null,
+      "autocomplete": "organization"
+    },
+    {
+      "tag": "INPUT",
+      "type": "tel",
+      "name": "phone",
+      "placeholder": "+",
+      "aria": null,
+      "autocomplete": "tel"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "name": "marketing_consent_flg",
+      "placeholder": null,
+      "aria": null,
+      "autocomplete": null
     }
-  ],
-  "submit": {
-    "tag": "BUTTON",
-    "type": "submit",
-    "text": "Open a business account",
-    "bg": "rgb(125, 51, 246)",
-    "color": "rgb(255, 255, 255)",
-    "border": "1px rgba(0, 0, 0, 0)",
-    "radius": "12px",
-    "size": "16px",
-    "weight": "500",
-    "h": 56,
-    "w": 480,
-    "pad": "0px"
-  },
-  "labels": [
-    "Country",
-    "Business type",
-    "Legal entity type",
-    "Company name",
-    "Phone number",
-    "Get updates & offers from Vivid, tailore"
-  ],
-  "text": "Open a business account\nCountry\nBusiness type\nBusiness type\nRegistered Company\nLegal entity type\nLegal entity type\nGmbH\nCompany name\nPhone number\nGet updates & offers from Vivid, tailored to help you get started\nOpen a business account\nPlease review our website to understand the scope of our services and our Privacy notice for the use and handling of your data."
+  ]
 }

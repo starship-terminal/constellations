@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T16:11:21.839Z",
+  "screenshot": "desktop-menu-language.png",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "note": "Cookie overlay hidden with CSS. No consent button pressed.",
+  "sanitizedSourceUrl": "https://vivid.money/en-eu/",
+  "menu": "language",
+  "lang": {
+    "listbox": null,
+    "expanded": "true"
+  }
+}

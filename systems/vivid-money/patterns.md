@@ -4,7 +4,7 @@ Public pages only. The signed-in app was not opened.
 
 ## Marketing shell
 
-A `#222` promo bar sits above an 80px header. The wordmark is purple. Nav items are 16px weight 500. Login is an outline pill. Get started is a purple pill. On the plans page the same slot says Open an account and uses the same purple pill.
+The header is 80px. On 2026-11-22 the homepage had no promo bar above it. The wordmark is purple. Nav items are 16px weight 500. Login is an outline pill. Get started is a purple pill. On the plans page the same slot says Open an account and uses the same purple pill.
 
 The hero is a 52px Satoshi headline, weight 500, tracking about -0.02em, on a white page. A product render (tablet, phone, purple card) sits to the right. That render is a marketing image, not the signed-in app.
 
@@ -18,7 +18,7 @@ A pill tab track switches Companies, Enterprises and Freelancers. Plan cards sit
 
 ## Login chrome
 
-`business.vivid.money/en/login` is a split page: form on the left, a desk photograph on the right. The heading is Satoshi 32px weight 700. Phone and Email are a small segment. Continue is `#6a26d9` at radius 16px. A cookie dialog covered the page until Reject non-essential was clicked. No identifier was typed.
+`business.vivid.money/en/login` is a split page: form on the left, a desk photograph on the right. Phone and Email are a small segment. Continue is `rgb(106, 38, 217)` (`#6a26d9`), radius 16px, Inter 16px weight 400, height 56px, measured 2026-11-22. The heading font was not re-measured on this pass: the earlier reading was Satoshi 32px weight 700. The cookie dialog was hidden with CSS. Reject non-essential was not clicked. No identifier was typed.
 
 ## What is not here
 
