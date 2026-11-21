@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-11-21T09:55:33.253Z",
+  "screenshot": "pricing-light-default.png",
+  "sanitizedSourceUrl": "https://www.canva.com/pricing/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "title": "Canva Pricing: Compare Free, Pro, Business and Enterprise plans",
+    "urlPath": "/pricing/"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  }
+}

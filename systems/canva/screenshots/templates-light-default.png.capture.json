@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-11-21T09:55:38.267Z",
+  "screenshot": "templates-light-default.png",
+  "sanitizedSourceUrl": "https://www.canva.com/templates/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "title": "Free templates | Canva",
+    "urlPath": "/templates/"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  }
+}

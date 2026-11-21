@@ -1,0 +1,29 @@
+{
+  "capturedAt": "2026-11-21T09:58:18.464Z",
+  "screenshot": "mobile-login-light-empty.png",
+  "sanitizedSourceUrl": "https://www.canva.com/login/",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "title": "Login to your Canva account",
+    "urlPath": "/login/"
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Cookie banner hidden in the page, not answered."
+}

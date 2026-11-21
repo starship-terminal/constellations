@@ -1,0 +1,29 @@
+{
+  "capturedAt": "2026-11-21T09:57:40.367Z",
+  "screenshot": "mobile-home-light-menu.png",
+  "sanitizedSourceUrl": "https://www.canva.com/",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "title": "Canva: Visual Suite for Everyone",
+    "urlPath": "/"
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Cookie banner hidden, not answered. App-install sheet hidden, not opened."
+}

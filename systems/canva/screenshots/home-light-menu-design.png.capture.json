@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-11-21T09:55:25.948Z",
+  "screenshot": "home-light-menu-design.png",
+  "sanitizedSourceUrl": "https://www.canva.com/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "title": "Canva: Visual Suite for Everyone",
+    "urlPath": "/"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  }
+}
