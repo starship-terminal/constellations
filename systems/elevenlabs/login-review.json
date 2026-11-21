@@ -1,0 +1,81 @@
+{
+  "slug": "elevenlabs",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "scope": "Public signed-out site only. The signed-in app is out of scope for this pass.",
+  "session": "Headless Playwright (Chromium). No T3 preview browser. No account, no email, no password, no code, no captcha, no identity provider.",
+  "nothing_submitted": true,
+  "email_typed": false,
+  "password_typed": false,
+  "identity_providers_clicked": [],
+  "forms_submitted": [],
+  "cookie_consent": {
+    "accepted": false,
+    "rejected": false,
+    "control": "Cookiebot script is present (consent.cookiebot.com). The banner was not painted on load in this browser. Footer button labelled Cookie Settings was clicked. It loaded Cookiebot's bc-v5 iframe at 1x1, off screen. No dialog appeared. Escape was pressed. Allow, Accept, and Reject were not clicked."
+  },
+  "walls": [
+    {
+      "url": "https://elevenlabs.io/app/sign-in",
+      "opened_by": "Header link Log in, and again by /app/developers/api-keys which redirected here with ?redirect=%2Fapp%2Fdevelopers%2Fapi-keys",
+      "title": "Welcome back",
+      "asks_for": ["email", "password", "Sign in with Google", "Sign in with Apple", "Sign in with SSO"],
+      "also_visible": ["Forgot your password?", "Don't have an account? Sign up", "Show password"],
+      "stopped": true,
+      "typed": false,
+      "clicked_providers": false,
+      "submitted": false,
+      "screenshots": [
+        "screenshots/site-tree/desktop-sign-in-wall.png",
+        "screenshots/site-tree/phone-sign-in-wall.png",
+        "screenshots/site-tree/desktop-api-keys-wall.png"
+      ],
+      "note": "Matches the known probe: email and password, or Google, Apple, or SSO. No code was sent. The email field was left empty."
+    },
+    {
+      "url": "https://elevenlabs.io/app/sign-up",
+      "opened_by": "Header link Sign up. Phone drawer also links here. Not followed past the empty card.",
+      "title": "Create an account",
+      "asks_for": ["email", "password", "terms checkbox", "Sign up with Google", "Sign up with SSO"],
+      "stopped": true,
+      "typed": false,
+      "clicked_providers": false,
+      "submitted": false,
+      "screenshots": ["screenshots/site-tree/desktop-sign-up-wall.png"],
+      "note": "Account was not created. Terms checkbox was not ticked. Google and SSO were not clicked."
+    },
+    {
+      "url": "https://elevenlabs.io/contact-sales",
+      "opened_by": "Home Contact sales link and the phone drawer. Page loaded. Form was not filled and not submitted.",
+      "title": "Contact Sales",
+      "asks_for": ["name", "work email", "company", "country", "phone country code", "message"],
+      "stopped": true,
+      "typed": false,
+      "submitted": false,
+      "screenshots": ["screenshots/site-tree/desktop-contact-sales.png"],
+      "note": "Country control showed a preselected label. Nothing was typed over it and the form was not submitted."
+    }
+  ],
+  "not_followed": [
+    "Sign in with Google",
+    "Sign in with Apple",
+    "Sign in with SSO",
+    "Sign up with Google",
+    "Sign up with SSO",
+    "Forgot your password?",
+    "Sign in submit",
+    "Sign up submit",
+    "Contact sales submit",
+    "Newsletter and promo subscribe",
+    "Choose Starter, Choose Creator, Choose Pro, Build for free (plan checkout)",
+    "Get API key and API keys (redirects to the sign-in wall)",
+    "Voice chat launcher (opens an agent; not started)",
+    "Play on the home playground (asks the server to generate speech; not pressed this pass)",
+    "Docs Logout (would end a session; not clicked)",
+    "Cookie Allow, Accept, and Reject"
+  ],
+  "viewports": {
+    "desktop": {"requested": "1440x900", "deviceScaleFactor": 1, "png": "1440x900"},
+    "phone": {"requested": "390x844", "deviceScaleFactor": 2, "png": "780x1688"}
+  }
+}

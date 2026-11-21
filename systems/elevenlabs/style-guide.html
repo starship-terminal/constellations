@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ElevenLabs style guide</title>
+<meta name="description" content="ElevenLabs design tokens and the public signed-out surface's components, rendered from tokens.json with the declared custom-property values and the measured computed styles.">
+<style>
+:root {
+  --font-family-display: Waldenburg, "Waldenburg Fallback";
+  --font-family-sans: Inter, "Inter Fallback";
+  --font-family-mono: "Geist Mono","Geist Mono Fallback";
+  --font-weight-regular: 400;
+  --font-weight-medium: 400;
+  --font-weight-semibold: 400;
+  --font-size-display-hero: 48px;
+  --font-size-display: 48px;
+  --font-size-display-tts: 36px;
+  --font-size-display-mobile: 36px;
+  --font-size-h2: 16px;
+  --font-size-page-title: 48px;
+  --font-size-lede: 16px;
+  --font-size-body: 16px;
+  --font-size-menu-item: 14px;
+  --font-size-control: 16px;
+  --font-size-meta: 13px;
+  --font-size-price: 20px;
+  --font-lineHeight-display-hero: 52px;
+  --font-lineHeight-display: 52px;
+  --font-lineHeight-h2: 24px;
+  --font-lineHeight-lede: 24px;
+  --font-lineHeight-body: 24px;
+  --font-lineHeight-control: 24px;
+  --color-brand-ink: #000000;
+  --color-brand-ink-hover: #44403b;
+  --color-brand-ink-pressed: #44403b;
+  --color-brand-accent: #2b7fff;
+  --color-brand-destructive: #ef4444;
+  --color-brand-ring: #0a0a0a;
+  --color-neutral-ink: #000000;
+  --color-neutral-muted: #777169;
+  --color-neutral-white: #ffffff;
+  --color-neutral-wash-hover: rgba(41, 37, 36, 0.05);
+  --color-neutral-wash-pressed: rgba(0, 0, 0, 0.043);
+  --color-neutral-eggshell: #fdfcfc;
+  --color-neutral-page-bg: #fdfcfc;
+  --color-neutral-border: #e5e5e5;
+  --radius-pill: 9999px;
+  --radius-button-ghost: 9999px;
+  --radius-field: 12px;
+  --radius-tab: 9999px;
+  --radius-card: 16px;
+  --radius-card-sm: 12px;
+  --space-inset: 20px;
+  --space-gutter: 12px;
+  --space-section-md: 80px;
+  --measured-focus-ring-light: #2b7fff;
+  --measured-focus-ring-nav: #2b7fff;
+  --measured-control-transition: 150ms;
+  --measured-pressed-scale: 0.98;
+  --text-primary: var(--color-neutral-ink);
+  --text-muted: var(--color-neutral-muted);
+  --text-on-action: #ffffff;
+  --surface-page: var(--color-neutral-eggshell);
+  --surface-card: var(--color-neutral-white);
+  --action-primary-default: var(--color-brand-ink);
+  --action-primary-hover: var(--color-brand-ink-hover);
+  --action-primary-pressed: var(--color-brand-ink-pressed);
+  --accent: var(--color-brand-accent);
+  --border: var(--color-neutral-border);
+  --state-hover: var(--color-neutral-wash-hover);
+  --state-pressed: var(--color-neutral-wash-pressed);
+  --component-button-height: 44px;
+  --component-button-nav-height: 36px;
+  --component-field-height: 46px;
+  --component-field-playground-height: 136px;
+  --component-navcontrol-height: 36px;
+  --component-menurow-height: 44px;
+  --component-header-height: 36px;
+  --component-header-height-mobile: 36px;
+  --component-flyout-height: 565.5px;
+  --component-plancard-height: 739px;
+  --component-authcard-height: 519px;
+  --component-playgroundcard-height: 208px;
+  --sg-sans: "Waldenburg", "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Waldenburg", "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, var(--color-neutral-ink, #1a1a1a)); background: var(--surface-page, var(--color-neutral-eggshell, #fdfcfc)); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #1a1a1a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #1a1a1a); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #1a1a1a); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #1a1a1a); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #1a1a1a); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #1a1a1a); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); overflow: hidden; background: var(--surface-page, var(--color-neutral-eggshell, #fdfcfc)); }
+.promo { display: flex; align-items: center; justify-content: center; gap: 8px; height: 34px; background: #f6f5f5; font-size: 13px; color: var(--color-neutral-ink, #1a1a1a); }
+.promo b { font-weight: 500; }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 64px); padding: 0 20px; font-size: 14px; color: var(--color-neutral-ink, #1a1a1a); border-bottom: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); }
+.navbar .wm { font-weight: 600; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-nav-height, 36px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: var(--radius-pill, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, var(--color-brand-ink, #171717)); color: var(--text-on-action, #fff); }
+.btn.ghost { background: transparent; color: var(--color-neutral-ink, #1a1a1a); }
+.btn.outline { background: transparent; color: var(--color-neutral-ink, #1a1a1a); border-color: var(--border, var(--color-neutral-border, #e5e5e5)); }
+.hero { color: var(--color-neutral-ink, #1a1a1a); padding: 72px 40px 88px; font: 400 56px/1.05 var(--sg-serif); letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font: 400 16px/1.6 var(--sg-sans); color: var(--color-neutral-muted, #5f5f5f); margin: 20px auto 26px; max-width: 52ch; }
+.hero .big-cta { height: var(--component-button-height, 40px); padding: 0 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 12px); }
+.tile .img { height: 120px; background: #f3f2f2; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: 8px; }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { font: 500 26px/1.2 var(--sg-sans); margin: 10px 0 2px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #1a1a1a); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; gap: 4px; font-size: 14px; border: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); }
+.toggle span { padding: 6px 18px; border-radius: 999px; }
+.toggle .on { background: var(--action-primary, var(--color-brand-ink, #171717)); color: #fff; }
+.orb { display: inline-block; width: 64px; height: 64px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #8ec2ff, #2b7fff 60%, #1a4fd0); }
+.field { display: flex; align-items: center; height: var(--component-field-height, 44px); padding: 0 14px; font-size: 14px; background: #fff; border: 1px solid var(--border, var(--color-neutral-border, #e5e5e5)); border-radius: var(--radius-field, 12px); color: var(--color-neutral-muted, #8a8a8a); }
+</style>
+</head>
+<body>
+<main>
+  <h1>ElevenLabs style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">ElevenLabs, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #FDFCFC eggshell page field, the near-black ink on text and the black pill actions, the blue accent the gradients and links paint, the hairline borders, the Waldenburg display / Inter UI / Geist Mono code faces, and the pill radii everywhere controls appear. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from elevenlabs.io on 2026-11-14, signed out, in headless Chromium. The workspace behind /app/sign-in is a documented boundary. Waldenburg, Inter and Geist Mono are licensed served faces and are not loaded here: samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every page tops with a promo strip (the V4 bar on home, a $1-credits countdown on product pages) over the light nav: the wordmark, the Products / Solutions / Customers / Resources flyout triggers, Enterprise and Pricing, and a ghost Log in next to the black Sign up pill.</p>
+  <div class="mock">
+    <div class="promo"><b>V4</b> Meet Eleven v4, our most emotive model yet. <span class="btn outline" style="height:22px;padding:0 10px;font-size:12px">Discover</span></div>
+    <div class="navbar"><span class="wm">IIElevenLabs</span><span>Products</span><span>Solutions</span><span>Customers</span><span>Resources</span><span>Enterprise</span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Log in</span><span class="btn primary">Sign up</span></div>
+    <div class="hero">Bringing technology to life<small>Powering the best enterprises, creators, and developers. From ElevenAgents for customer experience, ElevenCreative for content creation, to the leading AI voice generator.</small><span class="btn primary big-cta">Sign up</span> <span class="btn outline big-cta">Contact sales</span></div>
+  </div>
+
+  <h2 class="sh">The playground</h2>
+  <p class="lead">The home page paints a signed-out text-to-speech demo — a white card holding the script textarea, the flag+language and orb+voice pill controls and the black Play button. The same card pattern repeats on /api with a Demo / Code toggle.</p>
+  <div class="mock" style="padding:20px">
+    <div class="tile" style="max-width:640px;margin:0 auto"><div class="field" style="height:96px;align-items:flex-start;padding-top:12px">In the ancient land of Eldoria, where skies shimmered…</div>
+      <div style="display:flex;gap:10px;margin-top:12px;align-items:center"><span class="btn outline" style="height:32px;font-size:13px">🇺🇸 English</span><span class="btn outline" style="height:32px;font-size:13px"><span class="orb" style="width:18px;height:18px;vertical-align:middle"></span> Spuds Oxley</span><span class="sp" style="flex:1"></span><span class="btn primary" style="height:32px">Play</span></div></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing puts the product pills and the Monthly billing dropdown above white plan cards; each card's action is the black pill — Build for free / Choose X — and Creator carries a Popular badge.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span>ElevenCreative</span><span class="on">ElevenAgents</span><span>ElevenAPI</span></span></div>
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">For hobbyists</span><div class="price">$0</div><span class="sub">/month</span></div>
+      <div class="tile"><b>Starter</b><span class="sub">For creators</span><div class="price">$5</div><span class="sub">/month</span></div>
+      <div class="tile"><b>Creator</b><span class="sub">For professionals</span><div class="price">$22</div><span class="sub">/month</span></div>
+      <div class="tile"><b>Pro</b><span class="sub">For scaling teams</span><div class="price">$99</div><span class="sub">/month</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Choose Creator</span> <span class="btn outline">Contact sales</span></div>
+  </div>
+
+  <h2 class="sh">The auth card</h2>
+  <p class="lead">/app/sign-in centres a bare white card on the eggshell field: Sign in with Google / Apple / SSO, the email and password fields and the disabled Sign in submit. Measured, never used.</p>
+  <div class="mock" style="padding:24px;display:flex;justify-content:center">
+    <div style="width:320px">
+      <b style="font:500 20px/1.3 var(--sg-sans)">Welcome back</b>
+      <div style="display:grid;gap:8px;margin-top:14px"><span class="btn outline">Sign in with Google</span><span class="btn outline">Sign in with Apple</span><span class="btn outline">Sign in with SSO</span><span class="field">Email</span><span class="field">Password</span><span class="btn primary">Sign in</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the measured ink/eggshell/white neutrals and the black-pill action ramp (measured off the real buttons, var-referenced where a custom property resolves the same value) plus the declared shadcn/status hues. Light roles alias the palette. Every public surface painted light — no dark theme was captured.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Controls are pills (9999px); cards take the declared --rounded-card radius; fields a smaller radius. Layout rides on --spacing-inset (1.25rem) and the --section-py-* scale (5rem at md on desktop).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Waldenburg carries the display and headings; Inter (with Waldenburg fallbacks as the page serves them) the UI and body text; Geist Mono the code. Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the Tailwind 4 custom-property layer off the cross-origin bundles and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"display":{"v":"Waldenburg, \"Waldenburg Fallback\"","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json); the @font-face blocks are served from eleven-public-cdn.elevenlabs.io (raw/css-vars.json fonts)","d":"The Waldenburg display family on the hero headline and headings."},"sans":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"computed fontFamily of nav-trigger default (raw/components-computed.json); the @font-face blocks are served from eleven-public-cdn.elevenlabs.io (raw/css-vars.json fonts)","d":"The UI sans the nav, buttons and body text paint (Inter/Waldenburg as the page serves it)."},"mono":{"v":"\"Geist Mono\",\"Geist Mono Fallback\"","t":"fontFamily","s":"declared --font-geist-mono on .__variable_7e8bea (raw/css-vars.json theme rules)","d":"The monospace stack (Geist Mono) for code."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-sub default (raw/components-computed.json)","d":"The regular body/lede weight."},"medium":{"v":400,"t":"fontWeight","s":"computed fontWeight of nav-trigger default (raw/components-computed.json)","d":"The medium weight on nav items and controls."},"semibold":{"v":400,"t":"fontWeight","s":"computed fontWeight of plan-cta default (raw/components-computed.json)","d":"The semibold weight on button labels."}},"size":{"display-hero":{"v":"48px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The hero display size."},"display":{"v":"48px","t":"dimension","s":"computed fontSize of pricing-h1 default (raw/components-computed.json)","d":"The page-title display (pricing)."},"display-tts":{"v":"36px","t":"dimension","s":"computed fontSize of tts-display default (raw/components-computed.json)","d":"The product-page display (text-to-speech)."},"display-mobile":{"v":"36px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The display size at 390 wide."},"h2":{"v":"16px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The section heading."},"page-title":{"v":"48px","t":"dimension","s":"computed fontSize of api-h1 default (raw/components-computed.json)","d":"The API page title."},"lede":{"v":"16px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The hero lede."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of tts-textarea default (raw/components-computed.json)","d":"The playground textarea/body size."},"menu-item":{"v":"14px","t":"dimension","s":"computed fontSize of m-nav-item default (raw/components-computed.json)","d":"The mobile-menu rows."},"control":{"v":"16px","t":"dimension","s":"computed fontSize of plan-cta default (raw/components-computed.json)","d":"The control/button text."},"meta":{"v":"13px","t":"dimension","s":"computed fontSize of plan-badge default (raw/components-computed.json)","d":"The small meta/badge text."},"price":{"v":"20px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"The plan price figure."}},"lineHeight":{"display-hero":{"v":"52px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"Hero display leading."},"display":{"v":"52px","t":"dimension","s":"computed lineHeight of pricing-h1 default (raw/components-computed.json)","d":"Page-title leading."},"h2":{"v":"24px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"Heading leading."},"lede":{"v":"24px","t":"dimension","s":"computed lineHeight of hero-sub default (raw/components-computed.json)","d":"Lede leading."},"body":{"v":"24px","t":"dimension","s":"computed lineHeight of tts-textarea default (raw/components-computed.json)","d":"Body leading."},"control":{"v":"24px","t":"dimension","s":"computed lineHeight of plan-cta default (raw/components-computed.json)","d":"Control leading."}}},"color":{"brand":{"ink":{"v":"#000000","t":"color","s":"computed backgroundColor of signup-cta default (raw/components-computed.json)","d":"The near-black action fill: the Sign up pill, every plan CTA, the playground Play button."},"ink-hover":{"v":"#44403b","t":"color","s":"computed backgroundColor of signup-cta hover (raw/components-computed.json)","d":"The hover step the black pills take."},"ink-pressed":{"v":"#44403b","t":"color","s":"computed backgroundColor of signup-cta pressed (raw/components-computed.json)","d":"The pressed step."},"accent":{"v":"#2b7fff","t":"color","s":"declared caret-color #2b7fff on the Tailwind utility class .caret-focus (raw/css-vars.json palette); the blue of the gradients and links","d":"The blue accent (Tailwind blue-500) the gradients, links and interactive UI paint."},"destructive":{"v":"#ef4444","t":"color","s":"css-var --shadcn-destructive resolved light (raw/css-vars.json): an 'H S% L%' channel triplet converted here","d":"The declared destructive red (hsl 0 84.2% 60.2%)."},"ring":{"v":"#0a0a0a","t":"color","s":"css-var --shadcn-ring resolved light (raw/css-vars.json): an 'H S% L%' channel triplet converted here","d":"The declared focus-ring colour (hsl 0 0% 3.9% — near-black)."}},"neutral":{"ink":{"v":"#000000","t":"color","s":"computed color of nav-link default (raw/components-computed.json)","d":"The near-black ink on nav text, headings and button labels."},"muted":{"v":"#777169","t":"color","s":"computed color of menu-link default (raw/components-computed.json); menu-link: read from the wrong element (its default and pressed states caught a same-href link far down the page, not the flyout's); recapture needed","d":"The warm grey on flyout links, the product pill, the billing select and secondary text."},"white":{"v":"#ffffff","t":"color","s":"computed backgroundColor of signin-card default (raw/components-computed.json)","d":"The #ffffff surface: cards, the flyout panel, the auth card."},"wash-hover":{"v":"rgba(41, 37, 36, 0.05)","t":"color","s":"painted bg of nav-link hover's inner layer (raw/components-computed.json paint)","d":"The 5% warm-ink wash a nav item's inner chip takes on hover."},"wash-pressed":{"v":"rgba(0, 0, 0, 0.043)","t":"color","s":"painted bg of oauth-google pressed's inner layer (raw/components-computed.json paint)","d":"The deeper wash a ghost/OAuth button takes on pressed (nav items keep the hover wash)."},"eggshell":{"v":"#fdfcfc","t":"color","s":"css-var --eggshell (light); css-var --eggshell resolved light (raw/css-vars.json)","d":"The #FDFCFC eggshell page field."},"page-bg":{"v":"#fdfcfc","t":"color","s":"css-var --page-background-color (light); css-var --page-background-color resolved light (raw/css-vars.json)","d":"The page background role, bound to --eggshell."},"border":{"v":"#e5e5e5","t":"color","s":"css-var --shadcn-border resolved light (raw/css-vars.json): an 'H S% L%' channel triplet converted here","d":"The declared hairline border grey (hsl 0 0% 89.8%)."}}},"radius":{"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of signup-cta default (raw/components-computed.json)","d":"The pill radius on buttons and CTAs (likely 9999px)."},"button-ghost":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of contact-sales default (raw/components-computed.json)","d":"The ghost-button radius."},"field":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of email-field default (raw/components-computed.json)","d":"The auth-field radius."},"tab":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of tool-tab default (raw/components-computed.json)","d":"The showcase-tab radius."},"card":{"v":"16px","t":"dimension","s":"css-var --rounded-card (light); css-var --rounded-card resolved light (raw/css-vars.json)","d":"The declared card radius."},"card-sm":{"v":"12px","t":"dimension","s":"css-var --rounded-card-sm (light); css-var --rounded-card-sm resolved light (raw/css-vars.json)","d":"The declared small-card radius."}},"space":{"inset":{"v":"20px","t":"dimension","s":"css-var --spacing-inset (light); css-var --spacing-inset resolved light (raw/css-vars.json)","d":"The declared inset padding (1.25rem)."},"gutter":{"v":"12px","t":"dimension","s":"css-var --spacing-gutter (light); css-var --spacing-gutter resolved light (raw/css-vars.json)","d":"The declared content gutter."},"section-md":{"v":"80px","t":"dimension","s":"css-var --section-py-md (light); css-var --section-py-md resolved light (raw/css-vars.json)","d":"The declared medium section vertical padding (5rem at desktop)."}},"measured":{"focus-ring-light":{"v":"#2b7fff","t":"color","s":"computed outlineColor of signup-cta focus-visible (raw/components-computed.json)","d":"The keyboard focus ring on light surfaces."},"focus-ring-nav":{"v":"#2b7fff","t":"color","s":"painted outline of nav-trigger focus-visible's inner layer (raw/components-computed.json paint): 1px solid rgb(43, 127, 255) offset 2px","d":"The keyboard ring on nav controls — drawn on the inner chip, not the root (whose 2px outline stays transparent)."},"control-transition":{"v":"150ms","t":"duration","s":"computed transition of plan-cta default (raw/components-computed.json)","d":"The control transition (background-color etc.). (background-color, color, box-shadow, border-color)"},"pressed-scale":{"v":0.98,"t":"number","s":"pressed rect / default rect of plan-cta (raw/components-computed.json)","d":"The scale a pressed button takes."}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Body and display ink on light."},"muted":{"v":"{color.neutral.muted}","t":"color","s":"role alias over the core palette","d":"Secondary text on light."},"on":{"action":{"v":"#ffffff","t":"color","s":"computed color of the ink action labels (raw/components-computed.json)","d":"White labels on the ink fill."}}},"surface":{"page":{"v":"{color.neutral.eggshell}","t":"color","s":"role alias over the core palette","d":"The #FDFCFC eggshell page field."},"card":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"Cards, the flyout panel, the auth card."}},"action":{"primary":{"default":{"v":"{color.brand.ink}","t":"color","s":"role alias over the core palette","d":"The near-black action fill."},"hover":{"v":"{color.brand.ink-hover}","t":"color","s":"role alias over the core palette","d":"The hover step."},"pressed":{"v":"{color.brand.ink-pressed}","t":"color","s":"role alias over the core palette","d":"The pressed step."}}},"accent":{"v":"{color.brand.accent}","t":"color","s":"role alias over the core palette","d":"The blue accent on gradients, links and interactive UI."},"border":{"v":"{color.neutral.border}","t":"color","s":"role alias over the core palette","d":"The hairline border grey."},"state":{"hover":{"v":"{color.neutral.wash-hover}","t":"color","s":"role alias over the core palette","d":"The hover wash on ghost controls."},"pressed":{"v":"{color.neutral.wash-pressed}","t":"color","s":"role alias over the core palette","d":"The pressed wash."}},"component":{"button":{"height":{"v":"44px","t":"dimension","s":"computed height of plan-cta default (raw/components-computed.json)","d":"The standard button height (plan CTAs)."}},"button-nav":{"height":{"v":"36px","t":"dimension","s":"computed height of signup-cta default (raw/components-computed.json)","d":"The header action height."}},"field":{"height":{"v":"46px","t":"dimension","s":"computed height of email-field default (raw/components-computed.json)","d":"The auth-field height."}},"field-playground":{"height":{"v":"136px","t":"dimension","s":"computed height of tts-textarea default (raw/components-computed.json)","d":"The playground textarea height."}},"navcontrol":{"height":{"v":"36px","t":"dimension","s":"computed height of nav-trigger default (raw/components-computed.json)","d":"The header control height."}},"menurow":{"height":{"v":"44px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"The mobile-menu row."}},"header":{"height":{"v":"36px","t":"dimension","s":"computed height of nav default (raw/components-computed.json)","d":"The desktop nav height."},"height-mobile":{"v":"36px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The mobile header height."}},"flyout":{"height":{"v":"565.5px","t":"dimension","s":"computed height of nav-dropdown default (raw/components-computed.json)","d":"The Products flyout panel height."}},"plancard":{"height":{"v":"739px","t":"dimension","s":"computed height of plan-card default (raw/components-computed.json)","d":"The plan card height."}},"authcard":{"height":{"v":"519px","t":"dimension","s":"computed height of signin-card default (raw/components-computed.json)","d":"The sign-in card height."}},"playgroundcard":{"height":{"v":"208px","t":"dimension","s":"computed height of tts-card default (raw/components-computed.json)","d":"The playground card height."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) if (t.t === 'shadow') e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) if (t.t !== 'shadow') m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — ElevenLabs</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
