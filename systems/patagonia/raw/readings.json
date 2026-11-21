@@ -1,0 +1,182 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.patagonia.com/home/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "signedOut": true,
+  "typed": false,
+  "body": {
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Ridgeway Sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "300",
+    "lineHeight": "24.5px"
+  },
+  "utilityBar": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "height": "48px",
+    "link": {
+      "text": "Activism",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "12px",
+      "fontWeight": "300",
+      "lineHeight": "18px"
+    }
+  },
+  "header": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "height": "112px"
+  },
+  "navLink": {
+    "text": "Gift Guide",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "fontWeight": "300",
+    "lineHeight": "24px",
+    "height": "48px"
+  },
+  "search": {
+    "text": "Search",
+    "backgroundColor": "rgb(245, 245, 245)",
+    "color": "rgb(74, 74, 74)",
+    "fontSize": "14px",
+    "fontWeight": "300",
+    "borderRadius": "40px",
+    "height": "40px",
+    "width": "160px",
+    "submitted": false
+  },
+  "hero": {
+    "eyebrow": {
+      "text": "GIFT GUIDE",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "300"
+    },
+    "h1": {
+      "text": "Give ’em what they really want.",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "64px",
+      "fontWeight": "500",
+      "lineHeight": "70.4px",
+      "letterSpacing": "-1.28px"
+    },
+    "chip": {
+      "text": "Women’s",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "borderRadius": "30px",
+      "height": "39px",
+      "clicked": false
+    }
+  },
+  "footer": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "email": {
+      "placeholder": "Email Address",
+      "value": "",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "height": "30px"
+    },
+    "signMeUp": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "borderRadius": "30px",
+      "height": "39px",
+      "clicked": false
+    }
+  },
+  "product": {
+    "url": "https://www.patagonia.com/product/mens-better-sweater-fleece-jacket/25528.html",
+    "title": "Men's Better Sweater® Fleece Jacket",
+    "h1": {
+      "fontSize": "32px",
+      "fontWeight": "500",
+      "color": "rgb(0, 0, 0)",
+      "lineHeight": "70px"
+    },
+    "price": {
+      "text": "$169",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "14px",
+      "fontWeight": "300"
+    },
+    "addToBag": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "borderRadius": "30px",
+      "height": "56px",
+      "clicked": false
+    },
+    "shopNew": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "borderRadius": "32px",
+      "height": "48px",
+      "fontWeight": "300"
+    }
+  },
+  "login": {
+    "url": "https://www.patagonia.com/account/login/",
+    "title": "Log in - Patagonia Account",
+    "heading": {
+      "text": "Log in.",
+      "fontSize": "40px",
+      "fontWeight": "500",
+      "color": "rgb(0, 0, 0)"
+    },
+    "email": {
+      "name": "loginEmail",
+      "type": "email",
+      "placeholder": "me@email.com",
+      "value": "",
+      "required": true,
+      "fontSize": "16px",
+      "height": "30px"
+    },
+    "password": {
+      "name": "loginPassword",
+      "type": "password",
+      "value": "",
+      "required": true
+    },
+    "submit": {
+      "text": "Log in",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "30px",
+      "height": "51px",
+      "fontWeight": "500",
+      "clicked": false
+    },
+    "identityProviders": []
+  },
+  "signup": {
+    "url": "https://www.patagonia.com/account/login/?action=register",
+    "title": "Register - Patagonia Account",
+    "heading": "Create an Account.",
+    "fields": ["First Name", "Last Name", "Email", "Confirm Email", "Password", "Confirm Password"],
+    "values": "",
+    "submit": {
+      "text": "Create Account",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "30px",
+      "height": "51px",
+      "clicked": false
+    },
+    "recaptchaPresent": true,
+    "captchaSolved": false,
+    "identityProviders": []
+  }
+}
