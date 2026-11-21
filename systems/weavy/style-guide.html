@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figma Weave style guide</title>
+<style>
+:root {
+  --color-brand-lemon: #f7ff9e;
+  --color-brand-lemon-100: #f7ffa8;
+  --color-brand-lemon-40: #fcffdc;
+  --color-brand-rich-black: #252525;
+  --color-brand-richer-black: #212126;
+  --color-brand-black: #000000;
+  --color-brand-white: #ffffff;
+  --color-brand-azure: #f0ffff;
+  --color-brand-ash-grey: #aeb3a9;
+  --color-brand-eggshell: #eaeada;
+  --color-brand-spring-wood: #f7f7f0;
+  --color-brand-moon-mist: #dcdcc2;
+  --color-brand-french-gray: #c1cdd5;
+  --color-brand-pink-lavender: #cc9de4;
+  --color-brand-stone-grey: #656568;
+  --color-brand-paper: #fafafa;
+  --color-brand-ink: #111111;
+  --color-brand-dark: #1a1a1a;
+  --color-brand-pink: #ff9bff;
+  --color-brand-mint: #2de1b0;
+  --color-brand-night: #0d0d11;
+  --color-brand-cream: #f7f3e8;
+  --color-brand-grey-100: #eaeef1;
+  --color-brand-grey-400: #b4b4af;
+  --color-brand-grey-500: #8e8e8e;
+  --color-brand-surface-grey-300: #f5f5f6;
+  --color-brand-surface-grey-400: #ececec;
+  --color-brand-soft-grey-200: #d0d0d2;
+  --color-brand-french-gray-45: rgba(193, 206, 213, 0.451);
+  --color-brand-white-30: rgba(255, 255, 255, 0.302);
+  --color-brand-transparent-surface: rgba(255, 255, 255, 0);
+  --fontFamily-sans: Figma Sans Regular, Arial, sans-serif;
+  --fontFamily-sans-vf: Figma Sans Vf, Arial, sans-serif;
+  --fontFamily-meta: Dmsans, Arial, sans-serif;
+  --fontSize-display: 94px;
+  --fontSize-heading: 94px;
+  --fontSize-title: 56px;
+  --fontSize-body: 14.4px;
+  --fontSize-label: 12px;
+  --fontSize-caption: 13px;
+  --fontSize-button: 14.4px;
+  --fontSize-cta: 40px;
+  --lineHeight-display: 79.9px;
+  --lineHeight-heading: 82px;
+  --lineHeight-title: 67.2px;
+  --lineHeight-body: 20px;
+  --lineHeight-label: 16px;
+  --lineHeight-caption: 16.9px;
+  --lineHeight-button: 20px;
+  --lineHeight-cta: 40px;
+  --fontWeight-regular: 400;
+  --fontWeight-bold: 700;
+  --typography-display: var(--fontWeight-regular) var(--fontSize-display)/var(--lineHeight-display) var(--fontFamily-sans);
+  --typography-heading: var(--fontWeight-regular) var(--fontSize-heading)/var(--lineHeight-heading) var(--fontFamily-sans);
+  --typography-body: var(--fontWeight-regular) var(--fontSize-body)/var(--lineHeight-body) var(--fontFamily-sans);
+  --typography-label: var(--fontWeight-regular) var(--fontSize-label)/var(--lineHeight-label) var(--fontFamily-sans);
+  --typography-caption: var(--fontWeight-regular) var(--fontSize-caption)/var(--lineHeight-caption) var(--fontFamily-meta);
+  --typography-button: var(--fontWeight-regular) var(--fontSize-button)/var(--lineHeight-button) var(--fontFamily-sans);
+  --spacing-2: 2px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-11: 10.8px;
+  --spacing-13: 12.76px;
+  --spacing-21: 21.07px;
+  --spacing-22: 21.6px;
+  --spacing-24: 24.36px;
+  --radius-badge: 2px;
+  --radius-control: 4px;
+  --radius-nav: 8px;
+  --radius-search: 8px;
+  --radius-card: 13px;
+  --radius-pill: 144px;
+  --borderWidth-hairline: 1px;
+  --duration-nav: 200ms;
+  --easing-nav: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --size-nav-cta-height: 89.9px;
+  --size-plan-button-height: 41.6px;
+  --size-switch: 32px;
+  --size-audience-tab-height: 38px;
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --layout-content: 1310px;
+  --layout-breakpoint-tablet: 991px;
+  --layout-breakpoint-phone: 767px;
+  --layout-breakpoint-small: 479px;
+  --color-help-card: #232329;
+  --color-help-card-border: rgba(255, 255, 255, 0.15);
+  --color-search-text: #1a1a1a;
+  --color-page: #ffffff;
+  --color-surface: #f5f5f6;
+  --color-surface-muted: #ececec;
+  --color-inverse: #252525;
+  --color-ink: #000000;
+  --color-text: #333333;
+  --color-text-on-inverse: #ffffff;
+  --color-text-on-accent-hover: #f4f4f4;
+  --color-muted: #656568;
+  --color-accent: #f7ff9e;
+  --color-accent-hover: #252525;
+  --color-button: #252525;
+  --color-button-hover: #eaf297;
+  --color-button-pressed: #f7ff9e;
+  --color-button-text-hover: #2f2f33;
+  --color-tab-selected: #212126;
+  --color-border: #e6e6e6;
+  --color-border-strong: #d0d0d2;
+  --shadow-card: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --component-button-primary-background: var(--color-button);
+  --component-button-primary-text: var(--color-text-on-inverse);
+  --component-button-primary-radius: var(--radius-control);
+  --component-button-primary-height: var(--size-plan-button-height);
+  --component-nav-cta-background: var(--color-accent);
+  --component-nav-cta-text: var(--color-ink);
+  --component-nav-cta-height: var(--size-nav-cta-height);
+  --component-card-background: var(--color-surface);
+  --component-card-radius: var(--radius-card);
+  --component-card-border: var(--color-border);
+  color-scheme: light;
+  --sg-sans: "Figma Sans Regular", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-page); color: var(--color-text); font: 400 14.4px/20px var(--sg-sans); }
+header { padding: 20px 28px; display: flex; justify-content: space-between; align-items: center; background: var(--color-inverse); color: var(--color-text-on-inverse); }
+header h1 { margin: 0; font-size: 20px; font-weight: 400; }
+.cta { background: var(--color-accent); color: var(--color-ink); padding: 10px 16px; font-size: 28px; line-height: 1; text-decoration: none; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
+h2 { font-size: 28px; font-weight: 400; letter-spacing: -0.8px; margin: 36px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; }
+.sw { width: 180px; }
+.sw i { display: block; height: 56px; border: 1px solid var(--color-border); }
+.sw b, .sw span { display: block; font-size: 12px; line-height: 16px; }
+.sw span { color: var(--color-muted); }
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 21px; width: 280px; }
+.card h3 { margin: 0 0 8px; font-size: 22px; font-weight: 400; }
+.btn { display: inline-block; background: var(--color-button); color: var(--color-text-on-inverse); border-radius: var(--radius-control); padding: 10.8px 21.6px; text-decoration: none; }
+.badge { background: var(--color-accent); color: rgba(0,0,0,.9); border-radius: var(--radius-badge); padding: 2px 6px; font-family: Dmsans, Arial, sans-serif; font-size: 13px; }
+.tab { background: var(--color-tab-selected); color: white; border-radius: var(--radius-control); padding: 8px 16px; }
+.note { color: var(--color-muted); max-width: 68ch; }
+.type-display { font-size: var(--fontSize-display); line-height: var(--lineHeight-display); letter-spacing: -4.32px; color: var(--color-ink); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Figma Weave</h1>
+  <a class="cta" href="#components">Start Now</a>
+</header>
+<main>
+  <p class="note">Public marketing surface of weavy.ai, captured 2026-11-21. One theme. Values come from tokens.json. Figma Sans is not loaded here, so the page falls back to Arial.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p class="type-display">Figma Weave</p>
+  <p>Body at 14.4px. Nav labels are 12px uppercase.</p>
+  <h2 id="components">Components</h2>
+  <div class="row">
+    <div class="card">
+      <span class="badge">Save 30%</span>
+      <h3>Free</h3>
+      <p>Explore Figma Weave's possibilities</p>
+      <a class="btn" href="#components">Start free</a>
+    </div>
+    <div>
+      <span class="tab">Individuals</span>
+      <p class="note">The plan button hover fill is #eaf297. The nav Start Now hover fill is #252525 with #f4f4f4 text.</p>
+    </div>
+  </div>
+</main>
+<script>
+const roles = [
+  ["page", "--color-page"], ["surface", "--color-surface"], ["inverse", "--color-inverse"],
+  ["text", "--color-text"], ["ink", "--color-ink"], ["muted", "--color-muted"],
+  ["accent", "--color-accent"], ["button", "--color-button"], ["border", "--color-border"]
+];
+const root = document.getElementById("swatches");
+for (const [name, prop] of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:var(${prop})"></i><b>${name}</b><span>${getComputedStyle(document.documentElement).getPropertyValue(prop)}</span>`;
+  root.append(el);
+}
+</script>
+</body>
+</html>
