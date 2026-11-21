@@ -2,7 +2,9 @@
 
 A token set and component reference for Kitchen.co's public marketing site and its signed-in workspace. Kitchen.co is client-portal software for agencies: conversations, tasks, invoices and deliverables in one workspace. This package was read from kitchen.co on 2026-11-18, in headless Chromium at 1440 x 900 and 390 x 844. Public pages were signed out. The workspace was captured on a free account after email signup. It is not Kitchen Stories (kitchenstories.com).
 
-Captured public pages: home, features, pricing, buy, reviews, tutorials, integrations, how it works, about, blog, the login workspace gate, get started, get a demo, and the cookie policy. Phone width on marketing: home (including the open menu), pricing, features, login and reviews.
+Public pages were refreshed on 2026-11-21, signed out, and stopped at the login wall. [site-tree.md](site-tree.md) maps the homepage controls. [login-review.json](login-review.json) records the walls. The signed-in workspace shots from 2026-11-18 were left as they were.
+
+Captured public pages: home (Solutions menu, hero Conversations tab, cookie settings), features, pricing, buy, reviews, tutorials, integrations, how it works, benefits, about, our story, blog, affiliate program, the four Solutions pages, terms, privacy, DPA, and the cookie policy. Walls, photographed at rest and not submitted: login workspace, find your workspace, get started, get a demo. Phone width on marketing: home (including the open menu), pricing, features, login and reviews.
 
 Captured workspace pages: Home empty, Inbox chats empty, Proposals (DocuMocu dialog, not connected), Clients empty, Tasks table empty, Library tree, More menu, Settings general / members / billing / theme, My Tasks empty, and create-workspace. Phone width is a separate client portal: Home, Inbox, Clients, Profile. Invites, creates, Upgrade, Buy Lifetime Access, DocuMocu connect/buy and Stripe checkout were not submitted.
 

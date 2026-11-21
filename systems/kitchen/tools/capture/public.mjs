@@ -10,7 +10,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from './screenshot.mjs';
-import { chromium, UA, UA_MOBILE, BASE, hideConsent, PAGES } from './lib.mjs';
+import { chromium, UA, UA_MOBILE, BASE, hideConsent } from './lib.mjs';
 
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'kitchen', 'raw-shots');
@@ -86,6 +86,31 @@ const desktop = {
       await p.mouse.move(10, 400);
       await wait(p, 200);
     });
+    await step('hero-tab', async () => {
+      const tab = p.locator('a[href="#hero-preview-conversations"]').first();
+      if (await tab.count()) {
+        await tab.scrollIntoViewIfNeeded();
+        await tab.click();
+        await wait(p, 500);
+        await S.view('hero-conversations');
+      }
+    });
+    await step('cookie-more', async () => {
+      await p.evaluate(() => {
+        const simple = document.querySelector('.cookie-banner__view--simple');
+        const settings = document.querySelector('.cookie-banner__view--settings');
+        const banner = document.querySelector('.cookie-banner');
+        if (banner) {
+          banner.style.setProperty('display', 'block', 'important');
+          banner.style.setProperty('visibility', 'visible', 'important');
+        }
+        if (simple) simple.hidden = true;
+        if (settings) settings.hidden = false;
+      });
+      const settings = p.locator('.cookie-banner__view--settings');
+      if (await settings.count()) await S.view('cookie-more');
+      await hideConsent(p);
+    });
   } },
   features: { path: '/features', run: async (p, S) => { await S.view('default'); await S.full(); } },
   pricing: { path: '/pricing', run: async (p, S) => {
@@ -112,8 +137,19 @@ const desktop = {
   reviews: { path: '/reviews', run: async (p, S) => { await S.view('default'); await S.full(); } },
   tutorials: { path: '/tutorials', run: async (p, S) => { await S.view('default'); } },
   integrations: { path: '/integrations', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'how-it-works': { path: '/how-it-works', run: async (p, S) => { await S.view('default'); } },
+  'how-it-works': { path: '/how-it-works', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  benefits: { path: '/benefits', run: async (p, S) => { await S.view('default'); await S.full(); } },
   about: { path: '/about', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'our-story': { path: '/our-story', run: async (p, S) => { await S.view('default'); } },
+  'affiliate-program': { path: '/affiliate-program', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'for-creative-agencies': { path: '/for-creative-agencies', run: async (p, S) => { await S.view('default'); } },
+  'for-accounting-agencies': { path: '/for-accounting-agencies', run: async (p, S) => { await S.view('default'); } },
+  'for-law-firms': { path: '/for-law-firms', run: async (p, S) => { await S.view('default'); } },
+  'for-freelancers': { path: '/for-freelancers', run: async (p, S) => { await S.view('default'); } },
+  'login-find': { path: '/login/find', run: async (p, S) => { await S.view('default'); } },
+  terms: { path: '/legal/terms', run: async (p, S) => { await S.view('default'); } },
+  privacy: { path: '/legal/privacy', run: async (p, S) => { await S.view('default'); } },
+  dpa: { path: '/legal/dpa', run: async (p, S) => { await S.view('default'); } },
   blog: { path: '/blog', run: async (p, S) => {
     await S.view('default');
     await step('search-focused', async () => {
