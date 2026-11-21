@@ -1,0 +1,260 @@
+{
+  "source": "https://getfernand.com/",
+  "capturedAt": "2026-11-21T02:04:00.489Z",
+  "theme": {
+    "themeColor": "#ffffff",
+    "bodyBg": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(19, 30, 64)",
+    "bodyFont": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+    "h1": {
+      "fontFamily": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "fontSize": "38px",
+      "fontWeight": "400",
+      "lineHeight": "48px",
+      "color": "rgb(26, 32, 53)",
+      "letterSpacing": "normal"
+    }
+  },
+  "resolved": {
+    "light": {
+      "--white": {
+        "value": "#fff"
+      },
+      "--grey": {
+        "value": "#9fa3b5"
+      },
+      "--grey-light": {
+        "value": "#f4f5f7"
+      },
+      "--grey-medium": {
+        "value": "#717583"
+      },
+      "--grey-strong": {
+        "value": "#3d4259"
+      },
+      "--black": {
+        "value": "#131e40"
+      },
+      "--blue": {
+        "value": "#00a0ff"
+      },
+      "--blue-pale": {
+        "value": "#e8f5ff"
+      },
+      "--orange": {
+        "value": "#fb8c3b"
+      },
+      "--red": {
+        "value": "#dc2626"
+      },
+      "--red-pale": {
+        "value": "#fee2e2"
+      },
+      "--green": {
+        "value": "#2dbd33"
+      },
+      "--green-dark": {
+        "value": "#33c27f"
+      },
+      "--border": {
+        "value": "#eaecf8"
+      },
+      "--border-strong": {
+        "value": "#e4e6eb"
+      },
+      "--wpg-bg": {
+        "value": ""
+      },
+      "--wpg-text": {
+        "value": ""
+      },
+      "--wpg-sub": {
+        "value": ""
+      },
+      "--wpg-border": {
+        "value": ""
+      },
+      "--wpg-muted": {
+        "value": ""
+      },
+      "--wpg-link": {
+        "value": ""
+      },
+      "--wpg-hover": {
+        "value": ""
+      },
+      "--wpg-search": {
+        "value": ""
+      },
+      "--wpg-powered": {
+        "value": ""
+      }
+    }
+  },
+  "app": [
+    {
+      "file": "inline",
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--white": "#fff",
+        "--grey": "#9fa3b5",
+        "--grey-light": "#f4f5f7",
+        "--grey-medium": "#717583",
+        "--grey-strong": "#3d4259",
+        "--black": "#131e40",
+        "--blue": "#00a0ff",
+        "--blue-pale": "#e8f5ff",
+        "--orange": "#fb8c3b",
+        "--red": "#dc2626",
+        "--red-pale": "#fee2e2",
+        "--green": "#2dbd33",
+        "--green-dark": "#33c27f",
+        "--border": "#eaecf8",
+        "--border-strong": "#e4e6eb"
+      }
+    },
+    {
+      "file": "inline",
+      "selector": ".widget-pg__widget",
+      "context": [],
+      "properties": {
+        "--wpg-bg": "#fff",
+        "--wpg-text": "#1a2035",
+        "--wpg-sub": "#848894",
+        "--wpg-border": "#f1f3f6",
+        "--wpg-muted": "#9498a5",
+        "--wpg-link": "#2c3145",
+        "--wpg-hover": "#f8f9fc",
+        "--wpg-search": "#f3f4f8",
+        "--wpg-powered": "#c2c5d2"
+      }
+    },
+    {
+      "file": "inline",
+      "selector": ".widget-pg__widget--dark",
+      "context": [],
+      "properties": {
+        "--wpg-bg": "#1e2235",
+        "--wpg-text": "#e8eaf0",
+        "--wpg-sub": "hsla(0,0%,100%,.4)",
+        "--wpg-border": "hsla(0,0%,100%,.08)",
+        "--wpg-muted": "hsla(0,0%,100%,.35)",
+        "--wpg-link": "hsla(0,0%,100%,.82)",
+        "--wpg-hover": "hsla(0,0%,100%,.05)",
+        "--wpg-search": "hsla(0,0%,100%,.07)",
+        "--wpg-powered": "hsla(0,0%,100%,.2)"
+      }
+    }
+  ],
+  "wordpress": [
+    {
+      "selector": ":root",
+      "names": [
+        "--wp--preset--aspect-ratio--square",
+        "--wp--preset--aspect-ratio--4-3",
+        "--wp--preset--aspect-ratio--3-4",
+        "--wp--preset--aspect-ratio--3-2",
+        "--wp--preset--aspect-ratio--2-3",
+        "--wp--preset--aspect-ratio--16-9",
+        "--wp--preset--aspect-ratio--9-16",
+        "--wp--preset--color--black",
+        "--wp--preset--color--cyan-bluish-gray",
+        "--wp--preset--color--white",
+        "--wp--preset--color--pale-pink",
+        "--wp--preset--color--vivid-red",
+        "--wp--preset--color--luminous-vivid-orange",
+        "--wp--preset--color--luminous-vivid-amber",
+        "--wp--preset--color--light-green-cyan",
+        "--wp--preset--color--vivid-green-cyan",
+        "--wp--preset--color--pale-cyan-blue",
+        "--wp--preset--color--vivid-cyan-blue",
+        "--wp--preset--color--vivid-purple",
+        "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple",
+        "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan",
+        "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange",
+        "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red",
+        "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray",
+        "--wp--preset--gradient--cool-to-warm-spectrum",
+        "--wp--preset--gradient--blush-light-purple",
+        "--wp--preset--gradient--blush-bordeaux",
+        "--wp--preset--gradient--luminous-dusk",
+        "--wp--preset--gradient--pale-ocean",
+        "--wp--preset--gradient--electric-grass",
+        "--wp--preset--gradient--midnight",
+        "--wp--preset--font-size--small",
+        "--wp--preset--font-size--medium",
+        "--wp--preset--font-size--large",
+        "--wp--preset--font-size--x-large",
+        "--wp--preset--spacing--20",
+        "--wp--preset--spacing--30",
+        "--wp--preset--spacing--40",
+        "--wp--preset--spacing--50",
+        "--wp--preset--spacing--60",
+        "--wp--preset--spacing--70",
+        "--wp--preset--spacing--80",
+        "--wp--preset--shadow--natural",
+        "--wp--preset--shadow--deep",
+        "--wp--preset--shadow--sharp",
+        "--wp--preset--shadow--outlined",
+        "--wp--preset--shadow--crisp"
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Inter",
+      "weight": "300",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "italic",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "500",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "italic",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "italic",
+      "file": "inline"
+    }
+  ],
+  "errors": [
+    {
+      "file": "https://messenger.getfernand.com/css/onload.min.css",
+      "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules"
+    }
+  ]
+}

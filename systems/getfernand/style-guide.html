@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fernand style guide</title>
+<style>
+:root {
+  --color-white: #ffffff;
+  --color-grey: #9fa3b5;
+  --color-grey-light: #f4f5f7;
+  --color-grey-medium: #717583;
+  --color-grey-strong: #3d4259;
+  --color-black: #131e40;
+  --color-blue: #00a0ff;
+  --color-blue-pale: #e8f5ff;
+  --color-orange: #fb8c3b;
+  --color-red: #dc2626;
+  --color-red-pale: #fee2e2;
+  --color-green: #2dbd33;
+  --color-green-dark: #33c27f;
+  --color-border: #eaecf8;
+  --color-border-strong: #e4e6eb;
+  --font-family-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius-control: 6px;
+  --space-control-pad-y: 8px;
+  --space-control-pad-x: 12px;
+  --page: #ffffff;
+  --surface: var(--color-grey-light);
+  --text: #1a2035;
+  --muted: #6f7b96;
+  --accent: var(--color-blue);
+  --border: var(--color-border);
+  --ink: var(--color-black);
+  --on-accent: var(--color-white);
+  --success: var(--color-green);
+  --warning: var(--color-orange);
+  --danger: var(--color-red);
+  --focus: #3b84d8;
+  --component-button-height: 30px;
+  --component-button-radius: var(--radius-control);
+  --component-button-font-size: 14px;
+  --component-hero-size: 38px;
+  --component-hero-line: 48px;
+  color-scheme: light;
+  --sg-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/22px var(--sg-sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-weight: 400; font-size: 32px; line-height: 40px; margin: 0 0 8px; }
+h2 { font-size: 18px; font-weight: 500; margin: 32px 0 12px; }
+p.lede { color: var(--muted); max-width: 62ch; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border); border-radius: var(--radius-control); overflow: hidden; }
+.sw i { display: block; height: 56px; }
+.sw span { display: block; padding: 8px 10px; font-size: 12px; color: var(--ink); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+a.btn { display: inline-block; background: var(--accent); color: var(--on-accent); text-decoration: none; border-radius: var(--button-radius); padding: 8px 12px; font-size: 14px; font-weight: 500; line-height: 14px; }
+a.quiet { display: inline-block; background: var(--page); color: var(--muted); text-decoration: none; border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 500; box-shadow: 0 0 0 1px rgba(18, 55, 105, 0.08); }
+.hero { font-size: var(--hero-size); line-height: var(--hero-line); font-weight: 400; color: var(--text); max-width: 16ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Fernand</h1>
+<p class="lede">Public marketing site, one light theme. Values come from tokens.json, read off getfernand.com on 2026-11-21.</p>
+<h2>Colour</h2>
+<div class="swatches" id="swatches"></div>
+<h2>Type</h2>
+<p class="hero">The free customer support platform for SaaS teams</p>
+<h2>Controls</h2>
+<div class="row">
+  <a class="btn" href="#controls">Start for free</a>
+  <a class="quiet" href="#controls">Book a demo</a>
+</div>
+</div>
+<script>
+const tokens = {"light": true};
+const roles = ["page", "surface", "text", "muted", "accent", "border", "ink", "on-accent", "success", "warning", "danger", "focus"];
+const root = document.getElementById("swatches");
+for (const name of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i></i><span></span>";
+  el.querySelector("i").style.background = "var(--" + name + ")";
+  el.querySelector("span").textContent = name;
+  root.appendChild(el);
+}
+</script>
+</body>
+</html>

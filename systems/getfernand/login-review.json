@@ -1,0 +1,56 @@
+{
+  "product": "Fernand",
+  "catalog_name": "Fernand",
+  "signed_in": false,
+  "reviewed_at": "2026-11-21",
+  "start_url": "https://getfernand.com/",
+  "login_control": {
+    "label": "Log in",
+    "region": "header",
+    "href": "https://app.getfernand.com/auth/login"
+  },
+  "known_dead_path": {
+    "url": "https://getfernand.com/login",
+    "status": 404,
+    "title": "Page not found - Fernand",
+    "note": "The marketing host has no /login route. The header Log in control does not point here."
+  },
+  "wall": {
+    "url": "https://app.getfernand.com/auth/login",
+    "status": 200,
+    "title": "Login to Fernand",
+    "heading": "Welcome back",
+    "fields_seen": ["email (Your work email)", "password (Your password)"],
+    "other_controls": ["submit", "Create an account -> /create", "Lost password? -> /auth/lost-password"],
+    "sso_clicked": false,
+    "form_submitted": false,
+    "code_entered": false,
+    "stopped_because": "Login asks for a work email and a password. No code was sent. The branch stops here."
+  },
+  "signup_wall": {
+    "url": "https://app.getfernand.com/create",
+    "status": 200,
+    "title": "Create your account - Fernand",
+    "heading": "Bonjour, I'm Fernand. The better, faster and calmer helpdesk experience.",
+    "fields_seen": ["work email (placeholder example only, not typed)", "password", "product name", "product website", "terms checkbox"],
+    "form_submitted": false,
+    "onboarding_filled": false,
+    "stopped_because": "Creating an account was not allowed."
+  },
+  "lost_password": {
+    "url": "https://app.getfernand.com/auth/lost-password",
+    "heading": "Forgot your password?",
+    "screenshot": "screenshots/desk-app-lost.png",
+    "form_submitted": false,
+    "note": "Opened from the login wall link. The form was not filled. No reset mail was sent."
+  },
+  "token_values_unread": "Not captured",
+  "gaps": [
+    "signed-in app was not captured",
+    "unread token values are Not captured",
+    "onboarding was not filled",
+    "no email or password was typed",
+    "no SSO button was clicked",
+    "no code was entered"
+  ]
+}

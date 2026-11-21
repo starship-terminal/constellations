@@ -1,0 +1,59 @@
+{
+  "_about": "Token tree for getfernand.com public site, read 2026-11-21. Brand colours are the site's own --* custom properties. Component metrics are measured on the live homepage.",
+  "core": {
+    "color": {
+      "white": { "var": "--white", "type": "color" },
+      "grey": { "var": "--grey", "type": "color" },
+      "grey-light": { "var": "--grey-light", "type": "color" },
+      "grey-medium": { "var": "--grey-medium", "type": "color" },
+      "grey-strong": { "var": "--grey-strong", "type": "color" },
+      "black": { "var": "--black", "type": "color" },
+      "blue": { "var": "--blue", "type": "color" },
+      "blue-pale": { "var": "--blue-pale", "type": "color" },
+      "orange": { "var": "--orange", "type": "color" },
+      "red": { "var": "--red", "type": "color" },
+      "red-pale": { "var": "--red-pale", "type": "color" },
+      "green": { "var": "--green", "type": "color" },
+      "green-dark": { "var": "--green-dark", "type": "color" },
+      "border": { "var": "--border", "type": "color" },
+      "border-strong": { "var": "--border-strong", "type": "color" }
+    },
+    "font": {
+      "family": {
+        "sans": {
+          "type": "fontFamily",
+          "value": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+          "source": "measured getComputedStyle(body).fontFamily on https://getfernand.com/"
+        }
+      }
+    },
+    "radius": {
+      "control": { "type": "dimension", "value": "6px", "source": "measured Start for free borderRadius on https://getfernand.com/" }
+    },
+    "space": {
+      "control-pad-y": { "type": "dimension", "value": "8px", "source": "measured Start for free paddingTop on https://getfernand.com/" },
+      "control-pad-x": { "type": "dimension", "value": "12px", "source": "measured Start for free paddingLeft on https://getfernand.com/" }
+    }
+  },
+  "light": {
+    "page": { "type": "color", "value": "#ffffff", "source": "measured body backgroundColor rgb(255, 255, 255); meta theme-color #ffffff" },
+    "surface": { "type": "color", "value": "{color.grey-light}", "source": "css-var --grey-light, the pale band used for raised marketing surfaces" },
+    "text": { "type": "color", "value": "#1a2035", "source": "measured h1 color rgb(26, 32, 53) on https://getfernand.com/" },
+    "muted": { "type": "color", "value": "#6f7b96", "source": "measured nav link color rgb(111, 123, 150) on https://getfernand.com/" },
+    "accent": { "type": "color", "value": "{color.blue}", "source": "css-var --blue, painted as Start for free background rgb(0, 160, 255)" },
+    "border": { "type": "color", "value": "{color.border}", "source": "css-var --border" },
+    "ink": { "type": "color", "value": "{color.black}", "source": "css-var --black, measured body color rgb(19, 30, 64)" },
+    "on-accent": { "type": "color", "value": "{color.white}", "source": "measured Start for free color rgb(255, 255, 255)" },
+    "success": { "type": "color", "value": "{color.green}", "source": "css-var --green; not seen as a status chip on the public homepage" },
+    "warning": { "type": "color", "value": "{color.orange}", "source": "css-var --orange; declared, not used as a status chip on the captured homepage" },
+    "danger": { "type": "color", "value": "{color.red}", "source": "css-var --red; declared, not used as a status chip on the captured homepage" },
+    "focus": { "type": "color", "value": "#3b84d8", "source": "measured Start for free outlineColor rgb(59, 132, 216) on focus" },
+    "component": {
+      "button-height": { "type": "dimension", "value": "30px", "source": "measured Start for free height on https://getfernand.com/" },
+      "button-radius": { "type": "dimension", "value": "{radius.control}", "source": "measured Start for free borderRadius" },
+      "button-font-size": { "type": "dimension", "value": "14px", "source": "measured Start for free fontSize" },
+      "hero-size": { "type": "dimension", "value": "38px", "source": "measured h1 fontSize on https://getfernand.com/" },
+      "hero-line": { "type": "dimension", "value": "48px", "source": "measured h1 lineHeight on https://getfernand.com/" }
+    }
+  }
+}
