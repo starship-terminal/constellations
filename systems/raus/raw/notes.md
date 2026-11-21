@@ -2,7 +2,7 @@
 
 Live page: https://www.raus.life/ on 2026-11-19, T3 preview, signed out.
 
-`preview_snapshot` returned "The browser is not producing screenshot frames." Measurements already read were kept. No screenshot was invented.
+`preview_snapshot` returned "The browser is not producing screenshot frames" on 2026-11-19. Measurements already read were kept. A later headless pass on 2026-11-21 wrote screenshots/. Those PNGs are 256-colour. Do not sample tokens from them.
 
 The page background is `html` `background-color: rgb(253, 249, 237)` (`#fdf9ed`). `body` itself computed to transparent. Body text is `rgb(35, 33, 44)` (`#23212c`).
 

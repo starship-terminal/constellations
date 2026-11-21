@@ -14,6 +14,9 @@ Surfaces: home, about, search, journal, help, and staying with us. Theme: light 
 | [components.md](components.md) | Controls that were on the public pages |
 | [patterns.md](patterns.md) | How the public pages are put together |
 | [icons/](icons/) | Wordmark, promo arrow, and close glyph, with [icons/INDEX.tsv](icons/INDEX.tsv) |
+| [screenshots/](screenshots) | 33 light captures from 2026-11-21, desktop 1440 and phone 390. Quantised. Values stay in tokens.json. |
+| [site-tree.md](site-tree.md) | Which control opens which page, mapped before the screenshots. |
+| [login-review.json](login-review.json) | No signed-in surface. `/login` is the 404. Public screens listed. |
 | [raw/](raw/) | Viewport notes and the reading log |
 | [tools/](tools/) | The capture kit and a token checker. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
@@ -76,7 +79,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops, f
 
 The T3 preview browser opened `https://raus.life/` with `reuseExistingTab` false. The page redirected to `https://www.raus.life/`. The title was "Your sustainable cabins in Germany and Austria | Raus". No Cloudflare challenge appeared. Computed styles were read with `preview_evaluate` on the live page.
 
-`preview_snapshot` returned "The browser is not producing screenshot frames." Measurements already read were kept. No screenshot was invented.
+`preview_snapshot` returned "The browser is not producing screenshot frames" on 2026-11-19. Measurements already read were kept. On 2026-11-21 a headless Chromium pass wrote [screenshots/](screenshots). Cookiebot was set to necessary only (Customize, then Deny). No form was filled. Tokens were not rebuilt from that pass.
 
 A Cookiebot banner was on the first paint. Deny was clicked. Allow all was not clicked. The banner text was gone on the next read.
 
@@ -84,7 +87,7 @@ The product does not publish a custom-property palette on `:root`. Colours are c
 
 ## What to distrust
 
-There are no screenshots. The coverage table names the pages that were measured.
+The 2026-11-19 pass had no screenshots. The 2026-11-21 pass added them. Read colours from tokens.json, not from the 256-colour PNGs.
 
 `html` paints `#fdf9ed`. `body` computed to transparent. A reader who samples `body` will miss the cream.
 
@@ -112,7 +115,7 @@ Typekit declares Neue Haas Unica at 300, 400, 500 and 600. Measured text used 30
 
 | Item | Status |
 |---|---|
-| Colour, light | Captured from computed styles. No screenshot. |
+| Colour, light | Captured from computed styles. Screenshots in [screenshots/](screenshots). |
 | Colour, dark | Not present. No `prefers-color-scheme: dark` rule in the loaded sheets. |
 | Type | Captured for the roles in `core.typography`, at 1440 and 390. |
 | Space, radius, border | Captured from the controls that painted. |
@@ -121,25 +124,25 @@ Typekit declares Neue Haas Unica at 300, 400, 500 and 600. Measured text used 30
 | Button | Default captured for filled, outline, promo, circle, and Filters. Hover, pressed, disabled, loading not captured. |
 | Link | Captured. Header, newsletter, listing. |
 | Text field, text area | Not on the pages measured. |
-| Select | Language `select` measured closed. Region, date and guest buttons measured closed. Open menus not captured. |
-| Checkbox, radio, switch | Not present as product controls. |
+| Select | Language `select` measured closed. Region menu and guest stepper are in [home-light-regions.png](screenshots/home-light-regions.png) and [home-light-guests.png](screenshots/home-light-guests.png). Date picker did not open. |
+| Checkbox, radio, switch | Filter sheet shows checkboxes in [search-light-filters.png](screenshots/search-light-filters.png). Guest popover shows a Dog friendly switch in [home-light-guests.png](screenshots/home-light-guests.png). Their computed styles were not read. Radio not seen. |
 | Tabs | Not present. |
-| Menu | Phone nav opened at 390. Desktop menus not opened. |
-| Dialog | Cookiebot dismissed with Deny. Date and filter dialogs not opened. |
+| Menu | Phone nav in [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). Region list in [home-light-regions.png](screenshots/home-light-regions.png). |
+| Dialog | Cookiebot dismissed with Deny. Filter sheet in [search-light-filters.png](screenshots/search-light-filters.png). Date picker did not open. |
 | Toast | Not present. |
 | Card | Journal overlay and search listing measured. |
 | List row | Help question row measured. |
 | Table, avatar | Not present. |
 | Badge | Trait labels and the Filters pill measured. |
-| Desktop 1440 and phone 390 | Measured. Not screenshotted. |
+| Desktop 1440 and phone 390 | Measured on 2026-11-19. Screenshots added 2026-11-21. |
 
 ## Do and don't
 
-- **Paint the page cream and the headlines forest.** `html` is `#fdf9ed`. The h1 is `#006434` at weight 300. [tokens.json](tokens.json)
-- **Use ink pills for the main action and orange only on the promo.** Search and Start quiz are `#23212c` with white text and a 20px radius. Book now! is `#dd5000` at 12px radius. [components.md](components.md)
-- **Keep the search pill yellow and the book circle magenta.** The home search bar is `#fcbd1c` with a 40px radius. Book your stay is a 128px circle in `#b218a4`. [patterns.md](patterns.md)
+- **Paint the page cream and the headlines forest.** `html` is `#fdf9ed`. The h1 is `#006434` at weight 300. [home-light-default.png](screenshots/home-light-default.png)
+- **Use ink pills for the main action and orange only on the promo.** Search and Start quiz are `#23212c` with white text and a 20px radius. Book now! is `#dd5000` at 12px radius. [search-light-default.png](screenshots/search-light-default.png)
+- **Keep the search pill yellow and the book circle magenta.** The home search bar is `#fcbd1c` with a 40px radius. Book your stay is a 128px circle in `#b218a4`. [mobile-home-light-default.png](screenshots/mobile-home-light-default.png)
 - **Set section headings in the serif, UI in Neue Haas Unica.** The serif family name is `fonts`. Do not rename it. [tokens.json](tokens.json)
-- **Do not invent a booking form or a dark theme.** Dates were not chosen. No card was entered. No dark rule was declared. [raw/notes.md](raw/notes.md)
+- **Do not invent a booking form or a dark theme.** Dates were not chosen. No card was entered. No dark rule was declared. [location-light-default.png](screenshots/location-light-default.png)
 
 ## Rebuild
 
