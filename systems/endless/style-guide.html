@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endless style guide</title>
+<style>
+:root {
+  --color-ink: #0a0a0a;
+  --color-paper: #fcfcfc;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-sky: #11a8ff;
+  --color-accent: #01bcff;
+  --color-blue600: #155dfc;
+  --color-green600: #00a63e;
+  --color-orange600: #f54900;
+  --color-pink600: #e60076;
+  --color-purple600: #9810fa;
+  --color-sky600: #0084d1;
+  --color-neutral800: #262626;
+  --font-family-sans: TikTok Sans, system-ui, arial;
+  --font-family-mono: Geist Mono, ui-monospace, monospace;
+  --typography-display: 500 59.2px/64px TikTok Sans, system-ui, arial;
+  --typography-body: 400 16px/24px TikTok Sans, system-ui, arial;
+  --typography-label: 600 14px/20px TikTok Sans, system-ui, arial;
+  --typography-caption: 400 12px/16px TikTok Sans, system-ui, arial;
+  --radius-xs: .25rem;
+  --radius-sm: .375rem;
+  --radius-md: .5rem;
+  --radius-lg: .75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-control: 8px;
+  --radius-chip: 12px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --size-headerButton: 32px;
+  --size-chip: 36px;
+  --size-composer: 72px;
+  --size-control: 32px;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --focusRing-color: #01bcff;
+  --focusRing-width: 2px;
+  --background-page: #fcfcfc;
+  --background-surface: #ffffff;
+  --background-muted: #f5f5f5;
+  --background-popover: #ffffff;
+  --background-sidebar: #fcfcfc;
+  --text-primary: #0a0a0a;
+  --text-muted: #6e6e6e;
+  --text-onAccent: #fafafa;
+  --text-card: #0a0a0a;
+  --border-default: #e5e5e5;
+  --accent-default: #01bcff;
+  --accent-landing: #11a8ff;
+  --action-primary: #171717;
+  --action-primaryText: #fafafa;
+  --status-success: #037650;
+  --status-warning: #a16601;
+  --status-danger: #d40c1a;
+  --status-info: #0084d1;
+  --focus-ring: #01bcff;
+  --component-button-bg: #0a0a0a;
+  --component-button-text: #fcfcfc;
+  --component-button-radius: 8px;
+  --component-button-height: 32px;
+  --component-chip-bg: #ffffff;
+  --component-chip-text: #0a0a0a;
+  --component-chip-radius: 12px;
+  color-scheme: light;
+  --sg-sans: "TikTok Sans", system-ui, arial, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
+}
+[data-mode="dark"] {
+  --background-page: #000000;
+  --background-surface: #171717;
+  --background-muted: #262626;
+  --background-popover: #171717;
+  --background-sidebar: #0a0a0a;
+  --text-primary: #fafafa;
+  --text-muted: #a1a1a1;
+  --text-onAccent: #171717;
+  --text-card: #fafafa;
+  --border-default: rgba(255, 255, 255, 0.1);
+  --accent-default: #01bcff;
+  --accent-landing: #11a8ff;
+  --action-primary: #e5e5e5;
+  --action-primaryText: #171717;
+  --status-success: #00bc7d;
+  --status-warning: #fe9a00;
+  --status-danger: #f75e54;
+  --status-info: #0084d1;
+  --focus-ring: #01bcff;
+  --component-button-bg: #fafafa;
+  --component-button-text: #000000;
+  --component-button-radius: 8px;
+  --component-button-height: 32px;
+  --component-chip-bg: #171717;
+  --component-chip-text: #fafafa;
+  --component-chip-radius: 12px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 28px; }
+h1 { font-size: 28px; font-weight: 500; margin: 0; }
+button.toggle { height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--border-default); background: var(--background-surface); color: var(--text-primary); font: 600 14px/20px var(--sg-sans); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border-default); border-radius: 12px; overflow: hidden; background: var(--background-surface); }
+.sw i { display: block; height: 64px; }
+.sw span { display: block; padding: 8px 10px; font-size: 12px; color: var(--text-muted); }
+h2 { font-size: 20px; font-weight: 500; margin: 36px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn { height: var(--component-button-height); padding: 0 14px; border-radius: var(--component-button-radius); background: var(--component-button-bg); color: var(--component-button-text); border: 0; font: 600 14px/20px var(--sg-sans); }
+.quiet { height: 32px; padding: 0 14px; border-radius: 8px; background: transparent; color: var(--text-muted); border: 0; font: 600 14px/20px var(--sg-sans); }
+.chip { height: 36px; padding: 0 12px; border-radius: var(--component-chip-radius); background: var(--component-chip-bg); color: var(--component-chip-text); border: 1px solid var(--border-default); font: 500 14px/20px var(--sg-sans); }
+.field { height: 40px; min-width: 240px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border-default); background: var(--background-surface); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.card { padding: 16px; border-radius: 16px; border: 1px solid var(--border-default); background: var(--background-surface); max-width: 280px; }
+.card strong { display: block; font-size: 32px; font-weight: 500; }
+.card em { color: var(--text-muted); font-style: normal; font-size: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); }
+.type-display { font: 500 59.2px/64px var(--sg-sans); margin: 0; }
+.note { color: var(--text-muted); font-size: 14px; max-width: 68ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>Endless</h1>
+  <button class="toggle" type="button" id="theme">Theme</button>
+</header>
+<p class="note">Public marketing site, measured 2026-11-21. Values come from tokens.json. TikTok Sans is not loaded here, so the face falls back to system-ui.</p>
+<h2>Colour</h2>
+<div class="swatches" id="swatches"></div>
+<h2>Type</h2>
+<p class="type-display">Your team’s AI, finally in one place.</p>
+<p>Body at 16/24. <span style="font-size:12px;color:var(--text-muted)">Caption at 12, muted.</span></p>
+<h2>Controls</h2>
+<div class="row">
+  <button class="btn" type="button">Sign up for free</button>
+  <button class="quiet" type="button">Sign in</button>
+  <button class="chip" type="button">Account analysis</button>
+  <input class="field" placeholder="Ask Endless…" aria-label="Composer sample">
+</div>
+<h2>Pricing card</h2>
+<div class="card">
+  <em>Basic</em>
+  <strong>$49</strong>
+  <em>USD per workspace, monthly</em>
+</div>
+<h2>Tokens</h2>
+<table id="tokens"></table>
+</div>
+<script>
+const TOKENS = {"core":{"color":{"ink":{"v":"#0a0a0a","t":"color","s":"computed color of h1 on the home page, light (raw/home-computed.json)","d":"Near-black text and the filled button."},"paper":{"v":"#fcfcfc","t":"color","s":"computed backgroundColor of body, light (raw/home-computed.json)","d":"Page ground in light."},"white":{"v":"#ffffff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-white"},"black":{"v":"#000000","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-black"},"sky":{"v":"#11a8ff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-landing-action. Declared #11a8ff. Painted hero pixels nearby read about #21aeed; the declared value is the token."},"accent":{"v":"#01bcff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --accent. CSS lab() converted to sRGB. Focus ring uses this hue."},"blue600":{"v":"#155dfc","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-blue-600"},"green600":{"v":"#00a63e","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-green-600"},"orange600":{"v":"#f54900","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-orange-600"},"pink600":{"v":"#e60076","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-pink-600"},"purple600":{"v":"#9810fa","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-purple-600"},"sky600":{"v":"#0084d1","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-sky-600"},"neutral800":{"v":"#262626","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-neutral-800"}},"font":{"family":{"sans":{"v":"TikTok Sans, system-ui, arial","t":"fontFamily","s":"computed fontFamily of body (raw/vars-light.json body.font) and --font-sans","d":"The marketing and app face. Proprietary; the guide falls back to system-ui."},"mono":{"v":"Geist Mono, ui-monospace, monospace","t":"fontFamily","s":"--font-mono / --default-mono-font-family, raw/vars-light.json"}}},"typography":{"display":{"v":{"fontFamily":"TikTok Sans, system-ui, arial","fontSize":"59.2px","fontWeight":500,"lineHeight":"64px"},"t":"typography","s":"computed font of h1 on the home page at 1440 (raw/home-computed.json)"},"body":{"v":{"fontFamily":"TikTok Sans, system-ui, arial","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"computed font of body (raw/vars-light.json body)"},"label":{"v":{"fontFamily":"TikTok Sans, system-ui, arial","fontSize":"14px","fontWeight":600,"lineHeight":"20px"},"t":"typography","s":"computed font of the header Sign up button (raw/home-computed.json signup)"},"caption":{"v":{"fontFamily":"TikTok Sans, system-ui, arial","fontSize":"12px","fontWeight":400,"lineHeight":"16px"},"t":"typography","s":"computed font of the MCP banner link (raw/home-computed.json mcpLink)"}},"radius":{"xs":{"v":".25rem","t":"dimension","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --radius-xs"},"sm":{"v":".375rem","t":"dimension","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --radius-sm"},"md":{"v":".5rem","t":"dimension","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --radius-md"},"lg":{"v":".75rem","t":"dimension","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --radius-lg"},"xl":{"v":"1rem","t":"dimension","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --radius-xl"},"2xl":{"v":"1.25rem","t":"dimension","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --radius-2xl"},"control":{"v":"8px","t":"dimension","s":"computed borderRadius of the header Sign up button (raw/home-computed.json)"},"chip":{"v":"12px","t":"dimension","s":"computed borderRadius of a prompt chip (raw/home-computed.json)"}},"space":{"1":{"v":"4px","t":"dimension","s":"Derived from the 4px step implied by control padding. Header button padding was not a token; 4px is the smallest step that divides the measured 8px radius."},"2":{"v":"8px","t":"dimension","s":"Derived: header button radius and the gap scale step (raw/home-computed.json signup borderRadius 8px)."},"3":{"v":"12px","t":"dimension","s":"Measured chip radius 12px used as the 12px step (raw/home-computed.json chip)."},"4":{"v":"16px","t":"dimension","s":"Measured body font size, also the composer font size (raw/vars-light.json)."},"6":{"v":"24px","t":"dimension","s":"Measured body line height (raw/vars-light.json)."},"8":{"v":"32px","t":"dimension","s":"Measured header button height (raw/home-computed.json signup height 32)."}},"size":{"headerButton":{"v":"32px","t":"dimension","s":"computed height of header Sign up (raw/home-computed.json)"},"chip":{"v":"36px","t":"dimension","s":"computed height of a prompt chip (raw/home-computed.json)"},"composer":{"v":"72px","t":"dimension","s":"computed height of the home composer textarea (raw/home-computed.json)"},"control":{"v":"32px","t":"dimension","s":"header control height, reused as the default control height"}},"fontWeight":{"regular":{"v":400,"t":"fontWeight","s":"--font-weight-normal custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21"},"medium":{"v":500,"t":"fontWeight","s":"--font-weight-medium custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21"},"semibold":{"v":600,"t":"fontWeight","s":"--font-weight-semibold custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21"}},"focusRing":{"color":{"v":"#01bcff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --ring"},"width":{"v":"2px","t":"dimension","s":"computed outline width on the focused sign-in email field was 2px with a 3.98px accent halo (raw/signin-email-focus.json)"}}},"light":{"background":{"page":{"v":"#fcfcfc","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --background, light"},"surface":{"v":"#ffffff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --card, light"},"muted":{"v":"#f5f5f5","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --muted, light"},"popover":{"v":"#ffffff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --popover, light"},"sidebar":{"v":"#fcfcfc","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --sidebar, light"}},"text":{"primary":{"v":"#0a0a0a","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --foreground, light"},"muted":{"v":"#6e6e6e","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --muted-foreground, light"},"onAccent":{"v":"#fafafa","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --primary-foreground, light"},"card":{"v":"#0a0a0a","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --card-foreground, light"}},"border":{"default":{"v":"#e5e5e5","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --border, light"}},"accent":{"default":{"v":"#01bcff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --accent, light"},"landing":{"v":"#11a8ff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-landing-action, light"}},"action":{"primary":{"v":"#171717","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --primary, light"},"primaryText":{"v":"#fafafa","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --primary-foreground, light"}},"status":{"success":{"v":"#037650","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --success, light"},"warning":{"v":"#a16601","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --warning, light"},"danger":{"v":"#d40c1a","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --destructive, light"},"info":{"v":"#0084d1","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-sky-600, light. No separate info role; sky-600 is the closest declared info hue."}},"focus":{"ring":{"v":"#01bcff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --ring, light"}},"component":{"button":{"bg":{"v":"#0a0a0a","t":"color","s":"computed backgroundColor of header Sign up, light (raw/home-computed.json or home-dark-computed.json)"},"text":{"v":"#fcfcfc","t":"color","s":"computed color of header Sign up, light"},"radius":{"v":"8px","t":"dimension","s":"computed borderRadius of header Sign up, light"},"height":{"v":"32px","t":"dimension","s":"bounding height of header Sign up, light"}},"chip":{"bg":{"v":"#ffffff","t":"color","s":"computed backgroundColor of a prompt chip, light"},"text":{"v":"#0a0a0a","t":"color","s":"computed color of a prompt chip, light"},"radius":{"v":"12px","t":"dimension","s":"computed borderRadius of a prompt chip, light"}}}},"dark":{"background":{"page":{"v":"#000000","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --background, dark"},"surface":{"v":"#171717","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --card, dark"},"muted":{"v":"#262626","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --muted, dark"},"popover":{"v":"#171717","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --popover, dark"},"sidebar":{"v":"#0a0a0a","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --sidebar, dark"}},"text":{"primary":{"v":"#fafafa","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --foreground, dark"},"muted":{"v":"#a1a1a1","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --muted-foreground, dark"},"onAccent":{"v":"#171717","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --primary-foreground, dark"},"card":{"v":"#fafafa","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --card-foreground, dark"}},"border":{"default":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --border, dark"}},"accent":{"default":{"v":"#01bcff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --accent, dark"},"landing":{"v":"#11a8ff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-landing-action, dark"}},"action":{"primary":{"v":"#e5e5e5","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --primary, dark"},"primaryText":{"v":"#171717","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --primary-foreground, dark"}},"status":{"success":{"v":"#00bc7d","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --success, dark"},"warning":{"v":"#fe9a00","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --warning, dark"},"danger":{"v":"#f75e54","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --destructive, dark"},"info":{"v":"#0084d1","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --color-sky-600, dark. No separate info role; sky-600 is the closest declared info hue."}},"focus":{"ring":{"v":"#01bcff","t":"color","s":"custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21 --ring, dark"}},"component":{"button":{"bg":{"v":"#fafafa","t":"color","s":"computed backgroundColor of header Sign up, dark (raw/home-computed.json or home-dark-computed.json)"},"text":{"v":"#000000","t":"color","s":"computed color of header Sign up, dark"},"radius":{"v":"8px","t":"dimension","s":"computed borderRadius of header Sign up, dark"},"height":{"v":"32px","t":"dimension","s":"bounding height of header Sign up, dark"}},"chip":{"bg":{"v":"#171717","t":"color","s":"computed backgroundColor of a prompt chip, dark"},"text":{"v":"#fafafa","t":"color","s":"computed color of a prompt chip, dark"},"radius":{"v":"12px","t":"dimension","s":"computed borderRadius of a prompt chip, dark"}}}}};
+const root = document.documentElement;
+const btn = document.getElementById("theme");
+function paint() {
+  const mode = root.getAttribute("data-mode") || "light";
+  btn.textContent = mode === "dark" ? "Dark" : "Light";
+  const set = TOKENS[mode] || {};
+  const box = document.getElementById("swatches");
+  box.innerHTML = "";
+  const roles = [
+    ["page", "background-page"],
+    ["surface", "background-surface"],
+    ["text", "text-primary"],
+    ["muted", "text-muted"],
+    ["accent", "accent-default"],
+    ["border", "border-default"],
+  ];
+  for (const [name, key] of roles) {
+    const el = document.createElement("div");
+    el.className = "sw";
+    el.innerHTML = "<i></i><span></span>";
+    el.querySelector("i").style.background = "var(--" + key + ")";
+    el.querySelector("span").textContent = name;
+    box.appendChild(el);
+  }
+}
+btn.addEventListener("click", () => {
+  root.setAttribute("data-mode", root.getAttribute("data-mode") === "dark" ? "light" : "dark");
+  paint();
+});
+const rows = [];
+function walk(node, path) {
+  if (node && node.v !== undefined) rows.push([path, String(node.v)]);
+  else if (node && typeof node === "object") for (const k of Object.keys(node)) walk(node[k], path ? path + "." + k : k);
+}
+walk(TOKENS.core, "core");
+walk(TOKENS.light, "light");
+document.getElementById("tokens").innerHTML = rows.map(([p,v]) => "<tr><td>" + p + "</td><td>" + v + "</td></tr>").join("");
+paint();
+</script>
+</body>
+</html>

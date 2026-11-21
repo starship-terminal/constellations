@@ -1,0 +1,180 @@
+{
+ "url": "https://endless.app/sign-in",
+ "title": "Sign in \u00b7 Endless",
+ "h1": "Continue to Endless",
+ "controls": [
+  {
+   "tag": "a",
+   "type": null,
+   "text": "Skip to main content",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": "button",
+   "text": "English",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": null,
+   "text": "Google",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": null,
+   "text": "Microsoft",
+   "name": null
+  },
+  {
+   "tag": "input",
+   "type": "text",
+   "text": "Enter your email address",
+   "name": "identifier"
+  },
+  {
+   "tag": "input",
+   "type": "password",
+   "text": "Enter your password",
+   "name": "password"
+  },
+  {
+   "tag": "button",
+   "type": null,
+   "text": "Show password",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": null,
+   "text": "Continue",
+   "name": null
+  },
+  {
+   "tag": "a",
+   "type": null,
+   "text": "Use passkey instead",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": "button",
+   "text": "Previous testimonial",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": "button",
+   "text": "Go to testimonial 1",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": "button",
+   "text": "Go to testimonial 2",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": "button",
+   "text": "Go to testimonial 3",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": "button",
+   "text": "Go to testimonial 4",
+   "name": null
+  },
+  {
+   "tag": "button",
+   "type": "button",
+   "text": "Next testimonial",
+   "name": null
+  }
+ ],
+ "email": {
+  "color": "lab(2.75381 0 0)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "borderTopColor": "color(srgb 0.0393763 0.0393936 0.0393884 / 0.11)",
+  "borderTopWidth": "0px",
+  "borderTopStyle": "solid",
+  "borderRadius": "6px",
+  "fontFamily": "\"TikTok Sans\", system-ui, arial",
+  "fontSize": "13px",
+  "fontWeight": "400",
+  "lineHeight": "18px",
+  "letterSpacing": "normal",
+  "paddingTop": "7px",
+  "paddingRight": "12px",
+  "paddingBottom": "7px",
+  "paddingLeft": "12px",
+  "height": "31.9844px",
+  "width": "306px",
+  "boxShadow": "color(srgb 0.0393763 0.0393936 0.0393884 / 0.11) 0px 0px 0px 1px, color(srgb 0.0393763 0.0393936 0.0393884 / 0.07) 0px 0px 1px 0px",
+  "outline": "rgba(0, 0, 0, 0) solid 2px",
+  "outlineOffset": "2px",
+  "gap": "normal",
+  "textTransform": "none",
+  "textDecorationLine": "none",
+  "w": 306,
+  "h": 32
+ },
+ "password": {
+  "color": "lab(2.75381 0 0)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "borderTopColor": "color(srgb 0.0393763 0.0393936 0.0393884 / 0.11)",
+  "borderTopWidth": "0px",
+  "borderTopStyle": "solid",
+  "borderRadius": "6px",
+  "fontFamily": "\"TikTok Sans\", system-ui, arial",
+  "fontSize": "13px",
+  "fontWeight": "400",
+  "lineHeight": "18px",
+  "letterSpacing": "normal",
+  "paddingTop": "7px",
+  "paddingRight": "40px",
+  "paddingBottom": "7px",
+  "paddingLeft": "12px",
+  "height": "31.9844px",
+  "width": "199px",
+  "boxShadow": "color(srgb 0.0393763 0.0393936 0.0393884 / 0.11) 0px 0px 0px 1px, color(srgb 0.0393763 0.0393936 0.0393884 / 0.07) 0px 0px 1px 0px",
+  "outline": "rgba(0, 0, 0, 0) solid 2px",
+  "outlineOffset": "2px",
+  "gap": "normal",
+  "textTransform": "none",
+  "textDecorationLine": "none",
+  "w": 199,
+  "h": 32
+ },
+ "submit": {
+  "color": "lab(98.26 0 0)",
+  "backgroundColor": "lab(7.78201 -0.0000149012 0)",
+  "borderTopColor": "lab(7.78201 -0.0000149012 0)",
+  "borderTopWidth": "0px",
+  "borderTopStyle": "solid",
+  "borderRadius": "6px",
+  "fontFamily": "\"TikTok Sans\", system-ui, arial",
+  "fontSize": "13px",
+  "fontWeight": "500",
+  "lineHeight": "18px",
+  "letterSpacing": "normal",
+  "paddingTop": "7px",
+  "paddingRight": "12px",
+  "paddingBottom": "7px",
+  "paddingLeft": "12px",
+  "height": "31.9844px",
+  "width": "306px",
+  "boxShadow": "lab(7.78201 -0.0000149012 0) 0px 0px 0px 1px, rgba(255, 255, 255, 0.07) 0px 1px 1px 0px inset, rgba(34, 42, 53, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.24) 0px 1px 1px 0px",
+  "outline": "lab(98.26 0 0) none 0px",
+  "outlineOffset": "0px",
+  "gap": "normal",
+  "textTransform": "none",
+  "textDecorationLine": "none",
+  "w": 306,
+  "h": 32
+ },
+ "bodyBg": "lab(98.956 0.0000298023 -0.0000119209)",
+ "bodyColor": "lab(2.75381 0 0)"
+}

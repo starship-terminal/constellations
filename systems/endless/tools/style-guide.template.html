@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endless style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "TikTok Sans", system-ui, arial, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 28px; }
+h1 { font-size: 28px; font-weight: 500; margin: 0; }
+button.toggle { height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--border-default); background: var(--background-surface); color: var(--text-primary); font: 600 14px/20px var(--sg-sans); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border-default); border-radius: 12px; overflow: hidden; background: var(--background-surface); }
+.sw i { display: block; height: 64px; }
+.sw span { display: block; padding: 8px 10px; font-size: 12px; color: var(--text-muted); }
+h2 { font-size: 20px; font-weight: 500; margin: 36px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn { height: var(--component-button-height); padding: 0 14px; border-radius: var(--component-button-radius); background: var(--component-button-bg); color: var(--component-button-text); border: 0; font: 600 14px/20px var(--sg-sans); }
+.quiet { height: 32px; padding: 0 14px; border-radius: 8px; background: transparent; color: var(--text-muted); border: 0; font: 600 14px/20px var(--sg-sans); }
+.chip { height: 36px; padding: 0 12px; border-radius: var(--component-chip-radius); background: var(--component-chip-bg); color: var(--component-chip-text); border: 1px solid var(--border-default); font: 500 14px/20px var(--sg-sans); }
+.field { height: 40px; min-width: 240px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border-default); background: var(--background-surface); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.card { padding: 16px; border-radius: 16px; border: 1px solid var(--border-default); background: var(--background-surface); max-width: 280px; }
+.card strong { display: block; font-size: 32px; font-weight: 500; }
+.card em { color: var(--text-muted); font-style: normal; font-size: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); }
+.type-display { font: 500 59.2px/64px var(--sg-sans); margin: 0; }
+.note { color: var(--text-muted); font-size: 14px; max-width: 68ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>Endless</h1>
+  <button class="toggle" type="button" id="theme">Theme</button>
+</header>
+<p class="note">Public marketing site, measured 2026-11-21. Values come from tokens.json. TikTok Sans is not loaded here, so the face falls back to system-ui.</p>
+<h2>Colour</h2>
+<div class="swatches" id="swatches"></div>
+<h2>Type</h2>
+<p class="type-display">Your team’s AI, finally in one place.</p>
+<p>Body at 16/24. <span style="font-size:12px;color:var(--text-muted)">Caption at 12, muted.</span></p>
+<h2>Controls</h2>
+<div class="row">
+  <button class="btn" type="button">Sign up for free</button>
+  <button class="quiet" type="button">Sign in</button>
+  <button class="chip" type="button">Account analysis</button>
+  <input class="field" placeholder="Ask Endless…" aria-label="Composer sample">
+</div>
+<h2>Pricing card</h2>
+<div class="card">
+  <em>Basic</em>
+  <strong>$49</strong>
+  <em>USD per workspace, monthly</em>
+</div>
+<h2>Tokens</h2>
+<table id="tokens"></table>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+const root = document.documentElement;
+const btn = document.getElementById("theme");
+function paint() {
+  const mode = root.getAttribute("data-mode") || "light";
+  btn.textContent = mode === "dark" ? "Dark" : "Light";
+  const set = TOKENS[mode] || {};
+  const box = document.getElementById("swatches");
+  box.innerHTML = "";
+  const roles = [
+    ["page", "background-page"],
+    ["surface", "background-surface"],
+    ["text", "text-primary"],
+    ["muted", "text-muted"],
+    ["accent", "accent-default"],
+    ["border", "border-default"],
+  ];
+  for (const [name, key] of roles) {
+    const el = document.createElement("div");
+    el.className = "sw";
+    el.innerHTML = "<i></i><span></span>";
+    el.querySelector("i").style.background = "var(--" + key + ")";
+    el.querySelector("span").textContent = name;
+    box.appendChild(el);
+  }
+}
+btn.addEventListener("click", () => {
+  root.setAttribute("data-mode", root.getAttribute("data-mode") === "dark" ? "light" : "dark");
+  paint();
+});
+const rows = [];
+function walk(node, path) {
+  if (node && node.v !== undefined) rows.push([path, String(node.v)]);
+  else if (node && typeof node === "object") for (const k of Object.keys(node)) walk(node[k], path ? path + "." + k : k);
+}
+walk(TOKENS.core, "core");
+walk(TOKENS.light, "light");
+document.getElementById("tokens").innerHTML = rows.map(([p,v]) => "<tr><td>" + p + "</td><td>" + v + "</td></tr>").join("");
+paint();
+</script>
+</body>
+</html>
