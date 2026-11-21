@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "signup-empty-light-390",
+  "url": "https://replit.com/signup",
+  "title": "Sign Up - Replit",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "quantized": false,
+  "note": "Empty signup wall. No email form opened. Identity providers and SSO not clicked. Incognito preview tab, CSS 390x844 at 2x."
+}

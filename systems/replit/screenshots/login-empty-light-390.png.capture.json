@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "login-empty-light-390",
+  "url": "https://replit.com/login",
+  "title": "Log In - Replit",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "quantized": false,
+  "note": "Empty login wall. Fields blank, Log In disabled. Forgot password, SSO, and identity providers not clicked. Invisible recaptcha scripts loaded by the page, not solved. Incognito preview tab, CSS 390x844 at 2x."
+}
