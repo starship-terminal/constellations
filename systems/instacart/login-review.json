@@ -1,0 +1,127 @@
+{
+  "product": "Instacart",
+  "slug": "instacart",
+  "date": "2026-11-21",
+  "scope": "public signed-out",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "submitted": false,
+  "typed": false,
+  "identity_providers_clicked": false,
+  "captcha_solved": false,
+  "account_created": false,
+  "probe_note": "https://www.instacart.com/ loaded signed out in an incognito T3 preview tab. The default preview profile was already signed in and was closed without a screenshot. Log in opens a dialog and /login is the same card: email field, Continue, Google, Facebook, Phone. Signup is the same shape at /signup. Nothing was typed. Continue was not clicked. No identity provider was clicked. The T3 preview pane did not produce screenshot frames, so photographs came from the package's headless public capture.",
+  "offered": {
+    "nav": {
+      "items": [],
+      "reached": [],
+      "note": "No signed-in navigation was offered. The public storefront sidebar shows Account as a link, and the search page paints it while signed out. It was not opened."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings control was offered on the public pages. Help lists Profile and Account Settings as an article row. It was not opened."
+    },
+    "create": {
+      "items": [
+        "Sign up",
+        "Continue",
+        "Google",
+        "Facebook",
+        "Phone",
+        "Create free business account"
+      ],
+      "reached": [
+        "signup card at /signup, photographed at rest"
+      ],
+      "note": "The signup card offers an empty email field, Continue, Google, Facebook, and Phone, plus a link to create a business profile. None of those were used."
+    }
+  },
+  "screens": [
+    "screenshots/business-light-default.png",
+    "screenshots/business-light-full.png",
+    "screenshots/deals-light-default.png",
+    "screenshots/deals-light-full.png",
+    "screenshots/ebt-light-default.png",
+    "screenshots/ebt-light-full.png",
+    "screenshots/food-light-default.png",
+    "screenshots/food-light-full.png",
+    "screenshots/gift-cards-light-default.png",
+    "screenshots/gift-cards-light-full.png",
+    "screenshots/gifts-light-default.png",
+    "screenshots/gifts-light-full.png",
+    "screenshots/grocery-delivery-light-default.png",
+    "screenshots/grocery-delivery-light-full.png",
+    "screenshots/help-light-default.png",
+    "screenshots/help-light-full.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-departments.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-search-focused.png",
+    "screenshots/login-light-default.png",
+    "screenshots/mobile-help-light-default.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-login-light-default.png",
+    "screenshots/mobile-plus-light-default.png",
+    "screenshots/mobile-promos-light-default.png",
+    "screenshots/mobile-search-light-default.png",
+    "screenshots/plus-light-default.png",
+    "screenshots/plus-light-full.png",
+    "screenshots/privacy-light-default.png",
+    "screenshots/promos-light-default.png",
+    "screenshots/promos-light-full.png",
+    "screenshots/search-light-default.png",
+    "screenshots/search-light-full.png",
+    "screenshots/signup-light-default.png",
+    "screenshots/terms-light-default.png"
+  ],
+  "walls": [
+    {
+      "name": "login",
+      "url": "https://www.instacart.com/login",
+      "opened": true,
+      "asks_for": "an email address, then Continue, or Google, Facebook, or Phone",
+      "typed": false,
+      "submitted": false,
+      "identity_provider_clicked": false,
+      "stopped": true
+    },
+    {
+      "name": "signup",
+      "url": "https://www.instacart.com/signup",
+      "opened": true,
+      "asks_for": "an email address, then Continue, or Google, Facebook, or Phone",
+      "typed": false,
+      "submitted": false,
+      "identity_provider_clicked": false,
+      "stopped": true
+    }
+  ],
+  "gaps": [
+    "Signed-in storefront, orders, account settings, and checkout were not entered.",
+    "The homepage Log in dialog and /login stop at an empty email field. Continue was not clicked, so no captcha and no identity provider was reached.",
+    "Create free business account, Try free for 14 days, Send gift card, and Log in and Redeem were not clicked.",
+    "The phone homepage app sheet (Get the Instacart app) covers the lower half of the 390 viewport. Continue in browser was not found as a clickable control in the headless pass.",
+    "The T3 preview pane did not produce screenshot frames, so this pass has no in-pane photographs.",
+    "Other hosts (instacart.careers, ads.instacart.com, shoppers.instacart.com, company newsroom) were not captured."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "phone",
+    "verification code",
+    "address",
+    "Continue",
+    "Google",
+    "Facebook",
+    "Phone",
+    "search",
+    "checkout",
+    "gift card",
+    "Instacart+ trial",
+    "business account",
+    "cookie consent"
+  ]
+}

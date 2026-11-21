@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:23:23.328Z",
+  "capturedAt": "2026-11-21T13:16:14.946Z",
   "screenshot": "mobile-home-light-default.png",
   "sanitizedSourceUrl": "https://www.instacart.com/",
   "requested": {
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Mobile homepage with app interstitial."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

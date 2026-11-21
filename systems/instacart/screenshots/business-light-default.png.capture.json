@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:22:58.752Z",
+  "capturedAt": "2026-11-21T13:12:23.600Z",
   "screenshot": "business-light-default.png",
   "sanitizedSourceUrl": "https://www.instacart.com/business",
   "requested": {
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Instacart Business marketing. Separate purple header."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

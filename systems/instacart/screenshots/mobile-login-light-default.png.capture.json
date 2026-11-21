@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:24:14.552Z",
+  "capturedAt": "2026-11-21T13:14:38.495Z",
   "screenshot": "mobile-login-light-default.png",
   "sanitizedSourceUrl": "https://www.instacart.com/login",
   "requested": {
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Mobile login card."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

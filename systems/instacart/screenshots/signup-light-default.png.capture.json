@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:23:12.276Z",
+  "capturedAt": "2026-11-21T13:13:51.399Z",
   "screenshot": "signup-light-default.png",
   "sanitizedSourceUrl": "https://www.instacart.com/signup",
   "requested": {
@@ -59,8 +59,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pass",
-    "note": "Signup card. Continue not submitted."
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
   },
   "cropCoordinates": {
     "status": "unverified",

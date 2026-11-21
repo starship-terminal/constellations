@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T16:23:13.294Z",
-  "screenshot": "signup-light-full.png",
-  "sanitizedSourceUrl": "https://www.instacart.com/signup",
+  "capturedAt": "2026-11-21T13:13:35.731Z",
+  "screenshot": "ebt-light-default.png",
+  "sanitizedSourceUrl": "https://www.instacart.com/ebt-snap",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 900
+      "height": 5012
     },
     "scroll": {
       "x": 0,
@@ -42,8 +42,8 @@
     }
   },
   "capture": {
-    "mode": "fullPage",
-    "scale": "css",
+    "mode": "viewport",
+    "scale": "device",
     "clip": null
   },
   "png": {
@@ -56,7 +56,7 @@
       "width": 1440,
       "height": 900
     },
-    "basis": "fullPage"
+    "basis": "configuredViewport"
   },
   "visualReview": {
     "status": "pending",
