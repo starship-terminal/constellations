@@ -1,0 +1,62 @@
+{
+  "product": "eBay",
+  "url": "https://www.ebay.com/",
+  "capturedAt": "2026-11-22",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "png": { "width": 2880, "height": 1800 },
+  "themeColorMeta": null,
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(25, 25, 25)",
+    "fontFamily": "\"Market Sans\", Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20.0004px"
+  },
+  "searchButton": {
+    "text": "Search",
+    "backgroundColor": "rgb(9, 104, 246)",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "\"Market Sans\", Helvetica, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "700",
+    "borderRadius": "44px",
+    "height": 44,
+    "padding": "0px 20px",
+    "border": "1px solid rgba(0, 0, 0, 0)"
+  },
+  "signInLink": {
+    "color": "rgb(9, 104, 246)",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "lineHeight": "18px"
+  },
+  "searchField": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Helvetica Neue\", helvetica, arial, sans-serif",
+    "fontSize": "16px",
+    "borderRadius": "44px 0px 0px 44px",
+    "height": 39,
+    "padding": "0px 44px"
+  },
+  "customPropertiesSampled": {
+    "--color-blue-500": "#0968f6",
+    "--color-blue-600": "#0049b8",
+    "--color-blue-400": "#4d93fc",
+    "--border-width-thin": ".5px",
+    "--border-width-medium": "1px",
+    "--border-width-thick": "2px",
+    "--breakpoint-small": "512px",
+    "--breakpoint-medium": "600px",
+    "--breakpoint-large": "800px",
+    "--breakpoint-extra-large": "1100px",
+    "--breakpoint-extra-large-2": "1400px"
+  },
+  "customPropertyNameCount": 433,
+  "note": "Sampled from getComputedStyle on the signed-out homepage. The stylesheet declares hundreds more custom properties. Only the ones read on this pass are listed."
+}

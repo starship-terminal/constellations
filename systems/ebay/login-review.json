@@ -1,0 +1,48 @@
+{
+  "product": "eBay",
+  "domain": "ebay.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in",
+      "url": "https://signin.ebay.com/ws/eBayISAPI.dll",
+      "title": "Sign in or Register | eBay",
+      "painted": true,
+      "headings": ["Sign in to your account"],
+      "asksFor": [
+        { "label": "Email or username", "type": "text", "required": false }
+      ],
+      "identityProvidersSeen": ["Google", "Apple", "Facebook"],
+      "otherControls": ["Create account", "Sign in with mobile", "Continue", "Stay signed in"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email field was empty. Password field exists in the DOM and was not shown as the first step. No provider was clicked. No form was submitted."
+    },
+    {
+      "control": "header register",
+      "url": "https://signup.ebay.com/pa/crte",
+      "title": "Register: Create a personal eBay account",
+      "painted": true,
+      "headings": ["Create an account"],
+      "asksFor": [
+        { "label": "First name", "type": "text", "required": false },
+        { "label": "Last name", "type": "text", "required": false },
+        { "label": "Email", "type": "text", "required": false },
+        { "label": "Password", "type": "password", "required": false }
+      ],
+      "identityProvidersSeen": ["Google", "Apple", "Facebook"],
+      "otherControls": ["Personal", "Business", "Create personal account", "Stay signed in", "Sign in"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Fields were empty. Create personal account was disabled. Personal was already selected. Business was not clicked. No provider was clicked. No form was submitted."
+    }
+  ]
+}
