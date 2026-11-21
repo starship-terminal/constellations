@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Warby Parker style guide</title>
+<style>
+  :root {
+    --page: #faf8f5;
+    --chalk: #f6f7f5;
+    --surface: #fff;
+    --ink: #121212;
+    --slate: #3a434c;
+    --blueprint: #1050d0;
+    --ink-blue: #072369;
+    --green: #09624d;
+    --wash: #caeaf5;
+    --divider: #e1e5e6;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.4 Georgia, serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-weight: 400; font-size: 30px; }
+  p { color: var(--slate); }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 28px; }
+  .swatch { width: 96px; height: 64px; border-radius: 8px; border: 1px solid var(--divider); }
+  button, a.btn { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 100px; border: 0; background: var(--blueprint); color: #fff; font: 16px/1 sans-serif; text-decoration: none; }
+  a.quiet { background: var(--ink-blue); }
+  .field { height: 60px; border: 1px solid var(--divider); border-radius: 12px; background: var(--surface); padding: 0 16px; display: flex; align-items: center; color: var(--slate); width: 280px; }
+  .badge { background: var(--wash); color: var(--blueprint); border-radius: 4px; font: 12px/1 sans-serif; padding: 4px 8px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Warby Parker</h1>
+  <p>Signed-out public capture, 2026-11-22. Values from tokens.json.</p>
+  <div class="row">
+    <div class="swatch" style="background:#faf8f5" title="page"></div>
+    <div class="swatch" style="background:#f6f7f5" title="chalk"></div>
+    <div class="swatch" style="background:#121212" title="ink"></div>
+    <div class="swatch" style="background:#1050d0" title="blueprint"></div>
+    <div class="swatch" style="background:#072369" title="ink blue"></div>
+    <div class="swatch" style="background:#09624d" title="classroom green"></div>
+    <div class="swatch" style="background:#caeaf5" title="info wash"></div>
+  </div>
+  <p><span class="badge">New</span></p>
+  <p><button type="button">Select lenses and buy</button> <a class="btn quiet" href="#learn">Learn more</a></p>
+  <div class="field">Email address</div>
+</main>
+</body>
+</html>
