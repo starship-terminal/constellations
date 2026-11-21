@@ -152,6 +152,7 @@ The marketing names are emitted under `core` at their natural paths (`color.prim
 - **Weight tokens are named for what they measure.** `font.weight.regular` is 400 (the nav links) and `font.weight.medium` is 500 (plan rows, the eyebrow, the hero heading); no semibold or bold weight was measured on these components.
 - **Prices are photographed, not promised.** The plan cards load annual-checked (showing struck monthly and billed-annual figures); the monthly state was reached by the local toggle.
 - **DESIGN.md still quotes the catalog row.** `make design-md` copies `goodFor` and `access` from catalog.json. That row still names honeyhivesalon.glossgenius.com and an older pass that typed into fields. This refresh did not edit catalog.json. Read [README.md](README.md), [site-tree.md](site-tree.md) and [login-review.json](login-review.json) for the 2026-11-21 boundary.
+- **The catalog border swatch is Not captured.** catalog.json points `preview.swatches.light.border` at `light.border.field-border`. That token is not in tokens.json. The marketing fields that were measured this pass do not paint a border. The app field's declared border colour is `app.border.field-border` (#2a2f2e), and the boxes paint 0 border width.
 
 ## Rebuild
 
