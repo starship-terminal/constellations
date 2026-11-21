@@ -1,0 +1,109 @@
+{
+  "signedInSurface": false,
+  "statement": "There is no signed-in surface on https://mschf.com/. The public index has no account, sign-in, or settings control. The sitemap lists only /.",
+  "probed": "2026-11-21",
+  "publicScreens": [
+    {
+      "name": "Index",
+      "url": "https://mschf.com/",
+      "file": "screenshots/home-dark-default.png"
+    },
+    {
+      "name": "Index, phone",
+      "url": "https://mschf.com/",
+      "file": "screenshots/mobile-home-dark-default.png"
+    },
+    {
+      "name": "Not found",
+      "url": "https://mschf.com/missing-page",
+      "file": "screenshots/not-found-dark-default.png"
+    },
+    {
+      "name": "Store grid",
+      "url": "https://store.mschf.com/",
+      "file": "screenshots/store-light-default.png"
+    },
+    {
+      "name": "Store product",
+      "url": "https://store.mschf.com/products/super-normal-2",
+      "file": "screenshots/store-product-light-default.png"
+    },
+    {
+      "name": "Notify dialog",
+      "url": "https://store.mschf.com/products/super-normal-2",
+      "file": "screenshots/store-product-light-notify.png"
+    },
+    {
+      "name": "Empty cart",
+      "url": "https://store.mschf.com/cart",
+      "file": "screenshots/store-cart-light-empty.png"
+    },
+    {
+      "name": "Search results",
+      "url": "https://store.mschf.com/search",
+      "file": "screenshots/store-search-light-results.png"
+    },
+    {
+      "name": "Search availability filter",
+      "url": "https://store.mschf.com/search",
+      "file": "screenshots/store-search-light-filter.png"
+    },
+    {
+      "name": "Contact",
+      "url": "https://store.mschf.com/policies/contact-information",
+      "file": "screenshots/store-contact-light-default.png"
+    },
+    {
+      "name": "Privacy",
+      "url": "https://store.mschf.com/policies/privacy-policy",
+      "file": "screenshots/store-privacy-light-default.png"
+    },
+    {
+      "name": "Store grid, phone",
+      "url": "https://store.mschf.com/",
+      "file": "screenshots/mobile-store-light-default.png"
+    },
+    {
+      "name": "Store product, phone",
+      "url": "https://store.mschf.com/products/super-normal-2",
+      "file": "screenshots/mobile-store-product-light-default.png"
+    },
+    {
+      "name": "Empty cart, phone",
+      "url": "https://store.mschf.com/cart",
+      "file": "screenshots/mobile-store-cart-light-empty.png"
+    }
+  ],
+  "loginWall": {
+    "reached": false,
+    "note": "A direct navigation to https://store.mschf.com/account/login redirects to Shopify customer authentication. That page was not opened for capture and no field was filled.",
+    "url": "https://shopify.com/authentication/87473848619/login",
+    "visibleText": "Sign in. Sign in or create an account. Email. Submit."
+  },
+  "offered": {
+    "nav": {
+      "items": ["no signed-in navigation on mschf.com"],
+      "reached": ["no signed-in navigation on mschf.com"]
+    },
+    "settings": {
+      "items": ["no settings area on mschf.com"],
+      "reached": ["no settings area on mschf.com"]
+    },
+    "create": {
+      "items": ["no create flow on mschf.com"],
+      "reached": ["no create flow on mschf.com"]
+    }
+  },
+  "screens": [],
+  "gaps": [
+    "no signed-in web surface on mschf.com",
+    "store.mschf.com/account/login is a Shopify sign-in wall and was not entered"
+  ],
+  "not_submitted": [
+    "no password, code, or OAuth consent",
+    "notify dialog email and phone left empty",
+    "search filter Apply not clicked",
+    "checkout not started",
+    "no country selected"
+  ]
+}

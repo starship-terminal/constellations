@@ -34,4 +34,6 @@ The three link rows are not one colour. Applied MSCHF is `#ffc700`. GSCT is `#40
 
 ## Not on this site
 
-No app shell beyond the fixed header. No search, no filter, no onboarding, no confirmation, no toast, no table, no signed-in empty state. `/shop` redirects to store.mschf.com, which is a different theme and was not packaged.
+No app shell beyond the fixed header. No search, no filter, no onboarding, no confirmation, no toast, no table, no signed-in empty state on mschf.com.
+
+`/shop` and the SHOP↗ control open store.mschf.com. That shop is a different theme (white page, Arial body, Courier prices, a blue pill sold-out button). The 2026-11-21 pass screenshotted it so the split is visible: [store-light-default.png](screenshots/store-light-default.png), [store-product-light-default.png](screenshots/store-product-light-default.png), [store-cart-light-empty.png](screenshots/store-cart-light-empty.png), [store-search-light-results.png](screenshots/store-search-light-results.png), [store-product-light-notify.png](screenshots/store-product-light-notify.png). The control map is [site-tree.md](site-tree.md). Those shots are not this token set.

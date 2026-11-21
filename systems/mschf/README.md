@@ -12,10 +12,12 @@ MSCHF's public site, https://mschf.com, captured signed out on 2026-11-19. The s
 | [patterns.md](patterns.md) | The index, hover, focus, phone, and the 404 |
 | [components/](components/) | 8 crops at 2x |
 | [icons/](icons/) | The header mark as SVG, plus [INDEX.tsv](icons/INDEX.tsv) |
-| [screenshots/](screenshots/) | 9 page shots |
-| [raw/](raw/) | Computed readings, the stylesheet dump, mobile readings, the 404 reading, motion |
+| [screenshots/](screenshots/) | Index shots plus the store pages the header opens |
+| [raw/](raw/) | Computed readings, the stylesheet dump, mobile readings, the 404 reading, motion, store styles |
 | [tools/](tools/) | The kit copy and the MSCHF builders |
 | [icon.png](icon.png) | 128px site icon, scaled from the 32px favicon |
+| [site-tree.md](site-tree.md) | Which control on the index opens which page |
+| [login-review.json](login-review.json) | No signed-in surface on this host; the public screens that were reached |
 
 <!-- brief:start -->
 ## Brief
@@ -126,7 +128,8 @@ One face: MSCHFSansMono, weight 400, normal, from `/_nuxt/MSCHFSansMono.DOBS5JtI
 | List or table | The index is the list |
 | Onboarding | Not present |
 | Desktop 1440 and phone 390 | Both captured, with measured viewport sidecars |
-| Signed-in product | There is no account on mschf.com. store.mschf.com is a different theme and was not packaged |
+| Signed-in product | Not present on mschf.com. See [login-review.json](login-review.json). A store account URL redirects to Shopify sign-in and was not entered |
+| Store the index opens | Captured as evidence that it is a different system: [store-light-default.png](screenshots/store-light-default.png), product, empty cart, search, contact, privacy, and the phone grid. Tokens in this package stay the index |
 
 ## Do and don't
 
@@ -150,4 +153,6 @@ python3 tools/build_style_guide.py
 
 ## Surfaces
 
-Captured: `https://mschf.com/` and `https://mschf.com/missing-page`. `/shop` on this host redirects to `https://store.mschf.com/`, which was opened, measured enough to see it is a different system (white page, Courier, Nunito Sans), and left out. The sitemap lists only `/`.
+Captured: `https://mschf.com/` and `https://mschf.com/missing-page`. The sitemap lists only `/`.
+
+On 2026-11-21 the index was mapped again. SHOP↗ is the only control that opens another page. It opens `https://store.mschf.com/`. That shop was screenshotted (grid, one product, empty cart, search, contact, privacy, phone) so the split is on record. Its values were read from computed styles and Dawn custom properties (`--color-foreground` `181, 188, 195`, page `#ffffff`, sold-out button `#6ec2ff`, price in Courier). They are not tokens in this package. The map is [site-tree.md](site-tree.md). There is still no account on mschf.com. `https://www.mschf.com/` timed out. `https://store.mschf.com/account/login` redirects to a Shopify sign-in page and was not entered.
