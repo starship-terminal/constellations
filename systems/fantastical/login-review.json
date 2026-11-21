@@ -1,0 +1,4 @@
+{
+  "login-extracted": "not-started",
+  "reason": "Sign In opens https://hub.flexibits.com/login. The heading is Sign In. Email and Password were empty. Continue was not clicked. Continue with Apple was not clicked. Sign Up opens https://hub.flexibits.com/signup with an empty Email field. Continue was not clicked. Continue with Apple was not clicked. No email or password was typed. No form was submitted. The signed-in account was not entered."
+}

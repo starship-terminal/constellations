@@ -1,0 +1,91 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://flexibits.com/fantastical",
+  "title": "Flexibits | Fantastical — The calendar and tasks app you won’t be able to live without.",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "prefersColorSchemeDark": {
+    "bodyBackground": "#ffffff",
+    "bodyColor": "#1d1e1f",
+    "h1Color": "#1d1e1f",
+    "note": "matchMedia prefers-color-scheme dark was true. Body background stayed #ffffff."
+  },
+  "customProperties": {
+    "--bs-breakpoint-xs": "0",
+    "--bs-breakpoint-sm": "576px",
+    "--bs-breakpoint-md": "768px",
+    "--bs-breakpoint-lg": "992px",
+    "--bs-breakpoint-xl": "1200px",
+    "--bs-breakpoint-xxl": "1400px"
+  },
+  "computed": {
+    "body": {
+      "background": "#ffffff",
+      "color": "#1d1e1f",
+      "fontFamily": "Effra, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+      "fontSize": "18px"
+    },
+    "header": {
+      "background": "#ffffff",
+      "backgroundAlpha": 0.8,
+      "height": 44,
+      "position": "fixed"
+    },
+    "h1": {
+      "text": "Give Your Calendar Superpowers",
+      "color": "#1d1e1f",
+      "fontFamily": "Effra, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+      "fontSize": "40px",
+      "fontWeight": "500",
+      "lineHeight": "44px",
+      "letterSpacing": "-0.64px"
+    },
+    "h2": {
+      "fontSize": "24px",
+      "fontWeight": "400",
+      "lineHeight": "32px",
+      "letterSpacing": "-0.4px",
+      "color": "#1d1e1f"
+    },
+    "navLink": {
+      "text": "Pricing",
+      "color": "#1d1e1f",
+      "fontSize": "17px",
+      "fontWeight": "500",
+      "lineHeight": "23px",
+      "letterSpacing": "-0.1px"
+    },
+    "signIn": {
+      "color": "#408fff",
+      "background": "transparent",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "height": 32,
+      "borderRadius": "24px"
+    },
+    "tryForFree": {
+      "color": "#ffffff",
+      "background": "#408fff",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "height": 32,
+      "borderRadius": "24px"
+    },
+    "startForFree": {
+      "color": "#ffffff",
+      "background": "#408fff",
+      "fontSize": "17px",
+      "fontWeight": "500",
+      "lineHeight": "28px",
+      "height": 44,
+      "borderRadius": "24px",
+      "padding": "0px 31px"
+    },
+    "downloadMac": {
+      "color": "#408fff",
+      "fontSize": "17px",
+      "fontWeight": "500",
+      "height": 44,
+      "borderRadius": "24px"
+    }
+  }
+}
