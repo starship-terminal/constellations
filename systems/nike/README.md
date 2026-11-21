@@ -1,8 +1,8 @@
 # Nike design reference
 
-A token set and component reference for Nike's public signed-out storefront. Read from www.nike.com on 2026-11-19, signed out. nike.com redirects to www.nike.com/sg/. That Singapore English storefront is what this package captures.
+A token set and component reference for Nike's public signed-out storefront. Refreshed on 2026-11-21 from www.nike.com, signed out. nike.com redirects to www.nike.com/sg/. That Singapore English storefront is what this package captures.
 
-Surfaces: home, the Men menu, search, Men's Shoes, the Air Force 1 '07 LX product page, Help, Find a Nike Store, and the public Membership page. Desktop 1440 x 900 and phone 390 x 844. One light theme.
+Surfaces: home, the Men and Women menus, search, the location dialog, Men's Shoes, the Air Force 1 '07 LX product page, Help, Find a Nike Store, Membership, and the public sustainability page. Desktop 1440 x 900 and phone 390 x 844. One light theme. Sign In stops at accounts.nike.com. Nothing was submitted.
 
 Nike paints the storefront with PDS (`--pds-*`) and Podium CDS (`--podium-cds-*`). The page is white (`#ffffff`). Text is `#111111`. The buy button is a black pill. Type is Helvetica Now. Product photos are square. Orange (`#ff5000`) is a brand token. On these pages it is not the button fill. Just In uses badge orange `#d33918`.
 
@@ -16,8 +16,10 @@ Nike paints the storefront with PDS (`--pds-*`) and Podium CDS (`--podium-cds-*`
 | [patterns.md](patterns.md) | How the chrome, a listing, a product, help, and stores fit together |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [icons/](icons) | The swoosh SVG from the header, named in [icons/INDEX.tsv](icons/INDEX.tsv) |
-| [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900. `home-light-mobile` at 390 CSS pixels, 2x |
-| [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
+| [screenshots/](screenshots) | Live `{page}-light-{state}.png`. Desktop 1440 x 900. Phone shots are 390 x 844. Quantised to 256 colours. |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog, written before the 2026-11-21 screenshots |
+| [login-review.json](login-review.json) | What Sign In offered. The account was not entered. `offered.nav`, `offered.settings`, and `offered.create` are objects. |
+| [raw/](raw) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), and [refresh-2026-11-21.md](raw/refresh-2026-11-21.md) |
 | [tools/](tools) | Builders and their test. `capture/signed-in/` holds only the kit's page-copy privacy guards; no kit capture script took these readings |
 
 ## Do and don't
@@ -89,7 +91,9 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 Custom properties were read from computed style on `documentElement` at `https://www.nike.com/sg/` in the T3 preview browser, then confirmed on the same URL in headless Chromium. Colour, radius, space, duration, and easing tokens are those computed `--pds-*` and `--podium-cds-*` values. Component colours and sizes were read from computed style on the live DOM: header, Shop pill, search, Add to Bag (including hover), Favourite, size chips, and the product title and price. Screenshots are viewport captures. Desktop shots are 1440 x 900 at 1x. The phone shot is 390 x 844 CSS pixels at devicePixelRatio 2, so the PNG is 780 x 1688.
 
-The T3 preview browser returned "The browser is not producing screenshot frames" after the style readings. Screenshots were taken in headless Chromium only after the public homepage loaded there without a Cloudflare challenge.
+The 2026-11-19 readings still hold the tokens. The 2026-11-21 refresh replaced the screenshots with live viewport captures. The T3 preview tab loaded the homepage, then `preview_snapshot` failed with "The browser is not producing screenshot frames." Headless Chromium loaded the public pages without a Cloudflare challenge. Those PNGs were quantised to 256 colours. Read colours from [raw/css-vars.json](raw/css-vars.json), not from the PNGs.
+
+`/sg/register` redirected to accounts.nike.com and returned Access Denied. The query string carries signing parameters and is not stored. See [login-review.json](login-review.json) and [site-tree.md](site-tree.md).
 
 ## What to distrust
 
@@ -128,7 +132,7 @@ Helvetica Now Text is the UI face. Helvetica Now Text Medium is the button and p
 | Themes | Light only. |
 | Widths | 1440 and 390. |
 | Patterns | Shell, home, listing, product, help, stores, membership marketing. |
-| Signed-in account, bag, checkout | Not entered. accounts.nike.com returned Access Denied. |
+| Signed-in account, bag, checkout | Not entered. On 2026-11-21, `/sg/register` redirected to accounts.nike.com and returned Access Denied. No email field was shown. |
 
 ## Rebuild
 
