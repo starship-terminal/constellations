@@ -1,6 +1,6 @@
 # Kit design reference
 
-A token set and component reference for Kit's signed-out public surfaces, for building marketing and log-in pages in the style of the real thing. It was read from **kit.com** (the email-first operating system for creators, formerly ConvertKit) and the signed-out card at **app.kit.com/users/login** on 2026-11-18, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, pricing, features, email marketing, request a demo (page only), the Mailchimp comparison, brand, about, privacy (view only), and the log-in card, plus 390px passes on home, pricing, features and log-in.
+A token set and component reference for Kit's signed-out public surfaces, for building marketing and log-in pages in the style of the real thing. It was read from **kit.com** (the email-first operating system for creators, formerly ConvertKit) and the signed-out card at **app.kit.com/users/login** on 2026-11-18, and refreshed on 2026-11-21, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home (menus, carousel), pricing, features, email marketing, request a demo (page only), the Mailchimp comparison, brand, about, privacy (view only), resources, the app store, support, the help center home, and the empty log-in and password-reset walls, plus 390px passes on home, pricing, features, resources and log-in. The public tree is [site-tree.md](site-tree.md). The empty walls are [login-review.json](login-review.json).
 
 Kit ships one light marketing system on Tailwind CSS v4. Soft-black `#1e1e1e` bands carry the nav, the home hero and the footer. Warm white `#f2efe9` is the on-ink type and a page field on interior pages. Action blue `#44b1ff` paints the announcement strip and the Start free trial pill, with soft-black type on that blue. Display type is KitSansFont (80px on the home hero, 64px on interior mastheads, 48px on the phone). UI and body are Libre Franklin. The log-in card is a separate Inter surface on warm white `#f9f7f4` and does not share the marketing token layer.
 
@@ -18,6 +18,8 @@ The product app behind log-in was never reached. Signup stopped at a Cloudflare 
 | [components/crops/](components/crops) | Element crops at 2x, named `{component}-{state}.png`. |
 | [screenshots/](screenshots) | Quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900. Phone shots are `mobile-*` at 390 x 844. |
 | [raw/](raw) | The evidence: `css-vars.json`, `component-tokens.json`, `components-computed.json`, `measurements.md`, `motion.json`. |
+| [site-tree.md](site-tree.md) | The public tree: which control on the home page opens which page or in-page panel, including header, footer, menus, search, the carousel, and the walls that stop a branch. |
+| [login-review.json](login-review.json) | The empty log-in and password-reset walls only. No signed-in app was entered. |
 | [tools/](tools) | The builders and the capture runners. Adapted from the shared kit. This folder is the product package, not `tools/kit/`. |
 
 ## Brief
@@ -101,7 +103,7 @@ Every colour, radius, length and font on this package is one of three kinds, and
 - **Measured.** `computed …` or `measured …`: a computed style or bounding box read from the live DOM by `tools/capture/public/measure.mjs`, with a matching crop in `components/crops/`.
 - **Reconstruction.** The spacing steps `s1` through `s9` (4, 8, 12, 16, 24, 32, 48, 64, 80px) are multiples of the declared `--spacing` of 4px picked by hand at capture time. Tailwind multiplies `--spacing` by any integer, so no reading names these nine steps; only `core.spacing.base` is declared.
 
-Consent overlays were hidden in CSS and never answered. Nothing was signed into, submitted, purchased, or followed through an OAuth flow. The log-in fields were typed into with a placeholder address and then cleared. Log in was never clicked.
+Consent overlays were hidden in CSS and never answered. Nothing was signed into, submitted, purchased, or followed through an OAuth flow. On the 2026-11-21 refresh the log-in and password-reset fields were left empty: nothing was typed into them, and Log in was never clicked. Earlier filled-field crops from 2026-11-18 are not evidence of a submitted form.
 
 ## What to distrust
 
@@ -146,7 +148,7 @@ Consent overlays were hidden in CSS and never answered. Nothing was signed into,
 | Radio | not present | No radio group on the captured pages. |
 | Switch | captured | The yearly billing switch on [pricing-light-default](screenshots/pricing-light-default.png). It was not toggled, so only the resting yearly state is captured. |
 | Tabs | not present | The log-in card has Log in and Create account links, not a tab widget. Create account was not followed. |
-| Menu | captured | Features and Use Cases menus. See [home-light-menu-features](screenshots/home-light-menu-features.png) and [nav-panel](components/crops/nav-panel-default.png). |
+| Menu | captured | Features, Use Cases and Resources menus. See [home-light-menu-features](screenshots/home-light-menu-features.png), [home-light-menu-resources](screenshots/home-light-menu-resources.png) and [nav-panel](components/crops/nav-panel-default.png). |
 | Tooltip | not present | No tooltip opened on the public pages. |
 | Dialog | not present | No dialog mounted. Consent overlays were hidden, never answered. |
 | Toast | not present | No toast appeared. |
@@ -161,19 +163,20 @@ Consent overlays were hidden in CSS and never answered. Nothing was signed into,
 | Loading state | not captured | No loading state was held. Pages were shot after the network settled. |
 | Destructive confirmation | not present | No destructive action on the public pages. |
 | Feedback after an action | not captured | No form was submitted, so no success feedback was seen. |
-| Search and filtering | captured | The features search field was focused and filled, then cleared. Results were not submitted. See [feat-search](components/crops/feat-search-focused.png). |
+| Search and filtering | captured | The features search field was focused. On 2026-11-21 it was not typed into. The help center search was photographed at rest and not typed into. The resources Search control is a button and was not opened. See [features-light-search-focused](screenshots/features-light-search-focused.png) and [help-light-default](screenshots/help-light-default.png). |
 | Onboarding | not captured | Signup and the post-login product are gated. |
 | Light theme | captured | Every captured page paints light. |
 | Dark theme | not present | No theme toggle and no `data-mode`. The dark token set is empty. |
 | Desktop 1440 | captured | Sidecars in `screenshots/*.capture.json`. |
-| Phone 390 | captured | `mobile-home`, `mobile-pricing`, `mobile-features`, `mobile-login`. |
+| Phone 390 | captured | `mobile-home`, `mobile-pricing`, `mobile-features`, `mobile-login`, `mobile-resources`. |
 | Signed-in product | not captured | app.kit.com after log-in. Recorded in catalog `capture.gaps`. |
 | Signup | not captured | https://app.kit.com/users/signup?plan=1k stopped at a Cloudflare check. |
 | Migrations | not captured | https://kit.com/migrations stopped at a Cloudflare check. |
 | Request-a-demo form | not captured | https://kit.com/request-demo page was captured. The Chili Piper iframe was not submitted. |
-| Password reset | not captured | https://app.kit.com/users/password/new was linked and not followed. |
+| Password reset | captured as an empty wall | https://app.kit.com/users/password/new rendered. The email field was empty. Send me a reset link was not clicked. See [password-reset-light-default](screenshots/password-reset-light-default.png). |
 | Checkout and trial | not captured | Pricing plan links point at signup with a plan query. Measured, never followed. |
-| Help, learn, developers, updates, newsletter | not captured | Separate hosts. Not the product app. |
+| Help center | captured at rest | https://help.kit.com/en rendered. Search was not typed into. Collections were not opened. See [help-light-default](screenshots/help-light-default.png). |
+| Learn, developers, updates, newsletter | not captured | Separate hosts. Not opened. Not the product app. |
 
 ## Do and don't
 

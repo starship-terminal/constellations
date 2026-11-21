@@ -11,10 +11,11 @@
 // at 8 chunks and the log records the boundary.
 // Nothing is sent, bought or signed into: the only presses are local UI
 // toggles — the header's Features / Use Cases / Resources buttons
-// (aria-haspopup), the mobile menu, pricing FAQ summaries, and the features
-// search field (typed, then cleared). Login, signup, demo request and every
-// checkout link are measured, never followed. Any consent overlay is hidden,
-// never answered.
+// (aria-haspopup), the mobile menu, pricing FAQ summaries, the home carousel,
+// and the features search field (focused, never typed into). Login, signup,
+// demo request and every checkout link are photographed as empty walls or
+// recorded as blocked, never typed into and never submitted. Any consent
+// overlay is hidden, never answered.
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -90,11 +91,39 @@ async function navMenu(p, S, name) {
   await wait(p, 600);
 }
 
+// Photographs an empty login or signup wall and returns. Never types, never
+// submits, never follows an identity provider. A Cloudflare human-check is
+// recorded as blocked and not stored as a product screenshot.
+async function wallShot(p, S, url) {
+  const title = await p.title().catch(() => '');
+  const body = await p.evaluate(() => (document.body && document.body.innerText || '').slice(0, 500)).catch(() => '');
+  const blocked = /just a moment|attention required/i.test(title)
+    || /verify you are human|are you a robot|checking your browser|you have been blocked/i.test(body);
+  if (blocked) { log('  BLOCKED human-check', url, 'status recorded, no product shot'); return { blocked: true, title }; }
+  await p.locator('input').evaluateAll((els) => {
+    for (const el of els) {
+      if (el.type === 'hidden' || el.type === 'checkbox' || el.type === 'radio') continue;
+      if (el.value) el.value = '';
+    }
+  }).catch(() => {});
+  await S.view('default');
+  return { blocked: false, title, url: p.url() };
+}
+
 const desktop = {
   home: { url: BASE + '/', wait: 5000, theme: 'light', run: async (p, S) => {
     await S.view('default');
     await step('menu-features', () => navMenu(p, S, 'Features'));
     await step('menu-use-cases', () => navMenu(p, S, 'Use Cases'));
+    await step('menu-resources', () => navMenu(p, S, 'Resources'));
+    await step('carousel-next', async () => {
+      const next = p.getByRole('button', { name: 'Next slide' }).first();
+      if (!(await next.count())) return;
+      await next.scrollIntoViewIfNeeded().catch(() => {});
+      await clickEl(next, 4000);
+      await wait(p, 900);
+      await S.view('carousel-next');
+    });
     await S.full();
   } },
   pricing: { url: BASE + '/pricing', wait: 5000, theme: 'light', run: async (p, S) => {
@@ -148,13 +177,27 @@ const desktop = {
   privacy: { url: BASE + '/privacy', wait: 4000, theme: 'light', run: async (p, S) => {
     await S.view('default');
   } },
-  login: { url: LOGIN_URL, wait: 6000, theme: 'light', run: async (p, S) => {
-    await p.locator('input[name="user[email]"], input[type="email"]').first().fill('').catch(() => {});
-    await p.locator('input[name="user[password]"], input[type="password"]').first().fill('').catch(() => {});
-    // The empty fields paint jane@example.com and a dotted password as CSS
-    // placeholders. Hide that paint so the stored shot is an empty form.
-    await p.addStyleTag({ content: 'input::placeholder{color:transparent!important} input::-webkit-input-placeholder{color:transparent!important}' }).catch(() => {});
+  resources: { url: BASE + '/resources', wait: 4000, theme: 'light', run: async (p, S) => {
     await S.view('default');
+    await S.full();
+  } },
+  apps: { url: BASE + '/apps', wait: 4000, theme: 'light', run: async (p, S) => {
+    await S.view('default');
+  } },
+  support: { url: BASE + '/support', wait: 4000, theme: 'light', run: async (p, S) => {
+    await S.view('default');
+  } },
+  help: { url: 'https://help.kit.com/en', wait: 4000, theme: 'light', run: async (p, S) => {
+    await S.view('default');
+  } },
+  login: { url: LOGIN_URL, wait: 6000, theme: 'light', run: async (p, S) => {
+    // Empty wall only. Do not type. Do not hide the published placeholder
+    // paint: that paint is part of the empty form. Do not click Create
+    // account, forgot password, or any identity provider.
+    await wallShot(p, S, LOGIN_URL);
+  } },
+  signup: { url: 'https://app.kit.com/users/signup?plan=1k', wait: 5000, theme: 'light', run: async (p, S) => {
+    await wallShot(p, S, 'https://app.kit.com/users/signup?plan=1k');
   } },
 };
 
@@ -180,11 +223,9 @@ const mobile = {
     await S.full();
   } },
   login: { url: LOGIN_URL, wait: 6000, theme: 'light', run: async (p, S) => {
-    await p.locator('input[name="user[email]"], input[type="email"]').first().fill('').catch(() => {});
-    await p.locator('input[name="user[password]"], input[type="password"]').first().fill('').catch(() => {});
-    // The empty fields paint jane@example.com and a dotted password as CSS
-    // placeholders. Hide that paint so the stored shot is an empty form.
-    await p.addStyleTag({ content: 'input::placeholder{color:transparent!important} input::-webkit-input-placeholder{color:transparent!important}' }).catch(() => {});
+    await wallShot(p, S, LOGIN_URL);
+  } },
+  resources: { url: BASE + '/resources', wait: 4000, theme: 'light', run: async (p, S) => {
     await S.view('default');
   } },
 };

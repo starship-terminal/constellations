@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-17T19:51:50.564Z",
+ "capturedAt": "2026-11-21T02:23:24.913Z",
  "screenshot": "mobile-home-light-full.png",
  "sanitizedSourceUrl": "https://kit.com/",
  "requested": {
@@ -34,7 +34,7 @@
   },
   "documentSize": {
    "width": 390,
-   "height": 16882
+   "height": 16878
   },
   "scroll": {
    "x": 0,
@@ -48,18 +48,18 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 16882
+   "height": 16878
   }
  },
  "png": {
   "width": 390,
-  "height": 16882
+  "height": 16878
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 390,
-   "height": 16882
+   "height": 16878
   },
   "basis": "stitchedParts"
  },
@@ -93,7 +93,7 @@
    "x": 0,
    "y": 14000,
    "width": 390,
-   "height": 2882
+   "height": 2878
   }
  ]
 }
