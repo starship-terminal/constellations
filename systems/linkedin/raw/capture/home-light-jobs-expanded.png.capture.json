@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:24:36.945Z",
-  "screenshot": "legal-light-full.part0.png",
-  "sanitizedSourceUrl": "https://www.linkedin.com/legal/user-agreement",
+  "capturedAt": "2026-11-21T14:18:18.338Z",
+  "screenshot": "home-light-jobs-expanded.png",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
       "width": 1440,
@@ -21,7 +21,7 @@
     "theme": {
       "classes": [],
       "attributes": {},
-      "colorScheme": "normal"
+      "colorScheme": "light"
     },
     "visualViewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 15443
+      "height": 900
     },
     "scroll": {
       "x": 0,
@@ -42,26 +42,21 @@
     }
   },
   "capture": {
-    "mode": "clip",
-    "scale": "css",
-    "clip": {
-      "x": 0,
-      "y": 0,
-      "width": 1440,
-      "height": 14000
-    }
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
   },
   "png": {
     "width": 1440,
-    "height": 14000
+    "height": 900
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 14000
+      "height": 900
     },
-    "basis": "clip"
+    "basis": "configuredViewport"
   },
   "visualReview": {
     "status": "pending",

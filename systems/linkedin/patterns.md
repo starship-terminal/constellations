@@ -4,7 +4,7 @@ Public guest pages only. The signed-in feed, messaging, and profile were not rea
 
 ## Guest home
 
-[screenshots/home-light-default.png](screenshots/home-light-default.png) is a marketing page: logo, five nav items, a Sign in outline button, a Join now filled button, a Google continue button, a Sign in with email outline button, and an illustration. The next band, sampled as `#f3f2f0`, holds topic chips. Phone width is [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png). On phone, Google and an Agree & Join sheet sit over the illustration. Those sheets were not submitted.
+[screenshots/home-light-default.png](screenshots/home-light-default.png) is a marketing page: logo, five nav items, a Sign in outline button, a Join now filled button, a Google continue button, a Sign in with email outline button, and an illustration. The next band, sampled as `#f3f2f0`, holds topic chips. Phone width is [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png). A Google one-tap sheet opened over the phone hero on its own and was removed before the shot. It was not clicked.
 
 ## Jobs listing
 
@@ -25,6 +25,10 @@ Public guest pages only. The signed-in feed, messaging, and profile were not rea
 ## Legal
 
 [screenshots/legal-light-default.png](screenshots/legal-light-default.png) is a document page with a horizontal nav. On phone, Open navigation fills the viewport: [screenshots/mobile-legal-light-nav-open.png](screenshots/mobile-legal-light-nav-open.png).
+
+## About
+
+[screenshots/about-light-default.png](screenshots/about-light-default.png) is the public About page on https://about.linkedin.com/, opened from the footer. It states the vision and mission on a pale illustrated field. It is not the signed-in company admin page.
 
 ## Walls
 

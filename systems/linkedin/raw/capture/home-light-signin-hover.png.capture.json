@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-20T20:30:20.886Z",
+  "capturedAt": "2026-11-21T14:18:19.492Z",
   "screenshot": "home-light-signin-hover.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -21,7 +21,7 @@
     "theme": {
       "classes": [],
       "attributes": {},
-      "colorScheme": "normal"
+      "colorScheme": "light"
     },
     "visualViewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 5966
+      "height": 900
     },
     "scroll": {
       "x": 0,
