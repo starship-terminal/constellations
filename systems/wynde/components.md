@@ -1,6 +1,6 @@
 # Components
 
-Public marketing components on https://wynde.io/, measured 19 November 2026. Values are token names. The crop is the real control.
+Public marketing components on https://wynde.io/, measured 21 November 2026. Values are token names. The crop is the real control.
 
 ## Button
 
@@ -32,20 +32,20 @@ Annual discount, at rest. Track 28 by 16 px, `#000000`, radius 40 px. Knob 8 px,
 
 ## Card
 
-Pricing cards are white, radius 20 px, padding 24 px 20 px, no border, no shadow, 541 px wide at the 1169 read. Plan names: Start `#4c5259`, Team `#f7511c`, Enterprise `#00528d`. Prices are Suisse Int'l Medium 28 px.
+Pricing cards are white, radius 20 px, padding 24 px 20 px, 411 px wide at the 1440 read. The hairline is an `::after` border, `1px solid rgb(237, 240, 244)`, not `border` on the element and not a shadow. Plan names: Start `#4c5259`, Team `#f7511c`, Enterprise `#00528d`. Prices are Suisse Int'l Medium 28 px. Contact sales is a white pill, 200 by 48 px, radius 52 px, with an `::after` border `1px solid rgb(218, 223, 229)`. Its label is Inter 20 px weight 500. It has no href.
 
 Feature tiles sit on `#cbf0ff` (computed `rgb(203, 240, 255)`), radius 20 px. Quote tiles sit on `#edf0f4`, radius 20 px.
 
 ## Text field
 
-Not present on the marketing pages. The login screen at https://app.wynde.io/login has an email field. It was not submitted, and its values are in [raw/login-boundary.json](raw/login-boundary.json), not in the marketing tokens.
+Not present on the marketing pages. The login screen at https://app.wynde.io/login has an empty email field. It was not typed in and not submitted. Its values are in [raw/login-boundary.json](raw/login-boundary.json), not in the marketing tokens. The 21 November read at 1440 by 900 matches the earlier one: placeholder "Enter your email here", white field, 280 by 32 px, radius 10 px, border `1px solid rgb(230, 233, 237)`, Inter 14 px.
 
 ## Gaps
 
 - Button hover, focus-visible, pressed, disabled, loading: not shown. Browser focus on Log in was the default orange outline, not tokenised.
 - Text field, text area, select, checkbox, radio: not on the public pages.
 - Switch on-state: not toggled.
-- Phone menu open state: measured (white panel, 390 by 271, padding 8 px 24 px) but the headless screenshot of the click did not show it open. No crop.
+- Phone menu open state: captured. White panel, 390 by 271, fixed. [screenshots/home-light-phone-menu.png](screenshots/home-light-phone-menu.png)
 - Dialog, toast, tooltip, tabs, table, avatar, badge: not present.
 - Signed-in app: not entered. Login offers email plus Google. Google was not pressed. No phone, card, or company SSO was entered.
 - Dark theme: not on the marketing site.

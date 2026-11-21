@@ -1,29 +1,21 @@
 {
-  "capturedAt": "2026-11-18T20:54:27.543Z",
-  "name": "not-found-framer",
-  "sanitizedSourceUrl": "https://wynde.io/this-page-does-not-exist-capture",
-  "requested": {
-    "width": 1440,
-    "height": 900,
-    "deviceScaleFactor": 1
-  },
-  "actual": {
+  "url": "https://wynde.io/this-page-does-not-exist-wynde-9f3a",
+  "capturedAt": "2026-11-21T16:05:00Z",
+  "viewport": {
     "innerWidth": 1440,
     "innerHeight": 900,
-    "dpr": 1,
-    "vv": {
-      "w": 1440,
-      "h": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
       "scale": 1
-    },
-    "scrollH": 900,
-    "bodyBg": "rgb(255, 255, 255)"
+    }
   },
-  "png": "/tmp/ds-sparse/wynde-shots/not-found-framer.png",
-  "note": "Framer hosted 404, not a Wynde design. Kept as evidence of the boundary.",
-  "theme": "light",
-  "screenshotFramesFromPreview": "unavailable: The browser is not producing screenshot frames",
-  "status": 404,
-  "title": "Page Not Found | Framer",
-  "truncated": false
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "scrollHeight": null,
+  "note": null
 }

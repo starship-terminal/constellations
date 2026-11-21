@@ -1,14 +1,15 @@
 # Wynde
 
-Wynde is a public marketing site for an unmoderated research platform. This package records the signed-out pages on wynde.io, measured on 19 November 2026 from computed styles in a live browser, plus full-page screenshots from headless Chromium after that page had already loaded with no Cloudflare challenge. The signed-in app at app.wynde.io was opened only as far as the login screen and was not entered. No email, phone, card, or company SSO was submitted. The site paints one theme. The host preferred dark, and the marketing page stayed light.
+Wynde is a public marketing site for an unmoderated research platform. This package records the signed-out pages on wynde.io, refreshed on 21 November 2026 from computed styles in a live browser and from headless Chromium screenshots of the same public URLs. The signed-in app at app.wynde.io was opened only as far as the empty login screen and was not entered. No email, phone, card, or company SSO was submitted. The site paints one theme. The host preferred dark, and the marketing page stayed light.
 
-Viewport at the live read: `innerWidth` 1169, `innerHeight` 731, `devicePixelRatio` 2, visual viewport scale 1. A later phone read was `innerWidth` 390, `innerHeight` 844, `devicePixelRatio` 2. The 1440 screenshots are a separate headless pass, labelled with their own measured width.
+Desktop captures were measured at `innerWidth` 1440, `innerHeight` 900, `devicePixelRatio` 1, visual viewport scale 1. Phone captures were `innerWidth` 390, `innerHeight` 844, `devicePixelRatio` 2. The phone PNGs are 780 by 1688 pixels because of that scale. A 1440 CSS-pixel shot is a 1440-pixel PNG.
 
 | Path | What it holds |
 |---|---|
 | [README.md](README.md) | This file |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, or wall |
 | [icon.png](icon.png) | Site icon, 128 px, from the page's icon link |
-| [DESIGN.md](DESIGN.md) | Generated from [tokens.json](tokens.json). Do not edit by hand |
+| [DESIGN.md](DESIGN.md) | Hand-written from the measured tokens. Not regenerated, so the catalog was left alone |
 | [tokens.json](tokens.json) | DTCG tokens. Every value has `$extensions.source` |
 | [style-guide.html](style-guide.html) | The measured colours, type, and buttons |
 | [components.md](components.md) | Component inventory and gaps |
@@ -75,23 +76,25 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Wynde's wordmark
 
 ## How the values were read
 
-Computed styles were read in the T3 preview browser on the live page at https://wynde.io/, then on https://wynde.io/terms-of-service, https://wynde.io/privacy-policy, and a missing route. `preview_snapshot` failed twice with "The browser is not producing screenshot frames", so the screenshots are from a later headless Chromium pass on the same public URLs, which had already loaded with no Cloudflare challenge. Colours, type, radii, and spacing in [tokens.json](tokens.json) come from `getComputedStyle` and from the five Framer colour custom properties declared on `body`. They are not sampled from the PNGs.
+Computed styles were read in the T3 preview browser on the live page at https://wynde.io/ at 1440 by 900, then on the phone menu at 390, and on https://app.wynde.io/login. Screenshots are a headless Chromium pass on the same public URLs, which loaded with no Cloudflare challenge. Colours, type, radii, and spacing in [tokens.json](tokens.json) come from `getComputedStyle` and from the five Framer colour custom properties declared on `body`. They are not sampled from the PNGs.
 
-The motion reading is [raw/motion.json](raw/motion.json), from `tools/capture/motion-probe.mjs` on the home page and the terms page. Home ignores `prefers-reduced-motion`: the 300 ms colour transition on nav links stays 300 ms. Terms has no motion.
+The motion reading is [raw/motion.json](raw/motion.json), from the 19 November probe. It was not re-run. Home ignores `prefers-reduced-motion`: the 300 ms colour transition on nav links stays 300 ms. A fresh read on 21 November still shows `transition: color 0.3s cubic-bezier(0.44, 0, 0.56, 1)` on the Features link.
 
 ## What to distrust
 
-The preview viewport was 1169 px wide, not 1440. The 1440 screenshots are a second pass. Do not treat a crop box on a screenshot as the CSS measurement. The CSS measurement is in [raw/home.json](raw/home.json).
+Phone PNGs are 780 pixels wide because `devicePixelRatio` was 2. The CSS viewport was 390. Do not treat a crop box on a screenshot as the CSS measurement. The CSS measurement is in [raw/home.json](raw/home.json) and in the 21 November notes in [components.md](components.md).
 
-The Framer 404 at a missing route computed a near-black page in the preview browser. The headless PNG of the same URL is white, with grey type. Those colours are not in the tokens. The page is Framer's empty state, not a Wynde screen.
+The Framer 404 at a missing route is white with grey type. Those colours are not in the tokens. The page is Framer's empty state, not a Wynde screen.
 
-Product illustrations on the home page use Favorit Pro and SF Pro inside the demo artwork. Those faces are not the marketing UI.
+Product illustrations on the home page use Favorit Pro and SF Pro inside the demo artwork. Those faces are not the marketing UI. The demo also paints a fake card number. That is illustration copy, not an account.
 
 Suisse Int'l is proprietary and is named only. It is not in the repo.
 
-The browser focus ring on a focused Log in link was `rgb(229, 151, 0) auto 1px`. That is the browser default, not a product token, so it is not in [tokens.json](tokens.json).
+The browser focus ring on a focused Log in link, read on 19 November, was `rgb(229, 151, 0) auto 1px`. That is the browser default, not a product token, so it is not in [tokens.json](tokens.json).
 
 Intercom's launcher is on the page. Its motion is in the probe output and is not a Wynde control.
+
+The login wall uses a blue Continue button (`rgb(0, 102, 255)`) that the marketing page does not. Those values stay in [raw/login-boundary.json](raw/login-boundary.json). They are not marketing tokens.
 
 ## Fonts
 
@@ -109,35 +112,30 @@ IBM Plex Mono 700 appears on the "AI" chip inside the product demo artwork. It i
 | Dark theme | Not present on the marketing site. No theme control. Host `prefers-color-scheme: dark` left the page light |
 | Type roles | Captured. Display, section, lede, body, nav, price, legal |
 | Spacing and radii | Captured from computed padding and `border-radius` |
-| Elevation | One shadow, on the green and navy bands: `rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(0, 0, 0, 0.1) 0px 2px 4px`. Recorded in [raw/home.json](raw/home.json). Cards and buttons have `box-shadow: none` |
-| Motion | Captured. [raw/motion.json](raw/motion.json). Home ignores reduced motion |
+| Elevation | One shadow, on the green and navy bands: `rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(0, 0, 0, 0.1) 0px 2px 4px`. Recorded in [raw/home.json](raw/home.json). Cards and buttons have `box-shadow: none`. Card and pill hairlines are `::after` borders, not shadows |
+| Motion | Captured. [raw/motion.json](raw/motion.json). Home ignores reduced motion. Probe not re-run on 21 November |
 | Button, default | Captured. [components/crops/button-primary.png](components/crops/button-primary.png) |
 | Button hover, pressed, disabled, loading | Not captured. No hover rule on the button classes in the CSSOM. Not forced |
 | Link | Captured. Nav links, footer links |
-| Text field, text area, select, checkbox, radio | Not present on the public marketing pages |
+| Text field, text area, select, checkbox, radio | Not present on the public marketing pages. The login email field was photographed empty and not typed in |
 | Switch | The annual discount control is a painted track and knob, measured at rest. The on state was not toggled |
-| Tabs, menu, tooltip, dialog, toast, table, avatar, badge | Not present as product components. The phone header has a menu button. Its open panel was measured in the preview browser (white, 390 by 271, padding 8 px 24 px). The headless menu screenshot did not show it open, so there is no crop |
-| Card | Captured. Pricing cards, feature wash, quote wash |
-| App shell | Not captured. Login boundary only. See gaps |
-| Form error, empty, loading, destructive confirm | Not present on the public pages |
-| Desktop 1440 and phone 390 | Screenshots at those CSS widths. Live read was 1169 and 390 |
-| Signed-in product | Not entered |
+| Menu | Captured at 390. [screenshots/home-light-phone-menu.png](screenshots/home-light-phone-menu.png). White panel, 390 by 271 |
+| Tabs, tooltip, dialog, toast, table, avatar, badge | Not present as product components |
+| Card | Captured. Pricing cards, feature wash, quote wash. [screenshots/home-light-pricing.png](screenshots/home-light-pricing.png) |
+| App shell | Captured. Header, footer, phone menu |
+| Form with a validation error | Not captured. The login form was not submitted |
+| Empty state | The only public empty state is Framer's 404, not a Wynde screen. [screenshots/not-found-framer.png](screenshots/not-found-framer.png) |
+| Login wall | Photographed empty. [screenshots/login-light-default.png](screenshots/login-light-default.png). Not entered. `login-extracted` stays not-started |
+| Signup wall | Not present. `/signup` shows "Failed to load data". No signup form |
+| Desktop 1440 | Captured |
+| Phone 390 | Captured for the homepage and the terms page |
 
 ## Do and don't
 
-- **Use black pills for the primary action.** The hero "Get started for free" is black with white Inter 20 px weight 600, 48 px tall, radius 52 px. [components/crops/button-primary.png](components/crops/button-primary.png)
-- **Use the grey pill for the second action.** "Book a demo" is `#dadfe5` with `#2b2b2b` type, same height and radius. [components/crops/button-secondary.png](components/crops/button-secondary.png)
-- **Keep the page white and the hero on the blue-grey wash.** Page is `#ffffff`. The hero panel is `#edf1f5` at radius 24 px. [screenshots/home-light-viewport.png](screenshots/home-light-viewport.png)
-- **Set display type in Suisse Int'l Bold, tight and large.** 68 px on the desktop hero, line-height 64 px, letter-spacing -2.04 px. Do not substitute a measured size you did not read.
-- **Do not invent a dark marketing theme.** The site did not paint one.
-- **Do not treat the product demo artwork as the design system.** The phone mock, heatmaps, and SF Pro clock are illustrations.
-- **Do not follow Log in or Get started into the app** for a marketing mock. Those links leave the site.
-
-## Rebuild
-
-```bash
-python3 tools/catalog.py design-md wynde
-python3 tools/package_tests.py wynde
-```
-
-There is no `build_tokens.py` mapping. [tokens.json](tokens.json) was written from [raw/home.json](raw/home.json), [raw/legal.json](raw/legal.json), and [raw/motion.json](raw/motion.json). `tools/test_tokens.py` checks the measured values still resolve.
+1. Use a black pill for the primary action. The hero "Get started for free" is `#000000` with white type, 48 px, radius 52 px. [screenshots/home-light-viewport.png](screenshots/home-light-viewport.png)
+2. Use the grey pill for the second action. "Book a demo" is `#dadfe5`. [components/crops/button-secondary.png](components/crops/button-secondary.png)
+3. Keep the page white and the hero on the `#edf1f5` wash. [screenshots/home-light-viewport.png](screenshots/home-light-viewport.png)
+4. Set display type in Suisse Int'l Bold, 68 px on desktop, letter-spacing about -2 px. [screenshots/home-light-viewport.png](screenshots/home-light-viewport.png)
+5. Do not invent a dark marketing theme. Dark preference left the page light.
+6. Do not treat the product demo artwork (the card mock, the heatmap, the "AI" chip) as the design system.
+7. Do not follow Log in or Get started into the app. Both stop at the empty login wall. [screenshots/login-light-default.png](screenshots/login-light-default.png)

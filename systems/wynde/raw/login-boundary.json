@@ -3,10 +3,12 @@
   "reachedFrom": "https://app.wynde.io redirect",
   "boundary": "Email field plus Continue, and Sign in with Google. Nothing typed. Continue not pressed. Google not pressed. No phone, card, or company SSO entered.",
   "viewport": {
-    "innerWidth": 1169,
-    "innerHeight": 731,
-    "devicePixelRatio": 2,
-    "scrollHeight": 731
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewportScale": 1,
+    "scrollHeight": 900,
+    "note": "Re-read 2026-11-21. The 19 November read was 1169 by 731 at devicePixelRatio 2. Control sizes below match both reads."
   },
   "body": {
     "backgroundColor": "rgb(247, 248, 250)",
@@ -68,6 +70,11 @@
     "focus": {
       "outline": "rgba(0, 0, 0, 0) none 2px"
     }
+  },
+  "signup": {
+    "url": "https://app.wynde.io/signup",
+    "readOn": "2026-11-21",
+    "result": "Failed to load data. Try again. Not a signup form. Try again was not clicked. /sign-up, /register, and /join showed the same page."
   },
   "google": {
     "text": "Sign in with Google",
