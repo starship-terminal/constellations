@@ -6549,9 +6549,9 @@
         391
       ],
       "description": "Build interactive 3D and AR solutions online",
-      "status": "pending",
-      "package": null,
-      "notes": "https://www.vectary.com/login/ showed Welcome to Vectary. Session was not present. Skipped.",
+      "status": "captured",
+      "package": "systems/vectary",
+      "notes": "https://www.vectary.com/login/ showed Welcome to Vectary. Session was not present. Skipped. Public walk 2026-11-21: the public site tree is in systems/vectary/site-tree.md. Login and signup stop at empty walls. Use email shows empty fields. Nothing was typed. Google, Apple, GitHub, and Slack were not clicked. No form was submitted. The 3D player showed Player error in headless Chromium. login-review.json is a stop note and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1703 at 4e3a822639dd. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 20
