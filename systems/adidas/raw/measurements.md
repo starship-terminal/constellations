@@ -190,7 +190,7 @@ Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png
 
 #### footer
 
-Footer. The page foot: link columns and the tel:400-999-5999 service line.
+Footer. The page foot: link columns and the published service line service line.
 
 Page: home. Selector: ``. States: default.
 

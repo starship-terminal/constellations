@@ -87,7 +87,24 @@ export async function seedConsent(page) {
   }).catch(() => {});
 }
 
+// The China storefront mounts a staff password-change dialog ("请修改初始密码")
+// on public loads, including signed-out sessions. It has no close control.
+// Its only button starts a password change, which this capture must not click.
+// Hiding that dialog (and the unmounted "确认退出员工帐号" twin) is remove-only:
+// nothing is accepted, rejected, or submitted. Recorded in site-tree.md.
+export async function hideStaffDialog(page) {
+  await page.evaluate(() => {
+    document.querySelectorAll('.lib-dialog, .lib-dialog-mask').forEach((n) => {
+      const t = n.innerText || '';
+      if (/初始密码|员工帐号|员工账号|修改密码|退出员工/.test(t) || n.classList.contains('lib-dialog') || n.classList.contains('lib-dialog-mask')) {
+        n.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }).catch(() => {});
+}
+
 export async function closePromo(page) {
+  await hideStaffDialog(page);
   for (let i = 0; i < 4; i++) {
     const hit = await page.evaluate(() => {
       let n = 0;

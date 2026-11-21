@@ -1,6 +1,6 @@
 # adidas China design reference
 
-A token set and component reference for adidas — for building storefront and campaign surfaces in the style of the real thing. **Boundary:** the global `adidas.com` storefront is Akamai-blocked from the capture environment (every regional domain — .com, .sg, .co.uk, .de, .com.au and more — answers HTTP 403 "Reference Error" to headless and headed Chromium, curl, and Wayback). This package therefore captures `adidas.com.cn`, adidas China's flagship storefront, a related but different front end in zh-CN with prices in ¥. Captured 2026-11-10, signed out, headless Chromium at 1440x900 and 390x844.
+A token set and component reference for adidas — for building storefront and campaign surfaces in the style of the real thing. **Boundary:** `https://www.adidas.com/` returns HTTP 403 Access Denied before any page renders (Akamai "Reference Error", confirmed again 2026-11-21). This package captures `https://www.adidas.com.cn/`, adidas China's flagship storefront, a related but different front end in zh-CN with prices in ¥. Refreshed 2026-11-21, signed out, headless Chromium at 1440x900 and 390x844. The control map is [site-tree.md](site-tree.md).
 
 The site: strict monochrome — black text and keylines on white with grey steps (#9a9b9b muted, #c8cbcc disabled/hairline, #eceff1/#f9f9f9 surfaces); Adihaus DIN + PingFang SC (adineuePRO on display type); bold button labels, square corners, a `lib-*` component library with Tailwind utilities and iconfont glyphs.
 
@@ -13,7 +13,8 @@ The site: strict monochrome — black text and keylines on white with grey steps
 | [components.md](components.md) | Discovery list + component inventory (21 components, 41 states) with crops and Gaps |
 | [patterns.md](patterns.md) | How the components combine per surface |
 | [components/crops/](components/crops) | 41 element screenshots at 2x |
-| [screenshots/](screenshots) | 17 `{page}-light-{state}.png` captures: desktop 1440x900, mobile 390x844 |
+| [screenshots/](screenshots) | `{page}-light-{state}.png` captures: desktop 1440x900, phone 390x844. `-full` tiles the inner scroll shell |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or interaction. Mapped before the screenshots |
 | [raw/](raw) | `css-vars.json`, `components-computed.json`, `measurements.md`, `component-tokens.json`. Full-colour raws stay outside the repo at `~/.design-systems/adidas/raw-full/` |
 | [tools/](tools) | The builders and capture kit. See Rebuild |
 
@@ -92,16 +93,18 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (icons are iconfo
 
 ## How the values were read
 
-Every surface is public, so pages were captured signed out in headless Chromium at 1440x900 and 390x844: local UI toggles only (search, menu, filter). `measure.mjs` reads computed styles on the live DOM — default, real hover, real keyboard focus, CDP-forced pressed — and crops each state at 2x. The PDP URL resolves from the first tile on a /plp/ page. Values are tokenised only where a measurement names them.
+Every surface is public, so pages were captured signed out in headless Chromium at 1440x900 and 390x844. The only presses are local UI toggles: search, filter, and the phone tab bar. No form was submitted. A staff password dialog mounts on desktop loads and was hidden, not clicked. `measure.mjs` reads computed styles on the live DOM (default, real hover, real keyboard focus, CDP-forced pressed) and crops each state at 2x. The PDP is pinned to articleId JP1477. Values are tokenised only where a measurement names them. Unread values stay Not captured.
 
 
 ## What to distrust
 
 - **This is adidas.com.cn, not adidas.com.** Same brand language, different front end and market. Values here are the China flagship's — do not project them onto the global storefront without re-measuring.
 - The PDP captured showed a disabled add-to-cart state (white fill, grey #c8cbcc text/border, "加入购物袋"); an in-stock enabled bar was not captured.
-- The site renders pages as fixed-height app shells with inner scroll containers, so `-full` shots capture the viewport-height shell, not a tall page — a hard boundary of the front end, not a truncation.
-- `plp-title`, `product-card-price`, `size-cell`, `accordion` and `m-burger` are recorded misses in components.md; `size-cell`/`accordion` may not exist on this PDP variant, and no burger menu mounts at 390 (the mobile top bar is a search pill, measured as `m-header`).
-- Nav-flyout hover timed out on desktop (menu opens on click for some items); the search overlay is in the screenshots.
+- Pages scroll an inner shell, not the document. `-full` shots tile that shell. The header is hidden in those tiles so it is not repeated. Viewport shots still show the header.
+- The privacy statement's first paragraph names a registered street address and a service number. That span is painted white in [privacy-light-default](screenshots/privacy-light-default.png) and [privacy-light-full](screenshots/privacy-light-full.png). The rest of the paragraph stays.
+- `plp-title`, `product-card-price`, `size-cell`, `accordion` and `m-burger` are recorded misses in components.md. No burger mounts at 390. The phone uses a tab bar, captured as the category, bag, and account shots.
+- The desktop catalog mega-menu stayed `display: none` after hover and click. The same links are on [sitemap-light-default](screenshots/sitemap-light-default.png) and [mobile-category-light-default](screenshots/mobile-category-light-default.png).
+- The login drawer (请登录, profile icon) and the phone account tab's 登录注册 control were not entered. Those branches stop at the wall.
 
 ## Fonts
 
@@ -117,12 +120,16 @@ Every surface is public, so pages were captured signed out in headless Chromium 
 | Sizing | captured | `core.size` |
 | Motion | minimal | instant transitions only |
 | Buttons, links, tiles, filters, promo tags, header/footer | captured | [components.md](components.md) |
-| Switch, tabs, toast, tooltip, table, avatar, fields | not present on captured surfaces | WeChat tooltips exist but were not measured |
+| Switch, toast, tooltip, table, avatar | not present on captured surfaces | WeChat tooltips exist but were not measured |
+| Phone tab bar | captured | [mobile-category](screenshots/mobile-category-light-default.png), [mobile-cart](screenshots/mobile-cart-light-default.png), [mobile-account](screenshots/mobile-account-light-default.png) |
+| Search field | captured, not submitted | [home-light-search](screenshots/home-light-search.png), [mobile-home-light-search](screenshots/mobile-home-light-search.png) |
 | States | captured | default/hover/focus-visible/pressed; one disabled CTA measured |
-| Signed-in, checkout, purchase | not captured | nothing submitted |
+| Signed-in, checkout, purchase, login drawer | not captured | login wall. Nothing submitted |
+| Catalog mega-menu open state | not captured | parent stayed hidden. Same links on the site map and the phone category tab |
+| Staff password dialog | not captured | password change. Hidden, not clicked |
 | 1440 and 390 | captured | [screenshots/](screenshots) |
 | Icons | not kept | iconfont glyphs, not shipped (docs/RIGHTS.md) |
-| adidas.com global | **blocked** | Akamai 403 on all regional domains — the package boundary |
+| adidas.com global | **blocked** | HTTP 403 Access Denied before any page renders, reconfirmed 2026-11-21 |
 
 
 ## Do and don't

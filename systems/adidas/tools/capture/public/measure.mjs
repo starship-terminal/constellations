@@ -248,7 +248,7 @@ async function shell() {
 
 async function footerRun() {
   const g = G.footer;
-  await S('footer', q('footer, [class*="footer" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Footer', desc: 'The page foot: link columns and the tel:400-999-5999 service line.' });
+  await S('footer', q('footer, [class*="footer" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Footer', desc: 'The page foot: link columns and the published service line.' });
   await S('footer-link', q('footer a, [class*="footer" i] a').filter({ visible: true }).first(), B4, { group: g, title: 'Footer link', desc: 'A footer link entry.' });
 }
 

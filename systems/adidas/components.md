@@ -12,24 +12,34 @@ How to read an entry:
 
 ## Discovery list
 
-Screenshots are named `{page}-light-{state}.png`. Desktop shots are 1440 x 900 at 2x; `-full` shots are whole pages; mobile shots are `mobile-{page}-light-{state}.png`, 390 x 844 at 2x. Only light exists — the storefront has no dark theme.
+Screenshots are named `{page}-light-{state}.png`. Desktop viewport shots are 1440 x 900. Phone viewport shots are 390 x 844 at 2x (780 x 1688). `-full` shots tile the inner scroll shell, so they are taller than the viewport. Only light exists. The storefront has no dark theme. Which control opens which page is in [site-tree.md](site-tree.md).
 
 | Surface | URL | Screenshots |
 |---|---|---|
 | Home. The campaign band, tag strip, product rows and footer. Captured at rest, search open, and full-page. | `/` | [default (light)](screenshots/home-light-default.png), [full (light)](screenshots/home-light-full.png), [search (light)](screenshots/home-light-search.png) |
 | A catalogue page (跑步 running, men's). Captured at rest, filter open, and full-page. | `/plp/sp_run_app_male` | [default (light)](screenshots/plp-light-default.png), [filter (light)](screenshots/plp-light-filter.png), [full (light)](screenshots/plp-light-full.png) |
 | A product page (articleId JP1477 — pinned so the screenshots and the measurements describe the same product). Captured at rest and full-page. | `/pdp?articleId=JP1477` | [default (light)](screenshots/pdp-light-default.png), [full (light)](screenshots/pdp-light-full.png) |
-| The cart route. | `/cart` | [default (light)](screenshots/cart-light-default.png), [full (light)](screenshots/cart-light-full.png) |
-| Home at 390, at rest and full-page. | `/` | [default (light)](screenshots/mobile-home-light-default.png), [full (light)](screenshots/mobile-home-light-full.png), [menu (light)](screenshots/mobile-home-light-menu.png) |
+| The empty bag. | `/cart` | [default (light)](screenshots/cart-light-default.png), [full (light)](screenshots/cart-light-full.png) |
+| The public site map: the catalog tree as a page. | `/siteMap` | [default (light)](screenshots/sitemap-light-default.png), [full (light)](screenshots/sitemap-light-full.png) |
+| A campaign listing (one /splp tile from home). | `/splp?contentId=SPLP_NGuAJiSc` | [default (light)](screenshots/campaign-light-default.png), [full (light)](screenshots/campaign-light-full.png) |
+| A brand content page linked from the home brand tiles. | `/clp?contentId=904` | [default (light)](screenshots/clp-light-default.png), [full (light)](screenshots/clp-light-full.png) |
+| The published privacy statement. The registered-address span is painted out. | `/my-account/privacy-statement` | [default (light)](screenshots/privacy-light-default.png), [full (light)](screenshots/privacy-light-full.png) |
+| Home at 390, at rest, search open, and full-page. No burger is mounted. | `/` | [default (light)](screenshots/mobile-home-light-default.png), [full (light)](screenshots/mobile-home-light-full.png), [search (light)](screenshots/mobile-home-light-search.png) |
 | The catalogue page at 390. | `/plp/sp_run_app_male` | [default (light)](screenshots/mobile-plp-light-default.png), [full (light)](screenshots/mobile-plp-light-full.png) |
 | The product page at 390. | `/pdp?articleId=JP1477` | [default (light)](screenshots/mobile-pdp-light-default.png), [full (light)](screenshots/mobile-pdp-light-full.png) |
+| The empty bag at 390. | `/cart` | [default (light)](screenshots/mobile-cart-light-default.png), [full (light)](screenshots/mobile-cart-light-full.png) |
+| The category tab: the catalog tree, already open. | `/category` | [default (light)](screenshots/mobile-category-light-default.png), [full (light)](screenshots/mobile-category-light-full.png) |
+| The account tab. Login wall. The register control was not clicked. | `/my-account` | [default (light)](screenshots/mobile-account-light-default.png) |
 
 ### Overlays and transient states
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| Search disclosure | home | the Search header button | [home-light-search](screenshots/home-light-search.png) |
+| Search disclosure | home | the search pill | [home-light-search](screenshots/home-light-search.png), [mobile-home-light-search](screenshots/mobile-home-light-search.png) |
 | Filter rail | PLP | the filter/sort control | [plp-light-filter](screenshots/plp-light-filter.png), [filter-row](#filter-row) |
+| Login drawer | home | 请登录 and the profile icon. Branch stopped. Not screenshotted. | not captured: login wall |
+| Catalog mega-menu | home | a category label. Parent stayed hidden in this headless session. | [sitemap](screenshots/sitemap-light-default.png) and [mobile category](screenshots/mobile-category-light-default.png) show the same links |
+| Staff password dialog | every desktop load | mounted with no close control. Not clicked. Hidden before shots. | not captured: password change |
 
 ## Shared values
 
@@ -136,7 +146,7 @@ The page foot (360px): bold 15/20 column titles (帮助中心…) over 11/16 lin
 
 #### Footer
 
-<a id="footer"></a>`footer`, on home. The page foot: link columns and the tel:400-999-5999 service line.
+<a id="footer"></a>`footer`, on home. The page foot: link columns and the published service line service line.
 
 <img src="components/crops/footer-default.png" alt="Footer, default" height="120"> 
 
