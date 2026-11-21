@@ -1,0 +1,45 @@
+{
+  "slug": "stocksy",
+  "product": "Stocksy",
+  "domain": "stocksy.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Headed Chrome photographed the login and signup walls empty. No identity provider was clicked. No form was submitted. No email, password, name, code, phone, or address was typed. The Turnstile checkbox was not solved.",
+  "wall": {
+    "url": "https://www.stocksy.com/user/login",
+    "title": "Sign in | Stocksy",
+    "asks": [
+      "Log in to your account",
+      "Email",
+      "Password",
+      "Forgot password?",
+      "Log in",
+      "Continue With Google",
+      "Continue With Facebook"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "code_field": false,
+    "inputs": [
+      {
+        "type": "email",
+        "name": "email",
+        "filled": false
+      },
+      {
+        "type": "password",
+        "name": "password",
+        "filled": false
+      }
+    ],
+    "note": "Email and password value lengths were 0. Log in was not clicked. Forgot password was not clicked. Continue With Google and Continue With Facebook were not clicked."
+  },
+  "signup_wall": {
+    "url": "https://www.stocksy.com/user/login",
+    "title": "Sign in | Stocksy",
+    "heading": "Create an account",
+    "note": "Sign up is a panel on the login URL. The email field was empty. CONTINUE was not clicked. Identity providers were not clicked."
+  }
+}
