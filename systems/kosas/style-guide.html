@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kosas public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #000000;
+    --promo: #eeeec8;
+    --chip: #eeeec8;
+    --note: #f8f7f3;
+    --button: #000000;
+    --on-button: #ffffff;
+    --hairline: rgba(0, 0, 0, 0.1);
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: "Founders Grotesk", "Avenir Next", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .promo {
+    background: var(--promo);
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Founders Grotesk Mono", ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+  header {
+    background: var(--page);
+    border-bottom: 1px solid var(--hairline);
+    padding: 20px 24px 12px;
+    text-align: center;
+  }
+  .wordmark {
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    line-height: 32px;
+  }
+  nav {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 16px;
+    font-family: "Founders Grotesk Mono", ui-monospace, monospace;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  main { padding: 32px; max-width: 960px; }
+  h1 { font-size: 36px; font-weight: 400; line-height: 40px; margin: 0 0 8px; }
+  h2 { font-size: 24px; font-weight: 400; line-height: 30px; margin: 32px 0 12px; }
+  .eyebrow {
+    font-family: "Founders Grotesk Mono", ui-monospace, monospace;
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 24px;
+    margin: 0 0 12px;
+  }
+  .hero-title { font-size: 72px; line-height: 63px; font-weight: 400; margin: 0 0 12px; }
+  .deck { font-size: 20px; line-height: 25px; margin: 0 0 16px; max-width: 482px; }
+  .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+  .shop-now {
+    display: inline-block;
+    border: 2px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    font-family: "Founders Grotesk Mono", ui-monospace, monospace;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 8px 28px;
+    border-radius: 0;
+    text-decoration: none;
+    line-height: 24px;
+  }
+  .add {
+    display: inline-block;
+    background: var(--button);
+    color: var(--on-button);
+    border: 1px solid var(--button);
+    font-family: "Founders Grotesk Mono", ui-monospace, monospace;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    border-radius: 0;
+    line-height: 20px;
+  }
+  .chip {
+    background: var(--chip);
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-family: "Founders Grotesk Mono", ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .note {
+    background: var(--note);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-family: "Founders Grotesk Mono", ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 16px;
+  }
+  .swatch { width: 64px; height: 40px; border: 1px solid var(--hairline); }
+  table { border-collapse: collapse; font-size: 14px; }
+  td { padding: 6px 12px 6px 0; vertical-align: middle; }
+  code { font-family: ui-monospace, monospace; font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="promo">Free full-size gifts with orders $80+</div>
+  <header>
+    <div class="wordmark">Kosas</div>
+    <nav>
+      <span>Shop All</span>
+      <span>Bestsellers</span>
+      <span>New</span>
+      <span>Sets</span>
+      <span>Shade Finder Quiz</span>
+    </nav>
+  </header>
+  <main>
+    <p class="eyebrow">Black Friday — Cyber Monday</p>
+    <p class="hero-title">25% Off Sitewide</p>
+    <p class="deck">Plus, up to 40% off sets + Cloud Set Brightening Loose Powder and FREE gifts with orders $80+.</p>
+    <div class="row">
+      <a class="shop-now" href="#shop-now">Shop Now</a>
+      <span class="add">Add to Bag - $48</span>
+      <span class="chip">25% Off</span>
+    </div>
+    <p class="note">25% Off Applied at Checkout</p>
+    <h1>Bestsellers</h1>
+    <p>Category title, 36px, weight 400. Product title Cloud Set Mist is 30px, weight 500.</p>
+    <h2>Measured colours</h2>
+    <table>
+      <tr><td><div class="swatch" style="background:#ffffff"></div></td><td>Page</td><td><code>#ffffff</code></td></tr>
+      <tr><td><div class="swatch" style="background:#000000"></div></td><td>Ink and Add to Bag</td><td><code>#000000</code></td></tr>
+      <tr><td><div class="swatch" style="background:#eeeec8"></div></td><td>Promo bar and sale chip</td><td><code>#eeeec8</code></td></tr>
+      <tr><td><div class="swatch" style="background:#f8f7f3"></div></td><td>Checkout note</td><td><code>#f8f7f3</code></td></tr>
+      <tr><td><div class="swatch" style="background:#D33167"></div></td><td>Accent, CSS only</td><td><code>#D33167</code></td></tr>
+    </table>
+  </main>
+</body>
+</html>
