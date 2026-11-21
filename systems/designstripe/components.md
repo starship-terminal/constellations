@@ -1,14 +1,14 @@
 # Visual (designstripe) components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from visual.app (the catalog's designstripe.com redirects here — 'Visual, formerly designstripe') on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted and no form was ever sent; the WAITLIST buttons, nav links, category tiles, tool cards and article links were measured, never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from visual.app (the catalog's designstripe.com redirects here — 'Visual, formerly designstripe') on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted and no form was ever sent; the WAITLIST buttons, nav links, category tiles, tool cards and article links were measured, never followed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (34 components, 78 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (42 components, 88 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (68 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (78 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -38,7 +38,7 @@ Screenshots are named `{page}-light-{state}.png`: every public surface paints `l
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 13 components were given a real keyboard focus. 13 draw an outline ring: `nav-link` (1px auto #101010 `border.focus`, offset 1px), `waitlist-btn` (1px solid #ffffff `background.page`, offset -1px), `feature-acc` (1px auto #101010 `border.focus`, offset 0px), `ast-tile-hero` (1px auto #101010 `border.focus`, offset 1px), `ast-tile` (1px auto #101010 `border.focus`, offset 1px), `ast-kind-link` (1px auto #101010 `border.focus`, offset 1px), `av-back` (1px auto #101010 `border.focus`, offset 1px), `av-item` (1px auto #101010 `border.focus`, offset 1px), `tool-card` (1px auto #101010 `border.focus`, offset 1px), `tool-card2` (1px auto #101010 `border.focus`, offset 1px), `post-link` (1px auto #101010 `border.focus`, offset 1px), `m-acc` (1px auto #e59700, offset 0px), `av-kind` (1px auto #101010 `border.focus`, offset 1px).
+**Focus.** 15 components were given a real keyboard focus. 15 draw an outline ring: `nav-link` (1px auto #101010 `border.focus`, offset 1px), `waitlist-btn` (1px solid #ffffff `background.page`, offset -1px), `feature-acc` (1px auto #101010 `border.focus`, offset 0px), `ast-tile-hero` (1px auto #101010 `border.focus`, offset 1px), `ast-tile` (1px auto #101010 `border.focus`, offset 1px), `ast-kind-link` (1px auto #101010 `border.focus`, offset 1px), `av-back` (1px auto #101010 `border.focus`, offset 1px), `av-item` (1px auto #101010 `border.focus`, offset 1px), `tool-card` (1px auto #101010 `border.focus`, offset 1px), `tool-card2` (1px auto #101010 `border.focus`, offset 1px), `post-link` (1px auto #101010 `border.focus`, offset 1px), `m-acc` (1px auto #e59700, offset 0px), `av-kind` (1px auto #101010 `border.focus`, offset 1px), `wl-field` (1px solid #5a47d7 `border.a11y`, offset -1px), `wheel-export` (1px solid #ffffff `background.page`, offset -1px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -46,8 +46,10 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, all, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | feature-acc, feature-acc2, m-acc, mkt-logo, waitlist-btn |
+| 0.05s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | wl-email, wl-field |
+| 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, all, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | feature-acc, feature-acc2, m-acc, mkt-logo, waitlist-btn, wheel-export, wl-submit |
 | 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | all | av-back, nav-link |
+| 0.2s | `ease` | all | wl-dialog |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
@@ -382,6 +384,75 @@ The sitemap footer (BLOG / ASSET LIBRARY / DESIGN TOOLS / ABOUT / CONTACT / LINK
 **Values (default).** size 1440 x 320; padding 32px 24px; background #2c2c26 `background.ink`; text fontMono 12/12 500, #ffffff `background.page`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+
+### Waitlist dialog
+
+
+
+#### Waitlist dialog
+The signup wall opened by WAITLIST. Photographed empty. Nothing was typed or submitted. Read as `wl-dialog` on the waitlist page.
+
+**Values (default).** size 720 x 450; border 1px solid #d0d0c8 `border.hairline`; radius 6px; background #ffffff `background.page`; shadow rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px; text fontMono 18/18 500, #000000 `text.black`; transition all 0.2s ease; icon 20 x 20, #000000 `text.black`.
+
+![Waitlist dialog default](components/crops/wl-dialog-default.png)
+
+#### Waitlist text field
+The First name field. Empty. Focus-visible only; nothing was typed. Read as `wl-field` on the waitlist page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 311 x 40; padding 0px 16px; border 1px solid #d0d0c8 `border.hairline`; radius 6px; background #ffffff `background.page`; text fontMono 16/16 500, #2c2c26 `background.ink`; transition color 0.05s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.05s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.05s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.05s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.05s cubic-bezier(0.4, 0, 0.2, 1), fill 0.05s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.05s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.05s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.05s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.05s cubic-bezier(0.4, 0, 0.2, 1); placeholder #aaab9c `color.neutral.400` |
+| focus-visible | border 1px solid #ff0000; shadow rgba(255, 0, 0, 0.2) 0px 0px 0px 2px; outline 1px solid #5a47d7 `border.a11y`, offset -1px |
+
+![Waitlist text field default](components/crops/wl-field-default.png) ![Waitlist text field focus-visible](components/crops/wl-field-focus-visible.png)
+
+#### Waitlist email field
+The Work email field. Empty. Not filled. Read as `wl-email` on the waitlist page.
+
+**Values (default).** size 311 x 40; padding 0px 16px; border 1px solid #d0d0c8 `border.hairline`; radius 6px; background #ffffff `background.page`; text fontMono 16/16 500, #2c2c26 `background.ink`; transition color 0.05s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.05s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.05s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.05s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.05s cubic-bezier(0.4, 0, 0.2, 1), fill 0.05s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.05s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.05s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.05s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.05s cubic-bezier(0.4, 0, 0.2, 1); placeholder #aaab9c `color.neutral.400`.
+
+![Waitlist email field default](components/crops/wl-email-default.png)
+
+#### Company size select
+The Company size control. Not opened, so its menu is not captured. Read as `wl-select` on the waitlist page.
+
+**Values (default).** size 311 x 40; padding 0px 16px; border 1px solid #d0d0c8 `border.hairline`; radius 6px; background #ffffff `background.page`; text fontMono 16/16 500, #aaab9c `color.neutral.400`; icon 16 x 16, #979886 `color.neutral.500`.
+
+![Company size select default](components/crops/wl-select-default.png)
+
+#### Join waitlist submit
+The dialog submit button. Not pressed. Read as `wl-submit` on the waitlist page.
+
+**Values (default).** size 311 x 40; padding 0px 16px; radius 3.35544e+07px; background #2c2c26 `background.ink`; text fontMono 16/16 500, #ffffff `background.page`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1).
+
+![Join waitlist submit default](components/crops/wl-submit-default.png)
+
+### Color wheel
+
+
+
+#### Tool heading
+"Color Wheel" on the public tool page. Read as `wheel-h1` on the wheel page.
+
+**Values (default).** size 684 x 96; background transparent; text fontSerif 96/96 400, #2c2c26 `background.ink`.
+
+![Tool heading default](components/crops/wheel-h1-default.png)
+
+#### Format select
+The Hex format control beside the colour field. Not opened. Read as `wheel-hex` on the wheel page.
+
+Not on the page when it was captured.
+
+#### Export button
+The public Export control. Not pressed, so no file was downloaded. Read as `wheel-export` on the wheel page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 345.66 x 40; padding 0px 16px; radius 3.35544e+07px; background #2c2c26 `background.ink`; text fontMono 16/16 500, #ffffff `background.page`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 24 x 24, #ffffff `background.page` |
+| hover | background #414238 `color.neutral.900` |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px; outline 1px solid #ffffff `background.page`, offset -1px |
+
+![Export button default](components/crops/wheel-export-default.png) ![Export button hover](components/crops/wheel-export-hover.png) ![Export button focus-visible](components/crops/wheel-export-focus-visible.png)
 
 ## Icons
 

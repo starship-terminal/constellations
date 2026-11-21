@@ -204,10 +204,10 @@ async function S(key, target, list, meta = {}, opts = {}) {
       } else if (st === 'filled') {
         const f = (opts.fieldLoc || loc).and(page.locator(':visible')).first();
         await f.click({ timeout: 4000 }).catch(() => f.evaluate((el) => el.focus()));
-        await page.keyboard.type(opts.fillText || 'name@example.com', { delay: 10 });
+        await page.keyboard.type(opts.fillText || 'sample text', { delay: 10 });
         await page.waitForTimeout(500);
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
-        via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
+        via = `typed "${opts.fillText || 'sample text'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         // noToggle: the state is read as it already paints; openedVia says why
         // it is open (an earlier toggle, or open at rest), so the record never
@@ -310,6 +310,7 @@ const G = {
   shell: 'Header and navigation', home: 'Home', assets: 'Asset library',
   avatars: 'Avatar set gallery', tools: 'Design tools', contact: 'Contact',
   post: 'Blog article', mobile: 'Mobile (390 wide)', footer: 'Footer',
+  waitlist: 'Waitlist dialog', wheel: 'Color wheel',
 };
 
 const FIELD = ['default', 'focused', 'filled'];
@@ -398,6 +399,32 @@ async function post() {
   save();
 }
 
+async function waitlist() {
+  if (!(await newPage('waitlist', { url: BASE + '/' }))) return;
+  await sheetsFor('waitlist');
+  const btn = page.getByRole('button', { name: /^waitlist$/i }).first();
+  await btn.click({ timeout: 8000 });
+  await page.getByRole('dialog').waitFor({ timeout: 8000 });
+  await page.waitForTimeout(500);
+  const g = G.waitlist;
+  await S('wl-dialog', page.getByRole('dialog'), ['default'], { group: g, title: 'Waitlist dialog', desc: 'The signup wall opened by WAITLIST. Photographed empty. Nothing was typed or submitted.', sel: '[role=dialog]' }, { noScroll: true });
+  await S('wl-field', page.locator('[role=dialog] input[name="firstName"]'), ['default', 'focus-visible'], { group: g, title: 'Waitlist text field', desc: 'The First name field. Empty. Focus-visible only; nothing was typed.', sel: 'input[name=firstName]' }, { noScroll: true });
+  await S('wl-email', page.locator('[role=dialog] input[name="email"]'), ['default'], { group: g, title: 'Waitlist email field', desc: 'The Work email field. Empty. Not filled.', sel: 'input[name=email]' }, { noScroll: true });
+  await S('wl-select', page.locator('[role=dialog] select, [role=dialog] [role=combobox], [role=dialog] button').filter({ hasText: /company size/i }).first(), ['default'], { group: g, title: 'Company size select', desc: 'The Company size control. Not opened, so its menu is not captured.', sel: 'company size' }, { noScroll: true });
+  await S('wl-submit', page.getByRole('button', { name: /join waitlist/i }).last(), ['default'], { group: g, title: 'Join waitlist submit', desc: 'The dialog submit button. Not pressed.', sel: 'dialog Join waitlist' }, { noScroll: true });
+  save();
+}
+
+async function wheel() {
+  if (!(await newPage('wheel', { url: BASE + '/colors/color-wheel' }))) return;
+  await sheetsFor('wheel');
+  const g = G.wheel;
+  await S('wheel-h1', q('main h1, h1').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Tool heading', desc: '"Color Wheel" on the public tool page.', sel: 'h1' }, { noScroll: true });
+  await S('wheel-hex', page.getByRole('button', { name: /^hex$/i }).first(), ['default'], { group: g, title: 'Format select', desc: 'The Hex format control beside the colour field. Not opened.', sel: 'Hex button' }, { noScroll: true });
+  await S('wheel-export', page.getByRole('button', { name: /export/i }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Export button', desc: 'The public Export control. Not pressed, so no file was downloaded.', sel: 'Export' }, { noScroll: true });
+  save();
+}
+
 async function mobile() {
   if (!(await newPage('mobile', { mobile: true, url: BASE + '/' }))) return;
   await chrome('mobile');
@@ -416,7 +443,7 @@ out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
 const pages = process.argv.slice(2);
-const plan = { home, assets, avatars, tools, contact, post, mobile };
+const plan = { home, assets, avatars, tools, contact, post, waitlist, wheel, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 const finishedPages = new Set();
 try {

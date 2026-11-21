@@ -4,7 +4,7 @@ How the measured components combine into the public pages. Every value resolves 
 
 ## The fixed chrome
 
-Every surface carries a fixed 1440x32 top bar over the white field (`light.background.page`, `#ffffff`): the ink `Visual` logo mark (`core.font.size.micro` 12px mono at 500 on a `#2c2c26` ink square, `core.radius.logo` 4px), mono section links (`light.text.ink`, `core.radius.nav-link` 3px) — Why Visual?, Assets, Tools, Blog — and the cream `WAITLIST` pill (`light.action.cream` `#e8e7d9` → `light.action.cream-hover` `#2c2c26` on hover, `light.action.on-cream` ink text, `core.radius.pill`). The same bar on mobile collapses to 390x40 with the wordmark and a menu.
+Every surface carries a fixed 1440x32 top bar over the white field (`light.background.page`, `#ffffff`): the ink `Visual` logo mark (`core.font.size.micro` 12px mono at 500 on a `#2c2c26` ink square, `core.radius.logo` 4px), mono section links (`light.text.ink`, `core.radius.nav-link` 3px) — Why Visual?, Assets, Tools, Blog — and the cream `WAITLIST` pill (`light.action.cream` `#e8e7d9` → `light.action.cream-hover` `#2c2c26` on hover, `light.action.on-cream` ink text, `core.radius.pill`). The same bar on a 390px viewport collapses to a 40px bar with the wordmark and a menu button. The menu lists HOME, WHY VISUAL?, ASSETS, TOOLS, BLOG, and JOIN WAITLIST. See [mobile-nav-light-open.png](screenshots/mobile-nav-light-open.png).
 
 ## The serif hero
 
@@ -34,10 +34,19 @@ Every page closes on the one painted dark block: a 1440x320 `#2c2c26` footer (`l
 
 At 390 wide the nav compresses to a 40px bar (`m-nav`), the hero serif drops to 48px (`m-h1`), accordion rows hold 16px mono (`m-acc`) and the footer keeps its ink fill at 390x316 (`m-footer`).
 
+## The waitlist dialog
+
+WAITLIST and JOIN WAITLIST open one dialog on the current URL. It is a 720x450 white panel (`wl-dialog`) with a two-layer shadow (`light.elevation.dialog`). The fields are 40px mono inputs for First name, Work email, and Company name, plus a Company size select. The submit button is ink with white mono text (`wl-submit`). The dialog was photographed empty. Nothing was typed and Join waitlist was not pressed. See [waitlist-light-dialog.png](screenshots/waitlist-light-dialog.png).
+
+## The public color tool
+
+/colors/color-wheel is a public tool, not a card. It keeps the site chrome, a 96px serif heading (`wheel-h1`), a colour wheel, a hex field, an Analogous select, and an ink Export button (`wheel-export`, `#414238` on hover). Export was not pressed. See [tool-light-default.png](screenshots/tool-light-default.png).
+
 ## Boundaries
 
-- The design agents themselves, account asset downloads and every post-waitlist surface need an account and were never reached.
-- The WAITLIST buttons open the waitlist flow; they were measured at default/hover/focus-visible/pressed, never submitted.
+- The design agents and every screen after the waitlist need an account and were not entered.
+- The waitlist dialog was opened and not submitted. Company size was not opened.
+- /privacy is a footer link that paints "Privacy page not found".
 - `/contact` paints copy, not a form — no field, validation or error state exists on the public surface.
 - A real `.dark` block is declared in the stylesheet but no public control toggles it; the `dark` token set is evidence of intent, not of a painted surface.
 - Asset tiles and article links were never followed (external/account flows).

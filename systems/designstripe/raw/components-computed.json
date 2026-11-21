@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-14",
+  "read": "2026-11-21",
   "viewport": "1440 x 900 (mobile group 390 x 844); visual.app paints a single light theme signed out",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -1115,6 +1115,450 @@
     }
    ],
    "post": [
+    {
+     "selector": ".animate-pulse",
+     "transition": "",
+     "animation": "var(--animate-pulse)"
+    },
+    {
+     "selector": ".PinturaRoot",
+     "transition": "background-color 1ms,outline-color 1ms,color var(--transition-duration-10) ease-in-out,dir 1ms",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot > .PinturaStatus > p",
+     "transition": "opacity var(--transition-duration-50) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot .PinturaStatusAside .PinturaButton",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot > .PinturaNav .PinturaButton",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot > .PinturaNav .PinturaButton svg",
+     "transition": "opacity var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot > .PinturaNavMain button",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaUtilPanel[data-util=\"filter\"] .PinturaFilterPreview",
+     "transition": "border-radius 1ms",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaUtilPanel[data-util=\"filter\"] .PinturaFilterPreview::before",
+     "transition": "background-color var(--transition-duration-10),color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaUtilPanel[data-util=\"resize\"] .PinturaDropdownButton",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaInputDimension button, .PinturaInputDimension input",
+     "transition": "background-color var(--transition-duration-10) ease-in-out,color var(--transition-duration-10) ease-in-out,border-color var(--transition-duration-10) ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaTabList button > *",
+     "transition": "filter var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaProgressIndicator[data-status=\"busy\"] svg",
+     "transition": "",
+     "animation": "1s linear 0s infinite normal none running image_editor_spin"
+    },
+    {
+     "selector": ".PinturaProgressIndicator[data-status=\"busy\"] .PinturaProgressIndicatorFill",
+     "transition": "stroke-dashoffset 0.5s linear, stroke-dasharray 0.5s linear",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaInputForm[data-stick=\"true\"]",
+     "transition": "opacity 0.15s 0.25s",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaUtilFooter .PinturaControlList .PinturaControlListOption label, .PinturaUtilFooter .PinturaControlList [role=\"tab\"]",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,filter var(--transition-duration-25) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRangeInput > .PinturaRangeInputReset",
+     "transition": "opacity var(--transition-duration-25)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeStyle > .PinturaDropdownButton",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeStyle > .PinturaRadioGroup > .PinturaRadioGroupOptions label",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaToolbar .PinturaButton",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot .PinturaImageButton",
+     "transition": "filter var(--transition-duration-25) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot .PinturaImageButton[data-loader]::before",
+     "transition": "transform calc(var(--transition-duration-multiplier, 0) * .5s) ease-in",
+     "animation": "pintura-img-loading calc(var(--transition-duration-multiplier, 0) * 1s) infinite alternate ease-in-out"
+    },
+    {
+     "selector": ".PinturaRoot .PinturaImageButton[data-loader] img",
+     "transition": "opacity calc(var(--transition-duration-multiplier, 0) * .35s) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapePresetsPalette .PinturaButton",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeList",
+     "transition": "opacity var(--transition-duration-10) ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeControlsGroup > .PinturaButton",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeControlsGroup .PinturaButtonIconOnly",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaOptionsList .PinturaListOption",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".ui\\:animate-pulse",
+     "transition": "",
+     "animation": "var(--ui-animate-pulse)"
+    },
+    {
+     "selector": "[data-vaul-drawer]",
+     "transition": "transform 0.5s cubic-bezier(0.32, 0.72, 0, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "[data-vaul-animate=\"false\"]",
+     "transition": "",
+     "animation": "auto ease 0s 1 normal none running none"
+    },
+    {
+     "selector": "[data-vaul-overlay][data-vaul-snap-points=\"true\"]",
+     "transition": "opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toaster]",
+     "transition": "transform 0.4s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast]",
+     "transition": "transform 0.4s, opacity 0.4s, height 0.4s, box-shadow 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast][data-promise=\"true\"] [data-icon] > svg",
+     "transition": "",
+     "animation": "0.3s ease 0s 1 normal forwards running sonner-fade-in"
+    },
+    {
+     "selector": "[data-sonner-toast][data-styled=\"true\"] [data-button]",
+     "transition": "opacity 0.4s, box-shadow 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast][data-styled=\"true\"] [data-close-button]",
+     "transition": "opacity 0.1s, background 0.2s, border-color 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast] > *",
+     "transition": "opacity 0.4s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast][data-removed=\"true\"][data-front=\"false\"][data-swipe-out=\"false\"][data-expanded=\"false\"]",
+     "transition": "transform 0.5s, opacity 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast][data-swiping=\"true\"]",
+     "transition": "none",
+     "animation": ""
+    },
+    {
+     "selector": ".sonner-loading-wrapper[data-visible=\"false\"]",
+     "transition": "",
+     "animation": "0.2s ease 0s 1 normal forwards running sonner-fade-out"
+    },
+    {
+     "selector": ".sonner-loading-bar",
+     "transition": "",
+     "animation": "1.2s linear 0s infinite normal none running sonner-spin"
+    },
+    {
+     "selector": ".sonner-loading-bar, [data-sonner-toast], [data-sonner-toast] > *",
+     "transition": "none",
+     "animation": "auto ease 0s 1 normal none running none"
+    },
+    {
+     "selector": ".sonner-loader",
+     "transition": "opacity 0.2s, transform 0.2s",
+     "animation": ""
+    }
+   ],
+   "waitlist": [
+    {
+     "selector": ".animate-pulse",
+     "transition": "",
+     "animation": "var(--animate-pulse)"
+    },
+    {
+     "selector": ".PinturaRoot",
+     "transition": "background-color 1ms,outline-color 1ms,color var(--transition-duration-10) ease-in-out,dir 1ms",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot > .PinturaStatus > p",
+     "transition": "opacity var(--transition-duration-50) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot .PinturaStatusAside .PinturaButton",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot > .PinturaNav .PinturaButton",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot > .PinturaNav .PinturaButton svg",
+     "transition": "opacity var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot > .PinturaNavMain button",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaUtilPanel[data-util=\"filter\"] .PinturaFilterPreview",
+     "transition": "border-radius 1ms",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaUtilPanel[data-util=\"filter\"] .PinturaFilterPreview::before",
+     "transition": "background-color var(--transition-duration-10),color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaUtilPanel[data-util=\"resize\"] .PinturaDropdownButton",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaInputDimension button, .PinturaInputDimension input",
+     "transition": "background-color var(--transition-duration-10) ease-in-out,color var(--transition-duration-10) ease-in-out,border-color var(--transition-duration-10) ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaTabList button > *",
+     "transition": "filter var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaProgressIndicator[data-status=\"busy\"] svg",
+     "transition": "",
+     "animation": "1s linear 0s infinite normal none running image_editor_spin"
+    },
+    {
+     "selector": ".PinturaProgressIndicator[data-status=\"busy\"] .PinturaProgressIndicatorFill",
+     "transition": "stroke-dashoffset 0.5s linear, stroke-dasharray 0.5s linear",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaInputForm[data-stick=\"true\"]",
+     "transition": "opacity 0.15s 0.25s",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaUtilFooter .PinturaControlList .PinturaControlListOption label, .PinturaUtilFooter .PinturaControlList [role=\"tab\"]",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,filter var(--transition-duration-25) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRangeInput > .PinturaRangeInputReset",
+     "transition": "opacity var(--transition-duration-25)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeStyle > .PinturaDropdownButton",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeStyle > .PinturaRadioGroup > .PinturaRadioGroupOptions label",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaToolbar .PinturaButton",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot .PinturaImageButton",
+     "transition": "filter var(--transition-duration-25) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaRoot .PinturaImageButton[data-loader]::before",
+     "transition": "transform calc(var(--transition-duration-multiplier, 0) * .5s) ease-in",
+     "animation": "pintura-img-loading calc(var(--transition-duration-multiplier, 0) * 1s) infinite alternate ease-in-out"
+    },
+    {
+     "selector": ".PinturaRoot .PinturaImageButton[data-loader] img",
+     "transition": "opacity calc(var(--transition-duration-multiplier, 0) * .35s) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapePresetsPalette .PinturaButton",
+     "transition": "background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeList",
+     "transition": "opacity var(--transition-duration-10) ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeControlsGroup > .PinturaButton",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaShapeControlsGroup .PinturaButtonIconOnly",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".PinturaOptionsList .PinturaListOption",
+     "transition": "background-color var(--transition-duration-10)",
+     "animation": ""
+    },
+    {
+     "selector": ".ui\\:animate-pulse",
+     "transition": "",
+     "animation": "var(--ui-animate-pulse)"
+    },
+    {
+     "selector": "[data-vaul-drawer]",
+     "transition": "transform 0.5s cubic-bezier(0.32, 0.72, 0, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "[data-vaul-animate=\"false\"]",
+     "transition": "",
+     "animation": "auto ease 0s 1 normal none running none"
+    },
+    {
+     "selector": "[data-vaul-overlay][data-vaul-snap-points=\"true\"]",
+     "transition": "opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toaster]",
+     "transition": "transform 0.4s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast]",
+     "transition": "transform 0.4s, opacity 0.4s, height 0.4s, box-shadow 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast][data-promise=\"true\"] [data-icon] > svg",
+     "transition": "",
+     "animation": "0.3s ease 0s 1 normal forwards running sonner-fade-in"
+    },
+    {
+     "selector": "[data-sonner-toast][data-styled=\"true\"] [data-button]",
+     "transition": "opacity 0.4s, box-shadow 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast][data-styled=\"true\"] [data-close-button]",
+     "transition": "opacity 0.1s, background 0.2s, border-color 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast] > *",
+     "transition": "opacity 0.4s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast][data-removed=\"true\"][data-front=\"false\"][data-swipe-out=\"false\"][data-expanded=\"false\"]",
+     "transition": "transform 0.5s, opacity 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-sonner-toast][data-swiping=\"true\"]",
+     "transition": "none",
+     "animation": ""
+    },
+    {
+     "selector": ".sonner-loading-wrapper[data-visible=\"false\"]",
+     "transition": "",
+     "animation": "0.2s ease 0s 1 normal forwards running sonner-fade-out"
+    },
+    {
+     "selector": ".sonner-loading-bar",
+     "transition": "",
+     "animation": "1.2s linear 0s infinite normal none running sonner-spin"
+    },
+    {
+     "selector": ".sonner-loading-bar, [data-sonner-toast], [data-sonner-toast] > *",
+     "transition": "none",
+     "animation": "auto ease 0s 1 normal none running none"
+    },
+    {
+     "selector": ".sonner-loader",
+     "transition": "opacity 0.2s, transform 0.2s",
+     "animation": ""
+    }
+   ],
+   "wheel": [
     {
      "selector": ".animate-pulse",
      "transition": "",
@@ -2472,7 +2916,7 @@
    "url": "https://visual.app/assets",
    "title": "Waitlist CTA",
    "group": "Header and navigation",
-   "desc": "The nav WAITLIST button \u2014 the product\u2019s only conversion CTA on this surface; measured, never pressed (it joins a waitlist).",
+   "desc": "The nav WAITLIST button — the product’s only conversion CTA on this surface; measured, never pressed (it joins a waitlist).",
    "selector": "nav WAITLIST"
   },
   "hero-h1": {
@@ -2567,7 +3011,7 @@
    "url": "https://visual.app/",
    "title": "Hero headline",
    "group": "Home",
-   "desc": "\"Design Agents for Revenue Teams\" \u2014 the serif display heading.",
+   "desc": "\"Design Agents for Revenue Teams\" — the serif display heading.",
    "selector": "h1"
   },
   "hero-sub": {
@@ -3516,7 +3960,7 @@
    "url": "https://visual.app/assets",
    "title": "Library heading",
    "group": "Asset library",
-   "desc": "\"Asset Library\" \u2014 the 96px serif page heading in the olive ink.",
+   "desc": "\"Asset Library\" — the 96px serif page heading in the olive ink.",
    "selector": "h1"
   },
   "ast-tile-hero": {
@@ -4578,7 +5022,7 @@
    "url": "https://visual.app/assets",
    "title": "Tile preview",
    "group": "Asset library",
-   "desc": "A category tile\u2019s preview image (object-cover inside the rounded square).",
+   "desc": "A category tile’s preview image (object-cover inside the rounded square).",
    "selector": "tile img"
   },
   "ast-kind-link": {
@@ -5975,7 +6419,7 @@
    "url": "https://visual.app/tools",
    "title": "Tools heading",
    "group": "Design tools",
-   "desc": "\"Design Tools\" \u2014 the 96px serif page heading.",
+   "desc": "\"Design Tools\" — the 96px serif page heading.",
    "selector": "h1"
   },
   "tool-card": {
@@ -6403,7 +6847,7 @@
    "url": "https://visual.app/tools",
    "title": "Tool card",
    "group": "Design tools",
-   "desc": "A tool card (\"Color Wheel\" \u2014 bordered white card with a breadcrumb label, title and copy); measured, never followed.",
+   "desc": "A tool card (\"Color Wheel\" — bordered white card with a breadcrumb label, title and copy); measured, never followed.",
    "selector": "tool card"
   },
   "tool-card2": {
@@ -7019,7 +7463,7 @@
    "url": "https://visual.app/contact",
    "title": "Contact heading",
    "group": "Contact",
-   "desc": "\"Contact\" \u2014 the 96px serif page heading.",
+   "desc": "\"Contact\" — the 96px serif page heading.",
    "selector": "h1"
   },
   "ct-copy": {
@@ -9096,6 +9540,1148 @@
    "group": "Avatar set gallery",
    "desc": "The AVATARS kind crumb over the set grid; measured, never followed.",
    "selector": "kind crumb"
+  },
+  "wl-dialog": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "ui:bg-background ui:data-[state=open]:animate-in ui:data-[state=closed]:animate-out ui:data-[state=closed]:fade-out-0",
+     "text": "Join the waitlist Company size* 1-10 11-50 51-200 201-500 501-1000 1001+ Join wa",
+     "rect": {
+      "x": 360,
+      "y": 225,
+      "w": 720,
+      "h": 450
+     },
+     "style": {
+      "display": "flex",
+      "position": "fixed",
+      "boxSizing": "border-box",
+      "width": "720px",
+      "height": "450px",
+      "minWidth": "0px",
+      "maxWidth": "720px",
+      "minHeight": "225px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "0px",
+      "rowGap": "0px",
+      "columnGap": "0px",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(208, 208, 200)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(208, 208, 200)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(208, 208, 200)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(208, 208, 200)",
+      "borderTopLeftRadius": "6px",
+      "borderTopRightRadius": "6px",
+      "borderBottomRightRadius": "6px",
+      "borderBottomLeftRadius": "6px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0.2s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "2147483647",
+      "top": "450px"
+     },
+     "paint": [
+      {
+       "node": "div.ui:bg-background.ui:data-[state=open]:animate-in",
+       "size": "720.0x450.0",
+       "border": "T:1px solid rgb(208, 208, 200) | R:1px solid rgb(208, 208, 200) | B:1px solid rgb(208, 208, 200) | L:1px solid rgb(208, 208, 200)",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+       "radius": "6px"
+      },
+      {
+       "node": "input.ui:flex.ui:justify-center",
+       "size": "239.0x40.0",
+       "border": "T:1px solid rgb(208, 208, 200) | R:1px solid rgb(208, 208, 200) | B:1px solid rgb(208, 208, 200) | L:1px solid rgb(208, 208, 200)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "6px"
+      },
+      {
+       "node": "input.ui:flex.ui:justify-center",
+       "size": "311.0x40.0",
+       "border": "T:1px solid rgb(208, 208, 200) | R:1px solid rgb(208, 208, 200) | B:1px solid rgb(208, 208, 200) | L:1px solid rgb(208, 208, 200)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "6px"
+      },
+      {
+       "node": "input.ui:flex.ui:justify-center",
+       "size": "311.0x40.0",
+       "border": "T:1px solid rgb(208, 208, 200) | R:1px solid rgb(208, 208, 200) | B:1px solid rgb(208, 208, 200) | L:1px solid rgb(208, 208, 200)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "6px"
+      },
+      {
+       "node": "input.ui:flex.ui:justify-center",
+       "size": "311.0x40.0",
+       "border": "T:1px solid rgb(208, 208, 200) | R:1px solid rgb(208, 208, 200) | B:1px solid rgb(208, 208, 200) | L:1px solid rgb(208, 208, 200)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "6px"
+      },
+      {
+       "node": "button.ui:flex.ui:items-center",
+       "size": "311.0x40.0",
+       "border": "T:1px solid rgb(208, 208, 200) | R:1px solid rgb(208, 208, 200) | B:1px solid rgb(208, 208, 200) | L:1px solid rgb(208, 208, 200)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "6px"
+      },
+      {
+       "node": "button.ui:inline-flex.ui:items-center",
+       "size": "311.0x40.0",
+       "bg": "rgb(44, 44, 38)",
+       "radius": "3.35544e+07px"
+      },
+      {
+       "node": "div.hidden.sm:flex",
+       "size": "359.0x448.0",
+       "bg": "rgb(255, 255, 255)",
+       "bgImage": "linear-gradient(45deg, rgb(227, 227, 222) 25%, rgba(0, 0, 0, 0) 0px), linear-gradient(-45deg, rgb(227, 227, 222) 25%, rgba(0, 0, 0, 0) 0px), linear-gradient(45deg, rgba(0, 0, 0, 0) 75%, rgb(227, 227, "
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "body.__variable_776c64.__variable_8888f9",
+       "radius": "0px",
+       "bg": "rgb(255, 255, 255)"
+      }
+     ],
+     "textStyle": {
+      "node": "h2.text-lg.leading-none",
+      "text": "Join the waitlist",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "18px",
+      "lineHeight": "18px",
+      "fontWeight": "500",
+      "letterSpacing": "-0.45px",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
+     "crop": "components/crops/wl-dialog-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "waitlist",
+   "run": "2026-11-21",
+   "title": "Waitlist dialog",
+   "group": "Waitlist dialog",
+   "desc": "The signup wall opened by WAITLIST. Photographed empty. Nothing was typed or submitted.",
+   "selector": "[role=dialog]"
+  },
+  "wl-field": {
+   "states": {
+    "default": {
+     "tag": "input",
+     "classes": "ui:flex ui:justify-center ui:w-full ui:min-w-0",
+     "text": "First name*",
+     "rect": {
+      "x": 385,
+      "y": 386,
+      "w": 311,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "311px",
+      "height": "40px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "16px",
+      "paddingBottom": "0px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(208, 208, 200)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(208, 208, 200)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(208, 208, 200)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(208, 208, 200)",
+      "borderTopLeftRadius": "6px",
+      "borderTopRightRadius": "6px",
+      "borderBottomRightRadius": "6px",
+      "borderBottomLeftRadius": "6px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(44, 44, 38)",
+      "outlineOffset": "0px",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(44, 44, 38)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(44, 44, 38)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.05s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "text",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "clip",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "input.ui:flex.ui:justify-center",
+       "size": "311.0x40.0",
+       "border": "T:1px solid rgb(208, 208, 200) | R:1px solid rgb(208, 208, 200) | B:1px solid rgb(208, 208, 200) | L:1px solid rgb(208, 208, 200)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "6px"
+      }
+     ],
+     "placeholder": {
+      "color": "rgb(170, 171, 156)",
+      "opacity": "1",
+      "fontSize": "16px"
+     },
+     "crop": "components/crops/wl-field-default.png",
+     "via": "at rest"
+    },
+    "focus-visible": {
+     "tag": "input",
+     "classes": "ui:flex ui:justify-center ui:w-full ui:min-w-0",
+     "text": "First name*",
+     "rect": {
+      "x": 385,
+      "y": 364,
+      "w": 311,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "311px",
+      "height": "40px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "16px",
+      "paddingBottom": "0px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(255, 0, 0)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(255, 0, 0)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(255, 0, 0)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(255, 0, 0)",
+      "borderTopLeftRadius": "6px",
+      "borderTopRightRadius": "6px",
+      "borderBottomRightRadius": "6px",
+      "borderBottomLeftRadius": "6px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.627966 0.22488 0.125859 / 0.2) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "backdropFilter": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgb(90, 71, 215)",
+      "outlineOffset": "-1px",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(44, 44, 38)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(44, 44, 38)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.05s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "text",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "clip",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "input.ui:flex.ui:justify-center",
+       "size": "311.0x40.0",
+       "border": "T:1px solid rgb(255, 0, 0) | R:1px solid rgb(255, 0, 0) | B:1px solid rgb(255, 0, 0) | L:1px solid rgb(255, 0, 0)",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.627966 0.22488 0.125859 / 0.2) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "outline": "1px solid rgb(90, 71, 215) offset -1px",
+       "radius": "6px"
+      }
+     ],
+     "placeholder": {
+      "color": "rgb(170, 171, 156)",
+      "opacity": "1",
+      "fontSize": "16px"
+     },
+     "crop": "components/crops/wl-field-focus-visible.png",
+     "via": "Shift+Tab, Tab"
+    }
+   },
+   "page": "waitlist",
+   "run": "2026-11-21",
+   "title": "Waitlist text field",
+   "group": "Waitlist dialog",
+   "desc": "The First name field. Empty. Focus-visible only; nothing was typed.",
+   "selector": "input[name=firstName]"
+  },
+  "wl-email": {
+   "states": {
+    "default": {
+     "tag": "input",
+     "classes": "ui:flex ui:justify-center ui:w-full ui:min-w-0",
+     "text": "Work email*",
+     "rect": {
+      "x": 385,
+      "y": 442,
+      "w": 311,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "311px",
+      "height": "40px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "16px",
+      "paddingBottom": "0px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(208, 208, 200)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(208, 208, 200)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(208, 208, 200)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(208, 208, 200)",
+      "borderTopLeftRadius": "6px",
+      "borderTopRightRadius": "6px",
+      "borderBottomRightRadius": "6px",
+      "borderBottomLeftRadius": "6px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(44, 44, 38)",
+      "outlineOffset": "0px",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(44, 44, 38)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(44, 44, 38)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.05s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "text",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "clip",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "input.ui:flex.ui:justify-center",
+       "size": "311.0x40.0",
+       "border": "T:1px solid rgb(208, 208, 200) | R:1px solid rgb(208, 208, 200) | B:1px solid rgb(208, 208, 200) | L:1px solid rgb(208, 208, 200)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "6px"
+      }
+     ],
+     "placeholder": {
+      "color": "rgb(170, 171, 156)",
+      "opacity": "1",
+      "fontSize": "16px"
+     },
+     "crop": "components/crops/wl-email-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "waitlist",
+   "run": "2026-11-21",
+   "title": "Waitlist email field",
+   "group": "Waitlist dialog",
+   "desc": "The Work email field. Empty. Not filled.",
+   "selector": "input[name=email]"
+  },
+  "wl-select": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "classes": "ui:flex ui:items-center ui:justify-between ui:gap-2",
+     "text": "Company size*",
+     "rect": {
+      "x": 385,
+      "y": 554,
+      "w": 311,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "311px",
+      "height": "40px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "16px",
+      "paddingBottom": "0px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "space-between",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(208, 208, 200)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(208, 208, 200)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(208, 208, 200)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(208, 208, 200)",
+      "borderTopLeftRadius": "6px",
+      "borderTopRightRadius": "6px",
+      "borderBottomRightRadius": "6px",
+      "borderBottomLeftRadius": "6px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(170, 171, 156)",
+      "outlineOffset": "0px",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(170, 171, 156)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(170, 171, 156)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button.ui:flex.ui:items-center",
+       "size": "311.0x40.0",
+       "border": "T:1px solid rgb(208, 208, 200) | R:1px solid rgb(208, 208, 200) | B:1px solid rgb(208, 208, 200) | L:1px solid rgb(208, 208, 200)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "6px"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "Company size*",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "lineHeight": "16px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgb(170, 171, 156)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 16,
+      "h": 16,
+      "fill": "rgb(151, 152, 134)",
+      "stroke": "none",
+      "color": "rgb(151, 152, 134)"
+     },
+     "crop": "components/crops/wl-select-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "waitlist",
+   "run": "2026-11-21",
+   "title": "Company size select",
+   "group": "Waitlist dialog",
+   "desc": "The Company size control. Not opened, so its menu is not captured.",
+   "selector": "company size"
+  },
+  "wl-submit": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "classes": "ui:inline-flex ui:items-center ui:justify-center ui:whitespace-nowrap",
+     "text": "Join waitlist",
+     "rect": {
+      "x": 385,
+      "y": 610,
+      "w": 311,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "311px",
+      "height": "40px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "16px",
+      "paddingBottom": "0px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "3.35544e+07px",
+      "borderTopRightRadius": "3.35544e+07px",
+      "borderBottomRightRadius": "3.35544e+07px",
+      "borderBottomLeftRadius": "3.35544e+07px",
+      "backgroundColor": "rgb(44, 44, 38)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button.ui:inline-flex.ui:items-center",
+       "size": "311.0x40.0",
+       "bg": "rgb(44, 44, 38)",
+       "radius": "3.35544e+07px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 3,
+       "node": "div.ui:bg-background.ui:data-[state=open]:animate-in",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+       "radius": "6px",
+       "bg": "rgb(255, 255, 255)"
+      }
+     ],
+     "textStyle": {
+      "node": "span.flex.items-center",
+      "text": "Join waitlist",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "lineHeight": "16px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/wl-submit-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "waitlist",
+   "run": "2026-11-21",
+   "title": "Join waitlist submit",
+   "group": "Waitlist dialog",
+   "desc": "The dialog submit button. Not pressed.",
+   "selector": "dialog Join waitlist"
+  },
+  "wheel-h1": {
+   "states": {
+    "default": {
+     "tag": "h1",
+     "classes": "text-primary col-span-full flex-col items-center",
+     "text": "Color Wheel",
+     "rect": {
+      "x": 378,
+      "y": 132,
+      "w": 684,
+      "h": 96
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "684px",
+      "height": "96px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "column",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(44, 44, 38)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(44, 44, 38)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(44, 44, 38)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(44, 44, 38)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(44, 44, 38)",
+      "outlineOffset": "0px",
+      "fontFamily": "fontSerif, \"fontSerif Fallback\"",
+      "fontSize": "96px",
+      "fontWeight": "400",
+      "lineHeight": "96px",
+      "letterSpacing": "-4.8px",
+      "textTransform": "none",
+      "color": "rgb(44, 44, 38)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(44, 44, 38)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "crop": "components/crops/wheel-h1-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "wheel",
+   "run": "2026-11-21",
+   "title": "Tool heading",
+   "group": "Color wheel",
+   "desc": "\"Color Wheel\" on the public tool page.",
+   "selector": "h1"
+  },
+  "wheel-hex": {
+   "states": {},
+   "page": "wheel",
+   "run": "2026-11-21",
+   "title": "Format select",
+   "group": "Color wheel",
+   "desc": "The Hex format control beside the colour field. Not opened.",
+   "selector": "Hex button",
+   "missing": true
+  },
+  "wheel-export": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "classes": "ui:inline-flex ui:items-center ui:justify-center ui:whitespace-nowrap",
+     "text": "Export",
+     "rect": {
+      "x": 922,
+      "y": 790.6,
+      "w": 345.66,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "345.656px",
+      "height": "40px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "16px",
+      "paddingBottom": "0px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "3.35544e+07px",
+      "borderTopRightRadius": "3.35544e+07px",
+      "borderBottomRightRadius": "3.35544e+07px",
+      "borderBottomLeftRadius": "3.35544e+07px",
+      "backgroundColor": "rgb(44, 44, 38)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button.ui:inline-flex.ui:items-center",
+       "size": "345.7x40.0",
+       "bg": "rgb(44, 44, 38)",
+       "radius": "3.35544e+07px"
+      }
+     ],
+     "icon": {
+      "w": 24,
+      "h": 24,
+      "fill": "rgb(255, 255, 255)",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/wheel-export-default.png",
+     "via": "at rest"
+    },
+    "hover": {
+     "tag": "button",
+     "classes": "ui:inline-flex ui:items-center ui:justify-center ui:whitespace-nowrap",
+     "text": "Export",
+     "rect": {
+      "x": 922,
+      "y": 790.6,
+      "w": 345.66,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "345.656px",
+      "height": "40px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "16px",
+      "paddingBottom": "0px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "3.35544e+07px",
+      "borderTopRightRadius": "3.35544e+07px",
+      "borderBottomRightRadius": "3.35544e+07px",
+      "borderBottomLeftRadius": "3.35544e+07px",
+      "backgroundColor": "rgb(65, 66, 56)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button.ui:inline-flex.ui:items-center",
+       "size": "345.7x40.0",
+       "bg": "rgb(65, 66, 56)",
+       "radius": "3.35544e+07px"
+      }
+     ],
+     "icon": {
+      "w": 24,
+      "h": 24,
+      "fill": "rgb(255, 255, 255)",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/wheel-export-hover.png",
+     "via": "mouse hover"
+    },
+    "focus-visible": {
+     "tag": "button",
+     "classes": "ui:inline-flex ui:items-center ui:justify-center ui:whitespace-nowrap",
+     "text": "Export",
+     "rect": {
+      "x": 922,
+      "y": 790.6,
+      "w": 345.66,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "345.656px",
+      "height": "40px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "16px",
+      "paddingBottom": "0px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "3.35544e+07px",
+      "borderTopRightRadius": "3.35544e+07px",
+      "borderBottomRightRadius": "3.35544e+07px",
+      "borderBottomLeftRadius": "3.35544e+07px",
+      "backgroundColor": "rgb(44, 44, 38)",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 255, 255) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "backdropFilter": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "-1px",
+      "fontFamily": "fontMono, \"fontMono Fallback\", monospace",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button.ui:inline-flex.ui:items-center",
+       "size": "345.7x40.0",
+       "bg": "rgb(44, 44, 38)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 255, 255) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "outline": "1px solid rgb(255, 255, 255) offset -1px",
+       "radius": "3.35544e+07px"
+      }
+     ],
+     "icon": {
+      "w": 24,
+      "h": 24,
+      "fill": "rgb(255, 255, 255)",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/wheel-export-focus-visible.png",
+     "via": "Shift+Tab, Tab"
+    }
+   },
+   "page": "wheel",
+   "run": "2026-11-21",
+   "title": "Export button",
+   "group": "Color wheel",
+   "desc": "The public Export control. Not pressed, so no file was downloaded.",
+   "selector": "Export"
   }
  }
 }

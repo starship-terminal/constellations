@@ -1,21 +1,23 @@
 # Visual (designstripe) design reference
 
-A token set and component reference for Visual's public product surface — for building design-tool marketing pages, asset-library galleries, tool-card grids and editorial blog pages in the style of the real thing. It was read from **visual.app** (the catalog's `designstripe.com` redirects here — "Visual, formerly designstripe") on **2026-11-14**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the home page, the /assets library, the /assets/avatars/replicants set gallery, /tools, /about, /contact, the /blog/branding-consistency article, plus 390px passes on home and the asset library.
+A token set and component reference for Visual's public product surface, for building design-tool marketing pages, asset-library galleries, tool-card grids and editorial blog pages in the style of the real thing. It was read from **visual.app** (designstripe.com redirects here) on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the home page, the /assets library, the /assets/avatars/replicants set gallery, /tools, the /colors/color-wheel tool, /about, /contact, /blog, the /blog/branding-consistency article, the empty waitlist dialog, and 390px passes on home, the asset library, and the open phone menu. The control map is [site-tree.md](site-tree.md). The waitlist wall is [login-review.json](login-review.json).
 
-Visual is worth a capture because it ships a real declared token layer to the browser: a shadcn-style semantic set (`--background`/`--foreground`, `--primary*`/`--secondary*`/`--muted*`/`--accent*`/`--destructive*`, `--popover*`, `--card*`, `--ring`/`--ring-a11y` and the `--border-surface`/`--border-control*` border roles), the `--neutral-50..950` and `--green-50..950` hue scales plus `--indigo`/`--yellow`/`--infinity`/`--white`/`--black`, a Tailwind utility layer (`--text-*`, `--leading-*`, `--tracking-*`, `--shadow-*`, `--animate-*`, `--ease-*`) and embedded vendor layers for the Pintura image editor and Sonner toasts. 96 variables resolve per theme, and a real `.dark` block is declared — although only the light theme is ever painted signed out. The surface is a white field with `#2c2c26` olive ink, `#6d6e5e` muted text, an `#e8e7d9` cream accent reserved for the WAITLIST pill, `#5a47d7` purple and `#aaa674` olive-gold focus/link accents, and `#d0d0c8` neutral hairlines on the cards. Two served voices: fontSerif for display headings and article links, fontMono for nav, crumbs, controls and body text; fontSans is declared for the tools surfaces. **Boundary:** everything behind an account was never reached — the design agents themselves and every post-waitlist surface; the WAITLIST buttons open the waitlist flow and were measured, never pressed; nothing was submitted, downloaded or purchased.
+Visual is worth a capture because it ships a real declared token layer to the browser: a shadcn-style semantic set (`--background`/`--foreground`, `--primary*`/`--secondary*`/`--muted*`/`--accent*`/`--destructive*`, `--popover*`, `--card*`, `--ring`/`--ring-a11y` and the `--border-surface`/`--border-control*` border roles), the `--neutral-50..950` and `--green-50..950` hue scales plus `--indigo`/`--yellow`/`--infinity`/`--white`/`--black`, a Tailwind utility layer (`--text-*`, `--leading-*`, `--tracking-*`, `--shadow-*`, `--animate-*`, `--ease-*`) and embedded vendor layers for the Pintura image editor and Sonner toasts. 96 variables resolve per theme, and a real `.dark` block is declared — although only the light theme is ever painted signed out. The surface is a white field with `#2c2c26` olive ink, `#6d6e5e` muted text, an `#e8e7d9` cream accent reserved for the WAITLIST pill, `#5a47d7` purple and `#aaa674` olive-gold focus/link accents, and `#d0d0c8` neutral hairlines on the cards. Two served voices: fontSerif for display headings and article links, fontMono for nav, crumbs, controls and body text; fontSans is declared for the tools surfaces. **Boundary:** the design agents and every screen after the waitlist were not entered. WAITLIST opens a dialog that asks for a first name, a work email, a company name, and a company size. The dialog was photographed empty and not submitted. Nothing was downloaded or purchased.
 
 | File | What it is |
 |---|---|
 | [icon.png](icon.png) | Visual's site icon (128 px PNG), fetched from its site |
-| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (77: the theme-invariant declared scales — Tailwind `--color-*` palette, `--text-*`/`--leading-*`/`--tracking-*`/`--font-weight-*`/`--radius-*`/`--breakpoint-*`/`--animate-*`/`--ease-*` — plus the measured families, type ramp, radii, motion and component dimensions) plus `light` (61: the themed neutral/green scales under `color.*`, the shadcn semantics resolved on the light theme, plus the measured roles) and `dark` (45: the same names resolved on the declared `.dark` block — declared, never painted signed out). Every token carries `$extensions.source`. |
+| [tokens.json](tokens.json) | W3C DTCG tokens in Tokens Studio's multi-set layout: `core` (79: the theme-invariant declared scales plus the measured families, type ramp, radii, motion and component dimensions) plus `light` (62: the themed scales and shadcn semantics on the light theme, plus the measured roles and the waitlist dialog shadow) and `dark` (46: the same names resolved on the declared `.dark` block, never painted signed out). Every token carries `$extensions.source`. |
 | [DESIGN.md](DESIGN.md) | Generated by `make design-md` from [tokens.json](tokens.json) and this README, in Google's DESIGN.md format |
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values, light and dark |
-| [components.md](components.md) | The discovery list of every page and view, one entry per component (34, 78 states) with crops and values, and the Gaps |
+| [components.md](components.md) | The discovery list of every page and view, one entry per measured component with crops and values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the fixed chrome, the serif hero, the feature accordion, the asset tile grids, the tool cards, the editorial article, mobile |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 18 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` pages are viewport-tall tiles stitched top to bottom (capped at 8 tiles where a page scrolls inside a nested container — an inner-scroller boundary, recorded in the capture log); `mobile-*` shots are 2x captures of the 390 x 844 viewport |
+| [screenshots/](screenshots) | `{page}-light-{state}.png` captures. Desktop viewport shots are 1440 x 900 at 1x. Phone viewport shots are 780 x 1688, a 2x capture of 390 x 844. `-full` pages are stitched tiles. The phone full-page stitch is 390 wide and is labelled as a 1x stitch, not a 2x viewport. |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 263 rules, 96 resolved custom properties per theme, Pintura/Sonner split out as vendor), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [site-tree.md](site-tree.md) | Which public control opens which page. Mapped 2026-11-21. |
+| [login-review.json](login-review.json) | The empty waitlist wall. The signed-in pass is not started. |
 
 ## Brief
 
@@ -50,7 +52,7 @@ Fonts: `core.font.family.display` is fontSerif, then 1 fallback; `core.font.fami
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 68 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 78 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -71,7 +73,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 - **Do keep tiles on hairlines.** Asset tiles are 8px and tool cards 6px radius on white with a `#d0d0c8` 1px border — flat, no shadow. See [tool-card](components/crops/tool-card-default.png).
 - **Do paint the footer in ink.** The sitemap footer is the one dark block: `#2c2c26` fill with cream/white mono links. See [m-footer](components/crops/m-footer-default.png).
 - **Don't style the signed-in product from this package.** The design agents, account asset downloads and every post-waitlist surface were never reached; dark is declared in CSS but never painted signed out.
-- **Don't invent a form.** /contact paints copy, not a form; the waitlist CTAs were never pressed — no validation, error or success state exists in this capture.
+- **Don't invent a form.** /contact paints copy, not a form. The waitlist dialog was opened empty and not submitted, so no validation, error, or success state exists in this capture.
 
 ## Coverage
 
@@ -84,7 +86,10 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | About | Marketing copy in the same chrome | [about](screenshots/about-light-default.png), [full](screenshots/about-light-full.png) |
 | Contact | 96px heading + mono contact copy — no form | [contact](screenshots/contact-light-default.png), [full](screenshots/contact-light-full.png) |
 | Blog article | 64px serif title, mono body, olive-gold inline links | [post](screenshots/post-light-default.png), [full](screenshots/post-light-full.png) |
-| Mobile | 40px bar, 48px serif hero, accordion rows | [mobile home](screenshots/mobile-home-light-default.png), [mobile assets](screenshots/mobile-assets-light-default.png) |
+| Blog index | Alpha Channel heading and post cards | [blog](screenshots/blog-light-default.png), [full](screenshots/blog-light-full.png) |
+| Color wheel | Public tool: wheel, hex field, Export | [tool](screenshots/tool-light-default.png) |
+| Waitlist dialog | Empty signup wall: first name, work email, company, company size | [dialog](screenshots/waitlist-light-dialog.png) |
+| Mobile | 40px bar, 48px serif hero, accordion rows, open menu | [mobile home](screenshots/mobile-home-light-default.png), [mobile assets](screenshots/mobile-assets-light-default.png), [menu](screenshots/mobile-nav-light-open.png) |
 
 ## How the values were read
 
@@ -98,24 +103,26 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 - `post-para`: the first visible article `<p>` was the one-line subtitle ("Plus tips to achieve it"), not a body paragraph. `core.font.size.measured.body` cites it and says so. `tools/capture/public/measure.mjs` now asks for a paragraph of more than 80 characters (edited, not run); recapture needed.
 - `hero-h1` and `feature-acc` default: the 2026-11-14 re-read timed out, and the capture kept the earlier reading beside the `rerunError` under the new run date; the reading's own date was not recorded. The tokens read from them (`light.text.black`, `light.text.on-dark`, `core.motion.control`) say so.
 - `feature-acc` opened is recorded `via: held open by an earlier toggle`, but nothing was toggled: the first accordion row is expanded at rest, so its opened reading repeats the default. The capture script now records that (edited, not run).
-- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened. The mask is removed. The 2026-11-21 recapture loaded every planned public page without it.
+- **Phone full pages are 1x stitches.** `mobile-home-light-full.png` is 390 x 8647 and `mobile-assets-light-full.png` is 390 x 2273. The viewport shots beside them are 780 x 1688. Treat the full pages as layout evidence at CSS pixels, not as 2x captures.
+- **Focus on the waitlist field paints a red border.** `wl-field` focus-visible reports `border-top-color` `rgb(255, 0, 0)` plus an oklab ring. That reading is in [raw/components-computed.json](raw/components-computed.json). It is not promoted to a token, because a forced focus ring can disagree with the painted focus.
 
 ## Health
 
 <!-- health:start. Generated by tools/health.py from the newest scorecard snapshot; `make grade` rewrites it. Do not edit. -->
 
-Scorecard: **17 of 26 met, 8 partly, 1 missing**; C5, V2 are optional for a capture and not published. Grades last reviewed 2026-11-14, package captured 2026-11-14. Every grade with its evidence is on the Scorecard page of `make dev`.
+Scorecard: **17 of 26 met, 9 partly, 0 missing**; C5, V2 are optional for a capture and not published. Grades last reviewed 2026-11-21, package captured 2026-11-14. Every grade with its evidence is on the Scorecard page of `make dev`.
 
 | Open | Grade | Evidence |
 |---|---|---|
-| F12 Elevation | Missing | Nothing paints a real elevation on the public surface — cards sit flat on #d0d0c8 hairlines and the only measured shadow is a zero-alpha ring on the focus state; no shadow tokens exist. |
-| F6 Status colours | Partly | --destructive/--destructive-foreground declared on both themes; no success/warning/info set and nothing paints a status surface on the signed-out pages. |
-| F9 Spacing | Partly | Declared --spacing .25rem base and --ui-spacing; no spacing step scale is declared or derivable beyond the base unit, and component paddings are not tokenised. |
-| F13 Motion | Partly | Declared Tailwind durations/easings and animate-in/out rules plus measured transitions (accordion-down/up, control and link transitions under core.motion); reduced-motion behaviour is not declared or observed. |
-| C1 Component coverage | Partly | 34 measured components across 9 groups: nav chrome, waitlist button, accordion (open+closed), asset/avatar tiles, tool cards, breadcrumbs, article typography, footer and the mobile bar. Absent signed out: form fields, checkboxes, menus, dialogs, toasts — the product exposes none. |
-| C2 States | Partly | default/hover/focus-visible/DevTools-pressed on the controls plus an opened accordion state; the accordion's hover intermittently failed actionability and is recorded as a miss; no disabled/error/loading states exist publicly (nothing was submitted). |
-| P1 Patterns | Partly | patterns.md covers the fixed chrome, serif hero, feature accordion, asset/avatar tile grids, tool cards, editorial article, ink footer and mobile; no form, validation, empty or destructive flows exist publicly. |
-| A1 Assets | Partly | icon.png vendored at 128px; fontSerif/fontMono/fontSans named with fallback stacks; no standalone SVG icon set lifted (declared layoutGap). |
+| F6 Status colours | Partly | --destructive is declared. No success, warning, or info surface paints on the signed-out pages, and the dialog was not submitted so no error state exists. |
+| F9 Spacing | Partly | Declared --spacing base only. Dialog fields are 40px tall and 311px wide, recorded as dimensions, not as a spacing scale. |
+| F12 Elevation | Partly | Public pages stay flat. The waitlist dialog paints a two-layer shadow, stored as light.elevation.dialog and copied onto dark because dark was not painted. |
+| F13 Motion | Partly | Declared durations and measured link/control transitions. Reduced motion was not observed on this pass. |
+| C1 Component coverage | Partly | Adds the waitlist dialog, its text field, email field, company-size select, submit button, and the color-wheel heading and Export button. Checkbox, radio, switch, tabs, toast, table, and avatar chrome are still absent signed out. |
+| C2 States | Partly | Dialog field has default and focus-visible. Export has default, hover, and focus-visible. No disabled, error, or loading state. The dialog was not submitted. |
+| P1 Patterns | Partly | patterns.md now covers the waitlist dialog, the public color wheel, and the phone menu. No validation, empty, or destructive flow was reached. |
+| A1 Assets | Partly | icon.png remains. No standalone SVG icon set was lifted. |
 | K2 Do and don't | Partly | Script: 7 rules, 5 linking an image (needs 3+, all linked) |
 
 Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extraction pass was not run; the icons (the Visual mark, tile badges, tool previews and avatar art) are visible in the crops and screenshots).

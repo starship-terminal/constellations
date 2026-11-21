@@ -519,7 +519,7 @@ sem = SPEC["light"]
 # sets: the declared paths must stay identical light vs dark even when only
 # light gains measured roles, or the generated CSS would mix --background
 # (dark) with --background-default (light).
-for group in ("background", "text", "action", "border", "surface", "foreground"):
+for group in ("background", "text", "action", "border", "surface", "foreground", "elevation"):
     for root in (SPEC["light"], SPEC["dark"]):
         _demote_leaf_group(root, group)
 for key, comp, state, prop, group, prefer, desc in [
@@ -617,8 +617,25 @@ for key, comp, state, prop, desc in [
 
 # ------------------------------------------------------------- elevation
 
-# Every measured public component reports boxShadow: none — no shadow tokens
-# are emitted rather than inventing one.
+# The public pages sit flat. The waitlist dialog is the one measured
+# elevation: a 720x450 white panel with a real two-layer shadow.
+try:
+    shadow = st("wl-dialog", "default").get("boxShadow") or ""
+    if "0px 10px 15px -3px" in shadow and "0px 4px 6px -4px" in shadow:
+        # The computed string also carries four transparent rings. The two
+        # painted layers are the Tailwind shadow-lg pair, read off the dialog.
+        layers = [
+            {"color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "10px", "blur": "15px", "spread": "-3px"},
+            {"color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "4px", "blur": "6px", "spread": "-4px"},
+        ]
+        leaf = lit(
+            layers, "shadow",
+            "computed boxShadow of wl-dialog default (raw/components-computed.json)",
+            "The two painted layers of the waitlist dialog shadow. Public pages stay flat. Dark was not painted, so the same measured shadow is recorded on both sets.")
+        SPEC["light"].setdefault("elevation", {})["dialog"] = leaf
+        SPEC["dark"].setdefault("elevation", {})["dialog"] = dict(leaf)
+except KeyError:
+    pass
 
 # ------------------------------------------------------------------ motion
 
@@ -655,6 +672,8 @@ for name, cname, state, prop, ty_, desc in [
     ("tool-card-height", "tool-card", "default", "h", "dimension", "The 422.5px tool card."),
     ("footer-height", "site-footer", "default", "h", "dimension", "The 320px dark footer."),
     ("mobile-topbar-height", "m-nav", "default", "h", "dimension", "The 40px phone top bar."),
+    ("dialog-width", "wl-dialog", "default", "w", "dimension", "The 720px waitlist dialog."),
+    ("field-height", "wl-field", "default", "h", "dimension", "The 40px waitlist text field."),
 ]:
     try:
         v = rc(cname, state, prop)
