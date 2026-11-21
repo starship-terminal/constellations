@@ -11,6 +11,9 @@ SeatGeek is a ticket marketplace. This package records the public signed-out mar
 | [style-guide.html](style-guide.html) | Token and control specimens |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Page patterns |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22. Header, footer, photographed pages, and where the walk stopped. |
+| [login-review.json](login-review.json) | Empty sign-in dialog. `loginExtracted` is not-started. |
+| [screenshots/](screenshots/) | First-viewport shots from the 2026-11-22 walk, 1440 CSS pixels at 2×. |
 | [raw/](raw/) | Stylesheet blocks and computed readings |
 | [tools/](tools/) | Kit copy and `build_tokens.py` |
 
@@ -76,7 +79,7 @@ Viewport at the desktop pass: `innerWidth` 1169, `innerHeight` 731, `devicePixel
 
 ## What to distrust
 
-The dark set is declared, not painted. `prefers-color-scheme` was dark in the browser and the marketing pages still painted light content surfaces. Button hover and pressed colours are stylesheet declarations (`--theme-background-color-button-*`); those states were not held. The help h1 size (`81.83px`) is a computed reading at 1169px and is not a token step. Spotify's `#1ed760` Connect button is a partner colour. There are no screenshots: the preview browser returned "The browser is not producing screenshot frames".
+The dark set is declared, not painted. `prefers-color-scheme` was dark in the browser and the marketing pages still painted light content surfaces. Button hover and pressed colours are stylesheet declarations (`--theme-background-color-button-*`); those states were not held. The help h1 size (`81.83px`) is a computed reading at 1169px and is not a token step. Spotify's `#1ed760` Connect button is a partner colour. The 19 November pass saved no screenshots. A 22 November walk added first-viewport shots in [screenshots/](screenshots/) and the map in [site-tree.md](site-tree.md). Those shots were not used to remeasure tokens.
 
 Only two component readings were saved: `raw/declared-tokens.json` holds the Sign in button (`light.component.button-glass`) and the price pill (`light.component.price`) under `computed`. The other component tokens were read in the preview and typed in, so they are labelled Reconstruction, entered by hand at capture time. `light.component.field` mixes two elements: its white fill and 20px radius come from the Help textarea wrap, and its 46px height from the home search wrap (translucent, 100px radius). Recapture needed: read one field in full and save it to raw/.
 
@@ -134,3 +137,5 @@ python3 tools/package_tests.py seatgeek
 ## Surfaces
 
 Captured: `/`, `/about`, `/nfl-tickets`, `/concert-tickets`, `/cities`, `/help`. Not entered: `/login` (DataDome interstitial), checkout, payment, account creation, the email signup, and the phone field.
+
+A second public walk on 2026-11-22 mapped the homepage header and footer into [site-tree.md](site-tree.md) and photographed those pages at 1440. Sign in opened one empty email dialog. That dialog is the login wall and the signup wall. Nothing was typed. `login-extracted` stays not-started. catalog.json was left alone.

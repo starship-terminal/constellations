@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "jobs",
+  "url": "https://seatgeek.com/jobs",
+  "title": "SeatGeek Jobs | SeatGeek",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "First viewport from the T3 incognito preview tab. Read colours from tokens.json, not from this PNG."
+}
