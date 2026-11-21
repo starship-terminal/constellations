@@ -1,0 +1,117 @@
+[
+  {
+    "name": "login-wall",
+    "requested": "https://www.delphi.ai/login",
+    "final": "https://www.delphi.co/?onboarding=discover",
+    "status": 200,
+    "title": "Delphi - Ask The World's Experts",
+    "inputs": [
+      {
+        "type": "textarea",
+        "aria": "Search Delphi",
+        "ph": ""
+      },
+      {
+        "type": "search",
+        "aria": null,
+        "ph": ""
+      }
+    ],
+    "oauth": [
+      "Sign In",
+      "I sell used phones on facebook marketplace and my listing photos look like everyone else's",
+      "Sign In",
+      "Continue with Google",
+      "Continue with Email"
+    ]
+  },
+  {
+    "name": "login-co",
+    "requested": "https://www.delphi.co/login",
+    "final": "https://www.delphi.co/?onboarding=discover",
+    "status": 200,
+    "title": "Delphi - Ask The World's Experts",
+    "inputs": [
+      {
+        "type": "textarea",
+        "aria": "Search Delphi",
+        "ph": ""
+      },
+      {
+        "type": "search",
+        "aria": null,
+        "ph": ""
+      }
+    ],
+    "oauth": [
+      "Sign In",
+      "I sell used phones on facebook marketplace and my listing photos look like everyone else's",
+      "Sign In",
+      "Continue with Google",
+      "Continue with Email"
+    ]
+  },
+  {
+    "name": "auth-bounce",
+    "requested": "https://www.delphi.co/auth?callbackUrl=%2F",
+    "final": "https://www.delphi.co/?onboarding=discover",
+    "status": 200,
+    "title": "Delphi - Ask The World's Experts",
+    "inputs": [
+      {
+        "type": "textarea",
+        "aria": "Search Delphi",
+        "ph": ""
+      },
+      {
+        "type": "search",
+        "aria": null,
+        "ph": ""
+      }
+    ],
+    "oauth": [
+      "Sign In",
+      "Ask ex-Googlers about scaling under pressure CAREER",
+      "Sign In",
+      "Continue with Google",
+      "Continue with Email"
+    ]
+  },
+  {
+    "name": "my-delphi",
+    "requested": "https://www.delphi.co/~",
+    "final": "https://www.delphi.co/auth?callbackUrl=%2F%7E",
+    "status": 200,
+    "title": "Sign in • Delphi",
+    "inputs": [],
+    "oauth": [
+      "Continue with Google",
+      "Continue with Email"
+    ]
+  },
+  {
+    "name": "onboarding-bounce",
+    "requested": "https://www.delphi.co/onboarding?onboarding=create_cta",
+    "final": "https://www.delphi.co/?onboarding=create_cta",
+    "status": 200,
+    "title": "Delphi - Ask The World's Experts",
+    "inputs": [
+      {
+        "type": "textarea",
+        "aria": "Search Delphi",
+        "ph": ""
+      },
+      {
+        "type": "search",
+        "aria": null,
+        "ph": ""
+      }
+    ],
+    "oauth": [
+      "Sign In",
+      "Sign In",
+      "Continue with Google",
+      "Continue with Email"
+    ]
+  }
+]

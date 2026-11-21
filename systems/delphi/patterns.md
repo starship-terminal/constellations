@@ -32,6 +32,10 @@ Home and every /discover/<topic> page open with a Delphi Pythia display heading 
 
 Two mounts of the same Sign-In dialog (`signin-dialog`): /auth on home, and /onboarding for signed-out visitors — the create-a-clone flow itself is behind an account. A 448px white card (`core.component.dialog-width` on `light.popover.default`) under `core.shadow.dialog`, over a dimmed/blurred page: Delphi logo, "Sign in to your account", a 400px dark Continue-with-Google pill (`core.component.dialog-button-width`, `light.action.dark-button` → `primary.default` `#21201c`), a bordered Continue-with-Email button, ToS/Privacy links. Measured, never submitted.
 
+## Marketing shell (2026-11-21)
+
+`/about`, `/blog`, `/premium`, `/ask`, `/for`, `/people`, `/careers` and `/press` are a second public shell. The page is cream `#fdf6ee` (`--cream`), ink `#2b180a` (`--ink`), muted `#94877c` (`--muted`), accent `#ff520d` (`--orange`), display face Delphi Marketing Pythia at 54px / 600 / -0.03em. The header is a text nav (Discover, About Delphi, Blog, Premium) plus Sign in and an orange Sign up pill, both of which go to `/auth` and bounce back to the public home. A dark colour-scheme preference does not restyle this shell. See [about-light-default](screenshots/about-light-default.png) and [site-tree.md](site-tree.md).
+
 ## Mobile (390px)
 
 The phone surface is the same light theme: a compact 64px header (`core.component.mobile-topbar-height`), topic cards stacked vertically (`m-topic-card`), and the chat surface with the same composer. No separate mobile tokens — the same light set resolves.

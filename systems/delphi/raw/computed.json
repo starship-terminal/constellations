@@ -1,0 +1,385 @@
+{
+  "pages": {
+    "home": {
+      "resolved": {
+        "--sand-1": "#fdfdfc",
+        "--sand-2": "#f9f9f8",
+        "--sand-3": "#f1f0ef",
+        "--sand-4": "#e9e8e6",
+        "--sand-5": "#e2e1de",
+        "--sand-6": "#dad9d6",
+        "--sand-7": "#cfceca",
+        "--sand-8": "#bcbbb5",
+        "--sand-9": "#8d8d86",
+        "--sand-10": "#82827c",
+        "--sand-11": "#63635e",
+        "--sand-12": "#21201c",
+        "--tangerine-3": "",
+        "--tangerine-9": "",
+        "--tangerine-3-oklch": ".94 .036 42",
+        "--tangerine-9-oklch": ".67 .22 42",
+        "--brand-accent": "oklch(.67 .22 42)",
+        "--fg-high": "#21201c",
+        "--fg-mid": "#63635e",
+        "--fg-low": "#82827c",
+        "--surface-primary": "white",
+        "--surface-secondary": "#f9f9f8",
+        "--border": "#dad9d6",
+        "--overlay": "white",
+        "--popover": "white",
+        "--indigo-9": "#3e63dd",
+        "--radius": ".625rem",
+        "--font-inter": "\"Delphi Inter\", \"Delphi Inter Fallback\"",
+        "--font-pythia": "\"Delphi Pythia\", \"Delphi Pythia Fallback\"",
+        "--font-geist-mono": "\"Delphi Geist Mono\""
+      },
+      "h1": {
+        "text": "Find people who've been there",
+        "w": 598,
+        "h": 51,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(33, 32, 28)",
+        "font": "\"Delphi Pythia\"",
+        "size": "50px",
+        "weight": "500",
+        "lh": "51px",
+        "ls": "-1.75px",
+        "radius": "0px",
+        "border": "0px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12)",
+        "pad": "0px",
+        "shadow": "none",
+        "outline": "oklab(0.67 0.163492 0.147209 / 0.5) none 0px"
+      },
+      "cta": {
+        "text": "Create Your Delphi",
+        "w": 174,
+        "h": 36,
+        "bg": "oklch(0.67 0.22 42)",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"Delphi Inter\"",
+        "size": "14px",
+        "weight": "500",
+        "lh": "20px",
+        "ls": "normal",
+        "radius": "26px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "pad": "0px 12px",
+        "shadow": "none",
+        "outline": "oklab(0.67 0.163492 0.147209 / 0.5) none 0px"
+      },
+      "sign": {
+        "text": "Sign In",
+        "w": 94,
+        "h": 36,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(99, 99, 94)",
+        "font": "\"Delphi Inter\"",
+        "size": "14px",
+        "weight": "500",
+        "lh": "20px",
+        "ls": "normal",
+        "radius": "26px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "pad": "0px 12px",
+        "shadow": "none",
+        "outline": "oklab(0.67 0.163492 0.147209 / 0.5) none 0px"
+      },
+      "search": {
+        "text": "Search Delphi",
+        "w": 624,
+        "h": 52,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(33, 32, 28)",
+        "font": "\"Delphi Inter\"",
+        "size": "18px",
+        "weight": "400",
+        "lh": "26px",
+        "ls": "-0.18px",
+        "radius": "0px",
+        "border": "0px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12)",
+        "pad": "0px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "outline": "oklab(0.67 0.163492 0.147209 / 0.5) none 0px"
+      },
+      "chip": {
+        "text": "Career",
+        "w": 85,
+        "h": 32,
+        "bg": "color(srgb 0.949588 0.934431 0.915)",
+        "color": "rgb(99, 99, 94)",
+        "font": "\"Delphi Inter\"",
+        "size": "13px",
+        "weight": "400",
+        "lh": "13px",
+        "ls": "normal",
+        "radius": "999px",
+        "border": "0px none rgb(99, 99, 94)",
+        "pad": "0px 12px 0px 10px",
+        "shadow": "none",
+        "outline": "oklab(0.67 0.163492 0.147209 / 0.5) none 0px"
+      },
+      "scheme": "light",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(33, 32, 28)"
+    },
+    "homeCtaHover": {
+      "bg": "oklch(0.6 0.21 42)",
+      "color": "rgb(255, 255, 255)",
+      "shadow": "none"
+    },
+    "about": {
+      "resolved": {
+        "--cream": "#fdf6ee",
+        "--panel": "#f7f0e8",
+        "--beige": "#f0e6dc",
+        "--line": "#eae4dc",
+        "--ink": "#2b180a",
+        "--ink-2": "#5a4a3d",
+        "--muted": "#94877c",
+        "--muted-2": "#7f6e60",
+        "--orange": "#ff520d",
+        "--navy": "#0f2c47",
+        "--green": "#0f4a3c",
+        "--plum": "#4b1f45",
+        "--maroon": "#4a0f16",
+        "--char": "#2a2521",
+        "--serif": "\"Delphi Marketing Pythia\", \"Delphi Marketing Pythia Fallback\", Georgia, serif",
+        "--sans": "\"Delphi Marketing Inter\", system-ui, sans-serif",
+        "--wrap": "1180px",
+        "--serif-weight": "600",
+        "--serif-track": "-.03em",
+        "--font-inter": "\"Delphi Marketing Inter\"",
+        "--font-pythia": "\"Delphi Marketing Pythia\", \"Delphi Marketing Pythia Fallback\""
+      },
+      "h1": {
+        "text": "The experience of one life should help another.",
+        "w": 568,
+        "h": 110,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 24, 10)",
+        "font": "\"Delphi Marketing Pythia\"",
+        "size": "54px",
+        "weight": "600",
+        "lh": "55.08px",
+        "ls": "-1.62px",
+        "radius": "0px",
+        "pad": "0px"
+      },
+      "menu": {
+        "text": "",
+        "w": 0,
+        "h": 0,
+        "bg": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "font": "Arial",
+        "size": "13.3333px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "1px 6px"
+      },
+      "sign": {
+        "text": "Sign in",
+        "w": 72,
+        "h": 39,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(90, 74, 61)",
+        "font": "\"Delphi Marketing Inter\"",
+        "size": "15px",
+        "weight": "500",
+        "lh": "23.25px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "8px 12px"
+      },
+      "bg": "rgb(253, 246, 238)"
+    },
+    "aboutMenu": {
+      "links": [
+        {
+          "t": "",
+          "h": "/",
+          "tag": "A"
+        },
+        {
+          "t": "Discover",
+          "h": "/",
+          "tag": "A"
+        },
+        {
+          "t": "About Delphi",
+          "h": "/about",
+          "tag": "A"
+        },
+        {
+          "t": "Blog",
+          "h": "/blog",
+          "tag": "A"
+        },
+        {
+          "t": "Premium",
+          "h": "/premium",
+          "tag": "A"
+        },
+        {
+          "t": "Sign in",
+          "h": "/auth",
+          "tag": "A"
+        },
+        {
+          "t": "Sign up",
+          "h": "/auth",
+          "tag": "A"
+        }
+      ],
+      "dialog": false
+    },
+    "faq": {
+      "missing": true
+    },
+    "gate": {
+      "present": true,
+      "w": 448,
+      "h": 346,
+      "bg": "rgb(255, 255, 255)",
+      "radius": "26px",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.243135 -0.000696592 0.00753608 / 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -",
+      "buttons": [
+        {
+          "t": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(99, 99, 94)",
+          "radius": "26px",
+          "h": 32,
+          "w": 32,
+          "size": "14px",
+          "weight": "500",
+          "border": "oklch(0.67 0.22 42)"
+        },
+        {
+          "t": "Continue with Google",
+          "bg": "rgb(33, 32, 28)",
+          "color": "rgb(255, 255, 255)",
+          "radius": "26px",
+          "h": 40,
+          "w": 400,
+          "size": "14px",
+          "weight": "500",
+          "border": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "t": "Continue with Email",
+          "bg": "oklab(0.641239 -0.00290832 0.00981319 / 0.1)",
+          "color": "rgb(33, 32, 28)",
+          "radius": "26px",
+          "h": 40,
+          "w": 400,
+          "size": "14px",
+          "weight": "500",
+          "border": "rgba(0, 0, 0, 0)"
+        }
+      ]
+    },
+    "chat": {
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(33, 32, 28)",
+      "scheme": "light",
+      "sand1": "#fdfdfc",
+      "fg": "#21201c",
+      "composer": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(33, 32, 28)",
+        "radius": "0px",
+        "border": "0px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12)",
+        "h": 52,
+        "w": 592,
+        "size": "18px",
+        "font": "\"Delphi Inter\"",
+        "pad": "12px 4px 12px 12px",
+        "placeholder": "Send a message…"
+      },
+      "send": {
+        "bg": "oklab(0 0 0 / 0.03)",
+        "color": "rgb(99, 99, 94)",
+        "radius": "3.35544e+07px",
+        "border": "0px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12)",
+        "h": 0,
+        "w": 0,
+        "size": "14px",
+        "font": "\"Delphi Inter\"",
+        "pad": "0px",
+        "placeholder": null
+      },
+      "suggested": [
+        {
+          "bg": "oklab(0.641239 -0.00290832 0.00981319 / 0.1)",
+          "color": "rgb(33, 32, 28)",
+          "radius": "18px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "h": 84,
+          "w": 245,
+          "size": "14px",
+          "font": "\"Delphi Inter\"",
+          "pad": "12px 14px",
+          "placeholder": null
+        },
+        {
+          "bg": "oklab(0.641239 -0.00290832 0.00981319 / 0.1)",
+          "color": "rgb(33, 32, 28)",
+          "radius": "18px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "h": 84,
+          "w": 245,
+          "size": "14px",
+          "font": "\"Delphi Inter\"",
+          "pad": "12px 14px",
+          "placeholder": null
+        }
+      ]
+    },
+    "help": {
+      "resolved": {
+        "--color-cream": "#fdf6ee",
+        "--color-ink": "#2b180a",
+        "--color-accent": "#ff520d",
+        "--color-accent-deep": "#cc3f06",
+        "--color-line": "#ebdfd1",
+        "--color-card": "#fffdfa",
+        "--font-display": "\"fontPythia\", Georgia, Times New Roman, serif, Georgia, \"Times New Roman\", serif",
+        "--font-sans": "\"fontInter\", \"fontInter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif"
+      },
+      "bg": "rgb(253, 246, 238)",
+      "h1": {
+        "text": "How can we help?",
+        "size": "64px",
+        "font": "fontPythia",
+        "weight": "600",
+        "color": "rgb(43, 24, 10)"
+      }
+    },
+    "homeDark": {
+      "scheme": "dark",
+      "bg": "rgb(30, 30, 29)",
+      "color": "rgb(238, 238, 236)",
+      "resolved": {
+        "--sand-1": "#111110",
+        "--sand-12": "#eeeeec",
+        "--fg-high": "#eeeeec",
+        "--fg-mid": "#b5b3ad",
+        "--fg-low": "#7c7b74",
+        "--surface-primary": "#1e1e1d",
+        "--surface-secondary": "#191918",
+        "--border": "#3b3a37",
+        "--brand-accent": "oklch(.74 .2 42)",
+        "--tangerine-9": "",
+        "--overlay": "#1e1e1d",
+        "--popover": "#1e1e1d"
+      },
+      "cta": {
+        "bg": "oklch(0.67 0.22 42)",
+        "color": "rgb(255, 255, 255)"
+      }
+    }
+  }
+}
