@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-11-21T14:49:48.866Z",
+  "screenshot": "error-light-default.png",
+  "sanitizedSourceUrl": "https://pitch.com/error.html",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "title": "Something went wrong, please try again | Pitch"
+  },
+  "note": null
+}

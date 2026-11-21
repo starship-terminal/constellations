@@ -1,16 +1,18 @@
 {
-  "capturedAt": "2026-11-18T17:31:53.126Z",
-  "source": "https://pitch.com/",
-  "requested": {
-    "width": 390,
-    "height": 844,
-    "dpr": 2
-  },
-  "measured": {
+  "capturedAt": "2026-11-21T14:49:52.318Z",
+  "screenshot": "mobile-home-light-default.png",
+  "sanitizedSourceUrl": "https://pitch.com/",
+  "actual": {
     "innerWidth": 390,
     "innerHeight": 844,
-    "dpr": 2,
-    "scrollH": 15896,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
     "title": "The AI presentation workspace"
-  }
+  },
+  "note": null
 }

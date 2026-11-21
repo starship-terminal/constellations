@@ -1,16 +1,18 @@
 {
-  "capturedAt": "2026-11-18T17:31:55.333Z",
-  "source": "https://pitch.com/pricing",
-  "requested": {
-    "width": 390,
-    "height": 844,
-    "dpr": 2
-  },
-  "measured": {
+  "capturedAt": "2026-11-21T14:49:53.994Z",
+  "screenshot": "mobile-pricing-light-default.png",
+  "sanitizedSourceUrl": "https://pitch.com/pricing",
+  "actual": {
     "innerWidth": 390,
     "innerHeight": 844,
-    "dpr": 2,
-    "scrollH": 8088,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
     "title": "Pricing | Pitch"
-  }
+  },
+  "note": null
 }

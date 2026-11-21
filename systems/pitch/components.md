@@ -16,7 +16,7 @@ Sign up, home nav. Lime `#c4ee87`, ink label, 4px radius, padding 10px 12px, 44p
 
 Generate, home prompt. Violet `#5318eb`, white label, 4px radius, 36px tall, padding 8px 12px 8px 16px. Mark Pro 14px / 400.
 
-Continue with email, login. `#6b53ff`, white label, 8px radius, 40px tall, 300px wide. Disabled opacity 0.5 until the captcha and an address are present. [components/crops/button-continue-disabled.png](components/crops/button-continue-disabled.png)
+Continue with email, login wall, 21 November. `#6b53ff`, white label, 8px radius, 40px tall, padding 12px 0, Lato 14px / 500. On the empty signup arrival the button is painted at full colour with the captcha checkbox still empty. The 19 November crop shows the disabled look. [components/crops/button-continue-disabled.png](components/crops/button-continue-disabled.png) [screenshots/signup-light-default.png](screenshots/signup-light-default.png)
 
 Continue with Google, Continue with Apple, Single sign-on (SSO). White face, `#2b2a35` label, 1px solid `rgba(43, 42, 53, 0.12)`, 8px radius, 40px tall, gap 8px.
 
