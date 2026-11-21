@@ -48,6 +48,16 @@ class Tokens(unittest.TestCase):
         self.assertEqual([t["id"] for t in data["$themes"]], ["dark"])
         self.assertNotIn("light", data)
 
+    def test_login_extracted_stays_not_started(self):
+        review = json.loads((Path(__file__).resolve().parent.parent / "login-review.json").read_text())
+        self.assertEqual(review["login_extracted"], "not-started")
+        self.assertIs(review["signed_in"], False)
+        self.assertIn("Email", review["wall"]["login_fields_empty"])
+        self.assertIn("Continue with Google", review["wall"]["identity_providers_not_clicked"])
+        tree = (Path(__file__).resolve().parent.parent / "site-tree.md").read_text()
+        self.assertIn("2026-11-22", tree)
+        self.assertIn("https://spline.design/", tree)
+
 
 # ---- every token records where its value came from (docs/EVIDENCE.md)
 import json as _json

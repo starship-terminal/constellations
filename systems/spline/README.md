@@ -12,8 +12,10 @@ Spline's public marketing site and the signed-out sign-in shell, captured on 19 
 | [patterns.md](patterns.md) | Page patterns |
 | [components/](components/) | Crops of the buttons, link, badge, logo, and billing toggle |
 | [icons/](icons/) | The nav chevron |
-| [screenshots/](screenshots/) | Home, pricing, and enterprise |
-| [raw/](raw/) | The readings the tokens come from |
+| [screenshots/](screenshots/) | Home, pricing, and enterprise, plus the 2026-11-22 public pages and the empty sign-in wall |
+| [site-tree.md](site-tree.md) | Header, footer, and the public pages those controls open. Mapped 2026-11-22. |
+| [login-review.json](login-review.json) | The empty sign-in wall. `login-extracted` is not-started. |
+| [raw/](raw/) | The readings the tokens come from, plus the 2026-11-22 public readings |
 | [tools/](tools/) | The capture kit, copied and not adapted into a builder |
 | [icon.png](icon.png) | 128px site icon |
 
@@ -113,6 +115,12 @@ Geist and Geist Mono are loaded by the marketing site as next/font files. Spline
 - **Set display type in Geist.** Hero, section, and plan names are Geist at weight 450 with a tight negative tracking. [screenshots/home-dark-default.png](screenshots/home-dark-default.png)
 - **Keep the marketing site on black.** The page colour is `#000`. The app shell is a separate `#1e1e1e`. [screenshots/pricing-dark-default.png](screenshots/pricing-dark-default.png)
 - **Leave payment and company forms out.** Checkout was not opened. The company step was not submitted. [patterns.md](patterns.md)
+
+## Public site tree, 2026-11-22
+
+[site-tree.md](site-tree.md) maps the homepage header, footer, and the public pages those controls open. Marketing pages and the empty sign-in wall were photographed again that day. `/signup` and `/register` redirect to the same wall, so there is one empty card, not two. No email was typed. Google was not clicked. Continue was not clicked. Pricing buttons that start checkout were not clicked. `catalog.json` was left alone. `login-extracted` stays not-started.
+
+The 2026-11-22 shots are the files dated in the name, plus customers, product pages, docs, blog, security, education, download, the phone homepage, and [screenshots/login-dark-empty.png](screenshots/login-dark-empty.png). The community gallery was not photographed: it shows other people's handles and avatars. The enterprise members table is still a public demo, with sample `@acme.com` addresses.
 
 ## Rebuild
 

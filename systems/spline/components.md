@@ -1,6 +1,6 @@
 # Components
 
-Measured on the public site and the signed-out sign-in shell on 19 November 2026. Crops are from the headless screenshots. The preview browser did not produce frames.
+Measured on the public site and the signed-out sign-in shell on 19 November 2026. Crops are from the headless screenshots. The preview browser did not produce frames. The empty sign-in wall was photographed on 22 November 2026 and is in screenshots/login-dark-empty.png. The email field was left empty.
 
 | Component | State | Evidence |
 |---|---|---|

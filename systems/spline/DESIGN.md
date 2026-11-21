@@ -155,6 +155,8 @@ Captured 2026-11-19, public marketing, plus a signed-out email signup that stopp
 
 Spline's public marketing site and the signed-out sign-in shell, captured on 19 November 2026. Marketing pages stay dark. The app shell is a second dark UI. Widths are 1440 and 390 CSS pixels. An email signup was started and stopped on the company step. No payment was entered.
 
+The public site tree was mapped again on 22 November 2026. The empty sign-in wall was photographed. No email was typed on that pass. See site-tree.md.
+
 <!-- brief:start -->
 
 ## Colors

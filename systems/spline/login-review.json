@@ -1,0 +1,18 @@
+{
+  "slug": "spline",
+  "captured": "2026-11-22",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "session": "Public capture, signed out. https://app.spline.design/signin opened an empty card titled Welcome to Spline. /signup and /register redirect to that same URL. No email, password, code, phone, or address was typed. Continue with Google was not clicked. Continue was not clicked. No form was submitted. No captcha was solved. The editor was not opened.",
+  "wall": {
+    "login_url": "https://app.spline.design/signin",
+    "signup_url": "https://app.spline.design/signin",
+    "signup_note": "/signup and /register both redirect to /signin. The card is the login and signup wall.",
+    "login_title": "Welcome to Spline",
+    "login_subtitle": "Log in or register with your email.",
+    "login_fields_empty": ["Email"],
+    "identity_providers_not_clicked": ["Continue with Google"],
+    "continue_not_clicked": true,
+    "captcha_note": "The card says Spline uses Google reCAPTCHA. The captcha was not solved."
+  }
+}

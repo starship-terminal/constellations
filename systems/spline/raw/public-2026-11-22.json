@@ -1,0 +1,65 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://spline.design/",
+  "title": "Spline - Free 3D Design Tool in Your Browser",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "colorScheme": "dark",
+  "note": "Read with getComputedStyle in headless Playwright after the page loaded. The T3 preview tab at the same size showed the same custom properties. Header CTA copy varies by experiment (Get started or Start building). Both open https://app.spline.design/signin.",
+  "root": {
+    "--ink": "#000",
+    "--fg": "#eee",
+    "--mute": "#8a8a8a",
+    "--panel": "#101010",
+    "--line": "#1e1e1e",
+    "--line-2": "#2e2e2e",
+    "--display": "Geist, Helvetica Neue, Arial, sans-serif",
+    "--body": "Geist, Helvetica Neue, Arial, sans-serif",
+    "--mono": "Geist Mono, ui-monospace, SF Mono, Menlo, monospace",
+    "--app": "Spline Sans, system-ui, -apple-system, sans-serif",
+    "--color-bg": "#000",
+    "--color-text-main": "#fff",
+    "--color-text-paragraph": "#fff9"
+  },
+  "headerCta": {
+    "text": "Start building",
+    "backgroundColor": "rgb(238, 238, 238)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Geist, Helvetica Neue, Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "borderRadius": "999px",
+    "height": "34px",
+    "padding": "0px 14px"
+  },
+  "hero": {
+    "text": "The 3D design tool for your team and agents",
+    "color": "rgba(255, 255, 255, 0.9)",
+    "fontSize": "48px",
+    "fontWeight": "450",
+    "lineHeight": "56px",
+    "letterSpacing": "-2.88px",
+    "note": "At 1440 on 2026-11-22 the hero computed at 48px, not the 72px recorded on 2026-11-19. The token file keeps the earlier 72px reading. This file records the later one."
+  },
+  "signin": {
+    "url": "https://app.spline.design/signin",
+    "title": "Spline",
+    "bodyBackground": "rgb(30, 30, 30)",
+    "bodyFont": "Spline Sans, system-ui, -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif",
+    "email": {
+      "empty": true,
+      "backgroundColor": "rgba(255, 255, 255, 0.05)",
+      "color": "rgba(255, 255, 255, 0.7)",
+      "fontSize": "14px",
+      "borderRadius": "8px",
+      "height": "40px"
+    },
+    "google": {
+      "text": "Continue with Google",
+      "clicked": false,
+      "backgroundColor": "rgb(69, 129, 255)",
+      "color": "rgba(255, 255, 255, 0.92)",
+      "borderRadius": "8px",
+      "height": "40px"
+    }
+  }
+}
