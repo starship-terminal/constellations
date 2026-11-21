@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Outdoor Voices style guide</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #202020;
+      --muted: #737373;
+      --promo: #2b54ab;
+      --button: #202020;
+      --button-text: #ffffff;
+      --badge: #6c2932;
+      --field: #efefef;
+      --shop: #5433eb;
+      --panel: #000000;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background: var(--promo);
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      line-height: 42px;
+    }
+    .wordmark {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 500;
+      padding: 24px 0 8px;
+    }
+    main { padding: 8px 32px 48px; max-width: 880px; margin: 0 auto; }
+    h1 { font-weight: 400; font-size: 36px; letter-spacing: 0.6px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+    .swatch { width: 120px; }
+    .chip { height: 48px; border: 1px solid #eee; }
+    .label { font-size: 12px; margin-top: 6px; color: var(--muted); }
+    .nav {
+      display: flex;
+      gap: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 0 16px;
+    }
+    .btn {
+      background: var(--button);
+      color: var(--button-text);
+      border: 0;
+      border-radius: 100px;
+      height: 47px;
+      padding: 0 24px;
+      letter-spacing: 0.2px;
+      font-size: 16px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--badge);
+      color: #fff;
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+    .panel {
+      background: var(--panel);
+      color: #fff;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .panel h2 { font-weight: 400; letter-spacing: 0.6px; font-size: 28px; }
+    .shop {
+      background: var(--shop);
+      color: #fff;
+      border: 0;
+      border-radius: 12px;
+      height: 50px;
+      width: 280px;
+      font-size: 14px;
+    }
+    .field {
+      border: 0;
+      background: var(--field);
+      border-radius: 0 4px 4px 0;
+      height: 54px;
+      width: 280px;
+      padding: 0 12px;
+      font-size: 16px;
+    }
+    p.note { color: var(--muted); font-size: 13px; max-width: 52em; }
+  </style>
+</head>
+<body>
+  <header>Free Shipping on orders $100+</header>
+  <main>
+    <p class="wordmark">Outdoor Voices</p>
+    <nav class="nav">
+      <span>Women</span>
+      <span>Men</span>
+      <span>OV Extra Sale</span>
+      <span>Gift Guide</span>
+    </nav>
+    <h1>It's officially Black Friday, y'all.</h1>
+    <p>30% off sitewide. Yup, the entire site.</p>
+    <button class="btn" type="button">Shop — Women</button>
+    <div class="row">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">Page #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#202020"></div><div class="label">Ink #202020</div></div>
+      <div class="swatch"><div class="chip" style="background:#2b54ab"></div><div class="label">Promo #2b54ab</div></div>
+      <div class="swatch"><div class="chip" style="background:#6c2932"></div><div class="label">Badge #6c2932</div></div>
+      <div class="swatch"><div class="chip" style="background:#5433eb"></div><div class="label">Shop #5433eb</div></div>
+      <div class="swatch"><div class="chip" style="background:#efefef"></div><div class="label">Field #efefef</div></div>
+    </div>
+    <div class="panel">
+      <span class="badge">Extra 30% off in Cart</span>
+      <h2>Doing Things Bra</h2>
+      <button class="btn" type="button">Add to Bag</button>
+    </div>
+    <p>Sign in or create an account. The email stays empty.</p>
+    <button class="shop" type="button">Continue with Shop</button>
+    <p><input class="field" type="email" placeholder="Email" aria-label="Email" readonly></p>
+    <p class="note">Signed-out capture, 2026-11-22. Continue with Shop was not clicked. Sign Up Now was not clicked. Fonts fall back to Arial because TTCommonsPro and NordiquePro are not in this package.</p>
+  </main>
+</body>
+</html>
