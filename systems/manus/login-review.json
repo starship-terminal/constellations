@@ -1,0 +1,45 @@
+{
+  "slug": "manus",
+  "product": "Manus",
+  "domain": "manus.im",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "The preview browser photographed the login wall empty. Sign in and Sign up open the same dialog on the homepage. No identity provider was clicked. No form was submitted. No email, password, code, phone, or address was typed. Continue was disabled.",
+  "wall": {
+    "url": "https://manus.im/",
+    "title": "Manus: Hands On AI",
+    "asks": [
+      "Welcome to Manus",
+      "Sign in or sign up",
+      "Continue with Google",
+      "Continue with Microsoft",
+      "Continue with Apple",
+      "Enter your email address",
+      "Continue"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      { "type": "email", "name": "email", "placeholder": "Enter your email address", "filled": false }
+    ],
+    "note": "The dialog stays on https://manus.im/. The email field was empty. Continue was disabled. No identity provider was clicked."
+  },
+  "signup_wall": {
+    "url": "https://manus.im/",
+    "title": "Manus: Hands On AI",
+    "same_as_login": true,
+    "asks": [
+      "Welcome to Manus",
+      "Sign in or sign up"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "continued": false,
+    "inputs": [],
+    "note": "Sign up opens the same empty dialog as Sign in. Continue was not clicked."
+  },
+  "stopped": "Photographed the empty combined login and signup dialog. Did not open an identity provider. Did not submit. Did not enter the signed-in app. Did not start an agent task."
+}
