@@ -1,0 +1,78 @@
+[
+  {
+    "id": "home-cta-hover",
+    "bg": "oklch(0.6 0.21 42)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "26px",
+    "pad": "0px 12px",
+    "size": "14px",
+    "weight": "500",
+    "font": "\"Delphi Inter\", \"Delphi Inter Fallback\", ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+    "shadow": "none",
+    "h": 36,
+    "w": 173.875,
+    "border": "1px solid rgba(0, 0, 0, 0)"
+  },
+  {
+    "id": "home-search",
+    "error": "locator.click: Timeout 30000ms exceeded."
+  },
+  {
+    "id": "perspective-open",
+    "name": ""
+  },
+  {
+    "id": "about-menu",
+    "error": "locator.click: Timeout 30000ms exceeded."
+  },
+  {
+    "id": "blog-filter",
+    "selected": "rgba(0, 0, 0, 0) rgb(43, 24, 10)"
+  },
+  {
+    "id": "faq",
+    "error": "locator.click: Timeout 30000ms exceeded."
+  },
+  {
+    "id": "profile-gate",
+    "gate": {
+      "present": true,
+      "bg": "rgb(255, 255, 255)",
+      "radius": "26px",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.243135 -0.000696592 0.00753608 / 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
+      "buttons": [
+        "",
+        "Continue with Google",
+        "Continue with Email",
+        "Terms of Service",
+        "Privacy Policy"
+      ]
+    }
+  },
+  {
+    "id": "theme-checks",
+    "themeChecks": [
+      {
+        "name": "home",
+        "bg": "rgb(30, 30, 29)",
+        "color": "rgb(238, 238, 236)",
+        "scheme": "dark",
+        "cls": "delphi-font-inter interroman_b84b8f10-module__v8tvDG__variable interromanextende"
+      },
+      {
+        "name": "about",
+        "bg": "rgb(253, 246, 238)",
+        "color": "rgb(43, 24, 10)",
+        "scheme": "normal",
+        "cls": "delphi-marketing-fonts intercore_f491c0c3-module__hLHhaG__variable interextended"
+      },
+      {
+        "name": "help",
+        "bg": "rgb(253, 246, 238)",
+        "color": "rgb(43, 24, 10)",
+        "scheme": "normal",
+        "cls": "fontinter_ff9a168c-module__lRLv5W__variable fontpythia_e9621bd-module___zXROa__v"
+      }
+    ]
+  }
+]

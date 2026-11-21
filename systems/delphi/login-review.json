@@ -1,0 +1,82 @@
+{
+  "captured": "2026-11-21",
+  "account": "signed-out",
+  "emailFieldReached": false,
+  "passwordFieldReached": false,
+  "formsSubmitted": false,
+  "oauthClicked": false,
+  "notes": [
+    "https://www.delphi.ai/ and https://delphi.ai/ both 200-redirect to https://www.delphi.co/.",
+    "https://www.delphi.ai/login, https://www.delphi.co/login and https://www.delphi.co/auth?callbackUrl=%2F all land on https://www.delphi.co/?onboarding=discover. The page is the public home. Header Sign In is still a link to /auth. No email field is on that page.",
+    "A sign-in wall does render at https://www.delphi.co/~ (My Delphi), which stays on https://www.delphi.co/auth?callbackUrl=%2F~ with title Sign in. Controls are Continue with Google and Continue with Email. Neither was clicked. No email input, no password input.",
+    "The same wall opens as a dialog on a public profile (https://www.delphi.co/nireyal?onboarding=profile_gate) without a click. Buttons: close, Continue with Google, Continue with Email. Neither provider button was clicked.",
+    "https://www.delphi.co/onboarding?onboarding=create_cta redirects to https://www.delphi.co/?onboarding=create_cta, the public home. No onboarding form was shown. Nothing was filled.",
+    "Public chat (https://www.delphi.co/nireyal/chat) shows a message field. Nothing was typed and nothing was sent."
+  ],
+  "probes": [
+    {
+      "requested": "https://www.delphi.ai/login",
+      "final": "https://www.delphi.co/?onboarding=discover",
+      "status": 200,
+      "kind": "bounce-to-public-home",
+      "emailField": false,
+      "passwordField": false,
+      "oauthButtonsVisible": ["Continue with Google", "Continue with Email"],
+      "oauthClicked": false,
+      "screenshot": "screenshots/login-ai-light-bounce.png"
+    },
+    {
+      "requested": "https://www.delphi.co/login",
+      "final": "https://www.delphi.co/?onboarding=discover",
+      "status": 200,
+      "kind": "bounce-to-public-home",
+      "emailField": false,
+      "passwordField": false,
+      "oauthClicked": false
+    },
+    {
+      "requested": "https://www.delphi.co/auth?callbackUrl=%2F",
+      "final": "https://www.delphi.co/?onboarding=discover",
+      "status": 200,
+      "kind": "bounce-to-public-home",
+      "emailField": false,
+      "passwordField": false,
+      "oauthClicked": false,
+      "note": "Header Sign In on the home page points here and returns to the same home."
+    },
+    {
+      "requested": "https://www.delphi.co/~",
+      "final": "https://www.delphi.co/auth?callbackUrl=%2F~",
+      "status": 200,
+      "title": "Sign in",
+      "kind": "login-wall",
+      "emailField": false,
+      "passwordField": false,
+      "controls": ["Continue with Google", "Continue with Email", "Terms of Service", "Privacy Policy"],
+      "oauthClicked": false,
+      "stopped": true,
+      "screenshot": "screenshots/auth-light-login-wall.png"
+    },
+    {
+      "requested": "https://www.delphi.co/onboarding?onboarding=create_cta",
+      "final": "https://www.delphi.co/?onboarding=create_cta",
+      "status": 200,
+      "kind": "bounce-to-public-home",
+      "emailField": false,
+      "passwordField": false,
+      "onboardingFilled": false
+    },
+    {
+      "requested": "https://www.delphi.co/nireyal",
+      "final": "https://www.delphi.co/nireyal?onboarding=profile_gate",
+      "status": 200,
+      "kind": "login-dialog-on-public-page",
+      "emailField": false,
+      "passwordField": false,
+      "controls": ["close", "Continue with Google", "Continue with Email"],
+      "oauthClicked": false,
+      "stopped": true,
+      "screenshot": "screenshots/profile-light-gate.png"
+    }
+  ]
+}
