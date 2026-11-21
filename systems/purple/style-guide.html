@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Purple style guide</title>
+  <style>
+    :root {
+      --ink: #181831;
+      --promo: #ca2b16;
+      --page: #f8f5ef;
+      --on-ink: #ffffff;
+      --wordmark: #1f1a5e;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Graphik, arial, sans-serif;
+      padding: 32px;
+    }
+    h1 { font-weight: 300; letter-spacing: -0.04em; font-size: 44px; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 120px; }
+    .chip { height: 64px; border-radius: 8px; }
+    button {
+      background: var(--ink);
+      color: var(--on-ink);
+      border: 0;
+      border-radius: 48px;
+      padding: 12px 28px;
+      font: 500 16px/1 Graphik, arial, sans-serif;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--promo);
+      color: var(--on-ink);
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <p style="letter-spacing: 1.3px; font-size: 13px; font-weight: 500;">PURPLE</p>
+  <h1>Better sleep starts with Purple</h1>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#f8f5ef; border: 1px solid #181831"></div><p>page #f8f5ef</p></div>
+    <div class="swatch"><div class="chip" style="background:#181831"></div><p>ink #181831</p></div>
+    <div class="swatch"><div class="chip" style="background:#ca2b16"></div><p>promo #ca2b16</p></div>
+    <div class="swatch"><div class="chip" style="background:#1f1a5e"></div><p>wordmark #1f1a5e</p></div>
+    <div class="swatch"><div class="chip" style="background:#0f0f3a"></div><p>promo bar #0f0f3a</p></div>
+  </div>
+  <p><button type="button">Learn about our mattresses</button> <span class="badge">On sale</span></p>
+</body>
+</html>

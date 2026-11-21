@@ -1,0 +1,54 @@
+{
+  "captured": "2026-11-22",
+  "product": "Purple",
+  "productUrl": "https://purple.com",
+  "live": {
+    "url": "https://purple.com/",
+    "status": 403,
+    "error": "Cloudflare 1009",
+    "region": "SG",
+    "ray": "a5e29dc2beff81d7",
+    "note": "Live shop blocked from this host and from the home server. No password, email, code, phone, or address was typed."
+  },
+  "archive": {
+    "homepageDom": "https://web.archive.org/web/20261118090323/https://purple.com/",
+    "homepageStyled": "https://web.archive.org/web/20261012122729/https://purple.com/",
+    "category": "https://web.archive.org/web/20261118132705/https://purple.com/mattresses",
+    "why": "https://web.archive.org/web/20261111025010/https://purple.com/purple-grid"
+  },
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "png": "2880x1800"
+  },
+  "colors": {
+    "ink": "rgb(24, 24, 49)",
+    "promo": "rgb(202, 43, 22)",
+    "promoBar": "rgb(15, 15, 58)",
+    "page": "rgb(248, 245, 239)",
+    "footer": "rgb(248, 245, 239)",
+    "onInk": "rgb(255, 255, 255)",
+    "wordmark": "#1F1A5E",
+    "shopSale": "rgb(255, 255, 255)"
+  },
+  "type": {
+    "family": "Graphik, arial, sans-serif",
+    "files": "GraphikRegular.woff2, GraphikMedium.woff2, GraphikLight.woff2 preloaded. Files are not in this package. Galaxie Copernicus is preloaded and was not the measured face on these controls.",
+    "body": { "size": "16px", "weight": "400", "lineHeight": "22.4px", "color": "rgb(24, 24, 49)" },
+    "nav": { "size": "14px", "weight": "500", "lineHeight": "19.6px" },
+    "heroNovember": { "size": "44px", "weight": "300", "lineHeight": "52.8px", "letterSpacing": "-1.76px", "text": "Less holiday panic. Better sleep." },
+    "heroOctober": { "size": "54px", "weight": "300", "lineHeight": "64.8px", "letterSpacing": "-2.16px", "color": "rgb(255, 255, 255)", "text": "The Greatest Sleep Ever Invented" },
+    "eyebrow": { "size": "13px", "weight": "500", "letterSpacing": "1.3px", "lineHeight": "18.2px" }
+  },
+  "controls": {
+    "primary": { "text": "Learn about our mattresses", "background": "rgb(24, 24, 49)", "color": "rgb(255, 255, 255)", "radius": "48px", "padding": "12px 28px", "height": 46, "size": "16px", "weight": "500" },
+    "shopSaleOnPromo": { "background": "rgb(255, 255, 255)", "color": "rgb(24, 24, 49)", "radius": "48px", "padding": "6px 16px", "height": 30, "size": "12px", "weight": "500" },
+    "filter": { "text": "Hide Filters", "radius": "48px", "height": 44, "padding": "10px 24px", "border": "1px solid rgb(24, 24, 49)" },
+    "badge": { "text": "On sale", "background": "rgb(202, 43, 22)", "color": "rgb(255, 255, 255)", "radius": "4px", "padding": "6px 10px", "size": "12px", "weight": "500" },
+    "email": { "wrapRadius": "16px", "wrapBorder": "1px solid rgb(24, 24, 49)", "wrapHeight": 56, "inputPadding": "18px 16px 20px", "inputSize": "14px", "submitted": false },
+    "promoBar": { "background": "rgb(15, 15, 58)", "radius": "8px", "padding": "12px 24px", "height": 54 },
+    "headerTop": { "background": "rgb(248, 245, 239)", "height": 41 },
+    "logo": { "width": 96, "height": 46 }
+  }
+}
