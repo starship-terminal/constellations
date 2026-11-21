@@ -1,0 +1,113 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.brooksrunning.com/en_us",
+  "region": "United States",
+  "lang": "en-US",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2
+  },
+  "body": {
+    "color": "#0e131f",
+    "backgroundColor": "#ffffff",
+    "fontFamily": "\"GT America\", \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px"
+  },
+  "banner": {
+    "backgroundColor": "#b8dde1",
+    "color": "#0e131f",
+    "height": 52,
+    "fontSize": "12px",
+    "text": "Cyber deals have arrived. Shop now"
+  },
+  "utility": {
+    "backgroundColor": "#ffffff",
+    "color": "#0e131f",
+    "fontSize": "14px"
+  },
+  "navy": {
+    "backgroundColor": "#003789",
+    "height": 72,
+    "padding": "0px 60px"
+  },
+  "nav": {
+    "color": "#ffffff",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "textTransform": "uppercase",
+    "padding": "16px 0px 12px"
+  },
+  "logo": {
+    "viewBox": "0 0 120 20",
+    "fill": "#ffffff",
+    "width": 120,
+    "height": 20
+  },
+  "search": {
+    "width": 220,
+    "height": 40,
+    "border": "1px solid #ffffff",
+    "borderRadius": "0px",
+    "color": "#ffffff",
+    "fontSize": "14px",
+    "placeholder": "Search"
+  },
+  "hero": {
+    "color": "#ffffff",
+    "fontSize": "70px",
+    "fontWeight": "700",
+    "lineHeight": "70px",
+    "letterSpacing": "-2.1px",
+    "text": "Gifts that move you"
+  },
+  "cta": {
+    "color": "#ffffff",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "letterSpacing": "0.64px",
+    "textTransform": "uppercase",
+    "text": "SHOP WOMEN'S GIFTS"
+  },
+  "category": {
+    "url": "https://www.brooksrunning.com/en_us/womens/shoes/",
+    "title": "Women's running shoes",
+    "titleSize": "30px",
+    "titleWeight": "700",
+    "count": "49 products",
+    "name": {
+      "color": "#0e131f",
+      "fontFamily": "GT America Condensed, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "700",
+      "text": "ADRENALINE GTS 26"
+    },
+    "price": {
+      "color": "#0e131f",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "text": "$155.00"
+    },
+    "badge": {
+      "color": "#090708",
+      "backgroundColor": "#ffffff",
+      "text": "New Style"
+    },
+    "promo": {
+      "backgroundColor": "#b8dde1",
+      "text": "Free gift with $160 purchase."
+    },
+    "sizeChip": {
+      "color": "#707070",
+      "border": "1px solid #cdcdcd",
+      "width": 52,
+      "height": 50,
+      "fontSize": "14px"
+    },
+    "cardWell": "#f8f8f8"
+  },
+  "muted": "#707070",
+  "stroke": "#cdcdcd"
+}
