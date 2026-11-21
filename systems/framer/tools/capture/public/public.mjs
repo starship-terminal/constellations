@@ -83,14 +83,16 @@ const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILE
 async function navMenu(p, S, name) {
   const btn = p.locator('nav a, header a, div a').filter({ hasText: new RegExp(`^${name}`) }).filter({ visible: true }).first();
   if (!(await btn.count())) { log('  ! no', name, 'trigger'); return; }
-  const open = async () => p.evaluate(() => {
+  const markers = { Platform: /^Create\b/, Solutions: /^Creators\b/, Resources: /^Marketplace\b/ };
+  const open = async () => p.evaluate((re) => {
+    const want = new RegExp(re);
     const els = [...document.querySelectorAll('body *')];
     return els.some((x) => {
-      const t = (x.innerText || '');
+      const t = (x.innerText || '').trim();
       const r = x.getBoundingClientRect();
-      return r.y > 20 && r.y < 400 && r.width > 300 && r.height > 150 && /^(Create|Design|Build|Grow|Product|Learn|Company)\b/.test(t.trim());
+      return r.y > 40 && r.y < 120 && r.x < 200 && r.height < 40 && want.test(t);
     });
-  }).catch(() => false);
+  }, markers[name].source).catch(() => false);
   for (let i = 0; i < 4 && !(await open()); i++) {
     await btn.hover({ timeout: 5000 }).catch(() => {});
     await wait(p, 1200);

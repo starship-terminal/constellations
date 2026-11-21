@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T21:22:42.543Z",
+  "capturedAt": "2026-11-21T11:08:25.403Z",
   "screenshot": "updates-dark-full.png",
   "sanitizedSourceUrl": "https://www.framer.com/updates",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6771
+      "height": 6800
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 6771
+    "height": 6800
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 6771
+      "height": 6800
     },
     "basis": "fullPage"
   },

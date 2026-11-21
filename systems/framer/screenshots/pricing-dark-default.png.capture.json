@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T21:20:37.609Z",
+  "capturedAt": "2026-11-21T11:07:20.013Z",
   "screenshot": "pricing-dark-default.png",
   "sanitizedSourceUrl": "https://www.framer.com/pricing",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8091
+      "height": 8115
     },
     "scroll": {
       "x": 0,

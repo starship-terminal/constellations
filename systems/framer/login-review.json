@@ -1,0 +1,82 @@
+{
+  "capturedAt": "2026-11-21",
+  "signed_in": false,
+  "method": "Public Framer, signed out, dark marketing site. The walk was mapped from the homepage before screenshots. The capture run died after the pages were photographed and before this file was written. Nothing was typed. No identity provider was clicked. No form was submitted.",
+  "offered": {
+    "nav": {
+      "items": [
+        "Framer",
+        "Platform",
+        "Solutions",
+        "Resources",
+        "Enterprise",
+        "Pricing",
+        "Log in",
+        "Sign up",
+        "Menu"
+      ],
+      "reached": [
+        "Framer",
+        "Platform",
+        "Solutions",
+        "Resources",
+        "Enterprise",
+        "Pricing",
+        "Log in",
+        "Menu"
+      ],
+      "note": "Signed out. Platform, Solutions, and Resources are hover menus that keep the URL on /. Log in and Sign up are walls. The phone Menu opens a drawer."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings screen was offered. The account was not entered. There is no page-level theme switch."
+    },
+    "create": {
+      "items": [
+        "Sign up",
+        "Get started for free",
+        "Start without AI"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/home-dark-default.png",
+    "screenshots/home-dark-full.png",
+    "screenshots/home-dark-menu-platform.png",
+    "screenshots/home-dark-menu-solutions.png",
+    "screenshots/home-dark-menu-resources.png",
+    "screenshots/mobile-home-dark-drawer.png",
+    "screenshots/login-light-default.png",
+    "screenshots/login-light-full.png",
+    "screenshots/ai-dark-default.png",
+    "screenshots/agents-dark-default.png",
+    "screenshots/design-dark-default.png",
+    "screenshots/mcp-dark-default.png",
+    "screenshots/pricing-dark-default.png",
+    "screenshots/enterprise-dark-default.png",
+    "screenshots/about-dark-default.png",
+    "screenshots/updates-dark-default.png",
+    "screenshots/academy-dark-default.png",
+    "screenshots/developers-dark-default.png",
+    "screenshots/careers-dark-default.png"
+  ],
+  "gaps": [
+    "The signed-in editor, projects, and settings were not entered.",
+    "Log in stops at https://framer.com/login. Sign up stops at https://www.framer.com/r/signup/. Start without AI stops at https://framer.com/signup. None was submitted.",
+    "Identity-provider buttons on the login card, if present, were not clicked.",
+    "The cookie Ok button was not clicked.",
+    "The contact form was photographed at rest and not submitted.",
+    "The phone Resources drawer was read closed. Expanding it after Solutions left the Solutions links on screen.",
+    "The logo flyout (Copy logo SVG, Brand guidelines) was not followed.",
+    "This review was written after the capture run died, from the site tree and the screenshot files that exist."
+  ],
+  "not_submitted": [
+    "login",
+    "signup",
+    "start without AI",
+    "contact form",
+    "cookie consent"
+  ]
+}
