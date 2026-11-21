@@ -1,0 +1,19 @@
+{
+  "slug": "n8n",
+  "captured": "2026-11-22",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "session": "Public capture, signed out. https://app.n8n.cloud/login opened an empty card that asks for an instance name. https://app.n8n.cloud/register opened an empty card that asks for a company email. No email, password, code, phone, or address was typed. Sign in was not clicked. Continue was not clicked. No form was submitted. No captcha was solved. The workflow editor was not opened. A cloud trial was not started.",
+  "wall": {
+    "login_url": "https://app.n8n.cloud/login",
+    "signup_url": "https://app.n8n.cloud/register",
+    "signup_note": "Register is a separate page. It does not redirect to login.",
+    "login_title": "Go to your instance",
+    "login_fields_empty": ["Instance name"],
+    "register_title": "Start automating today",
+    "register_fields_empty": ["Company email"],
+    "identity_providers_not_clicked": [],
+    "continue_not_clicked": true,
+    "sign_in_not_clicked": true
+  }
+}

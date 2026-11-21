@@ -1,6 +1,6 @@
 # Components
 
-Values come from `getComputedStyle` in the T3 preview tab on 2026-11-19. Viewport was 1169 by 731, devicePixelRatio 2. The preview browser did not produce screenshot frames, so there are no crops. Token names point at [tokens.json](tokens.json).
+Values come from `getComputedStyle` in the T3 preview tab on 2026-11-19. Viewport was 1169 by 731, devicePixelRatio 2. There are no measured crops from that pass. Page frames from 2026-11-22 are in [screenshots/](screenshots/). Token names point at [tokens.json](tokens.json).
 
 ## Button
 

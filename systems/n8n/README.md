@@ -150,18 +150,29 @@ The tokens fall back to the system faces named above. They do not embed the prop
 | Search and filtering | Not present. |
 | List or table | Pricing cards captured as measurements. |
 | Onboarding | Not entered. Register stops at email. |
-| Desktop 1440 | Not captured at 1440. The live viewport was 1169 by 731. |
-| Phone 390 | Not captured. |
-| Screenshots | Not captured. Preview frames failed. |
+| Desktop 1440 | Photographed 2026-11-22. See [site-tree.md](site-tree.md). |
+| Phone 390 | Homepage first viewport, [screenshots/home-light-390.png](screenshots/home-light-390.png). |
+| Screenshots | Public marketing pages and the empty login and register walls. |
 
 ## Do and don't
 
 - **Use the pink pill for the main marketing action.** `GET STARTED` and `START FREE TRIAL` are rgb(255, 188, 202) with rgb(33, 33, 33) type in n8n Baumer Mono, uppercase. The secondary action is the grey pill.
 - **Keep marketing type on n8n Baumer Uniwidth and actions on n8n Baumer Mono.** Body is 16px. The homepage h1 at this width is 64px, weight 500, with negative tracking.
 - **Use Geist and the dark page for the signed-out console.** Login and register are oklch(0.2046 0 89.88), with a pink pill button and a 4px field.
-- **Do not invent a screenshot.** The preview browser did not paint frames. The readings are computed styles.
+- **Do not invent a screenshot.** The 2026-11-19 preview pass did not paint frames. The 2026-11-22 frames are in [screenshots/](screenshots/). Token values still come from the readings.
 - **Do not enter a workflow from this package.** Login wants an instance name. Register wants an email. Neither was submitted, and the editor was not opened.
 - **Do not copy the cookie banner into the product.** CookieScript uses Inter and a blue switch. n8n's own pages do not.
+
+## Public site tree, 2026-11-22
+
+[site-tree.md](site-tree.md) maps the homepage header, footer, and the public pages those controls open. Marketing pages and the empty login and register walls were photographed that day. Login asks for an instance name. Register asks for a company email. Neither field was typed. Sign in was not clicked. Continue was not clicked. Pricing trial and contact-sales buttons were not clicked. The talk-to-sales typeform, the merch store, the usability-test form, and the vulnerability form were not opened. Creators, the forum, the blog home, the events calendar, and the expert directory were mapped and not photographed, because those first viewports show people. `catalog.json` was left alone. `login-extracted` stays not-started. The 2026-11-19 token readings were not redone.
+
+| File | What it holds |
+|---|---|
+| [site-tree.md](site-tree.md) | Public header, footer, and the pages those controls open. |
+| [login-review.json](login-review.json) | Signed-out wall notes. `login-extracted` stays not-started. |
+| [screenshots/](screenshots/) | First-viewport frames. Desktop is 1440 by 900 CSS at device pixel ratio 2. Phone homepage is 390 by 844. |
+| [tools/test_site_tree.py](tools/test_site_tree.py) | Checks this map and the screenshot names. |
 
 ## Rebuild
 
