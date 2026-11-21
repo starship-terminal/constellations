@@ -1,0 +1,292 @@
+{
+  "captured": "2026-11-22",
+  "store": "https://monos.com/",
+  "shopClass": "shop-us",
+  "currency": "USD",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "readings": [
+    {
+      "role": "body",
+      "source": "computed body on https://monos.com/",
+      "color": "rgb(128, 128, 128)",
+      "background": "rgb(255, 255, 255)",
+      "fontFamily": "Vollkorn, serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "22.4px"
+    },
+    {
+      "role": "promo bar",
+      "source": "computed .hide.medium-up--show.info-bar on the desktop homepage",
+      "background": "rgb(77, 77, 77)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "letterSpacing": "1.2px",
+      "height": "30px",
+      "padding": "5px 0px"
+    },
+    {
+      "role": "header",
+      "source": "computed header.site-header on the homepage, plus painted sample of the category screenshot",
+      "background": "rgb(255, 255, 255)",
+      "height": "70px",
+      "note": "getComputedStyle on header.site-header reports a transparent background. The painted header on the luggage page is white."
+    },
+    {
+      "role": "nav link",
+      "source": "computed a.nav__link 25% OFF BLACK FRIDAY",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "12.32px",
+      "fontWeight": "700",
+      "letterSpacing": "2.464px",
+      "textTransform": "uppercase",
+      "lineHeight": "19.712px",
+      "note": "White on the homepage hero. On interior pages the same links paint #4d4d4d."
+    },
+    {
+      "role": "logo",
+      "source": "header SVG viewBox 0 0 117.83 20, box 120 by 50",
+      "fillOnHero": "rgb(255, 255, 255)",
+      "fillOnInterior": "rgb(77, 77, 77)"
+    },
+    {
+      "role": "hero title",
+      "source": "computed homepage h1",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "63px",
+      "fontWeight": "500",
+      "lineHeight": "81.9px",
+      "letterSpacing": "15px"
+    },
+    {
+      "role": "hero kicker",
+      "source": "computed .sitewide SAVE 25% OFF SITEWIDE",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "cabin",
+      "fontSize": "16px",
+      "fontWeight": "650",
+      "letterSpacing": "3px"
+    },
+    {
+      "role": "hero button",
+      "source": "computed a.btn.btn--large.btn--white-outline USE CODE: EARLYBF, not clicked as a form",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "2px solid rgb(255, 255, 255)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "letterSpacing": "2.8px",
+      "textTransform": "uppercase",
+      "padding": "20px 60px",
+      "borderRadius": "0px",
+      "height": "61px",
+      "width": "300px"
+    },
+    {
+      "role": "sale ends",
+      "source": "computed p.text-under-btn",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Vollkorn, serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "28.8px"
+    },
+    {
+      "role": "section eyebrow",
+      "source": "computed h3.vollkorn-sc-16 thoughtfully designed",
+      "color": "rgb(77, 77, 77)",
+      "fontFamily": "\"Vollkorn SC\", serif",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "letterSpacing": "1.6px",
+      "textTransform": "lowercase"
+    },
+    {
+      "role": "section title",
+      "source": "computed h4.cabin-36 Discover our collections",
+      "color": "rgb(77, 77, 77)",
+      "fontFamily": "Cabin",
+      "fontSize": "36px",
+      "fontWeight": "500",
+      "lineHeight": "39.6px",
+      "letterSpacing": "0.72px"
+    },
+    {
+      "role": "collection title",
+      "source": "computed h1 on /collections/luggage",
+      "color": "rgb(77, 77, 77)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "36px",
+      "fontWeight": "500",
+      "letterSpacing": "0.72px"
+    },
+    {
+      "role": "collection intro",
+      "source": "computed intro paragraph on /collections/luggage",
+      "color": "rgb(153, 153, 153)",
+      "fontFamily": "Vollkorn, serif",
+      "fontSize": "24px",
+      "fontWeight": "400",
+      "lineHeight": "28.8px"
+    },
+    {
+      "role": "product title",
+      "source": "computed h1.product__title on /products/carry-on",
+      "color": "rgb(77, 77, 77)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "36px",
+      "fontWeight": "700",
+      "lineHeight": "39.6px",
+      "letterSpacing": "0.72px"
+    },
+    {
+      "role": "product price",
+      "source": "computed .product__price on /products/carry-on",
+      "color": "rgb(77, 77, 77)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": "500",
+      "lineHeight": "45px",
+      "letterSpacing": "0.48px",
+      "text": "$275 USD"
+    },
+    {
+      "role": "add to cart",
+      "source": "computed button.addToCart on /products/carry-on, not clicked",
+      "background": "rgb(77, 77, 77)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "letterSpacing": "2.8px",
+      "textTransform": "uppercase",
+      "borderRadius": "0px",
+      "border": "2px solid rgba(0, 0, 0, 0)",
+      "padding": "22px 20px",
+      "height": "48px",
+      "width": "560px"
+    },
+    {
+      "role": "swatch",
+      "source": "computed a.swatch__link Desert Taupe",
+      "width": "24px",
+      "height": "24px",
+      "borderRadius": "50%",
+      "border": "1px solid rgb(179, 179, 179)",
+      "innerBackground": "rgb(199, 185, 173)"
+    },
+    {
+      "role": "promo chip",
+      "source": "computed EARLYBF chip on the product page",
+      "color": "rgb(77, 77, 77)",
+      "border": "1px solid rgb(179, 179, 179)",
+      "borderRadius": "2px",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "letterSpacing": "2.4px",
+      "padding": "4px 7px"
+    },
+    {
+      "role": "card title",
+      "source": "computed h3.grid__title Check-In Medium on the homepage",
+      "color": "rgb(77, 77, 77)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "lineHeight": "19.8px",
+      "letterSpacing": "0.36px"
+    },
+    {
+      "role": "card price",
+      "source": "computed span.money on the homepage",
+      "color": "rgb(102, 102, 102)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "500"
+    },
+    {
+      "role": "about title",
+      "source": "computed h1 on /pages/our-story",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "48px",
+      "fontWeight": "700",
+      "letterSpacing": "0.96px"
+    },
+    {
+      "role": "about button",
+      "source": "computed LEARN MORE on /pages/our-story",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "2px solid rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "letterSpacing": "2.8px",
+      "padding": "20px 60px",
+      "borderRadius": "0px",
+      "height": "62px"
+    },
+    {
+      "role": "footer",
+      "source": "computed footer on the homepage",
+      "background": "rgb(77, 77, 77)",
+      "color": "rgb(179, 179, 179)",
+      "fontFamily": "Vollkorn, serif",
+      "fontSize": "14px",
+      "padding": "60px 0px"
+    },
+    {
+      "role": "footer link",
+      "source": "computed a.footer__nav__link All Products",
+      "color": "rgb(179, 179, 179)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "letterSpacing": "1.2px"
+    },
+    {
+      "role": "sign up",
+      "source": "computed footer button.form__submit, not clicked",
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "border": "2px solid rgb(255, 255, 255)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "10.8px",
+      "fontWeight": "700",
+      "letterSpacing": "2.16px",
+      "textTransform": "uppercase",
+      "borderRadius": "0px",
+      "height": "30px"
+    },
+    {
+      "role": "newsletter field",
+      "source": "computed footer input[type=email], not typed",
+      "border": "1px solid rgb(221, 221, 221)",
+      "color": "rgb(179, 179, 179)",
+      "fontFamily": "Vollkorn, serif",
+      "fontSize": "12px",
+      "height": "30px",
+      "borderRadius": "0px"
+    },
+    {
+      "role": "store locations",
+      "source": "computed button.nav-toggle--mini",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Cabin, sans-serif",
+      "fontSize": "8px",
+      "fontWeight": "500",
+      "letterSpacing": "1.6px",
+      "textTransform": "uppercase"
+    }
+  ]
+}
