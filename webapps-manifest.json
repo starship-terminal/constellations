@@ -1150,9 +1150,9 @@
       "description": "A platform for curating and discovering taste.",
       "status": "captured",
       "package": "systems/curater",
-      "notes": "https://curater.org/ Sign in or create account opens only Google sign-in. No email field on the site.",
+      "notes": "https://curater.org/ Sign in or create account opens only Google sign-in. No email field on the site. Public walk 2026-11-21: the map starts at curater.org and records which header, footer, menu, and in-page control opens which page, dialog, drawer, or login wall. Feed, search, menus, and profile were photographed at desktop and phone. Sign in or create account opens only Google sign-in. Google was not clicked and no form was submitted. Signed-in app was not captured. Public package refresh in PR 1638 at ec5c6e17c9d7. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "oauth-only",
+      "login-probe": "closed",
       "batch": 4
     },
     {
