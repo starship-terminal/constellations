@@ -1,0 +1,25 @@
+{
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 900
+  },
+  "href": "https://www.microsoft.com/en-sg/microsoft-365",
+  "title": "Microsoft 365 for Individuals: Subscription for Productivity Apps"
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "height": 54,
+    "color": "rgb(38, 38, 38)",
+    "boxShadow": "none"
+  },
+  "link": {
+    "color": "rgb(38, 38, 38)",
+    "fontSize": "13px",
+    "fontFamily": "\"Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "fontWeight": "400",
+    "textDecoration": "none"
+  },
+  "badge": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "0px",
+    "fontSize": "14px",
+    "padding": "0px 0px 2px",
+    "fontWeight": "600"
+  },
+  "banner": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "height": 48,
+    "fontSize": "16px"
+  }
+}

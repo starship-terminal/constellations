@@ -1,0 +1,352 @@
+[
+  {
+    "tag": "A",
+    "label": "Microsoft",
+    "href": "https://www.microsoft.com/",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft 365",
+    "href": "https://www.microsoft.com/en-sg/microsoft-365",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Azure",
+    "href": "https://azure.microsoft.com/?ocid=cmm4r4ppnhp",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Copilot",
+    "href": "https://copilot.com/?fromcode=cmmuaql67jy",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Windows",
+    "href": "https://www.microsoft.com/en-sg/windows/",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Surface",
+    "href": "https://www.microsoft.com/surface",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "XBOX",
+    "href": "https://www.xbox.com/",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Sale",
+    "href": "https://www.microsoft.com/en-sg/store/b/sale?icid=DSM_TopNavDeals",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Small Business",
+    "href": "https://www.microsoft.com/en-sg/store/b/business?icid=MSCOM_UHF_Business",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Support",
+    "href": "https://support.microsoft.com/en-us?icid=DSM_TopNav_Support",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "BUTTON",
+    "label": "More",
+    "href": "",
+    "ariaExpanded": "false",
+    "visible": false
+  },
+  {
+    "tag": "BUTTON",
+    "label": "All Microsoft",
+    "href": "",
+    "ariaExpanded": "false",
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Windows Apps",
+    "href": "https://apps.microsoft.com/home",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "OneDrive",
+    "href": "https://www.microsoft.com/en-sg/microsoft-365/onedrive/online-cloud-storage",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Outlook",
+    "href": "https://www.microsoft.com/en-sg/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Moving from Skype to Teams",
+    "href": "https://support.microsoft.com/en-us/office/moving-from-skype-to-microsoft-teams-free-3c0caa26-d9db-4179-bcb3-930ae2c87570?icid=DSM_All_Skype",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "OneNote",
+    "href": "https://www.microsoft.com/en-sg/microsoft-365/onenote/digital-note-taking-app",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft Teams",
+    "href": "https://www.microsoft.com/en-sg/microsoft-teams/group-chat-software",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Shop XBOX",
+    "href": "https://www.microsoft.com/en-sg/store/b/xbox?icid=DSM_All_ShopXbox",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Accessories",
+    "href": "https://www.microsoft.com/en-sg/store/b/accessories",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "XBOX Game Pass Ultimate",
+    "href": "https://www.xbox.com/en-sg/games/store/xbox-game-pass-ultimate/cfq7ttc0khs0?icid=DSM_All_XboxGamePassUltimate",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "XBOX games",
+    "href": "https://www.microsoft.com/en-sg/store/top-paid/games/xbox?icid=DSM_All_XboxGames",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "PC games",
+    "href": "https://apps.microsoft.com/games",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft AI",
+    "href": "https://www.microsoft.com/en-sg/ai?icid=DSM_All_AI",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft Security",
+    "href": "https://www.microsoft.com/en-sg/security",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Azure",
+    "href": "https://azure.microsoft.com/",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Dynamics 365",
+    "href": "https://www.microsoft.com/en-sg/dynamics-365",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft 365 for business",
+    "href": "https://www.microsoft.com/en-sg/microsoft-365/business",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft Power Platform",
+    "href": "https://www.microsoft.com/en-sg/power-platform",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Windows 365",
+    "href": "https://www.microsoft.com/en-sg/windows-365",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Digital Sovereignty",
+    "href": "https://www.microsoft.com/en-sg/sovereignty?icid=DSM_More_Sovereignty",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft Developer",
+    "href": "https://developer.microsoft.com/en-us/?icid=DSM_All_Developper",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft Learn",
+    "href": "https://learn.microsoft.com/",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Support for AI marketplace apps",
+    "href": "https://www.microsoft.com/software-development-companies/offers-benefits/isv-success?icid=DSM_All_SupportAIMarketplace&ocid=cmm3atxvn98",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft Tech Community",
+    "href": "https://techcommunity.microsoft.com/",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft Marketplace",
+    "href": "https://marketplace.microsoft.com/?icid=DSM_All_Marketplace&ocid=cmm3atxvn98",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Software companies",
+    "href": "https://www.microsoft.com/software-development-companies?icid=DSM_All_SoftwareCompanies&ocid=cmm3atxvn98",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Visual Studio",
+    "href": "https://visualstudio.microsoft.com/",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Microsoft Rewards",
+    "href": "https://www.microsoft.com/rewards",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Free downloads & security",
+    "href": "https://www.microsoft.com/download",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Education",
+    "href": "https://www.microsoft.com/en-sg/education?icid=CNavMSCOML0_Studentsandeducation",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Gift cards",
+    "href": "https://www.microsoft.com/en-sg/p/xbox-gift-card-digital-code/cfq7ttc0k5gx?icid=DSM_All_GiftCards",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "Licensing",
+    "href": "https://www.microsoft.com/licensing/",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "A",
+    "label": "View Sitemap",
+    "href": "https://www.microsoft.com/en-sg/sitemap",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "BUTTON",
+    "label": "Search",
+    "href": "",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "BUTTON",
+    "label": "Cancel",
+    "href": "",
+    "ariaExpanded": null,
+    "visible": false
+  },
+  {
+    "tag": "BUTTON",
+    "label": "Search Microsoft.com",
+    "href": "",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "A",
+    "label": "Cart",
+    "href": "https://www.microsoft.com/en-sg/store/cart",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "BUTTON",
+    "label": "Sign in",
+    "href": "",
+    "ariaExpanded": null,
+    "visible": true
+  },
+  {
+    "tag": "BUTTON",
+    "label": "Sign In",
+    "href": "",
+    "ariaExpanded": null,
+    "visible": true
+  }
+]

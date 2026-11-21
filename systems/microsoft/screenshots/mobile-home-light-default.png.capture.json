@@ -1,0 +1,25 @@
+{
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "png": {
+    "pixelWidth": 780,
+    "pixelHeight": 1688
+  },
+  "href": "https://www.microsoft.com/en-sg",
+  "title": "Microsoft – AI, Cloud, Productivity, Computing, Gaming & Apps"
+}
