@@ -28,10 +28,22 @@ H1 "In the galleries". A brand-yellow panel (`#fac300`, `--color--brand--6`) sit
 
 `https://membership.moma.org/` is a separate host with the same type. Four square cards in membership colours, each with Join or renew (black) and Gift it (white). Join was not pressed. [membership-light-default](screenshots/membership-light-default.png).
 
+## Menus
+
+Visit, Exhibitions and events, and Art and artists open full-width menus on the same page. Membership opens a short menu (Become a member, Log in). The phone hamburger opens a drawer with the same destinations. [home-light-visit-menu](screenshots/home-light-visit-menu.png), [home-light-exhibitions-menu](screenshots/home-light-exhibitions-menu.png), [home-light-art-menu](screenshots/home-light-art-menu.png), [home-light-membership-menu](screenshots/home-light-membership-menu.png), [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
+
+## Store
+
+Store leaves www.moma.org for store.moma.org. The home is a promo carousel. New arrivals is a product grid with Categories, Product Type, and Price. A nonsense query returns an empty result. The cart, opened with nothing added, says the bag is empty. An offer dialog was closed. No email was typed and checkout was not entered. [store-light-default](screenshots/store-light-default.png), [store-listing-light-default](screenshots/store-listing-light-default.png), [store-search-empty-light-default](screenshots/store-search-empty-light-default.png), [store-cart-empty-light-default](screenshots/store-cart-empty-light-default.png).
+
 ## Search
 
-The search control opens a field over a dimmed page. Placeholder "Search moma.org", 40px, colour `rgba(0, 0, 0, 0.54)`. Nothing was submitted. [home-light-search](screenshots/home-light-search.png).
+The search control opens a field on the same page. Placeholder "Search moma.org". Nothing was submitted. The painted panel did not survive a screenshot on the 2026-11-21 pass. The earlier shot is [home-light-search](screenshots/home-light-search.png).
 
 ## Login
 
-`/auth/login` is a centered card: wordmark, "Log in or sign up for a free account", an underline email field, a black Continue button. Continue was not pressed. A second visit to the same URL hit a Cloudflare challenge and that launch stopped. [login-light-default](screenshots/login-light-default.png).
+`/auth/login` redirects to the auth host and paints a centered card: wordmark, "Log in or sign up for a free account", an empty email field, a black Continue button. Continue was not pressed. Nothing was typed. [login-light-default](screenshots/login-light-default.png).
+
+## Missing page
+
+`/members/` is a 404 with Ruscha's *OOF*. [members-missing-light-default](screenshots/members-missing-light-default.png). Membership marketing stays at membership.moma.org.
