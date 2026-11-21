@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "agents-sales-light-1440",
+  "url": "https://sanalabs.com/products/sana/solutions/teams/sales-gtm",
+  "title": "Sales",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "First viewport, headless Chromium, 2026-11-22, after the homepage had already loaded in an incognito preview tab with no challenge. Cookie notice dismissed with Only necessary where it blocked the page. Nothing was typed. No form was submitted. Read colours from tokens.json, not from this PNG."
+}

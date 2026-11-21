@@ -1,0 +1,53 @@
+{
+  "product": "Sana",
+  "slug": "sana-ai",
+  "domain": "sana.ai",
+  "reviewedAt": "2026-11-22",
+  "method": "Incognito preview tab confirmed the homepage and the empty sign-in wall. Screenshots are headless Chromium at 1440x900 and 390x844 CSS pixels, device pixel ratio 2, after that confirmation.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in",
+      "url": "https://sana.ai/sign-in-to-sana",
+      "title": "Sign in - Sana",
+      "painted": true,
+      "headings": ["Welcome to Sana", "Your AI agent for work"],
+      "asksFor": [
+        {
+          "label": "work email",
+          "name": "email",
+          "type": "email",
+          "placeholder": "name@work-email.com",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Continue with Google"],
+      "otherControls": [
+        "Enter your work email",
+        "Overview",
+        "Privacy and terms",
+        "FAQ"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-empty-light-1440.png",
+      "phone": "screenshots/login-empty-light-390.png",
+      "note": "Empty sign-in wall. The email field was empty. Google was an iframe and was not clicked. Enter your work email was not clicked. There is no separate public signup URL. Starting a workspace is this wall."
+    }
+  ],
+  "notOpened": [
+    "Continue with Google was not clicked.",
+    "Enter your work email was not clicked. The code step was not reached in this pass.",
+    "Book an intro on Sana and on Sana Learn was photographed empty and not submitted.",
+    "Learn pricing selectors were left on Select an option. No price was requested.",
+    "Event registration, job applications, and help-center search were not started.",
+    "Legal PDFs were not downloaded. Workday and social profiles were not opened."
+  ],
+  "stopped": "Empty login wall photographed. No typing, no submit, no identity provider, no workspace, no checkout.",
+  "leftAlone": ["catalog.json", "webapps-manifest.json"]
+}
