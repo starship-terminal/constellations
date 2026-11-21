@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-11-22",
+  "sanitizedSourceUrl": "https://www.google.com/imghp",
+  "viewport": "1440x900",
+  "deviceScaleFactor": 1,
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "note": "Quantised to 256 colours. Read colours from tokens.json."
+}
