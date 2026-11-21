@@ -1,8 +1,10 @@
 # Polaroid design reference
 
-A token set and component reference for Polaroid's public signed-out store. Read from www.polaroid.com on 2026-11-19, signed out. polaroid.com redirects to www.polaroid.com/en_sg. That Singapore English storefront is what this package captures. Currency on the home page is €. Some product prices computed as $.
+A token set and component reference for Polaroid's public signed-out store. Refreshed from www.polaroid.com on 2026-11-21, signed out. polaroid.com redirects to www.polaroid.com/en_sg. That Singapore English storefront is what this package captures. Currency on the announcement bar is €. The MoMA Now product page shows a dollar price.
 
-Surfaces: home, cameras, film, the Now camera hub, the MoMA Now product page, contact, and the public log-in page. Desktop 1440 x 900. Phone 390 x 844. One light theme on the page.
+Surfaces: home, cameras, film, the MoMA Now product page, contact, the empty bag, the 404 page, search, the region dialog, and the public log-in wall. Desktop 1440 x 900. Phone 390 x 844 for the homepage, the cameras page, and the log-in wall. One light theme on the page. The control map is [site-tree.md](site-tree.md).
+
+Login and signup are the same empty wall. `/en_sg/account/register` lands on `/en_sg/account/login`. The email field was photographed empty. Continue was not clicked. `login-extracted` is `not-started` ([login-review.json](login-review.json)).
 
 The page is white (`#ffffff`). Text and the buy button are `#151515`. The announcement bar is the same black. The current nav section is `#d60026`. Type is Real Head for titles and nav, Commit Mono for buttons. Corners are square, except Product Finder, which is a pill.
 
@@ -14,9 +16,11 @@ The page is white (`#ffffff`). Text and the buy button are `#151515`. The announ
 | [style-guide.html](style-guide.html) | Renders the tokens, the hero buttons, Continue, and the email field |
 | [components.md](components.md) | Component inventory with crops |
 | [patterns.md](patterns.md) | Chrome, hero, listing, product, and the account edge |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, overlay, or dialog |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login_extracted` is `not-started` |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [icons/](icons) | The header wordmark SVG, named in [icons/INDEX.tsv](icons/INDEX.tsv) |
-| [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900 at 1x. `home-light-mobile` at 390 CSS pixels, 2x |
+| [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900 at 1x. Phone shots at 390 CSS pixels, 2x |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
 | [tools/](tools) | Builders, their test, and the generic capture helpers copied from the kit. The kit's unadapted examples for other products (builders, capture routes) were removed in the 2026-11 audit |
 
@@ -89,7 +93,7 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 Custom properties were read from the live stylesheets and from computed style on `documentElement` at `https://www.polaroid.com/en_sg` in the T3 preview browser, then confirmed on the same URL in headless Chromium. Component colours and sizes were read from computed style on the live DOM: the announcement bar, nav, Shop Bundles, Get Inspired, Product Finder, the email field, Continue, and Add to Bag. Screenshots are viewport captures. Desktop shots are 1440 x 900 at 1x. The phone shot is 390 x 844 CSS pixels at devicePixelRatio 2, so the PNG is 780 x 1688.
 
-The T3 preview browser returned "The browser is not producing screenshot frames" after the style readings. Screenshots were taken in headless Chromium only after each public page loaded there without a Cloudflare challenge.
+The 2026-11-19 readings came from the T3 preview browser, then headless Chromium after each public page loaded without a Cloudflare challenge. The 2026-11-21 refresh re-photographed the public pages in headless Chromium. Tokens were not rewritten: the same colours, type, and radii were still on the page.
 
 ## What to distrust
 
@@ -132,7 +136,9 @@ Real Head Demibold (`REAL_HEADER_OFFC_DEMIBOLD`, weight 600) is the title face. 
 | Form error, empty, loading, destructive confirm | Not shown. Continue and Add to Bag were not submitted. |
 | Search | The search icon size was entered by hand; raw/ holds no reading of it. The search panel was not opened. |
 | Themes | One light theme on the page. Dark is declared and not shown. |
-| Widths | Desktop 1440 and phone 390. |
+| Widths | Desktop 1440. Phone 390 for the homepage, the cameras page, the phone menu, and the log-in wall. |
+| Site tree | Captured in [site-tree.md](site-tree.md). Nav flyouts, search, the shipping overlay, the region dialog, the empty bag, and the 404 page. |
+| Login wall | Captured empty. Signup redirects to the same wall. `login-extracted` is `not-started`. |
 
 ## Rebuild
 

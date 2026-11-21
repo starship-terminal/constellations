@@ -22,13 +22,15 @@ See [cameras-light-default](screenshots/cameras-light-default.png) and [film-lig
 
 A product page keeps the same title size. Add to Bag is the black square Continue button, Commit Mono 12px uppercase, 45px tall. It was measured and not clicked.
 
-See [product-light-default](screenshots/product-light-default.png). The cameras hub for Now is [pdp-light-default](screenshots/pdp-light-default.png).
+See [product-light-default](screenshots/product-light-default.png).
 
 ## Account edge
 
+The 2026-11-21 refresh stopped at the empty wall. See [site-tree.md](site-tree.md) and [login-review.json](login-review.json).
+
 Log in or sign up is a public page: an email field, a black Continue button, and a membership note. The form was not submitted. No password, phone, or payment field was shown.
 
-See [login-light-default](screenshots/login-light-default.png).
+See [login-light-default](screenshots/login-light-default.png). Signup is the same page: [signup-light-default](screenshots/signup-light-default.png). Phone: [login-light-mobile](screenshots/login-light-mobile.png).
 
 ## Contact
 
@@ -38,4 +40,4 @@ See [contact-light-default](screenshots/contact-light-default.png).
 
 ## Phone
 
-The home page at 390 CSS pixels, captured at devicePixelRatio 2. See [home-light-mobile](screenshots/home-light-mobile.png).
+The home page at 390 CSS pixels, captured at devicePixelRatio 2. See [home-light-mobile](screenshots/home-light-mobile.png). The hamburger opens a drawer on the same URL: [home-light-mobile-menu](screenshots/home-light-mobile-menu.png). The cameras listing at the same width is [cameras-light-mobile](screenshots/cameras-light-mobile.png).

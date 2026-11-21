@@ -1,22 +1,69 @@
 {
-  "capturedAt": "2026-11-18T17:48:23.534Z",
-  "name": "login-light-default",
-  "url": "https://www.polaroid.com/en_sg/account/login",
-  "title": "Log in or sign up | Polaroid EU",
-  "vw": 1440,
-  "vh": 900,
-  "dpr": 1,
-  "vv": {
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:55:17.009Z",
+  "screenshot": "login-light-default.png",
+  "sanitizedSourceUrl": "https://www.polaroid.com/en_sg/account/login",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
     "width": 1440,
-    "height": 900,
-    "scale": 1,
-    "offsetLeft": 0,
-    "offsetTop": 0
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 1543
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
   },
   "png": {
-    "w": 1440,
-    "h": 900,
-    "bytes": 183474
+    "width": 1440,
+    "height": 900
   },
-  "note": "viewport screenshot, headless Chromium, public page, no Cloudflare challenge"
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 1440,
+      "height": 900
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
 }

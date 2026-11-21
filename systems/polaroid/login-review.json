@@ -1,0 +1,68 @@
+{
+  "slug": "polaroid",
+  "product": "Polaroid",
+  "domain": "polaroid.com",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-only",
+  "session": "Playwright headless Chromium, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://www.polaroid.com/en_sg/account/login",
+    "title": "Log in or sign up | Polaroid EU",
+    "asks": [
+      "Email",
+      "Continue"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "email", "placeholder": "Email", "filled": false}
+    ],
+    "note": "The heading is Log in or sign up. The email field was empty. Continue was not clicked. No identity provider is on the wall."
+  },
+  "signup_wall": {
+    "url": "https://www.polaroid.com/en_sg/account/register",
+    "lands_on": "https://www.polaroid.com/en_sg/account/login",
+    "asks": ["Email", "Continue"],
+    "email_field": true,
+    "continued": false,
+    "note": "/account/register and /account both land on /account/login. There is no separate signup form. The same empty wall was photographed as signup-light-default.png."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1,
+      "file": "screenshots/login-light-default.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/login-light-mobile.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "My Account", "href": "https://www.polaroid.com/en_sg/account/login", "reached": "wall only"},
+      {"label": "Become a member", "href": "https://www.polaroid.com/en_sg/account/register", "reached": "wall only"}
+    ]
+  },
+  "screens": [
+    {"name": "Log-in wall, desktop, empty", "file": "screenshots/login-light-default.png"},
+    {"name": "Log-in wall, phone, empty", "file": "screenshots/login-light-mobile.png"},
+    {"name": "Signup redirect, desktop, empty", "file": "screenshots/signup-light-default.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "The email field was left empty. Continue was not clicked. No code was requested.",
+    "No identity provider is offered on the wall, and none was clicked.",
+    "The signed-in account, membership, and checkout were not reached."
+  ],
+  "not_submitted": [
+    "Continue",
+    "Change region Confirm",
+    "newsletter Sign up",
+    "contact forms"
+  ]
+}
