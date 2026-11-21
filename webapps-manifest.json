@@ -2136,9 +2136,9 @@
       "description": "Build applications faster than ever",
       "status": "captured",
       "package": "systems/flutterflow",
-      "notes": "https://app.flutterflow.io/login is a Flutter canvas. Sign in asks for email and password, or Google, Apple, GitHub, or Microsoft. No code was sent.",
+      "notes": "https://app.flutterflow.io/login is a Flutter canvas. Sign in asks for email and password, or Google, Apple, GitHub, or Microsoft. No code was sent. Public walk 2026-11-21: the public site tree is in systems/flutterflow/site-tree.md. Sign in and Start building stop at https://build.flutterflow.io/signin with email and password, or Google, Apple, GitHub, or Microsoft. Open Studio stops at https://app.flutterflow.io/login, a Flutter canvas with the same asks. Nothing was typed. Google, Apple, GitHub, and Microsoft were not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1664 at 73407eacbeae. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
