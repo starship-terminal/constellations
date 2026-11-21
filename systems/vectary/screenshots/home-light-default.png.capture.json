@@ -1,10 +1,70 @@
 {
-  "captured": "2026-11-19",
-  "source": "headless Playwright after the public page loaded without a Cloudflare challenge",
-  "devicePixelRatio": 2,
-  "viewport": {
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T03:57:56.127Z",
+  "screenshot": "home-light-default.png",
+  "sanitizedSourceUrl": "https://www.vectary.com/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
     "width": 1440,
     "height": 900
   },
-  "note": "viewport crop of the hero; full page was 12156px tall at 2x"
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 1513
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 6078
+    },
+    "scroll": {
+      "x": 0,
+      "y": 1513
+    },
+    "title": "The collaborative platform for AI-accelerated ideation and interactive 3D | Vectary"
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 2880,
+      "height": 1800
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop boxes from requested size."
+  }
 }

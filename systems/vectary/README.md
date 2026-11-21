@@ -1,6 +1,6 @@
 # Vectary
 
-Vectary's public marketing site and the signed-out login shell, captured on 19 November 2026. The marketing site is light. The login shell is a second light UI. Widths are 1440 and 390 CSS pixels. Signup was opened and not submitted. No password, payment, or SSO was entered.
+Vectary's public marketing site and the empty signed-out login and signup walls, refreshed on 21 November 2026 from a headless Playwright walk. The marketing site is light. The login shell is a second light UI. Widths are 1440 and 390 CSS pixels. Use email was opened only far enough to see the empty fields. Nothing was typed. No identity provider was clicked. No form was submitted. The control map is [site-tree.md](site-tree.md). The wall is [login-review.json](login-review.json).
 
 | Path | What it holds |
 |---|---|
@@ -11,8 +11,10 @@ Vectary's public marketing site and the signed-out login shell, captured on 19 N
 | [components.md](components.md) | Controls, with crops |
 | [patterns.md](patterns.md) | Page patterns |
 | [components/](components/) | Crops of buttons, the field, badges, the plan card, and the logo |
-| [screenshots/](screenshots/) | Home, pricing, and login |
+| [screenshots/](screenshots/) | Home, menus, pricing, product pages, contact, security, and the empty walls |
 | [raw/](raw/) | The readings the tokens come from |
+| [site-tree.md](site-tree.md) | Which public control opens which page |
+| [login-review.json](login-review.json) | What the empty login and signup walls ask for |
 | [tools/](tools/) | The capture kit, copied and not adapted into a builder |
 | [icon.png](icon.png) | 128px site icon |
 
@@ -72,11 +74,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (The nav logo is 
 
 ## How the values were read
 
-Marketing colours, type, and geometry were read with `getComputedStyle` in the T3 preview tab. The preview viewport was 1169 by 731 CSS pixels at device pixel ratio 2. Declared custom properties were read from the stylesheets on `https://www.vectary.com/`, including `--almost-black`, `--blue`, `--dim-grey`, and `--black-3`. Pricing was read the same way on `https://www.vectary.com/pricing/`. Login colours were read on `https://www.vectary.com/login/` and `https://www.vectary.com/login-email/?next=/dashboard/&useEmail=1`. Screenshots were taken with headless Playwright at 1440 by 900 and 390 by 844 after those public pages loaded without a Cloudflare challenge. The preview browser returned "The browser is not producing screenshot frames", so it was not used for images.
+The 19 November readings in [raw/foundations.json](raw/foundations.json) still back the tokens. On 21 November the same custom properties and the same control styles were read again with `getComputedStyle` in headless Chromium at 1440 by 900, device pixel ratio 2. `--almost-black` is `#252525`, `--blue` is `#222`, `--black` is `#313131`, `--black-3` is `#0b0b0b`. The page background computed `rgb(240, 240, 240)`. The hero `h1` computed Fira Sans 60px weight 300. Login and Sign up computed as before. Screenshots are those Playwright viewports, then quantized to 256 colours. Cookie overlays were hidden, not answered. No T3 preview tab was used.
 
 ## What to distrust
 
-The home body computes a line-height of 27px. The body token uses the hero subtitle's 24px. The primary button fill is `#222222`. The nav Login button is `#313131`. They are different controls. `--blue` is `#222`, not a blue. The login subtitle colour is `oklch(0.556 0 0)`, stored as `#737373` after a canvas read. There is no dark theme switch on the marketing site. A dark colour scheme was not applied. Fira Sans and Inter are not in the package. The style guide names them and falls back. The hero player failed in the headless capture and shows "Player error". That is a capture failure, not a product empty state. The signup form was not screenshotted.
+The home body computes a line-height of 27px. The body token uses the hero subtitle's 24px. The primary button fill is `#222222`. The nav Login button is `#313131`. They are different controls. `--blue` is `#222`, not a blue. The login subtitle colour is `oklch(0.556 0 0)`, stored as `#737373` after a canvas read. There is no dark theme switch on the marketing site. A dark colour scheme was not applied. Fira Sans and Inter are not in the package. The style guide names them and falls back. The hero player failed in the headless capture and shows "Player error". That is a capture failure, not a product empty state. Canvas and Studio show the same player failure below a readable hero. The signup email form is photographed empty. Nothing was typed into it. Starter and Team prices were not re-read as tokens on this pass: the pricing page painted `$0` and `Custom`, and the mid cards were not re-measured.
 
 ## Fonts
 
@@ -99,11 +101,13 @@ Fira Sans is the display face, loaded by the marketing site and computed on `h1`
 | Checkbox | Measured, not checked. |
 | Card | Pricing plan captured. |
 | Badge | BETA and offer pills captured. |
-| App shell | Captured at 1440 and 390. The phone menu was not opened. |
+| App shell | Captured at 1440 and 390. The phone menu and the Product submenu were opened. |
+| Product menu | Captured. [screenshots/home-light-product-menu.png](screenshots/home-light-product-menu.png) |
+| Solutions menu | Captured. [screenshots/home-light-solutions-menu.png](screenshots/home-light-solutions-menu.png) |
 | Pricing | Captured. No checkout. |
-| Login | Captured. Email form was not submitted. |
-| Signup | Opened, not submitted, not screenshotted. |
-| Signed-in editor | Not captured. |
+| Login | Empty identity wall, then the empty email form. Not submitted. |
+| Signup | Empty identity wall, then the empty email form. Not submitted. [screenshots/signup-email-light-empty.png](screenshots/signup-email-light-empty.png) |
+| Signed-in editor | Not captured. `/dashboard/` redirected to login. |
 | Payment | Not entered. |
 
 ## Do and don't
@@ -111,7 +115,7 @@ Fira Sans is the display face, loaded by the marketing site and computed on `h1`
 - **Use the near-black fill for the primary action.** Create account is `#222222` with `#f7f7f7` type and an 8px radius. [components/crops/button-primary-default.png](components/crops/button-primary-default.png)
 - **Set display type in Fira Sans.** The hero and the pricing title are Fira Sans at weight 300, 60px, with -2px tracking. [screenshots/home-light-default.png](screenshots/home-light-default.png)
 - **Keep the marketing page on `#f0f0f0`.** The footer is `#0b0b0b`. The yellow bar is `#fbd302`. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png)
-- **Leave login, signup, and payment unsubmitted.** The email form was measured and not sent. SSO was not opened. [patterns.md](patterns.md)
+- **Leave login, signup, and payment unsubmitted.** The email form was photographed empty and not sent. SSO was not opened. [screenshots/login-email-light-empty.png](screenshots/login-email-light-empty.png)
 
 ## Rebuild
 

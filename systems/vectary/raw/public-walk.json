@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-11-21",
+  "route": "public-web",
+  "harness": "Playwright headless Chromium",
+  "viewportDesktop": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "viewportPhone": { "innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2 },
+  "session": "absent",
+  "loginExtracted": "not-started",
+  "typed": false,
+  "identityProvidersClicked": [],
+  "formsSubmitted": false,
+  "cookieOverlay": "hidden, not answered",
+  "pages": [
+    "https://www.vectary.com/",
+    "https://www.vectary.com/pricing/",
+    "https://www.vectary.com/canvas/",
+    "https://www.vectary.com/studio-3d/",
+    "https://www.vectary.com/examples/",
+    "https://www.vectary.com/contact/",
+    "https://www.vectary.com/security/",
+    "https://www.vectary.com/login/",
+    "https://www.vectary.com/login-email/",
+    "https://www.vectary.com/signup/"
+  ],
+  "stopped": [
+    { "control": "Login", "landed": "https://www.vectary.com/login/" },
+    { "control": "Use email", "landed": "https://www.vectary.com/login-email/" },
+    { "control": "Sign up", "landed": "https://www.vectary.com/signup/" },
+    { "control": "Open Vectary", "landed": "https://www.vectary.com/login/" }
+  ],
+  "playerError": "Headless Chromium showed Player error on the home, Canvas, and Studio embeds. That is a capture failure."
+}

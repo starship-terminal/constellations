@@ -1,0 +1,66 @@
+{
+  "capturedAt": "2026-11-21",
+  "note": "Computed styles from the public homepage and the empty login-email wall. No private strings.",
+  "page": {
+    "background": "rgb(240, 240, 240)",
+    "color": "rgb(37, 37, 37)",
+    "font": "Inter, sans-serif",
+    "size": "18px",
+    "lineHeight": "27px"
+  },
+  "h1": {
+    "fontFamily": "\"Fira Sans\", sans-serif",
+    "fontSize": "60px",
+    "fontWeight": "300",
+    "lineHeight": "60px",
+    "letterSpacing": "-2px",
+    "color": "rgb(37, 37, 37)"
+  },
+  "banner": {
+    "backgroundColor": "rgb(251, 211, 2)",
+    "height": "37px"
+  },
+  "login": {
+    "backgroundColor": "rgb(49, 49, 49)",
+    "color": "rgb(247, 247, 247)",
+    "borderRadius": "8px",
+    "height": "35px"
+  },
+  "create": {
+    "backgroundColor": "rgb(34, 34, 34)",
+    "color": "rgb(247, 247, 247)",
+    "borderRadius": "8px"
+  },
+  "cssVariables": {
+    "--almost-black": "#252525",
+    "--black": "#313131",
+    "--black-3": "#0b0b0b",
+    "--blue": "#222",
+    "--dark-grey": "#949494",
+    "--dim-grey": "#595959",
+    "--light-grey": "#d0d0d0",
+    "--white-smoke": "#f7f7f7",
+    "--gizmo-blue-primary": "#18a0fb"
+  },
+  "menu": {
+    "background": "rgb(255, 255, 255)",
+    "radius": "16px",
+    "shadow": "rgba(0, 0, 0, 0.08) 4px 48px 72px 0px, rgba(0, 0, 0, 0.08) 0px 10px 15px -3px, rgba(0, 0, 0, 0.08) 0px 28px 48px -27px"
+  },
+  "emailField": {
+    "background": "rgb(241, 241, 241)",
+    "radius": "12px",
+    "height": "44px",
+    "font": "Inter, system-ui, sans-serif",
+    "size": "14px"
+  },
+  "loginSubmitEmpty": {
+    "background": "rgb(46, 46, 46)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "12px",
+    "opacity": "0.5"
+  },
+  "colorScheme": "normal",
+  "themeColor": null,
+  "tokensUnread": "Not captured"
+}
