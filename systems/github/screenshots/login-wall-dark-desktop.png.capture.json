@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22T00:40:00+08:00",
+  "screenshot": "login-wall-dark-desktop.png",
+  "sanitizedSourceUrl": "https://github.com/login",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2
+  },
+  "capture": {
+    "mode": "viewport",
+    "note": "Empty login wall, preview painted dark. Fields empty. Identity providers not clicked."
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "privacy": {
+    "signedIn": false,
+    "fieldsTyped": false,
+    "identityProvidersClicked": false,
+    "formsSubmitted": false
+  }
+}

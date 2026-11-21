@@ -1,0 +1,39 @@
+{
+  "slug": "github",
+  "product": "GitHub",
+  "domain": "github.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Incognito preview and headless Chromium photographed the login wall empty. No identity provider was clicked. No form was submitted. No email, password, code, phone, or address was typed. Passkey was not clicked.",
+  "wall": {
+    "url": "https://github.com/login",
+    "title": "Sign in to GitHub · GitHub",
+    "asks": [
+      "Sign in to GitHub",
+      "Username or email address",
+      "Password",
+      "Forgot password?",
+      "Sign in",
+      "Continue with Google",
+      "Continue with Apple",
+      "Create an account",
+      "Sign in with a passkey"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "code_field": false,
+    "inputs": [],
+    "note": "Both visible fields were empty. Sign in was not clicked. Google, Apple, and passkey were not clicked. Forgot password was not opened. The preview painted this wall dark. Headless Chromium with colorScheme light painted the same form on a white page."
+  },
+  "signup_wall": {
+    "url": "https://github.com/signup",
+    "title": "github.com",
+    "status": 403,
+    "asks": ["Access is temporarily restricted"],
+    "continued": false,
+    "note": "The preview and headless Chromium both received a captcha interstitial. The challenge was not solved. The empty signup form was not reached. The captcha screenshot was discarded because it printed a network address and a request id."
+  },
+  "stopped": "Photographed the empty login wall and stopped. Did not open Google or Apple. Did not submit. Did not enter a signed-in dashboard. Did not star or fork."
+}
