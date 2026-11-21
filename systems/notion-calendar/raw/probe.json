@@ -1,0 +1,94 @@
+{
+  "captured": "2026-11-21T17:09:38.278Z",
+  "pages": [
+    {
+      "requested": "https://www.notion.com/product/calendar",
+      "final": "https://www.notion.com/product/calendar",
+      "status": 200,
+      "title": "Notion Calendar"
+    },
+    {
+      "requested": "https://www.notion.com/download",
+      "final": "https://www.notion.com/download",
+      "status": 200,
+      "title": "Download Notion for desktop"
+    },
+    {
+      "requested": "https://www.notion.com/pricing",
+      "final": "https://www.notion.com/pricing",
+      "status": 200,
+      "title": "Notion Pricing Plans: Free, Plus, Business, & Enterprise."
+    },
+    {
+      "requested": "https://www.notion.com/product/calendar/download",
+      "final": "https://www.notion.com/product/calendar/download",
+      "status": 200,
+      "title": "Download Notion Calendar for desktop"
+    },
+    {
+      "requested": "https://www.notion.com/help/category/notion-calendar",
+      "final": "https://www.notion.com/help/category/notion-calendar",
+      "status": 200,
+      "title": "Notion Calendar – Notion Help Center"
+    },
+    {
+      "requested": "https://www.notion.com/contact-sales",
+      "final": "https://www.notion.com/contact-sales",
+      "status": 200,
+      "title": "Contact our Sales Team – Notion"
+    },
+    {
+      "requested": "https://www.notion.com/product/calendar",
+      "final": "https://www.notion.com/product/calendar",
+      "status": 200,
+      "title": "Notion Calendar",
+      "width": 390
+    }
+  ],
+  "walls": [
+    {
+      "requested": "https://www.notion.com/login/calendar",
+      "final": "https://app.notion.com/login/calendar",
+      "title": "Notion - Log in",
+      "h": [
+        "Welcome to Notion Calendar",
+        "Log in to your Notion account"
+      ],
+      "buttons": [],
+      "inputs": [
+        {
+          "type": "email",
+          "placeholder": "Enter your email address...",
+          "filled": false
+        },
+        {
+          "type": "password",
+          "placeholder": "",
+          "filled": false
+        }
+      ]
+    },
+    {
+      "requested": "https://www.notion.com/signup/calendar",
+      "final": "https://app.notion.com/signup/calendar",
+      "title": "Notion - Sign up",
+      "h": [
+        "Welcome to Notion Calendar",
+        "Sign up with your work email"
+      ],
+      "buttons": [],
+      "inputs": [
+        {
+          "type": "email",
+          "placeholder": "name@company.com",
+          "filled": false
+        },
+        {
+          "type": "password",
+          "placeholder": "",
+          "filled": false
+        }
+      ]
+    }
+  ]
+}

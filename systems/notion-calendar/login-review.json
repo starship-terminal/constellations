@@ -1,0 +1,55 @@
+{
+  "slug": "notion-calendar",
+  "product": "Notion Calendar",
+  "domain": "www.notion.com",
+  "app": "app.notion.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Headless Chromium photographed the login and signup walls empty. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://app.notion.com/login/calendar",
+    "requested": "https://www.notion.com/login/calendar",
+    "title": "Notion - Log in",
+    "asks": [
+      "Welcome to Notion Calendar",
+      "Log in to your Notion account",
+      "Email",
+      "Continue",
+      "Google",
+      "Apple",
+      "Microsoft",
+      "Passkey",
+      "SSO",
+      "New user? Sign up"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      { "type": "email", "placeholder": "Enter your email address...", "filled": false }
+    ],
+    "note": "The email field was empty. Continue was not clicked. Google, Apple, Microsoft, Passkey, and SSO were not clicked. A hidden password input was present and empty."
+  },
+  "signup_wall": {
+    "url": "https://app.notion.com/signup/calendar",
+    "requested": "https://www.notion.com/signup/calendar",
+    "title": "Notion - Sign up",
+    "asks": [
+      "Welcome to Notion Calendar",
+      "Sign up with your work email",
+      "Work email",
+      "Continue",
+      "Google",
+      "Microsoft",
+      "Existing user? Log in"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "inputs": [
+      { "type": "email", "placeholder": "name@company.com", "filled": false }
+    ],
+    "note": "The work-email field was empty. Continue was not clicked. Google and Microsoft were not clicked. Header Get Notion Calendar free (/product/calendar/signup and /calendar/signup) redirected through calendar.notion.so onto a login wall with error=true. That branch was photographed empty and not typed."
+  }
+}
