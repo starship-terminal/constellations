@@ -1,0 +1,61 @@
+{
+  "title": "Meta: Shop AI Glasses, Meta Glasses & Quest Headsets (en-SG)",
+  "href": "https://www.meta.com/sg/",
+  "themeColor": null,
+  "maskIcon": null,
+  "body": {
+    "text": "Skip to main content Shop our lowest prices of the year unti",
+    "fontFamily": "Helvetica, Arial, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "lineHeight": "16.08px",
+    "letterSpacing": "normal",
+    "color": "rgb(28, 30, 33)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "0px",
+    "border": "0px none rgb(28, 30, 33)",
+    "padding": "0px",
+    "height": 7976,
+    "width": 1440
+  },
+  "htmlBg": "rgb(255, 255, 255)",
+  "htmlColor": "rgb(0, 0, 0)",
+  "htmlFont": "Times",
+  "colorScheme": "normal",
+  "shop": {
+    "text": "Shop",
+    "fontFamily": "Helvetica, Arial, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "lineHeight": "16.08px",
+    "letterSpacing": "normal",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(0, 64, 220)",
+    "borderRadius": "100px",
+    "border": "2px solid rgba(0, 0, 0, 0)",
+    "padding": "14px 30px",
+    "height": 52,
+    "width": 100
+  },
+  "h1": {
+    "text": "Get up to 25% off AI glasses",
+    "fontFamily": "\"Optimistic AI VF\", Montserrat, Helvetica, Arial, \"Noto Sans\", sans-serif",
+    "fontSize": "61px",
+    "fontWeight": "500",
+    "lineHeight": "69.9975px",
+    "letterSpacing": "normal",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "border": "0px none rgb(255, 255, 255)",
+    "padding": "0px",
+    "height": 70,
+    "width": 742
+  },
+  "varCount": 3,
+  "vars": {
+    "--stnld": "none",
+    "--stndd": "contents",
+    "--stnbgo": "0"
+  }
+}
