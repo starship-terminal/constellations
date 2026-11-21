@@ -1,10 +1,10 @@
 # Klarna design reference
 
-A token set and component reference for Klarna's public marketing site, for building shopper-facing marketing pages, help centres and country pickers in the style of the real thing. It was read from **www.klarna.com** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The US market (`/us/`) is the design surface. The country picker at `/international/` is a separate public page.
+A token set and component reference for Klarna's public marketing site, for building shopper-facing marketing pages, help centres and country pickers in the style of the real thing. Tokens were read from **www.klarna.com** on **2026-11-18**, signed out. Screenshots were refreshed on **2026-11-21** in headed Chromium at 1440 x 900 and 390 x 844. Headless Chromium received Access Denied. The US market (`/us/`) is the design surface. The country picker at `/international/` is a separate public page. The public tree is [site-tree.md](site-tree.md).
 
 Klarna paints one light theme from an inline Klarna UI custom-property sheet (`.klarna-ui-DEFAULT-light` on `:root`). The page is white (`#ffffff`), the ink is `#0b051d`, and the brand mark is a pink pill (`#ffa8cd`) used on "Get the app" and the QR card, not as the page ground. Controls are full pills (`99999px`). Type is Klarna Title on display headings and Klarna Text on nav, buttons and body. A dark sheet (`.klarna-ui-DEFAULT-dark`) is declared and tokenised. The public marketing pages do not paint it.
 
-**Boundary:** the product (payments, purchases, account, checkout) sits behind [app.klarna.com sign-in](https://app.klarna.com/login?market=US&locale=en-US). That URL was opened once and stopped at the QR interstitial ("Continue securely in the Klarna app"). "Continue on web?" was not followed. No account was created, no form was submitted, no purchase was started, and the OneTrust banner was hidden, never answered.
+**Boundary:** the product (payments, purchases, account, checkout) sits behind app.klarna.com. On 2026-11-21 Sign in and Sign up both landed on an empty country-of-residence wall ("Select your main country of residence"). Nothing was typed. No country was chosen. No identity provider was clicked. No form was submitted. The query string on those URLs is not stored. Login extraction is not started. The OneTrust banner was hidden, never answered.
 
 | File | What it is |
 |---|---|
@@ -16,7 +16,9 @@ Klarna paints one light theme from an inline Klarna UI custom-property sheet (`.
 | [patterns.md](patterns.md) | How the chrome, hero, search overlay, help topic and sign-in boundary combine |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [icons/](icons) | 78 SVG icons with [INDEX.tsv](icons/INDEX.tsv) |
-| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x. Phone shots are 2x captures of the 390 x 844 viewport. |
+| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x. Phone shots are 2x captures of the 390 x 844 viewport. Refreshed 2026-11-21. |
+| [site-tree.md](site-tree.md) | Which header, drawer, search, language dialog and footer controls open which public pages, and where the account wall starts. |
+| [login-review.json](login-review.json) | Signed-out stop. `login_extracted` is `not-started`. |
 | [raw/](raw) | Unprocessed readings: [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [motion.json](raw/motion.json) |
 | [tools/](tools) | Builders and the capture kit. See [Rebuild](#rebuild). |
 
@@ -99,7 +101,7 @@ Component geometry (nav link, Sign in, the pink "Get the app" pill, ink buttons,
 
 Before each reading the OneTrust banner (`#onetrust-banner-sdk` and related nodes) was hidden with CSS. No Deny, Allow, or Cookie settings control was clicked. A phishing-warning announcement strip was closed with its own close control. That strip is a public notice, not a consent dialog.
 
-Screenshots were taken at desktop 1440 x 900 (1x) and phone 390 x 844 (2x), then quantised to 256-colour sRGB PNGs. Scratch files stayed in `~/.design-systems/klarna/` and are not in git.
+The 2026-11-18 readings still hold the tokens. The 2026-11-21 refresh replaced the viewport screenshots. Headless Chromium was refused with Access Denied. Headed Chromium loaded the public pages. The T3 preview tab loaded `/international/` and could not take screenshots ("The browser is not producing screenshot frames"). Desktop shots are 1440 x 900 at 1x. Phone shots are 390 x 844 CSS pixels at devicePixelRatio 2, so the PNG is 780 x 1688. PNGs were quantised to 256 colours. Scratch files stayed in `~/.design-systems/klarna/` and are not in git.
 
 ## What to distrust
 
@@ -139,9 +141,13 @@ Klarna Title, Klarna Text and Klarna Mono are Klarna's proprietary faces. They a
 | Phishing notice, `/us/phishing/` | Captured | Not captured | |
 | Language and region dialog | Captured | Not captured | Opened from the header. Confirm was not submitted |
 | Search overlay | Captured | Not captured | Opened. Query not submitted |
-| Sign-in boundary | Captured | Not captured | QR interstitial only |
+| Payments marketing, `/us/payments/` | Captured | Not captured | Public page. Checkout was not started |
+| Cards marketing, `/us/all-cards/` | Captured | Not captured | |
+| Black Friday deals, `/us/shopping/c/black-friday/` | Captured | Not captured | |
+| Footer | Captured | Not captured | Ink band on `/us/` |
+| Sign-in boundary | Captured | Not captured | Empty country-of-residence wall. Nothing typed |
 | Nav hover | Captured | Not present | Phone uses a menu, not hover |
-| Mobile menu overlay | Not captured | Not captured | Menu open shot was not written |
+| Mobile menu overlay | Not present at 1440 | Captured | Hamburger is hidden at 1440 |
 | App sign-in form | Not captured | Not captured | Gated. See gaps |
 | Payments, purchases, portfolio, savings, account | Not captured | Not captured | Gated |
 | Checkout | Not captured | Not captured | Gated |
@@ -161,7 +167,7 @@ Klarna Title, Klarna Text and Klarna Mono are Klarna's proprietary faces. They a
 3. **Do round every control to a pill.** Nav links, Sign in, hero CTAs and help tabs use `99999px`. See [tab-selected](components/crops/tab-selected.png) and [sign-in-button-hover](components/crops/sign-in-button-hover.png).
 4. **Do pair Klarna Title with Klarna Text.** Title carries the display heading. Text at 14/500 carries the nav and at 16/500 the buttons. See [hero-title-default](components/crops/hero-title-default.png).
 5. **Do wash the nav on hover.** A nav link hover is the lavender `#e5e3f5`, not an underline. Sign in hover goes eggplant, a darker ink, not pink. See [nav-link-hover](components/crops/nav-link-hover.png).
-6. **Don't style the app from this package.** Payments, purchases and the account sit behind [app.klarna.com sign-in](https://app.klarna.com/login?market=US&locale=en-US). The QR interstitial is the boundary. See [signin-boundary-light-default](screenshots/signin-boundary-light-default.png).
+6. **Don't style the app from this package.** Payments, purchases and the account sit behind app.klarna.com. The empty country wall is the boundary. See [signin-boundary-light-default](screenshots/signin-boundary-light-default.png).
 7. **Don't invent a painted dark marketing theme.** Dark roles exist in the token sheet. These public pages paint light.
 8. **Don't treat the hero sentence as a token.** The carousel swaps campaigns. Use the display type role, not one headline.
 9. **Don't answer the cookie banner.** This capture hid OneTrust. Do not click Deny, Allow, or Cookie settings when rebuilding evidence.

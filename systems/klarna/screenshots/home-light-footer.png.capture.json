@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:13:36.929Z",
+  "screenshot": "home-light-footer.png",
+  "sanitizedSourceUrl": "https://www.klarna.com/us/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "scrollY": 10874.5
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "dimensionCheck": {
+    "status": "pass"
+  },
+  "visualReview": {
+    "status": "pending"
+  }
+}

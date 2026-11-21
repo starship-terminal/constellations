@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:12:53.208Z",
+  "screenshot": "shopping-deals-light-default.png",
+  "sanitizedSourceUrl": "https://www.klarna.com/us/shopping/c/black-friday/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "scrollY": 0,
+    "title": "Black Friday 2026 • Best Black Week Deals & Sales | Klarna"
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "dimensionCheck": {
+    "status": "pass"
+  },
+  "visualReview": {
+    "status": "pending"
+  }
+}
