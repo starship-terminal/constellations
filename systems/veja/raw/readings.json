@@ -1,0 +1,140 @@
+{
+  "captured": "2026-11-22",
+  "store": "https://www.veja-store.com/en_us/",
+  "siteId": "VEJA-USA",
+  "locale": "en_US",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "readings": [
+    {
+      "role": "body",
+      "source": "computed body on https://www.veja-store.com/en_us/",
+      "color": "rgb(33, 37, 41)",
+      "background": "rgb(255, 255, 255)",
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "18.4px"
+    },
+    {
+      "role": "promo bar",
+      "source": "computed .preheader-push__message background",
+      "background": "rgb(77, 77, 77)",
+      "height": "38px",
+      "labelSize": "14px",
+      "labelColor": "rgb(255, 255, 255)",
+      "note": "The paragraph node reports rgb(33, 37, 41). The painted label is white on the gray bar."
+    },
+    {
+      "role": "header",
+      "source": "computed header",
+      "background": "rgb(255, 255, 255)",
+      "borderBottom": "1px solid rgb(0, 0, 0)",
+      "height": "134px"
+    },
+    {
+      "role": "nav link",
+      "source": "computed .main-menu link WOMEN",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "16.1px",
+      "textTransform": "uppercase",
+      "padding": "5px 20px",
+      "height": "26px"
+    },
+    {
+      "role": "gift card link",
+      "source": "inline style on the GIFT CARD nav link",
+      "color": "rgb(6, 90, 33)"
+    },
+    {
+      "role": "logo",
+      "source": "header h1 svg, symbol viewBox 0 0 65 65",
+      "box": "65px by 65px"
+    },
+    {
+      "role": "product title",
+      "source": "computed product h1 on Cateyes Suede Eagle Cashew",
+      "color": "rgb(33, 37, 41)",
+      "fontSize": "30px",
+      "fontWeight": "700",
+      "lineHeight": "36px",
+      "textTransform": "uppercase"
+    },
+    {
+      "role": "product price",
+      "source": "computed .current on the product page",
+      "color": "rgb(33, 37, 41)",
+      "fontSize": "25px",
+      "fontWeight": "400",
+      "text": "$195"
+    },
+    {
+      "role": "add to cart",
+      "source": "computed ADD TO CART button, not clicked",
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "20.7px",
+      "textTransform": "uppercase",
+      "borderRadius": "5px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "height": "40px",
+      "width": "628px"
+    },
+    {
+      "role": "size chip",
+      "source": "computed W4 button on the product page",
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "14px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "borderRadius": "5px",
+      "height": "30px",
+      "width": "100px"
+    },
+    {
+      "role": "filters",
+      "source": "computed FILTERS button on /en_us/men",
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "14px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "borderRadius": "5px"
+    },
+    {
+      "role": "newsletter title",
+      "source": "computed .newsletter__title",
+      "fontSize": "30px",
+      "fontWeight": "700",
+      "textTransform": "uppercase",
+      "color": "rgb(33, 37, 41)"
+    },
+    {
+      "role": "subscribe",
+      "source": "computed SUBSCRIBE button, not clicked",
+      "color": "rgb(136, 136, 136)",
+      "border": "1px solid rgb(136, 136, 136)",
+      "borderRadius": "5px",
+      "fontSize": "18px",
+      "padding": "5px 35px",
+      "textTransform": "uppercase"
+    },
+    {
+      "role": "css variables",
+      "source": "stylesheet custom properties on the homepage",
+      "values": {
+        "--header-height": "9.5rem",
+        "--header-compact-height": "6.5rem",
+        "--header-total-height": "13.3rem",
+        "--hero-banner-height": "68rem"
+      }
+    }
+  ]
+}
