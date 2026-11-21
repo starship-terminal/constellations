@@ -1,0 +1,180 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://bananarepublic.gap.com/",
+  "title": "Banana Republic | Timeless Style for Women’s & Men’s Clothing",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewportScale": 1
+  },
+  "method": "getComputedStyle on the live signed-out page",
+  "page": {
+    "bodyBackground": "rgba(0, 0, 0, 0)",
+    "bodyColor": "rgb(0, 0, 0)",
+    "bodyFont": "Lynstone, BananaSerif, Helvetica, Arial, sans-serif",
+    "bodyFontSize": "16px",
+    "photographedFill": "rgb(255, 255, 255)"
+  },
+  "universalBar": {
+    "background": "rgb(233, 232, 227)",
+    "height": 46,
+    "linkFont": "\"Lynstone v1\", sans-serif",
+    "linkSize": "12px",
+    "linkWeight": "350",
+    "currentWeight": "600",
+    "linkColor": "rgb(0, 0, 0)"
+  },
+  "promoBar": {
+    "background": "rgb(0, 0, 0)",
+    "height": 48,
+    "textColor": "rgb(255, 255, 255)",
+    "textFont": "\"Lynstone v1\"",
+    "textSize": "12px",
+    "textWeight": "600",
+    "letterSpacing": "1px"
+  },
+  "navBar": {
+    "background": "rgb(255, 255, 255)",
+    "height": 90,
+    "departmentFont": "\"Banana v1\"",
+    "departmentSize": "14px",
+    "departmentWeight": "400",
+    "departmentLetterSpacing": "2px",
+    "departmentColor": "rgb(0, 0, 0)",
+    "saleFont": "BananaSerif",
+    "saleLetterSpacing": "1.68px"
+  },
+  "search": {
+    "width": 270,
+    "height": 32,
+    "background": "rgb(255, 255, 255)",
+    "borderBottom": "1px solid rgb(94, 92, 90)",
+    "inputFont": "\"Lynstone v1\"",
+    "inputSize": "14px",
+    "inputWeight": "350",
+    "radius": "0px"
+  },
+  "wordmark": {
+    "src": "https://content.gapinc.com/d/ghoak3i46cna2v01j0k422h02cj546ix.svg",
+    "fill": "#AD280A",
+    "rendered": "300 by 60"
+  },
+  "heroTitle": {
+    "text": "Holiday New Arrivals",
+    "color": "rgb(255, 255, 255)",
+    "font": "BananaSerif, \"Times New Roman\", serif",
+    "size": "48px",
+    "weight": "300",
+    "lineHeight": "48px",
+    "letterSpacing": "0.375px"
+  },
+  "heroButton": {
+    "text": "WOMEN'S NEW ARRIVALS",
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "font": "Lynstone, Helvetica, Arial, sans-serif",
+    "size": "12px",
+    "weight": "600",
+    "letterSpacing": "1px",
+    "width": 280,
+    "height": 56,
+    "radius": "0px"
+  },
+  "categoryTitle": {
+    "text": "SWEATERS",
+    "font": "\"Linotype Didot BR\", BananaSerif, \"Times New Roman\", serif",
+    "size": "72px",
+    "weight": "300",
+    "lineHeight": "72px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "categoryChip": {
+    "text": "CASHMERE",
+    "font": "\"Linotype Didot BR\", BananaSerif, \"Times New Roman\", serif",
+    "size": "16px",
+    "weight": "300",
+    "color": "rgb(0, 0, 0)",
+    "height": 59
+  },
+  "filterChip": {
+    "background": "rgb(255, 255, 255)",
+    "outline": "rgb(229, 228, 228) solid 1px",
+    "font": "\"Lynstone v1\"",
+    "size": "12px",
+    "weight": "350",
+    "height": 38,
+    "radius": "0px"
+  },
+  "productName": {
+    "font": "\"Lynstone v1\"",
+    "size": "12px",
+    "weight": "350",
+    "color": "rgb(0, 0, 0)"
+  },
+  "badge": {
+    "text": "Best Seller",
+    "background": "rgba(242, 241, 238, 0.8)",
+    "color": "rgb(0, 0, 0)",
+    "font": "\"Lynstone v1\"",
+    "size": "12px",
+    "weight": "600",
+    "height": 24
+  },
+  "productTitle": {
+    "font": "\"Banana v1\"",
+    "size": "18px",
+    "weight": "400",
+    "letterSpacing": "1px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "productPrice": {
+    "font": "\"Lynstone v1\"",
+    "size": "14px",
+    "weight": "350",
+    "color": "rgb(0, 0, 0)"
+  },
+  "addToBag": {
+    "background": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "font": "\"Lynstone v1\"",
+    "size": "14px",
+    "weight": "350",
+    "width": 318,
+    "height": 56,
+    "radius": "0px",
+    "clicked": false
+  },
+  "sizeChip": {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "font": "\"Lynstone v1\"",
+    "size": "12px",
+    "height": 39,
+    "width": 53,
+    "radius": "0px"
+  },
+  "swatch": {
+    "outer": 36,
+    "inner": 30,
+    "innerBorder": "1px solid rgb(153, 153, 153)",
+    "radius": "0px"
+  },
+  "footer": {
+    "background": "rgb(242, 241, 238)",
+    "color": "rgb(0, 0, 0)",
+    "headingFont": "\"Lynstone v1\"",
+    "headingSize": "16px",
+    "headingWeight": "600"
+  },
+  "signUp": {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "font": "\"Lynstone v1\"",
+    "size": "14px",
+    "weight": "350",
+    "height": 56,
+    "radius": "0px",
+    "submitted": false
+  }
+}

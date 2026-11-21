@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Banana Republic public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --text: #000000;
+    --universal: #e9e8e3;
+    --promo: #000000;
+    --promo-text: #ffffff;
+    --wordmark: #ad280a;
+    --search: #5e5c5a;
+    --chip: #e5e4e4;
+    --swatch: #999999;
+    --badge: #f2f1ee;
+    --footer: #f2f1ee;
+    --ui: "Lynstone", Helvetica, Arial, sans-serif;
+    --display: "Times New Roman", Times, serif;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: var(--ui);
+    font-size: 16px;
+  }
+  header.uni {
+    background: var(--universal);
+    height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 0 16px;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+  }
+  header.uni strong { font-weight: 600; }
+  .promo {
+    background: var(--promo);
+    color: var(--promo-text);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .nav {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 0 30px;
+    border-bottom: 1px solid var(--chip);
+  }
+  .word {
+    color: var(--wordmark);
+    font-family: var(--display);
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    margin-right: auto;
+  }
+  .dept {
+    font-family: var(--display);
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  .search {
+    width: 270px;
+    height: 32px;
+    border: 0;
+    border-bottom: 1px solid var(--search);
+    font: 350 14px var(--ui);
+    background: var(--page);
+  }
+  main { padding: 40px 30px 64px; }
+  h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: 0.375px;
+    margin: 0 0 8px;
+  }
+  .note { font-size: 14px; max-width: 42rem; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
+  .swatch-card {
+    width: 140px;
+    border: 1px solid var(--chip);
+  }
+  .swatch-card i {
+    display: block;
+    height: 56px;
+  }
+  .swatch-card span, .swatch-card code {
+    display: block;
+    padding: 8px;
+    font-size: 12px;
+  }
+  button.hero, button.bag, button.quiet {
+    height: 56px;
+    border: 0;
+    border-radius: 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  button.hero { background: var(--page); color: var(--text); width: 220px; border: 1px solid var(--text); }
+  button.bag { background: var(--text); color: var(--page); width: 220px; font-weight: 350; font-size: 14px; letter-spacing: 0.2px; }
+  button.quiet { background: var(--page); color: var(--text); width: 88px; font-weight: 350; font-size: 14px; letter-spacing: 0.2px; border: 1px solid var(--chip); }
+  .chip {
+    height: 38px;
+    padding: 0 12px;
+    border: 0;
+    outline: 1px solid var(--chip);
+    background: var(--page);
+    font: 350 12px var(--ui);
+    border-radius: 0;
+  }
+  .size {
+    width: 53px;
+    height: 39px;
+    border: 1px solid var(--chip);
+    background: var(--page);
+    font: 12px var(--ui);
+    border-radius: 0;
+  }
+  .color {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--swatch);
+    border-radius: 0;
+  }
+  footer {
+    background: var(--footer);
+    padding: 32px 30px;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+  <header class="uni">
+    <span>Gap</span>
+    <span>Old Navy</span>
+    <strong>Banana Republic</strong>
+    <span>Athleta</span>
+  </header>
+  <div class="promo">Limited time · Extra 20% off sale styles</div>
+  <div class="nav">
+    <div class="word">Banana Republic</div>
+    <span class="dept">Women</span>
+    <span class="dept">Men</span>
+    <span class="dept">Sale</span>
+    <input class="search" aria-label="Search" placeholder="Search" disabled>
+  </div>
+  <main>
+    <h1>Holiday New Arrivals</h1>
+    <p class="note">Measured signed out on 22 November 2026. Corners stay square. The wordmark is rust. The sale bar is black. Add to Bag was not clicked.</p>
+    <div class="row">
+      <div class="swatch-card"><i style="background:#ffffff"></i><span>Page</span><code>#ffffff</code></div>
+      <div class="swatch-card"><i style="background:#e9e8e3"></i><span>Universal</span><code>#e9e8e3</code></div>
+      <div class="swatch-card"><i style="background:#000000"></i><span>Promo / bag</span><code>#000000</code></div>
+      <div class="swatch-card"><i style="background:#ad280a"></i><span>Wordmark</span><code>#ad280a</code></div>
+      <div class="swatch-card"><i style="background:#5e5c5a"></i><span>Search rule</span><code>#5e5c5a</code></div>
+      <div class="swatch-card"><i style="background:#f2f1ee"></i><span>Footer</span><code>#f2f1ee</code></div>
+    </div>
+    <div class="row">
+      <button class="hero" type="button">Women's new arrivals</button>
+      <button class="bag" type="button">Add to Bag</button>
+      <button class="quiet" type="button">Sign up</button>
+      <button class="chip" type="button">Filter &amp; Sort</button>
+      <button class="size" type="button">M</button>
+      <i class="color" style="background:#9b1b2e"></i>
+      <i class="color" style="background:#1c1c1c"></i>
+      <i class="color" style="background:#c2b8a3"></i>
+    </div>
+  </main>
+  <footer>Footer #f2f1ee. Email sign-up was not submitted.</footer>
+</body>
+</html>
