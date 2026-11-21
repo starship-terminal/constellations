@@ -1,0 +1,882 @@
+[
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__DopplerRepro_Fallback_a18e76",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__DopplerReproMono_e3cbb4",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__DopplerReproMono_Fallback_e3cbb4",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__Inter_Fallback_dce187",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-home"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__DopplerRepro_Fallback_a18e76",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__DopplerReproMono_e3cbb4",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__DopplerReproMono_Fallback_e3cbb4",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__Inter_Fallback_dce187",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-pricing"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__DopplerRepro_Fallback_a18e76",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__DopplerReproMono_e3cbb4",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__DopplerReproMono_Fallback_e3cbb4",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__Inter_Fallback_dce187",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-blog"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__DopplerRepro_Fallback_a18e76",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__DopplerReproMono_e3cbb4",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__DopplerReproMono_Fallback_e3cbb4",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__Inter_Fallback_dce187",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-integrations"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "400",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__DopplerRepro_a18e76",
+    "weight": "700",
+    "style": "italic",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__DopplerRepro_Fallback_a18e76",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__DopplerReproMono_e3cbb4",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__DopplerReproMono_Fallback_e3cbb4",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "400",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_dce187",
+    "weight": "700",
+    "style": "normal",
+    "src": "url(…) format(\"woff2\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  },
+  {
+    "family": "__Inter_Fallback_dce187",
+    "weight": "",
+    "style": "",
+    "src": "local(\"Arial\")",
+    "href": "https://www.doppler.com/_next/static/css/7e407a0809bc2015.css",
+    "page": "doppler-com-customers"
+  }
+]

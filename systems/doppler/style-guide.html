@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doppler style guide</title>
+<style>
+  :root {
+    --page: #1c1624;
+    --text: #f1f0ec;
+    --accent: #00f575;
+    --hover: #00c05b;
+    --on-accent: #1c1624;
+    --docs-page: #ffffff;
+    --docs-ink: #32343a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 96px; }
+  h1 { font-weight: 450; font-size: 48px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400; opacity: 0.7; margin: 48px 0 12px; }
+  p { max-width: 62ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .sw { display: flex; gap: 10px; align-items: center; min-width: 200px; }
+  .sw i { width: 36px; height: 36px; border-radius: 8px; display: block; border: 1px solid rgba(241,240,236,0.2); }
+  .sw b { display: block; font-weight: 400; font-size: 14px; }
+  .sw span { font-size: 12px; opacity: 0.7; }
+  .btn { display: inline-flex; align-items: center; height: 32px; padding: 8px 12px; border-radius: 12px; background: var(--accent); color: var(--on-accent); text-decoration: none; }
+  .btn.secondary { background: transparent; color: var(--text); border: 1px solid var(--text); height: auto; padding: 10px 16px; }
+  .docs { margin-top: 16px; background: var(--docs-page); color: var(--docs-ink); border-radius: 12px; padding: 24px; }
+  .docs h3 { margin: 0 0 8px; font-size: 31px; line-height: 1.28; }
+  code { font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Doppler</h1>
+  <p>Public marketing site, one dark theme. Docs are a separate light chrome. Values come from computed styles on 2026-11-21. Take numbers from tokens.json.</p>
+  <h2>Palette</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#1c1624"></i><div><b>Warm black</b><span>#1c1624</span></div></div>
+<div class="sw"><i style="background:#f1f0ec"></i><div><b>Warm white</b><span>#f1f0ec</span></div></div>
+<div class="sw"><i style="background:#00f575"></i><div><b>Fluorescent green</b><span>#00f575</span></div></div>
+<div class="sw"><i style="background:#00c05b"></i><div><b>Green hover</b><span>#00c05b</span></div></div>
+<div class="sw"><i style="background:#6b13f5"></i><div><b>Purple</b><span>#6b13f5</span></div></div>
+<div class="sw"><i style="background:#b997ff"></i><div><b>Light purple</b><span>#b997ff</span></div></div>
+<div class="sw"><i style="background:#f55c15"></i><div><b>Carmine</b><span>#f55c15</span></div></div>
+<div class="sw"><i style="background:#ff9efa"></i><div><b>Lilac</b><span>#ff9efa</span></div></div>
+<div class="sw"><i style="background:#fee442"></i><div><b>Factory yellow</b><span>#fee442</span></div></div>
+<div class="sw"><i style="background:#32343a"></i><div><b>Docs ink</b><span>#32343a</span></div></div>
+<div class="sw"><i style="background:#005fcc"></i><div><b>Focus blue</b><span>#005fcc</span></div></div>
+  </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn" href="#primary">Start for Free</a>
+    <a class="btn secondary" href="#secondary">Get Demo</a>
+  </div>
+  <p>Primary fill #00f575, hover #00c05b, label #1c1624, radius 12px. Secondary is a 1px warm-white outline.</p>
+  <h2>Docs chrome</h2>
+  <div class="docs">
+    <h3>Welcome</h3>
+    <p>docs.doppler.com paints a white page and ink type. No theme toggle was found.</p>
+  </div>
+</main>
+</body>
+</html>
