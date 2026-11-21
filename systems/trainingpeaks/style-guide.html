@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TrainingPeaks public tokens</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #000000;
+      --navy: #010f31;
+      --on-navy: #ffffff;
+      --blue: #3177ff;
+      --on-blue: #ffffff;
+      --link: #3177ff;
+      --nav: #64748b;
+      --heading: #27303f;
+      --lime: #f1fd53;
+      --ring: #d9d9d9;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font: 16px/24px Inter, system-ui, sans-serif; }
+    header { background: var(--lime); padding: 12px 32px; display: flex; gap: 16px; align-items: center; }
+    main { padding: 32px; display: grid; gap: 24px; max-width: 880px; }
+    h1 { font: 400 36px/40px Verdana, sans-serif; color: var(--heading); margin: 0; }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .swatch { width: 72px; height: 48px; border-radius: 8px; border: 1px solid #e5e7eb; }
+    button, a.pill { border: 0; border-radius: 9999px; padding: 12px 40px; font: 18px/18px system-ui, sans-serif; text-decoration: none; display: inline-block; }
+    .navy { background: var(--navy); color: var(--on-navy); }
+    .blue { background: var(--blue); color: var(--on-blue); }
+    .login { background: var(--page); color: var(--link); box-shadow: inset 0 0 0 1px var(--ring); border-radius: 999px; padding: 6px 23px; font-size: 14px; }
+    p { color: var(--nav); margin: 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <span>Someday is today.</span>
+    <a class="pill navy" href="#promo">Save 25% now</a>
+  </header>
+  <main>
+    <h1>TrainingPeaks</h1>
+    <p>Measured public tokens, 2026-11-22. This page does not load the live site.</p>
+    <div class="row">
+      <div class="swatch" style="background:#ffffff"></div>
+      <div class="swatch" style="background:#010f31"></div>
+      <div class="swatch" style="background:#3177ff"></div>
+      <div class="swatch" style="background:#f1fd53"></div>
+      <div class="swatch" style="background:#64748b"></div>
+      <div class="swatch" style="background:#27303f"></div>
+    </div>
+    <div class="row">
+      <button class="navy" type="button">Athlete sign up</button>
+      <button class="blue" type="button">Coach Sign Up</button>
+      <a class="login" href="#login">Log In</a>
+    </div>
+  </main>
+</body>
+</html>

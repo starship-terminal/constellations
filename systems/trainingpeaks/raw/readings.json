@@ -1,0 +1,289 @@
+{
+  "home": {
+    "url": "https://www.trainingpeaks.com/",
+    "title": "TrainingPeaks | Your complete training platform.",
+    "capturedAt": "2026-11-22",
+    "viewport": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "scrollHeight": 7195,
+    "body": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Inter-Regular, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "16px",
+      "fontWeight": "400"
+    },
+    "h1": {
+      "text": "Your complete training platform.",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "EncodeSansExpanded-ExtraBold, Verdana, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "72px",
+      "fontWeight": "400",
+      "lineHeight": "81px",
+      "w": 1280,
+      "h": 162
+    },
+    "lede": {
+      "text": "Built for the world\u2019s most complete athletes and coaches. This is more than an app and way",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Inter-Regular, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "24px",
+      "fontWeight": "400",
+      "lineHeight": "36px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "0px",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderTopStyle": "solid",
+      "padding": "0px",
+      "w": 647,
+      "h": 72
+    },
+    "bannerComputed": {
+      "backgroundColor": "rgb(49, 119, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "Inter-Regular, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "16px",
+      "h": 58,
+      "w": 1440
+    },
+    "bannerPaint": {
+      "backgroundImage": "linear-gradient(135deg, rgb(241, 253, 83) 0%, rgb(241, 253, 83) 100%)",
+      "note": "The promo bar class is bg-brand-blue. A same-element linear-gradient paints #f1fd53 over that fill."
+    },
+    "nav": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Inter-Regular, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "16px",
+      "padding": "32px 32px 16px",
+      "h": 114,
+      "w": 1440
+    },
+    "navLabel": {
+      "text": "For Athletes",
+      "color": "rgb(100, 116, 139)",
+      "fontFamily": "Inter-Regular, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "letterSpacing": "normal"
+    },
+    "findCoach": {
+      "text": "Find a Coach",
+      "color": "rgb(100, 116, 139)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Inter-Regular, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "0px",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderTopStyle": "solid",
+      "padding": "0px",
+      "w": 100,
+      "h": 20
+    },
+    "athleteSignUp": {
+      "text": "Athlete Sign Up",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(1, 15, 49)",
+      "fontFamily": "HNR",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "14px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "999px",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderTopStyle": "none",
+      "padding": "7px 24px",
+      "w": 149,
+      "h": 32
+    },
+    "coachSignUp": {
+      "text": "Coach Sign Up",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(49, 119, 255)",
+      "fontFamily": "HNR",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "14px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "999px",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderTopStyle": "none",
+      "padding": "7px 24px",
+      "w": 146,
+      "h": 32
+    },
+    "login": {
+      "text": "Log In",
+      "color": "rgb(49, 119, 255)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "fontFamily": "HNR",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "14px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "999px",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(49, 119, 255)",
+      "borderTopStyle": "none",
+      "padding": "6px 23px",
+      "w": 114,
+      "h": 34
+    },
+    "loginChrome": {
+      "boxShadow": "rgb(217, 217, 217) 0px 0px 0px 1px inset",
+      "border": "0px none rgb(49, 119, 255)"
+    },
+    "heroAthlete": {
+      "text": "Athlete sign up",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(1, 15, 49)",
+      "fontFamily": "Inter-Medium, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "9999px",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderTopStyle": "solid",
+      "padding": "12px 40px",
+      "w": 206,
+      "h": 42
+    },
+    "heroCoach": {
+      "text": "Coach sign up",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(1, 15, 49)",
+      "fontFamily": "Inter-Medium, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "9999px",
+      "borderTopWidth": "0px",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderTopStyle": "solid",
+      "padding": "12px 40px",
+      "w": 201,
+      "h": 42
+    },
+    "footer": {
+      "backgroundColor": "rgb(1, 15, 49)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "Inter-Regular, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "16px",
+      "h": 822,
+      "w": 1440
+    },
+    "logo": {
+      "tag": "A",
+      "w": 189,
+      "h": 50
+    },
+    "customProperties": {
+      "--wp--preset--color--brand-blue": "#3177FF",
+      "--wp--preset--color--brand-navy": "#010F31",
+      "--wp--preset--color--brand-white": "#FFFFFF",
+      "--wp--preset--color--brand-pink": "#FF5FA9",
+      "--wp--preset--color--brand-tan": "#F8F6F1",
+      "--wp--preset--color--hyperlink": "#3177FF",
+      "--mdc-theme-primary": "#3177FF",
+      "--mdc-theme-error": "#F04124"
+    },
+    "png": {
+      "file": "screenshots/home-light-1440.png",
+      "width": 2880,
+      "height": 1360,
+      "note": "Cropped above an unloaded video that painted black from CSS y 689. The hero, header, and promo bar are the painted page."
+    }
+  },
+  "features": {
+    "url": "https://www.trainingpeaks.com/athlete-features/",
+    "title": "Athlete Features | TrainingPeaks",
+    "viewport": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2
+    },
+    "h1": {
+      "text": "Dedicated training for the all-In athlete.",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "EncodeSansExpanded-ExtraBold, Verdana, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "72px",
+      "fontWeight": "400",
+      "lineHeight": "81px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "w": 1280,
+      "h": 162,
+      "href": null
+    },
+    "lede": {
+      "text": "A complete training ecosystem as committed as you are.",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Inter-Regular, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "24px",
+      "fontWeight": "400",
+      "lineHeight": "36px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "w": 1280,
+      "h": 36,
+      "href": null
+    },
+    "signup": {
+      "text": "Sign up",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(49, 119, 255)",
+      "fontFamily": "Inter-Medium, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "9999px",
+      "padding": "12px 40px",
+      "w": 144,
+      "h": 42,
+      "href": "https://home.trainingpeaks.com/signup"
+    },
+    "h2": {
+      "text": "Built for athletes born for the challenge.",
+      "color": "rgb(39, 48, 63)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "EncodeSansExpanded-ExtraBold, Verdana, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\"",
+      "fontSize": "36px",
+      "fontWeight": "400",
+      "lineHeight": "40.5px",
+      "letterSpacing": "0.2px",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "w": 1024,
+      "h": 41,
+      "href": null
+    },
+    "png": {
+      "file": "screenshots/features-light-1440.png",
+      "width": 2880,
+      "height": 1800
+    }
+  }
+}
