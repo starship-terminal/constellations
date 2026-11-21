@@ -1099,7 +1099,7 @@
       "description": "Interface assets for designers, developers, and startup creatives",
       "status": "captured",
       "package": "systems/craftwork",
-      "notes": "https://craftwork.design/login offers a one-time code, then said the email domain is not allowed. No code was sent. Google is also offered.",
+      "notes": "https://craftwork.design/login offers a one-time code, then said the email domain is not allowed. No code was sent. Google is also offered. Public walk 2026-11-21: the public site tree is in systems/craftwork/site-tree.md. Sign in opens an account dialog on the homepage. /login is an empty one-time-code card. Both were photographed empty. Nothing was typed. Google was not clicked. No form was submitted. Older crops that showed a typed address were removed. login-review.json has offered.nav, offered.settings, offered.create, screens, gaps, and not_submitted. Screen files were not checked on this branch. login-extracted stays not-started. Public package refresh in PR 1714 at 6cd242a296a2. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 4
