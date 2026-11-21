@@ -2017,9 +2017,9 @@
       "description": "The fast, calm customer support platform for SaaS",
       "status": "captured",
       "package": "systems/getfernand",
-      "notes": "https://getfernand.com/login is 404. Log in opens https://app.getfernand.com/auth/login with work email and password. No code was sent.",
+      "notes": "https://getfernand.com/login is 404. Log in opens https://app.getfernand.com/auth/login with work email and password. No code was sent. Public walk 2026-11-21: the public site tree is in systems/getfernand/site-tree.md. https://getfernand.com/login is still a 404. Log in stops at https://app.getfernand.com/auth/login with work email and password. Start for free stops at https://app.getfernand.com/create. Lost password stops at https://app.getfernand.com/auth/lost-password. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1666 at 19d437684942. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 6
     },
     {
