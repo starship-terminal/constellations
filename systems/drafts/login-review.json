@@ -1,0 +1,35 @@
+{
+  "slug": "drafts",
+  "product": "Drafts",
+  "domain": "getdrafts.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "no-public-wall",
+  "session": "Incognito preview tab. Nothing was typed. No identity provider was clicked. No form was submitted. No captcha was solved.",
+  "walls": [],
+  "probes": [
+    {
+      "name": "header-footer",
+      "result": "No Sign in and no Sign up control on the painted marketing header or footer."
+    },
+    {
+      "name": "login-path",
+      "url": "https://getdrafts.com/login",
+      "final": "https://getdrafts.com/error",
+      "result": "Missing paths rewrite to the Oops page."
+    },
+    {
+      "name": "signup-path",
+      "url": "https://getdrafts.com/signup",
+      "final": "https://getdrafts.com/error",
+      "result": "Missing paths rewrite to the Oops page."
+    },
+    {
+      "name": "theme-modals",
+      "result": "Closed Sign In, Sign Up, demo, and payment modals sit in the homepage source. They were not opened. Nothing was typed."
+    }
+  ],
+  "stopped": "No public login or signup wall exists. The error page was photographed as the empty state. The App Store and the app were not opened.",
+  "leftAlone": ["catalog.json", "webapps-manifest.json", "systems/drafts-ios"]
+}
