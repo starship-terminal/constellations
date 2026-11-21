@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T20:02:32.773Z",
+  "capturedAt": "2026-11-21T14:03:16.079Z",
   "screenshot": "mobile-home-light-menu.png",
   "sanitizedSourceUrl": "https://www.kitchenstories.com/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 10465
+      "height": 11014
     },
     "scroll": {
       "x": 0,

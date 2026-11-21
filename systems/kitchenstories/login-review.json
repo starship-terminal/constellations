@@ -1,0 +1,133 @@
+{
+  "slug": "kitchenstories",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Incognito preview and headless Chromium, signed out. Homepage mapped first. Consent dialog was hidden and never answered. /login redirects to /profile. That page says website login has moved to the app. No email, phone, password, or code field is on it. No identity provider was clicked. No form was submitted.",
+  "offered": {
+    "nav": {
+      "Rezepte": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "https://www.kitchenstories.com/rezepte",
+        "reached": true,
+        "file": "screenshots/recipes-light-default.png"
+      },
+      "Artikel": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "https://www.kitchenstories.com/stories",
+        "reached": true,
+        "file": "screenshots/stories-light-default.png"
+      },
+      "App": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "https://pages.kitchenstories.com/de/app",
+        "reached": true,
+        "file": "screenshots/app-light-default.png"
+      },
+      "Plus": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "https://pages.kitchenstories.com/de/plus",
+        "reached": true,
+        "file": "screenshots/plus-light-default.png"
+      },
+      "Unsere Partner": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "https://www.kitchenstories.com/partners",
+        "reached": true,
+        "file": "screenshots/partners-light-default.png"
+      },
+      "Suche öffnen": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "in-page search field",
+        "reached": true,
+        "file": "screenshots/home-light-search-open.png",
+        "reason": "field opened empty; nothing typed or submitted"
+      },
+      "Menü": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "phone overlay with the same five links",
+        "reached": true,
+        "file": "screenshots/mobile-home-light-menu.png"
+      }
+    },
+    "settings": {
+      "Consent Login": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "login control inside the consent dialog",
+        "reached": false,
+        "reason": "dialog hidden, never answered, Login not clicked"
+      },
+      "Customize your choice": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "privacy choices inside the consent dialog",
+        "reached": false,
+        "reason": "not opened"
+      },
+      "Language: en": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "language control inside the consent dialog",
+        "reached": false,
+        "reason": "not clicked"
+      },
+      "Datenschutzcenter": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "https://www.kitchenstories.com/?cmpscreencustom",
+        "reached": false,
+        "reason": "consent-center query not opened"
+      }
+    },
+    "create": {
+      "Ad-free for 3.99 € / month": {
+        "page": "https://www.kitchenstories.com/",
+        "opens": "paid ad-free path inside the consent dialog",
+        "reached": false,
+        "reason": "not clicked"
+      },
+      "Jetzt kostenlos starten": {
+        "page": "https://pages.kitchenstories.com/de/plus",
+        "opens": "https://www.kitchenstories.com/de/checkout",
+        "reached": true,
+        "file": "screenshots/checkout-missing-light-default.png",
+        "reason": "lands on a public 404; no payment form; nothing submitted"
+      },
+      "Website login": {
+        "page": "https://www.kitchenstories.com/login",
+        "opens": "https://www.kitchenstories.com/profile",
+        "reached": true,
+        "file": "screenshots/profile-light-default.png",
+        "reason": "public notice that website login has moved to the app; no field filled"
+      }
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-search-open.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/profile-light-default.png",
+    "screenshots/mobile-profile-light-default.png",
+    "screenshots/checkout-missing-light-default.png",
+    "screenshots/plus-light-default.png",
+    "screenshots/collaboration-light-default.png"
+  ],
+  "gaps": [
+    "Website login is retired. /login and /profile show the same public notice and store badges. No email, password, or code field exists to fill.",
+    "The consent dialog offers Login, Accept all, Customize your choice, and a paid ad-free control. None of those were clicked.",
+    "Plus 'Jetzt kostenlos starten' points at /de/checkout. That URL redirects to /checkout and paints a 404. No checkout form was reached.",
+    "App Store and Google Play badges are store links, not identity providers. They were not clicked.",
+    "No dark theme. One light theme.",
+    "Footer prints a public office address and a public phone number as page copy. That block was not cropped into a new asset."
+  ],
+  "not_submitted": [
+    "Accept all",
+    "Customize your choice",
+    "Consent Login",
+    "Ad-free for 3.99 € / month",
+    "Search",
+    "Jetzt kostenlos starten",
+    "Google Play",
+    "App Store",
+    "Newsletter",
+    "Contact mailto",
+    "Recipe rating",
+    "Recipe cart"
+  ]
+}

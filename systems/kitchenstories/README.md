@@ -1,6 +1,6 @@
 # Kitchen Stories design reference
 
-A token set and component reference for Kitchen Stories' public, signed-out magazine. It was read from [www.kitchenstories.com](https://www.kitchenstories.com) and [pages.kitchenstories.com](https://pages.kitchenstories.com) on 2026-11-18, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the German home page, the recipe index, a category, a recipe, stories, search results, partners, team, an author page, contact, impressum, and the marketing pages for about, the app, Plus and careers. Phone passes cover home, the recipe, the recipe index and Plus.
+A token set and component reference for Kitchen Stories' public, signed-out magazine. It was read from [www.kitchenstories.com](https://www.kitchenstories.com) and [pages.kitchenstories.com](https://pages.kitchenstories.com) on 2026-11-18, then refreshed on 2026-11-21, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the German home page, the recipe index, a category, a recipe, stories, search results, partners, team, an author page, contact, impressum, collaborations, the public profile notice, the checkout 404, and the marketing pages for about, the app, Plus and careers. Phone passes cover home, the recipe, the recipe index, Plus, and the profile notice. The site tree is [site-tree.md](site-tree.md). The empty login review is [login-review.json](login-review.json).
 
 The live public magazine is German. English `/en` returns 410. The site is WordPress Newspack. It paints one light theme: a white field, `#111111` ink, a `#fff5ea` footer and a `#dd3333` call to action, set in Plus Jakarta Sans. Checkout, the account profile, the recipe cart and rating submit were not followed. The consentmanager overlay was hidden, never answered.
 
@@ -13,6 +13,8 @@ The live public magazine is German. English `/en` returns 410. The site is WordP
 | [components.md](components.md) | One entry per measured component, with crops and values |
 | [patterns.md](patterns.md) | How the header, feed, recipe, search, Plus page and phone menu combine |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, or dialog, mapped from the homepage before the 2026-11-21 screenshots |
+| [login-review.json](login-review.json) | Offered nav, settings, and create controls. Website login is gone. Nothing was submitted. |
 | [screenshots/](screenshots) | Quantised page captures. Desktop 1440 x 900 at 1x. Phone viewport shots are 2x captures of 390 x 844. `-full` shots are whole pages at CSS scale. |
 | [raw/](raw) | Unprocessed readings: [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json), [motion.json](raw/motion.json) |
 | [tools/](tools) | The builders and the capture kit |
@@ -106,7 +108,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Tokens | `tools/build_component_tokens.py` then `tools/build_tokens.py`. |
 | Docs | `tools/build_components_md.py`, `tools/build_style_guide.py`, `tools/capture/public/build-measurements.mjs`. |
 
-Search text was typed and deleted. The phone hamburger was opened as a local toggle. Plus checkout, profile, cart and rating submit were not followed.
+On 2026-11-21 the homepage was mapped before a fresh screenshot pass. Search was opened and left empty. The phone menu was opened and closed. `/login` redirects to `/profile`, which says website login has moved to the app. `/de/checkout` lands on a public 404. Consent was hidden, never answered. Nothing was typed or submitted.
 
 ## What to distrust
 
@@ -158,7 +160,7 @@ Plus Jakarta Sans is the body and header preset the magazine paints. Barlow, Spe
 | States: disabled, error, loading | not present | none on the public pages captured |
 | App shell | captured | [home-light-default](screenshots/home-light-default.png) |
 | Form with validation error | not captured | no form was submitted |
-| Empty, loading, error | not present | the public pages captured do not paint these |
+| Empty, loading, error | captured | [checkout-missing-light-default](screenshots/checkout-missing-light-default.png) is the public 404 |
 | Destructive confirmation | not present | none on the public pages captured |
 | Search | captured | [search-light-default](screenshots/search-light-default.png) |
 | List | captured | [recipes-light-default](screenshots/recipes-light-default.png) |
@@ -166,11 +168,11 @@ Plus Jakarta Sans is the body and header preset the magazine paints. Barlow, Spe
 | Themes: light | captured | one painted theme |
 | Themes: dark | not present | no dark theme |
 | Widths: 1440, 390 | captured | desktop and phone passes |
-| Checkout | not captured | [https://www.kitchenstories.com/de/checkout](https://www.kitchenstories.com/de/checkout) |
-| Account | not captured | [https://www.kitchenstories.com/profile](https://www.kitchenstories.com/profile) |
+| Checkout | captured | [checkout-missing-light-default](screenshots/checkout-missing-light-default.png). `/de/checkout` is a public 404. No payment form. |
+| Account | captured | [profile-light-default](screenshots/profile-light-default.png). Website login has moved to the app. No form. |
 | Recipe cart and rating submit | not captured | left at rest on the recipe page |
 
-Totals: 28 captured, 16 not present, 6 not captured.
+Totals: 31 captured, 15 not present, 4 not captured.
 
 ## Do and don't
 

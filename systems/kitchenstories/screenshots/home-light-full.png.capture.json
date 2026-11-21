@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:57:55.877Z",
+  "capturedAt": "2026-11-21T14:01:11.521Z",
   "screenshot": "home-light-full.png",
   "sanitizedSourceUrl": "https://www.kitchenstories.com/",
   "requested": {
@@ -31,15 +31,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 1
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
-      "height": 4619
+      "height": 5037
     },
     "scroll": {
       "x": 0,
-      "y": 1
+      "y": 0
     }
   },
   "capture": {
@@ -49,13 +49,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 4619
+    "height": 5037
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 4619
+      "height": 5037
     },
     "basis": "fullPage"
   },

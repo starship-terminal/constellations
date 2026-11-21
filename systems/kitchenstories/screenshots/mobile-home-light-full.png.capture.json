@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-17T20:02:36.303Z",
+ "capturedAt": "2026-11-21T14:03:19.769Z",
  "screenshot": "mobile-home-light-full.png",
  "sanitizedSourceUrl": "https://www.kitchenstories.com/",
  "requested": {
@@ -35,7 +35,7 @@
   },
   "documentSize": {
    "width": 390,
-   "height": 10465
+   "height": 11014
   },
   "scroll": {
    "x": 0,
@@ -49,18 +49,18 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 10465
+   "height": 11014
   }
  },
  "png": {
   "width": 390,
-  "height": 10465
+  "height": 11014
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 390,
-   "height": 10465
+   "height": 11014
   },
   "basis": "stitchedParts"
  },
@@ -87,8 +87,8 @@
    "x": 0,
    "y": 7000,
    "width": 390,
-   "height": 3465
+   "height": 4014
   }
  ],
- "intendedHeight": 10465
+ "intendedHeight": 11014
 }
