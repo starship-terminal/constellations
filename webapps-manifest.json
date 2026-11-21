@@ -657,9 +657,9 @@
       "description": "Free Storyboard Software",
       "status": "captured",
       "package": "systems/boords",
-      "notes": "https://app.boords.com/login asks for email and password, or Google. No code was sent.",
+      "notes": "https://app.boords.com/login asks for email and password, or Google. No code was sent. Public walk 2026-11-21: public pages, the Features and Resources menus, the phone drawer, the docs search dialog, the home video overlay, and docs dark were photographed. Login at app.boords.com/login asks for email and password, or Google. Nothing was typed. That branch stopped. Google was not clicked. Signed-in app was not captured. Public package refresh in PR 1628 at 6b046875f047. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 2
     },
     {
@@ -674,9 +674,9 @@
       "description": "Learn Languages Online: Start for Free",
       "status": "captured",
       "package": "systems/busuu",
-      "notes": "https://www.busuu.com/en/login asks for email and password, or Apple, Facebook, or SSO. A mobile number is optional. No code was sent.",
+      "notes": "https://www.busuu.com/en/login asks for email and password, or Apple, Facebook, or SSO. A mobile number is optional. No code was sent. Public walk 2026-11-21: the map starts at www.busuu.com and records which control opens which page, menu, or wall. Distinct public pages and opened menus were photographed. Login asks for email and password, or Apple, Facebook, Google, or SSO. Nothing was typed or submitted and that branch stopped. No phone number was typed. Signed-in app was not captured. Public package refresh in PR 1627 at 1b84632d6b49. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 2
     },
     {
