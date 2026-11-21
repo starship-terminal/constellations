@@ -1,0 +1,29 @@
+{
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(26, 28, 30)",
+  "bodyFont": "Inter, \"CJK Fallback Placeholder\", Pretendard, -apple-system, blinkmacsystemfont, sans-serif",
+  "email": {
+    "text": "Your Email",
+    "h": 40,
+    "w": 320,
+    "fs": "13px",
+    "fw": "500",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(26, 28, 30)",
+    "radius": "0px",
+    "border": "0px none rgb(26, 28, 30)",
+    "font": "Inter, -apple-system, \"system-ui\", sans-serif"
+  },
+  "continue": {
+    "text": "Continue",
+    "h": 40,
+    "w": 320,
+    "fs": "14px",
+    "fw": "600",
+    "bg": "rgb(46, 109, 233)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "10px",
+    "border": "0px none rgb(255, 255, 255)",
+    "font": "Inter, -apple-system, \"system-ui\", sans-serif"
+  }
+}

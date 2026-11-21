@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.craft.do/",
+  "title": "Craft — A fresh take on documents",
+  "inputs": [
+    {
+      "type": "email",
+      "placeholder": "Your Email",
+      "valueLen": 0
+    },
+    {
+      "type": "checkbox",
+      "placeholder": "",
+      "valueLen": 2
+    }
+  ],
+  "text": "Welcome to Craft Please confirm your email to continue or continue with SSO Continue or Continue with Google Continue with Apple Continue with Microsoft By clicking continue, you accept our Terms and Conditions and Privacy Policy This site is protected by reCAPTCHA and the Google Terms and Conditions and Privacy Policy apply"
+}

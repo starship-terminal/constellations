@@ -1,0 +1,17 @@
+{
+  "url": "https://www.craft.do/plan",
+  "title": "Plan your day your way",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "vv": {
+    "w": 1440,
+    "h": 900,
+    "scale": 1
+  },
+  "colorScheme": "normal",
+  "htmlClass": "h-full antialiased",
+  "full": false,
+  "quantized": true,
+  "colors": 256
+}

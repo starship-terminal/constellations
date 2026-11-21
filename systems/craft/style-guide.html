@@ -1,362 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>craft.do style guide</title>
-<meta name="description" content="craft.do design tokens and the public signed-out surface's components, rendered from tokens.json with the declared shadcn-style --background/--primary/--accent layer and the measured computed styles.">
+<title>Craft public tokens</title>
 <style>
-:root {
-  --font-family-serif: UntitledSerifFont, "UntitledSerifFont Fallback", apple-system-ui-serif, ui-serif, Georgia, "serif";
-  --font-family-sans: UntitledSansFont, "UntitledSansFont Fallback", apple-system, InterFont, "InterFont Fallback", "system-ui", "Helvetica Neue", Helvetica, Arial, "sans-serif";
-  --font-family-mono: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 30px;
-  --font-size-4xl: 36px;
-  --font-size-5xl: 48px;
-  --font-size-6xl: 60px;
-  --font-size-7xl: 72px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-sm: 14px;
-  --font-size-xl: 20px;
-  --font-size-xs: 12px;
-  --font-size-hero: 66px;
-  --font-size-page-title: 54px;
-  --font-size-page-title-large: 70px;
-  --font-size-price: 16px;
-  --font-size-hero-mobile: 48px;
-  --color-palette-amber-100: #fef3c6;
-  --color-palette-amber-200: #fee685;
-  --color-palette-amber-300: #ffd230;
-  --color-palette-amber-400: #ffb900;
-  --color-palette-amber-50: #fffbeb;
-  --color-palette-amber-500: #fe9a00;
-  --color-palette-amber-700: #bb4d00;
-  --color-palette-amber-800: #973c00;
-  --color-palette-amber-900: #7b3306;
-  --color-palette-beige: #fcf9f7;
-  --color-palette-black: #030302;
-  --color-palette-black-100: rgba(3, 3, 2, 0.09);
-  --color-palette-black-200: rgba(3, 3, 2, 0.12);
-  --color-palette-black-50: rgba(3, 3, 2, 0.04);
-  --color-palette-black-500: rgba(3, 3, 2, 0.5);
-  --color-palette-black-900: #030302;
-  --color-palette-blue-100: #dbeafe;
-  --color-palette-blue-200: #bedbff;
-  --color-palette-blue-300: #8ec5ff;
-  --color-palette-blue-4: #427e8a;
-  --color-palette-blue-400: #51a2ff;
-  --color-palette-blue-50: #eff6ff;
-  --color-palette-blue-500: #2b7fff;
-  --color-palette-blue-600: #155dfc;
-  --color-palette-blue-700: #1447e6;
-  --color-palette-blue-800: #193cb8;
-  --color-palette-gray-100: #f3f4f6;
-  --color-palette-gray-200: #e5e7eb;
-  --color-palette-gray-300: #d1d5dc;
-  --color-palette-gray-400: #99a1af;
-  --color-palette-gray-50: #f9fafb;
-  --color-palette-gray-500: #6a7282;
-  --color-palette-gray-600: #4a5565;
-  --color-palette-gray-700: #364153;
-  --color-palette-gray-800: #1e2939;
-  --color-palette-gray-900: #101828;
-  --color-palette-green-4: #3f8850;
-  --color-palette-green-400: #05df72;
-  --color-palette-green-50: #f0fdf4;
-  --color-palette-green-500: #00c950;
-  --color-palette-green-600: #00a63e;
-  --color-palette-green-700: #008236;
-  --color-palette-neutral-200: #e5e5e5;
-  --color-palette-neutral-400: #a1a1a1;
-  --color-palette-neutral-500: #737373;
-  --color-palette-neutral-600: #525252;
-  --color-palette-neutral-700: #404040;
-  --color-palette-neutral-800: #262626;
-  --color-palette-neutral-900: #171717;
-  --color-palette-orange-100: #ffedd4;
-  --color-palette-orange-4: #b25620;
-  --color-palette-orange-400: #ff8904;
-  --color-palette-orange-500: #ff6900;
-  --color-palette-pink-4: #a549ab;
-  --color-palette-purple-4: #4b68c3;
-  --color-palette-purple-500: #ad46ff;
-  --color-palette-purple-900: #59168b;
-  --color-palette-red-100: #ffe2e2;
-  --color-palette-red-4: #bb433a;
-  --color-palette-red-400: #ff6467;
-  --color-palette-red-50: #fef2f2;
-  --color-palette-red-500: #fb2c36;
-  --color-palette-red-600: #e7000b;
-  --color-palette-red-700: #c10007;
-  --color-palette-sky-500: #00a6f4;
-  --color-palette-white: #ffffff;
-  --color-palette-yellow-100: #fef9c2;
-  --color-palette-yellow-200: #fff085;
-  --color-palette-yellow-300: #ffdf20;
-  --color-palette-yellow-4: #987e1b;
-  --color-palette-yellow-50: #fefce8;
-  --color-palette-yellow-600: #d08700;
-  --color-palette-yellow-700: #a65f00;
-  --color-palette-yellow-900: #733e0a;
-  --color-palette-zinc-200: #e4e4e7;
-  --color-palette-zinc-300: #d4d4d8;
-  --color-brand-ink: #030302;
-  --color-brand-black: #030302;
-  --color-brand-white: #ffffff;
-  --color-brand-beige: #fcf9f7;
-  --color-brand-accent: #427e8a;
-  --color-brand-destructive: #bb433a;
-  --color-chart-1: #f54900;
-  --color-chart-2: #009689;
-  --color-chart-3: #104e64;
-  --color-chart-4: #ffb900;
-  --color-chart-5: #fe9a00;
-  --radius-default: 10px;
-  --radius-2xl: 16px;
-  --radius-3xl: 24px;
-  --radius-4xl: 32px;
-  --radius-full: 9999px;
-  --radius-nav: 26px;
-  --border-hairline-width: 1px;
-  --shadow-block: 0px 50px 40px 0px rgba(0, 0, 0, 0.01), 0px 50px 40px 0px rgba(0, 0, 0, 0.02), 0px 20px 40px 0px rgba(0, 0, 0, 0.05), 0px 3px 10px 0px rgba(0, 0, 0, 0.08);
-  --shadow-drop-drop-sm: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
-  --shadow-drop-drop-2xl: rgba(0, 0, 0, 0.15) 0px 25px 25px 0px;
-  --shadow-focus-ring: 0px 0px 0px 3px oklab(0.0959089 -0.00155481 0.00499368 / 0.0607843);
-  --spacing-base: 4px;
-  --spacing-container-2xl: 672px;
-  --spacing-container-3xl: 768px;
-  --spacing-container-4xl: 896px;
-  --spacing-container-5xl: 1024px;
-  --spacing-container-6xl: 1152px;
-  --spacing-container-7xl: 1280px;
-  --spacing-container-lg: 512px;
-  --spacing-container-md: 448px;
-  --spacing-container-sm: 384px;
-  --spacing-container-xl: 576px;
-  --spacing-container-xs: 320px;
-  --spacing-header-h: 52px;
-  --spacing-header-rad: 26px;
-  --motion-ping: ping 1s cubic-bezier(0,0,.2,1) infinite;
-  --motion-pulse: pulse 2s cubic-bezier(.4,0,.6,1) infinite;
-  --motion-spin: spin 1s linear infinite;
-  --motion-default-duration: 0.15s;
-  --motion-default-easing: cubic-bezier(.4,0,.2,1);
-  --color-background-page: #fcf9f7;
-  --color-background-card: #ffffff;
-  --color-background-popover: #ffffff;
-  --color-background-input: #ffffff;
-  --color-background-sidebar: #fafafa;
-  --color-background-sidebar-accent: #f5f5f5;
-  --color-background-muted: rgba(3, 3, 2, 0.04);
-  --color-action-primary: #030302;
-  --color-action-secondary: #ffffff;
-  --color-action-accent: #427e8a;
-  --color-action-destructive: #bb433a;
-  --color-action-sidebar-primary: #171717;
-  --color-text-foreground: #030302;
-  --color-text-card-foreground: #030302;
-  --color-text-popover-foreground: #030302;
-  --color-text-primary-foreground: #030302;
-  --color-text-accent-foreground: #030302;
-  --color-text-secondary-foreground: #030302;
-  --color-text-muted-foreground: rgba(3, 3, 2, 0.5);
-  --color-text-sidebar-foreground: #0a0a0a;
-  --color-text-sidebar-accent-foreground: #171717;
-  --color-text-sidebar-primary-foreground: #fafafa;
-  --color-text-on-primary: #ffffff;
-  --color-text-footer: #ffffff;
-  --color-border-border: rgba(3, 3, 2, 0.09);
-  --color-border-ring: rgba(3, 3, 2, 0.12);
-  --color-border-sidebar-border: #e5e5e5;
-  --color-border-sidebar-ring: #a1a1a1;
-  --component-button-height-nav: 36px;
-  --component-button-height-large: 48px;
-  --component-toggle-segment: 112px;
-  --component-menu-button: 24px;
-  --component-faq-row: 57.2031px;
-  --component-nav-link-size: 16px;
-  --component-button-state-move: {'default': var(---backgroundColor----rgb-3--3--2-----color----rgb-255--255--255--), 'hover': var(---backgroundColor----rgba-3--3--2--0-75-----color----rgb-255--255--255--)};
-  --sg-sans: "UntitledSansFont", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "UntitledSerifFont", Georgia, "Times New Roman", serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
-}
-[data-mode="dark"], .dark {
-
-}
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-foreground, #030302); background: var(--light-color-background-page, #fcf9f7); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
-.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
-.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
-.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
-.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-spacing-header-h, 52px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
-.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
-.navbar .sp { flex: 1; }
-.navbar .link { color: var(--color-brand-ink, #030302); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-large, 48px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
-.btn.primary { background: var(--light-color-action-primary, #030302); color: var(--light-color-text-on-primary, #fff); height: var(--component-button-height-nav, 36px); font-size: 14px; }
-.btn.light { background: var(--light-color-background-card, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
-.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--light-color-border-border, rgba(3,3,2,.09)); }
-.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--light-color-background-page, #fcf9f7) 100%); }
-.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 18px; font-size: 13px; background: var(--light-color-background-card, #fff); border-radius: var(--radius-2xl, 16px); }
-.tile .img { height: 100px; background: var(--light-color-background-muted, rgba(3,3,2,.04)); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
-.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
-.tile .sub { opacity: .65; font-size: 12px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
-.toggle { display: inline-flex; background: var(--light-color-background-muted, rgba(3,3,2,.04)); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
-.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
-.toggle .on { background: var(--light-color-background-card, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+  :root {
+    --page: #fcf9f7;
+    --ink: #030302;
+    --card: #ffffff;
+    --muted: #03030280;
+    --border: #03030217;
+    --teal: #427e8a;
+    --auth: #2e6de9;
+    --danger: #bb433a;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 16px/24px "Iowan Old Style", Georgia, serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-weight: 400; font-size: 48px; line-height: 1; letter-spacing: -0.03em; margin: 0 0 8px; }
+  p { font-family: system-ui, sans-serif; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+  .swatch { width: 120px; }
+  .chip { height: 64px; border-radius: 16px; border: 1px solid var(--border); }
+  .label { font: 12px/16px system-ui, sans-serif; margin-top: 6px; }
+  .nav { display: flex; align-items: center; justify-content: space-between; background: #fff; border-radius: 26px; height: 52px; padding: 0 16px; box-shadow: 0 12px 12px 2px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06); font-family: system-ui, sans-serif; font-size: 14px; }
+  .pill { background: var(--ink); color: #fff; border-radius: 9999px; padding: 8px 14px; font: 500 16px/24px system-ui, sans-serif; }
+  .auth { margin-top: 32px; background: #fff; border-radius: 24px; padding: 28px; max-width: 360px; font-family: system-ui, sans-serif; }
+  .field { height: 40px; border-radius: 10px; border: 1px solid #e4e4e4; color: #9aa0a6; display: flex; align-items: center; padding: 0 12px; font-size: 13px; }
+  .continue { margin-top: 12px; height: 40px; border-radius: 10px; background: var(--auth); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; }
+  .footer { margin-top: 32px; background: var(--ink); color: #fff; border-radius: 24px; padding: 28px; font-family: system-ui, sans-serif; font-size: 14px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>craft.do style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">craft.do, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #fcf9f7 warm beige page, the #030302 ink on every pill and the black footer panel, the #427e8a teal accent, Untitled Serif 400 display next to Untitled Sans UI, and rounded-full pills on every control. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from craft.do on 2026-11-12, signed out, in headless Chromium. The editors live in the apps behind a documented boundary — www.craft.do has no auth card (Log in links out to docs.craft.do, never followed). Untitled Sans/Serif are licensed Klim faces, not loaded here: samples fall back to system fonts. Prices render SGD.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">A 52px white pill floats over the page (26px radius): the CRAFT wordmark, Product / Imagine / Community / Pricing / Learn / Download text links, Log in and a black 36px Try Craft Free pill. The hero is 66px Untitled Serif on a sky-blue collage; a white 48px Try Craft Free pill sits under it, and the page ends in a 24px-radius black footer.</p>
-  <div class="mock" style="background:#dceef7">
-    <div class="navbar"><span class="wm">CRAFT</span><span class="link">Product</span><span class="link">Imagine</span><span class="link">Community</span><span class="link">Pricing</span><span class="link">Learn</span><span class="link">Download</span><span class="sp"></span><span class="link">Log in</span><span class="btn primary">Try Craft Free</span></div>
-    <div class="hero">Your space for notes,<br>tasks, and big ideas<small>Docs, tasks and big ideas on every device.</small><span class="btn light">Try Craft Free</span></div>
+  <h1>Craft</h1>
+  <p>Public marketing tokens, one light theme. Auth blue is the docs wall, not the marketing accent.</p>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#fcf9f7"></div><div class="label">page #fcf9f7</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">card #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#030302"></div><div class="label">ink #030302</div></div>
+    <div class="swatch"><div class="chip" style="background:#427e8a"></div><div class="label">accent #427e8a</div></div>
+    <div class="swatch"><div class="chip" style="background:#2e6de9"></div><div class="label">auth #2e6de9</div></div>
+    <div class="swatch"><div class="chip" style="background:#bb433a"></div><div class="label">danger #bb433a</div></div>
   </div>
-
-  <h2 class="sh">Explore</h2>
-  <p class="lead">/explore runs a floating tab bar (40px radius-full pills, elevation-gray inactive) over a masonry of element tiles on the paper surface: 3px-radius tiles carry images, and section H2s hold at 20px/400. Search and brand pages reuse the same 56px floating pill and tab language.</p>
-  <div class="mock" style="padding:20px">
-    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span class="on">For you</span><span>Following</span><span>Elements</span><span>People</span></span></div>
-    <div class="grid">
-      <div class="tile"><div class="img"></div><b>Selected works</b><span class="sub">Elements saved by the community</span></div>
-      <div class="tile"><div class="img"></div><b>Type specimens</b><span class="sub">Fonts and specimens</span></div>
-    </div>
+  <div class="nav"><strong>CRAFT</strong><span>Product · Imagine · Pricing</span><span class="pill">Try Craft Free</span></div>
+  <div class="auth">
+    <strong>Welcome to Craft</strong>
+    <div class="field" style="margin-top:16px">Your Email</div>
+    <div class="continue">Continue</div>
   </div>
-
-  <h2 class="sh">The dark furniture</h2>
-  <p class="lead">Craft paints two kinds of black: the pill fills (the 36px nav CTA, the mobile Download for iOS pill) that lift to 75% ink on hover, and the 24px-radius footer panel — a full black section with white links, a painted surface not a theme.</p>
-  <div class="mock" style="padding:24px;background:var(--color-brand-ink,#030302);border-radius:var(--radius-3xl,24px)">
-    <div style="color:#fff;font:400 28px/1.2 var(--sg-serif);margin-bottom:14px">Craft works everywhere you do.</div>
-    <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.8)"><span>Download app</span><span>Careers</span><span>Terms</span><span>Privacy</span><span>Instagram</span><span>X</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The core set carries the declared Tailwind --color-* primitives plus the brand entries; the light roles alias the shadcn-style semantic layer (--background/--card/--popover/--primary/--accent/--muted/--destructive, the --sidebar-* set, --border/--ring/--input). There is no dark theme — the only painted dark surface is the footer.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">Craft is a pill system too: rounded-full (the measured 3.36e7px maximum) on every CTA, the billing toggle and the platform buttons; a 26px radius floats the nav pill; the declared ramp runs --radius 10px through --radius-4xl 32px (16px cards, 24px team card + footer). Borders are a 9% ink hairline plus the 12% ink focus ring.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Two families: <code>Untitled Serif</code> carries every display heading at 400 (66px hero, 70px learn, 54px page titles and prices, 48px mobile); <code>Untitled Sans</code> carries UI (16px 400 body/links, 500 on pills and FAQ rows, 14px footers). The declared ramp runs --text-xs 12px through --text-7xl 72px. Samples fall back to system fonts.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-* and semantic layer off the same-origin Next.js sheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <div class="footer">Product · Community · Support · Company · Download</div>
 </main>
-<script>
-const TOK = {"core":{"font":{"family":{"serif":{"v":"UntitledSerifFont, \"UntitledSerifFont Fallback\", apple-system-ui-serif, ui-serif, Georgia, \"serif\"","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json); the @font-face blocks are served same-origin (raw/css-vars.json fonts)","d":"Untitled Serif (Klim, licensed, not distributed) — every display heading, 400 weight only."},"sans":{"v":"UntitledSansFont, \"UntitledSansFont Fallback\", apple-system, InterFont, \"InterFont Fallback\", \"system-ui\", \"Helvetica Neue\", Helvetica, Arial, \"sans-serif\"","t":"fontFamily","s":"computed fontFamily of nav-link default (raw/components-computed.json)","d":"Untitled Sans — all UI text, body and controls."},"mono":{"v":"SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace","t":"fontFamily","s":"css-var --default-mono-font-family (light); css-var --default-mono-font-family resolved (raw/css-vars.json)","d":"Declared mono fallback stack."}},"weight":{"light":{"v":300,"t":"fontWeight","s":"css-var --font-weight-light (light); css-var --font-weight-light resolved (raw/css-vars.json)","d":"Declared 300."},"regular":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light); css-var --font-weight-normal resolved (raw/css-vars.json)","d":"Declared 400 — body and every display heading."},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light); css-var --font-weight-medium resolved (raw/css-vars.json)","d":"Declared 500 — buttons, nav pills, FAQ rows."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light); css-var --font-weight-semibold resolved (raw/css-vars.json)","d":"Declared 600."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light); css-var --font-weight-bold resolved (raw/css-vars.json)","d":"Declared 700."},"extrabold":{"v":800,"t":"fontWeight","s":"css-var --font-weight-extrabold (light); css-var --font-weight-extrabold resolved (raw/css-vars.json)","d":"Declared 800."}},"size":{"2xl":{"v":"24px","t":"fontSize","s":"css-var --text-2xl (light); css-var --text-2xl resolved (raw/css-vars.json)","d":"Declared type size 2xl. Declared line-height calc(2 / 1.5)."},"3xl":{"v":"30px","t":"fontSize","s":"css-var --text-3xl (light); css-var --text-3xl resolved (raw/css-vars.json)","d":"Declared type size 3xl. Declared line-height calc(2.25 / 1.875)."},"4xl":{"v":"36px","t":"fontSize","s":"css-var --text-4xl (light); css-var --text-4xl resolved (raw/css-vars.json)","d":"Declared type size 4xl. Declared line-height calc(2.5 / 2.25)."},"5xl":{"v":"48px","t":"fontSize","s":"css-var --text-5xl (light); css-var --text-5xl resolved (raw/css-vars.json)","d":"Declared type size 5xl. Declared line-height 1."},"6xl":{"v":"60px","t":"fontSize","s":"css-var --text-6xl (light); css-var --text-6xl resolved (raw/css-vars.json)","d":"Declared type size 6xl. Declared line-height 1."},"7xl":{"v":"72px","t":"fontSize","s":"css-var --text-7xl (light); css-var --text-7xl resolved (raw/css-vars.json)","d":"Declared type size 7xl. Declared line-height 1."},"base":{"v":"16px","t":"fontSize","s":"css-var --text-base (light); css-var --text-base resolved (raw/css-vars.json)","d":"Declared type size base. Declared line-height calc(1.5 / 1)."},"lg":{"v":"18px","t":"fontSize","s":"css-var --text-lg (light); css-var --text-lg resolved (raw/css-vars.json)","d":"Declared type size lg. Declared line-height calc(1.75 / 1.125)."},"sm":{"v":"14px","t":"fontSize","s":"css-var --text-sm (light); css-var --text-sm resolved (raw/css-vars.json)","d":"Declared type size sm. Declared line-height calc(1.25 / .875)."},"xl":{"v":"20px","t":"fontSize","s":"css-var --text-xl (light); css-var --text-xl resolved (raw/css-vars.json)","d":"Declared type size xl. Declared line-height calc(1.75 / 1.25)."},"xs":{"v":"12px","t":"fontSize","s":"css-var --text-xs (light); css-var --text-xs resolved (raw/css-vars.json)","d":"Declared type size xs. Declared line-height calc(1 / .75)."},"hero":{"v":"66px","t":"fontSize","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The home hero's measured 66px serif."},"page-title":{"v":"54px","t":"fontSize","s":"computed fontSize of price-h1 default (raw/components-computed.json)","d":"The 54px serif page headings (pricing, download, imagine)."},"page-title-large":{"v":"70px","t":"fontSize","s":"computed fontSize of learn-h1 default (raw/components-computed.json)","d":"Learn's measured 70px serif."},"price":{"v":"16px","t":"fontSize","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"The serif price figure on plan cards."},"hero-mobile":{"v":"48px","t":"fontSize","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The mobile hero's measured 48px."}}},"color":{"palette":{"amber-100":{"v":"#fef3c6","t":"color","s":"css-var --color-amber-100 (light); css-var --color-amber-100 resolved (raw/css-vars.json)","d":"Declared primitive amber-100."},"amber-200":{"v":"#fee685","t":"color","s":"css-var --color-amber-200 (light); css-var --color-amber-200 resolved (raw/css-vars.json)","d":"Declared primitive amber-200."},"amber-300":{"v":"#ffd230","t":"color","s":"css-var --color-amber-300 (light); css-var --color-amber-300 resolved (raw/css-vars.json)","d":"Declared primitive amber-300."},"amber-400":{"v":"#ffb900","t":"color","s":"css-var --color-amber-400 (light); css-var --color-amber-400 resolved (raw/css-vars.json)","d":"Declared primitive amber-400."},"amber-50":{"v":"#fffbeb","t":"color","s":"css-var --color-amber-50 (light); css-var --color-amber-50 resolved (raw/css-vars.json)","d":"Declared primitive amber-50."},"amber-500":{"v":"#fe9a00","t":"color","s":"css-var --color-amber-500 (light); css-var --color-amber-500 resolved (raw/css-vars.json)","d":"Declared primitive amber-500."},"amber-700":{"v":"#bb4d00","t":"color","s":"css-var --color-amber-700 (light); css-var --color-amber-700 resolved (raw/css-vars.json)","d":"Declared primitive amber-700."},"amber-800":{"v":"#973c00","t":"color","s":"css-var --color-amber-800 (light); css-var --color-amber-800 resolved (raw/css-vars.json)","d":"Declared primitive amber-800."},"amber-900":{"v":"#7b3306","t":"color","s":"css-var --color-amber-900 (light); css-var --color-amber-900 resolved (raw/css-vars.json)","d":"Declared primitive amber-900."},"beige":{"v":"#fcf9f7","t":"color","s":"css-var --color-beige (light); css-var --color-beige resolved (raw/css-vars.json)","d":"Declared primitive beige."},"black":{"v":"#030302","t":"color","s":"css-var --color-black (light); css-var --color-black resolved (raw/css-vars.json)","d":"Declared primitive black."},"black-100":{"v":"rgba(3, 3, 2, 0.09)","t":"color","s":"css-var --color-black-100 (light); css-var --color-black-100 resolved (raw/css-vars.json)","d":"Declared primitive black-100."},"black-200":{"v":"rgba(3, 3, 2, 0.12)","t":"color","s":"css-var --color-black-200 (light); css-var --color-black-200 resolved (raw/css-vars.json)","d":"Declared primitive black-200."},"black-50":{"v":"rgba(3, 3, 2, 0.04)","t":"color","s":"css-var --color-black-50 (light); css-var --color-black-50 resolved (raw/css-vars.json)","d":"Declared primitive black-50."},"black-500":{"v":"rgba(3, 3, 2, 0.5)","t":"color","s":"css-var --color-black-500 (light); css-var --color-black-500 resolved (raw/css-vars.json)","d":"Declared primitive black-500."},"black-900":{"v":"#030302","t":"color","s":"css-var --color-black-900 (light); css-var --color-black-900 resolved (raw/css-vars.json)","d":"Declared primitive black-900."},"blue-100":{"v":"#dbeafe","t":"color","s":"css-var --color-blue-100 (light); css-var --color-blue-100 resolved (raw/css-vars.json)","d":"Declared primitive blue-100."},"blue-200":{"v":"#bedbff","t":"color","s":"css-var --color-blue-200 (light); css-var --color-blue-200 resolved (raw/css-vars.json)","d":"Declared primitive blue-200."},"blue-300":{"v":"#8ec5ff","t":"color","s":"css-var --color-blue-300 (light); css-var --color-blue-300 resolved (raw/css-vars.json)","d":"Declared primitive blue-300."},"blue-4":{"v":"#427e8a","t":"color","s":"css-var --color-blue-4 (light); css-var --color-blue-4 resolved (raw/css-vars.json)","d":"Declared primitive blue-4."},"blue-400":{"v":"#51a2ff","t":"color","s":"css-var --color-blue-400 (light); css-var --color-blue-400 resolved (raw/css-vars.json)","d":"Declared primitive blue-400."},"blue-50":{"v":"#eff6ff","t":"color","s":"css-var --color-blue-50 (light); css-var --color-blue-50 resolved (raw/css-vars.json)","d":"Declared primitive blue-50."},"blue-500":{"v":"#2b7fff","t":"color","s":"css-var --color-blue-500 (light); css-var --color-blue-500 resolved (raw/css-vars.json)","d":"Declared primitive blue-500."},"blue-600":{"v":"#155dfc","t":"color","s":"css-var --color-blue-600 (light); css-var --color-blue-600 resolved (raw/css-vars.json)","d":"Declared primitive blue-600."},"blue-700":{"v":"#1447e6","t":"color","s":"css-var --color-blue-700 (light); css-var --color-blue-700 resolved (raw/css-vars.json)","d":"Declared primitive blue-700."},"blue-800":{"v":"#193cb8","t":"color","s":"css-var --color-blue-800 (light); css-var --color-blue-800 resolved (raw/css-vars.json)","d":"Declared primitive blue-800."},"gray-100":{"v":"#f3f4f6","t":"color","s":"css-var --color-gray-100 (light); css-var --color-gray-100 resolved (raw/css-vars.json)","d":"Declared primitive gray-100."},"gray-200":{"v":"#e5e7eb","t":"color","s":"css-var --color-gray-200 (light); css-var --color-gray-200 resolved (raw/css-vars.json)","d":"Declared primitive gray-200."},"gray-300":{"v":"#d1d5dc","t":"color","s":"css-var --color-gray-300 (light); css-var --color-gray-300 resolved (raw/css-vars.json)","d":"Declared primitive gray-300."},"gray-400":{"v":"#99a1af","t":"color","s":"css-var --color-gray-400 (light); css-var --color-gray-400 resolved (raw/css-vars.json)","d":"Declared primitive gray-400."},"gray-50":{"v":"#f9fafb","t":"color","s":"css-var --color-gray-50 (light); css-var --color-gray-50 resolved (raw/css-vars.json)","d":"Declared primitive gray-50."},"gray-500":{"v":"#6a7282","t":"color","s":"css-var --color-gray-500 (light); css-var --color-gray-500 resolved (raw/css-vars.json)","d":"Declared primitive gray-500."},"gray-600":{"v":"#4a5565","t":"color","s":"css-var --color-gray-600 (light); css-var --color-gray-600 resolved (raw/css-vars.json)","d":"Declared primitive gray-600."},"gray-700":{"v":"#364153","t":"color","s":"css-var --color-gray-700 (light); css-var --color-gray-700 resolved (raw/css-vars.json)","d":"Declared primitive gray-700."},"gray-800":{"v":"#1e2939","t":"color","s":"css-var --color-gray-800 (light); css-var --color-gray-800 resolved (raw/css-vars.json)","d":"Declared primitive gray-800."},"gray-900":{"v":"#101828","t":"color","s":"css-var --color-gray-900 (light); css-var --color-gray-900 resolved (raw/css-vars.json)","d":"Declared primitive gray-900."},"green-4":{"v":"#3f8850","t":"color","s":"css-var --color-green-4 (light); css-var --color-green-4 resolved (raw/css-vars.json)","d":"Declared primitive green-4."},"green-400":{"v":"#05df72","t":"color","s":"css-var --color-green-400 (light); css-var --color-green-400 resolved (raw/css-vars.json)","d":"Declared primitive green-400."},"green-50":{"v":"#f0fdf4","t":"color","s":"css-var --color-green-50 (light); css-var --color-green-50 resolved (raw/css-vars.json)","d":"Declared primitive green-50."},"green-500":{"v":"#00c950","t":"color","s":"css-var --color-green-500 (light); css-var --color-green-500 resolved (raw/css-vars.json)","d":"Declared primitive green-500."},"green-600":{"v":"#00a63e","t":"color","s":"css-var --color-green-600 (light); css-var --color-green-600 resolved (raw/css-vars.json)","d":"Declared primitive green-600."},"green-700":{"v":"#008236","t":"color","s":"css-var --color-green-700 (light); css-var --color-green-700 resolved (raw/css-vars.json)","d":"Declared primitive green-700."},"neutral-200":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-200 (light); css-var --color-neutral-200 resolved (raw/css-vars.json)","d":"Declared primitive neutral-200."},"neutral-400":{"v":"#a1a1a1","t":"color","s":"css-var --color-neutral-400 (light); css-var --color-neutral-400 resolved (raw/css-vars.json)","d":"Declared primitive neutral-400."},"neutral-500":{"v":"#737373","t":"color","s":"css-var --color-neutral-500 (light); css-var --color-neutral-500 resolved (raw/css-vars.json)","d":"Declared primitive neutral-500."},"neutral-600":{"v":"#525252","t":"color","s":"css-var --color-neutral-600 (light); css-var --color-neutral-600 resolved (raw/css-vars.json)","d":"Declared primitive neutral-600."},"neutral-700":{"v":"#404040","t":"color","s":"css-var --color-neutral-700 (light); css-var --color-neutral-700 resolved (raw/css-vars.json)","d":"Declared primitive neutral-700."},"neutral-800":{"v":"#262626","t":"color","s":"css-var --color-neutral-800 (light); css-var --color-neutral-800 resolved (raw/css-vars.json)","d":"Declared primitive neutral-800."},"neutral-900":{"v":"#171717","t":"color","s":"css-var --color-neutral-900 (light); css-var --color-neutral-900 resolved (raw/css-vars.json)","d":"Declared primitive neutral-900."},"orange-100":{"v":"#ffedd4","t":"color","s":"css-var --color-orange-100 (light); css-var --color-orange-100 resolved (raw/css-vars.json)","d":"Declared primitive orange-100."},"orange-4":{"v":"#b25620","t":"color","s":"css-var --color-orange-4 (light); css-var --color-orange-4 resolved (raw/css-vars.json)","d":"Declared primitive orange-4."},"orange-400":{"v":"#ff8904","t":"color","s":"css-var --color-orange-400 (light); css-var --color-orange-400 resolved (raw/css-vars.json)","d":"Declared primitive orange-400."},"orange-500":{"v":"#ff6900","t":"color","s":"css-var --color-orange-500 (light); css-var --color-orange-500 resolved (raw/css-vars.json)","d":"Declared primitive orange-500."},"pink-4":{"v":"#a549ab","t":"color","s":"css-var --color-pink-4 (light); css-var --color-pink-4 resolved (raw/css-vars.json)","d":"Declared primitive pink-4."},"purple-4":{"v":"#4b68c3","t":"color","s":"css-var --color-purple-4 (light); css-var --color-purple-4 resolved (raw/css-vars.json)","d":"Declared primitive purple-4."},"purple-500":{"v":"#ad46ff","t":"color","s":"css-var --color-purple-500 (light); css-var --color-purple-500 resolved (raw/css-vars.json)","d":"Declared primitive purple-500."},"purple-900":{"v":"#59168b","t":"color","s":"css-var --color-purple-900 (light); css-var --color-purple-900 resolved (raw/css-vars.json)","d":"Declared primitive purple-900."},"red-100":{"v":"#ffe2e2","t":"color","s":"css-var --color-red-100 (light); css-var --color-red-100 resolved (raw/css-vars.json)","d":"Declared primitive red-100."},"red-4":{"v":"#bb433a","t":"color","s":"css-var --color-red-4 (light); css-var --color-red-4 resolved (raw/css-vars.json)","d":"Declared primitive red-4."},"red-400":{"v":"#ff6467","t":"color","s":"css-var --color-red-400 (light); css-var --color-red-400 resolved (raw/css-vars.json)","d":"Declared primitive red-400."},"red-50":{"v":"#fef2f2","t":"color","s":"css-var --color-red-50 (light); css-var --color-red-50 resolved (raw/css-vars.json)","d":"Declared primitive red-50."},"red-500":{"v":"#fb2c36","t":"color","s":"css-var --color-red-500 (light); css-var --color-red-500 resolved (raw/css-vars.json)","d":"Declared primitive red-500."},"red-600":{"v":"#e7000b","t":"color","s":"css-var --color-red-600 (light); css-var --color-red-600 resolved (raw/css-vars.json)","d":"Declared primitive red-600."},"red-700":{"v":"#c10007","t":"color","s":"css-var --color-red-700 (light); css-var --color-red-700 resolved (raw/css-vars.json)","d":"Declared primitive red-700."},"sky-500":{"v":"#00a6f4","t":"color","s":"css-var --color-sky-500 (light); css-var --color-sky-500 resolved (raw/css-vars.json)","d":"Declared primitive sky-500."},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light); css-var --color-white resolved (raw/css-vars.json)","d":"Declared primitive white."},"yellow-100":{"v":"#fef9c2","t":"color","s":"css-var --color-yellow-100 (light); css-var --color-yellow-100 resolved (raw/css-vars.json)","d":"Declared primitive yellow-100."},"yellow-200":{"v":"#fff085","t":"color","s":"css-var --color-yellow-200 (light); css-var --color-yellow-200 resolved (raw/css-vars.json)","d":"Declared primitive yellow-200."},"yellow-300":{"v":"#ffdf20","t":"color","s":"css-var --color-yellow-300 (light); css-var --color-yellow-300 resolved (raw/css-vars.json)","d":"Declared primitive yellow-300."},"yellow-4":{"v":"#987e1b","t":"color","s":"css-var --color-yellow-4 (light); css-var --color-yellow-4 resolved (raw/css-vars.json)","d":"Declared primitive yellow-4."},"yellow-50":{"v":"#fefce8","t":"color","s":"css-var --color-yellow-50 (light); css-var --color-yellow-50 resolved (raw/css-vars.json)","d":"Declared primitive yellow-50."},"yellow-600":{"v":"#d08700","t":"color","s":"css-var --color-yellow-600 (light); css-var --color-yellow-600 resolved (raw/css-vars.json)","d":"Declared primitive yellow-600."},"yellow-700":{"v":"#a65f00","t":"color","s":"css-var --color-yellow-700 (light); css-var --color-yellow-700 resolved (raw/css-vars.json)","d":"Declared primitive yellow-700."},"yellow-900":{"v":"#733e0a","t":"color","s":"css-var --color-yellow-900 (light); css-var --color-yellow-900 resolved (raw/css-vars.json)","d":"Declared primitive yellow-900."},"zinc-200":{"v":"#e4e4e7","t":"color","s":"css-var --color-zinc-200 (light); css-var --color-zinc-200 resolved (raw/css-vars.json)","d":"Declared primitive zinc-200."},"zinc-300":{"v":"#d4d4d8","t":"color","s":"css-var --color-zinc-300 (light); css-var --color-zinc-300 resolved (raw/css-vars.json)","d":"Declared primitive zinc-300."}},"brand":{"ink":{"v":"#030302","t":"color","s":"css-var --color-black-900 (light); css-var --color-black-900 resolved (raw/css-vars.json)","d":"The #030302 ink — all text, the black CTA fills, the footer."},"black":{"v":"#030302","t":"color","s":"css-var --color-black (light); css-var --color-black resolved (raw/css-vars.json)","d":"Declared black #030302."},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light); css-var --color-white resolved (raw/css-vars.json)","d":"Declared white — cards, popovers, inputs, the nav pill."},"beige":{"v":"#fcf9f7","t":"color","s":"css-var --color-beige (light); css-var --color-beige resolved (raw/css-vars.json)","d":"The #fcf9f7 warm page beige (--background)."},"accent":{"v":"#427e8a","t":"color","s":"css-var --accent (light); css-var --accent resolved (raw/css-vars.json)","d":"The #427e8a teal accent."},"destructive":{"v":"#bb433a","t":"color","s":"css-var --destructive (light); css-var --destructive resolved (raw/css-vars.json)","d":"The #bb433a destructive red."}},"chart":{"1":{"v":"#f54900","t":"color","s":"css-var --chart-1 (light); css-var --chart-1 resolved (raw/css-vars.json)","d":"Declared chart colour --chart-1."},"2":{"v":"#009689","t":"color","s":"css-var --chart-2 (light); css-var --chart-2 resolved (raw/css-vars.json)","d":"Declared chart colour --chart-2."},"3":{"v":"#104e64","t":"color","s":"css-var --chart-3 (light); css-var --chart-3 resolved (raw/css-vars.json)","d":"Declared chart colour --chart-3."},"4":{"v":"#ffb900","t":"color","s":"css-var --chart-4 (light); css-var --chart-4 resolved (raw/css-vars.json)","d":"Declared chart colour --chart-4."},"5":{"v":"#fe9a00","t":"color","s":"css-var --chart-5 (light); css-var --chart-5 resolved (raw/css-vars.json)","d":"Declared chart colour --chart-5."}}},"radius":{"default":{"v":"10px","t":"dimension","s":"css-var --radius (light); css-var --radius resolved (raw/css-vars.json)","d":"Declared 10px base radius."},"2xl":{"v":"16px","t":"dimension","s":"css-var --radius-2xl (light); css-var --radius-2xl resolved (raw/css-vars.json)","d":"Declared 16px — cards, the mobile download pill."},"3xl":{"v":"24px","t":"dimension","s":"css-var --radius-3xl (light); css-var --radius-3xl resolved (raw/css-vars.json)","d":"Declared 24px — the team card and footer panel."},"4xl":{"v":"32px","t":"dimension","s":"css-var --radius-4xl (light); css-var --radius-4xl resolved (raw/css-vars.json)","d":"Declared 32px."},"full":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of try-cta default (raw/components-computed.json); the reading 3.35544e+07px is the browser's maximum radius, written as the kit's 9999px pill","d":"rounded-full computes to the CSS maximum — every pill control (CTAs, the billing toggle, platform buttons)."},"nav":{"v":"26px","t":"dimension","s":"computed borderTopLeftRadius of header default (raw/components-computed.json)","d":"The floating nav pill's 26px radius."}},"border":{"hairline":{"width":{"v":"1px","t":"dimension","s":"Reconstruction: entered by hand at capture time; --border declares only the colour and no raw reading holds this width (the shadcn convention pairs it with 1px)","d":"The 9% ink hairline width."}}},"shadow":{"block":{"v":[{"color":"rgba(0, 0, 0, 0.01)","offsetX":"0px","offsetY":"50px","blur":"40px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.02)","offsetX":"0px","offsetY":"50px","blur":"40px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.05)","offsetX":"0px","offsetY":"20px","blur":"40px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.08)","offsetX":"0px","offsetY":"3px","blur":"10px","spread":"0px","inset":false}],"t":"shadow","s":"computed boxShadow of team-card default (raw/components-computed.json); read on the first element carrying .shadow-block, the 1400 x 1546 pricing section, not the TEAM card","d":"The .shadow-block utility's elevation. The capture read it on the pricing section, not on a card, so where cards paint it needs a recapture."},"drop":{"drop-sm":{"v":"rgba(0, 0, 0, 0.15) 0px 1px 2px 0px","t":"other","s":"css-var --drop-shadow-sm (light); css-var --drop-shadow-sm resolved (raw/css-vars.json)","d":"Declared 0 1 2 15% drop shadow."},"drop-2xl":{"v":"rgba(0, 0, 0, 0.15) 0px 25px 25px 0px","t":"other","s":"css-var --drop-shadow-2xl (light); css-var --drop-shadow-2xl resolved (raw/css-vars.json)","d":"Declared 0 25 25 15% drop shadow."}},"focus-ring":{"v":[{"color":"oklab(0.0959089 -0.00155481 0.00499368 / 0.0607843)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"3px","inset":false}],"t":"shadow","s":"computed boxShadow of faq-row focus-visible (raw/components-computed.json)","d":"The 3px 6% ink ring controls paint on keyboard focus."}},"spacing":{"base":{"v":"4px","t":"dimension","s":"css-var --spacing (light); css-var --spacing resolved (raw/css-vars.json)","d":"Declared 4px spacing unit."},"container":{"2xl":{"v":"672px","t":"dimension","s":"css-var --container-2xl (light); css-var --container-2xl resolved (raw/css-vars.json)","d":"Declared container 2xl."},"3xl":{"v":"768px","t":"dimension","s":"css-var --container-3xl (light); css-var --container-3xl resolved (raw/css-vars.json)","d":"Declared container 3xl."},"4xl":{"v":"896px","t":"dimension","s":"css-var --container-4xl (light); css-var --container-4xl resolved (raw/css-vars.json)","d":"Declared container 4xl."},"5xl":{"v":"1024px","t":"dimension","s":"css-var --container-5xl (light); css-var --container-5xl resolved (raw/css-vars.json)","d":"Declared container 5xl."},"6xl":{"v":"1152px","t":"dimension","s":"css-var --container-6xl (light); css-var --container-6xl resolved (raw/css-vars.json)","d":"Declared container 6xl."},"7xl":{"v":"1280px","t":"dimension","s":"css-var --container-7xl (light); css-var --container-7xl resolved (raw/css-vars.json)","d":"Declared container 7xl."},"lg":{"v":"512px","t":"dimension","s":"css-var --container-lg (light); css-var --container-lg resolved (raw/css-vars.json)","d":"Declared container lg."},"md":{"v":"448px","t":"dimension","s":"css-var --container-md (light); css-var --container-md resolved (raw/css-vars.json)","d":"Declared container md."},"sm":{"v":"384px","t":"dimension","s":"css-var --container-sm (light); css-var --container-sm resolved (raw/css-vars.json)","d":"Declared container sm."},"xl":{"v":"576px","t":"dimension","s":"css-var --container-xl (light); css-var --container-xl resolved (raw/css-vars.json)","d":"Declared container xl."},"xs":{"v":"320px","t":"dimension","s":"css-var --container-xs (light); css-var --container-xs resolved (raw/css-vars.json)","d":"Declared container xs."}},"header-h":{"v":"52px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The floating nav pill height (52px)."},"header-rad":{"v":"26px","t":"dimension","s":"computed borderTopLeftRadius of header default (raw/components-computed.json)","d":"The nav pill's 26px radius."}},"motion":{"ping":{"v":"ping 1s cubic-bezier(0,0,.2,1) infinite","t":"other","s":"css-var --animate-ping (light); css-var --animate-ping resolved (raw/css-vars.json)","d":"Declared animation ping."},"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1) infinite","t":"other","s":"css-var --animate-pulse (light); css-var --animate-pulse resolved (raw/css-vars.json)","d":"Declared animation pulse."},"spin":{"v":"spin 1s linear infinite","t":"other","s":"css-var --animate-spin (light); css-var --animate-spin resolved (raw/css-vars.json)","d":"Declared animation spin."},"default":{"duration":{"v":"0.15s","t":"other","s":"css-var --default-transition-duration (light); css-var --default-transition-duration resolved (raw/css-vars.json)","d":"Declared default transition duration."},"easing":{"v":"cubic-bezier(.4,0,.2,1)","t":"other","s":"css-var --default-transition-timing-function (light); css-var --default-transition-timing-function resolved (raw/css-vars.json)","d":"Declared default transition easing."}}}},"light":{"color":{"background":{"page":{"v":"#fcf9f7","t":"color","s":"css-var --background (light); css-var --background resolved (raw/css-vars.json)","d":"The #fcf9f7 warm beige page."},"card":{"v":"#ffffff","t":"color","s":"css-var --card (light); css-var --card resolved (raw/css-vars.json)","d":"The #fff card surface."},"popover":{"v":"#ffffff","t":"color","s":"css-var --popover (light); css-var --popover resolved (raw/css-vars.json)","d":"The #fff popover surface."},"input":{"v":"#ffffff","t":"color","s":"css-var --input (light); css-var --input resolved (raw/css-vars.json)","d":"The #fff field fill."},"sidebar":{"v":"#fafafa","t":"color","s":"css-var --sidebar (light); css-var --sidebar resolved (raw/css-vars.json)","d":"The #fafafa sidebar surface."},"sidebar-accent":{"v":"#f5f5f5","t":"color","s":"css-var --sidebar-accent (light); css-var --sidebar-accent resolved (raw/css-vars.json)","d":"The #f5f5f5 sidebar accent."},"muted":{"v":"rgba(3, 3, 2, 0.04)","t":"color","s":"css-var --muted (light); css-var --muted resolved (raw/css-vars.json)","d":"The 4% ink muted fill."}},"action":{"primary":{"v":"#030302","t":"color","s":"css-var --primary (light); css-var --primary resolved (raw/css-vars.json)","d":"The #030302 primary action fill."},"secondary":{"v":"#ffffff","t":"color","s":"css-var --secondary (light); css-var --secondary resolved (raw/css-vars.json)","d":"The #fff secondary action fill."},"accent":{"v":"#427e8a","t":"color","s":"css-var --accent (light); css-var --accent resolved (raw/css-vars.json)","d":"The #427e8a teal accent."},"destructive":{"v":"#bb433a","t":"color","s":"css-var --destructive (light); css-var --destructive resolved (raw/css-vars.json)","d":"The #bb433a destructive fill."},"sidebar-primary":{"v":"#171717","t":"color","s":"css-var --sidebar-primary (light); css-var --sidebar-primary resolved (raw/css-vars.json)","d":"The #171717 sidebar primary."}},"text":{"foreground":{"v":"#030302","t":"color","s":"css-var --foreground (light); css-var --foreground resolved (raw/css-vars.json)","d":"The #030302 primary text."},"card-foreground":{"v":"#030302","t":"color","s":"css-var --card-foreground (light); css-var --card-foreground resolved (raw/css-vars.json)","d":"Card text #030302."},"popover-foreground":{"v":"#030302","t":"color","s":"css-var --popover-foreground (light); css-var --popover-foreground resolved (raw/css-vars.json)","d":"Popover text #030302."},"primary-foreground":{"v":"#030302","t":"color","s":"css-var --primary-foreground (light); css-var --primary-foreground resolved (raw/css-vars.json)","d":"Declared #030302 (light surfaces read white text on the black pills — the measured pairing)."},"accent-foreground":{"v":"#030302","t":"color","s":"css-var --accent-foreground (light); css-var --accent-foreground resolved (raw/css-vars.json)","d":"Declared #030302."},"secondary-foreground":{"v":"#030302","t":"color","s":"css-var --secondary-foreground (light); css-var --secondary-foreground resolved (raw/css-vars.json)","d":"Declared #030302."},"muted-foreground":{"v":"rgba(3, 3, 2, 0.5)","t":"color","s":"css-var --muted-foreground (light); css-var --muted-foreground resolved (raw/css-vars.json)","d":"The 50% ink muted text."},"sidebar-foreground":{"v":"#0a0a0a","t":"color","s":"css-var --sidebar-foreground (light); css-var --sidebar-foreground resolved (raw/css-vars.json)","d":"The #0a0a0a sidebar text."},"sidebar-accent-foreground":{"v":"#171717","t":"color","s":"css-var --sidebar-accent-foreground (light); css-var --sidebar-accent-foreground resolved (raw/css-vars.json)","d":"The #171717 sidebar accent text."},"sidebar-primary-foreground":{"v":"#fafafa","t":"color","s":"css-var --sidebar-primary-foreground (light); css-var --sidebar-primary-foreground resolved (raw/css-vars.json)","d":"The #fafafa text on sidebar primary."},"on-primary":{"v":"#ffffff","t":"color","s":"computed color of try-cta default (raw/components-computed.json)","d":"The white text the black pills paint (declared --primary-foreground is #030302, so the pairing is measured here)."},"footer":{"v":"#ffffff","t":"color","s":"computed color of footer-link default (raw/components-computed.json)","d":"The white text inside the black footer."}},"border":{"border":{"v":"rgba(3, 3, 2, 0.09)","t":"color","s":"css-var --border (light); css-var --border resolved (raw/css-vars.json)","d":"The 9% ink hairline."},"ring":{"v":"rgba(3, 3, 2, 0.12)","t":"color","s":"css-var --ring (light); css-var --ring resolved (raw/css-vars.json)","d":"The 12% ink focus ring."},"sidebar-border":{"v":"#e5e5e5","t":"color","s":"css-var --sidebar-border (light); css-var --sidebar-border resolved (raw/css-vars.json)","d":"The #e5e5e5 sidebar border."},"sidebar-ring":{"v":"#a1a1a1","t":"color","s":"css-var --sidebar-ring (light); css-var --sidebar-ring resolved (raw/css-vars.json)","d":"The #a1a1a1 sidebar ring."}}},"component":{"button-height-nav":{"v":"36px","t":"dimension","s":"computed height of try-cta default (raw/components-computed.json)","d":"The 36px header CTA."},"button-height-large":{"v":"48px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The 48px hero/platform CTA."},"toggle-segment":{"v":"112px","t":"dimension","s":"computed width of billing-toggle default (raw/components-computed.json)","d":"A billing-toggle segment (112px)."},"menu-button":{"v":"24px","t":"dimension","s":"computed width of m-menu-button default (raw/components-computed.json)","d":"The 24px mobile menu glyph."},"faq-row":{"v":"57.2031px","t":"dimension","s":"computed height of faq-row default (raw/components-computed.json)","d":"The FAQ accordion row height."},"nav-link-size":{"v":"16px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"Nav link 16px."},"button":{"state-move":{"v":{"default":{"backgroundColor":"rgb(3, 3, 2)","color":"rgb(255, 255, 255)"},"hover":{"backgroundColor":"rgba(3, 3, 2, 0.75)","color":"rgb(255, 255, 255)"}},"t":"other","s":"computed styles of try-cta default vs hover (raw/components-computed.json)","d":"The black pill's signature move: the fill lifts to 75% ink on hover."}}}},"dark":{}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => (s !== null && typeof s === 'object' ? JSON.stringify(s) : String(s)).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — craft</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
 </body>
 </html>

@@ -1,42 +1,19 @@
-# Craft patterns — page layouts
+# Patterns
 
-Captured signed out on 2026-11-12. Heights are the painted `scrollHeight` of each route at 1440 wide; mobile is 390 wide at DPR 2.
+How the public pages combine the controls. Signed-in patterns were not reached.
 
-## Shell
+**Floating pill shell.** A black promo bar sits on the page. Under it, a white 52px pill holds the wordmark, text links, two menus, Log in, and an ink "Try Craft Free" pill. On a phone the pill shrinks to logo, CTA, and a menu button that opens a drawer.
 
-- **Floating nav pill (920x52, 26px radius).** A white rounded-full bar: CRAFT wordmark (800-weight display cut), then Product / Imagine / Community / Pricing / Learn / Download text links (16px 400 ink), Log in (links out to docs.craft.do) and a black 36px Try Craft Free pill that lifts to 75% ink on hover. On mobile it compresses to wordmark + Try pill + a 24px menu glyph.
+**Hero on a collage.** A 66px Untitled Serif headline sits on a sky illustration. The hero CTA is a light pill. Product screenshots in the collage are marketing art, not a signed-in document.
 
-## Home (`/`, H=11057)
+**Product menu.** Product opens a two-column panel: four feature cards (Plan, Write, Organize, Customize) and a stack of What's New, Imagine, Help and Support, Blog. Community opens three external cards. Both stay on `/`.
 
-- **Hero.** 66px/66px 400 Untitled Serif ("Your space for notes, tasks, and big ideas") on a sky-blue torn-paper collage; a white 48px Try Craft Free pill under it; a product screenshot collage closes the fold.
-- **Sections.** Long marketing page — feature bands, the imagine/templates gallery links and the footer.
+**Pricing.** Yearly is painted. Cards are Starter (SGD 0), Plus (SGD 6.2 / month in this region), and Team ($5 / member / month). Family and Enterprise sit further down the page. Get Started was not followed. The billing toggle was not flipped.
 
-## Pricing (`/pricing`, H=8015; mobile H=10153)
+**Download.** Two white cards, Desktop and Mobile, with ink pills for Download, App Store, Play Store, Microsoft, and Open. None of those were followed.
 
-- **Billing toggle.** A muted rounded-full pill holding two 112x40 segments (Yearly / Monthly); the selected segment paints white with a soft shadow.
-- **Plan cards.** PLUS at 273x463 (name, serif price, /month, feature list, CTA); TEAM in the 24px-radius `.shadow-block` card (491x578 measured on the grid cell); a students card. Prices render SGD (the served region): the serif figures are 54px.
-- **FAQ.** 1000px accordion rows (14px 500) with a 3px 6% ink ring on keyboard focus.
+**Empty auth wall.** A separate app at docs.craft.do. A sky background, a pale card, an empty email field, a blue Continue button, and three identity buttons. That is both login and signup. The branch stopped there.
 
-## Download (`/download`, H=2654)
+**404.** A full-bleed sky with a serif heading and one quiet pill. "Let us know" was not clicked.
 
-- 54px serif "Get Craft for Free" and platform download buttons (226x48 pills); never used.
-
-## Imagine (`/imagine`, H=8853) · Learn (`/learn`, H=3945) · Write (`/write`, H=6011)
-
-- 54-70px serif headings; /imagine carries template cards (~712x399 — Blog Publisher, Reading Tracker) linking to guided flows; /learn and /write are editorial feature pages.
-
-## Blog (`/blog`, H=8102)
-
-- The blog index in the same shell.
-
-## Footer
-
-- A 24px-radius black panel (1409x563 on home): white 14px link columns, social links and the legal row — the only painted dark surface on the site.
-
-## Mobile (390 wide, DPR 2)
-
-- The pill header holds wordmark + Try pill + 24px menu glyph. The menu opens as a floating overlay: accordion rows (Product expands to Plan/Write/Organize/Customize/What's New/Imagine/Help and Support/Blog with coloured dots), chevron rows for Imagine/Pricing/Learn/Download, a Community accordion, and a black "Download for iOS" pill at the foot. The hero drops to 48px.
-
-## Theme behaviour
-
-Single light theme — no dark var set exists. The black footer and pill fills are painted surfaces, not a mode.
+**Footer.** One black rounded panel with five link columns, a locale button that did not open a dialog in this capture, and social icons that were not followed.

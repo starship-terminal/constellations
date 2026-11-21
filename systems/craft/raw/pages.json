@@ -1,0 +1,98 @@
+[
+  {
+    "name": "pricing",
+    "requested": "https://www.craft.do/pricing",
+    "final": "https://www.craft.do/pricing",
+    "status": 200,
+    "title": "Craft Pricing Plans",
+    "h1": "Choose The Plan That’s Right For You"
+  },
+  {
+    "name": "download",
+    "requested": "https://www.craft.do/download",
+    "final": "https://www.craft.do/download",
+    "status": 200,
+    "title": "Download Craft for Free",
+    "h1": "Get Craft for Free"
+  },
+  {
+    "name": "imagine",
+    "requested": "https://www.craft.do/imagine",
+    "final": "https://www.craft.do/imagine",
+    "status": 200,
+    "title": "Imagine with Craft",
+    "h1": "Imagine the possibilities when everything’s connected to Craft."
+  },
+  {
+    "name": "learn",
+    "requested": "https://www.craft.do/learn",
+    "final": "https://www.craft.do/learn",
+    "status": 200,
+    "title": "Learn Craft – Video Tutorials & Guides",
+    "h1": "Master Craft in under an hour"
+  },
+  {
+    "name": "write",
+    "requested": "https://www.craft.do/write",
+    "final": "https://www.craft.do/write",
+    "status": 200,
+    "title": "One Writing Experience, Every Device",
+    "h1": "One Writing Experience, Every Device"
+  },
+  {
+    "name": "plan",
+    "requested": "https://www.craft.do/plan",
+    "final": "https://www.craft.do/plan",
+    "status": 200,
+    "title": "Plan your day your way",
+    "h1": "Plan your day your way"
+  },
+  {
+    "name": "organize",
+    "requested": "https://www.craft.do/organize",
+    "final": "https://www.craft.do/organize",
+    "status": 200,
+    "title": "Structure that adapts to Your thinking",
+    "h1": "Structure that adapts to Your thinking"
+  },
+  {
+    "name": "customize",
+    "requested": "https://www.craft.do/customize",
+    "final": "https://www.craft.do/customize",
+    "status": 200,
+    "title": "Make it unmistakably yours",
+    "h1": "Make it unmistakably yours"
+  },
+  {
+    "name": "blog",
+    "requested": "https://www.craft.do/blog",
+    "final": "https://www.craft.do/blog",
+    "status": 200,
+    "title": "Explore the Craft Blog",
+    "h1": ""
+  },
+  {
+    "name": "about",
+    "requested": "https://www.craft.do/about",
+    "final": "https://www.craft.do/about",
+    "status": 200,
+    "title": "About Craft",
+    "h1": "About Craft"
+  },
+  {
+    "name": "whats-new",
+    "requested": "https://www.craft.do/whats-new",
+    "final": "https://www.craft.do/whats-new",
+    "status": 200,
+    "title": "What’s new",
+    "h1": ""
+  },
+  {
+    "name": "notfound",
+    "requested": "https://www.craft.do/this-page-does-not-exist-capture-2026",
+    "final": "https://www.craft.do/this-page-does-not-exist-capture-2026",
+    "status": 404,
+    "title": "Page Not Found — Craft",
+    "h1": "Page Not Found | 404"
+  }
+]
