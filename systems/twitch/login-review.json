@@ -1,0 +1,137 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "public Playwright. No session was present. A prior signed-in walk was skipped.",
+  "probe": {
+    "url": "https://www.twitch.tv/settings/profile",
+    "result": "Must be logged in. Probe closed. This pass did not reopen it."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 2
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Browse",
+        "More Options",
+        "Search",
+        "Prime offers",
+        "Log In",
+        "Sign Up",
+        "User Menu",
+        "Live Channels sidebar",
+        "Directory category chips"
+      ],
+      "reached": [
+        "Browse",
+        "More Options",
+        "Search focus",
+        "Prime offers popover",
+        "Log In dialog",
+        "Sign Up dialog",
+        "User Menu",
+        "Directory",
+        "Live channels directory",
+        "Just Chatting category",
+        "Downloads"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Language",
+        "Dark Theme",
+        "Labeled Content",
+        "Manage Settings on the category notice"
+      ],
+      "reached": [
+        "Dark Theme switch, toggled and restored",
+        "Labeled Content submenu, switch not changed",
+        "Language checkbox menu, no box checked",
+        "Manage Settings href recorded, help article not opened"
+      ]
+    },
+    "create": {
+      "items": [
+        "Sign Up",
+        "Use phone number instead",
+        "Continue with Google",
+        "Continue with Amazon",
+        "Continue with Apple"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    {"name": "Home, light", "file": "screenshots/home-light-default.png"},
+    {"name": "Home, dark", "file": "screenshots/home-dark-default.png"},
+    {"name": "Home, phone, light", "file": "screenshots/home-light-phone.png"},
+    {"name": "Home, phone, dark", "file": "screenshots/home-dark-phone.png"},
+    {"name": "More Options", "file": "screenshots/home-dark-more.png"},
+    {"name": "User Menu", "file": "screenshots/home-dark-user-menu.png"},
+    {"name": "Labeled Content", "file": "screenshots/home-dark-labeled.png"},
+    {"name": "Prime offers", "file": "screenshots/home-dark-prime.png"},
+    {"name": "Search focus", "file": "screenshots/home-dark-search.png"},
+    {"name": "Log In, dark", "file": "screenshots/login-dark-default.png"},
+    {"name": "Log In, light", "file": "screenshots/login-light-default.png"},
+    {"name": "Log In, phone", "file": "screenshots/login-dark-phone.png"},
+    {"name": "Sign Up, dark", "file": "screenshots/signup-dark-dialog.png"},
+    {"name": "Sign Up, phone", "file": "screenshots/signup-dark-phone.png"},
+    {"name": "Sign Up field focus", "file": "screenshots/signup-dark-focus.png"},
+    {"name": "Directory, dark", "file": "screenshots/directory-dark-default.png"},
+    {"name": "Directory sort", "file": "screenshots/directory-dark-sort.png"},
+    {"name": "Channels", "file": "screenshots/channels-dark-default.png"},
+    {"name": "Just Chatting", "file": "screenshots/category-dark-default.png"},
+    {"name": "Language menu", "file": "screenshots/category-dark-language.png"},
+    {"name": "Downloads", "file": "screenshots/downloads-dark-default.png"}
+  ],
+  "walls": [
+    {
+      "control": "Log In",
+      "url": "https://www.twitch.tv/",
+      "asks": "Email or Username, Continue, Continue with Google, Continue with Amazon, Continue with Apple",
+      "stopped": true
+    },
+    {
+      "control": "Sign Up",
+      "url": "https://www.twitch.tv/",
+      "asks": "Email, Use phone number instead, Continue, Sign up with Google, Sign up with Amazon, Sign up with Apple",
+      "stopped": true
+    },
+    {
+      "control": "Trouble logging in?",
+      "url": "https://www.twitch.tv/user/account-recovery",
+      "asks": "Account recovery. Href only. Page not opened.",
+      "stopped": true
+    }
+  ],
+  "gaps": [
+    "Signed-in chat, settings, and following were not opened. No session was present.",
+    "https://www.twitch.tv/settings/profile was not re-probed. The known result is a login requirement.",
+    "Identity providers were not clicked.",
+    "Phone signup was not opened.",
+    "Search was focused and not submitted.",
+    "Channel pages in the sidebar were not opened.",
+    "Turbo, gift card, jobs, and legal hosts in More Options were not opened.",
+    "Follow on a category did not open a dialog from the click that landed. Its destination is unverified.",
+    "Manage Settings points at a help.twitch.tv article. The click did not navigate. The article was not opened."
+  ],
+  "not_submitted": [
+    "No email, username, phone, password, or code typed",
+    "No identity provider clicked",
+    "No form submitted",
+    "No account created",
+    "No captcha solved",
+    "No onboarding filled",
+    "No Prime game claimed",
+    "No language checkbox changed",
+    "No labeled-content switch changed"
+  ]
+}

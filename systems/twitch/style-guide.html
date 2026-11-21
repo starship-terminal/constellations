@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Twitch style guide</title>
+<style>
+  :root {
+    --page: #0e0e10;
+    --surface: #18181b;
+    --raised: #26262c;
+    --float: #323239;
+    --text: #efeff1;
+    --muted: #d3d3d9;
+    --hint: #848494;
+    --link: #bf94ff;
+    --accent: #9147ff;
+    --accent-hover: #772ce8;
+    --on-accent: #ffffff;
+    --secondary: rgba(83, 83, 95, 0.38);
+    --disabled: rgba(83, 83, 95, 0.55);
+    --border: rgba(222, 222, 227, 0.95);
+    --live: #eb0400;
+    --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --display: Roobert, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 14px/1.4 var(--font); }
+  main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 500; letter-spacing: -0.01em; }
+  h1 { font-size: 24px; line-height: 1.1; }
+  h2 { font-size: 18px; margin: 36px 0 12px; }
+  p { color: var(--muted); }
+  a { color: var(--link); }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .swatch { width: 120px; }
+  .chip { height: 56px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); }
+  .swatch span { display: block; margin-top: 6px; font-size: 12px; color: var(--hint); }
+  button, .pill { border: 0; border-radius: 9000px; height: 32px; padding: 0 12px; font: 600 14px/1.4 var(--font); }
+  .primary { background: var(--accent); color: var(--on-accent); }
+  .secondary { background: var(--secondary); color: var(--text); }
+  .overlay { background: #fff; color: #000; }
+  .disabled { background: var(--disabled); color: var(--text); }
+  .field { width: 320px; height: 32px; border: 0; border-radius: 8px; background: var(--surface); color: var(--text); padding: 0 12px; box-shadow: inset 0 0 0 1px var(--border); font: 14px var(--font); }
+  .field:focus { outline: none; box-shadow: 0 0 0 2px #a970ff, inset 0 0 0 2px #a970ff; }
+  .badge { background: var(--live); color: #fff; border-radius: 4px; padding: 1px 5px; font-size: 12px; }
+  .tag { background: var(--secondary); color: var(--text); border-radius: 9000px; padding: 2px 8px; font-size: 12px; }
+  .card { width: 280px; background: var(--page); }
+  .thumb { height: 158px; background: var(--raised); border-radius: 0; }
+  .card h3 { margin: 8px 0 2px; font-size: 14px; font-weight: 600; font-family: var(--font); }
+  .type-display { font: 400 60px/1 var(--display); }
+  .type-title { font: 500 24px/1.1 var(--display); letter-spacing: -0.24px; }
+  .type-heading { font: 500 18px/1.1 var(--display); letter-spacing: -0.18px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid rgba(83,83,95,0.48); }
+  code { font-family: monospace; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Twitch, signed out</h1>
+  <p>Values from computed styles on twitch.tv, 2026-11-21. The user-menu switch sets <code>tw-root--theme-dark</code> or <code>tw-root--theme-light</code>. This page shows the dark roles. Light page is #f7f7f8, light text is #0e0e10, light link is #5c16c5, light focus is #772ce8.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#0e0e10"></div><span>page #0e0e10</span></div>
+    <div class="swatch"><div class="chip" style="background:#18181b"></div><span>surface #18181b</span></div>
+    <div class="swatch"><div class="chip" style="background:#26262c"></div><span>raised #26262c</span></div>
+    <div class="swatch"><div class="chip" style="background:#efeff1"></div><span>text #efeff1</span></div>
+    <div class="swatch"><div class="chip" style="background:#d3d3d9"></div><span>secondary #d3d3d9</span></div>
+    <div class="swatch"><div class="chip" style="background:#9147ff"></div><span>accent #9147ff</span></div>
+    <div class="swatch"><div class="chip" style="background:#bf94ff"></div><span>link #bf94ff</span></div>
+    <div class="swatch"><div class="chip" style="background:#eb0400"></div><span>live #eb0400</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="type-title" style="color:var(--text)">Join Twitch today</p>
+  <p class="type-heading" style="color:var(--text)">Live on Twitch</p>
+  <p style="color:var(--text)">Body is Inter at 14px, weight 400, line-height 1.4. Headings are Roobert at 500.</p>
+  <p style="font-size:12px">Caption and the LIVE badge are 12px.</p>
+
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Sign Up</button>
+    <button class="secondary">Log In</button>
+    <button class="overlay">Sign Up</button>
+    <button class="disabled" disabled>Continue</button>
+    <span class="badge">LIVE</span>
+    <span class="tag">English</span>
+  </div>
+  <p></p>
+  <input class="field" placeholder="Search" aria-label="Search">
+
+  <h2>Card</h2>
+  <div class="card">
+    <div class="thumb"></div>
+    <h3>Channel title</h3>
+    <p style="margin:0">Category</p>
+    <div class="row" style="margin-top:8px"><span class="tag">English</span><span class="tag">Drops</span></div>
+  </div>
+
+  <h2>Scale</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td>Radius, control</td><td>8px</td></tr>
+    <tr><td>Radius, pill button and tag</td><td>9000px</td></tr>
+    <tr><td>Radius, LIVE badge</td><td>4px</td></tr>
+    <tr><td>Nav height</td><td>50px</td></tr>
+    <tr><td>Button height</td><td>32px, search and form buttons 36px</td></tr>
+    <tr><td>Timing</td><td>100ms, 150ms, 200ms</td></tr>
+  </table>
+</main>
+</body>
+</html>

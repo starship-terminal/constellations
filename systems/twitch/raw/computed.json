@@ -1,0 +1,104 @@
+{
+  "captured": "2026-11-21",
+  "route": "playwright-public",
+  "elements": {
+    "home": {
+      "body": {
+        "selector": "body",
+        "text": "Skip to... ⌥ P Browse Log In Sign Up Live Channels xQc Grand",
+        "backgroundColor": "rgb(14, 14, 16)",
+        "color": "rgb(239, 239, 241)",
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "height": 900,
+        "width": 1440,
+        "boxShadow": "none"
+      },
+      "topNav": {
+        "selector": "nav.top-nav",
+        "text": "Skip to... ⌥ P Browse Log In Sign Up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(239, 239, 241)",
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "height": 50,
+        "width": 1440,
+        "boxShadow": "none"
+      },
+      "browse": {
+        "selector": "[data-a-target=\"browse-link\"]",
+        "text": "Browse",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(239, 239, 241)",
+        "fontFamily": "Roobert, Tajawal, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "height": 50,
+        "width": 60,
+        "boxShadow": "none"
+      },
+      "search": {
+        "selector": "input[aria-label=\"Search Input\"]",
+        "text": "",
+        "backgroundColor": "rgb(24, 24, 27)",
+        "color": "rgb(239, 239, 241)",
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "21px",
+        "letterSpacing": "normal",
+        "borderRadius": "8px 0px 0px 8px",
+        "height": 36,
+        "width": 356,
+        "boxShadow": "rgba(222, 222, 227, 0.95) 0px 0px 0px 1px inset"
+      },
+      "login": {
+        "selector": "[data-a-target=\"login-button\"]",
+        "text": "Log In",
+        "backgroundColor": "rgba(83, 83, 95, 0.38)",
+        "color": "rgb(239, 239, 241)",
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "9000px",
+        "height": 32,
+        "width": 69,
+        "boxShadow": "none"
+      },
+      "signup": {
+        "selector": "[data-a-target=\"signup-button\"]",
+        "text": "Sign Up",
+        "backgroundColor": "rgb(119, 44, 232)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "9000px",
+        "height": 32,
+        "width": 81,
+        "boxShadow": "rgb(119, 44, 232) 0px 0px 6px 0px"
+      }
+    },
+    "signupHover": {
+      "backgroundColor": "rgb(119, 44, 232)"
+    },
+    "signupPressed": {
+      "backgroundColor": "rgb(92, 22, 197)"
+    }
+  }
+}
