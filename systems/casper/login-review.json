@@ -1,0 +1,78 @@
+{
+  "product": "Casper",
+  "domain": "casper.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "region": "United States storefront at https://casper.com. Prices shown in USD.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header account icon",
+      "url": "https://casper.com/account/login",
+      "title": "Account",
+      "painted": true,
+      "headings": ["Login"],
+      "asksFor": [
+        { "label": "E-mail", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Forgot your password?", "Login", "Sign up"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email and password were empty. Login was not clicked. Forgot your password was not opened. No form was submitted."
+    },
+    {
+      "control": "login wall Sign up",
+      "url": "https://casper.com/account/register",
+      "title": "Create Account",
+      "painted": true,
+      "headings": ["Sign up"],
+      "asksFor": [
+        { "label": "First name", "type": "text", "required": true },
+        { "label": "Last name", "type": "text", "required": true },
+        { "label": "E-mail", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Email me exclusive offers and product info", "Create account", "Login"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Every field was empty. The offers checkbox was already checked on load and was not toggled. Create account was not clicked. No form was submitted."
+    },
+    {
+      "control": "footer Unlock Exclusive Offers subscribe",
+      "url": "https://casper.com/account/login",
+      "title": "Account",
+      "painted": true,
+      "headings": ["Unlock Exclusive Offers & Product Info"],
+      "asksFor": [
+        { "label": "Enter your email address", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Subscribe"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Subscribe was not clicked. Nothing was typed."
+    },
+    {
+      "control": "header cart",
+      "url": "https://casper.com/cart",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["cart empty"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Cart is a checkout wall. It was not opened. Add to cart was not clicked."
+    }
+  ]
+}
