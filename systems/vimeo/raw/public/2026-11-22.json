@@ -1,0 +1,259 @@
+{
+  "date": "2026-11-22",
+  "note": "Public signed-out captures. Query strings stripped. Email fields left empty. login-extracted is not-started.",
+  "shots": {
+    "public-home-desktop": {
+      "href": "https://vimeo.com/",
+      "title": "Vimeo - All-in-One Video Platform",
+      "h1": "YOUR COMPLETE VIDEO PLATFORM",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-home-phone": {
+      "href": "https://vimeo.com/",
+      "title": "Vimeo - All-in-One Video Platform",
+      "h1": "YOUR COMPLETE VIDEO PLATFORM",
+      "w": 390,
+      "h": 844,
+      "dpr": 2,
+      "vv": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      }
+    },
+    "public-footer-desktop": {
+      "href": "https://vimeo.com/",
+      "title": "Vimeo - All-in-One Video Platform",
+      "h1": "YOUR COMPLETE VIDEO PLATFORM",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-pricing-desktop": {
+      "href": "https://vimeo.com/upgrade-plan",
+      "title": "Pricing plans | From free plans to enterprise solutions",
+      "h1": "The ultimate ad-free player",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-pricing-phone": {
+      "href": "https://vimeo.com/upgrade-plan",
+      "title": "Pricing plans | From free plans to enterprise solutions",
+      "h1": "The ultimate ad-free player",
+      "w": 390,
+      "h": 844,
+      "dpr": 2,
+      "vv": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      }
+    },
+    "public-features-desktop": {
+      "href": "https://vimeo.com/features",
+      "title": "Video Platform Features",
+      "h1": "Video platform features",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-whats-new-desktop": {
+      "href": "https://vimeo.com/product-updates",
+      "title": "What's New at Vimeo: Releases, Improvements, Fixes",
+      "h1": "See what's new: Vimeo product updates & releases",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-about-desktop": {
+      "href": "https://vimeo.com/about",
+      "title": "About Vimeo",
+      "h1": "Video simplified for all",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-watch-desktop": {
+      "href": "https://vimeo.com/watch",
+      "title": "Watch Free Videos, Films, and Shorts - No Ads",
+      "h1": "",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-solutions-desktop": {
+      "href": "https://vimeo.com/solutions",
+      "title": "Video Solutions for Enterprise, SMB, Creatives, and Education",
+      "h1": "Video solutions and use cases",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-enterprise-desktop": {
+      "href": "https://vimeo.com/enterprise",
+      "title": "Vimeo Enterprise Video Platform for Businesses & Brands",
+      "h1": "VIMEO FOR ENTERPRISE",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-video-player-desktop": {
+      "href": "https://vimeo.com/features/video-player",
+      "title": "Ad-Free Online Video Player: Customize Your Media with Vimeo",
+      "h1": "HIGH-DEFINITION ONLINE VIDEO PLAYER",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-customers-desktop": {
+      "href": "https://vimeo.com/customers",
+      "title": "Customer Stories",
+      "h1": "How our customers inspire and grow with Vimeo",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "public-blog-desktop": {
+      "href": "https://vimeo.com/blog",
+      "title": "The Vimeo Blog",
+      "h1": "",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "login-wall-desktop": {
+      "href": "https://vimeo.com/log_in",
+      "title": "Log in to Vimeo",
+      "h1": "",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "login-wall-phone": {
+      "href": "https://vimeo.com/log_in",
+      "title": "Log in to Vimeo",
+      "h1": "",
+      "w": 390,
+      "h": 844,
+      "dpr": 2,
+      "vv": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      }
+    },
+    "signup-wall-desktop": {
+      "href": "https://vimeo.com/join",
+      "title": "Join Vimeo",
+      "h1": "",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "signup-wall-phone": {
+      "href": "https://vimeo.com/join",
+      "title": "Join Vimeo",
+      "h1": "",
+      "w": 390,
+      "h": 844,
+      "dpr": 2,
+      "vv": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      }
+    },
+    "public-video-desktop": {
+      "href": "https://vimeo.com/1236790091",
+      "title": "Ouais. | Videos & Movies on Vimeo",
+      "h1": "Ouais.",
+      "w": 1440,
+      "h": 900,
+      "dpr": 2,
+      "png": "2880x1800",
+      "signedOut": true,
+      "source": "T3 preview incognito, 2026-11-22. Headless Chromium hit a Cloudflare verify wall on the same URL and that shot was discarded."
+    },
+    "public-drawer-phone": {
+      "href": "https://vimeo.com/",
+      "w": 390,
+      "h": 844,
+      "dpr": 2,
+      "png": "780x1688",
+      "source": "T3 preview incognito"
+    }
+  }
+}

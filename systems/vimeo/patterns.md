@@ -8,7 +8,7 @@ Screenshots: [screenshots/marketing-light-desktop.png](screenshots/marketing-lig
 
 ## Watch feed
 
-`https://vimeo.com/` redirects to `https://vimeo.com/watch` for a signed-out visitor. The page background is `#f6f8fa`. A left nav lists Explore, Staff Picks, Feed, Channels, Categories, Groups, and On Demand. The top bar has search, Pricing, Log in, and Join. Category chips sit above video cards. This is the public feed, not a signed-in library. No screenshot: the preview browser did not produce frames.
+`https://vimeo.com/watch` is the signed-out feed. The page background is `#f6f8fa`. A left nav lists Explore, Staff Picks, Feed, Channels, Categories, Groups, and On Demand. The top bar has search, Pricing, Log in, and Join. Category chips sit above video cards. This is the public feed, not a signed-in library. Screenshot: [screenshots/public-watch-desktop.png](screenshots/public-watch-desktop.png). A public video page, [https://vimeo.com/1236790091](https://vimeo.com/1236790091), loaded signed out: [screenshots/public-video-desktop.png](screenshots/public-video-desktop.png).
 
 ## Pricing
 
@@ -16,4 +16,4 @@ Screenshots: [screenshots/marketing-light-desktop.png](screenshots/marketing-lig
 
 ## Login
 
-Log in opens a dialog, and `https://vimeo.com/login` redirects to `https://vimeo.com/log_in`. The form is Continue with Google, Facebook, or Apple, then an email field and Continue with email. That is not an email-only form, so no address was entered and no account was created. A hidden Stripe iframe was present in the page; it was not a checkout and nothing was submitted.
+Log in opens `https://vimeo.com/log_in`. Join opens `https://vimeo.com/join`. On 2026-11-22 both painted the same empty wall: Continue with Google, Facebook, or Apple, then an email field and Continue with email. The email field was left empty. Nothing was submitted. Screenshots: [screenshots/login-wall-desktop.png](screenshots/login-wall-desktop.png), [screenshots/signup-wall-desktop.png](screenshots/signup-wall-desktop.png). The control map is [site-tree.md](site-tree.md).

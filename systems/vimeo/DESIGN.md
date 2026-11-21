@@ -238,7 +238,7 @@ Good for: Video product marketing and a signed-out watch shell: cyan brand actio
 
 Captured 2026-11-19, signed out (marketing, watch feed, pricing, and the login dialog; no account created). Themes: light.
 
-Public signed-out surfaces of Vimeo (vimeo.com), captured 2026-11-19. The pages are the marketing solution page, the signed-out watch feed, the pricing page, and the signed-out login dialog. No account was created. Themes observed: light only. Widths measured: 1440 and 390 on marketing, 1169 on the first watch read, 390 on login and the phone watch shell.
+Public signed-out surfaces of Vimeo (vimeo.com). Tokens were read on 2026-11-19 from the marketing page, the signed-out watch feed, pricing, and the login wall. A 2026-11-22 refresh mapped the public control tree into [site-tree.md](site-tree.md) and photographed the homepage, four header menus, the footer, pricing, features, what's new, about, solutions, enterprise, the video player page, customer stories, the blog, the signed-out watch feed, one public video, the phone homepage and menu drawer, and the empty login and signup walls. No account was created. Themes observed: light on the marketing home, and a dark features index. Widths measured: 1440 and 390. `login-extracted` stays not-started. catalog.json was left alone.
 
 ## Colors
 
@@ -301,11 +301,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The preview browser returned "The browser is not producing screenshot frames" on every snapshot. Watch, pricing, and login have computed-style evidence and no preview screenshot. The marketing screenshots were taken later in headless Playwright on the same public URL, which had already loaded without a Cloudflare challenge. They are 256-colour PNGs. Read colours from the tokens.
+The 2026-11-19 pass could not screenshot watch, pricing, or login in the preview browser. Those pages were photographed on 2026-11-22. The new shots are full-colour PNGs at 2×. Older marketing shots under `screenshots/marketing-light-*` are 256-colour PNGs. Read colours from the tokens.
 
-Pricing figures on `/upgrade-plan` were shown in Singapore dollars. Those amounts are geo-priced and are not tokens. The plan card radius computed as `36.8px`, while `--vimeo-radii-3xl` is `36px`. The card token keeps the computed value.
+Pricing figures on `/upgrade-plan` were shown in Singapore dollars on both passes. Those amounts are geo-priced and are not tokens. The plan card radius computed as `36.8px`, while `--vimeo-radii-3xl` is `36px`. The card token keeps the computed value.
 
-`--vimeo-fontWeights-regular` computed as `350`. Several buttons computed `font-weight: 400` on `ABCRepro-Medium`. Both readings are kept. Dark mode was not present on these signed-out pages.
+`--vimeo-fontWeights-regular` computed as `350`. Several buttons computed `font-weight: 400` on `ABCRepro-Medium`. Both readings are kept. The marketing home stayed light. The features index painted a dark page. That dark page was photographed and was not turned into a dark token set.
+
+A public video URL loaded in the preview browser and hit a Cloudflare verify wall in headless Chromium. The wall shot was discarded. The checkbox was not clicked.
 
 ### Do and don't (from README.md)
 
