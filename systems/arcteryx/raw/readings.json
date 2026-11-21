@@ -1,0 +1,143 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://arcteryx.com/ca/en",
+  "requested": "https://arcteryx.com",
+  "region": "Canada English storefront. https://arcteryx.com redirected to https://arcteryx.com/ca/en. Title says Arc'teryx Canada. The utility bar shows a Canadian flag and EN. Prices on the product page read as dollar amounts with no USD label. No second regional slug was created.",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2
+  },
+  "screenshots": "2880 by 1800 PNG",
+  "title": "Outdoor Clothing, Technical Outerwear, & Accessories | Arc'teryx Canada",
+  "cookie": "OneTrust banner was closed with the close control. Allow All was not clicked. No preference was submitted.",
+  "body": {
+    "color": "rgb(26, 26, 26)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "helvetica-now-display, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px"
+  },
+  "main": {
+    "backgroundColor": "rgb(255, 255, 255)"
+  },
+  "promo": {
+    "text": "Shop Gift Guide | Free shipping & returns",
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "0.32px",
+    "height": 40
+  },
+  "nav": {
+    "color": "rgb(26, 26, 26)",
+    "fontFamily": "helvetica-now-display, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "0.32px",
+    "lineHeight": "24px"
+  },
+  "search": {
+    "backgroundColor": "rgb(245, 245, 245)",
+    "borderRadius": "41px",
+    "width": 142,
+    "height": 32
+  },
+  "hero": {
+    "text": "NEW TOURING KITS",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "elan-itc-pro, sans-serif",
+    "fontSize": "32px",
+    "fontWeight": "400",
+    "lineHeight": "32px",
+    "textTransform": "uppercase"
+  },
+  "cta": {
+    "text": "Shop women's",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "helvetica-now-display, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "0.32px",
+    "width": 160,
+    "height": 44,
+    "border": "1px solid rgb(178, 178, 178)",
+    "borderRadius": "0px"
+  },
+  "logo": {
+    "viewBox": "0 0 153 92",
+    "width": "76",
+    "height": "45",
+    "fill": "var(--colour-black)"
+  },
+  "category": {
+    "url": "https://arcteryx.com/ca/en/c/womens/shell-jackets",
+    "h1": "SHELL JACKETS",
+    "color": "rgb(26, 26, 26)",
+    "fontFamily": "elan-itc-pro, sans-serif",
+    "fontSize": "32px",
+    "fontWeight": "400",
+    "textTransform": "uppercase"
+  },
+  "product": {
+    "url": "https://arcteryx.com/ca/en/shop/womens/incendia-jacket-9862",
+    "h1": "INCENDIA JACKET WOMEN'S",
+    "color": "rgb(26, 26, 26)",
+    "fontFamily": "elan-itc-pro, sans-serif",
+    "fontSize": "26px",
+    "fontWeight": "400",
+    "lineHeight": "26px",
+    "textTransform": "uppercase",
+    "price": {
+      "text": "$1,150.00",
+      "color": "rgb(26, 26, 26)",
+      "fontFamily": "helvetica-now-display, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px"
+    },
+    "bag": {
+      "text": "Add to cart",
+      "width": 488,
+      "height": 54,
+      "backgroundColor": "rgb(26, 26, 26)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "0px",
+      "labelFontFamily": "helvetica-now-display, sans-serif",
+      "labelFontSize": "16px",
+      "labelFontWeight": "700"
+    }
+  },
+  "about": {
+    "url": "https://arcteryx.com/ca/en/explore/whoweare",
+    "h1": "WHO WE ARE",
+    "color": "rgb(26, 26, 26)",
+    "fontFamily": "elan-itc-pro, sans-serif",
+    "fontSize": "32px",
+    "fontWeight": "400",
+    "sub": "Obsessively designed gear for mountain athletes.",
+    "subFontFamily": "helvetica-now-display, sans-serif",
+    "subFontSize": "38px",
+    "subFontWeight": "300"
+  },
+  "cssVars": {
+    "--colour-black": "#1A1A1A",
+    "--colour-copy": "#1A1A1A",
+    "--colour-white": "#ffffff",
+    "--colour-grey-background": "#e9e9e9",
+    "--colour-grey-item-background": "#fafafa",
+    "--colour-grey-pinline": "#cccccc",
+    "--colour-grey-inactive": "#b2b2b2",
+    "--colour-grey-medium": "#666666",
+    "--colour-grey-medium-accessible": "#767676",
+    "--colour-grey-dark": "#333333",
+    "--colour-black-gradient": "#646464",
+    "--colour-red-3": "#990000",
+    "--colour-green-3": "#227733",
+    "--colour-blue-3": "#31668f",
+    "--font-helvetica": "\"helvetica-now-display\", sans-serif",
+    "--font-elan": "\"elan-itc-pro\", sans-serif"
+  }
+}
