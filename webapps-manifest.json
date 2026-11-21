@@ -6668,9 +6668,9 @@
         696
       ],
       "description": "AI Notes and Meetings",
-      "status": "pending",
-      "package": null,
-      "notes": "https://voicenotes.com/app redirected to the login page. Session was not present. Skipped.",
+      "status": "captured",
+      "package": "systems/voicenotes",
+      "notes": "https://voicenotes.com/app redirected to the login page. Session was not present. Skipped. Public walk 2026-11-21: the public site tree is in systems/voicenotes/site-tree.md. Login and signup stop at empty walls that offer Google, Microsoft, Apple, Email, Twitter, and SSO. Email was not expanded. Nothing was typed. No identity provider was clicked. No form was submitted. login-review.json is a stop note and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1707 at 4a0d794fe9f4. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 20
