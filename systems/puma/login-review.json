@@ -1,0 +1,51 @@
+{
+  "product": "Puma",
+  "domain": "us.puma.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header My account, and the Login tab",
+      "url": "https://us.puma.com/us/en/account/login",
+      "title": "PUMA Online Shop - Account Login | PUMA",
+      "painted": true,
+      "headings": ["My account", "Sign in"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true },
+        { "label": "Remember me on this computer", "type": "checkbox", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Show password", "Login", "Forgotten your password?", "Join Us"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Fields were empty. Login was disabled and was not clicked. Show password was not toggled. Forgotten your password was not clicked. No identity provider was on the form. Facebook in the footer is a social link and was not used to sign in. No form was submitted."
+    },
+    {
+      "control": "Join Us tab on the same account page",
+      "url": "https://us.puma.com/us/en/account/login?action=register",
+      "title": "PUMA Online Shop - Account Register | PUMA",
+      "painted": true,
+      "headings": ["My account", "Sign in"],
+      "asksFor": [
+        { "label": "First Name", "type": "text", "required": true },
+        { "label": "Last Name", "type": "text", "required": true },
+        { "label": "Email", "type": "email", "required": true },
+        { "label": "Password", "type": "password", "required": true },
+        { "label": "Add me to the PUMA mailing list", "type": "checkbox", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Show password", "Create account", "Login"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Fields were empty. Create account was disabled and was not clicked. The mailing-list checkbox arrived pre-checked. It was not toggled and the form was not submitted. No provider was on the form."
+    }
+  ]
+}
