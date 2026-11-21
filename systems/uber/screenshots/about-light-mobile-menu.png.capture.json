@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "screenshot": "about-light-mobile-menu.png",
+  "requested": {
+    "w": 390,
+    "h": 844
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": null
+  },
+  "url": "https://www.uber.com/us/en/about/",
+  "title": null,
+  "heading": null,
+  "note": "Public signed-out capture, 2026-11-21. Quantized to 256 colours after measurement."
+}

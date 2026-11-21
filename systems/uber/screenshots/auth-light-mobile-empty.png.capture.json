@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "screenshot": "auth-light-mobile-empty.png",
+  "requested": {
+    "w": 390,
+    "h": 844
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "url": "https://auth.uber.com/v2/",
+  "title": "Sign up or Log in with Uber",
+  "heading": "What's your phone number or email?",
+  "note": "Public signed-out capture, 2026-11-21. Quantized to 256 colours after measurement."
+}

@@ -1,42 +1,54 @@
 {
   "href": "https://auth.uber.com/v2/",
   "title": "Sign up or Log in with Uber",
-  "entered": "nothing. No phone, email, card, or continue click.",
+  "entered": "nothing. No phone, email, code, or continue click. Google and Apple were not clicked.",
   "viewport": {
-    "iw": 1169,
-    "ih": 731,
+    "iw": 1440,
+    "ih": 900,
     "dpr": 2
   },
   "heading": {
     "text": "What's your phone number or email?",
-    "font": "-apple-system",
     "size": "24px",
     "weight": "400",
-    "color": "rgb(0, 0, 0)"
+    "font": "-apple-system, \"system-ui\", SegoeUI, Roboto, Helvetica, Arial, sans-serif, AppleColorEmoji, SegoeUIEmoji, SegoeUISymbol",
+    "color": "rgb(0, 0, 0)",
+    "lh": "30px"
   },
   "field": {
+    "ph": "Enter phone number or email",
     "bg": "rgb(246, 246, 246)",
-    "radius": "8px",
-    "height": 48,
-    "borderFocus": "2px rgb(0, 0, 0)",
-    "placeholder": "Enter phone number or email"
+    "color": "rgb(0, 0, 0)",
+    "size": "16px",
+    "radius": "0px",
+    "border": "0px none rgb(0, 0, 0)",
+    "h": 24,
+    "w": 308
   },
   "continue": {
-    "bg": "rgba(224, 224, 224, 0.6)",
+    "bg": "rgb(17, 17, 17)",
     "color": "rgb(252, 252, 252)",
     "radius": "8px",
-    "height": 48,
-    "pad": "14px 16px",
-    "note": "empty-field disabled fill, matches --base-background-disabled"
+    "h": 48,
+    "disabled": null
   },
-  "social": {
-    "bg": "rgba(224, 224, 224, 0.6)",
-    "color": "rgb(0, 0, 0)",
-    "labels": [
-      "Continue with Google",
-      "Continue with Apple"
-    ]
-  },
+  "social": [
+    {
+      "text": "Continue with Google",
+      "bg": "rgb(236, 236, 236)",
+      "radius": "8px",
+      "h": 48
+    },
+    {
+      "text": "Continue with Apple",
+      "bg": "rgba(235, 235, 235, 0.933)",
+      "radius": "8px",
+      "h": 48
+    }
+  ],
   "consent": "You consent to receive a verification code by text or Whatsapp. Message and data rates may apply.",
-  "gap": "Signup and login stop at a phone-or-email wall. Not entered."
+  "gap": "Signup and login stop at a phone-or-email wall. Not entered.",
+  "captured": "2026-11-21",
+  "loginExtracted": "not-started",
+  "note": "Continue computed to #111111 with #fcfcfc text at rest on an empty field. The 2026-11-19 reading of a disabled fill was not repeated. Nothing was typed, so no validation state was produced."
 }

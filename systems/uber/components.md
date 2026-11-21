@@ -36,7 +36,7 @@ Sign up pill, rest. White on the black header.
 
 Drive page "Get started" is the inverse: white fill, dark text, 8px radius, on a black hero. See [screenshots/drive-light-default.png](screenshots/drive-light-default.png).
 
-Hover, pressed, and loading were not held. The empty signup Continue uses `rgba(224, 224, 224, 0.6)`, which matches `--base-background-disabled`.
+Hover, pressed, and loading were not held. On 2026-11-21 the empty auth Continue computed to `#111111` / `#fcfcfc`, 8px radius, 48px tall, not the disabled fill recorded in 2026-11-19. Nothing was typed, so that reading is the empty rest state, not a validation error.
 
 ## Link
 
@@ -54,16 +54,16 @@ Pickup and dropoff, ride page. The box, not the inner input, carries the fill.
 | Height | `56px` | `light.component.field.height` |
 | Font | UberMoveText 16px | |
 
-The signup wall field is the same fill and radius, 48px tall, and draws a `2px solid rgb(0, 0, 0)` border while focused. No value was entered.
+The auth wall field, remeasured empty on 2026-11-21, uses `#f6f6f6` and 16px type. The visible box is the wrapper around the input. No value was entered. The Drive phone field shows a country control and the placeholder `(999) 999-9999` and was left empty.
 
 ## Header
 
-64px, `#000000`. Wordmark is UberMove 24px, white. See [screenshots/ride-light-default.png](screenshots/ride-light-default.png).
+64px, `#000000`. Wordmark is UberMove 24px, white. See [screenshots/drive-light-default.png](screenshots/drive-light-default.png).
 
 ## Gaps
 
 - Text area, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, card, list row, table, avatar, badge: not on the signed-out pages that were measured.
 - Hover, focus-visible, pressed, and error states of the ride form: not captured.
 - Signup and login past the phone-or-email wall: not entered. No phone, email, card, or ride.
-- Phone width: the 390 reload was a reCAPTCHA interstitial and was discarded.
+- Phone width: captured on Drive and About at 390 CSS pixels. See [screenshots/drive-light-mobile.png](screenshots/drive-light-mobile.png).
 - Dark theme as a rendered page: tokens only.

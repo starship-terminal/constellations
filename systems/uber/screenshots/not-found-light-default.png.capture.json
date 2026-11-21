@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "screenshot": "not-found-light-default.png",
+  "requested": {
+    "w": 1440,
+    "h": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "url": "https://www.uber.com/us/en/careers/",
+  "title": "Page Not Found | Uber",
+  "heading": "Signals got crossed, and we can\u2019t find your page",
+  "note": "Public signed-out capture, 2026-11-21. Quantized to 256 colours after measurement."
+}

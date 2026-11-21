@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "screenshot": "drive-light-mobile.png",
+  "requested": {
+    "w": 390,
+    "h": 844
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "url": "https://www.uber.com/us/en/drive/",
+  "title": "Drive with Uber: An Alternative to Traditional Driving Jobs | Uber",
+  "heading": "Drive when you want, make what you need",
+  "note": "Public signed-out capture, 2026-11-21. Quantized to 256 colours after measurement."
+}

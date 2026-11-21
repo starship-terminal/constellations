@@ -1,6 +1,6 @@
 # Uber
 
-Public signed-out capture of [uber.com](https://www.uber.com/) on 2026-11-19. The measured surfaces are the US ride page (`/us/en/ride/`), About (`/us/en/about/`), Business (`/us/en/business/`), and Drive (`/us/en/drive/`), plus the signup wall at `https://auth.uber.com/v2/` with no field filled in. Themes in the package are the stylesheet's v2 light and dark token sets. The marketing pages themselves render light. Desktop shots are 1440 by 900 CSS pixels at device pixel ratio 2. A 390-wide reload hit a reCAPTCHA interstitial and was not kept.
+Public signed-out capture of [uber.com](https://www.uber.com/), refreshed on 2026-11-21. The 2026-11-19 package measured the US ride page. On this refresh that URL, Business, cities, and the bare homepage hit a reCAPTCHA wall or a regional 404, so they were not recaptured. Pages that loaded: Drive (`/us/en/drive/`), About, Safety, How Uber works, Offerings, driver requirements, the blog, Help, and the empty auth wall at `https://auth.uber.com/v2/`. The control map is [site-tree.md](site-tree.md). Themes in the package are still the stylesheet's v2 light and dark token sets. Marketing pages render light, and the Drive hero is black. Desktop shots are 1440 by 900 CSS pixels at device pixel ratio 2. Phone shots are 390 by 844 at device pixel ratio 2, on Drive and About. `login-extracted` stays `not-started`.
 
 | Path | What it holds |
 | --- | --- |
@@ -9,11 +9,12 @@ Public signed-out capture of [uber.com](https://www.uber.com/) on 2026-11-19. Th
 | [tokens.json](tokens.json) | Base primitives, v2 light and dark semantics, measured chrome |
 | [style-guide.html](style-guide.html) | Swatches, radii, type, and the three measured controls |
 | [components.md](components.md) | Controls that were on the public pages, and the gaps |
-| [patterns.md](patterns.md) | Header, ride form, and signup wall |
-| [screenshots/](screenshots/) | Five desktop captures |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or wall. Mapped 2026-11-21 |
+| [patterns.md](patterns.md) | Header, drive hero, help, and the empty auth wall |
+| [screenshots/](screenshots/) | Desktop and phone captures from the 2026-11-21 refresh |
 | [components/](components/) | No crops. The preview browser produced no screenshot frames |
 | [icons/](icons/) | Index only. The wordmark is type, not an extracted asset |
-| [raw/](raw/) | Stylesheet, page readings, signup-wall readings |
+| [raw/](raw/) | Stylesheet, page readings, auth-wall readings, 2026-11-21 refresh notes |
 | [tools/](tools/) | Builder and the package test |
 | [icon.png](icon.png) | 128px PNG from the site favicon |
 
@@ -27,8 +28,8 @@ Read this before designing in this style. Take every value from [tokens.json](to
 
 1. Paint the marketing header black and the primary action near-black.
 2. Use the white pill for Sign up and the dark pill for Log in.
-3. Put location fields on `#f6f6f6` with an 8px radius.
-4. Keep the signup wall as a wall.
+3. On a black hero, invert the primary action.
+4. Keep the auth wall empty.
 5. Do not treat the Base blue accent as the marketing button.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
@@ -73,11 +74,11 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-Uber ships a Base token sheet, `client-main-styles-*.css`, linked from the ride page. Colour primitives (`--base-neutral-18` is `#111111`, `--base-blue-57` is `#1175dd`) sit on `:root`. Light semantics sit on `[data-base-version-color="2"]`. Dark semantics sit on `[data-base-version-color="2"][data-theme="dark"]`. The marketing pages do not set `data-base-version-color`, so a live element does not resolve those names. [tools/build_tokens.py](tools/build_tokens.py) resolves `var(--base-*)` aliases against the primitives in the same file. Component colours, radii, and sizes are `getComputedStyle` readings from the signed-out ride page at 1440 by 900, and from the signup wall in the preview browser at 1169 by 731. The preview browser returned "The browser is not producing screenshot frames", so those frames are not in the package. Desktop screenshots come from headless Chromium on the same public URLs, which loaded without a Cloudflare challenge.
+Uber ships a Base token sheet, `client-main-styles-*.css`, saved from the ride page on 2026-11-19 and still linked from the pages that loaded on 2026-11-21 (`client-main-styles-6a69a55fd9196980.css`). Colour primitives (`--base-neutral-18` is `#111111`, `--base-blue-57` is `#1175dd`) sit on `:root`. Light semantics sit on `[data-base-version-color="2"]`. Dark semantics sit on `[data-base-version-color="2"][data-theme="dark"]`. The marketing pages do not set `data-base-version-color`, so a live element does not resolve those names. [tools/build_tokens.py](tools/build_tokens.py) resolves `var(--base-*)` aliases against the primitives in the same file. Component colours, radii, and sizes in `tokens.json` still come from the 2026-11-19 ride-page readings. The 2026-11-21 refresh remeasured the Drive header, the white "Get started" control, and the empty auth wall, and wrote those readings to [raw/auth-wall.json](raw/auth-wall.json) and [raw/refresh-2026-11-21.json](raw/refresh-2026-11-21.json). Nothing was typed into the wall.
 
 ## What to distrust
 
-Dark colours are the stylesheet's dark block, not a dark marketing page. The ride, about, business, and drive pages stayed light. The sheet's accent (`#1175dd`) is not the black primary button on the marketing chrome. Header pills and "See prices" use `#111111` on `#fcfcfc`. A blue link (`rgb(0, 0, 238)`) on "Learn more" is the browser default, not a Base token. UberMove and UberMoveText are named in the font stack and are not shipped here. Phone width is a gap: the 390 reload showed a reCAPTCHA wall and was discarded. Hover and pressed states were not held.
+Dark colours are the stylesheet's dark block, not a dark marketing page. About, safety, and help stayed light. The Drive hero is black, which is a page fill, not the dark token set. The sheet's accent (`#1175dd`) is not the black header pill. Header pills use `#111111` on `#fcfcfc`. A blue "Log in" on the riders help page (`#276ef1` area) is help-site chrome, not the marketing pill. UberMove and UberMoveText are named in the font stack and are not shipped here. The rider homepage, Business, and cities were behind a reCAPTCHA wall on 2026-11-21 and were not recaptured. Hover and pressed states were not held. The empty auth Continue computed to `#111111`, not the disabled fill recorded in 2026-11-19, because nothing was typed and no error state was forced.
 
 ## Fonts
 
@@ -94,27 +95,32 @@ UberMove is the display face (the wordmark and the 52px headlines). UberMoveText
 | Radii | 6, 8, 12, 16, 24, 32, and 1000px (`radius-full`) from `:root` |
 | Elevation | Five levels from the v2 elevation blocks |
 | Motion | Not captured. No motion probe completed |
-| Button | Primary "See prices" and header pills measured at rest |
-| Button hover, pressed, disabled | Not captured, except the empty signup Continue, which uses the disabled fill |
-| Link | Grey "See terms" measured. Blue "Learn more" is the browser default |
-| Text field | Pickup and dropoff boxes measured. Not submitted |
-| Text area, select, checkbox, radio, switch | Not present on the signed-out pages measured |
-| Tabs, menu, tooltip, dialog, toast | Not captured. Language and About menus were not opened |
-| Card, list row, table, avatar, badge | Not present on these pages |
-| App shell | Black 64px header captured on every desktop shot |
-| Form error | Not captured. The signup wall was not submitted |
-| Empty, loading, error | The `/us/en/earn/` 404 is in [screenshots/not-found-light-default.png](screenshots/not-found-light-default.png) |
-| Signup wall | Measured, not entered. Phone or email, Google, and Apple are the wall |
-| Phone width | Not captured. reCAPTCHA interstitial |
+| Button | Header pills remeasured on Drive. White "Get started" is 48px, 8px radius. See [drive-light-default](screenshots/drive-light-default.png) |
+| Button hover, pressed, disabled | Not captured. The empty auth Continue was not forced into an error |
+| Link | Footer and help links captured as navigation. See [site-tree.md](site-tree.md) |
+| Text field | Empty auth field and the empty Drive phone field. Nothing typed. See [auth-light-empty](screenshots/auth-light-empty.png) |
+| Text area, select, checkbox, radio, switch | Not present on the signed-out pages that loaded |
+| Tabs | Help product tabs on the riders page. See [help-riders-light-default](screenshots/help-riders-light-default.png) |
+| Menu | About menu and Sign up menu opened and closed. See [about-menu-light-open](screenshots/about-menu-light-open.png) and [signup-menu-light-open](screenshots/signup-menu-light-open.png) |
+| Dialog | Language dialog opened and closed. No language chosen. See [language-dialog-light-open](screenshots/language-dialog-light-open.png) |
+| Tooltip, toast | Not captured as a product state. A session toast on one auth load was discarded |
+| Card, list row | Blog cards and help topic rows. See [blog-light-default](screenshots/blog-light-default.png) and [help-riders-light-default](screenshots/help-riders-light-default.png) |
+| Table, avatar, badge | Not present on the pages that loaded |
+| App shell | Black 64px header on the marketing pages. Help adds a second product bar |
+| Form error | Not captured. The auth wall was not submitted |
+| Empty, loading, error | The `/us/en/careers/` 404 is in [not-found-light-default](screenshots/not-found-light-default.png). Help search was left empty |
+| Signup and login wall | Photographed empty. Google and Apple were not clicked. `login-extracted` stays `not-started` |
+| Phone width | Captured for Drive and About. See [drive-light-mobile](screenshots/drive-light-mobile.png) and [about-light-mobile](screenshots/about-light-mobile.png) |
+| Site tree | Captured as [site-tree.md](site-tree.md) on 2026-11-21 |
 | Signed-in app | Not captured. No account, no phone, no card, no ride |
 
 ## Do and don't
 
-1. **Paint the marketing header black and the primary action near-black.** The header is `#000000` and "See prices" is `#111111` with `#fcfcfc` text, 8px radius, 48px tall. See [screenshots/ride-light-default.png](screenshots/ride-light-default.png).
-2. **Use the white pill for Sign up and the dark pill for Log in.** Both are 999px radius, 14px medium, 36px tall. See the same screenshot.
-3. **Put location fields on `#f6f6f6` with an 8px radius.** Pickup and dropoff boxes are 56px tall. Do not invent a blue fill for them.
-4. **Keep the signup wall as a wall.** It asks for a phone number or email before Continue, and it warns that a verification code may arrive by text or WhatsApp. Do not draw a filled account behind it.
-5. **Do not treat the Base blue accent as the marketing button.** `#1175dd` is `--base-accent-background-primary-bold`. The public ride page does not use it on "See prices".
+1. **Paint the marketing header black and the primary action near-black.** The header is `#000000`. Header pills are `#111111` with `#fcfcfc` text, 999px radius, 36px tall. See [screenshots/drive-light-default.png](screenshots/drive-light-default.png).
+2. **Use the white pill for Sign up and the dark pill for Log in.** Both sit on the black header. See the same screenshot.
+3. **On a black hero, invert the primary action.** Drive's "Get started" is white, 8px radius, 48px tall, on the black hero. Do not paint it blue.
+4. **Keep the auth wall empty.** It asks for a phone number or email before Continue, and it warns that a verification code may arrive by text or WhatsApp. See [screenshots/auth-light-empty.png](screenshots/auth-light-empty.png).
+5. **Do not treat the Base blue accent as the marketing button.** `#1175dd` is `--base-accent-background-primary-bold`. The public header does not use it on Log in or Sign up.
 
 ## Rebuild
 
