@@ -1,0 +1,27 @@
+{
+  "captured": "2026-11-22",
+  "name": "home-phone-menu",
+  "url": "https://getdrafts.com/",
+  "title": "Drafts | Where Text Starts",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "s": 1
+    },
+    "scrollH": 5262,
+    "title": "Drafts | Where Text Starts",
+    "url": "https://getdrafts.com/"
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "quantized": true,
+  "note": "256-colour sRGB. Read colours from tokens.json, not from this PNG."
+}
