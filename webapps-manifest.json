@@ -7076,9 +7076,9 @@
         438
       ],
       "description": "Workflow automation software for everyone",
-      "status": "pending",
-      "package": null,
-      "notes": "https://zapier.com/app/home redirected to the login page. Session was not present. Skipped.",
+      "status": "captured",
+      "package": "systems/zapier",
+      "notes": "https://zapier.com/app/home redirected to the login page. Session was not present. Skipped. Public walk 2026-11-21: the public site tree is in systems/zapier/site-tree.md. https://zapier.com/app/login asks for an empty email and password, or Google, Facebook, Microsoft, or SSO. Signup asks for an empty work email, name, and password. Nothing was typed. No identity provider was clicked. No form was submitted. login-review.json has screens, gaps, and not_submitted. offered does not answer nav, settings, and create. login-extracted stays not-started. Public package refresh in PR 1694 at ba2b3ce8f226. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 21
