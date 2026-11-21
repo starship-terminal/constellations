@@ -12,8 +12,10 @@ Slite's marketing site is a cream page (`#fdfdfd`) with a warmer header (`#fdf9f
 | [style-guide.html](style-guide.html) | One page that renders the tokens and the main controls. Georgia stands in for Garnett. |
 | [components.md](components.md) | The inventory, with measured values and crops |
 | [patterns.md](patterns.md) | How the home, pricing, features, and sign-in card are built |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22. Header, footer, photographed pages, and where the walk stopped. |
+| [login-review.json](login-review.json) | Empty sign-in and create-account walls. `loginExtracted` is not-started. |
 | [components/crops/](components/crops) | 12 element crops from the live public pages |
-| [screenshots/](screenshots) | Home, pricing, features, the 390 home, and the open phone menu |
+| [screenshots/](screenshots) | 19 November shots, plus first-viewport shots from the 2026-11-22 walk |
 | [icons/](icons) | The wordmark SVG and [INDEX.tsv](icons/INDEX.tsv) |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
 | [tools/](tools) | The capture kit and a package test |
@@ -137,6 +139,8 @@ The home h1 stayed 56px at 390. Its box height was 0 until layout settled, so th
 | Themes | Light only |
 | Widths | 1440 x 900 and 390 x 844, both measured `innerWidth` |
 | Signed-in app, editor, settings, checkout | Not captured. Sign-in is the boundary. No payment, phone, or KYC step was reached |
+
+A second public walk on 2026-11-22 mapped the homepage header and footer into [site-tree.md](site-tree.md) and photographed those pages at 1440, plus the homepage, phone menu, and empty auth walls at 390. Sign in and Start for free were empty. Nothing was typed. No identity provider was clicked. `login-extracted` stays not-started. catalog.json was left alone.
 
 ## Do and don't
 

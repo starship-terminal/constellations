@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "webinars",
+  "url": "https://slite.com/webinars",
+  "title": "Slite Webinars",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "quantized": false,
+  "note": "First viewport from the T3 incognito preview tab on 2026-11-22. Read colours from tokens.json, not from this PNG. No form was submitted."
+}
