@@ -1,0 +1,71 @@
+{
+  "slug": "coursera",
+  "product": "Coursera",
+  "domain": "www.coursera.org",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "shared-auth-dialog",
+  "session": "T3 preview browser, incognito profile. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed. Continue was not clicked. Enroll for free was not clicked.",
+  "wall": {
+    "url": "https://www.coursera.org/?authMode=login",
+    "title": "Authentication modal",
+    "heading": "Log in or create account",
+    "asks": [
+      "Continue with Google",
+      "Continue with Facebook",
+      "Continue with Apple",
+      "or",
+      "email",
+      "Continue",
+      "Sign up with your organization",
+      "Having trouble logging in?"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "email", "placeholder": "name@email.com", "filled": false}
+    ],
+    "note": "Log In opens the same dialog as Join for Free. The email field was empty. Continue was not clicked. Google, Facebook, and Apple were not clicked. Sign up with your organization was not clicked. A reCAPTCHA notice is in the dialog; no challenge was solved."
+  },
+  "signup_wall": {
+    "url": "https://www.coursera.org/?authMode=signup",
+    "title": "Authentication modal",
+    "heading": "Log in or create account",
+    "same_dialog_as_login": true,
+    "continued": false,
+    "note": "Join for Free sets authMode=signup and opens the same empty dialog. The email field was left empty. No identity provider was clicked."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "css": "1440x900",
+      "png": "2880x1800",
+      "deviceScaleFactor": 2,
+      "login": "screenshots/public-2026-11-22-login-desktop.png",
+      "signup": "screenshots/public-2026-11-22-login-desktop.png"
+    }
+  },
+  "screens": [
+    {"name": "Login and signup dialog, desktop, empty", "file": "screenshots/public-2026-11-22-login-desktop.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Continue with Google, Facebook, and Apple were not clicked.",
+    "The email field was left empty. Continue was not clicked.",
+    "Sign up with your organization was not opened.",
+    "Having trouble logging in was not opened.",
+    "The signed-in classroom was not reached."
+  ],
+  "not_submitted": [
+    "email",
+    "Continue",
+    "Continue with Google",
+    "Continue with Facebook",
+    "Continue with Apple",
+    "Sign up with your organization",
+    "Enroll for free",
+    "Start 7-day free trial"
+  ]
+}
