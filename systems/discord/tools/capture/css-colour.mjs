@@ -9,15 +9,10 @@ export const hex = (c) => {
   }).replace(/color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)/g, (m, r, g, b, a) => {
     const h = '#' + [r, g, b].map((v) => Math.round(+v * 255).toString(16).padStart(2, '0')).join('');
     return a === undefined ? h : `${h} @ ${+a}`;
-  }).replace(/oklch\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?:deg)?(?: \/ ([\d.]+))?\)/g, (m, L, C, H, al) => {
-    const [r, g, b] = oklabToSrgb(parseFloat(L) * (L.endsWith('%') ? 0.01 : 1),
-      +C * Math.cos(+H * Math.PI / 180), +C * Math.sin(+H * Math.PI / 180));
-    const h = '#' + [r, g, b].map((v) => Math.round(Math.min(1, Math.max(0, v)) * 255).toString(16).padStart(2, '0')).join('');
-    return al === undefined || +al === 1 ? h : `${h} @ ${+al}`;
-  }).replace(/(ok)?lab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)/g, (m, ok, L, A, B, al) => {
+  }).replace(/(ok)?lab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+))?\)/g, (m, ok, L, A, B, al) => {
     const [r, g, b] = ok ? oklabToSrgb(parseFloat(L) * (L.endsWith('%') ? 0.01 : 1), +A, +B) : labToSrgb(parseFloat(L), +A, +B);
     const h = '#' + [r, g, b].map((v) => Math.round(Math.min(1, Math.max(0, v)) * 255).toString(16).padStart(2, '0')).join('');
-    return al === undefined || +al === 1 ? h : `${h} @ ${al.endsWith('%') ? +al.slice(0, -1) / 100 : +al}`;
+    return al === undefined || +al === 1 ? h : `${h} @ ${+al}`;
   });
 };
 // Tailwind 4 writes an opacity modifier (`bg-token-text-primary/3`) as color-mix, which Chromium

@@ -1,7 +1,7 @@
-// Shared helpers for the discord.com public captures (adapted
-// from the designstripe copy, which came from the Deezer/Butter lineage).
-// Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
-// directory has no node_modules.
+// Shared helpers for the Discord public signed-out capture.
+// discord.com marketing pages are Webflow. Login, register, the app and
+// identity-provider buttons are walls: never click them, never type a
+// password, phone, code or profile field, and never submit a form.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -22,56 +22,45 @@ export const BASE = 'https://discord.com';
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
+// Clip a viewport screenshot from a measured rect when the element itself
+// re-renders between the style read and the crop (Next.js hydration swaps):
+// the locator can stop resolving, so the rect is the last stable evidence.
+export async function cropRect(page, rect, name, pad = 8) {
+  fs.mkdirSync(CROPS, { recursive: true });
+  const file = path.join(CROPS, `${name}.png`);
+  const vp = page.viewportSize();
+  const clip = {
+    x: Math.max(0, rect.x - pad),
+    y: Math.max(0, rect.y - pad),
+    width: Math.min(vp.width - Math.max(0, rect.x - pad), rect.w + 2 * pad),
+    height: Math.min(vp.height - Math.max(0, rect.y - pad), rect.h + 2 * pad),
+  };
+  await page.screenshot({ path: file, clip, animations: 'allow' });
+  quantize(file);
+  return path.relative(REF, file);
+}
 export const RAW = path.join(REF, 'raw');
 
-// discord.com is two products signed out. The marketing site (/, /download,
-// /nitro, /safety, /blog) is a Webflow build in Ggsans over a :root palette
-// (--blurple, --not-quite-black, the gradient families). The app surfaces
-// (/servers discovery, /servers/<slug-id> detail, /login, /register) run the
-// real Discord design system: "gg sans" / ABC Ginto / gg mono, and a
-// class-scoped token layer — :root hue scales (--neutral-N, --blurple-N,
-// --plum-N, --*-new-N, --illo-*) plus .theme-light/.theme-darker/.theme-dark/
-// .theme-midnight semantic blocks (--background-base-*, --text-*, --header-*,
-// --border-*, --badge-*, --button-*, --input-*). Signed out the app surfaces
-// paint dark; light exists only as a declared sheet — recorded as a boundary.
-// Specs select by role, aria-label, text and stable class fragments (hashed
-// module classes are filtered out of output, not matched).
-export const M = (name) => `[class*="${name}"]`;
+// discord.com marketing pages loaded in headless Chromium. The app sits
+// behind discord.com/login. This kit does not sign in.
+export const LAUNCH_OPTS = {};
 
-// The per-context patches every page gets: a record of
-// the real devicePixelRatio before app code runs — a page's scripts can make
-// window.devicePixelRatio read 1 while the renderer still paints at the
-// context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
-// __captureDPR keeps the launch-time value for the screenshot sidecar.
+// Classes are CSS-module and Emotion names (styles_*__hash, css-hash), so
+// selectors key off structure, roles and stable text.
+export const M = (name) => name;
+
+// The per-context patches every page gets: the webdriver mask, plus a record of
+// the real devicePixelRatio before app code runs — kept for the screenshot
+// sidecar when app code rewrites window.devicePixelRatio.
 export async function patch(context) {
   await context.addInitScript(() => {
-    // bot check: navigator.webdriver is left as the browser reports it; a challenge is recorded as a boundary, not bypassed (D7)
+    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
-  // The mask goes in as soon as the document has a root element, not at DOMContentLoaded: the
-  // routes load with waitUntil 'commit', and the QR panel can paint before that event fires.
-  await context.addInitScript((css) => {
-    const add = () => {
-      if (document.getElementById('capture-hide-login-qr')) return;
-      const s = document.createElement('style');
-      s.id = 'capture-hide-login-qr';
-      s.textContent = css;
-      (document.head || document.documentElement).appendChild(s);
-    };
-    if (document.documentElement) add();
-    else new MutationObserver((_, o) => { if (document.documentElement) { o.disconnect(); add(); } }).observe(document, { childList: true });
-  }, HIDE_LOGIN_QR);
 }
 
-// /login's "Log in with QR Code" panel draws a live remote-auth token: a credential, never committed.
-// Every page of every run hides the code itself (the svg, canvas or img inside the panel) so no
-// screenshot or crop records it; the panel's box, white tile and computed styles are still read.
-// tools/redact-rules/discord.json paints the same area out of images shot before this existed.
-export const HIDE_LOGIN_QR = '[class*="qrLogin" i] :is(svg, canvas, img), [class*="qrCode" i] :is(svg, canvas, img)'
-  + ' { visibility: hidden !important; }';
-
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(LAUNCH_OPTS);
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
@@ -80,42 +69,44 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
 }
 
 // Waits out any bot interstitial and reports whether the real document
-// arrived.
+// arrived. arket.com intermittently serves Akamai "Access Denied" to a
+// fresh context; a short wait and one reload usually clears it.
 export async function clearChallenge(page, { tries = 12, step = 2000 } = {}) {
   for (let i = 0; i < tries; i++) {
     const s = await page.evaluate(() => ({
       title: document.title,
       body: (document.body && document.body.innerText || '').slice(0, 400),
     })).catch(() => ({ title: '', body: '' }));
-    const challenging = /just a moment|attention required/i.test(s.title)
-      || /performing security verification|verify you are human|verifying you are human|checking your browser|unusual activity from your computer network|press ?& ?hold|not a robot|you have been blocked|unable to access/i.test(s.body);
+    const challenging = /just a moment|access denied/i.test(s.title)
+      || /performing security verification|verify you are human|verifying you are human|checking your browser|you don't have permission/i.test(s.body);
     if (!challenging && s.body.length > 40) return true;
     await page.waitForTimeout(step);
   }
   return false;
 }
 
-// Hide (never click) any fixed overlay that mounts over the page: a promo or
-// announcement layer. REMOVE-ONLY: hiding never accepts or rejects anything.
+// Hide (never click) a cookie or consent overlay. Discord's footer "Cookie
+// Settings" opens a vendor dialog; this helper never presses Accept, Reject
+// or Cookie Settings. A menu the run opened itself is left alone.
 export async function closePromo(page) {
   for (let i = 0; i < 4; i++) {
     const hit = await page.evaluate(() => {
       let n = 0;
-      // Any fixed consent/cookie overlay: hidden, never answered — the
-      // generic text match below still never matches body/html classes.
-      document.querySelectorAll('div[id*="onetrust" i], div[class*="onetrust" i], div[id*="termly" i], iframe[title*="privacy" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
+      // Any fixed promo/cookie overlay is hidden, never answered.
+      for (const sel of ['[class*="cookie" i]', '[id*="cookie" i]', '[class*="consent" i]', '[class*="intercom" i]']) {
+        document.querySelectorAll(sel).forEach((x) => { const cs = getComputedStyle(x); if (cs.position === 'fixed' || cs.position === 'sticky') { x.style.setProperty('display', 'none', 'important'); n++; } });
+      }
+      // Any other fixed promo/newsletter/cookie overlay is hidden, never answered.
       const box = [...document.querySelectorAll('div,section,aside,[role="dialog"],[role="alertdialog"]')].find((x) => {
         const t = x.innerText || '';
         const r = x.getBoundingClientRect();
         const cs = getComputedStyle(x);
         return (cs.position === 'fixed' || cs.position === 'sticky')
-          && /note about our cookies|cookie|we value privacy|personal data \(such as identifiers/i.test(t)
+          && /cookie|we value privacy|newsletter|subscribe to|sign up for|first order/i.test(t)
           && t.length < 1600 && r.width > 200 && r.width < 1400 && r.height > 60 && +cs.zIndex > 5;
       });
       if (box) { box.style.setProperty('display', 'none', 'important'); n++; }
-      if (document.body) {
-        document.body.style.removeProperty('overflow');
-      }
+      document.body && document.body.style.removeProperty('overflow');
       document.documentElement && document.documentElement.style.removeProperty('overflow');
       return n;
     }).catch(() => 0);
@@ -151,16 +142,21 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }
 
-export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  // 'commit': discord.com's document commit arrives fast while its
-  // domcontentloaded can hang on the stream; clearChallenge + wait cover
-  // readiness.
-  await page.goto(url, { waitUntil: 'commit', timeout: 90000 }).catch(() => {});  // measure.mjs's newPage() re-checks the page (blocked()), which also catches a blank page
-  const cleared = await clearChallenge(page);
-  if (!cleared) console.log('  ! the bot check did not clear on', url);
+// Opens a URL. Akamai answers some first hits on a fresh context with
+// "Access Denied"; each denial is waited out, then the page is reloaded once
+// more (two retries, three loads in all) before the route is given up.
+export async function open(page, url, { wait = 6000, promo = 'close', retries = 2 } = {}) {
+  for (let a = 0; a <= retries; a++) {
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    const ok = await clearChallenge(page);
+    const denied = await page.evaluate(() => /access denied/i.test(document.title)).catch(() => false);
+    if (ok && !denied) break;
+    if (a === retries) return false;
+    await page.waitForTimeout(5000);
+  }
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
-  return cleared;  // false: the caller records the page as blocked, never as the product (20-4)
+  return true;
 }
 
 // Computed style properties recorded for every component and state.
@@ -275,28 +271,33 @@ export async function styleOf(locator) {
 // Element screenshot into components/crops/<name>.png, padded so a focus ring
 // or shadow is not clipped, then quantized to 256 colours. Sticky bars that do
 // not hold the element are hidden for the shot.
-const STICKY = ['header', 'nav[class*="sticky" i]', '[class*="sticky" i] header', 'div[class*="sticky" i]:has(> nav)'].join(', ');
+const STICKY = ['header', 'nav[class*="sticky" i]', '[class*="sticky" i] header', 'div[class*="sticky" i]:has(> nav)', '.z-header'].join(', ');
 export async function crop(page, locator, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
   const file = path.join(CROPS, `${name}.png`);
-  const hidden = await locator.evaluate((el, { sel, pad }) => {
+  const hidden = await locator.evaluate((el, sel) => {
     let n = 0;
-    const er = el.getBoundingClientRect();
     document.querySelectorAll(sel).forEach((s) => {
       if (s.contains(el) || el.contains(s)) return;
-      // A sticky layer painted behind the target supplies its backdrop; hiding
-      // it turns the crop into the page's plain field.
-      const sr = s.getBoundingClientRect();
-      const overlap = !(sr.right < er.left - pad || sr.left > er.right + pad || sr.bottom < er.top - pad || sr.top > er.bottom + pad);
-      if (overlap) return;
       s.setAttribute('data-m-hidden', '1');
       s.style.setProperty('visibility', 'hidden', 'important');
       n++;
     });
     return n;
-  }, { sel: STICKY, pad });
+  }, STICKY);
   try {
-    const box = await locator.boundingBox();
+    // boundingBox waits for the element to stop moving; a perpetually
+    // animating element (entrance loops, live underlines) never settles, so
+    // fall back to an immediate getBoundingClientRect for the same clip.
+    let box;
+    try {
+      box = await locator.boundingBox({ timeout: 3000 });
+    } catch {
+      box = await locator.evaluate((el) => {
+        const r = el.getBoundingClientRect();
+        return { x: r.x, y: r.y, width: r.width, height: r.height };
+      });
+    }
     if (!box) throw new Error(`no box for ${name}`);
     const vp = page.viewportSize();
     const inView = box.y - pad >= 0 && box.y + box.height + pad <= vp.height && box.x >= 0 && box.x + box.width <= vp.width + 1;
