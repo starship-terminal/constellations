@@ -1,0 +1,42 @@
+{
+  "_note": "Computed styles read from www.feedhive.com and the sign-in wall at app.feedhive.com/signin on 2026-11-21. Marketing colours come from Tailwind utilities (bg-primary, text-[#23252b]), not from a product custom-property sheet. Sign-in values were read and not submitted.",
+  "color": {
+    "ink": { "type": "color", "value": "#23252b", "source": "Measured: home h1 color rgb(35, 37, 43); CSS #23252b appears 20 times in the marketing stylesheet" },
+    "body": { "type": "color", "value": "#20232b", "source": "Measured: document.body color rgb(32, 35, 43) on www.feedhive.com/" },
+    "nav": { "type": "color", "value": "#4f5562", "source": "Measured: header Product link color rgb(79, 85, 98)" },
+    "muted": { "type": "color", "value": "#757b86", "source": "Measured: pricing Monthly button color rgb(117, 123, 134) while Yearly is selected" },
+    "primary": { "type": "color", "value": "#4457ff", "source": "Measured: Sign Up background rgb(68, 87, 255); class bg-primary; stylesheet hex #4457ff" },
+    "primaryHover": { "type": "color", "value": "#3347fb", "source": "Measured: Sign Up background rgb(51, 71, 251) while hovered; class hover:bg-primary-hover" },
+    "onPrimary": { "type": "color", "value": "#ffffff", "source": "Measured: Sign Up text color rgb(255, 255, 255)" },
+    "loginFace": { "type": "color", "value": "#f4f2f0", "source": "Measured: Login button background rgb(244, 242, 240); class bg-[#f4f2f0]" },
+    "loginText": { "type": "color", "value": "#272b34", "source": "Measured: Login button color rgb(39, 43, 52)" },
+    "page": { "type": "color", "value": "#ffffff", "source": "Measured: document.body backgroundColor rgb(255, 255, 255) on the marketing home" },
+    "signinPage": { "type": "color", "value": "#f7fafc", "source": "Measured: app.feedhive.com/signin body background rgb(247, 250, 252)" },
+    "fieldBorder": { "type": "color", "value": "#edf2f7", "source": "Measured: sign-in email input border rgb(237, 242, 247)" },
+    "fieldText": { "type": "color", "value": "#1a202c", "source": "Measured: sign-in email input color rgb(26, 32, 44)" },
+    "signinButton": { "type": "color", "value": "#3b82f6", "source": "Measured: sign-in submit button background rgb(59, 130, 246). Different blue from the marketing primary." }
+  },
+  "font": {
+    "body": { "type": "fontFamily", "value": "Inter, \"Inter Fallback\"", "source": "Measured: document.body fontFamily on www.feedhive.com/" },
+    "display": { "type": "fontFamily", "value": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"", "source": "Measured: home h1 fontFamily" },
+    "signin": { "type": "fontFamily", "value": "Inter, sans-serif", "source": "Measured: sign-in email input fontFamily" }
+  },
+  "type": {
+    "hero": { "type": "dimension", "value": "55px", "source": "Measured: home h1 font-size 55px, weight 600, line-height 56.1px, letter-spacing -1.925px" },
+    "blogTitle": { "type": "dimension", "value": "68px", "source": "Measured: blog h1 font-size 68px, weight 600, line-height 65.28px, letter-spacing -3.06px" },
+    "nav": { "type": "dimension", "value": "14px", "source": "Measured: header Product link font-size 14px, weight 500, line-height 21px" },
+    "cta": { "type": "dimension", "value": "15px", "source": "Measured: Get started for free font-size 15px, weight 500, line-height 22.5px" }
+  },
+  "radius": {
+    "login": { "type": "dimension", "value": "11px", "source": "Measured: Login and Sign Up border-radius 11px; class rounded-[11px]" },
+    "cta": { "type": "dimension", "value": "15px", "source": "Measured: Get started for free border-radius 15px; class rounded-[15px]" },
+    "pill": { "type": "dimension", "value": "9999px", "source": "Measured: sign-in email, Google button and Sign in button border-radius 9999px" }
+  },
+  "size": {
+    "loginHeight": { "type": "dimension", "value": "40px", "source": "Measured: Login button height 40px, class h-10" },
+    "ctaHeight": { "type": "dimension", "value": "50px", "source": "Measured: Get started for free height 50px, class h-[50px]" },
+    "headerHeight": { "type": "dimension", "value": "80px", "source": "Measured: header getBoundingClientRect height 80px" },
+    "fieldHeight": { "type": "dimension", "value": "61px", "source": "Measured: sign-in email input height 61px" },
+    "signinButtonHeight": { "type": "dimension", "value": "59px", "source": "Measured: Sign in button height 59px" }
+  }
+}

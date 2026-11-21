@@ -1,0 +1,11 @@
+{
+  "captured": "2026-11-21",
+  "pages": ["https://www.feedhive.com/", "https://www.feedhive.com/pricing", "https://www.feedhive.com/blog"],
+  "stylesheets": [
+    "https://www.feedhive.com/_next/static/chunks/54b15e193042fa81.css",
+    "https://www.feedhive.com/_next/static/chunks/7228838e0aba29c1.css"
+  ],
+  "note": "The marketing bundle is Tailwind. Product colours are utility classes (bg-primary, text-[#23252b], bg-[#f4f2f0]), not a --fh-* sheet. Computed styles are in component-tokens.json. Custom properties found on :root during the walk were the cookie-consent --cc-* set and Tailwind theme defaults (--font-sans, --color-black). Those were not promoted.",
+  "themeColorMeta": null,
+  "darkTheme": "Not present. No theme switch on the public site. prefers-color-scheme was not flipped."
+}

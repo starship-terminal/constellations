@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FeedHive style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #23252b;
+    --body: #20232b;
+    --nav: #4f5562;
+    --muted: #757b86;
+    --primary: #4457ff;
+    --primary-hover: #3347fb;
+    --on-primary: #ffffff;
+    --login-face: #f4f2f0;
+    --login-text: #272b34;
+    --signin-page: #f7fafc;
+    --field-border: #edf2f7;
+    --signin-button: #3b82f6;
+  }
+  body { margin: 0; background: var(--page); color: var(--body); font: 16px/24px Inter, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-family: "Plus Jakarta Sans", Inter, sans-serif; font-size: 40px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 600; color: var(--ink); }
+  h2 { font-size: 14px; letter-spacing: 0.08em; text-transform: none; color: var(--nav); font-weight: 600; margin-top: 40px; }
+  p { color: var(--nav); }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .swatch { border-radius: 11px; overflow: hidden; border: 1px solid #eceef3; }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 8px 10px; font-size: 12px; color: var(--ink); }
+  .row { display: flex; gap: 12px; align-items: center; margin: 12px 0; }
+  .login { height: 40px; padding: 0 18px; border: 0; border-radius: 11px; background: var(--login-face); color: var(--login-text); font: 500 14px/21px Inter, sans-serif; letter-spacing: -0.02em; }
+  .signup { height: 40px; padding: 0 18px; border: 0; border-radius: 11px; background: var(--primary); color: var(--on-primary); font: 500 14px/21px Inter, sans-serif; letter-spacing: -0.02em; }
+  .cta { height: 50px; padding: 0 32px; border: 0; border-radius: 15px; background: var(--primary); color: white; font: 500 15px/22px Inter, sans-serif; letter-spacing: -0.03em; }
+  .pill { height: 41px; padding: 0 16px; border: 0; border-radius: 9999px; background: #f1f2f5; color: var(--muted); font: 600 14px/21px Inter, sans-serif; }
+  .pill.on { background: var(--primary); color: white; }
+  .field { display: block; width: 320px; height: 48px; border-radius: 9999px; border: 1px solid var(--field-border); padding: 0 20px; font: 15px Inter, sans-serif; }
+  .signin { height: 48px; width: 320px; border: 0; border-radius: 9999px; background: var(--signin-button); color: white; font: 500 15px Inter, sans-serif; }
+  .note { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>FeedHive</h1>
+  <p>Public marketing site, light only. Values are the computed styles read on 2026-11-21. The signed-in app was not captured.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#ffffff"></i><span>Page #ffffff</span></div>
+    <div class="swatch"><i style="background:#23252b"></i><span>Ink #23252b</span></div>
+    <div class="swatch"><i style="background:#4f5562"></i><span>Nav #4f5562</span></div>
+    <div class="swatch"><i style="background:#4457ff"></i><span>Primary #4457ff</span></div>
+    <div class="swatch"><i style="background:#3347fb"></i><span>Primary hover #3347fb</span></div>
+    <div class="swatch"><i style="background:#f4f2f0"></i><span>Login face #f4f2f0</span></div>
+    <div class="swatch"><i style="background:#f7fafc"></i><span>Sign-in page #f7fafc</span></div>
+    <div class="swatch"><i style="background:#3b82f6"></i><span>Sign-in button #3b82f6</span></div>
+  </div>
+  <h2>Marketing controls</h2>
+  <div class="row"><button class="login">Login</button><button class="signup">Sign Up</button><button class="cta">Get started for free</button></div>
+  <div class="row"><button class="pill">Monthly</button><button class="pill on">Yearly</button></div>
+  <h2>Sign-in wall</h2>
+  <p class="note">Read only. No value was typed.</p>
+  <input class="field" placeholder="Email address" disabled>
+  <div class="row"><button class="signin">Sign in</button></div>
+</main>
+</body>
+</html>
