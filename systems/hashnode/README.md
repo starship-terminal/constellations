@@ -19,6 +19,8 @@ hashnode.com is worth a capture because it declares a complete token layer to th
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — 10,577 rules, 25 @font-face, 242 light + 243 dark resolved custom properties), `layout.json` (multi-width geometry probes over 37 page/viewport pairs), `motion.json` (the animation probe), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
 | [capture.pr](capture.pr) | The pull request that shipped this capture. |
+| [site-tree.md](site-tree.md) | Signed-in shell map: which control opens which page, and which of those 307 back to `/onboard`. |
+| [login-review.json](login-review.json) | Signed-in walk: the shell, account menu, and resting search dialog that opened, the screenshot for each, and what was not submitted. |
 
 ## How the values were read
 
@@ -93,6 +95,8 @@ python3 tools/build_component_tokens.py && python3 tools/build_tokens.py && pyth
 python3 -m unittest discover -s tools
 ```
 
+A later signed-in pass (2026-11-21) walked an already signed-in account in the T3 in-app preview and added [login-review.json](login-review.json), [site-tree.md](site-tree.md), and `screenshots/signed-in-*.png`. It did not rebuild tokens. Setup is incomplete, so every app destination 307s to `/onboard` Step 1 of 2. The visible shell, the account menu, and the resting search dialog were captured at a measured 1440x900 (devicePixelRatio 2). Phone light was captured at a measured 390x844. Next, Sign out, Write publish, photo change, and search submit were not used. Theme was restored to Dark and verified. Dashboard, editor, drafts, bookmarks, notifications, and settings did not render.
+
 Capture conduct, edited in the 2026-11 audit and not run since:
 
 - The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.
@@ -146,3 +150,19 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus: no focus tokens (no token path contains "focus").
 
 <!-- brief:end -->
+
+## Coverage
+
+Signed-in pass, 2026-11-21. Public rows stay in [components.md](components.md). These rows are the signed-in shell only.
+
+| Item | State | File |
+|---|---|---|
+| Signed-in shell, dark, desktop 1440x900 | captured | [signed-in-onboard-dark-desktop](screenshots/signed-in-onboard-dark-desktop.png) |
+| Account menu | captured | [signed-in-account-menu-dark-desktop](screenshots/signed-in-account-menu-dark-desktop.png) |
+| Search dialog, resting, no query | captured | [signed-in-search-dark-desktop](screenshots/signed-in-search-dark-desktop.png) |
+| Signed-in shell, light, desktop | captured | [signed-in-onboard-light-desktop](screenshots/signed-in-onboard-light-desktop.png) |
+| Signed-in shell, light, phone 390x844 | captured | [signed-in-onboard-light-phone](screenshots/signed-in-onboard-light-phone.png) |
+| Dashboard, editor, drafts, bookmarks, notifications, settings | not captured | Incomplete setup 307s every app destination to `/onboard`. Next was not pressed. |
+| Write sheet | not captured | The sheet closed before a frame was saved. |
+| Phone dark, collapsed sidebar | not captured | Not shot on this pass. |
+| Step 2 of onboarding | not captured | Next was not pressed. |
