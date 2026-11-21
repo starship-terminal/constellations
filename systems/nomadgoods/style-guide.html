@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nomad Goods style guide</title>
+<style>
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-page: #f3f3f3;
+  --color-inkSoft: #2f2f2f;
+  --color-inkDeep: #0e0e0e;
+  --color-muted: #6b6b6b;
+  --color-line: #dedede;
+  --color-danger: #d02d2d;
+  --color-info: #2c4a8c;
+  --font-family-display: Gotham-Bold, sans-serif;
+  --font-family-body: Aleo, HelveticaNeue, Helvetica Neue, sans-serif;
+  --typography-display: 700 77px/73.15px var(--font-family-display);
+  --typography-heading: 700 56px/53.2px var(--font-family-display);
+  --typography-button: 700 16px/17.76px var(--font-family-display);
+  --typography-body: 400 16px/24px var(--font-family-body);
+  --typography-label: 700 14px/15.54px var(--font-family-display);
+  --radius-none: 0px;
+  --radius-bar: 25px;
+  --radius-pill: 100px;
+  --space-button-x: 24px;
+  --space-nav-x: 30px;
+  --space-bar-x: 10px;
+  --size-button-md: 48px;
+  --size-button-sm: 40px;
+  --size-nav-bar: 70px;
+  --size-breakpoint-mobile: 390px;
+  --motion-button: 150ms;
+  --background-page: var(--color-page);
+  --background-surface: var(--color-white);
+  --background-inverse: var(--color-black);
+  --text-primary: var(--color-black);
+  --text-onInverse: var(--color-white);
+  --text-muted: var(--color-muted);
+  --border-default: var(--color-black);
+  --border-hairline: var(--color-line);
+  --action-primary: var(--color-inkSoft);
+  --action-onPrimary: var(--color-white);
+  --action-secondary: var(--color-white);
+  --status-danger: var(--color-danger);
+  --status-info: var(--color-info);
+  --sg-sans: Aleo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-display: "Gotham-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 40px/1 var(--sg-display); letter-spacing: -1.6px; margin: 0 0 8px; }
+h2 { font: 700 28px/1.1 var(--sg-display); letter-spacing: -1px; margin: 40px 0 12px; }
+p.lead { max-width: 68ch; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 72px; border-radius: 12px; border: 1px solid #00000014; }
+.sw b, .sw span { display: block; font-size: 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pill { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 100px; font: 700 16px/18px var(--sg-display); letter-spacing: -0.64px; text-decoration: none; }
+.pill.dark { color: #fff; background: linear-gradient(180deg, #2f2f2f, #2f2f2f); border: 1px solid #000; box-shadow: inset 0 -10px 15px 1px #0e0e0e, inset 0 0 0 1px #676767; }
+.pill.light { color: #000; background: linear-gradient(180deg, #fff 15%, #f1f1f1); box-shadow: inset 0 10px 15px 2px #fff, inset 0 0 0 1px #fff, 0 0 0 1px #0000000f; }
+.bar { height: 70px; border-radius: 25px; background: #fff; display: flex; align-items: center; padding: 0 24px; gap: 28px; box-shadow: rgba(0,0,0,.06) 0 0 0 1px, rgba(0,0,0,.06) 0 1px 1px -0.5px; }
+.bar b { font: 700 18px/1 var(--sg-display); letter-spacing: -0.4px; }
+.bar span { font-size: 16px; }
+.bar .sale { color: #c45a1a; }
+.hero { margin-top: 16px; background: #111; color: #fff; border-radius: 16px; padding: 48px 32px; }
+.hero h3 { margin: 0; font: 700 56px/0.95 var(--sg-display); letter-spacing: -2.2px; }
+.note { color: var(--text-muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Nomad Goods</h1>
+  <p class="lead">Rendered from tokens.json. Gotham Bold and Aleo are the product's faces and are not loaded here, so the guide falls back to Helvetica Neue. One light theme. Values were read from nomadgoods.com/sg/ on 2026-11-21.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Type</h2>
+  <p style="font:700 56px/53px var(--sg-display);letter-spacing:-2.24px;margin:0">Featured Deals</p>
+  <p class="note">heading, Gotham-Bold 56 / 53.2, tracking -2.24px</p>
+  <p style="margin:0">Body is Aleo 16 / 24 on the page ground.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="pill light">Shop Now</span>
+    <span class="pill dark">Sold Out | Join the Waitlist</span>
+  </div>
+  <p class="note">Pills are 48px tall, radius 100px, Gotham Bold 16. The dark face is #2f2f2f with an inset lip, from buttons-FS3QHQ7I.css.</p>
+  <h2>Nav bar</h2>
+  <div class="bar">
+    <b>NOMAD</b>
+    <span>Best Sellers</span>
+    <span>Cases</span>
+    <span>Watch</span>
+    <span class="sale">Sale</span>
+  </div>
+  <p class="note">The desktop bar is white, 70px tall, radius 25px. Sale's orange was seen in the screenshot and is not a measured token.</p>
+  <div class="hero">
+    <h3>35% Off<br>Stand One Max</h3>
+  </div>
+</div>
+<script>
+const tokens = {"core":{"color":{"black":{"v":"#000000","t":"color","s":"Measured. computed color of body and Best Sellers nav link on /sg/ at 1440x900 (raw/computed-roles.json)","d":"Ink for body and nav."},"white":{"v":"#ffffff","t":"color","s":"Measured. computed backgroundColor of the nav bar and color of the homepage h1 (raw/measured-chrome.json, raw/computed-roles.json)","d":"Nav bar fill and type on dark hero photography."},"page":{"v":"#f3f3f3","t":"color","s":"Measured. computed backgroundColor of body and footer on /sg/ (raw/computed-roles.json). Also the most common non-black hex in css-bundle after #000 and #fff.","d":"Page and footer ground."},"inkSoft":{"v":"#2f2f2f","t":"color","s":"Measured. .button-dark background gradient stop in buttons-FS3QHQ7I.css, fetched from the live stylesheet (cross-origin to the CSSOM).","d":"Dark button face."},"inkDeep":{"v":"#0e0e0e","t":"color","s":"Measured. inset shadow colour of .button-dark in buttons-FS3QHQ7I.css.","d":"Dark button inset lip."},"muted":{"v":"#6b6b6b","t":"color","s":"Measured. third most common grey hex in css-bundle-PU7D35ZG.css (21 uses). Not read off a named text role.","d":"Secondary grey used across the bundle."},"line":{"v":"#dedede","t":"color","s":"Measured. hex in css-bundle-PU7D35ZG.css (9 uses).","d":"Hairline grey in the bundle."},"danger":{"v":"#d02d2d","t":"color","s":"Measured. hex in css-bundle-PU7D35ZG.css (5 uses). Role as danger is inferred from the value sitting with no other red; treat the role as Observed, the hex as Measured.","d":"The only red in the public stylesheet bundle."},"info":{"v":"#2c4a8c","t":"color","s":"Measured. hex in css-bundle-PU7D35ZG.css (6 uses).","d":"The only blue in the public stylesheet bundle, aside from Swiper's #007aff."}},"font":{"family":{"display":{"v":"Gotham-Bold, sans-serif","t":"fontFamily","s":"Measured. computed fontFamily of h1 and Shop Now on /sg/ (raw/computed-roles.json) and of .button-dark (raw/pdp-measured.json)."},"body":{"v":"Aleo, HelveticaNeue, Helvetica Neue, sans-serif","t":"fontFamily","s":"Measured. computed fontFamily of body and the Best Sellers nav link (raw/computed-roles.json)."}}},"typography":{"display":{"v":{"fontFamily":"{font.family.display}","fontSize":"77px","fontWeight":700,"lineHeight":"73.15px","letterSpacing":"-3.08px"},"t":"typography","s":"Measured. computed style of h1 '35% Off Stand One Max' on /sg/ at 1440x900 (raw/computed-roles.json)."},"heading":{"v":{"fontFamily":"{font.family.display}","fontSize":"56px","fontWeight":700,"lineHeight":"53.2px","letterSpacing":"-2.24px"},"t":"typography","s":"Measured. computed style of h2 'Featured Deals' on /sg/ (raw/measured-chrome.json)."},"button":{"v":{"fontFamily":"{font.family.display}","fontSize":"16px","fontWeight":700,"lineHeight":"17.76px","letterSpacing":"-0.64px"},"t":"typography","s":"Measured. computed style of Shop Now and the PDP Sold Out button (raw/computed-roles.json, raw/pdp-measured.json)."},"body":{"v":{"fontFamily":"{font.family.body}","fontSize":"16px","fontWeight":400,"lineHeight":"24px","letterSpacing":"0px"},"t":"typography","s":"Measured. computed style of body on /sg/ (raw/computed-roles.json). letterSpacing was 'normal', recorded as 0px."},"label":{"v":{"fontFamily":"{font.family.display}","fontSize":"14px","fontWeight":700,"lineHeight":"15.54px","letterSpacing":"-0.56px"},"t":"typography","s":"Measured. computed style of the announcement link and .button-sm (raw/computed-roles.json, raw/pdp-measured.json)."}},"radius":{"none":{"v":"0px","t":"dimension","s":"Measured. computed borderRadius of body, nav links and headings (raw/computed-roles.json)."},"bar":{"v":"25px","t":"dimension","s":"Measured. computed borderRadius of the desktop nav bar (raw/measured-chrome.json)."},"pill":{"v":"100px","t":"dimension","s":"Measured. computed borderRadius of Shop Now and .button-dark (raw/computed-roles.json, raw/pdp-measured.json)."}},"space":{"button-x":{"v":"24px","t":"dimension","s":"Measured. computed paddingLeft of Shop Now and the PDP primary button (raw/computed-roles.json, raw/pdp-measured.json)."},"nav-x":{"v":"30px","t":"dimension","s":"Measured. computed paddingLeft of the Best Sellers nav link (raw/computed-roles.json)."},"bar-x":{"v":"10px","t":"dimension","s":"Measured. computed paddingLeft of the nav bar (raw/measured-chrome.json)."}},"size":{"button-md":{"v":"48px","t":"dimension","s":"Measured. bounding height of Shop Now and the PDP primary button (raw/computed-roles.json, raw/pdp-measured.json)."},"button-sm":{"v":"40px","t":"dimension","s":"Measured. bounding height of .button-sm skip links (raw/pdp-measured.json)."},"nav-bar":{"v":"70px","t":"dimension","s":"Measured. bounding height of the desktop nav bar (raw/measured-chrome.json)."},"breakpoint-mobile":{"v":"390px","t":"dimension","s":"Measured. configured and actual viewport width of the phone captures (public.mjs, 390x844)."}},"motion":{"button":{"v":"150ms","t":"duration","s":"Measured. transition:.15s on .button-dark in buttons-FS3QHQ7I.css, and computed transition 0.15s ease-out on the nav bar (raw/measured-chrome.json)."}}},"light":{"background":{"page":{"v":"{color.page}","t":"color","s":"Measured. body backgroundColor rgb(243, 243, 243) (raw/computed-roles.json)."},"surface":{"v":"{color.white}","t":"color","s":"Measured. nav bar backgroundColor rgb(255, 255, 255) (raw/measured-chrome.json)."},"inverse":{"v":"{color.black}","t":"color","s":"Measured. announcement strip paints black in screenshots/home-light-default.png; announcement bar computed background was transparent on the link, so the strip fill is Observed in the screenshot and the black primitive is Measured on body text."}},"text":{"primary":{"v":"{color.black}","t":"color","s":"Measured. body and nav link color rgb(0, 0, 0) (raw/computed-roles.json)."},"onInverse":{"v":"{color.white}","t":"color","s":"Measured. homepage h1 color rgb(255, 255, 255) (raw/computed-roles.json)."},"muted":{"v":"{color.muted}","t":"color","s":"Measured hex from css-bundle frequency, not from a named muted text node. See What to distrust."}},"border":{"default":{"v":"{color.black}","t":"color","s":"Measured. .button-dark border 1px solid #000 in buttons-FS3QHQ7I.css."},"hairline":{"v":"{color.line}","t":"color","s":"Measured. #dedede in css-bundle-PU7D35ZG.css."}},"action":{"primary":{"v":"{color.inkSoft}","t":"color","s":"Measured. .button-dark background #2f2f2f (buttons-FS3QHQ7I.css) and computed inset shadow rgb(14, 14, 14) on the PDP button (raw/pdp-measured.json)."},"onPrimary":{"v":"{color.white}","t":"color","s":"Measured. .button-dark color #fff and computed color of the PDP Sold Out button (raw/pdp-measured.json)."},"secondary":{"v":"{color.white}","t":"color","s":"Measured. .button-light background gradient starts at #fff (buttons-FS3QHQ7I.css) and Shop Now paints a white pill (raw/computed-roles.json box-shadow)."}},"status":{"danger":{"v":"{color.danger}","t":"color","s":"Measured hex #d02d2d in css-bundle. No error field was submitted, so the role is not confirmed on a live error state."},"info":{"v":"{color.info}","t":"color","s":"Measured hex #2c4a8c in css-bundle. Not confirmed on a live info banner."}}},"dark":{}};
+const roles = [
+  ['page', '--background-page'],
+  ['surface', '--background-surface'],
+  ['text', '--text-primary'],
+  ['muted', '--text-muted'],
+  ['accent', '--action-primary'],
+  ['border', '--border-default'],
+];
+const host = document.getElementById('swatches');
+for (const [name, v] of roles) {
+  const d = document.createElement('div');
+  d.className = 'sw';
+  d.innerHTML = '<i style="background:var(' + v + ')"></i><b>' + name + '</b><span>' + v + '</span>';
+  host.appendChild(d);
+}
+</script>
+</body>
+</html>

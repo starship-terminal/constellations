@@ -1,0 +1,122 @@
+{
+  "readAt": "2026-11-20",
+  "source": "live CSSOM on nomadgoods.com/sg/ at 1440x900, signed out",
+  "title": "NOMAD | Premium iPhone Cases, Watch Bands and Chargers",
+  "sheetsSkippedCrossOrigin": [
+    "reset-BG54NR4P.css",
+    "app-OUBNV35B.css",
+    "surfaces-E4RU7RV4.css",
+    "labels-V7QVRRON.css",
+    "links-E4YGGEG5.css",
+    "css-bundle-PU7D35ZG.css",
+    "type-NG5QEKLB.css",
+    "buttons-FS3QHQ7I.css",
+    "fields-VNN35MF2.css"
+  ],
+  "ruleCount": 3,
+  "fontFaceCount": 5,
+  "customPropertyNames": [
+    "--kl-reviews-color-light-gray",
+    "--tw-bg-opacity",
+    "--tw-rotate",
+    "--tw-scale-x",
+    "--tw-scale-y",
+    "--tw-skew-x",
+    "--tw-skew-y",
+    "--tw-text-opacity",
+    "--tw-translate-x",
+    "--tw-translate-y"
+  ],
+  "rootVarCount": 0,
+  "resolved": {
+    "--kl-reviews-color-light-gray": {
+      "raw": "#e9e9eb",
+      "kind": "color",
+      "value": "#e9e9eb"
+    }
+  },
+  "fonts": [
+    {
+      "file": "inline-11",
+      "font-family": "\"Aleo (Sign Up Form Only)\"",
+      "src": "url(…)",
+      "font-weight": "400",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "inline-11",
+      "font-family": "\"Gotham Bold (Emails)\"",
+      "src": "url(…)",
+      "font-weight": "700",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "inline-11",
+      "font-family": "\"Gotham Book\"",
+      "src": "url(…)",
+      "font-weight": "400",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "inline-11",
+      "font-family": "\"GothamBold (Sign Up Form Only - 2)\"",
+      "src": "url(…)",
+      "font-weight": "700",
+      "font-style": "normal",
+      "font-display": "swap"
+    },
+    {
+      "file": "inline-11",
+      "font-family": "\"GothamBold (Sign Up Form Only)\"",
+      "src": "url(…)",
+      "font-weight": "700",
+      "font-style": "normal",
+      "font-display": "swap"
+    }
+  ],
+  "sampleRules": [
+    {
+      "file": "4014.ccae962fcaa72.css",
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--kl-reviews-color-light-gray": "#e9e9eb"
+      }
+    },
+    {
+      "file": "4014.ccae962fcaa72.css",
+      "selector": ".kl_review_incentive_tooltip",
+      "context": [],
+      "properties": {
+        "--tw-translate-x": "-50%",
+        "--tw-translate-y": "0",
+        "--tw-rotate": "0",
+        "--tw-skew-x": "0",
+        "--tw-skew-y": "0",
+        "--tw-scale-x": "1",
+        "--tw-scale-y": "1",
+        "--tw-bg-opacity": "1",
+        "--tw-text-opacity": "1"
+      }
+    },
+    {
+      "file": "4014.ccae962fcaa72.css",
+      "selector": ".kl_reviews__review_item.kl_reviews__review_item.kl_reviews__review_item .kl_reviews__review__edited .kl_reviews__review__edited__tooltip",
+      "context": [],
+      "properties": {
+        "--tw-translate-x": "-50%",
+        "--tw-translate-y": "0",
+        "--tw-rotate": "0",
+        "--tw-skew-x": "0",
+        "--tw-skew-y": "0",
+        "--tw-scale-x": "1",
+        "--tw-scale-y": "1",
+        "--tw-bg-opacity": "1",
+        "--tw-text-opacity": "1"
+      }
+    }
+  ]
+}
