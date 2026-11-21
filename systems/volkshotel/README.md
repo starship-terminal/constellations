@@ -1,8 +1,8 @@
 # Volkshotel
 
-Volkshotel is a hotel, bar and restaurant in Amsterdam Oost. This package captures the public marketing site at www.volkshotel.nl, signed out, on 19 November 2026.
+Volkshotel is a hotel, bar and restaurant in Amsterdam Oost. This package captures the public marketing site at www.volkshotel.nl, signed out. The first readings are from 19 November 2026. This refresh, on 21 November 2026, is a public Playwright pass: the site tree, the open menu, the date dialog, and the pages the homepage controls open.
 
-Surfaces: Dutch home, English home, hotel rooms, Canvas, blog, newsletter, general information, and directions. Theme: light only. Widths: the preview tab reported innerWidth 1440 and innerHeight 900 at devicePixelRatio 2 after a 1440 by 900 request, and innerWidth 390 and innerHeight 844 at devicePixelRatio 2 after a 390 by 844 request. No account was created. No booking, card, phone, or newsletter address was entered.
+Surfaces: Dutch home, English home, hotel rooms, one room page, Canvas, Doka, Werkplaats, Badplaats, blog, agenda, newsletter, general information, directions, press kit, sustainability, gift card, business rooms, meetings, activities, Broedplaats, Christmas, and privacy. Theme: light only. Desktop shots request 1440 by 900. Phone shots request 390 by 844 at devicePixelRatio 2, and the PNG is 780 by 1688. No account was created. No booking, card, phone, or newsletter address was entered.
 
 | Path | What it holds |
 |---|---|
@@ -15,6 +15,9 @@ Surfaces: Dutch home, English home, hotel rooms, Canvas, blog, newsletter, gener
 | [patterns.md](patterns.md) | How the public pages are put together |
 | [icons/](icons/) | Index only. The painted logo is a spritesheet, not an SVG |
 | [screenshots/](screenshots/) | Viewport shots of the public pages |
+| [components/](components/) | Crops of the button, tab, card, nav link, and hamburger |
+| [site-tree.md](site-tree.md) | Which public control opens which page |
+| [login-review.json](login-review.json) | The login probe. No product sign-in. |
 | [raw/](raw/) | Viewport notes and the reading log |
 | [tools/](tools/) | The capture kit and a token checker |
 
@@ -50,7 +53,7 @@ Fonts: `core.font.family.text` is Apercu-Regular, then 3 fallbacks; `core.font.f
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; no components/ (No crops. preview_snapshot returned no frames, and crops were not cut from the later Playwright shots); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 7 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -75,15 +78,13 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops. p
 
 ## How the values were read
 
-The T3 preview browser opened `https://www.volkshotel.nl/` with `reuseExistingTab` false. The title was "Volkshotel Amsterdam Oost | Hotel / Bar / Restaurant". No Cloudflare challenge appeared. Computed styles were read with `preview_evaluate` on the live page.
+The 19 November pass read computed styles in a live browser on `https://www.volkshotel.nl/`. The title was "Volkshotel Amsterdam Oost | Hotel / Bar / Restaurant". No Cloudflare challenge appeared. Those colour and type readings are still the token sources. A later screenshot pass could not use that browser, so the frames in this refresh come from headless Playwright.
 
-`preview_snapshot` returned "The browser is not producing screenshot frames" on the home page and again later. Measurements already read were kept. No screenshot was invented in that pass.
+This refresh opened the public site in headless Chromium on 21 November 2026. The homepage returned HTTP 200. Cookiebot was removed from the DOM. Consent buttons were not clicked. No form was filled. No date was chosen. No booking was submitted.
 
-A Cookiebot banner was on the first paint. "Use necessary cookies only" was clicked. Allow all was not clicked. The banner computed `display: none` on the next read.
+The product does not publish a custom-property palette. The 21 November read of the English home found zero custom properties. Colours are computed backgrounds and text colours.
 
-The product does not publish a custom-property palette. `main.css` has 2263 rules and zero custom properties. Colours are computed backgrounds and text colours.
-
-Screenshots in [screenshots/](screenshots/) were taken afterwards with headless Playwright on the same public URLs. Those pages returned 200 and did not show a Cloudflare challenge. The cookie dialog was hidden before the shot, because the Playwright click did not dismiss it. Viewport shots are the first screen, not full-page stitches. Playwright devicePixelRatio was 1. The preview readings were taken at devicePixelRatio 2.
+Screenshots in [screenshots/](screenshots/) are viewport shots, not full-page stitches. Desktop requests are 1440 by 900 at devicePixelRatio 1, except the special-rooms and cards shots, which are 2x. Phone requests are 390 by 844 at devicePixelRatio 2. Each shot has a `.capture.json` sidecar, except the phone menu recapture, whose sidecar was written by hand after a direct screenshot. The control map is [site-tree.md](site-tree.md).
 
 ## What to distrust
 
@@ -95,11 +96,13 @@ The Canvas hero purple is a video frame (`Canvas_1080.mp4`). One centre sample w
 
 Pressura computed on `/en/canvas/` only. It is not in the home `@font-face` list. The style guide falls back to Georgia for titles and Arial for UI. Neither Apercu nor Century Old Style is committed.
 
-`focus()` returned `outline: none`. A keyboard-only pass was not done.
+`focus()` on SEE OUR ROOMS returned `outline: none` and `box-shadow: none`. The focus screenshot is the same frame as the resting button.
 
-The menu overlay stayed `display: none` after a synthetic click. Overlay link sizes in the stylesheet were not computed on a painted menu.
+The menu overlay opens on a click of the MENU label. It paints Home, Hotel, Meetings & Events, Badplaats, Canvas, Werkplaats, Doka, Broedplaats, Blog, and Agenda. The 19 November note that a synthetic click left it closed is out of date.
 
-The date picker and the Zenchef "Reserve a table" iframe were not opened. Hidden date-picker days computed `#e5e5e5`. That is a hidden control, not a painted disabled button.
+BOOK ROOM opens a date dialog on the same URL: "How long would you like to stay?", a month select, day buttons, Business stay, Promocode, and Submit. It was photographed and not submitted. The Zenchef "Reserve a table" iframe on Canvas was not entered. Hidden date-picker days from the 19 November pass computed `#e5e5e5`. That value is a hidden control, not a painted disabled button.
+
+Published contact lines on the gift card page and in the open menu were painted over before commit. The layout of those screens is still in the shots. The address strings are not in this README.
 
 `ease` and `ease-out` in the motion tokens are CSS keywords expanded to control points.
 
@@ -122,19 +125,19 @@ The date picker and the Zenchef "Reserve a table" iframe were not opened. Hidden
 | Space, radius, border | Captured. Radius on painted controls is 0. |
 | Elevation | Not present. Measured controls computed `box-shadow: none`. |
 | Motion | Button 100ms ease. Menu label 300ms ease-out. Fade 200ms ease-out. No `prefers-reduced-motion` rule in main.css. |
-| Button | Default and hover captured. Pressed, disabled, loading not captured. Focus computed none. |
-| Link | Captured. Bottom nav, footer rules, blog categories. |
-| Text field, text area | Not on the pages measured. Newsletter form is a Sendinblue iframe. Not entered. |
-| Select | Booking room and month selects were collapsed. Not opened. |
-| Checkbox, radio, switch | Not present as product controls. Cookiebot was dismissed. |
-| Tabs | Room tabs captured on `/en/hotel/`. |
-| Menu | Closed. Overlay did not open on a synthetic click. |
+| Button | Default and hover captured. [components/crops/button-default.png](components/crops/button-default.png), [components/crops/button-hover.png](components/crops/button-hover.png). Pressed was attempted and the crop was not kept. Disabled and loading not present. Focus computed none. |
+| Link | Captured. Bottom nav, footer rules, blog categories. [components/crops/link-nav.png](components/crops/link-nav.png) |
+| Text field, text area | Newsletter form is an iframe. Not entered. Gift card balance field was photographed and not filled. |
+| Select | Month select is visible inside the date dialog. Not changed. [screenshots/home-light-book-wall.png](screenshots/home-light-book-wall.png) |
+| Checkbox, radio, switch | Not present as product controls. Cookiebot was hidden, not clicked. |
+| Tabs | Room tabs captured. Selected is black fill. [components/crops/tab-selected.png](components/crops/tab-selected.png) |
+| Menu | Open. [screenshots/home-light-menu.png](screenshots/home-light-menu.png) and [screenshots/home-light-phone-menu.png](screenshots/home-light-phone-menu.png) |
 | Tooltip | Not present. |
-| Dialog | Cookiebot dismissed. Booking picker and menu overlay not opened. |
+| Dialog | Date dialog opened and not submitted. Cookiebot hidden. |
 | Toast | Not present. |
-| Card | Room and blog cards captured. |
+| Card | Room and blog cards captured. [components/crops/card-room.png](components/crops/card-room.png) |
 | List row, table, avatar, badge | Not present. |
-| Icon button | Hamburger measured. SVG not extracted. |
+| Icon button | Hamburger crop. [components/crops/icon-button-default.png](components/crops/icon-button-default.png). SVG not extracted. |
 | Phone width | Captured. [screenshots/home-light-phone.png](screenshots/home-light-phone.png) |
 | Desktop width | Captured at innerWidth 1440. |
 
@@ -142,9 +145,9 @@ The date picker and the Zenchef "Reserve a table" iframe were not opened. Hidden
 
 - **Paint the page white, the bands grey, and the footer black.** The home header is white, the slider band is `#f1f1f1`, and the footer is black. [screenshots/home-light-default.png](screenshots/home-light-default.png)
 - **Use a 3px black border and square corners on every button.** SEE OUR ROOMS and the room tabs share that border and a 0 radius. [screenshots/hotel-light-default.png](screenshots/hotel-light-default.png)
-- **Invert the button to black on hover.** BOOK ROOM and SEE OUR ROOMS computed black fill and white text while `:hover` matched. [screenshots/blog-light-default.png](screenshots/blog-light-default.png)
+- **Invert the button to black on hover.** SEE OUR ROOMS computed black fill and white text while the pointer was over it. [screenshots/home-light-button-hover.png](screenshots/home-light-button-hover.png)
 - **Set titles in Century Old Style and UI in Apercu.** General info is the serif at 50px. Body copy is Apercu. [screenshots/info-light-default.png](screenshots/info-light-default.png)
-- **Do not invent a booking form, a radius, or a dark theme.** The date picker, the gift card, and the newsletter iframe were not entered. Canvas purple is a video frame, not a second theme. [screenshots/canvas-light-default.png](screenshots/canvas-light-default.png)
+- **Do not invent a booking form, a radius, or a dark theme.** The date dialog was opened and not submitted. The gift card balance field and the newsletter iframe were not filled. Canvas purple is a video frame, not a second theme. [screenshots/home-light-book-wall.png](screenshots/home-light-book-wall.png)
 
 ## Rebuild
 

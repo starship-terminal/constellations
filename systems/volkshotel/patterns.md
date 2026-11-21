@@ -1,6 +1,6 @@
 # Patterns
 
-Public marketing pages, signed out, 2026-11-19. Screenshots are in [screenshots/](screenshots/). `preview_snapshot` could not produce frames, so these PNGs come from a later headless Playwright pass on the same public URLs.
+Public marketing pages, signed out. The 21 November 2026 frames are headless Playwright. The control map is [site-tree.md](site-tree.md).
 
 ## Home
 
@@ -10,7 +10,7 @@ Dutch home and English home share one stack. A white header holds BOOK ROOM at t
 
 ## Rooms
 
-`/en/hotel/` puts STANDARD ROOMS and SPECIAL ROOMS as square tabs over a grey band of white cards. Each card has a 1px grey border and a BOOK ROOM outline button. The booking picker was not opened.
+`/en/hotel/` puts STANDARD ROOMS and SPECIAL ROOMS as square tabs over a grey band of white cards. The selected tab is black. Each card has a 1px grey border and a BOOK ROOM outline button. BOOK ROOM opens a date dialog. It was photographed and not submitted.
 
 [screenshots/hotel-light-default.png](screenshots/hotel-light-default.png)
 

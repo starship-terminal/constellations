@@ -1,21 +1,69 @@
 {
-  "capturedAt": "2026-11-18T20:27:14.915Z",
-  "sourceUrl": "https://www.volkshotel.nl/en/",
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T04:08:35.431Z",
+  "screenshot": "home-light-phone.png",
+  "sanitizedSourceUrl": "https://www.volkshotel.nl/en/",
   "requested": {
-    "width": 390,
-    "height": 844,
-    "deviceScaleFactor": 1
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
   },
-  "measured": {
+  "configuredViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "actual": {
     "innerWidth": 390,
     "innerHeight": 844,
-    "dpr": 1,
-    "vv": {
-      "w": 390,
-      "h": 844,
-      "scale": 1
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 390,
+      "height": 6761
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
     }
   },
-  "title": "Volkshotel Amsterdam | Hotel / Bar / Restaurant",
-  "note": "Headless Playwright. preview_snapshot returned no frames. Public page, no Cloudflare challenge."
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 780,
+      "height": 1688
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
 }

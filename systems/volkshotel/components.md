@@ -12,7 +12,7 @@ SEE OUR ROOMS and BOOK ROOM, while `:hover` matched, computed to `light.componen
 
 The top BOOK ROOM control on the Dutch home had a transparent fill and no border until hover. MENU uses `light.background.nav` and no border. Both are 43px tall (`core.size.nav-button`).
 
-Pressed, disabled and loading were not painted. `focus()` on SEE OUR ROOMS computed `outline: none` and `box-shadow: none`.
+Pressed, disabled and loading were not kept as crops. `focus()` on SEE OUR ROOMS computed `outline: none` and `box-shadow: none`. Default and hover crops are [components/crops/button-default.png](crops/button-default.png) and [components/crops/button-hover.png](crops/button-hover.png).
 
 ## Link
 
@@ -34,9 +34,9 @@ Not present.
 
 ## Select
 
-The booking date picker has a room `select` and a month `select`. Both were `display` collapsed (height 0) on the pages measured. They were not opened, and no dates were chosen.
+BOOK ROOM opens a date dialog on the same URL. The month control is a visible `select`. No option was changed and Submit was not pressed. [screenshots/home-light-book-wall.png](../screenshots/home-light-book-wall.png)
 
-The menu stylesheet declares a language selector inside `#main-nav-overlay`. The overlay stayed `display: none`, so that control was not computed.
+The open menu paints EN and NL as a pair of links, not a native select.
 
 ## Checkbox, radio, switch
 
@@ -44,13 +44,13 @@ Cookiebot checkboxes were in the consent dialog. Necessary cookies only was chos
 
 ## Tabs
 
-On `/en/hotel/`, STANDARD ROOMS and SPECIAL ROOMS are `a.button.tab`. The active tab is `light.component.tab-selected.bg` with `light.component.tab-selected.text`, a 3px black border, and padding `13px 40px 9px` (`core.spacing.tab-x`). The inactive tab has a transparent fill and black text. Radius is 0.
+On `/en/hotel/`, STANDARD ROOMS and SPECIAL ROOMS are `a.button.tab`. The active tab computed black fill, white text, and a 3px black border. The inactive tab has a transparent fill, black text, and the same border. Radius is 0. Crops: [components/crops/tab-selected.png](crops/tab-selected.png), [components/crops/tab-default.png](crops/tab-default.png).
 
 Blog categories (PEOPLE, HOTSPOTS, MUSIC, ART & CULT, EXPERIMENTS, HOTEL) are text links, `core.typography.button` size, not a tab widget.
 
 ## Menu
 
-`#main-nav-overlay` computed `display: none` and background `light.background.nav`. A synthetic click on `.menu-button` did not open it. The stylesheet says overlay links are 40px with padding `8px 0px 12px`, and a hovered row is `rgba(0, 0, 0, 0.1)`. Those states were not computed on a painted menu.
+A click on the MENU label opens `#main-nav-overlay`. It computed `display: block` and background `light.background.nav` (rgba(255, 255, 255, 0.97)). The painted links are Home, Hotel, Meetings & Events, Badplaats, Canvas, Werkplaats, Doka, Broedplaats, Blog, and Agenda. [screenshots/home-light-menu.png](../screenshots/home-light-menu.png). At 390 the same overlay opens from the hamburger. [screenshots/home-light-phone-menu.png](../screenshots/home-light-phone-menu.png). A hovered row was not recaptured.
 
 ## Tooltip
 
@@ -58,7 +58,7 @@ Not present.
 
 ## Dialog
 
-Cookiebot was on the first paint. Necessary cookies only was clicked. The dialog was not measured as a product dialog. The booking date picker and the menu overlay were not opened.
+Cookiebot was on the first paint and was removed from the DOM. It was not clicked. The booking date dialog was opened and not submitted. The menu overlay is a full-page menu, not a small dialog.
 
 ## Toast
 
@@ -82,4 +82,4 @@ Not present. Blog category labels are uppercase 13px spans, not badges with thei
 
 ## Icon button
 
-The hamburger is a 43px square (`core.size.hamburger`) with white fill and padding `18px 10px`. At 390 it measured 46 by 43. It has no text. The close control on the promo sign measured 48 by 48. Neither was extracted as an SVG crop.
+The hamburger is a 43px square (`core.size.hamburger`) with white fill. At 390 it measured 46 by 43. It has no text. Crop: [components/crops/icon-button-default.png](crops/icon-button-default.png). The SVG was not extracted.

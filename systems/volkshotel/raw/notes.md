@@ -85,7 +85,9 @@ Button transition is 0.1s ease on background and color. Menu label transition is
 
 ## Menu
 
-`#main-nav-overlay` computed `display: none`. A synthetic click on `.menu-button` did not open it. The stylesheet says the overlay is `position: fixed`, background rgba(255, 255, 255, 0.97), and its links are 40px with padding 8px 0px 12px. Those link sizes were not computed on a painted open menu.
+On 21 November 2026 a click on the MENU label opened `#main-nav-overlay` (`display: block`, background rgba(255, 255, 255, 0.97)). The painted links are Home, Hotel, Meetings & Events, Badplaats, Canvas, Werkplaats, Doka, Broedplaats, Blog, and Agenda. The 19 November note that a synthetic click left it closed is out of date.
+
+BOOK ROOM on the English home opened a date dialog on the same URL. Visible controls: a month select, day buttons, Business stay, Promocode, and Submit. No date was chosen. Submit was not pressed.
 
 ## Not entered
 
