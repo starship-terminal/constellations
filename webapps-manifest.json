@@ -1932,9 +1932,9 @@
       "description": "Wholesale Platform",
       "status": "captured",
       "package": "systems/faire",
-      "notes": "https://www.faire.com/?signIn=1 asks for email and password, or Google or Apple. Cookie banner was present and was not accepted. No code was sent.",
+      "notes": "https://www.faire.com/?signIn=1 asks for email and password, or Google or Apple. Cookie banner was present and was not accepted. No code was sent. Public walk 2026-11-21: the public site tree is in systems/faire/site-tree.md. Sign in stops at https://www.faire.com/?signIn=1 with email, password, Sign in, Google, and Apple. Sign up to buy stops at /?signUp=1. Sign up to sell stops at https://www.faire.com/apply. Refer a brand stops at /user/brand-referrals. Nothing was typed. Google and Apple were not clicked. The cookie banner was hidden and not accepted. One help article stopped at Cloudflare. No login-review.json in this PR. login-extracted stays not-started. Public package refresh in PR 1659 at 80fe2f705a2c. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 6
     },
     {
