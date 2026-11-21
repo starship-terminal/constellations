@@ -1354,9 +1354,9 @@
       "description": "Movies, Events, Dining, Sports & Concerts Nearby",
       "status": "captured",
       "package": "systems/district",
-      "notes": "https://www.district.in/login says the page was not found. The home Login control did not open a form.",
+      "notes": "https://www.district.in/login says the page was not found. The home Login control did not open a form. Public walk 2026-11-21: the map starts at district.in and records which header, footer, search, location, and in-page control opens which page, dialog, or list. Marketing pages, search, the location dialog, and filters were photographed at desktop and phone. Login opens an in-page dialog that asks for a mobile number and a one-time code. Nothing was typed. No form was submitted. /login is a not-found page. Signed-in app was not captured. Public package refresh in PR 1642 at 6f87a345140b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 4
     },
     {
@@ -1422,9 +1422,9 @@
       "description": "#1 in Electronic Signature and Intelligent Agreement Management",
       "status": "captured",
       "package": "systems/docusign",
-      "notes": "https://account.docusign.com/ accepted the email, then asked for a password. No code was sent.",
+      "notes": "https://account.docusign.com/ accepted the email, then asked for a password. No code was sent. Public walk 2026-11-21: the map starts at docusign.com and records which header, mega-menu, footer, and in-page control opens which page, panel, or wall. Marketing pages and opened menus were photographed at desktop and phone. Cookie banners were hidden, never accepted. Search was opened and not typed. Log In stopped at account.docusign.com with an empty email field. Nothing was typed. Google, Apple, Microsoft, and SSO were not clicked. Trial and checkout walls were recorded and not entered. Signed-in app was not captured. Public package refresh in PR 1641 at 43a8afe9d0ce. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
