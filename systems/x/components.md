@@ -1,6 +1,6 @@
 # Components
 
-Measured on the public signed-out surfaces of X on 19 November 2026. Crops are absent: the preview browser returned "The browser is not producing screenshot frames", and headless Chromium received HTTP 403 on the login and missing routes. The legal pages are the only screenshots.
+Measured on the public signed-out surfaces of X. Values are from 19 November 2026, checked again on 21 November 2026. Crops are absent. The pages themselves are in [screenshots/](screenshots/).
 
 | Component | State captured | Evidence |
 |---|---|---|
@@ -12,8 +12,9 @@ Measured on the public signed-out surfaces of X on 19 November 2026. Crops are a
 | Link | Footer 11px #999999. Inline legal link #067acc. Show more #1d9bf0 | readings.json |
 | Text field | Default, already focused on load. 62px, 6px radius, 2px #0ea5e9 border. Nothing typed | readings.json login.field |
 | Card | QR card. #141414, 22px radius, 16px padding, shadow 0 4px 20px rgba(0,0,0,0.4) | readings.json login.qrCard |
-| Icon button | About menu button is 0px at 1169px. Legal menu is 18px at 390. Not opened | readings.json about, legal measure |
+| Dialog | Login and signup walls. 700 by 664, #141414, 24px radius. Photographed empty. Not submitted | [screenshots/login-dark-1440.png](screenshots/login-dark-1440.png) |
+| Chip | News category chip. Selected chip is white on black, 32px, 9999px radius | [screenshots/news-dark-1440.png](screenshots/news-dark-1440.png) |
 
 ## Gaps
 
-Text area, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, list row, table, avatar and badge were not on the pages that loaded. Hover, pressed, disabled-by-attribute, loading and error states were not forced. The signed-in app was not entered.
+Text area, select, checkbox, radio, switch, tabs, menu, tooltip, toast, list row, table, avatar and badge were not measured as components. Hover, pressed, loading and error states were not forced. The signed-in app was not entered. login-extracted stays not-started.

@@ -1,8 +1,8 @@
 # X
 
-Public signed-out surfaces of X (x.com, formerly Twitter), measured on 19 November 2026. The login chrome and a missing-route shell were read in a signed-out T3 preview tab. The terms and privacy pages were also screenshotted in headless Chromium after they had already loaded without a challenge. No account was created, no email or phone was typed, and nothing was posted.
+Public signed-out surfaces of X (x.com, formerly Twitter). First measured on 19 November 2026. Refreshed on 21 November 2026 in a signed-out T3 preview incognito tab, plus headless Chromium for the legal pages. No account was created, no email or phone was typed, and nothing was posted. `login-extracted` stays `not-started`. catalog.json was not edited.
 
-Themes seen: dark on x.com and about.x.com, light on the legal pages. Widths: the preview tab was 1169 by 731 at device pixel ratio 2. The legal screenshots are 1440 by 900 and 390 by 844, also at ratio 2.
+Themes seen: dark on x.com, dark and light on about.x.com, light on the legal pages. Preview shots are 1440 by 900 and 390 by 844 at device pixel ratio 2. The 1440 legal screenshots are 1x.
 
 | File | What it holds |
 |---|---|
@@ -12,10 +12,12 @@ Themes seen: dark on x.com and about.x.com, light on the legal pages. Widths: th
 | [tokens.json](tokens.json) | Measured colours, type, radii and spacing |
 | [style-guide.html](style-guide.html) | A page that renders the tokens |
 | [components.md](components.md) | Controls that were on the page |
-| [patterns.md](patterns.md) | The four surfaces |
-| [components/](components/) | No crops. The preview browser produced no frames, and the login route 403s in headless Chromium |
+| [patterns.md](patterns.md) | The public surfaces |
+| [site-tree.md](site-tree.md) | Which controls open which pages, and where the capture stopped |
+| [login-review.json](login-review.json) | Empty login and signup walls. login_extracted is not-started |
+| [components/](components/) | No crops |
 | [icons/](icons/) | INDEX.tsv only. The mark is not kept as SVG |
-| [screenshots/](screenshots/) | Four legal-page viewport shots |
+| [screenshots/](screenshots/) | Public viewport shots: home, news, download, about, missing route, legal, empty login and signup |
 | [raw/](raw/) | readings.json, the computed styles |
 | [tools/](tools/) | The kit copy plus test_tokens.py |
 
@@ -62,7 +64,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #1d9bf0 `dark.color.text.brand` | #067acc `light.color.text.link` |
 | border | #ffffff26 `dark.color.border.default` | #e8eff3 `light.color.border.default` |
 
-Fonts: `core.font.family.chirp` is TwitterChirp, then 7 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 12 type styles (`core.typography`), 6 radius steps (`core.radius`), 6 spacing steps (`core.spacing`).
+Fonts: `core.font.family.chirp` is TwitterChirp, then 7 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 12 type styles (`core.typography`), 7 radius steps (`core.radius`), 6 spacing steps (`core.spacing`).
 
 ### Using components
 
@@ -95,7 +97,7 @@ The Google button is Google Identity Services chrome (Google Sans, 20px radius).
 
 The date band colour is a screenshot sample, rgb(20, 23, 26), because the text node itself is transparent. The legal body computed at 15.96px and is stored as 16px. The QR card radius computed at 21.6px and is stored as 22px. The Show more radius computed at 14.4px and is stored as 14px.
 
-about.x.com at 1169px hides the desktop header, including Sign In. Those values are declared and zero-size. The painted header is the mobile About menu.
+The 19 November pass at 1169px hid the about.x.com desktop header. The 21 November pass at 1440px shows that header. Sign In was not followed. The Light theme control was pressed so the light marketing page could be photographed.
 
 TwitterChirp, Helvetica Neue LT and xVF are not in this package. The style guide uses the system sans.
 
@@ -117,15 +119,17 @@ TwitterChirp is the product face on x.com, weights 300, 400 and 500, served from
 | Link | Captured |
 | Text field | Default captured. Nothing typed, so filled, error and disabled are gaps |
 | Text area, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, list, table, avatar, badge | Not on these pages |
-| App shell | Logged-out shell measured, no screenshot (headless 403, preview frames failed) |
+| App shell | Logged-out home, News, missing route and download photographed. [screenshots/home-login-dark-1440.png](screenshots/home-login-dark-1440.png) |
 | Legal page | Captured at 1440 and 390 |
-| Form error, empty, loading, destructive confirm, search results | Not captured. Search was not submitted |
-| about.x.com light theme | Not captured. The theme control was not pressed, and headless Chromium was challenged |
-| Signed-in app | Not entered |
+| Form error, loading, destructive confirm, search results | Not captured. Search redirects to the login wall and was not submitted |
+| Empty state | Missing route photographed. [screenshots/missing-dark-1440.png](screenshots/missing-dark-1440.png) |
+| about.x.com light theme | Captured. [screenshots/about-light-1440.png](screenshots/about-light-1440.png) |
+| Login and signup walls | Photographed empty. Stopped there. [login-review.json](login-review.json) |
+| Signed-in app | Not entered. login-extracted stays not-started |
 
 ## Do and don't
 
-- **Use the white pill on black for the primary action.** The painted Continue with phone control is #f8fafc on #000000, fully rounded. See [raw/readings.json](raw/readings.json).
+- **Use the white pill on black for the primary action.** The painted Continue with phone control is #f8fafc on #000000, fully rounded. See [screenshots/home-login-dark-1440.png](screenshots/home-login-dark-1440.png).
 - **Keep the legal pages light and huge.** The terms headline is 144px Helvetica Neue LT at 1440, black on white. See [screenshots/tos-light-1440.png](screenshots/tos-light-1440.png).
 - **Use #1d9bf0 for the brand link.** Show more and `--color-brand` both resolve to it. See [raw/readings.json](raw/readings.json).
 - **Do not invent a hover or an error colour.** Neither was on the page.

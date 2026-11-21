@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-21T15:42:00Z",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "source": "https://x.com/i/jf/stories/home",
+  "title": "News / X",
+  "note": "Public News at phone width. Log in and Sign up were not clicked. Viewport screenshot, not a full-page stitch."
+}

@@ -32,11 +32,21 @@ class TokenTests(unittest.TestCase):
         missing = [path for path, node in walk(TOKENS) if "source" not in node.get("$extensions", {})]
         self.assertEqual(missing, [])
 
-    def test_screenshots_are_the_legal_pages_only(self):
+    def test_screenshots_are_the_public_pages(self):
         shots = sorted(p.name for p in (ROOT / "screenshots").glob("*.png"))
         self.assertEqual(shots, [
+            "about-dark-1440.png",
+            "about-light-1440.png",
+            "download-dark-390.png",
+            "home-dark-390.png",
+            "home-login-dark-1440.png",
+            "login-dark-1440.png",
+            "missing-dark-1440.png",
+            "news-dark-1440.png",
+            "news-dark-390.png",
             "privacy-light-1440.png",
             "privacy-light-390.png",
+            "signup-dark-1440.png",
             "tos-light-1440.png",
             "tos-light-390.png",
         ])

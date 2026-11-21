@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-21T15:42:00Z",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "source": "https://x.com/",
+  "title": "X. It\u2019s what\u2019s happening / X",
+  "note": "Desktop homepage is the empty login wall. Field was already focused. Nothing typed. Phone, Google and Apple were not clicked. Viewport screenshot, not a full-page stitch."
+}
