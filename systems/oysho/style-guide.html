@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Oysho style guide</title>
+  <style>
+    :root {
+      --page: #fefefe;
+      --ink: #000000;
+      --on-ink: #f5f4f1;
+      --muted: #3d3d3d;
+      --line: #e5e5e5;
+      --promo: #ff5ea0;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font-family: "Times New Roman", Times, serif; }
+    header { background: #000; color: #fff; font: 14px/40px Georgia, serif; text-align: center; }
+    main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+    h1 { font-weight: 400; font-size: 40px; letter-spacing: 0.08em; margin: 0 0 8px; }
+    p { font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 14px; line-height: 1.5; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+    .swatch { width: 120px; }
+    .chip { height: 64px; border: 1px solid var(--line); }
+    .label { font: 12px/1.4 Roboto, sans-serif; margin-top: 6px; }
+    .bar { display: flex; align-items: center; gap: 16px; height: 64px; border-bottom: 1px solid var(--line); }
+    .word { font-size: 28px; letter-spacing: 0.12em; }
+    .nav { margin-left: auto; font: 14px/1 Roboto, sans-serif; color: var(--muted); }
+    button.buy { width: 280px; height: 56px; border: 0; border-radius: 0; background: var(--ink); color: var(--on-ink); font: 14px/1 Roboto, sans-serif; }
+    .sizes { display: flex; gap: 8px; margin: 16px 0 24px; }
+    .size { width: 72px; height: 56px; border: 1px solid var(--line); display: grid; place-items: center; font: 14px/1 Roboto, sans-serif; }
+    .size.on { border-color: var(--ink); }
+    .note { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>Free store delivery | Free home delivery from 40 €</header>
+  <main>
+    <h1>OYSHO</h1>
+    <p class="note">Measured from the Spain storefront on 2026-11-22. Roboto stands in for Oysho-font. The wordmark face is the site's icon font and is not in this file.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#fefefe"></div><div class="label">page #fefefe</div></div>
+      <div class="swatch"><div class="chip" style="background:#000000"></div><div class="label">ink #000000</div></div>
+      <div class="swatch"><div class="chip" style="background:#3d3d3d"></div><div class="label">muted #3d3d3d</div></div>
+      <div class="swatch"><div class="chip" style="background:#f5f4f1"></div><div class="label">on ink #f5f4f1</div></div>
+      <div class="swatch"><div class="chip" style="background:#e5e5e5"></div><div class="label">line #e5e5e5</div></div>
+      <div class="swatch"><div class="chip" style="background:#ff5ea0"></div><div class="label">promo token #ff5ea0</div></div>
+    </div>
+    <div class="bar"><span class="word">OYSHO</span><span class="nav">Sign in · Help · Basket</span></div>
+    <p style="font-size:18px;font-weight:500;margin-top:32px">Ankle-length high rise compressive Warm leggings</p>
+    <p>35,99 €</p>
+    <div class="sizes"><div class="size on">Regular</div><div class="size">Tall</div><div class="size">XS</div><div class="size">S</div><div class="size">M</div></div>
+    <button class="buy" type="button">Add to basket</button>
+  </main>
+</body>
+</html>

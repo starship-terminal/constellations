@@ -1,0 +1,96 @@
+{
+  "captured": "2026-11-22",
+  "startUrl": "https://www.oysho.com",
+  "landed": "https://www.oysho.com/",
+  "storefront": "https://www.oysho.com/es/en/",
+  "region": "Spain (English)",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "body": {
+    "backgroundColor": "rgb(254, 254, 254)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Oysho-font, Roboto",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "16px"
+  },
+  "signIn": {
+    "text": "Sign in",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "color": "rgb(61, 61, 61)",
+    "height": 18,
+    "width": 46
+  },
+  "product": {
+    "url": "https://www.oysho.com/es/en/anklelength-high-rise-compressive-warm-leggings-l36320820?colorId=800&pelement=231972258&categoryId=1010221001",
+    "h1": {
+      "text": "Ankle-length high rise compressive Warm leggings",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "22px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "price": {
+      "text": "35,99 €",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "color": "rgb(0, 0, 0)"
+    },
+    "addToBasket": {
+      "text": "Add to basket",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(245, 244, 241)",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "height": 56,
+      "width": 424,
+      "borderRadius": "0px",
+      "clicked": false
+    },
+    "sizeChip": {
+      "text": "XS",
+      "fontSize": "14px",
+      "height": 56,
+      "width": 116,
+      "borderRadius": "0px",
+      "border": "1px solid rgb(229, 229, 229)",
+      "backgroundColor": "rgb(254, 254, 254)"
+    }
+  },
+  "badge": {
+    "text": "NEW",
+    "fontSize": "12px",
+    "fontWeight": "500",
+    "color": "rgb(0, 0, 0)"
+  },
+  "footerLink": {
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "color": "rgb(0, 0, 0)"
+  },
+  "tokens": {
+    "--color-primary-white": "#FEFEFE",
+    "--color-primary-black": "#000000",
+    "--color-primary-super-dark": "#3D3D3D",
+    "--color-primary-dark": "#747577",
+    "--color-primary-description": "#6B6B6B",
+    "--color-primary-gray": "#D9D9D9",
+    "--color-primary-gray-medium": "#F5F5F5",
+    "--color-primary-extra-light": "#F8F8F8",
+    "--color-primary-ultra-light": "#F5F4F1",
+    "--color-primary-super-light": "#E5E5E5",
+    "--color-primary-light": "#C6C6C6",
+    "--color-primary-medium": "#ADAEB2",
+    "--color-terciary-promo": "#FF5EA0",
+    "--color-terciary-error": "#D0021B",
+    "--color-terciary-success": "#1C7F21",
+    "--color-terciary-warning": "#926B16",
+    "--color-primary-blue": "#5897FB",
+    "--font-main": "\"Oysho-font\", \"Roboto\"",
+    "--spacing-base": "8px",
+    "--static-header-content-height": "92px",
+    "--header-icon-font-family": "\"oysho-icon-font\"",
+    "--add-to-cart-button-font-size-desktop": "14px",
+    "--input-font-size-desktop": "18px"
+  }
+}
