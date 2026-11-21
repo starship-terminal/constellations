@@ -1252,9 +1252,9 @@
       "description": "Scale Your Insight. Stay Focused on What Matters",
       "status": "captured",
       "package": "systems/delphi",
-      "notes": "https://www.delphi.ai/login redirects to https://www.delphi.co/. Sign In links back to the same page. No email field was reached.",
+      "notes": "https://www.delphi.ai/login redirects to https://www.delphi.co/. Sign In links back to the same page. No email field was reached. Public walk 2026-11-21: the map starts at delphi.ai, which lands on delphi.co, and records which header, footer, and in-page control opens which page, dialog, or in-page state. Marketing pages and a painted app home were photographed at desktop and phone. /login and /auth bounce to the public home. /~ is a login wall with Continue with Google and Continue with Email. Those buttons were not clicked and no form was submitted. Signed-in app was not captured. Public package refresh in PR 1637 at 6699333d248b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 4
     },
     {
