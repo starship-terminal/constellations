@@ -57,7 +57,7 @@ How Airbnb's components combine to do the recurring jobs on its public pages, wr
 
 **Layout.** Below the header a row of 34px-high pills: the Filters button (84px, outlined, an icon glyph leading) then text chips — Type of place, Price, … — each a `border.secondary`-ringed 24px-radius pill that darkens its border on hover and draws the halo+ring shadow on focus. Under it the same photo-led cards as home, plus the "prices include all fees" tag. Chips are single-purpose toggles; the grid responds to the map on desktop, which was not driven.
 
-**Screens.** [search-light-default](screenshots/search-light-default.png), [search-light-full](screenshots/search-light-full.png), [mobile-search-light-default](screenshots/mobile-search-light-default.png).
+**Screens.** [search-light-default](screenshots/search-light-default.png), [mobile-search-light-default](screenshots/mobile-search-light-default.png).
 
 ## A listing's page
 
@@ -69,7 +69,7 @@ How Airbnb's components combine to do the recurring jobs on its public pages, wr
 
 **The promo strip** (a signed-out "get SGD X off" banner with a Claim button) sits above — its tap requires sign-in and was not performed.
 
-**Screens.** [room-light-default](screenshots/room-light-default.png), [room-light-full](screenshots/room-light-full.png), [room-light-modal](screenshots/room-light-modal.png).
+**Screens.** [room-light-default](screenshots/room-light-default.png), [room-light-modal](screenshots/room-light-modal.png).
 
 ## Load-time coachmarks
 

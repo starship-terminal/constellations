@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-10"
+  "read": "2026-11-21"
  },
  "components": {
   "header": {
@@ -152,7 +152,7 @@
       {
        "node": "div.ogt7ox8.dir",
        "size": "1440.0x900.0",
-       "bg": "rgba(0, 0, 0, 0.25)"
+       "bg": "color(srgb 0 0 0 / 0.25)"
       },
       {
        "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
@@ -168,7 +168,7 @@
       }
      ],
      "textStyle": {
-      "node": "span.timi9jf.atm_7l_hfv0h6_1nos8r",
+      "node": "span.t151v0ez.atm_7l_hfv0h6_1nos8r",
       "text": "All",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -196,9 +196,9 @@
    "url": "https://www.airbnb.com/",
    "title": "Header",
    "group": "Header and navigation",
-   "desc": "The fixed top bar: the B\u00e9lo logo, the category tabs (All, Homes, Experiences, Services) with their icons, \"Become a host\", the language globe and the profile menu. The search pill sits under it.",
+   "desc": "The fixed top bar: the Bélo logo, the category tabs (All, Homes, Experiences, Services) with their icons, \"Become a host\", the language globe and the profile menu. The search pill sits under it.",
    "selector": "the fixed top bar holding the logo, tabs and user controls",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "header-host-link": {
    "states": {
@@ -618,7 +618,7 @@
    "group": "Header and navigation",
    "desc": "The host entry point in the header. Measured and focused, never followed.",
    "selector": "header \"Become a host\"",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "header-globe": {
    "states": {},
@@ -1127,13 +1127,13 @@
    "group": "Header and navigation",
    "desc": "The account buttons rightmost in the header (navigation menu and Log in or sign up). Pressed state is forced, not clicked: the menu leads to sign-up.",
    "selector": "the menu button rightmost in the header",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "tab-active": {
    "states": {
     "default": {
      "tag": "a",
-     "classes": "c5o62i6 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
+     "classes": "cowqa6u atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
      "text": "Homes Homes",
      "rect": {
       "x": 569.6,
@@ -1212,7 +1212,7 @@
       "top": "auto"
      },
      "textStyle": {
-      "node": "span.timi9jf.atm_7l_hfv0h6_1nos8r",
+      "node": "span.t151v0ez.atm_7l_hfv0h6_1nos8r",
       "text": "Homes",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -1229,7 +1229,7 @@
     },
     "hover": {
      "tag": "a",
-     "classes": "c5o62i6 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
+     "classes": "cowqa6u atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
      "text": "Homes Homes",
      "rect": {
       "x": 569.6,
@@ -1308,7 +1308,7 @@
       "top": "auto"
      },
      "textStyle": {
-      "node": "span.timi9jf.atm_7l_hfv0h6_1nos8r",
+      "node": "span.t151v0ez.atm_7l_hfv0h6_1nos8r",
       "text": "Homes",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -1325,7 +1325,7 @@
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "c5o62i6 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
+     "classes": "cowqa6u atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
      "text": "Homes Homes",
      "rect": {
       "x": 569.6,
@@ -1405,14 +1405,14 @@
      },
      "paint": [
       {
-       "node": "a.c5o62i6.atm_3f_glywfm_jo46a5",
+       "node": "a.cowqa6u.atm_3f_glywfm_jo46a5",
        "size": "103.5x36.0",
        "outline": "2px solid rgb(34, 34, 34) offset 4px",
        "radius": "8px"
       }
      ],
      "textStyle": {
-      "node": "span.timi9jf.atm_7l_hfv0h6_1nos8r",
+      "node": "span.t151v0ez.atm_7l_hfv0h6_1nos8r",
       "text": "Homes",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -1429,7 +1429,7 @@
     },
     "pressed": {
      "tag": "a",
-     "classes": "c5o62i6 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
+     "classes": "cowqa6u atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
      "text": "Homes Homes",
      "rect": {
       "x": 569.6,
@@ -1508,7 +1508,7 @@
       "top": "auto"
      },
      "textStyle": {
-      "node": "span.timi9jf.atm_7l_hfv0h6_1nos8r",
+      "node": "span.t151v0ez.atm_7l_hfv0h6_1nos8r",
       "text": "Homes",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -1531,13 +1531,13 @@
    "group": "Header and navigation",
    "desc": "A category tab in the header (Homes / Experiences / Services), the current one underlined.",
    "selector": "header tab \"Homes\"",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "tab": {
    "states": {
     "default": {
      "tag": "a",
-     "classes": "c5o62i6 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
+     "classes": "cowqa6u atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
      "text": "Experiences Experiences",
      "rect": {
       "x": 708.1,
@@ -1616,7 +1616,7 @@
       "top": "auto"
      },
      "textStyle": {
-      "node": "span.timi9jf.atm_7l_hfv0h6_1nos8r",
+      "node": "span.t151v0ez.atm_7l_hfv0h6_1nos8r",
       "text": "Experiences",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -1633,7 +1633,7 @@
     },
     "hover": {
      "tag": "a",
-     "classes": "c5o62i6 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
+     "classes": "cowqa6u atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
      "text": "Experiences Experiences",
      "rect": {
       "x": 708.1,
@@ -1712,7 +1712,7 @@
       "top": "auto"
      },
      "textStyle": {
-      "node": "span.timi9jf.atm_7l_hfv0h6_1nos8r",
+      "node": "span.t151v0ez.atm_7l_hfv0h6_1nos8r",
       "text": "Experiences",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -1729,7 +1729,7 @@
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "c5o62i6 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
+     "classes": "cowqa6u atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
      "text": "Experiences Experiences",
      "rect": {
       "x": 708.1,
@@ -1809,14 +1809,14 @@
      },
      "paint": [
       {
-       "node": "a.c5o62i6.atm_3f_glywfm_jo46a5",
+       "node": "a.cowqa6u.atm_3f_glywfm_jo46a5",
        "size": "124.7x36.0",
        "outline": "2px solid rgb(34, 34, 34) offset 4px",
        "radius": "8px"
       }
      ],
      "textStyle": {
-      "node": "span.timi9jf.atm_7l_hfv0h6_1nos8r",
+      "node": "span.t151v0ez.atm_7l_hfv0h6_1nos8r",
       "text": "Experiences",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -1833,7 +1833,7 @@
     },
     "pressed": {
      "tag": "a",
-     "classes": "c5o62i6 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
+     "classes": "cowqa6u atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
      "text": "Experiences Experiences",
      "rect": {
       "x": 708.1,
@@ -1912,7 +1912,7 @@
       "top": "auto"
      },
      "textStyle": {
-      "node": "span.timi9jf.atm_7l_hfv0h6_1nos8r",
+      "node": "span.t151v0ez.atm_7l_hfv0h6_1nos8r",
       "text": "Experiences",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -1935,7 +1935,7 @@
    "group": "Header and navigation",
    "desc": "A resting category tab. Pressed is forced: a real click would navigate.",
    "selector": "header tab \"Experiences\"",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "search-bar": {
    "states": {
@@ -2174,7 +2174,7 @@
    "group": "Search bar",
    "desc": "The big white pill: Where, When and Who segments with hairline dividers and the pink gradient submit button. Hovering a segment greys it.",
    "selector": "the pill holding the Where/When/Who segments",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "search-segment": {
    "states": {
@@ -2742,25 +2742,25 @@
    "group": "Search bar",
    "desc": "One labelled segment of the search pill (Where / When / Who): a label line over a placeholder line. Pressed is forced, never submitted.",
    "selector": "the \"Where\" segment",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "section-title": {
    "states": {
     "default": {
      "tag": "a",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Places to stay in Busan",
+     "text": "Places to stay in Batam",
      "rect": {
       "x": 48,
-      "y": 333.7,
-      "w": 243.52,
+      "y": 851.2,
+      "w": 247.92,
       "h": 28
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "243.516px",
+      "width": "247.922px",
       "height": "28px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2836,7 +2836,7 @@
      ],
      "textStyle": {
       "node": "span.t1myg1k4.dir",
-      "text": "Places to stay in Busan",
+      "text": "Places to stay in Batam",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "20px",
       "lineHeight": "24px",
@@ -2860,18 +2860,18 @@
     "hover": {
      "tag": "a",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Places to stay in Busan",
+     "text": "Places to stay in Batam",
      "rect": {
       "x": 48,
-      "y": 436.2,
-      "w": 243.52,
+      "y": 851.2,
+      "w": 247.92,
       "h": 28
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "243.516px",
+      "width": "247.922px",
       "height": "28px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2947,7 +2947,7 @@
      ],
      "textStyle": {
       "node": "span.t1myg1k4.dir",
-      "text": "Places to stay in Busan",
+      "text": "Places to stay in Batam",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "20px",
       "lineHeight": "24px",
@@ -2976,17 +2976,17 @@
    "group": "Home galleries",
    "desc": "A gallery section head (\"Places to stay in Busan\") with a chevron that follows to the search page.",
    "selector": "a gallery section title row",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "listing-card": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "c1r8sk5a c94hwn5 dir dir-ltr",
-     "text": "Guest favourite Guest favourite Home in Batam Kota $397 SGD for 2 nights $397 SG",
+     "text": "Guest favourite Guest favourite Flat in Johor Bahru $1,298 SGD for 2 nights $1,2",
      "rect": {
       "x": 48,
-      "y": 342.6,
+      "y": 298,
       "w": 181.7,
       "h": 214.61
      },
@@ -2998,7 +2998,7 @@
       "height": "214.609px",
       "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -3068,7 +3068,7 @@
        "radius": "20px"
       },
       {
-       "node": "div.bxuv6ej.bjcf2mg",
+       "node": "div.rxuv6ej.rjcf2mg",
        "size": "103.6x26.0",
        "border": "T:1px solid color(srgb 1 1 1 / 0.5) | R:1px solid color(srgb 1 1 1 / 0.5) | B:1px solid color(srgb 1 1 1 / 0.5) | L:1px solid color(srgb 1 1 1 / 0.5)",
        "bg": "color(srgb 1 1 1 / 0.8)",
@@ -3077,7 +3077,7 @@
       }
      ],
      "textStyle": {
-      "node": "span.to6yqhz.tpka78r",
+      "node": "span.t8mq7ht.tpka78r",
       "text": "Guest favourite",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "11px",
@@ -3102,10 +3102,10 @@
     "hover": {
      "tag": "div",
      "classes": "c1r8sk5a c94hwn5 dir dir-ltr",
-     "text": "Guest favourite Guest favourite Home in Batam Kota $397 SGD for 2 nights $397 SG",
+     "text": "Guest favourite Guest favourite Flat in Johor Bahru $1,298 SGD for 2 nights $1,2",
      "rect": {
       "x": 48,
-      "y": 342.6,
+      "y": 298,
       "w": 181.7,
       "h": 214.61
      },
@@ -3117,7 +3117,7 @@
       "height": "214.609px",
       "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -3187,7 +3187,7 @@
        "radius": "20px"
       },
       {
-       "node": "div.bxuv6ej.bjcf2mg",
+       "node": "div.rxuv6ej.rjcf2mg",
        "size": "103.6x26.0",
        "border": "T:1px solid color(srgb 1 1 1 / 0.5) | R:1px solid color(srgb 1 1 1 / 0.5) | B:1px solid color(srgb 1 1 1 / 0.5) | L:1px solid color(srgb 1 1 1 / 0.5)",
        "bg": "color(srgb 1 1 1 / 0.8)",
@@ -3196,7 +3196,7 @@
       }
      ],
      "textStyle": {
-      "node": "span.to6yqhz.tpka78r",
+      "node": "span.t8mq7ht.tpka78r",
       "text": "Guest favourite",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "11px",
@@ -3226,7 +3226,7 @@
    "group": "Home galleries",
    "desc": "A home card in a rail: a 12px-radius photo with the Guest favourite badge and wishlist heart over it, then the title, price and star rating rows.",
    "selector": "the first listing-card container in the rail",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "rail-arrow": {
    "states": {
@@ -3236,7 +3236,7 @@
      "text": "_",
      "rect": {
       "x": 1332,
-      "y": 435.6,
+      "y": 254,
       "w": 28,
       "h": 28
      },
@@ -3357,7 +3357,7 @@
      "text": "_",
      "rect": {
       "x": 1332,
-      "y": 435.6,
+      "y": 254,
       "w": 28,
       "h": 28
      },
@@ -3482,7 +3482,7 @@
      "text": "_",
      "rect": {
       "x": 1332,
-      "y": 435.6,
+      "y": 254,
       "w": 28,
       "h": 28
      },
@@ -3617,7 +3617,7 @@
    "group": "Home galleries",
    "desc": "The small white round button that pages a card rail. Hovered and focused only; pressing pages the rail.",
    "selector": "the next arrow on a card rail",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "footer-link": {
    "states": {
@@ -4022,7 +4022,7 @@
    "group": "Help Centre",
    "desc": "A quick link in the footer grid. Pressed is forced: a real click navigates.",
    "selector": "a link in the footer",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "search-submit": {
    "states": {
@@ -4484,17 +4484,17 @@
    "group": "Search bar",
    "desc": "The pink gradient round button with the magnifier (icon only at rest, icon + \"Search\" when the bar is expanded). Pressed is forced: a real press runs the search.",
    "selector": "the pink button inside the search bar",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "card-heart": {
    "states": {
     "default": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Home in Batam Kota",
+     "text": "Add to wishlist: Flat in Johor Bahru",
      "rect": {
       "x": 189.7,
-      "y": 330.1,
+      "y": 306,
       "w": 32,
       "h": 32
      },
@@ -4582,10 +4582,10 @@
     "hover": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Home in Batam Kota",
+     "text": "Add to wishlist: Flat in Johor Bahru",
      "rect": {
       "x": 188.4,
-      "y": 432.3,
+      "y": 304.7,
       "w": 34.56,
       "h": 34.56
      },
@@ -4673,10 +4673,10 @@
     "focus-visible": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Home in Batam Kota",
+     "text": "Add to wishlist: Flat in Johor Bahru",
      "rect": {
       "x": 188.4,
-      "y": 432.3,
+      "y": 304.7,
       "w": 34.56,
       "h": 34.56
      },
@@ -4772,10 +4772,10 @@
     "pressed": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Home in Batam Kota",
+     "text": "Add to wishlist: Flat in Johor Bahru",
      "rect": {
       "x": 191,
-      "y": 434.9,
+      "y": 307.3,
       "w": 29.44,
       "h": 29.44
      },
@@ -4868,25 +4868,25 @@
    "group": "Home galleries",
    "desc": "The heart toggle over the card photo. Pressed is forced: a real tap opens the sign-up sheet signed out.",
    "selector": "the heart button inside the card",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "card-rating": {
    "states": {
     "default": {
      "tag": "span",
      "classes": "",
-     "text": "4.86",
+     "text": "4.94",
      "rect": {
-      "x": 190.8,
-      "y": 442.2,
-      "w": 23.92,
+      "x": 199.5,
+      "y": 496.6,
+      "w": 23.64,
       "h": 16
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "23.9219px",
+      "width": "23.6406px",
       "height": "16px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -4952,6 +4952,18 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "textStyle": {
+      "node": "span",
+      "text": "4.94",
+      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "16px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(108, 108, 108)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "via": "at rest"
     }
    },
@@ -4962,14 +4974,14 @@
    "group": "Home galleries",
    "desc": "The star and average under the card title.",
    "selector": "the rating text inside the card",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "search-panel-open": {
    "states": {
     "open": {
      "tag": "div",
      "classes": "s1te41wh atm_h3_exct8b_95nicl dir dir-ltr",
-     "text": "Suggested destinations Nearby Find what\u2019s around you Find what\u2019s around you Kual",
+     "text": "Suggested destinations Nearby Find what’s around you Find what’s around you Kual",
      "rect": {
       "x": 303,
       "y": 212,
@@ -5156,7 +5168,7 @@
    "group": "Search bar",
    "desc": "The suggestion panel the Where segment opens (\"Suggested destinations\": Nearby and city rows with pictograms). Opened by clicking the segment, a local UI toggle; nothing was searched.",
    "selector": "the panel under the expanded search bar",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "card-badge": {
    "states": {
@@ -5166,7 +5178,7 @@
      "text": "Guest favourite Guest favourite",
      "rect": {
       "x": 60,
-      "y": 308,
+      "y": 310,
       "w": 157.7,
       "h": 53.53
      },
@@ -5242,7 +5254,7 @@
      },
      "paint": [
       {
-       "node": "div.bxuv6ej.bjcf2mg",
+       "node": "div.rxuv6ej.rjcf2mg",
        "size": "103.6x26.0",
        "border": "T:1px solid color(srgb 1 1 1 / 0.5) | R:1px solid color(srgb 1 1 1 / 0.5) | B:1px solid color(srgb 1 1 1 / 0.5) | L:1px solid color(srgb 1 1 1 / 0.5)",
        "bg": "color(srgb 1 1 1 / 0.8)",
@@ -5251,7 +5263,7 @@
       }
      ],
      "textStyle": {
-      "node": "span.to6yqhz.tpka78r",
+      "node": "span.t8mq7ht.tpka78r",
       "text": "Guest favourite",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "11px",
@@ -5281,25 +5293,25 @@
    "group": "Home galleries",
    "desc": "The white pill over the card photo (Guest favourite / Superhost).",
    "selector": "the badge pill over a card photo",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "mini-search": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "f10aktod dir dir-ltr",
-     "text": "Location Homes in Tokyo Check in / Check out Any week Guests Add guests",
+     "text": "Location Homes in Tokyo Check in / Check out Anytime Guests Add guests",
      "rect": {
-      "x": 509.8,
+      "x": 513.8,
       "y": 25,
-      "w": 381.36,
+      "w": 373.34,
       "h": 46
      },
      "style": {
       "display": "grid",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "381.359px",
+      "width": "373.344px",
       "height": "46px",
       "minWidth": "auto",
       "maxWidth": "100%",
@@ -5318,7 +5330,7 @@
       "flexDirection": "row",
       "alignItems": "center",
       "justifyContent": "normal",
-      "gridTemplateColumns": "175.859px 1px 96.3906px 1px 107.109px",
+      "gridTemplateColumns": "175.859px 1px 88.375px 1px 107.109px",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
       "borderTopColor": "rgb(34, 34, 34)",
@@ -5379,7 +5391,7 @@
       },
       {
        "node": "button.bc003v3.atm_3f_glywfm_jo46a5",
-       "size": "98.4x48.0",
+       "size": "90.4x48.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "radius": "4px"
       },
@@ -5407,24 +5419,25 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/mini-search-default.png",
      "via": "at rest"
     },
     "hover": {
      "tag": "div",
      "classes": "f10aktod dir dir-ltr",
-     "text": "Location Homes in Tokyo Check in / Check out Any week Guests Add guests",
+     "text": "Location Homes in Tokyo Check in / Check out Anytime Guests Add guests",
      "rect": {
-      "x": 509.8,
+      "x": 513.8,
       "y": 25,
-      "w": 381.36,
+      "w": 373.34,
       "h": 46
      },
      "style": {
       "display": "grid",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "381.359px",
+      "width": "373.344px",
       "height": "46px",
       "minWidth": "auto",
       "maxWidth": "100%",
@@ -5443,7 +5456,7 @@
       "flexDirection": "row",
       "alignItems": "center",
       "justifyContent": "normal",
-      "gridTemplateColumns": "175.859px 1px 96.3906px 1px 107.109px",
+      "gridTemplateColumns": "175.859px 1px 88.375px 1px 107.109px",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
       "borderTopColor": "rgb(34, 34, 34)",
@@ -5504,7 +5517,7 @@
       },
       {
        "node": "button.bc003v3.atm_3f_glywfm_jo46a5",
-       "size": "98.4x48.0",
+       "size": "90.4x48.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "radius": "4px"
       },
@@ -5541,6 +5554,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/mini-search-hover.png",
      "via": "mouse hover"
     }
@@ -5551,33 +5565,34 @@
    "title": "Mini search pill",
    "group": "Search bar",
    "desc": "The collapsed search pill the results page shows: three segments and the small pink submit. Measured, never opened.",
-   "selector": "the compact search bar in the header"
+   "selector": "the compact search bar in the header",
+   "read": "2026-11-21"
   },
   "filters-button": {
    "states": {
     "default": {
      "tag": "button",
-     "classes": "r1les82u r1np618q atm_uc_glywfm__1rrf6b5 atm_4b_1r9ct3d_1nos8r_uv4tnr",
+     "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
      "text": "Filters",
      "rect": {
-      "x": 179.5,
-      "y": 100,
-      "w": 83.64,
-      "h": 34
+      "x": 942.2,
+      "y": 28,
+      "w": 92.56,
+      "h": 40
      },
      "style": {
-      "display": "inline-flex",
-      "position": "relative",
+      "display": "inline-block",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "83.6406px",
-      "height": "34px",
-      "minWidth": "54px",
+      "width": "92.5625px",
+      "height": "40px",
+      "minWidth": "48px",
       "maxWidth": "none",
-      "minHeight": "32px",
-      "paddingTop": "8px",
-      "paddingRight": "12px",
-      "paddingBottom": "8px",
-      "paddingLeft": "12px",
+      "minHeight": "0px",
+      "paddingTop": "7px",
+      "paddingRight": "0px",
+      "paddingBottom": "7px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -5586,7 +5601,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
@@ -5601,10 +5616,10 @@
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(221, 221, 221)",
-      "borderTopLeftRadius": "24px",
-      "borderTopRightRadius": "24px",
-      "borderBottomRightRadius": "24px",
-      "borderBottomLeftRadius": "24px",
+      "borderTopLeftRadius": "40px",
+      "borderTopRightRadius": "40px",
+      "borderBottomRightRadius": "40px",
+      "borderBottomLeftRadius": "40px",
       "backgroundColor": "rgb(255, 255, 255)",
       "backgroundImage": "none",
       "boxShadow": "none",
@@ -5614,9 +5629,9 @@
       "outlineColor": "rgb(34, 34, 34)",
       "outlineOffset": "0px",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "12px",
+      "fontSize": "14px",
       "fontWeight": "400",
-      "lineHeight": "16px",
+      "lineHeight": "normal",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(34, 34, 34)",
@@ -5624,33 +5639,33 @@
       "textDecorationColor": "rgb(34, 34, 34)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow, transform, border-color, background-color",
-      "transitionDuration": "0.2s, 0.1s, 0.3s, 0.3s",
-      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
-      "transitionDelay": "0s, 0s, 0s, 0s",
+      "transitionProperty": "outline, border",
+      "transitionDuration": "0.15s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1)",
+      "transitionDelay": "0s, 0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
      "paint": [
       {
-       "node": "button.r1les82u.r1np618q",
-       "size": "83.6x34.0",
+       "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
+       "size": "92.6x40.0",
        "border": "T:1px solid rgb(221, 221, 221) | R:1px solid rgb(221, 221, 221) | B:1px solid rgb(221, 221, 221) | L:1px solid rgb(221, 221, 221)",
        "bg": "rgb(255, 255, 255)",
-       "radius": "24px"
+       "radius": "40px"
       }
      ],
      "textStyle": {
-      "node": "span.mbr28oa.dir",
+      "node": "span.burar1r.dir",
       "text": "Filters",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "12px",
       "lineHeight": "16px",
-      "fontWeight": "400",
+      "fontWeight": "500",
       "letterSpacing": "normal",
       "color": "rgb(34, 34, 34)",
       "textDecorationLine": "none",
@@ -5663,32 +5678,33 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/filters-button-default.png",
      "via": "at rest"
     },
     "hover": {
      "tag": "button",
-     "classes": "r1les82u r1np618q atm_uc_glywfm__1rrf6b5 atm_4b_1r9ct3d_1nos8r_uv4tnr",
+     "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
      "text": "Filters",
      "rect": {
-      "x": 179.5,
-      "y": 100,
-      "w": 83.64,
-      "h": 34
+      "x": 942.2,
+      "y": 28,
+      "w": 92.56,
+      "h": 40
      },
      "style": {
-      "display": "inline-flex",
-      "position": "relative",
+      "display": "inline-block",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "83.6406px",
-      "height": "34px",
-      "minWidth": "54px",
+      "width": "92.5625px",
+      "height": "40px",
+      "minWidth": "48px",
       "maxWidth": "none",
-      "minHeight": "32px",
-      "paddingTop": "8px",
-      "paddingRight": "12px",
-      "paddingBottom": "8px",
-      "paddingLeft": "12px",
+      "minHeight": "0px",
+      "paddingTop": "7px",
+      "paddingRight": "0px",
+      "paddingBottom": "7px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -5697,26 +5713,26 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(193, 193, 193)",
+      "borderTopColor": "rgb(34, 34, 34)",
       "borderRightWidth": "1px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(193, 193, 193)",
+      "borderRightColor": "rgb(34, 34, 34)",
       "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(193, 193, 193)",
+      "borderBottomColor": "rgb(34, 34, 34)",
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(193, 193, 193)",
-      "borderTopLeftRadius": "24px",
-      "borderTopRightRadius": "24px",
-      "borderBottomRightRadius": "24px",
-      "borderBottomLeftRadius": "24px",
-      "backgroundColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(34, 34, 34)",
+      "borderTopLeftRadius": "40px",
+      "borderTopRightRadius": "40px",
+      "borderBottomRightRadius": "40px",
+      "borderBottomLeftRadius": "40px",
+      "backgroundColor": "rgb(247, 247, 247)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -5725,9 +5741,9 @@
       "outlineColor": "rgb(34, 34, 34)",
       "outlineOffset": "0px",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "12px",
+      "fontSize": "14px",
       "fontWeight": "400",
-      "lineHeight": "16px",
+      "lineHeight": "normal",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(34, 34, 34)",
@@ -5735,33 +5751,33 @@
       "textDecorationColor": "rgb(34, 34, 34)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow, transform, border-color, background-color",
-      "transitionDuration": "0.2s, 0.1s, 0.3s, 0.3s",
-      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
-      "transitionDelay": "0s, 0s, 0s, 0s",
+      "transitionProperty": "outline, border",
+      "transitionDuration": "0.15s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1)",
+      "transitionDelay": "0s, 0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
      "paint": [
       {
-       "node": "button.r1les82u.r1np618q",
-       "size": "83.6x34.0",
-       "border": "T:1px solid rgb(193, 193, 193) | R:1px solid rgb(193, 193, 193) | B:1px solid rgb(193, 193, 193) | L:1px solid rgb(193, 193, 193)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "24px"
+       "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
+       "size": "92.6x40.0",
+       "border": "T:1px solid rgb(34, 34, 34) | R:1px solid rgb(34, 34, 34) | B:1px solid rgb(34, 34, 34) | L:1px solid rgb(34, 34, 34)",
+       "bg": "rgb(247, 247, 247)",
+       "radius": "40px"
       }
      ],
      "textStyle": {
-      "node": "span.mbr28oa.dir",
+      "node": "span.burar1r.dir",
       "text": "Filters",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "12px",
       "lineHeight": "16px",
-      "fontWeight": "400",
+      "fontWeight": "500",
       "letterSpacing": "normal",
       "color": "rgb(34, 34, 34)",
       "textDecorationLine": "none",
@@ -5774,32 +5790,33 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/filters-button-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
      "tag": "button",
-     "classes": "r1les82u r1np618q atm_uc_glywfm__1rrf6b5 atm_4b_1r9ct3d_1nos8r_uv4tnr",
+     "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
      "text": "Filters",
      "rect": {
-      "x": 179.5,
-      "y": 100,
-      "w": 83.64,
-      "h": 34
+      "x": 942.2,
+      "y": 28,
+      "w": 92.56,
+      "h": 40
      },
      "style": {
-      "display": "inline-flex",
-      "position": "relative",
+      "display": "inline-block",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "83.6406px",
-      "height": "34px",
-      "minWidth": "54px",
+      "width": "92.5625px",
+      "height": "40px",
+      "minWidth": "48px",
       "maxWidth": "none",
-      "minHeight": "32px",
-      "paddingTop": "8px",
-      "paddingRight": "12px",
-      "paddingBottom": "8px",
-      "paddingLeft": "12px",
+      "minHeight": "0px",
+      "paddingTop": "7px",
+      "paddingRight": "0px",
+      "paddingBottom": "7px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -5808,7 +5825,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
@@ -5823,22 +5840,22 @@
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(221, 221, 221)",
-      "borderTopLeftRadius": "24px",
-      "borderTopRightRadius": "24px",
-      "borderBottomRightRadius": "24px",
-      "borderBottomLeftRadius": "24px",
+      "borderTopLeftRadius": "40px",
+      "borderTopRightRadius": "40px",
+      "borderBottomRightRadius": "40px",
+      "borderBottomLeftRadius": "40px",
       "backgroundColor": "rgb(255, 255, 255)",
       "backgroundImage": "none",
-      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px, rgb(34, 34, 34) 0px 0px 0px 4px",
+      "boxShadow": "rgb(34, 34, 34) 0px 0px 0px 4px, rgba(255, 255, 255, 0.7) 0px 0px 0px 5px",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(34, 34, 34)",
+      "outlineWidth": "2px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "12px",
+      "fontSize": "14px",
       "fontWeight": "400",
-      "lineHeight": "16px",
+      "lineHeight": "normal",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(34, 34, 34)",
@@ -5846,34 +5863,35 @@
       "textDecorationColor": "rgb(34, 34, 34)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow, transform, border-color, background-color",
-      "transitionDuration": "0.2s, 0.1s, 0.3s, 0.3s",
-      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
-      "transitionDelay": "0s, 0s, 0s, 0s",
+      "transitionProperty": "box-shadow",
+      "transitionDuration": "0.2s",
+      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1)",
+      "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
      "paint": [
       {
-       "node": "button.r1les82u.r1np618q",
-       "size": "83.6x34.0",
+       "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
+       "size": "92.6x40.0",
        "border": "T:1px solid rgb(221, 221, 221) | R:1px solid rgb(221, 221, 221) | B:1px solid rgb(221, 221, 221) | L:1px solid rgb(221, 221, 221)",
        "bg": "rgb(255, 255, 255)",
-       "shadow": "rgb(255, 255, 255) 0px 0px 0px 2px, rgb(34, 34, 34) 0px 0px 0px 4px",
-       "radius": "24px"
+       "shadow": "rgb(34, 34, 34) 0px 0px 0px 4px, rgba(255, 255, 255, 0.7) 0px 0px 0px 5px",
+       "outline": "2px solid rgb(255, 255, 255) offset 0px",
+       "radius": "40px"
       }
      ],
      "textStyle": {
-      "node": "span.mbr28oa.dir",
+      "node": "span.burar1r.dir",
       "text": "Filters",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "12px",
       "lineHeight": "16px",
-      "fontWeight": "400",
+      "fontWeight": "500",
       "letterSpacing": "normal",
       "color": "rgb(34, 34, 34)",
       "textDecorationLine": "none",
@@ -5886,32 +5904,33 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/filters-button-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
      "tag": "button",
-     "classes": "r1les82u r1np618q atm_uc_glywfm__1rrf6b5 atm_4b_1r9ct3d_1nos8r_uv4tnr",
+     "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
      "text": "Filters",
      "rect": {
-      "x": 180.5,
-      "y": 101,
-      "w": 81.64,
-      "h": 32
+      "x": 942.2,
+      "y": 28,
+      "w": 92.56,
+      "h": 40
      },
      "style": {
-      "display": "inline-flex",
-      "position": "relative",
+      "display": "inline-block",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "83.6406px",
-      "height": "34px",
-      "minWidth": "54px",
+      "width": "92.5625px",
+      "height": "40px",
+      "minWidth": "48px",
       "maxWidth": "none",
-      "minHeight": "32px",
-      "paddingTop": "8px",
-      "paddingRight": "12px",
-      "paddingBottom": "8px",
-      "paddingLeft": "12px",
+      "minHeight": "0px",
+      "paddingTop": "7px",
+      "paddingRight": "0px",
+      "paddingBottom": "7px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -5920,26 +5939,26 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(193, 193, 193)",
+      "borderTopColor": "rgb(34, 34, 34)",
       "borderRightWidth": "1px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(193, 193, 193)",
+      "borderRightColor": "rgb(34, 34, 34)",
       "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(193, 193, 193)",
+      "borderBottomColor": "rgb(34, 34, 34)",
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(193, 193, 193)",
-      "borderTopLeftRadius": "24px",
-      "borderTopRightRadius": "24px",
-      "borderBottomRightRadius": "24px",
-      "borderBottomLeftRadius": "24px",
-      "backgroundColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(34, 34, 34)",
+      "borderTopLeftRadius": "40px",
+      "borderTopRightRadius": "40px",
+      "borderBottomRightRadius": "40px",
+      "borderBottomLeftRadius": "40px",
+      "backgroundColor": "rgb(247, 247, 247)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -5948,9 +5967,9 @@
       "outlineColor": "rgb(34, 34, 34)",
       "outlineOffset": "0px",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "12px",
+      "fontSize": "14px",
       "fontWeight": "400",
-      "lineHeight": "16px",
+      "lineHeight": "normal",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(34, 34, 34)",
@@ -5958,45 +5977,46 @@
       "textDecorationColor": "rgb(34, 34, 34)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow, transform, border-color, background-color",
-      "transitionDuration": "0.2s, 0.1s, 0.3s, 0.3s",
-      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
-      "transitionDelay": "0s, 0s, 0s, 0s",
+      "transitionProperty": "outline, border",
+      "transitionDuration": "0.15s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1)",
+      "transitionDelay": "0s, 0s",
       "cursor": "pointer",
       "opacity": "1",
-      "transform": "matrix(0.976088, 0, 0, 0.941176, 0, 0)",
+      "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
      "paint": [
       {
-       "node": "button.r1les82u.r1np618q",
-       "size": "81.6x32.0",
-       "border": "T:1px solid rgb(193, 193, 193) | R:1px solid rgb(193, 193, 193) | B:1px solid rgb(193, 193, 193) | L:1px solid rgb(193, 193, 193)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "24px"
+       "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
+       "size": "92.6x40.0",
+       "border": "T:1px solid rgb(34, 34, 34) | R:1px solid rgb(34, 34, 34) | B:1px solid rgb(34, 34, 34) | L:1px solid rgb(34, 34, 34)",
+       "bg": "rgb(247, 247, 247)",
+       "radius": "40px"
       }
      ],
      "textStyle": {
-      "node": "span.mbr28oa.dir",
+      "node": "span.burar1r.dir",
       "text": "Filters",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "12px",
       "lineHeight": "16px",
-      "fontWeight": "400",
+      "fontWeight": "500",
       "letterSpacing": "normal",
       "color": "rgb(34, 34, 34)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "icon": {
-      "w": 15.62,
-      "h": 15.06,
+      "w": 16,
+      "h": 16,
       "fill": "none",
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/filters-button-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -6007,7 +6027,8 @@
    "title": "Filters button",
    "group": "Search results",
    "desc": "The sliders-icon button that opens the filters sheet. Pressed is forced; opening the sheet is a toggle but the row also navigates.",
-   "selector": "the \"Filters\" button left of the chip row"
+   "selector": "the \"Filters\" button left of the chip row",
+   "read": "2026-11-21"
   },
   "filter-chip": {
    "states": {
@@ -6386,27 +6407,28 @@
    "url": "https://www.airbnb.com/s/Tokyo--Japan/homes",
    "title": "Filter chip",
    "group": "Search results",
-   "desc": "One pill in the quick-filter row (Type of place, Price, Kitchen \u2026). Pressed is forced.",
-   "selector": "a filter pill in the row under the header"
+   "desc": "One pill in the quick-filter row (Type of place, Price, Kitchen …). Pressed is forced.",
+   "selector": "a filter pill in the row under the header",
+   "missing": true
   },
   "result-card": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "cy5jw6o dir dir-ltr",
-     "text": "Photo 1 of 6 Superhost Superhost Flat in Sumida-ku New place to stay New [New Bu",
+     "text": "Photo 1 of 6 Superhost Superhost Rental unit in Sumida-ku 4.82 out of 5 average ",
      "rect": {
       "x": 48,
-      "y": 241,
+      "y": 185,
       "w": 307.19,
-      "h": 377.39
+      "h": 351.39
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
       "width": "307.188px",
-      "height": "377.391px",
+      "height": "351.391px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -6479,24 +6501,17 @@
        "radius": "20px"
       },
       {
-       "node": "div.o1hrhshc.o1q97y5m",
+       "node": "div.o47luuh.o1cq78qk",
        "size": "307.2x230.4",
-       "bgImage": "linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.25))"
+       "bgImage": "linear-gradient(rgba(0, 0, 0, 0) calc(100% - 51px), rgba(0, 0, 0, 0.34))"
       },
       {
-       "node": "div.r1om7k6d.r1t0wzu5",
-       "size": "89.8x28.0",
-       "border": "T:1px solid rgba(255, 255, 255, 0.16) | R:1px solid rgba(255, 255, 255, 0.16) | B:1px solid rgba(255, 255, 255, 0.16) | L:1px solid rgba(255, 255, 255, 0.16)",
-       "bg": "rgba(96, 96, 96, 0.6)",
-       "radius": "40px"
-      },
-      {
-       "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
-       "size": "32.0x32.0",
-       "border": "T:1px solid color(srgb 0 0 0 / 0.08) | R:1px solid color(srgb 0 0 0 / 0.08) | B:1px solid color(srgb 0 0 0 / 0.08) | L:1px solid color(srgb 0 0 0 / 0.08)",
-       "bg": "color(srgb 1 1 1 / 0.9)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px 0px",
-       "radius": "50%"
+       "node": "div.rl50dte.c1dsgsxy",
+       "size": "95.8x32.0",
+       "bg": "rgba(34, 34, 34, 0.5)",
+       "bgImage": "linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), none",
+       "shadow": "rgba(0, 0, 0, 0.01) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.08) 0px 2px 4px 0px",
+       "radius": "16px"
       },
       {
        "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
@@ -6507,50 +6522,52 @@
        "radius": "50%"
       },
       {
+       "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
+       "size": "32.0x32.0",
+       "border": "T:1px solid color(srgb 0 0 0 / 0.08) | R:1px solid color(srgb 0 0 0 / 0.08) | B:1px solid color(srgb 0 0 0 / 0.08) | L:1px solid color(srgb 0 0 0 / 0.08)",
+       "bg": "color(srgb 1 1 1 / 0.9)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px 0px",
+       "radius": "50%"
+      },
+      {
+       "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
+       "size": "16.0x6.0",
+       "bg": "rgba(255, 255, 255, 0.925)",
+       "radius": "12px"
+      },
+      {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "6.0x6.0",
-       "bg": "rgb(255, 255, 255)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
       },
       {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "6.0x6.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
-       "radius": "50%"
-      },
-      {
-       "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
-       "size": "6.0x6.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
       },
       {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "5.0x5.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
       },
       {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "4.0x4.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
       },
       {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "4.0x4.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
-      },
-      {
-       "node": "div.t1wqov7e.atm_ks_zryt35__1rgatj2",
-       "size": "129.6x20.0",
-       "bg": "color(srgb 0.901961 0.964706 0.913726 / 0.75)",
-       "radius": "6px"
       }
      ],
      "textStyle": {
-      "node": "div.t1ez1u5v.atm_ks_zryt35__1rgatj2",
+      "node": "div",
       "text": "Superhost",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -6568,25 +6585,26 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/result-card-default.png",
      "via": "at rest"
     },
     "hover": {
      "tag": "div",
      "classes": "cy5jw6o dir dir-ltr",
-     "text": "Photo 1 of 6 Superhost Superhost Flat in Sumida-ku New place to stay New [New Bu",
+     "text": "Photo 1 of 6 Superhost Superhost Rental unit in Sumida-ku 4.82 out of 5 average ",
      "rect": {
       "x": 48,
-      "y": 241,
+      "y": 185,
       "w": 307.19,
-      "h": 377.39
+      "h": 351.39
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
       "width": "307.188px",
-      "height": "377.391px",
+      "height": "351.391px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -6659,24 +6677,17 @@
        "radius": "20px"
       },
       {
-       "node": "div.o1hrhshc.o1q97y5m",
+       "node": "div.o47luuh.o1cq78qk",
        "size": "307.2x230.4",
-       "bgImage": "linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.25))"
+       "bgImage": "linear-gradient(rgba(0, 0, 0, 0) calc(100% - 51px), rgba(0, 0, 0, 0.34))"
       },
       {
-       "node": "div.r1om7k6d.r1t0wzu5",
-       "size": "89.8x28.0",
-       "border": "T:1px solid rgba(255, 255, 255, 0.16) | R:1px solid rgba(255, 255, 255, 0.16) | B:1px solid rgba(255, 255, 255, 0.16) | L:1px solid rgba(255, 255, 255, 0.16)",
-       "bg": "rgba(96, 96, 96, 0.6)",
-       "radius": "40px"
-      },
-      {
-       "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
-       "size": "32.0x32.0",
-       "border": "T:1px solid color(srgb 0 0 0 / 0.08) | R:1px solid color(srgb 0 0 0 / 0.08) | B:1px solid color(srgb 0 0 0 / 0.08) | L:1px solid color(srgb 0 0 0 / 0.08)",
-       "bg": "color(srgb 1 1 1 / 0.9)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px 0px",
-       "radius": "50%"
+       "node": "div.rl50dte.c1dsgsxy",
+       "size": "95.8x32.0",
+       "bg": "rgba(34, 34, 34, 0.5)",
+       "bgImage": "linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), none",
+       "shadow": "rgba(0, 0, 0, 0.01) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.08) 0px 2px 4px 0px",
+       "radius": "16px"
       },
       {
        "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
@@ -6687,50 +6698,52 @@
        "radius": "50%"
       },
       {
+       "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
+       "size": "32.0x32.0",
+       "border": "T:1px solid color(srgb 0 0 0 / 0.08) | R:1px solid color(srgb 0 0 0 / 0.08) | B:1px solid color(srgb 0 0 0 / 0.08) | L:1px solid color(srgb 0 0 0 / 0.08)",
+       "bg": "color(srgb 1 1 1 / 0.9)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px 0px",
+       "radius": "50%"
+      },
+      {
+       "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
+       "size": "16.0x6.0",
+       "bg": "rgba(255, 255, 255, 0.925)",
+       "radius": "12px"
+      },
+      {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "6.0x6.0",
-       "bg": "rgb(255, 255, 255)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
       },
       {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "6.0x6.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
-       "radius": "50%"
-      },
-      {
-       "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
-       "size": "6.0x6.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
       },
       {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "5.0x5.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
       },
       {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "4.0x4.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
       },
       {
        "node": "span.d840b0v.atm_uc_glywfm__1rrf6b5",
        "size": "4.0x4.0",
-       "bg": "rgba(255, 255, 255, 0.6)",
+       "bg": "rgba(250, 250, 250, 0.72)",
        "radius": "50%"
-      },
-      {
-       "node": "div.t1wqov7e.atm_ks_zryt35__1rgatj2",
-       "size": "129.6x20.0",
-       "bg": "color(srgb 0.901961 0.964706 0.913726 / 0.75)",
-       "radius": "6px"
       }
      ],
      "textStyle": {
-      "node": "div.t1ez1u5v.atm_ks_zryt35__1rgatj2",
+      "node": "div",
       "text": "Superhost",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
@@ -6748,6 +6761,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/result-card-hover.png",
      "via": "mouse hover"
     }
@@ -6758,22 +6772,23 @@
    "title": "Result card",
    "group": "Search results",
    "desc": "A listing card in the results grid: photo with badge and heart, then title, distance line, bed rows, dates, price and Free cancellation.",
-   "selector": "the first listing card in the results grid"
+   "selector": "the first listing card in the results grid",
+   "read": "2026-11-21"
   },
   "result-badge": {
    "states": {
     "default": {
      "tag": "div",
-     "classes": "t1ez1u5v atm_ks_zryt35__1rgatj2 dir dir-ltr",
+     "classes": "",
      "text": "Superhost",
      "rect": {
-      "x": 71,
-      "y": 260,
+      "x": 74,
+      "y": 206,
       "w": 67.84,
       "h": 18
      },
      "style": {
-      "display": "flow-root",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "67.8438px",
@@ -6838,18 +6853,20 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "clip",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
      },
      "ancestors": [
       {
        "up": 1,
-       "node": "div.r1om7k6d.r1t0wzu5",
-       "radius": "40px",
-       "bg": "rgba(96, 96, 96, 0.6)"
+       "node": "div.rl50dte.c1dsgsxy",
+       "shadow": "rgba(0, 0, 0, 0.01) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.08) 0px 2px 4px 0px",
+       "radius": "16px",
+       "bg": "rgba(34, 34, 34, 0.5)"
       }
      ],
+     "cropScale": 2,
      "crop": "components/crops/result-badge-default.png",
      "via": "at rest"
     }
@@ -6860,17 +6877,18 @@
    "title": "Listing badge",
    "group": "Search results",
    "desc": "The white pill over the photo (Guest favourite / Superhost).",
-   "selector": "the badge pill inside the result card"
+   "selector": "the badge pill inside the result card",
+   "read": "2026-11-21"
   },
   "result-heart": {
    "states": {
     "default": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Flat in Sumida-ku",
+     "text": "Add to wishlist: Rental unit in Sumida-ku",
      "rect": {
       "x": 311.2,
-      "y": 251,
+      "y": 197,
       "w": 32,
       "h": 32
      },
@@ -6951,16 +6969,17 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/result-heart-default.png",
      "via": "at rest"
     },
     "hover": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Flat in Sumida-ku",
+     "text": "Add to wishlist: Rental unit in Sumida-ku",
      "rect": {
       "x": 309.9,
-      "y": 249.7,
+      "y": 195.7,
       "w": 34.56,
       "h": 34.56
      },
@@ -7041,16 +7060,17 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/result-heart-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Flat in Sumida-ku",
+     "text": "Add to wishlist: Rental unit in Sumida-ku",
      "rect": {
       "x": 309.9,
-      "y": 249.7,
+      "y": 195.7,
       "w": 34.56,
       "h": 34.56
      },
@@ -7096,7 +7116,7 @@
       "borderBottomLeftRadius": "50%",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgb(34, 34, 34) 0px 0px 0px 2px, rgba(255, 255, 255, 0.8) 0px 0px 0px 4px",
+      "boxShadow": "rgb(34, 34, 34) 0px 0px 0px 2px, color(srgb 1 1 1 / 0.8) 0px 0px 0px 4px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
@@ -7128,7 +7148,7 @@
       {
        "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
        "size": "34.6x34.6",
-       "shadow": "rgb(34, 34, 34) 0px 0px 0px 2px, rgba(255, 255, 255, 0.8) 0px 0px 0px 4px",
+       "shadow": "rgb(34, 34, 34) 0px 0px 0px 2px, color(srgb 1 1 1 / 0.8) 0px 0px 0px 4px",
        "radius": "50%"
       }
      ],
@@ -7139,16 +7159,17 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/result-heart-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Flat in Sumida-ku",
+     "text": "Add to wishlist: Rental unit in Sumida-ku",
      "rect": {
       "x": 312.5,
-      "y": 252.3,
+      "y": 198.3,
       "w": 29.44,
       "h": 29.44
      },
@@ -7229,6 +7250,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/result-heart-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -7239,7 +7261,8 @@
    "title": "Wishlist heart",
    "group": "Search results",
    "desc": "The heart over the photo. Pressed is forced: signed out it opens the sign-up sheet.",
-   "selector": "the heart button on the result card"
+   "selector": "the heart button on the result card",
+   "read": "2026-11-21"
   },
   "fees-tag": {
    "states": {
@@ -7249,7 +7272,7 @@
      "text": "Prices include all fees",
      "rect": {
       "x": 506.4,
-      "y": 178,
+      "y": 122,
       "w": 179.69,
       "h": 28
      },
@@ -7335,6 +7358,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/fees-tag-default.png",
      "via": "at rest"
     },
@@ -7344,7 +7368,7 @@
      "text": "Prices include all fees",
      "rect": {
       "x": 506.4,
-      "y": 178,
+      "y": 122,
       "w": 179.69,
       "h": 28
      },
@@ -7430,6 +7454,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/fees-tag-hover.png",
      "via": "mouse hover"
     }
@@ -7440,18 +7465,19 @@
    "title": "All-fees tag",
    "group": "Search results",
    "desc": "The inline tag over the results grid explaining the total price display.",
-   "selector": "the \"Prices include all fees\" row"
+   "selector": "the \"Prices include all fees\" row",
+   "read": "2026-11-21"
   },
   "room-title": {
    "states": {
     "default": {
      "tag": "h1",
      "classes": "rghzvl1 atm_kd_idpfg4_pfnrn2 i1wofiac dir",
-     "text": "Uguisudani, 3-minute walk from JR Line Station, New Hotel Opening in 2026, 1 Bed",
+     "text": "6-minute walk from the station! Conveniently located apartment hotel 1, within w",
      "rect": {
       "x": 160,
       "y": 118,
-      "w": 973.89,
+      "w": 913.5,
       "h": 64
      },
      "style": {
@@ -7531,12 +7557,12 @@
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "url": "https://www.airbnb.com/rooms/34796317",
    "title": "Room title",
    "group": "Room page",
    "desc": "The listing headline under the header.",
    "selector": "main h1",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "room-share": {
    "states": {
@@ -7980,12 +8006,12 @@
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "url": "https://www.airbnb.com/rooms/34796317",
    "title": "Share button",
    "group": "Room page",
    "desc": "The underlined Share action beside Save. Pressed is forced.",
    "selector": "the \"Share\" button by the title",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "room-save": {
    "states": {
@@ -8429,12 +8455,12 @@
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "url": "https://www.airbnb.com/rooms/34796317",
    "title": "Save button",
    "group": "Room page",
    "desc": "The heart+Save action. Pressed is forced: signed out, a real press opens the sign-up sheet.",
    "selector": "the \"Save\" button by the title",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "photo-grid": {
    "states": {
@@ -8602,12 +8628,12 @@
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "url": "https://www.airbnb.com/rooms/34796317",
    "title": "Photo collage",
    "group": "Room page",
    "desc": "The 5-photo mosaic: one large tile left, a 2x2 grid right, 12px radius.",
    "selector": "the photo mosaic under the title",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "show-photos": {
    "states": {
@@ -9059,19 +9085,19 @@
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "url": "https://www.airbnb.com/rooms/34796317",
    "title": "Show all photos button",
    "group": "Room page",
    "desc": "The white pill bottom-right of the collage. Pressed is forced: it opens the photo viewer.",
    "selector": "the \"Show all photos\" pill",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "room-subtitle": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "tqnk8fx dir dir-ltr",
-     "text": "Entire rental unit in Tait\u014d-ku, Japan",
+     "text": "Rental unit in Bunkyō-ku, Japan",
      "rect": {
       "x": 160,
       "y": 712,
@@ -9150,7 +9176,7 @@
      },
      "textStyle": {
       "node": "h2.rghzvl1.atm_kd_idpfg4_pfnrn2",
-      "text": "Entire rental unit in Tait\u014d-ku, Japan",
+      "text": "Rental unit in Bunkyō-ku, Japan",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "22px",
       "lineHeight": "26px",
@@ -9167,12 +9193,12 @@
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "url": "https://www.airbnb.com/rooms/34796317",
    "title": "Listing subtitle",
    "group": "Room page",
-   "desc": "The \"Entire rental unit in \u2026\" line and the guests/bedrooms/beds row.",
+   "desc": "The \"Entire rental unit in …\" line and the guests/bedrooms/beds row.",
    "selector": "the subtitle under the collage",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "guest-plaque": {
    "states": {
@@ -9280,7 +9306,8 @@
    "group": "Room page",
    "desc": "The laurel-bordered strip: \"Guest favourite / One of the most loved homes on Airbnb\" with the rating and review count.",
    "selector": "the laurel plaque under the subtitle",
-   "read": "2026-11-10"
+   "read": "2026-11-10",
+   "missing": true
   },
   "reserve-card": {
    "states": {
@@ -9470,12 +9497,12 @@
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "url": "https://www.airbnb.com/rooms/34796317",
    "title": "Reservation card",
    "group": "Room page",
    "desc": "The booking card pinned right: \"Add dates for prices\", the CHECK-IN/CHECK-OUT/GUESTS field grid. Nothing was booked.",
    "selector": "the card with the date and guest fields",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "reserve-field": {
    "states": {
@@ -9690,12 +9717,12 @@
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "url": "https://www.airbnb.com/rooms/34796317",
    "title": "Date field",
    "group": "Room page",
    "desc": "A labelled field cell in the booking grid (CHECK-IN / CHECKOUT / GUESTS).",
    "selector": "the CHECK-IN field cell",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "promo-strip": {
    "states": {
@@ -9798,7 +9825,7 @@
      ],
      "textStyle": {
       "node": "div.terqdvd.atm_9s_1o8liyq_1ht1xp4",
-      "text": "Get $25\u00a0SGD off your getaway.",
+      "text": "Get $25 SGD off your getaway.",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "14px",
       "lineHeight": "18px",
@@ -10294,18 +10321,18 @@
     "default": {
      "tag": "div",
      "classes": "tlsa35g dir dir-ltr",
-     "text": "Hosted by Yuqian",
+     "text": "Hosted by Masahiro",
      "rect": {
       "x": 224,
-      "y": 919,
-      "w": 177.28,
+      "y": 847,
+      "w": 148.64,
       "h": 20
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "177.281px",
+      "width": "148.641px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -10378,12 +10405,12 @@
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "url": "https://www.airbnb.com/rooms/34796317",
    "title": "Host row",
    "group": "Room page",
    "desc": "The \"Hosted by\" row with the circular avatar.",
    "selector": "the Hosted-by row under the plaque",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "help-title": {
    "states": {
@@ -10489,9 +10516,9 @@
    "url": "https://www.airbnb.com/help",
    "title": "Help title",
    "group": "Help Centre",
-   "desc": "\"Hi, how can we help?\" \u2014 the Help Centre headline.",
+   "desc": "\"Hi, how can we help?\" — the Help Centre headline.",
    "selector": "h1",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "help-search": {
    "states": {
@@ -10697,7 +10724,7 @@
    "group": "Help Centre",
    "desc": "The search field under the headline (the icon + placeholder). Focused only; nothing was searched.",
    "selector": "the search input on the help home",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "help-tile": {
    "states": {
@@ -11052,13 +11079,13 @@
    "group": "Help Centre",
    "desc": "A topic card in the help grid. Pressed is forced: a real click navigates.",
    "selector": "a topic card in the help grid",
-   "read": "2026-11-10"
+   "read": "2026-11-21"
   },
   "host-hero": {
    "states": {
     "default": {
      "tag": "h1",
-     "classes": "wt4h85h atm_eh_1fy54h5_126qwya t17k98c1 dir",
+     "classes": "wt4h85h atm_eh_4b0q0n_126qwya atm_kz_1hnarqo_126qwya atm_ti_10xht36_126qwya",
      "text": "Your home could make money on Airbnb",
      "rect": {
       "x": 106,
@@ -11136,6 +11163,7 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "cropScale": 2,
      "crop": "components/crops/host-hero-default.png",
      "via": "at rest"
     }
@@ -11146,7 +11174,8 @@
    "title": "Host headline",
    "group": "Host landing",
    "desc": "\"Your home could make money on Airbnb\".",
-   "selector": "h1"
+   "selector": "h1",
+   "read": "2026-11-21"
   },
   "host-cta": {
    "states": {
@@ -11255,6 +11284,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/host-cta-default.png",
      "via": "at rest"
     },
@@ -11363,6 +11393,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/host-cta-hover.png",
      "via": "mouse hover"
     },
@@ -11472,6 +11503,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/host-cta-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
@@ -11580,6 +11612,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/host-cta-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -11590,14 +11623,15 @@
    "title": "Get started button",
    "group": "Host landing",
    "desc": "The rausch CTA in the nav and on the page. Pressed is forced: it starts the host sign-up flow.",
-   "selector": "a \"Get started\" button"
+   "selector": "a \"Get started\" button",
+   "read": "2026-11-21"
   },
   "estimator-card": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "t2jklvl dir dir-ltr",
-     "text": "Your home could make money on Airbnb We don\u2019t display earnings estimates here du",
+     "text": "Your home could make money on Airbnb We don’t display earnings estimates here du",
      "rect": {
       "x": 80,
       "y": 262,
@@ -11684,8 +11718,8 @@
       }
      ],
      "textStyle": {
-      "node": "h1.wt4h85h.atm_eh_1fy54h5_126qwya",
-      "text": "Your home could make money on\u00a0Airbnb",
+      "node": "h1.wt4h85h.atm_eh_4b0q0n_126qwya",
+      "text": "Your home could make money on Airbnb",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "60px",
       "lineHeight": "64px",
@@ -11702,6 +11736,7 @@
       "stroke": "rgb(255, 56, 92)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/estimator-card-default.png",
      "via": "at rest"
     }
@@ -11712,7 +11747,8 @@
    "title": "Earnings estimator",
    "group": "Host landing",
    "desc": "The interactive earnings card (location field, guest slider, monthly total). Measured at rest; nothing was submitted.",
-   "selector": "the earnings estimate card on the host page"
+   "selector": "the earnings estimate card on the host page",
+   "read": "2026-11-21"
   },
   "m-search-pill": {
    "states": {
@@ -11807,7 +11843,7 @@
        "size": "342.0x56.0",
        "border": "T:1px solid rgb(221, 221, 221) | R:1px solid rgb(221, 221, 221) | B:1px solid rgb(221, 221, 221) | L:1px solid rgb(221, 221, 221)",
        "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0.1) 0px 6px 20px 0px",
+       "shadow": "color(srgb 0 0 0 / 0.1) 0px 6px 20px 0px",
        "radius": "9999px"
       },
       {
@@ -11835,6 +11871,7 @@
       "stroke": "none",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/m-search-pill-default.png",
      "via": "at rest"
     }
@@ -11845,29 +11882,30 @@
    "title": "Mobile search pill",
    "group": "Mobile (390 wide)",
    "desc": "The compact search bar at the top of the mobile home.",
-   "selector": "the search pill under the header"
+   "selector": "the search pill under the header",
+   "read": "2026-11-21"
   },
   "m-listing-card": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "c1r8sk5a c94hwn5 dir dir-ltr",
-     "text": "Home in Dong-gu $555 SGD for 2 nights $555 SGD for 2 nights , \u00b7 5.0 out of 5 ave",
+     "text": "Guest favourite Guest favourite Flat in Johor Bahru $1,298 SGD for 2 nights $1,2",
      "rect": {
       "x": 24,
       "y": 263,
       "w": 165,
-      "h": 198.75
+      "h": 214.75
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
       "width": "165px",
-      "height": "198.75px",
+      "height": "214.75px",
       "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -11936,15 +11974,23 @@
        "bg": "rgb(221, 221, 221)",
        "shadow": "color(srgb 0 0 0 / 0.02) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.1) 0px 8px 24px 0px",
        "radius": "20px"
+      },
+      {
+       "node": "div.rxuv6ej.rjcf2mg",
+       "size": "103.6x26.0",
+       "border": "T:1px solid color(srgb 1 1 1 / 0.5) | R:1px solid color(srgb 1 1 1 / 0.5) | B:1px solid color(srgb 1 1 1 / 0.5) | L:1px solid color(srgb 1 1 1 / 0.5)",
+       "bg": "color(srgb 1 1 1 / 0.8)",
+       "shadow": "color(srgb 0 0 0 / 0.02) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.04) 0px 2px 6px 0px, color(srgb 0 0 0 / 0.1) 0px 4px 8px 0px",
+       "radius": "14px"
       }
      ],
      "textStyle": {
-      "node": "div.t1ms2xzu.atm_ks_zryt35__1rgatj2",
-      "text": "Home in Dong-gu",
+      "node": "span.t8mq7ht.tpka78r",
+      "text": "Guest favourite",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "13px",
-      "lineHeight": "16px",
-      "fontWeight": "500",
+      "fontSize": "11px",
+      "lineHeight": "13px",
+      "fontWeight": "600",
       "letterSpacing": "normal",
       "color": "rgb(34, 34, 34)",
       "textDecorationLine": "none",
@@ -11957,6 +12003,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/m-listing-card-default.png",
      "via": "at rest"
     }
@@ -11967,7 +12014,8 @@
    "title": "Mobile listing card",
    "group": "Mobile (390 wide)",
    "desc": "A home card in the mobile rail: full-bleed photo, badge, heart, title, price.",
-   "selector": "the first listing card"
+   "selector": "the first listing card",
+   "read": "2026-11-21"
   }
  }
 }

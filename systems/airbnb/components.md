@@ -1,6 +1,6 @@
 # Airbnb components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from www.airbnb.com — which geo-redirected to www.airbnb.com.sg from this network, the same design system on a regional mirror — on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, searched, booked or sent.
+The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from www.airbnb.com — which geo-redirected to www.airbnb.com.sg from this network, the same design system on a regional mirror — on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, searched, booked or sent.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (44 components, 105 states).
 
@@ -19,12 +19,12 @@ Screenshots are named `{page}-light-{state}.png` (airbnb.com paints one light th
 | Home. The header with the category tabs, the search pill, gallery rails of home cards and the footer. The load-time modal, the search panel open and a card hovered are separate captures. | `/` | [card-hover](screenshots/home-light-card-hover.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [modal](screenshots/home-light-modal.png), [search-open](screenshots/home-light-search-open.png) |
 | Experiences landing. Same shell with the experiences gallery. | `/experiences` | [default](screenshots/experiences-light-default.png), [full](screenshots/experiences-light-full.png) |
 | Services landing (chefs, photography, spa). | `/services` | [default](screenshots/services-light-default.png), [full](screenshots/services-light-full.png) |
-| Search results for Tokyo. The mini search pill, filter chips, result cards and the fees tag; the load-time modal is a separate capture. | `/s/Tokyo--Japan/homes` | [default](screenshots/search-light-default.png), [full](screenshots/search-light-full.png), [modal](screenshots/search-light-modal.png) |
-| A Tokyo listing's page: title, photo grid, reserve card, host row, reviews and the footer. | `/rooms/<id> (a public listing the results page linked)` | [default](screenshots/room-light-default.png), [full](screenshots/room-light-full.png), [modal](screenshots/room-light-modal.png) |
+| Search results for Tokyo. The mini search pill, filter chips, result cards and the fees tag; the load-time modal is a separate capture. Full page not captured: the results shell locks window scroll (`scrollHeight` stays at the viewport). | `/s/Tokyo--Japan/homes` | [default](screenshots/search-light-default.png), [modal](screenshots/search-light-modal.png) |
+| A public listing page: title, photo grid, reserve card, host row. Full page not captured: the room shell locks window scroll. | `/rooms/<id> (a public listing the results page linked)` | [default](screenshots/room-light-default.png), [modal](screenshots/room-light-modal.png) |
 | Help Centre. The headline, the search field and the topic grid. | `/help` | [default](screenshots/help-light-default.png), [full](screenshots/help-light-full.png) |
 | Host landing. The earnings headline, Get started and the estimator card. | `/host/homes` | [default](screenshots/host-light-default.png), [full](screenshots/host-light-full.png) |
-| Home at 390: the compact search pill and the listing rail. | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png) |
-| Search results at 390: the pill and the card column. | `/s/Tokyo--Japan/homes` | [default](screenshots/mobile-search-light-default.png), [full](screenshots/mobile-search-light-full.png), [modal](screenshots/mobile-search-light-modal.png) |
+| Home at 390: the compact search pill and the listing rail. | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [modal](screenshots/mobile-home-light-modal.png) |
+| Search results at 390: the pill and the card column. Full page not captured: the results shell locks window scroll. | `/s/Tokyo--Japan/homes` | [default](screenshots/mobile-search-light-default.png), [modal](screenshots/mobile-search-light-modal.png) |
 
 ### Overlays and transient states
 
@@ -40,7 +40,7 @@ Screenshots are named `{page}-light-{state}.png` (airbnb.com paints one light th
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 17 components were given a real keyboard focus. 3 draw an outline ring (`tab-active` (2px solid #222222 `grey.1000`, offset 4px), `tab` (2px solid #222222 `grey.1000`, offset 4px), `help-tile` (1px auto #005fcc, offset 1px)), the category tabs' being the 2px `#222` outline 4px out. The other buttons draw it as a box-shadow instead: a white 2px halo plus a `#222` ring hugging the shape (`header-host-link`, `header-menu`, `search-submit`, `card-heart`, `filters-button`, `filter-chip`, `result-heart`, `room-share`, `room-save`, `show-photos`, `host-cta`). `search-segment`, `footer-link`, `help-search` show neither on the measured element. `rail-arrow` could not be given a real keyboard focus at all, so its focus state is unmeasured rather than reported.
+**Focus.** 16 components were given a real keyboard focus. 4 draw an outline ring (`tab-active` (2px solid #222222 `grey.1000`, offset 4px), `tab` (2px solid #222222 `grey.1000`, offset 4px), `filters-button` (2px solid #ffffff `always.white`, offset 0px), `help-tile` (1px auto #005fcc, offset 1px)), the category tabs' being the 2px `#222` outline 4px out. The other buttons draw it as a box-shadow instead: a white 2px halo plus a `#222` ring hugging the shape (`header-host-link`, `header-menu`, `search-submit`, `card-heart`, `result-heart`, `room-share`, `room-save`, `show-photos`, `host-cta`). `search-segment`, `footer-link`, `help-search` show neither on the measured element. `rail-arrow` could not be given a real keyboard focus at all, so its focus state is unmeasured rather than reported.
 
 **Pressed.** Airbnb's controls shrink rather than change colour when pressed: buttons scale to about 0.96 (the header links, the search submit, the filter chips), the wishlist heart to 0.92, and the footer link stays put. Hovering greys the background behind the target (`#f7f7f7`); the search bar deepens its shadow.
 
@@ -48,23 +48,24 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.1s | `cubic-bezier(0.2, 0, 0, 1)` | transform | filter-chip, filters-button, host-cta, room-save, room-share, section-title |
-| 0.2s | `cubic-bezier(0.2, 0, 0, 1)` | box-shadow | filter-chip, filters-button, header-host-link, host-cta, room-save, room-share, section-title, show-photos |
+| 0.1s | `cubic-bezier(0.2, 0, 0, 1)` | transform | host-cta, room-save, room-share, section-title |
+| 0.15s | `cubic-bezier(0, 0, 1, 1)` | border, outline | filters-button |
+| 0.2s | `cubic-bezier(0.2, 0, 0, 1)` | box-shadow | header-host-link, host-cta, room-save, room-share, section-title, show-photos |
 | 0.25s | `cubic-bezier(0.2, 0, 0, 1)` | transform | card-heart, header-host-link, header-menu, rail-arrow, result-heart, show-photos |
-| 0.3s | `cubic-bezier(0.2, 0, 0, 1)` | background-color, border-color, color | filter-chip, filters-button, header-host-link, show-photos |
+| 0.3s | `cubic-bezier(0.2, 0, 0, 1)` | background-color, border-color, color | header-host-link, show-photos |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Listing card](#listing-card) | 181.7 x 214.61 | - | 20px | transparent | none | 0 |
-| [Result card](#result-card) | 307.19 x 377.39 | - | 20px | transparent | none | 0 |
+| [Result card](#result-card) | 307.19 x 351.39 | - | 20px | transparent | none | 0 |
 | [Search bar](#search-bar) | 850 x 66 | - | 32px | transparent | none | 0 |
 | [Search panel (open)](#search-panel-open) | 393 x 1532 | - | - | transparent | none | 0 |
 | [Help tile](#help-tile) | 344 x 48 | - | - | transparent | none | 0 |
 | [Earnings estimator](#estimator-card) | 640 x 376 | - | - | transparent | none | 0 |
 | [Reservation card](#reserve-card) | 372.33 x 312 | - | - | transparent | none | 0 |
-| [Mobile listing card](#m-listing-card) | 165 x 198.75 | - | 20px | transparent | none | 0 |
+| [Mobile listing card](#m-listing-card) | 165 x 214.75 | - | 20px | transparent | none | 0 |
 
 ## Components
 
@@ -185,9 +186,9 @@ The collapsed search pill the results page shows: three segments and the small p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 381.36 x 46; background transparent; text Airbnb Cereal VF 14/22 500, #222222 `grey.1000` |
+| default (same: hover) | size 373.34 x 46; background transparent; text Airbnb Cereal VF 14/22 500, #222222 `grey.1000` |
 
-Child layers that carry the look: button 177.9x48 border 1px solid transparent radius 40px 4px 4px 40px; span 1x24 background #dddddd `deco.default`; button 98.4x48 border 1px solid transparent radius 4px.
+Child layers that carry the look: button 177.9x48 border 1px solid transparent radius 40px 4px 4px 40px; span 1x24 background #dddddd `deco.default`; button 90.4x48 border 1px solid transparent radius 4px.
 
 ![Mini search pill default](components/crops/mini-search-default.png) ![Mini search pill hover](components/crops/mini-search-hover.png)
 
@@ -200,7 +201,7 @@ A gallery section head ("Places to stay in Busan") with a chevron that follows t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 243.52 x 28; radius 8px; background transparent; text Airbnb Cereal VF 20/24 600, #222222 `grey.1000`; transition box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1), transform 0.1s cubic-bezier(0.2, 0, 0, 1); icon 12 x 12, #222222 `grey.1000` |
+| default | size 247.92 x 28; radius 8px; background transparent; text Airbnb Cereal VF 20/24 600, #222222 `grey.1000`; transition box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1), transform 0.1s cubic-bezier(0.2, 0, 0, 1); icon 12 x 12, #222222 `grey.1000` |
 | hover | icon 12.92 x 12.92, #222222 `grey.1000`; layers span (bg #ebebeb `bebe.default`) |
 
 Child layers that carry the look: span 28x28 background #f2f2f2 `grey.200` radius 14px.
@@ -244,7 +245,7 @@ The heart toggle over the card photo. Pressed is forced: a real tap opens the si
 #### Rating row <a id="card-rating"></a>
 The star and average under the card title. Read as `card-rating` on the home page.
 
-**Values (default).** size 23.92 x 16; background transparent; text Airbnb Cereal VF 12/16 400, #6c6c6c `grey.700`.
+**Values (default).** size 23.64 x 16; background transparent; text Airbnb Cereal VF 12/16 400, #6c6c6c `grey.700`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -266,33 +267,26 @@ The sliders-icon button that opens the filters sheet. Pressed is forced; opening
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 83.64 x 34; padding 8px 12px; border 1px solid #dddddd `deco.default`; radius 24px; background #ffffff `always.white`; text Airbnb Cereal VF 12/16 400, #222222 `grey.1000`; transition box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1), transform 0.1s cubic-bezier(0.2, 0, 0, 1), border-color 0.3s cubic-bezier(0.2, 0, 0, 1), background-color 0.3s cubic-bezier(0.2, 0, 0, 1); icon 16 x 16, #222222 `grey.1000` |
-| hover | border 1px solid #c1c1c1 `grey.500`; layers button (bg #ffffff `always.white`; border T:1px solid #c1c1c1 `grey.500` / R:1px solid #c1c1c1 `grey.500` / B:1px solid #c1c1c1 `grey.500` / L:1px solid #c1c1c1 `grey.500`) |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px; layers button (bg #ffffff `always.white`; shadow #ffffff `always.white` 0px 0px 0px 2px, #222222 `grey.1000` 0px 0px 0px 4px; border T:1px solid #dddddd `deco.default` / R:1px solid #dddddd `deco.default` / B:1px solid #dddddd `deco.default` / L:1px solid #dddddd `deco.default`) |
-| pressed | size 81.64 x 32; border 1px solid #c1c1c1 `grey.500`; transform matrix(0.976088, 0, 0, 0.941176, 0, 0); icon 15.62 x 15.06, #222222 `grey.1000`; layers button (bg #ffffff `always.white`; border T:1px solid #c1c1c1 `grey.500` / R:1px solid #c1c1c1 `grey.500` / B:1px solid #c1c1c1 `grey.500` / L:1px solid #c1c1c1 `grey.500`) |
+| default | size 92.56 x 40; padding 7px 0px; border 1px solid #dddddd `deco.default`; radius 40px; background #ffffff `always.white`; text Airbnb Cereal VF 12/16 500, #222222 `grey.1000`; transition outline 0.15s cubic-bezier(0, 0, 1, 1), border 0.15s cubic-bezier(0, 0, 1, 1); icon 16 x 16, #222222 `grey.1000` |
+| hover | border 1px solid #222222 `grey.1000`; background #f7f7f7 `faint.default`; layers button (bg #f7f7f7 `faint.default`; border T:1px solid #222222 `grey.1000` / R:1px solid #222222 `grey.1000` / B:1px solid #222222 `grey.1000` / L:1px solid #222222 `grey.1000`) |
+| focus-visible | shadow #222222 0px 0px 0px 4px, rgba(255, 255, 255, 0.7) 0px 0px 0px 5px; outline 2px solid #ffffff `always.white`, offset 0px; transition box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1); layers button (bg #ffffff `always.white`; shadow #222222 `grey.1000` 0px 0px 0px 4px, rgba(255, 255, 255, 0.7) 0px 0px 0px 5px; outline 2px solid #ffffff `always.white` offset 0px; border T:1px solid #dddddd `deco.default` / R:1px solid #dddddd `deco.default` / B:1px solid #dddddd `deco.default` / L:1px solid #dddddd `deco.default`) |
+| pressed | border 1px solid #222222 `grey.1000`; background #f7f7f7 `faint.default`; layers button (bg #f7f7f7 `faint.default`; border T:1px solid #222222 `grey.1000` / R:1px solid #222222 `grey.1000` / B:1px solid #222222 `grey.1000` / L:1px solid #222222 `grey.1000`) |
 
 ![Filters button default](components/crops/filters-button-default.png) ![Filters button hover](components/crops/filters-button-hover.png) ![Filters button focus-visible](components/crops/filters-button-focus-visible.png) ![Filters button pressed](components/crops/filters-button-pressed.png)
 
 #### Filter chip <a id="filter-chip"></a>
 One pill in the quick-filter row (Type of place, Price, Kitchen …). Pressed is forced. Read as `filter-chip` on the search results page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 54 x 34; padding 8px 12px; border 1px solid #dddddd `deco.default`; radius 24px; background #ffffff `always.white`; text Airbnb Cereal VF 12/16 400, #222222 `grey.1000`; transition box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1), transform 0.1s cubic-bezier(0.2, 0, 0, 1), border-color 0.3s cubic-bezier(0.2, 0, 0, 1), background-color 0.3s cubic-bezier(0.2, 0, 0, 1) |
-| hover | border 1px solid #c1c1c1 `grey.500`; layers button (bg #ffffff `always.white`; border T:1px solid #c1c1c1 `grey.500` / R:1px solid #c1c1c1 `grey.500` / B:1px solid #c1c1c1 `grey.500` / L:1px solid #c1c1c1 `grey.500`) |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px; layers button (bg #ffffff `always.white`; shadow #ffffff `always.white` 0px 0px 0px 2px, #222222 `grey.1000` 0px 0px 0px 4px; border T:1px solid #dddddd `deco.default` / R:1px solid #dddddd `deco.default` / B:1px solid #dddddd `deco.default` / L:1px solid #dddddd `deco.default`) |
-| pressed | size 52 x 32; border 1px solid #c1c1c1 `grey.500`; transform matrix(0.962963, 0, 0, 0.941176, 0, 0); layers button (bg #ffffff `always.white`; border T:1px solid #c1c1c1 `grey.500` / R:1px solid #c1c1c1 `grey.500` / B:1px solid #c1c1c1 `grey.500` / L:1px solid #c1c1c1 `grey.500`) |
-
-![Filter chip default](components/crops/filter-chip-default.png) ![Filter chip hover](components/crops/filter-chip-hover.png) ![Filter chip focus-visible](components/crops/filter-chip-focus-visible.png) ![Filter chip pressed](components/crops/filter-chip-pressed.png)
+Not on the page when it was captured.
 
 #### Result card <a id="result-card"></a>
 A listing card in the results grid: photo with badge and heart, then title, distance line, bed rows, dates, price and Free cancellation. Read as `result-card` on the search results page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 307.19 x 377.39; radius 20px; background transparent; text Airbnb Cereal VF 14/18 500, #ffffff `always.white`; icon 24 x 24, #222222 `grey.1000` |
+| default (same: hover) | size 307.19 x 351.39; radius 20px; background transparent; text Airbnb Cereal VF 14/18 500, #ffffff `always.white`; icon 24 x 24, #222222 `grey.1000` |
 
-Child layers that carry the look: div 307.2x230.4 background #dddddd `deco.default` radius 20px; div 307.2x230.4 image linear-gradient(transparent 80%, rgba(0, 0, 0, 0.25)); div 89.8x28 background rgba(96, 96, 96, 0.6) border 1px solid rgba(255, 255, 255, 0.16) radius 40px.
+Child layers that carry the look: div 307.2x230.4 background #dddddd `deco.default` radius 20px; div 307.2x230.4 image linear-gradient(transparent calc(100% - 51px), rgba(0, 0, 0, 0.34)); div 95.8x32 background rgba(34, 34, 34, 0.5) image linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), none radius 16px shadow rgba(0, 0, 0, 0.01) 0px 0px 0px 1px, rgba(0, 0, 0, 0.08) `shadow.100` 0px 2px 4px 0px.
 
 ![Result card default](components/crops/result-card-default.png) ![Result card hover](components/crops/result-card-hover.png)
 
@@ -331,7 +325,7 @@ A listing's own page: the photo mosaic, the reserve card in the right column, th
 #### Room title <a id="room-title"></a>
 The listing headline under the header. Read as `room-title` on the room page.
 
-**Values (default).** size 973.89 x 64; background transparent; text Airbnb Cereal VF 26/30 500, #222222 `grey.1000`.
+**Values (default).** size 913.5 x 64; background transparent; text Airbnb Cereal VF 26/30 500, #222222 `grey.1000`.
 
 ![Room title default](components/crops/room-title-default.png)
 
@@ -390,9 +384,7 @@ The "Entire rental unit in …" line and the guests/bedrooms/beds row. Read as `
 #### Guest favourite plaque <a id="guest-plaque"></a>
 The laurel-bordered strip: "Guest favourite / One of the most loved homes on Airbnb" with the rating and review count. Read as `guest-plaque` on the room page.
 
-**Values (default).** size 1120 x 242; background transparent; text Airbnb Cereal VF 100/100 500, #222222 `grey.1000`.
-
-![Guest favourite plaque default](components/crops/guest-plaque-default.png)
+Not on the page when it was captured.
 
 #### Reservation card <a id="reserve-card"></a>
 The booking card pinned right: "Add dates for prices", the CHECK-IN/CHECK-OUT/GUESTS field grid. Nothing was booked. Read as `reserve-card` on the room page.
@@ -425,7 +417,7 @@ Not on the page when it was captured.
 #### Host row <a id="host-row"></a>
 The "Hosted by" row with the circular avatar. Read as `host-row` on the room page.
 
-**Values (default).** size 177.28 x 20; background transparent; text Airbnb Cereal VF 16/20 500, #222222 `grey.1000`.
+**Values (default).** size 148.64 x 20; background transparent; text Airbnb Cereal VF 16/20 500, #222222 `grey.1000`.
 
 ![Host row default](components/crops/host-row-default.png)
 
@@ -514,9 +506,9 @@ The compact search bar at the top of the mobile home. Read as `m-search-pill` on
 #### Mobile listing card <a id="m-listing-card"></a>
 A home card in the mobile rail: full-bleed photo, badge, heart, title, price. Read as `m-listing-card` on the home page at 390 wide.
 
-**Values (default).** size 165 x 198.75; radius 20px; background transparent; text Airbnb Cereal VF 13/16 500, #222222 `grey.1000`; icon 24 x 24, #222222 `grey.1000`.
+**Values (default).** size 165 x 214.75; radius 20px; background transparent; text Airbnb Cereal VF 11/13 600, #222222 `grey.1000`; icon 24 x 24, #222222 `grey.1000`.
 
-Child layers that carry the look: div 165x156.8 background #dddddd `deco.default` radius 20px shadow rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 8px 24px 0px.
+Child layers that carry the look: div 165x156.8 background #dddddd `deco.default` radius 20px shadow rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 8px 24px 0px; div 103.6x26 background rgba(255, 255, 255, 0.8) border 1px solid rgba(255, 255, 255, 0.5) radius 14px shadow rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) `shadow.50` 0px 2px 6px 0px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px.
 
 ![Mobile listing card default](components/crops/m-listing-card-default.png)
 ## Gaps

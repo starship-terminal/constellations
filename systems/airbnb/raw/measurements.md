@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.airbnb.com (geo-redirected to www.airbnb.com.sg from this network) on 2026-11-10 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from www.airbnb.com (geo-redirected to www.airbnb.com.sg from this network) on 2026-11-21 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -26,7 +26,7 @@ Page: home. Selector: `the fixed top bar holding the logo, tabs and user control
 | Font | Airbnb Cereal VF 14px/20.02px 400 |
 | Letter spacing | normal |
 | Colour | #222222 |
-| Text node | span.timi9jf.atm_7l_hfv0h6_1nos8r: Airbnb Cereal VF 14px/18px 500, #222222 |
+| Text node | span.t151v0ez.atm_7l_hfv0h6_1nos8r: Airbnb Cereal VF 14px/18px 500, #222222 |
 | Transition | none |
 | Icon | 102 x 32, colour #ff385c, fill #000000 |
 | Painted layers | span.u4v6jzs.atm_uc_glywfm_1e3co8w 3.0x3.0 bg #222222 r 1.5px 0px 0px 1.5px; span.u4v6jzs.atm_uc_glywfm_1e3co8w 60.0x3.0 bg #222222; span.u4v6jzs.atm_uc_glywfm_1e3co8w 3.0x3.0 bg #222222 r 0px 1.5px 1.5px 0px; div.b1x9m868.dir 850.0x66.0 bg #ffffff r 100px; div.b1x9m868.bam02bu 850.0x66.0 bg #ebebeb border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 100px; div.b1x9m868.b7v5xmd 850.0x66.0 border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 100px shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.1 0px 8px 24px 0px |
@@ -115,11 +115,11 @@ Page: home. Selector: `header tab "Homes"`. States: default, hover, focus-visibl
 | Font | Airbnb Cereal VF 14px/20.02px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #222222 | = | = | = |
-| Text node | span.timi9jf.atm_7l_hfv0h6_1nos8r: Airbnb Cereal VF 14px/18px 500, #6c6c6c | = | = | = |
+| Text node | span.t151v0ez.atm_7l_hfv0h6_1nos8r: Airbnb Cereal VF 14px/18px 500, #6c6c6c | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | keydown then focus() | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.c5o62i6.atm_3f_glywfm_jo46a5 103.5x36.0 r 8px outline 2px solid #222222 offset 4px | = |
+| Painted layers | - | = | a.cowqa6u.atm_3f_glywfm_jo46a5 103.5x36.0 r 8px outline 2px solid #222222 offset 4px | = |
 
 Crops: `tab-active-default.png`, `tab-active-hover.png`, `tab-active-focus-visible.png`, `tab-active-pressed.png`.
 
@@ -141,11 +141,11 @@ Page: home. Selector: `header tab "Experiences"`. States: default, hover, focus-
 | Font | Airbnb Cereal VF 14px/20.02px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #222222 | = | = | = |
-| Text node | span.timi9jf.atm_7l_hfv0h6_1nos8r: Airbnb Cereal VF 14px/18px 500, #6c6c6c | span.timi9jf.atm_7l_hfv0h6_1nos8r: Airbnb Cereal VF 14px/18px 500, #222222 | = | = |
+| Text node | span.t151v0ez.atm_7l_hfv0h6_1nos8r: Airbnb Cereal VF 14px/18px 500, #6c6c6c | span.t151v0ez.atm_7l_hfv0h6_1nos8r: Airbnb Cereal VF 14px/18px 500, #222222 | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | keydown then focus() | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.c5o62i6.atm_3f_glywfm_jo46a5 124.7x36.0 r 8px outline 2px solid #222222 offset 4px | = |
+| Painted layers | - | = | a.cowqa6u.atm_3f_glywfm_jo46a5 124.7x36.0 r 8px outline 2px solid #222222 offset 4px | = |
 
 Crops: `tab-default.png`, `tab-hover.png`, `tab-focus-visible.png`, `tab-pressed.png`.
 
@@ -265,7 +265,7 @@ Page: search. Selector: `the compact search bar in the header`. States: default,
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 381.36 x 46 | = |
+| Size (w x h) | 373.34 x 46 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
@@ -278,7 +278,7 @@ Page: search. Selector: `the compact search bar in the header`. States: default,
 | Text node | div.f1wvjdh.fb71sjy: Airbnb Cereal VF 14px/22px 500, #222222 | = |
 | Transition | none | = |
 | Cursor | pointer | = |
-| Painted layers | button.bc003v3.atm_3f_glywfm_jo46a5 177.9x48.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 40px 4px 4px 40px; span.dqgd72r.dir 1.0x24.0 bg #dddddd; button.bc003v3.atm_3f_glywfm_jo46a5 98.4x48.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px; span.dqgd72r.dir 1.0x24.0 bg #dddddd; button.bc003v3.atm_3f_glywfm_jo46a5 109.1x48.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px 40px 40px 4px | = |
+| Painted layers | button.bc003v3.atm_3f_glywfm_jo46a5 177.9x48.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 40px 4px 4px 40px; span.dqgd72r.dir 1.0x24.0 bg #dddddd; button.bc003v3.atm_3f_glywfm_jo46a5 90.4x48.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px; span.dqgd72r.dir 1.0x24.0 bg #dddddd; button.bc003v3.atm_3f_glywfm_jo46a5 109.1x48.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px 40px 40px 4px | = |
 | How | at rest | mouse hover |
 | Ancestor paint | - | 1 up div.l1qdq8x2.atm_uc_1x5hrc6__1igb08s shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.1 0px 8px 24px 0px |
 
@@ -294,7 +294,7 @@ Page: home. Selector: `a gallery section title row`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 243.52 x 28 | = |
+| Size (w x h) | 247.92 x 28 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 8px | = |
@@ -331,10 +331,10 @@ Page: home. Selector: `the first listing-card container in the rail`. States: de
 | Font | Airbnb Cereal VF 14px/20.02px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #222222 | = |
-| Text node | span.to6yqhz.tpka78r: Airbnb Cereal VF 11px/13px 600, #222222 | = |
+| Text node | span.t8mq7ht.tpka78r: Airbnb Cereal VF 11px/13px 600, #222222 | = |
 | Transition | none | = |
 | Icon | 24 x 24, colour #222222, fill #000000 @ 0.5 | = |
-| Painted layers | div.c11jbcjg.atm_ks_zryt35__1rgatj2 181.7x172.6 bg #dddddd r 20px; div.bxuv6ej.bjcf2mg 103.6x26.0 bg #ffffff @ 0.8 border T:1px solid #ffffff @ 0.5 / R:1px solid #ffffff @ 0.5 / B:1px solid #ffffff @ 0.5 / L:1px solid #ffffff @ 0.5 r 14px shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.04 0px 2px 6px 0px, #000000 @ 0.1 0px 4px 8px 0px | = |
+| Painted layers | div.c11jbcjg.atm_ks_zryt35__1rgatj2 181.7x172.6 bg #dddddd r 20px; div.rxuv6ej.rjcf2mg 103.6x26.0 bg #ffffff @ 0.8 border T:1px solid #ffffff @ 0.5 / R:1px solid #ffffff @ 0.5 / B:1px solid #ffffff @ 0.5 / L:1px solid #ffffff @ 0.5 r 14px shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.04 0px 2px 6px 0px, #000000 @ 0.1 0px 4px 8px 0px | = |
 | How | at rest | mouse hover |
 
 Crops: `listing-card-default.png`, `listing-card-hover.png`.
@@ -405,7 +405,7 @@ Page: home. Selector: `the rating text inside the card`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 23.92 x 16 |
+| Size (w x h) | 23.64 x 16 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -415,6 +415,7 @@ Page: home. Selector: `the rating text inside the card`. States: default.
 | Font | Airbnb Cereal VF 12px/16px 400 |
 | Letter spacing | normal |
 | Colour | #6c6c6c |
+| Text node | span: Airbnb Cereal VF 12px/16px 400, #6c6c6c |
 | Transition | none |
 | How | at rest |
 
@@ -439,10 +440,10 @@ Page: home. Selector: `the badge pill over a card photo`. States: default.
 | Font | Airbnb Cereal VF 14px/20.02px 400 |
 | Letter spacing | normal |
 | Colour | #222222 |
-| Text node | span.to6yqhz.tpka78r: Airbnb Cereal VF 11px/13px 600, #222222 |
+| Text node | span.t8mq7ht.tpka78r: Airbnb Cereal VF 11px/13px 600, #222222 |
 | Transition | none |
 | Icon | 24 x 24, colour #222222, fill #000000 @ 0.5 |
-| Painted layers | div.bxuv6ej.bjcf2mg 103.6x26.0 bg #ffffff @ 0.8 border T:1px solid #ffffff @ 0.5 / R:1px solid #ffffff @ 0.5 / B:1px solid #ffffff @ 0.5 / L:1px solid #ffffff @ 0.5 r 14px shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.04 0px 2px 6px 0px, #000000 @ 0.1 0px 4px 8px 0px |
+| Painted layers | div.rxuv6ej.rjcf2mg 103.6x26.0 bg #ffffff @ 0.8 border T:1px solid #ffffff @ 0.5 / R:1px solid #ffffff @ 0.5 / B:1px solid #ffffff @ 0.5 / L:1px solid #ffffff @ 0.5 r 14px shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.04 0px 2px 6px 0px, #000000 @ 0.1 0px 4px 8px 0px |
 | How | at rest |
 
 Crops: `card-badge-default.png`.
@@ -559,23 +560,22 @@ Page: search. Selector: `the "Filters" button left of the chip row`. States: def
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 83.64 x 34 | = | = | 81.64 x 32 |
-| Padding | 8px 12px | = | = | = |
-| Border | 1px solid #dddddd | 1px solid #c1c1c1 | = | 1px solid #c1c1c1 |
-| Radius | 24px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | none | = | #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px | = |
-| Outline | none | = | = | = |
-| Font | Airbnb Cereal VF 12px/16px 400 | = | = | = |
+| Size (w x h) | 92.56 x 40 | = | = | = |
+| Padding | 7px 0px | = | = | = |
+| Border | 1px solid #dddddd | 1px solid #222222 | = | 1px solid #222222 |
+| Radius | 40px | = | = | = |
+| Background | #ffffff | #f7f7f7 | = | #f7f7f7 |
+| Box shadow | none | = | #222222 0px 0px 0px 4px, #ffffff @ 0.7 0px 0px 0px 5px | = |
+| Outline | none | = | 2px solid #ffffff offset 0px | = |
+| Font | Airbnb Cereal VF 14px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #222222 | = | = | = |
-| Text node | span.mbr28oa.dir: Airbnb Cereal VF 12px/16px 400, #222222 | = | = | = |
-| Transition | box-shadow, transform, border-color, background-color 0.2s, 0.1s, 0.3s, 0.3s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1) delay 0s, 0s, 0s, 0s | = | = | = |
+| Text node | span.burar1r.dir: Airbnb Cereal VF 12px/16px 500, #222222 | = | = | = |
+| Transition | outline, border 0.15s, 0.15s cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1) delay 0s, 0s | = | box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1) | = |
 | Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #222222 | = | = | 15.62 x 15.06, colour #222222 |
-| Painted layers | button.r1les82u.r1np618q 83.6x34.0 bg #ffffff border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 24px | button.r1les82u.r1np618q 83.6x34.0 bg #ffffff border T:1px solid #c1c1c1 / R:1px solid #c1c1c1 / B:1px solid #c1c1c1 / L:1px solid #c1c1c1 r 24px | button.r1les82u.r1np618q 83.6x34.0 bg #ffffff border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 24px shadow #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px | button.r1les82u.r1np618q 81.6x32.0 bg #ffffff border T:1px solid #c1c1c1 / R:1px solid #c1c1c1 / B:1px solid #c1c1c1 / L:1px solid #c1c1c1 r 24px |
+| Icon | 16 x 16, colour #222222 | = | = | = |
+| Painted layers | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 92.6x40.0 bg #ffffff border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 40px | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 92.6x40.0 bg #f7f7f7 border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 r 40px | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 92.6x40.0 bg #ffffff border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 40px shadow #222222 0px 0px 0px 4px, #ffffff @ 0.7 0px 0px 0px 5px outline 2px solid #ffffff offset 0px | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 92.6x40.0 bg #f7f7f7 border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 r 40px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Transform | - | = | = | matrix(0.976088, 0, 0, 0.941176, 0, 0) |
 
 Crops: `filters-button-default.png`, `filters-button-hover.png`, `filters-button-focus-visible.png`, `filters-button-pressed.png`.
 
@@ -585,25 +585,7 @@ Filter chip. One pill in the quick-filter row (Type of place, Price, Kitchen …
 
 Page: search. Selector: `a filter pill in the row under the header`. States: default, hover, focus-visible, pressed.
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 54 x 34 | = | = | 52 x 32 |
-| Padding | 8px 12px | = | = | = |
-| Border | 1px solid #dddddd | 1px solid #c1c1c1 | = | 1px solid #c1c1c1 |
-| Radius | 24px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | none | = | #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px | = |
-| Outline | none | = | = | = |
-| Font | Airbnb Cereal VF 12px/16px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | = | = | = |
-| Transition | box-shadow, transform, border-color, background-color 0.2s, 0.1s, 0.3s, 0.3s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1) delay 0s, 0s, 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | button.r1les82u.r1np618q 54.0x34.0 bg #ffffff border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 24px | button.r1les82u.r1np618q 54.0x34.0 bg #ffffff border T:1px solid #c1c1c1 / R:1px solid #c1c1c1 / B:1px solid #c1c1c1 / L:1px solid #c1c1c1 r 24px | button.r1les82u.r1np618q 54.0x34.0 bg #ffffff border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 24px shadow #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px | button.r1les82u.r1np618q 52.0x32.0 bg #ffffff border T:1px solid #c1c1c1 / R:1px solid #c1c1c1 / B:1px solid #c1c1c1 / L:1px solid #c1c1c1 r 24px |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Transform | - | = | = | matrix(0.962963, 0, 0, 0.941176, 0, 0) |
-
-Crops: `filter-chip-default.png`, `filter-chip-hover.png`, `filter-chip-focus-visible.png`, `filter-chip-pressed.png`.
+Not found on the page at capture time.
 
 #### result-card
 
@@ -613,7 +595,7 @@ Page: search. Selector: `the first listing card in the results grid`. States: de
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 307.19 x 377.39 | = |
+| Size (w x h) | 307.19 x 351.39 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 20px | = |
@@ -623,10 +605,10 @@ Page: search. Selector: `the first listing card in the results grid`. States: de
 | Font | Airbnb Cereal VF 14px/20.02px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #222222 | = |
-| Text node | div.t1ez1u5v.atm_ks_zryt35__1rgatj2: Airbnb Cereal VF 14px/18px 500, #ffffff | = |
+| Text node | div: Airbnb Cereal VF 14px/18px 500, #ffffff | = |
 | Transition | none | = |
 | Icon | 24 x 24, colour #222222, fill #000000 @ 0.5 | = |
-| Painted layers | div.c14dgvke.atm_ks_zryt35__1rgatj2 307.2x230.4 bg #dddddd r 20px; div.o1hrhshc.o1q97y5m 307.2x230.4 image linear-gradient(#000000 @ 0 80%, #000000 @ 0.25); div.r1om7k6d.r1t0wzu5 89.8x28.0 bg #606060 @ 0.6 border T:1px solid #ffffff @ 0.16 / R:1px solid #ffffff @ 0.16 / B:1px solid #ffffff @ 0.16 / L:1px solid #ffffff @ 0.16 r 40px; button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 32.0x32.0 bg #ffffff @ 0.9 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 50% shadow #000000 @ 0 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 4px, #000000 @ 0.18 0px 2px 4px 0px; button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 32.0x32.0 bg #ffffff @ 0.9 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 50% shadow #000000 @ 0 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 4px, #000000 @ 0.18 0px 2px 4px 0px; span.d840b0v.atm_uc_glywfm__1rrf6b5 6.0x6.0 bg #ffffff r 50% | = |
+| Painted layers | div.c14dgvke.atm_ks_zryt35__1rgatj2 307.2x230.4 bg #dddddd r 20px; div.o47luuh.o1cq78qk 307.2x230.4 image linear-gradient(#000000 @ 0 calc(100% - 51px), #000000 @ 0.34); div.rl50dte.c1dsgsxy 95.8x32.0 bg #222222 @ 0.5 image linear-gradient(to right, #000000 @ 0.7, #000000 @ 0.1), none r 16px shadow #000000 @ 0.01 0px 0px 0px 1px, #000000 @ 0.08 0px 2px 4px 0px; button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 32.0x32.0 bg #ffffff @ 0.9 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 50% shadow #000000 @ 0 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 4px, #000000 @ 0.18 0px 2px 4px 0px; button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 32.0x32.0 bg #ffffff @ 0.9 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 50% shadow #000000 @ 0 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 4px, #000000 @ 0.18 0px 2px 4px 0px; span.d840b0v.atm_uc_glywfm__1rrf6b5 16.0x6.0 bg #ffffff @ 0.925 r 12px | = |
 | How | at rest | mouse hover |
 
 Crops: `result-card-default.png`, `result-card-hover.png`.
@@ -650,7 +632,7 @@ Page: search. Selector: `the badge pill inside the result card`. States: default
 | Letter spacing | normal |
 | Colour | #ffffff |
 | Transition | none |
-| Ancestor paint | 1 up div.r1om7k6d.r1t0wzu5 bg #606060 @ 0.6 |
+| Ancestor paint | 1 up div.rl50dte.c1dsgsxy bg #222222 @ 0.5 shadow #000000 @ 0.01 0px 0px 0px 1px, #000000 @ 0.08 0px 2px 4px 0px |
 | How | at rest |
 
 Crops: `result-badge-default.png`.
@@ -717,7 +699,7 @@ Page: room. Selector: `main h1`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 973.89 x 64 |
+| Size (w x h) | 913.5 x 64 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -872,23 +854,7 @@ Guest favourite plaque. The laurel-bordered strip: "Guest favourite / One of the
 
 Page: room. Selector: `the laurel plaque under the subtitle`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 1120 x 242 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Airbnb Cereal VF 16px/20px 400 |
-| Letter spacing | normal |
-| Colour | #222222 |
-| Text node | span: Airbnb Cereal VF 100px/100px 500, #222222, ls -2px |
-| Transition | none |
-| How | at rest |
-
-Crops: `guest-plaque-default.png`.
+Not found on the page at capture time.
 
 #### reserve-card
 
@@ -968,7 +934,7 @@ Page: room. Selector: `the Hosted-by row under the plaque`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 177.28 x 20 |
+| Size (w x h) | 148.64 x 20 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -1054,7 +1020,7 @@ Page: host. Selector: `the earnings estimate card on the host page`. States: def
 | Font | Airbnb Cereal VF 14px/20.02px 400 |
 | Letter spacing | normal |
 | Colour | #222222 |
-| Text node | h1.wt4h85h.atm_eh_1fy54h5_126qwya: Airbnb Cereal VF 60px/64px 700, #222222, ls -1.8px |
+| Text node | h1.wt4h85h.atm_eh_4b0q0n_126qwya: Airbnb Cereal VF 60px/64px 700, #222222, ls -1.8px |
 | Transition | none |
 | Icon | 16 x 16, colour #222222 |
 | Painted layers | button.c1n9sd8s.atm_kd_glywfm_pfnrn2 418.0x64.0 bg #ffffff border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 40px |
@@ -1098,7 +1064,7 @@ Page: mobile. Selector: `the first listing card`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 165 x 198.75 |
+| Size (w x h) | 165 x 214.75 |
 | Padding | 0px |
 | Border | none |
 | Radius | 20px |
@@ -1108,10 +1074,10 @@ Page: mobile. Selector: `the first listing card`. States: default.
 | Font | Airbnb Cereal VF 14px/20.02px 400 |
 | Letter spacing | normal |
 | Colour | #222222 |
-| Text node | div.t1ms2xzu.atm_ks_zryt35__1rgatj2: Airbnb Cereal VF 13px/16px 500, #222222 |
+| Text node | span.t8mq7ht.tpka78r: Airbnb Cereal VF 11px/13px 600, #222222 |
 | Transition | none |
 | Icon | 24 x 24, colour #222222, fill #000000 @ 0.5 |
-| Painted layers | div.c11jbcjg.atm_ks_zryt35__1rgatj2 165.0x156.8 bg #dddddd r 20px shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.1 0px 8px 24px 0px |
+| Painted layers | div.c11jbcjg.atm_ks_zryt35__1rgatj2 165.0x156.8 bg #dddddd r 20px shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.1 0px 8px 24px 0px; div.rxuv6ej.rjcf2mg 103.6x26.0 bg #ffffff @ 0.8 border T:1px solid #ffffff @ 0.5 / R:1px solid #ffffff @ 0.5 / B:1px solid #ffffff @ 0.5 / L:1px solid #ffffff @ 0.5 r 14px shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.04 0px 2px 6px 0px, #000000 @ 0.1 0px 4px 8px 0px |
 | How | at rest |
 
 Crops: `m-listing-card-default.png`.

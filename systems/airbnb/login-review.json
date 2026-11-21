@@ -1,0 +1,64 @@
+{
+  "product": "Airbnb",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "origin": "https://www.airbnb.com",
+  "landed": "https://www.airbnb.com.sg/",
+  "offered": {
+    "nav": {
+      "header": ["All /", "Homes /homes", "Hotels /hotels", "Experiences /experiences", "Services /services"],
+      "menu": ["Languages & currency", "Help Centre /help", "Become a host", "Refer a host /refer", "Find a co-host /co-hosts/home", "Log in or sign up /signup_login"],
+      "mobile": ["Explore", "Wishlists", "Log in"]
+    },
+    "settings": {
+      "seen": false,
+      "reason": "No settings surface is offered signed out. Languages & currency is a menu button; it was not opened because it sits next to the login wall and was not needed to read the public system."
+    },
+    "create": {
+      "seen": false,
+      "reason": "Become a host is a public marketing page (/host/homes). Listing creation, signup and Continue were not submitted."
+    }
+  },
+  "screens": [
+    "screenshots/experiences-light-default.png",
+    "screenshots/experiences-light-full.png",
+    "screenshots/help-light-default.png",
+    "screenshots/help-light-full.png",
+    "screenshots/home-light-card-hover.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-modal.png",
+    "screenshots/home-light-search-open.png",
+    "screenshots/host-light-default.png",
+    "screenshots/host-light-full.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-home-light-modal.png",
+    "screenshots/mobile-search-light-default.png",
+    "screenshots/mobile-search-light-modal.png",
+    "screenshots/room-light-default.png",
+    "screenshots/room-light-modal.png",
+    "screenshots/search-light-default.png",
+    "screenshots/search-light-modal.png",
+    "screenshots/services-light-default.png",
+    "screenshots/services-light-full.png"
+  ],
+  "gaps": [
+    "Login and signup stop at the dialog: phone or email, Continue, Continue with Google, Continue with Apple. Nothing typed, no identity provider clicked.",
+    "Wishlists, account, trips, inbox and settings are behind that wall.",
+    "Search and room full pages: those shells lock window scroll, so only the first viewport is photographed.",
+    "Filter chips, guest plaque, promo strip and header globe were not on the pages this run.",
+    "Rail-arrow focus-visible could not be driven.",
+    "Dark theme is declared in CSS and never applied."
+  ],
+  "not_submitted": [
+    "login dialog Continue",
+    "Continue with Google",
+    "Continue with Apple",
+    "search submit",
+    "wishlist",
+    "host Get started",
+    "help Log in or sign up",
+    "any form"
+  ]
+}

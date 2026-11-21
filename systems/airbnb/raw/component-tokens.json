@@ -2209,6 +2209,10 @@
      "var": "--palette-bg-link",
      "type": "color"
     },
+    "loading": {
+     "var": "--palette-bg-loading",
+     "type": "color"
+    },
     "material": {
      "focused": {
       "var": "--palette-bg-material-focused",
@@ -3441,6 +3445,10 @@
     },
     "link": {
      "var": "--palette-bg-link",
+     "type": "color"
+    },
+    "loading": {
+     "var": "--palette-bg-loading",
      "type": "color"
     },
     "material": {
