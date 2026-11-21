@@ -2187,9 +2187,9 @@
       "description": "Products and shops your community will love",
       "status": "captured",
       "package": "systems/fourthwall",
-      "notes": "https://fourthwall.com/login downloaded instead of rendering. Log in opens a Keycloak form at auth.fourthwall.com with email and password, or Google or Apple. No code was sent.",
+      "notes": "https://fourthwall.com/login downloaded instead of rendering. Log in opens a Keycloak form at auth.fourthwall.com with email and password, or Google or Apple. No code was sent. Public walk 2026-11-21: the public site tree is in systems/fourthwall/site-tree.md. https://fourthwall.com/ loaded. Header Log in still stops at auth.fourthwall.com with an empty email and password, or Google or Apple. Start now stops at the Keycloak registration wall. https://fourthwall.com/login still starts a download and does not paint. Nothing was typed. Google and Apple were not clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1670 at d552f10cb704. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
@@ -2289,9 +2289,9 @@
       "description": "On-chain market intelligence",
       "status": "captured",
       "package": "systems/glassnode",
-      "notes": "https://studio.glassnode.com/login is page not found. Log in opens https://auth.glassnode.com/ with email and password, or Google. No code was sent.",
+      "notes": "https://studio.glassnode.com/login is page not found. Log in opens https://auth.glassnode.com/ with email and password, or Google. No code was sent. Public walk 2026-11-21: the public site tree is in systems/glassnode/site-tree.md. https://glassnode.com/ loaded. Log in still stops at https://auth.glassnode.com/u/login with an empty email and password, or Google. Sign up stops at https://auth.glassnode.com/u/signup. https://studio.glassnode.com/login is still a 404. Nothing was typed. Google was not clicked. The reCAPTCHA was not solved. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1673 at 735076e141a1. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
@@ -2306,9 +2306,9 @@
       "description": "Online Graphic Design Tool for E-com Business Owners",
       "status": "captured",
       "package": "systems/glorify",
-      "notes": "https://app.glorify.com/dashboard/login asks for email and password, or Google. No code was sent.",
+      "notes": "https://app.glorify.com/dashboard/login asks for email and password, or Google. No code was sent. Public walk 2026-11-21: the public site tree is in systems/glorify/site-tree.md. https://glorify.com/ loaded. Login still stops at https://app.glorify.com/dashboard/login with an empty email and password, or Google. Sign up stops at https://app.glorify.com/dashboard/register. Nothing was typed. Google was not clicked. The reCAPTCHA was not solved. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1671 at d5f53a787120. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
@@ -2884,9 +2884,9 @@
       "description": "Email-First Operating System for Creators",
       "status": "captured",
       "package": "systems/kit",
-      "notes": "https://app.kit.com/users/login asks for email and password. No code was sent.",
+      "notes": "https://app.kit.com/users/login asks for email and password. No code was sent. Public walk 2026-11-21: the public site tree is in systems/kit/site-tree.md. https://kit.com/ loaded. Log in still stops at https://app.kit.com/users/login with an empty email and password. Forgot password stops at https://app.kit.com/users/password/new. Signup returned HTTP 403 from Cloudflare before the page rendered. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1672 at cc97f97e92ed. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 9
     },
     {
