@@ -470,7 +470,7 @@
       "description": "The data-driven CRM",
       "status": "captured",
       "package": "systems/attio",
-      "notes": "pre-existing package; verified complete against docs/PACKAGE.md during batch 2 https://app.attio.com/login opened the signed-in onboarding page in this browser. No new code was requested. Signed-in walk: https://app.attio.com/login redirected to https://app.attio.com/onboarding/welcome, a sign-in wall (Google, email). Session was not present. Public screens in PR 1470 (9add0f0ba). Post-auth pages were not reached. Skipped.",
+      "notes": "pre-existing package; verified complete against docs/PACKAGE.md during batch 2 https://app.attio.com/login opened the signed-in onboarding page in this browser. No new code was requested. Signed-in walk: https://app.attio.com/login redirected to https://app.attio.com/onboarding/welcome, a sign-in wall (Google, email). Session was not present. Public screens in PR 1470 (9add0f0ba). Post-auth pages were not reached. Skipped. Public walk 2026-11-21: the public site tree is in systems/attio/site-tree.md. Sign in and Start for free stop at an empty welcome wall that asks for Google or a work email. Nothing was typed. Google was not clicked. No form was submitted. login-review.json is a stop note and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1706 at a8f3b8cdead1. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 2
