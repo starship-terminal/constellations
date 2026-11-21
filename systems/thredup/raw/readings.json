@@ -1,0 +1,32 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.thredup.com/",
+  "viewport": {"w": 1440, "h": 900, "dpr": 2},
+  "notes": "getComputedStyle on the live signed-out shop. The signup dialog was closed with Close. The privacy bar was closed with its close control. Search was not submitted. Account, favorites, and cart were not opened. Sell, Add to Cart, and Sign up were not clicked. The footer phone line was not photographed.",
+  "readings": [
+    {"role": "body", "page": "https://www.thredup.com/", "color": "rgb(0, 0, 0)", "background": "rgb(255, 255, 255)", "fontFamily": "Season Sans, Season Sans Fallback, sans-serif", "fontSize": "14px", "fontWeight": "400", "lineHeight": "22.4px"},
+    {"role": "header", "page": "https://www.thredup.com/", "background": "rgb(233, 233, 233)", "height": "176px"},
+    {"role": "promo", "page": "https://www.thredup.com/", "background": "rgb(218, 239, 198)", "color": "rgb(0, 0, 0)", "fontSize": "14px", "fontWeight": "400", "height": "48px"},
+    {"role": "promo-chip", "page": "https://www.thredup.com/", "background": "rgb(255, 255, 255)", "color": "rgb(0, 0, 0)", "fontSize": "12px", "fontWeight": "500", "padding": "4px 8px", "borderRadius": "1px"},
+    {"role": "pill", "page": "https://www.thredup.com/", "background": "rgb(243, 242, 238)", "borderRadius": "999px", "height": "44px", "width": "162px"},
+    {"role": "pill-selected", "page": "https://www.thredup.com/", "background": "rgb(255, 255, 255)", "borderRadius": "999px", "height": "44px", "width": "81px"},
+    {"role": "shop-toggle", "page": "https://www.thredup.com/", "color": "rgb(0, 0, 0)", "fontSize": "12px", "fontWeight": "500", "letterSpacing": "1px", "padding": "0px 24px", "height": "44px", "textTransform": "uppercase"},
+    {"role": "nav", "page": "https://www.thredup.com/", "color": "rgb(0, 0, 0)", "fontSize": "14px", "fontWeight": "400", "lineHeight": "20px", "padding": "16px 0px 14px", "height": "52px"},
+    {"role": "nav-current", "page": "https://www.thredup.com/women", "color": "rgb(0, 0, 0)", "fontWeight": "500", "borderBottom": "2px solid rgb(0, 0, 0)"},
+    {"role": "nav-accent", "page": "https://www.thredup.com/", "text": "Holiday Shop", "color": "rgb(131, 33, 29)", "fontSize": "14px", "fontWeight": "400"},
+    {"role": "search", "page": "https://www.thredup.com/", "background": "rgb(255, 255, 255)", "color": "rgb(0, 0, 0)", "fontSize": "14px", "border": "0.5px solid rgb(182, 181, 178)", "borderRadius": "1px", "padding": "12px 64px 12px 12px", "height": "44px", "width": "334px", "typed": false},
+    {"role": "hero", "page": "https://www.thredup.com/", "background": "rgb(131, 33, 30)", "color": "rgb(255, 254, 220)", "fontFamily": "Season Serif, Season Serif Fallback, serif", "fontSize": "36px", "fontWeight": "400", "lineHeight": "50.4px"},
+    {"role": "kicker", "page": "https://www.thredup.com/", "color": "rgb(255, 254, 220)", "fontSize": "12px", "fontWeight": "500", "letterSpacing": "1px", "textTransform": "uppercase"},
+    {"role": "sale-cta", "page": "https://www.thredup.com/", "color": "rgb(255, 254, 220)", "background": "rgba(255, 255, 255, 0.03)", "fontSize": "12px", "fontWeight": "500", "letterSpacing": "2px", "padding": "11px 44px", "border": "0.5px solid rgb(255, 254, 220)", "borderRadius": "1px", "height": "44px", "width": "240px", "clicked": false},
+    {"role": "category-title", "page": "https://www.thredup.com/women", "text": "Women", "color": "rgb(0, 0, 0)", "fontFamily": "Season Serif, Season Serif Fallback, serif", "fontSize": "36px", "fontWeight": "400", "lineHeight": "50.4px"},
+    {"role": "brand", "page": "https://www.thredup.com/product/women-cotton-mother-blue-jeans/242411067", "text": "Mother", "color": "rgb(0, 0, 0)", "fontFamily": "Season Serif, Season Serif Fallback, serif", "fontSize": "28px", "fontWeight": "400", "lineHeight": "39.2px"},
+    {"role": "price", "page": "https://www.thredup.com/product/women-cotton-mother-blue-jeans/242411067", "color": "rgb(131, 33, 29)", "fontSize": "20px", "fontWeight": "500"},
+    {"role": "price-was", "page": "https://www.thredup.com/product/women-cotton-mother-blue-jeans/242411067", "color": "rgb(61, 61, 60)", "fontSize": "14px", "fontWeight": "400", "textDecorationLine": "line-through"},
+    {"role": "badge", "page": "https://www.thredup.com/product/women-cotton-mother-blue-jeans/242411067", "background": "rgb(131, 33, 29)", "color": "rgb(255, 255, 255)", "fontSize": "10px", "fontWeight": "500", "padding": "4px 8px", "borderRadius": "1px"},
+    {"role": "add-to-cart", "page": "https://www.thredup.com/product/women-cotton-mother-blue-jeans/242411067", "background": "rgb(0, 0, 0)", "color": "rgb(255, 255, 255)", "fontSize": "12px", "fontWeight": "500", "letterSpacing": "2px", "padding": "11px 0px", "borderRadius": "1px", "height": "44px", "width": "556px", "clicked": false},
+    {"role": "footer", "page": "https://www.thredup.com/", "background": "rgb(243, 242, 238)", "color": "rgb(0, 0, 0)", "padding": "0px 0px 48px"},
+    {"role": "email-field", "page": "https://www.thredup.com/", "placeholder": "email", "background": "rgb(255, 255, 255)", "border": "0.5px solid rgb(182, 181, 178)", "borderRadius": "1px", "height": "44px", "width": "220px", "typed": false},
+    {"role": "signup", "page": "https://www.thredup.com/", "background": "rgba(255, 255, 255, 0.03)", "color": "rgb(0, 0, 0)", "border": "0.5px solid rgb(0, 0, 0)", "borderRadius": "1px", "fontSize": "12px", "fontWeight": "500", "letterSpacing": "2px", "padding": "11px 24px", "height": "44px", "width": "108px", "clicked": false},
+    {"role": "logo", "page": "https://www.thredup.com/", "src": "https://www.thredup.com/tup-assets/pwa/production/assets/logo-wordmark-c663c3c8fc26ce6a2a63.svg", "height": "33px", "width": "184px"}
+  ]
+}
