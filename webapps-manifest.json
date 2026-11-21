@@ -1201,7 +1201,7 @@
       "description": "The place full of art where it gains the voice it deserves",
       "status": "captured",
       "package": "systems/dailyartmagazine",
-      "notes": "public read-only magazine; Shop and Courses are external stores measured as links, never followed. Newsletter and Contact Form 7 fields were filled with sample text and cleared, never submitted. Third-party ad slots are layout evidence only https://www.dailyartmagazine.com/login is a page-not-found article site. No sign-in form.",
+      "notes": "public read-only magazine; Shop and Courses are external stores measured as links, never followed. Newsletter and Contact Form 7 fields were filled with sample text and cleared, never submitted. Third-party ad slots are layout evidence only https://www.dailyartmagazine.com/login is a page-not-found article site. No sign-in form. Public walk 2026-11-21: the public site tree is in systems/dailyartmagazine/site-tree.md. https://www.dailyartmagazine.com/ loaded. /login is still a missing-page template with no sign-in form. Shop and Courses stayed external links and were not followed. Nothing was typed. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1680 at 9ad60c33fbf3. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 4
