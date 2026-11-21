@@ -1,0 +1,110 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.eightsleep.com/sg/",
+  "productUrl": "https://www.eightsleep.com/sg/product/pod-cover/",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1 },
+  "png": { "width": 2880, "height": 1800 },
+  "body": {
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "NeueMontreal, \"NeueMontreal Fallback\"",
+    "fontSize": "17px",
+    "fontWeight": "400"
+  },
+  "promo": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(230, 190, 140)",
+    "height": "42px",
+    "width": "1440px",
+    "fontSize": "12px",
+    "fontWeight": "500",
+    "letterSpacing": "1.5px",
+    "textTransform": "uppercase"
+  },
+  "promoEmphasis": { "color": "rgb(255, 255, 255)" },
+  "headerGlass": {
+    "backgroundColor": "rgba(255, 255, 255, 0.3)",
+    "backdropFilter": "blur(10px)",
+    "height": "69px",
+    "borderRadius": "10px"
+  },
+  "navLink": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "12px",
+    "fontWeight": "500",
+    "letterSpacing": "1.6px",
+    "textTransform": "uppercase"
+  },
+  "shop": {
+    "beforeBackground": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "height": "41px",
+    "width": "132px",
+    "borderRadius": "8px",
+    "padding": "12px 24px",
+    "labelSize": "14px",
+    "labelWeight": "500"
+  },
+  "hero": {
+    "backgroundColor": "rgb(31, 23, 18)",
+    "eyebrowGradient": "linear-gradient(90deg, rgb(250, 199, 142), rgb(230, 190, 140))",
+    "eyebrowFont": "\"IBM Plex Mono\", \"IBM Plex Mono Fallback\", monospace",
+    "eyebrowSize": "14px",
+    "displayFont": "\"Bethany Elingston\", serif",
+    "displaySize": "120.007px",
+    "displayLineHeight": "152.409px",
+    "displayGradient": "linear-gradient(90deg, rgba(255, 255, 255, 0.85), rgb(255, 255, 255) 50.96%, rgba(255, 255, 255, 0.85))",
+    "subcopyColor": "rgb(255, 255, 255)",
+    "subcopySize": "28px",
+    "subcopyWeight": "500",
+    "subcopyLineHeight": "32px",
+    "subcopyLetterSpacing": "0.28px"
+  },
+  "getOff": {
+    "beforeBackground": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "height": "57px",
+    "width": "219px",
+    "borderRadius": "8px",
+    "padding": "16px 32px",
+    "backdropFilter": "blur(12px)",
+    "labelSize": "18px",
+    "labelWeight": "500"
+  },
+  "productTitle": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "36px",
+    "fontWeight": "400",
+    "lineHeight": "39.6px",
+    "letterSpacing": "0.36px"
+  },
+  "price": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "25.2px",
+    "letterSpacing": "0.16px"
+  },
+  "compare": {
+    "color": "rgb(105, 103, 101)",
+    "fontSize": "18px",
+    "textDecoration": "line-through"
+  },
+  "badge": {
+    "backgroundColor": "rgb(224, 207, 187)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "12px",
+    "fontWeight": "500",
+    "letterSpacing": "0.12px",
+    "borderRadius": "4px",
+    "padding": "2px 6px",
+    "height": "18px"
+  },
+  "section": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "44px",
+    "fontWeight": "500",
+    "lineHeight": "48.4px",
+    "letterSpacing": "0.44px"
+  }
+}
