@@ -1,0 +1,18 @@
+{
+  "captured": "2026-11-22",
+  "name": "signin-light-1440",
+  "url": "https://identity.pagerduty.com/global/authn/authentication/PagerDutyGlobalLogin/enter_email",
+  "title": "PagerDuty Sign In",
+  "h1": "",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

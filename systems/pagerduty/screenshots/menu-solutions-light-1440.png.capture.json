@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-solutions-light-1440",
+  "url": "https://www.pagerduty.com/",
+  "title": "PagerDuty: The AI-First Operations Platform",
+  "h1": "See PagerDuty at AWS re:Invent",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "clip",
+  "note": "Solutions menu opened. Nothing in the panel was clicked.",
+  "png": {
+    "width": 2628,
+    "height": 628
+  },
+  "clip": {
+    "x": 126,
+    "y": 166,
+    "width": 1314,
+    "height": 314
+  }
+}

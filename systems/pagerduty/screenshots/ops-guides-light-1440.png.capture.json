@@ -1,0 +1,18 @@
+{
+  "captured": "2026-11-22",
+  "name": "ops-guides-light-1440",
+  "url": "https://www.pagerduty.com/ops-guides/",
+  "title": "Ops Guides | PagerDuty",
+  "h1": "Expert-level, in-depth, and practical guides practitioners can use to improve their real-time operational chops.",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}
