@@ -140,25 +140,9 @@ Underlined text link. Not followed. [login-link-default](components/crops/login-
 | Radius medium | `core.radius.medium` | `8px` |
 | Radius large | `core.radius.large` | `16px` |
 
-## Signed-in (2026-11-20)
+## Signed-in
 
-The public crops above stay the measured controls. These signed-in screens add layout the signed-out capture did not have. The email on Settings was replaced in the page with `name@example.com` before the shot. Nothing was submitted.
-
-| Screen | File |
-|---|---|
-| Account menu | [menu-account-open.png](components/crops/menu-account-open.png) |
-| Recommendations, menu open | [recommendations-light-signed-in.png](screenshots/recommendations-light-signed-in.png) |
-| Settings, Account | [settings-account-light-default.png](screenshots/settings-account-light-default.png) |
-| Settings, Notifications (switches off) | [settings-notifications-light-default.png](screenshots/settings-notifications-light-default.png) |
-| Saved projects, empty | [saved-projects-light-empty.png](screenshots/saved-projects-light-empty.png) |
-| Profile, empty | [profile-light-empty.png](screenshots/profile-light-empty.png) |
-| Messages, empty | [messages-light-empty.png](screenshots/messages-light-empty.png) |
-| Activity, empty | [activity-light-empty.png](screenshots/activity-light-empty.png) |
-| Following, empty | [following-light-empty.png](screenshots/following-light-empty.png) |
-| Start a project, step 1 | [start-project-light-step1.png](screenshots/start-project-light-step1.png) |
-| Phone recommendations | [recommendations-light-phone.png](screenshots/recommendations-light-phone.png) |
-| Phone account menu | [account-menu-light-phone.png](screenshots/account-menu-light-phone.png) |
-| Phone settings | [settings-account-light-phone.png](screenshots/settings-account-light-phone.png) |
+Not captured on the 2026-11-21 public pass. The login dialog is the wall. See [login-light-default.png](screenshots/login-light-default.png) and [site-tree.md](site-tree.md).
 
 ## Gaps
 

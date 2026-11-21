@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:52:33.537Z",
+  "capturedAt": "2026-11-21T13:13:29.425Z",
   "screenshot": "home-light-category-menu.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 7484
+      "height": 7105
     },
     "scroll": {
       "x": 0,
