@@ -13,6 +13,8 @@ The home page is the current marketing system (HDS). Colour roles live as custom
 | [style-guide.html](style-guide.html) | Renders the tokens. Sohne is not loaded. |
 | [components.md](components.md) | Measured controls, with crops. |
 | [patterns.md](patterns.md) | How the public pages are built, and where they stop. |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22. Nav, footer, photographed pages, and where the walk stopped. |
+| [login-review.json](login-review.json) | Empty login and signup walls. `loginExtracted` is not-started. |
 | [components/](components/) | Element crops. |
 | [icons/](icons/) | The header wordmark, with [INDEX.tsv](icons/INDEX.tsv). |
 | [screenshots/](screenshots/) | Quantised page shots, desktop and phone. Long pages are the top 6000px. |
@@ -83,6 +85,8 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 ## How the values were read
 
 The T3 preview browser opened `https://stripe.com/` and redirected to `https://stripe.com/en-sg`. It returned "The browser is not producing screenshot frames", so the screenshots come from a later headless Chromium pass on the public pages. Computed styles were read in both places. The marketing stylesheets are cross-origin, so custom properties were taken from the fetched CSS (`70d739dff01e0964.css`) and checked by resolving them on `documentElement`. A cookie banner, where it appeared, was hidden in CSS and never clicked. Login and register were photographed and not submitted.
+
+A second public walk on 2026-11-22 mapped the homepage nav and footer into [site-tree.md](site-tree.md). It added fresh screenshots named `*-1440.png`, plus the phone menu. That walk did not remeasure tokens.
 
 ## What to distrust
 
