@@ -1,0 +1,80 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.booking.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1
+  },
+  "phone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "deviceScaleFactor": 2,
+    "png": [
+      780,
+      1688
+    ]
+  },
+  "computed": {
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(26, 26, 26)",
+      "fontFamily": "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "20px"
+    },
+    "header": {
+      "backgroundColor": "rgb(0, 59, 149)",
+      "color": "rgb(255, 255, 255)",
+      "height": "116px"
+    },
+    "footer": {
+      "backgroundColor": "rgb(245, 245, 245)",
+      "color": "rgb(26, 26, 26)"
+    },
+    "h2": {
+      "fontFamily": "Avenir Next, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": "700",
+      "lineHeight": "32px",
+      "color": "rgb(26, 26, 26)"
+    },
+    "signin": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 108, 228)",
+      "borderRadius": "4px",
+      "height": "36px",
+      "fontSize": "14px",
+      "fontWeight": "500"
+    },
+    "signinHover": {
+      "backgroundColor": "#f0f6fd",
+      "sampledFrom": "home-light-signin-hover.png"
+    },
+    "searchFrame": {
+      "backgroundColor": "rgb(255, 183, 0)",
+      "borderRadius": "8px"
+    },
+    "searchButtonFill": {
+      "backgroundColor": "#006ce4",
+      "sampledFrom": "home-light-search-default.png",
+      "note": "The button element's computed background was transparent. The blue fill is the painted control inside the yellow frame."
+    },
+    "stays": {
+      "borderRadius": "9999px",
+      "color": "rgb(255, 255, 255)",
+      "fontWeight": "500"
+    }
+  },
+  "sampledHex": {
+    "header": "#003b95",
+    "accent": "#006ce4",
+    "yellow": "#ffb700",
+    "text": "#1a1a1a",
+    "page": "#ffffff",
+    "footer": "#f5f5f5",
+    "card": "#f5f5f5",
+    "signinHover": "#f0f6fd"
+  },
+  "customProperties": "none on :root. Booking.com public CSS does not publish a --token layer on the homepage."
+}

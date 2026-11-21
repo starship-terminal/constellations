@@ -1,0 +1,44 @@
+{
+  "product": "Booking.com",
+  "domain": "booking.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright, signed out",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in and header Register",
+      "url": "https://account.booking.com/sign-in",
+      "title": "Sign in or create an account | Booking.com",
+      "painted": true,
+      "headings": ["Sign in or create an account"],
+      "asksFor": [
+        { "label": "Email address", "type": "email", "required": false, "placeholder": "Enter your email address" }
+      ],
+      "identityProvidersSeen": ["Google", "Apple", "Facebook"],
+      "otherControls": ["Continue with email", "Recover your account"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "Register and Sign in open the same empty wall. The email field was empty. No password field was on the first screen. No provider was clicked. No form was submitted. The same wall is also screenshots/signup-light-default.png."
+    },
+    {
+      "control": "footer Extranet login",
+      "url": "https://admin.booking.com/",
+      "title": "Sign in to manage your property | Booking.com",
+      "painted": true,
+      "headings": ["Sign in or create an account"],
+      "asksFor": [
+        { "label": "Email address", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": ["Google", "Apple", "Facebook"],
+      "stopped": true,
+      "screenshot": "screenshots/extranet-light-default.png",
+      "note": "admin.booking.com redirected to the same empty account sign-in wall. The URL carried an op_token. No field was filled. No provider was clicked."
+    }
+  ]
+}

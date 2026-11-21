@@ -1,0 +1,14 @@
+{
+  "file": "help-light-default.png",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "vv": {
+    "w": 1440,
+    "h": 900,
+    "scale": 1
+  },
+  "title": "Booking.com Help Center",
+  "url": "https://secure.booking.com/help",
+  "capturedAt": "2026-11-22"
+}
