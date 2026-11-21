@@ -1,0 +1,83 @@
+{
+  "product": "Savage X Fenty",
+  "domain": "savagex.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headed Google Chrome through Playwright, signed out, 1440x900, devicePixelRatio 2. Shared preview returned Internal Server Error twice.",
+  "region": "Public shop at https://www.savagex.com/. Product prices in USD. Locale en-US.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header SIGN IN",
+      "url": "https://www.savagex.com/womens/bras",
+      "title": "Bras: Support, Shape & Style - SAVAGE X FENTY",
+      "painted": true,
+      "headings": ["Welcome back!", "Sign In"],
+      "asksFor": [
+        { "label": "Email Address", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["SIGN IN", "Get Started"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email was empty. SIGN IN was not clicked. Get Started was not clicked. No form was submitted."
+    },
+    {
+      "control": "Get Started is the signup path on the same wall",
+      "url": "https://www.savagex.com/womens/bras",
+      "title": "Bras: Support, Shape & Style - SAVAGE X FENTY",
+      "painted": true,
+      "headings": ["Don't have an account?"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Get Started"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Get Started was not clicked. No separate signup form was opened."
+    },
+    {
+      "control": "MEMBER ADD TO BAG",
+      "url": "https://www.savagex.com/products/EVERYDAY-SMOOTH-PUSH-UP-BRA-BA2500787-1533",
+      "title": "Everyday Smooth Push-Up Bra - Savage",
+      "painted": true,
+      "headings": ["Everyday Smooth Push-Up Bra"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["MEMBER ADD TO BAG"],
+      "stopped": true,
+      "screenshot": "screenshots/product-light-1440.png",
+      "note": "The button was not clicked. Checkout did not start."
+    },
+    {
+      "control": "TAKE OUR QUIZ",
+      "url": "https://www.savagex.com/quiz",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["TAKE OUR QUIZ"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "The quiz was not opened."
+    },
+    {
+      "control": "footer YOUR MEMBERSHIP UPGRADE",
+      "url": "https://www.savagex.com/membership-upgrade",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["YOUR MEMBERSHIP UPGRADE"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Account link was not opened."
+    }
+  ]
+}

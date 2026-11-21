@@ -1,0 +1,38 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.savagex.com/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "title": "SAVAGE X FENTY: By Rihanna",
+  "colors": {
+    "page": { "value": "#ffffff", "source": "Header background rgb(255, 255, 255) on https://www.savagex.com/womens/bras" },
+    "ink": { "value": "#000000", "source": "Nav labels and product title color rgb(0, 0, 0)" },
+    "ink-soft": { "value": "#333536", "source": "SIGN IN and footer links color rgb(51, 53, 54)" },
+    "quiz": { "value": "#1b1f24", "source": "TAKE OUR QUIZ and sign-in submit backgroundColor rgb(27, 31, 36)" },
+    "on-quiz": { "value": "#ffffff", "source": "TAKE OUR QUIZ and sign-in submit color rgb(255, 255, 255)" },
+    "promo": { "value": "#292a33", "source": "Sampled from home-light-1440.png at the promo bar, rgb(41, 42, 51)" },
+    "on-promo": { "value": "#ffffff", "source": "Promo bar type is white on the photographed bar" },
+    "sale": { "value": "#5f0101", "source": "Sampled from the homepage sale photograph at CSS 720,200, rgb(95, 1, 1). The field is a photograph, so nearby pixels differ." },
+    "search": { "value": "#f4f4f4", "source": "Search field wrapper backgroundColor rgb(244, 244, 244)" },
+    "member": { "value": "#c5b4e3", "source": "MEMBER ADD TO BAG backgroundColor rgb(197, 180, 227). Not clicked." },
+    "offer": { "value": "#bfcc4a", "source": "Sampled from the product offer chip, rgb(191, 204, 74)" },
+    "badge": { "value": "#e1daec", "source": "Nav badge backgroundColor rgb(225, 218, 236), type rgb(39, 46, 53)" },
+    "badge-ink": { "value": "#272e35", "source": "Badge type color rgb(39, 46, 53)" }
+  },
+  "type": {
+    "ui": "Plain, \"Helvetica Neue\", Helvetica, sans-serif",
+    "display": "Arizona, Plain, sans-serif"
+  },
+  "sizes": {
+    "header": "86px",
+    "wordmark": "275 by 23",
+    "nav": "13.3333px",
+    "utility": "14px",
+    "quiz": "16px height 32 radius 4px",
+    "search": "38px",
+    "productTitle": "24px Arizona",
+    "signHeading": "24px Arizona weight 700",
+    "addToBag": "48px radius 4px",
+    "signSubmit": "42 by 350 radius 4px",
+    "footerLink": "14px letter-spacing 0.994px"
+  }
+}
