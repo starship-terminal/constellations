@@ -1,0 +1,61 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.atlassian.com/software/statuspage",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 2
+  },
+  "h1": {
+    "fontFamily": "\"Charlie Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "48px",
+    "fontWeight": "800",
+    "lineHeight": "56px",
+    "letterSpacing": "normal",
+    "color": "rgb(16, 18, 20)",
+    "text": "Build trust with every incident"
+  },
+  "body": {
+    "fontFamily": "\"Charlie Text\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "16px",
+    "color": "rgb(41, 42, 46)"
+  },
+  "ctaGetItFree": {
+    "backgroundColor": "rgb(24, 104, 219)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "10000px",
+    "fontSize": "16px",
+    "fontWeight": "500",
+    "height": "40px",
+    "padding": "8px 22px",
+    "text": "Get it Free"
+  },
+  "signinContinue": {
+    "backgroundColor": "rgb(24, 104, 219)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "3px",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "height": "40px",
+    "padding": "0px 10px",
+    "text": "Continue"
+  },
+  "signupButton": {
+    "backgroundColor": "rgb(24, 104, 219)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "3px",
+    "fontSize": "16px",
+    "fontWeight": "500",
+    "height": "48px",
+    "padding": "10px 22px",
+    "text": "Sign up"
+  },
+  "computedCustomProperties": {
+    "--ds-background-brand-bold": "#1868DB",
+    "--ds-text": "#292A2E",
+    "--ds-link": "#1868DB",
+    "--ds-surface": "#FFFFFF",
+    "--ds-text-subtle": "#505258"
+  },
+  "colorScheme": "light"
+}

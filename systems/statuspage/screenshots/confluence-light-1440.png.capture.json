@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "confluence-light-1440",
+  "url": "https://www.atlassian.com/software/confluence",
+  "requestedUrl": "https://www.atlassian.com/software/confluence",
+  "title": "Confluence | AI Workspace for Knowledge & Collaboration",
+  "h1": "Start with context, not from scratch",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

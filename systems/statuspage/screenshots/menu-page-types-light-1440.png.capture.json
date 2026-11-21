@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-page-types-light-1440",
+  "url": "https://www.atlassian.com/software/statuspage",
+  "requestedUrl": "https://www.atlassian.com/software/statuspage",
+  "title": "Statuspage | Incident Communication Tool | Atlassian",
+  "h1": "Build trust with every incident",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 900,
+    "height": 420
+  },
+  "fullPage": false,
+  "mode": "clip",
+  "note": "Page types menu opened by hover. Main content hidden with CSS so the panel reads. First viewport crop of the header, 900 by 420 CSS pixels. Cookie banner hidden with CSS, not accepted.",
+  "png": {
+    "width": 1800,
+    "height": 840
+  }
+}

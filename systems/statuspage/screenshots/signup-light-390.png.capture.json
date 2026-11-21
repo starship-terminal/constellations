@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "signup-light-390",
+  "url": "https://www.atlassian.com/try/cloud/signup?bundle=statuspage",
+  "requestedUrl": "https://www.atlassian.com/try/cloud/signup?bundle=statuspage",
+  "title": "Sign up - Try Atlassian Cloud | Atlassian",
+  "h1": "Cloud Free",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}
