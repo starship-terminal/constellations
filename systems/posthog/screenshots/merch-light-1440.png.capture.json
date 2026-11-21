@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/merch",
+  "title": "Merch - PostHog",
+  "h1": "Merch store",
+  "capturedAt": "2026-11-21T19:41:47.192Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "1440"
+}

@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/session-replay",
+  "title": "Session Replay \u2013 Record and watch user sessions | PostHog",
+  "h1": "See how people use your product",
+  "capturedAt": "2026-11-21T19:40:52.685Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "1440"
+}

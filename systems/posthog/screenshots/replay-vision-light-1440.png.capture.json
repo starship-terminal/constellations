@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/replay-vision",
+  "title": "Replay Vision - PostHog",
+  "h1": "Your product, watching itself",
+  "capturedAt": "2026-11-21T19:40:54.344Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "1440"
+}

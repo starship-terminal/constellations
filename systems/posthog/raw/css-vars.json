@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://posthog.com/",
+  "note": "Brand custom properties found on :root. Tailwind internals were not kept.",
+  "vars": {
+    ":root --squeak-primary-color": "0,0,0",
+    ":root --squeak-default-avatar-fill": "255,255,255",
+    ":root --squeak-button-color": "245,78,0",
+    ":root --swiper-pagination-color": "#f54e00",
+    ":root --swiper-pagination-bullet-inactive-color": "#000",
+    ":root .dark --squeak-primary-color": "255,255,255",
+    ":root .dark --squeak-default-avatar-fill": "0,0,0",
+    ":root .dark --swiper-pagination-color": "#f7a501",
+    ":root .dark --swiper-pagination-bullet-inactive-color": "#fff",
+    ":root, [data-radix-toast-viewport] --viewport-padding": "25px",
+    ":root --swiper-theme-color": "#007aff"
+  }
+}

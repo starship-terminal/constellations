@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/terms",
+  "title": "Terms, PostHog style",
+  "h1": "Terms, PostHog style",
+  "capturedAt": "2026-11-21T19:42:23.120Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "1440"
+}

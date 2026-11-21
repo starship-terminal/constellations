@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/research",
+  "title": "PostHog Research",
+  "h1": "Training user behavior foundation models and transparently sharing the research we do",
+  "capturedAt": "2026-11-21T19:42:10.508Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "1440"
+}

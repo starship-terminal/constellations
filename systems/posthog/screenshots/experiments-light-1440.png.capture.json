@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/experiments",
+  "title": "Experiments \u2013 Run tests and validate ideas with PostHog",
+  "h1": "Test changes with statistical significance",
+  "capturedAt": "2026-11-21T19:41:05.998Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "1440"
+}

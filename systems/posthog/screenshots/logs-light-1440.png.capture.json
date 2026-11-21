@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/logs",
+  "title": "Logs \u2013 Centralized log management with PostHog",
+  "h1": "Logs that already know your users",
+  "capturedAt": "2026-11-21T19:40:57.707Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "1440"
+}

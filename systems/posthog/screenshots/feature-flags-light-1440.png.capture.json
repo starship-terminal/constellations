@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/feature-flags",
+  "title": "Feature Flags \u2013 Ship safely and control rollouts with PostHog",
+  "h1": "Safely roll out features to specific users or groups",
+  "capturedAt": "2026-11-21T19:41:04.316Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "1440"
+}

@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/product-analytics",
+  "title": "Product Analytics \u2013 Funnels, retention, and paths | PostHog",
+  "h1": "Product analytics with autocapture",
+  "capturedAt": "2026-11-21T19:44:21.087Z",
+  "viewport": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "390"
+}
