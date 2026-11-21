@@ -1,0 +1,64 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.target.com/",
+  "viewport": [1440, 900],
+  "devicePixelRatio": 2,
+  "title": "Target : Expect More. Pay Less.",
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(51, 51, 51)",
+    "fontFamily": "\"Helvetica for Target\", HelveticaForTarget, Targetica, \"HelveticaNeue for Target\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "22.856px"
+  },
+  "h1": {
+    "text": "Homepage",
+    "color": "rgb(51, 51, 51)",
+    "fontSize": "29px",
+    "fontWeight": "700",
+    "lineHeight": "36.25px"
+  },
+  "search": {
+    "wrapBackground": "rgb(247, 247, 247)",
+    "wrapRadius": "999px",
+    "height": 44
+  },
+  "signup": {
+    "text": "Sign up",
+    "backgroundColor": "rgb(204, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "999px",
+    "height": 44,
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "padding": "0px 12px",
+    "note": "Footer email signup button on the homepage. Not clicked."
+  },
+  "logo": {
+    "width": 48,
+    "height": 48,
+    "radius": "50%"
+  },
+  "published": {
+    "page": "#ffffff",
+    "pageToken": "--color-background-page-base",
+    "text": "#333333",
+    "textToken": "--color-text-base",
+    "muted": "#666666",
+    "mutedToken": "--color-text-subdued",
+    "accent": "#cc0000",
+    "accentToken": "--color-background-brand-base",
+    "accentHover": "#aa0000",
+    "accentHoverToken": "--color-background-brand-base-hover",
+    "border": "#888888",
+    "borderToken": "--color-border-base",
+    "focus": "#151515",
+    "focusToken": "--color-border-focus",
+    "success": "#008300",
+    "warning": "#b85300",
+    "info": "#2758b9",
+    "surface": "#f7f7f7",
+    "surfaceToken": "--color-background-subdued"
+  }
+}

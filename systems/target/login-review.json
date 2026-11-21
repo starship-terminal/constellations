@@ -1,0 +1,30 @@
+{
+  "product": "Target",
+  "domain": "target.com",
+  "reviewedAt": "2026-11-22",
+  "method": "shared preview browser, signed out, incognito",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Account, and Sign in or create account",
+      "url": "https://www.target.com/login",
+      "title": "Login: Target",
+      "painted": false,
+      "headings": ["Sign in or create account"],
+      "asksFor": [
+        { "label": "Email or mobile phone", "type": "text", "name": "username", "required": false, "valueLength": 0 }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "Sign in with passkey", "What's a passkey?", "Keep me signed in"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "Login and signup are the same first screen. The field was empty. Continue was not clicked. Sign in with passkey was not clicked. No password field was on this screen. No identity provider button was on this screen."
+    }
+  ]
+}
