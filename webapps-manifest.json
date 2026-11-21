@@ -895,9 +895,9 @@
       "description": "Move beyond the CRM",
       "status": "captured",
       "package": "systems/clay-earth",
-      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/608 as systems/clay-earth. clay.earth 301-redirects to me.sh (Mesh, Automattic). Manifest row was left pending after merge. https://clay.earth/login redirects to https://me.sh/login. https://app.me.sh/login?signin is a desktop download page with no web sign-in form.",
+      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/608 as systems/clay-earth. clay.earth 301-redirects to me.sh (Mesh, Automattic). Manifest row was left pending after merge. https://clay.earth/login redirects to https://me.sh/login. https://app.me.sh/login?signin is a desktop download page with no web sign-in form. Public walk 2026-11-21: the public site tree is in systems/clay-earth/site-tree.md. https://clay.earth/ redirects to https://me.sh/. https://me.sh/login is a missing page. Sign in stops at https://app.me.sh/login with an empty email field, or Apple, Google, or SSO. Nothing was typed. No identity provider was clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1683 at 1f5cd3d7a11b. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 3
     },
     {
