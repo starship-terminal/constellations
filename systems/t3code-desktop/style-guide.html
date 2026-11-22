@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>T3 Code (desktop) style guide</title>
+<style>
+  :root { color-scheme: dark; --page:#191b26; --surface:#191923; --text:#dadbdf; --muted:#9a9a9e; --accent:#395291; --border:#2b2c37; --composer:#171721; }
+  html[data-theme="light"] { color-scheme: light; --page:#e6e7ee; --surface:#e0e1e8; --text:#2c324d; --muted:#5c5e6b; --accent:#436cb3; --border:#d7d8e0; --composer:#dadbe3; }
+  body { margin:0; background:var(--page); color:var(--text); font:14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { max-width:880px; margin:0 auto; padding:32px 20px 64px; }
+  h1 { font-weight:400; letter-spacing:-0.025em; font-size:30px; }
+  h2 { font-size:14px; font-weight:500; margin-top:32px; }
+  button.theme { background:var(--surface); color:var(--text); border:1px solid var(--border); border-radius:8px; height:28px; padding:0 10px; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; }
+  .swatch { width:96px; }
+  .chip { height:48px; border-radius:8px; border:1px solid var(--border); }
+  .label { color:var(--muted); font-size:12px; margin-top:4px; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px; }
+  .composer { background:var(--composer); border:1px solid var(--border); border-radius:16px; padding:12px; color:var(--muted); }
+  .pill { display:inline-flex; align-items:center; height:28px; padding:0 10px; border-radius:8px; background:var(--accent); color:#fff; }
+</style>
+</head>
+<body>
+<main>
+  <button class="theme" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'; paint()">Toggle theme</button>
+  <h1>T3 Code (desktop)</h1>
+  <p>Sampled from T3 Code (Nightly) 0.1.10 window pixels on 22 Nov 2026. Values come from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Composer</h2>
+  <div class="composer">Ask anything. @ files, $ skills, / commands</div>
+  <h2>Controls</h2>
+  <span class="pill">Connected</span>
+</main>
+<script>
+const roles = ["page","surface","text","muted","accent","border"];
+const colors = {
+  dark: ["#191b26","#191923","#dadbdf","#9a9a9e","#395291","#2b2c37"],
+  light: ["#e6e7ee","#e0e1e8","#2c324d","#5c5e6b","#436cb3","#d7d8e0"]
+};
+function paint() {
+  const theme = document.documentElement.dataset.theme || "dark";
+  document.getElementById("swatches").innerHTML = roles.map((role, i) =>
+    `<div class="swatch"><div class="chip" style="background:${colors[theme][i]}"></div><div class="label">${role}</div></div>`
+  ).join("");
+}
+paint();
+</script>
+</body>
+</html>
