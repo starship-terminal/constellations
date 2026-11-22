@@ -24,14 +24,26 @@ expected = {
     "size.addToBagHeight": readings["product"]["addToBag"]["height"],
 }
 
-by_name = {item["name"]: item for item in tokens["tokens"]}
+def node(name):
+    group, key = name.split(".", 1)
+    return tokens["core"][group][key]
+
+
 failed = False
 for name, want in expected.items():
-    got = by_name[name]["value"]
-    if got != want:
+    item = node(name)
+    got = item["$value"]
+    if name.startswith("color."):
+        want = want if want.startswith("#") else (
+            "#" + "".join(f"{int(p):02x}" for p in want.replace("rgb(", "").replace(")", "").split(",")[:3])
+        )
+    elif isinstance(want, (int, float)):
+        got = got.removesuffix("px")
+        want = str(want)
+    if str(got).lower() != str(want).lower():
         print(f"mismatch {name}: token {got!r} reading {want!r}")
         failed = True
-    source = by_name[name].get("source")
+    source = item.get("$extensions", {}).get("source")
     if not source:
         print(f"missing source {name}")
         failed = True

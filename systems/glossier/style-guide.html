@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Glossier public style guide</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #000000;
+      --shipping: #333333;
+      --on-shipping: #ffffff;
+      --hero: #0500f5;
+      --badge: #0600ff;
+      --grey: #e8e8e8;
+      --field-fill: #f7f7f7;
+      --muted: #666666;
+      --font: Apercu, "Gill Sans", sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 18.4px;
+    }
+    header, main { padding: 32px 40px; }
+    header { background: var(--shipping); color: var(--on-shipping); padding: 0 40px; height: 24px; }
+    header p { margin: 0; font-family: Arial, sans-serif; font-size: 14px; line-height: 24px; }
+    h1 { font-size: 32px; font-weight: 500; font-style: italic; line-height: 36px; margin: 0 0 8px; }
+    h2 { font-size: 12px; font-weight: 400; margin: 32px 0 12px; }
+    p { max-width: 62ch; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 140px; }
+    .chip { height: 64px; border: 1px solid var(--ink); }
+    .label { font-size: 12px; margin-top: 6px; }
+    .btn-grey, .btn-field {
+      display: inline-block;
+      box-sizing: border-box;
+      border: 0;
+      border-radius: 0;
+      height: 40px;
+      padding: 0 16px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 40px;
+      color: var(--ink);
+    }
+    .btn-grey { background: var(--grey); }
+    .btn-field { background: var(--field-fill); }
+    .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .wordmark { font-size: 32px; font-weight: 500; font-style: italic; }
+    .nav-sample { font-size: 12px; font-weight: 400; }
+    .nav-sample span { margin-right: 16px; }
+    .hero-sample { font-size: 20px; font-weight: 400; }
+    .product-sample { font-size: 32px; font-weight: 500; }
+    .badge {
+      display: inline-block;
+      background: var(--badge);
+      color: var(--on-shipping);
+      font-size: 12px;
+      line-height: 20px;
+      padding: 0 8px;
+    }
+    footer { padding: 24px 40px 48px; font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Shipping strip. #333333, white type, 24px.</p>
+  </header>
+  <main>
+    <h1>Glossier.</h1>
+    <p>Public shop tokens measured on 22 November 2026 from glossier.com/en-sg. Apercu is the live family. This page falls back to Gill Sans because the webfont is not bundled.</p>
+
+    <h2>Color</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">Page #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#000000"></div><div class="label">Ink #000000</div></div>
+      <div class="swatch"><div class="chip" style="background:#333333"></div><div class="label">Shipping #333333</div></div>
+      <div class="swatch"><div class="chip" style="background:#0500f5"></div><div class="label">Hero #0500f5</div></div>
+      <div class="swatch"><div class="chip" style="background:#0600ff"></div><div class="label">Badge #0600ff</div></div>
+      <div class="swatch"><div class="chip" style="background:#e8e8e8"></div><div class="label">Grey #e8e8e8</div></div>
+      <div class="swatch"><div class="chip" style="background:#f7f7f7"></div><div class="label">Field fill #f7f7f7</div></div>
+      <div class="swatch"><div class="chip" style="background:#666666"></div><div class="label">Muted #666666</div></div>
+    </div>
+
+    <h2>Type</h2>
+    <p class="wordmark">Glossier.</p>
+    <p class="nav-sample"><span>Makeup</span><span>Skincare</span><span>Sets</span></p>
+    <p class="hero-sample">Biggest sale of the year</p>
+    <p class="product-sample">Glossier You</p>
+    <p>Body 16px, weight 400, line-height 18.4px.</p>
+    <p><span class="badge">Sale</span></p>
+
+    <h2>Buttons</h2>
+    <div class="row">
+      <span class="btn-grey">Shop now</span>
+      <span class="btn-grey">Add to bag</span>
+      <span class="btn-field">Sign in</span>
+    </div>
+  </main>
+  <footer>Measured 22 November 2026. Homepage, product, empty login, empty signup. Account, bag, and checkout were not entered.</footer>
+</body>
+</html>

@@ -17,6 +17,7 @@ The map of controls is [site-tree.md](site-tree.md). The walk record is [login-r
 | [raw/](raw/) | Computed styles from the homepage, the login field, the phone drawer, and the CTA hover |
 | [icon.png](icon.png) | 128 px PNG from the site favicon |
 | [tools/](tools/) | Capture kit copy. Not adapted to browse the site |
+| [style-guide.html](style-guide.html) | Measured colours, type, and buttons |
 
 ## How the values were read
 

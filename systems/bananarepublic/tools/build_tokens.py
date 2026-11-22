@@ -10,7 +10,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 readings = json.loads((ROOT / "raw" / "readings.json").read_text())
-tokens = json.loads((ROOT / "tokens.json").read_text())
+tokens = json.loads((ROOT / "tokens.json").read_text())["core"]
 
 checks = [
     (tokens["color"]["universal"]["$value"], "#e9e8e3", "universal bar"),

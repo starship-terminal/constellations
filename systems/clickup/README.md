@@ -4,6 +4,7 @@ ClickUp is a work management product. This package is the public marketing site 
 
 | Path | What it holds |
 |---|---|
+| [icon.png](icon.png) | The product's site icon (128 px PNG), fetched from its site (`tools/fetch_icon.py`); the gallery cards and the root README's catalog table show it so the package is identifiable at a glance |
 | [README.md](README.md) | This file |
 | [site-tree.md](site-tree.md) | Header, footer, and the public links they open, dated 2026-11-22 |
 | [DESIGN.md](DESIGN.md) | Token export written by hand because catalog.json was left alone |

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lemonade public style guide</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --text: #4a4a4a;
+      --muted: #8c8c8c;
+      --surface: #ffffff;
+      --accent: #ff0083;
+      --accent-hover: #dc0073;
+      --on-accent: #ffffff;
+      --border: #d9d9d9;
+      --disabled: #e7e7e7;
+      --drawer: #313131;
+      --on-drawer: #ffffff;
+      --focus: #005fcc;
+      --display: Merriweather, Georgia, serif;
+      --ui: Lato, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: var(--ui);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+    header, main { padding: 32px 40px; }
+    header { background: var(--surface); color: var(--text); border-bottom: 1px solid var(--border); }
+    header p { margin: 0; font-size: 16px; line-height: 20.8px; }
+    h1 { font-family: var(--display); font-size: 55px; font-weight: 400; line-height: 71.5px; margin: 0 0 8px; }
+    h2 { font-size: 16px; font-weight: 400; margin: 32px 0 12px; }
+    p { max-width: 62ch; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 140px; }
+    .chip { height: 64px; border: 1px solid var(--border); }
+    .label { font-size: 16px; line-height: 20.8px; margin-top: 6px; }
+    .btn-accent, .btn-disabled {
+      display: inline-block;
+      box-sizing: border-box;
+      border: 0;
+      border-radius: 5px;
+      padding: 18px 44px;
+      font-family: var(--ui);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 23.4px;
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: var(--on-accent);
+      box-shadow: rgba(255, 0, 131, 0.5) 0px 10px 40px -10px;
+    }
+    .btn-disabled { background: var(--disabled); color: var(--text); }
+    .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .nav-sample { font-size: 16px; line-height: 20.8px; }
+    .nav-sample span { margin-right: 16px; }
+    .drawer-sample { background: var(--drawer); color: var(--on-drawer); padding: 24px; font-size: 16px; line-height: 20.8px; }
+    footer { padding: 24px 40px 48px; font-size: 16px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Header. White #ffffff, type #4a4a4a, 16px.</p>
+  </header>
+  <main>
+    <h1>Lemonade</h1>
+    <p>Public site tokens measured on 21 November 2026 from lemonade.com. Display is Merriweather. Controls are Lato. This page falls back to Georgia and Helvetica Neue because the webfonts are not bundled.</p>
+
+    <h2>Color</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">Page #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#4a4a4a"></div><div class="label">Text #4a4a4a</div></div>
+      <div class="swatch"><div class="chip" style="background:#8c8c8c"></div><div class="label">Muted #8c8c8c</div></div>
+      <div class="swatch"><div class="chip" style="background:#ff0083"></div><div class="label">Accent #ff0083</div></div>
+      <div class="swatch"><div class="chip" style="background:#dc0073"></div><div class="label">Accent hover #dc0073</div></div>
+      <div class="swatch"><div class="chip" style="background:#d9d9d9"></div><div class="label">Border #d9d9d9</div></div>
+      <div class="swatch"><div class="chip" style="background:#e7e7e7"></div><div class="label">Disabled #e7e7e7</div></div>
+      <div class="swatch"><div class="chip" style="background:#313131"></div><div class="label">Drawer #313131</div></div>
+      <div class="swatch"><div class="chip" style="background:#005fcc"></div><div class="label">Focus #005fcc</div></div>
+    </div>
+
+    <h2>Type</h2>
+    <p class="nav-sample"><span>Renters</span><span>Homeowners</span><span>Car</span><span>Pet</span></p>
+    <p>Body 18px, weight 400, line-height 28px.</p>
+
+    <h2>Buttons</h2>
+    <div class="row">
+      <span class="btn-accent">Check our prices</span>
+      <span class="btn-disabled">Log in</span>
+    </div>
+    <div class="drawer-sample" style="margin-top:16px">Phone menu. #313131, white type.</div>
+  </main>
+  <footer>Measured 21 November 2026. Homepage, product pages, empty login. Quote chat was not answered.</footer>
+</body>
+</html>
