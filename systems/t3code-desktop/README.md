@@ -14,7 +14,7 @@ This package contains no T3 Code source. The screenshots show the owner's thread
 | [style-guide.html](style-guide.html) | Swatches and a composer specimen, with a theme toggle |
 | [components.md](components.md) | Component notes from the live window |
 | [patterns.md](patterns.md) | How the shell, palette, and settings fit together |
-| [screenshots/](screenshots) | 31 PNGs: the shell, the project palette, settings sections, Add Environment, and light counterparts |
+| [screenshots/](screenshots) | 33 PNGs: the shell, the project palette, settings sections, Add Environment in both themes, and light counterparts |
 | [raw/](raw) | `pixel-readings.json` |
 | [tools/](tools) | Capture notes. The redaction rules live in [tools/redact-rules/t3code-desktop.json](../../tools/redact-rules/t3code-desktop.json) |
 
@@ -102,7 +102,7 @@ The painted face was not named. Treat it as the system sans. Do not ship a guess
 | Tabs | Settings uses a vertical section list. Add Environment uses two cards |
 | Menu | Project order menu and the project palette |
 | Tooltip | Not captured |
-| Dialog | Settings and Add Environment. [screenshots/dark-add-environment-link.png](screenshots/dark-add-environment-link.png) |
+| Dialog | Settings and Add Environment, dark and light. [screenshots/light-add-environment-link.png](screenshots/light-add-environment-link.png) |
 | Toast | Not captured |
 | Card, list row | Thread row, environment row, theme cards |
 | Table | Not present in the pages visited |
@@ -131,4 +131,4 @@ The tokens were written from `raw/pixel-readings.json`. There is no builder yet.
 
 ## Surfaces
 
-Settings sections captured in dark: General, Appearance, Chat, Diffs and pull requests, Keybindings, Voice, SnapShots, Providers, Threads, Browser, Devices, Scheduled tasks, Projects, Source control, Worktrees, Environments, Sharing and access, Maintenance, Labs, About, Archive. Also captured: the project palette, the open project-order menu, and Add Environment on Remote link and SSH. Light captures: the shell, the project palette, Appearance, and Environments.
+Settings sections captured in dark: General, Appearance, Chat, Diffs and pull requests, Keybindings, Voice, SnapShots, Providers, Threads, Browser, Devices, Scheduled tasks, Projects, Source control, Worktrees, Environments, Sharing and access, Maintenance, Labs, About, Archive. Also captured: the project palette, the open project-order menu, and Add Environment on Remote link and SSH. Light captures: the shell, the project palette, Appearance, Environments, and Add Environment on Remote link and SSH.
