@@ -46007,6 +46007,58 @@
         "components/": "this part was not produced by the public capture",
         "icons/": "this part was not produced by the public capture"
       }
+    },
+    {
+      "slug": "grailed",
+      "name": "Grailed",
+      "url": "https://www.grailed.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Public marketplace pages captured signed out. Signed-in screens were not captured.",
+      "tags": [
+        "web",
+        "signed-out",
+        "e-commerce",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-22",
+      "access": "signed out (public pages only; login, signup, sell, and listing pages with a seller portrait were not kept)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/grailed/README.md",
+      "tokens": "systems/grailed/tokens.json",
+      "styleGuide": "systems/grailed/style-guide.html",
+      "preview": {
+        "cover": "systems/grailed/screenshots/home-light-1440.png",
+        "icon": "systems/grailed/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "core.color.gray-background",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.primary",
+            "border": "light.border.default"
+          }
+        }
+      },
+      "layoutGaps": {
+        "components/": "component crops were not produced by the public capture",
+        "icons/": "icon redraws were not produced by the public capture"
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": null,
+        "durationNote": "wall-clock duration was not recorded for this capture"
+      }
     }
   ]
 }
