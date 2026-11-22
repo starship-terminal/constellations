@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Grailed style guide</title>
+<style>
+  body { margin: 0; background: #ffffff; color: #000000; font-family: Helvetica, Arial, sans-serif; }
+  header, main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+  h1 { font-size: 32px; font-weight: 600; letter-spacing: 0; margin: 0 0 8px; }
+  p { font-size: 14px; line-height: 1.4; max-width: 62ch; }
+  h2 { font-size: 16px; font-weight: 700; margin: 32px 0 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 180px; }
+  .chip { height: 72px; border: 1px solid #e1e1e1; display: flex; align-items: flex-end; padding: 8px; font-size: 12px; font-family: ui-monospace, monospace; }
+  .meta { font-size: 12px; margin-top: 6px; }
+  .bar { background: #000000; color: #ffffff; padding: 8px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.44px; text-transform: uppercase; display: inline-block; }
+  .ghost { background: #ffffff; color: #000000; border: 1px solid #e1e1e1; padding: 8px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.44px; text-transform: uppercase; display: inline-block; }
+  .pill { background: #000000; color: #ffffff; border-radius: 32px; height: 48px; padding: 0 16px; display: inline-flex; align-items: center; font-size: 14px; letter-spacing: 0.28px; text-transform: uppercase; }
+  .ticker { height: 40px; display: flex; align-items: center; padding: 0 16px; color: #208368; font-size: 12px; font-weight: 700; letter-spacing: -0.24px; text-transform: uppercase; background: radial-gradient(50% 50%, #ffffff 18.27%, #e0f1ec 100%); }
+  .search { width: 280px; height: 40px; border: 1px solid #000000; border-radius: 2px; padding: 0 12px; font-size: 16px; font-family: Helvetica, Arial, sans-serif; }
+  .note { font-size: 12px; color: #737373; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Grailed</h1>
+  <p>Public shop, signed out, 2026-11-22. Light only. Video is not loaded here, so labels use Helvetica.</p>
+</header>
+<main>
+  <h2>Colours</h2>
+  <div class="row"><div class="swatch"><div class="chip" style="background:#000000;color:#ffffff">#000000</div><div class="meta"><strong>core.color.black</strong></div></div><div class="swatch"><div class="chip" style="background:#ffffff;color:#000000">#ffffff</div><div class="meta"><strong>core.color.white</strong></div></div><div class="swatch"><div class="chip" style="background:#737373;color:#ffffff">#737373</div><div class="meta"><strong>core.color.secondary-text</strong></div></div><div class="swatch"><div class="chip" style="background:#979797;color:#ffffff">#979797</div><div class="meta"><strong>core.color.tertiary-text</strong></div></div><div class="swatch"><div class="chip" style="background:#b3b3b3;color:#ffffff">#b3b3b3</div><div class="meta"><strong>core.color.medium-stroke</strong></div></div><div class="swatch"><div class="chip" style="background:#e1e1e1;color:#000000">#e1e1e1</div><div class="meta"><strong>core.color.light-stroke</strong></div></div><div class="swatch"><div class="chip" style="background:#fafafa;color:#000000">#fafafa</div><div class="meta"><strong>core.color.off-white</strong></div></div><div class="swatch"><div class="chip" style="background:#f2f2f2;color:#000000">#f2f2f2</div><div class="meta"><strong>core.color.gray-background</strong></div></div><div class="swatch"><div class="chip" style="background:#343434;color:#ffffff">#343434</div><div class="meta"><strong>core.color.gray-banner</strong></div></div><div class="swatch"><div class="chip" style="background:#208368;color:#ffffff">#208368</div><div class="meta"><strong>core.color.seafoam</strong></div></div><div class="swatch"><div class="chip" style="background:#0000ff;color:#ffffff">#0000ff</div><div class="meta"><strong>core.color.link</strong></div></div><div class="swatch"><div class="chip" style="background:#007aff;color:#ffffff">#007aff</div><div class="meta"><strong>core.color.info</strong></div></div><div class="swatch"><div class="chip" style="background:#f59a05;color:#ffffff">#f59a05</div><div class="meta"><strong>core.color.warning</strong></div></div><div class="swatch"><div class="chip" style="background:#be2827;color:#ffffff">#be2827</div><div class="meta"><strong>core.color.alert</strong></div></div><div class="swatch"><div class="chip" style="background:#ffffff;color:#000000">#ffffff</div><div class="meta"><strong>core.color.mint-start</strong></div></div><div class="swatch"><div class="chip" style="background:#e0f1ec;color:#000000">#e0f1ec</div><div class="meta"><strong>core.color.mint-end</strong></div></div><div class="swatch"><div class="chip" style="background:rgba(0, 0, 0, 0.7);color:#000000">rgba(0, 0, 0, 0.7)</div><div class="meta"><strong>core.color.scrim</strong></div></div></div>
+  <h2>Roles</h2>
+  <div class="row"><div class="swatch"><div class="chip" style="background:#ffffff;color:#000000">#ffffff</div><div class="meta"><strong>light.surface.page</strong></div></div><div class="swatch"><div class="chip" style="background:#ffffff;color:#000000">#ffffff</div><div class="meta"><strong>light.surface.header</strong></div></div><div class="swatch"><div class="chip" style="background:#000000;color:#ffffff">#000000</div><div class="meta"><strong>light.surface.inverse</strong></div></div><div class="swatch"><div class="chip" style="background:#ffffff;color:#000000">#ffffff</div><div class="meta"><strong>light.surface.dialog</strong></div></div><div class="swatch"><div class="chip" style="background:rgba(0, 0, 0, 0.7);color:#000000">rgba(0, 0, 0, 0.7)</div><div class="meta"><strong>light.surface.scrim</strong></div></div><div class="swatch"><div class="chip" style="background:#000000;color:#ffffff">#000000</div><div class="meta"><strong>light.text.primary</strong></div></div><div class="swatch"><div class="chip" style="background:#ffffff;color:#000000">#ffffff</div><div class="meta"><strong>light.text.inverse</strong></div></div><div class="swatch"><div class="chip" style="background:#737373;color:#ffffff">#737373</div><div class="meta"><strong>light.text.secondary</strong></div></div><div class="swatch"><div class="chip" style="background:#0000ff;color:#ffffff">#0000ff</div><div class="meta"><strong>light.text.link</strong></div></div><div class="swatch"><div class="chip" style="background:#208368;color:#ffffff">#208368</div><div class="meta"><strong>light.text.success</strong></div></div><div class="swatch"><div class="chip" style="background:#e1e1e1;color:#000000">#e1e1e1</div><div class="meta"><strong>light.border.default</strong></div></div><div class="swatch"><div class="chip" style="background:#000000;color:#ffffff">#000000</div><div class="meta"><strong>light.border.strong</strong></div></div><div class="swatch"><div class="chip" style="background:#000000;color:#ffffff">#000000</div><div class="meta"><strong>light.action.primary</strong></div></div><div class="swatch"><div class="chip" style="background:#ffffff;color:#000000">#ffffff</div><div class="meta"><strong>light.action.secondary</strong></div></div></div>
+  <h2>Controls</h2>
+  <p class="ticker">Lower fees on sales under $120</p>
+  <p><span class="bar">Log in</span> <span class="ghost">Sign up</span></p>
+  <p><span class="pill">Log in with email</span></p>
+  <p><input class="search" placeholder="Search for anything" aria-label="Search"></p>
+  <p class="note">Search is shown empty. Nothing was typed on the live site.</p>
+</main>
+</body>
+</html>
