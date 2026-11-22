@@ -10,26 +10,26 @@ omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
-  primary: "#4338ca"
+  primary: "#1b4ed8"
   neutral: "#fcfcfc"
   surface: "#ffffff"
-  on-surface: "#1c1c1e"
-  on-surface-variant: "#71717a"
+  on-surface: "#18181b"
+  on-surface-variant: "#71717b"
   outline: "#e4e4e7"
   color-page: "#fcfcfc"
   color-surface: "#ffffff"
   color-raised: "#fafafa"
-  color-text: "#1c1c1e"
-  color-muted: "#71717a"
-  color-accent: "#4338ca"
+  color-text: "#18181b"
+  color-muted: "#71717b"
+  color-accent: "#1b4ed8"
   color-accentForeground: "#ffffff"
   color-border: "#e4e4e7"
   color-input: "#d4d4d8"
-  color-ring: "#4338ca"
-  color-destructive: "#e11d48"
-  color-success: "#2f9e6b"
-  color-warning: "#e0a03a"
-  color-info: "#3b82f6"
+  color-ring: "#1b4ed8"
+  color-destructive: "#fb2c36"
+  color-success: "#00bc7d"
+  color-warning: "#fe9a00"
+  color-info: "#2b7fff"
   color-wash: "#f4f4f5"
 rounded:
   xs: "2px"
@@ -68,11 +68,11 @@ This package contains no T3 Code source. The screenshots show the owner's thread
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#4338ca):** `light.color.accent`
+- **primary (#1b4ed8):** `light.color.accent`
 - **neutral (#fcfcfc):** `light.color.page`
 - **surface (#ffffff):** `light.color.surface`
-- **on-surface (#1c1c1e):** `light.color.text`
-- **on-surface-variant (#71717a):** `light.color.muted`
+- **on-surface (#18181b):** `light.color.text`
+- **on-surface-variant (#71717b):** `light.color.muted`
 - **outline (#e4e4e7):** `light.color.border`
 
 ## Typography
