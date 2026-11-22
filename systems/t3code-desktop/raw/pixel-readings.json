@@ -1,0 +1,82 @@
+{
+  "app": "T3 Code (Nightly)",
+  "bundle": "com.t3tools.t3code",
+  "version": "0.1.10-nightly.20261113.4616",
+  "window": {
+    "id": 17583,
+    "points": [
+      1512,
+      949
+    ],
+    "pixels": [
+      3024,
+      1898
+    ],
+    "scale": 2
+  },
+  "sampled": {
+    "dark.page": {
+      "hex": "#191b26",
+      "share": "88% of thread column, dark-shell-restored.png"
+    },
+    "dark.sidebar": {
+      "hex": "#191921",
+      "note": "sidebar is not one flat fill"
+    },
+    "dark.composer": {
+      "hex": "#171721",
+      "share": "88%"
+    },
+    "dark.dialog": {
+      "hex": "#191923",
+      "share": "100% of a 200x24 region in settings content"
+    },
+    "dark.sidebarText": {
+      "hex": "#dadbdf",
+      "note": "brightest sidebar title pixel (218,219,223)"
+    },
+    "dark.heading": {
+      "hex": "#b2b9db",
+      "note": "brightest Notifications heading pixel (178,185,219); anti-aliased"
+    },
+    "dark.muted": {
+      "hex": "#9a9a9e",
+      "note": "composer placeholder mode (154,154,158)"
+    },
+    "dark.accent": {
+      "hex": "#395291",
+      "note": "switch thumb cluster (57,82,145), anti-aliased, not a flat fill"
+    },
+    "dark.border": {
+      "hex": "#2b2c37",
+      "note": "1px sidebar edge at x=483, y=400"
+    },
+    "light.page": {
+      "hex": "#e6e7ee",
+      "share": "88% of thread column"
+    },
+    "light.sidebar": {
+      "hex": "#d7d8df"
+    },
+    "light.composer": {
+      "hex": "#dadbe3",
+      "share": "88%"
+    },
+    "light.dialog": {
+      "hex": "#e0e1e8",
+      "share": "85% of card region"
+    },
+    "light.text": {
+      "hex": "#2c324d",
+      "note": "darkest heading pixel (44,50,77)"
+    },
+    "light.accent": {
+      "hex": "#436cb3",
+      "note": "switch cluster (67,108,179)"
+    },
+    "light.send": {
+      "hex": "#bd4d4f",
+      "note": "send button in light shell, a danger-colored control when the composer is empty"
+    }
+  }
+}

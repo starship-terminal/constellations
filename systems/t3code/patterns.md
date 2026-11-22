@@ -9,9 +9,6 @@ The app is one shell. A 256 px sidebar lists threads. The main column is the thr
 | Settings dialog | [screenshots/settings-general-dark.png](screenshots/settings-general-dark.png) |
 | Appearance, both themes | [screenshots/settings-appearance-dark.png](screenshots/settings-appearance-dark.png), [screenshots/settings-appearance-light.png](screenshots/settings-appearance-light.png) |
 | Command menu | [screenshots/composer-slash-dark.png](screenshots/composer-slash-dark.png) |
-| New thread project palette | [screenshots/macos-project-picker-dark.png](screenshots/macos-project-picker-dark.png) |
-| Environments, connected | [screenshots/macos-settings-environments-dark.png](screenshots/macos-settings-environments-dark.png) |
-| Add Environment | [screenshots/macos-add-environment-link-dark.png](screenshots/macos-add-environment-link-dark.png), [screenshots/macos-add-environment-ssh-dark.png](screenshots/macos-add-environment-ssh-dark.png) |
 | Usage | [screenshots/panel-usage-dark.png](screenshots/panel-usage-dark.png) |
 
 Empty, loading, error, and destructive confirmation were not on screen. Search is the sidebar field. It was not submitted.

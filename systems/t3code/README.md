@@ -14,7 +14,7 @@ This package contains no T3 Code source. The screenshots show the owner's thread
 | [style-guide.html](style-guide.html) | Swatches, type, and a composer specimen, with a theme toggle |
 | [components.md](components.md) | Component notes from the live app |
 | [patterns.md](patterns.md) | How the shell, settings, and composer fit together |
-| [screenshots/](screenshots) | 41 PNGs: settings sections, the draft, an open thread, menus, light counterparts, and four Mac-app shots of the project picker and environments |
+| [screenshots/](screenshots) | 37 PNGs: settings sections, the draft, an open thread, menus, and light counterparts |
 | [raw/](raw) | `main.css` from the app and `computed-roles.json` |
 | [tools/](tools) | Capture notes |
 
@@ -72,11 +72,11 @@ Pending generation.
 
 ## How the values were read
 
-Custom properties were read with `getComputedStyle(document.documentElement)` in dark, then again after removing the `dark` class for light. Component boxes were read with `getBoundingClientRect` on the sidebar, the new-thread heading, the composer, and icon buttons. The stylesheet `assets/main-DVSpUGJE.css` is in `raw/main.css`. Web screenshots were taken from the live DOM because the preview window stopped painting frames. They are 1440 by 900, not the 2x window capture the kit prefers. Four later shots come from the Mac app, T3 Code (Nightly), at 3024 by 1898. Those are pixels of the window, not computed styles.
+Custom properties were read with `getComputedStyle(document.documentElement)` in dark, then again after removing the `dark` class for light. Component boxes were read with `getBoundingClientRect` on the sidebar, the new-thread heading, the composer, and icon buttons. The stylesheet `assets/main-DVSpUGJE.css` is in `raw/main.css`. Screenshots were taken from the live DOM because the preview window stopped painting frames. They are 1440 by 900, not the 2x window capture the kit prefers. The Mac app is a separate package, [t3code-desktop](../t3code-desktop/README.md).
 
 ## What to distrust
 
-Hex values marked Derived are browser resolutions of `oklch()` and `color-mix()` tokens. The source token is named in each `$extensions.source.from`. Status colours in light were not re-sampled from a painted control. Focus-visible, pressed, and disabled rings were not held. The slash-command hover shot did not change the menu. Phone width (390) was not captured. Screenshots include the owner's thread titles and project paths. The Mac Add Environment dialog shows the product's own placeholders (`backend.example.com`, `PAIRCODE`, username `root`, port `22`). No pairing code was entered. General dropdowns were not opened.
+Hex values marked Derived are browser resolutions of `oklch()` and `color-mix()` tokens. The source token is named in each `$extensions.source.from`. Status colours in light were not re-sampled from a painted control. Focus-visible, pressed, and disabled rings were not held. The slash-command hover shot did not change the menu. Phone width (390) was not captured. Screenshots include the owner's thread titles. General dropdowns were not opened. The connected Environments list and the local-versus-remote project palette are in the desktop package.
 
 ## Fonts
 
@@ -100,7 +100,7 @@ Hex values marked Derived are browser resolutions of `oklch()` and `color-mix()`
 | Tabs | Not present. Settings uses a vertical section list |
 | Menu | Composer menu and thread actions. [screenshots/menu-thread-actions-dark.png](screenshots/menu-thread-actions-dark.png) |
 | Tooltip | Not captured. Triggers exist; the tooltip layer did not paint in the DOM capture |
-| Dialog | Settings, add-project, and Add Environment. [screenshots/settings-appearance-dark.png](screenshots/settings-appearance-dark.png), [screenshots/dialog-add-project-dark.png](screenshots/dialog-add-project-dark.png), [screenshots/macos-add-environment-link-dark.png](screenshots/macos-add-environment-link-dark.png) |
+| Dialog | Settings and add-project. [screenshots/settings-appearance-dark.png](screenshots/settings-appearance-dark.png), [screenshots/dialog-add-project-dark.png](screenshots/dialog-add-project-dark.png) |
 | Toast | Not captured. The notification region was empty |
 | Card, list row | Thread row and details card. [screenshots/thread-conversation-dark.png](screenshots/thread-conversation-dark.png) |
 | Table | Not present in the pages visited |
@@ -108,7 +108,7 @@ Hex values marked Derived are browser resolutions of `oklch()` and `color-mix()`
 | App shell | Captured |
 | Form validation, empty, loading, error | Not captured. No empty project and no failed run were on screen |
 | Destructive confirmation | Delete confirmation is a setting, not a dialog that was opened |
-| Search | Sidebar search field is in the shell shots. The New thread project palette was opened in the Mac app. [screenshots/macos-project-picker-dark.png](screenshots/macos-project-picker-dark.png) |
+| Search | Sidebar search field is in the shell shots. The New thread project palette was not opened on the hosted app |
 | Themes and widths | Dark and light at 1440. Phone width not captured |
 
 ## Do and don't
@@ -129,13 +129,4 @@ The tokens were written from the live readings in `raw/computed-roles.json`. The
 
 ## Surfaces
 
-Settings sections captured: General, Appearance, Chat, Diffs, Keybindings, Voice, SnapShots, Providers, Threads, Browser, Devices, Scheduled tasks, Projects, Source control, Worktrees, Environments, Sharing, Maintenance, Labs, About, Archive. Also captured: new-thread draft, an open thread, the model popover, the thread-actions menu, the slash-command menu, pull requests, usage, the terminal drawer, the right panel, and the add-project dialog.
-
-The hosted Environments page was the empty state, "No saved remote environments." The Mac app, which already had a remote environment, shows the populated page and the Add Environment dialog. New thread opens a project palette, not a separate local-or-remote dialog. Each row is labelled Local or with the remote environment name.
-
-| Mac shot | What it shows |
-|---|---|
-| [screenshots/macos-project-picker-dark.png](screenshots/macos-project-picker-dark.png) | New thread palette, scrolled so Local rows and `kai-home-server` rows share the list |
-| [screenshots/macos-settings-environments-dark.png](screenshots/macos-settings-environments-dark.png) | Environments with Local environment on, `kai-home-server` connected at 0.1.8, and a discovered machine that was not added |
-| [screenshots/macos-add-environment-link-dark.png](screenshots/macos-add-environment-link-dark.png) | Add Environment, Remote link tab, product placeholders only |
-| [screenshots/macos-add-environment-ssh-dark.png](screenshots/macos-add-environment-ssh-dark.png) | Add Environment, SSH tab, host search, username, and port |
+Settings sections captured: General, Appearance, Chat, Diffs, Keybindings, Voice, SnapShots, Providers, Threads, Browser, Devices, Scheduled tasks, Projects, Source control, Worktrees, Environments, Sharing, Maintenance, Labs, About, Archive. Also captured: new-thread draft, an open thread, the model popover, the thread-actions menu, the slash-command menu, pull requests, usage, the terminal drawer, the right panel, and the add-project dialog. The hosted Environments page is the empty state. The connected list is in [t3code-desktop](../t3code-desktop/README.md).

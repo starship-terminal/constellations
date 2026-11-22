@@ -19064,7 +19064,7 @@
       ],
       "shape": "reference",
       "captured": "2026-11-22",
-      "access": "paired on the owner's tailnet, preview browser; Mac app window for the connected environments and project picker",
+      "access": "paired on the owner's tailnet, preview browser",
       "themes": ["dark", "light"],
       "widths": [1440],
       "entry": "systems/t3code/README.md",
@@ -19102,6 +19102,67 @@
       },
       "layoutGaps": {
         "components/": "no component crops; states were read from full-page screenshots",
+        "icons/": "product icons stay in the screenshots (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "t3code-desktop",
+      "name": "T3 Code (desktop)",
+      "url": "https://t3.codes",
+      "category": "productivity",
+      "platform": "desktop",
+      "goodFor": "A dense coding-agent window: quiet thread column, project rows labelled by where they run, settings as a dialog",
+      "tags": [
+        "desktop",
+        "macos",
+        "native",
+        "dark",
+        "light",
+        "dense",
+        "agent",
+        "developer-tools",
+        "sidebar"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-22",
+      "access": "the owner's T3 Code (Nightly) window, 0.1.10-nightly.20261113.4616; colours sampled from 2x window pixels before quantize",
+      "themes": ["dark", "light"],
+      "widths": [1512],
+      "entry": "systems/t3code-desktop/README.md",
+      "tokens": "systems/t3code-desktop/tokens.json",
+      "styleGuide": "systems/t3code-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/t3code-desktop/screenshots/dark-project-picker.png",
+        "icon": "systems/t3code-desktop/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
+          },
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": ["core.fontFamily.sans"]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "version": "0.1.10-nightly.20261113.4616",
+        "route": "native-pixels",
+        "durationMin": 40
+      },
+      "layoutGaps": {
+        "components/": "no component crops; states were read from window screenshots",
         "icons/": "product icons stay in the screenshots (docs/RIGHTS.md)"
       }
     },

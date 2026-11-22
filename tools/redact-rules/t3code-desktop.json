@@ -1,0 +1,14 @@
+{
+  "_note": "The Providers detail pane shows the signed-in account and a home path. Rectangles cover that value column. Provider names, versions, and product chrome stay.",
+  "families": [
+    {
+      "name": "provider account and home path",
+      "files": ["screenshots/dark-settings-providers.png"],
+      "rects": [
+        [1668, 544, 1848, 592, "rows"],
+        [2060, 984, 2260, 1024, "rows"],
+        [2072, 1098, 2380, 1156, "rows"]
+      ]
+    }
+  ]
+}
