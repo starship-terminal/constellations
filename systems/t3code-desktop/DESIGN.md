@@ -26,6 +26,7 @@ colors:
   color-muted: "#5c5e6b"
   color-accent: "#436cb3"
   color-border: "#d7d8e0"
+  color-composer: "#dadbe3"
 ---
 
 # T3 Code (desktop)

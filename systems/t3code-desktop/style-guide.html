@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <title>T3 Code (desktop) style guide</title>
 <style>
-  :root { color-scheme: dark; --page:#191b26; --surface:#191923; --text:#dadbdf; --muted:#9a9a9e; --accent:#395291; --border:#2b2c37; }
-  html[data-theme="light"] { color-scheme: light; --page:#e6e7ee; --surface:#e0e1e8; --text:#2c324d; --muted:#5c5e6b; --accent:#436cb3; --border:#d7d8e0; }
+  :root { color-scheme: dark; --page:#191b26; --surface:#191923; --text:#dadbdf; --muted:#9a9a9e; --accent:#395291; --border:#2b2c37; --composer:#171721; }
+  html[data-theme="light"] { color-scheme: light; --page:#e6e7ee; --surface:#e0e1e8; --text:#2c324d; --muted:#5c5e6b; --accent:#436cb3; --border:#d7d8e0; --composer:#dadbe3; }
   body { margin:0; background:var(--page); color:var(--text); font:14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
   main { max-width:880px; margin:0 auto; padding:32px 20px 64px; }
   h1 { font-weight:400; letter-spacing:-0.025em; font-size:30px; }
@@ -16,13 +16,13 @@
   .chip { height:48px; border-radius:8px; border:1px solid var(--border); }
   .label { color:var(--muted); font-size:12px; margin-top:4px; }
   .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px; }
-  .composer { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px; color:var(--muted); }
+  .composer { background:var(--composer); border:1px solid var(--border); border-radius:16px; padding:12px; color:var(--muted); }
   .pill { display:inline-flex; align-items:center; height:28px; padding:0 10px; border-radius:8px; background:var(--accent); color:#fff; }
 </style>
 </head>
 <body>
 <main>
-  <button class="theme" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'">Toggle theme</button>
+  <button class="theme" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'; paint()">Toggle theme</button>
   <h1>T3 Code (desktop)</h1>
   <p>Sampled from T3 Code (Nightly) 0.1.10 window pixels on 22 Nov 2026. Values come from tokens.json.</p>
   <h2>Colour</h2>
